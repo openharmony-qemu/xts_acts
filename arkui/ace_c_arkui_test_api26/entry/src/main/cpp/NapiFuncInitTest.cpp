@@ -237,6 +237,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testArcSwiperVertical002", nullptr, TestArcSwiperVertical002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testArcSwiperIndicator001", nullptr, TestArcSwiperIndicator001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testArcSwiperIndicator002", nullptr, TestArcSwiperIndicator002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcSwiperIndicator003", nullptr, TestArcSwiperIndicator003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testArcSwiperDisableSwipe001", nullptr, TestArcSwiperDisableSwipe001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testArcSwiperDisableSwipe002", nullptr, TestArcSwiperDisableSwipe002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testArcSwiperDisableTransitionAnimation001", nullptr, TestArcSwiperDisableTransitionAnimation001, nullptr, nullptr, nullptr, napi_default, nullptr},

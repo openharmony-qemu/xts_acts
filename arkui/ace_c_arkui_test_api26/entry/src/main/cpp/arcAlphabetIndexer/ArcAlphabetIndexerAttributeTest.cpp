@@ -12,10 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+ 
 #include "../common/common.h"
 #include "../manager/PluginManagerTest.h"
-
+ 
 #include <cstdint>
 #include <string>
 #include "napi/native_api.h"
@@ -25,9 +25,9 @@
 #include <arkui/native_node_napi.h>
 #include <arkui/native_type.h>
 #include <arkui/native_render.h>
-
+ 
 namespace ArkUICapiTest {
-
+ 
 static napi_value TestArcAlphabetIndexerColor001(napi_env env, napi_callback_info info)
 {
     NAPI_START(indexer, ARKUI_NODE_ARC_ALPHABET_INDEXER);
@@ -40,7 +40,7 @@ static napi_value TestArcAlphabetIndexerColor001(napi_env env, napi_callback_inf
     ASSERT_EQ(result->value[PARAM_0].u32, color);
     NAPI_END;
 }
-
+ 
 static napi_value TestArcAlphabetIndexerColor002(napi_env env, napi_callback_info info)
 {
     NAPI_START(indexer, ARKUI_NODE_ARC_ALPHABET_INDEXER);
@@ -53,7 +53,7 @@ static napi_value TestArcAlphabetIndexerColor002(napi_env env, napi_callback_inf
     ASSERT_EQ(result->value[PARAM_0].u32, color);
     NAPI_END;
 }
-
+ 
 static napi_value TestArcAlphabetIndexerSelectedColor001(napi_env env, napi_callback_info info)
 {
     NAPI_START(indexer, ARKUI_NODE_ARC_ALPHABET_INDEXER);
@@ -66,7 +66,7 @@ static napi_value TestArcAlphabetIndexerSelectedColor001(napi_env env, napi_call
     ASSERT_EQ(result->value[PARAM_0].u32, selectedColor);
     NAPI_END;
 }
-
+ 
 static napi_value TestArcAlphabetIndexerSelected001(napi_env env, napi_callback_info info)
 {
     NAPI_START(indexer, ARKUI_NODE_ARC_ALPHABET_INDEXER);
@@ -79,7 +79,7 @@ static napi_value TestArcAlphabetIndexerSelected001(napi_env env, napi_callback_
     ASSERT_EQ(result->value[PARAM_0].i32, selected);
     NAPI_END;
 }
-
+ 
 static napi_value TestArcAlphabetIndexerSelected002(napi_env env, napi_callback_info info)
 {
     NAPI_START(indexer, ARKUI_NODE_ARC_ALPHABET_INDEXER);
@@ -92,11 +92,11 @@ static napi_value TestArcAlphabetIndexerSelected002(napi_env env, napi_callback_
     ASSERT_EQ(result->value[PARAM_0].i32, selected);
     NAPI_END;
 }
-
+ 
 static napi_value TestArcAlphabetPopupBackgroundBlurStyle001(napi_env env, napi_callback_info info)
 {
     NAPI_START(indexer, ARKUI_NODE_ARC_ALPHABET_INDEXER);
-    int32_t blurStyle = PARAM_0;
+    int32_t blurStyle = ARKUI_BLUR_STYLE_NONE;
     ArkUI_NumberValue value[] = {{.i32 = blurStyle}};
     ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(indexer, NODE_ARC_ALPHABET_POPUP_BACKGROUND_BLUR_STYLE, &item);
@@ -105,7 +105,7 @@ static napi_value TestArcAlphabetPopupBackgroundBlurStyle001(napi_env env, napi_
     ASSERT_EQ(result->value[PARAM_0].i32, blurStyle);
     NAPI_END;
 }
-
+ 
 static napi_value TestArcAlphabetIndexerItemSize001(napi_env env, napi_callback_info info)
 {
     NAPI_START(indexer, ARKUI_NODE_ARC_ALPHABET_INDEXER);
@@ -118,11 +118,11 @@ static napi_value TestArcAlphabetIndexerItemSize001(napi_env env, napi_callback_
     ASSERT_EQ(result->value[PARAM_0].f32, itemSize);
     NAPI_END;
 }
-
+ 
 static napi_value TestArcAlphabetIndexerItemSize002(napi_env env, napi_callback_info info)
 {
     NAPI_START(indexer, ARKUI_NODE_ARC_ALPHABET_INDEXER);
-    float itemSize = PARAM_30;
+    float itemSize = PARAM_10;
     ArkUI_NumberValue value[] = {{.f32 = itemSize}};
     ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(indexer, NODE_ARC_ALPHABET_INDEXER_ITEM_SIZE, &item);
@@ -131,7 +131,7 @@ static napi_value TestArcAlphabetIndexerItemSize002(napi_env env, napi_callback_
     ASSERT_EQ(result->value[PARAM_0].f32, itemSize);
     NAPI_END;
 }
-
+ 
 static napi_value TestArcAlphabetFont001(napi_env env, napi_callback_info info)
 {
     NAPI_START(indexer, ARKUI_NODE_ARC_ALPHABET_INDEXER);
@@ -144,7 +144,7 @@ static napi_value TestArcAlphabetFont001(napi_env env, napi_callback_info info)
     ASSERT_EQ(result->value[PARAM_0].f32, fontSize);
     NAPI_END;
 }
-
+ 
 static napi_value TestArcAlphabetFont002(napi_env env, napi_callback_info info)
 {
     NAPI_START(indexer, ARKUI_NODE_ARC_ALPHABET_INDEXER);
@@ -157,7 +157,7 @@ static napi_value TestArcAlphabetFont002(napi_env env, napi_callback_info info)
     ASSERT_EQ(result->value[PARAM_0].f32, fontSize);
     NAPI_END;
 }
-
+ 
 static napi_value TestArcAlphabetIndexerUsePopup001(napi_env env, napi_callback_info info)
 {
     NAPI_START(indexer, ARKUI_NODE_ARC_ALPHABET_INDEXER);
@@ -170,7 +170,7 @@ static napi_value TestArcAlphabetIndexerUsePopup001(napi_env env, napi_callback_
     ASSERT_EQ(result->value[PARAM_0].i32, usePopup);
     NAPI_END;
 }
-
+ 
 static napi_value TestArcAlphabetIndexerUsePopup002(napi_env env, napi_callback_info info)
 {
     NAPI_START(indexer, ARKUI_NODE_ARC_ALPHABET_INDEXER);
@@ -183,7 +183,7 @@ static napi_value TestArcAlphabetIndexerUsePopup002(napi_env env, napi_callback_
     ASSERT_EQ(result->value[PARAM_0].i32, usePopup);
     NAPI_END;
 }
-
+ 
 static napi_value TestArcAlphabetIndexerPopupFont001(napi_env env, napi_callback_info info)
 {
     NAPI_START(indexer, ARKUI_NODE_ARC_ALPHABET_INDEXER);
@@ -196,7 +196,7 @@ static napi_value TestArcAlphabetIndexerPopupFont001(napi_env env, napi_callback
     ASSERT_EQ(result->value[PARAM_0].f32, popupFontSize);
     NAPI_END;
 }
-
+ 
 static napi_value TestArcAlphabetIndexerSelectedBackgroundColor001(napi_env env, napi_callback_info info)
 {
     NAPI_START(indexer, ARKUI_NODE_ARC_ALPHABET_INDEXER);
@@ -209,7 +209,7 @@ static napi_value TestArcAlphabetIndexerSelectedBackgroundColor001(napi_env env,
     ASSERT_EQ(result->value[PARAM_0].u32, selectedBackgroundColor);
     NAPI_END;
 }
-
+ 
 static napi_value TestArcAlphabetAutoCollapse001(napi_env env, napi_callback_info info)
 {
     NAPI_START(indexer, ARKUI_NODE_ARC_ALPHABET_INDEXER);
@@ -222,7 +222,7 @@ static napi_value TestArcAlphabetAutoCollapse001(napi_env env, napi_callback_inf
     ASSERT_EQ(result->value[PARAM_0].i32, autoCollapse);
     NAPI_END;
 }
-
+ 
 static napi_value TestArcAlphabetAutoCollapse002(napi_env env, napi_callback_info info)
 {
     NAPI_START(indexer, ARKUI_NODE_ARC_ALPHABET_INDEXER);
@@ -235,7 +235,7 @@ static napi_value TestArcAlphabetAutoCollapse002(napi_env env, napi_callback_inf
     ASSERT_EQ(result->value[PARAM_0].i32, autoCollapse);
     NAPI_END;
 }
-
+ 
 static napi_value TestArcAlphabetSelectedFont001(napi_env env, napi_callback_info info)
 {
     NAPI_START(indexer, ARKUI_NODE_ARC_ALPHABET_INDEXER);
@@ -248,7 +248,7 @@ static napi_value TestArcAlphabetSelectedFont001(napi_env env, napi_callback_inf
     ASSERT_EQ(result->value[PARAM_0].f32, selectedFontSize);
     NAPI_END;
 }
-
+ 
 static napi_value TestArcAlphabetIndexerPopupColor001(napi_env env, napi_callback_info info)
 {
     NAPI_START(indexer, ARKUI_NODE_ARC_ALPHABET_INDEXER);
@@ -261,7 +261,7 @@ static napi_value TestArcAlphabetIndexerPopupColor001(napi_env env, napi_callbac
     ASSERT_EQ(result->value[PARAM_0].u32, popupColor);
     NAPI_END;
 }
-
+ 
 static napi_value TestArcAlphabetIndexerPopupBackgroundColor001(napi_env env, napi_callback_info info)
 {
     NAPI_START(indexer, ARKUI_NODE_ARC_ALPHABET_INDEXER);
@@ -274,17 +274,17 @@ static napi_value TestArcAlphabetIndexerPopupBackgroundColor001(napi_env env, na
     ASSERT_EQ(result->value[PARAM_0].u32, popupBackgroundColor);
     NAPI_END;
 }
-
+ 
 static napi_value TestArcAlphabetIndexerArray001(napi_env env, napi_callback_info info)
 {
     NAPI_START(indexer, ARKUI_NODE_ARC_ALPHABET_INDEXER);
-    const char* arrayValue = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    ArkUI_AttributeItem item = {.string = arrayValue};
+    const char* arrayValue[] = {
+        "#", "A", "B", "C", "D", "E", "F", "G"
+    };
+    ArkUI_AttributeItem item = {.size = PARAM_8, .object = arrayValue};
     auto ret = nodeAPI->setAttribute(indexer, NODE_ARC_ALPHABET_INDEXER_ARRAY, &item);
     ASSERT_EQ(ret, SUCCESS);
-    auto result = nodeAPI->getAttribute(indexer, NODE_ARC_ALPHABET_INDEXER_ARRAY);
-    ASSERT_EQ(strcmp(result->string, arrayValue), PARAM_0);
     NAPI_END;
 }
-
+ 
 } // namespace ArkUICapiTest

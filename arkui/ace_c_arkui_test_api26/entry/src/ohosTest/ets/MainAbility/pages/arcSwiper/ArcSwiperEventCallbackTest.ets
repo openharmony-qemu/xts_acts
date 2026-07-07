@@ -12,26 +12,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import render from 'libnativerender.so'
-
+ 
+import nativeRender from 'libnativerender.so';
+import { CommonView } from '../../componet/CommonView';
+ 
 @Entry
 @Component
 struct ArcSwiperEventCallbackTest {
-  @State PAGE_TAG: string = 'ArcSwiperEventCallbackTest';
-
+  PAGE_TAG: string = 'ArcSwiperEventCallbackTest';
+ 
   build() {
     Column() {
-      XComponent({
-        id: this.PAGE_TAG,
-        type: 'surface',
-        libraryname: 'nativerender'
+      CommonView({
+        pageTag: this.PAGE_TAG,
+      }).onAppear(() => {
+        nativeRender.ArcSwiperEventCallbackTest(this.PAGE_TAG);
       })
-        .onLoad(() => {
-          render.ArcSwiperEventCallbackTest(this.PAGE_TAG);
-        })
-        .width('100%')
-        .height('100%')
     }
     .width('100%')
     .height('100%')

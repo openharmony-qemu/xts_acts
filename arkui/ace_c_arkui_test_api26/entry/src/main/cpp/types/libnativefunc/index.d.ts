@@ -165,6 +165,7 @@ export const testArcSwiperVertical001: () => number;
 export const testArcSwiperVertical002: () => number;
 export const testArcSwiperIndicator001: () => number;
 export const testArcSwiperIndicator002: () => number;
+export const testArcSwiperIndicator003: () => number;
 export const testArcSwiperDisableSwipe001: () => number;
 export const testArcSwiperDisableSwipe002: () => number;
 export const testArcSwiperDisableTransitionAnimation001: () => number;

@@ -53,7 +53,7 @@ napi_value ArcAlphabetIndexerEventCallbackTest::CreateNativeNode(napi_env env, n
     ArkUI_NumberValue width_value[] = {{.f32 = 200}};
     ArkUI_AttributeItem width_item = {width_value, sizeof(width_value) / sizeof(ArkUI_NumberValue)};
     nodeAPI->setAttribute(indexer, NODE_WIDTH, &width_item);
-    ArkUI_NumberValue height_value[] = {{.f32 = 250}};
+    ArkUI_NumberValue height_value[] = {{.f32 = 150}};
     ArkUI_AttributeItem height_item = {height_value, sizeof(height_value) / sizeof(ArkUI_NumberValue)};
     nodeAPI->setAttribute(indexer, NODE_HEIGHT, &height_item);
  
@@ -62,13 +62,17 @@ napi_value ArcAlphabetIndexerEventCallbackTest::CreateNativeNode(napi_env env, n
     auto indexerId = nodeAPI->getAttribute(indexer, NODE_ID);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "arcAlphabetIndexerTest", "indexerId = %{public}s", indexerId->string);
  
-    const char* arrayValue = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    ArkUI_AttributeItem array_item = {.string = arrayValue};
+    const char* arrayValue[] = {
+        "#", "A", "B", "C", "D", "E", "F", "G"
+    };
+    ArkUI_AttributeItem array_item = {.size = PARAM_8, .object = arrayValue};
     nodeAPI->setAttribute(indexer, NODE_ARC_ALPHABET_INDEXER_ARRAY, &array_item);
- 
-    ArkUI_NumberValue selected_value[] = {{.i32 = PARAM_0}};
-    ArkUI_AttributeItem selected_item = {selected_value, sizeof(selected_value) / sizeof(ArkUI_NumberValue)};
-    nodeAPI->setAttribute(indexer, NODE_ARC_ALPHABET_INDEXER_SELECTED, &selected_item);
+    ArkUI_NumberValue value[] = {{.i32 = PARAM_0}};
+    ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
+    nodeAPI->setAttribute(indexer, NODE_ARC_ALPHABET_INDEXER_SELECTED, &item);
+    ArkUI_NumberValue selected_color_value[] = {{.u32 = COLOR_BLUE}};
+    ArkUI_AttributeItem selected_color_item = {selected_color_value, sizeof(selected_color_value) / sizeof(ArkUI_NumberValue)};
+    nodeAPI->setAttribute(indexer, NODE_ARC_ALPHABET_INDEXER_SELECTED_COLOR, &selected_color_item);
  
     nodeAPI->registerNodeEvent(indexer, NODE_ARC_ALPHABET_INDEXER_EVENT_ON_SELECT, 0, nullptr);
  
@@ -79,10 +83,12 @@ napi_value ArcAlphabetIndexerEventCallbackTest::CreateNativeNode(napi_env env, n
         switch (eventType) {
             case NODE_ARC_ALPHABET_INDEXER_EVENT_ON_SELECT:
             {
-                auto index = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event)->data[0].i32;
+                auto *commonEvent = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event);
+                auto index = commonEvent->data[0].i32;
                 OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "NODE_ARC_ALPHABET_INDEXER_EVENT_ON_SELECT","index: %{public}d", index);
-                break;
             }
+            default:
+                break;
         }
     });
  
@@ -99,9 +105,5 @@ napi_value ArcAlphabetIndexerEventCallbackTest::CreateNativeNode(napi_env env, n
     }
     return exports;
 }
-
-ArcAlphabetIndexerEventCallbackTest::~ArcAlphabetIndexerEventCallbackTest()
-{
-}
-
+ 
 } // namespace ArkUICapiTest

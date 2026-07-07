@@ -96,10 +96,10 @@ export default function testsuite() {
   ArcListDigitalCrownSensitivityTest()
   ArcScrollBarDisplayModeTest()
   ArcScrollBarBindScrollableTest()
-  ArcListEventCallbackTest()
   ArcSwiperAttributeTest()
   ArcSwiperMethodTest()
-  ArcSwiperEventCallbackTest()
   ArcAlphabetIndexerAttributeTest()
+  ArcListEventCallbackTest()
+  ArcSwiperEventCallbackTest()
   ArcAlphabetIndexerEventCallbackTest()
 }

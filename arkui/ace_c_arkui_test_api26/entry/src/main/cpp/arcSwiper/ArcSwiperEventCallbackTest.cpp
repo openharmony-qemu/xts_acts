@@ -45,6 +45,12 @@ napi_value ArcSwiperEventCallbackTest::CreateNativeNode(napi_env env, napi_callb
     OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
  
     auto column = nodeAPI->createNode(ARKUI_NODE_COLUMN);
+    ArkUI_NumberValue width_value[] = {{.f32 = 200}};
+    ArkUI_AttributeItem width_item = {width_value, sizeof(width_value) / sizeof(ArkUI_NumberValue)};
+    nodeAPI->setAttribute(column, NODE_WIDTH, &width_item);
+    ArkUI_NumberValue height_value[] = {{.f32 = 150}};
+    ArkUI_AttributeItem height_item = {height_value, sizeof(height_value) / sizeof(ArkUI_NumberValue)};
+    nodeAPI->setAttribute(column, NODE_HEIGHT, &height_item);
  
     auto swiper = nodeAPI->createNode(ARKUI_NODE_ARC_SWIPER);
     if (swiper == nullptr) {
@@ -52,35 +58,37 @@ napi_value ArcSwiperEventCallbackTest::CreateNativeNode(napi_env env, napi_callb
     }
     nodeAPI->addChild(column, swiper);
  
-    ArkUI_NumberValue width_value[] = {{.f32 = 200}};
-    ArkUI_AttributeItem width_item = {width_value, sizeof(width_value) / sizeof(ArkUI_NumberValue)};
-    nodeAPI->setAttribute(swiper, NODE_WIDTH, &width_item);
-    ArkUI_NumberValue height_value[] = {{.f32 = 250}};
-    ArkUI_AttributeItem height_item = {height_value, sizeof(height_value) / sizeof(ArkUI_NumberValue)};
-    nodeAPI->setAttribute(swiper, NODE_HEIGHT, &height_item);
+    ArkUI_NumberValue tw_value[] = {{.f32 = PARAM_1}};
+    ArkUI_AttributeItem tw_item = {tw_value, sizeof(tw_value) / sizeof(ArkUI_NumberValue)};
+    nodeAPI->setAttribute(swiper, NODE_WIDTH_PERCENT, &tw_item);
+    nodeAPI->setAttribute(swiper, NODE_HEIGHT_PERCENT, &tw_item);
  
     ArkUI_AttributeItem id_item = {.string = "arc_swiper_call"};
     nodeAPI->setAttribute(swiper, NODE_ID, &id_item);
     auto swiperId = nodeAPI->getAttribute(swiper, NODE_ID);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "arcSwiperTest", "swiperId = %{public}s", swiperId->string);
  
-    for (int i = 0; i < 5; ++i) {
-        ItemBuf[i] = nodeAPI->createNode(ARKUI_NODE_COLUMN);
-        nodeAPI->addChild(swiper, ItemBuf[i]);
+    auto text = nodeAPI->createNode(ARKUI_NODE_TEXT);
+    ArkUI_NumberValue text_background_value[] = { { .u32 = 0xFFAFEEEE } };
+    ArkUI_AttributeItem text_background_item = { text_background_value,
+        sizeof(text_background_value) / sizeof(ArkUI_NumberValue) };
+    nodeAPI->setAttribute(text, NODE_BACKGROUND_COLOR, &text_background_item);
+ 
+    auto text_second = nodeAPI->createNode(ARKUI_NODE_TEXT);
+    ArkUI_NumberValue text_second_background_value[] = { { .u32 = 0xFF00FF00 } };
+    ArkUI_AttributeItem text_second_background_item = { text_second_background_value,
+        sizeof(text_second_background_value) / sizeof(ArkUI_NumberValue) };
+    nodeAPI->setAttribute(text_second, NODE_BACKGROUND_COLOR, &text_second_background_item);
+ 
+    auto text_third = nodeAPI->createNode(ARKUI_NODE_TEXT);
+    ArkUI_NumberValue text_third_background_value[] = { { .u32 = 0xFFFF0000 } };
+    ArkUI_AttributeItem text_third_background_item = { text_third_background_value,
+        sizeof(text_third_background_value) / sizeof(ArkUI_NumberValue) };
+    nodeAPI->setAttribute(text_third, NODE_BACKGROUND_COLOR, &text_third_background_item);
     
-        ArkUI_NumberValue width_value[] = {{.f32 = 200}};
-        ArkUI_AttributeItem width_item = {width_value, sizeof(width_value) / sizeof(ArkUI_NumberValue)};
-        nodeAPI->setAttribute(ItemBuf[i], NODE_WIDTH, &width_item);
-        ArkUI_NumberValue height_value[] = {{.f32 = 250}};
-        ArkUI_AttributeItem height_item = {height_value, sizeof(height_value) / sizeof(ArkUI_NumberValue)};
-        nodeAPI->setAttribute(ItemBuf[i], NODE_HEIGHT, &height_item);
-
-        auto text = nodeAPI->createNode(ARKUI_NODE_TEXT);
-        ArkUI_AttributeItem content_item = {};
-        content_item.string = "Swiper Item " + std::to_string(i);
-        nodeAPI->setAttribute(text, NODE_TEXT_CONTENT, &content_item);
-        nodeAPI->addChild(ItemBuf[i], text);
-    }
+    nodeAPI->addChild(swiper, text);
+    nodeAPI->addChild(swiper, text_second);
+    nodeAPI->addChild(swiper, text_third);
  
     nodeAPI->registerNodeEvent(swiper, NODE_ARC_SWIPER_EVENT_ON_CHANGE, 0, nullptr);
     nodeAPI->registerNodeEvent(swiper, NODE_ARC_SWIPER_EVENT_ON_ANIMATION_START, 0, nullptr);
@@ -133,9 +141,5 @@ napi_value ArcSwiperEventCallbackTest::CreateNativeNode(napi_env env, napi_callb
     }
     return exports;
 }
-
-ArcSwiperEventCallbackTest::~ArcSwiperEventCallbackTest()
-{
-}
-
+ 
 } // namespace ArkUICapiTest

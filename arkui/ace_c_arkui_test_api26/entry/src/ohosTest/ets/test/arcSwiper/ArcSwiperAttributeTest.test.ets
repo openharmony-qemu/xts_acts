@@ -12,20 +12,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+ 
 import { beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
 import nativeFunc from 'libnativefunc.so'
-
+ 
 export default function ArcSwiperAttributeTest() {
-
+ 
   describe('ArcSwiperAttributeTest', () => {
-
+ 
     beforeEach(async (done: Function) => {
       await Utils.sleep(100);
       done();
     });
-
+ 
     /**
      * @tc.name   ArcSwiperDurationTest_001
      * @tc.number SUB_ARKUI_ARCSWIPERDURATION_TEST_0100
@@ -38,7 +38,7 @@ export default function ArcSwiperAttributeTest() {
       expect(nativeFunc.testArcSwiperDuration001()).assertEqual(0)
       done()
     })
-
+ 
     /**
      * @tc.name   ArcSwiperDurationTest_002
      * @tc.number SUB_ARKUI_ARCSWIPERDURATION_TEST_0200
@@ -51,7 +51,7 @@ export default function ArcSwiperAttributeTest() {
       expect(nativeFunc.testArcSwiperDuration002()).assertEqual(0)
       done()
     })
-
+ 
     /**
      * @tc.name   ArcSwiperDurationTest_003
      * @tc.number SUB_ARKUI_ARCSWIPERDURATION_TEST_0300
@@ -64,7 +64,7 @@ export default function ArcSwiperAttributeTest() {
       expect(nativeFunc.testArcSwiperDuration003()).assertEqual(0)
       done()
     })
-
+ 
     /**
      * @tc.name   ArcSwiperEffectModeTest_001
      * @tc.number SUB_ARKUI_ARCSWIPEREFFECTMODE_TEST_0100
@@ -77,7 +77,7 @@ export default function ArcSwiperAttributeTest() {
       expect(nativeFunc.testArcSwiperEffectMode001()).assertEqual(0)
       done()
     })
-
+ 
     /**
      * @tc.name   ArcSwiperEffectModeTest_002
      * @tc.number SUB_ARKUI_ARCSWIPEREFFECTMODE_TEST_0200
@@ -90,7 +90,7 @@ export default function ArcSwiperAttributeTest() {
       expect(nativeFunc.testArcSwiperEffectMode002()).assertEqual(0)
       done()
     })
-
+ 
     /**
      * @tc.name   ArcSwiperVerticalTest_001
      * @tc.number SUB_ARKUI_ARCSWIPERVERTICAL_TEST_0100
@@ -103,7 +103,7 @@ export default function ArcSwiperAttributeTest() {
       expect(nativeFunc.testArcSwiperVertical001()).assertEqual(0)
       done()
     })
-
+ 
     /**
      * @tc.name   ArcSwiperVerticalTest_002
      * @tc.number SUB_ARKUI_ARCSWIPERVERTICAL_TEST_0200
@@ -116,11 +116,11 @@ export default function ArcSwiperAttributeTest() {
       expect(nativeFunc.testArcSwiperVertical002()).assertEqual(0)
       done()
     })
-
+ 
     /**
      * @tc.name   ArcSwiperIndicatorTest_001
      * @tc.number SUB_ARKUI_ARCSWIPERINDICATOR_TEST_0100
-     * @tc.desc   Test NODE_ARC_SWIPER_INDICATOR with value 1
+     * @tc.desc   Test NODE_ARC_SWIPER_INDICATOR with value OH_ARKUI_ARCDIRECTION_THREE_CLOCK_DIRECTION
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -129,11 +129,11 @@ export default function ArcSwiperAttributeTest() {
       expect(nativeFunc.testArcSwiperIndicator001()).assertEqual(0)
       done()
     })
-
+ 
     /**
      * @tc.name   ArcSwiperIndicatorTest_002
      * @tc.number SUB_ARKUI_ARCSWIPERINDICATOR_TEST_0200
-     * @tc.desc   Test NODE_ARC_SWIPER_INDICATOR with value 0
+     * @tc.desc   Test NODE_ARC_SWIPER_INDICATOR with value OH_ARKUI_ARCDIRECTION_SIX_CLOCK_DIRECTION
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -142,7 +142,20 @@ export default function ArcSwiperAttributeTest() {
       expect(nativeFunc.testArcSwiperIndicator002()).assertEqual(0)
       done()
     })
-
+ 
+    /**
+     * @tc.name   ArcSwiperIndicatorTest_003
+     * @tc.number SUB_ARKUI_ARCSWIPERINDICATOR_TEST_0300
+     * @tc.desc   Test NODE_ARC_SWIPER_INDICATOR with value OH_ARKUI_ARCDIRECTION_NINE_CLOCK_DIRECTION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArcSwiperIndicator003', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcSwiperIndicator003()).assertEqual(0)
+      done()
+    })
+ 
     /**
      * @tc.name   ArcSwiperDisableSwipeTest_001
      * @tc.number SUB_ARKUI_ARCSWIPERDISABLESWIPE_TEST_0100
@@ -155,7 +168,7 @@ export default function ArcSwiperAttributeTest() {
       expect(nativeFunc.testArcSwiperDisableSwipe001()).assertEqual(0)
       done()
     })
-
+ 
     /**
      * @tc.name   ArcSwiperDisableSwipeTest_002
      * @tc.number SUB_ARKUI_ARCSWIPERDISABLESWIPE_TEST_0200
@@ -168,7 +181,7 @@ export default function ArcSwiperAttributeTest() {
       expect(nativeFunc.testArcSwiperDisableSwipe002()).assertEqual(0)
       done()
     })
-
+ 
     /**
      * @tc.name   ArcSwiperDisableTransitionAnimationTest_001
      * @tc.number SUB_ARKUI_ARCSWIPERDISABLETRANSITIONANIMATION_TEST_0100
@@ -181,7 +194,7 @@ export default function ArcSwiperAttributeTest() {
       expect(nativeFunc.testArcSwiperDisableTransitionAnimation001()).assertEqual(0)
       done()
     })
-
+ 
     /**
      * @tc.name   ArcSwiperDisableTransitionAnimationTest_002
      * @tc.number SUB_ARKUI_ARCSWIPERDISABLETRANSITIONANIMATION_TEST_0200
@@ -194,7 +207,7 @@ export default function ArcSwiperAttributeTest() {
       expect(nativeFunc.testArcSwiperDisableTransitionAnimation002()).assertEqual(0)
       done()
     })
-
+ 
     /**
      * @tc.name   ArcSwiperDigitalCrownSensitivityTest_001
      * @tc.number SUB_ARKUI_ARCSWIPERDIGITALCROWSENSITIVITY_TEST_0100
@@ -207,7 +220,7 @@ export default function ArcSwiperAttributeTest() {
       expect(nativeFunc.testArcSwiperDigitalCrownSensitivity001()).assertEqual(0)
       done()
     })
-
+ 
     /**
      * @tc.name   ArcSwiperDigitalCrownSensitivityTest_002
      * @tc.number SUB_ARKUI_ARCSWIPERDIGITALCROWSENSITIVITY_TEST_0200
@@ -220,7 +233,7 @@ export default function ArcSwiperAttributeTest() {
       expect(nativeFunc.testArcSwiperDigitalCrownSensitivity002()).assertEqual(0)
       done()
     })
-
+ 
     /**
      * @tc.name   ArcSwiperIndexTest_001
      * @tc.number SUB_ARKUI_ARCSWIPERINDEX_TEST_0100
@@ -233,7 +246,7 @@ export default function ArcSwiperAttributeTest() {
       expect(nativeFunc.testArcSwiperIndex001()).assertEqual(0)
       done()
     })
-
+ 
     /**
      * @tc.name   ArcSwiperIndexTest_002
      * @tc.number SUB_ARKUI_ARCSWIPERINDEX_TEST_0200
@@ -246,7 +259,7 @@ export default function ArcSwiperAttributeTest() {
       expect(nativeFunc.testArcSwiperIndex002()).assertEqual(0)
       done()
     })
-
+ 
     /**
      * @tc.name   ArcSwiperIndexTest_003
      * @tc.number SUB_ARKUI_ARCSWIPERINDEX_TEST_0300
