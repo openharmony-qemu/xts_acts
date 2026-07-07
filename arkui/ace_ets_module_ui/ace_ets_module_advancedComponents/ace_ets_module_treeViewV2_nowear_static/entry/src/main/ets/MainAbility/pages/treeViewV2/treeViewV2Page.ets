@@ -2,12 +2,14 @@
 import {
   Entry, Component, Column, Builder, Flex, FlexDirection, FlexAlign, ItemAlign, TextAlign, ClickEvent, HorizontalAlign,
   Divider, Resource, SideBarContainer, SideBarContainerType, LineCapStyle, ColumnOptions, Button, ButtonType, Text, $r,
-  Row, State
+  Row, State, Image, Color
 }from '@kit.ArkUI';
 
 import {
   TreeControllerV2,  TreeListenerV2,  TreeListenerManagerV2,  NodeParamV2,  TreeViewV2,  CallbackParamV2
 } from '@ohos.arkui.advanced.TreeViewV2';
+
+import { SymbolGlyphModifier } from '@kit.ArkUI';
 
 
 @Entry
@@ -18,12 +20,15 @@ struct TreeViewDemo {
   // 创建树视图组件的监听器
   private treeListener: TreeListenerV2 = TreeListenerManagerV2.getInstance().getTreeListener();
   @State clickId: number = 0;
+  @State callbackParamDisplay: string = 'No callback yet';
+  @State testMessage: string = '';
 
   aboutToDisappear(): void {
     // 取消监听
     this.treeListener.offNodeClick(undefined);
     this.treeListener.offNodeAdd(undefined);
     this.treeListener.offNodeDelete(undefined);
+    this.treeListener.offNodeModify(undefined);
     this.treeListener.offNodeMove(undefined);
   }
 
@@ -60,19 +65,95 @@ struct TreeViewDemo {
     }.width(100).border({ width: 1, color: 0x80808a, radius: '16dp' })
   }
 
+  // 自定义容器组件Builder（用于container参数测试）
+  @Builder
+  customContainer(): void {
+    Row() {
+      Image($r('sys.media.ohos_ic_public_view'))
+        .width(20)
+        .height(20)
+      Text('Custom Component')
+        .fontSize(12)
+        .fontColor(Color.Red)
+    }
+    .padding(5)
+    .backgroundColor(Color.Yellow)
+  }
+
+  // 边界值测试方法
+  testBoundaryCase(caseType: string): void {
+    switch(caseType) {
+      case 'emptyTitle':
+        this.treeController.addNode({
+          parentNodeId: -1,
+          currentNodeId: 200,
+          primaryTitle: '',
+          isFolder: false
+        });
+        this.testMessage = 'Added node with empty title';
+        break;
+      case 'longTitle':
+        this.treeController.addNode({
+          parentNodeId: -1,
+          currentNodeId: 201,
+          primaryTitle: '超长标题测试字符串超过一百字符测试边界值显示效果验证',
+          isFolder: false
+        });
+        this.testMessage = 'Added node with long title (>50 chars)';
+        break;
+      case 'invalidParent':
+        this.treeController.addNode({
+          parentNodeId: 999,
+          currentNodeId: 202,
+          primaryTitle: 'Invalid Parent Node',
+          isFolder: false
+        });
+        this.testMessage = 'Added node with invalid parent ID (999)';
+        break;
+    }
+  }
+
   aboutToAppear(): void {
     // 注册监听
     this.treeListener.onNodeClick((callbackParam: CallbackParamV2) => {
       this.clickId = callbackParam.currentNodeId;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
     })
     this.treeListener.onNodeAdd((callbackParam: CallbackParamV2) => {
       this.clickId = callbackParam.currentNodeId;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
     })
     this.treeListener.onNodeDelete((callbackParam: CallbackParamV2) => {
       this.clickId = callbackParam.currentNodeId;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
+    })
+    this.treeListener.onNodeModify((callbackParam: CallbackParamV2) => {
+      this.clickId = callbackParam.currentNodeId;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
+    })
+    this.treeListener.onNodeMove((callbackParam: CallbackParamV2) => {
+      this.clickId = callbackParam.currentNodeId;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
+    })
+    this.treeListener.onceNodeClick((callbackParam: CallbackParamV2) => {
+      this.clickId = callbackParam.currentNodeId;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
+    })
+    this.treeListener.onceNodeAdd((callbackParam: CallbackParamV2) => {
+      this.clickId = callbackParam.currentNodeId;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
+    })
+    this.treeListener.onceNodeDelete((callbackParam: CallbackParamV2) => {
+      this.clickId = callbackParam.currentNodeId;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
+    })
+    this.treeListener.onceNodeModify((callbackParam: CallbackParamV2) => {
+      this.clickId = callbackParam.currentNodeId;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
     })
     this.treeListener.onceNodeMove((callbackParam: CallbackParamV2) => {
       this.clickId = callbackParam.currentNodeId;
+      this.callbackParamDisplay = `current:${callbackParam.currentNodeId}, parent:${callbackParam.parentNodeId ?? -1}, index:${callbackParam.childIndex ?? -1}`;
     })
 
     // 系统文件夹图片资源
@@ -172,6 +253,32 @@ struct TreeViewDemo {
         isFolder: false,
         primaryTitle: '项目9'
       })
+      // SymbolGlyphModifier测试节点
+      .addNode({
+        parentNodeId: -1,
+        currentNodeId: 100,
+        isFolder: true,
+        symbolIconStyle: new SymbolGlyphModifier($r('sys.symbol.folder')),
+        symbolSelectedIconStyle: new SymbolGlyphModifier($r('sys.symbol.checkmark_circle')),
+        symbolEditIconStyle: new SymbolGlyphModifier($r('sys.symbol.pencil')),
+        primaryTitle: 'Symbol Folder',
+        secondaryTitle: '0'
+      })
+      .addNode({
+        parentNodeId: 100,
+        currentNodeId: 101,
+        isFolder: false,
+        symbolIconStyle: new SymbolGlyphModifier($r('sys.symbol.doc')),
+        primaryTitle: 'Symbol File'
+      })
+      // container自定义组件测试节点
+      .addNode({
+        parentNodeId: -1,
+        currentNodeId: 102,
+        isFolder: false,
+        primaryTitle: 'Container Node',
+        container: this.customContainer
+      })
       .buildDone();
     this.treeController.refreshNode(-1, '父节点', '子节点');
   }
@@ -182,8 +289,9 @@ struct TreeViewDemo {
         TreeViewV2({ treeControllerV2: this.treeController })
         Row() {
           Divider().vertical(true).strokeWidth(2).color(0x000000).lineCap(LineCapStyle.Round)
-          Column({ space: 30 } as ColumnOptions) {
+          Column({ space: 15 } as ColumnOptions) {
             Text('ClickId=' + this.clickId).fontSize('16fp')
+            Text('CallbackParam: ' + this.callbackParamDisplay).fontSize('12fp').fontColor(Color.Blue)
             Button('Add', { type: ButtonType.Normal, stateEffect: true })
               .borderRadius(8).backgroundColor(0x317aff).width(90)
               .onClick((event: ClickEvent) => {
@@ -199,6 +307,24 @@ struct TreeViewDemo {
               .onClick((event: ClickEvent) => {
                 this.treeController.removeNode();
               })
+            Divider().strokeWidth(1).color(0xCCCCCC)
+            Text('Boundary Tests:').fontSize('14fp').fontColor(Color.Orange)
+            Button('Test Empty Title', { type: ButtonType.Normal, stateEffect: true })
+              .borderRadius(8).backgroundColor(0xFF5722).width(150)
+              .onClick((event: ClickEvent) => {
+                this.testBoundaryCase('emptyTitle');
+              })
+            Button('Test Long Title', { type: ButtonType.Normal, stateEffect: true })
+              .borderRadius(8).backgroundColor(0xFF5722).width(150)
+              .onClick((event: ClickEvent) => {
+                this.testBoundaryCase('longTitle');
+              })
+            Button('Test Invalid Parent', { type: ButtonType.Normal, stateEffect: true })
+              .borderRadius(8).backgroundColor(0xFF5722).width(150)
+              .onClick((event: ClickEvent) => {
+                this.testBoundaryCase('invalidParent');
+              })
+            Text(this.testMessage).fontSize('12fp').fontColor(Color.Red)
           }.height('100%').width('70%').alignItems(HorizontalAlign.Start).margin(10)
         }
       }
