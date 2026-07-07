@@ -1,3 +1,4 @@
+'use_static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,27 +33,6 @@ export default function actsWifiManagerFunctionsTest() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
     beforeAll(async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
-      hilog.info(domain, tag, '%{public}s', '权限获取 start');
-      try {
-        await Utils.msSleep(2000);
-        hilog.info(domain, tag, " uitestOnTest load up over!!!!!")
-        g_context = Hypium.get('Context') as common.UIAbilityContext;
-        let atManager = abilityAccessCtrl.createAtManager();
-        let arr: Array<Permissions> = new Array<Permissions>();
-        arr.push('ohos.permission.SET_WIFI_INFO');
-        arr.push('ohos.permission.MANAGE_ENTERPRISE_WIFI_CONNECTION');
-        atManager.requestPermissionsFromUser(g_context, arr, (err: BusinessError<void> | null, data: PermissionRequestResult | undefined) => {
-          hilog.info(0x0000, 'testTag', ' requestPermissionsFromUser end');
-          hilog.info(domain, tag, "request success permissions" + JSON.stringify(data));
-          hilog.info(domain, tag, "getPermissionRequestResult err" + JSON.stringify(err));
-        });
-      } catch (err) {
-        hilog.error(domain, tag, '%{public}s', 'get failed, err: ' + err);
-      }
-      await Utils.msSleep(2000);
-      await Utils.clickRequestPermission('允许');
-      await Utils.msSleep(2000);
-      hilog.info(domain, tag, '%{public}s', '权限获取 end');
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
       done();
     });
