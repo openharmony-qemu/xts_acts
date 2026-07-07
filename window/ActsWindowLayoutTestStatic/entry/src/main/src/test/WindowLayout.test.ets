@@ -4879,9 +4879,13 @@ export default function WindowLayoutTest() {
                     hilog.info(domain, tag, msgStr + 'maxmized subwindow');
                     await subWin.recover(snapshotAnimationConfig).then(async () => {
                         hilog.info(domain, tag, msgStr + 'Succeeded in recovering window from duration=200.');
+                        await subWin.destroyWindow();
+                        hilog.info(domain, tag, msgStr + 'destroyWindow');
                         expect(false).assertTrue();
                         done();
-                    }).catch((err: Error) => {
+                    }).catch(async (err: Error) => {
+                        await subWin.destroyWindow();
+                        hilog.info(domain, tag, msgStr + 'destroyWindow');
                         if (err!.code == 1300004) {
                             hilog.info(domain, tag, msgStr + `The window is not created or destroyed. Cause code: ${err!.code}, message: ${err!.message}`);
                             expect(err!.code === 1300004).assertTrue();
