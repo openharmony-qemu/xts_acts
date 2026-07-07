@@ -95,7 +95,7 @@ export default function btBaseProfileTest() {
     let A2dpSourceProfile : a2dp.A2dpSourceProfile;
     let HandsFreeAudioGatewayProfile : hfp.HandsFreeAudioGatewayProfile;
     let HidHostProfile : hid.HidHostProfile;
-    let panProfile: pan.PanProfile;
+    let PanProfile: pan.PanProfile;
     beforeAll(async (done : Function) =>  {
       console.info('beforeAll called')
       await clickRequestPermission(PERMISSION_TEXT);
@@ -134,7 +134,7 @@ export default function btBaseProfileTest() {
         }
       }
       try{
-        panProfile = pan.createPanProfile();
+        PanProfile = pan.createPanProfile();
       } catch (err) {
         console.error("bluetooth create  errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === '801') {
@@ -202,7 +202,7 @@ export default function btBaseProfileTest() {
         } catch (err) {
           console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
           if (err.code === '801' || err.code === '2900004') {
-            console.info('[bluetooth_js]getConnectedDevices is not support or profile not support');
+            console.info('[bluetooth_js]getConnectionState is not support or profile not support');
             expect(err.code === '801' || err.code === '2900004').assertTrue();
           } else {
             expect(err.code).assertEqual('2900099');
@@ -346,11 +346,11 @@ export default function btBaseProfileTest() {
         try {
           let state : bluetooth.ProfileConnectionState = HandsFreeAudioGatewayProfile.getConnectionState("11:22:33:AA:BB:FF");
           console.info("the connection state:" + state);
-          expect(state === 0 || state === 1 || state === 2).assertTrue();
+          expect().assertFail();
         } catch (err) {
           console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
           if (err.code === '801') {
-            console.info('[bluetooth_js]createA2dpSrcProfile is not support');
+            console.info('[bluetooth_js]getConnectionState is not support');
             expect(err.code).assertEqual('801');
           } else {
             expect(err.code).assertEqual('2900099');
@@ -442,11 +442,11 @@ export default function btBaseProfileTest() {
         try {
           let state : bluetooth.ProfileConnectionState = HidHostProfile.getConnectionState("11:22:33:AA:BB:FF");
           console.info("the connection state:" + state);
-          expect(true).assertEqual(state === 0 || state === 1 || state === 2);
+          expect().assertFail();
         } catch (err) {
           console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
           if (err.code === '801') {
-            console.info('[bluetooth_js]createA2dpSrcProfile is not support');
+            console.info('[bluetooth_js]getConnectionState is not support');
             expect(err.code).assertEqual('801');
           } else {
             expect(err.code).assertEqual('2900099');
@@ -507,9 +507,9 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(panProfile){
+      if(PanProfile){
         try {
-          let devices : Array<string> = panProfile.getConnectedDevices();
+          let devices : Array<string> = PanProfile.getConnectedDevices();
           console.info("address of connected devices list:" + devices);
           expect(Array.isArray(devices)).assertTrue();
         } catch (err) {
@@ -533,9 +533,9 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(panProfile){
+      if(PanProfile){
         try {
-          let state : bluetooth.ProfileConnectionState = panProfile.getConnectionState("11:22:33:AA:BB:FF");
+          let state : bluetooth.ProfileConnectionState = PanProfile.getConnectionState("11:22:33:AA:BB:FF");
           console.info("the connection state:" + state);
           expect(state === 0 || state === 1 || state === 2).assertTrue();
         } catch (err) {
@@ -560,10 +560,10 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(panProfile){
+      if(PanProfile){
         try {
-          panProfile.on('connectionStateChange', onReceiveEvent);
-          panProfile.off('connectionStateChange', onReceiveEvent);
+          PanProfile.on('connectionStateChange', onReceiveEvent);
+          PanProfile.off('connectionStateChange', onReceiveEvent);
         } catch (err) {
           console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
           expect().assertFail();
@@ -581,10 +581,10 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(panProfile){
+      if(PanProfile){
         try {
-          panProfile.on('connectionStateChange', onReceiveEvent);
-          panProfile.off('connectionStateChange');
+          PanProfile.on('connectionStateChange', onReceiveEvent);
+          PanProfile.off('connectionStateChange');
         } catch (err) {
           console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
           expect().assertFail();
@@ -675,9 +675,9 @@ export default function btBaseProfileTest() {
      */
     it('SUB_COMMUNICATION_BLUETOOTH_CREATE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
       try {
-        let panProfile: pan.PanProfile = pan.createPanProfile();
-        console.info('[bt_arkts] createPanProfile result is ' + JSON.stringify(panProfile));
-        expect(panProfile !== null).assertTrue();
+        let PanProfile: pan.PanProfile = pan.createPanProfile();
+        console.info('[bt_arkts] createPanProfile result is ' + JSON.stringify(PanProfile));
+        expect(PanProfile !== null).assertTrue();
       } catch (err) {
         console.info("[bt_arkts] createPanProfile error: " + err.code + ",errMessage:" + err.message);
         if (err.code === '801') {
@@ -963,9 +963,9 @@ export default function btBaseProfileTest() {
      * @co.authored.by.agent
      */
     it('SUB_COMMUNICATION_BLUETOOTH_PAN_ISPANSUPPORTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
-      if(panProfile){
+      if(PanProfile){
         try {
-          let result: boolean = panProfile.isPanSupported();
+          let result: boolean = PanProfile.isPanSupported();
           expect(typeof result).assertEqual('boolean');
           console.info('[bt_arkts] isPanSupported result is ' + JSON.stringify(result));
         } catch (err) {
@@ -990,9 +990,9 @@ export default function btBaseProfileTest() {
      * @co.authored.by.agent
      */
     it('SUB_COMMUNICATION_BLUETOOTH_PAN_ISTETHERINGON_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
-      if(panProfile){
+      if(PanProfile){
         try {
-          let result: boolean = panProfile.isTetheringOn();
+          let result: boolean = PanProfile.isTetheringOn();
           console.info('[bt_arkts] isTetheringOn result is ' + JSON.stringify(result));
           expect(typeof result).assertEqual('boolean');
         } catch (err) {
