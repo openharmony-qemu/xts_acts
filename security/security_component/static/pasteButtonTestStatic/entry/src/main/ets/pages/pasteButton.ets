@@ -97,6 +97,10 @@ struct pasteButton {
   @State accessibilityDescriptionValue:string | Resource| undefined = ''
   @State accessibilityRoleValue:SecurityComponentRoleType | undefined = undefined
 
+  @State accessibilityNextFocusIdx: string | undefined = undefined;
+  @State accessibilityDefaultFocusx: boolean | undefined = undefined;
+
+
   private stateChangeCallBack: (eventData:events_emitter.EventData) => void =
     (eventData:events_emitter.EventData) => {
     if (eventData != null && eventData.data != undefined) {
@@ -287,6 +291,8 @@ struct pasteButton {
             .fallbackLineSpacing(this.backLineSpacingEnable)
             .accessibilityRole(this.accessibilityRoleValue)
             .accessibilityDescription(this.accessibilityDescriptionValue)
+            .accessibilityNextFocusId(this.accessibilityNextFocusIdx)
+            .accessibilityDefaultFocus(this.accessibilityDefaultFocusx)
             .iconSize(this.iconSize)
             .layoutDirection(this.direct)
             .position({ x: this.positionX, y: this.positionY })
