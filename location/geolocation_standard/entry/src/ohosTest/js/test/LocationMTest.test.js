@@ -3521,7 +3521,6 @@ export default function geolocationTest_geo7() {
                 expect(error.code).assertEqual(3301100);
                 console.info('[lbs_js] gnssFenceStatusChange off return 3301100 success');
             }
-            await sleep(1000);
             done();
         }
     })
@@ -3560,7 +3559,6 @@ export default function geolocationTest_geo7() {
             console.info("[lbs_js] getCurrentLocation callback try err." + JSON.stringify(error));
             expect(error.code).assertEqual(3301100);
         }
-        await sleep(1000);
         done();
     })
 
@@ -3594,7 +3592,6 @@ export default function geolocationTest_geo7() {
             console.info("[lbs_js] getCurrentLocation promise try err." + JSON.stringify(error));
             expect(error.code).assertEqual(3301100);
         }
-        await sleep(1000);
         done();
     })
 
@@ -3631,7 +3628,6 @@ export default function geolocationTest_geo7() {
             console.info("[lbs_js] getCurrentLocation default callback try err." + JSON.stringify(error));
             expect(error.code).assertEqual(3301100);
         }
-        await sleep(1000);
         done();
     })
 
@@ -3664,7 +3660,6 @@ export default function geolocationTest_geo7() {
             console.info("[lbs_js] getCurrentLocation default promise try err." + JSON.stringify(error));
             expect(error.code).assertEqual(3301100);
         }
-        await sleep(1000);
         done();
     })
 
