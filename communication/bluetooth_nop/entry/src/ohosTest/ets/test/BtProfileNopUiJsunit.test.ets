@@ -107,15 +107,15 @@ export default function btProfileNopUiJsunit() {
       done();
     })
 
-     /**
- 	      * @tc.name SUB_COMMUNICATION_BLUETOOTH_PAN_ISTETHERINGON_NOP_0100
- 	      * @tc.number SUB_COMMUNICATION_BLUETOOTH_PAN_ISTETHERINGON_NOP_0100
- 	      * @tc.desc 测试 PanProfile 的 isTetheringOn 方法 - 缺少蓝牙访问权限
- 	      * @tc.type FUNCTION
- 	      * @tc.size MEDIUMTEST
- 	      * @tc.level LEVEL1
- 	      * @co.authored.by.agent
- 	      */
+    /**
+     * @tc.name SUB_COMMUNICATION_BLUETOOTH_PAN_ISTETHERINGON_NOP_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_PAN_ISTETHERINGON_NOP_0100
+     * @tc.desc 测试 PanProfile 的 isTetheringOn 方法 - 缺少蓝牙访问权限
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     * @co.authored.by.agent
+     */
      it('SUB_COMMUNICATION_BLUETOOTH_PAN_ISTETHERINGON_NOP_0100', Level.LEVEL1,   () => {
       try {
         let panProfile: pan.PanProfile = pan.createPanProfile();
