@@ -14,8 +14,10 @@
  */
 import ImmersiveMaterialTest from './systemMaterial/ImmersiveMaterialTest.test';
 import CustomDialogSystemMaterialTest from './systemMaterial/CustomDialogSystemMaterialTest.test';
+import CustomDialogDisplayModeTest from './systemMaterial/CustomDialogDisplayModeTest.test';
 
 export default function testsuite() {
   ImmersiveMaterialTest();
   CustomDialogSystemMaterialTest();
+  CustomDialogDisplayModeTest();
 }
