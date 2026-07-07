@@ -541,7 +541,7 @@ export default function btBaseProfileTest() {
         } catch (err) {
           console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
           if (err.code === '801') {
-            console.info('[bluetooth_js]createA2dpSrcProfile is not support');
+            console.info('[bluetooth_js]getConnectionState is not support');
             expect(err.code).assertEqual('801');
           } else {
             expect().assertFail();
@@ -729,7 +729,7 @@ export default function btBaseProfileTest() {
         console.info('pbapServer success' + pbapServerProfile);
         expect(pbapServerProfile !== null).assertTrue();
       } catch (err) {
-        console.error("bluetooth pbap pbapServerProfile errCode:" + err.code + ",errMessage:" + err.message);
+        console.error("bluetooth pbap createPbapServerProfile errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === '801') {
           console.info('[bluetooth_js]createPbapServerProfile is not support');
           expect(err.code).assertEqual('801');
