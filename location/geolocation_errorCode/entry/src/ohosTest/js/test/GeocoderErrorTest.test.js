@@ -1958,7 +1958,6 @@ export default function geolocationTest_GeoErr() {
                     expect().assertFail();
                     done();
                 }
-                await sleep(1000);
             }
         });
 
@@ -1999,7 +1998,6 @@ export default function geolocationTest_GeoErr() {
                     expect().assertFail();
                     done();
                 }
-                await sleep(1000);
             }
         });
 
@@ -2033,7 +2031,6 @@ export default function geolocationTest_GeoErr() {
                     expect().assertFail();
                 }
             }
-            await sleep(1000);
             done();
         })
 
@@ -2067,7 +2064,6 @@ export default function geolocationTest_GeoErr() {
                     expect().assertFail();
                 }
             }
-            await sleep(1000);
                 done();
         })
 
