@@ -5,6 +5,7 @@ import sendableClassFuncSetTest from './SendableClassFuncSet/SendableClassFuncSe
 import sendableInheritClassTest from './SendableClassInherit/SendableClassInherit.test';
 import tripleInheritanceTaskPoolTest from './tripleInheritanceTaskPool.test';
 import tripleInheritanceWorkerTest from './tripleInheritanceWorker.test';
+import SendableClassEcmaTest from './SendableClassEcmaTest.test';
 
 export default function testsuite() {
   sendableClassTest();
@@ -14,4 +15,5 @@ export default function testsuite() {
   sendableInheritClassTest();
   tripleInheritanceTaskPoolTest();
   tripleInheritanceWorkerTest();
+  SendableClassEcmaTest()
 }
