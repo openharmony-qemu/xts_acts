@@ -1323,7 +1323,7 @@ static napi_value SessionSetZoomRatio(napi_env env, napi_callback_info info)
 static napi_value SessionGetZoomPointInfoSize(napi_env env, napi_callback_info info)
 {
     napi_value result;
-    napi_create_int(env, ndkCamera_->zoomPointInfoSize_, &result);
+    napi_create_int32(env, ndkCamera_->zoomPointInfoSize_, &result);
     return result;
 }
 
