@@ -39,7 +39,7 @@ let driver = Driver.create();
 let openDialog = async (dialogKey: string, text: string, done: Function) => {
   try {
     await sleep(500);
-    let allowed = await driver.findComponents(ON.text('允许'));
+    let allowed = await driver.findComponent(ON.text('允许'));
     hilog.info(DOMAIN, LOG_TAG, 'first open dialog: %{public}s', JSON.stringify(allowed));
     if (allowed) {
       await allowed.click();
@@ -135,7 +135,7 @@ let closeDialog = async (dialogKey: string, done: Function) => {
   hilog.info(DOMAIN, LOG_TAG, 'closeDialog start waitForComponent');
   try {
     await sleep(500);
-    let allowed = await driver.findComponents(ON.text('允许'));
+    let allowed = await driver.findComponent(ON.text('允许'));
     hilog.info(DOMAIN, LOG_TAG, 'first open dialog: %{public}s', JSON.stringify(allowed));
     if (allowed) {
       await allowed.click();
