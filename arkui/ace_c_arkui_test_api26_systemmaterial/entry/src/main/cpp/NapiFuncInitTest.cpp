@@ -53,28 +53,28 @@ static napi_property_descriptor *GetMaterialProps(size_t *count)
         MakeMaterialProp("testCustomDialogSetSystemMaterial006", TestCustomDialogSetSystemMaterial006),
         MakeMaterialProp("testCustomDialogSetSystemMaterial007", TestCustomDialogSetSystemMaterial007),
         MakeMaterialProp(
-        "testCustomDialogSetSystemMaterialInOptions001", TestCustomDialogSetSystemMaterialInOptions001),
+            "testCustomDialogSetSystemMaterialInOptions001", TestCustomDialogSetSystemMaterialInOptions001),
         MakeMaterialProp(
-        "testCustomDialogSetSystemMaterialInOptions002", TestCustomDialogSetSystemMaterialInOptions002),
+            "testCustomDialogSetSystemMaterialInOptions002", TestCustomDialogSetSystemMaterialInOptions002),
         MakeMaterialProp(
-        "testCustomDialogSetSystemMaterialInOptions003", TestCustomDialogSetSystemMaterialInOptions003),
+            "testCustomDialogSetSystemMaterialInOptions003", TestCustomDialogSetSystemMaterialInOptions003),
         MakeMaterialProp(
-        "testCustomDialogSetSystemMaterialInOptions004", TestCustomDialogSetSystemMaterialInOptions004),
+            "testCustomDialogSetSystemMaterialInOptions004", TestCustomDialogSetSystemMaterialInOptions004),
         MakeMaterialProp(
-        "testCustomDialogSetSystemMaterialInOptions005", TestCustomDialogSetSystemMaterialInOptions005),
+            "testCustomDialogSetSystemMaterialInOptions005", TestCustomDialogSetSystemMaterialInOptions005),
         MakeMaterialProp(
-        "testCustomDialogSetSystemMaterialInOptions006", TestCustomDialogSetSystemMaterialInOptions006),
+            "testCustomDialogSetSystemMaterialInOptions006", TestCustomDialogSetSystemMaterialInOptions006),
         MakeMaterialProp(
-        "testCustomDialogSetSystemMaterialInOptions007", TestCustomDialogSetSystemMaterialInOptions007),
+            "testCustomDialogSetSystemMaterialInOptions007", TestCustomDialogSetSystemMaterialInOptions007),
         MakeMaterialProp("testNodeSystemMaterialAttrId001", TestNodeSystemMaterialAttrId001),
         MakeMaterialProp("testNodeSetSystemMaterial001", TestNodeSetSystemMaterial001),
         MakeMaterialProp("testDialogDisplayModeEnumValues001", TestDialogDisplayModeEnumValues001),
         MakeMaterialProp("testCustomDialogSetDisplayModeInSubWindow001",
-        TestCustomDialogSetDisplayModeInSubWindow001),
+            TestCustomDialogSetDisplayModeInSubWindow001),
         MakeMaterialProp("testCustomDialogSetDisplayModeInSubWindow002",
-        TestCustomDialogSetDisplayModeInSubWindow002),
+            TestCustomDialogSetDisplayModeInSubWindow002),
         MakeMaterialProp("testCustomDialogSetDisplayModeInSubWindow003",
-        TestCustomDialogSetDisplayModeInSubWindow003),
+            TestCustomDialogSetDisplayModeInSubWindow003),
     };
     *count = sizeof(desc) / sizeof(desc[0]);
     return desc;
