@@ -189,6 +189,7 @@ async function getPreConfigPhotoSession(previewOutput: camera.PreviewOutput, pho
   console.info(TAG, 'addOutput photoOutput passed.');
   await mPhotoSession.commitConfig();
   console.info(TAG, 'session commitConfig successfully.');
+  await mPhotoSession.start();
 }
 
 async function getCreateVideoSession(testName: string, previewOutput: camera.PreviewOutput,
@@ -225,6 +226,7 @@ async function getPreConfigVideoSession(testName: string, previewOutput: camera.
   console.info(TAG, testName + ' addOutput videoOutput passed.');
   await mVideoSession.commitConfig();
   console.info(TAG, testName + ' session commitConfig successfully.');
+  await mVideoSession.start();
 }
 
 async function releasePhotoSession() {

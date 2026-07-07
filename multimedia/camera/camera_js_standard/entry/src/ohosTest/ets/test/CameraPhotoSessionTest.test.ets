@@ -82,6 +82,9 @@ export default function CameraPhotoSessionTest() {
     if (data == null || data == undefined) {
       return true;
     }
+    if (Array.isArray(data) && data.length === 0) {
+      return true;
+    }
     return false;
   }
 
