@@ -74,7 +74,7 @@ export default function EnvBreakpoint() {
     /**
      * @tc.number SUB_ARKUI_API_EnvBreakpoint_0100
      * @tc.name   SUB_ARKUI_API_EnvBreakpoint_0100
-     * @tc.desc   Test addMonitor with wildcard path 'cls.*' to monitor object property changes
+     * @tc.desc   SUB_ARKUI_API_EnvBreakpoint_0100
      * @tc.size   MediumTest
      * @tc.type   Function
      * @tc.level  Level 1
@@ -95,7 +95,7 @@ export default function EnvBreakpoint() {
     /**
      * @tc.number SUB_ARKUI_API_EnvBreakpoint_0200
      * @tc.name   SUB_ARKUI_API_EnvBreakpoint_0200
-     * @tc.desc   Test addMonitor with wildcard path monitoring propB changes
+     * @tc.desc   SUB_ARKUI_API_EnvBreakpoint_0200
      * @tc.size   MediumTest
      * @tc.type   Function
      * @tc.level  Level 1
