@@ -160,7 +160,7 @@ public:
     uint32_t effectTypeSize_;
     Camera_ControlCenterEffectType* controlCenterEffectType_;
     uint32_t zoomPointInfoSize_;
-    OH_Camera_ZoomPointInfo* zoomPointInfo_;
+    OH_Camera_ZoomPointInfo* zoomPointInfo_ = nullptr;
     bool isCreatePhotoOutputWithoutSurface_;
     bool isMacroSupported_;
     bool isEnableMacro_;

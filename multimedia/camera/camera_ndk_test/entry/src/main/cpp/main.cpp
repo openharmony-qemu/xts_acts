@@ -1320,6 +1320,13 @@ static napi_value SessionSetZoomRatio(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value SessionGetZoomPointInfoSize(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    napi_create_int(env, ndkCamera_->zoomPointInfoSize_, &result);
+    return result;
+}
+
 static napi_value SessionGetZoomPointInfos(napi_env env, napi_callback_info info)
 {
     size_t argc = 2;
@@ -4207,6 +4214,8 @@ static napi_value Init(napi_env env, napi_value exports)
         { "sessionSetFocusMode", nullptr, SessionSetFocusMode, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "sessionSetFocusPoint", nullptr, SessionSetFocusPoint, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "sessionGetFocusPoint", nullptr, SessionGetFocusPoint, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "sessionGetZoomPointInfoSize", nullptr, SessionGetZoomPointInfoSize,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
         { "sessionGetZoomRatioRange", nullptr, SessionGetZoomRatioRange, nullptr, nullptr, nullptr,
             napi_default, nullptr },
         { "sessionGetZoomRatio", nullptr, SessionGetZoomRatio, nullptr, nullptr, nullptr, napi_default, nullptr },
