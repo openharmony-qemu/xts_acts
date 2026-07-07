@@ -20,6 +20,7 @@ group("thirdparty") {
       "musl:ActsThirdPartyMuslTest",
       "musl32:ActsThirdPartyMusl32Test",
       "fdsan:ActsThirdPartyFdsanTest",
+      "muslex:ActsThirdPartyMuslExTest",
     ]
 
     if (current_cpu == "arm64") {
