@@ -25,13 +25,13 @@ struct ExceptionPromptV2Example {
           Text('测试5: 动态更新属性')
             .fontSize(16)
             .fontWeight(FontWeight.Medium)
-            .margin({ top: 20 })
-
+            .margin({ top: 10 })
           DynamicUpdateTest()
         }
         .alignItems(HorizontalAlign.Center)
         .width('100%')
-        .margin({ top: 50 })
+        .height('100%')
+
       }
     }
   }
@@ -47,7 +47,7 @@ struct DynamicUpdateTest {
       ExceptionPromptV2({
         options: new PromptOptionsV2({
           marginType: MarginTypeV2.DEFAULT_MARGIN,
-          marginTop: 10,
+          marginTop: 160,
           tip: this.dynamicTip,
           isShown: this.dynamicIsShown
         })
