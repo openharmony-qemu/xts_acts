@@ -19,12 +19,16 @@ import events_emitter from '@ohos.events.emitter';
 @Component
 struct AccessibilityRolePage {
   @State accessibilityRoleValue: SecurityComponentRoleType | undefined = undefined
-
+  @State description: string | Resource = ''
+  
   private stateChangeCallBack = (eventData:events_emitter.EventData) => {
     if (eventData != null && eventData.data != undefined) {
       console.debug('====>accessibilityRole page state change called:' + JSON.stringify(eventData));
       if (eventData.data.accessibilityRole != null) {
         this.accessibilityRoleValue = eventData.data.accessibilityRole;
+      }
+      if (eventData.data.description != null) {
+        this.description = eventData.data.description;
       }
     }
   }
@@ -65,6 +69,7 @@ struct AccessibilityRolePage {
             }
           })
           .accessibilityRole(this.accessibilityRoleValue)
+          .accessibilityDescription(this.description)
           .id('keyAccessibilityRole')
       }.width('100%').alignItems(HorizontalAlign.Center)
     }.height('100%')
