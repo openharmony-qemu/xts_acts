@@ -509,7 +509,7 @@ export default function RangingTest() {
     });
 
     /**
-     * @tc.name testStartRangingErrcode34900052
+     * @tc.name testStartRangingErrcode401
      * @tc.number SUB_COMMUNICATION_CONNECTIVITYKIT_RANGING_STARTRANGING_0400
      * @tc.desc 测距服务能力不支持
      * @tc.type FUNCTION
@@ -517,22 +517,22 @@ export default function RangingTest() {
      * @tc.level LEVEL1
      * @co.authored.by.agent
      */
-    it('testStartRangingErrcode34900052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testStartRangingErrcode401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let params: ranging.RangingParams = {
         deviceId: "11:22:33:44:55:67",
         capabilityType: 0
       };
       try {
         ranging.startRanging(params, (result: ranging.RangingResult) => {
-          console.info("[fusion_js] testStartRangingErrcode34900052 result is: " + JSON.stringify(result));
+          console.info("[fusion_js] testStartRangingErrcode401 result is: " + JSON.stringify(result));
           expect().assertFail();
         });
-        console.info("[fusion_js] testStartRangingErrcode34900052 callback should not be called.");
+        console.info("[fusion_js] testStartRangingErrcode401 callback should not be called.");
         expect().assertFail();
         done();
       } catch (err) {
         let error: BusinessError = err as BusinessError;
-        console.info("[fusion_js] testStartRangingErrcode34900052 error: " + JSON.stringify(error));
+        console.info("[fusion_js] testStartRangingErrcode401 error: " + JSON.stringify(error));
         expect(error.code).assertEqual(401);
         done();
       }
@@ -543,6 +543,7 @@ export default function RangingTest() {
     /**
      * @tc.name testStartRangingParamEnum002
      * @tc.number SUB_COMMUNICATION_CONNECTIVITYKIT_RANGING_STARTRANGING_0500
+     * @tc.desc 测距服务能力不支持, 能力值设为-1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
@@ -590,8 +591,8 @@ export default function RangingTest() {
         let handle: number = await ranging.startPassiveRanging(ranging.RangingTypes.NEARLINK_HADM);
         console.info("[fusion_js] testStartPassiveRangingParam001 handle is: " + handle);
         expect(typeof handle).assertEqual('number');
-        ranging.stopPassiveRanging(handle,ranging.RangingTypes.NEARLINK_HADM)
-        await sleep(500)
+        ranging.stopPassiveRanging(handle,ranging.RangingTypes.NEARLINK_HADM);
+        await sleep(500);
         done();
       } catch (err) {
         console.info("[fusion_js] testStartPassiveRangingParam001 error: " + JSON.stringify(err));
@@ -676,7 +677,7 @@ export default function RangingTest() {
     });
 
     /**
-     * @tc.name testStopPassiveRangingErrcode34900054
+     * @tc.name testStopPassiveRangingErrcode401
      * @tc.number SUB_COMMUNICATION_CONNECTIVITYKIT_RANGING_STOPPASSIVERANGING_0400
      * @tc.desc 测距服务能力不支持
      * @tc.type FUNCTION
@@ -684,18 +685,18 @@ export default function RangingTest() {
      * @tc.level LEVEL1
      * @co.authored.by.agent
      */
-    it('testStopPassiveRangingErrcode34900054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testStopPassiveRangingErrcode401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         let handle: number = await ranging.startPassiveRanging(ranging.RangingTypes.NEARLINK_HADM);
         console.info("[fusion_js] testStartPassiveRanging handle is: " + handle);
-        console.info("[fusion_js] testStopPassiveRangingErrcode34900054 handle value is: " + handle);
+        console.info("[fusion_js] testStopPassiveRangingErrcode401 handle value is: " + handle);
         ranging.stopPassiveRanging(handle, -1);
-        console.info("[fusion_js] testStopPassiveRangingErrcode34900054 should fail.");
+        console.info("[fusion_js] testStopPassiveRangingErrcode401 should fail.");
         expect().assertFail();
         done();
       } catch (err) {
         let error: BusinessError = err as BusinessError;
-        console.info("[fusion_js] testStopPassiveRangingErrcode34900054 error: " + JSON.stringify(error));
+        console.info("[fusion_js] testStopPassiveRangingErrcode401 error: " + JSON.stringify(error));
         expect(error.code).assertEqual(401);
         done();
       }
