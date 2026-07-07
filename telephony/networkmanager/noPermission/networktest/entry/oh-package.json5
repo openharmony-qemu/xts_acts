@@ -20,6 +20,7 @@
   "main": "",
   "version": "1.0.0",
   "dependencies": {
-    "libentry.so": "file:./src/ohosTest/cpp/types/libentry"
+    "libentry.so": "file:./src/ohosTest/cpp/types/libentry",
+    "libtrafficfilter": "../library"
   }
 }
