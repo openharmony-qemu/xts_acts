@@ -338,8 +338,8 @@ export default function geoLocationManager_nop_test() {
      */
     it("geolocation_locationChange_nop_test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let requestInfo: geolocation.LocationRequest = {
-        'priority': geoLocation.LocationRequestPriority.FIRST_FIX,
-        'scenario': geoLocation.LocationRequestScenario.UNSET,
+        'priority': geolocation.LocationRequestPriority.FIRST_FIX,
+        'scenario': geolocation.LocationRequestScenario.UNSET,
         'timeInterval': 1,
         'distanceInterval': 0,
         'maxAccuracy': 0
