@@ -167,21 +167,24 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(A2dpSourceProfile){
-        try {
-          let devices : Array<string> = A2dpSourceProfile.getConnectedDevices();
-          console.info("address of connected devices list:" + devices);
-          expect(Array.isArray(devices)).assertTrue();
-        } catch (err) {
-          console.error("bluetooth getConnectedDevices errCode:" + err.code + ",errMessage:" + err.message);
-          if (err.code === '801' || err.code === '2900004') {
-            console.info('[bluetooth_js]getConnectedDevices is not support or profile not support');
-            expect(err.code === '801' || err.code === '2900004').assertTrue();
-          } else {
-            expect().assertFail();
-          };
-        };
+      if(A2dpSourceProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 A2dpSourceProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        let devices : Array<string> = A2dpSourceProfile.getConnectedDevices();
+        console.info("address of connected devices list:" + devices);
+        expect(Array.isArray(devices)).assertTrue();
+      } catch (err) {
+        console.error("bluetooth getConnectedDevices errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === '801' || err.code === '2900004') {
+          console.info('[bluetooth_js]getConnectedDevices is not support or profile not support');
+          expect(err.code === '801' || err.code === '2900004').assertTrue();
+        } else {
+          expect().assertFail();
+        };
+      }
       done();
     });
 
@@ -194,21 +197,24 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(A2dpSourceProfile){
-        try {
-          let state : bluetooth.ProfileConnectionState = A2dpSourceProfile.getConnectionState("11:22:33:AA:BB:FF");
-          console.info("the connection state:" + state);
-          expect().assertFail();
-        } catch (err) {
-          console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
-          if (err.code === '801' || err.code === '2900004') {
-            console.info('[bluetooth_js]getConnectionState is not support or profile not support');
-            expect(err.code === '801' || err.code === '2900004').assertTrue();
-          } else {
-            expect(err.code).assertEqual('2900099');
-          };
-        };
+      if(A2dpSourceProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 A2dpSourceProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        let state : bluetooth.ProfileConnectionState = A2dpSourceProfile.getConnectionState("11:22:33:AA:BB:FF");
+        console.info("the connection state:" + state);
+        expect().assertFail();
+      } catch (err) {
+        console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === '801' || err.code === '2900004') {
+          console.info('[bluetooth_js]getConnectionState is not support or profile not support');
+          expect(err.code === '801' || err.code === '2900004').assertTrue();
+        } else {
+          expect(err.code).assertEqual('2900099');
+        };
+      }
       done();
     });
 
@@ -221,20 +227,23 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(A2dpSourceProfile){
-        try {
-          A2dpSourceProfile.on('connectionStateChange', onReceiveEvent);
-          A2dpSourceProfile.off('connectionStateChange', onReceiveEvent);
-        } catch (err) {
-          console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
-          if (err.code === '801') {
-            console.info('[bluetooth_js]connectionStateChange is not support');
-            expect(err.code).assertEqual('801');
-          } else {
-            expect().assertFail();
-          };
-        };
+      if(A2dpSourceProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 A2dpSourceProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        A2dpSourceProfile.on('connectionStateChange', onReceiveEvent);
+        A2dpSourceProfile.off('connectionStateChange', onReceiveEvent);
+      } catch (err) {
+        console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === '801') {
+          console.info('[bluetooth_js]connectionStateChange is not support');
+          expect(err.code).assertEqual('801');
+        } else {
+          expect().assertFail();
+        };
+      }
       done();
     });
 
@@ -247,20 +256,23 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(A2dpSourceProfile){
-        try {
-          A2dpSourceProfile.on('connectionStateChange', onReceiveEvent);
-          A2dpSourceProfile.off('connectionStateChange');
-        } catch (err) {
-          console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
-          if (err.code === '801') {
-            console.info('[bluetooth_js]connectionStateChange is not support');
-            expect(err.code).assertEqual('801');
-          } else {
-            expect().assertFail();
-          };
-        };
+      if(A2dpSourceProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 A2dpSourceProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        A2dpSourceProfile.on('connectionStateChange', onReceiveEvent);
+        A2dpSourceProfile.off('connectionStateChange');
+      } catch (err) {
+        console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === '801') {
+          console.info('[bluetooth_js]connectionStateChange is not support');
+          expect(err.code).assertEqual('801');
+        } else {
+          expect().assertFail();
+        };
+      }
       done();
     });
 
@@ -273,15 +285,18 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(A2dpSourceProfile){
-        try {
-          A2dpSourceProfile.on('connectionStateChange', null);
-          expect().assertFail();
-        } catch (err) {
-          console.info("connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
-          expect(err.code).assertEqual('401');
-        };
+      if(A2dpSourceProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 A2dpSourceProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        A2dpSourceProfile.on('connectionStateChange', null);
+        expect().assertFail();
+      } catch (err) {
+        console.info("connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
+        expect(err.code).assertEqual('401');
+      }
       done();
     });
 
@@ -294,15 +309,18 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(A2dpSourceProfile){
-        try {
-          A2dpSourceProfile.off('connectionStateChange', null);
-          expect().assertFail();
-        } catch (err) {
-          console.info("connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
-          expect(err.code).assertEqual('401');
-        }
+      if(A2dpSourceProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 A2dpSourceProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        A2dpSourceProfile.off('connectionStateChange', null);
+        expect().assertFail();
+      } catch (err) {
+        console.info("connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
+        expect(err.code).assertEqual('401');
+      }
       done();
     });
 
@@ -315,21 +333,24 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(HandsFreeAudioGatewayProfile){
-        try {
-          let devices : Array<string> = HandsFreeAudioGatewayProfile.getConnectedDevices();
-          console.info("address of connected devices list:" + devices);
-          expect(Array.isArray(devices)).assertTrue();
-        } catch (err) {
-          console.error("bluetooth getConnectedDevices errCode:" + err.code + ",errMessage:" + err.message);
-          if (err.code === '801' || err.code === '2900004') {
-            console.info('[bluetooth_js]getConnectedDevices is not support or profile not support');
-            expect(err.code === '801' || err.code === '2900004').assertTrue();
-          } else {
-            expect().assertFail();
-          };
-        };
+      if(HandsFreeAudioGatewayProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 HandsFreeAudioGatewayProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        let devices : Array<string> = HandsFreeAudioGatewayProfile.getConnectedDevices();
+        console.info("address of connected devices list:" + devices);
+        expect(Array.isArray(devices)).assertTrue();
+      } catch (err) {
+        console.error("bluetooth getConnectedDevices errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === '801' || err.code === '2900004') {
+          console.info('[bluetooth_js]getConnectedDevices is not support or profile not support');
+          expect(err.code === '801' || err.code === '2900004').assertTrue();
+        } else {
+          expect().assertFail();
+        };
+      }
       done();
     });
 
@@ -342,21 +363,24 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(HandsFreeAudioGatewayProfile){
-        try {
-          let state : bluetooth.ProfileConnectionState = HandsFreeAudioGatewayProfile.getConnectionState("11:22:33:AA:BB:FF");
-          console.info("the connection state:" + state);
-          expect().assertFail();
-        } catch (err) {
-          console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
-          if (err.code === '801') {
-            console.info('[bluetooth_js]getConnectionState is not support');
-            expect(err.code).assertEqual('801');
-          } else {
-            expect(err.code).assertEqual('2900099');
-          };
-        };
+      if(HandsFreeAudioGatewayProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 HandsFreeAudioGatewayProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        let state : bluetooth.ProfileConnectionState = HandsFreeAudioGatewayProfile.getConnectionState("11:22:33:AA:BB:FF");
+        console.info("the connection state:" + state);
+        expect().assertFail();
+      } catch (err) {
+        console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === '801') {
+          console.info('[bluetooth_js]getConnectionState is not support');
+          expect(err.code).assertEqual('801');
+        } else {
+          expect(err.code).assertEqual('2900099');
+        };
+      }
       done();
     });
 
@@ -369,15 +393,18 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(HandsFreeAudioGatewayProfile){
-        try {
-          HandsFreeAudioGatewayProfile.on('connectionStateChange', onReceiveEvent1);
-          HandsFreeAudioGatewayProfile.off('connectionStateChange', onReceiveEvent1);
-        } catch (err) {
-          console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
-          expect().assertFail();
-        }
+      if(HandsFreeAudioGatewayProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 HandsFreeAudioGatewayProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        HandsFreeAudioGatewayProfile.on('connectionStateChange', onReceiveEvent1);
+        HandsFreeAudioGatewayProfile.off('connectionStateChange', onReceiveEvent1);
+      } catch (err) {
+        console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
+        expect().assertFail();
+      }
       done();
     });
 
@@ -390,15 +417,18 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(HandsFreeAudioGatewayProfile){
-        try {
-          HandsFreeAudioGatewayProfile.on('connectionStateChange', onReceiveEvent);
-          HandsFreeAudioGatewayProfile.off('connectionStateChange');
-        } catch (err) {
-          console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
-          expect().assertFail();
-        };
+      if(HandsFreeAudioGatewayProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 HandsFreeAudioGatewayProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        HandsFreeAudioGatewayProfile.on('connectionStateChange', onReceiveEvent);
+        HandsFreeAudioGatewayProfile.off('connectionStateChange');
+      } catch (err) {
+        console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
+        expect().assertFail();
+      }
       done();
     });
 
@@ -411,21 +441,24 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(HidHostProfile){
-        try {
-          let devices : Array<string> = HidHostProfile.getConnectedDevices();
-          console.info("address of connected devices list:" + devices);
-          expect(Array.isArray(devices)).assertTrue();
-        } catch (err) {
-          console.error("bluetooth getConnectedDevices errCode:" + err.code + ",errMessage:" + err.message);
-          if (err.code === '801' || err.code === '2900004') {
-            console.info('[bluetooth_js]getConnectedDevices is not support or profile not support');
-            expect(err.code === '801' || err.code === '2900004').assertTrue();
-          } else {
-            expect().assertFail();
-          };
-        };
+      if(HidHostProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 HidHostProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        let devices : Array<string> = HidHostProfile.getConnectedDevices();
+        console.info("address of connected devices list:" + devices);
+        expect(Array.isArray(devices)).assertTrue();
+      } catch (err) {
+        console.error("bluetooth getConnectedDevices errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === '801' || err.code === '2900004') {
+          console.info('[bluetooth_js]getConnectedDevices is not support or profile not support');
+          expect(err.code === '801' || err.code === '2900004').assertTrue();
+        } else {
+          expect().assertFail();
+        };
+      }
       done();
     });
 
@@ -438,21 +471,24 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(HidHostProfile){
-        try {
-          let state : bluetooth.ProfileConnectionState = HidHostProfile.getConnectionState("11:22:33:AA:BB:FF");
-          console.info("the connection state:" + state);
-          expect().assertFail();
-        } catch (err) {
-          console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
-          if (err.code === '801') {
-            console.info('[bluetooth_js]getConnectionState is not support');
-            expect(err.code).assertEqual('801');
-          } else {
-            expect(err.code).assertEqual('2900099');
-          }
-        }
+      if(HidHostProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 HidHostProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        let state : bluetooth.ProfileConnectionState = HidHostProfile.getConnectionState("11:22:33:AA:BB:FF");
+        console.info("the connection state:" + state);
+        expect().assertFail();
+      } catch (err) {
+        console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === '801') {
+          console.info('[bluetooth_js]getConnectionState is not support');
+          expect(err.code).assertEqual('801');
+        } else {
+          expect(err.code).assertEqual('2900099');
+        }
+      }
       done();
     });
 
@@ -465,15 +501,18 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(HidHostProfile){
-        try {
-          HidHostProfile.on('connectionStateChange', onReceiveEvent);
-          HidHostProfile.off('connectionStateChange', onReceiveEvent);
-        } catch (err) {
-          console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
-          expect().assertFail();
-        };
+      if(HidHostProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 HidHostProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        HidHostProfile.on('connectionStateChange', onReceiveEvent);
+        HidHostProfile.off('connectionStateChange', onReceiveEvent);
+      } catch (err) {
+        console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
+        expect().assertFail();
+      }
       done();
     });
 
@@ -486,15 +525,18 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(HidHostProfile){
-        try {
-          HidHostProfile.on('connectionStateChange', onReceiveEvent);
-          HidHostProfile.off('connectionStateChange');
-        } catch (err) {
-          console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
-          expect().assertFail();
-        };
+      if(HidHostProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 HidHostProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        HidHostProfile.on('connectionStateChange', onReceiveEvent);
+        HidHostProfile.off('connectionStateChange');
+      } catch (err) {
+        console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
+        expect().assertFail();
+      }
       done();
     });
 
@@ -507,21 +549,24 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(PanProfile){
-        try {
-          let devices : Array<string> = PanProfile.getConnectedDevices();
-          console.info("address of connected devices list:" + devices);
-          expect(Array.isArray(devices)).assertTrue();
-        } catch (err) {
-          console.error("bluetooth getConnectedDevices errCode:" + err.code + ",errMessage:" + err.message);
-          if (err.code === '801' || err.code === '2900004') {
-            console.info('[bluetooth_js]getConnectedDevices is not support or profile not support');
-            expect(err.code === '801' || err.code === '2900004').assertTrue();
-          } else {
-            expect().assertFail();
-          };
-        };
+      if(PanProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 PanProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        let devices : Array<string> = PanProfile.getConnectedDevices();
+        console.info("address of connected devices list:" + devices);
+        expect(Array.isArray(devices)).assertTrue();
+      } catch (err) {
+        console.error("bluetooth getConnectedDevices errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === '801' || err.code === '2900004') {
+          console.info('[bluetooth_js]getConnectedDevices is not support or profile not support');
+          expect(err.code === '801' || err.code === '2900004').assertTrue();
+        } else {
+          expect().assertFail();
+        };
+      }
       done();
     });
     /**
@@ -533,21 +578,24 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(PanProfile){
-        try {
-          let state : bluetooth.ProfileConnectionState = PanProfile.getConnectionState("11:22:33:AA:BB:FF");
-          console.info("the connection state:" + state);
-          expect(state === 0 || state === 1 || state === 2).assertTrue();
-        } catch (err) {
-          console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
-          if (err.code === '801') {
-            console.info('[bluetooth_js]getConnectionState is not support');
-            expect(err.code).assertEqual('801');
-          } else {
-            expect().assertFail();
-          };
-        };
+      if(PanProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 PanProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        let state : bluetooth.ProfileConnectionState = PanProfile.getConnectionState("11:22:33:AA:BB:FF");
+        console.info("the connection state:" + state);
+        expect(state === 0 || state === 1 || state === 2).assertTrue();
+      } catch (err) {
+        console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === '801') {
+          console.info('[bluetooth_js]getConnectionState is not support');
+          expect(err.code).assertEqual('801');
+        } else {
+          expect().assertFail();
+        };
+      }
       done();
     });
 
@@ -560,15 +608,18 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(PanProfile){
-        try {
-          PanProfile.on('connectionStateChange', onReceiveEvent);
-          PanProfile.off('connectionStateChange', onReceiveEvent);
-        } catch (err) {
-          console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
-          expect().assertFail();
-        };
+      if(PanProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 PanProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        PanProfile.on('connectionStateChange', onReceiveEvent);
+        PanProfile.off('connectionStateChange', onReceiveEvent);
+      } catch (err) {
+        console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
+        expect().assertFail();
+      }
       done();
     });
 
@@ -581,15 +632,18 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(PanProfile){
-        try {
-          PanProfile.on('connectionStateChange', onReceiveEvent);
-          PanProfile.off('connectionStateChange');
-        } catch (err) {
-          console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
-          expect().assertFail();
-        };
+      if(PanProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 PanProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        PanProfile.on('connectionStateChange', onReceiveEvent);
+        PanProfile.off('connectionStateChange');
+      } catch (err) {
+        console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
+        expect().assertFail();
+      }
       done();
     });
     /**
@@ -667,7 +721,7 @@ export default function btBaseProfileTest() {
     /**
      * @tc.name SUB_COMMUNICATION_BLUETOOTH_CREATE_0400
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_CREATE_0400
-     * @tc.desc 测试 pan.createPanProfile 
+     * @tc.desc 测试 pan.createPanProfile
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
@@ -778,21 +832,24 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(A2dpSourceProfile){
-        try {
-          let state : bluetooth.ProfileConnectionState = A2dpSourceProfile.getConnectionState("");
-          console.info("the connection state:" + state);
-          expect().assertFail();
-        } catch (err) {
-          console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
-          if (err.code === '801' || err.code === '2900004') {
-            console.info('[bluetooth_js]getConnectionState is not support or profile not support');
-            expect(err.code === '801' || err.code === '2900004').assertTrue();
-          } else {
-            expect(err.code).assertEqual('401');
-          };
-        };
+      if(A2dpSourceProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 A2dpSourceProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        let state : bluetooth.ProfileConnectionState = A2dpSourceProfile.getConnectionState("");
+        console.info("the connection state:" + state);
+        expect().assertFail();
+      } catch (err) {
+        console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === '801' || err.code === '2900004') {
+          console.info('[bluetooth_js]getConnectionState is not support or profile not support');
+          expect(err.code === '801' || err.code === '2900004').assertTrue();
+        } else {
+          expect(err.code).assertEqual('401');
+        };
+      }
       done();
     });
     /**
@@ -804,22 +861,25 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(A2dpSourceProfile){
-        try {
-          let state : bluetooth.ProfileConnectionState = A2dpSourceProfile.getConnectionState(null);
-          console.info("the connection state:" + state);
-          // 预期报错401，实际正常调用，返回undefined，提单DTS2026070774519
-          expect(state === undefined).assertTrue();
-        } catch (err) {
-          console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
-          if (err.code === '801' || err.code === '2900004') {
-            console.info('[bluetooth_js]getConnectionState is not support or profile not support');
-            expect(err.code === '801' || err.code === '2900004').assertTrue();
-          } else {
-            expect(err.code).assertEqual('401');
-          };
-        };
+      if(A2dpSourceProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 A2dpSourceProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        let state : bluetooth.ProfileConnectionState = A2dpSourceProfile.getConnectionState(null);
+        console.info("the connection state:" + state);
+        // 预期报错401，实际正常调用，返回undefined，提单DTS2026070774519
+        expect(state === undefined).assertTrue();
+      } catch (err) {
+        console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === '801' || err.code === '2900004') {
+          console.info('[bluetooth_js]getConnectionState is not support or profile not support');
+          expect(err.code === '801' || err.code === '2900004').assertTrue();
+        } else {
+          expect(err.code).assertEqual('401');
+        };
+      }
       done();
     });
     /**
@@ -831,22 +891,25 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_ADD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(A2dpSourceProfile){
-        try {
-          let state : bluetooth.ProfileConnectionState = A2dpSourceProfile.getConnectionState(undefined);
-          console.info("the connection state:" + state);
-          // 预期报错401，实际正常调用，返回undefined，提单DTS2026070774519
-          expect(state === undefined).assertTrue();
-        } catch (err) {
-          console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
-          if (err.code === '801' || err.code === '2900004') {
-            console.info('[bluetooth_js]getConnectionState is not support or profile not support');
-            expect(err.code === '801' || err.code === '2900004').assertTrue();
-          } else {
-            expect(err.code).assertEqual('401');
-          };
-        };
+      if(A2dpSourceProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 A2dpSourceProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        let state : bluetooth.ProfileConnectionState = A2dpSourceProfile.getConnectionState(undefined);
+        console.info("the connection state:" + state);
+        // 预期报错401，实际正常调用，返回undefined，提单DTS2026070774519
+        expect(state === undefined).assertTrue();
+      } catch (err) {
+        console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === '801' || err.code === '2900004') {
+          console.info('[bluetooth_js]getConnectionState is not support or profile not support');
+          expect(err.code === '801' || err.code === '2900004').assertTrue();
+        } else {
+          expect(err.code).assertEqual('401');
+        };
+      }
       done();
     });
 
@@ -859,20 +922,23 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_ADD_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(A2dpSourceProfile){
-        try {
-          A2dpSourceProfile.on(null, onReceiveEvent);
-          expect().assertFail();
-        } catch (err) {
-          console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
-          if (err.code === '801') {
-            console.info('[bluetooth_js]connectionStateChange is not support');
-            expect(err.code).assertEqual('801');
-          } else {
-            expect(err.code).assertEqual('401');
-          };
-        };
+      if(A2dpSourceProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 A2dpSourceProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        A2dpSourceProfile.on(null, onReceiveEvent);
+        expect().assertFail();
+      } catch (err) {
+        console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === '801') {
+          console.info('[bluetooth_js]connectionStateChange is not support');
+          expect(err.code).assertEqual('801');
+        } else {
+          expect(err.code).assertEqual('401');
+        };
+      }
       done();
     });
     /**
@@ -884,20 +950,23 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_ADD_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(A2dpSourceProfile){
-        try {
-          A2dpSourceProfile.on(undefined, onReceiveEvent);
-          expect().assertFail();
-        } catch (err) {
-          console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
-          if (err.code === '801') {
-            console.info('[bluetooth_js]connectionStateChange is not support');
-            expect(err.code).assertEqual('801');
-          } else {
-            expect(err.code).assertEqual('401');
-          };
-        };
+      if(A2dpSourceProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 A2dpSourceProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        A2dpSourceProfile.on(undefined, onReceiveEvent);
+        expect().assertFail();
+      } catch (err) {
+        console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === '801') {
+          console.info('[bluetooth_js]connectionStateChange is not support');
+          expect(err.code).assertEqual('801');
+        } else {
+          expect(err.code).assertEqual('401');
+        };
+      }
       done();
     });
 
@@ -910,20 +979,23 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_ADD_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(A2dpSourceProfile){
-        try {
-          A2dpSourceProfile.off(null, onReceiveEvent);
-          expect().assertFail();
-        } catch (err) {
-          console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
-          if (err.code === '801') {
-            console.info('[bluetooth_js]connectionStateChange is not support');
-            expect(err.code).assertEqual('801');
-          } else {
-            expect(err.code).assertEqual('401');
-          };
-        };
+      if(A2dpSourceProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 A2dpSourceProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        A2dpSourceProfile.off(null, onReceiveEvent);
+        expect().assertFail();
+      } catch (err) {
+        console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === '801') {
+          console.info('[bluetooth_js]connectionStateChange is not support');
+          expect(err.code).assertEqual('801');
+        } else {
+          expect(err.code).assertEqual('401');
+        };
+      }
       done();
     });
 
@@ -936,20 +1008,23 @@ export default function btBaseProfileTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_ADD_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      if(A2dpSourceProfile){
-        try {
-          A2dpSourceProfile.off(undefined, onReceiveEvent);
-          expect().assertFail();
-        } catch (err) {
-          console.error("bluetooth off errCode:" + err.code + ",errMessage:" + err.message);
-          if (err.code === '801') {
-            console.info('[bluetooth_js]connectionStateChange is not support');
-            expect(err.code).assertEqual('801');
-          } else {
-            expect(err.code).assertEqual('401');
-          };
-        };
+      if(A2dpSourceProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 A2dpSourceProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        A2dpSourceProfile.off(undefined, onReceiveEvent);
+        expect().assertFail();
+      } catch (err) {
+        console.error("bluetooth off errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === '801') {
+          console.info('[bluetooth_js]connectionStateChange is not support');
+          expect(err.code).assertEqual('801');
+        } else {
+          expect(err.code).assertEqual('401');
+        };
+      }
       done();
     });
 
@@ -963,21 +1038,24 @@ export default function btBaseProfileTest() {
      * @co.authored.by.agent
      */
     it('SUB_COMMUNICATION_BLUETOOTH_PAN_ISPANSUPPORTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
-      if(PanProfile){
-        try {
-          let result: boolean = PanProfile.isPanSupported();
-          expect(typeof result).assertEqual('boolean');
-          console.info('[bt_arkts] isPanSupported result is ' + JSON.stringify(result));
-        } catch (err) {
-          console.info("[bt_arkts] isPanSupported error: " + err.code + ",errMessage:" + err.message);
-          if (err.code === 801) {
-            console.info("设备 is not support.");
-            expect(err.code).assertEqual(801);
-          } else {
-            expect().assertFail();
-          };
-        };
+      if(PanProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 PanProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        let result: boolean = PanProfile.isPanSupported();
+        expect(typeof result).assertEqual('boolean');
+        console.info('[bt_arkts] isPanSupported result is ' + JSON.stringify(result));
+      } catch (err) {
+        console.info("[bt_arkts] isPanSupported error: " + err.code + ",errMessage:" + err.message);
+        if (err.code === 801) {
+          console.info("设备 is not support.");
+          expect(err.code).assertEqual(801);
+        } else {
+          expect().assertFail();
+        };
+      }
       done();
     });
     /**
@@ -990,21 +1068,24 @@ export default function btBaseProfileTest() {
      * @co.authored.by.agent
      */
     it('SUB_COMMUNICATION_BLUETOOTH_PAN_ISTETHERINGON_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
-      if(PanProfile){
-        try {
-          let result: boolean = PanProfile.isTetheringOn();
-          console.info('[bt_arkts] isTetheringOn result is ' + JSON.stringify(result));
-          expect(typeof result).assertEqual('boolean');
-        } catch (err) {
-          console.info("[bt_arkts] isTetheringOn error: " + err.code + ",errMessage:" + err.message);
-          if (err.code === '801') {
-            console.info("设备 is not support.");
-            expect(err.code).assertEqual('801');
-          } else {
-            expect().assertFail();
-          };
-        };
+      if(PanProfile  === undefined){
+        console.info('[bluetooth_js]bluetooth 不支持 该实例对象 PanProfile 跳过用例');
+        done();
+        return;
       };
+      try {
+        let result: boolean = PanProfile.isTetheringOn();
+        console.info('[bt_arkts] isTetheringOn result is ' + JSON.stringify(result));
+        expect(typeof result).assertEqual('boolean');
+      } catch (err) {
+        console.info("[bt_arkts] isTetheringOn error: " + err.code + ",errMessage:" + err.message);
+        if (err.code === '801') {
+          console.info("设备 is not support.");
+          expect(err.code).assertEqual('801');
+        } else {
+          expect().assertFail();
+        };
+      }
       done();
     });
   })
