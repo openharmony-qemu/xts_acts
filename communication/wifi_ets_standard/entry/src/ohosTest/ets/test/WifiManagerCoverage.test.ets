@@ -438,6 +438,7 @@ export default function wifiManagerCoverage() {
         let result = await wifiManager.addCandidateConfig(config);
         console.log(`${caseName} get result success `, result);
         expect(typeof result === 'number').assertTrue();
+        await wifiManager.removeCandidateConfig(result);
       } catch (error) {
         console.info(`${caseName} error`, JSON.stringify(error));
         expect().assertFail();
@@ -470,6 +471,7 @@ export default function wifiManagerCoverage() {
         let result = await wifiManager.addCandidateConfig(config);
         console.log(`${caseName} get result success `, result);
         expect(typeof result === 'number').assertTrue();
+        await wifiManager.removeCandidateConfig(result);
       } catch (error) {
         console.info(`${caseName} error`, JSON.stringify(error));
         expect().assertFail();
@@ -502,6 +504,7 @@ export default function wifiManagerCoverage() {
         let result = await wifiManager.addCandidateConfig(config);
         console.log(`${caseName} get result success `, result);
         expect(typeof result === 'number').assertTrue();
+        await wifiManager.removeCandidateConfig(result);
       } catch (error) {
         console.info(`${caseName} error`, JSON.stringify(error));
         expect().assertFail();
@@ -534,6 +537,7 @@ export default function wifiManagerCoverage() {
         let result = await wifiManager.addCandidateConfig(config);
         console.log(`${caseName} get result success `, result);
         expect(typeof result === 'number').assertTrue();
+        await wifiManager.removeCandidateConfig(result);
       } catch (error) {
         console.info(`${caseName} error`, JSON.stringify(error));
         expect().assertFail();
@@ -598,6 +602,7 @@ export default function wifiManagerCoverage() {
         let result = await wifiManager.addCandidateConfig(config);
         console.log(`${caseName} get result success `, result);
         expect(typeof result === 'number').assertTrue();
+        await wifiManager.removeCandidateConfig(result);
       } catch (error) {
         console.info(`${caseName} error`, JSON.stringify(error));
         expect().assertFail();
@@ -647,6 +652,7 @@ export default function wifiManagerCoverage() {
         let result = await wifiManager.addCandidateConfig(config);
         console.log(`${caseName} get result success `, result);
         expect(typeof result === 'number').assertTrue();
+        await wifiManager.removeCandidateConfig(result);
       } catch (error) {
         console.info(`${caseName} error`, JSON.stringify(error));
         expect().assertFail();
@@ -728,6 +734,7 @@ export default function wifiManagerCoverage() {
         let result = await wifiManager.addCandidateConfig(config);
         console.log(`${caseName} get result success `, result);
         expect(typeof result === 'number').assertTrue();
+        await wifiManager.removeCandidateConfig(result);
       } catch (error) {
         console.info(`${caseName} error`, JSON.stringify(error));
         expect().assertFail();
@@ -802,6 +809,7 @@ export default function wifiManagerCoverage() {
         let result = await wifiManager.addCandidateConfig(config);
         console.log(`${caseName} get result success `, result);
         expect(typeof result === 'number').assertTrue();
+        await wifiManager.removeCandidateConfig(result);
       } catch (error) {
         console.info(`${caseName} error`, JSON.stringify(error));
         expect().assertFail();
@@ -1528,13 +1536,14 @@ export default function wifiManagerCoverage() {
           randomMacType: 0,
           randomMacAddr: "00:11:22:33:44:55"
         }
-        wifiManager.addCandidateConfig(config, (err: BusinessError, data: number) => {
+        wifiManager.addCandidateConfig(config, async(err: BusinessError, data: number) => {
           if (err) {
             console.info(`${caseName} error`, JSON.stringify(err));
             expect().assertFail();
           } else {
             console.log(`${caseName} get result success `, data);
             expect(typeof data).assertEqual('number');
+            await wifiManager.removeCandidateConfig(data);
           }
           done();
         });
@@ -1567,13 +1576,14 @@ export default function wifiManagerCoverage() {
           randomMacType: 0,
           randomMacAddr: "00:11:22:33:44:55"
         }
-        wifiManager.addCandidateConfig(config, (err: BusinessError, data: number) => {
+        wifiManager.addCandidateConfig(config, async(err: BusinessError, data: number) => {
           if (err) {
             console.info(`${caseName} error`, JSON.stringify(err));
             expect().assertFail();
           } else {
             console.log(`${caseName} get result success `, data);
             expect(typeof data).assertEqual('number');
+            await wifiManager.removeCandidateConfig(data);
           }
           done();
         });
@@ -1606,13 +1616,14 @@ export default function wifiManagerCoverage() {
           randomMacType: 0,
           randomMacAddr: "00:11:22:33:44:55"
         }
-        wifiManager.addCandidateConfig(config, (err: BusinessError, data: number) => {
+        wifiManager.addCandidateConfig(config, async(err: BusinessError, data: number) => {
           if (err) {
             console.info(`${caseName} error`, JSON.stringify(err));
             expect().assertFail();
           } else {
             console.log(`${caseName} get result success `, data);
             expect(typeof data).assertEqual('number');
+            await wifiManager.removeCandidateConfig(data);
           }
           done();
         });
@@ -1645,13 +1656,14 @@ export default function wifiManagerCoverage() {
           randomMacType: 0,
           randomMacAddr: "00:11:22:33:44:55"
         }
-        wifiManager.addCandidateConfig(config, (err: BusinessError, data: number) => {
+        wifiManager.addCandidateConfig(config, async(err: BusinessError, data: number) => {
           if (err) {
             console.info(`${caseName} error`, JSON.stringify(err));
             expect().assertFail();
           } else {
             console.log(`${caseName} get result success `, data);
             expect(typeof data).assertEqual('number');
+            await wifiManager.removeCandidateConfig(data);
           }
           done();
         });
@@ -1723,13 +1735,14 @@ export default function wifiManagerCoverage() {
           randomMacType: 0,
           randomMacAddr: "00:11:22:33:44:55"
         }
-        wifiManager.addCandidateConfig(config, (err: BusinessError, data: number) => {
+        wifiManager.addCandidateConfig(config, async(err: BusinessError, data: number) => {
           if (err) {
             console.info(`${caseName} error`, JSON.stringify(err));
             expect().assertFail();
           } else {
             console.log(`${caseName} get result success `, data);
             expect(typeof data).assertEqual('number');
+            await wifiManager.removeCandidateConfig(data);
           }
           done();
         });
@@ -1779,13 +1792,14 @@ export default function wifiManagerCoverage() {
             eapSubId: 0
           }
         }
-        wifiManager.addCandidateConfig(config, (err: BusinessError, data: number) => {
+        wifiManager.addCandidateConfig(config, async(err: BusinessError, data: number) => {
           if (err) {
             console.info(`${caseName} error`, JSON.stringify(err));
             expect().assertFail();
           } else {
             console.log(`${caseName} get result success `, data);
             expect(typeof data).assertEqual('number');
+            await wifiManager.removeCandidateConfig(data);
           }
           done();
         });
@@ -1962,13 +1976,14 @@ export default function wifiManagerCoverage() {
             wapiUserCert: ""
           }
         }
-        wifiManager.addCandidateConfig(config, (err: BusinessError, data: number) => {
+        wifiManager.addCandidateConfig(config, async(err: BusinessError, data: number) => {
           if (err) {
             console.info(`${caseName} error`, JSON.stringify(err));
             expect().assertFail();
           } else {
             console.log(`${caseName} get result success `, data);
             expect(typeof data).assertEqual('number');
+            await wifiManager.removeCandidateConfig(data);
           }
           done();
         });
