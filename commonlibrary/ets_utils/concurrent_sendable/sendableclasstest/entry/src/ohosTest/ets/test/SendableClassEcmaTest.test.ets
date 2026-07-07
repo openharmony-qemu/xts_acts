@@ -1369,8 +1369,9 @@ export default function SendableClassEcmaTest() {
       console.info('SendableClassDynTest beforeAll called');
     });
 
-    afterAll(() => {
+    afterAll(async () => {
       console.info('SendableClassDynTest afterAll called');
+      await new Promise<void>((resolve)=>setTimeout(resolve,100))
     });
 
     beforeEach(() => {
