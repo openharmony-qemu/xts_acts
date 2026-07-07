@@ -37,6 +37,17 @@ let isOpen: boolean = false;
 let driver = Driver.create();
 
 let openDialog = async (dialogKey: string, text: string, done: Function) => {
+  try {
+    await sleep(500);
+    let allowed = await driver.findComponent(ON.text('允许'));
+    hilog.info(DOMAIN, LOG_TAG, 'first open dialog: %{public}s', JSON.stringify(allowed));
+    if (allowed) {
+      await allowed.click();
+      await sleep(500);
+    }
+  } catch (err) {
+    console.error('findComponent failed: ' + JSON.stringify(err));
+  }
   if(dialogKey == '选择打开方式'){
     let allowed = await driver.waitForComponent(ON.text(dialogKey, MatchPattern.CONTAINS), DELAY_TIME);
     hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
@@ -122,6 +133,17 @@ let openDialog = async (dialogKey: string, text: string, done: Function) => {
 
 let closeDialog = async (dialogKey: string, done: Function) => {
   hilog.info(DOMAIN, LOG_TAG, 'closeDialog start waitForComponent');
+  try {
+    await sleep(500);
+    let allowed = await driver.findComponent(ON.text('允许'));
+    hilog.info(DOMAIN, LOG_TAG, 'first open dialog: %{public}s', JSON.stringify(allowed));
+    if (allowed) {
+      await allowed.click();
+      await sleep(500);
+    }
+  } catch (err) {
+    console.error('findComponent failed: ' + JSON.stringify(err));
+  }
   let allowed = await driver.waitForComponent(ON.text(dialogKey, MatchPattern.CONTAINS), DELAY_TIME);
   hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
   if (allowed) {
