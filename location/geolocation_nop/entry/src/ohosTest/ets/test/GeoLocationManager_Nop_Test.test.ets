@@ -338,8 +338,8 @@ export default function geoLocationManager_nop_test() {
      */
     it("geolocation_locationChange_nop_test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let requestInfo: geolocation.LocationRequest = {
-        'priority': geoLocationManager.LocationRequestPriority.FIRST_FIX,
-        'scenario': geoLocationManager.LocationRequestScenario.UNSET,
+        'priority': geolocation.LocationRequestPriority.FIRST_FIX,
+        'scenario': geolocation.LocationRequestScenario.UNSET,
         'timeInterval': 1,
         'distanceInterval': 0,
         'maxAccuracy': 0
@@ -1265,7 +1265,7 @@ export default function geoLocationManager_nop_test() {
      * @tc.level  LEVEL3
      */
     it("geoLocationManager_getCurrentLocation_nop_test_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let locationChange = (err: BusinessError, location: geolocation.Location): void => {
+      let locationChange = (err: BusinessError, location: geoLocationManager.Location): void => {
         if (err) {
           console.info('geoLocationManager_getCurrentLocation_nop_test_009 locationChanger: err=' + JSON.stringify(err));
           expect(Number(err.code)).assertEqual(201);
