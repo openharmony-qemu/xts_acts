@@ -110,6 +110,7 @@ export const ParagraphStyleTailIndentsTest_004: () => number;
 export const ParagraphStyleTailIndentsTest_005: () => number;
 export const ParagraphStyleTailIndentsTest_006: () => number;
 export const ParagraphStyleTailIndentsTest_007: () => number;
+export const ParagraphStyleTailIndentsTest_008: () => number;
 
 export const LinearGradientTest_001: () => number;
 export const LinearGradientTest_002: () => number;
