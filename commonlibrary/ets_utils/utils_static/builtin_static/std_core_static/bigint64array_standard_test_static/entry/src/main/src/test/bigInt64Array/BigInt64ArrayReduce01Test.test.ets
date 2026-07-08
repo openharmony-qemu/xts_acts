@@ -1782,6 +1782,1565 @@ export default function BigInt64ArrayReduce01Test(): void {
       expect(actual).assertEqual(expected);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1140
+     * @tc.name testBigInt64ArrayReduceOne114
+     * @tc.desc Verify reduce concatenates array case five_mixed with string initial value space.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runStringReduce('five_mixed', 'space');
+      let expected = expectedStringReduce('five_mixed', 'space');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1150
+     * @tc.name testBigInt64ArrayReduceOne115
+     * @tc.desc Verify reduce concatenates array case large with string initial value empty.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runStringReduce('large', 'empty');
+      let expected = expectedStringReduce('large', 'empty');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1160
+     * @tc.name testBigInt64ArrayReduceOne116
+     * @tc.desc Verify reduce concatenates array case large with string initial value prefix.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runStringReduce('large', 'prefix');
+      let expected = expectedStringReduce('large', 'prefix');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1170
+     * @tc.name testBigInt64ArrayReduceOne117
+     * @tc.desc Verify reduce concatenates array case large with string initial value num_str.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runStringReduce('large', 'num_str');
+      let expected = expectedStringReduce('large', 'num_str');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1180
+     * @tc.name testBigInt64ArrayReduceOne118
+     * @tc.desc Verify reduce concatenates array case large with string initial value special.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runStringReduce('large', 'special');
+      let expected = expectedStringReduce('large', 'special');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1190
+     * @tc.name testBigInt64ArrayReduceOne119
+     * @tc.desc Verify reduce concatenates array case large with string initial value space.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runStringReduce('large', 'space');
+      let expected = expectedStringReduce('large', 'space');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1200
+     * @tc.name testBigInt64ArrayReduceOne120
+     * @tc.desc Verify reduce adds number array case empty with number initial value 0.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('empty', '0');
+      let expected = expectedNumberReduce('empty', '0');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1210
+     * @tc.name testBigInt64ArrayReduceOne121
+     * @tc.desc Verify reduce adds number array case empty with number initial value 10.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('empty', '10');
+      let expected = expectedNumberReduce('empty', '10');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1220
+     * @tc.name testBigInt64ArrayReduceOne122
+     * @tc.desc Verify reduce adds number array case empty with number initial value neg1.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('empty', 'neg1');
+      let expected = expectedNumberReduce('empty', 'neg1');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1230
+     * @tc.name testBigInt64ArrayReduceOne123
+     * @tc.desc Verify reduce adds number array case empty with number initial value float.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('empty', 'float');
+      let expected = expectedNumberReduce('empty', 'float');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1240
+     * @tc.name testBigInt64ArrayReduceOne124
+     * @tc.desc Verify reduce adds number array case empty with number initial value min_safe.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('empty', 'min_safe');
+      let expected = expectedNumberReduce('empty', 'min_safe');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1250
+     * @tc.name testBigInt64ArrayReduceOne125
+     * @tc.desc Verify reduce adds number array case empty with number initial value max_safe.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('empty', 'max_safe');
+      let expected = expectedNumberReduce('empty', 'max_safe');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1260
+     * @tc.name testBigInt64ArrayReduceOne126
+     * @tc.desc Verify reduce adds number array case single_0 with number initial value 0.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_0', '0');
+      let expected = expectedNumberReduce('single_0', '0');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1270
+     * @tc.name testBigInt64ArrayReduceOne127
+     * @tc.desc Verify reduce adds number array case single_0 with number initial value 10.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_0', '10');
+      let expected = expectedNumberReduce('single_0', '10');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1280
+     * @tc.name testBigInt64ArrayReduceOne128
+     * @tc.desc Verify reduce adds number array case single_0 with number initial value neg1.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_0', 'neg1');
+      let expected = expectedNumberReduce('single_0', 'neg1');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1290
+     * @tc.name testBigInt64ArrayReduceOne129
+     * @tc.desc Verify reduce adds number array case single_0 with number initial value float.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_0', 'float');
+      let expected = expectedNumberReduce('single_0', 'float');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1300
+     * @tc.name testBigInt64ArrayReduceOne130
+     * @tc.desc Verify reduce adds number array case single_0 with number initial value min_safe.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_0', 'min_safe');
+      let expected = expectedNumberReduce('single_0', 'min_safe');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1310
+     * @tc.name testBigInt64ArrayReduceOne131
+     * @tc.desc Verify reduce adds number array case single_0 with number initial value max_safe.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_0', 'max_safe');
+      let expected = expectedNumberReduce('single_0', 'max_safe');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1320
+     * @tc.name testBigInt64ArrayReduceOne132
+     * @tc.desc Verify reduce adds number array case single_1 with number initial value 0.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_1', '0');
+      let expected = expectedNumberReduce('single_1', '0');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1330
+     * @tc.name testBigInt64ArrayReduceOne133
+     * @tc.desc Verify reduce adds number array case single_1 with number initial value 10.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_1', '10');
+      let expected = expectedNumberReduce('single_1', '10');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1340
+     * @tc.name testBigInt64ArrayReduceOne134
+     * @tc.desc Verify reduce adds number array case single_1 with number initial value neg1.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_1', 'neg1');
+      let expected = expectedNumberReduce('single_1', 'neg1');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1350
+     * @tc.name testBigInt64ArrayReduceOne135
+     * @tc.desc Verify reduce adds number array case single_1 with number initial value float.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_1', 'float');
+      let expected = expectedNumberReduce('single_1', 'float');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1360
+     * @tc.name testBigInt64ArrayReduceOne136
+     * @tc.desc Verify reduce adds number array case single_1 with number initial value min_safe.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_1', 'min_safe');
+      let expected = expectedNumberReduce('single_1', 'min_safe');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1370
+     * @tc.name testBigInt64ArrayReduceOne137
+     * @tc.desc Verify reduce adds number array case single_1 with number initial value max_safe.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_1', 'max_safe');
+      let expected = expectedNumberReduce('single_1', 'max_safe');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1380
+     * @tc.name testBigInt64ArrayReduceOne138
+     * @tc.desc Verify reduce adds number array case single_neg1 with number initial value 0.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_neg1', '0');
+      let expected = expectedNumberReduce('single_neg1', '0');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1390
+     * @tc.name testBigInt64ArrayReduceOne139
+     * @tc.desc Verify reduce adds number array case single_neg1 with number initial value 10.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_neg1', '10');
+      let expected = expectedNumberReduce('single_neg1', '10');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1400
+     * @tc.name testBigInt64ArrayReduceOne140
+     * @tc.desc Verify reduce adds number array case single_neg1 with number initial value neg1.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_neg1', 'neg1');
+      let expected = expectedNumberReduce('single_neg1', 'neg1');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1410
+     * @tc.name testBigInt64ArrayReduceOne141
+     * @tc.desc Verify reduce adds number array case single_neg1 with number initial value float.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_neg1', 'float');
+      let expected = expectedNumberReduce('single_neg1', 'float');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1420
+     * @tc.name testBigInt64ArrayReduceOne142
+     * @tc.desc Verify reduce adds number array case single_neg1 with number initial value min_safe.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_neg1', 'min_safe');
+      let expected = expectedNumberReduce('single_neg1', 'min_safe');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1430
+     * @tc.name testBigInt64ArrayReduceOne143
+     * @tc.desc Verify reduce adds number array case single_neg1 with number initial value max_safe.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_neg1', 'max_safe');
+      let expected = expectedNumberReduce('single_neg1', 'max_safe');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1440
+     * @tc.name testBigInt64ArrayReduceOne144
+     * @tc.desc Verify reduce adds number array case single_max with number initial value 0.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_max', '0');
+      let expected = expectedNumberReduce('single_max', '0');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1450
+     * @tc.name testBigInt64ArrayReduceOne145
+     * @tc.desc Verify reduce adds number array case single_max with number initial value 10.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_max', '10');
+      let expected = expectedNumberReduce('single_max', '10');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1460
+     * @tc.name testBigInt64ArrayReduceOne146
+     * @tc.desc Verify reduce adds number array case single_max with number initial value neg1.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_max', 'neg1');
+      let expected = expectedNumberReduce('single_max', 'neg1');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1470
+     * @tc.name testBigInt64ArrayReduceOne147
+     * @tc.desc Verify reduce adds number array case single_max with number initial value float.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_max', 'float');
+      let expected = expectedNumberReduce('single_max', 'float');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1480
+     * @tc.name testBigInt64ArrayReduceOne148
+     * @tc.desc Verify reduce adds number array case single_max with number initial value min_safe.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_max', 'min_safe');
+      let expected = expectedNumberReduce('single_max', 'min_safe');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1490
+     * @tc.name testBigInt64ArrayReduceOne149
+     * @tc.desc Verify reduce adds number array case single_max with number initial value max_safe.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_max', 'max_safe');
+      let expected = expectedNumberReduce('single_max', 'max_safe');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1500
+     * @tc.name testBigInt64ArrayReduceOne150
+     * @tc.desc Verify reduce adds number array case single_min with number initial value 0.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_min', '0');
+      let expected = expectedNumberReduce('single_min', '0');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1510
+     * @tc.name testBigInt64ArrayReduceOne151
+     * @tc.desc Verify reduce adds number array case single_min with number initial value 10.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_min', '10');
+      let expected = expectedNumberReduce('single_min', '10');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1520
+     * @tc.name testBigInt64ArrayReduceOne152
+     * @tc.desc Verify reduce adds number array case single_min with number initial value neg1.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_min', 'neg1');
+      let expected = expectedNumberReduce('single_min', 'neg1');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1530
+     * @tc.name testBigInt64ArrayReduceOne153
+     * @tc.desc Verify reduce adds number array case single_min with number initial value float.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_min', 'float');
+      let expected = expectedNumberReduce('single_min', 'float');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1540
+     * @tc.name testBigInt64ArrayReduceOne154
+     * @tc.desc Verify reduce adds number array case single_min with number initial value min_safe.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_min', 'min_safe');
+      let expected = expectedNumberReduce('single_min', 'min_safe');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1550
+     * @tc.name testBigInt64ArrayReduceOne155
+     * @tc.desc Verify reduce adds number array case single_min with number initial value max_safe.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('single_min', 'max_safe');
+      let expected = expectedNumberReduce('single_min', 'max_safe');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1560
+     * @tc.name testBigInt64ArrayReduceOne156
+     * @tc.desc Verify reduce adds number array case two_1_2 with number initial value 0.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('two_1_2', '0');
+      let expected = expectedNumberReduce('two_1_2', '0');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1570
+     * @tc.name testBigInt64ArrayReduceOne157
+     * @tc.desc Verify reduce adds number array case two_1_2 with number initial value 10.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('two_1_2', '10');
+      let expected = expectedNumberReduce('two_1_2', '10');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1580
+     * @tc.name testBigInt64ArrayReduceOne158
+     * @tc.desc Verify reduce adds number array case two_1_2 with number initial value neg1.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('two_1_2', 'neg1');
+      let expected = expectedNumberReduce('two_1_2', 'neg1');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1590
+     * @tc.name testBigInt64ArrayReduceOne159
+     * @tc.desc Verify reduce adds number array case two_1_2 with number initial value float.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('two_1_2', 'float');
+      let expected = expectedNumberReduce('two_1_2', 'float');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1600
+     * @tc.name testBigInt64ArrayReduceOne160
+     * @tc.desc Verify reduce adds number array case two_1_2 with number initial value min_safe.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('two_1_2', 'min_safe');
+      let expected = expectedNumberReduce('two_1_2', 'min_safe');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1610
+     * @tc.name testBigInt64ArrayReduceOne161
+     * @tc.desc Verify reduce adds number array case two_1_2 with number initial value max_safe.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('two_1_2', 'max_safe');
+      let expected = expectedNumberReduce('two_1_2', 'max_safe');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1620
+     * @tc.name testBigInt64ArrayReduceOne162
+     * @tc.desc Verify reduce adds number array case five_mixed with number initial value 0.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('five_mixed', '0');
+      let expected = expectedNumberReduce('five_mixed', '0');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1630
+     * @tc.name testBigInt64ArrayReduceOne163
+     * @tc.desc Verify reduce adds number array case five_mixed with number initial value 10.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('five_mixed', '10');
+      let expected = expectedNumberReduce('five_mixed', '10');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1640
+     * @tc.name testBigInt64ArrayReduceOne164
+     * @tc.desc Verify reduce adds number array case five_mixed with number initial value neg1.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('five_mixed', 'neg1');
+      let expected = expectedNumberReduce('five_mixed', 'neg1');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1650
+     * @tc.name testBigInt64ArrayReduceOne165
+     * @tc.desc Verify reduce adds number array case five_mixed with number initial value float.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('five_mixed', 'float');
+      let expected = expectedNumberReduce('five_mixed', 'float');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1660
+     * @tc.name testBigInt64ArrayReduceOne166
+     * @tc.desc Verify reduce adds number array case five_mixed with number initial value min_safe.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('five_mixed', 'min_safe');
+      let expected = expectedNumberReduce('five_mixed', 'min_safe');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1670
+     * @tc.name testBigInt64ArrayReduceOne167
+     * @tc.desc Verify reduce adds number array case five_mixed with number initial value max_safe.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('five_mixed', 'max_safe');
+      let expected = expectedNumberReduce('five_mixed', 'max_safe');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1680
+     * @tc.name testBigInt64ArrayReduceOne168
+     * @tc.desc Verify reduce adds number array case large with number initial value 0.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('large', '0');
+      let expected = expectedNumberReduce('large', '0');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1690
+     * @tc.name testBigInt64ArrayReduceOne169
+     * @tc.desc Verify reduce adds number array case large with number initial value 10.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('large', '10');
+      let expected = expectedNumberReduce('large', '10');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1700
+     * @tc.name testBigInt64ArrayReduceOne170
+     * @tc.desc Verify reduce adds number array case large with number initial value neg1.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('large', 'neg1');
+      let expected = expectedNumberReduce('large', 'neg1');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1710
+     * @tc.name testBigInt64ArrayReduceOne171
+     * @tc.desc Verify reduce adds number array case large with number initial value float.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('large', 'float');
+      let expected = expectedNumberReduce('large', 'float');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1720
+     * @tc.name testBigInt64ArrayReduceOne172
+     * @tc.desc Verify reduce adds number array case large with number initial value min_safe.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('large', 'min_safe');
+      let expected = expectedNumberReduce('large', 'min_safe');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1730
+     * @tc.name testBigInt64ArrayReduceOne173
+     * @tc.desc Verify reduce adds number array case large with number initial value max_safe.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runNumberReduce('large', 'max_safe');
+      let expected = expectedNumberReduce('large', 'max_safe');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1740
+     * @tc.name testBigInt64ArrayReduceOne174
+     * @tc.desc Verify reduce evaluates boolean array case empty with boolean initial value true.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runBooleanReduce('empty', 'true');
+      let expected = expectedBooleanReduce('empty', 'true');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1750
+     * @tc.name testBigInt64ArrayReduceOne175
+     * @tc.desc Verify reduce evaluates boolean array case empty with boolean initial value false.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runBooleanReduce('empty', 'false');
+      let expected = expectedBooleanReduce('empty', 'false');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1760
+     * @tc.name testBigInt64ArrayReduceOne176
+     * @tc.desc Verify reduce evaluates boolean array case single_0 with boolean initial value true.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runBooleanReduce('single_0', 'true');
+      let expected = expectedBooleanReduce('single_0', 'true');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1770
+     * @tc.name testBigInt64ArrayReduceOne177
+     * @tc.desc Verify reduce evaluates boolean array case single_0 with boolean initial value false.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runBooleanReduce('single_0', 'false');
+      let expected = expectedBooleanReduce('single_0', 'false');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1780
+     * @tc.name testBigInt64ArrayReduceOne178
+     * @tc.desc Verify reduce evaluates boolean array case single_1 with boolean initial value true.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runBooleanReduce('single_1', 'true');
+      let expected = expectedBooleanReduce('single_1', 'true');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1790
+     * @tc.name testBigInt64ArrayReduceOne179
+     * @tc.desc Verify reduce evaluates boolean array case single_1 with boolean initial value false.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runBooleanReduce('single_1', 'false');
+      let expected = expectedBooleanReduce('single_1', 'false');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1800
+     * @tc.name testBigInt64ArrayReduceOne180
+     * @tc.desc Verify reduce evaluates boolean array case single_neg1 with boolean initial value true.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runBooleanReduce('single_neg1', 'true');
+      let expected = expectedBooleanReduce('single_neg1', 'true');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1810
+     * @tc.name testBigInt64ArrayReduceOne181
+     * @tc.desc Verify reduce evaluates boolean array case single_neg1 with boolean initial value false.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runBooleanReduce('single_neg1', 'false');
+      let expected = expectedBooleanReduce('single_neg1', 'false');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1820
+     * @tc.name testBigInt64ArrayReduceOne182
+     * @tc.desc Verify reduce evaluates boolean array case single_max with boolean initial value true.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runBooleanReduce('single_max', 'true');
+      let expected = expectedBooleanReduce('single_max', 'true');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1830
+     * @tc.name testBigInt64ArrayReduceOne183
+     * @tc.desc Verify reduce evaluates boolean array case single_max with boolean initial value false.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runBooleanReduce('single_max', 'false');
+      let expected = expectedBooleanReduce('single_max', 'false');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1840
+     * @tc.name testBigInt64ArrayReduceOne184
+     * @tc.desc Verify reduce evaluates boolean array case single_min with boolean initial value true.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runBooleanReduce('single_min', 'true');
+      let expected = expectedBooleanReduce('single_min', 'true');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1850
+     * @tc.name testBigInt64ArrayReduceOne185
+     * @tc.desc Verify reduce evaluates boolean array case single_min with boolean initial value false.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runBooleanReduce('single_min', 'false');
+      let expected = expectedBooleanReduce('single_min', 'false');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1860
+     * @tc.name testBigInt64ArrayReduceOne186
+     * @tc.desc Verify reduce evaluates boolean array case two_1_2 with boolean initial value true.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runBooleanReduce('two_1_2', 'true');
+      let expected = expectedBooleanReduce('two_1_2', 'true');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1870
+     * @tc.name testBigInt64ArrayReduceOne187
+     * @tc.desc Verify reduce evaluates boolean array case two_1_2 with boolean initial value false.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runBooleanReduce('two_1_2', 'false');
+      let expected = expectedBooleanReduce('two_1_2', 'false');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1880
+     * @tc.name testBigInt64ArrayReduceOne188
+     * @tc.desc Verify reduce evaluates boolean array case five_mixed with boolean initial value true.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runBooleanReduce('five_mixed', 'true');
+      let expected = expectedBooleanReduce('five_mixed', 'true');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1890
+     * @tc.name testBigInt64ArrayReduceOne189
+     * @tc.desc Verify reduce evaluates boolean array case five_mixed with boolean initial value false.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runBooleanReduce('five_mixed', 'false');
+      let expected = expectedBooleanReduce('five_mixed', 'false');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1900
+     * @tc.name testBigInt64ArrayReduceOne190
+     * @tc.desc Verify reduce evaluates boolean array case large with boolean initial value true.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runBooleanReduce('large', 'true');
+      let expected = expectedBooleanReduce('large', 'true');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1910
+     * @tc.name testBigInt64ArrayReduceOne191
+     * @tc.desc Verify reduce evaluates boolean array case large with boolean initial value false.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let actual = runBooleanReduce('large', 'false');
+      let expected = expectedBooleanReduce('large', 'false');
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1920
+     * @tc.name testBigInt64ArrayReduceOne192
+     * @tc.desc Verify reduce returns the bigint accumulator unchanged on each callback call.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+        return acc;
+      }, 5n);
+      let expected = 5n;
+      for (let i = 0; i < arr.length; i++) {
+        let cbRes = expected;
+        expected = cbRes;
+      }
+      expect(res).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1930
+     * @tc.name testBigInt64ArrayReduceOne193
+     * @tc.desc Verify reduce returns the current element from the callback on each step.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+        return curr;
+      }, 10n);
+      let expected = 10n;
+      for (let i = 0; i < arr.length; i++) {
+        expected = arr[i];
+      }
+      expect(res).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1940
+     * @tc.name testBigInt64ArrayReduceOne194
+     * @tc.desc Verify reduce accumulates callback indexes as bigint values.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+        return acc + BigInt(idx);
+      }, 0n);
+      let expected = 0n;
+      for (let i = 0; i < arr.length; i++) {
+        expected += BigInt(i);
+      }
+      expect(res).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1950
+     * @tc.name testBigInt64ArrayReduceOne195
+     * @tc.desc Verify reduce accumulates the source array length during each callback call.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne195', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+        return acc + BigInt(a.length);
+      }, 0n);
+      let expected = 0n;
+      for (let i = 0; i < arr.length; i++) {
+        expected += BigInt(arr.length);
+      }
+      expect(res).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1960
+     * @tc.name testBigInt64ArrayReduceOne196
+     * @tc.desc Verify reduce performs bigint subtraction inside the callback.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+        return acc - curr;
+      }, 100n);
+      let expected = 100n;
+      for (let i = 0; i < arr.length; i++) {
+        expected -= arr[i];
+      }
+      expect(res).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1970
+     * @tc.name testBigInt64ArrayReduceOne197
+     * @tc.desc Verify reduce performs bigint multiplication inside the callback.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+        return acc * curr;
+      }, 1n);
+      let expected = 1n;
+      for (let i = 0; i < arr.length; i++) {
+        expected *= arr[i];
+      }
+      expect(res).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1980
+     * @tc.name testBigInt64ArrayReduceOne198
+     * @tc.desc Verify reduce performs bigint bitwise and inside the callback.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+        return acc & curr;
+      }, 255n);
+      let expected = 255n;
+      for (let i = 0; i < arr.length; i++) {
+        expected &= arr[i];
+      }
+      expect(res).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1990
+     * @tc.name testBigInt64ArrayReduceOne199
+     * @tc.desc Verify reduce performs bigint bitwise or inside the callback.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+        return acc | curr;
+      }, 0n);
+      let expected = 0n;
+      for (let i = 0; i < arr.length; i++) {
+        expected |= arr[i];
+      }
+      expect(res).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_2000
+     * @tc.name testBigInt64ArrayReduceOne200
+     * @tc.desc Verify reduce performs bigint bitwise xor inside the callback.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+        return acc ^ curr;
+      }, 0n);
+      let expected = 0n;
+      for (let i = 0; i < arr.length; i++) {
+        expected ^= arr[i];
+      }
+      expect(res).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_2010
+     * @tc.name testBigInt64ArrayReduceOne201
+     * @tc.desc Verify reduce performs bigint left shift inside the callback.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+        return acc << (curr & 3n);
+      }, 1n);
+      let expected = 1n;
+      for (let i = 0; i < arr.length; i++) {
+        expected = expected << (arr[i] & 3n);
+      }
+      expect(res).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_2020
+     * @tc.name testBigInt64ArrayReduceOne202
+     * @tc.desc Verify reduce reads external bigint state inside the callback.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let extVar = 5n;
+      let arr = new BigInt64Array([2n, 4n, 6n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+        return acc + extVar;
+      }, 0n);
+      expect(res).assertEqual(15n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_2030
+     * @tc.name testBigInt64ArrayReduceOne203
+     * @tc.desc Verify reduce writes external bigint state inside the callback.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let extMutVar = 0n;
+      let arr = new BigInt64Array([2n, 4n, 6n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+        extMutVar += 1n;
+        return acc + curr;
+      }, 0n);
+      expect(res).assertEqual(12n);
+      expect(extMutVar).assertEqual(3n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_2040
+     * @tc.name testBigInt64ArrayReduceOne204
+     * @tc.desc Verify reduce calls an external function inside the callback.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let extFunc = (x: BigInt): BigInt => x + 1n;
+      let arr = new BigInt64Array([2n, 4n, 6n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+        return acc + extFunc(curr);
+      }, 0n);
+      expect(res).assertEqual(15n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_2050
+     * @tc.name testBigInt64ArrayReduceOne205
+     * @tc.desc Verify reduce keeps iterating when the callback mutates the current index.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+        a[idx] = 99n;
+        return acc + curr;
+      }, 0n);
+      expect(res).assertEqual(15n);
+      expect(arr[2]).assertEqual(99n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_2060
+     * @tc.name testBigInt64ArrayReduceOne206
+     * @tc.desc Verify reduce observes mutations to the next index during iteration.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+        if (idx + 1 < a.length) {
+          a[idx + 1] = 99n;
+        }
+        return acc + curr;
+      }, 0n);
+      expect(res).assertEqual(397n);
+      expect(arr[4]).assertEqual(99n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_2070
+     * @tc.name testBigInt64ArrayReduceOne207
+     * @tc.desc Verify reduce observes mutations to the previous index during iteration.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+        if (idx > 0) {
+          a[idx - 1] = 88n;
+        }
+        return acc + curr;
+      }, 0n);
+      expect(res).assertEqual(15n);
+      expect(arr[0]).assertEqual(88n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_2080
+     * @tc.name testBigInt64ArrayReduceOne208
+     * @tc.desc Verify reduce handles clearing all elements during iteration.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+        for (let j = 0; j < a.length; j++) {
+          a[j] = 0n;
+        }
+        return acc + curr;
+      }, 0n);
+      expect(res).assertEqual(1n);
+      expect(arr[3]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_2090
+     * @tc.name testBigInt64ArrayReduceOne209
+     * @tc.desc Verify reduce propagates an error thrown from the callback body.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, -1n, 3n]);
+      let caught: Error | undefined = undefined;
+      try {
+        arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+          if (curr === 2n) {
+            throw new Error('cb err');
+            expect().assertFail();
+          }
+          return acc + curr;
+        }, 0n);
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_2100
+     * @tc.name testBigInt64ArrayReduceOne210
+     * @tc.desc Verify reduce propagates an error thrown at the first callback index.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, -1n, 3n]);
+      let caught: Error | undefined = undefined;
+      try {
+        arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+          if (idx === 0) {
+            throw new Error('first err');
+            expect().assertFail();
+          }
+          return acc + curr;
+        }, 0n);
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_2110
+     * @tc.name testBigInt64ArrayReduceOne211
+     * @tc.desc Verify reduce propagates an error thrown at the last callback index.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, -1n, 3n]);
+      let caught: Error | undefined = undefined;
+      try {
+        arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+          if (idx === a.length - 1) {
+            throw new Error('end err');
+            expect().assertFail();
+          }
+          return acc + curr;
+        }, 0n);
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_2120
+     * @tc.name testBigInt64ArrayReduceOne212
+     * @tc.desc Verify reduce propagates an error thrown for a negative current value.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, -1n, 3n]);
+      let caught: Error | undefined = undefined;
+      try {
+        arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+          if (curr < 0n) {
+            throw new Error('neg err');
+            expect().assertFail();
+          }
+          return acc + curr;
+        }, 0n);
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_2130
+     * @tc.name testBigInt64ArrayReduceOne213
+     * @tc.desc Verify reduce correctly accumulates a large array of 1000 elements.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array(1000);
+      for (let i = 0; i < 1000; i++) {
+        arr.$_set(i, BigInt(i + 1));
+      }
+      let res = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
+        return acc + curr;
+      }, 0n);
+      expect(res).assertEqual(500500n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_2140
+     * @tc.name testBigInt64ArrayReduceOne214
+     * @tc.desc Verify reduce passes correct sequential index values to the callback.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceOne214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([10n, 20n, 30n, 40n]);
+      let indices: int[] = [];
+      arr.reduce((acc: BigInt, curr: BigInt, idx: int): BigInt => {
+        indices.push(idx);
+        return acc + curr;
+      }, 0n);
+      expect(indices[0]).assertEqual(0);
+      expect(indices[1]).assertEqual(1);
+      expect(indices[2]).assertEqual(2);
+      expect(indices[3]).assertEqual(3);
+    });
 
   });
 }
