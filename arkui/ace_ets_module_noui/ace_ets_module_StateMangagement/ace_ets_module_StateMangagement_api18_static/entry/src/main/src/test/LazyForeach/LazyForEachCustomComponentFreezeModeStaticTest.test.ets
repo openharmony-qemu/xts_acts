@@ -16,7 +16,7 @@
  */
  
 import inspector from '@ohos.arkui.inspector';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import { LazyForEachReleaseStrategy, LazyForEachCustomComponentFreezeMode } from '@ohos.arkui.component';

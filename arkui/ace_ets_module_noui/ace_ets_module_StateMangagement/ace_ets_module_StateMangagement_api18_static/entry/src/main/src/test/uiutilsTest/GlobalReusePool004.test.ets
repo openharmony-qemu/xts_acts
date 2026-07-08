@@ -24,7 +24,7 @@ import {
   TestType,
   Size,
   afterAll
-} from "@ohos/hypium-binary/src/main/indexStatic"
+} from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
