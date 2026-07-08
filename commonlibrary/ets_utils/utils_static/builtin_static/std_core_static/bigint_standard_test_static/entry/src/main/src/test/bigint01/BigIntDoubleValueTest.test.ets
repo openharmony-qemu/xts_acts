@@ -20,8 +20,8 @@ export default function BigIntDoubleValueTest(): void {
   describe('BigInt.doubleValue (mindmap doubleValue)', () => {
     beforeAll((): void => {
     });
-    beforeEach(():void=>{
-
+    beforeEach(async():void=>{
+      await Utils.msSleep(30);
     });
     afterEach((): void => {
     });

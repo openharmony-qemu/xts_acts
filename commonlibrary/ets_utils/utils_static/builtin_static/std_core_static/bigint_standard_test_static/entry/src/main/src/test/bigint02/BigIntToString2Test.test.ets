@@ -21,6 +21,7 @@ export default function BigIntToString2Test(): void {
     beforeAll((): void => {
     });
     beforeEach(():void=>{
+      await Utils.msSleep(30);
     });
     afterEach((): void => {
     });

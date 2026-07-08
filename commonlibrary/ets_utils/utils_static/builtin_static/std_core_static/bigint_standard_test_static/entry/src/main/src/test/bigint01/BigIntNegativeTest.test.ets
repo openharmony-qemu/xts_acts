@@ -21,7 +21,7 @@ export default function BigIntNegativeTest(): void {
     beforeAll((): void => {
     });
     beforeEach(():void=>{
-
+      await Utils.msSleep(30);
     });
     afterEach((): void => {
     });

@@ -20,8 +20,8 @@ export default function BigIntFromULongTest(): void {
   describe('BigInt.fromULong (mindmap fromULong)', () => {
     beforeAll((): void => {
     });
-    beforeEach(():void=>{
-
+    beforeEach(async():void=>{
+      await Utils.msSleep(30);
     });
     afterEach((): void => {
     });

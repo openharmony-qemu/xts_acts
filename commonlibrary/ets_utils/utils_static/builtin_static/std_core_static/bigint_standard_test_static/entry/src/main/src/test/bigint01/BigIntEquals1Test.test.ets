@@ -20,8 +20,8 @@ export default function BigIntEquals1Test(): void {
   describe('BigInt.equals(to: BigInt) overload (mindmap equals_1)', () => {
     beforeAll((): void => {
     });
-    beforeEach(():void=>{
-
+    beforeEach(async():void=>{
+      await Utils.msSleep(30);
     });
     afterEach((): void => {
     });

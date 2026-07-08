@@ -20,8 +20,8 @@ export default function BigIntNegateTest(): void {
   describe('BigInt.negate (mindmap negate)', () => {
     beforeAll((): void => {
     });
-    beforeEach(():void=>{
-
+    beforeEach(async():void=>{
+      await Utils.msSleep(30);
     });
     afterEach((): void => {
     });

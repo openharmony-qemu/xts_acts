@@ -20,8 +20,8 @@ export default function BigIntNegateTest_2(): void {
   describe('BigIntNegateTest_2', () => {
     beforeAll((): void => {
     });
-    beforeEach(():void=>{
-
+    beforeEach(async():void=>{
+      await Utils.msSleep(30);
     });
     afterEach((): void => {
     });

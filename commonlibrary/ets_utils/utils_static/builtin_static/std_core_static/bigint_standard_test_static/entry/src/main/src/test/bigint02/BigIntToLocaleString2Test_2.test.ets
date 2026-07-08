@@ -21,6 +21,7 @@ export default function BigIntToLocaleString2Test_2(): void {
     beforeAll((): void => {
     });
     beforeEach(():void=>{
+      await Utils.msSleep(30);
     });
     afterEach((): void => {
     });

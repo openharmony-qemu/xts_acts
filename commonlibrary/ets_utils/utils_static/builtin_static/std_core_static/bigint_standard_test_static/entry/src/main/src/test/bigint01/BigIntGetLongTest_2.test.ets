@@ -20,8 +20,8 @@ export default function BigIntGetLongTest_2(): void {
   describe('BigIntGetLongTest_2', () =>{
     beforeAll((): void => {
     });
-    beforeEach(():void=>{
-
+    beforeEach(async():void=>{
+      await Utils.msSleep(30);
     });
     afterEach((): void => {
     });

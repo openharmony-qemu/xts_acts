@@ -21,8 +21,8 @@ export default function BigIntGetULongTest(): void {
   describe('BigInt.getULong (mindmap getULong)', () => {
     beforeAll((): void => {
     });
-    beforeEach(():void=>{
-
+    beforeEach(async():void=>{
+      await Utils.msSleep(30);
     });
     afterEach((): void => {
     });

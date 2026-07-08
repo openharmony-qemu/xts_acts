@@ -20,8 +20,8 @@ export default function BigIntEquals1Test_2(): void {
   describe('BigIntEquals1Test_2', ()=> {
     beforeAll((): void => {
     });
-    beforeEach(():void=>{
-
+    beforeEach(async():void=>{
+      await Utils.msSleep(30);
     });
     afterEach((): void => {
     });
