@@ -30,7 +30,18 @@ import Utils from './../Util.test';
 
 export default function Float64ArrayToLocaleStringTest(): void {
   describe('Float64ArrayToLocaleStringTest', (): void => {
+    beforeAll((): void => {
+    })
 
+    beforeEach(async (): Promise<void> => {
+      await Utils.msSleep(30);
+    })
+
+    afterEach((): void => {
+    })
+
+    afterAll((): void => {
+    })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_0100
      * @tc.name testFloat64ArrayToLocaleString001
@@ -45,7 +56,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-2,147,483,648,-1,0";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_0200
@@ -61,12 +72,12 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0.1,9,007,199,254,740,991";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_0300
      * @tc.name testFloat64ArrayToLocaleString003
-     * @tc.desc Verify toLocaleString with 2 arguments, locales and options
+     * @tc.desc Verify toLocaleString with en-US locale argument
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -77,7 +88,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0.5,1.5";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_0400
@@ -93,7 +104,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-32,768,-128,0";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_0500
@@ -109,7 +120,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-2,147,483,648,-1,0";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_0600
@@ -125,7 +136,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0,1,9.007.199.254.740.991";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_0700
@@ -141,7 +152,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0.5,1.5";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_0800
@@ -157,7 +168,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-32\u202F768,-128";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_0900
@@ -173,7 +184,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-2,147,483,648,-1";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_1000
@@ -189,7 +200,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0.1,9,007,199,254,740,991";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_1100
@@ -205,12 +216,12 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0,5,1,5";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_1200
      * @tc.name testFloat64ArrayToLocaleString012
-     * @tc.desc Verify locales as empty string ""
+     * @tc.desc Verify locales="en-US" with negative integer elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -221,7 +232,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-32,768,-128";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_1300
@@ -233,11 +244,12 @@ export default function Float64ArrayToLocaleStringTest(): void {
      */
     it('testFloat64ArrayToLocaleString013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([-2147483648, -1]);
-      const result = arr.toLocaleString();
+      const locales: Array<string> = [];
+      const result = arr.toLocaleString(locales);
       const expected = "-2,147,483,648,-1";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_1400
@@ -253,12 +265,12 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0.1,9,007,199,254,740,991";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_1500
      * @tc.name testFloat64ArrayToLocaleString015
-     * @tc.desc Verify locales as null
+     * @tc.desc Verify default locale formatting with fractional elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -269,12 +281,12 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0.5,1.5";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_1600
      * @tc.name testFloat64ArrayToLocaleString016
-     * @tc.desc Verify locales="en-US" with negative elements
+     * @tc.desc Verify locales="en-US" with large safe integer element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -285,12 +297,12 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0.1,9,007,199,254,740,991,0";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_1700
      * @tc.name testFloat64ArrayToLocaleString017
-     * @tc.desc Verify locales="zh-CN" with negative elements
+     * @tc.desc Verify locales="zh-CN" with three fractional elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -301,12 +313,12 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0.5,1.5,0.25";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_1800
      * @tc.name testFloat64ArrayToLocaleString018
-     * @tc.desc Verify options={numberFormat:"standard"} with zh-CN
+     * @tc.desc Verify locales="zh-CN" with negative integer elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -317,12 +329,12 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-32,768,-128";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_1900
      * @tc.name testFloat64ArrayToLocaleString019
-     * @tc.desc Verify options={numberFormat:"currency"} with en-US
+     * @tc.desc Verify locales="en-US" with int32 boundary elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -333,12 +345,12 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-2,147,483,648,-1";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_2000
      * @tc.name testFloat64ArrayToLocaleString020
-     * @tc.desc Verify options={numberFormat:"standard"} with zh-CN large numbers
+     * @tc.desc Verify locales="zh-CN" with large safe integer element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -349,12 +361,12 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0.1,9,007,199,254,740,991";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_2100
      * @tc.name testFloat64ArrayToLocaleString021
-     * @tc.desc Verify options={numberFormat:"currency"} with zh-CN
+     * @tc.desc Verify locales="zh-CN" with two fractional elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -365,12 +377,12 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0.5,1.5";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_2200
      * @tc.name testFloat64ArrayToLocaleString022
-     * @tc.desc Verify options={numberFormat:"percent"} with zh-CN
+     * @tc.desc Verify locales="zh-CN" with int16 boundary elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -381,12 +393,12 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-32,768,-128,0";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_2300
      * @tc.name testFloat64ArrayToLocaleString023
-     * @tc.desc Verify options={numberFormat:"scientific"} with zh-CN
+     * @tc.desc Verify locales="zh-CN" with int32 boundary elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -397,12 +409,12 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-2,147,483,648,-1";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_2400
      * @tc.name testFloat64ArrayToLocaleString024
-     * @tc.desc Verify options={numberFormat:"standard"} with de-DE
+     * @tc.desc Verify locales="de-DE" with fractional elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -413,12 +425,12 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0,5,1,5";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_2500
      * @tc.name testFloat64ArrayToLocaleString025
-     * @tc.desc Verify options={numberFormat:"currency"} with de-DE
+     * @tc.desc Verify locales="de-DE" with negative integer elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -429,12 +441,12 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-32.768,-128";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_2600
      * @tc.name testFloat64ArrayToLocaleString026
-     * @tc.desc Verify options={numberFormat:"percent"} with de-DE
+     * @tc.desc Verify locales="de-DE" with int32 boundary elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -445,12 +457,12 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-2.147.483.648,-1,0";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_2700
      * @tc.name testFloat64ArrayToLocaleString027
-     * @tc.desc Verify options={numberFormat:"standard"} with ja-JP
+     * @tc.desc Verify locales="ja-JP" with negative integer elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -461,12 +473,12 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-32,768,-128";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_2800
      * @tc.name testFloat64ArrayToLocaleString028
-     * @tc.desc Verify options={numberFormat:"currency"} with ja-JP
+     * @tc.desc Verify locales="ja-JP" with int32 boundary elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -477,12 +489,12 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-2,147,483,648,-1";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_2900
      * @tc.name testFloat64ArrayToLocaleString029
-     * @tc.desc Verify options={numberFormat:"percent"} with ja-JP
+     * @tc.desc Verify locales="ja-JP" with large safe integer element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -493,12 +505,12 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0.1,9,007,199,254,740,991,0";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_3000
      * @tc.name testFloat64ArrayToLocaleString030
-     * @tc.desc Verify options={numberFormat:"standard"} with fr-FR
+     * @tc.desc Verify locales="fr-FR" with int32 boundary elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -509,12 +521,12 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-2\u202F147\u202F483\u202F648,-1";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_3100
      * @tc.name testFloat64ArrayToLocaleString031
-     * @tc.desc Verify options={numberFormat:"currency"} with fr-FR
+     * @tc.desc Verify locales="fr-FR" with large safe integer element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -525,12 +537,12 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0,1,9\u202F007\u202F199\u202F254\u202F740\u202F991";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_3200
      * @tc.name testFloat64ArrayToLocaleString032
-     * @tc.desc Verify options={numberFormat:"percent"} with fr-FR
+     * @tc.desc Verify locales="fr-FR" with fractional elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -541,7 +553,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0,5,1,5,0,25";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_3300
@@ -557,7 +569,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0.1,9,007,199,254,740,991,0";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_3400
@@ -573,7 +585,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0.5,1.5,0.25";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_3500
@@ -589,7 +601,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-32,768,-128,0";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_3600
@@ -605,12 +617,12 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-2,147,483,648,-1,0";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_3700
      * @tc.name testFloat64ArrayToLocaleString037
-     * @tc.desc Verify overload: locales as array and options toLocaleString
+     * @tc.desc Verify overload: locales as array toLocaleString
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -621,12 +633,12 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0.5,1.5,0.25";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_3800
      * @tc.name testFloat64ArrayToLocaleString038
-     * @tc.desc Verify locales as undefined, options={numberFormat:"standard"}
+     * @tc.desc Verify locales as undefined uses default formatting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -637,7 +649,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-32,768,-128";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_3900
@@ -653,7 +665,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0.5,1.5,0.25";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_4000
@@ -670,7 +682,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const actVal1 = combined.startsWith("prefix-");
       const expectVal = true;
       expect(actVal1).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_4100
@@ -686,7 +698,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const upper = result.toUpperCase();
       const expectVal = result.length;
       expect(upper.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_4200
@@ -699,26 +711,28 @@ export default function Float64ArrayToLocaleStringTest(): void {
     it('testFloat64ArrayToLocaleString042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([0.1, 9007199254740991]);
       const result = arr.toLocaleString("en-US");
-      const actVal2 = result.indexOf(",") >= 0;
-      const expectVal = true;
+      const actVal2 = result.indexOf(",");
+      const expectVal = 3;
       expect(actVal2).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_4300
      * @tc.name testFloat64ArrayToLocaleString043
-     * @tc.desc Verify different locales may return different results
+     * @tc.desc Verify invalid locale string throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float64Array.of(0.5, 1.5);
-      const resultEn = arr.toLocaleString("en-US");
-      const resultZh = arr.toLocaleString("zh-CN");
-      expect(resultEn !== undefined).assertTrue();
-      expect(resultZh !== undefined).assertTrue();
-    })
+      try {
+        arr.toLocaleString("invalid_locale");
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("RangeError");
+      }
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_4400
@@ -734,7 +748,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const r2 = arr.toLocaleString("en-US");
       const expectVal = r2;
       expect(r1).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_4500
@@ -750,7 +764,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       arr.toLocaleString();
       const expectVal = valBefore;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_4600
@@ -765,7 +779,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const result = arr.toLocaleString();
       const expectVal = "";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_4700
@@ -780,7 +794,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const result = arr.toLocaleString("en-US");
       const expectVal = "";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_4800
@@ -796,7 +810,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0.5";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_4900
@@ -812,12 +826,12 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-32,768";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_5000
      * @tc.name testFloat64ArrayToLocaleString050
-     * @tc.desc Verify single element array toLocaleString with options
+     * @tc.desc Verify single element array toLocaleString with en-US locale
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -828,7 +842,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-2,147,483,648";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_5100
@@ -849,7 +863,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const actVal3 = result.split(',').length;
       const expectVal = hundredValue;
       expect(actVal3).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_5200
@@ -870,7 +884,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const actVal4 = result.split(',').length;
       const expectVal = thousandValue;
       expect(actVal4).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_5300
@@ -887,7 +901,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const actVal5 = result.split(',').length;
       const expectVal = fiveValue;
       expect(actVal5).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_5400
@@ -904,7 +918,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "3.142,3.142,3.142,3.142";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_5500
@@ -920,7 +934,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0.5,1.5,0.25,0.125,0.063";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_5600
@@ -936,7 +950,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-32,768,-128,0,127,32,767";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_5700
@@ -952,7 +966,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-2,147,483,648,-1,0,1,2,147,483,647";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_5800
@@ -968,7 +982,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0.1,9,007,199,254,740,991,0,3.142,-0";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_5900
@@ -979,12 +993,13 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(-32768, -128);
+      const minValue: number = Double.MIN_VALUE;
+      const arr = Float64Array.of(minValue, minValue);
       const result = arr.toLocaleString();
-      const expected = "-32,768,-128";
+      const expected = "0,0";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_6000
@@ -1000,7 +1015,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0.1,9,007,199,254,740,991";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_6100
@@ -1016,7 +1031,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-32,768,-128,0";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_6200
@@ -1027,13 +1042,13 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const zeroValue: number = 0;
-      const arr = new Float64Array([zeroValue, zeroValue, zeroValue]);
+      const nanValue: number = Double.NaN;
+      const arr = new Float64Array([nanValue, nanValue, nanValue]);
       const result = arr.toLocaleString("en-US");
-      const expected = "0,0,0";
+      const expected = "NaN,NaN,NaN";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_6300
@@ -1044,12 +1059,14 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(0.1, 9007199254740991, 0, 3.141592653589793);
+      const nanValue: number = Double.NaN;
+      const positiveInfinity: number = Double.POSITIVE_INFINITY;
+      const arr = Float64Array.of(nanValue, positiveInfinity, 1.5);
       const result = arr.toLocaleString("en-US");
-      const expected = "0.1,9,007,199,254,740,991,0,3.142";
+      const expected = "NaN,\u221e,1.5";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_6400
@@ -1060,12 +1077,14 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float64Array([0.5, 1.5, 0.25, 0.125]);
+      const nanValue: number = Double.NaN;
+      const positiveInfinity: number = Double.POSITIVE_INFINITY;
+      const arr = new Float64Array([nanValue, positiveInfinity, 0.25]);
       const result = arr.toLocaleString("zh-CN");
-      const expected = "0.5,1.5,0.25,0.125";
+      const expected = "NaN,\u221e,0.25";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_6500
@@ -1076,12 +1095,16 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float64Array([-32768, -128, 0, 127, 32767]);
+      const nanValue: number = Double.NaN;
+      const positiveInfinity: number = Double.POSITIVE_INFINITY;
+      const negativeInfinity: number = Double.NEGATIVE_INFINITY;
+      const negativeZero: number = -0.0;
+      const arr = new Float64Array([nanValue, positiveInfinity, negativeInfinity, 0.0, negativeZero]);
       const result = arr.toLocaleString("en-US");
-      const expected = "-32,768,-128,0,127,32,767";
+      const expected = "NaN,\u221e,-\u221e,0,-0";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_6600
@@ -1092,12 +1115,15 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float64Array([-2147483648, -1, 0, 1, 2147483647]);
+      const nanValue: number = Double.NaN;
+      const positiveInfinity: number = Double.POSITIVE_INFINITY;
+      const negativeInfinity: number = Double.NEGATIVE_INFINITY;
+      const arr = new Float64Array([nanValue, positiveInfinity, negativeInfinity, 0.0]);
       const result = arr.toLocaleString("zh-CN");
-      const expected = "-2,147,483,648,-1,0,1,2,147,483,647";
+      const expected = "NaN,\u221e,-\u221e,0";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_6700
@@ -1108,12 +1134,13 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(0.1);
+      const nanValue: number = Double.NaN;
+      const arr = Float64Array.of(nanValue);
       const result = arr.toLocaleString("en-US");
-      const expected = "0.1";
+      const expected = "NaN";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_6800
@@ -1124,12 +1151,13 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float64Array([0.5]);
+      const positiveInfinity: number = Double.POSITIVE_INFINITY;
+      const arr = new Float64Array([positiveInfinity]);
       const result = arr.toLocaleString("en-US");
-      const expected = "0.5";
+      const expected = "\u221e";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_6900
@@ -1145,7 +1173,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0.1,9,007,199,254,740,991";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_7000
@@ -1162,7 +1190,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-2,147,483,648,-1";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_7100
@@ -1173,12 +1201,13 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(0.1);
+      const nanValue: number = Double.NaN;
+      const arr = Float64Array.of(nanValue);
       const result = arr.toLocaleString("zh-CN");
-      const expected = "0.1";
+      const expected = "NaN";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_7200
@@ -1194,7 +1223,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0.5,1.5";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_7300
@@ -1210,7 +1239,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-32,768,-128";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_7400
@@ -1225,7 +1254,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const result = values.toLocaleString();
       const expectVal = "";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_7500
@@ -1241,7 +1270,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-2,147,483,648";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_7600
@@ -1252,11 +1281,12 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const values = Float64Array.of(0.1, 9007199254740991);
+      const nanValue: number = Double.NaN;
+      const values = Float64Array.of(nanValue, 9007199254740991);
       const result = values.toLocaleString();
-      const expectVal = "0.1,9,007,199,254,740,991";
+      const expectVal = "NaN,9,007,199,254,740,991";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_7700
@@ -1267,12 +1297,13 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const values = new Float64Array([0.5, 1.5]);
+      const positiveInfinity: number = Double.POSITIVE_INFINITY;
+      const values = new Float64Array([positiveInfinity, 1.5]);
       const result = values.toLocaleString("en-US");
-      const expected = "0.5,1.5";
+      const expected = "\u221e,1.5";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_7800
@@ -1283,12 +1314,13 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const values = Float64Array.of(-32768);
+      const maxValue: number = Double.MAX_VALUE;
+      const values = Float64Array.of(maxValue);
       const result = values.toLocaleString("en-US");
-      const expected = "-32,768";
-      const expectVal = expected;
-      expect(result).assertEqual(expectVal);
-    })
+      const actVal = result.indexOf("179,769");
+      const expectVal = 0;
+      expect(actVal).assertEqual(expectVal);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_7900
@@ -1303,7 +1335,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const result = values.toLocaleString();
       const expectVal = "-2,147,483,648,-1";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_8000
@@ -1320,7 +1352,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
         "\u0660\u066B\u0661,\u0669\u066C\u0660\u0660\u0667\u066C\u0661\u0669\u0669\u066C\u0662\u0665\u0664\u066C\u0667\u0664\u0660\u066C\u0669\u0669\u0661,\u0660";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_8100
@@ -1336,7 +1368,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "0.5,1.5,0.25";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_8200
@@ -1352,7 +1384,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-32,768,-128,0";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_8300
@@ -1368,7 +1400,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "-2,147,483,648,-1,0";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_8400
@@ -1386,7 +1418,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "255,170";
       const expectVal = expected;
       expect(s).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_8500
@@ -1404,7 +1436,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "255,170";
       const expectVal = expected;
       expect(s).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_8600
@@ -1425,7 +1457,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const actVal7 = result.indexOf('179,769');
       const expectVal2 = 4;
       expect(actVal7).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_8700
@@ -1446,7 +1478,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const actVal9 = result.indexOf('-');
       const expectVal2 = 2;
       expect(actVal9).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_8800
@@ -1464,7 +1496,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const actVal10 = result.indexOf('0,179,769');
       const expectVal = 0;
       expect(actVal10).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_8900
@@ -1480,7 +1512,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "一二三";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_9000
@@ -1496,7 +1528,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "一,二三,四五六";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_9100
@@ -1512,7 +1544,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expected = "〇";
       const expectVal = expected;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_9200
@@ -1533,7 +1565,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const actVal11 = v.toLocaleString("en-US");
       const expectVal = "2,3";
       expect(actVal11).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_9300
@@ -1550,7 +1582,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const actVal12 = v.toLocaleString("en-US");
       const expectVal = "2,30";
       expect(actVal12).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_9400
@@ -1569,7 +1601,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const actVal14 = a.toLocaleString("en-US");
       const expectVal2 = "1,2,3";
       expect(actVal14).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_9500
@@ -1588,7 +1620,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const actVal16 = a.toLocaleString("en-US");
       const expectVal2 = "3,1,2";
       expect(actVal16).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_9600
@@ -1604,7 +1636,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expectVal = "";
       expect(actVal17).assertEqual(expectVal);
       expect(empty.length).assertEqual(0);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_9700
@@ -1620,7 +1652,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
       const expectVal = "1.5,2.25";
       expect(actVal18).assertEqual(expectVal);
       expect(a.length).assertEqual(2);
-    })
+    });
 
   })
 }

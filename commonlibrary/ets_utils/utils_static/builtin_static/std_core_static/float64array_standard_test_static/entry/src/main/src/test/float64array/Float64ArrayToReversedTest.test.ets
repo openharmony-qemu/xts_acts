@@ -15,8 +15,18 @@
  */
 
 import {
-  describe, it, expect, TestType, Size, Level
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
 } from '../../../../hypium/index';
+import Utils from './../Util.test';
 
 function isF64Arr(obj: Object): boolean {
   return obj instanceof Float64Array;
@@ -24,6 +34,18 @@ function isF64Arr(obj: Object): boolean {
 
 export default function Float64ArrayToReversedTest(): void {
   describe('Float64ArrayToReversedTest', (): void => {
+    beforeAll((): void => {
+    })
+
+    beforeEach(async (): Promise<void> => {
+      await Utils.msSleep(30);
+    })
+
+    afterEach((): void => {
+    })
+
+    afterAll((): void => {
+    })
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_0100
@@ -35,11 +57,18 @@ export default function Float64ArrayToReversedTest(): void {
      */
     it('testFloat64ArrayToReversed001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const threeValue: number = 3;
-      const arr = Float64Array.of(-2147483648, -1, 0);
+      const int32MinValue: number = -2147483648;
+      const negativeOne: number = -1;
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(int32MinValue, negativeOne, zeroValue);
       const result = arr.toReversed();
       const expectVal = threeValue;
       expect(result.length).assertEqual(expectVal);
-    })
+      const expectVal2 = zeroValue;
+      expect(result.$_get(0)).assertEqual(expectVal2);
+      const expectVal3 = int32MinValue;
+      expect(result.$_get(2)).assertEqual(expectVal3);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_0200
@@ -57,7 +86,7 @@ export default function Float64ArrayToReversedTest(): void {
       const expectVal = true;
       expect(actVal1).assertEqual(expectVal);
       expect(result.length).assertEqual(threeValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_0300
@@ -70,9 +99,8 @@ export default function Float64ArrayToReversedTest(): void {
     it('testFloat64ArrayToReversed003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([0.5, 1.5, 0.25]);
       const result = arr.toReversed();
-      const expectVal = true;
-      expect(result !== arr).assertEqual(expectVal);
-    })
+      expect(result).not().assertEqual(arr);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_0400
@@ -88,7 +116,7 @@ export default function Float64ArrayToReversedTest(): void {
       const result = arr.toReversed();
       const expectVal = threeValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_0500
@@ -113,7 +141,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal4 = result.$_get(2);
       const expectVal3 = int32MinValue;
       expect(actVal4).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_0600
@@ -138,7 +166,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal7 = arr.$_get(2);
       const expectVal3 = zeroValue;
       expect(actVal7).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_0700
@@ -154,7 +182,7 @@ export default function Float64ArrayToReversedTest(): void {
       arr.toReversed();
       const expectVal = threeValue;
       expect(arr.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_0800
@@ -168,9 +196,8 @@ export default function Float64ArrayToReversedTest(): void {
       const arr = new Float64Array([-32768, -128, 0]);
       const originalBuffer = arr.buffer;
       arr.toReversed();
-      const expectVal = true;
-      expect(arr.buffer === originalBuffer).assertEqual(expectVal);
-    })
+      expect(arr.buffer).assertEqual(originalBuffer);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_0900
@@ -183,9 +210,8 @@ export default function Float64ArrayToReversedTest(): void {
     it('testFloat64ArrayToReversed009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float64Array.of(-2147483648, -1, 0);
       const result = arr.toReversed();
-      const expectVal = true;
-      expect(result.buffer !== arr.buffer).assertEqual(expectVal);
-    })
+      expect(result.buffer).not().assertEqual(arr.buffer);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_1000
@@ -201,7 +227,7 @@ export default function Float64ArrayToReversedTest(): void {
       const result = arr.toReversed();
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_1100
@@ -214,9 +240,8 @@ export default function Float64ArrayToReversedTest(): void {
     it('testFloat64ArrayToReversed011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array(0);
       const result = arr.toReversed();
-      const expectVal = true;
-      expect(result !== arr).assertEqual(expectVal);
-    })
+      expect(result).not().assertEqual(arr);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_1200
@@ -234,7 +259,7 @@ export default function Float64ArrayToReversedTest(): void {
       const expectVal = true;
       expect(actVal8).assertEqual(expectVal);
       expect(result.length).assertEqual(zeroValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_1300
@@ -253,7 +278,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal9 = result.$_get(0);
       const expectVal = pointOne;
       expect(actVal9).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_1400
@@ -266,9 +291,8 @@ export default function Float64ArrayToReversedTest(): void {
     it('testFloat64ArrayToReversed014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([0.5]);
       const result = arr.toReversed();
-      const expectVal = true;
-      expect(result !== arr).assertEqual(expectVal);
-    })
+      expect(result).not().assertEqual(arr);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_1500
@@ -285,7 +309,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal10 = arr.$_get(0);
       const expectVal = int16MinValue;
       expect(actVal10).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_1600
@@ -306,7 +330,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal12 = result.$_get(1);
       const expectVal2 = int32MinValue;
       expect(actVal12).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_1700
@@ -327,7 +351,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal14 = arr.$_get(1);
       const expectVal2 = maxSafeInteger;
       expect(actVal14).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_1800
@@ -360,7 +384,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal19 = result.$_get(4);
       const expectVal5 = pointFive;
       expect(actVal19).assertEqual(expectVal5);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_1900
@@ -385,7 +409,7 @@ export default function Float64ArrayToReversedTest(): void {
       const expectVal2 = int16MinValue;
       expect(actVal21).assertEqual(expectVal2);
       expect(result.length).assertEqual(tenValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_2000
@@ -411,7 +435,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal23 = result.$_get(99);
       const expectVal2 = zeroValue;
       expect(actVal23).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_2100
@@ -432,7 +456,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal25 = result.$_get(1);
       const expectVal2 = onePointZero;
       expect(actVal25).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_2200
@@ -453,7 +477,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal27 = result.$_get(1);
       const expectVal2 = onePointZero;
       expect(actVal27).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_2300
@@ -478,7 +502,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal30 = result.$_get(2);
       const expectVal3 = onePointZero;
       expect(actVal30).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_2400
@@ -503,7 +527,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal33 = result.$_get(2);
       const expectVal3 = onePointZero;
       expect(actVal33).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_2500
@@ -528,7 +552,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal36 = result.$_get(2);
       const expectVal3 = onePointZero;
       expect(actVal36).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_2600
@@ -553,7 +577,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal39 = result.$_get(2);
       const expectVal3 = onePointZero;
       expect(actVal39).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_2700
@@ -578,7 +602,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal42 = result.$_get(2);
       const expectVal3 = onePointZero;
       expect(actVal42).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_2800
@@ -603,7 +627,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal45 = result.$_get(2);
       const expectVal3 = negonePointzero;
       expect(actVal45).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_2900
@@ -628,7 +652,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal48 = result.$_get(2);
       const expectVal3 = onePointFive;
       expect(actVal48).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_3000
@@ -653,7 +677,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal51 = result.$_get(2);
       const expectVal3 = sciValue10e308;
       expect(actVal51).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_3100
@@ -679,7 +703,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal55 = result.$_get(3);
       const expectVal4 = pointOneTwoFive;
       expect(actVal55).assertEqual(expectVal4);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_3200
@@ -701,7 +725,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal57 = result.$_get(2);
       const expectVal2 = zeroValue;
       expect(actVal57).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_3300
@@ -724,7 +748,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal59 = result.$_get(9);
       const expectVal2 = int32MinValue;
       expect(actVal59).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_3400
@@ -737,8 +761,9 @@ export default function Float64ArrayToReversedTest(): void {
     it('testFloat64ArrayToReversed034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointOne: number = 0.1;
       const zeroValue: number = 0;
-      const arr = new Float64Array([pointOne, 9007199254740991, zeroValue, 3.141592653589793, -1e-100, zeroValue, zeroValue,
-        zeroValue, zeroValue, zeroValue]);
+      const arr =
+        new Float64Array([pointOne, 9007199254740991, zeroValue, 3.141592653589793, -1e-100, zeroValue, zeroValue,
+          zeroValue, zeroValue, zeroValue]);
       const result = arr.toReversed();
       const actVal60 = result.$_get(0);
       const expectVal = zeroValue;
@@ -746,7 +771,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal61 = result.$_get(9);
       const expectVal2 = pointOne;
       expect(actVal61).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_3500
@@ -784,7 +809,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal67 = result.$_get(5);
       const expectVal6 = pointFive;
       expect(actVal67).assertEqual(expectVal6);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_3600
@@ -813,7 +838,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal71 = result.$_get(3);
       const expectVal4 = int16MinValue;
       expect(actVal71).assertEqual(expectVal4);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_3700
@@ -840,7 +865,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal74 = arr.$_get(2);
       const expectVal3 = zeroValue;
       expect(actVal74).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_3800
@@ -863,7 +888,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal76 = result.$_get(0);
       const expectVal2 = num999Value;
       expect(actVal76).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_3900
@@ -881,7 +906,7 @@ export default function Float64ArrayToReversedTest(): void {
       expect(result.length).assertEqual(threeValue);
       arr.$_set(0, hundredPointZero);
       expect(result.length).assertEqual(threeValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_4000
@@ -906,7 +931,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal79 = result.$_get(2);
       const expectVal3 = zeroValue;
       expect(actVal79).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_4100
@@ -931,7 +956,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal82 = result.$_get(2);
       const expectVal3 = pointOne;
       expect(actVal82).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_4200
@@ -956,7 +981,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal85 = result.$_get(2);
       const expectVal3 = pointFive;
       expect(actVal85).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_4300
@@ -981,7 +1006,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal87 = result.$_get(1);
       const expectVal2 = int8MaxValue;
       expect(actVal87).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_4400
@@ -1006,7 +1031,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal90 = result.$_get(2);
       const expectVal3 = pointOne;
       expect(actVal90).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_4500
@@ -1029,7 +1054,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal92 = result.$_get(3);
       const expectVal2 = onePointFive;
       expect(actVal92).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_4600
@@ -1052,7 +1077,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal94 = result.$_get(3);
       const expectVal2 = int8MinValue;
       expect(actVal94).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_4700
@@ -1073,10 +1098,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal96 = arr.$_get(0);
       const expectVal2 = int32MinValue;
       expect(actVal96).assertEqual(expectVal2);
-      const actVal97 = result.$_get(0) !== arr.$_get(0);
-      const expectVal3 = true;
-      expect(actVal97).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_4800
@@ -1096,8 +1118,8 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal99 = arr.$_get(0);
       const expectVal2 = pointOne;
       expect(actVal99).assertEqual(expectVal2);
-      expect(result !== arr).assertTrue();
-    })
+      expect(result).not().assertEqual(arr);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_4900
@@ -1113,8 +1135,8 @@ export default function Float64ArrayToReversedTest(): void {
       const result = arr.toReversed();
       expect(result.length).assertEqual(zeroValue);
       expect(arr.length).assertEqual(zeroValue);
-      expect(result !== arr).assertTrue();
-    })
+      expect(result).not().assertEqual(arr);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_5000
@@ -1139,7 +1161,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal102 = result.$_get(2);
       const expectVal3 = pointOne;
       expect(actVal102).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_5100
@@ -1164,7 +1186,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal105 = result.$_get(2);
       const expectVal3 = onePointZero;
       expect(actVal105).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_5200
@@ -1189,7 +1211,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal108 = result.$_get(2);
       const expectVal3 = onePointZero;
       expect(actVal108).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_5300
@@ -1214,12 +1236,12 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal111 = arr.$_get(2);
       const expectVal3 = pointTwoFive;
       expect(actVal111).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_5400
      * @tc.name testFloat64ArrayToReversed054
-     * @tc.desc Verify toReversed result elements by index
+     * @tc.desc Verify toReversed keeps INT16 boundary order and source start value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1239,7 +1261,8 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal114 = result.$_get(2);
       const expectVal3 = int16MinValue;
       expect(actVal114).assertEqual(expectVal3);
-    })
+      expect(arr.$_get(0)).assertEqual(int16MinValue);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_5500
@@ -1262,7 +1285,7 @@ export default function Float64ArrayToReversedTest(): void {
       const expectVal2 = onePointZero;
       expect(actVal116).assertEqual(expectVal2);
       expect(result.length).assertEqual(3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_5600
@@ -1290,7 +1313,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal119 = result.$_get(2);
       const expectVal3 = onePointZero;
       expect(actVal119).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_5700
@@ -1324,7 +1347,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal124 = result.$_get(4);
       const expectVal5 = onePointZero;
       expect(actVal124).assertEqual(expectVal5);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_5800
@@ -1341,7 +1364,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal125 = result.$_get(0);
       const expectVal = int32MaxValue;
       expect(actVal125).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_5900
@@ -1359,7 +1382,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal126 = result.$_get(1);
       const expectVal = piValue;
       expect(actVal126).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_6000
@@ -1376,7 +1399,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal127 = result.$_get(4);
       const expectVal = pointFive;
       expect(actVal127).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_6100
@@ -1394,24 +1417,27 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal128 = result.$_get(4);
       const expectVal = int16MinValue;
       expect(actVal128).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_6200
      * @tc.name testFloat64ArrayToReversed062
-     * @tc.desc Verify toReversed result has expected sum-equivalent values
+     * @tc.desc Verify toReversed places INT32 boundary values at reversed ends
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayToReversed062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const negnum2147483649Value: number = -2147483649;
-      const arr = Float64Array.of(-2147483648, -1, 0);
+      const int32MinValue: number = -2147483648;
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
       const result = arr.toReversed();
-      const actVal129 = result.$_get(0) + result.$_get(1) + result.$_get(2);
-      const expectVal = negnum2147483649Value;
+      const actVal129 = result.$_get(0);
+      const expectVal = zeroValue;
       expect(actVal129).assertEqual(expectVal);
-    })
+      const expectVal2 = int32MinValue;
+      expect(result.$_get(2)).assertEqual(expectVal2);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_6300
@@ -1428,7 +1454,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal130 = result.$_get(1);
       const expectVal = maxSafeInteger;
       expect(actVal130).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_6400
@@ -1453,12 +1479,12 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal132 = result.$_get(1);
       const expectVal2 = oneValue;
       expect(actVal132).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_6500
      * @tc.name testFloat64ArrayToReversed065
-     * @tc.desc Verify toReversed result preserves sum-equivalent values
+     * @tc.desc Verify toReversed keeps MAX_SAFE value at middle index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1467,27 +1493,31 @@ export default function Float64ArrayToReversedTest(): void {
       const maxSafeInteger: number = 9007199254740991;
       const arr = Float64Array.of(0.1, maxSafeInteger, 0);
       const result = arr.toReversed();
-      const total = result.$_get(0) + result.$_get(1) + result.$_get(2);
+      const total = result.$_get(1);
       const expectVal = maxSafeInteger;
       expect(total).assertEqual(expectVal);
-    })
+      expect(result.$_get(0)).assertEqual(0);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_6600
      * @tc.name testFloat64ArrayToReversed066
-     * @tc.desc Verify toReversed result preserves fractional sum
+     * @tc.desc Verify toReversed result preserves fractional reversed order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayToReversed066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const twoPointtwofive: number = 2.25;
+      const pointTwoFive: number = 0.25;
+      const pointFive: number = 0.5;
       const arr = new Float64Array([0.5, 1.5, 0.25]);
       const result = arr.toReversed();
-      const total = result.$_get(0) + result.$_get(1) + result.$_get(2);
-      const expectVal = twoPointtwofive;
-      expect(total).assertEqual(expectVal);
-    })
+      const actVal = result.$_get(0);
+      const expectVal = pointTwoFive;
+      expect(actVal).assertEqual(expectVal);
+      const expectVal2 = pointFive;
+      expect(result.$_get(2)).assertEqual(expectVal2);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_6700
@@ -1509,7 +1539,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal134 = result.$_get(2);
       const expectVal2 = int16MinValue;
       expect(actVal134).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_6800
@@ -1533,7 +1563,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal136 = result.$_get(2);
       const expectVal2 = int32MinValue;
       expect(actVal136).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_6900
@@ -1556,7 +1586,7 @@ export default function Float64ArrayToReversedTest(): void {
       expect(values[0]).assertEqual(pointTwoFive);
       expect(values[1]).assertEqual(onePointFive);
       expect(values[2]).assertEqual(pointFive);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_7000
@@ -1571,17 +1601,19 @@ export default function Float64ArrayToReversedTest(): void {
       const int8MinValue: number = -128;
       const zeroValue: number = 0;
       const arr1 = Float64Array.of(int16MinValue, int8MinValue, zeroValue);
+      const arr2 = Float64Array.of(int16MinValue, int8MinValue, zeroValue);
       const result = arr1.toReversed();
+      const reversed = arr2.reverse();
       const actVal137 = result.$_get(0);
-      const expectVal = zeroValue;
+      const expectVal = reversed.$_get(0);
       expect(actVal137).assertEqual(expectVal);
       const actVal138 = result.$_get(1);
-      const expectVal2 = int8MinValue;
+      const expectVal2 = reversed.$_get(1);
       expect(actVal138).assertEqual(expectVal2);
       const actVal139 = result.$_get(2);
-      const expectVal3 = int16MinValue;
+      const expectVal3 = reversed.$_get(2);
       expect(actVal139).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_7100
@@ -1602,7 +1634,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal141 = arr1.$_get(1);
       const expectVal2 = maxSafeInteger;
       expect(actVal141).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_7200
@@ -1623,7 +1655,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal143 = arr.$_get(0);
       const expectVal2 = int16MinValue;
       expect(actVal143).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_7300
@@ -1652,7 +1684,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal147 = arr.$_get(0);
       const expectVal4 = int32MinValue;
       expect(actVal147).assertEqual(expectVal4);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_7400
@@ -1680,7 +1712,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal151 = arr.$_get(0);
       const expectVal4 = pointOne;
       expect(actVal151).assertEqual(expectVal4);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_7500
@@ -1703,7 +1735,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal153 = arr.$_get(0);
       const expectVal2 = pointFive;
       expect(actVal153).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_7600
@@ -1731,7 +1763,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal157 = arr.$_get(0);
       const expectVal4 = int16MinValue;
       expect(actVal157).assertEqual(expectVal4);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_7700
@@ -1762,7 +1794,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal161 = arr.$_get(0);
       const expectVal4 = int32MinValue;
       expect(actVal161).assertEqual(expectVal4);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_7800
@@ -1789,7 +1821,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal164 = arr.$_get(0);
       const expectVal3 = pointOne;
       expect(actVal164).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_7900
@@ -1803,11 +1835,11 @@ export default function Float64ArrayToReversedTest(): void {
       const pointTwoFive: number = 0.25;
       const arr = Float64Array.of(0.5, 1.5, pointTwoFive);
       const result = arr.toReversed();
-      expect(result === arr).assertFalse();
+      expect(result).not().assertEqual(arr);
       const actVal165 = result.$_get(0);
       const expectVal = pointTwoFive;
       expect(actVal165).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_8000
@@ -1822,11 +1854,12 @@ export default function Float64ArrayToReversedTest(): void {
       const zeroValue: number = 0;
       const arr = new Float64Array([int16MinValue, -128, zeroValue]);
       const reversed = arr.toReversed();
+      expect(reversed).not().assertEqual(arr);
       expect(arr[0]).assertEqual(int16MinValue);
       expect(arr[2]).assertEqual(zeroValue);
       expect(reversed[0]).assertEqual(zeroValue);
       expect(reversed[2]).assertEqual(int16MinValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_8100
@@ -1846,7 +1879,7 @@ export default function Float64ArrayToReversedTest(): void {
       const r = arr.toReversed();
       expect(r[0]).assertEqual(eightyfiveValue);
       expect(r[2]).assertEqual(num255Value);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_8200
@@ -1866,7 +1899,7 @@ export default function Float64ArrayToReversedTest(): void {
       const r = arr.toReversed();
       expect(r[0]).assertEqual(eightyfiveValue);
       expect(r[2]).assertEqual(num255Value);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_8300
@@ -1887,7 +1920,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal167 = Number.isNaN(result.$_get(1));
       const expectVal2 = true;
       expect(actVal167).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_8400
@@ -1908,7 +1941,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal169 = result.$_get(1);
       const expectVal2 = positiveInfinity;
       expect(actVal169).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_8500
@@ -1924,16 +1957,10 @@ export default function Float64ArrayToReversedTest(): void {
       const threePointZero: number = 3.0;
       const arr = Float64Array.of(onePointZero, twoPointZero, threePointZero);
       const result = arr.toReversed();
-      const actVal170 = result.$_get(0);
-      const expectVal = threePointZero;
+      const actVal170 = result.toLocaleString();
+      const expectVal = "3,2,1";
       expect(actVal170).assertEqual(expectVal);
-      const actVal171 = result.$_get(1);
-      const expectVal2 = twoPointZero;
-      expect(actVal171).assertEqual(expectVal2);
-      const actVal172 = result.$_get(2);
-      const expectVal3 = onePointZero;
-      expect(actVal172).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_8600
@@ -1958,7 +1985,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal174 = p.$_get(0);
       const expectVal2 = 10.0;
       expect(actVal174).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_8700
@@ -1978,7 +2005,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal175 = r.toString();
       const expectVal = "5,4";
       expect(actVal175).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_8800
@@ -1998,7 +2025,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal177 = r.$_get(0);
       const expectVal2 = 99.0;
       expect(actVal177).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_8900
@@ -2018,7 +2045,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal179 = a.$_get(0);
       const expectVal2 = 100.0;
       expect(actVal179).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_9000
@@ -2038,7 +2065,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal181 = a.toString();
       const expectVal2 = "1,2,3";
       expect(actVal181).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_9100
@@ -2054,7 +2081,7 @@ export default function Float64ArrayToReversedTest(): void {
       const expectVal = 3.0;
       expect(actVal182).assertEqual(expectVal);
       expect(r.length).assertEqual(5);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_9200
@@ -2068,7 +2095,7 @@ export default function Float64ArrayToReversedTest(): void {
       const r = new Float64Array(0).toReversed();
       expect(r.length).assertEqual(0);
       expect(r.byteLength).assertEqual(0);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_9300
@@ -2088,7 +2115,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal184 = r.$_get(0);
       const expectVal2 = 70.0;
       expect(actVal184).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_9400
@@ -2106,7 +2133,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal186 = r.$_get(1);
       const expectVal2 = Double.MIN_VALUE;
       expect(actVal186).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_9500
@@ -2130,7 +2157,7 @@ export default function Float64ArrayToReversedTest(): void {
       const actVal188 = p.toString();
       const expectVal2 = "1,2,3,4";
       expect(actVal188).assertEqual(expectVal2);
-    })
+    });
 
   });
 }

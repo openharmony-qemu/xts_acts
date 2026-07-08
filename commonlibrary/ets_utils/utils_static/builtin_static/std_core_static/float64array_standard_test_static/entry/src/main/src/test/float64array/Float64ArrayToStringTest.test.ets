@@ -56,7 +56,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "1,2,3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_0200
@@ -71,7 +71,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "2.5";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_0300
@@ -86,7 +86,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "-1.5";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_0400
@@ -101,7 +101,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_0500
@@ -116,7 +116,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "1";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_0600
@@ -131,7 +131,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "-1";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_0700
@@ -146,7 +146,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "0";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_0800
@@ -161,7 +161,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "0";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_0900
@@ -177,7 +177,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "NaN";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_1000
@@ -193,7 +193,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "Infinity";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_1100
@@ -209,7 +209,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "-Infinity";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_1200
@@ -224,7 +224,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "5e-324";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_1300
@@ -239,7 +239,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "1.7976931348623157e+308";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_1400
@@ -254,7 +254,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "0.5";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_1500
@@ -269,7 +269,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "1,2";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_1600
@@ -284,7 +284,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "-1,-2,-3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_1700
@@ -300,7 +300,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "0,0,0";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_1800
@@ -315,7 +315,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "-1,0,1";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_1900
@@ -331,7 +331,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "1,NaN,3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_2000
@@ -347,7 +347,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "1,Infinity,3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_2100
@@ -363,7 +363,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "1,-Infinity,3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_2200
@@ -379,7 +379,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "NaN,NaN";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_2300
@@ -395,7 +395,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "Infinity,Infinity";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_2400
@@ -410,7 +410,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "0.1,0.2,0.3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_2500
@@ -425,7 +425,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "1e-10,20000000000";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_2600
@@ -440,7 +440,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "5e-324,1.7976931348623157e+308";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_2700
@@ -455,7 +455,7 @@ export default function float64ArrayToStringTest(): void {
       const actVal1 = values.toString();
       const expectVal = "42";
       expect(actVal1).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_2800
@@ -470,7 +470,7 @@ export default function float64ArrayToStringTest(): void {
       const actVal2 = values.toString();
       const expectVal = "1,2,3,4,5";
       expect(actVal2).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_2900
@@ -487,7 +487,7 @@ export default function float64ArrayToStringTest(): void {
       const actVal3 = values.toString();
       const expectVal = "NaN,Infinity";
       expect(actVal3).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_3000
@@ -502,7 +502,7 @@ export default function float64ArrayToStringTest(): void {
       const actVal4 = values.toString();
       const expectVal = "-100,0,100";
       expect(actVal4).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_3100
@@ -517,7 +517,7 @@ export default function float64ArrayToStringTest(): void {
       const actVal5 = values.toString();
       const expectVal = "0.123,456.789";
       expect(actVal5).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_3200
@@ -532,7 +532,7 @@ export default function float64ArrayToStringTest(): void {
       const actVal6 = values.toString();
       const expectVal = "1e-308,1e+308";
       expect(actVal6).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_3300
@@ -547,7 +547,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "0";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_3400
@@ -562,7 +562,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "0,0";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_3500
@@ -577,7 +577,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "9007199254740991";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_3600
@@ -592,7 +592,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "-9007199254740991";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_3700
@@ -607,7 +607,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "2147483647";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_3800
@@ -622,7 +622,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "-2147483648";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_3900
@@ -649,7 +649,7 @@ export default function float64ArrayToStringTest(): void {
       const actVal9 = values.$_get(2);
       const expectVal3 = before2;
       expect(actVal9).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_4000
@@ -679,7 +679,7 @@ export default function float64ArrayToStringTest(): void {
       const actVal11 = values.$_get(2);
       const expectVal4 = zeroPointZero;
       expect(actVal11).assertEqual(expectVal4);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_4100
@@ -702,7 +702,7 @@ export default function float64ArrayToStringTest(): void {
       const actVal14 = result.indexOf(" ");
       const expectVal3 = negativeOne;
       expect(actVal14).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_4200
@@ -717,7 +717,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "1,-2.5";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_4300
@@ -734,7 +734,7 @@ export default function float64ArrayToStringTest(): void {
       } catch (e) {
         expect(e).assertNull();
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_4400
@@ -751,7 +751,7 @@ export default function float64ArrayToStringTest(): void {
       } catch (e) {
         expect(e).assertNull();
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_4500
@@ -771,7 +771,7 @@ export default function float64ArrayToStringTest(): void {
       } catch (e) {
         expect(e).assertNull();
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_4600
@@ -786,7 +786,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "0,0,0";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_4700
@@ -801,7 +801,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "1,2,3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_4800
@@ -816,7 +816,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "10,20,30";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_4900
@@ -832,7 +832,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "5,6";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_5000
@@ -849,7 +849,7 @@ export default function float64ArrayToStringTest(): void {
       const actVal15 = result.split(",").length;
       const expectVal = hundredValue;
       expect(actVal15).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_5100
@@ -870,7 +870,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "1,2,3,4,5,6,7,8,9,10";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_5200
@@ -885,7 +885,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "0.30000000000000004";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_5300
@@ -900,7 +900,7 @@ export default function float64ArrayToStringTest(): void {
       const result = values.toString();
       const expectVal = "3.14159265358979";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_5400
@@ -916,7 +916,7 @@ export default function float64ArrayToStringTest(): void {
       const concatenated = result + "suffix";
       const expectVal = "1suffix";
       expect(concatenated).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_5500
@@ -929,9 +929,8 @@ export default function float64ArrayToStringTest(): void {
     it('testFloat64ArrayToString055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values = Float64Array.of(1.0);
       const result = values.toString();
-      const expectVal = true;
-      expect(result != null).assertEqual(expectVal);
-    })
+      expect(result).assertEqual('1');
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_5600
@@ -954,7 +953,7 @@ export default function float64ArrayToStringTest(): void {
       const expectVal = "2,3,4";
       expect(actVal16).assertEqual(expectVal);
       expect(v.length).assertEqual(3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_5700
@@ -974,7 +973,7 @@ export default function float64ArrayToStringTest(): void {
       const actVal18 = a.toString();
       const expectVal2 = "5,6,70,8";
       expect(actVal18).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_5800
@@ -993,7 +992,7 @@ export default function float64ArrayToStringTest(): void {
       const actVal20 = a.toString();
       const expectVal2 = "1,2,3";
       expect(actVal20).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_5900
@@ -1012,7 +1011,7 @@ export default function float64ArrayToStringTest(): void {
       const actVal22 = a.toString();
       const expectVal2 = "3,1,2";
       expect(actVal22).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_6000
@@ -1027,7 +1026,7 @@ export default function float64ArrayToStringTest(): void {
       const actVal23 = a.toString();
       const expectVal = "5e-324,1.7976931348623157e+308";
       expect(actVal23).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_6100
@@ -1042,7 +1041,7 @@ export default function float64ArrayToStringTest(): void {
       const actVal24 = a.toString();
       const expectVal = "Infinity,-Infinity,NaN";
       expect(actVal24).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_6200
@@ -1060,7 +1059,7 @@ export default function float64ArrayToStringTest(): void {
       const actVal26 = 1 / a.$_get(0);
       const expectVal2 = -Infinity;
       expect(actVal26).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_6300
@@ -1077,7 +1076,7 @@ export default function float64ArrayToStringTest(): void {
       const expectVal = "4.5,4.5,4.5";
       expect(actVal27).assertEqual(expectVal);
       expect(a.length).assertEqual(3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_6400
@@ -1097,7 +1096,7 @@ export default function float64ArrayToStringTest(): void {
       const actVal29 = a.toString();
       const expectVal2 = "9,80,7,6";
       expect(actVal29).assertEqual(expectVal2);
-    })
+    });
 
   })
 }
