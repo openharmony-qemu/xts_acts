@@ -305,7 +305,7 @@ export default function Float64ArraySortTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_1400
      * @tc.name testFloat64ArraySort014
-     * @tc.desc Verify sort places -Infinity before finite values
+     * @tc.desc Verify sort puts -Infinity before finite values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

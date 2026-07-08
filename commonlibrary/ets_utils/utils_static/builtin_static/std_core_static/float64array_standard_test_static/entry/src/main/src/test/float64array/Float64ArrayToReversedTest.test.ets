@@ -1422,7 +1422,7 @@ export default function Float64ArrayToReversedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_6200
      * @tc.name testFloat64ArrayToReversed062
-     * @tc.desc Verify toReversed places INT32 boundary values at reversed ends
+     * @tc.desc Verify toReversed puts INT32 boundary values at reversed ends
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
