@@ -766,6 +766,36 @@ export default function fontTest() {
     });
 
     /**
+     * @tc.name   testOHDrawingTypographyGetTextLines0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyGetTextLines_0300
+     * @tc.desc   test OH_Drawing_TypographyGetTextLines 2x repeated, verify line count consistency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTypographyGetTextLines0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTypographyGetTextLines0300();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTypographyGetTextLines0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTypographyGetTextLines_0400
+     * @tc.desc   test OH_Drawing_TypographyGetTextLines 5x repeated, verify line count + glyph count + text range
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTypographyGetTextLines0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTypographyGetTextLines0400();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
      * @tc.name   testOHDrawingDestroyTextLine001
      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Drawing_DestroyTextLine_001
      * @tc.desc   test OH_Drawing_DestroyTextLine_001
@@ -821,6 +851,51 @@ export default function fontTest() {
     it('testOHDrawingTextLineGetGlyphRuns001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
       let result: number = nativeFontNdk.oHDrawingTextLineGetGlyphRuns001();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTextLineGetGlyphRuns0200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTextLineGetGlyphRuns_0200
+     * @tc.desc   test OH_Drawing_TextLineGetGlyphRuns 2x repeated on same textLine, verify runs size consistency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTextLineGetGlyphRuns0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTextLineGetGlyphRuns0200();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTextLineGetGlyphRuns0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTextLineGetGlyphRuns_0300
+     * @tc.desc   test OH_Drawing_TextLineGetGlyphRuns 5x repeated on same line, verify runs + glyph + run consistency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTextLineGetGlyphRuns0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTextLineGetGlyphRuns0300();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingTextLineGetGlyphRuns0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingTextLineGetGlyphRuns_0400
+     * @tc.desc   test TextLineGetGlyphRuns 5x repeated with GetRunGlyphs and GetRunGlyphsByIndex, verify consistency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingTextLineGetGlyphRuns0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingTextLineGetGlyphRuns0400();
       expect(result).assertEqual(0);
       done();
     });
