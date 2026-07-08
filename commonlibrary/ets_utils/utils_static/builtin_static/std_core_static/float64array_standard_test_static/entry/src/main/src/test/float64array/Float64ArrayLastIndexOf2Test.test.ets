@@ -59,7 +59,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxFound = arr.lastIndexOf(-1e-100, 0);
       const expectVal2 = 0;
       expect(idxFound).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_0200
@@ -77,7 +77,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxDup2 = arr.lastIndexOf(0.0625, 2);
       const expectVal2 = 2;
       expect(idxDup2).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_0300
@@ -95,7 +95,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxLast = arr.lastIndexOf(32767, 4);
       const expectVal2 = 4;
       expect(idxLast).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_0400
@@ -110,7 +110,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(1.0, 3);
       const expectVal = 3;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_0500
@@ -128,7 +128,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxEarly = arr.lastIndexOf(1.0001, 1);
       const expectVal2 = 0;
       expect(idxEarly).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_0600
@@ -146,7 +146,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxFirst = arr.lastIndexOf(0.1, -5);
       const expectVal2 = 0;
       expect(idxFirst).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_0700
@@ -161,7 +161,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(1.0, -6);
       const expectVal = -1;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_0800
@@ -179,7 +179,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxZero = arr.lastIndexOf(0.0);
       const expectVal2 = 3;
       expect(idxZero).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_0900
@@ -197,7 +197,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxMax = arr.lastIndexOf(3.0);
       const expectVal2 = 4;
       expect(idxMax).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_1000
@@ -217,7 +217,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxNum = arr.lastIndexOf(searchNum, fromIdx);
       const expectVal2 = -1;
       expect(idxNum).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_1100
@@ -238,7 +238,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxMiss = arr.lastIndexOf(searchMiss);
       const expectVal2 = -1;
       expect(idxMiss).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_1200
@@ -259,7 +259,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxFirst = arr.lastIndexOf(searchFirst, fromIdx);
       const expectVal2 = 0;
       expect(idxFirst).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_1300
@@ -277,7 +277,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxFound = arr.lastIndexOf(-1.0, -2);
       const expectVal2 = 2;
       expect(idxFound).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_1400
@@ -295,7 +295,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxLast = arr.lastIndexOf(123.456, -1);
       const expectVal2 = 2;
       expect(idxLast).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_1500
@@ -313,7 +313,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxFound = arr.lastIndexOf(2147483647, 10);
       const expectVal2 = 4;
       expect(idxFound).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_1600
@@ -331,7 +331,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxFirst = arr.lastIndexOf(0.1, 1);
       const expectVal2 = 0;
       expect(idxFirst).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_1700
@@ -349,7 +349,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxFirst = arr.lastIndexOf(0.5, 0);
       const expectVal2 = 0;
       expect(idxFirst).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_1800
@@ -367,7 +367,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxFound = arr.lastIndexOf(-128);
       const expectVal2 = 1;
       expect(idxFound).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_1900
@@ -385,7 +385,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxNeg = arr.lastIndexOf(-2.2);
       const expectVal2 = 3;
       expect(idxNeg).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_2000
@@ -403,7 +403,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxPos = arr.lastIndexOf(4.0);
       const expectVal2 = 3;
       expect(idxPos).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_2100
@@ -421,7 +421,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxLarge = arr.lastIndexOf(1.0e+100);
       const expectVal2 = 2;
       expect(idxLarge).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_2200
@@ -439,7 +439,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxNInf = arr.lastIndexOf(-Infinity);
       const expectVal2 = 2;
       expect(idxNInf).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_2300
@@ -460,7 +460,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxNegZero = arr.lastIndexOf(-0.0);
       const expectVal3 = 2;
       expect(idxNegZero).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_2400
@@ -478,7 +478,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxFound = arr.lastIndexOf(0, 100);
       const expectVal2 = 2;
       expect(idxFound).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_2500
@@ -496,7 +496,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxLarge = arr.lastIndexOf(2.0e+50);
       const expectVal2 = 3;
       expect(idxLarge).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_2600
@@ -514,7 +514,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxLarge = arr.lastIndexOf(-2.0e+50);
       const expectVal2 = 3;
       expect(idxLarge).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_2700
@@ -529,7 +529,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(5e-324);
       const expectVal = -1;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_2800
@@ -547,7 +547,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxFound = arr.lastIndexOf(0, 1);
       const expectVal2 = 1;
       expect(idxFound).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_2900
@@ -566,7 +566,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(42.0);
       const expectVal = 499;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_3000
@@ -585,7 +585,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(99.0);
       const expectVal = 0;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_3100
@@ -600,7 +600,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(0.1 + 0.2);
       const expectVal = -1;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_3200
@@ -618,7 +618,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxNotFound = arr.lastIndexOf(0.3);
       const expectVal2 = -1;
       expect(idxNotFound).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_3300
@@ -639,7 +639,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxMid = arr.lastIndexOf(5.0, 500);
       const expectVal2 = 500;
       expect(idxMid).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_3400
@@ -656,7 +656,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(7.0, -200);
       const expectVal = 800;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_3500
@@ -673,7 +673,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(7.0, -900);
       const expectVal = 100;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_3600
@@ -689,7 +689,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(7.0, -200);
       const expectVal = -1;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_3700
@@ -704,7 +704,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(0xAA);
       const expectVal = 3;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_3800
@@ -719,7 +719,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(0b10101010);
       const expectVal = 3;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_3900
@@ -737,7 +737,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxFound = arr.lastIndexOf(0x3C);
       const expectVal2 = 2;
       expect(idxFound).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_4000
@@ -755,7 +755,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxInf = arr.lastIndexOf(Double.POSITIVE_INFINITY);
       const expectVal2 = 1;
       expect(idxInf).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_4100
@@ -773,7 +773,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxNegZero = arr.lastIndexOf(-0.0);
       const expectVal2 = 1;
       expect(idxNegZero).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_4200
@@ -791,7 +791,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxMin = arr.lastIndexOf(Double.MIN_VALUE);
       const expectVal2 = 1;
       expect(idxMin).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_4300
@@ -806,7 +806,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(3.14, 0);
       const expectVal = 0;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_4400
@@ -821,7 +821,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(3.14, 1);
       const expectVal = 1;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_4500
@@ -839,7 +839,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxNotFound = arr.lastIndexOf(4.0, 2);
       const expectVal2 = -1;
       expect(idxNotFound).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_4600
@@ -854,7 +854,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(2.0, 3);
       const expectVal = 3;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_4700
@@ -875,7 +875,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxMiss = arr.lastIndexOf(searchMiss, fromIdx);
       const expectVal2 = -1;
       expect(idxMiss).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_4800
@@ -893,7 +893,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxMid = arr.lastIndexOf(30.0, -3);
       const expectVal2 = 2;
       expect(idxMid).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_4900
@@ -911,7 +911,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxFirst = arr.lastIndexOf(1.1);
       const expectVal2 = 4;
       expect(idxFirst).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_5000
@@ -928,7 +928,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(searchInt, fromIdx);
       const expectVal = 0;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_5100
@@ -944,7 +944,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(searchNum);
       const expectVal = -1;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_5200
@@ -961,7 +961,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(searchInt, fromIdx);
       const expectVal = 1;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_5300
@@ -978,7 +978,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(searchNum, fromIdx);
       const expectVal = -1;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_5400
@@ -995,7 +995,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(searchNum, fromIdx);
       const expectVal = 1;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_5500
@@ -1014,7 +1014,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxFound = arr.lastIndexOf(0, fromIdx);
       const expectVal2 = 2;
       expect(idxFound).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_5600
@@ -1030,7 +1030,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(1.0, fromIdx);
       const expectVal = -1;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_5700
@@ -1046,7 +1046,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const expectVal = -1;
       expect(idx).assertEqual(expectVal);
       expect(typeof idx).assertEqual('int');
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_5800
@@ -1064,7 +1064,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxOne = arr.lastIndexOf(1);
       const expectVal2 = 1;
       expect(idxOne).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_5900
@@ -1082,7 +1082,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxNotFound = arr.lastIndexOf(9.99);
       const expectVal2 = -1;
       expect(idxNotFound).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_6000
@@ -1107,7 +1107,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxNotFound = sub.lastIndexOf(4.0);
       const expectVal2 = -1;
       expect(idxNotFound).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_6100
@@ -1126,7 +1126,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxNotFound = arr.lastIndexOf(0o30);
       const expectVal2 = negativeOne;
       expect(idxNotFound).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_6200
@@ -1144,7 +1144,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       arr.lastIndexOf(twoPointZero);
       expect(arr.length).assertEqual(lenBefore);
       expect(arr.length).assertEqual(threeValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_6300
@@ -1161,7 +1161,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(onePointZero, 0);
       const expectVal = negativeOne;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_6400
@@ -1178,7 +1178,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(onePointZero, -1);
       const expectVal = negativeOne;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_6500
@@ -1195,7 +1195,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(onePointZero, -5);
       const expectVal = negativeOne;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_6600
@@ -1212,7 +1212,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(onePointZero);
       const expectVal = negativeOne;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_6700
@@ -1234,7 +1234,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxNotFound = arr.lastIndexOf(onePointZero, 2);
       const expectVal2 = negativeOne;
       expect(idxNotFound).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_6800
@@ -1251,7 +1251,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(zeroPointZero, -3);
       const expectVal = twoValue;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_6900
@@ -1268,7 +1268,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(onePointZero, 1);
       const expectVal = negativeOne;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_7000
@@ -1288,7 +1288,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxNeg = arr.lastIndexOf(fivePointZero, -2);
       const expectVal2 = twoValue;
       expect(idxNeg).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_7100
@@ -1305,7 +1305,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idx = arr.lastIndexOf(sevenPointZero, -3);
       const expectVal = twoValue;
       expect(idx).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_7200
@@ -1327,7 +1327,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxNaN = arr.lastIndexOf(nanValue);
       const expectVal2 = negativeOne;
       expect(idxNaN).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_7300
@@ -1350,7 +1350,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxNInf = arrNInf.lastIndexOf(negativeInfinity);
       const expectVal2 = twoValue;
       expect(idxNInf).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_7400
@@ -1377,7 +1377,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxNaN = arr.lastIndexOf(nanValue);
       const expectVal3 = negativeOne;
       expect(idxNaN).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_7500
@@ -1404,7 +1404,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxNaN = arr.lastIndexOf(nanValue);
       const expectVal3 = negativeOne;
       expect(idxNaN).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_7600
@@ -1426,7 +1426,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxNaN = arr.lastIndexOf(nanValue);
       const expectVal2 = negativeOne;
       expect(idxNaN).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_7700
@@ -1447,7 +1447,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxNotFound = arr.lastIndexOf(twoPointZero, 2);
       const expectVal2 = negativeOne;
       expect(idxNotFound).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_7800
@@ -1468,7 +1468,7 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxNotFound = arr.lastIndexOf(twoPointZero, -3);
       const expectVal2 = negativeOne;
       expect(idxNotFound).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_7900
@@ -1487,12 +1487,12 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxEmpty = arr.lastIndexOf(onePointZero, -4);
       const expectVal2 = -1;
       expect(idxEmpty).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF2_8000
      * @tc.name testFloat64ArrayLastIndexOf2080
-     * @tc.desc Verify lastIndexOf with fromIndex at length and length+1 searches whole array
+     * @tc.desc Verify lastIndexOf with fromIndex at length and large positive index searches whole array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1506,6 +1506,6 @@ export default function float64ArrayLastIndexOf2Test(): void {
       const idxLarge = arr.lastIndexOf(threePointZero, 100);
       const expectVal2 = 2;
       expect(idxLarge).assertEqual(expectVal2);
-    })
+    });
   })
 }
