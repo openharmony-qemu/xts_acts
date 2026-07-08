@@ -1793,6 +1793,265 @@ export default function BigInt64ArrayConstructor01Test(): void {
         expect(arr.length).assertEqual(2);
       });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_ONE_1350
+     * @tc.name testBigInt64ArrayConstructorOne1350
+     * @tc.desc Verify `new BigInt64Array([15n, 1n])` produces a result where `arr.$_get(0)` equals `15n`.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorOne1350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let arr = new BigInt64Array([15n, 1n]);
+        expect(arr.$_get(0)).assertEqual(15n);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_ONE_1360
+     * @tc.name testBigInt64ArrayConstructorOne1360
+     * @tc.desc Verify `new BigInt64Array([15n, 1n])` produces a result where `arr.$_get(1)` equals `1n`.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorOne1360', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let arr = new BigInt64Array([15n, 1n]);
+        expect(arr.$_get(1)).assertEqual(1n);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_ONE_1370
+     * @tc.name testBigInt64ArrayConstructorOne1370
+     * @tc.desc Verify `new BigInt64Array([15n, -1n])` produces a result where `arr.length` equals `2`.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorOne1370', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let arr = new BigInt64Array([15n, -1n]);
+        expect(arr.length).assertEqual(2);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_ONE_1380
+     * @tc.name testBigInt64ArrayConstructorOne1380
+     * @tc.desc Verify `new BigInt64Array([15n, -1n])` produces a result where `arr.$_get(0)` equals `15n`.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorOne1380', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let arr = new BigInt64Array([15n, -1n]);
+        expect(arr.$_get(0)).assertEqual(15n);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_ONE_1390
+     * @tc.name testBigInt64ArrayConstructorOne1390
+     * @tc.desc Verify `new BigInt64Array([15n, -1n])` produces a result where `arr.$_get(1)` equals `-1n`.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorOne1390', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let arr = new BigInt64Array([15n, -1n]);
+        expect(arr.$_get(1)).assertEqual(-1n);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_ONE_1400
+     * @tc.name testBigInt64ArrayConstructorOne1400
+     * @tc.desc Verify `new BigInt64Array([15n, 9223372036854775807n])` produces a result where `arr.length` equals `2`.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorOne1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let arr = new BigInt64Array([15n, 9223372036854775807n]);
+        expect(arr.length).assertEqual(2);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_ONE_1410
+     * @tc.name testBigInt64ArrayConstructorOne1410
+     * @tc.desc Verify `new BigInt64Array([15n, 9223372036854775807n])` produces a result where `arr.$_get(0)` equals `15n`.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorOne1410', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let arr = new BigInt64Array([15n, 9223372036854775807n]);
+        expect(arr.$_get(0)).assertEqual(15n);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_ONE_1420
+     * @tc.name testBigInt64ArrayConstructorOne1420
+     * @tc.desc Verify `new BigInt64Array([15n, 9223372036854775807n])` produces a result where `arr.$_get(1)` equals `9223372036854775807n`.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorOne1420', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let arr = new BigInt64Array([15n, 9223372036854775807n]);
+        expect(arr.$_get(1)).assertEqual(9223372036854775807n);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_ONE_1430
+     * @tc.name testBigInt64ArrayConstructorOne1430
+     * @tc.desc Verify `new BigInt64Array([15n, -9223372036854775807n - 1n])` produces a result where `arr.length` equals `2`.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorOne1430', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let arr = new BigInt64Array([15n, -9223372036854775807n - 1n]);
+        expect(arr.length).assertEqual(2);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_ONE_1440
+     * @tc.name testBigInt64ArrayConstructorOne1440
+     * @tc.desc Verify `new BigInt64Array([15n, -9223372036854775807n - 1n])` produces a result where `arr.$_get(0)` equals `15n`.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorOne1440', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let arr = new BigInt64Array([15n, -9223372036854775807n - 1n]);
+        expect(arr.$_get(0)).assertEqual(15n);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_ONE_1450
+     * @tc.name testBigInt64ArrayConstructorOne1450
+     * @tc.desc Verify `new BigInt64Array([15n, -9223372036854775807n - 1n])` produces a result where `arr.$_get(1)` equals `-9223372036854775807n - 1n`.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorOne1450', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let arr = new BigInt64Array([15n, -9223372036854775807n - 1n]);
+        expect(arr.$_get(1)).assertEqual(-9223372036854775807n - 1n);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_ONE_1460
+     * @tc.name testBigInt64ArrayConstructorOne1460
+     * @tc.desc Verify `new BigInt64Array([15n, 15n])` produces a result where `arr.length` equals `2`.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorOne1460', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let arr = new BigInt64Array([15n, 15n]);
+        expect(arr.length).assertEqual(2);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_ONE_1470
+     * @tc.name testBigInt64ArrayConstructorOne1470
+     * @tc.desc Verify `new BigInt64Array([15n, 15n])` produces a result where `arr.$_get(0)` equals `15n`.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorOne1470', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let arr = new BigInt64Array([15n, 15n]);
+        expect(arr.$_get(0)).assertEqual(15n);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_ONE_1480
+     * @tc.name testBigInt64ArrayConstructorOne1480
+     * @tc.desc Verify `new BigInt64Array([15n, 15n])` produces a result where `arr.$_get(1)` equals `15n`.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorOne1480', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let arr = new BigInt64Array([15n, 15n]);
+        expect(arr.$_get(1)).assertEqual(15n);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_ONE_1490
+     * @tc.name testBigInt64ArrayConstructorOne1490
+     * @tc.desc Verify `new BigInt64Array([15n, -15n])` produces a result where `arr.length` equals `2`.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorOne1490', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let arr = new BigInt64Array([15n, -15n]);
+        expect(arr.length).assertEqual(2);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_ONE_1500
+     * @tc.name testBigInt64ArrayConstructorOne1500
+     * @tc.desc Verify `new BigInt64Array([15n, -15n])` produces a result where `arr.$_get(0)` equals `15n`.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorOne1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let arr = new BigInt64Array([15n, -15n]);
+        expect(arr.$_get(0)).assertEqual(15n);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_ONE_1510
+     * @tc.name testBigInt64ArrayConstructorOne1510
+     * @tc.desc Verify `new BigInt64Array([15n, -15n])` produces a result where `arr.$_get(1)` equals `-15n`.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorOne1510', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let arr = new BigInt64Array([15n, -15n]);
+        expect(arr.$_get(1)).assertEqual(-15n);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_ONE_1520
+     * @tc.name testBigInt64ArrayConstructorOne1520
+     * @tc.desc Verify `new BigInt64Array([-15n, 0n])` produces a result where `arr.length` equals `2`.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorOne1520', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let arr = new BigInt64Array([-15n, 0n]);
+        expect(arr.length).assertEqual(2);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_ONE_1530
+     * @tc.name testBigInt64ArrayConstructorOne1530
+     * @tc.desc Verify `new BigInt64Array([-15n, 0n])` produces a result where `arr.$_get(0)` equals `-15n`.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorOne1530', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let arr = new BigInt64Array([-15n, 0n]);
+        expect(arr.$_get(0)).assertEqual(-15n);
+      });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_ONE_1540
+     * @tc.name testBigInt64ArrayConstructorOne1540
+     * @tc.desc Verify `new BigInt64Array([-15n, 0n])` produces a result where `arr.$_get(1)` equals `0n`.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorOne1540', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let arr = new BigInt64Array([-15n, 0n]);
+        expect(arr.$_get(1)).assertEqual(0n);
+      });
 
   });
 }
