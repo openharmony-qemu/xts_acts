@@ -60,7 +60,7 @@ export default function Float64ArraySortTest(): void {
       expect(arr.length).assertEqual(twoValue);
       expect(arr[0]).assertEqual(int32MinValue);
       expect(arr[1]).assertEqual(negativeOne);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_0200
@@ -79,7 +79,7 @@ export default function Float64ArraySortTest(): void {
       expect(arr.length).assertEqual(twoValue);
       expect(arr[0]).assertEqual(doubleMaxValue / twoPointZero);
       expect(arr[1]).assertEqual(doubleMaxValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_0300
@@ -96,7 +96,7 @@ export default function Float64ArraySortTest(): void {
       arr.sort();
       expect(arr.length).assertEqual(twoValue);
       expect(arr[0]).assertEqual(doubleMinValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_0400
@@ -115,7 +115,7 @@ export default function Float64ArraySortTest(): void {
       const actVal1 = Number.isNaN(arr[1]);
       const expectVal = true;
       expect(actVal1).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_0500
@@ -132,7 +132,7 @@ export default function Float64ArraySortTest(): void {
       arr.sort();
       expect(arr[0]).assertEqual(negativeInfinity);
       expect(arr[1]).assertEqual(negativeZero);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_0600
@@ -153,7 +153,7 @@ export default function Float64ArraySortTest(): void {
       expect(arr.length).assertEqual(twoValue);
       expect(arr[0]).assertEqual(twentysixValue);
       expect(arr[1]).assertEqual(num255Value);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_0700
@@ -174,7 +174,7 @@ export default function Float64ArraySortTest(): void {
       expect(arr.length).assertEqual(twoValue);
       expect(arr[0]).assertEqual(tenValue);
       expect(arr[1]).assertEqual(fifteenValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_0800
@@ -195,7 +195,7 @@ export default function Float64ArraySortTest(): void {
       expect(arr.length).assertEqual(twoValue);
       expect(arr[0]).assertEqual(minSafeInteger2);
       expect(arr[1]).assertEqual(maxSafeInteger2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_0900
@@ -218,7 +218,7 @@ export default function Float64ArraySortTest(): void {
       const actVal3 = arr.$_get(1);
       const expectVal2 = maxSafeInteger;
       expect(actVal3).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_1000
@@ -239,7 +239,7 @@ export default function Float64ArraySortTest(): void {
       expect(arr.length).assertEqual(twoValue);
       expect(arr[0]).assertEqual(num173Value);
       expect(arr[1]).assertEqual(num222Value);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_1100
@@ -262,7 +262,7 @@ export default function Float64ArraySortTest(): void {
       const actVal5 = arr.$_get(1);
       const expectVal2 = onePointFive;
       expect(actVal5).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_1200
@@ -281,7 +281,7 @@ export default function Float64ArraySortTest(): void {
       expect(arr.length).assertEqual(twoValue);
       expect(arr[0]).assertEqual(int16MinValue);
       expect(arr[1]).assertEqual(int8MinValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_1300
@@ -300,83 +300,120 @@ export default function Float64ArraySortTest(): void {
       expect(arr.length).assertEqual(twoValue);
       expect(arr[0]).assertEqual(onePointZero);
       expect(arr[1]).assertEqual(onePointZero);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_1400
      * @tc.name testFloat64ArraySort014
-     * @tc.desc Verify sort returns -Infinity
+     * @tc.desc Verify sort places -Infinity before finite values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArraySort014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const threeValue: number = 3;
-      const arr = new Float64Array([-32768, -128, 0]);
-      arr.sort((a: number, b: number): Int => {
-        return 0 as Int;
-      })
-
+      const negativeInfinity: number = Double.NEGATIVE_INFINITY;
+      const zeroValue: number = 0;
+      const arr = new Float64Array([zeroValue, negativeInfinity, -128]);
+      arr.sort();
       const expectVal = threeValue;
       expect(arr.length).assertEqual(expectVal);
-    })
+      const expectVal2 = negativeInfinity;
+      expect(arr[0]).assertEqual(expectVal2);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_1500
      * @tc.name testFloat64ArraySort015
-     * @tc.desc Verify sort returns floating point
+     * @tc.desc Verify custom comparator orders INT32 values ascending
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArraySort015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const threeValue: number = 3;
-      const arr = Float64Array.of(-2147483648, -1, 0);
+      const int32MinValue: number = -2147483648;
+      const negativeOne: number = -1;
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(zeroValue, int32MinValue, negativeOne);
       arr.sort((a: number, b: number): Int => {
+        if (a < b) {
+          return -1 as Int;
+        }
+        if (a > b) {
+          return 1 as Int;
+        }
         return 0 as Int;
       })
 
-      const expectVal = threeValue;
-      expect(arr.length).assertEqual(expectVal);
-    })
+      const expectVal = int32MinValue;
+      expect(arr[0]).assertEqual(expectVal);
+      const expectVal2 = negativeOne;
+      expect(arr[1]).assertEqual(expectVal2);
+      const expectVal3 = zeroValue;
+      expect(arr[2]).assertEqual(expectVal3);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_1600
      * @tc.name testFloat64ArraySort016
-     * @tc.desc Verify sort returns negative floating point
+     * @tc.desc Verify custom comparator orders MAX_SAFE mixed values ascending
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArraySort016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const threeValue: number = 3;
-      const arr = new Float64Array([0.1, 9007199254740991, 0]);
+      const pointOne: number = 0.1;
+      const maxSafeInteger: number = 9007199254740991;
+      const zeroValue: number = 0;
+      const arr = new Float64Array([pointOne, maxSafeInteger, zeroValue]);
       arr.sort((a: number, b: number): Int => {
+        if (a < b) {
+          return -1 as Int;
+        }
+        if (a > b) {
+          return 1 as Int;
+        }
         return 0 as Int;
       })
 
-      const expectVal = threeValue;
-      expect(arr.length).assertEqual(expectVal);
-    })
+      const expectVal = zeroValue;
+      expect(arr[0]).assertEqual(expectVal);
+      const expectVal2 = pointOne;
+      expect(arr[1]).assertEqual(expectVal2);
+      const expectVal3 = maxSafeInteger;
+      expect(arr[2]).assertEqual(expectVal3);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_1700
      * @tc.name testFloat64ArraySort017
-     * @tc.desc Verify sort returns large integer
+     * @tc.desc Verify custom comparator orders decimal values descending
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArraySort017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const threeValue: number = 3;
-      const arr = new Float64Array([0.5, 1.5, 0.25]);
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const pointTwoFive: number = 0.25;
+      const arr = new Float64Array([pointFive, onePointFive, pointTwoFive]);
       arr.sort((a: number, b: number): Int => {
+        if (a > b) {
+          return -1 as Int;
+        }
+        if (a < b) {
+          return 1 as Int;
+        }
         return 0 as Int;
       })
 
-      const expectVal = threeValue;
-      expect(arr.length).assertEqual(expectVal);
-    })
+      const expectVal = onePointFive;
+      expect(arr[0]).assertEqual(expectVal);
+      const expectVal2 = pointFive;
+      expect(arr[1]).assertEqual(expectVal2);
+      const expectVal3 = pointTwoFive;
+      expect(arr[2]).assertEqual(expectVal3);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_1800
@@ -410,7 +447,7 @@ export default function Float64ArraySortTest(): void {
       const actVal8 = arr.$_get(2);
       const expectVal3 = zeroValue;
       expect(actVal8).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_1900
@@ -444,7 +481,7 @@ export default function Float64ArraySortTest(): void {
       const actVal11 = arr.$_get(2);
       const expectVal3 = maxSafeInteger;
       expect(actVal11).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_2000
@@ -470,7 +507,7 @@ export default function Float64ArraySortTest(): void {
 
       const expectVal = true;
       expect(externalCount > 0).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_2100
@@ -496,7 +533,7 @@ export default function Float64ArraySortTest(): void {
 
       const expectVal = false;
       expect(sum > 0.0).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_2200
@@ -534,7 +571,7 @@ export default function Float64ArraySortTest(): void {
       const actVal14 = arr.$_get(2);
       const expectVal3 = zeroValue;
       expect(actVal14).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_2300
@@ -562,7 +599,7 @@ export default function Float64ArraySortTest(): void {
       const actVal17 = arr.$_get(2);
       const expectVal3 = zeroValue;
       expect(actVal17).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_2400
@@ -593,7 +630,7 @@ export default function Float64ArraySortTest(): void {
 
       const expectVal = threeValue;
       expect(arr.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_2500
@@ -628,7 +665,7 @@ export default function Float64ArraySortTest(): void {
       const actVal20 = arr.$_get(2);
       const expectVal3 = zeroValue;
       expect(actVal20).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_2600
@@ -657,7 +694,7 @@ export default function Float64ArraySortTest(): void {
       const actVal23 = arr.$_get(2);
       const expectVal3 = zeroValue;
       expect(actVal23).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_2700
@@ -668,7 +705,7 @@ export default function Float64ArraySortTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySort027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
+      const pointOne: number = 1.0e-1;
       const maxSafeInteger: number = 9007199254740991;
       const zeroValue: number = 0;
       const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
@@ -691,7 +728,7 @@ export default function Float64ArraySortTest(): void {
       const actVal26 = arr.$_get(2);
       const expectVal3 = maxSafeInteger;
       expect(actVal26).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_2800
@@ -711,7 +748,7 @@ export default function Float64ArraySortTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_2900
@@ -731,7 +768,7 @@ export default function Float64ArraySortTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("TypeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_3000
@@ -751,7 +788,7 @@ export default function Float64ArraySortTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_3100
@@ -774,7 +811,7 @@ export default function Float64ArraySortTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_3200
@@ -798,7 +835,7 @@ export default function Float64ArraySortTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_3300
@@ -822,7 +859,7 @@ export default function Float64ArraySortTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_3400
@@ -842,7 +879,7 @@ export default function Float64ArraySortTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_3500
@@ -862,7 +899,7 @@ export default function Float64ArraySortTest(): void {
 
       const expectVal = false;
       expect(called).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_3600
@@ -879,7 +916,7 @@ export default function Float64ArraySortTest(): void {
       const expectVal = arr;
       expect(result).assertEqual(expectVal);
       expect(result.length).assertEqual(zeroValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_3700
@@ -908,7 +945,7 @@ export default function Float64ArraySortTest(): void {
       const actVal30 = arr.$_get(3);
       const expectVal4 = maxSafeInteger;
       expect(actVal30).assertEqual(expectVal4);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_3800
@@ -934,7 +971,7 @@ export default function Float64ArraySortTest(): void {
       const expectVal = arr;
       expect(result).assertEqual(expectVal);
       expect(result.length).assertEqual(zeroValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_3900
@@ -972,7 +1009,7 @@ export default function Float64ArraySortTest(): void {
       const actVal34 = arr.$_get(3);
       const expectVal4 = onePointFive;
       expect(actVal34).assertEqual(expectVal4);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_4000
@@ -987,7 +1024,7 @@ export default function Float64ArraySortTest(): void {
       const result = arr.sort();
       const expectVal = arr;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_4100
@@ -1011,7 +1048,7 @@ export default function Float64ArraySortTest(): void {
 
       const expectVal = arr;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_4200
@@ -1026,7 +1063,7 @@ export default function Float64ArraySortTest(): void {
       const result = arr.sort();
       const expectVal = arr;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_4300
@@ -1041,7 +1078,7 @@ export default function Float64ArraySortTest(): void {
       const result = arr.sort();
       const expectVal = arr;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_4400
@@ -1077,7 +1114,7 @@ export default function Float64ArraySortTest(): void {
       const actVal37 = arr.$_get(2);
       const expectVal4 = pointTwoFive;
       expect(actVal37).assertEqual(expectVal4);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_4500
@@ -1092,8 +1129,10 @@ export default function Float64ArraySortTest(): void {
       const int8MinValue: number = -128;
       const zeroValue: number = 0;
       const arr = Float64Array.of(int16MinValue, int8MinValue, zeroValue);
-      arr.sort();
-      arr.sort();
+      const result = arr.sort();
+      const result2 = result.sort();
+      expect(result).assertEqual(arr);
+      expect(result2).assertEqual(arr);
       const actVal38 = arr.$_get(0);
       const expectVal = int16MinValue;
       expect(actVal38).assertEqual(expectVal);
@@ -1103,7 +1142,7 @@ export default function Float64ArraySortTest(): void {
       const actVal40 = arr.$_get(2);
       const expectVal3 = zeroValue;
       expect(actVal40).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_4600
@@ -1118,7 +1157,8 @@ export default function Float64ArraySortTest(): void {
       const negativeOne: number = -1;
       const zeroValue: number = 0;
       const arr = Float64Array.of(int32MinValue, negativeOne, zeroValue);
-      arr.sort();
+      const result = arr.sort();
+      expect(result).assertEqual(arr);
       const actVal41 = arr.$_get(0);
       const expectVal = int32MinValue;
       expect(actVal41).assertEqual(expectVal);
@@ -1128,12 +1168,12 @@ export default function Float64ArraySortTest(): void {
       const actVal43 = arr.$_get(2);
       const expectVal3 = zeroValue;
       expect(actVal43).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_4700
      * @tc.name testFloat64ArraySort047
-     * @tc.desc Verify sort return type - element sum unchanged after sort
+     * @tc.desc Verify sort keeps element sum unchanged after sort
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1145,12 +1185,12 @@ export default function Float64ArraySortTest(): void {
       const actVal44 = arr.$_get(0) + arr.$_get(1) + arr.$_get(2);
       const expectVal = beforeSum;
       expect(actVal44).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_4800
      * @tc.name testFloat64ArraySort048
-     * @tc.desc Verify sort return type - element product unchanged after sort
+     * @tc.desc Verify sort keeps element product unchanged after sort
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1162,29 +1202,32 @@ export default function Float64ArraySortTest(): void {
       const actVal45 = arr.$_get(0) * arr.$_get(1) * arr.$_get(2);
       const expectVal = beforeProduct;
       expect(actVal45).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_4900
      * @tc.name testFloat64ArraySort049
-     * @tc.desc Verify sort error handling - compareFn is null
+     * @tc.desc Verify sort without compareFn orders decimal array ascending
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArraySort049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointTwoFive: number = 0.25;
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
       const arr = new Float64Array([0.5, 1.5, 0.25]);
-      try {
-        arr.sort();
-      } catch (e) {
-        expect(e.name).assertEqual("Error");
-      }
-    })
+      const result = arr.sort();
+      expect(result).assertEqual(arr);
+      expect(arr[0]).assertEqual(pointTwoFive);
+      expect(arr[1]).assertEqual(pointFive);
+      expect(arr[2]).assertEqual(onePointFive);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_5000
      * @tc.name testFloat64ArraySort050
-     * @tc.desc Verify sort error handling - compareFn is undefined
+     * @tc.desc Verify sort with undefined compareFn returns same array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1192,65 +1235,70 @@ export default function Float64ArraySortTest(): void {
     it('testFloat64ArraySort050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([-32768, -128, 0]);
       const result = arr.sort(undefined);
-      const expectVal = arr;
-      expect(result).assertEqual(expectVal);
-    })
+      expect(result).assertEqual(arr);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_5100
      * @tc.name testFloat64ArraySort051
-     * @tc.desc Verify sort error handling - compareFn is number
+     * @tc.desc Verify sort without compareFn orders INT32 values ascending
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArraySort051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(-2147483648, -1, 0);
-      try {
-        arr.sort();
-      } catch (e) {
-        expect(e.name).assertEqual("Error");
-      }
-    })
+      const int32MinValue: number = -2147483648;
+      const negativeOne: number = -1;
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(zeroValue, negativeOne, int32MinValue);
+      arr.sort();
+      expect(arr[0]).assertEqual(int32MinValue);
+      expect(arr[1]).assertEqual(negativeOne);
+      expect(arr[2]).assertEqual(zeroValue);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_5200
      * @tc.name testFloat64ArraySort052
-     * @tc.desc Verify sort error handling - compareFn is string
+     * @tc.desc Verify sort without compareFn orders MAX_SAFE mixed values ascending
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArraySort052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float64Array([0.1, 9007199254740991, 0]);
-      try {
-        arr.sort();
-      } catch (e) {
-        expect(e.name).assertEqual("Error");
-      }
-    })
+      const pointOne: number = 0.1;
+      const maxSafeInteger: number = 9007199254740991;
+      const zeroValue: number = 0;
+      const arr = new Float64Array([pointOne, maxSafeInteger, zeroValue]);
+      arr.sort();
+      expect(arr[0]).assertEqual(zeroValue);
+      expect(arr[1]).assertEqual(pointOne);
+      expect(arr[2]).assertEqual(maxSafeInteger);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_5300
      * @tc.name testFloat64ArraySort053
-     * @tc.desc Verify sort error handling - compareFn is array
+     * @tc.desc Verify sort without compareFn orders negative finite values ascending
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArraySort053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float64Array([-32768, -128, 0]);
-      try {
-        arr.sort();
-      } catch (e) {
-        expect(e.name).assertEqual("Error");
-      }
-    })
+      const int16MinValue: number = -32768;
+      const int8MinValue: number = -128;
+      const zeroValue: number = 0;
+      const arr = new Float64Array([int8MinValue, zeroValue, int16MinValue]);
+      arr.sort();
+      expect(arr[0]).assertEqual(int16MinValue);
+      expect(arr[1]).assertEqual(int8MinValue);
+      expect(arr[2]).assertEqual(zeroValue);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_5400
      * @tc.name testFloat64ArraySort054
-     * @tc.desc Verify sort error handling - compareFn partial element comparison
+     * @tc.desc Verify sort compareFn partial comparison records calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1269,12 +1317,14 @@ export default function Float64ArraySortTest(): void {
 
       const expectVal = threeValue;
       expect(arr.length).assertEqual(expectVal);
-    })
+      const expectVal2 = true;
+      expect(callCount > 0).assertEqual(expectVal2);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_5500
      * @tc.name testFloat64ArraySort055
-     * @tc.desc Verify sort error handling - compareFn call count verification
+     * @tc.desc Verify sort compareFn call count verification
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1295,7 +1345,7 @@ export default function Float64ArraySortTest(): void {
 
       const expectVal = true;
       expect(callCount > 0).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_5600
@@ -1315,7 +1365,7 @@ export default function Float64ArraySortTest(): void {
 
       const expectVal = false;
       expect(called).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_5700
@@ -1340,7 +1390,7 @@ export default function Float64ArraySortTest(): void {
       const actVal48 = values.$_get(2);
       const expectVal3 = zeroValue;
       expect(actVal48).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_5800
@@ -1366,7 +1416,7 @@ export default function Float64ArraySortTest(): void {
 
       expect(values[0]).assertEqual(zeroValue);
       expect(values[1]).assertEqual(pointOne);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_5900
@@ -1392,7 +1442,7 @@ export default function Float64ArraySortTest(): void {
 
       expect(values[0]).assertEqual(onePointFive);
       expect(values[2]).assertEqual(pointTwoFive);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_6000
@@ -1409,7 +1459,7 @@ export default function Float64ArraySortTest(): void {
       const actVal49 = values.$_get(0);
       const expectVal = int16MinValue;
       expect(actVal49).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_6100
@@ -1421,11 +1471,19 @@ export default function Float64ArraySortTest(): void {
      */
     it('testFloat64ArraySort061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const threeValue: number = 3;
-      const values = new Float64Array([-2147483648, -1, 0]);
+      const nanValue: number = Double.NaN;
+      const negativeOne: number = -1;
+      const zeroValue: number = 0;
+      const values = new Float64Array([nanValue, negativeOne, zeroValue]);
       values.sort();
       const expectVal = threeValue;
       expect(values.length).assertEqual(expectVal);
-    })
+      const expectVal2 = negativeOne;
+      expect(values.$_get(0)).assertEqual(expectVal2);
+      const actVal50 = Number.isNaN(values.$_get(2));
+      const expectVal3 = true;
+      expect(actVal50).assertEqual(expectVal3);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_6200
@@ -1459,7 +1517,7 @@ export default function Float64ArraySortTest(): void {
       const actVal52 = values.$_get(2);
       const expectVal3 = maxSafeInteger;
       expect(actVal52).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_6300
@@ -1480,7 +1538,7 @@ export default function Float64ArraySortTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_6400
@@ -1495,7 +1553,7 @@ export default function Float64ArraySortTest(): void {
       const result = values.sort();
       const expectVal = values;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_6500
@@ -1518,7 +1576,7 @@ export default function Float64ArraySortTest(): void {
       const actVal55 = values.$_get(2);
       const expectVal3 = zeroValue;
       expect(actVal55).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_6600
@@ -1538,7 +1596,7 @@ export default function Float64ArraySortTest(): void {
       arr.sort();
       expect(arr[0]).assertEqual(fillValue85);
       expect(arr[2]).assertEqual(num255Value);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_6700
@@ -1558,7 +1616,7 @@ export default function Float64ArraySortTest(): void {
       arr.sort();
       expect(arr[0]).assertEqual(fillValue85);
       expect(arr[2]).assertEqual(num255Value);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_6800
@@ -1580,7 +1638,7 @@ export default function Float64ArraySortTest(): void {
       const actVal56 = Number.isNaN(lastElement);
       const expectVal2 = true;
       expect(actVal56).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_6900
@@ -1601,7 +1659,7 @@ export default function Float64ArraySortTest(): void {
       const secondElement: number = arr.$_get(1);
       const expectVal2 = positiveInfinity;
       expect(secondElement).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_7000
@@ -1616,9 +1674,9 @@ export default function Float64ArraySortTest(): void {
       const doubleMaxValue: number = Double.MAX_VALUE;
       const arr = Float64Array.of(doubleMinValue, doubleMaxValue);
       arr.sort();
-      expect(arr[0] > 0.0).assertTrue();
-      expect(arr[1] > 0.0).assertTrue();
-    })
+      expect(arr[0]).assertEqual(doubleMinValue);
+      expect(arr[1]).assertEqual(doubleMaxValue);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_7100
@@ -1637,7 +1695,7 @@ export default function Float64ArraySortTest(): void {
       expect(arr[0]).assertEqual(onePointZero);
       expect(arr[1]).assertEqual(twoPointZero);
       expect(arr[2]).assertEqual(threePointZero);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_7200
@@ -1656,7 +1714,7 @@ export default function Float64ArraySortTest(): void {
       expect(arr[0]).assertEqual(onePointZero);
       expect(arr[1]).assertEqual(twoPointZero);
       expect(arr[2]).assertEqual(threePointZero);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_7300
@@ -1675,7 +1733,7 @@ export default function Float64ArraySortTest(): void {
       expect(arr[0]).assertEqual(negthreePointzero);
       expect(arr[1]).assertEqual(negtwoPointzero);
       expect(arr[2]).assertEqual(negonePointzero);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_7400
@@ -1696,7 +1754,7 @@ export default function Float64ArraySortTest(): void {
       expect(arr[1]).assertEqual(pointThree);
       expect(arr[2]).assertEqual(pointFive);
       expect(arr[3]).assertEqual(pointNine);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_7500
@@ -1717,7 +1775,7 @@ export default function Float64ArraySortTest(): void {
       expect(arr[1]).assertEqual(negativeHalfValue);
       expect(arr[2]).assertEqual(pointFive);
       expect(arr[3]).assertEqual(onePointFive);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_7600
@@ -1736,7 +1794,7 @@ export default function Float64ArraySortTest(): void {
       expect(arr[0]).assertEqual(sciValue10e100);
       expect(arr[1]).assertEqual(sciValue10e200);
       expect(arr[2]).assertEqual(sciValue10e300);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_7700
@@ -1755,7 +1813,7 @@ export default function Float64ArraySortTest(): void {
       expect(arr[0]).assertEqual(sciValue50e324);
       expect(arr[1]).assertEqual(sciValue10e300);
       expect(arr[2]).assertEqual(sciValue10e200);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_7800
@@ -1774,7 +1832,7 @@ export default function Float64ArraySortTest(): void {
       expect(arr[0]).assertEqual(sciValue10e50);
       expect(arr[1]).assertEqual(sciValue20e50);
       expect(arr[2]).assertEqual(sciValue30e50);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_7900
@@ -1793,7 +1851,7 @@ export default function Float64ArraySortTest(): void {
       expect(arr[0]).assertEqual(fivePointZero);
       expect(arr[1]).assertEqual(eightPointZero);
       expect(arr[2]).assertEqual(sixteenPointzero);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_8000
@@ -1814,7 +1872,7 @@ export default function Float64ArraySortTest(): void {
       expect(arr[1]).assertEqual(twoPointZero);
       expect(arr[2]).assertEqual(threePointZero);
       expect(arr[3]).assertEqual(fourPointZero);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_8100
@@ -1834,7 +1892,7 @@ export default function Float64ArraySortTest(): void {
       expect(arr[2]).assertEqual(twoPointZero);
       expect(arr[3]).assertEqual(twoPointZero);
       expect(arr[4]).assertEqual(twoPointZero);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_8200
@@ -1851,7 +1909,7 @@ export default function Float64ArraySortTest(): void {
       arr.sort();
       const expectVal = threeValue;
       expect(arr.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_8300
@@ -1867,7 +1925,7 @@ export default function Float64ArraySortTest(): void {
       arr.sort();
       const expectVal = fourValue;
       expect(arr.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_8400
@@ -1888,7 +1946,7 @@ export default function Float64ArraySortTest(): void {
       const actVal57 = Number.isNaN(arr[2]);
       const expectVal = true;
       expect(actVal57).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_8500
@@ -1907,7 +1965,7 @@ export default function Float64ArraySortTest(): void {
       expect(arr[0]).assertEqual(negativeInfinity);
       expect(arr[1]).assertEqual(zeroPointZero);
       expect(arr[2]).assertEqual(positiveInfinity);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_8600
@@ -1926,7 +1984,7 @@ export default function Float64ArraySortTest(): void {
       expect(arr[0]).assertEqual(negativeInfinity);
       expect(arr[1]).assertEqual(negtwoPointzero);
       expect(arr[2]).assertEqual(negonePointzero);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_8700
@@ -1945,7 +2003,7 @@ export default function Float64ArraySortTest(): void {
       expect(arr[0]).assertEqual(onePointZero);
       expect(arr[1]).assertEqual(twoPointZero);
       expect(arr[2]).assertEqual(positiveInfinity);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_8800
@@ -1964,7 +2022,7 @@ export default function Float64ArraySortTest(): void {
       expect(arr[0]).assertEqual(zeroPointZero);
       expect(arr[1]).assertEqual(onePointZero);
       expect(arr[2]).assertEqual(maxSafeInteger);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_8900
@@ -1983,7 +2041,7 @@ export default function Float64ArraySortTest(): void {
       expect(arr[0]).assertEqual(minSafeInteger);
       expect(arr[1]).assertEqual(negonePointzero);
       expect(arr[2]).assertEqual(zeroPointZero);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_9000
@@ -2002,7 +2060,7 @@ export default function Float64ArraySortTest(): void {
       expect(arr[0]).assertEqual(zeroPointZero);
       expect(arr[1]).assertEqual(onePointZero);
       expect(arr[2]).assertEqual(int32MaxValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_9100
@@ -2019,7 +2077,7 @@ export default function Float64ArraySortTest(): void {
       arr.sort();
       expect(arr[0]).assertEqual(sciValue17976931348623156e308);
       expect(arr[1]).assertEqual(doubleMaxValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_9200
@@ -2038,7 +2096,7 @@ export default function Float64ArraySortTest(): void {
       expect(arr[0]).assertEqual(pointOne);
       expect(arr[1]).assertEqual(pointTwo);
       expect(arr[2]).assertEqual(pointThree);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_9300
@@ -2057,7 +2115,7 @@ export default function Float64ArraySortTest(): void {
       expect(arr[0]).assertEqual(negnum999999Pointninenine);
       expect(arr[1]).assertEqual(negonePointzero);
       expect(arr[2]).assertEqual(zeroPointZero);
-    })
+    });
 
   })
 }

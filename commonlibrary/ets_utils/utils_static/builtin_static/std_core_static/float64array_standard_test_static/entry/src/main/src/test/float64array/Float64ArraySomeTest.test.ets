@@ -62,7 +62,7 @@ export default function float64ArraySomeTest(): void {
       const result = values.some((value: number, index: int, array: Float64Array) => value > 1.0);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0020
@@ -77,7 +77,7 @@ export default function float64ArraySomeTest(): void {
       const result = values.some((value: number) => value > 2.0);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0030
@@ -92,7 +92,7 @@ export default function float64ArraySomeTest(): void {
       const result = values.some((value: number, index: int) => index === 1);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0040
@@ -107,7 +107,7 @@ export default function float64ArraySomeTest(): void {
       const result = values.some((value: number, index: int, array: Float64Array) => array.$_get(index) === value);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0050
@@ -122,7 +122,7 @@ export default function float64ArraySomeTest(): void {
       const result = values.some((value: number) => value === 0.0);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0060
@@ -133,16 +133,16 @@ export default function float64ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySome006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const values = Float64Array.of(0.5, 1.5, 0.25);
-      const result = values.some((value: number) => value === -0.0);
-      const expectVal = false;
+      const values = Float64Array.of(0.5, -0.0, 0.25);
+      const result = values.some((value: number) => 1 / value === -Infinity);
+      const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0070
      * @tc.name testFloat64ArraySome007
-     * @tc.desc Verify some detects NaN using Number.isNaN
+     * @tc.desc Verify some returns false when Number.isNaN finds no NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -152,12 +152,12 @@ export default function float64ArraySomeTest(): void {
       const result = values.some((value: number) => Number.isNaN(value));
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0080
      * @tc.name testFloat64ArraySome008
-     * @tc.desc Verify some detects Infinity
+     * @tc.desc Verify some returns false when Infinity is absent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -167,12 +167,12 @@ export default function float64ArraySomeTest(): void {
       const result = values.some((value: number) => value === Infinity);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0090
      * @tc.name testFloat64ArraySome009
-     * @tc.desc Verify some detects -Infinity
+     * @tc.desc Verify some returns false when -Infinity is absent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -182,12 +182,12 @@ export default function float64ArraySomeTest(): void {
       const result = values.some((value: number) => value === -Infinity);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0100
      * @tc.name testFloat64ArraySome010
-     * @tc.desc Verify some detects MAX_VALUE
+     * @tc.desc Verify some returns false when no element exceeds 1.0e+100
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -197,7 +197,7 @@ export default function float64ArraySomeTest(): void {
       const result = values.some((value: number) => value > 1.0e+100);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0110
@@ -212,7 +212,7 @@ export default function float64ArraySomeTest(): void {
       const result = values.some((value: number) => value > 100.0);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0120
@@ -227,12 +227,12 @@ export default function float64ArraySomeTest(): void {
       const result = values.some((value: number) => true);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0130
      * @tc.name testFloat64ArraySome013
-     * @tc.desc Verify some on single element matching returns true
+     * @tc.desc Verify some on single INT32_MIN element not equal 42.0 returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -242,7 +242,7 @@ export default function float64ArraySomeTest(): void {
       const result = values.some((value: number) => value === 42.0);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0140
@@ -257,7 +257,7 @@ export default function float64ArraySomeTest(): void {
       const result = values.some((value: number) => value > 100.0);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0150
@@ -272,7 +272,7 @@ export default function float64ArraySomeTest(): void {
       const result = values.some((value: number) => value > 0.0);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0160
@@ -289,11 +289,11 @@ export default function float64ArraySomeTest(): void {
       values.some((value: number) => {
         count++;
         return value > 1.0;
-      })
+      });
 
       const expectVal = threeValue;
       expect(count).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0170
@@ -308,13 +308,13 @@ export default function float64ArraySomeTest(): void {
       try {
         values.some((value: number) => {
           throw new Error("test");
-        })
+        });
 
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0180
@@ -329,13 +329,13 @@ export default function float64ArraySomeTest(): void {
       try {
         values.some((value: number) => {
           throw new RangeError("range");
-        })
+        });
 
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0190
@@ -350,7 +350,7 @@ export default function float64ArraySomeTest(): void {
       const result = values.some((value: number) => value < 0.0);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0200
@@ -365,7 +365,7 @@ export default function float64ArraySomeTest(): void {
       const result = values.some((value: number) => value > 1.0e+50);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0210
@@ -381,7 +381,7 @@ export default function float64ArraySomeTest(): void {
       const result = values.some((value: number) => value > threshold);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0220
@@ -398,16 +398,16 @@ export default function float64ArraySomeTest(): void {
       values.some((value: number) => {
         callCount++;
         return false;
-      })
+      });
 
       const expectVal = threeValue;
       expect(callCount).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0230
      * @tc.name testFloat64ArraySome023
-     * @tc.desc Verify some on all-zero array matching zero
+     * @tc.desc Verify some on identical non-zero array does not match zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -418,7 +418,7 @@ export default function float64ArraySomeTest(): void {
       const result = values.some((value: number) => value === 0.0);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0240
@@ -434,7 +434,7 @@ export default function float64ArraySomeTest(): void {
       const result = values.some((value: number) => value === 7.0);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0250
@@ -451,11 +451,11 @@ export default function float64ArraySomeTest(): void {
       values.some((value: number, index: int) => {
         capturedIndex = index;
         return value > 20.0;
-      })
+      });
 
       const expectVal = twoValue;
       expect(capturedIndex).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0260
@@ -476,7 +476,7 @@ export default function float64ArraySomeTest(): void {
       const actVal2 = values.$_get(2);
       const expectVal2 = zeroValue;
       expect(actVal2).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0270
@@ -493,12 +493,12 @@ export default function float64ArraySomeTest(): void {
       const result = values.some((value: number) => value === 42.0);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0280
      * @tc.name testFloat64ArraySome028
-     * @tc.desc Verify some with index-based condition matches only at specific position
+     * @tc.desc Verify some with index-based condition returns false when value mismatches
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -508,7 +508,7 @@ export default function float64ArraySomeTest(): void {
       const result = values.some((value: number, index: int) => index === 2 && value === 3.0);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0290
@@ -524,7 +524,7 @@ export default function float64ArraySomeTest(): void {
       const result = values.some((value: number) => value >= threshold);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0300
@@ -540,12 +540,12 @@ export default function float64ArraySomeTest(): void {
       const result = values.some((value: number) => value > threshold);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0310
      * @tc.name testFloat64ArraySome031
-     * @tc.desc Verify some with MIN_VALUE match
+     * @tc.desc Verify some returns false when MIN_VALUE is absent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -555,12 +555,12 @@ export default function float64ArraySomeTest(): void {
       const actVal3 = v.some((x: number) => x === 5e-324);
       const expectVal = false;
       expect(actVal3).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0320
      * @tc.name testFloat64ArraySome032
-     * @tc.desc Verify some with MAX_SAFE_INTEGER
+     * @tc.desc Verify some returns false when MAX_SAFE_INTEGER is absent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -570,12 +570,12 @@ export default function float64ArraySomeTest(): void {
       const actVal4 = v.some((x: number) => x === 9007199254740991.0);
       const expectVal = false;
       expect(actVal4).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0330
      * @tc.name testFloat64ArraySome033
-     * @tc.desc Verify some with MIN_SAFE_INTEGER
+     * @tc.desc Verify some returns false when MIN_SAFE_INTEGER is absent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -585,7 +585,7 @@ export default function float64ArraySomeTest(): void {
       const actVal5 = v.some((x: number) => x === -9007199254740991.0);
       const expectVal = false;
       expect(actVal5).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0340
@@ -599,7 +599,7 @@ export default function float64ArraySomeTest(): void {
       const actVal6 = new Float64Array([-2147483648, -1, 0]).some((v, i) => i === 0);
       const expectVal = true;
       expect(actVal6).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0350
@@ -614,7 +614,7 @@ export default function float64ArraySomeTest(): void {
       const actVal7 = v.some((x, i, a) => a === v);
       const expectVal = true;
       expect(actVal7).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0360
@@ -630,13 +630,13 @@ export default function float64ArraySomeTest(): void {
       const r = new Float64Array([-2147483648, -1, 0]).some((v) => {
         c++;
         return true;
-      })
+      });
 
       const expectVal = true;
       expect(r).assertEqual(expectVal);
       const expectVal2 = oneValue;
       expect(c).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0370
@@ -652,18 +652,18 @@ export default function float64ArraySomeTest(): void {
       const r = new Float64Array([0.1, 9007199254740991, 0]).some((v) => {
         c++;
         return false;
-      })
+      });
 
       const expectVal = false;
       expect(r).assertEqual(expectVal);
       const expectVal2 = threeValue;
       expect(c).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0380
      * @tc.name testFloat64ArraySome038
-     * @tc.desc Verify some only last element matches
+     * @tc.desc Verify some returns false when no element is greater than 2.5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -672,7 +672,7 @@ export default function float64ArraySomeTest(): void {
       const actVal8 = new Float64Array([0.5, 1.5, 0.25]).some(v => v > 2.5);
       const expectVal = false;
       expect(actVal8).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0390
@@ -686,7 +686,7 @@ export default function float64ArraySomeTest(): void {
       const actVal9 = Float64Array.of(-32768, -128, 0).some(v => v < 1.5);
       const expectVal = true;
       expect(actVal9).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0400
@@ -702,11 +702,11 @@ export default function float64ArraySomeTest(): void {
       new Float64Array(0).some((v) => {
         c++;
         return true;
-      })
+      });
 
       const expectVal = zeroValue;
       expect(c).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0410
@@ -722,13 +722,13 @@ export default function float64ArraySomeTest(): void {
       const r = Float64Array.of(-2147483648, -1, 0).some(v => {
         c++;
         return v === 2;
-      })
+      });
 
       const expectVal = false;
       expect(r).assertEqual(expectVal);
       const expectVal2 = threeValue;
       expect(c).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0420
@@ -744,13 +744,13 @@ export default function float64ArraySomeTest(): void {
       const r = new Float64Array([0.1, 9007199254740991, 0]).some(v => {
         c++;
         return v === 3;
-      })
+      });
 
       const expectVal = false;
       expect(r).assertEqual(expectVal);
       const expectVal2 = threeValue;
       expect(c).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0430
@@ -764,13 +764,13 @@ export default function float64ArraySomeTest(): void {
       try {
         Float64Array.of(0.5, 1.5).some(v => {
           throw new TypeError("t");
-        })
+        });
 
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("TypeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0440
@@ -790,14 +790,14 @@ export default function float64ArraySomeTest(): void {
             throw new Error("2nd");
           }
           return false;
-        })
+        });
 
         expect().assertFail();
       } catch (e) {
         const expectVal = twoValue;
         expect(c).assertEqual(expectVal);
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0450
@@ -817,14 +817,14 @@ export default function float64ArraySomeTest(): void {
             throw new Error("last");
           }
           return false;
-        })
+        });
 
         expect().assertFail();
       } catch (e) {
         const expectVal = threeValue;
         expect(c).assertEqual(expectVal);
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0460
@@ -839,14 +839,14 @@ export default function float64ArraySomeTest(): void {
       try {
         new Float64Array(0).some(v => {
           throw new Error("x");
-        })
+        });
 
       } catch (e) {
         threw = true;
       }
       const expectVal = false;
       expect(threw).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0470
@@ -865,18 +865,18 @@ export default function float64ArraySomeTest(): void {
             throw new Error("x");
           }
           return v === 1;
-        })
+        });
 
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('Error');
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0480
      * @tc.name testFloat64ArraySome048
-     * @tc.desc Verify some with all NaN array
+     * @tc.desc Verify some returns false when all elements are non-NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -886,12 +886,12 @@ export default function float64ArraySomeTest(): void {
       const actVal10 = Float64Array.of(pointTwoFive, pointTwoFive, pointTwoFive).some(v => Number.isNaN(v));
       const expectVal = false;
       expect(actVal10).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0490
      * @tc.name testFloat64ArraySome049
-     * @tc.desc Verify some with all Infinity array
+     * @tc.desc Verify some returns false when all elements are finite zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -901,12 +901,12 @@ export default function float64ArraySomeTest(): void {
       const actVal11 = Float64Array.of(zeroValue, zeroValue, zeroValue).some(v => v === Infinity);
       const expectVal = false;
       expect(actVal11).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0500
      * @tc.name testFloat64ArraySome050
-     * @tc.desc Verify some single element NaN matches
+     * @tc.desc Verify some single non-NaN element returns false for NaN predicate
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -915,7 +915,7 @@ export default function float64ArraySomeTest(): void {
       const actVal12 = new Float64Array([-2147483648]).some(v => Number.isNaN(v));
       const expectVal = false;
       expect(actVal12).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0510
@@ -931,16 +931,16 @@ export default function float64ArraySomeTest(): void {
       Float64Array.of(0.1).some(v => {
         c++;
         return false;
-      })
+      });
 
       const expectVal = oneValue;
       expect(c).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0520
      * @tc.name testFloat64ArraySome052
-     * @tc.desc Verify some two-element first matches
+     * @tc.desc Verify some two-element array returns false when first value mismatches
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -949,12 +949,12 @@ export default function float64ArraySomeTest(): void {
       const actVal13 = new Float64Array([0.5, 1.5]).some(v => v === 1);
       const expectVal = false;
       expect(actVal13).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0530
      * @tc.name testFloat64ArraySome053
-     * @tc.desc Verify some two-element second matches
+     * @tc.desc Verify some two-element array returns false when second value mismatches
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -963,7 +963,7 @@ export default function float64ArraySomeTest(): void {
       const actVal14 = Float64Array.of(-32768, -128).some(v => v === 2);
       const expectVal = false;
       expect(actVal14).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0540
@@ -983,13 +983,13 @@ export default function float64ArraySomeTest(): void {
       const r = v.some(x => {
         c++;
         return x === 0.0;
-      })
+      });
 
       const expectVal = true;
       expect(r).assertEqual(expectVal);
       const expectVal2 = oneValue;
       expect(c).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0550
@@ -1009,13 +1009,13 @@ export default function float64ArraySomeTest(): void {
       const r = v.some(x => {
         c++;
         return x === 99;
-      })
+      });
 
       const expectVal = true;
       expect(r).assertEqual(expectVal);
       const expectVal2 = hundredValue;
       expect(c).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0560
@@ -1030,7 +1030,7 @@ export default function float64ArraySomeTest(): void {
       const actVal15 = v.some(x => x !== 0.3);
       const expectVal = true;
       expect(actVal15).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0570
@@ -1046,11 +1046,11 @@ export default function float64ArraySomeTest(): void {
       Float64Array.of(0.1, maxSafeInteger, 0).some(v => {
         sum += v;
         return false;
-      })
+      });
 
       const expectVal = maxSafeInteger;
       expect(sum).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0580
@@ -1065,7 +1065,7 @@ export default function float64ArraySomeTest(): void {
       const actVal16 = v.some(x => Float64Array.of(x).some(y => y === x));
       const expectVal = true;
       expect(actVal16).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0590
@@ -1079,7 +1079,7 @@ export default function float64ArraySomeTest(): void {
       const actVal17 = Float64Array.of(-32768, -128, 0).some(v => v === 1 || v === 3);
       const expectVal = false;
       expect(actVal17).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0600
@@ -1093,12 +1093,12 @@ export default function float64ArraySomeTest(): void {
       const actVal18 = new Float64Array([-2147483648, -1, 0]).some(v => v > 1 && v < 3);
       const expectVal = false;
       expect(actVal18).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0610
      * @tc.name testFloat64ArraySome061
-     * @tc.desc Verify some >= condition
+     * @tc.desc Verify some returns true when MAX_SAFE_INTEGER satisfies lower-bound predicate
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1107,12 +1107,12 @@ export default function float64ArraySomeTest(): void {
       const actVal19 = Float64Array.of(0.1, 9007199254740991, 0).some(v => v >= 3);
       const expectVal = true;
       expect(actVal19).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0620
      * @tc.name testFloat64ArraySome062
-     * @tc.desc Verify some <= condition
+     * @tc.desc Verify some returns true when fractional value satisfies upper-bound predicate
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1121,12 +1121,12 @@ export default function float64ArraySomeTest(): void {
       const actVal20 = Float64Array.of(0.5, 1.5, 0.25).some(v => v <= 1);
       const expectVal = true;
       expect(actVal20).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0630
      * @tc.name testFloat64ArraySome063
-     * @tc.desc Verify some != condition
+     * @tc.desc Verify some with not-equal predicate returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1135,7 +1135,7 @@ export default function float64ArraySomeTest(): void {
       const actVal21 = new Float64Array([-32768, -128, 0]).some(v => v !== 2);
       const expectVal = true;
       expect(actVal21).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0640
@@ -1149,12 +1149,12 @@ export default function float64ArraySomeTest(): void {
       const actVal22 = new Float64Array(3).some(v => v !== 0.0);
       const expectVal = false;
       expect(actVal22).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0650
      * @tc.name testFloat64ArraySome065
-     * @tc.desc Verify some all-identical check unequal returns false
+     * @tc.desc Verify some all-identical zero values satisfy not-equal-to-five predicate
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1164,7 +1164,7 @@ export default function float64ArraySomeTest(): void {
       const actVal23 = new Float64Array([zeroValue, zeroValue, zeroValue]).some(v => v !== 5);
       const expectVal = true;
       expect(actVal23).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0660
@@ -1178,7 +1178,7 @@ export default function float64ArraySomeTest(): void {
       const actVal24 = Float64Array.of(0.1, 9007199254740991, 0).some(v => v > 0);
       const expectVal = true;
       expect(actVal24).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0670
@@ -1192,7 +1192,7 @@ export default function float64ArraySomeTest(): void {
       const actVal25 = new Float64Array([0.5, 1.5]).some(v => true);
       const expectVal = true;
       expect(actVal25).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0680
@@ -1206,7 +1206,7 @@ export default function float64ArraySomeTest(): void {
       const actVal26 = Float64Array.of(-32768, -128).some(v => false);
       const expectVal = false;
       expect(actVal26).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0690
@@ -1221,7 +1221,7 @@ export default function float64ArraySomeTest(): void {
       const has = v.some(x => x % 2 === 0);
       const expectVal = true;
       expect(has).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0700
@@ -1243,7 +1243,7 @@ export default function float64ArraySomeTest(): void {
       const actVal27 = v.some(x => x === 2);
       const expectVal = true;
       expect(actVal27).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0710
@@ -1258,7 +1258,7 @@ export default function float64ArraySomeTest(): void {
       const actVal28 = v.some(x => x === 2);
       const expectVal = false;
       expect(actVal28).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0720
@@ -1273,7 +1273,7 @@ export default function float64ArraySomeTest(): void {
       const actVal29 = v.some(x => x === 3);
       const expectVal = false;
       expect(actVal29).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0730
@@ -1288,7 +1288,7 @@ export default function float64ArraySomeTest(): void {
       const actVal30 = v.some(x => x === 4);
       const expectVal = false;
       expect(actVal30).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0740
@@ -1303,7 +1303,7 @@ export default function float64ArraySomeTest(): void {
       const actVal31 = v.some(x => x === 2);
       const expectVal = false;
       expect(actVal31).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0750
@@ -1318,7 +1318,7 @@ export default function float64ArraySomeTest(): void {
       const actVal32 = new Float64Array(o).some(x => x === 2);
       const expectVal = false;
       expect(actVal32).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0760
@@ -1333,7 +1333,7 @@ export default function float64ArraySomeTest(): void {
       const actVal33 = new Float64Array(fa).some(x => x > 1);
       const expectVal = true;
       expect(actVal33).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0770
@@ -1348,7 +1348,7 @@ export default function float64ArraySomeTest(): void {
       const actVal34 = v.some(x => x === 2147483647.0);
       const expectVal = false;
       expect(actVal34).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0780
@@ -1363,7 +1363,7 @@ export default function float64ArraySomeTest(): void {
       const actVal35 = v.some(x => x === -2147483648.0);
       const expectVal = false;
       expect(actVal35).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0790
@@ -1384,7 +1384,7 @@ export default function float64ArraySomeTest(): void {
       const actVal38 = v.some(x => x > 100);
       const expectVal3 = false;
       expect(actVal38).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0800
@@ -1404,7 +1404,7 @@ export default function float64ArraySomeTest(): void {
       });
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0810
@@ -1418,7 +1418,7 @@ export default function float64ArraySomeTest(): void {
       const actVal39 = new Float64Array([0.5, 1.5, 0.25]).some(v => v > 1 ? true : false);
       const expectVal = true;
       expect(actVal39).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0820
@@ -1432,7 +1432,7 @@ export default function float64ArraySomeTest(): void {
       const actVal40 = Float64Array.of(-32768, -128, 0).some(v => v === v);
       const expectVal = true;
       expect(actVal40).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0830
@@ -1446,7 +1446,7 @@ export default function float64ArraySomeTest(): void {
       const actVal41 = new Float64Array([-2147483648, -1, 0]).some((v, i) => i >= 0);
       const expectVal = true;
       expect(actVal41).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0840
@@ -1461,12 +1461,12 @@ export default function float64ArraySomeTest(): void {
       const result = values.some((value: number) => SomeCheck087.check(value));
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0850
      * @tc.name testFloat64ArraySome085
-     * @tc.desc Verify some returns true when any element satisfies
+     * @tc.desc Verify some returns false when no element equals 6.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1476,7 +1476,7 @@ export default function float64ArraySomeTest(): void {
       const actVal42 = values.some((value) => value === 6.0);
       const expectVal = false;
       expect(actVal42).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0860
@@ -1491,7 +1491,7 @@ export default function float64ArraySomeTest(): void {
       const actVal43 = values.some((value) => value > 10);
       const expectVal = false;
       expect(actVal43).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0870
@@ -1506,12 +1506,12 @@ export default function float64ArraySomeTest(): void {
       const actVal44 = values.some((value) => value > 0);
       const expectVal = false;
       expect(actVal44).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0880
      * @tc.name testFloat64ArraySome088
-     * @tc.desc Verify some single element satisfies
+     * @tc.desc Verify some single negative element does not satisfy positive predicate
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1521,7 +1521,7 @@ export default function float64ArraySomeTest(): void {
       const actVal45 = values.some((value) => value > 0);
       const expectVal = false;
       expect(actVal45).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0890
@@ -1536,12 +1536,12 @@ export default function float64ArraySomeTest(): void {
       const actVal46 = values.some((value) => value > 10);
       const expectVal = false;
       expect(actVal46).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0900
      * @tc.name testFloat64ArraySome090
-     * @tc.desc Verify some with NaN element
+     * @tc.desc Verify some returns false when NaN element is absent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1551,12 +1551,12 @@ export default function float64ArraySomeTest(): void {
       const actVal47 = values.some((value) => Number.isNaN(value));
       const expectVal = false;
       expect(actVal47).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0910
      * @tc.name testFloat64ArraySome091
-     * @tc.desc Verify some with Infinity element
+     * @tc.desc Verify some returns false when Infinity element is absent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1566,7 +1566,7 @@ export default function float64ArraySomeTest(): void {
       const actVal48 = values.some((value) => value === Infinity);
       const expectVal = false;
       expect(actVal48).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0920
@@ -1583,11 +1583,11 @@ export default function float64ArraySomeTest(): void {
       values.some((value) => {
         count++;
         return value > 0;
-      })
+      });
 
       const expectVal = threeValue;
       expect(count).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0930
@@ -1608,7 +1608,7 @@ export default function float64ArraySomeTest(): void {
       const actVal49 = arr.some((v: number): boolean => v === 0xBB);
       const expectVal2 = false;
       expect(actVal49).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0940
@@ -1629,7 +1629,7 @@ export default function float64ArraySomeTest(): void {
       const actVal50 = arr.some((v: number): boolean => v === 0b11110000);
       const expectVal2 = false;
       expect(actVal50).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0950
@@ -1646,7 +1646,7 @@ export default function float64ArraySomeTest(): void {
       const actVal51 = arr.some((v: number): boolean => Number.isNaN(v));
       const expectVal = true;
       expect(actVal51).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0960
@@ -1663,7 +1663,7 @@ export default function float64ArraySomeTest(): void {
       const actVal52 = arr.some((v: number): boolean => v === Double.POSITIVE_INFINITY);
       const expectVal = true;
       expect(actVal52).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0970
@@ -1683,7 +1683,7 @@ export default function float64ArraySomeTest(): void {
       const actVal54 = arr.some((v: number): boolean => v === Double.MAX_VALUE);
       const expectVal2 = true;
       expect(actVal54).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0980
@@ -1699,7 +1699,7 @@ export default function float64ArraySomeTest(): void {
       const actVal55 = arr.some((v: number): boolean => Number.isNaN(v));
       const expectVal = true;
       expect(actVal55).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0990
@@ -1715,7 +1715,7 @@ export default function float64ArraySomeTest(): void {
       const actVal56 = arr.some((v: number): boolean => v === Infinity);
       const expectVal = true;
       expect(actVal56).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1000
@@ -1731,7 +1731,7 @@ export default function float64ArraySomeTest(): void {
       const actVal57 = arr.some((v: number): boolean => v === -Infinity);
       const expectVal = true;
       expect(actVal57).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1010
@@ -1747,7 +1747,7 @@ export default function float64ArraySomeTest(): void {
       const actVal58 = arr.some((v: number): boolean => v === Double.MAX_VALUE);
       const expectVal = true;
       expect(actVal58).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1020
@@ -1763,7 +1763,7 @@ export default function float64ArraySomeTest(): void {
       const actVal59 = arr.some((v: number): boolean => v === Double.MIN_VALUE);
       const expectVal = true;
       expect(actVal59).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1030
@@ -1778,7 +1778,7 @@ export default function float64ArraySomeTest(): void {
       const actVal60 = arr.some((v: number): boolean => v === 1.0e+200);
       const expectVal = true;
       expect(actVal60).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1040
@@ -1793,7 +1793,7 @@ export default function float64ArraySomeTest(): void {
       const actVal61 = arr.some((v: number): boolean => v === 1.0e-200);
       const expectVal = true;
       expect(actVal61).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1050
@@ -1808,7 +1808,7 @@ export default function float64ArraySomeTest(): void {
       const actVal62 = arr.some((v: number): boolean => v < -100000.0);
       const expectVal = true;
       expect(actVal62).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1060
@@ -1823,7 +1823,7 @@ export default function float64ArraySomeTest(): void {
       const actVal63 = arr.some((v: number): boolean => v === 0.0);
       const expectVal = true;
       expect(actVal63).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1070
@@ -1839,7 +1839,7 @@ export default function float64ArraySomeTest(): void {
       const actVal64 = arr.some((v: number): boolean => v > 1.0);
       const expectVal = true;
       expect(actVal64).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1080
@@ -1854,7 +1854,7 @@ export default function float64ArraySomeTest(): void {
       const actVal65 = arr.some((v: number): boolean => v === 0.0);
       const expectVal = true;
       expect(actVal65).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1090
@@ -1870,7 +1870,7 @@ export default function float64ArraySomeTest(): void {
       const actVal66 = arr.some((v: number): boolean => v === 5.0);
       const expectVal = true;
       expect(actVal66).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1100
@@ -1885,7 +1885,7 @@ export default function float64ArraySomeTest(): void {
       const actVal67 = arr.some((v: number): boolean => v < 0.0);
       const expectVal = true;
       expect(actVal67).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1110
@@ -1901,7 +1901,7 @@ export default function float64ArraySomeTest(): void {
       const actVal68 = arr.some((v: number): boolean => v === 0x1234);
       const expectVal = true;
       expect(actVal68).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1120
@@ -1916,7 +1916,7 @@ export default function float64ArraySomeTest(): void {
       const actVal69 = arr.some((v: number): boolean => v === 0o123);
       const expectVal = true;
       expect(actVal69).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1130
@@ -1931,7 +1931,7 @@ export default function float64ArraySomeTest(): void {
       const actVal70 = arr.some((v: number): boolean => v === 2147483648);
       const expectVal = true;
       expect(actVal70).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1140
@@ -1947,7 +1947,7 @@ export default function float64ArraySomeTest(): void {
       const actVal71 = arr.some((v: number): boolean => v === 0x7FFF);
       const expectVal = true;
       expect(actVal71).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1150
@@ -1962,7 +1962,7 @@ export default function float64ArraySomeTest(): void {
       const actVal72 = arr.some((v: number): boolean => v === 1.0e6);
       const expectVal = true;
       expect(actVal72).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1160
@@ -1981,10 +1981,10 @@ export default function float64ArraySomeTest(): void {
           arr.$_set(2, 999.0);
         }
         return val > 3.0;
-      })
+      });
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
-  })
+  });
 }

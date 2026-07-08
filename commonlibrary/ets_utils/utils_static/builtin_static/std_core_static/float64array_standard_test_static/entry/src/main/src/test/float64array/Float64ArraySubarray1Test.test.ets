@@ -58,13 +58,13 @@ export default function Float64ArraySubarray1Test(): void {
       const arr = new Float64Array([pointFive, 1.5, 0.25, 0.125, pointZeroSixTwoFive]);
       const view = arr.subarray();
       expect(view.length).assertEqual(fiveValue);
-      const actVal1 = view.$_get(0);
-      const expectVal = pointFive;
-      expect(actVal1).assertEqual(expectVal);
-      const actVal2 = view.$_get(4);
-      const expectVal2 = pointZeroSixTwoFive;
-      expect(actVal2).assertEqual(expectVal2);
-    })
+      const actualFirstValue = view.$_get(0);
+      const expectedFirstValue = pointFive;
+      expect(actualFirstValue).assertEqual(expectedFirstValue);
+      const actualLastValue = view.$_get(4);
+      const expectedLastValue = pointZeroSixTwoFive;
+      expect(actualLastValue).assertEqual(expectedLastValue);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_0200
@@ -87,7 +87,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal4 = view.$_get(2);
       const expectVal2 = int16MaxValue;
       expect(actVal4).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_0300
@@ -110,7 +110,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal6 = view.$_get(2);
       const expectVal2 = oneValue;
       expect(actVal6).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_0400
@@ -129,7 +129,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal7 = view.$_get(0);
       const expectVal = pointOne;
       expect(actVal7).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_0500
@@ -152,7 +152,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal9 = view.$_get(1);
       const expectVal2 = pointZeroSixTwoFive;
       expect(actVal9).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_0600
@@ -171,7 +171,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal10 = view.$_get(0);
       const expectVal = oneValue;
       expect(actVal10).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_0700
@@ -190,7 +190,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal11 = view.$_get(2);
       const expectVal = zeroValue;
       expect(actVal11).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_0800
@@ -209,7 +209,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal12 = view.$_get(3);
       const expectVal = pointOneTwoFive;
       expect(actVal12).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_0900
@@ -227,7 +227,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal13 = arr.$_get(1);
       const expectVal = fillValue99;
       expect(actVal13).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_1000
@@ -246,12 +246,12 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal14 = view.$_get(0);
       const expectVal = int16MinValue;
       expect(actVal14).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_1100
      * @tc.name testFloat64ArraySubarray1011
-     * @tc.desc Verify subarray(0, 2) with [-2147483648, -1, 0] returns Float64Array instance
+     * @tc.desc Verify subarray(0, 2) with [-2147483648, -1, 0] returns Float64Array instance and values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -266,7 +266,11 @@ export default function Float64ArraySubarray1Test(): void {
       }
       const expectVal = true;
       expect(isF64).assertEqual(expectVal);
-    })
+      const twoValue: number = 2;
+      const negativeOne: number = -1;
+      expect(view.length).assertEqual(twoValue);
+      expect(view.$_get(1)).assertEqual(negativeOne);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_1200
@@ -285,7 +289,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal15 = view.$_get(0);
       const expectVal = zeroPointZero;
       expect(actVal15).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_1300
@@ -302,7 +306,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal16 = view.$_get(1);
       const expectVal = int8MinValue;
       expect(actVal16).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_1400
@@ -313,12 +317,13 @@ export default function Float64ArraySubarray1Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySubarray1014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(-2147483648, -1, 0);
+      const nanValue: number = NaN;
+      const arr = Float64Array.of(-2147483648, nanValue, 0);
       const view = arr.subarray(0, 2);
       const actVal17 = Number.isNaN(view.$_get(1));
-      const expectVal = false;
+      const expectVal = true;
       expect(actVal17).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_1500
@@ -335,7 +340,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal18 = view.$_get(1);
       const expectVal = maxSafeInteger;
       expect(actVal18).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_1600
@@ -357,7 +362,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal19 = view.$_get(0);
       const expectVal = fiftyValue;
       expect(actVal19).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_1700
@@ -376,7 +381,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal20 = view.$_get(0);
       const expectVal = zeroValue;
       expect(actVal20).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_1800
@@ -399,7 +404,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal22 = view.$_get(1);
       const expectVal2 = pointOneTwoFive;
       expect(actVal22).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_1900
@@ -422,7 +427,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal24 = view.$_get(1);
       const expectVal2 = zeroValue;
       expect(actVal24).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_2000
@@ -445,7 +450,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal26 = view.$_get(1);
       const expectVal2 = zeroValue;
       expect(actVal26).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_2100
@@ -468,7 +473,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal28 = view.$_get(1);
       const expectVal2 = maxSafeInteger;
       expect(actVal28).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_2200
@@ -486,7 +491,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal29 = arr.$_get(1);
       const expectVal = fillValue99;
       expect(actVal29).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_2300
@@ -504,7 +509,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal30 = view.$_get(0);
       const expectVal = fillValue99;
       expect(actVal30).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_2400
@@ -517,13 +522,10 @@ export default function Float64ArraySubarray1Test(): void {
     it('testFloat64ArraySubarray1024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float64Array.of(-2147483648, -1, 0);
       const view = arr.subarray();
-      let s: boolean = false;
       let o1: Object = arr.buffer as Object;
       let o2: Object = view.buffer as Object;
-      s = o1 === o2;
-      const expectVal = true;
-      expect(s).assertEqual(expectVal);
-    })
+      expect(o1).assertEqual(o2);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_2500
@@ -549,7 +551,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal32 = view.$_get(4);
       const expectVal2 = sevenValue;
       expect(actVal32).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_2600
@@ -570,7 +572,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal34 = view.$_get(1);
       const expectVal2 = zeroValue;
       expect(actVal34).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_2700
@@ -591,7 +593,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal36 = view.$_get(1);
       const expectVal2 = negativeOne;
       expect(actVal36).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_2800
@@ -612,12 +614,12 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal38 = view.$_get(1);
       const expectVal2 = maxSafeInteger;
       expect(actVal38).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_2900
      * @tc.name testFloat64ArraySubarray1029
-     * @tc.desc Verify subarray begin length-1 returns last element
+     * @tc.desc Verify subarray begin=4 returns last element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -631,7 +633,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal39 = view.$_get(0);
       const expectVal = pointZeroSixTwoFive;
       expect(actVal39).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_3000
@@ -647,7 +649,7 @@ export default function Float64ArraySubarray1Test(): void {
       const view = arr.subarray(0, -2);
       const expectVal = twoValue;
       expect(view.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_3100
@@ -663,7 +665,7 @@ export default function Float64ArraySubarray1Test(): void {
       const view = arr.subarray(0, -2147483648);
       const expectVal = zeroValue;
       expect(view.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_3200
@@ -680,7 +682,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal40 = view.$_get(0);
       const expectVal = pointFive;
       expect(actVal40).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_3300
@@ -697,7 +699,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal41 = view.$_get(0);
       const expectVal = int16MinValue;
       expect(actVal41).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_3400
@@ -714,12 +716,12 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal42 = view.$_get(0);
       const expectVal = negativeOne;
       expect(actVal42).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_3500
      * @tc.name testFloat64ArraySubarray1035
-     * @tc.desc Verify subarray(1, 4) with [0.5, 1.5, 0.25, 0.125] returns Float64Array instance
+     * @tc.desc Verify subarray(1, 4) with [0.5, 1.5, 0.25, 0.125] returns Float64Array instance and values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -734,7 +736,13 @@ export default function Float64ArraySubarray1Test(): void {
       }
       const expectVal = true;
       expect(isF64).assertEqual(expectVal);
-    })
+      const threeValue: number = 3;
+      const onePointFive: number = 1.5;
+      const pointOneTwoFive: number = 0.125;
+      expect(view.length).assertEqual(threeValue);
+      expect(view.$_get(0)).assertEqual(onePointFive);
+      expect(view.$_get(2)).assertEqual(pointOneTwoFive);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_3600
@@ -752,7 +760,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal43 = arr.$_get(1);
       const expectVal = fillValue99;
       expect(actVal43).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_3700
@@ -770,7 +778,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal44 = view.$_get(1);
       const expectVal = eightyeightPointzero;
       expect(actVal44).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_3800
@@ -784,13 +792,10 @@ export default function Float64ArraySubarray1Test(): void {
       const arr = new Float64Array([0.5, 1.5, 0.25, 0.125]);
       const sub1 = arr.subarray(0, 3);
       const sub2 = arr.subarray(1, 4);
-      let s: boolean = false;
       let o1: Object = sub1.buffer as Object;
       let o2: Object = sub2.buffer as Object;
-      s = o1 === o2;
-      const expectVal = true;
-      expect(s).assertEqual(expectVal);
-    })
+      expect(o1).assertEqual(o2);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_3900
@@ -804,13 +809,10 @@ export default function Float64ArraySubarray1Test(): void {
       const arr = Float64Array.of(-32768, -128, 0, 127);
       const sub1 = arr.subarray(0, 2);
       const sub2 = arr.subarray(2, 4);
-      let s: boolean = false;
       let o1: Object = sub1.buffer as Object;
       let o2: Object = sub2.buffer as Object;
-      s = o1 === o2;
-      const expectVal = true;
-      expect(s).assertEqual(expectVal);
-    })
+      expect(o1).assertEqual(o2);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_4000
@@ -827,7 +829,7 @@ export default function Float64ArraySubarray1Test(): void {
       const view = arr.subarray(1, 3);
       expect(view.length).assertEqual(twoValue);
       expect(arr.length).assertEqual(fourValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_4100
@@ -840,13 +842,10 @@ export default function Float64ArraySubarray1Test(): void {
     it('testFloat64ArraySubarray1041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([0.5, 1.5, 0.25]);
       const view = arr.subarray(0, 0);
-      let s: boolean = false;
       let o1: Object = arr.buffer as Object;
       let o2: Object = view.buffer as Object;
-      s = o1 === o2;
-      const expectVal = true;
-      expect(s).assertEqual(expectVal);
-    })
+      expect(o1).assertEqual(o2);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_4200
@@ -864,7 +863,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal45 = view.$_get(0);
       const expectVal = zeroValue;
       expect(actVal45).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_4300
@@ -881,7 +880,7 @@ export default function Float64ArraySubarray1Test(): void {
       const view = sl.subarray(0, 2);
       const expectVal = twoValue;
       expect(view.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_4400
@@ -898,7 +897,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal46 = view.$_get(0);
       const expectVal = zeroValue;
       expect(actVal46).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_4500
@@ -914,7 +913,7 @@ export default function Float64ArraySubarray1Test(): void {
       const sub = values.subarray();
       expect(sub.length).assertEqual(threeValue);
       expect(sub.buffer).assertEqual(values.buffer);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_4600
@@ -931,7 +930,7 @@ export default function Float64ArraySubarray1Test(): void {
       const sub = values.subarray(1, 3);
       expect(sub.length).assertEqual(twoValue);
       expect(sub[0]).assertEqual(int8MinValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_4700
@@ -947,7 +946,7 @@ export default function Float64ArraySubarray1Test(): void {
       const sub = values.subarray(1);
       const expectVal = twoValue;
       expect(sub.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_4800
@@ -964,7 +963,7 @@ export default function Float64ArraySubarray1Test(): void {
       const sub = values.subarray(-2);
       expect(sub.length).assertEqual(twoValue);
       expect(sub[0]).assertEqual(maxSafeInteger);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_4900
@@ -980,7 +979,7 @@ export default function Float64ArraySubarray1Test(): void {
       const sub = values.subarray(0, -1);
       const expectVal = twoValue;
       expect(sub.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_5000
@@ -997,7 +996,7 @@ export default function Float64ArraySubarray1Test(): void {
       sub[0] = 999.0;
       const expectVal = num999Pointzero;
       expect(values[1]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_5100
@@ -1013,7 +1012,7 @@ export default function Float64ArraySubarray1Test(): void {
       const sub = values.subarray(5);
       const expectVal = zeroValue;
       expect(sub.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_5200
@@ -1029,7 +1028,7 @@ export default function Float64ArraySubarray1Test(): void {
       const sub = values.subarray(0, 100);
       const expectVal = twoValue;
       expect(sub.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_5300
@@ -1045,7 +1044,7 @@ export default function Float64ArraySubarray1Test(): void {
       const sub = values.subarray(-5);
       const expectVal = twoValue;
       expect(sub.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_5400
@@ -1062,7 +1061,7 @@ export default function Float64ArraySubarray1Test(): void {
       sub[1] = 888.0;
       const expectVal = num888Pointzero;
       expect(values[1]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_5500
@@ -1079,7 +1078,7 @@ export default function Float64ArraySubarray1Test(): void {
       values[1] = 777.0;
       const expectVal = num777Pointzero;
       expect(sub[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_5600
@@ -1096,7 +1095,7 @@ export default function Float64ArraySubarray1Test(): void {
       child[0] = 999.0;
       const expectVal = num999Pointzero;
       expect(parent[1]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_5700
@@ -1113,7 +1112,7 @@ export default function Float64ArraySubarray1Test(): void {
       parent[1] = 888.0;
       const expectVal = num888Pointzero;
       expect(child[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_5800
@@ -1131,7 +1130,7 @@ export default function Float64ArraySubarray1Test(): void {
       child2[0] = 777.0;
       const expectVal = num777Pointzero;
       expect(parent[2]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_5900
@@ -1146,7 +1145,7 @@ export default function Float64ArraySubarray1Test(): void {
       const child = parent.subarray(1, 3);
       const expectVal = parent.buffer;
       expect(child.buffer).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_6000
@@ -1166,7 +1165,7 @@ export default function Float64ArraySubarray1Test(): void {
       expect(view2[0]).assertEqual(num500Pointzero);
       view2[1] = 600.0;
       expect(parent[2]).assertEqual(num600Pointzero);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_6100
@@ -1182,7 +1181,7 @@ export default function Float64ArraySubarray1Test(): void {
       const result = arr.subarray(0, 3);
       const expectVal = pointFive;
       expect(result[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_6200
@@ -1198,22 +1197,24 @@ export default function Float64ArraySubarray1Test(): void {
       const result = arr.subarray(undefined, 3);
       const expectVal = int16MinValue;
       expect(result[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_6300
      * @tc.name testFloat64ArraySubarray1063
-     * @tc.desc Verify subarray negative check
+     * @tc.desc Verify subarray(1, 3) preserves negative and zero elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArraySubarray1063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const negativeOne: number = -1;
+      const zeroValue: number = 0;
       const arr = new Float64Array([-2147483648, -1, 0, 1, 2147483647]);
       const sub = arr.subarray(1, 3);
-      expect(sub[0] === 2.0).assertFalse();
-      expect(sub[0] === 1.0).assertFalse();
-    })
+      expect(sub[0]).assertEqual(negativeOne);
+      expect(sub[1]).assertEqual(zeroValue);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_6400
@@ -1236,7 +1237,7 @@ export default function Float64ArraySubarray1Test(): void {
       expect(s[0]).assertEqual(num255Value);
       expect(s[1]).assertEqual(num170Pointzero);
       expect(s.length).assertEqual(twoValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_6500
@@ -1259,7 +1260,7 @@ export default function Float64ArraySubarray1Test(): void {
       expect(s[0]).assertEqual(num255Value);
       expect(s[1]).assertEqual(num170Pointzero);
       expect(s.length).assertEqual(twoValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_6600
@@ -1278,7 +1279,7 @@ export default function Float64ArraySubarray1Test(): void {
       const actVal47 = Number.isNaN(s[0]);
       const expectVal = true;
       expect(actVal47).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_6700
@@ -1295,7 +1296,7 @@ export default function Float64ArraySubarray1Test(): void {
       const s = arr.subarray(0, 1);
       expect(s.length).assertEqual(1);
       expect(s[0]).assertEqual(positiveInfinity);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_6800
@@ -1313,7 +1314,7 @@ export default function Float64ArraySubarray1Test(): void {
       expect(s.length).assertEqual(2);
       expect(s[0]).assertEqual(doubleMinValue);
       expect(s[1]).assertEqual(doubleMaxValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_1_6900
@@ -1329,7 +1330,7 @@ export default function Float64ArraySubarray1Test(): void {
       expect(view.length).assertEqual(0);
       expect(view.byteOffset).assertEqual(16);
       expect(view.buffer).assertEqual(arr.buffer);
-    })
+    });
 
   })
 }
