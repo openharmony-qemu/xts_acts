@@ -378,6 +378,8 @@ export const sessionGetZoomRatio: () => number; // return current ZoomRatio
 
 export const sessionSetZoomRatio: (a: number) => number;
 
+export const sessionGetZoomPointInfoSize: () => number;
+
 export const sessionGetZoomPointInfos: (a: number) => number;
 
 export const sessionDeleteZoomPointInfos: (a: number) => number;
