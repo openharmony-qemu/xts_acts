@@ -49,6 +49,7 @@
     "extensionAbilities": [
     ],
     "requestPermissions": [
+		"ohos.permission.QUERY_TOOL_PERMISSIONS"
     ]
   }
 }
