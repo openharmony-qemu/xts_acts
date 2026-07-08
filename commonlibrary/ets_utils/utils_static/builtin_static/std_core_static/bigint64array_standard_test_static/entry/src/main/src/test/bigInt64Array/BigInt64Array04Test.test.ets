@@ -928,7 +928,7 @@ export default function BigInt64Array04Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_0590
      * @tc.name testBigInt64ArrayFour0590
-     * @tc.desc Verify of, sort, and reverse chaining places the largest value first.
+     * @tc.desc Verify of, sort, and reverse chaining positions the largest value first.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -942,7 +942,7 @@ export default function BigInt64Array04Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_0600
      * @tc.name testBigInt64ArrayFour0600
-     * @tc.desc Verify of, sort, and reverse chaining places the smallest value last.
+     * @tc.desc Verify of, sort, and reverse chaining positions the smallest value last.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
