@@ -69,7 +69,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev: number, curr: number): number => prev + curr, 0.0);
       const expectVal = twoPointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_0200
@@ -85,7 +85,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = twoPointtwofive;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_0300
@@ -101,7 +101,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr) => prev + curr, 0.0);
       const expectVal = negnum32896Value;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_0400
@@ -117,7 +117,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = int32MinValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_0500
@@ -133,7 +133,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev - curr, 10.0);
       const expectVal = negnum9007199254740981Value;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_0600
@@ -159,7 +159,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       expect(indices[2]).assertEqual(zeroValue);
       const expectVal = twoPointtwofive;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_0700
@@ -179,7 +179,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       }, 0.0);
       const expectVal2 = negnum32896Value;
       expect(result).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_0800
@@ -195,7 +195,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 10.0);
       const expectVal = negnum2147483638Value;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_0900
@@ -210,7 +210,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight<string>((result, value, index, array) => result + value.toString(), "");
       const expectVal = '090071992547409910.1';
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_1000
@@ -225,7 +225,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight<boolean>((prev, curr, idx, ary) => prev && curr > 0, true);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_1100
@@ -240,7 +240,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight<boolean>((prev, curr, idx, ary) => prev || curr < 0, false);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_1200
@@ -256,7 +256,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = int32MinValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_1300
@@ -272,7 +272,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = pointOne;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_1400
@@ -288,7 +288,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = twoValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_1500
@@ -304,7 +304,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = int16MinValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_1600
@@ -326,7 +326,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       expect(externalSum).assertEqual(expectVal);
       const expectVal2 = negnum2147483649Value;
       expect(result).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_1700
@@ -349,7 +349,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       expect(counter).assertEqual(expectVal);
       const expectVal2 = num9007199254740991Pointone;
       expect(result).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_1800
@@ -365,7 +365,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => add026(prev, curr), 0.0);
       const expectVal = twoPointtwofive;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_1900
@@ -381,7 +381,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => 42.0, 0.0);
       const expectVal = fillValue42;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_2000
@@ -397,7 +397,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = negnum2147483649Value;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_2100
@@ -413,7 +413,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, -10.0);
       const expectVal = num9007199254740981Value;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_2200
@@ -429,7 +429,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, Infinity);
       const expectVal = positiveInfinity;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_2300
@@ -445,7 +445,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, -Infinity);
       const expectVal = negativeInfinity;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_2400
@@ -461,7 +461,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const actVal1 = Number.isNaN(result);
       const expectVal = true;
       expect(actVal1).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_2500
@@ -477,7 +477,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 1.7976931348623157e+308);
       const expectVal = doubleMaxValueAlt;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_2600
@@ -493,7 +493,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 5e-324);
       const expectVal = pointFive;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_2700
@@ -509,7 +509,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = negnum32896Value;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_2800
@@ -525,7 +525,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, -0.0);
       const expectVal = negnum2147483649Value;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_2900
@@ -540,7 +540,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight<string>((prev, curr, idx, ary) => prev + curr.toString(), "start");
       const expectVal = "start090071992547409910.1";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_3000
@@ -555,7 +555,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight<boolean>((prev, curr, idx, ary) => prev && curr > 0, true);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_3100
@@ -571,7 +571,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr) => prev + curr, 0.0);
       const expectVal = negnum32896Value;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_3200
@@ -587,7 +587,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 1.0e10);
       const expectVal = num7852516351Value;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_3300
@@ -603,7 +603,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr) => prev + curr, 0x10 * 1.0);
       const expectVal = num9007199254741008Value;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_3400
@@ -619,7 +619,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, -1.0e5);
       const expectVal = negnum99998Value;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_3500
@@ -635,7 +635,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 1.7976931348623158e+308);
       const expectVal = doubleMaxValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_3600
@@ -651,7 +651,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 9007199254740991.0);
       const expectVal = num9007197107257343Value;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_3700
@@ -667,7 +667,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, -9007199254740991.0);
       const expectVal = minSafeInteger;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_3800
@@ -683,7 +683,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result: number = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = twoPointtwofive;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_3900
@@ -698,7 +698,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result: string = arr.reduceRight<string>((prev, curr, idx, ary) => prev + curr.toString(), "");
       const expectVal = "-128-32768";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_4000
@@ -713,7 +713,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result: boolean = arr.reduceRight<boolean>((prev, curr, idx, ary) => prev && curr > 0, true);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_4100
@@ -729,7 +729,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight<number>((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = maxSafeInteger;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_4200
@@ -745,7 +745,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr) => prev + curr, 0.0);
       const expectVal = twoPointtwofive;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_4300
@@ -760,7 +760,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight<string>((prev, curr, idx, ary) => prev + curr.toString(), "");
       const expectVal = "-128-32768";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_4400
@@ -776,7 +776,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 42.0);
       const expectVal = fillValue42;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_4500
@@ -791,7 +791,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight<string>((prev, curr, idx, ary) => prev + curr, "empty");
       const expectVal = "empty";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_4600
@@ -806,7 +806,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight<boolean>((prev, curr, idx, ary) => prev && true, false);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_4700
@@ -822,7 +822,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 3.0);
       const expectVal = negnum2147483645Value;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_4800
@@ -838,7 +838,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = num9007199254740994Value;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_4900
@@ -857,7 +857,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       expect(arr.length).assertEqual(threeValue);
       const expectVal = twoPointtwofive;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_5000
@@ -876,7 +876,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       expect(arr[0]).assertEqual(val0);
       expect(arr[1]).assertEqual(val1);
       expect(arr[2]).assertEqual(val2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_5100
@@ -895,7 +895,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       }, 0.0);
       const expectVal = false;
       expect(called).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_5200
@@ -916,7 +916,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       }, 0.0);
       const expectVal = negnum2147483649Value;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_5300
@@ -932,7 +932,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = maxSafeInteger;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_5400
@@ -947,7 +947,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight<string>((prev, curr, idx, ary) => prev + curr.toString(), "");
       const expectVal = '0.251.50.5';
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_5500
@@ -962,7 +962,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight<boolean>((prev, curr, idx, ary) => prev && curr > 0, true);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_5600
@@ -981,7 +981,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       }, new Counter072());
       const expectVal = twoValue;
       expect(result.value).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_5700
@@ -1005,7 +1005,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       expect(result[0]).assertEqual(zeroValue);
       expect(result[1]).assertEqual(maxSafeInteger);
       expect(result[2]).assertEqual(pointOne);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_5800
@@ -1021,7 +1021,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = zeroPointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_5900
@@ -1037,7 +1037,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, Infinity);
       const expectVal = positiveInfinity;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_6000
@@ -1053,7 +1053,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const actVal2 = Number.isNaN(result);
       const expectVal = true;
       expect(actVal2).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_6100
@@ -1069,7 +1069,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, Infinity);
       const expectVal = positiveInfinity;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_6200
@@ -1085,7 +1085,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, -Infinity);
       const expectVal = negativeInfinity;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_6300
@@ -1102,7 +1102,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = pointFive;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_6400
@@ -1118,7 +1118,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = negnum32769Value;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_6500
@@ -1134,7 +1134,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = negnum2147483649Value;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_6600
@@ -1151,7 +1151,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = num18014398509481982Value;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_6700
@@ -1168,7 +1168,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = negativeOne;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_6800
@@ -1187,7 +1187,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = hundredPointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_6900
@@ -1204,7 +1204,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = maxSafeInteger;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_7000
@@ -1220,7 +1220,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => curr > 0 ? prev + curr : prev, 0.0);
       const expectVal = twoPointtwofive;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_7100
@@ -1236,7 +1236,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev && curr, 1.0);
       const expectVal = zeroValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_7200
@@ -1252,7 +1252,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev | curr, 0.0);
       const expectVal = negativeOne;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_7300
@@ -1268,7 +1268,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev > curr ? prev : curr, 0.0);
       const expectVal = maxSafeInteger;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_7400
@@ -1284,7 +1284,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev * 2 + curr, 0.0);
       const expectVal = fourPointfive;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_7500
@@ -1300,7 +1300,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const actVal3 = Number.isNaN(result);
       const expectVal = true;
       expect(actVal3).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_7600
@@ -1315,7 +1315,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight<string>((prev, curr, idx, ary) => prev + curr.toString(), "");
       const expectVal = "";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_7700
@@ -1330,7 +1330,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight<boolean>((prev, curr, idx, ary) => prev || false, true);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_7800
@@ -1346,7 +1346,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev * curr, 1.0);
       const expectVal = int16MinValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_7900
@@ -1367,7 +1367,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       }, 0.0);
       expect(order[0]).assertEqual(oneValue);
       expect(order[1]).assertEqual(zeroValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_8000
@@ -1390,7 +1390,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       expect(order[0]).assertEqual(twoValue);
       expect(order[1]).assertEqual(oneValue);
       expect(order[2]).assertEqual(zeroValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_8100
@@ -1406,7 +1406,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result2 = arr.reduceRight((prev, curr, idx, ary) => prev + curr, -0.0);
       const expectVal = result2;
       expect(result1).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_8200
@@ -1428,7 +1428,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       }, 2.0);
       const expectVal = oneValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_8300
@@ -1444,7 +1444,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + ary.length, 0.0);
       const expectVal = ninePointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_8400
@@ -1469,7 +1469,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       expect(values[1]).assertEqual(zeroValue);
       expect(values[2]).assertEqual(maxSafeInteger);
       expect(values[3]).assertEqual(pointOne);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_8500
@@ -1485,7 +1485,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev * curr, 1.0);
       const expectVal = zeroPointoneeightsevenfive;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_8600
@@ -1501,7 +1501,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => idx % 2 === 0 ? prev + curr : prev - curr, 0.0);
       const expectVal = negnum32640Value;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_8700
@@ -1517,7 +1517,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr.toString().length, 0.0);
       const expectVal = fourteenValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_8800
@@ -1535,7 +1535,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const s = arr.reduceRight((a: number, v: number): number => a + v, 0x00);
       const expectVal = num425Pointzero;
       expect(s).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_8900
@@ -1553,7 +1553,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const s = arr.reduceRight((a: number, v: number): number => a + v, 0b00000000);
       const expectVal = num425Pointzero;
       expect(s).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_9000
@@ -1571,7 +1571,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const actVal4 = Number.isNaN(result);
       const expectVal = true;
       expect(actVal4).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_9100
@@ -1589,7 +1589,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const actVal5 = Number.isNaN(result);
       const expectVal = true;
       expect(actVal5).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_9200
@@ -1606,7 +1606,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = doubleMaxValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_9300
@@ -1627,7 +1627,7 @@ export default function Float64ArrayReduceRight2Test(): void {
       const expectVal = obj;
       expect(result).assertEqual(expectVal);
       expect(result.count).assertEqual(twoValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_9400
@@ -1655,7 +1655,7 @@ export default function Float64ArrayReduceRight2Test(): void {
         expect(callCount).assertEqual(expectVal);
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
   })
 }

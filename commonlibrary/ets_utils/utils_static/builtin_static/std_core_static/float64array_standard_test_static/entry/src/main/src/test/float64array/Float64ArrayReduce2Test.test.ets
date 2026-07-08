@@ -57,12 +57,12 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = maxSafeInteger;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_0200
      * @tc.name testFloat64ArrayReduce2002
-     * @tc.desc Verify reduce with 0 parameters throws error
+     * @tc.desc Verify reduce callback throws Error and keeps array length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -76,9 +76,10 @@ export default function Float64ArrayReduce2Test(): void {
         });
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual("Error");
         expect(arr.length).assertEqual(twoValue);
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_0300
@@ -94,7 +95,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = negnum2147483649Value;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_0400
@@ -111,7 +112,7 @@ export default function Float64ArrayReduce2Test(): void {
       const actVal1 = Number.isNaN(result);
       const expectVal = true;
       expect(actVal1).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_0500
@@ -128,7 +129,7 @@ export default function Float64ArrayReduce2Test(): void {
       const actVal2 = Number.isNaN(result);
       const expectVal = true;
       expect(actVal2).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_0600
@@ -145,7 +146,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = numberMaxValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_0700
@@ -160,7 +161,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce<string>((res, value) => res + value, "");
       const expectVal = "123";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_0800
@@ -175,7 +176,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce<boolean>((acc, val) => acc && val > 0, true);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_0900
@@ -190,7 +191,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce<boolean>((acc, val) => acc && val > 0, true);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_1000
@@ -206,7 +207,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce<number>((sum, val, idx) => sum + idx, 0.0);
       const expectVal = threePointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_1100
@@ -222,7 +223,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce<number>((sum, val, idx, ary) => sum + ary[idx], 0.0);
       const expectVal = sixPointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_1200
@@ -238,7 +239,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce<number>((sum, val) => val, 999.0);
       const expectVal = threePointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_1300
@@ -254,7 +255,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce<number>((sum, val) => sum, 42.0);
       const expectVal = fillValue42;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_1400
@@ -270,7 +271,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce<number>((sum, val) => sum + 1.0, 0.0);
       const expectVal = threePointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_1500
@@ -286,7 +287,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce<number>((sum, val) => val, 0.0);
       const expectVal = threePointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_1600
@@ -302,7 +303,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce<number>((sum, val, idx, ary) => sum + val + idx + ary.length, 0.0);
       const expectVal = eighteenPointzero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_1700
@@ -318,7 +319,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = sixPointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_1800
@@ -334,7 +335,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, -1.0);
       const expectVal = fivePointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_1900
@@ -350,7 +351,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.5);
       const expectVal = sixPointfive;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_2000
@@ -366,7 +367,7 @@ export default function Float64ArrayReduce2Test(): void {
       const actVal3 = Number.isNaN(result);
       const expectVal = true;
       expect(actVal3).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_2100
@@ -382,7 +383,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, Infinity);
       const expectVal = positiveInfinity;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_2200
@@ -398,7 +399,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, -Infinity);
       const expectVal = negativeInfinity;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_2300
@@ -414,7 +415,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 16.0);
       const expectVal = twentytwoPointzero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_2400
@@ -430,7 +431,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 8.0);
       const expectVal = fourteenPointzero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_2500
@@ -446,12 +447,12 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 2.0);
       const expectVal = eightPointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_2600
      * @tc.name testFloat64ArrayReduce2026
-     * @tc.desc Verify reduce initialValue is 1e2
+     * @tc.desc Verify reduce adds decimal sum to scientific initialValue 1e2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -462,12 +463,12 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 1e2);
       const expectVal = num106Pointzero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_2700
      * @tc.name testFloat64ArrayReduce2027
-     * @tc.desc Verify reduce initialValue is 1.5e1
+     * @tc.desc Verify reduce adds decimal sum to fractional scientific initialValue 1.5e1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -478,12 +479,12 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 1.5e1);
       const expectVal = twentyonePointzero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_2800
      * @tc.name testFloat64ArrayReduce2028
-     * @tc.desc Verify reduce initialValue is 1.0e-308
+     * @tc.desc Verify reduce tiny scientific initialValue rounds to normal sum
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -491,9 +492,9 @@ export default function Float64ArrayReduce2Test(): void {
     it('testFloat64ArrayReduce2028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([1.0, 2.0, 3.0]);
       const result = arr.reduce((sum, val) => sum + val, 1.0e-308);
-      const expectVal = true;
-      expect(result >= 6.0).assertEqual(expectVal);
-    })
+      const expectVal: number = 6.0;
+      expect(result).assertEqual(expectVal);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_2900
@@ -509,12 +510,12 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, Number.MAX_VALUE);
       const expectVal = numberMaxValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_3000
      * @tc.name testFloat64ArrayReduce2030
-     * @tc.desc Verify reduce initialValue is 5e-324
+     * @tc.desc Verify reduce treats MIN_VALUE initialValue as negligible in final sum
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -525,7 +526,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 5e-324);
       const expectVal = sixPointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_3100
@@ -541,7 +542,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, -0.0);
       const expectVal = sixPointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_3200
@@ -558,7 +559,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, Number.MAX_SAFE_INTEGER);
       const expectVal = maxSafeInteger + sixPointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_3300
@@ -574,7 +575,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, Number.MIN_SAFE_INTEGER);
       const expectVal = negsciValue9007199254740985e15;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_3400
@@ -590,7 +591,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 32.0);
       const expectVal = thirtyeightPointzero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_3500
@@ -606,12 +607,12 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 15.0);
       const expectVal = twentyonePointzero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_3600
      * @tc.name testFloat64ArrayReduce2036
-     * @tc.desc Verify reduce initialValue is 1e3
+     * @tc.desc Verify reduce adds decimal sum to large scientific initialValue 1e3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -622,12 +623,12 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 1e3);
       const expectVal = num1006Pointzero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_3700
      * @tc.name testFloat64ArrayReduce2037
-     * @tc.desc Verify reduce initialValue is 2.5e2
+     * @tc.desc Verify reduce adds decimal sum to fractional scientific initialValue 2.5e2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -638,12 +639,12 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 2.5e2);
       const expectVal = num256Pointzero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_3800
      * @tc.name testFloat64ArrayReduce2038
-     * @tc.desc Verify reduce initialValue is 1.0e+308
+     * @tc.desc Verify reduce keeps huge scientific initialValue after adding small values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -654,7 +655,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 1.0e+308);
       const expectVal = sciValue10e308;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_3900
@@ -670,7 +671,7 @@ export default function Float64ArrayReduce2Test(): void {
       arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = onePointZero;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_4000
@@ -686,7 +687,7 @@ export default function Float64ArrayReduce2Test(): void {
       arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = buf;
       expect(arr.buffer).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_4100
@@ -702,7 +703,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 100.0);
       const expectVal = num160Pointzero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_4200
@@ -725,7 +726,7 @@ export default function Float64ArrayReduce2Test(): void {
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_4300
@@ -748,7 +749,7 @@ export default function Float64ArrayReduce2Test(): void {
       } catch (e) {
         expect(e.name).assertEqual("TypeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_4400
@@ -771,7 +772,7 @@ export default function Float64ArrayReduce2Test(): void {
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_4500
@@ -791,7 +792,7 @@ export default function Float64ArrayReduce2Test(): void {
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_4600
@@ -814,7 +815,7 @@ export default function Float64ArrayReduce2Test(): void {
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_4700
@@ -837,7 +838,7 @@ export default function Float64ArrayReduce2Test(): void {
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_4800
@@ -857,7 +858,7 @@ export default function Float64ArrayReduce2Test(): void {
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_4900
@@ -880,7 +881,7 @@ export default function Float64ArrayReduce2Test(): void {
       } catch (e) {
         expect(e.name).assertEqual("SyntaxError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_5000
@@ -895,7 +896,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce<string>((res, value) => res + value, "init");
       const expectVal = "init";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_5100
@@ -911,7 +912,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = hundredPointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_5200
@@ -927,7 +928,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, -50.0);
       const expectVal = fiftyPointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_5300
@@ -943,7 +944,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, Number.MAX_VALUE);
       const expectVal = numberMaxValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_5400
@@ -959,7 +960,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 5e-324);
       const expectVal = onePointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_5500
@@ -975,7 +976,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 999.0);
       const expectVal = num999Pointzero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_5600
@@ -992,7 +993,7 @@ export default function Float64ArrayReduce2Test(): void {
       const actVal4 = Number.isNaN(result);
       const expectVal = true;
       expect(actVal4).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_5700
@@ -1008,7 +1009,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = positiveInfinity;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_5800
@@ -1024,7 +1025,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = negativeInfinity;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_5900
@@ -1040,7 +1041,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 1.0);
       const expectVal = onePointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_6000
@@ -1056,7 +1057,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = thirtyPointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_6100
@@ -1072,7 +1073,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = sixtyPointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_6200
@@ -1094,7 +1095,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = fillValue55;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_6300
@@ -1111,7 +1112,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = thirtyfivePointzero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_6400
@@ -1130,7 +1131,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = thirtyPointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_6500
@@ -1152,7 +1153,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = fillValue55;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_6600
@@ -1169,7 +1170,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = zeroPointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_6700
@@ -1185,7 +1186,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = zeroPointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_6800
@@ -1202,7 +1203,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 5.0);
       const expectVal = fivePointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_6900
@@ -1218,7 +1219,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = numberMaxValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_7000
@@ -1234,7 +1235,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = onePointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_7100
@@ -1251,7 +1252,7 @@ export default function Float64ArrayReduce2Test(): void {
       const actVal5 = Number.isNaN(result);
       const expectVal = true;
       expect(actVal5).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_7200
@@ -1267,7 +1268,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = positiveInfinity;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_7300
@@ -1284,7 +1285,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = negativeInfinity;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_7400
@@ -1300,12 +1301,12 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = onePointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_7500
      * @tc.name testFloat64ArrayReduce2075
-     * @tc.desc Verify reduce with precision boundary 0.1+0.2
+     * @tc.desc Verify reduce preserves 0.1 plus 0.2 plus 0.3 precision result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1313,9 +1314,9 @@ export default function Float64ArrayReduce2Test(): void {
     it('testFloat64ArrayReduce2075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float64Array.of(0.1, 0.2, 0.3);
       const result = arr.reduce((sum, val) => sum + val, 0.0);
-      const expectVal = true;
-      expect(result > 0.3 + 0.3).assertEqual(expectVal);
-    })
+      const expectVal: number = 0.6000000000000001;
+      expect(result).assertEqual(expectVal);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_7600
@@ -1331,7 +1332,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = sciValue30e300;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_7700
@@ -1347,7 +1348,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = sciValue30e300;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_7800
@@ -1364,7 +1365,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce<number>((sum, val) => sum + val * multiplier, 0.0);
       const expectVal = twelvePointzero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_7900
@@ -1380,7 +1381,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce<number>((sum, val) => val > 1 ? sum + val : sum, 0.0);
       const expectVal = fivePointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_8000
@@ -1399,7 +1400,7 @@ export default function Float64ArrayReduce2Test(): void {
       }, 0.0);
       const expectVal = twoPointZero;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_8100
@@ -1418,7 +1419,7 @@ export default function Float64ArrayReduce2Test(): void {
       }, 0.0);
       const expectVal = twelvePointzero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_8200
@@ -1441,7 +1442,7 @@ export default function Float64ArrayReduce2Test(): void {
       expect(counter).assertEqual(expectVal);
       const expectVal2 = sixPointZero;
       expect(result).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_8300
@@ -1457,7 +1458,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = negsixPointzero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_8400
@@ -1473,7 +1474,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = negnum1000000Pointninenine;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_8500
@@ -1490,7 +1491,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = twentyPointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_8600
@@ -1506,12 +1507,12 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 0.0);
       const expectVal = numberMaxValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_8700
      * @tc.name testFloat64ArrayReduce2087
-     * @tc.desc Verify reduce initialValue true
+     * @tc.desc Verify reduce initialValue 1.0 contributes to final sum
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1522,7 +1523,7 @@ export default function Float64ArrayReduce2Test(): void {
       const result = arr.reduce((sum, val) => sum + val, 1.0);
       const expectVal = sevenPointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
   })
 }

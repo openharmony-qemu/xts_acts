@@ -57,7 +57,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = zeroValue;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0020
@@ -73,7 +73,7 @@ export default function float64ArrayReverseTest(): void {
       const result = arr.reverse();
       const expectVal = oneValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0030
@@ -88,7 +88,7 @@ export default function float64ArrayReverseTest(): void {
       const result = arr.reverse();
       const expectVal = arr;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0040
@@ -104,7 +104,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = int16MinValue;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0050
@@ -119,7 +119,7 @@ export default function float64ArrayReverseTest(): void {
       const result = arr.reverse();
       const expectVal = arr;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0060
@@ -135,7 +135,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = negativeOne;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0070
@@ -151,7 +151,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = pointOne;
       expect(arr[1]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0080
@@ -166,7 +166,7 @@ export default function float64ArrayReverseTest(): void {
       const result = arr.reverse();
       const expectVal = arr;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0090
@@ -182,7 +182,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = sumBefore;
       expect(arr[0] + arr[1]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0100
@@ -198,7 +198,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = zeroValue;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0110
@@ -214,7 +214,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = onePointFive;
       expect(arr[1]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0120
@@ -230,7 +230,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = int16MinValue;
       expect(arr[2]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0130
@@ -245,7 +245,7 @@ export default function float64ArrayReverseTest(): void {
       const actVal1 = arr.reverse();
       const expectVal = arr;
       expect(actVal1).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0140
@@ -261,7 +261,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = pointZeroSixTwoFive;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0150
@@ -277,7 +277,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = int16MinValue;
       expect(arr[4]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0160
@@ -293,7 +293,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = zeroValue;
       expect(arr[2]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0170
@@ -311,7 +311,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = zeroValue;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0180
@@ -330,7 +330,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = pointFive;
       expect(arr[9]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0190
@@ -349,7 +349,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = fillValue99;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0200
@@ -368,7 +368,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = zeroPointZero;
       expect(arr[99]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0210
@@ -384,7 +384,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = zeroValue;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0220
@@ -400,7 +400,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = int32MinValue;
       expect(arr[2]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0230
@@ -416,7 +416,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = piValue;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0240
@@ -432,7 +432,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = pointFive;
       expect(arr[3]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0250
@@ -448,7 +448,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = zeroValue;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0260
@@ -464,7 +464,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = zeroValue;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0270
@@ -480,7 +480,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = pointTwoFive;
       expect(arr[2]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0280
@@ -496,7 +496,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = positiveInfinity;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0290
@@ -513,7 +513,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = onePointZero;
       expect(arr[2]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0300
@@ -530,7 +530,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = twoPointZero;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0310
@@ -546,7 +546,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = negativeInfinity;
       expect(arr[2]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0320
@@ -563,7 +563,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = negativeInfinity;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0330
@@ -580,7 +580,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = positiveInfinity;
       expect(arr[2]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0340
@@ -597,7 +597,7 @@ export default function float64ArrayReverseTest(): void {
       const actVal2 = Number.isNaN(arr[2]);
       const expectVal = true;
       expect(actVal2).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0350
@@ -614,7 +614,7 @@ export default function float64ArrayReverseTest(): void {
       const actVal3 = Number.isNaN(arr[0]);
       const expectVal = true;
       expect(actVal3).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0360
@@ -631,7 +631,7 @@ export default function float64ArrayReverseTest(): void {
       const actVal4 = Number.isNaN(arr[1]);
       const expectVal = true;
       expect(actVal4).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0370
@@ -648,7 +648,7 @@ export default function float64ArrayReverseTest(): void {
       const actVal5 = Number.isNaN(arr[0]);
       const expectVal = true;
       expect(actVal5).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0380
@@ -664,7 +664,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = numberMaxValue;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0390
@@ -681,7 +681,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = onePointZero;
       expect(arr[1]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0400
@@ -697,7 +697,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = numberMinValue;
       expect(arr[2]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0410
@@ -714,7 +714,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = numberMinValue;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0420
@@ -731,7 +731,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = numberMaxValue;
       expect(arr[2]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0430
@@ -747,7 +747,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = sciValue10e3082;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0440
@@ -763,7 +763,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = sciValue10e308;
       expect(arr[1]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0450
@@ -779,7 +779,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = sciValue40e100;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0460
@@ -795,7 +795,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = sciValue10e100;
       expect(arr[3]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0470
@@ -811,7 +811,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = pointThree;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0480
@@ -827,7 +827,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = pointOne;
       expect(arr[2]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0490
@@ -845,7 +845,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = precisionSumValue;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0500
@@ -861,7 +861,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = threePointZero;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0510
@@ -877,7 +877,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = maxSafeInteger;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0520
@@ -888,12 +888,13 @@ export default function float64ArrayReverseTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReverse052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const arr = new Float64Array([pointFive, 1.5]);
+      const int32MinValue: number = -2147483648;
+      const negativeOne: number = -1;
+      const arr = new Float64Array([int32MinValue, negativeOne]);
       arr.reverse();
-      const expectVal = pointFive;
+      const expectVal = int32MinValue;
       expect(arr[1]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0530
@@ -910,7 +911,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = onePointZero;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0540
@@ -926,7 +927,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = minSafeInteger;
       expect(arr[1]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0550
@@ -942,7 +943,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = zeroValue;
       expect(arr[2]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0560
@@ -958,7 +959,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = zeroPointZero;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0570
@@ -975,7 +976,7 @@ export default function float64ArrayReverseTest(): void {
       const actVal6 = Number.isNaN(arr[0]);
       const expectVal = true;
       expect(actVal6).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0580
@@ -994,7 +995,7 @@ export default function float64ArrayReverseTest(): void {
       expect(arr[0]).assertEqual(zeroValue);
       expect(arr[1]).assertEqual(int8MinValue);
       expect(arr[2]).assertEqual(int16MinValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0590
@@ -1010,7 +1011,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = idBefore;
       expect(arr).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0600
@@ -1025,7 +1026,7 @@ export default function float64ArrayReverseTest(): void {
       const result = arr.reverse();
       const expectVal = arr;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0610
@@ -1040,7 +1041,7 @@ export default function float64ArrayReverseTest(): void {
       const actVal7 = arr.reverse();
       const expectVal = arr;
       expect(actVal7).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0620
@@ -1055,7 +1056,7 @@ export default function float64ArrayReverseTest(): void {
       const actVal8 = arr.reverse();
       const expectVal = arr;
       expect(actVal8).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0630
@@ -1071,7 +1072,7 @@ export default function float64ArrayReverseTest(): void {
       const result = arr.reverse().reverse();
       const expectVal = int16MinValue;
       expect(result[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0640
@@ -1087,7 +1088,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse().reverse().reverse();
       const expectVal = oneValue;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0650
@@ -1102,7 +1103,7 @@ export default function float64ArrayReverseTest(): void {
       const assigned = arr.reverse();
       const expectVal = arr;
       expect(assigned).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0660
@@ -1123,7 +1124,7 @@ export default function float64ArrayReverseTest(): void {
       child.reverse();
       const expectVal = threePointZero;
       expect(parent[1]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0670
@@ -1144,7 +1145,7 @@ export default function float64ArrayReverseTest(): void {
       child.reverse();
       const expectVal = twoPointZero;
       expect(parent[2]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0680
@@ -1165,7 +1166,7 @@ export default function float64ArrayReverseTest(): void {
       parent.reverse();
       const expectVal = twoPointZero;
       expect(child[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0690
@@ -1186,7 +1187,7 @@ export default function float64ArrayReverseTest(): void {
       parent.reverse();
       const expectVal = onePointZero;
       expect(child[1]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0700
@@ -1202,7 +1203,7 @@ export default function float64ArrayReverseTest(): void {
       const actVal9 = ArrayBuffer.isView(arr);
       const expectVal = true;
       expect(actVal9).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0710
@@ -1219,7 +1220,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = threePointZero;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0720
@@ -1236,7 +1237,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = onePointZero;
       expect(arr[3]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0730
@@ -1253,7 +1254,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = threePointZero;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0740
@@ -1271,7 +1272,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       expect(arr[0]).assertEqual(zeroValue);
       expect(src[0]).assertEqual(pointOne);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0750
@@ -1291,7 +1292,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = threePointZero;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0760
@@ -1311,7 +1312,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = onePointZero;
       expect(arr[2]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0770
@@ -1328,7 +1329,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = fillValue42;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0780
@@ -1346,7 +1347,10 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = negativeInfinity;
       expect(arr[0]).assertEqual(expectVal);
-    })
+      const actVal = Number.isNaN(arr[3]);
+      const expectVal2 = true;
+      expect(actVal).assertEqual(expectVal2);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0790
@@ -1365,7 +1369,7 @@ export default function float64ArrayReverseTest(): void {
       const actVal10 = Number.isNaN(arr[3]);
       const expectVal = true;
       expect(actVal10).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0800
@@ -1384,7 +1388,7 @@ export default function float64ArrayReverseTest(): void {
       const actVal11 = Number.isNaN(arr[0]);
       const expectVal = true;
       expect(actVal11).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0810
@@ -1400,9 +1404,12 @@ export default function float64ArrayReverseTest(): void {
       const nanValue: number = NaN;
       const arr = Float64Array.of(numberMaxValue, numberMinValue, nanValue);
       arr.reverse();
+      const actVal = Number.isNaN(arr[0]);
+      const expectVal2 = true;
+      expect(actVal).assertEqual(expectVal2);
       const expectVal = numberMaxValue;
       expect(arr[2]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0820
@@ -1421,7 +1428,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = onePointZero;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0830
@@ -1440,7 +1447,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = zeroPointZero;
       expect(arr[5]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0840
@@ -1457,7 +1464,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = onePointZero;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0850
@@ -1473,7 +1480,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = doubleMinValue;
       expect(arr[1]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0860
@@ -1489,7 +1496,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = doubleMaxValue;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0870
@@ -1506,7 +1513,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = onePointZero;
       expect(arr[1]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0880
@@ -1522,7 +1529,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = num999999Pointninenine;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0890
@@ -1538,7 +1545,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = negnum999999Pointninenine;
       expect(arr[2]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0900
@@ -1557,7 +1564,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = fortyeightPointzero;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0910
@@ -1576,7 +1583,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = sixteenPointzero;
       expect(arr[2]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0920
@@ -1592,7 +1599,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = twentyfourPointzero;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0930
@@ -1611,7 +1618,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = eightPointZero;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0940
@@ -1622,12 +1629,14 @@ export default function float64ArrayReverseTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReverse094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const twoValue: number = 2;
-      const arr = Float64Array.of(-32768, -128);
+      const int8MinValue: number = -128;
+      const arr = Float64Array.of(-32768, int8MinValue);
+      const originalBuffer = arr.buffer;
       const result = arr.reverse();
-      const expectVal = twoValue;
-      expect(result.length).assertEqual(expectVal);
-    })
+      expect(result.buffer).assertEqual(originalBuffer);
+      const expectVal = int8MinValue;
+      expect(result[0]).assertEqual(expectVal);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0950
@@ -1644,7 +1653,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       expect(arr[0]).assertEqual(zeroValue);
       expect(arr[2]).assertEqual(pointOne);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0960
@@ -1660,7 +1669,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = negnum32896Value;
       expect(arr[0] + arr[1] + arr[2]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0970
@@ -1678,7 +1687,7 @@ export default function float64ArrayReverseTest(): void {
       expect(arr[0]).assertEqual(zeroValue);
       expect(arr[1]).assertEqual(-1);
       expect(arr[2]).assertEqual(int32MinValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0980
@@ -1695,7 +1704,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       expect(arr[0]).assertEqual(pointTwoFive);
       expect(arr[1]).assertEqual(onePointFive);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0990
@@ -1712,7 +1721,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       expect(arr[0]).assertEqual(zeroValue);
       expect(arr[2]).assertEqual(int16MinValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1000
@@ -1729,7 +1738,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       expect(arr[0]).assertEqual(zeroValue);
       expect(arr[2]).assertEqual(int32MinValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1010
@@ -1745,7 +1754,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = maxSafeInteger;
       expect(arr[1]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1020
@@ -1764,7 +1773,7 @@ export default function float64ArrayReverseTest(): void {
       expect(arr[0]).assertEqual(pointTwoFive);
       expect(arr[1]).assertEqual(onePointFive);
       expect(arr[2]).assertEqual(pointFive);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1030
@@ -1780,7 +1789,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       expect(arr[0]).assertEqual(-128);
       expect(arr[1]).assertEqual(int16MinValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1040
@@ -1796,7 +1805,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       expect(arr[0]).assertEqual(-1);
       expect(arr[1]).assertEqual(int32MinValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1050
@@ -1813,7 +1822,7 @@ export default function float64ArrayReverseTest(): void {
       const expectVal = arr;
       expect(result).assertEqual(expectVal);
       expect(arr[0]).assertEqual(zeroValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1060
@@ -1830,7 +1839,7 @@ export default function float64ArrayReverseTest(): void {
       const total = arr[0] + arr[1] + arr[2];
       const expectVal = twoPointtwofive;
       expect(total).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1070
@@ -1847,7 +1856,7 @@ export default function float64ArrayReverseTest(): void {
       const total = arr[0] + arr[1] + arr[2];
       const expectVal = negnum32896Value;
       expect(total).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1080
@@ -1864,7 +1873,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       expect(arr[0]).assertEqual(oneValue);
       expect(arr[2]).assertEqual(negativeOne);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1090
@@ -1881,7 +1890,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       expect(arr[0]).assertEqual(pointTwoFive);
       expect(arr[2]).assertEqual(pointFive);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1100
@@ -1898,7 +1907,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       const expectVal = onePointFive;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1110
@@ -1919,7 +1928,7 @@ export default function float64ArrayReverseTest(): void {
       }
       const expectVal = negativeOne;
       expect(firstVal).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1120
@@ -1938,7 +1947,7 @@ export default function float64ArrayReverseTest(): void {
       expect(values[0]).assertEqual(zeroValue);
       expect(values[1]).assertEqual(maxSafeInteger);
       expect(values[2]).assertEqual(pointOne);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1130
@@ -1955,7 +1964,7 @@ export default function float64ArrayReverseTest(): void {
       values.reverse();
       expect(values[0]).assertEqual(onePointFive);
       expect(values[1]).assertEqual(pointFive);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1140
@@ -1971,7 +1980,7 @@ export default function float64ArrayReverseTest(): void {
       values.reverse();
       const expectVal = int16MinValue;
       expect(values[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1150
@@ -1989,7 +1998,7 @@ export default function float64ArrayReverseTest(): void {
       const actVal12 = Number.isNaN(values[1]);
       const expectVal = false;
       expect(actVal12).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1160
@@ -2001,12 +2010,12 @@ export default function float64ArrayReverseTest(): void {
      */
     it('testFloat64ArrayReverse116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const values = Float64Array.of(pointOne, maxSafeInteger);
+      const positiveInfinity: number = Double.POSITIVE_INFINITY;
+      const values = Float64Array.of(pointOne, positiveInfinity);
       values.reverse();
-      expect(values[0]).assertEqual(maxSafeInteger);
+      expect(values[0]).assertEqual(positiveInfinity);
       expect(values[1]).assertEqual(pointOne);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1170
@@ -2021,24 +2030,26 @@ export default function float64ArrayReverseTest(): void {
       const result = values.reverse();
       const expectVal = values;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1180
      * @tc.name testFloat64ArrayReverse118
-     * @tc.desc Verify reverse result reversed flag
+     * @tc.desc Verify reverse twice restores original order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayReverse118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const zeroValue: number = 0;
-      const arr = new Float64Array([-32768, -128, zeroValue]);
-      const reversed = new Float64Array([-2147483648, -1, zeroValue]);
-      arr.reverse();
-      expect(arr[0] === reversed[0] && arr[1] === reversed[1] && arr[2] === reversed[2]).assertFalse();
-      expect(arr[0] === 1.0).assertFalse();
-    })
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
+      arr.reverse().reverse();
+      const actVal118 = arr.$_get(0);
+      const expectVal = 1.0;
+      expect(actVal118).assertEqual(expectVal);
+      const actVal119 = arr.$_get(2);
+      const expectVal2 = 3.0;
+      expect(actVal119).assertEqual(expectVal2);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1190
@@ -2057,7 +2068,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       expect(arr[0]).assertEqual(num170Pointzero);
       expect(arr[1]).assertEqual(num255Value);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1200
@@ -2076,7 +2087,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       expect(arr[0]).assertEqual(num170Pointzero);
       expect(arr[1]).assertEqual(num255Value);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1210
@@ -2095,7 +2106,7 @@ export default function float64ArrayReverseTest(): void {
       const expectVal = true;
       expect(actVal13).assertEqual(expectVal);
       expect(arr[0]).assertEqual(doubleMaxValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1220
@@ -2112,7 +2123,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       expect(arr[0]).assertEqual(negativeInfinity);
       expect(arr[1]).assertEqual(positiveInfinity);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1230
@@ -2129,7 +2140,7 @@ export default function float64ArrayReverseTest(): void {
       arr.reverse();
       expect(arr[0]).assertEqual(doubleMaxValue);
       expect(arr[1]).assertEqual(doubleMinValue);
-    })
+    });
 
   })
 }
