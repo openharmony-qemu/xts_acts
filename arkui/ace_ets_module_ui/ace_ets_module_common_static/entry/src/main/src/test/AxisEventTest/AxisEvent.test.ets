@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, beforeAll, beforeEach, afterEach, Level } from '../../../../hypium/index';
+import { describe, it, expect, beforeAll, beforeEach, afterEach, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import { Driver, ON, Rect} from '@kit.TestKit';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';

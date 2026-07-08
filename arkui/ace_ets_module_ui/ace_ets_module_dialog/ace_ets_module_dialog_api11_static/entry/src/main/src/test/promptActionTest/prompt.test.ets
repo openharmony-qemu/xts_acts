@@ -29,7 +29,7 @@ import {
   Level,
   TestType,
   Size
-} from "../../../../hypium/index"
+} from "@ohos/hypium-binary/src/main/indexStatic"
 import {
   Driver,
   Component,

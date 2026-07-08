@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import hilog from '@ohos.hilog';
-import { Hypium } from '../../../../../hypium/index';
+import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
 
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { BusinessError } from '@ohos.base';

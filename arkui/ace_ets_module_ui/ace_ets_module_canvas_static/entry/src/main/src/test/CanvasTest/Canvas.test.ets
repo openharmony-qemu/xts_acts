@@ -15,7 +15,7 @@
  */
 
 
-import { describe, it, expect, beforeAll, beforeEach, afterEach, Level } from '../../../../hypium/index';
+import { describe, it, expect, beforeAll, beforeEach, afterEach, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';

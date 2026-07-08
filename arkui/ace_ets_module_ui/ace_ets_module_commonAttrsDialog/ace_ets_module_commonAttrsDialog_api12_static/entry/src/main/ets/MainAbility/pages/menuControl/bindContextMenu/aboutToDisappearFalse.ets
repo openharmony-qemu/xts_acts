@@ -18,7 +18,7 @@ import { Entry, Builder, Menu, MenuItem, MenuItemOptions, Column, Component, Fle
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
-import { Hypium } from '../../../../../../hypium/index';
+import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
 import testsuite from '../../../../../src/test/List.test';
 @Entry
 @Component

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, beforeAll} from '../../../../hypium';
+import { beforeEach, describe, expect, it, Level, beforeAll} from '@ohos/hypium-binary/src/main/indexStatic';
 import Utils from '../common/Utils';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';

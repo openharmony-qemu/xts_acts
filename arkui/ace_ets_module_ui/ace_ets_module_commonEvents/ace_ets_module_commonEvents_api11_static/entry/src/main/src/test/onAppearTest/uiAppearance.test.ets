@@ -15,7 +15,7 @@
  */
 
 import router from '@ohos.router';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium-binary/src/main/indexStatic'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import emitter from '@ohos.events.emitter';
 

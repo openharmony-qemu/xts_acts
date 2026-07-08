@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import hilog from '@ohos.hilog';
-import { Hypium } from '../../../../../hypium/index';
+import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
 import testsuite from '../../../../src/test/List.test';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Entry, Component, TextInputController, CustomDialogController, DialogAlignment, Column, Button, ClickEvent,

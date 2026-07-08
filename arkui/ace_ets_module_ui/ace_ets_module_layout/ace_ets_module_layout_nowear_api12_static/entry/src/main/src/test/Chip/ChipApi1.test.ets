@@ -24,7 +24,7 @@ import {
   it,
   expect,
   Level
-} from '../../../../hypium/index';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 import router from '@ohos.router';
 import {
   Component,

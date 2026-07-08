@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import Utils from "../../../ets/MainAbility/common/Utils";
 import { Driver, ON, MouseButton } from '@ohos.UiTest';
 import hilog from '@ohos.hilog'

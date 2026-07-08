@@ -28,7 +28,7 @@ import {
   FlexAlign,
   FontWeight
 } from '@ohos.arkui.component'
-import { Hypium } from  '../../../../../hypium/hypium'
+import { Hypium } from  '@ohos/hypium-binary/src/main/indexStatic'
 import testsuite from '../../../../src/test/List.test'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';

@@ -22,7 +22,7 @@ import Utils, {
   TestValue
 } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { beforeAll, describe, expect } from '../../../../hypium/index';
+import { beforeAll, describe, expect } from '@ohos/hypium-binary/src/main/indexStatic';
 import { $r, AlignRuleOption, Color, HorizontalAlign, Margin, VerticalAlign } from '@ohos.arkui.component';
 import { jsonx } from 'std/core';
 import inspector from '@ohos.arkui.inspector';

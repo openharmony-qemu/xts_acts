@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, afterEach, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, beforeAll, Size, afterEach, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
 import { Color } from '@ohos.arkui.component';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
