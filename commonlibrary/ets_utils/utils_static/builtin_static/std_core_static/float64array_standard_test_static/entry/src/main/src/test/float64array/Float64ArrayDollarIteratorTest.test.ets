@@ -43,7 +43,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0100
      * @tc.name testFloat64ArrayDollarIterator001
-     * @tc.desc Verify $_iterator with no parameters
+     * @tc.desc Verify $_iterator without parameters returns first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -51,14 +51,17 @@ export default function Float64ArrayDollarIteratorTest(): void {
     it('testFloat64ArrayDollarIterator001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values = new Float64Array([-2147483648, -1, 0]);
       const iter = values.$_iterator();
-      const expectVal = false;
-      expect(iter === null).assertEqual(expectVal);
-    })
+      const result = iter.next();
+      const expectVal = -2147483648;
+      expect(result.value).assertEqual(expectVal);
+      const expectDone = false;
+      expect(result.done).assertEqual(expectDone);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0200
      * @tc.name testFloat64ArrayDollarIterator002
-     * @tc.desc Verify $_iterator single signature no overload
+     * @tc.desc Verify $_iterator over zero-filled array returns first zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -66,14 +69,17 @@ export default function Float64ArrayDollarIteratorTest(): void {
     it('testFloat64ArrayDollarIterator002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values = new Float64Array(3);
       const iter = values.$_iterator();
-      const expectVal = false;
-      expect(iter === null).assertEqual(expectVal);
-    })
+      const result = iter.next();
+      const expectVal = 0.0;
+      expect(result.value).assertEqual(expectVal);
+      const expectDone = false;
+      expect(result.done).assertEqual(expectDone);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0300
      * @tc.name testFloat64ArrayDollarIterator003
-     * @tc.desc Verify return value type is IterableIterator with next method
+     * @tc.desc Verify $_iterator next method yields the first value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -81,9 +87,12 @@ export default function Float64ArrayDollarIteratorTest(): void {
     it('testFloat64ArrayDollarIterator003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values = Float64Array.of(0.1, 9007199254740991);
       const iter = values.$_iterator();
-      const expectVal = false;
-      expect(iter.next === null).assertEqual(expectVal);
-    })
+      const result = iter.next();
+      const expectVal = 0.1;
+      expect(result.value).assertEqual(expectVal);
+      const expectDone = false;
+      expect(result.done).assertEqual(expectDone);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0400
@@ -97,9 +106,11 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const values = new Float64Array([0.5]);
       const iter = values.$_iterator();
       const result = iter.next();
-      const expectVal = false;
-      expect(result === null).assertEqual(expectVal);
-    })
+      const expectVal = 0.5;
+      expect(result.value).assertEqual(expectVal);
+      const expectDone = false;
+      expect(result.done).assertEqual(expectDone);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0500
@@ -113,9 +124,11 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const values = Float64Array.of(-32768);
       const iter = values.$_iterator();
       const result = iter.next();
-      const expectVal = false;
-      expect(result === null).assertEqual(expectVal);
-    })
+      const expectVal = -32768;
+      expect(result.value).assertEqual(expectVal);
+      const expectDone = false;
+      expect(result.done).assertEqual(expectDone);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0600
@@ -129,14 +142,16 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const values = new Float64Array([-2147483648]);
       const iter = values.$_iterator();
       const result = iter.next();
-      const expectVal = false;
-      expect(result === null).assertEqual(expectVal);
-    })
+      const expectVal = -2147483648;
+      expect(result.value).assertEqual(expectVal);
+      const expectDone = false;
+      expect(result.done).assertEqual(expectDone);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0700
      * @tc.name testFloat64ArrayDollarIterator007
-     * @tc.desc Verify iterator is not null with 0.1
+     * @tc.desc Verify $_iterator next returns 0.1 element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -144,9 +159,12 @@ export default function Float64ArrayDollarIteratorTest(): void {
     it('testFloat64ArrayDollarIterator007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values = Float64Array.of(0.1);
       const iter = values.$_iterator();
-      const expectVal = false;
-      expect(iter === null).assertEqual(expectVal);
-    })
+      const result = iter.next();
+      const expectVal = 0.1;
+      expect(result.value).assertEqual(expectVal);
+      const expectDone = false;
+      expect(result.done).assertEqual(expectDone);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0800
@@ -162,7 +180,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const first = iter.next();
       const expectVal = true;
       expect(first.done).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_0900
@@ -177,7 +195,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const iter = values.$_iterator();
       const result = iter.next();
       expect(result.value).assertUndefined();
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1000
@@ -201,7 +219,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       }
       const expectVal = zeroValue;
       expect(count).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1100
@@ -218,7 +236,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const result = iter.next();
       const expectVal = pointFive;
       expect(result.value).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1200
@@ -235,7 +253,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const second = iter.next();
       const expectVal = true;
       expect(second.done).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1300
@@ -259,12 +277,12 @@ export default function Float64ArrayDollarIteratorTest(): void {
       }
       const expectVal = oneValue;
       expect(count).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1400
      * @tc.name testFloat64ArrayDollarIterator014
-     * @tc.desc Verify single-element array $_iterator returns value type number
+     * @tc.desc Verify single-element decimal $_iterator completes after first value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -276,7 +294,11 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const result = iter.next();
       const expectVal = pointOne;
       expect(result.value).assertEqual(expectVal);
-    })
+      const second = iter.next();
+      const expectDone = true;
+      expect(second.done).assertEqual(expectDone);
+      expect(second.value).assertUndefined();
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1500
@@ -298,7 +320,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       expect(r1.value).assertEqual(pointFive);
       expect(r2.value).assertEqual(onePointFive);
       expect(r3.value).assertEqual(pointTwoFive);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1600
@@ -317,7 +339,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const fourth = iter.next();
       const expectVal = true;
       expect(fourth.done).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1700
@@ -341,7 +363,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       }
       const expectVal = threeValue;
       expect(count).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1800
@@ -352,8 +374,11 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const maxSafeInteger: number = 9007199254740991;
+      const zeroValue: number = 0;
       const threeValue: number = 3;
-      const values = new Float64Array([0.1, 9007199254740991, 0]);
+      const values = new Float64Array([pointOne, maxSafeInteger, zeroValue]);
       const collected: Array<number> = [];
       const iter018 = values.$_iterator();
       while (true) {
@@ -365,7 +390,10 @@ export default function Float64ArrayDollarIteratorTest(): void {
       }
       const expectVal = threeValue;
       expect(collected.length).assertEqual(expectVal);
-    })
+      expect(collected[0]).assertEqual(pointOne);
+      expect(collected[1]).assertEqual(maxSafeInteger);
+      expect(collected[2]).assertEqual(zeroValue);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_1900
@@ -388,7 +416,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       }
       const expectVal = tenValue;
       expect(i).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_2000
@@ -411,7 +439,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const fifth = iter.next();
       const expectVal = int16MaxValue;
       expect(fifth.value).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_2100
@@ -422,13 +450,15 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const values = Float64Array.of(int32MinValue);
+      const doubleMaxValue: number = Double.MAX_VALUE;
+      const values = Float64Array.of(doubleMaxValue);
       const iter = values.$_iterator();
       const result = iter.next();
-      const expectVal = int32MinValue;
+      const expectVal = doubleMaxValue;
       expect(result.value).assertEqual(expectVal);
-    })
+      const expectDone = false;
+      expect(result.done).assertEqual(expectDone);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_2200
@@ -439,14 +469,17 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const values = Float64Array.of(0.5, 1.5, 0.25);
+      const nanValue: number = Number.NaN;
+      const values = Float64Array.of(0.5, nanValue, 0.25);
       const iter = values.$_iterator();
       iter.next();
       const nanResult = iter.next();
       const actVal1 = Number.isNaN(nanResult.value as number);
-      const expectVal = false;
+      const expectVal = true;
       expect(actVal1).assertEqual(expectVal);
-    })
+      const expectDone = false;
+      expect(nanResult.done).assertEqual(expectDone);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_2300
@@ -457,14 +490,16 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int8MinValue: number = -128;
-      const values = new Float64Array([-32768, -128, 0]);
+      const positiveInfinity: number = Infinity;
+      const values = new Float64Array([0.5, positiveInfinity, 0.25]);
       const iter = values.$_iterator();
       iter.next();
       const infResult = iter.next();
-      const expectVal = int8MinValue;
+      const expectVal = positiveInfinity;
       expect(infResult.value).assertEqual(expectVal);
-    })
+      const expectDone = false;
+      expect(infResult.done).assertEqual(expectDone);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_2400
@@ -475,14 +510,16 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const negativeOne: number = -1;
-      const values = new Float64Array([-2147483648, -1, 0]);
+      const negativeInfinity: number = -Infinity;
+      const values = new Float64Array([0.5, negativeInfinity, 0.25]);
       const iter = values.$_iterator();
       iter.next();
       const negInfResult = iter.next();
-      const expectVal = negativeOne;
+      const expectVal = negativeInfinity;
       expect(negInfResult.value).assertEqual(expectVal);
-    })
+      const expectDone = false;
+      expect(negInfResult.done).assertEqual(expectDone);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_2500
@@ -493,14 +530,16 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const maxSafeInteger: number = 9007199254740991;
-      const values = new Float64Array([0.1, maxSafeInteger, 0]);
+      const negativeZero: number = -0.0;
+      const negativeInfinity: number = -Infinity;
+      const values = new Float64Array([0.1, negativeZero, 0]);
       const iter = values.$_iterator();
       iter.next();
       const negZeroResult = iter.next();
-      const expectVal = maxSafeInteger;
+      const expectVal = 0.0;
       expect(negZeroResult.value).assertEqual(expectVal);
-    })
+      expect(1.0 / (negZeroResult.value as Double)).assertEqual(negativeInfinity);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_2600
@@ -511,14 +550,16 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointFive: number = 1.5;
-      const values = new Float64Array([0.5, onePointFive, 0.25]);
+      const zeroPointZero: number = 0.0;
+      const positiveInfinity: number = Infinity;
+      const values = new Float64Array([0.5, zeroPointZero, 0.25]);
       const iter = values.$_iterator();
       iter.next();
       const zeroResult = iter.next();
-      const expectVal = onePointFive;
+      const expectVal = zeroPointZero;
       expect(zeroResult.value).assertEqual(expectVal);
-    })
+      expect(1.0 / (zeroResult.value as Double)).assertEqual(positiveInfinity);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_2700
@@ -540,7 +581,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       expect(r1.value).assertEqual(int16MinValue);
       expect(r2.value).assertEqual(int8MinValue);
       expect(r3.value).assertEqual(zeroValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_2800
@@ -562,7 +603,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       expect(r1.value).assertEqual(int32MinValue);
       expect(r2.value).assertEqual(negativeOne);
       expect(r3.value).assertEqual(zeroValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_2900
@@ -584,7 +625,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       expect(r1.value).assertEqual(pointOne);
       expect(r2.value).assertEqual(maxSafeInteger);
       expect(r3.value).assertEqual(zeroValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_3000
@@ -601,7 +642,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const result = iter.next();
       const expectVal = int16MinValue;
       expect(result.value).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_3100
@@ -617,8 +658,9 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const iter = values.$_iterator();
       const result = iter.next();
       expect(result.value).assertEqual(pointFive);
-      expect(result.done).assertFalse();
-    })
+      const expectDone = false;
+      expect(result.done).assertEqual(expectDone);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_3200
@@ -636,7 +678,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const expectVal = true;
       expect(exhausted.done).assertEqual(expectVal);
       expect(exhausted.value).assertUndefined();
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_3300
@@ -656,8 +698,9 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const r3 = iter.next();
       expect(r1.value).assertEqual(int32MinValue);
       expect(r2.value).assertEqual(negativeOne);
-      expect(r3.done).assertTrue();
-    })
+      const expectDone = true;
+      expect(r3.done).assertEqual(expectDone);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_3400
@@ -680,8 +723,9 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const r3 = iter.next();
       expect(r3.value).assertEqual(zeroValue);
       const r4 = iter.next();
-      expect(r4.done).assertTrue();
-    })
+      const expectDone = true;
+      expect(r4.done).assertEqual(expectDone);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_3500
@@ -698,18 +742,20 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const iter = values.$_iterator();
       const r1 = iter.next();
       expect(r1.value).assertEqual(pointFive);
-      expect(r1.done).assertFalse();
+      const expectDone = false;
+      expect(r1.done).assertEqual(expectDone);
       const r2 = iter.next();
       expect(r2.value).assertEqual(onePointFive);
-      expect(r2.done).assertFalse();
+      expect(r2.done).assertEqual(expectDone);
       const r3 = iter.next();
-      expect(r3.done).assertTrue();
-    })
+      const expectDoneAfterEnd = true;
+      expect(r3.done).assertEqual(expectDoneAfterEnd);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_3600
      * @tc.name testFloat64ArrayDollarIterator036
-     * @tc.desc Verify $_iterator Symbol.iterator returns itself
+     * @tc.desc Verify $_iterator completes after single boundary value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -717,9 +763,14 @@ export default function Float64ArrayDollarIteratorTest(): void {
     it('testFloat64ArrayDollarIterator036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values = Float64Array.of(-32768);
       const iter = values.$_iterator();
-      const expectVal = false;
-      expect(iter === null).assertEqual(expectVal);
-    })
+      const first = iter.next();
+      const expectVal = -32768;
+      expect(first.value).assertEqual(expectVal);
+      const second = iter.next();
+      const expectDone = true;
+      expect(second.done).assertEqual(expectDone);
+      expect(second.value).assertUndefined();
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_3700
@@ -746,7 +797,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       expect(collected[0]).assertEqual(int32MinValue);
       expect(collected[1]).assertEqual(negativeOne);
       expect(collected[2]).assertEqual(zeroValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_3800
@@ -773,7 +824,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       }
       const expectVal = threeValue;
       expect(count).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_3900
@@ -800,7 +851,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       }
       const expectVal = twoPointtwofive;
       expect(sum).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_4000
@@ -823,7 +874,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       }
       const expectVal = false;
       expect(executed).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_4100
@@ -847,7 +898,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       }
       const expectVal = oneValue;
       expect(count).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_4200
@@ -858,8 +909,9 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const zeroValue: number = 0;
-      const values = new Float64Array([-2147483648, -1, zeroValue]);
+      const oneValue: number = 1;
+      const nanValue: number = Number.NaN;
+      const values = new Float64Array([-2147483648, nanValue, 0]);
       let nanCount = 0;
       const iter046 = values.$_iterator();
       while (true) {
@@ -871,9 +923,9 @@ export default function Float64ArrayDollarIteratorTest(): void {
           nanCount++;
         }
       }
-      const expectVal = zeroValue;
+      const expectVal = oneValue;
       expect(nanCount).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_4300
@@ -884,8 +936,9 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const zeroValue: number = 0;
-      const values = Float64Array.of(0.1, 9007199254740991, zeroValue);
+      const oneValue: number = 1;
+      const positiveInfinity: number = Infinity;
+      const values = Float64Array.of(0.1, positiveInfinity, 0);
       let infCount = 0;
       const iter047 = values.$_iterator();
       while (true) {
@@ -897,9 +950,9 @@ export default function Float64ArrayDollarIteratorTest(): void {
           infCount++;
         }
       }
-      const expectVal = zeroValue;
+      const expectVal = oneValue;
       expect(infCount).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_4400
@@ -924,7 +977,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal4 = iter1.next().value!;
       const expectVal3 = pointTwoFive;
       expect(actVal4).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_4500
@@ -940,7 +993,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal5 = iter1.next().done;
       const expectVal = true;
       expect(actVal5).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_4600
@@ -957,7 +1010,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal6 = iter1.next().value!;
       const expectVal = int16MinValue;
       expect(actVal6).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_4700
@@ -978,7 +1031,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal8 = iter2.next().value!;
       const expectVal2 = int32MinValue;
       expect(actVal8).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_4800
@@ -1002,7 +1055,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal10 = iter1.next().value!;
       const expectVal2 = zeroValue;
       expect(actVal10).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_4900
@@ -1038,7 +1091,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       expect(sum1).assertEqual(expectVal);
       const expectVal2 = twoPointZero;
       expect(sum2).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_5000
@@ -1059,7 +1112,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal11 = values.$_get(0);
       const expectVal = int16MinValue;
       expect(actVal11).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_5100
@@ -1084,7 +1137,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal12 = values.$_get(1);
       const expectVal = negativeOne;
       expect(actVal12).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_5200
@@ -1108,7 +1161,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal14 = values.$_get(1);
       const expectVal2 = maxSafeInteger;
       expect(actVal14).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_5300
@@ -1136,7 +1189,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal17 = iter.next().value!;
       const expectVal3 = threePointZero;
       expect(actVal17).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_5400
@@ -1157,7 +1210,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal19 = iter.next().value!;
       const expectVal2 = twoValue;
       expect(actVal19).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_5500
@@ -1178,7 +1231,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal21 = iter.next().value!;
       const expectVal2 = int8MinValue;
       expect(actVal21).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_5600
@@ -1194,7 +1247,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal22 = iter.next().done;
       const expectVal = true;
       expect(actVal22).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_5700
@@ -1216,7 +1269,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal24 = iter.next().value!;
       const expectVal2 = negativeOne;
       expect(actVal24).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_5800
@@ -1252,7 +1305,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal29 = Number.isNaN(nanResult.value as number);
       const expectVal5 = false;
       expect(actVal29).assertEqual(expectVal5);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_5900
@@ -1273,7 +1326,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal31 = iter.next().value!;
       const expectVal2 = onePointFive;
       expect(actVal31).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_6000
@@ -1284,25 +1337,27 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
-      const int8MaxValue: number = 127;
-      const int8MinValue: number = -128;
-      const values = Float64Array.of(int16MinValue, -128, zeroValue, int8MaxValue);
+      const zeroValue: number = 0.0;
+      const negativeZero: number = -0.0;
+      const positiveInfinity: number = Infinity;
+      const negativeInfinity: number = -Infinity;
+      const values = Float64Array.of(zeroValue, negativeZero, positiveInfinity, negativeInfinity);
       const iter = values.$_iterator();
       const actVal32 = iter.next().value!;
-      const expectVal = int16MinValue;
+      const expectVal = zeroValue;
       expect(actVal32).assertEqual(expectVal);
+      expect(1.0 / (actVal32 as Double)).assertEqual(positiveInfinity);
       const actVal33 = iter.next().value!;
-      const expectVal2 = int8MinValue;
+      const expectVal2 = zeroValue;
       expect(actVal33).assertEqual(expectVal2);
+      expect(1.0 / (actVal33 as Double)).assertEqual(negativeInfinity);
       const actVal34 = iter.next().value!;
-      const expectVal3 = zeroValue;
+      const expectVal3 = positiveInfinity;
       expect(actVal34).assertEqual(expectVal3);
       const actVal35 = iter.next().value!;
-      const expectVal4 = int8MaxValue;
+      const expectVal4 = negativeInfinity;
       expect(actVal35).assertEqual(expectVal4);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_6100
@@ -1321,7 +1376,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const expectVal = true;
       expect(extra.done).assertEqual(expectVal);
       expect(extra.value).assertUndefined();
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_6200
@@ -1340,7 +1395,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal36 = iter2.next().value!;
       const expectVal = pointOne;
       expect(actVal36).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_6300
@@ -1362,7 +1417,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       }
       const expectVal = twoPointtwofive;
       expect(sum).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_6400
@@ -1393,7 +1448,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       }
       const expectVal = fourValue;
       expect(total).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_6500
@@ -1412,7 +1467,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal37 = innerIter.next().value!;
       const expectVal = int32MinValue;
       expect(actVal37).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_6600
@@ -1438,7 +1493,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       }
       const expectVal = hundredValue;
       expect(count).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_6700
@@ -1462,7 +1517,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const fiftieth = iter.next();
       const expectVal = fortyninePointzero;
       expect(fiftieth.value).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_6800
@@ -1486,7 +1541,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const hundredth = iter.next();
       const expectVal = fillValue99;
       expect(hundredth.value).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_6900
@@ -1509,7 +1564,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const afterEnd = iter.next();
       const expectVal = true;
       expect(afterEnd.done).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_7000
@@ -1528,12 +1583,12 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal38 = values.$_get(1);
       const expectVal = maxSafeInteger;
       expect(actVal38).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_7100
      * @tc.name testFloat64ArrayDollarIterator071
-     * @tc.desc Verify $_set works after for...of traversal
+     * @tc.desc Verify $_set works after $_iterator traversal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1552,7 +1607,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal39 = values.$_get(0);
       const expectVal = tenPointZero;
       expect(actVal39).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_7200
@@ -1576,7 +1631,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       }
       const expectVal = fiveValue;
       expect(count).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_7300
@@ -1599,7 +1654,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal42 = iter.next().value!;
       const expectVal3 = zeroValue;
       expect(actVal42).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_7400
@@ -1610,19 +1665,19 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const zeroValue: number = 0;
-      const values = new Float64Array([zeroValue, zeroValue, zeroValue]);
+      const nanValue: number = Number.NaN;
+      const values = new Float64Array([nanValue, nanValue, nanValue]);
       const iter = values.$_iterator();
       const actVal43 = Number.isNaN(iter.next().value! as number);
-      const expectVal = false;
+      const expectVal = true;
       expect(actVal43).assertEqual(expectVal);
       const actVal44 = Number.isNaN(iter.next().value! as number);
-      const expectVal2 = false;
+      const expectVal2 = true;
       expect(actVal44).assertEqual(expectVal2);
       const actVal45 = Number.isNaN(iter.next().value! as number);
-      const expectVal3 = false;
+      const expectVal3 = true;
       expect(actVal45).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_7500
@@ -1634,25 +1689,25 @@ export default function Float64ArrayDollarIteratorTest(): void {
      */
     it('testFloat64ArrayDollarIterator075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
+      const negOnePointFive: number = -1.5;
       const pointTwoFive: number = 0.25;
-      const pointOneTwoFive: number = 0.125;
+      const negPointOneTwoFive: number = -0.125;
       const pointZeroSixTwoFive: number = 0.0625;
       const zeroValue: number = 0;
       const values =
-        new Float64Array([pointFive, onePointFive, pointTwoFive, pointOneTwoFive, pointZeroSixTwoFive, zeroValue]);
+        new Float64Array([pointFive, negOnePointFive, pointTwoFive, negPointOneTwoFive, pointZeroSixTwoFive, zeroValue]);
       const iter = values.$_iterator();
       const actVal46 = iter.next().value!;
       const expectVal = pointFive;
       expect(actVal46).assertEqual(expectVal);
       const actVal47 = iter.next().value!;
-      const expectVal2 = onePointFive;
+      const expectVal2 = negOnePointFive;
       expect(actVal47).assertEqual(expectVal2);
       const actVal48 = iter.next().value!;
       const expectVal3 = pointTwoFive;
       expect(actVal48).assertEqual(expectVal3);
       const actVal49 = iter.next().value!;
-      const expectVal4 = pointOneTwoFive;
+      const expectVal4 = negPointOneTwoFive;
       expect(actVal49).assertEqual(expectVal4);
       const actVal50 = iter.next().value!;
       const expectVal5 = pointZeroSixTwoFive;
@@ -1660,7 +1715,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal51 = iter.next().value!;
       const expectVal6 = zeroValue;
       expect(actVal51).assertEqual(expectVal6);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_7600
@@ -1693,7 +1748,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal56 = iter.next().value!;
       const expectVal5 = int16MaxValue;
       expect(actVal56).assertEqual(expectVal5);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_7700
@@ -1709,24 +1764,24 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const oneValue: number = 1;
       const int32MaxValue: number = 2147483647;
       const negativeOne: number = -1;
-      const values = Float64Array.of(int32MinValue, -1, zeroValue, oneValue, int32MaxValue);
+      const values = Float64Array.of(int32MaxValue, oneValue, zeroValue, negativeOne, int32MinValue);
       const iter = values.$_iterator();
       const actVal57 = iter.next().value!;
-      const expectVal = int32MinValue;
+      const expectVal = int32MaxValue;
       expect(actVal57).assertEqual(expectVal);
       const actVal58 = iter.next().value!;
-      const expectVal2 = negativeOne;
+      const expectVal2 = oneValue;
       expect(actVal58).assertEqual(expectVal2);
       const actVal59 = iter.next().value!;
       const expectVal3 = zeroValue;
       expect(actVal59).assertEqual(expectVal3);
       const actVal60 = iter.next().value!;
-      const expectVal4 = oneValue;
+      const expectVal4 = negativeOne;
       expect(actVal60).assertEqual(expectVal4);
       const actVal61 = iter.next().value!;
-      const expectVal5 = int32MaxValue;
+      const expectVal5 = int32MinValue;
       expect(actVal61).assertEqual(expectVal5);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_7800
@@ -1753,7 +1808,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal65 = iter.next().value!;
       const expectVal4 = piValue;
       expect(actVal65).assertEqual(expectVal4);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_7900
@@ -1764,14 +1819,16 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const values = new Float64Array([0.5]);
+      const nanValue: number = Number.NaN;
+      const values = new Float64Array([nanValue]);
       const iter = values.$_iterator();
       const result = iter.next();
       const actVal66 = Number.isNaN(result.value as number);
-      const expectVal = false;
+      const expectVal = true;
       expect(actVal66).assertEqual(expectVal);
-      expect(result.done).assertFalse();
-    })
+      const expectDone = false;
+      expect(result.done).assertEqual(expectDone);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_8000
@@ -1782,13 +1839,14 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const values = new Float64Array([int16MinValue]);
+      const positiveInfinity: number = Infinity;
+      const values = new Float64Array([positiveInfinity]);
       const iter = values.$_iterator();
       const result = iter.next();
-      expect(result.value).assertEqual(int16MinValue);
-      expect(result.done).assertFalse();
-    })
+      expect(result.value).assertEqual(positiveInfinity);
+      const expectDone = false;
+      expect(result.done).assertEqual(expectDone);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_8100
@@ -1799,13 +1857,16 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const values = Float64Array.of(int32MinValue);
+      const negativeZero: number = -0.0;
+      const negativeInfinity: number = -Infinity;
+      const values = Float64Array.of(negativeZero);
       const iter = values.$_iterator();
       const result = iter.next();
-      expect(result.value).assertEqual(int32MinValue);
-      expect(result.done).assertFalse();
-    })
+      expect(result.value).assertEqual(0.0);
+      expect(1.0 / (result.value as Double)).assertEqual(negativeInfinity);
+      const expectDone = false;
+      expect(result.done).assertEqual(expectDone);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_8200
@@ -1832,7 +1893,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal69 = iter.next().done;
       const expectVal3 = true;
       expect(actVal69).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_8300
@@ -1851,7 +1912,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal71 = iter.next().done;
       const expectVal2 = true;
       expect(actVal71).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_8400
@@ -1874,7 +1935,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal74 = first.next().value!;
       const expectVal3 = 6.0;
       expect(actVal74).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_8500
@@ -1894,7 +1955,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal76 = iter.next().value!;
       const expectVal2 = 2.0;
       expect(actVal76).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_8600
@@ -1917,7 +1978,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal79 = iter.next().value!;
       const expectVal3 = 30.0;
       expect(actVal79).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_8700
@@ -1938,7 +1999,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal82 = iter.next().value!;
       const expectVal3 = 1.0;
       expect(actVal82).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_8800
@@ -1959,7 +2020,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal85 = iter.next().value!;
       const expectVal3 = 3.0;
       expect(actVal85).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_8900
@@ -1978,7 +2039,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const actVal87 = iter.next().value!;
       const expectVal2 = Infinity;
       expect(actVal87).assertEqual(expectVal2);
-    })
+    });
 
   })
 }

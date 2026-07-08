@@ -60,7 +60,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_0200
@@ -78,7 +78,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_0300
@@ -97,7 +97,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_0400
@@ -116,7 +116,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_0500
@@ -135,7 +135,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_0600
@@ -154,7 +154,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_0700
@@ -172,7 +172,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_0800
@@ -192,7 +192,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_0900
@@ -210,7 +210,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_1000
@@ -230,7 +230,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_1100
@@ -252,7 +252,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_1200
@@ -273,7 +273,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_1300
@@ -292,7 +292,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_1400
@@ -310,7 +310,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_1500
@@ -328,7 +328,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_1600
@@ -347,7 +347,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_1700
@@ -362,7 +362,7 @@ export default function Float64ArrayEvery2Test(): void {
       const result = arr.every(isPositive103);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_1800
@@ -380,7 +380,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_1900
@@ -399,7 +399,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_2000
@@ -420,7 +420,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = threeValue;
       expect(count).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_2100
@@ -438,7 +438,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_2200
@@ -459,7 +459,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_2300
@@ -477,7 +477,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_2400
@@ -495,7 +495,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_2500
@@ -513,7 +513,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_2600
@@ -531,7 +531,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_2700
@@ -550,7 +550,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_2800
@@ -568,7 +568,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_2900
@@ -586,7 +586,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_3000
@@ -604,7 +604,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_3100
@@ -622,7 +622,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_3200
@@ -640,7 +640,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_3300
@@ -658,7 +658,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_3400
@@ -682,7 +682,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_3500
@@ -701,7 +701,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_3600
@@ -720,7 +720,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_3700
@@ -738,7 +738,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_3800
@@ -756,7 +756,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_3900
@@ -776,7 +776,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_4000
@@ -795,7 +795,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_4100
@@ -814,7 +814,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_4200
@@ -833,7 +833,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_4300
@@ -852,7 +852,7 @@ export default function Float64ArrayEvery2Test(): void {
 
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_4400
@@ -865,11 +865,11 @@ export default function Float64ArrayEvery2Test(): void {
     it('testFloat64ArrayEvery2044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float64Array.of(2.0, 4.0, 7.0, 8.0);
       const everyResult = arr.every((value: number): boolean => {
-        return value % 2.0 == 0.0;
+        return value % 2.0 === 0.0;
       })
       const expectVal = false;
       expect(everyResult).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_4500
@@ -886,7 +886,7 @@ export default function Float64ArrayEvery2Test(): void {
       })
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_4600
@@ -899,11 +899,11 @@ export default function Float64ArrayEvery2Test(): void {
     it('testFloat64ArrayEvery2046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([4.0, 8.0, 7.0, 10.0]);
       const result = arr.every((value: number): boolean => {
-        return value % 2.0 == 0.0;
+        return value % 2.0 === 0.0;
       })
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_2_4700
@@ -916,11 +916,11 @@ export default function Float64ArrayEvery2Test(): void {
     it('testFloat64ArrayEvery2047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = Float64Array.of(2.0, 4.0, 6.0);
       const result = source.every((value: number): boolean => {
-        return value % 2.0 == 0.0;
+        return value % 2.0 === 0.0;
       })
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
   })
 }

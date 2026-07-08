@@ -58,7 +58,7 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal1 = arr.$_get(0);
       const expectVal = onePointZero;
       expect(actVal1).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_0200
@@ -75,7 +75,7 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal2 = arr.$_get(0);
       const expectVal = hundredPointZero;
       expect(actVal2).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_0300
@@ -92,7 +92,7 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal3 = arr.$_get(1);
       const expectVal = num200Pointzero;
       expect(actVal3).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_0400
@@ -109,7 +109,7 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal4 = arr.$_get(4);
       const expectVal = num500Pointzero;
       expect(actVal4).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_0500
@@ -128,7 +128,7 @@ export default function float64ArrayDollarSetTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_0600
@@ -147,7 +147,7 @@ export default function float64ArrayDollarSetTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_0700
@@ -166,7 +166,7 @@ export default function float64ArrayDollarSetTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_0800
@@ -184,7 +184,7 @@ export default function float64ArrayDollarSetTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_0900
@@ -202,7 +202,7 @@ export default function float64ArrayDollarSetTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_1000
@@ -220,7 +220,7 @@ export default function float64ArrayDollarSetTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_1100
@@ -238,7 +238,7 @@ export default function float64ArrayDollarSetTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_1200
@@ -256,7 +256,7 @@ export default function float64ArrayDollarSetTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_1300
@@ -273,7 +273,7 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal5 = arr.$_get(3);
       const expectVal = thirtyPointZero;
       expect(actVal5).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_1400
@@ -290,7 +290,7 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal6 = arr.$_get(8);
       const expectVal = eightyPointZero;
       expect(actVal6).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_1500
@@ -307,7 +307,7 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal7 = arr.$_get(7);
       const expectVal = seventyPointZero;
       expect(actVal7).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_1600
@@ -320,11 +320,12 @@ export default function float64ArrayDollarSetTest(): void {
     it('testFloat64ArrayDollarSet016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroPointZero: number = 0.0;
       const arr = new Float64Array(3);
-      arr.$_set(0, zeroPointZero);
-      const actVal8 = arr.$_get(0);
+      const indexOne: int = 1;
+      arr.$_set(indexOne, zeroPointZero);
+      const actVal8 = arr.$_get(indexOne);
       const expectVal = zeroPointZero;
       expect(actVal8).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_1700
@@ -337,11 +338,15 @@ export default function float64ArrayDollarSetTest(): void {
     it('testFloat64ArrayDollarSet017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const negativeZero: number = -0.0;
       const arr = new Float64Array(3);
-      arr.$_set(0, -0.0);
-      const actVal9 = arr.$_get(0);
+      const indexTwo: short = 2;
+      arr.$_set(indexTwo, -0.0);
+      const actVal9 = arr.$_get(indexTwo);
       const expectVal = negativeZero;
       expect(actVal9).assertEqual(expectVal);
-    })
+      const signVal = 1.0 / arr.$_get(indexTwo);
+      const expectVal2 = -Infinity;
+      expect(signVal).assertEqual(expectVal2);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_1800
@@ -354,11 +359,11 @@ export default function float64ArrayDollarSetTest(): void {
     it('testFloat64ArrayDollarSet018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nanValue: number = NaN;
       const arr = new Float64Array(3);
-      arr.$_set(0, nanValue);
-      const actVal10 = Number.isNaN(arr.$_get(0));
-      const expectVal = true;
-      expect(actVal10).assertEqual(expectVal);
-    })
+      const indexOne: short = 1;
+      arr.$_set(indexOne, nanValue);
+      const actVal10 = arr.$_get(indexOne);
+      expect(actVal10).assertNaN();
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_1900
@@ -371,11 +376,12 @@ export default function float64ArrayDollarSetTest(): void {
     it('testFloat64ArrayDollarSet019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const positiveInfinity: number = Infinity;
       const arr = new Float64Array(3);
-      arr.$_set(0, positiveInfinity);
-      const actVal11 = arr.$_get(0);
+      const indexTwo: int = 2;
+      arr.$_set(indexTwo, positiveInfinity);
+      const actVal11 = arr.$_get(indexTwo);
       const expectVal = positiveInfinity;
       expect(actVal11).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_2000
@@ -389,11 +395,12 @@ export default function float64ArrayDollarSetTest(): void {
       const positiveInfinity: number = Infinity;
       const negativeInfinity: number = -Infinity;
       const arr = new Float64Array(3);
-      arr.$_set(0, -positiveInfinity);
-      const actVal12 = arr.$_get(0);
+      const indexOne: int = 1;
+      arr.$_set(indexOne, -positiveInfinity);
+      const actVal12 = arr.$_get(indexOne);
       const expectVal = negativeInfinity;
       expect(actVal12).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_2100
@@ -406,11 +413,12 @@ export default function float64ArrayDollarSetTest(): void {
     it('testFloat64ArrayDollarSet021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const doubleMaxValue: number = 1.7976931348623157e+308;
       const arr = new Float64Array(3);
-      arr.$_set(0, doubleMaxValue);
-      const actVal13 = arr.$_get(0);
+      const indexTwo: short = 2;
+      arr.$_set(indexTwo, doubleMaxValue);
+      const actVal13 = arr.$_get(indexTwo);
       const expectVal = doubleMaxValue;
       expect(actVal13).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_2200
@@ -423,30 +431,31 @@ export default function float64ArrayDollarSetTest(): void {
     it('testFloat64ArrayDollarSet022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const doubleMinValue: number = 5e-324;
       const arr = new Float64Array(3);
-      arr.$_set(0, doubleMinValue);
-      const actVal14 = arr.$_get(0);
+      const indexOne: short = 1;
+      arr.$_set(indexOne, doubleMinValue);
+      const actVal14 = arr.$_get(indexOne);
       const expectVal = doubleMinValue;
       expect(actVal14).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_2300
      * @tc.name testFloat64ArrayDollarSet023
-     * @tc.desc Verify $_set overwrites previous value at same index
+     * @tc.desc Verify $_set overwrites a negative decimal with a positive decimal at the same index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const fillValue99: number = 99.0;
+      const negTwelvePointFive: number = -12.5;
+      const overwriteValue: number = 12345.5;
       const arr = new Float64Array(3);
-      arr.$_set(0, onePointZero);
-      arr.$_set(0, fillValue99);
+      arr.$_set(0, negTwelvePointFive);
+      arr.$_set(0, overwriteValue);
       const actVal15 = arr.$_get(0);
-      const expectVal = fillValue99;
+      const expectVal = overwriteValue;
       expect(actVal15).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_2400
@@ -470,7 +479,7 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal17 = arr.$_get(4);
       const expectVal2 = fortyPointZero;
       expect(actVal17).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_2500
@@ -491,7 +500,7 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal19 = 1.0 / arr.$_get(0);
       const expectVal2 = positiveInfinity;
       expect(actVal19).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_2600
@@ -512,7 +521,7 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal21 = 1.0 / arr.$_get(0);
       const expectVal2 = negativeInfinity;
       expect(actVal21).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_2700
@@ -529,7 +538,7 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal22 = arr.$_get(0);
       const expectVal = negonePointzero;
       expect(actVal22).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_2800
@@ -541,13 +550,12 @@ export default function float64ArrayDollarSetTest(): void {
      */
     it('testFloat64ArrayDollarSet028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const doubleMaxValueAlt: number = 1.7976931348623158e+308;
+      const doubleMaxValue: number = 1.7976931348623157e+308;
       const arr = new Float64Array(3);
       arr.$_set(0, doubleMaxValueAlt);
       const v = arr.$_get(0);
-      const actVal23 = v === 1.7976931348623157e+308 || Number.isNaN(v);
-      const expectVal = true;
-      expect(actVal23).assertEqual(expectVal);
-    })
+      expect(v).assertEqual(doubleMaxValue);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_2900
@@ -565,7 +573,7 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal24 = arr.$_get(3);
       const expectVal = fillValue99;
       expect(actVal24).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_3000
@@ -583,7 +591,7 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal25 = arr.$_get(2);
       const expectVal = fiftyPointZero;
       expect(actVal25).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_3100
@@ -600,35 +608,35 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal26 = arr.$_get(0);
       const expectVal = fillValue42;
       expect(actVal26).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_3200
      * @tc.name testFloat64ArrayDollarSet032
-     * @tc.desc Verify $_set out of bounds preserves existing valid values
+     * @tc.desc Verify $_set out of bounds preserves negative and safe-integer values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const num999Pointzero: number = 999.0;
+      const negPointFive: number = -0.5;
+      const maxSafeInteger: number = Number.MAX_SAFE_INTEGER;
+      const oobWriteValue: number = 12345.5;
       const arr = new Float64Array(3);
-      arr.$_set(0, onePointZero);
-      arr.$_set(1, twoPointZero);
+      arr.$_set(0, negPointFive);
+      arr.$_set(1, maxSafeInteger);
       try {
-        arr.$_set(100, num999Pointzero);
+        arr.$_set(100, oobWriteValue);
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
       const actVal27 = arr.$_get(0);
-      const expectVal = onePointZero;
+      const expectVal = negPointFive;
       expect(actVal27).assertEqual(expectVal);
       const actVal28 = arr.$_get(1);
-      const expectVal2 = twoPointZero;
+      const expectVal2 = maxSafeInteger;
       expect(actVal28).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_3300
@@ -642,66 +650,68 @@ export default function float64ArrayDollarSetTest(): void {
       const tenValue: number = 10;
       const values = new Float64Array(2);
       const value: double = 10;
-      values.$_set(0, value);
-      const actVal29 = values.$_get(0);
+      const indexOne: int = 1;
+      values.$_set(indexOne, value);
+      const actVal29 = values.$_get(indexOne);
       const expectVal = tenValue;
       expect(actVal29).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_3400
      * @tc.name testFloat64ArrayDollarSet034
-     * @tc.desc Verify $_set() at index 0 accepts number literal 10 and stores it correctly as confirmed by $_get(0) returning 10
+     * @tc.desc Verify $_set() at index 2 accepts number literal 10 and stores it correctly as confirmed by $_get(2) returning 10
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tenValue: number = 10;
-      const values = new Float64Array(2);
-      values.$_set(0, tenValue);
-      const actVal30 = values.$_get(0);
+      const values = new Float64Array(3);
+      const indexTwo: short = 2;
+      values.$_set(indexTwo, tenValue);
+      const actVal30 = values.$_get(indexTwo);
       const expectVal = tenValue;
       expect(actVal30).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_3500
      * @tc.name testFloat64ArrayDollarSet035
-     * @tc.desc Verify $_set index=2147483647 max int OOB throws RangeError
+     * @tc.desc Verify $_set index=2147483647 with MAX_SAFE_INTEGER value throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
+      const maxSafeInteger: number = Number.MAX_SAFE_INTEGER;
       const arr = new Float64Array(3);
       try {
-        arr.$_set(2147483647, onePointZero);
+        arr.$_set(2147483647, maxSafeInteger);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_3600
      * @tc.name testFloat64ArrayDollarSet036
-     * @tc.desc Verify $_set index=-2147483648 min int OOB throws RangeError
+     * @tc.desc Verify $_set index=-2147483648 with -Double.MAX_VALUE value throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
+      const negDoubleMaxValue: number = -1.7976931348623157e+308;
       const arr = new Float64Array(3);
       try {
-        arr.$_set(-2147483648, onePointZero);
+        arr.$_set(-2147483648, negDoubleMaxValue);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_3700
@@ -714,11 +724,12 @@ export default function float64ArrayDollarSetTest(): void {
     it('testFloat64ArrayDollarSet037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const negDoubleMaxValue: number = -1.7976931348623157e+308;
       const arr = new Float64Array(3);
-      arr.$_set(0, negDoubleMaxValue);
-      const actVal31 = arr.$_get(0);
+      const indexOne: int = 1;
+      arr.$_set(indexOne, negDoubleMaxValue);
+      const actVal31 = arr.$_get(indexOne);
       const expectVal = negDoubleMaxValue;
       expect(actVal31).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_3800
@@ -732,11 +743,12 @@ export default function float64ArrayDollarSetTest(): void {
       const floatSum: number = 0.1 + 0.2;
       const expected: number = 0.30000000000000004;
       const arr = new Float64Array(3);
-      arr.$_set(0, floatSum);
-      const actVal32 = arr.$_get(0);
+      const indexTwo: short = 2;
+      arr.$_set(indexTwo, floatSum);
+      const actVal32 = arr.$_get(indexTwo);
       const expectVal = expected;
       expect(actVal32).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_3900
@@ -749,11 +761,12 @@ export default function float64ArrayDollarSetTest(): void {
     it('testFloat64ArrayDollarSet039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const sciSmall: number = 1.0e-308;
       const arr = new Float64Array(3);
-      arr.$_set(0, sciSmall);
-      const actVal33 = arr.$_get(0);
+      const indexOne: short = 1;
+      arr.$_set(indexOne, sciSmall);
+      const actVal33 = arr.$_get(indexOne);
       const expectVal = sciSmall;
       expect(actVal33).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_4000
@@ -766,11 +779,12 @@ export default function float64ArrayDollarSetTest(): void {
     it('testFloat64ArrayDollarSet040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const sciLarge: number = 1.0e+308;
       const arr = new Float64Array(3);
-      arr.$_set(0, sciLarge);
-      const actVal34 = arr.$_get(0);
+      const indexTwo: int = 2;
+      arr.$_set(indexTwo, sciLarge);
+      const actVal34 = arr.$_get(indexTwo);
       const expectVal = sciLarge;
       expect(actVal34).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_4100
@@ -783,11 +797,12 @@ export default function float64ArrayDollarSetTest(): void {
     it('testFloat64ArrayDollarSet041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const maxSafeInteger: number = Number.MAX_SAFE_INTEGER;
       const arr = new Float64Array(3);
-      arr.$_set(0, maxSafeInteger);
-      const actVal35 = arr.$_get(0);
+      const indexOne: int = 1;
+      arr.$_set(indexOne, maxSafeInteger);
+      const actVal35 = arr.$_get(indexOne);
       const expectVal = maxSafeInteger;
       expect(actVal35).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_4200
@@ -800,11 +815,12 @@ export default function float64ArrayDollarSetTest(): void {
     it('testFloat64ArrayDollarSet042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const minSafeInteger: number = Number.MIN_SAFE_INTEGER;
       const arr = new Float64Array(3);
-      arr.$_set(0, minSafeInteger);
-      const actVal36 = arr.$_get(0);
+      const indexTwo: short = 2;
+      arr.$_set(indexTwo, minSafeInteger);
+      const actVal36 = arr.$_get(indexTwo);
       const expectVal = minSafeInteger;
       expect(actVal36).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_4300
@@ -818,11 +834,12 @@ export default function float64ArrayDollarSetTest(): void {
       const hexValue10: number = 0x10;
       const sixteenValue: number = 16.0;
       const arr = new Float64Array(3);
-      arr.$_set(0, hexValue10);
-      const actVal37 = arr.$_get(0);
+      const indexOne: short = 1;
+      arr.$_set(indexOne, hexValue10);
+      const actVal37 = arr.$_get(indexOne);
       const expectVal = sixteenValue;
       expect(actVal37).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_4400
@@ -836,11 +853,12 @@ export default function float64ArrayDollarSetTest(): void {
       const binaryValue1010: number = 0b1010;
       const tenValue: number = 10.0;
       const arr = new Float64Array(3);
-      arr.$_set(0, binaryValue1010);
-      const actVal38 = arr.$_get(0);
+      const indexTwo: int = 2;
+      arr.$_set(indexTwo, binaryValue1010);
+      const actVal38 = arr.$_get(indexTwo);
       const expectVal = tenValue;
       expect(actVal38).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_4500
@@ -860,62 +878,65 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal40 = arr.$_get(1);
       const expectVal2 = 0.0;
       expect(actVal40).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_4600
      * @tc.name testFloat64ArrayDollarSet046
-     * @tc.desc Verify $_set return value is undefined
+     * @tc.desc Verify $_set return value is undefined after binary literal write
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
+      const binaryValue1111: number = 0b1111;
+      const fifteenValue: number = 15;
       const arr = new Float64Array(3);
-      const result = arr.$_set(0, onePointZero);
+      const result = arr.$_set(0, binaryValue1111);
       const expectVal = undefined;
       expect(result).assertEqual(expectVal);
-    })
+      const actVal = arr.$_get(0);
+      expect(actVal).assertEqual(fifteenValue);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_4700
      * @tc.name testFloat64ArrayDollarSet047
-     * @tc.desc Verify $_set length unchanged after out-of-bounds
+     * @tc.desc Verify $_set length unchanged after out-of-bounds scientific value write
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const num999Pointzero: number = 999.0;
+      const sciLarge: number = 1.0e+308;
       const threeValue: number = 3;
       const arr = new Float64Array(3);
       try {
-        arr.$_set(100, num999Pointzero);
+        arr.$_set(100, sciLarge);
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
       expect(arr.length).assertEqual(threeValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_4800
      * @tc.name testFloat64ArrayDollarSet048
-     * @tc.desc Verify $_set other elements unchanged
+     * @tc.desc Verify $_set keeps hex value unchanged when another index is updated
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const twoPointZero: number = 2.0;
-      const onePointZero: number = 1.0;
+      const hexValue20: number = 0x20;
+      const negFifteenPointFive: number = -15.5;
       const arr = new Float64Array(3);
-      arr.$_set(1, twoPointZero);
-      arr.$_set(0, onePointZero);
+      arr.$_set(1, hexValue20);
+      arr.$_set(0, negFifteenPointFive);
       const actVal1 = arr.$_get(1);
-      const expectVal = twoPointZero;
+      const expectVal = hexValue20;
       expect(actVal1).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_4900
@@ -934,7 +955,7 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal2 = child.$_get(0);
       const expectVal = hundredPointZero;
       expect(actVal2).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_5000
@@ -953,51 +974,51 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal3 = parent.$_get(1);
       const expectVal = num200Pointzero;
       expect(actVal3).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_5100
      * @tc.name testFloat64ArrayDollarSet051
-     * @tc.desc Verify $_set on copy does not affect original
+     * @tc.desc Verify $_set on copy does not affect original negative decimal value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const num999Pointzero: number = 999.0;
+      const negOnePointFive: number = -1.5;
+      const copyWriteValue: number = 12345.5;
       const original = new Float64Array(3);
-      original.$_set(0, onePointZero);
+      original.$_set(0, negOnePointFive);
       const copy = new Float64Array(original);
-      copy.$_set(0, num999Pointzero);
+      copy.$_set(0, copyWriteValue);
       const actVal4 = original.$_get(0);
-      const expectVal = onePointZero;
+      const expectVal = negOnePointFive;
       expect(actVal4).assertEqual(expectVal);
       const actVal5 = copy.$_get(0);
-      const expectVal2 = num999Pointzero;
+      const expectVal2 = copyWriteValue;
       expect(actVal5).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_5200
      * @tc.name testFloat64ArrayDollarSet052
-     * @tc.desc Verify $_set on empty array does not change length
+     * @tc.desc Verify $_set on empty array with MIN_SAFE_INTEGER does not change length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
+      const minSafeInteger: number = Number.MIN_SAFE_INTEGER;
       const zeroValue: number = 0;
       const arr = new Float64Array(0);
       try {
-        arr.$_set(0, onePointZero);
+        arr.$_set(0, minSafeInteger);
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
       expect(arr.length).assertEqual(zeroValue);
       expect(arr.byteLength).assertEqual(zeroValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_5300
@@ -1016,10 +1037,12 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal6 = Number.isNaN(arr.$_get(0));
       const expectVal = true;
       expect(actVal6).assertEqual(expectVal);
+      const nanElement = arr.$_get(0);
+      expect(nanElement).assertNaN();
       const actVal7 = arr.$_get(1);
       const expectVal2 = twoPointZero;
       expect(actVal7).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_5400
@@ -1043,7 +1066,7 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal9 = v2.$_get(0);
       const expectVal2 = twentyPointZero;
       expect(actVal9).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_5500
@@ -1059,10 +1082,9 @@ export default function float64ArrayDollarSetTest(): void {
       const a1 = new Float64Array(buf);
       const a2 = new Float64Array(buf);
       a1.$_set(0, nanValue);
-      const actVal10 = Number.isNaN(a2.$_get(0));
-      const expectVal = true;
-      expect(actVal10).assertEqual(expectVal);
-    })
+      const actVal10 = a2.$_get(0);
+      expect(actVal10).assertNaN();
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_5600
@@ -1081,22 +1103,22 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal11 = a2.$_get(0);
       const expectVal = positiveInfinity;
       expect(actVal11).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_5700
      * @tc.name testFloat64ArrayDollarSet057
-     * @tc.desc Verify $_set on empty array does not change invariants
+     * @tc.desc Verify $_set on empty array with negative scientific value does not change invariants
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
+      const negSciLarge: number = -1.0e+308;
       const zeroValue: number = 0;
       const arr = new Float64Array(0);
       try {
-        arr.$_set(0, onePointZero);
+        arr.$_set(0, negSciLarge);
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
@@ -1104,12 +1126,12 @@ export default function float64ArrayDollarSetTest(): void {
       expect(arr.byteLength).assertEqual(zeroValue);
       expect(arr.byteOffset).assertEqual(zeroValue);
       expect(arr.byteLength).assertEqual(zeroValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_5800
      * @tc.name testFloat64ArrayDollarSet058
-     * @tc.desc Verify dollarset with 1 elements byteLength and length
+     * @tc.desc Verify $_set with one element preserves byteLength and length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1123,32 +1145,32 @@ export default function float64ArrayDollarSetTest(): void {
       expect(arr.length).assertEqual(oneValue);
       expect(arr.byteLength).assertEqual(eightValue);
       expect(arr.buffer.byteLength).assertEqual(eightValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_5900
      * @tc.name testFloat64ArrayDollarSet059
-     * @tc.desc Verify dollarset with 1000 elements byteLength and length
+     * @tc.desc Verify $_set with 1000 elements preserves byteLength and length after negative scientific write
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
+      const negSciLarge: number = -1.0e+308;
       const thousandValue: number = 1000;
       const num8000Value: number = 8000;
       const arr = new Float64Array(1000);
       const bufBefore = arr.buffer;
-      arr.$_set(500, onePointZero);
+      arr.$_set(500, negSciLarge);
       expect(arr.length).assertEqual(thousandValue);
       expect(arr.byteLength).assertEqual(num8000Value);
       expect(arr.buffer).assertEqual(bufBefore);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_6000
      * @tc.name testFloat64ArrayDollarSet060
-     * @tc.desc Verify dollarset with 3 elements byteLength, length, element values and not NaN
+     * @tc.desc Verify $_set with three elements preserves byteLength, length and non-NaN values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1158,18 +1180,17 @@ export default function float64ArrayDollarSetTest(): void {
       const threeValue: number = 3;
       const twentyfourValue: number = 24;
       const arr = new Float64Array(3);
-      arr.$_set(0, nanValue);
+      arr.$_set(1, nanValue);
       expect(arr.length).assertEqual(threeValue);
       expect(arr.byteLength).assertEqual(twentyfourValue);
-      const actVal12 = Number.isNaN(arr.$_get(0));
-      const expectVal = true;
-      expect(actVal12).assertEqual(expectVal);
-    })
+      const actVal12 = arr.$_get(1);
+      expect(actVal12).assertNaN();
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_6100
      * @tc.name testFloat64ArrayDollarSet061
-     * @tc.desc Verify dollarset with 3 elements setting positive zero 0.0
+     * @tc.desc Verify $_set with three elements stores positive zero 0.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1179,18 +1200,18 @@ export default function float64ArrayDollarSetTest(): void {
       const threeValue: number = 3;
       const twentyfourValue: number = 24;
       const arr = new Float64Array(3);
-      arr.$_set(0, zeroPointZero);
+      arr.$_set(2, zeroPointZero);
       expect(arr.length).assertEqual(threeValue);
       expect(arr.byteLength).assertEqual(twentyfourValue);
-      const actVal13 = arr.$_get(0);
+      const actVal13 = arr.$_get(2);
       const expectVal = zeroPointZero;
       expect(actVal13).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_6200
      * @tc.name testFloat64ArrayDollarSet062
-     * @tc.desc Verify dollarset with 3 elements setting negative zero -0.0
+     * @tc.desc Verify $_set with three elements stores negative zero -0.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1200,18 +1221,18 @@ export default function float64ArrayDollarSetTest(): void {
       const twentyfourValue: number = 24;
       const negativeZero: number = -0.0;
       const arr = new Float64Array(3);
-      arr.$_set(0, -0.0);
+      arr.$_set(1, -0.0);
       expect(arr.length).assertEqual(threeValue);
       expect(arr.byteLength).assertEqual(twentyfourValue);
-      const actVal14 = arr.$_get(0);
+      const actVal14 = arr.$_get(1);
       const expectVal = negativeZero;
       expect(actVal14).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_6300
      * @tc.name testFloat64ArrayDollarSet063
-     * @tc.desc Verify dollarset with 3 elements setting Double.MIN_VALUE
+     * @tc.desc Verify $_set with three elements stores Double.MIN_VALUE
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1220,17 +1241,17 @@ export default function float64ArrayDollarSetTest(): void {
       const doubleMinValue: number = 5e-324;
       const threeValue: number = 3;
       const arr = new Float64Array(3);
-      arr.$_set(0, doubleMinValue);
+      arr.$_set(2, doubleMinValue);
       expect(arr.length).assertEqual(threeValue);
-      const actVal15 = arr.$_get(0);
+      const actVal15 = arr.$_get(2);
       const expectVal = doubleMinValue;
       expect(actVal15).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_6400
      * @tc.name testFloat64ArrayDollarSet064
-     * @tc.desc Verify dollarset with 3 elements setting Double.MAX_VALUE
+     * @tc.desc Verify $_set with three elements stores Double.MAX_VALUE
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1239,130 +1260,133 @@ export default function float64ArrayDollarSetTest(): void {
       const doubleMaxValue: number = 1.7976931348623157e+308;
       const threeValue: number = 3;
       const arr = new Float64Array(3);
-      arr.$_set(0, doubleMaxValue);
+      arr.$_set(1, doubleMaxValue);
       expect(arr.length).assertEqual(threeValue);
-      const actVal16 = arr.$_get(0);
+      const actVal16 = arr.$_get(1);
       const expectVal = doubleMaxValue;
       expect(actVal16).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_6500
      * @tc.name testFloat64ArrayDollarSet065
-     * @tc.desc Verify dollarset with 3 elements setting multiple values [1.0, 2.0, 3.0]
+     * @tc.desc Verify $_set with three elements stores negative, hex and scientific values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
+      const negOnePointFive: number = -1.5;
+      const hexValue10: number = 0x10;
+      const sciSmall: number = 1.0e-308;
       const threeValue: number = 3;
       const arr = new Float64Array(3);
-      arr.$_set(0, onePointZero);
-      arr.$_set(1, twoPointZero);
-      arr.$_set(2, threePointZero);
+      arr.$_set(0, negOnePointFive);
+      arr.$_set(1, hexValue10);
+      arr.$_set(2, sciSmall);
       const actVal17 = arr.$_get(0);
-      const expectVal = onePointZero;
+      const expectVal = negOnePointFive;
       expect(actVal17).assertEqual(expectVal);
       const actVal18 = arr.$_get(1);
-      const expectVal2 = twoPointZero;
+      const expectVal2 = hexValue10;
       expect(actVal18).assertEqual(expectVal2);
       const actVal19 = arr.$_get(2);
-      const expectVal3 = threePointZero;
+      const expectVal3 = sciSmall;
       expect(actVal19).assertEqual(expectVal3);
       expect(arr.length).assertEqual(threeValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_6600
      * @tc.name testFloat64ArrayDollarSet066
-     * @tc.desc Verify dollarset with 3 elements element values and exception handling
+     * @tc.desc Verify $_set with three elements preserves safe-integer and binary values after exception
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
-      const num999Pointzero: number = 999.0;
+      const maxSafeInteger: number = Number.MAX_SAFE_INTEGER;
+      const minSafeInteger: number = Number.MIN_SAFE_INTEGER;
+      const binaryValue1111: number = 0b1111;
+      const oobWriteValue: number = -9876.5;
       const arr = new Float64Array(3);
-      arr.$_set(0, onePointZero);
-      arr.$_set(1, twoPointZero);
-      arr.$_set(2, threePointZero);
+      arr.$_set(0, maxSafeInteger);
+      arr.$_set(1, minSafeInteger);
+      arr.$_set(2, binaryValue1111);
       try {
-        arr.$_set(100, num999Pointzero);
+        arr.$_set(100, oobWriteValue);
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
       const actVal20 = arr.$_get(0);
-      const expectVal = onePointZero;
+      const expectVal = maxSafeInteger;
       expect(actVal20).assertEqual(expectVal);
       const actVal21 = arr.$_get(1);
-      const expectVal2 = twoPointZero;
+      const expectVal2 = minSafeInteger;
       expect(actVal21).assertEqual(expectVal2);
       const actVal22 = arr.$_get(2);
-      const expectVal3 = threePointZero;
+      const expectVal3 = binaryValue1111;
       expect(actVal22).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_6700
      * @tc.name testFloat64ArrayDollarSet067
-     * @tc.desc Verify dollarset with 3 elements element values
+     * @tc.desc Verify $_set on original array does not affect copied array values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
+      const sciSmall: number = 1.0e-308;
       const zeroPointZero: number = 0.0;
       const original = new Float64Array(3);
       const copy = new Float64Array(original);
-      original.$_set(0, onePointZero);
+      original.$_set(0, sciSmall);
       const actVal23 = copy.$_get(0);
       const expectVal = zeroPointZero;
       expect(actVal23).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_6800
      * @tc.name testFloat64ArrayDollarSet068
-     * @tc.desc Verify dollarset with 3 elements returns object type
+     * @tc.desc Verify $_set stores hex value and preserves bytes per element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
+      const hexValue1F: number = 0x1F;
+      const eightValue: number = 8;
       const arr = new Float64Array(3);
-      arr.$_set(0, onePointZero);
-      const t = typeof arr;
-      const expectVal = "object";
-      expect(t).assertEqual(expectVal);
-    })
+      arr.$_set(0, hexValue1F);
+      const actVal = arr.$_get(0);
+      expect(actVal).assertEqual(hexValue1F);
+      expect(arr.BYTES_PER_ELEMENT).assertEqual(eightValue);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_6900
      * @tc.name testFloat64ArrayDollarSet069
-     * @tc.desc Verify dollarset with 3 elements byteLength and exception handling
+     * @tc.desc Verify $_set preserves byteLength after out-of-bounds MIN_SAFE_INTEGER write
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
+      const minSafeInteger: number = Number.MIN_SAFE_INTEGER;
       const twentyfourValue: number = 24;
       const arr = new Float64Array(3);
       try {
-        arr.$_set(100, onePointZero);
+        arr.$_set(100, minSafeInteger);
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
       expect(arr.byteLength).assertEqual(twentyfourValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_7000
@@ -1378,7 +1402,9 @@ export default function float64ArrayDollarSetTest(): void {
       const result = arr.$_set(0, nanValue);
       const expectVal = undefined;
       expect(result).assertEqual(expectVal);
-    })
+      const actVal = arr.$_get(0);
+      expect(actVal).assertNaN();
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_7100
@@ -1394,7 +1420,7 @@ export default function float64ArrayDollarSetTest(): void {
       const result = arr.$_set(0, positiveInfinity);
       const expectVal = undefined;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_7200
@@ -1405,17 +1431,17 @@ export default function float64ArrayDollarSetTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const num999Pointzero: number = 999.0;
+      const sciSmall: number = 1.0e-308;
       const eightValue: number = 8;
       const buf = new ArrayBuffer(24);
       const arr = new Float64Array(buf, 8, 2);
       try {
-        arr.$_set(100, num999Pointzero);
+        arr.$_set(100, sciSmall);
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
       expect(arr.byteOffset).assertEqual(eightValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_7300
@@ -1426,16 +1452,16 @@ export default function float64ArrayDollarSetTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const num999Pointzero: number = 999.0;
+      const negSciLarge: number = -1.0e+308;
       const threeValue: number = 3;
       const arr = new Float64Array(3);
       try {
-        arr.$_set(-100, num999Pointzero);
+        arr.$_set(-100, negSciLarge);
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
       expect(arr.length).assertEqual(threeValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_7400
@@ -1456,7 +1482,7 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal25 = v.$_get(0);
       const expectVal2 = 9.25;
       expect(actVal25).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_7500
@@ -1473,7 +1499,7 @@ export default function float64ArrayDollarSetTest(): void {
       const expectVal = 12.0;
       expect(actVal26).assertEqual(expectVal);
       expect(a.length).assertEqual(4);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_7600
@@ -1485,15 +1511,15 @@ export default function float64ArrayDollarSetTest(): void {
      */
     it('testFloat64ArrayDollarSet076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const minusZero: number = -0.0;
-      const a = new Float64Array(1);
-      a.$_set(0, minusZero);
-      const actVal27 = a.$_get(0);
+      const a = new Float64Array(2);
+      a.$_set(1, minusZero);
+      const actVal27 = a.$_get(1);
       const expectVal = 0.0;
       expect(actVal27).assertEqual(expectVal);
-      const actVal28 = 1 / a.$_get(0);
+      const actVal28 = 1 / a.$_get(1);
       const expectVal2 = -Infinity;
       expect(actVal28).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_7700
@@ -1512,7 +1538,7 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal30 = a.$_get(0);
       const expectVal2 = 0.0;
       expect(actVal30).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_7800
@@ -1524,14 +1550,14 @@ export default function float64ArrayDollarSetTest(): void {
      */
     it('testFloat64ArrayDollarSet078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Float64Array(2);
-      a.$_set(0, Double.MAX_VALUE);
-      const actVal31 = a.$_get(0);
+      a.$_set(1, Double.MAX_VALUE);
+      const actVal31 = a.$_get(1);
       const expectVal = Double.MAX_VALUE;
       expect(actVal31).assertEqual(expectVal);
-      const actVal32 = a.$_get(1);
+      const actVal32 = a.$_get(0);
       const expectVal2 = 0.0;
       expect(actVal32).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_7900
@@ -1553,7 +1579,7 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal35 = a.$_get(2);
       const expectVal3 = 3.0;
       expect(actVal35).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_8000
@@ -1566,13 +1592,12 @@ export default function float64ArrayDollarSetTest(): void {
     it('testFloat64ArrayDollarSet080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Float64Array([1.0, 2.0]);
       a.$_set(0, NaN);
-      const actVal36 = Number.isNaN(a.$_get(0));
-      const expectVal = true;
-      expect(actVal36).assertEqual(expectVal);
+      const actVal36 = a.$_get(0);
+      expect(actVal36).assertNaN();
       const actVal37 = a.$_get(1);
       const expectVal2 = 2.0;
       expect(actVal37).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_8100
@@ -1594,7 +1619,7 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal40 = a.$_get(2);
       const expectVal3 = 6.0;
       expect(actVal40).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_8200
@@ -1617,7 +1642,7 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal43 = a.$_get(2);
       const expectVal3 = 9.0;
       expect(actVal43).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_8300
@@ -1637,7 +1662,7 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal45 = v.$_get(1);
       const expectVal2 = 30.0;
       expect(actVal45).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_8400
@@ -1657,7 +1682,7 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal47 = a.$_get(1);
       const expectVal2 = 0.0;
       expect(actVal47).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_8500
@@ -1677,7 +1702,7 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal49 = a.$_get(1);
       const expectVal2 = 4.0;
       expect(actVal49).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_8600
@@ -1689,9 +1714,10 @@ export default function float64ArrayDollarSetTest(): void {
      */
     it('testFloat64ArrayDollarSet086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Float64Array([1.0, 2.0]);
+      const oobWriteValue: number = 12345.5;
       let caught = false;
       try {
-        a.$_set(2, 99.0);
+        a.$_set(2, oobWriteValue);
       } catch (e) {
         caught = true;
         expect(e.name).assertEqual("RangeError");
@@ -1704,7 +1730,7 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal51 = a.$_get(1);
       const expectVal3 = 2.0;
       expect(actVal51).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_8700
@@ -1716,9 +1742,10 @@ export default function float64ArrayDollarSetTest(): void {
      */
     it('testFloat64ArrayDollarSet087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Float64Array([1.0, 2.0]);
+      const oobWriteValue: number = -9876.5;
       let caught = false;
       try {
-        a.$_set(-1, 99.0);
+        a.$_set(-1, oobWriteValue);
       } catch (e) {
         caught = true;
         expect(e.name).assertEqual("RangeError");
@@ -1731,7 +1758,7 @@ export default function float64ArrayDollarSetTest(): void {
       const actVal53 = a.$_get(1);
       const expectVal3 = 2.0;
       expect(actVal53).assertEqual(expectVal3);
-    })
+    });
   })
 }
 

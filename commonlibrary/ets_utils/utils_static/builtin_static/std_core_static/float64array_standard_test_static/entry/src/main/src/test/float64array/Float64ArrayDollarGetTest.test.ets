@@ -54,10 +54,11 @@ export default function float64ArrayDollarGetTest(): void {
     it('testFloat64ArrayDollarGet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int32MinValue: number = -2147483648;
       const arr = new Float64Array([int32MinValue, -1, 0]);
-      const actVal1 = arr.$_get(0);
+      const indexZero: int = 0;
+      const actVal1 = arr.$_get(indexZero);
       const expectVal = int32MinValue;
       expect(actVal1).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_0200
@@ -70,10 +71,11 @@ export default function float64ArrayDollarGetTest(): void {
     it('testFloat64ArrayDollarGet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const maxSafeInteger: number = 9007199254740991;
       const arr = Float64Array.of(0.1, maxSafeInteger, 0);
-      const actVal2 = arr.$_get(1);
+      const indexOne: short = 1;
+      const actVal2 = arr.$_get(indexOne);
       const expectVal = maxSafeInteger;
       expect(actVal2).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_0300
@@ -86,10 +88,11 @@ export default function float64ArrayDollarGetTest(): void {
     it('testFloat64ArrayDollarGet003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointTwoFive: number = 0.25;
       const arr = Float64Array.of(0.5, 1.5, pointTwoFive);
-      const actVal3 = arr.$_get(2);
+      const indexTwo: int = 2;
+      const actVal3 = arr.$_get(indexTwo);
       const expectVal = pointTwoFive;
       expect(actVal3).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_0400
@@ -101,13 +104,14 @@ export default function float64ArrayDollarGetTest(): void {
      */
     it('testFloat64ArrayDollarGet004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([-32768, -128, 0]);
+      const oobIndex: short = 100;
       try {
-        arr.$_get(100);
+        arr.$_get(oobIndex);
         expect().assertFail();
       } catch (e) {
         expect((e as Object as Error).name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_0500
@@ -120,10 +124,11 @@ export default function float64ArrayDollarGetTest(): void {
     it('testFloat64ArrayDollarGet005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroPointZero: number = 0.0;
       const arr = new Float64Array(1001);
-      const actVal4 = arr.$_get(1000);
+      const indexThousand: int = 1000;
+      const actVal4 = arr.$_get(indexThousand);
       const expectVal = zeroPointZero;
       expect(actVal4).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_0600
@@ -135,13 +140,14 @@ export default function float64ArrayDollarGetTest(): void {
      */
     it('testFloat64ArrayDollarGet006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([0.1, 9007199254740991, 0]);
+      const maxIntIndex: int = 2147483647;
       try {
-        arr.$_get(2147483647);
+        arr.$_get(maxIntIndex);
         expect().assertFail();
       } catch (e) {
         expect((e as Object as Error).name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_0700
@@ -153,13 +159,14 @@ export default function float64ArrayDollarGetTest(): void {
      */
     it('testFloat64ArrayDollarGet007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([0.5, 1.5, 0.25]);
+      const lengthIndex: short = 3;
       try {
-        arr.$_get(3);
+        arr.$_get(lengthIndex);
         expect().assertFail();
       } catch (e) {
         expect((e as Object as Error).name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_0800
@@ -177,25 +184,26 @@ export default function float64ArrayDollarGetTest(): void {
       } catch (e) {
         expect((e as Object as Error).name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_0900
      * @tc.name testFloat64ArrayDollarGet009
-     * @tc.desc Verify $_get negative index -3 throws
+     * @tc.desc Verify $_get INT32_MIN negative index throws
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarGet009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float64Array.of(-2147483648, -1, 0);
+      const int32MinIndex: int = -2147483648;
       try {
-        arr.$_get(-3);
+        arr.$_get(int32MinIndex);
         expect().assertFail();
       } catch (e) {
         expect((e as Object as Error).name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_1000
@@ -213,7 +221,7 @@ export default function float64ArrayDollarGetTest(): void {
       } catch (e) {
         expect((e as Object as Error).name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_1100
@@ -229,7 +237,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal5 = arr.$_get(-0);
       const expectVal = pointOne;
       expect(actVal5).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_1200
@@ -245,7 +253,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal6 = arr.$_get(0);
       const expectVal = pointFive;
       expect(actVal6).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_1300
@@ -263,7 +271,7 @@ export default function float64ArrayDollarGetTest(): void {
       } catch (e) {
         expect((e as Object as Error).name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_1400
@@ -281,7 +289,7 @@ export default function float64ArrayDollarGetTest(): void {
       } catch (e) {
         expect((e as Object as Error).name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_1500
@@ -297,7 +305,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal7 = arr.$_get(Double.toInt(0.5));
       const expectVal = pointOne;
       expect(actVal7).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_1600
@@ -313,7 +321,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal8 = arr.$_get(Double.toInt(1.9));
       const expectVal = onePointFive;
       expect(actVal8).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_1700
@@ -329,7 +337,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal9 = arr.$_get(Double.toInt(2.1));
       const expectVal = zeroValue;
       expect(actVal9).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_1800
@@ -347,12 +355,12 @@ export default function float64ArrayDollarGetTest(): void {
       } catch (e) {
         expect((e as Object as Error).name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_1900
      * @tc.name testFloat64ArrayDollarGet019
-     * @tc.desc Verify $_get NaN index throws
+     * @tc.desc Verify $_get Double.toInt(NaN) normalizes to 0 and reads first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -364,7 +372,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal10 = arr.$_get(idx);
       const expectVal = pointOne;
       expect(actVal10).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_2000
@@ -382,7 +390,7 @@ export default function float64ArrayDollarGetTest(): void {
       } catch (e) {
         expect((e as Object as Error).name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_2100
@@ -398,7 +406,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal11 = arr.$_get(0x0);
       const expectVal = int16MinValue;
       expect(actVal11).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_2200
@@ -414,7 +422,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal12 = arr.$_get(0x1);
       const expectVal = negativeOne;
       expect(actVal12).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_2300
@@ -430,7 +438,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal13 = arr.$_get(0x2);
       const expectVal = zeroValue;
       expect(actVal13).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_2400
@@ -446,7 +454,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal14 = arr.$_get(0x3);
       const expectVal = pointFour;
       expect(actVal14).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_2500
@@ -465,7 +473,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal15 = arr.$_get(0o7);
       const expectVal = eightPointZero;
       expect(actVal15).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_2600
@@ -481,7 +489,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal16 = arr.$_get(0o3);
       const expectVal = fortyPointZero;
       expect(actVal16).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_2700
@@ -497,7 +505,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal17 = arr.$_get(0b1);
       const expectVal = maxSafeInteger;
       expect(actVal17).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_2800
@@ -513,7 +521,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal18 = arr.$_get(0b10);
       const expectVal = pointTwoFive;
       expect(actVal18).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_2900
@@ -529,7 +537,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal19 = arr.$_get(0b11);
       const expectVal = num400Pointzero;
       expect(actVal19).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_3000
@@ -546,7 +554,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal20 = arr.$_get(Double.toInt(1.0e2));
       const expectVal = num999Pointzero;
       expect(actVal20).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_3100
@@ -562,7 +570,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal21 = arr.$_get(Double.toInt(1.0e0));
       const expectVal = maxSafeInteger;
       expect(actVal21).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_3200
@@ -579,7 +587,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal22 = arr.$_get(50);
       const expectVal = num999Pointzero;
       expect(actVal22).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_3300
@@ -596,7 +604,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal23 = arr.$_get(99);
       const expectVal = num888Pointzero;
       expect(actVal23).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_3400
@@ -612,7 +620,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal24 = arr.$_get(0);
       const expectVal = zeroPointZero;
       expect(actVal24).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_3500
@@ -628,7 +636,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal25 = arr.$_get(0);
       const expectVal = negativeZero;
       expect(actVal25).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_3600
@@ -645,7 +653,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal26 = Number.isNaN(result);
       const expectVal = true;
       expect(actVal26).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_3700
@@ -661,7 +669,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal27 = arr.$_get(0);
       const expectVal = positiveInfinity;
       expect(actVal27).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_3800
@@ -677,7 +685,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal28 = arr.$_get(0);
       const expectVal = negativeInfinity;
       expect(actVal28).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_3900
@@ -693,7 +701,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal29 = arr.$_get(0);
       const expectVal = doubleMaxValue;
       expect(actVal29).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_4000
@@ -709,7 +717,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal30 = arr.$_get(0);
       const expectVal = doubleMinValue;
       expect(actVal30).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_4100
@@ -731,7 +739,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal33 = arr.$_get(2);
       const expectVal3 = piValue;
       expect(actVal33).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_4200
@@ -753,7 +761,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal36 = arr.$_get(4);
       const expectVal3 = zeroPointZero;
       expect(actVal36).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_4300
@@ -764,16 +772,16 @@ export default function float64ArrayDollarGetTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarGet043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const pointTwoFive: number = 0.25;
-      const arr = new Float64Array([pointFive, 1.5, pointTwoFive]);
+      const negativePointFive: number = -0.5;
+      const negativePointTwoFive: number = -0.25;
+      const arr = new Float64Array([negativePointFive, -1.5, negativePointTwoFive]);
       const actVal37 = arr.$_get(0);
-      const expectVal = pointFive;
+      const expectVal = negativePointFive;
       expect(actVal37).assertEqual(expectVal);
       const actVal38 = arr.$_get(2);
-      const expectVal2 = pointTwoFive;
+      const expectVal2 = negativePointTwoFive;
       expect(actVal38).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_4400
@@ -797,7 +805,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal41 = arr.$_get(2);
       const expectVal3 = zeroValue;
       expect(actVal41).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_4500
@@ -814,7 +822,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal42 = arr.$_get(500);
       const expectVal = num12345Pointzero;
       expect(actVal42).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_4600
@@ -831,7 +839,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal43 = arr.$_get(999);
       const expectVal = num54321Pointzero;
       expect(actVal43).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_4700
@@ -848,7 +856,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal44 = arr.$_get(0);
       const expectVal = zeroPointZero;
       expect(actVal44).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_4800
@@ -866,7 +874,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal45 = arr.$_get(1);
       const expectVal = num123Pointfourfivesix;
       expect(actVal45).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_4900
@@ -884,7 +892,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal46 = arr.$_get(3);
       const expectVal = num999Pointzero;
       expect(actVal46).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_5000
@@ -905,7 +913,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal48 = arr.$_get(1);
       const expectVal2 = negativeOne;
       expect(actVal48).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_5100
@@ -926,7 +934,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal50 = arr.$_get(2);
       const expectVal2 = ninePointZero;
       expect(actVal50).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_5200
@@ -947,7 +955,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal52 = arr.$_get(1);
       const expectVal2 = twentyfivePointzero;
       expect(actVal52).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_5300
@@ -961,9 +969,12 @@ export default function float64ArrayDollarGetTest(): void {
       const pointOne: number = 0.1;
       const arr = new Float64Array([pointOne, 9007199254740991, 0]);
       let result = arr.$_get(0);
+      const actualType = typeof result;
+      const expectedType = 'number';
+      expect(actualType).assertEqual(expectedType);
       const expectVal = pointOne;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_5400
@@ -980,7 +991,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal53 = arr.$_get(0);
       const expectVal = piApproxValue;
       expect(actVal53).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_5500
@@ -1005,7 +1016,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal56 = arr.$_get(2);
       const expectVal3 = before2;
       expect(actVal56).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_5600
@@ -1027,7 +1038,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal59 = arr.$_get(1);
       const expectVal3 = int8MinValue;
       expect(actVal59).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_5700
@@ -1054,7 +1065,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal62 = arr.$_get(0);
       const expectVal3 = threePointZero;
       expect(actVal62).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_5800
@@ -1070,7 +1081,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal63 = arr.$_get(Double.toInt(1.999));
       const expectVal = negativeOne;
       expect(actVal63).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_5900
@@ -1086,7 +1097,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal64 = arr.$_get(Double.toInt(0.1 + 0.2));
       const expectVal = pointOne;
       expect(actVal64).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_6000
@@ -1102,7 +1113,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal65 = arr.$_get(Double.toInt(1e-308));
       const expectVal = pointFive;
       expect(actVal65).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_6100
@@ -1118,7 +1129,7 @@ export default function float64ArrayDollarGetTest(): void {
       const result = arr.$_get(Double.toInt(-1e-308));
       const expectVal = int16MinValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_6200
@@ -1135,7 +1146,7 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal66 = arr.$_get(Double.toInt(1.0e1));
       const expectVal = num555Pointzero;
       expect(actVal66).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_6300
@@ -1151,7 +1162,137 @@ export default function float64ArrayDollarGetTest(): void {
       const actVal67 = arr.$_get(Double.toInt(1.0e-1));
       const expectVal = pointOne;
       expect(actVal67).assertEqual(expectVal);
-    })
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_6400
+     * @tc.name testFloat64ArrayDollarGet064
+     * @tc.desc Verify $_get Double.MAX_VALUE converted index throws
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDollarGet064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float64Array.of(10.0);
+      const maxValueIndex: int = Double.toInt(Double.MAX_VALUE);
+      try {
+        arr.$_get(maxValueIndex);
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Object as Error).name).assertEqual("RangeError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_6500
+     * @tc.name testFloat64ArrayDollarGet065
+     * @tc.desc Verify $_get negative short index throws
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDollarGet065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float64Array.of(0.1, 9007199254740991, 0);
+      const negativeShortIndex: short = -1;
+      try {
+        arr.$_get(negativeShortIndex);
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Object as Error).name).assertEqual("RangeError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_6600
+     * @tc.name testFloat64ArrayDollarGet066
+     * @tc.desc Verify $_get byte index parameter reads middle element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDollarGet066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const maxSafeInteger: number = 9007199254740991;
+      const arr = Float64Array.of(0.1, maxSafeInteger, 0);
+      const byteIndex: byte = 1;
+      const actualValue = arr.$_get(byteIndex);
+      const expectVal = maxSafeInteger;
+      expect(actualValue).assertEqual(expectVal);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_6700
+     * @tc.name testFloat64ArrayDollarGet067
+     * @tc.desc Verify $_get short index parameter reads last element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDollarGet067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(-2147483648, -1, zeroValue);
+      const shortIndex: short = 2;
+      const actualValue = arr.$_get(shortIndex);
+      const expectVal = zeroValue;
+      expect(actualValue).assertEqual(expectVal);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_6800
+     * @tc.name testFloat64ArrayDollarGet068
+     * @tc.desc Verify nested $_get uses returned value as next index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDollarGet068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const targetValue: number = 77.0;
+      const arr = Float64Array.of(2.0, 99.0, targetValue, 88.0);
+      const firstValue = arr.$_get(0);
+      const nextIndex: int = Double.toInt(firstValue);
+      const actualValue = arr.$_get(nextIndex);
+      const expectVal = targetValue;
+      expect(actualValue).assertEqual(expectVal);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_6900
+     * @tc.name testFloat64ArrayDollarGet069
+     * @tc.desc Verify $_get return values participate in arithmetic
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDollarGet069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float64Array([12.0, 3.0, 5.0]);
+      const firstValue = arr.$_get(0);
+      const secondValue = arr.$_get(1);
+      const expectVal = 15.0;
+      expect(firstValue + secondValue).assertEqual(expectVal);
+      const expectVal2 = 36.0;
+      expect(firstValue * secondValue).assertEqual(expectVal2);
+      const expectVal3 = 4.0;
+      expect(firstValue / secondValue).assertEqual(expectVal3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARGET_7000
+     * @tc.name testFloat64ArrayDollarGet070
+     * @tc.desc Verify $_get reads updated value after bracket assignment
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDollarGet070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float64Array.of(10.0, 20.0, 30.0);
+      const secondIndex: int = 1;
+      const before = arr.$_get(secondIndex);
+      arr[1] = 99.0;
+      const after = arr.$_get(secondIndex);
+      const expectVal = 20.0;
+      expect(before).assertEqual(expectVal);
+      const expectVal2 = 99.0;
+      expect(after).assertEqual(expectVal2);
+    });
 
   })
 }
