@@ -46,18 +46,22 @@ export default function Float64ArrayCopyWithin2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_0100
      * @tc.name testFloat64ArrayCopyWithin2001
-     * @tc.desc Verify typeof return value is object
+     * @tc.desc Verify copyWithin returns length-preserving result after shifting values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayCopyWithin2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const threeValue: number = 3;
+      const negativeOne: number = -1;
+      const zeroValue: number = 0;
       const arr = Float64Array.of(-2147483648, -1, 0);
       const result = arr.copyWithin(0, 1);
       const expectVal = threeValue;
       expect(result.length).assertEqual(expectVal);
-    })
+      expect(result[0]).assertEqual(negativeOne);
+      expect(result[1]).assertEqual(zeroValue);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_0200
@@ -68,11 +72,14 @@ export default function Float64ArrayCopyWithin2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayCopyWithin2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointTwoFive: number = 0.25;
+      const pointOneTwoFive: number = 0.125;
       const arr = new Float64Array([0.5, 1.5, 0.25, 0.125, 0.0625]);
       const result = arr.copyWithin(0, 2, 4);
-      const expectVal = arr;
-      expect(result).assertEqual(expectVal);
-    })
+      expect(result).assertEqual(arr);
+      expect(result[0]).assertEqual(pointTwoFive);
+      expect(result[1]).assertEqual(pointOneTwoFive);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_0300
@@ -89,7 +96,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       const result = arr.copyWithin(0, 2, 4).copyWithin(3, 0, 2);
       expect(result[3]).assertEqual(zeroValue);
       expect(result[4]).assertEqual(int8MaxValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_0400
@@ -105,7 +112,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       const result = arr.copyWithin(0, 2, 4).copyWithin(3, 0, 2).copyWithin(0, 4, 5);
       const expectVal = oneValue;
       expect(result[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_0500
@@ -121,7 +128,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       const result = arr.copyWithin(0, 0, 1);
       const expectVal = oneValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_0600
@@ -137,7 +144,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       arr.copyWithin(0, 2, 4);
       const expectVal = arr.length * eightValue;
       expect(arr.byteLength).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_0700
@@ -153,7 +160,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       const result = arr.copyWithin(0, 2, 4);
       const expectVal = fortyValue;
       expect(result.byteLength).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_0800
@@ -169,7 +176,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       const result = arr.copyWithin(0, 0, 0);
       const expectVal = zeroValue;
       expect(result.byteLength).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_0900
@@ -186,7 +193,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       const result = arr.copyWithin(0, 2, 4);
       const expectVal = fortyValue;
       expect(result.byteLength).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_1000
@@ -207,7 +214,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       expect(arr[2]).assertEqual(zeroValue);
       expect(arr[3]).assertEqual(int8MaxValue);
       expect(arr[4]).assertEqual(int16MaxValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_1100
@@ -224,7 +231,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       arr.copyWithin(0, 2, 4);
       expect(arr[0]).assertEqual(zeroValue);
       expect(arr[1]).assertEqual(oneValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_1200
@@ -246,7 +253,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       arr.copyWithin(0, 2);
       const expectVal = originalBuffer;
       expect(arr.buffer).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_1300
@@ -263,7 +270,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       arr.copyWithin(1, 0, 3);
       const expectVal = originalBuffer;
       expect(arr.buffer).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_1400
@@ -285,7 +292,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       expect(arr[2]).assertEqual(zeroValue);
       expect(arr[3]).assertEqual(oneValue);
       expect(arr[4]).assertEqual(int32MaxValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_1500
@@ -302,7 +309,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       const result = arr.copyWithin(-10, 2, 4);
       expect(result[0]).assertEqual(zeroValue);
       expect(result[1]).assertEqual(piValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_1600
@@ -325,12 +332,12 @@ export default function Float64ArrayCopyWithin2Test(): void {
       expect(arr[2]).assertEqual(pointTwoFive);
       expect(arr[3]).assertEqual(pointOneTwoFive);
       expect(arr[4]).assertEqual(pointZeroSixTwoFive);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_1700
      * @tc.name testFloat64ArrayCopyWithin2017
-     * @tc.desc Verify target equals length+1 does nothing
+     * @tc.desc Verify target equals 6 beyond length does nothing
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -347,7 +354,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       expect(arr[2]).assertEqual(zeroValue);
       expect(arr[3]).assertEqual(int8MaxValue);
       expect(arr[4]).assertEqual(int16MaxValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_1800
@@ -369,7 +376,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       expect(arr[2]).assertEqual(zeroValue);
       expect(arr[3]).assertEqual(oneValue);
       expect(arr[4]).assertEqual(int32MaxValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_1900
@@ -386,7 +393,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       const result = arr.copyWithin(-6, 2, 4);
       expect(result[0]).assertEqual(zeroValue);
       expect(result[1]).assertEqual(piValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_2000
@@ -409,7 +416,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       expect(arr[2]).assertEqual(pointTwoFive);
       expect(arr[3]).assertEqual(pointOneTwoFive);
       expect(arr[4]).assertEqual(pointZeroSixTwoFive);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_2100
@@ -426,7 +433,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       const result = arr.copyWithin(3, -10, 3);
       expect(result[3]).assertEqual(int16MinValue);
       expect(result[4]).assertEqual(int8MinValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_2200
@@ -448,7 +455,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       expect(arr[2]).assertEqual(zeroValue);
       expect(arr[3]).assertEqual(oneValue);
       expect(arr[4]).assertEqual(int32MaxValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_2300
@@ -471,7 +478,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       expect(arr[2]).assertEqual(zeroValue);
       expect(arr[3]).assertEqual(piValue);
       expect(arr[4]).assertEqual(tinyNegativeValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_2400
@@ -490,7 +497,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       expect(result[0]).assertEqual(pointTwoFive);
       expect(result[1]).assertEqual(pointOneTwoFive);
       expect(result[2]).assertEqual(pointZeroSixTwoFive);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_2500
@@ -509,7 +516,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       expect(result[0]).assertEqual(int16MinValue);
       expect(result[1]).assertEqual(int8MinValue);
       expect(result[2]).assertEqual(zeroValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_2600
@@ -531,7 +538,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       expect(arr[2]).assertEqual(zeroValue);
       expect(arr[3]).assertEqual(oneValue);
       expect(arr[4]).assertEqual(int32MaxValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_2700
@@ -554,7 +561,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       expect(arr[2]).assertEqual(zeroValue);
       expect(arr[3]).assertEqual(piValue);
       expect(arr[4]).assertEqual(tinyNegativeValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_2800
@@ -576,7 +583,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       expect(result[2]).assertEqual(onePointFive);
       expect(result[3]).assertEqual(pointTwoFive);
       expect(result[4]).assertEqual(pointZeroSixTwoFive);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_2900
@@ -598,7 +605,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       expect(arr[2]).assertEqual(zeroValue);
       expect(arr[3]).assertEqual(int8MaxValue);
       expect(arr[4]).assertEqual(int16MaxValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_3000
@@ -620,7 +627,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       expect(arr[2]).assertEqual(zeroValue);
       expect(arr[3]).assertEqual(oneValue);
       expect(arr[4]).assertEqual(int32MaxValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_3100
@@ -643,7 +650,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       expect(arr[2]).assertEqual(zeroValue);
       expect(arr[3]).assertEqual(piValue);
       expect(arr[4]).assertEqual(tinyNegativeValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_3200
@@ -666,7 +673,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       expect(arr[2]).assertEqual(pointTwoFive);
       expect(arr[3]).assertEqual(pointOneTwoFive);
       expect(arr[4]).assertEqual(pointZeroSixTwoFive);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_3300
@@ -688,7 +695,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       expect(arr[2]).assertEqual(zeroValue);
       expect(arr[3]).assertEqual(int8MaxValue);
       expect(arr[4]).assertEqual(int16MaxValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_3400
@@ -711,7 +718,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       expect(result[2]).assertEqual(zeroValue);
       expect(result[3]).assertEqual(oneValue);
       expect(result[4]).assertEqual(int32MaxValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_3500
@@ -722,14 +729,15 @@ export default function Float64ArrayCopyWithin2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayCopyWithin2035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const zeroValue: number = 0;
-      const arr = new Float64Array([0.1, 9007199254740991, zeroValue, 3.141592653589793, -1e-100]);
+      const nanValue: number = Number.NaN;
+      const piValue: number = 3.141592653589793;
+      const arr = new Float64Array([0.1, 9007199254740991, nanValue, piValue, -1e-100]);
       const result = arr.copyWithin(0, 2, 4);
-      const actVal1 = Number.isNaN(result[1]);
-      const expectVal = false;
-      expect(actVal1).assertEqual(expectVal);
-      expect(result[0]).assertEqual(zeroValue);
-    })
+      const actualFirstIsNaN = Number.isNaN(result[0]);
+      const expectedFirstIsNaN = true;
+      expect(actualFirstIsNaN).assertEqual(expectedFirstIsNaN);
+      expect(result[1]).assertEqual(piValue);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_3600
@@ -740,14 +748,14 @@ export default function Float64ArrayCopyWithin2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayCopyWithin2036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointFive: number = 1.5;
-      const arr = new Float64Array([0.5, onePointFive, 0.25, 0.125, 0.0625]);
+      const positiveInfinity: number = Number.POSITIVE_INFINITY;
+      const arr = new Float64Array([0.5, positiveInfinity, 0.25, 0.125, 0.0625]);
       const result = arr.copyWithin(0, 1, 2);
-      expect(result[0]).assertEqual(onePointFive);
-      const actVal2 = !Number.isFinite(result[0]);
-      const expectVal = false;
-      expect(actVal2).assertEqual(expectVal);
-    })
+      expect(result[0]).assertEqual(positiveInfinity);
+      const actualFirstIsFinite = Number.isFinite(result[0]);
+      const expectedFirstIsFinite = false;
+      expect(actualFirstIsFinite).assertEqual(expectedFirstIsFinite);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_3700
@@ -758,12 +766,14 @@ export default function Float64ArrayCopyWithin2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayCopyWithin2037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int8MinValue: number = -128;
-      const arr = new Float64Array([-32768, -128, 0, 127, 32767]);
+      const negativeInfinity: number = Number.NEGATIVE_INFINITY;
+      const arr = new Float64Array([-32768, negativeInfinity, 0, 127, 32767]);
       const result = arr.copyWithin(0, 1, 2);
-      expect(result[0]).assertEqual(int8MinValue);
-      expect(result[0] < 0).assertTrue();
-    })
+      expect(result[0]).assertEqual(negativeInfinity);
+      const actualFirstIsFinite = Number.isFinite(result[0]);
+      const expectedFirstIsFinite = false;
+      expect(actualFirstIsFinite).assertEqual(expectedFirstIsFinite);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_3800
@@ -774,12 +784,13 @@ export default function Float64ArrayCopyWithin2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayCopyWithin2038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const negativeOne: number = -1;
-      const arr = new Float64Array([-2147483648, -1, 0, 1, 2147483647]);
+      const negativeZero: number = -0.0;
+      const negativeInfinity: number = Number.NEGATIVE_INFINITY;
+      const arr = new Float64Array([-2147483648, negativeZero, 0, 1, 2147483647]);
       const result = arr.copyWithin(0, 1, 2);
-      expect(result[0]).assertEqual(negativeOne);
-      expect(1.0 / result[0] < 0).assertTrue();
-    })
+      expect(result[0]).assertEqual(negativeZero);
+      expect(1.0 / result[0]).assertEqual(negativeInfinity);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_3900
@@ -790,12 +801,13 @@ export default function Float64ArrayCopyWithin2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayCopyWithin2039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const maxSafeInteger: number = 9007199254740991;
-      const arr = Float64Array.of(0.1, maxSafeInteger, 0, 3.141592653589793, -1e-100);
+      const positiveZero: number = 0.0;
+      const positiveInfinity: number = Number.POSITIVE_INFINITY;
+      const arr = Float64Array.of(0.1, positiveZero, 9007199254740991, 3.141592653589793, -1e-100);
       const result = arr.copyWithin(0, 1, 2);
-      expect(result[0]).assertEqual(maxSafeInteger);
-      expect(1.0 / result[0] > 0).assertTrue();
-    })
+      expect(result[0]).assertEqual(positiveZero);
+      expect(1.0 / result[0]).assertEqual(positiveInfinity);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_4000
@@ -806,12 +818,12 @@ export default function Float64ArrayCopyWithin2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayCopyWithin2040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointFive: number = 1.5;
-      const arr = new Float64Array([0.5, onePointFive, 0.25, 0.125, 0.0625]);
+      const maxValue: number = Number.MAX_VALUE;
+      const arr = new Float64Array([0.5, maxValue, 0.25, 0.125, 0.0625]);
       const result = arr.copyWithin(0, 1, 2);
-      const expectVal = onePointFive;
+      const expectVal = maxValue;
       expect(result[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_4100
@@ -822,12 +834,12 @@ export default function Float64ArrayCopyWithin2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayCopyWithin2041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int8MinValue: number = -128;
-      const arr = new Float64Array([-32768, -128, 0, 127, 32767]);
+      const minValue: number = Number.MIN_VALUE;
+      const arr = new Float64Array([-32768, minValue, 0, 127, 32767]);
       const result = arr.copyWithin(0, 1, 2);
-      const expectVal = int8MinValue;
+      const expectVal = minValue;
       expect(result[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_4200
@@ -844,7 +856,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       const result = arr.copyWithin(3, 0, 3);
       expect(result[3]).assertEqual(int32MinValue);
       expect(result[4]).assertEqual(negativeOne);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_4300
@@ -861,7 +873,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       const result = arr.copyWithin(0, 2, 4);
       expect(result[0]).assertEqual(sciValue10e308);
       expect(result[1]).assertEqual(overflowVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_4400
@@ -882,7 +894,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       expect(result[2]).assertEqual(zeroValue);
       expect(result[3]).assertEqual(piValue);
       expect(result[4]).assertEqual(tinyNegativeValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_4500
@@ -907,7 +919,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       expect(result[4]).assertEqual(zeroValue);
       expect(result[5]).assertEqual(oneValue);
       expect(result[6]).assertEqual(int32MaxValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_4600
@@ -928,7 +940,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       expect(result[2]).assertEqual(zeroValue);
       expect(result[3]).assertEqual(pointOne);
       expect(result[4]).assertEqual(maxSafeInteger);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_4700
@@ -949,7 +961,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       expect(result[2]).assertEqual(pointFive);
       expect(result[3]).assertEqual(onePointFive);
       expect(result[4]).assertEqual(pointTwoFive);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_4800
@@ -966,7 +978,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       const result = arr.copyWithin(0, 0, 1);
       expect(result[0]).assertEqual(int16MinValue);
       expect(result.length).assertEqual(oneValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_4900
@@ -982,7 +994,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       const result = arr.copyWithin(-1, -1, 1);
       const expectVal = int32MinValue;
       expect(result[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_5000
@@ -998,7 +1010,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       const result = arr.copyWithin(0, 1, 2);
       expect(result[0]).assertEqual(maxSafeInteger);
       expect(result[1]).assertEqual(maxSafeInteger);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_5100
@@ -1020,7 +1032,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       expect(result[50]).assertEqual(zeroPointZero);
       expect(result[99]).assertEqual(fortyninePointzero);
       expect(result.length).assertEqual(hundredValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_5200
@@ -1040,7 +1052,7 @@ export default function Float64ArrayCopyWithin2Test(): void {
       const result = arr.copyWithin(0, 500, 1000);
       expect(result[0]).assertEqual(num500Pointzero);
       expect(result[499]).assertEqual(num999Pointzero);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_5300
@@ -1060,24 +1072,25 @@ export default function Float64ArrayCopyWithin2Test(): void {
       const result = arr.copyWithin(-50, -100, -50);
       expect(result[0]).assertEqual(zeroPointZero);
       expect(result[49]).assertEqual(fortyninePointzero);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_5400
      * @tc.name testFloat64ArrayCopyWithin2054
-     * @tc.desc Verify copyWithin with negative target throws RangeError
+     * @tc.desc Verify copyWithin with negative target clamps to start and returns same instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayCopyWithin2054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointFive: number = 0.5;
-      const arr = Float64Array.of(pointFive, 1.5, 0.25, 0.125, 0.0625);
+      const onePointFive: number = 1.5;
+      const arr = Float64Array.of(pointFive, onePointFive, 0.25, 0.125, 0.0625);
       const result = arr.copyWithin(-100, 0);
-      const expectVal = arr;
-      expect(result).assertEqual(expectVal);
+      expect(result).assertEqual(arr);
       expect(result[0]).assertEqual(pointFive);
-    })
+      expect(result[1]).assertEqual(onePointFive);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_5500
@@ -1093,22 +1106,27 @@ export default function Float64ArrayCopyWithin2Test(): void {
       arr.copyWithin(0, -1);
       const expectVal = int16MaxValue;
       expect(arr[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_2_5600
      * @tc.name testFloat64ArrayCopyWithin2056
-     * @tc.desc Verify copyWithin result values
+     * @tc.desc Verify copyWithin on subarray rewrites parent-backed slot
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayCopyWithin2056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float64Array([-2147483648, -1, 0, 1, 2147483647]);
-      arr.copyWithin(0, 3);
-      expect(arr[0] === 4.0).assertFalse();
-      expect(arr[0] === 1.0).assertTrue();
-    })
+      const parent = new Float64Array([1.0, 2.0, 3.0, 4.0]);
+      const child = parent.subarray(1, 3);
+      child.copyWithin(0, 1);
+      const actualParentFirstCopiedValue = parent.$_get(1);
+      const expectedParentFirstCopiedValue = 3.0;
+      expect(actualParentFirstCopiedValue).assertEqual(expectedParentFirstCopiedValue);
+      const actualParentSecondValue = parent.$_get(2);
+      const expectedParentSecondValue = 3.0;
+      expect(actualParentSecondValue).assertEqual(expectedParentSecondValue);
+    });
 
   })
 }
