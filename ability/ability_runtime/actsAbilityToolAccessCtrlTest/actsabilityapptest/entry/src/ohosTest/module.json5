@@ -49,7 +49,15 @@
     "extensionAbilities": [
     ],
     "requestPermissions": [
-		"ohos.permission.QUERY_TOOL_PERMISSIONS"
+		{
+			"name":"ohos.permission.QUERY_TOOL_PERMISSIONS"
+		},
+		{
+			"name":"ohos.permission.MANAGE_LOCAL_ACCOUNTS"
+		},
+		{
+			"name":"ohos.permission.MANAGE_DISTRIBUTED_ACCOUNTS"
+		}
     ]
   }
 }

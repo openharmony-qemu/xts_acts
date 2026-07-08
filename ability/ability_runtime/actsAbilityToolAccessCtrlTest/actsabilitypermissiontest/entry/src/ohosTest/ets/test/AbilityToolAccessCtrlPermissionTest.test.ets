@@ -12,20 +12,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from '@ohos/hypium';
-import { abilityToolAccessCtrl, Permissions } from '@kit.AbilityKit';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { abilityToolAccessCtrl, abilityAccessCtrl, Permissions } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 export default function permissionTest() {
   describe('ActsAbilityPermissionTest', function () {
-    beforeAll(async function (done) {
+    beforeAll(() => {
       console.info('[beforeAll] called.');
-      done();
     });
 
-    afterAll(async function (done) {
+    afterAll(() => {
       console.info('[afterAll] called.');
-      done();
     });
 
     beforeEach(function () {
@@ -36,7 +34,15 @@ export default function permissionTest() {
       console.info('[afterEach] called.');
     });
 
-    it('grantToolPermissionsByUser_001', 0, async function (done) {
+    /**
+     * @tc.name   grantToolPermissionsByUser_001
+     * @tc.number grantToolPermissionsByUser_001
+     * @tc.desc   grantToolPermissionsByUser with CAMERA PERMISSION_GRANTED and needTicket=true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('grantToolPermissionsByUser_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info('[grantToolPermissionsByUser_001] called.');
       let userAuthResult: Array<abilityToolAccessCtrl.UserAuthResult> = [{
         permissionInfo: [{
@@ -68,7 +74,15 @@ export default function permissionTest() {
       }
     });
 
-    it('grantToolPermissionsByUser_002', 0, async function (done) {
+    /**
+     * @tc.name   grantToolPermissionsByUser_002
+     * @tc.number grantToolPermissionsByUser_002
+     * @tc.desc   grantToolPermissionsByUser with CAMERA PERMISSION_DENIED and needTicket=true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('grantToolPermissionsByUser_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info('[grantToolPermissionsByUser_002] called.');
       let userAuthResult: Array<abilityToolAccessCtrl.UserAuthResult> = [{
         permissionInfo: [{
@@ -99,7 +113,15 @@ export default function permissionTest() {
       }
     });
 
-    it('grantToolPermissionsByUser_003', 0, async function (done) {
+    /**
+     * @tc.name   grantToolPermissionsByUser_003
+     * @tc.number grantToolPermissionsByUser_003
+     * @tc.desc   grantToolPermissionsByUser with LOCATION PERMISSION_GRANTED and needTicket=false returns error 24010004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('grantToolPermissionsByUser_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info('[grantToolPermissionsByUser_003] called.');
       let userAuthResult: Array<abilityToolAccessCtrl.UserAuthResult> = [{
         permissionInfo: [{
@@ -130,7 +152,15 @@ export default function permissionTest() {
       }
     });
 
-    it('grantToolPermissionsByUser_004', 0, async function (done) {
+    /**
+     * @tc.name   grantToolPermissionsByUser_004
+     * @tc.number grantToolPermissionsByUser_004
+     * @tc.desc   grantToolPermissionsByUser with READ_HEALTHDATA PERMISSION_GRANTED, needTicket=true, ticketExpireTimeMs=10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('grantToolPermissionsByUser_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info('[grantToolPermissionsByUser_004] called.');
       let userAuthResult: Array<abilityToolAccessCtrl.UserAuthResult> = [{
         permissionInfo: [{
