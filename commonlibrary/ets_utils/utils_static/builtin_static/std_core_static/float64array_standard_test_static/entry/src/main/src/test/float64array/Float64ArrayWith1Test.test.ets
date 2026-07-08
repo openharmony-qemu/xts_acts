@@ -46,7 +46,7 @@ export default function Float64ArrayWith1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_0100
      * @tc.name testFloat64ArrayWith1001
-     * @tc.desc Verify with(0, 10.0) with [0.5, 1.5] element values
+     * @tc.desc Verify with replaces first element in returned two-element copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -58,12 +58,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal1 = r.$_get(0);
       const expectVal = tenPointZero;
       expect(actVal1).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_0200
      * @tc.name testFloat64ArrayWith1002
-     * @tc.desc Verify with(0, 10.0) with [-32768, -128] returns Float64Array instance
+     * @tc.desc Verify with returns Float64Array instance and replaces first negative element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -79,7 +79,8 @@ export default function Float64ArrayWith1Test(): void {
       }
       const expectVal = true;
       expect(isF64).assertEqual(expectVal);
-    })
+      expect(r.$_get(0)).assertEqual(tenPointZero);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_0300
@@ -108,7 +109,7 @@ export default function Float64ArrayWith1Test(): void {
       const actVal5 = arr.$_get(2);
       const expectVal4 = zeroValue;
       expect(actVal5).assertEqual(expectVal4);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_0400
@@ -123,24 +124,21 @@ export default function Float64ArrayWith1Test(): void {
       const tenPointZero: number = 10.0;
       const arr = Float64Array.of(pointOne, 9007199254740991);
       const r = arr.with(0, tenPointZero);
-      let sameBuffer: boolean = false;
       let originalBuffer: Object = arr.buffer as Object;
       let copiedBuffer: Object = r.buffer as Object;
-      sameBuffer = originalBuffer === copiedBuffer;
-      const expectVal = false;
-      expect(sameBuffer).assertEqual(expectVal);
+      expect(originalBuffer).not().assertEqual(copiedBuffer);
       const actVal6 = r.$_get(0);
       const expectVal2 = tenPointZero;
       expect(actVal6).assertEqual(expectVal2);
       const actVal7 = arr.$_get(0);
       const expectVal3 = pointOne;
       expect(actVal7).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_0500
      * @tc.name testFloat64ArrayWith1005
-     * @tc.desc Verify with(0, 100.0) with [0.5, 1.5, 0.25] element values
+     * @tc.desc Verify with replaces first element in returned three-element copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -152,12 +150,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal8 = r.$_get(0);
       const expectVal = hundredPointZero;
       expect(actVal8).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_0600
      * @tc.name testFloat64ArrayWith1006
-     * @tc.desc Verify with(1, 200.0) with [-32768, -128, 0] element values
+     * @tc.desc Verify with replaces middle element in returned three-element copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -169,12 +167,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal9 = r.$_get(1);
       const expectVal = num200Pointzero;
       expect(actVal9).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_0700
      * @tc.name testFloat64ArrayWith1007
-     * @tc.desc Verify with(2, 300.0) with [-2147483648, -1, 0] element values
+     * @tc.desc Verify with replaces last element in returned three-element copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -186,7 +184,7 @@ export default function Float64ArrayWith1Test(): void {
       const actVal10 = r.$_get(2);
       const expectVal = num300Pointzero;
       expect(actVal10).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_0800
@@ -205,12 +203,12 @@ export default function Float64ArrayWith1Test(): void {
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_0900
      * @tc.name testFloat64ArrayWith1009
-     * @tc.desc Verify with(-1, 300.0) with [-32768, -128, 0] exception handling
+     * @tc.desc Verify with negative index -1 throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -224,7 +222,7 @@ export default function Float64ArrayWith1Test(): void {
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_1000
@@ -243,7 +241,7 @@ export default function Float64ArrayWith1Test(): void {
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_1100
@@ -262,12 +260,12 @@ export default function Float64ArrayWith1Test(): void {
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_1200
      * @tc.name testFloat64ArrayWith1012
-     * @tc.desc Verify with(2, 200.0) with [0.1, 9007199254740991, 0, 3.141592653589793] element values
+     * @tc.desc Verify with replaces third element among mixed precision values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -279,12 +277,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal11 = r.$_get(2);
       const expectVal = num200Pointzero;
       expect(actVal11).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_1300
      * @tc.name testFloat64ArrayWith1013
-     * @tc.desc Verify with(0, 1.0) with [1.5, 1.5] element values
+     * @tc.desc Verify with replaces first repeated fractional element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -297,12 +295,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal12 = r.$_get(0);
       const expectVal = onePointZero;
       expect(actVal12).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_1400
      * @tc.name testFloat64ArrayWith1014
-     * @tc.desc Verify with(0, -1.0) with [-128, -128] element values
+     * @tc.desc Verify with replaces first repeated INT8 minimum element with negative value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -315,12 +313,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal13 = r.$_get(0);
       const expectVal = negonePointzero;
       expect(actVal13).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_1500
      * @tc.name testFloat64ArrayWith1015
-     * @tc.desc Verify with(0, 0.0) with [-2147483648, -1] element values
+     * @tc.desc Verify with replaces INT32 minimum element with positive zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -333,12 +331,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal14 = r.$_get(0);
       const expectVal = zeroValue;
       expect(actVal14).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_1600
      * @tc.name testFloat64ArrayWith1016
-     * @tc.desc Verify with(0, -0.0) with [0.1, 9007199254740991] element values
+     * @tc.desc Verify with replaces first mixed element with negative zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -350,12 +348,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal15 = r.$_get(0);
       const expectVal = negativeZero;
       expect(actVal15).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_1700
      * @tc.name testFloat64ArrayWith1017
-     * @tc.desc Verify with(0, 1.7976931348623157e+308) with [0.5] element values
+     * @tc.desc Verify with stores MAX_VALUE in single element copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -367,12 +365,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal16 = r.$_get(0);
       const expectVal = doubleMaxValue;
       expect(actVal16).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_1800
      * @tc.name testFloat64ArrayWith1018
-     * @tc.desc Verify with(0, 5e-324) with [-32768] element values
+     * @tc.desc Verify with stores MIN_VALUE in single element copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -384,12 +382,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal17 = r.$_get(0);
       const expectVal = doubleMinValue;
       expect(actVal17).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_1900
      * @tc.name testFloat64ArrayWith1019
-     * @tc.desc Verify with(0, infinity) with [-2147483648] element values and Infinity
+     * @tc.desc Verify with stores Infinity in single element copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -401,12 +399,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal18 = r.$_get(0);
       const expectVal = positiveInfinity;
       expect(actVal18).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_2000
      * @tc.name testFloat64ArrayWith1020
-     * @tc.desc Verify with(0, -infinity) with [0.1] element values and Infinity
+     * @tc.desc Verify with stores negative Infinity in single element copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -418,12 +416,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal19 = r.$_get(0);
       const expectVal = negativeInfinity;
       expect(actVal19).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_2100
      * @tc.name testFloat64ArrayWith1021
-     * @tc.desc Verify with(0, nan) with [0.5] element values and not NaN
+     * @tc.desc Verify with stores NaN in single element copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -435,12 +433,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal20 = Number.isNaN(r.$_get(0));
       const expectVal = true;
       expect(actVal20).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_2200
      * @tc.name testFloat64ArrayWith1022
-     * @tc.desc Verify with(0, 1.0e+308) with [-32768] element values
+     * @tc.desc Verify with stores large scientific value in single element copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -452,12 +450,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal21 = r.$_get(0);
       const expectVal = sciValue10e308;
       expect(actVal21).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_2300
      * @tc.name testFloat64ArrayWith1023
-     * @tc.desc Verify with(0, 1.0e-308) with [-2147483648] element values
+     * @tc.desc Verify with stores tiny scientific value in single element copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -469,12 +467,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal22 = r.$_get(0);
       const expectVal = sciValue10e308;
       expect(actVal22).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_2400
      * @tc.name testFloat64ArrayWith1024
-     * @tc.desc Verify with(0, 2147483647.0) with [0.1] element values
+     * @tc.desc Verify with stores INT32 max as double in single element copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -486,12 +484,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal23 = r.$_get(0);
       const expectVal = num2147483647Pointzero;
       expect(actVal23).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_2500
      * @tc.name testFloat64ArrayWith1025
-     * @tc.desc Verify with(0, -2147483648.0) with [0.5] element values
+     * @tc.desc Verify with stores INT32 min as double in single element copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -503,12 +501,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal24 = r.$_get(0);
       const expectVal = negnum2147483648Pointzero;
       expect(actVal24).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_2600
      * @tc.name testFloat64ArrayWith1026
-     * @tc.desc Verify with(0, 9007199254740991.0) with [-32768] element values
+     * @tc.desc Verify with stores MAX_SAFE_INTEGER as double in single element copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -520,12 +518,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal25 = r.$_get(0);
       const expectVal = maxSafeIntegerValue;
       expect(actVal25).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_2700
      * @tc.name testFloat64ArrayWith1027
-     * @tc.desc Verify with(0, -9007199254740991.0) with [-2147483648] element values
+     * @tc.desc Verify with stores negative MAX_SAFE_INTEGER as double in single element copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -537,12 +535,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal26 = r.$_get(0);
       const expectVal = negativeMaxSafeIntegerValue;
       expect(actVal26).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_2800
      * @tc.name testFloat64ArrayWith1028
-     * @tc.desc Verify with(0, 0.1) with [0.1] element values
+     * @tc.desc Verify with stores same fractional value in single element copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -554,12 +552,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal27 = r.$_get(0);
       const expectVal = pointOne;
       expect(actVal27).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_2900
      * @tc.name testFloat64ArrayWith1029
-     * @tc.desc Verify with(0, -999999.99) with [0.5] element values
+     * @tc.desc Verify with stores negative fractional value in single element copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -571,12 +569,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal28 = r.$_get(0);
       const expectVal = negnum999999Pointninenine;
       expect(actVal28).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_3000
      * @tc.name testFloat64ArrayWith1030
-     * @tc.desc Verify with(0, 1.7976931348623158e+308) with [-32768] element values and Infinity
+     * @tc.desc Verify with rounds overflow-adjacent MAX_VALUE input in single element copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -589,12 +587,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal29 = r.$_get(0);
       const expectVal = doubleMaxValue;
       expect(actVal29).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_3100
      * @tc.name testFloat64ArrayWith1031
-     * @tc.desc Verify with(0, 16.0) with [-2147483648] element values
+     * @tc.desc Verify with stores hexadecimal-equivalent value in single element copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -606,12 +604,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal30 = r.$_get(0);
       const expectVal = sixteenPointzero;
       expect(actVal30).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_3200
      * @tc.name testFloat64ArrayWith1032
-     * @tc.desc Verify with(0, 8.0) with [0.1] element values
+     * @tc.desc Verify with stores octal-equivalent value in single element copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -623,18 +621,19 @@ export default function Float64ArrayWith1Test(): void {
       const actVal31 = r.$_get(0);
       const expectVal = eightPointZero;
       expect(actVal31).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_3300
      * @tc.name testFloat64ArrayWith1033
-     * @tc.desc Verify with(0, 10.0) with [0.5, 1.5] returns Float64Array instance
+     * @tc.desc Verify with returns Float64Array instance and preserves second fractional element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayWith1033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tenPointZero: number = 10.0;
+      const onePointFive: number = 1.5;
       const arr = Float64Array.of(0.5, 1.5);
       const r = arr.with(0, tenPointZero);
       let b: boolean = false;
@@ -644,12 +643,13 @@ export default function Float64ArrayWith1Test(): void {
       }
       const expectVal = true;
       expect(b).assertEqual(expectVal);
-    })
+      expect(r.$_get(1)).assertEqual(onePointFive);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_3400
      * @tc.name testFloat64ArrayWith1034
-     * @tc.desc Verify with(0, 10.0) with [-2147483648, -1] behavior
+     * @tc.desc Verify with returns a different typed array object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -658,18 +658,15 @@ export default function Float64ArrayWith1Test(): void {
       const tenPointZero: number = 10.0;
       const arr = new Float64Array([-2147483648, -1]);
       const r = arr.with(0, tenPointZero);
-      let s: boolean = false;
       let o1: Object = arr as Object;
       let o2: Object = r as Object;
-      s = o1 === o2;
-      const expectVal = false;
-      expect(s).assertEqual(expectVal);
-    })
+      expect(o1).not().assertEqual(o2);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_3500
      * @tc.name testFloat64ArrayWith1035
-     * @tc.desc Verify with(0, 10.0) with [0.1, 9007199254740991] shares buffer
+     * @tc.desc Verify with returned copy does not share original buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -678,18 +675,15 @@ export default function Float64ArrayWith1Test(): void {
       const tenPointZero: number = 10.0;
       const arr = new Float64Array([0.1, 9007199254740991]);
       const r = arr.with(0, tenPointZero);
-      let s: boolean = false;
       let o1: Object = arr.buffer as Object;
       let o2: Object = r.buffer as Object;
-      s = o1 === o2;
-      const expectVal = false;
-      expect(s).assertEqual(expectVal);
-    })
+      expect(o1).not().assertEqual(o2);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_3600
      * @tc.name testFloat64ArrayWith1036
-     * @tc.desc Verify with(1, 999.0) with [0.5, 1.5, 0.25] element values
+     * @tc.desc Verify ignored with result leaves original three-element array unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -710,12 +704,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal34 = arr.$_get(2);
       const expectVal3 = pointTwoFive;
       expect(actVal34).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_3700
      * @tc.name testFloat64ArrayWith1037
-     * @tc.desc Verify with(0, 1.7976931348623157e+308) with [-1, -1] element values
+     * @tc.desc Verify with stores MAX_VALUE at first slot and preserves second slot
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -731,12 +725,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal36 = r.$_get(1);
       const expectVal2 = negativeOne;
       expect(actVal36).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_3800
      * @tc.name testFloat64ArrayWith1038
-     * @tc.desc Verify with(0, 5e-324) with [9007199254740991, 9007199254740991] element values
+     * @tc.desc Verify with stores MIN_VALUE at first slot of repeated safe integers
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -749,12 +743,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal37 = r.$_get(0);
       const expectVal = doubleMinValue;
       expect(actVal37).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_3900
      * @tc.name testFloat64ArrayWith1039
-     * @tc.desc Verify with(0, nan) with [1.5, 1.5] element values and not NaN
+     * @tc.desc Verify with stores NaN at first slot and preserves second fractional slot
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -770,12 +764,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal39 = r.$_get(1);
       const expectVal2 = onePointFive;
       expect(actVal39).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_4000
      * @tc.name testFloat64ArrayWith1040
-     * @tc.desc Verify with(0, infinity) with [-128, -128] element values and Infinity
+     * @tc.desc Verify with stores Infinity at first slot of repeated INT8 values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -788,12 +782,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal40 = r.$_get(0);
       const expectVal = positiveInfinity;
       expect(actVal40).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_4100
      * @tc.name testFloat64ArrayWith1041
-     * @tc.desc Verify with(1, 1.7976931348623157e+308) with [-1, -1] element values
+     * @tc.desc Verify with stores MAX_VALUE at second slot and preserves first slot
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -809,12 +803,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal42 = r.$_get(1);
       const expectVal2 = doubleMaxValue;
       expect(actVal42).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_4200
      * @tc.name testFloat64ArrayWith1042
-     * @tc.desc Verify with(1, 5e-324) with [9007199254740991, 9007199254740991] element values
+     * @tc.desc Verify with stores MIN_VALUE at second slot of repeated safe integers
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -827,12 +821,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal43 = r.$_get(1);
       const expectVal = doubleMinValue;
       expect(actVal43).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_4300
      * @tc.name testFloat64ArrayWith1043
-     * @tc.desc Verify with(1, nan) with [1.5, 1.5] element values and not NaN
+     * @tc.desc Verify with stores NaN at second slot of repeated fractional values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -845,7 +839,7 @@ export default function Float64ArrayWith1Test(): void {
       const actVal44 = Number.isNaN(r.$_get(1));
       const expectVal = true;
       expect(actVal44).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_4400
@@ -869,7 +863,7 @@ export default function Float64ArrayWith1Test(): void {
       const actVal47 = arr.$_get(1);
       const expectVal3 = int8MinValue;
       expect(actVal47).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_4500
@@ -893,7 +887,7 @@ export default function Float64ArrayWith1Test(): void {
       const actVal50 = arr.$_get(1);
       const expectVal3 = negativeOne;
       expect(actVal50).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_4600
@@ -914,7 +908,7 @@ export default function Float64ArrayWith1Test(): void {
       const actVal52 = arr.$_get(1);
       const expectVal2 = maxSafeInteger;
       expect(actVal52).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_4700
@@ -938,7 +932,7 @@ export default function Float64ArrayWith1Test(): void {
       const actVal55 = arr.$_get(1);
       const expectVal3 = onePointFive;
       expect(actVal55).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_4800
@@ -959,12 +953,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal57 = arr.$_get(1);
       const expectVal2 = int8MinValue;
       expect(actVal57).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_4900
      * @tc.name testFloat64ArrayWith1049
-     * @tc.desc Verify with(0, -0.0) with [-1, -1] element values
+     * @tc.desc Verify with stores negative zero at first slot of repeated negative values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -977,12 +971,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal58 = r.$_get(0);
       const expectVal = negativeZero;
       expect(actVal58).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_5000
      * @tc.name testFloat64ArrayWith1050
-     * @tc.desc Verify with(0, 1.0e+308) with [9007199254740991, 9007199254740991] element values
+     * @tc.desc Verify with stores large scientific value and preserves second safe integer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -998,12 +992,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal60 = r.$_get(1);
       const expectVal2 = maxSafeInteger;
       expect(actVal60).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_5100
      * @tc.name testFloat64ArrayWith1051
-     * @tc.desc Verify with(1, 1.0e-308) with [1.5, 1.5] element values
+     * @tc.desc Verify with stores tiny scientific value at second fractional slot
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1016,12 +1010,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal61 = r.$_get(1);
       const expectVal = sciValue10e308;
       expect(actVal61).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_5200
      * @tc.name testFloat64ArrayWith1052
-     * @tc.desc Verify with(0, 10.0) with 0 elements exception handling
+     * @tc.desc Verify with on empty array throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1035,12 +1029,12 @@ export default function Float64ArrayWith1Test(): void {
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_5300
      * @tc.name testFloat64ArrayWith1053
-     * @tc.desc Verify with(0, 100.0) with [-32768] length and element values
+     * @tc.desc Verify with on single element preserves returned length one
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1054,12 +1048,12 @@ export default function Float64ArrayWith1Test(): void {
       const expectVal = hundredPointZero;
       expect(actVal62).assertEqual(expectVal);
       expect(r.length).assertEqual(oneValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_5400
      * @tc.name testFloat64ArrayWith1054
-     * @tc.desc Verify with(1, 100.0) with [-2147483648] exception handling
+     * @tc.desc Verify with index equal to single element length throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1073,12 +1067,12 @@ export default function Float64ArrayWith1Test(): void {
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_5500
      * @tc.name testFloat64ArrayWith1055
-     * @tc.desc Verify with(2, 999.0) with [-32768, -128, 0, 127, 32767] element values
+     * @tc.desc Verify with replaces middle element and preserves first and last INT16 values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1098,12 +1092,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal65 = r.$_get(4);
       const expectVal3 = int16MaxValue;
       expect(actVal65).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_5600
      * @tc.name testFloat64ArrayWith1056
-     * @tc.desc Verify with(0, 1.0) with [0.1] element values
+     * @tc.desc Verify with stores integer one in fractional single element copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1115,12 +1109,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal66 = r.$_get(0);
       const expectVal = onePointZero;
       expect(actVal66).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_5700
      * @tc.name testFloat64ArrayWith1057
-     * @tc.desc Verify with(0, 2.0) with [0.5] element values
+     * @tc.desc Verify with stores integer two in fractional single element copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1132,12 +1126,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal67 = r.$_get(0);
       const expectVal = twoPointZero;
       expect(actVal67).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_5800
      * @tc.name testFloat64ArrayWith1058
-     * @tc.desc Verify with(0, sum) with [-32768] element values
+     * @tc.desc Verify with stores computed floating sum in single element copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1149,7 +1143,7 @@ export default function Float64ArrayWith1Test(): void {
       const actVal68 = r.$_get(0);
       const expectVal = sum;
       expect(actVal68).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_5900
@@ -1166,7 +1160,7 @@ export default function Float64ArrayWith1Test(): void {
       const actVal69 = r.$_get(0);
       const expectVal = negativeZero;
       expect(actVal69).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_6000
@@ -1183,12 +1177,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal70 = r.$_get(0);
       const expectVal = numberMaxValue;
       expect(actVal70).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_6100
      * @tc.name testFloat64ArrayWith1061
-     * @tc.desc Verify with(2, 999.0) with [0.5, 1.5, 0.25, 0.125, 0.0625] element values
+     * @tc.desc Verify ignored with result leaves original five-element array unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1217,12 +1211,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal75 = arr.$_get(4);
       const expectVal5 = pointZeroSixTwoFive;
       expect(actVal75).assertEqual(expectVal5);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_6200
      * @tc.name testFloat64ArrayWith1062
-     * @tc.desc Verify with(0, 100.0) with [-32768, -128] byteLength and length
+     * @tc.desc Verify ignored with result preserves original length and byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1235,12 +1229,12 @@ export default function Float64ArrayWith1Test(): void {
       arr.with(0, hundredPointZero);
       expect(arr.length).assertEqual(ol);
       expect(arr.byteLength).assertEqual(obl);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_6300
      * @tc.name testFloat64ArrayWith1063
-     * @tc.desc Verify with(0, 100.0) with [-2147483648, -1] element values
+     * @tc.desc Verify repeated with calls without capturing result preserve original values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1261,12 +1255,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal77 = arr.$_get(1);
       const expectVal2 = negativeOne;
       expect(actVal77).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_6400
      * @tc.name testFloat64ArrayWith1064
-     * @tc.desc Verify with(0, 100.0) with [0.1, 9007199254740991] element values
+     * @tc.desc Verify chained with copies keep original and update each returned copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1287,12 +1281,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal80 = r2.$_get(1);
       const expectVal3 = num200Pointzero;
       expect(actVal80).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_6500
      * @tc.name testFloat64ArrayWith1065
-     * @tc.desc Verify with(0, -infinity) with [0.5, 1.5, 0.25] element values and Infinity
+     * @tc.desc Verify with stores negative Infinity and preserves remaining fractional values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1312,12 +1306,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal83 = r.$_get(0);
       const expectVal3 = negativeInfinity;
       expect(actVal83).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_6600
      * @tc.name testFloat64ArrayWith1066
-     * @tc.desc Verify with(1, 100.0) with [-32768, -128] element values and not NaN
+     * @tc.desc Verify with replacement does not make original first element NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1329,12 +1323,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal84 = Number.isNaN(arr.$_get(0));
       const expectVal = false;
       expect(actVal84).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_6700
      * @tc.name testFloat64ArrayWith1067
-     * @tc.desc Verify with(2, 42.0) with 5 elements element values
+     * @tc.desc Verify with replaces middle slot in zero-filled five-element array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1350,12 +1344,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal86 = r.$_get(0);
       const expectVal2 = zeroPointZero;
       expect(actVal86).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_6800
      * @tc.name testFloat64ArrayWith1068
-     * @tc.desc Verify with(1, 99.0) with [0, 0, 0] element values
+     * @tc.desc Verify with replaces middle zero and preserves first zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1371,12 +1365,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal88 = r.$_get(1);
       const expectVal2 = fillValue99;
       expect(actVal88).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_6900
      * @tc.name testFloat64ArrayWith1069
-     * @tc.desc Verify with(1, 42.0) with [0.5, 1.5, 0.25] element values
+     * @tc.desc Verify with replaces middle fractional element and preserves first value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1392,7 +1386,7 @@ export default function Float64ArrayWith1Test(): void {
       const actVal90 = r.$_get(1);
       const expectVal2 = fillValue42;
       expect(actVal90).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_7000
@@ -1409,7 +1403,7 @@ export default function Float64ArrayWith1Test(): void {
       const actVal91 = r.$_get(0);
       const expectVal = doubleMaxValue;
       expect(actVal91).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_7100
@@ -1426,7 +1420,7 @@ export default function Float64ArrayWith1Test(): void {
       const actVal92 = r.$_get(0);
       const expectVal = doubleMinValue;
       expect(actVal92).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_7200
@@ -1443,7 +1437,7 @@ export default function Float64ArrayWith1Test(): void {
       const actVal93 = Number.isNaN(r.$_get(0));
       const expectVal = true;
       expect(actVal93).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_7300
@@ -1461,12 +1455,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal94 = r.$_get(0);
       const expectVal = zeroPointZero;
       expect(actVal94).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_7400
      * @tc.name testFloat64ArrayWith1074
-     * @tc.desc Verify with(0, 100.0) with [-32768, -128, 0] element values
+     * @tc.desc Verify with replaces first element and preserves middle INT8 value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1482,12 +1476,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal96 = r.$_get(1);
       const expectVal2 = int8MinValue;
       expect(actVal96).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_7500
      * @tc.name testFloat64ArrayWith1075
-     * @tc.desc Verify with(1, 200.0) with [-2147483648, -1, 0] element values
+     * @tc.desc Verify with replaces middle element and preserves INT32 minimum
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1503,12 +1497,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal98 = r.$_get(1);
       const expectVal2 = num200Pointzero;
       expect(actVal98).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_7600
      * @tc.name testFloat64ArrayWith1076
-     * @tc.desc Verify with(2, 300.0) with [0.1, 9007199254740991, 0] element values
+     * @tc.desc Verify with replaces last element and preserves first fractional value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1524,12 +1518,12 @@ export default function Float64ArrayWith1Test(): void {
       const actVal100 = r.$_get(2);
       const expectVal2 = num300Pointzero;
       expect(actVal100).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_7700
      * @tc.name testFloat64ArrayWith1077
-     * @tc.desc Verify with(2, 999.0) array[5] element values
+     * @tc.desc Verify with replaces third element in five-element mixed value array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1541,7 +1535,7 @@ export default function Float64ArrayWith1Test(): void {
       const actVal101 = r.$_get(2);
       const expectVal = num999Pointzero;
       expect(actVal101).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_7800
@@ -1566,7 +1560,7 @@ export default function Float64ArrayWith1Test(): void {
       const actVal104 = arr.$_get(3);
       const expectVal3 = oneValue;
       expect(actVal104).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_7900
@@ -1583,7 +1577,7 @@ export default function Float64ArrayWith1Test(): void {
       const replaced = values.with(1, value);
       const expectVal = thirtyValue;
       expect(replaced[1]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_8000
@@ -1599,12 +1593,12 @@ export default function Float64ArrayWith1Test(): void {
       const replaced = values.with(1, thirtyValue);
       const expectVal = thirtyValue;
       expect(replaced[1]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_8100
      * @tc.name testFloat64ArrayWith1081
-     * @tc.desc Verify with with hex literal
+     * @tc.desc Verify with hex literal replacement preserves second element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1619,12 +1613,12 @@ export default function Float64ArrayWith1Test(): void {
       const r = arr.with(0, hexValue00);
       expect(r[0]).assertEqual(zeroPointZero);
       expect(r[1]).assertEqual(num170Pointzero);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_8200
      * @tc.name testFloat64ArrayWith1082
-     * @tc.desc Verify with with binary literal
+     * @tc.desc Verify with binary literal replacement preserves second element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1639,12 +1633,12 @@ export default function Float64ArrayWith1Test(): void {
       const r = arr.with(0, binaryValue00000000);
       expect(r[0]).assertEqual(zeroPointZero);
       expect(r[1]).assertEqual(num170Pointzero);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_8300
      * @tc.name testFloat64ArrayWith1083
-     * @tc.desc Verify with with Double.NaN
+     * @tc.desc Verify with replaces Double.NaN and preserves Double.MAX_VALUE
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1656,12 +1650,12 @@ export default function Float64ArrayWith1Test(): void {
       const result = arr.with(0, 1.0);
       expect(result[0]).assertEqual(1.0);
       expect(result[1]).assertEqual(doubleMaxValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_8400
      * @tc.name testFloat64ArrayWith1084
-     * @tc.desc Verify with with Double.POSITIVE_INFINITY
+     * @tc.desc Verify with replaces Double.POSITIVE_INFINITY and preserves Double.NEGATIVE_INFINITY
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1673,12 +1667,12 @@ export default function Float64ArrayWith1Test(): void {
       const result = arr.with(0, 0.0);
       expect(result[0]).assertEqual(0.0);
       expect(result[1]).assertEqual(negativeInfinity);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_WITH_1_8500
      * @tc.name testFloat64ArrayWith1085
-     * @tc.desc Verify with with Double.MIN_VALUE/MAX_VALUE
+     * @tc.desc Verify with replaces Double.MIN_VALUE and preserves Double.MAX_VALUE
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1690,7 +1684,7 @@ export default function Float64ArrayWith1Test(): void {
       const result = arr.with(0, 0.0);
       expect(result[0]).assertEqual(0.0);
       expect(result[1]).assertEqual(doubleMaxValue);
-    })
+    });
 
   })
 }
