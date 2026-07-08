@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { DatePickerComponent, DatePickerComponentOptions, DisplayMode, TimeFormat } from '@kit.ArkUI';
+import { DatePickerComponent, DatePickerComponentOptions, DisplayMode, TimeFormat, DatePickerComponentResult } from '@kit.ArkUI';
 
 @Entry
 @Component
