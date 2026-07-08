@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll, afterEach, beforeEach } from "../../../hypium/index"
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterEach, beforeEach } from "@ohos/hypium-binary/src/main/indexStatic"
 import notificationManager from '@ohos.notificationManager'
 import { Driver, ON, Component } from '@ohos.UiTest';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';

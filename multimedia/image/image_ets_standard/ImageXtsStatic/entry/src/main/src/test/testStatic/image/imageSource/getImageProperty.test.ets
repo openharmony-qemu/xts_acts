@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { Context } from '@kit.AbilityKit';
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll, Hypium } from '../../../../../../hypium';
+import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll, Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
 import { image } from '@kit.ImageKit';
 
 const TAG = 'xts.getImageProperty';

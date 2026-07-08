@@ -17,7 +17,7 @@
 import deviceInfo from '@ohos.deviceInfo';
 import account from '@ohos.account.distributedAccount'
 import { BusinessError, RecordData } from '@ohos.base';
-import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
 import hilog from '@ohos.hilog'
 
 let tag: string = 'testTag';

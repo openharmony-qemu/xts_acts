@@ -15,7 +15,7 @@
  */
 
 import media from '@ohos.multimedia.media'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
 import eventEmitter from '@ohos.events.emitter';
 import { Driver, ON, MatchPattern } from '@ohos.UiTest';
 import { Permissions } from 'permissions';

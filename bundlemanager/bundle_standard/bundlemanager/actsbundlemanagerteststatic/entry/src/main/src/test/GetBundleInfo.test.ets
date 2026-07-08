@@ -3,7 +3,7 @@ import bundle from '@ohos.bundle.bundleManager';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'
 import { BundleInfo } from 'bundleManager.BundleInfo';
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll } from "@ohos/hypium-binary/src/main/indexStatic";
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';

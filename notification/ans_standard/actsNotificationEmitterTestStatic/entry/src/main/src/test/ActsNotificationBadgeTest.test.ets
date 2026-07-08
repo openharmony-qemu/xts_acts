@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach } from "../../../hypium/index"
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach } from "@ohos/hypium-binary/src/main/indexStatic"
 import hilog from '@ohos.hilog';
 import emitter from '@ohos.events.emitter';
 import Utils from './Util.test';

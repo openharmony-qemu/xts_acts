@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { expect } from "../../../../../hypium/index";
+import { expect } from "@ohos/hypium-binary/src/main/indexStatic";
 import cryptoFramework from "@ohos.security.cryptoFramework";
 
 //枚举值重新写

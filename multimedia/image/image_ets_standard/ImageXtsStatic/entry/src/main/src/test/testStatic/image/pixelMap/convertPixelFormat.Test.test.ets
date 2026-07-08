@@ -16,7 +16,7 @@
 
 import { PixelMap } from '@kit.ArkUI';
 import { image } from '@kit.ImageKit';
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll, Hypium } from '../../../../../../hypium';
+import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll, Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
 
 const TAG = 'ImagePixelMapConvertPixelFormatTestSupp';
 

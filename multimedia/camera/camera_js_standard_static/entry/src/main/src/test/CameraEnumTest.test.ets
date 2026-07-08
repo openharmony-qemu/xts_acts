@@ -15,7 +15,7 @@
  */
 
 import camera from '@ohos.multimedia.camera';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Hypium, TestType, Size, Level } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Hypium, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
 
 const TAG = "CameraEnumTest: ";
 

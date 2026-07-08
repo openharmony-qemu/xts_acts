@@ -16,7 +16,7 @@
 
 
 import hilog from '@ohos.hilog';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, DEFAULT, Hypium, Level } from '../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, DEFAULT, Hypium, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import image from '@ohos.multimedia.image';
 import fileIo from '@ohos.file.fs';
 import fs from '@ohos.file.fs';

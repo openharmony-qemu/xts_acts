@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import motion from '@ohos.multimodalAwareness.motion'
-import { describe, beforeAll, Hypium, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, beforeAll, Hypium, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
 import { BusinessError } from '@ohos.base'
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';

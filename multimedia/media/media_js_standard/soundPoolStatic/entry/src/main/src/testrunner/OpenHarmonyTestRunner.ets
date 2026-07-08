@@ -20,7 +20,7 @@ import { TestRunner } from '@kit.TestKit';
 import { BusinessError } from '@ohos.base'
 import hilog from '@ohos.hilog';
 import { ShellCmdResult } from 'application.shellCmdResult';
-import { Hypium } from '../../../hypium/index';
+import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
 import testsuite from '../test/List.test';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';

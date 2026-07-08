@@ -16,7 +16,7 @@
 import account from '@ohos.account.appAccount'
 import osAccount from '@ohos.account.osAccount'
 import daccount from '@ohos.account.distributedAccount'
-import { describe, beforeAll, Hypium, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, beforeAll, Hypium, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
 import { BusinessError } from '@ohos.base'
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';

@@ -15,7 +15,7 @@
  */
 
 import account from '@ohos.account.appAccount'
-import { describe, beforeAll, afterEach, it, expect, Hypium, TestType, Size, Level } from "../../../hypium/index";
+import { describe, beforeAll, afterEach, it, expect, Hypium, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
 import hilog from '@ohos.hilog'
 import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';

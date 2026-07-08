@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import image from "@ohos.multimedia.image";
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, DEFAULT, Hypium, Level } from '../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, DEFAULT, Hypium, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import fs from '@ohos.file.fs';

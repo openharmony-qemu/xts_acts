@@ -16,7 +16,7 @@
 
 import Context from "application.Context"
 import image from '@ohos.multimedia.image'
-import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll } from '../../../../hypium/index'
+import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll } from '@ohos/hypium-binary/src/main/indexStatic'
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base'

@@ -16,7 +16,7 @@
 
 import cameraObj from '@ohos.multimedia.camera';
 import picker from '@ohos.multimedia.cameraPicker';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Hypium, TestType, Size, Level} from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Hypium, TestType, Size, Level} from "@ohos/hypium-binary/src/main/indexStatic";
 import common from '@ohos.app.ability.common';
 import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 import fileUri from '@ohos.file.fileuri';

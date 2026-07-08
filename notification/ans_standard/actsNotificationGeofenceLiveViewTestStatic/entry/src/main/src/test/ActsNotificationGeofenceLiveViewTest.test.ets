@@ -1,5 +1,5 @@
 'use static';
-import { beforeAll, describe, expect, it, Level, Size, TestType } from '../../../hypium/index';
+import { beforeAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
 import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base'
 import Utils from './Util.test';

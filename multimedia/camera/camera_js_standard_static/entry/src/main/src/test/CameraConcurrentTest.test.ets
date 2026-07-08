@@ -16,7 +16,7 @@
 
 import camera from '@ohos.multimedia.camera';
 import image from '@ohos.multimedia.image';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Hypium, TestType, Size, Level } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Hypium, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
 import Context from "application.Context";
 import { BusinessError } from '@ohos.base';
 import hilog from "@ohos.hilog";

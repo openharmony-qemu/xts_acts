@@ -21,7 +21,7 @@ import { installPrivateCertificates, isOpenHarmonyDevice } from './utils/common/
 import signVerifyCallback from './utils/signAndVerify/signVerifyCallback';
 import signVerifyPromise from './utils/signAndVerify/signVerifyPromise';
 import type { BusinessError } from '@ohos.base';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识

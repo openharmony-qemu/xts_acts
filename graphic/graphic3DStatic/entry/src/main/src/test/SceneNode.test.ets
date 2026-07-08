@@ -44,7 +44,7 @@ import {
   Vec4
 } from '@ohos.graphics.scene'
 import { $rawfile, Resource } from '@ohos.arkui.component'
-import { describe, expect, it, Level, Size, TestType } from '../../../hypium/index'
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic'
 import { lookAt } from '../common/utils'
 
 export default function sceneNodeTest() {

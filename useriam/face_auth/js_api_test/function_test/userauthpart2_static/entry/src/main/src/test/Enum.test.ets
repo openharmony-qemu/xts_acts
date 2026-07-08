@@ -14,7 +14,7 @@
  * limitations under the License.
  */
  
-import { describe, it, expect, Level, TestType, Size } from '../../../hypium/index'
+import { describe, it, expect, Level, TestType, Size } from '@ohos/hypium-binary/src/main/indexStatic'
 import hilog from '@ohos.hilog'
 import userAuth from '@ohos.userIAM.userAuth'
 import { BusinessError } from '@ohos.base';

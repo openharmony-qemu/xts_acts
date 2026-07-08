@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, it, expect, TestType, Size, Level, Hypium } from "../../../../hypium/index";
+import { describe, beforeAll, it, expect, TestType, Size, Level, Hypium } from "@ohos/hypium-binary/src/main/indexStatic";
 import Utils from '../Util.test';
 import hilog from '@ohos.hilog'
 import Context from "application.Context"

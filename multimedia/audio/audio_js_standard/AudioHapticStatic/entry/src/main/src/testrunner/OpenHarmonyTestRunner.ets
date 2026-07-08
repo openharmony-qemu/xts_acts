@@ -20,7 +20,7 @@ import { ShellCmdResult } from 'application.shellCmdResult';
 import hilog from '@ohos.hilog';
 import Utils from '../test/Util.test';
 import testsuite from '../test/List.test';
-import { Hypium } from '../../../hypium/index';
+import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
 let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;
 

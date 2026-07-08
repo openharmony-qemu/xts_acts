@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import emitter from '@ohos.events.emitter'
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll } from "@ohos/hypium-binary/src/main/indexStatic";
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { BusinessError, Callback, RecordData} from '@ohos.base';

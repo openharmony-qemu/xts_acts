@@ -15,7 +15,7 @@
  */
 
 import avMusicTemplate from '@ohos.multimedia.avMusicTemplate';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import { AVMusicTemplateUtil } from '../utils/AVMusicTemplateUtil.test';
 import { CommonUtils } from '../utils/CommonUtil.test';
 import { FakerDataUtil } from '../utils/FakerDataUtil.test';

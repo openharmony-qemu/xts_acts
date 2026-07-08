@@ -15,7 +15,7 @@
  */
 import inputMethod from '@ohos.inputMethod';
 import { PanelInfo, PanelFlag, PanelType } from '@ohos.inputMethod.Panel';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
 import { BusinessError } from '@ohos.base'
 export default function inputMethodAttachTest() {
     describe('inputMethod_attach', () => {

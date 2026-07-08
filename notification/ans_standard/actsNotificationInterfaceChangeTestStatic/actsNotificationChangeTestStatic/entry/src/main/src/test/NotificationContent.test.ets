@@ -16,7 +16,7 @@
 
 import { BusinessError } from '@ohos.base';
 import notificationManager from '@ohos.notificationManager'
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
 import image from '@ohos.multimedia.image';
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
