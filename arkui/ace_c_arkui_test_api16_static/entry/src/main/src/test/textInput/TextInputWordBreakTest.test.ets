@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { expect, describe, it, afterEach, Level, beforeAll } from '../../../../hypium';
+import { expect, describe, it, afterEach, Level, beforeAll } from '@ohos/hypium-binary/src/main/indexStatic';
 import Utils from '../common/Utils';
 import { LibUtil } from '../../../ets/pages/LibUtil'
 import { UtilsTest } from '../Util.test'

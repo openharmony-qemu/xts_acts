@@ -15,7 +15,7 @@
  */
 
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import { Driver, ON, MouseButton, Point } from '@ohos.UiTest';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';

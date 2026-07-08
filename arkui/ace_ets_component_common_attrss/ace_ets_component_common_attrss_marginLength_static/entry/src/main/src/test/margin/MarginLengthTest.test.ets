@@ -34,7 +34,7 @@ import { BusinessError } from '@ohos.base';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { beforeAll, describe, expect } from '../../../../hypium/index';
+import { beforeAll, describe, expect } from '@ohos/hypium-binary/src/main/indexStatic';
 import { UtilsTest } from '../Util.test';
 
 let domain: int = 0x0000;

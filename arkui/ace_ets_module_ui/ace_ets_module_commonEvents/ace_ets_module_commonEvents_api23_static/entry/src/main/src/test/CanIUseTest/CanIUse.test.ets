@@ -15,7 +15,7 @@
  */
 
 
-import { describe, it, expect, beforeAll, Level } from '../../../../hypium/index';
+import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import { UtilsTest } from '../Util.test';
 import { canIUse } from '@internal.full.global';
 

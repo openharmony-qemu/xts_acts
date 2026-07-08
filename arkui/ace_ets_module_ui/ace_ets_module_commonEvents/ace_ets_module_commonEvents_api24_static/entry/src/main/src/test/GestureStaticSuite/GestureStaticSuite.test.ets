@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level, beforeAll, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, Level, beforeAll, beforeEach } from '@ohos/hypium-binary/src/main/indexStatic';
 import { PanGestureOptions, PanDirection, SourceTool, PanGestureHandlerOptions } from '@ohos.arkui.component';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';

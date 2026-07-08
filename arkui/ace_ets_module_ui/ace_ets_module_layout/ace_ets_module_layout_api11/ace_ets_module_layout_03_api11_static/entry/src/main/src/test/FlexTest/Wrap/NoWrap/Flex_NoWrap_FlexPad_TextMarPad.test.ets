@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { MessageManager } from '../../../../../ets/MainAbility/common/MessageManager';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';

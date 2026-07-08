@@ -27,7 +27,7 @@ import {
   TestType,
   afterEach,
   afterAll
-} from '../../../hypium/index';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 import router from '@ohos.router';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import Utils from '../../ets/MainAbility/common/Utils';

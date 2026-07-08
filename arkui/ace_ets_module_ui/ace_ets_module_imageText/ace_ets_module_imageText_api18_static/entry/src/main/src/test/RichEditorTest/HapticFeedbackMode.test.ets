@@ -15,7 +15,7 @@
  */
 
 import router from '@ohos.router';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium'
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium-binary/src/main/indexStatic'
 import { Component, Driver, MouseButton, ON, Point } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { Router, UIContext } from '@ohos.arkui.UIContext';

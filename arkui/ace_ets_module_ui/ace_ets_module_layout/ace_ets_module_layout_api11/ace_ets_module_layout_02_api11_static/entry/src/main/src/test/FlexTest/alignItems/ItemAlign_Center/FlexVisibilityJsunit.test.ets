@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level, afterEach, beforeAll } from '../../../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, afterEach, beforeAll } from '@ohos/hypium-binary/src/main/indexStatic';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import { Visibility } from '@ohos.arkui.component';
 import { MessageManager, Callback } from '../../../../../ets/MainAbility/common/MessageManager';

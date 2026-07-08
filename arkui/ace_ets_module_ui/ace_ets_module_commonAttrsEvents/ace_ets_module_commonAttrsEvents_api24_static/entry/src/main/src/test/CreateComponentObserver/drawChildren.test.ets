@@ -16,7 +16,7 @@
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation,
   ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import router from '@ohos.router';
-import { beforeEach, describe, expect, it, Level, beforeAll, afterEach, TestType, Size } from '../../../../hypium/index';
+import { beforeEach, describe, expect, it, Level, beforeAll, afterEach, TestType, Size } from '@ohos/hypium-binary/src/main/indexStatic';
 import { i18n } from '@kit.LocalizationKit';
 import display from '@ohos.display';
 import CommonFunc from '../../../ets/MainAbility/common/Common';

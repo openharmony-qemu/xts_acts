@@ -39,7 +39,7 @@ import {
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage, Link,StorageLink } from '@ohos.arkui.stateManagement';
-import { Hypium } from '../../../../../hypium/index';
+import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
 import { State } from '@ohos.arkui.stateManagement'
 
 export class Params {

@@ -15,7 +15,7 @@
  */
 
 
-import { describe, it, expect, Level } from '../../../../hypium/index';
+import { describe, it, expect, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import { ArcSliderPosition } from '@ohos.arkui.advanced.ArcSlider';
 
 export default function ArcSliderEnumTest() {

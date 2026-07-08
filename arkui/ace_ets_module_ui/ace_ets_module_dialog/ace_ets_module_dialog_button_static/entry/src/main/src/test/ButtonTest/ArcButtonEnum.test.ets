@@ -15,7 +15,7 @@
  */
 
 
-import { describe, it, expect, Level } from '../../../../hypium/index';
+import { describe, it, expect, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import { ArcButtonPosition, ArcButtonStyleMode, ArcButtonStatus } from '@ohos.arkui.advanced.ArcButton';
 
 export default function ArcButtonEnumTest() {

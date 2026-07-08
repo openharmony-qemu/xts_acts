@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, describe, expect, it, Level } from '../../../../hypium';
+import { beforeAll, describe, expect, it, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import Utils from '../common/Utils';
 import { UtilsTest } from '../Util.test'
 import {focusControl} from '@ohos.arkui.component'

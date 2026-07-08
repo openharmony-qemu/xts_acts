@@ -18,7 +18,7 @@ import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Te
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
-import { Hypium } from '../../../../../hypium/index';
+import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
 import { RecordData } from '@ohos.base';
 interface CustomEventData {
   enableArrow?: boolean; // 可选属性，类型为布尔值

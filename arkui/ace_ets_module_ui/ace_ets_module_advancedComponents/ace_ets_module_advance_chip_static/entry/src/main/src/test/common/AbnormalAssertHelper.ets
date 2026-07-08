@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { expect } from '../../../../hypium';
+import { expect } from '@ohos/hypium-binary/src/main/indexStatic';
 import {
   readAttrString,
   countChildren,

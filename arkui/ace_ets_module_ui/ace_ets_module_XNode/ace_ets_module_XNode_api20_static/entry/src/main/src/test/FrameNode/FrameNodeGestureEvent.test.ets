@@ -23,7 +23,7 @@ import {
   afterAll,
   it,
   Level
-} from '../../../../hypium/index'
+} from '@ohos/hypium-binary/src/main/indexStatic'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UtilsTest } from '../Util.test';
 import router from '@ohos.router';

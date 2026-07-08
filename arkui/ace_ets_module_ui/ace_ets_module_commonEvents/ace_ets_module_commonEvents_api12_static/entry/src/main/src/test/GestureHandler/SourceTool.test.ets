@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { Component, Driver, MouseButton, ON, Point } from '@ohos.UiTest';
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
