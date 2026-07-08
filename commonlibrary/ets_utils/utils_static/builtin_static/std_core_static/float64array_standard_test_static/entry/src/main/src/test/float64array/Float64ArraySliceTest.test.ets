@@ -68,7 +68,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal2 = result.$_get(4);
       const expectVal2 = tinyNegativeValue;
       expect(actVal2).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_0200
@@ -91,7 +91,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal4 = result.$_get(2);
       const expectVal2 = pointZeroSixTwoFive;
       expect(actVal4).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_0300
@@ -114,7 +114,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal6 = result.$_get(2);
       const expectVal2 = int8MaxValue;
       expect(actVal6).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_0400
@@ -137,7 +137,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal8 = result.$_get(2);
       const expectVal2 = zeroValue;
       expect(actVal8).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_0500
@@ -160,12 +160,12 @@ export default function Float64ArraySliceTest(): void {
       const actVal10 = result.$_get(3);
       const expectVal2 = tinyNegativeValue;
       expect(actVal10).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_0600
      * @tc.name testFloat64ArraySlice006
-     * @tc.desc Verify slice with begin=length-1 returns a single element
+     * @tc.desc Verify slice with begin=4 returns a single element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -179,7 +179,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal11 = result.$_get(0);
       const expectVal = pointZeroSixTwoFive;
       expect(actVal11).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_0700
@@ -195,7 +195,7 @@ export default function Float64ArraySliceTest(): void {
       const result = original.slice(1000, 1001);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_0800
@@ -214,7 +214,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal12 = result.$_get(0);
       const expectVal = pointZeroSixTwoFive;
       expect(actVal12).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_0900
@@ -237,7 +237,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal14 = result.$_get(1);
       const expectVal2 = int16MaxValue;
       expect(actVal14).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_1000
@@ -256,12 +256,12 @@ export default function Float64ArraySliceTest(): void {
       const actVal15 = result.$_get(0);
       const expectVal = int32MinValue;
       expect(actVal15).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_1100
      * @tc.name testFloat64ArraySlice011
-     * @tc.desc Verify slice with begin=-(length+1) out of bounds is clamped to 0
+     * @tc.desc Verify slice with begin=-6 out of bounds is clamped to 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -275,7 +275,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal16 = result.$_get(0);
       const expectVal = pointOne;
       expect(actVal16).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_1200
@@ -294,7 +294,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal17 = result.$_get(0);
       const expectVal = pointFive;
       expect(actVal17).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_1300
@@ -313,7 +313,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal18 = result.$_get(0);
       const expectVal = int8MinValue;
       expect(actVal18).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_1400
@@ -332,7 +332,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal19 = result.$_get(0);
       const expectVal = pointOne;
       expect(actVal19).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_1500
@@ -355,12 +355,12 @@ export default function Float64ArraySliceTest(): void {
       const actVal21 = result.$_get(4);
       const expectVal2 = pointZeroSixTwoFive;
       expect(actVal21).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_1600
      * @tc.name testFloat64ArraySlice016
-     * @tc.desc Verify slice with end=length+1 out of bounds is clamped to length
+     * @tc.desc Verify slice with end=6 out of bounds is clamped to length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -374,7 +374,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal22 = result.$_get(4);
       const expectVal = int16MaxValue;
       expect(actVal22).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_1700
@@ -393,7 +393,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal23 = result.$_get(2);
       const expectVal = zeroValue;
       expect(actVal23).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_1800
@@ -416,7 +416,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal25 = result.$_get(3);
       const expectVal2 = piValue;
       expect(actVal25).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_1900
@@ -439,12 +439,12 @@ export default function Float64ArraySliceTest(): void {
       const actVal27 = result.$_get(2);
       const expectVal2 = pointTwoFive;
       expect(actVal27).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_2000
      * @tc.name testFloat64ArraySlice020
-     * @tc.desc Verify slice with end=-(length+1) out of bounds is clamped to 0
+     * @tc.desc Verify slice with end=-6 out of bounds is clamped to 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -455,7 +455,7 @@ export default function Float64ArraySliceTest(): void {
       const result = original.slice(0, -6);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_2100
@@ -471,7 +471,7 @@ export default function Float64ArraySliceTest(): void {
       const result = original.slice(0, -1000);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_2200
@@ -494,7 +494,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal29 = result.$_get(1);
       const expectVal2 = onePointFive;
       expect(actVal29).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_2300
@@ -517,7 +517,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal31 = result.$_get(2);
       const expectVal2 = int16MaxValue;
       expect(actVal31).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_2400
@@ -536,7 +536,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal32 = result.$_get(0);
       const expectVal = zeroValue;
       expect(actVal32).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_2500
@@ -559,7 +559,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal34 = result.$_get(1);
       const expectVal2 = oneValue;
       expect(actVal34).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_2600
@@ -582,7 +582,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal36 = result.$_get(1);
       const expectVal2 = zeroValue;
       expect(actVal36).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_2700
@@ -605,7 +605,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal38 = result.$_get(2);
       const expectVal2 = int8MaxValue;
       expect(actVal38).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_2800
@@ -623,7 +623,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal39 = result.$_get(0);
       const expectVal = oneValue;
       expect(actVal39).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_2900
@@ -642,7 +642,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal40 = result.$_get(0);
       const expectVal = pointOne;
       expect(actVal40).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_3000
@@ -661,7 +661,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal41 = result.$_get(0);
       const expectVal = pointFive;
       expect(actVal41).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_3100
@@ -680,7 +680,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal42 = result.$_get(0);
       const expectVal = int32MinValue;
       expect(actVal42).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_3200
@@ -703,7 +703,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal44 = result.$_get(1);
       const expectVal2 = maxSafeInteger;
       expect(actVal44).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_3300
@@ -722,7 +722,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal45 = result.$_get(0);
       const expectVal = onePointFive;
       expect(actVal45).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_3400
@@ -741,7 +741,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal46 = result.$_get(0);
       const expectVal = int16MinValue;
       expect(actVal46).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_3500
@@ -760,7 +760,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal47 = result.$_get(0);
       const expectVal = zeroValue;
       expect(actVal47).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_3600
@@ -776,7 +776,7 @@ export default function Float64ArraySliceTest(): void {
       const result = original.slice(2147483647, 2147483646);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_3700
@@ -795,7 +795,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal48 = result.$_get(0);
       const expectVal = pointFive;
       expect(actVal48).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_3800
@@ -817,7 +817,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal50 = result.$_get(0);
       const expectVal2 = num999Pointzero;
       expect(actVal50).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_3900
@@ -842,7 +842,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal53 = result.$_get(2);
       const expectVal3 = oneValue;
       expect(actVal53).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_4000
@@ -861,7 +861,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal54 = result.$_get(0);
       const expectVal = pointOne;
       expect(actVal54).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_4100
@@ -878,7 +878,7 @@ export default function Float64ArraySliceTest(): void {
       const result = original.slice(1, 3);
       const expectVal = sixteenValue;
       expect(result.byteLength).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_4200
@@ -901,7 +901,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal56 = result.$_get(2);
       const expectVal2 = pointZeroSixTwoFive;
       expect(actVal56).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_4300
@@ -924,7 +924,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal58 = result.$_get(2);
       const expectVal2 = oneValue;
       expect(actVal58).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_4400
@@ -943,7 +943,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal59 = result.$_get(0);
       const expectVal = zeroValue;
       expect(actVal59).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_4500
@@ -959,7 +959,7 @@ export default function Float64ArraySliceTest(): void {
       const result = original.slice(10, 15);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_4600
@@ -978,7 +978,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal60 = result.$_get(4);
       const expectVal = int32MaxValue;
       expect(actVal60).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_4700
@@ -997,7 +997,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal61 = result.$_get(2);
       const expectVal = tinyNegativeValue;
       expect(actVal61).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_4800
@@ -1020,7 +1020,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal63 = result.$_get(2);
       const expectVal2 = pointTwoFive;
       expect(actVal63).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_4900
@@ -1036,7 +1036,7 @@ export default function Float64ArraySliceTest(): void {
       const result = original.slice(100, -100);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_5000
@@ -1052,7 +1052,7 @@ export default function Float64ArraySliceTest(): void {
       const result = original.slice(100, 50);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_5100
@@ -1068,7 +1068,7 @@ export default function Float64ArraySliceTest(): void {
       const result = original.slice(-100, -50);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_5200
@@ -1087,7 +1087,7 @@ export default function Float64ArraySliceTest(): void {
       } catch (e) {
         expect().assertFail();
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_5300
@@ -1106,7 +1106,7 @@ export default function Float64ArraySliceTest(): void {
       } catch (e) {
         expect().assertFail();
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_5400
@@ -1125,7 +1125,7 @@ export default function Float64ArraySliceTest(): void {
       } catch (e) {
         expect().assertFail();
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_5500
@@ -1144,7 +1144,7 @@ export default function Float64ArraySliceTest(): void {
       } catch (e) {
         expect().assertFail();
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_5600
@@ -1160,7 +1160,7 @@ export default function Float64ArraySliceTest(): void {
       const result = original.slice(2147483647, 2147483647);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_5700
@@ -1179,7 +1179,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal64 = result.$_get(0);
       const expectVal = pointOne;
       expect(actVal64).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_5800
@@ -1198,7 +1198,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal65 = result.$_get(4);
       const expectVal = pointZeroSixTwoFive;
       expect(actVal65).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_5900
@@ -1214,7 +1214,7 @@ export default function Float64ArraySliceTest(): void {
       const result = original.slice(2147483647, 2147483645);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_6000
@@ -1233,7 +1233,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal66 = result.$_get(0);
       const expectVal = int32MinValue;
       expect(actVal66).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_6100
@@ -1252,7 +1252,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal67 = result.$_get(0);
       const expectVal = piValue;
       expect(actVal67).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_6200
@@ -1271,7 +1271,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal68 = result.$_get(3);
       const expectVal = pointOneTwoFive;
       expect(actVal68).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_6300
@@ -1290,7 +1290,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal69 = result.$_get(0);
       const expectVal = zeroValue;
       expect(actVal69).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_6400
@@ -1308,7 +1308,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal70 = result.$_get(0) === Infinity;
       const expectVal = false;
       expect(actVal70).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_6500
@@ -1327,12 +1327,12 @@ export default function Float64ArraySliceTest(): void {
       const actVal71 = result.$_get(0);
       const expectVal = onePointFive;
       expect(actVal71).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_6600
      * @tc.name testFloat64ArraySlice066
-     * @tc.desc Verify slice with array containing Number.MAX_VALUE
+     * @tc.desc Verify slice returns int8 minimum value from integer array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1346,12 +1346,12 @@ export default function Float64ArraySliceTest(): void {
       const actVal72 = result.$_get(0);
       const expectVal = int8MinValue;
       expect(actVal72).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_6700
      * @tc.name testFloat64ArraySlice067
-     * @tc.desc Verify slice with array containing minimum positive value 5e-324
+     * @tc.desc Verify slice returns negative one from integer array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1365,7 +1365,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal73 = result.$_get(0);
       const expectVal = negativeOne;
       expect(actVal73).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_6800
@@ -1387,7 +1387,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal75 = result.$_get(1);
       const expectVal2 = piValue;
       expect(actVal75).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_6900
@@ -1412,7 +1412,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal78 = original.$_get(4);
       const expectVal3 = int16MaxValue;
       expect(actVal78).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_7000
@@ -1433,7 +1433,7 @@ export default function Float64ArraySliceTest(): void {
       expect(r1.length).assertEqual(twoValue);
       expect(r2.length).assertEqual(twoValue);
       expect(r3.length).assertEqual(twoValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_7100
@@ -1452,7 +1452,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal79 = result.$_get(0);
       const expectVal = maxSafeInteger;
       expect(actVal79).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_7200
@@ -1470,7 +1470,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal80 = Number.isNaN(result.$_get(0));
       const expectVal = false;
       expect(actVal80).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_7300
@@ -1489,7 +1489,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal81 = result.$_get(0);
       const expectVal = maxSafeInteger;
       expect(actVal81).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_7400
@@ -1508,7 +1508,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal82 = result.$_get(0);
       const expectVal = -maxSafeInteger;
       expect(actVal82).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_7500
@@ -1545,7 +1545,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal88 = result.$_get(5);
       const expectVal6 = zeroValue;
       expect(actVal88).assertEqual(expectVal6);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_7600
@@ -1562,8 +1562,8 @@ export default function Float64ArraySliceTest(): void {
       const sliced = values.slice();
       expect(sliced.length).assertEqual(threeValue);
       expect(sliced[0]).assertEqual(int32MinValue);
-      expect(sliced === values).assertFalse();
-    })
+      expect(sliced).not().assertEqual(values);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_7700
@@ -1582,7 +1582,7 @@ export default function Float64ArraySliceTest(): void {
       expect(sliced.length).assertEqual(twoValue);
       expect(sliced[0]).assertEqual(pointOne);
       expect(sliced[1]).assertEqual(maxSafeInteger);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_7800
@@ -1599,7 +1599,7 @@ export default function Float64ArraySliceTest(): void {
       const sliced = values.slice(1, 3);
       expect(sliced.length).assertEqual(twoValue);
       expect(sliced[0]).assertEqual(onePointFive);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_7900
@@ -1615,7 +1615,7 @@ export default function Float64ArraySliceTest(): void {
       const sliced = values.slice(1);
       const expectVal = twoValue;
       expect(sliced.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_8000
@@ -1632,7 +1632,7 @@ export default function Float64ArraySliceTest(): void {
       const sliced = values.slice(-2);
       expect(sliced.length).assertEqual(twoValue);
       expect(sliced[0]).assertEqual(negativeOne);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_8100
@@ -1649,7 +1649,7 @@ export default function Float64ArraySliceTest(): void {
       const sliced = values.slice(0, -1);
       expect(sliced.length).assertEqual(twoValue);
       expect(sliced[1]).assertEqual(maxSafeInteger);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_8200
@@ -1666,7 +1666,7 @@ export default function Float64ArraySliceTest(): void {
       const sliced = values.slice(-3, -1);
       expect(sliced.length).assertEqual(twoValue);
       expect(sliced[0]).assertEqual(onePointFive);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_8300
@@ -1682,7 +1682,7 @@ export default function Float64ArraySliceTest(): void {
       const sliced = values.slice(5);
       const expectVal = zeroValue;
       expect(sliced.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_8400
@@ -1698,7 +1698,7 @@ export default function Float64ArraySliceTest(): void {
       const sliced = values.slice(0, 100);
       const expectVal = twoValue;
       expect(sliced.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_8500
@@ -1714,7 +1714,7 @@ export default function Float64ArraySliceTest(): void {
       const sliced = values.slice(-5);
       const expectVal = twoValue;
       expect(sliced.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_8600
@@ -1731,22 +1731,28 @@ export default function Float64ArraySliceTest(): void {
       values[0] = 999.0;
       const expectVal = int16MinValue;
       expect(sliced[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_8700
      * @tc.name testFloat64ArraySlice087
-     * @tc.desc Verify slice result negative check
+     * @tc.desc Verify slice copy subarray mutation does not affect original
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float64Array([-2147483648, -1, 0, 1, 2147483647]);
-      const sliced = arr.slice(1, 3);
-      expect(sliced[0] === 2.0).assertFalse();
-      expect(sliced[0] === 1.0).assertFalse();
-    })
+      const arr = new Float64Array([1.0, 2.0, 3.0, 4.0]);
+      const copy = arr.slice(1, 4);
+      const view = copy.subarray(0, 2);
+      view.$_set(0, 99.0);
+      const actVal87 = arr.$_get(1);
+      const expectVal = 2.0;
+      expect(actVal87).assertEqual(expectVal);
+      const actVal88 = copy.$_get(0);
+      const expectVal2 = 99.0;
+      expect(actVal88).assertEqual(expectVal2);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_8800
@@ -1768,7 +1774,7 @@ export default function Float64ArraySliceTest(): void {
       expect(s[0]).assertEqual(num255Value);
       expect(s[1]).assertEqual(num170Pointzero);
       expect(s.length).assertEqual(twoValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_8900
@@ -1790,7 +1796,7 @@ export default function Float64ArraySliceTest(): void {
       expect(s[0]).assertEqual(num255Value);
       expect(s[1]).assertEqual(num170Pointzero);
       expect(s.length).assertEqual(twoValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_9000
@@ -1811,7 +1817,7 @@ export default function Float64ArraySliceTest(): void {
       expect(actVal89).assertEqual(expectVal);
       expect(s[1]).assertEqual(doubleMaxValue);
       expect(s.length).assertEqual(twoValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_9100
@@ -1830,7 +1836,7 @@ export default function Float64ArraySliceTest(): void {
       expect(s[0]).assertEqual(positiveInfinity);
       expect(s[1]).assertEqual(negativeInfinity);
       expect(s.length).assertEqual(twoValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_9200
@@ -1849,7 +1855,7 @@ export default function Float64ArraySliceTest(): void {
       expect(s[0]).assertEqual(doubleMinValue);
       expect(s[1]).assertEqual(doubleMaxValue);
       expect(s.length).assertEqual(twoValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_9300
@@ -1869,7 +1875,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal91 = s.$_get(2);
       const expectVal2 = 30.0;
       expect(actVal91).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_9400
@@ -1884,7 +1890,7 @@ export default function Float64ArraySliceTest(): void {
       const s = arr.slice(0, -0);
       const expectVal = 0;
       expect(s.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_9500
@@ -1904,7 +1910,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal93 = s.$_get(1);
       const expectVal2 = 20.0;
       expect(actVal93).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_9600
@@ -1919,7 +1925,7 @@ export default function Float64ArraySliceTest(): void {
       const s = arr.slice(-0, -0);
       const expectVal = 0;
       expect(s.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_9700
@@ -1934,7 +1940,7 @@ export default function Float64ArraySliceTest(): void {
       const s = arr.slice(1, -0);
       const expectVal = 0;
       expect(s.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_9800
@@ -1958,7 +1964,7 @@ export default function Float64ArraySliceTest(): void {
       const actVal95 = s.$_get(9999);
       const expectVal2 = 10000.0;
       expect(actVal95).assertEqual(expectVal2);
-    })
+    });
 
   })
 }
