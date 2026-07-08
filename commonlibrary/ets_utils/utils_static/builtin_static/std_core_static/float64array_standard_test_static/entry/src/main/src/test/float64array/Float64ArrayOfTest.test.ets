@@ -53,12 +53,12 @@ export default function Float64ArrayOfTest(): void {
      */
     it('testFloat64ArrayOf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const oneValue: number = 1;
-      const result = Float64Array.of(-2147483648);
+      const nanValue: number = NaN;
+      const result = Float64Array.of(nanValue);
       expect(result.length).assertEqual(oneValue);
       const actVal1 = Number.isNaN(result.$_get(0));
-      const expectVal = false;
-      expect(actVal1).assertEqual(expectVal);
-    })
+      expect(actVal1).assertTrue();
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_0200
@@ -69,14 +69,14 @@ export default function Float64ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayOf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
+      const positiveInfinity: number = Infinity;
       const oneValue: number = 1;
-      const result = Float64Array.of(pointOne);
+      const result = Float64Array.of(positiveInfinity);
       expect(result.length).assertEqual(oneValue);
       const actVal2 = result.$_get(0);
-      const expectVal = pointOne;
+      const expectVal = positiveInfinity;
       expect(actVal2).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_0300
@@ -87,14 +87,14 @@ export default function Float64ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayOf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
+      const negativeInfinity: number = -Infinity;
       const oneValue: number = 1;
-      const result = Float64Array.of(pointFive);
+      const result = Float64Array.of(negativeInfinity);
       expect(result.length).assertEqual(oneValue);
       const actVal3 = result.$_get(0);
-      const expectVal = pointFive;
+      const expectVal = negativeInfinity;
       expect(actVal3).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_0400
@@ -105,17 +105,17 @@ export default function Float64ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayOf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int8MinValue: number = -128;
+      const nanValue: number = NaN;
+      const positiveInfinity: number = Infinity;
       const twoValue: number = 2;
-      const result = Float64Array.of(-32768, int8MinValue);
+      const result = Float64Array.of(nanValue, positiveInfinity);
       expect(result.length).assertEqual(twoValue);
       const actVal4 = Number.isNaN(result.$_get(0));
-      const expectVal = false;
-      expect(actVal4).assertEqual(expectVal);
+      expect(actVal4).assertTrue();
       const actVal5 = result.$_get(1);
-      const expectVal2 = int8MinValue;
+      const expectVal2 = positiveInfinity;
       expect(actVal5).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_0500
@@ -126,18 +126,18 @@ export default function Float64ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayOf005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
+      const positiveInfinity: number = Infinity;
+      const negativeInfinity: number = -Infinity;
       const twoValue: number = 2;
-      const result = Float64Array.of(int32MinValue, negativeOne);
+      const result = Float64Array.of(positiveInfinity, negativeInfinity);
       expect(result.length).assertEqual(twoValue);
       const actVal6 = result.$_get(0);
-      const expectVal = int32MinValue;
+      const expectVal = positiveInfinity;
       expect(actVal6).assertEqual(expectVal);
       const actVal7 = result.$_get(1);
-      const expectVal2 = negativeOne;
+      const expectVal2 = negativeInfinity;
       expect(actVal7).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_0600
@@ -148,13 +148,17 @@ export default function Float64ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayOf006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nanValue: number = NaN;
+      const positiveInfinity: number = Infinity;
+      const negativeInfinity: number = -Infinity;
       const threeValue: number = 3;
-      const result = Float64Array.of(0.1, 9007199254740991, 0);
+      const result = Float64Array.of(nanValue, positiveInfinity, negativeInfinity);
       expect(result.length).assertEqual(threeValue);
       const actVal8 = Number.isNaN(result.$_get(0));
-      const expectVal = false;
-      expect(actVal8).assertEqual(expectVal);
-    })
+      expect(actVal8).assertTrue();
+      expect(result.$_get(1)).assertEqual(positiveInfinity);
+      expect(result.$_get(2)).assertEqual(negativeInfinity);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_0700
@@ -165,14 +169,15 @@ export default function Float64ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayOf007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
+      const negativeZero: number = -0.0;
+      const negativeInfinity: number = -Infinity;
       const oneValue: number = 1;
-      const result = Float64Array.of(int16MinValue);
+      const result = Float64Array.of(negativeZero);
       expect(result.length).assertEqual(oneValue);
-      const actVal9 = result.$_get(0);
-      const expectVal = int16MinValue;
+      const actVal9 = 1.0 / result.$_get(0);
+      const expectVal = negativeInfinity;
       expect(actVal9).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_0800
@@ -183,14 +188,16 @@ export default function Float64ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayOf008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const zeroValue: number = 0.0;
       const pointOne: number = 0.1;
       const twoValue: number = 2;
-      const result = Float64Array.of(pointOne, 9007199254740991);
+      const result = Float64Array.of(zeroValue, pointOne);
       expect(result.length).assertEqual(twoValue);
       const actVal10 = result.$_get(0);
-      const expectVal = pointOne;
+      const expectVal = zeroValue;
       expect(actVal10).assertEqual(expectVal);
-    })
+      expect(result.$_get(1)).assertEqual(pointOne);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_0900
@@ -201,14 +208,17 @@ export default function Float64ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayOf009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
+      const negativeZero: number = -0.0;
+      const negativeOnePointFive: number = -1.5;
+      const negativeInfinity: number = -Infinity;
       const twoValue: number = 2;
-      const result = Float64Array.of(pointFive, 1.5);
+      const result = Float64Array.of(negativeZero, negativeOnePointFive);
       expect(result.length).assertEqual(twoValue);
-      const actVal11 = result.$_get(0);
-      const expectVal = pointFive;
+      const actVal11 = 1.0 / result.$_get(0);
+      const expectVal = negativeInfinity;
       expect(actVal11).assertEqual(expectVal);
-    })
+      expect(result.$_get(1)).assertEqual(negativeOnePointFive);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_1000
@@ -219,14 +229,14 @@ export default function Float64ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayOf010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
+      const minValue: number = Double.MIN_VALUE;
       const oneValue: number = 1;
-      const result = Float64Array.of(int32MinValue);
+      const result = Float64Array.of(minValue);
       expect(result.length).assertEqual(oneValue);
       const actVal12 = result.$_get(0);
-      const expectVal = int32MinValue;
+      const expectVal = minValue;
       expect(actVal12).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_1100
@@ -237,18 +247,18 @@ export default function Float64ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayOf011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
+      const maxValue: number = Double.MAX_VALUE;
+      const minValue: number = Double.MIN_VALUE;
       const twoValue: number = 2;
-      const result = Float64Array.of(pointOne, maxSafeInteger);
+      const result = Float64Array.of(maxValue, minValue);
       expect(result.length).assertEqual(twoValue);
       const actVal13 = result.$_get(0);
-      const expectVal = pointOne;
+      const expectVal = maxValue;
       expect(actVal13).assertEqual(expectVal);
       const actVal14 = result.$_get(1);
-      const expectVal2 = maxSafeInteger;
+      const expectVal2 = minValue;
       expect(actVal14).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_1200
@@ -259,11 +269,17 @@ export default function Float64ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayOf012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const maxValue: number = Double.MAX_VALUE;
+      const minValue: number = Double.MIN_VALUE;
+      const zeroValue: number = 0.0;
       const threeValue: number = 3;
-      const result = Float64Array.of(0.5, 1.5, 0.25);
+      const result = Float64Array.of(maxValue, minValue, zeroValue);
       const expectVal = threeValue;
       expect(result.length).assertEqual(expectVal);
-    })
+      expect(result.$_get(0)).assertEqual(maxValue);
+      expect(result.$_get(1)).assertEqual(minValue);
+      expect(result.$_get(2)).assertEqual(zeroValue);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_1300
@@ -274,11 +290,15 @@ export default function Float64ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayOf013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const maxSafeInteger: number = 9007199254740991;
+      const minSafeInteger: number = -9007199254740991;
       const twoValue: number = 2;
-      const result = Float64Array.of(0.1, 9007199254740991);
+      const result = Float64Array.of(maxSafeInteger, minSafeInteger);
       const expectVal = twoValue;
       expect(result.length).assertEqual(expectVal);
-    })
+      expect(result.$_get(0)).assertEqual(maxSafeInteger);
+      expect(result.$_get(1)).assertEqual(minSafeInteger);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_1400
@@ -289,11 +309,13 @@ export default function Float64ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayOf014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const beyondSafeInteger: number = 9007199254740992;
       const oneValue: number = 1;
-      const result = Float64Array.of(0.5);
+      const result = Float64Array.of(beyondSafeInteger);
       const expectVal = oneValue;
       expect(result.length).assertEqual(expectVal);
-    })
+      expect(result.$_get(0)).assertEqual(beyondSafeInteger);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_1500
@@ -305,12 +327,13 @@ export default function Float64ArrayOfTest(): void {
      */
     it('testFloat64ArrayOf015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const oneValue: number = 1;
+      const precisionValue: number = 0.30000000000000004;
       const result = Float64Array.of(0.1 + 0.2);
       expect(result.length).assertEqual(oneValue);
-      const actVal15 = result.$_get(0) === 0.3;
-      const expectVal = false;
+      const actVal15 = result.$_get(0);
+      const expectVal = precisionValue;
       expect(actVal15).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_1600
@@ -321,18 +344,18 @@ export default function Float64ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayOf016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
+      const pointOne: number = 0.1;
+      const pointTwo: number = 0.2;
       const twoValue: number = 2;
-      const result = Float64Array.of(int16MinValue, int8MinValue);
+      const result = Float64Array.of(pointOne, pointTwo);
       expect(result.length).assertEqual(twoValue);
       const actVal16 = result.$_get(0);
-      const expectVal = int16MinValue;
+      const expectVal = pointOne;
       expect(actVal16).assertEqual(expectVal);
       const actVal17 = result.$_get(1);
-      const expectVal2 = int8MinValue;
+      const expectVal2 = pointTwo;
       expect(actVal17).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_1700
@@ -343,14 +366,16 @@ export default function Float64ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayOf017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const zeroValue: number = 0;
+      const pointOne: number = 0.1;
+      const pointTwo: number = 0.2;
+      const pointThree: number = 0.3;
       const threeValue: number = 3;
-      const result = Float64Array.of(-2147483648, -1, zeroValue);
+      const result = Float64Array.of(pointOne, pointTwo, pointThree);
       expect(result.length).assertEqual(threeValue);
       const actVal18 = result.$_get(2);
-      const expectVal = zeroValue;
+      const expectVal = pointThree;
       expect(actVal18).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_1800
@@ -361,11 +386,17 @@ export default function Float64ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayOf018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const oneHundred: number = 1e2;
+      const smallNegative: number = -1e-2;
+      const largeValue: number = 3.5e3;
       const threeValue: number = 3;
-      const result = Float64Array.of(0.1, 9007199254740991, 0);
+      const result = Float64Array.of(oneHundred, smallNegative, largeValue);
       const expectVal = threeValue;
       expect(result.length).assertEqual(expectVal);
-    })
+      expect(result.$_get(0)).assertEqual(oneHundred);
+      expect(result.$_get(1)).assertEqual(smallNegative);
+      expect(result.$_get(2)).assertEqual(largeValue);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_1900
@@ -377,13 +408,15 @@ export default function Float64ArrayOfTest(): void {
      */
     it('testFloat64ArrayOf019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int8MinValue: number = -128;
+      const negativePointFive: number = -0.5;
       const threeValue: number = 3;
-      const result = Float64Array.of(-32768, int8MinValue, 0);
+      const result = Float64Array.of(-32768, int8MinValue, negativePointFive);
       expect(result.length).assertEqual(threeValue);
       const actVal19 = result.$_get(1);
       const expectVal = int8MinValue;
       expect(actVal19).assertEqual(expectVal);
-    })
+      expect(result.$_get(2)).assertEqual(negativePointFive);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2000
@@ -395,9 +428,10 @@ export default function Float64ArrayOfTest(): void {
      */
     it('testFloat64ArrayOf020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointOne: number = 0.1;
+      const negativeOnePointFive: number = -1.5;
       const zeroValue: number = 0;
       const threeValue: number = 3;
-      const result = Float64Array.of(pointOne, 9007199254740991, zeroValue);
+      const result = Float64Array.of(pointOne, negativeOnePointFive, zeroValue);
       expect(result.length).assertEqual(threeValue);
       const actVal20 = result.$_get(0);
       const expectVal = pointOne;
@@ -405,7 +439,8 @@ export default function Float64ArrayOfTest(): void {
       const actVal21 = result.$_get(2);
       const expectVal2 = zeroValue;
       expect(actVal21).assertEqual(expectVal2);
-    })
+      expect(result.$_get(1)).assertEqual(negativeOnePointFive);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2100
@@ -416,14 +451,16 @@ export default function Float64ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayOf021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
+      const oneValue: number = 1;
+      const twoValue: number = 2;
       const threeValue: number = 3;
-      const result = Float64Array.of(pointFive, 1.5, 0.25);
+      const result = Float64Array.of(1, 2, 3);
       expect(result.length).assertEqual(threeValue);
       const actVal22 = result.$_get(0);
-      const expectVal = pointFive;
+      const expectVal = oneValue;
       expect(actVal22).assertEqual(expectVal);
-    })
+      expect(result.$_get(1)).assertEqual(twoValue);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2200
@@ -434,14 +471,17 @@ export default function Float64ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayOf022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const negativeOne: number = -1;
+      const zeroValue: number = 0.0;
+      const negativeZero: number = -0.0;
+      const negativeInfinity: number = -Infinity;
       const threeValue: number = 3;
-      const result = Float64Array.of(-2147483648, negativeOne, 0);
+      const result = Float64Array.of(0, zeroValue, negativeZero);
       expect(result.length).assertEqual(threeValue);
       const actVal23 = result.$_get(1);
-      const expectVal = negativeOne;
+      const expectVal = zeroValue;
       expect(actVal23).assertEqual(expectVal);
-    })
+      expect(1.0 / result.$_get(2)).assertEqual(negativeInfinity);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2300
@@ -465,7 +505,7 @@ export default function Float64ArrayOfTest(): void {
       const actVal26 = result.$_get(2);
       const expectVal3 = zeroValue;
       expect(actVal26).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2400
@@ -484,7 +524,7 @@ export default function Float64ArrayOfTest(): void {
       const actVal27 = result.$_get(0);
       const expectVal = onePointZero;
       expect(actVal27).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2500
@@ -504,7 +544,7 @@ export default function Float64ArrayOfTest(): void {
       const actVal28 = result.$_get(0);
       const expectVal = onePointZero;
       expect(actVal28).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2600
@@ -523,7 +563,8 @@ export default function Float64ArrayOfTest(): void {
       const actVal29 = Number.isNaN(result.$_get(0));
       const expectVal = true;
       expect(actVal29).assertEqual(expectVal);
-    })
+      expect(result.$_get(1)).assertEqual(infVal);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2700
@@ -536,6 +577,7 @@ export default function Float64ArrayOfTest(): void {
     it('testFloat64ArrayOf027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const twoValue: number = 2;
       const doubleMaxValue: number = 1.7976931348623157e+308;
+      const doubleMinValue: number = Double.MIN_VALUE;
       const maxVal: double = 1.7976931348623157e+308;
       const minVal: double = 5e-324;
       const result = Float64Array.of(maxVal, minVal);
@@ -543,7 +585,8 @@ export default function Float64ArrayOfTest(): void {
       const actVal30 = result.$_get(0);
       const expectVal = doubleMaxValue;
       expect(actVal30).assertEqual(expectVal);
-    })
+      expect(result.$_get(1)).assertEqual(doubleMinValue);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2800
@@ -563,7 +606,7 @@ export default function Float64ArrayOfTest(): void {
       const actVal31 = result.$_get(5);
       const expectVal = zeroValue;
       expect(actVal31).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2900
@@ -584,7 +627,7 @@ export default function Float64ArrayOfTest(): void {
       const actVal32 = result.$_get(19);
       const expectVal = zeroValue;
       expect(actVal32).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_3000
@@ -606,7 +649,7 @@ export default function Float64ArrayOfTest(): void {
       const actVal33 = result.$_get(25);
       const expectVal = zeroValue;
       expect(actVal33).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_3100
@@ -617,18 +660,17 @@ export default function Float64ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayOf031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointZeroSixTwoFive: number = 0.0625;
+      const zeroValue: number = 0.0;
       const fiveValue: number = 5;
-      const result = Float64Array.of(pointZeroSixTwoFive, pointZeroSixTwoFive, pointZeroSixTwoFive, pointZeroSixTwoFive,
-        pointZeroSixTwoFive);
+      const result = Float64Array.of(zeroValue, zeroValue, zeroValue, zeroValue, zeroValue);
       expect(result.length).assertEqual(fiveValue);
       const actVal34 = result.$_get(0);
-      const expectVal = pointZeroSixTwoFive;
+      const expectVal = zeroValue;
       expect(actVal34).assertEqual(expectVal);
       const actVal35 = result.$_get(4);
-      const expectVal2 = pointZeroSixTwoFive;
+      const expectVal2 = zeroValue;
       expect(actVal35).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_3200
@@ -649,7 +691,7 @@ export default function Float64ArrayOfTest(): void {
       const actVal37 = result.$_get(3);
       const expectVal2 = int8MaxValue;
       expect(actVal37).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_3300
@@ -660,14 +702,16 @@ export default function Float64ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayOf033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const zeroValue: number = 0;
+      const negativeOne: number = -1;
+      const negativeFive: number = -5;
       const fiveValue: number = 5;
-      const result = Float64Array.of(-2147483648, -1, zeroValue, 1, 2147483647);
+      const result = Float64Array.of(-2147483648, negativeOne, -2, -3, negativeFive);
       expect(result.length).assertEqual(fiveValue);
       const actVal38 = result.$_get(2);
-      const expectVal = zeroValue;
+      const expectVal = -2;
       expect(actVal38).assertEqual(expectVal);
-    })
+      expect(result.$_get(4)).assertEqual(negativeFive);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_3400
@@ -678,16 +722,14 @@ export default function Float64ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayOf034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const zeroValue: number = 0;
+      const oneValue: number = 1;
       const tenValue: number = 10;
-      const result =
-        Float64Array.of(0.1, 9007199254740991, zeroValue, 3.141592653589793, -1e-100, zeroValue, zeroValue,
-          zeroValue, zeroValue, zeroValue);
+      const result = Float64Array.of(1, 2, 3, 4, 5, 6, 7, 8, 9, tenValue);
       expect(result.length).assertEqual(tenValue);
       const actVal39 = result.$_get(9);
-      const expectVal = zeroValue;
-      expect(actVal39).assertEqual(expectVal);
-    })
+      expect(result.$_get(0)).assertEqual(oneValue);
+      expect(actVal39).assertEqual(tenValue);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_3500
@@ -708,7 +750,7 @@ export default function Float64ArrayOfTest(): void {
       const actVal40 = result.$_get(0);
       const expectVal = pointFive;
       expect(actVal40).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_3600
@@ -731,7 +773,7 @@ export default function Float64ArrayOfTest(): void {
       const actVal42 = result.$_get(4);
       const expectVal2 = int16MaxValue;
       expect(actVal42).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_3700
@@ -742,13 +784,13 @@ export default function Float64ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayOf037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nanValue: number = NaN;
       const threeValue: number = 3;
-      const result = Float64Array.of(-2147483648, -1, 0);
+      const result = Float64Array.of(-2147483648, nanValue, 0);
       expect(result.length).assertEqual(threeValue);
       const actVal43 = Number.isNaN(result.$_get(1));
-      const expectVal = false;
-      expect(actVal43).assertEqual(expectVal);
-    })
+      expect(actVal43).assertTrue();
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_3800
@@ -764,7 +806,7 @@ export default function Float64ArrayOfTest(): void {
       const result = Float64Array.of(0.5);
       expect(result.length).assertEqual(oneValue);
       expect(result.byteLength).assertEqual(eightValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_3900
@@ -780,7 +822,7 @@ export default function Float64ArrayOfTest(): void {
       const result = Float64Array.of(-32768, -128);
       expect(result.length).assertEqual(twoValue);
       expect(result.byteLength).assertEqual(sixteenValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_4000
@@ -796,7 +838,7 @@ export default function Float64ArrayOfTest(): void {
       const result = Float64Array.of(-2147483648, -1, 0);
       expect(result.length).assertEqual(threeValue);
       expect(result.byteLength).assertEqual(twentyfourValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_4100
@@ -811,7 +853,7 @@ export default function Float64ArrayOfTest(): void {
       const arr = Float64Array.of();
       const expectVal = zeroValue;
       expect(arr.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_4200
@@ -837,7 +879,7 @@ export default function Float64ArrayOfTest(): void {
       const actVal46 = arr.$_get(2);
       const expectVal3 = zeroValue;
       expect(actVal46).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_4300
@@ -855,7 +897,7 @@ export default function Float64ArrayOfTest(): void {
       const arr = Float64Array.of(hexValueFF, hexValueAA);
       expect(arr[0]).assertEqual(num255Value);
       expect(arr[1]).assertEqual(num170Pointzero);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_4400
@@ -873,7 +915,7 @@ export default function Float64ArrayOfTest(): void {
       const arr = Float64Array.of(binaryValue11111111, binaryValue10101010);
       expect(arr[0]).assertEqual(num255Value);
       expect(arr[1]).assertEqual(num170Pointzero);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_4500
@@ -890,7 +932,7 @@ export default function Float64ArrayOfTest(): void {
       const actVal47 = Number.isNaN(arr[0]);
       const expectVal = true;
       expect(actVal47).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_4600
@@ -906,23 +948,26 @@ export default function Float64ArrayOfTest(): void {
       const arr = Float64Array.of(positiveInfinity, negativeInfinity);
       const expectVal = true;
       expect(arr[0] > 0.0).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_4700
      * @tc.name testFloat64ArrayOf047
-     * @tc.desc Verify of with Double.MIN_VALUE/MAX_VALUE
+     * @tc.desc Verify of preserves NaN and Infinity special values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayOf047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const doubleMinValue: number = Double.MIN_VALUE;
-      const doubleMaxValue: number = Double.MAX_VALUE;
-      const arr = Float64Array.of(doubleMinValue, doubleMaxValue);
-      expect(arr[0] > 0.0).assertTrue();
-      expect(arr[1] > 0.0).assertTrue();
-    })
+      const twoValue: number = 2;
+      const arr = Float64Array.of(NaN, Infinity);
+      expect(arr.length).assertEqual(twoValue);
+      const actVal47 = arr.$_get(0);
+      expect(actVal47).assertNaN();
+      const actVal48 = arr.$_get(1);
+      const expectVal = Infinity;
+      expect(actVal48).assertEqual(expectVal);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_4800
@@ -939,7 +984,7 @@ export default function Float64ArrayOfTest(): void {
       const actVal48 = a.toString();
       const expectVal = "2,40,6";
       expect(actVal48).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_4900
@@ -958,7 +1003,7 @@ export default function Float64ArrayOfTest(): void {
       const actVal50 = a.$_get(1);
       const expectVal2 = 15.0;
       expect(actVal50).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_5000
@@ -977,7 +1022,7 @@ export default function Float64ArrayOfTest(): void {
       const actVal52 = a.$_get(1);
       const expectVal2 = 2147483647.0;
       expect(actVal52).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_5100
@@ -996,7 +1041,7 @@ export default function Float64ArrayOfTest(): void {
       const actVal54 = a.$_get(1);
       const expectVal2 = 0.7;
       expect(actVal54).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_5200
@@ -1016,7 +1061,7 @@ export default function Float64ArrayOfTest(): void {
       const actVal56 = copy.$_get(0);
       const expectVal2 = 10.0;
       expect(actVal56).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_5300
@@ -1032,7 +1077,7 @@ export default function Float64ArrayOfTest(): void {
       const actVal57 = v.toString();
       const expectVal = "6,7";
       expect(actVal57).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_5400
@@ -1055,7 +1100,7 @@ export default function Float64ArrayOfTest(): void {
       const actVal60 = a.$_get(2);
       const expectVal3 = 1.25;
       expect(actVal60).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_5500
@@ -1074,7 +1119,7 @@ export default function Float64ArrayOfTest(): void {
       const actVal62 = a.$_get(2);
       const expectVal2 = 3.5;
       expect(actVal62).assertEqual(expectVal2);
-    })
+    });
 
   })
 }

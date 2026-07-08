@@ -50,7 +50,7 @@ export default function Float64ArrayMapTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0010
      * @tc.name testFloat64ArrayMap001
-     * @tc.desc Verify map with one parameter callback
+     * @tc.desc Verify map with value-index-array callback preserves result length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -64,12 +64,12 @@ export default function Float64ArrayMapTest(): void {
 
       const expectVal = twoValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0020
      * @tc.name testFloat64ArrayMap002
-     * @tc.desc Verify map with arrow function
+     * @tc.desc Verify map arrow callback adds one to first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -84,7 +84,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal1 = result.$_get(0);
       const expectVal = onePointFive;
       expect(actVal1).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0030
@@ -106,12 +106,12 @@ export default function Float64ArrayMapTest(): void {
       const actVal2 = result.$_get(0);
       const expectVal = twentyPointZero;
       expect(actVal2).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0040
      * @tc.name testFloat64ArrayMap004
-     * @tc.desc Verify map fn returns positive 1.0
+     * @tc.desc Verify map callback returns positive 1.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -126,12 +126,12 @@ export default function Float64ArrayMapTest(): void {
       const actVal3 = result.$_get(0);
       const expectVal = onePointZero;
       expect(actVal3).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0050
      * @tc.name testFloat64ArrayMap005
-     * @tc.desc Verify map fn returns negative -1.0
+     * @tc.desc Verify map callback returns negative -1.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -146,12 +146,12 @@ export default function Float64ArrayMapTest(): void {
       const actVal4 = result.$_get(0);
       const expectVal = negonePointzero;
       expect(actVal4).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0060
      * @tc.name testFloat64ArrayMap006
-     * @tc.desc Verify map fn returns zero 0.0
+     * @tc.desc Verify map callback returns zero 0.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -166,12 +166,12 @@ export default function Float64ArrayMapTest(): void {
       const actVal5 = result.$_get(0);
       const expectVal = zeroValue;
       expect(actVal5).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0070
      * @tc.name testFloat64ArrayMap007
-     * @tc.desc Verify map fn returns NaN
+     * @tc.desc Verify map callback returns NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -185,12 +185,12 @@ export default function Float64ArrayMapTest(): void {
       const actVal6 = Number.isNaN(result.$_get(0));
       const expectVal = true;
       expect(actVal6).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0080
      * @tc.name testFloat64ArrayMap008
-     * @tc.desc Verify map fn returns Infinity
+     * @tc.desc Verify map callback returns Infinity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -205,12 +205,12 @@ export default function Float64ArrayMapTest(): void {
       const actVal7 = result.$_get(0);
       const expectVal = positiveInfinity;
       expect(actVal7).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0090
      * @tc.name testFloat64ArrayMap009
-     * @tc.desc Verify map fn returns negative Infinity
+     * @tc.desc Verify map callback returns negative Infinity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -225,12 +225,12 @@ export default function Float64ArrayMapTest(): void {
       const actVal8 = result.$_get(0);
       const expectVal = negativeInfinity;
       expect(actVal8).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0100
      * @tc.name testFloat64ArrayMap010
-     * @tc.desc Verify map fn returns MAX_VALUE
+     * @tc.desc Verify map callback returns MAX_VALUE
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -249,12 +249,12 @@ export default function Float64ArrayMapTest(): void {
       const actVal10 = result.$_get(1);
       const expectVal2 = 2.0;
       expect(actVal10).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0110
      * @tc.name testFloat64ArrayMap011
-     * @tc.desc Verify map fn returns MIN_VALUE
+     * @tc.desc Verify map callback returns MIN_VALUE
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -269,12 +269,12 @@ export default function Float64ArrayMapTest(): void {
       const actVal11 = result.$_get(0);
       const expectVal = doubleMinValue;
       expect(actVal11).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0120
      * @tc.name testFloat64ArrayMap012
-     * @tc.desc Verify map fn returns MAX_SAFE_INTEGER
+     * @tc.desc Verify map callback returns MAX_SAFE_INTEGER
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -289,12 +289,12 @@ export default function Float64ArrayMapTest(): void {
       const actVal12 = result.$_get(0);
       const expectVal = maxSafeIntegerValue;
       expect(actVal12).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0130
      * @tc.name testFloat64ArrayMap013
-     * @tc.desc Verify map fn returns scientific notation 1.0e-308
+     * @tc.desc Verify map callback returns scientific notation 1.0e-308
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -309,7 +309,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal13 = result.$_get(0);
       const expectVal = sciValue10e308;
       expect(actVal13).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0140
@@ -329,7 +329,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal14 = result.$_get(2);
       const expectVal = twoValue;
       expect(actVal14).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0150
@@ -349,7 +349,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal15 = result.$_get(2);
       const expectVal = pointFive;
       expect(actVal15).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0160
@@ -369,7 +369,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal16 = result.$_get(0);
       const expectVal = negnum98304Value;
       expect(actVal16).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0170
@@ -389,7 +389,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal17 = result.$_get(1);
       const expectVal = threeValue;
       expect(actVal17).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0180
@@ -410,28 +410,34 @@ export default function Float64ArrayMapTest(): void {
 
       const expectVal = twoValue;
       expect(counter).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0190
      * @tc.name testFloat64ArrayMap019
-     * @tc.desc Verify map callback reads external variable multiplier
+     * @tc.desc Verify map with hexadecimal multiplier supports chained filter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const fiveValue: number = 5;
-      const arr = new Float64Array([0.5, 1.5, 0.25]);
-      const mult: double = 10.0;
+      const twoValue: number = 2;
+      const tenValue: number = 10;
+      const fifteenValue: number = 15;
+      const arr = new Float64Array([0x01, 0b10, 0o3]);
+      const mult: number = 0x05;
       const result = arr.map((val: number, index: int): number => {
         return val * mult;
-      })
+      }).filter((val: number): boolean => val >= tenValue);
 
       const actVal18 = result.$_get(0);
-      const expectVal = fiveValue;
+      const expectVal = tenValue;
       expect(actVal18).assertEqual(expectVal);
-    })
+      expect(result.length).assertEqual(twoValue);
+      const actVal19 = result.$_get(1);
+      const expectVal2 = fifteenValue;
+      expect(actVal19).assertEqual(expectVal2);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0200
@@ -442,6 +448,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const firstValue: number = -32768;
       const arr = Float64Array.of(-32768, -128);
       const result = arr.map((val: number, index: int, array: Float64Array): number => {
         return val;
@@ -450,12 +457,13 @@ export default function Float64ArrayMapTest(): void {
       const actVal19 = isF64Arr(result as Object);
       const expectVal = true;
       expect(actVal19).assertEqual(expectVal);
-    })
+      expect(result.$_get(0)).assertEqual(firstValue);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0210
      * @tc.name testFloat64ArrayMap021
-     * @tc.desc Verify map returns new array not same as original
+     * @tc.desc Verify map returns a new Float64Array object distinct from original
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -466,13 +474,10 @@ export default function Float64ArrayMapTest(): void {
         return val * 2.0;
       })
 
-      let same: boolean = false;
       let o1: Object = arr as Object;
       let o2: Object = result as Object;
-      same = o1 === o2;
-      const expectVal = false;
-      expect(same).assertEqual(expectVal);
-    })
+      expect(o1).not().assertEqual(o2);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0220
@@ -494,7 +499,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal20 = result.$_get(0);
       const expectVal = negnum65535Value;
       expect(actVal20).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0230
@@ -514,7 +519,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal21 = arr.$_get(0);
       const expectVal = orig;
       expect(actVal21).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0240
@@ -534,12 +539,12 @@ export default function Float64ArrayMapTest(): void {
       const actVal22 = result.$_get(1);
       const expectVal = num90071992547409900Value;
       expect(actVal22).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0250
      * @tc.name testFloat64ArrayMap025
-     * @tc.desc Verify map((val: number) with [a, b] element values
+     * @tc.desc Verify map one-parameter callback doubles first double element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -556,7 +561,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal23 = result.$_get(0);
       const expectVal = threePointZero;
       expect(actVal23).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0260
@@ -575,7 +580,7 @@ export default function Float64ArrayMapTest(): void {
 
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0270
@@ -595,7 +600,7 @@ export default function Float64ArrayMapTest(): void {
 
       const expectVal = false;
       expect(called).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0280
@@ -615,7 +620,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal24 = result.$_get(0);
       const expectVal = onePointFive;
       expect(actVal24).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0290
@@ -636,7 +641,7 @@ export default function Float64ArrayMapTest(): void {
 
       const expectVal = oneValue;
       expect(count).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0300
@@ -656,7 +661,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal25 = result.$_get(4);
       const expectVal = negsciValue2e100;
       expect(actVal25).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0310
@@ -678,7 +683,7 @@ export default function Float64ArrayMapTest(): void {
 
       const expectVal = sixValue;
       expect(count).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0320
@@ -697,7 +702,7 @@ export default function Float64ArrayMapTest(): void {
 
       const expectVal = fiveValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0330
@@ -720,7 +725,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal27 = result.$_get(1);
       const expectVal2 = twoPointZero;
       expect(actVal27).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0340
@@ -742,7 +747,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal29 = result.$_get(1);
       const expectVal2 = -Infinity;
       expect(actVal29).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0350
@@ -762,7 +767,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal30 = result.$_get(0);
       const expectVal = doubleMaxValue;
       expect(actVal30).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0360
@@ -785,7 +790,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal32 = result.$_get(1);
       const expectVal2 = 2.0;
       expect(actVal32).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0370
@@ -809,12 +814,12 @@ export default function Float64ArrayMapTest(): void {
       const actVal34 = result.$_get(3);
       const expectVal2 = twoValue;
       expect(actVal34).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0380
      * @tc.name testFloat64ArrayMap038
-     * @tc.desc Verify map propagates RangeError from callback
+     * @tc.desc Verify map callback throws RangeError and propagates it
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -830,12 +835,12 @@ export default function Float64ArrayMapTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0390
      * @tc.name testFloat64ArrayMap039
-     * @tc.desc Verify map propagates TypeError from callback
+     * @tc.desc Verify map callback throws TypeError and propagates it
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -851,12 +856,12 @@ export default function Float64ArrayMapTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("TypeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0400
      * @tc.name testFloat64ArrayMap040
-     * @tc.desc Verify map propagates Error from callback
+     * @tc.desc Verify map callback throws Error on INT32 boundary elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -872,12 +877,12 @@ export default function Float64ArrayMapTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0410
      * @tc.name testFloat64ArrayMap041
-     * @tc.desc Verify map propagates Error at first element
+     * @tc.desc Verify map callback throws Error at first element and propagates it
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -893,12 +898,12 @@ export default function Float64ArrayMapTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0420
      * @tc.name testFloat64ArrayMap042
-     * @tc.desc Verify map propagates Error at last element
+     * @tc.desc Verify map callback throws Error at last element and propagates it
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -917,7 +922,7 @@ export default function Float64ArrayMapTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0430
@@ -941,7 +946,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal35 = arr.$_get(0);
       const expectVal = orig;
       expect(actVal35).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0440
@@ -969,7 +974,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal38 = result.$_get(2);
       const expectVal3 = zeroValue;
       expect(actVal38).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0450
@@ -993,7 +998,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal39 = result.$_get(0);
       const expectVal = negnum1431655765Value;
       expect(actVal39).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0460
@@ -1013,7 +1018,7 @@ export default function Float64ArrayMapTest(): void {
       const copied = new Float64Array(result);
       const expectVal = threeValue;
       expect(copied.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0470
@@ -1033,7 +1038,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal40 = result.$_get(0);
       const expectVal = pointSeven;
       expect(actVal40).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0480
@@ -1057,7 +1062,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal42 = result.$_get(1);
       const expectVal2 = int8MinValue * 2.0;
       expect(actVal42).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0490
@@ -1076,7 +1081,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal43 = result.$_get(0) > 0.0;
       const expectVal = false;
       expect(actVal43).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0500
@@ -1104,7 +1109,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal46 = result.$_get(2);
       const expectVal3 = twentyValue;
       expect(actVal46).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0510
@@ -1125,7 +1130,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal47 = result.$_get(2);
       const expectVal = zeroPointsevenfive;
       expect(actVal47).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0520
@@ -1146,7 +1151,7 @@ export default function Float64ArrayMapTest(): void {
 
       const expectVal = negnum32896Value;
       expect(sum).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0530
@@ -1169,7 +1174,7 @@ export default function Float64ArrayMapTest(): void {
       }
       const expectVal = negnum4294967298Value;
       expect(sum).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0540
@@ -1191,7 +1196,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal49 = 1.0 / result.$_get(1);
       const expectVal2 = -Infinity;
       expect(actVal49).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0550
@@ -1216,7 +1221,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal51 = result.$_get(2);
       const expectVal2 = negativeQuarterValue;
       expect(actVal51).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0560
@@ -1239,7 +1244,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal52 = result.$_get(149);
       const expectVal = num298Pointzero;
       expect(actVal52).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0570
@@ -1261,12 +1266,12 @@ export default function Float64ArrayMapTest(): void {
       const actVal53 = result.$_get(0);
       const expectVal = onePointZero;
       expect(actVal53).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0580
      * @tc.name testFloat64ArrayMap058
-     * @tc.desc Verify map fn returns negative MIN_SAFE_INTEGER
+     * @tc.desc Verify map callback returns negative MIN_SAFE_INTEGER
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1281,12 +1286,12 @@ export default function Float64ArrayMapTest(): void {
       const actVal54 = result.$_get(0);
       const expectVal = negativeMaxSafeIntegerValue;
       expect(actVal54).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0590
      * @tc.name testFloat64ArrayMap059
-     * @tc.desc Verify map fn returns scientific notation 1.0e+308
+     * @tc.desc Verify map callback returns scientific notation 1.0e+308
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1301,12 +1306,12 @@ export default function Float64ArrayMapTest(): void {
       const actVal55 = result.$_get(0);
       const expectVal = sciValue10e308;
       expect(actVal55).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0600
      * @tc.name testFloat64ArrayMap060
-     * @tc.desc Verify map fn returns decimal 0.1
+     * @tc.desc Verify map callback returns decimal 0.1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1321,12 +1326,12 @@ export default function Float64ArrayMapTest(): void {
       const actVal56 = result.$_get(0);
       const expectVal = pointOne;
       expect(actVal56).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0610
      * @tc.name testFloat64ArrayMap061
-     * @tc.desc Verify map fn returns negative decimal -999999.99
+     * @tc.desc Verify map callback returns negative decimal -999999.99
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1341,12 +1346,12 @@ export default function Float64ArrayMapTest(): void {
       const actVal57 = result.$_get(0);
       const expectVal = negnum999999Pointninenine;
       expect(actVal57).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0620
      * @tc.name testFloat64ArrayMap062
-     * @tc.desc Verify map fn returns hex literal equivalent 16.0
+     * @tc.desc Verify map callback returns hex literal equivalent 16.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1361,12 +1366,12 @@ export default function Float64ArrayMapTest(): void {
       const actVal58 = result.$_get(0);
       const expectVal = sixteenPointzero;
       expect(actVal58).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0630
      * @tc.name testFloat64ArrayMap063
-     * @tc.desc Verify map fn returns octal literal equivalent 8.0
+     * @tc.desc Verify map callback returns octal literal equivalent 8.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1381,7 +1386,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal59 = result.$_get(0);
       const expectVal = eightPointZero;
       expect(actVal59).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0640
@@ -1400,7 +1405,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal60 = result.$_get(0);
       const expectVal = 1.0;
       expect(actVal60).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0650
@@ -1419,7 +1424,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal61 = result.$_get(0);
       const expectVal = 0.0;
       expect(actVal61).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0660
@@ -1438,7 +1443,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal62 = result.$_get(0);
       const expectVal = 1.0;
       expect(actVal62).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0670
@@ -1457,7 +1462,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal63 = result.$_get(0);
       const expectVal = -1.0;
       expect(actVal63).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0680
@@ -1476,7 +1481,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal64 = result.$_get(0);
       const expectVal = 1.0;
       expect(actVal64).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0690
@@ -1496,7 +1501,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal65 = result.$_get(0);
       const expectVal = doubleMinValue * 3.0;
       expect(actVal65).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0700
@@ -1516,7 +1521,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal66 = result.$_get(4);
       const expectVal = num2147483651Value;
       expect(actVal66).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0710
@@ -1536,7 +1541,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal67 = result.$_get(1);
       const expectVal = maxSafeInteger;
       expect(actVal67).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0720
@@ -1552,13 +1557,10 @@ export default function Float64ArrayMapTest(): void {
         return val * 2.0;
       })
 
-      let same: boolean = false;
       let o1: Object = arr as Object;
       let o2: Object = result as Object;
-      same = o1 === o2;
-      const expectVal = false;
-      expect(same).assertEqual(expectVal);
-    })
+      expect(o1).not().assertEqual(o2);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0730
@@ -1578,7 +1580,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal68 = result.$_get(2);
       const expectVal = int16MinValue;
       expect(actVal68).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0740
@@ -1599,7 +1601,7 @@ export default function Float64ArrayMapTest(): void {
 
       const expectVal = twoValue;
       expect(count).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0750
@@ -1615,13 +1617,10 @@ export default function Float64ArrayMapTest(): void {
         return val * 2.0;
       })
 
-      let same: boolean = false;
       let o1: Object = arr.buffer as Object;
       let o2: Object = result.buffer as Object;
-      same = o1 === o2;
-      const expectVal = false;
-      expect(same).assertEqual(expectVal);
-    })
+      expect(o1).not().assertEqual(o2);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0760
@@ -1641,12 +1640,12 @@ export default function Float64ArrayMapTest(): void {
       const actVal69 = result.$_get(2);
       const expectVal = zeroValue;
       expect(actVal69).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0770
      * @tc.name testFloat64ArrayMap077
-     * @tc.desc Verify map((val: number, index: int, array: float64array) with [a, b] element values
+     * @tc.desc Verify map three-parameter callback doubles first double element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1663,7 +1662,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal70 = result.$_get(0);
       const expectVal = threePointZero;
       expect(actVal70).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0780
@@ -1685,12 +1684,12 @@ export default function Float64ArrayMapTest(): void {
       const actVal71 = result.$_get(0);
       const expectVal = twoPointfoursixeight;
       expect(actVal71).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0790
      * @tc.name testFloat64ArrayMap079
-     * @tc.desc Verify map propagates Error at middle element
+     * @tc.desc Verify map callback throws Error at middle element and propagates it
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1709,12 +1708,12 @@ export default function Float64ArrayMapTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0800
      * @tc.name testFloat64ArrayMap080
-     * @tc.desc Verify map propagates SyntaxError from callback
+     * @tc.desc Verify map callback throws SyntaxError and propagates it
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1730,12 +1729,12 @@ export default function Float64ArrayMapTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("SyntaxError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0810
      * @tc.name testFloat64ArrayMap081
-     * @tc.desc Verify map propagates ReferenceError from callback
+     * @tc.desc Verify map callback throws ReferenceError and propagates it
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1751,12 +1750,12 @@ export default function Float64ArrayMapTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("ReferenceError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0820
      * @tc.name testFloat64ArrayMap082
-     * @tc.desc Verify map propagates EvalError from callback
+     * @tc.desc Verify map callback throws EvalError and propagates it
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1772,12 +1771,12 @@ export default function Float64ArrayMapTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("EvalError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0830
      * @tc.name testFloat64ArrayMap083
-     * @tc.desc Verify map propagates URIError from callback
+     * @tc.desc Verify map callback throws URIError and propagates it
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1793,12 +1792,12 @@ export default function Float64ArrayMapTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("URIError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0840
      * @tc.name testFloat64ArrayMap084
-     * @tc.desc Verify map propagates Error with no message
+     * @tc.desc Verify map callback throws Error with no message and propagates it
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1814,7 +1813,7 @@ export default function Float64ArrayMapTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0850
@@ -1825,15 +1824,14 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(-2147483648);
+      const arr = Float64Array.of(0.1);
       const result = arr.map((val: number, index: int): number => {
         return val + 0.2;
       })
 
-      let notEqual: boolean = result.$_get(0) !== 0.3;
-      const expectVal = true;
-      expect(notEqual).assertEqual(expectVal);
-    })
+      const expectVal = 0.30000000000000004;
+      expect(result.$_get(0)).assertEqual(expectVal);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0860
@@ -1852,7 +1850,7 @@ export default function Float64ArrayMapTest(): void {
 
       const expectVal = fourValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0870
@@ -1876,7 +1874,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal72 = result.$_get(1);
       const expectVal = threeValue;
       expect(actVal72).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0880
@@ -1896,7 +1894,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal73 = result.$_get(0);
       const expectVal = num128Value;
       expect(actVal73).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0890
@@ -1916,7 +1914,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal74 = result.$_get(0);
       const expectVal = num65534Value;
       expect(actVal74).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0900
@@ -1936,7 +1934,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal75 = result.$_get(0);
       const expectVal = num2147483646Value;
       expect(actVal75).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0910
@@ -1956,7 +1954,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal76 = result.$_get(0);
       const expectVal = floatMinValue * 2.0;
       expect(actVal76).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0920
@@ -1978,7 +1976,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal78 = result.$_get(4);
       const expectVal2 = 5.0;
       expect(actVal78).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0930
@@ -2006,7 +2004,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal80 = result.$_get(9);
       const expectVal2 = oneValue + 1.0;
       expect(actVal80).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0940
@@ -2031,7 +2029,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal83 = result.$_get(3);
       const expectVal3 = 4.0;
       expect(actVal83).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0950
@@ -2053,7 +2051,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal85 = result.$_get(1);
       const expectVal2 = 1.0;
       expect(actVal85).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0960
@@ -2077,7 +2075,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal87 = result.$_get(1);
       const expectVal2 = 171.0;
       expect(actVal87).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0970
@@ -2101,7 +2099,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal89 = result.$_get(1);
       const expectVal2 = 17.0;
       expect(actVal89).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0980
@@ -2125,7 +2123,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal91 = result.$_get(1);
       const expectVal2 = 20.0;
       expect(actVal91).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0990
@@ -2147,7 +2145,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal93 = result.$_get(1);
       const expectVal2 = 4.0e5;
       expect(actVal93).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1000
@@ -2168,7 +2166,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal94 = copied.$_get(0);
       const expectVal = negnum65536Value;
       expect(actVal94).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1010
@@ -2192,7 +2190,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal96 = result.$_get(2);
       const expectVal2 = twoValue;
       expect(actVal96).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1020
@@ -2212,7 +2210,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal97 = result.$_get(0);
       const expectVal = zeroValue;
       expect(actVal97).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1030
@@ -2234,7 +2232,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal99 = Number.isNaN(result.$_get(2));
       const expectVal2 = true;
       expect(actVal99).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1040
@@ -2257,7 +2255,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal101 = result.$_get(2);
       const expectVal2 = doubleMaxValue;
       expect(actVal101).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1050
@@ -2281,7 +2279,7 @@ export default function Float64ArrayMapTest(): void {
       const actVal103 = result.$_get(1);
       const expectVal2 = minSafeInteger * 2.0;
       expect(actVal103).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1060
@@ -2300,7 +2298,7 @@ export default function Float64ArrayMapTest(): void {
       expect(mapped.length).assertEqual(threeValue);
       expect(mapped[0]).assertEqual(onePointone);
       expect(mapped[2]).assertEqual(oneValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1070
@@ -2317,7 +2315,7 @@ export default function Float64ArrayMapTest(): void {
       const mapped = values.map((val) => val * 2);
       expect(mapped[0]).assertEqual(oneValue);
       expect(mapped[1]).assertEqual(threeValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1080
@@ -2332,7 +2330,7 @@ export default function Float64ArrayMapTest(): void {
       const mapped = values.map((val: number): number => Number.isNaN(val) ? 0.0 : val);
       expect(mapped[0]).assertEqual(0.0);
       expect(mapped[1]).assertEqual(1.0);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1090
@@ -2347,7 +2345,7 @@ export default function Float64ArrayMapTest(): void {
       const mapped = values.map((val: number): number => val > 0.0 ? 1.0 : -1.0);
       expect(mapped[0]).assertEqual(1.0);
       expect(mapped[1]).assertEqual(-1.0);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1100
@@ -2363,7 +2361,7 @@ export default function Float64ArrayMapTest(): void {
       const mapped = values.map((val) => 0.0);
       expect(mapped[0]).assertEqual(zeroPointZero);
       expect(mapped[2]).assertEqual(zeroPointZero);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1110
@@ -2379,7 +2377,7 @@ export default function Float64ArrayMapTest(): void {
       const mapped = values.map((val) => val + 1);
       const expectVal = zeroValue;
       expect(mapped.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1120
@@ -2398,7 +2396,7 @@ export default function Float64ArrayMapTest(): void {
       expect(mapped[0]).assertEqual(pointFive);
       expect(mapped[1]).assertEqual(twoPointFive);
       expect(mapped[2]).assertEqual(twoPointtwofive);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1130
@@ -2415,12 +2413,12 @@ export default function Float64ArrayMapTest(): void {
       values[0] = 999.0;
       const expectVal = negnum65536Value;
       expect(mapped[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1140
      * @tc.name testFloat64ArrayMap114
-     * @tc.desc Verify map((val) with [-2147483648, -1] exception handling
+     * @tc.desc Verify map callback throws Error and propagates it
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2436,7 +2434,7 @@ export default function Float64ArrayMapTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1150
@@ -2451,7 +2449,7 @@ export default function Float64ArrayMapTest(): void {
       const mapped = values.map((val: number): number => val * 2.0);
       const expectVal = Infinity;
       expect(mapped[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1160
@@ -2467,7 +2465,7 @@ export default function Float64ArrayMapTest(): void {
       const mapped = values.map((val: number): number => val * 2.0);
       const expectVal = minPositiveValue * 2.0;
       expect(mapped[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1170
@@ -2484,7 +2482,7 @@ export default function Float64ArrayMapTest(): void {
       const mapped = values.map((val) => -val);
       expect(mapped[0]).assertEqual(num32768Value);
       expect(mapped[1]).assertEqual(num128Value);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1180
@@ -2501,7 +2499,7 @@ export default function Float64ArrayMapTest(): void {
       const values = source.map((value) => value - 1.0);
       expect(values.length).assertEqual(twoValue);
       expect(values[0]).assertEqual(oneValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1190
@@ -2517,7 +2515,7 @@ export default function Float64ArrayMapTest(): void {
       const values = source.map((value, index) => value + 1.0);
       const expectVal = twoPointZero;
       expect(values[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1200
@@ -2536,7 +2534,7 @@ export default function Float64ArrayMapTest(): void {
       const m = arr.map((v: number): number => v & 0x0F);
       expect(m[0]).assertEqual(fifteenValue);
       expect(m[1]).assertEqual(tenValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1210
@@ -2555,7 +2553,7 @@ export default function Float64ArrayMapTest(): void {
       const m = arr.map((v: number): number => (v.toInt() & 0b00001111).toDouble());
       expect(m[0]).assertEqual(fifteenValue);
       expect(m[1]).assertEqual(tenValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1220
@@ -2572,7 +2570,7 @@ export default function Float64ArrayMapTest(): void {
       const mapped = arr.map((v: number): number => Number.isNaN(v) ? 0.0 : v);
       expect(mapped[0]).assertEqual(0.0);
       expect(mapped[1]).assertEqual(doubleMaxValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1230
@@ -2589,7 +2587,7 @@ export default function Float64ArrayMapTest(): void {
       const mapped = arr.map((v: number): number => v > 0.0 ? 1.0 : -1.0);
       expect(mapped[0]).assertEqual(1.0);
       expect(mapped[1]).assertEqual(-1.0);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1240
@@ -2606,7 +2604,7 @@ export default function Float64ArrayMapTest(): void {
       const mapped = arr.map((v: number): number => v * 2.0);
       expect(mapped[0]).assertEqual(doubleMinValue * 2.0);
       expect(mapped[1]).assertEqual(doubleMaxValue * 2.0);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1250
@@ -2625,12 +2623,12 @@ export default function Float64ArrayMapTest(): void {
       })
       const expectVal = 'int';
       expect(types[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1260
      * @tc.name testFloat64ArrayMap126
-     * @tc.desc Verify map callback array parameter refers to original array
+     * @tc.desc Verify map callback array parameter is the original array object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2642,13 +2640,10 @@ export default function Float64ArrayMapTest(): void {
         callbackArr = array;
         return val;
       })
-      let same: boolean = false;
       let o1: Object = arr as Object;
       let o2: Object = callbackArr as Object;
-      same = o1 === o2;
-      const expectVal = true;
-      expect(same).assertEqual(expectVal);
-    })
+      expect(o1).assertEqual(o2);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1270
@@ -2667,7 +2662,7 @@ export default function Float64ArrayMapTest(): void {
       })
       expect(result[0]).assertEqual(pointFive);
       expect(result[1]).assertEqual(onePointFive);
-    })
+    });
 
   })
 }
