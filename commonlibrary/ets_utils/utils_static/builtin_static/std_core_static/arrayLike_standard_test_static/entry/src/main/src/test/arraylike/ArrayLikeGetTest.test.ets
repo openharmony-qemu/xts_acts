@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 import Utils from './../Util.test';
 
 /** int enum for $_get index enum-to-number conversion (conversions.md) */

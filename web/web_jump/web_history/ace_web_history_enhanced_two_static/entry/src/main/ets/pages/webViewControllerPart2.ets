@@ -23,7 +23,7 @@ import hilog from '@ohos.hilog';
 import { Driver, ON } from '@ohos.UiTest';
 import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter';
-import { Hypium } from '../../../hypium';
+import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
 import testsuite from '../../src/test/List.test';
 import Utils from '../../src/test/Utils.test';
 import image from '@ohos.multimedia.image';

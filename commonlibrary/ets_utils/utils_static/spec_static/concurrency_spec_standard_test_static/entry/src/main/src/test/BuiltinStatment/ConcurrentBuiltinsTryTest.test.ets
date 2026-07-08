@@ -33,7 +33,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 import {
   builtinsStatementTry0100,
   builtinsStatementTry0200,

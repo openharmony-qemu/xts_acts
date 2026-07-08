@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../../hypium"
+} from "@ohos/hypium-binary/src/main/indexStatic"
 
 interface Issue_0 {
   title?: string

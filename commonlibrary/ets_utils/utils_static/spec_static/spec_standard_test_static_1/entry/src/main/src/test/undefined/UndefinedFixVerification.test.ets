@@ -16,7 +16,7 @@
 
 import Utils from "../Util.test";
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 
 // Define interfaces for type safety
 interface InnerObject {

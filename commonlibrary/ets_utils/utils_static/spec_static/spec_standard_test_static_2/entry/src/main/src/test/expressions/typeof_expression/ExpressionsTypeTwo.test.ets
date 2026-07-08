@@ -25,7 +25,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../hypium";
+} from "@ohos/hypium-binary/src/main/indexStatic";
 
 enum EN1 { a, b, c }
 enum ES1 { a = "a", b = "b", c = "c" }

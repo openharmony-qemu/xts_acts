@@ -27,7 +27,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../../../hypium';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 
 export default function StringEqualityOperatorsTest(): void {
   describe("StringEqualityOperatorsTest", () => {

@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../../hypium";
+} from "@ohos/hypium-binary/src/main/indexStatic";
 
 type someUnion_0 = number|string;
 

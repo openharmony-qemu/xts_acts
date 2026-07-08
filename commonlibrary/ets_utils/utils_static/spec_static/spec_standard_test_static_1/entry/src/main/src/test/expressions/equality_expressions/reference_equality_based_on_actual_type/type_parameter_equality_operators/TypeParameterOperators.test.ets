@@ -27,7 +27,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../../../../hypium';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 
 function expectNotEqualTrue<P, Q>(p: P, q: Q, ps: string, qs: string): string {
   return p != q && q != p ? '' : `\n${ps} != ${qs}, expected true, got false`;

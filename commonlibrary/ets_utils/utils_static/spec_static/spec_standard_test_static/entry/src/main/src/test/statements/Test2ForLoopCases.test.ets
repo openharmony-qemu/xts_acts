@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { beforeAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
 
 class Test2ClassA1 {
 }

@@ -10,7 +10,7 @@ import {
   TestType,
   Size,
   Level
-} from '../../../hypium/index';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 
 export async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {

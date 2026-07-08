@@ -20,7 +20,7 @@
  * parity checks so this file stays dominated by observable RegExp behavior rather than boilerplate try/catch.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe as hypDescribe, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe as hypDescribe, it, expect, TestType, Size, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import Utils from '../Util.test';
 import {
   regexpSymbolMatchAll,

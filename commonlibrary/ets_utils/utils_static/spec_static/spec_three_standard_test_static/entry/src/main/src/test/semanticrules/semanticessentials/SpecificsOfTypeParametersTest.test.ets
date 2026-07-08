@@ -16,7 +16,7 @@
 
 import {
     afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType
-} from '../../../../../hypium/index';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 
 class Pos<T extends number> {
     constructor(x: T) {}

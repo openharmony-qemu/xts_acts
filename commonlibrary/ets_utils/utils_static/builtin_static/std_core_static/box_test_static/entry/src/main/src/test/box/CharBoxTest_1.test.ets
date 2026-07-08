@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
 import Utils from '../Util.test';
 import { CHAR_BEL, CHAR_BS, CHAR_TAB, CHAR_LF, CHAR_VT, CHAR_FF, CHAR_CR, CHAR_DEL } from '../Util.test';
 

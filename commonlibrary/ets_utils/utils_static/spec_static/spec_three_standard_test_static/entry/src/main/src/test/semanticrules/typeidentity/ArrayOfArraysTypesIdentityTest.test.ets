@@ -15,7 +15,7 @@
  */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, it, Level, Size, TestType, expect }
-  from '../../../../../hypium/index';
+  from '@ohos/hypium-binary/src/main/indexStatic';
 
 namespace testNS1_1 {
 

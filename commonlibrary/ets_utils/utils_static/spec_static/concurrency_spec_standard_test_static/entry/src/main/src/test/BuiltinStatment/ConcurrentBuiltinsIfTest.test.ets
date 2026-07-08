@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 import { Arr, Big, cd, Colour, condition, Inter, Ob, St } from '../pages/Function';
 
 import {

@@ -15,7 +15,7 @@
  */
 
 import emitter from '@ohos.events.emitter';
-import { expect } from "../../../hypium/index";
+import { expect } from "@ohos/hypium-binary/src/main/indexStatic";
 import { ComponentInfo, RectInfo } from './Interfaces';
 import { Driver, ON, PointerMatrix, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';

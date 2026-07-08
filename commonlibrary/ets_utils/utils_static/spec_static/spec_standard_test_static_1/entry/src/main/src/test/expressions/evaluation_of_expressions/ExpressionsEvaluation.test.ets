@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../hypium";
+} from "@ohos/hypium-binary/src/main/indexStatic";
 
 type Incrementor_0 = (i: int) => int;
 let sg_0: int;

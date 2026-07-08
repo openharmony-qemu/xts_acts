@@ -27,7 +27,7 @@ import {
 } from '@ohos.arkui.component'
 import hilog from '@ohos.hilog';
 import { BusinessError,Callback, RecordData } from '@ohos.base'
-import { Hypium } from '../../../hypium';
+import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
 import Utils from '../../src/test/Utils.test';
 import events_emitter from '@ohos.events.emitter';
 

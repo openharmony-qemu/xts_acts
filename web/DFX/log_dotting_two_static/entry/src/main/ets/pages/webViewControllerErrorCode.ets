@@ -22,7 +22,7 @@ import { BusinessError, RecordData } from '@ohos.base';
 import events_emitter from '@ohos.events.emitter';
 import { Driver, ON } from '@ohos.UiTest';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Hypium } from "../../../hypium/index";
+import { Hypium } from "@ohos/hypium-binary/src/main/indexStatic";
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 @Entry

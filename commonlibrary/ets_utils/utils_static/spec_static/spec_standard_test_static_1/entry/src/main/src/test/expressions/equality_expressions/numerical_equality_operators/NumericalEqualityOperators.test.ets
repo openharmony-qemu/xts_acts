@@ -27,7 +27,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../../../hypium';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 
 function checkEq_1(c1: char, c2: char): boolean {
   return c1 == c2

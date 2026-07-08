@@ -1,5 +1,5 @@
 'use static';
-import { Level, Size, TestType, beforeAll, describe, it, beforeEach } from '../../../hypium/index'
+import { Level, Size, TestType, beforeAll, describe, it, beforeEach } from '@ohos/hypium-binary/src/main/indexStatic'
 import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';

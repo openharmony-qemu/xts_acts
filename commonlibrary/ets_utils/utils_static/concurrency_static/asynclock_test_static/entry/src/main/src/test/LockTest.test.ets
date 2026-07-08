@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, afterAll, it, expect, TestType, Level, Size, afterEach } from "../../../hypium/index";
+import { describe, afterAll, it, expect, TestType, Level, Size, afterEach } from "@ohos/hypium-binary/src/main/indexStatic";
 import {
   exclusiveSingleTest,
   exclusiveMultiTest,

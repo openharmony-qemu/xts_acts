@@ -24,7 +24,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 
 class Err extends Error {}
 class Er extends Error {}

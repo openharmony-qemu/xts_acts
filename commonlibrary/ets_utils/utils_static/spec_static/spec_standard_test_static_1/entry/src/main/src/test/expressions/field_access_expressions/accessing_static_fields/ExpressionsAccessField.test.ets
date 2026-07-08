@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../../hypium";
+} from "@ohos/hypium-binary/src/main/indexStatic";
 
 class A_access_non_static_field {
   a: int = 1

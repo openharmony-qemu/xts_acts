@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium/index';
+import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
 import sleep from './Util.test';
 
 const BYTE_MAX_INT: int = 127;

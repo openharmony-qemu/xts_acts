@@ -1,5 +1,5 @@
 'use static';
-import { expect } from "../../../hypium/index";
+import { expect } from "@ohos/hypium-binary/src/main/indexStatic";
 import emitter from '@ohos.events.emitter';
 import hilog from '@ohos.hilog';
 import HashMap from '@ohos.util.HashMap';

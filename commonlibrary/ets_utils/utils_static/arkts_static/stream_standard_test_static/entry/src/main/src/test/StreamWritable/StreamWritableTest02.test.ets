@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { stream } from '@kit.ArkTS';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
 import Utils from '../Util.test';
 
 class TestWritableLog extends stream.Writable {

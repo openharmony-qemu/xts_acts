@@ -1,6 +1,6 @@
 'use static';
 
-import { describe, it, expect, TestType, Size, Level, beforeEach, beforeAll} from '../../../hypium/index';
+import { describe, it, expect, TestType, Size, Level, beforeEach, beforeAll} from '@ohos/hypium-binary/src/main/indexStatic';
 import Utils from './Util.test';
 
 let domain: number = 0x0000;

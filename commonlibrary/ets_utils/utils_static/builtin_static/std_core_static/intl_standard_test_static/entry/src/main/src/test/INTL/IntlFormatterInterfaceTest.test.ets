@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
 
 export default function IntlFormatterInterfaceTest(): void {
   describe('IntlFormatterInterfaceTest', (): void => {
