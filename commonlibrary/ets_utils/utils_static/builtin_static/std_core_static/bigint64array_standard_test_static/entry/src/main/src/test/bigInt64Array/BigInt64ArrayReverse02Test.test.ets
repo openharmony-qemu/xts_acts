@@ -34,112 +34,112 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0010
-     * @tc.name testBigInt64ArrayReverseTwo001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0100
+     * @tc.name testBigInt64ArrayReverseTwo0100
      * @tc.desc Verify reverse keeps BYTES_PER_ELEMENT as 8 for an empty array.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([]);
       let res = arr.reverse();
       expect(res.BYTES_PER_ELEMENT).assertEqual(8);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0020
-     * @tc.name testBigInt64ArrayReverseTwo002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0200
+     * @tc.name testBigInt64ArrayReverseTwo0200
      * @tc.desc Verify reverse keeps BYTES_PER_ELEMENT as 8 for a one-element array.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([0n]);
       let res = arr.reverse();
       expect(res.BYTES_PER_ELEMENT).assertEqual(8);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0030
-     * @tc.name testBigInt64ArrayReverseTwo003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0300
+     * @tc.name testBigInt64ArrayReverseTwo0300
      * @tc.desc Verify reverse returns length 0 for an empty array.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([]);
       let res = arr.reverse();
       expect(res.length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0040
-     * @tc.name testBigInt64ArrayReverseTwo004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0400
+     * @tc.name testBigInt64ArrayReverseTwo0400
      * @tc.desc Verify reverse returns length 1 for a one-element array.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([99n]);
       let res = arr.reverse();
       expect(res.length).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0050
-     * @tc.name testBigInt64ArrayReverseTwo005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0500
+     * @tc.name testBigInt64ArrayReverseTwo0500
      * @tc.desc Verify reverse returns byteLength 0 for an empty array.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([]);
       let res = arr.reverse();
       expect(res.byteLength).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0060
-     * @tc.name testBigInt64ArrayReverseTwo006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0600
+     * @tc.name testBigInt64ArrayReverseTwo0600
      * @tc.desc Verify reverse returns byteLength 8 for a one-element array.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([10n]);
       let res = arr.reverse();
       expect(res.byteLength).assertEqual(8);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0070
-     * @tc.name testBigInt64ArrayReverseTwo007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0700
+     * @tc.name testBigInt64ArrayReverseTwo0700
      * @tc.desc Verify reverse returns byteLength 16 for a two-element array.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([-10n, -20n]);
       let res = arr.reverse();
       expect(res.byteLength).assertEqual(16);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0080
-     * @tc.name testBigInt64ArrayReverseTwo008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0800
+     * @tc.name testBigInt64ArrayReverseTwo0800
      * @tc.desc Verify reverse returns byteLength 80 for a view created from an 80-byte buffer.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(80);
       let arr = new BigInt64Array(buf);
       let res = arr.reverse();
@@ -147,14 +147,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0090
-     * @tc.name testBigInt64ArrayReverseTwo009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0900
+     * @tc.name testBigInt64ArrayReverseTwo0900
      * @tc.desc Verify reverse keeps byteOffset 0 for a zero-length view at offset 0.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(16);
       let arr = new BigInt64Array(buf, 0, 0);
       let res = arr.reverse();
@@ -162,14 +162,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0100
-     * @tc.name testBigInt64ArrayReverseTwo010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_1000
+     * @tc.name testBigInt64ArrayReverseTwo1000
      * @tc.desc Verify reverse keeps byteOffset 8 for a zero-length view at offset 8.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(16);
       let arr = new BigInt64Array(buf, 8, 0);
       let res = arr.reverse();
@@ -177,14 +177,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0110
-     * @tc.name testBigInt64ArrayReverseTwo011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_1100
+     * @tc.name testBigInt64ArrayReverseTwo1100
      * @tc.desc Verify reverse keeps byteOffset 0 for a one-element view at offset 0.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(16);
       let arr = new BigInt64Array(buf, 0, 1);
       let res = arr.reverse();
@@ -192,14 +192,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0120
-     * @tc.name testBigInt64ArrayReverseTwo012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_1200
+     * @tc.name testBigInt64ArrayReverseTwo1200
      * @tc.desc Verify reverse keeps byteOffset 8 for a one-element view at offset 8.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(16);
       let arr = new BigInt64Array(buf, 8, 1);
       let res = arr.reverse();
@@ -207,14 +207,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0130
-     * @tc.name testBigInt64ArrayReverseTwo013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_1300
+     * @tc.name testBigInt64ArrayReverseTwo1300
      * @tc.desc Verify changes through the reversed one-element result update the source array.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([5n]);
       let res = arr.reverse();
       res[0] = 99n;
@@ -222,14 +222,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0140
-     * @tc.name testBigInt64ArrayReverseTwo014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_1400
+     * @tc.name testBigInt64ArrayReverseTwo1400
      * @tc.desc Verify changes through the reversed two-element result update the source array.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([5n, 10n]);
       let res = arr.reverse();
       res[1] = 88n;
@@ -237,14 +237,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0150
-     * @tc.name testBigInt64ArrayReverseTwo015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_1500
+     * @tc.name testBigInt64ArrayReverseTwo1500
      * @tc.desc Verify source and reversed result stay synchronized after alternating updates.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n]);
       let res = arr.reverse();
       res[0] = 9n;
@@ -254,14 +254,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0160
-     * @tc.name testBigInt64ArrayReverseTwo016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_1600
+     * @tc.name testBigInt64ArrayReverseTwo1600
      * @tc.desc Verify reversing a slice updates only the sliced copy and not the source array.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n]);
       let sliced = arr.slice(1, 4);
       let res = sliced.reverse();
@@ -272,42 +272,42 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0170
-     * @tc.name testBigInt64ArrayReverseTwo017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_1700
+     * @tc.name testBigInt64ArrayReverseTwo1700
      * @tc.desc Verify reversing an empty array twice keeps its length at 0.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([]);
       let res = arr.reverse().reverse();
       expect(res.length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0180
-     * @tc.name testBigInt64ArrayReverseTwo018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_1800
+     * @tc.name testBigInt64ArrayReverseTwo1800
      * @tc.desc Verify reversing a one-element array twice keeps its value unchanged.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([100n]);
       let res = arr.reverse().reverse();
       expect(res[0]).assertEqual(100n);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0190
-     * @tc.name testBigInt64ArrayReverseTwo019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_1900
+     * @tc.name testBigInt64ArrayReverseTwo1900
      * @tc.desc Verify reversing a two-element array twice restores the original order.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, -1n]);
       let res = arr.reverse().reverse();
       expect(res[0]).assertEqual(1n);
@@ -315,14 +315,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0200
-     * @tc.name testBigInt64ArrayReverseTwo020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_2000
+     * @tc.name testBigInt64ArrayReverseTwo2000
      * @tc.desc Verify reversing a three-element array twice restores the original order.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([5n, 10n, 15n]);
       let res = arr.reverse().reverse();
       expect(res[0]).assertEqual(5n);
@@ -331,14 +331,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0210
-     * @tc.name testBigInt64ArrayReverseTwo021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_2100
+     * @tc.name testBigInt64ArrayReverseTwo2100
      * @tc.desc Verify reversing a two-element array three times matches one reverse.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([10n, 20n]);
       let res = arr.reverse().reverse().reverse();
       expect(res[0]).assertEqual(20n);
@@ -346,14 +346,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0220
-     * @tc.name testBigInt64ArrayReverseTwo022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_2200
+     * @tc.name testBigInt64ArrayReverseTwo2200
      * @tc.desc Verify reversing a three-element array three times matches one reverse.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([10n, 20n, 30n]);
       let res = arr.reverse().reverse().reverse();
       expect(res[0]).assertEqual(30n);
@@ -361,14 +361,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0230
-     * @tc.name testBigInt64ArrayReverseTwo023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_2300
+     * @tc.name testBigInt64ArrayReverseTwo2300
      * @tc.desc Verify reversing a four-element array four times returns to the original order.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n, 4n]);
       let res = arr.reverse().reverse().reverse().reverse();
       expect(res[0]).assertEqual(1n);
@@ -376,15 +376,15 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0240
-     * @tc.name testBigInt64ArrayReverseTwo024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_2400
+     * @tc.name testBigInt64ArrayReverseTwo2400
      * @tc.desc Verify reversing a buffer-backed array twice preserves later independent
      * changes.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(16);
       let arr = new BigInt64Array(buf);
       arr[0] = 77n;
@@ -395,14 +395,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0250
-     * @tc.name testBigInt64ArrayReverseTwo025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_2500
+     * @tc.name testBigInt64ArrayReverseTwo2500
      * @tc.desc Verify reversing an offset subview twice keeps unrelated buffer data unaffected.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(32);
       let arr = new BigInt64Array(buf, 8, 2);
       arr[0] = 111n;
@@ -412,15 +412,15 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0260
-     * @tc.name testBigInt64ArrayReverseTwo026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_2600
+     * @tc.name testBigInt64ArrayReverseTwo2600
      * @tc.desc Verify mutations between repeated reverses appear at the correct restored
      * positions.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n]);
       let res1 = arr.reverse();
       res1[0] = 9n;
@@ -430,14 +430,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0270
-     * @tc.name testBigInt64ArrayReverseTwo027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_2700
+     * @tc.name testBigInt64ArrayReverseTwo2700
      * @tc.desc Verify reversing two maximum values keeps both values intact.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([9223372036854775807n, 9223372036854775807n]);
       let res = arr.reverse();
       expect(res[0]).assertEqual(9223372036854775807n);
@@ -445,14 +445,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0280
-     * @tc.name testBigInt64ArrayReverseTwo028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_2800
+     * @tc.name testBigInt64ArrayReverseTwo2800
      * @tc.desc Verify reversing two minimum values keeps both values intact.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([-9223372036854775808n, -9223372036854775808n]);
       let res = arr.reverse();
       expect(res[0]).assertEqual(-9223372036854775808n);
@@ -460,15 +460,15 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0290
-     * @tc.name testBigInt64ArrayReverseTwo029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_2900
+     * @tc.name testBigInt64ArrayReverseTwo2900
      * @tc.desc Verify reversing one minimum and one maximum value swaps them without
      * truncation.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([9223372036854775807n, -9223372036854775808n]);
       let res = arr.reverse();
       expect(res[0]).assertEqual(-9223372036854775808n);
@@ -476,14 +476,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0300
-     * @tc.name testBigInt64ArrayReverseTwo030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_3000
+     * @tc.name testBigInt64ArrayReverseTwo3000
      * @tc.desc Verify reversing three extreme values keeps cross-boundary swaps correct.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([9223372036854775807n, 0n, -9223372036854775808n]);
       let res = arr.reverse();
       expect(res[0]).assertEqual(-9223372036854775808n);
@@ -491,14 +491,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0310
-     * @tc.name testBigInt64ArrayReverseTwo031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_3100
+     * @tc.name testBigInt64ArrayReverseTwo3100
      * @tc.desc Verify reversing values near the safe integer boundary keeps exact positions.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([9007199254740991n, -9007199254740991n]);
       let res = arr.reverse();
       expect(res[0]).assertEqual(-9007199254740991n);
@@ -506,14 +506,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0320
-     * @tc.name testBigInt64ArrayReverseTwo032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_3200
+     * @tc.name testBigInt64ArrayReverseTwo3200
      * @tc.desc Verify reversing a zero-length shared view does not affect the Int8Array alias.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(8);
       let arr = new BigInt64Array(buf, 0, 0);
       let i8 = new Int8Array(buf);
@@ -523,14 +523,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0330
-     * @tc.name testBigInt64ArrayReverseTwo033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_3300
+     * @tc.name testBigInt64ArrayReverseTwo3300
      * @tc.desc Verify reversing a one-element shared view keeps the stored value unchanged.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(8);
       let arr = new BigInt64Array(buf);
       arr[0] = 255n;
@@ -539,14 +539,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0340
-     * @tc.name testBigInt64ArrayReverseTwo034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_3400
+     * @tc.name testBigInt64ArrayReverseTwo3400
      * @tc.desc Verify reversing a two-element shared buffer keeps the swapped layout correct.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(16);
       let arr = new BigInt64Array(buf);
       let i8 = new Int8Array(buf);
@@ -558,14 +558,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0350
-     * @tc.name testBigInt64ArrayReverseTwo035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_3500
+     * @tc.name testBigInt64ArrayReverseTwo3500
      * @tc.desc Verify aliases over the same buffer observe the reversed order.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(16);
       let arr = new BigInt64Array(buf);
       let bArr = new BigInt64Array(buf);
@@ -577,14 +577,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0360
-     * @tc.name testBigInt64ArrayReverseTwo036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_3600
+     * @tc.name testBigInt64ArrayReverseTwo3600
      * @tc.desc Verify reversing one overlapping view keeps the shared region consistent.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(24);
       let arr1 = new BigInt64Array(buf, 0, 2);
       let arr2 = new BigInt64Array(buf, 8, 2);
@@ -597,14 +597,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0370
-     * @tc.name testBigInt64ArrayReverseTwo037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_3700
+     * @tc.name testBigInt64ArrayReverseTwo3700
      * @tc.desc Verify reversing a nested shared view keeps all reads consistent.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(24);
       let v1 = new BigInt64Array(buf);
       v1[0] = 10n;
@@ -617,14 +617,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0380
-     * @tc.name testBigInt64ArrayReverseTwo038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_3800
+     * @tc.name testBigInt64ArrayReverseTwo3800
      * @tc.desc Verify reversing a shared extreme-value view keeps buffer contents stable.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(16);
       let v1 = new BigInt64Array(buf);
       v1[0] = 9223372036854775807n;
@@ -636,14 +636,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0390
-     * @tc.name testBigInt64ArrayReverseTwo039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_3900
+     * @tc.name testBigInt64ArrayReverseTwo3900
      * @tc.desc Verify reversing a middle subview does not affect the head or tail values.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(32);
       let arr = new BigInt64Array(buf);
       arr[0] = 11n;
@@ -659,14 +659,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0400
-     * @tc.name testBigInt64ArrayReverseTwo040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_4000
+     * @tc.name testBigInt64ArrayReverseTwo4000
      * @tc.desc Verify reversing a subview keeps the returned handle and root view synchronized.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(32);
       let root = new BigInt64Array(buf);
       root[1] = 55n;
@@ -679,15 +679,15 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0410
-     * @tc.name testBigInt64ArrayReverseTwo041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_4100
+     * @tc.name testBigInt64ArrayReverseTwo4100
      * @tc.desc Verify sequential reverses across multiple views produce the expected composite
      * order.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(24);
       let v1 = new BigInt64Array(buf);
       v1[0] = 1n;
@@ -702,14 +702,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0420
-     * @tc.name testBigInt64ArrayReverseTwo042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_4200
+     * @tc.name testBigInt64ArrayReverseTwo4200
      * @tc.desc Verify reversing a subarray view updates the parent array in place.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n]);
       let sub = arr.subarray(1, 4);
       let res = sub.reverse();
@@ -722,14 +722,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0430
-     * @tc.name testBigInt64ArrayReverseTwo043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_4300
+     * @tc.name testBigInt64ArrayReverseTwo4300
      * @tc.desc Verify nested view reverses preserve the final outer mapping.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(32);
       let outer = new BigInt64Array(buf);
       outer[0] = 1n;
@@ -744,14 +744,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0440
-     * @tc.name testBigInt64ArrayReverseTwo044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_4400
+     * @tc.name testBigInt64ArrayReverseTwo4400
      * @tc.desc Verify large array reverse preserves byteLength correctly.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array(100);
       for (let i = 0; i < 100; i++) {
         arr[i] = BigInt(i);
@@ -764,14 +764,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0450
-     * @tc.name testBigInt64ArrayReverseTwo045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_4500
+     * @tc.name testBigInt64ArrayReverseTwo4500
      * @tc.desc Verify large array reverse with an offset view preserves property values.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(160);
       let arr = new BigInt64Array(buf, 16, 10);
       for (let i = 0; i < 10; i++) {
@@ -786,15 +786,15 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0460
-     * @tc.name testBigInt64ArrayReverseTwo046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_4600
+     * @tc.name testBigInt64ArrayReverseTwo4600
      * @tc.desc Verify reverse on shared buffer with BigInt64Array and Int32Array mixed views
      * keeps data consistent across element sizes.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(16);
       let bi64 = new BigInt64Array(buf);
       bi64[0] = 1n;
@@ -806,15 +806,15 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0470
-     * @tc.name testBigInt64ArrayReverseTwo047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_4700
+     * @tc.name testBigInt64ArrayReverseTwo4700
      * @tc.desc Verify reverse on shared buffer with BigInt64Array and Uint8Array mixed views
      * reflects byte-level changes after reversal.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(16);
       let bi64 = new BigInt64Array(buf);
       bi64[0] = BigInt(0x0102030405060708);
@@ -827,14 +827,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0480
-     * @tc.name testBigInt64ArrayReverseTwo048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_4800
+     * @tc.name testBigInt64ArrayReverseTwo4800
      * @tc.desc Verify reverse after fill operation on a shared buffer view propagates correctly.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array(4);
       arr.fill(5n, 0, 2);
       arr.fill(10n, 2, 4);
@@ -846,14 +846,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0490
-     * @tc.name testBigInt64ArrayReverseTwo049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_4900
+     * @tc.name testBigInt64ArrayReverseTwo4900
      * @tc.desc Verify multiple overlapping subviews remain consistent after sequential reverses.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(32);
       let root = new BigInt64Array(buf);
       root[0] = 1n;
@@ -871,14 +871,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0500
-     * @tc.name testBigInt64ArrayReverseTwo050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_5000
+     * @tc.name testBigInt64ArrayReverseTwo5000
      * @tc.desc Verify subarray of subarray reverse chain updates root array correctly.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n, 60n]);
       let sub1 = arr.subarray(1, 6);
       let sub2 = sub1.subarray(1, 4);
@@ -892,14 +892,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0510
-     * @tc.name testBigInt64ArrayReverseTwo051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_5100
+     * @tc.name testBigInt64ArrayReverseTwo5100
      * @tc.desc Verify reverse after copyWithin on the same array preserves correct order.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
       arr.copyWithin(0, 2, 5);
       arr.reverse();
@@ -911,14 +911,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0520
-     * @tc.name testBigInt64ArrayReverseTwo052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_5200
+     * @tc.name testBigInt64ArrayReverseTwo5200
      * @tc.desc Verify three aliases over the same buffer observe consistent state after reverse.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(16);
       let a = new BigInt64Array(buf);
       let b = new BigInt64Array(buf);
@@ -931,14 +931,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0530
-     * @tc.name testBigInt64ArrayReverseTwo053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_5300
+     * @tc.name testBigInt64ArrayReverseTwo5300
      * @tc.desc Verify reverse on a full-buffer view keeps buffer byteLength unchanged.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(24);
       let arr = new BigInt64Array(buf);
       arr[0] = 1n;
@@ -950,14 +950,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0540
-     * @tc.name testBigInt64ArrayReverseTwo054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_5400
+     * @tc.name testBigInt64ArrayReverseTwo5400
      * @tc.desc Verify reverse on offset view preserves buffer independence from other views.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(40);
       let head = new BigInt64Array(buf, 0, 2);
       let tail = new BigInt64Array(buf, 16, 2);
@@ -972,14 +972,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0550
-     * @tc.name testBigInt64ArrayReverseTwo055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_5500
+     * @tc.name testBigInt64ArrayReverseTwo5500
      * @tc.desc Verify reverse on a view with non-zero byteOffset preserves all property values.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(64);
       let arr = new BigInt64Array(buf, 24, 4);
       arr[0] = 5n;
@@ -995,14 +995,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0560
-     * @tc.name testBigInt64ArrayReverseTwo056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_5600
+     * @tc.name testBigInt64ArrayReverseTwo5600
      * @tc.desc Verify single-element subview reverse keeps outer view values unchanged.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(24);
       let outer = new BigInt64Array(buf);
       outer[0] = 10n;
@@ -1017,14 +1017,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0570
-     * @tc.name testBigInt64ArrayReverseTwo057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_5700
+     * @tc.name testBigInt64ArrayReverseTwo5700
      * @tc.desc Verify consecutive reverses on different subviews produce correct final state.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(32);
       let root = new BigInt64Array(buf);
       root[0] = 1n;
@@ -1042,14 +1042,14 @@ export default function BigInt64ArrayReverse02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_0580
-     * @tc.name testBigInt64ArrayReverseTwo058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_5800
+     * @tc.name testBigInt64ArrayReverseTwo5800
      * @tc.desc Verify byte-level read through Uint8Array after BigInt64Array reverse.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayReverseTwo058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigInt64ArrayReverseTwo5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(8);
       let bi64 = new BigInt64Array(buf);
       bi64[0] = 1n;
