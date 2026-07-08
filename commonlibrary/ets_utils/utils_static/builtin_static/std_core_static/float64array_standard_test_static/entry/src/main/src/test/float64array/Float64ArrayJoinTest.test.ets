@@ -56,7 +56,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join();
       const expectVal = "0.5,1.5,0.25";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_0200
@@ -72,7 +72,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join(sep);
       const expectVal = "-2147483648|-1|0";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_0300
@@ -88,7 +88,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join(sep);
       const expectVal = "0.1|9007199254740991|0";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_0400
@@ -104,7 +104,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join(sep);
       const expectVal = "0.5-1.5-0.25";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_0500
@@ -119,7 +119,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join(";");
       const expectVal = "-32768";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_0600
@@ -134,7 +134,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join();
       const expectVal = "";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_0700
@@ -149,7 +149,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("&");
       const expectVal = "-2147483648&-1";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_0800
@@ -164,23 +164,23 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join(",");
       const expectVal = "0.1,9007199254740991,0,3.141592653589793,-1e-100";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_0900
      * @tc.name testFloat64ArrayJoin009
-     * @tc.desc Verify join returns consistent results on repeated calls
+     * @tc.desc Verify $_set then join reflects changed middle value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float64Array([-32768, -128, 0]);
-      const result1: string = arr.join(",");
-      const result2: string = arr.join(",");
-      const expectVal = result2;
-      expect(result1).assertEqual(expectVal);
-    })
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
+      arr.$_set(1, 8.0);
+      const result: string = arr.join(",");
+      const expectVal = "1,8,3";
+      expect(result).assertEqual(expectVal);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_1000
@@ -198,39 +198,37 @@ export default function float64ArrayJoinTest(): void {
       expect(result1).assertEqual(expectVal);
       const expectVal2 = "-2147483648|-1|0";
       expect(result2).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_1100
      * @tc.name testFloat64ArrayJoin011
-     * @tc.desc Verify join with SQL injection-like separator
+     * @tc.desc Verify join with separator outputs NaN element correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(-2147483648, -1, 0);
-      const result: string = arr.join("'; DROP TABLE--");
-      const expectVal = "-2147483648'; DROP TABLE---1'; DROP TABLE--0";
+      const arr = new Float64Array([1.0, NaN, 3.0]);
+      const result: string = arr.join("-");
+      const expectVal = "1-NaN-3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_1200
      * @tc.name testFloat64ArrayJoin012
-     * @tc.desc Verify join with SQL injection single quote separator
+     * @tc.desc Verify join outputs Infinity and negative Infinity correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const hexValue10: number = 0x10;
-      const hexValue20: number = 0x20;
-      const arr = new Float64Array([hexValue10, hexValue20, hexValue10]);
-      const result: string = arr.join("1' OR '1'='1");
-      const expectVal = "161' OR '1'='1321' OR '1'='116";
+      const arr = new Float64Array([Infinity, -Infinity]);
+      const result: string = arr.join(",");
+      const expectVal = "Infinity,-Infinity";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_1300
@@ -245,7 +243,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join(" + ");
       const expectVal = "8 + 16 + 8";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_1400
@@ -262,7 +260,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join(" = ");
       const expectVal = "2 = 4 = 2";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_1500
@@ -278,7 +276,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join(" <-> ");
       const expectVal = "0 <-> 0 <-> 0";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_1600
@@ -289,11 +287,11 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float64Array([0.5, 1.5, 0.25, 0.125, 0.0625]);
+      const arr = new Float64Array([0.0625, 0.125, 0.25, 0.5, 1.5]);
       const result: string = arr.join(";");
-      const expectVal = "0.5;1.5;0.25;0.125;0.0625";
+      const expectVal = "0.0625;0.125;0.25;0.5;1.5";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_1700
@@ -304,11 +302,11 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float64Array([-32768, -128, 0, 127, 32767]);
+      const arr = new Float64Array([32767, 127, 0, -128, -32768]);
       const result: string = arr.join("!");
-      const expectVal = "-32768!-128!0!127!32767";
+      const expectVal = "32767!127!0!-128!-32768";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_1800
@@ -319,11 +317,11 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float64Array([-2147483648, -1, 0, 1, 2147483647]);
+      const arr = new Float64Array([2147483647, -2147483648, 1, -1, 0]);
       const result: string = arr.join("?");
-      const expectVal = "-2147483648?-1?0?1?2147483647";
+      const expectVal = "2147483647?-2147483648?1?-1?0";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_1900
@@ -340,7 +338,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join(",");
       const expectVal = "-1e-100,3.141592653589793,0,3.141592653589793,-1e-100";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_2000
@@ -351,11 +349,11 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(-32768, -128, 0, 127);
+      const arr = Float64Array.of(NaN, Infinity, -Infinity, 1.0);
       const result: string = arr.join("|");
-      const expectVal = "-32768|-128|0|127";
+      const expectVal = "NaN|Infinity|-Infinity|1";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_2100
@@ -366,11 +364,11 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float64Array([0.1, 9007199254740991, 0]);
+      const arr = new Float64Array([9007199254740991, -9007199254740991, 0]);
       const result: string = arr.join("|");
-      const expectVal = "0.1|9007199254740991|0";
+      const expectVal = "9007199254740991|-9007199254740991|0";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_2200
@@ -387,7 +385,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("|");
       const expectVal = "16|16|4";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_2300
@@ -398,12 +396,12 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointTwoFive: number = 0.25;
-      const arr = new Float64Array([pointTwoFive, pointTwoFive, pointTwoFive]);
+      const nanValue: number = NaN;
+      const arr = new Float64Array([nanValue, nanValue, nanValue]);
       const result: string = arr.join(",");
-      const expectVal = "0.25,0.25,0.25";
+      const expectVal = "NaN,NaN,NaN";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_2400
@@ -424,12 +422,12 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join(",");
       const expectVal = "1,2,3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_2500
      * @tc.name testFloat64ArrayJoin025
-     * @tc.desc Verify test case behavior
+     * @tc.desc Verify join uses default comma separator for INT32 lower bound values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -439,7 +437,7 @@ export default function float64ArrayJoinTest(): void {
       const result = values.join();
       const expectVal = "-2147483648,-1,0";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_2600
@@ -454,7 +452,7 @@ export default function float64ArrayJoinTest(): void {
       const result = values.join("-");
       const expectVal = "0.5";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_2700
@@ -465,12 +463,12 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const threeValue: number = 3;
-      const values = new Float64Array([0.5]);
+      const doubleMaxValue: number = Double.MAX_VALUE;
+      const values = new Float64Array([doubleMaxValue]);
       const result = values.join("");
-      const expectVal = threeValue;
-      expect(result.length).assertEqual(expectVal);
-    })
+      const expectVal = "1.7976931348623157e+308";
+      expect(result).assertEqual(expectVal);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_2800
@@ -489,7 +487,7 @@ export default function float64ArrayJoinTest(): void {
       const actVal1 = s.includes("\u200E");
       const expectVal = true;
       expect(actVal1).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_2900
@@ -508,7 +506,7 @@ export default function float64ArrayJoinTest(): void {
       const actVal2 = s.includes("\u200F");
       const expectVal = true;
       expect(actVal2).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_3000
@@ -524,7 +522,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("^");
       const expectVal = "NaN^1.5^0.25";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_3100
@@ -540,7 +538,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join(",");
       const expectVal = "Infinity,-Infinity,0";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_3200
@@ -556,7 +554,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join(",");
       const expectVal = "NaN,NaN,NaN";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_3300
@@ -573,7 +571,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join(",");
       const expectVal = "NaN,Infinity,-Infinity,1";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_3400
@@ -588,7 +586,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("'");
       const expectVal = "0'0'1";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_3500
@@ -604,7 +602,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join(",");
       const expectVal = "1.7976931348623157e+308,1,2";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_3600
@@ -620,7 +618,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join(",");
       const expectVal = "5e-324,1,2";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_3700
@@ -635,7 +633,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join(" ");
       const expectVal = "10 20 30";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_3800
@@ -650,7 +648,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join(" -> ");
       const expectVal = "1 -> 2 -> 3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_3900
@@ -665,7 +663,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join(".");
       const expectVal = "1.2.3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_4000
@@ -680,7 +678,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("，");
       const expectVal = "100，200，300";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_4100
@@ -695,7 +693,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("");
       const expectVal = "123";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_4200
@@ -710,7 +708,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join(":");
       const expectVal = "8:16:32";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_4300
@@ -726,7 +724,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = view.join(",");
       const expectVal = "2,3,4";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_4400
@@ -742,7 +740,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = sliced.join("|");
       const expectVal = "10|20";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_4500
@@ -762,7 +760,7 @@ export default function float64ArrayJoinTest(): void {
       expect(parts.length).assertEqual(100);
       expect(parts[0]).assertEqual("0");
       expect(parts[99]).assertEqual("99");
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_4600
@@ -778,7 +776,7 @@ export default function float64ArrayJoinTest(): void {
       const expression: string = joined + "=" + "6";
       const expectVal = "1+2+3=6";
       expect(expression).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_4700
@@ -794,7 +792,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join(",");
       const expectVal = "0,0";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_4800
@@ -809,7 +807,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join(",");
       const expectVal = "10000000000,2e-10,300000";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_4900
@@ -827,7 +825,7 @@ export default function float64ArrayJoinTest(): void {
       expect(expected[0]).assertEqual("1");
       expect(expected[1]).assertEqual("2");
       expect(expected[2]).assertEqual("3");
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_5000
@@ -842,7 +840,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("\t");
       const expectVal = "1\t2\t3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_5100
@@ -860,7 +858,7 @@ export default function float64ArrayJoinTest(): void {
       expect(parts[0]).assertEqual("10");
       expect(parts[1]).assertEqual("20");
       expect(parts[2]).assertEqual("30");
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_5200
@@ -878,7 +876,7 @@ export default function float64ArrayJoinTest(): void {
       expect(parts[0]).assertEqual("100");
       expect(parts[1]).assertEqual("200");
       expect(parts[2]).assertEqual("300");
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_5300
@@ -893,7 +891,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("\u200B");
       const expectVal = "5\u200B10\u200B15";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_5400
@@ -908,7 +906,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("!@#$%^&*()");
       const expectVal = "1!@#$%^&*()2!@#$%^&*()3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_5500
@@ -923,7 +921,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("~");
       const expectVal = "1~2~3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_5600
@@ -941,7 +939,7 @@ export default function float64ArrayJoinTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("ClassCastError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_5700
@@ -959,12 +957,12 @@ export default function float64ArrayJoinTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("ClassCastError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_5800
      * @tc.name testFloat64ArrayJoin058
-     * @tc.desc Verify join with @ separator
+     * @tc.desc Verify join renders at-sign separator for values from Float64Array.of
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -974,12 +972,12 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("@");
       const expectVal = "10@20@30";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_5900
      * @tc.name testFloat64ArrayJoin059
-     * @tc.desc Verify join with % separator
+     * @tc.desc Verify join renders percent separator for values from array constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -989,12 +987,12 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("%");
       const expectVal = "100%200%300";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_6000
      * @tc.name testFloat64ArrayJoin060
-     * @tc.desc Verify join with * separator
+     * @tc.desc Verify join renders asterisk separator between three values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1004,12 +1002,12 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("*");
       const expectVal = "5*10*15";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_6100
      * @tc.name testFloat64ArrayJoin061
-     * @tc.desc Verify join with ( separator
+     * @tc.desc Verify join renders left parenthesis separator without escaping
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1019,12 +1017,12 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("(");
       const expectVal = "1(2(3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_6200
      * @tc.name testFloat64ArrayJoin062
-     * @tc.desc Verify join with ) separator
+     * @tc.desc Verify join renders right parenthesis separator without escaping
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1034,12 +1032,12 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join(")");
       const expectVal = "1)2)3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_6300
      * @tc.name testFloat64ArrayJoin063
-     * @tc.desc Verify join with / separator
+     * @tc.desc Verify join renders slash separator for values from Float64Array.of
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1049,12 +1047,12 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("/");
       const expectVal = "7/14/21";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_6400
      * @tc.name testFloat64ArrayJoin064
-     * @tc.desc Verify join with > separator
+     * @tc.desc Verify join renders greater-than separator without escaping
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1064,12 +1062,12 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join(">");
       const expectVal = "1>2>3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_6500
      * @tc.name testFloat64ArrayJoin065
-     * @tc.desc Verify join with < separator
+     * @tc.desc Verify join renders less-than separator without escaping
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1079,12 +1077,12 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("<");
       const expectVal = "1<2<3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_6600
      * @tc.name testFloat64ArrayJoin066
-     * @tc.desc Verify join with { separator
+     * @tc.desc Verify join renders left brace separator without escaping
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1094,12 +1092,12 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("{");
       const expectVal = "1{2{3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_6700
      * @tc.name testFloat64ArrayJoin067
-     * @tc.desc Verify join with } separator
+     * @tc.desc Verify join renders right brace separator without escaping
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1109,12 +1107,12 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("}");
       const expectVal = "1}2}3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_6800
      * @tc.name testFloat64ArrayJoin068
-     * @tc.desc Verify join with [ separator
+     * @tc.desc Verify join renders left bracket separator without escaping
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1124,12 +1122,12 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("[");
       const expectVal = "1[2[3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_6900
      * @tc.name testFloat64ArrayJoin069
-     * @tc.desc Verify join with ] separator
+     * @tc.desc Verify join renders right bracket separator without escaping
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1139,7 +1137,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("]");
       const expectVal = "1]2]3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_7000
@@ -1154,7 +1152,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("？");
       const expectVal = "1？2？3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_7100
@@ -1169,7 +1167,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("！");
       const expectVal = "10！20！30";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_7200
@@ -1184,7 +1182,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("：");
       const expectVal = "100：200：300";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_7300
@@ -1199,7 +1197,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("；");
       const expectVal = "5；10；15";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_7400
@@ -1214,7 +1212,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("。");
       const expectVal = "1。2。3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_7500
@@ -1229,7 +1227,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("·");
       const expectVal = "3·6·9";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_7600
@@ -1244,7 +1242,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("《");
       const expectVal = "1《2《3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_7700
@@ -1259,7 +1257,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("……");
       const expectVal = "1……2……3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_7800
@@ -1275,7 +1273,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join(sep);
       const expectVal = "1测试\n换行2测试\n换行3";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_7900
@@ -1291,7 +1289,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join(sep);
       const expectVal = "10测试\r\n回车换行20测试\r\n回车换行30";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_JOIN_8000
@@ -1306,7 +1304,7 @@ export default function float64ArrayJoinTest(): void {
       const result: string = arr.join("测试\\转义符");
       const expectVal = "100测试\\转义符200测试\\转义符300";
       expect(result).assertEqual(expectVal);
-    })
+    });
 
   })
 }

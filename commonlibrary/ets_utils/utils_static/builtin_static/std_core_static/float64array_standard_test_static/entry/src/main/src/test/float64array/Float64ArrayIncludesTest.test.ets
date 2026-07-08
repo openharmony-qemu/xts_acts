@@ -46,7 +46,7 @@ export default function Float64ArrayIncludesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0010
      * @tc.name testFloat64ArrayIncludes001
-     * @tc.desc Verify includes called without arguments
+     * @tc.desc Verify includes returns false when searched negative value is absent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -57,7 +57,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(negonePointzero);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0020
@@ -73,7 +73,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(twoPointZero);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0030
@@ -89,7 +89,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(twoPointZero, 1);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0040
@@ -105,7 +105,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(threePointZero);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0050
@@ -121,7 +121,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(negthreePointzero);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0060
@@ -137,7 +137,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(zeroPointZero);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0070
@@ -153,7 +153,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(+zeroPointZero);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0080
@@ -169,7 +169,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(negativeZero);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0090
@@ -189,7 +189,7 @@ export default function Float64ArrayIncludesTest(): void {
       expect(r1).assertEqual(expectVal);
       const expectVal2 = false;
       expect(r2).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0100
@@ -205,7 +205,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(positiveInfinity);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0110
@@ -221,7 +221,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(negativeInfinity);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0120
@@ -232,29 +232,29 @@ export default function Float64ArrayIncludesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayIncludes012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const nanValue: number = NaN;
-      const arr = new Float64Array([0.1, 9007199254740991, 0]);
+      const nanValue: number = Number.NaN;
+      const arr = new Float64Array([0.1, nanValue, 0]);
       const result = arr.includes(nanValue);
-      const expectVal = false;
+      const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0130
      * @tc.name testFloat64ArrayIncludes013
-     * @tc.desc Verify includes search among multiple NaN elements 
+     * @tc.desc Verify includes search among multiple NaN elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayIncludes013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointTwoFive: number = 0.25;
-      const nanValue: number = NaN;
-      const arr = new Float64Array([pointTwoFive, pointTwoFive, pointTwoFive]);
+      const nanValue: number = Number.NaN;
+      const arr = new Float64Array([nanValue, pointTwoFive, nanValue]);
       const result = arr.includes(nanValue);
-      const expectVal = false;
+      const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0140
@@ -270,7 +270,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(doubleMinValue);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0150
@@ -286,23 +286,25 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(maxVal);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0160
      * @tc.name testFloat64ArrayIncludes016
-     * @tc.desc Verify includes search for overflow 1.7976931348623158e+308 as Infinity
+     * @tc.desc Verify includes search for computed overflow value as Infinity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayIncludes016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const positiveInfinity: number = Infinity;
-      const arr = Float64Array.of(-2147483648, -1, 0);
+      const overflowValue: number = Double.MAX_VALUE * 2.0;
+      const arr = Float64Array.of(-2147483648, overflowValue, 0);
+      expect(overflowValue).assertEqual(positiveInfinity);
       const result = arr.includes(positiveInfinity);
-      const expectVal = false;
+      const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0170
@@ -318,7 +320,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(sciValue10e308);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0180
@@ -334,7 +336,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(sciValue10e308);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0190
@@ -350,7 +352,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(pointOne);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0200
@@ -366,7 +368,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(pointTwo);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0210
@@ -382,7 +384,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(negnum999999Pointninenine);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0220
@@ -398,7 +400,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(fivePointZero);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0230
@@ -414,7 +416,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(negfivePointzero);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0240
@@ -426,11 +428,11 @@ export default function Float64ArrayIncludesTest(): void {
      */
     it('testFloat64ArrayIncludes024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroPointZero: number = 0.0;
-      const arr = Float64Array.of(-2147483648, -1, 0);
+      const arr = Float64Array.of(-2147483648, -1, 1);
       const result = arr.includes(zeroPointZero);
-      const expectVal = true;
+      const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0250
@@ -446,7 +448,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(positiveInfinity);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0260
@@ -462,7 +464,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(nanValue);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0270
@@ -478,7 +480,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(num2147483647Pointzero);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0280
@@ -494,7 +496,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(negnum2147483648Pointzero);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0290
@@ -510,7 +512,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(maxSafe);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0300
@@ -526,7 +528,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(minSafe);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0310
@@ -542,12 +544,12 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(beyondSafe);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0320
      * @tc.name testFloat64ArrayIncludes032
-     * @tc.desc Verify includes fromIndex=0
+     * @tc.desc Verify includes returns false fromIndex 0 when searched value is absent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -558,12 +560,12 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(onePointZero, 0);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0330
      * @tc.name testFloat64ArrayIncludes033
-     * @tc.desc Verify includes fromIndex=1
+     * @tc.desc Verify includes returns false fromIndex 1 when searched value is absent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -574,7 +576,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(twoPointZero, 1);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0340
@@ -590,7 +592,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(threePointZero, 4);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0350
@@ -606,12 +608,12 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(onePointZero, 1000000);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0360
      * @tc.name testFloat64ArrayIncludes036
-     * @tc.desc Verify includes fromIndex=-1
+     * @tc.desc Verify includes returns false after fromIndex -1 normalizes to last slot
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -622,12 +624,12 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(threePointZero, -1);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0370
      * @tc.name testFloat64ArrayIncludes037
-     * @tc.desc Verify includes fromIndex=-2
+     * @tc.desc Verify includes returns false after fromIndex -2 skips first slot
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -638,7 +640,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(twoPointZero, -2);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0380
@@ -654,7 +656,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(onePointZero, -3);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0390
@@ -670,7 +672,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(onePointZero, -4);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0400
@@ -686,7 +688,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(onePointZero, -1000000);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0410
@@ -702,7 +704,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(fivePointZero, 0);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0420
@@ -718,7 +720,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(fivePointZero, 1);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0430
@@ -737,7 +739,7 @@ export default function Float64ArrayIncludesTest(): void {
       expect(r1).assertEqual(expectVal);
       const expectVal2 = false;
       expect(r2).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0440
@@ -753,7 +755,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(val);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0450
@@ -769,7 +771,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(val);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0460
@@ -785,7 +787,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(twoPointZero);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0470
@@ -801,7 +803,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(fourPointZero);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0480
@@ -817,7 +819,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(onePointZero);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0490
@@ -833,7 +835,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(fillValue42);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0500
@@ -849,7 +851,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(zeroPointZero);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0510
@@ -877,7 +879,7 @@ export default function Float64ArrayIncludesTest(): void {
       const actVal3 = arr.$_get(2);
       const expectVal3 = zeroValue;
       expect(actVal3).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0520
@@ -893,7 +895,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(zeroPointZero);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0530
@@ -909,7 +911,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(positiveInfinity);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0540
@@ -925,7 +927,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(nanValue);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0550
@@ -941,7 +943,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(zeroPointZero);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0560
@@ -957,7 +959,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(onePointZero);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0570
@@ -974,7 +976,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(sevenPointZero);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0580
@@ -991,7 +993,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(eightPointZero);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0590
@@ -1011,7 +1013,7 @@ export default function Float64ArrayIncludesTest(): void {
       expect(result1).assertEqual(expectVal);
       const expectVal2 = false;
       expect(result2).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0600
@@ -1031,7 +1033,7 @@ export default function Float64ArrayIncludesTest(): void {
       expect(result1).assertEqual(expectVal);
       const expectVal2 = false;
       expect(result2).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0610
@@ -1055,7 +1057,7 @@ export default function Float64ArrayIncludesTest(): void {
       expect(r2).assertEqual(expectVal2);
       const expectVal3 = false;
       expect(r3).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0620
@@ -1076,7 +1078,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(num999Pointzero);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0630
@@ -1097,7 +1099,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(num888Pointzero);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0640
@@ -1120,7 +1122,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(num777Pointzero);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0650
@@ -1140,12 +1142,12 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(onePointZero);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0660
      * @tc.name testFloat64ArrayIncludes066
-     * @tc.desc Verify includes returns false when NaN is absent from fromIndex=0
+     * @tc.desc Verify includes returns false for absent NaN from full search range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1157,12 +1159,12 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(nanValue, 0);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0670
      * @tc.name testFloat64ArrayIncludes067
-     * @tc.desc Verify includes returns false when NaN is absent from fromIndex=1
+     * @tc.desc Verify includes returns false for absent NaN after skipping first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1174,12 +1176,12 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(nanValue, 1);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0680
      * @tc.name testFloat64ArrayIncludes068
-     * @tc.desc Verify includes returns false when NaN is absent from fromIndex=2
+     * @tc.desc Verify includes returns false for absent NaN when search starts at last element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1191,12 +1193,12 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(nanValue, 2);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0690
      * @tc.name testFloat64ArrayIncludes069
-     * @tc.desc Verify includes returns false when NaN is absent from fromIndex=-1
+     * @tc.desc Verify includes returns false for absent NaN after negative start at last element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1208,12 +1210,12 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(nanValue, -1);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0700
      * @tc.name testFloat64ArrayIncludes070
-     * @tc.desc Verify includes returns false when NaN is absent from fromIndex=-2
+     * @tc.desc Verify includes returns false for absent NaN after negative start at middle element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1225,7 +1227,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(nanValue, -2);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0710
@@ -1241,7 +1243,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(positiveInfinity, 0);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0720
@@ -1257,7 +1259,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(positiveInfinity, 1);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0730
@@ -1273,7 +1275,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(negativeInfinity, 1);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0740
@@ -1289,7 +1291,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(+zeroPointZero);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0750
@@ -1305,7 +1307,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(negativeZero);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0760
@@ -1321,7 +1323,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(sciValue20e10);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0770
@@ -1337,7 +1339,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(sciValue40e10);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0780
@@ -1353,7 +1355,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(computed);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0790
@@ -1369,7 +1371,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(pointThree);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0800
@@ -1386,7 +1388,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(onePointZero, 1);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0810
@@ -1402,7 +1404,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(twoPointZero, 1);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0820
@@ -1419,7 +1421,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(fivePointZero, 0);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0830
@@ -1436,7 +1438,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(fivePointZero, 2);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0840
@@ -1453,7 +1455,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(fivePointZero, 3);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0850
@@ -1477,7 +1479,7 @@ export default function Float64ArrayIncludesTest(): void {
       expect(r2).assertEqual(expectVal2);
       const expectVal3 = false;
       expect(r3).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0860
@@ -1501,7 +1503,7 @@ export default function Float64ArrayIncludesTest(): void {
       expect(r2).assertEqual(expectVal2);
       const expectVal3 = false;
       expect(r3).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0870
@@ -1518,7 +1520,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(fillValue42, -3);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0880
@@ -1534,7 +1536,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(nanValue, 0);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0890
@@ -1550,7 +1552,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(nanValue, 1);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0900
@@ -1566,7 +1568,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(doubleMaxValue);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0910
@@ -1582,7 +1584,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(negsciValue17976931348623157e308);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0920
@@ -1598,7 +1600,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(negsciValue5e324);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0930
@@ -1614,7 +1616,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(num255Pointzero);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0940
@@ -1630,7 +1632,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(sixtyfourPointzero);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0950
@@ -1646,7 +1648,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(fifteenPointzero);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0960
@@ -1662,7 +1664,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(nanValue, 1000000);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0970
@@ -1678,7 +1680,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(nanValue, -1000000);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0980
@@ -1694,7 +1696,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(zeroPointZero, 0);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_0990
@@ -1710,12 +1712,12 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(zeroPointZero, -1);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1000
      * @tc.name testFloat64ArrayIncludes100
-     * @tc.desc Verify includes single element arrayfromIndex=0
+     * @tc.desc Verify includes returns false on single element fromIndex 0 when value differs
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1726,12 +1728,12 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(hundredPointZero, 0);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1010
      * @tc.name testFloat64ArrayIncludes101
-     * @tc.desc Verify includes single element arrayfromIndex=1
+     * @tc.desc Verify includes returns false on single element when fromIndex equals length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1742,12 +1744,12 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(hundredPointZero, 1);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1020
      * @tc.name testFloat64ArrayIncludes102
-     * @tc.desc Verify includes single element arrayfromIndex=-1
+     * @tc.desc Verify includes returns false on single element after fromIndex -1 normalizes to zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1758,12 +1760,12 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(hundredPointZero, -1);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1030
      * @tc.name testFloat64ArrayIncludes103
-     * @tc.desc Verify includes single element arrayfromIndex=-2
+     * @tc.desc Verify includes returns false on single element after fromIndex below negative length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1774,12 +1776,12 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(hundredPointZero, -2);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1040
      * @tc.name testFloat64ArrayIncludes104
-     * @tc.desc Verify includes two element array fromIndex=0
+     * @tc.desc Verify includes returns false on two elements fromIndex 0 when value is absent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1790,12 +1792,12 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(onePointZero, 0);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1050
      * @tc.name testFloat64ArrayIncludes105
-     * @tc.desc Verify includes two element array fromIndex=1
+     * @tc.desc Verify includes returns false on two elements after skipping first slot
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1806,12 +1808,12 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(twoPointZero, 1);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1060
      * @tc.name testFloat64ArrayIncludes106
-     * @tc.desc Verify includes two element array fromIndex=2
+     * @tc.desc Verify includes returns false on two elements when fromIndex equals length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1822,12 +1824,12 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(twoPointZero, 2);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1070
      * @tc.name testFloat64ArrayIncludes107
-     * @tc.desc Verify includes two element array fromIndex=-1
+     * @tc.desc Verify includes returns false on two elements after negative start at last slot
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1838,12 +1840,12 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(twoPointZero, -1);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1080
      * @tc.name testFloat64ArrayIncludes108
-     * @tc.desc Verify includes two element array fromIndex=-2
+     * @tc.desc Verify includes returns false on two elements after negative start at first slot
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1854,12 +1856,12 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(onePointZero, -2);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1090
      * @tc.name testFloat64ArrayIncludes109
-     * @tc.desc Verify includes two element array fromIndex=-3
+     * @tc.desc Verify includes returns false on two elements after fromIndex below negative length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1870,7 +1872,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(onePointZero, -3);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1100
@@ -1892,7 +1894,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = view.includes(twoPointZero);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1110
@@ -1914,7 +1916,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = view.includes(twoPointZero, 1);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1120
@@ -1939,7 +1941,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = child.includes(twoPointZero);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1130
@@ -1964,7 +1966,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = child.includes(threePointZero, 1);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1140
@@ -1981,7 +1983,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = copy.includes(twentyPointZero);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1150
@@ -1997,7 +1999,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(fivePointfive);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1160
@@ -2014,7 +2016,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(sevenPointseven);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1170
@@ -2031,7 +2033,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(sevenPointseven, 2);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1180
@@ -2054,7 +2056,7 @@ export default function Float64ArrayIncludesTest(): void {
       expect(r2).assertEqual(expectVal2);
       const expectVal3 = false;
       expect(r3).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1190
@@ -2071,7 +2073,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(nanValue, 3);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1200
@@ -2101,7 +2103,7 @@ export default function Float64ArrayIncludesTest(): void {
       expect(r3).assertEqual(expectVal3);
       const expectVal4 = false;
       expect(r4).assertEqual(expectVal4);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1210
@@ -2125,7 +2127,7 @@ export default function Float64ArrayIncludesTest(): void {
       expect(r2).assertEqual(expectVal2);
       const expectVal3 = false;
       expect(r3).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1220
@@ -2141,7 +2143,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(zeroPointZero, 0);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1230
@@ -2157,7 +2159,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(zeroPointZero, -3);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1240
@@ -2173,7 +2175,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(positiveInfinity, 0);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1250
@@ -2189,75 +2191,71 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(nanValue, 0);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1260
      * @tc.name testFloat64ArrayIncludes126
-     * @tc.desc Verify includes all-NaN array search 
+     * @tc.desc Verify includes all-NaN array search
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayIncludes126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const piValue: number = 3.141592653589793;
-      const nanValue: number = NaN;
-      const arr = Float64Array.of(piValue, piValue, piValue, piValue);
+      const nanValue: number = Number.NaN;
+      const arr = Float64Array.of(nanValue, nanValue, nanValue, nanValue);
       const result = arr.includes(nanValue);
-      const expectVal = false;
+      const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1270
      * @tc.name testFloat64ArrayIncludes127
-     * @tc.desc Verify includes all-NaN array fromIndex=2 search 
+     * @tc.desc Verify includes all-NaN array fromIndex=2 search
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayIncludes127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOneTwoFive: number = 0.125;
-      const nanValue: number = NaN;
-      const arr = new Float64Array([pointOneTwoFive, pointOneTwoFive, pointOneTwoFive, pointOneTwoFive]);
+      const nanValue: number = Number.NaN;
+      const arr = new Float64Array([nanValue, nanValue, nanValue, nanValue]);
       const result = arr.includes(nanValue, 2);
-      const expectVal = false;
+      const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1280
      * @tc.name testFloat64ArrayIncludes128
-     * @tc.desc Verify includes all-Infinity array search 
+     * @tc.desc Verify includes all-Infinity array search
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayIncludes128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const zeroValue: number = 0;
       const positiveInfinity: number = Infinity;
-      const arr = new Float64Array([zeroValue, zeroValue, zeroValue]);
+      const arr = new Float64Array([positiveInfinity, positiveInfinity, positiveInfinity]);
       const result = arr.includes(positiveInfinity);
-      const expectVal = false;
+      const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1290
      * @tc.name testFloat64ArrayIncludes129
-     * @tc.desc Verify includes all -Infinity array search 
+     * @tc.desc Verify includes all -Infinity array search
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayIncludes129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const zeroValue: number = 0;
       const negativeInfinity: number = -Infinity;
-      const arr = new Float64Array([zeroValue, zeroValue, zeroValue]);
+      const arr = new Float64Array([negativeInfinity, negativeInfinity, negativeInfinity]);
       const result = arr.includes(negativeInfinity);
-      const expectVal = false;
+      const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1300
@@ -2279,12 +2277,12 @@ export default function Float64ArrayIncludesTest(): void {
       expect(r1).assertEqual(expectVal);
       const expectVal2 = true;
       expect(r2).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1310
      * @tc.name testFloat64ArrayIncludes131
-     * @tc.desc Verify includes alternating positive and negative zerofromIndex
+     * @tc.desc Verify includes fromIndex skips earlier -0.0 but finds +0.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2293,11 +2291,12 @@ export default function Float64ArrayIncludesTest(): void {
       const pointTwoFive: number = 0.25;
       const pointOneTwoFive: number = 0.125;
       const negativeZero: number = -0.0;
-      const arr = Float64Array.of(pointTwoFive, pointOneTwoFive, pointTwoFive, pointOneTwoFive);
-      const result = arr.includes(negativeZero, 1);
-      const expectVal = false;
+      const positiveZero: number = +0.0;
+      const arr = Float64Array.of(pointTwoFive, negativeZero, pointOneTwoFive, positiveZero);
+      const result = arr.includes(negativeZero, 2);
+      const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1320
@@ -2314,7 +2313,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(twoPointFive);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1330
@@ -2330,7 +2329,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(onePointZero, 999999);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1340
@@ -2346,7 +2345,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(onePointZero, -999999);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1350
@@ -2363,7 +2362,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(num200Pointzero);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1360
@@ -2380,12 +2379,12 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(threePointZero);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1370
      * @tc.name testFloat64ArrayIncludes137
-     * @tc.desc Verify includes returns false when existing element is absent
+     * @tc.desc Verify includes returns false when searched element is absent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2396,7 +2395,7 @@ export default function Float64ArrayIncludesTest(): void {
       const actVal4 = values.includes(fivePointZero);
       const expectVal = false;
       expect(actVal4).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1380
@@ -2412,7 +2411,7 @@ export default function Float64ArrayIncludesTest(): void {
       const actVal5 = values.includes(tenPointZero);
       const expectVal = false;
       expect(actVal5).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1390
@@ -2428,7 +2427,7 @@ export default function Float64ArrayIncludesTest(): void {
       const actVal6 = values.includes(nanValue);
       const expectVal = false;
       expect(actVal6).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1400
@@ -2444,7 +2443,7 @@ export default function Float64ArrayIncludesTest(): void {
       const actVal7 = values.includes(fivePointZero, 0);
       const expectVal = false;
       expect(actVal7).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1410
@@ -2460,7 +2459,7 @@ export default function Float64ArrayIncludesTest(): void {
       const actVal8 = values.includes(fivePointZero, 1);
       const expectVal = false;
       expect(actVal8).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1420
@@ -2476,7 +2475,7 @@ export default function Float64ArrayIncludesTest(): void {
       const actVal9 = values.includes(fivePointZero, 2);
       const expectVal = false;
       expect(actVal9).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1430
@@ -2492,7 +2491,7 @@ export default function Float64ArrayIncludesTest(): void {
       const actVal10 = values.includes(fivePointZero, -2);
       const expectVal = false;
       expect(actVal10).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1440
@@ -2508,7 +2507,7 @@ export default function Float64ArrayIncludesTest(): void {
       const actVal11 = values.includes(fivePointZero, 10);
       const expectVal = false;
       expect(actVal11).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1450
@@ -2524,7 +2523,7 @@ export default function Float64ArrayIncludesTest(): void {
       const actVal12 = values.includes(onePointZero);
       const expectVal = false;
       expect(actVal12).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1460
@@ -2544,7 +2543,7 @@ export default function Float64ArrayIncludesTest(): void {
       const actVal14 = values.includes(negativeInfinity);
       const expectVal2 = false;
       expect(actVal14).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1470
@@ -2560,28 +2559,28 @@ export default function Float64ArrayIncludesTest(): void {
       const actVal15 = values.includes(negativeZero);
       const expectVal = false;
       expect(actVal15).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1480
      * @tc.name testFloat64ArrayIncludes148
-     * @tc.desc Verify includes with NaN fromIndex
+     * @tc.desc Verify includes finds NaN after negative fromIndex starts at last element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayIncludes148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const threePointZero: number = 3.0;
-      const arr = Float64Array.of(1.0, 2.0, threePointZero);
-      const result = arr.includes(threePointZero, -1);
+      const nanValue: number = Number.NaN;
+      const arr = Float64Array.of(1.0, 2.0, nanValue);
+      const result = arr.includes(nanValue, -1);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1490
      * @tc.name testFloat64ArrayIncludes149
-     * @tc.desc Verify includes with undefined fromIndex
+     * @tc.desc Verify includes finds first element when fromIndex is omitted
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2589,10 +2588,10 @@ export default function Float64ArrayIncludesTest(): void {
     it('testFloat64ArrayIncludes149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const onePointZero: number = 1.0;
       const arr = Float64Array.of(onePointZero, 2.0, 3.0);
-      const result = arr.includes(onePointZero, 0);
+      const result = arr.includes(onePointZero);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1500
@@ -2614,7 +2613,7 @@ export default function Float64ArrayIncludesTest(): void {
       const actVal17 = arr.includes(hexValueBB);
       const expectVal2 = false;
       expect(actVal17).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1510
@@ -2636,7 +2635,7 @@ export default function Float64ArrayIncludesTest(): void {
       const actVal19 = arr.includes(binaryValue11110000);
       const expectVal2 = false;
       expect(actVal19).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1520
@@ -2653,7 +2652,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(nanValue);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1530
@@ -2670,7 +2669,7 @@ export default function Float64ArrayIncludesTest(): void {
       const result = arr.includes(positiveInfinity);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INCLUDES_1540
@@ -2690,7 +2689,7 @@ export default function Float64ArrayIncludesTest(): void {
       const actVal21 = arr.includes(doubleMaxValue);
       const expectVal2 = true;
       expect(actVal21).assertEqual(expectVal2);
-    })
+    });
 
   })
 }
