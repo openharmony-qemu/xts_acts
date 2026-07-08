@@ -168,7 +168,7 @@ export default function RangingTest() {
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
-          expect(err.code).assertEqual(401);
+          expect(err.code).assertEqual(34900054);
         }
       }
       done()
@@ -202,7 +202,7 @@ export default function RangingTest() {
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
-          expect(err.code).assertEqual(401);
+          expect(err.code).assertEqual(34900054);
         }
       }
       done();
@@ -278,7 +278,7 @@ export default function RangingTest() {
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
-          expect(err.code).assertEqual(401);
+          expect(err.code).assertEqual(34900054);
         }
         done();
       }
@@ -314,7 +314,7 @@ export default function RangingTest() {
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
-          expect(err.code).assertEqual(401);
+          expect(err.code).assertEqual(34900054);
         }
         done();
       }
@@ -374,7 +374,7 @@ export default function RangingTest() {
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
-          expect(err.code).assertEqual(401);
+          expect(err.code).assertEqual(34900052);
         }
         done();
       }
@@ -408,7 +408,7 @@ export default function RangingTest() {
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
-          expect(err.code).assertEqual(401);
+          expect(err.code).assertEqual(34900054);
         }
         done();
       }
@@ -509,7 +509,7 @@ export default function RangingTest() {
     });
 
     /**
-     * @tc.name testStartRangingErrcode401
+     * @tc.name testStartRangingErrcode34900052
      * @tc.number SUB_COMMUNICATION_CONNECTIVITYKIT_RANGING_STARTRANGING_0400
      * @tc.desc 测距服务能力不支持
      * @tc.type FUNCTION
@@ -533,7 +533,7 @@ export default function RangingTest() {
       } catch (err) {
         let error: BusinessError = err as BusinessError;
         console.info("[fusion_js] testStartRangingErrcode401 error: " + JSON.stringify(error));
-        expect(error.code).assertEqual(401);
+        expect(error.code).assertEqual(34900052);
         done();
       }
     });
@@ -569,7 +569,7 @@ export default function RangingTest() {
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
-          expect(err.code).assertEqual(401);
+          expect(err.code).assertEqual(34900052);
         }
       }
       done();
@@ -670,7 +670,7 @@ export default function RangingTest() {
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
-          expect(err.code).assertEqual(401);
+          expect(err.code).assertEqual(34900052);
         }
       }
       done();
@@ -697,7 +697,7 @@ export default function RangingTest() {
       } catch (err) {
         let error: BusinessError = err as BusinessError;
         console.info("[fusion_js] testStopPassiveRangingErrcode401 error: " + JSON.stringify(error));
-        expect(error.code).assertEqual(401);
+        expect(error.code).assertEqual(34900052);
         done();
       }
     });
@@ -733,7 +733,7 @@ export default function RangingTest() {
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
-          expect(err.code).assertEqual(401);
+          expect(err.code).assertEqual(34900052);
         }
         done();
       }
@@ -769,7 +769,7 @@ export default function RangingTest() {
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
-          expect(err.code).assertEqual(401);
+          expect(err.code).assertEqual(34900052);
         }
         done();
       }
