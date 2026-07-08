@@ -18,7 +18,7 @@ import osAccount from '@ohos.account.osAccount';
 import dAccount from '@ohos.account.distributedAccount';
 import bundle from '@ohos.bundle.bundleManager';
 import { BusinessError } from '@ohos.base';
-import {describe, afterEach, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import {describe, afterEach, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
 import Utils from './Util.test';
 import hilog from '@ohos.hilog';
 import { CreateAccount, RemoveAccount } from './AccountFunc.test';

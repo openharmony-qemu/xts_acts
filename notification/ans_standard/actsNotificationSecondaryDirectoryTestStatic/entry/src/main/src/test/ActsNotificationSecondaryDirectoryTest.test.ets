@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level ,beforeAll ,afterEach ,beforeEach } from "../../../hypium/index"
+import { describe, it, expect, TestType, Size, Level ,beforeAll ,afterEach ,beforeEach } from "@ohos/hypium-binary/src/main/indexStatic"
 import notificationManager from '@ohos.notificationManager'
 import wantAgent from '@ohos.app.ability.wantAgent'
 import wantagent from '@ohos.app.ability.wantAgent'

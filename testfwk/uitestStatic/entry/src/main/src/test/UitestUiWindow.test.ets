@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeAll, afterAll, beforeEach, describe, it, expect, TestType, Size, Level } from "../../../hypium/index"
+import { beforeAll, afterAll, beforeEach, describe, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic"
 import {
   Component,
   Driver,

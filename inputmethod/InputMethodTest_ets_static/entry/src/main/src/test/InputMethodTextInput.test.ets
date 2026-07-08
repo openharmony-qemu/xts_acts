@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import inputMethod from '@ohos.inputMethod';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
 import { BusinessError } from '@ohos.base'
 
 function expectContain(a: ESObject, b: ESObject) {

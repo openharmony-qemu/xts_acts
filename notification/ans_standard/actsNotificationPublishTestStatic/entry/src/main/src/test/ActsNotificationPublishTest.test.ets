@@ -15,7 +15,7 @@
 */
 
 import notificationManager from '@ohos.notificationManager'
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterAll, afterEach } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterAll, afterEach } from "@ohos/hypium-binary/src/main/indexStatic";
 import Utils from './Util.test';
 import { BusinessError, RecordData } from '@ohos.base';
 import wantAgent from '@ohos.app.ability.wantAgent';

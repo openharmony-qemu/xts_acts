@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, Hypium, it, Level} from '../../../../../../hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, Hypium, it, Level} from '@ohos/hypium-binary/src/main/indexStatic';
 import image from '@ohos.multimedia.image';
 import common from '@ohos.app.ability.common';
 

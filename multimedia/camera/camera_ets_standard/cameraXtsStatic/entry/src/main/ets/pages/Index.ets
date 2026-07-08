@@ -26,7 +26,7 @@ import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-pl
 import hilog from '@ohos.hilog'
 import { XComponentOptions, XComponentController, XComponent } from 'arkui.component.xcomponent'
 import { XComponentType } from 'arkui.component.enums';
-import { Hypium } from "../../../hypium/index";
+import { Hypium } from "@ohos/hypium-binary/src/main/indexStatic";
 
 console.info('  --------------aboutToAppear--------------')
 

@@ -24,7 +24,7 @@ import {
   Level,
   TestType,
   Size
-} from "../../../hypium/index";
+} from "@ohos/hypium-binary/src/main/indexStatic";
 import deviceInfo from '@ohos.deviceInfo'
 import { abilityAccessCtrl, common, PermissionRequestResult } from '@kit.AbilityKit';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl';

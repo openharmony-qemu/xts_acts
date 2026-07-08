@@ -15,7 +15,7 @@
  */
 
 import media from '@ohos.multimedia.media'
-import { expect } from "../../../hypium/index";
+import { expect } from "@ohos/hypium-binary/src/main/indexStatic";
 import MediaTestBase from './MediaTestBase.test';
 import audio from '@ohos.multimedia.audio';
 import { BusinessError } from '@ohos.base';

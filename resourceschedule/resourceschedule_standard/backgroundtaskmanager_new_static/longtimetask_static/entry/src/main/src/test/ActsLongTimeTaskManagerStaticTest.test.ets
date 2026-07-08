@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll, afterEach} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll, afterEach} from "@ohos/hypium-binary/src/main/indexStatic";
 import hilog from '@ohos.hilog'
 import { WantAgent as _WantAgent } from '@ohos.app.ability.wantAgent';
 import wantAgent from '@ohos.app.ability.wantAgent';

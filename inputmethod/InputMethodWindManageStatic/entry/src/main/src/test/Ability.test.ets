@@ -15,7 +15,7 @@
  */
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from "@ohos/hypium-binary/src/main/indexStatic";
 import { commonEventManager } from '@kit.BasicServicesKit';
 import subtype from '@ohos.InputMethodSubtype';
 import inputMethod from '@ohos.inputMethod';

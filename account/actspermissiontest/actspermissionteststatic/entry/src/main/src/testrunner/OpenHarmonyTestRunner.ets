@@ -19,7 +19,7 @@ import { TestRunner } from '@kit.TestKit';
 import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base'
 import testsuite from '../test/List.test';
-import { Hypium } from '../../../hypium/index';
+import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
 
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
 import certManager from '@ohos.security.certManager';
 import { priEccCredData, priRsaCredData } from './utils/common/common_parameter';
 import { BusinessError } from '@ohos.base';

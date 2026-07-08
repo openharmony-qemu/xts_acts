@@ -15,7 +15,7 @@
  */
 
 import { BusinessError } from '@ohos.base';
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll} from "@ohos/hypium-binary/src/main/indexStatic";
 import * as DigPromise from "./utils/digestalgorithm/publicDigestPromise";
 import * as DigCallback from "./utils/digestalgorithm/publicDigestCallback";
 import cryptoFramework from "@ohos.security.cryptoFramework";

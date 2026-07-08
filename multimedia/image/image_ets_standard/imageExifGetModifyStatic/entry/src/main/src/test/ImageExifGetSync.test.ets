@@ -15,7 +15,7 @@
  */
 
 import hilog from '@ohos.hilog';
-import { describe, it, expect, TestType, Size, Level, beforeAll, afterEach, Hypium} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterEach, Hypium} from "@ohos/hypium-binary/src/main/indexStatic";
 import image from '@ohos.multimedia.image';
 import { BusinessError } from '@ohos.base';
 import fs from '@ohos.file.fs';

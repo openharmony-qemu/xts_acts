@@ -16,7 +16,7 @@
 
 import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect ,TestType ,Size ,Level } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect ,TestType ,Size ,Level } from "@ohos/hypium-binary/src/main/indexStatic";
 import pluginBundleManager from '@ohos.bundle.pluginBundleManager';
 import resourceManager from '@ohos.resourceManager';
 import { AppStorage } from '@ohos.arkui.stateManagement';

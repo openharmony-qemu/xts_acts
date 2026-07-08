@@ -15,7 +15,7 @@
  */
 
 import image from "@ohos.multimedia.image";
-import { describe, it, expect, TestType, Size, Level, beforeAll, afterEach, Hypium} from '../../../hypium/index';
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterEach, Hypium} from '@ohos/hypium-binary/src/main/indexStatic';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import fs from '@ohos.file.fs'

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Size, Level } from "../../../hypium/index";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
 import drawing from '@ohos.graphics.drawing';
 import { BusinessError } from '@ohos.base';
 import { getRandomNumber } from './Util.test';

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll, beforeEach, afterEach} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll, beforeEach, afterEach} from "@ohos/hypium-binary/src/main/indexStatic";
 import hilog from '@ohos.hilog'
 import { WantAgent as _WantAgent } from '@ohos.app.ability.wantAgent';
 import wantAgent from '@ohos.app.ability.wantAgent';

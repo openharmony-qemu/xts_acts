@@ -58,7 +58,7 @@ import {
   ShadowAlgorithmType
 } from '@ohos.graphics.scene'
 import { $rawfile, Resource } from '@ohos.arkui.component'
-import { describe, expect, it, Level, Size, TestType } from '../../../hypium/index'
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic'
 import { doubleEqual, vec4ToString } from '../common/utils'
 import * as scene3d from '@ohos.graphics.scene'
 

@@ -16,7 +16,7 @@
 
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
-import { describe, it, expect, beforeAll, Level, beforeEach, afterEach, afterAll, Hypium } from '../../../../hypium';
+import { describe, it, expect, beforeAll, Level, beforeEach, afterEach, afterAll, Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
 import { getPermission, LOG_TAG } from '../common';
 import { common } from '@kit.AbilityKit';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';

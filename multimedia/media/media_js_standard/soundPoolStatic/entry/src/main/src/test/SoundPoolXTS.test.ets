@@ -20,10 +20,10 @@ import audio from '@ohos.multimedia.audio';
 import media from '@ohos.multimedia.media';
 import fs from '@ohos.file.fs'
 import { SoundPool, PlayParameters, ErrorInfo, ErrorType } from 'multimedia.soundPool'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium-binary/src/main/indexStatic";
 import { BusinessError, ErrorCallback, Callback } from '@ohos.base';
 import common from '@ohos.app.ability.common';
-import { Hypium } from "../../../hypium/index";
+import { Hypium } from "@ohos/hypium-binary/src/main/indexStatic";
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { AbilityMonitor } from "application.AbilityMonitor";

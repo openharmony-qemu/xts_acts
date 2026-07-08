@@ -15,7 +15,7 @@
  */
 
 import { BusinessError } from '@ohos.base';
-import { expect } from "../../../../../hypium/index";
+import { expect } from "@ohos/hypium-binary/src/main/indexStatic";
 import cryptoFramework from "@ohos.security.cryptoFramework";
 import {
   stringTouInt8Array,

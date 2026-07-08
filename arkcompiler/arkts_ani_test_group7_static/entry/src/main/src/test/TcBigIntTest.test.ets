@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, expect } from "../../../hypium/index";
+import { describe, expect } from "@ohos/hypium-binary/src/main/indexStatic";
 
 export default function TcBigIntTest(): void {
   describe("TcBigIntTest", (): void => {

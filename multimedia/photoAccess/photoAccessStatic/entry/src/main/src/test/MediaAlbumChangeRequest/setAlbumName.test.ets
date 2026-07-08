@@ -15,7 +15,7 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
-import { describe, it, expect, beforeAll, Hypium, TestType, Size, Level } from '../../../../hypium/index'
+import { describe, it, expect, beforeAll, Hypium, TestType, Size, Level } from '@ohos/hypium-binary/src/main/indexStatic'
 import { genRadomStr, fetchOption, getPermission, driveFn, sleep } from '../Common.test.ets'
 import Context from "application.Context"
 

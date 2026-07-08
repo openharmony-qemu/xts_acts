@@ -15,7 +15,7 @@
  */
 
 import hilog from '@ohos.hilog';
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll} from '../../../hypium/index';
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll} from '@ohos/hypium-binary/src/main/indexStatic';
 import linkEnhance from '@ohos.distributedsched.linkEnhance';
 import { Driver, ON, Component } from '@ohos.UiTest';
 import abilityAccessCtrl, { Permissions } from '@ohos.abilityAccessCtrl';

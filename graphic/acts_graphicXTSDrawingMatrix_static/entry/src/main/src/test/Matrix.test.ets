@@ -25,7 +25,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../hypium/index";
+} from "@ohos/hypium-binary/src/main/indexStatic";
 import drawing from '@ohos.graphics.drawing';
 import { BusinessError } from '@ohos.base';
 

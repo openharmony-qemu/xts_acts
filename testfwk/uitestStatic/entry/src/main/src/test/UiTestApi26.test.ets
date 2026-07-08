@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, afterAll, afterEach, describe, it, expect, TestType, Size, Level } from "../../../hypium/index"
+import { beforeAll, beforeEach, afterAll, afterEach, describe, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic"
 import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation, TouchOptions, PenKey, PenKeyOperation, PenMode } from '@kit.TestKit'
 import hilog from '@ohos.hilog'
 import display from '@ohos.display';

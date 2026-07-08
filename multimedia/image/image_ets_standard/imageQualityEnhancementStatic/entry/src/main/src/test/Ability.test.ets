@@ -19,7 +19,7 @@ import fs from '@ohos.file.fs';
 import image from '@ohos.multimedia.image';
 import { BusinessError } from '@ohos.base';
 import colorSpaceManager from '@ohos.graphics.colorSpaceManager';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Hypium, Level } from '../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Hypium, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import { initialize } from './AbilityContextHelper.test';
 
 let sleep = async (delay: int): Promise<int> => {

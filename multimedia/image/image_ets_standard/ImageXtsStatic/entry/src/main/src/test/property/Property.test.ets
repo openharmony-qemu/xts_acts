@@ -15,7 +15,7 @@
  */
 
 import image from '@ohos.multimedia.image';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, Hypium, it, Level } from '../../../../hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, Hypium, it, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import { Context } from '@kit.ArkUI';
 import fs from '@ohos.file.fs';
 

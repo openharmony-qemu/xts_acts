@@ -19,7 +19,7 @@ import media from '@ohos.multimedia.media'
 import camera from '@ohos.multimedia.camera'
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import display from '@ohos.display';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
 import { BusinessError, Callback, RecordData } from '@ohos.base';
 import eventEmitter from '@ohos.events.emitter';
 import Common from './Common.test';

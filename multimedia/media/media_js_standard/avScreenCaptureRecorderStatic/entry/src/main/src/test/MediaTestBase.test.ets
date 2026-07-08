@@ -15,7 +15,7 @@
  */
 
 import audio from '@ohos.multimedia.audio';
-import { expect } from '../../../hypium/index';
+import { expect } from '@ohos/hypium-binary/src/main/indexStatic';
 import fs from '@ohos.file.fs';
 import { ReadOptions } from '@ohos.file.fs';
 // import { UiDriver, BY } from '@ohos.UiTest';
