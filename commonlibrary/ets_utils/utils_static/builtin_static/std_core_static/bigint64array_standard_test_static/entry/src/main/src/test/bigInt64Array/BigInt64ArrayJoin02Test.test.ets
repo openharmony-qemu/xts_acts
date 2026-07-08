@@ -1789,4 +1789,255 @@ export default function BigInt64ArrayJoin02Test(): void {
       }
     );
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_TWO_0980
+     * @tc.name testBigInt64ArrayJoinTwo0980
+     * @tc.desc Verify length for 100 ones with default separator.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it(
+      'testBigInt64ArrayJoinTwo0980',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
+        let data: bigint[] = [];
+        for(let i = 0; i < 100; i++) {
+          data.push(1n);
+        }
+        let arr = new BigInt64Array(data);
+        let res = arr.join();
+        expect(res.length).assertEqual(199);
+      }
+    );
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_TWO_0990
+     * @tc.name testBigInt64ArrayJoinTwo0990
+     * @tc.desc Verify value for 100 ones with empty separator.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it(
+      'testBigInt64ArrayJoinTwo0990',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
+        let data: bigint[] = [];
+        for(let i = 0; i < 100; i++) {
+          data.push(1n);
+        }
+        let arr = new BigInt64Array(data);
+        let res = arr.join("");
+        let expectedData: string[] = [];
+        for(let i = 0; i < 100; i++) {
+          expectedData.push("1");
+        }
+        expect(res).assertEqual(expectedData.join(""));
+      }
+    );
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_TWO_1000
+     * @tc.name testBigInt64ArrayJoinTwo1000
+     * @tc.desc Verify length for 100 ones with empty separator.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it(
+      'testBigInt64ArrayJoinTwo1000',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
+        let data: bigint[] = [];
+        for(let i = 0; i < 100; i++) {
+          data.push(1n);
+        }
+        let arr = new BigInt64Array(data);
+        let res = arr.join("");
+        expect(res.length).assertEqual(100);
+      }
+    );
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_TWO_1010
+     * @tc.name testBigInt64ArrayJoinTwo1010
+     * @tc.desc Verify value for 100 ones with hyphen separator.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it(
+      'testBigInt64ArrayJoinTwo1010',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
+        let data: bigint[] = [];
+        for(let i = 0; i < 100; i++) {
+          data.push(1n);
+        }
+        let arr = new BigInt64Array(data);
+        let res = arr.join("-");
+        let expectedData: string[] = [];
+        for(let i = 0; i < 100; i++) {
+          expectedData.push("1");
+        }
+        expect(res).assertEqual(expectedData.join("-"));
+      }
+    );
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_TWO_1020
+     * @tc.name testBigInt64ArrayJoinTwo1020
+     * @tc.desc Verify length for 100 ones with hyphen separator.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it(
+      'testBigInt64ArrayJoinTwo1020',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
+        let data: bigint[] = [];
+        for(let i = 0; i < 100; i++) {
+          data.push(1n);
+        }
+        let arr = new BigInt64Array(data);
+        let res = arr.join("-");
+        expect(res.length).assertEqual(199);
+      }
+    );
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_TWO_1030
+     * @tc.name testBigInt64ArrayJoinTwo1030
+     * @tc.desc Verify length for 100 max bigint values with default separator.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it(
+      'testBigInt64ArrayJoinTwo1030',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
+        let data: bigint[] = [];
+        for(let i = 0; i < 100; i++) {
+          data.push(9223372036854775807n);
+        }
+        let arr = new BigInt64Array(data);
+        let res = arr.join();
+        expect(res.length).assertEqual(1999);
+      }
+    );
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_TWO_1040
+     * @tc.name testBigInt64ArrayJoinTwo1040
+     * @tc.desc Verify length for 100 min bigint values with default separator.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it(
+      'testBigInt64ArrayJoinTwo1040',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
+        let data: bigint[] = [];
+        for(let i = 0; i < 100; i++) {
+          data.push(-9223372036854775808n);
+        }
+        let arr = new BigInt64Array(data);
+        let res = arr.join();
+        expect(res.length).assertEqual(2099);
+      }
+    );
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_TWO_1050
+     * @tc.name testBigInt64ArrayJoinTwo1050
+     * @tc.desc Verify string type for large array join result.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it(
+      'testBigInt64ArrayJoinTwo1050',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
+        let data: bigint[] = [];
+        for(let i = 0; i < 100; i++) {
+          data.push(1n);
+        }
+        let arr = new BigInt64Array(data);
+        let res = arr.join();
+        expect(typeof res).assertEqual("string");
+      }
+    );
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_TWO_1060
+     * @tc.name testBigInt64ArrayJoinTwo1060
+     * @tc.desc Verify join keeps large array length unchanged.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it(
+      'testBigInt64ArrayJoinTwo1060',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
+        let data: bigint[] = [];
+        for(let i = 0; i < 100; i++) {
+          data.push(1n);
+        }
+        let arr = new BigInt64Array(data);
+        arr.join();
+        expect(arr.length).assertEqual(100);
+      }
+    );
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_TWO_1070
+     * @tc.name testBigInt64ArrayJoinTwo1070
+     * @tc.desc Verify join keeps large array first element unchanged.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it(
+      'testBigInt64ArrayJoinTwo1070',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
+        let data: bigint[] = [];
+        for(let i = 0; i < 100; i++) {
+          data.push(1n);
+        }
+        let arr = new BigInt64Array(data);
+        arr.join();
+        expect(arr[0]).assertEqual(1n);
+      }
+    );
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_TWO_1080
+     * @tc.name testBigInt64ArrayJoinTwo1080
+     * @tc.desc Verify join keeps large array last element unchanged.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it(
+      'testBigInt64ArrayJoinTwo1080',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
+        let data: bigint[] = [];
+        for(let i = 0; i < 100; i++) {
+          data.push(1n);
+        }
+        let arr = new BigInt64Array(data);
+        arr.join();
+        expect(arr[99]).assertEqual(1n);
+      }
+    );
+
+  });
 }
