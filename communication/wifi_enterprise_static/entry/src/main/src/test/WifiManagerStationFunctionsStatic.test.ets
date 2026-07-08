@@ -142,7 +142,11 @@ export default function actsWifiManagerFunctionsTest() {
           expect(typeof deviceConfig.bssid === 'string'  || deviceConfig.bssid === undefined ).assertTrue();
           let select_enum: wifiManager.DeviceAddressType | undefined = deviceConfig.bssidType;
           hilog.info(domain, tag, 'getDeviceConfigs result bssidType:' + select_enum);
-          const bssidTypeValues: (undefined | int)[] = [undefined, wifiManager.DeviceAddressType.RANDOM_DEVICE_ADDRESS, wifiManager.DeviceAddressType.REAL_DEVICE_ADDRESS];
+          let bssidTypeValues: (wifiManager.DeviceAddressType | undefined)[] = [
+            undefined, 
+            wifiManager.DeviceAddressType.RANDOM_DEVICE_ADDRESS, 
+            wifiManager.DeviceAddressType.REAL_DEVICE_ADDRESS
+          ];
           expect(bssidTypeValues.includes(select_enum)).assertTrue();
           hilog.info(domain, tag, 'getDeviceConfigs result isHiddenSsid:' + deviceConfig.isHiddenSsid);
           expect(typeof deviceConfig.isHiddenSsid === 'boolean').assertTrue();
