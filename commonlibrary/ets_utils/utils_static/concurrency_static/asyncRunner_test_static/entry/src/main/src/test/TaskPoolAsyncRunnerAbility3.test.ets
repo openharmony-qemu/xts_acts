@@ -24,7 +24,7 @@ import {
   TestType,
   Size,
   Level
-} from '../../../hypium/index'
+} from '@ohos/hypium-binary/src/main/indexStatic'
 // import { lang, taskpool } from '@kit.ArkTS';
 import {
   printAny1,

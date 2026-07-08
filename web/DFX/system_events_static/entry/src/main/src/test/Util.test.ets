@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import emitter from '@ohos.events.emitter';
-import { expect } from '../../../hypium/index';
+import { expect } from '@ohos/hypium-binary/src/main/indexStatic';
 import { RecordData } from '@ohos.base';
 
 export default class Utils{

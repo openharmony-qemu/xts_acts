@@ -19,7 +19,7 @@ import { State } from '@ohos.arkui.stateManagement'
 import { Button, ClickEvent, Column, Component, Entry, Row, Text, Web, } from '@ohos.arkui.component'
 import events_emitter from '@ohos.events.emitter'
 import { BusinessError, Callback, RecordData } from '@ohos.base'
-import { Hypium } from '../../../hypium/index';
+import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
 import Utils from '../../src/test/Utils.test';
 
 export class StringFields {

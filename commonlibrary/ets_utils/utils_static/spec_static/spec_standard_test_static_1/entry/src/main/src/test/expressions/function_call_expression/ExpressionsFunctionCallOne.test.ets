@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../hypium";
+} from "@ohos/hypium-binary/src/main/indexStatic";
 
 type lmbd_safe_fcall_ftype = () => A_safe_fcall_ftype|null
 type NullOrChaining_safe_call_arguments_evaluate = Chaining_safe_call_arguments_evaluate | null

@@ -31,7 +31,7 @@ import {
 } from '@ohos.arkui.component'
 import Utils from '../../src/test/Util.test';
 import image from '@ohos.multimedia.image';
-import { Hypium } from '../../../hypium/index';
+import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import web_webview from '@ohos.web.webview';
 import { BusinessError, Callback, RecordData } from '@ohos.base';

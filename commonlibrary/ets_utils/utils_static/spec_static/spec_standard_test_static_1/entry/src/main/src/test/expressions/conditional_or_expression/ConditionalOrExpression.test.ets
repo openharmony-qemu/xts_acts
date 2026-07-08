@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../hypium";
+} from "@ohos/hypium-binary/src/main/indexStatic";
 
 export default function ConditionalOrExpressionTest(): void {
   describe("ConditionalOrExpressionTest", () => {

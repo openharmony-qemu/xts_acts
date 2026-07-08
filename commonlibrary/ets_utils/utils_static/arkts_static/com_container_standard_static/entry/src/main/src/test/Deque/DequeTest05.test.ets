@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach,afterEach,afterAll} from '../../../../hypium/index';
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach,afterEach,afterAll} from '@ohos/hypium-binary/src/main/indexStatic';
 import Deque  from '@ohos.util.Deque';
 import Utils from '../Util.test';
 class TestObject {

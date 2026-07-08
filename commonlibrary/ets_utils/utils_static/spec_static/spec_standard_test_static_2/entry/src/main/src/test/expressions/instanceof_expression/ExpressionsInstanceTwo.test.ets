@@ -25,7 +25,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../hypium";
+} from "@ohos/hypium-binary/src/main/indexStatic";
 
 let a7: float[] = [1.0f, 1.0f]
 let a11: char[] = [c'a', c'a']

@@ -23,7 +23,7 @@ import { State } from '@ohos.arkui.stateManagement'
 import { BusinessError, RecordData } from '@ohos.base'
 import { Driver, ON } from '@ohos.UiTest';
 import hilog from '@ohos.hilog';
-import { Hypium } from '../../../hypium';
+import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
 import testsuite from '../../src/test/List.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { WebLayoutMode } from '@ohos.arkui.component'

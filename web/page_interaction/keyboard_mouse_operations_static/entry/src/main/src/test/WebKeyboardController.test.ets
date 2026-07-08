@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { expect, beforeAll, beforeEach, afterEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
+import { expect, beforeAll, beforeEach, afterEach, describe, it, TestType, Size, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import { startAbility, Utils } from './Util.test';
 import inspector from '@ohos.arkui.inspector';
 import UIAbility from '@ohos.app.ability.UIAbility';

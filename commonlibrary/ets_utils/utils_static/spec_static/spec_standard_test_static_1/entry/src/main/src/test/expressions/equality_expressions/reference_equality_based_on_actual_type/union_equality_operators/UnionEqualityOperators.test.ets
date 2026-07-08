@@ -27,7 +27,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../../../../hypium';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 
 enum Color { Red, Green, Blue }
 

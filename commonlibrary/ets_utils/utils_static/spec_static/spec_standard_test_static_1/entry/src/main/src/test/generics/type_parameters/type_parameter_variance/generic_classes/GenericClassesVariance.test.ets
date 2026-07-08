@@ -26,7 +26,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../../../../hypium';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 
 // ---- Combined usage of in, out, and invariant modifiers ----
 

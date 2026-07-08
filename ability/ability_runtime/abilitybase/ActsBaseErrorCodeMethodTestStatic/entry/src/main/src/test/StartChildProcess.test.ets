@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, it, expect, Level, afterEach } from '../../../hypium/index';
+import { describe, beforeAll, it, expect, Level, afterEach } from '@ohos/hypium-binary/src/main/indexStatic';
 import hilog from '@ohos.hilog';
 import childProcessManager from '@ohos.app.ability.childProcessManager';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';

@@ -16,7 +16,7 @@
 
 import {
   describe, expect, it, Level, Size, TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 import { Decimal } from '@kit.ArkTS';
 
 export default function DecimalTest(): void {

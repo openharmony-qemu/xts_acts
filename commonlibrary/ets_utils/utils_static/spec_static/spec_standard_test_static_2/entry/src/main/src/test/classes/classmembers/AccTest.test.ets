@@ -25,7 +25,7 @@ import {
   TestType,
   Size,
   Level
-} from '../../../../../hypium/index';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 import { A } from './file_A.ets'
 import { B } from './file_B2.ets'
 import { B1 } from './file_B.ets'

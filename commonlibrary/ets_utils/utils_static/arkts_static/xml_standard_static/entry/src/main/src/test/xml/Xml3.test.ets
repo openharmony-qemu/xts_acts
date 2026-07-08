@@ -24,7 +24,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 import xml from '@ohos.xml';
 import util from '@ohos.util';
 import Utils from '../Util.test';

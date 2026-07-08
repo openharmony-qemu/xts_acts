@@ -26,7 +26,7 @@ import {
   TestType,
   Size,
   Level
-} from '../../../../hypium/index';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 import Utils from '../Util.test';
 
 function expectAsinReference(actual: double, expected: double, tolerance: double): void {

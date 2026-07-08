@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
 
 //declare function setTimeout(handler: Function, timeout?: number): number;
 // FIX ESE0127: remove PromiseLike<number>, use Function for resolve to avoid setTimeout callback type mismatch

@@ -15,7 +15,7 @@
 */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it,
-  Level, Size, TestType } from '../../../../../../hypium/index';
+  Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
 
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {

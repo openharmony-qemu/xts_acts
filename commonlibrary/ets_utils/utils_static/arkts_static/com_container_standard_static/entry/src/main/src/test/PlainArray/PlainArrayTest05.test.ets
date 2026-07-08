@@ -24,7 +24,7 @@ import {
   TestType,
   Size,
   Level
-} from '../../../../hypium/index';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 import { PlainArray } from '@kit.ArkTS';
 import Utils from '../Util.test';
 

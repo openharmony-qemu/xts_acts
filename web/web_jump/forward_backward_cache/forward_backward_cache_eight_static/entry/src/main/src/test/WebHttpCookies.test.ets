@@ -16,7 +16,7 @@
 
 
 
-import { beforeAll, beforeEach, describe, it, TestType, Size, Level, expect } from '../../../hypium/index';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level, expect } from '@ohos/hypium-binary/src/main/indexStatic';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';

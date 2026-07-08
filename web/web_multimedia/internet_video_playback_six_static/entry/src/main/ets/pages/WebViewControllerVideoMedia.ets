@@ -27,7 +27,7 @@ import webview from '@ohos.web.webview'
 import events_emitter from '@ohos.events.emitter'
 import Utils from '../../src/test/Utils.test';
 import { BusinessError ,Callback, RecordData } from '@ohos.base'
-import { Hypium } from '../../../hypium/index';
+import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
 import { State } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { WebNetErrorList } from '@ohos.web.netErrorList';

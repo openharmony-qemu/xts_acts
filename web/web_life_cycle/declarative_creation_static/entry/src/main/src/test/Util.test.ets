@@ -15,7 +15,7 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import { expect } from '../../../hypium/index';
+import { expect } from '@ohos/hypium-binary/src/main/indexStatic';
 import webview from '@ohos.web.webview';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { RecordData } from '@ohos.base';

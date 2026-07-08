@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-binary/src/main/indexStatic';
 import { animal, MyObjects, Person, task, update } from '../pages/Utils';
 import Utils from '../Util.test';
 async function sleep(time: int): Promise<int> {

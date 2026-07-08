@@ -13,7 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-import { afterEach, beforeAll, beforeEach, describe, it, expect,TestType, Size, Level } from '../../../hypium/index';
+import { afterEach, beforeAll, beforeEach, describe, it, expect,TestType, Size, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import emitter from '@ohos.events.emitter';
 import Utils from './Util.test';
 import router from '@ohos.router';

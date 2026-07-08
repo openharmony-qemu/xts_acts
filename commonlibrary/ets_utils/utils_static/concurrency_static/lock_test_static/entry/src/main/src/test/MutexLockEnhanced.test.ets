@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium/index';
+import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
 import Utils from './Util.test';
 import { BaseClass, sleep } from '../utils/Model';
 

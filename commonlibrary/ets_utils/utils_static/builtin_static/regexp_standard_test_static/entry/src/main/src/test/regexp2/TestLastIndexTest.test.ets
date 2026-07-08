@@ -19,7 +19,7 @@
  * stateful iteration without pulling in unrelated pattern classes.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import Utils from '../Util.test';
 
 function supportsRegExp(pattern: string, flags: string = ''): boolean {

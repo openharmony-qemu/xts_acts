@@ -25,7 +25,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../hypium";
+} from "@ohos/hypium-binary/src/main/indexStatic";
 
 type foo1_o = (x?: int) => int
 

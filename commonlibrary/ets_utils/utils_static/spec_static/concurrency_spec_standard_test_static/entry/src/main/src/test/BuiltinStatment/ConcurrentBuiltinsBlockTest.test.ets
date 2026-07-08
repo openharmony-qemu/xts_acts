@@ -24,7 +24,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 import {
   builtinsStatementBlockTest1001,
   builtinsStatementBlockTest1002,
