@@ -13,11 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect } from '../../../../hypium/index';
+import { describe, it, expect,afterAll, afterEach, beforeAll, beforeEach } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntEquals1Test_2(): void {
   describe('BigIntEquals1Test_2', ()=> {
+    beforeAll((): void => {
+    });
+    beforeEach(():void=>{
+
+    });
+    afterEach((): void => {
+    });
+    afterAll((): void => {
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_EQUALS_BI_0100

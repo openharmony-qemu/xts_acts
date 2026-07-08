@@ -13,15 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect } from '../../../../hypium/index';
+import { describe, it, expect ,afterAll, afterEach, beforeAll, beforeEach} from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntFromULongTest_2(): void {
   describe('BigIntFromULongTest_2', (): void => {
+    beforeAll((): void => {
+    });
+    beforeEach(():void=>{
+
+    });
+    afterEach((): void => {
+    });
+    afterAll((): void => {
+    });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_FROMULONG_0100
      * @tc.name testBigIntFromULongTest001
-     * @tc.desc fromULong with negative power-of-2 boundary values â†?unsigned
+     * @tc.desc fromULong with negative power-of-2 boundary values ï¿½?unsigned
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

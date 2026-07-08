@@ -13,11 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect } from '../../../../hypium/index';
+import { describe, it, expect ,afterAll, afterEach, beforeAll, beforeEach} from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntEquals1Test(): void {
   describe('BigInt.equals(to: BigInt) overload (mindmap equals_1)', () => {
+    beforeAll((): void => {
+    });
+    beforeEach(():void=>{
+
+    });
+    afterEach((): void => {
+    });
+    afterAll((): void => {
+    });
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_BI_0100
      * @tc.name testBigIntEqualsBigIntTrue0100

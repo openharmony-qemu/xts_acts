@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect } from '../../../../hypium/index';
+import { describe, it, expect,afterAll, afterEach, beforeAll, beforeEach  } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 interface ToLocaleOptions {
@@ -26,6 +26,14 @@ interface ToLocaleOptions {
 
 export default function BigIntToLocaleString1Test_2(): void {
   describe('BigIntToLocaleString1Test_2', (): void => {
+    beforeAll((): void => {
+    });
+    beforeEach(():void=>{
+    });
+    afterEach((): void => {
+    });
+    afterAll((): void => {
+    });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOLOCALE_1_0100
      * @tc.name testBigIntToLocale1Test001

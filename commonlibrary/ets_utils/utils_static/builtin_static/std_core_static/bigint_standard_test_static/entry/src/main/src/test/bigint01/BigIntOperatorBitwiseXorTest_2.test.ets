@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect } from '../../../../hypium/index';
+import { describe, it, expect,afterAll, afterEach, beforeAll, beforeEach } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 function getBigInt(): BigInt { return BigInt(0); }
@@ -21,6 +21,14 @@ function getBigInt255(): BigInt { return BigInt(255); }
 
 export default function BigIntOperatorBitwiseXorTest_2(): void {
   describe('BigIntOperatorBitwiseXorTest_2', ()=> {
+    beforeAll((): void => {
+    });
+    beforeEach(():void=>{
+    });
+    afterEach((): void => {
+    });
+    afterAll((): void => {
+    });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BITWISE_XOR_0100
      * @tc.name testBigIntBitwiseXorTest001

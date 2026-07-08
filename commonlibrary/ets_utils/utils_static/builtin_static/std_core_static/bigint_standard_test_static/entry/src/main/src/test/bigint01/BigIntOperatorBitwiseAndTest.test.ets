@@ -13,11 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect } from '../../../../hypium/index';
+import { describe, it, expect,afterAll, afterEach, beforeAll, beforeEach } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorBitwiseAndTest(): void {
   describe('BigInt.operatorBitwiseAnd (mindmap operatorBitwiseAnd)', () => {
+    beforeAll((): void => {
+    });
+    beforeEach(():void=>{
+    });
+    afterEach((): void => {
+    });
+    afterAll((): void => {
+    });
     /**
      * @tc.number SUB_BIGINT_STD_BITWISE_AND_0100
      * @tc.name testBigIntOperatorBitwiseAndBasic0100

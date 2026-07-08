@@ -13,12 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect } from '../../../../hypium/index';
+import { describe, it, expect,afterAll, afterEach, beforeAll, beforeEach } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 import Utils from '../Util.test';
 
 export default function BigIntGetULongTest(): void {
   describe('BigInt.getULong (mindmap getULong)', () => {
+    beforeAll((): void => {
+    });
+    beforeEach(():void=>{
+
+    });
+    afterEach((): void => {
+    });
+    afterAll((): void => {
+    });
     /**
      * @tc.number SUB_BIGINT_STD_GETULONG_0100
      * @tc.name testBigIntGetULongPositive0100

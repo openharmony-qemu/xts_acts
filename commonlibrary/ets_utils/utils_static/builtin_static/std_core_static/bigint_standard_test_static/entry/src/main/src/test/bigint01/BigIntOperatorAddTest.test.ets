@@ -13,11 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect } from '../../../../hypium/index';
+import { describe, it, expect ,afterAll, afterEach, beforeAll, beforeEach} from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorAddTest(): void {
   describe('BigInt.operatorAdd (mindmap operatorAdd)', () => {
+    beforeAll((): void => {
+    });
+    beforeEach(():void=>{
+    });
+    afterEach((): void => {
+    });
+    afterAll((): void => {
+    });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0100
      * @tc.name testBigIntOperatorAddBasic0100

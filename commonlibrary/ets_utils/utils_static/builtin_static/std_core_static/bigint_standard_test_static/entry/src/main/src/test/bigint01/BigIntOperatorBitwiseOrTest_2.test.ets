@@ -13,13 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect } from '../../../../hypium/index';
+import { describe, it, expect,afterAll, afterEach, beforeAll, beforeEach } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 function getBigInt(): BigInt { return BigInt(0); }
 
 export default function BigIntOperatorBitwiseOrTest_2(): void {
   describe('BigIntOperatorBitwiseOrTest_2', ()=>{
+    beforeAll((): void => {
+    });
+    beforeEach(():void=>{
+    });
+    afterEach((): void => {
+    });
+    afterAll((): void => {
+    });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BITWISE_OR_0100
      * @tc.name testBigIntBitwiseOrTest001
