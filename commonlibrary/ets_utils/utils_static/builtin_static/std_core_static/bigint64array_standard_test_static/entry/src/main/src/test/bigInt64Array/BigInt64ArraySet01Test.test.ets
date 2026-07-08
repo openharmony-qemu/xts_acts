@@ -1779,5 +1779,1701 @@ export default function BigInt64ArraySet01Test(): void {
       expect(arr[0]).assertEqual(9n);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0610
+     * @tc.name testBigInt64ArraySet061
+     * @tc.desc Verify set with ArrayLike<BigInt> and offset capacity 10 from offset 1 writes an
+     * overflowing ten-element source throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(10);
+      try {
+        const src = [10n, 10n, 10n, 10n, 10n, 10n, 10n, 10n, 10n, 10n];
+        arr.set(src, 1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0620
+     * @tc.name testBigInt64ArraySet062
+     * @tc.desc Verify set with ArrayLike<BigInt> and offset capacity 10 from offset 2 writes an
+     * overflowing ten-element source throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(10);
+      try {
+        const src = [10n, 10n, 10n, 10n, 10n, 10n, 10n, 10n, 10n, 10n];
+        arr.set(src, 2);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0630
+     * @tc.name testBigInt64ArraySet063
+     * @tc.desc Verify set with ArrayLike<BigInt> and offset capacity 10 from offset 3 writes an
+     * overflowing ten-element source throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(10);
+      try {
+        const src = [10n, 10n, 10n, 10n, 10n, 10n, 10n, 10n, 10n, 10n];
+        arr.set(src, 3);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0640
+     * @tc.name testBigInt64ArraySet064
+     * @tc.desc Verify set with ArrayLike<BigInt> and offset capacity 10 from offset 4 writes an
+     * overflowing ten-element source throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(10);
+      try {
+        const src = [10n, 10n, 10n, 10n, 10n, 10n, 10n, 10n, 10n, 10n];
+        arr.set(src, 4);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0650
+     * @tc.name testBigInt64ArraySet065
+     * @tc.desc Verify set with ArrayLike<BigInt> and offset large capacity from offset 0 writes a
+     * one-element source successfully
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(100);
+      const src = [9n];
+      arr.set(src, 0);
+      expect(arr[0]).assertEqual(9n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0660
+     * @tc.name testBigInt64ArraySet066
+     * @tc.desc Verify set with ArrayLike<BigInt> and offset large capacity from offset 1 writes a
+     * one-element source successfully
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(100);
+      const src = [9n];
+      arr.set(src, 1);
+      expect(arr[1]).assertEqual(9n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0670
+     * @tc.name testBigInt64ArraySet067
+     * @tc.desc Verify set with ArrayLike<BigInt> and offset large capacity from offset 2 writes a
+     * one-element source successfully
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(100);
+      const src = [9n];
+      arr.set(src, 2);
+      expect(arr[2]).assertEqual(9n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0680
+     * @tc.name testBigInt64ArraySet068
+     * @tc.desc Verify set with ArrayLike<BigInt> and offset large capacity from offset 3 writes a
+     * one-element source successfully
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(100);
+      const src = [9n];
+      arr.set(src, 3);
+      expect(arr[3]).assertEqual(9n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0690
+     * @tc.name testBigInt64ArraySet069
+     * @tc.desc Verify set with ArrayLike<BigInt> and offset large capacity from offset 4 writes a
+     * one-element source successfully
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(100);
+      const src = [9n];
+      arr.set(src, 4);
+      expect(arr[4]).assertEqual(9n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0700
+     * @tc.name testBigInt64ArraySet070
+     * @tc.desc Verify set with ArrayLike<BigInt> and offset large capacity from offset 0 writes a
+     * two-element source successfully
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(100);
+      const src = [9n, 9n];
+      arr.set(src, 0);
+      expect(arr[0]).assertEqual(9n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0710
+     * @tc.name testBigInt64ArraySet071
+     * @tc.desc Verify set with ArrayLike<BigInt> and offset large capacity from offset 1 writes a
+     * two-element source successfully
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(100);
+      const src = [9n, 9n];
+      arr.set(src, 1);
+      expect(arr[1]).assertEqual(9n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0720
+     * @tc.name testBigInt64ArraySet072
+     * @tc.desc Verify set with ArrayLike<BigInt> and offset large capacity from offset 2 writes a
+     * two-element source successfully
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(100);
+      const src = [9n, 9n];
+      arr.set(src, 2);
+      expect(arr[2]).assertEqual(9n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0730
+     * @tc.name testBigInt64ArraySet073
+     * @tc.desc Verify set with ArrayLike<BigInt> and offset large capacity from offset 3 writes a
+     * two-element source successfully
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(100);
+      const src = [9n, 9n];
+      arr.set(src, 3);
+      expect(arr[3]).assertEqual(9n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0740
+     * @tc.name testBigInt64ArraySet074
+     * @tc.desc Verify set with ArrayLike<BigInt> and offset large capacity from offset 4 writes a
+     * two-element source successfully
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(100);
+      const src = [9n, 9n];
+      arr.set(src, 4);
+      expect(arr[4]).assertEqual(9n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0750
+     * @tc.name testBigInt64ArraySet075
+     * @tc.desc Verify set with ArrayLike<BigInt> and offset large capacity from offset 0 writes a
+     * five-element source successfully
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(100);
+      const src = [9n, 9n, 9n, 9n, 9n];
+      arr.set(src, 0);
+      expect(arr[0]).assertEqual(9n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0760
+     * @tc.name testBigInt64ArraySet076
+     * @tc.desc Verify set with ArrayLike<BigInt> and offset large capacity from offset 1 writes a
+     * five-element source successfully
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(100);
+      const src = [9n, 9n, 9n, 9n, 9n];
+      arr.set(src, 1);
+      expect(arr[1]).assertEqual(9n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0770
+     * @tc.name testBigInt64ArraySet077
+     * @tc.desc Verify set with ArrayLike<BigInt> and offset large capacity from offset 2 writes a
+     * five-element source successfully
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(100);
+      const src = [9n, 9n, 9n, 9n, 9n];
+      arr.set(src, 2);
+      expect(arr[2]).assertEqual(9n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0780
+     * @tc.name testBigInt64ArraySet078
+     * @tc.desc Verify set with ArrayLike<BigInt> and offset large capacity from offset 3 writes a
+     * five-element source successfully
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(100);
+      const src = [9n, 9n, 9n, 9n, 9n];
+      arr.set(src, 3);
+      expect(arr[3]).assertEqual(9n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0790
+     * @tc.name testBigInt64ArraySet079
+     * @tc.desc Verify set with ArrayLike<BigInt> and offset large capacity from offset 4 writes a
+     * five-element source successfully
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(100);
+      const src = [9n, 9n, 9n, 9n, 9n];
+      arr.set(src, 4);
+      expect(arr[4]).assertEqual(9n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0800
+     * @tc.name testBigInt64ArraySet080
+     * @tc.desc Verify set with ArrayLike<BigInt> and offset large capacity from offset 0 writes a
+     * ten-element source successfully
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(100);
+      const src = [9n, 9n, 9n, 9n, 9n, 9n, 9n, 9n, 9n, 9n];
+      arr.set(src, 0);
+      expect(arr[0]).assertEqual(9n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0810
+     * @tc.name testBigInt64ArraySet081
+     * @tc.desc Verify set with ArrayLike<BigInt> and offset large capacity from offset 1 writes a
+     * ten-element source successfully
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(100);
+      const src = [9n, 9n, 9n, 9n, 9n, 9n, 9n, 9n, 9n, 9n];
+      arr.set(src, 1);
+      expect(arr[1]).assertEqual(9n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0820
+     * @tc.name testBigInt64ArraySet082
+     * @tc.desc Verify set with ArrayLike<BigInt> and offset large capacity from offset 2 writes a
+     * ten-element source successfully
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(100);
+      const src = [9n, 9n, 9n, 9n, 9n, 9n, 9n, 9n, 9n, 9n];
+      arr.set(src, 2);
+      expect(arr[2]).assertEqual(9n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0830
+     * @tc.name testBigInt64ArraySet083
+     * @tc.desc Verify set with ArrayLike<BigInt> and offset large capacity from offset 3 writes a
+     * ten-element source successfully
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(100);
+      const src = [9n, 9n, 9n, 9n, 9n, 9n, 9n, 9n, 9n, 9n];
+      arr.set(src, 3);
+      expect(arr[3]).assertEqual(9n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0840
+     * @tc.name testBigInt64ArraySet084
+     * @tc.desc Verify set with ArrayLike<BigInt> and offset large capacity from offset 4 writes a
+     * ten-element source successfully
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(100);
+      const src = [9n, 9n, 9n, 9n, 9n, 9n, 9n, 9n, 9n, 9n];
+      arr.set(src, 4);
+      expect(arr[4]).assertEqual(9n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0850
+     * @tc.name testBigInt64ArraySet085
+     * @tc.desc Verify set with FixedArray<E> 写入双元素 0 与 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([0n, 0n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(0n);
+      expect(arr[1]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0860
+     * @tc.name testBigInt64ArraySet086
+     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 0 与 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([0n, 0n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(0n);
+      expect(arr[1]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0870
+     * @tc.name testBigInt64ArraySet087
+     * @tc.desc Verify set with FixedArray<E> 写入双元素 0 与 正数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([0n, 10n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(0n);
+      expect(arr[1]).assertEqual(10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0880
+     * @tc.name testBigInt64ArraySet088
+     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 0 与 正数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([0n, 10n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(0n);
+      expect(arr[1]).assertEqual(10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0890
+     * @tc.name testBigInt64ArraySet089
+     * @tc.desc Verify set with FixedArray<E> 写入双元素 0 与 负数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([0n, -10n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(0n);
+      expect(arr[1]).assertEqual(-10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0900
+     * @tc.name testBigInt64ArraySet090
+     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 0 与 负数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([0n, -10n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(0n);
+      expect(arr[1]).assertEqual(-10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0910
+     * @tc.name testBigInt64ArraySet091
+     * @tc.desc Verify set with FixedArray<E> 写入双元素 0 与 maximum value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([0n, 9223372036854775807n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(0n);
+      expect(arr[1]).assertEqual(9223372036854775807n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0920
+     * @tc.name testBigInt64ArraySet092
+     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 0 与 maximum value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([0n, 9223372036854775807n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(0n);
+      expect(arr[1]).assertEqual(9223372036854775807n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0930
+     * @tc.name testBigInt64ArraySet093
+     * @tc.desc Verify set with FixedArray<E> 写入双元素 0 与 minimum value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([0n, -9223372036854775808n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(0n);
+      expect(arr[1]).assertEqual(-9223372036854775808n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0940
+     * @tc.name testBigInt64ArraySet094
+     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 0 与 minimum value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([0n, -9223372036854775808n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(0n);
+      expect(arr[1]).assertEqual(-9223372036854775808n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0950
+     * @tc.name testBigInt64ArraySet095
+     * @tc.desc Verify set with FixedArray<E> 写入双元素 正数 与 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([10n, 0n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(10n);
+      expect(arr[1]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0960
+     * @tc.name testBigInt64ArraySet096
+     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 正数 与 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([10n, 0n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(10n);
+      expect(arr[1]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0970
+     * @tc.name testBigInt64ArraySet097
+     * @tc.desc Verify set with FixedArray<E> 写入双元素 正数 与 正数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([10n, 10n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(10n);
+      expect(arr[1]).assertEqual(10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0980
+     * @tc.name testBigInt64ArraySet098
+     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 正数 与 正数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([10n, 10n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(10n);
+      expect(arr[1]).assertEqual(10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0990
+     * @tc.name testBigInt64ArraySet099
+     * @tc.desc Verify set with FixedArray<E> 写入双元素 正数 与 负数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([10n, -10n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(10n);
+      expect(arr[1]).assertEqual(-10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1000
+     * @tc.name testBigInt64ArraySet100
+     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 正数 与 负数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([10n, -10n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(10n);
+      expect(arr[1]).assertEqual(-10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1010
+     * @tc.name testBigInt64ArraySet101
+     * @tc.desc Verify set with FixedArray<E> 写入双元素 正数 与 maximum value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([10n, 9223372036854775807n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(10n);
+      expect(arr[1]).assertEqual(9223372036854775807n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1020
+     * @tc.name testBigInt64ArraySet102
+     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 正数 与 maximum value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([10n, 9223372036854775807n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(10n);
+      expect(arr[1]).assertEqual(9223372036854775807n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1030
+     * @tc.name testBigInt64ArraySet103
+     * @tc.desc Verify set with FixedArray<E> 写入双元素 正数 与 minimum value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([10n, -9223372036854775808n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(10n);
+      expect(arr[1]).assertEqual(-9223372036854775808n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1040
+     * @tc.name testBigInt64ArraySet104
+     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 正数 与 minimum value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([10n, -9223372036854775808n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(10n);
+      expect(arr[1]).assertEqual(-9223372036854775808n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1050
+     * @tc.name testBigInt64ArraySet105
+     * @tc.desc Verify set with FixedArray<E> 写入双元素 负数 与 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([-10n, 0n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(-10n);
+      expect(arr[1]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1060
+     * @tc.name testBigInt64ArraySet106
+     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 负数 与 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([-10n, 0n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(-10n);
+      expect(arr[1]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1070
+     * @tc.name testBigInt64ArraySet107
+     * @tc.desc Verify set with FixedArray<E> 写入双元素 负数 与 正数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([-10n, 10n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(-10n);
+      expect(arr[1]).assertEqual(10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1080
+     * @tc.name testBigInt64ArraySet108
+     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 负数 与 正数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([-10n, 10n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(-10n);
+      expect(arr[1]).assertEqual(10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1090
+     * @tc.name testBigInt64ArraySet109
+     * @tc.desc Verify set with FixedArray<E> 写入双元素 负数 与 负数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([-10n, -10n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(-10n);
+      expect(arr[1]).assertEqual(-10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1100
+     * @tc.name testBigInt64ArraySet110
+     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 负数 与 负数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([-10n, -10n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(-10n);
+      expect(arr[1]).assertEqual(-10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1110
+     * @tc.name testBigInt64ArraySet111
+     * @tc.desc Verify set with FixedArray<E> 写入双元素 负数 与 maximum value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([-10n, 9223372036854775807n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(-10n);
+      expect(arr[1]).assertEqual(9223372036854775807n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1120
+     * @tc.name testBigInt64ArraySet112
+     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 负数 与 maximum value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([-10n, 9223372036854775807n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(-10n);
+      expect(arr[1]).assertEqual(9223372036854775807n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1130
+     * @tc.name testBigInt64ArraySet113
+     * @tc.desc Verify set with FixedArray<E> 写入双元素 负数 与 minimum value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([-10n, -9223372036854775808n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(-10n);
+      expect(arr[1]).assertEqual(-9223372036854775808n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1140
+     * @tc.name testBigInt64ArraySet114
+     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 负数 与 minimum value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([-10n, -9223372036854775808n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(-10n);
+      expect(arr[1]).assertEqual(-9223372036854775808n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1150
+     * @tc.name testBigInt64ArraySet115
+     * @tc.desc Verify set with FixedArray<E> 写入双元素 maximum value 与 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([9223372036854775807n, 0n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(9223372036854775807n);
+      expect(arr[1]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1160
+     * @tc.name testBigInt64ArraySet116
+     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 maximum value 与 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([9223372036854775807n, 0n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(9223372036854775807n);
+      expect(arr[1]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1170
+     * @tc.name testBigInt64ArraySet117
+     * @tc.desc Verify set with FixedArray<E> 写入双元素 maximum value 与 正数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([9223372036854775807n, 10n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(9223372036854775807n);
+      expect(arr[1]).assertEqual(10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1180
+     * @tc.name testBigInt64ArraySet118
+     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 maximum value 与 正数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([9223372036854775807n, 10n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(9223372036854775807n);
+      expect(arr[1]).assertEqual(10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1190
+     * @tc.name testBigInt64ArraySet119
+     * @tc.desc Verify set with FixedArray<E> 写入双元素 maximum value 与 负数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([9223372036854775807n, -10n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(9223372036854775807n);
+      expect(arr[1]).assertEqual(-10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1200
+     * @tc.name testBigInt64ArraySet120
+     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 maximum value 与 负数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([9223372036854775807n, -10n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(9223372036854775807n);
+      expect(arr[1]).assertEqual(-10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1210
+     * @tc.name testBigInt64ArraySet121
+     * @tc.desc Verify set with FixedArray<E> 写入双元素 maximum value 与 maximum value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([9223372036854775807n, 9223372036854775807n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(9223372036854775807n);
+      expect(arr[1]).assertEqual(9223372036854775807n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1220
+     * @tc.name testBigInt64ArraySet122
+     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 maximum value 与 maximum value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([9223372036854775807n, 9223372036854775807n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(9223372036854775807n);
+      expect(arr[1]).assertEqual(9223372036854775807n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1230
+     * @tc.name testBigInt64ArraySet123
+     * @tc.desc Verify set with FixedArray<E> 写入双元素 maximum value 与 minimum value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([9223372036854775807n, -9223372036854775808n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(9223372036854775807n);
+      expect(arr[1]).assertEqual(-9223372036854775808n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1240
+     * @tc.name testBigInt64ArraySet124
+     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 maximum value 与 minimum value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([9223372036854775807n, -9223372036854775808n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(9223372036854775807n);
+      expect(arr[1]).assertEqual(-9223372036854775808n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1250
+     * @tc.name testBigInt64ArraySet125
+     * @tc.desc Verify set with FixedArray<E> 写入双元素 minimum value 与 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([-9223372036854775808n, 0n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(-9223372036854775808n);
+      expect(arr[1]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1260
+     * @tc.name testBigInt64ArraySet126
+     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 minimum value 与 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([-9223372036854775808n, 0n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(-9223372036854775808n);
+      expect(arr[1]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1270
+     * @tc.name testBigInt64ArraySet127
+     * @tc.desc Verify set with FixedArray<E> 写入双元素 minimum value 与 正数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([-9223372036854775808n, 10n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(-9223372036854775808n);
+      expect(arr[1]).assertEqual(10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1280
+     * @tc.name testBigInt64ArraySet128
+     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 minimum value 与 正数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([-9223372036854775808n, 10n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(-9223372036854775808n);
+      expect(arr[1]).assertEqual(10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1290
+     * @tc.name testBigInt64ArraySet129
+     * @tc.desc Verify set with FixedArray<E> 写入双元素 minimum value 与 负数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([-9223372036854775808n, -10n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(-9223372036854775808n);
+      expect(arr[1]).assertEqual(-10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1300
+     * @tc.name testBigInt64ArraySet130
+     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 minimum value 与 负数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([-9223372036854775808n, -10n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(-9223372036854775808n);
+      expect(arr[1]).assertEqual(-10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1310
+     * @tc.name testBigInt64ArraySet131
+     * @tc.desc Verify set with FixedArray<E> 写入双元素 minimum value 与 maximum value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([-9223372036854775808n, 9223372036854775807n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(-9223372036854775808n);
+      expect(arr[1]).assertEqual(9223372036854775807n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1320
+     * @tc.name testBigInt64ArraySet132
+     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 minimum value 与 maximum value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([-9223372036854775808n, 9223372036854775807n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(-9223372036854775808n);
+      expect(arr[1]).assertEqual(9223372036854775807n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1330
+     * @tc.name testBigInt64ArraySet133
+     * @tc.desc Verify set with FixedArray<E> 写入双元素 minimum value 与 minimum value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([-9223372036854775808n, -9223372036854775808n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(-9223372036854775808n);
+      expect(arr[1]).assertEqual(-9223372036854775808n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1340
+     * @tc.name testBigInt64ArraySet134
+     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 minimum value 与 minimum value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([-9223372036854775808n, -9223372036854775808n]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(-9223372036854775808n);
+      expect(arr[1]).assertEqual(-9223372036854775808n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1350
+     * @tc.name testBigInt64ArraySet135
+     * @tc.desc Verify set with BigInt64Array 写入视图含 0 和 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(2);
+      const src = BigInt64Array.of(0n, 0n);
+      arr.set(src);
+      expect(arr[0]).assertEqual(0n);
+      expect(arr[1]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1360
+     * @tc.name testBigInt64ArraySet136
+     * @tc.desc Verify set with ArrayLike<BigInt> 写入类数组含 0 和 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(2);
+      arr.set([0n, 0n]);
+      expect(arr[0]).assertEqual(0n);
+      expect(arr[1]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1370
+     * @tc.name testBigInt64ArraySet137
+     * @tc.desc Verify set with BigInt64Array 写入视图含 0 和 正数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(2);
+      const src = BigInt64Array.of(0n, 10n);
+      arr.set(src);
+      expect(arr[0]).assertEqual(0n);
+      expect(arr[1]).assertEqual(10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1380
+     * @tc.name testBigInt64ArraySet138
+     * @tc.desc Verify set with ArrayLike<BigInt> 写入类数组含 0 和 正数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(2);
+      arr.set([0n, 10n]);
+      expect(arr[0]).assertEqual(0n);
+      expect(arr[1]).assertEqual(10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1390
+     * @tc.name testBigInt64ArraySet139
+     * @tc.desc Verify set with BigInt64Array 写入视图含 0 和 负数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(2);
+      const src = BigInt64Array.of(0n, -10n);
+      arr.set(src);
+      expect(arr[0]).assertEqual(0n);
+      expect(arr[1]).assertEqual(-10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1400
+     * @tc.name testBigInt64ArraySet140
+     * @tc.desc Verify set with ArrayLike<BigInt> 写入类数组含 0 和 负数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(2);
+      arr.set([0n, -10n]);
+      expect(arr[0]).assertEqual(0n);
+      expect(arr[1]).assertEqual(-10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1410
+     * @tc.name testBigInt64ArraySet141
+     * @tc.desc Verify set with BigInt64Array 写入视图含 0 和 maximum value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(2);
+      const src = BigInt64Array.of(0n, 9223372036854775807n);
+      arr.set(src);
+      expect(arr[0]).assertEqual(0n);
+      expect(arr[1]).assertEqual(9223372036854775807n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1420
+     * @tc.name testBigInt64ArraySet142
+     * @tc.desc Verify set with ArrayLike<BigInt> 写入类数组含 0 和 maximum value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(2);
+      arr.set([0n, 9223372036854775807n]);
+      expect(arr[0]).assertEqual(0n);
+      expect(arr[1]).assertEqual(9223372036854775807n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1430
+     * @tc.name testBigInt64ArraySet143
+     * @tc.desc Verify set with BigInt64Array 写入视图含 0 和 minimum value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(2);
+      const src = BigInt64Array.of(0n, -9223372036854775808n);
+      arr.set(src);
+      expect(arr[0]).assertEqual(0n);
+      expect(arr[1]).assertEqual(-9223372036854775808n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1440
+     * @tc.name testBigInt64ArraySet144
+     * @tc.desc Verify set with ArrayLike<BigInt> 写入类数组含 0 和 minimum value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(2);
+      arr.set([0n, -9223372036854775808n]);
+      expect(arr[0]).assertEqual(0n);
+      expect(arr[1]).assertEqual(-9223372036854775808n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1450
+     * @tc.name testBigInt64ArraySet145
+     * @tc.desc Verify set with BigInt64Array 写入视图含 正数 和 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(2);
+      const src = BigInt64Array.of(10n, 0n);
+      arr.set(src);
+      expect(arr[0]).assertEqual(10n);
+      expect(arr[1]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1460
+     * @tc.name testBigInt64ArraySet146
+     * @tc.desc Verify set with ArrayLike<BigInt> 写入类数组含 正数 和 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(2);
+      arr.set([10n, 0n]);
+      expect(arr[0]).assertEqual(10n);
+      expect(arr[1]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1470
+     * @tc.name testBigInt64ArraySet147
+     * @tc.desc Verify set with BigInt64Array 写入视图含 正数 和 正数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(2);
+      const src = BigInt64Array.of(10n, 10n);
+      arr.set(src);
+      expect(arr[0]).assertEqual(10n);
+      expect(arr[1]).assertEqual(10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1480
+     * @tc.name testBigInt64ArraySet148
+     * @tc.desc Verify set with ArrayLike<BigInt> 写入类数组含 正数 和 正数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(2);
+      arr.set([10n, 10n]);
+      expect(arr[0]).assertEqual(10n);
+      expect(arr[1]).assertEqual(10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1490
+     * @tc.name testBigInt64ArraySet149
+     * @tc.desc Verify set(index, value) returns undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const result = arr.set(0, 100n);
+      expect(result).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1500
+     * @tc.name testBigInt64ArraySet150
+     * @tc.desc Verify set(src) returns undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(3);
+      const src = new BigInt64Array([1n, 2n, 3n]);
+      const result = arr.set(src);
+      expect(result).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1510
+     * @tc.name testBigInt64ArraySet151
+     * @tc.desc Verify set(src, offset) returns undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(5);
+      const src = new BigInt64Array([1n, 2n]);
+      const result = arr.set(src, 2);
+      expect(result).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1520
+     * @tc.name testBigInt64ArraySet152
+     * @tc.desc Verify set(src) with 100-element BigInt64Array source verifies first middle and last positions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(100);
+      const src = new BigInt64Array(100);
+      for (let i = 0; i < 100; i++) {
+        src[i] = BigInt(i + 1);
+      }
+      arr.set(src);
+      expect(arr[0]).assertEqual(1n);
+      expect(arr[49]).assertEqual(50n);
+      expect(arr[99]).assertEqual(100n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1530
+     * @tc.name testBigInt64ArraySet153
+     * @tc.desc Verify set(src, offset) at offset equal to target length minus src length fills to last element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(10);
+      const src = new BigInt64Array([100n, 200n, 300n]);
+      const offset = arr.length - src.length;
+      arr.set(src, offset);
+      expect(arr[5]).assertEqual(0n);
+      expect(arr[6]).assertEqual(0n);
+      expect(arr[7]).assertEqual(100n);
+      expect(arr[8]).assertEqual(200n);
+      expect(arr[9]).assertEqual(300n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1540
+     * @tc.name testBigInt64ArraySet154
+     * @tc.desc Verify fill then set(src) overrides specific positions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(5);
+      arr.fill(99n);
+      const src = new BigInt64Array([1n, 2n]);
+      arr.set(src, 2);
+      expect(arr[0]).assertEqual(99n);
+      expect(arr[1]).assertEqual(99n);
+      expect(arr[2]).assertEqual(1n);
+      expect(arr[3]).assertEqual(2n);
+      expect(arr[4]).assertEqual(99n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1550
+     * @tc.name testBigInt64ArraySet155
+     * @tc.desc Verify shared buffer set through one BigInt64Array view and verify from another view on same buffer
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(16);
+      const view1 = new BigInt64Array(buffer, 0, 2);
+      const src = new BigInt64Array([42n, 84n]);
+      view1.set(src);
+      const view2 = new BigInt64Array(buffer, 0, 2);
+      expect(view2[0]).assertEqual(42n);
+      expect(view2[1]).assertEqual(84n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1560
+     * @tc.name testBigInt64ArraySet156
+     * @tc.desc Verify subarray used as set(src) source
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const original = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
+      const sub = original.subarray(1, 4);
+      const arr = new BigInt64Array(3);
+      arr.set(sub);
+      expect(arr[0]).assertEqual(20n);
+      expect(arr[1]).assertEqual(30n);
+      expect(arr[2]).assertEqual(40n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1570
+     * @tc.name testBigInt64ArraySet157
+     * @tc.desc Verify set(src) with MAX_VALUE and MIN_VALUE both present verifies all positions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(4);
+      const src = new BigInt64Array([
+        9223372036854775807n,
+        -9223372036854775808n,
+        0n,
+        1n
+      ]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(9223372036854775807n);
+      expect(arr[1]).assertEqual(-9223372036854775808n);
+      expect(arr[2]).assertEqual(0n);
+      expect(arr[3]).assertEqual(1n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1580
+     * @tc.name testBigInt64ArraySet158
+     * @tc.desc Verify set(index, value) with computed index using arr.length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(5);
+      arr.set(arr.length - 1, 999n);
+      arr.set(arr.length - 2, 888n);
+      arr.set(arr.length - 3, 777n);
+      expect(arr[0]).assertEqual(0n);
+      expect(arr[1]).assertEqual(0n);
+      expect(arr[2]).assertEqual(777n);
+      expect(arr[3]).assertEqual(888n);
+      expect(arr[4]).assertEqual(999n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1590
+     * @tc.name testBigInt64ArraySet159
+     * @tc.desc Verify BYTES_PER_ELEMENT length byteLength and byteOffset preserved after set
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(5);
+      const src = new BigInt64Array([1n, 2n, 3n]);
+      arr.set(src);
+      expect(arr.length).assertEqual(5);
+      expect(arr.byteLength).assertEqual(40);
+      expect(arr.byteOffset).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1600
+     * @tc.name testBigInt64ArraySet160
+     * @tc.desc Verify set(src, offset) with 50 elements into 100-size target at offset 50 exact boundary
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(100);
+      const src = new BigInt64Array(50);
+      for (let i = 0; i < 50; i++) {
+        src[i] = BigInt(i + 1);
+      }
+      arr.set(src, 50);
+      expect(arr[0]).assertEqual(0n);
+      expect(arr[49]).assertEqual(0n);
+      expect(arr[50]).assertEqual(1n);
+      expect(arr[74]).assertEqual(25n);
+      expect(arr[99]).assertEqual(50n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1610
+     * @tc.name testBigInt64ArraySet161
+     * @tc.desc Verify set(array) with alternating sign values verifies all positions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(5);
+      arr.set([100n, -200n, 300n, -400n, 500n]);
+      expect(arr[0]).assertEqual(100n);
+      expect(arr[1]).assertEqual(-200n);
+      expect(arr[2]).assertEqual(300n);
+      expect(arr[3]).assertEqual(-400n);
+      expect(arr[4]).assertEqual(500n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1620
+     * @tc.name testBigInt64ArraySet162
+     * @tc.desc Verify multiple consecutive set calls on same target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigInt64Array(6);
+      arr.set(new BigInt64Array([10n, 20n]), 0);
+      arr.set(new BigInt64Array([30n, 40n]), 2);
+      arr.set(new BigInt64Array([50n, 60n]), 4);
+      expect(arr[0]).assertEqual(10n);
+      expect(arr[1]).assertEqual(20n);
+      expect(arr[2]).assertEqual(30n);
+      expect(arr[3]).assertEqual(40n);
+      expect(arr[4]).assertEqual(50n);
+      expect(arr[5]).assertEqual(60n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1630
+     * @tc.name testBigInt64ArraySet163
+     * @tc.desc Verify set(src, offset) on buffer-offset view with non-zero byteOffset
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySet163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(32);
+      const view = new BigInt64Array(buffer, 8, 3);
+      const src = new BigInt64Array([111n, 222n]);
+      view.set(src, 1);
+      expect(view[0]).assertEqual(0n);
+      expect(view[1]).assertEqual(111n);
+      expect(view[2]).assertEqual(222n);
+      expect(view.byteOffset).assertEqual(8);
+    });
   });
 }
