@@ -1795,5 +1795,766 @@ export default function BigInt64Array04Test(): void {
       expect(typeof sum).assertEqual('bigint');
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1180
+     * @tc.name testBigInt64ArrayFour1180
+     * @tc.desc Verify join returns a string result.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n]);
+      let result = arr.join(',');
+      expect(typeof result).assertEqual('string');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1190
+     * @tc.name testBigInt64ArrayFour1190
+     * @tc.desc Verify toString returns a string result.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n]);
+      let result = arr.toString();
+      expect(typeof result).assertEqual('string');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1200
+     * @tc.name testBigInt64ArrayFour1200
+     * @tc.desc Verify indexOf returns a number result.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let idx = arr.indexOf(2n);
+      expect(typeof idx).assertEqual('number');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1210
+     * @tc.name testBigInt64ArrayFour1210
+     * @tc.desc Verify find returns a bigint result when a match is found.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let val = arr.find((v) => v > 1n);
+      expect(typeof val).assertEqual('bigint');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1220
+     * @tc.name testBigInt64ArrayFour1220
+     * @tc.desc Verify some returns a boolean result.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let result = arr.some((v) => v > 2n);
+      expect(typeof result).assertEqual('boolean');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1230
+     * @tc.name testBigInt64ArrayFour1230
+     * @tc.desc Verify every returns a boolean result.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([2n, 4n, 6n]);
+      let result = arr.every((v) => v % 2n === 0n);
+      expect(typeof result).assertEqual('boolean');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1240
+     * @tc.name testBigInt64ArrayFour1240
+     * @tc.desc Verify includes returns a boolean result.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let result = arr.includes(2n);
+      expect(typeof result).assertEqual('boolean');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1250
+     * @tc.name testBigInt64ArrayFour1250
+     * @tc.desc Verify with throws RangeError for an index equal to the array length.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let caught = false;
+      let errorName = '';
+      try {
+        arr.with(3, 99n);
+      } catch (e) {
+        caught = e !== null && e !== undefined;
+        errorName = e.name;
+      }
+      expect(caught).assertTrue();
+      expect(errorName).assertEqual('RangeError');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1260
+     * @tc.name testBigInt64ArrayFour1260
+     * @tc.desc Verify with throws RangeError for a negative index beyond the array
+     * length.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let caught = false;
+      let errorName = '';
+      try {
+        arr.with(-4, 99n);
+      } catch (e) {
+        caught = e !== null && e !== undefined;
+        errorName = e.name;
+      }
+      expect(caught).assertTrue();
+      expect(errorName).assertEqual('RangeError');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1270
+     * @tc.name testBigInt64ArrayFour1270
+     * @tc.desc Verify set throws RangeError when the target range exceeds the array
+     * length.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let caught = false;
+      let errorName = '';
+      try {
+        let src = new BigInt64Array([9n, 8n, 7n]);
+        arr.set(src, 2);
+      } catch (e) {
+        caught = e !== null && e !== undefined;
+        errorName = e.name;
+      }
+      expect(caught).assertTrue();
+      expect(errorName).assertEqual('RangeError');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1280
+     * @tc.name testBigInt64ArrayFour1280
+     * @tc.desc Verify the constructor throws RangeError for a misaligned byteOffset.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(16);
+      let caught = false;
+      let errorName = '';
+      try {
+        new BigInt64Array(buf, 4);
+      } catch (e) {
+        caught = e !== null && e !== undefined;
+        errorName = e.name;
+      }
+      expect(caught).assertTrue();
+      expect(errorName).assertEqual('RangeError');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1290
+     * @tc.name testBigInt64ArrayFour1290
+     * @tc.desc Verify the constructor throws RangeError for a byteOffset beyond the
+     * buffer.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1290', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(8);
+      let caught = false;
+      let errorName = '';
+      try {
+        new BigInt64Array(buf, 16);
+      } catch (e) {
+        caught = e !== null && e !== undefined;
+        errorName = e.name;
+      }
+      expect(caught).assertTrue();
+      expect(errorName).assertEqual('RangeError');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1300
+     * @tc.name testBigInt64ArrayFour1300
+     * @tc.desc Verify the constructor throws RangeError for a negative length.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let caught = false;
+      let errorName = '';
+      try {
+        new BigInt64Array(-1);
+      } catch (e) {
+        caught = e !== null && e !== undefined;
+        errorName = e.name;
+      }
+      expect(caught).assertTrue();
+      expect(errorName).assertEqual('RangeError');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1310
+     * @tc.name testBigInt64ArrayFour1310
+     * @tc.desc Verify the constructor throws RangeError for an infinite length.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let caught = false;
+      let errorName = '';
+      try {
+        new BigInt64Array(Infinity);
+      } catch (e) {
+        caught = e !== null && e !== undefined;
+        errorName = e.name;
+      }
+      expect(caught).assertTrue();
+      expect(errorName).assertEqual('RangeError');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1320
+     * @tc.name testBigInt64ArrayFour1320
+     * @tc.desc Verify reduce throws TypeError for an empty array without an initial
+     * value.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1320', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array(0);
+      let caught = false;
+      let errorName = '';
+      try {
+        arr.reduce((acc, v) => acc + v);
+      } catch (e) {
+        caught = e !== null && e !== undefined;
+        errorName = e.name;
+      }
+      expect(caught).assertTrue();
+      expect(errorName).assertEqual('TypeError');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1330
+     * @tc.name testBigInt64ArrayFour1330
+     * @tc.desc Verify reduceRight throws TypeError for an empty array without an
+     * initial value.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1330', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array(0);
+      let caught = false;
+      let errorName = '';
+      try {
+        arr.reduceRight((acc, v) => acc + v);
+      } catch (e) {
+        caught = e !== null && e !== undefined;
+        errorName = e.name;
+      }
+      expect(caught).assertTrue();
+      expect(errorName).assertEqual('TypeError');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1340
+     * @tc.name testBigInt64ArrayFour1340
+     * @tc.desc Verify sort propagates an error thrown by the compare callback.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1340', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([3n, 1n, 2n]);
+      let caught = false;
+      let errorMessage = '';
+      try {
+        arr.sort((_a, _b) => { throw new Error('sort error'); });
+      } catch (e) {
+        caught = e !== null && e !== undefined;
+        errorMessage = e.message;
+      }
+      expect(caught).assertTrue();
+      expect(errorMessage).assertEqual('sort error');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1350
+     * @tc.name testBigInt64ArrayFour1350
+     * @tc.desc Verify map propagates an error thrown by the callback.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let caught = false;
+      let errorMessage = '';
+      try {
+        arr.map((_v) => { throw new Error('map error'); });
+      } catch (e) {
+        caught = e !== null && e !== undefined;
+        errorMessage = e.message;
+      }
+      expect(caught).assertTrue();
+      expect(errorMessage).assertEqual('map error');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1360
+     * @tc.name testBigInt64ArrayFour1360
+     * @tc.desc Verify filter propagates an error thrown by the callback.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1360', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let caught = false;
+      let errorMessage = '';
+      try {
+        arr.filter((_v) => { throw new Error('filter error'); });
+      } catch (e) {
+        caught = e !== null && e !== undefined;
+        errorMessage = e.message;
+      }
+      expect(caught).assertTrue();
+      expect(errorMessage).assertEqual('filter error');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1370
+     * @tc.name testBigInt64ArrayFour1370
+     * @tc.desc Verify reduce propagates an error thrown by the callback.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1370', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let caught = false;
+      let errorMessage = '';
+      try {
+        arr.reduce((_acc: BigInt, _v: BigInt): BigInt => { throw new Error('reduce error'); }, 0n);
+      } catch (e) {
+        caught = e !== null && e !== undefined;
+        errorMessage = e.message;
+      }
+      expect(caught).assertTrue();
+      expect(errorMessage).assertEqual('reduce error');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1380
+     * @tc.name testBigInt64ArrayFour1380
+     * @tc.desc Verify forEach propagates an error thrown by the callback.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1380', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let caught = false;
+      let errorMessage = '';
+      try {
+        arr.forEach((_v) => { throw new Error('forEach error'); });
+      } catch (e) {
+        caught = e !== null && e !== undefined;
+        errorMessage = e.message;
+      }
+      expect(caught).assertTrue();
+      expect(errorMessage).assertEqual('forEach error');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1390
+     * @tc.name testBigInt64ArrayFour1390
+     * @tc.desc Verify $_get returns undefined for a positive out-of-bounds index.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1390', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let val = arr.$_get(3);
+      expect(val).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1400
+     * @tc.name testBigInt64ArrayFour1400
+     * @tc.desc Verify $_get returns undefined for a negative out-of-bounds index.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let val = arr.$_get(-1);
+      expect(val).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1410
+     * @tc.name testBigInt64ArrayFour1410
+     * @tc.desc Verify $_set ignores an out-of-bounds index without throwing.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1410', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      arr.$_set(100, 99n);
+      expect(arr.length).assertEqual(3);
+      expect(arr[0]).assertEqual(1n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1420
+     * @tc.name testBigInt64ArrayFour1420
+     * @tc.desc Verify at returns undefined for a positive out-of-bounds index.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1420', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n]);
+      let val = arr.at(2);
+      expect(val).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1430
+     * @tc.name testBigInt64ArrayFour1430
+     * @tc.desc Verify at returns undefined when a negative index exceeds the array
+     * length.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1430', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n]);
+      let val = arr.at(-3);
+      expect(val).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1440
+     * @tc.name testBigInt64ArrayFour1440
+     * @tc.desc Verify repeated overflow writes keep each wrapped readback value.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1440', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array(3);
+      arr[0] = BIGINT64_OVERFLOW_POS;
+      arr[1] = BIGINT64_OVERFLOW_NEG;
+      arr[2] = BIGINT64_OVERFLOW_POS;
+      expect(arr[0]).assertEqual(BIGINT64_MIN);
+      expect(arr[1]).assertEqual(BIGINT64_MAX);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1450
+     * @tc.name testBigInt64ArrayFour1450
+     * @tc.desc Verify reduce accumulates wrapped overflow values correctly.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1450', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([BIGINT64_OVERFLOW_POS, BIGINT64_OVERFLOW_NEG]);
+      let sum = arr.reduce((acc, v) => acc + v, 0n);
+      expect(sum).assertEqual(-1n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1460
+     * @tc.name testBigInt64ArrayFour1460
+     * @tc.desc Verify sort orders wrapped overflow values correctly.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1460', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([BIGINT64_OVERFLOW_POS, BIGINT64_OVERFLOW_NEG, 0n]);
+      arr.sort();
+      expect(arr[0]).assertEqual(BIGINT64_MIN);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1470
+     * @tc.name testBigInt64ArrayFour1470
+     * @tc.desc Verify join renders the wrapped overflow value as a string.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1470', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([BIGINT64_OVERFLOW_POS]);
+      expect(arr.join(',')).assertEqual('-9223372036854775808');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1480
+     * @tc.name testBigInt64ArrayFour1480
+     * @tc.desc Verify indexOf finds the wrapped value produced by overflow input.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1480', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([BIGINT64_OVERFLOW_POS, 1n]);
+      expect(arr.indexOf(BIGINT64_MIN)).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1490
+     * @tc.name testBigInt64ArrayFour1490
+     * @tc.desc Verify reduce observes wrapped overflow values written by fill.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1490', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array(3);
+      arr.fill(BIGINT64_OVERFLOW_POS);
+      let sum = arr.reduce((acc, v) => acc + v, 0n);
+      expect(sum).assertEqual(BIGINT64_MIN * 3n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1500
+     * @tc.name testBigInt64ArrayFour1500
+     * @tc.desc Verify lastIndexOf finds the wrapped overflow value at the last
+     * position.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([BIGINT64_OVERFLOW_POS, 1n, BIGINT64_OVERFLOW_POS]);
+      expect(arr.lastIndexOf(BIGINT64_MIN)).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1510
+     * @tc.name testBigInt64ArrayFour1510
+     * @tc.desc Verify reversing the parent view updates the child view contents.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1510', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(24);
+      let parent = new BigInt64Array(buf);
+      parent[0] = 1n;
+      parent[1] = 2n;
+      parent[2] = 3n;
+      let sub = new BigInt64Array(buf, 0, 3);
+      parent.reverse();
+      expect(sub[0]).assertEqual(3n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1520
+     * @tc.name testBigInt64ArrayFour1520
+     * @tc.desc Verify filling a child view updates the parent view contents.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1520', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(16);
+      let parent = new BigInt64Array(buf);
+      let sub = new BigInt64Array(buf, 0, 1);
+      sub.fill(42n);
+      expect(parent[0]).assertEqual(42n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1530
+     * @tc.name testBigInt64ArrayFour1530
+     * @tc.desc Verify set on a child view updates the parent view contents.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1530', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(24);
+      let parent = new BigInt64Array(buf);
+      let sub = new BigInt64Array(buf, 8, 2);
+      sub.set(new BigInt64Array([100n, 200n]));
+      expect(parent[1]).assertEqual(100n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1540
+     * @tc.name testBigInt64ArrayFour1540
+     * @tc.desc Verify overlapping views observe each other's writes on the shared
+     * buffer.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1540', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(24);
+      let v1 = new BigInt64Array(buf, 0, 1);
+      let v2 = new BigInt64Array(buf, 0, 2);
+      v1[0] = 99n;
+      expect(v2[0]).assertEqual(99n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1550
+     * @tc.name testBigInt64ArrayFour1550
+     * @tc.desc Verify a write in one view does not affect a disjoint sibling view.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1550', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(24);
+      let v2 = new BigInt64Array(buf, 0, 1);
+      let v3 = new BigInt64Array(buf, 8, 1);
+      v2[0] = 55n;
+      expect(v3[0]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1560
+     * @tc.name testBigInt64ArrayFour1560
+     * @tc.desc Verify subarray reports the expected byteOffset.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1560', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n]);
+      let sub = arr.subarray(1);
+      expect(sub.byteOffset).assertEqual(8);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1570
+     * @tc.name testBigInt64ArrayFour1570
+     * @tc.desc Verify subarray reports the expected length.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1570', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n]);
+      let sub = arr.subarray(1, 3);
+      expect(sub.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1580
+     * @tc.name testBigInt64ArrayFour1580
+     * @tc.desc Verify nested subarray writes update the original array.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1580', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
+      let sub1 = arr.subarray(1);
+      let sub2 = sub1.subarray(1);
+      sub2[0] = 99n;
+      expect(arr[2]).assertEqual(99n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1590
+     * @tc.name testBigInt64ArrayFour1590
+     * @tc.desc Verify mutating a slice copy does not change the source byteLength.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1590', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let copy = arr.slice();
+      copy.fill(0n);
+      expect(arr.byteLength).assertEqual(24);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1600
+     * @tc.name testBigInt64ArrayFour1600
+     * @tc.desc Verify three disjoint views can cross-read values from the shared
+     * buffer.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(24);
+      let va = new BigInt64Array(buf, 0, 1);
+      let vb = new BigInt64Array(buf, 8, 1);
+      let vc = new BigInt64Array(buf, 16, 1);
+      va[0] = 1n;
+      vb[0] = 2n;
+      vc[0] = 3n;
+      let all = new BigInt64Array(buf);
+      expect(all[1]).assertEqual(2n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1610
+     * @tc.name testBigInt64ArrayFour1610
+     * @tc.desc Verify child views read the values written through the full shared view.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayFour1610', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(24);
+      let all = new BigInt64Array(buf);
+      let vc = new BigInt64Array(buf, 16, 1);
+      all.fill(7n);
+      expect(vc[0]).assertEqual(7n);
+    });
   });
 }
