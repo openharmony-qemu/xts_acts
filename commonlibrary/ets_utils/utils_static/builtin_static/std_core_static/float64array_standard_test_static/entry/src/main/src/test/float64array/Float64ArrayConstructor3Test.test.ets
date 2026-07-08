@@ -55,9 +55,9 @@ export default function Float64ArrayConstructor3Test(): void {
       const threeValue: number = 3;
       const buf = new ArrayBuffer(24);
       const view = new Float64Array(buf, 0, 3);
-      const expectVal = threeValue;
-      expect(view.length).assertEqual(expectVal);
-    })
+      const expectedLength = threeValue;
+      expect(view.length).assertEqual(expectedLength);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_0200
@@ -71,9 +71,9 @@ export default function Float64ArrayConstructor3Test(): void {
       const twentyfourValue: number = 24;
       const buf = new ArrayBuffer(24);
       const view = new Float64Array(buf);
-      const expectVal = twentyfourValue;
-      expect(view.byteLength).assertEqual(expectVal);
-    })
+      const expectedByteLength = twentyfourValue;
+      expect(view.byteLength).assertEqual(expectedByteLength);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_0300
@@ -87,9 +87,9 @@ export default function Float64ArrayConstructor3Test(): void {
       const zeroValue: number = 0;
       const buf = new ArrayBuffer(1);
       const view = new Float64Array(buf, 0, 0);
-      const expectVal = zeroValue;
-      expect(view.length).assertEqual(expectVal);
-    })
+      const expectedLength = zeroValue;
+      expect(view.length).assertEqual(expectedLength);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_0400
@@ -106,7 +106,7 @@ export default function Float64ArrayConstructor3Test(): void {
       const view = new Float64Array(buf, 0, 1);
       expect(view.length).assertEqual(oneValue);
       expect(view.byteLength).assertEqual(eightValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_0500
@@ -123,7 +123,7 @@ export default function Float64ArrayConstructor3Test(): void {
       const view = new Float64Array(buf, 0, 2);
       expect(view.length).assertEqual(twoValue);
       expect(view.byteLength).assertEqual(sixteenValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_0600
@@ -140,7 +140,7 @@ export default function Float64ArrayConstructor3Test(): void {
       const view = new Float64Array(buf, 0, largeSize / 8);
       const expectVal = largeSize / eightValue;
       expect(view.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_0700
@@ -158,7 +158,7 @@ export default function Float64ArrayConstructor3Test(): void {
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_0800
@@ -176,7 +176,7 @@ export default function Float64ArrayConstructor3Test(): void {
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_0900
@@ -194,7 +194,7 @@ export default function Float64ArrayConstructor3Test(): void {
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_1000
@@ -212,7 +212,7 @@ export default function Float64ArrayConstructor3Test(): void {
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_1100
@@ -230,7 +230,7 @@ export default function Float64ArrayConstructor3Test(): void {
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_1200
@@ -248,7 +248,7 @@ export default function Float64ArrayConstructor3Test(): void {
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_1300
@@ -266,7 +266,7 @@ export default function Float64ArrayConstructor3Test(): void {
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_1400
@@ -284,7 +284,7 @@ export default function Float64ArrayConstructor3Test(): void {
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_1500
@@ -304,7 +304,7 @@ export default function Float64ArrayConstructor3Test(): void {
       }
       const expectVal = true;
       expect(isF64).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_1600
@@ -319,7 +319,7 @@ export default function Float64ArrayConstructor3Test(): void {
       const view = new Float64Array(buf, 0, 3);
       const expectVal = buf;
       expect(view.buffer).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_1700
@@ -337,7 +337,7 @@ export default function Float64ArrayConstructor3Test(): void {
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError');
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_1800
@@ -355,7 +355,7 @@ export default function Float64ArrayConstructor3Test(): void {
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError');
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_1900
@@ -373,7 +373,7 @@ export default function Float64ArrayConstructor3Test(): void {
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError');
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_2000
@@ -392,7 +392,7 @@ export default function Float64ArrayConstructor3Test(): void {
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_2100
@@ -409,7 +409,7 @@ export default function Float64ArrayConstructor3Test(): void {
       view[0] = 1.5;
       const expectVal = onePointFive;
       expect(view[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_2200
@@ -427,7 +427,7 @@ export default function Float64ArrayConstructor3Test(): void {
       view[0] = 2.5;
       expect(view[0]).assertEqual(twoPointFive);
       expect(view.byteOffset).assertEqual(eightValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_2300
@@ -446,7 +446,7 @@ export default function Float64ArrayConstructor3Test(): void {
       view1[0] = 100.0;
       expect(view1[0]).assertEqual(hundredPointZero);
       expect(view2[0]).assertEqual(zeroPointZero);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_2400
@@ -464,7 +464,7 @@ export default function Float64ArrayConstructor3Test(): void {
       view1[1] = 99.0;
       const expectVal = fillValue99;
       expect(view2[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_2500
@@ -481,7 +481,7 @@ export default function Float64ArrayConstructor3Test(): void {
       const view = new Float64Array(buf);
       expect(view.byteLength).assertEqual(twentyfourValue);
       expect(view.length).assertEqual(threeValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_2600
@@ -499,7 +499,7 @@ export default function Float64ArrayConstructor3Test(): void {
       const view = new Float64Array(buf, off, len);
       expect(view.length).assertEqual(zeroValue);
       expect(view.byteLength).assertEqual(zeroValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_2700
@@ -515,7 +515,7 @@ export default function Float64ArrayConstructor3Test(): void {
       const view = new Float64Array(buf, 0, 0);
       const expectVal = zeroValue;
       expect(view.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_2800
@@ -532,7 +532,7 @@ export default function Float64ArrayConstructor3Test(): void {
       const view = new Float64Array(buf, 0, 8);
       expect(view.length).assertEqual(eightValue);
       expect(view.byteLength).assertEqual(sixtyfourValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_2900
@@ -551,7 +551,7 @@ export default function Float64ArrayConstructor3Test(): void {
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_3000
@@ -570,7 +570,7 @@ export default function Float64ArrayConstructor3Test(): void {
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_3100
@@ -589,7 +589,7 @@ export default function Float64ArrayConstructor3Test(): void {
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_3200
@@ -608,7 +608,7 @@ export default function Float64ArrayConstructor3Test(): void {
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_3300
@@ -628,7 +628,7 @@ export default function Float64ArrayConstructor3Test(): void {
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_3400
@@ -650,7 +650,7 @@ export default function Float64ArrayConstructor3Test(): void {
       }
       const expectVal = true;
       expect(isF64).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_3500
@@ -665,7 +665,7 @@ export default function Float64ArrayConstructor3Test(): void {
       const view = new Float64Array(buf, 8, 1);
       const expectVal = buf;
       expect(view.buffer).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_3600
@@ -685,7 +685,7 @@ export default function Float64ArrayConstructor3Test(): void {
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError');
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_3700
@@ -705,7 +705,7 @@ export default function Float64ArrayConstructor3Test(): void {
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_3800
@@ -725,7 +725,7 @@ export default function Float64ArrayConstructor3Test(): void {
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_3900
@@ -744,7 +744,7 @@ export default function Float64ArrayConstructor3Test(): void {
       view[0] = 3.14;
       const expectVal = piApprox;
       expect(view[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_4000
@@ -763,7 +763,7 @@ export default function Float64ArrayConstructor3Test(): void {
       view[1] = 2.71;
       expect(view[1]).assertEqual(twoPointsevenone);
       expect(view.length).assertEqual(twoValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_4100
@@ -781,7 +781,7 @@ export default function Float64ArrayConstructor3Test(): void {
       view[0] = 1.41;
       expect(view[0]).assertEqual(onePointfourone);
       expect(view.byteOffset).assertEqual(eightValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_4200
@@ -797,12 +797,12 @@ export default function Float64ArrayConstructor3Test(): void {
       const view = new Float64Array(buf);
       const expectVal = twoValue;
       expect(view.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_4300
      * @tc.name testFloat64ArrayConstructor3043
-     * @tc.desc Verify overload 11 buf is ArrayBuffer
+     * @tc.desc Verify overload 11 ArrayBuffer length 16 creates two-element view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -815,12 +815,12 @@ export default function Float64ArrayConstructor3Test(): void {
       expect(view.length).assertEqual(twoValue);
       expect(view.byteLength).assertEqual(sixteenValue);
       expect(view.buffer).assertEqual(buf);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_4400
      * @tc.name testFloat64ArrayConstructor3044
-     * @tc.desc Verify overload 11 buf is ArrayBuffer
+     * @tc.desc Verify overload 11 empty ArrayBuffer creates zero-length view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -831,12 +831,12 @@ export default function Float64ArrayConstructor3Test(): void {
       const view = new Float64Array(buf);
       expect(view.length).assertEqual(zeroValue);
       expect(view.byteLength).assertEqual(zeroValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_4500
      * @tc.name testFloat64ArrayConstructor3045
-     * @tc.desc Verify overload 11 buf is ArrayBuffer
+     * @tc.desc Verify overload 11 ArrayBuffer length 8 creates one-element view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -848,12 +848,12 @@ export default function Float64ArrayConstructor3Test(): void {
       const view = new Float64Array(buf);
       expect(view.length).assertEqual(oneValue);
       expect(view.byteLength).assertEqual(eightValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_4600
      * @tc.name testFloat64ArrayConstructor3046
-     * @tc.desc Verify overload 11 buf is ArrayBuffer
+     * @tc.desc Verify overload 11 ArrayBuffer length 64 creates eight-element view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -865,7 +865,7 @@ export default function Float64ArrayConstructor3Test(): void {
       const view = new Float64Array(buf);
       expect(view.length).assertEqual(eightValue);
       expect(view.byteLength).assertEqual(sixtyfourValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_4700
@@ -882,7 +882,7 @@ export default function Float64ArrayConstructor3Test(): void {
       const view = new Float64Array(arrLike);
       const expectVal = zeroValue;
       expect(view.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_4800
@@ -900,7 +900,7 @@ export default function Float64ArrayConstructor3Test(): void {
       const view = new Float64Array(arrLike);
       expect(view.length).assertEqual(oneValue);
       expect(view[0]).assertEqual(onePointFive);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_4900
@@ -922,7 +922,7 @@ export default function Float64ArrayConstructor3Test(): void {
       expect(view[0]).assertEqual(onePointZero);
       expect(view[1]).assertEqual(twoPointZero);
       expect(view[2]).assertEqual(threePointZero);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_5000
@@ -942,7 +942,7 @@ export default function Float64ArrayConstructor3Test(): void {
       expect(view[0]).assertEqual(negonePointzero);
       expect(view[1]).assertEqual(negtwoPointfive);
       expect(view[2]).assertEqual(negthreePointonefour);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_5100
@@ -960,7 +960,7 @@ export default function Float64ArrayConstructor3Test(): void {
       const view = new Float64Array(arrLike);
       expect(view[0]).assertEqual(doubleMaxValue);
       expect(view[1]).assertEqual(doubleMinValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_5200
@@ -975,11 +975,11 @@ export default function Float64ArrayConstructor3Test(): void {
       const src: Array<number> = [NaN, 1.0];
       const arrLike: ArrayLike<Number> = src;
       const view = new Float64Array(arrLike);
-      const actVal1 = Number.isNaN(view[0]);
-      const expectVal = true;
-      expect(actVal1).assertEqual(expectVal);
+      const actualFirstIsNaN = Number.isNaN(view[0]);
+      const expectedFirstIsNaN = true;
+      expect(actualFirstIsNaN).assertEqual(expectedFirstIsNaN);
       expect(view[1]).assertEqual(onePointZero);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_5300
@@ -997,7 +997,7 @@ export default function Float64ArrayConstructor3Test(): void {
       const view = new Float64Array(arrLike);
       expect(view[0]).assertEqual(positiveInfinity);
       expect(view[1]).assertEqual(negativeInfinity);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_5400
@@ -1015,7 +1015,7 @@ export default function Float64ArrayConstructor3Test(): void {
       const view = new Float64Array(arrLike);
       expect(view[0]).assertEqual(sciValue10e308);
       expect(view[1]).assertEqual(sciValue10e3082);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_5500
@@ -1029,9 +1029,8 @@ export default function Float64ArrayConstructor3Test(): void {
       const src: Array<number> = [0.1, 0.2];
       const arrLike: ArrayLike<Number> = src;
       const view = new Float64Array(arrLike);
-      const expectVal = false;
-      expect(view[0] + view[1] === 0.3).assertEqual(expectVal);
-    })
+      expect(view[0] + view[1]).assertEqual(0.30000000000000004);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_5600
@@ -1048,7 +1047,7 @@ export default function Float64ArrayConstructor3Test(): void {
       const view = new Float64Array(arrLike);
       const expectVal = negativeZero;
       expect(view[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_5700
@@ -1063,13 +1062,13 @@ export default function Float64ArrayConstructor3Test(): void {
       const zeroPointZero: number = 0.0;
       const view = new Float64Array(10);
       expect(view.length).assertEqual(tenValue);
-      const actVal2 = view.$_get(0);
-      const expectVal = zeroPointZero;
-      expect(actVal2).assertEqual(expectVal);
-      const actVal3 = view.$_get(9);
-      const expectVal2 = zeroPointZero;
-      expect(actVal3).assertEqual(expectVal2);
-    })
+      const actualFirstValue = view.$_get(0);
+      const expectedFirstValue = zeroPointZero;
+      expect(actualFirstValue).assertEqual(expectedFirstValue);
+      const actualLastValue = view.$_get(9);
+      const expectedLastValue = zeroPointZero;
+      expect(actualLastValue).assertEqual(expectedLastValue);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_5800
@@ -1088,7 +1087,7 @@ export default function Float64ArrayConstructor3Test(): void {
       expect(view.length).assertEqual(fiveValue);
       expect(view[0]).assertEqual(fillValue42);
       expect(view[4]).assertEqual(fillValue42);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_5900
@@ -1109,8 +1108,9 @@ export default function Float64ArrayConstructor3Test(): void {
       expect(view[0]).assertEqual(int32MinValue);
       expect(view[1]).assertEqual(negativeOne);
       expect(view[2]).assertEqual(zeroValue);
-      expect(view.buffer === src.buffer).assertFalse();
-    })
+      view[0] = 10.0;
+      expect(src[0]).assertEqual(int32MinValue);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_6000
@@ -1131,7 +1131,7 @@ export default function Float64ArrayConstructor3Test(): void {
       expect(view[0]).assertEqual(onePointFive);
       expect(view[1]).assertEqual(twoPointFive);
       expect(view[2]).assertEqual(threePointfive);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_6100
@@ -1152,7 +1152,7 @@ export default function Float64ArrayConstructor3Test(): void {
       expect(view[0]).assertEqual(onePointFive);
       expect(view[1]).assertEqual(twoPointFive);
       expect(view[2]).assertEqual(threePointfive);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_6200
@@ -1170,7 +1170,7 @@ export default function Float64ArrayConstructor3Test(): void {
       view[0] = 999.0;
       const expectVal = num999Pointzero;
       expect(view[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_6300
@@ -1187,7 +1187,7 @@ export default function Float64ArrayConstructor3Test(): void {
       const view = new Float64Array(iterable);
       const expectVal = threeValue;
       expect(view.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_6400
@@ -1208,7 +1208,7 @@ export default function Float64ArrayConstructor3Test(): void {
       expect(view[0]).assertEqual(onePointZero);
       expect(view[1]).assertEqual(twoPointZero);
       expect(view[2]).assertEqual(threePointZero);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_6500
@@ -1229,7 +1229,7 @@ export default function Float64ArrayConstructor3Test(): void {
       }
       const expectVal = true;
       expect(isF64).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_6600
@@ -1249,7 +1249,7 @@ export default function Float64ArrayConstructor3Test(): void {
       }
       const expectVal = true;
       expect(isF64).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_6700
@@ -1270,7 +1270,7 @@ export default function Float64ArrayConstructor3Test(): void {
       }
       const expectVal = true;
       expect(isAB).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_6800
@@ -1285,7 +1285,7 @@ export default function Float64ArrayConstructor3Test(): void {
       const view = new Float64Array(buf);
       const expectVal = buf;
       expect(view.buffer).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_6900
@@ -1307,7 +1307,7 @@ export default function Float64ArrayConstructor3Test(): void {
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_7000
@@ -1325,7 +1325,7 @@ export default function Float64ArrayConstructor3Test(): void {
       view[0] = 500.0;
       const expectVal = num500Pointzero;
       expect(view[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_7100
@@ -1342,21 +1342,21 @@ export default function Float64ArrayConstructor3Test(): void {
       view[0] = 123.456;
       const expectVal = num123Pointfourfivesix;
       expect(view[0]).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_7200
      * @tc.name testFloat64ArrayConstructor3072
-     * @tc.desc Verify constructor from array negative check
+     * @tc.desc Verify constructor from array keeps first element value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayConstructor3072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([1.0, 2.0, 3.0]);
-      expect(arr[0] === 1.0).assertTrue();
-      expect(arr[0] === 9.0).assertFalse();
-    })
+      expect(arr[0]).assertEqual(1.0);
+      expect(arr[1]).assertEqual(2.0);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_7300
@@ -1374,7 +1374,7 @@ export default function Float64ArrayConstructor3Test(): void {
       const arr = new Float64Array([hexValueFF, hexValueAA]);
       expect(arr[0]).assertEqual(num255Value);
       expect(arr[1]).assertEqual(num170Pointzero);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_7400
@@ -1392,7 +1392,7 @@ export default function Float64ArrayConstructor3Test(): void {
       const arr = new Float64Array([binaryValue11111111, binaryValue10101010]);
       expect(arr[0]).assertEqual(num255Value);
       expect(arr[1]).assertEqual(num170Pointzero);
-    })
+    });
 
   })
 }
