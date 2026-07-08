@@ -1781,6 +1781,272 @@ export default function BigInt64Array02Test(): void {
       expect(errorMessage).assertEqual('from error');
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_TWO_1200
+     * @tc.name testBigInt64ArrayTwo1200
+     * @tc.desc Verify fill stores the maximum value in every element.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayTwo1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array(3);
+      arr.fill(9223372036854775807n);
+      expect(arr[0]).assertEqual(9223372036854775807n);
+      expect(arr[2]).assertEqual(9223372036854775807n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_TWO_1210
+     * @tc.name testBigInt64ArrayTwo1210
+     * @tc.desc Verify fill stores the minimum value in every element.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayTwo1210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array(3);
+      arr.fill(-9223372036854775808n);
+      expect(arr[0]).assertEqual(-9223372036854775808n);
+      expect(arr[1]).assertEqual(-9223372036854775808n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_TWO_1220
+     * @tc.name testBigInt64ArrayTwo1220
+     * @tc.desc Verify set stores the maximum value that $_get can read back.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayTwo1220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array(2);
+      let src: FixedArray<BigInt> = [9223372036854775807n];
+      arr.set(src, 0);
+      expect(arr.$_get(0)).assertEqual(9223372036854775807n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_TWO_1230
+     * @tc.name testBigInt64ArrayTwo1230
+     * @tc.desc Verify copyWithin silently clamps an out-of-range start index.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayTwo1230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      arr.copyWithin(0, 100);
+      expect(arr[0]).assertEqual(1n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_TWO_1240
+     * @tc.name testBigInt64ArrayTwo1240
+     * @tc.desc Verify fill silently clamps an out-of-range start index.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayTwo1240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      arr.fill(0n, 100);
+      expect(arr[0]).assertEqual(1n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_TWO_1250
+     * @tc.name testBigInt64ArrayTwo1250
+     * @tc.desc Verify slice silently clamps an out-of-range end index.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayTwo1250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let sliced = arr.slice(1, 100);
+      expect(sliced.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_TWO_1260
+     * @tc.name testBigInt64ArrayTwo1260
+     * @tc.desc Verify subarray silently clamps an out-of-range begin index to an empty view.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayTwo1260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let sub = arr.subarray(100);
+      expect(sub.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_TWO_1270
+     * @tc.name testBigInt64ArrayTwo1270
+     * @tc.desc Verify fill treats an end before start as an empty clamped range.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayTwo1270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([5n, 5n, 5n]);
+      arr.fill(0n, 2, 1);
+      expect(arr[0]).assertEqual(5n);
+      expect(arr[2]).assertEqual(5n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_TWO_1280
+     * @tc.name testBigInt64ArrayTwo1280
+     * @tc.desc Verify multiple views with different byteOffsets write independently on one buffer.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayTwo1280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(24);
+      let v1 = new BigInt64Array(buf, 0, 1);
+      let v2 = new BigInt64Array(buf, 8, 1);
+      v1[0] = 111n;
+      v2[0] = 222n;
+      expect(v1[0]).assertEqual(111n);
+      expect(v2[0]).assertEqual(222n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_TWO_1290
+     * @tc.name testBigInt64ArrayTwo1290
+     * @tc.desc Verify subarray writes update the corresponding source position.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayTwo1290', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
+      let sub = arr.subarray(2, 4);
+      sub[0] = 88n;
+      expect(arr[2]).assertEqual(88n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_TWO_1300
+     * @tc.name testBigInt64ArrayTwo1300
+     * @tc.desc Verify nested subarray views share the same buffer.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayTwo1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
+      let sub1 = arr.subarray(1);
+      let sub2 = sub1.subarray(1);
+      expect(sub2.buffer === arr.buffer).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_TWO_1310
+     * @tc.name testBigInt64ArrayTwo1310
+     * @tc.desc Verify nested subarray writes update the top-level array.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayTwo1310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
+      let sub1 = arr.subarray(1);
+      let sub2 = sub1.subarray(1);
+      sub2[0] = 77n;
+      expect(arr[2]).assertEqual(77n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_TWO_1320
+     * @tc.name testBigInt64ArrayTwo1320
+     * @tc.desc Verify map returns a new array that does not share the original buffer.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayTwo1320', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let mapped = arr.map((v) => v * 2n);
+      expect(mapped.buffer === arr.buffer).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_TWO_1330
+     * @tc.name testBigInt64ArrayTwo1330
+     * @tc.desc Verify filter returns a new array that does not share the original buffer.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayTwo1330', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n]);
+      let filtered = arr.filter((v) => v > 2n);
+      expect(filtered.buffer === arr.buffer).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_TWO_1340
+     * @tc.name testBigInt64ArrayTwo1340
+     * @tc.desc Verify subarray byteOffset equals start times eight plus the original byteOffset.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayTwo1340', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(32);
+      let arr = new BigInt64Array(buf, 8, 3);
+      let sub = arr.subarray(1);
+      expect(sub.byteOffset).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_TWO_1350
+     * @tc.name testBigInt64ArrayTwo1350
+     * @tc.desc Verify original array and subarray can share a buffer with different byteLengths.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayTwo1350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n]);
+      let sub = arr.subarray(0, 2);
+      expect(arr.byteLength).assertEqual(32);
+      expect(sub.byteLength).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_TWO_1360
+     * @tc.name testBigInt64ArrayTwo1360
+     * @tc.desc Verify with returns a new array without changing the original array.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayTwo1360', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let newArr = arr.with(1, 99n);
+      expect(arr[1]).assertEqual(2n);
+      expect(newArr[1]).assertEqual(99n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_TWO_1370
+     * @tc.name testBigInt64ArrayTwo1370
+     * @tc.desc Verify with returns a BigInt64Array instance.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayTwo1370', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let newArr = arr.with(0, 50n);
+      expect(newArr instanceof BigInt64Array).assertTrue();
+    });
 
   });
 }
