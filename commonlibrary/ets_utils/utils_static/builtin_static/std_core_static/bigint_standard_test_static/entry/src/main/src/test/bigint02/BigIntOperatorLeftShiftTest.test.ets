@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect } from '@ohos/hypium-binary/src/main/indexStatic';
-import { TestType, Size, Level } from '@ohos/hypium-binary/src/main/indexStatic/Constant';
+import { describe, it, expect } from '../../../../hypium/index';
+import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorLeftShiftTest(): void {
   describe('BigInt.operatorLeftShift (mindmap operatorLeftShift)', () => {
