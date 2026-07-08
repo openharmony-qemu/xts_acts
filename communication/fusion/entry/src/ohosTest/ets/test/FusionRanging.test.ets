@@ -168,7 +168,7 @@ export default function RangingTest() {
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
-          expect(err.code).assertEqual(401);
+          expect(err.code).assertEqual(34900054);
         }
       }
       done()
@@ -202,7 +202,7 @@ export default function RangingTest() {
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
-          expect(err.code).assertEqual(401);
+          expect(err.code).assertEqual(34900054);
         }
       }
       done();
@@ -278,7 +278,7 @@ export default function RangingTest() {
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
-          expect(err.code).assertEqual(401);
+          expect(err.code).assertEqual(34900054);
         }
         done();
       }
@@ -314,7 +314,7 @@ export default function RangingTest() {
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
-          expect(err.code).assertEqual(401);
+          expect(err.code).assertEqual(34900054);
         }
         done();
       }
@@ -374,7 +374,7 @@ export default function RangingTest() {
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
-          expect(err.code).assertEqual(401);
+          expect(err.code).assertEqual(34900052);
         }
         done();
       }
@@ -408,7 +408,7 @@ export default function RangingTest() {
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
-          expect(err.code).assertEqual(401);
+          expect(err.code).assertEqual(34900054);
         }
         done();
       }
@@ -509,7 +509,7 @@ export default function RangingTest() {
     });
 
     /**
-     * @tc.name testStartRangingErrcode401
+     * @tc.name testStartRangingErrcode34900052
      * @tc.number SUB_COMMUNICATION_CONNECTIVITYKIT_RANGING_STARTRANGING_0400
      * @tc.desc 测距服务能力不支持
      * @tc.type FUNCTION
@@ -517,23 +517,23 @@ export default function RangingTest() {
      * @tc.level LEVEL1
      * @co.authored.by.agent
      */
-    it('testStartRangingErrcode401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testStartRangingErrcode34900052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let params: ranging.RangingParams = {
         deviceId: "11:22:33:44:55:67",
         capabilityType: 0
       };
       try {
         ranging.startRanging(params, (result: ranging.RangingResult) => {
-          console.info("[fusion_js] testStartRangingErrcode401 result is: " + JSON.stringify(result));
+          console.info("[fusion_js] testStartRangingErrcode34900052 result is: " + JSON.stringify(result));
           expect().assertFail();
         });
-        console.info("[fusion_js] testStartRangingErrcode401 callback should not be called.");
+        console.info("[fusion_js] testStartRangingErrcode34900052 callback should not be called.");
         expect().assertFail();
         done();
       } catch (err) {
         let error: BusinessError = err as BusinessError;
-        console.info("[fusion_js] testStartRangingErrcode401 error: " + JSON.stringify(error));
-        expect(error.code).assertEqual(401);
+        console.info("[fusion_js] testStartRangingErrcode34900052 error: " + JSON.stringify(error));
+        expect(error.code).assertEqual(34900052);
         done();
       }
     });
@@ -569,7 +569,7 @@ export default function RangingTest() {
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
-          expect(err.code).assertEqual(401);
+          expect(err.code).assertEqual(34900052);
         }
       }
       done();
@@ -670,14 +670,14 @@ export default function RangingTest() {
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
-          expect(err.code).assertEqual(401);
+          expect(err.code).assertEqual(34900052);
         }
       }
       done();
     });
 
     /**
-     * @tc.name testStopPassiveRangingErrcode401
+     * @tc.name testStopPassiveRangingErrcode34900052
      * @tc.number SUB_COMMUNICATION_CONNECTIVITYKIT_RANGING_STOPPASSIVERANGING_0400
      * @tc.desc 测距服务能力不支持
      * @tc.type FUNCTION
@@ -685,19 +685,19 @@ export default function RangingTest() {
      * @tc.level LEVEL1
      * @co.authored.by.agent
      */
-    it('testStopPassiveRangingErrcode401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testStopPassiveRangingErrcode34900052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         let handle: number = await ranging.startPassiveRanging(ranging.RangingTypes.NEARLINK_HADM);
         console.info("[fusion_js] testStartPassiveRanging handle is: " + handle);
-        console.info("[fusion_js] testStopPassiveRangingErrcode401 handle value is: " + handle);
+        console.info("[fusion_js] testStopPassiveRangingErrcode34900052 handle value is: " + handle);
         ranging.stopPassiveRanging(handle, -1);
-        console.info("[fusion_js] testStopPassiveRangingErrcode401 should fail.");
+        console.info("[fusion_js] testStopPassiveRangingErrcode34900052 should fail.");
         expect().assertFail();
         done();
       } catch (err) {
         let error: BusinessError = err as BusinessError;
-        console.info("[fusion_js] testStopPassiveRangingErrcode401 error: " + JSON.stringify(error));
-        expect(error.code).assertEqual(401);
+        console.info("[fusion_js] testStopPassiveRangingErrcode34900052 error: " + JSON.stringify(error));
+        expect(error.code).assertEqual(34900052);
         done();
       }
     });
@@ -733,7 +733,7 @@ export default function RangingTest() {
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
-          expect(err.code).assertEqual(401);
+          expect(err.code).assertEqual(34900052);
         }
         done();
       }
@@ -769,7 +769,7 @@ export default function RangingTest() {
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
-          expect(err.code).assertEqual(401);
+          expect(err.code).assertEqual(34900052);
         }
         done();
       }
