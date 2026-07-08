@@ -61,12 +61,12 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val > 1.0);
       const expectVal = oneValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0020
      * @tc.name testFloat64ArrayFilter002
-     * @tc.desc Verify filter with 2 parameters extra argument is ignored
+     * @tc.desc Verify filter callback receives value index and array parameters and returns no elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -77,7 +77,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number, idx: int, array: Float64Array) => val > 1.0);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0030
@@ -93,7 +93,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => true);
       const expectVal = threeValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0040
@@ -109,7 +109,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => false);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0050
@@ -125,7 +125,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val > 0.0);
       const expectVal = fiveValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0060
@@ -141,7 +141,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val > 999.0);
       const expectVal = oneValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0070
@@ -157,7 +157,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val * 2 > 3.0);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0080
@@ -173,7 +173,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val > 0.0 && val < 4.0);
       const expectVal = twoValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0090
@@ -189,7 +189,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val < 2.0 || val > 3.0);
       const expectVal = fourValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0100
@@ -205,7 +205,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => !(val === 2.0));
       const expectVal = threeValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0110
@@ -221,7 +221,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val > 2.0);
       const expectVal = oneValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0120
@@ -237,7 +237,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val < 4.0);
       const expectVal = fourValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0130
@@ -254,7 +254,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val === 2.0);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0140
@@ -271,7 +271,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val !== 2.0);
       const expectVal = fiveValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0150
@@ -287,7 +287,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val >= 3.0);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0160
@@ -303,23 +303,27 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val <= 2.0);
       const expectVal = twoValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0170
      * @tc.name testFloat64ArrayFilter017
-     * @tc.desc Verify filter callback using val to check odd numbers via modulo
+     * @tc.desc Verify filter callback selects odd binary octal and hexadecimal literal values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayFilter017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const zeroValue: number = 0;
-      const arr = new Float64Array([0.5, 1.5, 0.25, 0.125, 0.0625]);
+      const twoValue: number = 2;
+      const threeValue: number = 3;
+      const fifteenValue: number = 15;
+      const arr = Float64Array.of(0b0011, 0o10, 0x0F, 0x10);
       const result = arr.filter((val: number) => val % 2.0 === 1.0);
-      const expectVal = zeroValue;
+      const expectVal = twoValue;
       expect(result.length).assertEqual(expectVal);
-    })
+      expect(result[0]).assertEqual(threeValue);
+      expect(result[1]).assertEqual(fifteenValue);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0180
@@ -335,7 +339,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val >= 5.0 && val <= 15.0);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0190
@@ -351,7 +355,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number, index: int) => index % 2 === 0);
       const expectVal = threeValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0200
@@ -367,7 +371,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number, index: int) => index % 2 === 1);
       const expectVal = twoValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0210
@@ -386,7 +390,7 @@ export default function Float64ArrayFilterTest(): void {
       const actVal1 = result.$_get(0);
       const expectVal = pointTwoFive;
       expect(actVal1).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0220
@@ -402,7 +406,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number, index: int) => index < 3);
       const expectVal = threeValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0230
@@ -421,7 +425,7 @@ export default function Float64ArrayFilterTest(): void {
       const actVal2 = result.$_get(0);
       const expectVal = int32MinValue;
       expect(actVal2).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0240
@@ -440,7 +444,7 @@ export default function Float64ArrayFilterTest(): void {
       const actVal3 = result.$_get(0);
       const expectVal = zeroValue;
       expect(actVal3).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0250
@@ -456,7 +460,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number, index: int) => index > 0 && index < arr.length - 1);
       const expectVal = threeValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0260
@@ -475,7 +479,7 @@ export default function Float64ArrayFilterTest(): void {
       const actVal4 = result.$_get(0);
       const expectVal = int32MinValue;
       expect(actVal4).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0270
@@ -492,7 +496,7 @@ export default function Float64ArrayFilterTest(): void {
         val === array.$_get(array.length - 1));
       const expectVal = twoValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0280
@@ -513,7 +517,7 @@ export default function Float64ArrayFilterTest(): void {
       const actVal5 = result.$_get(0);
       const expectVal = pointTwoFive;
       expect(actVal5).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0290
@@ -534,7 +538,7 @@ export default function Float64ArrayFilterTest(): void {
       const actVal6 = result.$_get(0);
       const expectVal = zeroValue;
       expect(actVal6).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0300
@@ -551,7 +555,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val > threshold);
       const expectVal = oneValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0310
@@ -569,12 +573,12 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => {
         count++;
         return val > 1.0;
-      })
+      });
 
       expect(result.length).assertEqual(oneValue);
       const expectVal = threeValue;
       expect(count).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0320
@@ -592,12 +596,12 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => {
         sum += val;
         return val > 2.0;
-      })
+      });
 
       expect(result.length).assertEqual(zeroValue);
       const expectVal = twoPointthreesevenfive;
       expect(sum).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0330
@@ -618,11 +622,11 @@ export default function Float64ArrayFilterTest(): void {
           }
         }
         return true;
-      })
+      });
 
       const expectVal = fiveValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0340
@@ -638,7 +642,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => true);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0350
@@ -654,7 +658,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => false);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0360
@@ -671,12 +675,12 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => {
         called = true;
         return true;
-      })
+      });
 
       expect(result.length).assertEqual(zeroValue);
       const expectVal = false;
       expect(called).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0370
@@ -692,7 +696,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val > 0.0);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0380
@@ -708,7 +712,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val < 0.0);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0390
@@ -724,7 +728,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val === 0.0);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0400
@@ -743,7 +747,7 @@ export default function Float64ArrayFilterTest(): void {
       const actVal7 = result.$_get(0);
       const expectVal = int16MinValue;
       expect(actVal7).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0410
@@ -759,7 +763,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val > 100.0);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0420
@@ -775,7 +779,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val > 0.0);
       const expectVal = twoValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0430
@@ -791,7 +795,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val === Infinity);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0440
@@ -807,7 +811,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val < 0.0);
       const expectVal = twoValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0450
@@ -819,11 +823,12 @@ export default function Float64ArrayFilterTest(): void {
      */
     it('testFloat64ArrayFilter045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
-      const arr = new Float64Array([-2147483648, -1, zeroValue]);
-      const result = arr.filter((val: number) => Number.isNaN(val));
+      const nanValue: number = NaN;
+      const arr = new Float64Array([nanValue, -1, zeroValue]);
+      const result = arr.filter((val: number) => val === nanValue);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0460
@@ -834,18 +839,13 @@ export default function Float64ArrayFilterTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFilter046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(0.1, 9007199254740991, zeroValue);
-      const result = arr.filter((val: number) => {
-        try {
-          return Number.isNaN(val);
-        } catch (e) {
-          return false;
-        }
-      })
-
-      expect(result.length).assertEqual(zeroValue);
-    })
+      const oneValue: number = 1;
+      const nanValue: number = NaN;
+      const arr = Float64Array.of(0.1, nanValue, 0);
+      const result = arr.filter((val: number) => Number.isNaN(val));
+      expect(result.length).assertEqual(oneValue);
+      expect(Number.isNaN(result.$_get(0))).assertTrue();
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0470
@@ -861,7 +861,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val === 0.0);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0480
@@ -877,7 +877,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val === -0.0);
       const expectVal = oneValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0490
@@ -893,7 +893,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val < 0.0);
       const expectVal = twoValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0500
@@ -909,7 +909,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val > 1.0e+100);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0510
@@ -925,7 +925,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val === 3.0);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0520
@@ -941,7 +941,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val === 0.3);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0530
@@ -957,11 +957,11 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => {
         const expected = 0.1 + 0.2;
         return Math.abs(val - expected) < 1e-15;
-      })
+      });
 
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0540
@@ -976,13 +976,13 @@ export default function Float64ArrayFilterTest(): void {
       try {
         arr.filter((val: number) => {
           throw new RangeError("test");
-        })
+        });
 
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0550
@@ -997,13 +997,13 @@ export default function Float64ArrayFilterTest(): void {
       try {
         arr.filter((val: number) => {
           throw new TypeError("test");
-        })
+        });
 
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("TypeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0560
@@ -1018,13 +1018,13 @@ export default function Float64ArrayFilterTest(): void {
       try {
         arr.filter((val: number) => {
           throw new Error("test");
-        })
+        });
 
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0570
@@ -1042,13 +1042,13 @@ export default function Float64ArrayFilterTest(): void {
             throw new Error("first");
           }
           return true;
-        })
+        });
 
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0580
@@ -1066,13 +1066,13 @@ export default function Float64ArrayFilterTest(): void {
             throw new Error("middle");
           }
           return true;
-        })
+        });
 
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0590
@@ -1090,18 +1090,18 @@ export default function Float64ArrayFilterTest(): void {
             throw new Error("last");
           }
           return true;
-        })
+        });
 
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0600
      * @tc.name testFloat64ArrayFilter060
-     * @tc.desc Verify filter callback throws empty string which propagates to caller
+     * @tc.desc Verify filter callback throws SyntaxError which propagates to caller
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1111,13 +1111,13 @@ export default function Float64ArrayFilterTest(): void {
       try {
         arr.filter((val: number) => {
           throw new SyntaxError("empty");
-        })
+        });
 
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("SyntaxError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0610
@@ -1132,13 +1132,13 @@ export default function Float64ArrayFilterTest(): void {
       try {
         arr.filter((val: number) => {
           throw new URIError("number");
-        })
+        });
 
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("URIError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0620
@@ -1153,12 +1153,12 @@ export default function Float64ArrayFilterTest(): void {
       try {
         arr.filter((val: number) => {
           throw new EvalError("object");
-        })
+        });
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("EvalError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0630
@@ -1176,12 +1176,12 @@ export default function Float64ArrayFilterTest(): void {
             throw new ReferenceError("computation");
           }
           return true;
-        })
+        });
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("ReferenceError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0640
@@ -1197,7 +1197,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val > 3.0);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0650
@@ -1220,7 +1220,7 @@ export default function Float64ArrayFilterTest(): void {
       const actVal9 = result.$_get(1);
       const expectVal2 = int8MinValue;
       expect(actVal9).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0660
@@ -1243,7 +1243,7 @@ export default function Float64ArrayFilterTest(): void {
       const actVal11 = result.$_get(1);
       const expectVal2 = int32MaxValue;
       expect(actVal11).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0670
@@ -1260,7 +1260,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val === 2.0);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0680
@@ -1276,7 +1276,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val < 0.0);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0690
@@ -1295,7 +1295,7 @@ export default function Float64ArrayFilterTest(): void {
       const actVal12 = result.$_get(0);
       const expectVal = int8MaxValue;
       expect(actVal12).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0700
@@ -1308,9 +1308,9 @@ export default function Float64ArrayFilterTest(): void {
     it('testFloat64ArrayFilter070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float64Array.of(-2147483648, -1, 0);
       const result = arr.filter((val: number) => val > 0.0);
-      const expectVal = false;
-      expect(result === arr).assertEqual(expectVal);
-    })
+      expect(result.length).assertEqual(0);
+      expect(arr.length).assertEqual(3);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0710
@@ -1323,9 +1323,9 @@ export default function Float64ArrayFilterTest(): void {
     it('testFloat64ArrayFilter071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([0.1, 9007199254740991, 0]);
       const result = arr.filter((val: number) => true);
-      const expectVal = false;
-      expect(result === arr).assertEqual(expectVal);
-    })
+      result[0] = 10.0;
+      expect(arr[0]).assertEqual(0.1);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0720
@@ -1344,7 +1344,7 @@ export default function Float64ArrayFilterTest(): void {
       const actVal13 = arr.$_get(0);
       const expectVal = pointFive;
       expect(actVal13).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0730
@@ -1363,7 +1363,7 @@ export default function Float64ArrayFilterTest(): void {
       const actVal14 = result.$_get(0);
       const expectVal = int16MinValue;
       expect(actVal14).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0740
@@ -1376,9 +1376,9 @@ export default function Float64ArrayFilterTest(): void {
     it('testFloat64ArrayFilter074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float64Array.of(-2147483648, -1, 0);
       const result = arr.filter((val: number) => true);
-      const expectVal = false;
-      expect(result.buffer === arr.buffer).assertEqual(expectVal);
-    })
+      result[0] = 10.0;
+      expect(arr[0]).assertEqual(-2147483648);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0750
@@ -1403,7 +1403,7 @@ export default function Float64ArrayFilterTest(): void {
       const actVal17 = arr.$_get(2);
       const expectVal3 = zeroValue;
       expect(actVal17).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0760
@@ -1420,7 +1420,7 @@ export default function Float64ArrayFilterTest(): void {
       try {
         arr.filter((val: number) => {
           throw new Error("test");
-        })
+        });
 
       } catch (e) {
         expect(arr.length).assertEqual(threeValue);
@@ -1428,7 +1428,7 @@ export default function Float64ArrayFilterTest(): void {
         const expectVal = pointOne;
         expect(actVal18).assertEqual(expectVal);
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0770
@@ -1448,24 +1448,26 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val > 500.0);
       const expectVal = num499Value;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0780
      * @tc.name testFloat64ArrayFilter078
-     * @tc.desc Verify filter on array where all elements are the same matching value
+     * @tc.desc Verify filter keeps all same hexadecimal literal matching values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayFilter078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOneTwoFive: number = 0.125;
-      const zeroValue: number = 0;
-      const arr = new Float64Array([pointOneTwoFive, pointOneTwoFive, pointOneTwoFive, pointOneTwoFive]);
-      const result = arr.filter((val: number) => val === 5.0);
-      const expectVal = zeroValue;
+      const hexFiveValue: number = 0x05;
+      const fourValue: number = 4;
+      const arr = new Float64Array([hexFiveValue, hexFiveValue, hexFiveValue, hexFiveValue]);
+      const result = arr.filter((val: number) => val === hexFiveValue);
+      const expectVal = fourValue;
       expect(result.length).assertEqual(expectVal);
-    })
+      expect(result[0]).assertEqual(hexFiveValue);
+      expect(result[3]).assertEqual(hexFiveValue);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0790
@@ -1482,7 +1484,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val > 3.0);
       const expectVal = fourValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0800
@@ -1500,7 +1502,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val === 1.0);
       const expectVal = twoValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0810
@@ -1523,7 +1525,7 @@ export default function Float64ArrayFilterTest(): void {
       const actVal20 = result.$_get(1);
       const expectVal2 = piValue;
       expect(actVal20).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0820
@@ -1541,7 +1543,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val >= 3.0);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0830
@@ -1557,7 +1559,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val === 3.0);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0840
@@ -1573,12 +1575,12 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val > 1.0).filter((val: number) => val < 5.0);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0850
      * @tc.name testFloat64ArrayFilter085
-     * @tc.desc Verify filter chained with instanceof check on result
+     * @tc.desc Verify filter keeps three positive elements from mixed large and scientific values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1589,7 +1591,7 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => val > 0.0);
       const expectVal = threeValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0860
@@ -1605,11 +1607,11 @@ export default function Float64ArrayFilterTest(): void {
       const result = arr.filter((val: number) => {
         const doubled = Float64Array.of(val * 2.0);
         return doubled.$_get(0) > 2.0;
-      })
+      });
 
       const expectVal = oneValue;
       expect(result.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0870
@@ -1625,7 +1627,7 @@ export default function Float64ArrayFilterTest(): void {
       const filtered = values.filter((val) => val > 1);
       const expectVal = zeroValue;
       expect(filtered.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0880
@@ -1641,7 +1643,7 @@ export default function Float64ArrayFilterTest(): void {
       const filtered = values.filter((val) => val > 0);
       const expectVal = twoValue;
       expect(filtered.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0890
@@ -1657,7 +1659,7 @@ export default function Float64ArrayFilterTest(): void {
       const filtered = values.filter((val) => val > 0);
       const expectVal = zeroValue;
       expect(filtered.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0900
@@ -1673,7 +1675,7 @@ export default function Float64ArrayFilterTest(): void {
       const filtered = values.filter((val) => val > 10);
       const expectVal = zeroValue;
       expect(filtered.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0910
@@ -1689,7 +1691,7 @@ export default function Float64ArrayFilterTest(): void {
       const filtered = values.filter((val) => val > 1);
       const expectVal = zeroValue;
       expect(filtered.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0920
@@ -1704,13 +1706,13 @@ export default function Float64ArrayFilterTest(): void {
       try {
         values.filter((val) => {
           throw new Error("test");
-        })
+        });
 
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0930
@@ -1726,7 +1728,7 @@ export default function Float64ArrayFilterTest(): void {
       const filtered = values.filter((val, index) => index < 2);
       const expectVal = twoValue;
       expect(filtered.length).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0940
@@ -1741,13 +1743,13 @@ export default function Float64ArrayFilterTest(): void {
       try {
         values.filter((val) => {
           throw new Error("test");
-        })
+        });
 
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0950
@@ -1769,7 +1771,7 @@ export default function Float64ArrayFilterTest(): void {
       expect(f.length).assertEqual(twoValue);
       expect(f[0]).assertEqual(num255Value);
       expect(f[1]).assertEqual(num170Pointzero);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0960
@@ -1791,7 +1793,7 @@ export default function Float64ArrayFilterTest(): void {
       expect(f.length).assertEqual(twoValue);
       expect(f[0]).assertEqual(num255Value);
       expect(f[1]).assertEqual(num170Pointzero);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0970
@@ -1810,7 +1812,7 @@ export default function Float64ArrayFilterTest(): void {
       const actVal21 = Number.isNaN(f[0]);
       const expectVal = true;
       expect(actVal21).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0980
@@ -1827,7 +1829,7 @@ export default function Float64ArrayFilterTest(): void {
       const f = arr.filter((v: number): boolean => v > 0.0);
       expect(f.length).assertEqual(1);
       expect(f[0]).assertEqual(positiveInfinity);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0990
@@ -1845,7 +1847,7 @@ export default function Float64ArrayFilterTest(): void {
       expect(f.length).assertEqual(2);
       expect(f[0]).assertEqual(doubleMinValue);
       expect(f[1]).assertEqual(doubleMaxValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_1000
@@ -1868,7 +1870,7 @@ export default function Float64ArrayFilterTest(): void {
           arr.$_set(2, num999Value);
         }
         return val > 3.0;
-      })
+      });
       expect(result.length).assertEqual(threeValue);
       const actVal22 = result.$_get(0);
       const expectVal = num999Value;
@@ -1879,7 +1881,7 @@ export default function Float64ArrayFilterTest(): void {
       const actVal24 = result.$_get(2);
       const expectVal3 = fiveValue;
       expect(actVal24).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_1010
@@ -1890,12 +1892,18 @@ export default function Float64ArrayFilterTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFilter101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const twoValue: number = 2;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
       const arr = new Float64Array([1, 2, 3]);
       const result = arr.filter((val: number): boolean => val > 1.0);
       const actVal25 = isFloat64Array(result);
       const expectVal = true;
       expect(actVal25).assertEqual(expectVal);
-    })
+      expect(result.length).assertEqual(twoValue);
+      expect(result.$_get(0)).assertEqual(twoPointZero);
+      expect(result.$_get(1)).assertEqual(threePointZero);
+    });
 
   })
 }
