@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {beforeAll, afterEach, describe, it, expect, TestType, Size, Level} from "@ohos/hypium-binary/src/main/indexStatic";
+import {beforeAll, afterEach, describe, it, expect, TestType, Size, Level} from "../../../hypium/index";
 import { Driver, ON, UiDirection, Component } from '@ohos.UiTest'
 import { PerfMetric, PerfTest, PerfTestStrategy, PerfMeasureResult } from '@ohos.test.PerfTest';
 import { BusinessError, Callback } from '@ohos.base';

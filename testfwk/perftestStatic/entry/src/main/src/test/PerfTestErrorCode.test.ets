@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
 import { PerfMetric, PerfTestStrategy, PerfMeasureResult, PerfTest} from '@ohos.test.PerfTest';
 import { Driver, ON } from '@kit.TestKit';
 import hilog from '@ohos.hilog'
