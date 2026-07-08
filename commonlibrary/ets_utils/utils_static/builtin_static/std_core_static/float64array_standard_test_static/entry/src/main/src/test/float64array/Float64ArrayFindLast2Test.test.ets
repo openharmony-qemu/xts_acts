@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -46,13 +46,14 @@ export default function Float64ArrayFindLast2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_0100
      * @tc.name testFloat64ArrayFindLast2001
-     * @tc.desc Verify findLast predicate returns false variable throws Error
+     * @tc.desc Verify findLast predicate returns false variable and throws not-found Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayFindLast2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array([-32768, -128, 0]);
+      const expectedMessage = "Float64Array.findLast: not implemented if an element was not found";
       try {
         arr.findLast((value: number, index: int, array: Float64Array): boolean => {
           let falsy: boolean = false;
@@ -62,13 +63,14 @@ export default function Float64ArrayFindLast2Test(): void {
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("Error");
+        expect(e.message).assertEqual(expectedMessage);
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_0200
      * @tc.name testFloat64ArrayFindLast2002
-     * @tc.desc Verify findLast predicate returns true variable as truthy
+     * @tc.desc Verify findLast predicate returns true variable and matches last element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -83,12 +85,12 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = zeroValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_0300
      * @tc.name testFloat64ArrayFindLast2003
-     * @tc.desc Verify findLast value-only predicate returns true variable as truthy
+     * @tc.desc Verify findLast value-only predicate returns true variable and matches last element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -103,12 +105,12 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = pointTwoFive;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_0400
      * @tc.name testFloat64ArrayFindLast2004
-     * @tc.desc Verify findLast predicate returns negative Infinity treated as truthy
+     * @tc.desc Verify findLast predicate uses negative Infinity comparison returning true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -123,7 +125,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = zeroValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_0500
@@ -149,12 +151,12 @@ export default function Float64ArrayFindLast2Test(): void {
       expect(indices[0]).assertEqual(fourValue);
       expect(indices[4]).assertEqual(zeroValue);
       expect(result).assertEqual(int32MinValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_0600
      * @tc.name testFloat64ArrayFindLast2006
-     * @tc.desc Verify findLast propagates error on first checked element last position
+     * @tc.desc Verify findLast callback throws Error on first checked element and propagates it
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -174,7 +176,7 @@ export default function Float64ArrayFindLast2Test(): void {
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_0700
@@ -190,9 +192,9 @@ export default function Float64ArrayFindLast2Test(): void {
         return value > 0.0;
       })
 
-      const expectVal = true;
-      expect(result > 0.0).assertEqual(expectVal);
-    })
+      const expectVal = 1.5;
+      expect(result).assertEqual(expectVal);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_0800
@@ -211,7 +213,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = int8MaxValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_0900
@@ -230,7 +232,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = negativeOne;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_1000
@@ -250,7 +252,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = tinyNegativeValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_1100
@@ -272,7 +274,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = nineteenPointzero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_1200
@@ -291,7 +293,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = maxSafeInteger;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_1300
@@ -310,7 +312,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = minSafeInteger;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_1400
@@ -329,7 +331,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = oneValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_1500
@@ -348,12 +350,12 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = tinyNegativeValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_1600
      * @tc.name testFloat64ArrayFindLast2016
-     * @tc.desc Verify findLast propagates thrown Error from callback with object throw
+     * @tc.desc Verify findLast callback throws Error object and propagates it
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -369,7 +371,7 @@ export default function Float64ArrayFindLast2Test(): void {
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_1700
@@ -396,7 +398,7 @@ export default function Float64ArrayFindLast2Test(): void {
       expect(found).assertEqual(expectVal);
       const expectVal2 = twoValue;
       expect(result).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_1800
@@ -412,7 +414,7 @@ export default function Float64ArrayFindLast2Test(): void {
       const result = arr.findLast(recPred032);
       const expectVal = twoValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_1900
@@ -431,7 +433,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = precisionValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_2000
@@ -450,7 +452,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = int32MaxValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_2100
@@ -469,7 +471,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = int32MinValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_2200
@@ -488,8 +490,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = negativeInfinityValue;
       expect(result).assertEqual(expectVal);
-      expect(result < -1.0e+308).assertTrue();
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_2300
@@ -505,8 +506,9 @@ export default function Float64ArrayFindLast2Test(): void {
         return value === 0.0 && 1.0 / value < 0.0;
       })
 
-      expect(1.0 / result < 0.0).assertTrue();
-    })
+      const expectVal = -Infinity;
+      expect(1.0 / result).assertEqual(expectVal);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_2400
@@ -534,7 +536,7 @@ export default function Float64ArrayFindLast2Test(): void {
       const actVal8 = arr.$_get(2);
       const expectVal3 = pointTwoFive;
       expect(actVal8).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_2500
@@ -553,7 +555,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = twoValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_2600
@@ -572,7 +574,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = maxDoubleValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_2700
@@ -591,7 +593,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = minDoubleValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_2800
@@ -608,8 +610,8 @@ export default function Float64ArrayFindLast2Test(): void {
         return value !== value;
       })
 
-      expect(result === result).assertFalse();
-    })
+      expect(Number.isNaN(result)).assertTrue();
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_2900
@@ -625,8 +627,8 @@ export default function Float64ArrayFindLast2Test(): void {
         return value !== value;
       })
 
-      expect(result === result).assertFalse();
-    })
+      expect(Number.isNaN(result)).assertTrue();
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_3000
@@ -648,7 +650,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = int32MaxValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_3100
@@ -668,7 +670,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = zeroValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_3200
@@ -687,7 +689,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = pointZeroSixTwoFive;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_3300
@@ -708,7 +710,7 @@ export default function Float64ArrayFindLast2Test(): void {
       } catch (e) {
         expect(e.name).assertEqual("SyntaxError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_3400
@@ -729,7 +731,7 @@ export default function Float64ArrayFindLast2Test(): void {
       } catch (e) {
         expect(e.name).assertEqual("ReferenceError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_3500
@@ -750,7 +752,7 @@ export default function Float64ArrayFindLast2Test(): void {
       } catch (e) {
         expect(e.name).assertEqual("EvalError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_3600
@@ -771,7 +773,7 @@ export default function Float64ArrayFindLast2Test(): void {
       } catch (e) {
         expect(e.name).assertEqual("URIError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_3700
@@ -791,7 +793,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = precisionSumValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_3800
@@ -810,7 +812,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = floatMaxValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_3900
@@ -829,8 +831,8 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = floatMinValue;
       expect(result).assertEqual(expectVal);
-      expect(result > 0.0).assertTrue();
-    })
+      expect(result).assertEqual(floatMinValue);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_4000
@@ -849,7 +851,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = maxSafeInteger;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_4100
@@ -868,7 +870,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = minSafeInteger;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_4200
@@ -887,7 +889,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = int8MaxValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_4300
@@ -906,7 +908,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = int8MinValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_4400
@@ -925,7 +927,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = int16MaxValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_4500
@@ -944,7 +946,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = int16MinValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_4600
@@ -963,7 +965,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = beyondSafeInteger;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_4700
@@ -982,7 +984,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = hexValueFF;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_4800
@@ -1001,7 +1003,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = octalValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_4900
@@ -1020,7 +1022,7 @@ export default function Float64ArrayFindLast2Test(): void {
 
       const expectVal = binaryValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_5000
@@ -1036,7 +1038,7 @@ export default function Float64ArrayFindLast2Test(): void {
       const actVal9 = values.findLast((value) => value === int8MaxValue);
       const expectVal = int8MaxValue;
       expect(actVal9).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_5100
@@ -1052,7 +1054,7 @@ export default function Float64ArrayFindLast2Test(): void {
       const actVal10 = values.findLast((value) => value > 4);
       const expectVal = fiveValue;
       expect(actVal10).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_5200
@@ -1068,7 +1070,7 @@ export default function Float64ArrayFindLast2Test(): void {
       const result = values.findLast((value) => value > 10);
       const expectVal = maxSafeInteger;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_5300
@@ -1083,7 +1085,7 @@ export default function Float64ArrayFindLast2Test(): void {
       const values = new Float64Array([oneValue]);
       const result = values.findLast((value) => value > 0);
       expect(result).assertEqual(oneValue);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_5400
@@ -1099,7 +1101,7 @@ export default function Float64ArrayFindLast2Test(): void {
       const actVal11 = Number.isNaN(result);
       const expectVal = true;
       expect(actVal11).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_5500
@@ -1115,12 +1117,12 @@ export default function Float64ArrayFindLast2Test(): void {
       const actVal12 = values.findLast((value) => value === infinityValue);
       const expectVal = infinityValue;
       expect(actVal12).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_5600
      * @tc.name testFloat64ArrayFindLast2056
-     * @tc.desc Verify findLast callback error propagation
+     * @tc.desc Verify findLast callback throws Error on checked element and propagates it
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1136,7 +1138,7 @@ export default function Float64ArrayFindLast2Test(): void {
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_5700
@@ -1155,7 +1157,7 @@ export default function Float64ArrayFindLast2Test(): void {
       const v = arr.findLast((e: number): boolean => e > 0x55);
       const expectVal = num170Pointzero;
       expect(v).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_5800
@@ -1174,12 +1176,12 @@ export default function Float64ArrayFindLast2Test(): void {
       const v = arr.findLast((e: number): boolean => e > 0b01010101);
       const expectVal = num170Pointzero;
       expect(v).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_5900
      * @tc.name testFloat64ArrayFindLast2059
-     * @tc.desc Verify findlast with Double.NaN
+     * @tc.desc Verify findLast with Double.NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1194,12 +1196,12 @@ export default function Float64ArrayFindLast2Test(): void {
       const actVal13 = Number.isNaN(result);
       const expectVal = true;
       expect(actVal13).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_6000
      * @tc.name testFloat64ArrayFindLast2060
-     * @tc.desc Verify findlast with Double.POSITIVE_INFINITY
+     * @tc.desc Verify findLast with Double.POSITIVE_INFINITY
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1211,14 +1213,14 @@ export default function Float64ArrayFindLast2Test(): void {
       const result = arr.findLast((value: number): boolean => {
         return value === Double.POSITIVE_INFINITY;
       })
-      const expectVal = true;
-      expect(result > 0.0).assertEqual(expectVal);
-    })
+      const expectVal = positiveInfinity;
+      expect(result).assertEqual(expectVal);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_6100
      * @tc.name testFloat64ArrayFindLast2061
-     * @tc.desc Verify findlast with Double.MIN_VALUE/MAX_VALUE
+     * @tc.desc Verify findLast with Double.MIN_VALUE/MAX_VALUE
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1230,9 +1232,9 @@ export default function Float64ArrayFindLast2Test(): void {
       const result = arr.findLast((value: number): boolean => {
         return value > 1.0;
       })
-      const expectVal = true;
-      expect(result > 0.0).assertEqual(expectVal);
-    })
+      const expectVal = doubleMaxValue;
+      expect(result).assertEqual(expectVal);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_6200
@@ -1256,7 +1258,7 @@ export default function Float64ArrayFindLast2Test(): void {
       })
       const expectVal = num999Value;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLAST_2_6300
@@ -1274,6 +1276,6 @@ export default function Float64ArrayFindLast2Test(): void {
       const result = arr.findLast((val: number): boolean => val > 998.0);
       const expectVal = 999.0;
       expect(result).assertEqual(expectVal);
-    })
+    });
   })
 }

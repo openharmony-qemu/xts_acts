@@ -67,7 +67,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value) => value > 1.0);
       const expectVal = maxSafeInteger;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0020
@@ -88,7 +88,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = pointFive;
       expect(capturedValue).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0030
@@ -109,7 +109,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = zeroValue;
       expect(capturedValue).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0040
@@ -130,7 +130,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = zeroValue;
       expect(capturedValue).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0050
@@ -151,7 +151,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = negonePointzero;
       expect(capturedValue).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0060
@@ -172,7 +172,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = zeroPointZero;
       expect(capturedValue).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0070
@@ -193,7 +193,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = negativeInfinity;
       expect(1.0 / capturedValue).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0080
@@ -214,7 +214,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = maxVal;
       expect(capturedValue).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0090
@@ -235,7 +235,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = minVal;
       expect(capturedValue).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0100
@@ -256,7 +256,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = positiveInfinity;
       expect(capturedValue).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0110
@@ -278,7 +278,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = negativeInfinity;
       expect(capturedValue).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0120
@@ -300,7 +300,7 @@ export default function float64ArrayFindTest(): void {
       const actVal1 = Number.isNaN(capturedValue);
       const expectVal = true;
       expect(actVal1).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0130
@@ -321,7 +321,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = sciValue10e100;
       expect(capturedValue).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0140
@@ -342,7 +342,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = sciValue10e100;
       expect(capturedValue).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0150
@@ -363,7 +363,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = int32MinValue;
       expect(capturedValue).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0160
@@ -384,7 +384,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = num2147483647Pointzero;
       expect(capturedValue).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0170
@@ -405,7 +405,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = negnum2147483648Pointzero;
       expect(capturedValue).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0180
@@ -427,7 +427,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = sixteenPointzero;
       expect(capturedValue).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0190
@@ -448,7 +448,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = eightPointZero;
       expect(capturedValue).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0200
@@ -470,7 +470,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = tenPointZero;
       expect(capturedValue).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0210
@@ -492,7 +492,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = onePointZero / threePointZero;
       expect(capturedValue).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0220
@@ -513,7 +513,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = zeroValue;
       expect(capturedIndex).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0230
@@ -534,7 +534,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = threeValue;
       expect(capturedIndex).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0240
@@ -555,7 +555,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = twoValue;
       expect(capturedIndex).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0250
@@ -576,7 +576,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = zeroValue;
       expect(capturedIndex).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0260
@@ -596,7 +596,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = arr;
       expect(capturedArray).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0270
@@ -617,7 +617,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = fiveValue;
       expect(capturedLength).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0280
@@ -638,7 +638,7 @@ export default function float64ArrayFindTest(): void {
       const actVal2 = arr.$_get(0);
       const expectVal = num999Pointzero;
       expect(actVal2).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0290
@@ -654,7 +654,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value > 0.0);
       const expectVal = pointFive;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0300
@@ -670,7 +670,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value > 1.5);
       const expectVal = twoPointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0310
@@ -686,7 +686,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value > 2.5);
       const expectVal = threePointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0320
@@ -701,7 +701,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value > Number.MAX_VALUE);
       const expectVal = undefined;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0330
@@ -716,7 +716,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => true);
       const expectVal = undefined;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0340
@@ -731,7 +731,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value > 2.0);
       const expectVal = undefined;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0350
@@ -752,7 +752,7 @@ export default function float64ArrayFindTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0360
@@ -773,7 +773,7 @@ export default function float64ArrayFindTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0370
@@ -797,7 +797,7 @@ export default function float64ArrayFindTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("TypeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0380
@@ -821,7 +821,7 @@ export default function float64ArrayFindTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0390
@@ -844,7 +844,7 @@ export default function float64ArrayFindTest(): void {
       } catch (e) {
         expect(e.name).assertEqual('Error');
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0400
@@ -859,12 +859,12 @@ export default function float64ArrayFindTest(): void {
       const arr = new Float64Array([1.0, nanValue, 3.0]);
       const result = arr.find((value, index, array) => {
         return value !== value;
-      })
+      });
 
       const actVal3 = Number.isNaN(result as Double);
       const expectVal = true;
       expect(actVal3).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0410
@@ -879,11 +879,12 @@ export default function float64ArrayFindTest(): void {
       const arr = Float64Array.of(nanValue, 9007199254740991, 0);
       const result = arr.find((value, index, array) => {
         return value !== value;
-      })
+      });
 
+      const actVal = Number.isNaN(result as Double);
       const expectVal = true;
-      expect(result !== result).assertEqual(expectVal);
-    })
+      expect(actVal).assertEqual(expectVal);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0420
@@ -898,11 +899,12 @@ export default function float64ArrayFindTest(): void {
       const arr = Float64Array.of(0.5, 1.5, nanValue);
       const result = arr.find((value, index, array) => {
         return value !== value;
-      })
+      });
 
+      const actVal = Number.isNaN(result as Double);
       const expectVal = true;
-      expect(result !== result).assertEqual(expectVal);
-    })
+      expect(actVal).assertEqual(expectVal);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0430
@@ -917,11 +919,12 @@ export default function float64ArrayFindTest(): void {
       const arr = Float64Array.of(nanValue, nanValue, 0);
       const result = arr.find((value, index, array) => {
         return value !== value;
-      })
+      });
 
+      const actVal = Number.isNaN(result as Double);
       const expectVal = true;
-      expect(result !== result).assertEqual(expectVal);
-    })
+      expect(actVal).assertEqual(expectVal);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0440
@@ -936,12 +939,12 @@ export default function float64ArrayFindTest(): void {
       const arr = Float64Array.of(nanValue);
       const result = arr.find((value, index, array) => {
         return value !== value;
-      })
+      });
 
       const actVal4 = Number.isNaN(result as Double);
       const expectVal = true;
       expect(actVal4).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0450
@@ -957,7 +960,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value === 0.1);
       const expectVal = pointOne;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0460
@@ -970,10 +973,9 @@ export default function float64ArrayFindTest(): void {
     it('testFloat64ArrayFind046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointFive: number = 0.5;
       const arr = new Float64Array([pointFive]);
-      const result = arr.find((value, index, array) => value !== 42.0);
-      const expectVal = pointFive;
-      expect(result).assertEqual(expectVal);
-    })
+      const result = arr.find((value, index, array) => value === 42.0);
+      expect(result).assertUndefined();
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0470
@@ -989,7 +991,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value >= 1.0);
       const expectVal = twoPointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0480
@@ -1005,7 +1007,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value >= 2.0);
       const expectVal = twoPointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0490
@@ -1020,7 +1022,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value > Number.MAX_VALUE);
       const expectVal = undefined;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0500
@@ -1036,7 +1038,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value === 0.25);
       const expectVal = pointTwoFive;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0510
@@ -1052,7 +1054,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value !== 5.0);
       const expectVal = undefined;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0520
@@ -1068,7 +1070,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value === 0.0);
       const expectVal = zeroValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0530
@@ -1084,7 +1086,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value !== 0.0);
       const expectVal = undefined;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0540
@@ -1100,7 +1102,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value < 0.0);
       const expectVal = negthreePointzero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0550
@@ -1116,7 +1118,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value > 0.0);
       const expectVal = twoPointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0560
@@ -1133,7 +1135,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value > 0.0);
       const expectVal = onePointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0570
@@ -1149,7 +1151,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value === maxVal);
       const expectVal = maxVal;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0580
@@ -1165,7 +1167,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value === minVal);
       const expectVal = minVal;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0590
@@ -1181,7 +1183,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value === safeVal);
       const expectVal = safeVal;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0600
@@ -1197,7 +1199,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value === minSafeVal);
       const expectVal = minSafeVal;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0610
@@ -1213,7 +1215,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value > 1.0);
       const expectVal = maxSafeInteger;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0620
@@ -1229,7 +1231,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find(pred062);
       const expectVal = onePointFive;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0630
@@ -1245,7 +1247,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => true);
       const expectVal = int16MinValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0640
@@ -1260,7 +1262,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => false);
       const expectVal = undefined;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0650
@@ -1276,7 +1278,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value === 2.0);
       const expectVal = twoPointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0660
@@ -1292,7 +1294,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value > 1.0 ? true : false);
       const expectVal = onePointFive;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0670
@@ -1309,7 +1311,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value > threshold);
       const expectVal = threePointZero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0680
@@ -1330,7 +1332,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = threeValue;
       expect(callCount).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0690
@@ -1349,7 +1351,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = undefined;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0700
@@ -1366,7 +1368,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value === 42.0);
       const expectVal = fillValue42;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0710
@@ -1381,7 +1383,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value === 42.0);
       const expectVal = undefined;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0720
@@ -1404,7 +1406,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = thousandValue;
       expect(callCount).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0730
@@ -1419,7 +1421,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value > 1.0);
       const expectVal = undefined;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0740
@@ -1434,7 +1436,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value > 100.0);
       const expectVal = undefined;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0750
@@ -1450,7 +1452,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value === 2.0);
       const expectVal = undefined;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0760
@@ -1465,7 +1467,7 @@ export default function float64ArrayFindTest(): void {
       const result = arr.find((value, index, array) => value === 1.5);
       const expectVal = arr.$_get(1);
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0770
@@ -1486,7 +1488,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = threeValue;
       expect(callCount).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0780
@@ -1507,7 +1509,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = threeValue;
       expect(callCount).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0790
@@ -1527,7 +1529,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = false;
       expect(called).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0800
@@ -1548,7 +1550,7 @@ export default function float64ArrayFindTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0810
@@ -1569,7 +1571,7 @@ export default function float64ArrayFindTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("TypeError");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0820
@@ -1590,7 +1592,7 @@ export default function float64ArrayFindTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0830
@@ -1611,7 +1613,7 @@ export default function float64ArrayFindTest(): void {
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0840
@@ -1633,7 +1635,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = num999Pointzero;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0850
@@ -1660,7 +1662,7 @@ export default function float64ArrayFindTest(): void {
       const actVal7 = arr.$_get(2);
       const expectVal3 = pointTwoFive;
       expect(actVal7).assertEqual(expectVal3);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0860
@@ -1679,7 +1681,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = int8MinValue;
       expect(outerResult).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0870
@@ -1698,7 +1700,7 @@ export default function float64ArrayFindTest(): void {
 
       const expectVal = int32MinValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0880
@@ -1714,7 +1716,7 @@ export default function float64ArrayFindTest(): void {
       const actVal8 = values.find((value) => value > 4);
       const expectVal = maxSafeInteger;
       expect(actVal8).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0890
@@ -1728,7 +1730,7 @@ export default function float64ArrayFindTest(): void {
       const values = Float64Array.of(0.5, 1.5, 0.25);
       const result = values.find((value) => value > 10);
       expect(result).assertUndefined();
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0900
@@ -1743,7 +1745,7 @@ export default function float64ArrayFindTest(): void {
       const actVal9 = values.find((value) => value === 4.0);
       const expectVal = undefined;
       expect(actVal9).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0910
@@ -1757,12 +1759,12 @@ export default function float64ArrayFindTest(): void {
       const values = new Float64Array();
       const result = values.find((value) => value > 0);
       expect(result).assertUndefined();
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0920
      * @tc.name testFloat64ArrayFind092
-     * @tc.desc Verify find with NaN element
+     * @tc.desc Verify find returns undefined when no NaN element exists
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1770,12 +1772,11 @@ export default function float64ArrayFindTest(): void {
     it('testFloat64ArrayFind092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values = new Float64Array([-2147483648, -1]);
       const result = values.find((value): boolean => {
-        return value != null && Number.isNaN(value);
-      })
+        return Number.isNaN(value);
+      });
 
-      const expectVal = false;
-      expect(result != null).assertEqual(expectVal);
-    })
+      expect(result).assertUndefined();
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0930
@@ -1790,7 +1791,7 @@ export default function float64ArrayFindTest(): void {
       const actVal10 = values.find((value) => value === Infinity);
       const expectVal = undefined;
       expect(actVal10).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0940
@@ -1808,13 +1809,13 @@ export default function float64ArrayFindTest(): void {
       const result = values.find((value) => {
         externalSum += value;
         return value > 1;
-      })
+      });
 
       const expectVal = onePointFive;
       expect(result).assertEqual(expectVal);
       const expectVal2 = twoValue;
       expect(externalSum).assertEqual(expectVal2);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0950
@@ -1829,13 +1830,13 @@ export default function float64ArrayFindTest(): void {
       try {
         values.find((value) => {
           throw new Error("test");
-        })
+        });
 
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0960
@@ -1849,7 +1850,7 @@ export default function float64ArrayFindTest(): void {
       const values = new Float64Array([-2147483648, -1]);
       const result = values.find((value) => value > 100);
       expect(result).assertUndefined();
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0970
@@ -1868,7 +1869,7 @@ export default function float64ArrayFindTest(): void {
       const v = arr.find((e: number): boolean => e === 0xAA);
       const expectVal = num170Pointzero;
       expect(v).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0980
@@ -1887,7 +1888,7 @@ export default function float64ArrayFindTest(): void {
       const v = arr.find((e: number): boolean => e === 0b10101010);
       const expectVal = num170Pointzero;
       expect(v).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0990
@@ -1903,10 +1904,11 @@ export default function float64ArrayFindTest(): void {
       const arr = Float64Array.of(nanValue, doubleMaxValue);
       const result = arr.find((value: number): boolean => {
         return value !== value;
-      })
+      });
+      const actVal = Number.isNaN(result as Double);
       const expectVal = true;
-      expect(result !== result).assertEqual(expectVal);
-    })
+      expect(actVal).assertEqual(expectVal);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_1000
@@ -1922,10 +1924,10 @@ export default function float64ArrayFindTest(): void {
       const arr = Float64Array.of(positiveInfinity, negativeInfinity);
       const result = arr.find((value: number): boolean => {
         return value === Double.POSITIVE_INFINITY;
-      })
+      });
       const expectVal = positiveInfinity;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_1010
@@ -1944,7 +1946,7 @@ export default function float64ArrayFindTest(): void {
       })
       const expectVal = doubleMinValue;
       expect(result).assertEqual(expectVal);
-    })
+    });
 
   })
 }
