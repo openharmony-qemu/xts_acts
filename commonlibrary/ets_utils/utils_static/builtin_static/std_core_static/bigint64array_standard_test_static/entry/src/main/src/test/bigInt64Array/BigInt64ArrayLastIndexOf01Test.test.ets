@@ -1790,5 +1790,162 @@ export default function BigInt64ArrayLastIndexOf01Test(): void {
       expect(arr.lastIndexOf(2n, 0)).assertEqual(-1);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_LAST_INDEX_OF_THREE_1170
+     * @tc.name testBigInt64ArrayLastIndexOfThree1170
+     * @tc.desc Verify negative fromIndex -1 returns index 4 for 1n in alternating values.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayLastIndexOfThree1170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 1n, 2n, 1n, 2n]);
+      expect(arr.lastIndexOf(1n, -1)).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_LAST_INDEX_OF_THREE_1180
+     * @tc.name testBigInt64ArrayLastIndexOfThree1180
+     * @tc.desc Verify negative fromIndex -3 returns index 2 for 1n in alternating values.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayLastIndexOfThree1180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 1n, 2n, 1n, 2n]);
+      expect(arr.lastIndexOf(1n, -3)).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_LAST_INDEX_OF_THREE_1190
+     * @tc.name testBigInt64ArrayLastIndexOfThree1190
+     * @tc.desc Verify negative fromIndex -5 returns index 0 for 1n in alternating values.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayLastIndexOfThree1190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 1n, 2n, 1n, 2n]);
+      expect(arr.lastIndexOf(1n, -5)).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_LAST_INDEX_OF_THREE_1200
+     * @tc.name testBigInt64ArrayLastIndexOfThree1200
+     * @tc.desc Verify repeated 0n values return index 2 with fromIndex -1.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayLastIndexOfThree1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([0n, 0n, 0n]);
+      expect(arr.lastIndexOf(0n, -1)).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_LAST_INDEX_OF_THREE_1210
+     * @tc.name testBigInt64ArrayLastIndexOfThree1210
+     * @tc.desc Verify repeated 0n values return index 1 with fromIndex -2.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayLastIndexOfThree1210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([0n, 0n, 0n]);
+      expect(arr.lastIndexOf(0n, -2)).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_LAST_INDEX_OF_THREE_1220
+     * @tc.name testBigInt64ArrayLastIndexOfThree1220
+     * @tc.desc Verify repeated 0n values return index 0 with fromIndex -3.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayLastIndexOfThree1220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([0n, 0n, 0n]);
+      expect(arr.lastIndexOf(0n, -3)).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_LAST_INDEX_OF_THREE_1230
+     * @tc.name testBigInt64ArrayLastIndexOfThree1230
+     * @tc.desc Verify repeated 0n values return -1 with fromIndex -4.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayLastIndexOfThree1230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([0n, 0n, 0n]);
+      expect(arr.lastIndexOf(0n, -4)).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_LAST_INDEX_OF_THREE_1240
+     * @tc.name testBigInt64ArrayLastIndexOfThree1240
+     * @tc.desc Verify searching for the maximum int64 value does not modify the array.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayLastIndexOfThree1240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([0n, 1n]);
+      arr.lastIndexOf(9223372036854775807n);
+      expect(arr[0]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_LAST_INDEX_OF_THREE_1250
+     * @tc.name testBigInt64ArrayLastIndexOfThree1250
+     * @tc.desc Verify searching for the minimum int64 value does not modify the array.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayLastIndexOfThree1250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([0n, 1n]);
+      arr.lastIndexOf(-9223372036854775808n);
+      expect(arr[1]).assertEqual(1n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_LAST_INDEX_OF_THREE_1260
+     * @tc.name testBigInt64ArrayLastIndexOfThree1260
+     * @tc.desc Verify lastIndexOf finds a value near the maximum int64 boundary.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayLastIndexOfThree1260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([9223372036854775806n]);
+      expect(arr.lastIndexOf(9223372036854775806n)).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_LAST_INDEX_OF_THREE_1270
+     * @tc.name testBigInt64ArrayLastIndexOfThree1270
+     * @tc.desc Verify lastIndexOf finds a value near the minimum int64 boundary.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayLastIndexOfThree1270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([-9223372036854775807n]);
+      expect(arr.lastIndexOf(-9223372036854775807n)).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_LAST_INDEX_OF_THREE_1280
+     * @tc.name testBigInt64ArrayLastIndexOfThree1280
+     * @tc.desc Verify fromIndex 0 returns -1 when the target appears only after the search start.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayLastIndexOfThree1280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([0n, 1n, 2n]);
+      expect(arr.lastIndexOf(2n, 0)).assertEqual(-1);
+    });
   });
 }
