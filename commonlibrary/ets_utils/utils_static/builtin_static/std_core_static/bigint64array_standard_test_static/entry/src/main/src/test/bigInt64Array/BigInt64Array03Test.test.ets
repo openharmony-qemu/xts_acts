@@ -1790,6 +1790,341 @@ export default function BigInt64Array03Test(): void {
       expect(errorName).assertEqual("TypeError");
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_THREE_1010
+     * @tc.name testBigInt64ArrayThree1010
+     * @tc.desc Verify writing the maximum signed BigInt64 value preserves that
+     * value.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayThree1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array(1);
+      arr[0] = 9223372036854775807n;
+      expect(arr[0]).assertEqual(9223372036854775807n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_THREE_1020
+     * @tc.name testBigInt64ArrayThree1020
+     * @tc.desc Verify writing the minimum signed BigInt64 value preserves that
+     * value.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayThree1020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array(1);
+      arr[0] = -9223372036854775808n;
+      expect(arr[0]).assertEqual(-9223372036854775808n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_THREE_1030
+     * @tc.name testBigInt64ArrayThree1030
+     * @tc.desc Verify writing one above the signed maximum wraps to the minimum
+     * value.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayThree1030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array(1);
+      arr[0] = 9223372036854775808n;
+      expect(arr[0]).assertEqual(-9223372036854775808n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_THREE_1040
+     * @tc.name testBigInt64ArrayThree1040
+     * @tc.desc Verify writing one below the signed minimum wraps to the maximum
+     * value.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayThree1040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array(1);
+      arr[0] = -9223372036854775809n;
+      expect(arr[0]).assertEqual(9223372036854775807n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_THREE_1050
+     * @tc.name testBigInt64ArrayThree1050
+     * @tc.desc Verify writing two-to-sixty-four minus one wraps to -1n.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayThree1050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array(1);
+      arr[0] = 18446744073709551615n;
+      expect(arr[0]).assertEqual(-1n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_THREE_1060
+     * @tc.name testBigInt64ArrayThree1060
+     * @tc.desc Verify writing an exact two-to-sixty-four multiple wraps to 0n.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayThree1060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array(1);
+      arr[0] = 18446744073709551616n;
+      expect(arr[0]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_THREE_1070
+     * @tc.name testBigInt64ArrayThree1070
+     * @tc.desc Verify writing negative two-to-sixty-four plus one wraps to 1n.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayThree1070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array(1);
+      arr[0] = -18446744073709551615n;
+      expect(arr[0]).assertEqual(1n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_THREE_1080
+     * @tc.name testBigInt64ArrayThree1080
+     * @tc.desc Verify writing negative two-to-sixty-four wraps to 0n.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayThree1080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array(1);
+      arr[0] = -18446744073709551616n;
+      expect(arr[0]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_THREE_1090
+     * @tc.name testBigInt64ArrayThree1090
+     * @tc.desc Verify BigInt64Array.of truncates an overflowing initial value
+     * during creation.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayThree1090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = BigInt64Array.of(9223372036854775808n);
+      expect(arr[0]).assertEqual(-9223372036854775808n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_THREE_1100
+     * @tc.name testBigInt64ArrayThree1100
+     * @tc.desc Verify fill truncates an overflowing bigint value across the whole
+     * array.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayThree1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array(2);
+      arr.fill(9223372036854775808n);
+      expect(arr[1]).assertEqual(-9223372036854775808n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_THREE_1110
+     * @tc.name testBigInt64ArrayThree1110
+     * @tc.desc Verify the constructor throws RangeError when byteOffset is not
+     * aligned to eight bytes.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayThree1110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(16);
+      let hasCaught = false;
+      let errorName = "";
+      try {
+        let arr = new BigInt64Array(buf, 1);
+        expect(arr.length).assertEqual(0);
+      } catch (e) {
+        hasCaught = true;
+        errorName = (e as Error).name;
+      }
+      expect(hasCaught).assertTrue();
+      expect(errorName).assertEqual("RangeError");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_THREE_1120
+     * @tc.name testBigInt64ArrayThree1120
+     * @tc.desc Verify the constructor throws RangeError when byteOffset is
+     * negative.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayThree1120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(16);
+      let hasCaught = false;
+      let errorName = "";
+      try {
+        let arr = new BigInt64Array(buf, -8);
+        expect(arr.length).assertEqual(0);
+      } catch (e) {
+        hasCaught = true;
+        errorName = (e as Error).name;
+      }
+      expect(hasCaught).assertTrue();
+      expect(errorName).assertEqual("RangeError");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_THREE_1130
+     * @tc.name testBigInt64ArrayThree1130
+     * @tc.desc Verify the constructor throws RangeError when offset plus length
+     * exceeds buffer capacity.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayThree1130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(16);
+      let hasCaught = false;
+      let errorName = "";
+      try {
+        let arr = new BigInt64Array(buf, 8, 2);
+        expect(arr.length).assertEqual(0);
+      } catch (e) {
+        hasCaught = true;
+        errorName = (e as Error).name;
+      }
+      expect(hasCaught).assertTrue();
+      expect(errorName).assertEqual("RangeError");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_THREE_1140
+     * @tc.name testBigInt64ArrayThree1140
+     * @tc.desc Verify the constructor throws RangeError when length is negative.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayThree1140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(16);
+      let hasCaught = false;
+      let errorName = "";
+      try {
+        let arr = new BigInt64Array(buf, 0, -1);
+        expect(arr.length).assertEqual(0);
+      } catch (e) {
+        hasCaught = true;
+        errorName = (e as Error).name;
+      }
+      expect(hasCaught).assertTrue();
+      expect(errorName).assertEqual("RangeError");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_THREE_1150
+     * @tc.name testBigInt64ArrayThree1150
+     * @tc.desc Verify subarray shares the underlying buffer when the child view is
+     * updated.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayThree1150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n]);
+      let sub = arr.subarray(1);
+      sub[0] = 99n;
+      expect(arr[1]).assertEqual(99n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_THREE_1160
+     * @tc.name testBigInt64ArrayThree1160
+     * @tc.desc Verify subarray reflects changes written through the original
+     * parent view.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayThree1160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([10n, 20n]);
+      let sub = arr.subarray(0, 1);
+      arr[0] = 55n;
+      expect(sub[0]).assertEqual(55n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_THREE_1170
+     * @tc.name testBigInt64ArrayThree1170
+     * @tc.desc Verify separate buffer views do not affect each other when they
+     * target different indices.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayThree1170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(16);
+      let v1 = new BigInt64Array(buf, 0, 1);
+      let v2 = new BigInt64Array(buf, 8, 1);
+      v1[0] = 5n;
+      expect(v2[0]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_THREE_1180
+     * @tc.name testBigInt64ArrayThree1180
+     * @tc.desc Verify an Int8Array write changes the shared BigInt64Array view
+     * data.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayThree1180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(8);
+      let i8 = new Int8Array(buf);
+      let arr = new BigInt64Array(buf);
+      i8[0] = -1;
+      expect(arr[0] !== 0n).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_THREE_1190
+     * @tc.name testBigInt64ArrayThree1190
+     * @tc.desc Verify copyWithin preserves overlapping source values in order.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayThree1190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      arr.copyWithin(1, 0, 2);
+      expect(arr[1]).assertEqual(1n);
+      expect(arr[2]).assertEqual(2n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_THREE_1200
+     * @tc.name testBigInt64ArrayThree1200
+     * @tc.desc Verify the constructor allows a byteOffset exactly at the end of
+     * the buffer.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayThree1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(16);
+      let arr = new BigInt64Array(buf, 16);
+      expect(arr.length).assertEqual(0);
+    });
 
   });
 }
