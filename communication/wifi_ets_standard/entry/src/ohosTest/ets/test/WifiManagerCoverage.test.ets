@@ -2087,12 +2087,7 @@ export default function wifiManagerCoverage() {
         expect(isAccessToken).assertFalse();
       } catch (e) {
         console.info("SUB_Communication_WiFi_SysCaps_Test_0014 canIUse isAccessToken error: " + e);
-        if (e.code == 801) {
-          console.info('[wifi_js]wifiManagerExt enableHotspot is not support');
-          expect(true).assertTrue();
-        } else {
-          expect().assertFail();
-        };
+        expect().assertFail();
       };
       console.info('SUB_Communication_WiFi_SysCaps_Test_0014 end');
       done();
@@ -2116,12 +2111,7 @@ export default function wifiManagerCoverage() {
         expect(isAccessToken).assertFalse();
       } catch (e) {
         console.info("SUB_Communication_WiFi_SysCaps_Test_0015 canIUse isAccessToken error: " + e);
-        if (e.code == 801) {
-          console.info('[wifi_js]wifiManagerExt enableHotspot is not support');
-          expect(true).assertTrue();
-        } else {
-          expect().assertFail();
-        };
+        expect().assertFail();
       };
       console.info('SUB_Communication_WiFi_SysCaps_Test_0015 end');
       done();
@@ -2134,7 +2124,7 @@ export default function wifiManagerCoverage() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Communication_WiFi_SysCaps_Test_0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_Communication_WiFi_SysCaps_Test_0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('SUB_Communication_WiFi_SysCaps_Test_0016 start');
       try {
         let isAccessToken = canIUse("SystemCapability.Communication.wifiMg.AP.Extension");
@@ -2145,12 +2135,7 @@ export default function wifiManagerCoverage() {
         expect(isAccessToken).assertFalse();
       } catch (e) {
         console.info("SUB_Communication_WiFi_SysCaps_Test_0016 canIUse isAccessToken error: " + e);
-        if (e.code == 801) {
-          console.info('[wifi_js]wifiManagerExt enableHotspot is not support');
-          expect(true).assertTrue();
-        } else {
-          expect().assertFail();
-        };
+        expect().assertFail();
       };
       console.info('SUB_Communication_WiFi_SysCaps_Test_0016 end');
       done();
