@@ -1786,6 +1786,465 @@ export default function BigInt64ArrayReduce02Test(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1110
+     * @tc.name testBigInt64ArrayReduceTwo111
+     * @tc.desc Verify reduce with mixed positive and negative values correctly sums to zero.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([10n, -5n, 3n, -8n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
+        return acc + curr;
+      }, 0n);
+      expect(res).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1120
+     * @tc.name testBigInt64ArrayReduceTwo112
+     * @tc.desc Verify reduce with all negative values without initialValue returns the correct sum.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([-1n, -2n, -3n, -4n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
+        return acc + curr;
+      });
+      expect(res).assertEqual(-10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1130
+     * @tc.name testBigInt64ArrayReduceTwo113
+     * @tc.desc Verify reduce with array containing only zero values returns 0n.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([0n, 0n, 0n, 0n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
+        return acc + curr;
+      }, 0n);
+      expect(res).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1140
+     * @tc.name testBigInt64ArrayReduceTwo114
+     * @tc.desc Verify reduce with modulus operation accumulates the remainder chain.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([100n, 30n, 7n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
+        return acc % curr;
+      });
+      expect(res).assertEqual(2n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1150
+     * @tc.name testBigInt64ArrayReduceTwo115
+     * @tc.desc Verify reduce with exponentiation operation accumulates correctly from left to right.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([2n, 3n, 2n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
+        return acc ** curr;
+      });
+      expect(res).assertEqual(64n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1160
+     * @tc.name testBigInt64ArrayReduceTwo116
+     * @tc.desc Verify reduce with left shift operation accumulates shift amounts.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 1n, 2n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
+        return acc << curr;
+      }, 1n);
+      expect(res).assertEqual(8n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1170
+     * @tc.name testBigInt64ArrayReduceTwo117
+     * @tc.desc Verify reduce with right shift operation accumulates shift amounts.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([2n, 1n, 1n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
+        return acc >> curr;
+      }, 256n);
+      expect(res).assertEqual(32n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1180
+     * @tc.name testBigInt64ArrayReduceTwo118
+     * @tc.desc Verify reduce with the same value repeated many times sums correctly.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array(50);
+      for (let i = 0; i < 50; i++) {
+        arr.$_set(i, 2n);
+      }
+      let res = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
+        return acc + curr;
+      }, 0n);
+      expect(res).assertEqual(100n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1190
+     * @tc.name testBigInt64ArrayReduceTwo119
+     * @tc.desc Verify reduce reflects in-loop mutation of a future element via the array reference.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+        if (idx === 1) a.$_set(3, 99n);
+        return acc + curr;
+      }, 0n);
+      expect(res).assertEqual(105n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1200
+     * @tc.name testBigInt64ArrayReduceTwo120
+     * @tc.desc Verify reduce does not revisit an already-processed element mutated in-loop.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+        if (idx === 2) a.$_set(0, 99n);
+        return acc + curr;
+      }, 0n);
+      expect(res).assertEqual(10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1210
+     * @tc.name testBigInt64ArrayReduceTwo121
+     * @tc.desc Verify reduce with in-loop mutation of the current element does not affect the current callback value.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([10n, 20n, 30n]);
+      let captured: BigInt[] = [];
+      arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+        captured.push(curr);
+        a.$_set(idx, 0n);
+        return acc + curr;
+      }, 0n);
+      expect(captured[0]).assertEqual(10n);
+      expect(captured[1]).assertEqual(20n);
+      expect(captured[2]).assertEqual(30n);
+      expect(arr.$_get(0)).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1220
+     * @tc.name testBigInt64ArrayReduceTwo122
+     * @tc.desc Verify reduce on a typed array iterates exactly length times.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
+      let callCount = 0;
+      arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+        callCount++;
+        return acc + curr;
+      }, 0n);
+      expect(callCount).assertEqual(5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1230
+     * @tc.name testBigInt64ArrayReduceTwo123
+     * @tc.desc Verify reduce on a typed array from ArrayBuffer with offset iterates the correct number of times.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(48);
+      let full = new BigInt64Array(buf);
+      for (let i = 0; i < 6; i++) full[i] = BigInt(i + 1);
+      let view = new BigInt64Array(buf, 16, 3);
+      let count = 0;
+      let res = view.reduce((acc: BigInt, curr: BigInt): BigInt => {
+        count++;
+        return acc + curr;
+      }, 0n);
+      expect(count).assertEqual(3);
+      expect(res).assertEqual(12n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1240
+     * @tc.name testBigInt64ArrayReduceTwo124
+     * @tc.desc Verify reduce with an array where all elements are the same value using XOR returns 0n.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([7n, 7n, 7n, 7n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
+        return acc ^ curr;
+      }, 0n);
+      expect(res).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1250
+     * @tc.name testBigInt64ArrayReduceTwo125
+     * @tc.desc Verify reduce with an array of alternating 0n and 1n using bitwise OR returns 1n.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([0n, 1n, 0n, 1n, 0n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
+        return acc | curr;
+      }, 0n);
+      expect(res).assertEqual(1n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1260
+     * @tc.name testBigInt64ArrayReduceTwo126
+     * @tc.desc Verify reduce accumulates values exceeding MAX_INT64 resulting in wrap-around via two-element addition.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([9223372036854775807n, 2n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
+        return acc + curr;
+      });
+      expect(res).assertEqual(-9223372036854775807n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1270
+     * @tc.name testBigInt64ArrayReduceTwo127
+     * @tc.desc Verify reduce correctly computes the product of two large values that fit within int64.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1000000n, 2000000n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
+        return acc * curr;
+      });
+      expect(res).assertEqual(2000000000000n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1280
+     * @tc.name testBigInt64ArrayReduceTwo128
+     * @tc.desc Verify reduce handles shift left beyond 63 bits producing the minimum int64 value.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 63n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
+        return acc << curr;
+      });
+      expect(res).assertEqual(-9223372036854775808n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1290
+     * @tc.name testBigInt64ArrayReduceTwo129
+     * @tc.desc Verify reduce with decrementing accumulator pattern across multiple values.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 1n, 1n, 1n, 1n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
+        return acc - curr;
+      }, 100n);
+      expect(res).assertEqual(95n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1300
+     * @tc.name testBigInt64ArrayReduceTwo130
+     * @tc.desc Verify reduce with division chain produces the correct integer quotient.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([3n, 2n, 2n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
+        return acc / curr;
+      }, 120n);
+      expect(res).assertEqual(10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1310
+     * @tc.name testBigInt64ArrayReduceTwo131
+     * @tc.desc Verify reduce does not modify the original array elements.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([3n, 5n, 7n]);
+      arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
+        return acc + curr;
+      }, 0n);
+      expect(arr.$_get(0)).assertEqual(3n);
+      expect(arr.$_get(1)).assertEqual(5n);
+      expect(arr.$_get(2)).assertEqual(7n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1320
+     * @tc.name testBigInt64ArrayReduceTwo132
+     * @tc.desc Verify reduce does not change the length of the original array.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n]);
+      let lenBefore = arr.length;
+      arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
+        return acc + curr;
+      }, 0n);
+      expect(arr.length).assertEqual(lenBefore);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1330
+     * @tc.name testBigInt64ArrayReduceTwo133
+     * @tc.desc Verify reduce does not change the byteLength of the original array.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let blBefore = arr.byteLength;
+      arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
+        return acc * curr;
+      }, 1n);
+      expect(arr.byteLength).assertEqual(blBefore);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1340
+     * @tc.name testBigInt64ArrayReduceTwo134
+     * @tc.desc Verify reduce does not change the byteOffset of the original array.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let boBefore = arr.byteOffset;
+      arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
+        return acc + curr;
+      }, 0n);
+      expect(arr.byteOffset).assertEqual(boBefore);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1350
+     * @tc.name testBigInt64ArrayReduceTwo135
+     * @tc.desc Verify reduce result is independent of subsequent mutations to the source array.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([10n, 20n, 30n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
+        return acc + curr;
+      }, 0n);
+      arr.$_set(0, 999n);
+      arr.$_set(1, 999n);
+      arr.$_set(2, 999n);
+      expect(res).assertEqual(60n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1360
+     * @tc.name testBigInt64ArrayReduceTwo136
+     * @tc.desc Verify multiple reduce calls on the same array produce the same result.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n]);
+      let r1 = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
+        return acc + curr;
+      }, 0n);
+      let r2 = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
+        return acc + curr;
+      }, 0n);
+      expect(r1).assertEqual(r2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_1370
+     * @tc.name testBigInt64ArrayReduceTwo137
+     * @tc.desc Verify reduce typeof result is bigint for bigint accumulator operations.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayReduceTwo137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
+        return acc + curr;
+      });
       expect(typeof res).assertEqual('bigint');
     });
 
