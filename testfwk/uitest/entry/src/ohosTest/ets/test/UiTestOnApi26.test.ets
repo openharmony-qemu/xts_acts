@@ -85,6 +85,46 @@ export default function uitestOnApi26Test() {
     });
 
     /**
+     * @tc.name   testOnIsBeforeComponentNullInvalid
+     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0700
+     * @tc.desc   Test On.isBefore(com: Component) with invalid Component parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnIsBeforeComponentNullInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`testOnIsBeforeComponentNullInvalid start`);
+      try {
+        ON.beforeComponent(null);
+        expect().assertFail();
+      } catch (error) {
+        console.info(`testOnIsBeforeComponentNullInvalid,error.code, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ParameterErrorCode);
+      }
+      console.info(`testOnIsBeforeComponentNullInvalid over`);
+    });
+
+    /**
+     * @tc.name   testOnIsBeforeComponentUndefinedInvalid
+     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0800
+     * @tc.desc   Test On.isBefore(com: Component) with invalid Component parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnIsBeforeComponentUndefinedInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`testOnIsBeforeComponentUndefinedInvalid start`);
+      try {
+        ON.beforeComponent(undefined);
+        expect().assertFail();
+      } catch (error) {
+        console.info(`testOnIsBeforeComponentUndefinedInvalid,error.code, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ParameterErrorCode);
+      }
+      console.info(`testOnIsBeforeComponentUndefinedInvalid over`);
+    });
+
+    /**
      * @tc.name   testOnIsAfterComponentValid
      * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0300
      * @tc.desc   Test On.isAfter(com: Component) with valid Component parameter
@@ -130,6 +170,46 @@ export default function uitestOnApi26Test() {
         expect(error.code).assertEqual(ParameterErrorCode);
       }
       console.info(`testOnIsAfterComponentInvalid over`);
+    });
+
+    /**
+     * @tc.name   testOnIsAfterComponentNullInvalid
+     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0800
+     * @tc.desc   Test On.isAfter(com: Component) with invalid Component parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnIsAfterComponentNullInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`testOnIsAfterComponentNullInvalid start`);
+      try {
+        ON.afterComponent(null);
+        expect().assertFail();
+      } catch (error) {
+        console.info(`testOnIsAfterComponentNullInvalid,error.code, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ParameterErrorCode);
+      }
+      console.info(`testOnIsAfterComponentNullInvalid over`);
+    });
+
+    /**
+     * @tc.name   testOnIsAfterComponentUndefinedInvalid
+     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0800
+     * @tc.desc   Test On.isAfter(com: Component) with invalid Component parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnIsAfterComponentUndefinedInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`testOnIsAfterComponentUndefinedInvalid start`);
+      try {
+        ON.afterComponent(undefined);
+        expect().assertFail();
+      } catch (error) {
+        console.info(`testOnIsAfterComponentUndefinedInvalid,error.code, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ParameterErrorCode);
+      }
+      console.info(`testOnIsAfterComponentUndefinedInvalid over`);
     });
 
     /**
@@ -179,5 +259,46 @@ export default function uitestOnApi26Test() {
       }
       console.info(`testOnWithinComponentInvalid over`);
     });
+
+    /**
+     * @tc.name   testOnWithinComponentNullInvalid
+     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0900
+     * @tc.desc   Test On.isAfter(com: Component) with invalid Component parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnWithinComponentNullInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`testOnWithinComponentNullInvalid start`);
+      try {
+        ON.withinComponent(null)
+        expect().assertFail();
+      } catch (error) {
+        console.info(`testOnWithinComponentNullInvalid,error.code, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ParameterErrorCode);
+      }
+      console.info(`testOnWithinComponentNullInvalid over`);
+    });
+
+    /**
+     * @tc.name   testOnWithinComponentUndefinedInvalid
+     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_1000
+     * @tc.desc   Test On.isAfter(com: Component) with invalid Component parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnWithinComponentUndefinedInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`testOnWithinComponentUndefinedInvalid start`);
+      try {
+        ON.withinComponent(undefined)
+        expect().assertFail();
+      } catch (error) {
+        console.info(`testOnWithinComponentUndefinedInvalid,error.code, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ParameterErrorCode);
+      }
+      console.info(`testOnWithinComponentUndefinedInvalid over`);
+    });
+
   })
 }
