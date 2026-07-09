@@ -18,7 +18,7 @@ import { TestType, Size, Level } from '../../../../hypium/Constant';
 import Utils from '../Util.test';
 
 export default function BigIntGetULongTest_2(): void {
-  describe('BigIntGetULongTest_2', () => {
+  describe('BigIntGetULongTest_2', (): void => {
     beforeAll((): void => {
     });
     beforeEach(async():void=>{

@@ -121,7 +121,7 @@ function fnReturnBigInt(): BigInt {
 }
 
 export default function BigIntTypeAliasTest_2(): void {
-  describe('BigIntTypeAliasTest_2', () => {
+  describe('BigIntTypeAliasTest_2', (): void => {
     beforeAll((): void => {
     });
     beforeEach(async():void=>{

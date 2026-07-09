@@ -17,7 +17,7 @@ import { describe, it, expect,afterAll, afterEach, beforeAll, beforeEach  } from
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 import Utils from '../Util.test';
 export default function BigIntValueOfTest_2(): void {
-  describe('BigIntValueOfTest_2', () => {
+  describe('BigIntValueOfTest_2', ():void=> {
     beforeAll((): void => {
     });
     beforeEach(async():void=>{

@@ -20,7 +20,7 @@ function getBigInt(): BigInt { return BigInt(0); }
 function getBigInt255(): BigInt { return BigInt(255); }
 
 export default function BigIntOperatorBitwiseXorTest_2(): void {
-  describe('BigIntOperatorBitwiseXorTest_2', ()=> {
+  describe('BigIntOperatorBitwiseXorTest_2', (): void=> {
     beforeAll((): void => {
     });
     beforeEach(async():void=>{

@@ -19,7 +19,7 @@ import Utils from '../Util.test';
 function getBigInt(): BigInt { return BigInt(0); }
 
 export default function BigIntOperatorBitwiseAndTest_2(): void {
-  describe('BigIntOperatorBitwiseAndTest_2',() => {
+  describe('BigIntOperatorBitwiseAndTest_2',(): void => {
     beforeAll((): void => {
     });
     beforeEach(async():void=>{

@@ -21,7 +21,7 @@ function getBigInt(): BigInt {
 }
 
 export default function BigIntOperatorBitwiseNotTest_2(): void {
-  describe('BigIntOperatorBitwiseNotTest_2', () => {
+  describe('BigIntOperatorBitwiseNotTest_2', (): void => {
     afterEach(async (): Promise<void> => {
       await new Promise<void>((resolve)=>{
         setTimeout(()=>{

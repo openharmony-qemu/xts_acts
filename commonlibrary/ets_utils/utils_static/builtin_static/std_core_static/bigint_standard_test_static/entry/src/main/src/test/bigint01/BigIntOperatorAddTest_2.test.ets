@@ -25,7 +25,7 @@ class ObjA { a: BigInt = BigInt(0); }
 class ObjB { b: BigInt = BigInt(0); }
 
 export default function BigIntOperatorAddTest_2(): void {
-  describe('BigIntOperatorAddTest_2', () => {
+  describe('BigIntOperatorAddTest_2', (): void => {
     beforeAll((): void => {
     });
     beforeEach(async():void=>{
