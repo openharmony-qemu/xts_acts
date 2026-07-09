@@ -3595,8 +3595,8 @@ export default function geolocationTest_geo7() {
      * @tc.desc   When the location switch is disabled,getCurrentLocation promise will return 3301100.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEl1
-     */
+      * @tc.level  LEVEL1
+      */
     it('SUB_HSS_LocationSystem_LocSwitch_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         var isAcessToken = canIUse('SystemCapability.Location.Location.Core');
         console.info('SUB_HSS_LocationSystem_LocSwitch_1100: ' + isAcessToken);
@@ -3719,6 +3719,7 @@ export default function geolocationTest_geo7() {
         }
         done();
     })
+
 
 
     })
