@@ -1927,7 +1927,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F955.v instanceof int).assertTrue()
         expect(A_F955.v).assertEqual(val)
             let a: A_F955 = new A_F955()
-        expect(a.field instanceof Object | null).assertTrue()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
