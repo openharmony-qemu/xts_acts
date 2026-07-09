@@ -36,8 +36,7 @@ export default function testsuite() {
       if (data.bearerTypes[0] === connection.NetBearType.BEARER_ETHERNET) {
         NetExtNDKTest();
       }
-    })
-  }).catch((error: BusinessError) => {
+    }).catch((error: BusinessError) => {
     return;
   });
   } else {
