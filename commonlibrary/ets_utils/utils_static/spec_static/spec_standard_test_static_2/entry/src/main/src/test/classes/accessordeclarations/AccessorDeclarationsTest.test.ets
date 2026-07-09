@@ -26,14 +26,7 @@ import {
   Size,
   Level
 } from '@ohos/hypium-binary/src/main/indexStatic';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../Util.test.ets'
 
 class Base {
   get field(): Base { return new Base }
