@@ -44,6 +44,9 @@
 #include "arcList/ArcListItemSwipeActionTest.cpp"
 #include "arcList/ArcScrollBarBindScrollableTest.cpp"
 #include "arcList/ArcScrollBarDisplayModeTest.cpp"
+#include "arcSwiper/ArcSwiperAttributeTest.cpp"
+#include "arcSwiper/ArcSwiperMethodTest.cpp"
+#include "arcAlphabetIndexer/ArcAlphabetIndexerAttributeTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -224,6 +227,53 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testArcScrollBarDisplayMode002", nullptr, TestArcScrollBarDisplayMode002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testArcScrollBarDisplayMode003", nullptr, TestArcScrollBarDisplayMode003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testArcScrollBarDisplayMode004", nullptr, TestArcScrollBarDisplayMode004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        
+        {"testArcSwiperDuration001", nullptr, TestArcSwiperDuration001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcSwiperDuration002", nullptr, TestArcSwiperDuration002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcSwiperDuration003", nullptr, TestArcSwiperDuration003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcSwiperEffectMode001", nullptr, TestArcSwiperEffectMode001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcSwiperEffectMode002", nullptr, TestArcSwiperEffectMode002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcSwiperVertical001", nullptr, TestArcSwiperVertical001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcSwiperVertical002", nullptr, TestArcSwiperVertical002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcSwiperIndicator001", nullptr, TestArcSwiperIndicator001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcSwiperIndicator002", nullptr, TestArcSwiperIndicator002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcSwiperIndicator003", nullptr, TestArcSwiperIndicator003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcSwiperDisableSwipe001", nullptr, TestArcSwiperDisableSwipe001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcSwiperDisableSwipe002", nullptr, TestArcSwiperDisableSwipe002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcSwiperDisableTransitionAnimation001", nullptr, TestArcSwiperDisableTransitionAnimation001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcSwiperDisableTransitionAnimation002", nullptr, TestArcSwiperDisableTransitionAnimation002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcSwiperDigitalCrownSensitivity001", nullptr, TestArcSwiperDigitalCrownSensitivity001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcSwiperDigitalCrownSensitivity002", nullptr, TestArcSwiperDigitalCrownSensitivity002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcSwiperIndex001", nullptr, TestArcSwiperIndex001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcSwiperIndex002", nullptr, TestArcSwiperIndex002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcSwiperIndex003", nullptr, TestArcSwiperIndex003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcSwiperShowNext001", nullptr, TestArcSwiperShowNext001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcSwiperShowNext002", nullptr, TestArcSwiperShowNext002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcSwiperShowPrevious001", nullptr, TestArcSwiperShowPrevious001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcSwiperShowPrevious002", nullptr, TestArcSwiperShowPrevious002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcSwiperFinishAnimation001", nullptr, TestArcSwiperFinishAnimation001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcSwiperFinishAnimation002", nullptr, TestArcSwiperFinishAnimation002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        
+        {"testArcAlphabetIndexerColor001", nullptr, TestArcAlphabetIndexerColor001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcAlphabetIndexerColor002", nullptr, TestArcAlphabetIndexerColor002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcAlphabetIndexerSelectedColor001", nullptr, TestArcAlphabetIndexerSelectedColor001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcAlphabetIndexerSelected001", nullptr, TestArcAlphabetIndexerSelected001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcAlphabetIndexerSelected002", nullptr, TestArcAlphabetIndexerSelected002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcAlphabetPopupBackgroundBlurStyle001", nullptr, TestArcAlphabetPopupBackgroundBlurStyle001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcAlphabetIndexerItemSize001", nullptr, TestArcAlphabetIndexerItemSize001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcAlphabetIndexerItemSize002", nullptr, TestArcAlphabetIndexerItemSize002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcAlphabetFont001", nullptr, TestArcAlphabetFont001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcAlphabetFont002", nullptr, TestArcAlphabetFont002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcAlphabetIndexerUsePopup001", nullptr, TestArcAlphabetIndexerUsePopup001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcAlphabetIndexerUsePopup002", nullptr, TestArcAlphabetIndexerUsePopup002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcAlphabetIndexerPopupFont001", nullptr, TestArcAlphabetIndexerPopupFont001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcAlphabetIndexerSelectedBackgroundColor001", nullptr, TestArcAlphabetIndexerSelectedBackgroundColor001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcAlphabetAutoCollapse001", nullptr, TestArcAlphabetAutoCollapse001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcAlphabetAutoCollapse002", nullptr, TestArcAlphabetAutoCollapse002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcAlphabetSelectedFont001", nullptr, TestArcAlphabetSelectedFont001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcAlphabetIndexerPopupColor001", nullptr, TestArcAlphabetIndexerPopupColor001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcAlphabetIndexerPopupBackgroundColor001", nullptr, TestArcAlphabetIndexerPopupBackgroundColor001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcAlphabetIndexerArray001", nullptr, TestArcAlphabetIndexerArray001, nullptr, nullptr, nullptr, napi_default, nullptr},
         };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");
