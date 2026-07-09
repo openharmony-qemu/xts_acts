@@ -1,4 +1,4 @@
-﻿'use static';
+﻿'use static'
 import { abrupt_completion_A, bigint_A, class_fields_A, class_fields_B } from '../../../Util.test'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
