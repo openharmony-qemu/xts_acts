@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { DatePickerComponent, DatePickerComponentOptions, DisplayMode, TimeFormat } from '@kit.ArkUI';
+import { DatePickerComponent, DatePickerComponentOptions, DisplayMode, TimeFormat, DatePickerComponentResult } from '@kit.ArkUI';
 
 @Entry
 @Component
@@ -28,6 +28,12 @@ struct DatePickerComponentTimeFormat {
           timeOptions: {
             format: this.currentTimeFormat,
             useMilitaryTime: true,
+            onChange: (result: DatePickerComponentResult) => {
+              console.info('Selected time: ' + result.hour + ':' + result.minute + ':' + result.second);
+            },
+            onScrollStop: (result: DatePickerComponentResult) => {
+              console.info('Scroll stop: ' + result.hour + ':' + result.minute + ':' + result.second);
+            }
           }
         }
       })
