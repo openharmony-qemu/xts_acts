@@ -26,11 +26,11 @@ export default function systemTest() {
 
     });
 
-    beforeEach(function () {
+    beforeEach(() => {
 
     });
 
-    afterEach(function () {
+    afterEach(() => {
 
     });
 
