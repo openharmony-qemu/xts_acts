@@ -14,7 +14,7 @@
          */
 
 import { describe, it, expect, TestType, Level, Size, beforeAll } from '@ohos/hypium'
-import { Driver, ON } from '@kit.TestKit'
+import { Driver, ON } from '@ohos.UiTest'
 
 const ParameterErrorCode = 17000007;
 
