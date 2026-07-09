@@ -109,7 +109,7 @@ export default function ExtendableListItemBuiltInTest() {
       let content = obj.getString('content');
       let fontSize = obj.getString('fontSize');
       console.info("[ExtendableListItemBuiltIn_ChildComponent_0300] content is: " + content + ", fontSize is: " + fontSize);
-      expect(content).assertEqual('0a');
+      expect(content).assertEqual('a');
       expect(fontSize).assertEqual('16.00fp');
       console.info('[ExtendableListItemBuiltIn_ChildComponent_0300] END');
       done();

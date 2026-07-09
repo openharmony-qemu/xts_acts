@@ -45,7 +45,7 @@ class MyList extends ExtendableList {
 @Entry
 @Component
 struct ExtendableListBuiltIn {
-  @State arr: Array<string> = new Array<string>();
+  @State arr: Array<string> = [''];
 
   aboutToAppear(): void {
     for (let i = 0; i < 100; i++) {

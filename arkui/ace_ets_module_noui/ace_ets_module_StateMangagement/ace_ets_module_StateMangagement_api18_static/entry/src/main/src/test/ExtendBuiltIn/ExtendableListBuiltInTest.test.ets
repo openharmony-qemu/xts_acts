@@ -102,7 +102,7 @@ export default function ExtendableListBuiltInTest() {
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJsonNew = inspector.getInspectorByKey('ExtendableList_002');
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('0a');
+      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('a');
       console.info('[ExtendableListBuiltIn_Divider_0200] END');
       done();
     });

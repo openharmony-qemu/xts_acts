@@ -37,7 +37,7 @@ class MyListItem extends ExtendableListItem {
 @Entry
 @Component
 struct ExtendableListItemBuiltIn {
-  @State arr: Array<string> = new Array<string>();
+  @State arr: Array<string> = [''];
 
   aboutToAppear(): void {
     for (let i = 0; i < 100; i++) {
