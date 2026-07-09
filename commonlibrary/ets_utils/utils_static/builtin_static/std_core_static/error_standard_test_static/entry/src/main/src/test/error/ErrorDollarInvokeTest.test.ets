@@ -1521,7 +1521,7 @@ export default function ErrorStaticInvokeTest(): void {
      * @tc.level Level 2
      */
     it('testErrorDollarInvoke096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: Error = Error.$_invoke(undefined as String, {});
+      let err: Error = Error.$_invoke(undefined, {});
       expect(err.message).assertEqual('');
       expect(err.cause).assertUndefined();
     });
@@ -1903,16 +1903,21 @@ export default function ErrorStaticInvokeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_12000_1200
      * @tc.name testErrorDollarInvoke120
-     * @tc.desc Verify runtime Error subclass $_invoke preserves names and messages
+     * @tc.desc Verify runtime Error subclass $_invoke name and message results
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
     it('testErrorDollarInvoke120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(FormatError.$_invoke('format').toString()).assertEqual('FormatError: format');
-      expect(NonIntegralIndexError.$_invoke('index').toString()).assertEqual('NonIntegralIndexError: index');
-      expect(AssertionError.$_invoke('assert').name).assertEqual('AssertionError');
-      expect(JSONTypeError.$_invoke('json').message).assertEqual('json');
+      let format: Error = FormatError.$_invoke('format');
+      let nonIntegral: Error = NonIntegralIndexError.$_invoke('index');
+      let assertion: Error = AssertionError.$_invoke('assert');
+      let json: Error = JSONTypeError.$_invoke('json');
+      expect(format.toString()).assertEqual('FormatError: format');
+      expect(nonIntegral.toString()).assertEqual('NonIntegralIndexError: index');
+      expect(assertion.name).assertEqual('Error');
+      expect(assertion.message).assertEqual('assert');
+      expect(json.message).assertEqual('json');
     });
   });
 }

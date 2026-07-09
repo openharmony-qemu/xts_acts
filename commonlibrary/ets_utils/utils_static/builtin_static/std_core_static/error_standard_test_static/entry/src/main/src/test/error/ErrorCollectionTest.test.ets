@@ -1967,5 +1967,37 @@ export default function ErrorCollectionTest(): void {
       });
       expect(joined).assertEqual("0:zero;1:one;");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_COLLECTION_1120
+     * @tc.name testErrorCollection112
+     * @tc.desc Verify Error array last index boundary reads final element
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorCollection112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let errors: Error[] = [new Error("first"), new Error("last")];
+      let lastIndex: int = errors.length - 1;
+      expect(lastIndex).assertEqual(1);
+      expect(errors[lastIndex].message).assertEqual("last");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_COLLECTION_1130
+     * @tc.name testErrorCollection113
+     * @tc.desc Verify empty Error array every returns true
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorCollection113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let errors: Error[] = [];
+      let result: boolean = errors.every((err: Error): boolean => {
+        return err.message.length > 0;
+      });
+      expect(result).assertEqual(true);
+      expect(errors.length).assertEqual(0);
+    });
   });
 }

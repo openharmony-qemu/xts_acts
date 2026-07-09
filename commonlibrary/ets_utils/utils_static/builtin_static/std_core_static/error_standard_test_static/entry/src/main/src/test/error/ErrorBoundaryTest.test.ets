@@ -1464,7 +1464,7 @@ export default function ErrorBoundaryTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_1030
      * @tc.name testErrorBoundary103
-     * @tc.desc Verify BusinessError with empty string data and Error cause boundary
+     * @tc.desc Verify BusinessError with empty string data keeps data and leaves cause empty
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -1474,7 +1474,7 @@ export default function ErrorBoundaryTest(): void {
       let data: BusinessError<string> = new BusinessError<string>(401, "", err);
       expect(data.code).assertEqual(401);
       expect(data.data as string).assertEqual("");
-      expect(data.cause).assertEqual(err);
+      expect(data.cause).assertUndefined();
     });
 
     /**

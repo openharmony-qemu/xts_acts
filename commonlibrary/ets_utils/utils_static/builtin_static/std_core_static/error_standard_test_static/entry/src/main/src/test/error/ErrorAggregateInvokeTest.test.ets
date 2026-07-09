@@ -1981,5 +1981,231 @@ export default function ErrorAggregateInvokeTest(): void {
       expect(agg.errors[0].message).assertEqual("custom");
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_INVOKE_1270
+     * @tc.name testErrorAggregateInvoke0127
+     * @tc.desc Verify deep TypeError subclass element via $_invoke
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testErrorAggregateInvoke0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const leaf = new InvokeDeepLeafTypeError0127("leaf");
+      const agg = AggregateError.$_invoke([leaf]);
+      expect(agg.errors[0]).assertEqual(leaf);
+      expect(agg.errors[0] instanceof TypeError).assertTrue();
+      expect(agg.errors[0].name).assertEqual('InvokeDeepLeafTypeError');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_INVOKE_1280
+     * @tc.name testErrorAggregateInvoke0128
+     * @tc.desc Verify Map values Iterable order via $_invoke
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testErrorAggregateInvoke0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const map = new Map<string, Error>();
+      const first = new RangeError("first");
+      const second = new TypeError("second");
+      map.set("first", first);
+      map.set("second", second);
+      const agg = AggregateError.$_invoke(map.values());
+      expect(agg.errors.length).assertEqual(2);
+      expect(agg.errors[0]).assertEqual(first);
+      expect(agg.errors[1]).assertEqual(second);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_INVOKE_1290
+     * @tc.name testErrorAggregateInvoke0129
+     * @tc.desc Verify Set TypeError Iterable element via $_invoke
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testErrorAggregateInvoke0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<Error>();
+      const first = new TypeError("one");
+      const second = new InvokeDeepLeafTypeError0127("two");
+      set.add(first);
+      set.add(second);
+      const agg = AggregateError.$_invoke(set);
+      expect(agg.errors.length).assertEqual(2);
+      expect(agg.errors[0].name).assertEqual("TypeError");
+      expect(agg.errors[1].name).assertEqual("InvokeDeepLeafTypeError");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_INVOKE_1300
+     * @tc.name testErrorAggregateInvoke0130
+     * @tc.desc Verify nested AggregateError and custom element via $_invoke
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testErrorAggregateInvoke0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const custom = new InvokeCustomError0126("custom");
+      const inner = AggregateError.$_invoke([custom], "inner");
+      const outer = AggregateError.$_invoke([inner, new RangeError("range")], "outer");
+      expect((outer.errors[0] as AggregateError).errors[0]).assertEqual(custom);
+      expect(outer.errors[1].name).assertEqual("RangeError");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_INVOKE_1310
+     * @tc.name testErrorAggregateInvoke0131
+     * @tc.desc Verify mixed native and custom errors via $_invoke
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testErrorAggregateInvoke0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Error[] = [new Error("e"), new InvokeCustomError0126("custom"), new InvokeDeepLeafTypeError0127("leaf")];
+      const agg = AggregateError.$_invoke(arr);
+      expect(agg.errors.length).assertEqual(3);
+      expect(agg.errors[1].name).assertEqual("InvokeCustomError");
+      expect(agg.errors[2].name).assertEqual('InvokeDeepLeafTypeError');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_INVOKE_1320
+     * @tc.name testErrorAggregateInvoke0132
+     * @tc.desc Verify cause Error reference remains independent from errors via $_invoke
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testErrorAggregateInvoke0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const cause = new InvokeCustomError0126("cause");
+      const element = new Error("element");
+      const agg = AggregateError.$_invoke([element], "with-cause", { cause: cause } as ErrorOptions);
+      expect(agg.cause).assertEqual(cause);
+      expect((agg.cause as Error).name).assertEqual("InvokeCustomError");
+      expect(agg.errors[0]).assertEqual(element);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_INVOKE_1330
+     * @tc.name testErrorAggregateInvoke0133
+     * @tc.desc Verify errors array source replacement isolation via $_invoke
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testErrorAggregateInvoke0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const first = new Error("first");
+      const second = new Error("second");
+      let source: Error[] = [first, second];
+      const agg = AggregateError.$_invoke(source);
+      source[1] = new RangeError("changed");
+      expect(agg.errors.length).assertEqual(2);
+      expect(agg.errors[0]).assertEqual(first);
+      expect(agg.errors[1]).assertEqual(second);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_INVOKE_1340
+     * @tc.name testErrorAggregateInvoke0134
+     * @tc.desc Verify errors array self mutation does not affect source via $_invoke
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testErrorAggregateInvoke0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let source: Error[] = [new Error("source")];
+      const agg = AggregateError.$_invoke(source);
+      agg.errors[0] = new TypeError("mutated");
+      expect(source.length).assertEqual(1);
+      expect(source[0].message).assertEqual("source");
+      expect(agg.errors[0].name).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_INVOKE_1350
+     * @tc.name testErrorAggregateInvoke0135
+     * @tc.desc Verify errors array stores large element messages via $_invoke
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testErrorAggregateInvoke0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const longMsg = "z".repeat(200000);
+      const agg = AggregateError.$_invoke([new Error(longMsg)], "outer");
+      expect(agg.errors[0].message.length).assertEqual(200000);
+      expect(agg.message).assertEqual("outer");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_INVOKE_1360
+     * @tc.name testErrorAggregateInvoke0136
+     * @tc.desc Verify map values Iterable copy isolation via $_invoke
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testErrorAggregateInvoke0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const map = new Map<string, Error>();
+      map.set("a", new Error("a"));
+      map.set("b", new Error("b"));
+      const agg = AggregateError.$_invoke(map.values());
+      map.set("c", new Error("c"));
+      map.set("a", new Error("changed"));
+      expect(agg.errors.length).assertEqual(2);
+      expect(agg.errors[0].message).assertEqual("a");
+      expect(agg.errors[1].message).assertEqual("b");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_INVOKE_1370
+     * @tc.name testErrorAggregateInvoke0137
+     * @tc.desc Verify empty Map values Iterable with message and cause via $_invoke
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testErrorAggregateInvoke0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const map = new Map<string, Error>();
+      const cause = new RangeError("cause");
+      const agg = AggregateError.$_invoke(map.values(), "empty-map", { cause: cause } as ErrorOptions);
+      expect(agg.errors.length).assertEqual(0);
+      expect(agg.message).assertEqual("empty-map");
+      expect(agg.cause).assertEqual(cause);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_INVOKE_1380
+     * @tc.name testErrorAggregateInvoke0138
+     * @tc.desc Verify AggregateError $_invoke throws ClassCastError when errors is null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testErrorAggregateInvoke0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        AggregateError.$_invoke(null as Error[]);
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('ClassCastError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_INVOKE_1390
+     * @tc.name testErrorAggregateInvoke0139
+     * @tc.desc Verify AggregateError $_invoke throws ClassCastError when errors is undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testErrorAggregateInvoke0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        AggregateError.$_invoke(undefined as Error[]);
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('ClassCastError');
+      }
+    });
   });
 }

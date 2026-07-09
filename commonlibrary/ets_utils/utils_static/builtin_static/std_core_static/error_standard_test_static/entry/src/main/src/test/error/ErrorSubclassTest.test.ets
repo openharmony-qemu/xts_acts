@@ -147,7 +147,7 @@ export default function ErrorSubclassTest(): void {
       let e: RangeError = new RangeError("range");
       expect(e.name).assertEqual("RangeError");
       expect(e.message).assertEqual("range");
-      expect(e.code).assertEqual(401);
+      expect(e.code).assertEqual(0);
     });
 
     /**

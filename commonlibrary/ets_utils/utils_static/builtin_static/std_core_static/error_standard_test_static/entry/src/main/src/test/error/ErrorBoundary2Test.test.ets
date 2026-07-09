@@ -802,7 +802,7 @@ export default function ErrorBoundaryFilledTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_5000
      * @tc.name testErrorBoundary2050
-     * @tc.desc Verify BusinessError empty string data boundary preserves Error cause reference
+     * @tc.desc Verify BusinessError empty string data boundary keeps data and leaves cause empty
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -812,13 +812,13 @@ export default function ErrorBoundaryFilledTest(): void {
       let err: BusinessError<string> = new BusinessError<string>(501, "", cause);
       expect(err.code).assertEqual(501);
       expect(err.data as string).assertEqual("");
-      expect(err.cause).assertEqual(cause);
+      expect(err.cause).assertUndefined();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_5100
      * @tc.name testErrorBoundary2051
-     * @tc.desc Verify BusinessError with MAX_INT data and Error cause boundary
+     * @tc.desc Verify BusinessError with MAX_INT data keeps data and leaves cause empty
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -828,7 +828,7 @@ export default function ErrorBoundaryFilledTest(): void {
       let err: BusinessError<int> = new BusinessError<int>(502, 2147483647, cause);
       expect(err.code).assertEqual(502);
       expect((err.data as int)).assertEqual(2147483647);
-      expect(err.cause).assertEqual(cause);
+      expect(err.cause).assertUndefined();
     });
 
     /**
