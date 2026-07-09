@@ -49,6 +49,18 @@
     "MainAbility/pages/uiutils/GlobalReusePool004",
     "MainAbility/pages/AddMonitor/AddMonitorWildcard2",
     "MainAbility/pages/Env/EnvBreakpoint",
-    "MainAbility/pages/Env/EnvBreakpoint2"
+    "MainAbility/pages/Env/EnvBreakpoint2",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableButtonBuiltIn",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableColumnBuiltIn",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableGridBuiltIn",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableGridItemBuiltIn",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableImageBuiltIn",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableListBuiltIn",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableListItemBuiltIn",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableRelativeContainerBuiltIn",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableRowBuiltIn",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableStackBuiltIn",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableTextBuiltIn",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableToggleBuiltIn"
   ]
 }

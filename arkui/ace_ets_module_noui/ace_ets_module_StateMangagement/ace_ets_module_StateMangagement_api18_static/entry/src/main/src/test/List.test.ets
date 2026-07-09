@@ -62,6 +62,18 @@ import GlobalReusePool004Test from './uiutilsTest/GlobalReusePool004.test';
 import AddMonitorWildcard2 from './AddMonitorTest/AddMonitorWildcard2.test';
 import EnvBreakpoint from './Env/EnvBreakpoint.test';
 import EnvBreakpoint2 from './Env/EnvBreakpoint2.test';
+import ExtendableButtonBuiltInTest from './ExtendBuiltIn/ExtendableButtonBuiltInTest.test';
+import ExtendableColumnBuiltInTest from './ExtendBuiltIn/ExtendableColumnBuiltInTest.test';
+import ExtendableGridBuiltInTest from './ExtendBuiltIn/ExtendableGridBuiltInTest.test';
+import ExtendableGridItemBuiltInTest from './ExtendBuiltIn/ExtendableGridItemBuiltInTest.test';
+import ExtendableImageBuiltInTest from './ExtendBuiltIn/ExtendableImageBuiltInTest.test';
+import ExtendableListBuiltInTest from './ExtendBuiltIn/ExtendableListBuiltInTest.test';
+import ExtendableListItemBuiltInTest from './ExtendBuiltIn/ExtendableListItemBuiltInTest.test';
+import ExtendableRelativeContainerBuiltInTest from './ExtendBuiltIn/ExtendableRelativeContainerBuiltInTest.test';
+import ExtendableRowBuiltInTest from './ExtendBuiltIn/ExtendableRowBuiltInTest.test';
+import ExtendableStackBuiltInTest from './ExtendBuiltIn/ExtendableStackBuiltInTest.test';
+import ExtendableTextBuiltInTest from './ExtendBuiltIn/ExtendableTextBuiltInTest.test';
+import ExtendableToggleBuiltInTest from './ExtendBuiltIn/ExtendableToggleBuiltInTest.test';
 
 
 export default function testsuite(): void {
@@ -113,4 +125,16 @@ export default function testsuite(): void {
   GlobalReusePoolTest();
   EnvBreakpoint();
   EnvBreakpoint2();
+  ExtendableButtonBuiltInTest();
+  ExtendableColumnBuiltInTest();
+  ExtendableGridBuiltInTest();
+  ExtendableGridItemBuiltInTest();
+  ExtendableImageBuiltInTest();
+  ExtendableListBuiltInTest();
+  ExtendableListItemBuiltInTest();
+  ExtendableRelativeContainerBuiltInTest();
+  ExtendableRowBuiltInTest();
+  ExtendableStackBuiltInTest();
+  ExtendableTextBuiltInTest();
+  ExtendableToggleBuiltInTest();
 }
