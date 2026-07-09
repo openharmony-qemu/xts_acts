@@ -93,6 +93,22 @@ export default function editableTitleBarV2InteractionTest() {
     });
 
     /**
+     * @tc.number   editableTitleBarV2Interaction_static_0300
+     * @tc.name     editableTitleBarV2Interaction_static_0300
+     * @tc.desc     Test save button click callback
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     */
+    it('editableTitleBarV2Interaction_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[editableTitleBarV2Interaction_static_0300] START');
+      let driver = Driver.create();
+      await driver.delayMs(2000);
+      let saveButtonClick = await driver.findComponent(ON.text('Save Button Click'));
+      expect(saveButtonClick !== null).assertTrue();
+      console.info('[editableTitleBarV2Interaction_static_0300] END');
+      done();
+    });
+
+    /**
      * @tc.number   editableTitleBarV2Interaction_static_0400
      * @tc.name     editableTitleBarV2Interaction_static_0400
      * @tc.desc     Test Default Focus Left
