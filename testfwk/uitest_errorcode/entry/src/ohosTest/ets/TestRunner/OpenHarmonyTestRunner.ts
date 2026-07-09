@@ -1,5 +1,5 @@
-/**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+/*
+ * Copyright (C) 2022 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,51 +12,70 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import TestRunner from '@ohos.application.testRunner'
+import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry'
 
-import hilog from '@ohos.hilog';
-import TestRunner from '@ohos.application.testRunner';
-import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import Want from '@ohos.app.ability.Want';
+var abilityDelegator = undefined
+var abilityDelegatorArguments = undefined
 
-let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator | undefined = undefined
-let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs | undefined = undefined
-
-async function onAbilityCreateCallback(): Promise<void> {
-  hilog.info(0x0000, 'testTag', '%{public}s', 'onAbilityCreateCallback');
+function translateParamsToString(parameters) {
+    const keySet = new Set([
+        '-s class', '-s notClass', '-s suite', '-s itName',
+        '-s level', '-s testType', '-s size', '-s timeout',
+        '-s package'
+    ])
+    let targetParams = '';
+    for (const key in parameters) {
+        if (keySet.has(key)) {
+            targetParams += ' ' + key + ' ' + parameters[key]
+        }
+    }
+    return targetParams.trim()
 }
 
-async function addAbilityMonitorCallback(err : Error): Promise<void> {
-  hilog.info(0x0000, 'testTag', 'addAbilityMonitorCallback : %{public}s', JSON.stringify(err) ?? '');
+async function onAbilityCreateCallback() {
+    console.log('onAbilityCreateCallback');
+}
+
+async function addAbilityMonitorCallback(err: any) {
+    console.info('addAbilityMonitorCallback : ' + JSON.stringify(err))
 }
 
 export default class OpenHarmonyTestRunner implements TestRunner {
-  constructor() {
-  }
+    constructor() {
+    }
 
-  onPrepare(): void {
-    hilog.info(0x0000, 'testTag', '%{public}s', 'OpenHarmonyTestRunner OnPrepare ');
-  }
+    onPrepare() {
+        console.info('OpenHarmonyTestRunner OnPrepare')
+    }
 
-  async onRun() {
-    hilog.info(0x0000, 'testTag', '%{public}s', 'OpenHarmonyTestRunner onRun run');
-    abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
-    abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
-    const bundleName = abilityDelegatorArguments.bundleName;
-    const testAbilityName = 'TestAbility';
-    let lMonitor: AbilityDelegatorRegistry.AbilityMonitor = {
-      abilityName: testAbilityName,
-      onAbilityCreate: onAbilityCreateCallback,
-    };
-    abilityDelegator.addAbilityMonitor(lMonitor, addAbilityMonitorCallback);
-    const want: Want = {
-      bundleName: bundleName,
-      abilityName: testAbilityName
-    };
-    abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-    abilityDelegator.startAbility(want, (err, data) => {
-      hilog.info(0x0000, 'testTag', 'startAbility : err : %{public}s', JSON.stringify(err) ?? '');
-      hilog.info(0x0000, 'testTag', 'startAbility : data : %{public}s', JSON.stringify(data) ?? '');
-    });
-    hilog.info(0x0000, 'testTag', '%{public}s', 'OpenHarmonyTestRunner onRun end');
-  }
-}
+    onRun() {
+        console.log('OpenHarmonyTestRunner onRun run')
+        abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
+        abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
+
+        let lMonitor = {
+            abilityName: testAbilityName,
+            onAbilityCreate: onAbilityCreateCallback,
+        };
+        var testAbilityName = abilityDelegatorArguments.parameters['-p'] + '.TestAbility'
+        abilityDelegator.addAbilityMonitor(lMonitor, addAbilityMonitorCallback)
+        var cmd = 'aa start -d 0 -a ' + testAbilityName + ' -b ' + abilityDelegatorArguments.bundleName
+        cmd += ' '+translateParamsToString(abilityDelegatorArguments.parameters)
+        var user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        console.info('cmd : '+cmd)
+        abilityDelegator.executeShellCommand(cmd,
+            (err: any, d: any) => {
+                console.info('executeShellCommand : err : ' + JSON.stringify(err));
+                console.info('executeShellCommand : data : ' + d.stdResult);
+                console.info('executeShellCommand : data : ' + d.exitCode);
+            })
+        console.info('OpenHarmonyTestRunner onRun call abilityDelegator.getAppContext')
+        var context = abilityDelegator.getAppContext()
+        console.info('getAppContext : ' + JSON.stringify(context))
+        console.info('OpenHarmonyTestRunner onRun end')
+    }
+};
