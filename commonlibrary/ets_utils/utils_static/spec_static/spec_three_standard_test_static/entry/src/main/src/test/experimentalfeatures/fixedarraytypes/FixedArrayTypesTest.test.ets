@@ -329,7 +329,7 @@ export default function FixedArrayTypesTest():void {
       arrA = arrB
       expect(arrA[0] instanceof ClassB).assertTrue();
       expect(arrA[0] instanceof ClassA).assertTrue();
-      expect(arrA instanceof FixedArray<ClassA>).assertTrue();
+      expect(arrA instanceof FixedArray<ClassA | undefined>).assertTrue();
     });
 
     /**

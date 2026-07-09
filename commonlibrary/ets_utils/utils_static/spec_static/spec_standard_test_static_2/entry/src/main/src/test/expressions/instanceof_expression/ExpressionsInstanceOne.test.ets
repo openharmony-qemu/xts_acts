@@ -1178,10 +1178,10 @@ export default function ExpressionsInstanceOneTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsInstanceOne0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1 = ((): Any => "abc") instanceof FF5
+      let v1 = ((): Any => "abc") instanceof (() => never)
       expect(v1 instanceof boolean).assertTrue()
       expect(v1 ? 1 : 0).assertEqual(1)
-      let v2 = ((p: boolean) => p ? 1 : 0)(((): Any => "abc") instanceof FF5)
+      let v2 = ((p: boolean) => p ? 1 : 0)(((): Any => "abc") instanceof (() => never))
       expect(v2).assertEqual(1)
     });
 

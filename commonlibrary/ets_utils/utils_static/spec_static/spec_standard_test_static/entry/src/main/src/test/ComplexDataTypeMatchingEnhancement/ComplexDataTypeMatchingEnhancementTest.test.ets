@@ -103,7 +103,7 @@ export default function ComplexDataTypeMatchingEnhancement(): void {
       try {
         const f: Function = foo
         let res = f.unsafeCall(['abc']);
-        let bol = res instanceof (FixedArray<number> | FixedArray<string>)
+        let bol = res instanceof FixedArray<Any | undefined>
         expect().assertFail();
       } catch (err) {
         expect(err.name).assertEqual('ClassCastError');
@@ -120,13 +120,13 @@ export default function ComplexDataTypeMatchingEnhancement(): void {
      */
     it('ComplexDataTypeMatchingEnhancementTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let a: Matrix = [[1, 2, 3], [1, 2, 3]];
-      expect(a instanceof Matrix).assertTrue();
+      expect(a instanceof Array).assertTrue();
 
       let c: NullableNumber = null;
       expect(c instanceof NullableNumber).assertTrue();
 
       let b: MyTuple = ["Hello", 42];
-      expect(b instanceof MyTuple).assertTrue();
+      expect(b instanceof Tuple2).assertTrue();
     })
 
     /**
@@ -155,7 +155,7 @@ export default function ComplexDataTypeMatchingEnhancement(): void {
      * @tc.level Level 1
      */
     it('ComplexDataTypeMatchingEnhancementTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let v1: boolean = func instanceof T;
+      let v1: boolean = func instanceof Function;
       expect(v1).assertTrue();
     })
 
