@@ -241,7 +241,7 @@ export default function DateToISOStringTest(): void {
      * @tc.level Level 2
      */
     it('testDateToISOString0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(verifyDateInput(9007199254740991)).assertTrue();
+      expect(verifyDateInput(9007199254740991)).assertFalse();
     });
 
     /**
