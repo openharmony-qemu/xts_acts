@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect} from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 import Utils from '../Util.test';
 
 export default function BigIntAsIntN2Test(): void {
-  describe('testBigIntAsIntN2Test', ():void => {
+  describe('testBigIntAsIntN2Test', (): void => {
     beforeAll(() => {
     });
 
@@ -40,7 +40,7 @@ export default function BigIntAsIntN2Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsIntN2Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
+    it('testBigIntAsIntN2Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt.asIntN(1, Utils.biInt(2)).toString()).assertEqual('0');
       expect(BigInt.asIntN(1, Utils.biInt(4)).toString()).assertEqual('0');
       expect(BigInt.asIntN(1, Utils.biInt(-2)).toString()).assertEqual('0');
