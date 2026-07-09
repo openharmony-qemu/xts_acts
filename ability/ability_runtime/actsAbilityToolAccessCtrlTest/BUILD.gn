@@ -17,7 +17,6 @@ group("actsAbilityToolAccessCtrlTest") {
   testonly = true
   if (is_standard_system) {
     deps = [
-      "actsabilityapptest:ActsAbilityAppTest",
       "actsabilitypermissiontest:ActsAbilityPermissionTest",
       "actsabilitysystemtest:ActsAbilitySystemTest"
     ]

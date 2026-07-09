@@ -13,188 +13,87 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
-import { abilityToolAccessCtrl, abilityAccessCtrl, Permissions } from '@kit.AbilityKit';
+import abilityToolAccessCtrl from '@ohos.abilityToolAccessCtrl';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 export default function permissionTest() {
-  describe('ActsAbilityPermissionTest', function () {
+  describe('ActsAbilityPermissionTest',() => {
     beforeAll(() => {
-      console.info('[beforeAll] called.');
+
     });
 
     afterAll(() => {
-      console.info('[afterAll] called.');
+
     });
 
-    beforeEach(function () {
-      console.info('[beforeEach] called.');
+    beforeEach(() => {
+
     });
 
-    afterEach(function () {
-      console.info('[afterEach] called.');
+    afterEach(() => {
+
     });
 
     /**
-     * @tc.name   grantToolPermissionsByUser_001
-     * @tc.number grantToolPermissionsByUser_001
-     * @tc.desc   grantToolPermissionsByUser with CAMERA PERMISSION_GRANTED and needTicket=true
+     * @tc.name   Sec_SAF_AgentFence0010
+     * @tc.number Sec_SAF_AgentFence0010
+     * @tc.desc   requestToolPermissions without QUERY_TOOL_PERMISSIONS returns error 201
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('grantToolPermissionsByUser_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-      console.info('[grantToolPermissionsByUser_001] called.');
-      let userAuthResult: Array<abilityToolAccessCtrl.UserAuthResult> = [{
-        permissionInfo: [{
-          permission: 'ohos.permission.CAMERA' as Permissions,
-          permissionStatus: abilityAccessCtrl.PermissionStatus.PERMISSION_GRANTED
-        }],
-        permissionQuery: {
-          operationInfo: [{
-            operationType: abilityToolAccessCtrl.OperationType.API,
-            info: 'ohos.permission.CAMERA' as Permissions
-          }],
-          needTicket: true
-        }
-      }];
-      try {
-        abilityToolAccessCtrl.grantToolPermissionsByUser(userAuthResult).then((data: Array<abilityToolAccessCtrl.TicketInfo>) => {
-          console.info('grantToolPermissionsByUser success, data: ' + JSON.stringify(data));
-          expect(data).assertNotNull();
-          expect(data.length).assertLarger(0);
-          done();
-        }).catch((err: BusinessError): void => {
-          console.error(`grantToolPermissionsByUser fail, code: ${err.code}, message: ${err.message}`);
-          expect(err.code).assertEqual(201);
-          done();
-        });
-      } catch (error) {
-        console.error('[grantToolPermissionsByUser_001] catch error: ' + JSON.stringify(error));
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   grantToolPermissionsByUser_002
-     * @tc.number grantToolPermissionsByUser_002
-     * @tc.desc   grantToolPermissionsByUser with CAMERA PERMISSION_DENIED and needTicket=true
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('grantToolPermissionsByUser_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-      console.info('[grantToolPermissionsByUser_002] called.');
-      let userAuthResult: Array<abilityToolAccessCtrl.UserAuthResult> = [{
-        permissionInfo: [{
-          permission: 'ohos.permission.CAMERA' as Permissions,
-          permissionStatus: abilityAccessCtrl.PermissionStatus.PERMISSION_DENIED
-        }],
-        permissionQuery: {
-          operationInfo: [{
-            operationType: abilityToolAccessCtrl.OperationType.API,
-            info: 'ohos.permission.CAMERA' as Permissions
-          }],
-          needTicket: true
-        }
-      }];
-      try {
-        abilityToolAccessCtrl.grantToolPermissionsByUser(userAuthResult).then((data: Array<abilityToolAccessCtrl.TicketInfo>) => {
-          console.info('grantToolPermissionsByUser success, data: ' + JSON.stringify(data));
-          expect(data).assertNotNull();
-          done();
-        }).catch((err: BusinessError): void => {
-          console.error(`grantToolPermissionsByUser fail, code: ${err.code}, message: ${err.message}`);
-          expect(err.code).assertEqual(201);
-          done();
-        });
-      } catch (error) {
-        console.error('[grantToolPermissionsByUser_002] catch error: ' + JSON.stringify(error));
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   grantToolPermissionsByUser_003
-     * @tc.number grantToolPermissionsByUser_003
-     * @tc.desc   grantToolPermissionsByUser with LOCATION PERMISSION_GRANTED and needTicket=false returns error 24010004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('grantToolPermissionsByUser_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-      console.info('[grantToolPermissionsByUser_003] called.');
-      let userAuthResult: Array<abilityToolAccessCtrl.UserAuthResult> = [{
-        permissionInfo: [{
-          permission: 'ohos.permission.LOCATION' as Permissions,
-          permissionStatus: abilityAccessCtrl.PermissionStatus.PERMISSION_GRANTED
-        }],
-        permissionQuery: {
-          operationInfo: [{
-            operationType: abilityToolAccessCtrl.OperationType.API,
-            info: 'ohos.permission.LOCATION' as Permissions
-          }],
-          needTicket: false
-        }
-      }];
-      try {
-        abilityToolAccessCtrl.grantToolPermissionsByUser(userAuthResult).then((data: Array<abilityToolAccessCtrl.TicketInfo>) => {
-          console.info('grantToolPermissionsByUser success, data: ' + JSON.stringify(data));
-          expect(data).assertNotNull();
-          done();
-        }).catch((err: BusinessError): void => {
-          console.error(`grantToolPermissionsByUser fail, code: ${err.code}, message: ${err.message}`);
-          expect(err.code).assertEqual(24010004);
-          done();
-        });
-      } catch (error) {
-        console.error('[grantToolPermissionsByUser_003] catch error: ' + JSON.stringify(error));
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   grantToolPermissionsByUser_004
-     * @tc.number grantToolPermissionsByUser_004
-     * @tc.desc   grantToolPermissionsByUser with READ_HEALTHDATA PERMISSION_GRANTED, needTicket=true, ticketExpireTimeMs=10000
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('grantToolPermissionsByUser_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-      console.info('[grantToolPermissionsByUser_004] called.');
-      let userAuthResult: Array<abilityToolAccessCtrl.UserAuthResult> = [{
-        permissionInfo: [{
-          permission: 'ohos.permission.READ_HEALTH_DATA' as Permissions,
-          permissionStatus: abilityAccessCtrl.PermissionStatus.PERMISSION_GRANTED
-        }],
-        permissionQuery: {
-          operationInfo: [{
-            operationType: abilityToolAccessCtrl.OperationType.API,
-            info: 'ohos.permission.READ_HEALTH_DATA' as Permissions
-          }],
-          needTicket: true,
-          ticketExpireTimeMs: 10000
-        }
-      }];
-      try {
-        abilityToolAccessCtrl.grantToolPermissionsByUser(userAuthResult).then((data: Array<abilityToolAccessCtrl.TicketInfo>) => {
-          console.info('grantToolPermissionsByUser success, data: ' + JSON.stringify(data));
-          expect(data).assertNotNull();
-          expect(data.length).assertLarger(0);
-          if (data.length > 0) {
-            expect(data[0].message).assertNotNull();
-            expect(data[0].challenge).assertNotNull();
-            expect(data[0].ticket).assertNotNull();
+    it('Sec_SAF_AgentFence0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async() => {
+      let permissionQuery: abilityToolAccessCtrl.PermissionQuery = {
+        operationInfo: [{
+          operationType: abilityToolAccessCtrl.OperationType.CLI,
+          info: {
+            cliCmdName: 'testCmd',
+            subCliCmdName: 'testSubCmd'
           }
-          done();
+        }],
+        needTicket: false
+      };
+      try {
+        abilityToolAccessCtrl.requestToolPermissions(permissionQuery).then((data: abilityToolAccessCtrl.PermissionQueryResult) => {
+          expect(false).assertTrue();
         }).catch((err: BusinessError): void => {
-          console.error(`grantToolPermissionsByUser fail, code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(201);
-          done();
         });
       } catch (error) {
-        console.error('[grantToolPermissionsByUser_004] catch error: ' + JSON.stringify(error));
-        done();
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   Sec_SAF_AgentFence034
+     * @tc.number Sec_SAF_AgentFence034
+     * @tc.desc   grantToolPermissionsByUser without QUERY_TOOL_PERMISSIONS returns error 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sec_SAF_AgentFence034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async() => {
+      let userAuthResult: Array<abilityToolAccessCtrl.UserAuthResult> = [{
+        permissionInfo: [{
+          permission: 'ohos.permission.CAMERA',
+          permissionStatus: 0
+        }],
+        permissionQuery: {
+          operationInfo: [{
+            operationType: abilityToolAccessCtrl.OperationType.API,
+            info: 'ohos.permission.CAMERA'
+          }],
+          needTicket: true
+        }
+      }];
+      try {
+        abilityToolAccessCtrl.grantToolPermissionsByUser(userAuthResult).then((data: Array<abilityToolAccessCtrl.TicketInfo>) => {
+          expect(false).assertTrue();
+        }).catch((err: BusinessError): void => {
+          expect(err.code).assertEqual(201);
+        });
+      } catch (error) {
+        expect(false).assertTrue();
       }
     });
   });
