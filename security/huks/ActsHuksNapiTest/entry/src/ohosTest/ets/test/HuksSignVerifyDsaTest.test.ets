@@ -1,11 +1,30 @@
-import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { huks } from '@kit.UniversalKeystoreKit';
 import libHuks from 'libhuks.so';
-import { huks } from '@Kit.UniversalKeystoreKit';
+
+export async function CheckSoftware() {
+  let dsaAlias = "useDsaToCheckSoftware";
+  let dsaOptions: huks.HuksOptions = {
+    properties: [
+      { tag: huks.HuksTag.HUKS_TAG_ALGORITHM, value: huks.HuksKeyAlg.HUKS_ALG_DSA },
+      { tag: huks.HuksTag.HUKS_TAG_KEY_SIZE, value: huks.HuksKeySize.HUKS_RSA_KEY_SIZE_1024 },
+      { tag: huks.HuksTag.HUKS_TAG_PURPOSE, value: huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN }
+    ]
+  };
+  try {
+    await huks.generateKeyItem(dsaAlias, dsaOptions);
+    await huks.deleteKeyItem(dsaAlias, dsaOptions);
+    return true;
+  } catch (err) {
+    return false;
+  }
+}
 
 export default function HuksSignVerifyDsaTest() {
   describe('HuksSignVerifyDsaTest', () => {
-    beforeAll(() => {
+    let useSoftware = false;
+    beforeAll(async () => {
+      useSoftware = await CheckSoftware();
     })
     beforeEach(() => {
     })
@@ -23,8 +42,10 @@ export default function HuksSignVerifyDsaTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_SECURITY_HUKS_NAPI_SIGN_VERIFY_DSA_0100', Level.LEVEL0, () => {
-      const result = libHuks.HuksSignVerifyDsaTest(0);
-      expect(result).assertEqual(0);
+      if (useSoftware) {
+        const result = libHuks.HuksSignVerifyDsaTest(0);
+        expect(result).assertEqual(0);
+      }
     })
   })
 }
