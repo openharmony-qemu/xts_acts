@@ -26,6 +26,7 @@ import {
   Size,
   Level
 } from "@ohos/hypium-binary/src/main/indexStatic";
+import Utils from '../../Util.test'
 
 interface IEcho {
   echo(): string;
