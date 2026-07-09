@@ -57,7 +57,9 @@ export default function Float64ArrayEntriesTest(): void {
       const iter = values.entries();
       const result = iter.next();
       expect(result.done).assertFalse();
-      expect(result.value).assertDeepEquals([0, onePointZero]);
+      const entry = result.value!;
+      expect(entry[0]).assertEqual(0);
+      expect(entry[1]).assertEqual(onePointZero);
     });
 
     /**
@@ -133,7 +135,9 @@ export default function Float64ArrayEntriesTest(): void {
       const result = iter.next();
       const expectVal = false;
       expect(result.done).assertEqual(expectVal);
-      expect(result.value).assertDeepEquals([0, pointFive]);
+      const entry = result.value!;
+      expect(entry[0]).assertEqual(0);
+      expect(entry[1]).assertEqual(pointFive);
     });
 
     /**
@@ -188,7 +192,9 @@ export default function Float64ArrayEntriesTest(): void {
       const result1 = iter.next();
 
       expect(result1.done).assertFalse();
-      expect(result1.value).assertDeepEquals([0, 0.1]);
+      const entry = result1.value!;
+      expect(entry[0]).assertEqual(0);
+      expect(entry[1]).assertEqual(0.1);
     });
 
     /**
@@ -205,7 +211,9 @@ export default function Float64ArrayEntriesTest(): void {
       const result1 = iter.next();
 
       expect(result1.done).assertFalse();
-      expect(result1.value).assertDeepEquals([0, 0.5]);
+      const entry = result1.value!;
+      expect(entry[0]).assertEqual(0);
+      expect(entry[1]).assertEqual(0.5);
     });
 
     /**
@@ -223,7 +231,9 @@ export default function Float64ArrayEntriesTest(): void {
       const result2 = iter.next();
 
       expect(result2.done).assertFalse();
-      expect(result2.value).assertDeepEquals([1, -128]);
+      const entry = result2.value!;
+      expect(entry[0]).assertEqual(1);
+      expect(entry[1]).assertEqual(-128);
     });
 
     /**
@@ -241,7 +251,9 @@ export default function Float64ArrayEntriesTest(): void {
       const result2 = iter.next();
 
       expect(result2.done).assertFalse();
-      expect(result2.value).assertDeepEquals([1, -1]);
+      const entry = result2.value!;
+      expect(entry[0]).assertEqual(1);
+      expect(entry[1]).assertEqual(-1);
     });
 
     /**
@@ -282,7 +294,9 @@ export default function Float64ArrayEntriesTest(): void {
       const result3 = iter.next();
 
       expect(result3.done).assertFalse();
-      expect(result3.value).assertDeepEquals([2, 0.25]);
+      const entry = result3.value!;
+      expect(entry[0]).assertEqual(2);
+      expect(entry[1]).assertEqual(0.25);
     });
 
     /**
@@ -301,7 +315,9 @@ export default function Float64ArrayEntriesTest(): void {
       const result3 = iter.next();
 
       expect(result3.done).assertFalse();
-      expect(result3.value).assertDeepEquals([2, 0]);
+      const entry = result3.value!;
+      expect(entry[0]).assertEqual(2);
+      expect(entry[1]).assertEqual(0);
     });
 
     /**
@@ -342,7 +358,9 @@ export default function Float64ArrayEntriesTest(): void {
       const result2 = iter.next();
 
       expect(result2.done).assertFalse();
-      expect(result2.value).assertDeepEquals([1, 1.0]);
+      const entry = result2.value!;
+      expect(entry[0]).assertEqual(1);
+      expect(entry[1]).assertEqual(1.0);
     });
 
     /**
@@ -381,7 +399,9 @@ export default function Float64ArrayEntriesTest(): void {
       const result2 = iter.next();
 
       expect(result2.done).assertFalse();
-      expect(result2.value).assertDeepEquals([1, Infinity]);
+      const entry = result2.value!;
+      expect(entry[0]).assertEqual(1);
+      expect(entry[1]).assertEqual(Infinity);
     });
 
     /**
@@ -399,7 +419,9 @@ export default function Float64ArrayEntriesTest(): void {
       const result1 = iter.next();
 
       expect(result1.done).assertFalse();
-      expect(result1.value).assertDeepEquals([0, -Infinity]);
+      const entry = result1.value!;
+      expect(entry[0]).assertEqual(0);
+      expect(entry[1]).assertEqual(-Infinity);
     });
 
     /**
@@ -416,7 +438,9 @@ export default function Float64ArrayEntriesTest(): void {
       const result1 = iter.next();
 
       expect(result1.done).assertFalse();
-      expect(result1.value).assertDeepEquals([0, 0.0]);
+      const entry = result1.value!;
+      expect(entry[0]).assertEqual(0);
+      expect(entry[1]).assertEqual(0.0);
     });
 
     /**
@@ -433,7 +457,9 @@ export default function Float64ArrayEntriesTest(): void {
       const result1 = iter.next();
 
       expect(result1.done).assertFalse();
-      expect(result1.value).assertDeepEquals([0, -0.0]);
+      const entry = result1.value!;
+      expect(entry[0]).assertEqual(0);
+      expect(entry[1]).assertEqual(-0.0);
       expect(1.0 / result1.value![1]).assertEqual(-Infinity);
     });
 
@@ -451,7 +477,9 @@ export default function Float64ArrayEntriesTest(): void {
       const result = iter.next();
 
       expect(result.done).assertFalse();
-      expect(result.value).assertDeepEquals([0, 1.7976931348623157e+308]);
+      const entry = result.value!;
+      expect(entry[0]).assertEqual(0);
+      expect(entry[1]).assertEqual(1.7976931348623157e+308);
     });
 
     /**
@@ -468,7 +496,9 @@ export default function Float64ArrayEntriesTest(): void {
       const result = iter.next();
 
       expect(result.done).assertFalse();
-      expect(result.value).assertDeepEquals([0, 5e-324]);
+      const entry = result.value!;
+      expect(entry[0]).assertEqual(0);
+      expect(entry[1]).assertEqual(5e-324);
     });
 
     /**
@@ -503,7 +533,9 @@ export default function Float64ArrayEntriesTest(): void {
       const result1 = iter.next();
 
       expect(result1.done).assertFalse();
-      expect(result1.value).assertDeepEquals([0, 1.0e-308]);
+      const entry = result1.value!;
+      expect(entry[0]).assertEqual(0);
+      expect(entry[1]).assertEqual(1.0e-308);
     });
 
     /**
@@ -520,7 +552,9 @@ export default function Float64ArrayEntriesTest(): void {
       const result = iter.next();
 
       expect(result.done).assertFalse();
-      expect(result.value).assertDeepEquals([0, 1.0e+308]);
+      const entry = result.value!;
+      expect(entry[0]).assertEqual(0);
+      expect(entry[1]).assertEqual(1.0e+308);
     });
 
     /**
@@ -622,11 +656,17 @@ export default function Float64ArrayEntriesTest(): void {
       const r3 = iter.next();
 
       expect(r1.done).assertFalse();
-      expect(r1.value).assertDeepEquals([0, -2147483648]);
+      const entry1 = r1.value!;
+      expect(entry1[0]).assertEqual(0);
+      expect(entry1[1]).assertEqual(-2147483648);
       expect(r2.done).assertFalse();
-      expect(r2.value).assertDeepEquals([1, -1]);
+      const entry2 = r2.value!;
+      expect(entry2[0]).assertEqual(1);
+      expect(entry2[1]).assertEqual(-1);
       expect(r3.done).assertFalse();
-      expect(r3.value).assertDeepEquals([2, 0]);
+      const entry3 = r3.value!;
+      expect(entry3[0]).assertEqual(2);
+      expect(entry3[1]).assertEqual(0);
     });
 
     /**
@@ -704,7 +744,9 @@ export default function Float64ArrayEntriesTest(): void {
       const result = iter.next();
 
       expect(result.done).assertFalse();
-      expect(result.value).assertDeepEquals([2, 0]);
+      const entry = result.value!;
+      expect(entry[0]).assertEqual(2);
+      expect(entry[1]).assertEqual(0);
     });
 
     /**
@@ -723,7 +765,9 @@ export default function Float64ArrayEntriesTest(): void {
       const second = iter.next();
       const expectVal = false;
       expect(second.done).assertEqual(expectVal);
-      expect(second.value).assertDeepEquals([1, onePointFive]);
+      const entry = second.value!;
+      expect(entry[0]).assertEqual(1);
+      expect(entry[1]).assertEqual(onePointFive);
     });
 
     /**
@@ -1219,7 +1263,8 @@ export default function Float64ArrayEntriesTest(): void {
       const expectVal = true;
       expect(actVal).assertEqual(expectVal);
       const second = iter.next().value!;
-      expect(second).assertDeepEquals([1, doubleMaxValue]);
+      expect(second[0]).assertEqual(1);
+      expect(second[1]).assertEqual(doubleMaxValue);
       const done = iter.next().done;
       const expectDone = true;
       expect(done).assertEqual(expectDone);
@@ -1239,9 +1284,11 @@ export default function Float64ArrayEntriesTest(): void {
       const arr = Float64Array.of(positiveInfinity, negativeInfinity);
       const iter = arr.entries();
       const first = iter.next().value!;
-      expect(first).assertDeepEquals([0, positiveInfinity]);
+      expect(first[0]).assertEqual(0);
+      expect(first[1]).assertEqual(positiveInfinity);
       const second = iter.next().value!;
-      expect(second).assertDeepEquals([1, negativeInfinity]);
+      expect(second[0]).assertEqual(1);
+      expect(second[1]).assertEqual(negativeInfinity);
       const done = iter.next().done;
       const expectVal = true;
       expect(done).assertEqual(expectVal);
@@ -1261,9 +1308,11 @@ export default function Float64ArrayEntriesTest(): void {
       const arr = Float64Array.of(doubleMinValue, doubleMaxValue);
       const iter = arr.entries();
       const first = iter.next().value!;
-      expect(first).assertDeepEquals([0, doubleMinValue]);
+      expect(first[0]).assertEqual(0);
+      expect(first[1]).assertEqual(doubleMinValue);
       const second = iter.next().value!;
-      expect(second).assertDeepEquals([1, doubleMaxValue]);
+      expect(second[0]).assertEqual(1);
+      expect(second[1]).assertEqual(doubleMaxValue);
       const done = iter.next().done;
       const expectVal = true;
       expect(done).assertEqual(expectVal);
@@ -1346,9 +1395,11 @@ export default function Float64ArrayEntriesTest(): void {
       a.$_set(2, 30.0);
       const iter = new Float64Array(b, 8, 2).entries();
       const actVal5 = iter.next().value!;
-      expect(actVal5).assertDeepEquals([0, 20.0]);
+      expect(actVal5[0]).assertEqual(0);
+      expect(actVal5[1]).assertEqual(20.0);
       const actVal6 = iter.next().value!;
-      expect(actVal6).assertDeepEquals([1, 30.0]);
+      expect(actVal6[0]).assertEqual(1);
+      expect(actVal6[1]).assertEqual(30.0);
     });
 
     /**
@@ -1383,11 +1434,14 @@ export default function Float64ArrayEntriesTest(): void {
       const first = a.entries();
       const second = a.entries();
       const actVal9 = first.next().value!;
-      expect(actVal9).assertDeepEquals([0, 4.0]);
+      expect(actVal9[0]).assertEqual(0);
+      expect(actVal9[1]).assertEqual(4.0);
       const actVal10 = second.next().value!;
-      expect(actVal10).assertDeepEquals([0, 4.0]);
+      expect(actVal10[0]).assertEqual(0);
+      expect(actVal10[1]).assertEqual(4.0);
       const actVal11 = first.next().value!;
-      expect(actVal11).assertDeepEquals([1, 5.0]);
+      expect(actVal11[0]).assertEqual(1);
+      expect(actVal11[1]).assertEqual(5.0);
     });
 
     /**
@@ -1403,9 +1457,11 @@ export default function Float64ArrayEntriesTest(): void {
       const iter = a.entries();
       a.$_set(0, 10.0);
       const actVal12 = iter.next().value!;
-      expect(actVal12).assertDeepEquals([0, 10.0]);
+      expect(actVal12[0]).assertEqual(0);
+      expect(actVal12[1]).assertEqual(10.0);
       const actVal13 = iter.next().value!;
-      expect(actVal13).assertDeepEquals([1, 2.0]);
+      expect(actVal13[0]).assertEqual(1);
+      expect(actVal13[1]).assertEqual(2.0);
     });
 
     /**
@@ -1420,12 +1476,15 @@ export default function Float64ArrayEntriesTest(): void {
       const a = new Float64Array([1.0, 2.0, 3.0]);
       const iter = a.entries();
       const actVal14 = iter.next().value!;
-      expect(actVal14).assertDeepEquals([0, 1.0]);
+      expect(actVal14[0]).assertEqual(0);
+      expect(actVal14[1]).assertEqual(1.0);
       a.$_set(2, 30.0);
       const actVal15 = iter.next().value!;
-      expect(actVal15).assertDeepEquals([1, 2.0]);
+      expect(actVal15[0]).assertEqual(1);
+      expect(actVal15[1]).assertEqual(2.0);
       const actVal16 = iter.next().value!;
-      expect(actVal16).assertDeepEquals([2, 30.0]);
+      expect(actVal16[0]).assertEqual(2);
+      expect(actVal16[1]).assertEqual(30.0);
     });
 
     /**
@@ -1473,11 +1532,14 @@ export default function Float64ArrayEntriesTest(): void {
       a.reverse();
       const iter = a.entries();
       const actVal18 = iter.next().value!;
-      expect(actVal18).assertDeepEquals([0, 3.0]);
+      expect(actVal18[0]).assertEqual(0);
+      expect(actVal18[1]).assertEqual(3.0);
       const actVal19 = iter.next().value!;
-      expect(actVal19).assertDeepEquals([1, 2.0]);
+      expect(actVal19[0]).assertEqual(1);
+      expect(actVal19[1]).assertEqual(2.0);
       const actVal20 = iter.next().value!;
-      expect(actVal20).assertDeepEquals([2, 1.0]);
+      expect(actVal20[0]).assertEqual(2);
+      expect(actVal20[1]).assertEqual(1.0);
     });
 
     /**
@@ -1491,7 +1553,8 @@ export default function Float64ArrayEntriesTest(): void {
     it('testFloat64ArrayEntries072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Float64Array([1.0, 2.0, 3.0]);
       const first = a.toReversed().entries().next().value!;
-      expect(first).assertDeepEquals([0, 3.0]);
+      expect(first[0]).assertEqual(0);
+      expect(first[1]).assertEqual(3.0);
       const actVal21 = a.$_get(0);
       const expectVal = 1.0;
       expect(actVal21).assertEqual(expectVal);
@@ -1508,11 +1571,14 @@ export default function Float64ArrayEntriesTest(): void {
     it('testFloat64ArrayEntries073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const iter = Float64Array.of(3.0, 1.0, 2.0).toSorted().entries();
       const actVal22 = iter.next().value!;
-      expect(actVal22).assertDeepEquals([0, 1.0]);
+      expect(actVal22[0]).assertEqual(0);
+      expect(actVal22[1]).assertEqual(1.0);
       const actVal23 = iter.next().value!;
-      expect(actVal23).assertDeepEquals([1, 2.0]);
+      expect(actVal23[0]).assertEqual(1);
+      expect(actVal23[1]).assertEqual(2.0);
       const actVal24 = iter.next().value!;
-      expect(actVal24).assertDeepEquals([2, 3.0]);
+      expect(actVal24[0]).assertEqual(2);
+      expect(actVal24[1]).assertEqual(3.0);
     });
 
     /**
