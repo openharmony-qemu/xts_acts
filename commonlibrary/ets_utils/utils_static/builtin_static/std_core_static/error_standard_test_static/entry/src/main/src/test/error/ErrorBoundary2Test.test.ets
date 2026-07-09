@@ -28,8 +28,8 @@ import {
 import { BusinessError } from '@kit.BasicServicesKit';
 import Utils from '../Util.test';
 
-export default function ErrorBoundaryFilledTest(): void {
-  describe('ErrorBoundaryFilledTest', (): void => {
+export default function ErrorBoundary2Test(): void {
+  describe('ErrorBoundary2Test', (): void => {
     beforeAll((): void => {
     });
     beforeEach(async (): Promise<void> => {

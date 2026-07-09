@@ -15,7 +15,7 @@
  */
 import errorConstructorTest from "./error/ErrorConstructorTest.test";
 import errorPropertyTest from "./error/ErrorPropertyTest.test";
-import errorStaticInvokeTest from "./error/ErrorDollarInvokeTest.test";
+import errorDollarInvokeTest from "./error/ErrorDollarInvokeTest.test";
 import errorToStringTest from "./error/ErrorToStringTest.test";
 import errorThrowCatchTest from "./error/ErrorThrowCatchTest.test";
 import errorBuiltinSubclassTest from "./error/ErrorBuiltinSubclassTest.test";
@@ -25,14 +25,14 @@ import errorBehaviorInteractionTest from "./error/ErrorInteractionTest.test";
 import errorSubclassFullTest from "./error/ErrorSubclassTest.test";
 import causeDiversificationTest from "./error/ErrorCauseTest.test";
 import comprehensiveRuntimeTest from "./error/ErrorRuntimeTest.test";
-import errorBoundaryFilledTest from "./error/ErrorBoundary2Test.test";
+import errorBoundary2Test from "./error/ErrorBoundary2Test.test";
 import errorAggregateConstructorTest from "./error/ErrorAggregateConstructorTest.test";
 import errorAggregateInvokeExtraTest from "./error/ErrorAggregateInvokeTest.test";
 
 export default function testsuite(): void {
   errorConstructorTest();
   errorPropertyTest();
-  errorStaticInvokeTest();
+  errorDollarInvokeTest();
   errorToStringTest();
   errorThrowCatchTest();
   errorBuiltinSubclassTest();
@@ -42,7 +42,7 @@ export default function testsuite(): void {
   errorSubclassFullTest();
   causeDiversificationTest();
   comprehensiveRuntimeTest();
-  errorBoundaryFilledTest();
+  errorBoundary2Test();
   errorAggregateConstructorTest();
   errorAggregateInvokeExtraTest();
 }

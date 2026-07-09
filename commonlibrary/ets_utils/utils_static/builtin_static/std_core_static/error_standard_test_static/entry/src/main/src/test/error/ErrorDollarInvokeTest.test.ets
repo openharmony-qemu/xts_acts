@@ -32,8 +32,8 @@ class ErrorInvokeCausePayload {
   detail: string = 'invoke-payload';
 }
 
-export default function ErrorStaticInvokeTest(): void {
-  describe('ErrorStaticInvokeTest', () => {
+export default function ErrorDollarInvokeTest(): void {
+  describe('ErrorDollarInvokeTest', () => {
     beforeAll(() => {
     });
     beforeEach(async () => {
@@ -1572,7 +1572,7 @@ export default function ErrorStaticInvokeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_10000_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_1000
      * @tc.name testErrorDollarInvoke100
      * @tc.desc Verify Error.$_invoke preserves ReferenceError cause type
      * @tc.type Function
@@ -1587,7 +1587,7 @@ export default function ErrorStaticInvokeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_10100_1010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_1010
      * @tc.name testErrorDollarInvoke101
      * @tc.desc Verify Error.$_invoke preserves URIError cause type
      * @tc.type Function
@@ -1602,7 +1602,7 @@ export default function ErrorStaticInvokeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_10200_1020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_1020
      * @tc.name testErrorDollarInvoke102
      * @tc.desc Verify Error.$_invoke preserves EvalError cause type
      * @tc.type Function
@@ -1617,7 +1617,7 @@ export default function ErrorStaticInvokeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_10300_1030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_1030
      * @tc.name testErrorDollarInvoke103
      * @tc.desc Verify Error.$_invoke preserves nested built-in cause chain
      * @tc.type Function
@@ -1635,7 +1635,7 @@ export default function ErrorStaticInvokeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_10400_1040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_1040
      * @tc.name testErrorDollarInvoke104
      * @tc.desc Verify thrown Error.$_invoke preserves RangeError cause after catch
      * @tc.type Function
@@ -1653,7 +1653,7 @@ export default function ErrorStaticInvokeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_10500_1050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_1050
      * @tc.name testErrorDollarInvoke105
      * @tc.desc Verify Error.$_invoke metadata fields remain stable across repeated reads
      * @tc.type Function
@@ -1670,7 +1670,7 @@ export default function ErrorStaticInvokeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_10600_1060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_1060
      * @tc.name testErrorDollarInvoke106
      * @tc.desc Verify Error.$_invoke Map cause reflects later mutation
      * @tc.type Function
@@ -1686,7 +1686,7 @@ export default function ErrorStaticInvokeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_10700_1070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_1070
      * @tc.name testErrorDollarInvoke107
      * @tc.desc Verify Error.$_invoke Set cause reflects later mutation
      * @tc.type Function
@@ -1703,7 +1703,7 @@ export default function ErrorStaticInvokeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_10800_1080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_1080
      * @tc.name testErrorDollarInvoke108
      * @tc.desc Verify Error.$_invoke Date cause reflects later time mutation
      * @tc.type Function
@@ -1719,7 +1719,7 @@ export default function ErrorStaticInvokeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_10900_1090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_1090
      * @tc.name testErrorDollarInvoke109
      * @tc.desc Verify Error.$_invoke preserves empty Map cause
      * @tc.type Function
@@ -1735,7 +1735,7 @@ export default function ErrorStaticInvokeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_11000_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_1100
      * @tc.name testErrorDollarInvoke110
      * @tc.desc Verify Error.$_invoke preserves empty Set cause
      * @tc.type Function
@@ -1751,7 +1751,7 @@ export default function ErrorStaticInvokeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_11100_1110
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_1110
      * @tc.name testErrorDollarInvoke111
      * @tc.desc Verify Error.$_invoke preserves nested array cause identity
      * @tc.type Function
@@ -1768,7 +1768,7 @@ export default function ErrorStaticInvokeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_11200_1120
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_1120
      * @tc.name testErrorDollarInvoke112
      * @tc.desc Verify Error.$_invoke preserves custom payload inside Map cause
      * @tc.type Function
@@ -1785,7 +1785,7 @@ export default function ErrorStaticInvokeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_11300_1130
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_1130
      * @tc.name testErrorDollarInvoke113
      * @tc.desc Verify Error.$_invoke preserves custom payload inside Set cause
      * @tc.type Function
@@ -1803,7 +1803,7 @@ export default function ErrorStaticInvokeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_11400_1140
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_1140
      * @tc.name testErrorDollarInvoke114
      * @tc.desc Verify Error.$_invoke result remains readable after cause reassignment
      * @tc.type Function
@@ -1818,7 +1818,7 @@ export default function ErrorStaticInvokeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_11500_1150
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_1150
      * @tc.name testErrorDollarInvoke115
      * @tc.desc Verify Error.$_invoke with empty message and Error cause preserves both
      * @tc.type Function
@@ -1833,7 +1833,7 @@ export default function ErrorStaticInvokeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_11600_1160
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_1160
      * @tc.name testErrorDollarInvoke116
      * @tc.desc Verify Error.$_invoke options with custom payload and message are independent
      * @tc.type Function
@@ -1849,7 +1849,7 @@ export default function ErrorStaticInvokeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_11700_1170
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_1170
      * @tc.name testErrorDollarInvoke117
      * @tc.desc Verify built-in Error subclass $_invoke zero-argument defaults
      * @tc.type Function
@@ -1866,7 +1866,7 @@ export default function ErrorStaticInvokeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_11800_1180
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_1180
      * @tc.name testErrorDollarInvoke118
      * @tc.desc Verify built-in Error subclass $_invoke one-argument messages
      * @tc.type Function
@@ -1883,7 +1883,7 @@ export default function ErrorStaticInvokeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_11900_1190
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_1190
      * @tc.name testErrorDollarInvoke119
      * @tc.desc Verify built-in Error subclass $_invoke options preserve cause references
      * @tc.type Function
@@ -1901,7 +1901,7 @@ export default function ErrorStaticInvokeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_12000_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_1200
      * @tc.name testErrorDollarInvoke120
      * @tc.desc Verify runtime Error subclass $_invoke name and message results
      * @tc.type Function
