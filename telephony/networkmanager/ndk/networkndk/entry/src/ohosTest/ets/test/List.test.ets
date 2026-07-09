@@ -29,7 +29,17 @@ export default function testsuite() {
     NetStackNDKTest();
     NetConnectionNDKTest();
     PingTraceRouteNDKTest();
-    NetExtNDKTest();   
+    connection.getNetCapabilities(netHandle, (error: BusinessError, data: connection.NetCapabilities) => {
+      if (error) {
+        return;
+      }
+      if (data.bearerTypes[0] === connection.NetBearType.BEARER_ETHERNET) {
+        NetExtNDKTest();
+      }
+    })
+  }).catch((error: BusinessError) => {
+    return;
+  });
   } else {
     EmptyTestCheckNetwork();
   }
