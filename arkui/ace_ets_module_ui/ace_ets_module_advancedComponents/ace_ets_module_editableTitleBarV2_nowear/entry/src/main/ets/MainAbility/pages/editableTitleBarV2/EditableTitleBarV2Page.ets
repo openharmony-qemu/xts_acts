@@ -14,10 +14,11 @@
  */
 
 import {
-  EditableTitleBarV2, EditableLeftIconV2, EditableTitleV2, EditableTitleBarMenuItemV2, EditableTitleBarItemV2,
-  EditableTitleBarMenuItemV2Options, EditableSaveButtonV2, EditableTitleBarStyleV2, EditableLeftIconTypeV2
+  EditableTitleBarV2, EditableLeftIconV2, EditableTitleV2, EditableTitleBarMenuItemV2,
+  EditableTitleBarMenuItemV2Options, EditableSaveButtonV2, EditableTitleBarStyleV2, EditableLeftIconTypeV2,
+  EditableTitleBarStyleV2Options, EditableLeftIconV2Options, EditableTitleBarItemV2
 } from '@ohos.arkui.advanced.EditableTitleBarV2';
-import { SymbolGlyphModifier } from '@kit.ArkUI'
+import { SymbolGlyphModifier, LengthMetrics } from '@kit.ArkUI'
 
 @Entry
 @ComponentV2
@@ -60,18 +61,56 @@ struct EditableTitleBarV2Page {
   @Local item2:EditableTitleBarItemV2 = new EditableTitleBarMenuItemV2(this.itemOptions2)
   @Local menuItemsList: Array<EditableTitleBarMenuItemV2> = [this.item1, this.item2]
 
+  @Local styleOptions:EditableTitleBarStyleV2Options = {
+    backgroundBlurStyle: BlurStyle.Thick,
+    backgroundColor: '#ffffffff',
+    safeAreaTypes: [SafeAreaType.SYSTEM],
+    safeAreaEdges: [SafeAreaEdge.TOP],
+    contentMargin: { start: LengthMetrics.vp(5), end: LengthMetrics.vp(5),}
+  }
+  @Local options01:EditableTitleBarStyleV2 = new EditableTitleBarStyleV2(this.styleOptions)
+
+  @Local leftIconOptions:EditableLeftIconV2Options = {
+    iconType: EditableLeftIconTypeV2.Cancel,
+    defaultFocus: false,   // 0709
+    onAction: () => {
+      console.info('Left icon clicked');
+    }
+  }
+  @Local leftIconBuilder:EditableLeftIconV2 = new EditableLeftIconV2(this.leftIconOptions)
+
+
   build() {
     Column() {
       Scroll() {
-        Column({ space: 20 }) {
+        Column({ space: 10 }) {
           Text('EditableTitleBarV2 Basic Test')
             .fontSize(20)
             .fontWeight(FontWeight.Bold)
-            .margin({ top: 20 })
 
           EditableTitleBarV2({
             title: 'Basic Title',
-            options: new EditableTitleBarStyleV2()
+            leftIcon:this.leftIconBuilder,
+            options: new EditableTitleBarStyleV2({
+              backgroundBlurStyle: BlurStyle.Thick,
+              backgroundColor: '#ffffffff',
+              safeAreaTypes: [SafeAreaType.SYSTEM],
+              safeAreaEdges: [SafeAreaEdge.TOP],
+              contentMargin: { start: LengthMetrics.vp(5), end: LengthMetrics.vp(5),}
+            }),
+            imageItem:new EditableTitleBarMenuItemV2({
+              value: $r('sys.media.ohos_app_icon'),
+              symbolStyle: new SymbolGlyphModifier($r('sys.symbol.bell')).fontColor([Color.Red]),
+              isEnabled: true,
+              label: 'label',
+              defaultFocus: true,
+              action: () => {
+                console.info('Menu item 1 clicked');
+              },
+              accessibilityLevel: 'yes',
+              accessibilityText: '单指双击即可选中',
+              accessibilityDescription: '单指双击即可执行',
+            })
           })
 
           Text('EditableTitleBarV2 With Left Icon')
@@ -83,11 +122,12 @@ struct EditableTitleBarV2Page {
             title: 'With Left Icon',
             leftIcon: new EditableLeftIconV2({
               iconType: this.leftIconType,
+              defaultFocus: true,   // 0709
               onAction: () => {
                 console.info('Left icon clicked');
               }
             }),
-            options: new EditableTitleBarStyleV2()
+            options: this.options01
           })
 
           Text('EditableTitleBarV2 With Title Object')
@@ -159,6 +199,7 @@ struct EditableTitleBarV2Page {
             ],
             saveButton: new EditableSaveButtonV2({
               isRequired: this.saveButtonRequired,
+              defaultFocus: false,
               onAction: () => {
                 console.info('Save button clicked');
               }
