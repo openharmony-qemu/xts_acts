@@ -64,6 +64,18 @@
             {
                 "name": "ohos.permission.INTERNET",
                 "reason": "$string:TestAbility_desc"
+            },
+            {
+                "name": "ohos.permission.GET_WIFI_INFO",
+                "reason": "$string:TestAbility_desc"
+            },
+            {
+                "name": "ohos.permission.GET_NETWORK_INFO",
+                "reason": "$string:TestAbility_desc"
+            },
+            {
+                "name": "ohos.permission.READ_WRITE_DOWNLOAD_DIRECTORY",
+                "reason": "$string:TestAbility_desc"
             }
         ]
     }
