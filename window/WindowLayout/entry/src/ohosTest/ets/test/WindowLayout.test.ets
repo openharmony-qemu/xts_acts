@@ -7810,8 +7810,8 @@ export default function windowLayoutTest() {
         console.log(`${caseName} ReadonlyEnvKey.WINDOW_SIZE ${JSON.stringify(ReadonlyEnvKey.WINDOW_SIZE)}`)
         console.log(`${caseName} ReadonlyEnvKey.WINDOW_SIZE_PX ${JSON.stringify(ReadonlyEnvKey.WINDOW_SIZE_PX)}`)
         console.log(`${caseName} ReadonlyEnvKey.WINDOW_IS_FOCUSED ${JSON.stringify(ReadonlyEnvKey.WINDOW_IS_FOCUSED)}`)
-        console.log(`${caseName} ReadonlyEnvKey.WINDOW_AVOID_AREA ${JSON.stringify(ReadonlyEnvKey.WINDOW_IS_HIGHTLIGHTED)}`)
-        console.log(`${caseName} ReadonlyEnvKey.DISPLAY_ID ${JSON.stringify(ReadonlyEnvKey.DISPLAY_ID)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_IS_HIGHLIGHTED ${JSON.stringify(ReadonlyEnvKey.WINDOW_IS_HIGHLIGHTED)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_DISPLAY_ID ${JSON.stringify(ReadonlyEnvKey.WINDOW_DISPLAY_ID)}`)
         console.log(`${caseName} ReadonlyEnvKey.WINDOW_SYSTEM_DENSITY ${JSON.stringify(ReadonlyEnvKey.WINDOW_SYSTEM_DENSITY)}`)
         expect(ReadonlyEnvKey.WINDOW_AVOID_AREA != null).assertTrue()
         expect(ReadonlyEnvKey.WINDOW_AVOID_AREA_PX != null).assertTrue()
@@ -7819,7 +7819,7 @@ export default function windowLayoutTest() {
         expect(ReadonlyEnvKey.WINDOW_SIZE_PX != null).assertTrue()
         expect(ReadonlyEnvKey.WINDOW_IS_FOCUSED != null).assertTrue()
         expect(ReadonlyEnvKey.WINDOW_IS_HIGHTLIGHTED != null).assertTrue()
-        expect(ReadonlyEnvKey.DISPLAY_ID != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_DISPLAY_ID != null).assertTrue()
         expect(ReadonlyEnvKey.WINDOW_SYSTEM_DENSITY != null).assertTrue()
       } catch (exception) {
         console.error(`${caseName} Failed. Cause code: ${exception.code}, message: ${exception.message}`);
