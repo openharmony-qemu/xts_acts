@@ -28,7 +28,7 @@ export default function BigIntToLocaleString1Test_2(): void {
   describe('BigIntToLocaleString1Test_2', (): void => {
     beforeAll((): void => {
     });
-    beforeEach(():void=>{
+    beforeEach(async():void=>{
       await Utils.msSleep(30);
     });
     afterEach((): void => {

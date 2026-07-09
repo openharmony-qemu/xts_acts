@@ -23,7 +23,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
   describe('BigIntOperatorBitwiseXorTest_2', ()=> {
     beforeAll((): void => {
     });
-    beforeEach(():void=>{
+    beforeEach(async():void=>{
       await Utils.msSleep(30);
     });
     afterEach((): void => {

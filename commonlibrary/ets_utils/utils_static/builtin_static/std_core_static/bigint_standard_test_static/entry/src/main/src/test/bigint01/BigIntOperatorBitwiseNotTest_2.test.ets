@@ -31,7 +31,7 @@ export default function BigIntOperatorBitwiseNotTest_2(): void {
     });
     beforeAll((): void => {
     });
-    beforeEach(():void=>{
+    beforeEach(async():void=>{
       await Utils.msSleep(30);
     });
     afterAll((): void => {

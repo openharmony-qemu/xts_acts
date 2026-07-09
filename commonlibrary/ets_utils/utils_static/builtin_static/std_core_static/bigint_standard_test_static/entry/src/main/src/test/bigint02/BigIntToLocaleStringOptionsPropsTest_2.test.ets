@@ -20,7 +20,7 @@ export default function BigIntToLocaleStringOptionsPropsTest_2(): void {
   describe('BigIntToLocaleStringOptionsPropsTest_2', () => {
     beforeAll((): void => {
     });
-    beforeEach(():void=>{
+    beforeEach(async():void=>{
       await Utils.msSleep(30);
     });
     afterEach((): void => {

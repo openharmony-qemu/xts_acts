@@ -20,7 +20,7 @@ export default function BigIntValueOfTest_2(): void {
   describe('BigIntValueOfTest_2', () => {
     beforeAll((): void => {
     });
-    beforeEach(():void=>{
+    beforeEach(async():void=>{
       await Utils.msSleep(30);
     });
     afterEach((): void => {

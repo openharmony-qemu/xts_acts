@@ -24,7 +24,7 @@ export default function BigIntNegativeTest_2(): void {
   describe('BigIntNegativeTest_2', () =>{
     beforeAll((): void => {
     });
-    beforeEach(():void=>{
+    beforeEach(async():void=>{
       await Utils.msSleep(30);
     });
     afterEach((): void => {

@@ -20,7 +20,7 @@ export default function BigIntToString1Test_2(): void {
   describe('BigIntToString1Test_2', () => {
     beforeAll((): void => {
     });
-    beforeEach(():void=>{
+    beforeEach(async():void=>{
       await Utils.msSleep(30);
     });
     afterEach((): void => {
