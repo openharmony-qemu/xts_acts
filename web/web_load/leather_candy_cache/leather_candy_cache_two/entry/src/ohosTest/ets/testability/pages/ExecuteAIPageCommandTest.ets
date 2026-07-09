@@ -128,7 +128,7 @@ struct ExecuteAIPageCommandTest {
             case 'testExecuteAIPageCommand003': {
               let msg = 'testExecuteAIPageCommand003'
               try {
-                await this.controllerNull.executeAIPageCommand(null);
+                await this.controller.executeAIPageCommand(null);
                 Utils.emitEvent(true, 148113)
               } catch (error) {
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
