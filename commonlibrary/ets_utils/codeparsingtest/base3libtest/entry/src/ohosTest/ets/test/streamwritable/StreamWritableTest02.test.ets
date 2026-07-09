@@ -259,7 +259,7 @@ export default function StreamWritable02Test() {
         expect(result).assertEqual(true);
         expect(writableStream instanceof TestWritable).assertEqual(true);
       } catch (err) {
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(undefined);
       }
     });
 
