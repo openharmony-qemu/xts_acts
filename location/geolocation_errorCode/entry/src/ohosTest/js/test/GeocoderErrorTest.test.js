@@ -1931,33 +1931,32 @@ export default function geolocationTest_GeoErr() {
          * @tc.level  LEVEL2
          */
         it('SUB_HSS_isGeoServiceAvailable_FALSE_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            var isAcessToken = canIUse("SystemCapability.Location.Location.Geocoder");
-            console.info("SUB_HSS_isGeoServiceAvailable_FALSE_0001: " + isAcessToken);
+            var isAcessToken = canIUse('SystemCapability.Location.Location.Geocoder');
+            console.info('SUB_HSS_isGeoServiceAvailable_FALSE_0001: ' + isAcessToken);
             if (!isAcessToken) {
-                console.info("The device does not support Geocoder");
+                console.info('The device does not support Geocoder');
                 expect(isAcessToken).assertFalse();
                 done();
-            } else {
-                try {
-                    geolocation.isGeoServiceAvailable((err, data) => {
-                        if (err) {
-                            console.info('isGeoServiceAvailable_FALSE_0001: err=' + JSON.stringify(err));
-                            expect().assertFail();
-                        }
-                        if (data === false) {
-                            console.info('isGeoServiceAvailable_FALSE_0001 returns false: data=' + JSON.stringify(data));
-                            expect(data).assertFalse();
-                        } else {
-                            console.info('isGeoServiceAvailable_FALSE_0001 returns true: data=' + JSON.stringify(data));
-                            expect(data).assertTrue();
-                        }
+                return;
+            }
+            try {
+                geolocation.isGeoServiceAvailable((err, data) => {
+                    if (err) {
+                        console.info('isGeoServiceAvailable_FALSE_0001: err=' + JSON.stringify(err));
+                        expect().assertFail();
                         done();
-                    });
-                } catch (err) {
-                    console.info("isGeoServiceAvailable_FALSE_0001: errCode:" + JSON.stringify(err) + ", message:" + err.message);
-                    expect().assertFail();
+                        return;
+                    }
+                    console.info('isGeoServiceAvailable_FALSE_0001: data=' + JSON.stringify(data));
+                    if (!data) {
+                        expect(data).assertFalse();
+                    }
                     done();
-                }
+                });
+            } catch (err) {
+                console.info('isGeoServiceAvailable_FALSE_0001: errCode:' + JSON.stringify(err) + ', message:' + err.message);
+                expect().assertFail();
+                done();
             }
         });
 
@@ -1970,51 +1969,53 @@ export default function geolocationTest_GeoErr() {
          * @tc.level  LEVEL2
          */
         it('SUB_HSS_isGeoServiceAvailable_FALSE_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            var isAcessToken = canIUse("SystemCapability.Location.Location.Geocoder");
-            console.info("SUB_HSS_isGeoServiceAvailable_FALSE_0002: " + isAcessToken);
+            var isAcessToken = canIUse('SystemCapability.Location.Location.Geocoder');
+            console.info('SUB_HSS_isGeoServiceAvailable_FALSE_0002: ' + isAcessToken);
             if (!isAcessToken) {
-                console.info("The device does not support Geocoder");
+                console.info('The device does not support Geocoder');
                 expect(isAcessToken).assertFalse();
                 done();
-            } else {
-                try {
-                    geolocation.isGeoServiceAvailable().then((result) => {
-                        console.info('promise, isGeoServiceAvailable_FALSE_0002: ' + JSON.stringify(result));
-                        if (result === false) {
-                            console.info('isGeoServiceAvailable_FALSE_0002 returns false');
-                            expect(result).assertFalse();
-                        } else {
-                            console.info('isGeoServiceAvailable_FALSE_0002 returns true');
-                            expect(result).assertTrue();
-                        }
-                        done();
-                    }).catch((err) => {
-                        console.info('promise, isGeoServiceAvailable_FALSE_0002 error: ' + JSON.stringify(err));
-                        expect().assertFail();
-                        done();
-                    });
-                } catch (err) {
-                    console.info("isGeoServiceAvailable_FALSE_0002: errCode:" + JSON.stringify(err) + ", message:" + err.message);
-                    expect().assertFail();
-                    done();
+                return;
+            }
+            try {
+                let result = await geolocation.isGeoServiceAvailable();
+                console.info('promise, isGeoServiceAvailable_FALSE_0002: ' + JSON.stringify(result));
+                if (!result) {
+                    expect(result).assertFalse();
                 }
+                done();
+            } catch (err) {
+                console.info('promise, isGeoServiceAvailable_FALSE_0002 error: ' + JSON.stringify(err));
+                expect().assertFail();
+                done();
             }
         });
 
         /**
-         * @tc.name   SUB_HSS_LocationSystem_IsLocationEnabled_TRUE
-         * @tc.number SUB_HSS_LocationSystem_IsLocationEnabled_TRUE
+         * @tc.name   SUB_HSS_LocationSystem_IsLocationEnabled_TRUE_0100
+         * @tc.number SUB_HSS_LocationSystem_IsLocationEnabled_TRUE_0100
          * @tc.desc   Test isLocationEnabled returns true when location switch is enabled.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('SUB_HSS_LocationSystem_IsLocationEnabled_TRUE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        it('SUB_HSS_LocationSystem_IsLocationEnabled_TRUE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            var isAcessToken = canIUse('SystemCapability.Location.Location.Core');
+            console.info('SUB_HSS_LocationSystem_IsLocationEnabled_TRUE: ' + isAcessToken);
+            if (!isAcessToken) {
+                console.info('The device does not support location');
+                expect(isAcessToken).assertFalse();
+                done();
+                return;
+            }
             try {
                 await geolocationm.enableLocation();
                 console.info('[lbs_js] enableLocation success');
             } catch (error) {
-                console.info("[lbs_js] enableLocation error." + JSON.stringify(error));
+                console.info('[lbs_js] enableLocation error.' + JSON.stringify(error));
+                expect().assertFalse();
+                done();
+                return;
             }
             await sleep(1000);
             
@@ -2024,9 +2025,9 @@ export default function geolocationTest_GeoErr() {
                 expect(state).assertTrue();
                 console.info('[lbs_js] isLocationEnabled returns true when location switch is enabled');
             } catch (error) {
-                console.info("[lbs_js] isLocationEnabled_TRUE try err." + JSON.stringify(error));
-                if (error.code == "801") {
-                    expect(error.code).assertEqual("801");
+                console.info('[lbs_js] isLocationEnabled_TRUE try err.' + JSON.stringify(error));
+                if (error.code == '801') {
+                    expect(error.code).assertEqual('801');
                 } else {
                     expect().assertFail();
                 }
@@ -2035,19 +2036,30 @@ export default function geolocationTest_GeoErr() {
         })
 
         /**
-         * @tc.name   SUB_HSS_LocationSystem_IsLocationEnabled_FALSE
-         * @tc.number SUB_HSS_LocationSystem_IsLocationEnabled_FALSE
+         * @tc.name   SUB_HSS_LocationSystem_IsLocationEnabled_FALSE_0100
+         * @tc.number SUB_HSS_LocationSystem_IsLocationEnabled_FALSE_0100
          * @tc.desc   Test isLocationEnabled returns false when location switch is disabled.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('SUB_HSS_LocationSystem_IsLocationEnabled_FALSE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        it('SUB_HSS_LocationSystem_IsLocationEnabled_FALSE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            var isAcessToken = canIUse('SystemCapability.Location.Location.Core');
+            console.info('SUB_HSS_LocationSystem_IsLocationEnabled_FALSE: ' + isAcessToken);
+            if (!isAcessToken) {
+                console.info('The device does not support location');
+                expect(isAcessToken).assertFalse();
+                done();
+                return;
+            }
             try {
                 await geolocationm.disableLocation();
                 console.info('[lbs_js] disableLocation success');
             } catch (error) {
-                console.info("[lbs_js] disableLocation error." + JSON.stringify(error));
+                console.info('[lbs_js] disableLocation error.' + JSON.stringify(error));
+                expect().assertFalse();
+                done();
+                return;
             }
             await sleep(1000);
             
@@ -2057,14 +2069,14 @@ export default function geolocationTest_GeoErr() {
                 expect(state).assertFalse();
                 console.info('[lbs_js] isLocationEnabled returns false when location switch is disabled');
             } catch (error) {
-                console.info("[lbs_js] isLocationEnabled_FALSE try err." + JSON.stringify(error));
-                if (error.code == "801") {
-                    expect(error.code).assertEqual("801");
+                console.info('[lbs_js] isLocationEnabled_FALSE try err.' + JSON.stringify(error));
+                if (error.code == '801') {
+                    expect(error.code).assertEqual('801');
                 } else {
                     expect().assertFail();
                 }
             }
-                done();
+            done();
         })
 
     })
