@@ -26,6 +26,7 @@ import {
   Size,
   Level
 } from "@ohos/hypium-binary/src/main/indexStatic";
+import Utils from '../../Util.test.ets'
 
 let lazy_operator_a: Any
 function lazy_operator_non_eval(): int {
@@ -46,13 +47,6 @@ class least_upper_bound_CBBA extends least_upper_bound_CBB {}
 class least_upper_bound_CBBB extends least_upper_bound_CBB {}
 
 type mix_with_conditional_boolean_nullish = boolean | null | undefined
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
 type nullish_coalescing_expression_array_int_nullish = int | null | undefined
 let nullish_coalescing_expression_array_rec: Record<string, nullish_coalescing_expression_array_int_nullish> =
   {
@@ -108,7 +102,7 @@ export default function ExpressionsNullishCoalescing(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
