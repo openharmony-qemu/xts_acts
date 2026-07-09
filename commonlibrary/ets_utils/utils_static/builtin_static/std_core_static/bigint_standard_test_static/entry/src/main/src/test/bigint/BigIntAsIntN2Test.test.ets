@@ -19,7 +19,18 @@ import Utils from '../Util.test';
 
 export default function BigIntAsIntN2Test(): void {
   describe('testBigIntAsIntN2Test', ():void => {
+    beforeAll(() => {
+    });
 
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_ASINTN_1300

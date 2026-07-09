@@ -18,6 +18,19 @@ import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorLessThan2Test(): void {
   describe('testBigIntOperatorLessThan2Test', (): void => {
+
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_LESS_THAN_0700
      * @tc.name testBigIntOperatorLessThan2Test007

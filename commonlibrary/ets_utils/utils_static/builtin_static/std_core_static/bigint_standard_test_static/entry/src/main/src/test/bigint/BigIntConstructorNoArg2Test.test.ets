@@ -18,7 +18,18 @@ import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntConstructorNoArg2Test(): void {
   describe('testBigIntConstructorNoArg2Test', (): void => {
+    beforeAll(() => {
+    });
 
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_NOARG_1000

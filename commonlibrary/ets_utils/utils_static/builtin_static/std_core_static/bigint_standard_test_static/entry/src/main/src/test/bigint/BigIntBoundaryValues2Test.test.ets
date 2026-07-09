@@ -18,6 +18,18 @@ import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntBoundaryValues2Test(): void {
   describe('testBigIntBoundaryValues2Test', (): void => {
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BOUNDARY_VALUE_1200
      * @tc.name testBigIntBoundaryValues2Test012

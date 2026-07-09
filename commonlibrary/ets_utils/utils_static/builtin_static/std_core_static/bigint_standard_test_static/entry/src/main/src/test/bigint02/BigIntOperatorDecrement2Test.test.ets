@@ -19,6 +19,18 @@ import { TestType, Size, Level } from '../../../../hypium/Constant';
 export default function BigIntOperatorDecrement2Test(): void {
   describe('testBigIntOperatorDecrement2Test', (): void => {
 
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_DECREMENT_1000
      * @tc.name testBigIntOperatorDecrement2Test010

@@ -18,6 +18,18 @@ import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorMultiply2Test(): void {
   describe('testBigIntOperatorMultiply2Test', (): void => {
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_0800
      * @tc.name testBigIntOperatorMultiply2Test008

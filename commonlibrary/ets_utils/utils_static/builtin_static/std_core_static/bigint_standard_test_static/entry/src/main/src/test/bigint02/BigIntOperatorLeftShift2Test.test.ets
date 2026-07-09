@@ -18,6 +18,19 @@ import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorLeftShift2Test(): void {
   describe('testBigIntOperatorLeftShift2Test', (): void => {
+
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_LEFT_SHIFT_0700
      * @tc.name testBigIntOperatorLeftShift2Test007

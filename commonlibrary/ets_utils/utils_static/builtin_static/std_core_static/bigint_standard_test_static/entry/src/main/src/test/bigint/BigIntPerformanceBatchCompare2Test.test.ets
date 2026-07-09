@@ -18,6 +18,18 @@ import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntPerformanceBatchCompare2Test(): void {
   describe('testBigIntPerformanceBatchCompare2Test', (): void => {
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_0800
      * @tc.name testBigIntPerformanceBatchCompare2Test008

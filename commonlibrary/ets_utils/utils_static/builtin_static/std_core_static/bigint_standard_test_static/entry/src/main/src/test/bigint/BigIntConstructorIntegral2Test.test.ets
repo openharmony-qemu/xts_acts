@@ -18,6 +18,19 @@ import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntConstructorIntegral2Test(): void {
   describe('testBigIntConstructorIntegral2Test', (): void => {
+
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_INTEGRAL_1000
      * @tc.name testBigIntConstructorIntegral2Test010

@@ -19,6 +19,18 @@ import Utils from '../Util.test';
 
 export default function BigIntAsUintN2Test(): void {
   describe('testBigIntAsUintN2Test', (): void => {
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_ASUINTN_1300
      * @tc.name testBigIntAsUintN2Test013

@@ -18,6 +18,19 @@ import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntPerformance2Test(): void {
   describe('testBigIntPerformance2Test', (): void => {
+
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_1000
      * @tc.name testBigIntPerformance2Test010
