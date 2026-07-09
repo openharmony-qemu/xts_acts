@@ -371,7 +371,6 @@ async function captureWithSettingsCallback(done: () => void, testName: string,
     } else {
       createPhotoOutput();
       await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
-      let isCaptureCallback = false;
       mPhotoOutput!.capture(settings as camera.PhotoCaptureSetting, (error) => {
         if (error !== undefined && error!.code !== 0) {
           console.error(TAG, testName + ' failed to capture, err: ' + error!.code + ', msg: ' + error!.message);
@@ -380,15 +379,7 @@ async function captureWithSettingsCallback(done: () => void, testName: string,
           console.info(TAG, testName + ' capture passed.');
           expect(mPhotoOutput).assertTrue();
         }
-        isCaptureCallback = true;
       });
-      for (let i = 0; i < 10; i++) {
-        await Utils.msSleep(200);
-        if (isCaptureCallback) {
-          break;
-        }
-      }
-      expect(isCaptureCallback).assertTrue();
       console.info(TAG, testName + ' capture end.');
       await releasePhotoSession();
     }

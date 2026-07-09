@@ -246,7 +246,6 @@ export function cameraPicker() {
         .catch((err:Error)=>{
           console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0100 get pick error " + err);
           expect(true).assertFalse();
-          done();
         });
       await Utils.msSleep(1000);
       await driveAllowFn();
@@ -279,7 +278,6 @@ export function cameraPicker() {
         .catch((err:Error)=>{
           console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0101 get pick error " + err);
           expect(true).assertFalse();
-          done();
         });
       await Utils.msSleep(1000);
       await driveAllowFn();
@@ -320,7 +318,6 @@ export function cameraPicker() {
         .catch((err:Error)=>{
           console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0102 get pick error " + err);
           expect(true).assertFalse();
-          done();
         });
       await Utils.msSleep(1000);
       await driveAllowFn();
@@ -396,7 +393,6 @@ export function cameraPicker() {
         .catch((err:Error)=>{
           console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0100 get pick error " + err);
           expect(true).assertFalse();
-          done();
         });
       await Utils.msSleep(1000);
       await driveAllowFn();
@@ -429,7 +425,6 @@ export function cameraPicker() {
         .catch((err:Error)=>{
           console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0101 get pick error " + err);
           expect(true).assertFalse();
-          done();
         });
       await Utils.msSleep(1000);
       await driveAllowFn();
@@ -464,7 +459,6 @@ export function cameraPicker() {
         .catch((err:Error)=>{
           console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0102 get pick error " + err);
           expect(true).assertFalse();
-          done();
         });
       await Utils.msSleep(1000);
       await driveAllowFn();

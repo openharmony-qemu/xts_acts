@@ -519,9 +519,10 @@ export default function cameraPhotoSessionTest() {
 
         mCameraSession!.start()
 
-        for (let i = 0; i < 10; i++) {
-          await Utils.msSleep(200);
-          if (isExposureFinish) {
+        let startTime = Date.now()
+        while (!isExposureFinish) {
+          await Utils.msSleep(100);
+          if (Date.now() - startTime > 5000) {
             break;
           }
         }

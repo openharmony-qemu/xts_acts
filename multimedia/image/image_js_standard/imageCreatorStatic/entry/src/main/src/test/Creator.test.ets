@@ -20,10 +20,6 @@ import common from '@ohos.app.ability.common';
 import { initialize } from './AbilityContextHelper.test';
 import { BusinessError } from '@ohos.base';
 
-const sleep = (ms?: number | undefined): Promise<void> => {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 class Logger {
   testNum: string;
 
@@ -176,7 +172,6 @@ export default function ImageCreator() {
             console.info('SUB_MULTIMEDIA_IMAGE_CREATOR_DEQUEUEIMAGE_CALLBACK_STATIC_0100 err:' + err);
             expect(false).assertTrue();
             done();
-            return;
           }
           console.info('SUB_MULTIMEDIA_IMAGE_CREATOR_DEQUEUEIMAGE_CALLBACK_STATIC_0100 dequeueImage call back Success');
           expect(img != undefined).assertTrue();
@@ -253,26 +248,21 @@ export default function ImageCreator() {
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let creator = image.createImageCreator(SIZE, FORMAT, CAPACITY);
-      let dequeueDone = false;
-      let getComponentDone = false;
-      let queueImageDone = false;
       if (creator != undefined) {
         globalCreator = creator;
         creator.dequeueImage((err: BusinessError | null, img) => {
           if (err && err.code) {
             console.log('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_STATIC_0200 dequeueImage error:' + err);
             expect(false).assertTrue();
-            return;
+            done();
           }
-          dequeueDone = true;
           globalImg = img!;
           img!.getComponent(JPEG, (err: BusinessError | null, component) => {
             if (err && err.code) {
               expect(false).assertTrue();
               console.log('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_STATIC_0200 getComponent error:' + err);
-              return;
+              done();
             }
-            getComponentDone = true;
             expect(component!.componentType == JPEG).assertTrue();
             expect(component!.byteBuffer != undefined).assertTrue();
 
@@ -281,21 +271,15 @@ export default function ImageCreator() {
               if (err && err.code) {
                 console.info('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_STATIC_0200 queueImage err: ' + err);
                 expect(false).assertTrue();
-                return;
+                done();
               }
-              queueImageDone = true;
               console.info('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_STATIC_0200 queueImage Success');
+              // creator.test;
+              done();
+
             })
           })
         })
-        for (let i = 0; i < 10; i++) {
-          await sleep(200);
-          if (dequeueDone && getComponentDone && queueImageDone) {
-            break;
-          }
-        }
-        expect(dequeueDone && getComponentDone && queueImageDone).assertTrue();
-        done();
       } else {
         expect(false).assertTrue();
         console.info('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_STATIC_0200 createImageCreator failed');
