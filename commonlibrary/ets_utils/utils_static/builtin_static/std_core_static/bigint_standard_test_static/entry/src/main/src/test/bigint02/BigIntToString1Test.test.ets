@@ -13,20 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect,afterAll, afterEach, beforeAll, beforeEach  } from '../../../../hypium/index';
+import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntToString1Test(): void {
   describe('BigInt.toString no-arg (mindmap toString_1)', () => {
-    beforeAll((): void => {
-    });
-    beforeEach(():void=>{
-      await Utils.msSleep(30);
-    });
-    afterEach((): void => {
-    });
-    afterAll((): void => {
-    });
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_1_0100
      * @tc.name testBigIntToString1Zero0100

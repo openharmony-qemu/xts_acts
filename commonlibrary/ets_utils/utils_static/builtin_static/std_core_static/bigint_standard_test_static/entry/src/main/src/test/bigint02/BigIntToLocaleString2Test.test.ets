@@ -13,20 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect,afterAll, afterEach, beforeAll, beforeEach  } from '../../../../hypium/index';
+import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntToLocaleString2Test(): void {
   describe('BigInt.toLocaleString(locales, options) (mindmap toLocaleString_2)', () => {
-    beforeAll((): void => {
-    });
-    beforeEach(():void=>{
-      await Utils.msSleep(30);
-    });
-    afterEach((): void => {
-    });
-    afterAll((): void => {
-    });
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_2_0100
      * @tc.name testBigIntToLocaleString2Locales0100

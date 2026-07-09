@@ -13,20 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it} from '../../../../hypium/index';
+import { describe, expect, it} from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntDoubleValueTest(): void {
   describe('BigInt.doubleValue (mindmap doubleValue)', () => {
-    beforeAll((): void => {
-    });
-    beforeEach(async():void=>{
-      await Utils.msSleep(30);
-    });
-    afterEach((): void => {
-    });
-    afterAll((): void => {
-    });
     /**
      * @tc.number SUB_BIGINT_STD_DOUBLEVALUE_0100
      * @tc.name testBigIntDoubleValueSigns0100

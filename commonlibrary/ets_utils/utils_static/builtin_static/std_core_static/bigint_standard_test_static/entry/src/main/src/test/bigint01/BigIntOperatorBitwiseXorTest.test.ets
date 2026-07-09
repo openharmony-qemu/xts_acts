@@ -13,20 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect,afterAll, afterEach, beforeAll, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorBitwiseXorTest(): void {
   describe('BigInt.operatorBitwiseXor (mindmap operatorBitwiseXor)', () => {
-    beforeAll((): void => {
-    });
-    beforeEach(():void=>{
-      await Utils.msSleep(30);
-    });
-    afterEach((): void => {
-    });
-    afterAll((): void => {
-    });
     /**
      * @tc.number SUB_BIGINT_STD_BITWISE_XOR_0100
      * @tc.name testBigIntOperatorBitwiseXorBasic0100
