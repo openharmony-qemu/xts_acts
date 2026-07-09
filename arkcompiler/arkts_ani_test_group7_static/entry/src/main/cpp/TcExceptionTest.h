@@ -204,9 +204,9 @@ void test_ExceptionThrowErrorWithCause(ani_env *env, ani_object object)
     }
     ani_string cause = ani_tc_exception::ExceptionStdStringToAniString(env, "Native cause value");
     if (cause != nullptr) {
-        ani_status status = env->Any_SetProperty(
-            static_cast<ani_ref>(error), "cause", static_cast<ani_ref>(cause));
-        std::cout << "Any_SetProperty(cause) status: " << status << std::endl;
+        ani_status status = env->Object_SetPropertyByName_Ref(
+            static_cast<ani_object>(error), "cause", static_cast<ani_ref>(cause));
+        std::cout << "Object_SetPropertyByName_Ref(cause) status: " << status << std::endl;
     }
     env->ThrowError(error);
 }
