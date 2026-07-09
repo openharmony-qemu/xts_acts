@@ -26,6 +26,7 @@ import {
   Size,
   Level
 } from "@ohos/hypium-binary/src/main/indexStatic";
+import Utils from '../../Util.test.ets'
 
 class FieldInheritPass001Base {
   field: int = 1
@@ -300,6 +301,7 @@ export default function TypeSafeFieldInheritance(): void {
     beforeAll((): void => {
     })
     beforeEach(async (): Promise<void> => {
+      await Utils.msSleep(30);
     })
     afterEach((): void => {
     })

@@ -26,6 +26,7 @@ import {
   Size,
   Level
 } from "@ohos/hypium-binary/src/main/indexStatic";
+import Utils from '../../Util.test.ets'
 
 class FieldInheritRt001Base {
   field: Object = 5
@@ -99,6 +100,7 @@ export default function TypeSafeFieldInheritanceRt(): void {
     beforeAll((): void => {
     })
     beforeEach(async (): Promise<void> => {
+      await Utils.msSleep(30);
     })
     afterEach((): void => {
     })

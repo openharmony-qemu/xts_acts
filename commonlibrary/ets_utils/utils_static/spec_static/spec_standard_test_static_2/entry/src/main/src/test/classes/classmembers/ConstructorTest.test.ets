@@ -26,17 +26,10 @@ import {
   Size,
   Level
 } from '@ohos/hypium-binary/src/main/indexStatic';
+import Utils from '../../Util.test.ets'
 import { A } from './file_A3.ets'
 import { B } from './file_B4.ets'
 import { B1 } from './file_B5.ets'
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
 
 export default function ConstructorTest():void {
   describe('ConstructorTest', () => {
@@ -49,7 +42,7 @@ export default function ConstructorTest():void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

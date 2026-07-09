@@ -26,6 +26,9 @@ import {
   Size,
   Level
 } from "@ohos/hypium-binary/src/main/indexStatic";
+import Utils from '../../Util.test.ets'
+import { I8, J, A17, B, C } from '../../Util.test.ets'
+
 
 let elem: Any = null
 let a: Any[] = [elem, elem]
@@ -125,13 +128,6 @@ let a55: FixedArray<number> = [1.0, 2.0]
 type TT = [int, string]
 let a56: TT = [42, "abc"]
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
 type my_type1 = Any[]
 type my_type2 = Array<Any>
 type my_type3 = undefined[]
@@ -191,11 +187,6 @@ type my_type48 = Array<undefined>
 type my_type49 = null[]
 type my_type50 = Array<null>
 type my_type51 = byte[]
-interface I8<T> {}
-interface J<T> {}
-class A17<T> implements I8<T> {}
-class B<T> extends A17<T> implements J<T> {}
-class C<T> {}
 
 let c: C<int>
 enum Rating1: double { A = 1.0, B = 1.5 }
@@ -216,7 +207,7 @@ export default function ExpressionsInstanceTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

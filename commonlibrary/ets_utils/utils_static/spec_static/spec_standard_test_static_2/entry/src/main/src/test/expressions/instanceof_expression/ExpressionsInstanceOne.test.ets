@@ -26,16 +26,11 @@ import {
   Size,
   Level
 } from "@ohos/hypium-binary/src/main/indexStatic";
+import Utils from '../../Util.test.ets'
+import { I8, J, A17, B, C } from '../../Util.test.ets'
 
 enum Color { Red, Green, Blue }
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
 type my_type52 = Array<byte>
 type my_type53 = short[]
 type my_type54 = Array<short>
@@ -80,11 +75,6 @@ type foo_type2 = (a: string) => string
 type my_type87 = foo_type2[]
 type my_type88 = Array<foo_type2>
 
-interface I8<T> {}
-interface J<T> {}
-class A17<T> implements I8<T> {}
-class B<T> extends A17<T> implements J<T> {}
-class C<T> {}
 class D<T> extends C<T> {}
 
 
@@ -111,7 +101,7 @@ export default function ExpressionsInstanceOneTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -452,7 +442,6 @@ export default function ExpressionsInstanceOneTest(): void {
       expect(v instanceof Array).assertTrue()
     });
 
-    // 娴嬭瘯鐢ㄤ緥 123-137 (generic_array_type_params_30.js 鍒?generic_classes_interfaces.js)
     /**
      * @tc.number    SUB_EXPRESSIONS_INSTANCE_ONE_2400
      * @tc.name      testExpressionsInstanceOne0024

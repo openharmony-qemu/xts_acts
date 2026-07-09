@@ -26,15 +26,8 @@ import {
   Size,
   Level
 } from "@ohos/hypium-binary/src/main/indexStatic";
+import Utils from '../../Util.test.ets'
 
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
 
 class A_F001 {
     field: long = 4
@@ -662,7 +655,7 @@ export default function FieldInitializationTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
