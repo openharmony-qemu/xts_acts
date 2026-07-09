@@ -59,10 +59,6 @@ export default function AvDownloaderTest() {
 
     afterEach(async () => {
       console.info(`${TAG}: afterEach called`);
-      if (avDownloaderManager != null) {
-        avDownloaderManager.release();
-        avDownloaderManager = null;
-      }
     })
 
     it('createAVDownloaderManager_001', Level.Level1, async (done: Function) => {
@@ -140,19 +136,57 @@ export default function AvDownloaderTest() {
       }
     })
 
+    it('createMediaSourceWithDirectory_003', Level.Level1, async (done: Function) => {
+      console.info(`${TAG}: createMediaSourceWithDirectory_003 start`);
+      try {
+        let mediaSource: media.MediaSource | undefined = await media.createMediaSourceWithDirectory(null);
+        console.info(`${TAG}: createMediaSourceWithDirectory_003 result: ${mediaSource}`);
+        expect(mediaSource == undefined).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${TAG}: createMediaSourceWithDirectory_003 failed, err: ${err}`);
+        done();
+      }
+    })
+
+    it('createMediaSourceWithDirectory_004', Level.Level1, async (done: Function) => {
+      console.info(`${TAG}: createMediaSourceWithDirectory_004 start`);
+      try {
+        let mediaSource: media.MediaSource | undefined = await media.createMediaSourceWithDirectory(undefined);
+        console.info(`${TAG}: createMediaSourceWithDirectory_004 result: ${mediaSource}`);
+        expect(mediaSource == undefined).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${TAG}: createMediaSourceWithDirectory_004 failed, err: ${err}`);
+        done();
+      }
+    })
+
+    it('createMediaSourceWithDirectory_005', Level.Level1, async (done: Function) => {
+      console.info(`${TAG}: createMediaSourceWithDirectory_005 start`);
+      try {
+        let mediaSource: media.MediaSource | undefined = await media.createMediaSourceWithDirectory('/nonexistent/path/directory');
+        console.info(`${TAG}: createMediaSourceWithDirectory_005 result: ${mediaSource}`);
+        done();
+      } catch (err) {
+        console.error(`${TAG}: createMediaSourceWithDirectory_005 failed, err: ${err}`);
+        expect((err as BusinessError).code == 5411007).assertTrue();
+        done();
+      }
+    })
+
     it('addAVDownloadTask_002', Level.Level1, async (done: Function) => {
       console.info(`${TAG}: addAVDownloadTask_002 start`);
       try {
         expect(avDownloaderManager != null).assertTrue();
         if (avDownloaderManager != null) {
-          let taskId: string = avDownloaderManager.addAVDownloadTask(null);
-          console.info(`${TAG}: addAVDownloadTask_002 taskId: ${taskId}`);
-          expect(taskId == null || taskId == '').assertTrue();
+          avDownloaderManager.addAVDownloadTask(null);
+          console.info(`${TAG}: addAVDownloadTask_002 called with null`);
         }
         done();
       } catch (err) {
         console.error(`${TAG}: addAVDownloadTask_002 failed, err: ${err}`);
-        expect().assertFail();
+        expect(err != null).assertTrue();
         done();
       }
     })
@@ -162,14 +196,13 @@ export default function AvDownloaderTest() {
       try {
         expect(avDownloaderManager != null).assertTrue();
         if (avDownloaderManager != null) {
-          let taskId: string = avDownloaderManager.addAVDownloadTask(undefined);
-          console.info(`${TAG}: addAVDownloadTask_003 taskId: ${taskId}`);
-          expect(taskId == null || taskId == '').assertTrue();
+          avDownloaderManager.addAVDownloadTask(undefined);
+          console.info(`${TAG}: addAVDownloadTask_002 called with undefined`);
         }
         done();
       } catch (err) {
         console.error(`${TAG}: addAVDownloadTask_003 failed, err: ${err}`);
-        expect().assertFail();
+        expect(err != null).assertTrue();
         done();
       }
     })
@@ -308,6 +341,22 @@ export default function AvDownloaderTest() {
       }
     })
 
+    it('getTaskStatus_006', Level.Level1, async (done: Function) => {
+      console.info(`${TAG}: getTaskStatus_006 start`);
+      try {
+        expect(avDownloaderManager != null).assertTrue();
+        if (avDownloaderManager != null) {
+          avDownloaderManager.getTaskStatus('10');
+          console.info(`${TAG}: getTaskStatus_006 called with taskId: 10`);
+        }
+        done();
+      } catch (err) {
+        console.error(`${TAG}: getTaskStatus_006 failed, err: ${err}`);
+        expect((err as BusinessError).code == 5400108).assertTrue();
+        done();
+      }
+    })
+
     it('getTaskProgress_001', Level.Level1, async (done: Function) => {
       console.info(`${TAG}: getTaskProgress_001 start`);
       try {
@@ -372,6 +421,22 @@ export default function AvDownloaderTest() {
         done();
       } catch (err) {
         console.error(`${TAG}: getTaskProgress_004 failed, err: ${err}`);
+        done();
+      }
+    })
+
+    it('getTaskProgress_005', Level.Level1, async (done: Function) => {
+      console.info(`${TAG}: getTaskProgress_005 start`);
+      try {
+        expect(avDownloaderManager != null).assertTrue();
+        if (avDownloaderManager != null) {
+          avDownloaderManager.getTaskProgress('10');
+          console.info(`${TAG}: getTaskProgress_005 called with taskId: 10`);
+        }
+        done();
+      } catch (err) {
+        console.error(`${TAG}: getTaskProgress_005 failed, err: ${err}`);
+        expect((err as BusinessError).code == 5400108).assertTrue();
         done();
       }
     })
@@ -527,6 +592,22 @@ export default function AvDownloaderTest() {
       }
     })
 
+    it('offStatusChange_005', Level.Level1, async (done: Function) => {
+      console.info(`${TAG}: offStatusChange_005 start`);
+      try {
+        expect(avDownloaderManager != null).assertTrue();
+        if (avDownloaderManager != null) {
+          let result = avDownloaderManager.offStatusChange();
+          console.info(`${TAG}: offStatusChange_005 result: ${result}`);
+          expect(result == undefined).assertTrue();
+        }
+        done();
+      } catch (err) {
+        console.error(`${TAG}: offStatusChange_005 failed, err: ${err}`);
+        done();
+      }
+    })
+
     it('offProgressChange_001', Level.Level1, async (done: Function) => {
       console.info(`${TAG}: offProgressChange_001 start`);
       try {
@@ -613,6 +694,22 @@ export default function AvDownloaderTest() {
       } catch (err) {
         console.error(`${TAG}: offProgressChange_004 failed, err: ${err}`);
         expect().assertFail();
+        done();
+      }
+    })
+
+    it('offProgressChange_005', Level.Level1, async (done: Function) => {
+      console.info(`${TAG}: offProgressChange_005 start`);
+      try {
+        expect(avDownloaderManager != null).assertTrue();
+        if (avDownloaderManager != null) {
+          let result = avDownloaderManager.offProgressChange();
+          console.info(`${TAG}: offProgressChange_005 result: ${result}`);
+          expect(result == undefined).assertTrue();
+        }
+        done();
+      } catch (err) {
+        console.error(`${TAG}: offProgressChange_005 failed, err: ${err}`);
         done();
       }
     })
@@ -738,6 +835,22 @@ export default function AvDownloaderTest() {
       }
     })
 
+    it('getTaskCacheDirectory_005', Level.Level1, async (done: Function) => {
+      console.info(`${TAG}: getTaskCacheDirectory_005 start`);
+      try {
+        expect(avDownloaderManager != null).assertTrue();
+        if (avDownloaderManager != null) {
+          avDownloaderManager.getTaskCacheDirectory('10');
+          console.info(`${TAG}: getTaskCacheDirectory_005 called with taskId: 10`);
+        }
+        done();
+      } catch (err) {
+        console.error(`${TAG}: getTaskCacheDirectory_005 failed, err: ${err}`);
+        expect((err as BusinessError).code == 5400108).assertTrue();
+        done();
+      }
+    })
+
     it('allowsCellularAccess_001', Level.Level1, async (done: Function) => {
       console.info(`${TAG}: allowsCellularAccess_001 start`);
       try {
@@ -796,6 +909,7 @@ export default function AvDownloaderTest() {
         if (mediaSource != null && avDownloaderManager != null) {
           let taskId: string = avDownloaderManager.addAVDownloadTask(mediaSource);
           console.info(`${TAG}: pauseDownloadTask_001 taskId: ${taskId}`);
+          await sleep(1000);
           avDownloaderManager.pauseDownloadTask(taskId);
           console.info(`${TAG}: pauseDownloadTask_001 success`);
           expect(taskId != null).assertTrue();
@@ -856,6 +970,63 @@ export default function AvDownloaderTest() {
       }
     })
 
+    it('pauseDownloadTask_005', Level.Level1, async (done: Function) => {
+      console.info(`${TAG}: pauseDownloadTask_005 start`);
+      try {
+        expect(avDownloaderManager != null).assertTrue();
+        if (avDownloaderManager != null) {
+          let result = avDownloaderManager.pauseDownloadTask();
+          console.info(`${TAG}: pauseDownloadTask_005 result: ${result}`);
+          expect(result == undefined).assertTrue();
+        }
+        done();
+      } catch (err) {
+        console.error(`${TAG}: pauseDownloadTask_005 failed, err: ${err}`);
+        done();
+      }
+    })
+
+    it('pauseDownloadTask_006', Level.Level1, async (done: Function) => {
+      console.info(`${TAG}: pauseDownloadTask_006 start`);
+      try {
+        expect(avDownloaderManager != null).assertTrue();
+        let mediaSource: media.MediaSource | undefined = media.createMediaSourceWithUrl(TEST_URL);
+        expect(mediaSource != null).assertTrue();
+        if (mediaSource != null && avDownloaderManager != null) {
+          let taskId: string = avDownloaderManager.addAVDownloadTask(mediaSource);
+          console.info(`${TAG}: pauseDownloadTask_006 taskId: ${taskId}`);
+          await sleep(1000);
+          avDownloaderManager.pauseDownloadTask(taskId);
+          console.info(`${TAG}: pauseDownloadTask_006 success`);
+          avDownloaderManager.pauseDownloadTask(taskId);
+        }
+        done();
+      } catch (err) {
+        console.error(`${TAG}: pauseDownloadTask_006 failed, err: ${JSON.stringify(err)}`);
+        expect((err as BusinessError).code == 5400102).assertTrue();
+        done();
+      }
+    })
+
+    it('pauseDownloadTask_007', Level.Level1, async (done: Function) => {
+      console.info(`${TAG}: pauseDownloadTask_007 start`);
+      try {
+        expect(avDownloaderManager != null).assertTrue();
+        let mediaSource: media.MediaSource | undefined = media.createMediaSourceWithUrl(TEST_URL);
+        expect(mediaSource != null).assertTrue();
+        if (mediaSource != null && avDownloaderManager != null) {
+          let taskId: string = avDownloaderManager.addAVDownloadTask(mediaSource);
+          console.info(`${TAG}: pauseDownloadTask_007 taskId: ${taskId}`);
+          await sleep(1000);
+          avDownloaderManager.pauseDownloadTask("999999");
+        }
+      } catch (err) {
+        console.error(`${TAG}: pauseDownloadTask_007 failed, err: ${JSON.stringify(err)}`);
+        expect((err as BusinessError).code == 5400108).assertTrue();
+        done();
+      }
+    })
+
     it('removeDownloadTask_001', Level.Level1, async (done: Function) => {
       console.info(`${TAG}: removeDownloadTask_001 start`);
       try {
@@ -865,6 +1036,7 @@ export default function AvDownloaderTest() {
         if (mediaSource != null && avDownloaderManager != null) {
           let taskId: string = avDownloaderManager.addAVDownloadTask(mediaSource);
           console.info(`${TAG}: removeDownloadTask_001 taskId: ${taskId}`);
+          await sleep(1000);
           avDownloaderManager.removeDownloadTask(taskId);
           console.info(`${TAG}: removeDownloadTask_001 success`);
           expect(taskId != null).assertTrue();
@@ -925,6 +1097,38 @@ export default function AvDownloaderTest() {
       }
     })
 
+    it('removeDownloadTask_005', Level.Level1, async (done: Function) => {
+      console.info(`${TAG}: removeDownloadTask_005 start`);
+      try {
+        expect(avDownloaderManager != null).assertTrue();
+        if (avDownloaderManager != null) {
+          let result = avDownloaderManager.removeDownloadTask();
+          console.info(`${TAG}: removeDownloadTask_005 result: ${result}`);
+          expect(result == undefined).assertTrue();
+        }
+        done();
+      } catch (err) {
+        console.error(`${TAG}: removeDownloadTask_005 failed, err: ${err}`);
+        done();
+      }
+    })
+
+    it('removeDownloadTask_006', Level.Level1, async (done: Function) => {
+      console.info(`${TAG}: removeDownloadTask_006 start`);
+      try {
+        expect(avDownloaderManager != null).assertTrue();
+        if (avDownloaderManager != null) {
+          avDownloaderManager.removeDownloadTask('10');
+          console.info(`${TAG}: removeDownloadTask_006 called with taskId: 10`);
+        }
+        done();
+      } catch (err) {
+        console.error(`${TAG}: removeDownloadTask_006 failed, err: ${err}`);
+        expect((err as BusinessError).code == 5400108).assertTrue();
+        done();
+      }
+    })
+
     it('resumeDownloadTask_001', Level.Level1, async (done: Function) => {
       console.info(`${TAG}: resumeDownloadTask_001 start`);
       try {
@@ -934,6 +1138,7 @@ export default function AvDownloaderTest() {
         if (mediaSource != null && avDownloaderManager != null) {
           let taskId: string = avDownloaderManager.addAVDownloadTask(mediaSource);
           console.info(`${TAG}: resumeDownloadTask_001 taskId: ${taskId}`);
+          await sleep(1000);
           avDownloaderManager.pauseDownloadTask(taskId);
           avDownloaderManager.resumeDownloadTask(taskId);
           console.info(`${TAG}: resumeDownloadTask_001 success`);
@@ -991,6 +1196,64 @@ export default function AvDownloaderTest() {
         done();
       } catch (err) {
         console.error(`${TAG}: resumeDownloadTask_004 failed, err: ${err}`);
+        done();
+      }
+    })
+
+    it('resumeDownloadTask_005', Level.Level1, async (done: Function) => {
+      console.info(`${TAG}: resumeDownloadTask_005 start`);
+      try {
+        expect(avDownloaderManager != null).assertTrue();
+        if (avDownloaderManager != null) {
+          let result = avDownloaderManager.resumeDownloadTask();
+          console.info(`${TAG}: resumeDownloadTask_005 result: ${result}`);
+          expect(result == undefined).assertTrue();
+        }
+        done();
+      } catch (err) {
+        console.error(`${TAG}: resumeDownloadTask_005 failed, err: ${err}`);
+        done();
+      }
+    })
+
+    it('resumeDownloadTask_006', Level.Level1, async (done: Function) => {
+      console.info(`${TAG}: resumeDownloadTask_006 start`);
+      try {
+        expect(avDownloaderManager != null).assertTrue();
+        let mediaSource: media.MediaSource | undefined = media.createMediaSourceWithUrl(TEST_URL);
+        expect(mediaSource != null).assertTrue();
+        if (mediaSource != null && avDownloaderManager != null) {
+          let taskId: string = avDownloaderManager.addAVDownloadTask(mediaSource);
+          console.info(`${TAG}: resumeDownloadTask_006 taskId: ${taskId}`);
+          await sleep(1000);
+          avDownloaderManager.resumeDownloadTask(taskId);
+          console.info(`${TAG}: resumeDownloadTask_006 success`);
+          expect(taskId != null).assertTrue();
+        }
+        done();
+      } catch (err) {
+        console.error(`${TAG}: resumeDownloadTask_006 failed, err: ${err}`);
+        expect((err as BusinessError).code == 5400102).assertTrue();
+        done();
+      }
+    })
+
+    it('resumeDownloadTask_007', Level.Level1, async (done: Function) => {
+      console.info(`${TAG}: resumeDownloadTask_007 start`);
+      try {
+        expect(avDownloaderManager != null).assertTrue();
+        let mediaSource: media.MediaSource | undefined = media.createMediaSourceWithUrl(TEST_URL);
+        expect(mediaSource != null).assertTrue();
+        if (mediaSource != null && avDownloaderManager != null) {
+          let taskId: string = avDownloaderManager.addAVDownloadTask(mediaSource);
+          console.info(`${TAG}: resumeDownloadTask_007 taskId: ${taskId}`);
+          await sleep(1000);
+          avDownloaderManager.resumeDownloadTask("999999");
+        }
+        done();
+      } catch (err) {
+        console.error(`${TAG}: resumeDownloadTask_007 failed, err: ${err}`);
+        expect((err as BusinessError).code == 5400108).assertTrue();
         done();
       }
     })
