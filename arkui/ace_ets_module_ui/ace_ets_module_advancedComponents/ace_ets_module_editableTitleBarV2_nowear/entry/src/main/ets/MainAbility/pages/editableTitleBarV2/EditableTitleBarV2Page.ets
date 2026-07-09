@@ -72,7 +72,7 @@ struct EditableTitleBarV2Page {
 
   @Local leftIconOptions:EditableLeftIconV2Options = {
     iconType: EditableLeftIconTypeV2.Cancel,
-    defaultFocus: false,   // 0709
+    defaultFocus: false,
     onAction: () => {
       console.info('Left icon clicked');
     }
@@ -122,7 +122,7 @@ struct EditableTitleBarV2Page {
             title: 'With Left Icon',
             leftIcon: new EditableLeftIconV2({
               iconType: this.leftIconType,
-              defaultFocus: true,   // 0709
+              defaultFocus: true,
               onAction: () => {
                 console.info('Left icon clicked');
               }
