@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,7 +26,7 @@ import {
   Size,
   Level
 } from "@ohos/hypium-binary/src/main/indexStatic";
-import Utils from '../../Util.test.ets'
+import Utils from '../../Util.test'
 
 let lazy_operator_a: Any
 function lazy_operator_non_eval(): int {

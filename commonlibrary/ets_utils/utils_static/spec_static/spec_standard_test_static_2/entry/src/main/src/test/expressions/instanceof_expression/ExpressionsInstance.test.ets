@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,8 +26,8 @@ import {
   Size,
   Level
 } from "@ohos/hypium-binary/src/main/indexStatic";
-import Utils from '../../Util.test.ets'
-import { I8, J, A17, B, C } from '../../Util.test.ets'
+import Utils from '../../Util.test'
+import { I8, J, A17, B, C } from '../../Util.test'
 
 
 let elem: Any = null
