@@ -428,7 +428,7 @@ export default function FieldInitializationElevenTest(): void {
           ns.A_F1120.field = 7.3
       expect(ns.A_F1120.field instanceof double).assertTrue()
       expect(ns.A_F1120.field).assertEqual(7.3)
-          ns.A_F1120.field = 0
+          ns.A_F1120.field = 0.0
       expect(ns.A_F1120.field instanceof double).assertTrue()
       expect(ns.A_F1120.field).assertEqual(0)
     })
