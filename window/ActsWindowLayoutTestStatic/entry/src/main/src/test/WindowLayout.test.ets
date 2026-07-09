@@ -5080,6 +5080,39 @@ export default function WindowLayoutTest() {
                 }
             })
 
+        /**
+     * @tc.name ReadonlyEnvKeyEnum_0100
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_READONLYENUM_0100
+     * @tc.desc ReadonlyEnvKeyEnum_0100
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('ReadonlyEnvKeyEnum_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let caseName = 'ReadonlyEnvKeyEnum_0100 ';
+      console.info(`${caseName} begin`);
+      try {
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_AVOID_AREA ${JSON.stringify(ReadonlyEnvKey.WINDOW_AVOID_AREA)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_AVOID_AREA_PX ${JSON.stringify(ReadonlyEnvKey.WINDOW_AVOID_AREA_PX)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_SIZE ${JSON.stringify(ReadonlyEnvKey.WINDOW_SIZE)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_SIZE_PX ${JSON.stringify(ReadonlyEnvKey.WINDOW_SIZE_PX)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_IS_FOCUSED ${JSON.stringify(ReadonlyEnvKey.WINDOW_IS_FOCUSED)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_AVOID_AREA ${JSON.stringify(ReadonlyEnvKey.WINDOW_IS_HIGHTLIGHTED)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_AVOID_AREA ${JSON.stringify(ReadonlyEnvKey.DISPLAY_ID)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_AVOID_AREA ${JSON.stringify(ReadonlyEnvKey.WINDOW_SYSTEM_DENSITY)}`)
+        expect(ReadonlyEnvKey.WINDOW_AVOID_AREA != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_AVOID_AREA_PX != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_SIZE != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_SIZE_PX != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_IS_FOCUSED != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_IS_HIGHTLIGHTED != null).assertTrue()
+        expect(ReadonlyEnvKey.DISPLAY_ID != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_SYSTEM_DENSITY != null).assertTrue()
+      } catch (exception) {
+        console.error(`${caseName} Failed. Cause code: ${exception.code}, message: ${exception.message}`);
+      }
+    });
+
 
     })
 
