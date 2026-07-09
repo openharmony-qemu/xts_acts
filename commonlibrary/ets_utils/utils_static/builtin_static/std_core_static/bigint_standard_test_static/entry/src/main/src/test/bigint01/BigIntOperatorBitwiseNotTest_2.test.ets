@@ -15,7 +15,7 @@
  */
 import { describe, it, expect,afterEach,afterAll, afterEach, beforeAll, beforeEach } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-
+import Utils from '../Util.test';
 function getBigInt(): BigInt {
   return BigInt(100);
 }

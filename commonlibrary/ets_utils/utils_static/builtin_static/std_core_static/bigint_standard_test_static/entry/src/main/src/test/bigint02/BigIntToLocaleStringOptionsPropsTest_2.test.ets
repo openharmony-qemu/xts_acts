@@ -15,7 +15,7 @@
  */
 import { describe, it, expect,afterAll, afterEach, beforeAll, beforeEach  } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-
+import Utils from '../Util.test';
 export default function BigIntToLocaleStringOptionsPropsTest_2(): void {
   describe('BigIntToLocaleStringOptionsPropsTest_2', () => {
     beforeAll((): void => {

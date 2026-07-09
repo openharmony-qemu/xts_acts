@@ -15,7 +15,7 @@
  */
 import { describe, it, expect ,afterAll, afterEach, beforeAll, beforeEach } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-
+import Utils from '../Util.test';
 export default function BigIntToString3Test_2(): void {
   describe('BigIntToString3Test_2', () => {
     beforeAll((): void => {

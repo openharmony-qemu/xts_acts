@@ -15,7 +15,7 @@
  */
 import { describe, it, expect,beforeAll,beforeEach,afterEach,afterAll } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-
+import Utils from '../Util.test';
 export default function BigIntDoubleValueTest_2(): void {
   describe('BigIntDoubleValueTest_2', () => {
     beforeAll((): void => {
