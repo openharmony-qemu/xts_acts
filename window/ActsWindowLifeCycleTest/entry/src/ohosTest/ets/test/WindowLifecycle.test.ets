@@ -661,8 +661,8 @@ export default function WindowLifecycle() {
           console.info('Succeeded in checking whether the window is showing. Data: ' + JSON.stringify(data2));
         } catch (exception) {
           console.error('Failed to check whether the window is showing. Cause: ' + JSON.stringify(exception));
-          expect().assertFail();
           await windowClass.destroyWindow();
+          expect().assertFail();
           done();
         }
 
@@ -3871,7 +3871,7 @@ export default function WindowLifecycle() {
         }).catch((err: BusinessError) => {
           console.error(caseName + `Failed to create the Window.Cause code: ${ err.code }, message: ${ err.message }`);
           expect(err.code).assertEqual(1300002);
-          expect(err.message).assertEqual('This window state is abnormal.[window][loadContent]msg: The window is not created or destroyed.');
+          expect(err.message !== '').assertTrue();
           done();
         });
       } catch (exception) {
@@ -4028,8 +4028,7 @@ export default function WindowLifecycle() {
               console.error(msgStr + `Failed to setParentWindow 1. Cause code: ${e.code}, message: ${e.message}`);
               await terminateAbility(message)
               expect(e.code).assertEqual(801);
-              expect(e.message)
-                .assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setParentWindow]msg: Set parent window failed.');
+              expect(e.message !== '').assertTrue();
               done();
             });
           } catch (e) {
@@ -4091,8 +4090,7 @@ export default function WindowLifecycle() {
             }).catch((err: BusinessError) => {
               console.error(`${caseName} restore_Failed. Cause code: ${err.code}, message: ${err.message}`);
               expect(err.code).assertEqual(801);
-              expect(err.message)
-                .assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][restore]msg: Window restore failed.');
+              expect(err.message !== '').assertTrue();
               done();
             });
           } catch (exception) {

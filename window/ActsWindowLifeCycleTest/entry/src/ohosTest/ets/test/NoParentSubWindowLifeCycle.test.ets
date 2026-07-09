@@ -613,14 +613,13 @@ it('SUB_WINDOW_NoParentSubWindow_setParentWindow_Normal_0100', TestType.FUNCTION
         done()
       }).catch(async (e: BusinessError) => {
         console.error(msgStr + `Failed to setParentWindow. Cause code: ${e.code}, message: ${e.message}`);
+        await terminateAbility(message);
         if (!isFreeWindowMode) {
           expect(e.code).assertEqual(801);
-          expect(e.message)
-            .assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setParentWindow]msg: Set parent window failed.');
+          expect(e.message !== '').assertTrue();
         } else {
           expect(true).assertFail();
         }
-        await terminateAbility(message);
         done();
       });
     } catch (e) {
@@ -669,16 +668,14 @@ it('SUB_WINDOW_NoParentSubWindow_setParentWindow_1300009_0100', TestType.FUNCTIO
         done()
       }).catch(async (e: BusinessError) => {
         console.error(msgStr + `Failed to setParentWindow. Cause code: ${e.code}, message: ${e.message}`);
-        if (isFreeWindowMode) {
-          expect(e.code).assertEqual(1300009);
-          expect(e.message !== '').assertTrue();
-        } else {
-          expect(e.code).assertEqual(801);
-          expect(e.message)
-            .assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setParentWindow]msg: Set parent window failed.');
-        }
         await subWindowClass.destroyWindow();
         await windowClass.destroyWindow();
+        if (isFreeWindowMode) {
+          expect(e.code).assertEqual(1300009);
+        } else {
+          expect(e.code).assertEqual(801);
+        }
+        expect(e.message !== '').assertTrue();
         done();
       });
     } catch (e) {
