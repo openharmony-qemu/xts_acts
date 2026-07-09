@@ -355,13 +355,7 @@ type UT = string[] | string;
 
 type RT = Record<number, string>;
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+
 export default function StatementsTest(): void {
 
   describe("StatementsTest", () => {
