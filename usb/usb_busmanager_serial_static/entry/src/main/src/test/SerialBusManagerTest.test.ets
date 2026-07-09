@@ -101,8 +101,8 @@ export default function SerialBusManagerTest(): void {
             gPortInfo1 = portList[1].portInfo;
           }
           console.info(TAG, 'beforeAll portInfo: ', JSON.stringify(gPortInfo));
-          done()
         }
+        done()
       } catch (error) {
         console.info(TAG, 'beforeAll error: ', JSON.stringify(error));
         done()
