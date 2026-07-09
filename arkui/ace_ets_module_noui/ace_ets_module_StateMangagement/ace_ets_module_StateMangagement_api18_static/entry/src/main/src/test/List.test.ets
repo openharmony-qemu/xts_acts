@@ -79,6 +79,8 @@ import ExtendableToggleBuiltInTest from './ExtendBuiltIn/ExtendableToggleBuiltIn
 export default function testsuite(): void {
   ArrayLikeStringTest(); 
   GlobalReusePool004Test();
+  ExtendableListBuiltInTest();
+  ExtendableListItemBuiltInTest();
   //RepeatCloseReuseTest0110(); 
   //RepeatLazyTest0150();  
   //repeatReusableFalse(); 
@@ -130,8 +132,6 @@ export default function testsuite(): void {
   ExtendableGridBuiltInTest();
   ExtendableGridItemBuiltInTest();
   ExtendableImageBuiltInTest();
-  ExtendableListBuiltInTest();
-  ExtendableListItemBuiltInTest();
   ExtendableRelativeContainerBuiltInTest();
   ExtendableRowBuiltInTest();
   ExtendableStackBuiltInTest();
