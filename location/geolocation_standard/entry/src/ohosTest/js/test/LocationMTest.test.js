@@ -3481,48 +3481,59 @@ export default function geolocationTest_geo7() {
      * @tc.level  LEVEL1
      */
     it('SUB_HSS_LOCATIONSYSTEM_GEOFENCE_OFF_3301100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
-        var isAcessToken = canIUse("SystemCapability.Location.Location.Geofence");
-        console.info("SUB_HSS_LOCATIONSYSTEM_GEOFENCE_OFF_3301100 : " + isAcessToken);
+        var isAcessToken = canIUse('SystemCapability.Location.Location.Geofence');
+        console.info('SUB_HSS_LOCATIONSYSTEM_GEOFENCE_OFF_3301100 : ' + isAcessToken);
         if (!isAcessToken) {
-            console.info("The device does not support geofence");
+            console.info('The device does not support geofence');
             expect(isAcessToken).assertFalse();
             done();
-        } else {
-            try {
-                geolocationm.disableLocation();
-            } catch (error) {
-                console.info("[lbs_js] disableLocation error." + JSON.stringify(error));
-            }
-            await sleep(1000);
-            
-            let geofence = {"latitude": 31.12, "longitude": 121.11, "radius": 100, "expiration": 10000};
-            let geofenceRequest = {"scenario": request_scenario_NAVIGATION, "geofence": geofence};
-            
-            let wantAgentInfo = {
-                wants: [
-                    {
-                        bundleName: 'ohos.acts.location.geolocation.function',
-                        abilityName: 'EntryAbility',
-                        action: "action_geofence_test"
-                    }
-                ],
-                actionType: wantAgent.OperationType.START_ABILITY,
-                requestCode: 0,
-                wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
-            };
-            
-            try {
-                let wantAgentObj = await wantAgent.getWantAgent(wantAgentInfo);
-                geolocationm.off('gnssFenceStatusChange', geofenceRequest, wantAgentObj);
-                console.info('[lbs_js] gnssFenceStatusChange off should return 3301100');
-                expect(true).assertFalse();
-            } catch (error) {
-                console.info("[lbs_js] SUB_HSS_LOCATIONSYSTEM_GEOFENCE_OFF_3301100 off try err." + JSON.stringify(error));
-                expect(error.code).assertEqual(3301100);
-                console.info('[lbs_js] gnssFenceStatusChange off return 3301100 success');
-            }
-            done();
+            return;
         }
+        try {
+            await geolocationm.disableLocation();
+        } catch (error) {
+            console.info('[lbs_js] disableLocation error.' + JSON.stringify(error));
+            expect().assertFail();
+            done();
+            return;
+        }
+        await sleep(1000);
+
+        let geofence = {
+            'latitude': 31.12, 
+            'longitude': 121.11, 
+            'radius': 100, 
+            'expiration': 10000
+        };
+        let geofenceRequest = {
+            'scenario': request_scenario_NAVIGATION, 
+            'geofence': geofence
+        };
+
+        let wantAgentInfo = {
+            wants: [
+                {
+                    bundleName: 'ohos.acts.location.geolocation.function',
+                    abilityName: 'EntryAbility',
+                    action: 'action_geofence_test'
+                }
+            ],
+            actionType: wantAgent.OperationType.START_ABILITY,
+            requestCode: 0,
+            wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+        };
+
+        try {
+            let wantAgentObj = await wantAgent.getWantAgent(wantAgentInfo);
+            geolocationm.off('gnssFenceStatusChange', geofenceRequest, wantAgentObj);
+            console.info('[lbs_js] gnssFenceStatusChange off should return 3301100');
+            expect(true).assertFalse();
+        } catch (error) {
+            console.info('[lbs_js] SUB_HSS_LOCATIONSYSTEM_GEOFENCE_OFF_3301100 off try err.' + JSON.stringify(error));
+            expect(error.code).assertEqual(3301100);
+            console.info('[lbs_js] gnssFenceStatusChange off return 3301100 success');
+        }
+        done();
     })
 
     /**
@@ -3531,35 +3542,51 @@ export default function geolocationTest_geo7() {
      * @tc.desc   When the location switch is disabled,getCurrentLocation will return 3301100.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  Level 1
+     * @tc.level  LEVEL1
      */
     it('SUB_HSS_LocationSystem_LocSwitch_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        var isAcessToken = canIUse('SystemCapability.Location.Location.Core');
+        console.info('SUB_HSS_LocationSystem_LocSwitch_1000: ' + isAcessToken);
+        if (!isAcessToken) {
+            console.info('The device does not support location');
+            expect(isAcessToken).assertFalse();
+            done();
+            return;
+        }
         try {
-            geolocationm.disableLocation();
+            await geolocationm.disableLocation();
         } catch (error) {
-            console.info("[lbs_js] disableLocation error." + JSON.stringify(error));
+            console.info('[lbs_js] disableLocation error.' + JSON.stringify(error));
+            expect().assertFail();
+            done();
+            return;
         }
         await sleep(1000);
-        
-        let currentLocationRequest = { "priority": request_priority_FIRST_FIX, "scenario": request_scenario_NAVIGATION, "timeoutMs": 1000, "maxAccuracy": 10 };
+
+        let currentLocationRequest = { 
+            'priority': request_priority_FIRST_FIX, 
+            'scenario': request_scenario_NAVIGATION, 
+            'timeoutMs': 1000, 
+            'maxAccuracy': 10 
+        };
         try {
             geolocationm.getCurrentLocation(currentLocationRequest, (err, result) => {
                 if (err) {
-                    console.info("[lbs_js] getCurrentLocation callback err:  " + JSON.stringify(err));
+                    console.info('[lbs_js] getCurrentLocation callback err:  ' + JSON.stringify(err));
                     expect(err.code).assertEqual(3301100);
                     console.info('[lbs_js] getCurrentLocation callback return 3301100 success');
                     done();
                 } else {
-                    console.info("[lbs_js] getCurrentLocation callback result:" + JSON.stringify(result));
+                    console.info('[lbs_js] getCurrentLocation callback result:' + JSON.stringify(result));
                     expect(true).assertFalse();
                     done();
                 }
             });
         } catch (error) {
-            console.info("[lbs_js] getCurrentLocation callback try err." + JSON.stringify(error));
+            console.info('[lbs_js] getCurrentLocation callback try err.' + JSON.stringify(error));
             expect(error.code).assertEqual(3301100);
+            done();
         }
-        done();
     })
 
     /**
@@ -3568,29 +3595,41 @@ export default function geolocationTest_geo7() {
      * @tc.desc   When the location switch is disabled,getCurrentLocation promise will return 3301100.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  Level 1
+     * @tc.level  LEVEl1
      */
     it('SUB_HSS_LocationSystem_LocSwitch_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        var isAcessToken = canIUse('SystemCapability.Location.Location.Core');
+        console.info('SUB_HSS_LocationSystem_LocSwitch_1100: ' + isAcessToken);
+        if (!isAcessToken) {
+            console.info('The device does not support location');
+            expect(isAcessToken).assertFalse();
+            done();
+            return;
+        }
         try {
-            geolocationm.disableLocation();
+            await geolocationm.disableLocation();
         } catch (error) {
-            console.info("[lbs_js] disableLocation error." + JSON.stringify(error));
+            console.info('[lbs_js] disableLocation error.' + JSON.stringify(error));
+            expect().assertFail();
+            done();
+            return;
         }
         await sleep(1000);
-        
-        let currentLocationRequest = { "priority": request_priority_FIRST_FIX, "scenario": request_scenario_NAVIGATION, "timeoutMs": 1000, "maxAccuracy": 10 };
+
+        let currentLocationRequest = { 
+            'priority': request_priority_FIRST_FIX, 
+            'scenario': request_scenario_NAVIGATION, 
+            'timeoutMs': 1000, 
+            'maxAccuracy': 10 
+        };
         try {
-            await geolocationm.getCurrentLocation(currentLocationRequest).then((result) => {
-                console.info('[lbs_js] getCurrentLocation promise result ' + JSON.stringify(result));
-                expect(true).assertFalse();
-            }).catch(error => {
-                console.info('[lbs_js] getCurrentLocation promise err:' + JSON.stringify(error));
-                expect(error.code).assertEqual(3301100);
-                console.info('[lbs_js] getCurrentLocation promise return 3301100 success');
-            })
+            let result = await geolocationm.getCurrentLocation(currentLocationRequest);
+            console.info('[lbs_js] getCurrentLocation promise result ' + JSON.stringify(result));
+            expect(true).assertFalse();
         } catch (error) {
-            console.info("[lbs_js] getCurrentLocation promise try err." + JSON.stringify(error));
+            console.info('[lbs_js] getCurrentLocation promise err:' + JSON.stringify(error));
             expect(error.code).assertEqual(3301100);
+            console.info('[lbs_js] getCurrentLocation promise return 3301100 success');
         }
         done();
     })
@@ -3601,34 +3640,45 @@ export default function geolocationTest_geo7() {
      * @tc.desc   When the location switch is disabled,getCurrentLocation with default params will return 3301100.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  Level 1
+     * @tc.level  LEVEL1
      */
     it('SUB_HSS_LocationSystem_LocSwitch_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        var isAcessToken = canIUse('SystemCapability.Location.Location.Core');
+        console.info('SUB_HSS_LocationSystem_LocSwitch_1200: ' + isAcessToken);
+        if (!isAcessToken) {
+            console.info('The device does not support location');
+            expect(isAcessToken).assertFalse();
+            done();
+            return;
+        }
         try {
-            geolocationm.disableLocation();
+            await geolocationm.disableLocation();
         } catch (error) {
-            console.info("[lbs_js] disableLocation error." + JSON.stringify(error));
+            console.info('[lbs_js] disableLocation error.' + JSON.stringify(error));
+            expect().assertFail();
+            done();
+            return;
         }
         await sleep(1000);
-        
+
         try {
             geolocationm.getCurrentLocation((err, result) => {
                 if (err) {
-                    console.info("[lbs_js] getCurrentLocation default callback err:  " + JSON.stringify(err));
+                    console.info('[lbs_js] getCurrentLocation default callback err:  ' + JSON.stringify(err));
                     expect(err.code).assertEqual(3301100);
                     console.info('[lbs_js] getCurrentLocation default callback return 3301100 success');
                     done();
                 } else {
-                    console.info("[lbs_js] getCurrentLocation default callback result:" + JSON.stringify(result));
+                    console.info('[lbs_js] getCurrentLocation default callback result:' + JSON.stringify(result));
                     expect(true).assertFalse();
                     done();
                 }
             });
         } catch (error) {
-            console.info("[lbs_js] getCurrentLocation default callback try err." + JSON.stringify(error));
+            console.info('[lbs_js] getCurrentLocation default callback try err.' + JSON.stringify(error));
             expect(error.code).assertEqual(3301100);
+            done();
         }
-        done();
     })
 
     /**
@@ -3637,28 +3687,35 @@ export default function geolocationTest_geo7() {
      * @tc.desc   When the location switch is disabled,getCurrentLocation promise with default params will return 3301100.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  Level 1
+     * @tc.level  LEVEL1
      */
     it('SUB_HSS_LocationSystem_LocSwitch_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        var isAcessToken = canIUse('SystemCapability.Location.Location.Core');
+        console.info('SUB_HSS_LocationSystem_LocSwitch_1300: ' + isAcessToken);
+        if (!isAcessToken) {
+            console.info('The device does not support location');
+            expect(isAcessToken).assertFalse();
+            done();
+            return;
+        }
         try {
-            geolocationm.disableLocation();
+            await geolocationm.disableLocation();
         } catch (error) {
-            console.info("[lbs_js] disableLocation error." + JSON.stringify(error));
+            console.info('[lbs_js] disableLocation error.' + JSON.stringify(error));
+            expect().assertFail();
+            done();
+            return;
         }
         await sleep(1000);
-        
+
         try {
-            await geolocationm.getCurrentLocation().then((result) => {
-                console.info('[lbs_js] getCurrentLocation default promise result ' + JSON.stringify(result));
-                expect(true).assertFalse();
-            }).catch(error => {
-                console.info('[lbs_js] getCurrentLocation default promise err:' + JSON.stringify(error));
-                expect(error.code).assertEqual(3301100);
-                console.info('[lbs_js] getCurrentLocation default promise return 3301100 success');
-            })
+            let result = await geolocationm.getCurrentLocation();
+            console.info('[lbs_js] getCurrentLocation default promise result ' + JSON.stringify(result));
+            expect(true).assertFalse();
         } catch (error) {
-            console.info("[lbs_js] getCurrentLocation default promise try err." + JSON.stringify(error));
+            console.info('[lbs_js] getCurrentLocation default promise err:' + JSON.stringify(error));
             expect(error.code).assertEqual(3301100);
+            console.info('[lbs_js] getCurrentLocation default promise return 3301100 success');
         }
         done();
     })
