@@ -1607,6 +1607,7 @@ export default function windowFocusTest() {
             console.info(`${caseName} subWindowClass2 isFocused: ${subWindowClass2.isFocused()}`)
             expect(subWindowClass2.isFocused()).assertEqual(true);
             await subWindowClass2.destroyWindow();
+            await sleep(500);
             console.info(`${caseName} after subWindowClass2.destroyWindow(), subWindowClass1 isFocused: ${subWindowClass1.isFocused()}`)
             expect(subWindowClass1.isFocused()).assertEqual(true);
             await subWindowClass1.destroyWindow();
