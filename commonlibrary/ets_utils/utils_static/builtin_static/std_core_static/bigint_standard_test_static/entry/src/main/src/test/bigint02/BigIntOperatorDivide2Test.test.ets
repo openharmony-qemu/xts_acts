@@ -15,6 +15,7 @@
  */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import Utils from '../Util.test';
 
 export default function BigIntOperatorDivide2Test(): void {
   describe('testBigIntOperatorDivide2Test', (): void => {

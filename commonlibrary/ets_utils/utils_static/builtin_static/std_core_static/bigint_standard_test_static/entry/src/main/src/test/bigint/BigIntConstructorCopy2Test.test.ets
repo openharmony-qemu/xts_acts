@@ -15,6 +15,7 @@
  */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import Utils from '../Util.test';
 
 function assertCopyPreserves(source: BigInt): void {
   expect(BigInt(source).equals(source)).assertTrue();

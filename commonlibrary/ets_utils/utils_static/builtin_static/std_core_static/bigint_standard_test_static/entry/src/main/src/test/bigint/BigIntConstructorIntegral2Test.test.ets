@@ -15,6 +15,7 @@
  */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import Utils from '../Util.test';
 
 export default function BigIntConstructorIntegral2Test(): void {
   describe('testBigIntConstructorIntegral2Test', (): void => {
