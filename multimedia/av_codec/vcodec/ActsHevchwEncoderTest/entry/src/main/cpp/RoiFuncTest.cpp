@@ -708,5 +708,31 @@ int VIDEO_HW_ENCODE_ROI_API_030()
     return 0;
 }
 
+int VIDEO_HW_ENCODE_ROI_API_031()
+{
+    uint32_t roiCount = 0;
+    const char *roiString = "";
+    OH_AVErrCode ret = OH_VideoMetadata_GetRoiCount(roiString, &roiCount);
+    EXPECT_EQ(AV_ERR_OK, ret);
+    return 0;
+}
+
+int VIDEO_HW_ENCODE_ROI_API_032()
+{
+    uint32_t roiCount = 0;
+    int32_t capacity = 6;
+    const char *roiString = "";
+    OH_AVFormat **roiFormats = (OH_AVFormat **)calloc(capacity, sizeof(OH_AVFormat *));
+    OH_AVErrCode ret = OH_VideoMetadata_ParseRoiString(roiString, roiFormats, capacity, &roiCount);
+    EXPECT_EQ(AV_ERR_OK, ret);
+    for (int32_t i = 0; i < capacity && i < roiCount; i++) {
+        if (roiFormats[i]) {
+            OH_AVFormat_Destroy(roiFormats[i]);
+        }
+    }
+    free(roiFormats);
+    return 0;
+}
+
 } // namespace Media
 } // namespace OHOS

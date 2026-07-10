@@ -30,7 +30,7 @@ static constexpr int RESULT_ERROR = -1;
 static constexpr size_t BFRAME_FUNC_TEST_COUNT = 6;
 static constexpr size_t POST_SQR_FUNC_TEST_COUNT = 9;
 static constexpr size_t PTS_API_TEST_COUNT = 6;
-static constexpr size_t ROI_FUNC_TEST_COUNT = 30;
+static constexpr size_t ROI_FUNC_TEST_COUNT = 32;
 static constexpr size_t SQR_FUNC_TEST_COUNT = 14;
 static constexpr size_t PREPARE_FUNC_COUNT = 4;
 
@@ -197,7 +197,8 @@ static const std::array<TestHandler, ROI_FUNC_TEST_COUNT> g_roiFunc_test_Handler
     VIDEO_HW_ENCODE_ROI_API_023, VIDEO_HW_ENCODE_ROI_API_024,
     VIDEO_HW_ENCODE_ROI_API_025, VIDEO_HW_ENCODE_ROI_API_026,
     VIDEO_HW_ENCODE_ROI_API_027, VIDEO_HW_ENCODE_ROI_API_028,
-    VIDEO_HW_ENCODE_ROI_API_029, VIDEO_HW_ENCODE_ROI_API_030
+    VIDEO_HW_ENCODE_ROI_API_029, VIDEO_HW_ENCODE_ROI_API_030,
+    VIDEO_HW_ENCODE_ROI_API_031, VIDEO_HW_ENCODE_ROI_API_032
 };
 
 static const std::array<TestHandler, SQR_FUNC_TEST_COUNT> g_sqrFunc_test_Handlers = {
