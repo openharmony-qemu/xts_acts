@@ -134,6 +134,17 @@ export class KeyboardControllerNew {
     }
   }
 
+  public isLandscape(): boolean {
+    let orientation: display.Orientation = 0;
+    try {
+      orientation = display.getDefaultDisplaySync()?.orientation;
+      console.info(TAG + `====>getOrientation : ${orientation}`);
+    } catch (err) {
+      console.info(TAG + `====>getOrientation error: ${err.code},message: ${err.message}`);
+    };
+    return orientation === display.Orientation.LANDSCAPE || display.Orientation.LANDSCAPE_INVERTED;
+  }
+
   async Sub_InputMethod_IME_HotAreaTest_0100(): Promise<void> {
     let commonEventPublishData = {
       data: 'FAILED'
@@ -160,7 +171,7 @@ export class KeyboardControllerNew {
     };
     try {
       let dis = display.getDefaultDisplaySync();
-      if (dis.height > dis.width) {
+      if (!isLandscape()) {
         let landscapeRect: window.Rect = {
           left: 0,
           top: 0,
@@ -169,23 +180,23 @@ export class KeyboardControllerNew {
         };
         let portraitRect: window.Rect = {
           left: 0,
-          top: Math.floor(disp.height - disp.height * 0.7),
+          top: Math.floor(disp.height - disp.height * 0.4),
           width: dis.width,
-          height: Math.floor(dis.height * 0.7)
+          height: Math.floor(dis.height * 0.4)
         };
         let panelRect1: inputmethodengine.PanelRect = {
           landscapeRect: landscapeRect,
           portraitRect: portraitRect,
         };
-        console.info(TAG + `====>panelFlag ${panelFlag}, panelRect ${JSON.stringify(panelRect)}`);
+        console.info(TAG + `====>panelFlag ${panelFlag}, panelRect ${JSON.stringify(panelRect1)}`);
         await this.softKeyboardPanel.adjustPanelRect(panelFlag, panelRect1);
         console.info(TAG + `====>adjustPanelRect success`);
       } else {
         let landscapeRect: window.Rect = {
           left: 0,
-          top: Math.floor(disp.height - disp.height * 0.7),
+          top: Math.floor(disp.height - disp.height * 0.4),
           width: dis.width,
-          height: Math.floor(dis.height * 0.7)
+          height: Math.floor(dis.height * 0.4)
         };
         let portraitRect: window.Rect = {
           left: 0,
@@ -197,7 +208,7 @@ export class KeyboardControllerNew {
           landscapeRect: landscapeRect,
           portraitRect: portraitRect,
         };
-        console.info(TAG + `====>panelFlag ${panelFlag}, panelRect ${JSON.stringify(panelRect)}`);
+        console.info(TAG + `====>panelFlag ${panelFlag}, panelRect ${JSON.stringify(panelRect1)}`);
         await this.softKeyboardPanel.adjustPanelRect(panelFlag, panelRect1);
         console.info(TAG + `====>adjustPanelRect success`);
       }
