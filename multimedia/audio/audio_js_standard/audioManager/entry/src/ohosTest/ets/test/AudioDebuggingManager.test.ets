@@ -604,6 +604,7 @@ export default function audioDebuggingManagerTest() {
           done();
         }
       }
+      done();
     });
 
     /**
@@ -652,6 +653,7 @@ export default function audioDebuggingManagerTest() {
           done();
         }
       }
+      done();
     });
 
     /**
@@ -679,6 +681,7 @@ export default function audioDebuggingManagerTest() {
           done();
         }
       }
+      done();
     });
 
     /**
