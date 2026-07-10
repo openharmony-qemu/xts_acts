@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -756,352 +756,6 @@ namespace testNS27 {
   }
 }
 
-
-namespace testNS28 {
-  export function runTest(): boolean {
-    let a: Array<Object | undefined> = [5n, undefined, "abc"];
-    let b: (undefined | Object)[] = a as Object as (undefined | Object)[];
-
-    expect(a instanceof Array).assertTrue();
-    expect(b instanceof Array).assertTrue();
-    expect(b.length).assertEqual(3);
-    expect(b[0]).assertEqual(5n);
-    expect(b[1]).assertEqual(undefined);
-    expect(b[2]).assertEqual("abc");
-
-    a = b;
-    expect(a instanceof Array).assertTrue();
-    expect(a.length).assertEqual(3);
-    expect(a[0]).assertEqual(5n);
-    expect(a[1]).assertEqual(undefined);
-    expect(a[2]).assertEqual("abc");
-
-    return true;
-  }
-}
-
-namespace testNS29 {
-  export function runTest(): boolean {
-    let a: Array<Object | undefined | null> = [5n, null, undefined];
-    let b: (undefined | null | Object)[] = a as Object as (undefined | null | Object)[];
-
-    expect(a instanceof Array).assertTrue();
-    expect(b instanceof Array).assertTrue();
-    expect(b.length).assertEqual(3);
-    expect(b[0]).assertEqual(5n);
-    expect(b[1]).assertEqual(null);
-    expect(b[2]).assertEqual(undefined);
-
-    a = b;
-    expect(a instanceof Array).assertTrue();
-    expect(a.length).assertEqual(3);
-    expect(a[0]).assertEqual(5n);
-    expect(a[1]).assertEqual(null);
-    expect(a[2]).assertEqual(undefined);
-
-    return true;
-  }
-}
-
-namespace testNS30 {
-  export function runTest(): boolean {
-    let a: Array<number | boolean> = [true, 7.9, false];
-    let b: (boolean | number)[] = a as Object as (boolean | number)[];
-
-    expect(a instanceof Array).assertTrue();
-    expect(b instanceof Array).assertTrue();
-    expect(b.length).assertEqual(3);
-    expect(b[0]).assertEqual(true);
-    expect(b[1]).assertEqual(7.9);
-    expect(b[2]).assertEqual(false);
-
-    a = b;
-    expect(a instanceof Array).assertTrue();
-    expect(a.length).assertEqual(3);
-    expect(a[0]).assertEqual(true);
-    expect(a[1]).assertEqual(7.9);
-    expect(a[2]).assertEqual(false);
-
-    return true;
-  }
-}
-
-namespace testNS31 {
-  export function runTest(): boolean {
-    let a: Array<number | string | boolean> = [true, 5, "abc"];
-    let b: (string | boolean | number)[] = a as Object as (string | boolean | number)[];
-
-    expect(a instanceof Array).assertTrue();
-    expect(b instanceof Array).assertTrue();
-    expect(b.length).assertEqual(3);
-    expect(b[0]).assertEqual(true);
-    expect(b[1]).assertEqual(5);
-    expect(b[2]).assertEqual("abc");
-
-    a = b;
-    expect(a instanceof Array).assertTrue();
-    expect(a.length).assertEqual(3);
-    expect(a[0]).assertEqual(true);
-    expect(a[1]).assertEqual(5);
-    expect(a[2]).assertEqual("abc");
-
-    return true;
-  }
-}
-
-namespace testNS32 {
-  export function runTest(): boolean {
-    let a: Array<string> = ["On Review", "In Progress", "Done"];
-    let b: string[] = a as Object as string[];
-
-    expect(a instanceof Array).assertTrue();
-    expect(b instanceof Array).assertTrue();
-    expect(b.length).assertEqual(3);
-    expect(b[0]).assertEqual("On Review");
-    expect(b[1]).assertEqual("In Progress");
-    expect(b[2]).assertEqual("Done");
-
-    a = b;
-    expect(a instanceof Array).assertTrue();
-    expect(a.length).assertEqual(3);
-    expect(a[0]).assertEqual("On Review");
-    expect(a[1]).assertEqual("In Progress");
-    expect(a[2]).assertEqual("Done");
-
-    return true;
-  }
-}
-
-namespace testNS33 {
-  export function runTest(): boolean {
-    let a: (Object | undefined)[] = [5n, undefined, "abc"];
-    let b: Array<undefined | Object> = a as Object as Array<undefined | Object>;
-
-    expect(a instanceof Array).assertTrue();
-    expect(b instanceof Array).assertTrue();
-    expect(b.length).assertEqual(3);
-    expect(b[0]).assertEqual(5n);
-    expect(b[1]).assertEqual(undefined);
-    expect(b[2]).assertEqual("abc");
-
-    a = b;
-    expect(a instanceof Array).assertTrue();
-    expect(a.length).assertEqual(3);
-    expect(a[0]).assertEqual(5n);
-    expect(a[1]).assertEqual(undefined);
-    expect(a[2]).assertEqual("abc");
-
-    return true;
-  }
-}
-
-namespace testNS34 {
-  export function runTest(): boolean {
-    let a: (Object | undefined | null)[] = [5n, null, undefined];
-    let b: Array<undefined | null | Object> = a as Object as Array<undefined | null | Object>;
-
-    expect(a instanceof Array).assertTrue();
-    expect(b instanceof Array).assertTrue();
-    expect(b.length).assertEqual(3);
-    expect(b[0]).assertEqual(5n);
-    expect(b[1]).assertEqual(null);
-    expect(b[2]).assertEqual(undefined);
-
-    a = b;
-    expect(a instanceof Array).assertTrue();
-    expect(a.length).assertEqual(3);
-    expect(a[0]).assertEqual(5n);
-    expect(a[1]).assertEqual(null);
-    expect(a[2]).assertEqual(undefined);
-
-    return true;
-  }
-}
-
-namespace testNS35 {
-  export function runTest(): boolean {
-    let a: (number | boolean)[] = [true, 7.9, false];
-    let b: Array<boolean | number> = a as Object as Array<boolean | number>;
-
-    expect(a instanceof Array).assertTrue();
-    expect(b instanceof Array).assertTrue();
-    expect(b.length).assertEqual(3);
-    expect(b[0]).assertEqual(true);
-    expect(b[1]).assertEqual(7.9);
-    expect(b[2]).assertEqual(false);
-
-    a = b;
-    expect(a instanceof Array).assertTrue();
-    expect(a.length).assertEqual(3);
-    expect(a[0]).assertEqual(true);
-    expect(a[1]).assertEqual(7.9);
-    expect(a[2]).assertEqual(false);
-
-    return true;
-  }
-}
-
-namespace testNS36 {
-  export function runTest(): boolean {
-    let a: (number | string | boolean)[] = [true, 5, "abc"];
-    let b: Array<string | boolean | number> = a as Object as Array<string | boolean | number>;
-
-    expect(a instanceof Array).assertTrue();
-    expect(b instanceof Array).assertTrue();
-    expect(b.length).assertEqual(3);
-    expect(b[0]).assertEqual(true);
-    expect(b[1]).assertEqual(5);
-    expect(b[2]).assertEqual("abc");
-
-    a = b;
-    expect(a instanceof Array).assertTrue();
-    expect(a.length).assertEqual(3);
-    expect(a[0]).assertEqual(true);
-    expect(a[1]).assertEqual(5);
-    expect(a[2]).assertEqual("abc");
-
-    return true;
-  }
-}
-
-namespace testNS37 {
-  export function runTest(): boolean {
-    let a: string[] = ["On Review", "In Progress", "Done"];
-    let b: Array<string> = a as Object as Array<string>;
-
-    expect(a instanceof Array).assertTrue();
-    expect(b instanceof Array).assertTrue();
-    expect(b.length).assertEqual(3);
-    expect(b[0]).assertEqual("On Review");
-    expect(b[1]).assertEqual("In Progress");
-    expect(b[2]).assertEqual("Done");
-
-    a = b;
-    expect(a instanceof Array).assertTrue();
-    expect(a.length).assertEqual(3);
-    expect(a[0]).assertEqual("On Review");
-    expect(a[1]).assertEqual("In Progress");
-    expect(a[2]).assertEqual("Done");
-
-    return true;
-  }
-}
-
-namespace testNS38 {
-  export function runTest(): boolean {
-    let a: Array<Object | undefined> = [5n, undefined, "abc"];
-    let b: (undefined | Object)[] = a as Object as (undefined | Object)[];
-
-    expect(a instanceof Array).assertTrue();
-    expect(b instanceof Array).assertTrue();
-    expect(b.length).assertEqual(3);
-    expect(b[0]).assertEqual(5n);
-    expect(b[1]).assertEqual(undefined);
-    expect(b[2]).assertEqual("abc");
-
-    a = b;
-    expect(a instanceof Array).assertTrue();
-    expect(a.length).assertEqual(3);
-    expect(a[0]).assertEqual(5n);
-    expect(a[1]).assertEqual(undefined);
-    expect(a[2]).assertEqual("abc");
-
-    return true;
-  }
-}
-
-namespace testNS39 {
-  export function runTest(): boolean {
-    let a: Array<Object | undefined | null> = [5n, null, undefined];
-    let b: (undefined | null | Object)[] = a as Object as (undefined | null | Object)[];
-
-    expect(a instanceof Array).assertTrue();
-    expect(b instanceof Array).assertTrue();
-    expect(b.length).assertEqual(3);
-    expect(b[0]).assertEqual(5n);
-    expect(b[1]).assertEqual(null);
-    expect(b[2]).assertEqual(undefined);
-
-    a = b;
-    expect(a instanceof Array).assertTrue();
-    expect(a.length).assertEqual(3);
-    expect(a[0]).assertEqual(5n);
-    expect(a[1]).assertEqual(null);
-    expect(a[2]).assertEqual(undefined);
-
-    return true;
-  }
-}
-
-namespace testNS40 {
-  export function runTest(): boolean {
-    let a: Array<number | boolean> = [true, 7.9, false];
-    let b: (boolean | number)[] = a as Object as (boolean | number)[];
-
-    expect(a instanceof Array).assertTrue();
-    expect(b instanceof Array).assertTrue();
-    expect(b.length).assertEqual(3);
-    expect(b[0]).assertEqual(true);
-    expect(b[1]).assertEqual(7.9);
-    expect(b[2]).assertEqual(false);
-
-    a = b;
-    expect(a instanceof Array).assertTrue();
-    expect(a.length).assertEqual(3);
-    expect(a[0]).assertEqual(true);
-    expect(a[1]).assertEqual(7.9);
-    expect(a[2]).assertEqual(false);
-
-    return true;
-  }
-}
-
-namespace testNS41 {
-  export function runTest(): boolean {
-    let a: Array<number | string | boolean> = [true, 5, "abc"];
-    let b: (string | boolean | number)[] = a as Object as (string | boolean | number)[];
-
-    expect(a instanceof Array).assertTrue();
-    expect(b instanceof Array).assertTrue();
-    expect(b.length).assertEqual(3);
-    expect(b[0]).assertEqual(true);
-    expect(b[1]).assertEqual(5);
-    expect(b[2]).assertEqual("abc");
-
-    a = b;
-    expect(a instanceof Array).assertTrue();
-    expect(a.length).assertEqual(3);
-    expect(a[0]).assertEqual(true);
-    expect(a[1]).assertEqual(5);
-    expect(a[2]).assertEqual("abc");
-
-    return true;
-  }
-}
-
-namespace testNS42 {
-  export function runTest(): boolean {
-    let a: Array<string> = ["On Review", "In Progress", "Done"];
-    let b: string[] = a as Object as string[];
-
-    expect(a instanceof Array).assertTrue();
-    expect(b instanceof Array).assertTrue();
-    expect(b.length).assertEqual(3);
-    expect(b[0]).assertEqual("On Review");
-    expect(b[1]).assertEqual("In Progress");
-    expect(b[2]).assertEqual("Done");
-
-    a = b;
-    expect(a instanceof Array).assertTrue();
-    expect(a.length).assertEqual(3);
-    expect(a[0]).assertEqual("On Review");
-    expect(a[1]).assertEqual("In Progress");
-    expect(a[2]).assertEqual("Done");
-
-    return true;
-  }
-}
-
 export default function SemanticRulesTypeIdentity(): void {
   describe('SemanticRulesTypeIdentity', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -1138,7 +792,6 @@ export default function SemanticRulesTypeIdentity(): void {
      */
     it("testSemanticRulesTypeIdentity0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
       , (): void => {
-  
         let a: (Object | undefined)[] = [5n, undefined, "abc"];
         let b: Array<undefined | Object> = a;
         expect(a instanceof Array).assertTrue();
@@ -1184,7 +837,6 @@ export default function SemanticRulesTypeIdentity(): void {
      */
     it("testSemanticRulesTypeIdentity0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
       , (): void => {
-  
         let a: Array<Object | undefined> = [5n, undefined, "abc"];
         let b: (undefined | Object)[] = a;
         expect(a instanceof Array).assertTrue();
@@ -1218,7 +870,6 @@ export default function SemanticRulesTypeIdentity(): void {
      */
     it("testSemanticRulesTypeIdentity0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
       , (): void => {
-  
         let a: (testNS11.Cat11 | testNS11.Dog11 | testNS11.Frog11 | number)[] =
           [new testNS11.Cat11(), 7.8, new testNS11.Dog11(), new testNS11.Frog11()];
         let b: Array<number | testNS11.Dog11 | testNS11.Cat11 | testNS11.Frog11> = a;
@@ -1262,7 +913,6 @@ export default function SemanticRulesTypeIdentity(): void {
      */
     it("testSemanticRulesTypeIdentity0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
       , (): void => {
-  
         let a: Array<Cat | Dog | Frog | number> = [new Cat(), 7.8, new Dog(), new Frog()];
         let b: (number | Dog | Cat | Frog)[] = a;
 
@@ -1306,7 +956,6 @@ export default function SemanticRulesTypeIdentity(): void {
      */
     it("testSemanticRulesTypeIdentity0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
       , (): void => {
-  
         let a: (Object | undefined)[] = [5n, undefined, "abc"];
         let b: Array<undefined | Object> = a as object as Array<undefined | Object>;
         expect(a instanceof Array).assertTrue();
@@ -1340,7 +989,6 @@ export default function SemanticRulesTypeIdentity(): void {
      */
     it("testSemanticRulesTypeIdentity0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
       , (): void => {
-  
         let a: Array<Object | undefined> = [5n, undefined, "abc"];
         let b: (undefined | Object)[] = a as Object as (undefined | Object)[];
         expect(a instanceof Array).assertTrue();
@@ -1374,7 +1022,6 @@ export default function SemanticRulesTypeIdentity(): void {
      */
     it("testSemanticRulesTypeIdentity0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
       , (): void => {
-  
         let a: (Object | undefined)[] = [5n, undefined, "abc"];
         let b: Array<undefined | Object> = a as Object as Array<undefined | Object>;
         expect(a instanceof Array).assertTrue();
@@ -1396,115 +1043,5 @@ export default function SemanticRulesTypeIdentity(): void {
         expect(testNS26.runTest()).assertTrue();
         expect(testNS27.runTest()).assertTrue();
       });
-
-    /**
-     * @tc.number    SUB_SEMANTIC_RULES_TYPE_IDENTITYTEST_0800
-     * @tc.name      testSemanticRulesTypeIdentity0008
-     * @tc.desc      Checking for Array types A[] and Array<B> for Union types A and B are identical
-     *               on predefined types on assign operations.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSemanticRulesTypeIdentity0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
-      , (): void => {
-  
-        let a: Array<Object | undefined> = [5n, undefined, "abc"];
-        let b: (undefined | Object)[] = a as Object as (undefined | Object)[];
-        expect(a instanceof Array).assertTrue();
-        expect(b instanceof Array).assertTrue();
-        expect(b.length).assertEqual(3);
-        expect(b[0]).assertEqual(5n);
-        expect(b[1]).assertEqual(undefined);
-        expect(b[2]).assertEqual("abc");
-        a = b;
-        expect(a instanceof Array).assertTrue();
-        expect(a.length).assertEqual(3);
-        expect(a[0]).assertEqual(5n);
-        expect(a[1]).assertEqual(undefined);
-        expect(a[2]).assertEqual("abc");
-
-        expect(testNS28.runTest()).assertTrue();
-        expect(testNS29.runTest()).assertTrue();
-        expect(testNS30.runTest()).assertTrue();
-        expect(testNS31.runTest()).assertTrue();
-        expect(testNS32.runTest()).assertTrue();
-      });
-
-    /**
-     * @tc.number    SUB_SEMANTIC_RULES_TYPE_IDENTITYTEST_0900
-     * @tc.name      testSemanticRulesTypeIdentity0009
-     * @tc.desc      Checking for Array types A[] and Array<B> for Union types A and B are identical
-     *               on predefined types on assign operations.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSemanticRulesTypeIdentity0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
-      , (): void => {
-  
-        let a: (Object | undefined)[] = [5n, undefined, "abc"];
-        let b: Array<undefined | Object> = a as Object as Array<undefined | Object>;
-        expect(a instanceof Array).assertTrue();
-        expect(b instanceof Array).assertTrue();
-        expect(b.length).assertEqual(3);
-        expect(b[0]).assertEqual(5n);
-        expect(b[1]).assertEqual(undefined);
-        expect(b[2]).assertEqual("abc");
-        a = b;
-        expect(a instanceof Array).assertTrue();
-        expect(a.length).assertEqual(3);
-        expect(a[0]).assertEqual(5n);
-        expect(a[1]).assertEqual(undefined);
-        expect(a[2]).assertEqual("abc");
-
-        expect(testNS33.runTest()).assertTrue();
-        expect(testNS34.runTest()).assertTrue();
-        expect(testNS35.runTest()).assertTrue();
-        expect(testNS36.runTest()).assertTrue();
-        expect(testNS37.runTest()).assertTrue();
-      });
-
-    /**
-     * @tc.number    SUB_SEMANTIC_RULES_TYPE_IDENTITYTEST_1000
-     * @tc.name      testSemanticRulesTypeIdentity0010
-     * @tc.desc      Checking for Array types A[] and Array<B> for Union types A and B are identical
-     *               on predefined types on assign operations.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSemanticRulesTypeIdentity0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
-      , (): void => {
-  
-        let a: Array<Object | undefined> = [5n, undefined, "abc"];
-        let b: (undefined | Object)[] = a as Object as (undefined | Object)[];
-        expect(a instanceof Array).assertTrue();
-        expect(b instanceof Array).assertTrue();
-        expect(b.length).assertEqual(3);
-        expect(b[0]).assertEqual(5n);
-        expect(b[1]).assertEqual(undefined);
-        expect(b[2]).assertEqual("abc");
-        a = b;
-        expect(a instanceof Array).assertTrue();
-        expect(a.length).assertEqual(3);
-        expect(a[0]).assertEqual(5n);
-        expect(a[1]).assertEqual(undefined);
-        expect(a[2]).assertEqual("abc");
-
-        expect(testNS38.runTest()).assertTrue();
-        expect(testNS39.runTest()).assertTrue();
-        expect(testNS40.runTest()).assertTrue();
-        expect(testNS41.runTest()).assertTrue();
-        expect(testNS42.runTest()).assertTrue();
-      });
   });
 }
-
-
-
-
-
-
-
-
