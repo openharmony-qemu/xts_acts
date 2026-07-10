@@ -21,9 +21,8 @@ import { deviceInfo } from '@kit.BasicServicesKit';
 export default function ExpFiniteNdkTest() {
   describe('ExpFiniteNdkTest', () => {
 
-    beforeEach(async () => {
-      await Utils.sleep(50);
-    });
+    beforeEach(async () => { await Utils.sleep(50); });
+
     // ==================== 正常参数测试 ====================
 
     /**

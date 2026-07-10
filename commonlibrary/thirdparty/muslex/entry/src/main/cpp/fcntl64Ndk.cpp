@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ static constexpr int kStableLoop = 20;
 static constexpr int kThreadCount = 3;
 static constexpr int kIterPerThread = 10;
 
-static FILE* CreateSandboxTempFile() {
+static FILE* CreateSandboxTempFile()
+{
     char tmpPath[256];
     snprintf(tmpPath, sizeof(tmpPath), "/data/storage/el2/base/temp/tmpfile_XXXXXX");
     int fd = mkstemp(tmpPath);
@@ -37,7 +38,8 @@ static FILE* CreateSandboxTempFile() {
     return fdopen(fd, "w+");
 }
 
-static int CallFcntl64(int fd, int cmd, ...) {
+static int CallFcntl64(int fd, int cmd, ...)
+{
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetFcntl64();
     if (!func) {
@@ -55,18 +57,21 @@ static int CallFcntl64(int fd, int cmd, ...) {
     return func(fd, cmd, arg);
 }
 
-static bool IsStubMode() {
+static bool IsStubMode()
+{
     auto& loader = LibcFunctionLoader::GetInstance();
     return (loader.GetFcntl64() == nullptr);
 }
 
-static napi_value ReturnInt32(napi_env env, int32_t value) {
+static napi_value ReturnInt32(napi_env env, int32_t value)
+{
     napi_value result = nullptr;
     napi_create_int32(env, value, &result);
     return result;
 }
 
-static napi_value Fcntl64Normal001(napi_env env, napi_callback_info info) {
+static napi_value Fcntl64Normal001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -80,7 +85,8 @@ static napi_value Fcntl64Normal001(napi_env env, napi_callback_info info) {
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
-static napi_value Fcntl64Normal002(napi_env env, napi_callback_info info) {
+static napi_value Fcntl64Normal002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -95,7 +101,8 @@ static napi_value Fcntl64Normal002(napi_env env, napi_callback_info info) {
     return ReturnInt32(env, ((ret & FD_CLOEXEC) != 0) ? 1 : 0);
 }
 
-static napi_value Fcntl64Normal003(napi_env env, napi_callback_info info) {
+static napi_value Fcntl64Normal003(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -109,14 +116,16 @@ static napi_value Fcntl64Normal003(napi_env env, napi_callback_info info) {
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
-static napi_value Fcntl64Normal004(napi_env env, napi_callback_info info) {
+static napi_value Fcntl64Normal004(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
 }
 
-static napi_value Fcntl64Abnormal001(napi_env env, napi_callback_info info) {
+static napi_value Fcntl64Abnormal001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -125,7 +134,8 @@ static napi_value Fcntl64Abnormal001(napi_env env, napi_callback_info info) {
     return ReturnInt32(env, (ret == -1) ? 1 : 0);
 }
 
-static napi_value Fcntl64Abnormal002(napi_env env, napi_callback_info info) {
+static napi_value Fcntl64Abnormal002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -140,7 +150,8 @@ static napi_value Fcntl64Abnormal002(napi_env env, napi_callback_info info) {
     return ReturnInt32(env, (ret == -1) ? 1 : 0);
 }
 
-static napi_value Fcntl64Boundary001(napi_env env, napi_callback_info info) {
+static napi_value Fcntl64Boundary001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -148,7 +159,8 @@ static napi_value Fcntl64Boundary001(napi_env env, napi_callback_info info) {
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
-static napi_value Fcntl64Boundary002(napi_env env, napi_callback_info info) {
+static napi_value Fcntl64Boundary002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -163,7 +175,8 @@ static napi_value Fcntl64Boundary002(napi_env env, napi_callback_info info) {
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
 }
 
-static napi_value Fcntl64Stable001(napi_env env, napi_callback_info info) {
+static napi_value Fcntl64Stable001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -185,7 +198,8 @@ static napi_value Fcntl64Stable001(napi_env env, napi_callback_info info) {
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static napi_value Fcntl64Thread001(napi_env env, napi_callback_info info) {
+static napi_value Fcntl64Thread001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -218,7 +232,8 @@ static napi_value Fcntl64Thread001(napi_env env, napi_callback_info info) {
 }
 
 EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports) {
+static napi_value Init(napi_env env, napi_value exports)
+{
     napi_property_descriptor desc[] = {
         {"fcntl64Normal001", nullptr, Fcntl64Normal001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"fcntl64Normal002", nullptr, Fcntl64Normal002, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -246,6 +261,7 @@ static napi_module demoModule = {
     .reserved = {0},
 };
 
-extern "C" __attribute__((constructor)) void RegisterModule(void) {
+extern "C" __attribute__((constructor)) void RegisterModule(void)
+{
     napi_module_register(&demoModule);
 }

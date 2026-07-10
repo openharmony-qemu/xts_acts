@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,8 @@ static constexpr int kStableLoop = 20;
 static constexpr int kThreadCount = 3;
 static constexpr int kIterPerThread = 10;
 
-static bool CallHilogBaseIsLoggable(unsigned int domain, const char* tag, int level) {
+static bool CallHilogBaseIsLoggable(unsigned int domain, const char* tag, int level)
+{
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetHilogBaseIsLoggable();
     if (!func) {
@@ -42,18 +43,21 @@ static bool CallHilogBaseIsLoggable(unsigned int domain, const char* tag, int le
     return func(domain, tag, level);
 }
 
-static bool IsStubMode() {
+static bool IsStubMode()
+{
     auto& loader = LibcFunctionLoader::GetInstance();
     return (loader.GetHilogBaseIsLoggable() == nullptr);
 }
 
-static napi_value ReturnInt32(napi_env env, int32_t value) {
+static napi_value ReturnInt32(napi_env env, int32_t value)
+{
     napi_value result = nullptr;
     napi_create_int32(env, value, &result);
     return result;
 }
 
-static napi_value HilogBaseIsLoggableNormal001(napi_env env, napi_callback_info info) {
+static napi_value HilogBaseIsLoggableNormal001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -61,7 +65,8 @@ static napi_value HilogBaseIsLoggableNormal001(napi_env env, napi_callback_info 
     return ReturnInt32(env, 1);
 }
 
-static napi_value HilogBaseIsLoggableNormal002(napi_env env, napi_callback_info info) {
+static napi_value HilogBaseIsLoggableNormal002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -69,7 +74,8 @@ static napi_value HilogBaseIsLoggableNormal002(napi_env env, napi_callback_info 
     return ReturnInt32(env, 1);
 }
 
-static napi_value HilogBaseIsLoggableNormal003(napi_env env, napi_callback_info info) {
+static napi_value HilogBaseIsLoggableNormal003(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -77,14 +83,16 @@ static napi_value HilogBaseIsLoggableNormal003(napi_env env, napi_callback_info 
     return ReturnInt32(env, 1);
 }
 
-static napi_value HilogBaseIsLoggableNormal004(napi_env env, napi_callback_info info) {
+static napi_value HilogBaseIsLoggableNormal004(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
 }
 
-static napi_value HilogBaseIsLoggableAbnormal001(napi_env env, napi_callback_info info) {
+static napi_value HilogBaseIsLoggableAbnormal001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -92,7 +100,8 @@ static napi_value HilogBaseIsLoggableAbnormal001(napi_env env, napi_callback_inf
     return ReturnInt32(env, 1);
 }
 
-static napi_value HilogBaseIsLoggableAbnormal002(napi_env env, napi_callback_info info) {
+static napi_value HilogBaseIsLoggableAbnormal002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -100,7 +109,8 @@ static napi_value HilogBaseIsLoggableAbnormal002(napi_env env, napi_callback_inf
     return ReturnInt32(env, 1);
 }
 
-static napi_value HilogBaseIsLoggableBoundary001(napi_env env, napi_callback_info info) {
+static napi_value HilogBaseIsLoggableBoundary001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -108,7 +118,8 @@ static napi_value HilogBaseIsLoggableBoundary001(napi_env env, napi_callback_inf
     return ReturnInt32(env, 1);
 }
 
-static napi_value HilogBaseIsLoggableBoundary002(napi_env env, napi_callback_info info) {
+static napi_value HilogBaseIsLoggableBoundary002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -116,7 +127,8 @@ static napi_value HilogBaseIsLoggableBoundary002(napi_env env, napi_callback_inf
     return ReturnInt32(env, 1);
 }
 
-static napi_value HilogBaseIsLoggableStable001(napi_env env, napi_callback_info info) {
+static napi_value HilogBaseIsLoggableStable001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -127,7 +139,8 @@ static napi_value HilogBaseIsLoggableStable001(napi_env env, napi_callback_info 
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static napi_value HilogBaseIsLoggableThread001(napi_env env, napi_callback_info info) {
+static napi_value HilogBaseIsLoggableThread001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -147,7 +160,8 @@ static napi_value HilogBaseIsLoggableThread001(napi_env env, napi_callback_info 
 }
 
 EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports) {
+static napi_value Init(napi_env env, napi_value exports)
+{
     napi_property_descriptor desc[] = {
         {"hilogBaseIsLoggableNormal001", nullptr, HilogBaseIsLoggableNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"hilogBaseIsLoggableNormal002", nullptr, HilogBaseIsLoggableNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -175,6 +189,7 @@ static napi_module demoModule = {
     .reserved = {0},
 };
 
-extern "C" __attribute__((constructor)) void RegisterModule(void) {
+extern "C" __attribute__((constructor)) void RegisterModule(void)
+{
     napi_module_register(&demoModule);
 }

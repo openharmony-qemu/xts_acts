@@ -39,18 +39,16 @@ public:
         return instance;
     }
 
+    using ExplicitBzeroChkFunc = void (*)(void*, size_t, size_t);
     using AcosfFiniteFunc = float (*)(float);
     using AsprintfChkFunc = int (*)(char**, int, const char*, ...);
     using VasprintfChkFunc = int (*)(char**, int, const char*, va_list);
     using Atan2FiniteFunc = double (*)(double, double);
     using CmsgNxthdrFunc = struct cmsghdr* (*)(struct msghdr*, struct cmsghdr*);
-    using DFXSetCrashLogConfigFunc = int (*)(uint8_t, uint32_t);
-    using Exp2fFiniteFunc = float (*)(float);
     using Exp2FiniteFunc = double (*)(double);
     using ExpFiniteFunc = double (*)(double);
-    using ExplicitBzeroChkFunc = void (*)(void*, size_t, size_t);
-    mutable ExplicitBzeroChkFunc explicitBzeroChk_ = nullptr;
-
+    using Exp2fFiniteFunc = float (*)(float);
+    using DFXSetCrashLogConfigFunc = int (*)(uint8_t, uint32_t);
     ExplicitBzeroChkFunc GetExplicitBzeroChk() const
     {
         return LazyLoad(explicitBzeroChk_, "__explicit_bzero_chk");
@@ -93,14 +91,15 @@ private:
 
     mutable std::mutex mutex_;
 
+    mutable ExplicitBzeroChkFunc explicitBzeroChk_ = nullptr;
     mutable AcosfFiniteFunc acosfFinite_ = nullptr;
     mutable AsprintfChkFunc asprintfChk_ = nullptr;
     mutable VasprintfChkFunc vasprintfChk_ = nullptr;
     mutable Atan2FiniteFunc atan2Finite_ = nullptr;
     mutable CmsgNxthdrFunc cmsgNxthdr_ = nullptr;
-    mutable DFXSetCrashLogConfigFunc dfxSetCrashLogConfig_ = nullptr;
     mutable Exp2FiniteFunc exp2Finite_ = nullptr;
     mutable ExpFiniteFunc expFinite_ = nullptr;
     mutable Exp2fFiniteFunc exp2fFinite_ = nullptr;
+    mutable DFXSetCrashLogConfigFunc dfxSetCrashLogConfig_ = nullptr;
 };
 #endif // LIBC_FUNCTION_LOADER_H

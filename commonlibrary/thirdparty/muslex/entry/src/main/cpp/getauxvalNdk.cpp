@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,20 +21,23 @@
 #include <vector>
 #include <atomic>
 
-static napi_value ReturnInt32(napi_env env, int32_t value) {
+static napi_value ReturnInt32(napi_env env, int32_t value)
+{
     napi_value result = nullptr;
     napi_create_int32(env, value, &result);
     return result;
 }
 
-static bool IsStubMode() {
+static bool IsStubMode()
+{
     return LibcFunctionLoader::GetInstance().GetGetauxval() == nullptr;
 }
 
 // ==================== Normal Parameter Tests ====================
 
 // Test 1: Get AT_PAGESZ
-static napi_value GetauxvalNormal001(napi_env env, napi_callback_info info) {
+static napi_value GetauxvalNormal001(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetGetauxval();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -49,7 +52,8 @@ static napi_value GetauxvalNormal001(napi_env env, napi_callback_info info) {
 }
 
 // Test 2: Get AT_SECURE
-static napi_value GetauxvalNormal002(napi_env env, napi_callback_info info) {
+static napi_value GetauxvalNormal002(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetGetauxval();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -68,7 +72,8 @@ static napi_value GetauxvalNormal002(napi_env env, napi_callback_info info) {
 }
 
 // Test 3: Get AT_CLKTCK
-static napi_value GetauxvalNormal003(napi_env env, napi_callback_info info) {
+static napi_value GetauxvalNormal003(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetGetauxval();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -86,7 +91,8 @@ static napi_value GetauxvalNormal003(napi_env env, napi_callback_info info) {
 }
 
 // Test 4: Get AT_RANDOM
-static napi_value GetauxvalNormal004(napi_env env, napi_callback_info info) {
+static napi_value GetauxvalNormal004(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetGetauxval();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -104,7 +110,8 @@ static napi_value GetauxvalNormal004(napi_env env, napi_callback_info info) {
 }
 
 // Test 5: Get AT_ENTRY (program entry point)
-static napi_value GetauxvalNormal005(napi_env env, napi_callback_info info) {
+static napi_value GetauxvalNormal005(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetGetauxval();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -124,7 +131,8 @@ static napi_value GetauxvalNormal005(napi_env env, napi_callback_info info) {
 // ==================== Abnormal Parameter Tests ====================
 
 // Test 6: Invalid item value
-static napi_value GetauxvalAbnormal001(napi_env env, napi_callback_info info) {
+static napi_value GetauxvalAbnormal001(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetGetauxval();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -142,7 +150,8 @@ static napi_value GetauxvalAbnormal001(napi_env env, napi_callback_info info) {
 }
 
 // Test 7: Negative item value
-static napi_value GetauxvalAbnormal002(napi_env env, napi_callback_info info) {
+static napi_value GetauxvalAbnormal002(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetGetauxval();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -160,7 +169,8 @@ static napi_value GetauxvalAbnormal002(napi_env env, napi_callback_info info) {
 }
 
 // Test 8: Boundary item value (near valid range)
-static napi_value GetauxvalAbnormal003(napi_env env, napi_callback_info info) {
+static napi_value GetauxvalAbnormal003(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetGetauxval();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -185,7 +195,8 @@ static napi_value GetauxvalAbnormal003(napi_env env, napi_callback_info info) {
 // ==================== Stability Tests ====================
 
 // Test 9: Repeated calls consistency
-static napi_value GetauxvalStable001(napi_env env, napi_callback_info info) {
+static napi_value GetauxvalStable001(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetGetauxval();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -215,7 +226,8 @@ static napi_value GetauxvalStable001(napi_env env, napi_callback_info info) {
 }
 
 // Test 10: Massive calls
-static napi_value GetauxvalStable002(napi_env env, napi_callback_info info) {
+static napi_value GetauxvalStable002(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetGetauxval();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -239,7 +251,8 @@ static napi_value GetauxvalStable002(napi_env env, napi_callback_info info) {
 // ==================== Multi-thread Tests ====================
 
 // Test 11: Multi-thread concurrent calls
-static napi_value GetauxvalThread001(napi_env env, napi_callback_info info) {
+static napi_value GetauxvalThread001(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetGetauxval();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -272,7 +285,8 @@ static napi_value GetauxvalThread001(napi_env env, napi_callback_info info) {
 }
 
 // Test 12: Multi-thread different item mixed
-static napi_value GetauxvalThread002(napi_env env, napi_callback_info info) {
+static napi_value GetauxvalThread002(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetGetauxval();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -307,7 +321,8 @@ static napi_value GetauxvalThread002(napi_env env, napi_callback_info info) {
 // ==================== NAPI Registration ====================
 
 EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports) {
+static napi_value Init(napi_env env, napi_value exports)
+{
     napi_property_descriptor desc[] = {
         // Normal parameters
         {"getauxvalNormal001", nullptr, GetauxvalNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -341,6 +356,7 @@ static napi_module demoModule = {
     .reserved = { 0 },
 };
 
-extern "C" __attribute__((constructor)) void RegisterModule(void) {
+extern "C" __attribute__((constructor)) void RegisterModule(void)
+{
     napi_module_register(&demoModule);
 }

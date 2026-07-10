@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,8 @@ static constexpr int kStableLoop100000 = 200;
 static constexpr int kThreadWorkLoop = 10;
 static constexpr int kThreadCount = 3;
 
-static long CallFdeltChk(long fd) {
+static long CallFdeltChk(long fd))
+{
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = reinterpret_cast<long (*)(long)>(loader.GetFdeltChk());
     if (!func) {
@@ -42,7 +43,8 @@ static long CallFdeltChk(long fd) {
     return func(fd);
 }
 
-static bool IsStubMode() {
+static bool IsStubMode())
+{
     auto& loader = LibcFunctionLoader::GetInstance();
     if (!loader.GetFdeltChk()) {
         return true;
@@ -52,7 +54,8 @@ static bool IsStubMode() {
     return (errno == ENOSYS);
 }
 
-static bool CheckAbortForFd(long fd) {
+static bool CheckAbortForFd(long fd))
+{
     if (IsStubMode()) {
         return false;
     }
@@ -69,14 +72,16 @@ static bool CheckAbortForFd(long fd) {
     return (WIFSIGNALED(status) && WTERMSIG(status) == SIGABRT);
 }
 
-static napi_value ReturnInt32(napi_env env, int32_t val) {
+static napi_value ReturnInt32(napi_env env, int32_t val))
+{
     napi_value result;
     napi_create_int32(env, val, &result);
     return result;
 }
 
 /* ----- Original simple test ----- */
-static napi_value FdeltChk(napi_env env, napi_callback_info info) {
+static napi_value FdeltChk(napi_env env, napi_callback_info info))
+{
     if (IsStubMode()) {
         errno = 0;
         long ret = CallFdeltChk(0);
@@ -94,7 +99,8 @@ static napi_value FdeltChk(napi_env env, napi_callback_info info) {
 }
 
 /* ---------- Normal parameter tests ---------- */
-static napi_value FdeltChkNormal001(napi_env env, napi_callback_info info) {
+static napi_value FdeltChkNormal001(napi_env env, napi_callback_info info))
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -104,7 +110,8 @@ static napi_value FdeltChkNormal001(napi_env env, napi_callback_info info) {
     return ReturnInt32(env, 0);
 }
 
-static napi_value FdeltChkNormal002(napi_env env, napi_callback_info info) {
+static napi_value FdeltChkNormal002(napi_env env, napi_callback_info info))
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -114,7 +121,8 @@ static napi_value FdeltChkNormal002(napi_env env, napi_callback_info info) {
     return ReturnInt32(env, 0);
 }
 
-static napi_value FdeltChkNormal003(napi_env env, napi_callback_info info) {
+static napi_value FdeltChkNormal003(napi_env env, napi_callback_info info))
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -124,7 +132,8 @@ static napi_value FdeltChkNormal003(napi_env env, napi_callback_info info) {
     return ReturnInt32(env, 0);
 }
 
-static napi_value FdeltChkNormal004(napi_env env, napi_callback_info info) {
+static napi_value FdeltChkNormal004(napi_env env, napi_callback_info info))
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -134,7 +143,8 @@ static napi_value FdeltChkNormal004(napi_env env, napi_callback_info info) {
     return ReturnInt32(env, 0);
 }
 
-static napi_value FdeltChkNormal005(napi_env env, napi_callback_info info) {
+static napi_value FdeltChkNormal005(napi_env env, napi_callback_info info))
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -149,7 +159,8 @@ static napi_value FdeltChkNormal005(napi_env env, napi_callback_info info) {
 
 /* ---------- Abnormal parameter tests (removed 001-004) ---------- */
 // stub mode behavior
-static napi_value FdeltChkAbnormal005(napi_env env, napi_callback_info info) {
+static napi_value FdeltChkAbnormal005(napi_env env, napi_callback_info info))
+{
     if (!IsStubMode()) {
         return ReturnInt32(env, 1);
     }
@@ -165,7 +176,8 @@ static napi_value FdeltChkAbnormal005(napi_env env, napi_callback_info info) {
 }
 
 /* ---------- Boundary value tests ---------- */
-static napi_value FdeltChkBoundary001(napi_env env, napi_callback_info info) {
+static napi_value FdeltChkBoundary001(napi_env env, napi_callback_info info))
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -175,7 +187,8 @@ static napi_value FdeltChkBoundary001(napi_env env, napi_callback_info info) {
     return ReturnInt32(env, 0);
 }
 
-static napi_value FdeltChkBoundary002(napi_env env, napi_callback_info info) {
+static napi_value FdeltChkBoundary002(napi_env env, napi_callback_info info))
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -185,7 +198,8 @@ static napi_value FdeltChkBoundary002(napi_env env, napi_callback_info info) {
     return ReturnInt32(env, 0);
 }
 
-static napi_value FdeltChkBoundary003(napi_env env, napi_callback_info info) {
+static napi_value FdeltChkBoundary003(napi_env env, napi_callback_info info))
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -195,7 +209,8 @@ static napi_value FdeltChkBoundary003(napi_env env, napi_callback_info info) {
     return ReturnInt32(env, 0);
 }
 
-static napi_value FdeltChkBoundary004(napi_env env, napi_callback_info info) {
+static napi_value FdeltChkBoundary004(napi_env env, napi_callback_info info))
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -208,7 +223,8 @@ static napi_value FdeltChkBoundary004(napi_env env, napi_callback_info info) {
 // Removed Boundary005 and Boundary006
 
 /* ---------- Functional tests ---------- */
-static napi_value FdeltChkFunc001(napi_env env, napi_callback_info info) {
+static napi_value FdeltChkFunc001(napi_env env, napi_callback_info info))
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -220,7 +236,8 @@ static napi_value FdeltChkFunc001(napi_env env, napi_callback_info info) {
     return ReturnInt32(env, 1);
 }
 
-static napi_value FdeltChkFunc002(napi_env env, napi_callback_info info) {
+static napi_value FdeltChkFunc002(napi_env env, napi_callback_info info))
+{
     if (!IsStubMode()) {
         return ReturnInt32(env, 1);
     }
@@ -234,7 +251,8 @@ static napi_value FdeltChkFunc002(napi_env env, napi_callback_info info) {
     return ReturnInt32(env, 0);
 }
 
-static napi_value FdeltChkFunc003(napi_env env, napi_callback_info info) {
+static napi_value FdeltChkFunc003(napi_env env, napi_callback_info info))
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -252,7 +270,8 @@ static napi_value FdeltChkFunc003(napi_env env, napi_callback_info info) {
     return ReturnInt32(env, 1);
 }
 
-static napi_value FdeltChkFunc004(napi_env env, napi_callback_info info) {
+static napi_value FdeltChkFunc004(napi_env env, napi_callback_info info))
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -266,7 +285,8 @@ static napi_value FdeltChkFunc004(napi_env env, napi_callback_info info) {
 }
 
 /* Stability tests */
-static bool StableWorkerFunc() {
+static bool StableWorkerFunc())
+{
     for (int i = 0; i < kThreadWorkLoop; ++i) {
         for (int fd = 0; fd < FD_SETSIZE; ++fd) {
             if (CallFdeltChk(fd) != fd / NFDBITS) {
@@ -277,7 +297,8 @@ static bool StableWorkerFunc() {
     return true;
 }
 
-static napi_value FdeltChkStable001(napi_env env, napi_callback_info info) {
+static napi_value FdeltChkStable001(napi_env env, napi_callback_info info))
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -291,7 +312,8 @@ static napi_value FdeltChkStable001(napi_env env, napi_callback_info info) {
     return ReturnInt32(env, 1);
 }
 
-static napi_value FdeltChkStable002(napi_env env, napi_callback_info info) {
+static napi_value FdeltChkStable002(napi_env env, napi_callback_info info))
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -310,7 +332,8 @@ static napi_value FdeltChkStable002(napi_env env, napi_callback_info info) {
     return ReturnInt32(env, allSuccess.load() ? 1 : 0);
 }
 
-static napi_value FdeltChkStable003(napi_env env, napi_callback_info info) {
+static napi_value FdeltChkStable003(napi_env env, napi_callback_info info))
+{
     if (!IsStubMode()) {
         return ReturnInt32(env, 1);
     }
@@ -328,7 +351,8 @@ static napi_value FdeltChkStable003(napi_env env, napi_callback_info info) {
 
 /* ---------- Module registration ---------- */
 EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports) {
+static napi_value Init(napi_env env, napi_value exports))
+{
     napi_property_descriptor desc[] = {
         {"fdeltChk", nullptr, FdeltChk, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"fdeltChkNormal001", nullptr, FdeltChkNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -364,6 +388,7 @@ static napi_module demoModule = {
     .reserved = {0},
 };
 
-extern "C" __attribute__((constructor)) void RegisterModule(void) {
+extern "C" __attribute__((constructor)) void RegisterModule(void)
+{
     napi_module_register(&demoModule);
 }

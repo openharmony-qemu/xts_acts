@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ static constexpr int kStableLoop = 20;
 static constexpr int kThreadCount = 3;
 static constexpr int kIterPerThread = 10;
 
-static bool CallGwpAsanRegisterFfrt(FfrtGetStackFn fn) {
+static bool CallGwpAsanRegisterFfrt(FfrtGetStackFn fn)
+{
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetGwpAsanRegisterFfrt();
     if (!func) {
@@ -39,25 +40,29 @@ static bool CallGwpAsanRegisterFfrt(FfrtGetStackFn fn) {
     return true;
 }
 
-static size_t DummyStackFn(size_t* frames, size_t maxFrames) {
+static size_t DummyStackFn(size_t* frames, size_t maxFrames)
+{
     if (frames && maxFrames > 0) {
         frames[0] = 0;
     }
     return 1;
 }
 
-static bool IsStubMode() {
+static bool IsStubMode()
+{
     auto& loader = LibcFunctionLoader::GetInstance();
     return (loader.GetGwpAsanRegisterFfrt() == nullptr);
 }
 
-static napi_value ReturnInt32(napi_env env, int32_t value) {
+static napi_value ReturnInt32(napi_env env, int32_t value)
+{
     napi_value result = nullptr;
     napi_create_int32(env, value, &result);
     return result;
 }
 
-static napi_value GwpAsanRegisterFfrtNormal001(napi_env env, napi_callback_info info) {
+static napi_value GwpAsanRegisterFfrtNormal001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -65,7 +70,8 @@ static napi_value GwpAsanRegisterFfrtNormal001(napi_env env, napi_callback_info 
     return ReturnInt32(env, ret ? 1 : 0);
 }
 
-static napi_value GwpAsanRegisterFfrtNormal002(napi_env env, napi_callback_info info) {
+static napi_value GwpAsanRegisterFfrtNormal002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -73,7 +79,8 @@ static napi_value GwpAsanRegisterFfrtNormal002(napi_env env, napi_callback_info 
     return ReturnInt32(env, ret ? 1 : 0);
 }
 
-static napi_value GwpAsanRegisterFfrtNormal003(napi_env env, napi_callback_info info) {
+static napi_value GwpAsanRegisterFfrtNormal003(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -82,14 +89,16 @@ static napi_value GwpAsanRegisterFfrtNormal003(napi_env env, napi_callback_info 
     return ReturnInt32(env, 1);
 }
 
-static napi_value GwpAsanRegisterFfrtNormal004(napi_env env, napi_callback_info info) {
+static napi_value GwpAsanRegisterFfrtNormal004(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
 }
 
-static napi_value GwpAsanRegisterFfrtAbnormal001(napi_env env, napi_callback_info info) {
+static napi_value GwpAsanRegisterFfrtAbnormal001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -97,7 +106,8 @@ static napi_value GwpAsanRegisterFfrtAbnormal001(napi_env env, napi_callback_inf
     return ReturnInt32(env, ret ? 1 : 0);
 }
 
-static napi_value GwpAsanRegisterFfrtAbnormal002(napi_env env, napi_callback_info info) {
+static napi_value GwpAsanRegisterFfrtAbnormal002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -106,7 +116,8 @@ static napi_value GwpAsanRegisterFfrtAbnormal002(napi_env env, napi_callback_inf
     return ReturnInt32(env, 1);
 }
 
-static napi_value GwpAsanRegisterFfrtBoundary001(napi_env env, napi_callback_info info) {
+static napi_value GwpAsanRegisterFfrtBoundary001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -117,7 +128,8 @@ static napi_value GwpAsanRegisterFfrtBoundary001(napi_env env, napi_callback_inf
     return ReturnInt32(env, (count > 0) ? 1 : 0);
 }
 
-static napi_value GwpAsanRegisterFfrtBoundary002(napi_env env, napi_callback_info info) {
+static napi_value GwpAsanRegisterFfrtBoundary002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -126,7 +138,8 @@ static napi_value GwpAsanRegisterFfrtBoundary002(napi_env env, napi_callback_inf
     return ReturnInt32(env, 1);
 }
 
-static napi_value GwpAsanRegisterFfrtStable001(napi_env env, napi_callback_info info) {
+static napi_value GwpAsanRegisterFfrtStable001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -142,7 +155,8 @@ static napi_value GwpAsanRegisterFfrtStable001(napi_env env, napi_callback_info 
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static napi_value GwpAsanRegisterFfrtThread001(napi_env env, napi_callback_info info) {
+static napi_value GwpAsanRegisterFfrtThread001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -163,7 +177,8 @@ static napi_value GwpAsanRegisterFfrtThread001(napi_env env, napi_callback_info 
 }
 
 EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports) {
+static napi_value Init(napi_env env, napi_value exports)
+{
     napi_property_descriptor desc[] = {
         {"gwpAsanRegisterFfrtNormal001", nullptr, GwpAsanRegisterFfrtNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"gwpAsanRegisterFfrtNormal002", nullptr, GwpAsanRegisterFfrtNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -191,6 +206,7 @@ static napi_module demoModule = {
     .reserved = {0},
 };
 
-extern "C" __attribute__((constructor)) void RegisterModule(void) {
+extern "C" __attribute__((constructor)) void RegisterModule(void)
+{
     napi_module_register(&demoModule);
 }

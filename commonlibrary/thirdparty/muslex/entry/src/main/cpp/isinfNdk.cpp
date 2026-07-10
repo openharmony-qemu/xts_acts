@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,20 +21,23 @@
 #include <vector>
 #include <atomic>
 
-static napi_value ReturnInt32(napi_env env, int32_t value) {
+static napi_value ReturnInt32(napi_env env, int32_t value)
+{
     napi_value result = nullptr;
     napi_create_int32(env, value, &result);
     return result;
 }
 
-static bool IsStubMode() {
+static bool IsStubMode()
+{
     return LibcFunctionLoader::GetInstance().GetIsinf() == nullptr;
 }
 
 // ==================== Normal Parameter Tests ====================
 
 // Test 1: Positive infinity identification
-static napi_value IsinfNormal001(napi_env env, napi_callback_info info) {
+static napi_value IsinfNormal001(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -47,7 +50,8 @@ static napi_value IsinfNormal001(napi_env env, napi_callback_info info) {
 }
 
 // Test 2: Negative infinity identification
-static napi_value IsinfNormal002(napi_env env, napi_callback_info info) {
+static napi_value IsinfNormal002(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -60,7 +64,8 @@ static napi_value IsinfNormal002(napi_env env, napi_callback_info info) {
 }
 
 // Test 3: NaN identification (should return 0)
-static napi_value IsinfNormal003(napi_env env, napi_callback_info info) {
+static napi_value IsinfNormal003(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -73,7 +78,8 @@ static napi_value IsinfNormal003(napi_env env, napi_callback_info info) {
 }
 
 // Test 4: Finite value identification (should return 0)
-static napi_value IsinfNormal004(napi_env env, napi_callback_info info) {
+static napi_value IsinfNormal004(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -102,7 +108,8 @@ static napi_value IsinfNormal004(napi_env env, napi_callback_info info) {
 // ==================== Boundary Value Tests ====================
 
 // Test 5: Max/min finite values
-static napi_value IsinfBoundary001(napi_env env, napi_callback_info info) {
+static napi_value IsinfBoundary001(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -126,7 +133,8 @@ static napi_value IsinfBoundary001(napi_env env, napi_callback_info info) {
 }
 
 // Test 6: Value near infinity
-static napi_value IsinfBoundary002(napi_env env, napi_callback_info info) {
+static napi_value IsinfBoundary002(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -147,7 +155,8 @@ static napi_value IsinfBoundary002(napi_env env, napi_callback_info info) {
 // ==================== Abnormal Parameter Tests ====================
 
 // Test 7: Various NaN representations
-static napi_value IsinfAbnormal001(napi_env env, napi_callback_info info) {
+static napi_value IsinfAbnormal001(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -176,7 +185,8 @@ static napi_value IsinfAbnormal001(napi_env env, napi_callback_info info) {
 }
 
 // Test 8: Sign bit does not affect identification
-static napi_value IsinfAbnormal002(napi_env env, napi_callback_info info) {
+static napi_value IsinfAbnormal002(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -205,7 +215,8 @@ static napi_value IsinfAbnormal002(napi_env env, napi_callback_info info) {
 // ==================== Stability Tests ====================
 
 // Test 9: Repeated calls consistency
-static napi_value IsinfStable001(napi_env env, napi_callback_info info) {
+static napi_value IsinfStable001(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -235,7 +246,8 @@ static napi_value IsinfStable001(napi_env env, napi_callback_info info) {
 }
 
 // Test 10: Massive calls
-static napi_value IsinfStable002(napi_env env, napi_callback_info info) {
+static napi_value IsinfStable002(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -258,7 +270,8 @@ static napi_value IsinfStable002(napi_env env, napi_callback_info info) {
 // ==================== Multi-thread Tests ====================
 
 // Test 11: Multi-thread concurrent calls
-static napi_value IsinfThread001(napi_env env, napi_callback_info info) {
+static napi_value IsinfThread001(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -291,7 +304,8 @@ static napi_value IsinfThread001(napi_env env, napi_callback_info info) {
 }
 
 // Test 12: Multi-thread different parameters mixed
-static napi_value IsinfThread002(napi_env env, napi_callback_info info) {
+static napi_value IsinfThread002(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -334,7 +348,8 @@ static napi_value IsinfThread002(napi_env env, napi_callback_info info) {
 // ==================== NAPI Registration ====================
 
 EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports) {
+static napi_value Init(napi_env env, napi_value exports)
+{
     napi_property_descriptor desc[] = {
         // Normal parameters
         {"isinfNormal001", nullptr, IsinfNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -369,6 +384,7 @@ static napi_module demoModule = {
     .reserved = { 0 },
 };
 
-extern "C" __attribute__((constructor)) void RegisterModule(void) {
+extern "C" __attribute__((constructor)) void RegisterModule(void)
+{
     napi_module_register(&demoModule);
 }

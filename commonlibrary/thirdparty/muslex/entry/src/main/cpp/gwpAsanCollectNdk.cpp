@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ static constexpr int kStableLoop = 20;
 static constexpr int kThreadCount = 3;
 static constexpr int kIterPerThread = 10;
 
-static size_t CallGwpAsanCollect(uint64_t timespan, uintptr_t* buffer, size_t maxCount, size_t depth = 1) {
+static size_t CallGwpAsanCollect(uint64_t timespan, uintptr_t* buffer, size_t maxCount, size_t depth = 1)
+{
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetGwpAsanCollect();
     if (!func) {
@@ -36,18 +37,21 @@ static size_t CallGwpAsanCollect(uint64_t timespan, uintptr_t* buffer, size_t ma
     return func(timespan, buffer, maxCount, depth);
 }
 
-static bool IsStubMode() {
+static bool IsStubMode()
+{
     auto& loader = LibcFunctionLoader::GetInstance();
     return (loader.GetGwpAsanCollect() == nullptr);
 }
 
-static napi_value ReturnInt32(napi_env env, int32_t value) {
+static napi_value ReturnInt32(napi_env env, int32_t value)
+{
     napi_value result = nullptr;
     napi_create_int32(env, value, &result);
     return result;
 }
 
-static napi_value GwpAsanCollectNormal001(napi_env env, napi_callback_info info) {
+static napi_value GwpAsanCollectNormal001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -56,7 +60,8 @@ static napi_value GwpAsanCollectNormal001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, (ret <= 2) ? 1 : 0);
 }
 
-static napi_value GwpAsanCollectNormal002(napi_env env, napi_callback_info info) {
+static napi_value GwpAsanCollectNormal002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -65,7 +70,8 @@ static napi_value GwpAsanCollectNormal002(napi_env env, napi_callback_info info)
     return ReturnInt32(env, (ret <= 2) ? 1 : 0);
 }
 
-static napi_value GwpAsanCollectNormal003(napi_env env, napi_callback_info info) {
+static napi_value GwpAsanCollectNormal003(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -74,14 +80,16 @@ static napi_value GwpAsanCollectNormal003(napi_env env, napi_callback_info info)
     return ReturnInt32(env, (ret <= 5) ? 1 : 0);
 }
 
-static napi_value GwpAsanCollectNormal004(napi_env env, napi_callback_info info) {
+static napi_value GwpAsanCollectNormal004(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
 }
 
-static napi_value GwpAsanCollectAbnormal001(napi_env env, napi_callback_info info) {
+static napi_value GwpAsanCollectAbnormal001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -89,7 +97,8 @@ static napi_value GwpAsanCollectAbnormal001(napi_env env, napi_callback_info inf
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
 }
 
-static napi_value GwpAsanCollectAbnormal002(napi_env env, napi_callback_info info) {
+static napi_value GwpAsanCollectAbnormal002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -98,7 +107,8 @@ static napi_value GwpAsanCollectAbnormal002(napi_env env, napi_callback_info inf
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
 }
 
-static napi_value GwpAsanCollectBoundary001(napi_env env, napi_callback_info info) {
+static napi_value GwpAsanCollectBoundary001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -107,7 +117,8 @@ static napi_value GwpAsanCollectBoundary001(napi_env env, napi_callback_info inf
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
-static napi_value GwpAsanCollectBoundary002(napi_env env, napi_callback_info info) {
+static napi_value GwpAsanCollectBoundary002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -116,7 +127,8 @@ static napi_value GwpAsanCollectBoundary002(napi_env env, napi_callback_info inf
     return ReturnInt32(env, (ret >= 0 && ret <= 1) ? 1 : 0);
 }
 
-static napi_value GwpAsanCollectStable001(napi_env env, napi_callback_info info) {
+static napi_value GwpAsanCollectStable001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -132,7 +144,8 @@ static napi_value GwpAsanCollectStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static napi_value GwpAsanCollectThread001(napi_env env, napi_callback_info info) {
+static napi_value GwpAsanCollectThread001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -153,7 +166,8 @@ static napi_value GwpAsanCollectThread001(napi_env env, napi_callback_info info)
 }
 
 EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports) {
+static napi_value Init(napi_env env, napi_value exports)
+{
     napi_property_descriptor desc[] = {
         {"gwpAsanCollectNormal001", nullptr, GwpAsanCollectNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"gwpAsanCollectNormal002", nullptr, GwpAsanCollectNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -181,6 +195,7 @@ static napi_module demoModule = {
     .reserved = {0},
 };
 
-extern "C" __attribute__((constructor)) void RegisterModule(void) {
+extern "C" __attribute__((constructor)) void RegisterModule(void)
+{
     napi_module_register(&demoModule);
 }

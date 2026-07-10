@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,8 @@ static constexpr int kStableLoop = 20;
 static constexpr int kThreadCount = 3;
 static constexpr int kIterPerThread = 10;
 
-static int CallFegetexcept() {
+static int CallFegetexcept()
+{
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetFegetexcept();
     if (!func) {
@@ -45,7 +46,8 @@ static int CallFegetexcept() {
     return func();
 }
 
-static int CallFeenableexcept(int excepts) {
+static int CallFeenableexcept(int excepts)
+{
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetFeenableexcept();
     if (!func) {
@@ -56,7 +58,8 @@ static int CallFeenableexcept(int excepts) {
     return func(excepts);
 }
 
-static int CallFedisableexcept(int excepts) {
+static int CallFedisableexcept(int excepts)
+{
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetFedisableexcept();
     if (!func) {
@@ -67,18 +70,21 @@ static int CallFedisableexcept(int excepts) {
     return func(excepts);
 }
 
-static bool IsStubMode() {
+static bool IsStubMode()
+{
     auto& loader = LibcFunctionLoader::GetInstance();
     return (loader.GetFegetexcept() == nullptr);
 }
 
-static napi_value ReturnInt32(napi_env env, int32_t value) {
+static napi_value ReturnInt32(napi_env env, int32_t value)
+{
     napi_value result = nullptr;
     napi_create_int32(env, value, &result);
     return result;
 }
 
-static napi_value FegetexceptNormal001(napi_env env, napi_callback_info info) {
+static napi_value FegetexceptNormal001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -88,7 +94,8 @@ static napi_value FegetexceptNormal001(napi_env env, napi_callback_info info) {
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
-static napi_value FegetexceptNormal002(napi_env env, napi_callback_info info) {
+static napi_value FegetexceptNormal002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -98,7 +105,8 @@ static napi_value FegetexceptNormal002(napi_env env, napi_callback_info info) {
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
-static napi_value FegetexceptNormal003(napi_env env, napi_callback_info info) {
+static napi_value FegetexceptNormal003(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -109,14 +117,16 @@ static napi_value FegetexceptNormal003(napi_env env, napi_callback_info info) {
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
-static napi_value FegetexceptNormal004(napi_env env, napi_callback_info info) {
+static napi_value FegetexceptNormal004(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
 }
 
-static napi_value FegetexceptAbnormal001(napi_env env, napi_callback_info info) {
+static napi_value FegetexceptAbnormal001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -124,7 +134,8 @@ static napi_value FegetexceptAbnormal001(napi_env env, napi_callback_info info) 
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
-static napi_value FegetexceptAbnormal002(napi_env env, napi_callback_info info) {
+static napi_value FegetexceptAbnormal002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -134,7 +145,8 @@ static napi_value FegetexceptAbnormal002(napi_env env, napi_callback_info info) 
     return ReturnInt32(env, (ret1 >= 0 && ret2 >= 0) ? 1 : 0);
 }
 
-static napi_value FegetexceptBoundary001(napi_env env, napi_callback_info info) {
+static napi_value FegetexceptBoundary001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -145,7 +157,8 @@ static napi_value FegetexceptBoundary001(napi_env env, napi_callback_info info) 
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
-static napi_value FegetexceptBoundary002(napi_env env, napi_callback_info info) {
+static napi_value FegetexceptBoundary002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -156,7 +169,8 @@ static napi_value FegetexceptBoundary002(napi_env env, napi_callback_info info) 
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
-static napi_value FegetexceptStable001(napi_env env, napi_callback_info info) {
+static napi_value FegetexceptStable001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -172,7 +186,8 @@ static napi_value FegetexceptStable001(napi_env env, napi_callback_info info) {
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static napi_value FegetexceptThread001(napi_env env, napi_callback_info info) {
+static napi_value FegetexceptThread001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -196,7 +211,8 @@ static napi_value FegetexceptThread001(napi_env env, napi_callback_info info) {
 }
 
 EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports) {
+static napi_value Init(napi_env env, napi_value exports)
+{
     napi_property_descriptor desc[] = {
         {"fegetexceptNormal001", nullptr, FegetexceptNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"fegetexceptNormal002", nullptr, FegetexceptNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -224,6 +240,7 @@ static napi_module demoModule = {
     .reserved = {0},
 };
 
-extern "C" __attribute__((constructor)) void RegisterModule(void) {
+extern "C" __attribute__((constructor)) void RegisterModule(void)
+{
     napi_module_register(&demoModule);
 }

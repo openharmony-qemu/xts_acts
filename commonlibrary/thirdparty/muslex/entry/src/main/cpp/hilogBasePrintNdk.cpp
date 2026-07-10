@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ static constexpr int kStableLoop = 20;
 static constexpr int kThreadCount = 3;
 static constexpr int kIterPerThread = 10;
 
-static int CallHilogBasePrint(int type, int level, unsigned int domain, const char* tag, const char* fmt, ...) {
+static int CallHilogBasePrint(int type, int level, unsigned int domain, const char* tag, const char* fmt, ...)
+{
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetHilogBasePrint();
     if (!func) {
@@ -45,18 +46,21 @@ static int CallHilogBasePrint(int type, int level, unsigned int domain, const ch
     return ret;
 }
 
-static bool IsStubMode() {
+static bool IsStubMode()
+{
     auto& loader = LibcFunctionLoader::GetInstance();
     return (loader.GetHilogBasePrint() == nullptr);
 }
 
-static napi_value ReturnInt32(napi_env env, int32_t value) {
+static napi_value ReturnInt32(napi_env env, int32_t value)
+{
     napi_value result = nullptr;
     napi_create_int32(env, value, &result);
     return result;
 }
 
-static napi_value HilogBasePrintNormal001(napi_env env, napi_callback_info info) {
+static napi_value HilogBasePrintNormal001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -64,7 +68,8 @@ static napi_value HilogBasePrintNormal001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
-static napi_value HilogBasePrintNormal002(napi_env env, napi_callback_info info) {
+static napi_value HilogBasePrintNormal002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -72,7 +77,8 @@ static napi_value HilogBasePrintNormal002(napi_env env, napi_callback_info info)
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
-static napi_value HilogBasePrintNormal003(napi_env env, napi_callback_info info) {
+static napi_value HilogBasePrintNormal003(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -80,14 +86,16 @@ static napi_value HilogBasePrintNormal003(napi_env env, napi_callback_info info)
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
-static napi_value HilogBasePrintNormal004(napi_env env, napi_callback_info info) {
+static napi_value HilogBasePrintNormal004(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
 }
 
-static napi_value HilogBasePrintAbnormal001(napi_env env, napi_callback_info info) {
+static napi_value HilogBasePrintAbnormal001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -95,7 +103,8 @@ static napi_value HilogBasePrintAbnormal001(napi_env env, napi_callback_info inf
     return ReturnInt32(env, 1);
 }
 
-static napi_value HilogBasePrintAbnormal002(napi_env env, napi_callback_info info) {
+static napi_value HilogBasePrintAbnormal002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -103,7 +112,8 @@ static napi_value HilogBasePrintAbnormal002(napi_env env, napi_callback_info inf
     return ReturnInt32(env, 1);
 }
 
-static napi_value HilogBasePrintBoundary001(napi_env env, napi_callback_info info) {
+static napi_value HilogBasePrintBoundary001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -111,7 +121,8 @@ static napi_value HilogBasePrintBoundary001(napi_env env, napi_callback_info inf
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
-static napi_value HilogBasePrintBoundary002(napi_env env, napi_callback_info info) {
+static napi_value HilogBasePrintBoundary002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -120,7 +131,8 @@ static napi_value HilogBasePrintBoundary002(napi_env env, napi_callback_info inf
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
-static napi_value HilogBasePrintStable001(napi_env env, napi_callback_info info) {
+static napi_value HilogBasePrintStable001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -134,7 +146,8 @@ static napi_value HilogBasePrintStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, (successCount > 0) ? 1 : 0);
 }
 
-static napi_value HilogBasePrintThread001(napi_env env, napi_callback_info info) {
+static napi_value HilogBasePrintThread001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -158,7 +171,8 @@ static napi_value HilogBasePrintThread001(napi_env env, napi_callback_info info)
 }
 
 EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports) {
+static napi_value Init(napi_env env, napi_value exports)
+{
     napi_property_descriptor desc[] = {
         {"hilogBasePrintNormal001", nullptr, HilogBasePrintNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"hilogBasePrintNormal002", nullptr, HilogBasePrintNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -186,6 +200,7 @@ static napi_module demoModule = {
     .reserved = {0},
 };
 
-extern "C" __attribute__((constructor)) void RegisterModule(void) {
+extern "C" __attribute__((constructor)) void RegisterModule(void)
+{
     napi_module_register(&demoModule);
 }

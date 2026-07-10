@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,8 @@ static constexpr int kStableLoop = 20;
 static constexpr int kThreadCount = 3;
 static constexpr int kIterPerThread = 10;
 
-static int CallFeenableexcept(int excepts) {
+static int CallFeenableexcept(int excepts)
+{
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetFeenableexcept();
     if (!func) {
@@ -45,7 +46,8 @@ static int CallFeenableexcept(int excepts) {
     return func(excepts);
 }
 
-static int CallFedisableexcept(int excepts) {
+static int CallFedisableexcept(int excepts)
+{
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetFedisableexcept();
     if (!func) {
@@ -56,18 +58,21 @@ static int CallFedisableexcept(int excepts) {
     return func(excepts);
 }
 
-static bool IsStubMode() {
+static bool IsStubMode()
+{
     auto& loader = LibcFunctionLoader::GetInstance();
     return (loader.GetFeenableexcept() == nullptr);
 }
 
-static napi_value ReturnInt32(napi_env env, int32_t value) {
+static napi_value ReturnInt32(napi_env env, int32_t value)
+{
     napi_value result = nullptr;
     napi_create_int32(env, value, &result);
     return result;
 }
 
-static napi_value FeenableexceptNormal001(napi_env env, napi_callback_info info) {
+static napi_value FeenableexceptNormal001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -75,7 +80,8 @@ static napi_value FeenableexceptNormal001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, 1);
 }
 
-static napi_value FeenableexceptNormal002(napi_env env, napi_callback_info info) {
+static napi_value FeenableexceptNormal002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -83,7 +89,8 @@ static napi_value FeenableexceptNormal002(napi_env env, napi_callback_info info)
     return ReturnInt32(env, 1);
 }
 
-static napi_value FeenableexceptNormal003(napi_env env, napi_callback_info info) {
+static napi_value FeenableexceptNormal003(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -91,14 +98,16 @@ static napi_value FeenableexceptNormal003(napi_env env, napi_callback_info info)
     return ReturnInt32(env, 1);
 }
 
-static napi_value FeenableexceptNormal004(napi_env env, napi_callback_info info) {
+static napi_value FeenableexceptNormal004(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
 }
 
-static napi_value FeenableexceptAbnormal001(napi_env env, napi_callback_info info) {
+static napi_value FeenableexceptAbnormal001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -106,7 +115,8 @@ static napi_value FeenableexceptAbnormal001(napi_env env, napi_callback_info inf
     return ReturnInt32(env, 1);
 }
 
-static napi_value FeenableexceptAbnormal002(napi_env env, napi_callback_info info) {
+static napi_value FeenableexceptAbnormal002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -114,7 +124,8 @@ static napi_value FeenableexceptAbnormal002(napi_env env, napi_callback_info inf
     return ReturnInt32(env, 1);
 }
 
-static napi_value FeenableexceptBoundary001(napi_env env, napi_callback_info info) {
+static napi_value FeenableexceptBoundary001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -122,7 +133,8 @@ static napi_value FeenableexceptBoundary001(napi_env env, napi_callback_info inf
     return ReturnInt32(env, 1);
 }
 
-static napi_value FeenableexceptBoundary002(napi_env env, napi_callback_info info) {
+static napi_value FeenableexceptBoundary002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -132,7 +144,8 @@ static napi_value FeenableexceptBoundary002(napi_env env, napi_callback_info inf
     return ReturnInt32(env, 1);
 }
 
-static napi_value FeenableexceptStable001(napi_env env, napi_callback_info info) {
+static napi_value FeenableexceptStable001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -143,7 +156,8 @@ static napi_value FeenableexceptStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, 1);
 }
 
-static napi_value FeenableexceptThread001(napi_env env, napi_callback_info info) {
+static napi_value FeenableexceptThread001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -164,7 +178,8 @@ static napi_value FeenableexceptThread001(napi_env env, napi_callback_info info)
 }
 
 EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports) {
+static napi_value Init(napi_env env, napi_value exports)
+{
     napi_property_descriptor desc[] = {
         {"feenableexceptNormal001", nullptr, FeenableexceptNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"feenableexceptNormal002", nullptr, FeenableexceptNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -192,6 +207,7 @@ static napi_module demoModule = {
     .reserved = {0},
 };
 
-extern "C" __attribute__((constructor)) void RegisterModule(void) {
+extern "C" __attribute__((constructor)) void RegisterModule(void)
+{
     napi_module_register(&demoModule);
 }

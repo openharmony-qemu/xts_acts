@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ static constexpr int kStableLoop = 20;
 static constexpr int kThreadCount = 3;
 static constexpr int kIterPerThread = 10;
 
-static GetResTraceIdFunc GetGetResTraceIdFunc() {
+static GetResTraceIdFunc GetGetResTraceIdFunc()
+{
     static GetResTraceIdFunc cachedFunc = [] {
         dlerror();
         return reinterpret_cast<GetResTraceIdFunc>(dlsym(RTLD_DEFAULT, "getResTraceId"));
@@ -35,7 +36,8 @@ static GetResTraceIdFunc GetGetResTraceIdFunc() {
     return cachedFunc;
 }
 
-static bool CallGetResTraceId(uint32_t* pTraceType, uint64_t* pTraceID) {
+static bool CallGetResTraceId(uint32_t* pTraceType, uint64_t* pTraceID)
+{
     auto func = GetGetResTraceIdFunc();
     if (!func) {
         errno = ENOSYS;
@@ -45,17 +47,20 @@ static bool CallGetResTraceId(uint32_t* pTraceType, uint64_t* pTraceID) {
     return func(pTraceType, pTraceID);
 }
 
-static bool IsStubMode() {
+static bool IsStubMode()
+{
     return (GetGetResTraceIdFunc() == nullptr);
 }
 
-static napi_value ReturnInt32(napi_env env, int32_t value) {
+static napi_value ReturnInt32(napi_env env, int32_t value)
+{
     napi_value result = nullptr;
     napi_create_int32(env, value, &result);
     return result;
 }
 
-static napi_value GetResTraceIdNormal001(napi_env env, napi_callback_info info) {
+static napi_value GetResTraceIdNormal001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -65,7 +70,8 @@ static napi_value GetResTraceIdNormal001(napi_env env, napi_callback_info info) 
     return ReturnInt32(env, 1);
 }
 
-static napi_value GetResTraceIdNormal002(napi_env env, napi_callback_info info) {
+static napi_value GetResTraceIdNormal002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -75,7 +81,8 @@ static napi_value GetResTraceIdNormal002(napi_env env, napi_callback_info info) 
     return ReturnInt32(env, 1);
 }
 
-static napi_value GetResTraceIdNormal003(napi_env env, napi_callback_info info) {
+static napi_value GetResTraceIdNormal003(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -86,14 +93,16 @@ static napi_value GetResTraceIdNormal003(napi_env env, napi_callback_info info) 
     return ReturnInt32(env, 1);
 }
 
-static napi_value GetResTraceIdNormal004(napi_env env, napi_callback_info info) {
+static napi_value GetResTraceIdNormal004(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
 }
 
-static napi_value GetResTraceIdAbnormal001(napi_env env, napi_callback_info info) {
+static napi_value GetResTraceIdAbnormal001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -101,7 +110,8 @@ static napi_value GetResTraceIdAbnormal001(napi_env env, napi_callback_info info
     return ReturnInt32(env, 1);
 }
 
-static napi_value GetResTraceIdAbnormal002(napi_env env, napi_callback_info info) {
+static napi_value GetResTraceIdAbnormal002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -110,7 +120,8 @@ static napi_value GetResTraceIdAbnormal002(napi_env env, napi_callback_info info
     return ReturnInt32(env, 1);
 }
 
-static napi_value GetResTraceIdBoundary001(napi_env env, napi_callback_info info) {
+static napi_value GetResTraceIdBoundary001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -120,7 +131,8 @@ static napi_value GetResTraceIdBoundary001(napi_env env, napi_callback_info info
     return ReturnInt32(env, 1);
 }
 
-static napi_value GetResTraceIdBoundary002(napi_env env, napi_callback_info info) {
+static napi_value GetResTraceIdBoundary002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -130,7 +142,8 @@ static napi_value GetResTraceIdBoundary002(napi_env env, napi_callback_info info
     return ReturnInt32(env, 1);
 }
 
-static napi_value GetResTraceIdStable001(napi_env env, napi_callback_info info) {
+static napi_value GetResTraceIdStable001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -143,7 +156,8 @@ static napi_value GetResTraceIdStable001(napi_env env, napi_callback_info info) 
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static napi_value GetResTraceIdThread001(napi_env env, napi_callback_info info) {
+static napi_value GetResTraceIdThread001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -165,7 +179,8 @@ static napi_value GetResTraceIdThread001(napi_env env, napi_callback_info info) 
 }
 
 EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports) {
+static napi_value Init(napi_env env, napi_value exports)
+{
     napi_property_descriptor desc[] = {
         {"getResTraceIdNormal001", nullptr, GetResTraceIdNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getResTraceIdNormal002", nullptr, GetResTraceIdNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -193,6 +208,7 @@ static napi_module demoModule = {
     .reserved = {0},
 };
 
-extern "C" __attribute__((constructor)) void RegisterModule(void) {
+extern "C" __attribute__((constructor)) void RegisterModule(void)
+{
     napi_module_register(&demoModule);
 }

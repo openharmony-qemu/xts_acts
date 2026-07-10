@@ -18,7 +18,7 @@ import Utils from './Utils';
 import fdeltchkndktest from 'libfdeltchkndktest.so';
 import { deviceInfo } from '@kit.BasicServicesKit';
 
-export default function fdeltchkNdkTest() {
+export default function FdeltChkNdkTest() {
   describe('FdeltchkNdkTest', () => {
 
     beforeEach(async () => { await Utils.sleep(50); });

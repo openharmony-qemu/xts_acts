@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,20 +21,23 @@
 #include <vector>
 #include <atomic>
 
-static napi_value ReturnInt32(napi_env env, int32_t value) {
+static napi_value ReturnInt32(napi_env env, int32_t value)
+{
     napi_value result = nullptr;
     napi_create_int32(env, value, &result);
     return result;
 }
 
-static bool IsStubMode() {
+static bool IsStubMode()
+{
     return LibcFunctionLoader::GetInstance().GetFinitef() == nullptr;
 }
 
 // ==================== Normal Parameter Tests ====================
 
 // Test 1: Basic finite value identification
-static napi_value FinitefNormal001(napi_env env, napi_callback_info info) {
+static napi_value FinitefNormal001(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetFinitef();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -71,7 +74,8 @@ static napi_value FinitefNormal001(napi_env env, napi_callback_info info) {
 }
 
 // Test 2: Non-finite value identification
-static napi_value FinitefNormal002(napi_env env, napi_callback_info info) {
+static napi_value FinitefNormal002(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetFinitef();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -94,7 +98,8 @@ static napi_value FinitefNormal002(napi_env env, napi_callback_info info) {
 // ==================== Boundary Value Tests ====================
 
 // Test 3: Max/min value boundaries
-static napi_value FinitefBoundary001(napi_env env, napi_callback_info info) {
+static napi_value FinitefBoundary001(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetFinitef();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -118,7 +123,8 @@ static napi_value FinitefBoundary001(napi_env env, napi_callback_info info) {
 }
 
 // Test 4: Near boundary values
-static napi_value FinitefBoundary002(napi_env env, napi_callback_info info) {
+static napi_value FinitefBoundary002(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetFinitef();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -147,7 +153,8 @@ static napi_value FinitefBoundary002(napi_env env, napi_callback_info info) {
 // ==================== Abnormal Parameter Tests ====================
 
 // Test 5: Various NaN representations
-static napi_value FinitefAbnormal001(napi_env env, napi_callback_info info) {
+static napi_value FinitefAbnormal001(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetFinitef();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -178,7 +185,8 @@ static napi_value FinitefAbnormal001(napi_env env, napi_callback_info info) {
 // ==================== Stability Tests ====================
 
 // Test 6: Repeated calls consistency
-static napi_value FinitefStable001(napi_env env, napi_callback_info info) {
+static napi_value FinitefStable001(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetFinitef();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -210,7 +218,8 @@ static napi_value FinitefStable001(napi_env env, napi_callback_info info) {
 // ==================== Multi-thread Tests ====================
 
 // Test 7: Multi-thread concurrent
-static napi_value FinitefThread001(napi_env env, napi_callback_info info) {
+static napi_value FinitefThread001(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetFinitef();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -246,7 +255,8 @@ static napi_value FinitefThread001(napi_env env, napi_callback_info info) {
 // ==================== NAPI Registration ====================
 
 EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports) {
+static napi_value Init(napi_env env, napi_value exports)
+{
     napi_property_descriptor desc[] = {
         {"finitefNormal001", nullptr, FinitefNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"finitefNormal002", nullptr, FinitefNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -271,6 +281,7 @@ static napi_module demoModule = {
     .reserved = { 0 },
 };
 
-extern "C" __attribute__((constructor)) void RegisterModule(void) {
+extern "C" __attribute__((constructor)) void RegisterModule(void)
+{
     napi_module_register(&demoModule);
 }

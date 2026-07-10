@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ static constexpr int kThreadCount = 3;
 static constexpr int kIterPerThread = 10;
 
 static int CallGetaddrinfoCustom(const char* host, const char* serv,
-                                 const struct addrinfo* hint, struct addrinfo** res) {
+                                 const struct addrinfo* hint, struct addrinfo** res)
+{
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetGetaddrinfoCustom();
     if (!func) {
@@ -38,18 +39,21 @@ static int CallGetaddrinfoCustom(const char* host, const char* serv,
     return func(host, serv, hint, res);
 }
 
-static bool IsStubMode() {
+static bool IsStubMode()
+{
     auto& loader = LibcFunctionLoader::GetInstance();
     return (loader.GetGetaddrinfoCustom() == nullptr);
 }
 
-static napi_value ReturnInt32(napi_env env, int32_t value) {
+static napi_value ReturnInt32(napi_env env, int32_t value)
+{
     napi_value result = nullptr;
     napi_create_int32(env, value, &result);
     return result;
 }
 
-static napi_value GetaddrinfoCustomNormal001(napi_env env, napi_callback_info info) {
+static napi_value GetaddrinfoCustomNormal001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -65,7 +69,8 @@ static napi_value GetaddrinfoCustomNormal001(napi_env env, napi_callback_info in
     return ReturnInt32(env, 1);
 }
 
-static napi_value GetaddrinfoCustomNormal002(napi_env env, napi_callback_info info) {
+static napi_value GetaddrinfoCustomNormal002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -81,7 +86,8 @@ static napi_value GetaddrinfoCustomNormal002(napi_env env, napi_callback_info in
     return ReturnInt32(env, 1);
 }
 
-static napi_value GetaddrinfoCustomNormal003(napi_env env, napi_callback_info info) {
+static napi_value GetaddrinfoCustomNormal003(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -96,14 +102,16 @@ static napi_value GetaddrinfoCustomNormal003(napi_env env, napi_callback_info in
     return ReturnInt32(env, 1);
 }
 
-static napi_value GetaddrinfoCustomNormal004(napi_env env, napi_callback_info info) {
+static napi_value GetaddrinfoCustomNormal004(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
 }
 
-static napi_value GetaddrinfoCustomAbnormal001(napi_env env, napi_callback_info info) {
+static napi_value GetaddrinfoCustomAbnormal001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -115,7 +123,8 @@ static napi_value GetaddrinfoCustomAbnormal001(napi_env env, napi_callback_info 
     return ReturnInt32(env, 1);
 }
 
-static napi_value GetaddrinfoCustomAbnormal002(napi_env env, napi_callback_info info) {
+static napi_value GetaddrinfoCustomAbnormal002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -130,7 +139,8 @@ static napi_value GetaddrinfoCustomAbnormal002(napi_env env, napi_callback_info 
     return ReturnInt32(env, (ret != 0) ? 1 : 0);
 }
 
-static napi_value GetaddrinfoCustomBoundary001(napi_env env, napi_callback_info info) {
+static napi_value GetaddrinfoCustomBoundary001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -145,7 +155,8 @@ static napi_value GetaddrinfoCustomBoundary001(napi_env env, napi_callback_info 
     return ReturnInt32(env, 1);
 }
 
-static napi_value GetaddrinfoCustomBoundary002(napi_env env, napi_callback_info info) {
+static napi_value GetaddrinfoCustomBoundary002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -160,7 +171,8 @@ static napi_value GetaddrinfoCustomBoundary002(napi_env env, napi_callback_info 
     return ReturnInt32(env, 1);
 }
 
-static napi_value GetaddrinfoCustomStable001(napi_env env, napi_callback_info info) {
+static napi_value GetaddrinfoCustomStable001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -177,7 +189,8 @@ static napi_value GetaddrinfoCustomStable001(napi_env env, napi_callback_info in
     return ReturnInt32(env, 1);
 }
 
-static napi_value GetaddrinfoCustomThread001(napi_env env, napi_callback_info info) {
+static napi_value GetaddrinfoCustomThread001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -204,7 +217,8 @@ static napi_value GetaddrinfoCustomThread001(napi_env env, napi_callback_info in
 }
 
 EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports) {
+static napi_value Init(napi_env env, napi_value exports)
+{
     napi_property_descriptor desc[] = {
         {"getaddrinfoCustomNormal001", nullptr, GetaddrinfoCustomNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getaddrinfoCustomNormal002", nullptr, GetaddrinfoCustomNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -232,6 +246,7 @@ static napi_module demoModule = {
     .reserved = {0},
 };
 
-extern "C" __attribute__((constructor)) void RegisterModule(void) {
+extern "C" __attribute__((constructor)) void RegisterModule(void)
+{
     napi_module_register(&demoModule);
 }

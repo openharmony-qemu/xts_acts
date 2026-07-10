@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,20 +26,23 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
-static napi_value ReturnInt32(napi_env env, int32_t value) {
+static napi_value ReturnInt32(napi_env env, int32_t value)
+{
     napi_value result = nullptr;
     napi_create_int32(env, value, &result);
     return result;
 }
 
 // Check if Stub mode
-static bool IsStubMode() {
+static bool IsStubMode()
+{
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
     return (func == nullptr);
 }
 
 // Helper function: create temp file (multiple fallback options)
-static FILE* GetTestFile() {
+static FILE* GetTestFile()
+{
     // Option 1: tmpfile()
     FILE* file = tmpfile();
     if (file != nullptr) {
@@ -82,7 +85,8 @@ static FILE* GetTestFile() {
 // ==================== Normal Parameter Tests ====================
 
 // Test 1: Basic formatted output (flag=0)
-static napi_value FprintfChkNormal001(napi_env env, napi_callback_info info) {
+static napi_value FprintfChkNormal001(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -137,7 +141,8 @@ static napi_value FprintfChkNormal001(napi_env env, napi_callback_info info) {
 }
 
 // Test 2: Basic formatted output (flag=1, security check enabled)
-static napi_value FprintfChkNormal002(napi_env env, napi_callback_info info) {
+static napi_value FprintfChkNormal002(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -176,7 +181,8 @@ static napi_value FprintfChkNormal002(napi_env env, napi_callback_info info) {
 }
 
 // Test 3: Mixed format string
-static napi_value FprintfChkNormal003(napi_env env, napi_callback_info info) {
+static napi_value FprintfChkNormal003(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -212,7 +218,8 @@ static napi_value FprintfChkNormal003(napi_env env, napi_callback_info info) {
 // ==================== Boundary Value Tests ====================
 
 // Test 4: Long string output
-static napi_value FprintfChkBoundary001(napi_env env, napi_callback_info info) {
+static napi_value FprintfChkBoundary001(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -252,7 +259,8 @@ static napi_value FprintfChkBoundary001(napi_env env, napi_callback_info info) {
 }
 
 // Test 5: Large number formatting
-static napi_value FprintfChkBoundary002(napi_env env, napi_callback_info info) {
+static napi_value FprintfChkBoundary002(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -293,7 +301,8 @@ static napi_value FprintfChkBoundary002(napi_env env, napi_callback_info info) {
 // ==================== Abnormal Parameter Tests ====================
 
 // Test 6: Invalid FILE pointer
-static napi_value FprintfChkAbnormal001(napi_env env, napi_callback_info info) {
+static napi_value FprintfChkAbnormal001(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -321,7 +330,8 @@ static napi_value FprintfChkAbnormal001(napi_env env, napi_callback_info info) {
 }
 
 // Test 7: Invalid format string
-static napi_value FprintfChkAbnormal002(napi_env env, napi_callback_info info) {
+static napi_value FprintfChkAbnormal002(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -351,7 +361,8 @@ static napi_value FprintfChkAbnormal002(napi_env env, napi_callback_info info) {
 }
 
 // Test 8: Format string parameter mismatch
-static napi_value FprintfChkAbnormal003(napi_env env, napi_callback_info info) {
+static napi_value FprintfChkAbnormal003(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -379,7 +390,8 @@ static napi_value FprintfChkAbnormal003(napi_env env, napi_callback_info info) {
 // ==================== Stability Tests ====================
 
 // Test 9: Repeated calls result consistency
-static napi_value FprintfChkStable001(napi_env env, napi_callback_info info) {
+static napi_value FprintfChkStable001(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -414,7 +426,8 @@ static napi_value FprintfChkStable001(napi_env env, napi_callback_info info) {
 }
 
 // Test 10: Massive formatting calls
-static napi_value FprintfChkStable002(napi_env env, napi_callback_info info) {
+static napi_value FprintfChkStable002(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -443,7 +456,8 @@ static napi_value FprintfChkStable002(napi_env env, napi_callback_info info) {
 // ==================== Multi-thread Tests ====================
 
 // Test 11: Multi-thread different file output
-static napi_value FprintfChkThread001(napi_env env, napi_callback_info info) {
+static napi_value FprintfChkThread001(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -490,7 +504,8 @@ static napi_value FprintfChkThread001(napi_env env, napi_callback_info info) {
 }
 
 // Test 12: Multi-thread same file output
-static napi_value FprintfChkThread002(napi_env env, napi_callback_info info) {
+static napi_value FprintfChkThread002(napi_env env, napi_callback_info info)
+{
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
     if (func == nullptr) {
         return ReturnInt32(env, 0);
@@ -531,7 +546,8 @@ static napi_value FprintfChkThread002(napi_env env, napi_callback_info info) {
 // ==================== NAPI Registration ====================
 
 EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports) {
+static napi_value Init(napi_env env, napi_value exports)
+{
     napi_property_descriptor desc[] = {
         {"fprintfChkNormal001", nullptr, FprintfChkNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"fprintfChkNormal002", nullptr, FprintfChkNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -561,6 +577,7 @@ static napi_module demoModule = {
     .reserved = { 0 },
 };
 
-extern "C" __attribute__((constructor)) void RegisterModule(void) {
+extern "C" __attribute__((constructor)) void RegisterModule(void)
+{
     napi_module_register(&demoModule);
 }

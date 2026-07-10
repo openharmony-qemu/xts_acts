@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ static constexpr int kStableLoop10000 = 20;
 static constexpr int kThreadCount = 3;
 static constexpr int kIterPerThread = 10;
 
-static int CallIsnan(double x) {
+static int CallIsnan(double x)
+{
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetIsnan();
     if (!func) {
@@ -37,7 +38,8 @@ static int CallIsnan(double x) {
     return func(x);
 }
 
-static bool IsStubMode() {
+static bool IsStubMode()
+{
     auto& loader = LibcFunctionLoader::GetInstance();
     if (!loader.GetIsnan()) {
         return true;
@@ -47,7 +49,8 @@ static bool IsStubMode() {
     return (errno == ENOSYS);
 }
 
-static napi_value ReturnInt32(napi_env env, int32_t value) {
+static napi_value ReturnInt32(napi_env env, int32_t value)
+{
     napi_value result = nullptr;
     napi_create_int32(env, value, &result);
     return result;
@@ -56,7 +59,8 @@ static napi_value ReturnInt32(napi_env env, int32_t value) {
 /* ---------- Normal parameter tests ---------- */
 
 /* TC-001: NaN should return non-zero */
-static napi_value IsnanNormal001(napi_env env, napi_callback_info info) {
+static napi_value IsnanNormal001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -65,7 +69,8 @@ static napi_value IsnanNormal001(napi_env env, napi_callback_info info) {
 }
 
 /* TC-002: Positive infinity should return 0 */
-static napi_value IsnanNormal002(napi_env env, napi_callback_info info) {
+static napi_value IsnanNormal002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -74,7 +79,8 @@ static napi_value IsnanNormal002(napi_env env, napi_callback_info info) {
 }
 
 /* TC-003: Negative infinity should return 0 */
-static napi_value IsnanNormal003(napi_env env, napi_callback_info info) {
+static napi_value IsnanNormal003(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -83,7 +89,8 @@ static napi_value IsnanNormal003(napi_env env, napi_callback_info info) {
 }
 
 /* TC-004: Zero should return 0 */
-static napi_value IsnanNormal004(napi_env env, napi_callback_info info) {
+static napi_value IsnanNormal004(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -92,7 +99,8 @@ static napi_value IsnanNormal004(napi_env env, napi_callback_info info) {
 }
 
 /* TC-005: Normal finite value should return 0 */
-static napi_value IsnanNormal005(napi_env env, napi_callback_info info) {
+static napi_value IsnanNormal005(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -101,7 +109,8 @@ static napi_value IsnanNormal005(napi_env env, napi_callback_info info) {
 }
 
 /* TC-006: Negative finite value should return 0 */
-static napi_value IsnanNormal006(napi_env env, napi_callback_info info) {
+static napi_value IsnanNormal006(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -112,7 +121,8 @@ static napi_value IsnanNormal006(napi_env env, napi_callback_info info) {
 /* ---------- Boundary value tests ---------- */
 
 /* TC-007: DBL_MAX should return 0 */
-static napi_value IsnanBoundary001(napi_env env, napi_callback_info info) {
+static napi_value IsnanBoundary001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -121,7 +131,8 @@ static napi_value IsnanBoundary001(napi_env env, napi_callback_info info) {
 }
 
 /* TC-008: DBL_MIN should return 0 */
-static napi_value IsnanBoundary002(napi_env env, napi_callback_info info) {
+static napi_value IsnanBoundary002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -132,7 +143,8 @@ static napi_value IsnanBoundary002(napi_env env, napi_callback_info info) {
 /* ---------- Abnormal parameter tests ---------- */
 
 /* TC-009: Signaling NaN should return non-zero */
-static napi_value IsnanAbnormal001(napi_env env, napi_callback_info info) {
+static napi_value IsnanAbnormal001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -143,7 +155,8 @@ static napi_value IsnanAbnormal001(napi_env env, napi_callback_info info) {
 }
 
 /* TC-010: Various NaN bit patterns */
-static napi_value IsnanAbnormal002(napi_env env, napi_callback_info info) {
+static napi_value IsnanAbnormal002(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -163,7 +176,8 @@ static napi_value IsnanAbnormal002(napi_env env, napi_callback_info info) {
 /* ---------- Stability tests ---------- */
 
 /* TC-011: 10000 repeated calls stability */
-static napi_value IsnanStable001(napi_env env, napi_callback_info info) {
+static napi_value IsnanStable001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -182,7 +196,8 @@ static napi_value IsnanStable001(napi_env env, napi_callback_info info) {
 }
 
 /* TC-012: Multi-thread safety */
-static napi_value IsnanThread001(napi_env env, napi_callback_info info) {
+static napi_value IsnanThread001(napi_env env, napi_callback_info info)
+{
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
@@ -211,7 +226,8 @@ static napi_value IsnanThread001(napi_env env, napi_callback_info info) {
 
 /* ---------- Module registration ---------- */
 EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports) {
+static napi_value Init(napi_env env, napi_value exports)
+{
     napi_property_descriptor desc[] = {
         {"isnanNormal001", nullptr, IsnanNormal001, nullptr, nullptr, nullptr,
          napi_default, nullptr},
@@ -253,6 +269,7 @@ static napi_module demoModule = {
     .reserved = {0},
 };
 
-extern "C" __attribute__((constructor)) void RegisterModule(void) {
+extern "C" __attribute__((constructor)) void RegisterModule(void)
+{
     napi_module_register(&demoModule);
 }

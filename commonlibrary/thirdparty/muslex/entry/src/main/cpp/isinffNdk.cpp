@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,19 +23,22 @@
 #include <atomic>
 
 // Helper function: create napi return value
-static napi_value ReturnInt32(napi_env env, int32_t value) {
+static napi_value ReturnInt32(napi_env env, int32_t value)
+{
     napi_value result = nullptr;
     napi_create_int32(env, value, &result);
     return result;
 }
 
 // Get __isinff function pointer
-static auto GetIsinff() {
+static auto GetIsinff()
+{
     return LibcFunctionLoader::GetInstance().GetIsinff();
 }
 
 // Check if Stub mode (function not enabled)
-static bool IsStubMode() {
+static bool IsStubMode()
+{
     auto isinff = GetIsinff();
     if (isinff == nullptr) {
         return true;  // Symbol not found, Stub mode
@@ -47,7 +50,8 @@ static bool IsStubMode() {
 }
 
 // 1. Basic functionality test
-static napi_value IsinffNormal001(napi_env env, napi_callback_info info) {
+static napi_value IsinffNormal001(napi_env env, napi_callback_info info)
+{
     auto isinff = GetIsinff();
     if (isinff == nullptr || IsStubMode()) {
         return ReturnInt32(env, 0);
@@ -75,7 +79,8 @@ static napi_value IsinffNormal001(napi_env env, napi_callback_info info) {
 }
 
 // 2. Boundary value test
-static napi_value IsinffBoundary001(napi_env env, napi_callback_info info) {
+static napi_value IsinffBoundary001(napi_env env, napi_callback_info info)
+{
     auto isinff = GetIsinff();
     if (isinff == nullptr || IsStubMode()) {
         return ReturnInt32(env, 0);
@@ -97,7 +102,8 @@ static napi_value IsinffBoundary001(napi_env env, napi_callback_info info) {
 }
 
 // 3. Abnormal/error pattern test: verify Stub mode behavior
-static napi_value IsinffAbnormal001(napi_env env, napi_callback_info info) {
+static napi_value IsinffAbnormal001(napi_env env, napi_callback_info info)
+{
     auto isinff = GetIsinff();
     
     struct TestResult {
@@ -149,7 +155,8 @@ static napi_value IsinffAbnormal001(napi_env env, napi_callback_info info) {
 }
 
 // 4. Extreme input test
-static napi_value IsinffAbnormal002(napi_env env, napi_callback_info info) {
+static napi_value IsinffAbnormal002(napi_env env, napi_callback_info info)
+{
     auto isinff = GetIsinff();
     if (isinff == nullptr || IsStubMode()) {
         return ReturnInt32(env, 0);
@@ -180,7 +187,8 @@ static napi_value IsinffAbnormal002(napi_env env, napi_callback_info info) {
 }
 
 // 5. Stability test
-static napi_value IsinffStable001(napi_env env, napi_callback_info info) {
+static napi_value IsinffStable001(napi_env env, napi_callback_info info)
+{
     auto isinff = GetIsinff();
     if (isinff == nullptr || IsStubMode()) {
         return ReturnInt32(env, 0);
@@ -200,7 +208,8 @@ static napi_value IsinffStable001(napi_env env, napi_callback_info info) {
 }
 
 // 6. Thread safety test
-static napi_value IsinffThreadSafety001(napi_env env, napi_callback_info info) {
+static napi_value IsinffThreadSafety001(napi_env env, napi_callback_info info)
+{
     auto isinff = GetIsinff();
     if (isinff == nullptr || IsStubMode()) {
         return ReturnInt32(env, 0);
@@ -242,7 +251,8 @@ static napi_value IsinffThreadSafety001(napi_env env, napi_callback_info info) {
 
 // NAPI module registration
 EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports) {
+static napi_value Init(napi_env env, napi_value exports)
+{
     napi_property_descriptor desc[] = {
         {"isInffNormal001", nullptr, IsinffNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"isInffBoundary001", nullptr, IsinffBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -266,6 +276,7 @@ static napi_module demoModule = {
     .reserved = { 0 },
 };
 
-extern "C" __attribute__((constructor)) void RegisterModule(void) {
+extern "C" __attribute__((constructor)) void RegisterModule(void)
+{
     napi_module_register(&demoModule);
 }
