@@ -2,11 +2,31 @@ import AcosfFiniteNdkTest from './AcosfFiniteNdk.test';
 import AsPrintfChkNdkTest from './AsprintfChkNdk.test';
 import Atan2FiniteNdkTest from './Atan2FiniteNdk.test';
 import CmsgNxthdrNdkTest from './CmsgNxthdrNdk.test';
+import fdeltchkNdkTest from './Fdeltchkndk.test';
+import isinffNdkTest from './Isinff.test';
+import finiteNdkTest from './Finite.test';
+import finitefNdkTest from './Finitef.test';
+import fprintfChkNdkTest from './FprintfChk.test';
+import getauxvalNdkTest from './Getauxval.test';
+import isinfNdkTest from './Isinf.test';
+import isnanfNdkTest from './IsnanfNdk.test';
+import isnanNdkTest from './IsnanNdk.test';
 import DfxSetCrashLogConfigNdkTest from './DfxSetCrashLogConfigNdk.test';
 import Exp2fFiniteNdkTest from './Exp2fFiniteNdk.test';
 import Exp2FiniteNdkTest from './Exp2FiniteNdk.test';
 import ExpFiniteNdkTest from './ExpFiniteNdk.test';
+import fcntl64NdkTest from './Fcntl64Ndk.test';
+import fedisableexceptNdkTest from './FedisableexceptNdk.test';
+import feenableexceptNdkTest from './FeenableexceptNdk.test';
+import fegetexceptNdkTest from './FegetexceptNdk.test';
+import getResTraceIdNdkTest from './GetResTraceIdNdk.test';
+import getaddrinfoCustomNdkTest from './GetaddrinfoCustomNdk.test';
+import hilogBaseIsLoggableNdkTest from './HilogBaseIsLoggableNdk.test';
+import hilogBasePrintNdkTest from './HilogBasePrintNdk.test';
+
 import ExplicitBzeroChkNdkTest from './ExplicitBzeroChkNdk.test';
+import gwpAsanCollectNdkTest from './GwpAsanCollectNdk.test';
+import gwpAsanRegisterFfrtNdkTest from './GwpAsanRegisterFfrtNdk.test';
 
 export default function testsuite() {
   AcosfFiniteNdkTest();
@@ -16,6 +36,25 @@ export default function testsuite() {
   DfxSetCrashLogConfigNdkTest();
   Exp2fFiniteNdkTest();
   Exp2FiniteNdkTest();
+  fdeltchkNdkTest();
+  isinffNdkTest();
   ExpFiniteNdkTest();
+  finiteNdkTest();
+  finitefNdkTest();
+  fprintfChkNdkTest();
+  getauxvalNdkTest();
+  isinfNdkTest();
+  isnanfNdkTest();
+  isnanNdkTest();
   ExplicitBzeroChkNdkTest();
+  fcntl64NdkTest();
+  fedisableexceptNdkTest();
+  feenableexceptNdkTest();
+  fegetexceptNdkTest();
+  getResTraceIdNdkTest();
+  getaddrinfoCustomNdkTest();
+  hilogBaseIsLoggableNdkTest();
+  hilogBasePrintNdkTest();
+  gwpAsanCollectNdkTest();
+  gwpAsanRegisterFfrtNdkTest();
 }
