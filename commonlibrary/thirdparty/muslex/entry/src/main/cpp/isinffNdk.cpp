@@ -209,6 +209,28 @@ static napi_value IsinffStable001(napi_env env, napi_callback_info info)
 }
 
 // 6. Thread safety test
+template<typename Func>
+static void IsinffThreadWorker(std::atomic<bool>& hasError, Func isinff, int iterations)
+{
+    for (int i = 0; i < iterations; ++i) {
+        if (isinff(HUGE_VALF) != 1) {
+            hasError = true;
+        }
+        if (isinff(-HUGE_VALF) != -1) {
+            hasError = true;
+        }
+        if (isinff(NAN) != 0) {
+            hasError = true;
+        }
+        if (isinff(0.0f) != 0) {
+            hasError = true;
+        }
+        if (isinff(static_cast<float>(i)) != 0) {
+            hasError = true;
+        }
+    }
+}
+
 static napi_value IsinffThreadSafety001(napi_env env, napi_callback_info info)
 {
     auto isinff = GetIsinff();
@@ -223,23 +245,7 @@ static napi_value IsinffThreadSafety001(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < threadCount; ++t) {
         threads.emplace_back([isinff, &hasError, iterationsPerThread]() {
-            for (int i = 0; i < iterationsPerThread; ++i) {
-                if (isinff(HUGE_VALF) != 1) {
-                    hasError = true;
-                }
-                if (isinff(-HUGE_VALF) != -1) {
-                    hasError = true;
-                }
-                if (isinff(NAN) != 0) {
-                    hasError = true;
-                }
-                if (isinff(0.0f) != 0) {
-                    hasError = true;
-                }
-                if (isinff(static_cast<float>(i)) != 0) {
-                    hasError = true;
-                }
-            }
+            IsinffThreadWorker(hasError, isinff, iterationsPerThread);
         });
     }
 
@@ -247,7 +253,7 @@ static napi_value IsinffThreadSafety001(napi_env env, napi_callback_info info)
         th.join();
     }
 
-    return ReturnInt32(env, hasError ? 0 : 1);
+    return ReturnInt32(env, !hasError ? 1 : 0);
 }
 
 // NAPI module registration

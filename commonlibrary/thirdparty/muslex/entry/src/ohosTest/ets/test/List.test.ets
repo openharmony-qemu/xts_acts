@@ -16,7 +16,7 @@ import IsnanNdkTest from './IsnanNdk.test';
 import DfxSetCrashLogConfigNdkTest from './DfxSetCrashLogConfigNdk.test';
 
 
-import Fcntl64NdkTest from './Fcntl64Ndk.test';
+import Fcntl64NativeTest from './Fcntl64Native.test';
 import GetResTraceIdNdkTest from './GetResTraceIdNdk.test';
 import GetaddrinfoCustomNdkTest from './GetaddrinfoCustomNdk.test';
 import HilogBaseIsLoggableNdkTest from './HilogBaseIsLoggableNdk.test';
@@ -49,7 +49,7 @@ export default function testsuite() {
   IsnanfNdkTest();
   IsnanNdkTest();
   DfxSetCrashLogConfigNdkTest();
-  Fcntl64NdkTest();
+  Fcntl64NativeTest();
   FedisableExceptNdkTest();
   FeenableExceptNdkTest();
   FegetExceptNdkTest();

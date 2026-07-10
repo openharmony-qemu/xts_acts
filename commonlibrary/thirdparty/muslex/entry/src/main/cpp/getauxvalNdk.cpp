@@ -296,12 +296,12 @@ static napi_value GetauxvalThread001(napi_env env, napi_callback_info info)
 
 template<typename Func>
 static void GetauxvalWorker2(Func func, std::atomic<bool>& hasError,
-    const unsigned long* allItems, int iterations, int tid, int basiccount)
+    const unsigned long* allItems, int iterations)
 {
+    int basiccount = 4;
     for (int i = 0; i < iterations; ++i) {
-        int idx = (i + tid) % 8;
-        unsigned long result = func(allItems[idx]);
-        if (result == 0 && idx >= basiccount) {
+        unsigned long result = func(allItems[i % 8]);
+        if (result == 0 && (i % 8) >= basiccount) {
             // Not necessarily an error, continue
         }
     }
@@ -324,7 +324,7 @@ static napi_value GetauxvalThread002(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < threadCount; ++t) {
         threads.emplace_back([func, &hasError, allItems, iterationsPerThread, t, basiccount]() {
-            GetauxvalWorker2(func, hasError, allItems, iterationsPerThread, t, basiccount);
+            GetauxvalWorker2(func, hasError, allItems, iterationsPerThread);
         });
     }
 

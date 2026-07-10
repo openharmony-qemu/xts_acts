@@ -39,6 +39,7 @@ public:
         return instance;
     }
 
+    using FdeltChkFunc = long int (*)(long int);
     using ExplicitBzeroChkFunc = void (*)(void*, size_t, size_t);
     using AcosfFiniteFunc = float (*)(float);
     using AsprintfChkFunc = int (*)(char**, int, const char*, ...);
@@ -46,9 +47,27 @@ public:
     using Atan2FiniteFunc = double (*)(double, double);
     using CmsgNxthdrFunc = struct cmsghdr* (*)(struct msghdr*, struct cmsghdr*);
     using Exp2FiniteFunc = double (*)(double);
+    using IsinffFunc = int (*)(float);
     using ExpFiniteFunc = double (*)(double);
+    using FiniteFunc = int (*)(double);
+    using FinitefFunc = int (*)(float);
+    using FprintfChkFunc = int (*)(FILE*, int, const char*, ...);
+    using GetauxvalFunc = unsigned long (*)(unsigned long);
+    using IsinfFunc = int (*)(double);
     using Exp2fFiniteFunc = float (*)(float);
+    using IsnanfFunc = int (*)(float);
+    using IsnanFunc = int (*)(double);
     using DFXSetCrashLogConfigFunc = int (*)(uint8_t, uint32_t);
+    using Fcntl64Func = int (*)(int, int, ...);
+    using FedisableexceptFunc = int (*)(int);
+    using FeenableexceptFunc = int (*)(int);
+    using FegetexceptFunc = int (*)(void);
+    using GetaddrinfoCustomFunc = int (*)(const char*, const char*, const struct addrinfo*, struct addrinfo**);
+    using HilogBaseIsLoggableFunc = bool (*)(unsigned int, const char*, int);
+    using HilogBasePrintFunc = int (*)(int, int, unsigned int, const char*, const char*, ...);
+    using GwpAsanCollectFunc = size_t (*)(uint64_t, uintptr_t*, size_t, size_t);
+    using GwpAsanRegisterFfrtFunc = void (*)(FfrtGetStackFn);
+    FdeltChkFunc GetFdeltChk() const { return LazyLoad(fdeltChk_, "__fdelt_chk"); }
     ExplicitBzeroChkFunc GetExplicitBzeroChk() const
     {
         return LazyLoad(explicitBzeroChk_, "__explicit_bzero_chk");
@@ -59,11 +78,49 @@ public:
     Atan2FiniteFunc GetAtan2Finite() const { return LazyLoad(atan2Finite_, "__atan2_finite"); }
     CmsgNxthdrFunc GetCmsgNxthdr() const { return LazyLoad(cmsgNxthdr_, "__cmsg_nxthdr"); }
     Exp2FiniteFunc GetExp2Finite() const { return LazyLoad(exp2Finite_, "__exp2_finite"); }
+    IsinffFunc GetIsinff() const { return LazyLoad(isinff_, "__isinff"); }
     ExpFiniteFunc GetExpFinite() const { return LazyLoad(expFinite_, "__exp_finite"); }
+    FiniteFunc GetFinite() const { return LazyLoad(finite_, "__finite"); }
+    FinitefFunc GetFinitef() const { return LazyLoad(finitef_, "__finitef"); }
+    FprintfChkFunc GetFprintfChk() const { return LazyLoad(fprintfChk_, "__fprintf_chk"); }
+    GetauxvalFunc GetGetauxval() const { return LazyLoad(getauxval_, "__getauxval"); }
+    IsinfFunc GetIsinf() const { return LazyLoad(isinf_, "__isinf"); }
     Exp2fFiniteFunc GetExp2fFinite() const { return LazyLoad(exp2fFinite_, "exp2f_finite"); }
+    IsnanfFunc GetIsnanf() const { return LazyLoad(isnanf_, "__isnanf"); }
+    IsnanFunc GetIsnan() const { return LazyLoad(isnan_, "__isnan"); }
     DFXSetCrashLogConfigFunc GetDFXSetCrashLogConfig() const
     {
         return LazyLoad(dfxSetCrashLogConfig_, "DFX_SetCrashLogConfig");
+    }
+    Fcntl64Func GetFcntl64() const { return LazyLoad(fcntl64_, "fcntl64"); }
+    FedisableexceptFunc GetFedisableexcept() const
+    {
+        return LazyLoad(fedisableexcept_, "fedisableexcept");
+    }
+    FeenableexceptFunc GetFeenableexcept() const
+    {
+        return LazyLoad(feenableexcept_, "feenableexcept");
+    }
+    FegetexceptFunc GetFegetexcept() const { return LazyLoad(fegetexcept_, "fegetexcept"); }
+    GetaddrinfoCustomFunc GetGetaddrinfoCustom() const
+    {
+        return LazyLoad(getaddrinfoCustom_, "getaddrinfo_custom");
+    }
+    HilogBaseIsLoggableFunc GetHilogBaseIsLoggable() const
+    {
+        return LazyLoad(hilogBaseIsLoggable_, "HiLogBaseIsLoggable");
+    }
+    HilogBasePrintFunc GetHilogBasePrint() const
+    {
+        return LazyLoad(hilogBasePrint_, "HiLogBasePrint");
+    }
+    GwpAsanCollectFunc GetGwpAsanCollect() const
+    {
+        return LazyLoad(gwpAsanCollect_, "libc_gwp_asan_collect_allocations_by_time_range");
+    }
+    GwpAsanRegisterFfrtFunc GetGwpAsanRegisterFfrt() const
+    {
+        return LazyLoad(gwpAsanRegisterFfrt_, "libc_gwp_asan_register_ffrt_stack_func");
     }
 private:
     LibcFunctionLoader() = default;
@@ -91,6 +148,7 @@ private:
 
     mutable std::mutex mutex_;
 
+    mutable FdeltChkFunc fdeltChk_ = nullptr;
     mutable ExplicitBzeroChkFunc explicitBzeroChk_ = nullptr;
     mutable AcosfFiniteFunc acosfFinite_ = nullptr;
     mutable AsprintfChkFunc asprintfChk_ = nullptr;
@@ -98,8 +156,25 @@ private:
     mutable Atan2FiniteFunc atan2Finite_ = nullptr;
     mutable CmsgNxthdrFunc cmsgNxthdr_ = nullptr;
     mutable Exp2FiniteFunc exp2Finite_ = nullptr;
+    mutable IsinffFunc isinff_ = nullptr;
     mutable ExpFiniteFunc expFinite_ = nullptr;
+    mutable FiniteFunc finite_ = nullptr;
+    mutable FinitefFunc finitef_ = nullptr;
+    mutable FprintfChkFunc fprintfChk_ = nullptr;
+    mutable GetauxvalFunc getauxval_ = nullptr;
+    mutable IsinfFunc isinf_ = nullptr;
     mutable Exp2fFiniteFunc exp2fFinite_ = nullptr;
+    mutable IsnanfFunc isnanf_ = nullptr;
+    mutable IsnanFunc isnan_ = nullptr;
     mutable DFXSetCrashLogConfigFunc dfxSetCrashLogConfig_ = nullptr;
+    mutable Fcntl64Func fcntl64_ = nullptr;
+    mutable FedisableexceptFunc fedisableexcept_ = nullptr;
+    mutable FeenableexceptFunc feenableexcept_ = nullptr;
+    mutable FegetexceptFunc fegetexcept_ = nullptr;
+    mutable GetaddrinfoCustomFunc getaddrinfoCustom_ = nullptr;
+    mutable HilogBaseIsLoggableFunc hilogBaseIsLoggable_ = nullptr;
+    mutable HilogBasePrintFunc hilogBasePrint_ = nullptr;
+    mutable GwpAsanCollectFunc gwpAsanCollect_ = nullptr;
+    mutable GwpAsanRegisterFfrtFunc gwpAsanRegisterFfrt_ = nullptr;
 };
 #endif // LIBC_FUNCTION_LOADER_H
