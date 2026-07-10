@@ -1999,5 +1999,45 @@ export default function ErrorCollectionTest(): void {
       expect(result).assertEqual(true);
       expect(errors.length).assertEqual(0);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_COLLECTION_1140
+     * @tc.name testErrorCollection114
+     * @tc.desc Verify Error objects with cause stored in Map preserve cause access
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorCollection114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cause: Error = new Error('shared');
+      let e1: Error = new Error('e1', { cause: cause });
+      let e2: Error = new Error('e2', { cause: cause });
+      let m: Map<string, Error> = new Map<string, Error>();
+      m.set('first', e1);
+      m.set('second', e2);
+      expect((m.get('first') as Error).cause).assertEqual(cause);
+      expect((m.get('second') as Error).cause).assertEqual(cause);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_COLLECTION_1150
+     * @tc.name testErrorCollection115
+     * @tc.desc Verify Error cause chain preserved through Set iteration
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorCollection115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cause: Error = new Error('origin');
+      let errs: Set<Error> = new Set<Error>();
+      errs.add(new Error('a', { cause: cause }));
+      errs.add(new Error('b', { cause: cause }));
+      let count: int = 0;
+      for (let err of errs) {
+        expect((err.cause as Error).message).assertEqual('origin');
+        count++;
+      }
+      expect(count).assertEqual(2);
+    });
   });
 }

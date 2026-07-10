@@ -501,7 +501,7 @@ export default function ErrorConstructorTest(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
-     * @tc.desc Verify A4 Empty Name Msg
+     * @tc.desc Verify new Error(empty name, message) stores empty name and message
      */
     it('testErrorConstructor033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("", "msg");
@@ -515,7 +515,7 @@ export default function ErrorConstructorTest(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
-     * @tc.desc Verify A4 Special Name Msg
+     * @tc.desc Verify new Error(special name, message) stores special name and message
      */
     it('testErrorConstructor034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("@#$", "err");
@@ -530,7 +530,7 @@ export default function ErrorConstructorTest(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
-     * @tc.desc Verify A4 Unicode Name Msg
+     * @tc.desc Verify new Error(unicode name, unicode message) preserves both fields
      */
     it('testErrorConstructor035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("名称", "消息");
@@ -544,7 +544,7 @@ export default function ErrorConstructorTest(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
-     * @tc.desc Verify A4 Long Name Msg
+     * @tc.desc Verify new Error(long name, message) preserves long name length
      */
     it('testErrorConstructor036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let n: string = "N".repeat(100);
@@ -559,7 +559,7 @@ export default function ErrorConstructorTest(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
-     * @tc.desc Verify A4 Normal Name Empty Msg
+     * @tc.desc Verify new Error(name, empty message) stores name and empty message
      */
     it('testErrorConstructor037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("MyName", "");
@@ -574,7 +574,7 @@ export default function ErrorConstructorTest(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
-     * @tc.desc Verify A4 Name With Num Msg
+     * @tc.desc Verify new Error(name, numeric string message) preserves message text
      */
     it('testErrorConstructor038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("Err", "42");
@@ -588,7 +588,7 @@ export default function ErrorConstructorTest(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
-     * @tc.desc Verify A4 Name Boundary Msg
+     * @tc.desc Verify new Error(name, whitespace message) preserves whitespace message
      */
     it('testErrorConstructor039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("B", "   ");
@@ -602,7 +602,7 @@ export default function ErrorConstructorTest(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
-     * @tc.desc Verify A4 Name Newline Msg
+     * @tc.desc Verify new Error(name, newline message) preserves newline message
      */
     it('testErrorConstructor040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("NL", "a\nb");
@@ -616,7 +616,7 @@ export default function ErrorConstructorTest(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
-     * @tc.desc Verify A4 Name Tab Msg
+     * @tc.desc Verify new Error(name, tab message) preserves tab message
      */
     it('testErrorConstructor041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("Tab", "\t");
@@ -630,7 +630,7 @@ export default function ErrorConstructorTest(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
-     * @tc.desc Verify A4 Name With Cause
+     * @tc.desc Verify new Error(name, message, options) preserves Error cause
      */
     it('testErrorConstructor042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let c: Error = new Error("root");
@@ -917,7 +917,7 @@ export default function ErrorConstructorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0610
      * @tc.name testErrorConstructor061
-     * @tc.desc Verify new Error('SName', 'SMsg') dispatches to overload4 with name and message
+     * @tc.desc Verify new Error(name, message) stores custom name and message
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1225,7 +1225,7 @@ export default function ErrorConstructorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0820
      * @tc.name testErrorConstructor082
-     * @tc.desc Verify A1(code,msg,{}) empty options does not affect defaults
+     * @tc.desc Verify new Error(code, message, empty options) stores code and leaves cause empty
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1241,7 +1241,7 @@ export default function ErrorConstructorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0830
      * @tc.name testErrorConstructor083
-     * @tc.desc Verify A4(name,msg,{}) empty options does not affect defaults
+     * @tc.desc Verify new Error(name, message, empty options) stores name and leaves cause empty
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1401,7 +1401,7 @@ export default function ErrorConstructorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0940
      * @tc.name testErrorConstructor094
-     * @tc.desc Verify A1 constructor with undefined message defaults message to empty string
+     * @tc.desc Verify new Error(code, undefined) keeps code and defaults message to empty string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1416,7 +1416,7 @@ export default function ErrorConstructorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0950
      * @tc.name testErrorConstructor095
-     * @tc.desc Verify A3 constructor with undefined message defaults message to empty string
+     * @tc.desc Verify new Error(name, code, undefined) keeps name and code with empty message
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

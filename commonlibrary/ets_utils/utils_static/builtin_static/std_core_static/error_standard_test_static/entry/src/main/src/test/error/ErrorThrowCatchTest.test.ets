@@ -26,6 +26,7 @@ import {
   TestType
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 const handleWithRecovery = (shouldFailWith: string): string => {
   try {
@@ -489,7 +490,7 @@ export default function ErrorThrowCatchTest(): void {
      */
     it('testErrorThrowCatch021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let finallyRan: boolean = false;
-      const fn = (): String => {
+      const fn = (): string => {
         try {
           throw new Error("err");
         } catch (e) {
@@ -499,7 +500,7 @@ export default function ErrorThrowCatchTest(): void {
         }
         return "unreachable";
       };
-      let result: String = fn();
+      let result: string = fn();
       expect(result).assertEqual("fromCatch");
       expect(finallyRan).assertEqual(true);
     });
@@ -1109,6 +1110,159 @@ export default function ErrorThrowCatchTest(): void {
       } catch (e) {
         expect(e.message).assertEqual("callback error");
       }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_5100
+     * @tc.name testErrorThrowCatch051
+     * @tc.desc Verify thrown BusinessError preserves code and message after catch
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorThrowCatch051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let caughtCode: number = 0;
+      let caughtMessage: string = '';
+      try {
+        throw new BusinessError(503, 'throw-business');
+      } catch (e) {
+        let caught: BusinessError = e as BusinessError;
+        caughtCode = caught.code;
+        caughtMessage = caught.message;
+      }
+      expect(caughtCode).assertEqual(503);
+      expect(caughtMessage).assertEqual('throw-business');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_5200
+     * @tc.name testErrorThrowCatch052
+     * @tc.desc Verify caught BusinessError can be wrapped as Error cause
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorThrowCatch052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let causeMessage: string = '';
+      try {
+        throw new BusinessError(504, 'business-origin');
+      } catch (e) {
+        let caught: BusinessError = e as BusinessError;
+        let wrapped: Error = new Error('wrapped-business', { cause: caught });
+        causeMessage = (wrapped.cause as BusinessError).message;
+      }
+      expect(causeMessage).assertEqual('business-origin');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_5300
+     * @tc.name testErrorThrowCatch053
+     * @tc.desc Verify BusinessError stack is readable after throw
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorThrowCatch053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let hasStack: boolean = false;
+      try {
+        throw new BusinessError(505, 'stack-business');
+      } catch (e) {
+        let caught: BusinessError = e as BusinessError;
+        hasStack = caught.stack !== undefined && (caught.stack as string).length > 0;
+      }
+      expect(hasStack).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_5400
+     * @tc.name testErrorThrowCatch054
+     * @tc.desc Verify BusinessError rethrow preserves same object reference
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorThrowCatch054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let original: BusinessError = new BusinessError(506, 'rethrow-business');
+      let sameReference: boolean = false;
+      try {
+        try {
+          throw original;
+        } catch (e) {
+          throw e;
+        }
+      } catch (e) {
+        sameReference = (e as BusinessError) === original;
+      }
+      expect(sameReference).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_5500
+     * @tc.name testErrorThrowCatch055
+     * @tc.desc Verify nested try finally preserves thrown BusinessError values
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorThrowCatch055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let finallyRan: boolean = false;
+      let caughtCode: number = 0;
+      try {
+        try {
+          throw new BusinessError(508, 'nested-business');
+        } finally {
+          finallyRan = true;
+        }
+      } catch (e) {
+        caughtCode = (e as BusinessError).code;
+      }
+      expect(finallyRan).assertEqual(true);
+      expect(caughtCode).assertEqual(508);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_5600
+     * @tc.name testErrorThrowCatch056
+     * @tc.desc Verify nested try-catch with TypeError wrapped as RangeError rethrow
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorThrowCatch056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let outerMsg: string = '';
+      try {
+        try {
+          throw new TypeError('inner-type');
+        } catch (e) {
+          throw new RangeError('wrapped-range', { cause: e });
+        }
+      } catch (e) {
+        outerMsg = e.message;
+      }
+      expect(outerMsg).assertEqual('wrapped-range');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_5700
+     * @tc.name testErrorThrowCatch057
+     * @tc.desc Verify multiple Error subclasses in sequential try-catch blocks
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorThrowCatch057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let results: string[] = [];
+      let errors: Error[] = [new TypeError('t'), new RangeError('r'), new SyntaxError('s')];
+      for (let i: int = 0; i < 3; i++) {
+        try {
+          throw errors[i];
+        } catch (e) {
+          results.push(e.message);
+        }
+      }
+      expect(results[0]).assertEqual('t');
+      expect(results[1]).assertEqual('r');
+      expect(results[2]).assertEqual('s');
     });
   });
 }

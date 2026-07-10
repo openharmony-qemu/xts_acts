@@ -1473,7 +1473,7 @@ export default function ErrorBoundaryTest(): void {
       let err: Error = new Error("root");
       let data: BusinessError<string> = new BusinessError<string>(401, "", err);
       expect(data.code).assertEqual(401);
-      expect(data.data as string).assertEqual("");
+      expect(data.data).assertEqual("");
       expect(data.cause).assertUndefined();
     });
 
@@ -1988,6 +1988,51 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("w", { cause: "cause: 原因 (原因) causa" });
       expect(e.cause).assertEqual("cause: 原因 (原因) causa");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_1410
+     * @tc.name testErrorBoundary141
+     * @tc.desc Verify BusinessError exposes Error-compatible name message and code
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorBoundary141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: BusinessError = new BusinessError(500, 'business failed');
+      expect(err.name).assertEqual('Error');
+      expect(err.message).assertEqual('business failed');
+      expect(err.code).assertEqual(500);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_1420
+     * @tc.name testErrorBoundary142
+     * @tc.desc Verify BusinessError constructor wraps base Error message with code
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorBoundary142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let root: Error = new Error('root-error');
+      let err: BusinessError = new BusinessError(700, root);
+      expect(err.code).assertEqual(700);
+      expect(err.message).assertEqual('root-error');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_1430
+     * @tc.name testErrorBoundary143
+     * @tc.desc Verify BusinessError constructor wraps TypeError message with code
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorBoundary143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let root: TypeError = new TypeError('typed-root');
+      let err: BusinessError = new BusinessError(701, root);
+      expect(err.code).assertEqual(701);
+      expect(err.message).assertEqual('typed-root');
     });
 
   });

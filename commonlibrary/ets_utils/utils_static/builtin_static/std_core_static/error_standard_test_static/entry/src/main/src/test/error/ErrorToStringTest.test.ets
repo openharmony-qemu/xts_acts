@@ -212,8 +212,8 @@ export default function ErrorToStringTest(): void {
       let err: Error = new Error();
       err.name = "Stable";
       err.message = "test";
-      let first: String = err.toString();
-      let second: String = err.toString();
+      let first: string = err.toString();
+      let second: string = err.toString();
       expect(first).assertEqual(second);
       expect(first).assertEqual("Stable: test");
     });
@@ -228,7 +228,7 @@ export default function ErrorToStringTest(): void {
      */
     it('testErrorToString013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("hello");
-      let s1: String = e.toString();
+      let s1: string = e.toString();
       e.code = 999;
       expect(e.toString()).assertEqual(s1);
     });
@@ -243,7 +243,7 @@ export default function ErrorToStringTest(): void {
      */
     it('testErrorToString014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("hello");
-      let s1: String = e.toString();
+      let s1: string = e.toString();
       e.cause = new Error("inner");
       expect(e.toString()).assertEqual(s1);
     });
@@ -258,7 +258,7 @@ export default function ErrorToStringTest(): void {
      */
     it('testErrorToString015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("hello");
-      let s1: String = e.toString();
+      let s1: string = e.toString();
       e.stack = "custom";
       expect(e.toString()).assertEqual(s1);
     });
@@ -362,7 +362,7 @@ export default function ErrorToStringTest(): void {
      */
     it('testErrorToString022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let longStr: String = "E".repeat(200);
-      let e: Error = new Error(longStr as String, "m");
+      let e: Error = new Error(longStr, "m");
       expect(e.toString()).assertEqual(longStr + ": m");
     });
 
@@ -1145,6 +1145,235 @@ export default function ErrorToStringTest(): void {
       expect(new URIError('uri msg').toString()).assertEqual('URIError: uri msg');
       let aggErr: AggregateError = new AggregateError([new Error('inner')], 'agg msg');
       expect(aggErr.toString()).assertEqual('AggregateError: agg msg');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_7900
+     * @tc.name testErrorToString079
+     * @tc.desc Verify Arabic RTL string as message in toString
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorToString079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let msg: string = 'اختبار';
+      let e: Error = new Error('Arab', msg);
+      expect(e.toString()).assertEqual('Arab: ' + msg);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_8000
+     * @tc.name testErrorToString080
+     * @tc.desc Verify real emoji character as message in toString
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorToString080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let msg: string = 'before😀after';
+      let e: Error = new Error('Emoji', msg);
+      expect(e.toString()).assertEqual('Emoji: ' + msg);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_8100
+     * @tc.name testErrorToString081
+     * @tc.desc Verify device symbol emoji in message for toString
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorToString081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let msg: string = 'call📱now';
+      let e: Error = new Error('Device', msg);
+      expect(e.toString()).assertEqual('Device: ' + msg);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_8200
+     * @tc.name testErrorToString082
+     * @tc.desc Verify isolated surrogate in message for toString
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorToString082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let msg: string = 'solo\udc04end';
+      let e: Error = new Error('Surr', msg);
+      expect(e.toString()).assertEqual('Surr: ' + msg);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_8300
+     * @tc.name testErrorToString083
+     * @tc.desc Verify overlong UTF-8 encoding sequence in message for toString
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorToString083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let msg: string = 'bad\xc0\x81seq';
+      let e: Error = new Error('OL', msg);
+      expect(e.toString()).assertEqual('OL: ' + msg);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_8400
+     * @tc.name testErrorToString084
+     * @tc.desc Verify GBK to UTF-8 mojibake string as message in toString
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorToString084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let msg: string = 'mojibake æµè¯';
+      let e: Error = new Error('GBK', msg);
+      expect(e.toString()).assertEqual('GBK: ' + msg);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_8500
+     * @tc.name testErrorToString085
+     * @tc.desc Verify masked bank card number string as message in toString
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorToString085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let msg: string = '622202********1234';
+      let e: Error = new Error('Card', msg);
+      expect(e.toString()).assertEqual('Card: ' + msg);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_8600
+     * @tc.name testErrorToString086
+     * @tc.desc Verify form feed character in message for toString
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorToString086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let msg: string = 'before\fafter';
+      let e: Error = new Error('FF', msg);
+      expect(e.toString()).assertEqual('FF: ' + msg);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_8700
+     * @tc.name testErrorToString087
+     * @tc.desc Verify vertical tab character in message for toString
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorToString087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let msg: string = 'before\vafter';
+      let e: Error = new Error('VT', msg);
+      expect(e.toString()).assertEqual('VT: ' + msg);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_8800
+     * @tc.name testErrorToString088
+     * @tc.desc Verify carriage return character in message for toString
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorToString088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let msg: string = 'before\rafter';
+      let e: Error = new Error('CR', msg);
+      expect(e.toString()).assertEqual('CR: ' + msg);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_8900
+     * @tc.name testErrorToString089
+     * @tc.desc Verify null character in message for toString
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorToString089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let msg: string = 'null\0char';
+      let e: Error = new Error('Nul', msg);
+      expect(e.toString()).assertEqual('Nul: ' + msg);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_9000
+     * @tc.name testErrorToString090
+     * @tc.desc Verify hex string name with emoji message in toString
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorToString090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let name: string = '0xDEAD';
+      let msg: string = 'error😀occurred';
+      let e: Error = new Error(name, msg);
+      expect(e.toString()).assertEqual(name + ': ' + msg);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_9100
+     * @tc.name testErrorToString091
+     * @tc.desc Verify unicode name with binary format message in toString
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorToString091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let name: string = 'Err中文';
+      let msg: string = '0b10100101';
+      let e: Error = new Error(name, msg);
+      expect(e.toString()).assertEqual(name + ': ' + msg);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_9200
+     * @tc.name testErrorToString092
+     * @tc.desc Verify emoji name with XSS payload message in toString
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorToString092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let name: string = 'Error🔥';
+      let msg: string = '<img src=x onerror=alert(1)>';
+      let e: Error = new Error(name, msg);
+      expect(e.toString()).assertEqual(name + ': ' + msg);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_9300
+     * @tc.name testErrorToString093
+     * @tc.desc Verify null char in name with JSON object message in toString
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorToString093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let name: string = 'Err\0Name';
+      let msg: string = '{"code":500,"ok":false}';
+      let e: Error = new Error(name, msg);
+      expect(e.toString()).assertEqual(name + ': ' + msg);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_TO_STRING_9400
+     * @tc.name testErrorToString094
+     * @tc.desc Verify long name with RTL Arabic message in toString
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorToString094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let name: string = 'E'.repeat(200);
+      let msg: string = 'رسالة خطأ';
+      let e: Error = new Error(name, msg);
+      expect(e.toString()).assertEqual(name + ': ' + msg);
     });
   });
 }

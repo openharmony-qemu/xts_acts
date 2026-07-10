@@ -27,6 +27,7 @@ import {
   TestType
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default function ErrorCauseTest(): void {
   describe('ErrorCauseTest', (): void => {
@@ -727,6 +728,94 @@ export default function ErrorCauseTest(): void {
       expect(referenceErr.cause).assertEqual(cause);
       expect(evalErr.cause).assertEqual(cause);
       expect(uriErr.cause).assertEqual(cause);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CAUSE_4400
+     * @tc.name testErrorCause044
+     * @tc.desc Verify BusinessError cause property preserves Error reference
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorCause044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: BusinessError = new BusinessError(500, 'cause-holder');
+      let cause: Error = new Error('runtime-cause');
+      err.cause = cause;
+      expect(err.cause).assertEqual(cause);
+      expect((err.cause as Error).message).assertEqual('runtime-cause');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CAUSE_4500
+     * @tc.name testErrorCause045
+     * @tc.desc Verify BusinessError can participate in nested Error cause chain
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorCause045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let business: BusinessError = new BusinessError(507, 'business-link');
+      let outer: Error = new Error('outer-link', { cause: business });
+      let resolved: BusinessError = outer.cause as BusinessError;
+      expect(resolved.code).assertEqual(507);
+      expect(resolved.message).assertEqual('business-link');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CAUSE_4600
+     * @tc.name testErrorCause046
+     * @tc.desc Verify null cannot be cast to Object as cause throws ClassCastError
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorCause046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let threw: boolean = false;
+      try {
+        let e: Error = new Error('null-cause');
+        e.cause = null as Object;
+      } catch (e) {
+        threw = true;
+      }
+      expect(threw).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CAUSE_4700
+     * @tc.name testErrorCause047
+     * @tc.desc Verify cause chain of depth 4 preserves all links
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorCause047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let d: Error = new Error('depth4');
+      let c: Error = new Error('depth3', { cause: d });
+      let b: Error = new Error('depth2', { cause: c });
+      let a: Error = new Error('depth1', { cause: b });
+      expect(a.message).assertEqual('depth1');
+      expect(((a.cause as Error).cause as Error).message).assertEqual('depth3');
+      expect((((a.cause as Error).cause as Error).cause as Error).message).assertEqual('depth4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CAUSE_4800
+     * @tc.name testErrorCause048
+     * @tc.desc Verify cause chain of depth 5 with mixed Error subclasses
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorCause048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e5: TypeError = new TypeError('e5');
+      let e4: Error = new Error('e4', { cause: e5 });
+      let e3: RangeError = new RangeError('e3', { cause: e4 });
+      let e2: Error = new Error('e2', { cause: e3 });
+      let e1: SyntaxError = new SyntaxError('e1', { cause: e2 });
+      expect(e1.message).assertEqual('e1');
+      expect((e1.cause as Error).message).assertEqual('e2');
+      expect(((e1.cause as Error).cause as RangeError).message).assertEqual('e3');
     });
   });
 }

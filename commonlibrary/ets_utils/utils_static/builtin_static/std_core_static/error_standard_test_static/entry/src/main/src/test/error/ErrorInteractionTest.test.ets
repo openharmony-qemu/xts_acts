@@ -1298,5 +1298,19 @@ export default function ErrorInteractionTest(): void {
         expect(err.toString()).assertEqual("RangeError: after-mutation");
       }
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_INTERACTION_6800
+     * @tc.name testErrorInteraction068
+     * @tc.desc Verify new Error(name, emptyString) dispatches to A4 with empty message
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorInteraction068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e: Error = new Error('MyName', '');
+      expect(e.name).assertEqual('MyName');
+      expect(e.message).assertEqual('');
+    });
   });
 }
