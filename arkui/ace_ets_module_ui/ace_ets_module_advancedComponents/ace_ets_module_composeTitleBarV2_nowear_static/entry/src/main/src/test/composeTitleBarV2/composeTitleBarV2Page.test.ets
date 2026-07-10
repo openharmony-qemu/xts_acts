@@ -79,5 +79,25 @@ export default function composeTitleBarV2PageTest() {
       console.info('[composeTitleBarV2_static_0100] END');
       done();
     });
+
+    /**
+     * @tc.number   composeTitleBarV2_static_0200
+     * @tc.name     composeTitleBarV2_static_0200
+     * @tc.desc     Verify basic title and subtitle display
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     */
+    it('composeTitleBarV2_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[composeTitleBarV2_static_0200] START');
+      let driver = Driver.create();
+      await driver.delayMs(2000);
+      let title = await driver.findComponent(ON.text('标题Title'));
+      let subtitle = await driver.findComponent(ON.text('副标题subtitle'));
+      expect(title !== null).assertTrue();
+      expect(subtitle !== null).assertTrue();
+      await driver.delayMs(1000);
+      console.info('[composeTitleBarV2_static_0200] END');
+      done();
+    });
+
   });
 }
