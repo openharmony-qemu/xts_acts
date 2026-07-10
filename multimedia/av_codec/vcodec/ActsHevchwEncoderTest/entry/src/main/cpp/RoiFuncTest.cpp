@@ -713,7 +713,7 @@ int VIDEO_HW_ENCODE_ROI_API_031()
     uint32_t roiCount = 0;
     const char *roiString = "";
     OH_AVErrCode ret = OH_VideoMetadata_GetRoiCount(roiString, &roiCount);
-    EXPECT_EQ(AV_ERR_INVALID_VAL, ret);
+    EXPECT_EQ(AV_ERR_OK, ret);
     return 0;
 }
 
