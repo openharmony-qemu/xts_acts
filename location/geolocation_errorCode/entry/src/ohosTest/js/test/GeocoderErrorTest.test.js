@@ -120,6 +120,17 @@ export default function geolocationTest_GeoErr() {
             done();
         })
 
+        afterEach(async function (done) {
+            console.info('afterEach case');
+            try {
+                await geolocationm.enableLocation();
+                console.info('[lbs_js] afterEach enableLocation success');
+            } catch (error) {
+                console.info('[lbs_js] afterEach enableLocation error.' + JSON.stringify(error));
+            }
+            done();
+        })
+
 
         /**
          * @tc.name   SUB_HSS_LocationSystem_GeoErr_0400
@@ -2013,7 +2024,7 @@ export default function geolocationTest_GeoErr() {
                 console.info('[lbs_js] enableLocation success');
             } catch (error) {
                 console.info('[lbs_js] enableLocation error.' + JSON.stringify(error));
-                expect().assertFalse();
+                expect().assertFail();
                 done();
                 return;
             }
@@ -2057,7 +2068,7 @@ export default function geolocationTest_GeoErr() {
                 console.info('[lbs_js] disableLocation success');
             } catch (error) {
                 console.info('[lbs_js] disableLocation error.' + JSON.stringify(error));
-                expect().assertFalse();
+                expect().assertFail();
                 done();
                 return;
             }
