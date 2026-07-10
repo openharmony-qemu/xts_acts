@@ -7826,7 +7826,7 @@ export default function windowLayoutTest() {
         expect(ReadonlyEnvKey.WINDOW_SIZE != null).assertTrue()
         expect(ReadonlyEnvKey.WINDOW_SIZE_PX != null).assertTrue()
         expect(ReadonlyEnvKey.WINDOW_IS_FOCUSED != null).assertTrue()
-        expect(ReadonlyEnvKey.WINDOW_IS_HIGHTLIGHTED != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_IS_HIGHLIGHTED != null).assertTrue()
         expect(ReadonlyEnvKey.WINDOW_DISPLAY_ID != null).assertTrue()
         expect(ReadonlyEnvKey.WINDOW_SYSTEM_DENSITY != null).assertTrue()
       } catch (exception) {
