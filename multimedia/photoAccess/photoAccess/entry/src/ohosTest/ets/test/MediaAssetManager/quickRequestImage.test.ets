@@ -107,6 +107,38 @@ export default function quickRequestImageTest() {
     })
 
     /**
+     * @tc.name   quick_request_image_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_quick_request_image_0300
+     * @tc.desc   quick request image with DeliveryMode BALANCE_MODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('quick_request_image_003', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTOACCESS_HELPER_quick_request_image_0300';
+      try {
+        const fileNames = ["quick_request_image_003.jpg"];
+        await pushCreateAsset(testContext, fileNames);
+        let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "quick_request_image_003.jpg");
+        let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
+        let photoAsset = await fetchResult.getFirstObject();
+        let requestOptions: photoAccessHelper.RequestOptions = {
+          deliveryMode: photoAccessHelper.DeliveryMode.BALANCE_MODE,
+          compatibleMode: photoAccessHelper.CompatibleMode.COMPATIBLE_FORMAT_MODE,
+          mediaAssetProgressHandler: new TestHandler(),
+        }
+        const handler = new MediaHandler();
+        await photoAccessHelper.MediaAssetManager.quickRequestImage(testContext, photoAsset, requestOptions, handler)
+        console.info( `${testNum} success`);
+        done();
+      } catch (error) {
+        console.info( `${testNum} error: ${error}, ${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
      * @tc.name   quick_request_image_005
      * @tc.number SUB_PHOTOACCESS_HELPER_quick_request_image_0500
      * @tc.desc   quick request image with null asset
