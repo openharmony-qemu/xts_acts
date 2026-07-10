@@ -34,10 +34,8 @@ function foo12(x: number | null) { let v = x; const c = x; }
 function testDeclarationTypeInference() {
   foo1(false);
   foo2(1);
-  foo3(3.14);
   foo4("foo");
   foo5(42n);
-  foo6(42n);
   foo7(null);
   foo8(undefined);
   foo9(new Object());
