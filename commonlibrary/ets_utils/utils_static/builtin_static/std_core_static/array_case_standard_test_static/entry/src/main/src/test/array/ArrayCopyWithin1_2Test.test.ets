@@ -52,8 +52,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_0100
      * @tc.name testArrayCopywithinOne001
      * @tc.desc Verify target=MAX_INT clamped to length, no-op
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -68,8 +68,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_0200
      * @tc.name testArrayCopywithinOne002
      * @tc.desc Verify target=MIN_INT clamped to 0, copies from start
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -84,8 +84,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_0300
      * @tc.name testArrayCopywithinOne003
      * @tc.desc Verify start=MAX_INT out of range, no-op
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -100,8 +100,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_0400
      * @tc.name testArrayCopywithinOne004
      * @tc.desc Verify start=MIN_INT clamped to 0, end=0, no-op
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -115,8 +115,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_0500
      * @tc.name testArrayCopywithinOne005
      * @tc.desc Verify end=MAX_VALUE clamped to length
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -131,8 +131,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_0600
      * @tc.name testArrayCopywithinOne006
      * @tc.desc Verify target float truncated to 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -147,8 +147,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_0700
      * @tc.name testArrayCopywithinOne007
      * @tc.desc Verify start and end floats are truncated
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -164,8 +164,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_0800
      * @tc.name testArrayCopywithinOne008
      * @tc.desc Verify target=NaN treated as 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -180,8 +180,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_0900
      * @tc.name testArrayCopywithinOne009
      * @tc.desc Verify target=Infinity clamped to length, no-op
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -196,8 +196,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_1000
      * @tc.name testArrayCopywithinOne010
      * @tc.desc Verify end=-Infinity clamped to 0, no-op
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -212,8 +212,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_1100
      * @tc.name testArrayCopywithinOne011
      * @tc.desc Verify target and start both MIN_INT clamped to 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -229,8 +229,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_1200
      * @tc.name testArrayCopywithinOne012
      * @tc.desc Verify float type target truncated
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -246,8 +246,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_1300
      * @tc.name testArrayCopywithinOne013
      * @tc.desc Verify double type start truncated
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -263,8 +263,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_1400
      * @tc.name testArrayCopywithinOne014
      * @tc.desc Verify float type end truncated
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -280,8 +280,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_1500
      * @tc.name testArrayCopywithinOne015
      * @tc.desc Verify large number as target clamped to length
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -296,8 +296,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_1600
      * @tc.name testArrayCopywithinOne016
      * @tc.desc Verify all float params truncated
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -313,8 +313,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_1700
      * @tc.name testArrayCopywithinOne017
      * @tc.desc Verify end omitted with float start
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -330,8 +330,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_1800
      * @tc.name testArrayCopywithinOne018
      * @tc.desc Verify byte value as target
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -347,8 +347,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_1900
      * @tc.name testArrayCopywithinOne019
      * @tc.desc Verify short negative value as start
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -364,8 +364,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_2000
      * @tc.name testArrayCopywithinOne020
      * @tc.desc Verify modifying source after copyWithin does not affect copied values
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -383,8 +383,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_2100
      * @tc.name testArrayCopywithinOne021
      * @tc.desc Verify push after copyWithin preserves copied result
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -399,8 +399,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_2200
      * @tc.name testArrayCopywithinOne022
      * @tc.desc Verify pop after copyWithin returns correct value
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -415,8 +415,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_2300
      * @tc.name testArrayCopywithinOne023
      * @tc.desc Verify sort after copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -435,8 +435,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_2400
      * @tc.name testArrayCopywithinOne024
      * @tc.desc Verify reverse after copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -452,8 +452,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_2500
      * @tc.name testArrayCopywithinOne025
      * @tc.desc Verify fill after copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -470,8 +470,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_2600
      * @tc.name testArrayCopywithinOne026
      * @tc.desc Verify splice delete after copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -487,8 +487,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_2700
      * @tc.name testArrayCopywithinOne027
      * @tc.desc Verify splice insert after copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -505,8 +505,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_2800
      * @tc.name testArrayCopywithinOne028
      * @tc.desc Verify two copyWithin operations in sequence
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -522,8 +522,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_2900
      * @tc.name testArrayCopywithinOne029
      * @tc.desc Verify length truncation after copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -539,8 +539,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_3000
      * @tc.name testArrayCopywithinOne030
      * @tc.desc Verify sparse array copies holes
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -560,8 +560,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_3100
      * @tc.name testArrayCopywithinOne031
      * @tc.desc Verify sparse array copies holes preserving them at target
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -582,8 +582,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_3200
      * @tc.name testArrayCopywithinOne032
      * @tc.desc Verify uninitialized array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -597,8 +597,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_3300
      * @tc.name testArrayCopywithinOne033
      * @tc.desc Verify partially initialized array copying holes
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -619,8 +619,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_3400
      * @tc.name testArrayCopywithinOne034
      * @tc.desc Verify sparse array copy between holes
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -640,8 +640,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_3500
      * @tc.name testArrayCopywithinOne035
      * @tc.desc Verify copy values into hole positions
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -662,8 +662,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_3600
      * @tc.name testArrayCopywithinOne036
      * @tc.desc Verify sparse array with negative target
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -681,8 +681,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_3700
      * @tc.name testArrayCopywithinOne037
      * @tc.desc Verify copyWithin in conditional expression
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -696,8 +696,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_3800
      * @tc.name testArrayCopywithinOne038
      * @tc.desc Verify multiple assignment chain with copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -713,8 +713,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_3900
      * @tc.name testArrayCopywithinOne039
      * @tc.desc Verify copyWithin result as array literal element
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -729,8 +729,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_4000
      * @tc.name testArrayCopywithinOne040
      * @tc.desc Verify forEach after copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -748,8 +748,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_4100
      * @tc.name testArrayCopywithinOne041
      * @tc.desc Verify reduceRight after copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -763,8 +763,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_4200
      * @tc.name testArrayCopywithinOne042
      * @tc.desc Verify copyWithin result stored as object property
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -778,8 +778,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_4300
      * @tc.name testArrayCopywithinOne043
      * @tc.desc Verify two copyWithin calls in one expression
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -795,8 +795,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_4400
      * @tc.name testArrayCopywithinOne044
      * @tc.desc Verify copyWithin in template string
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -810,8 +810,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_4500
      * @tc.name testArrayCopywithinOne045
      * @tc.desc Verify copyWithin then fill in chain
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -826,8 +826,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_4600
      * @tc.name testArrayCopywithinOne046
      * @tc.desc Verify fill then copyWithin in chain
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -843,8 +843,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_4700
      * @tc.name testArrayCopywithinOne047
      * @tc.desc Verify copyWithin then sort in chain
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -861,8 +861,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_4800
      * @tc.name testArrayCopywithinOne048
      * @tc.desc Verify sort then copyWithin in chain
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -880,8 +880,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_4900
      * @tc.name testArrayCopywithinOne049
      * @tc.desc Verify copyWithin then reverse in chain
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -896,8 +896,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_5000
      * @tc.name testArrayCopywithinOne050
      * @tc.desc Verify reverse then copyWithin in chain
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -913,8 +913,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_5100
      * @tc.name testArrayCopywithinOne051
      * @tc.desc Verify splice after copyWithin in chain
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -929,8 +929,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_5200
      * @tc.name testArrayCopywithinOne052
      * @tc.desc Verify map after copyWithin in chain
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -947,8 +947,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_5300
      * @tc.name testArrayCopywithinOne053
      * @tc.desc Verify filter after copyWithin in chain
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -963,8 +963,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_5400
      * @tc.name testArrayCopywithinOne054
      * @tc.desc Verify find after copyWithin in chain
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -978,8 +978,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_5500
      * @tc.name testArrayCopywithinOne055
      * @tc.desc Verify forEach side effect chain after copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -996,8 +996,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_5600
      * @tc.name testArrayCopywithinOne056
      * @tc.desc Verify large 10000-element array copy first half
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1011,8 +1011,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_5700
      * @tc.name testArrayCopywithinOne057
      * @tc.desc Verify large array copy last 1000 to start
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1029,8 +1029,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_5800
      * @tc.name testArrayCopywithinOne058
      * @tc.desc Verify large array copy first 500 to near end
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1047,8 +1047,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_5900
      * @tc.name testArrayCopywithinOne059
      * @tc.desc Verify large array mid-copy preserves specific value
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1066,8 +1066,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_6000
      * @tc.name testArrayCopywithinOne060
      * @tc.desc Verify large array negative target copy
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1084,8 +1084,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_6100
      * @tc.name testArrayCopywithinOne061
      * @tc.desc Verify large array overlapping copy
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1104,8 +1104,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_6200
      * @tc.name testArrayCopywithinOne062
      * @tc.desc Verify 50000-element array full copy
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1122,8 +1122,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_6300
      * @tc.name testArrayCopywithinOne063
      * @tc.desc Verify 100000-element array partial copy
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1140,8 +1140,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_6400
      * @tc.name testArrayCopywithinOne064
      * @tc.desc Verify binary literal as start
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1158,8 +1158,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_6500
      * @tc.name testArrayCopywithinOne065
      * @tc.desc Verify byte element array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1179,8 +1179,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_6600
      * @tc.name testArrayCopywithinOne066
      * @tc.desc Verify short element array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1200,8 +1200,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_6700
      * @tc.name testArrayCopywithinOne067
      * @tc.desc Verify boolean element array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1217,8 +1217,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_6800
      * @tc.name testArrayCopywithinOne068
      * @tc.desc Verify long element array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1236,8 +1236,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_6900
      * @tc.name testArrayCopywithinOne069
      * @tc.desc Verify bigint element array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1257,8 +1257,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_7000
      * @tc.name testArrayCopywithinOne070
      * @tc.desc Verify copyWithin copies elements from start index 2 to end index 5 to target index 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1272,8 +1272,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_7100
      * @tc.name testArrayCopywithinOne071
      * @tc.desc Verify uninitialized array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1292,8 +1292,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_7200
      * @tc.name testArrayCopywithinOne072
      * @tc.desc Verify empty array copyWithin returns empty array
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1307,8 +1307,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_7300
      * @tc.name testArrayCopywithinOne073
      * @tc.desc Verify start > end results in no-op
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1323,8 +1323,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_7400
      * @tc.name testArrayCopywithinOne074
      * @tc.desc Verify target only (no start/end) on empty array
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1338,8 +1338,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_7500
      * @tc.name testArrayCopywithinOne075
      * @tc.desc Verify business format string array copyWithin with byte param
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1356,8 +1356,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_7600
      * @tc.name testArrayCopywithinOne076
      * @tc.desc Verify multi-language string array copyWithin with short param
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1374,8 +1374,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_7700
      * @tc.name testArrayCopywithinOne077
      * @tc.desc Verify very long string (100 chars) array copyWithin with long param
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1393,8 +1393,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_7800
      * @tc.name testArrayCopywithinOne078
      * @tc.desc Verify ID card and bank card string array copyWithin with float param
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1410,8 +1410,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_7900
      * @tc.name testArrayCopywithinOne079
      * @tc.desc Verify mixed Chinese-English string array copyWithin with double param
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1428,8 +1428,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_8000
      * @tc.name testArrayCopywithinOne080
      * @tc.desc Verify float array elements copyWithin with byte param
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1446,8 +1446,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_8100
      * @tc.name testArrayCopywithinOne081
      * @tc.desc Verify double boundary values (MAX_VALUE, MIN_VALUE) array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1462,8 +1462,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_8200
      * @tc.name testArrayCopywithinOne082
      * @tc.desc Verify Date array elements copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1481,8 +1481,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_8300
      * @tc.name testArrayCopywithinOne083
      * @tc.desc Verify short array elements copyWithin with byte param
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1499,8 +1499,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_8400
      * @tc.name testArrayCopywithinOne084
      * @tc.desc Verify long boundary array elements copyWithin with float param
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1517,8 +1517,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_8500
      * @tc.name testArrayCopywithinOne085
      * @tc.desc Verify char boundary array copyWithin with short param
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1535,8 +1535,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_8600
      * @tc.name testArrayCopywithinOne086
      * @tc.desc Verify boolean array copyWithin with double param
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1553,8 +1553,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_8700
      * @tc.name testArrayCopywithinOne087
      * @tc.desc Verify Map object array copyWithin with byte param
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1577,8 +1577,8 @@ export default function ArrayCopyWithin1_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_8800
      * @tc.name testArrayCopywithinOne088
      * @tc.desc Verify string array with escaped unicode text and separators copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 

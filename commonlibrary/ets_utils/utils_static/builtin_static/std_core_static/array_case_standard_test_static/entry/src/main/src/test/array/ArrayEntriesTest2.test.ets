@@ -95,8 +95,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_0100
      * @tc.name testArrayEntries001
      * @tc.desc Verify exhausted entry has done and value properties
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -111,8 +111,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_0200
      * @tc.name testArrayEntries002
      * @tc.desc Verify exhausted iterator for-of does not execute
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -130,8 +130,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_0300
      * @tc.name testArrayEntries003
      * @tc.desc Verify spread operator is empty after exhaustion
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -146,8 +146,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_0400
      * @tc.name testArrayEntries004
      * @tc.desc Verify Array.from is empty after exhaustion
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -163,8 +163,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_0500
      * @tc.name testArrayEntries005
      * @tc.desc Verify new iterator unaffected by old exhausted one
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -187,8 +187,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_0600
      * @tc.name testArrayEntries006
      * @tc.desc Verify push during iteration affects results
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -210,8 +210,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_0700
      * @tc.name testArrayEntries007
      * @tc.desc Verify unshift before iteration affects results
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -231,8 +231,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_0800
      * @tc.name testArrayEntries008
      * @tc.desc Verify pop during iteration ends early
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -254,8 +254,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_0900
      * @tc.name testArrayEntries009
      * @tc.desc Verify shift during iteration shifts indices
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -276,8 +276,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_1000
      * @tc.name testArrayEntries010
      * @tc.desc Verify splice during iteration continues correctly
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -298,8 +298,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_1100
      * @tc.name testArrayEntries011
      * @tc.desc Verify modifying element during iteration reflected
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -319,8 +319,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_1200
      * @tc.name testArrayEntries012
      * @tc.desc Verify shrinking length during iteration ends early
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -337,8 +337,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_1300
      * @tc.name testArrayEntries013
      * @tc.desc Verify expanding length produces undefined holes
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -364,8 +364,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_1400
      * @tc.name testArrayEntries014
      * @tc.desc Verify clearing array during iteration ends immediately
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -381,8 +381,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_1500
      * @tc.name testArrayEntries015
      * @tc.desc Verify sort during iteration reflects sorted state
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -404,8 +404,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_1600
      * @tc.name testArrayEntries016
      * @tc.desc Verify sparse array holes are undefined
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -429,8 +429,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_1700
      * @tc.name testArrayEntries017
      * @tc.desc Verify sparse array traversal count equals length
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -448,8 +448,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_1800
      * @tc.name testArrayEntries018
      * @tc.desc Verify delete produces hole with undefined value
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -469,8 +469,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_1900
      * @tc.name testArrayEntries019
      * @tc.desc Verify sparse large array precise positioning
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -494,8 +494,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_2000
      * @tc.name testArrayEntries020
      * @tc.desc Verify trailing sparse hole is undefined
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -519,8 +519,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_2100
      * @tc.name testArrayEntries021
      * @tc.desc Verify sparse array for-of count equals length
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -538,8 +538,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_2200
      * @tc.name testArrayEntries022
      * @tc.desc Verify getter array element affects iteration value
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -561,8 +561,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_2300
      * @tc.name testArrayEntries023
      * @tc.desc Verify entries().next() on normal array does not throw
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -580,8 +580,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_2400
      * @tc.name testArrayEntries024
      * @tc.desc Verify Proxy intercept get on iteration
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -600,8 +600,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_2500
      * @tc.name testArrayEntries025
      * @tc.desc Verify plain Proxy does not affect normal iteration
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -621,8 +621,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_2600
      * @tc.name testArrayEntries026
      * @tc.desc Verify frozen array entries works normally
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -635,8 +635,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_2700
      * @tc.name testArrayEntries027
      * @tc.desc Verify sealed array entries works normally
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -649,8 +649,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_2800
      * @tc.name testArrayEntries028
      * @tc.desc Verify slice result entries index from 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -669,8 +669,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_2900
      * @tc.name testArrayEntries029
      * @tc.desc Verify empty slice result entries immediate done
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -685,8 +685,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_3000
      * @tc.name testArrayEntries030
      * @tc.desc Verify toSpliced result entries
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -703,8 +703,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_3100
      * @tc.name testArrayEntries031
      * @tc.desc Verify toReversed result entries
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -723,8 +723,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_3200
      * @tc.name testArrayEntries032
      * @tc.desc Verify toSorted result entries
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -745,8 +745,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_3300
      * @tc.name testArrayEntries033
      * @tc.desc Verify chained toReversed and entries
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -764,8 +764,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_3400
      * @tc.name testArrayEntries034
      * @tc.desc Verify concat result entries
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -784,8 +784,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_3500
      * @tc.name testArrayEntries035
      * @tc.desc Verify flat result entries count
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -801,8 +801,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_3600
      * @tc.name testArrayEntries036
      * @tc.desc Verify break in for-of preserves iterator state
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -823,8 +823,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_3700
      * @tc.name testArrayEntries037
      * @tc.desc Verify continue skips even values
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -846,8 +846,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_3800
      * @tc.name testArrayEntries038
      * @tc.desc Verify manual next with break control
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -875,8 +875,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_3900
      * @tc.name testArrayEntries039
      * @tc.desc Verify early return in for-of entries
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -889,8 +889,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_4000
      * @tc.name testArrayEntries040
      * @tc.desc Verify nested for-of entries are independent
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -910,8 +910,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_4100
      * @tc.name testArrayEntries041
      * @tc.desc Verify new iterator after break works normally
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -937,8 +937,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_4200
      * @tc.name testArrayEntries042
      * @tc.desc Verify modifying value tuple does not affect original array
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -952,8 +952,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_4300
      * @tc.name testArrayEntries043
      * @tc.desc Verify modifying index part of tuple does not affect original
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -967,8 +967,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_4400
      * @tc.name testArrayEntries044
      * @tc.desc Verify destructuring modification does not affect original
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -984,8 +984,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_4500
      * @tc.name testArrayEntries045
      * @tc.desc Verify stored entry modification does not affect original
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -999,8 +999,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_4600
      * @tc.name testArrayEntries046
      * @tc.desc Verify three concurrent iterators are independent
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1032,8 +1032,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_4700
      * @tc.name testArrayEntries047
      * @tc.desc Verify array mutation after iterator creation affects all iterators
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1051,8 +1051,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_4800
      * @tc.name testArrayEntries048
      * @tc.desc Verify one exhausted does not affect the other
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1076,8 +1076,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_4900
      * @tc.name testArrayEntries049
      * @tc.desc Verify for-of and manual next share state
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1101,8 +1101,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_5000
      * @tc.name testArrayEntries050
      * @tc.desc Verify exported iterator works across functions
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1119,8 +1119,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_5100
      * @tc.name testArrayEntries051
      * @tc.desc Verify entry value is array type
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1138,8 +1138,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_5200
      * @tc.name testArrayEntries052
      * @tc.desc Verify entries shallow copy shares object reference
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1154,8 +1154,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_5300
      * @tc.name testArrayEntries053
      * @tc.desc Verify Array.from entries with mapping function
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1170,8 +1170,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_5400
      * @tc.name testArrayEntries054
      * @tc.desc Verify empty array multiple entries calls
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1186,8 +1186,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_5500
      * @tc.name testArrayEntries055
      * @tc.desc Verify iter[Symbol.iterator] returns itself
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1200,8 +1200,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_5600
      * @tc.name testArrayEntries056
      * @tc.desc Verify entry index type is always number
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1216,8 +1216,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_5700
      * @tc.name testArrayEntries057
      * @tc.desc Verify entries reduce index accumulation
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1230,8 +1230,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_5800
      * @tc.name testArrayEntries058
      * @tc.desc Verify empty array entries yields immediate done
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1245,8 +1245,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_5900
      * @tc.name testArrayEntries059
      * @tc.desc Verify string array entries returns correct index-value pairs
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1265,8 +1265,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_6000
      * @tc.name testArrayEntries060
      * @tc.desc Verify Date array entries returns correct index-value pairs
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1282,8 +1282,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_6100
      * @tc.name testArrayEntries061
      * @tc.desc Verify byte array entries returns correct index-value pairs
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1299,8 +1299,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_6200
      * @tc.name testArrayEntries062
      * @tc.desc Verify long array entries returns correct index-value pairs
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1315,8 +1315,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_6300
      * @tc.name testArrayEntries063
      * @tc.desc Verify float array entries returns correct index-value pairs
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1332,8 +1332,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_6400
      * @tc.name testArrayEntries064
      * @tc.desc Verify double array entries returns correct index-value pairs
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1348,8 +1348,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_6500
      * @tc.name testArrayEntries065
      * @tc.desc Verify boolean array entries returns correct index-value pairs
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1366,8 +1366,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_6600
      * @tc.name testArrayEntries066
      * @tc.desc Verify Unicode Chinese string array entries
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1384,8 +1384,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_6700
      * @tc.name testArrayEntries067
      * @tc.desc Verify empty and space string array entries
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1402,8 +1402,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_6800
      * @tc.name testArrayEntries068
      * @tc.desc Verify Map element array entries
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1419,8 +1419,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_6900
      * @tc.name testArrayEntries069
      * @tc.desc Verify Set element array entries
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1436,8 +1436,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_7000
      * @tc.name testArrayEntries070
      * @tc.desc Verify nullable int|null array entries with null value
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1454,8 +1454,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_7100
      * @tc.name testArrayEntries071
      * @tc.desc Verify entries works on array with undefined elements
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1471,8 +1471,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_7200
      * @tc.name testArrayEntries072
      * @tc.desc Verify entries on nested object array with null inner property
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1489,8 +1489,8 @@ export default function ArrayEntriesTest2(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ENTRIES_7300
      * @tc.name testArrayEntries073
      * @tc.desc Verify entries on nullable nested type array
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
     it('testArrayEntries073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {

@@ -101,7 +101,7 @@ export default function ArrayExtendToTest2(): void {
       const arr = new Array<ObjWithX>({ x: 1 });
       arr.extendTo(4, { x: 0 });
       expect(arr.length).assertEqual(4);
-      expect(arr[1] != undefined).assertTrue();
+      expect(arr[1].x).assertEqual(0);
     });
 
     /**

@@ -593,7 +593,7 @@ export default function ArrayAt1Test2(): void {
       obj.x = 1;
       const arr: Array<ObjWithX | string> = new Array<ObjWithX | string>("hello", obj);
       const result = arr.at(1);
-      expect(result != undefined).assertTrue();
+      expect(result).assertEqual(obj);
       if (result instanceof ObjWithX) {
         expect(result.x).assertEqual(1);
       }else {
@@ -2174,7 +2174,6 @@ export default function ArrayAt1Test2(): void {
       const a2 = new Array<int>(1, 2);
       const arr = new Array<Array<int>>(a1, a2);
       const inner = arr.at(0);
-      expect(inner != undefined).assertTrue();
       if (inner != undefined) {
         expect(inner.length).assertEqual(0);
       }else {

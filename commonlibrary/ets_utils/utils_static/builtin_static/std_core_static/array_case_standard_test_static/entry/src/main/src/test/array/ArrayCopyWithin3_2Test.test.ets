@@ -61,8 +61,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_0100
      * @tc.name testArrayCopywithinThree001
      * @tc.desc Verify initializer constructor array then copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -78,8 +78,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_0200
      * @tc.name testArrayCopywithinThree002
      * @tc.desc Verify Array.from created array then copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -95,8 +95,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_0300
      * @tc.name testArrayCopywithinThree003
      * @tc.desc Verify Array.of created array then copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -112,8 +112,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_0400
      * @tc.name testArrayCopywithinThree004
      * @tc.desc Verify literal array direct copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -129,8 +129,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_0500
      * @tc.name testArrayCopywithinThree005
      * @tc.desc Verify manually filled array then copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -149,8 +149,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_0600
      * @tc.name testArrayCopywithinThree006
      * @tc.desc Verify Array.create reference array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -165,8 +165,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_0700
      * @tc.name testArrayCopywithinThree007
      * @tc.desc Verify nested initializer 2D array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -180,8 +180,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_0800
      * @tc.name testArrayCopywithinThree008
      * @tc.desc Verify NaN/Infinity elements copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -198,8 +198,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_0900
      * @tc.name testArrayCopywithinThree009
      * @tc.desc Verify length=0 empty array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -213,8 +213,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_1000
      * @tc.name testArrayCopywithinThree010
      * @tc.desc Verify Array.create zero length copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -228,8 +228,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_1100
      * @tc.name testArrayCopywithinThree011
      * @tc.desc Verify length=0 then copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -244,8 +244,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_1200
      * @tc.name testArrayCopywithinThree012
      * @tc.desc Verify length=1 then copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -260,8 +260,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_1300
      * @tc.name testArrayCopywithinThree013
      * @tc.desc Verify large array concat then copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -276,8 +276,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_1400
      * @tc.name testArrayCopywithinThree014
      * @tc.desc Verify empty array push then copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -293,8 +293,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_1500
      * @tc.name testArrayCopywithinThree015
      * @tc.desc Verify destructuring copyWithin result
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -312,8 +312,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_1600
      * @tc.name testArrayCopywithinThree016
      * @tc.desc Verify target=0, start=length-1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -327,8 +327,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_1700
      * @tc.name testArrayCopywithinThree017
      * @tc.desc Verify target=length-1, start=0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -342,8 +342,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_1800
      * @tc.name testArrayCopywithinThree018
      * @tc.desc Verify target=0, start=length/2
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -358,8 +358,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_1900
      * @tc.name testArrayCopywithinThree019
      * @tc.desc Verify large span from start=1 to target=length-2
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -374,8 +374,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_2000
      * @tc.name testArrayCopywithinThree020
      * @tc.desc Verify target+span truncated at length
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -390,8 +390,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_2100
      * @tc.name testArrayCopywithinThree021
      * @tc.desc Verify large array single element copy
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -406,8 +406,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_2200
      * @tc.name testArrayCopywithinThree022
      * @tc.desc Verify step-by-step right shift
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -425,8 +425,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_2300
      * @tc.name testArrayCopywithinThree023
      * @tc.desc Verify step-by-step left shift
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -444,8 +444,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_2400
      * @tc.name testArrayCopywithinThree024
      * @tc.desc Verify byte element array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -465,8 +465,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_2500
      * @tc.name testArrayCopywithinThree025
      * @tc.desc Verify short element array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -485,8 +485,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_2600
      * @tc.name testArrayCopywithinThree026
      * @tc.desc Verify long element array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -503,8 +503,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_2700
      * @tc.name testArrayCopywithinThree027
      * @tc.desc Verify float element array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -524,8 +524,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_2800
      * @tc.name testArrayCopywithinThree028
      * @tc.desc Verify double element array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -540,8 +540,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_2900
      * @tc.name testArrayCopywithinThree029
      * @tc.desc Verify char element array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -556,8 +556,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_3000
      * @tc.name testArrayCopywithinThree030
      * @tc.desc Verify string element array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -572,8 +572,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_3100
      * @tc.name testArrayCopywithinThree031
      * @tc.desc Verify boolean element array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -589,8 +589,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_3200
      * @tc.name testArrayCopywithinThree032
      * @tc.desc Verify Date object array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -604,8 +604,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_3300
      * @tc.name testArrayCopywithinThree033
      * @tc.desc Verify bigint element array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -625,8 +625,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_3400
      * @tc.name testArrayCopywithinThree034
      * @tc.desc Verify null element array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -642,8 +642,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_3500
      * @tc.name testArrayCopywithinThree035
      * @tc.desc Verify undefined element array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -659,8 +659,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_3600
      * @tc.name testArrayCopywithinThree036
      * @tc.desc Verify copyWithin correctly copy elements when target index uses hexadecimal literal 0x2, only specify source start index 1 and omit source end index
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -674,8 +674,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_3700
      * @tc.name testArrayCopywithinThree037
      * @tc.desc Verify octal literal as start
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -690,8 +690,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_3800
      * @tc.name testArrayCopywithinThree038
      * @tc.desc Verify binary literal as target
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -706,8 +706,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_3900
      * @tc.name testArrayCopywithinThree039
      * @tc.desc Verify copyWithin copies elements starting from index 2 without specifying end index to target index 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -721,8 +721,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_4000
      * @tc.name testArrayCopywithinThree040
      * @tc.desc Verify Array.from with copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -737,8 +737,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_4100
      * @tc.name testArrayCopywithinThree041
      * @tc.desc Verify toSorted then copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -755,8 +755,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_4200
      * @tc.name testArrayCopywithinThree042
      * @tc.desc Verify toReversed then copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -771,8 +771,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_4300
      * @tc.name testArrayCopywithinThree043
      * @tc.desc Verify with then copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -787,8 +787,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_4400
      * @tc.name testArrayCopywithinThree044
      * @tc.desc Verify shrinkTo then copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -805,8 +805,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_4500
      * @tc.name testArrayCopywithinThree045
      * @tc.desc Verify getter setter object array shallow copy propagation
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -823,8 +823,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_4600
      * @tc.name testArrayCopywithinThree046
      * @tc.desc Verify frozen object element not modified after copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -840,8 +840,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_4700
      * @tc.name testArrayCopywithinThree047
      * @tc.desc Verify sealed object property modifiable after copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -858,8 +858,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_4800
      * @tc.name testArrayCopywithinThree048
      * @tc.desc Verify length getter interaction with copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -873,8 +873,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_4900
      * @tc.name testArrayCopywithinThree049
      * @tc.desc Verify negative target index copies from start to end
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -892,8 +892,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_5000
      * @tc.name testArrayCopywithinThree050
      * @tc.desc Verify negative start index counts from end
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -909,8 +909,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_5100
      * @tc.name testArrayCopywithinThree051
      * @tc.desc Verify copyWithin performs no operation when target index exceeds array length, only source start index provided and source end index omitted
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -925,8 +925,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_5200
      * @tc.name testArrayCopywithinThree052
      * @tc.desc Verify start out of range clamped to length (no-op)
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -941,8 +941,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_5300
      * @tc.name testArrayCopywithinThree053
      * @tc.desc Verify NaN converted via Double.toInt as target treated as 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -961,8 +961,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_5400
      * @tc.name testArrayCopywithinThree054
      * @tc.desc Verify Infinity converted via Double.toInt as target clamped to length
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -978,8 +978,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_5500
      * @tc.name testArrayCopywithinThree055
      * @tc.desc Verify single element array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -993,8 +993,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_5600
      * @tc.name testArrayCopywithinThree056
      * @tc.desc Verify Unicode string array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1009,8 +1009,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_5700
      * @tc.name testArrayCopywithinThree057
      * @tc.desc Verify empty string array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1025,8 +1025,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_5800
      * @tc.name testArrayCopywithinThree058
      * @tc.desc Verify special character string array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1041,8 +1041,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_5900
      * @tc.name testArrayCopywithinThree059
      * @tc.desc Verify XSS string array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1057,8 +1057,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_6000
      * @tc.name testArrayCopywithinThree060
      * @tc.desc Verify emoji string array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1073,8 +1073,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_6100
      * @tc.name testArrayCopywithinThree061
      * @tc.desc Verify string|null mixed array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1090,8 +1090,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_6200
      * @tc.name testArrayCopywithinThree062
      * @tc.desc Verify escape char string array copyWithin (\b, \f, \\)
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1106,8 +1106,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_6300
      * @tc.name testArrayCopywithinThree063
      * @tc.desc Verify scientific notation string array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1122,8 +1122,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_6400
      * @tc.name testArrayCopywithinThree064
      * @tc.desc Verify bigint array elements copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1142,8 +1142,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_6500
      * @tc.name testArrayCopywithinThree065
      * @tc.desc Verify double special value array copyWithin with NaN, POSITIVE_INFINITY and NEGATIVE_INFINITY
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1163,8 +1163,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_6600
      * @tc.name testArrayCopywithinThree066
      * @tc.desc Verify template literal string array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1180,8 +1180,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_6700
      * @tc.name testArrayCopywithinThree067
      * @tc.desc Verify long max/min array elements copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1197,8 +1197,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_6800
      * @tc.name testArrayCopywithinThree068
      * @tc.desc Verify short array elements copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1214,8 +1214,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_6900
      * @tc.name testArrayCopywithinThree069
      * @tc.desc Verify char range array copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1230,8 +1230,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_7000
      * @tc.name testArrayCopywithinThree070
      * @tc.desc Verify Set<int> array elements copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1252,8 +1252,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_7100
      * @tc.name testArrayCopywithinThree071
      * @tc.desc Verify RegExp array elements copyWithin
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1269,8 +1269,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_7200
      * @tc.name testArrayCopywithinThree072
      * @tc.desc Verify copyWithin copies null elements correctly
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1286,8 +1286,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_7300
      * @tc.name testArrayCopywithinThree073
      * @tc.desc Verify copyWithin copies undefined elements correctly
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1303,8 +1303,8 @@ export default function ArrayCopyWithin3_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_7400
      * @tc.name testArrayCopywithinThree074
      * @tc.desc Verify copyWithin shallow copies nested object with null child
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 

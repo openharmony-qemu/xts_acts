@@ -206,7 +206,7 @@ export default function ArrayConcatTest2(): void {
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(4);
       expect(result[0]).assertEqual(1);
-      expect(result[3] != undefined).assertTrue();
+      expect(result[3]).assertEqual(b2);
     });
 
     /**

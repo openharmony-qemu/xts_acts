@@ -65,8 +65,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_0100
      * @tc.name testArrayFillTwo001
      * @tc.desc Verify int bitwise expression as end
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -82,8 +82,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_0200
      * @tc.name testArrayFillTwo002
      * @tc.desc Verify int logical AND as fill value
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -99,8 +99,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_0300
      * @tc.name testArrayFillTwo003
      * @tc.desc Verify start = INT32_MAX does not fill
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -115,8 +115,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_0400
      * @tc.name testArrayFillTwo004
      * @tc.desc Verify start = INT32_MIN normalizes to 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -131,8 +131,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_0500
      * @tc.name testArrayFillTwo005
      * @tc.desc Verify end = INT32_MIN normalizes to 0, no fill
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -147,8 +147,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_0600
      * @tc.name testArrayFillTwo006
      * @tc.desc Verify start = INT32_MIN + 2 normalizes to 0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -164,8 +164,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_0700
      * @tc.name testArrayFillTwo007
      * @tc.desc Verify start = 0 end = array.length fills all
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -180,8 +180,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_0800
      * @tc.name testArrayFillTwo008
      * @tc.desc Verify fill then push then fill chain
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -200,8 +200,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_0900
      * @tc.name testArrayFillTwo009
      * @tc.desc Verify fill then pop then fill another array
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -221,8 +221,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_1000
      * @tc.name testArrayFillTwo010
      * @tc.desc Verify fill then sort then fill
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -242,8 +242,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_1100
      * @tc.name testArrayFillTwo011
      * @tc.desc Verify fill then reverse then fill
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -262,8 +262,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_1200
      * @tc.name testArrayFillTwo012
      * @tc.desc Verify fill then splice then fill
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -281,8 +281,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_1300
      * @tc.name testArrayFillTwo013
      * @tc.desc Verify literal vs new Array fill consistency
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -299,8 +299,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_1400
      * @tc.name testArrayFillTwo014
      * @tc.desc Verify Array.of int then fill
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -316,8 +316,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_1500
      * @tc.name testArrayFillTwo015
      * @tc.desc Verify Array.from int then fill
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -333,8 +333,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_1600
      * @tc.name testArrayFillTwo016
      * @tc.desc Verify spread int array then fill
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -350,8 +350,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_1700
      * @tc.name testArrayFillTwo017
      * @tc.desc Verify array-like converted to array then fill
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -370,8 +370,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_1800
      * @tc.name testArrayFillTwo018
      * @tc.desc Verify int fill then at() read
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -386,8 +386,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_1900
      * @tc.name testArrayFillTwo019
      * @tc.desc Verify int fill then destructuring read
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -404,8 +404,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2000
      * @tc.name testArrayFillTwo020
      * @tc.desc Verify int fill then forEach traversal
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -423,8 +423,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2100
      * @tc.name testArrayFillTwo021
      * @tc.desc Verify int fill then for...of traversal
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -442,8 +442,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2200
      * @tc.name testArrayFillTwo022
      * @tc.desc Verify int fill then entries() iteration
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -464,8 +464,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2300
      * @tc.name testArrayFillTwo023
      * @tc.desc Verify large int value fill on int array
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -479,8 +479,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2400
      * @tc.name testArrayFillTwo024
      * @tc.desc Verify negative large value fill on int array
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -494,8 +494,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2500
      * @tc.name testArrayFillTwo025
      * @tc.desc Verify large value partial fill on int array
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -512,8 +512,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2600
      * @tc.name testArrayFillTwo026
      * @tc.desc Verify int|symbol union array fill with Symbol
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -529,8 +529,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2700
      * @tc.name testArrayFillTwo027
      * @tc.desc Verify sort descending then int fill
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -547,8 +547,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2800
      * @tc.name testArrayFillTwo028
      * @tc.desc Verify reverse then int fill partial
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -566,8 +566,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2900
      * @tc.name testArrayFillTwo029
      * @tc.desc Verify splice delete then int fill
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -583,8 +583,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_3000
      * @tc.name testArrayFillTwo030
      * @tc.desc Verify splice insert then int fill
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -603,8 +603,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_3100
      * @tc.name testArrayFillTwo031
      * @tc.desc Verify concat then int fill
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -621,8 +621,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_3200
      * @tc.name testArrayFillTwo032
      * @tc.desc Verify slice copy then fill independent
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -639,8 +639,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_3300
      * @tc.name testArrayFillTwo033
      * @tc.desc Verify three overlapping int fill layers
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -660,8 +660,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_3400
      * @tc.name testArrayFillTwo034
      * @tc.desc Verify same range filled twice
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -677,8 +677,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_3500
      * @tc.name testArrayFillTwo035
      * @tc.desc Verify adjacent non-overlapping int fills
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -696,8 +696,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_3600
      * @tc.name testArrayFillTwo036
      * @tc.desc Verify large range filled then small range overwrite
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -715,8 +715,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_3700
      * @tc.name testArrayFillTwo037
      * @tc.desc Verify small range filled then large range overwrite
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -733,8 +733,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_3800
      * @tc.name testArrayFillTwo038
      * @tc.desc Verify int|string union fill with int
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -750,8 +750,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_3900
      * @tc.name testArrayFillTwo039
      * @tc.desc Verify int|boolean union partial fill with int
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -767,8 +767,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_4000
      * @tc.name testArrayFillTwo040
      * @tc.desc Verify undefined nullable int fill
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -783,8 +783,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_4100
      * @tc.name testArrayFillTwo041
      * @tc.desc Verify object reference fill on union array
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -800,8 +800,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_4200
      * @tc.name testArrayFillTwo042
      * @tc.desc Verify delete hole then fill
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -817,8 +817,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_4300
      * @tc.name testArrayFillTwo043
      * @tc.desc Verify new Array(5) fill all
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -833,8 +833,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_4400
      * @tc.name testArrayFillTwo044
      * @tc.desc Verify new Array(5) fill partial
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -851,8 +851,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_4500
      * @tc.name testArrayFillTwo045
      * @tc.desc Verify sparse extended then fill
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -869,8 +869,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_4600
      * @tc.name testArrayFillTwo046
      * @tc.desc Verify fill makes sparse hole an own property
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -884,8 +884,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_4700
      * @tc.name testArrayFillTwo047
      * @tc.desc Verify negative zero fill on int array
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -899,8 +899,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_4800
      * @tc.name testArrayFillTwo048
      * @tc.desc Verify int fill then every equality check
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -915,8 +915,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_4900
      * @tc.name testArrayFillTwo049
      * @tc.desc Verify int fill then some detection
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -931,8 +931,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_5000
      * @tc.name testArrayFillTwo050
      * @tc.desc Verify int fill then includes detection
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -946,8 +946,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_5100
      * @tc.name testArrayFillTwo051
      * @tc.desc Verify int fill then reduce sum
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -962,8 +962,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_5200
      * @tc.name testArrayFillTwo052
      * @tc.desc Verify int fill then reduceRight
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -978,8 +978,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_5300
      * @tc.name testArrayFillTwo053
      * @tc.desc Verify int fill then reduce product
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -994,8 +994,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_5400
      * @tc.name testArrayFillTwo054
      * @tc.desc Verify 10000 element int array fill all
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1009,8 +1009,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_5500
      * @tc.name testArrayFillTwo055
      * @tc.desc Verify 10000 element int array partial fill
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1027,8 +1027,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_5600
      * @tc.name testArrayFillTwo056
      * @tc.desc Verify 100000 element int fill then reduce sum
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1043,8 +1043,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_5700
      * @tc.name testArrayFillTwo057
      * @tc.desc Verify 50000 element fill then every check
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1059,8 +1059,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_5800
      * @tc.name testArrayFillTwo058
      * @tc.desc Verify int start from function return
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1077,8 +1077,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_5900
      * @tc.name testArrayFillTwo059
      * @tc.desc Verify int end from function return
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1095,8 +1095,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_6000
      * @tc.name testArrayFillTwo060
      * @tc.desc Verify float to int conversion as fill start
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1115,8 +1115,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_6100
      * @tc.name testArrayFillTwo061
      * @tc.desc Verify int short-circuit expression as start
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1131,8 +1131,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_6200
      * @tc.name testArrayFillTwo062
      * @tc.desc Verify fill(null, int start, int end) with int params on int|null array
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1150,8 +1150,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_6300
      * @tc.name testArrayFillTwo063
      * @tc.desc Verify fill(undefined, int start, int end) with int params on int|undefined array
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
@@ -1168,8 +1168,8 @@ export default function ArrayFill2_2Test(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_6400
      * @tc.name testArrayFillTwo064
      * @tc.desc Verify fill(LinkedNode, int start, int end) with nested nullable class
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
      * @tc.level Level 2
      */
 
