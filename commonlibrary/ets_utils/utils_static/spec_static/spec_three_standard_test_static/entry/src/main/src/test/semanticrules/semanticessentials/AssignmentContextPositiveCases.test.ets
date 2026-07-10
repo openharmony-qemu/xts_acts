@@ -27,6 +27,9 @@ function assignSameType1(x: number, y: number) {
 function assignIndexed1(x: number[]) {
   x = [1, 2]
 }
+function assignOtherType1(x: number, y: number) {
+  x = y
+}
 function assignSameType2(x: number, y: number) {
   x = y
 }
