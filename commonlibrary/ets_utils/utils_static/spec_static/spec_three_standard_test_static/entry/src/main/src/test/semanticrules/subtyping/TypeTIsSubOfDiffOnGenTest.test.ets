@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -17,40 +17,9 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '@ohos/hypium-binary/src/main/indexStatic';
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import { A_1, B1_1, B2_1, C1_1, C2_1, Other_1 } from '../types.test';
+import Utils from '../../Util.test'
 
-abstract class A_1<U, V> {}
-abstract class B1_1<U, V> extends A_1<U, V> {}
-class B2_1<U, V> extends A_1<U, V> {
-  b2_v: U | V
-  constructor (p: U | V) {
-    this.b2_v = p
-  }
-}
-class C1_1<U, V> extends B1_1<U, V> {
-  c1_v: U | V
-  constructor (p: U | V) {
-    this.c1_v = p
-  }
-}
-class C2_1<U, V> extends B1_1<U, V> {
-  c2_v: U | V
-  constructor (p: U | V) {
-    this.c2_v = p
-  }
-}
-class Other_1<T> {
-  other_v: T
-  constructor (p: T) {
-    this.other_v = p
-  }
-}
 function check_C1_1(a: Any) {
   expect(a instanceof C1_1).assertEqual(true)
   expect((a as C1_1<number, null>).c1_v as number).assertEqual(321)
@@ -246,7 +215,7 @@ export default function TypeTIsSubOfDiffOnGenTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -271,7 +240,6 @@ export default function TypeTIsSubOfDiffOnGenTest(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnGen0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let v1: B2_1<bigint, undefined> | Other_1<string> | C1_1<number, null> = new C1_1<number, null>(321)
       let v2: B2_1<bigint, undefined> | Other_1<string> | C1_1<number, null> = new B2_1<bigint, undefined>(123n)
       let res: boolean = check_1(v1, true, 1) & check_1(v2, true, 2)
@@ -289,7 +257,6 @@ export default function TypeTIsSubOfDiffOnGenTest(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnGen0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let v1: B2_2 | Other_2 | C1_2 = new C1_2(321)
       let v2: B2_2 | Other_2 | C1_2 = new B2_2(123n)
       let res: boolean =
@@ -309,7 +276,6 @@ export default function TypeTIsSubOfDiffOnGenTest(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnGen0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let v1: III1_3<number, null> | II2_3<bigint, undefined> | III2_3<number, string> = new C1_3<number, null>(123)
       let v2: III1_3<number, null> | II2_3<bigint, undefined> | III2_3<number, string> = new C3_3<bigint, undefined>(321n)
       let res: boolean =

@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -72,7 +72,6 @@ export default function SupertypingAmongArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testSupertypingAmongArrayTypes0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let b: B =  B.create();
       let i: I = b;
       let instance: B[] = [b, i as B];
@@ -90,7 +89,6 @@ export default function SupertypingAmongArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testSupertypingAmongArrayTypes0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let a: A =  B2.create();
       let b = a as B2;
       let instance: B2[] = [a as B2, b];
@@ -109,7 +107,6 @@ export default function SupertypingAmongArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testSupertypingAmongArrayTypes0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let a1: Object = 1;
       let a2: Object = 2;
       let instance: number[] = [Number(a1), Number(a2)];
