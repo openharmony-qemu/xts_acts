@@ -52,7 +52,7 @@ group("communication") {
       "nfc_SecureElement_2:ActsnfcSEServiceTest2",
       "nfc_connectedtag:ActsNFCConnectedTagJSTest",
       "nfc_connectedtag_nopermission:ActsNFCConnectedTagNoPermissionJSTest",
-	  "nearlink_normal:ActsNearlinkNormalTest",
+	    "nearlink_normal:ActsNearlinkNormalTest",
       "nearlink_nop:ActsNearlinkNopTest",
       "wifi_ErrorCode201:ActsErrorcode201Test",
       "wifi_ErrorCode401:ActsErrorcode401Test",
