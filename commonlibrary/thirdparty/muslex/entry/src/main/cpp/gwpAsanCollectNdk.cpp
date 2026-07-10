@@ -24,6 +24,10 @@
 static constexpr int kStableLoop = 20;
 static constexpr int kThreadCount = 3;
 static constexpr int kIterPerThread = 10;
+static constexpr uint64_t kTimespan = 1000;
+static constexpr uint64_t kTimespanZero = 0;
+static constexpr uint64_t kTimespanLarge = 5000;
+static constexpr size_t kDepth = 1;
 
 static size_t CallGwpAsanCollect(uint64_t timespan, uintptr_t* buffer, size_t maxCount, size_t depth = 1)
 {
@@ -57,7 +61,7 @@ static napi_value GwpAsanCollectNormal001(napi_env env, napi_callback_info info)
     }
     int bufcap = 2;
     uintptr_t buffer[10];
-    size_t ret = CallGwpAsanCollect(1000, buffer, bufcap, 1);
+    size_t ret = CallGwpAsanCollect(kTimespan, buffer, bufcap, kDepth);
     return ReturnInt32(env, (ret <= bufcap) ? 1 : 0);
 }
 
@@ -68,7 +72,7 @@ static napi_value GwpAsanCollectNormal002(napi_env env, napi_callback_info info)
     }
     int bufcap = 2;
     uintptr_t buffer[10];
-    size_t ret = CallGwpAsanCollect(0, buffer, bufcap, 1);
+    size_t ret = CallGwpAsanCollect(kTimespanZero, buffer, bufcap, kDepth);
     return ReturnInt32(env, (ret <= bufcap) ? 1 : 0);
 }
 
@@ -79,7 +83,8 @@ static napi_value GwpAsanCollectNormal003(napi_env env, napi_callback_info info)
     }
     int bufcap = 5;
     uintptr_t buffer[20];
-    size_t ret = CallGwpAsanCollect(5000, buffer, bufcap, 4);
+    int depth = 4;
+    size_t ret = CallGwpAsanCollect(kTimespanLarge, buffer, bufcap, depth);
     return ReturnInt32(env, (ret <= bufcap) ? 1 : 0);
 }
 
@@ -97,7 +102,7 @@ static napi_value GwpAsanCollectAbnormal001(napi_env env, napi_callback_info inf
         return ReturnInt32(env, 0);
     }
     int bufcap = 2;
-    size_t ret = CallGwpAsanCollect(1000, nullptr, bufcap, 1);
+    size_t ret = CallGwpAsanCollect(kTimespan, nullptr, bufcap, kDepth);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
 }
 
@@ -107,7 +112,7 @@ static napi_value GwpAsanCollectAbnormal002(napi_env env, napi_callback_info inf
         return ReturnInt32(env, 0);
     }
     uintptr_t buffer[10];
-    size_t ret = CallGwpAsanCollect(1000, buffer, 0, 1);
+    size_t ret = CallGwpAsanCollect(kTimespan, buffer, 0, kDepth);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
 }
 
@@ -118,7 +123,7 @@ static napi_value GwpAsanCollectBoundary001(napi_env env, napi_callback_info inf
     }
     int bufcap = 2;
     uintptr_t buffer[20];
-    size_t ret = CallGwpAsanCollect(UINT64_MAX, buffer, bufcap, 1);
+    size_t ret = CallGwpAsanCollect(UINT64_MAX, buffer, bufcap, kDepth);
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
@@ -129,7 +134,7 @@ static napi_value GwpAsanCollectBoundary002(napi_env env, napi_callback_info inf
     }
     int bufcap = 1;
     uintptr_t buffer[4];
-    size_t ret = CallGwpAsanCollect(1000, buffer, bufcap, 1);
+    size_t ret = CallGwpAsanCollect(kTimespan, buffer, bufcap, kDepth);
     return ReturnInt32(env, (ret >= 0 && ret <= bufcap) ? 1 : 0);
 }
 
@@ -142,7 +147,7 @@ static napi_value GwpAsanCollectStable001(napi_env env, napi_callback_info info)
     bool pass = true;
     for (int i = 0; i < kStableLoop; ++i) {
         uintptr_t buffer[10];
-        size_t ret = CallGwpAsanCollect(1000, buffer, bufcap, 1);
+        size_t ret = CallGwpAsanCollect(kTimespan, buffer, bufcap, kDepth);
         if (ret > bufcap) {
             pass = false;
             break;
@@ -163,7 +168,7 @@ static napi_value GwpAsanCollectThread001(napi_env env, napi_callback_info info)
         threads.emplace_back([&hasError, bufcap]() {
             for (int i = 0; i < kIterPerThread; ++i) {
                 uintptr_t buffer[10];
-                CallGwpAsanCollect(1000, buffer, bufcap, 1);
+                CallGwpAsanCollect(kTimespan, buffer, bufcap, kDepth);
             }
         });
     }

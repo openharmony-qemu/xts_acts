@@ -43,13 +43,7 @@ static bool IsStubMode()
 // Helper function: create temp file (multiple fallback options)
 static FILE* GetTestFile()
 {
-    // Option 1: tmpfile()
-    FILE* file = tmpfile();
-    if (file != nullptr) {
-        return file;
-    }
-
-    // Option 2: use /data/local/tmp/ directory
+    FILE* file = nullptr;
     char templatePath[] = "/data/local/tmp/fprintf_chk_test_XXXXXX";
     int fd = mkstemp(templatePath);
     if (fd != -1) {
@@ -233,21 +227,24 @@ static napi_value FprintfChkBoundary001(napi_env env, napi_callback_info info)
     }
 
     // Medium length string
-    std::string mediumStr(1000, 'a');
+    int medsize = 1000;
+    std::string mediumStr(medsize, 'a');
     int ret = func(tmpFile, 0, "%s", mediumStr.c_str());
     if (ret < 0) {
         allPassed = false;
     }
 
     // Long string
-    std::string longStr(5000, 'b');
+    int longsize = 5000;
+    std::string longStr(longsize, 'b');
     int ret2 = func(tmpFile, 1, "%s", longStr.c_str());
     if (ret2 < 0) {
         allPassed = false;
     }
 
     // Very long string (write in multiple chunks to avoid memory issues)
-    std::string veryLongStr(20000, 'c');
+    int verylongsize = 20000;
+    std::string veryLongStr(verylongsize, 'c');
     int ret3 = func(tmpFile, 0, "%s", veryLongStr.c_str());
     if (ret3 < 0) {
         allPassed = false;

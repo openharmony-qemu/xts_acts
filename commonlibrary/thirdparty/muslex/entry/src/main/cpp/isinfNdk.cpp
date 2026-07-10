@@ -87,6 +87,7 @@ static napi_value IsinfNormal004(napi_env env, napi_callback_info info)
 
     bool allPassed = true;
     double finitetest = 3.14;
+    double largefinite = 100.0;
     if (func(0.0) != 0) {
         allPassed = false;
     }
@@ -96,10 +97,10 @@ static napi_value IsinfNormal004(napi_env env, napi_callback_info info)
     if (func(-finitetest) != 0) {
         allPassed = false;
     }
-    if (func(100.0) != 0) {
+    if (func(largefinite) != 0) {
         allPassed = false;
     }
-    if (func(-100.0) != 0) {
+    if (func(-largefinite) != 0) {
         allPassed = false;
     }
 

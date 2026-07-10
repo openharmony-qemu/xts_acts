@@ -300,15 +300,16 @@ static napi_value GetauxvalThread002(napi_env env, napi_callback_info info)
     const int iterationsPerThread = 10;
     std::vector<std::thread> threads;
     std::atomic<bool> hasError{false};
+    int basiccount = 4;
     unsigned long allItems[] = {AT_PAGESZ, AT_SECURE, AT_CLKTCK, AT_RANDOM, AT_ENTRY, AT_UID, AT_EUID, AT_GID};
 
     for (int t = 0; t < threadCount; ++t) {
-        threads.emplace_back([func, &hasError, allItems, iterationsPerThread, t]() {
+        threads.emplace_back([func, &hasError, allItems, iterationsPerThread, t, basiccount]() {
             for (int i = 0; i < iterationsPerThread; ++i) {
                 int idx = (i + t) % 8;
                 unsigned long result = func(allItems[idx]);
                 // Verify return value and errno
-                if (result == 0 && idx >= 4) { // Some items may not exist
+                if (result == 0 && idx >= basiccount) { // Some items may not exist
                     // Not necessarily an error, continue
                 }
             }

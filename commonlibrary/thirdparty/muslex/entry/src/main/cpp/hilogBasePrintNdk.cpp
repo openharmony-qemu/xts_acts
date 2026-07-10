@@ -126,7 +126,8 @@ static napi_value HilogBasePrintBoundary002(napi_env env, napi_callback_info inf
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    std::string longMsg(2000, 'a');
+    int msgsize = 2000;
+    std::string longMsg(msgsize, 'a');
     int ret = CallHilogBasePrint(kLogApp, kLogInfo, 0xD000900, "TEST_TAG", "%s", longMsg.c_str());
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }

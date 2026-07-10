@@ -50,14 +50,15 @@ static napi_value FiniteNormal001(napi_env env, napi_callback_info info)
     }
     // Positive
     double largefinite = 100.0;
-    if (func(3.14) == 0) {
+    double testfinite = 3.14;
+    if (func(testfinite) == 0) {
         allPassed = false;
     }
     if (func(largefinite) == 0) {
         allPassed = false;
     }
     // Negative
-    if (func(-3.14) == 0) {
+    if (func(-testfinite) == 0) {
         allPassed = false;
     }
     if (func(-largefinite) == 0) {
@@ -208,7 +209,8 @@ static napi_value FiniteStable001(napi_env env, napi_callback_info info)
     }
 
     bool allPassed = true;
-    double testVals[] = {0.0, 3.14, -3.14, INFINITY, -INFINITY, NAN};
+    double testfinite = 3.14;
+    double testVals[] = {0.0, testfinite, -testfinite, INFINITY, -INFINITY, NAN};
     int resultscount = 6;
     int results[resultscount];
 
@@ -246,7 +248,8 @@ static napi_value FiniteThread001(napi_env env, napi_callback_info info)
     const int iterationsPerThread = 10;
     std::vector<std::thread> threads;
     std::atomic<bool> hasError{false};
-    double testVals[] = {0.0, 3.14, INFINITY, -INFINITY, NAN};
+    double testfinite = 3.14;
+    double testVals[] = {0.0, testfinite, INFINITY, -INFINITY, NAN};
 
     for (int t = 0; t < threadCount; ++t) {
         threads.emplace_back([func, &hasError, testVals, iterationsPerThread]() {
