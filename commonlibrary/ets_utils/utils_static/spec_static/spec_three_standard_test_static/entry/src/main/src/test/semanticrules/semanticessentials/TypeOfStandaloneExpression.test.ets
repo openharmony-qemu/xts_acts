@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -16,14 +16,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '@ohos/hypium-binary/src/main/indexStatic';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../Util.test'
 
 let v1 = true
 const c1 = true
@@ -278,7 +271,7 @@ export default function TypeOfStandaloneExpression(): void{
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -304,7 +297,6 @@ export default function TypeOfStandaloneExpression(): void{
     it("testStandaloneExpressionPositiveCases0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       main();
       expect(v1).assertTrue();
-
     });
 
     /**

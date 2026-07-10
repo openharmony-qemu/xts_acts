@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (c) 2021-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -586,6 +586,5 @@ export default function ImplicitConstructorOverloadingTest01():void {
     it("testCo3Over0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       co3_over_5.main();
     });
-
   })
 }

@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,14 +15,7 @@
  */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
 
 // ============================================================================
 // Data Setup for testOverridingInClasses0001
@@ -212,7 +205,6 @@ namespace access_modifier_over_6 {
   }
 }
 
-
 export default function OverridingInClassesTest():void {
   describe('OverridingInClassesTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -225,7 +217,7 @@ export default function OverridingInClassesTest():void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -343,6 +335,5 @@ export default function OverridingInClassesTest():void {
     it("testOverridingInClasses0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(access_modifier_over_6.main()).assertEqual(11);
     });
-
   })
 }

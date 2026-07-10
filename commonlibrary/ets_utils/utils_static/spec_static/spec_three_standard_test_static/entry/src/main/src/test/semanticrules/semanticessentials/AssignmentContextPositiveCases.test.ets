@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -17,20 +17,11 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '@ohos/hypium-binary/src/main/indexStatic';
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../Util.test'
 class A {}
 
 class B extends A {}
 function assignSameType1(x: number, y: number) {
-  x = y
-}
-function assignOtherType1(x: number, y: number) {
   x = y
 }
 function assignIndexed1(x: number[]) {
@@ -162,6 +153,7 @@ function assignOtherType15(x: number, y: (number | null)) {
 function assignIndexed15(x: number[]) {
   x = [1, 42]
 }
+
 export default function SpecificsOfAssignmentLikeContexts(): void{
   describe('SpecificsOfAssignmentLikeContexts', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -174,7 +166,7 @@ export default function SpecificsOfAssignmentLikeContexts(): void{
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
