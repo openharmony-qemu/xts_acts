@@ -1092,7 +1092,6 @@ export default function CameraVideoSessionBackTest() {
                console.error(TAG,
                  testName + ' failed to start, err: ' + error.code + ', msg: ' + error.message);
                expect(error.code == cameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
-               await mVideoSession.release();
              } else {
                console.info(TAG, testName + ' session start passed.');
                expect(true).assertTrue();
@@ -1110,6 +1109,7 @@ export default function CameraVideoSessionBackTest() {
           console.info(TAG, testName + ' beginConfig passed.');
           expect(true).assertTrue();
         }
+        await mVideoSession.release();
         done();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
