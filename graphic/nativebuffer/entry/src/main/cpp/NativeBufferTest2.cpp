@@ -411,7 +411,6 @@ napi_value OHNativeBufferFromNativeWindowBufferNullptr(napi_env env, napi_callba
     napi_create_int32(env, ret, &result1);
     napi_set_element(env, result, NUMBER_1, result1);
     OH_NativeBuffer_Unreference(buffer);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
     OH_NativeImage_Destroy(&_image);
     return result;
 }
