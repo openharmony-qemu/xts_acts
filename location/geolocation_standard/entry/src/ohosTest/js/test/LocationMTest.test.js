@@ -155,6 +155,7 @@ export default function geolocationTest_geo7() {
         beforeAll(async function (done) {
             console.info('beforeAll case');
             await applyPermission();
+            await changedLocationMode();
             done();
         })
     
