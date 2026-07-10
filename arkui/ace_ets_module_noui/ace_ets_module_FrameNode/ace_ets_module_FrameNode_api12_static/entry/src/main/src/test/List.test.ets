@@ -36,8 +36,8 @@ export default function testsuite() {
   GetFrameNodeByUniqueIdTest()
   ComponentContentIsTransferredTest()
  	ComponentContentIsDisposedTest()
-  FrameNodeProvideChildTest()
-  createFrameNodesUIContextIntTest()
   IfElseExpressionTest()
   BuilderNodeAddBuilderProxyNodeTest()
+  FrameNodeProvideChildTest()
+  createFrameNodesUIContextIntTest()
 }
