@@ -5108,6 +5108,7 @@ export default function WindowLayoutTest() {
         expect(ReadonlyEnvKey.WINDOW_IS_HIGHLIGHTED != null).assertTrue()
         expect(ReadonlyEnvKey.WINDOW_DISPLAY_ID != null).assertTrue()
         expect(ReadonlyEnvKey.WINDOW_SYSTEM_DENSITY != null).assertTrue()
+        done()
       } catch (exception) {
         console.error(`${caseName} Failed. Cause code: ${exception.code}, message: ${exception.message}`);
       }
