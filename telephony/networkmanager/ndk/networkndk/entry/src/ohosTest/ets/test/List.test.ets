@@ -20,6 +20,7 @@ import PingTraceRouteErrorCode201NDKTest from './PingTraceRouteErrorCode201NDKTe
 import EmptyTestCheckNetwork from './EmptyTestCheckNetwork.test';
 import connection from '@ohos.net.connection';
 import NetExtNDKTest from './NetExtNDK.test';
+import RefreshGlobalHttpProxyNetStackNDKTest from './RefreshGlobalHttpProxyNetStackNDK.test';
  	 
 let netHandle = connection.getDefaultNetSync();
 
@@ -29,6 +30,7 @@ export default function testsuite() {
     NetStackNDKTest();
     NetConnectionNDKTest();
     PingTraceRouteNDKTest();
+    RefreshGlobalHttpProxyNetStackNDKTest();
     connection.getNetCapabilities(netHandle, (error: BusinessError, data: connection.NetCapabilities) => {
       if (error) {
         return;
