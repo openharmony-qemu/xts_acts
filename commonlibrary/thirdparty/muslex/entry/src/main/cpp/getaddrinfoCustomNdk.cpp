@@ -22,9 +22,9 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int kStableLoop = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_STABLE_LOOP = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
 static int CallGetaddrinfoCustom(const char* host, const char* serv,
                                  const struct addrinfo* hint, struct addrinfo** res)
@@ -176,7 +176,7 @@ static napi_value GetaddrinfoCustomStable001(napi_env env, napi_callback_info in
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    for (int i = 0; i < kStableLoop; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
         struct addrinfo hints = {};
         
         hints.ai_family = AF_UNSPEC;
@@ -191,7 +191,7 @@ static napi_value GetaddrinfoCustomStable001(napi_env env, napi_callback_info in
 
 static void GetaddrinfoCustomWorker(std::atomic<bool>& hasError)
 {
-    for (int i = 0; i < kIterPerThread; ++i) {
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         struct addrinfo hints = {};
 
         hints.ai_family = AF_UNSPEC;
@@ -210,7 +210,7 @@ static napi_value GetaddrinfoCustomThread001(napi_env env, napi_callback_info in
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < kThreadCount; ++t) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
             GetaddrinfoCustomWorker(hasError);
         });

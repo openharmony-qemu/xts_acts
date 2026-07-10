@@ -22,9 +22,9 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int kStableLoop10000 = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
 static int CallIsnan(double x)
 {
@@ -186,7 +186,7 @@ static napi_value IsnanStable001(napi_env env, napi_callback_info info)
     }
     double finitetest = 3.14;
     bool pass = true;
-    for (int i = 0; i < kStableLoop10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
         if (CallIsnan(NAN) == 0) {
             pass = false;
             break;
@@ -201,7 +201,7 @@ static napi_value IsnanStable001(napi_env env, napi_callback_info info)
 
 static void IsnanWorker(std::atomic<bool>& hasError, const double* testVals, const int* expected)
 {
-    for (int i = 0; i < kIterPerThread; ++i) {
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         int idx = i % 5;
         int ret = CallIsnan(testVals[idx]);
         if ((ret != 0) != (expected[idx] != 0)) {
@@ -223,7 +223,7 @@ static napi_value IsnanThread001(napi_env env, napi_callback_info info)
     double testVals[] = {NAN, INFINITY, -INFINITY, 0.0, finitetest};
     int expected[] = {1, 0, 0, 0, 0};
 
-    for (int t = 0; t < kThreadCount; ++t) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError, testVals, expected]() {
             IsnanWorker(hasError, testVals, expected);
         });
