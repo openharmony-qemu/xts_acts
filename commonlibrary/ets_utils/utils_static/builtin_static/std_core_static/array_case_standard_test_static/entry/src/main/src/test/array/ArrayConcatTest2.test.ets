@@ -1080,3 +1080,1088 @@ export default function ArrayConcatTest2(): void {
       const result = arr1.concat(arr2).join('');
       expect(result).assertEqual('\u200Ba\u200Bb');
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0570
+     * @tc.name testArrayConcat057
+     * @tc.desc Verify fullwidth character concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<string>('\uFF21', '\uFF22');
+      const arr2 = new Array<string>('\uFF23');
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual('\uFF21');
+      expect(result[2]).assertEqual('\uFF23');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0580
+     * @tc.name testArrayConcat058
+     * @tc.desc Verify escape character concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<string>('"', '\\');
+      const arr2 = new Array<string>('\n', '\t');
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(4);
+      expect(result[0]).assertEqual('"');
+      expect(result[1]).assertEqual('\\');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0590
+     * @tc.name testArrayConcat059
+     * @tc.desc Verify emoji string concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<string>('\uD83D\uDE00', '\uD83C\uDF89');
+      const arr2 = new Array<string>('\uD83D\uDE80', '\u2705');
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0600
+     * @tc.name testArrayConcat060
+     * @tc.desc Verify empty and whitespace string concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<string>('', ' ', '\t');
+      const arr2 = new Array<string>('\n', '\r', '');
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(6);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0610
+     * @tc.name testArrayConcat061
+     * @tc.desc Verify char array and string array concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<string>('a', 'b');
+      const arr2 = new Array<string>('cd', 'ef');
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0620
+     * @tc.name testArrayConcat062
+     * @tc.desc Verify optional property object concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const o1 = new OptObj();
+      const o2 = new OptObj();
+      o2.x = 1;
+      const arr1 = new Array<OptObj>(o1, o2);
+      const o3 = new OptObj();
+      o3.x = 2;
+      const o4 = new OptObj();
+      const arr2 = new Array<OptObj>(o3, o4);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(4);
+      expect(result[1].x).assertEqual(1);
+      expect(result[2].x).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0630
+     * @tc.name testArrayConcat063
+     * @tc.desc Verify boolean alternating concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<boolean>(true, false, true);
+      const arr2 = new Array<boolean>(false, true, false);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(6);
+      expect(result[0]).assertTrue();
+      expect(result[1]).assertFalse();
+      expect(result[3]).assertFalse();
+      expect(result[4]).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0640
+     * @tc.name testArrayConcat064
+     * @tc.desc Verify Array.from with constructor concat (cross-constructor)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(1, 2);
+      const arr2 = new Array<int>(3, 4);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(4);
+      expect(result[0]).assertEqual(1);
+      expect(result[3]).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0650
+     * @tc.name testArrayConcat065
+     * @tc.desc Verify Array.of with Array.create concat (cross-constructor)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = Array.of<number>(1, 2);
+      const arr2 = Array.create<number>(3, 0);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(5);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(2);
+      expect(result[2]).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0660
+     * @tc.name testArrayConcat066
+     * @tc.desc Verify basic literal constructor concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(1, 2);
+      const arr2 = new Array<int>(3, 4);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(4);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(2);
+      expect(result[2]).assertEqual(3);
+      expect(result[3]).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0670
+     * @tc.name testArrayConcat067
+     * @tc.desc Verify Array.of chained concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = Array.of<int>(1);
+      const arr2 = Array.of<int>(2);
+      const arr3 = Array.of<int>(3);
+      const result = arr1.concat(arr2).concat(arr3);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(2);
+      expect(result[2]).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0680
+     * @tc.name testArrayConcat068
+     * @tc.desc Verify byte and short mixed type concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<short>(1, 2);
+      const arr2 = new Array<short>(3, 4);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(4);
+      expect(result[0]).assertEqual(1);
+      expect(result[3]).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0690
+     * @tc.name testArrayConcat069
+     * @tc.desc Verify nested concat then reduce flattening
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a1 = new Array<int>(1, 2);
+      const a2 = new Array<int>(3);
+      const arr1 = new Array<Array<int>>(a1, a2);
+      const a3 = new Array<int>(4, 5, 6);
+      const arr2 = new Array<Array<int>>(a3);
+      const concated = arr1.concat(arr2);
+      const flattened = concated.reduce((acc: Array<int>, cur: Array<int>): Array<int> => acc.concat(cur), new Array<int>());
+      expect(flattened.length).assertEqual(6);
+      expect(flattened[0]).assertEqual(1);
+      expect(flattened[5]).assertEqual(6);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0700
+     * @tc.name testArrayConcat070
+     * @tc.desc Verify int|string union type concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1: Array<int | string> = new Array<int | string>(1, 'a');
+      const arr2: Array<int | string> = new Array<int | string>(2, 'b');
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(4);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual('a');
+      expect(result[2]).assertEqual(2);
+      expect(result[3]).assertEqual('b');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0710
+     * @tc.name testArrayConcat071
+     * @tc.desc Verify int|null union type concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1: Array<int | null> = new Array<int | null>(1, null);
+      const arr2: Array<int | null> = new Array<int | null>(null, 2);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(4);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertNull();
+      expect(result[2]).assertNull();
+      expect(result[3]).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0720
+     * @tc.name testArrayConcat072
+     * @tc.desc Verify int|undefined union type concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1: Array<int | undefined> = new Array<int | undefined>(1, undefined);
+      const arr2: Array<int | undefined> = new Array<int | undefined>(undefined, 2);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(4);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertUndefined();
+      expect(result[2]).assertUndefined();
+      expect(result[3]).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0730
+     * @tc.name testArrayConcat073
+     * @tc.desc Verify number and short union arithmetic after concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1: Array<number | short> = new Array<number | short>(1, 2);
+      const arr2: Array<number | short> = new Array<number | short>(3, 4);
+      const result = arr1.concat(arr2);
+      const sum = (result[0] as double) + (result[1] as double);
+      expect(sum).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0740
+     * @tc.name testArrayConcat074
+     * @tc.desc Verify typeof union type inference after concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1: Array<string | int> = new Array<string | int>('a', 1);
+      const arr2: Array<string | int> = new Array<string | int>('b', 2);
+      const result = arr1.concat(arr2);
+      const val = result.at(0);
+      expect(val).assertEqual('a');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0750
+     * @tc.name testArrayConcat075
+     * @tc.desc Verify concat result used with flat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a1 = new Array<int>(1);
+      const a2 = new Array<int>(2);
+      const arr1 = new Array<Array<int>>(a1, a2);
+      const a3 = new Array<int>(3);
+      const a4 = new Array<int>(4);
+      const arr2 = new Array<Array<int>>(a3, a4);
+      const result = arr1.concat(arr2).flat() as Array<int>;
+      expect(result.length).assertEqual(4);
+      expect(result[0]).assertEqual(1);
+      expect(result[3]).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0760
+     * @tc.name testArrayConcat076
+     * @tc.desc Verify concat result used with flatMap
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(1, 2);
+      const arr2 = new Array<int>(3, 4);
+      const temp = arr1.concat(arr2);
+      const result = temp.map((v: int): Array<int> => new Array<int>(v, v * 2))
+        .reduce((acc: Array<int>, curr: Array<int>): Array<int> => acc.concat(curr), new Array<int>());
+      expect(result.length).assertEqual(8);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0770
+     * @tc.name testArrayConcat077
+     * @tc.desc Verify concat result keys iteration
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<string>('a', 'b');
+      const arr2 = new Array<string>('c');
+      let k = '';
+      for (let i of arr1.concat(arr2).keys()) {
+        k += i.toString();
+      }
+      expect(k).assertEqual('012');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0780
+     * @tc.name testArrayConcat078
+     * @tc.desc Verify concat result values iteration
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<string>('a', 'b');
+      const arr2 = new Array<string>('c');
+      let v = '';
+      for (let val of arr1.concat(arr2).values()) {
+        v += val;
+      }
+      expect(v).assertEqual('abc');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0790
+     * @tc.name testArrayConcat079
+     * @tc.desc Verify concat result entries iteration
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<string>('x', 'y');
+      const arr2 = new Array<string>('z');
+      let e = '';
+      for (let entry of arr1.concat(arr2).entries()) {
+        e += entry[0].toString() + entry[1];
+      }
+      expect(e).assertEqual('0x1y2z');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0800
+     * @tc.name testArrayConcat080
+     * @tc.desc Verify concat result reduceRight
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(1, 2);
+      const arr2 = new Array<int>(3, 4);
+      const result = arr1.concat(arr2).reduceRight((a: int, b: int): int => {
+        return a - b;
+      });
+      expect(result).assertEqual(-2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0810
+     * @tc.name testArrayConcat081
+     * @tc.desc Verify concat result findIndex
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(1, 2);
+      const arr2 = new Array<int>(3, 4, 5);
+      const idx = arr1.concat(arr2).findIndex((v: int): boolean => v === 3);
+      expect(idx).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0820
+     * @tc.name testArrayConcat082
+     * @tc.desc Verify concat result toLocaleString
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(1000, 2000);
+      const arr2 = new Array<int>(3000);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0830
+     * @tc.name testArrayConcat083
+     * @tc.desc Verify concat result is Array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(1);
+      const arr2 = new Array<int>(2);
+      const result = arr1.concat(arr2);
+      expect(result instanceof Array).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0840
+     * @tc.name testArrayConcat084
+     * @tc.desc Verify char and string mixed type concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1: Array<char | string> = new Array<char | string>(c'a','ef' );
+      const arr2: Array<char | string> = new Array<char | string>('cd', c'b');
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(4);
+      expect(result[0]).assertEqual(c'a');
+      expect(result[2]).assertEqual('cd');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0850
+     * @tc.name testArrayConcat085
+     * @tc.desc Verify Array.from with constructor concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<number>(1, 2);
+      const arr2 = new Array<number>(3, 4);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(4);
+      expect(result[0]).assertEqual(1);
+      expect(result[3]).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0860
+     * @tc.name testArrayConcat086
+     * @tc.desc Verify push on original after concat does not affect result length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(1, 2);
+      const arr2 = new Array<int>(3, 4);
+      const result = arr1.concat(arr2);
+      arr1.push(99);
+      expect(result.length).assertEqual(4);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0870
+     * @tc.name testArrayConcat087
+     * @tc.desc Verify modifying original element after concat does not affect result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(1, 2);
+      const arr2 = new Array<int>(3, 4);
+      const result = arr1.concat(arr2);
+      arr1[0] = 99;
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0880
+     * @tc.name testArrayConcat088
+     * @tc.desc Verify modifying original object property after concat propagates to result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj = new ObjWithX();
+      obj.x = 1;
+      const arr1 = new Array<ObjWithX>(obj, new ObjWithX());
+      const arr2 = new Array<ObjWithX>(new ObjWithX(), new ObjWithX());
+      const result = arr1.concat(arr2);
+      obj.x = 99;
+      expect(result[0].x).assertEqual(99);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0890
+     * @tc.name testArrayConcat089
+     * @tc.desc Verify two-element array self-concat twice
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(1, 2);
+      const result = arr.concat(arr).concat(arr);
+      expect(result.length).assertEqual(6);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(2);
+      expect(result[2]).assertEqual(1);
+      expect(result[3]).assertEqual(2);
+      expect(result[4]).assertEqual(1);
+      expect(result[5]).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0900
+     * @tc.name testArrayConcat090
+     * @tc.desc Verify duplicate value arrays concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(5, 5);
+      const arr2 = new Array<int>(5, 5);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(4);
+      expect(result[0]).assertEqual(5);
+      expect(result[1]).assertEqual(5);
+      expect(result[2]).assertEqual(5);
+      expect(result[3]).assertEqual(5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0910
+     * @tc.name testArrayConcat091
+     * @tc.desc Verify same content different reference concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(1, 2);
+      const arr2 = new Array<int>(1, 2);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(4);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(2);
+      expect(result[2]).assertEqual(1);
+      expect(result[3]).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0920
+     * @tc.name testArrayConcat092
+     * @tc.desc Verify empty array self-concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>();
+      const result = arr.concat(arr);
+      expect(result.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0930
+     * @tc.name testArrayConcat093
+     * @tc.desc Verify that concatenating arrays with -0 elements gets correct result length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<number>(-0, 1);
+      const arr2 = new Array<number>(2, -0);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0940
+     * @tc.name testArrayConcat094
+     * @tc.desc Verify concat can retain inner elements of 2D nested arrays correctly
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = new Array<Array<int>>();
+      a.push(new Array<int>(1, 2));
+      const b = new Array<Array<int>>().concat(a)
+      expect(b[0][1]).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0950
+     * @tc.name testArrayConcat095
+     * @tc.desc Verify byte array concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<byte>(1, 2);
+      const arr2 = new Array<byte>(3, 4);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(4);
+      expect(result[0]).assertEqual(1);
+      expect(result[3]).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0960
+     * @tc.name testArrayConcat096
+     * @tc.desc Verify short array concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<short>(100, 200);
+      const arr2 = new Array<short>(300);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(100);
+      expect(result[2]).assertEqual(300);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0970
+     * @tc.name testArrayConcat097
+     * @tc.desc Verify long array concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<long>(100, 200);
+      const arr2 = new Array<long>(300);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(100);
+      expect(result[2]).assertEqual(300);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0980
+     * @tc.name testArrayConcat098
+     * @tc.desc Verify float array concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<float>(1.0f, 2.0f);
+      const arr2 = new Array<float>(3.0f);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(1.0);
+      expect(result[2]).assertEqual(3.0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0990
+     * @tc.name testArrayConcat099
+     * @tc.desc Verify double array concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<double>(1.0, 2.0);
+      const arr2 = new Array<double>(3.0);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(1.0);
+      expect(result[2]).assertEqual(3.0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1000
+     * @tc.name testArrayConcat100
+     * @tc.desc Verify char array concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<string>('a', 'b');
+      const arr2 = new Array<string>('c');
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual('a');
+      expect(result[2]).assertEqual('c');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1010
+     * @tc.name testArrayConcat101
+     * @tc.desc Verify boolean array concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<boolean>(true);
+      const arr2 = new Array<boolean>(false);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(2);
+      expect(result[0]).assertTrue();
+      expect(result[1]).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1020
+     * @tc.name testArrayConcat102
+     * @tc.desc Verify string array concat with normal values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<string>('test', '测试');
+      const arr2 = new Array<string>('123');
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual('test');
+      expect(result[1]).assertEqual('测试');
+      expect(result[2]).assertEqual('123');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1030
+     * @tc.name testArrayConcat103
+     * @tc.desc Verify string array concat with Unicode and empty values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<string>('\u0061', '\u6d4b\u8bd5');
+      const arr2 = new Array<string>('', ' ');
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(4);
+      expect(result[0]).assertEqual('a');
+      expect(result[1]).assertEqual('测试');
+      expect(result[2]).assertEqual('');
+      expect(result[3]).assertEqual(' ');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1040
+     * @tc.name testArrayConcat104
+     * @tc.desc Verify string array concat with special characters and XSS
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<string>('!@#$', '<script>alert(1)</script>');
+      const arr2 = new Array<string>('0x123', '0b1010');
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(4);
+      expect(result[0]).assertEqual('!@#$');
+      expect(result[1]).assertEqual('<script>alert(1)</script>');
+      expect(result[2]).assertEqual('0x123');
+      expect(result[3]).assertEqual('0b1010');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1050
+     * @tc.name testArrayConcat105
+     * @tc.desc Verify string array concat with business format and emoji
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<string>('13800138000', 'test@example.com');
+      const arr2 = new Array<string>('\uD83D\uDE00测试', 'テスト', '테스트', 'АБВГД');
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(6);
+      expect(result[0]).assertEqual('13800138000');
+      expect(result[3]).assertEqual('テスト');
+      expect(result[4]).assertEqual('테스트');
+      expect(result[5]).assertEqual('АБВГД');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1060
+     * @tc.name testArrayConcat106
+     * @tc.desc Verify int array concat with hex, octal, binary literals
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(0x1234, 0o123);
+      const arr2 = new Array<int>(0b1010);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(4660);
+      expect(result[1]).assertEqual(83);
+      expect(result[2]).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1070
+     * @tc.name testArrayConcat107
+     * @tc.desc Verify int array concat with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(-2147483648, 2147483647);
+      const arr2 = new Array<int>(10000);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(-2147483648);
+      expect(result[1]).assertEqual(2147483647);
+      expect(result[2]).assertEqual(10000);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1080
+     * @tc.name testArrayConcat108
+     * @tc.desc Verify string array concat with encoding anomaly values (\uFFFD, \udc04)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<string>('\uFFFD');
+      const arr2 = new Array<string>('\udc04');
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(2);
+      expect(result[0]).assertEqual('\uFFFD');
+      expect(result[1]).assertEqual('\udc04');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1090
+     * @tc.name testArrayConcat109
+     * @tc.desc Verify Date array concat with number
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const d = new Date(2026, 0, 1);
+      const arr1: Array<Object> = new Array<Object>(1);
+      const arr2: Array<Object> = new Array<Object>(d);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(2);
+      expect(result[0]).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1100
+     * @tc.name testArrayConcat110
+     * @tc.desc Verify Map element array concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const m1 = new Map<string, int>(new Array<[string, int]>(['k', 1]));
+      const m2 = new Map<string, int>(new Array<[string, int]>(['k', 2]));
+      const arr1 = new Array<Map<string, int>>(m1);
+      const arr2 = new Array<Map<string, int>>(m2);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(2);
+      expect(result[0].get('k')).assertEqual(1);
+      expect(result[1].get('k')).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1110
+     * @tc.name testArrayConcat111
+     * @tc.desc Verify Set element array concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const s1 = new Set<int>(new Array<int>(1, 2));
+      const s2 = new Set<int>(new Array<int>(3, 4));
+      const arr1 = new Array<Set<int>>(s1);
+      const arr2 = new Array<Set<int>>(s2);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(2);
+      expect(result[0].has(1)).assertTrue();
+      expect(result[1].has(3)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1120
+     * @tc.name testArrayConcat112
+     * @tc.desc Verify bigint array concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<bigint>(100n, 200n);
+      const arr2 = new Array<bigint>(300n);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(100n);
+      expect(result[2]).assertEqual(300n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1130
+     * @tc.name testArrayConcat113
+     * @tc.desc Verify concat() with no arguments returns shallow copy
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(1, 2, 3);
+      const result = arr.concat();
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(1);
+      expect(result[2]).assertEqual(3);
+      result[0] = 99;
+      expect(arr[0]).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1140
+     * @tc.name testArrayConcat114
+     * @tc.desc Verify Date typed array concat
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testArrayConcat114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const d1 = new Date(2026, 0, 1);
+      const d2 = new Date(2026, 11, 25);
+      const arr1 = new Array<Date>(d1);
+      const arr2 = new Array<Date>(d2);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(2);
+      expect(result[0].getFullYear()).assertEqual(2026);
+      expect(result[1].getFullYear()).assertEqual(2026);
+    });
+
+
+  });
+}
+
