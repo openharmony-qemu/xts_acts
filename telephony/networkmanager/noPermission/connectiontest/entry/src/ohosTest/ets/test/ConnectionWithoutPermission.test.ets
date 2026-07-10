@@ -949,7 +949,7 @@ export default function ConnectionWithoutPermissionTest() {
         ExpectFail();
         console.info(`${caseName}---End`);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
         ExpectTrue(err.code === 201);
         console.info(`${caseName}---End`);
