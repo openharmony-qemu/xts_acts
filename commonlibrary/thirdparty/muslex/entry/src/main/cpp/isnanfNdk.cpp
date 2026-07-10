@@ -23,8 +23,8 @@
 #include <atomic>
 
 static constexpr int K_STABLE_LOOP10000 = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
 static int CallIsnanf(float x)
 {
@@ -199,7 +199,7 @@ static napi_value IsnanfStable001(napi_env env, napi_callback_info info)
 /* TC-012: Multi-thread safety */
 static void IsnanfWorker(std::atomic<bool>& hasError, const float* testVals, const int* expected)
 {
-    for (int i = 0; i < kIterPerThread; ++i) {
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         int idx = i % 5;
         int ret = CallIsnanf(testVals[idx]);
         if ((ret != 0) != (expected[idx] != 0)) {
@@ -219,7 +219,7 @@ static napi_value IsnanfThread001(napi_env env, napi_callback_info info)
     float testVals[] = {NAN, INFINITY, -INFINITY, 0.0f, 3.14f};
     int expected[] = {1, 0, 0, 0, 0};
 
-    for (int t = 0; t < kThreadCount; ++t) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError, testVals, expected]() {
             IsnanfWorker(hasError, testVals, expected);
         });

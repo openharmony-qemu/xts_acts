@@ -30,9 +30,9 @@
 #define FE_ALL_EXCEPT 31
 #endif
 
-static constexpr int kStableLoop = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_STABLE_LOOP = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
 static int CallFeenableexcept(int excepts)
 {
@@ -149,7 +149,7 @@ static napi_value FeenableexceptStable001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    for (int i = 0; i < kStableLoop; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
         CallFeenableexcept(FE_DIVBYZERO);
         CallFedisableexcept(FE_DIVBYZERO);
     }
@@ -163,9 +163,9 @@ static napi_value FeenableexceptThread001(napi_env env, napi_callback_info info)
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < kThreadCount; ++t) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 CallFeenableexcept(FE_DIVBYZERO);
                 CallFedisableexcept(FE_DIVBYZERO);
             }

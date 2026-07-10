@@ -158,7 +158,7 @@ static napi_value GetauxvalAbnormal002(napi_env env, napi_callback_info info)
     }
 
     errno = 0;
-    unsigned long result = func((unsigned long)-1);
+    unsigned long result = func(static_cast<unsigned long>(-1));
     if (result != 0) {
         return ReturnInt32(env, 0);
     }
@@ -298,10 +298,11 @@ template<typename Func>
 static void GetauxvalWorker2(Func func, std::atomic<bool>& hasError,
     const unsigned long* allItems, int iterations)
 {
+    int itemcount = 8;
     int basiccount = 4;
     for (int i = 0; i < iterations; ++i) {
-        unsigned long result = func(allItems[i % 8]);
-        if (result == 0 && (i % 8) >= basiccount) {
+        unsigned long result = func(allItems[i % itemcount]);
+        if (result == 0 && (i % itemcount) >= basiccount) {
             // Not necessarily an error, continue
         }
     }

@@ -24,9 +24,9 @@
 #include <string>
 #include <cstring>
 
-static constexpr int kStableLoop = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_STABLE_LOOP = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
 static FILE* CreateSandboxTempFile()
 {
@@ -192,7 +192,7 @@ static napi_value Fcntl64Stable001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     bool pass = true;
-    for (int i = 0; i < kStableLoop; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
         FILE* tmp = CreateSandboxTempFile();
         if (!tmp) {
             pass = false;
@@ -213,7 +213,7 @@ static napi_value Fcntl64Stable001(napi_env env, napi_callback_info info)
 
 static void Fcntl64Worker(std::atomic<bool>& hasError)
 {
-    for (int i = 0; i < kIterPerThread; ++i) {
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         std::string tmpPath = "/data/storage/el2/base/temp/tmpfile_t" + std::to_string(i) + "_XXXXXX";
         int fd = mkstemp(&tmpPath[0]);
         if (fd == -1) {
@@ -237,7 +237,7 @@ static napi_value Fcntl64Thread001(napi_env env, napi_callback_info info)
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < kThreadCount; ++t) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
             Fcntl64Worker(hasError);
         });

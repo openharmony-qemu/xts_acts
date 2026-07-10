@@ -23,9 +23,9 @@
 
 typedef bool (*GetResTraceIdFunc)(uint32_t*, uint64_t*);
 
-static constexpr int kStableLoop = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_STABLE_LOOP = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
 static GetResTraceIdFunc GetGetResTraceIdFunc()
 {
@@ -150,7 +150,7 @@ static napi_value GetResTraceIdStable001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     bool pass = true;
-    for (int i = 0; i < kStableLoop; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
         uint32_t traceType = 0;
         uint64_t traceID = 0;
         CallGetResTraceId(&traceType, &traceID);
@@ -165,9 +165,9 @@ static napi_value GetResTraceIdThread001(napi_env env, napi_callback_info info)
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < kThreadCount; ++t) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 uint32_t traceType = 0;
                 uint64_t traceID = 0;
                 CallGetResTraceId(&traceType, &traceID);

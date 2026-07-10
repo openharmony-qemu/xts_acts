@@ -30,9 +30,9 @@
 #define FE_ALL_EXCEPT 31
 #endif
 
-static constexpr int kStableLoop = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_STABLE_LOOP = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
 static int CallFegetexcept()
 {
@@ -175,7 +175,7 @@ static napi_value FegetexceptStable001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     bool pass = true;
-    for (int i = 0; i < kStableLoop; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
         feclearexcept(FE_ALL_EXCEPT);
         int ret = CallFegetexcept();
         if (ret < 0) {
@@ -188,7 +188,7 @@ static napi_value FegetexceptStable001(napi_env env, napi_callback_info info)
 
 static void FegetexceptWorker(std::atomic<bool>& hasError)
 {
-    for (int i = 0; i < kIterPerThread; ++i) {
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         int ret = CallFegetexcept();
         if (ret < 0) {
             hasError = true;
@@ -204,7 +204,7 @@ static napi_value FegetexceptThread001(napi_env env, napi_callback_info info)
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < kThreadCount; ++t) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
             FegetexceptWorker(hasError);
         });

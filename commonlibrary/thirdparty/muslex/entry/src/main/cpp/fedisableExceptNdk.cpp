@@ -30,9 +30,9 @@
 #define FE_ALL_EXCEPT 31
 #endif
 
-static constexpr int kStableLoop = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_STABLE_LOOP = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
 static int CallFedisableexcept(int excepts)
 {
@@ -157,7 +157,7 @@ static napi_value FedisableexceptStable001(napi_env env, napi_callback_info info
         return ReturnInt32(env, 0);
     }
     bool pass = true;
-    for (int i = 0; i < kStableLoop; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
         feclearexcept(FE_ALL_EXCEPT);
         CallFeenableexcept(FE_DIVBYZERO);
         int ret = CallFedisableexcept(FE_DIVBYZERO);
@@ -171,7 +171,7 @@ static napi_value FedisableexceptStable001(napi_env env, napi_callback_info info
 
 static void FedisableexceptWorker(std::atomic<bool>& hasError)
 {
-    for (int i = 0; i < kIterPerThread; ++i) {
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         feclearexcept(FE_ALL_EXCEPT);
         CallFeenableexcept(FE_DIVBYZERO);
         int ret = CallFedisableexcept(FE_DIVBYZERO);
@@ -189,7 +189,7 @@ static napi_value FedisableexceptThread001(napi_env env, napi_callback_info info
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < kThreadCount; ++t) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
             FedisableexceptWorker(hasError);
         });
