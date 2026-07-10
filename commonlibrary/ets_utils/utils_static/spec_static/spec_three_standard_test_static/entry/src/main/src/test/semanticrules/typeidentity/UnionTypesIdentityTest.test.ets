@@ -906,7 +906,7 @@ export default function UnionTypesIdentityTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -920,7 +920,6 @@ export default function UnionTypesIdentityTest(): void {
       // This API supports only one parameter: clear action function.
     })
 
-
     /**
      * @tc.number    SUB_UNION_TYPES_IDENTITY_0100
      * @tc.name      testUnionTypesIdentity0001
@@ -930,7 +929,6 @@ export default function UnionTypesIdentityTest(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let a: Object | undefined = 5n
       let b: undefined | Object = a
       expect(a instanceof Object | undefined).assertEqual(true)
@@ -964,7 +962,6 @@ export default function UnionTypesIdentityTest(): void {
       expect(testNS3.runTest()).assertEqual(true)
       expect(testNS4.runTest()).assertEqual(true)
       expect(testNS5.runTest()).assertEqual(true)
-
     });
 
     /**
@@ -976,7 +973,6 @@ export default function UnionTypesIdentityTest(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let a: undefined | Object = 5n
       let b: Object | undefined = a
       expect(a instanceof Object | undefined).assertEqual(true);
@@ -1010,7 +1006,6 @@ export default function UnionTypesIdentityTest(): void {
       expect(testNS8.runTest()).assertEqual(true);
       expect(testNS9.runTest()).assertEqual(true);
       expect(testNS10.runTest()).assertEqual(true);
-
     });
 
     /**
@@ -1022,7 +1017,6 @@ export default function UnionTypesIdentityTest(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let a: Cat | Dog | Frog | number = new Cat()
       let b: number | Dog | Cat | Frog = a
       expect(a instanceof Cat | Dog | Frog | number).assertEqual(true);
@@ -1061,7 +1055,6 @@ export default function UnionTypesIdentityTest(): void {
       check_frog(a)
 
       expect(testNS11.runTest()).assertEqual(true);
-
     });
 
     /**
@@ -1073,7 +1066,6 @@ export default function UnionTypesIdentityTest(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let a: number | Dog1 | Cat1 | Frog1 = new Cat1()
       let b: Cat1 | Dog1 | Frog1 | number = a
       expect(a instanceof Cat1 | Dog1 | Frog1 | number).assertEqual(true);
@@ -1112,7 +1104,6 @@ export default function UnionTypesIdentityTest(): void {
       check_frog1(a)
 
       expect(testNS12.runTest()).assertEqual(true);
-
     });
 
     /**
@@ -1124,7 +1115,6 @@ export default function UnionTypesIdentityTest(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let a: Object | undefined = 5n
       let b: undefined | Object = cast(a)
       expect(a instanceof Object | undefined).assertEqual(true);
@@ -1160,7 +1150,6 @@ export default function UnionTypesIdentityTest(): void {
       expect(testNS15.runTest()).assertEqual(true);
       expect(testNS16.runTest()).assertEqual(true);
       expect(testNS17.runTest()).assertEqual(true);
-
     });
 
     /**
@@ -1172,55 +1161,6 @@ export default function UnionTypesIdentityTest(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      let a: undefined | Object = 5n
-      let b: Object | undefined = cast1(a)
-      expect(a instanceof Object | undefined).assertEqual(true);
-      expect(a instanceof undefined | Object).assertEqual(true);
-      expect(a).assertEqual(5n);
-      expect(b instanceof Object | undefined).assertEqual(true);
-      expect(b instanceof undefined | Object).assertEqual(true);
-      expect(b).assertEqual(5n);
-      a = b;
-      expect(a instanceof Object | undefined).assertEqual(true);
-      expect(a instanceof undefined | Object).assertEqual(true);
-      expect(a).assertEqual(5n);
-      a = undefined;
-      b = cast1(a);
-      expect(b instanceof Object | undefined).assertEqual(true);
-      expect(b instanceof undefined | Object).assertEqual(true);
-      expect(b).assertEqual(undefined);
-      a = b;
-      expect(a instanceof Object | undefined).assertEqual(true);
-      expect(a instanceof undefined | Object).assertEqual(true);
-      expect(a).assertEqual(undefined);
-      a = "abc";
-      b = cast1(a);
-      expect(b instanceof Object | undefined).assertEqual(true);
-      expect(b instanceof undefined | Object).assertEqual(true);
-      expect(b).assertEqual("abc");
-      a = b;
-      expect(a instanceof Object | undefined).assertEqual(true);
-      expect(a instanceof undefined | Object).assertEqual(true);
-      expect(a).assertEqual("abc");
-      expect(testNS18.runTest()).assertEqual(true);
-      expect(testNS19.runTest()).assertEqual(true);
-      expect(testNS20.runTest()).assertEqual(true);
-      expect(testNS21.runTest()).assertEqual(true);
-      expect(testNS22.runTest()).assertEqual(true);
-
-    });
-
-    /**
-     * @tc.number    SUB_UNION_TYPES_IDENTITY_0700
-     * @tc.name      testUnionTypesIdentity0007
-     * @tc.desc      Checking Union types A and B are identical on predefined types by using cast expression.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testUnionTypesIdentity0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let a: Object | undefined = 5n
       let b: undefined | Object = cast2(a)
       expect(a instanceof Object | undefined).assertEqual(true);
@@ -1256,377 +1196,6 @@ export default function UnionTypesIdentityTest(): void {
       expect(testNS25.runTest()).assertEqual(true);
       expect(testNS26.runTest()).assertEqual(true);
       expect(testNS27.runTest()).assertEqual(true);
-
-    });
-
-    /**
-     * @tc.number    SUB_UNION_TYPES_IDENTITY_0800
-     * @tc.name      testUnionTypesIdentity0008
-     * @tc.desc      Checking Union types A and B are identical on predefined types by using cast expression.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testUnionTypesIdentity0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      let a: undefined | Object = 5n
-      let b: Object | undefined = cast3(a)
-      expect(a instanceof Object | undefined).assertEqual(true);
-      expect(a instanceof undefined | Object).assertEqual(true);
-      expect(a).assertEqual(5n);
-      expect(b instanceof Object | undefined).assertEqual(true);
-      expect(b instanceof undefined | Object).assertEqual(true);
-      expect(b).assertEqual(5n);
-      a = b;
-      expect(a instanceof Object | undefined).assertEqual(true);
-      expect(a instanceof undefined | Object).assertEqual(true);
-      expect(a).assertEqual(5n);
-      a = undefined;
-      b = cast3(a);
-      expect(b instanceof Object | undefined).assertEqual(true);
-      expect(b instanceof undefined | Object).assertEqual(true);
-      expect(b).assertEqual(undefined);
-      a = b;
-      expect(a instanceof Object | undefined).assertEqual(true);
-      expect(a instanceof undefined | Object).assertEqual(true);
-      expect(a).assertEqual(undefined);
-      a = "abc";
-      b = cast3(a);
-      expect(b instanceof Object | undefined).assertEqual(true);
-      expect(b instanceof undefined | Object).assertEqual(true);
-      expect(b).assertEqual("abc");
-      a = b;
-      expect(a instanceof Object | undefined).assertEqual(true);
-      expect(a instanceof undefined | Object).assertEqual(true);
-      expect(a).assertEqual("abc");
-      expect(testNS28.runTest()).assertEqual(true);
-      expect(testNS29.runTest()).assertEqual(true);
-      expect(testNS30.runTest()).assertEqual(true);
-      expect(testNS31.runTest()).assertEqual(true);
-      expect(testNS32.runTest()).assertEqual(true);
-
-    });
-
-    /**
-     * @tc.number    SUB_UNION_TYPES_IDENTITY_0900
-     * @tc.name      testUnionTypesIdentity0009
-     * @tc.desc      Checking Union types A and B are identical on predefined types on assign operations and instanceof.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testUnionTypesIdentity0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Object | undefined = 5n
-      let b: undefined | Object = cast4(a)
-      expect(a instanceof Object | undefined).assertEqual(true);
-      expect(a instanceof undefined | Object).assertEqual(true);
-      expect(a).assertEqual(5n);
-      expect(b instanceof Object | undefined).assertEqual(true);
-      expect(b instanceof undefined | Object).assertEqual(true);
-      expect(b).assertEqual(5n);
-      a = b;
-      expect(a instanceof Object | undefined).assertEqual(true);
-      expect(a instanceof undefined | Object).assertEqual(true);
-      expect(a).assertEqual(5n);
-      a = undefined;
-      b = cast4(a);
-      expect(b instanceof Object | undefined).assertEqual(true);
-      expect(b instanceof undefined | Object).assertEqual(true);
-      expect(b).assertEqual(undefined);
-      a = b;
-      expect(a instanceof Object | undefined).assertEqual(true);
-      expect(a instanceof undefined | Object).assertEqual(true);
-      expect(a).assertEqual(undefined);
-      a = "abc";
-      b = cast4(a);
-      expect(b instanceof Object | undefined).assertEqual(true);
-      expect(b instanceof undefined | Object).assertEqual(true);
-      expect(b).assertEqual("abc");
-      a = b;
-      expect(a instanceof Object | undefined).assertEqual(true);
-      expect(a instanceof undefined | Object).assertEqual(true);
-      expect(a).assertEqual("abc");
-      expect(testNS33.runTest()).assertEqual(true);
-      expect(testNS34.runTest()).assertEqual(true);
-      expect(testNS35.runTest()).assertEqual(true);
-      expect(testNS36.runTest()).assertEqual(true);
-      expect(testNS37.runTest()).assertEqual(true);
-    });
-
-    /**
-     * @tc.number    SUB_UNION_TYPES_IDENTITY_1000
-     * @tc.name      testUnionTypesIdentity0010
-     * @tc.desc      Checking Union types A and B are identical on predefined types on assign operations and instanceof.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testUnionTypesIdentity0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: undefined | Object = 5n
-      let b: Object | undefined = cast5(a)
-      expect(a instanceof Object | undefined).assertEqual(true)
-      expect(a instanceof undefined | Object).assertEqual(true)
-      expect(a).assertEqual(5n)
-      expect(b instanceof Object | undefined).assertEqual(true)
-      expect(b instanceof undefined | Object).assertEqual(true)
-      expect(b).assertEqual(5n)
-      a = b
-      expect(a instanceof Object | undefined).assertEqual(true)
-      expect(a instanceof undefined | Object).assertEqual(true)
-      expect(a).assertEqual(5n)
-      a = undefined
-      b = cast5(a)
-      expect(b instanceof Object | undefined).assertEqual(true)
-      expect(b instanceof undefined | Object).assertEqual(true)
-      expect(b).assertEqual(undefined)
-      a = b
-      expect(a instanceof Object | undefined).assertEqual(true)
-      expect(a instanceof undefined | Object).assertEqual(true)
-      expect(a).assertEqual(undefined)
-      a = "abc"
-      b = cast5(a)
-      expect(b instanceof Object | undefined).assertEqual(true)
-      expect(b instanceof undefined | Object).assertEqual(true)
-      expect(b).assertEqual("abc")
-      a = b
-      expect(a instanceof Object | undefined).assertEqual(true)
-      expect(a instanceof undefined | Object).assertEqual(true)
-      expect(a).assertEqual("abc")
-      expect(testNS38.runTest()).assertEqual(true)
-      expect(testNS39.runTest()).assertEqual(true)
-      expect(testNS40.runTest()).assertEqual(true)
-      expect(testNS41.runTest()).assertEqual(true)
-      expect(testNS42.runTest()).assertEqual(true)
-    });
-
-    /**
-     * @tc.number    SUB_UNION_TYPES_IDENTITY_1100
-     * @tc.name      testUnionTypesIdentity0011
-     * @tc.desc      Checking Union types A and B are identical on predefined types on assign operations and instanceof.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testUnionTypesIdentity0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Object | undefined = 5n
-      let b: undefined | Object = cast6(a)
-      expect(a instanceof Object | undefined).assertEqual(true);
-      expect(a instanceof undefined | Object).assertEqual(true);
-      expect(a).assertEqual(5n);
-      expect(b instanceof Object | undefined).assertEqual(true);
-      expect(b instanceof undefined | Object).assertEqual(true);
-      expect(b).assertEqual(5n);
-      a = b;
-      expect(a instanceof Object | undefined).assertEqual(true);
-      expect(a instanceof undefined | Object).assertEqual(true);
-      expect(a).assertEqual(5n);
-      a = undefined;
-      b = cast6(a);
-      expect(b instanceof Object | undefined).assertEqual(true);
-      expect(b instanceof undefined | Object).assertEqual(true);
-      expect(b).assertEqual(undefined);
-      a = b;
-      expect(a instanceof Object | undefined).assertEqual(true);
-      expect(a instanceof undefined | Object).assertEqual(true);
-      expect(a).assertEqual(undefined);
-      a = "abc";
-      b = cast6(a);
-      expect(b instanceof Object | undefined).assertEqual(true);
-      expect(b instanceof undefined | Object).assertEqual(true);
-      expect(b).assertEqual("abc");
-      a = b;
-      expect(a instanceof Object | undefined).assertEqual(true);
-      expect(a instanceof undefined | Object).assertEqual(true);
-      expect(a).assertEqual("abc");
-      expect(testNS43.runTest()).assertEqual(true);
-      expect(testNS44.runTest()).assertEqual(true);
-      expect(testNS45.runTest()).assertEqual(true);
-      expect(testNS46.runTest()).assertEqual(true);
-      expect(testNS47.runTest()).assertEqual(true);
-    });
-
-    /**
-     * @tc.number    SUB_UNION_TYPES_IDENTITY_1200
-     * @tc.name      testUnionTypesIdentity0012
-     * @tc.desc      Checking Union types A and B are identical on predefined types on assign operations and instanceof.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testUnionTypesIdentity0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: undefined | Object = 5n
-      let b: Object | undefined = cast7(a)
-      expect(a instanceof Object | undefined).assertEqual(true)
-      expect(a instanceof undefined | Object).assertEqual(true)
-      expect(a).assertEqual(5n)
-      expect(b instanceof Object | undefined).assertEqual(true)
-      expect(b instanceof undefined | Object).assertEqual(true)
-      expect(b).assertEqual(5n)
-      a = b
-      expect(a instanceof Object | undefined).assertEqual(true)
-      expect(a instanceof undefined | Object).assertEqual(true)
-      expect(a).assertEqual(5n)
-      a = undefined
-      b = cast7(a)
-      expect(b instanceof Object | undefined).assertEqual(true)
-      expect(b instanceof undefined | Object).assertEqual(true)
-      expect(b).assertEqual(undefined)
-      a = b
-      expect(a instanceof Object | undefined).assertEqual(true)
-      expect(a instanceof undefined | Object).assertEqual(true)
-      expect(a).assertEqual(undefined)
-      a = "abc"
-      b = cast7(a)
-      expect(b instanceof Object | undefined).assertEqual(true)
-      expect(b instanceof undefined | Object).assertEqual(true)
-      expect(b).assertEqual("abc")
-      a = b
-      expect(a instanceof Object | undefined).assertEqual(true)
-      expect(a instanceof undefined | Object).assertEqual(true)
-      expect(a).assertEqual("abc")
-      expect(testNS48.runTest()).assertEqual(true)
-      expect(testNS49.runTest()).assertEqual(true)
-      expect(testNS50.runTest()).assertEqual(true)
-      expect(testNS51.runTest()).assertEqual(true)
-      expect(testNS52.runTest()).assertEqual(true)
-    });
-
-    /**
-     * @tc.number    SUB_UNION_TYPES_IDENTITY_1300
-     * @tc.name      testUnionTypesIdentity0013
-     * @tc.desc      Checking Union types A and B are identical on predefined types on assign operations and instanceof.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testUnionTypesIdentity0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Object | undefined = 5n
-      let b: undefined | Object = cast8(a)
-      expect(a instanceof Object | undefined).assertEqual(true);
-      expect(a instanceof undefined | Object).assertEqual(true);
-      expect(a).assertEqual(5n);
-      expect(b instanceof Object | undefined).assertEqual(true);
-      expect(b instanceof undefined | Object).assertEqual(true);
-      expect(b).assertEqual(5n);
-      a = b;
-      expect(a instanceof Object | undefined).assertEqual(true);
-      expect(a instanceof undefined | Object).assertEqual(true);
-      expect(a).assertEqual(5n);
-      a = undefined;
-      b = cast8(a);
-      expect(b instanceof Object | undefined).assertEqual(true);
-      expect(b instanceof undefined | Object).assertEqual(true);
-      expect(b).assertEqual(undefined);
-      a = b;
-      expect(a instanceof Object | undefined).assertEqual(true);
-      expect(a instanceof undefined | Object).assertEqual(true);
-      expect(a).assertEqual(undefined);
-      a = "abc";
-      b = cast8(a);
-      expect(b instanceof Object | undefined).assertEqual(true);
-      expect(b instanceof undefined | Object).assertEqual(true);
-      expect(b).assertEqual("abc");
-      a = b;
-      expect(a instanceof Object | undefined).assertEqual(true);
-      expect(a instanceof undefined | Object).assertEqual(true);
-      expect(a).assertEqual("abc");
-      expect(testNS53.runTest()).assertEqual(true);
-      expect(testNS54.runTest()).assertEqual(true);
-      expect(testNS55.runTest()).assertEqual(true);
-      expect(testNS56.runTest()).assertEqual(true);
-      expect(testNS57.runTest()).assertEqual(true);
-    });
-
-    /**
-     * @tc.number    SUB_UNION_TYPES_IDENTITY_1400
-     * @tc.name      testUnionTypesIdentity0014
-     * @tc.desc      Checking Union types A and B are identical on predefined types on assign operations and instanceof.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testUnionTypesIdentity0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: undefined | Object = 5n
-      let b: Object | undefined = cast9(a)
-      expect(a instanceof Object | undefined).assertEqual(true)
-      expect(a instanceof undefined | Object).assertEqual(true)
-      expect(a).assertEqual(5n)
-      expect(b instanceof Object | undefined).assertEqual(true)
-      expect(b instanceof undefined | Object).assertEqual(true)
-      expect(b).assertEqual(5n)
-      a = b
-      expect(a instanceof Object | undefined).assertEqual(true)
-      expect(a instanceof undefined | Object).assertEqual(true)
-      expect(a).assertEqual(5n)
-      a = undefined
-      b = cast9(a)
-      expect(b instanceof Object | undefined).assertEqual(true)
-      expect(b instanceof undefined | Object).assertEqual(true)
-      expect(b).assertEqual(undefined)
-      a = b
-      expect(a instanceof Object | undefined).assertEqual(true)
-      expect(a instanceof undefined | Object).assertEqual(true)
-      expect(a).assertEqual(undefined)
-      a = "abc"
-      b = cast9(a)
-      expect(b instanceof Object | undefined).assertEqual(true)
-      expect(b instanceof undefined | Object).assertEqual(true)
-      expect(b).assertEqual("abc")
-      a = b
-      expect(a instanceof Object | undefined).assertEqual(true)
-      expect(a instanceof undefined | Object).assertEqual(true)
-      expect(a).assertEqual("abc")
-      expect(testNS58.runTest()).assertEqual(true)
-      expect(testNS59.runTest()).assertEqual(true)
-      expect(testNS60.runTest()).assertEqual(true)
-      expect(testNS61.runTest()).assertEqual(true)
-      expect(testNS62.runTest()).assertEqual(true)
-    });
-
-    /**
-     * @tc.number    SUB_UNION_TYPES_IDENTITY_1500
-     * @tc.name      testUnionTypesIdentity0015
-     * @tc.desc      Checking Union types A and B are identical on predefined types on assign operations and instanceof.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testUnionTypesIdentity0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Object | undefined = 5n
-      let b: undefined | Object = cast10(a)
-      expect(a instanceof Object | undefined).assertEqual(true);
-      expect(a instanceof undefined | Object).assertEqual(true);
-      expect(a).assertEqual(5n);
-      expect(b instanceof Object | undefined).assertEqual(true);
-      expect(b instanceof undefined | Object).assertEqual(true);
-      expect(b).assertEqual(5n);
-      a = b;
-      expect(a instanceof Object | undefined).assertEqual(true);
-      expect(a instanceof undefined | Object).assertEqual(true);
-      expect(a).assertEqual(5n);
-      a = undefined;
-      b = cast10(a);
-      expect(b instanceof Object | undefined).assertEqual(true);
-      expect(b instanceof undefined | Object).assertEqual(true);
-      expect(b).assertEqual(undefined);
-      a = b;
-      expect(a instanceof Object | undefined).assertEqual(true);
-      expect(a instanceof undefined | Object).assertEqual(true);
-      expect(a).assertEqual(undefined);
-      a = "abc";
-      b = cast10(a);
-      expect(b instanceof Object | undefined).assertEqual(true);
-      expect(b instanceof undefined | Object).assertEqual(true);
-      expect(b).assertEqual("abc");
-      a = b;
-      expect(a instanceof Object | undefined).assertEqual(true);
-      expect(a instanceof undefined | Object).assertEqual(true);
-      expect(a).assertEqual("abc");
-      expect(testNS63.runTest()).assertEqual(true);
-      expect(testNS64.runTest()).assertEqual(true);
-      expect(testNS65.runTest()).assertEqual(true);
-      expect(testNS66.runTest()).assertEqual(true);
-      expect(testNS67.runTest()).assertEqual(true);
     });
   })
 }
