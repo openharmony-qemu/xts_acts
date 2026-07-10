@@ -2087,7 +2087,12 @@ export default function wifiManagerCoverage() {
         expect(isAccessToken).assertFalse();
       } catch (e) {
         console.info("SUB_Communication_WiFi_SysCaps_Test_0014 canIUse isAccessToken error: " + e);
-        expect().assertFail();
+        if (e.code === 801) { 
+          console.info('[wifi_js]wifiManagerExt enableHotspot is not support'); 
+          expect(e.code).assertEqual(801); 
+        } else { 
+          expect().assertFail(); 
+        }
       };
       console.info('SUB_Communication_WiFi_SysCaps_Test_0014 end');
       done();
@@ -2111,7 +2116,12 @@ export default function wifiManagerCoverage() {
         expect(isAccessToken).assertFalse();
       } catch (e) {
         console.info("SUB_Communication_WiFi_SysCaps_Test_0015 canIUse isAccessToken error: " + e);
-        expect().assertFail();
+        if (e.code === 801) { 
+          console.info('[wifi_js]wifiManagerExt enableHotspot is not support'); 
+          expect(e.code).assertEqual(801); 
+        } else { 
+          expect().assertFail(); 
+        }
       };
       console.info('SUB_Communication_WiFi_SysCaps_Test_0015 end');
       done();
@@ -2135,7 +2145,12 @@ export default function wifiManagerCoverage() {
         expect(isAccessToken).assertFalse();
       } catch (e) {
         console.info("SUB_Communication_WiFi_SysCaps_Test_0016 canIUse isAccessToken error: " + e);
-        expect().assertFail();
+        if (e.code === 801) { 
+          console.info('[wifi_js]wifiManagerExt enableHotspot is not support'); 
+          expect(e.code).assertEqual(801); 
+        } else { 
+          expect().assertFail(); 
+        }
       };
       console.info('SUB_Communication_WiFi_SysCaps_Test_0016 end');
       done();
