@@ -85,6 +85,10 @@ export default function textAreaInputTest() {
         await CommonFunc.sleep(500);
         await (textArea2?.click() as Promise<void>)
         await CommonFunc.sleep(500);
+        let button = await driver.findComponent(ON.text('同意'));
+        await CommonFunc.sleep(500);
+        await button?.click();
+        await CommonFunc.sleep(1000);
         let button1 = await driver.findComponent(ON.text('下一步'));
         await CommonFunc.sleep(500);
         button1 ? await button1!.click() : null

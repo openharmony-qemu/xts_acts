@@ -64,6 +64,10 @@ export default function PresetTest() {
         await CommonFunc.sleep(500);
         await textArea2.click()
         await CommonFunc.sleep(500);
+        let button = await driver.findComponent(ON.text('同意'));
+        await CommonFunc.sleep(1000);
+        await button?.click();
+        await CommonFunc.sleep(1000);
         await driver.triggerKey(2070);
         await CommonFunc.sleep(1000);
         let button1 = await driver.findComponent(ON.text('下一步'));
