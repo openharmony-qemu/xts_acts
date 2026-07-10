@@ -28,7 +28,7 @@ export default function BigIntOperatorAddTest_2(): void {
   describe('BigIntOperatorAddTest_2', (): void => {
     beforeAll((): void => {
     });
-    beforeEach(async():void=>{
+    beforeEach(async()=>{
       await Utils.msSleep(30);
     });
     afterEach((): void => {

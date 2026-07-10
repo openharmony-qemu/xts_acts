@@ -22,7 +22,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
   describe('BigIntOperatorBitwiseAndTest_2',(): void => {
     beforeAll((): void => {
     });
-    beforeEach(async():void=>{
+    beforeEach(async()=>{
       await Utils.msSleep(30);
     });
     afterEach((): void => {

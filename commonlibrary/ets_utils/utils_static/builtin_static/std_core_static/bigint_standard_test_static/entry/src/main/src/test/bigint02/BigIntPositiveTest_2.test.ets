@@ -20,7 +20,7 @@ export default function BigIntPositiveTest_2(): void {
   describe('BigIntPositiveTest_2', (): void => {
     beforeAll((): void => {
     });
-    beforeEach(async():void=>{
+    beforeEach(async()=>{
       await Utils.msSleep(30);
     });
     afterEach((): void => {

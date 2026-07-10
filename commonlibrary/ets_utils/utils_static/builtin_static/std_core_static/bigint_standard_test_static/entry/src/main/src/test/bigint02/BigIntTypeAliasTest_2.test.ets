@@ -124,7 +124,7 @@ export default function BigIntTypeAliasTest_2(): void {
   describe('BigIntTypeAliasTest_2', (): void => {
     beforeAll((): void => {
     });
-    beforeEach(async():void=>{
+    beforeEach(async()=>{
       await Utils.msSleep(30);
     });
     afterEach((): void => {
