@@ -167,6 +167,8 @@ import RichEditorMenuType from './RichEditorApi13Test/RichEditorMenuType.test';
 import RichEditorStyledStringTest from './RichEditorApi13Test/RichEditorStyledStringTest.test';
 import BarStateTest from './RichEditorApi13Test/barState.test';
 import BarStateModifierTest from './RichEditorApi13Test/barStateModifier.test';
+import EnableHapticFeedbackTest from './RichEditorApi13Test/enableHapticFeedback.test';
+import EnableHapticFeedbackModifierTest from './RichEditorApi13Test/enableHapticFeedbackModifier.test';
 
 import RichEditorOnHoverTest from './RichEditorApi14Test/onHover.test';
 import getRectsForRangeTest from './RichEditorApi14Test/getRectsForRange.test'
@@ -369,6 +371,8 @@ export default function testsuite() {
   RichEditorStyledStringTest();
   BarStateTest();
   BarStateModifierTest();
+  EnableHapticFeedbackTest();
+  EnableHapticFeedbackModifierTest();
 
   RichEditorOnHoverTest();             // Api14
   getRectsForRangeTest();
