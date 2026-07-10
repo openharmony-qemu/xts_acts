@@ -19,17 +19,17 @@ import Utils from '../Util.test';
 
 export default function BigIntAsUintN2Test(): void {
   describe('testBigIntAsUintN2Test', (): void => {
-    beforeAll(() => {
+    beforeAll((): void => {
     });
 
-    afterAll(() => {
+    afterAll((): void => {
     });
 
     beforeEach(async () => {
       await Utils.msSleep(30);
     });
 
-    afterEach(() => {
+    afterEach((): void => {
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_ASUINTN_1300
@@ -234,7 +234,7 @@ export default function BigIntAsUintN2Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsUintN2Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntAsUintN2Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect((): void => {
         BigInt.asUintN(8, 1.5 as Object as BigInt);
       }).assertThrowError('ClassCastError');

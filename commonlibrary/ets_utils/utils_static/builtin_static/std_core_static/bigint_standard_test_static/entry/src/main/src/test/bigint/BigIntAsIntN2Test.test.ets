@@ -19,17 +19,17 @@ import Utils from '../Util.test';
 
 export default function BigIntAsIntN2Test(): void {
   describe('testBigIntAsIntN2Test', (): void => {
-    beforeAll(() => {
+    beforeAll((): void =>{
     });
 
-    afterAll(() => {
+    afterAll((): void =>{
     });
 
-    beforeEach(async () => {
+    beforeEach(async () =>{
       await Utils.msSleep(30);
     });
 
-    afterEach(() => {
+    afterEach((): void =>{
     });
 
     /**
@@ -55,7 +55,7 @@ export default function BigIntAsIntN2Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsIntN2Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntAsIntN2Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void =>{
       expect(BigInt.asIntN(1, Utils.biInt(3)).toString()).assertEqual('-1');
       expect(BigInt.asIntN(1, Utils.biInt(5)).toString()).assertEqual('-1');
       expect(BigInt.asIntN(1, Utils.biInt(-3)).toString()).assertEqual('-1');
@@ -70,7 +70,7 @@ export default function BigIntAsIntN2Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsIntN2Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntAsIntN2Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void =>{
       expect(BigInt.asIntN(8, Utils.biInt(256)).toString()).assertEqual('0');
       expect(BigInt.asIntN(8, Utils.biInt(-256)).toString()).assertEqual('0');
     });
@@ -83,7 +83,7 @@ export default function BigIntAsIntN2Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsIntN2Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntAsIntN2Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void =>{
       expect(BigInt.asIntN(8, Utils.biInt(-255)).toString()).assertEqual('1');
     });
 
@@ -95,7 +95,7 @@ export default function BigIntAsIntN2Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsIntN2Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntAsIntN2Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void =>{
       expect(BigInt.asIntN(16, Utils.biInt(65535)).toString()).assertEqual('-1');
       expect(BigInt.asIntN(16, Utils.biInt(-32769)).toString()).assertEqual('32767');
       expect(BigInt.asIntN(16, Utils.biInt(65536)).toString()).assertEqual('0');
@@ -109,7 +109,7 @@ export default function BigIntAsIntN2Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsIntN2Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntAsIntN2Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void =>{
       expect(BigInt.asIntN(32, BigInt(-2147483648)).toString()).assertEqual('-2147483648');
       expect(BigInt.asIntN(32, BigInt(2147483647)).toString()).assertEqual('2147483647');
       expect(BigInt.asIntN(32, BigInt(2147483648)).toString()).assertEqual('-2147483648');
@@ -124,7 +124,7 @@ export default function BigIntAsIntN2Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsIntN2Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntAsIntN2Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void =>{
       expect(BigInt.asIntN(8, Utils.biInt(896)).toString()).assertEqual('-128');
       expect(BigInt.asIntN(8, Utils.biInt(-641)).toString()).assertEqual('127');
     });
@@ -137,7 +137,7 @@ export default function BigIntAsIntN2Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsIntN2Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntAsIntN2Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void =>{
       const once8 = BigInt.asIntN(8, Utils.biInt(200));
       const twice8 = BigInt.asIntN(8, once8);
       expect(once8.equals(twice8)).assertTrue();
@@ -154,7 +154,7 @@ export default function BigIntAsIntN2Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsIntN2Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntAsIntN2Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void =>{
       const pos = BigInt.asIntN(8, Utils.biInt(100));
       const neg = BigInt.asIntN(8, Utils.biInt(-100));
       expect(pos.negate().equals(neg)).assertTrue();
@@ -168,7 +168,7 @@ export default function BigIntAsIntN2Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsIntN2Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntAsIntN2Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void =>{
       expect(BigInt.asIntN(8, Utils.biInt(42)).operatorGreaterThan(BigInt(0))).assertTrue();
       expect(BigInt.asIntN(8, Utils.biInt(-42)).operatorLessThan(BigInt(0))).assertTrue();
       expect(BigInt.asIntN(8, Utils.biInt(0)).equals(BigInt(0))).assertTrue();
@@ -182,7 +182,7 @@ export default function BigIntAsIntN2Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsIntN2Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntAsIntN2Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void =>{
       expect(BigInt.asIntN(8, Utils.biInt(100)).toString()).assertEqual(
         BigInt.asUintN(8, Utils.biInt(100)).toString());
       expect(BigInt.asIntN(8, Utils.biInt(0)).toString()).assertEqual(
@@ -199,7 +199,7 @@ export default function BigIntAsIntN2Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsIntN2Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntAsIntN2Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void =>{
       const uintVal = BigInt.asUintN(8, Utils.biInt(200));
       const intVal = BigInt.asIntN(8, Utils.biInt(200));
       const diff = uintVal.operatorSubtract(BigInt(256));
@@ -214,7 +214,7 @@ export default function BigIntAsIntN2Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsIntN2Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntAsIntN2Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void =>{
       expect((): void => {
         BigInt.asIntN(8, 1.5 as Object as BigInt);
       }).assertThrowError('ClassCastError');
