@@ -17,6 +17,9 @@ group("user_auth") {
   if (is_standard_system) {
     deps = [
       "user_auth_ets:ActsUserAuthEtsTest",
+      "user_auth_ets_part2:ActsUserAuthEtsTwoTest",
+      "user_auth_ets_permission:ActsUserAuthEtsPermissionTest",
+      "user_auth_ets_system:ActsUserAuthEtsSystemTest"
     ]
   }
 }
