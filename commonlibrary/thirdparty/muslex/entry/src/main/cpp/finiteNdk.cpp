@@ -49,24 +49,26 @@ static napi_value FiniteNormal001(napi_env env, napi_callback_info info)
         allPassed = false;
     }
     // Positive
+    double largefinite = 100.0;
     if (func(3.14) == 0) {
         allPassed = false;
     }
-    if (func(100.0) == 0) {
+    if (func(largefinite) == 0) {
         allPassed = false;
     }
     // Negative
     if (func(-3.14) == 0) {
         allPassed = false;
     }
-    if (func(-100.0) == 0) {
+    if (func(-largefinite) == 0) {
         allPassed = false;
     }
     // Decimal
-    if (func(0.0001) == 0) {
+    double smallfinite = 0.0001;
+    if (func(smallfinite) == 0) {
         allPassed = false;
     }
-    if (func(-0.0001) == 0) {
+    if (func(-smallfinite) == 0) {
         allPassed = false;
     }
 

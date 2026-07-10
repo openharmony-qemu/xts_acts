@@ -55,9 +55,10 @@ static napi_value GwpAsanCollectNormal001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
+    int bufcap = 2;
     uintptr_t buffer[10];
-    size_t ret = CallGwpAsanCollect(1000, buffer, 2, 1);
-    return ReturnInt32(env, (ret <= 2) ? 1 : 0);
+    size_t ret = CallGwpAsanCollect(1000, buffer, bufcap, 1);
+    return ReturnInt32(env, (ret <= bufcap) ? 1 : 0);
 }
 
 static napi_value GwpAsanCollectNormal002(napi_env env, napi_callback_info info)
@@ -65,9 +66,10 @@ static napi_value GwpAsanCollectNormal002(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
+    int bufcap = 2;
     uintptr_t buffer[10];
-    size_t ret = CallGwpAsanCollect(0, buffer, 2, 1);
-    return ReturnInt32(env, (ret <= 2) ? 1 : 0);
+    size_t ret = CallGwpAsanCollect(0, buffer, bufcap, 1);
+    return ReturnInt32(env, (ret <= bufcap) ? 1 : 0);
 }
 
 static napi_value GwpAsanCollectNormal003(napi_env env, napi_callback_info info)
@@ -75,9 +77,10 @@ static napi_value GwpAsanCollectNormal003(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
+    int bufcap = 5;
     uintptr_t buffer[20];
-    size_t ret = CallGwpAsanCollect(5000, buffer, 5, 4);
-    return ReturnInt32(env, (ret <= 5) ? 1 : 0);
+    size_t ret = CallGwpAsanCollect(5000, buffer, bufcap, 4);
+    return ReturnInt32(env, (ret <= bufcap) ? 1 : 0);
 }
 
 static napi_value GwpAsanCollectNormal004(napi_env env, napi_callback_info info)
@@ -93,7 +96,8 @@ static napi_value GwpAsanCollectAbnormal001(napi_env env, napi_callback_info inf
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    size_t ret = CallGwpAsanCollect(1000, nullptr, 2, 1);
+    int bufcap = 2;
+    size_t ret = CallGwpAsanCollect(1000, nullptr, bufcap, 1);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
 }
 
@@ -112,8 +116,9 @@ static napi_value GwpAsanCollectBoundary001(napi_env env, napi_callback_info inf
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
+    int bufcap = 2;
     uintptr_t buffer[20];
-    size_t ret = CallGwpAsanCollect(UINT64_MAX, buffer, 2, 1);
+    size_t ret = CallGwpAsanCollect(UINT64_MAX, buffer, bufcap, 1);
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
@@ -122,9 +127,10 @@ static napi_value GwpAsanCollectBoundary002(napi_env env, napi_callback_info inf
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
+    int bufcap = 1;
     uintptr_t buffer[4];
-    size_t ret = CallGwpAsanCollect(1000, buffer, 1, 1);
-    return ReturnInt32(env, (ret >= 0 && ret <= 1) ? 1 : 0);
+    size_t ret = CallGwpAsanCollect(1000, buffer, bufcap, 1);
+    return ReturnInt32(env, (ret >= 0 && ret <= bufcap) ? 1 : 0);
 }
 
 static napi_value GwpAsanCollectStable001(napi_env env, napi_callback_info info)
@@ -132,11 +138,12 @@ static napi_value GwpAsanCollectStable001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
+    int bufcap = 2;
     bool pass = true;
     for (int i = 0; i < kStableLoop; ++i) {
         uintptr_t buffer[10];
-        size_t ret = CallGwpAsanCollect(1000, buffer, 2, 1);
-        if (ret > 2) {
+        size_t ret = CallGwpAsanCollect(1000, buffer, bufcap, 1);
+        if (ret > bufcap) {
             pass = false;
             break;
         }
@@ -149,13 +156,14 @@ static napi_value GwpAsanCollectThread001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
+    int bufcap = 2;
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     for (int t = 0; t < kThreadCount; ++t) {
-        threads.emplace_back([&hasError]() {
+        threads.emplace_back([&hasError, bufcap]() {
             for (int i = 0; i < kIterPerThread; ++i) {
                 uintptr_t buffer[10];
-                CallGwpAsanCollect(1000, buffer, 2, 1);
+                CallGwpAsanCollect(1000, buffer, bufcap, 1);
             }
         });
     }

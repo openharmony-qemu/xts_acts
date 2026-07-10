@@ -220,6 +220,21 @@ static napi_value FinitefStable001(napi_env env, napi_callback_info info)
 // ==================== Multi-thread Tests ====================
 
 // Test 7: Multi-thread concurrent
+template<typename Func>
+static void ThreadWorker(Func func, std::atomic<bool>& hasError,
+    const float* testVals, int iterations)
+{
+    for (int i = 0; i < iterations; ++i) {
+        int idx = i % 5;
+        int expected = (idx == 0 || idx == 1) ? 1 : 0;
+        int actual = func(testVals[idx]);
+        if ((actual != 0 && expected == 0) || (actual == 0 && expected != 0)) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 static napi_value FinitefThread001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFinitef();
@@ -235,15 +250,7 @@ static napi_value FinitefThread001(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < threadCount; ++t) {
         threads.emplace_back([func, &hasError, testVals, iterationsPerThread]() {
-            for (int i = 0; i < iterationsPerThread; ++i) {
-                int idx = i % 5;
-                int expected = (idx == 0 || idx == 1) ? 1 : 0;
-                int actual = func(testVals[idx]);
-                if ((actual != 0 && expected == 0) || (actual == 0 && expected != 0)) {
-                    hasError = true;
-                    return;
-                }
-            }
+            ThreadWorker(func, hasError, testVals, iterationsPerThread);
         });
     }
 

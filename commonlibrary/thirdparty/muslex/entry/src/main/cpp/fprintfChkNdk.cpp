@@ -73,8 +73,9 @@ static FILE* GetTestFile()
         close(fd);
     }
 
-    // Option 4: use memory file stream
-    file = fmemopen(nullptr, 1024 * 1024, "w+");
+    // Option 4: use memory file stream with 1MB buffer
+    int bufsize = 1024 * 1024;
+    file = fmemopen(nullptr, bufsize, "w+");
     if (file != nullptr) {
         return file;
     }
@@ -458,6 +459,18 @@ static napi_value FprintfChkStable002(napi_env env, napi_callback_info info)
 // ==================== Multi-thread Tests ====================
 
 // Test 11: Multi-thread different file output
+template<typename Func>
+static void FprintfChkWorker(Func func, FILE* f, std::atomic<bool>& hasError, int iterations, int tid)
+{
+    for (int i = 0; i < iterations; ++i) {
+        int ret = func(f, i % 2, "Thread %d: %d\n", tid, i);
+        if (ret < 0) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 static napi_value FprintfChkThread001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
@@ -483,13 +496,7 @@ static napi_value FprintfChkThread001(napi_env env, napi_callback_info info)
     for (int t = 0; t < threadCount; ++t) {
         FILE* f = files[t];
         threads.emplace_back([func, f, &hasError, iterationsPerThread, t]() {
-            for (int i = 0; i < iterationsPerThread; ++i) {
-                int ret = func(f, i % 2, "Thread %d: %d\n", t, i);
-                if (ret < 0) {
-                    hasError = true;
-                    return;
-                }
-            }
+            FprintfChkWorker(func, f, hasError, iterationsPerThread, t);
         });
     }
 

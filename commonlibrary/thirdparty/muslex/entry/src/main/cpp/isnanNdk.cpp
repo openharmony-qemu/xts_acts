@@ -104,7 +104,8 @@ static napi_value IsnanNormal005(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    int ret = CallIsnan(3.14);
+    double finitetest = 3.14;
+    int ret = CallIsnan(finitetest);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
 }
 
@@ -114,7 +115,8 @@ static napi_value IsnanNormal006(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    int ret = CallIsnan(-3.14);
+    double finitetest = 3.14;
+    int ret = CallIsnan(-finitetest);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
 }
 
@@ -181,13 +183,14 @@ static napi_value IsnanStable001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
+    double finitetest = 3.14;
     bool pass = true;
     for (int i = 0; i < kStableLoop10000; ++i) {
         if (CallIsnan(NAN) == 0) {
             pass = false;
             break;
         }
-        if (CallIsnan(3.14) != 0) {
+        if (CallIsnan(finitetest) != 0) {
             pass = false;
             break;
         }
@@ -203,7 +206,8 @@ static napi_value IsnanThread001(napi_env env, napi_callback_info info)
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    double testVals[] = {NAN, INFINITY, -INFINITY, 0.0, 3.14};
+    double finitetest = 3.14;
+    double testVals[] = {NAN, INFINITY, -INFINITY, 0.0, finitetest};
     int expected[] = {1, 0, 0, 0, 0};
 
     for (int t = 0; t < kThreadCount; ++t) {
