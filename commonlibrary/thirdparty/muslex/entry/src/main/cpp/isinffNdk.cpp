@@ -195,11 +195,12 @@ static napi_value IsinffStable001(napi_env env, napi_callback_info info)
     }
 
     volatile float testVals[] = {HUGE_VALF, -HUGE_VALF, NAN, 0.0f, 3.14f};
-    int results[5];
-    for (int i = 0; i < 5; ++i) {
+    int resultscount = 5;
+    int results[resultscount];
+    for (int i = 0; i < resultscount; ++i) {
         results[i] = isinff(testVals[i]);
     }
-    for (int i = 0; i < 5; ++i) {
+    for (int i = 0; i < resultscount; ++i) {
         if (isinff(testVals[i]) != results[i]) {
             return ReturnInt32(env, 0);
         }

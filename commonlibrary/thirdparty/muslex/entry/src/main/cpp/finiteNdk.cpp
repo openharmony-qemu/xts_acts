@@ -207,14 +207,16 @@ static napi_value FiniteStable001(napi_env env, napi_callback_info info)
 
     bool allPassed = true;
     double testVals[] = {0.0, 3.14, -3.14, INFINITY, -INFINITY, NAN};
-    int results[6];
+    int resultscount = 6;
+    int results[resultscount];
 
-    for (int i = 0; i < 6; ++i) {
+    for (int i = 0; i < resultscount; ++i) {
         results[i] = func(testVals[i]);
     }
 
-    for (int round = 0; round < 20; ++round) {
-        for (int i = 0; i < 6; ++i) {
+    int roundcount = 20;
+    for (int round = 0; round < roundcount; ++round) {
+        for (int i = 0; i < resultscount; ++i) {
             if (func(testVals[i]) != results[i]) {
                 allPassed = false;
                 break;

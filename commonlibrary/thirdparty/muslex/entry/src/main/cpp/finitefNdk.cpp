@@ -195,13 +195,15 @@ static napi_value FinitefStable001(napi_env env, napi_callback_info info)
     bool allPassed = true;
     float testVals[] = {0.0f, 3.14f, -3.14f, HUGE_VALF, -HUGE_VALF, NAN};
     int results[6];
+    int resultscount = 6;
 
-    for (int i = 0; i < 6; ++i) {
+    for (int i = 0; i < resultscount; ++i) {
         results[i] = func(testVals[i]);
     }
 
-    for (int round = 0; round < 20; ++round) {
-        for (int i = 0; i < 6; ++i) {
+    int roundcount = 20;
+    for (int round = 0; round < roundcount; ++round) {
+        for (int i = 0; i < resultscount; ++i) {
             if (func(testVals[i]) != results[i]) {
                 allPassed = false;
                 break;

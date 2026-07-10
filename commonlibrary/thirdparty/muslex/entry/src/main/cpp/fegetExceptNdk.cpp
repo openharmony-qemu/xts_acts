@@ -15,7 +15,7 @@
 
 #include "napi/native_api.h"
 #include "libcFunctionLoader.h"
-#include <fenv.h>
+#include <cfenv>
 #include <cerrno>
 #include <thread>
 #include <vector>

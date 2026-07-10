@@ -86,13 +86,14 @@ static napi_value IsinfNormal004(napi_env env, napi_callback_info info)
     }
 
     bool allPassed = true;
+    double finitetest = 3.14;
     if (func(0.0) != 0) {
         allPassed = false;
     }
-    if (func(3.14) != 0) {
+    if (func(finitetest) != 0) {
         allPassed = false;
     }
-    if (func(-3.14) != 0) {
+    if (func(-finitetest) != 0) {
         allPassed = false;
     }
     if (func(100.0) != 0) {
@@ -224,14 +225,16 @@ static napi_value IsinfStable001(napi_env env, napi_callback_info info)
 
     bool allPassed = true;
     double testVals[] = {0.0, 3.14, INFINITY, -INFINITY, NAN};
-    int results[5];
+    int resultscount = 5;
+    int results[resultscount];
 
-    for (int i = 0; i < 5; ++i) {
+    for (int i = 0; i < resultscount; ++i) {
         results[i] = func(testVals[i]);
     }
 
-    for (int round = 0; round < 20; ++round) {
-        for (int i = 0; i < 5; ++i) {
+    int roundcount = 20;
+    for (int round = 0; round < roundcount; ++round) {
+        for (int i = 0; i < resultscount; ++i) {
             if (func(testVals[i]) != results[i]) {
                 allPassed = false;
                 break;
@@ -253,8 +256,9 @@ static napi_value IsinfStable002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
 
+    int loopcount = 20;
     bool allPassed = true;
-    for (int i = 0; i < 20; ++i) {
+    for (int i = 0; i < loopcount; ++i) {
         double val = (i % 100) / 10.0 - 5.0;
         int expected = 0;
         int actual = func(val);
@@ -315,9 +319,10 @@ static napi_value IsinfThread002(napi_env env, napi_callback_info info)
     std::vector<std::thread> threads;
     std::atomic<bool> hasError{false};
 
+    int roundcount2 = 10;
     for (int t = 0; t < threadCount; ++t) {
-        threads.emplace_back([func, &hasError]() {
-            for (int round = 0; round < 10; ++round) {
+        threads.emplace_back([func, &hasError, roundcount2]() {
+            for (int round = 0; round < roundcount2; ++round) {
                 if (func(INFINITY) != 1) {
                     hasError = true;
                     return;

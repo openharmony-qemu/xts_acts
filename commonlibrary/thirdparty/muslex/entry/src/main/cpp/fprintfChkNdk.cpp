@@ -408,7 +408,8 @@ static napi_value FprintfChkStable001(napi_env env, napi_callback_info info)
         rewind(tmpFile);
     }
 
-    for (int round = 0; round < 10; ++round) {
+    int roundcount = 10;
+    for (int round = 0; round < roundcount; ++round) {
         if (tmpFile != stderr && tmpFile != stdout) {
             fseek(tmpFile, 0, SEEK_SET);
         }
@@ -439,7 +440,8 @@ static napi_value FprintfChkStable002(napi_env env, napi_callback_info info)
         tmpFile = stderr;
     }
 
-    for (int i = 0; i < 20; ++i) {
+    int loopcount = 20;
+    for (int i = 0; i < loopcount; ++i) {
         int ret = func(tmpFile, i % 2, "Round %d: %s %f\n", i, "test", i * 0.1);
         if (ret < 0) {
             allPassed = false;

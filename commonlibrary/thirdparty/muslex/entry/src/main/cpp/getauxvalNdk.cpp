@@ -204,14 +204,16 @@ static napi_value GetauxvalStable001(napi_env env, napi_callback_info info)
 
     bool allPassed = true;
     unsigned long items[] = {AT_PAGESZ, AT_SECURE, AT_CLKTCK, AT_RANDOM};
-    unsigned long results[4];
+    int itemcount = 4;
+    unsigned long results[itemcount];
 
-    for (int i = 0; i < 4; ++i) {
+    for (int i = 0; i < itemcount; ++i) {
         results[i] = func(items[i]);
     }
 
-    for (int round = 0; round < 20; ++round) {
-        for (int i = 0; i < 4; ++i) {
+    int roundcount = 20;
+    for (int round = 0; round < roundcount; ++round) {
+        for (int i = 0; i < itemcount; ++i) {
             if (func(items[i]) != results[i]) {
                 allPassed = false;
                 break;
@@ -235,9 +237,11 @@ static napi_value GetauxvalStable002(napi_env env, napi_callback_info info)
 
     bool allPassed = true;
     unsigned long items[] = {AT_PAGESZ, AT_SECURE, AT_CLKTCK, AT_RANDOM};
+    int itemcount = 4;
 
-    for (int i = 0; i < 20; ++i) {
-        int idx = i % 4;
+    int loopcount = 20;
+    for (int i = 0; i < loopcount; ++i) {
+        int idx = i % itemcount;
         unsigned long result = func(items[idx]);
         if (result == 0 && idx != 1) { // AT_SECURE may be 0
             allPassed = false;
