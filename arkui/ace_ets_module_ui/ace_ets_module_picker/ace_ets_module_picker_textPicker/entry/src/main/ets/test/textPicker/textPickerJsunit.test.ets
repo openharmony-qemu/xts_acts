@@ -221,7 +221,7 @@ export default function TextPickerJsunitTest() {
         .assertEqual('["icon:,text:banana1","icon:,text:orange2","icon:,text:peach3","icon:,text:grape4"]');
       expect(obj.$attrs.selected).assertEqual('1');
       //expect(obj.$attrs.value).assertEqual('');
-      expect(obj.$attrs.defaultPickerItemHeight).assertEqual('0.00fp');
+      expect(obj.$attrs.defaultPickerItemHeight).assertEqual('25.00fp');
       console.info('[TextPickerJsunit_0400] END');
       done();
     });
