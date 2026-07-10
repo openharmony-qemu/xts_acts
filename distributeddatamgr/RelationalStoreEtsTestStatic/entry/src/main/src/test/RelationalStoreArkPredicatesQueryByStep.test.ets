@@ -102,7 +102,7 @@ function checkResultSetForNormalGet(resultSet : relationalStore.ResultSet){
 }
 
 export default function RelationalStoreArkPredicatesQueryByStepTest() {
-  describe('RelationalStoreArkPredicatesQueryByStepTest', ():void => {
+  describe('RelationalStoreArkPredicatesQueryByStepTest', (): void => {
     beforeAll(async ():Promise<void> => {
       console.info(TAG + 'beforeAll')
       try {
