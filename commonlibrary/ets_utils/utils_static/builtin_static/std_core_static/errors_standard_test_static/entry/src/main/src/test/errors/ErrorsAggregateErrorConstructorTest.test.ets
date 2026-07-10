@@ -1192,3 +1192,1373 @@ export default function ErrorsAggregateErrorConstructorTest(): void {
       source.delete(e);
       expect(agg.errors.length).assertEqual(2);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0078
+     * @tc.name testErrorsAggregateErrorConstructor0078
+     * @tc.desc Verify constructor source Set clear instance.errors.length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new Set<Error>();
+      source.add(new Error("a"));
+      source.add(new Error("b"));
+      const agg = new AggregateError(source);
+      source.clear();
+      expect(agg.errors.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0079
+     * @tc.name testErrorsAggregateErrorConstructor0079
+     * @tc.desc Verify constructor array reverse instance.errors[0]
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source: Error[] = [new Error("a"), new Error("b")];
+      const agg = new AggregateError(source);
+      source.reverse();
+      expect(agg.errors[0].message).assertEqual("a");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0080
+     * @tc.name testErrorsAggregateErrorConstructor0080
+     * @tc.desc Verify constructor instance.errors arrayis notsame reference
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source: Error[] = [new Error("a")];
+      const agg = new AggregateError(source);
+      expect(agg.errors).not().assertEqual(source);
+      expect(agg.errors.length).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0081
+     * @tc.name testErrorsAggregateErrorConstructor0081
+     * @tc.desc Verify instance not instanceof RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new Error("e")]);
+      expect(agg instanceof RangeError).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0082
+     * @tc.name testErrorsAggregateErrorConstructor0082
+     * @tc.desc Verify instance not instanceof TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new Error("e")]);
+      expect(agg instanceof TypeError).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0083
+     * @tc.name testErrorsAggregateErrorConstructor0083
+     * @tc.desc Verify instance not instanceof SyntaxError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new Error("e")]);
+      expect(agg instanceof SyntaxError).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0084
+     * @tc.name testErrorsAggregateErrorConstructor0084
+     * @tc.desc Verify errors element instanceof Error - RangeError element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new RangeError("r")]);
+      expect(agg.errors[0].name).assertEqual('RangeError');
+      expect(agg.errors[0].message).assertEqual('r');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0085
+     * @tc.name testErrorsAggregateErrorConstructor0085
+     * @tc.desc Verify errors element instanceof Error - TypeError element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new TypeError("t")]);
+      expect(agg.errors[0].name).assertEqual('TypeError');
+      expect(agg.errors[0].message).assertEqual('t');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0086
+     * @tc.name testErrorsAggregateErrorConstructor0086
+     * @tc.desc Verify errors nested AggregateError - instanceof AggregateError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner = new AggregateError([new Error("i")]);
+      const agg = new AggregateError([inner]);
+      expect(agg.errors[0] instanceof AggregateError).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0087
+     * @tc.name testErrorsAggregateErrorConstructor0087
+     * @tc.desc Verify errors nested AggregateError - instanceof Error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner = new AggregateError([new Error("i")]);
+      const agg = new AggregateError([inner]);
+      expect(agg.errors[0].name).assertEqual('AggregateError');
+      expect((agg.errors[0] as AggregateError).errors[0].message).assertEqual('i');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0088
+     * @tc.name testErrorsAggregateErrorConstructor0088
+     * @tc.desc Verify errors + message empty array length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([] as Error[], "");
+      expect(agg.errors.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0089
+     * @tc.name testErrorsAggregateErrorConstructor0089
+     * @tc.desc Verify errors + message - message
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([] as Error[], "");
+      expect(agg.message).assertEqual("");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0090
+     * @tc.name testErrorsAggregateErrorConstructor0090
+     * @tc.desc Verify errors + message 2-element message
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new Error("a"), new Error("b")], "");
+      expect(agg.message).assertEqual("");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0091
+     * @tc.name testErrorsAggregateErrorConstructor0091
+     * @tc.desc Verify large batch errors + message
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Error[] = [];
+      for (let i = 0; i < 100; i++) {
+        arr.push(new Error("e"));
+      }
+      const longMsg = "x".repeat(1000);
+      const agg = new AggregateError(arr, longMsg);
+      expect(agg.message.length).assertEqual(1000);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0092
+     * @tc.name testErrorsAggregateErrorConstructor0092
+     * @tc.desc Verify heterogeneous errors + cause is Error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new RangeError("r"), new TypeError("t")], "agg", { cause: new Error("c") });
+      expect((agg.cause as Error).message).assertEqual("c");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0093
+     * @tc.name testErrorsAggregateErrorConstructor0093
+     * @tc.desc Verify heterogeneous errors preserve string cause
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new RangeError("r"), new TypeError("t")], "agg", { cause: "scause" });
+      expect(agg.cause).assertEqual("scause");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0094
+     * @tc.name testErrorsAggregateErrorConstructor0094
+     * @tc.desc Verify nested errors + cause is AggregateError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner = new AggregateError([new Error("i")]);
+      const agg = new AggregateError([inner], "outer", { cause: inner });
+      expect((agg.cause as AggregateError).errors.length).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0095
+     * @tc.name testErrorsAggregateErrorConstructor0095
+     * @tc.desc Verify iterable overload + message + cause
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<Error>();
+      set.add(new Error("a"));
+      set.add(new RangeError("r"));
+      const agg = new AggregateError(set, "agg-set", { cause: "c" });
+      expect(agg.message).assertEqual("agg-set");
+      expect(agg.cause).assertEqual("c");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0096
+     * @tc.name testErrorsAggregateErrorConstructor0096
+     * @tc.desc Verify iterable overload + large batch + message
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<Error>();
+      for (let i = 0; i < 100; i++) {
+        for (let j = 0; j < 2; j++) {
+          set.add(new Error("e" + (i * 2 + j)));
+        }
+      }
+      const agg = new AggregateError(set, "x".repeat(1000));
+      expect(agg.message.length).assertEqual(1000);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0097
+     * @tc.name testErrorsAggregateErrorConstructor0097
+     * @tc.desc Verify errors with cause
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner = new Error("i");
+      const e = new Error("outer", { cause: inner });
+      const agg = new AggregateError([e]);
+      expect(((agg.errors[0] as Error).cause as Error).message).assertEqual("i");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0098
+     * @tc.name testErrorsAggregateErrorConstructor0098
+     * @tc.desc Verify errors heterogeneous - subtype mixed length and instanceof matrix
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg =
+        new AggregateError([new RangeError("r"), new TypeError("t"), new SyntaxError("s"), new ReferenceError("ref"),
+          new URIError("u"), new EvalError("e")]);
+      expect(agg.errors.length).assertEqual(6);
+      expect(agg.errors[0] instanceof RangeError).assertTrue();
+      expect(agg.errors[1] instanceof TypeError).assertTrue();
+      expect(agg.errors[2] instanceof SyntaxError).assertTrue();
+      expect(agg.errors[3] instanceof ReferenceError).assertTrue();
+      expect(agg.errors[4] instanceof URIError).assertTrue();
+      expect(agg.errors[5] instanceof EvalError).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0099
+     * @tc.name testErrorsAggregateErrorConstructor0099
+     * @tc.desc Verify errors contains URIError + EvalError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new URIError("u"), new EvalError("e")]);
+      expect(agg.errors.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0100
+     * @tc.name testErrorsAggregateErrorConstructor0100
+     * @tc.desc Verify errors preserves URIError subtype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new URIError("u"), new EvalError("e")]);
+      expect(agg.errors[0] instanceof URIError).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0101
+     * @tc.name testErrorsAggregateErrorConstructor0101
+     * @tc.desc Verify errors preserves EvalError subtype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new URIError("u"), new EvalError("e")]);
+      expect(agg.errors[1] instanceof EvalError).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0102
+     * @tc.name testErrorsAggregateErrorConstructor0102
+     * @tc.desc Verify 1 nested - 1 AggregateError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner = new AggregateError([new Error("i")]);
+      const outer = new AggregateError([inner]);
+      expect(outer.errors.length).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0103
+     * @tc.name testErrorsAggregateErrorConstructor0103
+     * @tc.desc Verify 1 nested - errors[0] message
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner = new AggregateError([new Error("hello")]);
+      const outer = new AggregateError([inner]);
+      expect((outer.errors[0] as AggregateError).errors[0].message).assertEqual("hello");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0104
+     * @tc.name testErrorsAggregateErrorConstructor0104
+     * @tc.desc Verify 2 nested
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const lvl1 = new AggregateError([new Error("x")]);
+      const lvl2 = new AggregateError([lvl1]);
+      const lvl3 = new AggregateError([lvl2]);
+      expect(((lvl3.errors[0] as AggregateError).errors[0] as AggregateError).errors[0].message).assertEqual("x");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0105
+     * @tc.name testErrorsAggregateErrorConstructor0105
+     * @tc.desc Verify nestedmixed - contains AggregateError + Error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner = new AggregateError([new Error("i")]);
+      const outer = new AggregateError([inner, new Error("plain")]);
+      expect(outer.errors.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0106
+     * @tc.name testErrorsAggregateErrorConstructor0106
+     * @tc.desc Verify nestedmixed - 0 is AggregateError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner = new AggregateError([new Error("i")]);
+      const outer = new AggregateError([inner, new Error("plain")]);
+      expect(outer.errors[0] instanceof AggregateError).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0107
+     * @tc.name testErrorsAggregateErrorConstructor0107
+     * @tc.desc Verify nestedmixed - 1 is Error is not AggregateError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner = new AggregateError([new Error("i")]);
+      const outer = new AggregateError([inner, new Error("plain")]);
+      expect(outer.errors[1] instanceof AggregateError).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0108
+     * @tc.name testErrorsAggregateErrorConstructor0108
+     * @tc.desc Verify nested cause is AggregateError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const cause = new AggregateError([new Error("c1"), new Error("c2")]);
+      const agg = new AggregateError([new Error("e")], "agg", { cause: cause });
+      expect((agg.cause as AggregateError).errors.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0109
+     * @tc.name testErrorsAggregateErrorConstructor0109
+     * @tc.desc Verify errors nested AggregateError 2 inner outer length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const i1 = new AggregateError([new Error("a")]);
+      const i2 = new AggregateError([new Error("b")]);
+      const outer = new AggregateError([i1, i2]);
+      expect(outer.errors.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0110
+     * @tc.name testErrorsAggregateErrorConstructor0110
+     * @tc.desc Verify nested - 0 length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const i1 = new AggregateError([] as Error[]);
+      const i2 = new AggregateError([] as Error[]);
+      const outer = new AggregateError([i1, i2]);
+      expect((outer.errors[0] as AggregateError).errors.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0111
+     * @tc.name testErrorsAggregateErrorConstructor0111
+     * @tc.desc Verify explicit errors default message is empty string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([] as Error[]);
+      expect(agg.message).assertEqual("");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0112
+     * @tc.name testErrorsAggregateErrorConstructor0112
+     * @tc.desc Verify iterable overload default message is empty string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<Error>();
+      set.add(new Error("e"));
+      const agg = new AggregateError(set);
+      expect(agg.message).assertEqual("");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0113
+     * @tc.name testErrorsAggregateErrorConstructor0113
+     * @tc.desc Verify explicit undefined message equivalent omitted
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg1 = new AggregateError([new Error("e")]);
+      const agg2 = new AggregateError([new Error("e")], undefined);
+      expect(agg1.message).assertEqual(agg2.message);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0114
+     * @tc.name testErrorsAggregateErrorConstructor0114
+     * @tc.desc Verify explicit undefined options equivalent omitted
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg1 = new AggregateError([new Error("e")], "msg");
+      const agg2 = new AggregateError([new Error("e")], "msg", undefined);
+      expect(agg1.message).assertEqual(agg2.message);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0115
+     * @tc.name testErrorsAggregateErrorConstructor0115
+     * @tc.desc Verify errors[0] reference is preserved
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e = new Error("e");
+      const agg = new AggregateError([e]);
+      expect(agg.errors[0]).assertEqual(e);
+    }); 
+    
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0116
+     * @tc.name testErrorsAggregateErrorConstructor0116
+     * @tc.desc Verify large batch errors + message + cause
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Error[] = [];
+      for (let i = 0; i < 100; i++) {
+        for (let j = 0; j < 10; j++) {
+          arr.push(new Error("e"));
+        }
+      }
+      const longMsg = "z".repeat(5000);
+      const agg = new AggregateError(arr, longMsg, { cause: "c" });
+      expect(agg.errors.length).assertEqual(1000);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0117
+     * @tc.name testErrorsAggregateErrorConstructor0117
+     * @tc.desc Verify cause equals Number.MAX_VALUE
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new Error("e")], "m", { cause: Number.MAX_VALUE });
+      expect(agg.cause).assertEqual(Number.MAX_VALUE);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0118
+     * @tc.name testErrorsAggregateErrorConstructor0118
+     * @tc.desc Verify cause equals Number.MIN_VALUE
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new Error("e")], "m", { cause: Number.MIN_VALUE });
+      expect(agg.cause).assertEqual(Number.MIN_VALUE);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0119
+     * @tc.name testErrorsAggregateErrorConstructor0119
+     * @tc.desc Verify cause is AggregateError errors
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner = new AggregateError([new Error("a"), new Error("b")]);
+      const agg = new AggregateError([new Error("e")], "m", { cause: inner.errors });
+      expect((agg.cause as Error[]).length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0120
+     * @tc.name testErrorsAggregateErrorConstructor0120
+     * @tc.desc Verify cause equals 0xFF
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new Error("e")], "m", { cause: 0xFF });
+      expect(agg.cause).assertEqual(255);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0121
+     * @tc.name testErrorsAggregateErrorConstructor0121
+     * @tc.desc Verify cause equals 0xFFFF
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new Error("e")], "m", { cause: 0xFFFF });
+      expect(agg.cause).assertEqual(65535);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0122
+     * @tc.name testErrorsAggregateErrorConstructor0122
+     * @tc.desc Verify cause equals 0x7FFFFFFF
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new Error("e")], "m", { cause: 0x7FFFFFFF });
+      expect(agg.cause).assertEqual(2147483647);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0123
+     * @tc.name testErrorsAggregateErrorConstructor0123
+     * @tc.desc Verify cause equals 0o777
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new Error("e")], "m", { cause: 0o777 });
+      expect(agg.cause).assertEqual(511);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0124
+     * @tc.name testErrorsAggregateErrorConstructor0124
+     * @tc.desc Verify cause equals 0b11111111
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new Error("e")], "m", { cause: 0b11111111 });
+      expect(agg.cause).assertEqual(255);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0125
+     * @tc.name testErrorsAggregateErrorConstructor0125
+     * @tc.desc Verify cause equals 1.0e3 floating point count
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new Error("e")], "m", { cause: 1.0e3 });
+      expect(agg.cause).assertEqual(1000);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0126
+     * @tc.name testErrorsAggregateErrorConstructor0126
+     * @tc.desc Verify cause equals 1.5 floating point
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new Error("e")], "m", { cause: 1.5 });
+      expect(agg.cause).assertEqual(1.5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0127
+     * @tc.name testErrorsAggregateErrorConstructor0127
+     * @tc.desc Verify cause equals 1+2
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new Error("e")], "m", { cause: 1 + 2 });
+      expect(agg.cause).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0128
+     * @tc.name testErrorsAggregateErrorConstructor0128
+     * @tc.desc Verify chained cause 1 message
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = new Error("level1");
+      const b = new Error("level2", { cause: a });
+      const agg = new AggregateError([new Error("e")], "outer", { cause: b });
+      expect((agg.cause as Error).message).assertEqual("level2");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0129
+     * @tc.name testErrorsAggregateErrorConstructor0129
+     * @tc.desc Verify chained cause 2 message
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = new Error("level1");
+      const b = new Error("level2", { cause: a });
+      const agg = new AggregateError([new Error("e")], "outer", { cause: b });
+      expect(((agg.cause as Error).cause as Error).message).assertEqual("level1");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0130
+     * @tc.name testErrorsAggregateErrorConstructor0130
+     * @tc.desc Verify chained cause - cause
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = new Error("L1");
+      const b = new Error("L2", { cause: a });
+      const c = new Error("L3", { cause: b });
+      const agg = new AggregateError([new Error("e")], "outer", { cause: c });
+      expect((((agg.cause as Error).cause as Error).cause as Error).message).assertEqual("L1");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0131
+     * @tc.name testErrorsAggregateErrorConstructor0131
+     * @tc.desc Verify cause is RangeError chained
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = new RangeError("rng");
+      const agg = new AggregateError([new Error("e")], "m", { cause: r });
+      expect((agg.cause as RangeError) instanceof RangeError).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0132
+     * @tc.name testErrorsAggregateErrorConstructor0132
+     * @tc.desc Verify cause is TypeError chained
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const t = new TypeError("tp");
+      const agg = new AggregateError([new Error("e")], "m", { cause: t });
+      expect((agg.cause as TypeError) instanceof TypeError).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0133
+     * @tc.name testErrorsAggregateErrorConstructor0133
+     * @tc.desc Verify constructor preserves core AggregateError fields together
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const first = new RangeError("range");
+      const second = new TypeError("type");
+      const cause = new URIError("cause");
+      const agg = new AggregateError([first, second], "aggregate", { cause: cause });
+      expect(agg instanceof AggregateError).assertTrue();
+      expect(agg.name).assertEqual("AggregateError");
+      expect(agg.message).assertEqual("aggregate");
+      expect(agg.errors.length).assertEqual(2);
+      expect(agg.errors[0]).assertEqual(first);
+      expect(agg.errors[1]).assertEqual(second);
+      expect(agg.cause).assertEqual(cause);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0134
+     * @tc.name testErrorsAggregateErrorConstructor0134
+     * @tc.desc Verify empty errors with undefined message and options
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([] as Error[], undefined, undefined);
+      expect(agg.name).assertEqual("AggregateError");
+      expect(agg.message).assertEqual("");
+      expect(agg.errors.length).assertEqual(0);
+      expect(agg.cause).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0135
+     * @tc.name testErrorsAggregateErrorConstructor0135
+     * @tc.desc Verify mixed built-in error subtype positions in errors array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new RangeError("r"), new TypeError("t"), new URIError("u"), new EvalError("e")]);
+      expect(agg.errors.length).assertEqual(4);
+      expect(agg.errors[0] instanceof RangeError).assertTrue();
+      expect(agg.errors[1] instanceof TypeError).assertTrue();
+      expect(agg.errors[2] instanceof URIError).assertTrue();
+      expect(agg.errors[3] instanceof EvalError).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0136
+     * @tc.name testErrorsAggregateErrorConstructor0136
+     * @tc.desc Verify mutating instance errors array does not mutate source array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source: Error[] = [new Error("source")];
+      const agg = new AggregateError(source);
+      agg.errors.push(new Error("instance"));
+      expect(source.length).assertEqual(1);
+      expect(agg.errors.length).assertEqual(2);
+      expect(agg.errors[0]).assertEqual(source[0]);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0137
+     * @tc.name testErrorsAggregateErrorConstructor0137
+     * @tc.desc Verify errors property keeps array value and enumerable key
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new Error("descriptor")]);
+      expect(agg.errors.length).assertEqual(1);
+      expect(agg.errors[0].message).assertEqual("descriptor");
+      const keys = Object.keys(agg);
+      expect(keys.includes('errors')).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0138
+     * @tc.name testErrorsAggregateErrorConstructor0138
+     * @tc.desc Verify primitive cause values are preserved by constructor options
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const stringCause = new AggregateError([new Error("e")], "string", { cause: "not an error" });
+      const numberCause = new AggregateError([new Error("e")], "number", { cause: 123 });
+      const booleanCause = new AggregateError([new Error("e")], "boolean", { cause: true });
+      expect(stringCause.cause).assertEqual("not an error");
+      expect(numberCause.cause).assertEqual(123);
+      expect(booleanCause.cause).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0139
+     * @tc.name testErrorsAggregateErrorConstructor0139
+     * @tc.desc Verify repeated constructor field reads remain consistent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const cause = new TypeError("cause");
+      const agg = new AggregateError([new RangeError("range")], "stable", { cause: cause });
+      expect(agg.name).assertEqual("AggregateError");
+      expect(agg.message).assertEqual("stable");
+      expect(agg.errors[0] instanceof RangeError).assertTrue();
+      expect(agg.cause).assertEqual(cause);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0140
+     * @tc.name testErrorsAggregateErrorConstructor0140
+     * @tc.desc Verify constructor preserves first middle and last entries for 1000 errors
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source: Error[] = [];
+      for (let i = 0; i < 100; i++) {
+        for (let j = 0; j < 10; j++) {
+          source.push(new Error("item" + (i * 10 + j)));
+        }
+      }
+      const agg = new AggregateError(source);
+      expect(agg.errors.length).assertEqual(1000);
+      expect(agg.errors[0].message).assertEqual("item0");
+      expect(agg.errors[499].message).assertEqual("item499");
+      expect(agg.errors[999].message).assertEqual("item999");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0141
+     * @tc.name testErrorsAggregateErrorConstructor0141
+     * @tc.desc Verify comprehensive constructor behavior with nested errors and cause
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner = new AggregateError([new Error("inner")], "inner-msg");
+      const cause = new AggregateError([new TypeError("cause")], "cause-msg");
+      const outer = new AggregateError([inner, new RangeError("range")], "outer-msg", { cause: cause });
+      expect(outer.name).assertEqual("AggregateError");
+      expect(outer.message).assertEqual("outer-msg");
+      expect(outer.errors.length).assertEqual(2);
+      expect(outer.errors[0] instanceof AggregateError).assertTrue();
+      expect((outer.errors[0] as AggregateError).message).assertEqual("inner-msg");
+      expect(outer.errors[1] instanceof RangeError).assertTrue();
+      expect((outer.cause as AggregateError).errors[0] instanceof TypeError).assertTrue();
+      expect((outer.cause as AggregateError).message).assertEqual("cause-msg");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0142
+     * @tc.name testErrorsAggregateErrorConstructor0142
+     * @tc.desc Verify iterable iterator throws pass through
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const iterable: Iterable<Error> = {
+        $_iterator(): IterableIterator<Error> {
+          throw new Error("iter-fail");
+        }
+      };
+      try {
+        new AggregateError(iterable);
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('Error');
+        expect((e as Error).message).assertEqual("iter-fail");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0143
+     * @tc.name testErrorsAggregateErrorConstructor0143
+     * @tc.desc Verify nested AggregateError layered type resolution (test point 39)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const leaf = new Error("leaf");
+      const mid = new AggregateError([leaf], "mid");
+      const outer = new AggregateError([mid], "outer");
+      expect(outer.errors[0] instanceof AggregateError).assertTrue();
+      expect((outer.errors[0] as AggregateError).errors[0]).assertEqual(leaf);
+      expect((outer.errors[0] as AggregateError).message).assertEqual("mid");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0144
+     * @tc.name testErrorsAggregateErrorConstructor0144
+     * @tc.desc Verify multi-type mixed array native and custom errors (test point 40)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new Error("e"), new RangeError("r"), new TypeError("t"), new SyntaxError("s")]);
+      expect(agg.errors.length).assertEqual(4);
+      expect(agg.errors[1] instanceof RangeError).assertTrue();
+      expect(agg.errors[2] instanceof TypeError).assertTrue();
+      expect(agg.errors[3] instanceof SyntaxError).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0145
+     * @tc.name testErrorsAggregateErrorConstructor0145
+     * @tc.desc Verify cause property nested Error chain (test point 42)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const innerCause = new Error("root-cause");
+      const agg = new AggregateError([new Error("e")], "msg", { cause: innerCause });
+      expect((agg.cause as Error).message).assertEqual("root-cause");
+      expect((agg.cause as Error).name).assertEqual("Error");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0146
+     * @tc.name testErrorsAggregateErrorConstructor0146
+     * @tc.desc Verify deeply nested cause chain Error-in-Error (test point 43)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const root = new Error("root");
+      const mid = new Error("mid", { cause: root });
+      const agg = new AggregateError([new Error("e")], "outer", { cause: mid });
+      expect(((agg.cause as Error).cause as Error).message).assertEqual("root");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0147
+     * @tc.name testErrorsAggregateErrorConstructor0147
+     * @tc.desc Verify empty string message boundary (test point 82)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new Error("e")], "");
+      expect(agg.message).assertEqual("");
+      expect(agg.errors.length).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0148
+     * @tc.name testErrorsAggregateErrorConstructor0148
+     * @tc.desc Verify errors array is independent copy of source (test point 38)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source: Error[] = [new Error("a"), new Error("b")];
+      const agg = new AggregateError(source);
+      source.push(new Error("c"));
+      expect(agg.errors.length).assertEqual(2);
+      expect(source.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0149
+     * @tc.name testErrorsAggregateErrorConstructor0149
+     * @tc.desc Verify cause as AggregateError nested type resolution
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const innerAgg = new AggregateError([new RangeError("r"), new TypeError("t")], "inner");
+      const outer = new AggregateError([new Error("e")], "outer", { cause: innerAgg });
+      expect((outer.cause as AggregateError) instanceof AggregateError).assertTrue();
+      expect((outer.cause as AggregateError).errors.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0150
+     * @tc.name testErrorsAggregateErrorConstructor0150
+     * @tc.desc Verify errors containing all standard error subtypes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Error[] =
+        [new Error("e"), new RangeError("r"), new TypeError("t"), new SyntaxError("s"), new ReferenceError("ref"),
+          new URIError("u"), new EvalError("ev"), new AssertionError("a")];
+      const agg = new AggregateError(arr);
+      expect(agg.errors.length).assertEqual(8);
+      expect(agg.errors[3] instanceof SyntaxError).assertTrue();
+      expect(agg.errors[6] instanceof EvalError).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0151
+     * @tc.name testErrorsAggregateErrorConstructor0151
+     * @tc.desc Verify AggregateError constructor preserves errors length and name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new Error("e")], "sealed");
+      expect(agg.errors.length).assertEqual(1);
+      expect(agg.name).assertEqual("AggregateError");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0152
+     * @tc.name testErrorsAggregateErrorConstructor0152
+     * @tc.desc Verify metadata cache consistency 100 reads (test point 117)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new Error("cache")], "cached");
+      const firstMsg = agg.message;
+      const firstLen = agg.errors.length;
+      for (let i = 0; i < 100; i++) {
+        expect(agg.message).assertEqual(firstMsg);
+        expect(agg.errors.length).assertEqual(firstLen);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0153
+     * @tc.name testErrorsAggregateErrorConstructor0153
+     * @tc.desc Verify constructor preserves first error reference and type after mutation (test point 36)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const error = new RangeError("before");
+      const agg = new AggregateError([error]);
+      error.message = "after";
+      expect(agg.errors[0]).assertEqual(error);
+      expect(agg.errors[0] instanceof RangeError).assertTrue();
+      expect(agg.errors[0].message).assertEqual("after");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0154
+     * @tc.name testErrorsAggregateErrorConstructor0154
+     * @tc.desc Verify constructor preserves second error reference and type after mutation (test point 37)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const second = new TypeError("before");
+      const agg = new AggregateError([new Error("first"), second]);
+      second.message = "after";
+      expect(agg.errors[1]).assertEqual(second);
+      expect(agg.errors[1] instanceof TypeError).assertTrue();
+      expect(agg.errors[1].message).assertEqual("after");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0155
+     * @tc.name testErrorsAggregateErrorConstructor0155
+     * @tc.desc Verify empty errors array with explicit cause is preserved (test points 38 and 42)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const cause = new Error("empty-cause");
+      const agg = new AggregateError([] as Error[], "empty", { cause: cause });
+      expect(agg.errors.length).assertEqual(0);
+      expect(agg.cause).assertEqual(cause);
+      expect((agg.cause as Error).message).assertEqual("empty-cause");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0156
+     * @tc.name testErrorsAggregateErrorConstructor0156
+     * @tc.desc Verify same Error instance can be both errors element and cause (test point 42)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const shared = new Error("shared");
+      const agg = new AggregateError([shared], "same", { cause: shared });
+      expect(agg.errors[0]).assertEqual(shared);
+      expect(agg.cause).assertEqual(shared);
+      expect((agg.cause as Error).message).assertEqual("shared");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0157
+     * @tc.name testErrorsAggregateErrorConstructor0157
+     * @tc.desc Verify nested AggregateError preserves inner cause and error type (test points 39 and 43)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const root = new TypeError("root");
+      const inner = new AggregateError([new RangeError("range")], "inner", { cause: root });
+      const outer = new AggregateError([inner], "outer");
+      const innerFromOuter = outer.errors[0] as AggregateError;
+      expect(innerFromOuter instanceof AggregateError).assertTrue();
+      expect(innerFromOuter.errors[0] instanceof RangeError).assertTrue();
+      expect((innerFromOuter.cause as TypeError).message).assertEqual("root");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0158
+     * @tc.name testErrorsAggregateErrorConstructor0158
+     * @tc.desc Verify nested AggregateError can be shared by errors and cause (test points 39 and 42)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner = new AggregateError([new Error("inner")], "inner-msg");
+      const outer = new AggregateError([inner], "outer-msg", { cause: inner });
+      expect(outer.errors[0]).assertEqual(inner);
+      expect(outer.cause).assertEqual(inner);
+      expect((outer.cause as AggregateError).errors[0].message).assertEqual("inner");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0159
+     * @tc.name testErrorsAggregateErrorConstructor0159
+     * @tc.desc Verify large AggregateError message boundary is preserved (test point 81)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const longMsg = "m".repeat(65536);
+      const agg = new AggregateError([new Error("e")], longMsg);
+      expect(agg.message.length).assertEqual(65536);
+      expect(agg.errors[0].message).assertEqual("e");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0160
+     * @tc.name testErrorsAggregateErrorConstructor0160
+     * @tc.desc Verify AggregateError message preserves line break and tab characters (test point 63)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const message = "line1\nline2\tend";
+      const agg = new AggregateError([new Error("e")], message);
+      expect(agg.message).assertEqual(message);
+      expect(agg.errors.length).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0161
+     * @tc.name testErrorsAggregateErrorConstructor0161
+     * @tc.desc Verify instance errors pop does not mutate original source array (test point 38)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source: Error[] = [new Error("a"), new Error("b")];
+      const agg = new AggregateError(source);
+      const removed = agg.errors.pop() as Error;
+      expect(removed.message).assertEqual("b");
+      expect(agg.errors.length).assertEqual(1);
+      expect(source.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0162
+     * @tc.name testErrorsAggregateErrorConstructor0162
+     * @tc.desc Verify instance errors splice does not mutate original source array (test point 38)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source: Error[] = [new Error("a"), new Error("b"), new Error("c")];
+      const agg = new AggregateError(source);
+      const removed: Error[] = agg.errors.splice(1, 1);
+      expect(removed.length).assertEqual(1);
+      expect(removed[0].message).assertEqual("b");
+      expect(agg.errors.length).assertEqual(2);
+      expect(source.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0163
+     * @tc.name testErrorsAggregateErrorConstructor0163
+     * @tc.desc Verify Map values iterable can carry nested AggregateError entries (test points 69 and 39)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const map = new Map<string, Error>();
+      const inner = new AggregateError([new Error("inner")], "inner-msg");
+      map.set("inner", inner);
+      map.set("type", new TypeError("type"));
+      const agg = new AggregateError(map.values(), "map-values");
+      expect(agg.errors.length).assertEqual(2);
+      expect(agg.errors[0]).assertEqual(inner);
+      expect((agg.errors[0] as AggregateError).errors[0].message).assertEqual("inner");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0164
+     * @tc.name testErrorsAggregateErrorConstructor0164
+     * @tc.desc Verify empty string cause is preserved independently from message (test point 42)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const agg = new AggregateError([new Error("e")], "message", { cause: "" });
+      expect(agg.message).assertEqual("message");
+      expect(agg.cause).assertEqual("");
+      expect(agg.errors[0].message).assertEqual("e");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0165
+     * @tc.name testErrorsAggregateErrorConstructor0165
+     * @tc.desc Verify AggregateError constructor throws ClassCastError when errors is null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        new AggregateError(null as Error[]);
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('ClassCastError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_CONSTRUCTOR_0166
+     * @tc.name testErrorsAggregateErrorConstructor0166
+     * @tc.desc Verify AggregateError constructor throws ClassCastError when errors is undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsAggregateErrorConstructor0166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        new AggregateError(undefined as Error[]);
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('ClassCastError');
+      }
+    });
+  });
+}
