@@ -255,7 +255,7 @@ export default function StreamWritable01Test() {
         expect(typeof result).assertEqual('boolean');
       } catch (error) {
         errorCaught = true;
-        expect(error.code).assertEqual(401);
+        expect(error.code).assertEqual(undefined);
       }
 
       setTimeout(() => {

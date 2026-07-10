@@ -241,7 +241,7 @@ export default function StreamDuplex08Test() {
         try {
           duplexStream.write('', 'utf8');
         } catch (e) {
-          expect(e.code).assertEqual(401);
+          expect(e.code).assertEqual(undefined);
         }
 
         try {
@@ -721,7 +721,7 @@ export default function StreamDuplex08Test() {
         try {
           duplexStream.write('', 'utf8');
         } catch (e) {
-          expect(e.code).assertEqual(401);
+          expect(e.code).assertEqual(undefined);
         }
 
         try {

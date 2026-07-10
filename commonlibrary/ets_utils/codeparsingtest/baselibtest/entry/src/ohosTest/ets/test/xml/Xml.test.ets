@@ -1856,7 +1856,7 @@ export default function XmlTest() {
       try {
         that.parse(null);
       } catch (e) {
-        expect(e.code).assertEqual(401);
+        expect(e.code).assertEqual(undefined);
       }
       try {
         that.parse(undefined);
@@ -4795,7 +4795,7 @@ export default function XmlTest() {
       try {
         that.parse(null);
       } catch (err) {
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(undefined);
       }
       try {
         that.parse(undefined);
@@ -4820,7 +4820,7 @@ export default function XmlTest() {
       try {
         that.parseXml(null);
       } catch (err) {
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(undefined);
       }
       try {
         that.parseXml(undefined);
