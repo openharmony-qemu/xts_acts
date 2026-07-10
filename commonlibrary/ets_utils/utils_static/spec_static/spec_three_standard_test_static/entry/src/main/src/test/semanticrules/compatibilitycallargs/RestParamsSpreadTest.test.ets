@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -16,20 +16,9 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '@ohos/hypium-binary/src/main/indexStatic';
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-class Neg<T extends number> {
-  constructor (x: T) {}
-}
+import { Neg, Pos } from '../types.test'
+import Utils from '../../Util.test'
 
-class Pos<T extends number> {
-  constructor (x: T) {}
-}
 class A1 {
   field: number[];
   constructor(...a: number[]) {
@@ -120,7 +109,6 @@ function foo6(...callee: Array<number>): number[] {
   return callee;
 }
 
-
 export default function RestParamsSpreadTest(): void {
   describe('RestParamsSpreadTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -133,7 +121,7 @@ export default function RestParamsSpreadTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -158,8 +146,6 @@ export default function RestParamsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParamsSpread0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let arr: number[] = [0, -128, 127];
       let a: A1 = new A1(...arr);
       let method_result = a.bar1(...arr);
@@ -176,7 +162,6 @@ export default function RestParamsSpreadTest(): void {
       expect(method_result[2]).assertEqual(127);
       expect(func_result[2]).assertEqual(127);
       expect(a.field[2]).assertEqual(127);
-
     });
 
     /**
@@ -190,8 +175,6 @@ export default function RestParamsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParamsSpread0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let arr: number[] = [0, -128, 127];
       let a: A2 = new A2(...arr);
       let method_result = a.bar2(...arr);
@@ -208,7 +191,6 @@ export default function RestParamsSpreadTest(): void {
       expect(method_result[2]).assertEqual(127);
       expect(func_result[2]).assertEqual(127);
       expect(a.field[2]).assertEqual(127);
-
     });
 
     /**
@@ -222,8 +204,6 @@ export default function RestParamsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParamsSpread0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let arr: number[] = [0, -128, 127];
       let a: A3 = new A3(...arr);
       let method_result = a.bar3(...arr);
@@ -240,7 +220,6 @@ export default function RestParamsSpreadTest(): void {
       expect(method_result[2]).assertEqual(127);
       expect(func_result[2]).assertEqual(127);
       expect(a.field[2]).assertEqual(127);
-
     });
 
     /**
@@ -254,8 +233,6 @@ export default function RestParamsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParamsSpread0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let arr: number[] = [0.0, -128.0, 127.0];
       let a: A4 = new A4(...arr);
       let method_result = a.bar4(...arr);
@@ -272,7 +249,6 @@ export default function RestParamsSpreadTest(): void {
       expect(method_result[2]).assertEqual(127.0);
       expect(func_result[2]).assertEqual(127.0);
       expect(a.field[2]).assertEqual(127.0);
-
     });
 
     /**
@@ -286,8 +262,6 @@ export default function RestParamsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParamsSpread0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let arr: number[] = [0, -32768, 32767];
       let a: A5 = new A5(...arr);
       let method_result = a.bar5(...arr);
@@ -304,7 +278,6 @@ export default function RestParamsSpreadTest(): void {
       expect(method_result[2]).assertEqual(32767);
       expect(func_result[2]).assertEqual(32767);
       expect(a.field[2]).assertEqual(32767);
-
     });
 
     /**
@@ -318,8 +291,6 @@ export default function RestParamsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParamsSpread0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let arr: number[] = [0, -32768, 32767];
       let a: A6 = new A6(...arr);
       let method_result = a.bar6(...arr);
@@ -339,5 +310,3 @@ export default function RestParamsSpreadTest(): void {
     });
   })
 }
-
-
