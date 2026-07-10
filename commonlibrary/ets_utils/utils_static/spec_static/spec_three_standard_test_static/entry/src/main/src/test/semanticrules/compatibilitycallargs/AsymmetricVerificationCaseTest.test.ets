@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -16,38 +16,9 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '@ohos/hypium-binary/src/main/indexStatic';
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-class Neg<T extends number> {
-  constructor (x: T) {}
-}
-
-class Pos<T extends number> {
-  constructor (x: T) {}
-}
-function checkTypeIdentity1(a: Any, b: Any): boolean {
-  return Class.of(a as Object) === Class.of(b as Object);
-}
-function checkTypeIdentity2(a: Any, b: Any): boolean {
-  return Class.ofAny(a as Any) === Class.ofAny(b as Any);
-}
-function checkTypeIdentity3(a: Any, b: Any): boolean {
-  return Class.ofAny(a as Any) === Class.ofAny(b as Any);
-}
-function checkTypeIdentity4(a: Any, b: Any): boolean {
-  return Class.of(a as Object) === Class.of(b as Object);
-}
-function checkTypeIdentity5(a: Any, b: Any): boolean {
-  return Class.of(a as Object) === Class.of(b as Object);
-}
-function checkTypeIdentity6(a: Any, b: Any): boolean {
-  return Class.of(a as Object) === Class.of(b as Object);
-}
+import { Neg, Pos } from '../types.test'
+import { checkTypeIdentity, checkTypeIdentityOfAny } from '../../Util.test';
+import Utils from '../../Util.test'
 
 export default function AsymmetricVerificationCaseTest(): void {
   describe('AsymmetricVerificationCaseTest', () => {
@@ -61,7 +32,7 @@ export default function AsymmetricVerificationCaseTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -84,13 +55,11 @@ export default function AsymmetricVerificationCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testAsymmetricVerificationCase0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-       
-
       const val1: boolean = true;
       const val2: number = 1;
 
-      const result1 = checkTypeIdentity1(val1, val2);
-      const result2 = checkTypeIdentity1(val2, val1);
+      const result1 = checkTypeIdentity(val1, val2);
+      const result2 = checkTypeIdentity(val2, val1);
 
       expect(result1).assertEqual(false);
       expect(result2).assertEqual(false);
@@ -105,13 +74,11 @@ export default function AsymmetricVerificationCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testAsymmetricVerificationCase0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-       
-
       const val1: Function = () => "test";
       const val2: string = "test";
 
-      const result1 = checkTypeIdentity2(val1, val2);
-      const result2 = checkTypeIdentity2(val2, val1);
+      const result1 = checkTypeIdentityOfAny(val1, val2);
+      const result2 = checkTypeIdentityOfAny(val2, val1);
 
       expect(result1).assertEqual(false);
       expect(result2).assertEqual(false);
@@ -126,12 +93,10 @@ export default function AsymmetricVerificationCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testAsymmetricVerificationCase0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-       
-
       const val1: null = null;
       const val2: undefined = undefined;
 
-      const result1 = checkTypeIdentity3(val1, val2);
+      const result1 = checkTypeIdentityOfAny(val1, val2);
 
       expect(result1).assertEqual(false);
     });
@@ -145,12 +110,10 @@ export default function AsymmetricVerificationCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testAsymmetricVerificationCase0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-       
-
       const val1: number[] = [1, 2, 3];
       const val2: string[] = ["1", "2", "3"];
 
-      const result1 = checkTypeIdentity4(val1, val2);
+      const result1 = checkTypeIdentity(val1, val2);
 
       expect(result1).assertEqual(true);
     });
@@ -164,12 +127,10 @@ export default function AsymmetricVerificationCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testAsymmetricVerificationCase0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-       
-
-      const val1: Record<string, string> = {"key": "value"};
+      const val1: Record<string, string> = { "key": "value" };
       const val2: string = "test";
 
-      const result1 = checkTypeIdentity5(val1, val2);
+      const result1 = checkTypeIdentity(val1, val2);
 
       expect(result1).assertEqual(false);
     });
@@ -183,15 +144,12 @@ export default function AsymmetricVerificationCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testAsymmetricVerificationCase0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-       
-
       const val1: number = 123;
       const val2: string = "123";
 
-      const result1 = checkTypeIdentity6(val1, val2);
+      const result1 = checkTypeIdentity(val1, val2);
 
       expect(result1).assertEqual(false);
     });
   })
 }
-

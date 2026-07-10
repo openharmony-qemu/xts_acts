@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
 * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,4 +15,3 @@
 */
 export const DCR_CONST_VALUE: int = 9
 export const DCR_ANNOTATION_CONST_VALUE: int = 7
-

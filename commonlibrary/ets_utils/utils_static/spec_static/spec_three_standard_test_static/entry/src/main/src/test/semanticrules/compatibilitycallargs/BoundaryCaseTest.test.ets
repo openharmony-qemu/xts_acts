@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -16,26 +16,10 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '@ohos/hypium-binary/src/main/indexStatic';
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-class Neg<T extends number> {
-  constructor (x: T) {}
-}
+import { Neg, Pos } from '../types.test'
+import { checkTypeIdentity, checkTypeIdentityOfAny } from '../../Util.test';
+import Utils from '../../Util.test'
 
-class Pos<T extends number> {
-  constructor (x: T) {}
-}
-function checkTypeIdentity1(a: Any, b: Any): boolean {
-  return Class.ofAny(a as Any) === Class.ofAny(b as Any);
-}
-function checkTypeIdentity2(a: Any, b: Any): boolean {
-  return Class.ofAny(a as Any) === Class.ofAny(b as Any);
-}
 
 export default function BoundaryCaseTest(): void {
   describe('BoundaryCaseTest', () => {
@@ -49,7 +33,7 @@ export default function BoundaryCaseTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -73,12 +57,10 @@ export default function BoundaryCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testBoundaryCase0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        
-
       const val1: Any = null;
       const val2: null = null;
 
-      const result = checkTypeIdentity1(val1, val2);
+      const result = checkTypeIdentityOfAny(val1, val2);
       expect(result).assertEqual(true);
     });
 
@@ -92,12 +74,10 @@ export default function BoundaryCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testBoundaryCase0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        
-
       const val1: null = null;
       const val2: undefined = undefined;
 
-      const result = checkTypeIdentity2(val1, val2);
+      const result = checkTypeIdentityOfAny(val1, val2);
       expect(result).assertEqual(false);
     });
   })

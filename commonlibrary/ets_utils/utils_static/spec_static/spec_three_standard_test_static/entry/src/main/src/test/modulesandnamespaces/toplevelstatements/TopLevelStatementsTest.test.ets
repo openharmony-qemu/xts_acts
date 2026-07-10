@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
 ---
 * Copyright (c) 2021-2025 Huawei Device Co., Ltd.
@@ -17,14 +17,7 @@
 */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '@ohos/hypium-binary/src/main/indexStatic';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../Util.test'
 
 namespace TopLevelBlock0 {
   export let x: string = '';
@@ -67,7 +60,7 @@ export default function TopLevelStatementsTest(): void {
     })
 
     beforeEach(async () => {
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -90,6 +83,5 @@ export default function TopLevelStatementsTest(): void {
       expect(vi.name).assertEqual('Bob');
       expect('final+final').assertEqual(TopLevelBlock0.last);
     });
-
   })
 }

@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
 * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,4 +23,3 @@ export function dcrFunctionEnumDefault(v: DcrEnum = DcrEnum.one): int {
 export function dcrFunctionConstDefault(v: int = DCR_CONST_VALUE): int {
   return v
 }
-
