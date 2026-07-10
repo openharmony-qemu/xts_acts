@@ -142,7 +142,7 @@ export class KeyboardControllerNew {
     } catch (err) {
       console.info(TAG + `====>getOrientation error: ${err.code},message: ${err.message}`);
     };
-    return orientation === display.Orientation.LANDSCAPE || display.Orientation.LANDSCAPE_INVERTED;
+    return orientation === display.Orientation.LANDSCAPE || orientation === display.Orientation.LANDSCAPE_INVERTED;
   }
 
   async Sub_InputMethod_IME_HotAreaTest_0100(): Promise<void> {
