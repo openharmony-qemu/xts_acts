@@ -1099,3 +1099,1253 @@ export default function ErrorsInvokeTest(): void {
       const err = FormatError("m", { cause: inner });
       expect((err.cause as Error).message).assertEqual("fi");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0081
+     * @tc.name testErrorsInvoke0081
+     * @tc.desc Verify formatError.invoke cause is SyntaxError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner = new SyntaxError("ss");
+      const err = FormatError("m", { cause: inner });
+      expect((err.cause as Error) instanceof SyntaxError).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0082
+     * @tc.name testErrorsInvoke0082
+     * @tc.desc Verify formatError.invoke preserves string cause
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = FormatError("m", { cause: "fcs" });
+      expect(err.cause as string).assertEqual("fcs");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0083
+     * @tc.name testErrorsInvoke0083
+     * @tc.desc Verify formatError.invoke preserves number cause
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = FormatError("m", { cause: 1024 });
+      expect(err.cause).assertEqual(1024);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0084
+     * @tc.name testErrorsInvoke0084
+     * @tc.desc Verify formatError.invoke preserves boolean cause
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = FormatError("m", { cause: false });
+      expect(err.cause).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0085
+     * @tc.name testErrorsInvoke0085
+     * @tc.desc Verify formatError.invoke options omitted cause undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = FormatError("m");
+      expect(err.cause).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0086
+     * @tc.name testErrorsInvoke0086
+     * @tc.desc Verify syntaxError invoke new message equivalent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = SyntaxError("eq");
+      const b = new SyntaxError("eq");
+      expect(a.name).assertEqual('SyntaxError');
+      expect(a.message).assertEqual("eq");
+      expect(b.name).assertEqual('SyntaxError');
+      expect(b.message).assertEqual("eq");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0087
+     * @tc.name testErrorsInvoke0087
+     * @tc.desc Verify syntaxError invoke new instanceof equivalent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = SyntaxError("eq");
+      const b = new SyntaxError("eq");
+      expect(a.name).assertEqual('SyntaxError');
+      expect(b.name).assertEqual('SyntaxError');
+      expect(a instanceof SyntaxError).assertTrue();
+      expect(b instanceof SyntaxError).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0088
+     * @tc.name testErrorsInvoke0088
+     * @tc.desc Verify syntaxError invoke new cause equivalent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner = new Error("c");
+      const a = SyntaxError("m", { cause: inner });
+      const b = new SyntaxError("m", { cause: inner });
+      expect(a.name).assertEqual('SyntaxError');
+      expect(a.message).assertEqual("m");
+      expect(a.cause).assertEqual(inner);
+      expect((a.cause as Error).message).assertEqual("c");
+      expect(b.name).assertEqual('SyntaxError');
+      expect(b.message).assertEqual("m");
+      expect(b.cause).assertEqual(inner);
+      expect((b.cause as Error).message).assertEqual("c");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0089
+     * @tc.name testErrorsInvoke0089
+     * @tc.desc Verify rangeError invoke new message equivalent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = RangeError("eq");
+      const b = new RangeError("eq");
+      expect(a.name).assertEqual('RangeError');
+      expect(a.message).assertEqual("eq");
+      expect(b.name).assertEqual('RangeError');
+      expect(b.message).assertEqual("eq");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0090
+     * @tc.name testErrorsInvoke0090
+     * @tc.desc Verify rangeError invoke new instanceof equivalent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = RangeError("eq");
+      const b = new RangeError("eq");
+      expect(a.name).assertEqual('RangeError');
+      expect(b.name).assertEqual('RangeError');
+      expect(a instanceof RangeError).assertTrue();
+      expect(b instanceof RangeError).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0091
+     * @tc.name testErrorsInvoke0091
+     * @tc.desc Verify rangeError invoke new cause equivalent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner = new Error("c");
+      const a = RangeError("m", { cause: inner });
+      const b = new RangeError("m", { cause: inner });
+      expect(a.name).assertEqual('RangeError');
+      expect(a.message).assertEqual("m");
+      expect(a.cause).assertEqual(inner);
+      expect((a.cause as Error).message).assertEqual("c");
+      expect(b.name).assertEqual('RangeError');
+      expect(b.message).assertEqual("m");
+      expect(b.cause).assertEqual(inner);
+      expect((b.cause as Error).message).assertEqual("c");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0092
+     * @tc.name testErrorsInvoke0092
+     * @tc.desc Verify evalError invoke new message equivalent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = EvalError("eq");
+      const b = new EvalError("eq");
+      expect(a.name).assertEqual('EvalError');
+      expect(a.message).assertEqual("eq");
+      expect(b.name).assertEqual('EvalError');
+      expect(b.message).assertEqual("eq");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0093
+     * @tc.name testErrorsInvoke0093
+     * @tc.desc Verify evalError invoke new instanceof equivalent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = EvalError("eq");
+      const b = new EvalError("eq");
+      expect(a.name).assertEqual('EvalError');
+      expect(b.name).assertEqual('EvalError');
+      expect(a instanceof EvalError).assertTrue();
+      expect(b instanceof EvalError).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0094
+     * @tc.name testErrorsInvoke0094
+     * @tc.desc Verify evalError invoke new cause equivalent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner = new Error("c");
+      const a = EvalError("m", { cause: inner });
+      const b = new EvalError("m", { cause: inner });
+      expect(a.name).assertEqual('EvalError');
+      expect(a.message).assertEqual("m");
+      expect(a.cause).assertEqual(inner);
+      expect((a.cause as Error).message).assertEqual("c");
+      expect(b.name).assertEqual('EvalError');
+      expect(b.message).assertEqual("m");
+      expect(b.cause).assertEqual(inner);
+      expect((b.cause as Error).message).assertEqual("c");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0095
+     * @tc.name testErrorsInvoke0095
+     * @tc.desc Verify nonIntegralIndexError invoke new message equivalent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = NonIntegralIndexError("eq");
+      const b = new NonIntegralIndexError("eq");
+      expect(a.name).assertEqual('NonIntegralIndexError');
+      expect(a.message).assertEqual("eq");
+      expect(b.name).assertEqual('NonIntegralIndexError');
+      expect(b.message).assertEqual("eq");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0096
+     * @tc.name testErrorsInvoke0096
+     * @tc.desc Verify nonIntegralIndexError invoke new instanceof equivalent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = NonIntegralIndexError("eq");
+      const b = new NonIntegralIndexError("eq");
+      expect(a.name).assertEqual('NonIntegralIndexError');
+      expect(b.name).assertEqual('NonIntegralIndexError');
+      expect(a instanceof NonIntegralIndexError).assertTrue();
+      expect(b instanceof NonIntegralIndexError).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0097
+     * @tc.name testErrorsInvoke0097
+     * @tc.desc Verify nonIntegralIndexError invoke new cause equivalent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner = new Error("c");
+      const a = NonIntegralIndexError("m", { cause: inner });
+      const b = new NonIntegralIndexError("m", { cause: inner });
+      expect(a.name).assertEqual('NonIntegralIndexError');
+      expect(a.message).assertEqual("m");
+      expect(a.cause).assertEqual(inner);
+      expect((a.cause as Error).message).assertEqual("c");
+      expect(b.name).assertEqual('NonIntegralIndexError');
+      expect(b.message).assertEqual("m");
+      expect(b.cause).assertEqual(inner);
+      expect((b.cause as Error).message).assertEqual("c");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0098
+     * @tc.name testErrorsInvoke0098
+     * @tc.desc Verify typeError invoke new message equivalent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = TypeError("eq");
+      const b = new TypeError("eq");
+      expect(a.name).assertEqual('TypeError');
+      expect(a.message).assertEqual("eq");
+      expect(b.name).assertEqual('TypeError');
+      expect(b.message).assertEqual("eq");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0099
+     * @tc.name testErrorsInvoke0099
+     * @tc.desc Verify typeError invoke new instanceof equivalent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = TypeError("eq");
+      const b = new TypeError("eq");
+      expect(a.name).assertEqual('TypeError');
+      expect(b.name).assertEqual('TypeError');
+      expect(a instanceof TypeError).assertTrue();
+      expect(b instanceof TypeError).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0100
+     * @tc.name testErrorsInvoke0100
+     * @tc.desc Verify typeError invoke new cause equivalent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner = new Error("c");
+      const a = TypeError("m", { cause: inner });
+      const b = new TypeError("m", { cause: inner });
+      expect(a.name).assertEqual('TypeError');
+      expect(a.message).assertEqual("m");
+      expect(a.cause).assertEqual(inner);
+      expect((a.cause as Error).message).assertEqual("c");
+      expect(b.name).assertEqual('TypeError');
+      expect(b.message).assertEqual("m");
+      expect(b.cause).assertEqual(inner);
+      expect((b.cause as Error).message).assertEqual("c");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0101
+     * @tc.name testErrorsInvoke0101
+     * @tc.desc Verify referenceError invoke new message equivalent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = ReferenceError("eq");
+      const b = new ReferenceError("eq");
+      expect(a.name).assertEqual('ReferenceError');
+      expect(a.message).assertEqual("eq");
+      expect(b.name).assertEqual('ReferenceError');
+      expect(b.message).assertEqual("eq");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0102
+     * @tc.name testErrorsInvoke0102
+     * @tc.desc Verify referenceError invoke new instanceof equivalent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = ReferenceError("eq");
+      const b = new ReferenceError("eq");
+      expect(a.name).assertEqual('ReferenceError');
+      expect(b.name).assertEqual('ReferenceError');
+      expect(a instanceof ReferenceError).assertTrue();
+      expect(b instanceof ReferenceError).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0103
+     * @tc.name testErrorsInvoke0103
+     * @tc.desc Verify referenceError invoke new cause equivalent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner = new Error("c");
+      const a = ReferenceError("m", { cause: inner });
+      const b = new ReferenceError("m", { cause: inner });
+      expect(a.name).assertEqual('ReferenceError');
+      expect(a.message).assertEqual("m");
+      expect(a.cause).assertEqual(inner);
+      expect((a.cause as Error).message).assertEqual("c");
+      expect(b.name).assertEqual('ReferenceError');
+      expect(b.message).assertEqual("m");
+      expect(b.cause).assertEqual(inner);
+      expect((b.cause as Error).message).assertEqual("c");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0104
+     * @tc.name testErrorsInvoke0104
+     * @tc.desc Verify URIError invoke new message equivalent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = URIError("eq");
+      const b = new URIError("eq");
+      expect(a.name).assertEqual('URIError');
+      expect(a.message).assertEqual("eq");
+      expect(b.name).assertEqual('URIError');
+      expect(b.message).assertEqual("eq");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0105
+     * @tc.name testErrorsInvoke0105
+     * @tc.desc Verify URIError invoke new instanceof equivalent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = URIError("eq");
+      const b = new URIError("eq");
+      expect(a.name).assertEqual('URIError');
+      expect(b.name).assertEqual('URIError');
+      expect(a instanceof URIError).assertTrue();
+      expect(b instanceof URIError).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0106
+     * @tc.name testErrorsInvoke0106
+     * @tc.desc Verify URIError invoke new cause equivalent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner = new Error("c");
+      const a = URIError("m", { cause: inner });
+      const b = new URIError("m", { cause: inner });
+      expect(a.name).assertEqual('URIError');
+      expect(a.message).assertEqual("m");
+      expect(a.cause).assertEqual(inner);
+      expect((a.cause as Error).message).assertEqual("c");
+      expect(b.name).assertEqual('URIError');
+      expect(b.message).assertEqual("m");
+      expect(b.cause).assertEqual(inner);
+      expect((b.cause as Error).message).assertEqual("c");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0107
+     * @tc.name testErrorsInvoke0107
+     * @tc.desc Verify formatError invoke new message equivalent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = FormatError("eq");
+      const b = new FormatError("eq");
+      expect(a.name).assertEqual('FormatError');
+      expect(a.message).assertEqual("eq");
+      expect(b.name).assertEqual('FormatError');
+      expect(b.message).assertEqual("eq");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0108
+     * @tc.name testErrorsInvoke0108
+     * @tc.desc Verify formatError invoke new instanceof equivalent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = FormatError("eq");
+      const b = new FormatError("eq");
+      expect(a.name).assertEqual('FormatError');
+      expect(b.name).assertEqual('FormatError');
+      expect(a instanceof FormatError).assertTrue();
+      expect(b instanceof FormatError).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0109
+     * @tc.name testErrorsInvoke0109
+     * @tc.desc Verify formatError invoke new cause equivalent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner = new Error("c");
+      const a = FormatError("m", { cause: inner });
+      const b = new FormatError("m", { cause: inner });
+      expect(a.name).assertEqual('FormatError');
+      expect(a.message).assertEqual("m");
+      expect(a.cause).assertEqual(inner);
+      expect((a.cause as Error).message).assertEqual("c");
+      expect(b.name).assertEqual('FormatError');
+      expect(b.message).assertEqual("m");
+      expect(b.cause).assertEqual(inner);
+      expect((b.cause as Error).message).assertEqual("c");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0110
+     * @tc.name testErrorsInvoke0110
+     * @tc.desc Verify syntaxError.invoke returns instanceof SyntaxError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = SyntaxError("m");
+      expect(err instanceof SyntaxError).assertTrue();
+      expect(err.name).assertEqual('SyntaxError');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0111
+     * @tc.name testErrorsInvoke0111
+     * @tc.desc Verify syntaxError.invoke returns instanceof Error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = SyntaxError("m");
+      expect(err.name).assertEqual('SyntaxError');
+      expect(err instanceof Error).assertTrue();
+    }); 
+    
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0112
+     * @tc.name testErrorsInvoke0112
+     * @tc.desc Verify rangeError.invoke returns instanceof Error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = RangeError("m");
+      expect(err.name).assertEqual('RangeError');
+      expect(err instanceof Error).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0113
+     * @tc.name testErrorsInvoke0113
+     * @tc.desc Verify evalError.invoke returns instanceof EvalError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = EvalError("m");
+      expect(err instanceof EvalError).assertTrue();
+      expect(err.name).assertEqual('EvalError');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0114
+     * @tc.name testErrorsInvoke0114
+     * @tc.desc Verify evalError.invoke returns instanceof Error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = EvalError("m");
+      expect(err.name).assertEqual('EvalError');
+      expect(err instanceof Error).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0115
+     * @tc.name testErrorsInvoke0115
+     * @tc.desc Verify nonIntegralIndexError.invoke returns instanceof NonIntegralIndexError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = NonIntegralIndexError("m");
+      expect(err instanceof NonIntegralIndexError).assertTrue();
+      expect(err.name).assertEqual('NonIntegralIndexError');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0116
+     * @tc.name testErrorsInvoke0116
+     * @tc.desc Verify nonIntegralIndexError.invoke returns instanceof Error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = NonIntegralIndexError("m");
+      expect(err.name).assertEqual('NonIntegralIndexError');
+      expect(err instanceof Error).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0117
+     * @tc.name testErrorsInvoke0117
+     * @tc.desc Verify typeError.invoke returns instanceof TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = TypeError("m");
+      expect(err instanceof TypeError).assertTrue();
+      expect(err.name).assertEqual('TypeError');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0118
+     * @tc.name testErrorsInvoke0118
+     * @tc.desc Verify typeError.invoke returns instanceof Error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = TypeError("m");
+      expect(err.name).assertEqual('TypeError');
+      expect(err instanceof Error).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0119
+     * @tc.name testErrorsInvoke0119
+     * @tc.desc Verify referenceError.invoke returns instanceof ReferenceError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = ReferenceError("m");
+      expect(err instanceof ReferenceError).assertTrue();
+      expect(err.name).assertEqual('ReferenceError');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0120
+     * @tc.name testErrorsInvoke0120
+     * @tc.desc Verify referenceError.invoke returns instanceof Error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = ReferenceError("m");
+      expect(err.name).assertEqual('ReferenceError');
+      expect(err instanceof Error).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0121
+     * @tc.name testErrorsInvoke0121
+     * @tc.desc Verify URIError.invoke returns instanceof URIError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = URIError("m");
+      expect(err instanceof URIError).assertTrue();
+      expect(err.name).assertEqual('URIError');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0122
+     * @tc.name testErrorsInvoke0122
+     * @tc.desc Verify URIError.invoke returns instanceof Error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = URIError("m");
+      expect(err.name).assertEqual('URIError');
+      expect(err instanceof Error).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0123
+     * @tc.name testErrorsInvoke0123
+     * @tc.desc Verify formatError.invoke returns instanceof FormatError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = FormatError("m");
+      expect(err instanceof FormatError).assertTrue();
+      expect(err.name).assertEqual('FormatError');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0124
+     * @tc.name testErrorsInvoke0124
+     * @tc.desc Verify formatError.invoke returns instanceof Error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = FormatError("m");
+      expect(err.name).assertEqual('FormatError');
+      expect(err instanceof Error).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0125
+     * @tc.name testErrorsInvoke0125
+     * @tc.desc Verify rangeError.invoke returns RangeError identity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = RangeError("m");
+      expect(err.name).assertEqual('RangeError');
+      expect(err instanceof RangeError).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0126
+     * @tc.name testErrorsInvoke0126
+     * @tc.desc Verify call SyntaxError.invoke independent instance
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = SyntaxError("m");
+      const b = SyntaxError("m");
+      expect(a).not().assertEqual(b);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0127
+     * @tc.name testErrorsInvoke0127
+     * @tc.desc Verify call RangeError.invoke independent instance
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = RangeError("m");
+      const b = RangeError("m");
+      expect(a).not().assertEqual(b);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0128
+     * @tc.name testErrorsInvoke0128
+     * @tc.desc Verify call TypeError.invoke independent instance
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = TypeError("m");
+      const b = TypeError("m");
+      expect(a).not().assertEqual(b);
+    }); 
+    
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0129
+     * @tc.name testErrorsInvoke0129
+     * @tc.desc Verify URIError.invoke object cause keeps name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj = new Error("v");
+      const err = URIError("m", { cause: obj });
+      expect(err.name).assertEqual('URIError');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0130
+     * @tc.name testErrorsInvoke0130
+     * @tc.desc Verify formatError.invoke preserves RangeError cause type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner = new RangeError("ri");
+      const err = FormatError("m", { cause: inner });
+      expect((err.cause as Error) instanceof RangeError).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0131
+     * @tc.name testErrorsInvoke0131
+     * @tc.desc Verify syntaxError throw invoke instance is caught
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        throw SyntaxError("th");
+      } catch (e) {
+        expect((e as Error).name).assertEqual('SyntaxError');
+        expect((e as Error).message).assertEqual("th");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0132
+     * @tc.name testErrorsInvoke0132
+     * @tc.desc Verify rangeError throw invoke instance is caught
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        throw RangeError("th");
+      } catch (e) {
+        expect((e as Error).name).assertEqual('RangeError');
+        expect((e as Error).message).assertEqual("th");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0133
+     * @tc.name testErrorsInvoke0133
+     * @tc.desc Verify typeError throw invoke instance is caught
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        throw TypeError("th");
+      } catch (e) {
+        expect((e as Error).name).assertEqual('TypeError');
+        expect((e as Error).message).assertEqual("th");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0134
+     * @tc.name testErrorsInvoke0134
+     * @tc.desc Verify SyntaxError invoke 0 argument call
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = SyntaxError();
+      expect(err.name).assertEqual('SyntaxError');
+      expect(err.message).assertEqual("");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0135
+     * @tc.name testErrorsInvoke0135
+     * @tc.desc Verify RangeError invoke 1 argument call message
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = RangeError("base");
+      expect(err instanceof RangeError).assertTrue();
+      expect(err.message).assertEqual("base");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0136
+     * @tc.name testErrorsInvoke0136
+     * @tc.desc Verify TypeError invoke cause is RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner = RangeError("inner");
+      const err = TypeError("outer", { cause: inner });
+      expect((err.cause as Error) instanceof RangeError).assertTrue();
+      expect((err.cause as Error).message).assertEqual("inner");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0137
+     * @tc.name testErrorsInvoke0137
+     * @tc.desc Verify URIError invoke nested cause chain
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const leaf = SyntaxError("leaf");
+      const inner = TypeError("inner", { cause: leaf });
+      const err = URIError("outer", { cause: inner });
+      expect((err.cause as Error) instanceof TypeError).assertTrue();
+      expect(((err.cause as Error).cause as Error) instanceof SyntaxError).assertTrue();
+      expect(((err.cause as Error).cause as Error).message).assertEqual("leaf");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0138
+     * @tc.name testErrorsInvoke0138
+     * @tc.desc Verify FormatError invoke cause is boolean
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = FormatError("primitive", { cause: true });
+      expect(err.cause).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0139
+     * @tc.name testErrorsInvoke0139
+     * @tc.desc Verify NonIntegralIndexError invoke nullable variable keeps message
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error | null = NonIntegralIndexError("nullable");
+      expect((err as Error).message).assertEqual("nullable");
+      expect((err as Error).name).assertEqual('NonIntegralIndexError');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0140
+     * @tc.name testErrorsInvoke0140
+     * @tc.desc Verify SyntaxError invoke optional variable keeps message
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error | undefined = SyntaxError("optional");
+      expect((err as Error).message).assertEqual("optional");
+      expect((err as Error).name).assertEqual('SyntaxError');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0141
+     * @tc.name testErrorsInvoke0141
+     * @tc.desc Verify RangeError invoke name and message field types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = RangeError("fields");
+      expect(err.name).assertEqual("RangeError");
+      expect(err.message).assertEqual("fields");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0142
+     * @tc.name testErrorsInvoke0142
+     * @tc.desc Verify TypeError invoke empty message remains empty
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = TypeError("");
+      expect(err.message).assertEqual("");
+      expect(err.name).assertEqual('TypeError');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0143
+     * @tc.name testErrorsInvoke0143
+     * @tc.desc Verify EvalError invoke keeps readable name and message
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = EvalError("json");
+      expect(err.name).assertEqual('EvalError');
+      expect(err.message).assertEqual("json");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0144
+     * @tc.name testErrorsInvoke0144
+     * @tc.desc Verify FormatError invoke name override value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = FormatError("custom-name");
+      err.name = "MySpecialName";
+      expect(err.name).assertEqual("MySpecialName");
+      expect(err.message).assertEqual("custom-name");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0145
+     * @tc.name testErrorsInvoke0145
+     * @tc.desc Verify direct SyntaxError.$_invoke static API
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = SyntaxError.$_invoke("static-message");
+      expect(err instanceof SyntaxError).assertTrue();
+      expect(err.name).assertEqual('SyntaxError');
+      expect(err.message).assertEqual("static-message");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0146
+     * @tc.name testErrorsInvoke0146
+     * @tc.desc Verify direct RangeError.$_invoke static API
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = RangeError.$_invoke("range-static");
+      expect(err instanceof RangeError).assertTrue();
+      expect(err.name).assertEqual('RangeError');
+      expect(err.message).assertEqual("range-static");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0147
+     * @tc.name testErrorsInvoke0147
+     * @tc.desc Verify direct EvalError.$_invoke static API
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = EvalError.$_invoke("eval-static");
+      expect(err instanceof EvalError).assertTrue();
+      expect(err.name).assertEqual('EvalError');
+      expect(err.message).assertEqual("eval-static");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0148
+     * @tc.name testErrorsInvoke0148
+     * @tc.desc Verify direct NonIntegralIndexError.$_invoke static API
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = NonIntegralIndexError.$_invoke("non-int-static");
+      expect(err instanceof NonIntegralIndexError).assertTrue();
+      expect(err.name).assertEqual('NonIntegralIndexError');
+      expect(err.message).assertEqual("non-int-static");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0149
+     * @tc.name testErrorsInvoke0149
+     * @tc.desc Verify direct TypeError.$_invoke static API
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = TypeError.$_invoke("type-static");
+      expect(err instanceof TypeError).assertTrue();
+      expect(err.name).assertEqual('TypeError');
+      expect(err.message).assertEqual("type-static");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0150
+     * @tc.name testErrorsInvoke0150
+     * @tc.desc Verify direct ReferenceError.$_invoke static API
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = ReferenceError.$_invoke("ref-static");
+      expect(err instanceof ReferenceError).assertTrue();
+      expect(err.name).assertEqual('ReferenceError');
+      expect(err.message).assertEqual("ref-static");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0151
+     * @tc.name testErrorsInvoke0151
+     * @tc.desc Verify direct URIError.$_invoke static API
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = URIError.$_invoke("uri-static");
+      expect(err instanceof URIError).assertTrue();
+      expect(err.name).assertEqual('URIError');
+      expect(err.message).assertEqual("uri-static");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0152
+     * @tc.name testErrorsInvoke0152
+     * @tc.desc Verify direct FormatError.$_invoke static API
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = FormatError.$_invoke("format-static");
+      expect(err instanceof FormatError).assertTrue();
+      expect(err.name).assertEqual('FormatError');
+      expect(err.message).assertEqual("format-static");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0153
+     * @tc.name testErrorsInvoke0153
+     * @tc.desc Verify invoke with no arguments defaults to empty message (test point 106)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = SyntaxError.$_invoke();
+      expect(err.message).assertEqual("");
+      expect(err.name).assertEqual('SyntaxError');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0154
+     * @tc.name testErrorsInvoke0154
+     * @tc.desc Verify invoke with undefined message defaults to empty (test point 107)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = RangeError.$_invoke(undefined);
+      expect(err.message).assertEqual("");
+      expect(err.name).assertEqual('RangeError');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0155
+     * @tc.name testErrorsInvoke0155
+     * @tc.desc Verify invoke cause nested Error chain (test point 42)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner = new Error("inner");
+      const err = TypeError.$_invoke("outer", { cause: inner } as ErrorOptions);
+      expect((err.cause as Error).message).assertEqual("inner");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0156
+     * @tc.name testErrorsInvoke0156
+     * @tc.desc Verify invoke deeply nested cause chain (test point 43)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const root = new Error("root");
+      const mid = RangeError.$_invoke("mid", { cause: root } as ErrorOptions);
+      const outer = TypeError.$_invoke("outer", { cause: mid } as ErrorOptions);
+      expect(((outer.cause as Error).cause as Error).message).assertEqual("root");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0157
+     * @tc.name testErrorsInvoke0157
+     * @tc.desc Verify invoke all 8 types return correct instanceof (test point 9)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(SyntaxError.$_invoke("s") instanceof SyntaxError).assertTrue();
+      expect(RangeError.$_invoke("r") instanceof RangeError).assertTrue();
+      expect(EvalError.$_invoke("e") instanceof EvalError).assertTrue();
+      expect(NonIntegralIndexError.$_invoke("n") instanceof NonIntegralIndexError).assertTrue();
+      expect(TypeError.$_invoke("t") instanceof TypeError).assertTrue();
+      expect(ReferenceError.$_invoke("ref") instanceof ReferenceError).assertTrue();
+      expect(URIError.$_invoke("u") instanceof URIError).assertTrue();
+      expect(FormatError.$_invoke("f") instanceof FormatError).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0158
+     * @tc.name testErrorsInvoke0158
+     * @tc.desc Verify invoke metadata cache consistency 100 reads (test point 117)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = RangeError.$_invoke("cached");
+      expect(err.name).assertEqual("RangeError");
+      expect(err.message).assertEqual("cached");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_INVOKE_0159
+     * @tc.name testErrorsInvoke0159
+     * @tc.desc Verify all 8 types $_invoke with options.cause parameter matrix
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testErrorsInvoke0159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner = new Error("inner");
+      const opts = { cause: inner } as ErrorOptions;
+      expect((SyntaxError.$_invoke("m", opts).cause as Error).message).assertEqual("inner");
+      expect((RangeError.$_invoke("m", opts).cause as Error).message).assertEqual("inner");
+      expect((EvalError.$_invoke("m", opts).cause as Error).message).assertEqual("inner");
+      expect((NonIntegralIndexError.$_invoke("m", opts).cause as Error).message).assertEqual("inner");
+      expect((TypeError.$_invoke("m", opts).cause as Error).message).assertEqual("inner");
+      expect((ReferenceError.$_invoke("m", opts).cause as Error).message).assertEqual("inner");
+      expect((URIError.$_invoke("m", opts).cause as Error).message).assertEqual("inner");
+      expect((FormatError.$_invoke("m", opts).cause as Error).message).assertEqual("inner");
+    });
+  });
+}
