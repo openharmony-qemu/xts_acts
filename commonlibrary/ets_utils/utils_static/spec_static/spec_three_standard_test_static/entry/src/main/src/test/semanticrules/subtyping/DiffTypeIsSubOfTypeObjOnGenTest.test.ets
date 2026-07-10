@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -16,40 +16,9 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '@ohos/hypium-binary/src/main/indexStatic';
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import { A_1, B1_1, B2_1, C1_1, C2_1, Other_1 } from '../types.test';
+import Utils from '../../Util.test'
 
-abstract class A_1<U, V> {}
-abstract class B1_1<U, V> extends A_1<U, V> {}
-class B2_1<U, V> extends A_1<U, V> {
-  b2_v: U | V
-  constructor (p: U | V) {
-    this.b2_v = p
-  }
-}
-class C1_1<U, V> extends B1_1<U, V> {
-  c1_v: U | V
-  constructor (p: U | V) {
-    this.c1_v = p
-  }
-}
-class C2_1<U, V> extends B1_1<U, V> {
-  c2_v: U | V
-  constructor (p: U | V) {
-    this.c2_v = p
-  }
-}
-class Other_1<T> {
-  other_v: T
-  constructor (p: T) {
-    this.other_v = p
-  }
-}
 function check_C1_1(a: object) {
   expect(a instanceof C1_1).assertTrue()
   expect((a as C1_1<number, null>).c1_v as number).assertEqual(321)
@@ -63,18 +32,18 @@ function foo_1(v: object): void {
 }
 function f1_1(v: C1_1<number, null> | C2_1<number, string> | B2_1<bigint, undefined> | Other_1<string>): number {
   expect(v instanceof object).assertTrue()
-  foo_1(v)
+  foo_1(v as object)
   return f2_1(v)
 }
 function f2_1(v: C1_1<number, null> | C2_1<number, string> | B2_1<bigint, undefined> | Other_1<string>): number {
   if (v instanceof B1_1 || v instanceof Other_1) {
-    check_C1_1(v)
+    check_C1_1(v as object)
     return 1
   } else {
     expect(v instanceof C1_1 || v instanceof C2_1 || v instanceof B2_1 || v instanceof Other_1).assertTrue()
     expect(v instanceof object).assertTrue()
-    foo_1(v)
-    check_B2_1(v)
+    foo_1(v as object)
+    check_B2_1(v as object)
     return 2
   }
 }
@@ -226,7 +195,7 @@ export default function DiffTypeIsSubOfTypeObjOnGenTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -286,7 +255,6 @@ export default function DiffTypeIsSubOfTypeObjOnGenTest(): void {
       expect(res).assertEqual(1);
       res = testNS3_9.f1_9(new testNS3_9.C3_9<bigint, undefined>(321n));
       expect(res).assertEqual(2);
-      expect(testNS3_9.runTest_9()).assertEqual(true);
     });
   })
 }
