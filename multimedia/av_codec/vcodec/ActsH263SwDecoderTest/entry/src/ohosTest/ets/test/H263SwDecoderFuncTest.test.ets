@@ -13,7 +13,8 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { hilog } from '@kit.PerFormanceAnalysisKit'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType. Size} from '@ohos/hypium';
 import testNapi from 'libh263swdecoder_test.so';
 import fs from '@ohos.file.fs';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -52,6 +53,7 @@ async function copyRawFileToSandbox(context: Context, rawFileName: string, targe
 }
 
 export default function H263SwDecoderFuncTest() {
+  let TAG = '';
   describe('H263SwDecoderFunctionTest', () => {
     beforeAll(async () => {
       console.info('H263SwDecoderFunctionTest beforeAll called');
@@ -101,55 +103,87 @@ export default function H263SwDecoderFuncTest() {
     });
 
     /**
-     * @tc.name   VIDEO_DECODE_SYNC_SW263_FUNC_0010
-     * @tc.number VIDEO_DECODE_SYNC_SW263_FUNC_0010
+     * @tc.name   SUB_MULTIMEDIA_VIDEO_DECODER_SYNC_S263_0100
+     * @tc.number SUB_MULTIMEDIA_VIDEO_DECODER_SYNC_S263_0100
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_DECODE_SYNC_SW263_FUNC_0010', Level.LEVEL1, async () => {
-      let result: number = testNapi.runFuncTest(0);
-      expect(result).assertEqual(0);
+    it('SUB_MULTIMEDIA_VIDEO_DECODER_SYNC_S263_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TAG = 'SUB_MULTIMEDIA_VIDEO_DECODER_SYNC_S263_0100';
+      try {
+        let result: number = testNapi.VideoDecodeSyncSw263Func0010Test();
+        console.info(TAG + "test ret Result ===>" + result);
+        expect(result).assertEqual(0)
+        done();
+      } catch (err) {
+        console.error("===> " + TAG + "err:" + err);
+        done()
+      }
     });
 
     /**
-     * @tc.name   VIDEO_DECODE_SYNC_SW263_FUNC_0020
-     * @tc.number VIDEO_DECODE_SYNC_SW263_FUNC_0020
-     * @tc.desc   function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('VIDEO_DECODE_SYNC_SW263_FUNC_0020', Level.LEVEL0, async () => {
-      let result: number = testNapi.runFuncTest(1);
-      expect(result).assertEqual(0);
-    });
-
-    /**
-     * @tc.name   VIDEO_DECODE_SYNC_SW263_FUNC_0040
-     * @tc.number VIDEO_DECODE_SYNC_SW263_FUNC_0040
+     * @tc.name   SUB_MULTIMEDIA_VIDEO_DECODER_SYNC_S263_0200
+     * @tc.number SUB_MULTIMEDIA_VIDEO_DECODER_SYNC_S263_0200
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_DECODE_SYNC_SW263_FUNC_0040', Level.LEVEL1, async () => {
-      let result: number = testNapi.runFuncTest(2);
-      expect(result).assertEqual(0);
+    it('SUB_MULTIMEDIA_VIDEO_DECODER_SYNC_S263_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TAG = 'SUB_MULTIMEDIA_VIDEO_DECODER_SYNC_S263_0200';
+      try {
+        let result: number = testNapi.VideoDecodeSyncSw263Func0020Test();
+        console.info(TAG + "test ret Result ===>" + result);
+        expect(result).assertEqual(0)
+        done();
+      } catch (err) {
+        console.error("===> " + TAG + "err:" + err);
+        done()
+      }
     });
 
     /**
-     * @tc.name   VIDEO_DECODE_SW263_BLANK_FRAME_0010
-     * @tc.number VIDEO_DECODE_SW263_BLANK_FRAME_0010
+     * @tc.name   SUB_MULTIMEDIA_VIDEO_DECODER_SYNC_S263_0400
+     * @tc.number SUB_MULTIMEDIA_VIDEO_DECODER_SYNC_S263_0400
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('VIDEO_DECODE_SW263_BLANK_FRAME_0010', Level.LEVEL0, async () => {
-      let result: number = testNapi.runFuncTest(3);
-      expect(result).assertEqual(0);
+    it('SUB_MULTIMEDIA_VIDEO_DECODER_SYNC_S263_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TAG = 'SUB_MULTIMEDIA_VIDEO_DECODER_SYNC_S263_0400';
+      try {
+        let result: number = testNapi.VideoDecodeSyncSw263Func0040Test();
+        console.info(TAG + "test ret Result ===>" + result);
+        expect(result).assertEqual(0)
+        done();
+      } catch (err) {
+        console.error("===> " + TAG + "err:" + err);
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_VIDEO_DECODER_BLACK_S263_0400
+     * @tc.number SUB_MULTIMEDIA_VIDEO_DECODER_BLACK_S263_0400
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_VIDEO_DECODER_BLACK_S263_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TAG = 'SUB_MULTIMEDIA_VIDEO_DECODER_BLACK_S263_0400';
+      try {
+        let result: number = testNapi.VideoDecodeSw263BlankFrame0010Test();
+        console.info(TAG + "test ret Result ===>" + result);
+        expect(result).assertEqual(0)
+        done();
+      } catch (err) {
+        console.error("===> " + TAG + "err:" + err);
+        done()
+      }
     });
 
   });

@@ -18,4 +18,7 @@
  * @param caseNumber 测试用例编号 (0-3)
  * @returns 测试结果，0 表示成功，-1 表示失败
  */
-export const runFuncTest: (caseNumber: number) => number;
+export const VideoDecodeSyncSw263Func0010Test: () => number;
+export const VideoDecodeSyncSw263Func0020Test: () => number;
+export const VideoDecodeSyncSw263Func0030Test: () => number;
+export const VideoDecodeSw263BlankFrame0010Test: () => number;
