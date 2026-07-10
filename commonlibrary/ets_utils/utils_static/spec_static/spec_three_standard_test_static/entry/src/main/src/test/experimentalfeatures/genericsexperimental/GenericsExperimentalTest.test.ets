@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
 * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,16 +14,8 @@
  * limitations under the License.
 */
 
-
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../Util.test'
 
 
 class A<T> {
@@ -154,11 +146,6 @@ class B7<T extends A11 | undefined> {
   }
 }
 
-
-
-
-
-
 export default function GenericsExperimentalTest(): void {
   describe('GenericsExperimentalTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -171,7 +158,7 @@ export default function GenericsExperimentalTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -184,7 +171,6 @@ export default function GenericsExperimentalTest(): void {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
 
     /**
      * @tc.number    SUB_GENERICS_EXPERIMENTAL_XTSTEST_0100
@@ -200,7 +186,6 @@ export default function GenericsExperimentalTest(): void {
       expect(result !== null && result !== undefined).assertEqual(true);
     });
 
-
     /**
      * @tc.number    SUB_GENERICS_EXPERIMENTAL_XTSTEST_0200
      * @tc.name      testGenericsExperimental0002
@@ -213,7 +198,6 @@ export default function GenericsExperimentalTest(): void {
       let a = new A1<Object>();
       let result = a.foo(new Object());
       expect(result!== null && result!== undefined).assertEqual(true);
-
     });
 
     /**
@@ -229,7 +213,6 @@ export default function GenericsExperimentalTest(): void {
       let b = new B<A2>();
       let result = b.foo(new A2("test"));
       expect(result!== null).assertEqual(true);
-
     });
 
     /**
@@ -245,7 +228,6 @@ export default function GenericsExperimentalTest(): void {
       let b = new B1<A3>();
       let result = b.foo(new A3("test"));
       expect(result!== undefined).assertEqual(true);
-
     });
 
     /**
@@ -269,7 +251,6 @@ export default function GenericsExperimentalTest(): void {
       }
       expect(hasThrown).assertEqual(true);
     });
-
 
     /**
      * @tc.number    SUB_GENERICS_EXPERIMENTAL_XTSTEST_0600
@@ -306,7 +287,6 @@ export default function GenericsExperimentalTest(): void {
       let a = new A6<undefined>();
       let result = a.foo(undefined);
       expect(result === undefined).assertEqual(true);
-
     });
 
     /**
@@ -322,7 +302,6 @@ export default function GenericsExperimentalTest(): void {
       let a = new A7<null>();
       let result = a.foo(null);
       expect(result === null).assertEqual(true);
-
     });
 
     /**
@@ -338,7 +317,6 @@ export default function GenericsExperimentalTest(): void {
       let b = new B4<A8>();
       let result = b.foo(new A8("test"));
       expect(result !== null).assertEqual(true);
-
     });
 
     /**
@@ -354,7 +332,6 @@ export default function GenericsExperimentalTest(): void {
       let b = new B5<A9>();
       let result = b.foo(new A9("test"));
       expect(result !== null).assertEqual(true);
-
     });
 
     /**
@@ -370,7 +347,6 @@ export default function GenericsExperimentalTest(): void {
       let b = new B6<null>();
       let result = b.foo(null);
       expect(result === null).assertEqual(true);
-
     });
 
     /**
@@ -386,7 +362,6 @@ export default function GenericsExperimentalTest(): void {
       let b = new B7<undefined>();
       let result = b.foo(undefined);
       expect(result === undefined).assertEqual(true);
-
     });
   })
 }
