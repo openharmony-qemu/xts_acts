@@ -152,6 +152,8 @@
     "MainAbility/pages/RichEditorApi13/RichEditorStyledStringTest",
     "MainAbility/pages/RichEditorApi13/barState",
     "MainAbility/pages/RichEditorApi13/barStateModifier",
+    "MainAbility/pages/RichEditorApi13/enableHapticFeedback",
+    "MainAbility/pages/RichEditorApi13/enableHapticFeedbackModifier",
     "MainAbility/pages/RichEditorApi14/onHover",
     "MainAbility/pages/RichEditorApi14/getRectsForRange",
     "MainAbility/pages/RichEditorApi14/onWillChange",

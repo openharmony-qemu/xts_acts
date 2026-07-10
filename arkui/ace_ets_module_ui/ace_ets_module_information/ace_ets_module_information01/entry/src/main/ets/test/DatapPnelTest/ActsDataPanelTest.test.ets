@@ -1989,7 +1989,7 @@ export default function ActsDataPanelTest() {
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0200 component obj.$attrs is: " + JSON.stringify(obj.$attrs));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0200 component obj.$attrs.trackShadow is: " +
           JSON.stringify(obj.$attrs.trackShadow));
-          expect(obj.$attrs.trackShadow.radius).assertEqual("20.000000");
+          expect(obj.$attrs.trackShadow.radius).assertEqual(Math.round(px2fp(getContext().resourceManager.getNumber(0x07800000 + 6594)))+'.000000');
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0200 END ');
           done();
         } catch (err) {
@@ -2018,7 +2018,7 @@ export default function ActsDataPanelTest() {
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0300 component obj.$attrs is: " + JSON.stringify(obj.$attrs));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0300 component obj.$attrs.trackShadow is: " +
           JSON.stringify(obj.$attrs.trackShadow));
-          expect(obj.$attrs.trackShadow.radius).assertEqual("20.000000");
+          expect(obj.$attrs.trackShadow.radius).assertEqual(Math.round(px2fp(getContext().resourceManager.getNumber(0x07800000 + 6594)))+'.000000');
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0300 END ');
           done();
         } catch (err) {
@@ -2047,7 +2047,7 @@ export default function ActsDataPanelTest() {
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0400 component obj.$attrs is: " + JSON.stringify(obj.$attrs));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0400 component obj.$attrs.trackShadow is: " +
           JSON.stringify(obj.$attrs.trackShadow));
-          expect(obj.$attrs.trackShadow.radius).assertEqual("20.000000");
+          expect(obj.$attrs.trackShadow.radius).assertEqual(Math.round(px2fp(getContext().resourceManager.getNumber(0x07800000 + 6594)))+'.000000');
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0400 END ');
           done();
         } catch (err) {
@@ -2076,7 +2076,7 @@ export default function ActsDataPanelTest() {
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0500 component obj.$attrs is: " + JSON.stringify(obj.$attrs));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0500 component obj.$attrs.trackShadow is: " +
           JSON.stringify(obj.$attrs.trackShadow));
-          expect(obj.$attrs.trackShadow.radius).assertEqual("20.000000");
+          expect(obj.$attrs.trackShadow.radius).assertEqual(Math.round(px2fp(getContext().resourceManager.getNumber(0x07800000 + 6594)))+'.000000');
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0500 END ');
           done();
         } catch (err) {
