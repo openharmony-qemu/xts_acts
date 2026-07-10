@@ -13,7 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '@ohos/hypium-binary/src/main/indexStatic';
 import Utils from '../Util.test';
 
 export default function ErrorAggregateConstructorTest(): void {
@@ -341,7 +352,8 @@ export default function ErrorAggregateConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e')], 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
+      let err: AggregateError =
+        new AggregateError([new Error('e')], 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
       expect(err.name).assertEqual('AggregateError');
       expect(err.message).assertEqual('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
       expect(err.errors.length).assertEqual(1);
@@ -499,7 +511,8 @@ export default function ErrorAggregateConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3')], 'count 4');
+      let err: AggregateError =
+        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3')], 'count 4');
       expect(err.message).assertEqual('count 4');
       expect(err.errors.length).assertEqual(4);
       expect(err.errors[3].message).assertEqual('e3');
@@ -514,7 +527,9 @@ export default function ErrorAggregateConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4')], 'count 5');
+      let err: AggregateError =
+        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4')],
+          'count 5');
       expect(err.message).assertEqual('count 5');
       expect(err.errors.length).assertEqual(5);
       expect(err.errors[4].message).assertEqual('e4');
@@ -529,7 +544,9 @@ export default function ErrorAggregateConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'), new Error('e5')], 'count 6');
+      let err: AggregateError =
+        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
+          new Error('e5')], 'count 6');
       expect(err.message).assertEqual('count 6');
       expect(err.errors.length).assertEqual(6);
       expect(err.errors[5].message).assertEqual('e5');
@@ -544,7 +561,9 @@ export default function ErrorAggregateConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'), new Error('e5'), new Error('e6')], 'count 7');
+      let err: AggregateError =
+        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
+          new Error('e5'), new Error('e6')], 'count 7');
       expect(err.message).assertEqual('count 7');
       expect(err.errors.length).assertEqual(7);
       expect(err.errors[6].message).assertEqual('e6');
@@ -559,7 +578,9 @@ export default function ErrorAggregateConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'), new Error('e5'), new Error('e6'), new Error('e7')], 'count 8');
+      let err: AggregateError =
+        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
+          new Error('e5'), new Error('e6'), new Error('e7')], 'count 8');
       expect(err.message).assertEqual('count 8');
       expect(err.errors.length).assertEqual(8);
       expect(err.errors[7].message).assertEqual('e7');
@@ -574,7 +595,9 @@ export default function ErrorAggregateConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'), new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8')], 'count 9');
+      let err: AggregateError =
+        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
+          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8')], 'count 9');
       expect(err.message).assertEqual('count 9');
       expect(err.errors.length).assertEqual(9);
       expect(err.errors[8].message).assertEqual('e8');
@@ -589,7 +612,9 @@ export default function ErrorAggregateConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'), new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9')], 'count 10');
+      let err: AggregateError =
+        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
+          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9')], 'count 10');
       expect(err.message).assertEqual('count 10');
       expect(err.errors.length).assertEqual(10);
       expect(err.errors[9].message).assertEqual('e9');
@@ -604,7 +629,10 @@ export default function ErrorAggregateConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'), new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10')], 'count 11');
+      let err: AggregateError =
+        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
+          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10')],
+          'count 11');
       expect(err.message).assertEqual('count 11');
       expect(err.errors.length).assertEqual(11);
       expect(err.errors[10].message).assertEqual('e10');
@@ -619,7 +647,10 @@ export default function ErrorAggregateConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'), new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'), new Error('e11')], 'count 12');
+      let err: AggregateError =
+        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
+          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'),
+          new Error('e11')], 'count 12');
       expect(err.message).assertEqual('count 12');
       expect(err.errors.length).assertEqual(12);
       expect(err.errors[11].message).assertEqual('e11');
@@ -634,7 +665,10 @@ export default function ErrorAggregateConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'), new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'), new Error('e11'), new Error('e12')], 'count 13');
+      let err: AggregateError =
+        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
+          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'),
+          new Error('e11'), new Error('e12')], 'count 13');
       expect(err.message).assertEqual('count 13');
       expect(err.errors.length).assertEqual(13);
       expect(err.errors[12].message).assertEqual('e12');
@@ -649,7 +683,10 @@ export default function ErrorAggregateConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'), new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'), new Error('e11'), new Error('e12'), new Error('e13')], 'count 14');
+      let err: AggregateError =
+        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
+          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'),
+          new Error('e11'), new Error('e12'), new Error('e13')], 'count 14');
       expect(err.message).assertEqual('count 14');
       expect(err.errors.length).assertEqual(14);
       expect(err.errors[13].message).assertEqual('e13');
@@ -664,7 +701,10 @@ export default function ErrorAggregateConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'), new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'), new Error('e11'), new Error('e12'), new Error('e13'), new Error('e14')], 'count 15');
+      let err: AggregateError =
+        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
+          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'),
+          new Error('e11'), new Error('e12'), new Error('e13'), new Error('e14')], 'count 15');
       expect(err.message).assertEqual('count 15');
       expect(err.errors.length).assertEqual(15);
       expect(err.errors[14].message).assertEqual('e14');
@@ -679,7 +719,10 @@ export default function ErrorAggregateConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'), new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'), new Error('e11'), new Error('e12'), new Error('e13'), new Error('e14'), new Error('e15')], 'count 16');
+      let err: AggregateError =
+        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
+          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'),
+          new Error('e11'), new Error('e12'), new Error('e13'), new Error('e14'), new Error('e15')], 'count 16');
       expect(err.message).assertEqual('count 16');
       expect(err.errors.length).assertEqual(16);
       expect(err.errors[15].message).assertEqual('e15');
@@ -694,7 +737,11 @@ export default function ErrorAggregateConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'), new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'), new Error('e11'), new Error('e12'), new Error('e13'), new Error('e14'), new Error('e15'), new Error('e16')], 'count 17');
+      let err: AggregateError =
+        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
+          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'),
+          new Error('e11'), new Error('e12'), new Error('e13'), new Error('e14'), new Error('e15'), new Error('e16')],
+          'count 17');
       expect(err.message).assertEqual('count 17');
       expect(err.errors.length).assertEqual(17);
       expect(err.errors[16].message).assertEqual('e16');
@@ -709,7 +756,11 @@ export default function ErrorAggregateConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'), new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'), new Error('e11'), new Error('e12'), new Error('e13'), new Error('e14'), new Error('e15'), new Error('e16'), new Error('e17')], 'count 18');
+      let err: AggregateError =
+        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
+          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'),
+          new Error('e11'), new Error('e12'), new Error('e13'), new Error('e14'), new Error('e15'), new Error('e16'),
+          new Error('e17')], 'count 18');
       expect(err.message).assertEqual('count 18');
       expect(err.errors.length).assertEqual(18);
       expect(err.errors[17].message).assertEqual('e17');
@@ -724,7 +775,11 @@ export default function ErrorAggregateConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'), new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'), new Error('e11'), new Error('e12'), new Error('e13'), new Error('e14'), new Error('e15'), new Error('e16'), new Error('e17'), new Error('e18')], 'count 19');
+      let err: AggregateError =
+        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
+          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'),
+          new Error('e11'), new Error('e12'), new Error('e13'), new Error('e14'), new Error('e15'), new Error('e16'),
+          new Error('e17'), new Error('e18')], 'count 19');
       expect(err.message).assertEqual('count 19');
       expect(err.errors.length).assertEqual(19);
       expect(err.errors[18].message).assertEqual('e18');
@@ -739,7 +794,11 @@ export default function ErrorAggregateConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'), new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'), new Error('e11'), new Error('e12'), new Error('e13'), new Error('e14'), new Error('e15'), new Error('e16'), new Error('e17'), new Error('e18'), new Error('e19')], 'count 20');
+      let err: AggregateError =
+        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
+          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'),
+          new Error('e11'), new Error('e12'), new Error('e13'), new Error('e14'), new Error('e15'), new Error('e16'),
+          new Error('e17'), new Error('e18'), new Error('e19')], 'count 20');
       expect(err.message).assertEqual('count 20');
       expect(err.errors.length).assertEqual(20);
       expect(err.errors[19].message).assertEqual('e19');
@@ -754,7 +813,11 @@ export default function ErrorAggregateConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'), new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'), new Error('e11'), new Error('e12'), new Error('e13'), new Error('e14'), new Error('e15'), new Error('e16'), new Error('e17'), new Error('e18'), new Error('e19'), new Error('e20')], 'count 21');
+      let err: AggregateError =
+        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
+          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'),
+          new Error('e11'), new Error('e12'), new Error('e13'), new Error('e14'), new Error('e15'), new Error('e16'),
+          new Error('e17'), new Error('e18'), new Error('e19'), new Error('e20')], 'count 21');
       expect(err.message).assertEqual('count 21');
       expect(err.errors.length).assertEqual(21);
       expect(err.errors[20].message).assertEqual('e20');
@@ -769,7 +832,11 @@ export default function ErrorAggregateConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'), new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'), new Error('e11'), new Error('e12'), new Error('e13'), new Error('e14'), new Error('e15'), new Error('e16'), new Error('e17'), new Error('e18'), new Error('e19'), new Error('e20'), new Error('e21')], 'count 22');
+      let err: AggregateError =
+        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
+          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'),
+          new Error('e11'), new Error('e12'), new Error('e13'), new Error('e14'), new Error('e15'), new Error('e16'),
+          new Error('e17'), new Error('e18'), new Error('e19'), new Error('e20'), new Error('e21')], 'count 22');
       expect(err.message).assertEqual('count 22');
       expect(err.errors.length).assertEqual(22);
       expect(err.errors[21].message).assertEqual('e21');
