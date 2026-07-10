@@ -57,8 +57,8 @@ static napi_value GetaddrinfoCustomNormal001(napi_env env, napi_callback_info in
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    struct addrinfo hints;
-    memset(&hints, 0, sizeof(hints));
+    struct addrinfo hints = {};
+    
     hints.ai_family = AF_UNSPEC;
     hints.ai_socktype = SOCK_STREAM;
     struct addrinfo* res = nullptr;
@@ -74,8 +74,8 @@ static napi_value GetaddrinfoCustomNormal002(napi_env env, napi_callback_info in
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    struct addrinfo hints;
-    memset(&hints, 0, sizeof(hints));
+    struct addrinfo hints = {};
+    
     hints.ai_family = AF_INET;
     hints.ai_socktype = SOCK_STREAM;
     struct addrinfo* res = nullptr;
@@ -91,8 +91,8 @@ static napi_value GetaddrinfoCustomNormal003(napi_env env, napi_callback_info in
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    struct addrinfo hints;
-    memset(&hints, 0, sizeof(hints));
+    struct addrinfo hints = {};
+    
     hints.ai_family = AF_INET;
     struct addrinfo* res = nullptr;
     CallGetaddrinfoCustom(nullptr, "80", &hints, &res);
@@ -128,8 +128,8 @@ static napi_value GetaddrinfoCustomAbnormal002(napi_env env, napi_callback_info 
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    struct addrinfo hints;
-    memset(&hints, 0, sizeof(hints));
+    struct addrinfo hints = {};
+    
     hints.ai_family = AF_UNSPEC;
     struct addrinfo* res = nullptr;
     int ret = CallGetaddrinfoCustom("nonexistent.invalid.host", nullptr, &hints, &res);
@@ -144,8 +144,8 @@ static napi_value GetaddrinfoCustomBoundary001(napi_env env, napi_callback_info 
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    struct addrinfo hints;
-    memset(&hints, 0, sizeof(hints));
+    struct addrinfo hints = {};
+    
     hints.ai_family = AF_UNSPEC;
     struct addrinfo* res = nullptr;
     int ret = CallGetaddrinfoCustom("", nullptr, &hints, &res);
@@ -160,8 +160,8 @@ static napi_value GetaddrinfoCustomBoundary002(napi_env env, napi_callback_info 
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    struct addrinfo hints;
-    memset(&hints, 0, sizeof(hints));
+    struct addrinfo hints = {};
+    
     hints.ai_family = AF_UNSPEC;
     struct addrinfo* res = nullptr;
     CallGetaddrinfoCustom("localhost", "65535", &hints, &res);
@@ -177,8 +177,8 @@ static napi_value GetaddrinfoCustomStable001(napi_env env, napi_callback_info in
         return ReturnInt32(env, 0);
     }
     for (int i = 0; i < kStableLoop; ++i) {
-        struct addrinfo hints;
-        memset(&hints, 0, sizeof(hints));
+        struct addrinfo hints = {};
+        
         hints.ai_family = AF_UNSPEC;
         struct addrinfo* res = nullptr;
         CallGetaddrinfoCustom("localhost", "80", &hints, &res);
@@ -187,6 +187,20 @@ static napi_value GetaddrinfoCustomStable001(napi_env env, napi_callback_info in
         }
     }
     return ReturnInt32(env, 1);
+}
+
+static void GetaddrinfoCustomWorker(std::atomic<bool>& hasError)
+{
+    for (int i = 0; i < kIterPerThread; ++i) {
+        struct addrinfo hints = {};
+
+        hints.ai_family = AF_UNSPEC;
+        struct addrinfo* res = nullptr;
+        CallGetaddrinfoCustom("localhost", "80", &hints, &res);
+        if (res) {
+            freeaddrinfo(res);
+        }
+    }
 }
 
 static napi_value GetaddrinfoCustomThread001(napi_env env, napi_callback_info info)
@@ -198,16 +212,7 @@ static napi_value GetaddrinfoCustomThread001(napi_env env, napi_callback_info in
     std::vector<std::thread> threads;
     for (int t = 0; t < kThreadCount; ++t) {
         threads.emplace_back([&hasError]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
-                struct addrinfo hints;
-                memset(&hints, 0, sizeof(hints));
-                hints.ai_family = AF_UNSPEC;
-                struct addrinfo* res = nullptr;
-                CallGetaddrinfoCustom("localhost", "80", &hints, &res);
-                if (res) {
-                    freeaddrinfo(res);
-                }
-            }
+            GetaddrinfoCustomWorker(hasError);
         });
     }
     for (auto& th : threads) {

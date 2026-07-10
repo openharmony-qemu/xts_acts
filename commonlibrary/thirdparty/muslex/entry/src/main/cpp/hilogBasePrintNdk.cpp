@@ -147,6 +147,17 @@ static napi_value HilogBasePrintStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, (successCount > 0) ? 1 : 0);
 }
 
+static void HilogBasePrintWorker(std::atomic<bool>& hasError)
+{
+    for (int i = 0; i < kIterPerThread; ++i) {
+        int ret = CallHilogBasePrint(kLogApp, kLogInfo, 0xD000900, "TEST_TAG", "thread test %d", i);
+        if (ret < 0) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 static napi_value HilogBasePrintThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
@@ -156,13 +167,7 @@ static napi_value HilogBasePrintThread001(napi_env env, napi_callback_info info)
     std::vector<std::thread> threads;
     for (int t = 0; t < kThreadCount; ++t) {
         threads.emplace_back([&hasError]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
-                int ret = CallHilogBasePrint(kLogApp, kLogInfo, 0xD000900, "TEST_TAG", "thread test %d", i);
-                if (ret < 0) {
-                    hasError = true;
-                    return;
-                }
-            }
+            HilogBasePrintWorker(hasError);
         });
     }
     for (auto& th : threads) {

@@ -86,8 +86,10 @@ static napi_value GetResTraceIdNormal003(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    uint32_t t1 = 0, t2 = 0;
-    uint64_t id1 = 0, id2 = 0;
+    uint32_t t1 = 0;
+    uint32_t t2 = 0;
+    uint64_t id1 = 0;
+    uint64_t id2 = 0;
     CallGetResTraceId(&t1, &id1);
     CallGetResTraceId(&t2, &id2);
     return ReturnInt32(env, 1);

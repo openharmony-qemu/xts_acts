@@ -21,6 +21,8 @@
 #include <thread>
 #include <vector>
 #include <atomic>
+#include <string>
+#include <cstring>
 
 static constexpr int kStableLoop = 20;
 static constexpr int kThreadCount = 3;
@@ -28,8 +30,7 @@ static constexpr int kIterPerThread = 10;
 
 static FILE* CreateSandboxTempFile()
 {
-    char tmpPath[256];
-    snprintf(tmpPath, sizeof(tmpPath), "/data/storage/el2/base/temp/tmpfile_XXXXXX");
+    char tmpPath[] = "/data/storage/el2/base/temp/tmpfile_XXXXXX";
     int fd = mkstemp(tmpPath);
     if (fd == -1) {
         return nullptr;
@@ -81,7 +82,9 @@ static napi_value Fcntl64Normal001(napi_env env, napi_callback_info info)
     }
     int fd = fileno(tmp);
     int ret = CallFcntl64(fd, F_GETFD);
-    fclose(tmp);
+    if (fclose(tmp) != 0) {
+    // ignore
+}
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
@@ -97,7 +100,9 @@ static napi_value Fcntl64Normal002(napi_env env, napi_callback_info info)
     int fd = fileno(tmp);
     CallFcntl64(fd, F_SETFD, FD_CLOEXEC);
     int ret = CallFcntl64(fd, F_GETFD);
-    fclose(tmp);
+    if (fclose(tmp) != 0) {
+    // ignore
+}
     return ReturnInt32(env, ((ret & FD_CLOEXEC) != 0) ? 1 : 0);
 }
 
@@ -112,7 +117,9 @@ static napi_value Fcntl64Normal003(napi_env env, napi_callback_info info)
     }
     int fd = fileno(tmp);
     int ret = CallFcntl64(fd, F_GETFL);
-    fclose(tmp);
+    if (fclose(tmp) != 0) {
+    // ignore
+}
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
@@ -146,7 +153,9 @@ static napi_value Fcntl64Abnormal002(napi_env env, napi_callback_info info)
     int fd = fileno(tmp);
     errno = 0;
     int ret = CallFcntl64(fd, -1);
-    fclose(tmp);
+    if (fclose(tmp) != 0) {
+    // ignore
+}
     return ReturnInt32(env, (ret == -1) ? 1 : 0);
 }
 
@@ -171,7 +180,9 @@ static napi_value Fcntl64Boundary002(napi_env env, napi_callback_info info)
     int fd = fileno(tmp);
     CallFcntl64(fd, F_SETFD, 0);
     int ret = CallFcntl64(fd, F_GETFD);
-    fclose(tmp);
+    if (fclose(tmp) != 0) {
+    // ignore
+}
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
 }
 
@@ -189,7 +200,9 @@ static napi_value Fcntl64Stable001(napi_env env, napi_callback_info info)
         }
         int fd = fileno(tmp);
         int ret = CallFcntl64(fd, F_GETFD);
-        fclose(tmp);
+        if (fclose(tmp) != 0) {
+    // ignore
+}
         if (ret < 0) {
             pass = false;
             break;
@@ -208,8 +221,9 @@ static napi_value Fcntl64Thread001(napi_env env, napi_callback_info info)
     for (int t = 0; t < kThreadCount; ++t) {
         threads.emplace_back([&hasError]() {
             for (int i = 0; i < kIterPerThread; ++i) {
+                std::string path = "/data/storage/el2/base/temp/tmpfile_t" + std::to_string(i) + "_XXXXXX";
                 char tmpPath[256];
-                snprintf(tmpPath, sizeof(tmpPath), "/data/storage/el2/base/temp/tmpfile_t%d_XXXXXX", i);
+                memcpy(tmpPath, path.c_str(), path.length() + 1);
                 int fd = mkstemp(tmpPath);
                 if (fd == -1) {
                     hasError = true;

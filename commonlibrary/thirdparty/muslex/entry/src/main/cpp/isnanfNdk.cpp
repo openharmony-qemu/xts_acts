@@ -161,7 +161,8 @@ static napi_value IsnanfAbnormal002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     bool pass = true;
-    union { float f; uint32_t i; } nan1, nan2;
+    union { float f; uint32_t i; } nan1;
+    union { float f; uint32_t i; } nan2;
     nan1.i = 0x7FC00001;
     nan2.i = 0x7FC00002;
     if (CallIsnanf(nan1.f) == 0) {

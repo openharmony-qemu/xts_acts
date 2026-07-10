@@ -308,6 +308,29 @@ static napi_value IsinfThread001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, (!hasError) ? 1 : 0);
 }
 
+template<typename Func>
+static void IsinfThreadWorker(Func func, std::atomic<bool>& hasError, int rounds)
+{
+    for (int round = 0; round < rounds; ++round) {
+        if (func(INFINITY) != 1) {
+            hasError = true;
+            return;
+        }
+        if (func(-INFINITY) != -1) {
+            hasError = true;
+            return;
+        }
+        if (func(NAN) != 0) {
+            hasError = true;
+            return;
+        }
+        if (func(0.0) != 0) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 // Test 12: Multi-thread different parameters mixed
 static napi_value IsinfThread002(napi_env env, napi_callback_info info)
 {
@@ -323,24 +346,7 @@ static napi_value IsinfThread002(napi_env env, napi_callback_info info)
     int roundcount2 = 10;
     for (int t = 0; t < threadCount; ++t) {
         threads.emplace_back([func, &hasError, roundcount2]() {
-            for (int round = 0; round < roundcount2; ++round) {
-                if (func(INFINITY) != 1) {
-                    hasError = true;
-                    return;
-                }
-                if (func(-INFINITY) != -1) {
-                    hasError = true;
-                    return;
-                }
-                if (func(NAN) != 0) {
-                    hasError = true;
-                    return;
-                }
-                if (func(0.0) != 0) {
-                    hasError = true;
-                    return;
-                }
-            }
+            IsinfThreadWorker(func, hasError, roundcount2);
         });
     }
 

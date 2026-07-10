@@ -163,7 +163,8 @@ static napi_value IsnanAbnormal002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     bool pass = true;
-    union { double f; uint64_t i; } nan1, nan2;
+    union { double f; uint64_t i; } nan1;
+    union { double f; uint64_t i; } nan2;
     nan1.i = 0x7FF8000000000001ULL;
     nan2.i = 0x7FF8000000000002ULL;
     if (CallIsnan(nan1.f) == 0) {
@@ -198,6 +199,18 @@ static napi_value IsnanStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+static void IsnanWorker(std::atomic<bool>& hasError, const double* testVals, const int* expected)
+{
+    for (int i = 0; i < kIterPerThread; ++i) {
+        int idx = i % 5;
+        int ret = CallIsnan(testVals[idx]);
+        if ((ret != 0) != (expected[idx] != 0)) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 /* TC-012: Multi-thread safety */
 static napi_value IsnanThread001(napi_env env, napi_callback_info info)
 {
@@ -212,14 +225,7 @@ static napi_value IsnanThread001(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < kThreadCount; ++t) {
         threads.emplace_back([&hasError, testVals, expected]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
-                int idx = i % 5;
-                int ret = CallIsnan(testVals[idx]);
-                if ((ret != 0) != (expected[idx] != 0)) {
-                    hasError = true;
-                    return;
-                }
-            }
+            IsnanWorker(hasError, testVals, expected);
         });
     }
     for (auto& th : threads) {

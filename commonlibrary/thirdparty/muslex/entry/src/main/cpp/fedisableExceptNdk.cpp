@@ -169,6 +169,19 @@ static napi_value FedisableexceptStable001(napi_env env, napi_callback_info info
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+static void FedisableexceptWorker(std::atomic<bool>& hasError)
+{
+    for (int i = 0; i < kIterPerThread; ++i) {
+        feclearexcept(FE_ALL_EXCEPT);
+        CallFeenableexcept(FE_DIVBYZERO);
+        int ret = CallFedisableexcept(FE_DIVBYZERO);
+        if (ret < 0) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 static napi_value FedisableexceptThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
@@ -178,15 +191,7 @@ static napi_value FedisableexceptThread001(napi_env env, napi_callback_info info
     std::vector<std::thread> threads;
     for (int t = 0; t < kThreadCount; ++t) {
         threads.emplace_back([&hasError]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
-                feclearexcept(FE_ALL_EXCEPT);
-                CallFeenableexcept(FE_DIVBYZERO);
-                int ret = CallFedisableexcept(FE_DIVBYZERO);
-                if (ret < 0) {
-                    hasError = true;
-                    return;
-                }
-            }
+            FedisableexceptWorker(hasError);
         });
     }
     for (auto& th : threads) {
@@ -199,16 +204,26 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"fedisableexceptNormal001", nullptr, FedisableexceptNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"fedisableexceptNormal002", nullptr, FedisableexceptNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"fedisableexceptNormal003", nullptr, FedisableexceptNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"fedisableexceptNormal004", nullptr, FedisableexceptNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"fedisableexceptAbnormal001", nullptr, FedisableexceptAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"fedisableexceptAbnormal002", nullptr, FedisableexceptAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"fedisableexceptBoundary001", nullptr, FedisableexceptBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"fedisableexceptBoundary002", nullptr, FedisableexceptBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"fedisableexceptStable001", nullptr, FedisableexceptStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"fedisableexceptThread001", nullptr, FedisableexceptThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"fedisableexceptNormal001", nullptr, FedisableexceptNormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"fedisableexceptNormal002", nullptr, FedisableexceptNormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"fedisableexceptNormal003", nullptr, FedisableexceptNormal003, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"fedisableexceptNormal004", nullptr, FedisableexceptNormal004, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"fedisableexceptAbnormal001", nullptr, FedisableexceptAbnormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"fedisableexceptAbnormal002", nullptr, FedisableexceptAbnormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"fedisableexceptBoundary001", nullptr, FedisableexceptBoundary001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"fedisableexceptBoundary002", nullptr, FedisableexceptBoundary002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"fedisableexceptStable001", nullptr, FedisableexceptStable001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"fedisableexceptThread001", nullptr, FedisableexceptThread001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

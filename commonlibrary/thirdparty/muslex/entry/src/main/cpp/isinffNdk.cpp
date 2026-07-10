@@ -145,12 +145,12 @@ static napi_value IsinffAbnormal001(napi_env env, napi_callback_info info)
         isinff(testVal);
         result.dataUnchanged = (testVal == originalVal);
     }
-    
-    bool allPassed = result.stubDetected || 
-                     (result.errnoSetCorrectly && 
-                      result.returnValueCorrect && 
+
+    bool allPassed = result.stubDetected ||
+                     (result.errnoSetCorrectly &&
+                      result.returnValueCorrect &&
                       result.dataUnchanged);
-    
+
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
 

@@ -126,11 +126,13 @@ static napi_value FprintfChkNormal001(napi_env env, napi_callback_info info)
     }
 
     // Use fprintf as reference verification
-    fprintf(tmpFile, "\n");
+    if (fprintf(tmpFile, "\n") < 0) {
+        allPassed = false;
+    }
     fflush(tmpFile);
 
     if (tmpFile != stderr && tmpFile != stdout) {
-        fclose(tmpFile);
+        if (fclose(tmpFile) != 0) {}
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -170,7 +172,7 @@ static napi_value FprintfChkNormal002(napi_env env, napi_callback_info info)
     }
 
     if (tmpFile != stderr && tmpFile != stdout) {
-        fclose(tmpFile);
+        if (fclose(tmpFile) != 0) {}
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -205,7 +207,7 @@ static napi_value FprintfChkNormal003(napi_env env, napi_callback_info info)
     }
 
     if (tmpFile != stderr && tmpFile != stdout) {
-        fclose(tmpFile);
+        if (fclose(tmpFile) != 0) {}
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -251,7 +253,7 @@ static napi_value FprintfChkBoundary001(napi_env env, napi_callback_info info)
     }
 
     if (tmpFile != stderr && tmpFile != stdout) {
-        fclose(tmpFile);
+        if (fclose(tmpFile) != 0) {}
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -291,7 +293,7 @@ static napi_value FprintfChkBoundary002(napi_env env, napi_callback_info info)
     }
 
     if (tmpFile != stderr && tmpFile != stdout) {
-        fclose(tmpFile);
+        if (fclose(tmpFile) != 0) {}
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -353,7 +355,7 @@ static napi_value FprintfChkAbnormal002(napi_env env, napi_callback_info info)
     // If returns negative, also normal (since format is invalid)
 
     if (tmpFile != stderr && tmpFile != stdout) {
-        fclose(tmpFile);
+        if (fclose(tmpFile) != 0) {}
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -380,7 +382,7 @@ static napi_value FprintfChkAbnormal003(napi_env env, napi_callback_info info)
     // Do not check specific return value
 
     if (tmpFile != stderr && tmpFile != stdout) {
-        fclose(tmpFile);
+        if (fclose(tmpFile) != 0) {}
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -419,7 +421,7 @@ static napi_value FprintfChkStable001(napi_env env, napi_callback_info info)
     }
 
     if (tmpFile != stderr && tmpFile != stdout) {
-        fclose(tmpFile);
+        if (fclose(tmpFile) != 0) {}
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -448,7 +450,7 @@ static napi_value FprintfChkStable002(napi_env env, napi_callback_info info)
     }
 
     if (tmpFile != stderr && tmpFile != stdout) {
-        fclose(tmpFile);
+        if (fclose(tmpFile) != 0) {}
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -461,6 +463,18 @@ static void FprintfChkWorker(Func func, FILE* f, std::atomic<bool>& hasError, in
 {
     for (int i = 0; i < iterations; ++i) {
         int ret = func(f, i % 2, "Thread %d: %d\n", tid, i);
+        if (ret < 0) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
+template<typename Func>
+static void FprintfChkWorker2(Func func, FILE* f, std::atomic<bool>& hasError, int iterations, int tid)
+{
+    for (int i = 0; i < iterations; ++i) {
+        int ret = func(f, 0, "%d %d\n", tid, i);
         if (ret < 0) {
             hasError = true;
             return;
@@ -503,7 +517,7 @@ static napi_value FprintfChkThread001(napi_env env, napi_callback_info info)
 
     for (auto f : files) {
         if (f != nullptr && f != stderr && f != stdout) {
-            fclose(f);
+            if (fclose(f) != 0) {}
         }
     }
     return ReturnInt32(env, (!hasError) ? 1 : 0);
@@ -529,13 +543,7 @@ static napi_value FprintfChkThread002(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < threadCount; ++t) {
         threads.emplace_back([func, sharedFile, &hasError, iterationsPerThread, t]() {
-            for (int i = 0; i < iterationsPerThread; ++i) {
-                int ret = func(sharedFile, 0, "%d %d\n", t, i);
-                if (ret < 0) {
-                    hasError = true;
-                    return;
-                }
-            }
+            FprintfChkWorker2(func, sharedFile, hasError, iterationsPerThread, t);
         });
     }
 
@@ -544,7 +552,7 @@ static napi_value FprintfChkThread002(napi_env env, napi_callback_info info)
     }
 
     if (sharedFile != nullptr && sharedFile != stderr && sharedFile != stdout) {
-        fclose(sharedFile);
+        if (fclose(sharedFile) != 0) {}
     }
     return ReturnInt32(env, (!hasError) ? 1 : 0);
 }
