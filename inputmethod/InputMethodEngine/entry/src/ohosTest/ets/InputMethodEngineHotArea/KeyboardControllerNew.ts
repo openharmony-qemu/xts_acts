@@ -171,7 +171,7 @@ export class KeyboardControllerNew {
     };
     try {
       let dis = display.getDefaultDisplaySync();
-      if (!isLandscape()) {
+      if (!this.isLandscape()) {
         let landscapeRect: window.Rect = {
           left: 0,
           top: 0,
