@@ -21,13 +21,13 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int kStableLoop = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
-static constexpr uint64_t kTimespan = 1000;
-static constexpr uint64_t kTimespanZero = 0;
-static constexpr uint64_t kTimespanLarge = 5000;
-static constexpr size_t kDepth = 1;
+static constexpr int K_STABLE_LOOP = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
+static constexpr uint64_t K_TIMESPAN = 1000;
+static constexpr uint64_t K_TIMESPAN_ZERO = 0;
+static constexpr uint64_t K_TIMESPAN_LARGE = 5000;
+static constexpr size_t K_DEPTH = 1;
 
 static size_t CallGwpAsanCollect(uint64_t timespan, uintptr_t* buffer, size_t maxCount, size_t depth = 1)
 {
@@ -61,7 +61,7 @@ static napi_value GwpAsanCollectNormal001(napi_env env, napi_callback_info info)
     }
     int bufcap = 2;
     uintptr_t buffer[10];
-    size_t ret = CallGwpAsanCollect(kTimespan, buffer, bufcap, kDepth);
+    size_t ret = CallGwpAsanCollect(K_TIMESPAN, buffer, bufcap, K_DEPTH);
     return ReturnInt32(env, (ret <= bufcap) ? 1 : 0);
 }
 
@@ -72,7 +72,7 @@ static napi_value GwpAsanCollectNormal002(napi_env env, napi_callback_info info)
     }
     int bufcap = 2;
     uintptr_t buffer[10];
-    size_t ret = CallGwpAsanCollect(kTimespanZero, buffer, bufcap, kDepth);
+    size_t ret = CallGwpAsanCollect(K_TIMESPAN_ZERO, buffer, bufcap, K_DEPTH);
     return ReturnInt32(env, (ret <= bufcap) ? 1 : 0);
 }
 
@@ -84,7 +84,7 @@ static napi_value GwpAsanCollectNormal003(napi_env env, napi_callback_info info)
     int bufcap = 5;
     uintptr_t buffer[20];
     int depth = 4;
-    size_t ret = CallGwpAsanCollect(kTimespanLarge, buffer, bufcap, depth);
+    size_t ret = CallGwpAsanCollect(K_TIMESPAN_LARGE, buffer, bufcap, depth);
     return ReturnInt32(env, (ret <= bufcap) ? 1 : 0);
 }
 
@@ -102,7 +102,7 @@ static napi_value GwpAsanCollectAbnormal001(napi_env env, napi_callback_info inf
         return ReturnInt32(env, 0);
     }
     int bufcap = 2;
-    size_t ret = CallGwpAsanCollect(kTimespan, nullptr, bufcap, kDepth);
+    size_t ret = CallGwpAsanCollect(K_TIMESPAN, nullptr, bufcap, K_DEPTH);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
 }
 
@@ -112,7 +112,7 @@ static napi_value GwpAsanCollectAbnormal002(napi_env env, napi_callback_info inf
         return ReturnInt32(env, 0);
     }
     uintptr_t buffer[10];
-    size_t ret = CallGwpAsanCollect(kTimespan, buffer, 0, kDepth);
+    size_t ret = CallGwpAsanCollect(K_TIMESPAN, buffer, 0, K_DEPTH);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
 }
 
@@ -123,7 +123,7 @@ static napi_value GwpAsanCollectBoundary001(napi_env env, napi_callback_info inf
     }
     int bufcap = 2;
     uintptr_t buffer[20];
-    size_t ret = CallGwpAsanCollect(UINT64_MAX, buffer, bufcap, kDepth);
+    size_t ret = CallGwpAsanCollect(UINT64_MAX, buffer, bufcap, K_DEPTH);
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
@@ -134,7 +134,7 @@ static napi_value GwpAsanCollectBoundary002(napi_env env, napi_callback_info inf
     }
     int bufcap = 1;
     uintptr_t buffer[4];
-    size_t ret = CallGwpAsanCollect(kTimespan, buffer, bufcap, kDepth);
+    size_t ret = CallGwpAsanCollect(K_TIMESPAN, buffer, bufcap, K_DEPTH);
     return ReturnInt32(env, (ret >= 0 && ret <= bufcap) ? 1 : 0);
 }
 
@@ -145,9 +145,9 @@ static napi_value GwpAsanCollectStable001(napi_env env, napi_callback_info info)
     }
     int bufcap = 2;
     bool pass = true;
-    for (int i = 0; i < kStableLoop; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
         uintptr_t buffer[10];
-        size_t ret = CallGwpAsanCollect(kTimespan, buffer, bufcap, kDepth);
+        size_t ret = CallGwpAsanCollect(K_TIMESPAN, buffer, bufcap, K_DEPTH);
         if (ret > bufcap) {
             pass = false;
             break;
@@ -164,11 +164,11 @@ static napi_value GwpAsanCollectThread001(napi_env env, napi_callback_info info)
     int bufcap = 2;
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < kThreadCount; ++t) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError, bufcap]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 uintptr_t buffer[10];
-                CallGwpAsanCollect(kTimespan, buffer, bufcap, kDepth);
+                CallGwpAsanCollect(K_TIMESPAN, buffer, bufcap, K_DEPTH);
             }
         });
     }

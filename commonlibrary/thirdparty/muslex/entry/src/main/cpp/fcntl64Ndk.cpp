@@ -211,6 +211,25 @@ static napi_value Fcntl64Stable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+static void Fcntl64Worker(std::atomic<bool>& hasError)
+{
+    for (int i = 0; i < kIterPerThread; ++i) {
+        std::string tmpPath = "/data/storage/el2/base/temp/tmpfile_t" + std::to_string(i) + "_XXXXXX";
+        int fd = mkstemp(&tmpPath[0]);
+        if (fd == -1) {
+            hasError = true;
+            return;
+        }
+        unlink(tmpPath.c_str());
+        int ret = CallFcntl64(fd, F_GETFD);
+        close(fd);
+        if (ret < 0) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 static napi_value Fcntl64Thread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
@@ -220,23 +239,7 @@ static napi_value Fcntl64Thread001(napi_env env, napi_callback_info info)
     std::vector<std::thread> threads;
     for (int t = 0; t < kThreadCount; ++t) {
         threads.emplace_back([&hasError]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
-                std::string path = "/data/storage/el2/base/temp/tmpfile_t" + std::to_string(i) + "_XXXXXX";
-                char tmpPath[256];
-                memcpy(tmpPath, path.c_str(), path.length() + 1);
-                int fd = mkstemp(tmpPath);
-                if (fd == -1) {
-                    hasError = true;
-                    return;
-                }
-                unlink(tmpPath);
-                int ret = CallFcntl64(fd, F_GETFD);
-                close(fd);
-                if (ret < 0) {
-                    hasError = true;
-                    return;
-                }
-            }
+            Fcntl64Worker(hasError);
         });
     }
     for (auto& th : threads) {

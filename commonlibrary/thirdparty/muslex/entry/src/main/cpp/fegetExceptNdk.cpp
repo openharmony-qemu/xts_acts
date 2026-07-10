@@ -186,6 +186,17 @@ static napi_value FegetexceptStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+static void FegetexceptWorker(std::atomic<bool>& hasError)
+{
+    for (int i = 0; i < kIterPerThread; ++i) {
+        int ret = CallFegetexcept();
+        if (ret < 0) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 static napi_value FegetexceptThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
@@ -195,13 +206,7 @@ static napi_value FegetexceptThread001(napi_env env, napi_callback_info info)
     std::vector<std::thread> threads;
     for (int t = 0; t < kThreadCount; ++t) {
         threads.emplace_back([&hasError]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
-                int ret = CallFegetexcept();
-                if (ret < 0) {
-                    hasError = true;
-                    return;
-                }
-            }
+            FegetexceptWorker(hasError);
         });
     }
     for (auto& th : threads) {

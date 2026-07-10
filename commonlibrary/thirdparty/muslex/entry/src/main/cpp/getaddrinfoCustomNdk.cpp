@@ -225,16 +225,26 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"getaddrinfoCustomNormal001", nullptr, GetaddrinfoCustomNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getaddrinfoCustomNormal002", nullptr, GetaddrinfoCustomNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getaddrinfoCustomNormal003", nullptr, GetaddrinfoCustomNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getaddrinfoCustomNormal004", nullptr, GetaddrinfoCustomNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getaddrinfoCustomAbnormal001", nullptr, GetaddrinfoCustomAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getaddrinfoCustomAbnormal002", nullptr, GetaddrinfoCustomAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getaddrinfoCustomBoundary001", nullptr, GetaddrinfoCustomBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getaddrinfoCustomBoundary002", nullptr, GetaddrinfoCustomBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getaddrinfoCustomStable001", nullptr, GetaddrinfoCustomStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getaddrinfoCustomThread001", nullptr, GetaddrinfoCustomThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getaddrinfoCustomNormal001", nullptr, GetaddrinfoCustomNormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"getaddrinfoCustomNormal002", nullptr, GetaddrinfoCustomNormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"getaddrinfoCustomNormal003", nullptr, GetaddrinfoCustomNormal003, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"getaddrinfoCustomNormal004", nullptr, GetaddrinfoCustomNormal004, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"getaddrinfoCustomAbnormal001", nullptr, GetaddrinfoCustomAbnormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"getaddrinfoCustomAbnormal002", nullptr, GetaddrinfoCustomAbnormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"getaddrinfoCustomBoundary001", nullptr, GetaddrinfoCustomBoundary001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"getaddrinfoCustomBoundary002", nullptr, GetaddrinfoCustomBoundary002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"getaddrinfoCustomStable001", nullptr, GetaddrinfoCustomStable001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"getaddrinfoCustomThread001", nullptr, GetaddrinfoCustomThread001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

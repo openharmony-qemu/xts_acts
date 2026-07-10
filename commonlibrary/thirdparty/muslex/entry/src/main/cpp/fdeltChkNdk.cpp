@@ -25,12 +25,12 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int kRangeOffset = 10;
-static constexpr int kStableLoop10000 = 20;
-static constexpr int kStableLoop1000 = 20;
-static constexpr int kStableLoop100000 = 200;
-static constexpr int kThreadWorkLoop = 10;
-static constexpr int kThreadCount = 3;
+static constexpr int K_RANGE_OFFSET = 10;
+static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_STABLE_LOOP1000 = 20;
+static constexpr int K_STABLE_LOOP100000 = 200;
+static constexpr int K_THREAD_WORK_LOOP = 10;
+static constexpr int K_THREAD_COUNT = 3;
 
 static long CallFdeltChk(long fd)
 {
@@ -241,7 +241,7 @@ static napi_value FdeltChkFunc002(napi_env env, napi_callback_info info)
     if (!IsStubMode()) {
         return ReturnInt32(env, 1);
     }
-    for (int fd = -kRangeOffset; fd <= FD_SETSIZE + kRangeOffset; ++fd) {
+    for (int fd = -K_RANGE_OFFSET; fd <= FD_SETSIZE + K_RANGE_OFFSET; ++fd) {
         errno = 0;
         long ret = CallFdeltChk(fd);
         if (ret != -1 || errno != ENOSYS) {
@@ -287,7 +287,7 @@ static napi_value FdeltChkFunc004(napi_env env, napi_callback_info info)
 /* Stability tests */
 static bool StableWorkerFunc()
 {
-    for (int i = 0; i < kThreadWorkLoop; ++i) {
+    for (int i = 0; i < K_THREAD_WORK_LOOP; ++i) {
         for (int fd = 0; fd < FD_SETSIZE; ++fd) {
             if (CallFdeltChk(fd) != fd / NFDBITS) {
                 return false;
@@ -302,7 +302,7 @@ static napi_value FdeltChkStable001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    for (int i = 0; i < kStableLoop10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
         for (int fd = 0; fd < FD_SETSIZE; ++fd) {
             if (CallFdeltChk(fd) != fd / NFDBITS) {
                 return ReturnInt32(env, 0);
@@ -319,7 +319,7 @@ static napi_value FdeltChkStable002(napi_env env, napi_callback_info info)
     }
     std::atomic<bool> allSuccess(true);
     std::vector<std::thread> threads;
-    for (int t = 0; t < kThreadCount; ++t) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&allSuccess]() {
             if (!StableWorkerFunc()) {
                 allSuccess.store(false);
@@ -337,7 +337,7 @@ static napi_value FdeltChkStable003(napi_env env, napi_callback_info info)
     if (!IsStubMode()) {
         return ReturnInt32(env, 1);
     }
-    for (int i = 0; i < kStableLoop100000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP100000; ++i) {
         errno = 0;
         long ret = CallFdeltChk(0);
         if (ret != -1 || errno != ENOSYS) {

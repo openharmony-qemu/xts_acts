@@ -180,16 +180,26 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"gwpAsanRegisterFfrtNormal001", nullptr, GwpAsanRegisterFfrtNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"gwpAsanRegisterFfrtNormal002", nullptr, GwpAsanRegisterFfrtNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"gwpAsanRegisterFfrtNormal003", nullptr, GwpAsanRegisterFfrtNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"gwpAsanRegisterFfrtNormal004", nullptr, GwpAsanRegisterFfrtNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"gwpAsanRegisterFfrtAbnormal001", nullptr, GwpAsanRegisterFfrtAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"gwpAsanRegisterFfrtAbnormal002", nullptr, GwpAsanRegisterFfrtAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"gwpAsanRegisterFfrtBoundary001", nullptr, GwpAsanRegisterFfrtBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"gwpAsanRegisterFfrtBoundary002", nullptr, GwpAsanRegisterFfrtBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"gwpAsanRegisterFfrtStable001", nullptr, GwpAsanRegisterFfrtStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"gwpAsanRegisterFfrtThread001", nullptr, GwpAsanRegisterFfrtThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"gwpAsanRegisterFfrtNormal001", nullptr, GwpAsanRegisterFfrtNormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"gwpAsanRegisterFfrtNormal002", nullptr, GwpAsanRegisterFfrtNormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"gwpAsanRegisterFfrtNormal003", nullptr, GwpAsanRegisterFfrtNormal003, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"gwpAsanRegisterFfrtNormal004", nullptr, GwpAsanRegisterFfrtNormal004, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"gwpAsanRegisterFfrtAbnormal001", nullptr, GwpAsanRegisterFfrtAbnormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"gwpAsanRegisterFfrtAbnormal002", nullptr, GwpAsanRegisterFfrtAbnormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"gwpAsanRegisterFfrtBoundary001", nullptr, GwpAsanRegisterFfrtBoundary001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"gwpAsanRegisterFfrtBoundary002", nullptr, GwpAsanRegisterFfrtBoundary002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"gwpAsanRegisterFfrtStable001", nullptr, GwpAsanRegisterFfrtStable001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"gwpAsanRegisterFfrtThread001", nullptr, GwpAsanRegisterFfrtThread001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

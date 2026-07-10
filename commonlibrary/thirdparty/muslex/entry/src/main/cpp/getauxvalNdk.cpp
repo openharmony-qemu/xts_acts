@@ -255,6 +255,19 @@ static napi_value GetauxvalStable002(napi_env env, napi_callback_info info)
 // ==================== Multi-thread Tests ====================
 
 // Test 11: Multi-thread concurrent calls
+template<typename Func>
+static void GetauxvalWorker1(Func func, std::atomic<bool>& hasError, const unsigned long* items, int iterations)
+{
+    for (int i = 0; i < iterations; ++i) {
+        int idx = i % 4;
+        unsigned long result = func(items[idx]);
+        if (result == 0 && idx != 1) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 static napi_value GetauxvalThread001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetGetauxval();
@@ -270,14 +283,7 @@ static napi_value GetauxvalThread001(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < threadCount; ++t) {
         threads.emplace_back([func, &hasError, items, iterationsPerThread]() {
-            for (int i = 0; i < iterationsPerThread; ++i) {
-                int idx = i % 4;
-                unsigned long result = func(items[idx]);
-                if (result == 0 && idx != 1) {
-                    hasError = true;
-                    return;
-                }
-            }
+            GetauxvalWorker1(func, hasError, items, iterationsPerThread);
         });
     }
 
@@ -286,6 +292,19 @@ static napi_value GetauxvalThread001(napi_env env, napi_callback_info info)
     }
 
     return ReturnInt32(env, (!hasError) ? 1 : 0);
+}
+
+template<typename Func>
+static void GetauxvalWorker2(Func func, std::atomic<bool>& hasError,
+    const unsigned long* allItems, int iterations, int tid, int basiccount)
+{
+    for (int i = 0; i < iterations; ++i) {
+        int idx = (i + tid) % 8;
+        unsigned long result = func(allItems[idx]);
+        if (result == 0 && idx >= basiccount) {
+            // Not necessarily an error, continue
+        }
+    }
 }
 
 // Test 12: Multi-thread different item mixed
@@ -305,14 +324,7 @@ static napi_value GetauxvalThread002(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < threadCount; ++t) {
         threads.emplace_back([func, &hasError, allItems, iterationsPerThread, t, basiccount]() {
-            for (int i = 0; i < iterationsPerThread; ++i) {
-                int idx = (i + t) % 8;
-                unsigned long result = func(allItems[idx]);
-                // Verify return value and errno
-                if (result == 0 && idx >= basiccount) { // Some items may not exist
-                    // Not necessarily an error, continue
-                }
-            }
+            GetauxvalWorker2(func, hasError, allItems, iterationsPerThread, t, basiccount);
         });
     }
 

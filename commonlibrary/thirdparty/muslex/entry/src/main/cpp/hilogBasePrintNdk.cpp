@@ -20,15 +20,15 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int kLogApp = 0;
-static constexpr int kLogCore = 3;
-static constexpr int kLogDebug = 3;
-static constexpr int kLogInfo = 4;
-static constexpr int kLogError = 6;
-static constexpr int kLogFatal = 7;
-static constexpr int kStableLoop = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_LOG_APP = 0;
+static constexpr int K_LOG_CORE = 3;
+static constexpr int K_LOG_DEBUG = 3;
+static constexpr int K_LOG_INFO = 4;
+static constexpr int K_LOG_ERROR = 6;
+static constexpr int K_LOG_FATAL = 7;
+static constexpr int K_STABLE_LOOP = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
 static int CallHilogBasePrint(int type, int level, unsigned int domain, const char* tag, const char* fmt, ...)
 {
@@ -64,7 +64,7 @@ static napi_value HilogBasePrintNormal001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    int ret = CallHilogBasePrint(kLogApp, kLogInfo, 0xD000900, "TEST_TAG", "test message");
+    int ret = CallHilogBasePrint(K_LOG_APP, K_LOG_INFO, 0xD000900, "TEST_TAG", "test message");
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
@@ -73,7 +73,7 @@ static napi_value HilogBasePrintNormal002(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    int ret = CallHilogBasePrint(kLogCore, kLogError, 0xD000900, "TEST_TAG", "error message %d", 42);
+    int ret = CallHilogBasePrint(K_LOG_CORE, K_LOG_ERROR, 0xD000900, "TEST_TAG", "error message %d", 42);
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
@@ -82,7 +82,7 @@ static napi_value HilogBasePrintNormal003(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    int ret = CallHilogBasePrint(kLogApp, kLogInfo, 0xD000900, "TEST_TAG", "msg %s %d", "hello", 123);
+    int ret = CallHilogBasePrint(K_LOG_APP, K_LOG_INFO, 0xD000900, "TEST_TAG", "msg %s %d", "hello", 123);
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
@@ -99,7 +99,7 @@ static napi_value HilogBasePrintAbnormal001(napi_env env, napi_callback_info inf
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    int ret = CallHilogBasePrint(kLogApp, kLogInfo, 0xD000900, nullptr, "test");
+    int ret = CallHilogBasePrint(K_LOG_APP, K_LOG_INFO, 0xD000900, nullptr, "test");
     return ReturnInt32(env, 1);
 }
 
@@ -108,7 +108,7 @@ static napi_value HilogBasePrintAbnormal002(napi_env env, napi_callback_info inf
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    int ret = CallHilogBasePrint(kLogApp, kLogInfo, 0xD000900, "TEST_TAG", nullptr);
+    int ret = CallHilogBasePrint(K_LOG_APP, K_LOG_INFO, 0xD000900, "TEST_TAG", nullptr);
     return ReturnInt32(env, 1);
 }
 
@@ -117,7 +117,7 @@ static napi_value HilogBasePrintBoundary001(napi_env env, napi_callback_info inf
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    int ret = CallHilogBasePrint(kLogApp, kLogInfo, 0xD000900, "TEST_TAG", "");
+    int ret = CallHilogBasePrint(K_LOG_APP, K_LOG_INFO, 0xD000900, "TEST_TAG", "");
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
@@ -128,7 +128,7 @@ static napi_value HilogBasePrintBoundary002(napi_env env, napi_callback_info inf
     }
     int msgsize = 2000;
     std::string longMsg(msgsize, 'a');
-    int ret = CallHilogBasePrint(kLogApp, kLogInfo, 0xD000900, "TEST_TAG", "%s", longMsg.c_str());
+    int ret = CallHilogBasePrint(K_LOG_APP, K_LOG_INFO, 0xD000900, "TEST_TAG", "%s", longMsg.c_str());
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
@@ -138,8 +138,8 @@ static napi_value HilogBasePrintStable001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     int successCount = 0;
-    for (int i = 0; i < kStableLoop; ++i) {
-        int ret = CallHilogBasePrint(kLogApp, kLogInfo, 0xD000900, "TEST_TAG", "stable test %d", i);
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
+        int ret = CallHilogBasePrint(K_LOG_APP, K_LOG_INFO, 0xD000900, "TEST_TAG", "stable test %d", i);
         if (ret >= 0) {
             successCount++;
         }
@@ -149,8 +149,8 @@ static napi_value HilogBasePrintStable001(napi_env env, napi_callback_info info)
 
 static void HilogBasePrintWorker(std::atomic<bool>& hasError)
 {
-    for (int i = 0; i < kIterPerThread; ++i) {
-        int ret = CallHilogBasePrint(kLogApp, kLogInfo, 0xD000900, "TEST_TAG", "thread test %d", i);
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        int ret = CallHilogBasePrint(K_LOG_APP, K_LOG_INFO, 0xD000900, "TEST_TAG", "thread test %d", i);
         if (ret < 0) {
             hasError = true;
             return;
@@ -165,7 +165,7 @@ static napi_value HilogBasePrintThread001(napi_env env, napi_callback_info info)
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < kThreadCount; ++t) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
             HilogBasePrintWorker(hasError);
         });
@@ -180,16 +180,26 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"hilogBasePrintNormal001", nullptr, HilogBasePrintNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBasePrintNormal002", nullptr, HilogBasePrintNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBasePrintNormal003", nullptr, HilogBasePrintNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBasePrintNormal004", nullptr, HilogBasePrintNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBasePrintAbnormal001", nullptr, HilogBasePrintAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBasePrintAbnormal002", nullptr, HilogBasePrintAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBasePrintBoundary001", nullptr, HilogBasePrintBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBasePrintBoundary002", nullptr, HilogBasePrintBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBasePrintStable001", nullptr, HilogBasePrintStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBasePrintThread001", nullptr, HilogBasePrintThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"hilogBasePrintNormal001", nullptr, HilogBasePrintNormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBasePrintNormal002", nullptr, HilogBasePrintNormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBasePrintNormal003", nullptr, HilogBasePrintNormal003, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBasePrintNormal004", nullptr, HilogBasePrintNormal004, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBasePrintAbnormal001", nullptr, HilogBasePrintAbnormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBasePrintAbnormal002", nullptr, HilogBasePrintAbnormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBasePrintBoundary001", nullptr, HilogBasePrintBoundary001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBasePrintBoundary002", nullptr, HilogBasePrintBoundary002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBasePrintStable001", nullptr, HilogBasePrintStable001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBasePrintThread001", nullptr, HilogBasePrintThread001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

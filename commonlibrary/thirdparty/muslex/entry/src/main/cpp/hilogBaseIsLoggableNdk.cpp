@@ -20,16 +20,16 @@
 #include <vector>
 #include <atomic>
 
-static constexpr unsigned int kLogApp = 0;
-static constexpr unsigned int kLogCore = 3;
-static constexpr int kLogDebug = 3;
-static constexpr int kLogInfo = 4;
-static constexpr int kLogWarn = 5;
-static constexpr int kLogError = 6;
-static constexpr int kLogFatal = 7;
-static constexpr int kStableLoop = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr unsigned int K_LOG_APP = 0;
+static constexpr unsigned int K_LOG_CORE = 3;
+static constexpr int K_LOG_DEBUG = 3;
+static constexpr int K_LOG_INFO = 4;
+static constexpr int K_LOG_WARN = 5;
+static constexpr int K_LOG_ERROR = 6;
+static constexpr int K_LOG_FATAL = 7;
+static constexpr int K_STABLE_LOOP = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
 static bool CallHilogBaseIsLoggable(unsigned int domain, const char* tag, int level)
 {
@@ -61,7 +61,7 @@ static napi_value HilogBaseIsLoggableNormal001(napi_env env, napi_callback_info 
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    bool ret = CallHilogBaseIsLoggable(0xD000900, "TEST_TAG", kLogInfo);
+    bool ret = CallHilogBaseIsLoggable(0xD000900, "TEST_TAG", K_LOG_INFO);
     return ReturnInt32(env, 1);
 }
 
@@ -70,7 +70,7 @@ static napi_value HilogBaseIsLoggableNormal002(napi_env env, napi_callback_info 
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    bool ret = CallHilogBaseIsLoggable(0xD000900, "TEST_TAG", kLogDebug);
+    bool ret = CallHilogBaseIsLoggable(0xD000900, "TEST_TAG", K_LOG_DEBUG);
     return ReturnInt32(env, 1);
 }
 
@@ -79,7 +79,7 @@ static napi_value HilogBaseIsLoggableNormal003(napi_env env, napi_callback_info 
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    bool ret = CallHilogBaseIsLoggable(0xD000900, "TEST_TAG", kLogError);
+    bool ret = CallHilogBaseIsLoggable(0xD000900, "TEST_TAG", K_LOG_ERROR);
     return ReturnInt32(env, 1);
 }
 
@@ -105,7 +105,7 @@ static napi_value HilogBaseIsLoggableAbnormal002(napi_env env, napi_callback_inf
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    bool ret = CallHilogBaseIsLoggable(0xD000900, nullptr, kLogInfo);
+    bool ret = CallHilogBaseIsLoggable(0xD000900, nullptr, K_LOG_INFO);
     return ReturnInt32(env, 1);
 }
 
@@ -114,7 +114,7 @@ static napi_value HilogBaseIsLoggableBoundary001(napi_env env, napi_callback_inf
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    bool ret = CallHilogBaseIsLoggable(0xD000900, "TEST_TAG", kLogFatal);
+    bool ret = CallHilogBaseIsLoggable(0xD000900, "TEST_TAG", K_LOG_FATAL);
     return ReturnInt32(env, 1);
 }
 
@@ -123,7 +123,7 @@ static napi_value HilogBaseIsLoggableBoundary002(napi_env env, napi_callback_inf
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    bool ret = CallHilogBaseIsLoggable(0, "TEST_TAG", kLogInfo);
+    bool ret = CallHilogBaseIsLoggable(0, "TEST_TAG", K_LOG_INFO);
     return ReturnInt32(env, 1);
 }
 
@@ -133,8 +133,8 @@ static napi_value HilogBaseIsLoggableStable001(napi_env env, napi_callback_info 
         return ReturnInt32(env, 0);
     }
     bool pass = true;
-    for (int i = 0; i < kStableLoop; ++i) {
-        CallHilogBaseIsLoggable(0xD000900, "TEST_TAG", kLogInfo);
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
+        CallHilogBaseIsLoggable(0xD000900, "TEST_TAG", K_LOG_INFO);
     }
     return ReturnInt32(env, pass ? 1 : 0);
 }
@@ -146,10 +146,10 @@ static napi_value HilogBaseIsLoggableThread001(napi_env env, napi_callback_info 
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < kThreadCount; ++t) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
-                CallHilogBaseIsLoggable(0xD000900, "TEST_TAG", kLogInfo);
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+                CallHilogBaseIsLoggable(0xD000900, "TEST_TAG", K_LOG_INFO);
             }
         });
     }
@@ -163,16 +163,26 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"hilogBaseIsLoggableNormal001", nullptr, HilogBaseIsLoggableNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBaseIsLoggableNormal002", nullptr, HilogBaseIsLoggableNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBaseIsLoggableNormal003", nullptr, HilogBaseIsLoggableNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBaseIsLoggableNormal004", nullptr, HilogBaseIsLoggableNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBaseIsLoggableAbnormal001", nullptr, HilogBaseIsLoggableAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBaseIsLoggableAbnormal002", nullptr, HilogBaseIsLoggableAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBaseIsLoggableBoundary001", nullptr, HilogBaseIsLoggableBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBaseIsLoggableBoundary002", nullptr, HilogBaseIsLoggableBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBaseIsLoggableStable001", nullptr, HilogBaseIsLoggableStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBaseIsLoggableThread001", nullptr, HilogBaseIsLoggableThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"hilogBaseIsLoggableNormal001", nullptr, HilogBaseIsLoggableNormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBaseIsLoggableNormal002", nullptr, HilogBaseIsLoggableNormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBaseIsLoggableNormal003", nullptr, HilogBaseIsLoggableNormal003, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBaseIsLoggableNormal004", nullptr, HilogBaseIsLoggableNormal004, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBaseIsLoggableAbnormal001", nullptr, HilogBaseIsLoggableAbnormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBaseIsLoggableAbnormal002", nullptr, HilogBaseIsLoggableAbnormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBaseIsLoggableBoundary001", nullptr, HilogBaseIsLoggableBoundary001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBaseIsLoggableBoundary002", nullptr, HilogBaseIsLoggableBoundary002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBaseIsLoggableStable001", nullptr, HilogBaseIsLoggableStable001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBaseIsLoggableThread001", nullptr, HilogBaseIsLoggableThread001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

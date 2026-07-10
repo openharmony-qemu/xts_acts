@@ -22,7 +22,7 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int kStableLoop10000 = 20;
+static constexpr int K_STABLE_LOOP10000 = 20;
 static constexpr int kThreadCount = 3;
 static constexpr int kIterPerThread = 10;
 
@@ -183,7 +183,7 @@ static napi_value IsnanfStable001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     bool pass = true;
-    for (int i = 0; i < kStableLoop10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
         if (CallIsnanf(NAN) == 0) {
             pass = false;
             break;
@@ -197,6 +197,18 @@ static napi_value IsnanfStable001(napi_env env, napi_callback_info info)
 }
 
 /* TC-012: Multi-thread safety */
+static void IsnanfWorker(std::atomic<bool>& hasError, const float* testVals, const int* expected)
+{
+    for (int i = 0; i < kIterPerThread; ++i) {
+        int idx = i % 5;
+        int ret = CallIsnanf(testVals[idx]);
+        if ((ret != 0) != (expected[idx] != 0)) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 static napi_value IsnanfThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
@@ -209,14 +221,7 @@ static napi_value IsnanfThread001(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < kThreadCount; ++t) {
         threads.emplace_back([&hasError, testVals, expected]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
-                int idx = i % 5;
-                int ret = CallIsnanf(testVals[idx]);
-                if ((ret != 0) != (expected[idx] != 0)) {
-                    hasError = true;
-                    return;
-                }
-            }
+            IsnanfWorker(hasError, testVals, expected);
         });
     }
     for (auto& th : threads) {

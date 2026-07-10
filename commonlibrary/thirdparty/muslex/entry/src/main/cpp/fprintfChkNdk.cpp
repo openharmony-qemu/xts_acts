@@ -129,7 +129,9 @@ static napi_value FprintfChkNormal001(napi_env env, napi_callback_info info)
     if (fprintf(tmpFile, "\n") < 0) {
         allPassed = false;
     }
-    fflush(tmpFile);
+    if (fflush(tmpFile) != 0) {
+        allPassed = false;
+    }
 
     if (tmpFile != stderr && tmpFile != stdout) {
         if (fclose(tmpFile) != 0) {}
