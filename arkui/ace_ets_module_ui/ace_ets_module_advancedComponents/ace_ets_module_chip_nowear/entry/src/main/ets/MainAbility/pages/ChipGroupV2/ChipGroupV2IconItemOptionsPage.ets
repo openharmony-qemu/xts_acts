@@ -26,7 +26,8 @@ import {
   ChipV2LabelConfig,
   ChipV2PrefixImageIconConfig,
   ChipV2SuffixImageIconConfig,
-  SymbolGlyphModifier
+  SymbolGlyphModifier,
+  ChipGroupV2Items
 } from '@kit.ArkUI'
 
 @Entry
@@ -41,6 +42,12 @@ struct ChipGroupV2IconItemOptionsPage {
   @Local suffixModifierNormal: SymbolGlyphModifier = new SymbolGlyphModifier($r('sys.symbol.ohos_wifi'));
   @Local suffixModifierActivated: SymbolGlyphModifier =
     new SymbolGlyphModifier($r('sys.symbol.ohos_wifi')).fontColor([Color.Red]);
+  aaa: Callback<ChipGroupV2Items> = () =>{
+    console.info('ChipGroupV2 on $items')
+  }
+  bbb: Callback<Array<number>>= () =>{
+    console.info('ChipGroupV2 on $selectedIndexes')
+  }
 
   @Builder
   ChipGroupSuffixV2(): void {
@@ -70,6 +77,7 @@ struct ChipGroupV2IconItemOptionsPage {
   build() {
     Column() {
       ChipGroupV2({
+        $items: this.aaa,
         items: [
           new ChipGroupV2Item({
             prefixSymbolIcon: { normal: this.prefixModifierNormal, activated: this.prefixModifierActivated },
@@ -99,6 +107,7 @@ struct ChipGroupV2IconItemOptionsPage {
           selectedBackgroundColor: ColorMetrics.resourceColor($r('sys.color.ohos_id_color_emphasize')),
           selectedFontColor: ColorMetrics.resourceColor($r('sys.color.ohos_id_color_text_primary_contrary')),
         }),
+        $selectedIndexes: this.bbb,
         selectedIndexes: this.selectedIndex,
         multiple: true,
         chipGroupSpace: new ChipGroupV2Space({ itemSpace: 8, endSpace: 0 }),
