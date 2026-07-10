@@ -965,7 +965,7 @@ export default function ErrorDollarInvokeTest(): void {
     it('testErrorDollarInvoke060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = Error.$_invoke('nan-cause', { cause: Number.NaN });
       expect(err.message).assertEqual('nan-cause');
-      expect(Number.isNaN(err.cause as number)).assertEqual(true);
+      expect(isNaN(err.cause as number)).assertEqual(true);
     });
 
     /**

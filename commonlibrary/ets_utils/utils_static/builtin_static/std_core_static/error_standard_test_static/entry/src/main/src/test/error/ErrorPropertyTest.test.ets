@@ -1354,7 +1354,7 @@ export default function ErrorPropertyTest(): void {
     it('testErrorProperty086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = new Error('nan-cause', { cause: NaN });
       expect(err.message).assertEqual('nan-cause');
-      expect(Number.isNaN(err.cause as number)).assertEqual(true);
+      expect(isNaN(err.cause as number)).assertEqual(true);
     });
 
     /**

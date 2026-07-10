@@ -813,7 +813,7 @@ export default function ErrorAggregateConstructorTest(): void {
      */
     it('testErrorAggregateConstructor052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: AggregateError = new AggregateError([new Error('e')], 'boolean cause', { cause: true });
-      expect(err.cause as boolean).assertTrue();
+      expect(err.cause as boolean).assertEqual(true);
       expect(err.message).assertEqual('boolean cause');
     });
 
