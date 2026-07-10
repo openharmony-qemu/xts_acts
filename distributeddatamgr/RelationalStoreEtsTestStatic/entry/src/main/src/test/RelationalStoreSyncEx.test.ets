@@ -39,8 +39,8 @@ let rdbStore: relationalStore.RdbStore | null = null;
 let logTag: string = 'rdbSyncFirstLevelTest:  ';
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
-export default function RelationalStoreSyncExTest(): void {
-    describe('RelationalStoreSyncExTest', () => {
+export default function RelationalStoreSyncExTest() {
+    describe('RelationalStoreSyncExTest', (): void => {
         beforeAll(async (): Promise<void> => {
             console.info(TAG + 'beforeAll');
             await Utils.msSleep(2000)
