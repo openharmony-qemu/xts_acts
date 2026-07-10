@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from '@ohos/hypium-binary/src/main/indexStatic';
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 class FlatOneItem009 {
@@ -177,9 +177,10 @@ export default function ArrayFlat1Test(): void {
       const nested: Array<Array<FlatOneItem009>> = [[item]];
       const result: Array<FlatOneItem009> = nested.flat<FlatOneItem009>(1);
       expect(result.length).assertEqual(1);
-      expect(result[0] != undefined).assertTrue();
       if (result[0] != undefined) {
         expect(result[0].value).assertEqual(1);
+      }else {
+        expect().assertFail();
       }
     });
 

@@ -17,7 +17,7 @@
 import {
   afterAll, afterEach, beforeAll, beforeEach, describe,
   expect, it, Level, Size, TestType
-} from '@ohos/hypium-binary/src/main/indexStatic';
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 class Item013 {
@@ -623,10 +623,11 @@ export default function ArrayConcatTest(): void {
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(3);
       const value = result[2] as Object | null;
-      expect(value != null).assertTrue();
       if (value != null) {
         const nestedValue = value as Array<int>;
         expect(nestedValue[0]).assertEqual(3);
+      }else {
+        expect().assertFail();
       }
     });
 
