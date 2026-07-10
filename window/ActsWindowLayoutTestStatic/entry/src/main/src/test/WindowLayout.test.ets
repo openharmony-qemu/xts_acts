@@ -22,7 +22,7 @@ import { BusinessError } from '@ohos.base';
 // import { MyCallback } from '../models/MyCallback';
 import window from '@ohos.window'
 import { UIContext } from '@ohos.arkui.UIContext';
-import { AppStorage , LocalStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage , LocalStorage, ReadonlyEnvKey } from '@ohos.arkui.stateManagement';
 import type { AsyncCallback, Callback} from '@ohos.base'
 import common from '@ohos.app.ability.common';
 import { ColorMetrics, screenshot } from '@kit.ArkUI';
