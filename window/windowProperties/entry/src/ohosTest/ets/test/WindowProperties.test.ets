@@ -1634,6 +1634,8 @@ export default function windowPropertiesTest() {
         it("testOnRectChangeOptionsResizeSubWindow", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = "testOnRectChangeOptionsResizeSubWindow";
             console.info(`${caseName} begin`);
+            let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+            console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
             try {
                 let subWindowClass = await windowStage.createSubWindow("subwindow");
                 console.info(`${caseName} Succeeded in creating the sub window.`);
@@ -1658,8 +1660,13 @@ export default function windowPropertiesTest() {
                 console.info(`${caseName} Succeeded in changing the sub window size.`);
             } catch (error) {
                 console.error(`${caseName} Error: code ${error.code}, message ${error.message}`);
-                expect().assertFail();
-                done();
+                if (!canIUseRes && error.code === 801) {
+                    console.info(`${caseName} The current device does not support SystemCapability.Window.SessionManager`);
+                    done();
+                } else {
+                    expect().assertFail();
+                    done();
+                }
             }
         })
         /**
