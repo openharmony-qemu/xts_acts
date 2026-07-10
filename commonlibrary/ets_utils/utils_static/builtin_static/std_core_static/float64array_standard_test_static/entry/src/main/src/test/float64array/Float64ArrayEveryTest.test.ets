@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 import Utils, { everyPred003 } from '../Util.test';
 
 export default function Float64ArrayEveryTest(): void {

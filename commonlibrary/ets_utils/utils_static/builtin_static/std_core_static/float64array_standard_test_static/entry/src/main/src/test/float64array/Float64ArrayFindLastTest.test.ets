@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 import Utils, { predFn002, extFn030, recPred032, CustomError004 } from '../Util.test';
 
 export default function Float64ArrayFindLastTest(): void {

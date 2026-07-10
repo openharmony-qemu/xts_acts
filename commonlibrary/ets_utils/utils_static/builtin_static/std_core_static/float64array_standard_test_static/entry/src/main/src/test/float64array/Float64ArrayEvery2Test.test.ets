@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 import Utils, { isPositive103, double107 } from '../Util.test';
 
 export default function Float64ArrayEvery2Test(): void {
