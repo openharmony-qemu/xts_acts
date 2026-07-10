@@ -175,6 +175,23 @@ export default function TextPickerJsunitTest() {
       // Illegal modification of properties of TextPicker component
       console.info('[TextPickerJsunit_0400] START');
       globalThis.value.message.notify({
+        name: 'fruits', value: ['banana1', 'orange2', 'peach3', 'grape4']
+      })
+      await CommonFunc.sleep(1000);
+      globalThis.value.message.notify({
+        name: 'select', value: 1
+      })
+      await CommonFunc.sleep(1000);
+      globalThis.value.message.notify({
+        name: 'parameterValue', value: 'peach3'
+      })
+      await CommonFunc.sleep(1000);
+      globalThis.value.message.notify({
+        name: 'defaultPickerItemHeight', value: 25
+      })
+      await CommonFunc.sleep(2000);
+      
+      globalThis.value.message.notify({
         name: 'fruits', value: 'abc'
       })
       await CommonFunc.sleep(1000);
