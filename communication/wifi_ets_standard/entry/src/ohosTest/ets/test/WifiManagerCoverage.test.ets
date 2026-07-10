@@ -2082,8 +2082,8 @@ export default function wifiManagerCoverage() {
         let isAccessToken = canIUse("SystemCapability.Communication.wifiMg.AP.Extension");
         console.info("SUB_Communication_WiFi_SysCaps_Test_0014 test.syscap.param.001 : " + isAccessToken);
         if (isAccessToken) {
-          console.info("[wifi_test] setPowerMode: " + wifiManagerExt.setPowerMode(wifiManagerExt.PowerMode.SLEEPING))
-        };
+          console.info("[wifi_test] setPowerMode: " + wifiManagerExt.setPowerMode(wifiManagerExt.PowerMode.SLEEPING));
+        }
         expect(isAccessToken).assertFalse();
       } catch (e) {
         console.info("SUB_Communication_WiFi_SysCaps_Test_0014 canIUse isAccessToken error: " + e);
@@ -2093,7 +2093,7 @@ export default function wifiManagerCoverage() {
         } else { 
           expect().assertFail(); 
         }
-      };
+      }
       console.info('SUB_Communication_WiFi_SysCaps_Test_0014 end');
       done();
     });
@@ -2111,8 +2111,8 @@ export default function wifiManagerCoverage() {
         let isAccessToken = canIUse("SystemCapability.Communication.wifiMg.AP.Extension");
         console.info("SUB_Communication_WiFi_SysCaps_Test_0015 test.syscap.param.001 : " + isAccessToken);
         if (isAccessToken) {
-          console.info("[wifi_test] setPowerMode: " + wifiManagerExt.setPowerMode(wifiManagerExt.PowerMode.GENERAL))
-        };
+          console.info("[wifi_test] setPowerMode: " + wifiManagerExt.setPowerMode(wifiManagerExt.PowerMode.GENERAL));
+        }
         expect(isAccessToken).assertFalse();
       } catch (e) {
         console.info("SUB_Communication_WiFi_SysCaps_Test_0015 canIUse isAccessToken error: " + e);
@@ -2122,7 +2122,7 @@ export default function wifiManagerCoverage() {
         } else { 
           expect().assertFail(); 
         }
-      };
+      }
       console.info('SUB_Communication_WiFi_SysCaps_Test_0015 end');
       done();
     });
@@ -2140,8 +2140,8 @@ export default function wifiManagerCoverage() {
         let isAccessToken = canIUse("SystemCapability.Communication.wifiMg.AP.Extension");
         console.info("SUB_Communication_WiFi_SysCaps_Test_0016 test.syscap.param.001 : " + isAccessToken);
         if (isAccessToken) {
-          console.info("[wifi_test] setPowerMode: " + wifiManagerExt.setPowerMode(wifiManagerExt.PowerMode.THROUGH_WALL))
-        };
+          console.info("[wifi_test] setPowerMode: " + wifiManagerExt.setPowerMode(wifiManagerExt.PowerMode.THROUGH_WALL));
+        }
         expect(isAccessToken).assertFalse();
       } catch (e) {
         console.info("SUB_Communication_WiFi_SysCaps_Test_0016 canIUse isAccessToken error: " + e);
@@ -2151,7 +2151,7 @@ export default function wifiManagerCoverage() {
         } else { 
           expect().assertFail(); 
         }
-      };
+      }
       console.info('SUB_Communication_WiFi_SysCaps_Test_0016 end');
       done();
     });
