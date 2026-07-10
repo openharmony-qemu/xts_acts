@@ -122,8 +122,8 @@ function verifyRowData(resultSet: relationalStore.ResultSet, expected: relationa
     }
   }
 }
-export default function RelationalStoreArkSqlQueryByStepTest(): void {
-  describe('RelationalStoreArkSqlQueryByStepTest', () => {
+export default function RelationalStoreArkSqlQueryByStepTest() {
+  describe('RelationalStoreArkSqlQueryByStepTest', (): void => {
     beforeAll(async () => {
       console.info(TAG + 'beforeAll')
       let cmd = "aa start -a EntryAbility -b com.example.relationalstore";
