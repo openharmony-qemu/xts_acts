@@ -161,7 +161,15 @@ export default function geolocationTest_geo7() {
         beforeEach(function () {
             console.info('beforeEach case');
         })
-        afterEach(function () {
+        afterEach(async function (done) {
+            console.info('afterEach case');
+            try {
+                await geolocationm.enableLocation();
+                console.info('[lbs_js] afterEach enableLocation success');
+            } catch (error) {
+                console.info('[lbs_js] afterEach enableLocation error.' + JSON.stringify(error));
+            }
+            done();
         })
 
 
