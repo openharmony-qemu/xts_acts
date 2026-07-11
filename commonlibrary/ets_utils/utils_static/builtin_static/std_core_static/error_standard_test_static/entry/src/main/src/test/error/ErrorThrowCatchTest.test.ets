@@ -39,14 +39,13 @@ const handleWithRecovery = (shouldFailWith: string): string => {
     } else {
       throw new Error("unknown error");
     }
-    return "unreachable";
   } catch (error) {
     if (error instanceof TypeError) {
-      return "TypeError: retry with conversion";
+      return error.name + ": " + error.message + ": retry with conversion";
     } else if (error instanceof RangeError) {
-      return "RangeError: clamp value";
+      return error.name + ": " + error.message + ": clamp value";
     } else {
-      return "Error: generic fallback";
+      return error.name + ": " + error.message + ": generic fallback";
     }
   }
 }
@@ -74,11 +73,11 @@ export default function ErrorThrowCatchTest(): void {
     it('testErrorThrowCatch001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let caughtMsg: string = "";
       try {
-        throw new Error("test error");
+        throw new Error("test@example.com");
       } catch (e) {
         caughtMsg = e.message;
       }
-      expect(caughtMsg).assertEqual("test error");
+      expect(caughtMsg).assertEqual("test@example.com");
     });
 
     /**
@@ -93,13 +92,13 @@ export default function ErrorThrowCatchTest(): void {
       let caughtCode: number = 0;
       let caughtMsg: string = "";
       try {
-        throw new Error(42, "code error");
+        throw new Error(0x7FFFFFFF, "2026-02-30");
       } catch (e) {
         caughtCode = e.code;
         caughtMsg = e.message;
       }
-      expect(caughtCode).assertEqual(42);
-      expect(caughtMsg).assertEqual("code error");
+      expect(caughtCode).assertEqual(2147483647);
+      expect(caughtMsg).assertEqual("2026-02-30");
     });
 
     /**
@@ -111,10 +110,10 @@ export default function ErrorThrowCatchTest(): void {
      * @tc.level Level 2
      */
     it('testErrorThrowCatch003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cause: Error = new Error("root");
+      let cause: Error = new Error("\u200B");
       let caughtCause: Object | undefined;
       try {
-        throw new Error("wrapped", { cause: cause });
+        throw new Error("123.45e6", { cause: cause });
       } catch (e) {
         caughtCause = e.cause;
       }
@@ -130,14 +129,19 @@ export default function ErrorThrowCatchTest(): void {
      * @tc.level Level 2
      */
     it('testErrorThrowCatch004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let finallyRan: boolean = false;
+      let trace: string = "";
+      let caughtMsg: string = "";
       try {
+        trace += "t";
         throw new Error("test");
       } catch (e) {
+        trace += "c";
+        caughtMsg = e.message;
       } finally {
-        finallyRan = true;
+        trace += "f";
       }
-      expect(finallyRan).assertEqual(true);
+      expect(trace).assertEqual("tcf");
+      expect(caughtMsg).assertEqual("test");
     });
 
     /**
@@ -149,20 +153,20 @@ export default function ErrorThrowCatchTest(): void {
      * @tc.level Level 2
      */
     it('testErrorThrowCatch005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let outerCaught: boolean = false;
       let innerMsg: string = "";
+      let outerMsg: string = "";
       try {
         try {
-          throw new Error("inner");
+          throw new Error("<script>alert(1)</script>");
         } catch (e) {
           innerMsg = e.message;
           throw e;
         }
       } catch (e) {
-        outerCaught = true;
+        outerMsg = e.message;
       }
-      expect(innerMsg).assertEqual("inner");
-      expect(outerCaught).assertEqual(true);
+      expect(innerMsg).assertEqual("<script>alert(1)</script>");
+      expect(outerMsg).assertEqual("<script>alert(1)</script>");
     });
 
     /**
@@ -175,12 +179,15 @@ export default function ErrorThrowCatchTest(): void {
      */
     it('testErrorThrowCatch006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let isErr: boolean = false;
+      let caughtMsg: string = "";
       try {
         throw new Error("instance test");
       } catch (e) {
         isErr = e instanceof Error;
+        caughtMsg = e.message;
       }
-      expect(isErr).assertEqual(true);
+      expect(isErr).assertTrue();
+      expect(caughtMsg).assertEqual("instance test");
     });
 
     /**
@@ -196,15 +203,15 @@ export default function ErrorThrowCatchTest(): void {
       let caughtCode: number = 0;
       let caughtMsg: string = "";
       try {
-        throw new Error("CustomErr", 200, "overload3 msg");
+        throw new Error("Custom\u200BErr", -2147483648, "622202********1234");
       } catch (e) {
         caughtName = e.name;
         caughtCode = e.code;
         caughtMsg = e.message;
       }
-      expect(caughtName).assertEqual("CustomErr");
-      expect(caughtCode).assertEqual(200);
-      expect(caughtMsg).assertEqual("overload3 msg");
+      expect(caughtName).assertEqual("Custom\u200BErr");
+      expect(caughtCode).assertEqual(-2147483648);
+      expect(caughtMsg).assertEqual("622202********1234");
     });
 
     /**
@@ -220,15 +227,15 @@ export default function ErrorThrowCatchTest(): void {
       let caughtCode: number = 0;
       let caughtMsg: string = "";
       try {
-        throw new Error("SName", "SMsg");
+        throw new Error("310101199001011234", "\uFFFD");
       } catch (e) {
         caughtName = e.name;
         caughtCode = e.code;
         caughtMsg = e.message;
       }
-      expect(caughtName).assertEqual("SName");
+      expect(caughtName).assertEqual("310101199001011234");
       expect(caughtCode).assertEqual(0);
-      expect(caughtMsg).assertEqual("SMsg");
+      expect(caughtMsg).assertEqual("\uFFFD");
     });
 
     /**
@@ -240,10 +247,10 @@ export default function ErrorThrowCatchTest(): void {
      * @tc.level Level 2
      */
     it('testErrorThrowCatch009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let root: Error = new Error("root cause");
+      let root: Error = new Error("25:00:00");
       let caughtCause: Object | undefined;
       try {
-        throw new Error(500, "wrapped", { cause: root });
+        throw new Error(0b1010, "wrapped", { cause: root });
       } catch (e) {
         caughtCause = e.cause;
       }
@@ -259,7 +266,6 @@ export default function ErrorThrowCatchTest(): void {
      * @tc.level Level 2
      */
     it('testErrorThrowCatch010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let caught: boolean = false;
       const level3 = (): void => {
         throw new Error("deep");
       };
@@ -357,14 +363,18 @@ export default function ErrorThrowCatchTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_1500
      * @tc.name testErrorThrowCatch015
-     * @tc.desc Verify name mutation after construction is independent of constructor name
+     * @tc.desc Verify caught Error name mutation preserves constructor code
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
     it('testErrorThrowCatch015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = new Error("OriginalName", 500, "msg");
-      err.name = "NewName";
+      try {
+        throw err;
+      } catch (e) {
+        e.name = "NewName";
+      }
       expect(err.name).assertEqual("NewName");
       expect(err.code).assertEqual(500);
     });
@@ -372,7 +382,7 @@ export default function ErrorThrowCatchTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_1600
      * @tc.name testErrorThrowCatch016
-     * @tc.desc Verify cause can be replaced after construction
+     * @tc.desc Verify caught Error cause replacement is visible on original reference
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -381,7 +391,11 @@ export default function ErrorThrowCatchTest(): void {
       let c1: Error = new Error("cause1");
       let c2: Error = new Error("cause2");
       let err: Error = new Error("wrapper", { cause: c1 });
-      err.cause = c2;
+      try {
+        throw err;
+      } catch (e) {
+        e.cause = c2;
+      }
       expect(err.cause).assertEqual(c2);
       expect(err.cause).not().assertEqual(c1);
     });
@@ -389,18 +403,22 @@ export default function ErrorThrowCatchTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_1700
      * @tc.name testErrorThrowCatch017
-     * @tc.desc Verify mutating name, message, code, cause, stack all work independently
+     * @tc.desc Verify mutating caught Error fields updates the same object
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
     it('testErrorThrowCatch017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = new Error();
-      err.name = "Changed";
-      err.message = "changed msg";
-      err.code = 888;
-      err.cause = new Error("root");
-      err.stack = "custom stack";
+      try {
+        throw err;
+      } catch (e) {
+        e.name = "Changed";
+        e.message = "changed msg";
+        e.code = 888;
+        e.cause = new Error("root");
+        e.stack = "custom stack";
+      }
       expect(err.name).assertEqual("Changed");
       expect(err.message).assertEqual("changed msg");
       expect(err.code).assertEqual(888);
@@ -434,16 +452,21 @@ export default function ErrorThrowCatchTest(): void {
      * @tc.level Level 2
      */
     it('testErrorThrowCatch019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let finallyRan: boolean = false;
+      let trace: string = "";
+      let caughtMsg: string = "";
       try {
         try {
+          trace += "t";
           throw new Error("test");
         } finally {
-          finallyRan = true;
+          trace += "f";
         }
       } catch (e) {
+        trace += "c";
+        caughtMsg = e.message;
       }
-      expect(finallyRan).assertEqual(true);
+      expect(trace).assertEqual("tfc");
+      expect(caughtMsg).assertEqual("test");
     });
 
     /**
@@ -489,20 +512,24 @@ export default function ErrorThrowCatchTest(): void {
      * @tc.level Level 2
      */
     it('testErrorThrowCatch021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let finallyRan: boolean = false;
+      let trace: string = "";
+      let caughtMsg: string = "";
       const fn = (): string => {
         try {
+          trace += "t";
           throw new Error("err");
         } catch (e) {
+          trace += "c";
+          caughtMsg = e.message;
           return "fromCatch";
         } finally {
-          finallyRan = true;
+          trace += "f";
         }
-        return "unreachable";
       };
       let result: string = fn();
       expect(result).assertEqual("fromCatch");
-      expect(finallyRan).assertEqual(true);
+      expect(trace).assertEqual("tcf");
+      expect(caughtMsg).assertEqual("err");
     });
 
     /**
@@ -515,15 +542,18 @@ export default function ErrorThrowCatchTest(): void {
      */
     it('testErrorThrowCatch022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let trace: string = "";
+      let caughtMsg: string = "";
       try {
         trace += "t";
         throw new Error("test");
       } catch (e) {
         trace += "c";
+        caughtMsg = e.message;
       } finally {
         trace += "f";
       }
       expect(trace).assertEqual("tcf");
+      expect(caughtMsg).assertEqual("test");
     });
 
     /**
@@ -535,14 +565,17 @@ export default function ErrorThrowCatchTest(): void {
      * @tc.level Level 2
      */
     it('testErrorThrowCatch023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let finallyExecuted: boolean = false;
+      let trace: string = "";
+      let err: Error = new Error("not-thrown");
       try {
-        let x: number = 1 + 1;
+        trace += err.message;
       } catch (e) {
+        trace += "c";
       } finally {
-        finallyExecuted = true;
+        trace += "f";
       }
-      expect(finallyExecuted).assertEqual(true);
+      expect(trace).assertEqual("not-thrownf");
+      expect(err.message).assertEqual("not-thrown");
     });
 
     /**
@@ -554,7 +587,7 @@ export default function ErrorThrowCatchTest(): void {
      * @tc.level Level 2
      */
     it('testErrorThrowCatch024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let outerCaught: boolean = false;
+      let outerMsg: string = "";
       try {
         try {
           throw new Error("rethrow");
@@ -562,10 +595,9 @@ export default function ErrorThrowCatchTest(): void {
           throw e;
         }
       } catch (outer) {
-        outerCaught = true;
-        expect(outer.message).assertEqual("rethrow");
+        outerMsg = outer.message;
       }
-      expect(outerCaught).assertEqual(true);
+      expect(outerMsg).assertEqual("rethrow");
     });
 
     /**
@@ -577,7 +609,8 @@ export default function ErrorThrowCatchTest(): void {
      * @tc.level Level 2
      */
     it('testErrorThrowCatch025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let outerCaught: boolean = false;
+      let outerMsg: string = "";
+      let rootMsg: string = "";
       try {
         try {
           throw new Error("original");
@@ -585,11 +618,11 @@ export default function ErrorThrowCatchTest(): void {
           throw new Error("wrapped", { cause: e });
         }
       } catch (outer) {
-        outerCaught = true;
-        expect(outer.message).assertEqual("wrapped");
-        expect((outer.cause as Error).message).assertEqual("original");
+        outerMsg = outer.message;
+        rootMsg = (outer.cause as Error).message;
       }
-      expect(outerCaught).assertEqual(true);
+      expect(outerMsg).assertEqual("wrapped");
+      expect(rootMsg).assertEqual("original");
     });
 
     /**
@@ -601,7 +634,9 @@ export default function ErrorThrowCatchTest(): void {
      * @tc.level Level 2
      */
     it('testErrorThrowCatch026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let outerCaught: boolean = false;
+      let outerMsg: string = "";
+      let middleMsg: string = "";
+      let rootMsg: string = "";
       try {
         try {
           try {
@@ -613,12 +648,13 @@ export default function ErrorThrowCatchTest(): void {
           throw new Error("level3", { cause: e });
         }
       } catch (outer) {
-        outerCaught = true;
-        expect(outer.message).assertEqual("level3");
-        expect((outer.cause as Error).message).assertEqual("level2");
-        expect(((outer.cause as Error).cause as Error).message).assertEqual("root");
+        outerMsg = outer.message;
+        middleMsg = (outer.cause as Error).message;
+        rootMsg = ((outer.cause as Error).cause as Error).message;
       }
-      expect(outerCaught).assertEqual(true);
+      expect(outerMsg).assertEqual("level3");
+      expect(middleMsg).assertEqual("level2");
+      expect(rootMsg).assertEqual("root");
     });
 
     /**
@@ -630,19 +666,20 @@ export default function ErrorThrowCatchTest(): void {
      * @tc.level Level 2
      */
     it('testErrorThrowCatch027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let innerCaught: boolean = false;
-      let outerCaught: boolean = false;
+      let trace: string = "";
+      let innerMsg: string = "";
       try {
         try {
           throw new Error("inner");
         } catch (e) {
-          innerCaught = true;
+          trace += "inner";
+          innerMsg = e.message;
         }
       } catch (e) {
-        outerCaught = true;
+        trace += "outer";
       }
-      expect(innerCaught).assertEqual(true);
-      expect(outerCaught).assertEqual(false);
+      expect(trace).assertEqual("inner");
+      expect(innerMsg).assertEqual("inner");
     });
 
     /**
@@ -655,24 +692,31 @@ export default function ErrorThrowCatchTest(): void {
      */
     it('testErrorThrowCatch028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let catches: string[] = [];
+      let messages: string[] = [];
       try {
         try {
           try {
             throw new Error("L3");
           } catch (e) {
             catches.push("L3_catch");
+            messages.push(e.message);
             throw e;
           }
         } catch (e) {
           catches.push("L2_catch");
+          messages.push(e.message);
           throw e;
         }
       } catch (e) {
         catches.push("L1_catch");
+        messages.push(e.message);
       }
       expect(catches[0]).assertEqual("L3_catch");
       expect(catches[1]).assertEqual("L2_catch");
       expect(catches[2]).assertEqual("L1_catch");
+      expect(messages[0]).assertEqual("L3");
+      expect(messages[1]).assertEqual("L3");
+      expect(messages[2]).assertEqual("L3");
     });
 
     /**
@@ -685,14 +729,17 @@ export default function ErrorThrowCatchTest(): void {
      */
     it('testErrorThrowCatch029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let catchCount: number = 0;
+      let lastMessage: string = "";
       for (let i: number = 0; i < 5; i++) {
         try {
-          throw new Error("iter");
+          throw new Error("iter-" + i);
         } catch (e) {
           catchCount++;
+          lastMessage = e.message;
         }
       }
       expect(catchCount).assertEqual(5);
+      expect(lastMessage).assertEqual("iter-4");
     });
 
     /**
@@ -705,16 +752,21 @@ export default function ErrorThrowCatchTest(): void {
      */
     it('testErrorThrowCatch030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let count: number = 0;
+      let firstMessage: string = "";
       let i: number = 0;
       while (i < 3) {
         try {
-          throw new Error("while iter");
+          throw new Error("while-" + i);
         } catch (e) {
+          if (count === 0) {
+            firstMessage = e.message;
+          }
           count++;
         }
         i++;
       }
       expect(count).assertEqual(3);
+      expect(firstMessage).assertEqual("while-0");
     });
 
     /**
@@ -792,19 +844,22 @@ export default function ErrorThrowCatchTest(): void {
      * @tc.level Level 2
      */
     it('testErrorThrowCatch034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let finallyRan: boolean = false;
+      let trace: string = "";
       const fn = (): string => {
         try {
-          return "fromTry";
+          trace += "t";
+          let err: Error = new Error("fromTry");
+          return err.message;
         } catch (e) {
+          trace += "c";
           return "fromCatch";
         } finally {
-          finallyRan = true;
+          trace += "f";
         }
       };
       let result: string = fn();
       expect(result).assertEqual("fromTry");
-      expect(finallyRan).assertEqual(true);
+      expect(trace).assertEqual("tf");
     });
 
     /**
@@ -841,6 +896,7 @@ export default function ErrorThrowCatchTest(): void {
      */
     it('testErrorThrowCatch036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let order: string = "";
+      let caughtMsg: string = "";
       try {
         try {
           throw new Error("inner");
@@ -849,10 +905,12 @@ export default function ErrorThrowCatchTest(): void {
         }
       } catch (e) {
         order += "outer_catch;";
+        caughtMsg = e.message;
       } finally {
         order += "outer_finally;";
       }
       expect(order).assertEqual("inner_finally;outer_catch;outer_finally;");
+      expect(caughtMsg).assertEqual("inner");
     });
 
     /**
@@ -881,7 +939,6 @@ export default function ErrorThrowCatchTest(): void {
      * @tc.level Level 2
      */
     it('testErrorThrowCatch038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let caught: boolean = false;
       let err: Error = new Error("prop test");
       err.code = 42;
       try {
@@ -922,7 +979,7 @@ export default function ErrorThrowCatchTest(): void {
      * @tc.level Level 2
      */
     it('testErrorThrowCatch040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let outerCaught: boolean = false;
+      let outerMsg: string = "";
       try {
         try {
           throw new Error("should_rethrow");
@@ -933,10 +990,9 @@ export default function ErrorThrowCatchTest(): void {
           }
         }
       } catch (outer) {
-        outerCaught = true;
-        expect(outer.message).assertEqual("should_rethrow");
+        outerMsg = outer.message;
       }
-      expect(outerCaught).assertEqual(true);
+      expect(outerMsg).assertEqual("should_rethrow");
     });
 
     /**
@@ -948,14 +1004,16 @@ export default function ErrorThrowCatchTest(): void {
      * @tc.level Level 2
      */
     it('testErrorThrowCatch041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let afterCatch: boolean = false;
+      let trace: string = "";
       try {
+        trace += "t";
         throw new Error("recoverable");
       } catch (e) {
+        trace += "c";
         expect(e.message).assertEqual("recoverable");
       }
-      afterCatch = true;
-      expect(afterCatch).assertEqual(true);
+      trace += "a";
+      expect(trace).assertEqual("tca");
     });
 
     /**
@@ -968,7 +1026,7 @@ export default function ErrorThrowCatchTest(): void {
      */
     it('testErrorThrowCatch042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = handleWithRecovery("type");
-      expect(result).assertEqual("TypeError: retry with conversion");
+      expect(result).assertEqual("TypeError: type mismatch: retry with conversion");
     });
 
     /**
@@ -981,7 +1039,7 @@ export default function ErrorThrowCatchTest(): void {
      */
     it('testErrorThrowCatch043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = handleWithRecovery("range");
-      expect(result).assertEqual("RangeError: clamp value");
+      expect(result).assertEqual("RangeError: out of range: clamp value");
     });
 
     /**
@@ -994,7 +1052,7 @@ export default function ErrorThrowCatchTest(): void {
      */
     it('testErrorThrowCatch044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = handleWithRecovery("custom");
-      expect(result).assertEqual("Error: generic fallback");
+      expect(result).assertEqual("CustomError: custom failure: generic fallback");
     });
 
     /**
@@ -1007,7 +1065,7 @@ export default function ErrorThrowCatchTest(): void {
      */
     it('testErrorThrowCatch045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = handleWithRecovery("unknown");
-      expect(result).assertEqual("Error: generic fallback");
+      expect(result).assertEqual("Error: unknown error: generic fallback");
     });
 
     /**
@@ -1020,12 +1078,15 @@ export default function ErrorThrowCatchTest(): void {
      */
     it('testErrorThrowCatch046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let state: string = "initial";
+      let caughtMsg: string = "";
       try {
         throw new Error("fail");
       } catch (e) {
         state = "recovered";
+        caughtMsg = e.message;
       }
       expect(state).assertEqual("recovered");
+      expect(caughtMsg).assertEqual("fail");
     });
 
     /**
@@ -1163,14 +1224,16 @@ export default function ErrorThrowCatchTest(): void {
      * @tc.level Level 2
      */
     it('testErrorThrowCatch053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let hasStack: boolean = false;
+      let stackText: string = "";
       try {
         throw new BusinessError(505, 'stack-business');
       } catch (e) {
         let caught: BusinessError = e as BusinessError;
-        hasStack = caught.stack !== undefined && (caught.stack as string).length > 0;
+        if (caught.stack !== undefined) {
+          stackText = caught.stack as string;
+        }
       }
-      expect(hasStack).assertEqual(true);
+      expect(stackText.indexOf('ErrorThrowCatchTest.test.ets')).not().assertEqual(-1);
     });
 
     /**
@@ -1183,7 +1246,7 @@ export default function ErrorThrowCatchTest(): void {
      */
     it('testErrorThrowCatch054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let original: BusinessError = new BusinessError(506, 'rethrow-business');
-      let sameReference: boolean = false;
+      let caughtReference: BusinessError | undefined = undefined;
       try {
         try {
           throw original;
@@ -1191,9 +1254,9 @@ export default function ErrorThrowCatchTest(): void {
           throw e;
         }
       } catch (e) {
-        sameReference = (e as BusinessError) === original;
+        caughtReference = e as BusinessError;
       }
-      expect(sameReference).assertEqual(true);
+      expect(caughtReference).assertEqual(original);
     });
 
     /**
@@ -1205,18 +1268,20 @@ export default function ErrorThrowCatchTest(): void {
      * @tc.level Level 2
      */
     it('testErrorThrowCatch055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let finallyRan: boolean = false;
+      let trace: string = "";
       let caughtCode: number = 0;
       try {
         try {
+          trace += "t";
           throw new BusinessError(508, 'nested-business');
         } finally {
-          finallyRan = true;
+          trace += "f";
         }
       } catch (e) {
+        trace += "c";
         caughtCode = (e as BusinessError).code;
       }
-      expect(finallyRan).assertEqual(true);
+      expect(trace).assertEqual("tfc");
       expect(caughtCode).assertEqual(508);
     });
 

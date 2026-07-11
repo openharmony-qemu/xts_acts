@@ -364,7 +364,7 @@ export default function ErrorCauseTest(): void {
      */
     it('testErrorCause020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error('msg', { cause: undefined });
-      expect(e.cause === undefined).assertEqual(true);
+      expect(e.cause).assertUndefined();
     });
 
     /**
@@ -378,7 +378,7 @@ export default function ErrorCauseTest(): void {
     it('testErrorCause021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error('msg', { cause: new Error('original') });
       e.cause = undefined;
-      expect(e.cause === undefined).assertEqual(true);
+      expect(e.cause).assertUndefined();
     });
 
     /**
@@ -626,7 +626,7 @@ export default function ErrorCauseTest(): void {
         }
         walk = (walk as Error).cause as Object;
       }
-      expect(foundRoot).assertEqual(true);
+      expect(foundRoot).assertTrue();
     });
 
     /**
@@ -771,14 +771,13 @@ export default function ErrorCauseTest(): void {
      * @tc.level Level 2
      */
     it('testErrorCause046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let threw: boolean = false;
       try {
         let e: Error = new Error('null-cause');
         e.cause = null as Object;
+        expect().assertFail();
       } catch (e) {
-        threw = true;
+        expect((e as Error).name).assertEqual('ClassCastError');
       }
-      expect(threw).assertEqual(true);
     });
 
     /**
@@ -816,6 +815,78 @@ export default function ErrorCauseTest(): void {
       expect(e1.message).assertEqual('e1');
       expect((e1.cause as Error).message).assertEqual('e2');
       expect(((e1.cause as Error).cause as RangeError).message).assertEqual('e3');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CAUSE_4900
+     * @tc.name testErrorCause049
+     * @tc.desc Verify URL string cause remains the same Object value
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorCause049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cause: Object = 'https://example.com/cause?id=49' as Object;
+      let err: Error = new Error('url-cause-holder', { cause: cause });
+      expect(err.cause).assertEqual(cause);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CAUSE_5000
+     * @tc.name testErrorCause050
+     * @tc.desc Verify zero-width string cause is preserved exactly
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorCause050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cause: Object = 'cause\u200Bhidden' as Object;
+      let err: Error = new Error('zero-width-cause', { cause: cause });
+      expect(err.cause).assertEqual(cause);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CAUSE_5100
+     * @tc.name testErrorCause051
+     * @tc.desc Verify Map cause keeps business format entries
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorCause051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cause: Map<string, string> = new Map<string, string>();
+      cause.set('email', 'test@example.com');
+      let err: Error = new Error('map-business-cause', { cause: cause });
+      expect((err.cause as Map<string, string>).get('email')).assertEqual('test@example.com');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CAUSE_5200
+     * @tc.name testErrorCause052
+     * @tc.desc Verify Set cause preserves replacement character value
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorCause052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cause: Set<string> = new Set<string>();
+      cause.add('\uFFFD');
+      let err: Error = new Error('set-replacement-cause', { cause: cause });
+      expect((err.cause as Set<string>).has('\uFFFD')).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CAUSE_5300
+     * @tc.name testErrorCause053
+     * @tc.desc Verify Date cause preserves epoch timestamp
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorCause053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cause: Date = new Date(0);
+      let err: Error = new Error('epoch-date-cause', { cause: cause });
+      expect((err.cause as Date).getTime()).assertEqual(0);
     });
   });
 }

@@ -160,10 +160,10 @@ export default function ErrorCollectionTest(): void {
      * @tc.level Level 2
      */
     it('testErrorCollection007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: Error = new Error("set test");
+      let err: Error = new Error("test@example.com");
       let s: Set<Error> = new Set<Error>();
       s.add(err);
-      expect(s.has(err)).assertEqual(true);
+      expect(s.has(err)).assertTrue();
       expect(s.size).assertEqual(1);
     });
 
@@ -176,7 +176,7 @@ export default function ErrorCollectionTest(): void {
      * @tc.level Level 2
      */
     it('testErrorCollection008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: Error = new Error("duplicate");
+      let err: Error = new Error("\u200B");
       let s: Set<Error> = new Set<Error>();
       s.add(err);
       s.add(err);
@@ -192,8 +192,8 @@ export default function ErrorCollectionTest(): void {
      * @tc.level Level 2
      */
     it('testErrorCollection009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err1: Error = new Error("x");
-      let err2: Error = new Error("y");
+      let err1: Error = new Error("2026-02-30");
+      let err2: Error = new Error("\uFFFD");
       let s: Set<Error> = new Set<Error>();
       s.add(err1);
       s.add(err2);
@@ -213,11 +213,11 @@ export default function ErrorCollectionTest(): void {
      * @tc.level Level 2
      */
     it('testErrorCollection010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let key: Error = new Error("map key");
+      let key: Error = new Error("310101199001011234");
       let m: Map<Error, string> = new Map<Error, string>();
-      m.set(key, "value1");
-      expect(m.get(key)).assertEqual("value1");
-      expect(m.has(key)).assertEqual(true);
+      m.set(key, "0x123");
+      expect(m.get(key)).assertEqual("0x123");
+      expect(m.has(key)).assertTrue();
     });
 
     /**
@@ -229,8 +229,8 @@ export default function ErrorCollectionTest(): void {
      * @tc.level Level 2
      */
     it('testErrorCollection011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let k1: Error = new Error("k1");
-      let k2: Error = new Error("k2");
+      let k1: Error = new Error("622202********1234");
+      let k2: Error = new Error("25:00:00");
       let m: Map<Error, string> = new Map<Error, string>();
       m.set(k1, "v1");
       m.set(k2, "v2");
@@ -246,12 +246,12 @@ export default function ErrorCollectionTest(): void {
      * @tc.level Level 2
      */
     it('testErrorCollection012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let key: Error = new Error("same key");
+      let key: Error = new Error("same\u200Bkey");
       let m: Map<Error, string> = new Map<Error, string>();
-      m.set(key, "first");
-      m.set(key, "second");
+      m.set(key, "123.45e6");
+      m.set(key, "<script>alert(1)</script>");
       expect(m.size).assertEqual(1);
-      expect(m.get(key)).assertEqual("second");
+      expect(m.get(key)).assertEqual("<script>alert(1)</script>");
     });
 
     /**
@@ -356,8 +356,8 @@ export default function ErrorCollectionTest(): void {
       let e1: Error = new Error("in");
       let e2: Error = new Error("not in");
       let arr: Error[] = [e1];
-      expect(arr.includes(e1)).assertEqual(true);
-      expect(arr.includes(e2)).assertEqual(false);
+      expect(arr.includes(e1)).assertTrue();
+      expect(arr.includes(e2)).assertFalse();
     });
 
     /**
@@ -431,7 +431,7 @@ export default function ErrorCollectionTest(): void {
       let hasHigh: boolean = arr.some((e: Error): boolean => {
         return e.code > 500;
       });
-      expect(hasHigh).assertEqual(true);
+      expect(hasHigh).assertTrue();
     });
 
     /**
@@ -449,7 +449,7 @@ export default function ErrorCollectionTest(): void {
       let allPositive: boolean = arr.every((e: Error): boolean => {
         return e.code >= 0;
       });
-      expect(allPositive).assertEqual(true);
+      expect(allPositive).assertTrue();
     });
 
     /**
@@ -508,7 +508,7 @@ export default function ErrorCollectionTest(): void {
       let found: Error | undefined = arr.find((e: Error): boolean => {
         return e.message === "not present";
       });
-      expect(found).assertEqual(undefined);
+      expect(found).assertUndefined();
     });
 
     /**
@@ -545,7 +545,7 @@ export default function ErrorCollectionTest(): void {
       let result: boolean = arr.some((e: Error): boolean => {
         return e.code > 100;
       });
-      expect(result).assertEqual(false);
+      expect(result).assertFalse();
     });
 
     /**
@@ -563,7 +563,7 @@ export default function ErrorCollectionTest(): void {
       let result: boolean = arr.every((e: Error): boolean => {
         return e.code > 0;
       });
-      expect(result).assertEqual(false);
+      expect(result).assertFalse();
     });
 
     /**
@@ -591,10 +591,10 @@ export default function ErrorCollectionTest(): void {
       let e: Error = new Error("to delete");
       let s: Set<Error> = new Set<Error>();
       s.add(e);
-      expect(s.has(e)).assertEqual(true);
+      expect(s.has(e)).assertTrue();
       let deleted: boolean = s.delete(e);
-      expect(deleted).assertEqual(true);
-      expect(s.has(e)).assertEqual(false);
+      expect(deleted).assertTrue();
+      expect(s.has(e)).assertFalse();
       expect(s.size).assertEqual(0);
     });
 
@@ -610,7 +610,7 @@ export default function ErrorCollectionTest(): void {
       let e: Error = new Error("not in set");
       let s: Set<Error> = new Set<Error>();
       let deleted: boolean = s.delete(e);
-      expect(deleted).assertEqual(false);
+      expect(deleted).assertFalse();
     });
 
     /**
@@ -630,9 +630,9 @@ export default function ErrorCollectionTest(): void {
       s.add(e2);
       s.add(e3);
       s.delete(e2);
-      expect(s.has(e1)).assertEqual(true);
-      expect(s.has(e2)).assertEqual(false);
-      expect(s.has(e3)).assertEqual(true);
+      expect(s.has(e1)).assertTrue();
+      expect(s.has(e2)).assertFalse();
+      expect(s.has(e3)).assertTrue();
       expect(s.size).assertEqual(2);
     });
 
@@ -653,7 +653,7 @@ export default function ErrorCollectionTest(): void {
       expect(s.size).assertEqual(2);
       s.clear();
       expect(s.size).assertEqual(0);
-      expect(s.has(e1)).assertEqual(false);
+      expect(s.has(e1)).assertFalse();
     });
 
     /**
@@ -706,8 +706,8 @@ export default function ErrorCollectionTest(): void {
       let other: Error = new Error("missing");
       let m: Map<Error, string> = new Map<Error, string>();
       m.set(key, "value");
-      expect(m.has(key)).assertEqual(true);
-      expect(m.has(other)).assertEqual(false);
+      expect(m.has(key)).assertTrue();
+      expect(m.has(other)).assertFalse();
     });
 
     /**
@@ -722,10 +722,10 @@ export default function ErrorCollectionTest(): void {
       let key: Error = new Error("to remove");
       let m: Map<Error, string> = new Map<Error, string>();
       m.set(key, "val");
-      expect(m.has(key)).assertEqual(true);
+      expect(m.has(key)).assertTrue();
       let deleted: boolean = m.delete(key);
-      expect(deleted).assertEqual(true);
-      expect(m.has(key)).assertEqual(false);
+      expect(deleted).assertTrue();
+      expect(m.has(key)).assertFalse();
       expect(m.size).assertEqual(0);
     });
 
@@ -770,7 +770,7 @@ export default function ErrorCollectionTest(): void {
       expect(m.size).assertEqual(2);
       m.clear();
       expect(m.size).assertEqual(0);
-      expect(m.has(k1)).assertEqual(false);
+      expect(m.has(k1)).assertFalse();
     });
 
     /**
@@ -785,7 +785,7 @@ export default function ErrorCollectionTest(): void {
       let missing: Error = new Error("not inserted");
       let m: Map<Error, string> = new Map<Error, string>();
       let val: string | undefined = m.get(missing);
-      expect(val).assertEqual(undefined);
+      expect(val).assertUndefined();
     });
 
     /**
@@ -941,10 +941,10 @@ export default function ErrorCollectionTest(): void {
      * @tc.level Level 2
      */
     it('testErrorCollection050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let errors: Error[] = [new Error("left"), new Error("right")];
+      let errors: Error[] = [new Error("13800138000"), new Error("\u0000")];
       let [first, second]: Error[] = errors;
-      expect(first.message).assertEqual("left");
-      expect(second.message).assertEqual("right");
+      expect(first.message).assertEqual("13800138000");
+      expect(second.message).assertEqual("\u0000");
     });
 
     /**
@@ -957,8 +957,8 @@ export default function ErrorCollectionTest(): void {
      */
     it('testErrorCollection051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let map: Map<string, Error> = new Map<string, Error>();
-      map.set("err", new Error("map value"));
-      expect(map.get("err")?.message).assertEqual("map value");
+      map.set("0b1010", new Error("map value"));
+      expect(map.get("0b1010")?.message).assertEqual("map value");
     });
 
     /**
@@ -971,8 +971,8 @@ export default function ErrorCollectionTest(): void {
      */
     it('testErrorCollection052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let map: Map<string, Error> = new Map<string, Error>();
-      map.set("found", new Error("found value"));
-      expect(map.get("found")?.message).assertEqual("found value");
+      map.set("2026-13-01", new Error("found value"));
+      expect(map.get("2026-13-01")?.message).assertEqual("found value");
       expect(map.get("missing")?.message).assertUndefined();
     });
 
@@ -985,12 +985,12 @@ export default function ErrorCollectionTest(): void {
      * @tc.level Level 2
      */
     it('testErrorCollection053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let errors: Error[] = [new Error("a"), new Error("b"), new Error("c")];
+      let errors: Error[] = [new Error("0x123"), new Error("0b1010"), new Error("123.45e6")];
       let joined: string = "";
       errors.forEach((err: Error): void => {
         joined += err.message;
       });
-      expect(joined).assertEqual("abc");
+      expect(joined).assertEqual("0x1230b1010123.45e6");
     });
 
     /**
@@ -1122,7 +1122,7 @@ export default function ErrorCollectionTest(): void {
       let hasRange: boolean = errors.some((err: Error): boolean => {
         return err.name === "RangeError";
       });
-      expect(hasRange).assertEqual(true);
+      expect(hasRange).assertTrue();
     });
 
     /**
@@ -1138,7 +1138,7 @@ export default function ErrorCollectionTest(): void {
       let hasEval: boolean = errors.some((err: Error): boolean => {
         return err.name === "EvalError";
       });
-      expect(hasEval).assertEqual(false);
+      expect(hasEval).assertFalse();
     });
 
     /**
@@ -1151,10 +1151,11 @@ export default function ErrorCollectionTest(): void {
      */
     it('testErrorCollection063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let errors: Error[] = [new Error("a"), new RangeError("b")];
-      let allNonEmpty: boolean = errors.every((err: Error): boolean => {
-        return err.message.length > 0;
+      let expectedMessages: string[] = ["a", "b"];
+      let allNonEmpty: boolean = errors.every((err: Error, index: int): boolean => {
+        return err.message === expectedMessages[index];
       });
-      expect(allNonEmpty).assertEqual(true);
+      expect(allNonEmpty).assertTrue();
     });
 
     /**
@@ -1167,10 +1168,11 @@ export default function ErrorCollectionTest(): void {
      */
     it('testErrorCollection064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let errors: Error[] = [new Error("a"), new Error("")];
-      let allNonEmpty: boolean = errors.every((err: Error): boolean => {
-        return err.message.length > 0;
+      let expectedMessages: string[] = ["a", "b"];
+      let allNonEmpty: boolean = errors.every((err: Error, index: int): boolean => {
+        return err.message === expectedMessages[index];
       });
-      expect(allNonEmpty).assertEqual(false);
+      expect(allNonEmpty).assertFalse();
     });
 
     /**
@@ -1216,7 +1218,7 @@ export default function ErrorCollectionTest(): void {
     it('testErrorCollection067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let target: Error = new Error("target");
       let errors: Error[] = [new Error("a"), target];
-      expect(errors.includes(target)).assertEqual(true);
+      expect(errors.includes(target)).assertTrue();
     });
 
     /**
@@ -1229,7 +1231,7 @@ export default function ErrorCollectionTest(): void {
      */
     it('testErrorCollection068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let errors: Error[] = [new Error("same")];
-      expect(errors.includes(new Error("same"))).assertEqual(false);
+      expect(errors.includes(new Error("same"))).assertFalse();
     });
 
     /**
@@ -1542,7 +1544,7 @@ export default function ErrorCollectionTest(): void {
         set.add(err);
       });
       expect(set.size).assertEqual(2);
-      expect(set.has(first)).assertEqual(true);
+      expect(set.has(first)).assertTrue();
     });
 
     /**
@@ -1572,13 +1574,13 @@ export default function ErrorCollectionTest(): void {
      * @tc.level Level 2
      */
     it('testErrorCollection089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let errors: Error[] = [new Error("zero"), new Error("one")];
+      let errors: Error[] = [new Error("2026-02-30"), new Error("test@example.com")];
       let map: Map<number, string> = new Map<number, string>();
       errors.forEach((err: Error, index: int): void => {
         map.set(index, err.message);
       });
-      expect(map.get(0)).assertEqual("zero");
-      expect(map.get(1)).assertEqual("one");
+      expect(map.get(0)).assertEqual("2026-02-30");
+      expect(map.get(1)).assertEqual("test@example.com");
     });
 
     /**
@@ -1994,9 +1996,9 @@ export default function ErrorCollectionTest(): void {
     it('testErrorCollection113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let errors: Error[] = [];
       let result: boolean = errors.every((err: Error): boolean => {
-        return err.message.length > 0;
+        return err.message === "unused";
       });
-      expect(result).assertEqual(true);
+      expect(result).assertTrue();
       expect(errors.length).assertEqual(0);
     });
 
