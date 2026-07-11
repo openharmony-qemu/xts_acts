@@ -26,7 +26,7 @@ export default function Atan2FiniteNdkTest() {
     });
     /**
      * @tc.name   testAtan2FiniteNormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_ATAN2_FINITE_0200
+     * @tc.number SUB_THIRDPARTY_MUSL_ATAN2_FINITE_0100
      * @tc.desc   TC-001: __atan2_finite basic function consistency with atan2f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -42,7 +42,7 @@ export default function Atan2FiniteNdkTest() {
 
     /**
      * @tc.name   testAtan2FiniteNormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_ATAN2_FINITE_0201
+     * @tc.number SUB_THIRDPARTY_MUSL_ATAN2_FINITE_0200
      * @tc.desc   TC-002: NaN input silent pass-through
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -58,7 +58,7 @@ export default function Atan2FiniteNdkTest() {
 
     /**
      * @tc.name   testAtan2FiniteNormal003
-     * @tc.number SUB_THIRDPARTY_MUSL_ATAN2_FINITE_0202
+     * @tc.number SUB_THIRDPARTY_MUSL_ATAN2_FINITE_0300
      * @tc.desc   TC-003: +inf input triggers domain_error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -74,7 +74,7 @@ export default function Atan2FiniteNdkTest() {
 
     /**
      * @tc.name   testAtan2FiniteNormal004
-     * @tc.number SUB_THIRDPARTY_MUSL_ATAN2_FINITE_0203
+     * @tc.number SUB_THIRDPARTY_MUSL_ATAN2_FINITE_0400
      * @tc.desc   TC-004: -inf input triggers domain_error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -90,7 +90,7 @@ export default function Atan2FiniteNdkTest() {
 
     /**
      * @tc.name   testAtan2FiniteFunc001
-     * @tc.number SUB_THIRDPARTY_MUSL_ATAN2_FINITE_0204
+     * @tc.number SUB_THIRDPARTY_MUSL_ATAN2_FINITE_0500
      * @tc.desc   TC-005: errno unchanged after valid call
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -106,7 +106,7 @@ export default function Atan2FiniteNdkTest() {
 
     /**
      * @tc.name   testAtan2FiniteFunc002
-     * @tc.number SUB_THIRDPARTY_MUSL_ATAN2_FINITE_0205
+     * @tc.number SUB_THIRDPARTY_MUSL_ATAN2_FINITE_0600
      * @tc.desc   TC-006: domain_error sets errno to EDOM
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -122,7 +122,7 @@ export default function Atan2FiniteNdkTest() {
 
     /**
      * @tc.name   testAtan2FiniteStable001
-     * @tc.number SUB_THIRDPARTY_MUSL_ATAN2_FINITE_0206
+     * @tc.number SUB_THIRDPARTY_MUSL_ATAN2_FINITE_0700
      * @tc.desc   TC-007: 10000 repeated calls stability
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -138,7 +138,7 @@ export default function Atan2FiniteNdkTest() {
 
     /**
      * @tc.name   testAtan2FiniteSpec001
-     * @tc.number SUB_THIRDPARTY_MUSL_ATAN2_FINITE_0207
+     * @tc.number SUB_THIRDPARTY_MUSL_ATAN2_FINITE_0800
      * @tc.desc   TC-008: PC device symbol existence and dlsym loading
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -154,7 +154,7 @@ export default function Atan2FiniteNdkTest() {
 
     /**
      * @tc.name   testAtan2FiniteSpec002
-     * @tc.number SUB_THIRDPARTY_MUSL_ATAN2_FINITE_0208
+     * @tc.number SUB_THIRDPARTY_MUSL_ATAN2_FINITE_0900
      * @tc.desc   TC-009: non-aarch64 symbol non-existence verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -170,7 +170,7 @@ export default function Atan2FiniteNdkTest() {
 
     /**
      * @tc.name   testAtan2FiniteSpec003
-     * @tc.number SUB_THIRDPARTY_MUSL_ATAN2_FINITE_0209
+     * @tc.number SUB_THIRDPARTY_MUSL_ATAN2_FINITE_1000
      * @tc.desc   TC-010: function pointer nullptr safety check
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -186,7 +186,7 @@ export default function Atan2FiniteNdkTest() {
 
     /**
      * @tc.name   testAtan2FiniteSpec004
-     * @tc.number SUB_THIRDPARTY_MUSL_ATAN2_FINITE_0210
+     * @tc.number SUB_THIRDPARTY_MUSL_ATAN2_FINITE_1100
      * @tc.desc   TC-011: non-PC device stub mode verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -202,7 +202,7 @@ export default function Atan2FiniteNdkTest() {
 
     /**
      * @tc.name   testAtan2FiniteSpec005
-     * @tc.number SUB_THIRDPARTY_MUSL_ATAN2_FINITE_0211
+     * @tc.number SUB_THIRDPARTY_MUSL_ATAN2_FINITE_1200
      * @tc.desc   TC-012: PC vs non-PC device behavior difference
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

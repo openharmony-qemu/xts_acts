@@ -26,7 +26,7 @@ export default function AcosfFiniteNdkTest() {
     });
     /**
      * @tc.name   testAcosfFiniteNormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0200
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0100
      * @tc.desc   TC-001: __acosf_finite basic function consistency with acosf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -42,7 +42,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteNormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0201
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0200
      * @tc.desc   TC-002: NaN input silent pass-through
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -58,7 +58,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteNormal003
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0202
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0300
      * @tc.desc   TC-003: +inf triggers domain_error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -74,7 +74,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteNormal004
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0203
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0400
      * @tc.desc   TC-004: -inf triggers domain_error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -90,7 +90,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteNormal005
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0204
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0500
      * @tc.desc   TC-005: x > 1 finite value triggers domain_error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -106,7 +106,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteNormal006
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0205
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0600
      * @tc.desc   TC-006: x < -1 finite value triggers domain_error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -122,7 +122,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteBoundary001
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0206
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0700
      * @tc.desc   TC-007: boundary x == +1.0f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -138,7 +138,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteBoundary002
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0207
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0800
      * @tc.desc   TC-008: boundary x == -1.0f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -154,7 +154,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteBoundary003
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0208
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0900
      * @tc.desc   TC-009: boundary x == -0.0f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -170,7 +170,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteBoundary004
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0209
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_1000
      * @tc.desc   TC-010: slightly beyond boundary triggers domain_error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -186,7 +186,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteBoundary005
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0210
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_1100
      * @tc.desc   TC-011: subnormal input behavior
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -202,7 +202,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteFunc001
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0211
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_1200
      * @tc.desc   TC-012: errno unchanged after valid call
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -218,7 +218,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteFunc002
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0212
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_1300
      * @tc.desc   TC-013: domain_error sets errno to EDOM
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -234,7 +234,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteFunc003
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0213
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_1400
      * @tc.desc   TC-014: non-zero errno not overwritten on success
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -250,7 +250,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteFunc004
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0214
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_1500
      * @tc.desc   TC-015: FE_INVALID floating-point exception verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -266,7 +266,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteFunc005
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0215
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_1600
      * @tc.desc   TC-016: FE_INVALID clearable verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -282,7 +282,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteFunc006
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0216
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_1700
      * @tc.desc   TC-017: no dynamic memory allocation verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -298,7 +298,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteStable001
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0217
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_1800
      * @tc.desc   TC-018: 10000 repeated calls stability
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -314,7 +314,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteStable002
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0218
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_1900
      * @tc.desc   TC-019: 100000 calls no performance degradation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -330,7 +330,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteStable003
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0219
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_2000
      * @tc.desc   TC-020: multi-thread MT-Safe verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -346,7 +346,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteFunc007
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0220
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_2100
      * @tc.desc   TC-022: FPU floating-point environment dependency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -362,7 +362,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteFunc008
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0221
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_2200
      * @tc.desc   TC-023: rounding mode does not affect function behavior
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -378,7 +378,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteSpec001
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0222
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_2300
      * @tc.desc   TC-024: PC device symbol existence and dlsym loading
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -394,7 +394,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteSpec002
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0223
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_2400
      * @tc.desc   TC-025: non-aarch64 symbol non-existence verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -410,7 +410,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteSpec003
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0224
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_2500
      * @tc.desc   TC-026: function pointer nullptr safety check
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -426,7 +426,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteSpec004
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0225
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_2600
      * @tc.desc   TC-027: non-PC device stub mode verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -442,7 +442,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteSpec005
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0226
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_2700
      * @tc.desc   TC-028: IsStubMode detection mechanism verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -458,7 +458,7 @@ export default function AcosfFiniteNdkTest() {
 
     /**
      * @tc.name   testAcosfFiniteSpec006
-     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_0227
+     * @tc.number SUB_THIRDPARTY_MUSL_ACOSF_FINITE_2800
      * @tc.desc   TC-029: PC vs non-PC device behavior difference
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

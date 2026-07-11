@@ -27,7 +27,7 @@ export default function Exp2fFiniteNdkTest() {
 
     /**
      * @tc.name   testExp2fFiniteNormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_EXP2F_FINITE_0101
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP2F_FINITE_0100
      * @tc.desc   Verify exp2f_finite calculates base-2 exponential correctly (zero, positive, negative)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -43,7 +43,7 @@ export default function Exp2fFiniteNdkTest() {
 
     /**
      * @tc.name   testExp2fFiniteNormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_EXP2F_FINITE_0102
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP2F_FINITE_0200
      * @tc.desc   Verify exp2f_finite calculates large base-2 exponential values correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -59,7 +59,7 @@ export default function Exp2fFiniteNdkTest() {
 
     /**
      * @tc.name   testExp2fFiniteNormal003
-     * @tc.number SUB_THIRDPARTY_MUSL_EXP2F_FINITE_0103
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP2F_FINITE_0300
      * @tc.desc   Verify exp2f_finite precision matches standard powf(2, x)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -75,7 +75,7 @@ export default function Exp2fFiniteNdkTest() {
 
     /**
      * @tc.name   testExp2fFiniteNormal004
-     * @tc.number SUB_THIRDPARTY_MUSL_EXP2F_FINITE_0104
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP2F_FINITE_0400
      * @tc.desc   Verify exp2f_finite handles integer powers correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -89,11 +89,11 @@ export default function Exp2fFiniteNdkTest() {
       done();
     });
 
-    // ==================== 边界值测试 ====================
+    // ==================== 边界值测�?====================
 
     /**
      * @tc.name   testExp2fFiniteBoundary001
-     * @tc.number SUB_THIRDPARTY_MUSL_EXP2F_FINITE_0105
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP2F_FINITE_0500
      * @tc.desc   Verify exp2f_finite overflow boundary (large positive values)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -109,7 +109,7 @@ export default function Exp2fFiniteNdkTest() {
 
     /**
      * @tc.name   testExp2fFiniteBoundary002
-     * @tc.number SUB_THIRDPARTY_MUSL_EXP2F_FINITE_0106
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP2F_FINITE_0600
      * @tc.desc   Verify exp2f_finite underflow boundary (large negative values)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -125,7 +125,7 @@ export default function Exp2fFiniteNdkTest() {
 
     /**
      * @tc.name   testExp2fFiniteBoundary003
-     * @tc.number SUB_THIRDPARTY_MUSL_EXP2F_FINITE_0107
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP2F_FINITE_0700
      * @tc.desc   Verify exp2f_finite near overflow/underflow boundary values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -143,7 +143,7 @@ export default function Exp2fFiniteNdkTest() {
 
     /**
      * @tc.name   testExp2fFiniteAbnormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_EXP2F_FINITE_0108
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP2F_FINITE_0800
      * @tc.desc   Verify exp2f_finite handles NaN and Inf inputs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -157,11 +157,11 @@ export default function Exp2fFiniteNdkTest() {
       done();
     });
 
-    // ==================== 稳定性测试 ====================
+    // ==================== 稳定性测�?====================
 
     /**
      * @tc.name   testExp2fFiniteStable001
-     * @tc.number SUB_THIRDPARTY_MUSL_EXP2F_FINITE_0109
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP2F_FINITE_0900
      * @tc.desc   Verify exp2f_finite returns consistent results on multiple calls
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -177,7 +177,7 @@ export default function Exp2fFiniteNdkTest() {
 
     /**
      * @tc.name   testExp2fFiniteStable002
-     * @tc.number SUB_THIRDPARTY_MUSL_EXP2F_FINITE_0110
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP2F_FINITE_1000
      * @tc.desc   Verify exp2f_finite handles massive number of calls without crash
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -191,11 +191,11 @@ export default function Exp2fFiniteNdkTest() {
       done();
     });
 
-    // ==================== 多线程测试 ====================
+    // ==================== 多线程测�?====================
 
     /**
      * @tc.name   testExp2fFiniteThread001
-     * @tc.number SUB_THIRDPARTY_MUSL_EXP2F_FINITE_0111
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP2F_FINITE_1100
      * @tc.desc   Verify exp2f_finite is thread-safe with concurrent calls
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -211,7 +211,7 @@ export default function Exp2fFiniteNdkTest() {
 
     /**
      * @tc.name   testExp2fFiniteThread002
-     * @tc.number SUB_THIRDPARTY_MUSL_EXP2F_FINITE_0112
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP2F_FINITE_1200
      * @tc.desc   Verify exp2f_finite thread-safety with mixed parameters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

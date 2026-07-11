@@ -41,7 +41,7 @@ export default function FdeltChkNdkTest() {
 
     /**
      * @tc.name   testFdeltChkNormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_0101
+     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_0200
      * @tc.desc   Normal test: fd = 0, expected index 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -57,7 +57,7 @@ export default function FdeltChkNdkTest() {
 
     /**
      * @tc.name   testFdeltChkNormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_0102
+     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_0300
      * @tc.desc   Normal test: fd = NFDBITS-1, index should be 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -73,7 +73,7 @@ export default function FdeltChkNdkTest() {
 
     /**
      * @tc.name   testFdeltChkNormal003
-     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_0103
+     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_0400
      * @tc.desc   Normal test: fd = NFDBITS, index should be 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -89,7 +89,7 @@ export default function FdeltChkNdkTest() {
 
     /**
      * @tc.name   testFdeltChkNormal004
-     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_0104
+     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_0500
      * @tc.desc   Normal test: fd = FD_SETSIZE-1, index should be (FD_SETSIZE-1)/NFDBITS
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -105,7 +105,7 @@ export default function FdeltChkNdkTest() {
 
     /**
      * @tc.name   testFdeltChkNormal005
-     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_0105
+     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_0600
      * @tc.desc   Normal test: multiple fds cross boundary
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -121,7 +121,7 @@ export default function FdeltChkNdkTest() {
 
     /**
      * @tc.name   testFdeltChkAbnormal005
-     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_0106
+     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_0700
      * @tc.desc   Abnormal test: stub mode behavior (ENOSYS)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -137,7 +137,7 @@ export default function FdeltChkNdkTest() {
 
     /**
      * @tc.name   testFdeltChkBoundary001
-     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_0107
+     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_0800
      * @tc.desc   Boundary test: fd = 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -153,7 +153,7 @@ export default function FdeltChkNdkTest() {
 
     /**
      * @tc.name   testFdeltChkBoundary002
-     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_0108
+     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_0900
      * @tc.desc   Boundary test: fd = FD_SETSIZE - 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -169,7 +169,7 @@ export default function FdeltChkNdkTest() {
 
     /**
      * @tc.name   testFdeltChkBoundary003
-     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_0109
+     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_1000
      * @tc.desc   Boundary test: fd = NFDBITS
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -185,7 +185,7 @@ export default function FdeltChkNdkTest() {
 
     /**
      * @tc.name   testFdeltChkBoundary004
-     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_0110
+     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_1100
      * @tc.desc   Boundary test: fd = NFDBITS - 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -201,7 +201,7 @@ export default function FdeltChkNdkTest() {
 
     /**
      * @tc.name   testFdeltChkFunc001
-     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_0111
+     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_1200
      * @tc.desc   Functional: verify all fds in [0, FD_SETSIZE) return correct index
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -217,7 +217,7 @@ export default function FdeltChkNdkTest() {
 
     /**
      * @tc.name   testFdeltChkFunc002
-     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_0112
+     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_1300
      * @tc.desc   Functional: stub mode returns ENOSYS for all fd
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -233,7 +233,7 @@ export default function FdeltChkNdkTest() {
 
     /**
      * @tc.name   testFdeltChkFunc003
-     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_0113
+     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_1400
      * @tc.desc   Functional: use returned index to set fd in fd_set
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -249,7 +249,7 @@ export default function FdeltChkNdkTest() {
 
     /**
      * @tc.name   testFdeltChkFunc004
-     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_0114
+     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_1500
      * @tc.desc   Functional: verify multiple boundary values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -265,7 +265,7 @@ export default function FdeltChkNdkTest() {
 
     /**
      * @tc.name   testFdeltChkStable001
-     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_0115
+     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_1600
      * @tc.desc   Stability: repeated calls 10000 times
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -281,7 +281,7 @@ export default function FdeltChkNdkTest() {
 
     /**
      * @tc.name   testFdeltChkStable002
-     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_0116
+     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_1700
      * @tc.desc   Stability: multi-threaded concurrent calls
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -297,7 +297,7 @@ export default function FdeltChkNdkTest() {
 
     /**
      * @tc.name   testFdeltChkStable003
-     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_0117
+     * @tc.number SUB_THIRDPARTY_MUSL_FDELT_CHK_1800
      * @tc.desc   Stability: stub mode repeated calls consistency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

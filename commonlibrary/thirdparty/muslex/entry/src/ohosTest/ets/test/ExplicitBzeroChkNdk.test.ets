@@ -42,7 +42,7 @@ export default function ExplicitBzeroChkNdkTest() {
 
     /**
      * @tc.name   testExplicitBzeroChkNormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0101
+     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0200
      * @tc.desc   Normal test: zero out entire buffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -58,7 +58,7 @@ export default function ExplicitBzeroChkNdkTest() {
 
     /**
      * @tc.name   testExplicitBzeroChkNormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0102
+     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0300
      * @tc.desc   Normal test: zero out first 5 bytes of 10-byte buffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -74,7 +74,7 @@ export default function ExplicitBzeroChkNdkTest() {
 
     /**
      * @tc.name   testExplicitBzeroChkNormal003
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0103
+     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0400
      * @tc.desc   Normal test: zero length should not modify buffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -90,7 +90,7 @@ export default function ExplicitBzeroChkNdkTest() {
 
     /**
      * @tc.name   testExplicitBzeroChkNormal004
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0104
+     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0500
      * @tc.desc   Normal test: zero out first byte only
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -106,7 +106,7 @@ export default function ExplicitBzeroChkNdkTest() {
 
     /**
      * @tc.name   testExplicitBzeroChkAbnormal003
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0105
+     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0600
      * @tc.desc   Abnormal test: zero length on single byte buffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -122,7 +122,7 @@ export default function ExplicitBzeroChkNdkTest() {
 
     /**
      * @tc.name   testExplicitBzeroChkBoundary001
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0106
+     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0700
      * @tc.desc   Boundary test: zero length on single byte
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -138,7 +138,7 @@ export default function ExplicitBzeroChkNdkTest() {
 
     /**
      * @tc.name   testExplicitBzeroChkBoundary002
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0107
+     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0800
      * @tc.desc   Boundary test: clear single byte buffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -154,7 +154,7 @@ export default function ExplicitBzeroChkNdkTest() {
 
     /**
      * @tc.name   testExplicitBzeroChkBoundary003
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0108
+     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0900
      * @tc.desc   Boundary test: clear 9 bytes of 10-byte buffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -170,7 +170,7 @@ export default function ExplicitBzeroChkNdkTest() {
 
     /**
      * @tc.name   testExplicitBzeroChkFunc001
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0109
+     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_1000
      * @tc.desc   Functional: volatile buffer ensures no optimization
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -186,7 +186,7 @@ export default function ExplicitBzeroChkNdkTest() {
 
     /**
      * @tc.name   testExplicitBzeroChkFunc002
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0110
+     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_1100
      * @tc.desc   Functional: zero length should not change memory
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -202,7 +202,7 @@ export default function ExplicitBzeroChkNdkTest() {
 
     /**
      * @tc.name   testExplicitBzeroChkFunc003
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0111
+     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_1200
      * @tc.desc   Functional: stub mode returns ENOSYS and no modification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -218,7 +218,7 @@ export default function ExplicitBzeroChkNdkTest() {
 
     /**
      * @tc.name   testExplicitBzeroChkFunc004
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0112
+     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_1300
      * @tc.desc   Functional: not applicable, always returns 1 in full mode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -234,7 +234,7 @@ export default function ExplicitBzeroChkNdkTest() {
 
     /**
      * @tc.name   testExplicitBzeroChkStable001
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0113
+     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_1400
      * @tc.desc   Stability: repeated calls 10000 times
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -250,7 +250,7 @@ export default function ExplicitBzeroChkNdkTest() {
 
     /**
      * @tc.name   testExplicitBzeroChkStable002
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0114
+     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_1500
      * @tc.desc   Stability: multi-threaded concurrent calls
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -266,7 +266,7 @@ export default function ExplicitBzeroChkNdkTest() {
 
     /**
      * @tc.name   testExplicitBzeroChkStable004
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0115
+     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_1600
      * @tc.desc   Stability: stub mode repeated calls consistency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -25,7 +25,7 @@ export default function Fcntl64NativeTest() {
 
     /**
      * @tc.name   testFcntl64Normal001
-     * @tc.number SUB_THIRDPARTY_MUSL_FCNTL64_0101
+     * @tc.number SUB_THIRDPARTY_MUSL_FCNTL64_NATIVE_0100
      * @tc.desc   F_GETFD on temp file
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -41,7 +41,7 @@ export default function Fcntl64NativeTest() {
 
     /**
      * @tc.name   testFcntl64Normal002
-     * @tc.number SUB_THIRDPARTY_MUSL_FCNTL64_0102
+     * @tc.number SUB_THIRDPARTY_MUSL_FCNTL64_NATIVE_0200
      * @tc.desc   F_SETFD and verify
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -57,7 +57,7 @@ export default function Fcntl64NativeTest() {
 
     /**
      * @tc.name   testFcntl64Normal003
-     * @tc.number SUB_THIRDPARTY_MUSL_FCNTL64_0103
+     * @tc.number SUB_THIRDPARTY_MUSL_FCNTL64_NATIVE_0300
      * @tc.desc   F_GETFL on temp file
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -73,7 +73,7 @@ export default function Fcntl64NativeTest() {
 
     /**
      * @tc.name   testFcntl64Normal004
-     * @tc.number SUB_THIRDPARTY_MUSL_FCNTL64_0104
+     * @tc.number SUB_THIRDPARTY_MUSL_FCNTL64_NATIVE_0400
      * @tc.desc   IsStubMode check
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -89,7 +89,7 @@ export default function Fcntl64NativeTest() {
 
     /**
      * @tc.name   testFcntl64Abnormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_FCNTL64_0105
+     * @tc.number SUB_THIRDPARTY_MUSL_FCNTL64_NATIVE_0500
      * @tc.desc   Invalid fd
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -105,7 +105,7 @@ export default function Fcntl64NativeTest() {
 
     /**
      * @tc.name   testFcntl64Abnormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_FCNTL64_0106
+     * @tc.number SUB_THIRDPARTY_MUSL_FCNTL64_NATIVE_0600
      * @tc.desc   Invalid cmd
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -121,7 +121,7 @@ export default function Fcntl64NativeTest() {
 
     /**
      * @tc.name   testFcntl64Boundary001
-     * @tc.number SUB_THIRDPARTY_MUSL_FCNTL64_0107
+     * @tc.number SUB_THIRDPARTY_MUSL_FCNTL64_NATIVE_0700
      * @tc.desc   F_GETFD on stdin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -137,7 +137,7 @@ export default function Fcntl64NativeTest() {
 
     /**
      * @tc.name   testFcntl64Boundary002
-     * @tc.number SUB_THIRDPARTY_MUSL_FCNTL64_0108
+     * @tc.number SUB_THIRDPARTY_MUSL_FCNTL64_NATIVE_0800
      * @tc.desc   Clear FD_CLOEXEC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -153,7 +153,7 @@ export default function Fcntl64NativeTest() {
 
     /**
      * @tc.name   testFcntl64Stable001
-     * @tc.number SUB_THIRDPARTY_MUSL_FCNTL64_0109
+     * @tc.number SUB_THIRDPARTY_MUSL_FCNTL64_NATIVE_0900
      * @tc.desc   10000 repeated calls stability
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -169,7 +169,7 @@ export default function Fcntl64NativeTest() {
 
     /**
      * @tc.name   testFcntl64Thread001
-     * @tc.number SUB_THIRDPARTY_MUSL_FCNTL64_0110
+     * @tc.number SUB_THIRDPARTY_MUSL_FCNTL64_NATIVE_1000
      * @tc.desc   Multi-thread safety
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
