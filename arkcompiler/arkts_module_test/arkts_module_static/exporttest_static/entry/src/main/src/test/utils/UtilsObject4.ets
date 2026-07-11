@@ -13,22 +13,22 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-export function addFunction(a: number, b: number) {
+export function addFunction(a: number, b: number): number {
   return a + b;
 }
 ;
 
-export function subtractFunction(a: number, b: number) {
+export function subtractFunction(a: number, b: number): number {
   return a - b;
 }
 ;
 
-export function multiplyFunction(a: number, b: number) {
+export function multiplyFunction(a: number, b: number): number {
   return a * b;
 }
 ;
 
-export function divideFunction(a: number, b: number) {
+export function divideFunction(a: number, b: number): number {
   if (b === 0) {
     throw new Error('除数不能为零');
   }

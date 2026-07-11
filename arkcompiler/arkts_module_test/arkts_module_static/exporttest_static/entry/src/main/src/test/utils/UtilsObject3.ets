@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-let subtractFun2 = (a: number, b: number) => {
+let subtractFun2:(a: number, b: number)=>number = (a: number, b: number) => {
   return a - b;
 };
 
