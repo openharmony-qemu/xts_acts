@@ -69,6 +69,7 @@ export default function ErrorPropertyTest(): void {
       let err: Error = new Error();
       err.name = "CustomError";
       expect(err.name).assertEqual("CustomError");
+      expect(err.name.length).assertEqual(11);
     });
 
     /**
@@ -165,7 +166,7 @@ export default function ErrorPropertyTest(): void {
     it('testErrorProperty009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = new Error();
       let keys: string[] = Object.keys(err);
-      expect(keys !== undefined).assertEqual(true);
+      expect(keys.length).assertEqual(0);
     });
 
     /**
@@ -195,7 +196,7 @@ export default function ErrorPropertyTest(): void {
       try {
         throw err;
       } catch (e) {
-        expect(e.stack !== undefined).assertEqual(true);
+        expect(((e as Error).stack as string).includes("ErrorPropertyTest.test.ets")).assertTrue();
       }
     });
 
@@ -267,6 +268,7 @@ export default function ErrorPropertyTest(): void {
       let err: Error = new Error();
       err.name = "NewName";
       expect(err.name).assertEqual("NewName");
+      expect(err.message).assertEqual("");
     });
 
     /**
@@ -323,8 +325,10 @@ export default function ErrorPropertyTest(): void {
      */
     it('testErrorProperty020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error();
+      e.code = 0;
       e.code = 2147483647;
       expect(e.code).assertEqual(2147483647);
+      expect(e.name).assertEqual("Error");
     });
 
     /**
@@ -413,7 +417,7 @@ export default function ErrorPropertyTest(): void {
     it('testErrorProperty026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("t", { cause: new Error("r") });
       e.cause = undefined;
-      expect(e.cause === undefined).assertEqual(true);
+      expect(e.cause).assertUndefined();
     });
 
     /**
@@ -476,31 +480,31 @@ export default function ErrorPropertyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_PROPERTY_0310
      * @tc.name testErrorProperty031
-     * @tc.desc Verify writing name twice keeps the last written value
+     * @tc.desc Verify writing URL name after email name keeps the last written value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorProperty031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = new Error();
-      err.name = "First";
-      err.name = "Second";
-      expect(err.name).assertEqual("Second");
+      err.name = "first@example.com";
+      err.name = "https://example.com/errors/property";
+      expect(err.name).assertEqual("https://example.com/errors/property");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_PROPERTY_0320
      * @tc.name testErrorProperty032
-     * @tc.desc Verify writing message twice keeps the last written value
+     * @tc.desc Verify writing XSS message after invalid date string keeps the last written value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorProperty032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = new Error();
-      err.message = "msg1";
-      err.message = "msg2";
-      expect(err.message).assertEqual("msg2");
+      err.message = "2026-13-01";
+      err.message = "<script>alert(1)</script>";
+      expect(err.message).assertEqual("<script>alert(1)</script>");
     });
 
     /**
@@ -533,37 +537,36 @@ export default function ErrorPropertyTest(): void {
       err.cause = c1;
       err.cause = c2;
       expect(err.cause).assertEqual(c2);
-      expect(err.cause !== c1).assertEqual(true);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_PROPERTY_0350
      * @tc.name testErrorProperty035
-     * @tc.desc Verify writing stack twice keeps the last written value
+     * @tc.desc Verify writing CRLF stack after escaped stack keeps the last written value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorProperty035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = new Error();
-      err.stack = "stack1";
-      err.stack = "stack2";
-      expect(err.stack).assertEqual("stack2");
+      err.stack = "frame-one\nframe-two";
+      err.stack = "frame-one\r\nframe-two";
+      expect(err.stack).assertEqual("frame-one\r\nframe-two");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_PROPERTY_0360
      * @tc.name testErrorProperty036
-     * @tc.desc Verify toString reflects sequential writes to name then message
+     * @tc.desc Verify toString reflects zero-width name and Arabic message writes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorProperty036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = new Error();
-      err.name = "SeqName";
-      err.message = "SeqMsg";
-      expect(err.toString()).assertEqual("SeqName: SeqMsg");
+      err.name = "Seq\u200BName";
+      err.message = "الاختبار";
+      expect(err.toString()).assertEqual("Seq\u200BName: الاختبار");
     });
 
     /**
@@ -590,16 +593,16 @@ export default function ErrorPropertyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_PROPERTY_0380
      * @tc.name testErrorProperty038
-     * @tc.desc Verify toString still correct when message set before name
+     * @tc.desc Verify toString still correct when replacement character message is set before noncharacter name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorProperty038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = new Error();
-      err.message = "FirstMsg";
-      err.name = "FirstName";
-      expect(err.toString()).assertEqual("FirstName: FirstMsg");
+      err.message = "\uFFFD";
+      err.name = "First\uFFFEName";
+      expect(err.toString()).assertEqual("First\uFFFEName: \uFFFD");
     });
 
     /**
@@ -637,7 +640,7 @@ export default function ErrorPropertyTest(): void {
         throw err;
       } catch (e) {
         let s: String = e.stack as String;
-        expect(s.length > 10).assertEqual(true);
+        expect(s.includes("ErrorPropertyTest.test.ets")).assertTrue();
       }
     });
 
@@ -662,16 +665,16 @@ export default function ErrorPropertyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_PROPERTY_0420
      * @tc.name testErrorProperty042
-     * @tc.desc Verify name can be written after construction with message
+     * @tc.desc Verify ID-card style name can be written after construction with phone style message
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorProperty042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: Error = new Error("initial msg");
-      e.name = "Renamed";
-      expect(e.name).assertEqual("Renamed");
-      expect(e.message).assertEqual("initial msg");
+      let e: Error = new Error("13800138000");
+      e.name = "310101199001011234";
+      expect(e.name).assertEqual("310101199001011234");
+      expect(e.message).assertEqual("13800138000");
     });
 
     /**
@@ -777,9 +780,9 @@ export default function ErrorPropertyTest(): void {
     it('testErrorProperty048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("not thrown yet");
       let s: String | undefined = e.stack;
-      expect(s !== undefined).assertEqual(true);
+      expect(s).not().assertUndefined();
       if (s !== undefined) {
-        expect(s.length > 0).assertEqual(true);
+        expect(s.includes("ErrorPropertyTest.test.ets")).assertTrue();
       }
     });
 
@@ -813,6 +816,7 @@ export default function ErrorPropertyTest(): void {
       let e: Error = new Error();
       e.name = '错误名称';
       expect(e.name).assertEqual('错误名称');
+      expect(e.message).assertEqual('');
     });
 
     /**
@@ -827,6 +831,7 @@ export default function ErrorPropertyTest(): void {
       let e: Error = new Error();
       e.name = '⚠️Error🔥';
       expect(e.name).assertEqual('⚠️Error🔥');
+      expect(e.code).assertEqual(0);
     });
 
     /**
@@ -901,6 +906,7 @@ export default function ErrorPropertyTest(): void {
       let e: Error = new Error();
       e.name = '12345';
       expect(e.name).assertEqual('12345');
+      expect(e.name.length).assertEqual(5);
     });
 
     /**
@@ -913,50 +919,58 @@ export default function ErrorPropertyTest(): void {
      */
     it('testErrorProperty057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error();
+      e.code = 0;
       e.code = -2147483648;
       expect(e.code).assertEqual(-2147483648);
+      expect(e.message).assertEqual('');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_PROPERTY_0580
      * @tc.name testErrorProperty058
-     * @tc.desc Verify code setter with hex literal
+     * @tc.desc Verify code setter overwrites previous value with hex literal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorProperty058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error();
+      e.code = 1;
       e.code = 0xFF;
       expect(e.code).assertEqual(255);
+      expect(e.name).assertEqual('Error');
+      expect(e.message).assertEqual('');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_PROPERTY_0590
      * @tc.name testErrorProperty059
-     * @tc.desc Verify code setter with binary literal
+     * @tc.desc Verify code setter accepts binary literal without changing message
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorProperty059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: Error = new Error();
+      let e: Error = new Error('binary-message');
       e.code = 0b1010;
       expect(e.code).assertEqual(10);
+      expect(e.message).assertEqual('binary-message');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_PROPERTY_0600
      * @tc.name testErrorProperty060
-     * @tc.desc Verify code setter with octal literal
+     * @tc.desc Verify code setter accepts octal literal after negative assignment
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorProperty060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error();
+      e.code = -1;
       e.code = 0o777;
       expect(e.code).assertEqual(511);
+      expect(e.name).assertEqual('Error');
     });
 
     /**
@@ -969,8 +983,10 @@ export default function ErrorPropertyTest(): void {
      */
     it('testErrorProperty061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error();
+      e.code = -1;
       e.code = 1000000;
       expect(e.code).assertEqual(1000000);
+      expect(e.message).assertEqual("");
     });
 
     /**
@@ -983,8 +999,10 @@ export default function ErrorPropertyTest(): void {
      */
     it('testErrorProperty062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error();
+      e.code = 1;
       e.code = -999;
       expect(e.code).assertEqual(-999);
+      expect(e.name).assertEqual('Error');
     });
 
     /**
@@ -997,7 +1015,9 @@ export default function ErrorPropertyTest(): void {
      */
     it('testErrorProperty063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: RangeError = new RangeError('x');
-      expect(e.hasOwnProperty('message')).assertEqual(false);
+      expect(e.hasOwnProperty('message')).assertFalse();
+      expect(e.hasOwnProperty('stack')).assertFalse();
+      expect(Object.keys(e).length).assertEqual(0);
     });
 
     /**
@@ -1010,7 +1030,7 @@ export default function ErrorPropertyTest(): void {
      */
     it('testErrorProperty064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: TypeError = new TypeError('x');
-      expect(e.hasOwnProperty('name')).assertEqual(false);
+      expect(e.hasOwnProperty('name')).assertFalse();
     });
 
     /**
@@ -1023,7 +1043,7 @@ export default function ErrorPropertyTest(): void {
      */
     it('testErrorProperty065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: SyntaxError = new SyntaxError('x', { cause: 1 as Object });
-      expect(e.hasOwnProperty('cause')).assertEqual(false);
+      expect(e.hasOwnProperty('cause')).assertFalse();
     });
 
     /**
@@ -1036,7 +1056,10 @@ export default function ErrorPropertyTest(): void {
      */
     it('testErrorProperty066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: RangeError = new RangeError('x');
-      expect(e.hasOwnProperty('code')).assertEqual(false);
+      e.name = 'RangeOwnCheck';
+      expect(e.hasOwnProperty('code')).assertFalse();
+      expect(e.hasOwnProperty('message')).assertFalse();
+      expect(e.hasOwnProperty('name')).assertFalse();
     });
 
     /**
@@ -1049,7 +1072,8 @@ export default function ErrorPropertyTest(): void {
      */
     it('testErrorProperty067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: RangeError = new RangeError('x');
-      expect(e.hasOwnProperty('cause')).assertEqual(false);
+      expect(e.hasOwnProperty('cause')).assertFalse();
+      expect(e.hasOwnProperty('name')).assertFalse();
     });
 
     /**
@@ -1311,7 +1335,7 @@ export default function ErrorPropertyTest(): void {
       let err: Error = new Error('set-cause', { cause: cause });
       cause.add('after');
       expect(err.cause).assertEqual(cause);
-      expect(cause.has('after')).assertEqual(true);
+      expect(cause.has('after')).assertTrue();
     });
 
     /**
@@ -1340,7 +1364,7 @@ export default function ErrorPropertyTest(): void {
     it('testErrorProperty085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = new Error('false-cause', { cause: false });
       expect(err.message).assertEqual('false-cause');
-      expect(err.cause).assertEqual(false);
+      expect(err.cause).assertFalse();
     });
 
     /**
@@ -1354,7 +1378,7 @@ export default function ErrorPropertyTest(): void {
     it('testErrorProperty086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = new Error('nan-cause', { cause: NaN });
       expect(err.message).assertEqual('nan-cause');
-      expect(isNaN(err.cause as number)).assertEqual(true);
+      expect(isNaN(err.cause as number)).assertTrue();
     });
 
     /**
@@ -1705,10 +1729,10 @@ export default function ErrorPropertyTest(): void {
       err.name = 'OwnWriteName';
       err.message = 'own-write-message';
       err.code = 11100;
-      expect(err.hasOwnProperty('name')).assertEqual(false);
-      expect(err.hasOwnProperty('message')).assertEqual(false);
-      expect(err.hasOwnProperty('code')).assertEqual(false);
-      expect(err.hasOwnProperty('cause')).assertEqual(false);
+      expect(err.hasOwnProperty('name')).assertFalse();
+      expect(err.hasOwnProperty('message')).assertFalse();
+      expect(err.hasOwnProperty('code')).assertFalse();
+      expect(err.hasOwnProperty('cause')).assertFalse();
     });
 
     /**
@@ -1849,12 +1873,100 @@ export default function ErrorPropertyTest(): void {
       let referenceErr: ReferenceError = new ReferenceError('reference-stack');
       let evalErr: EvalError = new EvalError('eval-stack');
       let uriErr: URIError = new URIError('uri-stack');
-      expect((typeErr.stack as string).includes('TypeError')).assertEqual(true);
-      expect((rangeErr.stack as string).includes('RangeError')).assertEqual(true);
-      expect((syntaxErr.stack as string).includes('SyntaxError')).assertEqual(true);
-      expect((referenceErr.stack as string).includes('ReferenceError')).assertEqual(true);
-      expect((evalErr.stack as string).includes('EvalError')).assertEqual(true);
-      expect((uriErr.stack as string).includes('URIError')).assertEqual(true);
+      expect((typeErr.stack as string).indexOf('TypeError')).not().assertEqual(-1);
+      expect((rangeErr.stack as string).indexOf('RangeError')).not().assertEqual(-1);
+      expect((syntaxErr.stack as string).indexOf('SyntaxError')).not().assertEqual(-1);
+      expect((referenceErr.stack as string).indexOf('ReferenceError')).not().assertEqual(-1);
+      expect((evalErr.stack as string).indexOf('EvalError')).not().assertEqual(-1);
+      expect((uriErr.stack as string).indexOf('URIError')).not().assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_PROPERTY_1160
+     * @tc.name testErrorProperty116
+     * @tc.desc Verify code setter accepts hex max int literal
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorProperty116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = new Error();
+      err.code = 0x7FFFFFFF;
+      expect(err.code).assertEqual(2147483647);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_PROPERTY_1170
+     * @tc.name testErrorProperty117
+     * @tc.desc Verify code setter accepts binary sign-bit boundary minus one
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorProperty117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = new Error();
+      err.code = 0b111111111111111;
+      expect(err.code).assertEqual(32767);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_PROPERTY_1180
+     * @tc.name testErrorProperty118
+     * @tc.desc Verify stack setter preserves zero-width space
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorProperty118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = new Error();
+      err.stack = 'frame\u200Bhidden';
+      expect(err.stack).assertEqual('frame\u200Bhidden');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_PROPERTY_1190
+     * @tc.name testErrorProperty119
+     * @tc.desc Verify message setter preserves full-width and half-width dashes
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorProperty119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = new Error();
+      err.message = 'full—half-';
+      expect(err.message).assertEqual('full—half-');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_PROPERTY_1200
+     * @tc.name testErrorProperty120
+     * @tc.desc Verify name setter preserves Cyrillic text
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorProperty120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = new Error();
+      err.name = 'АБВГД';
+      expect(err.name).assertEqual('АБВГД');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_PROPERTY_1210
+     * @tc.name testErrorProperty121
+     * @tc.desc Verify message setter throws ClassCastError for null string value
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorProperty121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = new Error('property-null-message');
+      try {
+        err.message = null as Object as string;
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('ClassCastError');
+      }
     });
   });
 }

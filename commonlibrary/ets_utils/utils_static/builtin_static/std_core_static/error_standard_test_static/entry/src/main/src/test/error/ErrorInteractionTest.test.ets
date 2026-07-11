@@ -87,11 +87,11 @@ export default function ErrorInteractionTest(): void {
      * @tc.level Level 2
      */
     it('testErrorInteraction001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: Error = new Error(42, "err");
+      let e: Error = new Error(0b1010, "test@example.com");
       expect(e.name).assertEqual("Error");
-      expect(e.code).assertEqual(42);
-      expect(e.message).assertEqual("err");
-      expect(e.toString()).assertEqual("Error: err");
+      expect(e.code).assertEqual(10);
+      expect(e.message).assertEqual("test@example.com");
+      expect(e.toString()).assertEqual("Error: test@example.com");
     });
 
     /**
@@ -103,11 +103,11 @@ export default function ErrorInteractionTest(): void {
      * @tc.level Level 2
      */
     it('testErrorInteraction002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: Error = new Error("Custom", 500);
-      expect(e.name).assertEqual("Custom");
-      expect(e.code).assertEqual(500);
+      let e: Error = new Error("Custom\u200B", 0x7FFFFFFF);
+      expect(e.name).assertEqual("Custom\u200B");
+      expect(e.code).assertEqual(2147483647);
       expect(e.message).assertEqual("");
-      expect(e.toString()).assertEqual("Custom");
+      expect(e.toString()).assertEqual("Custom\u200B");
     });
 
     /**
@@ -121,12 +121,12 @@ export default function ErrorInteractionTest(): void {
     it('testErrorInteraction003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error();
       expect(e.toString()).assertEqual("Error");
-      e.name = "CustomName";
-      expect(e.toString()).assertEqual("CustomName");
-      e.message = "msg";
-      expect(e.toString()).assertEqual("CustomName: msg");
+      e.name = "Custom\u200BName";
+      expect(e.toString()).assertEqual("Custom\u200BName");
+      e.message = "2026-13-01";
+      expect(e.toString()).assertEqual("Custom\u200BName: 2026-13-01");
       e.name = "Error";
-      expect(e.toString()).assertEqual("Error: msg");
+      expect(e.toString()).assertEqual("Error: 2026-13-01");
     });
 
     /**
@@ -138,12 +138,12 @@ export default function ErrorInteractionTest(): void {
      * @tc.level Level 2
      */
     it('testErrorInteraction004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: Error = new Error("MyName", 100, "info");
-      expect(e.toString()).assertEqual("MyName: info");
-      e.code = 999;
-      expect(e.toString()).assertEqual("MyName: info");
-      e.code = -1;
-      expect(e.toString()).assertEqual("MyName: info");
+      let e: Error = new Error("MyName", 100, "<script>alert(1)</script>");
+      expect(e.toString()).assertEqual("MyName: <script>alert(1)</script>");
+      e.code = 0x7FFFFFFF;
+      expect(e.toString()).assertEqual("MyName: <script>alert(1)</script>");
+      e.code = -2147483648;
+      expect(e.toString()).assertEqual("MyName: <script>alert(1)</script>");
     });
 
     /**
@@ -159,18 +159,18 @@ export default function ErrorInteractionTest(): void {
       expect(e.name).assertEqual("Orig");
       expect(e.code).assertEqual(10);
       expect(e.message).assertEqual("orig msg");
-      e.name = "Changed";
-      expect(e.name).assertEqual("Changed");
+      e.name = "310101199001011234";
+      expect(e.name).assertEqual("310101199001011234");
       expect(e.code).assertEqual(10);
       expect(e.message).assertEqual("orig msg");
       e.code = 99;
-      expect(e.name).assertEqual("Changed");
+      expect(e.name).assertEqual("310101199001011234");
       expect(e.code).assertEqual(99);
       expect(e.message).assertEqual("orig msg");
-      e.message = "new msg";
-      expect(e.name).assertEqual("Changed");
+      e.message = "\uFFFD";
+      expect(e.name).assertEqual("310101199001011234");
       expect(e.code).assertEqual(99);
-      expect(e.message).assertEqual("new msg");
+      expect(e.message).assertEqual("\uFFFD");
     });
 
     /**
@@ -183,13 +183,13 @@ export default function ErrorInteractionTest(): void {
      */
     it('testErrorInteraction006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("A", 1, "msgA");
-      e.name = "B";
+      e.name = "2026-02-30";
       e.name = "A";
       expect(e.name).assertEqual("A");
-      e.code = 2;
+      e.code = 0o123;
       e.code = 1;
       expect(e.code).assertEqual(1);
-      e.message = "msgB";
+      e.message = "0x123";
       e.message = "msgA";
       expect(e.message).assertEqual("msgA");
     });
@@ -204,13 +204,13 @@ export default function ErrorInteractionTest(): void {
      */
     it('testErrorInteraction007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error();
-      e.name = "Step1";
-      e.message = "step1 msg";
-      expect(e.toString()).assertEqual("Step1: step1 msg");
+      e.name = "Step\u200B1";
+      e.message = "25:00:00";
+      expect(e.toString()).assertEqual("Step\u200B1: 25:00:00");
       e.name = "Step2";
-      expect(e.toString()).assertEqual("Step2: step1 msg");
-      e.message = "final";
-      expect(e.toString()).assertEqual("Step2: final");
+      expect(e.toString()).assertEqual("Step2: 25:00:00");
+      e.message = "0b1010";
+      expect(e.toString()).assertEqual("Step2: 0b1010");
     });
 
     /**
@@ -222,9 +222,9 @@ export default function ErrorInteractionTest(): void {
      * @tc.level Level 2
      */
     it('testErrorInteraction008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: Error = new Error("MyName", undefined);
+      let e: Error = new Error("622202********1234", undefined);
       expect(e.name).assertEqual("Error");
-      expect(e.message).assertEqual("MyName");
+      expect(e.message).assertEqual("622202********1234");
       expect(e.code).assertEqual(0);
     });
 
@@ -252,11 +252,11 @@ export default function ErrorInteractionTest(): void {
      * @tc.level Level 2
      */
     it('testErrorInteraction010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: Error = new Error(0, "msg", undefined);
+      let e: Error = new Error(0, "\u200B", undefined);
       expect(e.name).assertEqual("Error");
       expect(e.code).assertEqual(0);
-      expect(e.message).assertEqual("msg");
-      expect(e.cause === undefined).assertEqual(true);
+      expect(e.message).assertEqual("\u200B");
+      expect(e.cause).assertUndefined();
     });
 
     /**
@@ -272,8 +272,8 @@ export default function ErrorInteractionTest(): void {
       let e: Error = new Error("MyName", 42, "wrapped", { cause: cause });
       let s: string = e.toString();
       expect(s).assertEqual("MyName: wrapped");
-      expect(s.includes("root")).assertEqual(false);
-      expect(s.includes("cause")).assertEqual(false);
+      expect(s.includes("root")).assertFalse();
+      expect(s.includes("cause")).assertFalse();
     });
 
     /**
@@ -398,7 +398,7 @@ export default function ErrorInteractionTest(): void {
      */
     it('testErrorInteraction019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("test");
-      expect(e.cause === undefined).assertEqual(true);
+      expect(e.cause).assertUndefined();
       let cause: Error = new Error("root");
       e.cause = cause;
       expect(e.cause).assertEqual(cause);
@@ -417,7 +417,7 @@ export default function ErrorInteractionTest(): void {
       let e: Error = new Error("test", { cause: cause });
       expect(e.cause).assertEqual(cause);
       e.cause = undefined;
-      expect(e.cause === undefined).assertEqual(true);
+      expect(e.cause).assertUndefined();
     });
 
     /**
@@ -474,7 +474,7 @@ export default function ErrorInteractionTest(): void {
       } catch (caught) {
         hasStack = caught.stack !== undefined;
       }
-      expect(hasStack).assertEqual(true);
+      expect(hasStack).assertTrue();
     });
 
     /**
@@ -494,7 +494,7 @@ export default function ErrorInteractionTest(): void {
           hasStack = true;
         }
       }
-      expect(hasStack).assertEqual(false);
+      expect(hasStack).assertFalse();
     });
 
     /**
@@ -510,7 +510,7 @@ export default function ErrorInteractionTest(): void {
       try {
         throw e;
       } catch (caught) {
-        expect(caught.stack !== undefined).assertEqual(true);
+        expect(((caught as Error).stack as string).includes("ErrorInteractionTest.test.ets")).assertTrue();
       }
     });
 
@@ -595,14 +595,17 @@ export default function ErrorInteractionTest(): void {
      * @tc.level Level 2
      */
     it('testErrorInteraction029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let returnSuppressed: boolean = true;
       try {
         try {
-          // normal execution, no throw
+          return; // this return should be suppressed by finally throw
+          returnSuppressed = false; // unreachable
         } finally {
-          throw new Error("finally throws on normal path");
+          throw new Error("finally throw suppresses return");
         }
       } catch (e) {
-        expect(e.message).assertEqual("finally throws on normal path");
+        expect(e.name).assertEqual("Error");
+        expect(e.message).assertEqual("finally throw suppresses return");
       }
     });
 
@@ -642,7 +645,7 @@ export default function ErrorInteractionTest(): void {
      */
     it('testErrorInteraction031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r: Error | undefined = returnsError(true);
-      expect(r !== undefined).assertEqual(true);
+      expect(r).not().assertUndefined();
       expect((r as Error).message).assertEqual("returned as value");
     });
 
@@ -656,7 +659,7 @@ export default function ErrorInteractionTest(): void {
      */
     it('testErrorInteraction032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r: Error | undefined = returnsError(false);
-      expect(r === undefined).assertEqual(true);
+      expect(r).assertUndefined();
     });
 
     /**
@@ -794,7 +797,7 @@ export default function ErrorInteractionTest(): void {
         outerCaught = true;
         expect(e.message).assertEqual("range");
       }
-      expect(outerCaught).assertEqual(true);
+      expect(outerCaught).assertTrue();
     });
 
     /**
@@ -839,7 +842,7 @@ export default function ErrorInteractionTest(): void {
       } catch (e) {
         threw = true;
       }
-      expect(threw).assertEqual(false);
+      expect(threw).assertFalse();
     });
 
     /**
@@ -862,7 +865,7 @@ export default function ErrorInteractionTest(): void {
       } catch (e) {
         threw = true;
       }
-      expect(threw).assertEqual(false);
+      expect(threw).assertFalse();
     });
 
     /**
@@ -925,8 +928,8 @@ export default function ErrorInteractionTest(): void {
     it('testErrorInteraction046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = new Error("instance");
       let holder: ErrorInteractionHolder = new ErrorInteractionHolder();
-      expect(isErrorInteractionInstance(err)).assertEqual(true);
-      expect(isErrorInteractionInstance(holder)).assertEqual(false);
+      expect(isErrorInteractionInstance(err)).assertTrue();
+      expect(isErrorInteractionInstance(holder)).assertFalse();
     });
 
     /**
@@ -1040,7 +1043,7 @@ export default function ErrorInteractionTest(): void {
       try {
         throw new TypeError("type-interaction");
       } catch (e) {
-        expect(e instanceof TypeError).assertEqual(true);
+        expect(e instanceof TypeError).assertTrue();
         expect((e as TypeError).name).assertEqual("TypeError");
         expect((e as TypeError).message).assertEqual("type-interaction");
       }
@@ -1058,7 +1061,7 @@ export default function ErrorInteractionTest(): void {
       try {
         throw new RangeError("range-interaction");
       } catch (e) {
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof RangeError).assertTrue();
         expect((e as RangeError).name).assertEqual("RangeError");
         expect((e as RangeError).message).assertEqual("range-interaction");
       }
@@ -1076,7 +1079,7 @@ export default function ErrorInteractionTest(): void {
       try {
         throw new SyntaxError("syntax-interaction");
       } catch (e) {
-        expect(e instanceof SyntaxError).assertEqual(true);
+        expect(e instanceof SyntaxError).assertTrue();
         expect((e as SyntaxError).name).assertEqual("SyntaxError");
         expect((e as SyntaxError).message).assertEqual("syntax-interaction");
       }
@@ -1094,7 +1097,7 @@ export default function ErrorInteractionTest(): void {
       try {
         throw new ReferenceError("reference-interaction");
       } catch (e) {
-        expect(e instanceof ReferenceError).assertEqual(true);
+        expect(e instanceof ReferenceError).assertTrue();
         expect((e as ReferenceError).name).assertEqual("ReferenceError");
         expect((e as ReferenceError).message).assertEqual("reference-interaction");
       }
@@ -1112,7 +1115,7 @@ export default function ErrorInteractionTest(): void {
       try {
         throw new EvalError("eval-interaction");
       } catch (e) {
-        expect(e instanceof EvalError).assertEqual(true);
+        expect(e instanceof EvalError).assertTrue();
         expect((e as EvalError).name).assertEqual("EvalError");
         expect((e as EvalError).message).assertEqual("eval-interaction");
       }
@@ -1130,7 +1133,7 @@ export default function ErrorInteractionTest(): void {
       try {
         throw new URIError("uri-interaction");
       } catch (e) {
-        expect(e instanceof URIError).assertEqual(true);
+        expect(e instanceof URIError).assertTrue();
         expect((e as URIError).name).assertEqual("URIError");
         expect((e as URIError).message).assertEqual("uri-interaction");
       }
@@ -1150,7 +1153,7 @@ export default function ErrorInteractionTest(): void {
         throw new AggregateError([inner], "aggregate-interaction");
       } catch (e) {
         let agg: AggregateError = e as AggregateError;
-        expect(e instanceof AggregateError).assertEqual(true);
+        expect(e instanceof AggregateError).assertTrue();
         expect(agg.message).assertEqual("aggregate-interaction");
         expect(agg.errors[0]).assertEqual(inner);
       }
@@ -1221,7 +1224,7 @@ export default function ErrorInteractionTest(): void {
       try {
         throw new TypeError("stack-type");
       } catch (e) {
-        expect(((e as TypeError).stack as string).includes("TypeError")).assertEqual(true);
+        expect(((e as TypeError).stack as string).includes("TypeError")).assertTrue();
       }
     });
 
@@ -1237,7 +1240,7 @@ export default function ErrorInteractionTest(): void {
       try {
         throw new AggregateError([], "stack-aggregate");
       } catch (e) {
-        expect(((e as AggregateError).stack as string).includes("AggregateError")).assertEqual(true);
+        expect(((e as AggregateError).stack as string).includes("AggregateError")).assertTrue();
       }
     });
 

@@ -62,9 +62,9 @@ export default function ErrorBoundary2Test(): void {
      * @tc.level Level 2
      */
     it('testErrorBoundary2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: Error = new Error(0, 'msg');
+      let e: Error = new Error(0, '0x123');
       expect(e.name).assertEqual('Error');
-      expect(e.message).assertEqual('msg');
+      expect(e.message).assertEqual('0x123');
     });
 
     /**
@@ -149,7 +149,7 @@ export default function ErrorBoundary2Test(): void {
     it('testErrorBoundary2008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error('m');
       e.name = '';
-      expect(e.toString().length > 0).assertEqual(true);
+      expect(e.toString()).assertEqual('m');
     });
 
     /**
@@ -175,10 +175,10 @@ export default function ErrorBoundary2Test(): void {
      * @tc.level Level 2
      */
     it('testErrorBoundary2010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: Error = new Error("e", { cause: new Error("a") });
-      expect(e.cause !== undefined).assertEqual(true);
+      let e: Error = new Error("e", { cause: new Error("test@example.com") });
+      expect((e.cause as Error).message).assertEqual("test@example.com");
       e.cause = undefined;
-      expect(e.cause === undefined).assertEqual(true);
+      expect(e.cause).assertUndefined();
     });
 
     /**
@@ -227,7 +227,7 @@ export default function ErrorBoundary2Test(): void {
       try {
         throw new TypeError("t", { cause: undefined });
       } catch (e) {
-        expect((e as Error).cause === undefined).assertEqual(true);
+        expect((e as Error).cause).assertUndefined();
       }
     });
 
@@ -240,9 +240,9 @@ export default function ErrorBoundary2Test(): void {
      * @tc.level Level 2
      */
     it('testErrorBoundary2014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let c: Object = 'str cause' as Object;
+      let c: Object = '<script>alert(1)</script>' as Object;
       try {
-        throw new TypeError('t', { cause: c });
+        throw new TypeError('2026-02-30', { cause: c });
       } catch (e) {
         expect((e as Error).cause).assertEqual(c);
       }
@@ -277,7 +277,7 @@ export default function ErrorBoundary2Test(): void {
       try {
         throw new SyntaxError('s', { cause: (false as Object) });
       } catch (e) {
-        expect((e as Error).cause === false).assertEqual(true);
+        expect((e as Error).cause).assertFalse();
       }
     });
 
@@ -318,8 +318,8 @@ export default function ErrorBoundary2Test(): void {
      * @tc.level Level 2
      */
     it('testErrorBoundary2019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let c: Error = new Error('c');
-      let e: Error = new Error(0, 'msg', { cause: c });
+      let c: Error = new Error('\uFFFD');
+      let e: Error = new Error(0, '123.45e6', { cause: c });
       expect(e.cause).assertEqual(c);
     });
 
@@ -332,8 +332,8 @@ export default function ErrorBoundary2Test(): void {
      * @tc.level Level 2
      */
     it('testErrorBoundary2020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: Error = new Error(-1, 'neg');
-      expect(e.message).assertEqual('neg');
+      let e: Error = new Error(-1, '25:00:00');
+      expect(e.message).assertEqual('25:00:00');
     });
 
     /**
@@ -345,8 +345,8 @@ export default function ErrorBoundary2Test(): void {
      * @tc.level Level 2
      */
     it('testErrorBoundary2021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: Error = new Error(2147483647, 'max');
-      expect(e.message).assertEqual('max');
+      let e: Error = new Error(2147483647, '622202********1234');
+      expect(e.message).assertEqual('622202********1234');
     });
 
     /**
@@ -358,8 +358,8 @@ export default function ErrorBoundary2Test(): void {
      * @tc.level Level 2
      */
     it('testErrorBoundary2022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: Error = new Error(-2147483648, 'min');
-      expect(e.message).assertEqual('min');
+      let e: Error = new Error(-2147483648, '310101199001011234');
+      expect(e.message).assertEqual('310101199001011234');
     });
 
     /**
@@ -401,7 +401,7 @@ export default function ErrorBoundary2Test(): void {
     it('testErrorBoundary2025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("e", { cause: new Error("original") });
       e.cause = false;
-      expect(e.cause).assertEqual(false);
+      expect(e.cause).assertFalse();
     });
 
     /**
@@ -415,8 +415,8 @@ export default function ErrorBoundary2Test(): void {
     it('testErrorBoundary2026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let l2: Error = new Error('l2');
       let l1: Error = new Error('l1', { cause: l2 });
-      l2.message = 'changed';
-      expect(((l1.cause as Error).message)).assertEqual('changed');
+      l2.message = '\u200B';
+      expect(((l1.cause as Error).message)).assertEqual('\u200B');
     });
 
     // ===== From ErrorEdgeCaseTest (027~047) =====
@@ -488,7 +488,7 @@ export default function ErrorBoundary2Test(): void {
     it('testErrorBoundary2031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("m");
       e.name = "N".repeat(128);
-      expect(e.toString().startsWith("NNNN")).assertEqual(true);
+      expect(e.toString()).assertEqual("N".repeat(128) + ": m");
       expect(e.name.length).assertEqual(128);
     });
 
@@ -519,7 +519,7 @@ export default function ErrorBoundary2Test(): void {
       try {
         throw e;
       } catch (caught) {
-        expect(caught.stack !== undefined).assertEqual(true);
+        expect(((caught as Error).stack as string).includes("ErrorBoundary2Test.test.ets")).assertTrue();
         expect(caught.message.length).assertEqual(256);
       }
     });
@@ -537,7 +537,7 @@ export default function ErrorBoundary2Test(): void {
       try {
         throw e;
       } catch (caught) {
-        expect(caught.stack !== undefined).assertEqual(true);
+        expect(((caught as Error).stack as string).includes("ErrorBoundary2Test.test.ets")).assertTrue();
         expect(caught.code).assertEqual(2147483647);
       }
     });
@@ -858,7 +858,7 @@ export default function ErrorBoundary2Test(): void {
       let err: Error = new Error('test');
       err.name = '';
       let str: string = err.toString();
-      expect(str.length > 0).assertEqual(true);
+      expect(str).assertEqual('test');
     });
 
     /**
@@ -942,9 +942,9 @@ export default function ErrorBoundary2Test(): void {
      */
     it('testErrorBoundary2059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = new Error('msg', { cause: new Error('original cause') });
-      expect(err.cause !== undefined).assertEqual(true);
+      expect((err.cause as Error).message).assertEqual('original cause');
       err.cause = undefined;
-      expect(err.cause === undefined).assertEqual(true);
+      expect(err.cause).assertUndefined();
     });
 
     /**
@@ -960,10 +960,10 @@ export default function ErrorBoundary2Test(): void {
       let e2: RangeError = new RangeError('msg', { cause: undefined });
       let e3: SyntaxError = new SyntaxError('msg', { cause: undefined });
       let e4: ReferenceError = new ReferenceError('msg', { cause: undefined });
-      expect(e1.cause).assertEqual(undefined);
-      expect(e2.cause).assertEqual(undefined);
-      expect(e3.cause).assertEqual(undefined);
-      expect(e4.cause).assertEqual(undefined);
+      expect(e1.cause).assertUndefined();
+      expect(e2.cause).assertUndefined();
+      expect(e3.cause).assertUndefined();
+      expect(e4.cause).assertUndefined();
     });
 
     /**
@@ -979,10 +979,10 @@ export default function ErrorBoundary2Test(): void {
       let e2: EvalError = new EvalError('msg', { cause: undefined });
       let e3: FormatError = new FormatError('msg', { cause: undefined });
       let e4: NonIntegralIndexError = new NonIntegralIndexError('msg', { cause: undefined });
-      expect(e1.cause).assertEqual(undefined);
-      expect(e2.cause).assertEqual(undefined);
-      expect(e3.cause).assertEqual(undefined);
-      expect(e4.cause).assertEqual(undefined);
+      expect(e1.cause).assertUndefined();
+      expect(e2.cause).assertUndefined();
+      expect(e3.cause).assertUndefined();
+      expect(e4.cause).assertUndefined();
     });
   });
 }

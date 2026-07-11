@@ -90,6 +90,7 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = new Error(32767);
       expect(err.code).assertEqual(32767);
+      expect(err.message).assertEqual("");
     });
 
     /**
@@ -175,7 +176,8 @@ export default function ErrorBoundaryTest(): void {
       let c: Error = new Error("self");
       c.cause = c;
       ran = true;
-      expect(ran).assertEqual(true);
+      expect(ran).assertTrue();
+      expect(c.cause).assertEqual(c);
     });
 
     /**
@@ -298,7 +300,7 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = new Error();
       err.stack = undefined;
-      expect(err.stack === undefined).assertEqual(true);
+      expect(err.stack).assertUndefined();
     });
 
     /**
@@ -328,6 +330,7 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = new Error(2147483647);
       expect(err.code).assertEqual(2147483647);
+      expect(err.name).assertEqual("Error");
     });
 
     /**
@@ -341,6 +344,7 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = new Error(-2147483648);
       expect(err.code).assertEqual(-2147483648);
+      expect(err.message).assertEqual("");
     });
 
     /**
@@ -409,6 +413,7 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = new Error(1);
       expect(err.code).assertEqual(1);
+      expect(err.cause).assertUndefined();
     });
 
     /**
@@ -435,7 +440,7 @@ export default function ErrorBoundaryTest(): void {
      */
     it('testErrorBoundary028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("msg", {});
-      expect(e.cause === undefined).assertEqual(true);
+      expect(e.cause).assertUndefined();
     });
 
     /**
@@ -475,6 +480,7 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = new Error(-1);
       expect(err.code).assertEqual(-1);
+      expect(err.name).assertEqual("Error");
     });
 
     /**
@@ -514,7 +520,7 @@ export default function ErrorBoundaryTest(): void {
      */
     it('testErrorBoundary034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("msg", { cause: false });
-      expect(e.cause).assertEqual(false);
+      expect(e.cause).assertFalse();
     });
 
     /**
@@ -528,6 +534,7 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = new Error("????", 0);
       expect(err.name).assertEqual("????");
+      expect(err.name.length).assertEqual(4);
     });
 
     /**
@@ -540,7 +547,7 @@ export default function ErrorBoundaryTest(): void {
      */
     it('testErrorBoundary036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("msg", { cause: undefined });
-      expect(e.cause === undefined).assertEqual(true);
+      expect(e.cause).assertUndefined();
     });
 
     /**
@@ -554,6 +561,7 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("错误消息");
       expect(e.message).assertEqual("错误消息");
+      expect(e.name).assertEqual("Error");
     });
 
     /**
@@ -567,6 +575,7 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("エラー");
       expect(e.message).assertEqual("エラー");
+      expect(e.code).assertEqual(0);
     });
 
     /**
@@ -580,6 +589,7 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("رسالة");
       expect(e.message).assertEqual("رسالة");
+      expect(e.cause).assertUndefined();
     });
 
     /**
@@ -593,6 +603,7 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("Сообщение");
       expect(e.message).assertEqual("Сообщение");
+      expect(e.message.indexOf("Со")).assertEqual(0);
     });
 
     /**
@@ -606,12 +617,13 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("❌⚠️");
       expect(e.message).assertEqual("❌⚠️");
+      expect(e.message.indexOf("❌")).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_0420
      * @tc.name testErrorBoundary042
-     * @tc.desc Verify Boundary A2 Space
+     * @tc.desc Verify Boundary A2 whitespace message preserves length and default name
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -619,12 +631,14 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("   ");
       expect(e.message).assertEqual("   ");
+      expect(e.message.length).assertEqual(3);
+      expect(e.name).assertEqual("Error");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_0430
      * @tc.name testErrorBoundary043
-     * @tc.desc Verify Boundary A2 Tab
+     * @tc.desc Verify Boundary A2 tab message preserves single control character
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -632,12 +646,14 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("\t");
       expect(e.message).assertEqual("\t");
+      expect(e.message.length).assertEqual(1);
+      expect(e.code).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_0440
      * @tc.name testErrorBoundary044
-     * @tc.desc Verify Boundary A2 Newline
+     * @tc.desc Verify Boundary A2 newline message preserves embedded line break
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -645,6 +661,9 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("a\nb");
       expect(e.message).assertEqual("a\nb");
+      expect(e.message.length).assertEqual(3);
+      expect(e.name).assertEqual("Error");
+      expect(e.message.indexOf("\n")).assertEqual(1);
     });
 
     /**
@@ -657,7 +676,7 @@ export default function ErrorBoundaryTest(): void {
      */
     it('testErrorBoundary045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("a​b");
-      expect(e.message.includes("a")).assertEqual(true);
+      expect(e.message.indexOf("a")).assertEqual(0);
     });
 
     /**
@@ -671,19 +690,24 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("Hello世界");
       expect(e.message).assertEqual("Hello世界");
+      expect(e.message.indexOf("世界")).assertEqual(5);
+      expect(e.name).assertEqual("Error");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_0470
      * @tc.name testErrorBoundary047
-     * @tc.desc Verify Boundary A2 XSS
+     * @tc.desc Verify Boundary A2 URL message is stored as plain text
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
     it('testErrorBoundary047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: Error = new Error("<script>");
-      expect(e.message).assertEqual("<script>");
+      let e: Error = new Error("https://example.com/errors?id=E047");
+      expect(e.message).assertEqual("https://example.com/errors?id=E047");
+      expect(e.name).assertEqual("Error");
+      expect(e.code).assertEqual(0);
+      expect(e.message.indexOf("https://")).assertEqual(0);
     });
 
     /**
@@ -697,6 +721,7 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("�");
       expect(e.message).assertEqual("�");
+      expect(e.message.length).assertEqual(1);
     });
 
     /**
@@ -710,6 +735,8 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("x²+y²");
       expect(e.message).assertEqual("x²+y²");
+      expect(e.message.indexOf("²")).assertEqual(1);
+      expect(e.message.indexOf("+")).assertEqual(2);
     });
 
     /**
@@ -723,19 +750,23 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("טסט");
       expect(e.message).assertEqual("טסט");
+      expect(e.cause).assertUndefined();
+      expect(e.name).assertEqual("Error");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_0510
      * @tc.name testErrorBoundary051
-     * @tc.desc Verify Boundary A2 Null
+     * @tc.desc Verify Boundary A2 null character message keeps prefix and suffix
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
     it('testErrorBoundary051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("msg\u0000null");
-      expect(e.message.includes("msg")).assertEqual(true);
+      expect(e.message.indexOf("msg")).assertEqual(0);
+      expect(e.message.length).assertEqual(8);
+      expect(e.name).assertEqual("Error");
     });
 
     /**
@@ -750,6 +781,7 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error(42, "错误消息");
       expect(e.code).assertEqual(42);
       expect(e.message).assertEqual("错误消息");
+      expect(e.name).assertEqual("Error");
     });
 
     /**
@@ -764,6 +796,7 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error(42, "エラー");
       expect(e.code).assertEqual(42);
       expect(e.message).assertEqual("エラー");
+      expect(e.cause).assertUndefined();
     });
 
     /**
@@ -778,6 +811,7 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error(42, "رسالة");
       expect(e.code).assertEqual(42);
       expect(e.message).assertEqual("رسالة");
+      expect(e.message.indexOf("رس")).assertEqual(0);
     });
 
     /**
@@ -792,6 +826,7 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error(42, "Сообщение");
       expect(e.code).assertEqual(42);
       expect(e.message).assertEqual("Сообщение");
+      expect(e.message.indexOf("Со")).assertEqual(0);
     });
 
     /**
@@ -806,12 +841,14 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error(42, "❌⚠️");
       expect(e.code).assertEqual(42);
       expect(e.message).assertEqual("❌⚠️");
+      expect(e.message.indexOf("⚠️")).assertEqual(1);
+      expect(e.message.indexOf("❌")).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_0570
      * @tc.name testErrorBoundary057
-     * @tc.desc Verify Boundary A1 Space
+     * @tc.desc Verify Boundary A1 whitespace message preserves code and length
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -820,12 +857,13 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error(42, "   ");
       expect(e.code).assertEqual(42);
       expect(e.message).assertEqual("   ");
+      expect(e.message.length).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_0580
      * @tc.name testErrorBoundary058
-     * @tc.desc Verify Boundary A1 Tab
+     * @tc.desc Verify Boundary A1 tab message preserves code and control character
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -834,12 +872,14 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error(42, "\t");
       expect(e.code).assertEqual(42);
       expect(e.message).assertEqual("\t");
+      expect(e.name).assertEqual("Error");
+      expect(e.message.length).assertEqual(1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_0590
      * @tc.name testErrorBoundary059
-     * @tc.desc Verify Boundary A1 Newline
+     * @tc.desc Verify Boundary A1 newline message preserves code and line break
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -848,6 +888,8 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error(42, "a\nb");
       expect(e.code).assertEqual(42);
       expect(e.message).assertEqual("a\nb");
+      expect(e.message.length).assertEqual(3);
+      expect(e.message.indexOf("\n")).assertEqual(1);
     });
 
     /**
@@ -861,7 +903,7 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error(42, "a​b");
       expect(e.code).assertEqual(42);
-      expect(e.message.includes("a")).assertEqual(true);
+      expect(e.message.indexOf("a")).assertEqual(0);
     });
 
     /**
@@ -876,20 +918,25 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error(42, "Hello世界");
       expect(e.code).assertEqual(42);
       expect(e.message).assertEqual("Hello世界");
+      expect(e.message.indexOf("世界")).assertEqual(5);
+      expect(e.name).assertEqual("Error");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_0620
      * @tc.name testErrorBoundary062
-     * @tc.desc Verify Boundary A1 XSS
+     * @tc.desc Verify Boundary A1 UUID message is stored as plain text
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
     it('testErrorBoundary062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: Error = new Error(42, "<script>");
+      let e: Error = new Error(42, "550e8400-e29b-41d4-a716-446655440000");
       expect(e.code).assertEqual(42);
-      expect(e.message).assertEqual("<script>");
+      expect(e.message).assertEqual("550e8400-e29b-41d4-a716-446655440000");
+      expect(e.name).assertEqual("Error");
+      expect(e.message.length).assertEqual(36);
+      expect(e.message.indexOf("-")).assertEqual(8);
     });
 
     /**
@@ -904,6 +951,8 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error(42, "�");
       expect(e.code).assertEqual(42);
       expect(e.message).assertEqual("�");
+      expect(e.message.length).assertEqual(1);
+      expect(e.name).assertEqual("Error");
     });
 
     /**
@@ -918,6 +967,8 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error(42, "x²+y²");
       expect(e.code).assertEqual(42);
       expect(e.message).assertEqual("x²+y²");
+      expect(e.message.indexOf("+")).assertEqual(2);
+      expect(e.message.indexOf("²")).assertEqual(1);
     });
 
     /**
@@ -932,12 +983,14 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error(42, "טסט");
       expect(e.code).assertEqual(42);
       expect(e.message).assertEqual("טסט");
+      expect(e.name).assertEqual("Error");
+      expect(e.cause).assertUndefined();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_0660
      * @tc.name testErrorBoundary066
-     * @tc.desc Verify Boundary A1 Null
+     * @tc.desc Verify Boundary A1 null character message keeps code and prefix
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -945,7 +998,8 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error(42, "msg\u0000null");
       expect(e.code).assertEqual(42);
-      expect(e.message.includes("msg")).assertEqual(true);
+      expect(e.message.indexOf("msg")).assertEqual(0);
+      expect(e.message.length).assertEqual(8);
     });
 
     /**
@@ -960,6 +1014,7 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error("B", "错误消息");
       expect(e.name).assertEqual("B");
       expect(e.message).assertEqual("错误消息");
+      expect(e.code).assertEqual(0);
     });
 
     /**
@@ -974,6 +1029,7 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error("B", "エラー");
       expect(e.name).assertEqual("B");
       expect(e.message).assertEqual("エラー");
+      expect(e.cause).assertUndefined();
     });
 
     /**
@@ -988,6 +1044,7 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error("B", "رسالة");
       expect(e.name).assertEqual("B");
       expect(e.message).assertEqual("رسالة");
+      expect(e.message.indexOf("رس")).assertEqual(0);
     });
 
     /**
@@ -1002,6 +1059,7 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error("B", "Сообщение");
       expect(e.name).assertEqual("B");
       expect(e.message).assertEqual("Сообщение");
+      expect(e.message.indexOf("Со")).assertEqual(0);
     });
 
     /**
@@ -1016,12 +1074,14 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error("B", "❌⚠️");
       expect(e.name).assertEqual("B");
       expect(e.message).assertEqual("❌⚠️");
+      expect(e.message.indexOf("⚠️")).assertEqual(1);
+      expect(e.message.indexOf("❌")).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_0720
      * @tc.name testErrorBoundary072
-     * @tc.desc Verify Boundary A4 Tab
+     * @tc.desc Verify Boundary A4 tab message preserves name code and length
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -1030,12 +1090,14 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error("B", "\t");
       expect(e.name).assertEqual("B");
       expect(e.message).assertEqual("\t");
+      expect(e.code).assertEqual(0);
+      expect(e.message.length).assertEqual(1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_0730
      * @tc.name testErrorBoundary073
-     * @tc.desc Verify Boundary A4 Newline
+     * @tc.desc Verify Boundary A4 newline message preserves name and line break
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -1044,6 +1106,8 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error("B", "a\nb");
       expect(e.name).assertEqual("B");
       expect(e.message).assertEqual("a\nb");
+      expect(e.code).assertEqual(0);
+      expect(e.message.length).assertEqual(3);
     });
 
     /**
@@ -1057,7 +1121,7 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("B", "a​b");
       expect(e.name).assertEqual("B");
-      expect(e.message.includes("a")).assertEqual(true);
+      expect(e.message.indexOf("a")).assertEqual(0);
     });
 
     /**
@@ -1072,20 +1136,25 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error("B", "Hello世界");
       expect(e.name).assertEqual("B");
       expect(e.message).assertEqual("Hello世界");
+      expect(e.message.indexOf("Hello")).assertEqual(0);
+      expect(e.code).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_0760
      * @tc.name testErrorBoundary076
-     * @tc.desc Verify Boundary A4 XSS
+     * @tc.desc Verify Boundary A4 email message remains plain text
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
     it('testErrorBoundary076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: Error = new Error("B", "<script>");
+      let e: Error = new Error("B", "test@example.com");
       expect(e.name).assertEqual("B");
-      expect(e.message).assertEqual("<script>");
+      expect(e.message).assertEqual("test@example.com");
+      expect(e.code).assertEqual(0);
+      expect(e.cause).assertUndefined();
+      expect(e.message.indexOf("@")).assertEqual(4);
     });
 
     /**
@@ -1100,6 +1169,8 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error("B", "�");
       expect(e.name).assertEqual("B");
       expect(e.message).assertEqual("�");
+      expect(e.code).assertEqual(0);
+      expect(e.message.length).assertEqual(1);
     });
 
     /**
@@ -1114,6 +1185,7 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error("B", "x²+y²");
       expect(e.name).assertEqual("B");
       expect(e.message).assertEqual("x²+y²");
+      expect(e.message.indexOf("²")).assertEqual(1);
     });
 
     /**
@@ -1128,6 +1200,8 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error("B", "טסט");
       expect(e.name).assertEqual("B");
       expect(e.message).assertEqual("טסט");
+      expect(e.cause).assertUndefined();
+      expect(e.message.length).assertEqual(3);
     });
 
     /**
@@ -1141,7 +1215,7 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("B", "msg\u0000null");
       expect(e.name).assertEqual("B");
-      expect(e.message.includes("msg")).assertEqual(true);
+      expect(e.message.indexOf("msg")).assertEqual(0);
     });
 
     /**
@@ -1235,6 +1309,7 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error(~0);
       expect(e.code).assertEqual(-1);
+      expect(e.message).assertEqual("");
     });
 
     /**
@@ -1248,6 +1323,7 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error(~2147483647);
       expect(e.code).assertEqual(-2147483648);
+      expect(e.name).assertEqual("Error");
     });
 
     /**
@@ -1274,7 +1350,7 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error(1 << 31);
       let c: int = e.code;
-      expect(c === -2147483648 || c === 0 || c === 2147483648).assertEqual(true);
+      expect(c).assertEqual(-2147483648);
     });
 
     /**
@@ -1289,6 +1365,7 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error("2147483647");
       expect(e.message).assertEqual("2147483647");
       expect(e.code).assertEqual(0);
+      expect(e.message.length).assertEqual(10);
     });
 
     /**
@@ -1303,6 +1380,7 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error("-2147483648");
       expect(e.message).assertEqual("-2147483648");
       expect(e.code).assertEqual(0);
+      expect(e.message.indexOf("-")).assertEqual(0);
     });
 
     /**
@@ -1855,6 +1933,7 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("오류 이름", 0);
       expect(e.name).assertEqual("오류 이름");
+      expect(e.code).assertEqual(0);
     });
 
     /**
@@ -1868,6 +1947,7 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("ชื่อข้อผิดพลาด", 0);
       expect(e.name).assertEqual("ชื่อข้อผิดพลาด");
+      expect(e.message).assertEqual("");
     });
 
     /**
@@ -1881,6 +1961,7 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("त्रुटि नाम", 0);
       expect(e.name).assertEqual("त्रुटि नाम");
+      expect(e.cause).assertUndefined();
     });
 
     /**
@@ -1894,6 +1975,7 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("Error名称エラー오류", 0);
       expect(e.name).assertEqual("Error名称エラー오류");
+      expect(e.name.indexOf("Error")).assertEqual(0);
     });
 
     /**
@@ -1908,6 +1990,7 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error();
       e.name = "中文名称";
       expect(e.name).assertEqual("中文名称");
+      expect(e.message).assertEqual("");
     });
 
     /**
@@ -1922,6 +2005,7 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error();
       e.name = "한글 이름";
       expect(e.name).assertEqual("한글 이름");
+      expect(e.code).assertEqual(0);
     });
 
     /**
@@ -1936,6 +2020,7 @@ export default function ErrorBoundaryTest(): void {
       let e: Error = new Error();
       e.name = "ไทยत्रुटि";
       expect(e.name).assertEqual("ไทยत्रुटि");
+      expect(e.cause).assertUndefined();
     });
 
     /**
@@ -1949,6 +2034,7 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("w", { cause: "中文原因" });
       expect(e.cause).assertEqual("中文原因");
+      expect(e.message).assertEqual("w");
     });
 
     /**
@@ -1962,6 +2048,7 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("w", { cause: "한국어 원인" });
       expect(e.cause).assertEqual("한국어 원인");
+      expect((e.cause as string).indexOf("원인")).assertEqual(4);
     });
 
     /**
@@ -1975,6 +2062,7 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("w", { cause: "❌ 원인 ⚠️" });
       expect(e.cause).assertEqual("❌ 원인 ⚠️");
+      expect((e.cause as string).indexOf("⚠️")).assertEqual(5);
     });
 
     /**
@@ -1988,6 +2076,7 @@ export default function ErrorBoundaryTest(): void {
     it('testErrorBoundary140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("w", { cause: "cause: 原因 (原因) causa" });
       expect(e.cause).assertEqual("cause: 原因 (原因) causa");
+      expect((e.cause as string).indexOf("cause:")).assertEqual(0);
     });
 
     /**

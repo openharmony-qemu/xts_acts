@@ -49,7 +49,8 @@ export default function ErrorBuiltinSubclassTest(): void {
      * @tc.level Level 2
      */
     it('testErrorBuiltinSubclass001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: ArithmeticError = new ArithmeticError('json test');
+      let err: ArithmeticError = new ArithmeticError('test@example.com');
+      expect(err instanceof Error).assertTrue();
       let json: string = JSON.stringify(err);
       expect(json).assertEqual("{}");
     });
@@ -63,7 +64,8 @@ export default function ErrorBuiltinSubclassTest(): void {
      * @tc.level Level 2
      */
     it('testErrorBuiltinSubclass002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: NullPointerError = new NullPointerError('json test');
+      let err: NullPointerError = new NullPointerError('\u200B');
+      expect(err instanceof Error).assertTrue();
       let json: string = JSON.stringify(err);
       expect(json).assertEqual("{}");
     });
@@ -77,7 +79,8 @@ export default function ErrorBuiltinSubclassTest(): void {
      * @tc.level Level 2
      */
     it('testErrorBuiltinSubclass003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: ClassCastError = new ClassCastError('json test');
+      let err: ClassCastError = new ClassCastError('2026-02-30');
+      expect(err instanceof Error).assertTrue();
       let json: string = JSON.stringify(err);
       expect(json).assertEqual("{}");
     });
@@ -91,10 +94,11 @@ export default function ErrorBuiltinSubclassTest(): void {
      * @tc.level Level 2
      */
     it('testErrorBuiltinSubclass004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: ArrayStoreError = new ArrayStoreError('code test');
+      let e: ArrayStoreError = new ArrayStoreError('0x123');
+      expect(e instanceof Error).assertTrue();
       expect(e.code).assertEqual(0);
-      e.code = 42;
-      expect(e.code).assertEqual(42);
+      e.code = 0x7FFFFFFF;
+      expect(e.code).assertEqual(2147483647);
     });
 
     /**
@@ -108,11 +112,12 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let hasStack: boolean = false;
       try {
-        throw new ArrayStoreError('stack test');
+        throw new ArrayStoreError('<script>alert(1)</script>');
       } catch (e) {
+        expect(e instanceof Error).assertTrue();
         hasStack = e.stack !== undefined;
       }
-      expect(hasStack).assertEqual(true);
+      expect(hasStack).assertTrue();
     });
 
     /**
@@ -125,9 +130,10 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: ArrayStoreError = new ArrayStoreError('original');
+      expect(e instanceof Error).assertTrue();
       expect(e.message).assertEqual('original');
-      e.message = 'mutated';
-      expect(e.message).assertEqual('mutated');
+      e.message = '\uFFFD';
+      expect(e.message).assertEqual('\uFFFD');
     });
 
     /**
@@ -139,10 +145,11 @@ export default function ErrorBuiltinSubclassTest(): void {
      * @tc.level Level 2
      */
     it('testErrorBuiltinSubclass007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: AssertionError = new AssertionError('code test');
+      let e: AssertionError = new AssertionError('0b1010');
+      expect(e instanceof Error).assertTrue();
       expect(e.code).assertEqual(0);
-      e.code = 42;
-      expect(e.code).assertEqual(42);
+      e.code = -2147483648;
+      expect(e.code).assertEqual(-2147483648);
     });
 
     /**
@@ -156,11 +163,12 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let hasStack: boolean = false;
       try {
-        throw new AssertionError('stack test');
+        throw new AssertionError('25:00:00');
       } catch (e) {
+        expect(e instanceof Error).assertTrue();
         hasStack = e.stack !== undefined;
       }
-      expect(hasStack).assertEqual(true);
+      expect(hasStack).assertTrue();
     });
 
     /**
@@ -173,9 +181,10 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: AssertionError = new AssertionError('original');
+      expect(e instanceof Error).assertTrue();
       expect(e.message).assertEqual('original');
-      e.message = 'mutated';
-      expect(e.message).assertEqual('mutated');
+      e.message = '310101199001011234';
+      expect(e.message).assertEqual('310101199001011234');
     });
 
     /**
@@ -187,10 +196,11 @@ export default function ErrorBuiltinSubclassTest(): void {
      * @tc.level Level 2
      */
     it('testErrorBuiltinSubclass010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: FormatError = new FormatError('code test');
+      let e: FormatError = new FormatError('123.45e6');
+      expect(e instanceof Error).assertTrue();
       expect(e.code).assertEqual(0);
-      e.code = 42;
-      expect(e.code).assertEqual(42);
+      e.code = 0b1010;
+      expect(e.code).assertEqual(10);
     });
 
     /**
@@ -204,11 +214,12 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let hasStack: boolean = false;
       try {
-        throw new FormatError('stack test');
+        throw new FormatError('622202********1234');
       } catch (e) {
+        expect(e instanceof Error).assertTrue();
         hasStack = e.stack !== undefined;
       }
-      expect(hasStack).assertEqual(true);
+      expect(hasStack).assertTrue();
     });
 
     /**
@@ -221,9 +232,10 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: FormatError = new FormatError('original');
+      expect(e instanceof Error).assertTrue();
       expect(e.message).assertEqual('original');
-      e.message = 'mutated';
-      expect(e.message).assertEqual('mutated');
+      e.message = '2026-13-01';
+      expect(e.message).assertEqual('2026-13-01');
     });
 
     /**
@@ -236,6 +248,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: InstantiationError = new InstantiationError('code test');
+      expect(e instanceof Error).assertTrue();
       expect(e.code).assertEqual(0);
       e.code = 42;
       expect(e.code).assertEqual(42);
@@ -254,9 +267,10 @@ export default function ErrorBuiltinSubclassTest(): void {
       try {
         throw new InstantiationError('stack test');
       } catch (e) {
+        expect(e instanceof Error).assertTrue();
         hasStack = e.stack !== undefined;
       }
-      expect(hasStack).assertEqual(true);
+      expect(hasStack).assertTrue();
     });
 
     /**
@@ -269,6 +283,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: InstantiationError = new InstantiationError('original');
+      expect(e instanceof Error).assertTrue();
       expect(e.message).assertEqual('original');
       e.message = 'mutated';
       expect(e.message).assertEqual('mutated');
@@ -284,6 +299,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: InternalError = new InternalError('code test');
+      expect(e instanceof Error).assertTrue();
       expect(e.code).assertEqual(0);
       e.code = 42;
       expect(e.code).assertEqual(42);
@@ -302,9 +318,10 @@ export default function ErrorBuiltinSubclassTest(): void {
       try {
         throw new InternalError('stack test');
       } catch (e) {
+        expect(e instanceof Error).assertTrue();
         hasStack = e.stack !== undefined;
       }
-      expect(hasStack).assertEqual(true);
+      expect(hasStack).assertTrue();
     });
 
     /**
@@ -317,6 +334,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: InternalError = new InternalError('original');
+      expect(e instanceof Error).assertTrue();
       expect(e.message).assertEqual('original');
       e.message = 'mutated';
       expect(e.message).assertEqual('mutated');
@@ -333,6 +351,7 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cause: Error = new Error('root');
       let e: ArrayStoreError = new ArrayStoreError('msg', { cause: cause });
+      expect(e instanceof Error).assertTrue();
       expect(e.cause).assertEqual(cause);
       expect(e.message).assertEqual('msg');
     });
@@ -348,6 +367,7 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cause: Error = new Error('root');
       let e: AssertionError = new AssertionError('msg', { cause: cause });
+      expect(e instanceof Error).assertTrue();
       expect(e.cause).assertEqual(cause);
       expect(e.message).assertEqual('msg');
     });
@@ -363,6 +383,7 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cause: Error = new Error('root');
       let e: FormatError = new FormatError('msg', { cause: cause });
+      expect(e instanceof Error).assertTrue();
       expect(e.cause).assertEqual(cause);
       expect(e.message).assertEqual('msg');
     });
@@ -378,6 +399,7 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cause: Error = new Error('root');
       let e: InstantiationError = new InstantiationError('msg', { cause: cause });
+      expect(e instanceof Error).assertTrue();
       expect(e.cause).assertEqual(cause);
       expect(e.message).assertEqual('msg');
     });
@@ -393,6 +415,7 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cause: Error = new Error('root');
       let e: InternalError = new InternalError('msg', { cause: cause });
+      expect(e instanceof Error).assertTrue();
       expect(e.cause).assertEqual(cause);
       expect(e.message).assertEqual('msg');
     });
@@ -407,6 +430,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: ArrayStoreError = new ArrayStoreError('json test');
+      expect(e instanceof Error).assertTrue();
       let json: string = JSON.stringify(e);
       expect(json).assertEqual("{}");
     });
@@ -421,6 +445,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: AssertionError = new AssertionError('json test');
+      expect(e instanceof Error).assertTrue();
       let json: string = JSON.stringify(e);
       expect(json).assertEqual("{}");
     });
@@ -435,6 +460,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: FormatError = new FormatError('json test');
+      expect(e instanceof Error).assertTrue();
       let json: string = JSON.stringify(e);
       expect(json).assertEqual("{}");
     });
@@ -449,6 +475,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: InstantiationError = new InstantiationError('json test');
+      expect(e instanceof Error).assertTrue();
       let json: string = JSON.stringify(e);
       expect(json).assertEqual("{}");
     });
@@ -463,6 +490,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: InternalError = new InternalError('json test');
+      expect(e instanceof Error).assertTrue();
       let json: string = JSON.stringify(e);
       expect(json).assertEqual("{}");
     });
@@ -477,6 +505,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: CoroutinesLimitExceedError = new CoroutinesLimitExceedError('json test');
+      expect(e instanceof Error).assertTrue();
       let json: string = JSON.stringify(e);
       expect(json).assertEqual("{}");
     });
@@ -491,6 +520,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: DivideByZeroError = new DivideByZeroError('json test');
+      expect(e instanceof Error).assertTrue();
       let json: string = JSON.stringify(e);
       expect(json).assertEqual("{}");
     });
@@ -505,6 +535,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: ExceptionInInitializerError = new ExceptionInInitializerError('json test');
+      expect(e instanceof Error).assertTrue();
       let json: string = JSON.stringify(e);
       expect(json).assertEqual("{}");
     });
@@ -519,6 +550,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: IllegalLockStateError = new IllegalLockStateError('json test');
+      expect(e instanceof Error).assertTrue();
       let json: string = JSON.stringify(e);
       expect(json).assertEqual("{}");
     });
@@ -533,6 +565,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: InvalidAsyncOperationError = new InvalidAsyncOperationError('json test');
+      expect(e instanceof Error).assertTrue();
       let json: string = JSON.stringify(e);
       expect(json).assertEqual("{}");
     });
@@ -547,6 +580,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: InvalidJobOperationError = new InvalidJobOperationError('json test');
+      expect(e instanceof Error).assertTrue();
       let json: string = JSON.stringify(e);
       expect(json).assertEqual("{}");
     });
@@ -561,6 +595,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: InvalidStoreAccessError = new InvalidStoreAccessError('json test');
+      expect(e instanceof Error).assertTrue();
       let json: string = JSON.stringify(e);
       expect(json).assertEqual("{}");
     });
@@ -575,6 +610,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: JSONTypeError = new JSONTypeError('json test');
+      expect(e instanceof Error).assertTrue();
       let json: string = JSON.stringify(e);
       expect(json).assertEqual("{}");
     });
@@ -589,6 +625,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: NonIntegralIndexError = new NonIntegralIndexError('json test');
+      expect(e instanceof Error).assertTrue();
       let json: string = JSON.stringify(e);
       expect(json).assertEqual("{}");
     });
@@ -603,6 +640,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: OutOfMemoryError = new OutOfMemoryError('json test');
+      expect(e instanceof Error).assertTrue();
       let json: string = JSON.stringify(e);
       expect(json).assertEqual("{}");
     });
@@ -617,6 +655,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: StackOverflowError = new StackOverflowError('json test');
+      expect(e instanceof Error).assertTrue();
       let json: string = JSON.stringify(e);
       expect(json).assertEqual("{}");
     });
@@ -631,6 +670,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: UncaughtExceptionError = new UncaughtExceptionError('json test');
+      expect(e instanceof Error).assertTrue();
       let json: string = JSON.stringify(e);
       expect(json).assertEqual("{}");
     });
@@ -645,6 +685,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: IndexOutOfBoundsError = new IndexOutOfBoundsError('json test');
+      expect(e instanceof Error).assertTrue();
       let json: string = JSON.stringify(e);
       expect(json).assertEqual("{}");
     });
@@ -659,6 +700,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: ArrayStoreError = new ArrayStoreError('错误消息');
+      expect(e instanceof Error).assertTrue();
       expect(e.message).assertEqual('错误消息');
       expect(e.name).assertEqual('ArrayStoreError');
     });
@@ -673,6 +715,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: AssertionError = new AssertionError('错误消息');
+      expect(e instanceof Error).assertTrue();
       expect(e.message).assertEqual('错误消息');
       expect(e.name).assertEqual('AssertionError');
     });
@@ -687,6 +730,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: FormatError = new FormatError('错误消息');
+      expect(e instanceof Error).assertTrue();
       expect(e.message).assertEqual('错误消息');
       expect(e.name).assertEqual('FormatError');
     });
@@ -701,6 +745,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: InstantiationError = new InstantiationError('错误消息');
+      expect(e instanceof Error).assertTrue();
       expect(e.message).assertEqual('错误消息');
       expect(e.name).assertEqual('InstantiationError');
     });
@@ -715,6 +760,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: InternalError = new InternalError('错误消息');
+      expect(e instanceof Error).assertTrue();
       expect(e.message).assertEqual('错误消息');
       expect(e.name).assertEqual('InternalError');
     });
@@ -729,6 +775,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: CoroutinesLimitExceedError = new CoroutinesLimitExceedError('错误消息');
+      expect(e instanceof Error).assertTrue();
       expect(e.message).assertEqual('错误消息');
       expect(e.name).assertEqual('CoroutinesLimitExceedError');
     });
@@ -743,6 +790,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: DivideByZeroError = new DivideByZeroError('错误消息');
+      expect(e instanceof Error).assertTrue();
       expect(e.message).assertEqual('错误消息');
       expect(e.name).assertEqual('DivideByZeroError');
     });
@@ -757,6 +805,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: ExceptionInInitializerError = new ExceptionInInitializerError('错误消息');
+      expect(e instanceof Error).assertTrue();
       expect(e.message).assertEqual('错误消息');
       expect(e.name).assertEqual('ExceptionInInitializerError');
     });
@@ -771,6 +820,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: IllegalLockStateError = new IllegalLockStateError('错误消息');
+      expect(e instanceof Error).assertTrue();
       expect(e.message).assertEqual('错误消息');
       expect(e.name).assertEqual('IllegalLockStateError');
     });
@@ -785,6 +835,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: InvalidAsyncOperationError = new InvalidAsyncOperationError('错误消息');
+      expect(e instanceof Error).assertTrue();
       expect(e.message).assertEqual('错误消息');
       expect(e.name).assertEqual('InvalidAsyncOperationError');
     });
@@ -799,6 +850,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: InvalidJobOperationError = new InvalidJobOperationError('错误消息');
+      expect(e instanceof Error).assertTrue();
       expect(e.message).assertEqual('错误消息');
       expect(e.name).assertEqual('InvalidJobOperationError');
     });
@@ -813,6 +865,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: InvalidStoreAccessError = new InvalidStoreAccessError('错误消息');
+      expect(e instanceof Error).assertTrue();
       expect(e.message).assertEqual('错误消息');
       expect(e.name).assertEqual('InvalidStoreAccessError');
     });
@@ -827,6 +880,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: JSONTypeError = new JSONTypeError('错误消息');
+      expect(e instanceof Error).assertTrue();
       expect(e.message).assertEqual('错误消息');
       expect(e.name).assertEqual('JSONTypeError');
     });
@@ -841,6 +895,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: NonIntegralIndexError = new NonIntegralIndexError('错误消息');
+      expect(e instanceof Error).assertTrue();
       expect(e.message).assertEqual('错误消息');
       expect(e.name).assertEqual('NonIntegralIndexError');
     });
@@ -855,6 +910,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: OutOfMemoryError = new OutOfMemoryError('错误消息');
+      expect(e instanceof Error).assertTrue();
       expect(e.message).assertEqual('错误消息');
       expect(e.name).assertEqual('OutOfMemoryError');
     });
@@ -869,6 +925,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: StackOverflowError = new StackOverflowError('错误消息');
+      expect(e instanceof Error).assertTrue();
       expect(e.message).assertEqual('错误消息');
       expect(e.name).assertEqual('StackOverflowError');
     });
@@ -883,6 +940,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: UncaughtExceptionError = new UncaughtExceptionError('错误消息');
+      expect(e instanceof Error).assertTrue();
       expect(e.message).assertEqual('错误消息');
       expect(e.name).assertEqual('UncaughtExceptionError');
 
@@ -898,6 +956,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: IndexOutOfBoundsError = new IndexOutOfBoundsError('错误消息');
+      expect(e instanceof Error).assertTrue();
       expect(e.message).assertEqual('错误消息');
       expect(e.name).assertEqual('IndexOutOfBoundsError');
     });
@@ -912,9 +971,11 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: ArithmeticError = new ArithmeticError();
+      expect(err instanceof Error).assertTrue();
       try {
         throw err;
       } catch (e) {
+        expect(e instanceof Error).assertTrue();
         expect(e.name).assertEqual("ArithmeticError");
       }
     });
@@ -929,9 +990,11 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: NullPointerError = new NullPointerError();
+      expect(err instanceof Error).assertTrue();
       try {
         throw err;
       } catch (e) {
+        expect(e instanceof Error).assertTrue();
         expect(e.name).assertEqual("NullPointerError");
       }
     });
@@ -946,9 +1009,11 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: ClassCastError = new ClassCastError();
+      expect(err instanceof Error).assertTrue();
       try {
         throw err;
       } catch (e) {
+        expect(e instanceof Error).assertTrue();
         expect(e.name).assertEqual("ClassCastError");
       }
     });
@@ -1006,6 +1071,7 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let c: TypeError = new TypeError("root cause");
       let e: TypeError = new TypeError("wrapper", { cause: c });
+      expect(e instanceof Error).assertTrue();
       expect(e.name).assertEqual('TypeError');
       expect(e.message).assertEqual("wrapper");
       expect((e.cause as TypeError).message).assertEqual("root cause");
@@ -1022,6 +1088,7 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let c: RangeError = new RangeError("range cause");
       let e: RangeError = new RangeError("out of range", { cause: c });
+      expect(e instanceof Error).assertTrue();
 
       expect((e.cause as RangeError).message).assertEqual("range cause");
     });
@@ -1037,6 +1104,7 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let c: SyntaxError = new SyntaxError("parse error");
       let e: SyntaxError = new SyntaxError("syntax", { cause: c });
+      expect(e instanceof Error).assertTrue();
       expect(e.name).assertEqual('SyntaxError');
       expect((e.cause as SyntaxError).message).assertEqual("parse error");
     });
@@ -1052,6 +1120,7 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let c: ReferenceError = new ReferenceError("ref cause");
       let e: ReferenceError = new ReferenceError("ref error", { cause: c });
+      expect(e instanceof Error).assertTrue();
       expect(e.name).assertEqual('ReferenceError');
       expect((e.cause as ReferenceError).message).assertEqual("ref cause");
     });
@@ -1067,6 +1136,7 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let c: EvalError = new EvalError("eval cause");
       let e: EvalError = new EvalError("eval error", { cause: c });
+      expect(e instanceof Error).assertTrue();
       expect(e.name).assertEqual('EvalError');
       expect((e.cause as EvalError).message).assertEqual("eval cause");
     });
@@ -1082,6 +1152,7 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let c: URIError = new URIError("uri cause");
       let e: URIError = new URIError("bad uri", { cause: c });
+      expect(e instanceof Error).assertTrue();
       expect(e.name).assertEqual('URIError');
       expect((e.cause as URIError).message).assertEqual("uri cause");
     });
@@ -1097,6 +1168,7 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let errs: Error[] = [new TypeError("t1"), new RangeError("r1")];
       let e: AggregateError = new AggregateError(errs, "aggregated");
+      expect(e instanceof Error).assertTrue();
       expect(e.name).assertEqual('AggregateError');
       expect(e.message).assertEqual("aggregated");
     });
@@ -1113,6 +1185,7 @@ export default function ErrorBuiltinSubclassTest(): void {
       let root: Error = new Error("root");
       let errs: Error[] = [new TypeError("t1")];
       let e: AggregateError = new AggregateError(errs, "wrapper", { cause: root });
+      expect(e instanceof Error).assertTrue();
       expect(e.name).assertEqual('AggregateError');
       expect((e.cause as Error).message).assertEqual("root");
     });
@@ -1130,6 +1203,7 @@ export default function ErrorBuiltinSubclassTest(): void {
         let c: Error = new TypeError("root");
         throw new TypeError("wrapper", { cause: c });
       } catch (e) {
+        expect(e instanceof Error).assertTrue();
         expect(e.name).assertEqual('TypeError');
         expect((e.cause as TypeError).message).assertEqual("root");
       }
@@ -1161,6 +1235,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: IndexOutOfBoundsError = new IndexOutOfBoundsError("index 5 out of bounds");
+      expect(e instanceof Error).assertTrue();
       expect(e.message).assertEqual("index 5 out of bounds");
     });
 
@@ -1174,6 +1249,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: IndexOutOfBoundsError = new IndexOutOfBoundsError("index -1");
+      expect(e instanceof Error).assertTrue();
       expect(e.toString()).assertEqual("IndexOutOfBoundsError: index -1");
     });
 
@@ -1188,6 +1264,7 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cause: Error = new Error("root cause");
       let e: IndexOutOfBoundsError = new IndexOutOfBoundsError("wrap", { cause });
+      expect(e instanceof Error).assertTrue();
       expect(e.cause).assertEqual(cause);
     });
 
@@ -1201,10 +1278,12 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: ArgumentsUnderapplicationError = new ArgumentsUnderapplicationError('caught msg');
+      expect(err instanceof Error).assertTrue();
       expect(err.name).assertEqual('ArgumentsUnderapplicationError');
       try {
         throw err;
       } catch (e) {
+        expect(e instanceof Error).assertTrue();
         expect(e.name).assertEqual('ArgumentsUnderapplicationError');
         expect(e.message).assertEqual('caught msg');
       }
@@ -1220,6 +1299,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: ArgumentsUnderapplicationError = new ArgumentsUnderapplicationError('display');
+      expect(err instanceof Error).assertTrue();
       expect(err.toString()).assertEqual('ArgumentsUnderapplicationError: display');
     });
 
@@ -1234,6 +1314,7 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cause: Error = new Error('root cause');
       let err: ArgumentsUnderapplicationError = new ArgumentsUnderapplicationError('has cause', { cause: cause });
+      expect(err instanceof Error).assertTrue();
       expect(err.cause).assertEqual(cause);
       expect(err.message).assertEqual('has cause');
     });
@@ -1248,10 +1329,12 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: CoroutinesLimitExceedError = new CoroutinesLimitExceedError('caught msg');
+      expect(err instanceof Error).assertTrue();
       expect(err.name).assertEqual('CoroutinesLimitExceedError');
       try {
         throw err;
       } catch (e) {
+        expect(e instanceof Error).assertTrue();
         expect(e.name).assertEqual('CoroutinesLimitExceedError');
         expect(e.message).assertEqual('caught msg');
       }
@@ -1267,6 +1350,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: CoroutinesLimitExceedError = new CoroutinesLimitExceedError('display');
+      expect(err instanceof Error).assertTrue();
       expect(err.toString()).assertEqual('CoroutinesLimitExceedError: display');
     });
 
@@ -1281,6 +1365,7 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cause: Error = new Error('root cause');
       let err: CoroutinesLimitExceedError = new CoroutinesLimitExceedError('has cause', { cause: cause });
+      expect(err instanceof Error).assertTrue();
       expect(err.cause).assertEqual(cause);
       expect(err.message).assertEqual('has cause');
     });
@@ -1295,10 +1380,12 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: DivideByZeroError = new DivideByZeroError('caught msg');
+      expect(err instanceof Error).assertTrue();
       expect(err.name).assertEqual('DivideByZeroError');
       try {
         throw err;
       } catch (e) {
+        expect(e instanceof Error).assertTrue();
         expect(e.name).assertEqual('DivideByZeroError');
         expect(e.message).assertEqual('caught msg');
       }
@@ -1314,6 +1401,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: DivideByZeroError = new DivideByZeroError('display');
+      expect(err instanceof Error).assertTrue();
       expect(err.toString()).assertEqual('DivideByZeroError: display');
     });
 
@@ -1328,6 +1416,7 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cause: Error = new Error('root cause');
       let err: DivideByZeroError = new DivideByZeroError('has cause', { cause: cause });
+      expect(err instanceof Error).assertTrue();
       expect(err.cause).assertEqual(cause);
       expect(err.message).assertEqual('has cause');
     });
@@ -1342,10 +1431,12 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: ExceptionInInitializerError = new ExceptionInInitializerError('caught msg');
+      expect(err instanceof Error).assertTrue();
       expect(err.name).assertEqual('ExceptionInInitializerError');
       try {
         throw err;
       } catch (e) {
+        expect(e instanceof Error).assertTrue();
         expect(e.name).assertEqual('ExceptionInInitializerError');
         expect(e.message).assertEqual('caught msg');
       }
@@ -1361,6 +1452,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: ExceptionInInitializerError = new ExceptionInInitializerError('display');
+      expect(err instanceof Error).assertTrue();
       expect(err.toString()).assertEqual('ExceptionInInitializerError: display');
     });
 
@@ -1375,6 +1467,7 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cause: Error = new Error('root cause');
       let err: ExceptionInInitializerError = new ExceptionInInitializerError('has cause', { cause: cause });
+      expect(err instanceof Error).assertTrue();
       expect(err.cause).assertEqual(cause);
       expect(err.message).assertEqual('has cause');
     });
@@ -1389,10 +1482,12 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: IllegalLockStateError = new IllegalLockStateError('caught msg');
+      expect(err instanceof Error).assertTrue();
       expect(err.name).assertEqual('IllegalLockStateError');
       try {
         throw err;
       } catch (e) {
+        expect(e instanceof Error).assertTrue();
         expect(e.name).assertEqual('IllegalLockStateError');
         expect(e.message).assertEqual('caught msg');
       }
@@ -1408,6 +1503,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: IllegalLockStateError = new IllegalLockStateError('display');
+      expect(err instanceof Error).assertTrue();
       expect(err.toString()).assertEqual('IllegalLockStateError: display');
     });
 
@@ -1422,6 +1518,7 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cause: Error = new Error('root cause');
       let err: IllegalLockStateError = new IllegalLockStateError('has cause', { cause: cause });
+      expect(err instanceof Error).assertTrue();
       expect(err.cause).assertEqual(cause);
       expect(err.message).assertEqual('has cause');
     });
@@ -1436,10 +1533,12 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: InvalidAsyncOperationError = new InvalidAsyncOperationError('caught msg');
+      expect(err instanceof Error).assertTrue();
       expect(err.name).assertEqual('InvalidAsyncOperationError');
       try {
         throw err;
       } catch (e) {
+        expect(e instanceof Error).assertTrue();
         expect(e.name).assertEqual('InvalidAsyncOperationError');
         expect(e.message).assertEqual('caught msg');
       }
@@ -1455,6 +1554,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: InvalidAsyncOperationError = new InvalidAsyncOperationError('display');
+      expect(err instanceof Error).assertTrue();
       expect(err.toString()).assertEqual('InvalidAsyncOperationError: display');
     });
 
@@ -1469,6 +1569,7 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cause: Error = new Error('root cause');
       let err: InvalidAsyncOperationError = new InvalidAsyncOperationError('has cause', { cause: cause });
+      expect(err instanceof Error).assertTrue();
       expect(err.cause).assertEqual(cause);
       expect(err.message).assertEqual('has cause');
     });
@@ -1483,10 +1584,12 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: InvalidJobOperationError = new InvalidJobOperationError('caught msg');
+      expect(err instanceof Error).assertTrue();
       expect(err.name).assertEqual('InvalidJobOperationError');
       try {
         throw err;
       } catch (e) {
+        expect(e instanceof Error).assertTrue();
         expect(e.name).assertEqual('InvalidJobOperationError');
         expect(e.message).assertEqual('caught msg');
       }
@@ -1502,6 +1605,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: InvalidJobOperationError = new InvalidJobOperationError('display');
+      expect(err instanceof Error).assertTrue();
       expect(err.toString()).assertEqual('InvalidJobOperationError: display');
     });
 
@@ -1516,6 +1620,7 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cause: Error = new Error('root cause');
       let err: InvalidJobOperationError = new InvalidJobOperationError('has cause', { cause: cause });
+      expect(err instanceof Error).assertTrue();
       expect(err.cause).assertEqual(cause);
       expect(err.message).assertEqual('has cause');
     });
@@ -1530,10 +1635,12 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: InvalidStoreAccessError = new InvalidStoreAccessError('caught msg');
+      expect(err instanceof Error).assertTrue();
       expect(err.name).assertEqual('InvalidStoreAccessError');
       try {
         throw err;
       } catch (e) {
+        expect(e instanceof Error).assertTrue();
         expect(e.name).assertEqual('InvalidStoreAccessError');
         expect(e.message).assertEqual('caught msg');
       }
@@ -1549,6 +1656,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: InvalidStoreAccessError = new InvalidStoreAccessError('display');
+      expect(err instanceof Error).assertTrue();
       expect(err.toString()).assertEqual('InvalidStoreAccessError: display');
     });
 
@@ -1563,6 +1671,7 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cause: Error = new Error('root cause');
       let err: InvalidStoreAccessError = new InvalidStoreAccessError('has cause', { cause: cause });
+      expect(err instanceof Error).assertTrue();
       expect(err.cause).assertEqual(cause);
       expect(err.message).assertEqual('has cause');
     });
@@ -1577,10 +1686,12 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: JSONTypeError = new JSONTypeError('caught msg');
+      expect(err instanceof Error).assertTrue();
       expect(err.name).assertEqual('JSONTypeError');
       try {
         throw err;
       } catch (e) {
+        expect(e instanceof Error).assertTrue();
         expect(e.name).assertEqual('JSONTypeError');
         expect(e.message).assertEqual('caught msg');
       }
@@ -1596,6 +1707,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: JSONTypeError = new JSONTypeError('display');
+      expect(err instanceof Error).assertTrue();
       expect(err.toString()).assertEqual('JSONTypeError: display');
     });
 
@@ -1610,6 +1722,7 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cause: Error = new Error('root cause');
       let err: JSONTypeError = new JSONTypeError('has cause', { cause: cause });
+      expect(err instanceof Error).assertTrue();
       expect(err.cause).assertEqual(cause);
       expect(err.message).assertEqual('has cause');
     });
@@ -1624,10 +1737,12 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: NonIntegralIndexError = new NonIntegralIndexError('caught msg');
+      expect(err instanceof Error).assertTrue();
       expect(err.name).assertEqual('NonIntegralIndexError');
       try {
         throw err;
       } catch (e) {
+        expect(e instanceof Error).assertTrue();
         expect(e.name).assertEqual('NonIntegralIndexError');
         expect(e.message).assertEqual('caught msg');
       }
@@ -1643,6 +1758,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: NonIntegralIndexError = new NonIntegralIndexError('display');
+      expect(err instanceof Error).assertTrue();
       expect(err.toString()).assertEqual('NonIntegralIndexError: display');
     });
 
@@ -1657,6 +1773,7 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cause: Error = new Error('root cause');
       let err: NonIntegralIndexError = new NonIntegralIndexError('has cause', { cause: cause });
+      expect(err instanceof Error).assertTrue();
       expect(err.cause).assertEqual(cause);
       expect(err.message).assertEqual('has cause');
     });
@@ -1671,10 +1788,12 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: OutOfMemoryError = new OutOfMemoryError('caught msg');
+      expect(err instanceof Error).assertTrue();
       expect(err.name).assertEqual('OutOfMemoryError');
       try {
         throw err;
       } catch (e) {
+        expect(e instanceof Error).assertTrue();
         expect(e.name).assertEqual('OutOfMemoryError');
         expect(e.message).assertEqual('caught msg');
       }
@@ -1690,6 +1809,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: OutOfMemoryError = new OutOfMemoryError('display');
+      expect(err instanceof Error).assertTrue();
       expect(err.toString()).assertEqual('OutOfMemoryError: display');
     });
 
@@ -1704,6 +1824,7 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cause: Error = new Error('root cause');
       let err: OutOfMemoryError = new OutOfMemoryError('has cause', { cause: cause });
+      expect(err instanceof Error).assertTrue();
       expect(err.cause).assertEqual(cause);
       expect(err.message).assertEqual('has cause');
     });
@@ -1718,10 +1839,12 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: StackOverflowError = new StackOverflowError('caught msg');
+      expect(err instanceof Error).assertTrue();
       expect(err.name).assertEqual('StackOverflowError');
       try {
         throw err;
       } catch (e) {
+        expect(e instanceof Error).assertTrue();
         expect(e.name).assertEqual('StackOverflowError');
         expect(e.message).assertEqual('caught msg');
       }
@@ -1737,6 +1860,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: StackOverflowError = new StackOverflowError('display');
+      expect(err instanceof Error).assertTrue();
       expect(err.toString()).assertEqual('StackOverflowError: display');
     });
 
@@ -1751,6 +1875,7 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cause: Error = new Error('root cause');
       let err: StackOverflowError = new StackOverflowError('has cause', { cause: cause });
+      expect(err instanceof Error).assertTrue();
       expect(err.cause).assertEqual(cause);
       expect(err.message).assertEqual('has cause');
     });
@@ -1765,10 +1890,12 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: UncaughtExceptionError = new UncaughtExceptionError('caught msg');
+      expect(err instanceof Error).assertTrue();
       expect(err.name).assertEqual('UncaughtExceptionError');
       try {
         throw err;
       } catch (e) {
+        expect(e instanceof Error).assertTrue();
         expect(e.name).assertEqual('UncaughtExceptionError');
         expect(e.message).assertEqual('caught msg');
       }
@@ -1784,6 +1911,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: UncaughtExceptionError = new UncaughtExceptionError('display');
+      expect(err instanceof Error).assertTrue();
       expect(err.toString()).assertEqual('UncaughtExceptionError: display');
     });
 
@@ -1798,6 +1926,7 @@ export default function ErrorBuiltinSubclassTest(): void {
     it('testErrorBuiltinSubclass117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cause: Error = new Error('root cause');
       let err: UncaughtExceptionError = new UncaughtExceptionError('has cause', { cause: cause });
+      expect(err instanceof Error).assertTrue();
       expect(err.cause).assertEqual(cause);
       expect(err.message).assertEqual('has cause');
     });
@@ -1812,6 +1941,7 @@ export default function ErrorBuiltinSubclassTest(): void {
      */
     it('testErrorBuiltinSubclass118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: NoDataError = new NoDataError();
+      expect(err instanceof Error).assertTrue();
       expect(err.name).assertEqual('NoDataError');
     });
 
