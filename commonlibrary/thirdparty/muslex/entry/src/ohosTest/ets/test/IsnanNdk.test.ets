@@ -25,7 +25,7 @@ export default function IsnanNdkTest() {
 
     /**
      * @tc.name   testIsnanNormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_ISNAN_0101
+     * @tc.number SUB_THIRDPARTY_MUSL_ISNAN_0100
      * @tc.desc   NaN should return non-zero
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -41,7 +41,7 @@ export default function IsnanNdkTest() {
 
     /**
      * @tc.name   testIsnanNormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_ISNAN_0102
+     * @tc.number SUB_THIRDPARTY_MUSL_ISNAN_0200
      * @tc.desc   Positive infinity should return 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -57,7 +57,7 @@ export default function IsnanNdkTest() {
 
     /**
      * @tc.name   testIsnanNormal003
-     * @tc.number SUB_THIRDPARTY_MUSL_ISNAN_0103
+     * @tc.number SUB_THIRDPARTY_MUSL_ISNAN_0300
      * @tc.desc   Negative infinity should return 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -73,7 +73,7 @@ export default function IsnanNdkTest() {
 
     /**
      * @tc.name   testIsnanNormal004
-     * @tc.number SUB_THIRDPARTY_MUSL_ISNAN_0104
+     * @tc.number SUB_THIRDPARTY_MUSL_ISNAN_0400
      * @tc.desc   Zero should return 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -89,7 +89,7 @@ export default function IsnanNdkTest() {
 
     /**
      * @tc.name   testIsnanNormal005
-     * @tc.number SUB_THIRDPARTY_MUSL_ISNAN_0105
+     * @tc.number SUB_THIRDPARTY_MUSL_ISNAN_0500
      * @tc.desc   Normal finite value should return 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -105,7 +105,7 @@ export default function IsnanNdkTest() {
 
     /**
      * @tc.name   testIsnanNormal006
-     * @tc.number SUB_THIRDPARTY_MUSL_ISNAN_0106
+     * @tc.number SUB_THIRDPARTY_MUSL_ISNAN_0600
      * @tc.desc   Negative finite value should return 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -121,7 +121,7 @@ export default function IsnanNdkTest() {
 
     /**
      * @tc.name   testIsnanBoundary001
-     * @tc.number SUB_THIRDPARTY_MUSL_ISNAN_0107
+     * @tc.number SUB_THIRDPARTY_MUSL_ISNAN_0700
      * @tc.desc   DBL_MAX should return 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -137,7 +137,7 @@ export default function IsnanNdkTest() {
 
     /**
      * @tc.name   testIsnanBoundary002
-     * @tc.number SUB_THIRDPARTY_MUSL_ISNAN_0108
+     * @tc.number SUB_THIRDPARTY_MUSL_ISNAN_0800
      * @tc.desc   DBL_MIN should return 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -153,7 +153,7 @@ export default function IsnanNdkTest() {
 
     /**
      * @tc.name   testIsnanAbnormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_ISNAN_0109
+     * @tc.number SUB_THIRDPARTY_MUSL_ISNAN_0900
      * @tc.desc   Signaling NaN should return non-zero
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -169,7 +169,7 @@ export default function IsnanNdkTest() {
 
     /**
      * @tc.name   testIsnanAbnormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_ISNAN_0110
+     * @tc.number SUB_THIRDPARTY_MUSL_ISNAN_1000
      * @tc.desc   Various NaN bit patterns
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -185,7 +185,7 @@ export default function IsnanNdkTest() {
 
     /**
      * @tc.name   testIsnanStable001
-     * @tc.number SUB_THIRDPARTY_MUSL_ISNAN_0111
+     * @tc.number SUB_THIRDPARTY_MUSL_ISNAN_1100
      * @tc.desc   10000 repeated calls stability
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -201,7 +201,7 @@ export default function IsnanNdkTest() {
 
     /**
      * @tc.name   testIsnanThread001
-     * @tc.number SUB_THIRDPARTY_MUSL_ISNAN_0112
+     * @tc.number SUB_THIRDPARTY_MUSL_ISNAN_1200
      * @tc.desc   Multi-thread safety
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

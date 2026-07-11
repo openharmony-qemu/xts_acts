@@ -23,6 +23,14 @@ export default function HilogBaseIsLoggableNdkTest() {
 
     beforeEach(async () => { await Utils.sleep(50); });
 
+    /**
+     * @tc.name   testHilogBaseIsLoggableNormal001
+     * @tc.number SUB_THIRDPARTY_MUSL_HILOG_BASE_IS_LOGGABLE_0100
+     * @tc.desc   Check loggability for INFO level
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHilogBaseIsLoggableNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseislogglendktest.hilogBaseIsLoggableNormal001();
       let deviceType: string = deviceInfo.deviceType;
@@ -31,6 +39,14 @@ export default function HilogBaseIsLoggableNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testHilogBaseIsLoggableNormal002
+     * @tc.number SUB_THIRDPARTY_MUSL_HILOG_BASE_IS_LOGGABLE_0200
+     * @tc.desc   Check loggability for ERROR level
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHilogBaseIsLoggableNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseislogglendktest.hilogBaseIsLoggableNormal002();
       let deviceType: string = deviceInfo.deviceType;
@@ -39,6 +55,14 @@ export default function HilogBaseIsLoggableNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testHilogBaseIsLoggableNormal003
+     * @tc.number SUB_THIRDPARTY_MUSL_HILOG_BASE_IS_LOGGABLE_0300
+     * @tc.desc   Check loggability for DEBUG level
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHilogBaseIsLoggableNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseislogglendktest.hilogBaseIsLoggableNormal003();
       let deviceType: string = deviceInfo.deviceType;
@@ -47,6 +71,14 @@ export default function HilogBaseIsLoggableNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testHilogBaseIsLoggableNormal004
+     * @tc.number SUB_THIRDPARTY_MUSL_HILOG_BASE_IS_LOGGABLE_0400
+     * @tc.desc   Stub mode passthrough test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHilogBaseIsLoggableNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseislogglendktest.hilogBaseIsLoggableNormal004();
       let deviceType: string = deviceInfo.deviceType;
@@ -55,6 +87,14 @@ export default function HilogBaseIsLoggableNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testHilogBaseIsLoggableAbnormal001
+     * @tc.number SUB_THIRDPARTY_MUSL_HILOG_BASE_IS_LOGGABLE_0500
+     * @tc.desc   Check loggability with null domain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHilogBaseIsLoggableAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseislogglendktest.hilogBaseIsLoggableAbnormal001();
       let deviceType: string = deviceInfo.deviceType;
@@ -63,6 +103,14 @@ export default function HilogBaseIsLoggableNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testHilogBaseIsLoggableAbnormal002
+     * @tc.number SUB_THIRDPARTY_MUSL_HILOG_BASE_IS_LOGGABLE_0600
+     * @tc.desc   Check loggability with null tag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHilogBaseIsLoggableAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseislogglendktest.hilogBaseIsLoggableAbnormal002();
       let deviceType: string = deviceInfo.deviceType;
@@ -71,6 +119,14 @@ export default function HilogBaseIsLoggableNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testHilogBaseIsLoggableBoundary001
+     * @tc.number SUB_THIRDPARTY_MUSL_HILOG_BASE_IS_LOGGABLE_0700
+     * @tc.desc   Check loggability for FATAL level
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHilogBaseIsLoggableBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseislogglendktest.hilogBaseIsLoggableBoundary001();
       let deviceType: string = deviceInfo.deviceType;
@@ -79,6 +135,14 @@ export default function HilogBaseIsLoggableNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testHilogBaseIsLoggableBoundary002
+     * @tc.number SUB_THIRDPARTY_MUSL_HILOG_BASE_IS_LOGGABLE_0800
+     * @tc.desc   Check loggability for CORE level
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHilogBaseIsLoggableBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseislogglendktest.hilogBaseIsLoggableBoundary002();
       let deviceType: string = deviceInfo.deviceType;
@@ -87,6 +151,14 @@ export default function HilogBaseIsLoggableNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testHilogBaseIsLoggableStable001
+     * @tc.number SUB_THIRDPARTY_MUSL_HILOG_BASE_IS_LOGGABLE_0900
+     * @tc.desc   Repeated isLoggable check calls stability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHilogBaseIsLoggableStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseislogglendktest.hilogBaseIsLoggableStable001();
       let deviceType: string = deviceInfo.deviceType;
@@ -95,6 +167,14 @@ export default function HilogBaseIsLoggableNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testHilogBaseIsLoggableThread001
+     * @tc.number SUB_THIRDPARTY_MUSL_HILOG_BASE_IS_LOGGABLE_1000
+     * @tc.desc   Multi-thread isLoggable concurrency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHilogBaseIsLoggableThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseislogglendktest.hilogBaseIsLoggableThread001();
       let deviceType: string = deviceInfo.deviceType;

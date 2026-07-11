@@ -23,6 +23,14 @@ export default function HilogBasePrintNdkTest() {
 
     beforeEach(async () => { await Utils.sleep(50); });
 
+    /**
+     * @tc.name   testHilogBasePrintNormal001
+     * @tc.number SUB_THIRDPARTY_MUSL_HILOG_BASE_PRINT_0100
+     * @tc.desc   Hilog print basic message test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHilogBasePrintNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseprintndktest.hilogBasePrintNormal001();
       let deviceType: string = deviceInfo.deviceType;
@@ -31,6 +39,14 @@ export default function HilogBasePrintNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testHilogBasePrintNormal002
+     * @tc.number SUB_THIRDPARTY_MUSL_HILOG_BASE_PRINT_0200
+     * @tc.desc   Hilog print with format arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHilogBasePrintNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseprintndktest.hilogBasePrintNormal002();
       let deviceType: string = deviceInfo.deviceType;
@@ -39,6 +55,14 @@ export default function HilogBasePrintNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testHilogBasePrintNormal003
+     * @tc.number SUB_THIRDPARTY_MUSL_HILOG_BASE_PRINT_0300
+     * @tc.desc   Hilog print with multiple format specifiers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHilogBasePrintNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseprintndktest.hilogBasePrintNormal003();
       let deviceType: string = deviceInfo.deviceType;
@@ -47,6 +71,14 @@ export default function HilogBasePrintNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testHilogBasePrintNormal004
+     * @tc.number SUB_THIRDPARTY_MUSL_HILOG_BASE_PRINT_0400
+     * @tc.desc   Stub mode passthrough test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHilogBasePrintNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseprintndktest.hilogBasePrintNormal004();
       let deviceType: string = deviceInfo.deviceType;
@@ -55,6 +87,14 @@ export default function HilogBasePrintNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testHilogBasePrintAbnormal001
+     * @tc.number SUB_THIRDPARTY_MUSL_HILOG_BASE_PRINT_0500
+     * @tc.desc   Hilog print with null tag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHilogBasePrintAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseprintndktest.hilogBasePrintAbnormal001();
       let deviceType: string = deviceInfo.deviceType;
@@ -63,6 +103,14 @@ export default function HilogBasePrintNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testHilogBasePrintAbnormal002
+     * @tc.number SUB_THIRDPARTY_MUSL_HILOG_BASE_PRINT_0600
+     * @tc.desc   Hilog print with null message
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHilogBasePrintAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseprintndktest.hilogBasePrintAbnormal002();
       let deviceType: string = deviceInfo.deviceType;
@@ -71,6 +119,14 @@ export default function HilogBasePrintNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testHilogBasePrintBoundary001
+     * @tc.number SUB_THIRDPARTY_MUSL_HILOG_BASE_PRINT_0700
+     * @tc.desc   Hilog print with empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHilogBasePrintBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseprintndktest.hilogBasePrintBoundary001();
       let deviceType: string = deviceInfo.deviceType;
@@ -79,6 +135,14 @@ export default function HilogBasePrintNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testHilogBasePrintBoundary002
+     * @tc.number SUB_THIRDPARTY_MUSL_HILOG_BASE_PRINT_0800
+     * @tc.desc   Hilog print with long string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHilogBasePrintBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseprintndktest.hilogBasePrintBoundary002();
       let deviceType: string = deviceInfo.deviceType;
@@ -87,6 +151,14 @@ export default function HilogBasePrintNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testHilogBasePrintStable001
+     * @tc.number SUB_THIRDPARTY_MUSL_HILOG_BASE_PRINT_0900
+     * @tc.desc   Repeated hilog print stability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHilogBasePrintStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseprintndktest.hilogBasePrintStable001();
       let deviceType: string = deviceInfo.deviceType;
@@ -95,6 +167,14 @@ export default function HilogBasePrintNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testHilogBasePrintThread001
+     * @tc.number SUB_THIRDPARTY_MUSL_HILOG_BASE_PRINT_1000
+     * @tc.desc   Multi-thread hilog print concurrency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHilogBasePrintThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = hilogbaseprintndktest.hilogBasePrintThread001();
       let deviceType: string = deviceInfo.deviceType;

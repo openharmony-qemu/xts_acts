@@ -25,7 +25,7 @@ export default function IsinfNdkTest() {
 
     /**
      * @tc.name   testIsinfNormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_ISINF_0101
+     * @tc.number SUB_THIRDPARTY_MUSL_ISINF_0100
      * @tc.desc   Verify __isinf identifies positive infinity (returns 1)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -41,7 +41,7 @@ export default function IsinfNdkTest() {
 
     /**
      * @tc.name   testIsinfNormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_ISINF_0102
+     * @tc.number SUB_THIRDPARTY_MUSL_ISINF_0200
      * @tc.desc   Verify __isinf identifies negative infinity (returns -1)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -57,7 +57,7 @@ export default function IsinfNdkTest() {
 
     /**
      * @tc.name   testIsinfNormal003
-     * @tc.number SUB_THIRDPARTY_MUSL_ISINF_0103
+     * @tc.number SUB_THIRDPARTY_MUSL_ISINF_0300
      * @tc.desc   Verify __isinf returns 0 for NaN
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -73,7 +73,7 @@ export default function IsinfNdkTest() {
 
     /**
      * @tc.name   testIsinfNormal004
-     * @tc.number SUB_THIRDPARTY_MUSL_ISINF_0104
+     * @tc.number SUB_THIRDPARTY_MUSL_ISINF_0400
      * @tc.desc   Verify __isinf returns 0 for finite values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -89,7 +89,7 @@ export default function IsinfNdkTest() {
 
     /**
      * @tc.name   testIsinfBoundary001
-     * @tc.number SUB_THIRDPARTY_MUSL_ISINF_0105
+     * @tc.number SUB_THIRDPARTY_MUSL_ISINF_0500
      * @tc.desc   Verify __isinf handles DBL_MAX and DBL_MIN as finite
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -105,7 +105,7 @@ export default function IsinfNdkTest() {
 
     /**
      * @tc.name   testIsinfBoundary002
-     * @tc.number SUB_THIRDPARTY_MUSL_ISINF_0106
+     * @tc.number SUB_THIRDPARTY_MUSL_ISINF_0600
      * @tc.desc   Verify __isinf handles near-infinity values as finite
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -121,7 +121,7 @@ export default function IsinfNdkTest() {
 
     /**
      * @tc.name   testIsinfAbnormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_ISINF_0107
+     * @tc.number SUB_THIRDPARTY_MUSL_ISINF_0700
      * @tc.desc   Verify __isinf handles various NaN representations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -137,7 +137,7 @@ export default function IsinfNdkTest() {
 
     /**
      * @tc.name   testIsinfAbnormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_ISINF_0108
+     * @tc.number SUB_THIRDPARTY_MUSL_ISINF_0800
      * @tc.desc   Verify __isinf sign handling for ±Inf and ±0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -153,7 +153,7 @@ export default function IsinfNdkTest() {
 
     /**
      * @tc.name   testIsinfStable001
-     * @tc.number SUB_THIRDPARTY_MUSL_ISINF_0109
+     * @tc.number SUB_THIRDPARTY_MUSL_ISINF_0900
      * @tc.desc   Verify __isinf returns consistent results on multiple calls
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -169,7 +169,7 @@ export default function IsinfNdkTest() {
 
     /**
      * @tc.name   testIsinfStable002
-     * @tc.number SUB_THIRDPARTY_MUSL_ISINF_0110
+     * @tc.number SUB_THIRDPARTY_MUSL_ISINF_1000
      * @tc.desc   Verify __isinf handles massive calls without crash
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -185,7 +185,7 @@ export default function IsinfNdkTest() {
 
     /**
      * @tc.name   testIsinfThread001
-     * @tc.number SUB_THIRDPARTY_MUSL_ISINF_0111
+     * @tc.number SUB_THIRDPARTY_MUSL_ISINF_1100
      * @tc.desc   Verify __isinf is thread-safe with concurrent calls
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -201,7 +201,7 @@ export default function IsinfNdkTest() {
 
     /**
      * @tc.name   testIsinfThread002
-     * @tc.number SUB_THIRDPARTY_MUSL_ISINF_0112
+     * @tc.number SUB_THIRDPARTY_MUSL_ISINF_1200
      * @tc.desc   Verify __isinf thread-safety with mixed parameters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

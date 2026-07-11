@@ -25,7 +25,7 @@ export default function IsinffNdkTest() {
 
     /**
      * @tc.name   testIsinffNormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_ISINFF_0101
+     * @tc.number SUB_THIRDPARTY_MUSL_ISINFF_0100
      * @tc.desc   Verify __isinff identifies positive infinity, negative infinity, NaN, zero, and normal values correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -41,7 +41,7 @@ export default function IsinffNdkTest() {
 
     /**
      * @tc.name   testIsinffBoundary001
-     * @tc.number SUB_THIRDPARTY_MUSL_ISINFF_0102
+     * @tc.number SUB_THIRDPARTY_MUSL_ISINFF_0200
      * @tc.desc   Verify __isinff handles boundary values: FLT_MAX, FLT_MIN, and large finite numbers
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -57,7 +57,7 @@ export default function IsinffNdkTest() {
 
     /**
      * @tc.name   testIsinffAbnormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_ISINFF_0103
+     * @tc.number SUB_THIRDPARTY_MUSL_ISINFF_0300
      * @tc.desc   Verify stub mode behavior: errno set to ENOSYS, return 0, no side effects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -66,16 +66,16 @@ export default function IsinffNdkTest() {
     it('testIsinffAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = isinffndktest.isInffAbnormal001();
       let deviceType: string = deviceInfo.deviceType;
-      // 在Stub模式下（非2in1设备），期望返回1表示所有异常场景验证通过
-      // 在正常模式下（2in1设备），也返回1（因为功能可用，不涉及Stub异常）
-      // 因此此用例在所有设备上都期望返回1
+      // 在Stub模式下（�?in1设备），期望返回1表示所有异常场景验证通过
+      // 在正常模式下�?in1设备），也返�?（因为功能可用，不涉及Stub异常�?
+      // 因此此用例在所有设备上都期望返�?
       expect(resNum).assertEqual(1);
       done();
     });
 
     /**
      * @tc.name   testIsinffAbnormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_ISINFF_0106
+     * @tc.number SUB_THIRDPARTY_MUSL_ISINFF_0400
      * @tc.desc   Verify __isinff handles extreme inputs: near infinity, near zero, and invalid values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -91,7 +91,7 @@ export default function IsinffNdkTest() {
 
     /**
      * @tc.name   testIsinffStable001
-     * @tc.number SUB_THIRDPARTY_MUSL_ISINFF_0104
+     * @tc.number SUB_THIRDPARTY_MUSL_ISINFF_0500
      * @tc.desc   Verify __isinff returns consistent results on multiple calls
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -107,7 +107,7 @@ export default function IsinffNdkTest() {
 
     /**
      * @tc.name   testIsinffThreadSafety001
-     * @tc.number SUB_THIRDPARTY_MUSL_ISINFF_0105
+     * @tc.number SUB_THIRDPARTY_MUSL_ISINFF_0600
      * @tc.desc   Verify __isinff is thread-safe (MT-Safe) - calls from multiple threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

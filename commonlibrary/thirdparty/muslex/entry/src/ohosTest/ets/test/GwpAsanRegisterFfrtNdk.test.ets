@@ -23,6 +23,14 @@ export default function GwpAsanRegisterFfrtNdkTest() {
 
     beforeEach(async () => { await Utils.sleep(50); });
 
+    /**
+     * @tc.name   testgwpAsanRegisterFfrtNormal001
+     * @tc.number SUB_THIRDPARTY_MUSL_GWP_ASAN_REGISTER_FFRT_0100
+     * @tc.desc   Register FFRT handler basic test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testgwpAsanRegisterFfrtNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasanregffrtndktest.gwpAsanRegisterFfrtNormal001();
       let deviceType: string = deviceInfo.deviceType;
@@ -31,6 +39,14 @@ export default function GwpAsanRegisterFfrtNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testgwpAsanRegisterFfrtNormal002
+     * @tc.number SUB_THIRDPARTY_MUSL_GWP_ASAN_REGISTER_FFRT_0200
+     * @tc.desc   Register FFRT handler with different params
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testgwpAsanRegisterFfrtNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasanregffrtndktest.gwpAsanRegisterFfrtNormal002();
       let deviceType: string = deviceInfo.deviceType;
@@ -39,6 +55,14 @@ export default function GwpAsanRegisterFfrtNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testgwpAsanRegisterFfrtNormal003
+     * @tc.number SUB_THIRDPARTY_MUSL_GWP_ASAN_REGISTER_FFRT_0300
+     * @tc.desc   Register FFRT handler multiple registrations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testgwpAsanRegisterFfrtNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasanregffrtndktest.gwpAsanRegisterFfrtNormal003();
       let deviceType: string = deviceInfo.deviceType;
@@ -47,6 +71,14 @@ export default function GwpAsanRegisterFfrtNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testgwpAsanRegisterFfrtNormal004
+     * @tc.number SUB_THIRDPARTY_MUSL_GWP_ASAN_REGISTER_FFRT_0400
+     * @tc.desc   Stub mode passthrough test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testgwpAsanRegisterFfrtNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasanregffrtndktest.gwpAsanRegisterFfrtNormal004();
       let deviceType: string = deviceInfo.deviceType;
@@ -55,6 +87,14 @@ export default function GwpAsanRegisterFfrtNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testgwpAsanRegisterFfrtAbnormal001
+     * @tc.number SUB_THIRDPARTY_MUSL_GWP_ASAN_REGISTER_FFRT_0500
+     * @tc.desc   Register FFRT handler invalid input
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testgwpAsanRegisterFfrtAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasanregffrtndktest.gwpAsanRegisterFfrtAbnormal001();
       let deviceType: string = deviceInfo.deviceType;
@@ -63,6 +103,14 @@ export default function GwpAsanRegisterFfrtNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testgwpAsanRegisterFfrtAbnormal002
+     * @tc.number SUB_THIRDPARTY_MUSL_GWP_ASAN_REGISTER_FFRT_0600
+     * @tc.desc   Register FFRT handler edge case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testgwpAsanRegisterFfrtAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasanregffrtndktest.gwpAsanRegisterFfrtAbnormal002();
       let deviceType: string = deviceInfo.deviceType;
@@ -71,6 +119,14 @@ export default function GwpAsanRegisterFfrtNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testgwpAsanRegisterFfrtBoundary001
+     * @tc.number SUB_THIRDPARTY_MUSL_GWP_ASAN_REGISTER_FFRT_0700
+     * @tc.desc   Register FFRT handler boundary value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testgwpAsanRegisterFfrtBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasanregffrtndktest.gwpAsanRegisterFfrtBoundary001();
       let deviceType: string = deviceInfo.deviceType;
@@ -79,6 +135,14 @@ export default function GwpAsanRegisterFfrtNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testgwpAsanRegisterFfrtBoundary002
+     * @tc.number SUB_THIRDPARTY_MUSL_GWP_ASAN_REGISTER_FFRT_0800
+     * @tc.desc   Register FFRT handler boundary behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testgwpAsanRegisterFfrtBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasanregffrtndktest.gwpAsanRegisterFfrtBoundary002();
       let deviceType: string = deviceInfo.deviceType;
@@ -87,6 +151,14 @@ export default function GwpAsanRegisterFfrtNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testgwpAsanRegisterFfrtStable001
+     * @tc.number SUB_THIRDPARTY_MUSL_GWP_ASAN_REGISTER_FFRT_0900
+     * @tc.desc   Repeated FFRT register stability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testgwpAsanRegisterFfrtStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasanregffrtndktest.gwpAsanRegisterFfrtStable001();
       let deviceType: string = deviceInfo.deviceType;
@@ -95,6 +167,14 @@ export default function GwpAsanRegisterFfrtNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testgwpAsanRegisterFfrtThread001
+     * @tc.number SUB_THIRDPARTY_MUSL_GWP_ASAN_REGISTER_FFRT_1000
+     * @tc.desc   Multi-thread FFRT register concurrency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testgwpAsanRegisterFfrtThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasanregffrtndktest.gwpAsanRegisterFfrtThread001();
       let deviceType: string = deviceInfo.deviceType;
@@ -105,4 +185,3 @@ export default function GwpAsanRegisterFfrtNdkTest() {
 
   });
 }
-
