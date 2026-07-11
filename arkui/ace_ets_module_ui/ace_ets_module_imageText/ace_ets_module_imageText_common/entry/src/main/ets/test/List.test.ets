@@ -79,9 +79,10 @@ import MarqueeNull from './ScrollTest/Marquee_null.test';
 import MarqueeUndefined from './ScrollTest/Marquee_undefined.test';
 
 export default function testsuite() {
+  InputPresetTest()
   TextControllerTest();
   TextContentControllerBaseMethodsTest()
-  InputPresetTest() 
+  
   // FontTest 
   APIgetUIFontConfigJsunit() 
   FontJsunit() 

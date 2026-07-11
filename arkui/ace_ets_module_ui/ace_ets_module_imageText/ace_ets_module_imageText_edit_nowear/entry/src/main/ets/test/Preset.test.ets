@@ -54,10 +54,10 @@ export default function PresetTest() {
      * @tc.level  LEVEL0
      */
     it('PresetTest0001',  Level.LEVEL0, async () => {
-      let driver = Driver.create();
+      console.info('PresetTest PresetTest0001 START');
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       if (globalThis.winLeft == 0) {
-        console.info('PresetTest PresetTest0001 START');
-        await CommonFunc.sleep(1000);
         let textArea1 = await driver.findComponent(ON.id('textArea1_preset'));
         await CommonFunc.sleep(500);
         let textArea2 = await driver.findComponent(ON.id('textArea2_preset'));
@@ -139,9 +139,6 @@ export default function PresetTest() {
       await CommonFunc.sleep(1000);
       expect(obj.$type).assertEqual('TextArea');
       console.info("[PresetTest0001] end");
-
     });
-
-
   })
 }

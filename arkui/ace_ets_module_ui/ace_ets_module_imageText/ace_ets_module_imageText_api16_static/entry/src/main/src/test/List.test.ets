@@ -40,6 +40,7 @@ import TextOnWillChangeOptionsTest from './TextChangeTest/TextOnWillChangeOption
 
 
 export default function testsuite() {
+  textAreaInputTest();
   bindSelectionMenuTest();
   TextOnWillChangeOptionsTest();
   TextOnChangeOptionsTest();
@@ -55,12 +56,10 @@ export default function testsuite() {
   SearchStopBackPressTest();
   TextAreaStopBackPressTest();
   TextInputStopBackPressTest();
-  minMaxFontSize();
-  textAreaInputTest();
+  minMaxFontSize();  
   preventDefault();
   textAreaEllipsisModeTest();
   textInputEllipsisModeTest();
   searchHalfLeadingTest();
   textAreaHalfLeadingTest();
-
 }

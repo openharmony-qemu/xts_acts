@@ -37,12 +37,12 @@ import ParagraphStyle3 from './StyledString/ParagraphStyle3.test'
 
 
 export default function testsuite() {
+  textAreaInputTest();
   ImageLoadResultTest();
   SearchTypeTest();
   BounceSymbolEffectTest();
   ContentTypeTest();
-  fontFeatureTest();
-  textAreaInputTest();
+  fontFeatureTest();  
   TextDecorationStyleTest();
   textShadowTest();
   RichEditorEKeyboardTest();

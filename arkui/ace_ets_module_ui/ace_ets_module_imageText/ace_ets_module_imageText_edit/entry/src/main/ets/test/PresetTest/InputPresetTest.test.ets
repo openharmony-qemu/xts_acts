@@ -54,10 +54,10 @@ export default function InputPresetTest() {
      * @tc.level  LEVEL0
      */
     it('InputPresetTest0001', Level.LEVEL0, async () => {
-      let driver = Driver.create();
+      console.info('InputPresetTest InputPresetTest0001 START');
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
       if (globalThis.winLeft == 0) {
-        console.info('InputPresetTest InputPresetTest0001 START');
-        await CommonFunc.sleep(1000);
         let textArea1 = await driver.findComponent(ON.id('InputPresetTextArea1'));
         await CommonFunc.sleep(500);
         let textArea2 = await driver.findComponent(ON.id('InputPresetTextArea2'));

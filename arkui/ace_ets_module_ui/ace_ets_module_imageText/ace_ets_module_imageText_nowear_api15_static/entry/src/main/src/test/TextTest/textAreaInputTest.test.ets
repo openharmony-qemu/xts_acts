@@ -70,10 +70,10 @@ export default function textAreaInputTest() {
      * @tc.desc     textAreaInputTest_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('textAreaInputTest_static_0001', Level.LEVEL0, async (done: () =>void) => {
+    it('textAreaInputTest_static_0001', Level.LEVEL0, async (done: () =>void) => {
+      console.info('textAreaInputTest textAreaInputTest0001 START');
       if (AppStorage.get<number>("winLeft") == 0) {
-        let driver = Driver.create();
-        console.info('textAreaInputTest textAreaInputTest0001 START');
+        let driver = await Driver.create();        
         await CommonFunc.sleep(1000);
         let textArea1 = await (driver.findComponent(ON.id('textArea1')) as Promise<Component>);
         await CommonFunc.sleep(500);
@@ -83,18 +83,24 @@ it('textAreaInputTest_static_0001', Level.LEVEL0, async (done: () =>void) => {
         await CommonFunc.sleep(500);
         let button = await driver.findComponent(ON.text('同意'));
         await CommonFunc.sleep(500);
-        await button?.click();
-        await CommonFunc.sleep(1000);
-        await driver.triggerKey(2070);
-        await CommonFunc.sleep(500);
-        try {
-          let getObj = await (driver.findComponent(ON.text('下一步')) as Promise<Component>);
-          await CommonFunc.sleep(500);
-          await getObj.click();
-        }catch(e){
-          console.info('textAreaInputTest0001 下一步 catch error');
+        if (button) {
+          await button?.click();
+          await CommonFunc.sleep(1000);
         }
+        await driver.triggerKey(2070);
+        await CommonFunc.sleep(1000);
+        let button1 = await driver.findComponent(ON.text('下一步'));
         await CommonFunc.sleep(500);
+        if (button1) {
+          await button1?.click();
+          await CommonFunc.sleep(1000);
+        }
+        let button2 = await driver.findComponent(ON.text('完成'));
+        await CommonFunc.sleep(500);
+        if (button2) {
+          await button2?.click();
+          await CommonFunc.sleep(1000);
+        }
 
         await textArea1.longClick();
         await CommonFunc.sleep(2000);
