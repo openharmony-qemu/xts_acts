@@ -23,6 +23,14 @@ export default function GetResTraceIdNdkTest() {
 
     beforeEach(async () => { await Utils.sleep(50); });
 
+    /**
+     * @tc.name   testGetResTraceIdNormal001
+     * @tc.number SUB_THIRDPARTY_MUSL_GET_RES_TRACE_ID_0100
+     * @tc.desc   Get trace ID basic query with valid pointers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetResTraceIdNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = getrestraceidndktest.getResTraceIdNormal001();
       let deviceType: string = deviceInfo.deviceType;
@@ -31,6 +39,14 @@ export default function GetResTraceIdNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testGetResTraceIdNormal002
+     * @tc.number SUB_THIRDPARTY_MUSL_GET_RES_TRACE_ID_0200
+     * @tc.desc   Get trace ID returns current trace info
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetResTraceIdNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = getrestraceidndktest.getResTraceIdNormal002();
       let deviceType: string = deviceInfo.deviceType;
@@ -39,6 +55,14 @@ export default function GetResTraceIdNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testGetResTraceIdNormal003
+     * @tc.number SUB_THIRDPARTY_MUSL_GET_RES_TRACE_ID_0300
+     * @tc.desc   Get trace ID multiple calls consistency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetResTraceIdNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = getrestraceidndktest.getResTraceIdNormal003();
       let deviceType: string = deviceInfo.deviceType;
@@ -47,6 +71,14 @@ export default function GetResTraceIdNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testGetResTraceIdNormal004
+     * @tc.number SUB_THIRDPARTY_MUSL_GET_RES_TRACE_ID_0400
+     * @tc.desc   Stub mode passthrough test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetResTraceIdNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = getrestraceidndktest.getResTraceIdNormal004();
       let deviceType: string = deviceInfo.deviceType;
@@ -55,6 +87,14 @@ export default function GetResTraceIdNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testGetResTraceIdAbnormal001
+     * @tc.number SUB_THIRDPARTY_MUSL_GET_RES_TRACE_ID_0500
+     * @tc.desc   Get trace ID with null output pointers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetResTraceIdAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = getrestraceidndktest.getResTraceIdAbnormal001();
       let deviceType: string = deviceInfo.deviceType;
@@ -63,6 +103,14 @@ export default function GetResTraceIdNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testGetResTraceIdAbnormal002
+     * @tc.number SUB_THIRDPARTY_MUSL_GET_RES_TRACE_ID_0600
+     * @tc.desc   Get trace ID with partial null pointers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetResTraceIdAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = getrestraceidndktest.getResTraceIdAbnormal002();
       let deviceType: string = deviceInfo.deviceType;
@@ -71,6 +119,14 @@ export default function GetResTraceIdNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testGetResTraceIdBoundary001
+     * @tc.number SUB_THIRDPARTY_MUSL_GET_RES_TRACE_ID_0700
+     * @tc.desc   Get trace ID zero trace type boundary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetResTraceIdBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = getrestraceidndktest.getResTraceIdBoundary001();
       let deviceType: string = deviceInfo.deviceType;
@@ -79,6 +135,14 @@ export default function GetResTraceIdNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testGetResTraceIdBoundary002
+     * @tc.number SUB_THIRDPARTY_MUSL_GET_RES_TRACE_ID_0800
+     * @tc.desc   Get trace ID max trace ID boundary
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetResTraceIdBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = getrestraceidndktest.getResTraceIdBoundary002();
       let deviceType: string = deviceInfo.deviceType;
@@ -87,6 +151,14 @@ export default function GetResTraceIdNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testGetResTraceIdStable001
+     * @tc.number SUB_THIRDPARTY_MUSL_GET_RES_TRACE_ID_0900
+     * @tc.desc   Repeated get trace ID calls stability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetResTraceIdStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = getrestraceidndktest.getResTraceIdStable001();
       let deviceType: string = deviceInfo.deviceType;
@@ -95,6 +167,14 @@ export default function GetResTraceIdNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testGetResTraceIdThread001
+     * @tc.number SUB_THIRDPARTY_MUSL_GET_RES_TRACE_ID_1000
+     * @tc.desc   Multi-thread get trace ID concurrency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetResTraceIdThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = getrestraceidndktest.getResTraceIdThread001();
       let deviceType: string = deviceInfo.deviceType;

@@ -23,6 +23,14 @@ export default function FegetexceptNdkTest() {
 
     beforeEach(async () => { await Utils.sleep(50); });
 
+    /**
+     * @tc.name   testFegetexceptNormal001
+     * @tc.number SUB_THIRDPARTY_MUSL_FEGET_EXCEPT_0100
+     * @tc.desc   Get exception mask after enabling FE_DIVBYZERO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFegetexceptNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = fegetexceptndktest.fegetexceptNormal001();
       let deviceType: string = deviceInfo.deviceType;
@@ -31,6 +39,14 @@ export default function FegetexceptNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testFegetexceptNormal002
+     * @tc.number SUB_THIRDPARTY_MUSL_FEGET_EXCEPT_0200
+     * @tc.desc   Get exception mask after disabling all exceptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFegetexceptNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = fegetexceptndktest.fegetexceptNormal002();
       let deviceType: string = deviceInfo.deviceType;
@@ -39,6 +55,14 @@ export default function FegetexceptNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testFegetexceptNormal003
+     * @tc.number SUB_THIRDPARTY_MUSL_FEGET_EXCEPT_0300
+     * @tc.desc   Get exception mask after enabling multiple exceptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFegetexceptNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = fegetexceptndktest.fegetexceptNormal003();
       let deviceType: string = deviceInfo.deviceType;
@@ -47,6 +71,14 @@ export default function FegetexceptNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testFegetexceptNormal004
+     * @tc.number SUB_THIRDPARTY_MUSL_FEGET_EXCEPT_0400
+     * @tc.desc   Stub mode passthrough test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFegetexceptNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = fegetexceptndktest.fegetexceptNormal004();
       let deviceType: string = deviceInfo.deviceType;
@@ -55,6 +87,14 @@ export default function FegetexceptNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testFegetexceptAbnormal001
+     * @tc.number SUB_THIRDPARTY_MUSL_FEGET_EXCEPT_0500
+     * @tc.desc   Get exception mask without prior enable/disable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFegetexceptAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = fegetexceptndktest.fegetexceptAbnormal001();
       let deviceType: string = deviceInfo.deviceType;
@@ -63,6 +103,14 @@ export default function FegetexceptNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testFegetexceptAbnormal002
+     * @tc.number SUB_THIRDPARTY_MUSL_FEGET_EXCEPT_0600
+     * @tc.desc   Consecutive fegetexcept calls consistency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFegetexceptAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = fegetexceptndktest.fegetexceptAbnormal002();
       let deviceType: string = deviceInfo.deviceType;
@@ -71,6 +119,14 @@ export default function FegetexceptNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testFegetexceptBoundary001
+     * @tc.number SUB_THIRDPARTY_MUSL_FEGET_EXCEPT_0700
+     * @tc.desc   Get exception mask after enabling all exceptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFegetexceptBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = fegetexceptndktest.fegetexceptBoundary001();
       let deviceType: string = deviceInfo.deviceType;
@@ -79,6 +135,14 @@ export default function FegetexceptNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testFegetexceptBoundary002
+     * @tc.number SUB_THIRDPARTY_MUSL_FEGET_EXCEPT_0800
+     * @tc.desc   Get exception mask after toggle all exceptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFegetexceptBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = fegetexceptndktest.fegetexceptBoundary002();
       let deviceType: string = deviceInfo.deviceType;
@@ -87,6 +151,14 @@ export default function FegetexceptNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testFegetexceptStable001
+     * @tc.number SUB_THIRDPARTY_MUSL_FEGET_EXCEPT_0900
+     * @tc.desc   Repeated fegetexcept calls stability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFegetexceptStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = fegetexceptndktest.fegetexceptStable001();
       let deviceType: string = deviceInfo.deviceType;
@@ -95,6 +167,14 @@ export default function FegetexceptNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testFegetexceptThread001
+     * @tc.number SUB_THIRDPARTY_MUSL_FEGET_EXCEPT_1000
+     * @tc.desc   Multi-thread fegetexcept concurrency test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFegetexceptThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = fegetexceptndktest.fegetexceptThread001();
       let deviceType: string = deviceInfo.deviceType;

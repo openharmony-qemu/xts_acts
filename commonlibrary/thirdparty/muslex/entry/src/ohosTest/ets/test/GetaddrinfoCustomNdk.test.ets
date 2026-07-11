@@ -23,6 +23,14 @@ export default function GetaddrinfoCustomNdkTest() {
 
     beforeEach(async () => { await Utils.sleep(50); });
 
+    /**
+     * @tc.name   testGetaddrinfoCustomNormal001
+     * @tc.number SUB_THIRDPARTY_MUSL_GETADDRINFO_CUSTOM_0100
+     * @tc.desc   Custom getaddrinfo with localhost:80 basic query
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetaddrinfoCustomNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = getaddrcustomndktest.getaddrinfoCustomNormal001();
       let deviceType: string = deviceInfo.deviceType;
@@ -31,6 +39,14 @@ export default function GetaddrinfoCustomNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testGetaddrinfoCustomNormal002
+     * @tc.number SUB_THIRDPARTY_MUSL_GETADDRINFO_CUSTOM_0200
+     * @tc.desc   Custom getaddrinfo with AF_INET6 address family
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetaddrinfoCustomNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = getaddrcustomndktest.getaddrinfoCustomNormal002();
       let deviceType: string = deviceInfo.deviceType;
@@ -39,6 +55,14 @@ export default function GetaddrinfoCustomNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testGetaddrinfoCustomNormal003
+     * @tc.number SUB_THIRDPARTY_MUSL_GETADDRINFO_CUSTOM_0300
+     * @tc.desc   Custom getaddrinfo with SOCK_DGRAM socket type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetaddrinfoCustomNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = getaddrcustomndktest.getaddrinfoCustomNormal003();
       let deviceType: string = deviceInfo.deviceType;
@@ -47,6 +71,14 @@ export default function GetaddrinfoCustomNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testGetaddrinfoCustomNormal004
+     * @tc.number SUB_THIRDPARTY_MUSL_GETADDRINFO_CUSTOM_0400
+     * @tc.desc   Stub mode passthrough test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetaddrinfoCustomNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = getaddrcustomndktest.getaddrinfoCustomNormal004();
       let deviceType: string = deviceInfo.deviceType;
@@ -55,6 +87,14 @@ export default function GetaddrinfoCustomNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testGetaddrinfoCustomAbnormal001
+     * @tc.number SUB_THIRDPARTY_MUSL_GETADDRINFO_CUSTOM_0500
+     * @tc.desc   Custom getaddrinfo with null hints
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetaddrinfoCustomAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = getaddrcustomndktest.getaddrinfoCustomAbnormal001();
       let deviceType: string = deviceInfo.deviceType;
@@ -63,6 +103,14 @@ export default function GetaddrinfoCustomNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testGetaddrinfoCustomAbnormal002
+     * @tc.number SUB_THIRDPARTY_MUSL_GETADDRINFO_CUSTOM_0600
+     * @tc.desc   Custom getaddrinfo with null hostname
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetaddrinfoCustomAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = getaddrcustomndktest.getaddrinfoCustomAbnormal002();
       let deviceType: string = deviceInfo.deviceType;
@@ -71,6 +119,14 @@ export default function GetaddrinfoCustomNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testGetaddrinfoCustomBoundary001
+     * @tc.number SUB_THIRDPARTY_MUSL_GETADDRINFO_CUSTOM_0700
+     * @tc.desc   Custom getaddrinfo with empty hostname
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetaddrinfoCustomBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = getaddrcustomndktest.getaddrinfoCustomBoundary001();
       let deviceType: string = deviceInfo.deviceType;
@@ -79,6 +135,14 @@ export default function GetaddrinfoCustomNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testGetaddrinfoCustomBoundary002
+     * @tc.number SUB_THIRDPARTY_MUSL_GETADDRINFO_CUSTOM_0800
+     * @tc.desc   Custom getaddrinfo with max port value 65535
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetaddrinfoCustomBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = getaddrcustomndktest.getaddrinfoCustomBoundary002();
       let deviceType: string = deviceInfo.deviceType;
@@ -87,6 +151,14 @@ export default function GetaddrinfoCustomNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testGetaddrinfoCustomStable001
+     * @tc.number SUB_THIRDPARTY_MUSL_GETADDRINFO_CUSTOM_0900
+     * @tc.desc   Repeated custom getaddrinfo calls stability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetaddrinfoCustomStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = getaddrcustomndktest.getaddrinfoCustomStable001();
       let deviceType: string = deviceInfo.deviceType;
@@ -95,6 +167,14 @@ export default function GetaddrinfoCustomNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testGetaddrinfoCustomThread001
+     * @tc.number SUB_THIRDPARTY_MUSL_GETADDRINFO_CUSTOM_1000
+     * @tc.desc   Multi-thread custom getaddrinfo concurrency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetaddrinfoCustomThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = getaddrcustomndktest.getaddrinfoCustomThread001();
       let deviceType: string = deviceInfo.deviceType;

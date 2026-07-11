@@ -23,6 +23,14 @@ export default function FeenableexceptNdkTest() {
 
     beforeEach(async () => { await Utils.sleep(50); });
 
+    /**
+     * @tc.name   testFeenableexceptNormal001
+     * @tc.number SUB_THIRDPARTY_MUSL_FEENABLE_EXCEPT_0100
+     * @tc.desc   Enable FE_DIVBYZERO exception
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFeenableexceptNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = feenableexceptndktest.feenableexceptNormal001();
       let deviceType: string = deviceInfo.deviceType;
@@ -31,6 +39,14 @@ export default function FeenableexceptNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testFeenableexceptNormal002
+     * @tc.number SUB_THIRDPARTY_MUSL_FEENABLE_EXCEPT_0200
+     * @tc.desc   Enable FE_INVALID exception
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFeenableexceptNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = feenableexceptndktest.feenableexceptNormal002();
       let deviceType: string = deviceInfo.deviceType;
@@ -39,6 +55,14 @@ export default function FeenableexceptNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testFeenableexceptNormal003
+     * @tc.number SUB_THIRDPARTY_MUSL_FEENABLE_EXCEPT_0300
+     * @tc.desc   Enable multiple exceptions FE_DIVBYZERO|FE_OVERFLOW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFeenableexceptNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = feenableexceptndktest.feenableexceptNormal003();
       let deviceType: string = deviceInfo.deviceType;
@@ -47,6 +71,14 @@ export default function FeenableexceptNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testFeenableexceptNormal004
+     * @tc.number SUB_THIRDPARTY_MUSL_FEENABLE_EXCEPT_0400
+     * @tc.desc   Stub mode passthrough test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFeenableexceptNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = feenableexceptndktest.feenableexceptNormal004();
       let deviceType: string = deviceInfo.deviceType;
@@ -55,6 +87,14 @@ export default function FeenableexceptNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testFeenableexceptAbnormal001
+     * @tc.number SUB_THIRDPARTY_MUSL_FEENABLE_EXCEPT_0500
+     * @tc.desc   Enable with zero exception mask
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFeenableexceptAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = feenableexceptndktest.feenableexceptAbnormal001();
       let deviceType: string = deviceInfo.deviceType;
@@ -63,6 +103,14 @@ export default function FeenableexceptNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testFeenableexceptAbnormal002
+     * @tc.number SUB_THIRDPARTY_MUSL_FEENABLE_EXCEPT_0600
+     * @tc.desc   Enable with invalid exception mask 0xFFFF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFeenableexceptAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = feenableexceptndktest.feenableexceptAbnormal002();
       let deviceType: string = deviceInfo.deviceType;
@@ -71,6 +119,14 @@ export default function FeenableexceptNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testFeenableexceptBoundary001
+     * @tc.number SUB_THIRDPARTY_MUSL_FEENABLE_EXCEPT_0700
+     * @tc.desc   Enable all exceptions FE_ALL_EXCEPT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFeenableexceptBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = feenableexceptndktest.feenableexceptBoundary001();
       let deviceType: string = deviceInfo.deviceType;
@@ -79,6 +135,14 @@ export default function FeenableexceptNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testFeenableexceptBoundary002
+     * @tc.number SUB_THIRDPARTY_MUSL_FEENABLE_EXCEPT_0800
+     * @tc.desc   Toggle FE_DIVBYZERO enable after disable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFeenableexceptBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = feenableexceptndktest.feenableexceptBoundary002();
       let deviceType: string = deviceInfo.deviceType;
@@ -87,6 +151,14 @@ export default function FeenableexceptNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testFeenableexceptStable001
+     * @tc.number SUB_THIRDPARTY_MUSL_FEENABLE_EXCEPT_0900
+     * @tc.desc   Repeated feenableexcept/fedisableexcept stability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFeenableexceptStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = feenableexceptndktest.feenableexceptStable001();
       let deviceType: string = deviceInfo.deviceType;
@@ -95,6 +167,14 @@ export default function FeenableexceptNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testFeenableexceptThread001
+     * @tc.number SUB_THIRDPARTY_MUSL_FEENABLE_EXCEPT_1000
+     * @tc.desc   Multi-thread enable/disable concurrency test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFeenableexceptThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = feenableexceptndktest.feenableexceptThread001();
       let deviceType: string = deviceInfo.deviceType;

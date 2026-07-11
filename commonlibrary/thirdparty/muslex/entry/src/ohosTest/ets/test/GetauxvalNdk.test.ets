@@ -25,7 +25,7 @@ export default function GetauxvalNdkTest() {
 
     /**
      * @tc.name   testGetauxvalNormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_GETAUXVAL_0101
+     * @tc.number SUB_THIRDPARTY_MUSL_GETAUXVAL_0100
      * @tc.desc   Verify __getauxval returns valid AT_PAGESZ value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -41,7 +41,7 @@ export default function GetauxvalNdkTest() {
 
     /**
      * @tc.name   testGetauxvalNormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_GETAUXVAL_0102
+     * @tc.number SUB_THIRDPARTY_MUSL_GETAUXVAL_0200
      * @tc.desc   Verify __getauxval returns valid AT_SECURE value (0 or 1)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -57,7 +57,7 @@ export default function GetauxvalNdkTest() {
 
     /**
      * @tc.name   testGetauxvalNormal003
-     * @tc.number SUB_THIRDPARTY_MUSL_GETAUXVAL_0103
+     * @tc.number SUB_THIRDPARTY_MUSL_GETAUXVAL_0300
      * @tc.desc   Verify __getauxval returns valid AT_CLKTCK value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -73,7 +73,7 @@ export default function GetauxvalNdkTest() {
 
     /**
      * @tc.name   testGetauxvalNormal004
-     * @tc.number SUB_THIRDPARTY_MUSL_GETAUXVAL_0104
+     * @tc.number SUB_THIRDPARTY_MUSL_GETAUXVAL_0400
      * @tc.desc   Verify __getauxval returns valid AT_RANDOM value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -89,7 +89,7 @@ export default function GetauxvalNdkTest() {
 
     /**
      * @tc.name   testGetauxvalNormal005
-     * @tc.number SUB_THIRDPARTY_MUSL_GETAUXVAL_0105
+     * @tc.number SUB_THIRDPARTY_MUSL_GETAUXVAL_0500
      * @tc.desc   Verify __getauxval returns valid AT_ENTRY value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -105,7 +105,7 @@ export default function GetauxvalNdkTest() {
 
     /**
      * @tc.name   testGetauxvalAbnormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_GETAUXVAL_0106
+     * @tc.number SUB_THIRDPARTY_MUSL_GETAUXVAL_0600
      * @tc.desc   Verify __getauxval returns 0 and sets errno ENOENT for invalid item
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -121,7 +121,7 @@ export default function GetauxvalNdkTest() {
 
     /**
      * @tc.name   testGetauxvalAbnormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_GETAUXVAL_0107
+     * @tc.number SUB_THIRDPARTY_MUSL_GETAUXVAL_0700
      * @tc.desc   Verify __getauxval handles negative item values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -137,7 +137,7 @@ export default function GetauxvalNdkTest() {
 
     /**
      * @tc.name   testGetauxvalAbnormal003
-     * @tc.number SUB_THIRDPARTY_MUSL_GETAUXVAL_0108
+     * @tc.number SUB_THIRDPARTY_MUSL_GETAUXVAL_0800
      * @tc.desc   Verify __getauxval handles boundary item values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -153,7 +153,7 @@ export default function GetauxvalNdkTest() {
 
     /**
      * @tc.name   testGetauxvalStable001
-     * @tc.number SUB_THIRDPARTY_MUSL_GETAUXVAL_0109
+     * @tc.number SUB_THIRDPARTY_MUSL_GETAUXVAL_0900
      * @tc.desc   Verify __getauxval returns consistent results on multiple calls
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -169,7 +169,7 @@ export default function GetauxvalNdkTest() {
 
     /**
      * @tc.name   testGetauxvalStable002
-     * @tc.number SUB_THIRDPARTY_MUSL_GETAUXVAL_0110
+     * @tc.number SUB_THIRDPARTY_MUSL_GETAUXVAL_1000
      * @tc.desc   Verify __getauxval handles massive calls without crash
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -185,7 +185,7 @@ export default function GetauxvalNdkTest() {
 
     /**
      * @tc.name   testGetauxvalThread001
-     * @tc.number SUB_THIRDPARTY_MUSL_GETAUXVAL_0111
+     * @tc.number SUB_THIRDPARTY_MUSL_GETAUXVAL_1100
      * @tc.desc   Verify __getauxval is thread-safe with concurrent calls
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -201,7 +201,7 @@ export default function GetauxvalNdkTest() {
 
     /**
      * @tc.name   testGetauxvalThread002
-     * @tc.number SUB_THIRDPARTY_MUSL_GETAUXVAL_0112
+     * @tc.number SUB_THIRDPARTY_MUSL_GETAUXVAL_1200
      * @tc.desc   Verify __getauxval thread-safety with mixed item values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

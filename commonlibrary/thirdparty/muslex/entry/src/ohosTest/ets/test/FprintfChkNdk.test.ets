@@ -27,7 +27,7 @@ export default function FprintfChkNdkTest() {
 
     /**
      * @tc.name   testFprintfChkNormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_FPRINTF_CHK_0101
+     * @tc.number SUB_THIRDPARTY_MUSL_FPRINTF_CHK_0100
      * @tc.desc   Verify __fprintf_chk writes output with flag=0 and various formats
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -43,7 +43,7 @@ export default function FprintfChkNdkTest() {
 
     /**
      * @tc.name   testFprintfChkNormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_FPRINTF_CHK_0102
+     * @tc.number SUB_THIRDPARTY_MUSL_FPRINTF_CHK_0200
      * @tc.desc   Verify __fprintf_chk writes output with flag=1 (security check enabled)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -59,7 +59,7 @@ export default function FprintfChkNdkTest() {
 
     /**
      * @tc.name   testFprintfChkNormal003
-     * @tc.number SUB_THIRDPARTY_MUSL_FPRINTF_CHK_0103
+     * @tc.number SUB_THIRDPARTY_MUSL_FPRINTF_CHK_0300
      * @tc.desc   Verify __fprintf_chk handles mixed format strings correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -73,11 +73,11 @@ export default function FprintfChkNdkTest() {
       done();
     });
 
-    // ==================== 边界值测试 ====================
+    // ==================== 边界值测�?====================
 
     /**
      * @tc.name   testFprintfChkBoundary001
-     * @tc.number SUB_THIRDPARTY_MUSL_FPRINTF_CHK_0104
+     * @tc.number SUB_THIRDPARTY_MUSL_FPRINTF_CHK_0400
      * @tc.desc   Verify __fprintf_chk handles long and very long strings
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -93,7 +93,7 @@ export default function FprintfChkNdkTest() {
 
     /**
      * @tc.name   testFprintfChkBoundary002
-     * @tc.number SUB_THIRDPARTY_MUSL_FPRINTF_CHK_0105
+     * @tc.number SUB_THIRDPARTY_MUSL_FPRINTF_CHK_0500
      * @tc.desc   Verify __fprintf_chk handles large numbers and scientific notation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -127,7 +127,7 @@ export default function FprintfChkNdkTest() {
 
     /**
      * @tc.name   testFprintfChkAbnormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_FPRINTF_CHK_0107
+     * @tc.number SUB_THIRDPARTY_MUSL_FPRINTF_CHK_0600
      * @tc.desc   Verify __fprintf_chk handles empty format string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -157,11 +157,11 @@ export default function FprintfChkNdkTest() {
       // done();
     // });
 
-    // ==================== 稳定性测试 ====================
+    // ==================== 稳定性测�?====================
 
     /**
      * @tc.name   testFprintfChkStable001
-     * @tc.number SUB_THIRDPARTY_MUSL_FPRINTF_CHK_0109
+     * @tc.number SUB_THIRDPARTY_MUSL_FPRINTF_CHK_0700
      * @tc.desc   Verify __fprintf_chk returns consistent results on multiple calls
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -177,7 +177,7 @@ export default function FprintfChkNdkTest() {
 
     /**
      * @tc.name   testFprintfChkStable002
-     * @tc.number SUB_THIRDPARTY_MUSL_FPRINTF_CHK_0110
+     * @tc.number SUB_THIRDPARTY_MUSL_FPRINTF_CHK_0800
      * @tc.desc   Verify __fprintf_chk handles massive formatting calls without crash
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -191,11 +191,11 @@ export default function FprintfChkNdkTest() {
       done();
     });
 
-    // ==================== 多线程测试 ====================
+    // ==================== 多线程测�?====================
 
     /**
      * @tc.name   testFprintfChkThread001
-     * @tc.number SUB_THIRDPARTY_MUSL_FPRINTF_CHK_0111
+     * @tc.number SUB_THIRDPARTY_MUSL_FPRINTF_CHK_0900
      * @tc.desc   Verify __fprintf_chk thread-safety with different file outputs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -211,7 +211,7 @@ export default function FprintfChkNdkTest() {
 
     /**
      * @tc.name   testFprintfChkThread002
-     * @tc.number SUB_THIRDPARTY_MUSL_FPRINTF_CHK_0112
+     * @tc.number SUB_THIRDPARTY_MUSL_FPRINTF_CHK_1000
      * @tc.desc   Verify __fprintf_chk thread-safety with shared file output
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

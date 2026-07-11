@@ -25,7 +25,7 @@ export default function FedisableexceptNdkTest() {
 
     /**
      * @tc.name   testFedisableexceptNormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_FEDISABLEEXCEPT_0101
+     * @tc.number SUB_THIRDPARTY_MUSL_FEDISABLE_EXCEPT_0100
      * @tc.desc   Disable FE_DIVBYZERO
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -41,7 +41,7 @@ export default function FedisableexceptNdkTest() {
 
     /**
      * @tc.name   testFedisableexceptNormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_FEDISABLEEXCEPT_0102
+     * @tc.number SUB_THIRDPARTY_MUSL_FEDISABLE_EXCEPT_0200
      * @tc.desc   Disable FE_INVALID
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -57,7 +57,7 @@ export default function FedisableexceptNdkTest() {
 
     /**
      * @tc.name   testFedisableexceptNormal003
-     * @tc.number SUB_THIRDPARTY_MUSL_FEDISABLEEXCEPT_0103
+     * @tc.number SUB_THIRDPARTY_MUSL_FEDISABLE_EXCEPT_0300
      * @tc.desc   Disable multiple exceptions
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -73,7 +73,7 @@ export default function FedisableexceptNdkTest() {
 
     /**
      * @tc.name   testFedisableexceptNormal004
-     * @tc.number SUB_THIRDPARTY_MUSL_FEDISABLEEXCEPT_0104
+     * @tc.number SUB_THIRDPARTY_MUSL_FEDISABLE_EXCEPT_0400
      * @tc.desc   IsStubMode check
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -89,7 +89,7 @@ export default function FedisableexceptNdkTest() {
 
     /**
      * @tc.name   testFedisableexceptAbnormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_FEDISABLEEXCEPT_0105
+     * @tc.number SUB_THIRDPARTY_MUSL_FEDISABLE_EXCEPT_0500
      * @tc.desc   Disable 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -105,7 +105,7 @@ export default function FedisableexceptNdkTest() {
 
     /**
      * @tc.name   testFedisableexceptAbnormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_FEDISABLEEXCEPT_0106
+     * @tc.number SUB_THIRDPARTY_MUSL_FEDISABLE_EXCEPT_0600
      * @tc.desc   Disable invalid value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -121,7 +121,7 @@ export default function FedisableexceptNdkTest() {
 
     /**
      * @tc.name   testFedisableexceptBoundary001
-     * @tc.number SUB_THIRDPARTY_MUSL_FEDISABLEEXCEPT_0107
+     * @tc.number SUB_THIRDPARTY_MUSL_FEDISABLE_EXCEPT_0700
      * @tc.desc   Disable FE_ALL_EXCEPT
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -137,7 +137,7 @@ export default function FedisableexceptNdkTest() {
 
     /**
      * @tc.name   testFedisableexceptBoundary002
-     * @tc.number SUB_THIRDPARTY_MUSL_FEDISABLEEXCEPT_0108
+     * @tc.number SUB_THIRDPARTY_MUSL_FEDISABLE_EXCEPT_0800
      * @tc.desc   Disable already-disabled
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -153,7 +153,7 @@ export default function FedisableexceptNdkTest() {
 
     /**
      * @tc.name   testFedisableexceptStable001
-     * @tc.number SUB_THIRDPARTY_MUSL_FEDISABLEEXCEPT_0109
+     * @tc.number SUB_THIRDPARTY_MUSL_FEDISABLE_EXCEPT_0900
      * @tc.desc   10000 repeated calls stability
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -169,7 +169,7 @@ export default function FedisableexceptNdkTest() {
 
     /**
      * @tc.name   testFedisableexceptThread001
-     * @tc.number SUB_THIRDPARTY_MUSL_FEDISABLEEXCEPT_0110
+     * @tc.number SUB_THIRDPARTY_MUSL_FEDISABLE_EXCEPT_1000
      * @tc.desc   Multi-thread safety
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

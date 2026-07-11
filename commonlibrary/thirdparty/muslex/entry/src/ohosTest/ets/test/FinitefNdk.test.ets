@@ -25,7 +25,7 @@ export default function FinitefNdkTest() {
 
     /**
      * @tc.name   testFinitefNormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_FINITEF_0101
+     * @tc.number SUB_THIRDPARTY_MUSL_FINITEF_0100
      * @tc.desc   Verify __finitef identifies finite float values correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -41,7 +41,7 @@ export default function FinitefNdkTest() {
 
     /**
      * @tc.name   testFinitefNormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_FINITEF_0102
+     * @tc.number SUB_THIRDPARTY_MUSL_FINITEF_0200
      * @tc.desc   Verify __finitef identifies non-finite float values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -57,7 +57,7 @@ export default function FinitefNdkTest() {
 
     /**
      * @tc.name   testFinitefBoundary001
-     * @tc.number SUB_THIRDPARTY_MUSL_FINITEF_0103
+     * @tc.number SUB_THIRDPARTY_MUSL_FINITEF_0300
      * @tc.desc   Verify __finitef handles FLT_MAX and FLT_MIN boundary values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -73,7 +73,7 @@ export default function FinitefNdkTest() {
 
     /**
      * @tc.name   testFinitefBoundary002
-     * @tc.number SUB_THIRDPARTY_MUSL_FINITEF_0104
+     * @tc.number SUB_THIRDPARTY_MUSL_FINITEF_0400
      * @tc.desc   Verify __finitef handles near-boundary float values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -89,7 +89,7 @@ export default function FinitefNdkTest() {
 
     /**
      * @tc.name   testFinitefAbnormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_FINITEF_0105
+     * @tc.number SUB_THIRDPARTY_MUSL_FINITEF_0500
      * @tc.desc   Verify __finitef handles various NaN representations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -105,7 +105,7 @@ export default function FinitefNdkTest() {
 
     /**
      * @tc.name   testFinitefStable001
-     * @tc.number SUB_THIRDPARTY_MUSL_FINITEF_0106
+     * @tc.number SUB_THIRDPARTY_MUSL_FINITEF_0600
      * @tc.desc   Verify __finitef returns consistent results on multiple calls
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -121,7 +121,7 @@ export default function FinitefNdkTest() {
 
     /**
      * @tc.name   testFinitefThread001
-     * @tc.number SUB_THIRDPARTY_MUSL_FINITEF_0107
+     * @tc.number SUB_THIRDPARTY_MUSL_FINITEF_0700
      * @tc.desc   Verify __finitef is thread-safe with concurrent calls
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -23,6 +23,14 @@ export default function GwpAsanCollectNdkTest() {
 
     beforeEach(async () => { await Utils.sleep(50); });
 
+    /**
+     * @tc.name   testgwpAsanCollectNormal001
+     * @tc.number SUB_THIRDPARTY_MUSL_GWP_ASAN_COLLECT_0100
+     * @tc.desc   GWP-ASan collect with 1000ms timespan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testgwpAsanCollectNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasancollectndktest.gwpAsanCollectNormal001();
       let deviceType: string = deviceInfo.deviceType;
@@ -31,6 +39,14 @@ export default function GwpAsanCollectNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testgwpAsanCollectNormal002
+     * @tc.number SUB_THIRDPARTY_MUSL_GWP_ASAN_COLLECT_0200
+     * @tc.desc   GWP-ASan collect with zero timespan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testgwpAsanCollectNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasancollectndktest.gwpAsanCollectNormal002();
       let deviceType: string = deviceInfo.deviceType;
@@ -39,6 +55,14 @@ export default function GwpAsanCollectNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testgwpAsanCollectNormal003
+     * @tc.number SUB_THIRDPARTY_MUSL_GWP_ASAN_COLLECT_0300
+     * @tc.desc   GWP-ASan collect with large buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testgwpAsanCollectNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasancollectndktest.gwpAsanCollectNormal003();
       let deviceType: string = deviceInfo.deviceType;
@@ -47,6 +71,14 @@ export default function GwpAsanCollectNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testgwpAsanCollectNormal004
+     * @tc.number SUB_THIRDPARTY_MUSL_GWP_ASAN_COLLECT_0400
+     * @tc.desc   Stub mode passthrough test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testgwpAsanCollectNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasancollectndktest.gwpAsanCollectNormal004();
       let deviceType: string = deviceInfo.deviceType;
@@ -55,6 +87,14 @@ export default function GwpAsanCollectNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testgwpAsanCollectAbnormal001
+     * @tc.number SUB_THIRDPARTY_MUSL_GWP_ASAN_COLLECT_0500
+     * @tc.desc   GWP-ASan collect with null buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testgwpAsanCollectAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasancollectndktest.gwpAsanCollectAbnormal001();
       let deviceType: string = deviceInfo.deviceType;
@@ -63,6 +103,14 @@ export default function GwpAsanCollectNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testgwpAsanCollectAbnormal002
+     * @tc.number SUB_THIRDPARTY_MUSL_GWP_ASAN_COLLECT_0600
+     * @tc.desc   GWP-ASan collect with zero max count
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testgwpAsanCollectAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasancollectndktest.gwpAsanCollectAbnormal002();
       let deviceType: string = deviceInfo.deviceType;
@@ -71,6 +119,14 @@ export default function GwpAsanCollectNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testgwpAsanCollectBoundary001
+     * @tc.number SUB_THIRDPARTY_MUSL_GWP_ASAN_COLLECT_0700
+     * @tc.desc   GWP-ASan collect with max timespan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testgwpAsanCollectBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasancollectndktest.gwpAsanCollectBoundary001();
       let deviceType: string = deviceInfo.deviceType;
@@ -79,6 +135,14 @@ export default function GwpAsanCollectNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testgwpAsanCollectBoundary002
+     * @tc.number SUB_THIRDPARTY_MUSL_GWP_ASAN_COLLECT_0800
+     * @tc.desc   GWP-ASan collect with single entry buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testgwpAsanCollectBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasancollectndktest.gwpAsanCollectBoundary002();
       let deviceType: string = deviceInfo.deviceType;
@@ -87,6 +151,14 @@ export default function GwpAsanCollectNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testgwpAsanCollectStable001
+     * @tc.number SUB_THIRDPARTY_MUSL_GWP_ASAN_COLLECT_0900
+     * @tc.desc   Repeated GWP-ASan collect stability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testgwpAsanCollectStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasancollectndktest.gwpAsanCollectStable001();
       let deviceType: string = deviceInfo.deviceType;
@@ -95,6 +167,14 @@ export default function GwpAsanCollectNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   testgwpAsanCollectThread001
+     * @tc.number SUB_THIRDPARTY_MUSL_GWP_ASAN_COLLECT_1000
+     * @tc.desc   Multi-thread GWP-ASan collect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testgwpAsanCollectThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasancollectndktest.gwpAsanCollectThread001();
       let deviceType: string = deviceInfo.deviceType;
@@ -105,4 +185,3 @@ export default function GwpAsanCollectNdkTest() {
 
   });
 }
-
