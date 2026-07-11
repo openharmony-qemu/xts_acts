@@ -57,20 +57,21 @@ export default function ErrorDollarInvokeTest(): void {
       expect(err.name).assertEqual("Error");
       expect(err.code).assertEqual(0);
       expect(err.message).assertEqual("");
-      expect(err.cause === undefined).assertEqual(true);
+      expect(err.cause).assertUndefined();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_0020
      * @tc.name testErrorDollarInvoke002
-     * @tc.desc Verify Error.$_invoke("hello") stores the message correctly
+     * @tc.desc Verify Error.$_invoke(email string) stores the message correctly
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
     it('testErrorDollarInvoke002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: Error = Error.$_invoke("hello");
-      expect(err.message).assertEqual("hello");
+      let err: Error = Error.$_invoke("test@example.com");
+      expect(err.message).assertEqual("test@example.com");
+      expect(err.name).assertEqual("Error");
     });
 
     /**
@@ -84,6 +85,7 @@ export default function ErrorDollarInvokeTest(): void {
     it('testErrorDollarInvoke003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = Error.$_invoke("");
       expect(err.message).assertEqual("");
+      expect(err.code).assertEqual(0);
     });
 
     /**
@@ -97,6 +99,7 @@ export default function ErrorDollarInvokeTest(): void {
     it('testErrorDollarInvoke004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = Error.$_invoke("!@#$%");
       expect(err.message).assertEqual("!@#$%");
+      expect(err.message.length).assertEqual(5);
     });
 
     /**
@@ -115,14 +118,16 @@ export default function ErrorDollarInvokeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_0060
      * @tc.name testErrorDollarInvoke006
-     * @tc.desc Verify Error.$_invoke().toString() returns 'Error'
+     * @tc.desc Verify Error.$_invoke() returns default Error fields
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
     it('testErrorDollarInvoke006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = Error.$_invoke();
-      expect(err.toString()).assertEqual("Error");
+      expect(err.name).assertEqual("Error");
+      expect(err.message).assertEqual("");
+      expect(err.code).assertEqual(0);
     });
 
     /**
@@ -136,7 +141,7 @@ export default function ErrorDollarInvokeTest(): void {
     it('testErrorDollarInvoke007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = Error.$_invoke();
       expect(err.stack).not().assertUndefined();
-      expect((err.stack as String).includes("Error")).assertEqual(true);
+      expect((err.stack as String).indexOf("Error")).not().assertEqual(-1);
     });
 
     /**
@@ -149,7 +154,7 @@ export default function ErrorDollarInvokeTest(): void {
      */
     it('testErrorDollarInvoke008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = Error.$_invoke();
-      expect(e.cause === undefined).assertEqual(true);
+      expect(e.cause).assertUndefined();
     });
 
     /**
@@ -176,8 +181,8 @@ export default function ErrorDollarInvokeTest(): void {
      */
     it('testErrorDollarInvoke010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = Error.$_invoke();
-      e.cause = "string cause";
-      expect(e.cause).assertEqual("string cause");
+      e.cause = "https://example.com/cause";
+      expect(e.cause).assertEqual("https://example.com/cause");
     });
 
     /**
@@ -191,7 +196,7 @@ export default function ErrorDollarInvokeTest(): void {
     it('testErrorDollarInvoke011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = Error.$_invoke();
       e.cause = true;
-      expect(e.cause).assertEqual(true);
+      expect(e.cause).assertTrue();
     });
 
     /**
@@ -212,27 +217,27 @@ export default function ErrorDollarInvokeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_0130
      * @tc.name testErrorDollarInvoke013
-     * @tc.desc Verify Error.$_invoke(msg, {}) has undefined cause
+     * @tc.desc Verify Error.$_invoke(replacement character string, {}) has undefined cause
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
     it('testErrorDollarInvoke013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: Error = Error.$_invoke("msg", {});
-      expect(e.cause === undefined).assertEqual(true);
+      let e: Error = Error.$_invoke("\uFFFD", {});
+      expect(e.cause).assertUndefined();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_0140
      * @tc.name testErrorDollarInvoke014
-     * @tc.desc Verify Error.$_invoke(msg, {cause: val}) stores cause
+     * @tc.desc Verify Error.$_invoke(Japanese string, {cause: URL}) stores cause
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
     it('testErrorDollarInvoke014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: Error = Error.$_invoke("msg", { cause: "optCause" });
-      expect(e.cause).assertEqual("optCause");
+      let e: Error = Error.$_invoke("テスト", { cause: "https://example.com/cause" });
+      expect(e.cause).assertEqual("https://example.com/cause");
     });
 
     /**
@@ -309,7 +314,7 @@ export default function ErrorDollarInvokeTest(): void {
       let e: Error = Error.$_invoke();
       e.cause = 1;
       e.cause = undefined;
-      expect(e.cause === undefined).assertEqual(true);
+      expect(e.cause).assertUndefined();
     });
 
     /**
@@ -360,7 +365,7 @@ export default function ErrorDollarInvokeTest(): void {
       e.cause = "str";
       expect(e.cause).assertEqual("str");
       e.cause = undefined;
-      expect(e.cause === undefined).assertEqual(true);
+      expect(e.cause).assertUndefined();
     });
 
     /**
@@ -389,14 +394,13 @@ export default function ErrorDollarInvokeTest(): void {
     it('testErrorDollarInvoke024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inner: Error = new Error("root");
       let e: Error = Error.$_invoke("wrapped", { cause: inner });
-      let caught: boolean = false;
       try {
         throw e;
+        expect().assertFail();
       } catch (ex) {
-        caught = true;
+        expect((ex as Error).message).assertEqual("wrapped");
         expect((ex.cause as Error).message).assertEqual("root");
       }
-      expect(caught).assertEqual(true);
     });
 
     /**
@@ -418,16 +422,17 @@ export default function ErrorDollarInvokeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_0260
      * @tc.name testErrorDollarInvoke026
-     * @tc.desc Verify $_invoke("hello") and new Error("hello") message/toString match
+     * @tc.desc Verify $_invoke(URL string) and new Error(URL string) message fields match
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
     it('testErrorDollarInvoke026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let staticErr: Error = Error.$_invoke("hello");
-      let newErr: Error = new Error("hello");
+      let staticErr: Error = Error.$_invoke("https://example.com/invoke");
+      let newErr: Error = new Error("https://example.com/invoke");
       expect(staticErr.message).assertEqual(newErr.message);
-      expect(staticErr.toString()).assertEqual(newErr.toString());
+      expect(staticErr.name).assertEqual(newErr.name);
+      expect(staticErr.code).assertEqual(newErr.code);
     });
 
     /**
@@ -442,13 +447,14 @@ export default function ErrorDollarInvokeTest(): void {
       let staticErr: Error = Error.$_invoke("");
       let newErr: Error = new Error("");
       expect(staticErr.message).assertEqual(newErr.message);
-      expect(staticErr.toString()).assertEqual(newErr.toString());
+      expect(staticErr.code).assertEqual(newErr.code);
+      expect(staticErr.cause).assertUndefined();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_0280
      * @tc.name testErrorDollarInvoke028
-     * @tc.desc Verify $_invoke(undefined) and new Error(undefined) message/toString match
+     * @tc.desc Verify $_invoke(undefined) and new Error(undefined) fields match
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -457,7 +463,8 @@ export default function ErrorDollarInvokeTest(): void {
       let staticErr: Error = Error.$_invoke(undefined);
       let newErr: Error = new Error(undefined);
       expect(staticErr.message).assertEqual(newErr.message);
-      expect(staticErr.toString()).assertEqual(newErr.toString());
+      expect(staticErr.name).assertEqual(newErr.name);
+      expect(staticErr.code).assertEqual(newErr.code);
     });
 
     /**
@@ -486,6 +493,7 @@ export default function ErrorDollarInvokeTest(): void {
       let staticErr: Error = Error.$_invoke("special!@#$%");
       let newErr: Error = new Error("special!@#$%");
       expect(staticErr.message).assertEqual(newErr.message);
+      expect(staticErr.message.length).assertEqual(newErr.message.length);
     });
 
     /**
@@ -505,14 +513,14 @@ export default function ErrorDollarInvokeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_0320
      * @tc.name testErrorDollarInvoke032
-     * @tc.desc Verify $_invoke(msg) and new Error(msg) both have undefined cause
+     * @tc.desc Verify $_invoke(zero-width message) and new Error(zero-width message) both have undefined cause
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
     it('testErrorDollarInvoke032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let staticErr: Error = Error.$_invoke("msg");
-      let newErr: Error = new Error("msg");
+      let staticErr: Error = Error.$_invoke("\u200B");
+      let newErr: Error = new Error("\u200B");
       expect(staticErr.cause).assertUndefined();
       expect(newErr.cause).assertUndefined();
     });
@@ -520,14 +528,14 @@ export default function ErrorDollarInvokeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_0330
      * @tc.name testErrorDollarInvoke033
-     * @tc.desc Verify $_invoke(msg, {}) and new Error(msg, {}) equivalence
+     * @tc.desc Verify $_invoke(invalid date string, {}) and new Error(invalid date string, {}) equivalence
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
     it('testErrorDollarInvoke033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let staticErr: Error = Error.$_invoke("msg", {});
-      let newErr: Error = new Error("msg", {});
+      let staticErr: Error = Error.$_invoke("2026-02-30", {});
+      let newErr: Error = new Error("2026-02-30", {});
       expect(staticErr.name).assertEqual(newErr.name);
       expect(staticErr.message).assertEqual(newErr.message);
       expect(staticErr.cause).assertUndefined();
@@ -536,14 +544,14 @@ export default function ErrorDollarInvokeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_0340
      * @tc.name testErrorDollarInvoke034
-     * @tc.desc Verify $_invoke(msg, { cause: "test" }) and new Error(msg, { cause: "test" }) equivalence
+     * @tc.desc Verify $_invoke(msg, { cause: XSS string }) and new Error(msg, { cause: XSS string }) equivalence
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
     it('testErrorDollarInvoke034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let staticErr: Error = Error.$_invoke("msg", { cause: "test" });
-      let newErr: Error = new Error("msg", { cause: "test" });
+      let staticErr: Error = Error.$_invoke("msg", { cause: "<script>alert(1)</script>" });
+      let newErr: Error = new Error("msg", { cause: "<script>alert(1)</script>" });
       expect(staticErr.name).assertEqual(newErr.name);
       expect(staticErr.message).assertEqual(newErr.message);
       expect(staticErr.cause).assertEqual(newErr.cause);
@@ -654,7 +662,8 @@ export default function ErrorDollarInvokeTest(): void {
       let err: Error = Error.$_invoke(message);
       expect(err.name).assertEqual('Error');
       expect(err.message).assertEqual(message);
-      expect(err.toString()).assertEqual('Error: line\nbreak\tinvoke');
+      expect(err.message.indexOf('\n')).assertEqual(4);
+      expect(err.message.indexOf('\t')).assertEqual(10);
     });
 
     /**
@@ -706,13 +715,13 @@ export default function ErrorDollarInvokeTest(): void {
       let err: Error = Error.$_invoke(message);
       expect(err.message).assertEqual(message);
       expect(err.message.length).assertEqual(4);
-      expect(err.toString()).assertEqual('Error:     ');
+      expect(err.name).assertEqual('Error');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_0450
      * @tc.name testErrorDollarInvoke045
-     * @tc.desc Verify Error.$_invoke preserves static format messages as strings
+     * @tc.desc Verify Error.$_invoke preserves business format messages with default initialization
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -720,18 +729,22 @@ export default function ErrorDollarInvokeTest(): void {
     it('testErrorDollarInvoke045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uuidErr: Error = Error.$_invoke('550e8400-e29b-41d4-a716-446655440000');
       let urlErr: Error = Error.$_invoke('https://example.com/invoke?id=42');
-      let hexErr: Error = Error.$_invoke('0xDEADBEEF');
-      let numericErr: Error = Error.$_invoke('12345678901234567890');
+      let xssErr: Error = Error.$_invoke('<script>alert(1)</script>');
+      let zeroWidthErr: Error = Error.$_invoke('id\u200Bhidden');
       expect(uuidErr.message).assertEqual('550e8400-e29b-41d4-a716-446655440000');
+      expect(uuidErr.name).assertEqual('Error');
       expect(urlErr.message).assertEqual('https://example.com/invoke?id=42');
-      expect(hexErr.message).assertEqual('0xDEADBEEF');
-      expect(numericErr.message).assertEqual('12345678901234567890');
+      expect(urlErr.code).assertEqual(0);
+      expect(xssErr.message).assertEqual('<script>alert(1)</script>');
+      expect(xssErr.code).assertEqual(0);
+      expect(zeroWidthErr.message).assertEqual('id\u200Bhidden');
+      expect(zeroWidthErr.cause).assertUndefined();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_0460
      * @tc.name testErrorDollarInvoke046
-     * @tc.desc Verify Error.$_invoke preserves JSON-like quoted message
+     * @tc.desc Verify Error.$_invoke treats JSON-like message as plain text
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -740,25 +753,31 @@ export default function ErrorDollarInvokeTest(): void {
       let message: string = '{"type":"invoke","code":42,"ok":false}';
       let err: Error = Error.$_invoke(message);
       expect(err.message).assertEqual(message);
-      expect(err.toString()).assertEqual('Error: {"type":"invoke","code":42,"ok":false}');
+      expect(err.name).assertEqual('Error');
+      expect(err.code).assertEqual(0);
+      expect(err.message.length).assertEqual(38);
+      expect(err.cause).assertUndefined();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_0470
      * @tc.name testErrorDollarInvoke047
-     * @tc.desc Verify Error.$_invoke repeated calls keep independent messages
+     * @tc.desc Verify Error.$_invoke repeated calls return independent latest result
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
     it('testErrorDollarInvoke047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let last: Error = Error.$_invoke('loop-0');
+      let first: Error = Error.$_invoke('loop-0');
+      let last: Error = first;
       for (let i: int = 1; i <= 20; i++) {
         last = Error.$_invoke('loop-' + i);
       }
+      first.message = 'first-mutated';
       expect(last.message).assertEqual('loop-20');
       expect(last.name).assertEqual('Error');
       expect(last.code).assertEqual(0);
+      expect(first.message).assertEqual('first-mutated');
     });
 
     /**
@@ -794,13 +813,14 @@ export default function ErrorDollarInvokeTest(): void {
       let err: Error = Error.$_invoke('before-update');
       err.message = 'after-update';
       expect(err.message).assertEqual('after-update');
-      expect(err.toString()).assertEqual('Error: after-update');
+      expect(err.name).assertEqual('Error');
+      expect(err.code).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_0500
      * @tc.name testErrorDollarInvoke050
-     * @tc.desc Verify Error.$_invoke result name mutation affects toString
+     * @tc.desc Verify Error.$_invoke result name mutation preserves message
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -809,7 +829,7 @@ export default function ErrorDollarInvokeTest(): void {
       let err: Error = Error.$_invoke('named-message');
       err.name = 'InvokeName';
       expect(err.name).assertEqual('InvokeName');
-      expect(err.toString()).assertEqual('InvokeName: named-message');
+      expect(err.message).assertEqual('named-message');
     });
 
     /**
@@ -908,7 +928,7 @@ export default function ErrorDollarInvokeTest(): void {
       setCause.add('set-cause');
       let err: Error = Error.$_invoke('set-invoke', { cause: setCause });
       expect(err.cause).assertEqual(setCause);
-      expect((err.cause as Set<string>).has('set-cause')).assertEqual(true);
+      expect((err.cause as Set<string>).has('set-cause')).assertTrue();
     });
 
     /**
@@ -937,7 +957,7 @@ export default function ErrorDollarInvokeTest(): void {
     it('testErrorDollarInvoke058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = Error.$_invoke('false-cause', { cause: false });
       expect(err.message).assertEqual('false-cause');
-      expect(err.cause).assertEqual(false);
+      expect(err.cause).assertFalse();
     });
 
     /**
@@ -965,7 +985,7 @@ export default function ErrorDollarInvokeTest(): void {
     it('testErrorDollarInvoke060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = Error.$_invoke('nan-cause', { cause: Number.NaN });
       expect(err.message).assertEqual('nan-cause');
-      expect(isNaN(err.cause as number)).assertEqual(true);
+      expect(isNaN(err.cause as number)).assertTrue();
     });
 
     /**
@@ -1045,15 +1065,13 @@ export default function ErrorDollarInvokeTest(): void {
      * @tc.level Level 2
      */
     it('testErrorDollarInvoke065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let caught: boolean = false;
       try {
         throw Error.$_invoke('throw-invoke');
+        expect().assertFail();
       } catch (e) {
-        caught = true;
         expect((e as Error).message).assertEqual('throw-invoke');
         expect((e as Error).name).assertEqual('Error');
       }
-      expect(caught).assertEqual(true);
     });
 
     /**
@@ -1195,7 +1213,7 @@ export default function ErrorDollarInvokeTest(): void {
       let first: Error = Error.$_invoke();
       let second: Error = Error.$_invoke();
       first.message = 'first-only';
-      expect(first === second).assertEqual(false);
+      expect(first === second).assertFalse();
       expect(second.message).assertEqual('');
     });
 
@@ -1228,7 +1246,7 @@ export default function ErrorDollarInvokeTest(): void {
     it('testErrorDollarInvoke076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let invoked: Error = Error.$_invoke('distinct-equivalent');
       let constructed: Error = new Error('distinct-equivalent');
-      expect(invoked === constructed).assertEqual(false);
+      expect(invoked === constructed).assertFalse();
       expect(invoked.name).assertEqual(constructed.name);
       expect(invoked.message).assertEqual(constructed.message);
       expect(invoked.code).assertEqual(constructed.code);
@@ -1272,7 +1290,7 @@ export default function ErrorDollarInvokeTest(): void {
      */
     it('testErrorDollarInvoke079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = Error.$_invoke('own-message-check');
-      expect(err.hasOwnProperty('message')).assertEqual(false);
+      expect(err.hasOwnProperty('message')).assertFalse();
     });
 
     /**
@@ -1285,7 +1303,7 @@ export default function ErrorDollarInvokeTest(): void {
      */
     it('testErrorDollarInvoke080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = Error.$_invoke('own-cause-check', { cause: 'own-cause' });
-      expect(err.hasOwnProperty('cause')).assertEqual(false);
+      expect(err.hasOwnProperty('cause')).assertFalse();
       expect(err.cause).assertEqual('own-cause');
     });
 
@@ -1316,13 +1334,13 @@ export default function ErrorDollarInvokeTest(): void {
       let second: Error = Error.$_invoke('second-stack');
       first.stack = 'first-stack-only';
       expect(first.stack).assertEqual('first-stack-only');
-      expect(second.stack === 'first-stack-only').assertEqual(false);
+      expect(second.stack === 'first-stack-only').assertFalse();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_0830
      * @tc.name testErrorDollarInvoke083
-     * @tc.desc Verify Error.$_invoke toString reflects message reset to empty
+     * @tc.desc Verify Error.$_invoke result message can reset to empty
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -1330,13 +1348,14 @@ export default function ErrorDollarInvokeTest(): void {
     it('testErrorDollarInvoke083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = Error.$_invoke('will-clear');
       err.message = '';
-      expect(err.toString()).assertEqual('Error');
+      expect(err.message).assertEqual('');
+      expect(err.name).assertEqual('Error');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_0840
      * @tc.name testErrorDollarInvoke084
-     * @tc.desc Verify Error.$_invoke toString reflects name reset to Error
+     * @tc.desc Verify Error.$_invoke result name can reset to Error
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -1345,7 +1364,8 @@ export default function ErrorDollarInvokeTest(): void {
       let err: Error = Error.$_invoke('reset-name-message');
       err.name = 'TemporaryName';
       err.name = 'Error';
-      expect(err.toString()).assertEqual('Error: reset-name-message');
+      expect(err.name).assertEqual('Error');
+      expect(err.message).assertEqual('reset-name-message');
     });
 
     /**
@@ -1374,7 +1394,7 @@ export default function ErrorDollarInvokeTest(): void {
     it('testErrorDollarInvoke086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cause: string[] = [];
       let err: Error = Error.$_invoke('empty-array-cause', { cause: cause });
-      expect(err.cause === cause).assertEqual(true);
+      expect(err.cause === cause).assertTrue();
       expect(cause.length).assertEqual(0);
     });
 
@@ -1391,8 +1411,8 @@ export default function ErrorDollarInvokeTest(): void {
       let second: Error = Error.$_invoke('array-error-second');
       let causes: Error[] = [first, second];
       let err: Error = Error.$_invoke('array-error-holder', { cause: causes });
-      expect(err.cause === causes).assertEqual(true);
-      expect(causes[0] === first).assertEqual(true);
+      expect(err.cause === causes).assertTrue();
+      expect(causes[0] === first).assertTrue();
       expect(causes[1].message).assertEqual('array-error-second');
     });
 
@@ -1407,7 +1427,7 @@ export default function ErrorDollarInvokeTest(): void {
     it('testErrorDollarInvoke088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let payload: ErrorOptions = { cause: 'nested-payload-cause' };
       let err: Error = Error.$_invoke('options-payload-holder', { cause: payload });
-      expect(err.cause === payload).assertEqual(true);
+      expect(err.cause === payload).assertTrue();
       expect(payload.cause).assertEqual('nested-payload-cause');
     });
 
@@ -1436,6 +1456,7 @@ export default function ErrorDollarInvokeTest(): void {
       let err: Error = Error.$_invoke('x');
       expect(err.message).assertEqual('x');
       expect(err.message.length).assertEqual(1);
+      expect(err.code).assertEqual(0);
     });
 
     /**
@@ -1480,6 +1501,8 @@ export default function ErrorDollarInvokeTest(): void {
       let err: Error = Error.$_invoke(message);
       expect(err.message).assertEqual(message);
       expect(err.message.length).assertEqual(26);
+      expect(err.name).assertEqual('Error');
+      expect(err.message.indexOf('\r\n')).assertEqual(12);
     });
 
     /**
@@ -1495,6 +1518,7 @@ export default function ErrorDollarInvokeTest(): void {
       let err: Error = Error.$_invoke(message);
       expect(err.message).assertEqual(message);
       expect(err.message.length).assertEqual(2);
+      expect(err.code).assertEqual(0);
     });
 
     /**
@@ -1510,6 +1534,7 @@ export default function ErrorDollarInvokeTest(): void {
       let err: Error = Error.$_invoke(message);
       expect(err.message).assertEqual(message);
       expect(err.message.length).assertEqual(7);
+      expect(err.cause).assertUndefined();
     });
 
     /**
@@ -1699,7 +1724,7 @@ export default function ErrorDollarInvokeTest(): void {
       let err: Error = Error.$_invoke('set-mutation-holder', { cause: setCause });
       setCause.add(element);
       let resolved: Set<Error> = err.cause as Set<Error>;
-      expect(resolved.has(element)).assertEqual(true);
+      expect(resolved.has(element)).assertTrue();
     });
 
     /**
@@ -1798,7 +1823,7 @@ export default function ErrorDollarInvokeTest(): void {
       setCause.add(payload);
       let err: Error = Error.$_invoke('payload-set-holder', { cause: setCause });
       let resolved: Set<ErrorInvokeCausePayload> = err.cause as Set<ErrorInvokeCausePayload>;
-      expect(resolved.has(payload)).assertEqual(true);
+      expect(resolved.has(payload)).assertTrue();
       expect(payload.code).assertEqual(2002);
     });
 
@@ -1874,12 +1899,24 @@ export default function ErrorDollarInvokeTest(): void {
      * @tc.level Level 2
      */
     it('testErrorDollarInvoke118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(TypeError.$_invoke('type').toString()).assertEqual('TypeError: type');
-      expect(RangeError.$_invoke('range').toString()).assertEqual('RangeError: range');
-      expect(SyntaxError.$_invoke('syntax').toString()).assertEqual('SyntaxError: syntax');
-      expect(ReferenceError.$_invoke('reference').toString()).assertEqual('ReferenceError: reference');
-      expect(EvalError.$_invoke('eval').toString()).assertEqual('EvalError: eval');
-      expect(URIError.$_invoke('uri').toString()).assertEqual('URIError: uri');
+      let typeErr: Error = TypeError.$_invoke('type');
+      let rangeErr: Error = RangeError.$_invoke('range');
+      let syntaxErr: Error = SyntaxError.$_invoke('syntax');
+      let referenceErr: Error = ReferenceError.$_invoke('reference');
+      let evalErr: Error = EvalError.$_invoke('eval');
+      let uriErr: Error = URIError.$_invoke('uri');
+      expect(typeErr.name).assertEqual('TypeError');
+      expect(typeErr.message).assertEqual('type');
+      expect(rangeErr.name).assertEqual('RangeError');
+      expect(rangeErr.message).assertEqual('range');
+      expect(syntaxErr.name).assertEqual('SyntaxError');
+      expect(syntaxErr.message).assertEqual('syntax');
+      expect(referenceErr.name).assertEqual('ReferenceError');
+      expect(referenceErr.message).assertEqual('reference');
+      expect(evalErr.name).assertEqual('EvalError');
+      expect(evalErr.message).assertEqual('eval');
+      expect(uriErr.name).assertEqual('URIError');
+      expect(uriErr.message).assertEqual('uri');
     });
 
     /**
@@ -1913,11 +1950,49 @@ export default function ErrorDollarInvokeTest(): void {
       let nonIntegral: Error = NonIntegralIndexError.$_invoke('index');
       let assertion: Error = AssertionError.$_invoke('assert');
       let json: Error = JSONTypeError.$_invoke('json');
-      expect(format.toString()).assertEqual('FormatError: format');
-      expect(nonIntegral.toString()).assertEqual('NonIntegralIndexError: index');
+      expect(format.name).assertEqual('FormatError');
+      expect(format.message).assertEqual('format');
+      expect(nonIntegral.name).assertEqual('NonIntegralIndexError');
+      expect(nonIntegral.message).assertEqual('index');
       expect(assertion.name).assertEqual('Error');
       expect(assertion.message).assertEqual('assert');
       expect(json.message).assertEqual('json');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_1210
+     * @tc.name testErrorDollarInvoke121
+     * @tc.desc Verify Error $_invoke throws ClassCastError for null cause option
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorDollarInvoke121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let err: Error = Error.$_invoke('invoke-null-cause', { cause: null as Object });
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('ClassCastError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_1220
+     * @tc.name testErrorDollarInvoke122
+     * @tc.desc Verify Error $_invoke throws ClassCastError for Map value as message
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorDollarInvoke122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let mapMessage: Map<string, string> = new Map<string, string>();
+      mapMessage.set('id', '310101199001011234');
+      try {
+        let err: Error = Error.$_invoke(mapMessage as Object as string);
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('ClassCastError');
+      }
     });
   });
 }

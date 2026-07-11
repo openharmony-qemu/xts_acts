@@ -63,10 +63,10 @@ export default function ErrorAggregateConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let inner: Error = new Error('inner');
+      let inner: Error = new Error('\u200B');
       let err: AggregateError = new AggregateError([inner]);
       expect(err.errors.length).assertEqual(1);
-      expect(err.errors[0].message).assertEqual('inner');
+      expect(err.errors[0].message).assertEqual('\u200B');
     });
 
     /**
@@ -78,12 +78,12 @@ export default function ErrorAggregateConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let first: Error = new Error('first');
-      let second: Error = new Error('second');
-      let err: AggregateError = new AggregateError([first, second], 'two');
+      let first: Error = new Error('13800138000');
+      let second: Error = new Error('\uFFFD');
+      let err: AggregateError = new AggregateError([first, second], '0x123');
       expect(err.errors.length).assertEqual(2);
-      expect(err.errors[0].message).assertEqual('first');
-      expect(err.errors[1].message).assertEqual('second');
+      expect(err.errors[0].message).assertEqual('13800138000');
+      expect(err.errors[1].message).assertEqual('\uFFFD');
     });
 
     /**
@@ -95,9 +95,9 @@ export default function ErrorAggregateConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cause: Error = new Error('root');
-      let err: AggregateError = new AggregateError([new Error('leaf')], 'msg', { cause: cause });
-      expect(err.message).assertEqual('msg');
+      let cause: Error = new Error('2026-13-01');
+      let err: AggregateError = new AggregateError([new Error('leaf\u200B')], '123.45e6', { cause: cause });
+      expect(err.message).assertEqual('123.45e6');
       expect(err.cause).assertEqual(cause);
     });
 
@@ -111,10 +111,10 @@ export default function ErrorAggregateConstructorTest(): void {
      */
     it('testErrorAggregateConstructor005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let values: Set<Error> = new Set<Error>();
-      values.add(new Error('a'));
-      values.add(new Error('b'));
-      let err: AggregateError = new AggregateError(values, 'set');
-      expect(err.message).assertEqual('set');
+      values.add(new Error('test@example.com'));
+      values.add(new Error('310101199001011234'));
+      let err: AggregateError = new AggregateError(values, '<script>alert(1)</script>');
+      expect(err.message).assertEqual('<script>alert(1)</script>');
       expect(err.errors.length).assertEqual(2);
     });
 
@@ -127,8 +127,8 @@ export default function ErrorAggregateConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let nested: AggregateError = new AggregateError([new Error('n')], 'nested');
-      let err: AggregateError = new AggregateError([nested], 'outer');
+      let nested: AggregateError = new AggregateError([new Error('25:00:00')], '0b1010');
+      let err: AggregateError = new AggregateError([nested], '622202********1234');
       expect(err.errors.length).assertEqual(1);
       expect(err.errors[0].name).assertEqual('AggregateError');
     });
@@ -136,22 +136,23 @@ export default function ErrorAggregateConstructorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_0700
      * @tc.name testErrorAggregateConstructor007
-     * @tc.desc Verify AggregateError constructor message variant alpha
+     * @tc.desc Verify AggregateError constructor stores alpha message and first error message
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e')], 'alpha');
+      let err: AggregateError = new AggregateError([new Error('alpha-inner')], 'alpha');
       expect(err.name).assertEqual('AggregateError');
       expect(err.message).assertEqual('alpha');
       expect(err.errors.length).assertEqual(1);
+      expect(err.errors[0].message).assertEqual('alpha-inner');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_0800
      * @tc.name testErrorAggregateConstructor008
-     * @tc.desc Verify AggregateError constructor message variant empty
+     * @tc.desc Verify AggregateError constructor keeps empty message with non-empty errors
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -160,13 +161,17 @@ export default function ErrorAggregateConstructorTest(): void {
       let err: AggregateError = new AggregateError([new Error('e')], '');
       expect(err.name).assertEqual('AggregateError');
       expect(err.message).assertEqual('');
+      expect(err.message.length).assertEqual(0);
       expect(err.errors.length).assertEqual(1);
+      expect(err.errors[0].name).assertEqual('Error');
+      expect(err.cause).assertUndefined();
+      expect(err.errors[0].code).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_0900
      * @tc.name testErrorAggregateConstructor009
-     * @tc.desc Verify AggregateError constructor message variant space
+     * @tc.desc Verify AggregateError constructor keeps whitespace message exactly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -176,27 +181,30 @@ export default function ErrorAggregateConstructorTest(): void {
       expect(err.name).assertEqual('AggregateError');
       expect(err.message).assertEqual(' ');
       expect(err.errors.length).assertEqual(1);
+      expect(err.errors[0].name).assertEqual('Error');
+      expect(err.errors[0].message).assertEqual('e');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_1000
      * @tc.name testErrorAggregateConstructor010
-     * @tc.desc Verify AggregateError constructor message variant symbols
+     * @tc.desc Verify AggregateError constructor stores symbol message with multiple errors
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e')], '!@#$');
+      let err: AggregateError = new AggregateError([new Error('left'), new Error('right')], '!@#$');
       expect(err.name).assertEqual('AggregateError');
       expect(err.message).assertEqual('!@#$');
-      expect(err.errors.length).assertEqual(1);
+      expect(err.errors.length).assertEqual(2);
+      expect(err.errors[1].message).assertEqual('right');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_1100
      * @tc.name testErrorAggregateConstructor011
-     * @tc.desc Verify AggregateError constructor message variant json
+     * @tc.desc Verify AggregateError constructor treats JSON-like message as plain text
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -205,43 +213,52 @@ export default function ErrorAggregateConstructorTest(): void {
       let err: AggregateError = new AggregateError([new Error('e')], '{"a":1}');
       expect(err.name).assertEqual('AggregateError');
       expect(err.message).assertEqual('{"a":1}');
+      expect(err.message.length).assertEqual(7);
       expect(err.errors.length).assertEqual(1);
+      expect(err.errors[0].name).assertEqual('Error');
+      expect(err.errors[0].message).assertEqual('e');
+      expect(err.cause).assertUndefined();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_1200
      * @tc.name testErrorAggregateConstructor012
-     * @tc.desc Verify AggregateError constructor message variant url
+     * @tc.desc Verify AggregateError constructor stores URL message with cause option
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e')], 'https://example.com');
+      let cause: Error = new Error('url-cause');
+      let err: AggregateError = new AggregateError([new Error('e')], 'https://example.com', { cause: cause });
       expect(err.name).assertEqual('AggregateError');
       expect(err.message).assertEqual('https://example.com');
       expect(err.errors.length).assertEqual(1);
+      expect(err.cause).assertEqual(cause);
+      expect(err.errors[0].message).assertEqual('e');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_1300
      * @tc.name testErrorAggregateConstructor013
-     * @tc.desc Verify AggregateError constructor message variant uuid
+     * @tc.desc Verify AggregateError constructor stores UUID message and preserves error order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e')], '123e4567-e89b-12d3-a456-426614174000');
+      let err: AggregateError = new AggregateError([new Error('first'), new TypeError('second')], '123e4567-e89b-12d3-a456-426614174000');
       expect(err.name).assertEqual('AggregateError');
       expect(err.message).assertEqual('123e4567-e89b-12d3-a456-426614174000');
-      expect(err.errors.length).assertEqual(1);
+      expect(err.errors.length).assertEqual(2);
+      expect(err.errors[0].message).assertEqual('first');
+      expect(err.errors[1].name).assertEqual('TypeError');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_1400
      * @tc.name testErrorAggregateConstructor014
-     * @tc.desc Verify AggregateError constructor message variant hex
+     * @tc.desc Verify AggregateError constructor keeps hex-looking message textual
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -250,13 +267,17 @@ export default function ErrorAggregateConstructorTest(): void {
       let err: AggregateError = new AggregateError([new Error('e')], '0xFF');
       expect(err.name).assertEqual('AggregateError');
       expect(err.message).assertEqual('0xFF');
+      expect(err.message.length).assertEqual(4);
       expect(err.errors.length).assertEqual(1);
+      expect(err.errors[0].name).assertEqual('Error');
+      expect(err.errors[0].message).assertEqual('e');
+      expect(err.errors[0].code).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_1500
      * @tc.name testErrorAggregateConstructor015
-     * @tc.desc Verify AggregateError constructor message variant binary
+     * @tc.desc Verify AggregateError constructor keeps binary-looking message textual
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -266,12 +287,14 @@ export default function ErrorAggregateConstructorTest(): void {
       expect(err.name).assertEqual('AggregateError');
       expect(err.message).assertEqual('0b1010');
       expect(err.errors.length).assertEqual(1);
+      expect(err.errors[0].name).assertEqual('Error');
+      expect(err.cause).assertUndefined();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_1600
      * @tc.name testErrorAggregateConstructor016
-     * @tc.desc Verify AggregateError constructor message variant octal
+     * @tc.desc Verify AggregateError constructor keeps octal-looking message textual
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -280,28 +303,36 @@ export default function ErrorAggregateConstructorTest(): void {
       let err: AggregateError = new AggregateError([new Error('e')], '0o77');
       expect(err.name).assertEqual('AggregateError');
       expect(err.message).assertEqual('0o77');
+      expect(err.message.length).assertEqual(4);
       expect(err.errors.length).assertEqual(1);
+      expect(err.errors[0].name).assertEqual('Error');
+      expect(err.cause).assertUndefined();
+      expect(err.errors[0].message).assertEqual('e');
+      expect(err.errors[0].code).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_1700
      * @tc.name testErrorAggregateConstructor017
-     * @tc.desc Verify AggregateError constructor message variant scientific
+     * @tc.desc Verify AggregateError constructor keeps scientific notation message textual
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e')], '1e308');
+      let cause: Error = new Error('scientific-cause');
+      let err: AggregateError = new AggregateError([new Error('e')], '1e308', { cause: cause });
       expect(err.name).assertEqual('AggregateError');
       expect(err.message).assertEqual('1e308');
       expect(err.errors.length).assertEqual(1);
+      expect(err.cause).assertEqual(cause);
+      expect(err.errors[0].name).assertEqual('Error');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_1800
      * @tc.name testErrorAggregateConstructor018
-     * @tc.desc Verify AggregateError constructor message variant nan
+     * @tc.desc Verify AggregateError constructor keeps NaN message textual
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -310,28 +341,35 @@ export default function ErrorAggregateConstructorTest(): void {
       let err: AggregateError = new AggregateError([new Error('e')], 'NaN');
       expect(err.name).assertEqual('AggregateError');
       expect(err.message).assertEqual('NaN');
+      expect(err.message.length).assertEqual(3);
       expect(err.errors.length).assertEqual(1);
+      expect(err.errors[0].name).assertEqual('Error');
+      expect(err.errors[0].message).assertEqual('e');
+      expect(err.errors[0].cause).assertUndefined();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_1900
      * @tc.name testErrorAggregateConstructor019
-     * @tc.desc Verify AggregateError constructor message variant infinity
+     * @tc.desc Verify AggregateError constructor keeps Infinity message textual
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e')], 'Infinity');
+      let first: Error = new Error('first');
+      let second: Error = new Error('second');
+      let err: AggregateError = new AggregateError([first, second], 'Infinity');
       expect(err.name).assertEqual('AggregateError');
       expect(err.message).assertEqual('Infinity');
-      expect(err.errors.length).assertEqual(1);
+      expect(err.errors.length).assertEqual(2);
+      expect(err.errors[1]).assertEqual(second);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_2000
      * @tc.name testErrorAggregateConstructor020
-     * @tc.desc Verify AggregateError constructor message variant negative zero
+     * @tc.desc Verify AggregateError constructor keeps negative zero message textual
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -340,13 +378,18 @@ export default function ErrorAggregateConstructorTest(): void {
       let err: AggregateError = new AggregateError([new Error('e')], '-0');
       expect(err.name).assertEqual('AggregateError');
       expect(err.message).assertEqual('-0');
+      expect(err.message.length).assertEqual(2);
       expect(err.errors.length).assertEqual(1);
+      expect(err.errors[0].name).assertEqual('Error');
+      expect(err.cause).assertUndefined();
+      expect(err.errors[0].message).assertEqual('e');
+      expect(err.errors[0].cause).assertUndefined();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_2100
      * @tc.name testErrorAggregateConstructor021
-     * @tc.desc Verify AggregateError constructor message variant long
+     * @tc.desc Verify AggregateError constructor preserves long message and inner error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -356,7 +399,12 @@ export default function ErrorAggregateConstructorTest(): void {
         new AggregateError([new Error('e')], 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
       expect(err.name).assertEqual('AggregateError');
       expect(err.message).assertEqual('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
+      expect(err.message.length).assertEqual(64);
       expect(err.errors.length).assertEqual(1);
+      expect(err.errors[0].name).assertEqual('Error');
+      expect(err.errors[0].message).assertEqual('e');
+      expect(err.errors[0].cause).assertUndefined();
+      expect(err.cause).assertUndefined();
     });
 
     /**
@@ -490,356 +538,378 @@ export default function ErrorAggregateConstructorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_3000
      * @tc.name testErrorAggregateConstructor030
-     * @tc.desc Verify AggregateError constructor stores 3 Error elements
+     * @tc.desc Verify AggregateError constructor preserves first middle and last error order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError = new AggregateError([new Error('e0'), new Error('e1'), new Error('e2')], 'count 3');
-      expect(err.message).assertEqual('count 3');
+      let first: Error = new Error('count3-first');
+      let middle: TypeError = new TypeError('count3-middle');
+      let last: RangeError = new RangeError('count3-last');
+      let err: AggregateError = new AggregateError([first, middle, last], 'count-3-order');
       expect(err.errors.length).assertEqual(3);
-      expect(err.errors[2].message).assertEqual('e2');
+      expect(err.errors[0]).assertEqual(first);
+      expect(err.errors[1]).assertEqual(middle);
+      expect(err.errors[2]).assertEqual(last);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_3100
      * @tc.name testErrorAggregateConstructor031
-     * @tc.desc Verify AggregateError constructor stores 4 Error elements
+     * @tc.desc Verify AggregateError constructor keeps repeated references at separate positions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError =
-        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3')], 'count 4');
-      expect(err.message).assertEqual('count 4');
+      let shared: Error = new Error('count4-shared');
+      let err: AggregateError = new AggregateError([shared, new Error('count4-a'), shared, new Error('count4-b')],
+        'count-4-repeat');
       expect(err.errors.length).assertEqual(4);
-      expect(err.errors[3].message).assertEqual('e3');
+      expect(err.errors[0]).assertEqual(shared);
+      expect(err.errors[2]).assertEqual(shared);
+      expect(err.errors[3].message).assertEqual('count4-b');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_3200
      * @tc.name testErrorAggregateConstructor032
-     * @tc.desc Verify AggregateError constructor stores 5 Error elements
+     * @tc.desc Verify AggregateError constructor stores mutable element references
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError =
-        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4')],
-          'count 5');
-      expect(err.message).assertEqual('count 5');
+      let tail: SyntaxError = new SyntaxError('count5-before');
+      let err: AggregateError = new AggregateError([new Error('count5-0'), new Error('count5-1'),
+        new Error('count5-2'), new Error('count5-3'), tail], 'count-5-reference');
+      tail.message = 'count5-after';
       expect(err.errors.length).assertEqual(5);
-      expect(err.errors[4].message).assertEqual('e4');
+      expect(err.errors[4]).assertEqual(tail);
+      expect(err.errors[4].message).assertEqual('count5-after');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_3300
      * @tc.name testErrorAggregateConstructor033
-     * @tc.desc Verify AggregateError constructor stores 6 Error elements
+     * @tc.desc Verify AggregateError constructor consumes Set elements in insertion order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError =
-        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
-          new Error('e5')], 'count 6');
-      expect(err.message).assertEqual('count 6');
+      let source: Set<Error> = new Set<Error>();
+      source.add(new Error('set0'));
+      source.add(new Error('set1'));
+      source.add(new RangeError('set2'));
+      source.add(new Error('set3'));
+      source.add(new Error('set4'));
+      source.add(new TypeError('set5'));
+      let err: AggregateError = new AggregateError(source, 'count-6-set');
       expect(err.errors.length).assertEqual(6);
-      expect(err.errors[5].message).assertEqual('e5');
+      expect(err.errors[2].name).assertEqual('RangeError');
+      expect(err.errors[5].name).assertEqual('TypeError');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_3400
      * @tc.name testErrorAggregateConstructor034
-     * @tc.desc Verify AggregateError constructor stores 7 Error elements
+     * @tc.desc Verify AggregateError constructor stores email message beside seven errors
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: AggregateError =
-        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
-          new Error('e5'), new Error('e6')], 'count 7');
-      expect(err.message).assertEqual('count 7');
+        new AggregateError([new Error('mail0'), new Error('mail1'), new Error('mail2'), new Error('mail3'),
+          new Error('mail4'), new Error('mail5'), new URIError('mail6')], 'tester@example.com');
+      expect(err.message).assertEqual('tester@example.com');
       expect(err.errors.length).assertEqual(7);
-      expect(err.errors[6].message).assertEqual('e6');
+      expect(err.errors[6].name).assertEqual('URIError');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_3500
      * @tc.name testErrorAggregateConstructor035
-     * @tc.desc Verify AggregateError constructor stores 8 Error elements
+     * @tc.desc Verify AggregateError constructor preserves subtype elements at both boundaries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: AggregateError =
-        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
-          new Error('e5'), new Error('e6'), new Error('e7')], 'count 8');
-      expect(err.message).assertEqual('count 8');
+        new AggregateError([new EvalError('eval-head'), new Error('mix1'), new Error('mix2'), new Error('mix3'),
+          new Error('mix4'), new Error('mix5'), new Error('mix6'), new ReferenceError('ref-tail')], 'count-8-mixed');
       expect(err.errors.length).assertEqual(8);
-      expect(err.errors[7].message).assertEqual('e7');
+      expect(err.errors[0].name).assertEqual('EvalError');
+      expect(err.errors[7].name).assertEqual('ReferenceError');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_3600
      * @tc.name testErrorAggregateConstructor036
-     * @tc.desc Verify AggregateError constructor stores 9 Error elements
+     * @tc.desc Verify AggregateError constructor snapshots a nine element source array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError =
-        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
-          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8')], 'count 9');
-      expect(err.message).assertEqual('count 9');
+      let source: Error[] = [new Error('snap0'), new Error('snap1'), new Error('snap2'), new Error('snap3'),
+        new Error('snap4'), new Error('snap5'), new Error('snap6'), new Error('snap7'), new Error('snap8')];
+      let err: AggregateError = new AggregateError(source, 'count-9-snapshot');
+      source[8] = new RangeError('snap-replaced');
       expect(err.errors.length).assertEqual(9);
-      expect(err.errors[8].message).assertEqual('e8');
+      expect(err.errors[8].message).assertEqual('snap8');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_3700
      * @tc.name testErrorAggregateConstructor037
-     * @tc.desc Verify AggregateError constructor stores 10 Error elements
+     * @tc.desc Verify AggregateError constructor accepts generated ten element array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError =
-        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
-          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9')], 'count 10');
-      expect(err.message).assertEqual('count 10');
+      let source: Error[] = [];
+      for (let i: int = 0; i < 10; i++) {
+        source.push(new Error('generated-' + i.toString()));
+      }
+      let err: AggregateError = new AggregateError(source, 'count-10-generated');
       expect(err.errors.length).assertEqual(10);
-      expect(err.errors[9].message).assertEqual('e9');
+      expect(err.errors[0].message).assertEqual('generated-0');
+      expect(err.errors[9].message).assertEqual('generated-9');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_3800
      * @tc.name testErrorAggregateConstructor038
-     * @tc.desc Verify AggregateError constructor stores 11 Error elements
+     * @tc.desc Verify AggregateError constructor consumes eleven Map values in order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError =
-        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
-          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10')],
-          'count 11');
-      expect(err.message).assertEqual('count 11');
+      let source: Map<string, Error> = new Map<string, Error>();
+      for (let i: int = 0; i < 11; i++) {
+        source.set('k' + i.toString(), new Error('map-' + i.toString()));
+      }
+      let err: AggregateError = new AggregateError(source.values(), 'count-11-map');
       expect(err.errors.length).assertEqual(11);
-      expect(err.errors[10].message).assertEqual('e10');
+      expect(err.errors[0].message).assertEqual('map-0');
+      expect(err.errors[10].message).assertEqual('map-10');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_3900
      * @tc.name testErrorAggregateConstructor039
-     * @tc.desc Verify AggregateError constructor stores 12 Error elements
+     * @tc.desc Verify AggregateError constructor stores nested aggregate among twelve errors
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let nested: AggregateError = new AggregateError([new Error('nested-leaf')], 'nested-count');
       let err: AggregateError =
-        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
-          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'),
-          new Error('e11')], 'count 12');
-      expect(err.message).assertEqual('count 12');
+        new AggregateError([new Error('n0'), new Error('n1'), new Error('n2'), new Error('n3'), new Error('n4'),
+          nested, new Error('n6'), new Error('n7'), new Error('n8'), new Error('n9'), new Error('n10'),
+          new Error('n11')], 'count-12-nested');
       expect(err.errors.length).assertEqual(12);
-      expect(err.errors[11].message).assertEqual('e11');
+      expect(err.errors[5]).assertEqual(nested);
+      expect((err.errors[5] as AggregateError).errors[0].message).assertEqual('nested-leaf');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_4000
      * @tc.name testErrorAggregateConstructor040
-     * @tc.desc Verify AggregateError constructor stores 13 Error elements
+     * @tc.desc Verify AggregateError constructor preserves cause with thirteen errors
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cause: RangeError = new RangeError('count13-cause');
       let err: AggregateError =
-        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
-          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'),
-          new Error('e11'), new Error('e12')], 'count 13');
-      expect(err.message).assertEqual('count 13');
+        new AggregateError([new Error('c0'), new Error('c1'), new Error('c2'), new Error('c3'), new Error('c4'),
+          new Error('c5'), new Error('c6'), new Error('c7'), new Error('c8'), new Error('c9'), new Error('c10'),
+          new Error('c11'), new Error('c12')], 'count-13-cause', { cause: cause });
       expect(err.errors.length).assertEqual(13);
-      expect(err.errors[12].message).assertEqual('e12');
+      expect(err.cause).assertEqual(cause);
+      expect(err.errors[12].message).assertEqual('c12');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_4100
      * @tc.name testErrorAggregateConstructor041
-     * @tc.desc Verify AggregateError constructor stores 14 Error elements
+     * @tc.desc Verify AggregateError constructor stores ISO date message with fourteen errors
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: AggregateError =
-        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
-          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'),
-          new Error('e11'), new Error('e12'), new Error('e13')], 'count 14');
-      expect(err.message).assertEqual('count 14');
+        new AggregateError([new Error('d0'), new Error('d1'), new Error('d2'), new Error('d3'), new Error('d4'),
+          new Error('d5'), new Error('d6'), new Error('d7'), new Error('d8'), new Error('d9'), new Error('d10'),
+          new Error('d11'), new Error('d12'), new SyntaxError('d13')], '2026-07-11T00:00:00Z');
+      expect(err.message).assertEqual('2026-07-11T00:00:00Z');
       expect(err.errors.length).assertEqual(14);
-      expect(err.errors[13].message).assertEqual('e13');
+      expect(err.errors[13].name).assertEqual('SyntaxError');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_4200
      * @tc.name testErrorAggregateConstructor042
-     * @tc.desc Verify AggregateError constructor stores 15 Error elements
+     * @tc.desc Verify AggregateError constructor preserves reversed fifteen element order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError =
-        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
-          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'),
-          new Error('e11'), new Error('e12'), new Error('e13'), new Error('e14')], 'count 15');
-      expect(err.message).assertEqual('count 15');
+      let source: Error[] = [];
+      for (let i: int = 14; i >= 0; i--) {
+        source.push(new Error('reverse-' + i.toString()));
+      }
+      let err: AggregateError = new AggregateError(source, 'count-15-reverse');
       expect(err.errors.length).assertEqual(15);
-      expect(err.errors[14].message).assertEqual('e14');
+      expect(err.errors[0].message).assertEqual('reverse-14');
+      expect(err.errors[14].message).assertEqual('reverse-0');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_4300
      * @tc.name testErrorAggregateConstructor043
-     * @tc.desc Verify AggregateError constructor stores 16 Error elements
+     * @tc.desc Verify AggregateError constructor keeps sixteenth boundary element readable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: AggregateError =
-        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
-          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'),
-          new Error('e11'), new Error('e12'), new Error('e13'), new Error('e14'), new Error('e15')], 'count 16');
-      expect(err.message).assertEqual('count 16');
+        new AggregateError([new Error('b0'), new Error('b1'), new Error('b2'), new Error('b3'), new Error('b4'),
+          new Error('b5'), new Error('b6'), new Error('b7'), new Error('b8'), new Error('b9'), new Error('b10'),
+          new Error('b11'), new Error('b12'), new Error('b13'), new Error('b14'), new URIError('b15')],
+          'count-16-boundary');
       expect(err.errors.length).assertEqual(16);
-      expect(err.errors[15].message).assertEqual('e15');
+      expect(err.errors[15].message).assertEqual('b15');
+      expect(err.errors[15].name).assertEqual('URIError');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_4400
      * @tc.name testErrorAggregateConstructor044
-     * @tc.desc Verify AggregateError constructor stores 17 Error elements
+     * @tc.desc Verify AggregateError constructor preserves phone text message with seventeen errors
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: AggregateError =
-        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
-          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'),
-          new Error('e11'), new Error('e12'), new Error('e13'), new Error('e14'), new Error('e15'), new Error('e16')],
-          'count 17');
-      expect(err.message).assertEqual('count 17');
+        new AggregateError([new Error('p0'), new Error('p1'), new Error('p2'), new Error('p3'), new Error('p4'),
+          new Error('p5'), new Error('p6'), new Error('p7'), new Error('p8'), new Error('p9'), new Error('p10'),
+          new Error('p11'), new Error('p12'), new Error('p13'), new Error('p14'), new Error('p15'), new Error('p16')],
+          '+86-138-0013-8000');
+      expect(err.message).assertEqual('+86-138-0013-8000');
       expect(err.errors.length).assertEqual(17);
-      expect(err.errors[16].message).assertEqual('e16');
+      expect(err.errors[16].message).assertEqual('p16');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_4500
      * @tc.name testErrorAggregateConstructor045
-     * @tc.desc Verify AggregateError constructor stores 18 Error elements
+     * @tc.desc Verify AggregateError constructor stores UUID message with eighteen errors
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: AggregateError =
-        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
-          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'),
-          new Error('e11'), new Error('e12'), new Error('e13'), new Error('e14'), new Error('e15'), new Error('e16'),
-          new Error('e17')], 'count 18');
-      expect(err.message).assertEqual('count 18');
+        new AggregateError([new Error('u0'), new Error('u1'), new Error('u2'), new Error('u3'), new Error('u4'),
+          new Error('u5'), new Error('u6'), new Error('u7'), new Error('u8'), new Error('u9'), new Error('u10'),
+          new Error('u11'), new Error('u12'), new Error('u13'), new Error('u14'), new Error('u15'), new Error('u16'),
+          new Error('u17')], '123e4567-e89b-12d3-a456-426614174000');
+      expect(err.message).assertEqual('123e4567-e89b-12d3-a456-426614174000');
       expect(err.errors.length).assertEqual(18);
-      expect(err.errors[17].message).assertEqual('e17');
+      expect(err.errors[17].message).assertEqual('u17');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_4600
      * @tc.name testErrorAggregateConstructor046
-     * @tc.desc Verify AggregateError constructor stores 19 Error elements
+     * @tc.desc Verify AggregateError constructor keeps mixed subtype tail in nineteen errors
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: AggregateError =
-        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
-          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'),
-          new Error('e11'), new Error('e12'), new Error('e13'), new Error('e14'), new Error('e15'), new Error('e16'),
-          new Error('e17'), new Error('e18')], 'count 19');
-      expect(err.message).assertEqual('count 19');
+        new AggregateError([new Error('m0'), new Error('m1'), new Error('m2'), new Error('m3'), new Error('m4'),
+          new Error('m5'), new Error('m6'), new Error('m7'), new Error('m8'), new Error('m9'), new Error('m10'),
+          new Error('m11'), new Error('m12'), new Error('m13'), new Error('m14'), new Error('m15'), new Error('m16'),
+          new FormatError('m17'), new TypeError('m18')], 'count-19-mixed-tail');
       expect(err.errors.length).assertEqual(19);
-      expect(err.errors[18].message).assertEqual('e18');
+      expect(err.errors[17].name).assertEqual('FormatError');
+      expect(err.errors[18].name).assertEqual('TypeError');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_4700
      * @tc.name testErrorAggregateConstructor047
-     * @tc.desc Verify AggregateError constructor stores 20 Error elements
+     * @tc.desc Verify AggregateError constructor preserves hex text message with twenty errors
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: AggregateError =
-        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
-          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'),
-          new Error('e11'), new Error('e12'), new Error('e13'), new Error('e14'), new Error('e15'), new Error('e16'),
-          new Error('e17'), new Error('e18'), new Error('e19')], 'count 20');
-      expect(err.message).assertEqual('count 20');
+        new AggregateError([new Error('h0'), new Error('h1'), new Error('h2'), new Error('h3'), new Error('h4'),
+          new Error('h5'), new Error('h6'), new Error('h7'), new Error('h8'), new Error('h9'), new Error('h10'),
+          new Error('h11'), new Error('h12'), new Error('h13'), new Error('h14'), new Error('h15'), new Error('h16'),
+          new Error('h17'), new Error('h18'), new Error('h19')], '0xDEADBEEF');
+      expect(err.message).assertEqual('0xDEADBEEF');
       expect(err.errors.length).assertEqual(20);
-      expect(err.errors[19].message).assertEqual('e19');
+      expect(err.errors[19].message).assertEqual('h19');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_4800
      * @tc.name testErrorAggregateConstructor048
-     * @tc.desc Verify AggregateError constructor stores 21 Error elements
+     * @tc.desc Verify AggregateError constructor snapshots twenty one errors before source pop
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: AggregateError =
-        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
-          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'),
-          new Error('e11'), new Error('e12'), new Error('e13'), new Error('e14'), new Error('e15'), new Error('e16'),
-          new Error('e17'), new Error('e18'), new Error('e19'), new Error('e20')], 'count 21');
-      expect(err.message).assertEqual('count 21');
+      let source: Error[] = [];
+      for (let i: int = 0; i < 21; i++) {
+        source.push(new Error('pop-' + i.toString()));
+      }
+      let err: AggregateError = new AggregateError(source, 'count-21-pop');
+      source.pop();
       expect(err.errors.length).assertEqual(21);
-      expect(err.errors[20].message).assertEqual('e20');
+      expect(source.length).assertEqual(20);
+      expect(err.errors[20].message).assertEqual('pop-20');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_AGGREGATE_CONSTRUCTOR_4900
      * @tc.name testErrorAggregateConstructor049
-     * @tc.desc Verify AggregateError constructor stores 22 Error elements
+     * @tc.desc Verify AggregateError constructor preserves twenty second element identity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorAggregateConstructor049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let tail: RangeError = new RangeError('identity-tail');
       let err: AggregateError =
-        new AggregateError([new Error('e0'), new Error('e1'), new Error('e2'), new Error('e3'), new Error('e4'),
-          new Error('e5'), new Error('e6'), new Error('e7'), new Error('e8'), new Error('e9'), new Error('e10'),
-          new Error('e11'), new Error('e12'), new Error('e13'), new Error('e14'), new Error('e15'), new Error('e16'),
-          new Error('e17'), new Error('e18'), new Error('e19'), new Error('e20'), new Error('e21')], 'count 22');
-      expect(err.message).assertEqual('count 22');
+        new AggregateError([new Error('id0'), new Error('id1'), new Error('id2'), new Error('id3'), new Error('id4'),
+          new Error('id5'), new Error('id6'), new Error('id7'), new Error('id8'), new Error('id9'), new Error('id10'),
+          new Error('id11'), new Error('id12'), new Error('id13'), new Error('id14'), new Error('id15'),
+          new Error('id16'), new Error('id17'), new Error('id18'), new Error('id19'), new Error('id20'), tail],
+          'count-22-identity');
       expect(err.errors.length).assertEqual(22);
-      expect(err.errors[21].message).assertEqual('e21');
+      expect(err.errors[21]).assertEqual(tail);
+      expect(err.errors[21].name).assertEqual('RangeError');
     });
 
     /**
@@ -880,7 +950,7 @@ export default function ErrorAggregateConstructorTest(): void {
      */
     it('testErrorAggregateConstructor052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: AggregateError = new AggregateError([new Error('e')], 'boolean cause', { cause: true });
-      expect(err.cause as boolean).assertEqual(true);
+      expect(err.cause as boolean).assertTrue();
       expect(err.message).assertEqual('boolean cause');
     });
 
@@ -1278,7 +1348,6 @@ export default function ErrorAggregateConstructorTest(): void {
       let message: string = 'prefix-' + '\u2603'.repeat(512) + '-suffix';
       let err: AggregateError = new AggregateError([new SyntaxError('unicode-leaf')], message);
       expect(err.message).assertEqual(message);
-      expect(err.message.indexOf('prefix-')).assertEqual(0);
       expect(err.errors[0].name).assertEqual('SyntaxError');
     });
 

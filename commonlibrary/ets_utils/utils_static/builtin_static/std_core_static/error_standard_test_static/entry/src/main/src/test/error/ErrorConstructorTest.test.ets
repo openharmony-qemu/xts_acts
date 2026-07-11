@@ -47,7 +47,7 @@ export default function ErrorConstructorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0010
      * @tc.name testErrorConstructor001
-     * @tc.desc Verify Error(0) stores code and default name Error
+     * @tc.desc Verify Error(0) stores code with default name and empty message
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -56,12 +56,15 @@ export default function ErrorConstructorTest(): void {
       let err: Error = new Error(0);
       expect(err.code).assertEqual(0);
       expect(err.name).assertEqual("Error");
+      expect(err.message).assertEqual("");
+      expect(err.cause).assertUndefined();
+      expect(err.message.length).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0020
      * @tc.name testErrorConstructor002
-     * @tc.desc Verify Error(1) stores code and default name Error
+     * @tc.desc Verify Error(1) stores minimum positive code and no cause
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -70,12 +73,15 @@ export default function ErrorConstructorTest(): void {
       let err: Error = new Error(1);
       expect(err.code).assertEqual(1);
       expect(err.name).assertEqual("Error");
+      expect(err.cause).assertUndefined();
+      expect(err.message).assertEqual("");
+      expect(err.message.length).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0030
      * @tc.name testErrorConstructor003
-     * @tc.desc Verify Error(1001) stores code and default name Error
+     * @tc.desc Verify Error(1001) stores business code with default message
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -84,12 +90,15 @@ export default function ErrorConstructorTest(): void {
       let err: Error = new Error(1001);
       expect(err.code).assertEqual(1001);
       expect(err.name).assertEqual("Error");
+      expect(err.message).assertEqual("");
+      expect(err.cause).assertUndefined();
+      expect(err.code - 1000).assertEqual(1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0040
      * @tc.name testErrorConstructor004
-     * @tc.desc Verify Error(1000000) stores code and default name Error
+     * @tc.desc Verify Error(1000000) stores large code with no cause
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -98,12 +107,15 @@ export default function ErrorConstructorTest(): void {
       let err: Error = new Error(1000000);
       expect(err.code).assertEqual(1000000);
       expect(err.name).assertEqual("Error");
+      expect(err.cause).assertUndefined();
+      expect(err.message).assertEqual("");
+      expect(err.code + 1).assertEqual(1000001);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0050
      * @tc.name testErrorConstructor005
-     * @tc.desc Verify Error(2147483647) stores code and default name Error
+     * @tc.desc Verify Error(MAX_INT) stores code with empty message
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -112,6 +124,9 @@ export default function ErrorConstructorTest(): void {
       let err: Error = new Error(2147483647);
       expect(err.code).assertEqual(2147483647);
       expect(err.name).assertEqual("Error");
+      expect(err.message).assertEqual("");
+      expect(err.cause).assertUndefined();
+      expect(err.name.length).assertEqual(5);
     });
 
     /**
@@ -131,7 +146,7 @@ export default function ErrorConstructorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0070
      * @tc.name testErrorConstructor007
-     * @tc.desc Verify Error(255) stores code and default name Error
+     * @tc.desc Verify Error(255) stores byte-like code and no cause
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -140,12 +155,15 @@ export default function ErrorConstructorTest(): void {
       let err: Error = new Error(255);
       expect(err.code).assertEqual(255);
       expect(err.name).assertEqual("Error");
+      expect(err.cause).assertUndefined();
+      expect(err.message).assertEqual("");
+      expect(err.code - 55).assertEqual(200);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0080
      * @tc.name testErrorConstructor008
-     * @tc.desc Verify Error(10) stores code and default name Error
+     * @tc.desc Verify Error(10) stores decimal static code with empty message
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -154,12 +172,15 @@ export default function ErrorConstructorTest(): void {
       let err: Error = new Error(10);
       expect(err.code).assertEqual(10);
       expect(err.name).assertEqual("Error");
+      expect(err.message).assertEqual("");
+      expect(err.cause).assertUndefined();
+      expect(err.code + 5).assertEqual(15);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0090
      * @tc.name testErrorConstructor009
-     * @tc.desc Verify Error(1024) stores code and default name Error
+     * @tc.desc Verify Error(1024) stores power-of-two code and no cause
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -168,6 +189,9 @@ export default function ErrorConstructorTest(): void {
       let err: Error = new Error(1024);
       expect(err.code).assertEqual(1024);
       expect(err.name).assertEqual("Error");
+      expect(err.cause).assertUndefined();
+      expect(err.message).assertEqual("");
+      expect(err.name.length).assertEqual(5);
     });
 
     /**
@@ -182,6 +206,7 @@ export default function ErrorConstructorTest(): void {
       let err: Error = new Error(42, "error msg");
       expect(err.code).assertEqual(42);
       expect(err.message).assertEqual("error msg");
+      expect(err.name).assertEqual("Error");
     });
 
     /**
@@ -196,6 +221,7 @@ export default function ErrorConstructorTest(): void {
       let err: Error = new Error(1001, "");
       expect(err.code).assertEqual(1001);
       expect(err.message).assertEqual("");
+      expect(err.cause).assertUndefined();
     });
 
     /**
@@ -210,6 +236,7 @@ export default function ErrorConstructorTest(): void {
       let err: Error = new Error(0, "zero");
       expect(err.code).assertEqual(0);
       expect(err.message).assertEqual("zero");
+      expect(err.name.length).assertEqual(5);
     });
 
     /**
@@ -230,7 +257,7 @@ export default function ErrorConstructorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0140
      * @tc.name testErrorConstructor014
-     * @tc.desc Verify Error("",0)
+     * @tc.desc Verify Error empty name and zero code initializes empty message
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -239,12 +266,15 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error("", 0);
       expect(e.name).assertEqual("");
       expect(e.code).assertEqual(0);
+      expect(e.message).assertEqual("");
+      expect(e.cause).assertUndefined();
+      expect(e.name.length + e.message.length).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0150
      * @tc.name testErrorConstructor015
-     * @tc.desc Verify Error("   ",0)
+     * @tc.desc Verify Error whitespace name and zero code preserves name exactly
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -253,12 +283,14 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error("   ", 0);
       expect(e.name).assertEqual("   ");
       expect(e.code).assertEqual(0);
+      expect(e.message).assertEqual("");
+      expect(e.name.length).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0160
      * @tc.name testErrorConstructor016
-     * @tc.desc Verify Error("@#$%",0)
+     * @tc.desc Verify Error symbol name and zero code initializes default message
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -267,6 +299,9 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error("@#$%", 0);
       expect(e.name).assertEqual("@#$%");
       expect(e.code).assertEqual(0);
+      expect(e.message).assertEqual("");
+      expect(e.cause).assertUndefined();
+      expect(e.name.indexOf("#")).assertEqual(1);
     });
 
     /**
@@ -281,6 +316,7 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error("名称", 0);
       expect(e.name).assertEqual("名称");
       expect(e.code).assertEqual(0);
+      expect(e.message).assertEqual("");
     });
 
     /**
@@ -296,12 +332,13 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error(n, 0);
       expect(e.name.length).assertEqual(100);
       expect(e.code).assertEqual(0);
+      expect(e.message).assertEqual("");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0190
      * @tc.name testErrorConstructor019
-     * @tc.desc Verify Error("X",0)
+     * @tc.desc Verify Error one-character name and zero code initializes empty message
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -310,12 +347,15 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error("X", 0);
       expect(e.name).assertEqual("X");
       expect(e.code).assertEqual(0);
+      expect(e.message).assertEqual("");
+      expect(e.name.length).assertEqual(1);
+      expect(e.cause).assertUndefined();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0200
      * @tc.name testErrorConstructor020
-     * @tc.desc Verify Error("123",0)
+     * @tc.desc Verify Error numeric-looking name and zero code is not parsed
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -324,12 +364,15 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error("123", 0);
       expect(e.name).assertEqual("123");
       expect(e.code).assertEqual(0);
+      expect(e.message).assertEqual("");
+      expect(e.name.length).assertEqual(3);
+      expect(e.name.indexOf("2")).assertEqual(1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0210
      * @tc.name testErrorConstructor021
-     * @tc.desc Verify Error("MyError",0)
+     * @tc.desc Verify Error normal name and zero code initializes no cause
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -338,12 +381,15 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error("MyError", 0);
       expect(e.name).assertEqual("MyError");
       expect(e.code).assertEqual(0);
+      expect(e.cause).assertUndefined();
+      expect(e.message).assertEqual("");
+      expect(e.name.length).assertEqual(7);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0220
      * @tc.name testErrorConstructor022
-     * @tc.desc Verify Error("",-1)
+     * @tc.desc Verify Error empty name and negative code initializes empty message
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -352,12 +398,14 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error("", -1);
       expect(e.name).assertEqual("");
       expect(e.code).assertEqual(-1);
+      expect(e.message).assertEqual("");
+      expect(e.name.length).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0230
      * @tc.name testErrorConstructor023
-     * @tc.desc Verify Error("@#$",-1)
+     * @tc.desc Verify Error symbol name and negative code preserves both fields
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -366,6 +414,8 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error("@#$", -1);
       expect(e.name).assertEqual("@#$");
       expect(e.code).assertEqual(-1);
+      expect(e.message).assertEqual("");
+      expect(e.name.indexOf("$")).assertEqual(2);
     });
 
     /**
@@ -385,7 +435,7 @@ export default function ErrorConstructorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0250
      * @tc.name testErrorConstructor025
-     * @tc.desc Verify Error("MyError",-1)
+     * @tc.desc Verify Error normal name and negative code initializes no cause
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -394,12 +444,13 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error("MyError", -1);
       expect(e.name).assertEqual("MyError");
       expect(e.code).assertEqual(-1);
+      expect(e.cause).assertUndefined();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0260
      * @tc.name testErrorConstructor026
-     * @tc.desc Verify Error("",1001)
+     * @tc.desc Verify Error empty name and business code initializes empty message
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -408,12 +459,14 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error("", 1001);
       expect(e.name).assertEqual("");
       expect(e.code).assertEqual(1001);
+      expect(e.message).assertEqual("");
+      expect(e.code - 1000).assertEqual(1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0270
      * @tc.name testErrorConstructor027
-     * @tc.desc Verify Error("@#$",1001)
+     * @tc.desc Verify Error symbol name and business code preserves both fields
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -422,6 +475,9 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error("@#$", 1001);
       expect(e.name).assertEqual("@#$");
       expect(e.code).assertEqual(1001);
+      expect(e.message).assertEqual("");
+      expect(e.name.length).assertEqual(3);
+      expect(e.code - 1000).assertEqual(1);
     });
 
     /**
@@ -436,6 +492,7 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error("名称", 1001);
       expect(e.name).assertEqual("名称");
       expect(e.code).assertEqual(1001);
+      expect(e.cause).assertUndefined();
     });
 
     /**
@@ -451,12 +508,13 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error(n, 1001);
       expect(e.name.length).assertEqual(100);
       expect(e.code).assertEqual(1001);
+      expect(e.cause).assertUndefined();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0300
      * @tc.name testErrorConstructor030
-     * @tc.desc Verify Error("X",1001)
+     * @tc.desc Verify Error one-character name and business code initializes empty message
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -465,12 +523,15 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error("X", 1001);
       expect(e.name).assertEqual("X");
       expect(e.code).assertEqual(1001);
+      expect(e.message).assertEqual("");
+      expect(e.cause).assertUndefined();
+      expect(e.name.length).assertEqual(1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0310
      * @tc.name testErrorConstructor031
-     * @tc.desc Verify Error("123",1001)
+     * @tc.desc Verify Error numeric-looking name and business code is not parsed
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -479,12 +540,16 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error("123", 1001);
       expect(e.name).assertEqual("123");
       expect(e.code).assertEqual(1001);
+      expect(e.message).assertEqual("");
+      expect(e.cause).assertUndefined();
+      expect(e.name.indexOf("3")).assertEqual(2);
+      expect(e.code + e.message.length).assertEqual(1001);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0320
      * @tc.name testErrorConstructor032
-     * @tc.desc Verify Error("MyError",1001)
+     * @tc.desc Verify Error normal name and business code initializes no cause
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -493,6 +558,9 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error("MyError", 1001);
       expect(e.name).assertEqual("MyError");
       expect(e.code).assertEqual(1001);
+      expect(e.cause).assertUndefined();
+      expect(e.message).assertEqual("");
+      expect(e.code - 1).assertEqual(1000);
     });
 
     /**
@@ -501,12 +569,14 @@ export default function ErrorConstructorTest(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
-     * @tc.desc Verify new Error(empty name, message) stores empty name and message
+     * @tc.desc Verify new Error(empty name, message) stores empty name message and code
      */
     it('testErrorConstructor033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("", "msg");
       expect(e.name).assertEqual("");
       expect(e.message).assertEqual("msg");
+      expect(e.code).assertEqual(0);
+      expect(e.cause).assertUndefined();
     });
 
     /**
@@ -522,6 +592,7 @@ export default function ErrorConstructorTest(): void {
       expect(e.name).assertEqual("@#$");
       expect(e.message).assertEqual("err");
       expect(e.code).assertEqual(0);
+      expect(e.name.length).assertEqual(3);
     });
 
     /**
@@ -544,13 +615,14 @@ export default function ErrorConstructorTest(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
-     * @tc.desc Verify new Error(long name, message) preserves long name length
+     * @tc.desc Verify new Error(long name, message) preserves long name message and code
      */
     it('testErrorConstructor036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let n: string = "N".repeat(100);
       let e: Error = new Error(n, ".");
       expect(e.name.length).assertEqual(100);
       expect(e.message).assertEqual(".");
+      expect(e.code).assertEqual(0);
     });
 
     /**
@@ -566,6 +638,8 @@ export default function ErrorConstructorTest(): void {
       expect(e.name).assertEqual("MyName");
       expect(e.message).assertEqual("");
       expect(e.code).assertEqual(0);
+      expect(e.cause).assertUndefined();
+      expect(e.message.length).assertEqual(0);
     });
 
     /**
@@ -574,12 +648,13 @@ export default function ErrorConstructorTest(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
-     * @tc.desc Verify new Error(name, numeric string message) preserves message text
+     * @tc.desc Verify new Error(name, numeric string message) does not parse message
      */
     it('testErrorConstructor038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("Err", "42");
       expect(e.name).assertEqual("Err");
       expect(e.message).assertEqual("42");
+      expect(e.code).assertEqual(0);
     });
 
     /**
@@ -588,12 +663,14 @@ export default function ErrorConstructorTest(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
-     * @tc.desc Verify new Error(name, whitespace message) preserves whitespace message
+     * @tc.desc Verify new Error(name, whitespace message) preserves length and code
      */
     it('testErrorConstructor039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("B", "   ");
       expect(e.name).assertEqual("B");
       expect(e.message).assertEqual("   ");
+      expect(e.message.length).assertEqual(3);
+      expect(e.code).assertEqual(0);
     });
 
     /**
@@ -602,12 +679,14 @@ export default function ErrorConstructorTest(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
-     * @tc.desc Verify new Error(name, newline message) preserves newline message
+     * @tc.desc Verify new Error(name, newline message) preserves line break length
      */
     it('testErrorConstructor040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("NL", "a\nb");
       expect(e.name).assertEqual("NL");
       expect(e.message).assertEqual("a\nb");
+      expect(e.message.length).assertEqual(3);
+      expect(e.cause).assertUndefined();
     });
 
     /**
@@ -622,6 +701,7 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error("Tab", "\t");
       expect(e.name).assertEqual("Tab");
       expect(e.message).assertEqual("\t");
+      expect(e.message.length).assertEqual(1);
     });
 
     /**
@@ -728,6 +808,7 @@ export default function ErrorConstructorTest(): void {
       expect(err.name).assertEqual("Custom");
       expect(err.code).assertEqual(0);
       expect(err.message).assertEqual("");
+      expect(err.cause).assertUndefined();
     });
 
     /**
@@ -758,6 +839,7 @@ export default function ErrorConstructorTest(): void {
       expect(err.name).assertEqual("");
       expect(err.code).assertEqual(0);
       expect(err.message).assertEqual("");
+      expect(err.name.length).assertEqual(0);
     });
 
     /**
@@ -773,6 +855,7 @@ export default function ErrorConstructorTest(): void {
       expect(err.name).assertEqual("CustomName");
       expect(err.code).assertEqual(500);
       expect(err.message).assertEqual("");
+      expect(err.code - 400).assertEqual(100);
     });
 
     /**
@@ -841,14 +924,14 @@ export default function ErrorConstructorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0560
      * @tc.name testErrorConstructor056
-     * @tc.desc Verify new Error('msg') sets message and defaults code=0, name=Error
+     * @tc.desc Verify new Error(email string) sets message and defaults code=0, name=Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorConstructor056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: Error = new Error("test message");
-      expect(err.message).assertEqual("test message");
+      let err: Error = new Error("test@example.com");
+      expect(err.message).assertEqual("test@example.com");
       expect(err.code).assertEqual(0);
       expect(err.name).assertEqual("Error");
     });
@@ -856,15 +939,15 @@ export default function ErrorConstructorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0570
      * @tc.name testErrorConstructor057
-     * @tc.desc Verify new Error('msg', {cause: c}) sets message and cause, code=0
+     * @tc.desc Verify new Error(URL string, {cause: c}) sets message and cause, code=0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorConstructor057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cause: Error = new Error("root");
-      let err: Error = new Error("wrapped", { cause: cause });
-      expect(err.message).assertEqual("wrapped");
+      let err: Error = new Error("https://example.com/errors/constructor", { cause: cause });
+      expect(err.message).assertEqual("https://example.com/errors/constructor");
       expect(err.cause).assertEqual(cause);
       expect(err.code).assertEqual(0);
     });
@@ -872,14 +955,14 @@ export default function ErrorConstructorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0580
      * @tc.name testErrorConstructor058
-     * @tc.desc Verify new Error('msg', {}) sets message only, cause undefined
+     * @tc.desc Verify new Error(zero-width string, {}) sets message only, cause undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorConstructor058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: Error = new Error("msg", {});
-      expect(err.message).assertEqual("msg");
+      let err: Error = new Error("\u200B", {});
+      expect(err.message).assertEqual("\u200B");
       expect(err.cause).assertUndefined();
       expect(err.code).assertEqual(0);
     });
@@ -887,16 +970,16 @@ export default function ErrorConstructorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0590
      * @tc.name testErrorConstructor059
-     * @tc.desc Verify new Error(400, 'msg', {cause: c}) dispatches to overload with code
+     * @tc.desc Verify new Error(400, date string, {cause: c}) dispatches to overload with code
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorConstructor059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cause: Error = new Error("cause");
-      let err: Error = new Error(400, "msg", { cause: cause });
+      let err: Error = new Error(400, "2026-02-30", { cause: cause });
       expect(err.code).assertEqual(400);
-      expect(err.message).assertEqual("msg");
+      expect(err.message).assertEqual("2026-02-30");
       expect(err.cause).assertEqual(cause);
     });
 
@@ -917,15 +1000,15 @@ export default function ErrorConstructorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0610
      * @tc.name testErrorConstructor061
-     * @tc.desc Verify new Error(name, message) stores custom name and message
+     * @tc.desc Verify new Error(zero-width name, Korean message) stores custom name and message
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorConstructor061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err: Error = new Error("SName", "SMsg");
-      expect(err.name).assertEqual("SName");
-      expect(err.message).assertEqual("SMsg");
+      let err: Error = new Error("Err\u200BName", "테스트");
+      expect(err.name).assertEqual("Err\u200BName");
+      expect(err.message).assertEqual("테스트");
       expect(err.code).assertEqual(0);
     });
 
@@ -968,7 +1051,7 @@ export default function ErrorConstructorTest(): void {
     it('testErrorConstructor064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error(100, "msg", { cause: true });
       expect(e.code).assertEqual(100);
-      expect(e.cause).assertEqual(true);
+      expect(e.cause).assertTrue();
     });
 
     /**
@@ -1037,7 +1120,7 @@ export default function ErrorConstructorTest(): void {
      */
     it('testErrorConstructor069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("msg", { cause: true });
-      expect(e.cause).assertEqual(true);
+      expect(e.cause).assertTrue();
     });
 
     /**
@@ -1110,7 +1193,7 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error("Cust", 99, "info", { cause: true });
       expect(e.name).assertEqual("Cust");
       expect(e.code).assertEqual(99);
-      expect(e.cause).assertEqual(true);
+      expect(e.cause).assertTrue();
     });
 
     /**
@@ -1187,7 +1270,7 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error("Custom", "info", { cause: true });
       expect(e.name).assertEqual("Custom");
       expect(e.message).assertEqual("info");
-      expect(e.cause).assertEqual(true);
+      expect(e.cause).assertTrue();
     });
 
     /**
@@ -1257,7 +1340,7 @@ export default function ErrorConstructorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0840
      * @tc.name testErrorConstructor084
-     * @tc.desc Verify UUID format string as Error message is stored correctly
+     * @tc.desc Verify UUID single string dispatches to message overload with default fields
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1267,12 +1350,14 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error(uuid);
       expect(e.message).assertEqual(uuid);
       expect(e.name).assertEqual('Error');
+      expect(e.code).assertEqual(0);
+      expect(e.cause).assertUndefined();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0850
      * @tc.name testErrorConstructor085
-     * @tc.desc Verify UUID format string as Error name is stored correctly
+     * @tc.desc Verify UUID plus message dispatches to name and message overload
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1282,12 +1367,14 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error(uuid, 'UUID-Error');
       expect(e.name).assertEqual(uuid);
       expect(e.message).assertEqual('UUID-Error');
+      expect(e.code).assertEqual(0);
+      expect(e.cause).assertUndefined();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0860
      * @tc.name testErrorConstructor086
-     * @tc.desc Verify URL format string as Error message is stored correctly
+     * @tc.desc Verify URL single string initializes message without URL parsing
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1296,12 +1383,14 @@ export default function ErrorConstructorTest(): void {
       let url: string = 'https://api.example.com/v1/users?id=123&page=1';
       let e: Error = new Error(url);
       expect(e.message).assertEqual(url);
+      expect(e.name).assertEqual('Error');
+      expect(e.code).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0870
      * @tc.name testErrorConstructor087
-     * @tc.desc Verify URL format string as Error name is stored correctly
+     * @tc.desc Verify URL name with message initializes both fields exactly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1311,62 +1400,71 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error(url, 'resource missing');
       expect(e.name).assertEqual(url);
       expect(e.message).assertEqual('resource missing');
+      expect(e.code).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0880
      * @tc.name testErrorConstructor088
-     * @tc.desc Verify hex string as Error message is stored correctly (not treated as number)
+     * @tc.desc Verify zero-width string single argument initializes message
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorConstructor088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let hexStr: string = '0xFFAABBCC';
-      let e: Error = new Error(hexStr);
-      expect(e.message).assertEqual(hexStr);
+      let zeroWidth: string = 'id\u200Bhidden';
+      let e: Error = new Error(zeroWidth);
+      expect(e.message).assertEqual(zeroWidth);
+      expect(e.code).assertEqual(0);
+      expect(e.name).assertEqual('Error');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0890
      * @tc.name testErrorConstructor089
-     * @tc.desc Verify hex string as Error name is stored correctly (not treated as number)
+     * @tc.desc Verify Japanese string first argument with message initializes name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorConstructor089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let hexName: string = '0xDEADBEEF';
-      let e: Error = new Error(hexName, 'memory error');
-      expect(e.name).assertEqual(hexName);
+      let japaneseName: string = 'テスト';
+      let e: Error = new Error(japaneseName, 'memory error');
+      expect(e.name).assertEqual(japaneseName);
+      expect(e.message).assertEqual('memory error');
+      expect(e.code).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0900
      * @tc.name testErrorConstructor090
-     * @tc.desc Verify binary string as Error message is stored correctly
+     * @tc.desc Verify replacement character string single argument initializes message
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorConstructor090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let binStr: string = '101010101001111000111';
-      let e: Error = new Error(binStr);
-      expect(e.message).assertEqual(binStr);
+      let replacement: string = '\uFFFD\uFFFD';
+      let e: Error = new Error(replacement);
+      expect(e.message).assertEqual(replacement);
+      expect(e.name).assertEqual('Error');
+      expect(e.code).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_0910
      * @tc.name testErrorConstructor091
-     * @tc.desc Verify binary string as Error name is stored correctly
+     * @tc.desc Verify Arabic string first argument initializes name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testErrorConstructor091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let binName: string = '110011001100';
-      let e: Error = new Error(binName, 'binary error');
-      expect(e.name).assertEqual(binName);
+      let arabicName: string = 'الاختبار';
+      let e: Error = new Error(arabicName, 'localized error');
+      expect(e.name).assertEqual(arabicName);
+      expect(e.message).assertEqual('localized error');
+      expect(e.code).assertEqual(0);
     });
 
     /**
@@ -1596,7 +1694,8 @@ export default function ErrorConstructorTest(): void {
       let message: string = '{"code":500,"message":"failed"}';
       let e: Error = new Error(message);
       expect(e.message).assertEqual(message);
-      expect(e.toString()).assertEqual('Error: ' + message);
+      expect(e.name).assertEqual('Error');
+      expect(e.code).assertEqual(0);
     });
 
     /**
@@ -1612,6 +1711,8 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error(message);
       expect(e.message).assertEqual(message);
       expect(e.message.length).assertEqual(18);
+      expect(e.name).assertEqual('Error');
+      expect(e.code).assertEqual(0);
     });
 
     /**
@@ -1627,6 +1728,8 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error(message);
       expect(e.message).assertEqual(message);
       expect(e.message.length).assertEqual(12);
+      expect(e.name).assertEqual('Error');
+      expect(e.cause).assertUndefined();
     });
 
     /**
@@ -1642,6 +1745,7 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error(message);
       expect(e.message).assertEqual(message);
       expect(e.message.length).assertEqual(2);
+      expect(e.code).assertEqual(0);
     });
 
     /**
@@ -1657,6 +1761,7 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error(message);
       expect(e.message).assertEqual(message);
       expect(e.message.length).assertEqual(4);
+      expect(e.cause).assertUndefined();
     });
 
     /**
@@ -1806,7 +1911,7 @@ export default function ErrorConstructorTest(): void {
       let e: Error = new Error('set-cause', { cause: setCause });
       let resolved: Set<Error> = e.cause as Set<Error>;
       expect(resolved).assertEqual(setCause);
-      expect(resolved.has(element)).assertEqual(true);
+      expect(resolved.has(element)).assertTrue();
     });
 
     /**
@@ -1889,7 +1994,7 @@ export default function ErrorConstructorTest(): void {
     it('testErrorConstructor124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error('false-cause', { cause: false });
       expect(e.message).assertEqual('false-cause');
-      expect(e.cause).assertEqual(false);
+      expect(e.cause).assertFalse();
     });
 
     /**
@@ -1985,6 +2090,119 @@ export default function ErrorConstructorTest(): void {
       expect(e.name).assertEqual('NoCauseName');
       expect(e.message).assertEqual('no-cause-message');
       expect(e.cause).assertUndefined();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_1310
+     * @tc.name testErrorConstructor131
+     * @tc.desc Verify Error constructor stores hex max int code
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testErrorConstructor131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e: Error = new Error(0x7FFFFFFF, 'hex-max-int-code');
+      expect(e.code).assertEqual(2147483647);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_1320
+     * @tc.name testErrorConstructor132
+     * @tc.desc Verify Error constructor stores ordinary hex code
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testErrorConstructor132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e: Error = new Error(0x1234, 'hex-code');
+      expect(e.code).assertEqual(4660);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_1330
+     * @tc.name testErrorConstructor133
+     * @tc.desc Verify Error constructor stores ordinary octal code
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testErrorConstructor133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e: Error = new Error(0o123, 'octal-code');
+      expect(e.code).assertEqual(83);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_1340
+     * @tc.name testErrorConstructor134
+     * @tc.desc Verify Error constructor stores ordinary binary code
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testErrorConstructor134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e: Error = new Error(0b1010, 'binary-code');
+      expect(e.code).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_1350
+     * @tc.name testErrorConstructor135
+     * @tc.desc Verify Error constructor stores near min int code
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testErrorConstructor135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e: Error = new Error(-2147483647, 'near-min-int-code');
+      expect(e.code).assertEqual(-2147483647);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_1360
+     * @tc.name testErrorConstructor136
+     * @tc.desc Verify Error constructor stores min int code with custom name overload
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testErrorConstructor136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e: Error = new Error('MinIntName', -2147483648, 'min-int-name-code');
+      expect(e.code).assertEqual(-2147483648);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_1370
+     * @tc.name testErrorConstructor137
+     * @tc.desc Verify Error constructor throws ClassCastError for null cause option
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testErrorConstructor137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let e: Error = new Error('constructor-null-cause', { cause: null as Object });
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('ClassCastError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_CONSTRUCTOR_1380
+     * @tc.name testErrorConstructor138
+     * @tc.desc Verify Error constructor throws ClassCastError for Date value as name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testErrorConstructor138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let dateName: Date = new Date(0);
+      try {
+        let e: Error = new Error(dateName as Object as string, 'date-name-message');
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('ClassCastError');
+      }
     });
   });
 }
