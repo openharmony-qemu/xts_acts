@@ -66,6 +66,7 @@ public:
     using HilogBaseIsLoggableFunc = bool (*)(unsigned int, const char*, int);
     using HilogBasePrintFunc = int (*)(int, int, unsigned int, const char*, const char*, ...);
     using GwpAsanCollectFunc = size_t (*)(uint64_t, uintptr_t*, size_t, size_t);
+    using FfrtGetStackFn = size_t (*)(size_t*, size_t);
     using GwpAsanRegisterFfrtFunc = void (*)(FfrtGetStackFn);
     FdeltChkFunc GetFdeltChk() const { return LazyLoad(fdeltChk_, "__fdelt_chk"); }
     ExplicitBzeroChkFunc GetExplicitBzeroChk() const
