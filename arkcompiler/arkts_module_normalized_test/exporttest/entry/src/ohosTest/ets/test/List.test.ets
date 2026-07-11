@@ -26,6 +26,13 @@ import exportTupleTest from "./test/ExportTupleTest.test";
 import exportUnionTest from "./test/ExportUnionTest.test";
 import exportDefaultTest from "./test/ExportDefaultsTest.test";
 import ExportSetTest from "./test/ExportSetTest.test";
+import exportGenericTypeTest from "./test/ExportGenericTypeTest.test.ets";
+import exportAccessModifierTest from "./test/ExportAccessModifierTest.test.ets";
+import exportReExportTest from "./test/ExportReExportTest.test.ets";
+import exportContainerTypeTest from "./test/ExportContainerTypeTest.test.ets";
+import exportLiteralTypeTest from "./test/ExportLiteralTypeTest.test.ets";
+import exportDCRTest from "./test/ExportDCRTest.test.ets";
+import exportAnnotationTest from "./test/ExportAnnotationTest.test.ets";
 
 export default function testsuite() {
   exportTupleTest();
@@ -42,4 +49,11 @@ export default function testsuite() {
   ExportFunctionTest();
   exportDefaultTest();
   ExportSetTest();
+  exportGenericTypeTest();
+  exportAccessModifierTest();
+  exportReExportTest();
+  exportContainerTypeTest();
+  exportLiteralTypeTest();
+  exportDCRTest();
+  exportAnnotationTest();
 }
