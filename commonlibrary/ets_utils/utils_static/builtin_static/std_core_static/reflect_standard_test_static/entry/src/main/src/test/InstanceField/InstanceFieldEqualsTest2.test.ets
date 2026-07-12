@@ -1982,3 +1982,345 @@ export default function InstanceFieldEqualsTest2(): void {
       let f2 = cls.getInstanceField('bv')!;
       expect(f1.equals(f2)).assertTrue();
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_0940
+     * @tc.name testEquals0940
+     * @tc.desc Verify equals cross-source Class.from Class.of and Class.ofAny
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEquals0940', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cFrom = Class.from<ECrossSrc_079>();
+      let obj = new ECrossSrc_079();
+      let cOf = Class.of(obj);
+      let cAny: Any = new ECrossSrc_079();
+      let cOfAny = Class.ofAny(cAny)!;
+      let ff = cFrom.getInstanceField('val')!;
+      let fo = cOf.getInstanceField('val')!;
+      let fa = cOfAny.getInstanceField('val')!;
+      expect(ff.equals(fo)).assertTrue();
+      expect(fo.equals(fa)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_0950
+     * @tc.name testEquals0950
+     * @tc.desc Verify equals on triple interface class fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEquals0950', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ETriple_078>();
+      let fx = cls.getInstanceField('x')!;
+      let fy = cls.getInstanceField('y')!;
+      let fz = cls.getInstanceField('z')!;
+      let fx2 = cls.getInstanceField('x')!;
+      expect(fx.equals(fx2)).assertTrue();
+      expect(fx.equals(fy)).assertFalse();
+      expect(fy.equals(fz)).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_0960
+     * @tc.name testEquals0960
+     * @tc.desc Verify equals false between unrelated classes same field name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEquals0960', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let c1 = Class.from<EUnrelA_080>();
+      let c2 = Class.from<EUnrelB_080>();
+      let f1 = c1.getInstanceField('name')!;
+      let f2 = c2.getInstanceField('name')!;
+      expect(f1.equals(f2)).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_0970
+     * @tc.name testEquals0970
+     * @tc.desc Verify equals on custom class typed fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEquals0970', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<EqHasCustom_083>();
+      let f1 = cls.getInstanceField('obj')!;
+      let f2 = cls.getInstanceField('obj')!;
+      expect(f1.equals(f2)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_0980
+     * @tc.name testEquals0980
+     * @tc.desc Verify equals on Map<int,string> typed fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEquals0980', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<EqMapIS_084>();
+      let f1 = cls.getInstanceField('mis')!;
+      let f2 = cls.getInstanceField('mis')!;
+      expect(f1.equals(f2)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_0990
+     * @tc.name testEquals0990
+     * @tc.desc Verify equals false between int and string fields same class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEquals0990', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<EqIntStr_085>();
+      let fi = cls.getInstanceField('intField')!;
+      let fs = cls.getInstanceField('strField')!;
+      expect(fi.equals(fs)).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1000
+     * @tc.name testEquals1000
+     * @tc.desc Verify equals self-true 50-iteration consistency
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEquals1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<EqReadonly_081>();
+      let f1 = cls.getInstanceField('roVal')!;
+      let f2 = cls.getInstanceField('roVal')!;
+      for (let i = 0; i < 50; i++) {
+        expect(f1.equals(f2)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1010
+     * @tc.name testEquals1010
+     * @tc.desc Verify equals on static field self-true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEquals1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<EqStaticField_086>();
+      let f1 = cls.getStaticField('sVal')!;
+      let f2 = cls.getStaticField('sVal')!;
+      expect(f1.equals(f2)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1020
+     * @tc.name testEquals1020
+     * @tc.desc Verify equals transitivity chain a=b,b=c,c=d
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEquals1020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<EqTransitive_087>();
+      let f1 = cls.getInstanceField('val')!;
+      let f2 = cls.getInstanceField('val')!;
+      let f3 = cls.getInstanceField('val')!;
+      let f4 = cls.getInstanceField('val')!;
+      expect(f1.equals(f2)).assertTrue();
+      expect(f2.equals(f3)).assertTrue();
+      expect(f3.equals(f4)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1030
+     * @tc.name testEquals1030
+     * @tc.desc Verify equals on boolean field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEquals1030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<EqBoolField_088>();
+      let f1 = cls.getInstanceField('flag')!;
+      let f2 = cls.getInstanceField('flag')!;
+      expect(f1.equals(f2)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1040
+     * @tc.name testEquals1040
+     * @tc.desc Verify getInstanceFields all self-equals true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEquals1040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<EqPairwise_089>();
+      let fields = cls.getInstanceFields();
+      for (let i = 0; i < fields.length; i++) {
+        let byName = cls.getInstanceField(fields[i].getName())!;
+        expect(byName.equals(fields[i])).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1050
+     * @tc.name testEquals1050
+     * @tc.desc Verify static and instance field getName and self-equals
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEquals1050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<EqStaticField_086>();
+      let sf = cls.getStaticField('sVal')!;
+      let inf = cls.getInstanceField('iVal')!;
+      expect(sf.getName()).assertEqual('sVal');
+      expect(inf.getName()).assertEqual('iVal');
+      let sf2 = cls.getStaticField('sVal')!;
+      let inf2 = cls.getInstanceField('iVal')!;
+      expect(sf.equals(sf2)).assertTrue();
+      expect(inf.equals(inf2)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1060
+     * @tc.name testEquals1060
+     * @tc.desc Verify equals self-true 10-iteration loop consistency
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEquals1060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<EqTransitive_087>();
+      let f1 = cls.getInstanceField('val')!;
+      let f2 = cls.getInstanceField('val')!;
+      for (let j = 0; j < 10; j++) {
+        expect(f1.equals(f2)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1070
+     * @tc.name testEquals1070
+     * @tc.desc Verify equals on parent static field via getSuper
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEquals1070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let child = Class.from<EChildStatic_090>();
+      let parent = child.getSuper()!;
+      let f1 = parent.getStaticField('psVal')!;
+      let f2 = parent.getStaticField('psVal')!;
+      expect(f1.equals(f2)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1080
+     * @tc.name testEquals1080
+     * @tc.desc Verify equals on enum typed fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEquals1080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<EEnumField_091>();
+      let f1 = cls.getInstanceField('kind')!;
+      let f2 = cls.getInstanceField('kind')!;
+      expect(f1.equals(f2)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1090
+     * @tc.name testEquals1090
+     * @tc.desc Verify getStaticFields all self-equals true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEquals1090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<EMultiStatic_092>();
+      let fields = cls.getStaticFields();
+      for (let i = 0; i < fields.length; i++) {
+        let byName = cls.getStaticField(fields[i].getName())!;
+        expect(byName.equals(fields[i])).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1100
+     * @tc.name testEquals1100
+     * @tc.desc Verify equals on field via 2-hop getSuper chain
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEquals1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<EHop3_093>();
+      let mid = cls.getSuper()!;
+      let base = mid.getSuper()!;
+      let f1 = base.getInstanceField('f1')!;
+      let f2 = base.getInstanceField('f1')!;
+      expect(f1.equals(f2)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1110
+     * @tc.name testEquals1110
+     * @tc.desc Verify equals consistency on parent static field via different getSuper calls
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEquals1110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let child = Class.from<EChildStatic_090>();
+      let parent = child.getSuper()!;
+      let f1 = parent.getStaticField('psVal')!;
+      let parent2 = child.getSuper()!;
+      let f2 = parent2.getStaticField('psVal')!;
+      expect(f1.equals(f2)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1120
+     * @tc.name testEquals1120
+     * @tc.desc Verify equals false between enum field and int field same class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEquals1120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<EEnumField_091>();
+      let f1 = cls.getInstanceField('kind')!;
+      let f2 = cls.getInstanceField('val')!;
+      expect(f1.equals(f2)).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1130
+     * @tc.name testEquals1130
+     * @tc.desc Verify equals with null throws NullPointerError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEquals1130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MyClass001>();
+      let field = cls.getInstanceField('name')!;
+      let caught: boolean = false;
+      try {
+        field.equals(null!);
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
+        caught = true;
+      }
+      expect(caught).assertTrue();
+    });
+
+  });
+}
