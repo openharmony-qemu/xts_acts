@@ -1992,3 +1992,224 @@ export default function InstanceFieldGetNameTest2(): void {
       let field = gp.getInstanceField('gp')!;
       expect(field.getName()).assertEqual('gp');
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0950
+     * @tc.name testGetName0950
+     * @tc.desc Verify getName on static and instance fields same class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetName0950', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<StaticInstanceName_087>();
+      let sf = cls.getStaticField('name')!;
+      let inf = cls.getInstanceField('name')!;
+      expect(sf.getName()).assertEqual('name');
+      expect(inf.getName()).assertEqual('name');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0960
+     * @tc.name testGetName0960
+     * @tc.desc Verify getName on static field via getStaticField
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetName0960', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<StaticFieldName_089>();
+      let sf = cls.getStaticField('sName')!;
+      expect(sf.getName()).assertEqual('sName');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0970
+     * @tc.name testGetName0970
+     * @tc.desc Verify getName static vs instance fields same class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetName0970', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<StaticFieldName_089>();
+      let sf = cls.getStaticField('sName')!;
+      let inf = cls.getInstanceField('iName')!;
+      expect(sf.getName()).assertEqual('sName');
+      expect(inf.getName()).assertEqual('iName');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0980
+     * @tc.name testGetName0980
+     * @tc.desc Verify getInstanceFields order and count on child class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetName0980', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ChildFieldsName_090>();
+      let fields = cls.getInstanceFields();
+      expect(fields.length).assertEqual(2);
+      expect(fields[0].getName()).assertEqual('childField');
+      expect(fields[1].getName()).assertEqual('anotherField');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0990
+     * @tc.name testGetName0990
+     * @tc.desc Verify multiple getInstanceField calls return consistent getName
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetName0990', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<StaticFieldName_089>();
+      let f1 = cls.getInstanceField('iName')!;
+      let f2 = cls.getInstanceField('iName')!;
+      expect(f1.getName()).assertEqual(f2.getName());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1000
+     * @tc.name testGetName1000
+     * @tc.desc Verify getStaticFields count and all names valid
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetName1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MultiStaticName_091>();
+      let fields = cls.getStaticFields();
+      let expectedNames = ['a', 'b', 'c'];
+      expect(fields.length).assertEqual(3);
+      for (let i = 0; i < fields.length; i++) {
+        expect(fields[i].getName()).assertEqual(expectedNames[i]);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1010
+     * @tc.name testGetName1010
+     * @tc.desc Verify parent getInstanceFields count and field name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetName1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ChildFieldsName_090>();
+      let parent = cls.getSuper()!;
+      let pf = parent.getInstanceFields();
+      expect(pf.length).assertEqual(1);
+      expect(pf[0].getName()).assertEqual('parentField');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1020
+     * @tc.name testGetName1020
+     * @tc.desc Verify getName on parent static field via getSuper chain
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetName1020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let child = Class.from<ChildStaticName_092>();
+      let parent = child.getSuper()!;
+      let sf = parent.getStaticField('pStatic')!;
+      expect(sf.getName()).assertEqual('pStatic');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1030
+     * @tc.name testGetName1030
+     * @tc.desc Verify getName on enum typed field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetName1030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<EnumFieldName_093>();
+      let field = cls.getInstanceField('status')!;
+      expect(field.getName()).assertEqual('status');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1040
+     * @tc.name testGetName1040
+     * @tc.desc Verify getName from getStaticFields[0]
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetName1040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MixStaticInstName_094>();
+      let fields = cls.getStaticFields();
+      expect(fields.length).assertEqual(2);
+      expect(fields[0].getName()).assertEqual('s1');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1050
+     * @tc.name testGetName1050
+     * @tc.desc Verify combined static+instance field count
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetName1050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MixStaticInstName_094>();
+      let sfs = cls.getStaticFields();
+      let ifs = cls.getInstanceFields();
+      expect(sfs.length + ifs.length).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1060
+     * @tc.name testGetName1060
+     * @tc.desc Verify parent getStaticFields empty when parent has no static fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetName1060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MixStaticInstName_094>();
+      let parent = cls.getSuper()!;
+      let pfs = parent.getStaticFields();
+      expect(pfs.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1070
+     * @tc.name testGetName1070
+     * @tc.desc Verify getName consistency 5-iteration loop on primitive field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetName1070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ByteFieldName032>();
+      for (let j = 0; j < 5; j++) {
+        let f = cls.getInstanceField('byteField')!;
+        expect(f.getName()).assertEqual('byteField');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1080
+     * @tc.name testGetName1080
+     * @tc.desc Verify getName over getInstanceFields all valid
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetName1080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<EnumFieldName_093>();
+      let fields = cls.getInstanceFields();
+      let expectedNames = ['status', 'label'];
+      for (let i = 0; i < fields.length; i++) {
+        expect(fields[i].getName()).assertEqual(expectedNames[i]);
+      }
+    });
+
+  });
+}
