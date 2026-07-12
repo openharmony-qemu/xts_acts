@@ -1991,3 +1991,201 @@ export default function InstanceFieldGetOwnerTest2(): void {
       expect(gc.getInstanceField('c')!.getOwner().getName()).assertEqual('entry.src.main.src.test.InstanceField.InstanceFieldGetOwnerTest2.test.OC_083');
       expect(gp.getInstanceField('gp')!.getOwner().getName()).assertEqual('entry.src.main.src.test.InstanceField.InstanceFieldGetOwnerTest2.test.OGP_083');
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_0990
+     * @tc.name testGetOwner0990
+     * @tc.desc Verify getOwner consistency after getType call
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetOwner0990', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<OwnerHasCustom_081>();
+      let field = cls.getInstanceField('obj')!;
+      let before = field.getOwner().getName();
+      field.getType().getName();
+      let after = field.getOwner().getName();
+      expect(after).assertEqual(before);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_1000
+     * @tc.name testGetOwner1000
+     * @tc.desc Verify getOwner on static field via getStaticField
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetOwner1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<OStaticField_084>();
+      let sf = cls.getStaticField('sVal')!;
+      expect(sf.getOwner().getName()).assertEqual('entry.src.main.src.test.InstanceField.InstanceFieldGetOwnerTest2.test.OStaticField_084');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_1010
+     * @tc.name testGetOwner1010
+     * @tc.desc Verify getOwner().isFinal() on plain class correctly reports non-final
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetOwner1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<OPlainClass_085>();
+      let field = cls.getInstanceField('val')!;
+      let owner = field.getOwner();
+      expect(owner.isFinal()).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_1020
+     * @tc.name testGetOwner1020
+     * @tc.desc Verify getOwner().isAbstract() for plain concrete class yields false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetOwner1020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<OPlainClass_085>();
+      let field = cls.getInstanceField('val')!;
+      let owner = field.getOwner();
+      expect(owner.isAbstract()).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_1030
+     * @tc.name testGetOwner1030
+     * @tc.desc Verify getOwner().isInterface() on plain class correctly reports non-interface
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetOwner1030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<OPlainClass_085>();
+      let field = cls.getInstanceField('val')!;
+      let owner = field.getOwner();
+      expect(owner.isInterface()).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_1040
+     * @tc.name testGetOwner1040
+     * @tc.desc Verify static and instance field owner names match
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetOwner1040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<OStaticInst_086>();
+      let so = cls.getStaticField('sv')!.getOwner().getName();
+      let io = cls.getInstanceField('iv')!.getOwner().getName();
+      expect(so).assertEqual(io);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_1050
+     * @tc.name testGetOwner1050
+     * @tc.desc Verify getOwner via getStaticField vs getInstanceField same class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetOwner1050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<OStaticField_084>();
+      let soViaS = cls.getStaticField('sVal')!.getOwner();
+      let soViaI = cls.getInstanceField('iVal')!.getOwner();
+      expect(soViaS.getName()).assertEqual(soViaI.getName());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_1060
+     * @tc.name testGetOwner1060
+     * @tc.desc Verify getOwner on parent static field via getSuper
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetOwner1060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let child = Class.from<OChildStatic_087>();
+      let parent = child.getSuper()!;
+      let sf = parent.getStaticField('psVal')!;
+      expect(sf.getOwner().getName()).assertEqual('entry.src.main.src.test.InstanceField.InstanceFieldGetOwnerTest2.test.OParentStatic_087');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_1070
+     * @tc.name testGetOwner1070
+     * @tc.desc Verify getOwner on enum typed field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetOwner1070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<OEnumField_088>();
+      let field = cls.getInstanceField('kind')!;
+      expect(field.getOwner().getName()).assertEqual('entry.src.main.src.test.InstanceField.InstanceFieldGetOwnerTest2.test.OEnumField_088');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_1080
+     * @tc.name testGetOwner1080
+     * @tc.desc Verify getOwner().isEnum() type check on non-enum class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetOwner1080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<OPlain_089>();
+      let owner = cls.getInstanceField('val')!.getOwner();
+      expect(owner.isEnum()).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_1090
+     * @tc.name testGetOwner1090
+     * @tc.desc Verify getOwner().isPrimitive() for class-type owner confirms non-primitive
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetOwner1090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<OPlain_089>();
+      let owner = cls.getInstanceField('val')!.getOwner();
+      expect(owner.isPrimitive()).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_1100
+     * @tc.name testGetOwner1100
+     * @tc.desc Verify getOwner().getLinker() returns non-null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetOwner1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<OPlain_089>();
+      let owner = cls.getInstanceField('val')!.getOwner();
+      let linker = owner.getLinker();
+      expect(linker !== null).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_1110
+     * @tc.name testGetOwner1110
+     * @tc.desc Verify getOwner 3-hop chain grandchild to grandparent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetOwner1110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let l3 = Class.from<OLevel3_090>();
+      let l2 = l3.getSuper()!;
+      let l1 = l2.getSuper()!;
+      expect(l3.getInstanceField('l3')!.getOwner().getName()).assertEqual('entry.src.main.src.test.InstanceField.InstanceFieldGetOwnerTest2.test.OLevel3_090');
+      expect(l2.getInstanceField('l2')!.getOwner().getName()).assertEqual('entry.src.main.src.test.InstanceField.InstanceFieldGetOwnerTest2.test.OLevel2_090');
+      expect(l1.getInstanceField('l1')!.getOwner().getName()).assertEqual('entry.src.main.src.test.InstanceField.InstanceFieldGetOwnerTest2.test.OLevel1_090');
+    });
+
+  });
+}
