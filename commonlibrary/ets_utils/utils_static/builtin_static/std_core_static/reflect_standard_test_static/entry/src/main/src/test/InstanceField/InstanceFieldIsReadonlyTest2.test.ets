@@ -1789,3 +1789,747 @@ export default function InstanceFieldIsReadonlyTest2(): void {
       let f = pCls.getInstanceField('pRo')!;
       expect(f.isReadonly()).assertTrue();
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_0890
+     * @tc.name testIsReadonly0890
+     * @tc.desc Verify isReadonly returns true for public readonly string field roToMut from parent class ParentRoMutOverride067 via Class.from
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly0890', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let pCls = Class.from<ParentRoMutOverride067>();
+      let f = pCls.getInstanceField('roToMut')!;
+      expect(f.isReadonly()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_0900
+     * @tc.name testIsReadonly0900
+     * @tc.desc Verify isReadonly returns true for public readonly string field gRo from grandparent class RoGrand065 via Class.from and getInstanceField
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let gCls = Class.from<RoGrand065>();
+      let f = gCls.getInstanceField('gRo')!;
+      expect(f.isReadonly()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_0910
+     * @tc.name testIsReadonly0910
+     * @tc.desc Verify isReadonly returns true for readonly fields gRo pRo cRo across three-level inheritance chain from RoGrand065 RoParent065 RoChild065
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly0910', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let g = Class.from<RoGrand065>();
+      expect(g.getInstanceField('gRo')!.isReadonly()).assertTrue();
+      let p = Class.from<RoParent065>();
+      expect(p.getInstanceField('pRo')!.isReadonly()).assertTrue();
+      let c = Class.from<RoChild065>();
+      expect(c.getInstanceField('cRo')!.isReadonly()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_0920
+     * @tc.name testIsReadonly0920
+     * @tc.desc Verify isReadonly returns true for public readonly string field field from interface-implementing class ImplRoInterface069 via getInstanceField
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly0920', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ImplRoInterface069>();
+      let f = cls.getInstanceField('field')!;
+      expect(f.isReadonly()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_0930
+     * @tc.name testIsReadonly0930
+     * @tc.desc Verify isReadonly returns true for public readonly string field absRo from abstract class AbsRo070 via Class.from and getInstanceField
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly0930', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<AbsRo070>();
+      let f = cls.getInstanceField('absRo')!;
+      expect(f.isReadonly()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_0940
+     * @tc.name testIsReadonly0940
+     * @tc.desc Verify isReadonly returns true for public readonly string field pathRo from class RoPathCls091 accessed via Class.from method
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly0940', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoPathCls091>();
+      let f = cls.getInstanceField('pathRo')!;
+      expect(f.isReadonly()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_0950
+     * @tc.name testIsReadonly0950
+     * @tc.desc Verify isReadonly returns true for public readonly string field pathRo from class RoPathCls091 accessed via Class.of instance method
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly0950', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inst = new RoPathCls091();
+      let cls = Class.of(inst);
+      let f = cls.getInstanceField('pathRo')!;
+      expect(f.isReadonly()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_0960
+     * @tc.name testIsReadonly0960
+     * @tc.desc Verify isReadonly returns true for public readonly string field p1 and false for public string field p2 from class RoMultiForPath
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly0960', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoMultiForPath>();
+      let fs = cls.getInstanceFields();
+      for (let i = 0; i < fs.length; i++) {
+        if (fs[i].getName() === 'p1') {
+          expect(fs[i].isReadonly()).assertTrue();
+        }
+        if (fs[i].getName() === 'p2') {
+          expect(fs[i].isReadonly()).assertFalse();
+        }
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_0970
+     * @tc.name testIsReadonly0970
+     * @tc.desc Verify isReadonly returns true and getValue returns 'path' after createInstance for public readonly string field pathRo from class RoPathCls091
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly0970', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoPathCls091>();
+      let f = cls.getInstanceField('pathRo')!;
+      let inst = cls.createInstance();
+      expect(f.isReadonly()).assertTrue();
+      expect(f.getValue(inst) as string).assertEqual('path');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_0980
+     * @tc.name testIsReadonly0980
+     * @tc.desc Verify isReadonly returns true and getOwner name ends with RoPathCls091 for public readonly string field pathRo via getInstanceField
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly0980', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoPathCls091>();
+      let f = cls.getInstanceField('pathRo')!;
+      expect(f.isReadonly()).assertTrue();
+      expect(f.getOwner().getName().endsWith('RoPathCls091')).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_0990
+     * @tc.name testIsReadonly0990
+     * @tc.desc Verify isReadonly returns consistent value for two getInstanceField calls on public readonly string field cRo from class RoConsistCls096
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly0990', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoConsistCls096>();
+      let f1 = cls.getInstanceField('cRo')!;
+      let f2 = cls.getInstanceField('cRo')!;
+      expect(f1.isReadonly()).assertEqual(f2.isReadonly());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1000
+     * @tc.name testIsReadonly1000
+     * @tc.desc Verify isReadonly matches between getInstanceField and getInstanceFields array index for public readonly string field cRo from class RoConsistCls096
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoConsistCls096>();
+      let f1 = cls.getInstanceField('cRo')!;
+      let fs = cls.getInstanceFields();
+      expect(f1.isReadonly()).assertEqual(fs[0].isReadonly());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1010
+     * @tc.name testIsReadonly1010
+     * @tc.desc Verify isReadonly returns consistent value across three consecutive calls on public readonly string field cRo from class RoConsistCls096
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoConsistCls096>();
+      let f = cls.getInstanceField('cRo')!;
+      const r1 = f.isReadonly();
+      const r2 = f.isReadonly();
+      const r3 = f.isReadonly();
+      expect(r1).assertEqual(r2);
+      expect(r2).assertEqual(r3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1020
+     * @tc.name testIsReadonly1020
+     * @tc.desc Verify isReadonly remains true after setValue throws TypeError on public readonly string field rss2 from class RoForSetStr088
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoForSetStr088>();
+      let f = cls.getInstanceField('rss2')!;
+      const before = f.isReadonly();
+      let inst = cls.createInstance();
+      try {
+        f.setValue(inst, 'x');
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+      expect(before).assertEqual(f.isReadonly());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1030
+     * @tc.name testIsReadonly1030
+     * @tc.desc Verify isReadonly result remains unchanged after calling getValue on public readonly string field pathRo from class RoPathCls091
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoPathCls091>();
+      let f = cls.getInstanceField('pathRo')!;
+      let inst = cls.createInstance();
+      const before = f.isReadonly();
+      f.getValue(inst);
+      expect(before).assertEqual(f.isReadonly());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1040
+     * @tc.name testIsReadonly1040
+     * @tc.desc Verify isReadonly returns true after calling equals on two same-named public readonly string field cRo from class RoConsistCls096
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoConsistCls096>();
+      let f = cls.getInstanceField('cRo')!;
+      let f2 = cls.getInstanceField('cRo')!;
+      f.equals(f2);
+      expect(f.isReadonly()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1050
+     * @tc.name testIsReadonly1050
+     * @tc.desc Verify getType returns std.core.String after calling isReadonly on public readonly string field pathRo from class RoPathCls091
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoPathCls091>();
+      let f = cls.getInstanceField('pathRo')!;
+      f.isReadonly();
+      expect(f.getType().getName()).assertEqual('std.core.String');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1060
+     * @tc.name testIsReadonly1060
+     * @tc.desc Verify isReadonly returns true after calling getOwner on public readonly string field pathRo from class RoPathCls091 via getInstanceField
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoPathCls091>();
+      let f = cls.getInstanceField('pathRo')!;
+      f.getOwner();
+      expect(f.isReadonly()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1070
+     * @tc.name testIsReadonly1070
+     * @tc.desc Verify getValue returns 'path' after calling isReadonly on public readonly string field pathRo from class RoPathCls091
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoPathCls091>();
+      let f = cls.getInstanceField('pathRo')!;
+      let inst = cls.createInstance();
+      f.isReadonly();
+      expect(f.getValue(inst) as string).assertEqual('path');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1080
+     * @tc.name testIsReadonly1080
+     * @tc.desc Verify isReadonly returns true for public readonly string field pathRo in RoPathCls091 and false for public byte field mb in MutByteT28
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let roCls = Class.from<RoPathCls091>();
+      expect(roCls.getInstanceField('pathRo')!.isReadonly()).assertTrue();
+      let mutCls = Class.from<MutByteT28>();
+      expect(mutCls.getInstanceField('mb')!.isReadonly()).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1090
+     * @tc.name testIsReadonly1090
+     * @tc.desc Verify getName returns 'roB' and isReadonly returns true for public readonly byte field roB from class ReflectRoByteD01 via getInstanceField
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ReflectRoByteD01>();
+      expect(cls.getInstanceField('roB')!.getName()).assertEqual('roB');
+      expect(cls.getInstanceField('roB')!.isReadonly()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1100
+     * @tc.name testIsReadonly1100
+     * @tc.desc Verify getName returns 'pathRo' and isReadonly returns true for public readonly string field pathRo from class RoPathCls091 via getInstanceField
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoPathCls091>();
+      let f = cls.getInstanceField('pathRo')!;
+      expect(f.getName()).assertEqual('pathRo');
+      expect(f.isReadonly()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1110
+     * @tc.name testIsReadonly1110
+     * @tc.desc Verify getType returns i8 and isReadonly returns true for public readonly byte field roB from class ReflectRoByteD01 via getInstanceField
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ReflectRoByteD01>();
+      expect(cls.getInstanceField('roB')!.getType().getName()).assertEqual('i8');
+      expect(cls.getInstanceField('roB')!.isReadonly()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1120
+     * @tc.name testIsReadonly1120
+     * @tc.desc Verify isReadonly returns true and getType returns std.core.String for public readonly string field pathRo from class RoPathCls091
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoPathCls091>();
+      expect(cls.getInstanceField('pathRo')!.isReadonly()).assertTrue();
+      expect(cls.getInstanceField('pathRo')!.getType().getName()).assertEqual('std.core.String');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1130
+     * @tc.name testIsReadonly1130
+     * @tc.desc Verify equals returns true after calling isReadonly on two separately obtained public readonly string field pathRo from class RoPathCls091
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoPathCls091>();
+      let f1 = cls.getInstanceField('pathRo')!;
+      let f2 = cls.getInstanceField('pathRo')!;
+      f1.isReadonly();
+      f2.isReadonly();
+      expect(f1.equals(f2)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1140
+     * @tc.name testIsReadonly1140
+     * @tc.desc Verify isReadonly returns true and equals remains correct after getValue on public readonly string field pathRo from class RoPathCls091
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoPathCls091>();
+      let f = cls.getInstanceField('pathRo')!;
+      let inst = cls.createInstance();
+      f.getValue(inst);
+      expect(f.isReadonly()).assertTrue();
+      expect(f.equals(cls.getInstanceField('pathRo')!)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1150
+     * @tc.name testIsReadonly1150
+     * @tc.desc Verify isReadonly returns true with correct getName getType getOwner for public readonly byte field rb in RoByteT01 and string field rs2 in RoStringT10
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let c1 = Class.from<RoByteT01>();
+      let f1 = c1.getInstanceField('rb')!;
+      expect(f1.isReadonly()).assertTrue();
+      expect(f1.getName()).assertEqual('rb');
+      expect(f1.getType().getName()).assertEqual('i8');
+      expect(f1.getOwner().getName().endsWith('RoByteT01')).assertTrue();
+      let c2 = Class.from<RoStringT10>();
+      let f2 = c2.getInstanceField('rs2')!;
+      expect(f2.isReadonly()).assertTrue();
+      expect(f2.equals(c2.getInstanceField('rs2')!)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1160
+     * @tc.name testIsReadonly1160
+     * @tc.desc Verify isReadonly returns true and getValue returns 'path' for public readonly string field pathRo via Class.of from class RoPathCls091
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let instObj = new RoPathCls091();
+      let cls = Class.of(instObj);
+      let f = cls.getInstanceField('pathRo')!;
+      expect(f.isReadonly()).assertTrue();
+      expect(f.getValue(instObj) as string).assertEqual('path');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1170
+     * @tc.name testIsReadonly1170
+     * @tc.desc Verify isReadonly returns true and getValue returns 'path' after createInstance for public readonly string field pathRo from class RoPathCls091
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoPathCls091>();
+      let inst = cls.createInstance();
+      let f = cls.getInstanceField('pathRo')!;
+      expect(f.isReadonly()).assertTrue();
+      expect(f.getValue(inst) as string).assertEqual('path');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1180
+     * @tc.name testIsReadonly1180
+     * @tc.desc Verify setValue on readonly byte field throws TypeError (list 4.5)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoForSetByte079>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('rsb')!;
+      try {
+        field.setValue(inst, 99 as byte);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1190
+     * @tc.name testIsReadonly1190
+     * @tc.desc Verify setValue on readonly short field throws TypeError (list 4.5)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoForSetShort080>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('rss')!;
+      try {
+        field.setValue(inst, 1 as short);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1200
+     * @tc.name testIsReadonly1200
+     * @tc.desc Verify setValue on readonly int field throws TypeError (list 4.5)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoForSetInt081>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('rsi')!;
+      try {
+        field.setValue(inst, 123);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1210
+     * @tc.name testIsReadonly1210
+     * @tc.desc Verify setValue on readonly long field throws TypeError (list 4.5)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoForSetLong082>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('rsl')!;
+      try {
+        field.setValue(inst, 1 as long);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1220
+     * @tc.name testIsReadonly1220
+     * @tc.desc Verify setValue on readonly float field throws TypeError (list 4.5)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoForSetFloat083>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('rsf')!;
+      try {
+        field.setValue(inst, 1.0f);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1230
+     * @tc.name testIsReadonly1230
+     * @tc.desc Verify setValue on readonly double field throws TypeError (list 4.5)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoForSetDouble084>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('rsd')!;
+      try {
+        field.setValue(inst, 1.0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1240
+     * @tc.name testIsReadonly1240
+     * @tc.desc Verify setValue on readonly char field throws TypeError (list 4.5)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoForSetChar085>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('rsc')!;
+      try {
+        field.setValue(inst, c'x');
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1250
+     * @tc.name testIsReadonly1250
+     * @tc.desc Verify setValue on readonly boolean field throws TypeError (list 4.5)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoForSetBool086>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('rsb2')!;
+      try {
+        field.setValue(inst, true);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1260
+     * @tc.name testIsReadonly1260
+     * @tc.desc Verify setValue on readonly number field throws TypeError (list 4.5)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoForSetNum087>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('rsn')!;
+      try {
+        field.setValue(inst, 1.1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1270
+     * @tc.name testIsReadonly1270
+     * @tc.desc Verify setValue on readonly string field throws TypeError (list 4.5)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoForSetStr088>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('rss2')!;
+      try {
+        field.setValue(inst, 'x');
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1280
+     * @tc.name testIsReadonly1280
+     * @tc.desc Verify setValue on readonly Array field throws TypeError (list 4.5)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoForSetArr089>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('rsa')!;
+      try {
+        field.setValue(inst, [9]);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1290
+     * @tc.name testIsReadonly1290
+     * @tc.desc Verify setValue on static readonly field srs from class RoForSetStatic090 using null! thisObj throws NullPointerError (unified null! pattern per review)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1290', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoForSetStatic090>();
+      let field = cls.getStaticField('srs')!;
+      try {
+        field.setValue(null!, 'x');
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1300
+     * @tc.name testIsReadonly1300
+     * @tc.desc Verify setValue on 2D readonly array field throws TypeError (2D/nested + readonly combo)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<Ro2DArrT>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('r2d')!;
+      try {
+        field.setValue(inst, [[9, 9]]);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1310
+     * @tc.name testIsReadonly1310
+     * @tc.desc Verify setValue on nested array readonly field throws TypeError (2D/nested + readonly combo)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsReadonly1310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RoNestedArrT>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('rnest')!;
+      try {
+        field.setValue(inst, [['x', 'y']]);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+  });
+}
