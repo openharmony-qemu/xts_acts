@@ -3586,3 +3586,1040 @@ export default function InstanceFieldSetValueTest2(): void {
       field.setValue(childInst, 'subclassVal');
       expect(field.getValue(childInst) as string).assertEqual('subclassVal');
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1770
+     * @tc.name testSetValue1770
+     * @tc.desc Verify setValue and getValue roundtrip on int field i from class SetAllPrimE21 with maximum int value 2147483647
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue1770', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetAllPrimE21>();
+      let inst = cls.createInstance();
+      cls.getInstanceField('i')!.setValue(inst, 2147483647);
+      expect(cls.getInstanceField('i')!.getValue(inst) as int).assertEqual(2147483647);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1780
+     * @tc.name testSetValue1780
+     * @tc.desc Verify setValue and getValue roundtrip on inherited string field pf from class SetValueParentE20 with SetValueChildE20 child instance as thisObj
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue1780', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let parentCls = Class.from<SetValueParentE20>();
+      let field = parentCls.getInstanceField('pf')!;
+      let childInst = Class.from<SetValueChildE20>().createInstance();
+      field.setValue(childInst, 'inherited');
+      expect(field.getValue(childInst) as string).assertEqual('inherited');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1790
+     * @tc.name testSetValue1790
+     * @tc.desc Verify setValue on union field u from class SetUnionPrimE10 and getName returns field name u
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue1790', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetUnionPrimE10>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('u')!;
+      field.setValue(inst, 123);
+      expect(field.getName()).assertEqual('u');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1800
+     * @tc.name testSetValue1800
+     * @tc.desc Verify setValue and getValue roundtrip on nullable byte field nb from class SetNullableByteE08 with null then byte value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetNullableByteE08>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('nb')!;
+      field.setValue(inst, null);
+      const tmpVal = field.getValue(inst);
+      expect(tmpVal as byte | null).assertEqual(null);
+      field.setValue(inst, 5 as byte);
+      expect(field.getValue(inst) as byte).assertEqual(5 as byte);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1810
+     * @tc.name testSetValue1810
+     * @tc.desc Verify setValue with null! thisObj on string field emptyStr from class RichStringClass390 with int value throws NullPointerError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue1810', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<RichStringClass390>();
+      let field = cls.getInstanceField('emptyStr')!;
+      try {
+        field.setValue(null!, 42);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1820
+     * @tc.name testSetValue1820
+     * @tc.desc Verify setValue on string field aaa from class SetAccessAfterE50 with dual verification via getValue and direct property access
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue1820', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetAccessAfterE50>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('aaa')!;
+      field.setValue(inst, 'directAccess');
+      expect(field.getValue(inst) as string).assertEqual('directAccess');
+      const instTyped = inst as SetAccessAfterE50;
+      expect(instTyped.aaa).assertEqual('directAccess');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1830
+     * @tc.name testSetValue1830
+     * @tc.desc Verify setValue and getValue roundtrip on parent string field pf from class SetParentE49 with child class SetChildE49 instance as thisObj
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue1830', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let parentCls = Class.from<SetParentE49>();
+      let field = parentCls.getInstanceField('pf')!;
+      let childInst = Class.from<SetChildE49>().createInstance();
+      field.setValue(childInst, 'parentFieldViaChild');
+      expect(field.getValue(childInst) as string).assertEqual('parentFieldViaChild');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1840
+     * @tc.name testSetValue1840
+     * @tc.desc Verify setValue on int field mi from class SetMisIntE51 with boolean value throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue1840', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetMisIntE51>();
+      let instance = cls.createInstance();
+      let field = cls.getInstanceField('mi')!;
+      try {
+        field.setValue(instance, false);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1850
+     * @tc.name testSetValue1850
+     * @tc.desc Verify setValue on int field mi from class SetMisIntE51 with null value throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue1850', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetMisIntE51>();
+      let instance = cls.createInstance();
+      let field = cls.getInstanceField('mi')!;
+      try {
+        field.setValue(instance, null);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1860
+     * @tc.name testSetValue1860
+     * @tc.desc Verify setValue on string field ms from class SetMisStringE52 with int value throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue1860', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetMisStringE52>();
+      let instance = cls.createInstance();
+      let field = cls.getInstanceField('ms')!;
+      try {
+        field.setValue(instance, 42);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1870
+     * @tc.name testSetValue1870
+     * @tc.desc Verify setValue on string field ms from class SetMisStringE52 with boolean value throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue1870', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetMisStringE52>();
+      let instance = cls.createInstance();
+      let field = cls.getInstanceField('ms')!;
+      try {
+        field.setValue(instance, true);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1880
+     * @tc.name testSetValue1880
+     * @tc.desc Verify setValue on boolean field mb from class SetMisBoolE53 with int value throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue1880', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetMisBoolE53>();
+      let instance = cls.createInstance();
+      let field = cls.getInstanceField('mb')!;
+      try {
+        field.setValue(instance, 42);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1890
+     * @tc.name testSetValue1890
+     * @tc.desc Verify setValue on boolean field mb from class SetMisBoolE53 with string value throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue1890', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetMisBoolE53>();
+      let instance = cls.createInstance();
+      let field = cls.getInstanceField('mb')!;
+      try {
+        field.setValue(instance, 'true');
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1900
+     * @tc.name testSetValue1900
+     * @tc.desc Verify setValue on boolean field mb from class SetMisBoolE53 with null value throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetMisBoolE53>();
+      let instance = cls.createInstance();
+      let field = cls.getInstanceField('mb')!;
+      try {
+        field.setValue(instance, null);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1910
+     * @tc.name testSetValue1910
+     * @tc.desc Verify setValue on byte field mbt from class SetMisByteE54 with out-of-range int value throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue1910', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetMisByteE54>();
+      let instance = cls.createInstance();
+      let field = cls.getInstanceField('mbt')!;
+      try {
+        field.setValue(instance, 999);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1920
+     * @tc.name testSetValue1920
+     * @tc.desc Verify setValue on byte field mbt from class SetMisByteE54 with string value throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue1920', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetMisByteE54>();
+      let instance = cls.createInstance();
+      let field = cls.getInstanceField('mbt')!;
+      try {
+        field.setValue(instance, 'x');
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1930
+     * @tc.name testSetValue1930
+     * @tc.desc Verify setValue on short field mst from class SetMisShortE55 with out-of-range int value throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue1930', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetMisShortE55>();
+      let instance = cls.createInstance();
+      let field = cls.getInstanceField('mst')!;
+      try {
+        field.setValue(instance, 99999);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1940
+     * @tc.name testSetValue1940
+     * @tc.desc Verify setValue on float field mf from class SetMisFloatE56 with string value throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue1940', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetMisFloatE56>();
+      let instance = cls.createInstance();
+      let field = cls.getInstanceField('mf')!;
+      try {
+        field.setValue(instance, '3.14');
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1950
+     * @tc.name testSetValue1950
+     * @tc.desc Verify setValue on double field md from class SetMisDoubleE57 with string value throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue1950', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetMisDoubleE57>();
+      let instance = cls.createInstance();
+      let field = cls.getInstanceField('md')!;
+      try {
+        field.setValue(instance, '2.718');
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1960
+     * @tc.name testSetValue1960
+     * @tc.desc Verify setValue on char field mc from class SetMisCharE58 with int value throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue1960', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetMisCharE58>();
+      let instance = cls.createInstance();
+      let field = cls.getInstanceField('mc')!;
+      try {
+        field.setValue(instance, 123);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1970
+     * @tc.name testSetValue1970
+     * @tc.desc Verify setValue on string field pf from class SetParentUnrelatedE59 with unrelated SetUnrelatedE60 instance as thisObj throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue1970', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let parentCls = Class.from<SetParentUnrelatedE59>();
+      let field = parentCls.getInstanceField('pf')!;
+      let unrelatedInst = Class.from<SetUnrelatedE60>().createInstance();
+      try {
+        field.setValue(unrelatedInst, 'val');
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1980
+     * @tc.name testSetValue1980
+     * @tc.desc Verify setValue on string field ov3 from class SetOverwrite3E63 with three sequential values and final value is third
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue1980', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      let cls = Class.from<SetOverwrite3E63>();
+      let inst = cls.createInstance();
+      let f = cls.getInstanceField('ov3')!;
+      f.setValue(inst, 'first');
+      f.setValue(inst, 'second');
+      f.setValue(inst, 'third');
+      expect(f.getValue(inst) as string).assertEqual('third');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1990
+     * @tc.name testSetValue1990
+     * @tc.desc Verify setValue on string field ti from class SetTwoInstE64 with two instances set to one and two verifies value isolation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue1990', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      let cls = Class.from<SetTwoInstE64>();
+      let inst1 = cls.createInstance();
+      let inst2 = cls.createInstance();
+      let f1 = cls.getInstanceField('ti')!;
+      f1.setValue(inst1, 'one');
+      f1.setValue(inst2, 'two');
+      const v1 = f1.getValue(inst1) as string;
+      const v2 = f1.getValue(inst2) as string;
+      expect(v1).assertEqual('one');
+      expect(v2).assertEqual('two');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2000
+     * @tc.name testSetValue2000
+     * @tc.desc Verify setValue on string field fi from class SetFreshInstE65 with changed value and new instance retains initial value fi
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      let cls = Class.from<SetFreshInstE65>();
+      let oldInst = cls.createInstance();
+      let f = cls.getInstanceField('fi')!;
+      f.setValue(oldInst, 'changed');
+      let newInst = cls.createInstance();
+      const newVal = f.getValue(newInst) as string;
+      expect(newVal).assertEqual('fi');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2010
+     * @tc.name testSetValue2010
+     * @tc.desc Verify setValue and getValue roundtrip on int field iz from class SetIntZeroE66 with zero value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      let cls = Class.from<SetIntZeroE66>();
+      let inst = cls.createInstance();
+      let f = cls.getInstanceField('iz')!;
+      f.setValue(inst, 0);
+      expect(f.getValue(inst) as int).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2020
+     * @tc.name testSetValue2020
+     * @tc.desc Verify setValue and getValue roundtrip on int field ine from class SetIntNegE67 with negative one value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetIntNegE67>();
+      let inst = cls.createInstance();
+      let f = cls.getInstanceField('ine')!;
+      f.setValue(inst, -1);
+      expect(f.getValue(inst) as int).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2030
+     * @tc.name testSetValue2030
+     * @tc.desc Verify setValue with incompatible thisObj (unrelated class) throws TypeError (list 5.5)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let baseCls = Class.from<SetThisWrongA28>();
+      let otherCls = Class.from<SetThisWrongB28>();
+      let field = baseCls.getInstanceField('f')!;
+      let wrongInst = otherCls.createInstance();
+      try {
+        field.setValue(wrongInst, 'val');
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2040
+     * @tc.name testSetValue2040
+     * @tc.desc Verify setValue then getValue does not change metadata (getName/getOwner/getType) purity (list 5.12)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetPurityE30>();
+      let inst = cls.createInstance();
+      let f = cls.getInstanceField('pu')!;
+      const nameBefore = f.getName();
+      const ownerBefore = f.getOwner().getName();
+      const typeBefore = f.getType().getName();
+      f.setValue(inst, 'mutated');
+      expect(f.getName()).assertEqual(nameBefore);
+      expect(f.getOwner().getName()).assertEqual(ownerBefore);
+      expect(f.getType().getName()).assertEqual(typeBefore);
+      expect(f.getValue(inst) as string).assertEqual('mutated');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2050
+     * @tc.name testSetValue2050
+     * @tc.desc Verify setValue on parent-declared public field using child instance succeeds (list 5.11)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let parentCls = Class.from<SetValueParentE20>();
+      let field = parentCls.getInstanceField('pf')!;
+      let inst = Class.from<SetValueChildE20>().createInstance();
+      field.setValue(inst, 'fromChildInst');
+      expect(field.getValue(inst) as string).assertEqual('fromChildInst');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2060
+     * @tc.name testSetValue2060
+     * @tc.desc Verify setValue(128) on byte field throws TypeError (out of range, supplement list)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetByteE01>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('b')!;
+      try {
+        field.setValue(inst, 128);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2070
+     * @tc.name testSetValue2070
+     * @tc.desc Verify setValue out of range on short field throws TypeError (supplement list)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetShortE02>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('s')!;
+      try {
+        field.setValue(inst, 32768);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2080
+     * @tc.name testSetValue2080
+     * @tc.desc Verify setValue char with multi-char string throws TypeError (supplement list)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetCharE05>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('c')!;
+      try {
+        field.setValue(inst, 'ab');
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2090
+     * @tc.name testSetValue2090
+     * @tc.desc Verify setValue on byte field b from class SetByteOverflowE68 with 128 overflow value throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetByteOverflowE68>();
+      let field = cls.getInstanceField('b')!;
+      let inst = cls.createInstance();
+      try {
+        field.setValue(inst, 128);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2100
+     * @tc.name testSetValue2100
+     * @tc.desc Verify setValue on byte field b from class SetByteOverflowE68 with -129 overflow value throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetByteOverflowE68>();
+      let field = cls.getInstanceField('b')!;
+      let inst = cls.createInstance();
+      try {
+        field.setValue(inst, -129);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2110
+     * @tc.name testSetValue2110
+     * @tc.desc Verify setValue on short field s from class SetShortOverflowE69 with 32768 overflow value throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetShortOverflowE69>();
+      let field = cls.getInstanceField('s')!;
+      let inst = cls.createInstance();
+      try {
+        field.setValue(inst, 32768);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2120
+     * @tc.name testSetValue2120
+     * @tc.desc Verify setValue on short field s from class SetShortOverflowE69 with -32769 overflow value throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetShortOverflowE69>();
+      let field = cls.getInstanceField('s')!;
+      let inst = cls.createInstance();
+      try {
+        field.setValue(inst, -32769);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2130
+     * @tc.name testSetValue2130
+     * @tc.desc Verify setValue on int field i from class SetIntOverflowE70 with 2147483648 overflow value throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetIntOverflowE70>();
+      let field = cls.getInstanceField('i')!;
+      let inst = cls.createInstance();
+      try {
+        field.setValue(inst, 2147483648);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2140
+     * @tc.name testSetValue2140
+     * @tc.desc Verify setValue on int field i from class SetIntOverflowE70 with -2147483649 overflow value throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetIntOverflowE70>();
+      let field = cls.getInstanceField('i')!;
+      let inst = cls.createInstance();
+      try {
+        field.setValue(inst, -2147483649);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2150
+     * @tc.name testSetValue2150
+     * @tc.desc Verify setValue on float field f from class SetFloatSpecialE71 with Float.NaN then getValue returns NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetFloatSpecialE71>();
+      let field = cls.getInstanceField('f')!;
+      let inst = cls.createInstance();
+      field.setValue(inst, Float.NaN);
+      expect(isNaN(field.getValue(inst) as float)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2160
+     * @tc.name testSetValue2160
+     * @tc.desc Verify setValue on float field f from class SetFloatSpecialE71 with Float.POSITIVE_INFINITY
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetFloatSpecialE71>();
+      let field = cls.getInstanceField('f')!;
+      let inst = cls.createInstance();
+      field.setValue(inst, Float.POSITIVE_INFINITY);
+      expect(isFinite(field.getValue(inst) as float)).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2170
+     * @tc.name testSetValue2170
+     * @tc.desc Verify setValue on double field d from class SetDoubleSpecialE72 with Double.NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetDoubleSpecialE72>();
+      let field = cls.getInstanceField('d')!;
+      let inst = cls.createInstance();
+      field.setValue(inst, Double.NaN);
+      expect(isNaN(field.getValue(inst) as double)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2180
+     * @tc.name testSetValue2180
+     * @tc.desc Verify setValue on char field c from class SetCharEdgeE73 with multi-character string 'ab' throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetCharEdgeE73>();
+      let field = cls.getInstanceField('c')!;
+      let inst = cls.createInstance();
+      try {
+        field.setValue(inst, 'ab');
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2190
+     * @tc.name testSetValue2190
+     * @tc.desc Verify setValue on char field c from class SetCharEdgeE73 with empty string throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetCharEdgeE73>();
+      let field = cls.getInstanceField('c')!;
+      let inst = cls.createInstance();
+      try {
+        field.setValue(inst, "");
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2200
+     * @tc.name testSetValue2200
+     * @tc.desc Verify setValue on char field c from class SetCharEdgeE73 with null character roundtrips
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetCharEdgeE73>();
+      let field = cls.getInstanceField('c')!;
+      let inst = cls.createInstance();
+      field.setValue(inst, c'\u0000');
+      expect(field.getValue(inst) as char).assertEqual(c'\u0000');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2210
+     * @tc.name testSetValue2210
+     * @tc.desc Verify setValue on char field c from class SetCharEdgeE73 with max unicode character
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetCharEdgeE73>();
+      let field = cls.getInstanceField('c')!;
+      let inst = cls.createInstance();
+      field.setValue(inst, c'?');
+      expect(field.getValue(inst) as char).assertEqual(c'?');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2220
+     * @tc.name testSetValue2220
+     * @tc.desc Verify setValue on string field s from class SetStringSpecialE75 with empty string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetStringSpecialE75>();
+      let field = cls.getInstanceField('s')!;
+      let inst = cls.createInstance();
+      field.setValue(inst, "");
+      expect(field.getValue(inst) as string).assertEqual("");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2230
+     * @tc.name testSetValue2230
+     * @tc.desc Verify setValue on string field s from class SetStringSpecialE75 with zero-width space
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetStringSpecialE75>();
+      let field = cls.getInstanceField('s')!;
+      let inst = cls.createInstance();
+      field.setValue(inst, "​");
+      expect(field.getValue(inst) as string).assertEqual("​");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2240
+     * @tc.name testSetValue2240
+     * @tc.desc Verify setValue on string field s from class SetStringSpecialE75 with tab character
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetStringSpecialE75>();
+      let field = cls.getInstanceField('s')!;
+      let inst = cls.createInstance();
+      field.setValue(inst, "\t");
+      expect(field.getValue(inst) as string).assertEqual("\t");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2250
+     * @tc.name testSetValue2250
+     * @tc.desc Verify setValue on string field s from class SetStringSpecialE75 with newline
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetStringSpecialE75>();
+      let field = cls.getInstanceField('s')!;
+      let inst = cls.createInstance();
+      field.setValue(inst, "\n");
+      expect(field.getValue(inst) as string).assertEqual("\n");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2260
+     * @tc.name testSetValue2260
+     * @tc.desc Verify setValue on string field s from class SetStringSpecialE75 with carriage return
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetStringSpecialE75>();
+      let field = cls.getInstanceField('s')!;
+      let inst = cls.createInstance();
+      field.setValue(inst, "\r");
+      expect(field.getValue(inst) as string).assertEqual("\r");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2270
+     * @tc.name testSetValue2270
+     * @tc.desc Verify setValue on string field s from class SetStringSpecialE75 with XSS payload
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetStringSpecialE75>();
+      let field = cls.getInstanceField('s')!;
+      let inst = cls.createInstance();
+      const xss: string = "<script>alert(1)</script>";
+      field.setValue(inst, xss);
+      expect(field.getValue(inst) as string).assertEqual(xss);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2280
+     * @tc.name testSetValue2280
+     * @tc.desc Verify setValue on string field s from class SetStringSpecialE75 with emoji + multi-lang
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetStringSpecialE75>();
+      let field = cls.getInstanceField('s')!;
+      let inst = cls.createInstance();
+      const val: string = "😀🔥🚀测试";
+      field.setValue(inst, val);
+      expect(field.getValue(inst) as string).assertEqual(val);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2290
+     * @tc.name testSetValue2290
+     * @tc.desc Verify setValue on string field s from class SetStringSpecialE75 with Chinese Unicode
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2290', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetStringSpecialE75>();
+      let field = cls.getInstanceField('s')!;
+      let inst = cls.createInstance();
+      field.setValue(inst, "中文测试");
+      expect(field.getValue(inst) as string).assertEqual("中文测试");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2300
+     * @tc.name testSetValue2300
+     * @tc.desc Verify setValue on Array<int> field with empty array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetArrayEdgeE76>();
+      let field = cls.getInstanceField('arr')!;
+      let inst = cls.createInstance();
+      const empty: Array<int> = [];
+      field.setValue(inst, empty);
+      expect((field.getValue(inst) as Array<int>).length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2310
+     * @tc.name testSetValue2310
+     * @tc.desc Verify setValue on Array<int> field with array containing null element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetArrayEdgeE76>();
+      let field = cls.getInstanceField('arr')!;
+      let inst = cls.createInstance();
+      const withNull: Array<int | null> = [1, null, 3];
+      field.setValue(inst, withNull);
+      expect((field.getValue(inst) as Array<int | null>).length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2320
+     * @tc.name testSetValue2320
+     * @tc.desc Verify setValue on Array<int> field with 2D array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSetValue2320', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SetArrayEdgeE76>();
+      let field = cls.getInstanceField('arr')!;
+      let inst = cls.createInstance();
+      const arr2d: Array<Array<int>> = [[1, 2], [3, 4]];
+      field.setValue(inst, arr2d);
+      const result = field.getValue(inst) as Array<Array<int>>;
+      expect(result[0][0]).assertEqual(1);
+      expect(result[1][1]).assertEqual(4);
+    });
+
+  });
+}
