@@ -1796,3 +1796,530 @@ export default function InstanceFieldIsPublicTest2(): void {
       expect(field.getType().getName()).assertEqual('std.core.Array');
       expect(field.isPublic()).assertTrue();
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0970
+     * @tc.name testIsPublic0970
+     * @tc.desc Verify getType name remains unchanged after setValue and isPublic stays true on public string field v from ForGetValueCrossP69
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic0970', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ForGetValueCrossP69>();
+      let field = cls.getInstanceField('v')!;
+      let instance = cls.createInstance();
+      const typeBefore = field.getType().getName();
+      field.setValue(instance, 'changed');
+      expect(field.getType().getName()).assertEqual(typeBefore);
+      expect(field.isPublic()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0980
+     * @tc.name testIsPublic0980
+     * @tc.desc Verify getOwner name ends with ChildInheritP58 and isPublic returns true on public string field childPub from ChildInheritP58 via getInstanceField
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic0980', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ChildInheritP58>();
+      let field = cls.getInstanceField('childPub')!;
+      expect(field.getOwner().getName().endsWith('ChildInheritP58')).assertTrue();
+      expect(field.isPublic()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0990
+     * @tc.name testIsPublic0990
+     * @tc.desc Verify getOwner name ends with ParentInheritP58 and isPublic returns true on public string field parentPub from ParentInheritP58 via getInstanceField
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic0990', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ParentInheritP58>();
+      let field = cls.getInstanceField('parentPub')!;
+      expect(field.getOwner().getName().endsWith('ParentInheritP58')).assertTrue();
+      expect(field.isPublic()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1000
+     * @tc.name testIsPublic1000
+     * @tc.desc Verify getOwner name matches between direct getInstanceField and array access while isPublic returns true on public field f1 from ReflectPublicMultiFieldA08
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ReflectPublicMultiFieldA08>();
+      let f1 = cls.getInstanceField('f1')!;
+      let fa = cls.getInstanceFields()[0];
+      expect(f1.getOwner().getName()).assertEqual(fa.getOwner().getName());
+      expect(f1.isPublic()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1010
+     * @tc.name testIsPublic1010
+     * @tc.desc Verify getOwner name remains unchanged after setValue and isPublic stays true on public string field v from ForGetValueCrossP69
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ForGetValueCrossP69>();
+      let field = cls.getInstanceField('v')!;
+      let instance = cls.createInstance();
+      const ownerBefore = field.getOwner().getName();
+      field.setValue(instance, 'z');
+      expect(field.getOwner().getName()).assertEqual(ownerBefore);
+      expect(field.isPublic()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1020
+     * @tc.name testIsPublic1020
+     * @tc.desc Verify equals returns true for two getInstanceField calls and isPublic returns true on public string field str from ReflectPublicStringP36
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ReflectPublicStringP36>();
+      let f1 = cls.getInstanceField('str')!;
+      let f2 = cls.getInstanceField('str')!;
+      expect(f1.equals(f2)).assertTrue();
+      expect(f1.isPublic()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1030
+     * @tc.name testIsPublic1030
+     * @tc.desc Verify equals returns true between getInstanceField and getInstanceFields[0] and isPublic returns true on public string field str from ReflectPublicStringP36
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ReflectPublicStringP36>();
+      let f1 = cls.getInstanceField('str')!;
+      let f2 = cls.getInstanceFields()[0];
+      expect(f1.equals(f2)).assertTrue();
+      expect(f1.isPublic()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1040
+     * @tc.name testIsPublic1040
+     * @tc.desc Verify equals returns false for differently named fields f1 and f2 while isPublic returns true on public fields from ReflectPublicMultiFieldA08 via getInstanceField
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ReflectPublicMultiFieldA08>();
+      let f1 = cls.getInstanceField('f1')!;
+      let f2 = cls.getInstanceField('f2')!;
+      expect(f1.equals(f2)).assertFalse();
+      expect(f1.isPublic()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1050
+     * @tc.name testIsPublic1050
+     * @tc.desc Verify equals returns true for same field and isPublic returns true on public string interface field iField from ImplInterfaceP60 using getInstanceField
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ImplInterfaceP60>();
+      let f1 = cls.getInstanceField('iField')!;
+      let f2 = cls.getInstanceField('iField')!;
+      expect(f1.equals(f2)).assertTrue();
+      expect(f1.isPublic()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1060
+     * @tc.name testIsPublic1060
+     * @tc.desc Verify isPublic returns true and getValue returns pf via child instance on public string parent field pField from ParentPubForPathP67 using getInstanceField
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ParentPubForPathP67>();
+      let child = new ChildPubForPathP67();
+      let field = cls.getInstanceField('pField')!;
+      expect(field.getValue(child) as string).assertEqual('pf');
+      expect(field.isPublic()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1070
+     * @tc.name testIsPublic1070
+     * @tc.desc Verify isPublic remains true and getValue returns updated after setValue via child instance on public string parent field pField from ParentPubForPathP67
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ParentPubForPathP67>();
+      let child = new ChildPubForPathP67();
+      let field = cls.getInstanceField('pField')!;
+      field.setValue(child as Object, 'updated');
+      expect(field.getValue(child) as string).assertEqual('updated');
+      expect(field.isPublic()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1080
+     * @tc.name testIsPublic1080
+     * @tc.desc Verify isPublic returns true and getValue returns null on public nullable string field nb from ReflectPublicNullableP10 via getInstanceField
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ReflectPublicNullableP10>();
+      let field = cls.getInstanceField('nb')!;
+      let instance = cls.createInstance();
+      const tmpVal = field.getValue(instance);
+      expect(tmpVal as string | null).assertEqual(null);
+      expect(field.isPublic()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1090
+     * @tc.name testIsPublic1090
+     * @tc.desc Verify isPublic returns true, getName returns str, getType is non-empty, and equals returns true on same field from ReflectPublicStringP36
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ReflectPublicStringP36>();
+      let field = cls.getInstanceField('str')!;
+      let field2 = cls.getInstanceField('str')!;
+      expect(field.isPublic()).assertTrue();
+      expect(field.getName()).assertEqual('str');
+      expect(field.getType().getName()).assertEqual('std.core.String');
+      expect(field.equals(field2)).assertTrue();
+    });
+
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1100
+     * @tc.name testIsPublic1100
+     * @tc.desc Verify getName and getOwner remain unchanged and isPublic stays true after getValue and setValue on public string field v from ForGetValueCrossP69
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ForGetValueCrossP69>();
+      let field = cls.getInstanceField('v')!;
+      let instance = cls.createInstance();
+      const name = field.getName();
+      const owner = field.getOwner().getName();
+      field.getValue(instance);
+      field.setValue(instance, 'val2');
+      expect(field.getName()).assertEqual(name);
+      expect(field.getOwner().getName()).assertEqual(owner);
+      expect(field.isPublic()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1110
+     * @tc.name testIsPublic1110
+     * @tc.desc Verify isPublic returns true and getValue returns 0 on public byte field b from ReflectPublicByteA01 using getInstanceField with createInstance
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ReflectPublicByteA01>();
+      let field = cls.getInstanceField('b')!;
+      let instance = cls.createInstance();
+      expect(field.getValue(instance) as byte).assertEqual(0 as byte);
+      expect(field.isPublic()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1120
+     * @tc.name testIsPublic1120
+     * @tc.desc Verify isPublic returns true and getValue returns empty string on public string field str from ReflectPublicStringP36 using getInstanceField with createInstance
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ReflectPublicStringP36>();
+      let field = cls.getInstanceField('str')!;
+      let instance = cls.createInstance();
+      const tmpVal = field.getValue(instance);
+      expect(tmpVal as string).assertEqual('');
+      expect(field.isPublic()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1130
+     * @tc.name testIsPublic1130
+     * @tc.desc Verify isPublic returns true and getValue returns Int.MIN_VALUE on public int field iMin from ReflectPublicIntMinP50 using Class.from and createInstance
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ReflectPublicIntMinP50>();
+      let field = cls.getInstanceField('iMin')!;
+      let instance = cls.createInstance();
+      const tmpVal = field.getValue(instance);
+      expect(tmpVal as Object).assertEqual(Int.MIN_VALUE);
+      expect(field.isPublic()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1140
+     * @tc.name testIsPublic1140
+     * @tc.desc Verify isPublic remains true and getValue returns 'c' after three sequential setValue calls on public string field v from ForGetValueCrossP69
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ForGetValueCrossP69>();
+      let field = cls.getInstanceField('v')!;
+      let instance = cls.createInstance();
+      field.setValue(instance, 'a');
+      field.setValue(instance, 'b');
+      field.setValue(instance, 'c');
+      const tmpVal = field.getValue(instance);
+      expect(tmpVal as string).assertEqual('c');
+      expect(field.isPublic()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1150
+     * @tc.name testIsPublic1150
+     * @tc.desc Verify equals returns true for all 100 repeated getInstanceField calls and isPublic remains true on public string field str from ReflectPublicStringP36
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ReflectPublicStringP36>();
+      let f1 = cls.getInstanceField('str')!;
+      let allEqual: boolean = true;
+      for (let i = 0; i < 100; i++) {
+        let f = cls.getInstanceField('str')!;
+        if (!f1.equals(f)) {
+          allEqual = false;
+        }
+      }
+      expect(allEqual).assertTrue();
+      expect(f1.isPublic()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1160
+     * @tc.name testIsPublic1160
+     * @tc.desc Verify isPublic remains true and getValue correctly returns 99 then 'str' after sequential setValue calls with int and string on public union field u from ReflectPublicUnionP09
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ReflectPublicUnionP09>();
+      let field = cls.getInstanceField('u')!;
+      let instance = cls.createInstance();
+      expect(field.isPublic()).assertTrue();
+      field.setValue(instance, 99);
+      const tmpVal1 = field.getValue(instance);
+      expect(tmpVal1 as Object).assertEqual(99);
+      field.setValue(instance, 'str');
+      const tmpVal2 = field.getValue(instance);
+      expect(tmpVal2 as string).assertEqual('str');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1170
+     * @tc.name testIsPublic1170
+     * @tc.desc Verify isPublic returns true and getValue returns array of length 3 after setValue with [1,2,3] on public Array<int> field arr from ReflectPublicArrayIntP38
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ReflectPublicArrayIntP38>();
+      let field = cls.getInstanceField('arr')!;
+      let instance = cls.createInstance();
+      field.setValue(instance, [1, 2, 3]);
+      let arrVal = field.getValue(instance) as Array<int>;
+      expect(arrVal.length).assertEqual(3);
+      expect(field.isPublic()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1180
+     * @tc.name testIsPublic1180
+     * @tc.desc Verify isPublic returns true and getValue returns 'direct' after setValue on public string field v from ForGetValueCrossP69 using getInstanceField access
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ForGetValueCrossP69>();
+      let field = cls.getInstanceField('v')!;
+      let instance = cls.createInstance();
+      field.setValue(instance, 'direct');
+      const tmpVal = field.getValue(instance);
+      expect(tmpVal as string).assertEqual('direct');
+      expect(field.isPublic()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1190
+     * @tc.name testIsPublic1190
+     * @tc.desc Verify getName returns 'str', getType and getOwner are non-null, and isPublic remains true after setValue on public string field str from ReflectPublicStringP36
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ReflectPublicStringP36>();
+      let field = cls.getInstanceField('str')!;
+      let instance = cls.createInstance();
+      field.setValue(instance, 'op');
+      expect(field.getName()).assertEqual('str');
+      expect(field.getType() != null).assertTrue();
+      expect(field.getOwner() != null).assertTrue();
+      expect(field.isPublic()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1200
+     * @tc.name testIsPublic1200
+     * @tc.desc Verify isPublic remains true after calling getValue on public double field dMax with Double.MAX_VALUE from ReflectPublicDoubleMaxP49 class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ReflectPublicDoubleMaxP49>();
+      let field = cls.getInstanceField('dMax')!;
+      let instance = cls.createInstance();
+      field.getValue(instance);
+      expect(field.isPublic()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1210
+     * @tc.name testIsPublic1210
+     * @tc.desc Verify isPublic returns true and getValue returns empty string on public string field str from ReflectPublicStringP36 accessed after createInstance via getInstanceField
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ReflectPublicStringP36>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('str')!;
+      expect(field.isPublic()).assertTrue();
+      const tmpVal = field.getValue(inst);
+      expect(tmpVal as string).assertEqual('');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1220
+     * @tc.name testIsPublic1220
+     * @tc.desc Verify all four instance fields from ReflectPublicMultiFieldA08 return isPublic true when iterating getInstanceFields array including f1, f2, f3, and f4
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ReflectPublicMultiFieldA08>();
+      let fields = cls.getInstanceFields();
+      expect(fields.length).assertEqual(4);
+      for (let i = 0; i < fields.length; i++) {
+        expect(fields[i].isPublic()).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1230
+     * @tc.name testIsPublic1230
+     * @tc.desc Verify isPublic returns true and getValue returns Int.MIN_VALUE after setValue on public int field iMin from ReflectPublicIntMinP50 with int minimum boundary value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ReflectPublicIntMinP50>();
+      let field = cls.getInstanceField('iMin')!;
+      let instance = cls.createInstance();
+      field.setValue(instance, Int.MIN_VALUE);
+      const tmpVal = field.getValue(instance);
+      expect(tmpVal as Object).assertEqual(Int.MIN_VALUE);
+      expect(field.isPublic()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1240
+     * @tc.name testIsPublic1240
+     * @tc.desc Verify isPublic returns true for public string field str from ReflectPublicStringP36 using getInstanceField both before and after createInstance invocation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ReflectPublicStringP36>();
+      let fBefore = cls.getInstanceField('str')!;
+      let inst = cls.createInstance();
+      let fAfter = cls.getInstanceField('str')!;
+      expect(fBefore.isPublic()).assertTrue();
+      expect(fAfter.isPublic()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1250
+     * @tc.name testIsPublic1250
+     * @tc.desc Verify isPublic returns true and getName returns 'u' on public union int|string field u from ReflectPublicUnionP09 with cross-validation of setValue and getValue
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ReflectPublicUnionP09>();
+      let field = cls.getInstanceField('u')!;
+      let inst = cls.createInstance();
+      expect(field.isPublic()).assertTrue();
+      expect(field.getName()).assertEqual('u');
+      field.setValue(inst, 'meta');
+      const tmpVal = field.getValue(inst);
+      expect(tmpVal as string).assertEqual('meta');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1260
+     * @tc.name testIsPublic1260
+     * @tc.desc Verify getOwner is non-null and both isPublic and isReadonly return true for public readonly string field r from class PublicReadonlyP52 using getInstanceField
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsPublic1260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<PublicReadonlyP52>();
+      let field = cls.getInstanceField('r')!;
+      expect(field.getOwner() != null).assertTrue();
+      expect(field.isPublic()).assertTrue();
+      expect(field.isReadonly()).assertTrue();
+    });
+
+  });
+}
