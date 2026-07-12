@@ -1997,3 +1997,615 @@ export default function InstanceFieldGetTypeTest2(): void {
       let after = field.getType().getName();
       expect(after).assertEqual(before);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1000
+     * @tc.name testGetType1000
+     * @tc.desc Verify enum typed field getType().isEnum() returns boolean
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<EnumField_072>();
+      let field = cls.getInstanceField('status')!;
+      let ft = field.getType();
+      expect(ft.isEnum()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1010
+     * @tc.name testGetType1010
+     * @tc.desc Verify non-enum field getType().isEnum() returns false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<EnumField_072>();
+      let field = cls.getInstanceField('count')!;
+      let ft = field.getType();
+      expect(ft.isEnum()).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1020
+     * @tc.name testGetType1020
+     * @tc.desc Verify full chain getName-getOwner-getType-getValue on same field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<FullChain_073>();
+      let instance = cls.createInstance();
+      let field = cls.getInstanceField('data')!;
+      let n1 = field.getName();
+      let o = field.getOwner().getName();
+      let t = field.getType().getName();
+      let v: string = field.getValue(instance) as string;
+      let n2 = field.getName();
+      expect(n1).assertEqual('data');
+      expect(o.endsWith('FullChain_073')).assertTrue();
+      expect(t).assertEqual('std.core.String');
+      expect(v).assertEqual('chainTest');
+      expect(n2).assertEqual('data');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1030
+     * @tc.name testGetType1030
+     * @tc.desc Verify number type (double alias) field getType returns valid name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<NumberTypeField_074>();
+      let field = cls.getInstanceField('numVal')!;
+      expect(field.getType().getName()).assertEqual("f64");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1040
+     * @tc.name testGetType1040
+     * @tc.desc Verify getType on Map<string, Array<int>> deep nested generic field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<NestedGenericType_075>();
+      let field = cls.getInstanceField('mapOfArr')!;
+      let ft = field.getType();
+      expect(ft.getName()).assertEqual("std.core.Map");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1050
+     * @tc.name testGetType1050
+     * @tc.desc Verify getType on Array<Map<string, int>> alternative deep generic
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<AltNestedType_076>();
+      let field = cls.getInstanceField('arrOfMap')!;
+      expect(field.getType().getName()).assertEqual("std.core.Array");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1060
+     * @tc.name testGetType1060
+     * @tc.desc Verify getType across multi-level getSuper chain
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let leaf = Class.from<TypeChainLeaf_077>();
+      let mid = leaf.getSuper()!;
+      let base = mid.getSuper()!;
+      expect(leaf.getInstanceField('lv')!.getType().getName()).assertEqual("u1");
+      expect(mid.getInstanceField('mv')!.getType().getName()).assertEqual('std.core.String');
+      expect(base.getInstanceField('bv')!.getType().getName()).assertEqual('i32');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1070
+     * @tc.name testGetType1070
+     * @tc.desc Verify getType on abstract+interface hierarchy concrete class field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TypeAbsConcrete_078>();
+      let field = cls.getInstanceField('concVal')!;
+      expect(field.getType().getName()).assertEqual("std.core.String");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1080
+     * @tc.name testGetType1080
+     * @tc.desc Verify getType on abstract class field via concrete getSuper
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let concrete = Class.from<TypeAbsConcrete_078>();
+      let abs = concrete.getSuper()!;
+      let field = abs.getInstanceField('absVal')!;
+      expect(field.getType().getName()).assertEqual("i32");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1090
+     * @tc.name testGetType1090
+     * @tc.desc Verify owner.isSubtypeOf chain using getOwner result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let child = Class.from<TypeSubChild_079>();
+      let parent = Class.from<TypeSubParent_079>();
+      let co = child.getInstanceField('cv')!.getOwner();
+      let po = parent.getInstanceField('pv')!.getOwner();
+      expect(co.isSubtypeOf(po)).assertTrue();
+      expect(po.isSubtypeOf(co)).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1100
+     * @tc.name testGetType1100
+     * @tc.desc Verify getType on multi-interface shared field name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TypeMultiShared_080>();
+      let f1 = cls.getInstanceField('sharedField')!;
+      let f2 = cls.getInstanceField('otherField')!;
+      expect(f1.getType().getName()).assertEqual("std.core.String");
+      expect(f2.getType().getName()).assertEqual('i32');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1110
+     * @tc.name testGetType1110
+     * @tc.desc Verify getType on self-referential class field type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SelfRef_081>();
+      let field = cls.getInstanceField('next')!;
+      let ft = field.getType();
+      expect(ft.getName().includes('.SelfRef_081')).assertTrue();
+      expect(ft.getName().includes('Null')).assertTrue();
+      expect(ft.isUnion()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1120
+     * @tc.name testGetType1120
+     * @tc.desc Verify union constituent types names are all valid
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TypeUnion4_066>();
+      let field = cls.getInstanceField('uv')!;
+      let ft = field.getType();
+      let types = ft.getUnionConstituentTypes()!;
+      let expectedNames = ['std.core.Boolean', 'std.core.Double', 'std.core.Int', 'std.core.String'];
+      for (let i = 0; i < types.length; i++) {
+        expect(types[i].getName()).assertEqual(expectedNames[i]);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1130
+     * @tc.name testGetType1130
+     * @tc.desc Verify getType on interface-extends-interface hierarchy field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TImplChain_082>();
+      let f1 = cls.getInstanceField('baseVal')!;
+      let f2 = cls.getInstanceField('derivedVal')!;
+      expect(f1.getType().getName()).assertEqual("std.core.String");
+      expect(f2.getType().getName()).assertEqual('i32');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1140
+     * @tc.name testGetType1140
+     * @tc.desc Verify getType on abstract-extends-abstract hierarchy field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let conc = Class.from<TConcAbs_083>();
+      let ad = conc.getSuper()!;
+      let ab = ad.getSuper()!;
+      expect(conc.getInstanceField('cVal')!.getType().getName()).assertEqual("u1");
+      expect(ad.getInstanceField('adVal')!.getType().getName()).assertEqual('std.core.String');
+      expect(ab.getInstanceField('abVal')!.getType().getName()).assertEqual('i32');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1150
+     * @tc.name testGetType1150
+     * @tc.desc Verify getType on bigint typed field returns valid name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TBigint_084>();
+      let field = cls.getInstanceField('bv')!;
+      expect(field.getType().getName()).assertEqual("std.core.BigInt");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1160
+     * @tc.name testGetType1160
+     * @tc.desc Verify getType on triple interface class fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TTriple_085>();
+      expect(cls.getInstanceField('x')!.getType().getName()).assertEqual("i32");
+      expect(cls.getInstanceField('y')!.getType().getName()).assertEqual('std.core.String');
+      expect(cls.getInstanceField('z')!.getType().getName()).assertEqual('u1');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1170
+     * @tc.name testGetType1170
+     * @tc.desc Verify union constituent types count for 2, 3, 4 member unions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let c2 = Class.from<TUnion2_086>();
+      let c3 = Class.from<TUnion3_086>();
+      let c4 = Class.from<TUnion4_086>();
+      let t2 = c2.getInstanceField('uv2')!.getType().getUnionConstituentTypes()!;
+      let t3 = c3.getInstanceField('uv3')!.getType().getUnionConstituentTypes()!;
+      let t4 = c4.getInstanceField('uv4')!.getType().getUnionConstituentTypes()!;
+      expect(t2.length).assertEqual(2);
+      expect(t3.length).assertEqual(3);
+      expect(t4.length).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1180
+     * @tc.name testGetType1180
+     * @tc.desc Verify field type from getInstanceFields matches getInstanceField type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MixedTypes020>();
+      let fields = cls.getInstanceFields();
+      for (let i = 0; i < fields.length; i++) {
+        let byName = cls.getInstanceField(fields[i].getName())!;
+        expect(byName.getType().getName()).assertEqual(fields[i].getType().getName());
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1190
+     * @tc.name testGetType1190
+     * @tc.desc Verify getType on readonly field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TypeReadonly_087>();
+      let field = cls.getInstanceField('roVal')!;
+      expect(field.getType().getName()).assertEqual("i32");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1200
+     * @tc.name testGetType1200
+     * @tc.desc Verify getType on final class field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TypeFinal_088>();
+      let field = cls.getInstanceField('finalVal')!;
+      expect(field.getType().getName()).assertEqual("std.core.String");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1210
+     * @tc.name testGetType1210
+     * @tc.desc Verify getType on custom class typed field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TypeHasCustom_089>();
+      let field = cls.getInstanceField('obj')!;
+      expect(field.getType().getName().endsWith('TypeCustomType_089')).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1220
+     * @tc.name testGetType1220
+     * @tc.desc Verify getType on Map<int,string> typed field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TypeMapIS_090>();
+      let field = cls.getInstanceField('mis')!;
+      expect(field.getType().getName()).assertEqual("std.core.Map");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1230
+     * @tc.name testGetType1230
+     * @tc.desc Verify isUnion type check on plain string field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MixedTypes020>();
+      let field = cls.getInstanceField('stringField')!;
+      let ft = field.getType();
+      expect(ft.isUnion()).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1240
+     * @tc.name testGetType1240
+     * @tc.desc Verify isFixedArray type check on Array field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ArrayTypeClass024>();
+      let field = cls.getInstanceField('items')!;
+      let ft = field.getType();
+      expect(ft.isFixedArray()).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1250
+     * @tc.name testGetType1250
+     * @tc.desc Verify getType on static field via getStaticField
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TStaticField_091>();
+      let sf = cls.getStaticField('sVal')!;
+      expect(sf.getType().getName()).assertEqual("i32");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1260
+     * @tc.name testGetType1260
+     * @tc.desc Verify isInterface type check on string field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TStrCheck_092>();
+      let field = cls.getInstanceField('strField')!;
+      let ft = field.getType();
+      expect(ft.isInterface()).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1270
+     * @tc.name testGetType1270
+     * @tc.desc Verify isFinal type check on non-final class field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TPlain_093>();
+      let field = cls.getInstanceField('val')!;
+      let ft = field.getType();
+      expect(ft.isFinal()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1280
+     * @tc.name testGetType1280
+     * @tc.desc Verify isAbstract type check on concrete class field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TPlain_093>();
+      let field = cls.getInstanceField('val')!;
+      let ft = field.getType();
+      expect(ft.isAbstract()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1290
+     * @tc.name testGetType1290
+     * @tc.desc Verify static and instance same-typed fields have same getType name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1290', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TStaticInst_094>();
+      let st = cls.getStaticField('sNum')!.getType().getName();
+      let it = cls.getInstanceField('iNum')!.getType().getName();
+      expect(st).assertEqual(it);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1300
+     * @tc.name testGetType1300
+     * @tc.desc Verify getInstanceFields single element type valid
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TStaticInst_094>();
+      let fields = cls.getInstanceFields();
+      expect(fields.length).assertEqual(1);
+      expect(fields[0].getType().getName()).assertEqual("i32");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1310
+     * @tc.name testGetType1310
+     * @tc.desc Verify getType on parent static field via getSuper
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let child = Class.from<TChildStatic_095>();
+      let parent = child.getSuper()!;
+      let sf = parent.getStaticField('psVal')!;
+      expect(sf.getType().getName()).assertEqual("i32");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1320
+     * @tc.name testGetType1320
+     * @tc.desc Verify enum typed field getType().isEnum() result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1320', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TEnumField_096>();
+      let field = cls.getInstanceField('color')!;
+      let ft = field.getType();
+      expect(ft.isEnum()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1330
+     * @tc.name testGetType1330
+     * @tc.desc Verify getType().getSuper() on custom class typed field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1330', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TOuter_097>();
+      let field = cls.getInstanceField('inner')!;
+      let ft = field.getType();
+      let sup = ft.getSuper();
+      expect(sup !== undefined).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1340
+     * @tc.name testGetType1340
+     * @tc.desc Verify getType on all getStaticFields valid
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1340', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TMultiStatic_098>();
+      let fields = cls.getStaticFields();
+      let expectedTypeNames = [
+        Class.PRIMITIVE_INT.getName(),
+        'std.core.String'
+      ];
+      for (let i = 0; i < fields.length; i++) {
+        expect(fields[i].getType().getName()).assertEqual(expectedTypeNames[i]);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1350
+     * @tc.name testGetType1350
+     * @tc.desc Verify getType parent static vs child instance fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let child = Class.from<TChildStatic_095>();
+      let parent = child.getSuper()!;
+      let sf = parent.getStaticField('psVal')!;
+      let inf = child.getInstanceField('cVal')!;
+      expect(sf.getType().getName()).assertEqual("i32");
+      expect(inf.getType().getName()).assertEqual('std.core.String');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1360
+     * @tc.name testGetType1360
+     * @tc.desc Verify getType two static fields have different types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1360', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TMultiStatic_098>();
+      let sfa = cls.getStaticField('a')!.getType().getName();
+      let sfb = cls.getStaticField('b')!.getType().getName();
+      expect(sfa).assertEqual("i32");
+      expect(sfb).assertEqual('std.core.String');
+      expect(sfa !== sfb).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1370
+     * @tc.name testGetType1370
+     * @tc.desc Verify getInstanceFields all have non-null getType with valid name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetType1370', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MixedTypes020>();
+      let fields = cls.getInstanceFields();
+      let expectedTypeNames = [
+        Class.PRIMITIVE_INT.getName(),
+        'std.core.String',
+        Class.PRIMITIVE_BOOLEAN.getName(),
+        Class.PRIMITIVE_FLOAT.getName(),
+        Class.PRIMITIVE_DOUBLE.getName()
+      ];
+      for (let i = 0; i < fields.length; i++) {
+        expect(fields[i].getType().getName()).assertEqual(expectedTypeNames[i]);
+      }
+    });
+
+  });
+}
