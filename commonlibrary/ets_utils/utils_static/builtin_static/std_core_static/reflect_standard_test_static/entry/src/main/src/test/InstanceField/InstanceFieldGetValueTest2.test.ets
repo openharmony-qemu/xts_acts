@@ -1987,3 +1987,711 @@ export default function InstanceFieldGetValueTest2(): void {
       let val: string = field.getValue(instance) as string;
       expect(val).assertEqual('initial');
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_0890
+     * @tc.name testGetValue0890
+     * @tc.desc Verify getValue consistency before and after Class.initialize
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue0890', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ValueOfFrom_062>();
+      let instance = cls.createInstance();
+      let field = cls.getInstanceField('val')!;
+      let before: int = field.getValue(instance) as int;
+      cls.initialize();
+      let after: int = field.getValue(instance) as int;
+      expect(after).assertEqual(before);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_0900
+     * @tc.name testGetValue0900
+     * @tc.desc Verify getValue returns default for string field after createInstance
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ValueOfAny_063>();
+      let instance = cls.createInstance();
+      let field = cls.getInstanceField('key')!;
+      let val: string = field.getValue(instance) as string;
+      expect(val).assertEqual('ofAnyVal');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_0910
+     * @tc.name testGetValue0910
+     * @tc.desc Verify getValue via Class.current matches Class.from
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue0910', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj = new CurrentValue_070();
+      let clsCur = obj.getClass();
+      let clsFrom = Class.from<CurrentValue_070>();
+      let instance = clsFrom.createInstance();
+      let vCur: string = clsCur.getInstanceField('data')!.getValue(obj) as string;
+      let vFrom: string = clsFrom.getInstanceField('data')!.getValue(instance) as string;
+      expect(vCur).assertEqual('currentVal');
+      expect(vFrom).assertEqual('currentVal');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_0920
+     * @tc.name testGetValue0920
+     * @tc.desc Verify getValue consistency after double Class.initialize
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue0920', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<DoubleInitValue_071>();
+      let instance = cls.createInstance();
+      let field = cls.getInstanceField('val')!;
+      let before: int = field.getValue(instance) as int;
+      cls.initialize();
+      cls.initialize();
+      let after: int = field.getValue(instance) as int;
+      expect(after).assertEqual(before);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_0930
+     * @tc.name testGetValue0930
+     * @tc.desc Verify full chain getName-getOwner-getType-getValue on same field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue0930', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<FullChainValue_072>();
+      let instance = cls.createInstance();
+      let field = cls.getInstanceField('info')!;
+      let name: string = field.getName();
+      let owner: string = field.getOwner().getName();
+      let typeName: string = field.getType().getName();
+      let val: string = field.getValue(instance) as string;
+      expect(name).assertEqual('info');
+      expect(owner.endsWith('FullChainValue_072')).assertTrue();
+      expect(typeName).assertEqual('std.core.String');
+      expect(val).assertEqual('fullChain');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_0940
+     * @tc.name testGetValue0940
+     * @tc.desc Verify getValue on deep nested generic Map<K,Array<T>> field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue0940', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<NestedGenericValue_073>();
+      let instance = cls.createInstance();
+      let field = cls.getInstanceField('mapField')!;
+      let val = field.getValue(instance);
+      expect(val !== null).assertTrue();
+      expect(val instanceof Map).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_0950
+     * @tc.name testGetValue0950
+     * @tc.desc Verify getValue across multi-level getSuper chain
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue0950', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let leaf = Class.from<ValueChainLeaf_074>();
+      let mid = leaf.getSuper()!;
+      let base = mid.getSuper()!;
+      let inst = leaf.createInstance();
+      expect(leaf.getInstanceField('lv')!.getValue(inst) as int).assertEqual(300);
+      expect(mid.getInstanceField('mv')!.getValue(inst) as int).assertEqual(200);
+      expect(base.getInstanceField('bv')!.getValue(inst) as int).assertEqual(100);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_0960
+     * @tc.name testGetValue0960
+     * @tc.desc Verify getValue on abstract class field via concrete subclass
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue0960', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let concrete = Class.from<ValueAbsConcrete_075>();
+      let inst = concrete.createInstance();
+      let abs = concrete.getSuper()!;
+      let field = abs.getInstanceField('baseVal')!;
+      let val: int = field.getValue(inst) as int;
+      expect(val).assertEqual(500);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_0970
+     * @tc.name testGetValue0970
+     * @tc.desc Verify getValue on interface-implemented field via abstract hierarchy
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue0970', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let concrete = Class.from<ValueAbsConcrete_075>();
+      let inst = concrete.createInstance();
+      let abs = concrete.getSuper()!;
+      let field = abs.getInstanceField('ifv')!;
+      let val: string = field.getValue(inst) as string;
+      expect(val).assertEqual('iface');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_0980
+     * @tc.name testGetValue0980
+     * @tc.desc Verify getValue on Object type field returns non-null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue0980', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ObjFieldValue_077>();
+      let instance = cls.createInstance();
+      let field = cls.getInstanceField('obj')!;
+      let val = field.getValue(instance);
+      expect(val !== null).assertTrue();
+      expect(val instanceof Object).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_0990
+     * @tc.name testGetValue0990
+     * @tc.desc Verify getValue on multi-interface shared field name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue0990', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ValueMultiShared_076>();
+      let instance = cls.createInstance();
+      let f1 = cls.getInstanceField('sharedVal')!;
+      let f2 = cls.getInstanceField('uniqueVal')!;
+      expect(f1.getValue(instance) as string).assertEqual('mv');
+      expect(f2.getValue(instance) as int).assertEqual(42);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1000
+     * @tc.name testGetValue1000
+     * @tc.desc Verify getValue returns correct value for longer string field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<LongStrValue_078>();
+      let instance = cls.createInstance();
+      let field = cls.getInstanceField('text')!;
+      let val: string = field.getValue(instance) as string;
+      expect(val).assertEqual('Lorem ipsum dolor sit amet');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1010
+     * @tc.name testGetValue1010
+     * @tc.desc Verify getValue on interface-extends-interface hierarchy
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<VImplChain_079>();
+      let inst = cls.createInstance();
+      expect(cls.getInstanceField('baseVal')!.getValue(inst) as string).assertEqual('bval');
+      expect(cls.getInstanceField('derivedVal')!.getValue(inst) as int).assertEqual(99);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1020
+     * @tc.name testGetValue1020
+     * @tc.desc Verify getValue on abstract-extends-abstract hierarchy chain
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let conc = Class.from<VConcAbs_080>();
+      let inst = conc.createInstance();
+      let ad = conc.getSuper()!;
+      let ab = ad.getSuper()!;
+      expect(conc.getInstanceField('cVal')!.getValue(inst) as int).assertEqual(30);
+      expect(ad.getInstanceField('adVal')!.getValue(inst) as int).assertEqual(20);
+      expect(ab.getInstanceField('abVal')!.getValue(inst) as int).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1030
+     * @tc.name testGetValue1030
+     * @tc.desc Verify getValue on bigint typed field returns non-null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<VBigint_081>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('bv')!;
+      let val = field.getValue(inst);
+      expect(val as bigint).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1040
+     * @tc.name testGetValue1040
+     * @tc.desc Verify getValue on triple interface class fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<VTriple_082>();
+      let inst = cls.createInstance();
+      expect(cls.getInstanceField('x')!.getValue(inst) as int).assertEqual(10);
+      expect(cls.getInstanceField('y')!.getValue(inst) as string).assertEqual('yval');
+      expect(cls.getInstanceField('z')!.getValue(inst) as boolean).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1050
+     * @tc.name testGetValue1050
+     * @tc.desc Verify getValue via getSuper chain all three levels
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let leaf = Class.from<VChainLeaf_083>();
+      let mid = leaf.getSuper()!;
+      let base = mid.getSuper()!;
+      let inst = leaf.createInstance();
+      expect(leaf.getInstanceField('c')!.getValue(inst) as int).assertEqual(3);
+      expect(mid.getInstanceField('b')!.getValue(inst) as int).assertEqual(2);
+      expect(base.getInstanceField('a')!.getValue(inst) as int).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1060
+     * @tc.name testGetValue1060
+     * @tc.desc Verify getValue returns consistent default across multiple createInstance
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<VChainBase_083>();
+      let i1 = cls.createInstance();
+      let i2 = cls.createInstance();
+      let field = cls.getInstanceField('a')!;
+      expect(field.getValue(i1) as int).assertEqual(field.getValue(i2) as int);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1070
+     * @tc.name testGetValue1070
+     * @tc.desc Verify getValue on final class field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ValueFinal_084>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('finalVal')!;
+      let val: string = field.getValue(inst) as string;
+      expect(val).assertEqual('fv');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1080
+     * @tc.name testGetValue1080
+     * @tc.desc Verify getValue on custom class typed field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ValueHasCustom_085>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('obj')!;
+      let val = field.getValue(inst);
+      expect(val !== null).assertTrue();
+      expect(val instanceof Object).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1090
+     * @tc.name testGetValue1090
+     * @tc.desc Verify getValue on Map<int,string> typed field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ValueMapIS_086>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('mis')!;
+      let val = field.getValue(inst);
+      expect(val !== null).assertTrue();
+      expect(val instanceof Map).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1100
+     * @tc.name testGetValue1100
+     * @tc.desc Verify getValue loop 20-iteration consistency
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ValueLoop_087>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('counter')!;
+      for (let i = 0; i < 20; i++) {
+        expect(field.getValue(inst) as int).assertEqual(99);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1110
+     * @tc.name testGetValue1110
+     * @tc.desc Verify getValue deep chain with mixed types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let leaf = Class.from<VMixedLeaf_088>();
+      let mid = leaf.getSuper()!;
+      let base = mid.getSuper()!;
+      let inst = leaf.createInstance();
+      expect(leaf.getInstanceField('c')!.getValue(inst) as boolean).assertTrue();
+      expect(mid.getInstanceField('b')!.getValue(inst) as int).assertEqual(2);
+      expect(base.getInstanceField('a')!.getValue(inst) as string).assertEqual('a');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1120
+     * @tc.name testGetValue1120
+     * @tc.desc Verify getValue Class.from vs Class.of consistency
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ValueFinal_084>();
+      let inst = cls.createInstance();
+      let obj = new ValueFinal_084();
+      let cOf = Class.of(obj);
+      let v1: string = cls.getInstanceField('finalVal')!.getValue(inst) as string;
+      let v2: string = cOf.getInstanceField('finalVal')!.getValue(obj) as string;
+      expect(v1).assertEqual(v2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1130
+     * @tc.name testGetValue1130
+     * @tc.desc Verify getValue on static field reads correct value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<VStaticField_089>();
+      let sf = cls.getStaticField('sVal')!;
+      let val: string = sf.getValue() as string;
+      expect(val).assertEqual('staticStr');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1140
+     * @tc.name testGetValue1140
+     * @tc.desc Verify getValue on string array with initial elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<VStrArrInit_090>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('items')!;
+      let val: Array<string> = field.getValue(inst) as Array<string>;
+      expect(val.length).assertEqual(3);
+      expect(val[0]).assertEqual('a');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1150
+     * @tc.name testGetValue1150
+     * @tc.desc Verify static vs instance field getValue reads correct values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<VStaticField_089>();
+      let sf = cls.getStaticField('sVal')!;
+      let inf = cls.getInstanceField('iVal')!;
+      let inst = cls.createInstance();
+      expect(sf.getValue() as string).assertEqual('staticStr');
+      expect(inf.getValue(inst) as string).assertEqual('instanceStr');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1160
+     * @tc.name testGetValue1160
+     * @tc.desc Verify getValue on interface-implementing class fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<VImplIF_091>();
+      let inst = cls.createInstance();
+      let f1 = cls.getInstanceField('ifVal')!;
+      let f2 = cls.getInstanceField('ownVal')!;
+      expect(f1.getValue(inst) as int).assertEqual(99);
+      expect(f2.getValue(inst) as string).assertEqual('own');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1170
+     * @tc.name testGetValue1170
+     * @tc.desc Verify getStaticFields all values readable
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<VMultiStatic_092>();
+      let fields = cls.getStaticFields();
+      expect(fields.length).assertEqual(2);
+      expect(fields[0].getValue() as int).assertEqual(1);
+      expect(fields[1].getValue() as int).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1180
+     * @tc.name testGetValue1180
+     * @tc.desc Verify getValue consistency after getOwner call
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<VStaticField_089>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('iVal')!;
+      let before: string = field.getValue(inst) as string;
+      let after: string = field.getValue(inst) as string;
+      expect(after).assertEqual(before);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1190
+     * @tc.name testGetValue1190
+     * @tc.desc Verify getValue on parent static field via getSuper
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let child = Class.from<VChildStatic_093>();
+      let parent = child.getSuper()!;
+      let sf = parent.getStaticField('psVal')!;
+      let val: string = sf.getValue() as string;
+      expect(val).assertEqual('parentStaticStr');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1200
+     * @tc.name testGetValue1200
+     * @tc.desc Verify getValue on enum typed field reads value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<VEnumField_094>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('level')!;
+      let val = field.getValue(inst);
+      expect(val as ValueEnum_094).assertEqual(ValueEnum_094.MEDIUM);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1210
+     * @tc.name testGetValue1210
+     * @tc.desc Verify getValue on string field with escape sequences
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<VEscStr_095>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('text')!;
+      let val: string = field.getValue(inst) as string;
+      expect(val).assertEqual('hello\nworld\ttab');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1220
+     * @tc.name testGetValue1220
+     * @tc.desc Verify getValue via getStaticFields traversal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<VMultiStatic_096>();
+      let fields = cls.getStaticFields();
+      expect(fields[0].getValue() as int).assertEqual(100);
+      expect(fields[1].getValue() as int).assertEqual(200);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1230
+     * @tc.name testGetValue1230
+     * @tc.desc Verify getValue on static field in final class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<VFinalStatic_097>();
+      let sf = cls.getStaticField('fVal')!;
+      let val: string = sf.getValue() as string;
+      expect(val).assertEqual('finalStatic');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1240
+     * @tc.name testGetValue1240
+     * @tc.desc Verify getValue on double field with non-zero default
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<VDoubleNonZero_098>();
+      let inst = cls.createInstance();
+      let field = cls.getInstanceField('dVal')!;
+      let val: double = field.getValue(inst) as double;
+      expect(val).assertEqual(3.14);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1250
+     * @tc.name testGetValue1250
+     * @tc.desc Verify getValue with incompatible thisObj throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let clsA = Class.from<TypeErrorFieldA_099>();
+      let clsB = Class.from<TypeErrorFieldB_099>();
+      let field = clsA.getInstanceField('aVal')!;
+      let incompatibleObj = clsB.createInstance();
+      try {
+        field.getValue(incompatibleObj);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1260
+     * @tc.name testGetValue1260
+     * @tc.desc Verify getValue with compatible thisObj succeeds without error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TypeErrorFieldA_099>();
+      let field = cls.getInstanceField('aVal')!;
+      let instance = cls.createInstance();
+      let val: int = field.getValue(instance) as int;
+      expect(val).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1270
+     * @tc.name testGetValue1270
+     * @tc.desc Verify getValue with instance of unrelated class throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let clsA = Class.from<TypeErrorFieldA_099>();
+      let clsB = Class.from<TypeErrorFieldB_099>();
+      let field = clsB.getInstanceField('bVal')!;
+      let incompatibleObj = clsA.createInstance();
+      try {
+        field.getValue(incompatibleObj);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1280
+     * @tc.name testGetValue1280
+     * @tc.desc Verify getValue with null thisObj (using null! to bypass static check) throws NullPointerError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TypeErrorFieldA_099>();
+      let field = cls.getInstanceField('aVal')!;
+      try {
+        field.getValue(null!);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1290
+     * @tc.name testGetValue1290
+     * @tc.desc Verify getValue with undefined thisObj (using ! to bypass static check) throws NullPointerError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetValue1290', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TypeErrorFieldA_099>();
+      let field = cls.getInstanceField('aVal')!;
+      let undefObj: Object | undefined = undefined;
+      try {
+        field.getValue(undefObj!);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
+      }
+    });
+
+  });
+}
