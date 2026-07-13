@@ -12,15 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import usbMgr from '@ohos.usbManager';
-
 const FILTERED_DEVICES: Array<{vendorId: number, productId: number}> = [
   {vendorId: 3034, productId: 33107},
   {vendorId: 65535, productId: 14131},
 ];
 
-export function isFilteredDevice(device: usbMgr.USBDevice): boolean {
+export function isFilteredDevice(device: {vendorId: number, productId: number}): boolean {
   return FILTERED_DEVICES.some(item =>
     device.vendorId === item.vendorId && device.productId === item.productId
   );
