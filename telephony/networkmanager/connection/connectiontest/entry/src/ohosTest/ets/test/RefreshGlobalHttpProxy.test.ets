@@ -215,13 +215,11 @@ export default function RefreshGlobalHttpProxyTest() {
           let businessError = err as BusinessError;
           console.info(`${caseName} test failed err.code: ${businessError.code}`);
           ExpectTrue(businessError.code === 2100003 || businessError.code === 2100002);
-          let exclusionStr = "";
-          let exclusionArray = exclusionStr.split(',');
           try {
             await connection.setGlobalHttpProxy({
               host: "",
               port: 0,
-              exclusionList: exclusionArray,
+              exclusionList: [],
               username: "",
               password: ""
             } as connection.HttpProxy);
