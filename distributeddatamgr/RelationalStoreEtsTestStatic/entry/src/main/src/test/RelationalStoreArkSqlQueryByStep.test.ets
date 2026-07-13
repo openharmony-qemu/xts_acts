@@ -122,7 +122,7 @@ function verifyRowData(resultSet: relationalStore.ResultSet, expected: relationa
     }
   }
 }
-export default function RelationalStoreArkSqlQueryByStepTest() {
+export default function RelationalStoreArkSqlQueryByStepTest(): void {
   describe('RelationalStoreArkSqlQueryByStepTest', (): void => {
     beforeAll(async () => {
       console.info(TAG + 'beforeAll')
