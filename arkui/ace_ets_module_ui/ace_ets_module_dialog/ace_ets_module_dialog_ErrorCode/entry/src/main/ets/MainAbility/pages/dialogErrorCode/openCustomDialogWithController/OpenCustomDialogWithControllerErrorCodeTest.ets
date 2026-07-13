@@ -1,11 +1,26 @@
+/*
+ * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 /**
  * openCustomDialogWithController 错误码测试
  * 对应新接口: present(content: ComponentContent, options?)
  * 错误码: 401(参数错误), 100001(内部错误), 103301(内容错误), 103302(内容已存在), 103306(挂载失败)
  */
-import { ComponentContent, CustomDialogController, dialog as dialogApi } from '@kit.ArkUI';
+import { ComponentContent, DialogPresenter } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { TestResult, makeResult, TextParams, commonTextBuilder } from './common/CommonHelper';
+import { TestResult, makeResult } from '../common/CommonHelper';
 import { resourceManager } from '@kit.LocalizationKit';
 import { systemShare } from '@kit.ShareKit';
 import { uniformTypeDescriptor as utd } from '@kit.ArkData';
@@ -40,13 +55,11 @@ struct OpenCustomDialogWithControllerErrorCodeTest {
     this.results.unshift(makeResult(label, expectedCode, actualCode));
   }
 
-  private share() {
-    // 构造ShareData，需配置一条有效数据信息
+  private share(): void {
     let shareData: systemShare.SharedData = new systemShare.SharedData({
       utd: utd.UniformDataType.TEXT,
       content: '这是一段文本内容'
     });
-    // 进行分享面板显示
     let controller: systemShare.ShareController = new systemShare.ShareController(shareData);
     let uiContext: UIContext = this.getUIContext();
     let context: common.UIAbilityContext = uiContext.getHostContext() as common.UIAbilityContext;
@@ -241,11 +254,11 @@ struct OpenCustomDialogWithControllerErrorCodeTest {
         cn = new ComponentContent(uiContext, wrapBuilder(BuilderDialog), new Params('Normal',
           uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
       }
-      let dialog = this.getUIContext().getDialogPresenter();
-      let controller = new CustomDialogController({ builder: BuilderDialog });
-      let id = await dialog.present(cn, { controller: controller });
+      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
+      let controller: CustomDialogController = new CustomDialogController({ builder: BuilderDialog });
+      await (dialog.present as Function)(cn as ESObject, { controller: controller } as ESObject);
       this.addResult('正常openCustomDialogWithController', 0, 0);
-      await dialog.dismiss(cn);
+      await (dialog.dismiss as Function)(cn as ESObject);
     } catch (err) { this.addResult('正常openCustomDialogWithController', 0, (err as BusinessError).code); }
   }
 
@@ -291,16 +304,16 @@ struct OpenCustomDialogWithControllerErrorCodeTest {
         cn = new ComponentContent(uiContext, wrapBuilder(BuilderDialog), new Params('Dup',
           uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
       }
-      let dialog = this.getUIContext().getDialogPresenter();
-      await dialog.present(cn);
+      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
+      await (dialog.present as Function)(cn as ESObject);
       this.addResult('第一次打开', 0, 0);
       try {
-        await dialog.present(cn);
+        await (dialog.present as Function)(cn as ESObject);
         this.addResult('重复打开', 103302, -1);
       } catch (innerErr) {
         this.addResult('重复打开', 103302, (innerErr as BusinessError).code);
       }
-      await dialog.dismiss(cn);
+      await (dialog.dismiss as Function)(cn as ESObject);
     } catch (err) { this.addResult('重复打开', 103302, (err as BusinessError).code); }
   }
 }
