@@ -193,7 +193,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
             let scrollBar = await driver.findComponent(ON.text('桌面角标'))
             console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
             expect(scrollBar != null).assertTrue()
-            scrollBar?.scrollToBottom()
+            await scrollBar?.scrollToBottom()
             await Utils.msSleep(3000)
           }
           await Utils.msSleep(1000)
@@ -266,7 +266,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
             let scrollBar = await driver.findComponent(ON.text('桌面角标'))
             console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
             expect(scrollBar != null).assertTrue()
-            scrollBar?.scrollToBottom()
+            await scrollBar?.scrollToBottom()
             await Utils.msSleep(6000)
           }
           let button = await driver.findComponent(ON.text(name));
@@ -382,7 +382,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
             let scrollBar = await driver.findComponent(ON.text('桌面角标'))
             console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
             expect(scrollBar != null).assertTrue()
-            scrollBar?.scrollToBottom()
+            await scrollBar?.scrollToBottom()
             await Utils.msSleep(3000)
           }else{
             let button = await driver.findComponent(ON.text(name));
@@ -495,7 +495,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
             let scrollBar = await driver.findComponent(ON.text('桌面角标'))
             console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
             expect(scrollBar != null).assertTrue()
-            scrollBar?.scrollToBottom()
+            await scrollBar?.scrollToBottom()
             await Utils.msSleep(3000)
           }else{
             let button = await driver.findComponent(ON.text(name));
