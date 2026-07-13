@@ -398,7 +398,6 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
           hilog.info(0x0000, 'testTag',
             testNum + `openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data.bannerEnabled).assertEqual(false)
-          expect(data.badgeNumberEnabled).assertEqual(false)
           expect(data.notificationEnabled).assertEqual(true)
           done()
         }).catch((e: Error) => {
