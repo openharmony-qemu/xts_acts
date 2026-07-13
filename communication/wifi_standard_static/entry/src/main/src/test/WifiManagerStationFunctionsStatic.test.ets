@@ -3387,6 +3387,26 @@ export default function actsWifiManagerFunctionsTest() {
       done();
     });
     /**
+     * @tc.number SUB_Communication_WifiManager_ENUM_WifiCapability_0080
+     * @tc.name SUB_Communication_WifiManager_ENUM_WifiCapability_0080
+     * @tc.desc WifiCapability	WIFI_AUTO_ENABLE test.
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     */
+    it("SUB_Communication_WifiManager_ENUM_WifiCapability_0080", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = "SUB_Communication_WifiManager_ENUM_WifiCapability_0080";
+      try {
+        let WIFI_AUTO_ENABLE: wifiManager.WifiCapability = wifiManager.WifiCapability.WIFI_AUTO_ENABLE;
+        hilog.info(domain, tag, `${caseName}WIFI_AUTO_ENABLE:` + WIFI_AUTO_ENABLE);
+        expect(WIFI_AUTO_ENABLE).assertEqual(0);
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName}constant WIFI_AUTO_ENABLE get errCode:` + err.code + `,errMessage:` + err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
      * @tc.number SUB_Communication_WiFi_wifiManager_isWlanSupported_0001
      * @tc.name SUB_Communication_WiFi_wifiManager_isWlanSupported_0001
      * @tc.desc Test isWlanSupported 
