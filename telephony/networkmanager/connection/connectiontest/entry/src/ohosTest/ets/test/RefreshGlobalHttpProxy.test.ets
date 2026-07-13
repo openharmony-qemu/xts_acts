@@ -40,7 +40,7 @@ export default function RefreshGlobalHttpProxyTest() {
      * @tc.desc    Test refreshGlobalHttpProxy when API not supported, verify returns error code 2100003.
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL0
+     * @tc.level   LEVEL1
      */
     it('testRefreshGlobalHttpProxyWithErrorCode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
