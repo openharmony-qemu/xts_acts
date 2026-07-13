@@ -1,10 +1,6 @@
 {
   "src": [
     "MainAbility/pages/index/index",
-    "MainAbility/pages/TextPickerDialog/TextPickerDialog",
-    "MainAbility/pages/TimePickerDialog/TimePickerDialog",
-    "MainAbility/pages/CalendarPickerDialog/CalendarPickerDialog",
-    "MainAbility/pages/DatePickerDialog/DatePickerDialog",
     "MainAbility/pages/CalendarPickerDialog/CalendarDialogCallback",
     "MainAbility/pages/DatePickerDialog/DatePickerDialogCallback",
     "MainAbility/pages/TextPickerDialog/TextPickerDialogCallback",
