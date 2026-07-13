@@ -87,7 +87,6 @@ export default function RefreshGlobalHttpProxyTest() {
             }
           }
           if (errorOccurred === false && proxyResults.length === 3) {
-            // 全部成功，验证结果一致性
             let consistent = true;
             let firstJson = JSON.stringify(proxyResults[0]);
             for (let j = 1; j < 3; j++) {
