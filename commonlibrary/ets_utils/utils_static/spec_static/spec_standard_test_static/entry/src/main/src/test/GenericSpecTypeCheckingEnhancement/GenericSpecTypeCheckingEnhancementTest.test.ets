@@ -25,7 +25,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../hypium";
+} from "@ohos/hypium-binary/src/main/indexStatic";
 
 function foo<T>(p: T, q: T): T {
   return p ?? q

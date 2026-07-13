@@ -25,7 +25,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../../hypium";
+} from "@ohos/hypium-binary/src/main/indexStatic";
 
 // 类、接口、函数定义
 interface Foo_7 {

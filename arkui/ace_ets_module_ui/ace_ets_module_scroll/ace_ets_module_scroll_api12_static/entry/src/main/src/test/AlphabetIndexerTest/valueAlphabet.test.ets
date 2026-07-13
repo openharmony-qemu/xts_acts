@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -95,6 +95,7 @@ it('valueAlphabet_static_0100', Level.LEVEL0, async (done: () => void): Promise<
 it('valueAlphabet_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[valueAlphabet_static_0200] START');
       let driver: Driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.text('B'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -119,6 +120,7 @@ it('valueAlphabet_static_0200', Level.LEVEL0, async (done: () => void): Promise<
 it('valueAlphabet_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[valueAlphabet_static_0300] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.text('A'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);

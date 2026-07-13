@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {describe, beforeAll, afterEach, afterAll, it, beforeEach,expect,Level} from "../../../../hypium/index"
+import {describe, beforeAll, afterEach, afterAll, it, beforeEach,expect,Level} from "@ohos/hypium-binary/src/main/indexStatic"
 import router from '@ohos.router';
 
 import Utils from '../Utils.test';

@@ -410,7 +410,7 @@ export default function DlpEnterpriseServiceTest() {
     /**
      * @tc.name   SUB_SECURITY_DLP_setControlledAppLists_1300
      * @tc.number Test_setControlledAppLists_013
-     * @tc.desc   setControlledAppLists string length is 256, return 19100024 or 801.
+     * @tc.desc   setControlledAppLists string length is 4096, return 19100024 or 801.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -418,7 +418,7 @@ export default function DlpEnterpriseServiceTest() {
     it('SUB_SECURITY_DLP_setControlledAppLists_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let curTag = TAG + "Test_setControlledAppLists_013";
       console.info(curTag, "start");
-      let appLists = [generateString(256)];
+      let appLists = [generateString(4096)];
       try {
         await dlpPermission.setControlledAppLists(appLists);
         expect(null).assertFail();
@@ -440,7 +440,7 @@ export default function DlpEnterpriseServiceTest() {
     /**
      * @tc.name   SUB_SECURITY_DLP_setControlledAppLists_1400
      * @tc.number Test_setControlledAppLists_014
-     * @tc.desc   setControlledAppLists string length is 257, return 19100001 or 801.
+     * @tc.desc   setControlledAppLists string length is 4097, return 19100001 or 801.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -448,7 +448,7 @@ export default function DlpEnterpriseServiceTest() {
     it('SUB_SECURITY_DLP_setControlledAppLists_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let curTag = TAG + "Test_setControlledAppLists_014";
       console.info(curTag, "start");
-      let appLists = [generateString(257)];
+      let appLists = [generateString(4097)];
       try {
         await dlpPermission.setControlledAppLists(appLists);
         expect(null).assertFail();

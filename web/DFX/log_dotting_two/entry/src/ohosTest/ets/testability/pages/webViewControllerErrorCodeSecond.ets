@@ -57,8 +57,6 @@ struct Index {
       }
     }
   }
-
-
   build() {
     Column() {
       Row() {
@@ -68,7 +66,6 @@ struct Index {
           console.info('key==>' + this.str);
           this.isReceive = -1;
           switch (this.str) {
-
             case 'testLoadDataFullParamsError001': {
               try {
                 this.controllerNull.loadData('<html><body bgcolor=\"white\">Source:<pre>source</pre></body></html>',

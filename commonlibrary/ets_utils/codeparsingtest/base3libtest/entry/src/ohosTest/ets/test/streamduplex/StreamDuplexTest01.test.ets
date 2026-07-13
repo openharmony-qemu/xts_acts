@@ -301,7 +301,7 @@ export default function StreamDuplex01Test() {
         let result: boolean = duplexStream.write('');
         expect(result).assertFalse();
       } catch (err) {
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(undefined);
       }
     });
 

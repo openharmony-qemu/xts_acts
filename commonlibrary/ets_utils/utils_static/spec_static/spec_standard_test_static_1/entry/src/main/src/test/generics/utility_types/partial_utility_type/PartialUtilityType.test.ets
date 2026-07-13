@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,7 +25,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../../hypium"
+} from "@ohos/hypium-binary/src/main/indexStatic"
 
 //  (29)
 // 接口定义
@@ -1219,7 +1219,7 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
-export default function PartialUtilityTypeTest() {
+export default function PartialUtilityTypeTest(): void {
   describe("PartialUtilityTypeTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

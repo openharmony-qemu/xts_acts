@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import router from '@ohos.router';
 import { Driver, Component, ON, Rect } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -76,6 +76,7 @@ export default function ListFlingCallbackJsunit() {
 it('ListFlingCallbackTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ListFlingCallbackTest_static_0100 START');
       let driver1 = Driver.create();
+      await CommonFunc.sleep(1000);
       let button = await driver1.findComponent(ON.id('btn_list_fling_01')) as Component;
       await button.click();
       await CommonFunc.sleep(1000);
@@ -97,6 +98,7 @@ it('ListFlingCallbackTest_static_0100', Level.LEVEL1, async (done: () => void): 
 it('ListFlingCallbackTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ListFlingCallbackTest_static_0200 START');
       let driver1 = Driver.create();
+      await CommonFunc.sleep(1000);
       let button = await driver1.findComponent(ON.id('btn_list_fling_02')) as Component;
       await button.click();
       await CommonFunc.sleep(1000);

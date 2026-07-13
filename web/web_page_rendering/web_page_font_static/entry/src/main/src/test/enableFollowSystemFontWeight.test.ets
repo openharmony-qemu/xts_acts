@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, beforeAll,TestType,Size,Level } from '../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, beforeAll,TestType,Size,Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Util.test';
 import router from '@ohos.router';

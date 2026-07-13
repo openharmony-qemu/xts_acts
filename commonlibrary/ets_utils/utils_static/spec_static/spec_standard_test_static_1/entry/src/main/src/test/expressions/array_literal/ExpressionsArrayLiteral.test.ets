@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import Utils from "../../Util.test";
+
 import {
   expect,
   describe,
@@ -25,15 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../hypium";
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+} from "@ohos/hypium-binary/src/main/indexStatic";
 
 let arr: int[] = [0, 0, 0, 0]
 function foo_abrupt_0(cnt: int): int  {
@@ -272,7 +266,7 @@ class A_array_literal_14 {
 }
 let x_array_literal_14: A_array_literal_14[] = [{fld: 1.0}, {fld: 1.0}, {fld: 1.0}, {fld: 1.0}]
 
-export default function ExpressionsArrayLiteralTestSuite() {
+export default function ExpressionsArrayLiteralTestSuite(): void {
   describe("ExpressionsArrayLiteralTestSuite", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -283,7 +277,7 @@ export default function ExpressionsArrayLiteralTestSuite() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

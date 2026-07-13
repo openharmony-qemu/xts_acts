@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import webView from '@ohos.web.webview';
-import { beforeAll, beforeEach, describe, it, TestType, Size, Level,expect } from '../../../hypium/index';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level,expect } from '@ohos/hypium-binary/src/main/indexStatic';
 import router from '@ohos.router';
 import Utils from './Utils.test';
 import inspector from '@ohos.arkui.inspector';

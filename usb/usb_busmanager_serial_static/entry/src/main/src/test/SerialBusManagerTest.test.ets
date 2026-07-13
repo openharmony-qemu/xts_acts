@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, afterAll, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, beforeAll, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
 import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 import { BusinessError } from '@ohos.base';
 import serial from "@ohos.busManager.serial";
@@ -101,8 +101,8 @@ export default function SerialBusManagerTest(): void {
             gPortInfo1 = portList[1].portInfo;
           }
           console.info(TAG, 'beforeAll portInfo: ', JSON.stringify(gPortInfo));
-          done()
         }
+        done()
       } catch (error) {
         console.info(TAG, 'beforeAll error: ', JSON.stringify(error));
         done()

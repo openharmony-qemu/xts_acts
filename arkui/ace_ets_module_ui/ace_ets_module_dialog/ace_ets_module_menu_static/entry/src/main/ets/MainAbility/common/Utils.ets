@@ -70,7 +70,7 @@ static sleep(count:int) : Promise<int> {
     })
   }
 
-  static async drag(downX: number, downY: number, upX: number, upY: number, steps: number) {
+  static async drag(downX: number, downY: number, upX: number, upY: number, steps: number): Promise<void> {
     console.info('start to drag')
     let xStep: number;
     let yStep: number;

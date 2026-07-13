@@ -87,6 +87,28 @@ export default function getApplicationLabel() {
         done();
       }
     })
+
+   /**
+     * @tc.name   SUB_BMS_FRAMEWORK_GETAPPLICATIONLABEL_0600
+     * @tc.number SUB_BMS_FRAMEWORK_GETAPPLICATIONLABEL_0600
+     * @tc.desc   Check the 2003 AppIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+  it('SUB_BMS_FRAMEWORK_GETAPPLICATIONLABEL_0600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
+    await bundleManager.getApplicationLabel("ohos.acts.bundle.stage.test", 2003).then(data => {
+      console.info("SUB_BMS_FRAMEWORK_GETAPPLICATIONLABEL_0600 success" + JSON.stringify(data))
+      expect().assertFail()
+      done()
+    }).catch((err: BusinessError) => {
+      console.info("SUB_BMS_FRAMEWORK_GETAPPLICATIONLABEL_0600 failed" + JSON.stringify(err))
+      expect(err.code).assertEqual(17700061)
+      expect(err.message).assertEqual("BusinessError 17700061: The specified app index is invalid.")
+      done()
+    })
+  })
+
  
  
    })

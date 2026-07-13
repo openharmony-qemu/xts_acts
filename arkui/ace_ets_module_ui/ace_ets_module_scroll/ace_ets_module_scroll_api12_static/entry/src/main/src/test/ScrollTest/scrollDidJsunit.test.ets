@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-binary/src/main/indexStatic";
 import router from '@ohos.router';
 import {
   Driver,
@@ -89,6 +89,7 @@ it('scrollDidJsunit_0100', Level.LEVEL0, async (done: () => void): Promise<void>
       console.info('[scrollDidJsunit_0100] START');
       let scrollRect = CommonFunc.getComponentRectOnScreen('scrollSource_scroll')
       let driver = Driver.create()
+      await CommonFunc.sleep(500);
       await driver.fling({
         x: (Number.parseInt(`${(scrollRect.right - scrollRect.left) * 0.5 + scrollRect.left}`)).toInt(),
         y: (Number.parseInt(`${(scrollRect.bottom - scrollRect.top) * 0.6 + scrollRect.top}`)).toInt()

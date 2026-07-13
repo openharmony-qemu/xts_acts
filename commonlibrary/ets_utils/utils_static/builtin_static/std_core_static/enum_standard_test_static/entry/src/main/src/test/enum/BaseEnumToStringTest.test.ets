@@ -14,18 +14,18 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
+import {
+  StringEnum,
+  ToStringByteEnum,
+  ToStringDoubleEnum,
+  ToStringFloatEnum,
+  ToStringIntEnum,
+  ToStringLongEnum,
+  ToStringShortEnum,
+  ToStringStringEnum
+} from './EnumDefine.test';
 import Utils from './../Util.test';
-
-class Status073 extends BaseEnum<int> {
-  constructor(value: int, name: string) {
-    super(value, name);
-  }
-
-  public override toString(): string {
-    return "Status[" + this.getName() + "=" + this.valueOf().toString() + "]"
-  }
-}
 
 export default function BaseEnumToStringTest(): void {
   describe('BaseEnumToStringTest', (): void => {
@@ -43,7 +43,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const code = new BaseEnum<int>(404, "NOT_FOUND");
+      const code = ToStringIntEnum.NOT_FOUND;
       let result = code.toString();
       expect(result).assertEqual("404");
     });
@@ -57,7 +57,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<byte>(100 as byte, "TEST");
+      const e = ToStringByteEnum.POS_100;
       let result = e.toString();
       expect(result).assertEqual("100");
     });
@@ -71,7 +71,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<byte>(0 as byte, "ZERO");
+      const e = ToStringByteEnum.ZERO;
       let result = e.toString();
       expect(result).assertEqual("0");
     });
@@ -85,7 +85,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<byte>(127 as byte, "MAX");
+      const e = ToStringByteEnum.MAX;
       let result = e.toString();
       expect(result).assertEqual("127");
     });
@@ -99,7 +99,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<byte>(-128 as byte, "MIN");
+      const e = ToStringByteEnum.MIN;
       let result = e.toString();
       expect(result).assertEqual("-128");
     });
@@ -113,7 +113,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<byte>(-1 as byte, "NEG");
+      const e = ToStringByteEnum.NEG_ONE;
       let result = e.toString();
       expect(result).assertEqual("-1");
     });
@@ -127,7 +127,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<short>(1000 as short, "TEST");
+      const e = ToStringShortEnum.POS_1000;
       let result = e.toString();
       expect(result).assertEqual("1000");
     });
@@ -141,7 +141,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<short>(0 as short, "ZERO");
+      const e = ToStringShortEnum.ZERO;
       let result = e.toString();
       expect(result).assertEqual("0");
     });
@@ -155,7 +155,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<short>(32767 as short, "MAX");
+      const e = ToStringShortEnum.MAX;
       let result = e.toString();
       expect(result).assertEqual("32767");
     });
@@ -169,7 +169,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<short>(-32768 as short, "MIN");
+      const e = ToStringShortEnum.MIN;
       let result = e.toString();
       expect(result).assertEqual("-32768");
     });
@@ -183,7 +183,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<short>(-1 as short, "NEG_ONE");
+      const e = ToStringShortEnum.NEG_ONE;
       let result = e.toString();
       expect(result).assertEqual("-1");
     });
@@ -197,7 +197,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const code = new BaseEnum<int>(200, "OK");
+      const code = ToStringIntEnum.OK;
       let result = code.toString();
       expect(result).assertEqual("200");
     });
@@ -211,7 +211,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<int>(0, "ZERO");
+      const e = ToStringIntEnum.ZERO;
       let result = e.toString();
       expect(result).assertEqual("0");
     });
@@ -225,7 +225,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<int>(-1, "NEG");
+      const e = ToStringIntEnum.NEG;
       let result = e.toString();
       expect(result).assertEqual("-1");
     });
@@ -239,7 +239,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<int>(2147483647, "MAX");
+      const e = ToStringIntEnum.MAX;
       let result = e.toString();
       expect(result).assertEqual("2147483647");
     });
@@ -253,7 +253,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<int>(-2147483648, "MIN");
+      const e = ToStringIntEnum.MIN;
       let result = e.toString();
       expect(result).assertEqual("-2147483648");
     });
@@ -267,7 +267,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<long>(Int.toLong(100000), "TEST");
+      const e = ToStringLongEnum.POS_100000;
       let result = e.toString();
       expect(result).assertEqual("100000");
     });
@@ -281,7 +281,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<long>(Int.toLong(0), "ZERO");
+      const e = ToStringLongEnum.ZERO;
       let result = e.toString();
       expect(result).assertEqual("0");
     });
@@ -295,7 +295,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<long>(Int.toLong(-999), "NEG");
+      const e = ToStringLongEnum.NEG_999;
       let result = e.toString();
       expect(result).assertEqual("-999");
     });
@@ -309,7 +309,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<long>(9223372036854775807, "MAX");
+      const e = ToStringLongEnum.MAX;
       let result = e.toString();
       expect(result).assertEqual("9223372036854775807");
     });
@@ -323,7 +323,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<long>(-9223372036854775807 - 1, "MIN");
+      const e = ToStringLongEnum.MIN;
       let result = e.toString();
       expect(result).assertEqual("-9223372036854775808");
     });
@@ -337,7 +337,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<float>(Double.toFloat(2.5), "PI");
+      const e = ToStringFloatEnum.POS_2_5;
       let result = e.toString();
       expect(result).assertEqual("2.5");
     });
@@ -351,7 +351,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<float>(Double.toFloat(0.0), "ZERO");
+      const e = ToStringFloatEnum.ZERO;
       let result = e.toString();
       expect(result).assertEqual("0");
     });
@@ -365,7 +365,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<float>(Double.toFloat(-2.5), "NEG");
+      const e = ToStringFloatEnum.NEG_2_5;
       let result = e.toString();
       expect(result).assertEqual("-2.5");
     });
@@ -379,7 +379,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<float>(Double.toFloat(100.0), "WHOLE");
+      const e = ToStringFloatEnum.WHOLE;
       let result = e.toString();
       expect(result).assertEqual("100");
     });
@@ -393,7 +393,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<float>(0.001953125f, "SMALL_FLOAT");
+      const e = ToStringFloatEnum.SMALL;
       let result = e.toString();
       expect(result).assertEqual("0.001953125");
       expect(result === "SMALL_FLOAT").assertFalse();
@@ -408,7 +408,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<double>(2.718281828, "E");
+      const e = ToStringDoubleEnum.E;
       let result = e.toString();
       expect(result).assertEqual("2.718281828");
     });
@@ -422,7 +422,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<double>(0.0, "ZERO");
+      const e = ToStringDoubleEnum.ZERO;
       let result = e.toString();
       expect(result).assertEqual("0");
     });
@@ -436,7 +436,7 @@ export default function BaseEnumToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumToString029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<double>(-99.99, "NEG");
+      const e = ToStringDoubleEnum.NEG_99_99;
       let result = e.toString();
       expect(result).assertEqual("-99.99");
     });
@@ -444,185 +444,142 @@ export default function BaseEnumToStringTest(): void {
     /**
      * @tc.name testBaseEnumToString030
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_3000
-     * @tc.desc Verify BaseEnum toString with double NaN value
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumToString030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<double>(Double.NaN, "NAN_VAL");
-      let result = e.toString();
-      expect(result).assertEqual("NaN");
-    });
-
-    /**
-     * @tc.name testBaseEnumToString031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_3100
-     * @tc.desc Verify BaseEnum toString with double negative Infinity value
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumToString031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<double>(Double.NEGATIVE_INFINITY, "NEG_INF");
-      let result = e.toString();
-      expect(result).assertEqual("-Infinity");
-    });
-
-    /**
-     * @tc.name testBaseEnumToString032
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_3200
      * @tc.desc Verify BaseEnum toString with double negative zero value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumToString032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<double>(-0.0, "NEG_ZERO");
+    it('testBaseEnumToString030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e = ToStringDoubleEnum.NEG_ZERO;
       let result = e.toString();
       expect(typeof result === "string").assertTrue();
-      expect(result).assertEqual("0");
+      expect(result).assertEqual("-0");
     });
 
     /**
-     * @tc.name testBaseEnumToString033
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_3300
+     * @tc.name testBaseEnumToString031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_3100
      * @tc.desc Verify BaseEnum toString with double high precision value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumToString033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<double>(3.141592653589793, "HIGH_PREC");
+    it('testBaseEnumToString031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e = ToStringDoubleEnum.HIGH_PREC;
       let result = e.toString();
       expect(typeof result === "string").assertTrue();
     });
 
     /**
-     * @tc.name testBaseEnumToString034
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_3400
+     * @tc.name testBaseEnumToString032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_3200
      * @tc.desc Verify BaseEnum toString with string normal value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumToString034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<string>("hello", "GREETING");
+    it('testBaseEnumToString032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e = ToStringStringEnum.HELLO;
       let result = e.toString();
       expect(result).assertEqual("hello");
     });
 
     /**
-     * @tc.name testBaseEnumToString035
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_3500
+     * @tc.name testBaseEnumToString033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_3300
      * @tc.desc Verify BaseEnum toString with string empty value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumToString035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<string>("", "EMPTY");
+    it('testBaseEnumToString033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e = ToStringStringEnum.EMPTY;
       let result = e.toString();
       expect(result).assertEqual("");
     });
 
     /**
-     * @tc.name testBaseEnumToString036
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_3600
+     * @tc.name testBaseEnumToString034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_3400
      * @tc.desc Verify BaseEnum toString with string numeric value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumToString036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<string>("123", "NUM_STR");
+    it('testBaseEnumToString034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e = ToStringStringEnum.NUMERIC;
       let result = e.toString();
       expect(result).assertEqual("123");
     });
 
     /**
-     * @tc.name testBaseEnumToString037
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_3700
+     * @tc.name testBaseEnumToString035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_3500
      * @tc.desc Verify BaseEnum toString with string containing spaces
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumToString037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<string>("hello world", "SPACE");
+    it('testBaseEnumToString035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e = ToStringStringEnum.SPACE_TEXT;
       let result = e.toString();
       expect(result).assertEqual("hello world");
     });
 
     /**
-     * @tc.name testBaseEnumToString038
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_3800
+     * @tc.name testBaseEnumToString036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_3600
      * @tc.desc Verify BaseEnum toString with string special characters
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumToString038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<string>("!@#$%^&*()", "SPECIAL");
+    it('testBaseEnumToString036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e = ToStringStringEnum.SPECIAL;
       let result = e.toString();
       expect(result).assertEqual("!@#$%^&*()");
     });
 
     /**
-     * @tc.name testBaseEnumToString039
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_3900
+     * @tc.name testBaseEnumToString037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_3700
      * @tc.desc Verify BaseEnum toString with Unicode string value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumToString039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<string>("你好世界", "CN");
+    it('testBaseEnumToString037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e = ToStringStringEnum.CHINESE;
       let result = e.toString();
       expect(result).assertEqual("你好世界");
     });
 
     /**
-     * @tc.name testBaseEnumToString040
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_4000
-     * @tc.desc Verify BaseEnum toString with long string value (1000 characters)
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumToString040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let longStr: string = "a".repeat(1000);
-      const e = new BaseEnum<string>(longStr, "LONG");
-      let result = e.toString();
-      expect(result).assertEqual(longStr);
-    });
-
-    /**
-     * @tc.name testBaseEnumToString041
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_4100
+     * @tc.name testBaseEnumToString038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_3800
      * @tc.desc Verify BaseEnum toString with float negative zero value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumToString041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<float>(-0.0f, "NEG_ZERO");
+    it('testBaseEnumToString038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e = ToStringFloatEnum.NEG_ZERO;
       let result = e.toString();
       expect(typeof result === "string").assertTrue();
-      expect(result).assertEqual("0");
+      expect(result).assertEqual("-0");
       expect(result === "NEG_ZERO").assertFalse();
     });
 
     /**
-     * @tc.name testBaseEnumToString042
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_4200
+     * @tc.name testBaseEnumToString039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_3900
      * @tc.desc Verify BaseEnum toString with float large value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumToString042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<float>(3.4e38f, "MAX_FLOAT");
+    it('testBaseEnumToString039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e = ToStringFloatEnum.MAX_FLOAT;
       let result = e.toString();
       expect(typeof result === "string").assertTrue();
       expect(result.length).assertLarger(0);
@@ -630,15 +587,15 @@ export default function BaseEnumToStringTest(): void {
     });
 
     /**
-     * @tc.name testBaseEnumToString043
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_4300
+     * @tc.name testBaseEnumToString040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_4000
      * @tc.desc Verify BaseEnum toString with double large value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumToString043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<double>(1.7e308, "MAX_DOUBLE");
+    it('testBaseEnumToString040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e = ToStringDoubleEnum.MAX_DOUBLE;
       let result = e.toString();
       expect(typeof result === "string").assertTrue();
       expect(result.length).assertLarger(0);
@@ -646,15 +603,15 @@ export default function BaseEnumToStringTest(): void {
     });
 
     /**
-     * @tc.name testBaseEnumToString044
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_4400
+     * @tc.name testBaseEnumToString041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_4100
      * @tc.desc Verify BaseEnum toString with float minimum positive value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumToString044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<float>(Double.toFloat(1.4e-45), "MIN_FLOAT");
+    it('testBaseEnumToString041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e = ToStringFloatEnum.MIN_FLOAT;
       let result = e.toString();
       expect(typeof result === "string").assertTrue();
       expect(result.length).assertLarger(0);
@@ -662,15 +619,15 @@ export default function BaseEnumToStringTest(): void {
     });
 
     /**
-     * @tc.name testBaseEnumToString045
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_4500
+     * @tc.name testBaseEnumToString042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_4200
      * @tc.desc Verify BaseEnum toString with double minimum positive value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumToString045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<double>(5e-324, "MIN_DOUBLE");
+    it('testBaseEnumToString042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e = ToStringDoubleEnum.MIN_DOUBLE;
       let result = e.toString();
       expect(typeof result === "string").assertTrue();
       expect(result.length).assertLarger(0);
@@ -678,76 +635,61 @@ export default function BaseEnumToStringTest(): void {
     });
 
     /**
-     * @tc.name testBaseEnumToString046
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_4600
+     * @tc.name testBaseEnumToString043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_4300
      * @tc.desc Verify BaseEnum toString returns value not name for multiple types
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumToString046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e1 = new BaseEnum<int>(100, "CODE_100");
+    it('testBaseEnumToString043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e1 = ToStringIntEnum.VALUE_100;
       expect(e1.toString()).assertEqual("100");
       expect(e1.toString() === "CODE_100").assertFalse();
 
-      const e2 = new BaseEnum<string>("value", "NAME");
+      const e2 = ToStringStringEnum.VALUE;
       expect(e2.toString()).assertEqual("value");
       expect(e2.toString() === "NAME").assertFalse();
     });
 
     /**
-     * @tc.name testBaseEnumToString047
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_4700
+     * @tc.name testBaseEnumToString044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_4400
      * @tc.desc Verify BaseEnum toString returns single character for single char value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumToString047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<string>("A", "SINGLE");
+    it('testBaseEnumToString044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e = ToStringStringEnum.SINGLE;
       let result = e.toString();
       expect(result).assertEqual("A");
     });
 
     /**
-     * @tc.name testBaseEnumToString048
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_4800
-     * @tc.desc Verify BaseEnum toString returns full long string value (10000 characters)
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumToString048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let longVal: string = "x".repeat(10000);
-      const e = new BaseEnum<string>(longVal, "LONG");
-      let result = e.toString();
-      expect(result.length).assertEqual(10000);
-    });
-
-    /**
-     * @tc.name testBaseEnumToString049
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_4900
+     * @tc.name testBaseEnumToString045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_4500
      * @tc.desc Verify BaseEnum toString with negative value includes minus sign
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumToString049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<int>(-999, "NEG");
+    it('testBaseEnumToString045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e = ToStringIntEnum.NEG_999;
       let result = e.toString();
       expect(result).assertEqual("-999");
     });
 
     /**
-     * @tc.name testBaseEnumToString050
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_5000
+     * @tc.name testBaseEnumToString046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_4600
      * @tc.desc Verify BaseEnum toString returns consistent value on multiple calls
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumToString050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<int>(404, "NOT_FOUND");
+    it('testBaseEnumToString046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e = ToStringIntEnum.NOT_FOUND;
       let r1 = e.toString();
       let r2 = e.toString();
       let r3 = e.toString();
@@ -757,98 +699,67 @@ export default function BaseEnumToStringTest(): void {
     });
 
     /**
-     * @tc.name testBaseEnumToString051
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_5100
+     * @tc.name testBaseEnumToString047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_4700
      * @tc.desc Verify BaseEnum toString for different instances with same value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumToString051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e1 = new BaseEnum<int>(404, "A");
-      const e2 = new BaseEnum<int>(404, "B");
+    it('testBaseEnumToString047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e1 = ToStringIntEnum.A;
+      const e2 = ToStringIntEnum.B;
       expect(e1.toString()).assertEqual(e2.toString());
       expect(e1.toString()).assertEqual("404");
     });
 
     /**
-     * @tc.name testBaseEnumToString052
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_5200
+     * @tc.name testBaseEnumToString048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_4800
      * @tc.desc Verify BaseEnum toString and getName comparison for various types
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumToString052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const eInt = new BaseEnum<int>(200, "OK");
+    it('testBaseEnumToString048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const eInt = ToStringIntEnum.OK;
       expect(eInt.toString()).assertEqual("200");
       expect(eInt.getName()).assertEqual("OK");
 
-      const eLong = new BaseEnum<long>(Int.toLong(999), "BIG");
+      const eLong = ToStringLongEnum.BIG;
       expect(eLong.toString()).assertEqual("999");
       expect(eLong.getName()).assertEqual("BIG");
 
-      const eFloat = new BaseEnum<float>(Double.toFloat(1.5), "HALF");
+      const eFloat = ToStringFloatEnum.HALF;
       expect(eFloat.toString()).assertEqual("1.5");
       expect(eFloat.getName()).assertEqual("HALF");
     });
 
     /**
-     * @tc.name testBaseEnumToString053
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_5300
-     * @tc.desc Verify BaseEnum toString returns correct string for float NaN and Infinity values
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumToString053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const eNaN = new BaseEnum<float>(Float.NaN, "NAN");
-      const eInf = new BaseEnum<float>(Float.POSITIVE_INFINITY, "INF");
-      const eNegInf = new BaseEnum<float>(Float.NEGATIVE_INFINITY, "NEG_INF");
-      expect(eNaN.toString()).assertEqual("NaN");
-      expect(eInf.toString()).assertEqual("Infinity");
-      expect(eNegInf.toString()).assertEqual("-Infinity");
-    });
-
-    /**
-     * @tc.name testBaseEnumToString054
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_5400
+     * @tc.name testBaseEnumToString049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_4900
      * @tc.desc Verify BaseEnum toString returns value string not [object Object]
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumToString054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<int>(404, "NOT_FOUND");
+    it('testBaseEnumToString049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e = ToStringIntEnum.NOT_FOUND;
       let result = e.toString();
       expect(result).assertEqual("404");
       expect(result === "[object Object]").assertFalse();
     });
 
     /**
-     * @tc.name testBaseEnumToString055
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_5500
-     * @tc.desc Verify subclass inheriting BaseEnum toString behavior
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumToString055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const status = new Status073(200, "OK");
-      let result = status.toString();
-      expect(result).assertEqual("Status[OK=200]")
-    });
-
-    /**
-     * @tc.name testBaseEnumToString056
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_5600
+     * @tc.name testBaseEnumToString050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_5000
      * @tc.desc Verify BaseEnum toString override returns value not name
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumToString056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<int>(500, "SERVER_ERROR");
+    it('testBaseEnumToString050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e = ToStringIntEnum.SERVER_ERROR;
       let strResult = e.toString();
       let nameResult = e.getName();
       expect(strResult).assertEqual("500");
@@ -857,84 +768,49 @@ export default function BaseEnumToStringTest(): void {
     });
 
     /**
-     * @tc.name testBaseEnumToString057
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_5700
+     * @tc.name testBaseEnumToString051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_5100
      * @tc.desc Verify BaseEnum toString consistent override behavior for all generic types
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumToString057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const eByte = new BaseEnum<byte>(10 as byte, "TEN");
+    it('testBaseEnumToString051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const eByte = ToStringByteEnum.TEN;
       expect(eByte.toString()).assertEqual("10");
 
-      const eShort = new BaseEnum<short>(1000 as short, "THOUSAND");
+      const eShort = ToStringShortEnum.POS_1000;
       expect(eShort.toString()).assertEqual("1000");
 
-      const eInt = new BaseEnum<int>(100000, "LARGE");
+      const eInt = ToStringIntEnum.VALUE_100000;
       expect(eInt.toString()).assertEqual("100000");
 
-      const eLong = new BaseEnum<long>(Int.toLong(9999), "BIG");
-      expect(eLong.toString()).assertEqual("9999");
+      const eLong = ToStringLongEnum.BIG;
+      expect(eLong.toString()).assertEqual("999");
 
-      const eFloat = new BaseEnum<float>(Double.toFloat(2.5), "HALF");
+      const eFloat = ToStringFloatEnum.POS_2_5;
       expect(eFloat.toString()).assertEqual("2.5");
 
-      const eDouble = new BaseEnum<double>(3.14, "PI");
-      expect(eDouble.toString()).assertEqual("3.14");
+      const eDouble = ToStringDoubleEnum.HIGH_PREC;
+      expect(eDouble.toString()).assertEqual("3.141592653589793");
 
-      const eStr = new BaseEnum<string>("active", "STATUS");
-      expect(eStr.toString()).assertEqual("active");
+      const eStr = StringEnum.STATUS_ACTIVE;
+      expect(eStr.toString()).assertEqual("ACTIVE");
     });
 
     /**
-     * @tc.name testBaseEnumToString058
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_5800
-     * @tc.desc Verify toString throws when called on null reference
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumToString058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let str: string = (null as BaseEnum<int>).toString();
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name).assertEqual('ClassCastError');
-      }
-    });
-
-    /**
-     * @tc.name testBaseEnumToString059
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_5900
-     * @tc.desc Verify toString throws when called on undefined reference
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumToString059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let str: string = (undefined as BaseEnum<int>).toString();
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name).assertEqual('ClassCastError');
-      }
-    });
-
-    /**
-     * @tc.name testBaseEnumToString060
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_6000
+     * @tc.name testBaseEnumToString054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_TOSTRING_5400
      * @tc.desc Verify toString with long value exceeding Number safe integer range
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumToString060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<long>(9007199254740993, "BEYOND_SAFE");
+    it('testBaseEnumToString052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e = ToStringLongEnum.BEYOND_SAFE;
       let result = e.toString();
       expect(typeof result === "string").assertTrue();
       expect(result.length).assertLarger(0);
     });
-
   });
 }

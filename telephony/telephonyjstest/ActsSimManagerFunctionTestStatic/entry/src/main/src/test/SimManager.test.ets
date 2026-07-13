@@ -20,7 +20,7 @@ import bundleManager from '@ohos.bundle.bundleManager';
 import account from '@ohos.account.osAccount';
 import sim from '@ohos.telephony.sim';
 import radio from '@ohos.telephony.radio';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium-binary/src/main/indexStatic';
 import hilog from '@ohos.hilog';
 
 export default function SimManagerTest() {

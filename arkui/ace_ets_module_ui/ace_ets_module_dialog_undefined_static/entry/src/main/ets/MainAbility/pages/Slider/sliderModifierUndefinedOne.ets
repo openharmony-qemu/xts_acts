@@ -29,9 +29,9 @@ import { LevelOrder, LevelMode } from '@ohos.promptAction'
 
 @Observed
 export class MySliderModifier implements AttributeModifier<SliderAttribute> {
-  @State public isUndefined1: boolean = true;
-  @State public isUndefined2: boolean = true;
-  @State public isUndefined3: boolean = true;
+  public isUndefined1: boolean = true;
+  public isUndefined2: boolean = true;
+  public isUndefined3: boolean = true;
 
   applyNormalAttribute(instance: SliderAttribute): void {
     instance

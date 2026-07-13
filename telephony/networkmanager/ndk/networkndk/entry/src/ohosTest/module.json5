@@ -29,6 +29,9 @@
       },
       {
         "name": "ohos.permission.SET_PAC_URL"
+      },
+      {
+        "name": "ohos.permission.GET_ETHERNET_LOCAL_MAC"
       }
     ],
     "deliveryWithInstall": true,

@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, it, expect, Level } from "@ohos/hypium-binary/src/main/indexStatic"
 import router from '@ohos.router';
 import { Component, Driver, ON, } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';

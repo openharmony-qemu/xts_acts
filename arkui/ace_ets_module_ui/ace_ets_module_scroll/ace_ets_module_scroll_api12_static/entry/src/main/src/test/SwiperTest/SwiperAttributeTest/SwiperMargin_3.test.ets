@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-binary/src/main/indexStatic";
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import {
@@ -142,6 +142,7 @@ it('SwiperMargin_static_0190', Level.LEVEL0, async (done: () => void): Promise<v
         "--" +
       rect.bottom);
       let driver = Driver.create()
+      await CommonFunc.sleep(500);
       await driver.swipe(
         (Number.parseInt(`${(rect.right - rect.left) * 0.8 + rect.left}`)).toInt(),
         (Number.parseInt(`${(rect.bottom - rect.top) * 0.5 + rect.top}`)).toInt(),

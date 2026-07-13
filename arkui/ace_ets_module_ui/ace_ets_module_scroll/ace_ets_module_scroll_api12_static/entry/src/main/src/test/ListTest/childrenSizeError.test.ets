@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import router from '@ohos.router';
 import { Driver, Component, ON, Rect } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -71,6 +71,7 @@ export default function childrenSizeError() {
 it('childrenSizeError_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[childrenSizeError_static_0100] START');
       let driver = Driver.create()
+      await CommonFunc.sleep(1000);
       let btn1: Component = await driver.findComponent(ON.id('splice_btn_401')) as Component;
       await btn1.click();
       await CommonFunc.sleep(1500);
@@ -95,6 +96,7 @@ it('childrenSizeError_static_0100', Level.LEVEL0, async (done: () => void): Prom
 it('childrenSizeError_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[childrenSizeError_static_0200] START');
       let driver = Driver.create()
+      await CommonFunc.sleep(1000);
       let btn1: Component = await driver.findComponent(ON.id('update_btn_401')) as Component;
       await btn1.click();
       await CommonFunc.sleep(1500);
@@ -119,6 +121,7 @@ it('childrenSizeError_static_0200', Level.LEVEL0, async (done: () => void): Prom
 it('childrenSizeError_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[childrenSizeError_static_0300] START');
       let driver = Driver.create()
+      await CommonFunc.sleep(1000);
       let btn1: Component = await driver.findComponent(ON.id('childDefaultSize_btn_401')) as Component;
       await btn1.click();
       await CommonFunc.sleep(1500);

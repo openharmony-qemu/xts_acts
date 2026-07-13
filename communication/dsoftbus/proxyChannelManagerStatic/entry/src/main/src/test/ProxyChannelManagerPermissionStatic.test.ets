@@ -28,7 +28,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../hypium/index';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 import abilityAccessCtrl, { Permissions } from '@ohos.abilityAccessCtrl';
 import common from '@ohos.app.ability.common';
 import Utils from './Util.test';

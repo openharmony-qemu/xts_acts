@@ -31,7 +31,7 @@ import {
   SourceTool,
   SourceType,
 } from '@ohos.arkui.component'
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../hypium/index';
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode'
 import router from '@ohos.router';
 import CommonFunc from '../../ets/MainAbility/common/Common';

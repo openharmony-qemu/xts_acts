@@ -48,16 +48,16 @@ struct GridItemPage {
     let callback: Callback<string> = (message: Message<string>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'rowStart') {
-        this.rowStart = Int.parseInt(message.value, 10)
+        this.rowStart = Number.parseInt(message.value).toInt()
       }
       if (message.name == 'rowEnd') {
-        this.rowEnd = Int.parseInt(message.value, 10)
+        this.rowEnd = Number.parseInt(message.value).toInt()
       }
       if (message.name == 'columnStart') {
-        this.columnStart = Int.parseInt(message.value, 10)
+        this.columnStart = Number.parseInt(message.value).toInt()
       }
       if (message.name == 'columnEnd') {
-        this.columnEnd = Int.parseInt(message.value, 10)
+        this.columnEnd = Number.parseInt(message.value).toInt()
       }
       if (message.name == 'forceRebuild') {
         this.forceRebuild = Boolean(message.value)

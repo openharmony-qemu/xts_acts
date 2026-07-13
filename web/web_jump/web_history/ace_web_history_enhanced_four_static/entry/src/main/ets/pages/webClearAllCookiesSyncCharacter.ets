@@ -20,7 +20,7 @@ import webView from '@ohos.web.webview';
 import { BusinessError, Callback, RecordData } from '@ohos.base';
 import events_emitter from '@ohos.events.emitter';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Hypium } from '../../../hypium/index';
+import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
 import testsuite from '../../src/test/List.test';
 import Utils from '../../src/test/Util.test';
 import image from '@ohos.multimedia.image';

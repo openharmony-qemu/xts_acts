@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
 import Utils from './../../Util.test';
 
 export default function StringReplaceTest(): void {
@@ -806,8 +806,8 @@ export default function StringReplaceTest(): void {
      */
     it('testReplace055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("kebab-case-string");
-      let result: string = text.replace(new RegExp("-([a-z])", "g"), (match: string, captures: Array<Object>): string => {
-        return (captures[0] as string).toUpperCase();
+      let result: string = text.replace(new RegExp("-([a-z])", "g"), (match: string, captures: (Object | undefined)[]): string => {
+        return (captures[0]! as string).toUpperCase();
       });
       expect(result).assertEqual("kebabCaseString");
     });
@@ -907,8 +907,8 @@ export default function StringReplaceTest(): void {
      */
     it('testReplace062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("snake_case_string");
-      let result: string = text.replace(new RegExp("_([a-z])", "g"), (_m: string, caps: Array<Object>): string => {
-        return (caps[0] as string).toUpperCase();
+      let result: string = text.replace(new RegExp("_([a-z])", "g"), (_m: string, caps: (Object | undefined)[]): string => {
+        return (caps[0]! as string).toUpperCase();
       });
       expect(result).assertEqual("snakeCaseString");
     });

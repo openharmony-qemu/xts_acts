@@ -1,7 +1,7 @@
 'use static';
 
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import { UIAbility, Want } from '@kit.AbilityKit';
 import { abilityDelegatorRegistry, Driver, ON, MouseButton, MatchPattern, UiDirection, Rect } from '@kit.TestKit';
 import inspector from '@ohos.arkui.inspector';

@@ -15,7 +15,7 @@
  */
 
 import hilog from '@ohos.hilog';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import Utils from '../Utils.test';
 import router from '@ohos.router';
 import { ComponentUtils, UIContext, Router } from '@ohos.arkui.UIContext';

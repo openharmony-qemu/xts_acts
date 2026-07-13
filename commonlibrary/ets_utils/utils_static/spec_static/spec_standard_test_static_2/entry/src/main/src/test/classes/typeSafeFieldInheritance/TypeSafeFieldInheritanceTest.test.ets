@@ -25,7 +25,7 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../hypium";
+} from "@ohos/hypium-binary/src/main/indexStatic";
 
 class FieldInheritPass001Base {
   field: int = 1

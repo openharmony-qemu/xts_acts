@@ -24,7 +24,7 @@ import {
   Size,
   TestType,
   Level
-} from '../../../../hypium/index';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 import Utils from '../Util.test';
 
 export default function ByteConstructorParamTest(): void {

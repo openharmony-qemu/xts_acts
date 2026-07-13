@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-binary/src/main/indexStatic"
 import router from '@ohos.router';
 import {
   Point,
@@ -80,6 +80,7 @@ it('setTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> 
       console.info('setTest_static_0100 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let set_childDefaultSize: Component = await driver.findComponent(ON.id('set_childDefaultSize')) as Component;
       await set_childDefaultSize.click();
       await CommonFunc.sleep(1000);

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -107,5 +107,54 @@ export default function editableTitleBarV2InteractionTest() {
       console.info('[editableTitleBarV2Interaction_static_0300] END');
       done();
     });
+
+    /**
+     * @tc.number   editableTitleBarV2Interaction_static_0400
+     * @tc.name     editableTitleBarV2Interaction_static_0400
+     * @tc.desc     Test Default Focus Left
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     */
+    it('editableTitleBarV2Interaction_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[editableTitleBarV2Interaction_static_0400] START');
+      let driver = Driver.create();
+      await driver.delayMs(2000);
+      let saveButtonClick = await driver.findComponent(ON.text('Default Focus Left'));
+      expect(saveButtonClick !== null).assertTrue();
+      console.info('[editableTitleBarV2Interaction_static_0400] END');
+      done();
+    });
+
+    /**
+     * @tc.number   editableTitleBarV2Interaction_static_0500
+     * @tc.name     editableTitleBarV2Interaction_static_0500
+     * @tc.desc     Test Default Focus Menu
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     */
+    it('editableTitleBarV2Interaction_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[editableTitleBarV2Interaction_static_0500] START');
+      let driver = Driver.create();
+      await driver.delayMs(2000);
+      let saveButtonClick = await driver.findComponent(ON.text('Default Focus Menu'));
+      expect(saveButtonClick !== null).assertTrue();
+      console.info('[editableTitleBarV2Interaction_static_0500] END');
+      done();
+    });
+
+    /**
+     * @tc.number   editableTitleBarV2Interaction_static_0600
+     * @tc.name     editableTitleBarV2Interaction_static_0600
+     * @tc.desc     Test Default Focus Save
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     */
+    it('editableTitleBarV2Interaction_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[editableTitleBarV2Interaction_static_0600] START');
+      let driver = Driver.create();
+      await driver.delayMs(2000);
+      let saveButtonClick = await driver.findComponent(ON.text('Default Focus Save'));
+      expect(saveButtonClick !== null).assertTrue();
+      console.info('[editableTitleBarV2Interaction_static_0600] END');
+      done();
+    });
+
   });
 }

@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import Utils from "../../../Util.test";
+
 import {
   expect,
   describe,
@@ -25,14 +27,13 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../../hypium"
+} from "@ohos/hypium-binary/src/main/indexStatic"
 
 type NullableString = null | undefined | string
 type ClearedString = NonNullable<NullableString>
 
 type NullableNumber = null | undefined | number
 type ClearedNumber = NonNullable<NullableNumber>
-
 
 function toNonNullString(param: NullableString): ClearedString {
   if (param != null) {
@@ -58,41 +59,22 @@ class A_6<T> {
   }
 }
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
-export default function NonNullableUtilityTypeTest() {
+export default function NonNullableUtilityTypeTest(): void {
   describe("NonNullableUtilityTypeTest", () => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
     })
     afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     })
 
     /**
      * @tc.number    SUB_NON_NULL_ABLE_UTILITY_TYPE_0100
      * @tc.name      testNonNullableUtilityType0001
-     * @tc.desc      Type NonNullable<T> constructs a type by excluding null and undefined types
+     * @tc.desc      NonNullable strips null/undefined — toNonNullString with various inputs
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -101,101 +83,46 @@ export default function NonNullableUtilityTypeTest() {
       let a1: NullableString = null
       let a2: NullableString = undefined
       let a3: NullableString = "hello"
-      let b: ClearedString = toNonNullString(null);
-      expect(b).assertEqual('')
+
+      expect(toNonNullString(null)).assertEqual('')
+      expect(toNonNullString(undefined)).assertEqual('')
+      expect(toNonNullString('undefined')).assertEqual('undefined')
+      expect(toNonNullString(a1)).assertEqual('')
+      expect(toNonNullString(a2)).assertEqual('')
+      expect(toNonNullString(a3)).assertEqual('hello')
     })
 
     /**
      * @tc.number    SUB_NON_NULL_ABLE_UTILITY_TYPE_0200
      * @tc.name      testNonNullableUtilityType0002
-     * @tc.desc      Type NonNullable<T> constructs a type by excluding null and undefined types
+     * @tc.desc      NonNullable with number type and generic class
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testNonNullableUtilityType0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a1: NullableString = null
-      let a2: NullableString = undefined
-      let a3: NullableString = "hello"
-      let b: ClearedString = toNonNullString(undefined);
-      expect(b).assertEqual('')
-    })
+      let b1: NullableNumber = null
+      let b2: NullableNumber = undefined
+      let b3: NullableNumber = 42
 
-    /**
-     * @tc.number    SUB_NON_NULL_ABLE_UTILITY_TYPE_0300
-     * @tc.name      testNonNullableUtilityType0003
-     * @tc.desc      Type NonNullable<T> constructs a type by excluding null and undefined types
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNonNullableUtilityType0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a1: NullableString = null
-      let a2: NullableString = undefined
-      let a3: NullableString = "hello"
-      let b: ClearedString = toNonNullString('undefined');
-      expect(b).assertEqual('undefined')
-    })
-
-    /**
-     * @tc.number    SUB_NON_NULL_ABLE_UTILITY_TYPE_0400
-     * @tc.name      testNonNullableUtilityType0004
-     * @tc.desc      Type NonNullable<T> constructs a type by excluding null and undefined types
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNonNullableUtilityType0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a1: NullableString = null
-      let a2: NullableString = undefined
-      let a3: NullableString = "hello"
-      let b: ClearedString = toNonNullString(a1);
-      expect(b).assertEqual('')
-    })
-
-    /**
-     * @tc.number    SUB_NON_NULL_ABLE_UTILITY_TYPE_0500
-     * @tc.name      testNonNullableUtilityType0005
-     * @tc.desc      Type NonNullable<T> constructs a type by excluding null and undefined types
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNonNullableUtilityType0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a1: NullableString = null
-      let a2: NullableString = undefined
-      let a3: NullableString = "hello"
-      let b: ClearedString = toNonNullString(a2);
-      expect(b).assertEqual('')
-    })
-
-    /**
-     * @tc.number    SUB_NON_NULL_ABLE_UTILITY_TYPE_0600
-     * @tc.name      testNonNullableUtilityType0006
-     * @tc.desc      Type NonNullable<T> constructs a type by excluding null and undefined types
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNonNullableUtilityType0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a1: NullableString = null
-      let a2: NullableString = undefined
-      let a3: NullableString = "hello"
-      let b: ClearedString = toNonNullString(a3);
-      expect(b).assertEqual('hello')
+      expect(toNonNullNumber(null)).assertEqual(0)
+      expect(toNonNullNumber(undefined)).assertEqual(0)
+      expect(toNonNullNumber(b1)).assertEqual(0)
+      expect(toNonNullNumber(b2)).assertEqual(0)
+      expect(toNonNullNumber(b3)).assertEqual(42)
     })
 
     /**
      * @tc.number    SUB_NON_NULL_ABLE_UTILITY_TYPE_0700
      * @tc.name      testNonNullableUtilityType0007
-     * @tc.desc      Type NonNullable<T> constructs a type by excluding null and undefined types.
+     * @tc.desc      NonNullable with generic class constructor
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testNonNullableUtilityType0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new A_6<X_6>(new Object)
-      expect(a.field instanceof Object).assertTrue() // type of field is Object
+      expect(a.field instanceof Object).assertTrue()
     })
   });
 }

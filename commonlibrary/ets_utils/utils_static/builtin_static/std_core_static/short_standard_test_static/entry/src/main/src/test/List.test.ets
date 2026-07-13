@@ -1,5 +1,43 @@
-'use static';
-import abilityTest from "./Ability.test";
-export default function testsuite():void {
-  abilityTest();
+'use static'
+
+import shortConstructorTest from './short/ShortConstructorTest.test';
+import shortToLongTest from './short/ShortToLongTest.test';
+import shortToByteTest from './short/ShortToByteTest.test';
+import shortToCharTest from './short/ShortToCharTest.test';
+import shortToDoubleTest from './short/ShortToDoubleTest.test';
+import shortToFloatTest from './short/ShortToFloatTest.test';
+import shortToIntTest from './short/ShortToIntTest.test';
+import shortToLocaleStringTest from './short/ShortToLocaleStringTest.test';
+import shortToPrimitiveValueTest from './short/ShortToPrimitiveValueTest.test';
+import shortToShortTest from './short/ShortToShortTest.test';
+import shortToStringTest from './short/ShortToStringTest.test';
+import shortAddTest from './short/ShortAddTest.test';
+import shortSubTest from './short/ShortSubTest.test';
+import shortMulTest from './short/ShortMulTest.test';
+import shortCompareToTest from './short/ShortCompareToTest.test';
+import shortDivTest from './short/ShortDivTest.test';
+import shortEqualsTest from './short/ShortEqualsTest.test';
+import shortIsRelationalTest from './short/ShortIsRelationalTest.test';
+import shortParseIntTest from './short/ShortParseIntTest.test';
+
+export default function testsuite(): void {
+  shortConstructorTest();
+  shortToLongTest();
+  shortToByteTest();
+  shortToCharTest();
+  shortToDoubleTest();
+  shortToFloatTest();
+  shortToIntTest();
+  shortToLocaleStringTest();
+  shortToPrimitiveValueTest();
+  shortToShortTest();
+  shortToStringTest();
+  shortAddTest();
+  shortSubTest();
+  shortMulTest();
+  shortCompareToTest();
+  shortDivTest();
+  shortEqualsTest();
+  shortIsRelationalTest();
+  shortParseIntTest();
 }

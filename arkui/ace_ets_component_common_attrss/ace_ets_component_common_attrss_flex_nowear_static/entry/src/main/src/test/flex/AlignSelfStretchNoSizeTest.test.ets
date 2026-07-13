@@ -18,7 +18,7 @@
 import { AlignItems, AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { beforeAll, describe, expect } from '../../../../hypium/index';
+import { beforeAll, describe, expect } from '@ohos/hypium-binary/src/main/indexStatic';
 import {
   AlignRuleOption,
   FlexDirection,

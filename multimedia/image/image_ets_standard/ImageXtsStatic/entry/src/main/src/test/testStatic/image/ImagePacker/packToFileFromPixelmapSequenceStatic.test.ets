@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { image } from '@kit.ImageKit';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect,Hypium, it, Level} from '../../../../../../hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect,Hypium, it, Level} from '@ohos/hypium-binary/src/main/indexStatic';
 import { common } from '@kit.AbilityKit';
 import fs from '@ohos.file.fs';
 

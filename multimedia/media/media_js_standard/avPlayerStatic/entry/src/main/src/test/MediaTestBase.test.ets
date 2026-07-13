@@ -15,7 +15,7 @@
  */
 
 import resourceManager from '@ohos.resourceManager';
-import { expect } from "../../../hypium/index";
+import { expect } from "@ohos/hypium-binary/src/main/indexStatic";
 import fileIo from '@ohos.file.fs'
 import common from '@ohos.app.ability.common';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -23,7 +23,7 @@ import abilityAccessCtrl from '@ohos.abilityAccessCtrl'; // Permissions
 import { Permissions } from 'permissions';
 import { BusinessError } from '@ohos.base';
 import media from '@ohos.multimedia.media';
-import { Hypium } from "../../../hypium/index";
+import { Hypium } from "@ohos/hypium-binary/src/main/indexStatic";
 import Utils, { globalThis } from './Util.test';
 import PermissionRequestResult from 'security.PermissionRequestResult';
 const CODECMIMEVALUE = ['video/avc', 'audio/mp4a-latm', 'audio/mpeg']

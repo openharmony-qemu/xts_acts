@@ -2021,3 +2021,79 @@ napi_value OHNativeErrorCodeCover(napi_env env, napi_callback_info info)
     napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
+
+napi_value OHNativeBufferSetColorSpaceBt2020LogFull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_NativeBuffer_Config nativeBufferConfig = {
+        .width = 0x100,
+        .height = 0x100,
+        .format = NATIVEBUFFER_PIXEL_FMT_RGBA_8888,
+        .usage = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA,
+    };
+    OH_NativeBuffer *nativeBuffer = OH_NativeBuffer_Alloc(&nativeBufferConfig);
+    if (nativeBuffer == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    OH_NativeBuffer_ColorSpace colorSpace1 = OH_COLORSPACE_BT2020_LOG_FULL;
+    int32_t ret = OH_NativeBuffer_SetColorSpace(nativeBuffer, colorSpace1);
+    if (ret != NATIVE_ERROR_OK) {
+        napi_create_int32(env, ret, &result);
+        OH_NativeBuffer_Unreference(nativeBuffer);
+        return result;
+    }
+    OH_NativeBuffer_ColorSpace colorSpace2;
+    ret = OH_NativeBuffer_GetColorSpace(nativeBuffer, &colorSpace2);
+    if (ret != NATIVE_ERROR_OK) {
+        napi_create_int32(env, ret, &result);
+        OH_NativeBuffer_Unreference(nativeBuffer);
+        return result;
+    }
+    if (colorSpace2 != OH_COLORSPACE_BT2020_LOG_FULL) {
+        napi_create_int32(env, FAIL, &result);
+        OH_NativeBuffer_Unreference(nativeBuffer);
+        return result;
+    }
+    OH_NativeBuffer_Unreference(nativeBuffer);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
+    return result;
+}
+
+napi_value OHNativeBufferSetColorSpaceBt2020LogLimit(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_NativeBuffer_Config nativeBufferConfig = {
+        .width = 0x100,
+        .height = 0x100,
+        .format = NATIVEBUFFER_PIXEL_FMT_RGBA_8888,
+        .usage = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA,
+    };
+    OH_NativeBuffer *nativeBuffer = OH_NativeBuffer_Alloc(&nativeBufferConfig);
+    if (nativeBuffer == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    OH_NativeBuffer_ColorSpace colorSpace1 = OH_COLORSPACE_BT2020_LOG_LIMIT;
+    int32_t ret = OH_NativeBuffer_SetColorSpace(nativeBuffer, colorSpace1);
+    if (ret != NATIVE_ERROR_OK) {
+        napi_create_int32(env, ret, &result);
+        OH_NativeBuffer_Unreference(nativeBuffer);
+        return result;
+    }
+    OH_NativeBuffer_ColorSpace colorSpace2;
+    ret = OH_NativeBuffer_GetColorSpace(nativeBuffer, &colorSpace2);
+    if (ret != NATIVE_ERROR_OK) {
+        napi_create_int32(env, ret, &result);
+        OH_NativeBuffer_Unreference(nativeBuffer);
+        return result;
+    }
+    if (colorSpace2 != OH_COLORSPACE_BT2020_LOG_LIMIT) {
+        napi_create_int32(env, FAIL, &result);
+        OH_NativeBuffer_Unreference(nativeBuffer);
+        return result;
+    }
+    OH_NativeBuffer_Unreference(nativeBuffer);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
+    return result;
+}

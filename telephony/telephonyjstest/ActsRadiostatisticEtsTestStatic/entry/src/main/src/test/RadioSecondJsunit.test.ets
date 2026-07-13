@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../hypium/index'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic'
 import radio from '@ohos.telephony.radio';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';

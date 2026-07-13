@@ -16,7 +16,7 @@
 
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, SetValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest from '../common/CommonTest';
-import { describe, expect, beforeAll,afterEach } from '../../../../hypium/index'
+import { describe, expect, beforeAll,afterEach } from '@ohos/hypium-binary/src/main/indexStatic'
 import {  ItemAlign, VerticalAlign, HorizontalAlign, Position } from '@ohos.arkui.component'
 import { UIContext, Router } from "@ohos.arkui.UIContext";
 import inspector from '@ohos.arkui.inspector'

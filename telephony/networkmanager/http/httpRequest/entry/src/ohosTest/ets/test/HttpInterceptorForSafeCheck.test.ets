@@ -291,7 +291,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               console.info(`${TAG} ${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
               testNetManager.RemoveAllInterceptor(4);
               httpRequest.destroy();
-              ExpectTrue(err.code == 2300999);
+              ExpectTrue(err.code == 2300996);
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
@@ -914,7 +914,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               console.info(`${TAG} ${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
               testNetManager.RemoveRequestInterceptor(4);
               httpRequest.destroy();
-              ExpectTrue(err.code == 2300999);
+              ExpectTrue(err.code == 2300996);
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);

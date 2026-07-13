@@ -160,7 +160,7 @@ public:
     uint32_t effectTypeSize_;
     Camera_ControlCenterEffectType* controlCenterEffectType_;
     uint32_t zoomPointInfoSize_;
-    OH_Camera_ZoomPointInfo* zoomPointInfo_;
+    OH_Camera_ZoomPointInfo* zoomPointInfo_ = nullptr;
     bool isCreatePhotoOutputWithoutSurface_;
     bool isMacroSupported_;
     bool isEnableMacro_;
@@ -492,12 +492,6 @@ public:
     Camera_ErrorCode GetColorTint(int useCaseCode);
     int32_t GetZoomPointInfos(int useCaseCode);
     Camera_ErrorCode DeleteZoomPointInfo(int useCaseCode);
-    // notification
-    Camera_ErrorCode RegisterNotificationReceivedCallback(int useCaseCode);
-    Camera_ErrorCode UnregisterNotificationReceivedCallback(int useCaseCode);
-    Camera_ErrorCode GetNotificationName(int useCaseCode);
-    Camera_ErrorCode GetProximityStateForFocus(int useCaseCode);
-    Camera_ErrorCode DestroyCameraNotificationInfo(int useCaseCode);
 
     Camera_ErrorCode CreatePhotoCaptureSettingExt(int useCaseCode);
     Camera_ErrorCode DestroyPhotoCaptureSettingExt(int useCaseCode);

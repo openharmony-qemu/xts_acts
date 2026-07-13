@@ -46,7 +46,7 @@ import {
 } from '@ohos.graphics.scene'
 import * as scene3d from '@ohos.graphics.scene'
 import { $rawfile, Resource } from '@ohos.arkui.component'
-import { describe, expect, it, Level, Size, TestType } from '../../../hypium/index'
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic'
 import { SceneResourceType } from 'graphics3d.SceneResources';
 import { GenRandom, sleep } from '../common/utils'
 

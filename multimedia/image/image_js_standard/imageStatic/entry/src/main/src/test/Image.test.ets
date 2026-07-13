@@ -15,7 +15,7 @@
  */
 import image from '@ohos.multimedia.image';
 import rpc from '@ohos.rpc'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, DEFAULT, Hypium, Level } from '../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, DEFAULT, Hypium, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';

@@ -15,7 +15,7 @@
 */
 
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach } from "@ohos/hypium-binary/src/main/indexStatic";
 import hilog from '@ohos.hilog'
 import data_relationalStore from '@ohos.data.relationalStore'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';

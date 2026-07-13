@@ -15,7 +15,7 @@
  */
 
 import router from '@ohos.router';
-import { beforeEach, describe, expect, it, Level,beforeAll } from "../../../../hypium/index";
+import { beforeEach, describe, expect, it, Level,beforeAll } from "@ohos/hypium-binary/src/main/indexStatic";
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';

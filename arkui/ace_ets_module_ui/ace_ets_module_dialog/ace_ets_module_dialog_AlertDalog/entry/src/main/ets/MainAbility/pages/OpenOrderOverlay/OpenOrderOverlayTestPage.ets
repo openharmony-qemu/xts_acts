@@ -34,7 +34,7 @@ function builderText(params: Params) {
       .fontWeight(FontWeight.Bold)
       .id('overlay_text')
   }
-  .width(200)
+  .width(100)
   .height(100)
   .backgroundColor(Color.White)
   .borderRadius(10)
@@ -52,25 +52,25 @@ struct OpenOrderOverlayTestPage {
   private contentArray: ComponentContent<Params>[] = [];
 
   build() {
-    Column({ space: 10 }) {
+    Column() {
       Text('openOrderOverlay Test Page')
-        .fontSize(20)
+        .fontSize(10)
         .fontWeight(FontWeight.Bold)
-        .margin({ top: 20 })
         .id('title_text')
 
       Text(this.resultText)
-        .fontSize(16)
+        .fontSize(10)
         .id('result_text')
-        .margin({ bottom: 10 })
 
-      Row({ space: 10 }) {
+      Row() {
         Button('Content Only')
           .id('btn_content_only')
+          .height('5%')
+          .width('30%')
           .onClick(async () => {
             let componentContent = new ComponentContent(
               this.uiContext, wrapBuilder<[Params]>(builderText),
-              new Params('ContentOnly', { x: 0, y: 110 })
+              new Params('ContentOnly', { x: 0, y: 80 })
             );
             try {
               await this.overlayNode.openOrderOverlay(componentContent);
@@ -83,10 +83,12 @@ struct OpenOrderOverlayTestPage {
 
         Button('With Options')
           .id('btn_with_options')
+          .height('5%')
+          .width('30%')
           .onClick(async () => {
             let componentContent = new ComponentContent(
               this.uiContext, wrapBuilder<[Params]>(builderText),
-              new Params('WithOptions', { x: 0, y: 110 })
+              new Params('WithOptions', { x: 0, y: 80 })
             );
             try {
               await this.overlayNode.openOrderOverlay(componentContent, {
@@ -104,10 +106,12 @@ struct OpenOrderOverlayTestPage {
       Row({ space: 10 }) {
         Button('LevelMode OVERLAY')
           .id('btn_overlay_mode')
+          .height('5%')
+          .width('30%')
           .onClick(async () => {
             let componentContent = new ComponentContent(
               this.uiContext, wrapBuilder<[Params]>(builderText),
-              new Params('OVERLAY', { x: 0, y: 110 })
+              new Params('OVERLAY', { x: 0, y: 80 })
             );
             try {
               await this.overlayNode.openOrderOverlay(componentContent, {
@@ -122,10 +126,12 @@ struct OpenOrderOverlayTestPage {
 
         Button('LevelMode EMBEDDED')
           .id('btn_embedded_mode')
+          .height('5%')
+          .width('30%')
           .onClick(async () => {
             let componentContent = new ComponentContent(
               this.uiContext, wrapBuilder<[Params]>(builderText),
-              new Params('EMBEDDED', { x: 0, y: 110 })
+              new Params('EMBEDDED', { x: 0, y: 80 })
             );
             try {
               await this.overlayNode.openOrderOverlay(componentContent, {
@@ -140,13 +146,15 @@ struct OpenOrderOverlayTestPage {
           })
       }
 
-      Row({ space: 10 }) {
+      Row() {
         Button('LevelOrder 0')
           .id('btn_order_0')
+          .height('5%')
+          .width('30%')
           .onClick(async () => {
             let componentContent = new ComponentContent(
               this.uiContext, wrapBuilder<[Params]>(builderText),
-              new Params('Order0', { x: 0, y: 110 })
+              new Params('Order0', { x: 0, y: 80 })
             );
             try {
               await this.overlayNode.openOrderOverlay(componentContent, {
@@ -162,10 +170,12 @@ struct OpenOrderOverlayTestPage {
 
         Button('LevelOrder 100')
           .id('btn_order_100')
+          .height('5%')
+          .width('30%')
           .onClick(async () => {
             let componentContent = new ComponentContent(
               this.uiContext, wrapBuilder<[Params]>(builderText),
-              new Params('Order100', { x: 0, y: 110 })
+              new Params('Order100', { x: 0, y: 80 })
             );
             try {
               await this.overlayNode.openOrderOverlay(componentContent, {
@@ -180,13 +190,15 @@ struct OpenOrderOverlayTestPage {
           })
       }
 
-      Row({ space: 10 }) {
+      Row() {
         Button('LevelOrder -100')
           .id('btn_order_neg100')
+          .height('5%')
+          .width('30%')
           .onClick(async () => {
             let componentContent = new ComponentContent(
               this.uiContext, wrapBuilder<[Params]>(builderText),
-              new Params('Order-100', { x: 0, y: 110 })
+              new Params('Order-100', { x: 0, y: 80 })
             );
             try {
               await this.overlayNode.openOrderOverlay(componentContent, {
@@ -202,10 +214,12 @@ struct OpenOrderOverlayTestPage {
 
         Button('LevelOrder 100000')
           .id('btn_order_max')
+          .height('5%')
+          .width('30%')
           .onClick(async () => {
             let componentContent = new ComponentContent(
               this.uiContext, wrapBuilder<[Params]>(builderText),
-              new Params('OrderMax', { x: 0, y: 110 })
+              new Params('OrderMax', { x: 0, y: 80 })
             );
             try {
               await this.overlayNode.openOrderOverlay(componentContent, {
@@ -223,10 +237,12 @@ struct OpenOrderOverlayTestPage {
       Row({ space: 10 }) {
         Button('levelUniqueId 0')
           .id('btn_uniqueid_0')
+          .height('5%')
+          .width('30%')
           .onClick(async () => {
             let componentContent = new ComponentContent(
               this.uiContext, wrapBuilder<[Params]>(builderText),
-              new Params('UniqueId0', { x: 0, y: 110 })
+              new Params('UniqueId0', { x: 0, y: 80 })
             );
             try {
               await this.overlayNode.openOrderOverlay(componentContent, {
@@ -242,10 +258,12 @@ struct OpenOrderOverlayTestPage {
 
         Button('All Params')
           .id('btn_all_params')
+          .height('5%')
+          .width('30%')
           .onClick(async () => {
             let componentContent = new ComponentContent(
               this.uiContext, wrapBuilder<[Params]>(builderText),
-              new Params('AllParams', { x: 0, y: 110 })
+              new Params('AllParams', { x: 0, y: 80 })
             );
             try {
               await this.overlayNode.openOrderOverlay(componentContent, {
@@ -264,6 +282,8 @@ struct OpenOrderOverlayTestPage {
       Row({ space: 10 }) {
         Button('Remove Last')
           .id('btn_remove')
+          .height('5%')
+          .width('30%')
           .onClick(() => {
             if (this.contentArray.length > 0) {
               let content = this.contentArray.pop();

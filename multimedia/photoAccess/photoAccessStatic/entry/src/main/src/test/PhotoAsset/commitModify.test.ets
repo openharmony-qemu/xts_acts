@@ -15,7 +15,7 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
-import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll } from "../../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll } from "@ohos/hypium-binary/src/main/indexStatic";
 
 import hilog from '@ohos.hilog'
 import { fetchOption, getFileAsset, photoFetchOption, getPermission, driveFn, sleep } from '../Common.test.ets'

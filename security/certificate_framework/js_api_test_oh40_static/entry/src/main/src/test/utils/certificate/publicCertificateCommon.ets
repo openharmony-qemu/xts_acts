@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { expect } from "../../../../../hypium/index";
+import { expect } from "@ohos/hypium-binary/src/main/indexStatic";
 import cert from "@ohos.security.cert";
 
 function certificateEnumTypeTest(): void {

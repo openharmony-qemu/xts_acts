@@ -102,7 +102,22 @@ struct PopupBackgroundTestPage {
             .onClick(() => { this.resultText = 'FOLLOWS_WINDOW=0 ALWAYS_ACTIVE=1 ALWAYS_INACTIVE=2'; })
         }
 
-        Text('BlurStyleOpts').fontSize(9).fontWeight(FontWeight.Bold).id('section_blur_style_opts')
+        Row() {
+          Button('NoBgOpts')
+            .id('btn_no_background')
+            .width('30%').height('10vp').fontSize(9)
+            .bindPopup(this.showPopupNoBackground, {
+              message: 'Popup without background',
+              onStateChange: (e) => { if (!e.isVisible) { this.showPopupNoBackground = false; } }
+            })
+            .onClick(() => { this.showPopupNoBackground = true; })
+          Button('Return=T')
+            .id('btn_return_check')
+            .width('30%').height('10vp').fontSize(9)
+            .onClick(() => { this.resultText = 'bindPopup returns T'; })
+        }
+
+
 
         Row() {
           Button('cm=LIGHT')
@@ -267,7 +282,6 @@ struct PopupBackgroundTestPage {
             .onClick(() => { this.showPopupBlurStyleOptsAllParams = true; this.resultText = 'BlurStyleOpts'; })
         }
 
-        Text('BgEffect').fontSize(9).fontWeight(FontWeight.Bold).id('section_bg_effect')
 
         Row() {
           Button('r=0')
@@ -450,7 +464,6 @@ struct PopupBackgroundTestPage {
             .onClick(() => { this.showPopupEffectAllParams = true; this.resultText = 'EffectParams'; })
         }
 
-        Text('CustomPopup').fontSize(9).fontWeight(FontWeight.Bold).id('section_custom_popup')
 
         Row() {
           Button('Custom+Blur')
@@ -481,25 +494,6 @@ struct PopupBackgroundTestPage {
             .onClick(() => { this.showCustomEffectAllParams = true; this.resultText = 'CustomEffect'; })
         }
 
-        Text('Default').fontSize(9).fontWeight(FontWeight.Bold).id('section_default')
-
-        Row() {
-          Button('NoBgOpts')
-            .id('btn_no_background')
-            .width('30%').height('10vp').fontSize(9)
-            .bindPopup(this.showPopupNoBackground, {
-              message: 'Popup without background',
-              onStateChange: (e) => { if (!e.isVisible) { this.showPopupNoBackground = false; } }
-            })
-            .onClick(() => { this.showPopupNoBackground = true; })
-
-          Text('Return').fontSize(9).fontWeight(FontWeight.Bold).id('section_return')
-
-          Button('Return=T')
-            .id('btn_return_check')
-            .width('30%').height('10vp').fontSize(9)
-            .onClick(() => { this.resultText = 'bindPopup returns T'; })
-        }
       }
       .width(200)
     }

@@ -25,6 +25,18 @@ const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
 let emitKey = '';
 
+async function runCase(tcName: string, emitKeyValue: string, eventId: number, done: Function): Promise<void> {
+  emitKey = emitKeyValue;
+  let isReturn = 0;
+  Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+  Utils.registerEvent(tcName, true, eventId, () => {
+    isReturn = 1;
+  });
+  await Utils.waitAndClickComponent(driver, 'webViewContEnableFullscreenVideoOverlay');
+  await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', 1, 1000);
+  done();
+}
+
 export default function webViewContEnableFullscreenVideoOverlay() {
   describe('ActsAceWebViewContEnableFullscreenVideoOverlayTest', () => {
     beforeAll(async (done: Function) => {
@@ -73,10 +85,7 @@ export default function webViewContEnableFullscreenVideoOverlay() {
      */
     it('testEnableFullscreenVideoOverlay001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        emitKey = 'emitEnableFullscreenVideoOverlay001';
-        Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
-        Utils.registerEvent('testEnableFullscreenVideoOverlay001', true, 112801, done);
-        await Utils.waitAndClickComponent(driver, 'webViewContEnableFullscreenVideoOverlay');
+        await runCase('testEnableFullscreenVideoOverlay001', 'emitEnableFullscreenVideoOverlay001', 112801, done);
       });
 
     /**
@@ -89,10 +98,7 @@ export default function webViewContEnableFullscreenVideoOverlay() {
      */
     it('testEnableFullscreenVideoOverlay002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        emitKey = 'emitEnableFullscreenVideoOverlay002';
-        Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
-        Utils.registerEvent('testEnableFullscreenVideoOverlay002', true, 112802, done);
-        await Utils.waitAndClickComponent(driver, 'webViewContEnableFullscreenVideoOverlay');
+        await runCase('testEnableFullscreenVideoOverlay002', 'emitEnableFullscreenVideoOverlay002', 112802, done);
       });
 
     /**
@@ -105,10 +111,7 @@ export default function webViewContEnableFullscreenVideoOverlay() {
      */
     it('testEnableFullscreenVideoOverlay004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        emitKey = 'emitEnableFullscreenVideoOverlay004';
-        Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
-        Utils.registerEvent('testEnableFullscreenVideoOverlay004', true, 112804, done);
-        await Utils.waitAndClickComponent(driver, 'webViewContEnableFullscreenVideoOverlay');
+        await runCase('testEnableFullscreenVideoOverlay004', 'emitEnableFullscreenVideoOverlay004', 112804, done);
       });
 
     /**
@@ -121,10 +124,7 @@ export default function webViewContEnableFullscreenVideoOverlay() {
      */
     it('testEnableFullscreenVideoOverlay005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        emitKey = 'emitEnableFullscreenVideoOverlay005';
-        Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
-        Utils.registerEvent('testEnableFullscreenVideoOverlay005', true, 112805, done);
-        await Utils.waitAndClickComponent(driver, 'webViewContEnableFullscreenVideoOverlay');
+        await runCase('testEnableFullscreenVideoOverlay005', 'emitEnableFullscreenVideoOverlay005', 112805, done);
       });
 
     /**
@@ -137,10 +137,7 @@ export default function webViewContEnableFullscreenVideoOverlay() {
      */
     it('testEnableFullscreenVideoOverlay007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        emitKey = 'emitEnableFullscreenVideoOverlay007';
-        Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
-        Utils.registerEvent('testEnableFullscreenVideoOverlay007', true, 112807, done);
-        await Utils.waitAndClickComponent(driver, 'webViewContEnableFullscreenVideoOverlay');
+        await runCase('testEnableFullscreenVideoOverlay007', 'emitEnableFullscreenVideoOverlay007', 112807, done);
       });
 
     /**
@@ -153,10 +150,7 @@ export default function webViewContEnableFullscreenVideoOverlay() {
      */
     it('testEnableFullscreenVideoOverlay009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
-        emitKey = 'emitEnableFullscreenVideoOverlay009';
-        Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
-        Utils.registerEvent('testEnableFullscreenVideoOverlay009', true, 112809, done);
-        await Utils.waitAndClickComponent(driver, 'webViewContEnableFullscreenVideoOverlay');
+        await runCase('testEnableFullscreenVideoOverlay009', 'emitEnableFullscreenVideoOverlay009', 112809, done);
       });
   });
 }

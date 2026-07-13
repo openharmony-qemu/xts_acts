@@ -15,7 +15,7 @@
  */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
-  from '../../../../../hypium/index'
+  from '@ohos/hypium-binary/src/main/indexStatic'
 namespace testNS2_6 {
   function check_is_subtype_of_I1_6(a: Object | null | undefined): boolean {
     let res: boolean = false

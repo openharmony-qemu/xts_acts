@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -61,6 +61,7 @@ export default function ScrollSourceOther() {
     afterEach(async () => {
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('SCROLL_BAR_FLING'));
       await button!.click();
       await CommonFunc.sleep(1000);

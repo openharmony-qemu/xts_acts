@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import router from '@ohos.router';
 import {
   Driver,
@@ -136,6 +136,7 @@ it('outliersAlphabet_static_0200', Level.LEVEL0, async (done: () => void): Promi
       console.info('[outliersAlphabet_static_0200] START');
       await CommonFunc.sleep(3000);
       let driver: Driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.text('A'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -169,6 +170,7 @@ it('outliersAlphabet_static_0300', Level.LEVEL0, async (done: () => void): Promi
       console.info('[outliersAlphabet_static_0300] START');
       await CommonFunc.sleep(5000);
       let driver: Driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.text('B'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -227,6 +229,7 @@ it('outliersAlphabet_static_0500', Level.LEVEL0, async (done: () => void): Promi
       console.info('[outliersAlphabet_static_0500] START');
       await CommonFunc.sleep(3000);
       let driver: Driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.text('C'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);

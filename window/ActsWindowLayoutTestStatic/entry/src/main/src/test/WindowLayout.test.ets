@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll} from "@ohos/hypium-binary/src/main/indexStatic";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 
@@ -4831,6 +4831,65 @@ export default function WindowLayoutTest() {
                         if (err!.code == 1300002) {
                             hilog.info(domain, tag, msgStr + `The window is not created or destroyed. Cause code: ${err!.code}, message: ${err!.message}`);
                             expect(err!.code === 1300002).assertTrue();
+                            done();
+                        }else if (!isFreeWindowMode) {
+                            hilog.info(domain, tag, msgStr + `Capability not supported . Cause code: ${err!.code}, message: ${err!.message}`);
+                            expect(err!.code === 801).assertTrue();
+                            done();
+                        } else {
+                            hilog.error(domain, tag, msgStr + `Failed to recover window. Cause code: ${err!.code}, message: ${err!.message}`);
+                            expect(false).assertTrue();
+                            done();
+                        }
+                    });
+                } catch (exception) {
+                    hilog.error(domain, tag, msgStr + `Failed to recover window or destroyWindow. Cause code: ${exception!.code}, message: ${exception.message}`);
+                    expect(false).assertTrue();
+                    done();
+                }
+            })
+
+            /**
+         * @tc.number      SUB_WINDOW_recoverError1300004_static_2600
+         * @tc.name        testRecoverError1300004_static_2600
+         * @tc.desc        recover 1300002 window destroyed test.
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+         */
+        it('testRecoverError1300004_static_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+            async (done: () => void): Promise<void> => {
+                let caseName: string = 'testRecoverError1300004_static_2600';
+                let msgStr: string = 'jsunittest ' + caseName + ' ';
+                hilog.info(domain, tag, msgStr + 'begin');
+                 let options: window.SubWindowOptions = {
+                    title: caseName,
+                    decorEnabled: true,
+                    maximizeSupported: true,
+                };
+                try {
+                    let subWin: window.Window = await windowStage!.createSubWindowWithOptions(caseName, options);
+                    expect(!!subWin).assertTrue();
+                    await subWin.setUIContent('pages/Index');
+                    await subWin.showWindow();
+                    hilog.info(domain, tag, msgStr + 'show page');
+                    let snapshotAnimationConfig: window.WindowSnapshotAnimationConfig = {
+                        duration: 200,
+                    };
+                    await subWin.maximizeWithOptions()
+                    hilog.info(domain, tag, msgStr + 'maxmized subwindow');
+                    await subWin.recover(snapshotAnimationConfig).then(async () => {
+                        hilog.info(domain, tag, msgStr + 'Succeeded in recovering window from duration=200.');
+                        await subWin.destroyWindow();
+                        hilog.info(domain, tag, msgStr + 'destroyWindow');
+                        expect(false).assertTrue();
+                        done();
+                    }).catch(async (err: Error) => {
+                        await subWin.destroyWindow();
+                        hilog.info(domain, tag, msgStr + 'destroyWindow');
+                        if (err!.code == 1300004) {
+                            hilog.info(domain, tag, msgStr + `The window is not created or destroyed. Cause code: ${err!.code}, message: ${err!.message}`);
+                            expect(err!.code === 1300004).assertTrue();
                             done();
                         }else if (!isFreeWindowMode) {
                             hilog.info(domain, tag, msgStr + `Capability not supported . Cause code: ${err!.code}, message: ${err!.message}`);

@@ -53,6 +53,11 @@ napi_value TestCustomDialogSetSystemMaterialInOptions007(napi_env env, napi_call
 napi_value TestNodeSystemMaterialAttrId001(napi_env env, napi_callback_info info);
 napi_value TestNodeSetSystemMaterial001(napi_env env, napi_callback_info info);
 
+napi_value TestDialogDisplayModeEnumValues001(napi_env env, napi_callback_info info);
+napi_value TestCustomDialogSetDisplayModeInSubWindow001(napi_env env, napi_callback_info info);
+napi_value TestCustomDialogSetDisplayModeInSubWindow002(napi_env env, napi_callback_info info);
+napi_value TestCustomDialogSetDisplayModeInSubWindow003(napi_env env, napi_callback_info info);
+
 } // namespace ArkUICapiTest
 
 #endif

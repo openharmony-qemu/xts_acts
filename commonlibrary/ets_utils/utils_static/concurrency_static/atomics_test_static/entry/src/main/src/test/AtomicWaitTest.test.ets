@@ -1,5 +1,5 @@
 'use static';
-import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium';
+import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
 import sleep  from './Util.test';
 
 interface typeWait01 {

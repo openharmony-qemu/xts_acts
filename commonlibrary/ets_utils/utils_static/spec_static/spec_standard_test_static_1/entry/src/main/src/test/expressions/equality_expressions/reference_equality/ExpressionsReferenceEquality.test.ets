@@ -1,5 +1,5 @@
-'use static';
-﻿/*---
+'use static'
+/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import Utils from "../../../Util.test";
+
 import {
   afterAll,
   afterEach,
@@ -25,15 +27,8 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../../../hypium';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
 class A_1 {}
 class A_2 {}
 class A_3 {}
@@ -51,7 +46,7 @@ class A_9{}
 class B_9{}
 class A_10 {}
 class B_10 {}
-export default function ExpressionsReferenceEqualityTest() {
+export default function ExpressionsReferenceEqualityTest(): void {
   describe("ExpressionsReferenceEqualityTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -62,7 +57,7 @@ export default function ExpressionsReferenceEqualityTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
 import bundleManager from '@ohos.bundle.bundleManager';
 import { BusinessError } from '@kit.BasicServicesKit';
 let domain = 0;

@@ -250,5 +250,35 @@ export default function fusionNopUiJsunit() {
         done();
       }
     })
+
+    /**
+     * @tc.name testGetRangingCapabilityErrcode201
+     * @tc.number SUB_COMMUNICATION_CONNECTIVITYKIT_RANGING_GETRANGINGCAPABILITY_NOP_0200
+     * @tc.desc 查询测距能力权限不足
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     * @co.authored.by.agent
+     */
+    it('testGetRangingCapabilityErrcode201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        await ranging.getRangingCapability();
+        console.info("[fusion_js] testGetRangingCapabilityErrcode201 success.");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("[fusion_js] testGetRangingCapabilityErrcode201 error: " + JSON.stringify(err));
+        if (err.code === 801) {
+          console.info("设备 is not support.");
+          expect(Number(err.code)).assertEqual(801);
+          let isSupport: boolean = ranging.isRangingSupported();
+          console.info("[fusion_js] isRangingSupported value is: " + JSON.stringify(isSupport));
+          expect(isSupport).assertFalse();
+        } else {
+          expect(err.code).assertEqual(201);
+        }
+        done();
+      }
+    });
   })
 }

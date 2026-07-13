@@ -21,7 +21,7 @@ import events_emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'
 import { State } from '@ohos.arkui.stateManagement'
 import { BusinessError, RecordData } from '@ohos.base'
-import { Hypium } from '../../../hypium';
+import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
 import { WebLayoutMode } from '@ohos.arkui.component'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 

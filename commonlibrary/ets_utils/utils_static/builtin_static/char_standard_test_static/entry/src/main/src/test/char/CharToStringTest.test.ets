@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
 import Utils from '../Util.test';
 
 export default function CharToStringTest(): void {
@@ -487,7 +487,7 @@ export default function CharToStringTest(): void {
       const str = c.toString();
       const ch = c.toChar();
       expect(str).assertEqual("A");
-      expect(str.charCodeAt(0)).assertEqual(ch as number);
+      expect(str.charCodeAt(0)).assertEqual(ch.toDouble());
     });
 
     /**

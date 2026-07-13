@@ -16,7 +16,7 @@
 
 import radio from '@ohos.telephony.radio';
 import sim from '@ohos.telephony.sim';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../hypium/index'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic'
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 

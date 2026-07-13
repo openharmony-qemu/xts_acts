@@ -21,7 +21,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError, Callback, RecordData } from '@ohos.base';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import notificationManager from '@ohos.notificationManager';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
 import { Driver, ON } from '@ohos.UiTest';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import commonEventManager from '@ohos.commonEventManager';

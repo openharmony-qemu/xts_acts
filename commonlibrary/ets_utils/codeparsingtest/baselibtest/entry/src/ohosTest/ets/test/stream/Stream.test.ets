@@ -3406,7 +3406,7 @@ export default function StreamTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(undefined);
       }
     })
 

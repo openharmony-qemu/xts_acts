@@ -125,7 +125,7 @@ export default function TextInputPropertiesNullUndefined02Test() {
     /**
      * @tc.name   textInputFontWeight_number_0100
      * @tc.number SUB_ARKUI_TEXTINPUT_FONTWEIGHT_NUMBER_0100
-     * @tc.desc   Test TextInput fontWeight property with number 400, should restore to default value
+     * @tc.desc   Test TextInput fontWeight property with number 400, should restore to 400 
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
@@ -133,18 +133,14 @@ export default function TextInputPropertiesNullUndefined02Test() {
     it('textInputFontWeight_number_0100', Level.LEVEL2, async () => {
       console.info('[textInputFontWeight_number_0100] START');
 
-      let strJsonCompare: string = getInspectorByKey('TextInput_fontWeight_default');
-      let objCompare: Record<string, ESObject> = JSON.parse(strJsonCompare);
       let strJson: string = getInspectorByKey('TextInput_fontWeight_number');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
 
-      console.info("[textInputFontWeight_number_0100] default obj is: " + JSON.stringify(objCompare.$attrs));
-      console.info("[textInputFontWeight_number_0100] empty obj is: " + JSON.stringify(obj.$attrs));
-      console.info("[textInputFontWeight_number_0100] default fontWeight is: " + objCompare.$attrs.fontWeight);
-      console.info("[textInputFontWeight_number_0100] empty fontWeight is: " + obj.$attrs.fontWeight);
+      console.info("[textInputFontWeight_number_0100] 400 obj is: " + JSON.stringify(obj.$attrs));
+      console.info("[textInputFontWeight_number_0100] 400 fontWeight is: " + obj.$attrs.fontWeight);
 
       // 空字符串应该恢复为默认值
-      expect(obj.$attrs.fontWeight).assertEqual(objCompare.$attrs.fontWeight);
+      expect(obj.$attrs.fontWeight).assertEqual('400');
       console.info('[textInputFontWeight_number_0100] END');
     })
 

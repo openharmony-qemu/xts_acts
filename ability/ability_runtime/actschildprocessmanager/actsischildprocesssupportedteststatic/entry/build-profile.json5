@@ -15,13 +15,21 @@
 
 {
   "apiType": "stageMode",
-  "buildOption": {},
+  "buildOption": {
+    "arkOptions": {
+      "runtimeOnly": {
+        "packages": [
+          "@ohos/hypium-binary"
+        ]
+      }
+    }
+  },
   "targets": [
     {
       "name": "default"
     },
     {
-      "name": "ohosTest",
+      "name": "ohosTest"
     }
   ]
 }

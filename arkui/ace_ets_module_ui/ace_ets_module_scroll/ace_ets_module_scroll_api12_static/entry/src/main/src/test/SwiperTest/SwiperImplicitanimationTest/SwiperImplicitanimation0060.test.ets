@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-binary/src/main/indexStatic"
 import router from '@ohos.router';
 import {
   Point,
@@ -88,6 +88,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0060', Level.LEV
         console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0060 START");
         await CommonFunc.sleep(1000);
         let driver: Driver = Driver.create();
+        await CommonFunc.sleep(500);
         let btn1 = await driver.findComponent(ON.id("btn_implicitanimation_0060_1"));
         let btn2 = await driver.findComponent(ON.id("btn_implicitanimation_0060_2"));
         await (btn1?.click() as Promise<void>);

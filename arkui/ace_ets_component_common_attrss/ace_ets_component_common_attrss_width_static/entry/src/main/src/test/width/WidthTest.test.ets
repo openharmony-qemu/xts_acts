@@ -17,7 +17,7 @@ import {Color,$r,Length} from '@ohos.arkui.component'
 import Utils, {CurrentRatio, BasePageConfig, PageConfig, TestValue, RectValue,SetValue,StrJsonObj } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { describe, expect,beforeAll,afterEach } from '../../../../hypium/index';
+import { describe, expect,beforeAll,afterEach } from '@ohos/hypium-binary/src/main/indexStatic';
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';

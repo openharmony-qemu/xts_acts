@@ -30,7 +30,7 @@ import {
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent, Position } from '@ohos.arkui.component';
 import  AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Hypium } from '../../../../../hypium/hypium';
+import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
 import hilog from '@ohos.hilog';
 import testsuite from '../../../../src/test/List.test'
 import { SegmentButton, SegmentButtonOptions, SegmentButtonItemOptions,SegmentButtonIconTextItem,SegmentButtonIconItem,SegmentButtonTextItem} from '@ohos.arkui.advanced.SegmentButton';

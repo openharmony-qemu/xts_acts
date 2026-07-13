@@ -4266,6 +4266,10 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         let count: number = 0;
         let callback: Callback<display.Rect> = (data: display.Rect) => {
             console.info(caseName + ' Listening enabled. Data: ' + JSON.stringify(data));
+            expect(data.left).assertLargerOrEqual(0);
+            expect(data.top).assertLargerOrEqual(0);
+            expect(data.width).assertLargerOrEqual(0);
+            expect(data.height).assertLargerOrEqual(0);
             count++;
         };
         if (isFreeWindowMode) {

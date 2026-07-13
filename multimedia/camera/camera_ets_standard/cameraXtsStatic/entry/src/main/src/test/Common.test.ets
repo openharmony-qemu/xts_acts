@@ -21,7 +21,7 @@ import { camera } from "@kit.CameraKit";
 import fs from '@ohos.file.fs';
 import Utils from "./Util.test";
 import { Context } from "@kit.ArkUI";
-import { Hypium } from "../../../hypium";
+import { Hypium } from "@ohos/hypium-binary/src/main/indexStatic";
 import { hilog } from "@kit.PerformanceAnalysisKit";
 
 const TAG = "cameraXts.common";

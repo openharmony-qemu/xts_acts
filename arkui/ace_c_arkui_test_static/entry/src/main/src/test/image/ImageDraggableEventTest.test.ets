@@ -16,7 +16,7 @@
 
 import { Component, Driver, ON } from '@ohos.UiTest';
 import { ComponentInfo } from '../common/Interfaces';
-import { describe, expect, it, afterEach, Level,beforeAll,beforeEach } from '../../../../hypium';
+import { describe, expect, it, afterEach, Level,beforeAll,beforeEach } from '@ohos/hypium-binary/src/main/indexStatic';
 import Utils from '../common/Utils';
 import { Driver, ON, MouseButton,Component,Point } from '@kit.TestKit';
 import { UtilsTest } from '../Util.test'

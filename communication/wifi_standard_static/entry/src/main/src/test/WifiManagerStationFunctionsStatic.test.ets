@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll} from "@ohos/hypium-binary/src/main/indexStatic";
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import CallbackMethods from './CallbackMethod.test';
@@ -886,7 +886,7 @@ export default function actsWifiManagerFunctionsTest() {
           expect(typeof deviceConfig.bssid === 'string'  || deviceConfig.bssid === undefined ).assertTrue();
           let select_enum: wifiManager.DeviceAddressType | undefined = deviceConfig.bssidType;
           hilog.info(domain, tag, 'getDeviceConfigs result bssidType:' + select_enum);
-          const bssidTypeValues: (undefined | int)[] = [undefined, wifiManager.DeviceAddressType.RANDOM_DEVICE_ADDRESS, wifiManager.DeviceAddressType.REAL_DEVICE_ADDRESS];
+          const bssidTypeValues: (wifiManager.DeviceAddressType | undefined)[] = [undefined, wifiManager.DeviceAddressType.RANDOM_DEVICE_ADDRESS, wifiManager.DeviceAddressType.REAL_DEVICE_ADDRESS];
           expect(bssidTypeValues.includes(select_enum)).assertTrue();
           hilog.info(domain, tag, 'getDeviceConfigs result isHiddenSsid:' + deviceConfig.isHiddenSsid);
           expect(typeof deviceConfig.isHiddenSsid === 'boolean').assertTrue();
@@ -1039,7 +1039,7 @@ export default function actsWifiManagerFunctionsTest() {
           expect(typeof deviceConfig.bssid === 'string' || deviceConfig.bssid === undefined ).assertTrue();
           let select_enum: wifiManager.DeviceAddressType | undefined = deviceConfig.bssidType;
           hilog.info(domain, tag, 'getDeviceConfigs result bssidType:' + select_enum);
-          const bssidTypeValues: (undefined | int)[] = [undefined, wifiManager.DeviceAddressType.RANDOM_DEVICE_ADDRESS, wifiManager.DeviceAddressType.REAL_DEVICE_ADDRESS];
+          const bssidTypeValues: (wifiManager.DeviceAddressType | undefined)[] = [undefined, wifiManager.DeviceAddressType.RANDOM_DEVICE_ADDRESS, wifiManager.DeviceAddressType.REAL_DEVICE_ADDRESS];
           expect(bssidTypeValues.includes(select_enum)).assertTrue();
           hilog.info(domain, tag, 'getDeviceConfigs result isHiddenSsid:' + deviceConfig.isHiddenSsid);
           expect(typeof deviceConfig.isHiddenSsid === 'boolean').assertTrue();
@@ -3386,6 +3386,27 @@ export default function actsWifiManagerFunctionsTest() {
       hilog.info(domain, tag, `${caseName} test end`);
       done();
     });
-
+    /**
+     * @tc.number SUB_Communication_WiFi_wifiManager_isWlanSupported_0001
+     * @tc.name SUB_Communication_WiFi_wifiManager_isWlanSupported_0001
+     * @tc.desc Test isWlanSupported 
+     * @tc.size MEDIUMTEST
+     * @tc.type Function
+     * @tc.level LEVEL0
+     */
+    it('SUB_Communication_WiFi_wifiManager_isWlanSupported_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = 'LOG_SUB_Communication_WiFi_wifiManager_isWlanSupported_0001';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let iswifisupport: boolean = wifiManager.isWlanSupported();
+        hilog.error(domain, tag, `${caseName} isWlanSupported success`);
+        expect(iswifisupport === true || iswifisupport === false).assertTrue();
+      } catch (err) {
+        console.info(`${caseName} error code: ${err.code},error message: ${err.message}`);
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
   })
 }

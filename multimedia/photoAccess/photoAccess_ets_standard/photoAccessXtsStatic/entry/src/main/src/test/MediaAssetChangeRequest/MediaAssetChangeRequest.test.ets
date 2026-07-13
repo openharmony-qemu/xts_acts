@@ -20,7 +20,7 @@ import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base'
 import { createMovingPhoto, fetchOption, getPermission } from "../Common.test";
 import { Context } from '@kit.ArkUI';
-import { beforeAll, describe, expect, Hypium, it, Level, Size, TAG, TestType } from '../../../../hypium';
+import { beforeAll, describe, expect, Hypium, it, Level, Size, TAG, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import { fileIo } from '@kit.CoreFileKit';
 import { createUserAlbum } from '../Common.test';

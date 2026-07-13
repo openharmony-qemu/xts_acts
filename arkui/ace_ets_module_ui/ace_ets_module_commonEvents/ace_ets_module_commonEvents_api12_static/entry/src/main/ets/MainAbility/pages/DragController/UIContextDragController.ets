@@ -43,7 +43,7 @@ import {
   TouchType
 } from '@ohos.arkui.component'
 import { AppStorage, LocalStorage, State } from '@ohos.arkui.stateManagement'
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index'
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium-binary/src/main/indexStatic'
 
 let storages: LocalStorage | undefined = undefined;
 

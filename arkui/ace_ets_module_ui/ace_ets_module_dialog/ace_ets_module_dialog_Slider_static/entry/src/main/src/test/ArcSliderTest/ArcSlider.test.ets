@@ -15,7 +15,7 @@
  */
 
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import { Want } from '@kit.AbilityKit';
 import { abilityDelegatorRegistry, Driver, ON } from '@kit.TestKit';
 import inspector from '@ohos.arkui.inspector';

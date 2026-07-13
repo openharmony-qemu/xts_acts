@@ -18,7 +18,7 @@ import { ResourceColor } from '@ohos.arkui.component';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
-import { describe, beforeEach, afterEach, it, expect, Level, beforeAll } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level, beforeAll } from '@ohos/hypium-binary/src/main/indexStatic';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
 import CommonFunc from '../../../ets/MainAbility/common/Common';

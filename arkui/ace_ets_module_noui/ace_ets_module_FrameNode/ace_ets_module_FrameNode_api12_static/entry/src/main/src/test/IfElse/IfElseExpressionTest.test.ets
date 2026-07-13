@@ -51,7 +51,7 @@ export default function IfElseExpressionTest() {
           console.info("get IfElseExpression state pages.name: " + JSON.stringify(pages.name));
           
           router.pushUrl(options)
-          await CommonFunc.sleep(4000);
+          await CommonFunc.sleep(2000);
           
         }
       } catch (err) {

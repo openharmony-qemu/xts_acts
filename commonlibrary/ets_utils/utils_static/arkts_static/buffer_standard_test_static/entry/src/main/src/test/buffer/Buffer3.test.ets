@@ -28,7 +28,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 
 
 export default function bufferTest3(): void {

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import audio from '@ohos.multimedia.audio';
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from '../../../hypium/index';
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium-binary/src/main/indexStatic';
 import fileio from '@ohos.file.fs';
 import { TestConst } from './Const.test';
 import Utils from './Util.test';

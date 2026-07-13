@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
 import hilog from '@ohos.hilog'
 import wantConstant from "@ohos.app.ability.wantConstant";
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';

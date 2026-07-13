@@ -16,7 +16,7 @@
  */
 
 import router from '@ohos.router';
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '@ohos/hypium-binary/src/main/indexStatic';
 import { abilityDelegatorRegistry,MatchPattern } from '@kit.TestKit';
 import { Driver, ON, Rect } from '@ohos.UiTest';
 import { Router } from '@ohos.arkui.UIContext';

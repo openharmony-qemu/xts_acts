@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,7 +24,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 
 class Err extends Error {}
 class Er extends Error {}
@@ -362,7 +362,7 @@ async function sleep(time: int): Promise<int> {
     }, time);
   });
 }
-export default function StatementsTest() {
+export default function StatementsTest(): void {
 
   describe("StatementsTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.

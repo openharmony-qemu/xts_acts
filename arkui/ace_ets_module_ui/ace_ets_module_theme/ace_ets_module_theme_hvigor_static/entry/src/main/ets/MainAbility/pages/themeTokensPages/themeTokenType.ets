@@ -71,6 +71,7 @@ struct TextTokenTypePage {
       WithTheme({ theme: this.currentTheme, colorMode: this.localColorMode }) {
         Column() {
           Text('Test WithTheme')
+            .id('localTheme_primary')
         }
       }
     }

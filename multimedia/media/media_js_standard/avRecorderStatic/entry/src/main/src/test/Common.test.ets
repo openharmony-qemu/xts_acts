@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { expect } from '../../../hypium/index';
+import { expect } from '@ohos/hypium-binary/src/main/indexStatic';
 import fs from '@ohos.file.fs';
 import { Driver, ON, MatchPattern } from '@ohos.UiTest';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -26,7 +26,7 @@ import media from '@ohos.multimedia.media'
 import { BusinessError, AsyncCallback } from '@ohos.base';
 import { globalThis } from './Util.test';
 import common from '@ohos.app.ability.common';
-import { Hypium } from '../../../hypium/index';
+import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
 import audio from "@ohos.multimedia.audio";
 import image from '@ohos.multimedia.image';
 

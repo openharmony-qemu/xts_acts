@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level } from '../../../hypium/index';
+import { describe, it, expect, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import application from '@ohos.app.ability.application';
 import hilog from '@ohos.hilog';
 

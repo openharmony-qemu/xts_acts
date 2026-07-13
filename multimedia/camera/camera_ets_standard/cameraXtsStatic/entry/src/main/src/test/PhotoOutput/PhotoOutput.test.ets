@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Hypium } from '../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
 import { common } from '@kit.AbilityKit';
 import { camera } from '@kit.CameraKit';
 import {

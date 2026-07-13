@@ -16,7 +16,7 @@
 import Utils, {CurrentRatio, BasePageConfig, PageConfig, TestValue, RectValue,StrJsonObj } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { describe, expect,beforeAll, beforeEach } from '../../../../hypium/index';
+import { describe, expect,beforeAll, beforeEach } from '@ohos/hypium-binary/src/main/indexStatic';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';

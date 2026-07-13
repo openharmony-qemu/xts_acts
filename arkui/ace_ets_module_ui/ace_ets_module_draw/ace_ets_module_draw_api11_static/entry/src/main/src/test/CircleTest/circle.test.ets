@@ -17,7 +17,7 @@
 // import ohosrouter from '@ohos.router';
 import { $r } from '@ohos.arkui.component';
 import resourceManager from '@ohos.resourceManager';
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium-binary/src/main/indexStatic'
 import router from '@ohos.router';
 import {
   Component,

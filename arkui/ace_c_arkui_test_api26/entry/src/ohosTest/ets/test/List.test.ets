@@ -51,6 +51,11 @@ import ArcListDigitalCrownSensitivityTest from './arcList/ArcListDigitalCrownSen
 import ArcScrollBarDisplayModeTest from './arcList/ArcScrollBarDisplayModeTest.test'
 import ArcScrollBarBindScrollableTest from './arcList/ArcScrollBarBindScrollableTest.test'
 import ArcListEventCallbackTest from './arcList/ArcListEventCallbackTest.test'
+import ArcSwiperAttributeTest from './arcSwiper/ArcSwiperAttributeTest.test'
+import ArcSwiperMethodTest from './arcSwiper/ArcSwiperMethodTest.test'
+import ArcSwiperEventCallbackTest from './arcSwiper/ArcSwiperEventCallbackTest.test'
+import ArcAlphabetIndexerAttributeTest from './arcAlphabetIndexer/ArcAlphabetIndexerAttributeTest.test'
+import ArcAlphabetIndexerEventCallbackTest from './arcAlphabetIndexer/ArcAlphabetIndexerEventCallbackTest.test'
 
 export default function testsuite() {
   RegisterCommonAreaApproximateChangeEventTest();
@@ -91,5 +96,10 @@ export default function testsuite() {
   ArcListDigitalCrownSensitivityTest()
   ArcScrollBarDisplayModeTest()
   ArcScrollBarBindScrollableTest()
+  ArcSwiperAttributeTest()
+  ArcSwiperMethodTest()
+  ArcAlphabetIndexerAttributeTest()
   ArcListEventCallbackTest()
+  ArcSwiperEventCallbackTest()
+  ArcAlphabetIndexerEventCallbackTest()
 }

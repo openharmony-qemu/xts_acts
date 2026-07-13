@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-binary/src/main/indexStatic";
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import {
@@ -85,6 +85,7 @@ it('SwiperAttribute_static_0050', Level.LEVEL0, async (done: () => void): Promis
       console.info('[SwiperAttribute_static_0050] START');
 
       let driver = Driver.create()
+      await CommonFunc.sleep(500);
       await driver.assertComponentExist(ON.text('1'))
 
       let rect = CommonFunc.getComponentRectOnScreen('swiperAttribute_5')

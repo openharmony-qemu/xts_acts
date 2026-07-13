@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll} from "@ohos/hypium-binary/src/main/indexStatic";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import display from '@ohos.display';
@@ -3589,6 +3589,10 @@ export default function DisplayTest():void {
         let count = 0;
         let callback: Callback<display.Rect> = (data: display.Rect) => {
             console.info(0x0000, '[ANI]', msgStr + `Listening enabled. Data: ${JSON.stringify(data)}`);
+            expect(data.left).assertLargerOrEqual(0);
+            expect(data.top).assertLargerOrEqual(0);
+            expect(data.width).assertLargerOrEqual(0);
+            expect(data.height).assertLargerOrEqual(0);
             count++;
         };
         try {

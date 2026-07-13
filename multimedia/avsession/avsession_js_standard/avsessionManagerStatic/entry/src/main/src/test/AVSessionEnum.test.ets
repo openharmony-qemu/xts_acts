@@ -16,7 +16,7 @@
 
 import avSession from '@ohos.multimedia.avsession';
 import { AVCastPickerState, AVCastPickerStyle, AVCastPickerColorMode} from '@ohos.multimedia.avCastPickerParam';
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from "@ohos/hypium-binary/src/main/indexStatic";
 
 export default function abilityTest() {
     describe('AVSessionEnum', ()=> {
@@ -252,6 +252,39 @@ export default function abilityTest() {
             expect(avSession.ExtraKey.REQUIRE_ABILITY_LIST).assertEqual('requireAbilityList');
             console.info(`TestLog: LIVE_VIEW_HIDDEN_WHEN_KEYGUARD is ${avSession.ExtraKey.LIVE_VIEW_HIDDEN_WHEN_KEYGUARD}`);
             expect(avSession.ExtraKey.LIVE_VIEW_HIDDEN_WHEN_KEYGUARD).assertEqual('hw_live_view_hidden_when_keyguard');
+            done();
+        })
+
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_EXTRAKEY_ENUM_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_EXTRAKEY_ENUM_STATIC_0100
+         * @tc.desc        compare all value in ExtraKey to number value
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+        */
+        it('SUB_MULTIMEDIA_AVSESSION_EXTRAKEY_ENUM_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 ,
+            async (done: () => void): Promise<void> => {
+            console.info(`TestLog: DLNA_DIDL_LITE is ${avSession.ExtraKey.DLNA_DIDL_LITE}`);
+            expect(avSession.ExtraKey.DLNA_DIDL_LITE).assertEqual('DIDL-Lite');
+            console.info(`TestLog: DLNA_CURRENT_URI_METADATA is ${avSession.ExtraKey.DLNA_CURRENT_URI_METADATA}`);
+            expect(avSession.ExtraKey.DLNA_CURRENT_URI_METADATA).assertEqual('CurrentURIMetadata');
+            console.info(`TestLog: SUPPORT_URL_CASTING is ${avSession.ExtraKey.SUPPORT_URL_CASTING}`);
+            expect(avSession.ExtraKey.SUPPORT_URL_CASTING).assertEqual('url-cast');
+            console.info(`TestLog: REQUIRE_ABILITY_LIST is ${avSession.ExtraKey.REQUIRE_ABILITY_LIST}`);
+            expect(avSession.ExtraKey.REQUIRE_ABILITY_LIST).assertEqual('requireAbilityList');
+            console.info(`TestLog: LIVE_VIEW_HIDDEN_WHEN_KEYGUARD is ${avSession.ExtraKey.LIVE_VIEW_HIDDEN_WHEN_KEYGUARD}`);
+            expect(avSession.ExtraKey.LIVE_VIEW_HIDDEN_WHEN_KEYGUARD).assertEqual('hw_live_view_hidden_when_keyguard');
+            console.info(`DeviceType DEVICE_TYPE_2IN1 is ${avSession.DeviceType.DEVICE_TYPE_2IN1}`);
+            expect(avSession.DeviceType.DEVICE_TYPE_2IN1).assertEqual(8);
+            console.info(`DeviceType DEVICE_TYPE_CAR is ${avSession.DeviceType.DEVICE_TYPE_CAR}`);
+            expect(avSession.DeviceType.DEVICE_TYPE_CAR).assertEqual(4);
+            console.info(`DeviceType DEVICE_TYPE_DEFAULT_CAST_PLUS_STREAM is ${avSession.DeviceType.DEVICE_TYPE_DEFAULT_CAST_PLUS_STREAM}`);
+            expect(avSession.DeviceType.DEVICE_TYPE_DEFAULT_CAST_PLUS_STREAM).assertEqual(7);
+            console.info(`DeviceType DEVICE_TYPE_HIPLAY is ${avSession.DeviceType.DEVICE_TYPE_HIPLAY}`);
+            expect(avSession.DeviceType.DEVICE_TYPE_HIPLAY).assertEqual(15);
+            console.info(`DeviceType DEVICE_TYPE_PAD is ${avSession.DeviceType.DEVICE_TYPE_PAD}`);
+            expect(avSession.DeviceType.DEVICE_TYPE_PAD).assertEqual(6);
             done();
         })
     })

@@ -15,7 +15,7 @@
  */
 import osAccount from '@ohos.account.osAccount'
 import Want from '@ohos.app.ability.Want';
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
 import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 import { RecordData } from '@ohos.base';

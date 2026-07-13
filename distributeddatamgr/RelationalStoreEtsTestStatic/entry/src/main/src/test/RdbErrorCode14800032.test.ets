@@ -1,5 +1,5 @@
 'use static';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType} from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType} from "@ohos/hypium-binary/src/main/indexStatic";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import relationalStore from '@ohos.data.relationalStore'

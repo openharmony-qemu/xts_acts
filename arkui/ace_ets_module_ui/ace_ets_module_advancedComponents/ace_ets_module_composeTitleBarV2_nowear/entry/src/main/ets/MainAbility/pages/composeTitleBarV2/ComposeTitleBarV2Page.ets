@@ -13,7 +13,8 @@
  * limitations under the License.
  */
 
-import { ComposeTitleBarV2, ComposeTitleBarV2MenuItem } from '@ohos.arkui.advanced.ComposeTitleBarV2';
+import { ComposeTitleBarV2, ComposeTitleBarV2MenuItem, ComposeTitleBarV2MenuItemParams } from '@ohos.arkui.advanced.ComposeTitleBarV2';
+import { SymbolGlyphModifier } from '@kit.ArkUI'
 
 @Entry
 @ComponentV2
@@ -22,13 +23,29 @@ struct ComposeTitleBarV2Example {
   @Local subtitle: string = '副标题';
   @Local isMenuEnabled: boolean = true;
   @Local clickCount: number = 0;
+  @Local clickCount2: number = 0;
+  @Local clickCount3: number = 0;
+  @Local menuItemParamsOptions:ComposeTitleBarV2MenuItemParams = {
+    value: $r('sys.symbol.phone'),
+    symbolStyle: new SymbolGlyphModifier($r('sys.symbol.save')).fontColor([Color.Blue]),
+    isEnabled: true,
+    label: 'label',
+    accessibilityText: '文本',
+    accessibilityLevel: 'yes',
+    accessibilityDescription: '无障碍描述',
+    action: () => {
+      this.clickCount++;
+      console.info('菜单项1点击，次数: ' + this.clickCount3);
+    }
+  }
+  @Local menuItem:ComposeTitleBarV2MenuItem = new ComposeTitleBarV2MenuItem(this.menuItemParamsOptions)
 
   build() {
     Column() {
       Scroll() {
         Column({ space: 12 }) {
           Text('基本用法 - 仅标题')
-            .fontSize(16)
+            .fontSize(12)
             .fontWeight(FontWeight.Bold)
 
           ComposeTitleBarV2({
@@ -36,9 +53,9 @@ struct ComposeTitleBarV2Example {
           })
 
           Text('完整用法 - 标题+副标题')
-            .fontSize(16)
+            .fontSize(12)
             .fontWeight(FontWeight.Bold)
-            .margin({ top: 20 })
+            .margin({ top: 10 })
 
           ComposeTitleBarV2({
             title: '完整标题',
@@ -46,25 +63,26 @@ struct ComposeTitleBarV2Example {
           })
 
           Text('左侧头像项')
-            .fontSize(16)
+            .fontSize(12)
             .fontWeight(FontWeight.Bold)
-            .margin({ top: 20 })
+            .margin({ top: 10 })
 
           ComposeTitleBarV2({
             title: '带头像的标题',
             subtitle: '副标题',
             item: new ComposeTitleBarV2MenuItem({
-              value: $r('sys.symbol.trash'),
+              value: $r('sys.symbol.bell'),
               action: () => {
                 console.info('左侧头像项点击');
               }
-            })
+            }),
+            menuItems: [this.menuItem],
           })
 
           Text('右侧菜单项')
-            .fontSize(16)
+            .fontSize(12)
             .fontWeight(FontWeight.Bold)
-            .margin({ top: 20 })
+            .margin({ top: 10 })
 
           ComposeTitleBarV2({
             title: '带菜单的标题',
@@ -88,9 +106,9 @@ struct ComposeTitleBarV2Example {
           })
 
           Text('动态属性测试')
-            .fontSize(16)
+            .fontSize(12)
             .fontWeight(FontWeight.Bold)
-            .margin({ top: 20 })
+            .margin({ top: 10 })
 
           ComposeTitleBarV2({
             title: this.title,
@@ -114,9 +132,9 @@ struct ComposeTitleBarV2Example {
             .margin({ top: 10 })
 
           Text('所有属性组合')
-            .fontSize(16)
+            .fontSize(12)
             .fontWeight(FontWeight.Bold)
-            .margin({ top: 20 })
+            .margin({ top: 10 })
 
           ComposeTitleBarV2({
             title: '完整功能标题',
@@ -142,12 +160,16 @@ struct ComposeTitleBarV2Example {
                 }
               }),
               new ComposeTitleBarV2MenuItem({
-                value: $r('sys.symbol.share'),
-                label: '菜单2',
+                value: $r('sys.symbol.phone'),
+                symbolStyle: new SymbolGlyphModifier($r('sys.symbol.save')).fontColor([Color.Blue]),
                 isEnabled: false,
-                accessibilityText: '菜单项2（已禁用）',
+                label: '菜单2',
+                accessibilityText: '文本',
+                accessibilityLevel: 'yes',
+                accessibilityDescription: '无障碍描述',
                 action: () => {
-                  console.info('菜单项2点击');
+                  this.clickCount++;
+                  console.info('菜单项2点击，次数: ' + this.clickCount2);
                 }
               })
             ]
@@ -155,7 +177,6 @@ struct ComposeTitleBarV2Example {
         }
         .alignItems(HorizontalAlign.Center)
         .width('100%')
-        .margin({ top: 50, bottom: 20 })
       }
     }
     .width('100%')

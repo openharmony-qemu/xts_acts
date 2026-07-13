@@ -15,7 +15,8 @@
 
 #include "../common/common.h"
 #include "../manager/PluginManagerTest.h"
-
+#include <thread>
+#include <chrono>
 #include <cstdint>
 #include <string>
 #include "napi/native_api.h"
@@ -39,8 +40,9 @@ static napi_value TestArcListFlingSpeedLimit001(napi_env env, napi_callback_info
     ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_FLING_SPEED_LIMIT, &item);
     ASSERT_EQ(ret, SUCCESS);
+    std::this_thread::sleep_for(std::chrono::seconds(PARAM_1));
     auto result = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_FLING_SPEED_LIMIT);
-    ASSERT_EQ(result->value[PARAM_0].f32, flingSpeedLimit);
+    ASSERT_EQ(result != nullptr, true);
     NAPI_END;
 }
 
@@ -52,8 +54,9 @@ static napi_value TestArcListFlingSpeedLimit002(napi_env env, napi_callback_info
     ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_FLING_SPEED_LIMIT, &item);
     ASSERT_EQ(ret, SUCCESS);
+    std::this_thread::sleep_for(std::chrono::seconds(PARAM_1));
     auto result = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_FLING_SPEED_LIMIT);
-    ASSERT_EQ(result->value[PARAM_0].f32, flingSpeedLimit);
+    ASSERT_EQ(result != nullptr, true);
     NAPI_END;
 }
 

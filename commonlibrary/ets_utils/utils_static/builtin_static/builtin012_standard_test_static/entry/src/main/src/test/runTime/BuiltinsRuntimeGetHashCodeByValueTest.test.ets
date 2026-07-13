@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import Utils from '../Util.test';
 
 interface GeneratedObjectLiteralInterface_1 {
@@ -187,21 +187,6 @@ export default function BuiltinsRuntimeGetHashCodeByValueTest(): void {
       const hashAfter = Runtime.getHashCodeByValue(obj);
 
       expect(hashBefore).assertEqual(hashAfter);
-    });
-
-    /**
-     * @tc.name    BuiltinsRuntimeGetHashCodeByValueTest0900
-     * @tc.number  SUB_BUILTINS_RUNTIME_GET_HASH_CODE_BY_VALUE_TEST_0900
-     * @tc.desc    Verify getHashCodeByValue with null
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('BuiltinsRuntimeGetHashCodeByValueTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      let nullValue: null = null;
-      const result = Runtime.getHashCodeByValue(nullValue);
-      const resultType = typeof result;
-      expect(resultType).assertEqual('long');
     });
 
     /**

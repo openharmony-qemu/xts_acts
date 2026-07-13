@@ -1320,6 +1320,13 @@ static napi_value SessionSetZoomRatio(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value SessionGetZoomPointInfoSize(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    napi_create_int32(env, ndkCamera_->zoomPointInfoSize_, &result);
+    return result;
+}
+
 static napi_value SessionGetZoomPointInfos(napi_env env, napi_callback_info info)
 {
     size_t argc = 2;
@@ -3980,129 +3987,6 @@ static napi_value DeleteZoomPointInfo(napi_env env, napi_callback_info info)
     return result;
 }
 
-static napi_value GetEnumNotificationName(napi_env env, napi_callback_info info)
-{
-    size_t argc = 1;
-    napi_value args[1] = {nullptr};
-    napi_value result;
-
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-
-    int32_t index;
-    napi_get_value_int32(env, args[0], &index);
-
-    if (index == 0) {
-        napi_create_int32(env, OH_CAMERA_DEFOCUS_FROM_PROXIMITY, &result);
-    }
-
-    return result;
-}
-
-static napi_value GetEnumProximityStateForFocus(napi_env env, napi_callback_info info)
-{
-    size_t argc = 1;
-    napi_value args[1] = {nullptr};
-    napi_value result;
-
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-
-    int32_t index;
-    napi_get_value_int32(env, args[0], &index);
-
-    if (index == 0) {
-        napi_create_int32(env, OH_CAMERA_PROXIMITY_STATE_IN_RANGE_RAISE_NONE, &result);
-    } else if (index == 1) {
-        napi_create_int32(env, OH_CAMERA_PROXIMITY_STATE_OUT_OF_RANGE_RAISE_REQUIRED, &result);
-    }
-
-    return result;
-}
-
-static napi_value RegisterNotificationReceivedCallback(napi_env env, napi_callback_info info)
-{
-    size_t argc = 1;
-    napi_value args[1] = {nullptr};
-    napi_value result;
-
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-
-    int32_t index;
-    napi_get_value_int32(env, args[0], &index);
-
-    Camera_ErrorCode code = ndkCamera_->RegisterNotificationReceivedCallback(index);
-
-    napi_create_int32(env, code, &result);
-    return result;
-}
-
-static napi_value UnregisterNotificationReceivedCallback(napi_env env, napi_callback_info info)
-{
-    size_t argc = 1;
-    napi_value args[1] = {nullptr};
-    napi_value result;
-
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-
-    int32_t index;
-    napi_get_value_int32(env, args[0], &index);
-
-    Camera_ErrorCode code = ndkCamera_->UnregisterNotificationReceivedCallback(index);
-
-    napi_create_int32(env, code, &result);
-    return result;
-}
-
-static napi_value GetNotificationName(napi_env env, napi_callback_info info)
-{
-    size_t argc = 1;
-    napi_value args[1] = {nullptr};
-    napi_value result;
-
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-
-    int32_t index;
-    napi_get_value_int32(env, args[0], &index);
-
-    Camera_ErrorCode code = ndkCamera_->GetNotificationName(index);
-
-    napi_create_int32(env, code, &result);
-    return result;
-}
-
-static napi_value GetProximityStateForFocus(napi_env env, napi_callback_info info)
-{
-    size_t argc = 1;
-    napi_value args[1] = {nullptr};
-    napi_value result;
-
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-
-    int32_t index;
-    napi_get_value_int32(env, args[0], &index);
-
-    Camera_ErrorCode code = ndkCamera_->GetProximityStateForFocus(index);
-
-    napi_create_int32(env, code, &result);
-    return result;
-}
-
-static napi_value DestroyCameraNotificationInfo(napi_env env, napi_callback_info info)
-{
-    size_t argc = 1;
-    napi_value args[1] = {nullptr};
-    napi_value result;
-
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-
-    int32_t index;
-    napi_get_value_int32(env, args[0], &index);
-
-    Camera_ErrorCode code = ndkCamera_->DestroyCameraNotificationInfo(index);
-
-    napi_create_int32(env, code, &result);
-    return result;
-}
-
 static napi_value CreatePhotoCaptureSettingExt(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -4330,6 +4214,8 @@ static napi_value Init(napi_env env, napi_value exports)
         { "sessionSetFocusMode", nullptr, SessionSetFocusMode, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "sessionSetFocusPoint", nullptr, SessionSetFocusPoint, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "sessionGetFocusPoint", nullptr, SessionGetFocusPoint, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "sessionGetZoomPointInfoSize", nullptr, SessionGetZoomPointInfoSize,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
         { "sessionGetZoomRatioRange", nullptr, SessionGetZoomRatioRange, nullptr, nullptr, nullptr,
             napi_default, nullptr },
         { "sessionGetZoomRatio", nullptr, SessionGetZoomRatio, nullptr, nullptr, nullptr, napi_default, nullptr },
@@ -4584,18 +4470,6 @@ static napi_value Init(napi_env env, napi_value exports)
         {"getColorTint", nullptr, GetColorTint, nullptr, nullptr, nullptr, napi_default, nullptr },
         {"getZoomPointInfos", nullptr, GetZoomPointInfos, nullptr, nullptr, nullptr, napi_default, nullptr },
         {"deleteZoomPointInfo", nullptr, DeleteZoomPointInfo, nullptr, nullptr, nullptr, napi_default, nullptr },
-        {"getEnumNotificationName", nullptr, GetEnumNotificationName, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getEnumProximityStateForFocus", nullptr, GetEnumProximityStateForFocus, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        {"registerNotificationReceivedCallback", nullptr, RegisterNotificationReceivedCallback,
-            nullptr, nullptr, nullptr, napi_default, nullptr },
-        {"unregisterNotificationReceivedCallback", nullptr, UnregisterNotificationReceivedCallback,
-            nullptr, nullptr, nullptr, napi_default, nullptr },
-        {"getNotificationName", nullptr, GetNotificationName, nullptr, nullptr, nullptr, napi_default, nullptr },
-        {"getProximityStateForFocus", nullptr, GetProximityStateForFocus, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        {"destroyCameraNotificationInfo", nullptr, DestroyCameraNotificationInfo, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
     };
     napi_property_descriptor desc3[] = {
         {"oHCameraManagerTorchMode", nullptr, OHCameraManagerTorchMode, nullptr, nullptr, nullptr,

@@ -14,18 +14,16 @@
  * limitations under the License.
  */
 
+import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
 import {
-  afterAll,
-  afterEach,
-  beforeAll,
-  beforeEach,
-  describe,
-  expect,
-  it,
-  Level,
-  Size,
-  TestType
-} from '../../../../hypium/index';
+  ValueOfByteEnum,
+  ValueOfDoubleEnum,
+  ValueOfFloatEnum,
+  ValueOfIntEnum,
+  ValueOfLongEnum,
+  ValueOfShortEnum,
+  ValueOfStringEnum
+} from './EnumDefine.test';
 import Utils from './../Util.test';
 
 export default function BaseEnumValueOfTest(): void {
@@ -34,7 +32,6 @@ export default function BaseEnumValueOfTest(): void {
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(1);
     });
-
 
     /**
      * @tc.name testBaseEnumValueOf001
@@ -45,7 +42,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<int> = new BaseEnum<int>(100, "HUNDRED");
+      let e = ValueOfIntEnum.HUNDRED;
       let result: int = e.valueOf();
       expect(result).assertEqual(100);
     });
@@ -59,7 +56,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<string> = new BaseEnum<string>("debug", "DEBUG");
+      let e = ValueOfStringEnum.DEBUG;
       let result: string = e.valueOf();
       expect(result).assertEqual("debug");
     });
@@ -73,7 +70,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<byte> = new BaseEnum<byte>(12 as byte, "BYTE_CONST");
+      let e = ValueOfByteEnum.BYTE_12;
       let result: byte = e.valueOf();
       expect(result).assertEqual(12 as byte);
     });
@@ -87,7 +84,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<byte> = new BaseEnum<byte>(0 as byte, "BYTE_ZERO");
+      let e = ValueOfByteEnum.BYTE_0;
       let result: byte = e.valueOf();
       expect(result).assertEqual(0 as byte);
     });
@@ -101,7 +98,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<byte> = new BaseEnum<byte>(-1 as byte, "BYTE_NEG");
+      let e = ValueOfByteEnum.BYTE_NEG_1;
       let result: byte = e.valueOf();
       expect(result).assertEqual(-1 as byte);
     });
@@ -115,7 +112,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<byte> = new BaseEnum<byte>(0x0A as byte, "BYTE_HEX");
+      let e = ValueOfByteEnum.BYTE_HEX_0A;
       let result: byte = e.valueOf();
       expect(result).assertEqual(0x0A as byte);
     });
@@ -129,7 +126,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<byte> = new BaseEnum<byte>(127 as byte, "BYTE_MAX");
+      let e = ValueOfByteEnum.BYTE_MAX;
       let result: byte = e.valueOf();
       expect(result).assertEqual(127 as byte);
     });
@@ -143,7 +140,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<byte> = new BaseEnum<byte>(-128 as byte, "BYTE_MIN");
+      let e = ValueOfByteEnum.BYTE_MIN;
       let result: byte = e.valueOf();
       expect(result).assertEqual(-128 as byte);
     });
@@ -157,7 +154,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<short> = new BaseEnum<short>(100 as short, "SHORT_CONST");
+      let e = ValueOfShortEnum.SHORT_100;
       let result: short = e.valueOf();
       expect(result).assertEqual(100 as short);
     });
@@ -171,7 +168,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<short> = new BaseEnum<short>(0 as short, "SHORT_ZERO");
+      let e = ValueOfShortEnum.SHORT_0;
       let result: short = e.valueOf();
       expect(result).assertEqual(0 as short);
     });
@@ -185,7 +182,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<short> = new BaseEnum<short>(0x7FF as short, "SHORT_HEX");
+      let e = ValueOfShortEnum.SHORT_HEX;
       let result: short = e.valueOf();
       expect(result).assertEqual(0x7FF as short);
     });
@@ -199,7 +196,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<short> = new BaseEnum<short>(-100 as short, "SHORT_NEG");
+      let e = ValueOfShortEnum.SHORT_NEG_100;
       let result: short = e.valueOf();
       expect(result).assertEqual(-100 as short);
     });
@@ -213,7 +210,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<short> = new BaseEnum<short>(32767 as short, "SHORT_MAX");
+      let e = ValueOfShortEnum.SHORT_MAX;
       let result: short = e.valueOf();
       expect(result).assertEqual(32767 as short);
     });
@@ -227,7 +224,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<short> = new BaseEnum<short>(-32768 as short, "SHORT_MIN");
+      let e = ValueOfShortEnum.SHORT_MIN;
       let result: short = e.valueOf();
       expect(result).assertEqual(-32768 as short);
     });
@@ -241,7 +238,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<int> = new BaseEnum<int>(10000, "INT_CONST");
+      let e = ValueOfIntEnum.INT_10000;
       let result: int = e.valueOf();
       expect(result).assertEqual(10000);
     });
@@ -255,7 +252,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<int> = new BaseEnum<int>(0, "INT_ZERO");
+      let e = ValueOfIntEnum.INT_0;
       let result: int = e.valueOf();
       expect(result).assertEqual(0);
     });
@@ -269,7 +266,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<int> = new BaseEnum<int>(0x1234, "INT_HEX");
+      let e = ValueOfIntEnum.INT_HEX;
       let result: int = e.valueOf();
       expect(result).assertEqual(0x1234);
     });
@@ -283,7 +280,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<int> = new BaseEnum<int>(-1, "INT_NEG");
+      let e = ValueOfIntEnum.INT_NEG_1;
       let result: int = e.valueOf();
       expect(result).assertEqual(-1);
     });
@@ -297,7 +294,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<int> = new BaseEnum<int>(2147483647, "INT_MAX");
+      let e = ValueOfIntEnum.INT_MAX;
       let result: int = e.valueOf();
       expect(result).assertEqual(2147483647);
     });
@@ -311,7 +308,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<int> = new BaseEnum<int>(-2147483648, "INT_MIN");
+      let e = ValueOfIntEnum.INT_MIN;
       let result: int = e.valueOf();
       expect(result).assertEqual(-2147483648);
     });
@@ -325,7 +322,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<long> = new BaseEnum<long>(Int.toLong(100), "LONG_CONST");
+      let e = ValueOfLongEnum.LONG_100;
       let result: long = e.valueOf();
       expect(result).assertEqual(Int.toLong(100));
     });
@@ -339,7 +336,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<long> = new BaseEnum<long>(Int.toLong(0), "LONG_ZERO");
+      let e = ValueOfLongEnum.LONG_0;
       let result: long = e.valueOf();
       expect(result).assertEqual(Int.toLong(0));
     });
@@ -353,7 +350,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<long> = new BaseEnum<long>(Int.toLong(0x1234), "LONG_HEX");
+      let e = ValueOfLongEnum.LONG_HEX;
       let result: long = e.valueOf();
       expect(result).assertEqual(Int.toLong(0x1234));
     });
@@ -367,7 +364,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<long> = new BaseEnum<long>(Int.toLong(-1), "LONG_NEG");
+      let e = ValueOfLongEnum.LONG_NEG_1;
       let result: long = e.valueOf();
       expect(result).assertEqual(Int.toLong(-1));
     });
@@ -381,7 +378,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<long> = new BaseEnum<long>(10000000000, "LONG_BIG");
+      let e = ValueOfLongEnum.LONG_BIG;
       let result: long = e.valueOf();
       expect(result).assertEqual(10000000000);
     });
@@ -395,7 +392,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<long> = new BaseEnum<long>(9223372036854775807, "LONG_MAX");
+      let e = ValueOfLongEnum.LONG_MAX;
       let result: long = e.valueOf();
       expect(result).assertEqual(9223372036854775807);
     });
@@ -410,7 +407,7 @@ export default function BaseEnumValueOfTest(): void {
      */
     it('testBaseEnumValueOf027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let longMin: long = -9223372036854775807 - 1;
-      let e: BaseEnum<long> = new BaseEnum<long>(longMin, "LONG_MIN");
+      let e = ValueOfLongEnum.LONG_MIN;
       let result: long = e.valueOf();
       expect(result).assertEqual(longMin);
     });
@@ -424,7 +421,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<float> = new BaseEnum<float>(3.14f, "FLOAT_CONST");
+      let e = ValueOfFloatEnum.FLOAT_PI;
       let result: float = e.valueOf();
       expect(result).assertEqual(3.14f);
     });
@@ -438,7 +435,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<float> = new BaseEnum<float>(0.0f, "FLOAT_ZERO");
+      let e = ValueOfFloatEnum.FLOAT_0;
       let result: float = e.valueOf();
       expect(result).assertEqual(0.0f);
     });
@@ -452,7 +449,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<float> = new BaseEnum<float>(-99.99f, "FLOAT_NEG");
+      let e = ValueOfFloatEnum.FLOAT_NEG;
       let result: float = e.valueOf();
       expect(result).assertEqual(-99.99f);
     });
@@ -466,7 +463,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<float> = new BaseEnum<float>(1.0e3f, "FLOAT_SCI");
+      let e = ValueOfFloatEnum.FLOAT_1000;
       let result: float = e.valueOf();
       expect(result).assertEqual(1.0e3f);
     });
@@ -480,7 +477,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<float> = new BaseEnum<float>(9.0f, "FLOAT_NINE");
+      let e = ValueOfFloatEnum.FLOAT_9;
       let result: float = e.valueOf();
       expect(result).assertEqual(9.0f);
     });
@@ -494,7 +491,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<float> = new BaseEnum<float>(Float.MAX_VALUE, "FLOAT_MAX");
+      let e = ValueOfFloatEnum.FLOAT_MAX;
       let result: float = e.valueOf();
       expect(result).assertEqual(Float.MAX_VALUE);
     });
@@ -508,7 +505,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<float> = new BaseEnum<float>(Float.MIN_VALUE, "FLOAT_MIN_POSITIVE");
+      let e = ValueOfFloatEnum.FLOAT_MIN;
       let result: float = e.valueOf();
       expect(result).assertEqual(Float.MIN_VALUE);
     });
@@ -522,7 +519,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<double> = new BaseEnum<double>(123.456, "DOUBLE_CONST");
+      let e = ValueOfDoubleEnum.DOUBLE_123_456;
       let result: double = e.valueOf();
       expect(result).assertEqual(123.456);
     });
@@ -536,7 +533,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<double> = new BaseEnum<double>(0.0, "DOUBLE_ZERO");
+      let e = ValueOfDoubleEnum.DOUBLE_0;
       let result: double = e.valueOf();
       expect(result).assertEqual(0.0);
     });
@@ -550,7 +547,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<double> = new BaseEnum<double>(-888.88, "DOUBLE_NEG");
+      let e = ValueOfDoubleEnum.DOUBLE_NEG;
       let result: double = e.valueOf();
       expect(result).assertEqual(-888.88);
     });
@@ -564,7 +561,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<double> = new BaseEnum<double>(1.0e6, "DOUBLE_SCI");
+      let e = ValueOfDoubleEnum.DOUBLE_1E6;
       let result: double = e.valueOf();
       expect(result).assertEqual(1.0e6);
     });
@@ -578,7 +575,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<double> = new BaseEnum<double>(9.0, "DOUBLE_NINE");
+      let e = ValueOfDoubleEnum.DOUBLE_9;
       let result: double = e.valueOf();
       expect(result).assertEqual(9.0);
     });
@@ -592,7 +589,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<double> = new BaseEnum<double>(Double.MAX_VALUE, "DOUBLE_MAX");
+      let e = ValueOfDoubleEnum.DOUBLE_MAX;
       let result: double = e.valueOf();
       expect(result).assertEqual(Double.MAX_VALUE);
     });
@@ -606,7 +603,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<double> = new BaseEnum<double>(Double.MIN_VALUE, "DOUBLE_MIN_POSITIVE");
+      let e = ValueOfDoubleEnum.DOUBLE_MIN;
       let result: double = e.valueOf();
       expect(result).assertEqual(Double.MIN_VALUE);
     });
@@ -620,7 +617,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<string> = new BaseEnum<string>("测试", "TEST_CN");
+      let e = ValueOfStringEnum.TEST_CN;
       let result: string = e.valueOf();
       expect(result).assertEqual("测试");
     });
@@ -634,7 +631,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<string> = new BaseEnum<string>("123456", "NUM_STR");
+      let e = ValueOfStringEnum.NUMERIC;
       let result: string = e.valueOf();
       expect(result).assertEqual("123456");
     });
@@ -648,7 +645,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<string> = new BaseEnum<string>("!@#$%^&*()", "SPECIAL");
+      let e = ValueOfStringEnum.SPECIAL;
       let result: string = e.valueOf();
       expect(result).assertEqual("!@#$%^&*()");
     });
@@ -662,7 +659,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<string> = new BaseEnum<string>("", "EMPTY_STR");
+      let e = ValueOfStringEnum.EMPTY;
       let result: string = e.valueOf();
       expect(result).assertEqual("");
     });
@@ -676,7 +673,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<string> = new BaseEnum<string>(" ", "SPACE_STR");
+      let e = ValueOfStringEnum.SPACE;
       let result: string = e.valueOf();
       expect(result).assertEqual(" ");
     });
@@ -690,7 +687,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<string> = new BaseEnum<string>("\u4e2d\u6587", "UNICODE_STR");
+      let e = ValueOfStringEnum.UNICODE;
       let result: string = e.valueOf();
       expect(result).assertEqual("\u4e2d\u6587");
     });
@@ -704,7 +701,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<string> = new BaseEnum<string>("\uD83D\uDE00", "EMOJI_STR");
+      let e = ValueOfStringEnum.EMOJI;
       let result: string = e.valueOf();
       expect(result).assertEqual("\uD83D\uDE00");
     });
@@ -718,7 +715,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<string> = new BaseEnum<string>("テスト", "JP_STR");
+      let e = ValueOfStringEnum.JP;
       let result: string = e.valueOf();
       expect(result).assertEqual("テスト");
     });
@@ -732,7 +729,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<string> = new BaseEnum<string>("\u200B", "ZERO_WIDTH");
+      let e = ValueOfStringEnum.ZERO_WIDTH;
       let result: string = e.valueOf();
       expect(result).assertEqual("\u200B");
     });
@@ -746,7 +743,7 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<string> = new BaseEnum<string>("<script>alert(1)</script>", "XSS");
+      let e = ValueOfStringEnum.XSS;
       let result: string = e.valueOf();
       expect(result).assertEqual("<script>alert(1)</script>");
     });
@@ -754,195 +751,111 @@ export default function BaseEnumValueOfTest(): void {
     /**
      * @tc.name testBaseEnumValueOf052
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_5200
-     * @tc.desc Verify valueOf returns Float.NaN which does not equal itself
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumValueOf052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<float> = new BaseEnum<float>(Float.NaN, "FLOAT_NAN");
-      let result: float = e.valueOf();
-      expect(result !== result).assertTrue();
-    });
-
-    /**
-     * @tc.name testBaseEnumValueOf053
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_5300
-     * @tc.desc Verify valueOf returns Float.POSITIVE_INFINITY
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumValueOf053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<float> = new BaseEnum<float>(Float.POSITIVE_INFINITY, "FLOAT_POS_INF");
-      let result: float = e.valueOf();
-      expect(result).assertEqual(Float.POSITIVE_INFINITY);
-    });
-
-    /**
-     * @tc.name testBaseEnumValueOf054
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_5400
-     * @tc.desc Verify valueOf returns Float.NEGATIVE_INFINITY
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumValueOf054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<float> = new BaseEnum<float>(Float.NEGATIVE_INFINITY, "FLOAT_NEG_INF");
-      let result: float = e.valueOf();
-      expect(result).assertEqual(Float.NEGATIVE_INFINITY);
-    });
-
-    /**
-     * @tc.name testBaseEnumValueOf055
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_5500
      * @tc.desc Verify valueOf returns negative zero -0.0f for float type
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumValueOf055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<float> = new BaseEnum<float>(-0.0f, "FLOAT_NEG_ZERO");
+    it('testBaseEnumValueOf052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e = ValueOfFloatEnum.FLOAT_NEG_ZERO;
       let result: float = e.valueOf();
       expect(result).assertEqual(-0.0f);
     });
 
     /**
-     * @tc.name testBaseEnumValueOf056
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_5600
-     * @tc.desc Verify valueOf returns Double.NaN which does not equal itself
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumValueOf056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<double> = new BaseEnum<double>(Double.NaN, "DOUBLE_NAN");
-      let result: double = e.valueOf();
-      expect(result !== result).assertTrue();
-    });
-
-    /**
-     * @tc.name testBaseEnumValueOf057
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_5700
-     * @tc.desc Verify valueOf returns Double.POSITIVE_INFINITY
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumValueOf057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<double> = new BaseEnum<double>(Double.POSITIVE_INFINITY, "DOUBLE_POS_INF");
-      let result: double = e.valueOf();
-      expect(result).assertEqual(Double.POSITIVE_INFINITY);
-    });
-
-    /**
-     * @tc.name testBaseEnumValueOf058
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_5800
-     * @tc.desc Verify valueOf returns Double.NEGATIVE_INFINITY
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumValueOf058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<double> = new BaseEnum<double>(Double.NEGATIVE_INFINITY, "DOUBLE_NEG_INF");
-      let result: double = e.valueOf();
-      expect(result).assertEqual(Double.NEGATIVE_INFINITY);
-    });
-
-    /**
-     * @tc.name testBaseEnumValueOf059
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_5900
+     * @tc.name testBaseEnumValueOf053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_5300
      * @tc.desc Verify valueOf returns negative zero -0.0 for double type
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumValueOf059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<double> = new BaseEnum<double>(-0.0, "DOUBLE_NEG_ZERO");
+    it('testBaseEnumValueOf053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e = ValueOfDoubleEnum.DOUBLE_NEG_ZERO;
       let result: double = e.valueOf();
       expect(result).assertEqual(-0.0);
     });
 
     /**
-     * @tc.name testBaseEnumValueOf060
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6000
+     * @tc.name testBaseEnumValueOf054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_5400
      * @tc.desc Verify valueOf return value equals constructor value parameter for int type
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumValueOf060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBaseEnumValueOf054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: int = 404;
-      let e: BaseEnum<int> = new BaseEnum<int>(value, "NOT_FOUND");
+      let e = ValueOfIntEnum.VALUE_404;
       expect(e.valueOf()).assertEqual(value);
     });
 
     /**
-     * @tc.name testBaseEnumValueOf061
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6100
+     * @tc.name testBaseEnumValueOf055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_5500
      * @tc.desc Verify valueOf return value equals constructor value parameter for string type
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumValueOf061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBaseEnumValueOf055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: string = "debug";
-      let e: BaseEnum<string> = new BaseEnum<string>(value, "DEBUG");
+      let e = ValueOfStringEnum.DEBUG;
       expect(e.valueOf()).assertEqual(value);
     });
 
     /**
-     * @tc.name testBaseEnumValueOf062
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6200
+     * @tc.name testBaseEnumValueOf056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_5600
      * @tc.desc Verify valueOf return value equals constructor value parameter for long type
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumValueOf062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBaseEnumValueOf056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: long = 9999999999;
-      let e: BaseEnum<long> = new BaseEnum<long>(value, "BIG_NUM");
+      let e = ValueOfLongEnum.VALUE_9999999999;
       expect(e.valueOf()).assertEqual(value);
     });
 
     /**
-     * @tc.name testBaseEnumValueOf063
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6300
+     * @tc.name testBaseEnumValueOf057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_5700
      * @tc.desc Verify valueOf return value equals constructor value parameter for float type
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumValueOf063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBaseEnumValueOf057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: float = 3.14f;
-      let e: BaseEnum<float> = new BaseEnum<float>(value, "PI");
+      let e = ValueOfFloatEnum.FLOAT_PI;
       expect(e.valueOf()).assertEqual(value);
     });
 
     /**
-     * @tc.name testBaseEnumValueOf064
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6400
+     * @tc.name testBaseEnumValueOf058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_5800
      * @tc.desc Verify valueOf return value equals constructor value parameter for double type
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumValueOf064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBaseEnumValueOf058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: double = 2.718281828;
-      let e: BaseEnum<double> = new BaseEnum<double>(value, "EULER");
+      let e = ValueOfDoubleEnum.EULER;
       expect(e.valueOf()).assertEqual(value);
     });
 
     /**
-     * @tc.name testBaseEnumValueOf065
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6500
+     * @tc.name testBaseEnumValueOf059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_5900
      * @tc.desc Verify valueOf returns consistent value on multiple calls for int type
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumValueOf065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<int> = new BaseEnum<int>(42, "ANSWER");
+    it('testBaseEnumValueOf059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e = ValueOfIntEnum.ANSWER;
       let r1: int = e.valueOf();
       let r2: int = e.valueOf();
       let r3: int = e.valueOf();
@@ -952,15 +865,15 @@ export default function BaseEnumValueOfTest(): void {
     });
 
     /**
-     * @tc.name testBaseEnumValueOf066
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6600
+     * @tc.name testBaseEnumValueOf060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6000
      * @tc.desc Verify valueOf returns consistent value on multiple calls for string type
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumValueOf066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<string> = new BaseEnum<string>("hello", "GREETING");
+    it('testBaseEnumValueOf060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e = ValueOfStringEnum.HELLO;
       let r1: string = e.valueOf();
       let r2: string = e.valueOf();
       let r3: string = e.valueOf();
@@ -970,31 +883,15 @@ export default function BaseEnumValueOfTest(): void {
     });
 
     /**
-     * @tc.name testBaseEnumValueOf067
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6700
-     * @tc.desc Verify valueOf returns consistent NaN on multiple calls for float type
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumValueOf067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<float> = new BaseEnum<float>(Float.NaN, "NAN_VAL");
-      let r1: float = e.valueOf();
-      let r2: float = e.valueOf();
-      expect(r1 !== r1).assertTrue();
-      expect(r2 !== r2).assertTrue();
-    });
-
-    /**
-     * @tc.name testBaseEnumValueOf068
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6800
+     * @tc.name testBaseEnumValueOf061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6100
      * @tc.desc Verify valueOf returns consistent value on multiple calls for long type
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumValueOf068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<long> = new BaseEnum<long>(Int.toLong(123456789), "LONG_VAL");
+    it('testBaseEnumValueOf061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e = ValueOfLongEnum.VALUE_123456789;
       let r1: long = e.valueOf();
       let r2: long = e.valueOf();
       expect(r1).assertEqual(r2);
@@ -1002,64 +899,64 @@ export default function BaseEnumValueOfTest(): void {
     });
 
     /**
-     * @tc.name testBaseEnumValueOf069
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6900
+     * @tc.name testBaseEnumValueOf062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6200
      * @tc.desc Verify valueOf returns independent values for different int instances
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumValueOf069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e1: BaseEnum<int> = new BaseEnum<int>(100, "A");
-      let e2: BaseEnum<int> = new BaseEnum<int>(200, "B");
+    it('testBaseEnumValueOf062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e1 = ValueOfIntEnum.HUNDRED;
+      let e2 = ValueOfIntEnum.VALUE_200;
       expect(e1.valueOf()).assertEqual(100);
       expect(e2.valueOf()).assertEqual(200);
       expect(e1.valueOf() === e2.valueOf()).assertFalse();
     });
 
     /**
-     * @tc.name testBaseEnumValueOf070
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_7000
+     * @tc.name testBaseEnumValueOf063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6300
      * @tc.desc Verify valueOf returns different types for different generic type instances
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumValueOf070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let eInt: BaseEnum<int> = new BaseEnum<int>(42, "INT_VAL");
-      let eStr: BaseEnum<string> = new BaseEnum<string>("debug", "STR_VAL");
-      let eLong: BaseEnum<long> = new BaseEnum<long>(Int.toLong(999), "LONG_VAL");
+    it('testBaseEnumValueOf063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let eInt = ValueOfIntEnum.ANSWER;
+      let eStr = ValueOfStringEnum.DEBUG;
+      let eLong = ValueOfLongEnum.VALUE_999;
       expect(eInt.valueOf()).assertEqual(42);
       expect(eStr.valueOf()).assertEqual("debug");
       expect(eLong.valueOf()).assertEqual(Int.toLong(999));
     });
 
     /**
-     * @tc.name testBaseEnumValueOf071
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_7100
+     * @tc.name testBaseEnumValueOf064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6400
      * @tc.desc Verify valueOf returns same value for instances with same value different names
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumValueOf071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e1: BaseEnum<int> = new BaseEnum<int>(1, "ONE_A");
-      let e2: BaseEnum<int> = new BaseEnum<int>(1, "ONE_B");
+    it('testBaseEnumValueOf064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e1 = ValueOfIntEnum.ONE_A;
+      let e2 = ValueOfIntEnum.ONE_B;
       expect(e1.valueOf()).assertEqual(e2.valueOf());
       expect(e1.valueOf()).assertEqual(1);
     });
 
     /**
-     * @tc.name testBaseEnumValueOf072
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_7200
+     * @tc.name testBaseEnumValueOf065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6500
      * @tc.desc Verify modifying one instance does not affect another instance valueOf
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumValueOf072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e1: BaseEnum<string> = new BaseEnum<string>("first", "FIRST");
-      let e2: BaseEnum<string> = new BaseEnum<string>("second", "SECOND");
+    it('testBaseEnumValueOf065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e1 = ValueOfStringEnum.FIRST;
+      let e2 = ValueOfStringEnum.SECOND;
       let val1: string = e1.valueOf();
       let val2: string = e2.valueOf();
       expect(val1).assertEqual("first");
@@ -1067,80 +964,31 @@ export default function BaseEnumValueOfTest(): void {
     });
 
     /**
-     * @tc.name testBaseEnumValueOf073
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_7300
-     * @tc.desc Verify valueOf returns complete long string value
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumValueOf073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let longStr: string = "a".repeat(10000);
-      let e: BaseEnum<string> = new BaseEnum<string>(longStr, "LONG_STR");
-      expect(e.valueOf()).assertEqual(longStr);
-    });
-
-    /**
-     * @tc.name testBaseEnumValueOf074
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_7400
+     * @tc.name testBaseEnumValueOf066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6600
      * @tc.desc Verify valueOf returns correct value for string type
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumValueOf074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<string> = new BaseEnum<string>("test", "TEST");
+    it('testBaseEnumValueOf066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e = ValueOfStringEnum.TEST;
       let result: string = e.valueOf();
       expect(result).assertEqual("test");
     });
 
     /**
-     * @tc.name testBaseEnumValueOf075
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_7500
+     * @tc.name testBaseEnumValueOf067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6700
      * @tc.desc Verify valueOf returns correct negative value for int type
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumValueOf075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<int> = new BaseEnum<int>(-100, "INT_NEG");
+    it('testBaseEnumValueOf067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e = ValueOfIntEnum.VALUE_NEG_100;
       let result: int = e.valueOf();
       expect(result).assertEqual(-100);
     });
-
-    /**
-     * @tc.name testBaseEnumValueOf076
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_7600
-     * @tc.desc Verify valueOf throws when called on null reference
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumValueOf076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let val: int = (null as BaseEnum<int>).valueOf();
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name).assertEqual('ClassCastError');
-      }
-    });
-
-    /**
-     * @tc.name testBaseEnumValueOf077
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_7700
-     * @tc.desc Verify valueOf throws when called on undefined reference
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumValueOf077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let val: int = (undefined as BaseEnum<int>).valueOf();
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name).assertEqual('ClassCastError');
-      }
-    });
-
   });
 }

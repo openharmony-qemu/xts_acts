@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll } from "@ohos/hypium-binary/src/main/indexStatic";
 import infraredEmitter from '@ohos.multimodalInput.infraredEmitter';
 import inputDevice from '@ohos.multimodalInput.inputDevice';
 import { BusinessError } from "@ohos.base";

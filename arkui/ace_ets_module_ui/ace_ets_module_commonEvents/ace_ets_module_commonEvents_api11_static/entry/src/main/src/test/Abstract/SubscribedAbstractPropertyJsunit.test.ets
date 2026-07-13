@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it,beforeAll, Level, expect } from "../../../../hypium/index"
+import { describe, it,beforeAll, Level, expect } from "@ohos/hypium-binary/src/main/indexStatic"
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';

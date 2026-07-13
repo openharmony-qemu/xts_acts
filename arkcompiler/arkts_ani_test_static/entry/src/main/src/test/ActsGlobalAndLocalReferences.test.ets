@@ -14,7 +14,7 @@
  * limitations under the License.
  */
  
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import { Foo } from '../ets/Index'
@@ -23,7 +23,7 @@ import {hidebug} from '@kit.PerformanceAnalysisKit'
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-export default function globalAndLocalReferencesTest() {
+export default function globalAndLocalReferencesTest(): void {
 
   describe("ActsGlobalAndLocalReferencesTest", (): void => {
     try {

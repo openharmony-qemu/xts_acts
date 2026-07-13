@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, describe, it, expect, Level, Size, TestType } from '../../../../hypium/index';
+import { beforeAll, describe, it, expect, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
 
 class ForLoopHeaderSmartCastClass {
   name: string;

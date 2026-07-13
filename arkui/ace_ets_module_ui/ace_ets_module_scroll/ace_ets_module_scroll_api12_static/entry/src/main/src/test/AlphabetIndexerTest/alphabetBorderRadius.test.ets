@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -162,6 +162,7 @@ it('alphabetBorderRadiusTest_static_005', Level.LEVEL0, async (done: () => void)
       console.info('[alphabetBorderRadiusTest_static_005] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id('layout_indexer'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -191,6 +192,7 @@ it('alphabetBorderRadiusTest_static_006', Level.LEVEL0, async (done: () => void)
       console.info('[alphabetBorderRadiusTest_static_006] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id('layout_indexer'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);

@@ -155,6 +155,7 @@ import OrphanCharOptimizationnullTest from './TextTest/OrphanCharOptimization_nu
 import TextPunctuationOverflowTest from './TextTest/TextPunctuationOverflow.test';
 import TextIncrementalUpdatePolicyTest from './TextTest/TextIncrementalUpdatePolicy.test';
 import TextTailIndentsTest from './TextTest/TextTailIndents.test';
+import TextEnableHapticFeedbackTest from './TextTest/TextEnableHapticFeedback.test';
 
 
 
@@ -302,4 +303,5 @@ export default function testsuite() {
   TextPunctuationOverflowTest();
   TextIncrementalUpdatePolicyTest();
   TextTailIndentsTest();
+  TextEnableHapticFeedbackTest();
 }

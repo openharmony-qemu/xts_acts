@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import Utils from '../Util.test';
 import { regexpSymbolMatchAll, regexpSymbolSearch } from './RegExpHelper';
 

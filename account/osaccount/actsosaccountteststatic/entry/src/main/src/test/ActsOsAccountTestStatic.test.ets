@@ -16,7 +16,7 @@
 
 import osAccount from '@ohos.account.osAccount'
 import commonEventManager from '@ohos.commonEventManager'
-import { describe, beforeAll, beforeEach, afterEach, it, expect, TestType, Hypium, Size, Level } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, it, expect, TestType, Hypium, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
 import { BusinessError, RecordData } from '@ohos.base'
 import deviceInfo from '@ohos.deviceInfo';
 import hilog from '@ohos.hilog'

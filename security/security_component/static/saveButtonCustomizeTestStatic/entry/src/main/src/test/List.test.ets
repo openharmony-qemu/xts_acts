@@ -15,7 +15,9 @@
  */
  
 import saveCompCustomizeStaticTest from './SaveCompCustomizeStatic.test';
+import customSaveSetNullStaticTest from './CustomSaveSetNullStatic.test';
 
 export default function testsuite() {
   saveCompCustomizeStaticTest();
+  customSaveSetNullStaticTest();
 }

@@ -1314,6 +1314,94 @@ export default function PipWindowNdkTest() {
     })
 
     /**
+     * @tc.name   testSetAutoStartEnabled
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_SETAUTOSTARTENABLED_0100
+     * @tc.desc   验证OH_PictureInPicture_SetAutoStartEnabled设置自动启动为true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetAutoStartEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = 'testSetAutoStartEnabled';
+      try{
+        let mainWindow = windowStage.getMainWindowSync();
+        let properties = mainWindow.getWindowProperties();
+        console.log(`${caseName} properties: ${JSON.stringify(properties)}`);
+        let mainWindowId = properties.id;
+        console.log(`${caseName} mainWindowId: ${JSON.stringify(mainWindowId)}`);
+        let result = testNapi.testSetAutoStartEnabled(mainWindowId);
+        console.log(`${caseName} result: ${JSON.stringify(result)}`);
+        if (result === 801) {
+          done()
+        } else {
+          expect(result).assertEqual(0);
+          done();
+        }
+      } catch (err) {
+        console.error(`${caseName} error: ${JSON.stringify(err)}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetAutoStartDisabled
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_SETAUTOSTARTENABLED_0200
+     * @tc.desc   验证OH_PictureInPicture_SetAutoStartEnabled设置自动启动为false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetAutoStartDisabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = 'testSetAutoStartDisabled';
+      try{
+        let mainWindow = windowStage.getMainWindowSync();
+        let properties = mainWindow.getWindowProperties();
+        console.log(`${caseName} properties: ${JSON.stringify(properties)}`);
+        let mainWindowId = properties.id;
+        console.log(`${caseName} mainWindowId: ${JSON.stringify(mainWindowId)}`);
+        let result = testNapi.testSetAutoStartDisabled(mainWindowId);
+        console.log(`${caseName} result: ${JSON.stringify(result)}`);
+        if (result === 801) {
+          done()
+        } else {
+          expect(result).assertEqual(0);
+          done();
+        }
+      } catch (err) {
+        console.error(`${caseName} error: ${JSON.stringify(err)}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetAutoStartEnabledWithInvalidControllerId
+     * @tc.number SUB_BASIC_WMS_WINDOW_PIP_NDK_SETAUTOSTARTENABLED_ERRORCODE_0100
+     * @tc.desc   验证OH_PictureInPicture_SetAutoStartEnabled传入无效controllerId报错
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetAutoStartEnabledWithInvalidControllerId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let caseName = 'testSetAutoStartEnabledWithInvalidControllerId';
+      try{
+        let result = testNapi.testSetAutoStartEnabledWithInvalidControllerId();
+        console.log(`${caseName} result: ${JSON.stringify(result)}`);
+        if (result === 801) {
+          done()
+        } else {
+          expect(result).assertEqual(1300016);
+          done();
+        }
+      } catch (err) {
+        console.error(`${caseName} error: ${JSON.stringify(err)}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
      * @tc.name   testPictureInPicture_PipState_enum
      * @tc.number SUB_PictureInPicture_PipState_0100
      * @tc.desc   testPictureInPicture_PipState_enum

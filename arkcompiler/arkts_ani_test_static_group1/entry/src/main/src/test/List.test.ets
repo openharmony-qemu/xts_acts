@@ -23,7 +23,7 @@ import accessingFiledsOfObjectsTest from "./ActsAccessingFiledsOfObjects.test"
 import callingInstanceMethodsTest from "./ActsCallingInstanceMethods.test"
 import variableOperationsTest from "./ActsVariableOperations.test";
 
-export default function testsuite() {
+export default function testsuite(): void {
     stringOperationsTest();
     ArrayOperationsTest();
     ScopeSupportTest();

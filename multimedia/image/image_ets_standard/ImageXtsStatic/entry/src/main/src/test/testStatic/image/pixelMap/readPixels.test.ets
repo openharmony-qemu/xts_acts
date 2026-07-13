@@ -16,7 +16,7 @@
 
 import { AppStorage } from '@kit.ArkUI';
 import { image } from '@kit.ImageKit';
-import {afterAll,afterEach,beforeAll,beforeEach,describe,expect,Hypium, it, Level } from '../../../../../../hypium';
+import {afterAll,afterEach,beforeAll,beforeEach,describe,expect,Hypium, it, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';
 import { BusinessError } from '@kit.BasicServicesKit';

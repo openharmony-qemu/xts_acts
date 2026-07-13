@@ -16,7 +16,7 @@
 
 import events_emitter from '@ohos.events.emitter';
 import { $r, Color } from '@ohos.arkui.component'
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../hypium/index';
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
 import router from '@ohos.router';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import Utils from '../../ets/MainAbility/common/Utils';

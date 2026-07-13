@@ -1,5 +1,5 @@
 'use static';
-import { describe, it, TestType, Size,Level,expect } from "../../../hypium/index";
+import { describe, it, TestType, Size,Level,expect } from "@ohos/hypium-binary/src/main/indexStatic";
 import {hilog}from "@kit.PerformanceAnalysisKit"
 import Utils from './Util.test';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识

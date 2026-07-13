@@ -27,3 +27,7 @@ export const shouldRecognizerParallelWith: (a: string) => void;
 export const GetTouchEventData: () => object;
 
 export const ArcListEventCallbackTest: (a: string) => void;
+
+export const ArcSwiperEventCallbackTest: (a: string) => void;
+
+export const ArcAlphabetIndexerEventCallbackTest: (a: string) => void;

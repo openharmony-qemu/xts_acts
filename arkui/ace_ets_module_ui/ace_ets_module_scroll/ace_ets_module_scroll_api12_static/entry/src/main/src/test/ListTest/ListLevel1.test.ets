@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import router from '@ohos.router';
 import { Driver, Component, ON, Rect } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -401,6 +401,7 @@ it('listLevel1Test_static_1300', Level.LEVEL1, async (done: () => void): Promise
 
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
       let scrollColumn: Component = await driver.findComponent(ON.type('Scroll')) as Component;
       let button = await scrollColumn.scrollSearch(ON.id('GetItemRectButton')) as Component;
       await button.click();
@@ -449,6 +450,7 @@ it('listLevel1Test_static_1400', Level.LEVEL1, async (done: () => void): Promise
         .assertEqual("10.000000");
 
       let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
       let scrollColumn: Component = await driver.findComponent(ON.type('Scroll')) as Component;
       let button = await scrollColumn.scrollSearch(ON.id('currentOffsetButton')) as Component;
       await button.click();

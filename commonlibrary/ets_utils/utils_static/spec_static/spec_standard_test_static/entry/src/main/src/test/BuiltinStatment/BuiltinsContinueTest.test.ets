@@ -1,5 +1,5 @@
 'use static';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Size, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Size, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
     setTimeout(() => {

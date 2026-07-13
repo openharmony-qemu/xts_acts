@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -75,6 +75,7 @@ export default function GridScrollEdgeCallbackJsunit() {
 it('GridScrollEdgeCallbackTest_1580', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('GridScrollEdgeCallbackTest_1580 START');
       let driver1 = Driver.create();
+      await CommonFunc.sleep(1000);
       let button = await (driver1.findComponent(ON.id('GridScrollEdgeCallback01')) as Promise<Component>);
       await button.click();
       await CommonFunc.sleep(1000);

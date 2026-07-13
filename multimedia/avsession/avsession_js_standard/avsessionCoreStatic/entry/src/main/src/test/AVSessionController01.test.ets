@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import avSession from '@ohos.multimedia.avsession';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
@@ -1818,6 +1818,438 @@ export default function abilityTest() {
       }
       session = null;
       console.info(`${TAG}: setSupportedPlaySpeedsErrorSessionNotExist005 end`);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1700
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1700
+     * @tc.desc   Testing sendControlCommand(command)-callback-6600105
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+      async (done: () => void): Promise<void> => {
+      let command: avSession.AVControlCommand = {
+                command: 'playWithAssetId',
+                parameter: 'assetId'
+            }
+            try {
+                controller!.sendControlCommand(command, (err: BusinessError | null) => {
+                    if (err) {
+                        expect(err.code).assertEqual(6600105);
+                        console.error(`SendControlCommand BusinessError: code: ${err.code}, message: ${err.message}`);
+                    } else {
+                        console.info('SendControlCommand successfully');
+                    }
+                });
+            } catch (error) {
+                console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+                expect(false).assertTrue();
+                done();
+            }
+            done();
+        })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1800
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1800
+     * @tc.desc   Testing sendControlCommand(command)-callback-6600102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+      async (done: () => void): Promise<void> => {
+      await session!.destroy()
+      let command: avSession.AVControlCommand = {
+                command: 'playWithAssetId',
+                parameter: 'assetId'
+            }
+            await Utils.msSleep(500)
+            try {
+                controller!.sendControlCommand(command, (err: BusinessError | null) => {
+                    console.info('sendControlCommand entry11');
+                });
+            } catch (error) {
+                console.info(`sendControlCommand entry11 error,error code: ${error.code}, message: ${error.message}`);
+                expect(error.code).assertEqual(6600102);
+            }
+            done();
+        })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1900
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1900
+     * @tc.desc   Testing sendControlCommand(command)-promise-6600102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+      async (done: () => void): Promise<void> => {
+      await session!.destroy()
+      let command: avSession.AVControlCommand = {
+                command: 'playWithAssetId',
+                parameter: 'assetId'
+            }
+            await Utils.msSleep(500)
+            try {
+                await controller!.sendControlCommand(command)
+                console.info('sendControlCommand entry11');
+                done();
+            } catch (error) {
+                console.info(`sendControlCommand entry11 error,error code: ${error.code}, message: ${error.message}`);
+                expect(error.code).assertEqual(6600102);
+            }
+            done();
+        })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_2000
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_2000
+     * @tc.desc   Testing sendControlCommand(command)-promise-6600103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+      async (done: () => void): Promise<void> => {
+      await controller!.destroy();
+      let command: avSession.AVControlCommand = {
+                command: 'playWithAssetId',
+                parameter: 'assetId'
+            }
+            await Utils.msSleep(500)
+            try {
+                await controller!.sendControlCommand(command)
+                console.info('sendControlCommand entry11');
+                done();
+            } catch (error) {
+                console.info(`sendControlCommand entry11 error,error code: ${error.code}, message: ${error.message}`);
+                expect(error.code).assertEqual(6600103);
+            }
+            done();
+        })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_2100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_2100
+     * @tc.desc   Testing sendControlCommand(command)-promise-6600106
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+      async (done: () => void): Promise<void> => {
+      await session!.deactivate()
+      let command: avSession.AVControlCommand = {
+                command: 'playWithAssetId',
+                parameter: 'assetId'
+            }
+            await Utils.msSleep(500)
+            try {
+                await controller!.sendControlCommand(command)
+                console.info('sendControlCommand entry11');
+                done();
+            } catch (error) {
+                console.info(`sendControlCommand entry11 error,error code: ${error.code}, message: ${error.message}`);
+                expect(error.code).assertEqual(6600106);
+            }
+            done();
+        })
+    
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_2200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_2200
+     * @tc.desc   Testing sendControlCommand(command)-promise-6600107
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SENDCONTROLCOMMAND_CALLBACK_STATIC_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+      async (done: () => void): Promise<void> => {
+      let command: avSession.AVControlCommand = {
+                command: 'playWithAssetId',
+                parameter: 'assetId'
+            }
+            await Utils.msSleep(500)
+            try {
+              session!.onPlayWithAssetId((data: string | null) => {
+              console.info(`${TAG}: on playWithAssetId, assetId3 = ${data}`);
+              expect(data).assertEqual('assetId');
+              session!.offPlayWithAssetId();
+              done();
+              });
+              await controller!.sendControlCommand(command);
+            } catch (error) {
+                console.info(`sendControlCommand entry11 error,error code: ${error.code}, message: ${error.message}`);
+                expect(error.code).assertEqual(6600107);
+            }
+            done();
+        })
+    
+    /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_DESTROY_CALLBACK_SUCCESS_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_DESTROY_CALLBACK_SUCCESS_STATIC_0100
+     * @tc.desc Test AVSessionController.destroy with async callback.
+     *         测试点：验证正常调用 destroy 方法时，回调能成功执行且无错误。
+     *         测试输入：调用 session.destroy(callback)
+     *         测试输出：回调被触发，err 为 null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_DESTROY_CALLBACK_SUCCESS_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+      try {
+        controller!.destroy((err:BusinessError | null) => {
+            if (err) {
+                console.info(`TestLog: Session destroy error: code: ${err?.code}, message: ${err?.message}`);
+                expect(false).assertTrue();
+            } else {
+                console.info('TestLog: Session destroy');
+            }
+        });
+      } catch (err) {
+        console.info(`TestLog: Session destroy error: code: ${err?.code}, message: ${err?.message}`);
+        }
+      done();
+    })
+
+    /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_GET_OUTPUT_DEVICE_SUCCESS_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GET_OUTPUT_DEVICE_SUCCESS_STATIC_0100
+     * @tc.desc Test AVSessionController.getOutputDevice.
+     *         测试点：验证在会话有效状态下，获取输出设备信息能正常返回 Promise 且结果不为空。
+     *         测试输入：调用 session.getOutputDevice()
+     *         测试输出：返回有效的 OutputDeviceInfo 对象，无错误
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_GET_OUTPUT_DEVICE_SUCCESS_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+     async (done: () => void): Promise<void> => {
+            try{
+                await controller!.getOutputDevice().then((device_Info: avSession.OutputDeviceInfo | undefined) => {
+                    console.info('Get device successfully');
+                    let deviceInfo: avSession.DeviceInfo | undefined = device_Info?.devices[0];
+                    console.info(`getOutputDevice successfully ${JSON.stringify(deviceInfo)}`);
+                    console.info(`${TAG}TestLog1 castCategory = ${deviceInfo?.castCategory}`);
+                    expect(deviceInfo?.castCategory).assertEqual(0);
+                    console.info(`${TAG}TestLog1 deviceId = ${deviceInfo?.deviceId}`);
+                    expect(deviceInfo?.deviceId).assertEqual("0");
+                    console.info(`${TAG}TestLog1 deviceName = ${deviceInfo?.deviceName}`);
+                    expect(deviceInfo?.deviceName).assertEqual("LocalDevice");
+                    console.info(`${TAG}TestLog1 deviceType = ${deviceInfo?.deviceType}`);
+                    expect(deviceInfo?.deviceType).assertEqual(0); 
+                    console.info(`${TAG}TestLog1 modelName = ${deviceInfo?.modelName}`);
+                    expect(deviceInfo?.modelName).assertEqual("");
+                    console.info(`${TAG}TestLog1 supportedPullClients = ${deviceInfo?.supportedPullClients}`);
+                    expect(deviceInfo?.supportedPullClients).assertEqual(undefined);
+                    console.info(`${TAG}TestLog1 supportedProtocols = ${deviceInfo?.supportedProtocols}`);
+                    expect(deviceInfo?.supportedProtocols).assertEqual(0);
+                    console.info(`${TAG}TestLog1 supportedDrmCapabilities = ${deviceInfo?.supportedDrmCapabilities}`);
+                    expect(deviceInfo?.supportedDrmCapabilities?.length).assertEqual(0);
+                    console.info(`${TAG}TestLog1 manufacturer = ${deviceInfo?.manufacturer}`);
+                    expect(deviceInfo?.manufacturer).assertEqual("");
+                    done();
+                }).catch((err: Error) => {
+                    console.error(`GetOutputDevice BusinessError: code: ${err.code}, message: ${err.message}`);
+                    expect(false).assertTrue();
+                })
+
+            } catch(err) {
+                console.info(`Get device BusinessError: ${err.code}, message: ${err.message}`);
+                expect(false).assertTrue();
+            }
+            done();
+        })
+
+    /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_LOOP_MODES_CHANGE_EVENT_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_LOOP_MODES_CHANGE_EVENT_STATIC_0500
+     * @tc.desc Test onSupportedLoopModesChange register callback return not null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_LOOP_MODES_CHANGE_EVENT_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG}: onSupportedLoopModesChangeRegister003 start`);
+      let callback = (data: Array<avSession.LoopMode>) => {
+        console.info(`${TAG}: onSupportedLoopModesChange callback: ${JSON.stringify(data)}`);
+        expect(data).not().assertNull();
+      };
+      try {
+        controller!.onSupportedLoopModesChange(callback);
+        console.info(`${TAG}: onSupportedLoopModesChange register success`);
+        done();
+      } catch (error) {
+        console.info(`${TAG}: error: ${error.code}`);
+        expect().assertFail();
+      }
+      console.info(`${TAG}: onSupportedLoopModesChangeRegister003 end`);
+      done();
+    });
+
+
+      /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_LOOP_MODES_CHANGE_EVENT_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_LOOP_MODES_CHANGE_EVENT_STATIC_0600
+     * @tc.desc Test onSupportedLoopModesChange register callback return null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_LOOP_MODES_CHANGE_EVENT_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG}: onSupportedLoopModesChangeRegister001 start`);
+      let callback = (data: Array<avSession.LoopMode>) => {
+        console.info(`${TAG}: onSupportedLoopModesChange callback: ${JSON.stringify(data)}`);
+        expect(data).assertNull();
+      };
+      try {
+        controller!.onSupportedLoopModesChange(callback);
+        console.info(`${TAG}: onSupportedLoopModesChange register success`);
+        controller!.offSupportedLoopModesChange(callback);
+        done();
+      } catch (error) {
+        console.info(`${TAG}: error: ${error.code}`);
+        expect().assertFail();
+      }
+      console.info(`${TAG}: onSupportedLoopModesChangeRegister004 end`);
+      done();
+    });
+
+    /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_OFF_SUPPORTED_PLAY_SPEEDS_CHANGE_EVENT_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFF_SUPPORTED_PLAY_SPEEDS_CHANGE_EVENT_STATIC_0300
+     * @tc.desc Test offSupportedPlaySpeedsChange unregister all callbacks.
+     *         测试点：验证注销所有回调
+     *         测试输入：注销所有已注册的回调
+     *         测试输出：注销成功，回调不再触发
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFF_SUPPORTED_PLAY_SPEEDS_CHANGE_EVENT_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG}: offSupportedPlaySpeedsChangeUnregister001 start`);
+      let callbackTriggered = false;
+      let callback = (data: Array<number>) => {
+        console.info(`${TAG}: callback triggered ：${JSON.stringify(data)}`);
+        expect(data).not().assertNull();
+        callbackTriggered = true;
+      };
+      try {
+        controller!.onSupportedPlaySpeedsChange(callback);
+        controller!.offSupportedPlaySpeedsChange();
+        let speeds: Array<number> = [4.00];
+        await session!.setSupportedPlaySpeeds(speeds);
+        await Utils.msSleep(500);
+        expect(callbackTriggered).assertFalse();
+      } catch (error) {
+        console.info(`${TAG}: error: ${error.code}`);
+        expect().assertFail();
+      }
+      console.info(`${TAG}: offSupportedPlaySpeedsChangeUnregister001 end`);
+      done();
+    });
+
+    /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_PLAY_SPEEDS_CHANGE_EVENT_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_PLAY_SPEEDS_CHANGE_EVENT_STATIC_0500
+     * @tc.desc Test onSupportedPlaySpeedsChange register callback return null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_PLAY_SPEEDS_CHANGE_EVENT_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG}: onSupportedPlaySpeedsChangeRegister004 start`);
+      let callback = (data: Array<number>) => {
+        console.info(`${TAG}: onSupportedPlaySpeedsChange callback: ${JSON.stringify(data)}`);
+        expect(data).assertNull();
+      };
+      try {
+        controller!.onSupportedPlaySpeedsChange(callback);
+        console.info(`${TAG}: onSupportedPlaySpeedsChange register success`);
+        controller!.offSupportedPlaySpeedsChange(callback);
+        done();
+      } catch (error) {
+        console.info(`${TAG}: error: ${error.code}`);
+        expect().assertFail();
+      }
+      console.info(`${TAG}: onSupportedPlaySpeedsChangeRegister004 end`);
+      done();
+    });
+
+    /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_LOOP_MODES_CHANGE_EVENT_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_LOOP_MODES_CHANGE_EVENT_STATIC_0500
+     * @tc.desc Test onSupportedLoopModesChange register callback return null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_LOOP_MODES_CHANGE_EVENT_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG}: onSupportedLoopModesChangeRegister001 start`);
+      let callback = (data: Array<avSession.LoopMode> | undefined) => {
+        console.info(`${TAG}: onSupportedLoopModesChange callback: ${JSON.stringify(data)}`);
+        expect(data).assertNull();
+      };
+      try {
+        controller!.onSupportedLoopModesChange(callback);
+        console.info(`${TAG}: onSupportedLoopModesChange register success`);
+        controller!.offSupportedLoopModesChange(callback);
+        done();
+      } catch (error) {
+        console.info(`${TAG}: error: ${error.code}`);
+        expect().assertFail();
+      }
+      console.info(`${TAG}: onSupportedLoopModesChangeRegister004 end`);
+      done();
+    });
+
+    /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_OFF_MEDIA_CENTER_CONTROL_TYPE_CHANGED_EVENT_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFF_MEDIA_CENTER_CONTROL_TYPE_CHANGED_EVENT_STATIC_0300
+     * @tc.desc Test offMediaCenterControlTypeChanged unregister all callbacks.
+     *         测试点：验证注销所有回调
+     *         测试输入：注销所有已注册的回调
+     *         测试输出：注销成功，回调不再触发
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFF_MEDIA_CENTER_CONTROL_TYPE_CHANGED_EVENT_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+      async (done: () => void): Promise<void> => {
+      let callbackTriggered = false;
+      let callback1 = (data: Array<avSession.AVMediaCenterControlType>) => {
+        console.info(`${TAG}: callback1 triggered `, JSON.stringify(data)); 
+        expect(data).not().assertNull();
+        callbackTriggered = true;
+      };
+      let callback2 = (data: Array<avSession.AVMediaCenterControlType>) => {
+        console.info(`${TAG}: callback2 triggered`);
+        callbackTriggered = true;
+      };
+      try {
+        controller!.onMediaCenterControlTypeChanged(callback1);
+        controller!.onMediaCenterControlTypeChanged(callback2);
+        controller!.offMediaCenterControlTypeChanged();
+        let controlTypes: Array<avSession.AVMediaCenterControlType> = ['playNext'];
+        await session!.setMediaCenterControlType(controlTypes);
+        await Utils.msSleep(500);
+        expect(callbackTriggered).assertFalse();
+      } catch (error) {
+        console.info(`${TAG}: error: ${error.code}`);
+        expect().assertFail();
+      }
+      console.info(`${TAG}: offMediaCenterControlTypeChangedUnregister001 end`);
       done();
     });
 

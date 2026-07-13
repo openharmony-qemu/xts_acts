@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, afterAll, afterEach, beforeAll, beforeEach } from '../../../hypium/index';
+import { describe, it, expect, TestType, Size, Level, afterAll, afterEach, beforeAll, beforeEach } from '@ohos/hypium-binary/src/main/indexStatic';
 class C{}
 export default function arrayTest(): void {
   describe("arrayTest", (): void => {

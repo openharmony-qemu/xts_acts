@@ -15,7 +15,7 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
-import { describe, it, expect, beforeAll, Level, beforeEach, afterEach, afterAll, Hypium } from '../../../../hypium'
+import { describe, it, expect, beforeAll, Level, beforeEach, afterEach, afterAll, Hypium } from '@ohos/hypium-binary/src/main/indexStatic'
 import { createUserAlbum, getPermission, LOG_TAG, sleep } from '../common';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import { Context } from '@kit.ArkUI';

@@ -32,12 +32,12 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
 export class MyRatingModifier implements AttributeModifier<RatingAttribute> {
-  @State public stars: int | undefined = undefined;
-  @State public flag: Boolean = true;
-  @State public rating: Int = 3;
-  @State public stepSize: Double | undefined = undefined;
-  @State public isNormal: boolean = true;
-  @State public text: Int = 0;
+  public stars: int | undefined = undefined;
+  public flag: Boolean = true;
+  public rating: Int = 3;
+  public stepSize: Double | undefined = undefined;
+  public isNormal: boolean = true;
+  public text: Int = 0;
 
   applyNormalAttribute(instance: RatingAttribute): void {
     instance

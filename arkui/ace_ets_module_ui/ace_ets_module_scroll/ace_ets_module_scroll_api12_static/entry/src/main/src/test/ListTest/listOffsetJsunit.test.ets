@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import router from '@ohos.router';
 import { Driver, Component, ON, Rect } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -75,6 +75,7 @@ it('listOffsetJsunit_001', Level.LEVEL1, async (done: () => void): Promise<void>
       console.info('[listOffsetJsunit_001] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let swiperScroll = CommonFunc.getComponentRectOnScreen('offset_list');
       let top = swiperScroll.top;
       let right = swiperScroll.right;

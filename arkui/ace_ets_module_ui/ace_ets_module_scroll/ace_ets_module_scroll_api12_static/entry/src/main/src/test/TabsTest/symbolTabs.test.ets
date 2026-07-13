@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -79,6 +79,7 @@ it('symbolTabs_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
       let height = bottom - top;
       let width = right - left;
       let driver = Driver.create()
+      await CommonFunc.sleep(500);
       await driver.drag((Math.round(left + width * 0.8)).toInt(), (Math.round(top + height / 2)).toInt(),
         (Math.round(left + width * 0.2)).toInt(), (Math.round(top + height / 2)).toInt());
       await CommonFunc.sleep(2000);

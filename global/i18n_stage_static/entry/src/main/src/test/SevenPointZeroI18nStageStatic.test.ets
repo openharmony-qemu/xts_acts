@@ -22,7 +22,7 @@ import {
   it,
   expect,
   Level
-} from "../../../hypium/index";
+} from "@ohos/hypium-binary/src/main/indexStatic";
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'
 import i18n from '@ohos.i18n'
@@ -2832,6 +2832,23 @@ export default function SevenPointZeroI18nStageStaticTest() {
       } catch (error) {
         console.log('SUB_GLOBAL_SymbolNumberFormat_parse_Static_1500 catch error:' + error.code + error.message);
         expect(Number(error.code)).assertEqual(8900001);
+      }
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_Static_1300
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_Static_1300
+     * @tc.desc test setChineseCalendarTime with checkLeapMonth 2200, 20, 3
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_Static_1300', Level.LEVEL3, () => {
+      try{
+        let value: boolean = i18n.ChineseCalendar.checkLeapMonth(2200, 20, 3);
+        console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_1300 value:', value);
+      }catch(e){
+        expect(Number(e.code)).assertEqual(8900001);
       }
     })
 

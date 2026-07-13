@@ -578,8 +578,9 @@ export default function audioCapturer() {
       console.info('beforeEach called')
     })
 
-    afterEach(() => {
+    afterEach(async () => {
       console.info('afterEach called')
+      await sleep(500);
     })
     let recPromise =
       async (AudioCapturerOptions: audio.AudioCapturerOptions, AudioRendererOptions: audio.AudioRendererOptions,
@@ -6778,5 +6779,655 @@ export default function audioCapturer() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_PARAM_0100
+     * @tc.desc   setNoiseReductionMode - set FIDELITY mode in created state.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_PARAM_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_PARAM_0100';
+        let audioCapturer: audio.AudioCapturer | null = null;
+        try {
+          const audioCapturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE,
+            capturerFlags: 0
+          };
+          const audioStreamInfo: audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          };
+          const audioCapturerOptions: audio.AudioCapturerOptions = {
+            streamInfo: audioStreamInfo,
+            capturerInfo: audioCapturerInfo
+          };
+          audioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+          if (audioCapturer) {
+            let supportedModes: Array<audio.NoiseReductionMode> = audioCapturer.getSupportedNoiseReductionModes();
+            console.info(`${TAG}: supported modes: ${JSON.stringify(supportedModes)}`);
+            if (supportedModes.includes(audio.NoiseReductionMode.FIDELITY)) {
+              console.info(`${TAG}: audioCapturer state is: ${audioCapturer.state}`);
+              audioCapturer.setNoiseReductionMode(audio.NoiseReductionMode.FIDELITY);
+              console.info(`${TAG}: setNoiseReductionMode FIDELITY succeed`);
+              await sleep(500);
+              let mode: audio.NoiseReductionMode = audioCapturer.getNoiseReductionMode();
+              console.info(`${TAG}: getNoiseReductionMode after setting: ${mode}`);
+              expect(mode).assertEqual(audio.NoiseReductionMode.FIDELITY);
+            }
+          }
+        } catch (err) {
+          console.error(`${TAG}: setNoiseReductionMode FIDELITY failed: ${err.code}, ${err.message}`);
+          expect(false).assertTrue();
+        } finally {
+          if (audioCapturer) {
+            try {
+              await audioCapturer.release();
+              console.log(`${TAG}: Capturer released successfully`);
+            } catch (releaseError) {
+              console.log(`${TAG}: Release capturer failed: ${releaseError.message}`);
+              expect(false).assertTrue();
+            }
+          }
+          done();
+        }
+      });
+    
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_PARAM_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_PARAM_0200
+     * @tc.desc   setNoiseReductionMode - set PURE_VOCALS mode in created state.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_PARAM_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_PARAM_0200';
+        let audioCapturer: audio.AudioCapturer | null = null;
+        try {
+          const audioCapturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE,
+            capturerFlags: 0
+          };
+          const audioStreamInfo: audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          };
+          const audioCapturerOptions: audio.AudioCapturerOptions = {
+            streamInfo: audioStreamInfo,
+            capturerInfo: audioCapturerInfo
+          };
+          audioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+          if (audioCapturer) {
+            let supportedModes: Array<audio.NoiseReductionMode> = audioCapturer.getSupportedNoiseReductionModes();
+            console.info(`${TAG}: supported modes: ${JSON.stringify(supportedModes)}`);
+            if (supportedModes.includes(audio.NoiseReductionMode.PURE_VOCALS)) {
+              audioCapturer.setNoiseReductionMode(audio.NoiseReductionMode.PURE_VOCALS);
+              console.info(`${TAG}: setNoiseReductionMode PURE_VOCALS succeed`);
+              await sleep(500);
+              let mode: audio.NoiseReductionMode = audioCapturer.getNoiseReductionMode();
+              console.info(`${TAG}: getNoiseReductionMode after setting: ${mode}`);
+              expect(mode).assertEqual(audio.NoiseReductionMode.PURE_VOCALS);
+            }
+          }
+        } catch (err) {
+          console.error(`${TAG}: setNoiseReductionMode PURE_VOCALS failed: ${err.code}, ${err.message}`);
+          expect(false).assertTrue();
+        } finally {
+          if (audioCapturer) {
+            try {
+              await audioCapturer.release();
+              console.log(`${TAG}: Capturer released successfully`);
+            } catch (releaseError) {
+              console.log(`${TAG}: Release capturer failed: ${releaseError.message}`);
+              expect(false).assertTrue();
+            }
+          }
+          done();
+        }
+      });
+    
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_PARAM_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_PARAM_0300
+     * @tc.desc   setNoiseReductionMode - set STANDARD mode in created state.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_PARAM_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_PARAM_0300';
+        let audioCapturer: audio.AudioCapturer | null = null;
+        try {
+          const audioCapturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE,
+            capturerFlags: 0
+          };
+          const audioStreamInfo: audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          };
+          const audioCapturerOptions: audio.AudioCapturerOptions = {
+            streamInfo: audioStreamInfo,
+            capturerInfo: audioCapturerInfo
+          };
+          audioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+          if (audioCapturer) {
+            let supportedModes: Array<audio.NoiseReductionMode> = audioCapturer.getSupportedNoiseReductionModes();
+            console.info(`${TAG}: supported modes: ${JSON.stringify(supportedModes)}`);
+            if (supportedModes.includes(audio.NoiseReductionMode.STANDARD)) {
+              audioCapturer.setNoiseReductionMode(audio.NoiseReductionMode.STANDARD);
+              console.info(`${TAG}: setNoiseReductionMode STANDARD succeed`);
+              await sleep(500);
+              let mode: audio.NoiseReductionMode = audioCapturer.getNoiseReductionMode();
+              console.info(`${TAG}: getNoiseReductionMode after setting: ${mode}`);
+              expect(mode).assertEqual(audio.NoiseReductionMode.STANDARD);
+            }
+          }
+        } catch (err) {
+          console.error(`${TAG}: setNoiseReductionMode STANDARD failed: ${err.code}, ${err.message}`);
+          expect(false).assertTrue();
+        } finally {
+          if (audioCapturer) {
+            try {
+              await audioCapturer.release();
+              console.log(`${TAG}: Capturer released successfully`);
+            } catch (releaseError) {
+              console.log(`${TAG}: Release capturer failed: ${releaseError.message}`);
+              expect(false).assertTrue();
+            }
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_PARAM_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_PARAM_0400
+     * @tc.desc   setNoiseReductionMode - set FIDELITY mode in created state.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_PARAM_0400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_PARAM_0400';
+        let audioCapturer: audio.AudioCapturer | null = null;
+        try {
+          const audioCapturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE,
+            capturerFlags: 0
+          };
+          const audioStreamInfo: audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          };
+          const audioCapturerOptions: audio.AudioCapturerOptions = {
+            streamInfo: audioStreamInfo,
+            capturerInfo: audioCapturerInfo
+          };
+          audioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+          if (audioCapturer) {
+            await audioCapturer.start();
+            await audioCapturer.stop();
+
+            let supportedModes: Array<audio.NoiseReductionMode> = audioCapturer.getSupportedNoiseReductionModes();
+            console.info(`${TAG}: supported modes: ${JSON.stringify(supportedModes)}`);
+            audioCapturer.setNoiseReductionMode(audio.NoiseReductionMode.FIDELITY);
+            console.info(`${TAG}: setNoiseReductionMode FIDELITY succeed`);
+            await sleep(500);
+            let mode: audio.NoiseReductionMode = audioCapturer.getNoiseReductionMode();
+            console.info(`${TAG}: getNoiseReductionMode after setting: ${mode}`);
+            expect(mode).assertEqual(audio.NoiseReductionMode.FIDELITY);
+          }
+
+        } catch (err) {
+          console.error(`${TAG}: setNoiseReductionMode FIDELITY failed: ${err.code}, ${err.message}`);
+          expect(false).assertTrue();
+        } finally {
+          if (audioCapturer) {
+            try {
+              await audioCapturer.release();
+              console.log(`${TAG}: Capturer released successfully`);
+            } catch (releaseError) {
+              console.log(`${TAG}: Release capturer failed: ${releaseError.message}`);
+              expect(false).assertTrue();
+            }
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0100
+     * @tc.desc   setNoiseReductionMode - set null parameter, expect error 6800101.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0100';
+        let audioCapturer: audio.AudioCapturer | null = null;
+        try {
+          const audioCapturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE,
+            capturerFlags: 0
+          };
+          const audioStreamInfo: audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          };
+          const audioCapturerOptions: audio.AudioCapturerOptions = {
+            streamInfo: audioStreamInfo,
+            capturerInfo: audioCapturerInfo
+          };
+          audioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+          if (audioCapturer) {
+            audioCapturer.setNoiseReductionMode(null);
+            console.info(`${TAG}: setNoiseReductionMode with null should fail`);
+            expect(false).assertTrue();
+          }
+        } catch (err) {
+          console.error(`${TAG}: setNoiseReductionMode FIDELITY failed: ${err.code}, ${err.message}`);
+          expect(err.code).assertEqual(6800101);
+        } finally {
+          if (audioCapturer) {
+            try {
+              await audioCapturer.release();
+              console.log(`${TAG}: Capturer released successfully`);
+            } catch (releaseError) {
+              console.log(`${TAG}: Release capturer failed: ${releaseError.message}`);
+              expect(false).assertTrue();
+            }
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0200
+     * @tc.desc   setNoiseReductionMode - set undefined parameter, expect error 6800101.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0200';
+        let audioCapturer: audio.AudioCapturer | null = null;
+        try {
+          const audioCapturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE,
+            capturerFlags: 0
+          };
+          const audioStreamInfo: audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          };
+          const audioCapturerOptions: audio.AudioCapturerOptions = {
+            streamInfo: audioStreamInfo,
+            capturerInfo: audioCapturerInfo
+          };
+          audioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+          if (audioCapturer) {
+            audioCapturer.setNoiseReductionMode(undefined);
+            console.info(`${TAG}: setNoiseReductionMode with undefined should fail`);
+            expect(false).assertTrue();
+          }
+        } catch (err) {
+          console.error(`${TAG}: setNoiseReductionMode FIDELITY failed: ${err.code}, ${err.message}`);
+          expect(err.code).assertEqual(6800101);
+        } finally {
+          if (audioCapturer) {
+            try {
+              await audioCapturer.release();
+              console.log(`${TAG}: Capturer released successfully`);
+            } catch (releaseError) {
+              console.log(`${TAG}: Release capturer failed: ${releaseError.message}`);
+              expect(false).assertTrue();
+            }
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0300
+     * @tc.desc   setNoiseReductionMode - set mode in running state, expect error 6800103.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0300';
+        let audioCapturer: audio.AudioCapturer | null = null;
+        try {
+          const audioCapturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE,
+            capturerFlags: 0
+          };
+          const audioStreamInfo: audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          };
+          const audioCapturerOptions: audio.AudioCapturerOptions = {
+            streamInfo: audioStreamInfo,
+            capturerInfo: audioCapturerInfo
+          };
+          audioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+          if (audioCapturer) {
+            let supportedModes: Array<audio.NoiseReductionMode> = audioCapturer.getSupportedNoiseReductionModes();
+            console.info(`${TAG}: supported modes: ${JSON.stringify(supportedModes)}`);
+            await audioCapturer.start();
+            console.info(`${TAG}: audioCapturer.start finished, state is: ${audioCapturer.state}`);
+            await sleep(2000);
+            console.info(`${TAG}: audioCapturer.start after sleep 2 s, state is: ${audioCapturer.state}`);
+            audioCapturer.setNoiseReductionMode(audio.NoiseReductionMode.FIDELITY);
+            console.info(`${TAG}: after setNoiseReductionMode, state is: ${audioCapturer.state}`);
+            console.info(`${TAG}: setNoiseReductionMode in start state should fail`);
+            expect(false).assertTrue();
+          }
+        } catch (err) {
+          console.error(`${TAG}: setNoiseReductionMode FIDELITY failed: ${err.code}, ${err.message}`);
+          expect(err.code).assertEqual(6800103);
+        } finally {
+          if (audioCapturer) {
+            try {
+              await audioCapturer.release();
+              console.log(`${TAG}: Capturer released successfully`);
+            } catch (releaseError) {
+              console.log(`${TAG}: Release capturer failed: ${releaseError.message}`);
+              expect(false).assertTrue();
+            }
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0400
+     * @tc.desc   setNoiseReductionMode - set mode in running state, expect error 6800103.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0400';
+        let audioCapturer: audio.AudioCapturer | null = null;
+        try {
+          const audioCapturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE,
+            capturerFlags: 0
+          };
+          const audioStreamInfo: audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          };
+          const audioCapturerOptions: audio.AudioCapturerOptions = {
+            streamInfo: audioStreamInfo,
+            capturerInfo: audioCapturerInfo
+          };
+          audioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+          if (audioCapturer) {
+            await audioCapturer.release();
+            audioCapturer.setNoiseReductionMode(audio.NoiseReductionMode.FIDELITY);
+            console.info(`${TAG}: setNoiseReductionMode in released state should fail`);
+            expect(false).assertTrue();
+          }
+        } catch (err) {
+          console.error(`${TAG}: setNoiseReductionMode FIDELITY failed: ${err.code}, ${err.message}`);
+          expect(err.code).assertEqual(6800103);
+        } finally {
+          if (audioCapturer) {
+            try {
+              await audioCapturer.release();
+              console.log(`${TAG}: Capturer released successfully`);
+            } catch (releaseError) {
+              console.log(`${TAG}: Release capturer failed: ${releaseError.message}`);
+              expect(false).assertTrue();
+            }
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0500
+     * @tc.desc   setNoiseReductionMode - set unsupported mode, expect error 6800104.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0500',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0500';
+        let audioCapturer: audio.AudioCapturer | null = null;
+        try {
+          const audioCapturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE,
+            capturerFlags: 0
+          };
+          const audioStreamInfo: audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          };
+          const audioCapturerOptions: audio.AudioCapturerOptions = {
+            streamInfo: audioStreamInfo,
+            capturerInfo: audioCapturerInfo
+          };
+          audioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+          if (audioCapturer) {
+            let unsupportedMode: audio.NoiseReductionMode = 9999 as audio.NoiseReductionMode;
+            audioCapturer.setNoiseReductionMode(unsupportedMode);
+            console.info(`${TAG}: setNoiseReductionMode with unsupported mode should fail`);
+            expect(false).assertTrue();
+          }
+        } catch (err) {
+          console.error(`${TAG}: setNoiseReductionMode FIDELITY failed: ${err.code}, ${err.message}`);
+          expect(err.code).assertEqual(6800101);
+        } finally {
+          if (audioCapturer) {
+            try {
+              await audioCapturer.release();
+              console.log(`${TAG}: Capturer released successfully`);
+            } catch (releaseError) {
+              console.log(`${TAG}: Release capturer failed: ${releaseError.message}`);
+              expect(false).assertTrue();
+            }
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0600
+     * @tc.desc   setNoiseReductionMode - set unsupported PURE_VOCALS mode in created state.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0600',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0600';
+        let audioCapturer: audio.AudioCapturer | null = null;
+        try {
+          const audioCapturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE,
+            capturerFlags: 0
+          };
+          const audioStreamInfo: audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          };
+          const audioCapturerOptions: audio.AudioCapturerOptions = {
+            streamInfo: audioStreamInfo,
+            capturerInfo: audioCapturerInfo
+          };
+          audioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+          if (audioCapturer) {
+            let supportedModes: Array<audio.NoiseReductionMode> = audioCapturer.getSupportedNoiseReductionModes();
+            console.info(`${TAG}: supported modes: ${JSON.stringify(supportedModes)}`);
+            if (!supportedModes.includes(audio.NoiseReductionMode.PURE_VOCALS)) {
+              audioCapturer.setNoiseReductionMode(audio.NoiseReductionMode.PURE_VOCALS);
+              console.info(`${TAG}: setNoiseReductionMode with unsupported mode should fail`);
+              expect(false).assertTrue();
+            }
+          }
+        } catch (err) {
+          console.error(`${TAG}: setNoiseReductionMode PURE_VOCALS failed: ${err.code}, ${err.message}`);
+          expect(err.code).assertEqual(6800104);
+        } finally {
+          if (audioCapturer) {
+            try {
+              await audioCapturer.release();
+              console.log(`${TAG}: Capturer released successfully`);
+            } catch (releaseError) {
+              console.log(`${TAG}: Release capturer failed: ${releaseError.message}`);
+              expect(false).assertTrue();
+            }
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0700
+     * @tc.desc   setNoiseReductionMode - set unsupported STANDARD mode in created state.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0700',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0700';
+        let audioCapturer: audio.AudioCapturer | null = null;
+        try {
+          const audioCapturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE,
+            capturerFlags: 0
+          };
+          const audioStreamInfo: audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          };
+          const audioCapturerOptions: audio.AudioCapturerOptions = {
+            streamInfo: audioStreamInfo,
+            capturerInfo: audioCapturerInfo
+          };
+          audioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+          if (audioCapturer) {
+            let supportedModes: Array<audio.NoiseReductionMode> = audioCapturer.getSupportedNoiseReductionModes();
+            console.info(`${TAG}: supported modes: ${JSON.stringify(supportedModes)}`);
+            if (!supportedModes.includes(audio.NoiseReductionMode.STANDARD)) {
+              audioCapturer.setNoiseReductionMode(audio.NoiseReductionMode.STANDARD);
+              console.info(`${TAG}: setNoiseReductionMode with unsupported mode should fail`);
+              expect(false).assertTrue();
+            }
+          }
+        } catch (err) {
+          console.error(`${TAG}: setNoiseReductionMode STANDARD failed: ${err.code}, ${err.message}`);
+          expect(err.code).assertEqual(6800104);
+        } finally {
+          if (audioCapturer) {
+            try {
+              await audioCapturer.release();
+              console.log(`${TAG}: Capturer released successfully`);
+            } catch (releaseError) {
+              console.log(`${TAG}: Release capturer failed: ${releaseError.message}`);
+              expect(false).assertTrue();
+            }
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0800
+     * @tc.desc   setNoiseReductionMode - set unsupported PURE_VOCALS mode in created state.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0800',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCATION_MODE_ERROR_0800';
+        let audioCapturer: audio.AudioCapturer | null = null;
+        try {
+          const audioCapturerInfo: audio.AudioCapturerInfo = {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0
+          };
+          const audioStreamInfo: audio.AudioStreamInfo = {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          };
+          const audioCapturerOptions: audio.AudioCapturerOptions = {
+            streamInfo: audioStreamInfo,
+            capturerInfo: audioCapturerInfo
+          };
+          audioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+          if (audioCapturer) {
+            let supportedModes: Array<audio.NoiseReductionMode> = audioCapturer.getSupportedNoiseReductionModes();
+            console.info(`${TAG}: supported modes: ${JSON.stringify(supportedModes)}`);
+            audioCapturer.setNoiseReductionMode(audio.NoiseReductionMode.STANDARD);
+            console.info(`${TAG}: setNoiseReductionMode with unsupported mode should fail`);
+            expect(false).assertTrue();
+          }
+        } catch (err) {
+          console.error(`${TAG}: setNoiseReductionMode STANDARD failed: ${err.code}, ${err.message}`);
+          expect(err.code).assertEqual(6800104);
+        } finally {
+          if (audioCapturer) {
+            try {
+              await audioCapturer.release();
+              console.log(`${TAG}: Capturer released successfully`);
+            } catch (releaseError) {
+              console.log(`${TAG}: Release capturer failed: ${releaseError.message}`);
+              expect(false).assertTrue();
+            }
+          }
+          done();
+        }
+      });
   })
 }

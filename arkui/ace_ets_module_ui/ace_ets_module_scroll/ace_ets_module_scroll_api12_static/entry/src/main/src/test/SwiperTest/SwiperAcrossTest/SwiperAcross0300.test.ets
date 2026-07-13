@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-binary/src/main/indexStatic"
 import router from '@ohos.router';
 import {
   Point,
@@ -87,6 +87,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ACROSS_static_0300', Level.LEVEL0, async 
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ACROSS_static_0300 START");
       await CommonFunc.sleep(3000);
       let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
       let btn = await driver.findComponent(ON.id('btnswiper_across0030'));
       await (btn?.click() as Promise<void>);
       let swiperArrow = await driver.findComponent(ON.id("swiperacr_0030"));

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll} from "@ohos/hypium-binary/src/main/indexStatic";
 import Utils from './Util.test';
 import audio from '@ohos.multimedia.audio';
 

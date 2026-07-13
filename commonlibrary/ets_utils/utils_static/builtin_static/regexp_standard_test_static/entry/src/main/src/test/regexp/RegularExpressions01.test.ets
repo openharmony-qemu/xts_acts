@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-binary/src/main/indexStatic';
 import Utils from '../Util.test';
 
 
@@ -380,8 +380,8 @@ export default function RegularExpressions01Test(): void {
     it("testGroupingModuleCase0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const re19: RegExp = new RegExp('(\\w+)', 'g');
       const result19: String = "hello world".replace(re19,
-        (match: string, group1: Object[]): string => {
-          let g1 = group1[0] as String;
+        (match: string, group1: (Object|undefined)[]): string => {
+          let g1 = group1[0]! as String;
           return g1.toUpperCase();
         }
       );
@@ -1144,10 +1144,10 @@ export default function RegularExpressions01Test(): void {
     it("testGroupingModuleCase0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const re62: RegExp = new RegExp('(\\d+)([+-])(\\d+)');
       const result62: string = "10+5".replace(re62,
-        (match: string, group: Object[]): string => {
-          const numA: double = parseInt((group[0] as string));
-          const op: string = group[1] as string;
-          const numB: double = parseInt((group[2] as string));
+        (match: string, group: (Object|undefined)[]): string => {
+          const numA: double = parseInt((group[0]! as string));
+          const op: string = group[1]! as string;
+          const numB: double = parseInt((group[2]! as string));
           const res: number = op === '+' ? (numA + numB) : (numA - numB)
           return op === '+' ? `${numA + numB}` : `${numA - numB}`;
         })

@@ -23,7 +23,7 @@ import {
   beforeEach,
   afterEach,
   afterAll
-} from "../../../hypium/index";
+} from "@ohos/hypium-binary/src/main/indexStatic";
 import { BusinessError } from '@ohos.base';
 import Context from 'application.Context';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';

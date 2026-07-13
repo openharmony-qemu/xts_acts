@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Level, Size } from '../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Level, Size } from '@ohos/hypium-binary/src/main/indexStatic';
 import {SharedCounter} from '../testability/pages/AtomicsMultithreadUtils';
 import { sleep } from '../testability/pages/TestUtils';
 

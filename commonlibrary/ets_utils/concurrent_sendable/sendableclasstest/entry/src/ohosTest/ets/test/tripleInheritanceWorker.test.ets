@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, expect, it, TestType, Size, Level } from '@ohos/hypium';
+import { describe, expect, it, TestType, Size, Level, afterAll } from '@ohos/hypium';
 import { worker } from '@kit.ArkTS';
 
 export const sleep = (ms: number | undefined) => {
@@ -22,6 +22,11 @@ export const sleep = (ms: number | undefined) => {
 export default function tripleInheritanceWorkerTest() {
 
   describe('ActsTripleInheritanceWorkerTest', () => {
+    afterAll(async () => {
+      console.info('afterAll called');
+      await new Promise<void>((resolve)=>setTimeout(resolve,100))
+    });
+    
     /**
      * @tc.name   testTripleInheritanceWorker0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_TRIPLE_INHERIT_WORKER_0100

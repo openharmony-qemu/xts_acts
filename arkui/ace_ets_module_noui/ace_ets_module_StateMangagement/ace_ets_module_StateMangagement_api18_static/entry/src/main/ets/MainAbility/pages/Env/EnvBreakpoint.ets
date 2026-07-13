@@ -19,19 +19,19 @@ import uiObserver from '@ohos.arkui.observer';
 @Entry
 @Component
 struct EnvBreakpoint {
-  @Env(SystemProperties.BREAK_POINT) breakpoint: uiObserver.WindowSizeLayoutBreakpointInfo; // 正确写法
+  @Env(SystemProperties.BREAK_POINT) breakpoint: uiObserver.WindowSizeLayoutBreakpointInfo; 
 
   build() {
     Column() {
-      CompV2({ breakpoint: this.breakpoint }) // 正确写法
-      Comp({ breakpoint: this.breakpoint }) // 正确写法
+      CompV2({ breakpoint: this.breakpoint }) 
+      Comp({ breakpoint: this.breakpoint }) 
     }
   }
 }
 
 @ComponentV2
 struct CompV2 {
-  @Require @Param breakpoint: uiObserver.WindowSizeLayoutBreakpointInfo; // 正确写法
+  @Require @Param breakpoint: uiObserver.WindowSizeLayoutBreakpointInfo; 
 
   build() {
     Column() {
@@ -52,8 +52,7 @@ struct CompV2 {
 
 @Component
 struct Comp {
-  @Require breakpoint: uiObserver.WindowSizeLayoutBreakpointInfo; // 正确写法
-
+  @Require breakpoint: uiObserver.WindowSizeLayoutBreakpointInfo; 
   build() {
     Column() {
       // 打印当前窗口宽度所在的布局断点枚举值

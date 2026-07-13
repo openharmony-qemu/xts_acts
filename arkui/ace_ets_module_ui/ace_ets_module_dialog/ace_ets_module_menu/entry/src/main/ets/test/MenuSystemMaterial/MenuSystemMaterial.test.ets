@@ -254,6 +254,12 @@ export default function MenuSystemMaterialTest() {
       await selectComp.click();
       await CommonFunc.sleep(1500);
 
+      // =====
+      let itemBtn = await driver.findComponent(ON.text('Option1'));
+      await itemBtn.click();
+      await CommonFunc.sleep(1500);
+      // ======
+
       console.info('MenuSystemMaterialTest_Select_0100 END');
       done();
     });
@@ -275,6 +281,12 @@ export default function MenuSystemMaterialTest() {
       expect(selectComp).not().assertUndefined();
       await selectComp.click();
       await CommonFunc.sleep(1500);
+
+      // =====
+      let itemBtn = await driver.findComponent(ON.text('Option1'));
+      await itemBtn.click();
+      await CommonFunc.sleep(1500);
+      // ======
 
       console.info('MenuSystemMaterialTest_Select_0200 END');
       done();
@@ -298,6 +310,12 @@ export default function MenuSystemMaterialTest() {
       await selectComp.click();
       await CommonFunc.sleep(1500);
 
+      // =====
+      let itemBtn = await driver.findComponent(ON.text('Option1'));
+      await itemBtn.click();
+      await CommonFunc.sleep(1500);
+      // ======
+
       console.info('MenuSystemMaterialTest_Select_0300 END');
       done();
     });
@@ -319,6 +337,12 @@ export default function MenuSystemMaterialTest() {
       expect(selectComp).not().assertUndefined();
       await selectComp.click();
       await CommonFunc.sleep(1500);
+
+      // =====
+      let itemBtn = await driver.findComponent(ON.text('Option1'));
+      await itemBtn.click();
+      await CommonFunc.sleep(1500);
+      // ======
 
       console.info('MenuSystemMaterialTest_Select_0400 END');
       done();
@@ -342,6 +366,12 @@ export default function MenuSystemMaterialTest() {
       await selectComp.click();
       await CommonFunc.sleep(1500);
 
+      // =====
+      let itemBtn = await driver.findComponent(ON.text('Option1'));
+      await itemBtn.click();
+      await CommonFunc.sleep(1500);
+      // ======
+
       console.info('MenuSystemMaterialTest_Select_0500 END');
       done();
     });
@@ -363,6 +393,12 @@ export default function MenuSystemMaterialTest() {
       expect(selectComp).not().assertUndefined();
       await selectComp.click();
       await CommonFunc.sleep(1500);
+
+      // =====
+      let itemBtn = await driver.findComponent(ON.text('Option1'));
+      await itemBtn.click();
+      await CommonFunc.sleep(1500);
+      // ======
 
       console.info('MenuSystemMaterialTest_Select_0600 END');
       done();
@@ -386,6 +422,12 @@ export default function MenuSystemMaterialTest() {
       await selectComp.click();
       await CommonFunc.sleep(1500);
 
+      // =====
+      let itemBtn = await driver.findComponent(ON.text('Option1'));
+      await itemBtn.click();
+      await CommonFunc.sleep(1500);
+      // ======
+
       console.info('MenuSystemMaterialTest_Options_0100 END');
       done();
     });
@@ -407,6 +449,12 @@ export default function MenuSystemMaterialTest() {
       expect(selectComp).not().assertUndefined();
       await selectComp.click();
       await CommonFunc.sleep(1500);
+
+      // =====
+      let itemBtn = await driver.findComponent(ON.text('Option1'));
+      await itemBtn.click();
+      await CommonFunc.sleep(1500);
+      // ======
 
       console.info('MenuSystemMaterialTest_Options_0200 END');
       done();
@@ -430,6 +478,12 @@ export default function MenuSystemMaterialTest() {
       await selectComp.click();
       await CommonFunc.sleep(1500);
 
+      // =====
+      let itemBtn = await driver.findComponent(ON.text('Option1'));
+      await itemBtn.click();
+      await CommonFunc.sleep(1500);
+      // ======
+
       console.info('MenuSystemMaterialTest_Options_0300 END');
       done();
     });
@@ -451,6 +505,12 @@ export default function MenuSystemMaterialTest() {
       expect(selectComp).not().assertUndefined();
       await selectComp.click();
       await CommonFunc.sleep(1500);
+
+      // =====
+      let itemBtn = await driver.findComponent(ON.text('Option1'));
+      await itemBtn.click();
+      await CommonFunc.sleep(1500);
+      // ======
 
       console.info('MenuSystemMaterialTest_Options_0400 END');
       done();
@@ -474,6 +534,12 @@ export default function MenuSystemMaterialTest() {
       await selectComp.click();
       await CommonFunc.sleep(1500);
 
+      // =====
+      let itemBtn = await driver.findComponent(ON.text('Option1'));
+      await itemBtn.click();
+      await CommonFunc.sleep(1500);
+      // ======
+
       console.info('MenuSystemMaterialTest_Options_0500 END');
       done();
     });
@@ -495,6 +561,12 @@ export default function MenuSystemMaterialTest() {
       expect(selectComp).not().assertUndefined();
       await selectComp.click();
       await CommonFunc.sleep(1500);
+
+      // =====
+      let itemBtn = await driver.findComponent(ON.text('Option1'));
+      await itemBtn.click();
+      await CommonFunc.sleep(1500);
+      // ======
 
       console.info('MenuSystemMaterialTest_Options_0600 END');
       done();
@@ -518,6 +590,12 @@ export default function MenuSystemMaterialTest() {
       await selectComp.click();
       await CommonFunc.sleep(1500);
 
+      // =====
+      let itemBtn = await driver.findComponent(ON.text('Option1'));
+      await itemBtn.click();
+      await CommonFunc.sleep(1500);
+      // ======
+
       console.info('MenuSystemMaterialTest_Special_0100 END');
       done();
     });
@@ -539,6 +617,12 @@ export default function MenuSystemMaterialTest() {
       expect(selectComp).not().assertUndefined();
       await selectComp.click();
       await CommonFunc.sleep(1500);
+
+      // =====
+      let itemBtn = await driver.findComponent(ON.text('Option1'));
+      await itemBtn.click();
+      await CommonFunc.sleep(1500);
+      // ======
 
       console.info('MenuSystemMaterialTest_Special_0200 END');
       done();

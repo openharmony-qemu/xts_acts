@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import CommonTest from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index'
+import { describe, expect, beforeAll } from '@ohos/hypium-binary/src/main/indexStatic'
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue, SetValue} from '../../../ets/MainAbility/common/Utils';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';

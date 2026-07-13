@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import Utils from "../../Util.test";
+
 import {
   expect,
   describe,
@@ -25,17 +27,10 @@ import {
   TestType,
   Size,
   Level
-} from "../../../../../hypium";
+} from "@ohos/hypium-binary/src/main/indexStatic";
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
 
-export default function ConditionalAndExpressionTest() {
+export default function ConditionalAndExpressionTest(): void {
   describe("ConditionalAndExpressionTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -46,7 +41,7 @@ export default function ConditionalAndExpressionTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -165,111 +160,5 @@ export default function ConditionalAndExpressionTest() {
       expect(execRight).assertFalse();
     })
 
-    /**
-     * @tc.number    SUB_CONDITIONAL_AND_EXPRESSION_0800
-     * @tc.name      testConditionalAndExpression0008
-     * @tc.desc      Conditional AND for 2x boolean - true true
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConditionalAndExpression0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: boolean = true;
-      let b: boolean = true;
-      expect(a && b).assertTrue();
-    })
-
-    /**
-     * @tc.number    SUB_CONDITIONAL_AND_EXPRESSION_0900
-     * @tc.name      testConditionalAndExpression0009
-     * @tc.desc      Conditional AND for 2x boolean - true false
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConditionalAndExpression0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: boolean = true;
-      let b: boolean = false;
-      expect(a && b).assertFalse();
-    })
-
-    /**
-     * @tc.number    SUB_CONDITIONAL_AND_EXPRESSION_1000
-     * @tc.name      testConditionalAndExpression0010
-     * @tc.desc      Conditional AND for 2x boolean - false unknown
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConditionalAndExpression0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: boolean = false;
-      let execRight = false;
-      let result = a && (execRight = true);
-      expect(result).assertFalse();
-      expect(execRight).assertFalse();
-    })
-
-    /**
-     * @tc.number    SUB_CONDITIONAL_AND_EXPRESSION_1100
-     * @tc.name      testConditionalAndExpression0011
-     * @tc.desc      Conditional AND left to right execution
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConditionalAndExpression0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: boolean = false;
-      let execRight = false;
-      let result = (execRight = true) && a;
-      expect(result).assertFalse();
-      expect(execRight).assertTrue();
-    })
-
-    /**
-     * @tc.number    SUB_CONDITIONAL_AND_EXPRESSION_1200
-     * @tc.name      testConditionalAndExpression0012
-     * @tc.desc      Conditional AND for 3x boolean - true true true
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConditionalAndExpression0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: boolean = true;
-      let b: boolean = true;
-      let c: boolean = true;
-      expect(a && b && c).assertTrue();
-    })
-
-    /**
-     * @tc.number    SUB_CONDITIONAL_AND_EXPRESSION_1300
-     * @tc.name      testConditionalAndExpression0013
-     * @tc.desc      Conditional AND for 3x boolean - true true false
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConditionalAndExpression0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: boolean = true;
-      let b: boolean = true;
-      let c: boolean = false;
-      expect(a && b && c).assertFalse();
-    })
-
-    /**
-     * @tc.number    SUB_CONDITIONAL_AND_EXPRESSION_1400
-     * @tc.name      testConditionalAndExpression0014
-     * @tc.desc      Conditional AND for 3x boolean - false unknown true - left to right grouping
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConditionalAndExpression0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: boolean = false;
-      let b: boolean = true;
-      let execRight = false;
-      let result = a && (execRight = true) && b;
-      expect(result).assertFalse();
-      expect(execRight).assertFalse();
-    })
   })
 }

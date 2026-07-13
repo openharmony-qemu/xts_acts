@@ -378,6 +378,8 @@ export const sessionGetZoomRatio: () => number; // return current ZoomRatio
 
 export const sessionSetZoomRatio: (a: number) => number;
 
+export const sessionGetZoomPointInfoSize: () => number;
+
 export const sessionGetZoomPointInfos: (a: number) => number;
 
 export const sessionDeleteZoomPointInfos: (a: number) => number;
@@ -686,20 +688,6 @@ export const getColorTint: (index: number) => number;
 export const getZoomPointInfos: (index: number) => number;
 
 export const deleteZoomPointInfo: (index: number) => number;
-
-export const getEnumNotificationName: (index: number) => number;
-
-export const getEnumProximityStateForFocus: (index: number) => number;
-
-export const registerNotificationReceivedCallback: (index: number) => number;
-
-export const unregisterNotificationReceivedCallback: (index: number) => number;
-
-export const getNotificationName: (index: number) => number;
-
-export const getProximityStateForFocus: (index: number) => number;
-
-export const destroyCameraNotificationInfo: (index: number) => number;
 
 export const createPhotoCaptureSettingExt: (index: number) => number;
 

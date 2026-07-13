@@ -67,7 +67,6 @@ struct Index {
           console.info("key==>" + this.str)
           this.isReceive = -1;
           switch (this.str) {
-
             case "testCloseError001": {
               try {	 
                  this.ports = this.controller.createWebMessagePorts(true);	 

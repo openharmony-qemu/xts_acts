@@ -19,7 +19,7 @@ import type common from '@ohos.app.ability.common';
 import type { BusinessError } from '@ohos.base';
 import certManagerDialog from '@ohos.security.certManagerDialog';
 import { priRsaCredData } from './utils/common/common_parameter';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
 import hilog from '@ohos.hilog';
 import { canIUse } from '@internal.full.global';
 import { GlobalContext } from '../testrunner/OpenHarmonyTestRunner';

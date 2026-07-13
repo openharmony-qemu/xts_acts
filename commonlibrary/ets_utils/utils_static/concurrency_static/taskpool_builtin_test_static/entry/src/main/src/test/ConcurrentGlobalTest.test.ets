@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from "@ohos/hypium-binary/src/main/indexStatic";
 import type { BusinessError } from '@ohos.base';
 import {test_Global_test_001,test_Global_test_002,test_Global_test_003,test_Global_test_004,test_Global_test_005,test_Global_test_006,test_Global_test_007,test_Global_test_008,test_Global_test_009,test_Global_test_010,
   test_Global_test_011,test_Global_test_012,test_Global_test_013,test_Global_test_014,test_Global_test_015,test_Global_test_016,test_Global_test_017,test_Global_test_018,test_Global_test_019,test_Global_test_020,

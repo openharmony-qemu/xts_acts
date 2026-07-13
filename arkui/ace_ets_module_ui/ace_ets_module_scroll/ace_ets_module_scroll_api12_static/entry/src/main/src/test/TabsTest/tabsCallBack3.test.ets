@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -77,6 +77,7 @@ export default function tabsCallBack3() {
 it('tabsCallBack3_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[tabsCallBack3_static_0100] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let btn = await driver.findComponent(ON.id('tabs_callback_index_3'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1500);

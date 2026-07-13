@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, describe, it, expect, TestType, Size, Level } from "../../../hypium/index"
+import { beforeAll, describe, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic"
 import { Driver, PenKey, PenKeyOperation, PenMode, Point, TouchOptions, PenKeyOperationOptions } from '@kit.TestKit'
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'

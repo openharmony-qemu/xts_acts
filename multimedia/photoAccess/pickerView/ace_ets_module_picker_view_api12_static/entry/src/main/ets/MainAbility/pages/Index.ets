@@ -15,7 +15,7 @@
  */
 
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { Hypium } from '../../../../hypium/index'
+import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic'
 import testsuite from '../../../src/test/List.test'
 import { Entry, Component, Flex, Text, FlexOptions, FlexDirection, FlexAlign, ItemAlign, FontWeight} from '@ohos.arkui.component';
 import { Router } from '@ohos.arkui.UIContext'

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Level, Size } from "../../../hypium/index";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Level, Size } from "@ohos/hypium-binary/src/main/indexStatic";
 import  Utils  from "./Util.test";
 
 export default function BuiltinsToLocaleStringTest(): void {

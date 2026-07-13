@@ -25,9 +25,7 @@ const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
 export default function webViewControllerErrorCodeSecond() {
-
   describe('WebViewControllerErrorCodeSecondTestSuite', () => {
-
     beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {
         url: 'testability/pages/webViewControllerErrorCodeSecond',

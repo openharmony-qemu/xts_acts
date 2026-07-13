@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-binary/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -85,7 +85,7 @@ it('StateUndefinedTest0010_static_001', Level.LEVEL0, async (done: () => void): 
       await CommonFunc.sleep(1000);
       let obj1 = JSON.parseJsonElement(inspector.getInspectorByKey('tvStateValue'));
       console.info("[StateSet0010TestJsunit] component obj1 content is: " + JSON.stringify(obj1.getElement('$attrs').getString('content')));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual('stateValue:null');
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual('stateValue:undefined');
       await CommonFunc.sleep(1000);
       let obj2 = JSON.parseJsonElement(inspector.getInspectorByKey('tvPropValue'));
       console.info("[StateSet0010TestJsunit] component obj2 content is: " + JSON.stringify(obj2.getElement('$attrs').getString('content')));

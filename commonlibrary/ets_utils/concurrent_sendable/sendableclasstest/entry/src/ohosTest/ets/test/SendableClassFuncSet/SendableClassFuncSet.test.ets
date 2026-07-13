@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType, afterAll } from '@ohos/hypium';
 import {
   ISendable,
   ModifiedTopLevelSendableFunction,
@@ -34,6 +34,11 @@ new SendableStaticFuncSetClass();
 
 export default function sendableDefaultFuncSetClassTest() {
   describe('ActsSendableFuncSetClassTest', () => {
+    afterAll(async () => {
+      console.info('afterAll called');
+      await new Promise<void>((resolve)=>setTimeout(resolve,100))
+    });
+
     /**
      * @tc.name   testSendableFuncSetClass0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SENDABLE_FUNC_SET_CLASS_0100

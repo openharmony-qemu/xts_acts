@@ -15,7 +15,7 @@
  */
 import distributedAccount from '@ohos.account.distributedAccount'
 import Want from '@ohos.app.ability.Want';
-import { describe, it, expect, TestType, Size, Level, beforeEach } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeEach } from "@ohos/hypium-binary/src/main/indexStatic";
 import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 

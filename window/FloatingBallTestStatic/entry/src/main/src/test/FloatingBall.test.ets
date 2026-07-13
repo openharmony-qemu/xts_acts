@@ -15,7 +15,7 @@
  */
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import floatingBall from '@ohos.window.floatingBall';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level} from '../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level} from '@ohos/hypium-binary/src/main/indexStatic';
 import { BusinessError, Callback } from '@ohos.base';
 import { common, Want } from '@kit.AbilityKit';
 import window from '@ohos.window';
