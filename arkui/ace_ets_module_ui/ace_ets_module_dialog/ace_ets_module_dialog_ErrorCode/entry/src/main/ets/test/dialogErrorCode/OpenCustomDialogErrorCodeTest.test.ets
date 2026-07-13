@@ -37,7 +37,8 @@ export default function OpenCustomDialogErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_OPENCD_CONTENT_NULL_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_OPENCD_CONTENT_NULL_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_OPENCD_CONTENT_NULL_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('OpenCustomDialogErrorCodeTest_btn_content_null'));
@@ -49,6 +50,7 @@ export default function OpenCustomDialogErrorCodeTest() {
       expect(status).assertEqual('PASS');
       done();
     });
+
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_OPENCD_CONTENT_NUM_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_OPENCD_CONTENT_NUM_0100
@@ -57,7 +59,8 @@ export default function OpenCustomDialogErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_OPENCD_CONTENT_NUM_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_OPENCD_CONTENT_NUM_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_OPENCD_CONTENT_NUM_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('OpenCustomDialogErrorCodeTest_btn_content_number'));
@@ -69,6 +72,7 @@ export default function OpenCustomDialogErrorCodeTest() {
       expect(status).assertEqual('PASS');
       done();
     });
+
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_OPENCD_CONTENT_STR_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_OPENCD_CONTENT_STR_0100
@@ -77,7 +81,8 @@ export default function OpenCustomDialogErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_OPENCD_CONTENT_STR_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_OPENCD_CONTENT_STR_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_OPENCD_CONTENT_STR_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('OpenCustomDialogErrorCodeTest_btn_content_string'));
@@ -89,6 +94,7 @@ export default function OpenCustomDialogErrorCodeTest() {
       expect(status).assertEqual('PASS');
       done();
     });
+
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_OPENCD_OPTIONS_NUM_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_OPENCD_OPTIONS_NUM_0100
@@ -97,7 +103,8 @@ export default function OpenCustomDialogErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_OPENCD_OPTIONS_NUM_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_OPENCD_OPTIONS_NUM_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_OPENCD_OPTIONS_NUM_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('OpenCustomDialogErrorCodeTest_btn_options_number'));
@@ -109,6 +116,7 @@ export default function OpenCustomDialogErrorCodeTest() {
       expect(status).assertEqual('PASS');
       done();
     });
+
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_OPENCD_DUP_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_OPENCD_DUP_0100
@@ -117,7 +125,8 @@ export default function OpenCustomDialogErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_OPENCD_DUP_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_OPENCD_DUP_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_OPENCD_DUP_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('OpenCustomDialogErrorCodeTest_btn_duplicate'));
@@ -129,6 +138,7 @@ export default function OpenCustomDialogErrorCodeTest() {
       expect(status).assertEqual('PASS');
       done();
     });
+
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_OPENCD_NORMAL_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_OPENCD_NORMAL_0100
@@ -137,7 +147,8 @@ export default function OpenCustomDialogErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_OPENCD_NORMAL_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_OPENCD_NORMAL_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_OPENCD_NORMAL_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('OpenCustomDialogErrorCodeTest_btn_normal'));

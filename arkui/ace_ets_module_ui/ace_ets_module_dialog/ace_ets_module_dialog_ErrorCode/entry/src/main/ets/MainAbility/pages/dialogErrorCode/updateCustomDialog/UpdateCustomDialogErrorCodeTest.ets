@@ -20,7 +20,10 @@
  */
 import { ComponentContent, dialog as dialogApi, DialogPresenter } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { TestResult, makeResult, TextParams, commonTextBuilder, DialogButtonBody, DialogMessageBody, DialogPresentResult, DialogSheetBody, SimpleDialogOptions } from '../common/CommonHelper';
+import {
+  TestResult, makeResult, TextParams, commonTextBuilder, DialogButtonBody,
+  DialogMessageBody, DialogPresentResult, DialogSheetBody, SimpleDialogOptions
+} from '../common/CommonHelper';
 import { resourceManager } from '@kit.LocalizationKit';
 
 class Params {

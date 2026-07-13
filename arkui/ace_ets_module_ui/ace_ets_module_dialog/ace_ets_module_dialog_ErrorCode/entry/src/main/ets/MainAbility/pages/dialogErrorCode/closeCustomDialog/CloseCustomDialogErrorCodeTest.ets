@@ -20,7 +20,10 @@
  */
 import { ComponentContent, DialogPresenter } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { TestResult, makeResult, TextParams, commonTextBuilder, DialogButtonBody, DialogMessageBody, DialogPresentResult, DialogSheetBody, SimpleDialogOptions } from '../common/CommonHelper';
+import {
+  TestResult, makeResult, TextParams, commonTextBuilder, DialogButtonBody,
+  DialogMessageBody, DialogPresentResult, DialogSheetBody, SimpleDialogOptions
+} from '../common/CommonHelper';
 import { resourceManager } from '@kit.LocalizationKit';
 
 class Params {
@@ -410,7 +413,9 @@ struct CloseCustomDialogErrorCodeTest {
           uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
       }
       let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
-      let presentRes: DialogPresentResult = await (dialog.present as Function)(cn as ESObject) as DialogPresentResult as DialogPresentResult;
+      let presentFn = dialog.present as Function;
+      let presentRes: DialogPresentResult =
+        await presentFn(cn as ESObject) as DialogPresentResult;
       await (dialog.dismiss as Function)(presentRes.dialogId);
       try {
         (dialog.dismiss as Function)(presentRes.dialogId)

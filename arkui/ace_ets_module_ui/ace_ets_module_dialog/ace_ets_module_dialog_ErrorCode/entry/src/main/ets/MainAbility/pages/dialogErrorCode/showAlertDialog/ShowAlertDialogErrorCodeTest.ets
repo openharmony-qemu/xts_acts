@@ -188,7 +188,11 @@ struct ShowAlertDialogErrorCodeTest {
   async testNormal() {
     try {
       let dialog = this.getUIContext().getDialogPresenter();
-      await dialog.present({ title: 'Alert', message: { content: 'AlertMsg' }, buttons: [{ value: 'OK', action: () => {} }] });
+      await dialog.present({
+        title: 'Alert',
+        message: { content: 'AlertMsg' },
+        buttons: [{ value: 'OK', action: () => {} }]
+      });
       this.addResult('正常showAlertDialog', 0, 0);
     } catch (err) { this.addResult('正常showAlertDialog', 0, (err as BusinessError).code); }
   }

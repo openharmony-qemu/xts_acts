@@ -58,7 +58,8 @@ export default class CommonFunc {
     CommonFunc.rect_right = JSON.parse('[' + rectInfo[1] + ']')[0] + globalThis.winLeft;
     CommonFunc.rect_bottom = JSON.parse('[' + rectInfo[1] + ']')[1] + globalThis.winTop;
     return CommonFunc.rect_value = {
-      "left": CommonFunc.rect_left, "top": CommonFunc.rect_top, "right": CommonFunc.rect_right, "bottom": CommonFunc.rect_bottom
+      "left": CommonFunc.rect_left, "top": CommonFunc.rect_top,
+      "right": CommonFunc.rect_right, "bottom": CommonFunc.rect_bottom
     }
   }
 

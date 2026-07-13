@@ -24,7 +24,9 @@ export default function PresentCustomDialogErrorCodeTest() {
   beforeEach(async (done: () => void): Promise<void> => {
     console.info('[ARKUI_DYN] PresentCustomDialogErrorCodeTest beforeEach');
     router.clear();
-    await router.pushUrl({ url: 'MainAbility/pages/dialogErrorCode/presentCustomDialog/PresentCustomDialogErrorCodeTest' });
+    const pageUrl =
+      'MainAbility/pages/dialogErrorCode/presentCustomDialog/PresentCustomDialogErrorCodeTest';
+    await router.pushUrl({ url: pageUrl });
     await CommonFunc.sleep(2500);
     done();
   });
@@ -37,7 +39,8 @@ export default function PresentCustomDialogErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_CONTENT_NULL_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_CONTENT_NULL_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_CONTENT_NULL_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('PresentCustomDialogErrorCodeTest_btn_content_null'));
@@ -49,6 +52,7 @@ export default function PresentCustomDialogErrorCodeTest() {
       expect(status).assertEqual('PASS');
       done();
     });
+
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_CONTENT_NUM_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_CONTENT_NUM_0100
@@ -57,7 +61,8 @@ export default function PresentCustomDialogErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_CONTENT_NUM_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_CONTENT_NUM_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_CONTENT_NUM_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('PresentCustomDialogErrorCodeTest_btn_content_number'));
@@ -69,6 +74,7 @@ export default function PresentCustomDialogErrorCodeTest() {
       expect(status).assertEqual('PASS');
       done();
     });
+
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_DUP_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_DUP_0100
@@ -77,7 +83,8 @@ export default function PresentCustomDialogErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_DUP_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_DUP_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_DUP_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('PresentCustomDialogErrorCodeTest_btn_duplicate'));
@@ -89,6 +96,7 @@ export default function PresentCustomDialogErrorCodeTest() {
       expect(status).assertEqual('PASS');
       done();
     });
+
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_NORMAL_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_NORMAL_0100
@@ -97,7 +105,8 @@ export default function PresentCustomDialogErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_NORMAL_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_NORMAL_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_NORMAL_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('PresentCustomDialogErrorCodeTest_btn_normal'));

@@ -19,7 +19,8 @@ import ShowActionMenuErrorCodeTest from './dialogErrorCode/ShowActionMenuErrorCo
 import ShowActionSheetErrorCodeTest from './dialogErrorCode/ShowActionSheetErrorCodeTest.test';
 import OpenCustomDialogErrorCodeTest from './dialogErrorCode/OpenCustomDialogErrorCodeTest.test';
 import PresentCustomDialogErrorCodeTest from './dialogErrorCode/PresentCustomDialogErrorCodeTest.test';
-import OpenCustomDialogWithControllerErrorCodeTest from './dialogErrorCode/OpenCustomDialogWithControllerErrorCodeTest.test';
+import OpenCustomDialogWithControllerErrorCodeTest
+  from './dialogErrorCode/OpenCustomDialogWithControllerErrorCodeTest.test';
 import UpdateCustomDialogErrorCodeTest from './dialogErrorCode/UpdateCustomDialogErrorCodeTest.test';
 import CloseCustomDialogErrorCodeTest from './dialogErrorCode/CloseCustomDialogErrorCodeTest.test';
 

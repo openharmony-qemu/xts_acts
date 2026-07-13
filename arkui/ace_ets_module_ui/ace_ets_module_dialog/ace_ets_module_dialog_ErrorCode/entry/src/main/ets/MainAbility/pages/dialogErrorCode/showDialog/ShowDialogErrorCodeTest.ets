@@ -19,7 +19,10 @@
  * 错误码: 401, 100001, 103306
  */
 import { BusinessError } from '@kit.BasicServicesKit';
-import { TestResult, makeResult, DialogButtonBody, DialogMessageBody, DialogPresentResult, DialogSheetBody, SimpleDialogOptions } from '../common/CommonHelper';
+import {
+  TestResult, makeResult, DialogButtonBody, DialogMessageBody, DialogPresentResult,
+  DialogSheetBody, SimpleDialogOptions
+} from '../common/CommonHelper';
 import { common } from '@kit.AbilityKit';
 import { DialogPresenter, dialog as dialogApi } from '@kit.ArkUI';
 

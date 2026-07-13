@@ -37,7 +37,8 @@ export default function CloseCustomDialogErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_NO_ARGS_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_NO_ARGS_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_NO_ARGS_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('CloseCustomDialogErrorCodeTest_btn_no_args'));
@@ -49,6 +50,7 @@ export default function CloseCustomDialogErrorCodeTest() {
       expect(status).assertEqual('PASS');
       done();
     });
+
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_NULL_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_NULL_0100
@@ -57,7 +59,8 @@ export default function CloseCustomDialogErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_NULL_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_NULL_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_NULL_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('CloseCustomDialogErrorCodeTest_btn_target_null'));
@@ -69,6 +72,7 @@ export default function CloseCustomDialogErrorCodeTest() {
       expect(status).assertEqual('PASS');
       done();
     });
+
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_NOT_OPEN_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_NOT_OPEN_0100
@@ -77,7 +81,8 @@ export default function CloseCustomDialogErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_NOT_OPEN_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_NOT_OPEN_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_NOT_OPEN_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('CloseCustomDialogErrorCodeTest_btn_not_opened'));
@@ -89,6 +94,7 @@ export default function CloseCustomDialogErrorCodeTest() {
       expect(status).assertEqual('PASS');
       done();
     });
+
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_BAD_ID_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_BAD_ID_0100
@@ -97,7 +103,8 @@ export default function CloseCustomDialogErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_BAD_ID_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_BAD_ID_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_BAD_ID_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('CloseCustomDialogErrorCodeTest_btn_invalid_id'));
@@ -109,6 +116,7 @@ export default function CloseCustomDialogErrorCodeTest() {
       expect(status).assertEqual('PASS');
       done();
     });
+
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_BY_CONTENT_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_BY_CONTENT_0100
@@ -117,7 +125,8 @@ export default function CloseCustomDialogErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_BY_CONTENT_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_BY_CONTENT_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_BY_CONTENT_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('CloseCustomDialogErrorCodeTest_btn_dismiss_content'));

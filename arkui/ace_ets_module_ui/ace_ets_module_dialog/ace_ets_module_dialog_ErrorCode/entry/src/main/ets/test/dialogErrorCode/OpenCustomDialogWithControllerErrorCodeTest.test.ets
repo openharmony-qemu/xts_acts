@@ -24,7 +24,10 @@ export default function OpenCustomDialogWithControllerErrorCodeTest() {
   beforeEach(async (done: () => void): Promise<void> => {
     console.info('[ARKUI_DYN] OpenCustomDialogWithControllerErrorCodeTest beforeEach');
     router.clear();
-    await router.pushUrl({ url: 'MainAbility/pages/dialogErrorCode/openCustomDialogWithController/OpenCustomDialogWithControllerErrorCodeTest' });
+    const pageUrl =
+      'MainAbility/pages/dialogErrorCode/openCustomDialogWithController/' +
+      'OpenCustomDialogWithControllerErrorCodeTest';
+    await router.pushUrl({ url: pageUrl });
     await CommonFunc.sleep(2500);
     done();
   });
@@ -37,7 +40,8 @@ export default function OpenCustomDialogWithControllerErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_OCDC_CONTENT_NULL_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_OCDC_CONTENT_NULL_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_OCDC_CONTENT_NULL_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('OpenCustomDialogWithControllerErrorCodeTest_btn_content_null'));
@@ -49,6 +53,7 @@ export default function OpenCustomDialogWithControllerErrorCodeTest() {
       expect(status).assertEqual('PASS');
       done();
     });
+
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_OCDC_CONTENT_NUM_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_OCDC_CONTENT_NUM_0100
@@ -57,7 +62,8 @@ export default function OpenCustomDialogWithControllerErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_OCDC_CONTENT_NUM_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_OCDC_CONTENT_NUM_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_OCDC_CONTENT_NUM_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('OpenCustomDialogWithControllerErrorCodeTest_btn_content_number'));
@@ -69,6 +75,7 @@ export default function OpenCustomDialogWithControllerErrorCodeTest() {
       expect(status).assertEqual('PASS');
       done();
     });
+
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_OCDC_DUP_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_OCDC_DUP_0100
@@ -77,7 +84,8 @@ export default function OpenCustomDialogWithControllerErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_OCDC_DUP_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_OCDC_DUP_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_OCDC_DUP_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('OpenCustomDialogWithControllerErrorCodeTest_btn_duplicate'));
@@ -89,6 +97,7 @@ export default function OpenCustomDialogWithControllerErrorCodeTest() {
       expect(status).assertEqual('PASS');
       done();
     });
+
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_OCDC_NORMAL_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_OCDC_NORMAL_0100
@@ -97,7 +106,8 @@ export default function OpenCustomDialogWithControllerErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_OCDC_NORMAL_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_OCDC_NORMAL_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_OCDC_NORMAL_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('OpenCustomDialogWithControllerErrorCodeTest_btn_normal'));

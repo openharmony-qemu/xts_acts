@@ -37,7 +37,8 @@ export default function ShowAlertDialogErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_SHOWALERT_NO_ARGS_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_SHOWALERT_NO_ARGS_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_SHOWALERT_NO_ARGS_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('ShowAlertDialogErrorCodeTest_btn_no_args'));
@@ -49,6 +50,7 @@ export default function ShowAlertDialogErrorCodeTest() {
       expect(status).assertEqual('PASS');
       done();
     });
+
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_SHOWALERT_NULL_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_SHOWALERT_NULL_0100
@@ -57,7 +59,8 @@ export default function ShowAlertDialogErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_SHOWALERT_NULL_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_SHOWALERT_NULL_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_SHOWALERT_NULL_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('ShowAlertDialogErrorCodeTest_btn_null'));
@@ -69,6 +72,7 @@ export default function ShowAlertDialogErrorCodeTest() {
       expect(status).assertEqual('PASS');
       done();
     });
+
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_SHOWALERT_NUMBER_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_SHOWALERT_NUMBER_0100
@@ -77,7 +81,8 @@ export default function ShowAlertDialogErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_SHOWALERT_NUMBER_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_SHOWALERT_NUMBER_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_SHOWALERT_NUMBER_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('ShowAlertDialogErrorCodeTest_btn_number'));
@@ -89,6 +94,7 @@ export default function ShowAlertDialogErrorCodeTest() {
       expect(status).assertEqual('PASS');
       done();
     });
+
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_SHOWALERT_STRING_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_SHOWALERT_STRING_0100
@@ -97,7 +103,8 @@ export default function ShowAlertDialogErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_SHOWALERT_STRING_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_SHOWALERT_STRING_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_SHOWALERT_STRING_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('ShowAlertDialogErrorCodeTest_btn_string'));
@@ -109,6 +116,7 @@ export default function ShowAlertDialogErrorCodeTest() {
       expect(status).assertEqual('PASS');
       done();
     });
+
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_SHOWALERT_NORMAL_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_SHOWALERT_NORMAL_0100
@@ -117,7 +125,8 @@ export default function ShowAlertDialogErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_SHOWALERT_NORMAL_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_SHOWALERT_NORMAL_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_SHOWALERT_NORMAL_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('ShowAlertDialogErrorCodeTest_btn_normal'));

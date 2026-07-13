@@ -20,7 +20,10 @@ import { DialogPresenter } from '@kit.ArkUI';
  * 错误码: 401(参数错误), 100001(内部错误), 103306(弹窗节点挂载失败)
  */
 import { BusinessError } from '@kit.BasicServicesKit';
-import { TestResult, makeResult, DialogButtonBody, DialogMessageBody, DialogPresentResult, DialogSheetBody, SimpleDialogOptions } from '../common/CommonHelper';
+import {
+  TestResult, makeResult, DialogButtonBody, DialogMessageBody, DialogPresentResult,
+  DialogSheetBody, SimpleDialogOptions
+} from '../common/CommonHelper';
 
 @Entry
 @Component

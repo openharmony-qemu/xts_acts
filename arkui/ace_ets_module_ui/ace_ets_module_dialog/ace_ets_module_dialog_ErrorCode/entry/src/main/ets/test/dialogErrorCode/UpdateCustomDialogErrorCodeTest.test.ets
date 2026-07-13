@@ -24,7 +24,9 @@ export default function UpdateCustomDialogErrorCodeTest() {
   beforeEach(async (done: () => void): Promise<void> => {
     console.info('[ARKUI_DYN] UpdateCustomDialogErrorCodeTest beforeEach');
     router.clear();
-    await router.pushUrl({ url: 'MainAbility/pages/dialogErrorCode/updateCustomDialog/UpdateCustomDialogErrorCodeTest' });
+    const pageUrl =
+      'MainAbility/pages/dialogErrorCode/updateCustomDialog/UpdateCustomDialogErrorCodeTest';
+    await router.pushUrl({ url: pageUrl });
     await CommonFunc.sleep(2500);
     done();
   });
@@ -37,7 +39,8 @@ export default function UpdateCustomDialogErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_CONTENT_NULL_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_CONTENT_NULL_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_CONTENT_NULL_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('UpdateCustomDialogErrorCodeTest_btn_content_null'));
@@ -49,6 +52,7 @@ export default function UpdateCustomDialogErrorCodeTest() {
       expect(status).assertEqual('PASS');
       done();
     });
+
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_NO_ARGS_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_NO_ARGS_0100
@@ -57,7 +61,8 @@ export default function UpdateCustomDialogErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_NO_ARGS_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_NO_ARGS_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_NO_ARGS_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('UpdateCustomDialogErrorCodeTest_btn_no_args'));
@@ -69,6 +74,7 @@ export default function UpdateCustomDialogErrorCodeTest() {
       expect(status).assertEqual('PASS');
       done();
     });
+
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_DISPOSED_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_DISPOSED_0100
@@ -77,7 +83,8 @@ export default function UpdateCustomDialogErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_DISPOSED_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_DISPOSED_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_DISPOSED_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('UpdateCustomDialogErrorCodeTest_btn_disposed'));
@@ -89,6 +96,7 @@ export default function UpdateCustomDialogErrorCodeTest() {
       expect(status).assertEqual('PASS');
       done();
     });
+
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_NOT_OPEN_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_NOT_OPEN_0100
@@ -97,7 +105,8 @@ export default function UpdateCustomDialogErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_NOT_OPEN_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_NOT_OPEN_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_NOT_OPEN_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('UpdateCustomDialogErrorCodeTest_btn_not_opened'));
@@ -109,6 +118,7 @@ export default function UpdateCustomDialogErrorCodeTest() {
       expect(status).assertEqual('PASS');
       done();
     });
+
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_CLOSED_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_CLOSED_0100
@@ -117,7 +127,8 @@ export default function UpdateCustomDialogErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_CLOSED_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_CLOSED_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_CLOSED_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('UpdateCustomDialogErrorCodeTest_btn_already_closed'));
@@ -129,6 +140,7 @@ export default function UpdateCustomDialogErrorCodeTest() {
       expect(status).assertEqual('PASS');
       done();
     });
+
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_NORMAL_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_NORMAL_0100
@@ -137,7 +149,8 @@ export default function UpdateCustomDialogErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_NORMAL_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_NORMAL_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_NORMAL_0100] START');
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('UpdateCustomDialogErrorCodeTest_btn_normal'));
