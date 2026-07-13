@@ -22,7 +22,7 @@ import { BusinessError } from '@ohos.base';
 // import { MyCallback } from '../models/MyCallback';
 import window from '@ohos.window'
 import { UIContext } from '@ohos.arkui.UIContext';
-import { AppStorage , LocalStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage , LocalStorage, ReadonlyEnvKey } from '@ohos.arkui.stateManagement';
 import type { AsyncCallback, Callback} from '@ohos.base'
 import common from '@ohos.app.ability.common';
 import { ColorMetrics, screenshot } from '@kit.ArkUI';
@@ -5079,6 +5079,40 @@ export default function WindowLayoutTest() {
                     }
                 }
             })
+
+        /**
+     * @tc.name ReadonlyEnvKeyEnum_0100
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_READONLYENUM_0100
+     * @tc.desc ReadonlyEnvKeyEnum_0100
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('ReadonlyEnvKeyEnum_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let caseName = 'ReadonlyEnvKeyEnum_0100 ';
+      console.info(`${caseName} begin`);
+      try {
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_AVOID_AREA ${JSON.stringify(ReadonlyEnvKey.WINDOW_AVOID_AREA)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_AVOID_AREA_PX ${JSON.stringify(ReadonlyEnvKey.WINDOW_AVOID_AREA_PX)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_SIZE ${JSON.stringify(ReadonlyEnvKey.WINDOW_SIZE)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_SIZE_PX ${JSON.stringify(ReadonlyEnvKey.WINDOW_SIZE_PX)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_IS_FOCUSED ${JSON.stringify(ReadonlyEnvKey.WINDOW_IS_FOCUSED)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_IS_HIGHLIGHTED ${JSON.stringify(ReadonlyEnvKey.WINDOW_IS_HIGHLIGHTED)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_DISPLAY_ID ${JSON.stringify(ReadonlyEnvKey.WINDOW_DISPLAY_ID)}`)
+        console.log(`${caseName} ReadonlyEnvKey.WINDOW_SYSTEM_DENSITY ${JSON.stringify(ReadonlyEnvKey.WINDOW_SYSTEM_DENSITY)}`)
+        expect(ReadonlyEnvKey.WINDOW_AVOID_AREA != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_AVOID_AREA_PX != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_SIZE != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_SIZE_PX != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_IS_FOCUSED != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_IS_HIGHLIGHTED != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_DISPLAY_ID != null).assertTrue()
+        expect(ReadonlyEnvKey.WINDOW_SYSTEM_DENSITY != null).assertTrue()
+        done()
+      } catch (exception) {
+        console.error(`${caseName} Failed. Cause code: ${exception.code}, message: ${exception.message}`);
+      }
+    });
 
 
     })
