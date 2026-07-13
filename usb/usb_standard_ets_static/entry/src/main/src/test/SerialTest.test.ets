@@ -881,7 +881,7 @@ export default function SerialTest() {
           let writeBuffer: Uint8Array = new Uint8Array(100).fill(1);
           serialManager.open(openPortId);
           let length = await serialManager.write(openPortId, writeBuffer, undefined);
-          hilog.info(domain, TAG, 'usb testWriteUndefined length:' + length);
+          hilog.info(domain, TAG, `usb testWriteUndefined length: ${length}`);
           expect(length >= 0).assertTrue();
           serialManager.close(openPortId);
           done();

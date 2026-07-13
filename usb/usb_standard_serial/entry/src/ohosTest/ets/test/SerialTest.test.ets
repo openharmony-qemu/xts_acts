@@ -86,7 +86,7 @@ async function checkDevice() {
 export default function SerialTest() {
   describe('SerialTest', () => {
     let openPortId: number = -1;
-    beforeAll(async (done: Function) => {
+    beforeAll(async () => {
       try {
         let portList: serial.SerialPort[] = serial.getPortList();
         if (portList && portList.length > 0) {
@@ -95,7 +95,7 @@ export default function SerialTest() {
           let hasRight: boolean = serial.hasSerialRight(openPortId);
           if (!hasRight) {
             console.info(TAG, 'beforeEach: requestSerialRight start');
-            let futureRes: Promise<boolean> = serial.requestSerialRight(openPortId);
+            let futureRes: Promise<boolean> = await serial.requestSerialRight(openPortId);
             await driveFn();
             try {
               let hasRight: boolean = await futureRes;
@@ -105,7 +105,7 @@ export default function SerialTest() {
             }
           }
         } else {
-          done();
+          console.info(TAG, 'beforeAll no device plugin');
         }
       } catch (error) {
         console.info(TAG, 'beforeAll error: ', JSON.stringify(error));
