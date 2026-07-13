@@ -123,16 +123,16 @@ export default function RefreshGlobalHttpProxyTest() {
       });
 
     /**
-     * @tc.name    testRefreshGlobalHttpProxyWithNormal0300
-     * @tc.number  SUB_Network_RefreshGlobalHttpProxy_WithNormal_0300
-     * @tc.desc    Test refreshGlobalHttpProxy after setting invalid proxy config, verify returns null or error.
+     * @tc.name    testRefreshGlobalHttpProxyWithErrorCode0300
+     * @tc.number  SUB_Network_RefreshGlobalHttpProxy_WithErrorCode_0300
+     * @tc.desc    Test refreshGlobalHttpProxy after setting invalid proxy config, verify returns error code 2100003.
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testRefreshGlobalHttpProxyWithNormal0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testRefreshGlobalHttpProxyWithErrorCode0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
-        const caseName: string = 'testRefreshGlobalHttpProxyWithNormal0300';
+        const caseName: string = 'testRefreshGlobalHttpProxyWithErrorCode0300';
         console.info(`${caseName}---Start`);
         try {
           const invalidProxy: connection.HttpProxy = {
@@ -236,16 +236,16 @@ export default function RefreshGlobalHttpProxyTest() {
       });
 
     /**
-     * @tc.name    testRefreshGlobalHttpProxyWithNormal0600
-     * @tc.number  SUB_Network_RefreshGlobalHttpProxy_WithNormal_0600
-     * @tc.desc    Test refreshGlobalHttpProxy when system internal error occurs, verify returns system error.
+     * @tc.name    testRefreshGlobalHttpProxyWithErrorCode0600
+     * @tc.number  SUB_Network_RefreshGlobalHttpProxy_WithErrorCode_0600
+     * @tc.desc    Test refreshGlobalHttpProxy when system internal error occurs, verify returns error code 2100003.
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
-    it('testRefreshGlobalHttpProxyWithNormal0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testRefreshGlobalHttpProxyWithErrorCode0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        const caseName: string = 'testRefreshGlobalHttpProxyWithNormal0600';
+        const caseName: string = 'testRefreshGlobalHttpProxyWithErrorCode0600';
         console.info(`${caseName}---Start`);
         try {
           const httpProxy = await connection.refreshGlobalHttpProxy();
