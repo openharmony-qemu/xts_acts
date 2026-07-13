@@ -478,6 +478,8 @@ export default function ActsCommonEventManagerSupportTest() {
           .assertEqual('usual.event.data.DISK_BAD_REMOVAL')
         expect(commonEventManager.Support.COMMON_EVENT_DISK_UNMOUNTABLE.valueOf())
           .assertEqual('usual.event.data.DISK_UNMOUNTABLE')
+        expect(commonEventManager.Support.COMMON_EVENT_DISK_VOLUME_STATE_CHANGE.valueOf())
+          .assertEqual('usual.event.data.DISK_VOLUME_STATE_CHANGE')
         expect(commonEventManager.Support.COMMON_EVENT_DISK_EJECT.valueOf()).assertEqual('usual.event.data.DISK_EJECT')
         expect(commonEventManager.Support.COMMON_EVENT_VOLUME_REMOVED.valueOf())
           .assertEqual('usual.event.data.VOLUME_REMOVED')

@@ -426,6 +426,7 @@ export default function ActsCommonEventManagerSupportTest() {
       expect(commonEventManager.Support.COMMON_EVENT_VOLUME_EJECT).assertEqual('usual.event.data.VOLUME_EJECT')
       expect(commonEventManager.Support.COMMON_EVENT_VISIBLE_ACCOUNTS_UPDATED).assertEqual('usual.event.data.VISIBLE_ACCOUNTS_UPDATED')
       expect(commonEventManager.Support.COMMON_EVENT_ACCOUNT_DELETED).assertEqual('usual.event.data.ACCOUNT_DELETED')
+      expect(commonEventManager.Support.COMMON_EVENT_DISK_VOLUME_STATE_CHANGE).assertEqual('usual.event.data.DISK_VOLUME_STATE_CHANGE')
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_1900 END`)
     })
 
