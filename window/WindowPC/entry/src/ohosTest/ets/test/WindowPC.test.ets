@@ -2476,6 +2476,16 @@ export default function windowPCTest() {
         try {
           let windowStageStart = await startAbility(message, context);
           let windowClassStart = windowStageStart.getMainWindowSync();
+          let windowStatus = windowClassStart.getWindowStatus();
+          console.info(`${message} windowStatus: ${windowStatus}`);
+          if (windowStatus != window.WindowStatusType.FLOATING) {
+            console.info(`${message} window is not floating, recover to floating`);
+            await windowClassStart.recover();
+            await sleep(1000);
+            windowStatus = windowClassStart.getWindowStatus();
+            console.info(`${message} after recover, windowStatus: ${windowStatus}`);
+            expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
+          }
           let displayId = windowClassStart.getWindowProperties().displayId
           let moveConfiguration: window.MoveConfiguration = {
             displayId: displayId
@@ -2486,17 +2496,18 @@ export default function windowPCTest() {
           }).catch(async (err: BusinessError) => {
             console.error(`${message} promise Failed to moveWindowToAsync, Cause code ${err.code}, message ${err.message} `);
             expect(err.code).assertEqual(801);
-            done();
           })
           await sleep(1000)
           let rect = windowClassStart.getWindowProperties().windowRect;
           console.info(`${message} windowRect:${JSON.stringify(rect)}`);
           expect(rect.left).assertEqual(300);
           expect(rect.top).assertEqual(300);
+          await terminateAbility(message);
           done();
         } catch (err) {
           console.log(`${message} Failed to test MoveConfiguration.errcode:${err.code}, Cause: ${err.message}`)
           expect(err.code).assertEqual(801);
+          await terminateAbility(message);
           done();
         }
       }
