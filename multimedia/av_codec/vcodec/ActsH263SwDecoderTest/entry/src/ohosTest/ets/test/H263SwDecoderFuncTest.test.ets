@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { hilog } from '@kit.PerFormanceAnalysisKit'
+import { hilog } from '@kit.PerFormanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType. Size} from '@ohos/hypium';
 import testNapi from 'libh263swdecoder_test.so';
 import fs from '@ohos.file.fs';
