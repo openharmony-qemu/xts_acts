@@ -22,9 +22,6 @@ import { ComponentContent, DialogPresenter } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { TestResult, makeResult } from '../common/CommonHelper';
 import { resourceManager } from '@kit.LocalizationKit';
-import { systemShare } from '@kit.ShareKit';
-import { uniformTypeDescriptor as utd } from '@kit.ArkData';
-import { common } from '@kit.AbilityKit';
 
 interface DialogControllerOptions {
   controller: CustomDialogController;
@@ -59,22 +56,14 @@ struct OpenCustomDialogWithControllerErrorCodeTest {
     this.results.unshift(makeResult(label, expectedCode, actualCode));
   }
 
-  private share(): void {
-    let shareData: systemShare.SharedData = new systemShare.SharedData({
-      utd: utd.UniformDataType.TEXT,
-      content: '这是一段文本内容'
-    });
-    let controller: systemShare.ShareController = new systemShare.ShareController(shareData);
-    let uiContext: UIContext = this.getUIContext();
-    let context: common.UIAbilityContext = uiContext.getHostContext() as common.UIAbilityContext;
-    controller.show(context, {
-      selectionMode: systemShare.SelectionMode.SINGLE,
-      previewMode: systemShare.SharePreviewMode.DETAIL,
-    }).then(() => {
+  private async share(): Promise<void> {
+    const helper = await import('../common/ShareKitHelper');
+    try {
+      await helper.showSystemShare(this.getUIContext());
       console.info('ShareController show success.');
-    }).catch((error: BusinessError) => {
-      console.error(`ShareController show error. code: ${error.code}, message: ${error.message}`);
-    });
+    } catch (error) {
+      helper.logShareError(error as BusinessError);
+    }
   }
 
   build() {

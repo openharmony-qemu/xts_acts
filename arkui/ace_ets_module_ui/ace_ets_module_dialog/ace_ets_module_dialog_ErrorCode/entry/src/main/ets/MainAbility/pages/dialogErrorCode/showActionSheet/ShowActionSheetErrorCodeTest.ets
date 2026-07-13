@@ -13,13 +13,17 @@
  * limitations under the License.
  */
 
+import { DialogPresenter } from '@kit.ArkUI';
 /**
  * showActionSheet 错误码测试
  * 对应新接口: present(options: DialogOptions)
  * 错误码: 401(参数错误), 100001(内部错误), 103306(弹窗节点挂载失败)
  */
 import { BusinessError } from '@kit.BasicServicesKit';
-import { TestResult, makeResult } from '../common/CommonHelper';
+import {
+  TestResult, makeResult, DialogButtonBody, DialogMessageBody, DialogPresentResult,
+  DialogSheetBody, SimpleDialogOptions
+} from '../common/CommonHelper';
 
 @Entry
 @Component
@@ -97,17 +101,19 @@ struct ShowActionSheetErrorCodeTest {
 
   async testNormal() {
     try {
-      let dialog = this.getUIContext().getDialogPresenter();
-      await dialog.present({
-        title: 'Title', sheets: [{ title: 'OK', action: () => {} }]
-      });
+      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
+      let sheet = new DialogSheetBody('OK', (): void => {});
+      let opts = new SimpleDialogOptions();
+      opts.title = 'Title';
+      opts.sheets = [sheet];
+      await (dialog.present as Function)(opts as Object);
       this.addResult('正常ActionSheet', 0, 0);
     } catch (err) { this.addResult('正常ActionSheet', 0, (err as BusinessError).code); }
   }
 
   async testNoArgs() {
     try {
-      let dialog = this.getUIContext().getDialogPresenter();
+      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
       await (dialog.present as Function)();
       this.addResult('不传参数', 401, -1);
     } catch (err) { this.addResult('不传参数', 401, (err as BusinessError).code); }
@@ -115,7 +121,7 @@ struct ShowActionSheetErrorCodeTest {
 
   async testNull() {
     try {
-      let dialog = this.getUIContext().getDialogPresenter();
+      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
       await (dialog.present as Function)(null);
       this.addResult('传null', 401, -1);
     } catch (err) { this.addResult('传null', 401, (err as BusinessError).code); }
@@ -123,7 +129,7 @@ struct ShowActionSheetErrorCodeTest {
 
   async testNumber() {
     try {
-      let dialog = this.getUIContext().getDialogPresenter();
+      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
       await (dialog.present as Function)(123);
       this.addResult('传数字', 401, -1);
     } catch (err) { this.addResult('传数字', 401, (err as BusinessError).code); }
@@ -131,8 +137,11 @@ struct ShowActionSheetErrorCodeTest {
 
   async testEmptySheets() {
     try {
-      let dialog = this.getUIContext().getDialogPresenter();
-      await dialog.present({ title: 'T', sheets: [] });
+      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
+      let opts = new SimpleDialogOptions();
+      opts.title = 'T';
+      opts.sheets = [];
+      await (dialog.present as Function)(opts as Object);
       this.addResult('sheets为空', 0, 0);
     } catch (err) { this.addResult('sheets为空', 401, (err as BusinessError).code); }
   }

@@ -19,11 +19,12 @@
  * 错误码: 401, 100001, 103306
  */
 import { BusinessError } from '@kit.BasicServicesKit';
-import { TestResult, makeResult } from '../common/CommonHelper';
-import { systemShare } from '@kit.ShareKit';
-import { uniformTypeDescriptor as utd } from '@kit.ArkData';
+import {
+  TestResult, makeResult, DialogButtonBody, DialogMessageBody, DialogPresentResult,
+  DialogSheetBody, SimpleDialogOptions
+} from '../common/CommonHelper';
 import { common } from '@kit.AbilityKit';
-import { dialog as dialogApi } from '@kit.ArkUI'
+import { DialogPresenter, dialog as dialogApi } from '@kit.ArkUI';
 
 @Entry
 @Component
@@ -34,24 +35,14 @@ struct ShowDialogErrorCodeTest {
     this.results.unshift(makeResult(label, expectedCode, actualCode));
   }
 
-  private share() {
-    // 构造ShareData，需配置一条有效数据信息
-    let shareData: systemShare.SharedData = new systemShare.SharedData({
-      utd: utd.UniformDataType.TEXT,
-      content: '这是一段文本内容'
-    });
-    // 进行分享面板显示
-    let controller: systemShare.ShareController = new systemShare.ShareController(shareData);
-    let uiContext: UIContext = this.getUIContext();
-    let context: common.UIAbilityContext = uiContext.getHostContext() as common.UIAbilityContext;
-    controller.show(context, {
-      selectionMode: systemShare.SelectionMode.SINGLE,
-      previewMode: systemShare.SharePreviewMode.DETAIL,
-    }).then(() => {
+  private async share(): Promise<void> {
+    const helper = await import('../common/ShareKitHelper');
+    try {
+      await helper.showSystemShare(this.getUIContext());
       console.info('ShareController show success.');
-    }).catch((error: BusinessError) => {
-      console.error(`ShareController show error. code: ${error.code}, message: ${error.message}`);
-    });
+    } catch (error) {
+      helper.logShareError(error as BusinessError);
+    }
   }
 
   build() {
@@ -200,8 +191,13 @@ struct ShowDialogErrorCodeTest {
 
   async testNormal() {
     try {
-      let dialog = this.getUIContext().getDialogPresenter();
-      await dialog.present({ title: 'T', message: { content: 'M' }, buttons: [{ value: 'OK', action: () => {} }] });
+      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
+      let okBtn = new DialogButtonBody('OK', (): void => {});
+      let opts = new SimpleDialogOptions();
+      opts.title = 'T';
+      opts.message = new DialogMessageBody('M');
+      opts.buttons = [okBtn];
+      await (dialog.present as Function)(opts as Object);
       this.addResult('正常showDialog', 0, 0);
     } catch (err) { this.addResult('正常showDialog', 0, (err as BusinessError).code); }
   }

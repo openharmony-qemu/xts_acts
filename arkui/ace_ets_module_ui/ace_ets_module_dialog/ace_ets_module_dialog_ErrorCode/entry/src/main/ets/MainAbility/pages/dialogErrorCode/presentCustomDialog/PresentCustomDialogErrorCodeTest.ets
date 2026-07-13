@@ -18,12 +18,13 @@
  * 对应新接口: present(content: ComponentContent, options?)
  * 错误码: 401(参数错误), 100001(内部错误), 103301(内容错误), 103302(内容已存在), 103306(挂载失败)
  */
-import { ComponentContent, dialog as dialogApi } from '@kit.ArkUI';
+import { ComponentContent, dialog as dialogApi, DialogPresenter } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { TestResult, makeResult, TextParams, commonTextBuilder } from '../common/CommonHelper';
+import {
+  TestResult, makeResult, TextParams, commonTextBuilder, DialogButtonBody,
+  DialogMessageBody, DialogPresentResult, DialogSheetBody, SimpleDialogOptions
+} from '../common/CommonHelper';
 import { resourceManager } from '@kit.LocalizationKit';
-import { systemShare } from '@kit.ShareKit';
-import { uniformTypeDescriptor as utd } from '@kit.ArkData';
 import { common } from '@kit.AbilityKit';
 
 class Params {
@@ -55,24 +56,14 @@ struct PresentCustomDialogErrorCodeTest {
     this.results.unshift(makeResult(label, expectedCode, actualCode));
   }
 
-  private share() {
-    // 构造ShareData，需配置一条有效数据信息
-    let shareData: systemShare.SharedData = new systemShare.SharedData({
-      utd: utd.UniformDataType.TEXT,
-      content: '这是一段文本内容'
-    });
-    // 进行分享面板显示
-    let controller: systemShare.ShareController = new systemShare.ShareController(shareData);
-    let uiContext: UIContext = this.getUIContext();
-    let context: common.UIAbilityContext = uiContext.getHostContext() as common.UIAbilityContext;
-    controller.show(context, {
-      selectionMode: systemShare.SelectionMode.SINGLE,
-      previewMode: systemShare.SharePreviewMode.DETAIL,
-    }).then(() => {
+  private async share(): Promise<void> {
+    const helper = await import('../common/ShareKitHelper');
+    try {
+      await helper.showSystemShare(this.getUIContext());
       console.info('ShareController show success.');
-    }).catch((error: BusinessError) => {
-      console.error(`ShareController show error. code: ${error.code}, message: ${error.message}`);
-    });
+    } catch (error) {
+      helper.logShareError(error as BusinessError);
+    }
   }
 
   build() {
@@ -246,10 +237,10 @@ struct PresentCustomDialogErrorCodeTest {
         cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('Normal',
           uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
       }
-      let dialog = this.getUIContext().getDialogPresenter();
-      let id = await dialog.present(cn);
+      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
+      await (dialog.present as Function)(cn as Object);
       this.addResult('正常presentCustomDialog', 0, 0);
-      await dialog.dismiss(cn);
+      await (dialog.dismiss as Function)(cn as Object);
     } catch (err) { this.addResult('正常presentCustomDialog', 0, (err as BusinessError).code); }
   }
 
@@ -295,16 +286,16 @@ struct PresentCustomDialogErrorCodeTest {
         cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('Dup',
           uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
       }
-      let dialog = this.getUIContext().getDialogPresenter();
-      await dialog.present(cn);
+      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
+      await (dialog.present as Function)(cn as Object);
       this.addResult('第一次打开', 0, 0);
       try {
-        await dialog.present(cn);
+        await (dialog.present as Function)(cn as Object);
         this.addResult('重复打开', 103302, -1);
       } catch (innerErr) {
         this.addResult('重复打开', 103302, (innerErr as BusinessError).code);
       }
-      await dialog.dismiss(cn);
+      await (dialog.dismiss as Function)(cn as Object);
     } catch (err) { this.addResult('重复打开', 103302, (err as BusinessError).code); }
   }
 }
