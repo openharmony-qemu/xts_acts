@@ -40,11 +40,28 @@ static napi_value Add(napi_env env, napi_callback_info info)
     napi_valuetype valuetype1;
     napi_typeof(env, args[1], &valuetype1);
 
+    // 参数类型校验
+    if (valuetype0 != napi_number || valuetype1 != napi_number) {
+        napi_value err;
+        napi_create_int32(env, 401, &err);
+        return err;
+    }
+
     double value0;
-    napi_get_value_double(env, args[0], &value0);
+    napi_status status0 = napi_get_value_double(env, args[0], &value0);
+    if (status0 != napi_ok) {
+        napi_value err;
+        napi_create_int32(env, 401, &err);
+        return err;
+    }
 
     double value1;
-    napi_get_value_double(env, args[1], &value1);
+    napi_status status1 = napi_get_value_double(env, args[1], &value1);
+    if (status1 != napi_ok) {
+        napi_value err;
+        napi_create_int32(env, 401, &err);
+        return err;
+    }
 
     napi_value sum;
     napi_create_double(env, value0 + value1, &sum);
