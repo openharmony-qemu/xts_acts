@@ -1317,7 +1317,7 @@ export default function ErrorsOverallTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_OVERALL_0073
      * @tc.name testErrorsOverall0073
-     * @tc.desc Verify stack property is optional and non-empty when present
+     * @tc.desc Verify error stack first frame locations for multiple error types
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1327,10 +1327,10 @@ export default function ErrorsOverallTest(): void {
       const err2 = new RangeError("r");
       const err3 = new TypeError("t");
       const err4 = new AggregateError([new Error("x")], "a");
-      expect(err1.stack).not().assertEqual("");
-      expect(err2.stack).not().assertEqual("");
-      expect(err3.stack).not().assertEqual("");
-      expect(err4.stack).not().assertEqual("");
+      expect((err1.stack as string).split('\n')[0].split('(')[1]).assertEqual("entry/src/main/src/test/errors/ErrorsOverallTest.test.ets:1316:0)");
+      expect((err2.stack as string).split('\n')[0].split('(')[1]).assertEqual("Errors.ets:159:0)");
+      expect((err3.stack as string).split('\n')[0].split('(')[1]).assertEqual("Errors.ets:593:0)");
+      expect((err4.stack as string).split('\n')[0].split('(')[1]).assertEqual("Errors.ets:710:0)");
     });
 
     /**

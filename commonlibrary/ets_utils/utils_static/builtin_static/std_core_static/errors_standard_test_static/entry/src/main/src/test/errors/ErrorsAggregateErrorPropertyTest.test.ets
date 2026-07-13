@@ -1279,14 +1279,14 @@ export default function ErrorsAggregateErrorPropertyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERRORS_AGGREGATE_ERROR_PROPERTY_0082
      * @tc.name testErrorsAggregateErrorProperty0082
-     * @tc.desc Verify stack property remains string or undefined
+     * @tc.desc Verify AggregateError stack first frame location
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('testErrorsAggregateErrorProperty0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const agg = new AggregateError([new Error("a")], "msg");
-      expect(agg.stack).not().assertEqual("");
+      expect((agg.stack as string).split('\n')[0].split('(')[1]).assertEqual("Errors.ets:710:0)");
     });
 
     /**
