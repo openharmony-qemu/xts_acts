@@ -83,6 +83,9 @@ import rdbStoreAttachErrorTest from "./RdbStoreAttachError.test";
 import RdbStoreArkGetRdbStoreSyncTest from "./RdbStoreArkGetRdbStoreSyncEts.test";
 import RdbStoreArkGetRdbStoreSyncAddTest from "./RdbStoreArkGetRdbStoreSyncEtsAdd.test"
 import RelationalStoreSyncExTest from "./RelationalStoreSyncEx.test";
+
+import RelationalStoreArkPredicatesQueryByStepTest from "./RelationalStoreArkPredicatesQueryByStep.test";
+import RelationalStoreArkSqlQueryByStepTest from "./RelationalStoreArkSqlQueryByStep.test";
 export default function testsuite() {
   RelationStoreRdbStoreTest();
   RelationalStoreEnumTest();
@@ -169,4 +172,7 @@ export default function testsuite() {
   RdbStoreArkGetRdbStoreSyncTest();
   RdbStoreArkGetRdbStoreSyncAddTest();
   RelationalStoreSyncExTest();
+
+  RelationalStoreArkPredicatesQueryByStepTest();
+  RelationalStoreArkSqlQueryByStepTest();
 }
