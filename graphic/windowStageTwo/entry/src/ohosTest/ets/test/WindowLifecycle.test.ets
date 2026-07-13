@@ -19,7 +19,7 @@ import common from '@ohos.app.ability.common';
 import { BusinessError, settings } from '@kit.BasicServicesKit';
 import * as LoadContentByName from '../testability/pages/WindowTest/LoadContentByName';
 import { abilityAccessCtrl, PermissionRequestResult, Permissions, StartOptions } from '@kit.AbilityKit';
-import { Driver, ON } from '@kit.TestKit';
+import { Driver, MatchPattern, ON } from '@kit.TestKit';
 import deviceInfo from '@ohos.deviceInfo';
 
 let sleep = (sleepMs: number) => new Promise < string > (resolve => setTimeout(resolve, sleepMs));
@@ -122,7 +122,7 @@ async function terminateAbility3(caseName: string) {
   await sleep(1000)
 }
 
-function getPermision() {
+async function getPermision() {
   let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
   let context: common.UIAbilityContext = AppStorage.get('context') as common.UIAbilityContext;
   let permissions: Permissions[] = ["ohos.permission.CUSTOM_SCREEN_CAPTURE"];
@@ -139,9 +139,10 @@ async function ClickButtonDriver() {
   console.info(`come in permissionClick`);
   let driver: Driver = Driver.create();
   console.info(`come in Driver create`);
-  let buttonOne = await driver.findComponent(ON.text('允许'));
+  await sleep(1000);
+  let buttonOne = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 2000);
   console.info(`buttonOne is ${JSON.stringify(buttonOne)}`);
-  if (buttonOne != undefined) {
+  if (buttonOne !== null) {
     await buttonOne.click();
   }
 }
