@@ -577,9 +577,11 @@ export default function windowPCTest() {
      * @tc.level  LEVEL0
      */
     it('test_createSubWindowWithOptions_windowRect_801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const message = 'test_createSubWindowWithOptions_windowRect_801'
+      console.info(`${message} begin`);
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${message} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
       try {
-        const message = 'test_createSubWindowWithOptions_windowRect_801'
-        console.info(`${message} begin`);
         let mainWindow = windowStage.getMainWindowSync();
         let windowLimits: window.WindowLimits = mainWindow.getWindowLimits();
         let minWidth = windowLimits.minWidth ?? 500;
@@ -624,8 +626,13 @@ export default function windowPCTest() {
       } catch (err) {
         const message = 'test_createSubWindowWithOptions_windowRect_801';
         console.error(`${message} Failed to create the subwindow, Cause code ${err.code}, message ${err.message}`);
-        expect().assertFail();
-        done();
+        if (!canIUseRes) {
+          console.error(`${message} The current device does not support SystemCapability.Window.SessionManager`);
+          expect(err.code).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+        done(); 
       }
     });
 
