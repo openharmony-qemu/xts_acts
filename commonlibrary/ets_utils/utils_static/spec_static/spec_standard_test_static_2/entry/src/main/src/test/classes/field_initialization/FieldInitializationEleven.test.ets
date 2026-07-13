@@ -1,4 +1,4 @@
-'use static';
+﻿'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,15 +26,8 @@ import {
   Size,
   Level
 } from "@ohos/hypium-binary/src/main/indexStatic";
+import Utils from '../../Util.test'
 
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
 
 class A_F1090 {
     static field: int
@@ -333,7 +326,7 @@ export default function FieldInitializationElevenTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -435,7 +428,7 @@ export default function FieldInitializationElevenTest(): void {
           ns.A_F1120.field = 7.3
       expect(ns.A_F1120.field instanceof double).assertTrue()
       expect(ns.A_F1120.field).assertEqual(7.3)
-          ns.A_F1120.field = 0
+          ns.A_F1120.field = 0.0
       expect(ns.A_F1120.field instanceof double).assertTrue()
       expect(ns.A_F1120.field).assertEqual(0)
     })

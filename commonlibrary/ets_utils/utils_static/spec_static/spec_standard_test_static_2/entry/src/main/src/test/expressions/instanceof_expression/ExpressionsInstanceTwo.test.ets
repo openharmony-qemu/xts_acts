@@ -1,4 +1,4 @@
-'use static';
+﻿'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,6 +26,8 @@ import {
   Size,
   Level
 } from "@ohos/hypium-binary/src/main/indexStatic";
+import Utils from '../../Util.test'
+import { I8, J, A17, B, C } from '../../Util.test'
 
 let a7: float[] = [1.0f, 1.0f]
 let a11: char[] = [c'a', c'a']
@@ -33,19 +35,6 @@ class A {}
 let a28 = [1.0f, 1.0f]
 let a32 = [c'a', c'a']
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
-interface I8<T> {}
-interface J<T> {}
-class A17<T> implements I8<T> {}
-class B<T> extends A17<T> implements J<T> {}
-class C<T> {}
 let c: C<int>
 enum Color1 { Red, Green }
 enum Color2 { Red, Green }
@@ -79,7 +68,7 @@ export default function ExpressionsInstanceTwoTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

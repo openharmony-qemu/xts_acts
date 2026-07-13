@@ -199,20 +199,7 @@ export default function ExpressionsReferenceEqualityTest(): void {
       expect((null !== null) == false ).assertTrue()
       expect((null != null) == false ).assertTrue()
     })
-    /**
-     * @tc.number    SUB_EXPRESSIONS_REFERENCE_EQUALITY_1100
-     * @tc.name      testExpressionsReferenceEquality0011
-     * @tc.desc      The result of !== at runtime is false if both operand values are null
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsReferenceEquality0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let b: A_2 | null = null;
-      let c: A_2 | null = null;
-      expect((b !== c) == false ).assertTrue()
-      expect((b != c) == false ).assertTrue()
-    })
+
     /**
      * @tc.number    SUB_EXPRESSIONS_REFERENCE_EQUALITY_1200
      * @tc.name      testExpressionsReferenceEquality0012

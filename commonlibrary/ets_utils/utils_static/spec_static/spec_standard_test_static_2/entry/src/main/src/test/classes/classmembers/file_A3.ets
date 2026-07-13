@@ -1,4 +1,4 @@
-'use static';
+﻿'use static'
 class A {
   fld: number
 
