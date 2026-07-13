@@ -154,16 +154,16 @@ export default function RefreshGlobalHttpProxyTest() {
       });
 
     /**
-     * @tc.name    testRefreshGlobalHttpProxyWithNormal0400
-     * @tc.number  SUB_Network_RefreshGlobalHttpProxy_WithNormal_0400
-     * @tc.desc    Test refreshGlobalHttpProxy using Promise way, verify Promise resolves correctly.
+     * @tc.name    testRefreshGlobalHttpProxyWithErrorCode0400
+     * @tc.number  SUB_Network_RefreshGlobalHttpProxy_WithErrorCode_0400
+     * @tc.desc    Test refreshGlobalHttpProxy using Promise way when API not supported, verify Promise rejects with error code 2100003.
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('testRefreshGlobalHttpProxyWithNormal0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: Function) => {
-        const caseName: string = 'testRefreshGlobalHttpProxyWithNormal0400';
+    it('testRefreshGlobalHttpProxyWithErrorCode0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: Function) => {
+        const caseName: string = 'testRefreshGlobalHttpProxyWithErrorCode0400';
         console.info(`${caseName}---Start`);
         try {
           connection.refreshGlobalHttpProxy()
