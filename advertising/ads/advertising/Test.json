@@ -28,6 +28,8 @@
         "mount -o rw,remount /",
         "cp /system/etc/app/install_list_capability.json /etc/advertising/ads_framework/install_list_capability.json",
         "cp /system/etc/app/install_list_capability.json /etc/advertising/ads_framework/install_list_capability_bak.json",
+        "cp /system/variant/phone/base/etc/system_kits_config.json /system/variant/phone/base/etc/system_kits_config_bak.json",
+        "sed -i -z 's/ohos:advertising/ohos:advertising1/g' /system/variant/phone/base/etc/system_kits_config.json",
         "sed -i -z 's/\"install_list\": \\[[[:space:]]*\\n/\"install_list\": [\\n\\t\\t{\\n\\t\\t\\t\"bundleName\": \"com.acts.AdsServiceDemo\",\\n\\t\\t\\t\"app_signature\": [\\n\\t\\t\\t\\t\"6F03B1B296CF815A643266C97B0EC671E91110176A65A7E49741A020091E7D5E\"\\n\\t\\t\\t],\\n\\t\\t\\t\"keepAlive\": true,\\n\\t\\t\\t\"removable\": true,\\n\\t\\t\\t\"allowAppDesktopIconHide\": true,\\n\\t\\t\\t\"allowAppUsePrivilegeExtension\": true,\\n\\t\\t\\t\"allowAppMultiProcess\": true\\n\\t\\t},\\n/' /etc/advertising/ads_framework/install_list_capability.json",
         "cp /etc/advertising/ads_framework/install_list_capability.json /system/etc/app/install_list_capability.json"
       ],
@@ -66,6 +68,8 @@
         "rm -rf /system/etc/app/install_list_capability.json",
         "cp /etc/advertising/ads_framework/install_list_capability_bak.json /system/etc/app/install_list_capability.json",
         "rm -rf /etc/advertising/ads_framework/install_list_capability_bak.json",
+        "cp /system/variant/phone/base/etc/system_kits_config_bak.json /system/variant/phone/base/etc/system_kits_config.json",
+        "rm -rf /system/variant/phone/base/etc/system_kits_config_bak.json",
         "bm uninstall -n com.acts.cloud.ad.test",
         "bm uninstall -n com.acts.AdsServiceDemo",
         "reboot"
