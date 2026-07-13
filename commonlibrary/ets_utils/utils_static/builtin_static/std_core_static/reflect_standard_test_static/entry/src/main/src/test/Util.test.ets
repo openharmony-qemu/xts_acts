@@ -365,7 +365,7 @@ export default class Utils {
   static scalarClassFromFloatFqn(): string { return "std.core.Float"; }
   static scalarClassFromDoubleFqn(): string { return "std.core.Double"; }
   static scalarClassFromNumberFqn(): string { return "std.core.Double"; }
-  static scalarClassFromVoidFqn(): string { return "N"; }
+  static scalarClassFromVoidFqn(): string { return "std.core.Object"; }
 
   /** getParameterType / getParameterTypes primitive spellings. */
   static scalarParameterI8Fqn(): string { return "i8"; }
