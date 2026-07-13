@@ -186,16 +186,16 @@ export default function RefreshGlobalHttpProxyTest() {
       });
 
     /**
-     * @tc.name    testRefreshGlobalHttpProxyWithNormal0500
-     * @tc.number  SUB_Network_RefreshGlobalHttpProxy_WithNormal_0500
-     * @tc.desc    Test refreshGlobalHttpProxy after setting unreachable proxy, verify behavior.
+     * @tc.name    testRefreshGlobalHttpProxyWithErrorCode0500
+     * @tc.number  SUB_Network_RefreshGlobalHttpProxy_WithErrorCode_0500
+     * @tc.desc    Test refreshGlobalHttpProxy after setting unreachable proxy, verify returns error code 2100003.
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
-    it('testRefreshGlobalHttpProxyWithNormal0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testRefreshGlobalHttpProxyWithErrorCode0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        const caseName: string = 'testRefreshGlobalHttpProxyWithNormal0500';
+        const caseName: string = 'testRefreshGlobalHttpProxyWithErrorCode0500';
         console.info(`${caseName}---Start`);
         try {
           const unreachableProxy: connection.HttpProxy = {
@@ -220,7 +220,7 @@ export default function RefreshGlobalHttpProxyTest() {
             port: 0,
             exclusionList: exclusionArray,
             username: "",
-            passward: ""
+            password: ""
           } as connection.HttpProxy).then(() => {
             console.info('clearGlobalHttpProxy end');
           }).catch((error: BusinessError) => {
