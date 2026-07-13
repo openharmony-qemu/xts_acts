@@ -26,7 +26,7 @@ export default function AsprintfChkNdkTest() {
     });
     /**
      * @tc.name   testAsprintfChkNormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_0300
+     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_0100
      * @tc.desc   TC-030: flag=0 basic formatted output
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -42,7 +42,7 @@ export default function AsprintfChkNdkTest() {
 
     /**
      * @tc.name   testAsprintfChkNormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_0301
+     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_0200
      * @tc.desc   TC-031: flag=1 enabled checking
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -58,7 +58,7 @@ export default function AsprintfChkNdkTest() {
 
     /**
      * @tc.name   testAsprintfChkNormal003
-     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_0302
+     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_0300
      * @tc.desc   TC-032: fmt=NULL parameter check
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -74,7 +74,7 @@ export default function AsprintfChkNdkTest() {
 
     /**
      * @tc.name   testAsprintfChkNormal004
-     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_0303
+     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_0400
      * @tc.desc   TC-033: flag=0 vs flag=1 consistency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -90,7 +90,7 @@ export default function AsprintfChkNdkTest() {
 
     /**
      * @tc.name   testAsprintfChkFunc001
-     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_0304
+     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_0500
      * @tc.desc   TC-034: successful return character count
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -106,7 +106,7 @@ export default function AsprintfChkNdkTest() {
 
     /**
      * @tc.name   testAsprintfChkFunc002
-     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_0305
+     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_0600
      * @tc.desc   TC-035: empty string formatting
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -122,7 +122,7 @@ export default function AsprintfChkNdkTest() {
 
     /**
      * @tc.name   testAsprintfChkFunc003
-     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_0306
+     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_0700
      * @tc.desc   TC-036: allocated memory can be freed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -138,7 +138,7 @@ export default function AsprintfChkNdkTest() {
 
     /**
      * @tc.name   testAsprintfChkStable001
-     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_0307
+     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_0800
      * @tc.desc   TC-037: 1000 repeated calls stability
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -154,7 +154,7 @@ export default function AsprintfChkNdkTest() {
 
     /**
      * @tc.name   testAsprintfChkStable002
-     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_0308
+     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_0900
      * @tc.desc   TC-038: multi-thread MT-Safe
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -170,7 +170,7 @@ export default function AsprintfChkNdkTest() {
 
     /**
      * @tc.name   testAsprintfChkSpec001
-     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_0309
+     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_1000
      * @tc.desc   TC-039: dlsym symbol existence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -186,7 +186,7 @@ export default function AsprintfChkNdkTest() {
 
     /**
      * @tc.name   testAsprintfChkSpec002
-     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_0310
+     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_1100
      * @tc.desc   TC-040: function pointer nullptr safety
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -202,7 +202,7 @@ export default function AsprintfChkNdkTest() {
 
     /**
      * @tc.name   testAsprintfChkSpec003
-     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_0311
+     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_1200
      * @tc.desc   TC-041: non-PC stub mode verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -218,7 +218,7 @@ export default function AsprintfChkNdkTest() {
 
     /**
      * @tc.name   testAsprintfChkSpec004
-     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_0312
+     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_1300
      * @tc.desc   TC-042: IsStubMode detection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -234,7 +234,7 @@ export default function AsprintfChkNdkTest() {
 
     /**
      * @tc.name   testAsprintfChkSpec005
-     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_0313
+     * @tc.number SUB_THIRDPARTY_MUSL_ASPRINTF_CHK_1400
      * @tc.desc   TC-043: PC vs non-PC behavior difference
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

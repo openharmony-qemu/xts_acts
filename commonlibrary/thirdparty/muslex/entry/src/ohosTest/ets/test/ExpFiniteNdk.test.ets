@@ -21,14 +21,13 @@ import { deviceInfo } from '@kit.BasicServicesKit';
 export default function ExpFiniteNdkTest() {
   describe('ExpFiniteNdkTest', () => {
 
-    beforeEach(async () => {
-      await Utils.sleep(50);
-    });
+    beforeEach(async () => { await Utils.sleep(50); });
+
     // ==================== 正常参数测试 ====================
 
     /**
      * @tc.name   testExpFiniteNormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0101
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0100
      * @tc.desc   Verify __exp_finite calculates exponential values correctly (zero, positive, negative)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -44,7 +43,7 @@ export default function ExpFiniteNdkTest() {
 
     /**
      * @tc.name   testExpFiniteNormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0102
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0200
      * @tc.desc   Verify __exp_finite calculates large exponential values correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -60,7 +59,7 @@ export default function ExpFiniteNdkTest() {
 
     /**
      * @tc.name   testExpFiniteNormal003
-     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0103
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0300
      * @tc.desc   Verify __exp_finite precision matches standard exp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -74,11 +73,11 @@ export default function ExpFiniteNdkTest() {
       done();
     });
 
-    // ==================== 边界值测试 ====================
+    // ==================== 边界值测�?====================
 
     /**
      * @tc.name   testExpFiniteBoundary001
-     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0104
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0400
      * @tc.desc   Verify __exp_finite overflow boundary (large positive values)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -94,7 +93,7 @@ export default function ExpFiniteNdkTest() {
 
     /**
      * @tc.name   testExpFiniteBoundary002
-     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0105
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0500
      * @tc.desc   Verify __exp_finite underflow boundary (large negative values)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -110,7 +109,7 @@ export default function ExpFiniteNdkTest() {
 
     /**
      * @tc.name   testExpFiniteBoundary003
-     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0106
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0600
      * @tc.desc   Verify __exp_finite near overflow/underflow boundary values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -128,7 +127,7 @@ export default function ExpFiniteNdkTest() {
 
     /**
      * @tc.name   testExpFiniteAbnormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0107
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0700
      * @tc.desc   Verify __exp_finite handles NaN and Inf inputs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -142,11 +141,11 @@ export default function ExpFiniteNdkTest() {
       done();
     });
 
-    // ==================== 稳定性测试 ====================
+    // ==================== 稳定性测�?====================
 
     /**
      * @tc.name   testExpFiniteStable001
-     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0108
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0800
      * @tc.desc   Verify __exp_finite returns consistent results on multiple calls
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -162,7 +161,7 @@ export default function ExpFiniteNdkTest() {
 
     /**
      * @tc.name   testExpFiniteStable002
-     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0109
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0900
      * @tc.desc   Verify __exp_finite handles massive number of calls without crash
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -176,11 +175,11 @@ export default function ExpFiniteNdkTest() {
       done();
     });
 
-    // ==================== 多线程测试 ====================
+    // ==================== 多线程测�?====================
 
     /**
      * @tc.name   testExpFiniteThread001
-     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0110
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_1000
      * @tc.desc   Verify __exp_finite is thread-safe with concurrent calls
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -196,7 +195,7 @@ export default function ExpFiniteNdkTest() {
 
     /**
      * @tc.name   testExpFiniteThread002
-     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_0111
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP_FINITE_1100
      * @tc.desc   Verify __exp_finite thread-safety with mixed parameters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
