@@ -127,7 +127,7 @@ struct Second {
         })
       }
 
-      Web({ src: 'www.example.com', controller: this.webviewCtl, incognitoMode: true })
+      Web({ src: 'www.example.com', controller: this.webviewCtl, incognitoMode: false })
         .fileAccess(true)
         .javaScriptOnDocumentEnd(this.scripts)
         .enableNativeEmbedMode(false)
