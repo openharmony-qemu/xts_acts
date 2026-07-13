@@ -14,23 +14,22 @@
  */
 
 export default class ErrorCodeAssert {
-  static readStatus(pagePrefix: string): string {
-    let strJson: string = getInspectorByKey(pagePrefix + '_result_status');
+  private static readContent(inspectorKey: string): string {
+    let strJson: string = getInspectorByKey(inspectorKey);
     let obj: Record<string, Object> = JSON.parse(strJson);
-    let raw: string = JSON.stringify(obj.$attrs.content);
+    let attrs: Record<string, Object> = obj['$attrs'] as Record<string, Object>;
+    let raw: string = JSON.stringify(attrs['content']);
     if (raw.length >= 2 && raw.charAt(0) === '\"') {
       return raw.substring(1, raw.length - 1);
     }
     return raw;
   }
 
+  static readStatus(pagePrefix: string): string {
+    return ErrorCodeAssert.readContent(pagePrefix + '_result_status');
+  }
+
   static readLabel(pagePrefix: string): string {
-    let strJson: string = getInspectorByKey(pagePrefix + '_result_label');
-    let obj: Record<string, Object> = JSON.parse(strJson);
-    let raw: string = JSON.stringify(obj.$attrs.content);
-    if (raw.length >= 2 && raw.charAt(0) === '\"') {
-      return raw.substring(1, raw.length - 1);
-    }
-    return raw;
+    return ErrorCodeAssert.readContent(pagePrefix + '_result_label');
   }
 }

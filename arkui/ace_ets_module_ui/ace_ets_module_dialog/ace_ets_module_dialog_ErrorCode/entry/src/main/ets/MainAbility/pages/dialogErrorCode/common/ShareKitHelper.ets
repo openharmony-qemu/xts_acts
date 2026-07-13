@@ -13,25 +13,21 @@
  * limitations under the License.
  */
 
+import picker from '@ohos.file.picker';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { systemShare } from '@kit.ShareKit';
-import { uniformTypeDescriptor as utd } from '@kit.ArkData';
 import { common } from '@kit.AbilityKit';
 
-/** 仅在被 UEC 用例动态 import 时加载，避免 ShareKit 拖垮整页路由。 */
+/** OpenHarmony CI 无 @kit.ShareKit：用 DocumentViewPicker 拉起系统面板模拟 UEC 前置态。 */
 export async function showSystemShare(uiContext: UIContext): Promise<void> {
-  let shareData: systemShare.SharedData = new systemShare.SharedData({
-    utd: utd.UniformDataType.TEXT,
-    content: '这是一段文本内容'
-  });
-  let controller: systemShare.ShareController = new systemShare.ShareController(shareData);
   let context: common.UIAbilityContext = uiContext.getHostContext() as common.UIAbilityContext;
-  await controller.show(context, {
-    selectionMode: systemShare.SelectionMode.SINGLE,
-    previewMode: systemShare.SharePreviewMode.DETAIL,
+  let docPicker: picker.DocumentViewPicker = new picker.DocumentViewPicker(context);
+  docPicker.select().then(() => {
+    console.info('DocumentViewPicker select finished.');
+  }).catch((error: BusinessError) => {
+    console.error(`DocumentViewPicker error. code: ${error.code}, message: ${error.message}`);
   });
 }
 
 export function logShareError(error: BusinessError): void {
-  console.error(`ShareController show error. code: ${error.code}, message: ${error.message}`);
+  console.error(`UEC overlay error. code: ${error.code}, message: ${error.message}`);
 }
