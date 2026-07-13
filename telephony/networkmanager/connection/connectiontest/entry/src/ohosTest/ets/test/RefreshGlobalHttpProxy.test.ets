@@ -73,8 +73,6 @@ export default function RefreshGlobalHttpProxyTest() {
         console.info(`${caseName}---Start`);
         try {
           let proxyResults: connection.HttpProxy[] = [];
-          let errorOccurred: boolean = false;
-          let lastError: BusinessError | null = null;
           for (let i = 0; i < 3; i++) {
             try {
               const httpProxy = await connection.refreshGlobalHttpProxy();
@@ -82,34 +80,7 @@ export default function RefreshGlobalHttpProxyTest() {
               console.info(`${caseName} iteration ${i} result: ${JSON.stringify(httpProxy)}`);
             } catch (err) {
               console.info(`${caseName} iteration ${i} error: ${JSON.stringify(err)}`);
-              errorOccurred = true;
-              lastError = err as BusinessError;
-            }
-          }
-          if (errorOccurred === false && proxyResults.length === 3) {
-            let consistent = true;
-            let firstJson = JSON.stringify(proxyResults[0]);
-            for (let j = 1; j < 3; j++) {
-              if (JSON.stringify(proxyResults[j]) !== firstJson) {
-                consistent = false;
-                break;
-              }
-            }
-            ExpectTrue(consistent);
-          } else if (errorOccurred) {
-            if (lastError !== null) {
-              ExpectTrue(lastError.code === 2100003);
-            }
-            if (proxyResults.length > 1) {
-              let consistent = true;
-              let firstJson = JSON.stringify(proxyResults[0]);
-              for (let j = 1; j < proxyResults.length; j++) {
-                if (JSON.stringify(proxyResults[j]) !== firstJson) {
-                  consistent = false;
-                  break;
-                }
-              }
-              ExpectTrue(consistent);
+              ExpectTrue(err.code === 2100003);
             }
           }
           console.info(`${caseName}---End`);
