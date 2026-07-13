@@ -12,11 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-export type Callback = (message: ESObject) => void
+export type Callback = (message: Object) => void
 
 export class MessageManager {
-  callback?: Callback = undefined
-  callbacks: Map<string, Callback> = new Map()
+  public callback?: Callback = undefined
+  public callbacks: Map<string, Callback> = new Map()
 
   constructor() {
 
@@ -31,7 +31,7 @@ export class MessageManager {
     this.callbacks.set(type, callback)
   }
 
-  notify(message: ESObject, type?: string) {
+  notify(message: Object, type?: string) {
     if (type == undefined) {
       if (this.callback !== undefined) {
         this.callback(message)

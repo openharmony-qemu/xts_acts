@@ -16,7 +16,7 @@
 export default class ErrorCodeAssert {
   static readStatus(pagePrefix: string): string {
     let strJson: string = getInspectorByKey(pagePrefix + '_result_status');
-    let obj: Record<string, ESObject> = JSON.parse(strJson);
+    let obj: Record<string, Object> = JSON.parse(strJson);
     let raw: string = JSON.stringify(obj.$attrs.content);
     if (raw.length >= 2 && raw.charAt(0) === '\"') {
       return raw.substring(1, raw.length - 1);
@@ -26,7 +26,7 @@ export default class ErrorCodeAssert {
 
   static readLabel(pagePrefix: string): string {
     let strJson: string = getInspectorByKey(pagePrefix + '_result_label');
-    let obj: Record<string, ESObject> = JSON.parse(strJson);
+    let obj: Record<string, Object> = JSON.parse(strJson);
     let raw: string = JSON.stringify(obj.$attrs.content);
     if (raw.length >= 2 && raw.charAt(0) === '\"') {
       return raw.substring(1, raw.length - 1);
