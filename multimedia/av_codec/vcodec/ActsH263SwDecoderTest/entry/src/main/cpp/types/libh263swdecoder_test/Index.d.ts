@@ -20,5 +20,5 @@
  */
 export const VideoDecodeSyncSw263Func0010Test: () => number;
 export const VideoDecodeSyncSw263Func0020Test: () => number;
-export const VideoDecodeSyncSw263Func0030Test: () => number;
+export const VideoDecodeSyncSw263Func0040Test: () => number;
 export const VideoDecodeSw263BlankFrame0010Test: () => number;
