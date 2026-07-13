@@ -215,19 +215,21 @@ export default function RefreshGlobalHttpProxyTest() {
           ExpectTrue(businessError.code === 2100003 || businessError.code === 2100002);
           let exclusionStr = "";
           let exclusionArray = exclusionStr.split(',');
-          connection.setGlobalHttpProxy({
-            host: "",
-            port: 0,
-            exclusionList: exclusionArray,
-            username: "",
-            password: ""
-          } as connection.HttpProxy).then(() => {
+          try {
+            await connection.setGlobalHttpProxy({
+              host: "",
+              port: 0,
+              exclusionList: exclusionArray,
+              username: "",
+              password: ""
+            } as connection.HttpProxy);
             console.info('clearGlobalHttpProxy end');
-          }).catch((error: BusinessError) => {
-            if (error) {
-              console.error('clearGlobalHttpProxy faild. '+JSON.stringify(error));
+          } catch (error) {
+            const businessError = error as BusinessError;
+            if (businessError) {
+              console.error('clearGlobalHttpProxy faild. '+JSON.stringify(businessError));
             }
-          });
+          }
           console.info(`${caseName}---End`);
           done();
         }
