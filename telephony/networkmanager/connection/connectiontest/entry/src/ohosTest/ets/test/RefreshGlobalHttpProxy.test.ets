@@ -35,16 +35,16 @@ const ExpectTrue: (n: boolean) => void = (n: boolean) => {
 export default function RefreshGlobalHttpProxyTest() {
   describe('RefreshGlobalHttpProxyTest', () => {
     /**
-     * @tc.name    testRefreshGlobalHttpProxyWithNormal0100
-     * @tc.number  SUB_Network_RefreshGlobalHttpProxy_WithNormal_0100
-     * @tc.desc    Test refreshGlobalHttpProxy in normal case, verify returns valid HttpProxy.
+     * @tc.name    testRefreshGlobalHttpProxyWithErrorCode0100
+     * @tc.number  SUB_Network_RefreshGlobalHttpProxy_WithErrorCode_0100
+     * @tc.desc    Test refreshGlobalHttpProxy when API not supported, verify returns error code 2100003.
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('testRefreshGlobalHttpProxyWithNormal0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testRefreshGlobalHttpProxyWithErrorCode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        const caseName: string = 'testRefreshGlobalHttpProxyWithNormal0100';
+        const caseName: string = 'testRefreshGlobalHttpProxyWithErrorCode0100';
         console.info(`${caseName}---Start`);
         try {
           const httpProxy = await connection.refreshGlobalHttpProxy();
@@ -60,20 +60,21 @@ export default function RefreshGlobalHttpProxyTest() {
       });
 
     /**
-     * @tc.name    testRefreshGlobalHttpProxyWithNormal0200
-     * @tc.number  SUB_Network_RefreshGlobalHttpProxy_WithNormal_0200
-     * @tc.desc    Test refreshGlobalHttpProxy multiple times, verify result consistency.
+     * @tc.name    testRefreshGlobalHttpProxyWithErrorCode0200
+     * @tc.number  SUB_Network_RefreshGlobalHttpProxy_WithErrorCode_0200
+     * @tc.desc    Test refreshGlobalHttpProxy multiple times, verify result consistency or error code.
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('testRefreshGlobalHttpProxyWithNormal0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testRefreshGlobalHttpProxyWithErrorCode0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
-        const caseName: string = 'testRefreshGlobalHttpProxyWithNormal0200';
+        const caseName: string = 'testRefreshGlobalHttpProxyWithErrorCode0200';
         console.info(`${caseName}---Start`);
         try {
           let proxyResults: connection.HttpProxy[] = [];
           let errorOccurred: boolean = false;
+          let lastError: BusinessError | null = null;
           for (let i = 0; i < 3; i++) {
             try {
               const httpProxy = await connection.refreshGlobalHttpProxy();
@@ -82,9 +83,11 @@ export default function RefreshGlobalHttpProxyTest() {
             } catch (err) {
               console.info(`${caseName} iteration ${i} error: ${JSON.stringify(err)}`);
               errorOccurred = true;
+              lastError = err as BusinessError;
             }
           }
           if (errorOccurred === false && proxyResults.length === 3) {
+            // 全部成功，验证结果一致性
             let consistent = true;
             let firstJson = JSON.stringify(proxyResults[0]);
             for (let j = 1; j < 3; j++) {
@@ -95,7 +98,20 @@ export default function RefreshGlobalHttpProxyTest() {
             }
             ExpectTrue(consistent);
           } else if (errorOccurred) {
-            ExpectTrue(errorOccurred);
+            if (lastError !== null) {
+              ExpectTrue(lastError.code === 2100003);
+            }
+            if (proxyResults.length > 1) {
+              let consistent = true;
+              let firstJson = JSON.stringify(proxyResults[0]);
+              for (let j = 1; j < proxyResults.length; j++) {
+                if (JSON.stringify(proxyResults[j]) !== firstJson) {
+                  consistent = false;
+                  break;
+                }
+              }
+              ExpectTrue(consistent);
+            }
           }
           console.info(`${caseName}---End`);
           done();
