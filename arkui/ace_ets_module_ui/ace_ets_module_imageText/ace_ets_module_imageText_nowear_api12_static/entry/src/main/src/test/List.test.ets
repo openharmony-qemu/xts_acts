@@ -44,6 +44,7 @@ import RichEditorMenuPolicyJsunit from './RichEditorEnhance01/RichEditorMenuPoli
 
 
 export default function testsuite() {
+  textAreaInputTest();
   RichEditorApi1();
   RichEditorApi5();
   RichEditor1();
@@ -56,8 +57,7 @@ export default function testsuite() {
   RichEditorMenuPolicyJsunit();
   styledStringChange();
   editMeunOptionsTest();
-  setTextSelection();
-  textAreaInputTest();
+  setTextSelection();  
   TextDeleteDirectionTest();
   searchTest();
   onDidIMEInputTest();

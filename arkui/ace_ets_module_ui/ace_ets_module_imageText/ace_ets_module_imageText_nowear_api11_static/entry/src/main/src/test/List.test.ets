@@ -35,6 +35,7 @@ import segmentbutton from './SegmentButtonTest/segmentbutton.test';
 import SelectJsunit from './selectTest/SelectJsunit.test';
 
 export default function testsuite() {
+  textAreaInputTest();
   SearchJsunit();
   RichEditor01();
   positionSettingJsunit();
@@ -44,8 +45,7 @@ export default function testsuite() {
   textAreaUIJsunit();
   richEditorApi1();
   TextStateJsunit();
-  textArea_center();
-  textAreaInputTest();
+  textArea_center();  
   text_drag();
   RichEditorApi222();
   getcomponentadd();

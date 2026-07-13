@@ -31,8 +31,10 @@ import ImageOrientation from './ImageOrientation/ImageOrientation.test';
 import onSubmitTest from './onSubmitTest/onSubmitTest.test';
 import StyledString from './styledString/StyledString.test';
 import StyledStringURL from './styledString/StyledStringURL.test';
-import KeyboardAvoidMode from './UIContext/KeyboardAvoidMode.test'
+import KeyboardAvoidMode from './UIContext/KeyboardAvoidMode.test';
+
 export default function testsuite() {
+  textAreaInputTest();
   StyledStringURL();
   textAreaNode();
   RichEditorOnHoverTest();
@@ -42,8 +44,7 @@ export default function testsuite() {
   MarqueeDynamicSyncSceneTest();//11.17SDK failed:1
   SetFrameRateRangeTest();
   marqueeNode();
-  SymbolGlyphNodeTest();
-  textAreaInputTest();
+  SymbolGlyphNodeTest();  
   textCaretColor();
 
   RichEditorOnWillChangeTest();

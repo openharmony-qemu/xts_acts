@@ -54,27 +54,36 @@ export default function InputPresetTest() {
      * @tc.level  LEVEL0
      */
     it('InputPresetTest0001', Level.LEVEL0, async () => {
-      let driver = Driver.create();
-      if (globalThis.winLeft == 0) {
-        console.info('InputPresetTest InputPresetTest0001 START');
-        await CommonFunc.sleep(1000);
+      console.info('InputPresetTest InputPresetTest0001 START');
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
+      if (globalThis.winLeft == 0) {        
         let textArea1 = await driver.findComponent(ON.id('InputPresetTextArea1'));
         await CommonFunc.sleep(500);
         let textArea2 = await driver.findComponent(ON.id('InputPresetTextArea2'));
         await CommonFunc.sleep(500);
         await textArea2.click()
         await CommonFunc.sleep(500);
-        await driver.triggerKey(2070);
+        let button = await driver.findComponent(ON.text('同意'));
         await CommonFunc.sleep(500);
+        if (button) {
+          await button?.click();
+          await CommonFunc.sleep(1000);
+        }
+        await driver.triggerKey(2070);
+        await CommonFunc.sleep(1000);
         let button1 = await driver.findComponent(ON.text('下一步'));
         await CommonFunc.sleep(500);
-        await button1?.click();
-        await CommonFunc.sleep(500);
-
+        if (button1) {
+          await button1?.click();
+          await CommonFunc.sleep(1000);
+        }
         let button2 = await driver.findComponent(ON.text('完成'));
         await CommonFunc.sleep(500);
-        await button2?.click();
-        await CommonFunc.sleep(500);
+        if (button2) {
+          await button2?.click();
+          await CommonFunc.sleep(1000);
+        }
 
         await textArea1.longClick();
         await CommonFunc.sleep(500);
