@@ -154,21 +154,24 @@ export default function RefreshGlobalHttpProxyTest() {
       });
 
     /**
-     * @tc.name    testRefreshGlobalHttpProxyWithErrorCode0400
-     * @tc.number  SUB_Network_RefreshGlobalHttpProxy_WithErrorCode_0400
-     * @tc.desc    Test refreshGlobalHttpProxy using Promise way when API not supported, verify Promise rejects with error code 2100003.
-     * @tc.type    FUNCTION
-     * @tc.size    MEDIUMTEST
-     * @tc.level   LEVEL1
+     * @tc.number SUB_Network_Connection_RefreshGlobalHttpProxy_0400
+     * @tc.name testRefreshGlobalHttpProxyWithErrorCode0400
+     * @tc.desc Test refreshGlobalHttpProxy using Promise way, verify Promise resolves correctly.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('testRefreshGlobalHttpProxyWithErrorCode0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      (done: Function) => {
+      async (done: Function) => {
         const caseName: string = 'testRefreshGlobalHttpProxyWithErrorCode0400';
         console.info(`${caseName}---Start`);
         try {
           connection.refreshGlobalHttpProxy()
             .then((result: connection.HttpProxy | null) => {
               console.info(`${caseName} Promise resolved with: ${JSON.stringify(result)}`);
+              ExpectFail();
+              console.info(`${caseName}---End`);
+              done();
             })
             .catch((err: BusinessError) => {
               console.info(`${caseName} Promise rejected with: ${JSON.stringify(err)}`);
@@ -176,7 +179,6 @@ export default function RefreshGlobalHttpProxyTest() {
               done();
             });
           console.info(`${caseName}---End`);
-          done();
         } catch (err) {
           console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
           ExpectFail();
