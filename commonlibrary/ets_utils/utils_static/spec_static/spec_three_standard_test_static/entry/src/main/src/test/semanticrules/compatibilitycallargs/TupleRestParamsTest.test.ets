@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -16,20 +16,8 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '@ohos/hypium-binary/src/main/indexStatic';
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-class Neg<T extends number> {
-  constructor (x: T) {}
-}
-
-class Pos<T extends number> {
-  constructor (x: T) {}
-}
+import { Neg, Pos } from '../types.test'
+import Utils from '../../Util.test'
 
 class A1 {
   field1: [number, number, number];
@@ -61,7 +49,6 @@ function foo2(...callee2: [number, number, number]): [number, number, number] {
   return callee2;
 }
 
-
 export default function TupleRestParamsTest(): void {
   describe('TupleRestParamsTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -74,7 +61,7 @@ export default function TupleRestParamsTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -99,8 +86,6 @@ export default function TupleRestParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testTupleRestParams0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let tuple: [number, number, number] = [0, 0, 0.0];
       let a1: A1 = new A1(...tuple);
       let method_result = a1.bar1(...tuple);
@@ -117,7 +102,6 @@ export default function TupleRestParamsTest(): void {
       expect(method_result[2]).assertEqual(0.0);
       expect(func_result[2]).assertEqual(0.0);
       expect(a1.field1[2]).assertEqual(0.0);
-
     });
 
     /**
@@ -131,8 +115,6 @@ export default function TupleRestParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testTupleRestParams0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
       let tuple: [number, number, number] = [0, -128, 3.4028234663852886e38];
       let a2: A2 = new A2(...tuple);
       let method_result = a2.bar2(...tuple);
@@ -149,9 +131,6 @@ export default function TupleRestParamsTest(): void {
       expect(method_result[2]).assertEqual(3.4028234663852886e38);
       expect(func_result[2]).assertEqual(3.4028234663852886e38);
       expect(a2.field2[2]).assertEqual(3.4028234663852886e38);
-
     });
   })
 }
-
-

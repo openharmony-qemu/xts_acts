@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
 * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,13 +16,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
 
 // method overloaded with multiple parameters with different types
 interface J {
@@ -120,8 +114,6 @@ class A7 implements M {
   foo3(p: C3) { return 'A.3' }
   // inherited overload foo { foo3, foo2, foo1 } // foo3(C3), foo2(C2), foo1(C1)
 }
-
-
 
 interface K2 extends J71 {
   // inherited overload foo { foo3, foo2, foo1 } // foo3(C3), foo2(C2), foo1(C1)
@@ -605,7 +597,6 @@ overload foo5 { m2, m1, m3 }
 overload foo6 { m3, m2, m1 }
 }
 
-
 interface I48 {
   m1(p: float) { return 'float' }
 m2(p: number) { return 'number' }
@@ -690,7 +681,6 @@ overload m3 { m3, m2, m1 }
 m2(p: number) { return 'number' }
 m3(p: long) { return 'long' }
 }
-
 
 let res1: number = 0;
 
@@ -927,7 +917,6 @@ foo(p: int) { return 4 }
 }
 class A95 implements I65 {}
 
-
 interface I66<F, G> {
   foo1(i: F) {}
 foo2(j: G) {}
@@ -964,14 +953,12 @@ overload foo { foo1, foo2 }
 }
 class A100 implements I70 {}
 
-
 interface I71 {
   foo1(j: Number) {}
 foo2(i: Double) {}
 overload foo { foo1, foo2 }
 }
 class A101 implements I71 {}
-
 
 let res: number = 0;
 
@@ -1065,7 +1052,6 @@ interface IDerived6<T,S> extends IBase<T,S> {
 
 class Derived6<T,S> implements IDerived6<T,S> {}
 
-
 interface IDerived7<T,S> extends IBase<T,S> {
   foo(i: double) {
   res = 200 + 10;
@@ -1134,7 +1120,6 @@ interface IDerived15<T,S> extends IBase<T,S> {
 
 class Derived15<T,S> implements IDerived15<T,S> {}
 
-
 interface IDerived16<T,S> extends IBase<T,S> {
   foo(i: TPL) {
   res = 200 + 25;
@@ -1157,7 +1142,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     })
 
     beforeEach(async () => {
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -1165,7 +1150,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
 
     afterAll(() => {
     })
-
 
     /**
      * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_0100
@@ -1188,7 +1172,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(a.m("abc", 18.0)).assertEqual("abc18");
     });
 
-
     /**
      * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_0200
      * @tc.name      testExplicitInterfaceMethodOverload0002
@@ -1206,7 +1189,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(a.m(1, a, a)).assertEqual(3);
       expect(a.m(1, a, a, a)).assertEqual(4);
     });
-
 
     /**
      * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_0300
@@ -1243,7 +1225,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(a.m(new Y(), new X(), new Y())).assertEqual(3);
     });
 
-
     /**
      * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_0500
      * @tc.name      testExplicitInterfaceMethodOverload0006
@@ -1268,7 +1249,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(a.m(z, z, z)).assertEqual(1);
     });
 
-
     /**
      * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_0600
      * @tc.name      testExplicitInterfaceMethodOverload0007
@@ -1291,14 +1271,11 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(k.foo(new C2)).assertEqual('A.1');
       expect(k.foo(new C1)).assertEqual('A.1');
 
-
       let a: A6 = ((): A6 => new A6)()
       expect(a.foo(new C3)).assertEqual('A.3');
       expect(a.foo(new C2)).assertEqual('A.1');
       expect(a.foo(new C1)).assertEqual('A.1');
-
     });
-
 
     /**
      * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_0700
@@ -1377,7 +1354,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(j.foo(new C2)).assertEqual('J.1');
       expect(j.foo(new C1)).assertEqual('J.1');
 
-
       let k: K3 = {}
       expect(k.foo(new C3)).assertEqual('K.3');
       expect(k.foo(new C2)).assertEqual('J.1');
@@ -1387,7 +1363,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(a.foo(new C3)).assertEqual('A.3');
       expect(a.foo(new C2)).assertEqual('A.1');
       expect(a.foo(new C1)).assertEqual('A.1');
-
     });
 
     /**
@@ -1407,19 +1382,15 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(j.foo(new C2)).assertEqual('A.2');
       expect(j.foo(new C1)).assertEqual('A.1');
 
-
       let m: M4 = ((): M4 => new A15)()
       expect(m.foo(new C3)).assertEqual('A.3');
       expect(m.foo(new C2)).assertEqual('A.2');
       expect(m.foo(new C1)).assertEqual('A.1');
 
-
       let a: A15 = ((): A15 => new A15)()
       expect(a.foo(new C3)).assertEqual('A.3');
       expect(a.foo(new C2)).assertEqual('A.2');
       expect(a.foo(new C1)).assertEqual('A.1');
-
-
     });
 
     /**
@@ -1464,7 +1435,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(a.foo6(1 as int)).assertEqual('int');
       expect(a.foo6(1)).assertEqual('byte');
     });
-
 
     /**
      * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_1200
@@ -1618,7 +1588,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(a.foo4(1)).assertEqual('short');
       expect(a.foo4<byte>(1 as byte)).assertEqual('GEN');
     });
-    
+
     /**
      * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_2200
      * @tc.name      testExplicitInterfaceMethodOverload0060
@@ -1665,7 +1635,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(a.foo4(1.0)).assertEqual('float');
       expect(a.foo4<float>(1f)).assertEqual('GEN');
     });
-    
+
     /**
      * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_2300
      * @tc.name      testExplicitInterfaceMethodOverload0061
@@ -1927,7 +1897,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(a.foo(1.1 as number) == 1).assertTrue();
       expect(a.foo("some string") == 2).assertTrue();
     });
-    
+
     /**
      * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_3900
      * @tc.name      testExplicitInterfaceMethodOverload0086
@@ -2199,7 +2169,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(i2.foo(1 as int)).assertEqual(4)
       expect(i2.foo(1 as long)).assertEqual(2)
     });
-    
+
     /**
      * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_5500
      * @tc.name      testExplicitInterfaceMethodOverload0126

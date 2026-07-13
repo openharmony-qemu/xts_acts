@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -25,7 +25,6 @@ enum SomeEnum1: int {a = 0, b = 1, c = 2}
 enum SomeEnum2: long {a = 0, b = 1, c = 2}
 
 enum SomeEnum3: double {a = 0.0, b = 1.0, c = 2.0}
-
 
 function foo(i: int) {
   return 1;
@@ -108,10 +107,8 @@ export default function AssignabilityTest(): void {
      * @tc.level     Level 2
      */
     it("testFunctionsCompatibilityOpt0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let x2: (i2: int, j2: string) => int = bar2;
       expect(x2(1, "knock-knock")).assertEqual(2);
-
     });
 
     /**
@@ -123,7 +120,6 @@ export default function AssignabilityTest(): void {
      * @tc.level     Level 2
      */
     it("testFunctionsCompatibilityOpt0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let x3: (i: int, j: string) => int = bar3;
       expect(x3(1, "who`s there")).assertEqual(2);
     });

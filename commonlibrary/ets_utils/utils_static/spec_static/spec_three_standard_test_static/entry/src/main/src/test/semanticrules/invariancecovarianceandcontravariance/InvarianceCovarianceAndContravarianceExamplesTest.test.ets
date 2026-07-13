@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -16,8 +16,6 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '@ohos/hypium-binary/src/main/indexStatic';
-
-
 
 class Base1 {
   methodThree1(p: Base1): Base1 {
@@ -214,8 +212,6 @@ export default function InvarianceCovarianceAndContravarianceExamplesTest(): voi
      */
     it("testInvarianceCovarianceAndContravarianceExamples0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-
-
       let a = new Base1();
       let b = new Derived1();
 
@@ -235,7 +231,6 @@ export default function InvarianceCovarianceAndContravarianceExamplesTest(): voi
      */
     it("testInvarianceCovarianceAndContravarianceExamples0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-
       let a = new Base2();
       let b = new Derived2();
 
@@ -256,7 +251,6 @@ export default function InvarianceCovarianceAndContravarianceExamplesTest(): voi
      */
     it("testInvarianceCovarianceAndContravarianceExamples0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-
       let a = new Base3();
       let b = new Derived3();
 
@@ -277,7 +271,6 @@ export default function InvarianceCovarianceAndContravarianceExamplesTest(): voi
      */
     it("testInvarianceCovarianceAndContravarianceExamples0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-
       let a = new Base5();
       let b = new Derived5();
 
@@ -299,7 +292,6 @@ export default function InvarianceCovarianceAndContravarianceExamplesTest(): voi
      */
     it("testInvarianceCovarianceAndContravarianceExamples0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-
       let a = new Base6();
       let b = new Derived6();
 
@@ -321,7 +313,6 @@ export default function InvarianceCovarianceAndContravarianceExamplesTest(): voi
      */
     it("testInvarianceCovarianceAndContravarianceExamples0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-
       let a = new Base7();
       let b = new Derived7();
 
@@ -330,7 +321,6 @@ export default function InvarianceCovarianceAndContravarianceExamplesTest(): voi
 
       expect(resultA).assertEqual(resultB);
     });
-
 
     /**
      * @tc.number    SUB_INVARIANCE_COVARIANCE_AND_CONTRAVARIANCE_EXAMPLE_0700
@@ -342,7 +332,6 @@ export default function InvarianceCovarianceAndContravarianceExamplesTest(): voi
      */
     it("testInvarianceCovarianceAndContravarianceExamples0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-
       let a = new Base10();
       let b = new Derived10();
 
@@ -363,7 +352,6 @@ export default function InvarianceCovarianceAndContravarianceExamplesTest(): voi
      */
     it("testInvarianceCovarianceAndContravarianceExamples0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-
       let a = new Base11();
       let b = new Derived11();
 
@@ -405,7 +393,6 @@ export default function InvarianceCovarianceAndContravarianceExamplesTest(): voi
      */
     it("testInvarianceCovarianceAndContravarianceExamples0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-
       let a = new Base18();
       let b = new Derived18();
 

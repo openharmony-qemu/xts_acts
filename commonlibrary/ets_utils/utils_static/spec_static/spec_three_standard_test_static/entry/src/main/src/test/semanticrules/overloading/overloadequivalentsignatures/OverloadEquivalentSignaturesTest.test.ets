@@ -1,4 +1,4 @@
-'use static';
+'use static'
 
 /*
  * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
@@ -16,14 +16,7 @@
  */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
 
 // ============================================================================
 // Data Setup for single_class_over_generic_1
@@ -68,7 +61,7 @@ export default function OverloadEquivalentSignaturesTest():void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -94,6 +87,5 @@ export default function OverloadEquivalentSignaturesTest():void {
     it("testSingleClassOverGeneric0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       single_class_over_generic_1.main();
     });
-
   })
 }

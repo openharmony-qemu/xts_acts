@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -18,21 +18,12 @@ import {
   afterAll,
   afterEach,
   beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../Util.test'
 
 function foo1(x: boolean) { let v = x; const c = x; }
 function foo2(x: number) { let v = x; const c = x; }
-function foo3(x: number) { let v = x; const c = x; }
 function foo4(x: string) { let v = x; const c = x; }
 function foo5(x: bigint) { let v = x; const c = x; }
-function foo6(x: bigint) { let v = x; const c = x; }
 function foo7(x: null) { let v = x; const c = x; }
 function foo8(x: undefined) { let v = x; const c = x; }
 function foo9(x: Object) { let v = x; const c = x; }
@@ -43,10 +34,8 @@ function foo12(x: number | null) { let v = x; const c = x; }
 function testDeclarationTypeInference() {
   foo1(false);
   foo2(1);
-  foo3(3.14);
   foo4("foo");
   foo5(42n);
-  foo6(42n);
   foo7(null);
   foo8(undefined);
   foo9(new Object());
@@ -137,7 +126,7 @@ export default function SpecificsOfVariableInitializationContext(): void{
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -175,21 +164,9 @@ export default function SpecificsOfVariableInitializationContext(): void{
      */
     it("testExpressionTypeEvaluation0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       testExpressionTypeEvaluation1();
+      testExpressionTypeEvaluation2();
       expect(va1).assertEqual(1);
       expect(va3).assertEqual("string");
-    });
-
-    /**
-     * @tc.number    SUB_BASEDATE_SPECIFICS_OF_VARIABLE_INITIALIZATION_CONTEXT_0300
-     * @tc.name      testExpressionTypeEvaluation0002
-     * @tc.desc      The type of the right-hand-side expression is known from the expression itself, then this type
-     * becomes the type of the variable as in the example below
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionTypeEvaluation0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      testExpressionTypeEvaluation2();
       expect(va4).assertEqual(42n);
       expect(va8.length).assertEqual(2);
     });

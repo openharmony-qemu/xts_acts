@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,14 +15,7 @@
  */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
 
 // ============================================================================
 // namespaces for 31 test cases
@@ -581,7 +574,7 @@ export class C2 extends C1 implements I4, I5 { foo(p: D | E): D | E { return new
 export interface I6 { foo(p: D | E | F): E { return new E() } }
 export interface I7 {}
 export interface I8 extends I6, I7 {}
-export class C3 extends C2 implements I7, I8 {}
+export class C3 extends C2 implements I7, I8 {foo(p: D | E | F): E { return new E() }}
 export function main(): void {
   let d = new D();
   let c3 = new C3();
@@ -623,7 +616,7 @@ export default function OverridingConflictTest():void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -1008,6 +1001,5 @@ export default function OverridingConflictTest():void {
     it("testDeepInheritanceOverridingPositive0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       deep_30.main();
     });
-
   })
 }

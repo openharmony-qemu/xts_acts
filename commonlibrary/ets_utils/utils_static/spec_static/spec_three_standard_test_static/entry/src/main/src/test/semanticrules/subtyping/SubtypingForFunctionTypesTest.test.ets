@@ -1,5 +1,5 @@
-'use static';
-/*
+'use static'
+/**
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
@@ -249,7 +249,6 @@ export default function SubtypingForFunctionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositiveFunction0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       expect(foobb1(new Base1) instanceof Derived1).assertTrue()
       expect(foobb1(new Base1).b).assertEqual('d')
     });
@@ -269,7 +268,6 @@ export default function SubtypingForFunctionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositiveFunction0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let r = foodb2.unsafeCall(new Base2)
       expect(r instanceof Derived2).assertTrue()
       expect((r as Base2).b).assertEqual('d')
@@ -290,7 +288,6 @@ export default function SubtypingForFunctionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositiveFunction0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       expect(foodb3(new Derived3) instanceof Derived3).assertTrue()
       expect(foodb3(new Derived3).b).assertEqual('d')
     });
@@ -310,7 +307,6 @@ export default function SubtypingForFunctionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositiveFunction0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let r = foodd4.unsafeCall(new Base4)
       expect(r instanceof Derived4).assertTrue()
       expect((r as Base4).b).assertEqual('d')
@@ -331,7 +327,6 @@ export default function SubtypingForFunctionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositiveFunction0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       expect(foobbn5(new Base5, 1) instanceof Base5).assertTrue()
       expect(foobbn5(new Base5, 1).b).assertEqual('d')
     });
@@ -351,7 +346,6 @@ export default function SubtypingForFunctionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositiveFunction0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       expect(foobbo6(new Base6) instanceof Base6).assertTrue()
       expect(foobbo6(new Base6).b).assertEqual('d')
     });
@@ -371,7 +365,6 @@ export default function SubtypingForFunctionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositiveFunction0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       expect(foobbn7(new Base7, 1) instanceof Derived7).assertTrue()
       expect(foobbn7(new Base7, 1).b).assertEqual('d')
     });
@@ -391,7 +384,6 @@ export default function SubtypingForFunctionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositiveFunction0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       expect(foobbo8(new Base8) instanceof Derived8).assertTrue()
       expect(foobbo8(new Base8).b).assertEqual('d')
     });
@@ -411,7 +403,6 @@ export default function SubtypingForFunctionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositiveFunction0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       expect(foodbn9(new Derived9, 1) instanceof Derived9).assertTrue()
       expect(foodbn9(new Derived9, 1).b).assertEqual('d')
     });
@@ -431,7 +422,6 @@ export default function SubtypingForFunctionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositiveFunction0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       expect(foodbo10(new Derived10) instanceof Derived10).assertTrue()
       expect(foodbo10(new Derived10).b).assertEqual('d')
     });
@@ -451,7 +441,6 @@ export default function SubtypingForFunctionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositiveFunction0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       expect(foodbn11(new Derived11, 1) instanceof Derived11).assertTrue()
       expect(foodbn11(new Derived11, 1).b).assertEqual('d')
     });
@@ -471,7 +460,6 @@ export default function SubtypingForFunctionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositiveFunction0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       expect(foodbo12(new Derived12) instanceof Derived12).assertTrue()
       expect(foodbo12(new Derived12).b).assertEqual('d')
     });
@@ -491,7 +479,6 @@ export default function SubtypingForFunctionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositiveFunction0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       expect(foodbr13(new Derived13, 1, 2, 3) instanceof Derived13).assertTrue()
       expect(foodbr13(new Derived13, 1, 2, 3).b).assertEqual('d')
     });
@@ -511,7 +498,6 @@ export default function SubtypingForFunctionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositiveFunction0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       expect(foodbn14(new Derived14, 1) instanceof Derived14).assertTrue()
       expect(foodbn14(new Derived14, 1).b).assertEqual('d')
     });
@@ -531,7 +517,6 @@ export default function SubtypingForFunctionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositiveFunction0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       expect(foodbo15(new Derived15) instanceof Derived15).assertTrue()
       expect(foodbo15(new Derived15).b).assertEqual('d')
     });
@@ -551,10 +536,8 @@ export default function SubtypingForFunctionTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositiveFunction0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       expect(foodbr16(new Derived16, 1, 2, 3) instanceof Derived16).assertTrue()
       expect(foodbr16(new Derived16, 1, 2, 3).b).assertEqual('d')
     });
-
   })
 }

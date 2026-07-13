@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -26,14 +26,7 @@ import {
   afterEach,
   afterAll
 } from '@ohos/hypium-binary/src/main/indexStatic';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
 
 
 let seqstr00 = "";
@@ -59,8 +52,6 @@ class C00 extends B00 {
   }
 }
 
-
-
 let seqstr01 = "";
 function seq01(i: string) {
   seq01_str += ":" + i;
@@ -81,8 +72,6 @@ class C01 extends B01 {
   }
 }
 
-
-
 let seqstr02 = "";
 function seq02(i: string) {
   seq02_str += ":" + i;
@@ -101,7 +90,6 @@ class B02 extends A02 {
   }
 }
 
-
 export default function StaticInitializationExecOrderTest():void {
   describe('StaticInitializationExecOrderTest', () => {
     beforeAll(() => {
@@ -113,7 +101,7 @@ export default function StaticInitializationExecOrderTest():void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -175,5 +163,4 @@ export default function StaticInitializationExecOrderTest():void {
       expect(seq02_str).assertEqual(":init A:init B");
     });
   })
-
 }

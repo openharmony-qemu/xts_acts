@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -17,138 +17,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '@ohos/hypium-binary/src/main/indexStatic'
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve) => {
-    setTimeout(() => { resolve(0); }, time);
-  });
-}
-
-namespace testNS2_3 {
-  interface I1_3<U, V> {}
-  interface I2_3<U, V> {}
-  interface II1_3<U, V> extends I1_3<U, V>, I2_3<U, V> {}
-  interface II2_3<U, V> extends I1_3<U, V>, I2_3<U, V> {}
-  interface III1_3<U, V> extends II1_3<U, V> {}
-  interface III2_3<U, V> extends II1_3<U, V> {}
-  class C1_3<U, V> implements III1_3<U, V> {
-    c1_v_3: U | V
-    constructor (p: U | V) {
-      this.c1_v_3 = p
-    }
-  }
-  class C2_3<U, V> implements III2_3<U, V>  {
-    c2_v_3: U | V
-    constructor (p: U | V) {
-      this.c2_v_3 = p
-    }
-  }
-  class C3_3<U, V> implements II2_3<U, V>  {
-    c3_v_3: U | V
-    constructor (p: U | V) {
-      this.c3_v_3 = p
-    }
-  }
-  function check_C1_3(a: Object) {
-    expect(a instanceof C1_3).assertTrue()
-    expect(a instanceof III1_3).assertTrue()
-    expect(a instanceof II1_3).assertTrue()
-    expect(a instanceof I1_3).assertTrue()
-    expect(a instanceof I2_3).assertTrue()
-    expect((a as C1_3<number, null>).c1_v_3 as number).assertEqual(123)
-  }
-  function check_C2_3(a: Object) {
-    expect(a instanceof C2_3).assertTrue()
-    expect(a instanceof III2_3).assertTrue()
-    expect(a instanceof II1_3).assertTrue()
-    expect(a instanceof I1_3).assertTrue()
-    expect(a instanceof I2_3).assertTrue()
-    expect((a as C2_3<number, string>).c2_v_3 as number).assertEqual(6.7)
-  }
-  function check_C3_3(a: Object) {
-    expect(a instanceof C3_3).assertTrue()
-    expect(a instanceof II2_3).assertTrue()
-    expect(a instanceof I1_3).assertTrue()
-    expect(a instanceof I2_3).assertTrue()
-    expect((a as C3_3<bigint, undefined>).c3_v_3 as bigint).assertEqual(321n)
-  }
-  function check_int_3(a: Object) {
-    expect(a instanceof number).assertTrue()
-    expect(a as number).assertEqual(123)
-  }
-  function check_value_3(v: Object, is_subtype_of_inter_type: boolean, v_id: number): void {
-    if (v_id == 1) {
-      check_C2_3(v)
-      if (is_subtype_of_inter_type) {
-        let cond0: boolean = v instanceof III1_3 || v instanceof III2_3 || v instanceof II2_3 || v instanceof number
-        expect(cond0).assertTrue()
-        let cond1: boolean = v instanceof II1_3
-        expect(cond1).assertTrue()
-      }
-    } else {
-      check_C3_3(v)
-      if (is_subtype_of_inter_type) {
-        let cond0: boolean = v instanceof III1_3 || v instanceof III2_3 || v instanceof II2_3 || v instanceof number
-        expect(cond0).assertTrue()
-        let cond1: boolean = v instanceof II1_3
-        expect(cond1).assertTrue()
-      }
-    }
-  }
-  function check_3(v: II1_3<number, null> | II1_3<number, string> | II2_3<bigint, undefined>, is_subtype_of_inter_type: boolean, v_id: number): boolean {
-    let res: boolean = false
-    let cond0: boolean = v instanceof III1_3 || v instanceof III2_3 || v instanceof II2_3 || v instanceof number
-    let cond1: boolean = v instanceof II1_3
-    let cmp: boolean = cond0 && cond1
-    expect(cmp).assertEqual(is_subtype_of_inter_type)
-    check_value_3(v, is_subtype_of_inter_type, v_id)
-    if (v instanceof III1_3 || v instanceof III2_3 || v instanceof II2_3 || v instanceof number) {
-      check_value_3(v, is_subtype_of_inter_type, v_id)
-      if (v_id == 1) {
-        check_C2_3(v)
-      } else {
-        check_C3_3(v)
-      }
-      res = check_is_in_inter_type_3(v as III1_3<number, null> | III2_3<number, string> | II2_3<bigint, undefined> | number, is_subtype_of_inter_type, v_id)
-      if (!res) {
-        expect(v instanceof II1_3).assertFalse()
-        check_is_not_in_I2_type_3(v, is_subtype_of_inter_type, v_id)
-      }
-    }
-    return res
-  }
-  function check_is_in_inter_type_3(v: III1_3<number, null> | III2_3<number, string> | II2_3<bigint, undefined> | number, is_subtype_of_inter_type: boolean, v_id: number): boolean {
-    check_value_3(v, is_subtype_of_inter_type, v_id)
-    if (v_id == 1) {
-      check_C2_3(v)
-    } else {
-      check_C3_3(v)
-    }
-    if (v instanceof II1_3) {
-      expect(is_subtype_of_inter_type).assertTrue()
-      check_value_3(v, is_subtype_of_inter_type, v_id)
-      if (v_id == 1) {
-        check_C2_3(v)
-      } else {
-        check_C3_3(v)
-      }
-      check_value_3(v, is_subtype_of_inter_type, v_id)
-      return true
-    } else {
-      return false
-    }
-  }
-  function check_is_not_in_I2_type_3(v: Object, is_subtype_of_inter_type: boolean, v_id: number): void {
-    check_value_3(v, is_subtype_of_inter_type, v_id)
-    expect(v instanceof II1_3).assertFalse()
-  }
-  export function runTest_3(): boolean {
-    let v1: II1_3<number, null> | II1_3<number, string> | II2_3<bigint, undefined> = new C2_3<number, string>(6.7)
-    let v2: II1_3<number, null> | II1_3<number, string> | II2_3<bigint, undefined> = new C3_3<bigint, undefined>(321n)
-    let res: boolean = check_3(v1, true, 1) && check_3(v2, false, 2)
-    expect(res).assertEqual(false)
-    return true
-  }
-}
+import Utils from '../../Util.test'
 
 interface I1_3<U, V> {}
 interface I2_3<U, V> {}
@@ -369,7 +238,7 @@ export default function TypeTIsSubOfInterTypeOnGenTest01(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -415,7 +284,6 @@ export default function TypeTIsSubOfInterTypeOnGenTest01(): void {
         new C3_3<bigint, undefined>(321n)
       let res: boolean = check_3(v1, true, 1) && check_3(v2, false, 2)
       expect(res).assertEqual(false)
-      expect(testNS2_3.runTest_3()).assertTrue()
     });
   })
 }

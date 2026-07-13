@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
 * Copyright (c) 2021-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,13 +17,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it,
   Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
 
 
 class A {
@@ -66,13 +60,12 @@ class F extends A3 {
   }
 }
 
-
 export default function FinalMethodsTest() :void{
   describe('FinalMethodsTest', () => {
     beforeAll(() => {})
 
     beforeEach(async () => {
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {})
@@ -88,7 +81,6 @@ export default function FinalMethodsTest() :void{
      * @tc.level     Level 2
      */
     it("testFinalMethods0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let a: A = new A();
       a.foo();
       expect( a.res).assertEqual(1);
@@ -104,7 +96,6 @@ export default function FinalMethodsTest() :void{
      * @tc.level     Level 2
      */
     it("testFinalMethods0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let a: A1 = new A1();
       a.method2();
       expect( a.res).assertEqual(1);
@@ -119,7 +110,6 @@ export default function FinalMethodsTest() :void{
      * @tc.level     Level 2
      */
     it("testFinalMethods0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let b: B = new B();
       b.method2();
       expect( b.res).assertEqual(1);
@@ -135,14 +125,8 @@ export default function FinalMethodsTest() :void{
      * @tc.level     Level 2
      */
     it("testFinalMethods0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-
       expect( new A3().meth("x", 1)).assertEqual("x1A3");
       expect( new F().meth("y", 2)).assertEqual("y2F");
     });
-
-
   })
 }
-
-

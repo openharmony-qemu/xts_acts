@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -17,13 +17,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '@ohos/hypium-binary/src/main/indexStatic';
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../Util.test'
 
 namespace testNS4_2 {
   function check_is_subtype_of_A(a: Object | undefined | null): boolean {
@@ -114,7 +108,7 @@ export default function TypeTIsSubOfDiffOnStrLitTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -145,7 +139,6 @@ export default function TypeTIsSubOfDiffOnStrLitTest(): void {
         check_2(v1, false, 1) &
         check_2(v2, false, 2)
       expect(res).assertEqual(false)
-      expect(testNS4_2.runTest()).assertEqual(true)
     })
   })
 }

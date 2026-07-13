@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
 * Copyright (c) 2021-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,6 +15,7 @@
 */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
+import Utils from '../../../Util.test'
 
 function sin(x: number): number {
   return Math.sin(x);
@@ -26,14 +27,6 @@ const PI = Math.PI;
 
 const Sine = sin;
 const PNumber = Math.PI;
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
 
 export default function SelectiveBindingTest(): void {
   describe('SelectiveBindingTest', () => {
@@ -47,7 +40,7 @@ export default function SelectiveBindingTest(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -134,6 +127,5 @@ export default function SelectiveBindingTest(): void {
       let x = Sine(PNumber);
       expect(x).assertEqual(1.2246467991473532e-16);
     });
-
   })
 }

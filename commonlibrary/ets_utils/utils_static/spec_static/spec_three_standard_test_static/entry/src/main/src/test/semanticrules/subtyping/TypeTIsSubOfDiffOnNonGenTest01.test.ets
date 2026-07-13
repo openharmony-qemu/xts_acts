@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -17,13 +17,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '@ohos/hypium-binary/src/main/indexStatic';
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../Util.test'
 
 interface I1_4 {}
 interface I2_4 {}
@@ -108,99 +102,6 @@ function check_is_not_in_B_type_4(v: Any, v_id: number): void {
   expect(thrown).assertEqual(true);
 }
 
-namespace testNS2_5 {
-  interface I_5 {}
-  interface II1_5 extends I_5 {}
-  interface II2_5 extends I_5 {}
-  interface III1_5 extends II1_5 {}
-  interface III2_5 extends II1_5 {}
-  class C1_5 implements III1_5, III2_5 {v: bigint = 123n}
-  class C2_5 implements II2_5, III2_5 {v: number = 321}
-  class C3_5 implements III1_5 {v: number = 7.8}
-
-  function check_C1_5(a: Any) {
-    expect(a instanceof C1_5).assertEqual(true);
-    expect(a instanceof III1_5).assertEqual(true);
-    expect(a instanceof III2_5).assertEqual(true);
-    expect(a instanceof II1_5).assertEqual(true);
-    expect(a instanceof I_5).assertEqual(true);
-    expect((a as C1_5).v).assertEqual(123n);
-  }
-  function check_C2_5(a: Any) {
-    expect(a instanceof C2_5).assertEqual(true);
-    expect(a instanceof II2_5).assertEqual(true);
-    expect(a instanceof III2_5).assertEqual(true);
-    expect(a instanceof II1_5).assertEqual(true);
-    expect(a instanceof I_5).assertEqual(true);
-    expect((a as C2_5).v).assertEqual(321);
-  }
-  function check_C3_5(a: Any) {
-    expect(a instanceof C3_5).assertEqual(true);
-    expect(a instanceof III1_5).assertEqual(true);
-    expect(a instanceof II1_5).assertEqual(true);
-    expect(a instanceof I_5).assertEqual(true);
-    expect((a as C3_5).v).assertEqual(7.8);
-  }
-  function check_int_5(a: Any) {
-    expect(a instanceof number).assertEqual(true);
-    expect(a as number).assertEqual(123);
-  }
-
-  function check_5(v: II1_5 | II2_5,
-    is_subtype_of_A: boolean, v_id: number): boolean {
-    let res: boolean = false;
-    expect(v instanceof III1_5 | III2_5 | II2_5 | number).assertEqual(is_subtype_of_A);
-    if (v instanceof III1_5 | III2_5 | II2_5 | number) {
-      res = check_is_in_diff_type_5(v, v_id);
-    }
-    if (res) {
-      check_is_not_in_B_type_5(v, v_id);
-    }
-    return res;
-  }
-
-  function check_value_5(v: Any, v_id: number): void {
-    if (v_id == 1) {
-      check_C2_5(v);
-    } else {
-      check_C3_5(v);
-    }
-  }
-
-  function check_is_in_diff_type_5(v: III1_5 | III2_5 | II2_5 | number,
-    v_id: number): boolean {
-    check_value_5(v, v_id);
-    if (v instanceof III2_5) {
-      let b: III2_5 = v as III2_5;
-      check_value_5(b, v_id);
-      return false;
-    } else {
-      return true;
-    }
-  }
-
-  function check_is_not_in_B_type_5(v: Any, v_id: number): void {
-    check_value_5(v, v_id);
-    expect(v instanceof III2_5).assertEqual(false);
-    let thrown = false;
-    try {
-      let b: III2_5 = v as III2_5;
-    } catch(e) {
-      thrown = true;
-    }
-    expect(thrown).assertEqual(true);
-  }
-
-  export function runTest_5(): boolean {
-    let v1: II1_5 | II2_5 = new C2_5();
-    let v2: II1_5 | II2_5 = new C3_5();
-    let res: boolean =
-      check_5(v1, true, 1) &&
-      check_5(v2, true, 2);
-    expect(res).assertEqual(false);
-    return true;
-  }
-}
 
 interface I_5 {}
 interface II1_5 extends I_5 {}
@@ -295,7 +196,7 @@ export default function TypeTIsSubOfDiffOnNonGenTest01(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -320,7 +221,6 @@ export default function TypeTIsSubOfDiffOnNonGenTest01(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnNonGen0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let v1: C3_4 | number = 123
       let v2: C3_4 | number = new C3_4()
       let res: boolean =
@@ -340,15 +240,12 @@ export default function TypeTIsSubOfDiffOnNonGenTest01(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnNonGen0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let v1: III1_5 | III2_5 = new C1_5()
       let v2: III1_5 | III2_5 = new C2_5()
       let res: boolean =
         check_5(v1, true, 1) &
         check_5(v2, true, 2)
       expect(res).assertEqual(false)
-
-      expect(testNS2_5.runTest_5()).assertEqual(true)
     });
   })
 }

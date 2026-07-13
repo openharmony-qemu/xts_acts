@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,13 +16,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../../../Util.test'
 
 abstract class C {
   static $_invoke(): number { return 42 }
@@ -102,7 +96,6 @@ class B_10 {
   static $_invoke(p: string): string { return p }
 }
 class C_10 extends B_10 {
-  static $_invoke(n: number): number { return n + n }
   static $_invoke(p: string): string { return p + p }
   static $_invoke(p: string, q: boolean): string { return p + q }
 }
@@ -113,7 +106,6 @@ class B_11 {
   static $_invoke(p: string): string { return p }
 }
 class C_11 extends B_11 {
-  static $_invoke(n: number): number { return n + n }
   static $_invoke(p: string): string { return p + p }
   static $_invoke(p: string, q: boolean): string { return p + q }
 }
@@ -123,11 +115,9 @@ class A_12 {
   static $_invoke(): string { return 'A' }
 }
 class B_12 extends A_12 {
-  static $_invoke(): string { return 'A' }
   $_invoke(): string { return 'B' }
 }
 class C_12 extends B_12 {
-  static $_invoke(): string { return 'A' }
   $_invoke(): string { return 'C' }
 }
 
@@ -150,12 +140,6 @@ class B_14 {
   }
 }
 class C_14 extends B_14 {
-  static $_invoke(p: boolean): string {
-    if (p) {
-      throw new Error('invoke error')
-    }
-    return 'B'
-  }
   $_invoke(): C_14 { return new C_14() }
 }
 function foo(p: boolean): string {
@@ -238,7 +222,7 @@ export default function CallableTypesWithInvokeMethodTest(): void {
     });
 
     beforeEach(async () => {
-      await sleep(30);
+      await Utils.msSleep(30);
     });
 
     afterEach(() => {
@@ -612,6 +596,5 @@ export default function CallableTypesWithInvokeMethodTest(): void {
     it("testCallableTypesWithInvokeMethod0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new C_23().meth()).assertEqual('abcabc')
     });
-
   });
 }

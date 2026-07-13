@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -16,21 +16,8 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '@ohos/hypium-binary/src/main/indexStatic';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-class Neg<T extends number> {
-  constructor(x: T) {}
-}
-
-class Pos<T extends number> {
-  constructor(x: T) {}
-}
+import { Neg, Pos } from '../types.test';
+import Utils from '../../Util.test'
 
 namespace testNS2_7 {
   abstract class A_7<U, V> {}
@@ -122,7 +109,7 @@ export default function DiffTypeIsSubOfTypeObjOnGenTest01(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
 
     afterEach(() => {
@@ -137,17 +124,16 @@ export default function DiffTypeIsSubOfTypeObjOnGenTest01(): void {
     })
 
     /**
-     * @tc.number    SUB_DIFF_TYPE_IS_SUB_OF_TYPE_OBJ_ON_GEN_0700
-     * @tc.name      testDiffTypeIsSubOfTypeObjOnGen0007
+     * @tc.number    SUB_DIFF_TYPE_IS_SUB_OF_TYPE_OBJ_ON_GEN_ONE_0100
+     * @tc.name      testDiffTypeIsSubOfTypeObjOnGen0001
      * @tc.desc      Checking that difference type A - B is a subtype of Object if A is a subtype
     of Object in case of usage instanceof on generic custom types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testDiffTypeIsSubOfTypeObjOnGen0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testDiffTypeIsSubOfTypeObjOnGen0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(testNS2_7.runTest()).assertTrue();
     });
-
   });
 }
