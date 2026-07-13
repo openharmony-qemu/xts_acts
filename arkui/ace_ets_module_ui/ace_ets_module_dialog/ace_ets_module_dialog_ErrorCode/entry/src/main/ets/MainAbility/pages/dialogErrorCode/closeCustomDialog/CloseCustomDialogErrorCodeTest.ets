@@ -18,17 +18,14 @@
  * 对应新接口: dismiss(target: number | ComponentContent)
  * 错误码: 401(参数错误), 100001(内部错误), 103301(内容错误), 103303(内容未找到)
  */
-import { ComponentContent, DialogPresenter } from '@kit.ArkUI';
+import { ComponentContent } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
-import {
-  TestResult, makeResult, TextParams, commonTextBuilder, DialogButtonBody,
-  DialogMessageBody, DialogPresentResult, DialogSheetBody, SimpleDialogOptions
-} from '../common/CommonHelper';
+import { TestResult, makeResult, TextParams, commonTextBuilder } from '../common/CommonHelper';
 import { resourceManager } from '@kit.LocalizationKit';
 
 class Params {
-  text: string = "";
-  colorMode: resourceManager.ColorMode = resourceManager.ColorMode.LIGHT
+  public text: string = '';
+  public colorMode: resourceManager.ColorMode = resourceManager.ColorMode.LIGHT
 
   constructor(text: string, colorMode: resourceManager.ColorMode) {
     this.text = text
@@ -37,13 +34,13 @@ class Params {
 }
 
 @Builder
-function BuilderDialog(params: Params) {
+function builderDialog(params: Params) {
   Column() {
     Text(params.text)
       .fontSize(50)
       .fontWeight(FontWeight.Bold)
       .margin({ bottom: 36 })
-  }.backgroundColor(params.colorMode == resourceManager.ColorMode.LIGHT ? "#D5D5D5" : "#004AAF")
+  }.backgroundColor(params.colorMode == resourceManager.ColorMode.LIGHT ? '#D5D5D5' : '#004AAF')
 }
 
 @Entry
@@ -165,17 +162,17 @@ struct CloseCustomDialogErrorCodeTest {
       let uiContext = this.getUIContext();
       let cn: ComponentContent<Params> | null = null;
       if (uiContext.getHostContext() != undefined) {
-        cn = new ComponentContent(uiContext, wrapBuilder(BuilderDialog), new Params('CC',
+        cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('CC',
           uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
       }
-      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
-      await (dialog.present as Function)(cn as ESObject,  {
+      let dialog = this.getUIContext().getDialogPresenter();
+      await dialog.present(cn,  {
         onWillDismiss: (action: DismissDialogAction) => {
           console.info('[HXW] onWillDismiss triggered, reason: ' + action.reason);
           action.dismiss();
           this.addResult('通过onWillDismiss关闭，没有自动关闭', 0, -1);
         },
-      } as ESObject);
+      });
       setTimeout(()=>{
         dialog.dismiss(cn);
       }, 500)
@@ -188,22 +185,21 @@ struct CloseCustomDialogErrorCodeTest {
       let uiContext = this.getUIContext();
       let cn: ComponentContent<Params> | null = null;
       if (uiContext.getHostContext() != undefined) {
-        cn = new ComponentContent(uiContext, wrapBuilder(BuilderDialog), new Params('ID',
+        cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('ID',
           uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
       }
-      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
-      let resObj: Object = await (dialog.present as Function)(cn as ESObject, {
+      let dialog = this.getUIContext().getDialogPresenter();
+      let res = await dialog.present(cn, {
         onWillDismiss: (action: DismissDialogAction) => {
           console.info('[HXW] onWillDismiss triggered, reason: ' + action.reason);
           action.dismiss();
           this.addResult('通过onWillDismiss关闭，没有自动关闭', 0, -1);
         },
-      } as ESObject);
-      let presentRes: DialogPresentResult = resObj as DialogPresentResult;
-      console.log('hxw dialog id ' + presentRes.dialogId)
+      });
+      console.log('hxw dialog id ' + res)
       this.addResult('present成功', 0, 0);
       setTimeout(()=>{
-        (dialog.dismiss as Function)(presentRes.dialogId);
+        dialog.dismiss(res.dialogId);
       }, 500)
     } catch (err) { this.addResult('dismiss(dialogId)', 0, (err as BusinessError).code); }
   }
@@ -213,18 +209,18 @@ struct CloseCustomDialogErrorCodeTest {
       let uiContext = this.getUIContext();
       let cn: ComponentContent<Params> | null = null;
       if (uiContext.getHostContext() != undefined) {
-        cn = new ComponentContent(uiContext, wrapBuilder(BuilderDialog), new Params('CC',
+        cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('CC',
           uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
       }
-      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
-      await (dialog.present as Function)(cn as ESObject,  {
+      let dialog = this.getUIContext().getDialogPresenter();
+      await dialog.present(cn,  {
         showInSubWindow: true,
         onWillDismiss: (action: DismissDialogAction) => {
           console.info('[HXW] onWillDismiss triggered, reason: ' + action.reason);
           action.dismiss();
           this.addResult('通过onWillDismiss关闭，没有自动关闭', 0, -1);
         },
-      } as ESObject);
+      });
       setTimeout(()=>{
         dialog.dismiss(cn)
           .then(()=>{
@@ -243,23 +239,22 @@ struct CloseCustomDialogErrorCodeTest {
       let uiContext = this.getUIContext();
       let cn: ComponentContent<Params> | null = null;
       if (uiContext.getHostContext() != undefined) {
-        cn = new ComponentContent(uiContext, wrapBuilder(BuilderDialog), new Params('ID',
+        cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('ID',
           uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
       }
-      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
-      let resObj: Object = await (dialog.present as Function)(cn as ESObject, {
+      let dialog = this.getUIContext().getDialogPresenter();
+      let res = await dialog.present(cn, {
         showInSubWindow: true,
         onWillDismiss: (action: DismissDialogAction) => {
           console.info('[HXW] onWillDismiss triggered, reason: ' + action.reason);
           action.dismiss();
           this.addResult('通过onWillDismiss关闭，没有自动关闭', 0, -1);
         },
-      } as ESObject);
-      let presentRes: DialogPresentResult = resObj as DialogPresentResult;
-      console.log('hxw dialog id ' + presentRes.dialogId)
+      });
+      console.log('hxw dialog id ' + res)
       this.addResult('present成功', 0, 0);
       setTimeout(()=>{
-        (dialog.dismiss as Function)(presentRes.dialogId)
+        dialog.dismiss(res.dialogId)
           .then(()=>{
             this.addResult('promise testNormalByIdSubWin', 0, 0);
           })
@@ -272,49 +267,53 @@ struct CloseCustomDialogErrorCodeTest {
 
   async testStyleDialogById() {
     try {
-      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
-      let btn1 = new DialogButtonBody('选项1', (): void => {});
-      let btn2 = new DialogButtonBody('选项2', (): void => {});
-      let resObj: Object = await (dialog.present as Function)({
-        title: 'Fixed Style',
-        buttons: [btn1, btn2],
+      let dialog = this.getUIContext().getDialogPresenter();
+      let res = await dialog.present({
+        title: 'Fixed Style', buttons: [
+          { value: '选项1', action: () => {} },
+          { value: '选项2', action: () => {} },
+        ],
         onWillDismiss: (action: DismissDialogAction) => {
           console.info('[HXW] onWillDismiss triggered, reason: ' + action.reason);
           action.dismiss();
           this.addResult('通过onWillDismiss关闭，没有自动关闭', 0, -1);
         },
-      } as ESObject);
-      let presentRes: DialogPresentResult = resObj as DialogPresentResult;
-      console.log('hxw dialog id ' + presentRes.dialogId)
+      });
+      console.log('hxw dialog id ' + res)
       this.addResult('present成功', 0, 0);
       setTimeout(()=>{
-        (dialog.dismiss as Function)(presentRes.dialogId);
+        dialog.dismiss(res.dialogId);
       }, 500)
     } catch (err) { this.addResult('固定样式dialog dismiss(dialogId)', 0, (err as BusinessError).code); }
   }
 
   async testStyleDialogByIdSubWin() {
     try {
-      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
-      let btn1 = new DialogButtonBody('选项1', (): void => {});
-      let btn2 = new DialogButtonBody('选项2', (): void => {});
-      let resObj: Object = await (dialog.present as Function)({
+      let dialog = this.getUIContext().getDialogPresenter();
+      let res = await dialog.present({
         showInSubWindow: true,
-        title: 'Fixed Style',
-        buttons: [btn1, btn2],
+        title: 'Fixed Style', buttons: [
+          { value: '选项1', action: () => {} },
+          { value: '选项2', action: () => {} },
+        ],
         onWillDismiss: (action: DismissDialogAction) => {
           console.info('[HXW] onWillDismiss triggered, reason: ' + action.reason);
           action.dismiss();
           this.addResult('通过onWillDismiss关闭，没有自动关闭', 0, -1);
         },
-      } as ESObject);
-      let presentRes: DialogPresentResult = resObj as DialogPresentResult;
-      console.log('hxw dialog id ' + presentRes.dialogId)
+      });
+      console.log('hxw dialog id ' + res)
       this.addResult('present成功', 0, 0);
       setTimeout(()=>{
-        (dialog.dismiss as Function)(presentRes.dialogId);
+        dialog.dismiss(res.dialogId)
+          .then(()=>{
+            this.addResult('promise testStyleDialogByIdSubWin', 0, 0);
+          })
+          .catch((err: BusinessError) => {
+            this.addResult('promise testStyleDialogByIdSubWin', 0, (err as BusinessError).code);
+          })
       }, 500)
-    } catch (err) { this.addResult('固定样式dialog dismiss(dialogId)子窗', 0, (err as BusinessError).code); }
+    } catch (err) { this.addResult('固定样式dialog dismiss(dialogId)', 0, (err as BusinessError).code); }
   }
 
   async testNoArgs() {
@@ -343,13 +342,13 @@ struct CloseCustomDialogErrorCodeTest {
       let uiContext = this.getUIContext();
       let cn: ComponentContent<Params> | null = null;
       if (uiContext.getHostContext() != undefined) {
-        cn = new ComponentContent(uiContext, wrapBuilder(BuilderDialog), new Params('D',
+        cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('D',
           uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
       }
-      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
+      let dialog = this.getUIContext().getDialogPresenter();
       cn?.dispose();
       try {
-        await (dialog.dismiss as Function)(cn as ESObject);
+        await dialog.dismiss(cn);
         this.addResult('disposed content', 103301, -1);
       } catch (innerErr) { this.addResult('disposed content', 103301, (innerErr as BusinessError).code); }
     } catch (err) { this.addResult('disposed content', 103301, (err as BusinessError).code); }
@@ -360,12 +359,12 @@ struct CloseCustomDialogErrorCodeTest {
       let uiContext = this.getUIContext();
       let cn: ComponentContent<Params> | null = null;
       if (uiContext.getHostContext() != undefined) {
-        cn = new ComponentContent(uiContext, wrapBuilder(BuilderDialog), new Params('No',
+        cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('No',
           uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
       }
-      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
+      let dialog = this.getUIContext().getDialogPresenter();
       try {
-        await (dialog.dismiss as Function)(cn as ESObject);
+        await dialog.dismiss(cn);
         this.addResult('未打开过的content', 103303, -1);
       } catch (innerErr) { this.addResult('未打开过的content', 103303, (innerErr as BusinessError).code); }
     } catch (err) { this.addResult('未打开过的content', 103303, (err as BusinessError).code); }
@@ -373,7 +372,7 @@ struct CloseCustomDialogErrorCodeTest {
 
   async testInvalidId() {
     try {
-      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
+      let dialog = this.getUIContext().getDialogPresenter();
       try {
         await dialog.dismiss(99999);
         this.addResult('无效dialogId(99999)', 103303, -1);
@@ -386,12 +385,12 @@ struct CloseCustomDialogErrorCodeTest {
       let uiContext = this.getUIContext();
       let cn: ComponentContent<Params> | null = null;
       if (uiContext.getHostContext() != undefined) {
-        cn = new ComponentContent(uiContext, wrapBuilder(BuilderDialog), new Params('Cls',
+        cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('Cls',
           uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
       }
-      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
-      await (dialog.present as Function)(cn as ESObject);
-      await (dialog.dismiss as Function)(cn as ESObject);
+      let dialog = this.getUIContext().getDialogPresenter();
+      await dialog.present(cn);
+      await dialog.dismiss(cn);
       try {
         dialog.dismiss(cn)
           .then(()=>{
@@ -409,16 +408,14 @@ struct CloseCustomDialogErrorCodeTest {
       let uiContext = this.getUIContext();
       let cn: ComponentContent<Params> | null = null;
       if (uiContext.getHostContext() != undefined) {
-        cn = new ComponentContent(uiContext, wrapBuilder(BuilderDialog), new Params('ClsId',
+        cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('ClsId',
           uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
       }
-      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
-      let presentFn = dialog.present as Function;
-      let presentRes: DialogPresentResult =
-        await presentFn(cn as ESObject) as DialogPresentResult;
-      await (dialog.dismiss as Function)(presentRes.dialogId);
+      let dialog = this.getUIContext().getDialogPresenter();
+      let res = await dialog.present(cn);
+      await dialog.dismiss(res.dialogId);
       try {
-        (dialog.dismiss as Function)(presentRes.dialogId)
+        dialog.dismiss(res.dialogId)
           .then(()=>{
             this.addResult('已关闭后再dismiss(id)', 103303, -1);
           })
@@ -434,16 +431,16 @@ struct CloseCustomDialogErrorCodeTest {
       let uiContext = this.getUIContext();
       let cn: ComponentContent<Params> | null = null;
       if (uiContext.getHostContext() != undefined) {
-        cn = new ComponentContent(uiContext, wrapBuilder(BuilderDialog), new Params('Cls',
+        cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('Cls',
           uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
       }
-      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
-      await (dialog.present as Function)(cn as ESObject, {
+      let dialog = this.getUIContext().getDialogPresenter();
+      await dialog.present(cn, {
         showInSubWindow: true,
       });
-      await (dialog.dismiss as Function)(cn as ESObject);
+      await dialog.dismiss(cn);
       try {
-        await (dialog.dismiss as Function)(cn as ESObject);
+        await dialog.dismiss(cn);
         this.addResult('已关闭后再dismiss(content)', 103303, -1);
       } catch (innerErr) { this.addResult('已关闭后再dismiss(content)', 103303, (innerErr as BusinessError).code); }
     } catch (err) { this.addResult('catch 已关闭后再dismiss(content)', 103303, (err as BusinessError).code); }
@@ -454,16 +451,16 @@ struct CloseCustomDialogErrorCodeTest {
       let uiContext = this.getUIContext();
       let cn: ComponentContent<Params> | null = null;
       if (uiContext.getHostContext() != undefined) {
-        cn = new ComponentContent(uiContext, wrapBuilder(BuilderDialog), new Params('ClsId',
+        cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('ClsId',
           uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
       }
-      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
-      let presentRes: DialogPresentResult = await (dialog.present as Function)(cn as ESObject, {
+      let dialog = this.getUIContext().getDialogPresenter();
+      let res = await dialog.present(cn, {
         showInSubWindow: true,
-      }) as DialogPresentResult as DialogPresentResult;
-      await (dialog.dismiss as Function)(presentRes.dialogId);
+      });
+      await dialog.dismiss(res.dialogId);
       try {
-        await (dialog.dismiss as Function)(presentRes.dialogId);
+        await dialog.dismiss(res.dialogId);
         this.addResult('已关闭后再dismiss(id)', 103303, -1);
       } catch (innerErr) { this.addResult('已关闭后再dismiss(id)', 103303, (innerErr as BusinessError).code); }
     } catch (err) { this.addResult('已关闭后再dismiss(id)', 103303, (err as BusinessError).code); }

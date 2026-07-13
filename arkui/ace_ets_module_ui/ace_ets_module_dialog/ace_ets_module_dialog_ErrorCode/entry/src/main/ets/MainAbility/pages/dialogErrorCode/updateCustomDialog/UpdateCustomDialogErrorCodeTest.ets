@@ -18,17 +18,14 @@
  * 对应新接口: update(content: ComponentContent, options: DialogBaseOptions)
  * 错误码: 401(参数错误), 103301(内容错误), 103303(内容未找到)
  */
-import { ComponentContent, dialog as dialogApi, DialogPresenter } from '@kit.ArkUI';
+import { ComponentContent, dialog as dialogApi } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
-import {
-  TestResult, makeResult, TextParams, commonTextBuilder, DialogButtonBody,
-  DialogMessageBody, DialogPresentResult, DialogSheetBody, SimpleDialogOptions
-} from '../common/CommonHelper';
+import { TestResult, makeResult, TextParams, commonTextBuilder } from '../common/CommonHelper';
 import { resourceManager } from '@kit.LocalizationKit';
 
 class Params {
-  text: string = "";
-  colorMode: resourceManager.ColorMode = resourceManager.ColorMode.LIGHT
+  public text: string = '';
+  public colorMode: resourceManager.ColorMode = resourceManager.ColorMode.LIGHT
 
   constructor(text: string, colorMode: resourceManager.ColorMode) {
     this.text = text
@@ -37,13 +34,13 @@ class Params {
 }
 
 @Builder
-function BuilderDialog(params: Params) {
+function builderDialog(params: Params) {
   Column() {
     Text(params.text)
       .fontSize(50)
       .fontWeight(FontWeight.Bold)
       .margin({ bottom: 36 })
-  }.backgroundColor(params.colorMode == resourceManager.ColorMode.LIGHT ? "#D5D5D5" : "#004AAF")
+  }.backgroundColor(params.colorMode == resourceManager.ColorMode.LIGHT ? '#D5D5D5' : '#004AAF')
 }
 
 @Entry
@@ -140,21 +137,21 @@ struct UpdateCustomDialogErrorCodeTest {
       let uiContext = this.getUIContext();
       let cn: ComponentContent<Params> | null = null;
       if (uiContext.getHostContext() != undefined) {
-        cn = new ComponentContent(uiContext, wrapBuilder(BuilderDialog), new Params('Upd',
+        cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('Upd',
           uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
       }
       console.log('hxw typeof cn: ' + typeof cn)
-      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
-      await (dialog.present as Function)(cn as ESObject);
-      await (dialog.update as Function)(cn as ESObject, { maskColor: '#80FF69B4' });
+      let dialog = this.getUIContext().getDialogPresenter();
+      await dialog.present(cn);
+      await dialog.update(cn, { maskColor: '#80FF69B4' });
       this.addResult('正常update', 0, 0);
-      await (dialog.dismiss as Function)(cn as ESObject);
+      await dialog.dismiss(cn);
     } catch (err) { this.addResult('正常update', 0, (err as BusinessError).code); }
   }
 
   async testContentNull() {
     try {
-      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
+      let dialog = this.getUIContext().getDialogPresenter();
       await (dialog.update as Function)(null, { maskColor: '#80FF69B4' });
       this.addResult('content=null', 401, -1);
     } catch (err) { this.addResult('content=null', 401, (err as BusinessError).code); }
@@ -165,19 +162,19 @@ struct UpdateCustomDialogErrorCodeTest {
       let uiContext = this.getUIContext();
       let cn: ComponentContent<Params> | null = null;
       if (uiContext.getHostContext() != undefined) {
-        cn = new ComponentContent(uiContext, wrapBuilder(BuilderDialog), new Params('T',
+        cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('T',
           uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
       }
-      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
-      await (dialog.present as Function)(cn as ESObject);
-      await (dialog.update as Function)(cn as ESObject, null);
+      let dialog = this.getUIContext().getDialogPresenter();
+      await dialog.present(cn);
+      await dialog.update(cn, null);
       this.addResult('options=null', 0, 0);
     } catch (err) { this.addResult('options=null', 401, (err as BusinessError).code); }
   }
 
   async testNoArgs() {
     try {
-      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
+      let dialog = this.getUIContext().getDialogPresenter();
       await (dialog.update as Function)();
       this.addResult('不传参数', 401, -1);
     } catch (err) { this.addResult('不传参数', 401, (err as BusinessError).code); }
@@ -188,13 +185,13 @@ struct UpdateCustomDialogErrorCodeTest {
       let uiContext = this.getUIContext();
       let cn: ComponentContent<Params> | null = null;
       if (uiContext.getHostContext() != undefined) {
-        cn = new ComponentContent(uiContext, wrapBuilder(BuilderDialog), new Params('D',
+        cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('D',
           uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
       }
-      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
+      let dialog = this.getUIContext().getDialogPresenter();
       cn?.dispose();
       try {
-        await (dialog.update as Function)(cn as ESObject, { maskColor: '#80FF69B4' });
+        await dialog.update(cn, { maskColor: '#80FF69B4' });
         this.addResult('disposed content', 401, -1);
       } catch (innerErr) { this.addResult('disposed content', 401, (innerErr as BusinessError).code); }
     } catch (err) { this.addResult('disposed content', 401, (err as BusinessError).code); }
@@ -205,12 +202,12 @@ struct UpdateCustomDialogErrorCodeTest {
       let uiContext = this.getUIContext();
       let cn: ComponentContent<Params> | null = null;
       if (uiContext.getHostContext() != undefined) {
-        cn = new ComponentContent(uiContext, wrapBuilder(BuilderDialog), new Params('No',
+        cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('No',
           uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
       }
-      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
+      let dialog = this.getUIContext().getDialogPresenter();
       try {
-        await (dialog.update as Function)(cn as ESObject, { maskColor: '#80FF69B4' });
+        await dialog.update(cn, { maskColor: '#80FF69B4' });
         this.addResult('未打开过的content', 103303, -1);
       } catch (innerErr) { this.addResult('未打开过的content', 103303, (innerErr as BusinessError).code); }
     } catch (err) { this.addResult('未打开过的content', 103303, (err as BusinessError).code); }
@@ -221,14 +218,14 @@ struct UpdateCustomDialogErrorCodeTest {
       let uiContext = this.getUIContext();
       let cn: ComponentContent<Params> | null = null;
       if (uiContext.getHostContext() != undefined) {
-        cn = new ComponentContent(uiContext, wrapBuilder(BuilderDialog), new Params('Cls',
+        cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('Cls',
           uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
       }
-      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
-      await (dialog.present as Function)(cn as ESObject);
-      await (dialog.dismiss as Function)(cn as ESObject);
+      let dialog = this.getUIContext().getDialogPresenter();
+      await dialog.present(cn);
+      await dialog.dismiss(cn);
       try {
-        await (dialog.update as Function)(cn as ESObject, { maskColor: '#80FF69B4' });
+        await dialog.update(cn, { maskColor: '#80FF69B4' });
         this.addResult('已关闭的content', 103303, -1);
       } catch (innerErr) { this.addResult('已关闭的content', 103303, (innerErr as BusinessError).code); }
     } catch (err) { this.addResult('已关闭的content', 103303, (err as BusinessError).code); }

@@ -20,7 +20,10 @@
  */
 import { BusinessError } from '@kit.BasicServicesKit';
 import { TestResult, makeResult } from '../common/CommonHelper';
-import { dialog as dialogApi } from '@kit.ArkUI';
+import { systemShare } from '@kit.ShareKit';
+import { uniformTypeDescriptor as utd } from '@kit.ArkData';
+import { common } from '@kit.AbilityKit';
+import { dialog as dialogApi } from '@kit.ArkUI'
 
 @Entry
 @Component
@@ -31,14 +34,24 @@ struct ShowAlertDialogErrorCodeTest {
     this.results.unshift(makeResult(label, expectedCode, actualCode));
   }
 
-  private async share(): Promise<void> {
-    const helper = await import('../common/ShareKitHelper');
-    try {
-      await helper.showSystemShare(this.getUIContext());
+  private share() {
+    // 构造ShareData，需配置一条有效数据信息
+    let shareData: systemShare.SharedData = new systemShare.SharedData({
+      utd: utd.UniformDataType.TEXT,
+      content: '这是一段文本内容'
+    });
+    // 进行分享面板显示
+    let controller: systemShare.ShareController = new systemShare.ShareController(shareData);
+    let uiContext: UIContext = this.getUIContext();
+    let context: common.UIAbilityContext = uiContext.getHostContext() as common.UIAbilityContext;
+    controller.show(context, {
+      selectionMode: systemShare.SelectionMode.SINGLE,
+      previewMode: systemShare.SharePreviewMode.DETAIL,
+    }).then(() => {
       console.info('ShareController show success.');
-    } catch (error) {
-      helper.logShareError(error as BusinessError);
-    }
+    }).catch((error: BusinessError) => {
+      console.error(`ShareController show error. code: ${error.code}, message: ${error.message}`);
+    });
   }
 
   build() {
@@ -191,7 +204,7 @@ struct ShowAlertDialogErrorCodeTest {
       await dialog.present({
         title: 'Alert',
         message: { content: 'AlertMsg' },
-        buttons: [{ value: 'OK', action: () => {} }]
+        buttons: [{ value: 'OK', action: () => {} }],
       });
       this.addResult('正常showAlertDialog', 0, 0);
     } catch (err) { this.addResult('正常showAlertDialog', 0, (err as BusinessError).code); }

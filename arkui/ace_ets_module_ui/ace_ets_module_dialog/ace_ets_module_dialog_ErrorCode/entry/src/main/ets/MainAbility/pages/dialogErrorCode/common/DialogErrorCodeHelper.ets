@@ -19,19 +19,22 @@ export interface DialogPresenterLike {
   dismiss: (target?: Object) => Promise<void>;
 }
 
-export function getDialogPresenter(uiContext: UIContext): DialogPresenterLike {
-  let ctx: ESObject = uiContext as ESObject;
-  return ctx['getDialogPresenter']() as DialogPresenterLike;
+interface DialogPresenterHost {
+  getDialogPresenter: () => DialogPresenterLike;
 }
 
-export function dialogPresent(dialog: DialogPresenterLike, content?: ESObject, options?: ESObject): Promise<Object> {
+export function getDialogPresenter(uiContext: UIContext): DialogPresenterLike {
+  return (uiContext as DialogPresenterHost).getDialogPresenter();
+}
+
+export function dialogPresent(dialog: DialogPresenterLike, content?: Object, options?: Object): Promise<Object> {
   return (dialog.present as Function)(content, options) as Promise<Object>;
 }
 
-export function dialogUpdate(dialog: DialogPresenterLike, content: ESObject, options?: ESObject): Promise<void> {
+export function dialogUpdate(dialog: DialogPresenterLike, content: Object, options?: Object): Promise<void> {
   return (dialog.update as Function)(content, options) as Promise<void>;
 }
 
-export function dialogDismiss(dialog: DialogPresenterLike, target?: ESObject): Promise<void> {
+export function dialogDismiss(dialog: DialogPresenterLike, target?: Object): Promise<void> {
   return (dialog.dismiss as Function)(target) as Promise<void>;
 }

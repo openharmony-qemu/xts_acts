@@ -13,17 +13,13 @@
  * limitations under the License.
  */
 
-import { DialogPresenter } from '@kit.ArkUI';
 /**
  * showActionMenu 错误码测试
  * 对应新接口: present(options: DialogOptions)
  * 错误码: 401, 100001, 103306
  */
 import { BusinessError } from '@kit.BasicServicesKit';
-import {
-  TestResult, makeResult, DialogButtonBody, DialogMessageBody, DialogPresentResult,
-  DialogSheetBody, SimpleDialogOptions
-} from '../common/CommonHelper';
+import { TestResult, makeResult } from '../common/CommonHelper';
 
 @Entry
 @Component
@@ -106,12 +102,9 @@ struct ShowActionMenuErrorCodeTest {
 
   async testNormal() {
     try {
-      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
-      let okBtn = new DialogButtonBody('OK', (): void => {});
-      let opts = new SimpleDialogOptions();
-      opts.title = 'Menu';
-      opts.buttons = [okBtn];
-      await (dialog.present as Function)(opts as ESObject);
+      await this.getUIContext().getDialogPresenter().present({
+        title: 'Menu', buttons: [{ value: 'OK', action: () => {} }]
+      });
       this.addResult('正常showActionMenu', 0, 0);
     } catch (err) { this.addResult('正常showActionMenu', 0, (err as BusinessError).code); }
   }
@@ -139,11 +132,7 @@ struct ShowActionMenuErrorCodeTest {
 
   async testEmptyButtons() {
     try {
-      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
-      let opts = new SimpleDialogOptions();
-      opts.title = 'T';
-      opts.buttons = [];
-      await (dialog.present as Function)(opts as ESObject);
+      await this.getUIContext().getDialogPresenter().present({ title: 'T', buttons: [] });
       this.addResult('buttons为空', 0, 0);
     } catch (err) { this.addResult('buttons为空', 401, (err as BusinessError).code); }
   }

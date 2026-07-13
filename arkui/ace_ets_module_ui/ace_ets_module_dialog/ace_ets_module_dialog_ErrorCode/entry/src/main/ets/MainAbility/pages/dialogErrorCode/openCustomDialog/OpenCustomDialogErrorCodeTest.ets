@@ -28,8 +28,8 @@ import { resourceManager } from '@kit.LocalizationKit';
 import { common } from '@kit.AbilityKit';
 
 class Params {
-  text: string = "";
-  colorMode: resourceManager.ColorMode = resourceManager.ColorMode.LIGHT
+  public text: string = '';
+  public colorMode: resourceManager.ColorMode = resourceManager.ColorMode.LIGHT
 
   constructor(text: string, colorMode: resourceManager.ColorMode) {
     this.text = text
@@ -38,13 +38,13 @@ class Params {
 }
 
 @Builder
-function BuilderDialog(params: Params) {
+function builderDialog(params: Params) {
   Column() {
     Text(params.text)
       .fontSize(50)
       .fontWeight(FontWeight.Bold)
       .margin({ bottom: 36 })
-  }.backgroundColor(params.colorMode == resourceManager.ColorMode.LIGHT ? "#D5D5D5" : "#004AAF")
+  }.backgroundColor(params.colorMode == resourceManager.ColorMode.LIGHT ? '#D5D5D5' : '#004AAF')
 }
 
 @Entry
@@ -160,7 +160,7 @@ struct OpenCustomDialogErrorCodeTest {
         let uiContext = this.getUIContext();
         let cn: ComponentContent<Params> | null = null;
         if (uiContext.getHostContext() != undefined) {
-          cn = new ComponentContent(uiContext, wrapBuilder(BuilderDialog), new Params('Normal',
+          cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('Normal',
             uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
         }
         this.getUIContext().getDialogPresenter().present(cn, {customStyle: true})
@@ -184,7 +184,7 @@ struct OpenCustomDialogErrorCodeTest {
         let uiContext = this.getUIContext();
         let cn: ComponentContent<Params> | null = null;
         if (uiContext.getHostContext() != undefined) {
-          cn = new ComponentContent(uiContext, wrapBuilder(BuilderDialog), new Params('Normal',
+          cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('Normal',
             uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
         }
         this.getUIContext().getDialogPresenter().present(cn, {customStyle: true, showInSubWindow: true})
@@ -212,7 +212,7 @@ struct OpenCustomDialogErrorCodeTest {
         let uiContext = this.getUIContext();
         let cn: ComponentContent<Params> | null = null;
         if (uiContext.getHostContext() != undefined) {
-          cn = new ComponentContent(uiContext, wrapBuilder(BuilderDialog), new Params('Normal',
+          cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('Normal',
             uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
         }
         this.getUIContext().getDialogPresenter().present(cn, {customStyle: true, showInSubWindow: true})
@@ -234,13 +234,13 @@ struct OpenCustomDialogErrorCodeTest {
       let uiContext = this.getUIContext();
       let cn: ComponentContent<Params> | null = null;
       if (uiContext.getHostContext() != undefined) {
-        cn = new ComponentContent(uiContext, wrapBuilder(BuilderDialog), new Params('Normal',
+        cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('Normal',
           uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
       }
       let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
-      await (dialog.present as Function)(cn as ESObject);
+      await (dialog.present as Function)(cn as Object);
       this.addResult('正常openCustomDialog', 0, 0);
-      await (dialog.dismiss as Function)(cn as ESObject);
+      await (dialog.dismiss as Function)(cn as Object);
     } catch (err) { this.addResult('正常openCustomDialog', 0, (err as BusinessError).code); }
   }
 
@@ -270,7 +270,7 @@ struct OpenCustomDialogErrorCodeTest {
       let uiContext = this.getUIContext();
       let cn: ComponentContent<Params> | null = null;
       if (uiContext.getHostContext() != undefined) {
-        cn = new ComponentContent(uiContext, wrapBuilder(BuilderDialog), new Params('T',
+        cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('T',
           uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
       }
       await (this.getUIContext().getDialogPresenter().present as Function)(cn, 123);
@@ -283,19 +283,19 @@ struct OpenCustomDialogErrorCodeTest {
       let uiContext = this.getUIContext();
       let cn: ComponentContent<Params> | null = null;
       if (uiContext.getHostContext() != undefined) {
-        cn = new ComponentContent(uiContext, wrapBuilder(BuilderDialog), new Params('Dup',
+        cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('Dup',
           uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
       }
       let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
-      await (dialog.present as Function)(cn as ESObject);
+      await (dialog.present as Function)(cn as Object);
       this.addResult('第一次打开', 0, 0);
       try {
-        await (dialog.present as Function)(cn as ESObject);
+        await (dialog.present as Function)(cn as Object);
         this.addResult('重复打开', 103302, -1);
       } catch (innerErr) {
         this.addResult('重复打开', 103302, (innerErr as BusinessError).code);
       }
-      await (dialog.dismiss as Function)(cn as ESObject);
+      await (dialog.dismiss as Function)(cn as Object);
     } catch (err) { this.addResult('重复打开', 103302, (err as BusinessError).code); }
   }
 }

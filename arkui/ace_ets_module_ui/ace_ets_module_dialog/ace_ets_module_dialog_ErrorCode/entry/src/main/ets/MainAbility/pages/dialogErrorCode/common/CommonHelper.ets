@@ -1,19 +1,4 @@
-/*
- * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-import { ComponentContent, DialogPresenter } from '@kit.ArkUI';
+import { ComponentContent } from '@kit.ArkUI';
 
 
 export interface TestResult {
@@ -47,7 +32,7 @@ export function makeResult(label: string, expectedCode: number, actualCode: numb
 }
 
 class TextParams {
-  text: string = '';
+  public text: string = '';
   constructor(text: string) {
     this.text = text;
   }
@@ -69,15 +54,15 @@ export function commonTextBuilder(params: TextParams) {
 export { TextParams };
 
 export class DialogMessageBody {
-  content: string = '';
+  public content: string = '';
   constructor(content: string) {
     this.content = content;
   }
 }
 
 export class DialogButtonBody {
-  value: string = '';
-  action: () => void = (): void => {};
+  public value: string = '';
+  public action: () => void = (): void => {};
   constructor(value: string, action: () => void) {
     this.value = value;
     this.action = action;
@@ -85,8 +70,8 @@ export class DialogButtonBody {
 }
 
 export class DialogSheetBody {
-  title: string = '';
-  action: () => void = (): void => {};
+  public title: string = '';
+  public action: () => void = (): void => {};
   constructor(title: string, action: () => void) {
     this.title = title;
     this.action = action;
@@ -94,11 +79,11 @@ export class DialogSheetBody {
 }
 
 export class SimpleDialogOptions {
-  title: string = '';
-  message?: DialogMessageBody;
-  buttons?: DialogButtonBody[];
-  sheets?: DialogSheetBody[];
-  showInSubWindow?: boolean;
+  public title: string = '';
+  public message?: DialogMessageBody;
+  public buttons?: DialogButtonBody[];
+  public sheets?: DialogSheetBody[];
+  public showInSubWindow?: boolean;
 }
 
 export interface DialogPresentResult {
