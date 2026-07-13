@@ -21,7 +21,7 @@ initModule('../../src/testrunner/OpenHarmonyTestRunner.ets')
 @Entry
 @Component
 struct Index {
-  @State stateVar: string = 'state var';
+  @State stateVar: string = 'export_test_static';
   message: string = 'var';
 
   changeValue() {

@@ -14,6 +14,6 @@
 * limitations under the License.
 */
 import { GlobalInstance } from './IMapExport'
-export let module = 'ImportModule'
+export let module:string = 'ImportModule'
 GlobalInstance.getInstance().setLoadModel('ImportModule')
 

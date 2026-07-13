@@ -28,6 +28,6 @@ export function addBigIntUll(a: BigInt): BigInt {
 
 const bigInt1 = 1234567890123456789012345678901234567890n;
 
-export const resultAddBigIntUll = addBigIntUll(bigInt1);
+export const resultAddBigIntUll: BigInt = addBigIntUll(bigInt1);
 
 export { resultAddBigIntUll as sad }

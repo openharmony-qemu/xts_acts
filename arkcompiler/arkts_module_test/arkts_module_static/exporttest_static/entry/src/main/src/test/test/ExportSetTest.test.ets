@@ -18,7 +18,7 @@ import defaultSet from "../Set/SetExport";
 import { fruitSet, numberSet, type StringSet, createStringSet, setUtils } from "../Set/SetExport";
 import { sleep } from "../utils/Utils";
 
-export default function ExportSetTest() {
+export default function ExportSetTest():void {
   describe('ExportSetTest', () => {
     beforeAll(() => {
       // 测试套件前置操作

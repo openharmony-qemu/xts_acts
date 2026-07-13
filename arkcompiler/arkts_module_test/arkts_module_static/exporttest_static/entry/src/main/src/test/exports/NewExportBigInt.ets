@@ -20,6 +20,6 @@ function addBigInt(a: BigInt): BigInt {
 
 const bigInt1 = 1234567890123456789012345678901234567890n;
 
-export const result = addBigInt(bigInt1);
+export const result: BigInt = addBigInt(bigInt1);
 
 export default result;

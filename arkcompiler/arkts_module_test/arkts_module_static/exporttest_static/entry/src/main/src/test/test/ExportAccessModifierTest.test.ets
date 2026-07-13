@@ -20,7 +20,7 @@ import { ReadonlyClass } from '../exports_access/AccessExport';
 import ReadonlyCls from '../exports_access/AccessExport';
 import { sleep } from '../utils/Utils';
 
-export default function exportAccessModifierTest() {
+export default function exportAccessModifierTest():void {
   describe('ExportAccessModifierTest', () => {
     beforeAll(() => {})
     beforeEach(async () => {

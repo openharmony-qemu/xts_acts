@@ -18,7 +18,7 @@ import { sleep } from '../utils/Utils';
 import { A, GlobalInstance } from '../Map/IMapExport'
 
 
-export default function ExportMapTest() {
+export default function ExportMapTest():void {
   describe('ExportMapTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

@@ -21,7 +21,7 @@ import defaultStr from '../default/DefaultString'
 import defaultTypeStr from '../default/DefaultTypeString';
 import { sleep } from '../utils/Utils';
 
-export default function exportStringTest() {
+export default function exportStringTest():void {
   describe('ExportStringTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

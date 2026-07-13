@@ -31,7 +31,7 @@ import * as all_Index from '../export_tuple/Index';
 import * as all_Index2 from '../export_tuple/Index2';
 
 
-export default function exportTupleTest() {
+export default function exportTupleTest():void {
   describe('ExportTupleTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

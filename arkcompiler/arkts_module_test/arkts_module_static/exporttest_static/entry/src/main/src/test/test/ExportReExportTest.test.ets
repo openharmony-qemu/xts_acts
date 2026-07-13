@@ -20,7 +20,7 @@ import { renamedConstValue, RenamedClass, renamedFunction } from '../exports_ree
 import { ReExportDefaultAsNamedClass } from '../exports_reexport/ReExportDefaultAsNamed';
 import { sleep } from '../utils/Utils';
 
-export default function exportReExportTest() {
+export default function exportReExportTest():void {
   describe('ExportReExportTest', () => {
     beforeAll(() => {})
     beforeEach(async () => {

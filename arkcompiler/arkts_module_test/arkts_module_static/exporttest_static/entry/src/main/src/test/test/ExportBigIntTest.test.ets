@@ -22,7 +22,7 @@ import { BigIntModule, toAdd } from '../exports/TestExport';
 import { addBigIntUll, resultAddBigIntUll, sad } from '../exports/ExportBigInt'
 import { sleep } from '../utils/Utils';
 
-export default function exportBigIntTest() {
+export default function exportBigIntTest():void {
   describe('ExportBigIntTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

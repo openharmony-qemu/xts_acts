@@ -35,7 +35,7 @@ import exportLiteralTypeTest from './test/ExportLiteralTypeTest.test';
 import exportDCRTest from './test/ExportDCRTest.test';
 import exportAnnotationTest from './test/ExportAnnotationTest.test';
 
-export default function testsuite() {
+export default function testsuite():void {
   exportStringTest();
   ExportBooleanTest();
   exportNumberTest();

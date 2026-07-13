@@ -20,7 +20,7 @@ import { DcrClassWithCtorDefault, DcrClassWithMethodDefault, DcrClassWithFieldDe
 import { DcrStatus, DCR_CONST_VALUE, DcrExportedClass, DcrExportedInterface } from '../exports_dcr/DcrEnumSource';
 import { sleep } from '../utils/Utils';
 
-export default function exportDCRTest() {
+export default function exportDCRTest():void {
   describe('ExportDCRTest', () => {
     beforeAll(() => {})
     beforeEach(async () => {

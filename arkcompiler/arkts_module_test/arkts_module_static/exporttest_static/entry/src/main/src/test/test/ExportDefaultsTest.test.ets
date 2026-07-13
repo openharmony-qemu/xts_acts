@@ -17,7 +17,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import test1, { test2, test3 as test } from '../exports/ExportDefault'
 import { sleep } from '../utils/Utils';
 
-export default function exportDefaultTest() {
+export default function exportDefaultTest():void {
   describe('ExportDefaultTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
