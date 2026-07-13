@@ -336,11 +336,11 @@ export default function MiniCapabilityTest() {
           let isMatchFound = false;
           for (const previewProfile of cameraVideoOutputCap.previewProfiles) {
             const previewRatio = previewProfile.size.width / previewProfile.size.height;
-            for (const videoProfile of cameraVideoOutputCap.videoProfiles) {
-              const videoRatio = videoProfile.size.width / videoProfile.size.height;
-              if (previewRatio === videoRatio && previewProfile.format === videoProfile.format) {
+            for (const nVideoProfile of cameraVideoOutputCap.videoProfiles) {
+              const videoRatio = nVideoProfile.size.width / nVideoProfile.size.height;
+              if (previewRatio === videoRatio && previewProfile.format === nVideoProfile.format) {
                 let matchedPreviewProfile = previewProfile;
-                let matchedVideoProfile = videoProfile;
+                let matchedVideoProfile = nVideoProfile;
                 previewOutput = mCameraManager.createPreviewOutput(matchedPreviewProfile, indexSurfaceId);
                 videoOutput = mCameraManager.createVideoOutput(matchedVideoProfile, mVideoSurfaceId);
                 break;
@@ -527,12 +527,12 @@ export default function MiniCapabilityTest() {
           let isMatchFound = false;
           for (const previewProfile of previewProfiles) {
             const previewRatio = previewProfile.size.width / previewProfile.size.height;
-            for (const videoProfile of videoProfiles) {
-              const videoRatio = videoProfile.size.width / videoProfile.size.height;
-              if (previewRatio === videoRatio && previewProfile.format === videoProfile.format) {
+            for (const nVideoProfile of videoProfiles) {
+              const videoRatio = nVideoProfile.size.width / nVideoProfile.size.height;
+              if (previewRatio === videoRatio && previewProfile.format === nVideoProfile.format) {
                 previewOutput1 = mCameraManager.createPreviewOutput(previewProfile, indexSurfaceId);
                 previewOutput2 = mCameraManager.createPreviewOutput(previewProfile, indexSurfaceId);
-                videoOutput = mCameraManager.createVideoOutput(videoProfile, mVideoSurfaceId);
+                videoOutput = mCameraManager.createVideoOutput(nVideoProfile, mVideoSurfaceId);
                 isMatchFound = true;
                 break;
               }
