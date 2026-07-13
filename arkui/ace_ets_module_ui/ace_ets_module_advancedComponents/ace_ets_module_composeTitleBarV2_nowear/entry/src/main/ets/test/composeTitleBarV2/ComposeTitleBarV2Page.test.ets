@@ -180,5 +180,30 @@ export default function composeTitleBarV2PageTest() {
       console.info('[composeTitleBarV2PageTest_0500] END');
       done();
     });
+
+    /**
+     * @tc.number composeTitleBarV2PageTest
+     * @tc.name   composeTitleBarV2PageTest_0600
+     * @tc.desc   Test ComposeTitleBarV2 dynamic property update
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  0
+     */
+    it('composeTitleBarV2PageTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('[composeTitleBarV2PageTest_0600] START');
+      let driver = await Driver.create();
+      await driver.delayMs(2000);
+      
+      let sectionTitle = await driver.findComponent(ON.text('完整功能标题'));
+      expect(sectionTitle !== null).assertTrue();
+      
+      let title = await driver.findComponent(ON.text('展示所有属性'));
+      expect(title !== null).assertTrue();
+      
+      await driver.delayMs(1000);
+      console.info('[composeTitleBarV2PageTest_0600] END');
+      done();
+    });
+
   })
 }
