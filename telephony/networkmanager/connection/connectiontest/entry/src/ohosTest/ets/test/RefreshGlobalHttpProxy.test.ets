@@ -71,26 +71,19 @@ export default function RefreshGlobalHttpProxyTest() {
       async (done: Function) => {
         const caseName: string = 'testRefreshGlobalHttpProxyWithErrorCode0200';
         console.info(`${caseName}---Start`);
-        try {
-          let proxyResults: connection.HttpProxy[] = [];
-          for (let i = 0; i < 3; i++) {
-            try {
-              const httpProxy = await connection.refreshGlobalHttpProxy();
-              proxyResults.push(httpProxy);
-              console.info(`${caseName} iteration ${i} result: ${JSON.stringify(httpProxy)}`);
-            } catch (err) {
-              console.info(`${caseName} iteration ${i} error: ${JSON.stringify(err)}`);
-              ExpectTrue(err.code === 2100003);
-            }
+        let proxyResults: connection.HttpProxy[] = [];
+        for (let i = 0; i < 3; i++) {
+          try {
+            const httpProxy = await connection.refreshGlobalHttpProxy();
+            proxyResults.push(httpProxy);
+            console.info(`${caseName} iteration ${i} result: ${JSON.stringify(httpProxy)}`);
+          } catch (err) {
+            console.info(`${caseName} iteration ${i} error: ${JSON.stringify(err)}`);
+            ExpectTrue(err.code === 2100003);
           }
-          console.info(`${caseName}---End`);
-          done();
-        } catch (err) {
-          console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
-          ExpectFail();
-          console.info(`${caseName}---End`);
-          done();
         }
+        console.info(`${caseName}---End`);
+        done();
       });
 
     /**
