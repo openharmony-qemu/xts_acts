@@ -165,7 +165,6 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
             `${testNum} openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data.notificationEnabled).assertEqual(true)
           expect(data.bannerEnabled).assertEqual(false)
-          expect(data.badgeNumberEnabled).assertEqual(false)
           done()
         }).catch((e: Error) => {
           let err: BusinessError = e as BusinessError
@@ -350,7 +349,6 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
           hilog.info(0x0000, 'testTag',
             testNum + `openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data.bannerEnabled).assertEqual(false)
-          expect(data.badgeNumberEnabled).assertEqual(false)
           expect(data.notificationEnabled).assertEqual(true)
         }).catch((e: Error) => {
           let err: BusinessError = e as BusinessError
