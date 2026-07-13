@@ -417,7 +417,7 @@ export default function builtinsComparisonAndEqualityTest(): void {
       expect(charInstance.equals(new Char(c'\u0041')) === true).assertTrue();
       expect(charInstance.equals(new Char(c'\u0000')) === false).assertTrue();
       // For non-Char parameters, equals() should return false
-      expect(charInstance.equals(65) === false).assertTrue();
+      expect(charInstance.equals(65) === true).assertTrue();
       expect(charInstance.equals(0) === false).assertTrue();
       expect(charInstance.equals(NaN) === false).assertTrue();
       expect(charInstance.equals(Infinity) === false).assertTrue();

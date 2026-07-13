@@ -99,7 +99,7 @@ it('testOverall004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
 it('testOverall005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let collator: Intl.Collator = new Intl.Collator();
       let result = collator.compare("a", "b");
-      expect(typeof result === "int").assertTrue();
+      expect(typeof result === "number").assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_OVERALL_0600
@@ -112,7 +112,7 @@ it('testOverall005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
 it('testOverall006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let collator: Intl.Collator = new Intl.Collator("en-US");
       let result = collator.compare("a", "b");
-      expect(typeof result === "int").assertTrue();
+      expect(typeof result === "number").assertTrue();
     });
 
     /**
@@ -126,7 +126,7 @@ it('testOverall006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
 it('testOverall007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let collator: Intl.Collator = new Intl.Collator("en-US", { sensitivity: "base" });
       let result = collator.compare("a", "A");
-      expect(typeof result === "int").assertTrue();
+      expect(typeof result === "number").assertTrue();
       expect(result === 0).assertTrue();
     });
 
@@ -156,7 +156,7 @@ it('testOverall008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
 it('testOverall009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let collator: Intl.Collator = new Intl.Collator("zh-CN");
       let result = collator.compare("中文", "测试");
-      expect(typeof result === "int").assertTrue();
+      expect(typeof result === "number").assertTrue();
     });
 
     /**
@@ -172,8 +172,8 @@ it('testOverall010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let collator2: Intl.Collator = new Intl.Collator("en-US", { sensitivity: "case" });
       let result1 = collator1.compare("a", "A");
       let result2 = collator2.compare("a", "A");
-      expect(typeof result1 === "int").assertTrue();
-      expect(typeof result2 === "int").assertTrue();
+      expect(typeof result1 === "number").assertTrue();
+      expect(typeof result2 === "number").assertTrue();
       expect(result1 === 0).assertTrue();
       expect(result2 !== 0).assertTrue();
     });
@@ -1225,7 +1225,7 @@ it('testOverall080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let locale: Intl.Locale = new Intl.Locale("en-US");
       let collator: Intl.Collator = new Intl.Collator(locale.toString());
       let result = collator.compare("a", "b");
-      expect(typeof result === "int").assertTrue();
+      expect(typeof result === "number").assertTrue();
     });
 
     /**
@@ -1291,7 +1291,7 @@ it('testOverall084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let rtf: Intl.RelativeTimeFormat = new Intl.RelativeTimeFormat(locale);
       let lf: Intl.ListFormat = new Intl.ListFormat(locale);
       let dn: Intl.DisplayNames = new Intl.DisplayNames(locale, { type: "language" });
-      expect(typeof collator.compare("a", "b") === "int").assertTrue();
+      expect(typeof collator.compare("a", "b") === "number").assertTrue();
       expect(typeof dtf.format(new Date(0)) === "string").assertTrue();
       expect(typeof rtf.format(-1, "day") === "string").assertTrue();
       expect(typeof lf.format(["a", "b"]) === "string").assertTrue();
@@ -1396,7 +1396,7 @@ it('testOverall090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
      */
 it('testOverall091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let collator: Intl.Collator = new Intl.Collator();
-      expect(typeof collator.compare("a", "b") === "int").assertTrue();
+      expect(typeof collator.compare("a", "b") === "number").assertTrue();
     });
 
     /**

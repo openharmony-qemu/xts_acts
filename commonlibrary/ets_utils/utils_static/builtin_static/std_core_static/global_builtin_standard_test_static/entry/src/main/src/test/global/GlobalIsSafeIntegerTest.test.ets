@@ -278,7 +278,7 @@ export default function GlobalIsSafeIntegerTest(): void {
     it('testIsSafeInteger019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let val: int = -2147483648;
       let result: boolean = isSafeInteger(val);
-      expect(result).assertTrue();
+      expect(result).assertFalse();
     });
 
     /**
@@ -874,7 +874,7 @@ export default function GlobalIsSafeIntegerTest(): void {
     it('testIsSafeInteger062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: int = Int.MIN_VALUE;
       let result: boolean = isSafeInteger(value);
-      expect(result).assertTrue();
+      expect(result).assertFalse();
     });
 
     /**

@@ -309,7 +309,7 @@ export default function IntlSupplementalTest(): void {
      */
     it('testCollatorCollation019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let collator: Intl.Collator = new Intl.Collator("zh-CN", { collation: "pinyin" });
-      expect(typeof collator.compare("á", "a") === "int").assertTrue();
+      expect(typeof collator.compare("á", "a") === "number").assertTrue();
     });
 
     /**
@@ -523,7 +523,7 @@ export default function IntlSupplementalTest(): void {
      */
     it('testCollatorConstructorLocaleArray032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let collator: Intl.Collator = new Intl.Collator(["en-US", "zh-CN"]);
-      expect(typeof collator.compare("a", "b") === "int").assertTrue();
+      expect(typeof collator.compare("a", "b") === "number").assertTrue();
     });
 
     /**
@@ -643,8 +643,8 @@ export default function IntlSupplementalTest(): void {
     it('testCollatorLocaleMatcher040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cLookup: Intl.Collator = new Intl.Collator("en-US", { localeMatcher: "lookup" });
       let cBestFit: Intl.Collator = new Intl.Collator("en-US", { localeMatcher: "best fit" });
-      expect(typeof cLookup.compare("a", "b") === "int").assertTrue();
-      expect(typeof cBestFit.compare("a", "b") === "int").assertTrue();
+      expect(typeof cLookup.compare("a", "b") === "number").assertTrue();
+      expect(typeof cBestFit.compare("a", "b") === "number").assertTrue();
     });
 
     /**

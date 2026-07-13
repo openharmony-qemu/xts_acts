@@ -1177,15 +1177,15 @@ export default function RuntimeLinkerFindLoadedClassTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_RUNTIME_LINKER_FIND_LOADED_CLASS_0770
      * @tc.name testRuntimeLinkerFindLoadedClass077
-     * @tc.desc Verify findLoadedClass returns loaded std.core.Error class
+     * @tc.desc Verify findLoadedClass returns loaded escompat.Error class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testRuntimeLinkerFindLoadedClass077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const linker = getBootRuntimeLinker()
-      const foundClass = linker.findLoadedClass("std.core.Error")
-      expect(foundClass!.getName()).assertEqual("std.core.Error")
+      const foundClass = linker.findLoadedClass("escompat.Error")
+      expect(foundClass!.getName()).assertEqual("escompat.Error")
     });
 
     /**
