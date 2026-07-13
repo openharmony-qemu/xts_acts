@@ -44,7 +44,7 @@ export default function fadingEdgeNullUndefinedTest() {
     /**
      * @tc.name   arcListFadingEdgeNullUndefined_0100
      * @tc.number SUB_ARKUI_ARCLIST_FADINGEDGE_NULL_0100
-     * @tc.desc   Test ArcList fadingEdge property with null, should restore to default value
+     * @tc.desc   Test ArcList fadingEdge property with no set
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -54,14 +54,12 @@ export default function fadingEdgeNullUndefinedTest() {
 
       let strJsonCompare: string = getInspectorByKey('arclist_fadingEdge_default');
       let objCompare: Record<string, ESObject> = JSON.parse(strJsonCompare);
-      let strJson: string = getInspectorByKey('arclist_fadingEdge_null');
-      let obj: Record<string, ESObject> = JSON.parse(strJson);
 
       console.info("[arcListFadingEdgeNullUndefined_0100] default obj is: " + JSON.stringify(objCompare.$attrs.fadingEdge));
-      console.info("[arcListFadingEdgeNullUndefined_0100] null obj is: " + JSON.stringify(obj.$attrs.fadingEdge));
 
-      // null 应该恢复为默认值
-      expect(obj.$attrs.fadingEdge).assertEqual(objCompare.$attrs.fadingEdge);
+      let resourceEdge = getContext().resourceManager.getStringSync($r('sys.string.ohos_id_list_fadeout_enable_default').id)
+      console.info("[arcListFadingEdgeNullUndefined_0100] resourceEdge: " + resourceEdge);
+      expect(objCompare.$attrs.fadingEdge+'').assertEqual(resourceEdge);
       console.info('[arcListFadingEdgeNullUndefined_0100] END');
     })
 
@@ -76,7 +74,7 @@ export default function fadingEdgeNullUndefinedTest() {
     it('arcListFadingEdgeNullUndefined_0200', Level.LEVEL0, async () => {
       console.info('[arcListFadingEdgeNullUndefined_0200] START');
 
-      let strJsonCompare: string = getInspectorByKey('arclist_fadingEdge_default');
+      let strJsonCompare: string = getInspectorByKey('arclist_fadingEdge_null');
       let objCompare: Record<string, ESObject> = JSON.parse(strJsonCompare);
       let strJson: string = getInspectorByKey('arclist_fadingEdge_undefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);

@@ -114,7 +114,9 @@ export default function ArcListDemo() {
       expect(obj.$attrs.cachedCount).assertEqual('0');
       expect(obj.$attrs.chainAnimation).assertEqual(false);
       expect(obj.$attrs.enableScrollInteraction).assertEqual(true);
-      expect(obj.$attrs.fadingEdge).assertEqual(false);
+      let resourceEdge = getContext().resourceManager.getStringSync($r('sys.string.ohos_id_list_fadeout_enable_default').id)
+      console.info("[ArkUX_Stage_ArcList_ComponentTest_0100] resourceEdge: " + resourceEdge);
+      expect(obj.$attrs.fadingEdge+'').assertEqual(resourceEdge);
       expect(obj.$attrs.friction).assertEqual(0.800000011920929);
       expect(obj.$attrs.flingSpeedLimit).assertEqual('9000.00vp');
       console.info('[ArkUX_Stage_ArcList_ComponentTest_0100] END');

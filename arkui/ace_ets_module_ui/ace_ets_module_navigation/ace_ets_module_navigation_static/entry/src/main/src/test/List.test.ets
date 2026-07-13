@@ -22,6 +22,7 @@ import ToolBarItemDebugLineTest from './ToolBarItemDebugLineTest/ToolBarItemDebu
 import NavScrollEffectOptions from './NavigationTest/NavScrollEffectOptions.test';
 import NavigationModeRatio from './NavigationTest/NavigationModeRatio.test';
 import configurationNav from './NavigationNavDestinationTest/configurationNav.test';
+import colorLengthMetrics from './Graphics/colorLengthMetrics.test';
 import swiperIndicatorIcon from './SwiperControllerTest/swiperIndicatorIcon.test';
 
 export default function testsuite() {
@@ -33,5 +34,6 @@ export default function testsuite() {
   NavScrollEffectOptions();
   NavigationModeRatio();
   configurationNav();
+  colorLengthMetrics();
   swiperIndicatorIcon();
 }
