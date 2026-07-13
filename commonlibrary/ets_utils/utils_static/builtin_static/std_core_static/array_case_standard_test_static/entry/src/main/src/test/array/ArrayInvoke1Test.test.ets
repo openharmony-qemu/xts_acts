@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from '@ohos/hypium-binary/src/main/indexStatic';
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 class Item017 {
@@ -652,7 +652,6 @@ export default function ArrayInvoke1Test(): void {
       const arr = new Array<int | undefined>();
 
       expect(arr.length).assertEqual(0);
-      expect(arr.length > 0).assertFalse();
 
       try {
         arr[0];
