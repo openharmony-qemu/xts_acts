@@ -932,5 +932,56 @@ export default function ConnectionWithoutPermissionTest() {
         done();
       });
     });
+
+    /**
+     * @tc.name   testRefreshGlobalRefreshGlobalHttpProxyNoPermission0100
+     * @tc.number SUB_NetworkMgr_Connection_RefreshGlobalHttpProxyNoPermission_0100
+     * @tc.desc   test obtain the default activated data network and use the callback method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRefreshGlobalRefreshGlobalHttpProxyNoPermission0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = "testRefreshGlobalRefreshGlobalHttpProxyNoPermission0100";
+      console.info(`${caseName} test start`);
+      try {
+        await connection.refreshGlobalHttpProxy();
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectTrue(err.code === 201);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testRefreshGlobalRefreshGlobalHttpProxyNoPermission0200
+     * @tc.number SUB_NetworkMgr_Connection_RefreshGlobalHttpProxyNoPermission_0200
+     * @tc.desc   test refreshGlobalHttpProxy returns 201 (Permission denied) using Promise way
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+        it('testRefreshGlobalRefreshGlobalHttpProxyNoPermission0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        (done: Function) => {
+          const caseName: string = 'testRefreshGlobalRefreshGlobalHttpProxyNoPermission0200';
+          console.info(`${caseName}---Start`);
+          connection.refreshGlobalHttpProxy()
+            .then(() => {
+              console.info(`${caseName} Promise resolved unexpectedly`);
+              ExpectFail();
+              console.info(`${caseName}---End`);
+              done();
+            })
+            .catch((err: BusinessError) => {
+              console.info(`${caseName} Promise rejected with: ${JSON.stringify(err)}`);
+              ExpectTrue(err.code === 201);
+              console.info(`${caseName}---End`);
+              done();
+            });
+        });
   });
 }
