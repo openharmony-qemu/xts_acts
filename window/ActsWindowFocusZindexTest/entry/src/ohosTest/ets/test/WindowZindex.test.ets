@@ -19,7 +19,7 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { Driver, ON } from '@kit.TestKit';
 import settings from '@ohos.settings';
-
+import deviceInfo from '@ohos.deviceInfo';
 
 export default function windowZindexTest() {
   describe('windowZindexTest', async () => {
@@ -31,6 +31,8 @@ export default function windowZindexTest() {
     let isFreeWindowMode = false;
     let canIUseRes: boolean = false;
     let driver: Driver;
+    let deviceType: string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -1217,12 +1219,13 @@ export default function windowZindexTest() {
         done();
       }catch(err){
         console.log(`${caseName} :setWindowDelayRaiseOnDrag fail:`+err.code);
-        if(err.code == 801){
-          done();
-        }else{
-          expect().assertFail();
-          done();
+        if (isFreeWindowMode) { 
+          expect(err.code).assertEqual(801);
+          expect(err.message !== '').assertTrue()
+        } else {
+          expect(false).assertTrue();
         }
+        done();
       }
     });
     /**
@@ -1244,12 +1247,13 @@ export default function windowZindexTest() {
         done();
       }catch(err){
         console.log(`${caseName} :setWindowDelayRaiseOnDrag fail:`+err.code);
-        if(err.code == 801){
-          done();
-        }else{
-          expect().assertFail();
-          done();
+        if (isFreeWindowMode) { 
+          expect(err.code).assertEqual(801);
+          expect(err.message !== '').assertTrue()
+        } else {
+          expect(false).assertTrue();
         }
+        done();
       }
     });
 
@@ -1322,12 +1326,12 @@ export default function windowZindexTest() {
         done();
       } catch(err) {
         console.log(`${caseName} :test_SubWindowZLevel_0100 fail:`+err.code);
-        if(err.code == 801){
-          done();
-        } else {
-          expect().assertFail();
-          done();
+        if(!canIUseRes || (deviceType !== 'phone' || deviceType !== 'tablet' || deviceType !== '2in1')){
+          expect(err.code).assertEqual(801);
+        }else {
+          expect(false).assertTrue();
         }
+        done();
       }
     });
 
@@ -1470,12 +1474,12 @@ export default function windowZindexTest() {
       } catch(err) {
         console.log(`${caseName} :sub window setSubWindowZLevel fail1:`+err.code);
         await windowClass.destroyWindow();
-        if (err.code === 801) {
-          done();
-        } else {
-          expect().assertFail();
-          done();
+        if(!canIUseRes || (deviceType !== 'phone' || deviceType !== 'tablet' || deviceType !== '2in1')){
+          expect(err.code).assertEqual(801);
+        }else {
+          expect(false).assertTrue();
         }
+        done();
       }
 
       let windowClass2 = await windowStage.createSubWindow('test_SubWindowZLevel_0500');
@@ -1489,12 +1493,12 @@ export default function windowZindexTest() {
       } catch(err) {
         console.log(`${caseName} :sub window setSubWindowZLevel fail2:`+err.code);
         await windowClass2.destroyWindow();
-        if (err.code === 801) {
-          done();
-        } else {
-          expect().assertFail();
-          done();
+        if(!canIUseRes || (deviceType !== 'phone' || deviceType !== 'tablet' || deviceType !== '2in1')){
+          expect(err.code).assertEqual(801);
+        }else {
+          expect(false).assertTrue();
         }
+        done();
       }
     });
 
@@ -1524,11 +1528,10 @@ export default function windowZindexTest() {
       } catch(err) {
         console.log(`${caseName} :sub window setSubWindowZLevel fail1:`+err.code);
         await windowClass.destroyWindow();
-        if (err.code === 801) {
-          done();
-        } else {
-          expect().assertFail();
-          done();
+        if(!canIUseRes || (deviceType !== 'phone' || deviceType !== 'tablet' || deviceType !== '2in1')){
+          expect(err.code).assertEqual(801);
+        }else {
+          expect(false).assertTrue();
         }
       }
     });
@@ -1574,7 +1577,7 @@ export default function windowZindexTest() {
         done();
       } catch (err) {
         console.log(`${caseName} : failed, code: ${err.code}, msg: ${err.message}`);
-        if (!canIUseRes) {
+        if (!canIUseRes || (deviceType !== 'phone' || deviceType !== 'tablet' || deviceType !== '2in1')) {
           expect(err.code).assertEqual(801);
         } else {
           expect(err.code).assertEqual(1300004);
@@ -2080,7 +2083,7 @@ export default function windowZindexTest() {
         }).catch(async (err: BusinessError) => {
           console.error(`caseName+ Failed to set sub window zLevel. Cause code: ${err.code}, message: ${err.message}`);
           await subWindow.destroyWindow();
-          if(!canIUseRes){
+          if(!canIUseRes || (deviceType !== 'phone' || deviceType !== 'tablet' || deviceType !== '2in1')){
             expect(err.code).assertEqual(801);
           }else {
             expect(err.code).assertEqual(401);
@@ -2116,7 +2119,7 @@ export default function windowZindexTest() {
         }).catch(async (err: BusinessError) => {
           console.error(caseName+` Failed to set sub window zLevel. Cause code: ${err.code}, message: ${err.message}`);
           await subWindow.destroyWindow();
-          if(err.code == 801){
+          if(!canIUseRes || (deviceType !== 'phone' || deviceType !== 'tablet' || deviceType !== '2in1')){
             expect(err.code).assertEqual(801);
             expect(err.message !== '').assertTrue()
             done()
@@ -2153,7 +2156,7 @@ export default function windowZindexTest() {
         }).catch(async (err: BusinessError) => {
           console.error(caseName+` Failed to set sub window zLevel. Cause code: ${err.code}, message: ${err.message}`);
           await subWindow.destroyWindow();
-          if(!canIUseRes){
+          if(!canIUseRes || (deviceType !== 'phone' || deviceType !== 'tablet' || deviceType !== '2in1')){
             expect(err.code).assertEqual(801);
             expect(err.message !== '').assertTrue();
             done()
@@ -2189,7 +2192,7 @@ export default function windowZindexTest() {
         }).catch(async (err: BusinessError) => {
           console.error(`caseName+ Failed to set sub window zLevel. Cause code: ${err.code}, message: ${err.message}`);
           await subWindow.destroyWindow();
-          if(!canIUseRes){
+          if(!canIUseRes || (deviceType !== 'phone' || deviceType !== 'tablet' || deviceType !== '2in1')){
             expect(err.code).assertEqual(801);
           }else {
             expect(err.code).assertEqual(401);
