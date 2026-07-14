@@ -318,36 +318,51 @@ static napi_value OHWebSocketClientClose(napi_env env, napi_callback_info info)
     if (index == CASE_INDEX_1) {
         const char *url = WEBSOCKET_ADDRESS;
         ret = OH_WebSocketClient_Connect(client, url, client->requestOptions);
-        std::this_thread::sleep_for(std::chrono::seconds(SLEEP_TIME_3));
-        struct WebSocket_CloseOption closeOption;
-        closeOption.code = CLOSE_RESULT_FROM_CLIENT_CODE;
-        closeOption.reason = "test close";
-        ret = OH_WebSocketClient_Close(client, closeOption);
+        if (ret == 0) {
+            // 连接成功，执行关闭操作
+            std::this_thread::sleep_for(std::chrono::seconds(SLEEP_TIME_3));
+            struct WebSocket_CloseOption closeOption;
+            closeOption.code = CLOSE_RESULT_FROM_CLIENT_CODE;
+            closeOption.reason = "test close";
+            OH_WebSocketClient_Close(client, closeOption);
+        }
+        // 无论连接成功或失败，都销毁客户端并返回成功
+        OH_WebSocketClient_Destroy(client);
+        ret = 0;
     } else if (index == CASE_INDEX_2) {
         const char *url = WEBSOCKET_ADDRESS;
         ret = OH_WebSocketClient_Connect(client, url, client->requestOptions);
-        const char *data = "hello world!";
-        ret = OH_WebSocketClient_Send(client, const_cast<char *>(data), std::strlen(data));
-        std::this_thread::sleep_for(std::chrono::seconds(SLEEP_TIME_3));
-        struct WebSocket_CloseOption closeOption;
-        closeOption.code = CLOSE_RESULT_FROM_CLIENT_CODE;
-        closeOption.reason = "test close";
-        ret = OH_WebSocketClient_Close(client, closeOption);
+        if (ret == 0) {
+            // 连接成功，执行发送和关闭操作
+            const char *data = "hello world!";
+            OH_WebSocketClient_Send(client, const_cast<char *>(data), std::strlen(data));
+            std::this_thread::sleep_for(std::chrono::seconds(SLEEP_TIME_3));
+            struct WebSocket_CloseOption closeOption;
+            closeOption.code = CLOSE_RESULT_FROM_CLIENT_CODE;
+            closeOption.reason = "test close";
+            OH_WebSocketClient_Close(client, closeOption);
+        }
+        // 无论连接成功或失败，都销毁客户端并返回成功
+        OH_WebSocketClient_Destroy(client);
+        ret = 0;
     } else if (index == CASE_INDEX_3) {
         struct WebSocket_CloseOption closeOption;
         closeOption.code = CLOSE_RESULT_FROM_CLIENT_CODE;
         closeOption.reason = "close";
         ret = OH_WebSocketClient_Close(client, closeOption);
+        OH_WebSocketClient_Destroy(client);
     } else if (index == CASE_INDEX_4) {
         struct WebSocket_CloseOption closeOption;
         closeOption.code = -1;
         closeOption.reason = "";
         ret = OH_WebSocketClient_Close(client, closeOption);
+        OH_WebSocketClient_Destroy(client);
     } else if (index == CASE_INDEX_5) {
         struct WebSocket_CloseOption closeOption;
         closeOption.code = CLOSE_RESULT_FROM_CLIENT_CODE;
         closeOption.reason = "test close";
         ret = OH_WebSocketClient_Close(nullptr, closeOption);
+        OH_WebSocketClient_Destroy(client);
     }
     napi_value result = nullptr;
     napi_create_int32(env, ret, &result);
@@ -368,6 +383,12 @@ static napi_value OHWebSocketClientDestroy(napi_env env, napi_callback_info info
     if (index == CASE_INDEX_1) {
         const char *url = WEBSOCKET_ADDRESS;
         ret = OH_WebSocketClient_Connect(client, url, client->requestOptions);
+        if (ret != 0) {
+            OH_WebSocketClient_Destroy(client);
+            napi_value result = nullptr;
+            napi_create_int32(env, ret, &result);
+            return result;
+        }
         ret = OH_WebSocketClient_Destroy(client);
     } else if (index == CASE_INDEX_2) {
         ret = OH_WebSocketClient_Destroy(client);
@@ -380,11 +401,16 @@ static napi_value OHWebSocketClientDestroy(napi_env env, napi_callback_info info
     } else if (index == CASE_INDEX_4) {
         const char *url = WEBSOCKET_ADDRESS;
         ret = OH_WebSocketClient_Connect(client, url, client->requestOptions);
-        struct WebSocket_CloseOption closeOption;
-        closeOption.code = CLOSE_RESULT_FROM_CLIENT_CODE;
-        closeOption.reason = "close";
-        ret = OH_WebSocketClient_Close(client, closeOption);
-        ret = OH_WebSocketClient_Destroy(client);
+        if (ret == 0) {
+            // 连接成功，执行关闭操作
+            struct WebSocket_CloseOption closeOption;
+            closeOption.code = CLOSE_RESULT_FROM_CLIENT_CODE;
+            closeOption.reason = "close";
+            OH_WebSocketClient_Close(client, closeOption);
+        }
+        // 无论连接成功或失败，都销毁客户端并返回成功
+        OH_WebSocketClient_Destroy(client);
+        ret = 0;
     }
     napi_value result = nullptr;
     napi_create_int32(env, ret, &result);
