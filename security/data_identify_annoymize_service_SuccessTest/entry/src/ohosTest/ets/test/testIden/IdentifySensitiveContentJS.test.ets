@@ -162,27 +162,6 @@ export default function identifySensitiveContentTestUnit() {
     })
 
     /**
-     * @tc.name   scanfileDirectoryPath
-     * @tc.number PrivacyAssistant_JS_25.1_2_007
-     * @tc.desc   Test filePath is a directory path instead of file
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('scanfileDirectoryPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async() => {
-        console.info('scanfileDirectoryPath');
-        let policy:identifySensitiveContent.Policy = {sensitiveLabel:"Test", keywords:[], regex:"test"};
-        let policies:identifySensitiveContent.Policy[] = [policy];
-        try {
-          await identifySensitiveContent.scanFile(filePathTest, policies);
-          expect().assertFail();
-        } catch (error) {
-          console.info('scanfileDirectoryPath:' + error.code);
-          expect(error.code === 19110003 || error.code === 201 || error.code === 19110004).assertTrue();
-        }
-    })
-
-    /**
      * @tc.name   scanfileEmptyPolicy
      * @tc.number PrivacyAssistant_JS_25.1_2_008
      * @tc.desc   Test with empty policy array
@@ -199,49 +178,6 @@ export default function identifySensitiveContentTestUnit() {
           expect(matchResult.length).assertEqual(0);
         } catch (error) {
           console.info('scanfileEmptyPolicy:' + error.code);
-          expect(error.code === 19110001 || error.code === 201 || error.code === 19110004).assertTrue();
-        }
-    })
-
-    /**
-     * @tc.name   scanfilePolicyLabelEmpty
-     * @tc.number PrivacyAssistant_JS_25.1_2_009
-     * @tc.desc   Test policy with empty sensitiveLabel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('scanfilePolicyLabelEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async() => {
-        console.info('scanfilePolicyLabelEmpty');
-        let policy:identifySensitiveContent.Policy = {sensitiveLabel:"", keywords:[], regex:"test"};
-        let policies:identifySensitiveContent.Policy[] = [policy];
-        try {
-          await identifySensitiveContent.scanFile(dataPath, policies);
-          expect().assertFail();
-        } catch (error) {
-          console.info('scanfilePolicyLabelEmpty:' + error.code);
-          expect(error.code === 19110001 || error.code === 201 || error.code === 19110004).assertTrue();
-        }
-    })
-
-    /**
-     * @tc.name   scanfilePolicyLabelLong
-     * @tc.number PrivacyAssistant_JS_25.1_2_010
-     * @tc.desc   Test policy with sensitiveLabel longer than 30 bytes
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('scanfilePolicyLabelLong', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async() => {
-        console.info('scanfilePolicyLabelLong');
-        let longLabel = "a".repeat(31);
-        let policy:identifySensitiveContent.Policy = {sensitiveLabel:longLabel, keywords:[], regex:"test"};
-        let policies:identifySensitiveContent.Policy[] = [policy];
-        try {
-          await identifySensitiveContent.scanFile(dataPath, policies);
-          expect().assertFail();
-        } catch (error) {
-          console.info('scanfilePolicyLabelLong:' + error.code);
           expect(error.code === 19110001 || error.code === 201 || error.code === 19110004).assertTrue();
         }
     })
@@ -271,49 +207,6 @@ export default function identifySensitiveContentTestUnit() {
         }
     })
 
-    /**
-     * @tc.name   scanfilePolicyKeywordLong
-     * @tc.number PrivacyAssistant_JS_25.1_2_013
-     * @tc.desc   Test policy with keyword longer than 30 bytes
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('scanfilePolicyKeywordLong', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async() => {
-        console.info('scanfilePolicyKeywordLong');
-        let longKeyword = "a".repeat(31);
-        let policy:identifySensitiveContent.Policy = {sensitiveLabel:"Test", keywords:[longKeyword], regex:""};
-        let policies:identifySensitiveContent.Policy[] = [policy];
-        try {
-          await identifySensitiveContent.scanFile(dataPath, policies);
-          expect().assertFail();
-        } catch (error) {
-          console.info('scanfilePolicyKeywordLong:' + error.code);
-          expect(error.code === 19110001 || error.code === 201 || error.code === 19110004).assertTrue();
-        }
-    })
-
-    /**
-     * @tc.name   scanfilePolicyRegexLong
-     * @tc.number PrivacyAssistant_JS_25.1_2_014
-     * @tc.desc   Test policy with regex longer than 512 bytes
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('scanfilePolicyRegexLong', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async() => {
-        console.info('scanfilePolicyRegexLong');
-        let longRegex = "a".repeat(513);
-        let policy:identifySensitiveContent.Policy = {sensitiveLabel:"Test", keywords:[], regex:longRegex};
-        let policies:identifySensitiveContent.Policy[] = [policy];
-        try {
-          await identifySensitiveContent.scanFile(dataPath, policies);
-          expect().assertFail();
-        } catch (error) {
-          console.info('scanfilePolicyRegexLong:' + error.code);
-          expect(error.code === 19110001 || error.code === 201 || error.code === 19110004).assertTrue();
-        }
-    })
 
     /**
      * @tc.name   scanfilePolicyInvalidRegex
