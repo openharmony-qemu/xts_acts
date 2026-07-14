@@ -13,25 +13,11 @@
  * limitations under the License.
  */
 
-import picker from '@ohos.file.picker';
-import { BusinessError } from '@kit.BasicServicesKit';
-import { common } from '@kit.AbilityKit';
-
-/** OpenHarmony CI 无 @kit.ShareKit：用 DocumentViewPicker 拉起系统面板模拟 UEC 前置态。 */
-export async function showSystemShare(uiContext: UIContext): Promise<void> {
-  let context: common.UIAbilityContext = uiContext.getHostContext() as common.UIAbilityContext;
-  showDocumentPicker(context);
-}
-
-function showDocumentPicker(context: common.UIAbilityContext): void {
-  let docPicker: picker.DocumentViewPicker = new picker.DocumentViewPicker(context);
-  docPicker.select().then(() => {
-    console.info('DocumentViewPicker select finished.');
-  }).catch((error: BusinessError) => {
-    console.error(`DocumentViewPicker error. code: ${error.code}, message: ${error.message}`);
-  });
-}
-
-export function logShareError(error: BusinessError): void {
-  console.error(`UEC overlay error. code: ${error.code}, message: ${error.message}`);
+/**
+ * 历史：曾用 DocumentViewPicker 模拟系统 UEC 前置态。
+ * 门禁机上 FilePickerUIExtAbility 退出后 UiTest FindWidgets 永久失联，污染后续全部 Suite。
+ * 自动化路径禁止再拉系统 FilePicker / UIExtension；103306 系统 UEC 改为手工场景说明。
+ */
+export function noteUecAutomationPolicy(): void {
+  console.info('[ARKUI_DYN] UEC automation: no DocumentViewPicker / system UIExtension');
 }

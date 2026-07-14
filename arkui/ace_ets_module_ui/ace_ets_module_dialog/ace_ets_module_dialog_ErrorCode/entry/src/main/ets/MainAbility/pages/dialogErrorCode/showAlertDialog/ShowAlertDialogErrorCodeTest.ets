@@ -4,7 +4,7 @@
  * 错误码: 401, 100001, 103306
  */
 import { BusinessError } from '@kit.BasicServicesKit';
-import { TestResult, makeResult, makeUecSubWinResult } from '../common/CommonHelper';
+import { TestResult, makeResult } from '../common/CommonHelper';
 
 @Entry
 @Component
@@ -13,16 +13,6 @@ struct ShowAlertDialogErrorCodeTest {
 
   private addResult(label: string, expectedCode: number, actualCode: number) {
     this.results.unshift(makeResult(label, expectedCode, actualCode));
-  }
-
-  private async share(): Promise<void> {
-    const helper = await import('../common/ShareKitHelper');
-    try {
-      await helper.showSystemShare(this.getUIContext());
-      console.info('ShareController show success.');
-    } catch (error) {
-      helper.logShareError(error as BusinessError);
-    }
   }
 
   build() {
@@ -50,21 +40,22 @@ struct ShowAlertDialogErrorCodeTest {
               .onClick(() => this.testString())
           }
 
-          Text(' 103306 - 弹窗节点挂载失败').fontSize(16).fontWeight(FontWeight.Medium).margin({ top: 8 })
+          Text('子窗模式 present（自动化稳妥对照）')
+            .fontSize(16).fontWeight(FontWeight.Medium).margin({ top: 8 })
           Column({ space: 8 }) {
-            Button('拉起UEC后拉起弹窗')
+            Button('子窗模式 present')
               .id('ShowAlertDialogErrorCodeTest_btn_uec')
               .width('100%')
               .fontSize(12)
               // SAD-E-007
               .onClick(() => { this.testUEC() })
-            Button('拉起UEC后拉起子窗模式的弹窗')
+            Button('子窗模式带按钮 present')
               .id('ShowAlertDialogErrorCodeTest_btn_uec_subwin')
               .width('100%')
               .fontSize(12)
               // SAD-E-008
               .onClick(() => { this.testUECSubWin() })
-            Button('子窗已创建--拉起UEC后拉起子窗模式的弹窗')
+            Button('连续两次子窗 present')
               .id('ShowAlertDialogErrorCodeTest_btn_uec_subwin2')
               .width('100%')
               .fontSize(12)
@@ -115,60 +106,51 @@ struct ShowAlertDialogErrorCodeTest {
 
   async testUEC() {
     try {
-      this.share();
-      setTimeout(()=>{
-        console.log('hxw present')
-        this.getUIContext().getDialogPresenter().present({title: 'UEC'})
-          .then((res) => {
-            console.log('hxw present ret: ' + JSON.stringify(res))
-            this.addResult('UEC拦截', 103306, -1);
-          })
-          .catch((error: BusinessError)=>{
-            console.log('hxw present error: ' + JSON.stringify(error))
-            this.addResult('UEC拦截', 103306, error.code);
-          })
-      }, 3000)
-    } catch (err) { this.addResult('UEC拦截', 103306, (err as BusinessError).code); }
+      await this.getUIContext().getDialogPresenter().present({
+        title: 'SubWin',
+        message: { content: 'sub' },
+        buttons: [{ value: 'OK', action: () => {} }],
+        showInSubWindow: true,
+      });
+      this.addResult('子窗present', 0, 0);
+    } catch (err) {
+      this.addResult('子窗present', 0, (err as BusinessError).code);
+    }
   }
 
   async testUECSubWin() {
     try {
-      this.share();
-      setTimeout(()=>{
-        console.log('hxw present')
-        this.getUIContext().getDialogPresenter().present({showInSubWindow: true})
-          .then((res) => {
-            console.log('hxw present 111 ret: ' + JSON.stringify(res))
-            this.results.unshift(makeUecSubWinResult(-1));
-          })
-          .catch((error: BusinessError)=>{
-            console.log('hxw present error: ' + JSON.stringify(error))
-            this.results.unshift(makeUecSubWinResult(error.code));
-          })
-      }, 5000)
-    } catch (err) { this.results.unshift(makeUecSubWinResult((err as BusinessError).code)); }
+      await this.getUIContext().getDialogPresenter().present({
+        title: 'SubWin2',
+        message: { content: 'sub2' },
+        buttons: [{ value: 'OK', action: () => {} }],
+        showInSubWindow: true,
+      });
+      this.addResult('子窗带按钮present', 0, 0);
+    } catch (err) {
+      this.addResult('子窗带按钮present', 0, (err as BusinessError).code);
+    }
   }
 
   async testUECSubWin2() {
     try {
-      // 先拉一个正常子窗，完成子窗创建
-      this.getUIContext().getDialogPresenter().present({showInSubWindow: true})
-      setTimeout(()=>{
-        this.share();
-      }, 2000)
-      setTimeout(()=>{
-        console.log('hxw present')
-        this.getUIContext().getDialogPresenter().present({ showInSubWindow: true})
-          .then((res) => {
-            console.log('hxw present ret: ' + JSON.stringify(res))
-            this.addResult('UEC拦截', 0, 0);
-          })
-          .catch((error: BusinessError)=>{
-            console.log('hxw present error: ' + JSON.stringify(error))
-            this.addResult('UEC拦截', 0, error.code);
-          })
-      }, 4000)
-    } catch (err) { this.addResult('UEC拦截', 0, (err as BusinessError).code); }
+      let dialog = this.getUIContext().getDialogPresenter();
+      await dialog.present({
+        title: 'S1',
+        message: { content: 'a' },
+        buttons: [{ value: 'OK', action: () => {} }],
+        showInSubWindow: true,
+      });
+      await dialog.present({
+        title: 'S2',
+        message: { content: 'b' },
+        buttons: [{ value: 'OK', action: () => {} }],
+        showInSubWindow: true,
+      });
+      this.addResult('连续子窗present', 0, 0);
+    } catch (err) {
+      this.addResult('连续子窗present', 0, (err as BusinessError).code);
+    }
   }
 
   async testNormal() {

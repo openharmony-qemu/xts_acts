@@ -19,9 +19,6 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import CommonFunc from '../../MainAbility/common/Common';
 
 export default class ErrorCodeAssert {
-  static readonly UEC_WAIT_MS: number = 4500;
-  static readonly UEC_SUBWIN_WAIT_MS: number = 6500;
-  static readonly UEC_SUBWIN2_WAIT_MS: number = 5500;
   static readonly PAGE_READY_MS: number = 2000;
   static readonly STATUS_WAIT_MS: number = 3000;
   static readonly BUNDLE_NAME: string = 'com.arkui.ace.dialog.errorcode';
@@ -186,16 +183,6 @@ export default class ErrorCodeAssert {
     return status;
   }
 
-  static async tryClickById(driver: Driver, componentId: string): Promise<boolean> {
-    try {
-      await ErrorCodeAssert.clickById(driver, componentId);
-      return true;
-    } catch (_e) {
-      console.info('[ARKUI_DYN] tryClickById miss id=' + componentId);
-      return false;
-    }
-  }
-
   private static readContent(inspectorKey: string): string {
     let strJson: string = getInspectorByKey(inspectorKey);
     if (strJson === undefined || strJson === null || strJson.length === 0) {
@@ -221,15 +208,5 @@ export default class ErrorCodeAssert {
 
   static readActualCode(pagePrefix: string): string {
     return ErrorCodeAssert.readContent(pagePrefix + '_result_actual');
-  }
-
-  static isUecSubWin2Accepted(pagePrefix: string): boolean {
-    let status: string = ErrorCodeAssert.readStatus(pagePrefix);
-    let actual: string = ErrorCodeAssert.readActualCode(pagePrefix);
-    let blocked: boolean = actual === '103306' || actual === '103308' || actual === '-1';
-    if (status !== 'PASS') {
-      console.info('[ARKUI_DYN][SUBWIN2] env limit status=' + status + ' actual=' + actual);
-    }
-    return status === 'PASS' || blocked;
   }
 }

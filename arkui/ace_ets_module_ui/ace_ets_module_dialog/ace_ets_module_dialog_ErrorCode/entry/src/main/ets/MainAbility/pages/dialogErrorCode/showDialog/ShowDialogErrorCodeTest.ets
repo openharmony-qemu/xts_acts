@@ -20,11 +20,10 @@
  */
 import { BusinessError } from '@kit.BasicServicesKit';
 import {
-  TestResult, makeResult, makeUecSubWinResult, DialogButtonBody, DialogMessageBody, DialogPresentResult,
-  DialogSheetBody, SimpleDialogOptions
+  TestResult, makeResult, DialogButtonBody, DialogMessageBody,
+  SimpleDialogOptions
 } from '../common/CommonHelper';
-import { common } from '@kit.AbilityKit';
-import { DialogPresenter, dialog as dialogApi } from '@kit.ArkUI';
+import { DialogPresenter } from '@kit.ArkUI';
 
 @Entry
 @Component
@@ -33,16 +32,6 @@ struct ShowDialogErrorCodeTest {
 
   private addResult(label: string, expectedCode: number, actualCode: number) {
     this.results.unshift(makeResult(label, expectedCode, actualCode));
-  }
-
-  private async share(): Promise<void> {
-    const helper = await import('../common/ShareKitHelper');
-    try {
-      await helper.showSystemShare(this.getUIContext());
-      console.info('ShareController show success.');
-    } catch (error) {
-      helper.logShareError(error as BusinessError);
-    }
   }
 
   build() {
@@ -70,21 +59,23 @@ struct ShowDialogErrorCodeTest {
               .onClick(() => this.testString())
           }
 
-          Text(' 103306 - 弹窗节点挂载失败').fontSize(16).fontWeight(FontWeight.Medium).margin({ top: 8 })
+          // 系统 UEC/103306 依赖 FilePicker UIExtension，门禁会毒化 UiTest；改测子窗正例
+          Text('子窗模式 present（自动化稳妥对照）')
+            .fontSize(16).fontWeight(FontWeight.Medium).margin({ top: 8 })
           Column({ space: 8 }) {
-            Button('拉起UEC后拉起弹窗')
+            Button('子窗模式 present')
               .id('ShowDialogErrorCodeTest_btn_uec')
               .width('100%')
               .fontSize(12)
               // SDG-E-007
               .onClick(() => { this.testUEC() })
-            Button('拉起UEC后拉起子窗模式的弹窗')
+            Button('子窗模式带按钮 present')
               .id('ShowDialogErrorCodeTest_btn_uec_subwin')
               .width('100%')
               .fontSize(12)
               // SDG-E-008
               .onClick(() => { this.testUECSubWin() })
-            Button('子窗已创建--拉起UEC后拉起子窗模式的弹窗')
+            Button('连续两次子窗 present')
               .id('ShowDialogErrorCodeTest_btn_uec_subwin2')
               .width('100%')
               .fontSize(12)
@@ -135,60 +126,55 @@ struct ShowDialogErrorCodeTest {
 
   async testUEC() {
     try {
-      this.share();
-      setTimeout(()=>{
-        console.log('hxw present')
-        this.getUIContext().getDialogPresenter().present({title: 'UEC'})
-          .then((res) => {
-            console.log('hxw present ret: ' + JSON.stringify(res))
-            this.addResult('UEC拦截', 103306, -1);
-          })
-          .catch((error: BusinessError)=>{
-            console.log('hxw present error: ' + JSON.stringify(error))
-            this.addResult('UEC拦截', 103306, error.code);
-          })
-      }, 3000)
-    } catch (err) { this.addResult('UEC拦截', 103306, (err as BusinessError).code); }
+      let okBtn = new DialogButtonBody('OK', (): void => {});
+      let opts = new SimpleDialogOptions();
+      opts.title = 'SubWin';
+      opts.message = new DialogMessageBody('sub');
+      opts.buttons = [okBtn];
+      opts.showInSubWindow = true;
+      await (this.getUIContext().getDialogPresenter().present as Function)(opts as Object);
+      this.addResult('子窗present', 0, 0);
+    } catch (err) {
+      this.addResult('子窗present', 0, (err as BusinessError).code);
+    }
   }
 
   async testUECSubWin() {
     try {
-      this.share();
-      setTimeout(()=>{
-        console.log('hxw present')
-        this.getUIContext().getDialogPresenter().present({showInSubWindow: true})
-          .then((res) => {
-            console.log('hxw present 111 ret: ' + JSON.stringify(res))
-            this.results.unshift(makeUecSubWinResult(-1));
-          })
-          .catch((error: BusinessError)=>{
-            console.log('hxw present error: ' + JSON.stringify(error))
-            this.results.unshift(makeUecSubWinResult(error.code));
-          })
-      }, 5000)
-    } catch (err) { this.results.unshift(makeUecSubWinResult((err as BusinessError).code)); }
+      let okBtn = new DialogButtonBody('OK', (): void => {});
+      let opts = new SimpleDialogOptions();
+      opts.title = 'SubWin2';
+      opts.message = new DialogMessageBody('sub2');
+      opts.buttons = [okBtn];
+      opts.showInSubWindow = true;
+      await (this.getUIContext().getDialogPresenter().present as Function)(opts as Object);
+      this.addResult('子窗带按钮present', 0, 0);
+    } catch (err) {
+      this.addResult('子窗带按钮present', 0, (err as BusinessError).code);
+    }
   }
 
   async testUECSubWin2() {
     try {
-      // 先拉一个正常子窗，完成子窗创建
-      this.getUIContext().getDialogPresenter().present({showInSubWindow: true})
-      setTimeout(()=>{
-        this.share();
-      }, 2000)
-      setTimeout(()=>{
-        console.log('hxw present')
-        this.getUIContext().getDialogPresenter().present({ showInSubWindow: true})
-          .then((res) => {
-            console.log('hxw present ret: ' + JSON.stringify(res))
-            this.addResult('UEC拦截', 0, 0);
-          })
-          .catch((error: BusinessError)=>{
-            console.log('hxw present error: ' + JSON.stringify(error))
-            this.addResult('UEC拦截', 0, error.code);
-          })
-      }, 4000)
-    } catch (err) { this.addResult('UEC拦截', 0, (err as BusinessError).code); }
+      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
+      let ok1 = new DialogButtonBody('OK', (): void => {});
+      let first = new SimpleDialogOptions();
+      first.title = 'S1';
+      first.message = new DialogMessageBody('a');
+      first.buttons = [ok1];
+      first.showInSubWindow = true;
+      await (dialog.present as Function)(first as Object);
+      let ok2 = new DialogButtonBody('OK', (): void => {});
+      let second = new SimpleDialogOptions();
+      second.title = 'S2';
+      second.message = new DialogMessageBody('b');
+      second.buttons = [ok2];
+      second.showInSubWindow = true;
+      await (dialog.present as Function)(second as Object);
+      this.addResult('连续子窗present', 0, 0);
+    } catch (err) {
+      this.addResult('连续子窗present', 0, (err as BusinessError).code);
+    }
   }
 
   async testNormal() {

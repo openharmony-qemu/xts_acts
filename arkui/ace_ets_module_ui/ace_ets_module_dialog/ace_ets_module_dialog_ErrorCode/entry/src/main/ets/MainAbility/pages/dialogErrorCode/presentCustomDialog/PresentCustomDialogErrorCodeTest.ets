@@ -18,9 +18,9 @@
  * 对应新接口: present(content: ComponentContent, options?)
  * 错误码: 401(参数错误), 100001(内部错误), 103301(内容错误), 103302(内容已存在), 103306(挂载失败)
  */
-import { ComponentContent, dialog as dialogApi } from '@kit.ArkUI';
+import { ComponentContent, DialogPresenter } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { TestResult, makeResult, makeUecSubWinResult, TextParams, commonTextBuilder } from '../common/CommonHelper';
+import { TestResult, makeResult } from '../common/CommonHelper';
 import { resourceManager } from '@kit.LocalizationKit';
 
 class Params {
@@ -52,14 +52,14 @@ struct PresentCustomDialogErrorCodeTest {
     this.results.unshift(makeResult(label, expectedCode, actualCode));
   }
 
-  private async share(): Promise<void> {
-    const helper = await import('../common/ShareKitHelper');
-    try {
-      await helper.showSystemShare(this.getUIContext());
-      console.info('ShareController show success.');
-    } catch (error) {
-      helper.logShareError(error as BusinessError);
+  private makeContent(text: string): ComponentContent<Params> | null {
+    let uiContext = this.getUIContext();
+    if (uiContext.getHostContext() == undefined) {
+      return null;
     }
+    let colorMode = uiContext.getHostContext()!!.getApplicationContext()
+      .resourceManager.getConfigurationSync().colorMode;
+    return new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params(text, colorMode));
   }
 
   build() {
@@ -89,19 +89,20 @@ struct PresentCustomDialogErrorCodeTest {
             .onClick(() => this.testDuplicate())
 
 
-          Text(' 103306 - 弹窗节点挂载失败').fontSize(16).fontWeight(FontWeight.Medium).margin({ top: 8 })
+          Text('子窗模式 present（自动化稳妥对照）')
+            .fontSize(16).fontWeight(FontWeight.Medium).margin({ top: 8 })
           Column({ space: 8 }) {
-            Button('拉起UEC后拉起弹窗')
+            Button('子窗模式 present')
               .id('PresentCustomDialogErrorCodeTest_btn_uec')
               .width('100%')
               .fontSize(12)
               .onClick(() => { this.testUEC() })
-            Button('拉起UEC后拉起子窗模式的弹窗')
+            Button('子窗模式 customStyle present')
               .id('PresentCustomDialogErrorCodeTest_btn_uec_subwin')
               .width('100%')
               .fontSize(12)
               .onClick(() => { this.testUECSubWin() })
-            Button('子窗已创建--拉起UEC后拉起子窗模式的弹窗')
+            Button('连续两次子窗 present')
               .id('PresentCustomDialogErrorCodeTest_btn_uec_subwin2')
               .width('100%')
               .fontSize(12)
@@ -114,18 +115,15 @@ struct PresentCustomDialogErrorCodeTest {
             // PCD-E-001
             .onClick(() => this.testNormal())
 
-          
-          if (this.results.length > 0) {
-            Text(this.results[0].passed ? 'PASS' : 'FAILED')
-              .id('PresentCustomDialogErrorCodeTest_result_status')
-              .fontSize(1).height(1).opacity(0)
-            Text(this.results[0].label)
-              .id('PresentCustomDialogErrorCodeTest_result_label')
-              .fontSize(1).height(1).opacity(0)
-            Text(String(this.results[0].actualCode))
-              .id('PresentCustomDialogErrorCodeTest_result_actual')
-              .fontSize(1).height(1).opacity(0)
-          }
+          Text(this.results.length > 0 ? (this.results[0].passed ? 'PASS' : 'FAILED') : 'IDLE')
+            .id('PresentCustomDialogErrorCodeTest_result_status')
+            .fontSize(1).height(1).opacity(0)
+          Text(this.results.length > 0 ? this.results[0].label : '')
+            .id('PresentCustomDialogErrorCodeTest_result_label')
+            .fontSize(1).height(1).opacity(0)
+          Text(this.results.length > 0 ? String(this.results[0].actualCode) : '')
+            .id('PresentCustomDialogErrorCodeTest_result_actual')
+            .fontSize(1).height(1).opacity(0)
 
           Divider().margin({ top: 8 })
           Row() {
@@ -153,79 +151,50 @@ struct PresentCustomDialogErrorCodeTest {
   }
 
   async testUEC() {
+    let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
+    let cn: ComponentContent<Params> | null = this.makeContent('SubWin');
     try {
-      this.share();
-      setTimeout(()=>{
-        console.log('hxw present')
-        let uiContext = this.getUIContext();
-        let cn: ComponentContent<Params> | null = null;
-        if (uiContext.getHostContext() != undefined) {
-          cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('Normal',
-            uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
-        }
-        this.getUIContext().getDialogPresenter().present(cn, {customStyle: true})
-          .then((res: number) => {
-            console.log('hxw present ret: ' + JSON.stringify(res))
-            this.addResult('UEC拦截', 103306, -1);
-          })
-          .catch((error: BusinessError)=>{
-            console.log('hxw present error: ' + JSON.stringify(error))
-            this.addResult('UEC拦截', 103306, error.code);
-          })
-      }, 3000)
-    } catch (err) { this.addResult('UEC拦截', 103306, (err as BusinessError).code); }
+      await (dialog.present as Function)(cn as Object, { customStyle: true, showInSubWindow: true });
+      this.addResult('子窗present', 0, 0);
+      await (dialog.dismiss as Function)(cn as Object);
+    } catch (err) {
+      this.addResult('子窗present', 0, (err as BusinessError).code);
+    }
   }
 
   async testUECSubWin() {
+    let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
+    let cn: ComponentContent<Params> | null = this.makeContent('SubWin2');
     try {
-      this.share();
-      setTimeout(()=>{
-        console.log('hxw present')
-        let uiContext = this.getUIContext();
-        let cn: ComponentContent<Params> | null = null;
-        if (uiContext.getHostContext() != undefined) {
-          cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('Normal',
-            uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
-        }
-        this.getUIContext().getDialogPresenter().present(cn, {customStyle: true, showInSubWindow: true})
-          .then((res: number) => {
-            console.log('hxw present 111 ret: ' + JSON.stringify(res))
-            this.results.unshift(makeUecSubWinResult(-1));
-          })
-          .catch((error: BusinessError)=>{
-            console.log('hxw present error: ' + JSON.stringify(error))
-            this.results.unshift(makeUecSubWinResult(error.code));
-          })
-      }, 5000)
-    } catch (err) { this.results.unshift(makeUecSubWinResult((err as BusinessError).code)); }
+      await (dialog.present as Function)(cn as Object, { customStyle: true, showInSubWindow: true });
+      this.addResult('子窗customStyle present', 0, 0);
+      await (dialog.dismiss as Function)(cn as Object);
+    } catch (err) {
+      this.addResult('子窗customStyle present', 0, (err as BusinessError).code);
+    }
   }
 
   async testUECSubWin2() {
+    let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
+    let cn1: ComponentContent<Params> | null = this.makeContent('S1');
+    let cn2: ComponentContent<Params> | null = this.makeContent('S2');
     try {
-      // 先拉一个正常子窗，完成子窗创建
-      this.getUIContext().getDialogPresenter().present({title: 'tmp', showInSubWindow: true})
-      setTimeout(()=>{
-        this.share();
-      }, 2000)
-      setTimeout(()=>{
-        console.log('hxw present')
-        let uiContext = this.getUIContext();
-        let cn: ComponentContent<Params> | null = null;
-        if (uiContext.getHostContext() != undefined) {
-          cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('Normal',
-            uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
-        }
-        this.getUIContext().getDialogPresenter().present(cn, {customStyle: true, showInSubWindow: true})
-          .then((res: number) => {
-            console.log('hxw present ret: ' + JSON.stringify(res))
-            this.addResult('UEC拦截', 0, 0);
-          })
-          .catch((error: BusinessError)=>{
-            console.log('hxw present error: ' + JSON.stringify(error))
-            this.addResult('UEC拦截', 0, error.code);
-          })
-      }, 4000)
-    } catch (err) { this.addResult('UEC拦截', 0, (err as BusinessError).code); }
+      await (dialog.present as Function)(cn1 as Object, { customStyle: true, showInSubWindow: true });
+      await (dialog.present as Function)(cn2 as Object, { customStyle: true, showInSubWindow: true });
+      this.addResult('连续子窗present', 0, 0);
+      await (dialog.dismiss as Function)(cn2 as Object);
+      await (dialog.dismiss as Function)(cn1 as Object);
+    } catch (err) {
+      this.addResult('连续子窗present', 0, (err as BusinessError).code);
+      try {
+        await (dialog.dismiss as Function)(cn2 as Object);
+      } catch (_e2) {
+      }
+      try {
+        await (dialog.dismiss as Function)(cn1 as Object);
+      } catch (_e1) {
+      }
+    }
   }
 
 

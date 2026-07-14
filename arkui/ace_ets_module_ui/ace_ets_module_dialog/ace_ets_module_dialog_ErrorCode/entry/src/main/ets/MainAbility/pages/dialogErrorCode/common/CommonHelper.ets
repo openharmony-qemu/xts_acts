@@ -47,15 +47,6 @@ export function makeResult(label: string, expectedCode: number, actualCode: numb
   };
 }
 
-/** DocumentViewPicker 模拟 UEC 时，子窗场景可能返回 103306 或 103308。 */
-export function makeUecSubWinResult(actualCode: number): TestResult {
-  const label = 'UEC拦截子窗';
-  if (actualCode === 103306 || actualCode === 103308) {
-    return makeResult(label, actualCode, actualCode);
-  }
-  return makeResult(label, 103308, actualCode);
-}
-
 class TextParams {
   public text: string = '';
   constructor(text: string) {

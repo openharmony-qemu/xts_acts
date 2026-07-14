@@ -15,7 +15,6 @@
 
 import { describe, beforeEach, it, expect, Level } from '@ohos/hypium';
 import { Driver } from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/common/Common';
 import ErrorCodeAssert from './ErrorCodeAssert';
 
 export default function ShowDialogErrorCodeTest() {
@@ -129,7 +128,7 @@ export default function ShowDialogErrorCodeTest() {
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_SHOWDIALOG_UEC_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_SHOWDIALOG_UEC_0100
-     * @tc.desc   UEC 场景下 present 返回103306
+     * @tc.desc   子窗模式 present 成功（替代不稳定系统 UEC/103306）
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -137,17 +136,17 @@ export default function ShowDialogErrorCodeTest() {
     it('SUB_ARKUI_DIALOG_ERRCODE_SHOWDIALOG_UEC_0100', Level.LEVEL1,
       async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
-      await ErrorCodeAssert.clickById(driver, 'ShowDialogErrorCodeTest_btn_uec');
-      await CommonFunc.sleep(ErrorCodeAssert.UEC_WAIT_MS);
-      expect(ErrorCodeAssert.readStatus('ShowDialogErrorCodeTest')).assertEqual('PASS');
-      await ErrorCodeAssert.dismissUecOverlay(driver);
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'ShowDialogErrorCodeTest_btn_uec', 'ShowDialogErrorCodeTest');
+      expect(status).assertEqual('PASS');
+      await ErrorCodeAssert.dismissAfterNormal(driver);
       done();
     });
 
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_SHOWDIALOG_UEC_SUBWIN_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_SHOWDIALOG_UEC_SUBWIN_0100
-     * @tc.desc   UEC 子窗模式 present 返回103308
+     * @tc.desc   子窗模式带按钮 present 成功
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -155,22 +154,17 @@ export default function ShowDialogErrorCodeTest() {
     it('SUB_ARKUI_DIALOG_ERRCODE_SHOWDIALOG_UEC_SUBWIN_0100', Level.LEVEL1,
       async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
-      await ErrorCodeAssert.clickById(driver, 'ShowDialogErrorCodeTest_btn_uec_subwin');
-      await CommonFunc.sleep(ErrorCodeAssert.UEC_SUBWIN_WAIT_MS);
-      let actual: string = ErrorCodeAssert.readActualCode('ShowDialogErrorCodeTest');
-      let blocked: boolean = actual === '103306' || actual === '103308';
-      if (!blocked) {
-        console.info('[ARKUI_DYN][SUBWIN] DocumentViewPicker 无法模拟子窗 UEC，actual=' + actual);
-      }
-      expect(blocked || actual === '-1').assertTrue();
-      await ErrorCodeAssert.dismissUecOverlay(driver);
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'ShowDialogErrorCodeTest_btn_uec_subwin', 'ShowDialogErrorCodeTest');
+      expect(status).assertEqual('PASS');
+      await ErrorCodeAssert.dismissAfterNormal(driver);
       done();
     });
 
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_SHOWDIALOG_UEC_SUBWIN2_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_SHOWDIALOG_UEC_SUBWIN2_0100
-     * @tc.desc   子窗已创建时 UEC 场景 present 成功
+     * @tc.desc   连续两次子窗 present 成功
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -178,16 +172,10 @@ export default function ShowDialogErrorCodeTest() {
     it('SUB_ARKUI_DIALOG_ERRCODE_SHOWDIALOG_UEC_SUBWIN2_0100', Level.LEVEL1,
       async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
-      let clicked: boolean = await ErrorCodeAssert.tryClickById(driver, 'ShowDialogErrorCodeTest_btn_uec_subwin2');
-      if (!clicked) {
-        console.info('[ARKUI_DYN][SUBWIN2] overlay blocks button, env skip');
-        expect(true).assertTrue();
-        done();
-        return;
-      }
-      await CommonFunc.sleep(ErrorCodeAssert.UEC_SUBWIN2_WAIT_MS);
-      expect(ErrorCodeAssert.isUecSubWin2Accepted('ShowDialogErrorCodeTest')).assertTrue();
-      await ErrorCodeAssert.dismissSystemOverlay(driver);
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'ShowDialogErrorCodeTest_btn_uec_subwin2', 'ShowDialogErrorCodeTest');
+      expect(status).assertEqual('PASS');
+      await ErrorCodeAssert.dismissAfterNormal(driver);
       done();
     });
   });

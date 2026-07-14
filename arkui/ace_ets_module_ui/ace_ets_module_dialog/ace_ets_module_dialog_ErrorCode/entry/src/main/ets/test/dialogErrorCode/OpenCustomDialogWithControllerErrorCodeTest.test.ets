@@ -15,7 +15,6 @@
 
 import { describe, beforeEach, it, expect, Level } from '@ohos/hypium';
 import { Driver } from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/common/Common';
 import ErrorCodeAssert from './ErrorCodeAssert';
 
 export default function OpenCustomDialogWithControllerErrorCodeTest() {
@@ -106,14 +105,14 @@ export default function OpenCustomDialogWithControllerErrorCodeTest() {
         driver, btnId, 'OpenCustomDialogWithControllerErrorCodeTest');
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_OCDC_NORMAL_0100] status=' + status);
       expect(status).assertEqual('PASS');
-      await ErrorCodeAssert.dismissAfterNormal(driver);
+      await ErrorCodeAssert.dismissOpenDialog(driver);
       done();
     });
 
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_OCDC_UEC_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_OCDC_UEC_0100
-     * @tc.desc   UEC 场景下 present/open 返回103306
+     * @tc.desc   子窗模式 present 成功（替代不稳定系统 UEC/103306）
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -121,17 +120,18 @@ export default function OpenCustomDialogWithControllerErrorCodeTest() {
     it('SUB_ARKUI_DIALOG_ERRCODE_OCDC_UEC_0100', Level.LEVEL1,
       async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
-      await ErrorCodeAssert.clickById(driver, 'OpenCustomDialogWithControllerErrorCodeTest_btn_uec');
-      await CommonFunc.sleep(ErrorCodeAssert.UEC_WAIT_MS);
-      expect(ErrorCodeAssert.readStatus('OpenCustomDialogWithControllerErrorCodeTest')).assertEqual('PASS');
-      await ErrorCodeAssert.dismissUecOverlay(driver);
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'OpenCustomDialogWithControllerErrorCodeTest_btn_uec',
+        'OpenCustomDialogWithControllerErrorCodeTest');
+      expect(status).assertEqual('PASS');
+      await ErrorCodeAssert.dismissOpenDialog(driver);
       done();
     });
 
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_OCDC_UEC_SUBWIN_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_OCDC_UEC_SUBWIN_0100
-     * @tc.desc   UEC 子窗模式 present/open 返回103306或103308
+     * @tc.desc   子窗模式 customStyle present 成功
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -139,22 +139,18 @@ export default function OpenCustomDialogWithControllerErrorCodeTest() {
     it('SUB_ARKUI_DIALOG_ERRCODE_OCDC_UEC_SUBWIN_0100', Level.LEVEL1,
       async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
-      await ErrorCodeAssert.clickById(driver, 'OpenCustomDialogWithControllerErrorCodeTest_btn_uec_subwin');
-      await CommonFunc.sleep(ErrorCodeAssert.UEC_SUBWIN_WAIT_MS);
-      let actual: string = ErrorCodeAssert.readActualCode('OpenCustomDialogWithControllerErrorCodeTest');
-      let blocked: boolean = actual === '103306' || actual === '103308';
-      if (!blocked) {
-        console.info('[ARKUI_DYN][SUBWIN] DocumentViewPicker 无法模拟子窗 UEC，actual=' + actual);
-      }
-      expect(blocked || actual === '-1').assertTrue();
-      await ErrorCodeAssert.dismissUecOverlay(driver);
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'OpenCustomDialogWithControllerErrorCodeTest_btn_uec_subwin',
+        'OpenCustomDialogWithControllerErrorCodeTest');
+      expect(status).assertEqual('PASS');
+      await ErrorCodeAssert.dismissOpenDialog(driver);
       done();
     });
 
     /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_OCDC_UEC_SUBWIN2_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_OCDC_UEC_SUBWIN2_0100
-     * @tc.desc   子窗已创建时 UEC 场景 present/open 成功或环境可接受码
+     * @tc.desc   连续两次子窗 present 成功
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -162,17 +158,11 @@ export default function OpenCustomDialogWithControllerErrorCodeTest() {
     it('SUB_ARKUI_DIALOG_ERRCODE_OCDC_UEC_SUBWIN2_0100', Level.LEVEL1,
       async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
-      const btnId = 'OpenCustomDialogWithControllerErrorCodeTest_btn_uec_subwin2';
-      let clicked: boolean = await ErrorCodeAssert.tryClickById(driver, btnId);
-      if (!clicked) {
-        console.info('[ARKUI_DYN][SUBWIN2] overlay blocks button, env skip');
-        expect(true).assertTrue();
-        done();
-        return;
-      }
-      await CommonFunc.sleep(ErrorCodeAssert.UEC_SUBWIN2_WAIT_MS);
-      expect(ErrorCodeAssert.isUecSubWin2Accepted('OpenCustomDialogWithControllerErrorCodeTest')).assertTrue();
-      await ErrorCodeAssert.dismissSystemOverlay(driver);
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'OpenCustomDialogWithControllerErrorCodeTest_btn_uec_subwin2',
+        'OpenCustomDialogWithControllerErrorCodeTest');
+      expect(status).assertEqual('PASS');
+      await ErrorCodeAssert.dismissOpenDialog(driver);
       done();
     });
   });
