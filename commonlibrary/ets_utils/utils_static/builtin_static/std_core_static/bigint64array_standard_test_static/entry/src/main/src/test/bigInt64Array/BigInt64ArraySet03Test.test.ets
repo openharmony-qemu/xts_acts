@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -278,13 +278,12 @@ export default function BigInt64ArraySet0202Test(): void {
     it('testBigInt64ArraySetThree1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let target = new BigInt64Array([11n, 22n, 33n, 44n, 55n]);
       let src = new BigInt64Array([101n]);
-      let caught: Error | undefined = undefined;
       try {
         target.set(src, 5);
-      } catch (error) {
-        caught = error;
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(caught !== undefined || target[4] === 55n).assertTrue();
       expect(target[0]).assertEqual(11n);
       expect(target[4]).assertEqual(55n);
     });
@@ -300,13 +299,12 @@ export default function BigInt64ArraySet0202Test(): void {
     it('testBigInt64ArraySetThree1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let target = new BigInt64Array([11n, 22n, 33n, 44n, 55n]);
       let src = new BigInt64Array(0);
-      let caught: Error | undefined = undefined;
       try {
         target.set(src, 6);
-      } catch (error) {
-        caught = error;
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(caught !== undefined || target[4] === 55n).assertTrue();
       expect(target[0]).assertEqual(11n);
       expect(target[4]).assertEqual(55n);
     });
@@ -322,13 +320,12 @@ export default function BigInt64ArraySet0202Test(): void {
     it('testBigInt64ArraySetThree1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let target = new BigInt64Array([11n, 22n, 33n, 44n, 55n]);
       let src = new BigInt64Array([101n]);
-      let caught: Error | undefined = undefined;
       try {
         target.set(src, 6);
-      } catch (error) {
-        caught = error;
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(caught !== undefined || target[4] === 55n).assertTrue();
       expect(target[0]).assertEqual(11n);
       expect(target[4]).assertEqual(55n);
     });
@@ -344,13 +341,12 @@ export default function BigInt64ArraySet0202Test(): void {
     it('testBigInt64ArraySetThree1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let target = new BigInt64Array([11n, 22n, 33n, 44n, 55n]);
       let src = new BigInt64Array([101n]);
-      let caught: Error | undefined = undefined;
       try {
         target.set(src, -1);
-      } catch (error) {
-        caught = error;
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(caught !== undefined || target[0] === 11n).assertTrue();
       expect(target[0]).assertEqual(11n);
       expect(target[4]).assertEqual(55n);
     });
@@ -366,13 +362,12 @@ export default function BigInt64ArraySet0202Test(): void {
     it('testBigInt64ArraySetThree1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let target = new BigInt64Array([11n, 22n, 33n, 44n, 55n]);
       let src = new BigInt64Array(0);
-      let caught: Error | undefined = undefined;
       try {
         target.set(src, -10);
-      } catch (error) {
-        caught = error;
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(caught !== undefined || target[0] === 11n).assertTrue();
       expect(target[0]).assertEqual(11n);
       expect(target[4]).assertEqual(55n);
     });
@@ -389,13 +384,12 @@ export default function BigInt64ArraySet0202Test(): void {
     it('testBigInt64ArraySetThree1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let target = new BigInt64Array(0);
       let src = new BigInt64Array([101n]);
-      let caught: Error | undefined = undefined;
       try {
         target.set(src, 0);
-      } catch (error) {
-        caught = error;
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(caught !== undefined || target.length === 0).assertTrue();
       expect(target.length).assertEqual(0);
     });
 
@@ -412,13 +406,12 @@ export default function BigInt64ArraySet0202Test(): void {
       let target = new BigInt64Array(100);
       target[99] = 999n;
       let src = new BigInt64Array([101n]);
-      let caught: Error | undefined = undefined;
       try {
         target.set(src, 100);
-      } catch (error) {
-        caught = error;
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(caught !== undefined || target[99] === 999n).assertTrue();
       expect(target.length).assertEqual(100);
       expect(target[99]).assertEqual(999n);
     });
@@ -434,13 +427,12 @@ export default function BigInt64ArraySet0202Test(): void {
     it('testBigInt64ArraySetThree2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let target = new BigInt64Array([11n, 22n, 33n, 44n, 55n]);
       let src = new BigInt64Array([101n, 202n]);
-      let caught: Error | undefined = undefined;
       try {
         target.set(src, 4);
-      } catch (error) {
-        caught = error;
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(caught !== undefined || target[4] === 55n).assertTrue();
       expect(target[3]).assertEqual(44n);
       expect(target[4]).assertEqual(55n);
     });
@@ -456,13 +448,12 @@ export default function BigInt64ArraySet0202Test(): void {
     it('testBigInt64ArraySetThree2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let target = new BigInt64Array([11n, 22n, 33n, 44n, 55n]);
       let src = new BigInt64Array([101n, 202n]);
-      let caught: Error | undefined = undefined;
       try {
         target.set(src, 5);
-      } catch (error) {
-        caught = error;
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(caught !== undefined || target[4] === 55n).assertTrue();
       expect(target[0]).assertEqual(11n);
       expect(target[4]).assertEqual(55n);
     });
@@ -478,13 +469,12 @@ export default function BigInt64ArraySet0202Test(): void {
     it('testBigInt64ArraySetThree2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let target = new BigInt64Array([11n, 22n]);
       let src = new BigInt64Array([101n, 202n, 303n]);
-      let caught: Error | undefined = undefined;
       try {
         target.set(src, 0);
-      } catch (error) {
-        caught = error;
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(caught !== undefined || target[1] === 22n).assertTrue();
       expect(target[0]).assertEqual(11n);
       expect(target[1]).assertEqual(22n);
     });
@@ -500,13 +490,12 @@ export default function BigInt64ArraySet0202Test(): void {
     it('testBigInt64ArraySetThree2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let target = new BigInt64Array([11n, 22n]);
       let src = new BigInt64Array([101n, 202n]);
-      let caught: Error | undefined = undefined;
       try {
         target.set(src, 1);
-      } catch (error) {
-        caught = error;
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(caught !== undefined || target[1] === 22n).assertTrue();
       expect(target[0]).assertEqual(11n);
       expect(target[1]).assertEqual(22n);
     });
@@ -522,13 +511,12 @@ export default function BigInt64ArraySet0202Test(): void {
     it('testBigInt64ArraySetThree2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let target = new BigInt64Array([11n, 22n]);
       let src = new BigInt64Array([101n]);
-      let caught: Error | undefined = undefined;
       try {
         target.set(src, 2);
-      } catch (error) {
-        caught = error;
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(caught !== undefined || target[1] === 22n).assertTrue();
       expect(target[0]).assertEqual(11n);
       expect(target[1]).assertEqual(22n);
     });
@@ -544,13 +532,7 @@ export default function BigInt64ArraySet0202Test(): void {
     it('testBigInt64ArraySetThree2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let target = new BigInt64Array([11n, 22n, 33n, 44n, 55n]);
       let src = new BigInt64Array([101n]);
-      let caught: Error | undefined = undefined;
-      try {
-        target.set(src, 2147483647);
-      } catch (error) {
-        caught = error;
-      }
-      expect(caught !== undefined || target[4] === 55n).assertTrue();
+      target.set(src, 2147483647);
       expect(target[0]).assertEqual(11n);
       expect(target[4]).assertEqual(55n);
     });
@@ -566,13 +548,12 @@ export default function BigInt64ArraySet0202Test(): void {
     it('testBigInt64ArraySetThree2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let target = new BigInt64Array([11n, 22n, 33n, 44n, 55n]);
       let src = new BigInt64Array([101n]);
-      let caught: Error | undefined = undefined;
       try {
         target.set(src, -2147483648);
-      } catch (error) {
-        caught = error;
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(caught !== undefined || target[0] === 11n).assertTrue();
       expect(target[0]).assertEqual(11n);
       expect(target[4]).assertEqual(55n);
     });
@@ -588,13 +569,12 @@ export default function BigInt64ArraySet0202Test(): void {
     it('testBigInt64ArraySetThree2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let target = new BigInt64Array([11n, 22n]);
       let src = new BigInt64Array(0);
-      let caught: Error | undefined = undefined;
       try {
         target.set(src, -1);
-      } catch (error) {
-        caught = error;
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(caught !== undefined || target[0] === 11n).assertTrue();
       expect(target[0]).assertEqual(11n);
       expect(target[1]).assertEqual(22n);
     });
@@ -741,11 +721,12 @@ export default function BigInt64ArraySet0202Test(): void {
      */
     it('testBigInt64ArraySetThree3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
-      arr.set(arr, 1);
-      expect(arr[1]).assertEqual(1n);
-      expect(arr[2]).assertEqual(2n);
-      expect(arr[3]).assertEqual(3n);
-      expect(arr[4]).assertEqual(4n);
+      try {
+        arr.set(arr, 1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
@@ -759,14 +740,13 @@ export default function BigInt64ArraySet0202Test(): void {
     it('testBigInt64ArraySetThree3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let target = new BigInt64Array([10n, 20n, 30n]);
       let src = new BigInt64Array([99n]);
-      let caught: Error | undefined = undefined;
       let arr = new BigInt64Array()
       try {
         target.set(src, target.byteLength / arr.BYTES_PER_ELEMENT);
-      } catch (error) {
-        caught = error;
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(caught !== undefined || target[2] === 30n).assertTrue();
       expect(target[0]).assertEqual(10n);
       expect(target[2]).assertEqual(30n);
     });

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -21,15 +21,6 @@ import {
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-function didThrow(action: () => void): boolean {
-  let caught = false;
-  try {
-    action();
-  } catch (e) {
-    caught = e !== null && e !== undefined;
-  }
-  return caught;
-}
 
 export default function BigInt64ArraySet0201Test(): void {
   describe('BigInt64ArraySet0201Test', (): void => {
@@ -414,10 +405,12 @@ export default function BigInt64ArraySet0201Test(): void {
      */
     it('testBigInt64ArraySetTwo2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array(5);
-      let caught = didThrow((): void => {
+      try {
         arr.set(5, 10n);
-      });
-      expect(caught || (arr[0] === 0n && arr[4] === 0n)).assertTrue();
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
@@ -430,10 +423,12 @@ export default function BigInt64ArraySet0201Test(): void {
      */
     it('testBigInt64ArraySetTwo2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array(5);
-      let caught = didThrow((): void => {
+      try {
         arr.set(6, 10n);
-      });
-      expect(caught || (arr[0] === 0n && arr[4] === 0n)).assertTrue();
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
@@ -446,10 +441,12 @@ export default function BigInt64ArraySet0201Test(): void {
      */
     it('testBigInt64ArraySetTwo2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array(5);
-      let caught = didThrow((): void => {
+      try {
         arr.set(100, 10n);
-      });
-      expect(caught || (arr[0] === 0n && arr[4] === 0n)).assertTrue();
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
@@ -462,10 +459,12 @@ export default function BigInt64ArraySet0201Test(): void {
      */
     it('testBigInt64ArraySetTwo2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array(5);
-      let caught = didThrow((): void => {
+      try {
         arr.set(-1, 10n);
-      });
-      expect(caught || (arr[0] === 0n && arr[4] === 0n)).assertTrue();
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
@@ -478,10 +477,12 @@ export default function BigInt64ArraySet0201Test(): void {
      */
     it('testBigInt64ArraySetTwo3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array(5);
-      let caught = didThrow((): void => {
+      try {
         arr.set(-2, 10n);
-      });
-      expect(caught || (arr[0] === 0n && arr[4] === 0n)).assertTrue();
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
@@ -494,10 +495,12 @@ export default function BigInt64ArraySet0201Test(): void {
      */
     it('testBigInt64ArraySetTwo3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array(5);
-      let caught = didThrow((): void => {
+      try {
         arr.set(-5, 10n);
-      });
-      expect(caught || (arr[0] === 0n && arr[4] === 0n)).assertTrue();
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
@@ -510,10 +513,12 @@ export default function BigInt64ArraySet0201Test(): void {
      */
     it('testBigInt64ArraySetTwo3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array(5);
-      let caught = didThrow((): void => {
+      try {
         arr.set(2147483647, 10n);
-      });
-      expect(caught || (arr[0] === 0n && arr[4] === 0n)).assertTrue();
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
@@ -526,10 +531,12 @@ export default function BigInt64ArraySet0201Test(): void {
      */
     it('testBigInt64ArraySetTwo3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array(5);
-      let caught = didThrow((): void => {
+      try {
         arr.set(-2147483648, 10n);
-      });
-      expect(caught || (arr[0] === 0n && arr[4] === 0n)).assertTrue();
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
@@ -848,10 +855,12 @@ export default function BigInt64ArraySet0201Test(): void {
       target[0] = 9n;
       target[3] = 9n;
       let src: FixedArray<BigInt> = [1n, 2n, 3n, 4n, 5n];
-      let caught = didThrow((): void => {
+      try {
         target.set(src);
-      });
-      expect(caught || (target[0] === 9n && target[3] === 9n)).assertTrue();
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
@@ -866,10 +875,12 @@ export default function BigInt64ArraySet0201Test(): void {
       let target = new BigInt64Array(1);
       target[0] = 9n;
       let src: FixedArray<BigInt> = [1n, 2n];
-      let caught = didThrow((): void => {
+      try {
         target.set(src);
-      });
-      expect(caught || target[0] === 9n).assertTrue();
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
@@ -883,10 +894,12 @@ export default function BigInt64ArraySet0201Test(): void {
     it('testBigInt64ArraySetTwo5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let target = new BigInt64Array(0);
       let src: FixedArray<BigInt> = [1n];
-      let caught = didThrow((): void => {
+      try {
         target.set(src);
-      });
-      expect(caught || target.length === 0).assertTrue();
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
@@ -902,10 +915,12 @@ export default function BigInt64ArraySet0201Test(): void {
       target[0] = 9n;
       target[1] = 9n;
       let src: FixedArray<BigInt> = [1n, 2n, 3n];
-      let caught = didThrow((): void => {
+      try {
         target.set(src);
-      });
-      expect(caught || (target[0] === 9n && target[1] === 9n)).assertTrue();
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
@@ -921,10 +936,12 @@ export default function BigInt64ArraySet0201Test(): void {
       target[0] = 9n;
       target[2] = 9n;
       let src: FixedArray<BigInt> = [1n, 2n, 3n, 4n];
-      let caught = didThrow((): void => {
+      try {
         target.set(src);
-      });
-      expect(caught || (target[0] === 9n && target[2] === 9n)).assertTrue();
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
@@ -938,10 +955,12 @@ export default function BigInt64ArraySet0201Test(): void {
     it('testBigInt64ArraySetTwo5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let target = new BigInt64Array(0);
       let src: FixedArray<BigInt> = [0n];
-      let caught = didThrow((): void => {
+      try {
         target.set(src);
-      });
-      expect(caught || target.length === 0).assertTrue();
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
@@ -1097,31 +1116,36 @@ export default function BigInt64ArraySet0201Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_TWO_ZERO_ONE_7000
      * @tc.name testBigInt64ArraySetTwo7000
-     * @tc.desc Verify set copies src=[10n, 20n, 30n] with offset=1.
+     * @tc.desc Verify set copies only the visible portion of a source subarray.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySetTwo7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let target = new BigInt64Array(5);
-      let src = new BigInt64Array([10n, 20n, 30n]);
-      target.set(src, 1);
-      expect(target[3]).assertEqual(30n);
+      let sourceRoot = new BigInt64Array([10n, 20n, 30n, 40n]);
+      let src = sourceRoot.subarray(1, 3);
+      let target = new BigInt64Array([1n, 1n, 1n, 1n, 1n]);
+      target.set(src, 2);
+      expect(target.join()).assertEqual('1,1,20,30,1');
+      expect(sourceRoot.join()).assertEqual('10,20,30,40');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_TWO_ZERO_ONE_7100
      * @tc.name testBigInt64ArraySetTwo7100
-     * @tc.desc Verify set copies src=[10n, 20n, 30n] with offset=2.
+     * @tc.desc Verify set preserves signed boundary values when copying into the target tail.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySetTwo7100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let target = new BigInt64Array(5);
-      let src = new BigInt64Array([10n, 20n, 30n]);
+      let min = -9223372036854775807n - 1n;
+      let max = 9223372036854775807n;
+      let target = new BigInt64Array(4);
+      let src = new BigInt64Array([max, min]);
       target.set(src, 2);
-      expect(target[4]).assertEqual(30n);
+      expect(target[2]).assertEqual(max);
+      expect(target[3]).assertEqual(min);
     });
 
     /**
@@ -1355,7 +1379,7 @@ export default function BigInt64ArraySet0201Test(): void {
      */
     it('testBigInt64ArraySetTwo8600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let target = new BigInt64Array(200);
-      let src: FixedArray<BigInt> = [];
+      let src = new FixedArray<BigInt>(100, 0n);
       for (let i = 0; i < 100; i++) {
         src[i] = BigInt(i * 10);
       }

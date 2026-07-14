@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -570,7 +570,7 @@ export default function BigInt64ArraySet01Test(): void {
       expect(arr[0]).assertEqual(1n);
       expect(arr[1]).assertEqual(2n);
       expect(arr[2]).assertEqual(99n);
-      expect(arr[3]).assertEqual(4n);
+      expect(arr[3]).assertEqual(2n);
       expect(arr[4]).assertEqual(5n);
     });
 
@@ -615,7 +615,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_ONE_0360
      * @tc.name testBigInt64ArraySetOne0360
-     * @tc.desc Verify bracket assignment on a zero-length array has no effect on buffer.
+     * @tc.desc Verify bracket assignment on a zero-length array throws RangeError and has no effect on buffer.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -623,8 +623,16 @@ export default function BigInt64ArraySet01Test(): void {
     it('testBigInt64ArraySetOne0360', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(8);
       let arr = new BigInt64Array(buf, 0, 0);
+      try {
+        arr[0] = 1n;
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+      let full = new BigInt64Array(buf);
       expect(arr.length).assertEqual(0);
       expect(arr.byteLength).assertEqual(0);
+      expect(full[0]).assertEqual(0n);
     });
 
     /**
@@ -929,20 +937,20 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0550
      * @tc.name testBigInt64ArraySet0550
-     * @tc.desc Verify set with int and BigInt with out-of-range insertPos negative one either throws or
-     * remains unchanged
+     * @tc.desc Verify negative single-value index throws without changing elements.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet0550', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
+      const arr = new BigInt64Array([1n, 2n, 3n]);
       try {
-        arr.set(-1, 10n);
+        arr.set(-2, 10n);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
+      expect(arr[1]).assertEqual(2n);
     });
 
     /**
@@ -967,20 +975,21 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0570
      * @tc.name testBigInt64ArraySet0570
-     * @tc.desc Verify set with int and BigInt with out-of-range insertPos negative length either throws
-     * or remains unchanged
+     * @tc.desc Verify index less than negative length throws and instance remains usable.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet0570', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
+      const arr = new BigInt64Array([1n, 2n, 3n]);
       try {
-        arr.set(-3, 10n);
+        arr.set(-5, 10n);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
+      arr.set(2, 30n);
+      expect(arr[2]).assertEqual(30n);
     });
 
     /**
@@ -1005,20 +1014,21 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0590
      * @tc.name testBigInt64ArraySet0590
-     * @tc.desc Verify set with int and BigInt with out-of-range insertPos negative length minus one
-     * either throws or remains unchanged
+     * @tc.desc Verify int maximum index throws without changing length or contents.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet0590', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
+      const arr = new BigInt64Array([1n, 2n, 3n]);
       try {
-        arr.set(-4, 10n);
+        arr.set(2147483647, 10n);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
+      expect(arr.length).assertEqual(3);
+      expect(arr[0]).assertEqual(1n);
     });
 
     /**
@@ -1451,35 +1461,33 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0850
      * @tc.name testBigInt64ArraySet0850
-     * @tc.desc Verify set with FixedArray<E> and offset at the middle offsetwrites a single-element E
-     * array containing large hexadecimal value
+     * @tc.desc Verify a two-element source exactly fills the remaining target space.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet0850', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigInt64Array(4);
-      const eVal: bigint = BigInt("0x3F3F3F3F3F3F3F3F");
-      const src = new BigInt64Array([eVal]);
-      arr.set(src, 1);
-      expect(arr[1]).assertEqual(eVal);
+      const src = new BigInt64Array([11n, 22n]);
+      arr.set(src, 2);
+      expect(arr.join()).assertEqual('0,0,11,22');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0860
      * @tc.name testBigInt64ArraySet0860
-     * @tc.desc Verify set with FixedArray<E> and offset before the last valid offsetwrites a
-     * single-element E array containing large hexadecimal value
+     * @tc.desc Verify set copies only the visible range of a source subarray.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet0860', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(4);
-      const eVal: bigint = BigInt("0x3F3F3F3F3F3F3F3F");
-      const src = new BigInt64Array([eVal]);
-      arr.set(src, 2);
-      expect(arr[2]).assertEqual(eVal);
+      const sourceRoot = new BigInt64Array([1n, 2n, 3n, 4n]);
+      const src = sourceRoot.subarray(1, 3);
+      const target = new BigInt64Array(4);
+      target.set(src, 1);
+      expect(target.join()).assertEqual('0,2,3,0');
+      expect(sourceRoot.join()).assertEqual('1,2,3,4');
     });
 
     /**
@@ -1502,35 +1510,33 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0880
      * @tc.name testBigInt64ArraySet0880
-     * @tc.desc Verify set with FixedArray<E> and offset at the middle offsetwrites a single-element E
-     * array containing small negative hexadecimal value
+     * @tc.desc Verify an empty source is a no-op at a non-zero offset.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet0880', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(4);
-      const eVal: bigint = -BigInt("0x3F3F3F3F3F3F3F3F");
-      const src = new BigInt64Array([eVal]);
-      arr.set(src, 1);
-      expect(arr[1]).assertEqual(eVal);
+      const arr = new BigInt64Array([5n, 6n, 7n, 8n]);
+      const src = new BigInt64Array(0);
+      arr.set(src, 2);
+      expect(arr.join()).assertEqual('5,6,7,8');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_0890
      * @tc.name testBigInt64ArraySet0890
-     * @tc.desc Verify set with FixedArray<E> and offset before the last valid offsetwrites a
-     * single-element E array containing small negative hexadecimal value
+     * @tc.desc Verify signed 64-bit boundary values are copied together at a non-zero offset.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet0890', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const min = -9223372036854775807n - 1n;
+      const max = 9223372036854775807n;
       const arr = new BigInt64Array(4);
-      const eVal: bigint = -BigInt("0x3F3F3F3F3F3F3F3F");
-      const src = new BigInt64Array([eVal]);
-      arr.set(src, 2);
-      expect(arr[2]).assertEqual(eVal);
+      arr.set(new BigInt64Array([max, min]), 1);
+      expect(arr[1]).assertEqual(max);
+      expect(arr[2]).assertEqual(min);
     });
 
     /**
@@ -1802,8 +1808,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1060
      * @tc.name testBigInt64ArraySet1060
-     * @tc.desc Verify set with ArrayLike<BigInt> and offset capacity 10 from offset 2 writes an
-     * overflowing ten-element source throws RangeError
+     * @tc.desc Verify a source longer than the target throws RangeError at offset zero.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1811,52 +1816,52 @@ export default function BigInt64ArraySet01Test(): void {
     it('testBigInt64ArraySet1060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigInt64Array(10);
       try {
-        const src = [10n, 10n, 10n, 10n, 10n, 10n, 10n, 10n, 10n, 10n];
-        arr.set(src, 2);
+        const src = [1n, 2n, 3n, 4n, 5n, 6n, 7n, 8n, 9n, 10n, 11n];
+        arr.set(src, 0);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
+      expect(arr[0]).assertEqual(0n);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1070
      * @tc.name testBigInt64ArraySet1070
-     * @tc.desc Verify set with ArrayLike<BigInt> and offset capacity 10 from offset 3 writes an
-     * overflowing ten-element source throws RangeError
+     * @tc.desc Verify a non-empty source cannot be copied into an empty target.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(10);
+      const arr = new BigInt64Array(0);
       try {
-        const src = [10n, 10n, 10n, 10n, 10n, 10n, 10n, 10n, 10n, 10n];
-        arr.set(src, 3);
+        arr.set([1n], 0);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
+      expect(arr.length).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1080
      * @tc.name testBigInt64ArraySet1080
-     * @tc.desc Verify set with ArrayLike<BigInt> and offset capacity 10 from offset 4 writes an
-     * overflowing ten-element source throws RangeError
+     * @tc.desc Verify a two-element source overflows by one position at the last target index.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigInt64Array(10);
+      arr[9] = 99n;
       try {
-        const src = [10n, 10n, 10n, 10n, 10n, 10n, 10n, 10n, 10n, 10n];
-        arr.set(src, 4);
+        arr.set([7n, 8n], 9);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
+      expect(arr[9]).assertEqual(99n);
     });
 
     /**
@@ -1878,65 +1883,65 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1100
      * @tc.name testBigInt64ArraySet1100
-     * @tc.desc Verify set with ArrayLike<BigInt> and offset large capacity from offset 1 writes a
-     * one-element source successfully
+     * @tc.desc Verify an empty ArrayLike source leaves a large target unchanged.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigInt64Array(100);
-      const src = [9n];
-      arr.set(src, 1);
-      expect(arr[1]).assertEqual(9n);
+      arr[50] = 123n;
+      const src: bigint[] = [];
+      arr.set(src, 50);
+      expect(arr[50]).assertEqual(123n);
+      expect(arr.length).assertEqual(100);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1110
      * @tc.name testBigInt64ArraySet1110
-     * @tc.desc Verify set with ArrayLike<BigInt> and offset large capacity from offset 2 writes a
-     * one-element source successfully
+     * @tc.desc Verify a three-element source exactly fills the tail of a large target.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigInt64Array(100);
-      const src = [9n];
-      arr.set(src, 2);
-      expect(arr[2]).assertEqual(9n);
+      arr.set([7n, 8n, 9n], 97);
+      expect(arr[96]).assertEqual(0n);
+      expect(arr[97]).assertEqual(7n);
+      expect(arr[99]).assertEqual(9n);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1120
      * @tc.name testBigInt64ArraySet1120
-     * @tc.desc Verify set with ArrayLike<BigInt> and offset large capacity from offset 3 writes a
-     * one-element source successfully
+     * @tc.desc Verify overlapping source and target ranges are copied from the original values.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(100);
-      const src = [9n];
-      arr.set(src, 3);
-      expect(arr[3]).assertEqual(9n);
+      const arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
+      const src = arr.subarray(0, 3);
+      arr.set(src, 1);
+      expect(arr.join()).assertEqual('1,1,2,3,5');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1130
      * @tc.name testBigInt64ArraySet1130
-     * @tc.desc Verify set with ArrayLike<BigInt> and offset large capacity from offset 4 writes a
-     * one-element source successfully
+     * @tc.desc Verify set overwrites only its target range after the array has been filled.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(100);
-      const src = [9n];
-      arr.set(src, 4);
-      expect(arr[4]).assertEqual(9n);
+      const arr = new BigInt64Array(6);
+      arr.fill(5n);
+      const min = -9223372036854775807n - 1n;
+      arr.set([9223372036854775807n, min], 2);
+      expect(arr.join()).assertEqual('5,5,9223372036854775807,-9223372036854775808,5,5');
     });
 
     /**
@@ -2198,17 +2203,18 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1300
      * @tc.name testBigInt64ArraySet1300
-     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 0 与 0
+     * @tc.desc Verify set with empty FixedArray<BigInt> source is a no-op.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
-      const src = new BigInt64Array([0n, 0n]);
+      const arr = new BigInt64Array([7n, 8n, 9n]);
+      const src: FixedArray<BigInt> = [];
       arr.set(src);
-      expect(arr[0]).assertEqual(0n);
-      expect(arr[1]).assertEqual(0n);
+      expect(arr[0]).assertEqual(7n);
+      expect(arr[1]).assertEqual(8n);
+      expect(arr[2]).assertEqual(9n);
     });
 
     /**
@@ -2230,17 +2236,19 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1320
      * @tc.name testBigInt64ArraySet1320
-     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 0 与 正数
+     * @tc.desc Verify set with ArrayLike source fills the target tail exactly.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1320', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
-      const src = new BigInt64Array([0n, 10n]);
-      arr.set(src);
-      expect(arr[0]).assertEqual(0n);
-      expect(arr[1]).assertEqual(10n);
+      const arr = new BigInt64Array([1n, 2n, 3n, 4n]);
+      const src: BigInt[] = [8n, 9n];
+      const offset = arr.length - src.length;
+      arr.set(src, offset);
+      expect(arr[1]).assertEqual(2n);
+      expect(arr[2]).assertEqual(8n);
+      expect(arr[3]).assertEqual(9n);
     });
 
     /**
@@ -2262,17 +2270,23 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1340
      * @tc.name testBigInt64ArraySet1340
-     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 0 与 负数
+     * @tc.desc Verify oversized ArrayLike source throws without partially writing.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1340', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
-      const src = new BigInt64Array([0n, -10n]);
-      arr.set(src);
-      expect(arr[0]).assertEqual(0n);
-      expect(arr[1]).assertEqual(-10n);
+      const arr = new BigInt64Array([1n, 2n, 3n]);
+      const src: BigInt[] = [8n, 9n, 10n];
+      try {
+        arr.set(src, 1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+      expect(arr[0]).assertEqual(1n);
+      expect(arr[1]).assertEqual(2n);
+      expect(arr[2]).assertEqual(3n);
     });
 
     /**
@@ -2294,17 +2308,22 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1360
      * @tc.name testBigInt64ArraySet1360
-     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 0 与 maximum value
+     * @tc.desc Verify non-empty ArrayLike source at offset length throws RangeError.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1360', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
-      const src = new BigInt64Array([0n, 9223372036854775807n]);
-      arr.set(src);
-      expect(arr[0]).assertEqual(0n);
-      expect(arr[1]).assertEqual(9223372036854775807n);
+      const arr = new BigInt64Array([4n, 5n]);
+      const src: BigInt[] = [6n];
+      try {
+        arr.set(src, arr.length);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+      expect(arr[0]).assertEqual(4n);
+      expect(arr[1]).assertEqual(5n);
     });
 
     /**
@@ -2326,17 +2345,23 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1380
      * @tc.name testBigInt64ArraySet1380
-     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 0 与 minimum value
+     * @tc.desc Verify ArrayLike negative offset throws and the instance remains usable.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1380', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
-      const src = new BigInt64Array([0n, -9223372036854775808n]);
-      arr.set(src);
-      expect(arr[0]).assertEqual(0n);
-      expect(arr[1]).assertEqual(-9223372036854775808n);
+      const arr = new BigInt64Array([1n, 2n, 3n]);
+      const src: BigInt[] = [9n];
+      const recovery: BigInt[] = [7n];
+      try {
+        arr.set(src, -1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+      arr.set(recovery, 1);
+      expect(arr[1]).assertEqual(7n);
     });
 
     /**
@@ -2358,17 +2383,19 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1400
      * @tc.name testBigInt64ArraySet1400
-     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 正数 与 0
+     * @tc.desc Verify BigInt64Array source with offset preserves prefix and suffix.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
-      const src = new BigInt64Array([10n, 0n]);
-      arr.set(src);
-      expect(arr[0]).assertEqual(10n);
-      expect(arr[1]).assertEqual(0n);
+      const arr = new BigInt64Array([1n, 2n, 3n, 4n]);
+      const src = new BigInt64Array([8n, 9n]);
+      arr.set(src, 1);
+      expect(arr[0]).assertEqual(1n);
+      expect(arr[1]).assertEqual(8n);
+      expect(arr[2]).assertEqual(9n);
+      expect(arr[3]).assertEqual(4n);
     });
 
     /**
@@ -2390,17 +2417,22 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1420
      * @tc.name testBigInt64ArraySet1420
-     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 正数 与 正数
+     * @tc.desc Verify oversized BigInt64Array source throws without changing target.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1420', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
-      const src = new BigInt64Array([10n, 10n]);
-      arr.set(src);
-      expect(arr[0]).assertEqual(10n);
-      expect(arr[1]).assertEqual(10n);
+      const arr = new BigInt64Array([1n, 2n, 3n]);
+      const src = new BigInt64Array([8n, 9n, 10n]);
+      try {
+        arr.set(src, 1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+      expect(arr[1]).assertEqual(2n);
+      expect(arr[2]).assertEqual(3n);
     });
 
     /**
@@ -2422,17 +2454,18 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1440
      * @tc.name testBigInt64ArraySet1440
-     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 正数 与 负数
+     * @tc.desc Verify mutating BigInt64Array source after set does not change target.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1440', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
-      const src = new BigInt64Array([10n, -10n]);
+      const arr = new BigInt64Array(2);
+      const src = new BigInt64Array([10n, 20n]);
       arr.set(src);
+      src[0] = 99n;
       expect(arr[0]).assertEqual(10n);
-      expect(arr[1]).assertEqual(-10n);
+      expect(src[0]).assertEqual(99n);
     });
 
     /**
@@ -2454,17 +2487,20 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1460
      * @tc.name testBigInt64ArraySet1460
-     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 正数 与 maximum value
+     * @tc.desc Verify two targets copied from one source remain independent.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1460', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
-      const src = new BigInt64Array([10n, 9223372036854775807n]);
-      arr.set(src);
-      expect(arr[0]).assertEqual(10n);
-      expect(arr[1]).assertEqual(9223372036854775807n);
+      const src = new BigInt64Array([3n, 4n]);
+      const first = new BigInt64Array(2);
+      const second = new BigInt64Array(2);
+      first.set(src);
+      second.set(src);
+      first[0] = 100n;
+      expect(first[0]).assertEqual(100n);
+      expect(second[0]).assertEqual(3n);
     });
 
     /**
@@ -2486,17 +2522,19 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1480
      * @tc.name testBigInt64ArraySet1480
-     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 正数 与 minimum value
+     * @tc.desc Verify set copies only the visible range of a subarray source.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1480', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
-      const src = new BigInt64Array([10n, -9223372036854775808n]);
-      arr.set(src);
-      expect(arr[0]).assertEqual(10n);
-      expect(arr[1]).assertEqual(-9223372036854775808n);
+      const source = new BigInt64Array([4n, 5n, 6n, 7n]);
+      const src = source.subarray(1, 3);
+      const arr = new BigInt64Array([0n, 0n, 0n, 0n]);
+      arr.set(src, 1);
+      expect(arr[1]).assertEqual(5n);
+      expect(arr[2]).assertEqual(6n);
+      expect(arr[3]).assertEqual(0n);
     });
 
     /**
@@ -2518,17 +2556,20 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1500
      * @tc.name testBigInt64ArraySet1500
-     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 负数 与 0
+     * @tc.desc Verify set on a buffer-offset view writes through to the backing buffer.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
-      const src = new BigInt64Array([-10n, 0n]);
-      arr.set(src);
-      expect(arr[0]).assertEqual(-10n);
-      expect(arr[1]).assertEqual(0n);
+      const buffer = new ArrayBuffer(40);
+      const full = new BigInt64Array(buffer);
+      const view = new BigInt64Array(buffer, 8, 3);
+      const src: FixedArray<BigInt> = [10n, 20n];
+      view.set(src, 1);
+      expect(full[1]).assertEqual(0n);
+      expect(full[2]).assertEqual(10n);
+      expect(full[3]).assertEqual(20n);
     });
 
     /**
@@ -2550,17 +2591,18 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1520
      * @tc.name testBigInt64ArraySet1520
-     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 负数 与 正数
+     * @tc.desc Verify overlapping forward set copies from the original source range.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1520', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
-      const src = new BigInt64Array([-10n, 10n]);
-      arr.set(src);
-      expect(arr[0]).assertEqual(-10n);
-      expect(arr[1]).assertEqual(10n);
+      const arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
+      const src = arr.subarray(0, 3);
+      arr.set(src, 2);
+      expect(arr[2]).assertEqual(1n);
+      expect(arr[3]).assertEqual(2n);
+      expect(arr[4]).assertEqual(3n);
     });
 
     /**
@@ -2582,17 +2624,18 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1540
      * @tc.name testBigInt64ArraySet1540
-     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 负数 与 负数
+     * @tc.desc Verify overlapping backward set copies from the original source range.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1540', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
-      const src = new BigInt64Array([-10n, -10n]);
-      arr.set(src);
-      expect(arr[0]).assertEqual(-10n);
-      expect(arr[1]).assertEqual(-10n);
+      const arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
+      const src = arr.subarray(2, 5);
+      arr.set(src, 0);
+      expect(arr[0]).assertEqual(3n);
+      expect(arr[1]).assertEqual(4n);
+      expect(arr[2]).assertEqual(5n);
     });
 
     /**
@@ -2614,17 +2657,19 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1560
      * @tc.name testBigInt64ArraySet1560
-     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 负数 与 maximum value
+     * @tc.desc Verify a later single-value set overwrites one batch-written element.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1560', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
-      const src = new BigInt64Array([-10n, 9223372036854775807n]);
-      arr.set(src);
-      expect(arr[0]).assertEqual(-10n);
-      expect(arr[1]).assertEqual(9223372036854775807n);
+      const arr = new BigInt64Array([0n, 0n, 0n, 0n]);
+      const src: FixedArray<BigInt> = [1n, 2n, 3n];
+      arr.set(src, 0);
+      arr.set(1, 99n);
+      expect(arr[0]).assertEqual(1n);
+      expect(arr[1]).assertEqual(99n);
+      expect(arr[2]).assertEqual(3n);
     });
 
     /**
@@ -2646,17 +2691,19 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1580
      * @tc.name testBigInt64ArraySet1580
-     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 负数 与 minimum value
+     * @tc.desc Verify a later batch set overwrites a previous single-value write.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1580', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
-      const src = new BigInt64Array([-10n, -9223372036854775808n]);
-      arr.set(src);
-      expect(arr[0]).assertEqual(-10n);
-      expect(arr[1]).assertEqual(-9223372036854775808n);
+      const arr = new BigInt64Array([0n, 0n, 0n, 0n]);
+      const src: FixedArray<BigInt> = [7n, 8n];
+      arr.set(2, 99n);
+      arr.set(src, 1);
+      expect(arr[1]).assertEqual(7n);
+      expect(arr[2]).assertEqual(8n);
+      expect(arr[3]).assertEqual(0n);
     });
 
     /**
@@ -2678,17 +2725,17 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1600
      * @tc.name testBigInt64ArraySet1600
-     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 maximum value 与 0
+     * @tc.desc Verify BigInt64Array source set with offset returns undefined after writing.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
-      const src = new BigInt64Array([9223372036854775807n, 0n]);
-      arr.set(src);
-      expect(arr[0]).assertEqual(9223372036854775807n);
-      expect(arr[1]).assertEqual(0n);
+      const arr = new BigInt64Array([0n, 0n, 0n]);
+      const src = new BigInt64Array([4n, 5n]);
+      const result = arr.set(src, 1);
+      expect(result).assertEqual(undefined);
+      expect(arr[2]).assertEqual(5n);
     });
 
     /**
@@ -2710,17 +2757,17 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1620
      * @tc.name testBigInt64ArraySet1620
-     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 maximum value 与 正数
+     * @tc.desc Verify empty BigInt64Array source is allowed at target length.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1620', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
-      const src = new BigInt64Array([9223372036854775807n, 10n]);
-      arr.set(src);
-      expect(arr[0]).assertEqual(9223372036854775807n);
-      expect(arr[1]).assertEqual(10n);
+      const arr = new BigInt64Array([1n, 2n]);
+      const src = new BigInt64Array(0);
+      arr.set(src, arr.length);
+      expect(arr.length).assertEqual(2);
+      expect(arr[1]).assertEqual(2n);
     });
 
     /**
@@ -2742,17 +2789,17 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1640
      * @tc.name testBigInt64ArraySet1640
-     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 maximum value 与 负数
+     * @tc.desc Verify single-element source at length minus one writes only the last element.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1640', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
-      const src = new BigInt64Array([9223372036854775807n, -10n]);
-      arr.set(src);
-      expect(arr[0]).assertEqual(9223372036854775807n);
-      expect(arr[1]).assertEqual(-10n);
+      const arr = new BigInt64Array([1n, 2n, 3n]);
+      const src: FixedArray<BigInt> = [9n];
+      arr.set(src, arr.length - 1);
+      expect(arr[1]).assertEqual(2n);
+      expect(arr[2]).assertEqual(9n);
     });
 
     /**
@@ -2774,17 +2821,18 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1660
      * @tc.name testBigInt64ArraySet1660
-     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 maximum value 与 maximum value
+     * @tc.desc Verify set can replace every element from offset zero.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1660', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
-      const src = new BigInt64Array([9223372036854775807n, 9223372036854775807n]);
+      const arr = new BigInt64Array([1n, 2n, 3n]);
+      const src: FixedArray<BigInt> = [4n, 5n, 6n];
       arr.set(src);
-      expect(arr[0]).assertEqual(9223372036854775807n);
-      expect(arr[1]).assertEqual(9223372036854775807n);
+      expect(arr[0]).assertEqual(4n);
+      expect(arr[1]).assertEqual(5n);
+      expect(arr[2]).assertEqual(6n);
     });
 
     /**
@@ -2806,17 +2854,20 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1680
      * @tc.name testBigInt64ArraySet1680
-     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 maximum value 与 minimum value
+     * @tc.desc Verify set preserves maximum and minimum BigInt64 boundary values.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1680', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
-      const src = new BigInt64Array([9223372036854775807n, -9223372036854775808n]);
+      const arr = new BigInt64Array(2);
+      const src: FixedArray<BigInt> = [
+        9223372036854775807n,
+        -9223372036854775807n - 1n
+      ];
       arr.set(src);
       expect(arr[0]).assertEqual(9223372036854775807n);
-      expect(arr[1]).assertEqual(-9223372036854775808n);
+      expect(arr[1]).assertEqual(-9223372036854775807n - 1n);
     });
 
     /**
@@ -2838,17 +2889,17 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1700
      * @tc.name testBigInt64ArraySet1700
-     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 minimum value 与 0
+     * @tc.desc Verify set wraps values outside the signed BigInt64 range.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
-      const src = new BigInt64Array([-9223372036854775808n, 0n]);
+      const arr = new BigInt64Array(2);
+      const src: FixedArray<BigInt> = [9223372036854775808n, -9223372036854775809n];
       arr.set(src);
-      expect(arr[0]).assertEqual(-9223372036854775808n);
-      expect(arr[1]).assertEqual(0n);
+      expect(arr[0]).assertEqual(-9223372036854775807n - 1n);
+      expect(arr[1]).assertEqual(9223372036854775807n);
     });
 
     /**
@@ -2870,17 +2921,21 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1720
      * @tc.name testBigInt64ArraySet1720
-     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 minimum value 与 正数
+     * @tc.desc Verify set fills a tail range with BigInt64 boundary values.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1720', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
-      const src = new BigInt64Array([-9223372036854775808n, 10n]);
-      arr.set(src);
-      expect(arr[0]).assertEqual(-9223372036854775808n);
-      expect(arr[1]).assertEqual(10n);
+      const arr = new BigInt64Array([1n, 1n, 1n, 1n, 1n, 1n]);
+      const src: FixedArray<BigInt> = [
+        9223372036854775807n,
+        -9223372036854775807n - 1n
+      ];
+      arr.set(src, 4);
+      expect(arr[3]).assertEqual(1n);
+      expect(arr[4]).assertEqual(9223372036854775807n);
+      expect(arr[5]).assertEqual(-9223372036854775807n - 1n);
     });
 
     /**
@@ -2902,17 +2957,18 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1740
      * @tc.name testBigInt64ArraySet1740
-     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 minimum value 与 负数
+     * @tc.desc Verify changing the target after set does not mutate the ArrayLike source.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1740', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
-      const src = new BigInt64Array([-9223372036854775808n, -10n]);
+      const src: BigInt[] = [1n, 2n];
+      const arr = new BigInt64Array(2);
       arr.set(src);
-      expect(arr[0]).assertEqual(-9223372036854775808n);
-      expect(arr[1]).assertEqual(-10n);
+      arr[0] = 99n;
+      expect(arr[0]).assertEqual(99n);
+      expect(src[0]).assertEqual(1n);
     });
 
     /**
@@ -2934,17 +2990,19 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1760
      * @tc.name testBigInt64ArraySet1760
-     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 minimum value 与 maximum value
+     * @tc.desc Verify set reads the current ArrayLike source values on each call.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1760', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
-      const src = new BigInt64Array([-9223372036854775808n, 9223372036854775807n]);
-      arr.set(src);
-      expect(arr[0]).assertEqual(-9223372036854775808n);
-      expect(arr[1]).assertEqual(9223372036854775807n);
+      const src: BigInt[] = [1n, 2n];
+      const arr = new BigInt64Array([0n, 0n, 0n, 0n]);
+      arr.set(src, 0);
+      src[0] = 7n;
+      arr.set(src, 2);
+      expect(arr[0]).assertEqual(1n);
+      expect(arr[2]).assertEqual(7n);
     });
 
     /**
@@ -2966,17 +3024,20 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1780
      * @tc.name testBigInt64ArraySet1780
-     * @tc.desc Verify set with FixedArray<BigInt> 写入双元素 minimum value 与 minimum value
+     * @tc.desc Verify set on an offset view can replace the whole visible range.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArraySet1780', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigInt64Array(3);
-      const src = new BigInt64Array([-9223372036854775808n, -9223372036854775808n]);
-      arr.set(src);
-      expect(arr[0]).assertEqual(-9223372036854775808n);
-      expect(arr[1]).assertEqual(-9223372036854775808n);
+      const buffer = new ArrayBuffer(48);
+      const full = new BigInt64Array(buffer);
+      const view = new BigInt64Array(buffer, 16, 4);
+      const src: FixedArray<BigInt> = [5n, 6n, 7n, 8n];
+      view.set(src);
+      expect(view.length).assertEqual(4);
+      expect(full[2]).assertEqual(5n);
+      expect(full[5]).assertEqual(8n);
     });
 
     /**
