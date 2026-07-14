@@ -2194,7 +2194,7 @@ export default function windowZindexTest() {
           }else {
             expect(err.code).assertEqual(401);
           }
-          expect(err.message !== '')..assertTrue()
+          expect(err.message !== '').assertTrue()
           done();
         });
       } catch(e) {
