@@ -156,7 +156,8 @@ static napi_value PthreadAtforkGwpasanStable001(napi_env env, napi_callback_info
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void PthreadAtforkWorker(std::atomic<bool>& hasError) {
+static void PthreadAtforkWorker(std::atomic<bool>& hasError)
+{
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         int ret = CallPthreadAtforkGwpasan(nullptr, nullptr, nullptr);
         if (ret < 0) {

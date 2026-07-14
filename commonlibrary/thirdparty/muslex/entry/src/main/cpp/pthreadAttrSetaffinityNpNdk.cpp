@@ -249,7 +249,8 @@ static napi_value PthreadAttrSetaffinityNpStable001(napi_env env, napi_callback_
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void SetaffinityWorker(std::atomic<bool>& hasError) {
+static void SetaffinityWorker(std::atomic<bool>& hasError)
+{
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         pthread_attr_t attr;
         pthread_attr_init(&attr);

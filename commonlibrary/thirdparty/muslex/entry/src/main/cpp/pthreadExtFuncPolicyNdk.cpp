@@ -155,7 +155,8 @@ static napi_value PthreadExtFuncPolicyStable001(napi_env env, napi_callback_info
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void ExtFuncPolicyWorker(std::atomic<bool>& hasError) {
+static void ExtFuncPolicyWorker(std::atomic<bool>& hasError)
+{
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         int ret = CallPthreadExtFuncPolicy();
         if (ret < 0) {

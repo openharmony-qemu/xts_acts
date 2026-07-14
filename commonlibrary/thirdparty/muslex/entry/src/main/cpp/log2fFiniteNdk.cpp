@@ -149,7 +149,8 @@ static napi_value Log2fFiniteStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void Log2fThreadWorker(std::atomic<bool>& hasError, const float* testVals) {
+static void Log2fThreadWorker(std::atomic<bool>& hasError, const float* testVals)
+{
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         int idx = i % 5;
         float expected = std::log2(testVals[idx]);
@@ -204,7 +205,7 @@ static napi_module demoModule = {
     .nm_flags = 0,
     .nm_filename = nullptr,
     .nm_register_func = Init,
-    .nm_modname = "log2ffinitendktest",
+    .nm_modname = "musl_log2ffinitendktest",
     .nm_priv = nullptr,
     .reserved = {0},
 };

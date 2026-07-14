@@ -108,7 +108,8 @@ static napi_value Log10FiniteNormal005(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     double result = CallLog10Finite(1000.0);
-    return ReturnInt32(env, (fabs(result - 3.0) < 1e-15) ? 1 : 0);
+    double expected = 3.0;
+    return ReturnInt32(env, (fabs(result - expected) < 1e-15) ? 1 : 0);
 }
 
 /* TC-006: log10(2.0) matches std::log10 */
@@ -232,7 +233,8 @@ static napi_value Log10FiniteStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void Log10ThreadWorker(std::atomic<bool>& hasError, const double* testVals) {
+static void Log10ThreadWorker(std::atomic<bool>& hasError, const double* testVals)
+{
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         int idx = i % 5;
         double expected = std::log10(testVals[idx]);
@@ -307,7 +309,7 @@ static napi_module demoModule = {
     .nm_flags = 0,
     .nm_filename = nullptr,
     .nm_register_func = Init,
-    .nm_modname = "log10finitedktest",
+    .nm_modname = "musl_log10finitedktest",
     .nm_priv = nullptr,
     .reserved = {0},
 };

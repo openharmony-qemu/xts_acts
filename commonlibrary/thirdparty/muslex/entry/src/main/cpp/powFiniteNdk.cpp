@@ -59,7 +59,8 @@ static napi_value PowFiniteNormal001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     double result = CallPowFinite(2.0, 3.0);
-    return ReturnInt32(env, (fabs(result - 8.0) < 1e-12) ? 1 : 0);
+    double expected = 8.0;
+    return ReturnInt32(env, (fabs(result - expected) < 1e-12) ? 1 : 0);
 }
 
 static napi_value PowFiniteNormal002(napi_env env, napi_callback_info info)
@@ -147,7 +148,8 @@ static napi_value PowFiniteStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void PowThreadWorker(std::atomic<bool>& hasError, const double* testX, const double* testY) {
+static void PowThreadWorker(std::atomic<bool>& hasError, const double* testX, const double* testY)
+{
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         int idx = i % 5;
         double expected = std::pow(testX[idx], testY[idx]);

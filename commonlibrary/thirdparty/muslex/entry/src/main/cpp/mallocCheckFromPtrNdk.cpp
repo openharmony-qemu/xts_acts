@@ -187,7 +187,8 @@ static napi_value MallocCheckFromPtrStable001(napi_env env, napi_callback_info i
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void MallocCheckThreadWorker(std::atomic<bool>& hasError) {
+static void MallocCheckThreadWorker(std::atomic<bool>& hasError)
+{
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         void* ptr = malloc(100);
         if (!ptr) {

@@ -147,7 +147,8 @@ static napi_value PowfFiniteStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void PowfThreadWorker(std::atomic<bool>& hasError, const float* testX, const float* testY) {
+static void PowfThreadWorker(std::atomic<bool>& hasError, const float* testX, const float* testY)
+{
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         int idx = i % 5;
         float expected = std::pow(testX[idx], testY[idx]);

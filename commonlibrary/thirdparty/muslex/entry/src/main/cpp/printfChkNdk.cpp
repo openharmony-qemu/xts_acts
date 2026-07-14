@@ -189,9 +189,10 @@ static napi_value PrintfChkBoundary002(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    std::string longStr(2000, 'a');
+    int strsize = 2000;
+    std::string longStr(strsize, 'a');
     int ret = CallPrintfChk(0, "%s", longStr.c_str());
-    return ReturnInt32(env, (ret == 2000) ? 1 : 0);
+    return ReturnInt32(env, (ret == strsize) ? 1 : 0);
 }
 
 /* ==================== Stability Tests ==================== */
@@ -213,7 +214,8 @@ static napi_value PrintfChkStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void PrintfChkThreadWorker(std::atomic<bool>& hasError, const char** formats) {
+static void PrintfChkThreadWorker(std::atomic<bool>& hasError, const char** formats)
+{
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         int idx = i % 4;
         int ret = CallPrintfChk(i % 2, formats[idx], "test", 123);

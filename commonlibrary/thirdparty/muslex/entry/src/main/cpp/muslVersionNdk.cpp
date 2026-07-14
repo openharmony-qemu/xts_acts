@@ -158,7 +158,8 @@ static napi_value MuslVersionStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void MuslVersionThreadWorker(std::atomic<bool>& hasError) {
+static void MuslVersionThreadWorker(std::atomic<bool>& hasError)
+{
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         const char* ver = CallMuslVersion();
         if (!ver) {

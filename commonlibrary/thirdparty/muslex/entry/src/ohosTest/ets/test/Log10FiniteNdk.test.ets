@@ -15,7 +15,7 @@
 
 import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
-import log10finitedktest from 'liblog10finitedktest.so';
+import musl_log10finitedktest from 'libmusl_log10finitedktest.so';
 import { deviceInfo } from '@kit.BasicServicesKit';
 
 export default function Log10FiniteNdkTest() {
@@ -32,7 +32,7 @@ export default function Log10FiniteNdkTest() {
      * @tc.level  LEVEL0
      */
     it('testLog10FiniteNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = log10finitedktest.log10FiniteNormal001();
+      let resNum: number = musl_log10finitedktest.log10FiniteNormal001();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -48,7 +48,7 @@ export default function Log10FiniteNdkTest() {
      * @tc.level  LEVEL0
      */
     it('testLog10FiniteNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = log10finitedktest.log10FiniteNormal002();
+      let resNum: number = musl_log10finitedktest.log10FiniteNormal002();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -64,7 +64,7 @@ export default function Log10FiniteNdkTest() {
      * @tc.level  LEVEL0
      */
     it('testLog10FiniteNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = log10finitedktest.log10FiniteNormal003();
+      let resNum: number = musl_log10finitedktest.log10FiniteNormal003();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -80,7 +80,7 @@ export default function Log10FiniteNdkTest() {
      * @tc.level  LEVEL0
      */
     it('testLog10FiniteNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = log10finitedktest.log10FiniteNormal004();
+      let resNum: number = musl_log10finitedktest.log10FiniteNormal004();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -96,7 +96,7 @@ export default function Log10FiniteNdkTest() {
      * @tc.level  LEVEL0
      */
     it('testLog10FiniteNormal005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = log10finitedktest.log10FiniteNormal005();
+      let resNum: number = musl_log10finitedktest.log10FiniteNormal005();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -112,7 +112,7 @@ export default function Log10FiniteNdkTest() {
      * @tc.level  LEVEL0
      */
     it('testLog10FiniteNormal006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = log10finitedktest.log10FiniteNormal006();
+      let resNum: number = musl_log10finitedktest.log10FiniteNormal006();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -128,7 +128,7 @@ export default function Log10FiniteNdkTest() {
      * @tc.level  LEVEL0
      */
     it('testLog10FiniteNormal007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = log10finitedktest.log10FiniteNormal007();
+      let resNum: number = musl_log10finitedktest.log10FiniteNormal007();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -144,7 +144,7 @@ export default function Log10FiniteNdkTest() {
      * @tc.level  LEVEL0
      */
     it('testLog10FiniteNormal008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = log10finitedktest.log10FiniteNormal008();
+      let resNum: number = musl_log10finitedktest.log10FiniteNormal008();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -160,7 +160,7 @@ export default function Log10FiniteNdkTest() {
      * @tc.level  LEVEL0
      */
     // it('testLog10FiniteAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-    //   let resNum: number = log10finitedktest.log10FiniteAbnormal001();
+    //   let resNum: number = musl_log10finitedktest.log10FiniteAbnormal001();
     //   let deviceType: string = deviceInfo.deviceType;
     //   let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
     //   expect(isValid).assertTrue();
@@ -176,7 +176,7 @@ export default function Log10FiniteNdkTest() {
      * @tc.level  LEVEL0
      */
     // it('testLog10FiniteAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-    //   let resNum: number = log10finitedktest.log10FiniteAbnormal002();
+    //   let resNum: number = musl_log10finitedktest.log10FiniteAbnormal002();
     //   let deviceType: string = deviceInfo.deviceType;
     //   let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
     //   expect(isValid).assertTrue();
@@ -192,7 +192,7 @@ export default function Log10FiniteNdkTest() {
      * @tc.level  LEVEL0
      */
     it('testLog10FiniteBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = log10finitedktest.log10FiniteBoundary001();
+      let resNum: number = musl_log10finitedktest.log10FiniteBoundary001();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -208,7 +208,7 @@ export default function Log10FiniteNdkTest() {
      * @tc.level  LEVEL0
      */
     it('testLog10FiniteBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = log10finitedktest.log10FiniteBoundary002();
+      let resNum: number = musl_log10finitedktest.log10FiniteBoundary002();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -224,7 +224,7 @@ export default function Log10FiniteNdkTest() {
      * @tc.level  LEVEL2
      */
     it('testLog10FiniteStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let resNum: number = log10finitedktest.log10FiniteStable001();
+      let resNum: number = musl_log10finitedktest.log10FiniteStable001();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -240,7 +240,7 @@ export default function Log10FiniteNdkTest() {
      * @tc.level  LEVEL1
      */
     it('testLog10FiniteThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let resNum: number = log10finitedktest.log10FiniteThread001();
+      let resNum: number = musl_log10finitedktest.log10FiniteThread001();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();

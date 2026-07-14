@@ -15,11 +15,11 @@
 
 import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
-import logfinitendktest from 'liblogfinitendktest.so';
+import musl_logfinitendktest from 'libmusl_logfinitendktest.so';
 import { deviceInfo } from '@kit.BasicServicesKit';
 
-export default function logFinitendkTest() {
-  describe('LogFinitendkTest', () => {
+export default function LogFiniteNdkTest() {
+  describe('LogFiniteNdkTest', () => {
 
     beforeEach(async () => { await Utils.sleep(50); });
 
@@ -32,7 +32,7 @@ export default function logFinitendkTest() {
      * @tc.level  LEVEL0
      */
     it('testLogFiniteNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = logfinitendktest.logFiniteNormal001();
+      let resNum: number = musl_logfinitendktest.logFiniteNormal001();
       expect(resNum >= 0).assertTrue();
       done();
     });
@@ -46,7 +46,7 @@ export default function logFinitendkTest() {
      * @tc.level  LEVEL0
      */
     it('testLogFiniteNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = logfinitendktest.logFiniteNormal002();
+      let resNum: number = musl_logfinitendktest.logFiniteNormal002();
       expect(resNum >= 0).assertTrue();
       done();
     });
@@ -60,7 +60,7 @@ export default function logFinitendkTest() {
      * @tc.level  LEVEL0
      */
     it('testLogFiniteNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = logfinitendktest.logFiniteNormal003();
+      let resNum: number = musl_logfinitendktest.logFiniteNormal003();
       expect(resNum >= 0).assertTrue();
       done();
     });
@@ -74,7 +74,7 @@ export default function logFinitendkTest() {
      * @tc.level  LEVEL0
      */
     it('testLogFiniteNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = logfinitendktest.logFiniteNormal004();
+      let resNum: number = musl_logfinitendktest.logFiniteNormal004();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && (resNum == 0 || resNum == 1));
       expect(isValid).assertTrue();
@@ -90,7 +90,7 @@ export default function logFinitendkTest() {
      * @tc.level  LEVEL1
      */
     it('testLogFiniteAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let resNum: number = logfinitendktest.logFiniteAbnormal001();
+      let resNum: number = musl_logfinitendktest.logFiniteAbnormal001();
       expect(resNum >= 0).assertTrue();
       done();
     });
@@ -104,7 +104,7 @@ export default function logFinitendkTest() {
      * @tc.level  LEVEL1
      */
     it('testLogFiniteAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let resNum: number = logfinitendktest.logFiniteAbnormal002();
+      let resNum: number = musl_logfinitendktest.logFiniteAbnormal002();
       expect(resNum >= 0).assertTrue();
       done();
     });
@@ -118,7 +118,7 @@ export default function logFinitendkTest() {
      * @tc.level  LEVEL1
      */
     it('testLogFiniteBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let resNum: number = logfinitendktest.logFiniteBoundary001();
+      let resNum: number = musl_logfinitendktest.logFiniteBoundary001();
       expect(resNum >= 0).assertTrue();
       done();
     });
@@ -132,7 +132,7 @@ export default function logFinitendkTest() {
      * @tc.level  LEVEL1
      */
     it('testLogFiniteBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let resNum: number = logfinitendktest.logFiniteBoundary002();
+      let resNum: number = musl_logfinitendktest.logFiniteBoundary002();
       expect(resNum >= 0).assertTrue();
       done();
     });
@@ -146,7 +146,7 @@ export default function logFinitendkTest() {
      * @tc.level  LEVEL2
      */
     it('testLogFiniteStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let resNum: number = logfinitendktest.logFiniteStable001();
+      let resNum: number = musl_logfinitendktest.logFiniteStable001();
       expect(resNum >= 0).assertTrue();
       done();
     });
@@ -160,7 +160,7 @@ export default function logFinitendkTest() {
      * @tc.level  LEVEL2
      */
     it('testLogFiniteThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let resNum: number = logfinitendktest.logFiniteThread001();
+      let resNum: number = musl_logfinitendktest.logFiniteThread001();
       expect(resNum >= 0).assertTrue();
       done();
     });

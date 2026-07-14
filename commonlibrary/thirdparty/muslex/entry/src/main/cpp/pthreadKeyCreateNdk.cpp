@@ -207,7 +207,8 @@ static napi_value PthreadKeyCreateStable001(napi_env env, napi_callback_info inf
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void PthreadKeyCreateWorker(std::atomic<bool>& hasError, pthread_key_t key) {
+static void PthreadKeyCreateWorker(std::atomic<bool>& hasError, pthread_key_t key)
+{
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         int* val = new int(i);
         if (pthread_setspecific(key, val) != 0) {

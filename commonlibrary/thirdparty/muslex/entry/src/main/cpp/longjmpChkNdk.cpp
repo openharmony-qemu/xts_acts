@@ -130,6 +130,8 @@ static napi_value LongjmpChkBoundary002(napi_env env, napi_callback_info info)
     }
     auto func = LibcFunctionLoader::GetInstance().GetLongjmpChk();
     int longjmpVal = 42;
+    int outerRet1 = 1;
+    int outerRet2 = 2;
     jmp_buf outerJb;
     int outerRet = setjmp(outerJb);
     if (outerRet == 0) {
@@ -138,9 +140,9 @@ static napi_value LongjmpChkBoundary002(napi_env env, napi_callback_info info)
         if (innerRet == 0) {
             func(innerJb, longjmpVal);
         }
-        func(outerJb, (innerRet == longjmpVal) ? 1 : 2);
+        func(outerJb, (innerRet == longjmpVal) ? outerRet1 : outerRet2);
     }
-    return ReturnInt32(env, (outerRet == 1) ? 1 : 0);
+    return ReturnInt32(env, (outerRet == outerRet1) ? 1 : 0);
 }
 
 static napi_value LongjmpChkStable001(napi_env env, napi_callback_info info)
