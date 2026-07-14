@@ -105,6 +105,7 @@ struct BindContextMenuByIsShowOptionsIndex {
         Button('arrow:T')
           .id('BindContextMenuByIsShowOptions_btnEnableArrow_01')
           .fontSize(9)
+          .height('5%')
           .onClick(() => { this.isShowArrowT = true; })
           .bindContextMenuByIsShow(this.isShowArrowT, this.MyMenu, {
             enableArrow: true,
@@ -119,6 +120,7 @@ struct BindContextMenuByIsShowOptionsIndex {
         Button('arrow:F')
           .id('BindContextMenuByIsShowOptions_btnEnableArrow_02')
           .fontSize(9)
+          .height('5%')
           .onClick(() => { this.isShowArrowF = true; })
           .bindContextMenuByIsShow(this.isShowArrowF, this.MyMenu, {
             enableArrow: false,
@@ -139,6 +141,7 @@ struct BindContextMenuByIsShowOptionsIndex {
         Button('hover:T')
           .id('BindContextMenuByIsShowOptions_btnEnableHoverMode_01')
           .fontSize(9)
+          .height('5%')
           .onClick(() => { this.isShowHoverT = true; })
           .bindContextMenuByIsShow(this.isShowHoverT, this.MyMenu, {
             enableHoverMode: true,
@@ -153,6 +156,7 @@ struct BindContextMenuByIsShowOptionsIndex {
         Button('hover:F')
           .id('BindContextMenuByIsShowOptions_btnEnableHoverMode_02')
           .fontSize(9)
+          .height('5%')
           .onClick(() => { this.isShowHoverF = true; })
           .bindContextMenuByIsShow(this.isShowHoverF, this.MyMenu, {
             enableHoverMode: false,
@@ -173,6 +177,7 @@ struct BindContextMenuByIsShowOptionsIndex {
         Button('prev:N')
           .id('BindContextMenuByIsShowOptions_btnPreview_01')
           .fontSize(9)
+          .height('5%')
           .onClick(() => { this.isShowPreviewNone = true; })
           .bindContextMenuByIsShow(this.isShowPreviewNone, this.MyMenu, {
             preview: MenuPreviewMode.NONE,
@@ -187,6 +192,7 @@ struct BindContextMenuByIsShowOptionsIndex {
         Button('prev:I')
           .id('BindContextMenuByIsShowOptions_btnPreview_02')
           .fontSize(9)
+          .height('5%')
           .onClick(() => { this.isShowPreviewImg = true; })
           .bindContextMenuByIsShow(this.isShowPreviewImg, this.MyMenu, {
             preview: MenuPreviewMode.IMAGE,
@@ -201,6 +207,7 @@ struct BindContextMenuByIsShowOptionsIndex {
         Button('prev:B')
           .id('BindContextMenuByIsShowOptions_btnPreview_03')
           .fontSize(9)
+          .height('5%')
           .onClick(() => { this.isShowPreviewBuilder = true; })
           .bindContextMenuByIsShow(this.isShowPreviewBuilder, this.MyMenu, {
             preview: this.MyPreview,
@@ -221,6 +228,7 @@ struct BindContextMenuByIsShowOptionsIndex {
         Button('anim:sc')
           .id('BindContextMenuByIsShowOptions_btnPreviewAnimation_01')
           .fontSize(9)
+          .height('5%')
           .onClick(() => { this.isShowAnimScale = true; })
           .bindContextMenuByIsShow(this.isShowAnimScale, this.MyMenu, {
             preview: this.MyPreview,
@@ -236,6 +244,7 @@ struct BindContextMenuByIsShowOptionsIndex {
         Button('hs:F')
           .id('BindContextMenuByIsShowOptions_btnHoverScaleInterruption_01')
           .fontSize(9)
+          .height('5%')
           .onClick(() => { this.isShowAnimHoverF = true; })
           .bindContextMenuByIsShow(this.isShowAnimHoverF, this.MyMenu, {
             preview: this.MyPreview,
@@ -254,6 +263,7 @@ struct BindContextMenuByIsShowOptionsIndex {
         Button('hs:T')
           .id('BindContextMenuByIsShowOptions_btnHoverScaleInterruption_02')
           .fontSize(9)
+          .height('5%')
           .onClick(() => { this.isShowAnimHoverT = true; })
           .bindContextMenuByIsShow(this.isShowAnimHoverT, this.MyMenu, {
             preview: this.MyPreview,
@@ -278,6 +288,7 @@ struct BindContextMenuByIsShowOptionsIndex {
         Button('hap:0')
           .id('BindContextMenuByIsShowOptions_btnHapticFeedback_01')
           .fontSize(9)
+          .height('5%')
           .onClick(() => { this.isShowHap0 = true; })
           .bindContextMenuByIsShow(this.isShowHap0, this.MyMenu, {
             hapticFeedbackMode: HapticFeedbackMode.DISABLED,
@@ -292,6 +303,7 @@ struct BindContextMenuByIsShowOptionsIndex {
         Button('hap:1')
           .id('BindContextMenuByIsShowOptions_btnHapticFeedback_02')
           .fontSize(9)
+          .height('5%')
           .onClick(() => { this.isShowHap1 = true; })
           .bindContextMenuByIsShow(this.isShowHap1, this.MyMenu, {
             hapticFeedbackMode: HapticFeedbackMode.ENABLED,
@@ -306,6 +318,7 @@ struct BindContextMenuByIsShowOptionsIndex {
         Button('hap:2')
           .id('BindContextMenuByIsShowOptions_btnHapticFeedback_03')
           .fontSize(9)
+          .height('5%')
           .onClick(() => { this.isShowHap2 = true; })
           .bindContextMenuByIsShow(this.isShowHap2, this.MyMenu, {
             hapticFeedbackMode: HapticFeedbackMode.AUTO,
@@ -326,6 +339,7 @@ struct BindContextMenuByIsShowOptionsIndex {
         Button('mod:A')
           .id('BindContextMenuByIsShowOptions_btnModalMode_01')
           .fontSize(9)
+          .height('5%')
           .onClick(() => { this.isShowModal0 = true; })
           .bindContextMenuByIsShow(this.isShowModal0, this.MyMenu, {
             modalMode: ModalMode.AUTO,
@@ -340,6 +354,7 @@ struct BindContextMenuByIsShowOptionsIndex {
         Button('mod:N')
           .id('BindContextMenuByIsShowOptions_btnModalMode_02')
           .fontSize(9)
+          .height('5%')
           .onClick(() => { this.isShowModal1 = true; })
           .bindContextMenuByIsShow(this.isShowModal1, this.MyMenu, {
             modalMode: ModalMode.NONE,
@@ -354,6 +369,7 @@ struct BindContextMenuByIsShowOptionsIndex {
         Button('mod:TW')
           .id('BindContextMenuByIsShowOptions_btnModalMode_03')
           .fontSize(9)
+          .height('5%')
           .onClick(() => { this.isShowModal2 = true; })
           .bindContextMenuByIsShow(this.isShowModal2, this.MyMenu, {
             modalMode: ModalMode.TARGET_WINDOW,
@@ -374,6 +390,7 @@ struct BindContextMenuByIsShowOptionsIndex {
         Button('ps:A')
           .id('BindContextMenuByIsShowOptions_btnPreviewScaleMode_01')
           .fontSize(9)
+          .height('5%')
           .onClick(() => { this.isShowScale0 = true; })
           .bindContextMenuByIsShow(this.isShowScale0, this.MyMenu, {
             preview: MenuPreviewMode.IMAGE,
@@ -389,6 +406,7 @@ struct BindContextMenuByIsShowOptionsIndex {
         Button('ps:C')
           .id('BindContextMenuByIsShowOptions_btnPreviewScaleMode_02')
           .fontSize(9)
+          .height('5%')
           .onClick(() => { this.isShowScale1 = true; })
           .bindContextMenuByIsShow(this.isShowScale1, this.MyMenu, {
             preview: MenuPreviewMode.IMAGE,
@@ -404,6 +422,7 @@ struct BindContextMenuByIsShowOptionsIndex {
         Button('ps:M')
           .id('BindContextMenuByIsShowOptions_btnPreviewScaleMode_03')
           .fontSize(9)
+          .height('5%')
           .onClick(() => { this.isShowScale2 = true; })
           .bindContextMenuByIsShow(this.isShowScale2, this.MyMenu, {
             preview: MenuPreviewMode.IMAGE,
@@ -426,6 +445,7 @@ struct BindContextMenuByIsShowOptionsIndex {
           Button('area:SA')
             .id('BindContextMenuByIsShowOptions_btnAvailableLayoutArea_01')
             .fontSize(9)
+            .height('5%')
             .onClick(() => { this.isShowArea = true; })
             .bindContextMenuByIsShow(this.isShowArea, this.MyMenu, {
               preview: MenuPreviewMode.IMAGE,
@@ -441,6 +461,7 @@ struct BindContextMenuByIsShowOptionsIndex {
           Button('kbd:0')
             .id('BindContextMenuByIsShowOptions_btnKeyboardAvoidMode_01')
             .fontSize(9)
+            .height('5%')
             .onClick(() => { this.isShowKbd0 = true; })
             .bindContextMenuByIsShow(this.isShowKbd0, this.MyMenu, {
               keyboardAvoidMode: MenuKeyboardAvoidMode.NONE,
@@ -455,6 +476,7 @@ struct BindContextMenuByIsShowOptionsIndex {
           Button('kbd:1')
             .id('BindContextMenuByIsShowOptions_btnKeyboardAvoidMode_02')
             .fontSize(9)
+            .height('5%')
             .onClick(() => { this.isShowKbd1 = true; })
             .bindContextMenuByIsShow(this.isShowKbd1, this.MyMenu, {
               keyboardAvoidMode: MenuKeyboardAvoidMode.TRANSLATE_AND_RESIZE,
@@ -471,6 +493,7 @@ struct BindContextMenuByIsShowOptionsIndex {
           Button('clr:FS')
             .id('BindContextMenuByIsShowOptions_btnColorMode_01')
             .fontSize(9)
+            .height('5%')
             .onClick(() => { this.isShowColor0 = true; })
             .bindContextMenuByIsShow(this.isShowColor0, this.MyMenu, {
               colorMode: AnchoredColorMode.FOLLOW_SYSTEM,
@@ -485,6 +508,7 @@ struct BindContextMenuByIsShowOptionsIndex {
           Button('clr:FT')
             .id('BindContextMenuByIsShowOptions_btnColorMode_02')
             .fontSize(9)
+            .height('5%')
             .onClick(() => { this.isShowColor1 = true; })
             .bindContextMenuByIsShow(this.isShowColor1, this.MyMenu, {
               colorMode: AnchoredColorMode.FOLLOW_TARGET,
@@ -499,6 +523,7 @@ struct BindContextMenuByIsShowOptionsIndex {
           Button('mask:T')
             .id('BindContextMenuByIsShowOptions_btnMask_01')
             .fontSize(9)
+            .height('5%')
             .onClick(() => { this.isShowMaskT = true; })
             .bindContextMenuByIsShow(this.isShowMaskT, this.MyMenu, {
               mask: true,
@@ -513,6 +538,7 @@ struct BindContextMenuByIsShowOptionsIndex {
           Button('mask:F')
             .id('BindContextMenuByIsShowOptions_btnMask_02')
             .fontSize(9)
+            .height('5%')
             .onClick(() => { this.isShowMaskF = true; })
             .bindContextMenuByIsShow(this.isShowMaskF, this.MyMenu, {
               mask: false,
