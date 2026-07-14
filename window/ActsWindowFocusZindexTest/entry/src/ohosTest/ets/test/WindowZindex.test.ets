@@ -1219,7 +1219,7 @@ export default function windowZindexTest() {
         done();
       }catch(err){
         console.log(`${caseName} :setWindowDelayRaiseOnDrag fail:`+err.code);
-        if (isFreeWindowMode) { 
+        if (!isFreeWindowMode || !canIUseRes) { 
           expect(err.code).assertEqual(801);
           expect(err.message !== '').assertTrue()
         } else {
@@ -1247,7 +1247,7 @@ export default function windowZindexTest() {
         done();
       }catch(err){
         console.log(`${caseName} :setWindowDelayRaiseOnDrag fail:`+err.code);
-        if (isFreeWindowMode) { 
+        if (!isFreeWindowMode || !canIUseRes) { 
           expect(err.code).assertEqual(801);
           expect(err.message !== '').assertTrue()
         } else {
