@@ -28,7 +28,8 @@ import {
   sleep,
   getPermission,
   createMovingPhoto,
-  driveFn
+  driveFn,
+  waitForLcdSizePopulated
 } from '../common'
 import common from '@ohos.app.ability.common';
 
@@ -96,6 +97,15 @@ export default function getTest() {
       await sleep(1000);
       await driveFn();
       await pushCreateAsset(testContext, fileNameList);
+      for (let i = 0; i < fileNameList.length; i++) {
+        let fileName = fileNameList[i];
+        if (fileName.endsWith('.jpg')) {
+          let success = await waitForLcdSizePopulated(fileName, 15000);
+          if (!success) {
+            console.error(`beforeAll: ${fileName} lcd_size not populated`);
+          }
+        }
+      }
     });
 
     const checkProvisionAsset = async (done: Function, testNum: string, displayName: string) => {
