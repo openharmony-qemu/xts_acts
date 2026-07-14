@@ -205,7 +205,7 @@ static napi_module demoModule = {
     .nm_flags = 0,
     .nm_filename = nullptr,
     .nm_register_func = Init,
-    .nm_modname = "musl_logfinitendktest",
+    .nm_modname = "ohos_logfinitendktest",
     .nm_priv = nullptr,
     .reserved = {0},
 };

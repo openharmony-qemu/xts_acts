@@ -25,6 +25,7 @@
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
 static constexpr int K_MAX_KEYS = PTHREAD_KEYS_MAX;
+static constexpr int K_OVER_LIMIT = 10;
 
 static int CallPthreadKeyCreate(pthread_key_t* key, void (*destructor)(void*))
 {
@@ -136,7 +137,7 @@ static napi_value PthreadKeyCreateAbnormal002(napi_env env, napi_callback_info i
     std::vector<pthread_key_t> keys;
     bool pass = true;
     // Try creating more keys than maximum
-    for (int i = 0; i < K_MAX_KEYS + 10; ++i) {
+    for (int i = 0; i < K_MAX_KEYS + K_OVER_LIMIT; ++i) {
         pthread_key_t key;
         int ret = CallPthreadKeyCreate(&key, nullptr);
         if (ret == 0) {

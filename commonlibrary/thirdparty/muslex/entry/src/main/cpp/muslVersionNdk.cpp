@@ -25,6 +25,7 @@
 static constexpr int K_STABLE_LOOP = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
+static constexpr int K_VERSION_MAX_LEN = 256;
 
 static const char* CallMuslVersion()
 {
@@ -127,7 +128,7 @@ static napi_value MuslVersionBoundary001(napi_env env, napi_callback_info info)
     if (!ver) {
         return ReturnInt32(env, 0);
     }
-    return ReturnInt32(env, (strlen(ver) < 256) ? 1 : 0);
+    return ReturnInt32(env, (strlen(ver) < K_VERSION_MAX_LEN) ? 1 : 0);
 }
 
 static napi_value MuslVersionBoundary002(napi_env env, napi_callback_info info)

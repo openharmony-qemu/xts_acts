@@ -60,8 +60,10 @@ static napi_value MktimeNoenvNormal001(napi_env env, napi_callback_info info)
     struct tm t = {};
     int testYear = 2026;
     t.tm_year = testYear - TM_YEAR_BASE;
-    t.tm_mon = 6;
-    t.tm_mday = 1;
+    int july = 6;
+    t.tm_mon = july;
+    int day1 = 1;
+    t.tm_mday = day1;
     int noon = 12;
     t.tm_hour = noon;
     time_t ret = CallMktimeNoenv(&t);
@@ -90,8 +92,10 @@ static napi_value MktimeNoenvNormal003(napi_env env, napi_callback_info info)
     struct tm t = {};
     int testYear = 2050;
     t.tm_year = testYear - TM_YEAR_BASE;
-    t.tm_mon = 11;
-    t.tm_mday = 31;
+    int december = 11;
+    t.tm_mon = december;
+    int lastday = 31;
+    t.tm_mday = lastday;
     time_t ret = CallMktimeNoenv(&t);
     return ReturnInt32(env, (ret != -1 || errno != EOVERFLOW) ? 1 : 0);
 }
@@ -113,7 +117,8 @@ static napi_value MktimeNoenvAbnormal001(napi_env env, napi_callback_info info)
     int testYear = 2026;
     t.tm_year = testYear - TM_YEAR_BASE;
     t.tm_mon = 0;
-    t.tm_mday = 32;
+    int invaliddom = 32;
+    t.tm_mday = invaliddom;
     time_t ret = CallMktimeNoenv(&t);
     return ReturnInt32(env, 1);
 }
@@ -140,10 +145,14 @@ static napi_value MktimeNoenvBoundary001(napi_env env, napi_callback_info info)
     int testYear = 2038;
     t.tm_year = testYear - TM_YEAR_BASE;
     t.tm_mon = 0;
-    t.tm_mday = 19;
-    t.tm_hour = 3;
-    t.tm_min = 14;
-    t.tm_sec = 7;
+    int boundaryDay = 19;
+    t.tm_mday = boundaryDay;
+    int boundaryHour = 3;
+    t.tm_hour = boundaryHour;
+    int boundaryMin = 14;
+    t.tm_min = boundaryMin;
+    int testsec = 7;
+    t.tm_sec = testsec;
     time_t ret = CallMktimeNoenv(&t);
     return ReturnInt32(env, (ret != -1 || errno != EOVERFLOW) ? 1 : 0);
 }

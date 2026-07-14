@@ -59,12 +59,13 @@ static napi_value LongjmpChkNormal002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     auto func = LibcFunctionLoader::GetInstance().GetLongjmpChk();
+    int longjmpVal = 456;
     jmp_buf jb;
     int ret = setjmp(jb);
     if (ret == 0) {
-        func(jb, 456);
+        func(jb, longjmpVal);
     }
-    return ReturnInt32(env, (ret == 456) ? 1 : 0);
+    return ReturnInt32(env, (ret == longjmpVal) ? 1 : 0);
 }
 
 static napi_value LongjmpChkNormal003(napi_env env, napi_callback_info info)

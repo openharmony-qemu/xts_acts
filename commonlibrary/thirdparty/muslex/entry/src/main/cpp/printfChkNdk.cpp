@@ -178,9 +178,10 @@ static napi_value PrintfChkBoundary001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    std::string longFmt(3000, 'x');
+    int fmtsize = 3000;
+    std::string longFmt(fmtsize, 'x');
     int ret = CallPrintfChk(0, longFmt.c_str());
-    return ReturnInt32(env, (ret == 3000) ? 1 : 0);
+    return ReturnInt32(env, (ret == fmtsize) ? 1 : 0);
 }
 
 /* TC-011: Very long output string */

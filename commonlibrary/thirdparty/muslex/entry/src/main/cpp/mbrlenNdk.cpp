@@ -296,7 +296,8 @@ static napi_value MbrlenStable002(napi_env env, napi_callback_info info)
         }
         mbstate_t state2 = {};
         size_t ret2 = CallMbrlen("\xE4\xB8\xAD", MB_CUR_MAX, &state2);
-        if (ret2 != 3) {
+        int utf8len3 = 3;
+        if (ret2 != utf8len3) {
             pass = false;
             break;
         }
@@ -322,7 +323,8 @@ static void MbrlenThreadWorker(std::atomic<bool>& hasError, const char* asciiStr
             setlocale(LC_ALL, utf8Locale);
             mbstate_t state2 = {};
             size_t ret2 = CallMbrlen(utf8Str, MB_CUR_MAX, &state2);
-            if (ret2 != 3) {
+            int utf8len3 = 3;
+            if (ret2 != utf8len3) {
                 continue;
             }
         }

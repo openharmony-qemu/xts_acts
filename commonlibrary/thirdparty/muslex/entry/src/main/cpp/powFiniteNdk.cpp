@@ -69,7 +69,8 @@ static napi_value PowFiniteNormal002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     double result = CallPowFinite(10.0, 2.0);
-    return ReturnInt32(env, (fabs(result - 100.0) < 1e-12) ? 1 : 0);
+    double expected100 = 100.0;
+    return ReturnInt32(env, (fabs(result - expected100) < 1e-12) ? 1 : 0);
 }
 
 static napi_value PowFiniteNormal003(napi_env env, napi_callback_info info)
