@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -41,15 +41,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin0100',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([1n, 2n, 3n]);
-        let act = arr.join();
-        expect(act).assertEqual("1,2,3");
-      }
-    );
+    it('testBigInt64ArrayJoin0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let act = arr.join();
+      expect(act).assertEqual("1,2,3");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_0200
@@ -59,15 +55,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin0200',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([1n, 2n, 3n]);
-        let act = arr.join("-");
-        expect(act).assertEqual("1-2-3");
-      }
-    );
+    it('testBigInt64ArrayJoin0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let act = arr.join("-");
+      expect(act).assertEqual("1-2-3");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_0300
@@ -77,15 +69,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin0300',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([10n, 20n, 30n]);
-        let act = arr.join("");
-        expect(act).assertEqual("102030");
-      }
-    );
+    it('testBigInt64ArrayJoin0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([10n, 20n, 30n]);
+      let act = arr.join("");
+      expect(act).assertEqual("102030");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_0400
@@ -95,15 +83,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin0400',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([1n, 2n]);
-        let act = arr.join(" ");
-        expect(act).assertEqual("1 2");
-      }
-    );
+    it('testBigInt64ArrayJoin0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n]);
+      let act = arr.join(" ");
+      expect(act).assertEqual("1 2");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_0500
@@ -113,15 +97,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin0500',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([5n, 10n]);
-        let act = arr.join("  ");
-        expect(act).assertEqual("5  10");
-      }
-    );
+    it('testBigInt64ArrayJoin0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([5n, 10n]);
+      let act = arr.join("  ");
+      expect(act).assertEqual("5  10");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_0600
@@ -131,15 +111,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin0600',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([-1n, -2n]);
-        let act = arr.join(",");
-        expect(act).assertEqual("-1,-2");
-      }
-    );
+    it('testBigInt64ArrayJoin0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([-1n, -2n]);
+      let act = arr.join(",");
+      expect(act).assertEqual("-1,-2");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_0700
@@ -149,15 +125,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin0700',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([1n, 2n, 3n]);
-        let act = arr.join(", ");
-        expect(act).assertEqual("1, 2, 3");
-      }
-    );
+    it('testBigInt64ArrayJoin0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let act = arr.join(", ");
+      expect(act).assertEqual("1, 2, 3");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_0800
@@ -167,15 +139,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin0800',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([100n, 200n]);
-        let act = arr.join(";");
-        expect(act).assertEqual("100;200");
-      }
-    );
+    it('testBigInt64ArrayJoin0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([100n, 200n]);
+      let act = arr.join(";");
+      expect(act).assertEqual("100;200");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_0900
@@ -185,15 +153,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin0900',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([8n, 9n]);
-        let act = arr.join("-");
-        expect(act).assertEqual("8-9");
-      }
-    );
+    it('testBigInt64ArrayJoin0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([8n, 9n]);
+      let act = arr.join("-");
+      expect(act).assertEqual("8-9");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_1000
@@ -203,15 +167,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin1000',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([-8n, -9n]);
-        let act = arr.join("-");
-        expect(act).assertEqual("-8--9");
-      }
-    );
+    it('testBigInt64ArrayJoin1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([-8n, -9n]);
+      let act = arr.join("-");
+      expect(act).assertEqual("-8--9");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_1100
@@ -221,15 +181,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin1100',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([0n, 0n]);
-        let act = arr.join("_");
-        expect(act).assertEqual("0_0");
-      }
-    );
+    it('testBigInt64ArrayJoin1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([0n, 0n]);
+      let act = arr.join("_");
+      expect(act).assertEqual("0_0");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_1200
@@ -239,15 +195,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin1200',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([192n, 168n, 1n, 1n]);
-        let act = arr.join(".");
-        expect(act).assertEqual("192.168.1.1");
-      }
-    );
+    it('testBigInt64ArrayJoin1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([192n, 168n, 1n, 1n]);
+      let act = arr.join(".");
+      expect(act).assertEqual("192.168.1.1");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_1300
@@ -257,15 +209,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin1300',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([1n, 3n, 5n]);
-        let act = arr.join("|");
-        expect(act).assertEqual("1|3|5");
-      }
-    );
+    it('testBigInt64ArrayJoin1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 3n, 5n]);
+      let act = arr.join("|");
+      expect(act).assertEqual("1|3|5");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_1400
@@ -275,15 +223,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin1400',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([2n, 4n]);
-        let act = arr.join("~");
-        expect(act).assertEqual("2~4");
-      }
-    );
+    it('testBigInt64ArrayJoin1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([2n, 4n]);
+      let act = arr.join("~");
+      expect(act).assertEqual("2~4");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_1500
@@ -293,15 +237,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin1500',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([99n, 88n]);
-        let act = arr.join("#");
-        expect(act).assertEqual("99#88");
-      }
-    );
+    it('testBigInt64ArrayJoin1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([99n, 88n]);
+      let act = arr.join("#");
+      expect(act).assertEqual("99#88");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_1600
@@ -311,15 +251,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin1600',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([7n, 8n, 9n]);
-        let act = arr.join("*/");
-        expect(act).assertEqual("7*/8*/9");
-      }
-    );
+    it('testBigInt64ArrayJoin1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([7n, 8n, 9n]);
+      let act = arr.join("*/");
+      expect(act).assertEqual("7*/8*/9");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_1700
@@ -329,15 +265,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin1700',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([1n, 2n]);
-        let act = arr.join("\n");
-        expect(act).assertEqual("1\n2");
-      }
-    );
+    it('testBigInt64ArrayJoin1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n]);
+      let act = arr.join("\n");
+      expect(act).assertEqual("1\n2");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_1800
@@ -347,15 +279,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin1800',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([-1n, -2n]);
-        let act = arr.join("\t");
-        expect(act).assertEqual("-1\t-2");
-      }
-    );
+    it('testBigInt64ArrayJoin1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([-1n, -2n]);
+      let act = arr.join("\t");
+      expect(act).assertEqual("-1\t-2");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_1900
@@ -365,15 +293,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin1900',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([10n, 20n]);
-        let act = arr.join("\r\n");
-        expect(act).assertEqual("10\r\n20");
-      }
-    );
+    it('testBigInt64ArrayJoin1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([10n, 20n]);
+      let act = arr.join("\r\n");
+      expect(act).assertEqual("10\r\n20");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_2000
@@ -383,15 +307,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin2000',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([3n, 4n]);
-        let act = arr.join("\b");
-        expect(act).assertEqual("3\b4");
-      }
-    );
+    it('testBigInt64ArrayJoin2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([3n, 4n]);
+      let act = arr.join("\b");
+      expect(act).assertEqual("3\b4");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_2100
@@ -401,15 +321,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin2100',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([5n, 6n]);
-        let act = arr.join("\v");
-        expect(act).assertEqual("5\v6");
-      }
-    );
+    it('testBigInt64ArrayJoin2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([5n, 6n]);
+      let act = arr.join("\v");
+      expect(act).assertEqual("5\v6");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_2200
@@ -419,15 +335,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin2200',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([7n, 8n]);
-        let act = arr.join("\f");
-        expect(act).assertEqual("7\f8");
-      }
-    );
+    it('testBigInt64ArrayJoin2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([7n, 8n]);
+      let act = arr.join("\f");
+      expect(act).assertEqual("7\f8");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_2300
@@ -437,15 +349,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin2300',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([9n, 10n]);
-        let act = arr.join("\0");
-        expect(act).assertEqual("9" + "\0" + "10");
-      }
-    );
+    it('testBigInt64ArrayJoin2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([9n, 10n]);
+      let act = arr.join("\0");
+      expect(act).assertEqual("9" + "\0" + "10");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_2400
@@ -455,15 +363,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin2400',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([11n, 12n]);
-        let act = arr.join("​");
-        expect(act).assertEqual("11​12");
-      }
-    );
+    it('testBigInt64ArrayJoin2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([11n, 12n]);
+      let act = arr.join("​");
+      expect(act).assertEqual("11​12");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_2500
@@ -473,15 +377,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin2500',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([1n, 2n]);
-        let act = arr.join("和");
-        expect(act).assertEqual("1和2");
-      }
-    );
+    it('testBigInt64ArrayJoin2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n]);
+      let act = arr.join("和");
+      expect(act).assertEqual("1和2");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_2600
@@ -491,15 +391,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin2600',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([-1n, -2n]);
-        let act = arr.join("连接");
-        expect(act).assertEqual("-1连接-2");
-      }
-    );
+    it('testBigInt64ArrayJoin2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([-1n, -2n]);
+      let act = arr.join("连接");
+      expect(act).assertEqual("-1连接-2");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_2700
@@ -509,15 +405,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin2700',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([3n, 4n, 5n]);
-        let act = arr.join("、");
-        expect(act).assertEqual("3、4、5");
-      }
-    );
+    it('testBigInt64ArrayJoin2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([3n, 4n, 5n]);
+      let act = arr.join("、");
+      expect(act).assertEqual("3、4、5");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_2800
@@ -527,15 +419,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin2800',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([6n, 7n]);
-        let act = arr.join("，");
-        expect(act).assertEqual("6，7");
-      }
-    );
+    it('testBigInt64ArrayJoin2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([6n, 7n]);
+      let act = arr.join("，");
+      expect(act).assertEqual("6，7");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_2900
@@ -545,15 +433,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin2900',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([8n, 9n]);
-        let act = arr.join(" 与 ");
-        expect(act).assertEqual("8 与 9");
-      }
-    );
+    it('testBigInt64ArrayJoin2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([8n, 9n]);
+      let act = arr.join(" 与 ");
+      expect(act).assertEqual("8 与 9");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_3000
@@ -563,15 +447,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin3000',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([10n, 11n]);
-        let act = arr.join("測試");
-        expect(act).assertEqual("10測試11");
-      }
-    );
+    it('testBigInt64ArrayJoin3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([10n, 11n]);
+      let act = arr.join("測試");
+      expect(act).assertEqual("10測試11");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_3100
@@ -581,15 +461,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin3100',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([1n, 2n]);
-        let act = arr.join("🚀");
-        expect(act).assertEqual("1🚀2");
-      }
-    );
+    it('testBigInt64ArrayJoin3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n]);
+      let act = arr.join("🚀");
+      expect(act).assertEqual("1🚀2");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_3200
@@ -599,15 +475,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin3200',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([3n, 4n]);
-        let act = arr.join("😊");
-        expect(act).assertEqual("3😊4");
-      }
-    );
+    it('testBigInt64ArrayJoin3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([3n, 4n]);
+      let act = arr.join("😊");
+      expect(act).assertEqual("3😊4");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_3300
@@ -617,15 +489,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin3300',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([-1n, -2n]);
-        let act = arr.join("🇨🇳");
-        expect(act).assertEqual("-1🇨🇳-2");
-      }
-    );
+    it('testBigInt64ArrayJoin3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([-1n, -2n]);
+      let act = arr.join("🇨🇳");
+      expect(act).assertEqual("-1🇨🇳-2");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_3400
@@ -635,15 +503,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin3400',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([5n, 6n]);
-        let act = arr.join("👨‍👩‍👧");
-        expect(act).assertEqual("5👨‍👩‍👧6");
-      }
-    );
+    it('testBigInt64ArrayJoin3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([5n, 6n]);
+      let act = arr.join("👨‍👩‍👧");
+      expect(act).assertEqual("5👨‍👩‍👧6");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_3500
@@ -653,15 +517,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin3500',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([7n, 8n]);
-        let act = arr.join("👍🏻");
-        expect(act).assertEqual("7👍🏻8");
-      }
-    );
+    it('testBigInt64ArrayJoin3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([7n, 8n]);
+      let act = arr.join("👍🏻");
+      expect(act).assertEqual("7👍🏻8");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_3600
@@ -671,15 +531,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin3600',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([9n, 10n]);
-        let act = arr.join("🌈✨");
-        expect(act).assertEqual("9🌈✨10");
-      }
-    );
+    it('testBigInt64ArrayJoin3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([9n, 10n]);
+      let act = arr.join("🌈✨");
+      expect(act).assertEqual("9🌈✨10");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_3700
@@ -689,15 +545,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin3700',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([11n, 12n]);
-        let act = arr.join("1️⃣");
-        expect(act).assertEqual("111️⃣12");
-      }
-    );
+    it('testBigInt64ArrayJoin3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([11n, 12n]);
+      let act = arr.join("1️⃣");
+      expect(act).assertEqual("111️⃣12");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_3800
@@ -707,15 +559,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin3800',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([0n, 1n]);
-        let act = arr.join("字🍔组");
-        expect(act).assertEqual("0字🍔组1");
-      }
-    );
+    it('testBigInt64ArrayJoin3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([0n, 1n]);
+      let act = arr.join("字🍔组");
+      expect(act).assertEqual("0字🍔组1");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_3900
@@ -725,15 +573,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin3900',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([2n, 3n]);
-        let act = arr.join(" 🚀 ");
-        expect(act).assertEqual("2 🚀 3");
-      }
-    );
+    it('testBigInt64ArrayJoin3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([2n, 3n]);
+      let act = arr.join(" 🚀 ");
+      expect(act).assertEqual("2 🚀 3");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_4000
@@ -743,16 +587,12 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin4000',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([1n, 2n]);
-        let sep = "a".repeat(10);
-        let act = arr.join(sep);
-        expect(act).assertEqual("1aaaaaaaaaa2");
-      }
-    );
+    it('testBigInt64ArrayJoin4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n]);
+      let sep = "a".repeat(10);
+      let act = arr.join(sep);
+      expect(act).assertEqual("1aaaaaaaaaa2");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_4100
@@ -762,16 +602,12 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin4100',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([-1n, -2n]);
-        let sep = "b".repeat(50);
-        let act = arr.join(sep);
-        expect(act).assertEqual("-1" + sep + "-2");
-      }
-    );
+    it('testBigInt64ArrayJoin4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([-1n, -2n]);
+      let sep = "b".repeat(50);
+      let act = arr.join(sep);
+      expect(act).assertEqual("-1" + sep + "-2");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_4200
@@ -781,16 +617,12 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin4200',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([10n, 20n]);
-        let sep = "C".repeat(100);
-        let act = arr.join(sep);
-        expect(act).assertEqual("10" + sep + "20");
-      }
-    );
+    it('testBigInt64ArrayJoin4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([10n, 20n]);
+      let sep = "C".repeat(100);
+      let act = arr.join(sep);
+      expect(act).assertEqual("10" + sep + "20");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_4300
@@ -800,16 +632,12 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin4300',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([5n, 6n]);
-        let sep = "D".repeat(256);
-        let act = arr.join(sep);
-        expect(act).assertEqual("5" + sep + "6");
-      }
-    );
+    it('testBigInt64ArrayJoin4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([5n, 6n]);
+      let sep = "D".repeat(256);
+      let act = arr.join(sep);
+      expect(act).assertEqual("5" + sep + "6");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_4400
@@ -819,16 +647,12 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin4400',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([0n, 1n]);
-        let sep = "e".repeat(500);
-        let act = arr.join(sep);
-        expect(act).assertEqual("0" + sep + "1");
-      }
-    );
+    it('testBigInt64ArrayJoin4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([0n, 1n]);
+      let sep = "e".repeat(500);
+      let act = arr.join(sep);
+      expect(act).assertEqual("0" + sep + "1");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_4500
@@ -838,16 +662,12 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin4500',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([-9n, 9n]);
-        let sep = "F".repeat(1000);
-        let act = arr.join(sep);
-        expect(act).assertEqual("-9" + sep + "9");
-      }
-    );
+    it('testBigInt64ArrayJoin4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([-9n, 9n]);
+      let sep = "F".repeat(1000);
+      let act = arr.join(sep);
+      expect(act).assertEqual("-9" + sep + "9");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_4600
@@ -857,15 +677,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin4600',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([1n, 2n]);
-        let act = arr.join("0");
-        expect(act).assertEqual("102");
-      }
-    );
+    it('testBigInt64ArrayJoin4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n]);
+      let act = arr.join("0");
+      expect(act).assertEqual("102");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_4700
@@ -875,15 +691,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin4700',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([3n, 4n]);
-        let act = arr.join("1");
-        expect(act).assertEqual("314");
-      }
-    );
+    it('testBigInt64ArrayJoin4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([3n, 4n]);
+      let act = arr.join("1");
+      expect(act).assertEqual("314");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_4800
@@ -893,15 +705,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin4800',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([5n, 6n]);
-        let act = arr.join("-1");
-        expect(act).assertEqual("5-16");
-      }
-    );
+    it('testBigInt64ArrayJoin4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([5n, 6n]);
+      let act = arr.join("-1");
+      expect(act).assertEqual("5-16");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_4900
@@ -911,15 +719,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin4900',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([7n, 8n]);
-        let act = arr.join("999999");
-        expect(act).assertEqual("79999998");
-      }
-    );
+    it('testBigInt64ArrayJoin4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([7n, 8n]);
+      let act = arr.join("999999");
+      expect(act).assertEqual("79999998");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_5000
@@ -929,15 +733,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin5000',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([-1n, -2n]);
-        let act = arr.join("NaN");
-        expect(act).assertEqual("-1NaN-2");
-      }
-    );
+    it('testBigInt64ArrayJoin5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([-1n, -2n]);
+      let act = arr.join("NaN");
+      expect(act).assertEqual("-1NaN-2");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_5100
@@ -947,15 +747,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin5100',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([0n, 0n]);
-        let act = arr.join("Infinity");
-        expect(act).assertEqual("0Infinity0");
-      }
-    );
+    it('testBigInt64ArrayJoin5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([0n, 0n]);
+      let act = arr.join("Infinity");
+      expect(act).assertEqual("0Infinity0");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_5200
@@ -965,15 +761,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin5200',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([1n, 3n]);
-        let act = arr.join("-Infinity");
-        expect(act).assertEqual("1-Infinity3");
-      }
-    );
+    it('testBigInt64ArrayJoin5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 3n]);
+      let act = arr.join("-Infinity");
+      expect(act).assertEqual("1-Infinity3");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_5300
@@ -983,15 +775,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin5300',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([2n, 4n]);
-        let act = arr.join("true");
-        expect(act).assertEqual("2true4");
-      }
-    );
+    it('testBigInt64ArrayJoin5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([2n, 4n]);
+      let act = arr.join("true");
+      expect(act).assertEqual("2true4");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_5400
@@ -1001,15 +789,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin5400',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([-3n, -4n]);
-        let act = arr.join("false");
-        expect(act).assertEqual("-3false-4");
-      }
-    );
+    it('testBigInt64ArrayJoin5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([-3n, -4n]);
+      let act = arr.join("false");
+      expect(act).assertEqual("-3false-4");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_5500
@@ -1019,15 +803,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin5500',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([5n, 7n]);
-        let act = arr.join("null");
-        expect(act).assertEqual("5null7");
-      }
-    );
+    it('testBigInt64ArrayJoin5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([5n, 7n]);
+      let act = arr.join("null");
+      expect(act).assertEqual("5null7");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_5600
@@ -1037,15 +817,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin5600',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([6n, 8n]);
-        let act = arr.join("undefined");
-        expect(act).assertEqual("6undefined8");
-      }
-    );
+    it('testBigInt64ArrayJoin5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([6n, 8n]);
+      let act = arr.join("undefined");
+      expect(act).assertEqual("6undefined8");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_5700
@@ -1055,15 +831,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin5700',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array(0);
-        let act = arr.join(",");
-        expect(act).assertEqual("");
-      }
-    );
+    it('testBigInt64ArrayJoin5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array(0);
+      let act = arr.join(",");
+      expect(act).assertEqual("");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_5800
@@ -1073,15 +845,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin5800',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array(0);
-        let act = arr.join("🇨🇳");
-        expect(act).assertEqual("");
-      }
-    );
+    it('testBigInt64ArrayJoin5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array(0);
+      let act = arr.join("🇨🇳");
+      expect(act).assertEqual("");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_5900
@@ -1091,16 +859,12 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin5900',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array(0);
-        let sep = "a".repeat(200);
-        let act = arr.join(sep);
-        expect(act).assertEqual("");
-      }
-    );
+    it('testBigInt64ArrayJoin5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array(0);
+      let sep = "a".repeat(200);
+      let act = arr.join(sep);
+      expect(act).assertEqual("");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_6000
@@ -1110,15 +874,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin6000',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([88n]);
-        let act = arr.join("==>");
-        expect(act).assertEqual("88");
-      }
-    );
+    it('testBigInt64ArrayJoin6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([88n]);
+      let act = arr.join("==>");
+      expect(act).assertEqual("88");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_6100
@@ -1128,16 +888,12 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin6100',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([-99n]);
-        let sep = "X".repeat(500);
-        let act = arr.join(sep);
-        expect(act).assertEqual("-99");
-      }
-    );
+    it('testBigInt64ArrayJoin6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([-99n]);
+      let sep = "X".repeat(500);
+      let act = arr.join(sep);
+      expect(act).assertEqual("-99");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_6200
@@ -1147,15 +903,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin6200',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([9223372036854775807n, 1n]);
-        let act = arr.join("");
-        expect(act).assertEqual("92233720368547758071");
-      }
-    );
+    it('testBigInt64ArrayJoin6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([9223372036854775807n, 1n]);
+      let act = arr.join("");
+      expect(act).assertEqual("92233720368547758071");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_6300
@@ -1165,15 +917,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin6300',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([9223372036854775807n, -9223372036854775808n]);
-        let act = arr.join("和");
-        expect(act).assertEqual("9223372036854775807和-9223372036854775808");
-      }
-    );
+    it('testBigInt64ArrayJoin6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([9223372036854775807n, -9223372036854775808n]);
+      let act = arr.join("和");
+      expect(act).assertEqual("9223372036854775807和-9223372036854775808");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_6400
@@ -1183,15 +931,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin6400',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([-9223372036854775808n, 0n]);
-        let act = arr.join("_");
-        expect(act).assertEqual("-9223372036854775808_0");
-      }
-    );
+    it('testBigInt64ArrayJoin6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([-9223372036854775808n, 0n]);
+      let act = arr.join("_");
+      expect(act).assertEqual("-9223372036854775808_0");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_6500
@@ -1201,15 +945,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin6500',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([0n, 0n]);
-        let act = arr.join("0");
-        expect(act).assertEqual("000");
-      }
-    );
+    it('testBigInt64ArrayJoin6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([0n, 0n]);
+      let act = arr.join("0");
+      expect(act).assertEqual("000");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_6600
@@ -1219,18 +959,14 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin6600',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array(100);
-        for (let i = 0; i < 100; i++) {
-          arr[i] = BigInt(i);
-        }
-        let act = arr.join("-");
-        expect(act).assertEqual(Array.from(arr).join("-"));
+    it('testBigInt64ArrayJoin6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array(100);
+      for (let i = 0; i < 100; i++) {
+        arr[i] = BigInt(i);
       }
-    );
+      let act = arr.join("-");
+      expect(act).assertEqual(Array.from(arr).join("-"));
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_6700
@@ -1240,15 +976,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin6700',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n, 6n, 7n, 8n]);
-        let act = arr.join("🚀");
-        expect(act).assertEqual("1🚀2🚀3🚀4🚀5🚀6🚀7🚀8");
-      }
-    );
+    it('testBigInt64ArrayJoin6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n, 6n, 7n, 8n]);
+      let act = arr.join("🚀");
+      expect(act).assertEqual("1🚀2🚀3🚀4🚀5🚀6🚀7🚀8");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_6800
@@ -1258,15 +990,11 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin6800',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([-1n, -1n, -1n, -1n]);
-        let act = arr.join(" ");
-        expect(act).assertEqual("-1 -1 -1 -1");
-      }
-    );
+    it('testBigInt64ArrayJoin6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([-1n, -1n, -1n, -1n]);
+      let act = arr.join(" ");
+      expect(act).assertEqual("-1 -1 -1 -1");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_JOIN_ONE_6900
@@ -1276,14 +1004,10 @@ export default function BigInt64ArrayJoin01Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayJoin6900',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let arr = new BigInt64Array([10n, 11n, 12n]);
-        let act = arr.join("\\n");
-        expect(act).assertEqual("10\\n11\\n12");
-      }
-    );
+    it('testBigInt64ArrayJoin6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new BigInt64Array([10n, 11n, 12n]);
+      let act = arr.join("\\n");
+      expect(act).assertEqual("10\\n11\\n12");
+    });
   });
 }

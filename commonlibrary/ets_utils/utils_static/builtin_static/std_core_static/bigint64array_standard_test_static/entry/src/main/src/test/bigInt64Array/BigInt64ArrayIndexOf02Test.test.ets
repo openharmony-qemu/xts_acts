@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -36,7 +36,7 @@ export default function BigInt64ArrayIndexOf02Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_INDEX_OF_TWO_0100
      * @tc.name testBigInt64ArrayIndexOfTwo0100
-     * @tc.desc Verify indexOf returns a number type for array [11n].
+     * @tc.desc Verify indexOf returns an int type for array [11n].
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -44,7 +44,7 @@ export default function BigInt64ArrayIndexOf02Test(): void {
     it('testBigInt64ArrayIndexOfTwo0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([11n]);
       let res = arr.indexOf(11n);
-      expect(typeof res).assertEqual('number');
+      expect(typeof res).assertEqual('int');
     });
 
     /**

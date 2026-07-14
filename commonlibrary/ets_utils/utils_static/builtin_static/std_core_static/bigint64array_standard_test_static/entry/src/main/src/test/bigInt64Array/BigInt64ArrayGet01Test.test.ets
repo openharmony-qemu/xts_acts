@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -166,7 +166,7 @@ export default function BigInt64ArrayGet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_GET_THREE_1100
      * @tc.name testBigInt64ArrayGetThree1100
-     * @tc.desc Verify `new BigInt64Array(source)` produces a result where `arr[10000]` is undefined.
+     * @tc.desc Verify `new BigInt64Array(source)` produces a result where `arr[10000]` throws RangeError.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -174,13 +174,18 @@ export default function BigInt64ArrayGet01Test(): void {
     it('testBigInt64ArrayGetThree1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let source: bigint[] = [];
       let arr = new BigInt64Array(source);
-      expect(arr[10000]).assertUndefined();
+      try {
+        arr[10000];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_GET_THREE_1200
      * @tc.name testBigInt64ArrayGetThree1200
-     * @tc.desc Verify `new BigInt64Array(source)` produces a result where `arr[-0x1]` is undefined.
+     * @tc.desc Verify `new BigInt64Array(source)` produces a result where `arr[-0x1]` throws RangeError.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -188,13 +193,18 @@ export default function BigInt64ArrayGet01Test(): void {
     it('testBigInt64ArrayGetThree1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let source: bigint[] = [];
       let arr = new BigInt64Array(source);
-      expect(arr[-0x1]).assertUndefined();
+      try {
+        arr[-0x1];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_GET_THREE_1300
      * @tc.name testBigInt64ArrayGetThree1300
-     * @tc.desc Verify `new BigInt64Array(source)` produces a result where `arr[-10000]` is undefined.
+     * @tc.desc Verify `new BigInt64Array(source)` produces a result where `arr[-10000]` throws RangeError.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -202,13 +212,18 @@ export default function BigInt64ArrayGet01Test(): void {
     it('testBigInt64ArrayGetThree1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let source: bigint[] = [];
       let arr = new BigInt64Array(source);
-      expect(arr[-10000]).assertUndefined();
+      try {
+        arr[-10000];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_GET_THREE_1400
      * @tc.name testBigInt64ArrayGetThree1400
-     * @tc.desc Verify `new BigInt64Array(source)` produces a result where `arr[0 + 1]` is undefined.
+     * @tc.desc Verify `new BigInt64Array(source)` produces a result where `arr[0 + 1]` throws RangeError.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -216,13 +231,18 @@ export default function BigInt64ArrayGet01Test(): void {
     it('testBigInt64ArrayGetThree1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let source: bigint[] = [];
       let arr = new BigInt64Array(source);
-      expect(arr[0 + 1]).assertUndefined();
+      try {
+        arr[0 + 1];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_GET_THREE_1500
      * @tc.name testBigInt64ArrayGetThree1500
-     * @tc.desc Verify `new BigInt64Array(source)` produces a result where `arr[2 - 3]` is undefined.
+     * @tc.desc Verify `new BigInt64Array(source)` produces a result where `arr[2 - 3]` throws RangeError.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -230,13 +250,18 @@ export default function BigInt64ArrayGet01Test(): void {
     it('testBigInt64ArrayGetThree1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let source: bigint[] = [];
       let arr = new BigInt64Array(source);
-      expect(arr[2 - 3]).assertUndefined();
+      try {
+        arr[2 - 3];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_GET_THREE_1600
      * @tc.name testBigInt64ArrayGetThree1600
-     * @tc.desc Verify `new BigInt64Array([1n])` produces a result where `arr[idx]` is undefined.
+     * @tc.desc Verify `new BigInt64Array([1n])` produces a result where `arr[idx]` throws RangeError.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -244,13 +269,18 @@ export default function BigInt64ArrayGet01Test(): void {
     it('testBigInt64ArrayGetThree1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n]);
       let idx = 1 + (-2);
-      expect(arr[idx]).assertUndefined();
+      try {
+        arr[idx];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_GET_THREE_1700
      * @tc.name testBigInt64ArrayGetThree1700
-     * @tc.desc Verify `new BigInt64Array([1n])` produces a result where `arr[idx]` is undefined.
+     * @tc.desc Verify `new BigInt64Array([1n])` produces a result where `arr[idx]` throws RangeError.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -258,13 +288,18 @@ export default function BigInt64ArrayGet01Test(): void {
     it('testBigInt64ArrayGetThree1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n]);
       let idx = 1 + (1);
-      expect(arr[idx]).assertUndefined();
+      try {
+        arr[idx];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_GET_THREE_1800
      * @tc.name testBigInt64ArrayGetThree1800
-     * @tc.desc Verify `new BigInt64Array([1n])` produces a result where `arr[idx]` is undefined.
+     * @tc.desc Verify `new BigInt64Array([1n])` produces a result where `arr[idx]` throws RangeError.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -272,13 +307,18 @@ export default function BigInt64ArrayGet01Test(): void {
     it('testBigInt64ArrayGetThree1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n]);
       let idx = 1 + (10000);
-      expect(arr[idx]).assertUndefined();
+      try {
+        arr[idx];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_GET_THREE_1900
      * @tc.name testBigInt64ArrayGetThree1900
-     * @tc.desc Verify `new BigInt64Array([1n])` produces a result where `arr[idx]` is undefined.
+     * @tc.desc Verify `new BigInt64Array([1n])` produces a result where `arr[idx]` throws RangeError.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -286,13 +326,18 @@ export default function BigInt64ArrayGet01Test(): void {
     it('testBigInt64ArrayGetThree1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n]);
       let idx = 1 + (-10000);
-      expect(arr[idx]).assertUndefined();
+      try {
+        arr[idx];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_GET_THREE_2000
      * @tc.name testBigInt64ArrayGetThree2000
-     * @tc.desc Verify `new BigInt64Array([1n])` produces a result where `arr[idx]` is undefined.
+     * @tc.desc Verify `new BigInt64Array([1n])` produces a result where `arr[idx]` throws RangeError.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -300,13 +345,18 @@ export default function BigInt64ArrayGet01Test(): void {
     it('testBigInt64ArrayGetThree2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n]);
       let idx = 1 + (0 + 1);
-      expect(arr[idx]).assertUndefined();
+      try {
+        arr[idx];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_GET_THREE_2100
      * @tc.name testBigInt64ArrayGetThree2100
-     * @tc.desc Verify `new BigInt64Array([1n])` produces a result where `arr[idx]` is undefined.
+     * @tc.desc Verify `new BigInt64Array([1n])` produces a result where `arr[idx]` throws RangeError.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -314,13 +364,18 @@ export default function BigInt64ArrayGet01Test(): void {
     it('testBigInt64ArrayGetThree2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n]);
       let idx = 1 + (-2 * 2);
-      expect(arr[idx]).assertUndefined();
+      try {
+        arr[idx];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_GET_THREE_2200
      * @tc.name testBigInt64ArrayGetThree2200
-     * @tc.desc Verify `new BigInt64Array([1n, 2n, 3n, 4n, 5n])` produces a result where `arr[idx]` is undefined.
+     * @tc.desc Verify `new BigInt64Array([1n, 2n, 3n, 4n, 5n])` produces a result where `arr[idx]` throws RangeError.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -328,13 +383,18 @@ export default function BigInt64ArrayGet01Test(): void {
     it('testBigInt64ArrayGetThree2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
       let idx = 5 + (-10);
-      expect(arr[idx]).assertUndefined();
+      try {
+        arr[idx];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_GET_THREE_2300
      * @tc.name testBigInt64ArrayGetThree2300
-     * @tc.desc Verify `new BigInt64Array([1n, 2n, 3n, 4n, 5n])` produces a result where `arr[idx]` is undefined.
+     * @tc.desc Verify `new BigInt64Array([1n, 2n, 3n, 4n, 5n])` produces a result where `arr[idx]` throws RangeError.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -342,13 +402,18 @@ export default function BigInt64ArrayGet01Test(): void {
     it('testBigInt64ArrayGetThree2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
       let idx = 5 + (1);
-      expect(arr[idx]).assertUndefined();
+      try {
+        arr[idx];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_GET_THREE_2400
      * @tc.name testBigInt64ArrayGetThree2400
-     * @tc.desc Verify `new BigInt64Array([1n, 2n, 3n, 4n, 5n])` produces a result where `arr[idx]` is undefined.
+     * @tc.desc Verify `new BigInt64Array([1n, 2n, 3n, 4n, 5n])` produces a result where `arr[idx]` throws RangeError.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -356,13 +421,18 @@ export default function BigInt64ArrayGet01Test(): void {
     it('testBigInt64ArrayGetThree2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
       let idx = 5 + (10000);
-      expect(arr[idx]).assertUndefined();
+      try {
+        arr[idx];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_GET_THREE_2500
      * @tc.name testBigInt64ArrayGetThree2500
-     * @tc.desc Verify `new BigInt64Array([1n, 2n, 3n, 4n, 5n])` produces a result where `arr[idx]` is undefined.
+     * @tc.desc Verify `new BigInt64Array([1n, 2n, 3n, 4n, 5n])` produces a result where `arr[idx]` throws RangeError.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -370,13 +440,18 @@ export default function BigInt64ArrayGet01Test(): void {
     it('testBigInt64ArrayGetThree2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
       let idx = 5 + (-10000);
-      expect(arr[idx]).assertUndefined();
+      try {
+        arr[idx];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_GET_THREE_2600
      * @tc.name testBigInt64ArrayGetThree2600
-     * @tc.desc Verify `new BigInt64Array([1n, 2n, 3n, 4n, 5n])` produces a result where `arr[idx]` is undefined.
+     * @tc.desc Verify `new BigInt64Array([1n, 2n, 3n, 4n, 5n])` produces a result where `arr[idx]` throws RangeError.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -384,7 +459,12 @@ export default function BigInt64ArrayGet01Test(): void {
     it('testBigInt64ArrayGetThree2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
       let idx = 5 + (0 + 1);
-      expect(arr[idx]).assertUndefined();
+      try {
+        arr[idx];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
@@ -611,7 +691,7 @@ export default function BigInt64ArrayGet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_GET_TWO_4400
      * @tc.name testBigInt64ArrayGetTwo4400
-     * @tc.desc Verify `new BigInt64Array(source)` produces a result where `arr[-1]` is undefined.
+     * @tc.desc Verify `new BigInt64Array(source)` produces a result where `arr[-1]` throws RangeError.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -619,13 +699,18 @@ export default function BigInt64ArrayGet01Test(): void {
     it('testBigInt64ArrayGetTwo4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let source: bigint[] = [];
       let arr = new BigInt64Array(source);
-      expect(arr[-1]).assertUndefined();
+      try {
+        arr[-1];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_GET_TWO_4500
      * @tc.name testBigInt64ArrayGetTwo4500
-     * @tc.desc Verify `new BigInt64Array(source)` produces a result where `arr[1]` is undefined.
+     * @tc.desc Verify `new BigInt64Array(source)` produces a result where `arr[1]` throws RangeError.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -633,13 +718,18 @@ export default function BigInt64ArrayGet01Test(): void {
     it('testBigInt64ArrayGetTwo4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let source: bigint[] = [];
       let arr = new BigInt64Array(source);
-      expect(arr[1]).assertUndefined();
+      try {
+        arr[1];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_GET_TWO_4600
      * @tc.name testBigInt64ArrayGetTwo4600
-     * @tc.desc Verify `new BigInt64Array(source)` produces a result where `arr[0xff]` is undefined.
+     * @tc.desc Verify `new BigInt64Array(source)` produces a result where `arr[0xff]` throws RangeError.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -647,13 +737,18 @@ export default function BigInt64ArrayGet01Test(): void {
     it('testBigInt64ArrayGetTwo4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let source: bigint[] = [];
       let arr = new BigInt64Array(source);
-      expect(arr[0xff]).assertUndefined();
+      try {
+        arr[0xff];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_GET_TWO_4700
      * @tc.name testBigInt64ArrayGetTwo4700
-     * @tc.desc Verify `new BigInt64Array(source)` produces a result where `arr[1000]` is undefined.
+     * @tc.desc Verify `new BigInt64Array(source)` produces a result where `arr[1000]` throws RangeError.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -661,7 +756,12 @@ export default function BigInt64ArrayGet01Test(): void {
     it('testBigInt64ArrayGetTwo4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let source: bigint[] = [];
       let arr = new BigInt64Array(source);
-      expect(arr[1000]).assertUndefined();
+      try {
+        arr[1000];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
   });
 }
