@@ -18,14 +18,10 @@
  * 对应新接口: present(content: ComponentContent, options?)
  * 错误码: 401(参数错误), 100001(内部错误), 103301(内容错误), 103302(内容已存在), 103306(挂载失败)
  */
-import { ComponentContent, dialog as dialogApi, DialogPresenter } from '@kit.ArkUI';
+import { ComponentContent, dialog as dialogApi } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
-import {
-  TestResult, makeResult, TextParams, commonTextBuilder, DialogButtonBody,
-  DialogMessageBody, DialogPresentResult, DialogSheetBody, SimpleDialogOptions
-} from '../common/CommonHelper';
+import { TestResult, makeResult, makeUecSubWinResult, TextParams, commonTextBuilder } from '../common/CommonHelper';
 import { resourceManager } from '@kit.LocalizationKit';
-import { common } from '@kit.AbilityKit';
 
 class Params {
   public text: string = '';
@@ -94,22 +90,23 @@ struct PresentCustomDialogErrorCodeTest {
 
 
           Text(' 103306 - 弹窗节点挂载失败').fontSize(16).fontWeight(FontWeight.Medium).margin({ top: 8 })
-          Row({ space: 8 }) {
+          Column({ space: 8 }) {
             Button('拉起UEC后拉起弹窗')
-              .width('30%')
+              .id('PresentCustomDialogErrorCodeTest_btn_uec')
+              .width('100%')
               .fontSize(12)
               .onClick(() => { this.testUEC() })
-
             Button('拉起UEC后拉起子窗模式的弹窗')
-              .width('30%')
+              .id('PresentCustomDialogErrorCodeTest_btn_uec_subwin')
+              .width('100%')
               .fontSize(12)
               .onClick(() => { this.testUECSubWin() })
-
             Button('子窗已创建--拉起UEC后拉起子窗模式的弹窗')
-              .width('30%')
+              .id('PresentCustomDialogErrorCodeTest_btn_uec_subwin2')
+              .width('100%')
               .fontSize(12)
               .onClick(() => { this.testUECSubWin2() })
-          }
+          }.width('100%')
 
 
           Text('正常流程').fontSize(16).fontWeight(FontWeight.Medium).margin({ top: 8 })
@@ -124,6 +121,9 @@ struct PresentCustomDialogErrorCodeTest {
               .fontSize(1).height(1).opacity(0)
             Text(this.results[0].label)
               .id('PresentCustomDialogErrorCodeTest_result_label')
+              .fontSize(1).height(1).opacity(0)
+            Text(String(this.results[0].actualCode))
+              .id('PresentCustomDialogErrorCodeTest_result_actual')
               .fontSize(1).height(1).opacity(0)
           }
 
@@ -172,7 +172,7 @@ struct PresentCustomDialogErrorCodeTest {
             console.log('hxw present error: ' + JSON.stringify(error))
             this.addResult('UEC拦截', 103306, error.code);
           })
-      }, 2000)
+      }, 3000)
     } catch (err) { this.addResult('UEC拦截', 103306, (err as BusinessError).code); }
   }
 
@@ -190,14 +190,14 @@ struct PresentCustomDialogErrorCodeTest {
         this.getUIContext().getDialogPresenter().present(cn, {customStyle: true, showInSubWindow: true})
           .then((res: number) => {
             console.log('hxw present 111 ret: ' + JSON.stringify(res))
-            this.addResult('UEC拦截子窗', 103308, -1);
+            this.results.unshift(makeUecSubWinResult(-1));
           })
           .catch((error: BusinessError)=>{
             console.log('hxw present error: ' + JSON.stringify(error))
-            this.addResult('UEC拦截子窗', 103308, error.code);
+            this.results.unshift(makeUecSubWinResult(error.code));
           })
-      }, 2000)
-    } catch (err) { this.addResult('UEC拦截子窗', 103308, (err as BusinessError).code); }
+      }, 5000)
+    } catch (err) { this.results.unshift(makeUecSubWinResult((err as BusinessError).code)); }
   }
 
   async testUECSubWin2() {
@@ -237,10 +237,10 @@ struct PresentCustomDialogErrorCodeTest {
         cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('Normal',
           uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
       }
-      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
-      await (dialog.present as Function)(cn as Object);
+      let dialog = this.getUIContext().getDialogPresenter();
+      let id = await dialog.present(cn);
       this.addResult('正常presentCustomDialog', 0, 0);
-      await (dialog.dismiss as Function)(cn as Object);
+      await dialog.dismiss(cn);
     } catch (err) { this.addResult('正常presentCustomDialog', 0, (err as BusinessError).code); }
   }
 
@@ -286,16 +286,16 @@ struct PresentCustomDialogErrorCodeTest {
         cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('Dup',
           uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
       }
-      let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
-      await (dialog.present as Function)(cn as Object);
+      let dialog = this.getUIContext().getDialogPresenter();
+      await dialog.present(cn);
       this.addResult('第一次打开', 0, 0);
       try {
-        await (dialog.present as Function)(cn as Object);
+        await dialog.present(cn);
         this.addResult('重复打开', 103302, -1);
       } catch (innerErr) {
         this.addResult('重复打开', 103302, (innerErr as BusinessError).code);
       }
-      await (dialog.dismiss as Function)(cn as Object);
+      await dialog.dismiss(cn);
     } catch (err) { this.addResult('重复打开', 103302, (err as BusinessError).code); }
   }
 }

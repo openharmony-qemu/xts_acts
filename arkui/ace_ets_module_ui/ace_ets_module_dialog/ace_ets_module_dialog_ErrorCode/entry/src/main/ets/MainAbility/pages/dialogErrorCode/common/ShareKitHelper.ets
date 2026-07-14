@@ -20,6 +20,10 @@ import { common } from '@kit.AbilityKit';
 /** OpenHarmony CI 无 @kit.ShareKit：用 DocumentViewPicker 拉起系统面板模拟 UEC 前置态。 */
 export async function showSystemShare(uiContext: UIContext): Promise<void> {
   let context: common.UIAbilityContext = uiContext.getHostContext() as common.UIAbilityContext;
+  showDocumentPicker(context);
+}
+
+function showDocumentPicker(context: common.UIAbilityContext): void {
   let docPicker: picker.DocumentViewPicker = new picker.DocumentViewPicker(context);
   docPicker.select().then(() => {
     console.info('DocumentViewPicker select finished.');

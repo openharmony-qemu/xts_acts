@@ -20,7 +20,7 @@
  */
 import { ComponentContent, DialogPresenter } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { TestResult, makeResult } from '../common/CommonHelper';
+import { TestResult, makeResult, makeUecSubWinResult } from '../common/CommonHelper';
 import { resourceManager } from '@kit.LocalizationKit';
 
 interface DialogControllerOptions {
@@ -102,22 +102,23 @@ struct OpenCustomDialogWithControllerErrorCodeTest {
 
 
           Text(' 103306 - 弹窗节点挂载失败').fontSize(16).fontWeight(FontWeight.Medium).margin({ top: 8 })
-          Row({ space: 8 }) {
+          Column({ space: 8 }) {
             Button('拉起UEC后拉起弹窗')
-              .width('30%')
+              .id('OpenCustomDialogWithControllerErrorCodeTest_btn_uec')
+              .width('100%')
               .fontSize(12)
               .onClick(() => { this.testUEC() })
-
             Button('拉起UEC后拉起子窗模式的弹窗')
-              .width('30%')
+              .id('OpenCustomDialogWithControllerErrorCodeTest_btn_uec_subwin')
+              .width('100%')
               .fontSize(12)
               .onClick(() => { this.testUECSubWin() })
-
             Button('子窗已创建--拉起UEC后拉起子窗模式的弹窗')
-              .width('30%')
+              .id('OpenCustomDialogWithControllerErrorCodeTest_btn_uec_subwin2')
+              .width('100%')
               .fontSize(12)
               .onClick(() => { this.testUECSubWin2() })
-          }
+          }.width('100%')
 
 
           Text('正常流程').fontSize(16).fontWeight(FontWeight.Medium).margin({ top: 8 })
@@ -134,6 +135,9 @@ struct OpenCustomDialogWithControllerErrorCodeTest {
               .fontSize(1).height(1).opacity(0)
             Text(this.results[0].label)
               .id('OpenCustomDialogWithControllerErrorCodeTest_result_label')
+              .fontSize(1).height(1).opacity(0)
+            Text(String(this.results[0].actualCode))
+              .id('OpenCustomDialogWithControllerErrorCodeTest_result_actual')
               .fontSize(1).height(1).opacity(0)
           }
 
@@ -182,7 +186,7 @@ struct OpenCustomDialogWithControllerErrorCodeTest {
             console.log('hxw present error: ' + JSON.stringify(error))
             this.addResult('UEC拦截', 103306, error.code);
           })
-      }, 2000)
+      }, 3000)
     } catch (err) { this.addResult('UEC拦截', 103306, (err as BusinessError).code); }
   }
 
@@ -200,14 +204,14 @@ struct OpenCustomDialogWithControllerErrorCodeTest {
         this.getUIContext().getDialogPresenter().present(cn, {customStyle: true, showInSubWindow: true})
           .then((res: number) => {
             console.log('hxw present 111 ret: ' + JSON.stringify(res))
-            this.addResult('UEC拦截子窗', 103308, -1);
+            this.results.unshift(makeUecSubWinResult(-1));
           })
           .catch((error: BusinessError)=>{
             console.log('hxw present error: ' + JSON.stringify(error))
-            this.addResult('UEC拦截子窗', 103308, error.code);
+            this.results.unshift(makeUecSubWinResult(error.code));
           })
-      }, 2000)
-    } catch (err) { this.addResult('UEC拦截子窗', 103308, (err as BusinessError).code); }
+      }, 5000)
+    } catch (err) { this.results.unshift(makeUecSubWinResult((err as BusinessError).code)); }
   }
 
   async testUECSubWin2() {

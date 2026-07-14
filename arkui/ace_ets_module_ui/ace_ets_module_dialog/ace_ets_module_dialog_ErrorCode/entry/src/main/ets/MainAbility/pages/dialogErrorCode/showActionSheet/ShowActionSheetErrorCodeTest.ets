@@ -65,14 +65,15 @@ struct ShowActionSheetErrorCodeTest {
             .onClick(() => this.testNormal())
 
           
-          if (this.results.length > 0) {
-            Text(this.results[0].passed ? 'PASS' : 'FAILED')
-              .id('ShowActionSheetErrorCodeTest_result_status')
-              .fontSize(1).height(1).opacity(0)
-            Text(this.results[0].label)
-              .id('ShowActionSheetErrorCodeTest_result_label')
-              .fontSize(1).height(1).opacity(0)
-          }
+          Text(this.results.length > 0 ? (this.results[0].passed ? 'PASS' : 'FAILED') : 'IDLE')
+            .id('ShowActionSheetErrorCodeTest_result_status')
+            .fontSize(1).height(1).opacity(0)
+          Text(this.results.length > 0 ? this.results[0].label : '')
+            .id('ShowActionSheetErrorCodeTest_result_label')
+            .fontSize(1).height(1).opacity(0)
+          Text(this.results.length > 0 ? String(this.results[0].actualCode) : '')
+            .id('ShowActionSheetErrorCodeTest_result_actual')
+            .fontSize(1).height(1).opacity(0)
 
           Divider().margin({ top: 8 })
           Row() {
@@ -106,8 +107,8 @@ struct ShowActionSheetErrorCodeTest {
       let opts = new SimpleDialogOptions();
       opts.title = 'Title';
       opts.sheets = [sheet];
-      await (dialog.present as Function)(opts as Object);
       this.addResult('正常ActionSheet', 0, 0);
+      (dialog.present as Function)(opts as Object);
     } catch (err) { this.addResult('正常ActionSheet', 0, (err as BusinessError).code); }
   }
 

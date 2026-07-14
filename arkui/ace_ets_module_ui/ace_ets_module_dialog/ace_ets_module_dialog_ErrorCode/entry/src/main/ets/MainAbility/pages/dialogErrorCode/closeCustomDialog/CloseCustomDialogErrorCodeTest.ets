@@ -130,6 +130,9 @@ struct CloseCustomDialogErrorCodeTest {
             Text(this.results[0].label)
               .id('CloseCustomDialogErrorCodeTest_result_label')
               .fontSize(1).height(1).opacity(0)
+            Text(String(this.results[0].actualCode))
+              .id('CloseCustomDialogErrorCodeTest_result_actual')
+              .fontSize(1).height(1).opacity(0)
           }
 
           Divider().margin({ top: 8 })

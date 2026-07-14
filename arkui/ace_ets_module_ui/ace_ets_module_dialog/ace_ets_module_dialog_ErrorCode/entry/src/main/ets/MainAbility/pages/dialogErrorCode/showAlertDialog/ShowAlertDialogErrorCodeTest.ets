@@ -1,26 +1,10 @@
-/*
- * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 /**
  * showAlertDialog 错误码测试
  * 对应新接口: present(options: DialogOptions)
  * 错误码: 401, 100001, 103306
  */
 import { BusinessError } from '@kit.BasicServicesKit';
-import { TestResult, makeResult } from '../common/CommonHelper';
-import { dialog as dialogApi } from '@kit.ArkUI';
+import { TestResult, makeResult, makeUecSubWinResult } from '../common/CommonHelper';
 
 @Entry
 @Component
@@ -67,25 +51,26 @@ struct ShowAlertDialogErrorCodeTest {
           }
 
           Text(' 103306 - 弹窗节点挂载失败').fontSize(16).fontWeight(FontWeight.Medium).margin({ top: 8 })
-          Row({ space: 8 }) {
+          Column({ space: 8 }) {
             Button('拉起UEC后拉起弹窗')
-              .width('30%')
+              .id('ShowAlertDialogErrorCodeTest_btn_uec')
+              .width('100%')
               .fontSize(12)
               // SAD-E-007
               .onClick(() => { this.testUEC() })
-
             Button('拉起UEC后拉起子窗模式的弹窗')
-              .width('30%')
+              .id('ShowAlertDialogErrorCodeTest_btn_uec_subwin')
+              .width('100%')
               .fontSize(12)
               // SAD-E-008
               .onClick(() => { this.testUECSubWin() })
-
             Button('子窗已创建--拉起UEC后拉起子窗模式的弹窗')
-              .width('30%')
+              .id('ShowAlertDialogErrorCodeTest_btn_uec_subwin2')
+              .width('100%')
               .fontSize(12)
               // SAD-E-009
               .onClick(() => { this.testUECSubWin2() })
-          }
+          }.width('100%')
 
           Text('正常流程').fontSize(16).fontWeight(FontWeight.Medium).margin({ top: 8 })
           Button('正常showAlertDialog').id('ShowAlertDialogErrorCodeTest_btn_normal').fontSize(12).width('100%')
@@ -93,14 +78,15 @@ struct ShowAlertDialogErrorCodeTest {
             .onClick(() => this.testNormal())
 
           
-          if (this.results.length > 0) {
-            Text(this.results[0].passed ? 'PASS' : 'FAILED')
-              .id('ShowAlertDialogErrorCodeTest_result_status')
-              .fontSize(1).height(1).opacity(0)
-            Text(this.results[0].label)
-              .id('ShowAlertDialogErrorCodeTest_result_label')
-              .fontSize(1).height(1).opacity(0)
-          }
+          Text(this.results.length > 0 ? (this.results[0].passed ? 'PASS' : 'FAILED') : 'IDLE')
+            .id('ShowAlertDialogErrorCodeTest_result_status')
+            .fontSize(1).height(1).opacity(0)
+          Text(this.results.length > 0 ? this.results[0].label : '')
+            .id('ShowAlertDialogErrorCodeTest_result_label')
+            .fontSize(1).height(1).opacity(0)
+          Text(this.results.length > 0 ? String(this.results[0].actualCode) : '')
+            .id('ShowAlertDialogErrorCodeTest_result_actual')
+            .fontSize(1).height(1).opacity(0)
 
           Divider().margin({ top: 8 })
           Row() {
@@ -141,7 +127,7 @@ struct ShowAlertDialogErrorCodeTest {
             console.log('hxw present error: ' + JSON.stringify(error))
             this.addResult('UEC拦截', 103306, error.code);
           })
-      }, 2000)
+      }, 3000)
     } catch (err) { this.addResult('UEC拦截', 103306, (err as BusinessError).code); }
   }
 
@@ -153,14 +139,14 @@ struct ShowAlertDialogErrorCodeTest {
         this.getUIContext().getDialogPresenter().present({showInSubWindow: true})
           .then((res) => {
             console.log('hxw present 111 ret: ' + JSON.stringify(res))
-            this.addResult('UEC拦截子窗', 103308, -1);
+            this.results.unshift(makeUecSubWinResult(-1));
           })
           .catch((error: BusinessError)=>{
             console.log('hxw present error: ' + JSON.stringify(error))
-            this.addResult('UEC拦截子窗', 103308, error.code);
+            this.results.unshift(makeUecSubWinResult(error.code));
           })
-      }, 2000)
-    } catch (err) { this.addResult('UEC拦截子窗', 103308, (err as BusinessError).code); }
+      }, 5000)
+    } catch (err) { this.results.unshift(makeUecSubWinResult((err as BusinessError).code)); }
   }
 
   async testUECSubWin2() {
@@ -191,7 +177,7 @@ struct ShowAlertDialogErrorCodeTest {
       await dialog.present({
         title: 'Alert',
         message: { content: 'AlertMsg' },
-        buttons: [{ value: 'OK', action: () => {} }]
+        buttons: [{ value: 'OK', action: () => {} }],
       });
       this.addResult('正常showAlertDialog', 0, 0);
     } catch (err) { this.addResult('正常showAlertDialog', 0, (err as BusinessError).code); }

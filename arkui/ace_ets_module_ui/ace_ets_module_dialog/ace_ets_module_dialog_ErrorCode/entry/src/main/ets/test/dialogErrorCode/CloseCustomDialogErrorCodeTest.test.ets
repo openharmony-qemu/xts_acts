@@ -14,8 +14,7 @@
  */
 
 import { describe, beforeEach, it, expect, Level } from '@ohos/hypium';
-import { Driver, ON } from '@ohos.UiTest';
-import { router } from '@kit.ArkUI';
+import { Driver } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import ErrorCodeAssert from './ErrorCodeAssert';
 
@@ -23,9 +22,10 @@ export default function CloseCustomDialogErrorCodeTest() {
   describe('CloseCustomDialogErrorCodeTest', () => {
   beforeEach(async (done: () => void): Promise<void> => {
     console.info('[ARKUI_DYN] CloseCustomDialogErrorCodeTest beforeEach');
-    router.clear();
-    await router.pushUrl({ url: 'MainAbility/pages/dialogErrorCode/closeCustomDialog/CloseCustomDialogErrorCodeTest' });
-    await CommonFunc.sleep(2500);
+    let driver: Driver = Driver.create();
+    const pageUrl =
+      'MainAbility/pages/dialogErrorCode/closeCustomDialog/CloseCustomDialogErrorCodeTest';
+    await ErrorCodeAssert.openTestPage(driver, pageUrl, 'CloseCustomDialogErrorCodeTest_btn_no_args');
     done();
   });
 
@@ -41,11 +41,8 @@ export default function CloseCustomDialogErrorCodeTest() {
       async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_NO_ARGS_0100] START');
       let driver: Driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('CloseCustomDialogErrorCodeTest_btn_no_args'));
-
-      await btn.click();
-      await CommonFunc.sleep(2000);
-      let status: string = ErrorCodeAssert.readStatus('CloseCustomDialogErrorCodeTest');
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'CloseCustomDialogErrorCodeTest_btn_no_args', 'CloseCustomDialogErrorCodeTest');
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_NO_ARGS_0100] status=' + status);
       expect(status).assertEqual('PASS');
       done();
@@ -63,11 +60,8 @@ export default function CloseCustomDialogErrorCodeTest() {
       async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_NULL_0100] START');
       let driver: Driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('CloseCustomDialogErrorCodeTest_btn_target_null'));
-
-      await btn.click();
-      await CommonFunc.sleep(2000);
-      let status: string = ErrorCodeAssert.readStatus('CloseCustomDialogErrorCodeTest');
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'CloseCustomDialogErrorCodeTest_btn_target_null', 'CloseCustomDialogErrorCodeTest');
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_NULL_0100] status=' + status);
       expect(status).assertEqual('PASS');
       done();
@@ -85,11 +79,8 @@ export default function CloseCustomDialogErrorCodeTest() {
       async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_NOT_OPEN_0100] START');
       let driver: Driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('CloseCustomDialogErrorCodeTest_btn_not_opened'));
-
-      await btn.click();
-      await CommonFunc.sleep(2000);
-      let status: string = ErrorCodeAssert.readStatus('CloseCustomDialogErrorCodeTest');
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'CloseCustomDialogErrorCodeTest_btn_not_opened', 'CloseCustomDialogErrorCodeTest');
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_NOT_OPEN_0100] status=' + status);
       expect(status).assertEqual('PASS');
       done();
@@ -107,11 +98,8 @@ export default function CloseCustomDialogErrorCodeTest() {
       async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_BAD_ID_0100] START');
       let driver: Driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('CloseCustomDialogErrorCodeTest_btn_invalid_id'));
-
-      await btn.click();
-      await CommonFunc.sleep(2000);
-      let status: string = ErrorCodeAssert.readStatus('CloseCustomDialogErrorCodeTest');
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'CloseCustomDialogErrorCodeTest_btn_invalid_id', 'CloseCustomDialogErrorCodeTest');
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_BAD_ID_0100] status=' + status);
       expect(status).assertEqual('PASS');
       done();
@@ -129,11 +117,8 @@ export default function CloseCustomDialogErrorCodeTest() {
       async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_BY_CONTENT_0100] START');
       let driver: Driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('CloseCustomDialogErrorCodeTest_btn_dismiss_content'));
-
-      await btn.click();
-      await CommonFunc.sleep(2000);
-      let status: string = ErrorCodeAssert.readStatus('CloseCustomDialogErrorCodeTest');
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'CloseCustomDialogErrorCodeTest_btn_dismiss_content', 'CloseCustomDialogErrorCodeTest');
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_BY_CONTENT_0100] status=' + status);
       expect(status).assertEqual('PASS');
       done();

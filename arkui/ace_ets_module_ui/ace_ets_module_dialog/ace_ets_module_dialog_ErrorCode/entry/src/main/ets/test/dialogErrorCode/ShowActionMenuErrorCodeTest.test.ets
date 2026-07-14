@@ -14,8 +14,7 @@
  */
 
 import { describe, beforeEach, it, expect, Level } from '@ohos/hypium';
-import { Driver, ON } from '@ohos.UiTest';
-import { router } from '@kit.ArkUI';
+import { Driver } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import ErrorCodeAssert from './ErrorCodeAssert';
 
@@ -23,9 +22,10 @@ export default function ShowActionMenuErrorCodeTest() {
   describe('ShowActionMenuErrorCodeTest', () => {
   beforeEach(async (done: () => void): Promise<void> => {
     console.info('[ARKUI_DYN] ShowActionMenuErrorCodeTest beforeEach');
-    router.clear();
-    await router.pushUrl({ url: 'MainAbility/pages/dialogErrorCode/showActionMenu/ShowActionMenuErrorCodeTest' });
-    await CommonFunc.sleep(2500);
+    let driver: Driver = Driver.create();
+    const pageUrl =
+      'MainAbility/pages/dialogErrorCode/showActionMenu/ShowActionMenuErrorCodeTest';
+    await ErrorCodeAssert.openTestPage(driver, pageUrl, 'ShowActionMenuErrorCodeTest_btn_no_args');
     done();
   });
 
@@ -41,11 +41,8 @@ export default function ShowActionMenuErrorCodeTest() {
       async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_ACTIONMENU_NO_ARGS_0100] START');
       let driver: Driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('ShowActionMenuErrorCodeTest_btn_no_args'));
-
-      await btn.click();
-      await CommonFunc.sleep(1500);
-      let status: string = ErrorCodeAssert.readStatus('ShowActionMenuErrorCodeTest');
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'ShowActionMenuErrorCodeTest_btn_no_args', 'ShowActionMenuErrorCodeTest');
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_ACTIONMENU_NO_ARGS_0100] status=' + status);
       expect(status).assertEqual('PASS');
       done();
@@ -63,11 +60,8 @@ export default function ShowActionMenuErrorCodeTest() {
       async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_ACTIONMENU_NULL_0100] START');
       let driver: Driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('ShowActionMenuErrorCodeTest_btn_null'));
-
-      await btn.click();
-      await CommonFunc.sleep(1500);
-      let status: string = ErrorCodeAssert.readStatus('ShowActionMenuErrorCodeTest');
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'ShowActionMenuErrorCodeTest_btn_null', 'ShowActionMenuErrorCodeTest');
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_ACTIONMENU_NULL_0100] status=' + status);
       expect(status).assertEqual('PASS');
       done();
@@ -85,11 +79,8 @@ export default function ShowActionMenuErrorCodeTest() {
       async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_ACTIONMENU_NUMBER_0100] START');
       let driver: Driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('ShowActionMenuErrorCodeTest_btn_number'));
-
-      await btn.click();
-      await CommonFunc.sleep(1500);
-      let status: string = ErrorCodeAssert.readStatus('ShowActionMenuErrorCodeTest');
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'ShowActionMenuErrorCodeTest_btn_number', 'ShowActionMenuErrorCodeTest');
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_ACTIONMENU_NUMBER_0100] status=' + status);
       expect(status).assertEqual('PASS');
       done();
@@ -107,11 +98,8 @@ export default function ShowActionMenuErrorCodeTest() {
       async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_ACTIONMENU_EMPTY_0100] START');
       let driver: Driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('ShowActionMenuErrorCodeTest_btn_empty_buttons'));
-
-      await btn.click();
-      await CommonFunc.sleep(1500);
-      let status: string = ErrorCodeAssert.readStatus('ShowActionMenuErrorCodeTest');
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'ShowActionMenuErrorCodeTest_btn_empty_buttons', 'ShowActionMenuErrorCodeTest');
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_ACTIONMENU_EMPTY_0100] status=' + status);
       expect(status).assertEqual('PASS');
       done();
@@ -129,12 +117,24 @@ export default function ShowActionMenuErrorCodeTest() {
       async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_ACTIONMENU_NORMAL_0100] START');
       let driver: Driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('ShowActionMenuErrorCodeTest_btn_normal'));
-
-      await btn.click();
-      await CommonFunc.sleep(1500);
-      let status: string = ErrorCodeAssert.readStatus('ShowActionMenuErrorCodeTest');
+      try {
+        await ErrorCodeAssert.clickById(driver, 'ShowActionMenuErrorCodeTest_btn_normal');
+      } catch (_e) {
+        await ErrorCodeAssert.clickByText(driver, '正常showActionMenu');
+      }
+      await CommonFunc.sleep(800);
+      // 菜单遮罩可能挡住 Inspector，先关窗再读结果态
+      await ErrorCodeAssert.dismissAfterNormal(driver);
+      let status: string = await ErrorCodeAssert.waitStatus(
+        'ShowActionMenuErrorCodeTest', ErrorCodeAssert.STATUS_WAIT_MS);
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_ACTIONMENU_NORMAL_0100] status=' + status);
+      if (status === 'IDLE' || status.length === 0) {
+        await ErrorCodeAssert.clickByText(driver, '正常showActionMenu');
+        await CommonFunc.sleep(800);
+        await ErrorCodeAssert.dismissAfterNormal(driver);
+        status = await ErrorCodeAssert.waitStatus(
+          'ShowActionMenuErrorCodeTest', ErrorCodeAssert.STATUS_WAIT_MS);
+      }
       expect(status).assertEqual('PASS');
       done();
     });

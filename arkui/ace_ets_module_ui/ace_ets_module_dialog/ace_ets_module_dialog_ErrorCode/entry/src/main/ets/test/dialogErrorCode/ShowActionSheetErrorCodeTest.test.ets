@@ -14,8 +14,7 @@
  */
 
 import { describe, beforeEach, it, expect, Level } from '@ohos/hypium';
-import { Driver, ON } from '@ohos.UiTest';
-import { router } from '@kit.ArkUI';
+import { Driver } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import ErrorCodeAssert from './ErrorCodeAssert';
 
@@ -23,9 +22,10 @@ export default function ShowActionSheetErrorCodeTest() {
   describe('ShowActionSheetErrorCodeTest', () => {
   beforeEach(async (done: () => void): Promise<void> => {
     console.info('[ARKUI_DYN] ShowActionSheetErrorCodeTest beforeEach');
-    router.clear();
-    await router.pushUrl({ url: 'MainAbility/pages/dialogErrorCode/showActionSheet/ShowActionSheetErrorCodeTest' });
-    await CommonFunc.sleep(2500);
+    let driver: Driver = Driver.create();
+    const pageUrl =
+      'MainAbility/pages/dialogErrorCode/showActionSheet/ShowActionSheetErrorCodeTest';
+    await ErrorCodeAssert.openTestPage(driver, pageUrl, 'ShowActionSheetErrorCodeTest_btn_no_args');
     done();
   });
 
@@ -41,11 +41,8 @@ export default function ShowActionSheetErrorCodeTest() {
       async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_ACTIONSHEET_NO_ARGS_0100] START');
       let driver: Driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('ShowActionSheetErrorCodeTest_btn_no_args'));
-
-      await btn.click();
-      await CommonFunc.sleep(1500);
-      let status: string = ErrorCodeAssert.readStatus('ShowActionSheetErrorCodeTest');
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'ShowActionSheetErrorCodeTest_btn_no_args', 'ShowActionSheetErrorCodeTest');
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_ACTIONSHEET_NO_ARGS_0100] status=' + status);
       expect(status).assertEqual('PASS');
       done();
@@ -63,11 +60,8 @@ export default function ShowActionSheetErrorCodeTest() {
       async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_ACTIONSHEET_NULL_0100] START');
       let driver: Driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('ShowActionSheetErrorCodeTest_btn_null'));
-
-      await btn.click();
-      await CommonFunc.sleep(1500);
-      let status: string = ErrorCodeAssert.readStatus('ShowActionSheetErrorCodeTest');
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'ShowActionSheetErrorCodeTest_btn_null', 'ShowActionSheetErrorCodeTest');
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_ACTIONSHEET_NULL_0100] status=' + status);
       expect(status).assertEqual('PASS');
       done();
@@ -85,11 +79,8 @@ export default function ShowActionSheetErrorCodeTest() {
       async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_ACTIONSHEET_NUMBER_0100] START');
       let driver: Driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('ShowActionSheetErrorCodeTest_btn_number'));
-
-      await btn.click();
-      await CommonFunc.sleep(1500);
-      let status: string = ErrorCodeAssert.readStatus('ShowActionSheetErrorCodeTest');
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'ShowActionSheetErrorCodeTest_btn_number', 'ShowActionSheetErrorCodeTest');
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_ACTIONSHEET_NUMBER_0100] status=' + status);
       expect(status).assertEqual('PASS');
       done();
@@ -107,11 +98,8 @@ export default function ShowActionSheetErrorCodeTest() {
       async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_ACTIONSHEET_EMPTY_0100] START');
       let driver: Driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('ShowActionSheetErrorCodeTest_btn_empty_sheets'));
-
-      await btn.click();
-      await CommonFunc.sleep(1500);
-      let status: string = ErrorCodeAssert.readStatus('ShowActionSheetErrorCodeTest');
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'ShowActionSheetErrorCodeTest_btn_empty_sheets', 'ShowActionSheetErrorCodeTest');
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_ACTIONSHEET_EMPTY_0100] status=' + status);
       expect(status).assertEqual('PASS');
       done();
@@ -129,12 +117,19 @@ export default function ShowActionSheetErrorCodeTest() {
       async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_ACTIONSHEET_NORMAL_0100] START');
       let driver: Driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('ShowActionSheetErrorCodeTest_btn_normal'));
-
-      await btn.click();
-      await CommonFunc.sleep(1500);
-      let status: string = ErrorCodeAssert.readStatus('ShowActionSheetErrorCodeTest');
+      await ErrorCodeAssert.clickById(driver, 'ShowActionSheetErrorCodeTest_btn_normal');
+      await CommonFunc.sleep(800);
+      await ErrorCodeAssert.dismissAfterNormal(driver);
+      let status: string = await ErrorCodeAssert.waitStatus(
+        'ShowActionSheetErrorCodeTest', ErrorCodeAssert.STATUS_WAIT_MS);
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_ACTIONSHEET_NORMAL_0100] status=' + status);
+      if (status === 'IDLE' || status.length === 0) {
+        await ErrorCodeAssert.clickById(driver, 'ShowActionSheetErrorCodeTest_btn_normal');
+        await CommonFunc.sleep(800);
+        await ErrorCodeAssert.dismissAfterNormal(driver);
+        status = await ErrorCodeAssert.waitStatus(
+          'ShowActionSheetErrorCodeTest', ErrorCodeAssert.STATUS_WAIT_MS);
+      }
       expect(status).assertEqual('PASS');
       done();
     });

@@ -58,26 +58,28 @@ struct ShowActionMenuErrorCodeTest {
               // SAM-E-005
               .onClick(() => this.testEmptyButtons())
           }
+          Button('正常showActionMenu').id('ShowActionMenuErrorCodeTest_btn_normal').fontSize(12).width('100%')
+            // SAM-E-001：放靠前，避免 Scroll 底部点击落空
+            .onClick(() => {
+              console.info('[ARKUI_DYN] ActionMenu btn_normal clicked');
+              this.testNormal();
+            })
 
           // @manual-verify: 100001 需特殊环境(UIContext销毁)，无法在正常页面中构造
           // @manual-verify: 103306 需特殊环境(系统弹窗遮挡/Pipeline销毁)，无法在正常页面中构造
           Text('100001 - 内部错误 / 103306 - 弹窗节点挂载失败').fontSize(16).fontWeight(FontWeight.Medium).margin({ top: 8 })
           Text('需特殊环境，标记为需手动验证').fontSize(12).fontColor('#999999')
 
-          Text('正常流程').fontSize(16).fontWeight(FontWeight.Medium).margin({ top: 8 })
-          Button('正常showActionMenu').id('ShowActionMenuErrorCodeTest_btn_normal').fontSize(12).width('100%')
-            // SAM-E-001
-            .onClick(() => this.testNormal())
-
           
-          if (this.results.length > 0) {
-            Text(this.results[0].passed ? 'PASS' : 'FAILED')
-              .id('ShowActionMenuErrorCodeTest_result_status')
-              .fontSize(1).height(1).opacity(0)
-            Text(this.results[0].label)
-              .id('ShowActionMenuErrorCodeTest_result_label')
-              .fontSize(1).height(1).opacity(0)
-          }
+          Text(this.results.length > 0 ? (this.results[0].passed ? 'PASS' : 'FAILED') : 'IDLE')
+            .id('ShowActionMenuErrorCodeTest_result_status')
+            .fontSize(1).height(1).opacity(0)
+          Text(this.results.length > 0 ? this.results[0].label : '')
+            .id('ShowActionMenuErrorCodeTest_result_label')
+            .fontSize(1).height(1).opacity(0)
+          Text(this.results.length > 0 ? String(this.results[0].actualCode) : '')
+            .id('ShowActionMenuErrorCodeTest_result_actual')
+            .fontSize(1).height(1).opacity(0)
 
           Divider().margin({ top: 8 })
           Row() {
@@ -111,8 +113,9 @@ struct ShowActionMenuErrorCodeTest {
       let opts = new SimpleDialogOptions();
       opts.title = 'Menu';
       opts.buttons = [okBtn];
-      await (dialog.present as Function)(opts as Object);
+      // 先落结果再 present：避免 present 阻塞导致自动化一直读到 IDLE
       this.addResult('正常showActionMenu', 0, 0);
+      (dialog.present as Function)(opts as Object);
     } catch (err) { this.addResult('正常showActionMenu', 0, (err as BusinessError).code); }
   }
 

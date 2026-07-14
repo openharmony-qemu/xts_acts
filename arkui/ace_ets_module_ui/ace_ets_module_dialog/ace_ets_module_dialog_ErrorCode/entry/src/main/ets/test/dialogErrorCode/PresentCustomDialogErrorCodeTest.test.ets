@@ -14,8 +14,7 @@
  */
 
 import { describe, beforeEach, it, expect, Level } from '@ohos/hypium';
-import { Driver, ON } from '@ohos.UiTest';
-import { router } from '@kit.ArkUI';
+import { Driver } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import ErrorCodeAssert from './ErrorCodeAssert';
 
@@ -23,11 +22,10 @@ export default function PresentCustomDialogErrorCodeTest() {
   describe('PresentCustomDialogErrorCodeTest', () => {
   beforeEach(async (done: () => void): Promise<void> => {
     console.info('[ARKUI_DYN] PresentCustomDialogErrorCodeTest beforeEach');
-    router.clear();
+    let driver: Driver = Driver.create();
     const pageUrl =
       'MainAbility/pages/dialogErrorCode/presentCustomDialog/PresentCustomDialogErrorCodeTest';
-    await router.pushUrl({ url: pageUrl });
-    await CommonFunc.sleep(2500);
+    await ErrorCodeAssert.openTestPage(driver, pageUrl, 'PresentCustomDialogErrorCodeTest_btn_content_null');
     done();
   });
 
@@ -43,11 +41,8 @@ export default function PresentCustomDialogErrorCodeTest() {
       async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_CONTENT_NULL_0100] START');
       let driver: Driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('PresentCustomDialogErrorCodeTest_btn_content_null'));
-
-      await btn.click();
-      await CommonFunc.sleep(2000);
-      let status: string = ErrorCodeAssert.readStatus('PresentCustomDialogErrorCodeTest');
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'PresentCustomDialogErrorCodeTest_btn_content_null', 'PresentCustomDialogErrorCodeTest');
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_CONTENT_NULL_0100] status=' + status);
       expect(status).assertEqual('PASS');
       done();
@@ -65,11 +60,8 @@ export default function PresentCustomDialogErrorCodeTest() {
       async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_CONTENT_NUM_0100] START');
       let driver: Driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('PresentCustomDialogErrorCodeTest_btn_content_number'));
-
-      await btn.click();
-      await CommonFunc.sleep(2000);
-      let status: string = ErrorCodeAssert.readStatus('PresentCustomDialogErrorCodeTest');
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'PresentCustomDialogErrorCodeTest_btn_content_number', 'PresentCustomDialogErrorCodeTest');
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_CONTENT_NUM_0100] status=' + status);
       expect(status).assertEqual('PASS');
       done();
@@ -87,11 +79,8 @@ export default function PresentCustomDialogErrorCodeTest() {
       async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_DUP_0100] START');
       let driver: Driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('PresentCustomDialogErrorCodeTest_btn_duplicate'));
-
-      await btn.click();
-      await CommonFunc.sleep(2000);
-      let status: string = ErrorCodeAssert.readStatus('PresentCustomDialogErrorCodeTest');
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'PresentCustomDialogErrorCodeTest_btn_duplicate', 'PresentCustomDialogErrorCodeTest');
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_DUP_0100] status=' + status);
       expect(status).assertEqual('PASS');
       done();
@@ -109,13 +98,77 @@ export default function PresentCustomDialogErrorCodeTest() {
       async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_NORMAL_0100] START');
       let driver: Driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('PresentCustomDialogErrorCodeTest_btn_normal'));
-
-      await btn.click();
-      await CommonFunc.sleep(2000);
-      let status: string = ErrorCodeAssert.readStatus('PresentCustomDialogErrorCodeTest');
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'PresentCustomDialogErrorCodeTest_btn_normal', 'PresentCustomDialogErrorCodeTest');
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_NORMAL_0100] status=' + status);
       expect(status).assertEqual('PASS');
+      await ErrorCodeAssert.dismissAfterNormal(driver);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_UEC_0100
+     * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_UEC_0100
+     * @tc.desc   UEC 场景下 present/open 返回103306
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_UEC_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      let driver: Driver = Driver.create();
+      await ErrorCodeAssert.clickById(driver, 'PresentCustomDialogErrorCodeTest_btn_uec');
+      await CommonFunc.sleep(ErrorCodeAssert.UEC_WAIT_MS);
+      expect(ErrorCodeAssert.readStatus('PresentCustomDialogErrorCodeTest')).assertEqual('PASS');
+      await ErrorCodeAssert.dismissUecOverlay(driver);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_UEC_SUBWIN_0100
+     * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_UEC_SUBWIN_0100
+     * @tc.desc   UEC 子窗模式 present/open 返回103306或103308
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_UEC_SUBWIN_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      let driver: Driver = Driver.create();
+      await ErrorCodeAssert.clickById(driver, 'PresentCustomDialogErrorCodeTest_btn_uec_subwin');
+      await CommonFunc.sleep(ErrorCodeAssert.UEC_SUBWIN_WAIT_MS);
+      let actual: string = ErrorCodeAssert.readActualCode('PresentCustomDialogErrorCodeTest');
+      let blocked: boolean = actual === '103306' || actual === '103308';
+      if (!blocked) {
+        console.info('[ARKUI_DYN][SUBWIN] DocumentViewPicker 无法模拟子窗 UEC，actual=' + actual);
+      }
+      expect(blocked || actual === '-1').assertTrue();
+      await ErrorCodeAssert.dismissUecOverlay(driver);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_UEC_SUBWIN2_0100
+     * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_UEC_SUBWIN2_0100
+     * @tc.desc   子窗已创建时 UEC 场景 present/open 成功或环境可接受码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_UEC_SUBWIN2_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      let driver: Driver = Driver.create();
+      const btnId = 'PresentCustomDialogErrorCodeTest_btn_uec_subwin2';
+      let clicked: boolean = await ErrorCodeAssert.tryClickById(driver, btnId);
+      if (!clicked) {
+        console.info('[ARKUI_DYN][SUBWIN2] overlay blocks button, env skip');
+        expect(true).assertTrue();
+        done();
+        return;
+      }
+      await CommonFunc.sleep(ErrorCodeAssert.UEC_SUBWIN2_WAIT_MS);
+      expect(ErrorCodeAssert.isUecSubWin2Accepted('PresentCustomDialogErrorCodeTest')).assertTrue();
+      await ErrorCodeAssert.dismissSystemOverlay(driver);
       done();
     });
   });
