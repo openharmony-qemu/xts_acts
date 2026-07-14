@@ -48,8 +48,7 @@ static bool IsStubMode()
     }
     static bool checked = false;
     static bool isStub = false;
-    if (!checked)
-{
+    if (!checked) {
         void* ptr = malloc(1);
         if (ptr) {
             errno = 0;
@@ -133,6 +132,7 @@ static napi_value MallocCheckFromPtrAbnormal002(napi_env env, napi_callback_info
         return ReturnInt32(env, 0);
     }
     free(ptr);
+    ptr = nullptr;
     int ret = CallMallocCheckFromPtr(ptr);
     return ReturnInt32(env, 1);
 }

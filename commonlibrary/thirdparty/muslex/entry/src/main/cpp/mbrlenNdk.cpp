@@ -248,7 +248,8 @@ static napi_value MbrlenBoundary003(napi_env env, napi_callback_info info)
         (void)setlocale(LC_ALL, "C");
     }
     mbstate_t state = {};
-    std::string longStr(1000, 'a');
+    int strsize = 1000;
+    std::string longStr(strsize, 'a');
     const char* s = longStr.c_str();
     size_t ret = CallMbrlen(s, MB_CUR_MAX, &state);
     return ReturnInt32(env, (ret == 1) ? 1 : 0);
