@@ -23,9 +23,9 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int kStableLoop10000 = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
 static double CallLogFinite(double x)
 {
@@ -138,7 +138,7 @@ static napi_value LogFiniteStable001(napi_env env, napi_callback_info info)
     }
     bool pass = true;
     double expected = std::log(std::exp(1.0));
-    for (int i = 0; i < kStableLoop10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
         double result = CallLogFinite(std::exp(1.0));
         if (fabs(result - expected) > 1e-12) {
             pass = false;
@@ -157,9 +157,9 @@ static napi_value LogFiniteThread001(napi_env env, napi_callback_info info)
     std::vector<std::thread> threads;
     double testVals[] = {1.0, std::exp(1.0), 100.0, 0.5, 10.0};
 
-    for (int t = 0; t < kThreadCount; ++t) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError, testVals]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 int idx = i % 5;
                 double expected = std::log(testVals[idx]);
                 double result = CallLogFinite(testVals[idx]);

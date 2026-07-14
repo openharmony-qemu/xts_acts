@@ -22,9 +22,9 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int kStableLoop = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_STABLE_LOOP = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
 static time_t CallMktimeNoenv(struct tm* tm)
 {
@@ -56,8 +56,7 @@ static napi_value MktimeNoenvNormal001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    struct tm t;
-    memset(&t, 0, sizeof(t));
+    struct tm t = {};
     t.tm_year = 2026 - 1900;
     t.tm_mon = 6;
     t.tm_mday = 1;
@@ -71,8 +70,7 @@ static napi_value MktimeNoenvNormal002(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    struct tm t;
-    memset(&t, 0, sizeof(t));
+    struct tm t = {};
     t.tm_year = 70;
     t.tm_mon = 0;
     t.tm_mday = 1;
@@ -85,8 +83,7 @@ static napi_value MktimeNoenvNormal003(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    struct tm t;
-    memset(&t, 0, sizeof(t));
+    struct tm t = {};
     t.tm_year = 2050 - 1900;
     t.tm_mon = 11;
     t.tm_mday = 31;
@@ -107,8 +104,7 @@ static napi_value MktimeNoenvAbnormal001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    struct tm t;
-    memset(&t, 0, sizeof(t));
+    struct tm t = {};
     t.tm_year = 2026 - 1900;
     t.tm_mon = 0;
     t.tm_mday = 32;
@@ -121,8 +117,7 @@ static napi_value MktimeNoenvAbnormal002(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    struct tm t;
-    memset(&t, 0, sizeof(t));
+    struct tm t = {};
     t.tm_year = -1;
     t.tm_mon = -1;
     t.tm_mday = -1;
@@ -135,8 +130,7 @@ static napi_value MktimeNoenvBoundary001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    struct tm t;
-    memset(&t, 0, sizeof(t));
+    struct tm t = {};
     t.tm_year = 2038 - 1900;
     t.tm_mon = 0;
     t.tm_mday = 19;
@@ -152,8 +146,7 @@ static napi_value MktimeNoenvBoundary002(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    struct tm t;
-    memset(&t, 0, sizeof(t));
+    struct tm t = {};
     t.tm_year = 0;
     t.tm_mon = 0;
     t.tm_mday = 1;
@@ -167,9 +160,8 @@ static napi_value MktimeNoenvStable001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     bool pass = true;
-    for (int i = 0; i < kStableLoop; ++i) {
-        struct tm t;
-        memset(&t, 0, sizeof(t));
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
+        struct tm t = {};
         t.tm_year = 2026 - 1900;
         t.tm_mon = 0;
         t.tm_mday = 1;
@@ -189,11 +181,10 @@ static napi_value MktimeNoenvThread001(napi_env env, napi_callback_info info)
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < kThreadCount; ++t) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
-                struct tm tmVal;
-                memset(&tmVal, 0, sizeof(tmVal));
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+                struct tm tmVal = {};
                 tmVal.tm_year = 2026 - 1900;
                 tmVal.tm_mon = 0;
                 tmVal.tm_mday = 1;

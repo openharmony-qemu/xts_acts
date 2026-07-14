@@ -21,9 +21,9 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
-static constexpr int kMaxKeys = PTHREAD_KEYS_MAX;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
+static constexpr int K_MAX_KEYS = PTHREAD_KEYS_MAX;
 
 static int CallPthreadKeyCreate(pthread_key_t* key, void (*destructor)(void*))
 {
@@ -135,14 +135,14 @@ static napi_value PthreadKeyCreateAbnormal002(napi_env env, napi_callback_info i
     std::vector<pthread_key_t> keys;
     bool pass = true;
     // Try creating more keys than maximum
-    for (int i = 0; i < kMaxKeys + 10; ++i) {
+    for (int i = 0; i < K_MAX_KEYS + 10; ++i) {
         pthread_key_t key;
         int ret = CallPthreadKeyCreate(&key, nullptr);
         if (ret == 0) {
             keys.push_back(key);
         } else {
             // Exceeding limit should fail
-            if (i >= kMaxKeys) {
+            if (i >= K_MAX_KEYS) {
                 pass = true;
             }
             break;
@@ -222,9 +222,9 @@ static napi_value PthreadKeyCreateThread001(napi_env env, napi_callback_info inf
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
 
-    for (int t = 0; t < kThreadCount; ++t) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError, key]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 int* val = new int(i);
                 if (pthread_setspecific(key, val) != 0) {
                     hasError = true;

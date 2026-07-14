@@ -23,9 +23,9 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int kStableLoop10000 = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
 static double CallPowFinite(double x, double y)
 {
@@ -136,7 +136,7 @@ static napi_value PowFiniteStable001(napi_env env, napi_callback_info info)
     }
     bool pass = true;
     double expected = std::pow(2.0, 3.0);
-    for (int i = 0; i < kStableLoop10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
         double result = CallPowFinite(2.0, 3.0);
         if (fabs(result - expected) > 1e-12) {
             pass = false;
@@ -156,9 +156,9 @@ static napi_value PowFiniteThread001(napi_env env, napi_callback_info info)
     double testX[] = {2.0, 10.0, 4.0, 1.0, 3.0};
     double testY[] = {3.0, 2.0, 0.5, 100.0, 2.0};
 
-    for (int t = 0; t < kThreadCount; ++t) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError, testX, testY]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 int idx = i % 5;
                 double expected = std::pow(testX[idx], testY[idx]);
                 double result = CallPowFinite(testX[idx], testY[idx]);

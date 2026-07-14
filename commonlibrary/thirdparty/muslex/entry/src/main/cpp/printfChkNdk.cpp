@@ -24,9 +24,9 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int kStableLoop10000 = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
 static int CallPrintfChk(int flag, const char* fmt, ...)
 {
@@ -202,7 +202,7 @@ static napi_value PrintfChkStable001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     bool pass = true;
-    for (int i = 0; i < kStableLoop10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
         int ret = CallPrintfChk(i % 2, "Test %d", i);
         if (ret < 0) {
             pass = false;
@@ -224,9 +224,9 @@ static napi_value PrintfChkThread001(napi_env env, napi_callback_info info)
     std::vector<std::thread> threads;
     const char* formats[] = {"%s %d", "Number: %d", "Hello %s", "%d + %d = %d"};
 
-    for (int t = 0; t < kThreadCount; ++t) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError, formats]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 int idx = i % 4;
                 int ret = CallPrintfChk(i % 2, formats[idx], "test", 123);
                 if (ret < 0) {

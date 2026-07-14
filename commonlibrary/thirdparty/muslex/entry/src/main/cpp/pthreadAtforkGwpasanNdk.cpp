@@ -21,9 +21,9 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int kStableLoop = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_STABLE_LOOP = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
 static int gPrepareCalled = 0;
 static int gParentCalled = 0;
@@ -145,7 +145,7 @@ static napi_value PthreadAtforkGwpasanStable001(napi_env env, napi_callback_info
         return ReturnInt32(env, 0);
     }
     bool pass = true;
-    for (int i = 0; i < kStableLoop; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
         int ret = CallPthreadAtforkGwpasan(PrepareHandler, nullptr, nullptr);
         if (ret < 0) {
             pass = false;
@@ -162,9 +162,9 @@ static napi_value PthreadAtforkGwpasanThread001(napi_env env, napi_callback_info
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < kThreadCount; ++t) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 int ret = CallPthreadAtforkGwpasan(nullptr, nullptr, nullptr);
                 if (ret < 0) {
                     hasError = true;
@@ -183,16 +183,26 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"pthreadAtforkGwpasanNormal001", nullptr, PthreadAtforkGwpasanNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAtforkGwpasanNormal002", nullptr, PthreadAtforkGwpasanNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAtforkGwpasanNormal003", nullptr, PthreadAtforkGwpasanNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAtforkGwpasanNormal004", nullptr, PthreadAtforkGwpasanNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAtforkGwpasanAbnormal001", nullptr, PthreadAtforkGwpasanAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAtforkGwpasanAbnormal002", nullptr, PthreadAtforkGwpasanAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAtforkGwpasanBoundary001", nullptr, PthreadAtforkGwpasanBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAtforkGwpasanBoundary002", nullptr, PthreadAtforkGwpasanBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAtforkGwpasanStable001", nullptr, PthreadAtforkGwpasanStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAtforkGwpasanThread001", nullptr, PthreadAtforkGwpasanThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadAtforkGwpasanNormal001", nullptr, PthreadAtforkGwpasanNormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAtforkGwpasanNormal002", nullptr, PthreadAtforkGwpasanNormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAtforkGwpasanNormal003", nullptr, PthreadAtforkGwpasanNormal003, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAtforkGwpasanNormal004", nullptr, PthreadAtforkGwpasanNormal004, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAtforkGwpasanAbnormal001", nullptr, PthreadAtforkGwpasanAbnormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAtforkGwpasanAbnormal002", nullptr, PthreadAtforkGwpasanAbnormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAtforkGwpasanBoundary001", nullptr, PthreadAtforkGwpasanBoundary001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAtforkGwpasanBoundary002", nullptr, PthreadAtforkGwpasanBoundary002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAtforkGwpasanStable001", nullptr, PthreadAtforkGwpasanStable001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAtforkGwpasanThread001", nullptr, PthreadAtforkGwpasanThread001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

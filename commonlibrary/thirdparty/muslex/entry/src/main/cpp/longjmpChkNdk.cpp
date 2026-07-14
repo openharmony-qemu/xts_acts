@@ -22,9 +22,9 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int kStableLoop10000 = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
 static bool IsStubMode()
 {
@@ -149,7 +149,7 @@ static napi_value LongjmpChkStable001(napi_env env, napi_callback_info info)
     }
     auto func = LibcFunctionLoader::GetInstance().GetLongjmpChk();
     volatile int passCount = 0;
-    for (volatile int i = 0; i < kStableLoop10000; ++i) {
+    for (volatile int i = 0; i < K_STABLE_LOOP10000; ++i) {
         jmp_buf jb;
         int ret = setjmp(jb);
         if (ret == 0) {
@@ -159,7 +159,7 @@ static napi_value LongjmpChkStable001(napi_env env, napi_callback_info info)
             passCount++;
         }
     }
-    return ReturnInt32(env, (passCount == kStableLoop10000) ? 1 : 0);
+    return ReturnInt32(env, (passCount == K_STABLE_LOOP10000) ? 1 : 0);
 }
 
 static napi_value LongjmpChkThread001(napi_env env, napi_callback_info info)
@@ -169,11 +169,11 @@ static napi_value LongjmpChkThread001(napi_env env, napi_callback_info info)
     }
     std::atomic<int> successCount{0};
     std::vector<std::thread> threads;
-    for (int t = 0; t < kThreadCount; ++t) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&successCount]() {
             auto func = LibcFunctionLoader::GetInstance().GetLongjmpChk();
             volatile int localCount = 0;
-            for (volatile int i = 0; i < kIterPerThread; ++i) {
+            for (volatile int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 jmp_buf jb;
                 int ret = setjmp(jb);
                 if (ret == 0) {
@@ -189,7 +189,7 @@ static napi_value LongjmpChkThread001(napi_env env, napi_callback_info info)
     for (auto& th : threads) {
         th.join();
     }
-    return ReturnInt32(env, (successCount == kThreadCount * kIterPerThread) ? 1 : 0);
+    return ReturnInt32(env, (successCount == K_THREAD_COUNT * K_ITER_PER_THREAD) ? 1 : 0);
 }
 
 EXTERN_C_START

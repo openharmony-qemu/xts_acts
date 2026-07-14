@@ -22,9 +22,9 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int kStableLoop = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_STABLE_LOOP = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
 static int CallMallocCheckFromPtr(void* ptr)
 {
@@ -170,7 +170,7 @@ static napi_value MallocCheckFromPtrStable001(napi_env env, napi_callback_info i
         return ReturnInt32(env, 0);
     }
     bool pass = true;
-    for (int i = 0; i < kStableLoop; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
         void* ptr = malloc(100);
         if (!ptr) {
             pass = false;
@@ -193,9 +193,9 @@ static napi_value MallocCheckFromPtrThread001(napi_env env, napi_callback_info i
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < kThreadCount; ++t) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 void* ptr = malloc(100);
                 if (!ptr) {
                     hasError = true;
@@ -216,16 +216,26 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"mallocCheckFromPtrNormal001", nullptr, MallocCheckFromPtrNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"mallocCheckFromPtrNormal002", nullptr, MallocCheckFromPtrNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"mallocCheckFromPtrNormal003", nullptr, MallocCheckFromPtrNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"mallocCheckFromPtrNormal004", nullptr, MallocCheckFromPtrNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"mallocCheckFromPtrAbnormal001", nullptr, MallocCheckFromPtrAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"mallocCheckFromPtrAbnormal002", nullptr, MallocCheckFromPtrAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"mallocCheckFromPtrBoundary001", nullptr, MallocCheckFromPtrBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"mallocCheckFromPtrBoundary002", nullptr, MallocCheckFromPtrBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"mallocCheckFromPtrStable001", nullptr, MallocCheckFromPtrStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"mallocCheckFromPtrThread001", nullptr, MallocCheckFromPtrThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"mallocCheckFromPtrNormal001", nullptr, MallocCheckFromPtrNormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"mallocCheckFromPtrNormal002", nullptr, MallocCheckFromPtrNormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"mallocCheckFromPtrNormal003", nullptr, MallocCheckFromPtrNormal003, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"mallocCheckFromPtrNormal004", nullptr, MallocCheckFromPtrNormal004, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"mallocCheckFromPtrAbnormal001", nullptr, MallocCheckFromPtrAbnormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"mallocCheckFromPtrAbnormal002", nullptr, MallocCheckFromPtrAbnormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"mallocCheckFromPtrBoundary001", nullptr, MallocCheckFromPtrBoundary001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"mallocCheckFromPtrBoundary002", nullptr, MallocCheckFromPtrBoundary002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"mallocCheckFromPtrStable001", nullptr, MallocCheckFromPtrStable001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"mallocCheckFromPtrThread001", nullptr, MallocCheckFromPtrThread001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

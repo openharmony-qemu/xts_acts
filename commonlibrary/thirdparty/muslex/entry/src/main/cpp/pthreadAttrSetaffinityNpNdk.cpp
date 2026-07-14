@@ -24,9 +24,9 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int kStableLoop = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_STABLE_LOOP = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
 static int CallPthreadAttrSetaffinityNp(pthread_attr_t* attr, size_t cpusetsize, const cpu_set_t* cpuset)
 {
@@ -226,7 +226,7 @@ static napi_value PthreadAttrSetaffinityNpStable001(napi_env env, napi_callback_
         return ReturnInt32(env, 0);
     }
     bool pass = true;
-    for (int i = 0; i < kStableLoop; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
         pthread_attr_t attr;
         pthread_attr_init(&attr);
         cpu_set_t* set = CPU_ALLOC(1);
@@ -255,9 +255,9 @@ static napi_value PthreadAttrSetaffinityNpThread001(napi_env env, napi_callback_
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < kThreadCount; ++t) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 pthread_attr_t attr;
                 pthread_attr_init(&attr);
                 cpu_set_t* set = CPU_ALLOC(1);
@@ -284,16 +284,26 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"pthreadAttrSetaffinityNpNormal001", nullptr, PthreadAttrSetaffinityNpNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAttrSetaffinityNpNormal002", nullptr, PthreadAttrSetaffinityNpNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAttrSetaffinityNpNormal003", nullptr, PthreadAttrSetaffinityNpNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAttrSetaffinityNpNormal004", nullptr, PthreadAttrSetaffinityNpNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAttrSetaffinityNpAbnormal001", nullptr, PthreadAttrSetaffinityNpAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAttrSetaffinityNpAbnormal002", nullptr, PthreadAttrSetaffinityNpAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAttrSetaffinityNpBoundary001", nullptr, PthreadAttrSetaffinityNpBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAttrSetaffinityNpBoundary002", nullptr, PthreadAttrSetaffinityNpBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAttrSetaffinityNpStable001", nullptr, PthreadAttrSetaffinityNpStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAttrSetaffinityNpThread001", nullptr, PthreadAttrSetaffinityNpThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadAttrSetaffinityNpNormal001", nullptr, PthreadAttrSetaffinityNpNormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAttrSetaffinityNpNormal002", nullptr, PthreadAttrSetaffinityNpNormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAttrSetaffinityNpNormal003", nullptr, PthreadAttrSetaffinityNpNormal003, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAttrSetaffinityNpNormal004", nullptr, PthreadAttrSetaffinityNpNormal004, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAttrSetaffinityNpAbnormal001", nullptr, PthreadAttrSetaffinityNpAbnormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAttrSetaffinityNpAbnormal002", nullptr, PthreadAttrSetaffinityNpAbnormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAttrSetaffinityNpBoundary001", nullptr, PthreadAttrSetaffinityNpBoundary001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAttrSetaffinityNpBoundary002", nullptr, PthreadAttrSetaffinityNpBoundary002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAttrSetaffinityNpStable001", nullptr, PthreadAttrSetaffinityNpStable001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAttrSetaffinityNpThread001", nullptr, PthreadAttrSetaffinityNpThread001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

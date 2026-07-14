@@ -23,9 +23,9 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int kStableLoop10000 = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
 static size_t CallMbrlen(const char* s, size_t n, mbstate_t* ps)
 {
@@ -66,7 +66,7 @@ static napi_value MbrlenNormal001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    setlocale(LC_ALL, "C");
+    (void)setlocale(LC_ALL, "C");
     mbstate_t state = {};
     const char* s = "A";
     size_t ret = CallMbrlen(s, MB_CUR_MAX, &state);
@@ -81,7 +81,7 @@ static napi_value MbrlenNormal002(napi_env env, napi_callback_info info)
     }
     // Try setting UTF-8 locale, if failed use C locale
     if (setlocale(LC_ALL, "en_US.UTF-8") == nullptr) {
-        setlocale(LC_ALL, "C");
+        (void)setlocale(LC_ALL, "C");
     }
     mbstate_t state = {};
     const char* s = "\xE4\xB8\xAD";
@@ -95,7 +95,7 @@ static napi_value MbrlenNormal003(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    setlocale(LC_ALL, "C");
+    (void)setlocale(LC_ALL, "C");
     mbstate_t state = {};
     const char* s = "";
     size_t ret = CallMbrlen(s, 1, &state);
@@ -108,7 +108,7 @@ static napi_value MbrlenNormal004(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    setlocale(LC_ALL, "C");
+    (void)setlocale(LC_ALL, "C");
     mbstate_t state = {};
     size_t ret = CallMbrlen(nullptr, 0, &state);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
@@ -120,7 +120,7 @@ static napi_value MbrlenNormal005(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    setlocale(LC_ALL, "C");
+    (void)setlocale(LC_ALL, "C");
     const char* s = "A";
     size_t ret = CallMbrlen(s, MB_CUR_MAX, nullptr);
     return ReturnInt32(env, (ret == 1) ? 1 : 0);
@@ -133,7 +133,7 @@ static napi_value MbrlenNormal006(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     if (setlocale(LC_ALL, "en_US.UTF-8") == nullptr) {
-        setlocale(LC_ALL, "C");
+        (void)setlocale(LC_ALL, "C");
     }
     mbstate_t state = {};
     const char* s = "\xE4\xB8\xAD\xE6\x96\x87"; // "Chinese characters"
@@ -149,7 +149,7 @@ static napi_value MbrlenAbnormal001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    setlocale(LC_ALL, "C");
+    (void)setlocale(LC_ALL, "C");
     mbstate_t state = {};
     const char* s = "A";
     errno = 0;
@@ -164,7 +164,7 @@ static napi_value MbrlenAbnormal002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     if (setlocale(LC_ALL, "en_US.UTF-8") == nullptr) {
-        setlocale(LC_ALL, "C");
+        (void)setlocale(LC_ALL, "C");
     }
     mbstate_t state = {};
     const char* s = "\x80"; // Invalid start byte
@@ -181,7 +181,7 @@ static napi_value MbrlenAbnormal003(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     if (setlocale(LC_ALL, "en_US.UTF-8") == nullptr) {
-        setlocale(LC_ALL, "C");
+        (void)setlocale(LC_ALL, "C");
     }
     mbstate_t state = {};
     const char* s = "\xE4"; // Incomplete UTF-8
@@ -196,7 +196,7 @@ static napi_value MbrlenAbnormal004(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    setlocale(LC_ALL, "C");
+    (void)setlocale(LC_ALL, "C");
     mbstate_t state = {};
     const char* s = "Hello";
     errno = 0;
@@ -212,7 +212,7 @@ static napi_value MbrlenBoundary001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    setlocale(LC_ALL, "C");
+    (void)setlocale(LC_ALL, "C");
     mbstate_t state = {};
     const char* s = "A";
     size_t ret = CallMbrlen(s, MB_CUR_MAX, &state);
@@ -226,7 +226,7 @@ static napi_value MbrlenBoundary002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     if (setlocale(LC_ALL, "en_US.UTF-8") == nullptr) {
-        setlocale(LC_ALL, "C");
+        (void)setlocale(LC_ALL, "C");
     }
     mbstate_t state = {};
     const char* s = "\xE4\xB8\xAD";
@@ -241,7 +241,7 @@ static napi_value MbrlenBoundary003(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     if (setlocale(LC_ALL, "en_US.UTF-8") == nullptr) {
-        setlocale(LC_ALL, "C");
+        (void)setlocale(LC_ALL, "C");
     }
     mbstate_t state = {};
     std::string longStr(1000, 'a');
@@ -258,9 +258,9 @@ static napi_value MbrlenStable001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    setlocale(LC_ALL, "C");
+    (void)setlocale(LC_ALL, "C");
     bool pass = true;
-    for (int i = 0; i < kStableLoop10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
         mbstate_t state = {};
         size_t ret = CallMbrlen("A", 1, &state);
         if (ret != 1) {
@@ -280,7 +280,7 @@ static napi_value MbrlenStable002(napi_env env, napi_callback_info info)
     int loopcount = 20;
     bool pass = true;
     for (int i = 0; i < loopcount; ++i) {
-        setlocale(LC_ALL, "C");
+        (void)setlocale(LC_ALL, "C");
         mbstate_t state = {};
         size_t ret1 = CallMbrlen("A", 1, &state);
         if (ret1 != 1) {
@@ -288,7 +288,7 @@ static napi_value MbrlenStable002(napi_env env, napi_callback_info info)
             break;
         }
         if (setlocale(LC_ALL, "en_US.UTF-8") == nullptr) {
-            setlocale(LC_ALL, "C");
+            (void)setlocale(LC_ALL, "C");
         }
         mbstate_t state2 = {};
         size_t ret2 = CallMbrlen("\xE4\xB8\xAD", MB_CUR_MAX, &state2);
@@ -323,11 +323,11 @@ static napi_value MbrlenThread001(napi_env env, napi_callback_info info)
         utf8Locale = setlocale(LC_ALL, "C.UTF-8");
     }
 
-    for (int t = 0; t < kThreadCount; ++t) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError, asciiStr, utf8Str, utf8Locale]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 // Use C locale to test ASCII
-                setlocale(LC_ALL, "C");
+                (void)setlocale(LC_ALL, "C");
                 mbstate_t state = {};
                 size_t ret = CallMbrlen(asciiStr, 1, &state);
                 if (ret != 1) {

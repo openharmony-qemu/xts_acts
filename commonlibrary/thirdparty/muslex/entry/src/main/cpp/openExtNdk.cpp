@@ -26,12 +26,12 @@
 #include <algorithm>
 #include <atomic>
 
-static constexpr int kLongPathLen = 4097;
-static constexpr int kStableLoop10000 = 20;
-static constexpr int kThreadWorkLoop = 10;
-static constexpr int kStubCheckLoop = 10;
-static constexpr int kThreadStartId = 1;
-static constexpr int kThreadCount = 3;
+static constexpr int K_LONG_PATH_LEN = 4097;
+static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_THREAD_WORK_LOOP = 10;
+static constexpr int K_STUB_CHECK_LOOP = 10;
+static constexpr int K_THREAD_START_ID = 1;
+static constexpr int K_THREAD_COUNT = 3;
 
 static int CallOpen2(const char *pathname, int flags)
 {
@@ -189,7 +189,7 @@ static napi_value Open2Boundary001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    std::string longPath(kLongPathLen, 'a');
+    std::string longPath(K_LONG_PATH_LEN, 'a');
     errno = 0;
     int fd = CallOpen2(longPath.c_str(), O_RDONLY);
     if (fd == -1 && errno == ENAMETOOLONG) {
@@ -300,7 +300,7 @@ static napi_value Open2Stable001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    for (int i = 0; i < kStableLoop10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
         int fd = CallOpen2("/dev/null", O_RDONLY);
         if (fd >= 0) {
             close(fd);
@@ -318,7 +318,7 @@ static napi_value Open2Stable002(napi_env env, napi_callback_info info)
     }
     std::atomic<bool> allSuccess(true);
     auto worker = [&allSuccess](int) {
-        for (int i = 0; i < kThreadWorkLoop; ++i) {
+        for (int i = 0; i < K_THREAD_WORK_LOOP; ++i) {
             int fd = CallOpen2("/dev/null", O_RDONLY);
             if (fd < 0) {
                 allSuccess.store(false);
@@ -328,7 +328,7 @@ static napi_value Open2Stable002(napi_env env, napi_callback_info info)
         }
     };
     std::vector<std::thread> threads;
-    for (int id = kThreadStartId; id < kThreadStartId + kThreadCount; ++id) {
+    for (int id = K_THREAD_START_ID; id < K_THREAD_START_ID + K_THREAD_COUNT; ++id) {
         threads.emplace_back(worker, id);
     }
     for (auto& t : threads) {
@@ -362,7 +362,7 @@ static napi_value Open2Stable003(napi_env env, napi_callback_info info)
 static napi_value Open2Stable004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        for (int i = 0; i < kStubCheckLoop; ++i) {
+        for (int i = 0; i < K_STUB_CHECK_LOOP; ++i) {
             errno = 0;
             int fd = CallOpen2("/dev/null", O_RDONLY);
             if (fd != -1 || errno != ENOSYS) {
