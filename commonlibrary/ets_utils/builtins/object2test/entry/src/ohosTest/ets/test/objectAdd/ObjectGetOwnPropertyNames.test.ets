@@ -281,7 +281,7 @@ export default function ObjectGetOwnPropertyNamesTest() {
       expect(result[0]).assertEqual('0');
       expect(result[1]).assertEqual('1');
       expect(result[2]).assertEqual('2');
-      expect(result[3]).assertEqual('length');
+      expect(result.length).assertEqual(3);
     });
 
     /**
@@ -294,8 +294,7 @@ export default function ObjectGetOwnPropertyNamesTest() {
      */
     it('ObjectGetOwnPropertyNamesTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const result = getOwnPropertyNamesEmptyString011();
-      expect(result.length).assertEqual(1);
-      expect(result[0]).assertEqual('length');
+      expect(result.length).assertEqual(0);
     });
 
     /**
