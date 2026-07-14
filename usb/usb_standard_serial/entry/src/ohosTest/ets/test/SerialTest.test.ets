@@ -1297,13 +1297,7 @@ export default function SerialTest() {
           done();
           return;
         }
-        console.info(TAG, 'it requestSerialRight start');
-        // let futureRes: Promise<boolean> = serial.requestSerialRight(openPortId);
-        // await driveFn();
         try {
-          // let hasRight: boolean = await futureRes;
-          // await sleep(500);
-          // console.info(TAG, 'getPermission isAgree: ', hasRight);
           serial.cancelSerialRight(openPortId);
           await sleep(500);
           expect(serial.hasSerialRight(openPortId)).assertFalse();
