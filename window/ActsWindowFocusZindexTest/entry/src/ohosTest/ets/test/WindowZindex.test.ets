@@ -2085,7 +2085,7 @@ export default function windowZindexTest() {
           }else {
             expect(err.code).assertEqual(401);
           }
-          expect(err.message !== '')..assertTrue()
+          expect(err.message !== '').assertTrue()
           done();
         });
       } catch(e) {
@@ -2118,7 +2118,7 @@ export default function windowZindexTest() {
           await subWindow.destroyWindow();
           if(err.code == 801){
             expect(err.code).assertEqual(801);
-            expect(err.message !== '')..assertTrue()
+            expect(err.message !== '').assertTrue()
             done()
           }else {
             expect(false).assertTrue();
@@ -2155,7 +2155,7 @@ export default function windowZindexTest() {
           await subWindow.destroyWindow();
           if(!canIUseRes){
             expect(err.code).assertEqual(801);
-            expect(err.message !== '')..assertTrue();
+            expect(err.message !== '').assertTrue();
             done()
           }else {
             expect(false).assertTrue();
