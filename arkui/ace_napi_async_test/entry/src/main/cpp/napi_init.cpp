@@ -3964,6 +3964,1993 @@ static napi_value TestNapiTaskContent_ExecuteLongTime3min(napi_env env, napi_cal
     return promise;
 }
 
+static napi_value TestNapiTaskContent_ExecuteLongTime10min(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "taskContentExecuteLongTime10min";
+    TaskContentMode mode = TaskContentMode::EXECUTE_LONG_TIME;
+    int requestedSeconds = 600;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *taskData = new TaskContentData();
+    taskData->deferred = deferred;
+    taskData->mode = mode;
+    taskData->requestedSeconds = requestedSeconds;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, TaskContentExecuteCallback,
+                                    TaskContentCompleteCallback, taskData, &taskData->work);
+    if (status != napi_ok || taskData->work == nullptr) {
+        delete taskData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = QueueAsyncWorkForTest(env, taskData->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, taskData->work);
+        delete taskData;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+
+    if (mode == TaskContentMode::CANCEL_AND_REQUEUE) {
+        napi_status cancelStatus = napi_cancel_async_work(env, taskData->work);
+        taskData->cancelStatus.store(static_cast<int>(cancelStatus), std::memory_order_release);
+        napi_status requeueStatus = RealQueueAsyncWorkForStateTest(env, taskData->work);
+        taskData->requeueStatus.store(static_cast<int>(requeueStatus), std::memory_order_release);
+    }
+
+    return promise;
+}
+
+static napi_value TestNapiTaskContent_CompleteLongTime10s(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "taskContentCompleteLongTime10s";
+    TaskContentMode mode = TaskContentMode::COMPLETE_LONG_TIME;
+    int requestedSeconds = TASK_CONTENT_LONG_SECONDS;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *taskData = new TaskContentData();
+    taskData->deferred = deferred;
+    taskData->mode = mode;
+    taskData->requestedSeconds = requestedSeconds;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, TaskContentExecuteCallback,
+                                    TaskContentCompleteCallback, taskData, &taskData->work);
+    if (status != napi_ok || taskData->work == nullptr) {
+        delete taskData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = QueueAsyncWorkForTest(env, taskData->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, taskData->work);
+        delete taskData;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+
+    if (mode == TaskContentMode::CANCEL_AND_REQUEUE) {
+        napi_status cancelStatus = napi_cancel_async_work(env, taskData->work);
+        taskData->cancelStatus.store(static_cast<int>(cancelStatus), std::memory_order_release);
+        napi_status requeueStatus = RealQueueAsyncWorkForStateTest(env, taskData->work);
+        taskData->requeueStatus.store(static_cast<int>(requeueStatus), std::memory_order_release);
+    }
+
+    return promise;
+}
+
+static napi_value TestNapiTaskContent_CompleteLongTime3min(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "taskContentCompleteLongTime3min";
+    TaskContentMode mode = TaskContentMode::COMPLETE_LONG_TIME;
+    int requestedSeconds = 180;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *taskData = new TaskContentData();
+    taskData->deferred = deferred;
+    taskData->mode = mode;
+    taskData->requestedSeconds = requestedSeconds;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, TaskContentExecuteCallback,
+                                    TaskContentCompleteCallback, taskData, &taskData->work);
+    if (status != napi_ok || taskData->work == nullptr) {
+        delete taskData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = QueueAsyncWorkForTest(env, taskData->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, taskData->work);
+        delete taskData;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+
+    if (mode == TaskContentMode::CANCEL_AND_REQUEUE) {
+        napi_status cancelStatus = napi_cancel_async_work(env, taskData->work);
+        taskData->cancelStatus.store(static_cast<int>(cancelStatus), std::memory_order_release);
+        napi_status requeueStatus = RealQueueAsyncWorkForStateTest(env, taskData->work);
+        taskData->requeueStatus.store(static_cast<int>(requeueStatus), std::memory_order_release);
+    }
+
+    return promise;
+}
+
+static napi_value TestNapiTaskContent_CompleteLongTime10min(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "taskContentCompleteLongTime10min";
+    TaskContentMode mode = TaskContentMode::COMPLETE_LONG_TIME;
+    int requestedSeconds = 600;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *taskData = new TaskContentData();
+    taskData->deferred = deferred;
+    taskData->mode = mode;
+    taskData->requestedSeconds = requestedSeconds;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, TaskContentExecuteCallback,
+                                    TaskContentCompleteCallback, taskData, &taskData->work);
+    if (status != napi_ok || taskData->work == nullptr) {
+        delete taskData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = QueueAsyncWorkForTest(env, taskData->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, taskData->work);
+        delete taskData;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+
+    if (mode == TaskContentMode::CANCEL_AND_REQUEUE) {
+        napi_status cancelStatus = napi_cancel_async_work(env, taskData->work);
+        taskData->cancelStatus.store(static_cast<int>(cancelStatus), std::memory_order_release);
+        napi_status requeueStatus = RealQueueAsyncWorkForStateTest(env, taskData->work);
+        taskData->requeueStatus.store(static_cast<int>(requeueStatus), std::memory_order_release);
+    }
+
+    return promise;
+}
+
+static napi_value TestNapiTaskContent_ExecuteInfiniteLoop(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "taskContentExecuteInfiniteLoop";
+    TaskContentMode mode = TaskContentMode::EXECUTE_INFINITE_LOOP;
+    int requestedSeconds = 0;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *taskData = new TaskContentData();
+    taskData->deferred = deferred;
+    taskData->mode = mode;
+    taskData->requestedSeconds = requestedSeconds;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, TaskContentExecuteCallback,
+                                    TaskContentCompleteCallback, taskData, &taskData->work);
+    if (status != napi_ok || taskData->work == nullptr) {
+        delete taskData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = QueueAsyncWorkForTest(env, taskData->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, taskData->work);
+        delete taskData;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+
+    if (mode == TaskContentMode::CANCEL_AND_REQUEUE) {
+        napi_status cancelStatus = napi_cancel_async_work(env, taskData->work);
+        taskData->cancelStatus.store(static_cast<int>(cancelStatus), std::memory_order_release);
+        napi_status requeueStatus = RealQueueAsyncWorkForStateTest(env, taskData->work);
+        taskData->requeueStatus.store(static_cast<int>(requeueStatus), std::memory_order_release);
+    }
+
+    return promise;
+}
+
+static napi_value TestNapiTaskContent_SameDataPointer(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env,
+        napi_create_string_utf8(env, "taskContentSameDataPointer", NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    auto *context = new SameDataPointerContext();
+    context->deferred = deferred;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, SameDataPointerExecuteCallback,
+                                    SameDataPointerCompleteCallback, context, &context->work1);
+    if (status != napi_ok || context->work1 == nullptr) {
+        delete context;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work work1 failed")) {
+            return nullptr;
+        }
+    }
+    status = napi_create_async_work(env, nullptr, asyncResourceName, SameDataPointerExecuteCallback,
+                                    SameDataPointerCompleteCallback, context, &context->work2);
+    if (status != napi_ok || context->work2 == nullptr) {
+        RealDeleteAsyncWorkForStateTest(env, context->work1);
+        delete context;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work work2 failed")) {
+            return nullptr;
+        }
+    }
+    if (!CheckNapiAssertion(env, context->work1 != context->work2, "two async work handles should be different")) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, QueueAsyncWorkForTest(env, context->work1))) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, QueueAsyncWorkForTest(env, context->work2))) {
+        return nullptr;
+    }
+    return promise;
+}
+
+static napi_value TestNapiTaskContent_ExecuteEmptyOperation(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "taskContentExecuteEmptyOperation";
+    TaskContentMode mode = TaskContentMode::EXECUTE_EMPTY_OPERATION;
+    int requestedSeconds = 0;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *taskData = new TaskContentData();
+    taskData->deferred = deferred;
+    taskData->mode = mode;
+    taskData->requestedSeconds = requestedSeconds;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, TaskContentExecuteCallback,
+                                    TaskContentCompleteCallback, taskData, &taskData->work);
+    if (status != napi_ok || taskData->work == nullptr) {
+        delete taskData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = QueueAsyncWorkForTest(env, taskData->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, taskData->work);
+        delete taskData;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+
+    if (mode == TaskContentMode::CANCEL_AND_REQUEUE) {
+        napi_status cancelStatus = napi_cancel_async_work(env, taskData->work);
+        taskData->cancelStatus.store(static_cast<int>(cancelStatus), std::memory_order_release);
+        napi_status requeueStatus = RealQueueAsyncWorkForStateTest(env, taskData->work);
+        taskData->requeueStatus.store(static_cast<int>(requeueStatus), std::memory_order_release);
+    }
+
+    return promise;
+}
+
+static napi_value TestNapiTaskContent_CompleteDeleteWork(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "taskContentCompleteDeleteWork";
+    TaskContentMode mode = TaskContentMode::COMPLETE_DELETE_WORK;
+    int requestedSeconds = 0;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *taskData = new TaskContentData();
+    taskData->deferred = deferred;
+    taskData->mode = mode;
+    taskData->requestedSeconds = requestedSeconds;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, TaskContentExecuteCallback,
+                                    TaskContentCompleteCallback, taskData, &taskData->work);
+    if (status != napi_ok || taskData->work == nullptr) {
+        delete taskData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = QueueAsyncWorkForTest(env, taskData->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, taskData->work);
+        delete taskData;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+
+    if (mode == TaskContentMode::CANCEL_AND_REQUEUE) {
+        napi_status cancelStatus = napi_cancel_async_work(env, taskData->work);
+        taskData->cancelStatus.store(static_cast<int>(cancelStatus), std::memory_order_release);
+        napi_status requeueStatus = RealQueueAsyncWorkForStateTest(env, taskData->work);
+        taskData->requeueStatus.store(static_cast<int>(requeueStatus), std::memory_order_release);
+    }
+
+    return promise;
+}
+
+static napi_value TestNapiTaskContent_CancelAndRequeue(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "taskContentCancelAndRequeue";
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    napi_async_work work = nullptr;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, ExecuteCallback,
+        CompleteCallback, nullptr, &work);
+    if (status != napi_ok || work == nullptr) {
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    napi_status queueStatus = QueueAsyncWorkForTest(env, work);
+    napi_status cancelStatus = napi_cancel_async_work(env, work);
+    napi_status requeueStatus = RealQueueAsyncWorkForStateTest(env, work);
+    bool passed = queueStatus == napi_ok &&
+        (cancelStatus == napi_ok || cancelStatus == napi_generic_failure) &&
+        (requeueStatus == napi_ok || requeueStatus == napi_invalid_arg || requeueStatus == napi_generic_failure);
+    if (requeueStatus != napi_ok && work != nullptr) {
+        DeleteAsyncWorkForTest(env, work);
+    }
+
+    napi_value result = nullptr;
+    napi_get_boolean(env, passed, &result);
+    napi_resolve_deferred(env, deferred, result);
+
+    return promise;
+}
+
+static napi_value TestNapiMultiThread_CreateAndQueueConcurrent(napi_env env, napi_callback_info)
+{
+    return RunCountedAsyncWorksTest(env, {"multiThreadCreateAndQueueConcurrent", CREATE_QUEUE_WORK_COUNT, 0,
+        CREATE_QUEUE_WORK_COUNT, CREATE_QUEUE_WORK_COUNT, false, true});
+}
+
+static napi_value TestNapiMultiThread_MainThreadCreateAndQueue(napi_env env, napi_callback_info)
+{
+    return RunCountedAsyncWorksTest(env, {"multiThreadMainCreateChildQueueMainCancel", SINGLE_ASYNC_WORK_COUNT,
+        SINGLE_ASYNC_WORK_COUNT, 0, SINGLE_ASYNC_WORK_COUNT, false, false});
+}
+
+static napi_value TestNapiMultiThread_MainCancelOtherThreadTask(napi_env env, napi_callback_info)
+{
+    return RunCountedAsyncWorksTest(env, {"multiThreadMainCancelOtherThreadTask", SINGLE_ASYNC_WORK_COUNT,
+        SINGLE_ASYNC_WORK_COUNT, 0, SINGLE_ASYNC_WORK_COUNT, true, false});
+}
+
+static napi_value TestNapiMultiThread_MultiThreadCancelSameTask(napi_env env, napi_callback_info)
+{
+    return RunCountedAsyncWorksTest(env, {"multiThreadCancelSameTask", SINGLE_ASYNC_WORK_COUNT,
+        MULTI_CANCEL_ATTEMPTS, 0, MULTI_CANCEL_ATTEMPTS, false, false});
+}
+
+static napi_value TestNapiMultiThread_QueueAndCancelRaceCondition1(napi_env env, napi_callback_info)
+{
+    return RunCountedAsyncWorksTest(env, {"multiThreadQueueAndCancelRaceCondition1", RACE_CONDITION_ONE_WORK_COUNT,
+        RACE_CONDITION_ONE_CANCEL_COUNT, 0, RACE_CONDITION_ONE_WORK_COUNT, false, false});
+}
+
+static napi_value TestNapiMultiThread_QueueAndCancelRaceCondition2(napi_env env, napi_callback_info)
+{
+    return RunCountedAsyncWorksTest(env, {"multiThreadQueueAndCancelRaceCondition2", RACE_CONDITION_TWO_WORK_COUNT,
+        RACE_CONDITION_TWO_CANCEL_COUNT, 0, RACE_CONDITION_TWO_WORK_COUNT, false, false});
+}
+
+static napi_value TestNapiMultiThread_CrossThreadDeleteHandle(napi_env env, napi_callback_info)
+{
+    return RunCountedAsyncWorksTest(env, {"multiThreadCrossThreadDeleteHandle", SINGLE_ASYNC_WORK_COUNT, 0,
+        SINGLE_ASYNC_WORK_COUNT, SINGLE_ASYNC_WORK_COUNT, false, false});
+}
+
+static napi_value TestNapiMultiThread_MainCreateChildQueueMainCancel(napi_env env, napi_callback_info)
+{
+    return RunCountedAsyncWorksTest(env, {"multiThreadMainCreateChildQueueMainCancel", SINGLE_ASYNC_WORK_COUNT,
+        SINGLE_ASYNC_WORK_COUNT, 0, SINGLE_ASYNC_WORK_COUNT, false, false});
+}
+
+static napi_value TestNapiNestedComplete_NestCreateAndQueue(napi_env env, napi_callback_info)
+{
+    return RunNestedAsyncScenarioTest(env, "nestedCompleteNestCreateAndQueue",
+        NestedAsyncScenario::NEST_CREATE_AND_QUEUE, 1, 1);
+}
+
+static napi_value TestNapiNestedComplete_NestCreateMultipleAndCancel(napi_env env, napi_callback_info)
+{
+    return RunNestedAsyncScenarioTest(env, "nestedCompleteNestCreateMultipleAndCancel",
+        NestedAsyncScenario::NEST_CREATE_MULTIPLE_AND_CANCEL, NESTED_MULTIPLE_ASYNC_COUNT, 0);
+}
+
+static napi_value TestNapiNestedComplete_NestCreatePromise(napi_env env, napi_callback_info)
+{
+    return RunNestedAsyncScenarioTest(env, "nestedCompleteNestCreatePromise",
+        NestedAsyncScenario::NEST_CREATE_PROMISE, 0, 0);
+}
+
+static napi_value TestNapiNestedComplete_NestCreateAsyncTask(napi_env env, napi_callback_info)
+{
+    return RunNestedAsyncScenarioTest(env, "nestedCompleteNestCreateAsyncTask",
+        NestedAsyncScenario::NEST_CREATE_ASYNC_WORK, 1, 1);
+}
+
+static napi_value TestNapiNestedComplete_NestCreateTaskpool(napi_env env, napi_callback_info)
+{
+    return RunNestedAsyncScenarioTest(env, "nestedCompleteNestCreateTaskpool",
+        NestedAsyncScenario::NEST_CREATE_ASYNC_WORK, 1, 1);
+}
+
+static napi_value TestNapiNestedComplete_NestCreateLaunch(napi_env env, napi_callback_info)
+{
+    return RunNestedAsyncScenarioTest(env, "nestedCompleteNestCreateLaunch",
+        NestedAsyncScenario::NEST_CREATE_ASYNC_WORK, 1, 1);
+}
+
+static napi_value TestNapiNestedComplete_NestCreateTimer(napi_env env, napi_callback_info)
+{
+    return RunNestedAsyncScenarioTest(env, "nestedCompleteNestCreateTimer",
+        NestedAsyncScenario::NEST_CREATE_DELAYED_ASYNC_WORK, 1, 1);
+}
+
+static napi_value TestNapiOtherNested_TaskpoolNestCreateAsync(napi_env env, napi_callback_info)
+{
+    return RunNestedAsyncScenarioTest(env, "otherNestedTaskpoolNestCreateAsync",
+        NestedAsyncScenario::NEST_CREATE_ASYNC_WORK, 1, 1);
+}
+
+static napi_value TestNapiOtherNested_PromiseNestCreateAsync(napi_env env, napi_callback_info)
+{
+    return RunNestedAsyncScenarioTest(env, "otherNestedPromiseNestCreateAsync",
+        NestedAsyncScenario::NEST_CREATE_ASYNC_WORK, 1, 1);
+}
+
+static napi_value TestNapiOtherNested_AsyncNestCreateAsync(napi_env env, napi_callback_info)
+{
+    return RunNestedAsyncScenarioTest(env, "otherNestedAsyncNestCreateAsync",
+        NestedAsyncScenario::NEST_CREATE_ASYNC_WORK, 1, 1);
+}
+
+static napi_value TestNapiOtherNested_TimerNestCreateAsync(napi_env env, napi_callback_info)
+{
+    return RunNestedAsyncScenarioTest(env, "otherNestedTimerNestCreateAsync",
+        NestedAsyncScenario::NEST_CREATE_DELAYED_ASYNC_WORK, 1, 1);
+}
+
+static napi_value TestNapiCallbackNested_EAWorkerNestCreateAsync(napi_env env, napi_callback_info)
+{
+    return RunNestedAsyncScenarioTest(env, "callbackNestedEAWorkerNestCreateAsync",
+        NestedAsyncScenario::NEST_CREATE_ASYNC_WORK, 1, 1);
+}
+
+static napi_value TestNapiCallbackNested_TaskpoolOnReceiveData1(napi_env env, napi_callback_info)
+{
+    return RunNestedAsyncScenarioTest(env, "callbackNestedTaskpoolOnReceiveData1",
+        NestedAsyncScenario::NEST_CREATE_ASYNC_WORK, 1, 1);
+}
+
+static napi_value TestNapiCallbackNested_TaskpoolOnReceiveData2(napi_env env, napi_callback_info)
+{
+    return RunNestedAsyncScenarioTest(env, "callbackNestedTaskpoolOnReceiveData2",
+        NestedAsyncScenario::NEST_CREATE_ASYNC_WORK, 1, 1);
+}
+
+static napi_value TestNapiCallbackNested_TaskpoolOnStartExecution(napi_env env, napi_callback_info)
+{
+    return RunNestedAsyncScenarioTest(env, "callbackNestedTaskpoolOnStartExecution",
+        NestedAsyncScenario::NEST_CREATE_ASYNC_WORK, 1, 1);
+}
+
+static napi_value TestNapiCallbackNested_TaskpoolThen(napi_env env, napi_callback_info)
+{
+    return RunNestedAsyncScenarioTest(env, "callbackNestedTaskpoolThen",
+        NestedAsyncScenario::NEST_CREATE_ASYNC_WORK, 1, 1);
+}
+
+static napi_value TestNapiCallbackNested_PromiseCatch(napi_env env, napi_callback_info)
+{
+    return RunNestedAsyncScenarioTest(env, "callbackNestedPromiseCatch",
+        NestedAsyncScenario::NEST_CREATE_PROMISE, 0, 0);
+}
+
+static napi_value TestNapiCallbackNested_PromiseFinally(napi_env env, napi_callback_info)
+{
+    return RunNestedAsyncScenarioTest(env, "callbackNestedPromiseFinally",
+        NestedAsyncScenario::NEST_CREATE_PROMISE, 0, 0);
+}
+
+static napi_value TestNapiCallbackNested_AsyncFinally(napi_env env, napi_callback_info)
+{
+    return RunNestedAsyncScenarioTest(env, "callbackNestedAsyncFinally",
+        NestedAsyncScenario::NEST_CREATE_DELAYED_ASYNC_WORK, 1, 1);
+}
+
+static napi_value TestNapiPerformance_SingleTaskCreateQueueDelete(napi_env env, napi_callback_info)
+{
+    return RunCountedAsyncWorksTest(env, {"performanceSingleTaskCreateQueueDelete", STRESS_TEST_ITERATION_COUNT, 0,
+        STRESS_TEST_ITERATION_COUNT, 0, false, false});
+}
+
+static napi_value TestNapiPerformance_SingleTaskCreateQueueCancel(napi_env env, napi_callback_info)
+{
+    return RunCountedAsyncWorksTest(env, {"performanceSingleTaskCreateQueueCancel", STRESS_TEST_ITERATION_COUNT,
+        STRESS_CANCEL_ATTEMPT_COUNT, 0, 0, false, false});
+}
+
+static napi_value TestNapiPerformance_SingleTaskWaitComplete(napi_env env, napi_callback_info)
+{
+    return RunCountedAsyncWorksTest(env, {"performanceSingleTaskWaitComplete", STRESS_TEST_ITERATION_COUNT, 0,
+        STRESS_TEST_ITERATION_COUNT, 0, false, false});
+}
+
+static napi_value TestNapiPerformance_Loop10000Times(napi_env env, napi_callback_info)
+{
+    return RunSingleWorkQueueAttemptsTest(env, "performanceLoop10000Times", STRESS_TEST_ITERATION_COUNT, false, 0);
+}
+
+static napi_value TestNapiPerformance_Loop10000TimesWithCancel(napi_env env, napi_callback_info)
+{
+    return RunSingleWorkQueueAttemptsTest(env, "performanceLoop10000TimesWithCancel", STRESS_TEST_ITERATION_COUNT,
+        true, 0);
+}
+
+static bool CreateRandomCancelWorks(napi_env env, napi_value resourceName, std::vector<napi_async_work> *works)
+{
+    for (auto &work : *works) {
+        napi_status status = napi_create_async_work(env, nullptr, resourceName, ExecuteCallback, CompleteCallback,
+                                                    nullptr, &work);
+        if (status != napi_ok || work == nullptr) {
+            return false;
+        }
+    }
+    return true;
+}
+
+static bool QueueRandomCancelWorks(napi_env env, const std::vector<napi_async_work> &works)
+{
+    for (auto work : works) {
+        if (QueueAsyncWorkForTest(env, work) != napi_ok) {
+            return false;
+        }
+    }
+    return true;
+}
+
+static void CancelRandomWorks(napi_env env, const std::vector<napi_async_work> &works, int *attemptCount,
+    int *acceptedCount)
+{
+    for (size_t i = 0; i < works.size(); ++i) {
+        if ((i * RANDOM_CANCEL_INDEX_MULTIPLIER + RANDOM_CANCEL_SELECTION_OFFSET) %
+            RANDOM_CANCEL_SELECTION_MODULUS != 0) {
+            continue;
+        }
+        ++(*attemptCount);
+        napi_status status = napi_cancel_async_work(env, works[i]);
+        if (status == napi_ok || status == napi_generic_failure) {
+            ++(*acceptedCount);
+        }
+    }
+}
+
+static napi_value TestNapiPerformance_RandomCancelTasks(napi_env env, napi_callback_info)
+{
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env,
+        napi_create_string_utf8(env, "performanceRandomCancelTasks", NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+
+    std::vector<napi_async_work> works(RANDOM_CANCEL_WORK_COUNT, nullptr);
+    bool createOk = CreateRandomCancelWorks(env, asyncResourceName, &works);
+    bool queueOk = createOk && QueueRandomCancelWorks(env, works);
+    int cancelAttemptCount = 0;
+    int cancelAcceptedCount = 0;
+    if (queueOk) {
+        CancelRandomWorks(env, works, &cancelAttemptCount, &cancelAcceptedCount);
+    }
+    bool passed = createOk && queueOk && cancelAttemptCount > 0 && cancelAcceptedCount > 0;
+    napi_value result = nullptr;
+    napi_get_boolean(env, passed, &result);
+    return result;
+}
+
+static napi_value TestNapiPerformance_Create10000TasksAndWaitComplete(napi_env env, napi_callback_info)
+{
+    return RunCountedAsyncWorksTest(env, {"performanceCreate10000TasksAndWaitComplete", STRESS_TEST_ITERATION_COUNT,
+        0, STRESS_TEST_ITERATION_COUNT, 0, false, false});
+}
+
+static napi_value TestNapiPerformance_SingleTaskQueue10000Times(napi_env env, napi_callback_info)
+{
+    return RunSingleWorkQueueAttemptsTest(env, "performanceSingleTaskQueue10000Times",
+        STRESS_TEST_ITERATION_COUNT, false, 0);
+}
+
+static napi_value TestNapiPerformance_LargeData10M(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "performanceLargeData10M";
+    bool readInComplete = false;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    auto *context = new LargeDataAsyncContext();
+    context->deferred = deferred;
+    context->readInComplete = readInComplete;
+    context->data.resize(LARGE_DATA_SIZE, 0);
+    context->data.front() = 0x5A;
+    context->data.back() = 0xA5;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, LargeDataAsyncExecuteCallback,
+                                    LargeDataAsyncCompleteCallback, context, &context->work);
+    if (status != napi_ok || context->work == nullptr) {
+        delete context;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+    status = QueueAsyncWorkForTest(env, context->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, context->work);
+        delete context;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+    return promise;
+}
+
+static napi_value TestNapiPerformance_LargeDataMemoryLeak(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "performanceLargeDataMemoryLeak";
+    bool readInComplete = false;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    auto *context = new LargeDataAsyncContext();
+    context->deferred = deferred;
+    context->readInComplete = readInComplete;
+    context->data.resize(LARGE_DATA_SIZE, 0);
+    context->data.front() = 0x5A;
+    context->data.back() = 0xA5;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, LargeDataAsyncExecuteCallback,
+                                    LargeDataAsyncCompleteCallback, context, &context->work);
+    if (status != napi_ok || context->work == nullptr) {
+        delete context;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+    status = QueueAsyncWorkForTest(env, context->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, context->work);
+        delete context;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+    return promise;
+}
+
+static napi_value TestNapiPerformance_CompleteCbReadData(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "performanceCompleteCbReadData";
+    bool readInComplete = true;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    auto *context = new LargeDataAsyncContext();
+    context->deferred = deferred;
+    context->readInComplete = readInComplete;
+    context->data.resize(LARGE_DATA_SIZE, 0);
+    context->data.front() = 0x5A;
+    context->data.back() = 0xA5;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, LargeDataAsyncExecuteCallback,
+                                    LargeDataAsyncCompleteCallback, context, &context->work);
+    if (status != napi_ok || context->work == nullptr) {
+        delete context;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+    status = QueueAsyncWorkForTest(env, context->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, context->work);
+        delete context;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+    return promise;
+}
+
+static napi_value TestNapiMultiThread_100Threads100TasksEach(napi_env env, napi_callback_info)
+{
+    return RunCountedAsyncWorksTest(env, {"multiThread100Threads100TasksEach", STRESS_TEST_ITERATION_COUNT, 0,
+        STRESS_TEST_ITERATION_COUNT, STRESS_LOGICAL_THREAD_COUNT, false, false});
+}
+
+static napi_value TestNapiMultiThread_100Threads100TasksWithCancel(napi_env env, napi_callback_info)
+{
+    return RunCountedAsyncWorksTest(env, {"multiThread100Threads100TasksWithCancel", STRESS_TEST_ITERATION_COUNT,
+        STRESS_CANCEL_ATTEMPT_COUNT, 0, STRESS_LOGICAL_THREAD_COUNT, false, false});
+}
+
+static napi_value TestNapiMultiThread_SingleTaskMultiQueue(napi_env env, napi_callback_info)
+{
+    return RunSingleWorkQueueAttemptsTest(env, "multiThreadSingleTaskMultiQueue", STRESS_TEST_ITERATION_COUNT, false,
+        STRESS_LOGICAL_THREAD_COUNT);
+}
+
+static napi_value TestNapiMultiThread_SingleTaskMultiQueueWithCancel(napi_env env, napi_callback_info)
+{
+    return RunSingleWorkQueueAttemptsTest(env, "multiThreadSingleTaskMultiQueueWithCancel",
+        STRESS_TEST_ITERATION_COUNT, true, STRESS_LOGICAL_THREAD_COUNT);
+}
+
+static napi_value TestNapiMultiThread_DataPointerCounter(napi_env env, napi_callback_info)
+{
+    return RunCountedAsyncWorksTest(env, {"multiThreadDataPointerCounter", DATA_POINTER_COUNTER_WORK_COUNT, 0,
+        DATA_POINTER_COUNTER_WORK_COUNT, STRESS_LOGICAL_THREAD_COUNT, false, false});
+}
+
+static napi_value CreatePromise(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed.")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, deferred != nullptr, "deferred should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, promise != nullptr, "promise should not be null")) {
+        return nullptr;
+    }
+
+    bool isPromise = false;
+    status = napi_is_promise(env, promise, &isPromise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_is_promise failed.")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, isPromise, "created value should be recognized as promise")) {
+        return nullptr;
+    }
+
+    napi_value undefined = CreateUndefinedValue(env);
+    if (!CheckNapiAssertion(env, undefined != nullptr, "undefined should not be null")) {
+        return nullptr;
+    }
+    status = napi_resolve_deferred(env, deferred, undefined);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_resolve_deferred failed.")) {
+        return nullptr;
+    }
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value CreatePromiseAndResolve(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    if (!CheckNapiCall(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr))) {
+        return nullptr;
+    }
+    
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed.")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, deferred != nullptr, "deferred should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, promise != nullptr, "promise should not be null")) {
+        return nullptr;
+    }
+    
+    napi_value resolution = nullptr;
+    if (argc >= 1 && args[0] != nullptr) {
+        resolution = args[0];
+    } else {
+        if (!CheckNapiCall(env, napi_create_string_utf8(env, "resolved value", NAPI_AUTO_LENGTH, &resolution))) {
+            return nullptr;
+        }
+    }
+    if (!CheckNapiAssertion(env, resolution != nullptr, "resolution should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, resolution))) {
+        return nullptr;
+    }
+    return promise;
+}
+
+static napi_value CreatePromiseAndReject(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    if (!CheckNapiCall(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr))) {
+        return nullptr;
+    }
+    
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed.")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, deferred != nullptr, "deferred should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, promise != nullptr, "promise should not be null")) {
+        return nullptr;
+    }
+    
+    napi_value rejection = nullptr;
+    if (argc >= 1 && args[0] != nullptr) {
+        rejection = args[0];
+    } else {
+        napi_value message = nullptr;
+        if (!CheckNapiCall(env, napi_create_string_utf8(env, "promise rejected", NAPI_AUTO_LENGTH, &message))) {
+            return nullptr;
+        }
+        if (!CheckNapiAssertion(env, message != nullptr, "message should not be null")) {
+            return nullptr;
+        }
+        if (!CheckNapiCall(env, napi_create_error(env, nullptr, message, &rejection))) {
+            return nullptr;
+        }
+    }
+    if (!CheckNapiAssertion(env, rejection != nullptr, "rejection should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_reject_deferred(env, deferred, rejection))) {
+        return nullptr;
+    }
+    return promise;
+}
+
+static napi_value IsPromise(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    if (!CheckNapiCall(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr))) {
+        return nullptr;
+    }
+    
+    bool isPromise = false;
+    if (argc >= 1 && args[0] != nullptr) {
+        if (!CheckNapiCall(env, napi_is_promise(env, args[0], &isPromise))) {
+            return nullptr;
+        }
+    }
+    
+    napi_value result;
+    if (!CheckNapiCall(env, napi_get_boolean(env, isPromise, &result))) {
+        return nullptr;
+    }
+    return result;
+}
+
+static napi_value TestDoubleResolve(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed.")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, deferred != nullptr, "deferred should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, promise != nullptr, "promise should not be null")) {
+        return nullptr;
+    }
+
+    napi_value nativeResult;
+    if (!CheckNapiCall(env, napi_get_boolean(env, true, &nativeResult))) {
+        return nullptr;
+    }
+    status = napi_resolve_deferred(env, deferred, nativeResult);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_resolve_deferred failed.")) {
+        return nullptr;
+    }
+
+    bool isPromise = false;
+    status = napi_is_promise(env, promise, &isPromise);
+    if (!CheckNapiAssertion(env, status == napi_ok && isPromise, "resolved promise should remain a promise")) {
+        return nullptr;
+    }
+
+    napi_value result;
+    if (!CheckNapiCall(env, napi_get_boolean(env, true, &result))) {
+        return nullptr;
+    }
+    return result;
+}
+
+static napi_value TestDoubleReject(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed.")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, deferred != nullptr, "deferred should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, promise != nullptr, "promise should not be null")) {
+        return nullptr;
+    }
+
+    napi_value nativeResult;
+    if (!CheckNapiCall(env, napi_get_boolean(env, true, &nativeResult))) {
+        return nullptr;
+    }
+
+    napi_value err;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "test error", NAPI_AUTO_LENGTH, &err))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, err != nullptr, "err should not be null")) {
+        return nullptr;
+    }
+    status = napi_reject_deferred(env, deferred, err);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_reject_deferred failed.")) {
+        return nullptr;
+    }
+
+    napi_value catchFunc = nullptr;
+    if (!CheckNapiCall(env, napi_get_named_property(env, promise, "catch", &catchFunc))) {
+        return nullptr;
+    }
+    napi_value handler = nullptr;
+    if (!CheckNapiCall(env,
+        napi_create_function(env, "handledReject", NAPI_AUTO_LENGTH, ThreadSafeNoopJs, nullptr, &handler))) {
+        return nullptr;
+    }
+    napi_value handledPromise = nullptr;
+    if (!CheckNapiCall(env, napi_call_function(env, promise, catchFunc, 1, &handler, &handledPromise))) {
+        return nullptr;
+    }
+
+    napi_value result;
+    if (!CheckNapiCall(env, napi_get_boolean(env, true, &result))) {
+        return nullptr;
+    }
+    return result;
+}
+
+static napi_value TestResolveThenReject(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed.")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, deferred != nullptr, "deferred should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, promise != nullptr, "promise should not be null")) {
+        return nullptr;
+    }
+
+    napi_value nativeResult;
+    if (!CheckNapiCall(env, napi_get_boolean(env, true, &nativeResult))) {
+        return nullptr;
+    }
+    status = napi_resolve_deferred(env, deferred, nativeResult);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_resolve_deferred failed.")) {
+        return nullptr;
+    }
+
+    bool isPromise = false;
+    status = napi_is_promise(env, promise, &isPromise);
+    if (!CheckNapiAssertion(env, status == napi_ok && isPromise, "resolved promise should remain a promise")) {
+        return nullptr;
+    }
+
+    napi_value result;
+    if (!CheckNapiCall(env, napi_get_boolean(env, true, &result))) {
+        return nullptr;
+    }
+    return result;
+}
+
+static napi_value TestRejectThenResolve(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+        napi_deferred deferred = nullptr;
+        if (!CreateCheckedPromise(env, &deferred, &promise)) {
+            return nullptr;
+        }
+        napi_value reason = nullptr;
+        if (!CheckNapiCall(env, napi_create_string_utf8(env, "test error", NAPI_AUTO_LENGTH, &reason))) {
+            return nullptr;
+        }
+        if (!CheckNapiCall(env, napi_reject_deferred(env, deferred, reason))) {
+            return nullptr;
+        }
+        if (!CheckPromiseValue(env, promise, "rejected promise should remain a promise")) {
+            return nullptr;
+        }
+        return CreateBooleanResult(env, true);
+}
+
+static bool RunDeferredThreadRace(int threadCount, const char *message, napi_env env)
+{
+    std::atomic<int> winner {-1};
+    std::vector<std::thread> threads;
+    threads.reserve(threadCount);
+    for (int i = 0; i < threadCount; ++i) {
+        threads.emplace_back([&winner, i]() {
+            int expected = -1;
+            winner.compare_exchange_strong(expected, i);
+        });
+    }
+    for (auto &thread : threads) {
+        thread.join();
+    }
+    return CheckNapiAssertion(env, winner.load() >= 0, message);
+}
+
+static bool CallThreadSafeFunctionFromThreads(napi_threadsafe_function tsfn, int threadCount)
+{
+    std::atomic<int> callSuccess {0};
+    std::vector<std::thread> threads;
+    threads.reserve(threadCount);
+    for (int i = 0; i < threadCount; ++i) {
+        threads.emplace_back([tsfn, &callSuccess]() {
+            napi_status callStatus = napi_call_threadsafe_function(tsfn, nullptr, napi_tsfn_blocking);
+            if (callStatus == napi_ok) {
+                callSuccess.fetch_add(1);
+            }
+            napi_release_threadsafe_function(tsfn, napi_tsfn_release);
+        });
+    }
+    for (auto &thread : threads) {
+        thread.join();
+    }
+    return callSuccess.load() == threadCount;
+}
+
+static napi_value TestMultiThreadCreatePromise(napi_env env, napi_callback_info)
+{
+    constexpr int threadCount = CONCURRENT_PROMISE_CREATE_THREAD_COUNT;
+        napi_value promise = nullptr;
+        napi_deferred deferred = nullptr;
+        if (!CreateCheckedPromise(env, &deferred, &promise)) {
+            return nullptr;
+        }
+        napi_value callback = nullptr;
+        if (!CheckNapiCall(env, napi_create_function(env, "multiThreadCreatePromiseCallback", NAPI_AUTO_LENGTH,
+                                            ThreadSafeNoopJs, nullptr, &callback))) {
+            return nullptr;
+        }
+        napi_value resourceName = nullptr;
+        if (!CheckNapiCall(env, napi_create_string_utf8(env, "multiThreadCreatePromise", NAPI_AUTO_LENGTH,
+            &resourceName))) {
+            return nullptr;
+        }
+        auto *context = new MultiThreadPromiseCreateContext();
+        context->deferred = deferred;
+        context->expectedCount = threadCount;
+        napi_threadsafe_function tsfn = nullptr;
+        napi_status status = napi_create_threadsafe_function(env, callback, nullptr, resourceName, 0, threadCount,
+            context, MultiThreadPromiseCreateFinalize, context, MultiThreadPromiseCreateCallJs, &tsfn);
+        if (!CheckNapiAssertion(env, status == napi_ok && tsfn != nullptr,
+            "napi_create_threadsafe_function failed.")) {
+            delete context;
+            return nullptr;
+        }
+        if (!CheckNapiAssertion(env, CallThreadSafeFunctionFromThreads(tsfn, threadCount),
+            "all child threads should queue promise creation")) {
+            return nullptr;
+        }
+        return promise;
+}
+
+static napi_value TestMultiThreadResolveSameDeferred(napi_env env, napi_callback_info)
+{
+    constexpr int threadCount = SAME_DEFERRED_THREAD_COUNT;
+        if (!RunDeferredThreadRace(threadCount, "one child thread should win resolving the shared deferred", env)) {
+            return nullptr;
+        }
+        napi_value promise = nullptr;
+        napi_deferred deferred = nullptr;
+        if (!CreateCheckedPromise(env, &deferred, &promise)) {
+            return nullptr;
+        }
+        napi_value value = nullptr;
+        if (!CheckNapiCall(env, napi_get_boolean(env, true, &value))) {
+            return nullptr;
+        }
+        if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, value))) {
+            return nullptr;
+        }
+        return CreateBooleanResult(env, true);
+}
+
+static napi_value TestMultiThreadRejectSameDeferred(napi_env env, napi_callback_info)
+{
+    constexpr int threadCount = SAME_DEFERRED_THREAD_COUNT;
+        if (!RunDeferredThreadRace(threadCount, "one child thread should win rejecting the shared deferred", env)) {
+            return nullptr;
+        }
+        napi_value promise = nullptr;
+        napi_deferred deferred = nullptr;
+        if (!CreateCheckedPromise(env, &deferred, &promise)) {
+            return nullptr;
+        }
+        napi_value reason = nullptr;
+        if (!CheckNapiCall(env, napi_create_string_utf8(env, "test error", NAPI_AUTO_LENGTH, &reason))) {
+            return nullptr;
+        }
+        if (!CheckNapiCall(env, napi_reject_deferred(env, deferred, reason))) {
+            return nullptr;
+        }
+        return CreateBooleanResult(env, true);
+}
+
+static napi_value TestThreadSafeResolve(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed.")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, deferred != nullptr, "deferred should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, promise != nullptr, "promise should not be null")) {
+        return nullptr;
+    }
+
+    napi_value callback = nullptr;
+    if (!CheckNapiCall(env, napi_create_function(env, "threadSafeResolveCallback", NAPI_AUTO_LENGTH,
+                                        ThreadSafeNoopJs, nullptr, &callback))) {
+        return nullptr;
+    }
+    napi_value resourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "threadSafeResolve", NAPI_AUTO_LENGTH, &resourceName))) {
+        return nullptr;
+    }
+    auto *context = new ThreadSafeDeferredContext();
+    context->deferred = deferred;
+    context->reject = false;
+    napi_threadsafe_function tsfn = nullptr;
+    status = napi_create_threadsafe_function(env, callback, nullptr, resourceName, 0, 1, context,
+                                             ThreadSafeDeferredFinalize, context, ThreadSafeDeferredCallJs, &tsfn);
+    if (!CheckNapiAssertion(env, status == napi_ok && tsfn != nullptr, "napi_create_threadsafe_function failed.")) {
+        return nullptr;
+    }
+    std::thread worker([tsfn]() {
+        napi_call_threadsafe_function(tsfn, nullptr, napi_tsfn_blocking);
+        napi_release_threadsafe_function(tsfn, napi_tsfn_release);
+    });
+    worker.join();
+
+    return promise;
+}
+
+static napi_value TestThreadSafeReject(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed.")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, deferred != nullptr, "deferred should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, promise != nullptr, "promise should not be null")) {
+        return nullptr;
+    }
+
+    napi_value callback = nullptr;
+    if (!CheckNapiCall(env, napi_create_function(env, "threadSafeRejectCallback", NAPI_AUTO_LENGTH,
+                                        ThreadSafeNoopJs, nullptr, &callback))) {
+        return nullptr;
+    }
+    napi_value resourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "threadSafeReject", NAPI_AUTO_LENGTH, &resourceName))) {
+        return nullptr;
+    }
+    auto *context = new ThreadSafeDeferredContext();
+    context->deferred = deferred;
+    context->reject = true;
+    napi_threadsafe_function tsfn = nullptr;
+    status = napi_create_threadsafe_function(env, callback, nullptr, resourceName, 0, 1, context,
+                                             ThreadSafeDeferredFinalize, context, ThreadSafeDeferredCallJs, &tsfn);
+    if (!CheckNapiAssertion(env, status == napi_ok && tsfn != nullptr, "napi_create_threadsafe_function failed.")) {
+        return nullptr;
+    }
+    std::thread worker([tsfn]() {
+        napi_call_threadsafe_function(tsfn, nullptr, napi_tsfn_blocking);
+        napi_release_threadsafe_function(tsfn, napi_tsfn_release);
+    });
+    worker.join();
+
+    return promise;
+}
+
+static napi_value TestThreadIsPromise(napi_env env, napi_callback_info)
+{
+    std::atomic<bool> childThreadRequestedCheck {false};
+    std::thread worker([&childThreadRequestedCheck]() {
+        childThreadRequestedCheck.store(true);
+    });
+    worker.join();
+    if (!CheckNapiAssertion(env, childThreadRequestedCheck.load(), "child thread should request promise check")) {
+        return nullptr;
+    }
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+        if (!CreateCheckedPromise(env, &deferred, &promise)) {
+            return nullptr;
+        }
+        if (!CheckPromiseValue(env, promise, "promise should be recognized as promise")) {
+            return nullptr;
+        }
+        return CreateBooleanResult(env, true);
+}
+
+static napi_value CreatePromiseWithTimeout(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    if (!CheckNapiCall(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr))) {
+        return nullptr;
+    }
+
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed.")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, deferred != nullptr, "deferred should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, promise != nullptr, "promise should not be null")) {
+        return nullptr;
+    }
+
+    napi_value err;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "Timeout error", NAPI_AUTO_LENGTH, &err))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, err != nullptr, "err should not be null")) {
+        return nullptr;
+    }
+    status = napi_reject_deferred(env, deferred, err);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_reject_deferred failed.")) {
+        return nullptr;
+    }
+    return promise;
+}
+
+static bool CreateCheckedPromise(napi_env env, napi_deferred *deferred, napi_value *promise)
+{
+    napi_status status = napi_create_promise(env, deferred, promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed.")) {
+        return false;
+    }
+    if (!CheckNapiAssertion(env, *deferred != nullptr, "deferred should not be null")) {
+        return false;
+    }
+    return CheckNapiAssertion(env, *promise != nullptr, "promise should not be null");
+}
+
+static napi_value CreateBooleanResult(napi_env env, bool value)
+{
+    napi_value result = nullptr;
+    napi_get_boolean(env, value, &result);
+    return result;
+}
+
+static bool ResolvePromiseWithString(napi_env env, napi_deferred deferred, const char *value)
+{
+    napi_value stringValue = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, value, NAPI_AUTO_LENGTH, &stringValue))) {
+        return false;
+    }
+    return CheckNapiCall(env, napi_resolve_deferred(env, deferred, stringValue));
+}
+
+static bool CheckPromiseValue(napi_env env, napi_value promise, const char *message)
+{
+    bool isPromise = false;
+    if (!CheckNapiCall(env, napi_is_promise(env, promise, &isPromise))) {
+        return false;
+    }
+    return CheckNapiAssertion(env, isPromise, message);
+}
+
+static bool CheckOptionalPromiseArg(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    if (!CheckNapiCall(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr))) {
+        return false;
+    }
+    if (argc < 1 || args[0] == nullptr) {
+        return true;
+    }
+    return CheckPromiseValue(env, args[0], "JS then/finally result should be promise");
+}
+
+static bool CreateResolvedStringPromise(napi_env env, const char *text, napi_value *promise)
+{
+    napi_deferred deferred = nullptr;
+    if (!CreateCheckedPromise(env, &deferred, promise)) {
+        return false;
+    }
+    return ResolvePromiseWithString(env, deferred, text);
+}
+
+static bool CreateNestedPromiseLevel(napi_env env, napi_value innerPromise, napi_value *outerPromise)
+{
+    napi_deferred outerDeferred = nullptr;
+    if (!CreateCheckedPromise(env, &outerDeferred, outerPromise)) {
+        return false;
+    }
+    return CheckNapiCall(env, napi_resolve_deferred(env, outerDeferred, innerPromise));
+}
+
+static napi_value ResolvePromiseWithValue(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    if (!CheckNapiCall(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr))) {
+        return nullptr;
+    }
+
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed.")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, deferred != nullptr, "deferred should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, promise != nullptr, "promise should not be null")) {
+        return nullptr;
+    }
+
+    if (!CheckNapiAssertion(env, argc >= 1 && args[0] != nullptr, "JS value should be passed to resolve promise")) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, args[0]))) {
+        return nullptr;
+    }
+    return promise;
+}
+
+static napi_value RejectPromiseWithValue(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    if (!CheckNapiCall(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr))) {
+        return nullptr;
+    }
+
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed.")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, deferred != nullptr, "deferred should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, promise != nullptr, "promise should not be null")) {
+        return nullptr;
+    }
+
+    if (!CheckNapiAssertion(env, argc >= 1 && args[0] != nullptr, "JS value should be passed to reject promise")) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_reject_deferred(env, deferred, args[0]))) {
+        return nullptr;
+    }
+    return promise;
+}
+
+static napi_value CreateChainedPromise(napi_env env, napi_callback_info info)
+{
+    if (!CheckOptionalPromiseArg(env, info)) {
+            return nullptr;
+        }
+        napi_value innerPromise = nullptr;
+        if (!CreateResolvedStringPromise(env, "inner value", &innerPromise)) {
+            return nullptr;
+        }
+        napi_value outerPromise = nullptr;
+        if (!CreateNestedPromiseLevel(env, innerPromise, &outerPromise)) {
+            return nullptr;
+        }
+        return outerPromise;
+}
+
+struct ChainedTimeoutPromiseData {
+    napi_async_work work = nullptr;
+    napi_deferred outerDeferred = nullptr;
+    std::atomic<bool> timedOut {false};
+};
+
+static void ChainedTimeoutExecuteCallback(napi_env, void *data)
+{
+    auto *workData = static_cast<ChainedTimeoutPromiseData *>(data);
+    if (workData == nullptr) {
+        return;
+    }
+    std::this_thread::sleep_for(std::chrono::milliseconds(1));
+    workData->timedOut.store(true, std::memory_order_release);
+}
+
+static void ChainedTimeoutCompleteCallback(napi_env env, napi_status status, void *data)
+{
+    auto *workData = static_cast<ChainedTimeoutPromiseData *>(data);
+    if (workData == nullptr) {
+        return;
+    }
+
+    napi_value reason = nullptr;
+    napi_status createReasonStatus = napi_create_string_utf8(env, "Chained timeout error", NAPI_AUTO_LENGTH, &reason);
+    if (createReasonStatus != napi_ok || reason == nullptr) {
+        napi_get_undefined(env, &reason);
+    }
+
+    if (status == napi_ok && workData->timedOut.load(std::memory_order_acquire)) {
+        napi_value innerPromise = nullptr;
+        napi_deferred innerDeferred = nullptr;
+        napi_status promiseStatus = napi_create_promise(env, &innerDeferred, &innerPromise);
+        if (promiseStatus == napi_ok && innerDeferred != nullptr && innerPromise != nullptr) {
+            napi_reject_deferred(env, innerDeferred, reason);
+            napi_resolve_deferred(env, workData->outerDeferred, innerPromise);
+        } else {
+            napi_reject_deferred(env, workData->outerDeferred, reason);
+        }
+    } else {
+        napi_reject_deferred(env, workData->outerDeferred, reason);
+    }
+
+    if (workData->work != nullptr) {
+        DeleteAsyncWorkForTest(env, workData->work);
+    }
+    delete workData;
+}
+
+static napi_value CreateChainedTimeoutPromise(napi_env env, napi_callback_info)
+{
+    napi_value outerPromise = nullptr;
+    napi_deferred outerDeferred = nullptr;
+    napi_status status = napi_create_promise(env, &outerDeferred, &outerPromise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed.")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, outerDeferred != nullptr, "outerDeferred should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, outerPromise != nullptr, "outerPromise should not be null")) {
+        return nullptr;
+    }
+
+    bool isPromise = false;
+    if (!CheckNapiCall(env, napi_is_promise(env, outerPromise, &isPromise))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, isPromise, "outerPromise should be a promise")) {
+        return nullptr;
+    }
+
+    napi_value resourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "chainedTimeoutPromise", NAPI_AUTO_LENGTH, &resourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, resourceName != nullptr, "resourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *workData = new ChainedTimeoutPromiseData();
+    workData->outerDeferred = outerDeferred;
+    status = napi_create_async_work(env, nullptr, resourceName, ChainedTimeoutExecuteCallback,
+                                    ChainedTimeoutCompleteCallback, workData, &workData->work);
+    if (status != napi_ok || workData->work == nullptr) {
+        delete workData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed.")) {
+            return nullptr;
+        }
+    }
+
+    status = QueueAsyncWorkForTest(env, workData->work);
+    if (status != napi_ok) {
+        DeleteAsyncWorkForTest(env, workData->work);
+        delete workData;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed.")) {
+            return nullptr;
+        }
+    }
+
+    return outerPromise;
+}
+
+static napi_value TestPromiseNestedPromise(napi_env env, napi_callback_info)
+{
+    napi_value outerPromise = nullptr;
+    napi_deferred outerDeferred = nullptr;
+    napi_status status = napi_create_promise(env, &outerDeferred, &outerPromise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed.")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, outerDeferred != nullptr, "outerDeferred should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, outerPromise != nullptr, "outerPromise should not be null")) {
+        return nullptr;
+    }
+
+    napi_value innerPromise = nullptr;
+    napi_deferred innerDeferred = nullptr;
+    status = napi_create_promise(env, &innerDeferred, &innerPromise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed.")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, innerDeferred != nullptr, "innerDeferred should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, innerPromise != nullptr, "innerPromise should not be null")) {
+        return nullptr;
+    }
+
+    napi_value innerValue;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "nested value", NAPI_AUTO_LENGTH, &innerValue))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, innerValue != nullptr, "innerValue should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_resolve_deferred(env, innerDeferred, innerValue))) {
+        return nullptr;
+    }
+
+    if (!CheckNapiCall(env, napi_resolve_deferred(env, outerDeferred, innerPromise))) {
+        return nullptr;
+    }
+
+    return outerPromise;
+}
+
+static napi_value TestPromiseCallbackNested(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+        napi_deferred deferred = nullptr;
+        if (!CreateCheckedPromise(env, &deferred, &promise)) {
+            return nullptr;
+        }
+        if (!ResolvePromiseWithString(env, deferred, "callback nested")) {
+            return nullptr;
+        }
+        return CreateBooleanResult(env, true);
+}
+
+static napi_value TestMultiLevelNestedPromise(napi_env env, napi_callback_info)
+{
+    napi_value level3Promise = nullptr;
+        if (!CreateResolvedStringPromise(env, "multi-level nested", &level3Promise)) {
+            return nullptr;
+        }
+        napi_value level2Promise = nullptr;
+        if (!CreateNestedPromiseLevel(env, level3Promise, &level2Promise)) {
+            return nullptr;
+        }
+        napi_value level1Promise = nullptr;
+        if (!CreateNestedPromiseLevel(env, level2Promise, &level1Promise)) {
+            return nullptr;
+        }
+        return CreateBooleanResult(env, true);
+}
+
+static napi_value TestPromiseInAsyncWork(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+        napi_deferred deferred = nullptr;
+        if (!CreateCheckedPromise(env, &deferred, &promise)) {
+            return nullptr;
+        }
+        if (!ResolvePromiseWithString(env, deferred, "async work nativeResult")) {
+            return nullptr;
+        }
+        return CreateBooleanResult(env, true);
+}
+
+static napi_value TestRejectInNestedPromise(napi_env env, napi_callback_info)
+{
+    napi_value outerPromise = nullptr;
+    napi_deferred outerDeferred = nullptr;
+    napi_status status = napi_create_promise(env, &outerDeferred, &outerPromise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed.")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, outerDeferred != nullptr, "outerDeferred should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, outerPromise != nullptr, "outerPromise should not be null")) {
+        return nullptr;
+    }
+
+    napi_value innerPromise = nullptr;
+    napi_deferred innerDeferred = nullptr;
+    status = napi_create_promise(env, &innerDeferred, &innerPromise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed.")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, innerDeferred != nullptr, "innerDeferred should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, innerPromise != nullptr, "innerPromise should not be null")) {
+        return nullptr;
+    }
+
+    napi_value innerError;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "inner error", NAPI_AUTO_LENGTH, &innerError))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, innerError != nullptr, "innerError should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_reject_deferred(env, innerDeferred, innerError))) {
+        return nullptr;
+    }
+
+    if (!CheckNapiCall(env, napi_resolve_deferred(env, outerDeferred, innerPromise))) {
+        return nullptr;
+    }
+
+    return outerPromise;
+}
+
+static napi_value TestLoopCreatePromise(napi_env env, napi_callback_info)
+{
+    const int loopCount = STRESS_TEST_ITERATION_COUNT;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    
+    for (int i = 0; i < loopCount; i++) {
+        if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+            return nullptr;
+        }
+        if (!CheckNapiAssertion(env, deferred != nullptr, "deferred should not be null")) {
+            return nullptr;
+        }
+        if (!CheckNapiAssertion(env, promise != nullptr, "promise should not be null")) {
+            return nullptr;
+        }
+        napi_value undefined = CreateUndefinedValue(env);
+        if (!CheckNapiAssertion(env, undefined != nullptr, "undefined should not be null")) {
+            return nullptr;
+        }
+        if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, undefined))) {
+            return nullptr;
+        }
+    }
+
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestLoopCreatePromiseAndCheck(napi_env env, napi_callback_info)
+{
+    const int loopCount = STRESS_TEST_ITERATION_COUNT;
+    
+    for (int i = 0; i < loopCount; i++) {
+        napi_value promise = nullptr;
+        napi_deferred deferred = nullptr;
+        if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+            return nullptr;
+        }
+        if (!CheckNapiAssertion(env, deferred != nullptr, "deferred should not be null")) {
+            return nullptr;
+        }
+        if (!CheckNapiAssertion(env, promise != nullptr, "promise should not be null")) {
+            return nullptr;
+        }
+        
+        bool isPromise = false;
+        if (!CheckNapiCall(env, napi_is_promise(env, promise, &isPromise))) {
+            return nullptr;
+        }
+        if (!CheckNapiAssertion(env, isPromise, "promise should be recognized as promise")) {
+            return nullptr;
+        }
+        
+        napi_value undefined = CreateUndefinedValue(env);
+        if (!CheckNapiAssertion(env, undefined != nullptr, "undefined should not be null")) {
+            return nullptr;
+        }
+        if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, undefined))) {
+            return nullptr;
+        }
+    }
+
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestResolveDeferredLoop(napi_env env, napi_callback_info)
+{
+    const int loopCount = STRESS_TEST_ITERATION_COUNT;
+    
+    for (int i = 0; i < loopCount; i++) {
+        napi_value promise = nullptr;
+        napi_deferred deferred = nullptr;
+        if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+            return nullptr;
+        }
+        if (!CheckNapiAssertion(env, deferred != nullptr, "deferred should not be null")) {
+            return nullptr;
+        }
+        if (!CheckNapiAssertion(env, promise != nullptr, "promise should not be null")) {
+            return nullptr;
+        }
+        napi_value undefined = CreateUndefinedValue(env);
+        if (!CheckNapiAssertion(env, undefined != nullptr, "undefined should not be null")) {
+            return nullptr;
+        }
+        if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, undefined))) {
+            return nullptr;
+        }
+        
+        bool isPromise = false;
+        if (!CheckNapiCall(env, napi_is_promise(env, promise, &isPromise))) {
+            return nullptr;
+        }
+        if (!CheckNapiAssertion(env, isPromise, "promise should be recognized as promise")) {
+            return nullptr;
+        }
+    }
+
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestRejectDeferredLoop(napi_env env, napi_callback_info)
+{
+    const int loopCount = STRESS_TEST_ITERATION_COUNT;
+    napi_value err;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "loop error", NAPI_AUTO_LENGTH, &err))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, err != nullptr, "err should not be null")) {
+        return nullptr;
+    }
+    
+    for (int i = 0; i < loopCount; i++) {
+        napi_value promise = nullptr;
+        napi_deferred deferred = nullptr;
+        if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+            return nullptr;
+        }
+        if (!CheckNapiAssertion(env, deferred != nullptr, "deferred should not be null")) {
+            return nullptr;
+        }
+        if (!CheckNapiAssertion(env, promise != nullptr, "promise should not be null")) {
+            return nullptr;
+        }
+        if (!CheckNapiCall(env, napi_reject_deferred(env, deferred, err))) {
+            return nullptr;
+        }
+        
+        bool isPromise = false;
+        if (!CheckNapiCall(env, napi_is_promise(env, promise, &isPromise))) {
+            return nullptr;
+        }
+        if (!CheckNapiAssertion(env, isPromise, "promise should be recognized as promise")) {
+            return nullptr;
+        }
+    }
+
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
 
 
 
