@@ -331,6 +331,7 @@ export default function AvPlayerEnumTest() {
       expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_LIP_ASYNC)).assertEqual(2);
       expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_LOADINGRATE_CHANGE)).assertEqual(3);
       expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_LOADING_ERROR)).assertEqual(4);
+      expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_CONTENT_CHANGED)).assertEqual(5);
       expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_CONTENT_DISCONTINUITY)).assertEqual(6);
       expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_AUDIO_ABNORMAL)).assertEqual(7);
       done();
