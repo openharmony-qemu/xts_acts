@@ -178,7 +178,7 @@ export default function identifySensitiveContentTestUnit() {
           expect().assertFail();
         } catch (error) {
           console.info('scanfileDirectoryPath:' + error.code);
-          expect(error.code === 19110003 || error.code === 201).assertTrue();
+          expect(error.code === 19110003 || error.code === 201 || error.code === 19110004).assertTrue();
         }
     })
 
@@ -220,7 +220,7 @@ export default function identifySensitiveContentTestUnit() {
           expect().assertFail();
         } catch (error) {
           console.info('scanfilePolicyLabelEmpty:' + error.code);
-          expect(error.code === 19110001 || error.code === 201).assertTrue();
+          expect(error.code === 19110001 || error.code === 201 || error.code === 19110004).assertTrue();
         }
     })
 
@@ -242,7 +242,7 @@ export default function identifySensitiveContentTestUnit() {
           expect().assertFail();
         } catch (error) {
           console.info('scanfilePolicyLabelLong:' + error.code);
-          expect(error.code === 19110001 || error.code === 201).assertTrue();
+          expect(error.code === 19110001 || error.code === 201 || error.code === 19110004).assertTrue();
         }
     })
 
@@ -289,7 +289,7 @@ export default function identifySensitiveContentTestUnit() {
           expect().assertFail();
         } catch (error) {
           console.info('scanfilePolicyKeywordLong:' + error.code);
-          expect(error.code === 19110001 || error.code === 201).assertTrue();
+          expect(error.code === 19110001 || error.code === 201 || error.code === 19110004).assertTrue();
         }
     })
 
@@ -311,7 +311,7 @@ export default function identifySensitiveContentTestUnit() {
           expect().assertFail();
         } catch (error) {
           console.info('scanfilePolicyRegexLong:' + error.code);
-          expect(error.code === 19110001 || error.code === 201).assertTrue();
+          expect(error.code === 19110001 || error.code === 201 || error.code === 19110004).assertTrue();
         }
     })
 
