@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -641,7 +641,7 @@ export default function BigInt64ArrayFilter02Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FILTER_TWO_4300
      * @tc.name testBigInt64ArrayFilterTwo4300
-     * @tc.desc Verify `src.filter((val) => val > 10n)` produces a result where `ret[0]` is undefined.
+     * @tc.desc Verify `src.filter((val) => val > 10n)` produces a result where `ret[0]` throws RangeError.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -649,13 +649,18 @@ export default function BigInt64ArrayFilter02Test(): void {
     it('testBigInt64ArrayFilterTwo4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src = new BigInt64Array([1n, 2n, 3n]);
       let ret = src.filter((val: bigint) => val > 10n);
-      expect(ret[0]).assertEqual(undefined);
+      try {
+        ret[0];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FILTER_TWO_4400
      * @tc.name testBigInt64ArrayFilterTwo4400
-     * @tc.desc Verify `src.filter((val) => val > 0n)` produces a result where `ret[1]` is undefined.
+     * @tc.desc Verify `src.filter((val) => val > 0n)` produces a result where `ret[1]` throws RangeError.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -663,7 +668,12 @@ export default function BigInt64ArrayFilter02Test(): void {
     it('testBigInt64ArrayFilterTwo4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src = new BigInt64Array([100n, -200n]);
       let ret = src.filter((val: bigint) => val > 0n);
-      expect(ret[1]).assertEqual(undefined);
+      try {
+        ret[1];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
@@ -1064,7 +1074,9 @@ export default function BigInt64ArrayFilter02Test(): void {
           }
           return true;
         });
+        expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         expect(src.length).assertEqual(2);
         expect(src[0]).assertEqual(10n);
       }

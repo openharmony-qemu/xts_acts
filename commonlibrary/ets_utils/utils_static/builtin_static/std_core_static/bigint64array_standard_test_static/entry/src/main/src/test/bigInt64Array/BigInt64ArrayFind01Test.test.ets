@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -316,31 +316,38 @@ export default function BigInt64ArrayFind01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_FOUR_2000
      * @tc.name testBigInt64ArrayFindFour2000
-     * @tc.desc Verify find returns 11n when odd step parity is reused.
+     * @tc.desc Verify find receives indices relative to a subarray and the subarray as its array argument.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindFour2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([10n, 11n, 12n, 13n, 14n, 15n, 16n]);
-      let step = 13n;
-      let res = arr.find((v: bigint) => (v % 2n) === (step % 2n));
-      expect(res).assertEqual(11n);
+      let root = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
+      let view = root.subarray(1, 4);
+      let res = view.find((v: bigint, idx: int, array: BigInt64Array): boolean => {
+        return array === view && idx === 1 && v === 30n;
+      });
+      expect(res).assertEqual(30n);
+      expect(root.join()).assertEqual('10,20,30,40,50');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_FOUR_2100
      * @tc.name testBigInt64ArrayFindFour2100
-     * @tc.desc Verify find returns 10n when even step parity is reused.
+     * @tc.desc Verify a no-match find evaluates every element exactly once.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindFour2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([10n, 11n, 12n, 13n, 14n, 15n, 16n]);
-      let step = 14n;
-      let res = arr.find((v: bigint) => (v % 2n) === (step % 2n));
-      expect(res).assertEqual(10n);
+      let arr = new BigInt64Array([2n, 4n, 6n, 8n]);
+      let calls = 0;
+      let res = arr.find((v: bigint): boolean => {
+        calls++;
+        return v < 0n;
+      });
+      expect(res).assertEqual(undefined);
+      expect(calls).assertEqual(4);
     });
 
     /**
@@ -360,57 +367,64 @@ export default function BigInt64ArrayFind01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_FOUR_2300
      * @tc.name testBigInt64ArrayFindFour2300
-     * @tc.desc Verify find returns 5n when shifted index sum equals 0 modulo 5.
+     * @tc.desc Verify find observes the element order produced by reverse.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindFour2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
-      let res = arr.find((v: bigint, idx: int) => (idx + 1) % 5 === 0);
+      let arr = new BigInt64Array([1n, 4n, 2n, 5n, 3n]);
+      arr.reverse();
+      let res = arr.find((v: bigint): boolean => v > 4n);
       expect(res).assertEqual(5n);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_FOUR_2400
      * @tc.name testBigInt64ArrayFindFour2400
-     * @tc.desc Verify find returns 4n for shifted index condition plus 2.
+     * @tc.desc Verify find returns the first value written by a partial fill operation.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindFour2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
-      let res = arr.find((v: bigint, idx: int) => (idx + 2) % 5 === 0);
-      expect(res).assertEqual(4n);
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n]);
+      arr.fill(9n, 1, 3);
+      let res = arr.find((v: bigint): boolean => v === 9n);
+      expect(res).assertEqual(9n);
+      expect(arr.join()).assertEqual('1,9,9,4');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_FOUR_2500
      * @tc.name testBigInt64ArrayFindFour2500
-     * @tc.desc Verify find returns 3n for shifted index condition plus 3.
+     * @tc.desc Verify find distinguishes signed 64-bit boundary values.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindFour2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
-      let res = arr.find((v: bigint, idx: int) => (idx + 3) % 5 === 0);
-      expect(res).assertEqual(3n);
+      let min = -9223372036854775807n - 1n;
+      let max = 9223372036854775807n;
+      let arr = new BigInt64Array([min, max]);
+      let res = arr.find((v: bigint): boolean => v > 0n);
+      expect(res).assertEqual(max);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_FOUR_2600
      * @tc.name testBigInt64ArrayFindFour2600
-     * @tc.desc Verify find returns 2n for shifted index condition plus 4.
+     * @tc.desc Verify find on a view does not inspect elements outside the view.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindFour2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
-      let res = arr.find((v: bigint, idx: int) => (idx + 4) % 5 === 0);
-      expect(res).assertEqual(2n);
+      let root = new BigInt64Array([5n, 10n, 15n, 20n, 25n]);
+      let view = root.subarray(1, 4);
+      let res = view.find((v: bigint): boolean => v % 10n === 0n);
+      expect(res).assertEqual(10n);
+      expect(view.byteOffset).assertEqual(8);
     });
   });
 }

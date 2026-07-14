@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -436,136 +436,153 @@ export default function BigInt64ArrayFind02Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_TWO_2200
      * @tc.name testBigInt64ArrayFindTwo2200
-     * @tc.desc Verify `arr.find((v) => v === factor)` equals `1n`.
+     * @tc.desc Verify find on an empty BigInt64Array returns undefined without invoking the predicate.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindTwo2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([0n, 1n, 2n, 3n, 4n, 5n, 6n, 7n, 8n, 9n]);
-      let factor = 1n;
-      let res = arr.find((v: bigint) => v === factor);
-      expect(res).assertEqual(1n);
+      let arr = new BigInt64Array(0);
+      let calls = 0;
+      let res = arr.find((_v: bigint): boolean => {
+        calls++;
+        return true;
+      });
+      expect(res).assertEqual(undefined);
+      expect(calls).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_TWO_2300
      * @tc.name testBigInt64ArrayFindTwo2300
-     * @tc.desc Verify `arr.find((v) => v === factor)` equals `2n`.
+     * @tc.desc Verify a no-match predicate visits the complete array and returns undefined.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindTwo2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([0n, 1n, 2n, 3n, 4n, 5n, 6n, 7n, 8n, 9n]);
-      let factor = 2n;
-      let res = arr.find((v: bigint) => v === factor);
-      expect(res).assertEqual(2n);
+      let arr = new BigInt64Array([1n, 3n, 5n, 7n]);
+      let calls = 0;
+      let res = arr.find((v: bigint): boolean => {
+        calls++;
+        return v % 2n === 0n;
+      });
+      expect(res).assertEqual(undefined);
+      expect(calls).assertEqual(4);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_TWO_2400
      * @tc.name testBigInt64ArrayFindTwo2400
-     * @tc.desc Verify `arr.find((v) => v === factor)` equals `3n`.
+     * @tc.desc Verify find returns the first repeated match and stops before later duplicates.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindTwo2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([0n, 1n, 2n, 3n, 4n, 5n, 6n, 7n, 8n, 9n]);
-      let factor = 3n;
-      let res = arr.find((v: bigint) => v === factor);
-      expect(res).assertEqual(3n);
+      let arr = new BigInt64Array([1n, 7n, 7n, 7n]);
+      let calls = 0;
+      let res = arr.find((v: bigint): boolean => {
+        calls++;
+        return v === 7n;
+      });
+      expect(res).assertEqual(7n);
+      expect(calls).assertEqual(2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_TWO_2500
      * @tc.name testBigInt64ArrayFindTwo2500
-     * @tc.desc Verify `arr.find((v) => v === factor)` equals `4n`.
+     * @tc.desc Verify the callback index can select the final element independently of its value.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindTwo2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([0n, 1n, 2n, 3n, 4n, 5n, 6n, 7n, 8n, 9n]);
-      let factor = 4n;
-      let res = arr.find((v: bigint) => v === factor);
-      expect(res).assertEqual(4n);
+      let arr = new BigInt64Array([10n, 20n, 30n, 40n]);
+      let res = arr.find((_v: bigint, idx: int): boolean => idx === arr.length - 1);
+      expect(res).assertEqual(40n);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_TWO_2600
      * @tc.name testBigInt64ArrayFindTwo2600
-     * @tc.desc Verify `arr.find((v) => v === factor)` equals `5n`.
+     * @tc.desc Verify the callback receives the original typed array instance.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindTwo2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([0n, 1n, 2n, 3n, 4n, 5n, 6n, 7n, 8n, 9n]);
-      let factor = 5n;
-      let res = arr.find((v: bigint) => v === factor);
-      expect(res).assertEqual(5n);
+      let arr = new BigInt64Array([12n, 24n, 36n]);
+      let receivedSameArray = false;
+      let res = arr.find((v: bigint, _idx: int, array: BigInt64Array): boolean => {
+        receivedSameArray = array === arr;
+        return v === 24n;
+      });
+      expect(res).assertEqual(24n);
+      expect(receivedSameArray).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_TWO_2700
      * @tc.name testBigInt64ArrayFindTwo2700
-     * @tc.desc Verify `arr.find((v) => v === factor)` equals `6n`.
+     * @tc.desc Verify find returns the first value below a negative threshold.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindTwo2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([0n, 1n, 2n, 3n, 4n, 5n, 6n, 7n, 8n, 9n]);
-      let factor = 6n;
-      let res = arr.find((v: bigint) => v === factor);
-      expect(res).assertEqual(6n);
+      let arr = new BigInt64Array([-2n, -8n, -10n, 4n]);
+      let res = arr.find((v: bigint): boolean => v < -5n);
+      expect(res).assertEqual(-8n);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_TWO_2800
      * @tc.name testBigInt64ArrayFindTwo2800
-     * @tc.desc Verify `arr.find((v) => v === factor)` equals `7n`.
+     * @tc.desc Verify find observes signed wrapping of a value above the int64 maximum.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindTwo2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([0n, 1n, 2n, 3n, 4n, 5n, 6n, 7n, 8n, 9n]);
-      let factor = 7n;
-      let res = arr.find((v: bigint) => v === factor);
-      expect(res).assertEqual(7n);
+      let arr = new BigInt64Array([9223372036854775808n, 1n]);
+      let res = arr.find((v: bigint): boolean => v < 0n);
+      expect(res).assertEqual(-9223372036854775808n);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_TWO_2900
      * @tc.name testBigInt64ArrayFindTwo2900
-     * @tc.desc Verify `arr.find((v) => v === factor)` equals `8n`.
+     * @tc.desc Verify find on a non-zero-offset view searches only visible elements.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindTwo2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([0n, 1n, 2n, 3n, 4n, 5n, 6n, 7n, 8n, 9n]);
-      let factor = 8n;
-      let res = arr.find((v: bigint) => v === factor);
-      expect(res).assertEqual(8n);
+      let buffer = new ArrayBuffer(40);
+      let root = new BigInt64Array(buffer);
+      root.set([5n, 10n, 15n, 20n, 25n]);
+      let view = new BigInt64Array(buffer, 16, 2);
+      let res = view.find((v: bigint): boolean => v % 10n === 0n);
+      expect(res).assertEqual(20n);
+      expect(view.byteOffset).assertEqual(16);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_TWO_3000
      * @tc.name testBigInt64ArrayFindTwo3000
-     * @tc.desc Verify `arr.find((v) => v === factor)` equals `9n`.
+     * @tc.desc Verify find observes a value written by set before the search starts.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindTwo3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([0n, 1n, 2n, 3n, 4n, 5n, 6n, 7n, 8n, 9n]);
-      let factor = 9n;
-      let res = arr.find((v: bigint) => v === factor);
-      expect(res).assertEqual(9n);
+      let arr = new BigInt64Array([3n, 6n, 9n, 12n]);
+      arr.set(2, 99n);
+      let res = arr.find((v: bigint): boolean => v > 50n);
+      expect(res).assertEqual(99n);
+      expect(arr[2]).assertEqual(99n);
     });
 
     /**

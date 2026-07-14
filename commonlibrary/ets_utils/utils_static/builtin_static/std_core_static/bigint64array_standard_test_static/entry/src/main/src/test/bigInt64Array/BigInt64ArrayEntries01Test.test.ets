@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -912,7 +912,7 @@ export default function BigInt64ArrayEntries01Test(): void {
         let iterator = arr.entries();
         let step1 = iterator.next();
         expect(step1.done).assertEqual(false);
-        let value = step1.value as [number, bigint];
+        let value = step1.value as [int, bigint];
         expect(value[0]).assertEqual(0);
         expect(value[1]).assertEqual(1n);
       });

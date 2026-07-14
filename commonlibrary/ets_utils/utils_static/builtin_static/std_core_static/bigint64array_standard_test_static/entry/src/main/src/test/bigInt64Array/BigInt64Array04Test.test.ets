@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -1826,7 +1826,7 @@ export default function BigInt64Array04Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1200
      * @tc.name testBigInt64ArrayFour1200
-     * @tc.desc Verify indexOf returns a number result.
+     * @tc.desc Verify indexOf returns an int result.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1834,7 +1834,7 @@ export default function BigInt64Array04Test(): void {
     it('testBigInt64ArrayFour1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n]);
       let idx = arr.indexOf(2n);
-      expect(typeof idx).assertEqual('number');
+      expect(typeof idx).assertEqual('int');
     });
 
     /**
@@ -1903,16 +1903,12 @@ export default function BigInt64Array04Test(): void {
      */
     it('testBigInt64ArrayFour1250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n]);
-      let caught = false;
-      let errorName = '';
       try {
         arr.with(3, 99n);
+        expect().assertFail();
       } catch (e) {
-        caught = e !== null && e !== undefined;
-        errorName = e.name;
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(caught).assertTrue();
-      expect(errorName).assertEqual('RangeError');
     });
 
     /**
@@ -1926,16 +1922,12 @@ export default function BigInt64Array04Test(): void {
      */
     it('testBigInt64ArrayFour1260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n]);
-      let caught = false;
-      let errorName = '';
       try {
         arr.with(-4, 99n);
+        expect().assertFail();
       } catch (e) {
-        caught = e !== null && e !== undefined;
-        errorName = e.name;
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(caught).assertTrue();
-      expect(errorName).assertEqual('RangeError');
     });
 
     /**
@@ -1949,17 +1941,13 @@ export default function BigInt64Array04Test(): void {
      */
     it('testBigInt64ArrayFour1270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n]);
-      let caught = false;
-      let errorName = '';
       try {
         let src = new BigInt64Array([9n, 8n, 7n]);
         arr.set(src, 2);
+        expect().assertFail();
       } catch (e) {
-        caught = e !== null && e !== undefined;
-        errorName = e.name;
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(caught).assertTrue();
-      expect(errorName).assertEqual('RangeError');
     });
 
     /**
@@ -1972,16 +1960,12 @@ export default function BigInt64Array04Test(): void {
      */
     it('testBigInt64ArrayFour1280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(16);
-      let caught = false;
-      let errorName = '';
       try {
         new BigInt64Array(buf, 4);
+        expect().assertFail();
       } catch (e) {
-        caught = e !== null && e !== undefined;
-        errorName = e.name;
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(caught).assertTrue();
-      expect(errorName).assertEqual('RangeError');
     });
 
     /**
@@ -1995,16 +1979,12 @@ export default function BigInt64Array04Test(): void {
      */
     it('testBigInt64ArrayFour1290', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(8);
-      let caught = false;
-      let errorName = '';
       try {
         new BigInt64Array(buf, 16);
+        expect().assertFail();
       } catch (e) {
-        caught = e !== null && e !== undefined;
-        errorName = e.name;
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(caught).assertTrue();
-      expect(errorName).assertEqual('RangeError');
     });
 
     /**
@@ -2016,16 +1996,12 @@ export default function BigInt64Array04Test(): void {
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFour1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let caught = false;
-      let errorName = '';
       try {
         new BigInt64Array(-1);
+        expect().assertFail();
       } catch (e) {
-        caught = e !== null && e !== undefined;
-        errorName = e.name;
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(caught).assertTrue();
-      expect(errorName).assertEqual('RangeError');
     });
 
     /**
@@ -2037,16 +2013,12 @@ export default function BigInt64Array04Test(): void {
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFour1310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let caught = false;
-      let errorName = '';
       try {
         new BigInt64Array(Infinity);
+        expect().assertFail();
       } catch (e) {
-        caught = e !== null && e !== undefined;
-        errorName = e.name;
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(caught).assertTrue();
-      expect(errorName).assertEqual('RangeError');
     });
 
     /**
@@ -2060,16 +2032,12 @@ export default function BigInt64Array04Test(): void {
      */
     it('testBigInt64ArrayFour1320', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array(0);
-      let caught = false;
-      let errorName = '';
       try {
         arr.reduce((acc, v) => acc + v);
+        expect().assertFail();
       } catch (e) {
-        caught = e !== null && e !== undefined;
-        errorName = e.name;
+        expect(e.name).assertEqual('TypeError');
       }
-      expect(caught).assertTrue();
-      expect(errorName).assertEqual('TypeError');
     });
 
     /**
@@ -2083,16 +2051,12 @@ export default function BigInt64Array04Test(): void {
      */
     it('testBigInt64ArrayFour1330', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array(0);
-      let caught = false;
-      let errorName = '';
       try {
         arr.reduceRight((acc, v) => acc + v);
+        expect().assertFail();
       } catch (e) {
-        caught = e !== null && e !== undefined;
-        errorName = e.name;
+        expect(e.name).assertEqual('TypeError');
       }
-      expect(caught).assertTrue();
-      expect(errorName).assertEqual('TypeError');
     });
 
     /**
@@ -2105,16 +2069,13 @@ export default function BigInt64Array04Test(): void {
      */
     it('testBigInt64ArrayFour1340', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([3n, 1n, 2n]);
-      let caught = false;
-      let errorMessage = '';
       try {
         arr.sort((_a, _b) => { throw new Error('sort error'); });
+        expect().assertFail();
       } catch (e) {
-        caught = e !== null && e !== undefined;
-        errorMessage = e.message;
+        expect(e.name).assertEqual('Error');
+        expect(e.message).assertEqual('sort error');
       }
-      expect(caught).assertTrue();
-      expect(errorMessage).assertEqual('sort error');
     });
 
     /**
@@ -2127,16 +2088,13 @@ export default function BigInt64Array04Test(): void {
      */
     it('testBigInt64ArrayFour1350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n]);
-      let caught = false;
-      let errorMessage = '';
       try {
         arr.map((_v) => { throw new Error('map error'); });
+        expect().assertFail();
       } catch (e) {
-        caught = e !== null && e !== undefined;
-        errorMessage = e.message;
+        expect(e.name).assertEqual('Error');
+        expect(e.message).assertEqual('map error');
       }
-      expect(caught).assertTrue();
-      expect(errorMessage).assertEqual('map error');
     });
 
     /**
@@ -2149,16 +2107,13 @@ export default function BigInt64Array04Test(): void {
      */
     it('testBigInt64ArrayFour1360', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n]);
-      let caught = false;
-      let errorMessage = '';
       try {
         arr.filter((_v) => { throw new Error('filter error'); });
+        expect().assertFail();
       } catch (e) {
-        caught = e !== null && e !== undefined;
-        errorMessage = e.message;
+        expect(e.name).assertEqual('Error');
+        expect(e.message).assertEqual('filter error');
       }
-      expect(caught).assertTrue();
-      expect(errorMessage).assertEqual('filter error');
     });
 
     /**
@@ -2171,16 +2126,13 @@ export default function BigInt64Array04Test(): void {
      */
     it('testBigInt64ArrayFour1370', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n]);
-      let caught = false;
-      let errorMessage = '';
       try {
         arr.reduce((_acc: BigInt, _v: BigInt): BigInt => { throw new Error('reduce error'); }, 0n);
+        expect().assertFail();
       } catch (e) {
-        caught = e !== null && e !== undefined;
-        errorMessage = e.message;
+        expect(e.name).assertEqual('Error');
+        expect(e.message).assertEqual('reduce error');
       }
-      expect(caught).assertTrue();
-      expect(errorMessage).assertEqual('reduce error');
     });
 
     /**
@@ -2193,57 +2145,67 @@ export default function BigInt64Array04Test(): void {
      */
     it('testBigInt64ArrayFour1380', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n]);
-      let caught = false;
-      let errorMessage = '';
       try {
         arr.forEach((_v) => { throw new Error('forEach error'); });
+        expect().assertFail();
       } catch (e) {
-        caught = e !== null && e !== undefined;
-        errorMessage = e.message;
+        expect(e.name).assertEqual('Error');
+        expect(e.message).assertEqual('forEach error');
       }
-      expect(caught).assertTrue();
-      expect(errorMessage).assertEqual('forEach error');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1390
      * @tc.name testBigInt64ArrayFour1390
-     * @tc.desc Verify $_get returns undefined for a positive out-of-bounds index.
+     * @tc.desc Verify $_get throws RangeError for a positive out-of-bounds index.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testBigInt64ArrayFour1390', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n]);
-      let val = arr.$_get(3);
-      expect(val).assertEqual(undefined);
+      try {
+        arr.$_get(3);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1400
      * @tc.name testBigInt64ArrayFour1400
-     * @tc.desc Verify $_get returns undefined for a negative out-of-bounds index.
+     * @tc.desc Verify $_get throws RangeError for a negative out-of-bounds index.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testBigInt64ArrayFour1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n]);
-      let val = arr.$_get(-1);
-      expect(val).assertEqual(undefined);
+      try {
+        arr.$_get(-1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1410
      * @tc.name testBigInt64ArrayFour1410
-     * @tc.desc Verify $_set ignores an out-of-bounds index without throwing.
+     * @tc.desc Verify $_set throws RangeError for an out-of-bounds index.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFour1410', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n]);
-      arr.$_set(100, 99n);
+      try {
+        arr.$_set(100, 99n);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
       expect(arr.length).assertEqual(3);
       expect(arr[0]).assertEqual(1n);
     });

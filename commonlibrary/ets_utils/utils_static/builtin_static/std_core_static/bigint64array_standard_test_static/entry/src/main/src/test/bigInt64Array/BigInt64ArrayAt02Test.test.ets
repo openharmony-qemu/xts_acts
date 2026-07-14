@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -528,7 +528,7 @@ export default function BigInt64ArrayAt02Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_AT_TWO_3700
      * @tc.name testBigInt64ArrayAtTwo3700
-     * @tc.desc Verify `arr.at(1)` produces a result where `val >> 1n` equals `9n`.
+     * @tc.desc Verify `arr.at(1)` produces a result where `val >> 1n` equals `10n`.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -536,7 +536,7 @@ export default function BigInt64ArrayAt02Test(): void {
     it('testBigInt64ArrayAtTwo3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let arr = new BigInt64Array([18n, 20n]);
         let val = arr.at(1) as bigint;
-        expect(val >> 1n).assertEqual(9n);
+        expect(val >> 1n).assertEqual(10n);
       });
 
     /**

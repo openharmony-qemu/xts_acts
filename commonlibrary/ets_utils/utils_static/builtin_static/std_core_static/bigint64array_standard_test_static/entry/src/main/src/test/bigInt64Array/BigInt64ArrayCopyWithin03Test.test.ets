@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -872,15 +872,15 @@ export default function BigInt64ArrayCopyWithin03Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_COPY_WITHIN_THREE_0580
      * @tc.name testBigInt64ArrayCopyWithinThree0580
-     * @tc.desc Verify `arr.copyWithin(4, 2)` produces a result where `new BigInt64Array([35n, 36n, 37n, 38n, 39n])[4]` equals `37n`.
+     * @tc.desc Verify a source range exactly matching the remaining target space is not over-truncated.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayCopyWithinThree0580', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr = new BigInt64Array([35n, 36n, 37n, 38n, 39n]);
-        arr.copyWithin(4, 2);
-        expect(arr[4]).assertEqual(37n);
+        let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n, 60n, 70n, 80n]);
+        arr.copyWithin(6, 2, 4);
+        expect(arr.join()).assertEqual('10,20,30,40,50,60,30,40');
       });
 
     /**
@@ -901,15 +901,16 @@ export default function BigInt64ArrayCopyWithin03Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_COPY_WITHIN_THREE_0600
      * @tc.name testBigInt64ArrayCopyWithinThree0600
-     * @tc.desc Verify `arr.copyWithin(4, 3)` produces a result where `new BigInt64Array([39n, 40n, 41n, 42n, 43n])[4]` equals `42n`.
+     * @tc.desc Verify negative target, start, and end values are resolved before truncating the copy.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayCopyWithinThree0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr = new BigInt64Array([39n, 40n, 41n, 42n, 43n]);
-        arr.copyWithin(4, 3);
-        expect(arr[4]).assertEqual(42n);
+        let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n, 6n, 7n, 8n]);
+        arr.copyWithin(-1, -6, -3);
+        expect(arr.join()).assertEqual('1,2,3,4,5,6,7,3');
+        expect(arr.byteLength).assertEqual(64);
       });
 
     /**

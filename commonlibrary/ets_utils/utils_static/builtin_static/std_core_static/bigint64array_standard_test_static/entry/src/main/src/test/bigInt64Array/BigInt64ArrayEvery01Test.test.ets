@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -1323,7 +1323,10 @@ export default function BigInt64ArrayEvery01Test(): void {
         arr67.every((v) => {
           throw new Error('halt');
         });
-      } catch (e) {}
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+      }
       expect(arr67[0]).assertEqual(100n);
     });
 

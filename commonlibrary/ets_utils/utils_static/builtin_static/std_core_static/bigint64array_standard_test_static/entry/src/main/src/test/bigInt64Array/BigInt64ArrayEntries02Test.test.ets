@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -197,7 +197,7 @@ export default function BigInt64ArrayEntries02Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ENTRIES_TWO_1200
      * @tc.name testBigInt64ArrayEntriesTwo1200
-     * @tc.desc Verify `arr.entries()` produces a result where `typeof nextObj.value[0]` equals `'number'`.
+     * @tc.desc Verify `arr.entries()` produces a result where `typeof nextObj.value[0]` equals `'int'`.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -206,8 +206,8 @@ export default function BigInt64ArrayEntries02Test(): void {
       let arr = new BigInt64Array([88n]);
       let iter = arr.entries();
       let nextObj = iter.next();
-      let val = nextObj.value as [number, bigint];
-      expect(typeof val[0]).assertEqual('number');
+      let val = nextObj.value as [int, bigint];
+      expect(typeof val[0]).assertEqual('int');
     });
 
     /**
@@ -222,7 +222,7 @@ export default function BigInt64ArrayEntries02Test(): void {
       let arr = new BigInt64Array([88n]);
       let iter = arr.entries();
       let nextObj = iter.next();
-      let val = nextObj.value as [number, bigint];
+      let val = nextObj.value as [int, bigint];
       expect(typeof val[1]).assertEqual('bigint');
     });
 
@@ -238,7 +238,7 @@ export default function BigInt64ArrayEntries02Test(): void {
       let arr = new BigInt64Array([9223372036854775807n]);
       let iter = arr.entries();
       let nextObj = iter.next();
-      let val = nextObj.value as [number, bigint];
+      let val = nextObj.value as [int, bigint];
       expect(typeof val[1]).assertEqual('bigint');
     });
 
@@ -254,7 +254,7 @@ export default function BigInt64ArrayEntries02Test(): void {
       let arr = new BigInt64Array([-9223372036854775807n - 1n]);
       let iter = arr.entries();
       let nextObj = iter.next();
-      let val = nextObj.value as [number, bigint];
+      let val = nextObj.value as [int, bigint];
       expect(typeof val[1]).assertEqual('bigint');
     });
 
@@ -347,7 +347,7 @@ export default function BigInt64ArrayEntries02Test(): void {
       let arr = new BigInt64Array([0n]);
       let iter = arr.entries();
       let nextObj = iter.next();
-      let val = nextObj.value as [number, bigint];
+      let val = nextObj.value as [int, bigint];
       expect(val[0]).assertEqual(0);
     });
 
@@ -363,7 +363,7 @@ export default function BigInt64ArrayEntries02Test(): void {
       let arr = new BigInt64Array([0n]);
       let iter = arr.entries();
       let nextObj = iter.next();
-      let val = nextObj.value as [number, bigint];
+      let val = nextObj.value as [int, bigint];
       expect(val[1]).assertEqual(0n);
     });
 
@@ -412,7 +412,7 @@ export default function BigInt64ArrayEntries02Test(): void {
       let iter = arr.entries();
       iter.next();
       let nextObj2 = iter.next();
-      let val = nextObj2.value as [number, bigint];
+      let val = nextObj2.value as [int, bigint];
       expect(val[0]).assertEqual(1);
     });
 
@@ -429,7 +429,7 @@ export default function BigInt64ArrayEntries02Test(): void {
       let iter = arr.entries();
       iter.next();
       let nextObj2 = iter.next();
-      let val = nextObj2.value as [number, bigint];
+      let val = nextObj2.value as [int, bigint];
       expect(val[1]).assertEqual(20n);
     });
 
@@ -461,7 +461,7 @@ export default function BigInt64ArrayEntries02Test(): void {
     it('testBigInt64ArrayEntriesTwo2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([9223372036854775807n]);
       let iter = arr.entries();
-      let val = iter.next().value as [number, bigint];
+      let val = iter.next().value as [int, bigint];
       expect(val[1]).assertEqual(9223372036854775807n);
     });
 
@@ -476,7 +476,7 @@ export default function BigInt64ArrayEntries02Test(): void {
     it('testBigInt64ArrayEntriesTwo2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([-9223372036854775807n - 1n]);
       let iter = arr.entries();
-      let val = iter.next().value as [number, bigint];
+      let val = iter.next().value as [int, bigint];
       expect(val[1]).assertEqual(-9223372036854775807n - 1n);
     });
 
@@ -491,7 +491,7 @@ export default function BigInt64ArrayEntries02Test(): void {
     it('testBigInt64ArrayEntriesTwo3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([-1n]);
       let iter = arr.entries();
-      let val = iter.next().value as [number, bigint];
+      let val = iter.next().value as [int, bigint];
       expect(val[1]).assertEqual(-1n);
     });
 
@@ -506,7 +506,7 @@ export default function BigInt64ArrayEntries02Test(): void {
     it('testBigInt64ArrayEntriesTwo3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([171n]);
       let iter = arr.entries();
-      let val = iter.next().value as [number, bigint];
+      let val = iter.next().value as [int, bigint];
       expect(val[1]).assertEqual(171n);
     });
 
@@ -521,7 +521,7 @@ export default function BigInt64ArrayEntries02Test(): void {
     it('testBigInt64ArrayEntriesTwo3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([61n]);
       let iter = arr.entries();
-      let val = iter.next().value as [number, bigint];
+      let val = iter.next().value as [int, bigint];
       expect(val[1]).assertEqual(61n);
     });
 
@@ -536,7 +536,7 @@ export default function BigInt64ArrayEntries02Test(): void {
     it('testBigInt64ArrayEntriesTwo3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([11n]);
       let iter = arr.entries();
-      let val = iter.next().value as [number, bigint];
+      let val = iter.next().value as [int, bigint];
       expect(val[1]).assertEqual(11n);
     });
 
@@ -551,7 +551,7 @@ export default function BigInt64ArrayEntries02Test(): void {
     it('testBigInt64ArrayEntriesTwo3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([5n, 5n, 5n]);
       let iter = arr.entries();
-      let val = iter.next().value as [number, bigint];
+      let val = iter.next().value as [int, bigint];
       expect(val[0]).assertEqual(0);
       expect(val[1]).assertEqual(5n);
     });
@@ -569,7 +569,7 @@ export default function BigInt64ArrayEntries02Test(): void {
       let iter = arr.entries();
       iter.next();
       iter.next();
-      let val3 = iter.next().value as [number, bigint];
+      let val3 = iter.next().value as [int, bigint];
       expect(val3[0]).assertEqual(2);
       expect(val3[1]).assertEqual(5n);
     });
@@ -815,7 +815,7 @@ export default function BigInt64ArrayEntries02Test(): void {
       let iter1 = arr.entries();
       let iter2 = arr.entries();
       iter1.next();
-      let val2 = iter2.next().value as [number, bigint];
+      let val2 = iter2.next().value as [int, bigint];
       expect(val2[0]).assertEqual(0);
       expect(val2[1]).assertEqual(50n);
     });
@@ -833,7 +833,7 @@ export default function BigInt64ArrayEntries02Test(): void {
       let iter1 = arr.entries();
       let iter2 = arr.entries();
       iter1.next(); iter1.next(); iter1.next();
-      let val2 = iter2.next().value as [number, bigint];
+      let val2 = iter2.next().value as [int, bigint];
       expect(val2[0]).assertEqual(0);
       expect(val2[1]).assertEqual(1n);
     });
@@ -852,7 +852,7 @@ export default function BigInt64ArrayEntries02Test(): void {
       let iterA = arrA.entries();
       let iterB = arrB.entries();
       iterA.next();
-      let valB = iterB.next().value as [number, bigint];
+      let valB = iterB.next().value as [int, bigint];
       expect(valB[1]).assertEqual(8n);
     });
 
@@ -869,7 +869,7 @@ export default function BigInt64ArrayEntries02Test(): void {
       let iter1 = arr.entries();
       iter1.next();
       let iter2 = arr.entries();
-      let val2 = iter2.next().value as [number, bigint];
+      let val2 = iter2.next().value as [int, bigint];
       expect(val2[1]).assertEqual(-1n);
     });
 
@@ -884,7 +884,7 @@ export default function BigInt64ArrayEntries02Test(): void {
     it('testBigInt64ArrayEntriesTwo5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([7n, 8n]);
       let iter = arr.entries();
-      let val1 = iter.next().value as [number, bigint];
+      let val1 = iter.next().value as [int, bigint];
       expect(val1[0]).assertEqual(0);
       expect(val1[1]).assertEqual(7n);
     });
@@ -901,7 +901,7 @@ export default function BigInt64ArrayEntries02Test(): void {
       let arr = new BigInt64Array([1n, 2n]);
       let iter = arr.entries();
       arr[0] = 99n;
-      let val = iter.next().value as [number, bigint];
+      let val = iter.next().value as [int, bigint];
       expect(val[0]).assertEqual(0);
       expect(val[1]).assertEqual(99n);
     });
@@ -919,7 +919,7 @@ export default function BigInt64ArrayEntries02Test(): void {
       let iter = arr.entries();
       iter.next();
       arr[1] = 88n;
-      let val2 = iter.next().value as [number, bigint];
+      let val2 = iter.next().value as [int, bigint];
       expect(val2[0]).assertEqual(1);
       expect(val2[1]).assertEqual(88n);
     });
@@ -937,7 +937,7 @@ export default function BigInt64ArrayEntries02Test(): void {
       let iter = arr.entries();
       iter.next();
       arr[0] = 50n;
-      let val2 = iter.next().value as [number, bigint];
+      let val2 = iter.next().value as [int, bigint];
       expect(val2[1]).assertEqual(20n);
     });
 
@@ -954,7 +954,7 @@ export default function BigInt64ArrayEntries02Test(): void {
       let iter = arr.entries();
       iter.next();
       arr[1] = -9223372036854775807n - 1n;
-      let val2 = iter.next().value as [number, bigint];
+      let val2 = iter.next().value as [int, bigint];
       expect(val2[1]).assertEqual(-9223372036854775807n - 1n);
     });
 
@@ -971,7 +971,7 @@ export default function BigInt64ArrayEntries02Test(): void {
       let iter = arr.entries();
       iter.next();
       arr[1] = 9223372036854775807n;
-      let val2 = iter.next().value as [number, bigint];
+      let val2 = iter.next().value as [int, bigint];
       expect(val2[1]).assertEqual(9223372036854775807n);
     });
 
@@ -989,7 +989,7 @@ export default function BigInt64ArrayEntries02Test(): void {
       let iArr = new Int8Array(buf);
       let iter = bArr.entries();
       iArr[0] = 1;
-      let val = iter.next().value as [number, bigint];
+      let val = iter.next().value as [int, bigint];
       expect(val[1]).assertEqual(1n);
     });
 
@@ -1006,7 +1006,7 @@ export default function BigInt64ArrayEntries02Test(): void {
       let sub = arr.subarray(1, 3);
       let iter = sub.entries();
       arr[1] = 99n;
-      let val = iter.next().value as [number, bigint];
+      let val = iter.next().value as [int, bigint];
       expect(val[1]).assertEqual(99n);
     });
 
@@ -1023,7 +1023,7 @@ export default function BigInt64ArrayEntries02Test(): void {
       let iter = sub.entries();
       iter.next();
       sub[1] = 800n;
-      let val = iter.next().value as [number, bigint];
+      let val = iter.next().value as [int, bigint];
       expect(val[1]).assertEqual(800n);
     });
 
@@ -1041,7 +1041,7 @@ export default function BigInt64ArrayEntries02Test(): void {
       let iter = view.entries();
       let originView = new BigInt64Array(buff);
       originView[1] = 555n;
-      let val = iter.next().value as [number, bigint];
+      let val = iter.next().value as [int, bigint];
       expect(val[1]).assertEqual(555n);
     });
 
@@ -1058,7 +1058,7 @@ export default function BigInt64ArrayEntries02Test(): void {
       let iter = arr.entries();
       iter.next();
       arr[1] = 0n;
-      let val = iter.next().value as [number, bigint];
+      let val = iter.next().value as [int, bigint];
       expect(val[1]).assertEqual(0n);
       expect(val[1] !== undefined).assertEqual(true);
     });

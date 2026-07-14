@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -86,14 +86,19 @@ export default function BigInt64Array01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ONE_0400
      * @tc.name testBigInt64ArrayOne0400
-     * @tc.desc Verify length equals 0 when the length argument is 0.
+     * @tc.desc Verify length constructor creates iterable zero-filled elements.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayOne0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array(0);
-      expect(arr.length).assertEqual(0);
+      let arr = new BigInt64Array(4);
+      let count = 0;
+      for (const value of arr) {
+        count++;
+        expect(value).assertEqual(0n);
+      }
+      expect(count).assertEqual(4);
     });
 
     /**
@@ -138,14 +143,20 @@ export default function BigInt64Array01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ONE_0800
      * @tc.name testBigInt64ArrayOne0800
-     * @tc.desc Verify length equals 1 when the length argument is 1.
+     * @tc.desc Verify out-of-range read throws RangeError for a fixed length instance.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayOne0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array(1);
-      expect(arr.length).assertEqual(1);
+      let arr = new BigInt64Array(2);
+      try {
+        arr[2];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+      expect(arr.length).assertEqual(2);
     });
 
     /**
@@ -554,15 +565,17 @@ export default function BigInt64Array01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ONE_4000
      * @tc.name testBigInt64ArrayOne4000
-     * @tc.desc Verify length equals 0 for a view over ArrayBuffer(0).
+     * @tc.desc Verify two views over the same ArrayBuffer observe the same write.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayOne4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf = new ArrayBuffer(0);
-      let arr = new BigInt64Array(buf);
-      expect(arr.length).assertEqual(0);
+      let buf = new ArrayBuffer(16);
+      let writer = new BigInt64Array(buf);
+      let reader = new BigInt64Array(buf);
+      writer[1] = -7n;
+      expect(reader[1]).assertEqual(-7n);
     });
 
     /**
@@ -596,15 +609,16 @@ export default function BigInt64Array01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ONE_4300
      * @tc.name testBigInt64ArrayOne4300
-     * @tc.desc Verify length equals 1 for a view over ArrayBuffer(8).
+     * @tc.desc Verify ArrayBuffer bytes map to element length and visible byteLength.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayOne4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf = new ArrayBuffer(8);
+      let buf = new ArrayBuffer(24);
       let arr = new BigInt64Array(buf);
-      expect(arr.length).assertEqual(1);
+      expect(arr.length).assertEqual(3);
+      expect(arr.byteLength).assertEqual(buf.byteLength);
     });
 
     /**
@@ -638,15 +652,17 @@ export default function BigInt64Array01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ONE_4600
      * @tc.name testBigInt64ArrayOne4600
-     * @tc.desc Verify length maps correctly for a view over ArrayBuffer(1024).
+     * @tc.desc Verify an offset view write is visible through the full buffer view.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayOne4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf = new ArrayBuffer(1024);
-      let arr = new BigInt64Array(buf);
-      expect(arr.length).assertEqual(128);
+      let buf = new ArrayBuffer(40);
+      let full = new BigInt64Array(buf);
+      let view = new BigInt64Array(buf, 16);
+      view[0] = 55n;
+      expect(full[2]).assertEqual(55n);
     });
 
     /**
@@ -694,169 +710,191 @@ export default function BigInt64Array01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ONE_5000
      * @tc.name testBigInt64ArrayOne5000
-     * @tc.desc Verify byteOffset equals 0 when creating a view with offset 0.
+     * @tc.desc Verify offset 8 maps view index zero to the second buffer element.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayOne5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf = new ArrayBuffer(32);
-      let arr = new BigInt64Array(buf, 0);
-      expect(arr.byteOffset).assertEqual(0);
+      let buf = new ArrayBuffer(40);
+      let full = new BigInt64Array(buf);
+      let view = new BigInt64Array(buf, 8);
+      view[0] = 33n;
+      expect(full[1]).assertEqual(33n);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ONE_5100
      * @tc.name testBigInt64ArrayOne5100
-     * @tc.desc Verify length equals 3 when creating a view with offset 8.
+     * @tc.desc Verify an explicit length limits an aligned offset view.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayOne5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(32);
-      let arr = new BigInt64Array(buf, 8);
-      expect(arr.length).assertEqual(3);
+      let arr = new BigInt64Array(buf, 8, 2);
+      expect(arr.length).assertEqual(2);
+      expect(arr.byteLength).assertEqual(16);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ONE_5200
      * @tc.name testBigInt64ArrayOne5200
-     * @tc.desc Verify byteLength equals 24 when creating a view with offset 8.
+     * @tc.desc Verify an explicit-length view retains the original ArrayBuffer reference.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayOne5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf = new ArrayBuffer(32);
-      let arr = new BigInt64Array(buf, 8);
+      let buf = new ArrayBuffer(48);
+      let arr = new BigInt64Array(buf, 8, 3);
       expect(arr.byteLength).assertEqual(24);
+      expect(arr.buffer).assertEqual(buf);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ONE_5300
      * @tc.name testBigInt64ArrayOne5300
-     * @tc.desc Verify byteOffset equals 8 when creating a view with offset 8.
+     * @tc.desc Verify full buffer writes are visible through an offset view.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayOne5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf = new ArrayBuffer(32);
-      let arr = new BigInt64Array(buf, 8);
-      expect(arr.byteOffset).assertEqual(8);
+      let buf = new ArrayBuffer(40);
+      let full = new BigInt64Array(buf);
+      let view = new BigInt64Array(buf, 8);
+      full[2] = -44n;
+      expect(view[1]).assertEqual(-44n);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ONE_5400
      * @tc.name testBigInt64ArrayOne5400
-     * @tc.desc Verify length equals 2 when creating a view with offset 16.
+     * @tc.desc Verify a subarray reports its relative length and shares writes with its parent.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayOne5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf = new ArrayBuffer(32);
-      let arr = new BigInt64Array(buf, 16);
+      let parent = new BigInt64Array([1n, 2n, 3n, 4n]);
+      let arr = parent.subarray(1, 3);
+      arr[0] = 20n;
       expect(arr.length).assertEqual(2);
+      expect(parent[1]).assertEqual(20n);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ONE_5500
      * @tc.name testBigInt64ArrayOne5500
-     * @tc.desc Verify byteLength equals 16 when creating a view with offset 16.
+     * @tc.desc Verify a subarray byte length matches its visible two-element range.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayOne5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf = new ArrayBuffer(32);
-      let arr = new BigInt64Array(buf, 16);
+      let parent = new BigInt64Array([5n, 6n, 7n, 8n, 9n]);
+      let arr = parent.subarray(2, 4);
       expect(arr.byteLength).assertEqual(16);
+      expect(arr.byteOffset).assertEqual(16);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ONE_5600
      * @tc.name testBigInt64ArrayOne5600
-     * @tc.desc Verify byteOffset equals 16 when creating a view with offset 16.
+     * @tc.desc Verify offset 16 view writes map to the fifth full-buffer element.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayOne5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf = new ArrayBuffer(32);
-      let arr = new BigInt64Array(buf, 16);
-      expect(arr.byteOffset).assertEqual(16);
+      let buf = new ArrayBuffer(40);
+      let full = new BigInt64Array(buf);
+      let view = new BigInt64Array(buf, 16);
+      view[2] = 77n;
+      expect(full[4]).assertEqual(77n);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ONE_5700
      * @tc.name testBigInt64ArrayOne5700
-     * @tc.desc Verify length equals 1 when creating a view with offset 24.
+     * @tc.desc Verify an explicit zero-length view can begin in the middle of a buffer.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayOne5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(32);
-      let arr = new BigInt64Array(buf, 24);
-      expect(arr.length).assertEqual(1);
+      let arr = new BigInt64Array(buf, 16, 0);
+      expect(arr.length).assertEqual(0);
+      expect(arr.byteOffset).assertEqual(16);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ONE_5800
      * @tc.name testBigInt64ArrayOne5800
-     * @tc.desc Verify byteLength equals 8 when creating a view with offset 24.
+     * @tc.desc Verify an empty middle view has zero byte length while retaining its buffer.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayOne5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf = new ArrayBuffer(32);
-      let arr = new BigInt64Array(buf, 24);
-      expect(arr.byteLength).assertEqual(8);
+      let buf = new ArrayBuffer(40);
+      let arr = new BigInt64Array(buf, 24, 0);
+      expect(arr.byteLength).assertEqual(0);
+      expect(arr.buffer).assertEqual(buf);
+      expect(arr.byteOffset).assertEqual(24);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ONE_5900
      * @tc.name testBigInt64ArrayOne5900
-     * @tc.desc Verify byteOffset equals 24 when creating a view with offset 24.
+     * @tc.desc Verify tail offset view writes the last element in the backing buffer.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayOne5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf = new ArrayBuffer(32);
-      let arr = new BigInt64Array(buf, 24);
-      expect(arr.byteOffset).assertEqual(24);
+      let buf = new ArrayBuffer(40);
+      let full = new BigInt64Array(buf);
+      let view = new BigInt64Array(buf, 24);
+      view[1] = 88n;
+      expect(full[4]).assertEqual(88n);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ONE_6000
      * @tc.name testBigInt64ArrayOne6000
-     * @tc.desc Verify length equals 0 for a boundary view with offset 32.
+     * @tc.desc Verify an explicit one-element tail view writes through to the backing buffer.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayOne6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(32);
-      let arr = new BigInt64Array(buf, 32);
-      expect(arr.length).assertEqual(0);
+      let parent = new BigInt64Array(buf);
+      let arr = new BigInt64Array(buf, 24, 1);
+      arr[0] = 77n;
+      expect(arr.length).assertEqual(1);
+      expect(parent[3]).assertEqual(77n);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ONE_6100
      * @tc.name testBigInt64ArrayOne6100
-     * @tc.desc Verify byteLength equals 0 for a boundary view with offset 32.
+     * @tc.desc Verify a tail view keeps its byte length after a parent-buffer update.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayOne6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(32);
-      let arr = new BigInt64Array(buf, 32);
-      expect(arr.byteLength).assertEqual(0);
+      let parent = new BigInt64Array(buf);
+      let arr = new BigInt64Array(buf, 24);
+      parent[3] = -88n;
+      expect(arr.byteLength).assertEqual(8);
+      expect(arr[0]).assertEqual(-88n);
     });
 
     /**
@@ -876,29 +914,41 @@ export default function BigInt64Array01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ONE_6300
      * @tc.name testBigInt64ArrayOne6300
-     * @tc.desc Verify length equals 0 when offset 0 and length 0 are passed.
+     * @tc.desc Verify explicit offset view does not overwrite the preceding element.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayOne6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf = new ArrayBuffer(64);
-      let arr = new BigInt64Array(buf, 0, 0);
-      expect(arr.length).assertEqual(0);
+      let buf = new ArrayBuffer(72);
+      let full = new BigInt64Array(buf);
+      let view = new BigInt64Array(buf, 24, 3);
+      full[2] = 12n;
+      view[0] = 21n;
+      expect(full[2]).assertEqual(12n);
+      expect(full[3]).assertEqual(21n);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ONE_6400
      * @tc.name testBigInt64ArrayOne6400
-     * @tc.desc Verify byteLength equals 0 when offset 0 and length 0 are passed.
+     * @tc.desc Verify explicit length makes later buffer elements out of range for the view.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayOne6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf = new ArrayBuffer(64);
-      let arr = new BigInt64Array(buf, 0, 0);
-      expect(arr.byteLength).assertEqual(0);
+      let buf = new ArrayBuffer(72);
+      let full = new BigInt64Array(buf);
+      let view = new BigInt64Array(buf, 24, 3);
+      full[6] = 99n;
+      try {
+        view[3];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+      expect(full[6]).assertEqual(99n);
     });
 
     /**
@@ -918,29 +968,35 @@ export default function BigInt64Array01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ONE_6600
      * @tc.name testBigInt64ArrayOne6600
-     * @tc.desc Verify length equals 2 when offset 0 and length 2 are passed.
+     * @tc.desc Verify explicit views at different offsets do not overlap.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayOne6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf = new ArrayBuffer(64);
-      let arr = new BigInt64Array(buf, 0, 2);
-      expect(arr.length).assertEqual(2);
+      let buf = new ArrayBuffer(80);
+      let left = new BigInt64Array(buf, 0, 4);
+      let right = new BigInt64Array(buf, 32, 4);
+      left[3] = 5n;
+      right[0] = 6n;
+      expect(left[3]).assertEqual(5n);
+      expect(right[0]).assertEqual(6n);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ONE_6700
      * @tc.name testBigInt64ArrayOne6700
-     * @tc.desc Verify byteLength equals 16 when offset 0 and length 2 are passed.
+     * @tc.desc Verify explicit view last index maps to the full buffer index.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayOne6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf = new ArrayBuffer(64);
-      let arr = new BigInt64Array(buf, 0, 2);
-      expect(arr.byteLength).assertEqual(16);
+      let buf = new ArrayBuffer(80);
+      let full = new BigInt64Array(buf);
+      let view = new BigInt64Array(buf, 32, 4);
+      view[3] = -9n;
+      expect(full[7]).assertEqual(-9n);
     });
 
     /**
@@ -960,29 +1016,39 @@ export default function BigInt64Array01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ONE_6900
      * @tc.name testBigInt64ArrayOne6900
-     * @tc.desc Verify length equals 3 when offset 8 and length 3 are passed.
+     * @tc.desc Verify explicit offset and length write through the final visible element.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayOne6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf = new ArrayBuffer(64);
-      let arr = new BigInt64Array(buf, 8, 3);
-      expect(arr.length).assertEqual(3);
+      let buf = new ArrayBuffer(80);
+      let full = new BigInt64Array(buf);
+      let view = new BigInt64Array(buf, 8, 5);
+      view[4] = 123n;
+      expect(full[5]).assertEqual(123n);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ONE_7000
      * @tc.name testBigInt64ArrayOne7000
-     * @tc.desc Verify byteLength equals 24 when offset 8 and length 3 are passed.
+     * @tc.desc Verify explicit length makes the next full-buffer element out of range for the view.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayOne7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf = new ArrayBuffer(64);
-      let arr = new BigInt64Array(buf, 8, 3);
-      expect(arr.byteLength).assertEqual(24);
+      let buf = new ArrayBuffer(80);
+      let full = new BigInt64Array(buf);
+      let view = new BigInt64Array(buf, 8, 5);
+      full[6] = 456n;
+      try {
+        view[5];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+      expect(full[6]).assertEqual(456n);
     });
 
     /**
@@ -1002,29 +1068,34 @@ export default function BigInt64Array01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ONE_7200
      * @tc.name testBigInt64ArrayOne7200
-     * @tc.desc Verify length equals 4 when offset 16 and length 4 are passed.
+     * @tc.desc Verify explicit view keeps the backing buffer and visible byte length.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayOne7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf = new ArrayBuffer(64);
-      let arr = new BigInt64Array(buf, 16, 4);
-      expect(arr.length).assertEqual(4);
+      let buf = new ArrayBuffer(96);
+      let arr = new BigInt64Array(buf, 32, 4);
+      expect(arr.buffer === buf).assertTrue();
+      expect(arr.byteLength).assertEqual(32);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ONE_7300
      * @tc.name testBigInt64ArrayOne7300
-     * @tc.desc Verify byteLength equals 32 when offset 16 and length 4 are passed.
+     * @tc.desc Verify separate explicit views over one buffer keep independent ranges.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayOne7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf = new ArrayBuffer(64);
-      let arr = new BigInt64Array(buf, 16, 4);
-      expect(arr.byteLength).assertEqual(32);
+      let buf = new ArrayBuffer(96);
+      let first = new BigInt64Array(buf, 0, 2);
+      let second = new BigInt64Array(buf, 16, 2);
+      first[1] = 11n;
+      second[0] = 22n;
+      expect(first[1]).assertEqual(11n);
+      expect(second[0]).assertEqual(22n);
     });
 
     /**

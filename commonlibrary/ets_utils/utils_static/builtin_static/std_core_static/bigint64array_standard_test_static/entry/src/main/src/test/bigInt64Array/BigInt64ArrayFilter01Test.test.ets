@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -121,7 +121,7 @@ export default function BigInt64ArrayFilter01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FILTER_ONE_0600
      * @tc.name testBigInt64ArrayFilterOne0600
-     * @tc.desc Verify `arr.filter((val, index) => { return index === 1; })` produces a result where `res.length` equals `1`, `res[0]` equals `20n`.
+     * @tc.desc Verify filtering all elements preserves order without mutating the source array.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -414,29 +414,25 @@ export default function BigInt64ArrayFilter01Test(): void {
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFilterOne2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([10n, 20n, 30n]);
-      let res = arr.filter((val, index) => {
-        return index === 1;
-      });
-      expect(res.length).assertEqual(1);
-      expect(res[0]).assertEqual(20n);
+      let arr = new BigInt64Array([-3n, 0n, 3n]);
+      let res = arr.filter((_val: bigint): boolean => true);
+      expect(res.join()).assertEqual('-3,0,3');
+      expect(arr.join()).assertEqual('-3,0,3');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FILTER_ONE_2400
      * @tc.name testBigInt64ArrayFilterOne2400
-     * @tc.desc Verify `arr.filter((val, index) => { return index === 2; })` produces a result where `res.length` equals `1`, `res[0]` equals `30n`.
+     * @tc.desc Verify filter creates an independent buffer for the selected values.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFilterOne2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([10n, 20n, 30n]);
-      let res = arr.filter((val, index) => {
-        return index === 2;
-      });
-      expect(res.length).assertEqual(1);
-      expect(res[0]).assertEqual(30n);
+      let arr = new BigInt64Array([2n, 3n, 4n, 5n]);
+      let res = arr.filter((val: bigint): boolean => val % 2n === 0n);
+      expect(res.join()).assertEqual('2,4');
+      expect(res.buffer === arr.buffer).assertFalse();
     });
 
     /**
@@ -738,35 +734,35 @@ export default function BigInt64ArrayFilter01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FILTER_ONE_4200
      * @tc.name testBigInt64ArrayFilterOne4200
-     * @tc.desc Verify `arr.filter((val, index, array) => { return array[1] === 20n && val === 30n; })` produces a result where `res.length` equals `1`, `res[0]` equals `30n`.
+     * @tc.desc Verify a subarray filter receives relative indices and the subarray instance.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFilterOne4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([10n, 20n, 30n]);
-      let res = arr.filter((val, index, array) => {
-        return array[1] === 20n && val === 30n;
+      let root = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
+      let view = root.subarray(1, 4);
+      let res = view.filter((val: bigint, index: int, array: BigInt64Array): boolean => {
+        return array === view && index === 2 && val === 40n;
       });
-      expect(res.length).assertEqual(1);
-      expect(res[0]).assertEqual(30n);
+      expect(res.join()).assertEqual('40');
+      expect(root.join()).assertEqual('10,20,30,40,50');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FILTER_ONE_4300
      * @tc.name testBigInt64ArrayFilterOne4300
-     * @tc.desc Verify `arr.filter((val, index, array) => { return array[2] === 30n && val === 10n; })` produces a result where `res.length` equals `1`, `res[0]` equals `10n`.
+     * @tc.desc Verify filter observes the order produced by reverse and returns matching negatives.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFilterOne4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([10n, 20n, 30n]);
-      let res = arr.filter((val, index, array) => {
-        return array[2] === 30n && val === 10n;
-      });
-      expect(res.length).assertEqual(1);
-      expect(res[0]).assertEqual(10n);
+      let arr = new BigInt64Array([-1n, 2n, -3n, 4n]);
+      arr.reverse();
+      let res = arr.filter((val: bigint): boolean => val < 0n);
+      expect(res.join()).assertEqual('-3,-1');
+      expect(arr.join()).assertEqual('4,-3,2,-1');
     });
 
     /**
@@ -840,35 +836,49 @@ export default function BigInt64ArrayFilter01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FILTER_ONE_4800
      * @tc.name testBigInt64ArrayFilterOne4800
-     * @tc.desc Verify `arr.filter((val, index, array) => { return array[index + 1] !== 20n; })` produces a result where `res.length` equals `2`, `res[0]` equals `20n`.
+     * @tc.desc Verify filter throws RangeError when its callback reads past the
+     * right boundary.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFilterOne4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([10n, 20n, 30n]);
-      let res = arr.filter((val, index, array) => {
-        return array[index + 1] !== 20n;
-      });
-      expect(res.length).assertEqual(2);
-      expect(res[0]).assertEqual(20n);
+      let callbackCount = 0;
+      try {
+        arr.filter((val, index, array) => {
+          callbackCount++;
+          return array[index + 1] !== 20n;
+        });
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+        expect(callbackCount).assertEqual(3);
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FILTER_ONE_4900
      * @tc.name testBigInt64ArrayFilterOne4900
-     * @tc.desc Verify `arr.filter((val, index, array) => { return array[index - 1] !== 20n; })` produces a result where `res.length` equals `2`, `res[0]` equals `10n`.
+     * @tc.desc Verify filter throws RangeError when its callback reads past the
+     * left boundary.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFilterOne4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([10n, 20n, 30n]);
-      let res = arr.filter((val, index, array) => {
-        return array[index - 1] !== 20n;
-      });
-      expect(res.length).assertEqual(2);
-      expect(res[0]).assertEqual(10n);
+      let callbackCount = 0;
+      try {
+        arr.filter((val, index, array) => {
+          callbackCount++;
+          return array[index - 1] !== 20n;
+        });
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+        expect(callbackCount).assertEqual(1);
+      }
     });
 
     /**

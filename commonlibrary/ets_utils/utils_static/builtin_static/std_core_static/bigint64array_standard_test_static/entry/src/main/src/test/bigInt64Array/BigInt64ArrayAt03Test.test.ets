@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -321,15 +321,21 @@ export default function BigInt64ArrayAt03Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_AT_THREE_2200
      * @tc.name testBigInt64ArrayAtThree2200
-     * @tc.desc Verify `new BigInt64Array([1n])` produces a result where `arr.at(5)` is undefined.
+     * @tc.desc Verify out-of-range bracket assignment throws RangeError and `arr.at(5)` is undefined.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayAtThree2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let arr = new BigInt64Array([1n]);
-        arr[5] = 99n;
+        try {
+          arr[5] = 99n;
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('RangeError');
+        }
         expect(arr.at(5)).assertEqual(undefined);
+        expect(arr[0]).assertEqual(1n);
       });
 
     /**

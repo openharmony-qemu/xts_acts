@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -53,7 +53,7 @@ export default function BigInt64Array05Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIVE_0100
      * @tc.name testBigInt64ArrayFive0100
-     * @tc.desc Verify constructor with zero arguments creates an empty BigInt64Array.
+     * @tc.desc Verify constructor without arguments creates an empty zero-byte view and out-of-bounds read throws RangeError.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -61,6 +61,15 @@ export default function BigInt64Array05Test(): void {
     it('testBigInt64ArrayFive0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array();
       expect(arr.length).assertEqual(0);
+      expect(arr.byteLength).assertEqual(0);
+      expect(arr.buffer.byteLength).assertEqual(0);
+      try {
+        arr[0];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+      expect(arr.join(",")).assertEqual("");
     });
 
     /**
@@ -764,29 +773,36 @@ export default function BigInt64Array05Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIVE_5100
      * @tc.name testBigInt64ArrayFive5100
-     * @tc.desc Verify set with offset 55 writes into the expected target index.
+     * @tc.desc Verify set can exactly fill the remaining tail space using a computed offset.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFive5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array(100);
-      arr.set([5n], 55);
-      expect(arr[55]).assertEqual(5n);
+      let arr = new BigInt64Array(8);
+      let src = new BigInt64Array([11n, 22n]);
+      let offset = arr.length - src.length;
+      arr.set(src, offset);
+      expect(arr[6]).assertEqual(11n);
+      expect(arr[7]).assertEqual(22n);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIVE_5200
      * @tc.name testBigInt64ArrayFive5200
-     * @tc.desc Verify set with offset 105 writes into the expected target index.
+     * @tc.desc Verify set on a non-zero-offset target view updates the corresponding parent elements.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFive5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array(200);
-      arr.set([5n], 105);
-      expect(arr[105]).assertEqual(5n);
+      let buffer = new ArrayBuffer(48);
+      let parent = new BigInt64Array(buffer);
+      let arr = new BigInt64Array(buffer, 16, 3);
+      arr.set([7n, 8n], 1);
+      expect(parent[3]).assertEqual(7n);
+      expect(parent[4]).assertEqual(8n);
+      expect(parent[2]).assertEqual(0n);
     });
 
     /**
@@ -1200,8 +1216,8 @@ export default function BigInt64Array05Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIVE_8300
      * @tc.name testBigInt64ArrayFive8300
-     * @tc.desc Verify constructor views created with different offsets remain synchronized through
-     *          the shared buffer.
+     * @tc.desc Verify an out-of-range write throws RangeError and constructor views with
+     *          different offsets remain synchronized through the shared buffer.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1210,7 +1226,12 @@ export default function BigInt64Array05Test(): void {
       let buf = new ArrayBuffer(80);
       let arr1 = new BigInt64Array(buf, 0, 5);
       let arr2 = new BigInt64Array(buf, 40);
-      arr1[5] = 5n; // Out-of-bounds write should have no effect.
+      try {
+        arr1[5] = 5n;
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("RangeError");
+      }
       arr2[0] = 55n;
       expect(arr2[0]).assertEqual(55n);
       let verify = new BigInt64Array(buf, 40, 1);
