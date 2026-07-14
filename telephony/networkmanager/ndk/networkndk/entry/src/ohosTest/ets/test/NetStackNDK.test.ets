@@ -681,8 +681,11 @@ export default function NetStackNDKTest() {
      * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientClose_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('NetStackNDK testOHWebSocketClientClose_0100 start');
       let result : number = wsAPI.OHWebSocketClientClose(CASE_INDEX_1);
+      console.info('NetStackNDK testOHWebSocketClientClose_0100 result: ' + result);
       expect(result).assertEqual(WEBSOCKET_OK);
+      console.info('NetStackNDK testOHWebSocketClientClose_0100 end');
     });
 
     /**
@@ -694,8 +697,11 @@ export default function NetStackNDKTest() {
      * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientClose_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('NetStackNDK testOHWebSocketClientClose_0200 start');
       let result : number = wsAPI.OHWebSocketClientClose(CASE_INDEX_2);
+      console.info('NetStackNDK testOHWebSocketClientClose_0200 result: ' + result);
       expect(result).assertEqual(WEBSOCKET_OK);
+      console.info('NetStackNDK testOHWebSocketClientClose_0200 end');
     });
 
     /**
@@ -786,8 +792,11 @@ export default function NetStackNDKTest() {
      * @tc.level  LEVEL1
      */
     it('testOHWebSocketClientDestroy_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      console.info('NetStackNDK testOHWebSocketClientDestroy_0400 start');
       let result : number = wsAPI.OHWebSocketClientDestroy(CASE_INDEX_4);
+      console.info('NetStackNDK testOHWebSocketClientDestroy_0400 result: ' + result);
       expect(result).assertEqual(WEBSOCKET_OK);
+      console.info('NetStackNDK testOHWebSocketClientDestroy_0400 end');
     });
     
 
