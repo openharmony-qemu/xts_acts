@@ -57,10 +57,12 @@ static napi_value MktimeNoenvNormal001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     struct tm t = {};
-    t.tm_year = 2026 - 1900;
+    int testYear = 2026;
+    t.tm_year = testYear - 1900;
     t.tm_mon = 6;
     t.tm_mday = 1;
-    t.tm_hour = 12;
+    int noon = 12;
+    t.tm_hour = noon;
     time_t ret = CallMktimeNoenv(&t);
     return ReturnInt32(env, (ret != -1 || errno != EOVERFLOW) ? 1 : 0);
 }
@@ -71,7 +73,8 @@ static napi_value MktimeNoenvNormal002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     struct tm t = {};
-    t.tm_year = 70;
+    int epochYear = 1970;
+    t.tm_year = epochYear - 1900;
     t.tm_mon = 0;
     t.tm_mday = 1;
     time_t ret = CallMktimeNoenv(&t);
@@ -84,7 +87,8 @@ static napi_value MktimeNoenvNormal003(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     struct tm t = {};
-    t.tm_year = 2050 - 1900;
+    int testYear = 2050;
+    t.tm_year = testYear - 1900;
     t.tm_mon = 11;
     t.tm_mday = 31;
     time_t ret = CallMktimeNoenv(&t);
@@ -105,7 +109,8 @@ static napi_value MktimeNoenvAbnormal001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     struct tm t = {};
-    t.tm_year = 2026 - 1900;
+    int testYear = 2026;
+    t.tm_year = testYear - 1900;
     t.tm_mon = 0;
     t.tm_mday = 32;
     time_t ret = CallMktimeNoenv(&t);
@@ -131,7 +136,8 @@ static napi_value MktimeNoenvBoundary001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     struct tm t = {};
-    t.tm_year = 2038 - 1900;
+    int testYear = 2038;
+    t.tm_year = testYear - 1900;
     t.tm_mon = 0;
     t.tm_mday = 19;
     t.tm_hour = 3;
@@ -162,7 +168,8 @@ static napi_value MktimeNoenvStable001(napi_env env, napi_callback_info info)
     bool pass = true;
     for (int i = 0; i < K_STABLE_LOOP; ++i) {
         struct tm t = {};
-        t.tm_year = 2026 - 1900;
+        int testYear = 2026;
+    t.tm_year = testYear - 1900;
         t.tm_mon = 0;
         t.tm_mday = 1;
         time_t ret = CallMktimeNoenv(&t);
@@ -185,7 +192,8 @@ static napi_value MktimeNoenvThread001(napi_env env, napi_callback_info info)
         threads.emplace_back([&hasError]() {
             for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 struct tm tmVal = {};
-                tmVal.tm_year = 2026 - 1900;
+                int testYear = 2026;
+    tmVal.tm_year = testYear - 1900;
                 tmVal.tm_mon = 0;
                 tmVal.tm_mday = 1;
                 time_t ret = CallMktimeNoenv(&tmVal);

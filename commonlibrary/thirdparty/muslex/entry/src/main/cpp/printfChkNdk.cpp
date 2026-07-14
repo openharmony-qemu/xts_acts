@@ -23,6 +23,7 @@
 #include <thread>
 #include <vector>
 #include <atomic>
+#include <functional>
 
 static constexpr int K_STABLE_LOOP10000 = 20;
 static constexpr int K_THREAD_COUNT = 3;
@@ -212,6 +213,17 @@ static napi_value PrintfChkStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+static void PrintfChkThreadWorker(std::atomic<bool>& hasError, const char** formats) {
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        int idx = i % 4;
+        int ret = CallPrintfChk(i % 2, formats[idx], "test", 123);
+        if (ret < 0) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 /* ==================== Multi-thread Tests ==================== */
 
 /* TC-013: Multi-thread safety */
@@ -225,16 +237,7 @@ static napi_value PrintfChkThread001(napi_env env, napi_callback_info info)
     const char* formats[] = {"%s %d", "Number: %d", "Hello %s", "%d + %d = %d"};
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError, formats]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                int idx = i % 4;
-                int ret = CallPrintfChk(i % 2, formats[idx], "test", 123);
-                if (ret < 0) {
-                    hasError = true;
-                    return;
-                }
-            }
-        });
+        threads.emplace_back(PrintfChkThreadWorker, std::ref(hasError), formats);
     }
     for (auto& th : threads) {
         th.join();

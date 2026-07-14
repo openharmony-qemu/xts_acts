@@ -26,6 +26,7 @@
 static constexpr int K_STABLE_LOOP10000 = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
+static constexpr size_t MBR_INCOMPLETE = static_cast<size_t>(-2);
 
 static size_t CallMbrlen(const char* s, size_t n, mbstate_t* ps)
 {
@@ -86,7 +87,8 @@ static napi_value MbrlenNormal002(napi_env env, napi_callback_info info)
     mbstate_t state = {};
     const char* s = "\xE4\xB8\xAD";
     size_t ret = CallMbrlen(s, MB_CUR_MAX, &state);
-    return ReturnInt32(env, (ret == 3) ? 1 : 0);
+    int utf8len3 = 3;
+    return ReturnInt32(env, (ret == utf8len3) ? 1 : 0);
 }
 
 /* TC-003: Empty string should return 0 */
@@ -138,7 +140,8 @@ static napi_value MbrlenNormal006(napi_env env, napi_callback_info info)
     mbstate_t state = {};
     const char* s = "\xE4\xB8\xAD\xE6\x96\x87"; // "Chinese characters"
     size_t ret = CallMbrlen(s, MB_CUR_MAX, &state);
-    return ReturnInt32(env, (ret == 3) ? 1 : 0);
+    int utf8len3 = 3;
+    return ReturnInt32(env, (ret == utf8len3) ? 1 : 0);
 }
 
 /* ==================== Abnormal Parameter Tests ==================== */
@@ -154,7 +157,7 @@ static napi_value MbrlenAbnormal001(napi_env env, napi_callback_info info)
     const char* s = "A";
     errno = 0;
     size_t ret = CallMbrlen(s, 0, &state);
-    return ReturnInt32(env, (ret == static_cast<size_t>(-2)) ? 1 : 0);
+    return ReturnInt32(env, (ret == MBR_INCOMPLETE) ? 1 : 0);
 }
 
 /* TC-008: Invalid UTF-8 sequence -> returns -1, errno=EILSEQ */
@@ -187,7 +190,7 @@ static napi_value MbrlenAbnormal003(napi_env env, napi_callback_info info)
     const char* s = "\xE4"; // Incomplete UTF-8
     errno = 0;
     size_t ret = CallMbrlen(s, 1, &state);
-    return ReturnInt32(env, (ret == static_cast<size_t>(-2)) ? 1 : 0);
+    return ReturnInt32(env, (ret == MBR_INCOMPLETE) ? 1 : 0);
 }
 
 /* TC-010: n = 0 with non-empty string -> returns -2 */
@@ -201,7 +204,7 @@ static napi_value MbrlenAbnormal004(napi_env env, napi_callback_info info)
     const char* s = "Hello";
     errno = 0;
     size_t ret = CallMbrlen(s, 0, &state);
-    return ReturnInt32(env, (ret == static_cast<size_t>(-2)) ? 1 : 0);
+    return ReturnInt32(env, (ret == MBR_INCOMPLETE) ? 1 : 0);
 }
 
 /* ==================== Boundary Value Tests ==================== */
@@ -231,7 +234,8 @@ static napi_value MbrlenBoundary002(napi_env env, napi_callback_info info)
     mbstate_t state = {};
     const char* s = "\xE4\xB8\xAD";
     size_t ret = CallMbrlen(s, MB_CUR_MAX, &state);
-    return ReturnInt32(env, (ret == 3) ? 1 : 0);
+    int utf8len3 = 3;
+    return ReturnInt32(env, (ret == utf8len3) ? 1 : 0);
 }
 
 /* TC-013: Very long valid UTF-8 string */

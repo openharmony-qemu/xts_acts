@@ -20,6 +20,7 @@
 #include <thread>
 #include <vector>
 #include <atomic>
+#include <functional>
 
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
@@ -174,8 +175,8 @@ static napi_value PthreadKeyCreateBoundary001(napi_env env, napi_callback_info i
     pthread_key_t key;
     int ret = CallPthreadKeyCreate(&key, ComplexDestructor);
     if (ret == 0) {
-        int value = 123;
-        pthread_setspecific(key, &value);
+        int testValue = 123;
+        pthread_setspecific(key, &testValue);
         pthread_key_delete(key);
     }
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
@@ -206,6 +207,22 @@ static napi_value PthreadKeyCreateStable001(napi_env env, napi_callback_info inf
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+static void PthreadKeyCreateWorker(std::atomic<bool>& hasError, pthread_key_t key) {
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        int* val = new int(i);
+        if (pthread_setspecific(key, val) != 0) {
+            hasError = true;
+            delete val;
+            return;
+        }
+        int* got = static_cast<int*>(pthread_getspecific(key));
+        if (got == nullptr || *got != i) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 /* ==================== Multi-thread Tests ==================== */
 
 /* TC-008: Multi-thread key creation and use */
@@ -223,21 +240,7 @@ static napi_value PthreadKeyCreateThread001(napi_env env, napi_callback_info inf
     std::vector<std::thread> threads;
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError, key]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                int* val = new int(i);
-                if (pthread_setspecific(key, val) != 0) {
-                    hasError = true;
-                    delete val;
-                    return;
-                }
-                int* got = static_cast<int*>(pthread_getspecific(key));
-                if (got == nullptr || *got != i) {
-                    hasError = true;
-                    return;
-                }
-            }
-        });
+        threads.emplace_back(PthreadKeyCreateWorker, std::ref(hasError), key);
     }
     for (auto& th : threads) {
         th.join();

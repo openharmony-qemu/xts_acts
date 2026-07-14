@@ -22,6 +22,7 @@
 #include <thread>
 #include <vector>
 #include <atomic>
+#include <functional>
 
 static constexpr int K_STABLE_LOOP10000 = 20;
 static constexpr int K_THREAD_COUNT = 3;
@@ -148,6 +149,18 @@ static napi_value Log2fFiniteStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+static void Log2fThreadWorker(std::atomic<bool>& hasError, const float* testVals) {
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        int idx = i % 5;
+        float expected = std::log2(testVals[idx]);
+        float result = CallLog2fFinite(testVals[idx]);
+        if (fabsf(result - expected) > 1e-6f) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 static napi_value Log2fFiniteThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
@@ -158,17 +171,7 @@ static napi_value Log2fFiniteThread001(napi_env env, napi_callback_info info)
     float testVals[] = {1.0f, 2.0f, 4.0f, 8.0f, 0.5f};
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError, testVals]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                int idx = i % 5;
-                float expected = std::log2(testVals[idx]);
-                float result = CallLog2fFinite(testVals[idx]);
-                if (fabsf(result - expected) > 1e-6f) {
-                    hasError = true;
-                    return;
-                }
-            }
-        });
+        threads.emplace_back(Log2fThreadWorker, std::ref(hasError), testVals);
     }
     for (auto& th : threads) {
         th.join();

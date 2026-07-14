@@ -129,17 +129,18 @@ static napi_value LongjmpChkBoundary002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     auto func = LibcFunctionLoader::GetInstance().GetLongjmpChk();
-    jmp_buf outer_jb;
-    int outer_ret = setjmp(outer_jb);
-    if (outer_ret == 0) {
-        jmp_buf inner_jb;
-        volatile int inner_ret = setjmp(inner_jb);
-        if (inner_ret == 0) {
-            func(inner_jb, 42);
+    int longjmpVal = 42;
+    jmp_buf outerJb;
+    int outerRet = setjmp(outerJb);
+    if (outerRet == 0) {
+        jmp_buf innerJb;
+        volatile int innerRet = setjmp(innerJb);
+        if (innerRet == 0) {
+            func(innerJb, longjmpVal);
         }
-        func(outer_jb, (inner_ret == 42) ? 1 : 2);
+        func(outerJb, (innerRet == longjmpVal) ? 1 : 2);
     }
-    return ReturnInt32(env, (outer_ret == 1) ? 1 : 0);
+    return ReturnInt32(env, (outerRet == 1) ? 1 : 0);
 }
 
 static napi_value LongjmpChkStable001(napi_env env, napi_callback_info info)
@@ -162,6 +163,22 @@ static napi_value LongjmpChkStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, (passCount == K_STABLE_LOOP10000) ? 1 : 0);
 }
 
+static void LongjmpChkThreadWorker(std::atomic<int>& successCount)
+{
+    auto func = LibcFunctionLoader::GetInstance().GetLongjmpChk();
+    volatile int localCount = 0;
+    for (volatile int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        jmp_buf jb;
+        int ret = setjmp(jb);
+        if (ret == 0) {
+            func(jb, 1);
+        } else {
+            localCount++;
+        }
+    }
+    successCount.fetch_add(localCount);
+}
+
 static napi_value LongjmpChkThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
@@ -170,21 +187,7 @@ static napi_value LongjmpChkThread001(napi_env env, napi_callback_info info)
     std::atomic<int> successCount{0};
     std::vector<std::thread> threads;
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&successCount]() {
-            auto func = LibcFunctionLoader::GetInstance().GetLongjmpChk();
-            volatile int localCount = 0;
-            for (volatile int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                jmp_buf jb;
-                int ret = setjmp(jb);
-                if (ret == 0) {
-                    func(jb, 1);
-                }
-                if (ret == 1) {
-                    localCount++;
-                }
-            }
-            successCount += localCount;
-        });
+        threads.emplace_back(LongjmpChkThreadWorker, std::ref(successCount));
     }
     for (auto& th : threads) {
         th.join();

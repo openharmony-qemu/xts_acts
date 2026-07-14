@@ -22,6 +22,7 @@
 #include <thread>
 #include <vector>
 #include <atomic>
+#include <functional>
 
 static constexpr int K_STABLE_LOOP10000 = 20;
 static constexpr int K_THREAD_COUNT = 3;
@@ -146,6 +147,18 @@ static napi_value PowFiniteStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+static void PowThreadWorker(std::atomic<bool>& hasError, const double* testX, const double* testY) {
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        int idx = i % 5;
+        double expected = std::pow(testX[idx], testY[idx]);
+        double result = CallPowFinite(testX[idx], testY[idx]);
+        if (fabs(result - expected) > 1e-12) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 static napi_value PowFiniteThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
@@ -157,17 +170,7 @@ static napi_value PowFiniteThread001(napi_env env, napi_callback_info info)
     double testY[] = {3.0, 2.0, 0.5, 100.0, 2.0};
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError, testX, testY]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                int idx = i % 5;
-                double expected = std::pow(testX[idx], testY[idx]);
-                double result = CallPowFinite(testX[idx], testY[idx]);
-                if (fabs(result - expected) > 1e-12) {
-                    hasError = true;
-                    return;
-                }
-            }
-        });
+        threads.emplace_back(PowThreadWorker, std::ref(hasError), testX, testY);
     }
     for (auto& th : threads) {
         th.join();

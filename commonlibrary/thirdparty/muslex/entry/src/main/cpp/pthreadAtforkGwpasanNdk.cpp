@@ -20,26 +20,27 @@
 #include <thread>
 #include <vector>
 #include <atomic>
+#include <functional>
 
 static constexpr int K_STABLE_LOOP = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
 
-static int gPrepareCalled = 0;
-static int gParentCalled = 0;
-static int gChildCalled = 0;
+static int g_prepareCalled = 0;
+static int g_parentCalled = 0;
+static int g_childCalled = 0;
 
 static void PrepareHandler()
 {
-    gPrepareCalled++;
+    g_prepareCalled++;
 }
 static void ParentHandler()
 {
-    gParentCalled++;
+    g_parentCalled++;
 }
 static void ChildHandler()
 {
-    gChildCalled++;
+    g_childCalled++;
 }
 
 static int CallPthreadAtforkGwpasan(void (*prepare)(void), void (*parent)(void), void (*child)(void))
@@ -155,6 +156,16 @@ static napi_value PthreadAtforkGwpasanStable001(napi_env env, napi_callback_info
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+static void PthreadAtforkWorker(std::atomic<bool>& hasError) {
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        int ret = CallPthreadAtforkGwpasan(nullptr, nullptr, nullptr);
+        if (ret < 0) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 static napi_value PthreadAtforkGwpasanThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
@@ -163,15 +174,7 @@ static napi_value PthreadAtforkGwpasanThread001(napi_env env, napi_callback_info
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                int ret = CallPthreadAtforkGwpasan(nullptr, nullptr, nullptr);
-                if (ret < 0) {
-                    hasError = true;
-                    return;
-                }
-            }
-        });
+        threads.emplace_back(PthreadAtforkWorker, std::ref(hasError));
     }
     for (auto& th : threads) {
         th.join();

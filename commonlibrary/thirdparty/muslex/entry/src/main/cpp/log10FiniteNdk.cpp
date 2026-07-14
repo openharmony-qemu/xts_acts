@@ -22,6 +22,7 @@
 #include <thread>
 #include <vector>
 #include <atomic>
+#include <functional>
 
 static constexpr int K_STABLE_LOOP10000 = 20;
 static constexpr int K_THREAD_COUNT = 3;
@@ -86,7 +87,8 @@ static napi_value Log10FiniteNormal003(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     double result = CallLog10Finite(100.0);
-    return ReturnInt32(env, (fabs(result - 2.0) < 1e-15) ? 1 : 0);
+    double expected = 2.0;
+    return ReturnInt32(env, (fabs(result - expected) < 1e-15) ? 1 : 0);
 }
 
 /* TC-004: log10(0.1) = -1.0 */
@@ -230,6 +232,18 @@ static napi_value Log10FiniteStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+static void Log10ThreadWorker(std::atomic<bool>& hasError, const double* testVals) {
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        int idx = i % 5;
+        double expected = std::log10(testVals[idx]);
+        double result = CallLog10Finite(testVals[idx]);
+        if (fabs(result - expected) > 1e-15) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 /* TC-014: Multi-thread safety */
 static napi_value Log10FiniteThread001(napi_env env, napi_callback_info info)
 {
@@ -241,17 +255,7 @@ static napi_value Log10FiniteThread001(napi_env env, napi_callback_info info)
     double testVals[] = {1.0, 10.0, 100.0, 0.1, 1000.0};
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError, testVals]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                int idx = i % 5;
-                double expected = std::log10(testVals[idx]);
-                double result = CallLog10Finite(testVals[idx]);
-                if (fabs(result - expected) > 1e-15) {
-                    hasError = true;
-                    return;
-                }
-            }
-        });
+        threads.emplace_back(Log10ThreadWorker, std::ref(hasError), testVals);
     }
     for (auto& th : threads) {
         th.join();
