@@ -77,6 +77,7 @@ public:
     using FegetexceptFunc = int (*)(void);
     using MuslVersionFunc = const char* (*)(void);
     using PthreadExtFuncPolicyFunc = int (*)(void);
+    using SetPthreadExtFuncPolicyFunc = void (*)(int);
     using GetaddrinfoCustomFunc = int (*)(const char*, const char*, const struct addrinfo*, struct addrinfo**);
     using HilogBaseIsLoggableFunc = bool (*)(unsigned int, const char*, int);
     using HilogBasePrintFunc = int (*)(int, int, unsigned int, const char*, const char*, ...);
@@ -144,6 +145,10 @@ public:
     PthreadExtFuncPolicyFunc GetPthreadExtFuncPolicy() const
     {
         return LazyLoad(pthreadExtFuncPolicy_, "get_pthread_extended_function_policy");
+    }
+    SetPthreadExtFuncPolicyFunc GetSetPthreadExtFuncPolicy() const
+    {
+        return LazyLoad(setPthreadExtFuncPolicy_, "set_pthread_extended_function_policy");
     }
     GetaddrinfoCustomFunc GetGetaddrinfoCustom() const
     {
