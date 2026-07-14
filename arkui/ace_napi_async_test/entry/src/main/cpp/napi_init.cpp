@@ -1975,6 +1975,1995 @@ static napi_value TestNapiCreateAsyncWork_NullData(napi_env env, napi_callback_i
     return result;
 }
 
+static napi_value TestNapiQueueAsyncWork_NormalParams(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "queueAsyncWorkNormalParams";
+    AsyncWorkStateMode mode = AsyncWorkStateMode::NORMAL;
+    bool slowExecute = false;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *state = new AsyncWorkStateData();
+    state->deferred = deferred;
+    state->createThread = pthread_self();
+    state->mode = mode;
+    state->slowExecute = slowExecute;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, AsyncWorkStateExecuteCallback,
+                                    AsyncWorkStateCompleteCallback, state, &state->work);
+    if (status != napi_ok || state->work == nullptr) {
+        delete state;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = RealQueueAsyncWorkForStateTest(env, state->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, state->work);
+        delete state;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+
+    return promise;
+}
+
+static napi_value TestNapiQueueAsyncWork_ThreadValidation(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "queueAsyncWorkThreadValidation";
+    AsyncWorkStateMode mode = AsyncWorkStateMode::THREAD_VALIDATION;
+    bool slowExecute = false;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *state = new AsyncWorkStateData();
+    state->deferred = deferred;
+    state->createThread = pthread_self();
+    state->mode = mode;
+    state->slowExecute = slowExecute;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, AsyncWorkStateExecuteCallback,
+                                    AsyncWorkStateCompleteCallback, state, &state->work);
+    if (status != napi_ok || state->work == nullptr) {
+        delete state;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = RealQueueAsyncWorkForStateTest(env, state->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, state->work);
+        delete state;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+
+    return promise;
+}
+
+static napi_value TestNapiQueueAsyncWork_NullEnv(napi_env env, napi_callback_info)
+{
+    napi_async_work work = nullptr;
+    napi_status status = QueueAsyncWorkForTest(nullptr, work);
+    if (!CheckNapiAssertion(env, status == napi_invalid_arg, "env is null, QueueAsyncWorkForTest failed.")) {
+        return nullptr;
+    }
+    
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestNapiQueueAsyncWork_NullWork(napi_env env, napi_callback_info)
+{
+    napi_status status = QueueAsyncWorkForTest(env, nullptr);
+    if (!CheckNapiAssertion(env, status == napi_invalid_arg, "work is null, QueueAsyncWorkForTest failed.")) {
+        return nullptr;
+    }
+    
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestNapiQueueAsyncWork_NullEnvAndWork(napi_env env, napi_callback_info)
+{
+    napi_status status = QueueAsyncWorkForTest(nullptr, nullptr);
+    if (!CheckNapiAssertion(env, status == napi_invalid_arg, "all is null, QueueAsyncWorkForTest failed.")) {
+        return nullptr;
+    }
+    
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestNapiQueueAsyncWork_QueuedWork(napi_env env, napi_callback_info)
+{
+    napi_value async_resource = nullptr;
+    napi_value async_resource_name = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "test", NAPI_AUTO_LENGTH, &async_resource_name))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, async_resource_name != nullptr, "async_resource_name should not be null")) {
+        return nullptr;
+    }
+
+    auto *queuedData = new QueuedWorkSyncData();
+    napi_status status = napi_create_async_work(env, async_resource, async_resource_name,
+        QueuedWorkSyncExecuteCallback, QueuedWorkSyncCompleteCallback, queuedData, &queuedData->work);
+    if (status != napi_ok || queuedData->work == nullptr) {
+        delete queuedData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = RealQueueAsyncWorkForStateTest(env, queuedData->work);
+    if (!CheckNapiAssertion(env, status == napi_ok, "QueueAsyncWorkForTest should succeed")) {
+        return nullptr;
+    }
+
+    napi_status queuedAgainStatus = RealQueueAsyncWorkForStateTest(env, queuedData->work);
+    if (queuedAgainStatus == napi_ok) {
+        queuedData->expectedCompleteCount.store(ARRAY_CONTAINER_LENGTH, std::memory_order_release);
+    }
+
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestNapiQueueAsyncWork_ExecutedWork(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "queueAsyncWorkExecutedWork";
+    AsyncWorkStateMode mode = AsyncWorkStateMode::REQUEUE_AFTER_COMPLETE;
+    bool slowExecute = false;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *state = new AsyncWorkStateData();
+    state->deferred = deferred;
+    state->createThread = pthread_self();
+    state->mode = mode;
+    state->slowExecute = slowExecute;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, AsyncWorkStateExecuteCallback,
+                                    AsyncWorkStateCompleteCallback, state, &state->work);
+    if (status != napi_ok || state->work == nullptr) {
+        delete state;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = RealQueueAsyncWorkForStateTest(env, state->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, state->work);
+        delete state;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+
+    return promise;
+}
+
+static napi_value TestNapiQueueAsyncWork_CanceledWork(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "queueAsyncWorkCanceledWork";
+    AsyncWorkStateMode mode = AsyncWorkStateMode::QUEUE_CANCELED;
+    bool slowExecute = true;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *state = new AsyncWorkStateData();
+    state->deferred = deferred;
+    state->createThread = pthread_self();
+    state->mode = mode;
+    state->slowExecute = slowExecute;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, AsyncWorkStateExecuteCallback,
+                                    AsyncWorkStateCompleteCallback, state, &state->work);
+    if (status != napi_ok || state->work == nullptr) {
+        delete state;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = RealQueueAsyncWorkForStateTest(env, state->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, state->work);
+        delete state;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+
+    napi_status firstCancelStatus = napi_cancel_async_work(env, state->work);
+    state->firstOperationStatus.store(static_cast<int>(firstCancelStatus), std::memory_order_release);
+    napi_status queueCanceledStatus = RealQueueAsyncWorkForStateTest(env, state->work);
+    state->secondOperationStatus.store(static_cast<int>(queueCanceledStatus), std::memory_order_release);
+
+    return promise;
+}
+
+static napi_value TestNapiQueueAsyncWork_DeletedWork(napi_env env, napi_callback_info)
+{
+    napi_value async_resource = nullptr;
+    napi_value async_resource_name = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "test", NAPI_AUTO_LENGTH, &async_resource_name))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, async_resource_name != nullptr, "async_resource_name should not be null")) {
+        return nullptr;
+    }
+    
+    napi_async_work work = nullptr;
+    void* data = GetInvalidCounterData();
+    
+    napi_status status = napi_create_async_work(env, async_resource, async_resource_name,
+        ExecuteCallback, CompleteCallback, data, &work);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_async_work failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, work != nullptr, "work should not be null when status is napi_ok")) {
+        return nullptr;
+    }
+    
+    if (work != nullptr) {
+        status = RealQueueAsyncWorkForStateTest(env, work);
+        if (!CheckNapiAssertion(env, status == napi_ok, "QueueAsyncWorkForTest should succeed")) {
+            return nullptr;
+        }
+
+        napi_status deleteQueuedStatus = DeleteAsyncWorkForTest(env, work);
+        if (!CheckNapiAssertion(env,
+            deleteQueuedStatus == napi_ok,
+            "DeleteAsyncWorkForTest should be safely handled")) {
+            return nullptr;
+        }
+
+        napi_status queuedDeletedStatus = RealQueueAsyncWorkForStateTest(env, nullptr);
+        if (!CheckNapiAssertion(env,
+            queuedDeletedStatus == napi_invalid_arg,
+            "deleted work should not be queued again")) {
+            return nullptr;
+        }
+    }
+    
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestNapiCancelAsyncWork_QueuedWork(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "cancelAsyncWorkQueuedWork";
+    AsyncWorkStateMode mode = AsyncWorkStateMode::CANCEL_QUEUED;
+    bool slowExecute = true;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *state = new AsyncWorkStateData();
+    state->deferred = deferred;
+    state->createThread = pthread_self();
+    state->mode = mode;
+    state->slowExecute = slowExecute;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, AsyncWorkStateExecuteCallback,
+                                    AsyncWorkStateCompleteCallback, state, &state->work);
+    if (status != napi_ok || state->work == nullptr) {
+        delete state;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = RealQueueAsyncWorkForStateTest(env, state->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, state->work);
+        delete state;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+
+    napi_status firstCancelStatus = napi_cancel_async_work(env, state->work);
+    state->firstOperationStatus.store(static_cast<int>(firstCancelStatus), std::memory_order_release);
+
+    return promise;
+}
+
+static napi_value TestNapiCancelAsyncWork_NotQueuedWork(napi_env env, napi_callback_info)
+{
+    napi_value async_resource = nullptr;
+    napi_value async_resource_name = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "test", NAPI_AUTO_LENGTH, &async_resource_name))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, async_resource_name != nullptr, "async_resource_name should not be null")) {
+        return nullptr;
+    }
+    
+    napi_async_work work = nullptr;
+    void* data = GetInvalidCounterData();
+    
+    napi_status status = napi_create_async_work(env, async_resource, async_resource_name,
+        ExecuteCallback, CompleteCallback, data, &work);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_async_work failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, work != nullptr, "work should not be null when status is napi_ok")) {
+        return nullptr;
+    }
+    
+    if (work != nullptr) {
+        status = napi_cancel_async_work(env, work);
+        if (!CheckNapiAssertion(env, status == napi_ok, "napi_cancel_async_work should succeed")) {
+            return nullptr;
+        }
+        status = DeleteAsyncWorkForTest(env, work);
+        if (!CheckNapiAssertion(env, status == napi_ok, "DeleteAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+    
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestNapiCancelAsyncWork_NullWork(napi_env env, napi_callback_info)
+{
+    napi_status status = napi_cancel_async_work(env, nullptr);
+    if (!CheckNapiAssertion(env,
+        status == napi_invalid_arg,
+        "napi_cancel_async_work with null work should return napi_invalid_arg")) {
+        return nullptr;
+    }
+    
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestNapiCancelAsyncWork_NullEnv(napi_env env, napi_callback_info)
+{
+    napi_status status = napi_cancel_async_work(nullptr, nullptr);
+    if (!CheckNapiAssertion(env,
+        status == napi_invalid_arg,
+        "napi_cancel_async_work with null env should return napi_invalid_arg")) {
+        return nullptr;
+    }
+    
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestNapiCancelAsyncWork_ExecutingWork(napi_env env, napi_callback_info)
+{
+    napi_value async_resource = nullptr;
+    napi_value async_resource_name = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "test", NAPI_AUTO_LENGTH, &async_resource_name))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, async_resource_name != nullptr, "async_resource_name should not be null")) {
+        return nullptr;
+    }
+
+    auto *queuedData = new QueuedWorkSyncData();
+    napi_status status = napi_create_async_work(env, async_resource, async_resource_name,
+        QueuedWorkSyncExecuteCallback, QueuedWorkSyncCompleteCallback, queuedData, &queuedData->work);
+    if (status != napi_ok || queuedData->work == nullptr) {
+        delete queuedData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    int64_t beforeExecute = g_executeCount.load(std::memory_order_acquire);
+    status = RealQueueAsyncWorkForStateTest(env, queuedData->work);
+    if (!CheckNapiAssertion(env, status == napi_ok, "QueueAsyncWorkForTest should succeed")) {
+        return nullptr;
+    }
+
+    constexpr int maxWaitCount = 200;
+    for (int i = 0; i < maxWaitCount &&
+         g_executeCount.load(std::memory_order_acquire) == beforeExecute; ++i) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
+    }
+
+    napi_status cancelStatus = napi_cancel_async_work(env, queuedData->work);
+    if (cancelStatus == napi_ok) {
+        queuedData->expectedCompleteCount.store(1, std::memory_order_release);
+    }
+
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestNapiCancelAsyncWork_CompletedWork(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "cancelAsyncWorkCompletedWork";
+    AsyncWorkStateMode mode = AsyncWorkStateMode::CANCEL_AFTER_COMPLETE;
+    bool slowExecute = false;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *state = new AsyncWorkStateData();
+    state->deferred = deferred;
+    state->createThread = pthread_self();
+    state->mode = mode;
+    state->slowExecute = slowExecute;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, AsyncWorkStateExecuteCallback,
+                                    AsyncWorkStateCompleteCallback, state, &state->work);
+    if (status != napi_ok || state->work == nullptr) {
+        delete state;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = RealQueueAsyncWorkForStateTest(env, state->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, state->work);
+        delete state;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+
+    return promise;
+}
+
+static napi_value TestNapiCancelAsyncWork_DeletedWork(napi_env env, napi_callback_info)
+{
+    napi_value async_resource = nullptr;
+    napi_value async_resource_name = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "test", NAPI_AUTO_LENGTH, &async_resource_name))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, async_resource_name != nullptr, "async_resource_name should not be null")) {
+        return nullptr;
+    }
+    
+    napi_async_work work = nullptr;
+    void* data = GetInvalidCounterData();
+    
+    napi_status status = napi_create_async_work(env, async_resource, async_resource_name,
+        ExecuteCallback, CompleteCallback, data, &work);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_async_work failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, work != nullptr, "work should not be null when status is napi_ok")) {
+        return nullptr;
+    }
+    
+    if (work != nullptr) {
+        status = RealQueueAsyncWorkForStateTest(env, work);
+        if (!CheckNapiAssertion(env, status == napi_ok, "QueueAsyncWorkForTest should succeed")) {
+            return nullptr;
+        }
+
+        napi_status deleteQueuedStatus = DeleteAsyncWorkForTest(env, work);
+        if (!CheckNapiAssertion(env,
+            deleteQueuedStatus == napi_ok,
+            "DeleteAsyncWorkForTest should be safely handled")) {
+            return nullptr;
+        }
+
+        napi_status cancelDeletedStatus = napi_cancel_async_work(env, nullptr);
+        if (!CheckNapiAssertion(env,
+            cancelDeletedStatus == napi_invalid_arg,
+            "deleted work should not be canceled again")) {
+            return nullptr;
+        }
+    }
+    
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestNapiCancelAsyncWork_CanceledWork(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "cancelAsyncWorkCanceledWork";
+    AsyncWorkStateMode mode = AsyncWorkStateMode::CANCEL_CANCELED;
+    bool slowExecute = true;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *state = new AsyncWorkStateData();
+    state->deferred = deferred;
+    state->createThread = pthread_self();
+    state->mode = mode;
+    state->slowExecute = slowExecute;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, AsyncWorkStateExecuteCallback,
+                                    AsyncWorkStateCompleteCallback, state, &state->work);
+    if (status != napi_ok || state->work == nullptr) {
+        delete state;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = RealQueueAsyncWorkForStateTest(env, state->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, state->work);
+        delete state;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+
+    napi_status firstCancelStatus = napi_cancel_async_work(env, state->work);
+    state->firstOperationStatus.store(static_cast<int>(firstCancelStatus), std::memory_order_release);
+    napi_status secondCancelStatus = napi_cancel_async_work(env, state->work);
+    state->secondOperationStatus.store(static_cast<int>(secondCancelStatus), std::memory_order_release);
+
+    return promise;
+}
+
+static napi_value TestNapiDeleteAsyncWork_NormalParams(napi_env env, napi_callback_info)
+{
+    napi_value async_resource = nullptr;
+    napi_value async_resource_name = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "test", NAPI_AUTO_LENGTH, &async_resource_name))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, async_resource_name != nullptr, "async_resource_name should not be null")) {
+        return nullptr;
+    }
+    napi_async_work work = nullptr;
+    void* data = GetInvalidCounterData();
+    
+    napi_status status = napi_create_async_work(env, async_resource, async_resource_name,
+        ExecuteCallback, CompleteCallback, data, &work);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_async_work failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, work != nullptr, "work should not be null when status is napi_ok")) {
+        return nullptr;
+    }
+    status = DeleteAsyncWorkForTest(env, work);
+    if (!CheckNapiAssertion(env, status == napi_ok, "DeleteAsyncWorkForTest failed")) {
+        return nullptr;
+    }
+    
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestNapiDeleteAsyncWork_NotQueued(napi_env env, napi_callback_info)
+{
+    napi_value async_resource = nullptr;
+    napi_value async_resource_name = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "test", NAPI_AUTO_LENGTH, &async_resource_name))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, async_resource_name != nullptr, "async_resource_name should not be null")) {
+        return nullptr;
+    }
+    napi_async_work work = nullptr;
+    void* data = GetInvalidCounterData();
+    
+    napi_status status = napi_create_async_work(env, async_resource, async_resource_name,
+        ExecuteCallback, CompleteCallback, data, &work);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_async_work failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, work != nullptr, "work should not be null when status is napi_ok")) {
+        return nullptr;
+    }
+    status = DeleteAsyncWorkForTest(env, work);
+    if (!CheckNapiAssertion(env, status == napi_ok, "DeleteAsyncWorkForTest failed")) {
+        return nullptr;
+    }
+    
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestNapiDeleteAsyncWork_QueuedNotExecuted(napi_env env, napi_callback_info)
+{
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "deleteAsyncWorkQueuedNotExecuted", NAPI_AUTO_LENGTH,
+                                           &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *queuedData = new QueuedWorkSyncData();
+    queuedData->deleteOnComplete = false;
+    napi_status status = napi_create_async_work(env, nullptr, asyncResourceName, QueuedWorkSyncExecuteCallback,
+                                                QueuedWorkSyncCompleteCallback, queuedData, &queuedData->work);
+    if (status != napi_ok || queuedData->work == nullptr) {
+        delete queuedData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = QueueAsyncWorkForTest(env, queuedData->work);
+    if (!CheckNapiAssertion(env, status == napi_ok, "QueueAsyncWorkForTest failed")) {
+        return nullptr;
+    }
+    napi_status deleteStatus = DeleteAsyncWorkForTest(env, queuedData->work);
+    if (!CheckNapiAssertion(env, deleteStatus == napi_ok, "DeleteAsyncWorkForTest queued work failed")) {
+        return nullptr;
+    }
+
+    napi_value result = nullptr;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+static napi_value TestNapiDeleteAsyncWork_Executing(napi_env env, napi_callback_info)
+{
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env,
+        napi_create_string_utf8(env, "deleteAsyncWorkExecuting", NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *queuedData = new QueuedWorkSyncData();
+    queuedData->deleteOnComplete = false;
+    napi_status status = napi_create_async_work(env, nullptr, asyncResourceName, QueuedWorkSyncExecuteCallback,
+                                                QueuedWorkSyncCompleteCallback, queuedData, &queuedData->work);
+    if (status != napi_ok || queuedData->work == nullptr) {
+        delete queuedData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = QueueAsyncWorkForTest(env, queuedData->work);
+    if (!CheckNapiAssertion(env, status == napi_ok, "QueueAsyncWorkForTest failed")) {
+        return nullptr;
+    }
+    constexpr int maxWaitCount = 200;
+    for (int i = 0; i < maxWaitCount && !queuedData->enteredExecute.load(std::memory_order_acquire); ++i) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
+    }
+    napi_status deleteStatus = DeleteAsyncWorkForTest(env, queuedData->work);
+    if (!CheckNapiAssertion(env, deleteStatus == napi_ok, "DeleteAsyncWorkForTest executing work failed")) {
+        return nullptr;
+    }
+
+    napi_value result = nullptr;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+static napi_value TestNapiDeleteAsyncWork_Canceled(napi_env env, napi_callback_info)
+{
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env,
+        napi_create_string_utf8(env, "deleteAsyncWorkCanceled", NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *queuedData = new QueuedWorkSyncData();
+    queuedData->deleteOnComplete = false;
+    napi_status status = napi_create_async_work(env, nullptr, asyncResourceName, QueuedWorkSyncExecuteCallback,
+                                                QueuedWorkSyncCompleteCallback, queuedData, &queuedData->work);
+    if (status != napi_ok || queuedData->work == nullptr) {
+        delete queuedData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = QueueAsyncWorkForTest(env, queuedData->work);
+    if (!CheckNapiAssertion(env, status == napi_ok, "QueueAsyncWorkForTest failed")) {
+        return nullptr;
+    }
+    napi_status cancelStatus = napi_cancel_async_work(env, queuedData->work);
+    if (!CheckNapiAssertion(env,
+        cancelStatus == napi_ok || cancelStatus == napi_generic_failure,
+        "napi_cancel_async_work queued work failed")) {
+        return nullptr;
+    }
+    napi_status deleteStatus = DeleteAsyncWorkForTest(env, queuedData->work);
+    if (!CheckNapiAssertion(env, deleteStatus == napi_ok, "DeleteAsyncWorkForTest canceled work failed")) {
+        return nullptr;
+    }
+
+    napi_value result = nullptr;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+static void ApplyDeleteAsyncWorkStateFollowUp(napi_env env, DeleteAsyncWorkStateData *state,
+    DeleteAsyncWorkStateMode mode)
+{
+    if (mode == DeleteAsyncWorkStateMode::QUEUED_NOT_EXECUTED) {
+        napi_status deleteStatus = DeleteAsyncWorkForTest(env, state->work);
+        state->deleteStatus.store(static_cast<int>(deleteStatus), std::memory_order_release);
+    } else if (mode == DeleteAsyncWorkStateMode::EXECUTING) {
+        constexpr int maxWaitCount = 200;
+        for (int i = 0; i < maxWaitCount && !state->executed.load(std::memory_order_acquire); ++i) {
+            std::this_thread::sleep_for(std::chrono::milliseconds(1));
+        }
+        napi_status deleteStatus = DeleteAsyncWorkForTest(env, state->work);
+        state->deleteStatus.store(static_cast<int>(deleteStatus), std::memory_order_release);
+    } else if (mode == DeleteAsyncWorkStateMode::CANCELED) {
+        napi_status cancelStatus = napi_cancel_async_work(env, state->work);
+        state->cancelStatus.store(static_cast<int>(cancelStatus), std::memory_order_release);
+        napi_status deleteStatus = DeleteAsyncWorkForTest(env, state->work);
+        state->deleteStatus.store(static_cast<int>(deleteStatus), std::memory_order_release);
+    }
+}
+
+static napi_value RunDeleteAsyncWorkStateTest(napi_env env, const char *resourceNameText,
+    DeleteAsyncWorkStateMode mode)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_value asyncResourceName = nullptr;
+    if (!CreatePromiseAndResourceName(env, resourceNameText, &deferred, &promise, &asyncResourceName)) {
+        return nullptr;
+    }
+    auto *state = new DeleteAsyncWorkStateData();
+    state->deferred = deferred;
+    state->mode = mode;
+    napi_status status = napi_create_async_work(env, nullptr, asyncResourceName, DeleteAsyncWorkStateExecuteCallback,
+                                                DeleteAsyncWorkStateCompleteCallback, state, &state->work);
+    if (status != napi_ok || state->work == nullptr) {
+        delete state;
+        return CheckNapiAssertion(env, false, "napi_create_async_work failed") ? promise : nullptr;
+    }
+    if (QueueAsyncWorkForTest(env, state->work) != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, state->work);
+        delete state;
+        return CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed") ? promise : nullptr;
+    }
+    ApplyDeleteAsyncWorkStateFollowUp(env, state, mode);
+    return promise;
+}
+
+static napi_value TestNapiDeleteAsyncWork_Completed(napi_env env, napi_callback_info)
+{
+    return RunDeleteAsyncWorkStateTest(env, "deleteAsyncWorkCompleted", DeleteAsyncWorkStateMode::COMPLETED);
+}
+
+static napi_value TestNapiDeleteAsyncWork_NullWork(napi_env env, napi_callback_info)
+{
+    napi_async_work work = nullptr;
+    napi_status status = DeleteAsyncWorkForTest(env, work);
+    if (!CheckNapiAssertion(env, status == napi_invalid_arg, "work is null, DeleteAsyncWorkForTest failed.")) {
+        return nullptr;
+    }
+
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestNapiDeleteAsyncWork_NullEnv(napi_env env, napi_callback_info)
+{
+    napi_async_work work = nullptr;
+    napi_status status = DeleteAsyncWorkForTest(nullptr, work);
+    if (!CheckNapiAssertion(env, status == napi_invalid_arg, "env is null, DeleteAsyncWorkForTest failed.")) {
+        return nullptr;
+    }
+
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestNapiDeleteAsyncWork_DeletedWork(napi_env env, napi_callback_info)
+{
+    napi_value async_resource_name = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "test", NAPI_AUTO_LENGTH, &async_resource_name))) {
+        return nullptr;
+    }
+    napi_async_work work = nullptr;
+    napi_status status = napi_create_async_work(env, nullptr, async_resource_name, ExecuteCallback, CompleteCallback,
+                                                nullptr, &work);
+    if (!CheckNapiAssertion(env, status == napi_ok && work != nullptr, "napi_create_async_work failed")) {
+        return nullptr;
+    }
+    status = RealDeleteAsyncWorkForStateTest(env, work);
+    if (!CheckNapiAssertion(env, status == napi_ok, "first DeleteAsyncWorkForTest failed")) {
+        return nullptr;
+    }
+    work = nullptr;
+    status = DeleteAsyncWorkForTest(env, work);
+    if (!CheckNapiAssertion(env, status == napi_invalid_arg, "deleted async work handle should not be reused")) {
+        return nullptr;
+    }
+
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static bool CreatePromiseAndResourceName(napi_env env, const char *resourceNameText, napi_deferred *deferred,
+    napi_value *promise, napi_value *asyncResourceName)
+{
+    napi_status status = napi_create_promise(env, deferred, promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return false;
+    }
+    if (!CheckNapiAssertion(env, *deferred != nullptr && *promise != nullptr,
+        "promise or deferred should not be null")) {
+        return false;
+    }
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, asyncResourceName))) {
+        return false;
+    }
+    return CheckNapiAssertion(env, *asyncResourceName != nullptr, "asyncResourceName should not be null");
+}
+
+static AsyncWorkStateData *CreateAsyncWorkState(napi_env env, napi_value asyncResourceName, napi_deferred deferred,
+    AsyncWorkStateMode mode, bool slowExecute)
+{
+    auto *state = new AsyncWorkStateData();
+    state->deferred = deferred;
+    state->createThread = pthread_self();
+    state->mode = mode;
+    state->slowExecute = slowExecute;
+    napi_status status = napi_create_async_work(env, nullptr, asyncResourceName, AsyncWorkStateExecuteCallback,
+                                                AsyncWorkStateCompleteCallback, state, &state->work);
+    if (status == napi_ok && state->work != nullptr) {
+        return state;
+    }
+    delete state;
+    return nullptr;
+}
+
+static bool QueueAsyncWorkState(napi_env env, AsyncWorkStateData *state)
+{
+    napi_status status = RealQueueAsyncWorkForStateTest(env, state->work);
+    if (status == napi_ok) {
+        return true;
+    }
+    RealDeleteAsyncWorkForStateTest(env, state->work);
+    return false;
+}
+
+static void ApplyAsyncWorkStateFollowUp(napi_env env, AsyncWorkStateData *state, AsyncWorkStateMode mode)
+{
+    if (mode != AsyncWorkStateMode::CANCEL_QUEUED && mode != AsyncWorkStateMode::QUEUE_CANCELED &&
+        mode != AsyncWorkStateMode::CANCEL_CANCELED) {
+        return;
+    }
+    napi_status firstCancelStatus = napi_cancel_async_work(env, state->work);
+    state->firstOperationStatus.store(static_cast<int>(firstCancelStatus), std::memory_order_release);
+    if (mode == AsyncWorkStateMode::QUEUE_CANCELED) {
+        napi_status queueCanceledStatus = RealQueueAsyncWorkForStateTest(env, state->work);
+        state->secondOperationStatus.store(static_cast<int>(queueCanceledStatus), std::memory_order_release);
+    } else if (mode == AsyncWorkStateMode::CANCEL_CANCELED) {
+        napi_status secondCancelStatus = napi_cancel_async_work(env, state->work);
+        state->secondOperationStatus.store(static_cast<int>(secondCancelStatus), std::memory_order_release);
+    }
+}
+
+static napi_value RunAsyncWorkStateTest(napi_env env, const char *resourceNameText,
+    AsyncWorkStateMode mode = AsyncWorkStateMode::NORMAL, bool slowExecute = false)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_value asyncResourceName = nullptr;
+    if (!CreatePromiseAndResourceName(env, resourceNameText, &deferred, &promise, &asyncResourceName)) {
+        return nullptr;
+    }
+    auto *state = CreateAsyncWorkState(env, asyncResourceName, deferred, mode, slowExecute);
+    if (state == nullptr) {
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+    if (!QueueAsyncWorkState(env, state)) {
+        delete state;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+    ApplyAsyncWorkStateFollowUp(env, state, mode);
+    return promise;
+}
+
+static napi_value TestNapiAsyncWork_NormalFunctionNoArgNoReturn(napi_env env, napi_callback_info)
+{
+    return RunAsyncWorkStateTest(env, "asyncWorkNormalFunctionNoArgNoReturn");
+}
+
+static napi_value TestNapiAsyncWork_SyncFunctionWithArgNoReturn(napi_env env, napi_callback_info)
+{
+    return RunAsyncWorkStateTest(env, "asyncWorkSyncFunctionWithArgNoReturn");
+}
+
+static napi_value TestNapiAsyncWork_NormalFunctionNoArgWithReturnContainer(napi_env env, napi_callback_info)
+{
+    return RunAsyncWorkStateTest(env, "asyncWorkNormalFunctionNoArgWithReturnContainer");
+}
+
+static napi_value TestNapiAsyncWork_ClassMethodWithArgStringReturnFunction(napi_env env, napi_callback_info)
+{
+    return RunAsyncWorkStateTest(env, "asyncWorkClassMethodWithArgStringReturnFunction");
+}
+
+static napi_value TestNapiAsyncWork_ClassStaticWithArgReturnPromise(napi_env env, napi_callback_info)
+{
+    return RunAsyncWorkStateTest(env, "asyncWorkClassStaticWithArgReturnPromise");
+}
+
+static napi_value TestNapiAsyncWork_EtsNormalFunctionNoArgNoReturn(napi_env env, napi_callback_info)
+{
+    return RunAsyncWorkStateTest(env, "asyncWorkEtsNormalFunctionNoArgNoReturn");
+}
+
+static napi_value TestNapiAsyncWork_EtsNormalFunctionWithArgNoReturn(napi_env env, napi_callback_info)
+{
+    return RunAsyncWorkStateTest(env, "asyncWorkEtsNormalFunctionWithArgNoReturn");
+}
+
+static napi_value TestNapiAsyncWork_EtsNormalFunctionNoArgWithReturnContainer(napi_env env, napi_callback_info)
+{
+    return RunAsyncWorkStateTest(env, "asyncWorkEtsNormalFunctionNoArgWithReturnContainer");
+}
+
+static napi_value TestNapiAsyncWork_EtsClassMethodWithArgStringReturnFunction(napi_env env, napi_callback_info)
+{
+    return RunAsyncWorkStateTest(env, "asyncWorkEtsClassMethodWithArgStringReturnFunction");
+}
+
+static napi_value TestNapiAsyncWork_EtsClassStaticWithArgReturnPromise(napi_env env, napi_callback_info)
+{
+    return RunAsyncWorkStateTest(env, "asyncWorkEtsClassStaticWithArgReturnPromise");
+}
+
+static napi_value TestNapiAsyncWork_EtsClassConstructor(napi_env env, napi_callback_info)
+{
+    return RunAsyncWorkStateTest(env, "asyncWorkEtsClassConstructor");
+}
+
+static napi_value TestNapiAsyncComplete_NormalFunctionNoArgNoReturn(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "asyncCompleteNormalFunctionNoArgNoReturn";
+    AsyncCompleteMode mode = AsyncCompleteMode::NORMAL_FUNCTION_NO_ARG_NO_RETURN;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *completeData = new AsyncCompleteData();
+    completeData->deferred = deferred;
+    completeData->mode = mode;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, AsyncCompleteExecuteCallback,
+                                    AsyncCompleteCompleteCallback, completeData, &completeData->work);
+    if (status != napi_ok || completeData->work == nullptr) {
+        delete completeData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = RealQueueAsyncWorkForStateTest(env, completeData->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, completeData->work);
+        delete completeData;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+    return promise;
+}
+
+static napi_value TestNapiAsyncComplete_SyncFunctionWithArgReturn(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "asyncCompleteSyncFunctionWithArgReturn";
+    AsyncCompleteMode mode = AsyncCompleteMode::SYNC_FUNCTION_WITH_ARG_RETURN;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *completeData = new AsyncCompleteData();
+    completeData->deferred = deferred;
+    completeData->mode = mode;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, AsyncCompleteExecuteCallback,
+                                    AsyncCompleteCompleteCallback, completeData, &completeData->work);
+    if (status != napi_ok || completeData->work == nullptr) {
+        delete completeData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = RealQueueAsyncWorkForStateTest(env, completeData->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, completeData->work);
+        delete completeData;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+    return promise;
+}
+
+static napi_value TestNapiAsyncComplete_NormalFunctionNoArgReturnContainer(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "asyncCompleteNormalFunctionNoArgReturnContainer";
+    AsyncCompleteMode mode = AsyncCompleteMode::NORMAL_FUNCTION_NO_ARG_RETURN_CONTAINER;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *completeData = new AsyncCompleteData();
+    completeData->deferred = deferred;
+    completeData->mode = mode;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, AsyncCompleteExecuteCallback,
+                                    AsyncCompleteCompleteCallback, completeData, &completeData->work);
+    if (status != napi_ok || completeData->work == nullptr) {
+        delete completeData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = RealQueueAsyncWorkForStateTest(env, completeData->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, completeData->work);
+        delete completeData;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+    return promise;
+}
+
+static napi_value TestNapiAsyncComplete_SyncFunctionWithArgReturnContainer(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "asyncCompleteSyncFunctionWithArgReturnContainer";
+    AsyncCompleteMode mode = AsyncCompleteMode::SYNC_FUNCTION_WITH_ARG_RETURN_CONTAINER;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *completeData = new AsyncCompleteData();
+    completeData->deferred = deferred;
+    completeData->mode = mode;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, AsyncCompleteExecuteCallback,
+                                    AsyncCompleteCompleteCallback, completeData, &completeData->work);
+    if (status != napi_ok || completeData->work == nullptr) {
+        delete completeData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = RealQueueAsyncWorkForStateTest(env, completeData->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, completeData->work);
+        delete completeData;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+    return promise;
+}
+
+static napi_value TestNapiAsyncComplete_NormalFunctionNoArgReturnString(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "asyncCompleteNormalFunctionNoArgReturnString";
+    AsyncCompleteMode mode = AsyncCompleteMode::NORMAL_FUNCTION_NO_ARG_RETURN_STRING;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *completeData = new AsyncCompleteData();
+    completeData->deferred = deferred;
+    completeData->mode = mode;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, AsyncCompleteExecuteCallback,
+                                    AsyncCompleteCompleteCallback, completeData, &completeData->work);
+    if (status != napi_ok || completeData->work == nullptr) {
+        delete completeData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = RealQueueAsyncWorkForStateTest(env, completeData->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, completeData->work);
+        delete completeData;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+    return promise;
+}
+
+static napi_value TestNapiAsyncComplete_ClassMethodWithArgStringReturnFunction(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "asyncCompleteClassMethodWithArgStringReturnFunction";
+    AsyncCompleteMode mode = AsyncCompleteMode::CLASS_METHOD_WITH_ARG_STRING_RETURN_FUNCTION;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *completeData = new AsyncCompleteData();
+    completeData->deferred = deferred;
+    completeData->mode = mode;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, AsyncCompleteExecuteCallback,
+                                    AsyncCompleteCompleteCallback, completeData, &completeData->work);
+    if (status != napi_ok || completeData->work == nullptr) {
+        delete completeData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = RealQueueAsyncWorkForStateTest(env, completeData->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, completeData->work);
+        delete completeData;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+    return promise;
+}
+
+static napi_value TestNapiAsyncComplete_ClassStaticWithArgReturnPromise(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "asyncCompleteClassStaticWithArgReturnPromise";
+    AsyncCompleteMode mode = AsyncCompleteMode::CLASS_STATIC_WITH_ARG_RETURN_PROMISE;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *completeData = new AsyncCompleteData();
+    completeData->deferred = deferred;
+    completeData->mode = mode;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, AsyncCompleteExecuteCallback,
+                                    AsyncCompleteCompleteCallback, completeData, &completeData->work);
+    if (status != napi_ok || completeData->work == nullptr) {
+        delete completeData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = RealQueueAsyncWorkForStateTest(env, completeData->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, completeData->work);
+        delete completeData;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+    return promise;
+}
+
+static napi_value TestNapiAsyncComplete_EtsNormalFunctionNoArgNoReturn(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "asyncCompleteEtsNormalFunctionNoArgNoReturn";
+    AsyncCompleteMode mode = AsyncCompleteMode::ETS_NORMAL_FUNCTION_NO_ARG_NO_RETURN;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *completeData = new AsyncCompleteData();
+    completeData->deferred = deferred;
+    completeData->mode = mode;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, AsyncCompleteExecuteCallback,
+                                    AsyncCompleteCompleteCallback, completeData, &completeData->work);
+    if (status != napi_ok || completeData->work == nullptr) {
+        delete completeData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = RealQueueAsyncWorkForStateTest(env, completeData->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, completeData->work);
+        delete completeData;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+    return promise;
+}
+
+static napi_value TestNapiAsyncComplete_EtsNormalFunctionWithArgNoReturn(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "asyncCompleteEtsNormalFunctionWithArgNoReturn";
+    AsyncCompleteMode mode = AsyncCompleteMode::ETS_NORMAL_FUNCTION_WITH_ARG_NO_RETURN;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *completeData = new AsyncCompleteData();
+    completeData->deferred = deferred;
+    completeData->mode = mode;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, AsyncCompleteExecuteCallback,
+                                    AsyncCompleteCompleteCallback, completeData, &completeData->work);
+    if (status != napi_ok || completeData->work == nullptr) {
+        delete completeData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = RealQueueAsyncWorkForStateTest(env, completeData->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, completeData->work);
+        delete completeData;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+    return promise;
+}
+
+static napi_value TestNapiAsyncComplete_EtsNormalFunctionNoArgReturnContainer(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "asyncCompleteEtsNormalFunctionNoArgReturnContainer";
+    AsyncCompleteMode mode = AsyncCompleteMode::ETS_NORMAL_FUNCTION_NO_ARG_RETURN_CONTAINER;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *completeData = new AsyncCompleteData();
+    completeData->deferred = deferred;
+    completeData->mode = mode;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, AsyncCompleteExecuteCallback,
+                                    AsyncCompleteCompleteCallback, completeData, &completeData->work);
+    if (status != napi_ok || completeData->work == nullptr) {
+        delete completeData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = RealQueueAsyncWorkForStateTest(env, completeData->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, completeData->work);
+        delete completeData;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+    return promise;
+}
+
+static napi_value TestNapiAsyncComplete_EtsClassMethodWithArgStringReturnFunction(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "asyncCompleteEtsClassMethodWithArgStringReturnFunction";
+    AsyncCompleteMode mode = AsyncCompleteMode::ETS_CLASS_METHOD_WITH_ARG_STRING_RETURN_FUNCTION;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *completeData = new AsyncCompleteData();
+    completeData->deferred = deferred;
+    completeData->mode = mode;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, AsyncCompleteExecuteCallback,
+                                    AsyncCompleteCompleteCallback, completeData, &completeData->work);
+    if (status != napi_ok || completeData->work == nullptr) {
+        delete completeData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = RealQueueAsyncWorkForStateTest(env, completeData->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, completeData->work);
+        delete completeData;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+    return promise;
+}
+
+static napi_value TestNapiAsyncComplete_EtsClassStaticWithArgReturnPromise(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "asyncCompleteEtsClassStaticWithArgReturnPromise";
+    AsyncCompleteMode mode = AsyncCompleteMode::ETS_CLASS_STATIC_WITH_ARG_RETURN_PROMISE;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *completeData = new AsyncCompleteData();
+    completeData->deferred = deferred;
+    completeData->mode = mode;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, AsyncCompleteExecuteCallback,
+                                    AsyncCompleteCompleteCallback, completeData, &completeData->work);
+    if (status != napi_ok || completeData->work == nullptr) {
+        delete completeData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = RealQueueAsyncWorkForStateTest(env, completeData->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, completeData->work);
+        delete completeData;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+    return promise;
+}
+
+static napi_value TestNapiAsyncComplete_EtsClassConstructor(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "asyncCompleteEtsClassConstructor";
+    AsyncCompleteMode mode = AsyncCompleteMode::ETS_CLASS_CONSTRUCTOR;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *completeData = new AsyncCompleteData();
+    completeData->deferred = deferred;
+    completeData->mode = mode;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, AsyncCompleteExecuteCallback,
+                                    AsyncCompleteCompleteCallback, completeData, &completeData->work);
+    if (status != napi_ok || completeData->work == nullptr) {
+        delete completeData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = RealQueueAsyncWorkForStateTest(env, completeData->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, completeData->work);
+        delete completeData;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+    return promise;
+}
+
+static napi_value TestNapiTaskContent_ExecuteThrowException(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "taskContentExecuteThrowException";
+    TaskContentMode mode = TaskContentMode::EXECUTE_THROW_EXCEPTION;
+    int requestedSeconds = 0;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *taskData = new TaskContentData();
+    taskData->deferred = deferred;
+    taskData->mode = mode;
+    taskData->requestedSeconds = requestedSeconds;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, TaskContentExecuteCallback,
+                                    TaskContentCompleteCallback, taskData, &taskData->work);
+    if (status != napi_ok || taskData->work == nullptr) {
+        delete taskData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = QueueAsyncWorkForTest(env, taskData->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, taskData->work);
+        delete taskData;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+
+    if (mode == TaskContentMode::CANCEL_AND_REQUEUE) {
+        napi_status cancelStatus = napi_cancel_async_work(env, taskData->work);
+        taskData->cancelStatus.store(static_cast<int>(cancelStatus), std::memory_order_release);
+        napi_status requeueStatus = RealQueueAsyncWorkForStateTest(env, taskData->work);
+        taskData->requeueStatus.store(static_cast<int>(requeueStatus), std::memory_order_release);
+    }
+
+    return promise;
+}
+
+static napi_value TestNapiTaskContent_CompleteThrowException(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "taskContentCompleteThrowException";
+    TaskContentMode mode = TaskContentMode::COMPLETE_THROW_EXCEPTION;
+    int requestedSeconds = 0;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *taskData = new TaskContentData();
+    taskData->deferred = deferred;
+    taskData->mode = mode;
+    taskData->requestedSeconds = requestedSeconds;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, TaskContentExecuteCallback,
+                                    TaskContentCompleteCallback, taskData, &taskData->work);
+    if (status != napi_ok || taskData->work == nullptr) {
+        delete taskData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = QueueAsyncWorkForTest(env, taskData->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, taskData->work);
+        delete taskData;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+
+    if (mode == TaskContentMode::CANCEL_AND_REQUEUE) {
+        napi_status cancelStatus = napi_cancel_async_work(env, taskData->work);
+        taskData->cancelStatus.store(static_cast<int>(cancelStatus), std::memory_order_release);
+        napi_status requeueStatus = RealQueueAsyncWorkForStateTest(env, taskData->work);
+        taskData->requeueStatus.store(static_cast<int>(requeueStatus), std::memory_order_release);
+    }
+
+    return promise;
+}
+
+static napi_value TestNapiTaskContent_ExecuteWithLock(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "taskContentExecuteWithLock";
+    TaskContentMode mode = TaskContentMode::EXECUTE_WITH_LOCK;
+    int requestedSeconds = 0;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *taskData = new TaskContentData();
+    taskData->deferred = deferred;
+    taskData->mode = mode;
+    taskData->requestedSeconds = requestedSeconds;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, TaskContentExecuteCallback,
+                                    TaskContentCompleteCallback, taskData, &taskData->work);
+    if (status != napi_ok || taskData->work == nullptr) {
+        delete taskData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = QueueAsyncWorkForTest(env, taskData->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, taskData->work);
+        delete taskData;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+
+    if (mode == TaskContentMode::CANCEL_AND_REQUEUE) {
+        napi_status cancelStatus = napi_cancel_async_work(env, taskData->work);
+        taskData->cancelStatus.store(static_cast<int>(cancelStatus), std::memory_order_release);
+        napi_status requeueStatus = RealQueueAsyncWorkForStateTest(env, taskData->work);
+        taskData->requeueStatus.store(static_cast<int>(requeueStatus), std::memory_order_release);
+    }
+
+    return promise;
+}
+
+static napi_value TestNapiTaskContent_ExecuteLongTime10s(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "taskContentExecuteLongTime10s";
+    TaskContentMode mode = TaskContentMode::EXECUTE_LONG_TIME;
+    int requestedSeconds = TASK_CONTENT_LONG_SECONDS;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *taskData = new TaskContentData();
+    taskData->deferred = deferred;
+    taskData->mode = mode;
+    taskData->requestedSeconds = requestedSeconds;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, TaskContentExecuteCallback,
+                                    TaskContentCompleteCallback, taskData, &taskData->work);
+    if (status != napi_ok || taskData->work == nullptr) {
+        delete taskData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = QueueAsyncWorkForTest(env, taskData->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, taskData->work);
+        delete taskData;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+
+    if (mode == TaskContentMode::CANCEL_AND_REQUEUE) {
+        napi_status cancelStatus = napi_cancel_async_work(env, taskData->work);
+        taskData->cancelStatus.store(static_cast<int>(cancelStatus), std::memory_order_release);
+        napi_status requeueStatus = RealQueueAsyncWorkForStateTest(env, taskData->work);
+        taskData->requeueStatus.store(static_cast<int>(requeueStatus), std::memory_order_release);
+    }
+
+    return promise;
+}
+
+static napi_value TestNapiTaskContent_ExecuteLongTime3min(napi_env env, napi_callback_info)
+{
+    const char *resourceNameText = "taskContentExecuteLongTime3min";
+    TaskContentMode mode = TaskContentMode::EXECUTE_LONG_TIME;
+    int requestedSeconds = 180;
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value asyncResourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
+        return nullptr;
+    }
+
+    auto *taskData = new TaskContentData();
+    taskData->deferred = deferred;
+    taskData->mode = mode;
+    taskData->requestedSeconds = requestedSeconds;
+    status = napi_create_async_work(env, nullptr, asyncResourceName, TaskContentExecuteCallback,
+                                    TaskContentCompleteCallback, taskData, &taskData->work);
+    if (status != napi_ok || taskData->work == nullptr) {
+        delete taskData;
+        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
+            return nullptr;
+        }
+    }
+
+    status = QueueAsyncWorkForTest(env, taskData->work);
+    if (status != napi_ok) {
+        RealDeleteAsyncWorkForStateTest(env, taskData->work);
+        delete taskData;
+        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
+            return nullptr;
+        }
+    }
+
+    if (mode == TaskContentMode::CANCEL_AND_REQUEUE) {
+        napi_status cancelStatus = napi_cancel_async_work(env, taskData->work);
+        taskData->cancelStatus.store(static_cast<int>(cancelStatus), std::memory_order_release);
+        napi_status requeueStatus = RealQueueAsyncWorkForStateTest(env, taskData->work);
+        taskData->requeueStatus.store(static_cast<int>(requeueStatus), std::memory_order_release);
+    }
+
+    return promise;
+}
+
 
 
 
