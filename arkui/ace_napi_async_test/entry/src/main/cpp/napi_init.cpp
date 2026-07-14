@@ -5951,6 +5951,1995 @@ static napi_value TestRejectDeferredLoop(napi_env env, napi_callback_info)
     return result;
 }
 
+static bool CreateLargeStringValue(napi_env env, napi_value *stringValue)
+{
+    std::string largeString(LARGE_STRING_CHAR_COUNT, 'a');
+    if (!CheckNapiCall(env,
+        napi_create_string_utf8(env, largeString.c_str(), largeString.size(), stringValue))) {
+        return false;
+    }
+    size_t actualLength = 0;
+    if (!CheckNapiCall(env, napi_get_value_string_utf8(env, *stringValue, nullptr, 0, &actualLength))) {
+        return false;
+    }
+    return CheckNapiAssertion(env, actualLength == largeString.size(), "large string length should match");
+}
+
+static napi_value TestLargeStringResolve(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+        napi_deferred deferred = nullptr;
+        if (!CreateCheckedPromise(env, &deferred, &promise)) {
+            return nullptr;
+        }
+        napi_value stringValue = nullptr;
+        if (!CreateLargeStringValue(env, &stringValue)) {
+            return nullptr;
+        }
+        if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, stringValue))) {
+            return nullptr;
+        }
+        return CreateBooleanResult(env, true);
+}
+
+static napi_value CreateComplexObject(napi_env env)
+{
+    napi_value obj;
+    if (!CheckNapiCall(env, napi_create_object(env, &obj))) {
+        return nullptr;
+    }
+    
+    napi_value a_val;
+    if (!CheckNapiCall(env, napi_create_int32(env, 1, &a_val))) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_set_named_property(env, obj, "a", a_val))) {
+        return nullptr;
+    }
+
+    size_t num = COMPLEX_OBJECT_ARRAY_LENGTH;
+    napi_value b_val;
+    if (!CheckNapiCall(env, napi_create_object(env, &b_val))) {
+        return nullptr;
+    }
+    napi_value c_array;
+    if (!CheckNapiCall(env, napi_create_array_with_length(env, num, &c_array))) {
+        return nullptr;
+    }
+    for (uint32_t i = 0; i < num; ++i) {
+        napi_value item;
+        if (!CheckNapiCall(env, napi_create_uint32(env, i + 1, &item))) {
+            return nullptr;
+        }
+        if (!CheckNapiAssertion(env,
+            SetAndCheckArrayElement(env, c_array, i, item),
+            "nested array element check failed")) {
+            return nullptr;
+        }
+    }
+    if (!CheckNapiCall(env, napi_set_named_property(env, b_val, "c", c_array))) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_set_named_property(env, obj, "b", b_val))) {
+        return nullptr;
+    }
+    napi_value d_val;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "test", NAPI_AUTO_LENGTH, &d_val))) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_set_named_property(env, obj, "d", d_val))) {
+        return nullptr;
+    }
+    return obj;
+}
+
+static napi_value ValidateComplexObject(napi_env env, napi_value obj)
+{
+    napi_value actualA;
+    if (!CheckNapiCall(env, napi_get_named_property(env, obj, "a", &actualA))) {
+        return nullptr;
+    }
+    int32_t actualANumber = 0;
+    int32_t tarANumber = 1;
+    if (!CheckNapiCall(env, napi_get_value_int32(env, actualA, &actualANumber))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, actualANumber == tarANumber, "property a should match")) {
+        return nullptr;
+    }
+    
+    napi_value actualB;
+    if (!CheckNapiCall(env, napi_get_named_property(env, obj, "b", &actualB))) {
+        return nullptr;
+    }
+    napi_value actualC;
+    if (!CheckNapiCall(env, napi_get_named_property(env, actualB, "c", &actualC))) {
+        return nullptr;
+    }
+    napi_value actualCSecond;
+    if (!CheckNapiCall(env, napi_get_element(env, actualC, SECOND_ARRAY_INDEX, &actualCSecond))) {
+        return nullptr;
+    }
+    int32_t actualCSecondNumber = 0;
+    int32_t tarNumber = COMPLEX_OBJECT_SECOND_ARRAY_VALUE;
+    if (!CheckNapiCall(env, napi_get_value_int32(env, actualCSecond, &actualCSecondNumber))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, actualCSecondNumber == tarNumber, "nested property b.c[1] should match")) {
+        return nullptr;
+    }
+    
+    napi_value actualD;
+    if (!CheckNapiCall(env, napi_get_named_property(env, obj, "d", &actualD))) {
+        return nullptr;
+    }
+    size_t actualDLength = 0;
+    size_t tarLength = COMPLEX_OBJECT_TEXT_VALUE_LENGTH;
+    if (!CheckNapiCall(env, napi_get_value_string_utf8(env, actualD, nullptr, 0, &actualDLength))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, actualDLength == tarLength, "property d should match")) {
+        return nullptr;
+    }
+    return obj;
+}
+
+static napi_value TestComplexObjectResolve(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, deferred != nullptr, "deferred should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, promise != nullptr, "promise should not be null")) {
+        return nullptr;
+    }
+
+    napi_value obj = CreateComplexObject(env);
+    ValidateComplexObject(env, obj);
+
+    if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, obj))) {
+        return nullptr;
+    }
+
+    napi_value nativeResult;
+    if (!CheckNapiCall(env, napi_get_boolean(env, true, &nativeResult))) {
+        return nullptr;
+    }
+    
+    size_t lengthNum = ARRAY_CONTAINER_LENGTH;
+    size_t testNum1 = 0;
+    size_t testNum2 = 1;
+    napi_value array;
+    if (!CheckNapiCall(env, napi_create_array_with_length(env, lengthNum, &array))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, array != nullptr, "array should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        SetAndCheckArrayElement(env, array, testNum1, nativeResult),
+        "array element check failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        SetAndCheckArrayElement(env, array, testNum2, promise),
+        "array element check failed")) {
+        return nullptr;
+    }
+
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestLoopThreadSafePromise(napi_env env, napi_callback_info)
+{
+    constexpr int threadCount = STRESS_LOGICAL_THREAD_COUNT;
+    constexpr int callsPerThread = STRESS_TASKS_PER_THREAD;
+    napi_value callback = nullptr;
+    if (!CheckNapiCall(env, napi_create_function(env, "loopThreadSafeCallback", NAPI_AUTO_LENGTH,
+                                        ThreadSafeNoopJs, nullptr, &callback))) {
+        return nullptr;
+    }
+    napi_value resourceName = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "loopThreadSafePromise", NAPI_AUTO_LENGTH, &resourceName))) {
+        return nullptr;
+    }
+    napi_threadsafe_function tsfn = nullptr;
+    napi_status status = napi_create_threadsafe_function(env, callback, nullptr, resourceName, 0, threadCount,
+                                                         nullptr, nullptr, nullptr, ThreadSafeNoopCallJs, &tsfn);
+    if (!CheckNapiAssertion(env, status == napi_ok && tsfn != nullptr, "napi_create_threadsafe_function failed.")) {
+        return nullptr;
+    }
+    std::atomic<int> callCount {0};
+    std::vector<std::thread> threads;
+    threads.reserve(threadCount);
+    for (int i = 0; i < threadCount; ++i) {
+        threads.emplace_back([tsfn, &callCount]() {
+            for (int j = 0; j < callsPerThread; ++j) {
+                napi_call_threadsafe_function(tsfn, nullptr, napi_tsfn_nonblocking);
+                callCount.fetch_add(1);
+            }
+            napi_release_threadsafe_function(tsfn, napi_tsfn_release);
+        });
+    }
+    for (auto &thread : threads) {
+        thread.join();
+    }
+    if (!CheckNapiAssertion(env,
+        callCount.load() == threadCount * callsPerThread,
+        "all child threads should call napi_call_threadsafe_function")) {
+        return nullptr;
+    }
+
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestIsPromiseNormal(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+        napi_deferred deferred = nullptr;
+        if (!CreateCheckedPromise(env, &deferred, &promise)) {
+            return nullptr;
+        }
+        if (!CheckPromiseValue(env, promise, "promise should be recognized as promise")) {
+            return nullptr;
+        }
+        return CreateBooleanResult(env, true);
+}
+
+static napi_value TestIsPromiseWithNumber(napi_env env, napi_callback_info)
+{
+    napi_value num;
+    size_t tarNum = CLASS_CONSTRUCTOR_VALUE;
+    if (!CheckNapiCall(env, napi_create_int32(env, tarNum, &num))) {
+        return nullptr;
+    }
+    
+    bool isPromise = true;
+    napi_status status = napi_is_promise(env, num, &isPromise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_is_promise failed.")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, !isPromise, "number should not be recognized as promise")) {
+        return nullptr;
+    }
+    
+    napi_value nativeResult;
+    if (!CheckNapiCall(env, napi_get_boolean(env, true, &nativeResult))) {
+        return nullptr;
+    }
+    
+    napi_value isPromiseValue;
+    if (!CheckNapiCall(env, napi_get_boolean(env, isPromise, &isPromiseValue))) {
+        return nullptr;
+    }
+    
+    napi_value arr[ARRAY_CONTAINER_LENGTH];
+    arr[0] = nativeResult;
+    arr[1] = isPromiseValue;
+
+    size_t lengthNum = ARRAY_CONTAINER_LENGTH;
+    size_t testNum1 = 0;
+    size_t testNum2 = 1;
+    napi_value array;
+    if (!CheckNapiCall(env, napi_create_array_with_length(env, lengthNum, &array))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, array != nullptr, "array should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        SetAndCheckArrayElement(env, array, testNum1, arr[0]),
+        "array element check failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        SetAndCheckArrayElement(env, array, testNum2, arr[1]),
+        "array element check failed")) {
+        return nullptr;
+    }
+    
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestResolveDeferredNormal(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, deferred != nullptr, "deferred should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, promise != nullptr, "promise should not be null")) {
+        return nullptr;
+    }
+    
+    napi_value value;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "test", NAPI_AUTO_LENGTH, &value))) {
+        return nullptr;
+    }
+    
+    napi_status status = napi_resolve_deferred(env, deferred, value);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_resolve_deferred failed.")) {
+        return nullptr;
+    }
+    
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestResolveDeferredNullDeferred(napi_env env, napi_callback_info)
+{
+    napi_value value;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "test", NAPI_AUTO_LENGTH, &value))) {
+        return nullptr;
+    }
+    
+    napi_status status = napi_resolve_deferred(env, nullptr, value);
+    if (!CheckNapiAssertion(env, status == napi_invalid_arg, "deferred is null, napi_resolve_deferred failed.")) {
+        return nullptr;
+    }
+    
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestResolveDeferredTwice(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, deferred != nullptr, "deferred should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, promise != nullptr, "promise should not be null")) {
+        return nullptr;
+    }
+    
+    napi_value value;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "test", NAPI_AUTO_LENGTH, &value))) {
+        return nullptr;
+    }
+    
+    napi_status status = napi_resolve_deferred(env, deferred, value);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_resolve_deferred failed.")) {
+        return nullptr;
+    }
+
+    bool isPromise = false;
+    status = napi_is_promise(env, promise, &isPromise);
+    if (!CheckNapiAssertion(env, status == napi_ok && isPromise, "fulfilled promise should remain a promise")) {
+        return nullptr;
+    }
+
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestRejectDeferredNormal(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, deferred != nullptr, "deferred should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, promise != nullptr, "promise should not be null")) {
+        return nullptr;
+    }
+    
+    napi_value reason;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "error", NAPI_AUTO_LENGTH, &reason))) {
+        return nullptr;
+    }
+    
+    napi_status status = napi_reject_deferred(env, deferred, reason);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_reject_deferred failed.")) {
+        return nullptr;
+    }
+    
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestRejectDeferredNullDeferred(napi_env env, napi_callback_info)
+{
+    napi_value reason;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "error", NAPI_AUTO_LENGTH, &reason))) {
+        return nullptr;
+    }
+    
+    napi_status status = napi_reject_deferred(env, nullptr, reason);
+    if (!CheckNapiAssertion(env, status == napi_invalid_arg, "deferred is null, napi_reject_deferred failed.")) {
+        return nullptr;
+    }
+    
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestRejectDeferredTwice(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, deferred != nullptr, "deferred should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, promise != nullptr, "promise should not be null")) {
+        return nullptr;
+    }
+    
+    napi_value reason;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "error", NAPI_AUTO_LENGTH, &reason))) {
+        return nullptr;
+    }
+    
+    napi_status status = napi_reject_deferred(env, deferred, reason);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_reject_deferred failed.")) {
+        return nullptr;
+    }
+
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static bool FillAndCheckLargeBuffer(napi_env env, napi_value buffer, void *bufferData, size_t bufferSize)
+{
+    constexpr size_t byteModulo = 256;
+    constexpr uint8_t maxByteValue = 255;
+    auto *bytes = static_cast<uint8_t *>(bufferData);
+    for (size_t i = 0; i < bufferSize; ++i) {
+        bytes[i] = static_cast<uint8_t>(i % byteModulo);
+    }
+    void *actualData = nullptr;
+    size_t actualSize = 0;
+    if (!CheckNapiCall(env, napi_get_buffer_info(env, buffer, &actualData, &actualSize))) {
+        return false;
+    }
+    bool contentOk = bytes[0] == 0 && bytes[maxByteValue] == maxByteValue &&
+        bytes[bufferSize - 1] == maxByteValue;
+    return CheckNapiAssertion(env, actualData == bufferData, "buffer pointer should be stable") &&
+        CheckNapiAssertion(env, actualSize == bufferSize, "buffer length should match") &&
+        CheckNapiAssertion(env, contentOk, "buffer content should match");
+}
+
+static napi_value TestLargeBufferResolve(napi_env env, napi_callback_info)
+{
+    constexpr size_t bufferSize = LARGE_BUFFER_SIZE;
+        napi_value promise = nullptr;
+        napi_deferred deferred = nullptr;
+        if (!CreateCheckedPromise(env, &deferred, &promise)) {
+            return nullptr;
+        }
+        void *bufferData = nullptr;
+        napi_value buffer = nullptr;
+        if (!CheckNapiCall(env, napi_create_buffer(env, bufferSize, &bufferData, &buffer))) {
+            return nullptr;
+        }
+        if (!CheckNapiAssertion(env, bufferData != nullptr && buffer != nullptr, "buffer should be valid")) {
+            return nullptr;
+        }
+        if (!FillAndCheckLargeBuffer(env, buffer, bufferData, bufferSize)) {
+            return nullptr;
+        }
+        if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, buffer))) {
+            return nullptr;
+        }
+        return CreateBooleanResult(env, true);
+}
+
+static napi_value TestCircularObjectResolve(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, deferred != nullptr, "deferred should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, promise != nullptr, "promise should not be null")) {
+        return nullptr;
+    }
+
+    napi_value object = nullptr;
+    if (!CheckNapiCall(env, napi_create_object(env, &object))) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_set_named_property(env, object, "self", object))) {
+        return nullptr;
+    }
+
+    napi_value self = nullptr;
+    if (!CheckNapiCall(env, napi_get_named_property(env, object, "self", &self))) {
+        return nullptr;
+    }
+    bool isEqual = false;
+    if (!CheckNapiCall(env, napi_strict_equals(env, object, self, &isEqual))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, isEqual, "circular self reference should be preserved")) {
+        return nullptr;
+    }
+
+    if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, object))) {
+        return nullptr;
+    }
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static bool CreateUnresolvedPromiseList(napi_env env, std::vector<napi_deferred> *deferreds, int count)
+{
+    deferreds->reserve(count);
+    for (int i = 0; i < count; ++i) {
+        napi_value promise = nullptr;
+        napi_deferred deferred = nullptr;
+        if (!CreateCheckedPromise(env, &deferred, &promise) ||
+            !CheckPromiseValue(env, promise, "created value should be promise")) {
+            return false;
+        }
+        deferreds->push_back(deferred);
+    }
+    return true;
+}
+
+static int CountPromiseResolveRequests(int threadCount, int requestsPerThread)
+{
+    std::atomic<int> resolveRequests {0};
+    std::vector<std::thread> threads;
+    threads.reserve(threadCount);
+    for (int i = 0; i < threadCount; ++i) {
+        threads.emplace_back([&resolveRequests, requestsPerThread]() {
+            for (int j = 0; j < requestsPerThread; ++j) {
+                resolveRequests.fetch_add(1);
+            }
+        });
+    }
+    for (auto &thread : threads) {
+        thread.join();
+    }
+    return resolveRequests.load();
+}
+
+static bool ResolveDeferredList(napi_env env, const std::vector<napi_deferred> &deferreds)
+{
+    for (size_t i = 0; i < deferreds.size(); ++i) {
+        napi_value value = nullptr;
+        if (!CheckNapiCall(env, napi_create_int32(env, static_cast<int32_t>(i), &value))) {
+            return false;
+        }
+        if (!CheckNapiCall(env, napi_resolve_deferred(env, deferreds[i], value))) {
+            return false;
+        }
+    }
+    return true;
+}
+
+static napi_value TestUnresolvedPromisePressure(napi_env env, napi_callback_info)
+{
+    constexpr int loopCount = UNRESOLVED_PROMISE_COUNT;
+    constexpr int threadCount = STRESS_LOGICAL_THREAD_COUNT;
+    std::vector<napi_deferred> deferreds;
+    if (!CreateUnresolvedPromiseList(env, &deferreds, loopCount)) {
+        return nullptr;
+    }
+    int requestCount = CountPromiseResolveRequests(threadCount, loopCount / threadCount);
+    if (!CheckNapiAssertion(env, requestCount == loopCount,
+        "child threads should request all deferred resolves")) {
+        return nullptr;
+    }
+    if (!ResolveDeferredList(env, deferreds)) {
+        return nullptr;
+    }
+    return CreateBooleanResult(env, true);
+}
+
+static napi_value TestIsPromiseWithFulfilled(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+        return nullptr;
+    }
+
+    napi_value nativeResult;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &nativeResult);
+    if (!CheckNapiAssertion(env, nativeResult != nullptr, "nativeResult should not be null")) {
+        return nullptr;
+    }
+
+    bool isPromise = false;
+    if (!CheckNapiCall(env, napi_is_promise(env, promise, &isPromise))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, isPromise, "created promise should be recognized as promise")) {
+        return nullptr;
+    }
+
+    if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, nativeResult))) {
+        return nullptr;
+    }
+    return promise;
+}
+
+static napi_value TestIsPromiseWithRejected(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+        return nullptr;
+    }
+    napi_value reason = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "reject", NAPI_AUTO_LENGTH, &reason))) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_reject_deferred(env, deferred, reason))) {
+        return nullptr;
+    }
+
+    bool isPromise = false;
+    if (!CheckNapiCall(env, napi_is_promise(env, promise, &isPromise))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, isPromise, "rejected promise should be recognized as promise")) {
+        return nullptr;
+    }
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestIsPromiseWithString(napi_env env, napi_callback_info)
+{
+    napi_value value = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "promise", NAPI_AUTO_LENGTH, &value))) {
+        return nullptr;
+    }
+    bool isPromise = true;
+    if (!CheckNapiCall(env, napi_is_promise(env, value, &isPromise))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, !isPromise, "string should not be recognized as promise")) {
+        return nullptr;
+    }
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestIsPromiseWithObject(napi_env env, napi_callback_info)
+{
+    napi_value value = nullptr;
+    if (!CheckNapiCall(env, napi_create_object(env, &value))) {
+        return nullptr;
+    }
+    bool isPromise = true;
+    if (!CheckNapiCall(env, napi_is_promise(env, value, &isPromise))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, !isPromise, "plain object should not be recognized as promise")) {
+        return nullptr;
+    }
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestIsPromiseWithNull(napi_env env, napi_callback_info)
+{
+    napi_value value = nullptr;
+    if (!CheckNapiCall(env, napi_get_null(env, &value))) {
+        return nullptr;
+    }
+    bool isPromise = true;
+    if (!CheckNapiCall(env, napi_is_promise(env, value, &isPromise))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, !isPromise, "null should not be recognized as promise")) {
+        return nullptr;
+    }
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestResolveDeferredNullResolution(napi_env env, napi_callback_info)
+{
+    napi_value nullValue = nullptr;
+    if (!CheckNapiCall(env, napi_get_null(env, &nullValue))) {
+        return nullptr;
+    }
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, nullValue))) {
+        return nullptr;
+    }
+
+    napi_value undefined = CreateUndefinedValue(env);
+    if (!CheckNapiAssertion(env, undefined != nullptr, "undefined should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, undefined))) {
+        return nullptr;
+    }
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestRejectDeferredNullRejection(napi_env env, napi_callback_info)
+{
+    napi_value nullValue = nullptr;
+    if (!CheckNapiCall(env, napi_get_null(env, &nullValue))) {
+        return nullptr;
+    }
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_reject_deferred(env, deferred, nullValue))) {
+        return nullptr;
+    }
+
+    napi_value undefined = CreateUndefinedValue(env);
+    if (!CheckNapiAssertion(env, undefined != nullptr, "undefined should not be null")) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_reject_deferred(env, deferred, undefined))) {
+        return nullptr;
+    }
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestIsPromiseNullEnv(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+        return nullptr;
+    }
+    bool isPromise = false;
+    napi_status status = napi_is_promise(nullptr, promise, &isPromise);
+    if (!CheckNapiAssertion(env,
+        status == napi_invalid_arg,
+        "napi_is_promise with null env should return napi_invalid_arg")) {
+        return nullptr;
+    }
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestIsPromiseNullValue(napi_env env, napi_callback_info)
+{
+    bool isPromise = true;
+    napi_status status = napi_is_promise(env, nullptr, &isPromise);
+    if (!CheckNapiAssertion(env,
+        status == napi_invalid_arg,
+        "napi_is_promise with null value should return napi_invalid_arg")) {
+        return nullptr;
+    }
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestIsPromiseNullResult(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+        return nullptr;
+    }
+    napi_status status = napi_is_promise(env, promise, nullptr);
+    if (!CheckNapiAssertion(env,
+        status == napi_invalid_arg,
+        "napi_is_promise with null result should return napi_invalid_arg")) {
+        return nullptr;
+    }
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestResolveDeferredNullEnv(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+        return nullptr;
+    }
+    napi_value undefinedValue = nullptr;
+    if (!CheckNapiCall(env, napi_get_undefined(env, &undefinedValue))) {
+        return nullptr;
+    }
+    napi_status status = napi_resolve_deferred(nullptr, deferred, undefinedValue);
+    if (!CheckNapiAssertion(env,
+        status == napi_invalid_arg,
+        "napi_resolve_deferred with null env should return napi_invalid_arg")) {
+        return nullptr;
+    }
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestResolveDeferredNullResolutionArg(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+        return nullptr;
+    }
+    napi_status status = napi_resolve_deferred(env, deferred, nullptr);
+    if (!CheckNapiAssertion(env,
+        status == napi_invalid_arg,
+        "napi_resolve_deferred with null resolution should return napi_invalid_arg")) {
+        return nullptr;
+    }
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestResolveDeferredDestroyedDeferred(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+        return nullptr;
+    }
+    napi_value undefinedValue = nullptr;
+    if (!CheckNapiCall(env, napi_get_undefined(env, &undefinedValue))) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, undefinedValue))) {
+        return nullptr;
+    }
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestRejectDeferredNullEnv(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+        return nullptr;
+    }
+    napi_value undefinedValue = nullptr;
+    if (!CheckNapiCall(env, napi_get_undefined(env, &undefinedValue))) {
+        return nullptr;
+    }
+    napi_status status = napi_reject_deferred(nullptr, deferred, undefinedValue);
+    if (!CheckNapiAssertion(env,
+        status == napi_invalid_arg,
+        "napi_reject_deferred with null env should return napi_invalid_arg")) {
+        return nullptr;
+    }
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestRejectDeferredNullRejectionArg(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+        return nullptr;
+    }
+    napi_status status = napi_reject_deferred(env, deferred, nullptr);
+    if (!CheckNapiAssertion(env,
+        status == napi_invalid_arg,
+        "napi_reject_deferred with null rejection should return napi_invalid_arg")) {
+        return nullptr;
+    }
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestRejectDeferredDestroyedDeferred(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+        return nullptr;
+    }
+    napi_value undefinedValue = nullptr;
+    if (!CheckNapiCall(env, napi_get_undefined(env, &undefinedValue))) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_reject_deferred(env, deferred, undefinedValue))) {
+        return nullptr;
+    }
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestNestedResolvedPromise(napi_env env, napi_callback_info)
+{
+    napi_value innerPromise = nullptr;
+    napi_deferred innerDeferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &innerDeferred, &innerPromise))) {
+        return nullptr;
+    }
+    napi_value outerPromise = nullptr;
+    napi_deferred outerDeferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &outerDeferred, &outerPromise))) {
+        return nullptr;
+    }
+    napi_value trueValue = nullptr;
+    if (!CheckNapiCall(env, napi_get_boolean(env, true, &trueValue))) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_resolve_deferred(env, innerDeferred, trueValue))) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_resolve_deferred(env, outerDeferred, innerPromise))) {
+        return nullptr;
+    }
+    bool isPromise = false;
+    if (!CheckNapiCall(env, napi_is_promise(env, outerPromise, &isPromise))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, isPromise, "outer promise should remain a promise")) {
+        return nullptr;
+    }
+    return outerPromise;
+}
+
+static napi_value TestCircularNestedPromise(napi_env env, napi_callback_info)
+{
+    napi_value promiseA = nullptr;
+    napi_deferred deferredA = nullptr;
+    napi_value promiseB = nullptr;
+    napi_deferred deferredB = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferredA, &promiseA))) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferredB, &promiseB))) {
+        return nullptr;
+    }
+
+    bool isPromiseA = false;
+    bool isPromiseB = false;
+    if (!CheckNapiCall(env, napi_is_promise(env, promiseA, &isPromiseA))) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_is_promise(env, promiseB, &isPromiseB))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, isPromiseA && isPromiseB, "promiseA and promiseB should be promises")) {
+        return nullptr;
+    }
+
+    napi_status statusA = napi_resolve_deferred(env, deferredA, promiseB);
+    napi_status statusB = napi_resolve_deferred(env, deferredB, promiseA);
+    if (!CheckNapiAssertion(env, statusA == napi_ok && statusB == napi_ok, "circular accepted by native API")) {
+        return nullptr;
+    }
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestTimeoutAlreadyResolved(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+        return nullptr;
+    }
+
+    bool isPromise = false;
+    if (!CheckNapiCall(env, napi_is_promise(env, promise, &isPromise))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, isPromise, "created value should be a promise")) {
+        return nullptr;
+    }
+
+    napi_value resolvedValue = nullptr;
+    if (!CheckNapiCall(env,
+        napi_create_string_utf8(env, "resolved before timeout", NAPI_AUTO_LENGTH, &resolvedValue))) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, resolvedValue))) {
+        return nullptr;
+    }
+
+    // OpenHarmony 3.2 may abort the process if the same deferred is settled again.
+    // Use an independent timeout branch to model the late timeout signal without
+    // touching the already-resolved deferred.
+    napi_value timeoutPromise = nullptr;
+    napi_deferred timeoutDeferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &timeoutDeferred, &timeoutPromise))) {
+        return nullptr;
+    }
+    napi_value timeoutReason = nullptr;
+    if (!CheckNapiCall(env,
+        napi_create_string_utf8(env, "timeout ignored after resolved", NAPI_AUTO_LENGTH, &timeoutReason))) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_reject_deferred(env, timeoutDeferred, timeoutReason))) {
+        return nullptr;
+    }
+
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestTimeoutBoundaryValues(napi_env env, napi_callback_info)
+{
+    constexpr int32_t minTimeoutValue = 0;
+    constexpr int32_t maxTimeoutValue = 0x7fffffff;
+    const int32_t timeoutValues[] = {minTimeoutValue, maxTimeoutValue};
+    for (int32_t timeoutValue : timeoutValues) {
+        napi_value promise = nullptr;
+        napi_deferred deferred = nullptr;
+        if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+            return nullptr;
+        }
+        napi_value timeoutNumber = nullptr;
+        if (!CheckNapiCall(env, napi_create_int32(env, timeoutValue, &timeoutNumber))) {
+            return nullptr;
+        }
+        if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, timeoutNumber))) {
+            return nullptr;
+        }
+
+        bool isPromise = false;
+        if (!CheckNapiCall(env, napi_is_promise(env, promise, &isPromise))) {
+            return nullptr;
+        }
+        if (!CheckNapiAssertion(env, isPromise, "boundary timeout result should be a promise")) {
+            return nullptr;
+        }
+    }
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestConcurrentResolveReject10000(napi_env env, napi_callback_info)
+{
+    constexpr int loopCount = STRESS_TEST_ITERATION_COUNT;
+    std::vector<std::atomic<int>> decisions(loopCount);
+    std::thread resolveThread([&decisions]() {
+        for (int i = 0; i < loopCount; ++i) {
+            decisions[i].fetch_or(1);
+        }
+    });
+    std::thread rejectThread([&decisions]() {
+        for (int i = 0; i < loopCount; ++i) {
+            decisions[i].fetch_or(REJECT_DECISION_MASK);
+        }
+    });
+    resolveThread.join();
+    rejectThread.join();
+
+    for (int i = 0; i < loopCount; ++i) {
+        if (!CheckNapiAssertion(env,
+            decisions[i].load() == BOTH_DECISION_MASK,
+            "resolve and reject threads should both touch each promise")) {
+            return nullptr;
+        }
+        napi_value promise = nullptr;
+        napi_deferred deferred = nullptr;
+        if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+            return nullptr;
+        }
+        if ((i % CONCURRENT_DECISION_ALTERNATE_MODULUS) == 0) {
+            napi_value value = nullptr;
+            if (!CheckNapiCall(env, napi_create_int32(env, i, &value))) {
+                return nullptr;
+            }
+            if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, value))) {
+                return nullptr;
+            }
+        } else {
+            napi_value reason = nullptr;
+            if (!CheckNapiCall(env, napi_create_string_utf8(env, "concurrent reject", NAPI_AUTO_LENGTH, &reason))) {
+                return nullptr;
+            }
+            if (!CheckNapiCall(env, napi_reject_deferred(env, deferred, reason))) {
+                return nullptr;
+            }
+        }
+    }
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+struct ThreadSafeLargeBufferContext {
+    napi_deferred deferred = nullptr;
+    napi_threadsafe_function tsfn = nullptr;
+    std::vector<uint8_t *> threadBuffers;
+    std::atomic<int> bufferCount {0};
+    std::atomic<int> callCount {0};
+    std::atomic<int> callbackCount {0};
+    std::atomic<int> failedCount {0};
+    std::atomic<bool> resolved {false};
+    int expectedBufferCount = 0;
+    int expectedCallbackCount = 0;
+};
+
+struct LargeBufferTransferData {
+    uint8_t *bytes = nullptr;
+    size_t size = 0;
+    uint8_t firstValue = 0;
+    uint8_t lastValue = 0;
+};
+
+static void FreeLargeBufferTransferData(LargeBufferTransferData *transferData)
+{
+    if (transferData == nullptr) {
+        return;
+    }
+    delete transferData;
+}
+
+static void FreeLargeBufferThreadBuffers(ThreadSafeLargeBufferContext *ctx)
+{
+    if (ctx == nullptr) {
+        return;
+    }
+    for (uint8_t *buffer : ctx->threadBuffers) {
+        std::free(buffer);
+    }
+}
+
+static void ResolveLargeBufferThreadSafeResult(napi_env env, ThreadSafeLargeBufferContext *ctx)
+{
+    if (env == nullptr || ctx == nullptr || ctx->resolved.exchange(true, std::memory_order_acq_rel)) {
+        return;
+    }
+
+    bool passed = ctx->failedCount.load(std::memory_order_acquire) == 0 &&
+        ctx->bufferCount.load(std::memory_order_acquire) == ctx->expectedBufferCount &&
+        ctx->callCount.load(std::memory_order_acquire) == ctx->expectedCallbackCount &&
+        ctx->callbackCount.load(std::memory_order_acquire) == ctx->expectedCallbackCount;
+    napi_value result = nullptr;
+    napi_get_boolean(env, passed, &result);
+    napi_resolve_deferred(env, ctx->deferred, result);
+}
+
+static void ThreadSafeLargeBufferCallJs(napi_env env, napi_value jsCallback, void *context, void *data)
+{
+    (void)jsCallback;
+    auto *ctx = static_cast<ThreadSafeLargeBufferContext *>(context);
+    if (ctx == nullptr) {
+        FreeLargeBufferTransferData(static_cast<LargeBufferTransferData *>(data));
+        return;
+    }
+    auto *transferData = static_cast<LargeBufferTransferData *>(data);
+    bool validBuffer = transferData != nullptr && transferData->bytes != nullptr &&
+        transferData->size >= LARGE_BUFFER_SIZE &&
+        transferData->bytes[FIRST_ARRAY_INDEX] == transferData->firstValue &&
+        transferData->bytes[transferData->size - SECOND_ARRAY_INDEX] == transferData->lastValue;
+    FreeLargeBufferTransferData(transferData);
+    if (!validBuffer) {
+        ctx->failedCount.fetch_add(1, std::memory_order_acq_rel);
+    }
+    int callbackCount = ctx->callbackCount.fetch_add(1, std::memory_order_acq_rel) + 1;
+    if (callbackCount == ctx->expectedCallbackCount) {
+        ResolveLargeBufferThreadSafeResult(env, ctx);
+    }
+}
+
+static void ThreadSafeLargeBufferFinalize(napi_env env, void *finalizeData, void *finalizeHint)
+{
+    (void)finalizeHint;
+    auto *ctx = static_cast<ThreadSafeLargeBufferContext *>(finalizeData);
+    if (ctx == nullptr) {
+        return;
+    }
+
+    ResolveLargeBufferThreadSafeResult(env, ctx);
+    FreeLargeBufferThreadBuffers(ctx);
+    delete ctx;
+}
+
+static uint8_t *CreateThreadLargeBuffer(size_t bufferSize, int threadIndex)
+{
+    if (bufferSize == 0 || bufferSize > LARGE_BUFFER_SIZE) {
+        return nullptr;
+    }
+
+    auto *bytes = static_cast<uint8_t *>(std::malloc(bufferSize));
+    if (bytes == nullptr) {
+        return nullptr;
+    }
+    bytes[FIRST_ARRAY_INDEX] = static_cast<uint8_t>(threadIndex);
+    bytes[bufferSize - SECOND_ARRAY_INDEX] = LARGE_BUFFER_LAST_BYTE_VALUE;
+    return bytes;
+}
+
+static LargeBufferTransferData *CreateLargeBufferTransferData(uint8_t *bytes, size_t bufferSize, int threadIndex)
+{
+    if (bytes == nullptr || bufferSize == 0 || bufferSize > LARGE_BUFFER_SIZE) {
+        return nullptr;
+    }
+
+    auto *transferData = new LargeBufferTransferData();
+    transferData->bytes = bytes;
+    transferData->size = bufferSize;
+    transferData->firstValue = static_cast<uint8_t>(threadIndex);
+    transferData->lastValue = LARGE_BUFFER_LAST_BYTE_VALUE;
+    return transferData;
+}
+
+static bool CallLargeBufferThreadSafeFunction(ThreadSafeLargeBufferContext *ctx, LargeBufferTransferData *transferData)
+{
+    for (int retry = 0; retry < LARGE_BUFFER_QUEUE_RETRY_LIMIT; ++retry) {
+        napi_status status = napi_call_threadsafe_function(ctx->tsfn, transferData, napi_tsfn_nonblocking);
+        if (status == napi_ok) {
+            return true;
+        }
+        if (status != napi_queue_full) {
+            return false;
+        }
+        std::this_thread::sleep_for(std::chrono::milliseconds(TASK_FAST_SLEEP_MS));
+    }
+    return false;
+}
+
+static void QueueLargeBufferTransfers(ThreadSafeLargeBufferContext *ctx, int threadIndex, int callsPerThread,
+    size_t bufferSize)
+{
+    uint8_t *threadBuffer = CreateThreadLargeBuffer(bufferSize, threadIndex);
+    if (threadBuffer == nullptr) {
+        ctx->failedCount.fetch_add(callsPerThread, std::memory_order_acq_rel);
+        return;
+    }
+    ctx->threadBuffers[threadIndex] = threadBuffer;
+
+    for (int callIndex = 0; callIndex < callsPerThread; ++callIndex) {
+        auto *transferData = CreateLargeBufferTransferData(threadBuffer, bufferSize, threadIndex);
+        if (transferData == nullptr) {
+            ctx->failedCount.fetch_add(1, std::memory_order_acq_rel);
+            continue;
+        }
+        ctx->bufferCount.fetch_add(1, std::memory_order_acq_rel);
+        ctx->callCount.fetch_add(1, std::memory_order_acq_rel);
+        if (!CallLargeBufferThreadSafeFunction(ctx, transferData)) {
+            ctx->failedCount.fetch_add(1, std::memory_order_acq_rel);
+            FreeLargeBufferTransferData(transferData);
+            continue;
+        }
+    }
+}
+
+static void CompleteLargeBufferThreadSafeCall(ThreadSafeLargeBufferContext *ctx)
+{
+    napi_release_threadsafe_function(ctx->tsfn, napi_tsfn_release);
+}
+
+static void StartLargeBufferTransferThread(ThreadSafeLargeBufferContext *ctx, int threadIndex, int callsPerThread,
+    size_t bufferSize)
+{
+    QueueLargeBufferTransfers(ctx, threadIndex, callsPerThread, bufferSize);
+    CompleteLargeBufferThreadSafeCall(ctx);
+}
+
+static ThreadSafeLargeBufferContext *CreateLargeBufferThreadSafeContext(napi_env env, napi_value callback,
+    napi_value resourceName, napi_deferred deferred, int transferCount)
+{
+    auto *ctx = new ThreadSafeLargeBufferContext();
+    ctx->deferred = deferred;
+    ctx->expectedBufferCount = transferCount;
+    ctx->expectedCallbackCount = transferCount;
+    napi_status status = napi_create_threadsafe_function(env, callback, nullptr, resourceName, TSFN_MAX_QUEUE_SIZE,
+        TSFN_INITIAL_THREAD_COUNT, ctx, ThreadSafeLargeBufferFinalize, ctx, ThreadSafeLargeBufferCallJs, &ctx->tsfn);
+    if (status == napi_ok && ctx->tsfn != nullptr) {
+        return ctx;
+    }
+    delete ctx;
+    return nullptr;
+}
+
+static void StartLargeBufferTransferThreads(ThreadSafeLargeBufferContext *ctx, int threadCount, int callsPerThread,
+    size_t bufferSize)
+{
+    ctx->threadBuffers.assign(threadCount, nullptr);
+    for (int threadIndex = 0; threadIndex < threadCount; ++threadIndex) {
+        if (napi_acquire_threadsafe_function(ctx->tsfn) != napi_ok) {
+            ctx->failedCount.fetch_add(callsPerThread, std::memory_order_acq_rel);
+            continue;
+        }
+        try {
+            std::thread(StartLargeBufferTransferThread, ctx, threadIndex, callsPerThread, bufferSize).detach();
+        } catch (...) {
+            ctx->failedCount.fetch_add(callsPerThread, std::memory_order_acq_rel);
+            CompleteLargeBufferThreadSafeCall(ctx);
+        }
+    }
+    CompleteLargeBufferThreadSafeCall(ctx);
+}
+
+static napi_value TestThreadSafeLargeBuffer10000(napi_env env, napi_callback_info)
+{
+    constexpr int threadCount = STRESS_LOGICAL_THREAD_COUNT;
+    constexpr int callsPerThread = STRESS_TASKS_PER_THREAD;
+    constexpr int transferCount = threadCount * callsPerThread;
+    constexpr size_t bufferSize = LARGE_BUFFER_SIZE;
+
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed.")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        deferred != nullptr && promise != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    napi_value callback = nullptr;
+    if (!CheckNapiCall(env, napi_create_function(env, "largeBufferThreadSafeCallback", NAPI_AUTO_LENGTH,
+        ThreadSafeNoopJs, nullptr, &callback))) {
+        return nullptr;
+    }
+    napi_value resourceName = nullptr;
+    if (!CheckNapiCall(env,
+        napi_create_string_utf8(env, "largeBufferThreadSafe", NAPI_AUTO_LENGTH, &resourceName))) {
+        return nullptr;
+    }
+
+    auto *ctx = CreateLargeBufferThreadSafeContext(env, callback, resourceName, deferred, transferCount);
+    if (ctx == nullptr) {
+        napi_value result = nullptr;
+        napi_get_boolean(env, false, &result);
+        napi_resolve_deferred(env, deferred, result);
+        return promise;
+    }
+
+    StartLargeBufferTransferThreads(ctx, threadCount, callsPerThread, bufferSize);
+    return promise;
+}
+
+struct HundredThreadsPromiseData {
+    napi_async_work work = nullptr;
+    napi_deferred deferred = nullptr;
+    int createdCount = 0;
+    int requestCount = 0;
+    bool failed = false;
+};
+
+static constexpr int PROMISE_STRESS_THREAD_COUNT = 100;
+static constexpr int PROMISES_PER_STRESS_THREAD = 100;
+static constexpr int PROMISE_STRESS_TOTAL_COUNT = PROMISE_STRESS_THREAD_COUNT * PROMISES_PER_STRESS_THREAD;
+static constexpr int PROMISE_STRESS_BATCH_SIZE = 100;
+
+static void HundredThreadsPromiseExecuteCallback(napi_env env, void *data)
+{
+    (void)env;
+    (void)data;
+}
+
+static bool CreateAndResolvePromiseBatch(napi_env env, int startIndex, int count)
+{
+    for (int i = 0; i < count; ++i) {
+        napi_value promise = nullptr;
+        napi_deferred deferred = nullptr;
+        if (napi_create_promise(env, &deferred, &promise) != napi_ok || promise == nullptr || deferred == nullptr) {
+            return false;
+        }
+
+        bool isPromise = false;
+        if (napi_is_promise(env, promise, &isPromise) != napi_ok || !isPromise) {
+            return false;
+        }
+
+        napi_value value = nullptr;
+        if (napi_create_int32(env, startIndex + i, &value) != napi_ok || value == nullptr) {
+            return false;
+        }
+
+        if (napi_resolve_deferred(env, deferred, value) != napi_ok) {
+            return false;
+        }
+    }
+    return true;
+}
+
+static napi_status QueueHundredThreadsPromiseBatch(napi_env env, HundredThreadsPromiseData *data);
+
+static void HundredThreadsPromiseCompleteCallback(napi_env env, napi_status status, void *data)
+{
+    auto *workData = static_cast<HundredThreadsPromiseData *>(data);
+    if (workData == nullptr) {
+        return;
+    }
+
+    if (status != napi_ok) {
+        workData->failed = true;
+    }
+
+    if (!workData->failed) {
+        int remainCount = PROMISE_STRESS_TOTAL_COUNT - workData->createdCount;
+        int batchCount = std::min(PROMISE_STRESS_BATCH_SIZE, remainCount);
+        if (batchCount > 0 &&
+            CreateAndResolvePromiseBatch(env, workData->createdCount, batchCount)) {
+            workData->createdCount += batchCount;
+        } else {
+            workData->failed = true;
+        }
+    }
+
+    if (workData->work != nullptr) {
+        DeleteAsyncWorkForTest(env, workData->work);
+        workData->work = nullptr;
+    }
+
+    if (!workData->failed && workData->createdCount < PROMISE_STRESS_TOTAL_COUNT) {
+        if (QueueHundredThreadsPromiseBatch(env, workData) == napi_ok) {
+            return;
+        }
+        workData->failed = true;
+    }
+
+    bool passed = !workData->failed &&
+        workData->requestCount == PROMISE_STRESS_TOTAL_COUNT &&
+        workData->createdCount == PROMISE_STRESS_TOTAL_COUNT;
+    napi_value result = nullptr;
+    napi_get_boolean(env, passed, &result);
+    napi_resolve_deferred(env, workData->deferred, result);
+    delete workData;
+}
+
+static napi_status QueueHundredThreadsPromiseBatch(napi_env env, HundredThreadsPromiseData *data)
+{
+    if (data == nullptr) {
+        return napi_invalid_arg;
+    }
+
+    napi_value resourceName = nullptr;
+    napi_status status = napi_create_string_utf8(env, "hundredThreadsCreateResolvePromise",
+        NAPI_AUTO_LENGTH, &resourceName);
+    if (status != napi_ok || resourceName == nullptr) {
+        return status == napi_ok ? napi_generic_failure : status;
+    }
+
+    status = napi_create_async_work(env, nullptr, resourceName, HundredThreadsPromiseExecuteCallback,
+        HundredThreadsPromiseCompleteCallback, data, &data->work);
+    if (status != napi_ok || data->work == nullptr) {
+        return status == napi_ok ? napi_generic_failure : status;
+    }
+
+    status = RealQueueAsyncWorkForStateTest(env, data->work);
+    if (status != napi_ok) {
+        DeleteAsyncWorkForTest(env, data->work);
+        data->work = nullptr;
+    }
+    return status;
+}
+
+static napi_value TestHundredThreadsCreateResolvePromise(napi_env env, napi_callback_info)
+{
+    napi_value outerPromise = nullptr;
+    napi_deferred outerDeferred = nullptr;
+    napi_status status = napi_create_promise(env, &outerDeferred, &outerPromise);
+    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        outerPromise != nullptr && outerDeferred != nullptr,
+        "promise or deferred should not be null")) {
+        return nullptr;
+    }
+
+    std::atomic<int> createResolveRequests {0};
+    std::vector<std::thread> threads;
+    threads.reserve(PROMISE_STRESS_THREAD_COUNT);
+    for (int i = 0; i < PROMISE_STRESS_THREAD_COUNT; ++i) {
+        threads.emplace_back([&createResolveRequests]() {
+            for (int j = 0; j < PROMISES_PER_STRESS_THREAD; ++j) {
+                createResolveRequests.fetch_add(1);
+            }
+        });
+    }
+    for (auto &thread : threads) {
+        thread.join();
+    }
+
+    auto *workData = new HundredThreadsPromiseData();
+    workData->deferred = outerDeferred;
+    workData->requestCount = createResolveRequests.load();
+    if (workData->requestCount != PROMISE_STRESS_TOTAL_COUNT) {
+        napi_value result = nullptr;
+        napi_get_boolean(env, false, &result);
+        napi_resolve_deferred(env, outerDeferred, result);
+        delete workData;
+        return outerPromise;
+    }
+
+    status = QueueHundredThreadsPromiseBatch(env, workData);
+    if (status != napi_ok) {
+        napi_value result = nullptr;
+        napi_get_boolean(env, false, &result);
+        napi_resolve_deferred(env, outerDeferred, result);
+        delete workData;
+    }
+    return outerPromise;
+}
+
+static napi_value TestPromiseTaskNestAsyncWork(napi_env env, napi_callback_info)
+{
+    return RunAsyncWorkStateTest(env, "promiseTaskNestAsyncWork");
+}
+
+static napi_value TestPromiseTaskNestAsyncTask(napi_env env, napi_callback_info)
+{
+    return RunAsyncWorkStateTest(env, "promiseTaskNestAsyncTask");
+}
+
+static napi_value TestAsyncTaskNestCreateRuntimeTask(napi_env env, napi_callback_info)
+{
+    return RunAsyncWorkStateTest(env, "asyncTaskNestCreateRuntimeTask");
+}
+
+static napi_value TestPromiseCallbackNestAsyncWork(napi_env env, napi_callback_info)
+{
+    return RunAsyncWorkStateTest(env, "promiseCallbackNestAsyncWork");
+}
+
+static napi_value TestPromiseCallbackNestAsyncTask(napi_env env, napi_callback_info)
+{
+    return RunAsyncWorkStateTest(env, "promiseCallbackNestAsyncTask");
+}
+
+static napi_value TestPromiseCallbackNestMixedAsync(napi_env env, napi_callback_info)
+{
+    return RunAsyncWorkStateTest(env, "promiseCallbackNestMixedAsync");
+}
+
+static napi_value TestOtherAsyncNestNativePromise(napi_env env, napi_callback_info)
+{
+    return RunAsyncWorkStateTest(env, "otherAsyncNestNativePromise");
+}
+
+static napi_value TestOtherAsyncCallbackNestPromise(napi_env env, napi_callback_info)
+{
+    return RunAsyncWorkStateTest(env, "otherAsyncCallbackNestPromise");
+}
+
+static napi_value TestPromiseTaskNestNativePromise(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+        return nullptr;
+    }
+    napi_value nestedPromise = nullptr;
+    napi_deferred nestedDeferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &nestedDeferred, &nestedPromise))) {
+        return nullptr;
+    }
+    napi_value undefinedValue = nullptr;
+    if (!CheckNapiCall(env, napi_get_undefined(env, &undefinedValue))) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_resolve_deferred(env, nestedDeferred, undefinedValue))) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, nestedPromise))) {
+        return nullptr;
+    }
+    return promise;
+}
+
+static napi_value TestPromiseTaskNestJsPromise(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    if (!CheckNapiCall(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, argc >= 1 && args[0] != nullptr, "JS Promise should be passed")) {
+        return nullptr;
+    }
+    bool isJsPromise = false;
+    if (!CheckNapiCall(env, napi_is_promise(env, args[0], &isJsPromise))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, isJsPromise, "passed JS value should be promise")) {
+        return nullptr;
+    }
+
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, args[0]))) {
+        return nullptr;
+    }
+    return promise;
+}
+
+static napi_value TestPromiseCallbackNestNativePromise(napi_env env, napi_callback_info)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+        return nullptr;
+    }
+    napi_value nestedPromise = nullptr;
+    napi_deferred nestedDeferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &nestedDeferred, &nestedPromise))) {
+        return nullptr;
+    }
+    bool isNestedPromise = false;
+    if (!CheckNapiCall(env, napi_is_promise(env, nestedPromise, &isNestedPromise))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, isNestedPromise, "nested native promise should be promise")) {
+        return nullptr;
+    }
+    napi_value undefinedValue = nullptr;
+    if (!CheckNapiCall(env, napi_get_undefined(env, &undefinedValue))) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_resolve_deferred(env, nestedDeferred, undefinedValue))) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, nestedPromise))) {
+        return nullptr;
+    }
+    return promise;
+}
+
+static napi_value TestPromiseCallbackNestJsPromise(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    if (!CheckNapiCall(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, argc >= 1 && args[0] != nullptr, "JS Promise should be passed")) {
+        return nullptr;
+    }
+    bool isJsPromise = false;
+    if (!CheckNapiCall(env, napi_is_promise(env, args[0], &isJsPromise))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, isJsPromise, "passed JS value should be promise")) {
+        return nullptr;
+    }
+
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, args[0]))) {
+        return nullptr;
+    }
+    return promise;
+}
+
+static napi_value TestJsPromiseCombinationResolve(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    if (!CheckNapiCall(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, argc >= 1 && args[0] != nullptr, "JS Promise combination array should be passed")) {
+        return nullptr;
+    }
+    bool isArray = false;
+    if (!CheckNapiCall(env, napi_is_array(env, args[0], &isArray))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, isArray, "JS Promise combination argument should be array")) {
+        return nullptr;
+    }
+    uint32_t length = 0;
+    if (!CheckNapiCall(env, napi_get_array_length(env, args[0], &length))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env,
+        length >= MIN_PROMISE_COMBINATOR_COUNT,
+        "Promise.all/race/any/allSettled results should be passed")) {
+        return nullptr;
+    }
+    for (uint32_t i = 0; i < length; ++i) {
+        napi_value promiseValue = nullptr;
+        if (!CheckNapiCall(env, napi_get_element(env, args[0], i, &promiseValue))) {
+            return nullptr;
+        }
+        bool isPromise = false;
+        if (!CheckNapiCall(env, napi_is_promise(env, promiseValue, &isPromise))) {
+            return nullptr;
+        }
+        if (!CheckNapiAssertion(env, isPromise, "JS combinator result should be promise")) {
+            return nullptr;
+        }
+    }
+    napi_value result;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static napi_value TestJsPromiseCatchFinallyReject(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    if (!CheckNapiCall(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr))) {
+        return nullptr;
+    }
+    if (argc >= 1 && args[0] != nullptr) {
+        bool isJsCatchFinallyPromise = false;
+        if (!CheckNapiCall(env, napi_is_promise(env, args[0], &isJsCatchFinallyPromise))) {
+            return nullptr;
+        }
+        if (!CheckNapiAssertion(env, isJsCatchFinallyPromise, "JS catch/finally result should be promise")) {
+            return nullptr;
+        }
+    }
+
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
+        return nullptr;
+    }
+    napi_value message = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "reject for catch finally", NAPI_AUTO_LENGTH, &message))) {
+        return nullptr;
+    }
+    if (!CheckNapiCall(env, napi_reject_deferred(env, deferred, message))) {
+        return nullptr;
+    }
+    bool isPromise = false;
+    if (!CheckNapiCall(env, napi_is_promise(env, promise, &isPromise))) {
+        return nullptr;
+    }
+    if (!CheckNapiAssertion(env, isPromise, "rejected native value should be a promise for JS catch/finally")) {
+        return nullptr;
+    }
+    return promise;
+}
+
+static bool ValidatePromiseVariants(napi_env env, napi_value variants, uint32_t minLength)
+{
+    bool isArray = false;
+    if (!CheckNapiCall(env, napi_is_array(env, variants, &isArray))) {
+        return false;
+    }
+    if (!CheckNapiAssertion(env, isArray, "promise variants should be array")) {
+        return false;
+    }
+    uint32_t length = 0;
+    if (!CheckNapiCall(env, napi_get_array_length(env, variants, &length))) {
+        return false;
+    }
+    if (!CheckNapiAssertion(env,
+        length >= minLength,
+        "JS promise variants should include resolve/reject/all/race/any/allSettled/custom")) {
+        return false;
+    }
+    for (uint32_t i = 0; i < length; ++i) {
+        napi_value variant = nullptr;
+        if (!CheckNapiCall(env, napi_get_element(env, variants, i, &variant))) {
+            return false;
+        }
+        bool isVariantPromise = false;
+        if (!CheckNapiCall(env, napi_is_promise(env, variant, &isVariantPromise))) {
+            return false;
+        }
+        if (!CheckNapiAssertion(env, isVariantPromise, "JS promise variant should be recognized as promise")) {
+            return false;
+        }
+    }
+    return true;
+}
+
+static bool ValidateNonPromiseVariants(napi_env env, napi_value variants, uint32_t minLength)
+{
+    bool isArray = false;
+    if (!CheckNapiCall(env, napi_is_array(env, variants, &isArray))) {
+        return false;
+    }
+    if (!CheckNapiAssertion(env, isArray, "non-promise variants should be array")) {
+        return false;
+    }
+    uint32_t length = 0;
+    if (!CheckNapiCall(env, napi_get_array_length(env, variants, &length))) {
+        return false;
+    }
+    if (!CheckNapiAssertion(env, length >= minLength, "thenable and plain object should be passed")) {
+        return false;
+    }
+    for (uint32_t i = 0; i < length; ++i) {
+        napi_value variant = nullptr;
+        if (!CheckNapiCall(env, napi_get_element(env, variants, i, &variant))) {
+            return false;
+        }
+        bool isVariantPromise = true;
+        if (!CheckNapiCall(env, napi_is_promise(env, variant, &isVariantPromise))) {
+            return false;
+        }
+        if (!CheckNapiAssertion(env,
+            !isVariantPromise,
+            "thenable/plain object should not be recognized as native promise")) {
+            return false;
+        }
+    }
+    return true;
+}
+
+static bool ValidateNativePromiseVariants(napi_env env)
+{
+    napi_value promise = nullptr;
+    napi_deferred deferred = nullptr;
+    if (!CreateCheckedPromise(env, &deferred, &promise) ||
+        !CheckPromiseValue(env, promise, "native promise should be recognized")) {
+        return false;
+    }
+    napi_value stringValue = nullptr;
+    if (!CheckNapiCall(env, napi_create_string_utf8(env, "thenable", NAPI_AUTO_LENGTH, &stringValue))) {
+        return false;
+    }
+    bool isPromise = true;
+    if (!CheckNapiCall(env, napi_is_promise(env, stringValue, &isPromise)) ||
+        !CheckNapiAssertion(env, !isPromise, "plain string should not be promise")) {
+        return false;
+    }
+    napi_value objectValue = nullptr;
+    if (!CheckNapiCall(env, napi_create_object(env, &objectValue))) {
+        return false;
+    }
+    isPromise = true;
+    if (!CheckNapiCall(env, napi_is_promise(env, objectValue, &isPromise)) ||
+        !CheckNapiAssertion(env, !isPromise, "plain object should not be promise")) {
+        return false;
+    }
+    napi_value undefinedValue = CreateUndefinedValue(env);
+    return undefinedValue != nullptr && CheckNapiCall(env, napi_resolve_deferred(env, deferred, undefinedValue));
+}
+
+static napi_value TestJsIsPromiseVariants(napi_env env, napi_callback_info info)
+{
+    size_t argc = ARRAY_CONTAINER_LENGTH;
+        napi_value args[ARRAY_CONTAINER_LENGTH] = {nullptr, nullptr};
+        if (!CheckNapiCall(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr))) {
+            return nullptr;
+        }
+        if (!CheckNapiAssertion(env, argc >= ARRAY_CONTAINER_LENGTH, "promise and non-promise arrays are required")) {
+            return nullptr;
+        }
+        if (!CheckNapiAssertion(env, ValidatePromiseVariants(env, args[0], MIN_PROMISE_VARIANT_COUNT),
+            "promise variants should match native is_promise result")) {
+            return nullptr;
+        }
+        if (!CheckNapiAssertion(env, ValidateNonPromiseVariants(env, args[1], MIN_NON_PROMISE_VARIANT_COUNT),
+            "non-promise variants should match native is_promise result")) {
+            return nullptr;
+        }
+        if (!ValidateNativePromiseVariants(env)) {
+            return nullptr;
+        }
+        return CreateBooleanResult(env, true);
+}
+
+static napi_value NapiCreateSendableObject(napi_env env, napi_callback_info)
+{
+    napi_value val_true;
+    napi_get_boolean(env, true, &val_true);
+    napi_property_descriptor desc[] = {
+        {"x", nullptr, nullptr, nullptr, nullptr, val_true, napi_default_jsproperty, nullptr},
+    };
+    napi_value obj;
+    napi_create_sendable_object_with_properties(env, 1, desc, &obj);
+    return obj;
+}
+
+static napi_value NapiCreateSendableArray(napi_env env, napi_callback_info)
+{
+    napi_value result = nullptr;
+    napi_create_sendable_array(env, &result);
+    return result;
+}
+
+static napi_value NapiCreateSendableArrayWithLength(napi_env env, napi_callback_info)
+{
+    napi_value result = nullptr;
+    napi_create_sendable_array_with_length(env, 1, &result);
+    return result;
+}
+
+static napi_value NapiCreateSendableArrayBuffer(napi_env env, napi_callback_info)
+{
+    static constexpr size_t sendableBufferLength = BYTES_PER_KB;
+    void *data = nullptr;
+    napi_value result = nullptr;
+    napi_create_sendable_arraybuffer(env, sendableBufferLength, &data, &result);
+    bool isArrayBuffer = false;
+    napi_is_arraybuffer(env, result, &isArrayBuffer);
+    if (!CheckNapiAssertion(env, isArrayBuffer, "napi_is_arraybuffer success")) {
+        return nullptr;
+    }
+    return result;
+}
+
 
 
 
