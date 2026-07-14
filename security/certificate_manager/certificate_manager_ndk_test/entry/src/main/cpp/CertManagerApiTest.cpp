@@ -18,6 +18,7 @@
 #include "device_certificate/certmanager/cm_native_type.h"
 #include <cstdint>
 #include <string>
+#include "securec.h"
 
 static napi_value Add(napi_env env, napi_callback_info info)
 {
