@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -64,29 +64,45 @@ export default function BigInt64ArrayFindLast01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_LAST_ONE_0300
      * @tc.name testBigInt64ArrayFindLastOne0300
-     * @tc.desc Verify findLast supports a predicate with two parameters.
+     * @tc.desc Verify callback indices decrease monotonically until the first element matches.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindLastOne0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([10n, 20n]);
-      let res = arr.findLast((v, i) => i === 0);
-      expect(res).assertEqual(10n);
+      let arr = new BigInt64Array([1n, 2n, 3n, 4n]);
+      let visited: int[] = [];
+      let res = arr.findLast((_v: bigint, index: int): boolean => {
+        visited.push(index);
+        return index === 0;
+      });
+      expect(visited.join(',')).assertEqual('3,2,1,0');
+      expect(String(res)).assertEqual('1');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_LAST_ONE_0400
      * @tc.name testBigInt64ArrayFindLastOne0400
-     * @tc.desc Verify findLast supports a predicate with three parameters.
+     * @tc.desc Verify a callback on an offset view receives the view byte length and shared buffer.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindLastOne0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([10n, 20n]);
-      let res = arr.findLast((v, i, a) => a.length === 2 && i === 1);
-      expect(res).assertEqual(20n);
+      let buffer = new ArrayBuffer(40);
+      let root = new BigInt64Array(buffer);
+      root.set([10n, 20n, 30n, 40n, 50n]);
+      let arr = new BigInt64Array(buffer, 8, 3);
+      let observedByteLength = 0;
+      let sharedBuffer = false;
+      let res = arr.findLast((_v: bigint, index: int, array: BigInt64Array): boolean => {
+        observedByteLength = array.byteLength;
+        sharedBuffer = array.buffer === buffer;
+        return index === array.length - 1;
+      });
+      expect(observedByteLength).assertEqual(24);
+      expect(sharedBuffer).assertTrue();
+      expect(String(res)).assertEqual('40');
     });
 
     /**
@@ -149,7 +165,8 @@ export default function BigInt64ArrayFindLast01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_LAST_ONE_0800
      * @tc.name testBigInt64ArrayFindLastOne0800
-     * @tc.desc Verify findLast traverses all elements when no match is found.
+     * @tc.desc Verify findLast traverses all elements and throws Error when no
+     * match is found.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -157,18 +174,23 @@ export default function BigInt64ArrayFindLast01Test(): void {
     it('testBigInt64ArrayFindLastOne0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([10n, 20n, 30n]);
       let calls = 0;
-      let res = arr.findLast(v => {
-        calls++;
-        return v === 40n;
-      });
-      expect(res).assertUndefined();
+      try {
+        arr.findLast(v => {
+          calls++;
+          return v === 40n;
+        });
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+      }
       expect(calls).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_LAST_ONE_0900
      * @tc.name testBigInt64ArrayFindLastOne0900
-     * @tc.desc Verify findLast visits indices in strictly descending order.
+     * @tc.desc Verify findLast visits indices in strictly descending order and
+     * throws Error when no match is found.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -176,10 +198,15 @@ export default function BigInt64ArrayFindLast01Test(): void {
     it('testBigInt64ArrayFindLastOne0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([10n, 20n, 30n]);
       let order = '';
-      arr.findLast((v, i) => {
-        order += i.toString();
-        return false;
-      });
+      try {
+        arr.findLast((v, i) => {
+          order += i.toString();
+          return false;
+        });
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+      }
       expect(order).assertEqual('210');
     });
 
@@ -200,29 +227,39 @@ export default function BigInt64ArrayFindLast01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_LAST_ONE_1100
      * @tc.name testBigInt64ArrayFindLastOne1100
-     * @tc.desc Verify findLast returns undefined for an empty array when predicate returns true.
+     * @tc.desc Verify findLast throws Error for an empty array when predicate
+     * returns true.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindLastOne1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([]);
-      let res = arr.findLast(v => true);
-      expect(res).assertUndefined();
+      try {
+        arr.findLast(v => true);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_LAST_ONE_1200
      * @tc.name testBigInt64ArrayFindLastOne1200
-     * @tc.desc Verify findLast returns undefined when no element matches in a long array.
+     * @tc.desc Verify findLast throws Error when no element matches in a long
+     * array.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindLastOne1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([0n, 0n, 0n, 0n, 0n]);
-      let res = arr.findLast(v => v !== 0n);
-      expect(res).assertUndefined();
+      try {
+        arr.findLast(v => v !== 0n);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+      }
     });
 
     /**
@@ -256,20 +293,21 @@ export default function BigInt64ArrayFindLast01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_LAST_ONE_1500
      * @tc.name testBigInt64ArrayFindLastOne1500
-     * @tc.desc Verify findLast returns the last repeated 0n value.
+     * @tc.desc Verify reverse traversal stops at a selected interior index and leaves the source unchanged.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindLastOne1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([0n, 0n]);
-      let matchedIndex = -1;
-      let res = arr.findLast((v, i) => {
-        matchedIndex = i;
-        return v === 0n;
+      let arr = new BigInt64Array([10n, 20n, 30n, 40n]);
+      let visited: int[] = [];
+      let res = arr.findLast((_v: bigint, index: int): boolean => {
+        visited.push(index);
+        return index === 1;
       });
-      expect(res).assertEqual(0n);
-      expect(matchedIndex).assertEqual(1);
+      expect(visited.join(',')).assertEqual('3,2,1');
+      expect(String(res)).assertEqual('20');
+      expect(arr.join()).assertEqual('10,20,30,40');
     });
 
     /**

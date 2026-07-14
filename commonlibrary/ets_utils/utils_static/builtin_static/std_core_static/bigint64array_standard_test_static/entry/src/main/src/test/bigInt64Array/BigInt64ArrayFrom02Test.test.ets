@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -278,7 +278,7 @@ export default function BigInt64ArrayFrom02Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_TWO_1600
      * @tc.name testBigInt64ArrayFromTwo1600
-     * @tc.desc Verify from Set returns undefined for out-of-bounds $_get access.
+     * @tc.desc Verify from Set throws RangeError for out-of-bounds $_get access.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -287,7 +287,12 @@ export default function BigInt64ArrayFrom02Test(): void {
       let s = new Set<BigInt>();
       s.add(100n);
       let arr = BigInt64Array.from(s);
-      expect(arr.$_get(1)).assertEqual(undefined);
+      try {
+        arr.$_get(1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
@@ -374,7 +379,7 @@ export default function BigInt64ArrayFrom02Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_TWO_2200
      * @tc.name testBigInt64ArrayFromTwo2200
-     * @tc.desc Verify from Set reads out of bounds on an empty result without throwing.
+     * @tc.desc Verify from Set throws RangeError for out-of-bounds read on an empty result.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -382,7 +387,12 @@ export default function BigInt64ArrayFrom02Test(): void {
     it('testBigInt64ArrayFromTwo2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s = new Set<BigInt>();
       let arr = BigInt64Array.from(s);
-      expect(arr[0]).assertEqual(undefined);
+      try {
+        arr[0];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
@@ -645,7 +655,7 @@ export default function BigInt64ArrayFrom02Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_TWO_4100
      * @tc.name testBigInt64ArrayFromTwo4100
-     * @tc.desc Verify from Array returns undefined for out-of-bounds $_get access.
+     * @tc.desc Verify from Array throws RangeError for out-of-bounds $_get access.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -653,7 +663,12 @@ export default function BigInt64ArrayFrom02Test(): void {
     it('testBigInt64ArrayFromTwo4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src = [100n];
       let arr = BigInt64Array.from(src);
-      expect(arr.$_get(1)).assertEqual(undefined);
+      try {
+        arr.$_get(1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
@@ -926,7 +941,6 @@ export default function BigInt64ArrayFrom02Test(): void {
      */
     it('testBigInt64ArrayFromTwo5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src = Array.of<number>(1);
-      let caught = false;
       try {
         BigInt64Array.from(
           src,
@@ -934,10 +948,10 @@ export default function BigInt64ArrayFrom02Test(): void {
             throw new Error("ERR");
           }
         );
+        expect().assertFail();
       } catch (e) {
-        caught = e !== null && e !== undefined;
+        expect(e.name).assertEqual('Error');
       }
-      expect(caught).assertTrue();
     });
 
     /**

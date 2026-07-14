@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -212,29 +212,40 @@ export default function BigInt64ArrayFindIndex01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_INDEX_ONE_1300
      * @tc.name testBigInt64ArrayFindIndexOne1300
-     * @tc.desc Verify findIndex returns index 1 when the predicate matches by index.
+     * @tc.desc Verify findIndex on an empty array returns -1 without invoking the predicate.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindIndexOne1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n, 6n, 7n, 8n, 9n, 10n]);
-      let idx = arr.findIndex((v: bigint, idx: int, a: BigInt64Array): boolean => idx === 1);
-      expect(idx).assertEqual(1);
+      let arr = new BigInt64Array(0);
+      let calls = 0;
+      let idx = arr.findIndex((_v: bigint): boolean => {
+        calls++;
+        return true;
+      });
+      expect(idx).assertEqual(-1);
+      expect(calls).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_INDEX_ONE_1400
      * @tc.name testBigInt64ArrayFindIndexOne1400
-     * @tc.desc Verify findIndex returns index 2 when the predicate matches by index.
+     * @tc.desc Verify findIndex reports a view-relative index and receives the view instance.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindIndexOne1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n, 6n, 7n, 8n, 9n, 10n]);
-      let idx = arr.findIndex((v: bigint, idx: int, a: BigInt64Array): boolean => idx === 2);
+      let root = new BigInt64Array([5n, 10n, 15n, 20n, 25n]);
+      let view = root.subarray(1, 4);
+      let receivedView = false;
+      let idx = view.findIndex((v: bigint, _idx: int, array: BigInt64Array): boolean => {
+        receivedView = array === view;
+        return v === 20n;
+      });
       expect(idx).assertEqual(2);
+      expect(receivedView).assertTrue();
     });
 
     /**
@@ -745,7 +756,7 @@ export default function BigInt64ArrayFindIndex01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_INDEX_THREE_4600
      * @tc.name testBigInt64ArrayFindIndexThree4600
-     * @tc.desc Verify findIndex returns a number type when it finds a matching element.
+     * @tc.desc Verify findIndex returns an int type when it finds a matching element.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -753,13 +764,13 @@ export default function BigInt64ArrayFindIndex01Test(): void {
     it('testBigInt64ArrayFindIndexThree4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n]);
       let idx = arr.findIndex((v: bigint, i: int, a: BigInt64Array) => v === 1n);
-      expect(typeof idx).assertEqual('number');
+      expect(typeof idx).assertEqual('int');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_INDEX_THREE_4700
      * @tc.name testBigInt64ArrayFindIndexThree4700
-     * @tc.desc Verify findIndex returns a number type when no element matches.
+     * @tc.desc Verify findIndex returns an int type when no element matches.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -767,7 +778,7 @@ export default function BigInt64ArrayFindIndex01Test(): void {
     it('testBigInt64ArrayFindIndexThree4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n]);
       let idx = arr.findIndex((v: bigint, i: int, a: BigInt64Array) => v === 0n);
-      expect(typeof idx).assertEqual('number');
+      expect(typeof idx).assertEqual('int');
     });
 
     /**
@@ -1148,6 +1159,7 @@ export default function BigInt64ArrayFindIndex01Test(): void {
         });
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         expect(e.message).assertEqual('test');
       }
     });

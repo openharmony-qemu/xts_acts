@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -44,15 +44,11 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne0100',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Array<BigInt> = [10n, 20n, 30n];
-        let res = BigInt64Array.from(src);
-        expect(res.length).assertEqual(3);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Array<BigInt> = [10n, 20n, 30n];
+      let res = BigInt64Array.from(src);
+      expect(res.length).assertEqual(3);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_0200
@@ -62,15 +58,11 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne0200',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
-        let res = BigInt64Array.from(src);
-        expect(res.length).assertEqual(3);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
+      let res = BigInt64Array.from(src);
+      expect(res.length).assertEqual(3);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_0300
@@ -80,15 +72,11 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne0300',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: BigInt64Array = new BigInt64Array([10n, 20n, 30n]);
-        let res = BigInt64Array.from(src);
-        expect(res.length).assertEqual(3);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: BigInt64Array = new BigInt64Array([10n, 20n, 30n]);
+      let res = BigInt64Array.from(src);
+      expect(res.length).assertEqual(3);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_0400
@@ -98,18 +86,14 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne0400',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Array<number> = [Number(10n), Number(20n), Number(30n)];
-        let res = BigInt64Array.from(
-          src as ArrayLike<number>,
-          (v: number): BigInt => BigInt(v)
-        );
-        expect(res.length).assertEqual(3);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Array<number> = [Number(10n), Number(20n), Number(30n)];
+      let res = BigInt64Array.from(
+        src as ArrayLike<number>,
+        (v: number): BigInt => BigInt(v)
+      );
+      expect(res.length).assertEqual(3);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_0500
@@ -119,16 +103,12 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne0500',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let set: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
-        let src: IterableIterator<BigInt> = set.values();
-        let res = BigInt64Array.from(src);
-        expect(res.length).assertEqual(3);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
+      let src: IterableIterator<BigInt> = set.values();
+      let res = BigInt64Array.from(src);
+      expect(res.length).assertEqual(3);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_0600
@@ -138,15 +118,11 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne0600',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Array<BigInt> = [10n, 20n, 30n];
-        let res = BigInt64Array.from(src);
-        expect(res.byteLength).assertEqual(24);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Array<BigInt> = [10n, 20n, 30n];
+      let res = BigInt64Array.from(src);
+      expect(res.byteLength).assertEqual(24);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_0700
@@ -156,15 +132,11 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne0700',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
-        let res = BigInt64Array.from(src);
-        expect(res.byteLength).assertEqual(24);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
+      let res = BigInt64Array.from(src);
+      expect(res.byteLength).assertEqual(24);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_0800
@@ -174,15 +146,11 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne0800',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: BigInt64Array = new BigInt64Array([10n, 20n, 30n]);
-        let res = BigInt64Array.from(src);
-        expect(res.byteLength).assertEqual(24);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: BigInt64Array = new BigInt64Array([10n, 20n, 30n]);
+      let res = BigInt64Array.from(src);
+      expect(res.byteLength).assertEqual(24);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_0900
@@ -192,18 +160,14 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne0900',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Array<number> = [Number(10n), Number(20n), Number(30n)];
-        let res = BigInt64Array.from(
-          src as ArrayLike<number>,
-          (v: number): BigInt => BigInt(v)
-        );
-        expect(res.byteLength).assertEqual(24);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Array<number> = [Number(10n), Number(20n), Number(30n)];
+      let res = BigInt64Array.from(
+        src as ArrayLike<number>,
+        (v: number): BigInt => BigInt(v)
+      );
+      expect(res.byteLength).assertEqual(24);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_1000
@@ -213,16 +177,12 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne1000',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let set: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
-        let src: IterableIterator<BigInt> = set.values();
-        let res = BigInt64Array.from(src);
-        expect(res.byteLength).assertEqual(24);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
+      let src: IterableIterator<BigInt> = set.values();
+      let res = BigInt64Array.from(src);
+      expect(res.byteLength).assertEqual(24);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_1100
@@ -232,15 +192,11 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne1100',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Array<BigInt> = [10n, 20n, 30n];
-        let res = BigInt64Array.from(src);
-        expect(res[0]).assertEqual(10n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Array<BigInt> = [10n, 20n, 30n];
+      let res = BigInt64Array.from(src);
+      expect(res[0]).assertEqual(10n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_1200
@@ -250,15 +206,11 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne1200',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
-        let res = BigInt64Array.from(src);
-        expect(res[0]).assertEqual(10n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
+      let res = BigInt64Array.from(src);
+      expect(res[0]).assertEqual(10n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_1300
@@ -268,15 +220,11 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne1300',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: BigInt64Array = new BigInt64Array([10n, 20n, 30n]);
-        let res = BigInt64Array.from(src);
-        expect(res[0]).assertEqual(10n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: BigInt64Array = new BigInt64Array([10n, 20n, 30n]);
+      let res = BigInt64Array.from(src);
+      expect(res[0]).assertEqual(10n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_1400
@@ -286,18 +234,14 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne1400',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Array<number> = [Number(10n), Number(20n), Number(30n)];
-        let res = BigInt64Array.from(
-          src as ArrayLike<number>,
-          (v: number): BigInt => BigInt(v)
-        );
-        expect(res[0]).assertEqual(10n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Array<number> = [Number(10n), Number(20n), Number(30n)];
+      let res = BigInt64Array.from(
+        src as ArrayLike<number>,
+        (v: number): BigInt => BigInt(v)
+      );
+      expect(res[0]).assertEqual(10n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_1500
@@ -307,16 +251,12 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne1500',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let set: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
-        let src: IterableIterator<BigInt> = set.values();
-        let res = BigInt64Array.from(src);
-        expect(res[0]).assertEqual(10n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
+      let src: IterableIterator<BigInt> = set.values();
+      let res = BigInt64Array.from(src);
+      expect(res[0]).assertEqual(10n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_1600
@@ -326,15 +266,11 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne1600',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Array<BigInt> = [10n, 20n, 30n];
-        let res = BigInt64Array.from(src);
-        expect(res[2]).assertEqual(30n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Array<BigInt> = [10n, 20n, 30n];
+      let res = BigInt64Array.from(src);
+      expect(res[2]).assertEqual(30n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_1700
@@ -344,15 +280,11 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne1700',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
-        let res = BigInt64Array.from(src);
-        expect(res[2]).assertEqual(30n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
+      let res = BigInt64Array.from(src);
+      expect(res[2]).assertEqual(30n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_1800
@@ -362,15 +294,11 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne1800',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: BigInt64Array = new BigInt64Array([10n, 20n, 30n]);
-        let res = BigInt64Array.from(src);
-        expect(res[2]).assertEqual(30n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: BigInt64Array = new BigInt64Array([10n, 20n, 30n]);
+      let res = BigInt64Array.from(src);
+      expect(res[2]).assertEqual(30n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_1900
@@ -380,18 +308,14 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne1900',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Array<number> = [Number(10n), Number(20n), Number(30n)];
-        let res = BigInt64Array.from(
-          src as ArrayLike<number>,
-          (v: number): BigInt => BigInt(v)
-        );
-        expect(res[2]).assertEqual(30n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Array<number> = [Number(10n), Number(20n), Number(30n)];
+      let res = BigInt64Array.from(
+        src as ArrayLike<number>,
+        (v: number): BigInt => BigInt(v)
+      );
+      expect(res[2]).assertEqual(30n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_2000
@@ -401,16 +325,12 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne2000',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let set: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
-        let src: IterableIterator<BigInt> = set.values();
-        let res = BigInt64Array.from(src);
-        expect(res[2]).assertEqual(30n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
+      let src: IterableIterator<BigInt> = set.values();
+      let res = BigInt64Array.from(src);
+      expect(res[2]).assertEqual(30n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_2100
@@ -420,15 +340,11 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne2100',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Array<BigInt> = [];
-        let res = BigInt64Array.from(src);
-        expect(res.length).assertEqual(0);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Array<BigInt> = [];
+      let res = BigInt64Array.from(src);
+      expect(res.length).assertEqual(0);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_2200
@@ -438,15 +354,11 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne2200',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Set<BigInt> = new Set<BigInt>([]);
-        let res = BigInt64Array.from(src);
-        expect(res.length).assertEqual(0);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Set<BigInt> = new Set<BigInt>([]);
+      let res = BigInt64Array.from(src);
+      expect(res.length).assertEqual(0);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_2300
@@ -456,15 +368,11 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne2300',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: BigInt64Array = new BigInt64Array([]);
-        let res = BigInt64Array.from(src);
-        expect(res.length).assertEqual(0);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: BigInt64Array = new BigInt64Array([]);
+      let res = BigInt64Array.from(src);
+      expect(res.length).assertEqual(0);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_2400
@@ -474,18 +382,14 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne2400',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Array<number> = [];
-        let res = BigInt64Array.from(
-          src as ArrayLike<number>,
-          (v: number): BigInt => BigInt(v)
-        );
-        expect(res.length).assertEqual(0);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Array<number> = [];
+      let res = BigInt64Array.from(
+        src as ArrayLike<number>,
+        (v: number): BigInt => BigInt(v)
+      );
+      expect(res.length).assertEqual(0);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_2500
@@ -495,16 +399,12 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne2500',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let set: Set<BigInt> = new Set<BigInt>([]);
-        let src: IterableIterator<BigInt> = set.values();
-        let res = BigInt64Array.from(src);
-        expect(res.length).assertEqual(0);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set: Set<BigInt> = new Set<BigInt>([]);
+      let src: IterableIterator<BigInt> = set.values();
+      let res = BigInt64Array.from(src);
+      expect(res.length).assertEqual(0);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_2600
@@ -514,15 +414,11 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne2600',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Array<BigInt> = [];
-        let res = BigInt64Array.from(src);
-        expect(res.byteLength).assertEqual(0);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Array<BigInt> = [];
+      let res = BigInt64Array.from(src);
+      expect(res.byteLength).assertEqual(0);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_2700
@@ -532,15 +428,11 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne2700',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Set<BigInt> = new Set<BigInt>([]);
-        let res = BigInt64Array.from(src);
-        expect(res.byteLength).assertEqual(0);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Set<BigInt> = new Set<BigInt>([]);
+      let res = BigInt64Array.from(src);
+      expect(res.byteLength).assertEqual(0);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_2800
@@ -550,15 +442,11 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne2800',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: BigInt64Array = new BigInt64Array([]);
-        let res = BigInt64Array.from(src);
-        expect(res.byteLength).assertEqual(0);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: BigInt64Array = new BigInt64Array([]);
+      let res = BigInt64Array.from(src);
+      expect(res.byteLength).assertEqual(0);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_2900
@@ -568,18 +456,14 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne2900',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Array<number> = [];
-        let res = BigInt64Array.from(
-          src as ArrayLike<number>,
-          (v: number): BigInt => BigInt(v)
-        );
-        expect(res.byteLength).assertEqual(0);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Array<number> = [];
+      let res = BigInt64Array.from(
+        src as ArrayLike<number>,
+        (v: number): BigInt => BigInt(v)
+      );
+      expect(res.byteLength).assertEqual(0);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_3000
@@ -589,16 +473,12 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne3000',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let set: Set<BigInt> = new Set<BigInt>([]);
-        let src: IterableIterator<BigInt> = set.values();
-        let res = BigInt64Array.from(src);
-        expect(res.byteLength).assertEqual(0);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set: Set<BigInt> = new Set<BigInt>([]);
+      let src: IterableIterator<BigInt> = set.values();
+      let res = BigInt64Array.from(src);
+      expect(res.byteLength).assertEqual(0);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_3100
@@ -608,15 +488,11 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne3100',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Array<BigInt> = [BIGINT64_MAX, 20n, 30n];
-        let res = BigInt64Array.from(src);
-        expect(res[0]).assertEqual(BIGINT64_MAX);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Array<BigInt> = [BIGINT64_MAX, 20n, 30n];
+      let res = BigInt64Array.from(src);
+      expect(res[0]).assertEqual(BIGINT64_MAX);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_3200
@@ -626,15 +502,11 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne3200',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Set<BigInt> = new Set<BigInt>([BIGINT64_MAX, 20n, 30n]);
-        let res = BigInt64Array.from(src);
-        expect(res[0]).assertEqual(BIGINT64_MAX);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Set<BigInt> = new Set<BigInt>([BIGINT64_MAX, 20n, 30n]);
+      let res = BigInt64Array.from(src);
+      expect(res[0]).assertEqual(BIGINT64_MAX);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_3300
@@ -644,15 +516,11 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne3300',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: BigInt64Array = new BigInt64Array([BIGINT64_MAX, 20n, 30n]);
-        let res = BigInt64Array.from(src);
-        expect(res[0]).assertEqual(BIGINT64_MAX);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: BigInt64Array = new BigInt64Array([BIGINT64_MAX, 20n, 30n]);
+      let res = BigInt64Array.from(src);
+      expect(res[0]).assertEqual(BIGINT64_MAX);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_3400
@@ -662,23 +530,19 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne3400',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Array<number> = [Number(BIGINT64_MAX), Number(20n), Number(30n)];
-        let res = BigInt64Array.from(
-          src as ArrayLike<number>,
-          (v: number, k: number): BigInt => {
-            if (k === 0) {
-              return BIGINT64_MAX;
-            }
-            return BigInt(v);
+    it('testBigInt64ArrayFromThreeOne3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Array<number> = [Number(BIGINT64_MAX), Number(20n), Number(30n)];
+      let res = BigInt64Array.from(
+        src as ArrayLike<number>,
+        (v: number, k: number): BigInt => {
+          if (k === 0) {
+            return BIGINT64_MAX;
           }
-        );
-        expect(res[0]).assertEqual(BIGINT64_MAX);
-      }
-    );
+          return BigInt(v);
+        }
+      );
+      expect(res[0]).assertEqual(BIGINT64_MAX);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_3500
@@ -688,16 +552,12 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne3500',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let set: Set<BigInt> = new Set<BigInt>([BIGINT64_MAX, 20n, 30n]);
-        let src: IterableIterator<BigInt> = set.values();
-        let res = BigInt64Array.from(src);
-        expect(res[0]).assertEqual(BIGINT64_MAX);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set: Set<BigInt> = new Set<BigInt>([BIGINT64_MAX, 20n, 30n]);
+      let src: IterableIterator<BigInt> = set.values();
+      let res = BigInt64Array.from(src);
+      expect(res[0]).assertEqual(BIGINT64_MAX);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_3600
@@ -707,15 +567,11 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne3600',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Array<BigInt> = [BIGINT64_MIN, 20n, 30n];
-        let res = BigInt64Array.from(src);
-        expect(res[0]).assertEqual(BIGINT64_MIN);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Array<BigInt> = [BIGINT64_MIN, 20n, 30n];
+      let res = BigInt64Array.from(src);
+      expect(res[0]).assertEqual(BIGINT64_MIN);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_3700
@@ -725,15 +581,11 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne3700',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Set<BigInt> = new Set<BigInt>([BIGINT64_MIN, 20n, 30n]);
-        let res = BigInt64Array.from(src);
-        expect(res[0]).assertEqual(BIGINT64_MIN);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Set<BigInt> = new Set<BigInt>([BIGINT64_MIN, 20n, 30n]);
+      let res = BigInt64Array.from(src);
+      expect(res[0]).assertEqual(BIGINT64_MIN);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_3800
@@ -743,15 +595,11 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne3800',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: BigInt64Array = new BigInt64Array([BIGINT64_MIN, 20n, 30n]);
-        let res = BigInt64Array.from(src);
-        expect(res[0]).assertEqual(BIGINT64_MIN);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: BigInt64Array = new BigInt64Array([BIGINT64_MIN, 20n, 30n]);
+      let res = BigInt64Array.from(src);
+      expect(res[0]).assertEqual(BIGINT64_MIN);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_3900
@@ -761,23 +609,19 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne3900',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Array<number> = [Number(BIGINT64_MIN), Number(20n), Number(30n)];
-        let res = BigInt64Array.from(
-          src as ArrayLike<number>,
-          (v: number, k: number): BigInt => {
-            if (k === 0) {
-              return BIGINT64_MIN;
-            }
-            return BigInt(v);
+    it('testBigInt64ArrayFromThreeOne3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Array<number> = [Number(BIGINT64_MIN), Number(20n), Number(30n)];
+      let res = BigInt64Array.from(
+        src as ArrayLike<number>,
+        (v: number, k: number): BigInt => {
+          if (k === 0) {
+            return BIGINT64_MIN;
           }
-        );
-        expect(res[0]).assertEqual(BIGINT64_MIN);
-      }
-    );
+          return BigInt(v);
+        }
+      );
+      expect(res[0]).assertEqual(BIGINT64_MIN);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_4000
@@ -787,16 +631,12 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne4000',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let set: Set<BigInt> = new Set<BigInt>([BIGINT64_MIN, 20n, 30n]);
-        let src: IterableIterator<BigInt> = set.values();
-        let res = BigInt64Array.from(src);
-        expect(res[0]).assertEqual(BIGINT64_MIN);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set: Set<BigInt> = new Set<BigInt>([BIGINT64_MIN, 20n, 30n]);
+      let src: IterableIterator<BigInt> = set.values();
+      let res = BigInt64Array.from(src);
+      expect(res[0]).assertEqual(BIGINT64_MIN);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_4100
@@ -806,17 +646,13 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne4100',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Array<BigInt> = [10n, 20n, 30n];
-        let res = BigInt64Array.from(src, (v: BigInt, k: number): BigInt => {
-          return BigInt(k);
-        });
-        expect(res[0]).assertEqual(0n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Array<BigInt> = [10n, 20n, 30n];
+      let res = BigInt64Array.from(src, (v: BigInt, k: number): BigInt => {
+        return BigInt(k);
+      });
+      expect(res[0]).assertEqual(0n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_4200
@@ -826,17 +662,13 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne4200',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
-        let res = BigInt64Array.from(src, (v: BigInt, k: number): BigInt => {
-          return BigInt(k);
-        });
-        expect(res[0]).assertEqual(0n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
+      let res = BigInt64Array.from(src, (v: BigInt, k: number): BigInt => {
+        return BigInt(k);
+      });
+      expect(res[0]).assertEqual(0n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_4300
@@ -846,20 +678,16 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne4300',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: BigInt64Array = new BigInt64Array([10n, 20n, 30n]);
-        let res = BigInt64Array.from(
-          src as Iterable<BigInt>,
-          (v: BigInt, k: number): BigInt => {
-            return BigInt(k);
-          }
-        );
-        expect(res[0]).assertEqual(0n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: BigInt64Array = new BigInt64Array([10n, 20n, 30n]);
+      let res = BigInt64Array.from(
+        src as Iterable<BigInt>,
+        (v: BigInt, k: number): BigInt => {
+          return BigInt(k);
+        }
+      );
+      expect(res[0]).assertEqual(0n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_4400
@@ -869,20 +697,16 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne4400',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Array<number> = [Number(10n), Number(20n), Number(30n)];
-        let res = BigInt64Array.from(
-          src as ArrayLike<number>,
-          (v: number, k: number): BigInt => {
-            return BigInt(k);
-          }
-        );
-        expect(res[0]).assertEqual(0n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Array<number> = [Number(10n), Number(20n), Number(30n)];
+      let res = BigInt64Array.from(
+        src as ArrayLike<number>,
+        (v: number, k: number): BigInt => {
+          return BigInt(k);
+        }
+      );
+      expect(res[0]).assertEqual(0n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_4500
@@ -892,18 +716,14 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne4500',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let set: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
-        let src: IterableIterator<BigInt> = set.values();
-        let res = BigInt64Array.from(src, (v: BigInt, k: number): BigInt => {
-          return BigInt(k);
-        });
-        expect(res[0]).assertEqual(0n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
+      let src: IterableIterator<BigInt> = set.values();
+      let res = BigInt64Array.from(src, (v: BigInt, k: number): BigInt => {
+        return BigInt(k);
+      });
+      expect(res[0]).assertEqual(0n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_4600
@@ -913,17 +733,13 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne4600',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Array<BigInt> = [10n, 20n, 30n];
-        let res = BigInt64Array.from(src, (v: BigInt, k: number): BigInt => {
-          return BigInt(k);
-        });
-        expect(res[1]).assertEqual(1n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Array<BigInt> = [10n, 20n, 30n];
+      let res = BigInt64Array.from(src, (v: BigInt, k: number): BigInt => {
+        return BigInt(k);
+      });
+      expect(res[1]).assertEqual(1n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_4700
@@ -933,17 +749,13 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne4700',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
-        let res = BigInt64Array.from(src, (v: BigInt, k: number): BigInt => {
-          return BigInt(k);
-        });
-        expect(res[1]).assertEqual(1n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
+      let res = BigInt64Array.from(src, (v: BigInt, k: number): BigInt => {
+        return BigInt(k);
+      });
+      expect(res[1]).assertEqual(1n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_4800
@@ -953,20 +765,16 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne4800',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: BigInt64Array = new BigInt64Array([10n, 20n, 30n]);
-        let res = BigInt64Array.from(
-          src as Iterable<BigInt>,
-          (v: BigInt, k: number): BigInt => {
-            return BigInt(k);
-          }
-        );
-        expect(res[1]).assertEqual(1n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: BigInt64Array = new BigInt64Array([10n, 20n, 30n]);
+      let res = BigInt64Array.from(
+        src as Iterable<BigInt>,
+        (v: BigInt, k: number): BigInt => {
+          return BigInt(k);
+        }
+      );
+      expect(res[1]).assertEqual(1n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_4900
@@ -976,20 +784,16 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne4900',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Array<number> = [Number(10n), Number(20n), Number(30n)];
-        let res = BigInt64Array.from(
-          src as ArrayLike<number>,
-          (v: number, k: number): BigInt => {
-            return BigInt(k);
-          }
-        );
-        expect(res[1]).assertEqual(1n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Array<number> = [Number(10n), Number(20n), Number(30n)];
+      let res = BigInt64Array.from(
+        src as ArrayLike<number>,
+        (v: number, k: number): BigInt => {
+          return BigInt(k);
+        }
+      );
+      expect(res[1]).assertEqual(1n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_5000
@@ -999,18 +803,14 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne5000',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let set: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
-        let src: IterableIterator<BigInt> = set.values();
-        let res = BigInt64Array.from(src, (v: BigInt, k: number): BigInt => {
-          return BigInt(k);
-        });
-        expect(res[1]).assertEqual(1n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
+      let src: IterableIterator<BigInt> = set.values();
+      let res = BigInt64Array.from(src, (v: BigInt, k: number): BigInt => {
+        return BigInt(k);
+      });
+      expect(res[1]).assertEqual(1n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_5100
@@ -1020,18 +820,14 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne5100',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Array<BigInt> = [10n, 20n, 30n];
-        let res = BigInt64Array.from(src, (v: BigInt, k: number): BigInt => {
-          let val = v;
-          return val * 2n;
-        });
-        expect(res[0]).assertEqual(20n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Array<BigInt> = [10n, 20n, 30n];
+      let res = BigInt64Array.from(src, (v: BigInt, k: number): BigInt => {
+        let val = v;
+        return val * 2n;
+      });
+      expect(res[0]).assertEqual(20n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_5200
@@ -1041,18 +837,14 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne5200',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
-        let res = BigInt64Array.from(src, (v: BigInt, k: number): BigInt => {
-          let val = v;
-          return val * 2n;
-        });
-        expect(res[0]).assertEqual(20n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
+      let res = BigInt64Array.from(src, (v: BigInt, k: number): BigInt => {
+        let val = v;
+        return val * 2n;
+      });
+      expect(res[0]).assertEqual(20n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_5300
@@ -1062,21 +854,17 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne5300',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: BigInt64Array = new BigInt64Array([10n, 20n, 30n]);
-        let res = BigInt64Array.from(
-          src as Iterable<BigInt>,
-          (v: BigInt, k: number): BigInt => {
-            let val = v;
-            return val * 2n;
-          }
-        );
-        expect(res[0]).assertEqual(20n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: BigInt64Array = new BigInt64Array([10n, 20n, 30n]);
+      let res = BigInt64Array.from(
+        src as Iterable<BigInt>,
+        (v: BigInt, k: number): BigInt => {
+          let val = v;
+          return val * 2n;
+        }
+      );
+      expect(res[0]).assertEqual(20n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_5400
@@ -1086,21 +874,17 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne5400',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Array<number> = [Number(10n), Number(20n), Number(30n)];
-        let res = BigInt64Array.from(
-          src as ArrayLike<number>,
-          (v: number, k: number): BigInt => {
-            let val = BigInt(v);
-            return val * 2n;
-          }
-        );
-        expect(res[0]).assertEqual(20n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Array<number> = [Number(10n), Number(20n), Number(30n)];
+      let res = BigInt64Array.from(
+        src as ArrayLike<number>,
+        (v: number, k: number): BigInt => {
+          let val = BigInt(v);
+          return val * 2n;
+        }
+      );
+      expect(res[0]).assertEqual(20n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_5500
@@ -1110,19 +894,15 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne5500',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let set: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
-        let src: IterableIterator<BigInt> = set.values();
-        let res = BigInt64Array.from(src, (v: BigInt, k: number): BigInt => {
-          let val = v;
-          return val * 2n;
-        });
-        expect(res[0]).assertEqual(20n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
+      let src: IterableIterator<BigInt> = set.values();
+      let res = BigInt64Array.from(src, (v: BigInt, k: number): BigInt => {
+        let val = v;
+        return val * 2n;
+      });
+      expect(res[0]).assertEqual(20n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_5600
@@ -1132,18 +912,14 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne5600',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Array<BigInt> = [10n, 20n, 30n];
-        let res = BigInt64Array.from(src, (v: BigInt, k: number): BigInt => {
-          let val = v;
-          return val + BigInt(k);
-        });
-        expect(res[2]).assertEqual(32n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Array<BigInt> = [10n, 20n, 30n];
+      let res = BigInt64Array.from(src, (v: BigInt, k: number): BigInt => {
+        let val = v;
+        return val + BigInt(k);
+      });
+      expect(res[2]).assertEqual(32n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_5700
@@ -1153,18 +929,14 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne5700',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
-        let res = BigInt64Array.from(src, (v: BigInt, k: number): BigInt => {
-          let val = v;
-          return val + BigInt(k);
-        });
-        expect(res[2]).assertEqual(32n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
+      let res = BigInt64Array.from(src, (v: BigInt, k: number): BigInt => {
+        let val = v;
+        return val + BigInt(k);
+      });
+      expect(res[2]).assertEqual(32n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_5800
@@ -1174,21 +946,17 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne5800',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: BigInt64Array = new BigInt64Array([10n, 20n, 30n]);
-        let res = BigInt64Array.from(
-          src as Iterable<BigInt>,
-          (v: BigInt, k: number): BigInt => {
-            let val = v;
-            return val + BigInt(k);
-          }
-        );
-        expect(res[2]).assertEqual(32n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: BigInt64Array = new BigInt64Array([10n, 20n, 30n]);
+      let res = BigInt64Array.from(
+        src as Iterable<BigInt>,
+        (v: BigInt, k: number): BigInt => {
+          let val = v;
+          return val + BigInt(k);
+        }
+      );
+      expect(res[2]).assertEqual(32n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_5900
@@ -1198,21 +966,17 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne5900',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let src: Array<number> = [Number(10n), Number(20n), Number(30n)];
-        let res = BigInt64Array.from(
-          src as ArrayLike<number>,
-          (v: number, k: number): BigInt => {
-            let val = BigInt(v);
-            return val + BigInt(k);
-          }
-        );
-        expect(res[2]).assertEqual(32n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Array<number> = [Number(10n), Number(20n), Number(30n)];
+      let res = BigInt64Array.from(
+        src as ArrayLike<number>,
+        (v: number, k: number): BigInt => {
+          let val = BigInt(v);
+          return val + BigInt(k);
+        }
+      );
+      expect(res[2]).assertEqual(32n);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FROM_THREE_ONE_6000
@@ -1222,19 +986,15 @@ export default function BigInt64ArrayFrom0301Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testBigInt64ArrayFromThreeOne6000',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-        let set: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
-        let src: IterableIterator<BigInt> = set.values();
-        let res = BigInt64Array.from(src, (v: BigInt, k: number): BigInt => {
-          let val = v;
-          return val + BigInt(k);
-        });
-        expect(res[2]).assertEqual(32n);
-      }
-    );
+    it('testBigInt64ArrayFromThreeOne6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
+      let src: IterableIterator<BigInt> = set.values();
+      let res = BigInt64Array.from(src, (v: BigInt, k: number): BigInt => {
+        let val = v;
+        return val + BigInt(k);
+      });
+      expect(res[2]).assertEqual(32n);
+    });
 
   });
 }

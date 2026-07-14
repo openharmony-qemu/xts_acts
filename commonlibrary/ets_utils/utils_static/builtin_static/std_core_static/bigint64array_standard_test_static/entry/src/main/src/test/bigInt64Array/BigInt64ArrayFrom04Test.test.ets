@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -184,7 +184,6 @@ export default function BigInt64ArrayFrom0302Test(): void {
     it('testBigInt64ArrayFromThreeTwo0700', TestType.FUNCTION | Size.MEDIUMTEST |
       Level.LEVEL2, (): void => {
       let count = 0;
-      let error: Error | null = null;
       let src: Array<BigInt> = [10n, 20n, 30n];
       try {
         BigInt64Array.from(
@@ -197,11 +196,11 @@ export default function BigInt64ArrayFrom0302Test(): void {
             return v;
           }
         );
+        expect().assertFail();
       } catch (e) {
-        error = e as Error;
+        expect(e.name).assertEqual('Error');
       }
       expect(count).assertEqual(2);
-      expect(error !== null && error !== undefined).assertTrue();
     });
 
     /**
@@ -215,7 +214,6 @@ export default function BigInt64ArrayFrom0302Test(): void {
     it('testBigInt64ArrayFromThreeTwo0800', TestType.FUNCTION | Size.MEDIUMTEST |
       Level.LEVEL2, (): void => {
       let count = 0;
-      let error: Error | null = null;
       let src: Array<number> = [Number(10n), Number(20n), Number(30n)];
       try {
         BigInt64Array.from(
@@ -228,11 +226,11 @@ export default function BigInt64ArrayFrom0302Test(): void {
             return BigInt(v);
           }
         );
+        expect().assertFail();
       } catch (e) {
-        error = e as Error;
+        expect(e.name).assertEqual('Error');
       }
       expect(count).assertEqual(2);
-      expect(error !== null && error !== undefined).assertTrue();
     });
 
     /**
@@ -246,7 +244,6 @@ export default function BigInt64ArrayFrom0302Test(): void {
     it('testBigInt64ArrayFromThreeTwo0900', TestType.FUNCTION | Size.MEDIUMTEST |
       Level.LEVEL2, (): void => {
       let count = 0;
-      let error: Error | null = null;
       let set: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
       let src: IterableIterator<BigInt> = set.values();
       try {
@@ -260,11 +257,11 @@ export default function BigInt64ArrayFrom0302Test(): void {
             return v;
           }
         );
+        expect().assertFail();
       } catch (e) {
-        error = e as Error;
+        expect(e.name).assertEqual('Error');
       }
       expect(count).assertEqual(2);
-      expect(error !== null && error !== undefined).assertTrue();
     });
 
     /**
@@ -278,7 +275,6 @@ export default function BigInt64ArrayFrom0302Test(): void {
     it('testBigInt64ArrayFromThreeTwo1000', TestType.FUNCTION | Size.MEDIUMTEST |
       Level.LEVEL2, (): void => {
       let count = 0;
-      let error: Error | null = null;
       let src: Array<BigInt> = [10n, 20n, 30n];
       try {
         BigInt64Array.from(
@@ -291,11 +287,11 @@ export default function BigInt64ArrayFrom0302Test(): void {
             return v;
           }
         );
+        expect().assertFail();
       } catch (e) {
-        error = e as Error;
+        expect(e.name).assertEqual('Error');
       }
       expect(count).assertEqual(3);
-      expect(error !== null && error !== undefined).assertTrue();
     });
 
     /**
@@ -309,7 +305,6 @@ export default function BigInt64ArrayFrom0302Test(): void {
     it('testBigInt64ArrayFromThreeTwo1100', TestType.FUNCTION | Size.MEDIUMTEST |
       Level.LEVEL2, (): void => {
       let count = 0;
-      let error: Error | null = null;
       let src: Array<number> = [Number(10n), Number(20n), Number(30n)];
       try {
         BigInt64Array.from(
@@ -322,11 +317,11 @@ export default function BigInt64ArrayFrom0302Test(): void {
             return BigInt(v);
           }
         );
+        expect().assertFail();
       } catch (e) {
-        error = e as Error;
+        expect(e.name).assertEqual('Error');
       }
       expect(count).assertEqual(3);
-      expect(error !== null && error !== undefined).assertTrue();
     });
 
     /**
@@ -340,7 +335,6 @@ export default function BigInt64ArrayFrom0302Test(): void {
     it('testBigInt64ArrayFromThreeTwo1200', TestType.FUNCTION | Size.MEDIUMTEST |
       Level.LEVEL2, (): void => {
       let count = 0;
-      let error: Error | null = null;
       let set: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
       let src: IterableIterator<BigInt> = set.values();
       try {
@@ -354,11 +348,11 @@ export default function BigInt64ArrayFrom0302Test(): void {
             return v;
           }
         );
+        expect().assertFail();
       } catch (e) {
-        error = e as Error;
+        expect(e.name).assertEqual('Error');
       }
       expect(count).assertEqual(3);
-      expect(error !== null && error !== undefined).assertTrue();
     });
 
     /**
@@ -371,7 +365,6 @@ export default function BigInt64ArrayFrom0302Test(): void {
      */
     it('testBigInt64ArrayFromThreeTwo1300', TestType.FUNCTION | Size.MEDIUMTEST |
       Level.LEVEL2, (): void => {
-      let error: Error | null = null;
       let src: Array<BigInt> = [10n, 20n, 30n];
       try {
         BigInt64Array.from(
@@ -383,12 +376,9 @@ export default function BigInt64ArrayFrom0302Test(): void {
             return v;
           }
         );
+        expect().assertFail();
       } catch (e) {
-        error = e as Error;
-      }
-      expect(error !== null && error !== undefined).assertTrue();
-      if (error !== null) {
-        expect(error.name).assertEqual('TypeError');
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -402,7 +392,6 @@ export default function BigInt64ArrayFrom0302Test(): void {
      */
     it('testBigInt64ArrayFromThreeTwo1400', TestType.FUNCTION | Size.MEDIUMTEST |
       Level.LEVEL2, (): void => {
-      let error: Error | null = null;
       let src: Array<number> = [Number(10n), Number(20n), Number(30n)];
       try {
         BigInt64Array.from(
@@ -414,12 +403,9 @@ export default function BigInt64ArrayFrom0302Test(): void {
             return BigInt(v);
           }
         );
+        expect().assertFail();
       } catch (e) {
-        error = e as Error;
-      }
-      expect(error !== null && error !== undefined).assertTrue();
-      if (error !== null) {
-        expect(error.name).assertEqual('TypeError');
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -433,7 +419,6 @@ export default function BigInt64ArrayFrom0302Test(): void {
      */
     it('testBigInt64ArrayFromThreeTwo1500', TestType.FUNCTION | Size.MEDIUMTEST |
       Level.LEVEL2, (): void => {
-      let error: Error | null = null;
       let set: Set<BigInt> = new Set<BigInt>([10n, 20n, 30n]);
       let src: IterableIterator<BigInt> = set.values();
       try {
@@ -446,12 +431,9 @@ export default function BigInt64ArrayFrom0302Test(): void {
             return v;
           }
         );
+        expect().assertFail();
       } catch (e) {
-        error = e as Error;
-      }
-      expect(error !== null && error !== undefined).assertTrue();
-      if (error !== null) {
-        expect(error.name).assertEqual('TypeError');
+        expect(e.name).assertEqual('TypeError');
       }
     });
 

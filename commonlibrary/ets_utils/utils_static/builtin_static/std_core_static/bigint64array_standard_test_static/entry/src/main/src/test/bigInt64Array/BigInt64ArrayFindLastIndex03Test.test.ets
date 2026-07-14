@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -49,6 +49,7 @@ export default function BigInt64ArrayFindLastIndex03Test(): void {
         });
         expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('Error');
         expect(e.message).assertEqual('test');
       }
     });

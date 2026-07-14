@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -225,18 +225,17 @@ export default function BigInt64ArrayForEach02Test(): void {
      */
     it('testBigInt64ArrayForEachTwo1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n]);
-      let caught = false;
       try {
         arr.forEach((val, idx, a) => {
           if (val === 2n) {
             throw new Error("break");
           }
         });
+        expect().assertFail();
       } catch (e) {
-        caught = true;
+        expect(e.name).assertEqual('Error');
         expect(arr.length).assertEqual(3);
       }
-      expect(caught).assertTrue();
     });
 
     /**
@@ -249,16 +248,15 @@ export default function BigInt64ArrayForEach02Test(): void {
      */
     it('testBigInt64ArrayForEachTwo1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([9n]);
-      let caught = false;
       try {
         arr.forEach((val, idx, a) => {
           throw new Error("dummy");
         });
+        expect().assertFail();
       } catch (e) {
-        caught = true;
+        expect(e.name).assertEqual('Error');
         expect(arr.length).assertEqual(1);
       }
-      expect(caught).assertTrue();
     });
 
     /**
@@ -413,16 +411,15 @@ export default function BigInt64ArrayForEach02Test(): void {
      */
     it('testBigInt64ArrayForEachTwo2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([50n]);
-      let caught = false;
       try {
         arr.forEach((val, idx, a) => {
           throw new Error();
         });
+        expect().assertFail();
       } catch (e) {
-        caught = true;
+        expect(e.name).assertEqual('Error');
         expect(arr.byteLength).assertEqual(8);
       }
-      expect(caught).assertTrue();
     });
 
     /**
@@ -573,15 +570,14 @@ export default function BigInt64ArrayForEach02Test(): void {
     it('testBigInt64ArrayForEachTwo3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(16);
       let arr = new BigInt64Array(buf, 8, 1);
-      let caught = false;
       try {
         arr.forEach((v) => {
           throw new Error();
         });
+        expect().assertFail();
       } catch (e) {
-        caught = true;
+        expect(e.name).assertEqual('Error');
       }
-      expect(caught).assertTrue();
       expect(arr.byteOffset).assertEqual(8);
     });
 
@@ -625,15 +621,14 @@ export default function BigInt64ArrayForEach02Test(): void {
      */
     it('testBigInt64ArrayForEachTwo3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([0n]);
-      let caught = false;
       try {
         arr.forEach((v) => {
           throw new Error();
         });
+        expect().assertFail();
       } catch (e) {
-        caught = true;
+        expect(e.name).assertEqual('Error');
       }
-      expect(caught).assertTrue();
       expect(arr.byteOffset).assertEqual(0);
     });
 
@@ -745,15 +740,14 @@ export default function BigInt64ArrayForEach02Test(): void {
       let a = new BigInt64Array(buf);
       let b = new BigInt64Array(buf, 8, 1);
       b[0] = -9223372036854775807n - 1n;
-      let caught = false;
       try {
         a.forEach((val) => {
           throw new Error();
         });
+        expect().assertFail();
       } catch (e) {
-        caught = true;
+        expect(e.name).assertEqual('Error');
       }
-      expect(caught).assertTrue();
       expect(b[0]).assertEqual(-9223372036854775807n - 1n);
     });
 

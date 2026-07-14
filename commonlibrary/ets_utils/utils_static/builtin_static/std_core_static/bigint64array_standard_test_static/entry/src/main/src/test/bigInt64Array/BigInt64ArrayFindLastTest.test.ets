@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -58,15 +58,19 @@ export default function BigInt64ArrayFindLastTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_LAST_0200
      * @tc.name testBigInt64ArrayFindLast0200
-     * @tc.desc Verify findLast returns undefined when callback always returns false.
+     * @tc.desc Verify findLast throws Error when callback always returns false.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindLast0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([2n, 4n, 6n]);
-      let result = arr.findLast((value: bigint): boolean => false);
-      expect(result).assertUndefined();
+      try {
+        arr.findLast((value: bigint): boolean => false);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+      }
     });
 
     /**
@@ -186,66 +190,94 @@ export default function BigInt64ArrayFindLastTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_LAST_1100
      * @tc.name testBigInt64ArrayFindLast1100
-     * @tc.desc Verify findLast can use only index to select the last even index.
+     * @tc.desc Verify BigInt64Array.of traversal begins at the final index.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindLast1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([11n, 22n, 33n, 44n, 55n]);
-      let result = arr.findLast((value: bigint, index: int): boolean => index % 2 === 0);
-      expect(result).assertEqual(55n);
+      let arr = BigInt64Array.of(11n, 22n, 33n, 44n, 55n);
+      let firstIndex = -1;
+      let result = arr.findLast((_value: bigint, index: int): boolean => {
+        firstIndex = index;
+        return true;
+      });
+      expect(firstIndex).assertEqual(4);
+      expect(String(result)).assertEqual('55');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_LAST_1200
      * @tc.name testBigInt64ArrayFindLast1200
-     * @tc.desc Verify findLast can use only index to select index zero.
+     * @tc.desc Verify a callback mutation of a left-side element is visible later in reverse traversal.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindLast1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([11n, 22n, 33n, 44n, 55n]);
-      let result = arr.findLast((value: bigint, index: int): boolean => index === 0);
-      expect(result).assertEqual(11n);
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let visited: int[] = [];
+      let result = arr.findLast((value: bigint, index: int): boolean => {
+        visited.push(index);
+        if (index === 2) {
+          arr[1] = 99n;
+        }
+        return value === 99n;
+      });
+      expect(visited.join(',')).assertEqual('2,1');
+      expect(String(result)).assertEqual('99');
+      expect(arr.join()).assertEqual('1,99,3');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_LAST_1300
      * @tc.name testBigInt64ArrayFindLast1300
-     * @tc.desc Verify findLast supports combined value and index predicates.
+     * @tc.desc Verify an external flag set at the tail can control the following callback decision.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindLast1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([3n, 9n, 12n, 15n]);
-      let result = arr.findLast((value: bigint, index: int): boolean => {
-        return value % 3n === 0n && index === 2;
+      let arr = new BigInt64Array([3n, 6n, 12n, 24n]);
+      let armed = false;
+      let hitIndex = -1;
+      let result = arr.findLast((_value: bigint, index: int): boolean => {
+        if (index === arr.length - 1) {
+          armed = true;
+          return false;
+        }
+        if (armed) {
+          hitIndex = index;
+          return true;
+        }
+        return false;
       });
-      expect(result).assertEqual(12n);
+      expect(hitIndex).assertEqual(2);
+      expect(String(result)).assertEqual('12');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_LAST_1400
      * @tc.name testBigInt64ArrayFindLast1400
-     * @tc.desc Verify callback receives the current array instance.
+     * @tc.desc Verify callback array metadata matches the BigInt64Array.of source.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindLast1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([2n, 4n, 6n]);
-      let sawSelf = false;
+      let arr = BigInt64Array.of(2n, 4n, 6n);
+      let observedBytes = 0;
+      let sameBuffer = false;
       let result = arr.findLast(
-        (value: bigint, index: int, array: BigInt64Array): boolean => {
-          sawSelf = array === arr && array[index] === value;
-          return value === 6n;
+        (_value: bigint, index: int, array: BigInt64Array): boolean => {
+          observedBytes = array.byteLength;
+          sameBuffer = array.buffer === arr.buffer;
+          return index === array.length - 1;
         }
       );
-      expect(result).assertEqual(6n);
-      expect(sawSelf).assertTrue();
+      expect(observedBytes).assertEqual(24);
+      expect(sameBuffer).assertTrue();
+      expect(String(result)).assertEqual('6');
     });
 
     /**
@@ -284,7 +316,7 @@ export default function BigInt64ArrayFindLastTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_LAST_1700
      * @tc.name testBigInt64ArrayFindLast1700
-     * @tc.desc Verify empty arrays return undefined without invoking callback.
+     * @tc.desc Verify empty arrays throw Error without invoking callback.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -292,11 +324,15 @@ export default function BigInt64ArrayFindLastTest(): void {
     it('testBigInt64ArrayFindLast1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array(0);
       let calls: int = 0;
-      let result = arr.findLast((value: bigint): boolean => {
-        calls++;
-        return true;
-      });
-      expect(result).assertUndefined();
+      try {
+        arr.findLast((value: bigint): boolean => {
+          calls++;
+          return true;
+        });
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+      }
       expect(calls).assertEqual(0);
     });
 
@@ -317,37 +353,45 @@ export default function BigInt64ArrayFindLastTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_LAST_1900
      * @tc.name testBigInt64ArrayFindLast1900
-     * @tc.desc Verify a non-matching single-element array returns undefined.
+     * @tc.desc Verify a non-matching single-element array throws Error.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindLast1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([42n]);
-      let result = arr.findLast((value: bigint): boolean => value === 24n);
-      expect(result).assertUndefined();
+      try {
+        arr.findLast((value: bigint): boolean => value === 24n);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_LAST_2000
      * @tc.name testBigInt64ArrayFindLast2000
-     * @tc.desc Verify identical values can still confirm reverse traversal by index.
+     * @tc.desc Verify an Error thrown by the predicate stops reverse traversal and is propagated.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindLast2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([7n, 7n, 7n, 7n]);
-      let hitIndex: int = -1;
-      let result = arr.findLast((value: bigint, index: int): boolean => {
-        if (value === 7n && index < 3) {
-          hitIndex = index;
-          return true;
-        }
-        return false;
-      });
-      expect(result).assertEqual(7n);
-      expect(hitIndex).assertEqual(2);
+      let arr = new BigInt64Array([7n, 14n, 21n, 28n]);
+      let calls = 0;
+      try {
+        arr.findLast((_value: bigint, index: int): boolean => {
+          calls++;
+          if (index === 2) {
+            throw new Error('predicate-stop');
+          }
+          return false;
+        });
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+      }
+      expect(calls).assertEqual(2);
     });
 
     /**
@@ -476,7 +520,8 @@ export default function BigInt64ArrayFindLastTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_LAST_2900
      * @tc.name testBigInt64ArrayFindLast2900
-     * @tc.desc Verify a no-match predicate visits every element exactly once.
+     * @tc.desc Verify a no-match predicate visits every element exactly once
+     * before findLast throws Error.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -484,11 +529,15 @@ export default function BigInt64ArrayFindLastTest(): void {
     it('testBigInt64ArrayFindLast2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 3n, 5n, 7n]);
       let calls: int = 0;
-      let result = arr.findLast((value: bigint): boolean => {
-        calls++;
-        return value % 2n === 0n;
-      });
-      expect(result).assertUndefined();
+      try {
+        arr.findLast((value: bigint): boolean => {
+          calls++;
+          return value % 2n === 0n;
+        });
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+      }
       expect(calls).assertEqual(arr.length);
     });
 
@@ -502,8 +551,6 @@ export default function BigInt64ArrayFindLastTest(): void {
      */
     it('testBigInt64ArrayFindLast3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n]);
-      let caught = false;
-      let errorMessage = '';
       try {
         arr.findLast((value: bigint): boolean => {
           if (value === 2n) {
@@ -511,12 +558,11 @@ export default function BigInt64ArrayFindLastTest(): void {
           }
           return false;
         });
-      } catch (error) {
-        caught = true;
-        errorMessage = error.message;
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+        expect(e.message).assertEqual('test');
       }
-      expect(caught).assertTrue();
-      expect(errorMessage).assertEqual('test');
     });
 
     /**
@@ -536,15 +582,19 @@ export default function BigInt64ArrayFindLastTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_LAST_3200
      * @tc.name testBigInt64ArrayFindLast3200
-     * @tc.desc Verify missing matches produce strict undefined.
+     * @tc.desc Verify missing matches cause findLast to throw Error.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindLast3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([5n, 10n, 15n]);
-      let result = arr.findLast((value: bigint): boolean => value === 99n);
-      expect(result).assertUndefined();
+      try {
+        arr.findLast((value: bigint): boolean => value === 99n);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+      }
     });
 
     /**

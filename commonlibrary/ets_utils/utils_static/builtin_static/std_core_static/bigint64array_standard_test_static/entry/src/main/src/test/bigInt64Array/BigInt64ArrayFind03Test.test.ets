@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -106,56 +106,68 @@ export default function BigInt64ArrayFind03Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_THREE_0600
      * @tc.name testBigInt64ArrayFindThree0600
-     * @tc.desc Verify find locates hex max when the callback uses only the value parameter.
+     * @tc.desc Verify find stops at the first maximum boundary match.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindThree0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([9223372036854775807n]);
-      let res = arr.find((v: bigint) => v === 9223372036854775807n);
+      let arr = new BigInt64Array([1n, 9223372036854775807n, 9223372036854775807n]);
+      let calls = 0;
+      let res = arr.find((v: bigint): boolean => {
+        calls++;
+        return v === 9223372036854775807n;
+      });
       expect(res).assertEqual(9223372036854775807n);
+      expect(calls).assertEqual(2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_THREE_0700
      * @tc.name testBigInt64ArrayFindThree0700
-     * @tc.desc Verify find locates hex max when the callback uses value and index parameters.
+     * @tc.desc Verify find can select the later maximum boundary value by index.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindThree0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([9223372036854775807n, 1n]);
-      let res = arr.find((v: bigint, idx: int) => idx === 0 && v === 9223372036854775807n);
+      let arr = new BigInt64Array([9223372036854775807n, 1n, 9223372036854775807n]);
+      let res = arr.find((v: bigint, idx: int) => idx === 2 && v === 9223372036854775807n);
       expect(res).assertEqual(9223372036854775807n);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_THREE_0800
      * @tc.name testBigInt64ArrayFindThree0800
-     * @tc.desc Verify find locates hex min when the callback uses only the value parameter.
+     * @tc.desc Verify find stops at the first minimum boundary match.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindThree0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([-9223372036854775807n - 1n]);
-      let res = arr.find((v: bigint) => v === -9223372036854775807n - 1n);
+      let arr = new BigInt64Array([-9223372036854775807n - 1n, 5n, -9223372036854775807n - 1n]);
+      let calls = 0;
+      let res = arr.find((v: bigint): boolean => {
+        calls++;
+        return v === -9223372036854775807n - 1n;
+      });
       expect(res).assertEqual(-9223372036854775807n - 1n);
+      expect(calls).assertEqual(1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_THREE_0900
      * @tc.name testBigInt64ArrayFindThree0900
-     * @tc.desc Verify find locates hex min when the callback uses value and index parameters.
+     * @tc.desc Verify find can use the callback array parameter to match a boundary value.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindThree0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([-9223372036854775807n - 1n, 1n]);
-      let res = arr.find((v: bigint, idx: int) => idx === 0 && v === -9223372036854775807n - 1n);
+      let arr = new BigInt64Array([1n, -9223372036854775807n - 1n, 0n]);
+      let res = arr.find((v: bigint, idx: int, a: BigInt64Array): boolean => {
+        return idx > 0 && a[idx + 1] === 0n && v === -9223372036854775807n - 1n;
+      });
       expect(res).assertEqual(-9223372036854775807n - 1n);
     });
 
@@ -180,17 +192,15 @@ export default function BigInt64ArrayFind03Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_THREE_1100
      * @tc.name testBigInt64ArrayFindThree1100
-     * @tc.desc Verify find returns `5n` when the second repeated occurrence satisfies the predicate.
+     * @tc.desc Verify find can identify a later duplicate by inspecting its preceding array element.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindThree1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([1n, 2n, 5n, 3n, 5n, 5n, 4n]);
-      let count = 0;
-      let res = arr.find((v: bigint) => {
-        if (v === 5n) count++;
-        return v === 5n && count === 2;
+      let arr = new BigInt64Array([5n, 1n, 5n, 2n]);
+      let res = arr.find((v: bigint, idx: int, array: BigInt64Array): boolean => {
+        return idx > 0 && v === 5n && array[idx - 1] === 1n;
       });
       expect(res).assertEqual(5n);
     });
@@ -198,19 +208,19 @@ export default function BigInt64ArrayFind03Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIND_THREE_1200
      * @tc.name testBigInt64ArrayFindThree1200
-     * @tc.desc Verify find returns `5n` when the third repeated occurrence satisfies the predicate.
+     * @tc.desc Verify find uses view-relative indices when repeated values are searched in a subarray.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFindThree1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([1n, 2n, 5n, 3n, 5n, 5n, 4n]);
-      let count = 0;
-      let res = arr.find((v: bigint) => {
-        if (v === 5n) count++;
-        return v === 5n && count === 3;
+      let root = new BigInt64Array([9n, 5n, 1n, 5n, 7n]);
+      let arr = root.subarray(1, 4);
+      let res = arr.find((v: bigint, idx: int): boolean => {
+        return idx === arr.length - 1 && v === 5n;
       });
       expect(res).assertEqual(5n);
+      expect(arr.byteOffset).assertEqual(8);
     });
 
     /**
