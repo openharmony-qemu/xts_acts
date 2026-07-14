@@ -268,7 +268,8 @@ static napi_value OHCertManagerNativeApiPublicErr0100(napi_env env, napi_callbac
     
     OH_CM_Blob keyUri = {static_cast<uint32_t>(identity.length() + 1), (uint8_t*)identity.c_str()};
     OH_CM_Credential *credential = static_cast<OH_CM_Credential*>(malloc(sizeof(OH_CM_Credential)));
-    
+    (void)menset_s(credential, sizeof(OH_CM_Credential), 0, sizeof(OH_CM_Credential));
+
     int32_t ohResult = OH_CertManager_GetPublicCertificate(&keyUri, credential);
     
     OH_CertManager_FreeCredential(credential);
@@ -439,7 +440,8 @@ static napi_value OHCertNativeCredTest0100(napi_env env, napi_callback_info info
         napi_throw_error(env, nullptr, "malloc credential error");
         return nullptr;
     }
-    
+    (void)menset_s(credential, sizeof(OH_CM_Credential), 0, sizeof(OH_CM_Credential));
+
     int32_t ohResult = OH_CertManager_GetPrivateCertificate(&keyUri, credential);
     
     napi_value resultObj;
