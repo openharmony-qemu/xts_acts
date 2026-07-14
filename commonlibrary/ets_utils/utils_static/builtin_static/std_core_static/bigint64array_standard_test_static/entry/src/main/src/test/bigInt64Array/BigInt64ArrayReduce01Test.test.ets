@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -3216,15 +3216,14 @@ export default function BigInt64ArrayReduce01Test(): void {
      */
     it('testBigInt64ArrayReduceOne2090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, -1n, 3n]);
-      let caught: Error | undefined = undefined;
       try {
         arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
           if (curr === 2n) {
             throw new Error('cb err');
-            expect().assertFail();
           }
           return acc + curr;
         }, 0n);
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('Error');
       }
@@ -3240,15 +3239,14 @@ export default function BigInt64ArrayReduce01Test(): void {
      */
     it('testBigInt64ArrayReduceOne2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, -1n, 3n]);
-      let caught: Error | undefined = undefined;
       try {
         arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
           if (idx === 0) {
             throw new Error('first err');
-            expect().assertFail();
           }
           return acc + curr;
         }, 0n);
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('Error');
       }
@@ -3264,15 +3262,14 @@ export default function BigInt64ArrayReduce01Test(): void {
      */
     it('testBigInt64ArrayReduceOne2110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, -1n, 3n]);
-      let caught: Error | undefined = undefined;
       try {
         arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
           if (idx === a.length - 1) {
             throw new Error('end err');
-            expect().assertFail();
           }
           return acc + curr;
         }, 0n);
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('Error');
       }
@@ -3288,15 +3285,14 @@ export default function BigInt64ArrayReduce01Test(): void {
      */
     it('testBigInt64ArrayReduceOne2120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, -1n, 3n]);
-      let caught: Error | undefined = undefined;
       try {
         arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
           if (curr < 0n) {
             throw new Error('neg err');
-            expect().assertFail();
           }
           return acc + curr;
         }, 0n);
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('Error');
       }

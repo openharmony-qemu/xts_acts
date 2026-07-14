@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -1184,7 +1184,7 @@ export default function BigInt64ArrayLastIndexOf01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_LAST_INDEX_OF_TWO_0750
      * @tc.name testBigInt64ArrayLastIndexOfTwo0750
-     * @tc.desc Verify lastIndexOf returns a value of type number for a single-element match.
+     * @tc.desc Verify lastIndexOf returns a value of type int for a single-element match.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1192,7 +1192,7 @@ export default function BigInt64ArrayLastIndexOf01Test(): void {
     it('testBigInt64ArrayLastIndexOfTwo0750', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n]);
       let res = arr.lastIndexOf(1n);
-      expect(typeof res).assertEqual('number');
+      expect(typeof res).assertEqual('int');
     });
 
     /**

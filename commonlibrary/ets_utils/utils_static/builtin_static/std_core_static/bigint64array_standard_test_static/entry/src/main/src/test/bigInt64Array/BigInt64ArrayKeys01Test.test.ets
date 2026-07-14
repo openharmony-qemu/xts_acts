@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -518,7 +518,7 @@ export default function BigInt64ArrayKeys01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_KEYS_TWO_3100
      * @tc.name testBigInt64ArrayKeysTwo3100
-     * @tc.desc Verify next().value on a single-element iterator has typeof number.
+     * @tc.desc Verify next().value on a single-element iterator has typeof int.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -526,7 +526,7 @@ export default function BigInt64ArrayKeys01Test(): void {
     it('testBigInt64ArrayKeysTwo3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n]);
       let it = arr.keys();
-      expect(typeof it.next().value).assertEqual('number');
+      expect(typeof it.next().value).assertEqual('int');
     });
 
     /**

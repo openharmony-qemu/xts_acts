@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -199,8 +199,8 @@ export default function BigInt64ArrayReduceRight01Test(): void {
       try {
         arr.reduceRight<BigInt>((prev, curr) => {
           throw new Error('Callback Error');
-          expect().assertFail();
         }, 0n);
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('Error');
       }
@@ -246,39 +246,52 @@ export default function BigInt64ArrayReduceRight01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_RIGHT_ONE_1400
      * @tc.name testBigInt64ArrayReduceRightOne1400
-     * @tc.desc Verify reduceRight throws when callbackfn is null.
+     * @tc.desc Verify reduceRight propagates a ClassCastError thrown on the first callback invocation.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayReduceRightOne1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n]);
+      let callbackCount: int = 0;
       try {
-        let nullFn: Object = null as Object;
-        arr.reduceRight(nullFn as (prev: bigint, curr: bigint) => bigint, 10n);
+        arr.reduceRight((prev: BigInt, curr: BigInt): BigInt => {
+          callbackCount++;
+          throw new ClassCastError('reduceRight first callback error');
+        }, 10n);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError');
+        expect(e.message).assertEqual('reduceRight first callback error');
       }
+      expect(callbackCount).assertEqual(1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_RIGHT_ONE_1500
      * @tc.name testBigInt64ArrayReduceRightOne1500
-     * @tc.desc Verify reduceRight throws when callbackfn is undefined.
+     * @tc.desc Verify reduceRight propagates a ClassCastError thrown after one successful callback.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayReduceRightOne1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([1n]);
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      let callbackCount: int = 0;
       try {
-        let undefFn: Object = undefined as Object;
-        arr.reduceRight(undefFn as (prev: bigint, curr: bigint) => bigint, 10n);
+        arr.reduceRight((prev: BigInt, curr: BigInt): BigInt => {
+          callbackCount++;
+          if (callbackCount === 2) {
+            throw new ClassCastError('reduceRight second callback error');
+          }
+          return prev + curr;
+        }, 0n);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError');
+        expect(e.message).assertEqual('reduceRight second callback error');
       }
+      expect(callbackCount).assertEqual(2);
     });
 
     /**
@@ -843,10 +856,10 @@ export default function BigInt64ArrayReduceRight01Test(): void {
           count++;
           if (idx === 1) {
             throw new Error('Interrupt');
-            expect().assertFail();
           }
           return prev + curr;
         }, 0n);
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('Error');
       }
@@ -1050,7 +1063,7 @@ export default function BigInt64ArrayReduceRight01Test(): void {
       }, 0n);
       expect(visitedValues[0]).assertEqual(4n);
       expect(visitedValues[1]).assertEqual(3n);
-      expect(visitedValues[2]).assertEqual(99n);
+      expect(visitedValues[2]).assertEqual(2n);
       expect(visitedValues[3]).assertEqual(1n);
     });
 

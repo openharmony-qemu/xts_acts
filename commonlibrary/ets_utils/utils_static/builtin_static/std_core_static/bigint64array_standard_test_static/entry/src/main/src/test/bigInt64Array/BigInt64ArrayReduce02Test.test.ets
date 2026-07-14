@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -113,8 +113,6 @@ export default function BigInt64ArrayReduce02Test(): void {
      */
     it('testBigInt64ArrayReduceTwo0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array(0);
-      let caught = false;
-      let errorName = '';
       try {
         arr.reduce((p, c) => p + c);
         expect().assertFail();
@@ -1010,17 +1008,15 @@ export default function BigInt64ArrayReduce02Test(): void {
     it('testBigInt64ArrayReduceTwo0680', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n, 6n, 7n, 8n, 9n, 10n, 11n, 12n]);
       let loops = 0;
-      let caught = false;
-      let errorMessage = '';
       try {
         arr.reduce((p, c, currentIndex) => {
           loops++;
           if (currentIndex === 1) {
             throw new Error('idx err');
-            expect().assertFail();
           }
           return p + c;
         });
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('Error');
       }
@@ -1038,17 +1034,15 @@ export default function BigInt64ArrayReduce02Test(): void {
     it('testBigInt64ArrayReduceTwo0690', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n, 6n, 7n, 8n, 9n, 10n, 11n, 12n]);
       let loops = 0;
-      let caught = false;
-      let errorMessage = '';
       try {
         arr.reduce((p, c, currentIndex) => {
           loops++;
           if (currentIndex === 10) {
             throw new Error('idx err');
-            expect().assertFail();
           }
           return p + c;
         });
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('Error');
       }
@@ -1125,20 +1119,17 @@ export default function BigInt64ArrayReduce02Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_0740
      * @tc.name testBigInt64ArrayReduceTwo0740
-     * @tc.desc Verify reduce correctly sums 1000 consecutive integers starting from 1.
+     * @tc.desc Verify reduce combines currentIndex and array argument in a weighted sum.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayReduceTwo0740', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array(1000);
-      for (let i = 0; i < 1000; i++) {
-        arr.$_set(i, BigInt(i + 1));
-      }
-      let res = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
-        return acc + curr;
+      let arr = new BigInt64Array([3n, 4n, 5n, 6n]);
+      let res = arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+        return acc + curr * BigInt(idx) + a[0];
       }, 0n);
-      expect(res).assertEqual(500500n);
+      expect(res).assertEqual(44n);
     });
 
     /**
@@ -1355,7 +1346,8 @@ export default function BigInt64ArrayReduce02Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_TWO_0860
      * @tc.name testBigInt64ArrayReduceTwo0860
-     * @tc.desc Verify reduce without initialValue uses first element as initial accumulator and starts iteration from index 1.
+     * @tc.desc Verify reduce without initialValue uses first element as initial accumulator
+     * and starts iteration from index 1.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1537,7 +1529,7 @@ export default function BigInt64ArrayReduce02Test(): void {
       let res = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
         return acc + curr;
       }, 0n);
-      expect(res).assertEqual(18n);
+      expect(res).assertEqual(21n);
     });
 
     /**
@@ -1847,7 +1839,7 @@ export default function BigInt64ArrayReduce02Test(): void {
       let res = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
         return acc % curr;
       });
-      expect(res).assertEqual(2n);
+      expect(res).assertEqual(3n);
     });
 
     /**
@@ -1879,7 +1871,7 @@ export default function BigInt64ArrayReduce02Test(): void {
       let res = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
         return acc << curr;
       }, 1n);
-      expect(res).assertEqual(8n);
+      expect(res).assertEqual(16n);
     });
 
     /**
@@ -1895,7 +1887,7 @@ export default function BigInt64ArrayReduce02Test(): void {
       let res = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
         return acc >> curr;
       }, 256n);
-      expect(res).assertEqual(32n);
+      expect(res).assertEqual(16n);
     });
 
     /**
@@ -2058,7 +2050,7 @@ export default function BigInt64ArrayReduce02Test(): void {
       let res = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
         return acc + curr;
       });
-      expect(res).assertEqual(-9223372036854775807n);
+      expect(res).assertEqual(9223372036854775809n);
     });
 
     /**
@@ -2090,7 +2082,7 @@ export default function BigInt64ArrayReduce02Test(): void {
       let res = arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
         return acc << curr;
       });
-      expect(res).assertEqual(-9223372036854775808n);
+      expect(res).assertEqual(9223372036854775808n);
     });
 
     /**

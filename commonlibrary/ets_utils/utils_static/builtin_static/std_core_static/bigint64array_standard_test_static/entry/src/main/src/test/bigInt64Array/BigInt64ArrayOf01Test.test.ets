@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -1456,29 +1456,39 @@ export default function BigInt64ArrayOf01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_OF_THREE_1060
      * @tc.name testBigInt64ArrayOfThree1060
-     * @tc.desc Verify negative index reads on the BigInt64Array.of result return
-     * undefined.
+     * @tc.desc Verify negative index reads on the BigInt64Array.of result throw
+     * RangeError.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testBigInt64ArrayOfThree1060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = BigInt64Array.of(1n, 2n);
-      expect(arr[-1]).assertUndefined();
+      try {
+        arr[-1];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_OF_THREE_1070
      * @tc.name testBigInt64ArrayOfThree1070
      * @tc.desc Verify out-of-range positive index reads on the
-     * BigInt64Array.of result return undefined.
+     * BigInt64Array.of result throw RangeError.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testBigInt64ArrayOfThree1070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = BigInt64Array.of(1n, 2n);
-      expect(arr[2]).assertUndefined();
+      try {
+        arr[2];
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**

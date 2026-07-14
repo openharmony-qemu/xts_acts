@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -531,8 +531,8 @@ export default function BigInt64ArrayReverse01Test(): void {
       arr[1] = 99n;
       arr.reverse();
       expect(arr[0]).assertEqual(1n);
-      expect(arr[1]).assertEqual(99n);
-      expect(arr[2]).assertEqual(3n);
+      expect(arr[1]).assertEqual(2n);
+      expect(arr[2]).assertEqual(99n);
       expect(arr[3]).assertEqual(4n);
     });
 

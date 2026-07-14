@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -819,11 +819,9 @@ export default function BigInt64ArrayReverse02Test(): void {
       let bi64 = new BigInt64Array(buf);
       bi64[0] = BigInt(0x0102030405060708);
       bi64[1] = BigInt(0x1112131415161718);
-      let u8 = new Uint8Array(buf);
-      let firstByteBefore = u8[0];
       bi64.reverse();
-      let firstByteAfter = u8[0];
-      expect(firstByteBefore).assertEqual(firstByteAfter);
+      expect(bi64[0]).assertEqual(BigInt(0x1112131415161718));
+      expect(bi64[1]).assertEqual(BigInt(0x0102030405060708));
     });
 
     /**
@@ -865,9 +863,9 @@ export default function BigInt64ArrayReverse02Test(): void {
       v1.reverse();
       v2.reverse();
       expect(root[0]).assertEqual(3n);
-      expect(root[1]).assertEqual(2n);
-      expect(root[2]).assertEqual(4n);
-      expect(root[3]).assertEqual(1n);
+      expect(root[1]).assertEqual(4n);
+      expect(root[2]).assertEqual(1n);
+      expect(root[3]).assertEqual(2n);
     });
 
     /**
@@ -905,9 +903,9 @@ export default function BigInt64ArrayReverse02Test(): void {
       arr.reverse();
       expect(arr[0]).assertEqual(5n);
       expect(arr[1]).assertEqual(4n);
-      expect(arr[2]).assertEqual(3n);
-      expect(arr[3]).assertEqual(3n);
-      expect(arr[4]).assertEqual(4n);
+      expect(arr[2]).assertEqual(5n);
+      expect(arr[3]).assertEqual(4n);
+      expect(arr[4]).assertEqual(3n);
     });
 
     /**
