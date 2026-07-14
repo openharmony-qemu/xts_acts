@@ -1328,6 +1328,7 @@ export default function windowZindexTest() {
         console.log(`${caseName} :test_SubWindowZLevel_0100 fail:`+err.code);
         if(!canIUseRes || (deviceType !== 'phone' && deviceType !== 'tablet' && deviceType !== '2in1')){
           expect(err.code).assertEqual(801);
+          expect(err.message !== '').assertTrue()
         }else {
           expect(false).assertTrue();
         }
@@ -1476,6 +1477,7 @@ export default function windowZindexTest() {
         await windowClass.destroyWindow();
         if(!canIUseRes || (deviceType !== 'phone' && deviceType !== 'tablet' && deviceType !== '2in1')){
           expect(err.code).assertEqual(801);
+          expect(err.message !== '').assertTrue()
         }else {
           expect(false).assertTrue();
         }
@@ -1495,6 +1497,7 @@ export default function windowZindexTest() {
         await windowClass2.destroyWindow();
         if(!canIUseRes || (deviceType !== 'phone' && deviceType !== 'tablet' && deviceType !== '2in1')){
           expect(err.code).assertEqual(801);
+          expect(err.message !== '').assertTrue()
         }else {
           expect(false).assertTrue();
         }
@@ -1530,9 +1533,11 @@ export default function windowZindexTest() {
         await windowClass.destroyWindow();
         if(!canIUseRes || (deviceType !== 'phone' && deviceType !== 'tablet' && deviceType !== '2in1')){
           expect(err.code).assertEqual(801);
+          expect(err.message !== '').assertTrue()
         }else {
           expect(false).assertTrue();
         }
+        done();
       }
     });
 
@@ -1582,6 +1587,7 @@ export default function windowZindexTest() {
         } else {
           expect(err.code).assertEqual(1300004);
         }
+        expect(err.message !== '').assertTrue()
         done();
       }
     });
