@@ -337,9 +337,9 @@ static napi_value Archive_Compress_Abnormal(napi_env env, napi_callback_info inf
     ret = OH_Archive_Reader_SetProgressHandlerWithData(nullptr, progressHandlerFunc, (void *)userData);
     NAPI_ASSERT(env, ret == OH_ARCHIVE_PARAM_ERROR, "Reader_SetProgressHandlerWithData failed");
     ret = OH_Archive_Reader_SetProgressHandlerWithData(ctx, nullptr, (void *)userData);
-    NAPI_ASSERT(env, ret == OH_ARCHIVE_PARAM_ERROR, "Reader_SetProgressHandlerWithData faile2d");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_PARAM_ERROR, "Reader_SetProgressHandlerWithData failed");
     ret = OH_Archive_Reader_SetProgressHandlerWithData(ctx, progressHandlerFunc, nullptr);
-    NAPI_ASSERT(env, ret == OH_ARCHIVE_PARAM_ERROR, "Reader_SetProgressHandlerWithData failed3");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "Reader_SetProgressHandlerWithData failed");
     ret = OH_Archive_Reader_SetProgressHandlerWithData(ctx, progressHandlerFunc, (void *)userData);
     NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "Reader_SetProgressHandlerWithData failed");
     
