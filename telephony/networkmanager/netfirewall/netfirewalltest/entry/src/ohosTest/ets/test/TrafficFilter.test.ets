@@ -1000,6 +1000,40 @@ export default function TrafficFilterTest() {
 
 
     /**
+     * @tc.name   testNetworkMgrNetfirewallTrafficFilterAddRedirectRule2300
+     * @tc.number SUB_NetworkMgr_netfirewall_TrafficFilter_AddRedirectRule_2300
+     * @tc.desc   Add redirect rule to redirector instance_source address RANGE type, set IP range startIp > endIp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testNetworkMgrNetfirewallTrafficFilterAddRedirectRule2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      const caseName: string = 'testNetworkMgrNetfirewallTrafficFilterAddRedirectRule2300';
+      hilog.info(domain, tag, `${caseName}---Start`);
+      try {
+        const info: trafficFilterSdk.CreateRedirectInfo = trafficFilterSdk.CreateRedirector(100, 500);
+        hilog.info(domain, tag, `${caseName} create ret: ${JSON.stringify(info.ret)}`);
+        let rule: trafficFilterSdk.RuleConfig = getBaseRule();
+        rule.srcIp = {
+          type: IPMatchType.IP_MATCH_RANGE,
+          invert: false,
+          value: { start: { family: IPFamily.IP_FAMILY_V4, addr: ['192.168.1.10'] }, end: { family: IPFamily.IP_FAMILY_V4, addr: ['192.168.1.1'] } }
+        };
+        const ret: number = trafficFilterSdk.AddRedirectRule(info.redirector, rule);
+        hilog.info(domain, tag, `${caseName} add rule ret: ${JSON.stringify(ret)}`);
+        ExpectTrue(ret === 29410101);
+        trafficFilterSdk.DestroyRedirector(info.redirector);
+        done();
+
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} catch err -> ${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+      }
+    })
+
+
+    /**
      * @tc.name   testNetworkMgrNetfirewallTrafficFilterAddRedirectRule2400
      * @tc.number SUB_NetworkMgr_netfirewall_TrafficFilter_AddRedirectRule_2400
      * @tc.desc   Add redirect rule to redirector instance_source address RANGE type, startIp and endIp family inconsistent
@@ -1138,6 +1172,7 @@ export default function TrafficFilterTest() {
             {family: IPFamily.IP_FAMILY_V4,addr:['192.168.1.9']},
             {family: IPFamily.IP_FAMILY_V4,addr:['192.168.1.10']},
             {family: IPFamily.IP_FAMILY_V4,addr:['192.168.1.11']},
+            {family: IPFamily.IP_FAMILY_V4,addr:['192.168.1.12']},
             {family: IPFamily.IP_FAMILY_V4,addr:['192.168.1.13']},
             {family: IPFamily.IP_FAMILY_V4,addr:['192.168.1.14']},
             {family: IPFamily.IP_FAMILY_V4,addr:['192.168.1.15']},
@@ -1485,7 +1520,7 @@ export default function TrafficFilterTest() {
         rule.dstIp = { type: IPMatchType.IP_MATCH_SINGLE, invert: false, value: {family: IPFamily.IP_FAMILY_V4, addr: ['invalid']} };
         const ret: number = trafficFilterSdk.AddRedirectRule(info.redirector, rule);
         hilog.info(domain, tag, `${caseName} add rule ret: ${JSON.stringify(ret)}`);
-        ExpectTrue(ret === 0);
+        ExpectTrue(ret === 29410101);
         trafficFilterSdk.DestroyRedirector(info.redirector);
         done();
 
@@ -1672,6 +1707,40 @@ export default function TrafficFilterTest() {
         const ret: number = trafficFilterSdk.AddRedirectRule(info.redirector, rule);
         hilog.info(domain, tag, `${caseName} add rule ret: ${JSON.stringify(ret)}`);
         ExpectTrue(ret === 0);
+        trafficFilterSdk.DestroyRedirector(info.redirector);
+        done();
+
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} catch err -> ${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.name   testNetworkMgrNetfirewallTrafficFilterAddRedirectRule4700
+     * @tc.number SUB_NetworkMgr_netfirewall_TrafficFilter_AddRedirectRule_4700
+     * @tc.desc   Add redirect rule to redirector instance_destination address RANGE type, set IP range startIp > endIp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testNetworkMgrNetfirewallTrafficFilterAddRedirectRule4700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      const caseName: string = 'testNetworkMgrNetfirewallTrafficFilterAddRedirectRule4700';
+      hilog.info(domain, tag, `${caseName}---Start`);
+      try {
+        const info: trafficFilterSdk.CreateRedirectInfo = trafficFilterSdk.CreateRedirector(100, 500);
+        hilog.info(domain, tag, `${caseName} create ret: ${JSON.stringify(info.ret)}`);
+        let rule: trafficFilterSdk.RuleConfig = getBaseRule();
+        rule.dstIp = {
+          type: IPMatchType.IP_MATCH_RANGE,
+          invert: false,
+          value: { start: { family: IPFamily.IP_FAMILY_V4, addr: ['192.168.2.10'] }, end: { family: IPFamily.IP_FAMILY_V4, addr: ['192.168.2.1'] } }
+        };
+        const ret: number = trafficFilterSdk.AddRedirectRule(info.redirector, rule);
+        hilog.info(domain, tag, `${caseName} add rule ret: ${JSON.stringify(ret)}`);
+        ExpectTrue(ret === 29410101);
         trafficFilterSdk.DestroyRedirector(info.redirector);
         done();
 
