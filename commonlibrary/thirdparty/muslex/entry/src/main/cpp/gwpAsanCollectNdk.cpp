@@ -57,7 +57,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value GwpAsanCollectNormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int bufcap = 2;
     uintptr_t buffer[10];
@@ -68,7 +68,7 @@ static napi_value GwpAsanCollectNormal001(napi_env env, napi_callback_info info)
 static napi_value GwpAsanCollectNormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int bufcap = 2;
     uintptr_t buffer[10];
@@ -79,7 +79,7 @@ static napi_value GwpAsanCollectNormal002(napi_env env, napi_callback_info info)
 static napi_value GwpAsanCollectNormal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int bufcap = 5;
     uintptr_t buffer[20];
@@ -91,7 +91,7 @@ static napi_value GwpAsanCollectNormal003(napi_env env, napi_callback_info info)
 static napi_value GwpAsanCollectNormal004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
@@ -99,7 +99,7 @@ static napi_value GwpAsanCollectNormal004(napi_env env, napi_callback_info info)
 static napi_value GwpAsanCollectAbnormal001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int bufcap = 2;
     size_t ret = CallGwpAsanCollect(K_TIMESPAN, nullptr, bufcap, K_DEPTH);
@@ -109,7 +109,7 @@ static napi_value GwpAsanCollectAbnormal001(napi_env env, napi_callback_info inf
 static napi_value GwpAsanCollectAbnormal002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     uintptr_t buffer[10];
     size_t ret = CallGwpAsanCollect(K_TIMESPAN, buffer, 0, K_DEPTH);
@@ -119,7 +119,7 @@ static napi_value GwpAsanCollectAbnormal002(napi_env env, napi_callback_info inf
 static napi_value GwpAsanCollectBoundary001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int bufcap = 2;
     uintptr_t buffer[20];
@@ -130,7 +130,7 @@ static napi_value GwpAsanCollectBoundary001(napi_env env, napi_callback_info inf
 static napi_value GwpAsanCollectBoundary002(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int bufcap = 1;
     uintptr_t buffer[4];
@@ -141,7 +141,7 @@ static napi_value GwpAsanCollectBoundary002(napi_env env, napi_callback_info inf
 static napi_value GwpAsanCollectStable001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int bufcap = 2;
     bool pass = true;
@@ -159,7 +159,7 @@ static napi_value GwpAsanCollectStable001(napi_env env, napi_callback_info info)
 static napi_value GwpAsanCollectThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+        return ReturnInt32(env, 1);
     }
     int bufcap = 2;
     std::atomic<bool> hasError{false};

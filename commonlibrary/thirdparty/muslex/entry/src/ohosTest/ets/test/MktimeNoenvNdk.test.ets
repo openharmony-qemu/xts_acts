@@ -33,9 +33,7 @@ export default function MktimeNoenvNdkTest() {
      */
     it('testmktimeNoenvNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libmktimenoenvndktest.mktimeNoenvNormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 0) || (deviceType != '2in1' && resNum == 1);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -49,9 +47,7 @@ export default function MktimeNoenvNdkTest() {
      */
     it('testmktimeNoenvNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libmktimenoenvndktest.mktimeNoenvNormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 0) || (deviceType != '2in1' && resNum == 1);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -65,9 +61,7 @@ export default function MktimeNoenvNdkTest() {
      */
     it('testmktimeNoenvNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libmktimenoenvndktest.mktimeNoenvNormal003();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 0) || (deviceType != '2in1' && resNum == 1);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -81,9 +75,7 @@ export default function MktimeNoenvNdkTest() {
      */
     it('testmktimeNoenvNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libmktimenoenvndktest.mktimeNoenvNormal004();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 0) || (deviceType != '2in1' && resNum == 1);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -97,9 +89,7 @@ export default function MktimeNoenvNdkTest() {
      */
     it('testmktimeNoenvAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libmktimenoenvndktest.mktimeNoenvAbnormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 0) || (deviceType != '2in1' && resNum == 1);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -113,9 +103,7 @@ export default function MktimeNoenvNdkTest() {
      */
     it('testmktimeNoenvAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libmktimenoenvndktest.mktimeNoenvAbnormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 0) || (deviceType != '2in1' && resNum == 1);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -129,9 +117,7 @@ export default function MktimeNoenvNdkTest() {
      */
     it('testmktimeNoenvBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libmktimenoenvndktest.mktimeNoenvBoundary001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 0) || (deviceType != '2in1' && resNum == 1);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -145,9 +131,7 @@ export default function MktimeNoenvNdkTest() {
      */
     it('testmktimeNoenvBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libmktimenoenvndktest.mktimeNoenvBoundary002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 0) || (deviceType != '2in1' && resNum == 1);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -161,9 +145,7 @@ export default function MktimeNoenvNdkTest() {
      */
     it('testmktimeNoenvStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libmktimenoenvndktest.mktimeNoenvStable001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 0) || (deviceType != '2in1' && resNum == 1);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -177,9 +159,7 @@ export default function MktimeNoenvNdkTest() {
      */
     it('testmktimeNoenvThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libmktimenoenvndktest.mktimeNoenvThread001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 0) || (deviceType != '2in1' && resNum == 1);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
