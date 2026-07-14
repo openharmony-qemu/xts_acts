@@ -313,6 +313,22 @@ export default function ExecuteAIPageCommandTest() {
       Utils.waitAndClickComponent('ExecuteAIPageCommandTestButton', driver)
     })
     /**
+     * @tc.name   testExecuteAIPageCommand017
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_1700
+     * @tc.desc   test executeAIPageCommand with unassociated controller
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExecuteAIPageCommand017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testExecuteAIPageCommand017", 148188)
+      Utils.registerBaseEvent("testExecuteAIPageCommand017", '17100001', 148127, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected)
+        });
+      Utils.waitAndClickComponent('ExecuteAIPageCommandTestButton', driver)
+    })
+    /**
      * @tc.name   testExecuteAIPageCommand018
      * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_1800
      * @tc.desc   test executeAIPageCommand with empty JSON object
