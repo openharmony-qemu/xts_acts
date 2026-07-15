@@ -39,8 +39,11 @@ public:
         return instance;
     }
 
+    // ==================== Type Definitions ====================
+    using WcstofLFunc = float (*)(const wchar_t*, wchar_t**, locale_t);
     using FdeltChkFunc = long int (*)(long int);
     using ExplicitBzeroChkFunc = void (*)(void*, size_t, size_t);
+    using WcstoldLFunc = long double (*)(const wchar_t*, wchar_t**, locale_t);
     using Open2Func = int (*)(const char*, int);
     using QsortRFunc = void (*)(void*, size_t, size_t,
                                 int (*)(const void*, const void*, void*), void*);
@@ -67,6 +70,15 @@ public:
     using MbrlenFunc = size_t (*)(const char*, size_t, mbstate_t*);
     using PrintfChkFunc = int (*)(int, const char*, ...);
     using PthreadKeyCreateFunc = int (*)(pthread_key_t*, void (*)(void*));
+    using RawmemchrFunc = void* (*)(const void*, int);
+    using RealpathChkFunc = char* (*)(const char*, char*, size_t);
+    using RegisterAtforkFunc = int (*)(void (*)(void), void (*)(void), void (*)(void));
+    using SchedCpufreeFunc = void (*)(cpu_set_t*);
+    using StrdupFunc = char* (*)(const char*);
+    using StrndupFunc = char* (*)(const char*, size_t);
+    using StrtokRFunc = char* (*)(char*, const char*, char**);
+    using SyslogChkFunc = void (*)(int, int, const char*, ...);
+    using VfprintfChkFunc = int (*)(FILE*, int, const char*, va_list);
     using DFXSetCrashLogConfigFunc = int (*)(uint8_t, uint32_t);
     using LongjmpChkFunc = void (*)(jmp_buf, int);
     using PowfFiniteFunc = float (*)(float, float);
@@ -79,6 +91,9 @@ public:
     using PthreadExtFuncPolicyFunc = int (*)(void);
     using SetPthreadExtFuncPolicyFunc = void (*)(int);
     using GetaddrinfoCustomFunc = int (*)(const char*, const char*, const struct addrinfo*, struct addrinfo**);
+    using CustomDnsResolverFunc = int (*)(const char*, const char*, const struct addrinfo*, struct addrinfo**);
+    using SetcustomdnsFunc = int (*)(CustomDnsResolverFunc);
+    using RemovecustomdnsFunc = int (*)(void);
     using HilogBaseIsLoggableFunc = bool (*)(unsigned int, const char*, int);
     using HilogBasePrintFunc = int (*)(int, int, unsigned int, const char*, const char*, ...);
     using GwpAsanCollectFunc = size_t (*)(uint64_t, uintptr_t*, size_t, size_t);
@@ -91,11 +106,19 @@ public:
     using PthreadAttrGetaffinityNpFunc = int (*)(pthread_attr_t*, size_t, cpu_set_t*);
     using PthreadAttrSetaffinityNpFunc = int (*)(pthread_attr_t*, size_t, const cpu_set_t*);
     using PthreadAtforkGwpasanFunc = int (*)(void (*)(void), void (*)(void), void (*)(void));
+    using StrtollLFunc = long long (*)(const char*, char**, int, locale_t);
+    using StrtoullLFunc = unsigned long long (*)(const char*, char**, int, locale_t);
+    using TimelocalFunc = time_t (*)(struct tm*);
+    using SetSigchainPreValidationIgnoreFunc = void (*)(int);
+
+    // ==================== Lazy-Load Getter Methods ====================
+    WcstofLFunc GetWcstofL() const { return LazyLoad(wcstofL_, "wcstof_l"); }
     FdeltChkFunc GetFdeltChk() const { return LazyLoad(fdeltChk_, "__fdelt_chk"); }
     ExplicitBzeroChkFunc GetExplicitBzeroChk() const
     {
         return LazyLoad(explicitBzeroChk_, "__explicit_bzero_chk");
     }
+    WcstoldLFunc GetWcstoldL() const { return LazyLoad(wcstoldL_, "wcstold_l"); }
     Open2Func GetOpen2() const { return LazyLoad(open2_, "__open_2"); }
     QsortRFunc GetQsortR() const { return LazyLoad(qsortR_, "qsort_r"); }
     AcosfFiniteFunc GetAcosfFinite() const { return LazyLoad(acosfFinite_, "__acosf_finite"); }
@@ -121,6 +144,18 @@ public:
     {
         return LazyLoad(pthreadKeyCreate_, "__pthread_key_create");
     }
+    RawmemchrFunc GetRawmemchr() const { return LazyLoad(rawmemchr_, "__rawmemchr"); }
+    RealpathChkFunc GetRealpathChk() const { return LazyLoad(realpathChk_, "__realpath_chk"); }
+    RegisterAtforkFunc GetRegisterAtfork() const
+    {
+        return LazyLoad(registerAtfork_, "__register_atfork");
+    }
+    SchedCpufreeFunc GetSchedCpufree() const { return LazyLoad(schedCpufree_, "__sched_cpufree"); }
+    StrdupFunc GetStrdup() const { return LazyLoad(strdup_, "__strdup"); }
+    StrndupFunc GetStrndup() const { return LazyLoad(strndup_, "__strndup"); }
+    StrtokRFunc GetStrtokR() const { return LazyLoad(strtokR_, "__strtok_r"); }
+    SyslogChkFunc GetSyslogChk() const { return LazyLoad(syslogChk_, "__syslog_chk"); }
+    VfprintfChkFunc GetVfprintfChk() const { return LazyLoad(vfprintfChk_, "__vfprintf_chk"); }
     DFXSetCrashLogConfigFunc GetDFXSetCrashLogConfig() const
     {
         return LazyLoad(dfxSetCrashLogConfig_, "DFX_SetCrashLogConfig");
@@ -153,6 +188,14 @@ public:
     GetaddrinfoCustomFunc GetGetaddrinfoCustom() const
     {
         return LazyLoad(getaddrinfoCustom_, "getaddrinfo_custom");
+    }
+    SetcustomdnsFunc GetSetcustomdns() const
+    {
+        return LazyLoad(setcustomdns_, "setcustomdnsresolver");
+    }
+    RemovecustomdnsFunc GetRemovecustomdns() const
+    {
+        return LazyLoad(removecustomdns_, "removecustomdnsresolver");
     }
     HilogBaseIsLoggableFunc GetHilogBaseIsLoggable() const
     {
@@ -195,6 +238,14 @@ public:
     {
         return LazyLoad(pthreadAtforkGwpasan_, "pthread_atfork_for_gwpasan");
     }
+    StrtollLFunc GetStrtollL() const { return LazyLoad(strtollL_, "strtoll_l"); }
+    StrtoullLFunc GetStrtoullL() const { return LazyLoad(strtoullL_, "strtoull_l"); }
+    TimelocalFunc GetTimelocal() const { return LazyLoad(timelocal_, "timelocal"); }
+    SetSigchainPreValidationIgnoreFunc GetSetSigchainPreValidationIgnore() const
+    {
+        return LazyLoad(setSigchainPreValidationIgnore_, "set_sigchain_pre_validation_ignore");
+    }
+
 private:
     LibcFunctionLoader() = default;
     ~LibcFunctionLoader() = default;
@@ -221,8 +272,11 @@ private:
 
     mutable std::mutex mutex_;
 
+    // ==================== Member Variables ====================
+    mutable WcstofLFunc wcstofL_ = nullptr;
     mutable FdeltChkFunc fdeltChk_ = nullptr;
     mutable ExplicitBzeroChkFunc explicitBzeroChk_ = nullptr;
+    mutable WcstoldLFunc wcstoldL_ = nullptr;
     mutable Open2Func open2_ = nullptr;
     mutable QsortRFunc qsortR_ = nullptr;
     mutable AcosfFiniteFunc acosfFinite_ = nullptr;
@@ -245,6 +299,15 @@ private:
     mutable MbrlenFunc mbrlen_ = nullptr;
     mutable PrintfChkFunc printfChk_ = nullptr;
     mutable PthreadKeyCreateFunc pthreadKeyCreate_ = nullptr;
+    mutable RawmemchrFunc rawmemchr_ = nullptr;
+    mutable RealpathChkFunc realpathChk_ = nullptr;
+    mutable RegisterAtforkFunc registerAtfork_ = nullptr;
+    mutable SchedCpufreeFunc schedCpufree_ = nullptr;
+    mutable StrdupFunc strdup_ = nullptr;
+    mutable StrndupFunc strndup_ = nullptr;
+    mutable StrtokRFunc strtokR_ = nullptr;
+    mutable SyslogChkFunc syslogChk_ = nullptr;
+    mutable VfprintfChkFunc vfprintfChk_ = nullptr;
     mutable DFXSetCrashLogConfigFunc dfxSetCrashLogConfig_ = nullptr;
     mutable Log2fFiniteFunc log2fFinite_ = nullptr;
     mutable Log2FiniteFunc log2Finite_ = nullptr;
@@ -260,6 +323,8 @@ private:
     mutable PthreadExtFuncPolicyFunc pthreadExtFuncPolicy_ = nullptr;
     mutable SetPthreadExtFuncPolicyFunc setPthreadExtFuncPolicy_ = nullptr;
     mutable GetaddrinfoCustomFunc getaddrinfoCustom_ = nullptr;
+    mutable SetcustomdnsFunc setcustomdns_ = nullptr;
+    mutable RemovecustomdnsFunc removecustomdns_ = nullptr;
     mutable HilogBaseIsLoggableFunc hilogBaseIsLoggable_ = nullptr;
     mutable HilogBasePrintFunc hilogBasePrint_ = nullptr;
     mutable GwpAsanCollectFunc gwpAsanCollect_ = nullptr;
@@ -271,5 +336,9 @@ private:
     mutable PthreadAttrGetaffinityNpFunc pthreadAttrGetaffinityNp_ = nullptr;
     mutable PthreadAttrSetaffinityNpFunc pthreadAttrSetaffinityNp_ = nullptr;
     mutable PthreadAtforkGwpasanFunc pthreadAtforkGwpasan_ = nullptr;
+    mutable StrtollLFunc strtollL_ = nullptr;
+    mutable StrtoullLFunc strtoullL_ = nullptr;
+    mutable TimelocalFunc timelocal_ = nullptr;
+    mutable SetSigchainPreValidationIgnoreFunc setSigchainPreValidationIgnore_ = nullptr;
 };
 #endif // LIBC_FUNCTION_LOADER_H
