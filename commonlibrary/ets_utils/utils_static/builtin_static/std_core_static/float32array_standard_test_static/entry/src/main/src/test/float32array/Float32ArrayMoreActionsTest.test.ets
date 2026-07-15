@@ -221,28 +221,12 @@ export default function Float32ArrayMoreActionsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_1300
      * @tc.name testFloat32ArrayMore013
-     * @tc.desc Verify $_iterator() next call returns the first element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayMore013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: Float32Array = Float32Array.of(1.0, 2.0);
-      const it = arr.$_iterator();
-      const first = it.next();
-      expect(first.done).assertFalse();
-      expect(first.value).assertEqual(1.0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_1400
-     * @tc.name testFloat32ArrayMore014
      * @tc.desc Verify $_iterator() next returns value and done properties
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMore014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMore013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = Float32Array.of(1.0);
       const it = arr.$_iterator();
       const r = it.next();
@@ -251,14 +235,14 @@ export default function Float32ArrayMoreActionsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_1500
-     * @tc.name testFloat32ArrayMore015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_1400
+     * @tc.name testFloat32ArrayMore014
      * @tc.desc Verify $_iterator() iterates all elements in order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMore015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMore014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = Float32Array.of(10.0, 20.0, 30.0);
       const it = arr.$_iterator();
       expect(it.next().value).assertEqual(10);
@@ -268,28 +252,28 @@ export default function Float32ArrayMoreActionsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_1600
-     * @tc.name testFloat32ArrayMore016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_1500
+     * @tc.name testFloat32ArrayMore015
      * @tc.desc Verify $_iterator() on empty array immediately done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMore016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMore015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = new Float32Array(0);
       const it = arr.$_iterator();
       expect(it.next().done).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_1700
-     * @tc.name testFloat32ArrayMore017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_1600
+     * @tc.name testFloat32ArrayMore016
      * @tc.desc Verify $_iterator() works correctly on subarray view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMore017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMore016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = Float32Array.of(0x10, 0b1010, -1.0, 0.0, 1000000.0);
       const sub: Float32Array = arr.subarray(1, 4);
       const it = sub.$_iterator();
@@ -300,14 +284,14 @@ export default function Float32ArrayMoreActionsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_1800
-     * @tc.name testFloat32ArrayMore018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_1700
+     * @tc.name testFloat32ArrayMore017
      * @tc.desc Verify $_iterator() iteration count equals array length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMore018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMore017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = new Float32Array(5);
       for (let i = 0; i < 5; i++) {
         arr.$_set(i, i + 1);
@@ -321,14 +305,14 @@ export default function Float32ArrayMoreActionsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_1900
-     * @tc.name testFloat32ArrayMore019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_1800
+     * @tc.name testFloat32ArrayMore018
      * @tc.desc Verify $_iterator() two separate iterators are independent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMore019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMore018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = Float32Array.of(0x10, 0b1010, -1.0);
       const a = arr.$_iterator();
       const b = arr.$_iterator();
@@ -339,28 +323,28 @@ export default function Float32ArrayMoreActionsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_2000
-     * @tc.name testFloat32ArrayMore020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_1900
+     * @tc.name testFloat32ArrayMore019
      * @tc.desc Verify BYTES_PER_ELEMENT is consistent for buffer view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMore020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMore019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
       const view: Float32Array = new Float32Array(buf, 4, 3);
       expect(view.BYTES_PER_ELEMENT).assertEqual(4);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_2100
-     * @tc.name testFloat32ArrayMore021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_2000
+     * @tc.name testFloat32ArrayMore020
      * @tc.desc Verify $_iterator() reflects live changes to the underlying array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMore021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMore020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = Float32Array.of(0x10, 0b1010, -1.0);
       const it = arr.$_iterator();
       expect(it.next().value).assertEqual(16);
@@ -369,14 +353,14 @@ export default function Float32ArrayMoreActionsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_2200
-     * @tc.name testFloat32ArrayMore022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_2100
+     * @tc.name testFloat32ArrayMore021
      * @tc.desc Verify $_iterator() exhausted returns done true, value undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMore022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMore021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = Float32Array.of(1.0);
       const it = arr.$_iterator();
       it.next();
@@ -386,14 +370,14 @@ export default function Float32ArrayMoreActionsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_2300
-     * @tc.name testFloat32ArrayMore023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_2200
+     * @tc.name testFloat32ArrayMore022
      * @tc.desc Verify $_iterator() on from()-constructed array iterates correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMore023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMore022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = Float32Array.from([1, 2, 3]);
       const it = arr.$_iterator();
       expect(it.next().value).assertEqual(1);
@@ -402,27 +386,27 @@ export default function Float32ArrayMoreActionsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_2400
-     * @tc.name testFloat32ArrayMore024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_2300
+     * @tc.name testFloat32ArrayMore023
      * @tc.desc Verify multi-byte relationship: byteLength = length * BYTES_PER_ELEMENT
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMore024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMore023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = new Float32Array(6);
       expect(arr.byteLength).assertEqual(arr.length * arr.BYTES_PER_ELEMENT);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_2500
-     * @tc.name testFloat32ArrayMore025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_2400
+     * @tc.name testFloat32ArrayMore024
      * @tc.desc Verify $_iterator() iterates NaN values correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMore025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMore024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = Float32Array.of(NaN, 1.0);
       const it = arr.$_iterator();
       const first = it.next();
@@ -432,27 +416,27 @@ export default function Float32ArrayMoreActionsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_2600
-     * @tc.name testFloat32ArrayMore026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_2500
+     * @tc.name testFloat32ArrayMore025
      * @tc.desc Verify length relation: of().length equals number of arguments
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMore026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMore025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = Float32Array.of(0x10, 0b1010, -1.0, 0.0, 1000000.0);
       expect(arr.length).assertEqual(5);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_2700
-     * @tc.name testFloat32ArrayMore027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_2600
+     * @tc.name testFloat32ArrayMore026
      * @tc.desc Verify $_iterator() on empty buffer view immediately done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMore027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMore026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf: ArrayBuffer = new ArrayBuffer(0);
       const arr: Float32Array = new Float32Array(buf);
       const it = arr.$_iterator();
@@ -460,14 +444,14 @@ export default function Float32ArrayMoreActionsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_2800
-     * @tc.name testFloat32ArrayMore028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_2700
+     * @tc.name testFloat32ArrayMore027
      * @tc.desc Verify multiple $_iterator() calls return different iterator instances
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMore028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMore027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = Float32Array.of(1.0, 2.0);
       const a = arr.$_iterator();
       const b = arr.$_iterator();
@@ -478,14 +462,14 @@ export default function Float32ArrayMoreActionsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_2900
-     * @tc.name testFloat32ArrayMore029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_2800
+     * @tc.name testFloat32ArrayMore028
      * @tc.desc Verify length after fill is unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMore029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMore028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = new Float32Array(4);
       const before: int = arr.length;
       arr.fill(7);
@@ -493,14 +477,14 @@ export default function Float32ArrayMoreActionsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_3000
-     * @tc.name testFloat32ArrayMore030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_2900
+     * @tc.name testFloat32ArrayMore029
      * @tc.desc Verify name property returns Float32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMore030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMore029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = new Float32Array(2);
       const expectName: string = 'Float32Array';
       const actualName: string = arr.name;
@@ -509,14 +493,14 @@ export default function Float32ArrayMoreActionsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_3100
-     * @tc.name testFloat32ArrayMore031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_3000
+     * @tc.name testFloat32ArrayMore030
      * @tc.desc Verify offset view byteOffset byteLength and length are calculated from constructor arguments
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMore031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMore030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const bufferBytes: number = 24;
       const byteOffsetValue: number = 8;
       const viewLengthValue: number = 3;
@@ -529,14 +513,14 @@ export default function Float32ArrayMoreActionsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_3200
-     * @tc.name testFloat32ArrayMore032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_3100
+     * @tc.name testFloat32ArrayMore031
      * @tc.desc Verify buffer property is the same ArrayBuffer passed to the constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMore032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMore031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const byteLengthValue: number = 16;
       const buf: ArrayBuffer = new ArrayBuffer(byteLengthValue);
       const view: Float32Array = new Float32Array(buf, 4, 2);
@@ -546,14 +530,14 @@ export default function Float32ArrayMoreActionsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_3300
-     * @tc.name testFloat32ArrayMore033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_3200
+     * @tc.name testFloat32ArrayMore032
      * @tc.desc Verify $_iterator observes a later element update before that element is yielded
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMore033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMore032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = Float32Array.of(1.0, 2.0, 3.0);
       const it = arr.$_iterator();
       const first = it.next();
@@ -566,14 +550,14 @@ export default function Float32ArrayMoreActionsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_3400
-     * @tc.name testFloat32ArrayMore034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_3300
+     * @tc.name testFloat32ArrayMore033
      * @tc.desc Verify empty constructor properties have zero lengths and the expected element byte size
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMore034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMore033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = new Float32Array();
       const expectLength: int = 0;
       const expectByteLength: int = 0;
@@ -584,14 +568,14 @@ export default function Float32ArrayMoreActionsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_3500
-     * @tc.name testFloat32ArrayMore035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_3400
+     * @tc.name testFloat32ArrayMore034
      * @tc.desc Verify ArrayBuffer offset constructor reports view length byteLength and byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayMore035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayMore034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(16);
       const view = new Float32Array(buffer, 4, 2);
       expect(view.length).assertEqual(2);

@@ -558,110 +558,95 @@ export default function Float32ArrayIndexGet2Test(): void {
       });
     });
 
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_3800
      * @tc.name testFloat32ArrayIndexGetTWO038
-     * @tc.desc Verify negative index read throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayIndexGetTWO038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([1.0, 2.0]);
-      expectRangeError((): void => {
-        arr.$_get(-1);
-      });
-    });
-
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_3900
-     * @tc.name testFloat32ArrayIndexGetTWO039
      * @tc.desc Verify single-element array $_get(0) returns that element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([42.0]);
       expect(arr.$_get(0)).assertEqual(42.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_4000
-     * @tc.name testFloat32ArrayIndexGetTWO040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_3900
+     * @tc.name testFloat32ArrayIndexGetTWO039
      * @tc.desc Verify scientific notation 1.0e3 read returns 1000.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0e3]);
       expect(arr.$_get(0)).assertEqual(1000.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_4100
-     * @tc.name testFloat32ArrayIndexGetTWO041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_4000
+     * @tc.name testFloat32ArrayIndexGetTWO040
      * @tc.desc Verify hex literal 0xFF read returns 255.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([0xFF]);
       expect(arr.$_get(0)).assertEqual(255.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_4200
-     * @tc.name testFloat32ArrayIndexGetTWO042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_4100
+     * @tc.name testFloat32ArrayIndexGetTWO041
      * @tc.desc Verify negative value -7.5 read returns exact value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([-7.5, 3.0]);
       expect(arr.$_get(0)).assertEqual(-7.5);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_4300
-     * @tc.name testFloat32ArrayIndexGetTWO043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_4200
+     * @tc.name testFloat32ArrayIndexGetTWO042
      * @tc.desc Verify ten-element array read last index 9 exact value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0]);
       expect(arr.$_get(9)).assertEqual(9.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_4400
-     * @tc.name testFloat32ArrayIndexGetTWO044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_4300
+     * @tc.name testFloat32ArrayIndexGetTWO043
      * @tc.desc Verify after valid $_get, length unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0);
       arr.$_get(0);
       expect(arr.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_4500
-     * @tc.name testFloat32ArrayIndexGetTWO045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_4400
+     * @tc.name testFloat32ArrayIndexGetTWO044
      * @tc.desc Verify after out-of-bounds $_get, length unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0]);
       expectRangeError((): void => {
         arr.$_get(5);
@@ -670,14 +655,14 @@ export default function Float32ArrayIndexGet2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_4600
-     * @tc.name testFloat32ArrayIndexGetTWO046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_4500
+     * @tc.name testFloat32ArrayIndexGetTWO045
      * @tc.desc Verify after negative index $_get, length unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0]);
       expectRangeError((): void => {
         arr.$_get(-1);
@@ -686,28 +671,28 @@ export default function Float32ArrayIndexGet2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_4700
-     * @tc.name testFloat32ArrayIndexGetTWO047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_4600
+     * @tc.name testFloat32ArrayIndexGetTWO046
      * @tc.desc Verify after valid $_get, byteLength unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0);
       arr.$_get(1);
       expect(arr.byteLength).assertEqual(12);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_4800
-     * @tc.name testFloat32ArrayIndexGetTWO048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_4700
+     * @tc.name testFloat32ArrayIndexGetTWO047
      * @tc.desc Verify after out-of-bounds $_get, byteLength unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0]);
       expectRangeError((): void => {
         arr.$_get(100);
@@ -716,28 +701,28 @@ export default function Float32ArrayIndexGet2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_4900
-     * @tc.name testFloat32ArrayIndexGetTWO049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_4800
+     * @tc.name testFloat32ArrayIndexGetTWO048
      * @tc.desc Verify after directly constructed array $_get, byteOffset stays 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0]);
       arr.$_get(0);
       expect(arr.byteOffset).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_5000
-     * @tc.name testFloat32ArrayIndexGetTWO050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_4900
+     * @tc.name testFloat32ArrayIndexGetTWO049
      * @tc.desc Verify after buffer view $_get, byteOffset unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const arr = new Float32Array(buf, 4, 3);
       arr.$_get(0);
@@ -745,14 +730,14 @@ export default function Float32ArrayIndexGet2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_5100
-     * @tc.name testFloat32ArrayIndexGetTWO051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_5000
+     * @tc.name testFloat32ArrayIndexGetTWO050
      * @tc.desc Verify after multiple $_get, length unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       arr.$_get(0);
       arr.$_get(1);
@@ -762,14 +747,14 @@ export default function Float32ArrayIndexGet2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_5200
-     * @tc.name testFloat32ArrayIndexGetTWO052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_5100
+     * @tc.name testFloat32ArrayIndexGetTWO051
      * @tc.desc Verify after empty array $_get, byteLength stays 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(0);
       expectRangeError((): void => {
         arr.$_get(0);
@@ -778,42 +763,42 @@ export default function Float32ArrayIndexGet2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_5300
-     * @tc.name testFloat32ArrayIndexGetTWO053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_5200
+     * @tc.name testFloat32ArrayIndexGetTWO052
      * @tc.desc Verify $_get does not change the element at the read index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([5.5, 6.6]);
       arr.$_get(0);
       expect(arr.$_get(0)).assertEqual(5.5);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_5400
-     * @tc.name testFloat32ArrayIndexGetTWO054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_5300
+     * @tc.name testFloat32ArrayIndexGetTWO053
      * @tc.desc Verify $_get does not change other index elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.1, 2.2, 3.3]);
       arr.$_get(0);
       expect(Math.abs(arr.$_get(2) - 3.3) < 1e-6).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_5500
-     * @tc.name testFloat32ArrayIndexGetTWO055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_5400
+     * @tc.name testFloat32ArrayIndexGetTWO054
      * @tc.desc Verify $_get idempotent read returns same value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([7.7]);
       const a = arr.$_get(0);
       const b = arr.$_get(0);
@@ -821,14 +806,14 @@ export default function Float32ArrayIndexGet2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_5600
-     * @tc.name testFloat32ArrayIndexGetTWO056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_5500
+     * @tc.name testFloat32ArrayIndexGetTWO055
      * @tc.desc Verify $_get does not modify underlying buffer (view read)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const arr = new Float32Array(buf);
       arr.$_set(0, 11.0);
@@ -839,14 +824,14 @@ export default function Float32ArrayIndexGet2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_5700
-     * @tc.name testFloat32ArrayIndexGetTWO057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_5600
+     * @tc.name testFloat32ArrayIndexGetTWO056
      * @tc.desc Verify subarray view $_get does not affect sibling views
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const base = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const v1 = base.subarray(0, 2);
       const v2 = base.subarray(2, 4);
@@ -855,28 +840,28 @@ export default function Float32ArrayIndexGet2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_5800
-     * @tc.name testFloat32ArrayIndexGetTWO058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_5700
+     * @tc.name testFloat32ArrayIndexGetTWO057
      * @tc.desc Verify after $_set, $_get reads new value and $_get itself does not change value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0]);
       arr.$_set(0, 9.9);
       expect(Math.abs(arr.$_get(0) - 9.9) < 1e-6).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_5900
-     * @tc.name testFloat32ArrayIndexGetTWO059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_5800
+     * @tc.name testFloat32ArrayIndexGetTWO058
      * @tc.desc Verify after cross-multi-index $_get, overall content retained
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0, 0.0, 1000000.0);
       arr.$_get(0);
       arr.$_get(2);
@@ -885,54 +870,54 @@ export default function Float32ArrayIndexGet2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_6000
-     * @tc.name testFloat32ArrayIndexGetTWO060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_5900
+     * @tc.name testFloat32ArrayIndexGetTWO059
      * @tc.desc Verify $_get returned value can participate in arithmetic proving not this
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([10.0, 20.0]);
       expect(arr.$_get(0) + arr.$_get(1)).assertEqual(30.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_6100
-     * @tc.name testFloat32ArrayIndexGetTWO061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_6000
+     * @tc.name testFloat32ArrayIndexGetTWO060
      * @tc.desc Verify $_get returned value can be used as Math function input
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([16.0]);
       expect(Math.sqrt(arr.$_get(0))).assertEqual(4.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_6200
-     * @tc.name testFloat32ArrayIndexGetTWO062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_6100
+     * @tc.name testFloat32ArrayIndexGetTWO061
      * @tc.desc Verify subarray view $_get reads shared buffer value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const base = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const view = base.subarray(1, 3);
       expect(view.$_get(0)).assertEqual(2.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_6300
-     * @tc.name testFloat32ArrayIndexGetTWO063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_6200
+     * @tc.name testFloat32ArrayIndexGetTWO062
      * @tc.desc Verify after parent array $_set, child view $_get reflects new value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const base = Float32Array.of(0x10, 0b1010, -1.0);
       const view = base.subarray(1, 3);
       base.$_set(1, 99.0);
@@ -940,14 +925,14 @@ export default function Float32ArrayIndexGet2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_6400
-     * @tc.name testFloat32ArrayIndexGetTWO064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_6300
+     * @tc.name testFloat32ArrayIndexGetTWO063
      * @tc.desc Verify after child view $_set, parent array $_get reflects new value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const base = Float32Array.of(0x10, 0b1010, -1.0);
       const view = base.subarray(1, 3);
       view.$_set(0, 88.0);
@@ -955,14 +940,14 @@ export default function Float32ArrayIndexGet2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_6500
-     * @tc.name testFloat32ArrayIndexGetTWO065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_6400
+     * @tc.name testFloat32ArrayIndexGetTWO064
      * @tc.desc Verify slice copy $_get does not reflect parent array modification
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const base = Float32Array.of(0x10, 0b1010, -1.0);
       const copy = base.slice(0, 3);
       base.$_set(0, 99.0);
@@ -970,28 +955,28 @@ export default function Float32ArrayIndexGet2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_6600
-     * @tc.name testFloat32ArrayIndexGetTWO066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_6500
+     * @tc.name testFloat32ArrayIndexGetTWO065
      * @tc.desc Verify subarray view byteOffset correctly reflects offset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const base = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const view = base.subarray(2, 4);
       expect(view.byteOffset).assertEqual(8);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_6700
-     * @tc.name testFloat32ArrayIndexGetTWO067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_6600
+     * @tc.name testFloat32ArrayIndexGetTWO066
      * @tc.desc Verify two views of same buffer $_get see same value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const a = new Float32Array(buf);
       const b = new Float32Array(buf);
@@ -1000,28 +985,28 @@ export default function Float32ArrayIndexGet2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_6800
-     * @tc.name testFloat32ArrayIndexGetTWO068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_6700
+     * @tc.name testFloat32ArrayIndexGetTWO067
      * @tc.desc Verify subarray view ArrayBuffer.isView returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const base = new Float32Array([1.0, 2.0]);
       const view = base.subarray(0, 1);
       expect(ArrayBuffer.isView(view)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_6900
-     * @tc.name testFloat32ArrayIndexGetTWO069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_6800
+     * @tc.name testFloat32ArrayIndexGetTWO068
      * @tc.desc Verify buffer view with non-zero byteOffset $_get reads correct slot
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(12);
       const arr = new Float32Array(buf);
       arr.$_set(0, 1.0);
@@ -1032,28 +1017,28 @@ export default function Float32ArrayIndexGet2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_7000
-     * @tc.name testFloat32ArrayIndexGetTWO070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_6900
+     * @tc.name testFloat32ArrayIndexGetTWO069
      * @tc.desc Verify buffer view byteOffset reflects construction offset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const view = new Float32Array(buf, 8, 2);
       expect(view.byteOffset).assertEqual(8);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_7100
-     * @tc.name testFloat32ArrayIndexGetTWO071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_7000
+     * @tc.name testFloat32ArrayIndexGetTWO070
      * @tc.desc Verify cross-offset $_set propagates via shared buffer to offset view $_get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const a = new Float32Array(buf);
       const b = new Float32Array(buf, 4, 1);
@@ -1062,28 +1047,28 @@ export default function Float32ArrayIndexGet2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_7200
-     * @tc.name testFloat32ArrayIndexGetTWO072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_7100
+     * @tc.name testFloat32ArrayIndexGetTWO071
      * @tc.desc Verify view $_get equals parent array corresponding index $_get value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const base = new Float32Array([10.0, 20.0, 30.0]);
       const view = base.subarray(1, 3);
       expect(view.$_get(1)).assertEqual(base.$_get(2));
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_7300
-     * @tc.name testFloat32ArrayIndexGetTWO073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_7200
+     * @tc.name testFloat32ArrayIndexGetTWO072
      * @tc.desc Verify empty subarray view $_get throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const base = new Float32Array([1.0, 2.0]);
       const view = base.subarray(2, 2);
       expectRangeError((): void => {
@@ -1092,14 +1077,14 @@ export default function Float32ArrayIndexGet2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_7400
-     * @tc.name testFloat32ArrayIndexGetTWO074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_7300
+     * @tc.name testFloat32ArrayIndexGetTWO073
      * @tc.desc Verify view out-of-bounds $_get throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const base = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const view = base.subarray(1, 3);
       expectRangeError((): void => {
@@ -1108,147 +1093,147 @@ export default function Float32ArrayIndexGet2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_7500
-     * @tc.name testFloat32ArrayIndexGetTWO075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_7400
+     * @tc.name testFloat32ArrayIndexGetTWO074
      * @tc.desc Verify octal literal 0o17 read returns 15.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([0o17]);
       expect(arr.$_get(0)).assertEqual(15.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_7600
-     * @tc.name testFloat32ArrayIndexGetTWO076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_7500
+     * @tc.name testFloat32ArrayIndexGetTWO075
      * @tc.desc Verify binary literal 0b101 read returns 5.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([0b101]);
       expect(arr.$_get(0)).assertEqual(5.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_7700
-     * @tc.name testFloat32ArrayIndexGetTWO077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_7600
+     * @tc.name testFloat32ArrayIndexGetTWO076
      * @tc.desc Verify after Float32Array.of construction, $_get reads last element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0);
       expect(arr.$_get(2)).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_7800
-     * @tc.name testFloat32ArrayIndexGetTWO078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_7700
+     * @tc.name testFloat32ArrayIndexGetTWO077
      * @tc.desc Verify after Float32Array.from construction, $_get reads element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.from([5.0, 6.0]);
       expect(arr.$_get(1)).assertEqual(6.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_7900
-     * @tc.name testFloat32ArrayIndexGetTWO079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_7800
+     * @tc.name testFloat32ArrayIndexGetTWO078
      * @tc.desc Verify view constructed from another array buffer $_get reads correct slot
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const view = new Float32Array(src.buffer, 4, 2);
       expect(view.$_get(1)).assertEqual(3.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_8000
-     * @tc.name testFloat32ArrayIndexGetTWO080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_7900
+     * @tc.name testFloat32ArrayIndexGetTWO079
      * @tc.desc Verify after fill, $_get reads filled value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(3);
       arr.fill(2.5);
       expect(arr.$_get(1)).assertEqual(2.5);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_8100
-     * @tc.name testFloat32ArrayIndexGetTWO081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_8000
+     * @tc.name testFloat32ArrayIndexGetTWO080
      * @tc.desc Verify after copyWithin, $_get reads moved value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       arr.copyWithin(0, 2, 4);
       expect(arr.$_get(0)).assertEqual(3.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_8200
-     * @tc.name testFloat32ArrayIndexGetTWO082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_8100
+     * @tc.name testFloat32ArrayIndexGetTWO081
      * @tc.desc Verify length-constructed zero-filled array $_get reads 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(3);
       expect(arr.$_get(1)).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_8300
-     * @tc.name testFloat32ArrayIndexGetTWO083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_8200
+     * @tc.name testFloat32ArrayIndexGetTWO082
      * @tc.desc Verify int upper bound 2147483647 stored in float32 reads as 2147483648
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([2147483647]);
       expect(arr.$_get(0)).assertEqual(2147483648);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_8400
-     * @tc.name testFloat32ArrayIndexGetTWO084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_8300
+     * @tc.name testFloat32ArrayIndexGetTWO083
      * @tc.desc Verify int lower bound -2147483648 stored in float32 reads exact value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([-2147483648]);
       expect(arr.$_get(0)).assertEqual(-2147483648);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_8500
-     * @tc.name testFloat32ArrayIndexGetTWO085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_8400
+     * @tc.name testFloat32ArrayIndexGetTWO084
      * @tc.desc Verify huge positive index 2147483647 read throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0]);
       expectRangeError((): void => {
         arr.$_get(2147483647);
@@ -1256,14 +1241,14 @@ export default function Float32ArrayIndexGet2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_8600
-     * @tc.name testFloat32ArrayIndexGetTWO086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_8500
+     * @tc.name testFloat32ArrayIndexGetTWO085
      * @tc.desc Verify huge negative index -2147483648 read throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0]);
       expectRangeError((): void => {
         arr.$_get(-2147483648);
@@ -1271,66 +1256,66 @@ export default function Float32ArrayIndexGet2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_8700
-     * @tc.name testFloat32ArrayIndexGetTWO087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_8600
+     * @tc.name testFloat32ArrayIndexGetTWO086
      * @tc.desc Verify middle position NaN element $_get asserts NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, NaN, 3.0]);
       expect(arr.$_get(1)).assertNaN();
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_8700
+     * @tc.name testFloat32ArrayIndexGetTWO087
+     * @tc.desc Verify mixed special values array $_get reads +Infinity slot
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayIndexGetTWO087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float32Array([0, Infinity, -Infinity, NaN]);
+      expect(arr.$_get(1)).assertEqual(Infinity);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_8800
      * @tc.name testFloat32ArrayIndexGetTWO088
-     * @tc.desc Verify mixed special values array $_get reads +Infinity slot
+     * @tc.desc Verify mixed special values array $_get reads -Infinity slot
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayIndexGetTWO088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([0, Infinity, -Infinity, NaN]);
-      expect(arr.$_get(1)).assertEqual(Infinity);
+      expect(arr.$_get(2)).assertEqual(-Infinity);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_8900
      * @tc.name testFloat32ArrayIndexGetTWO089
-     * @tc.desc Verify mixed special values array $_get reads -Infinity slot
+     * @tc.desc Verify mixed special values array $_get reads NaN slot
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayIndexGetTWO089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([0, Infinity, -Infinity, NaN]);
-      expect(arr.$_get(2)).assertEqual(-Infinity);
+      expect(arr.$_get(3)).assertNaN();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_9000
      * @tc.name testFloat32ArrayIndexGetTWO090
-     * @tc.desc Verify mixed special values array $_get reads NaN slot
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayIndexGetTWO090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([0, Infinity, -Infinity, NaN]);
-      expect(arr.$_get(3)).assertNaN();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_9100
-     * @tc.name testFloat32ArrayIndexGetTWO091
      * @tc.desc Verify $_get(-0) reads the first element and does not change length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const firstValue: number = 64.0;
       const secondValue: number = 128.0;
       const arr = new Float32Array([firstValue, secondValue]);
@@ -1342,14 +1327,14 @@ export default function Float32ArrayIndexGet2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_9200
-     * @tc.name testFloat32ArrayIndexGetTWO092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_9100
+     * @tc.name testFloat32ArrayIndexGetTWO091
      * @tc.desc Verify offset view $_get(0) reads the backing buffer element at the view start
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf: ArrayBuffer = new ArrayBuffer(16);
       const base: Float32Array = new Float32Array(buf);
       const view: Float32Array = new Float32Array(buf, 8, 2);
@@ -1361,14 +1346,14 @@ export default function Float32ArrayIndexGet2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_9300
-     * @tc.name testFloat32ArrayIndexGetTWO093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_9200
+     * @tc.name testFloat32ArrayIndexGetTWO092
      * @tc.desc Verify view $_get observes a later write through the parent array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf: ArrayBuffer = new ArrayBuffer(12);
       const parent: Float32Array = new Float32Array(buf);
       const view: Float32Array = new Float32Array(buf, 4, 2);
@@ -1382,14 +1367,14 @@ export default function Float32ArrayIndexGet2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_9400
-     * @tc.name testFloat32ArrayIndexGetTWO094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_9300
+     * @tc.name testFloat32ArrayIndexGetTWO093
      * @tc.desc Verify $_get reads the last index when the index is computed from length minus one
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const expectValue: number = 5.5;
       const arr = new Float32Array([1.5, 3.5, expectValue]);
       const lastIndex: int = arr.length - 1;
@@ -1399,14 +1384,14 @@ export default function Float32ArrayIndexGet2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_9500
-     * @tc.name testFloat32ArrayIndexGetTWO095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_9400
+     * @tc.name testFloat32ArrayIndexGetTWO094
      * @tc.desc Verify $_get reads a subnormal value after Float32 storage conversion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const subnormalValue: number = 1.401298464324817e-45;
       const arr = new Float32Array([subnormalValue, 2.0]);
       const actualValue: number = arr.$_get(0);
@@ -1416,14 +1401,14 @@ export default function Float32ArrayIndexGet2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_9600
-     * @tc.name testFloat32ArrayIndexGetTWO096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETTWO_9500
+     * @tc.name testFloat32ArrayIndexGetTWO095
      * @tc.desc Verify offset view $_get view length is out of bounds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexGetTWO096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexGetTWO095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const parent = Float32Array.of(1.0, 2.0, 3.0, 4.0);
       const view = parent.subarray(1, 3);
       try {
