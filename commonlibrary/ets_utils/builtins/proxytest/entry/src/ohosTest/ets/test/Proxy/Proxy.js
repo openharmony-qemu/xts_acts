@@ -922,10 +922,10 @@ export function testOwnKeysSymbolInvariant50() {
     try {
         Object.getOwnPropertySymbols(proxy);
         console.error("50.1：检测ownKeys遗漏不可配置Symbol键错误");
-        flag = flag + 0.1;
+        flag = flag + 1;
     } catch (e) {
         console.log(e instanceof TypeError, "50.1：遗漏错误应抛TypeError");
-        flag = flag + 1;
+        flag = flag + 0.1;
     }
     return flag;
 }

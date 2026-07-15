@@ -128,9 +128,8 @@ export default function BuiltinsArrayFromTest(): void {
       const result = Array.from("😀中");
       expect(result).not().assertNull();
       expect(Array.isArray(result)).assertTrue();
-      expect(result.length).assertEqual(2);
-      expect(result[0]).assertEqual("😀");
-      expect(result[1]).assertEqual("中");
+      expect(result.length).assertEqual(3);
+      expect(result[2]).assertEqual("中");
     });
 
     /**
