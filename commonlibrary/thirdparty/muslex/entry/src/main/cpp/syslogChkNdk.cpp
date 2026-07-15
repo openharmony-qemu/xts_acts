@@ -33,6 +33,7 @@ static constexpr int SYSLOG_WARN_VAL = 42;
 static constexpr int SYSLOG_INVALID_PRIORITY = 999;
 static constexpr double SYSLOG_FLOAT_VAL = 3.14;
 static constexpr int SYSLOG_FLAG_MOD = 2;
+static constexpr int SYSLOG_MSG_MOD = 10;
 
 static void CallSyslogChk(int flag, int priority, const char* fmt, ...)
 {
@@ -219,7 +220,7 @@ static napi_value SyslogChkThread001(napi_env env, napi_callback_info info)
         threads.emplace_back([&hasError]() {
             for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 int priority = (i % 4) + 1;
-                CallSyslogChk(i % SYSLOG_FLAG_MOD, priority, "Thread %d message %d", i % 10, i);
+                CallSyslogChk(i % SYSLOG_FLAG_MOD, priority, "Thread %d message %d", i % SYSLOG_MSG_MOD, i);
                 // syslog may have internal locks, not crashing counts as pass
             }
         });
