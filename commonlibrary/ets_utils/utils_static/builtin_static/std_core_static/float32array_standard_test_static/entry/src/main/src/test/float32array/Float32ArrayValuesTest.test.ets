@@ -190,7 +190,7 @@ export default function Float32ArrayValuesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_1100
      * @tc.name testFloat32ArrayValues011
-     * @tc.desc Verify empty array first next is done
+     * @tc.desc Verify empty array second next done is still true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -198,15 +198,14 @@ export default function Float32ArrayValuesTest(): void {
     it('testFloat32ArrayValues011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(0);
       const it = arr.values();
-      const r = it.next();
-      expect(r.done).assertTrue();
-      expect(r.value).assertUndefined();
+      it.next();
+      expect(it.next().done).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_1200
      * @tc.name testFloat32ArrayValues012
-     * @tc.desc Verify empty array second next done is still true
+     * @tc.desc Verify empty array remains done on the second next
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -215,21 +214,6 @@ export default function Float32ArrayValuesTest(): void {
       const arr = new Float32Array(0);
       const it = arr.values();
       it.next();
-      expect(it.next().done).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_1300
-     * @tc.name testFloat32ArrayValues013
-     * @tc.desc Verify empty array remains done on the second next
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayValues013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array(0);
-      const it = arr.values();
-      it.next();
       const r = it.next();
       expect(r.done).assertTrue();
       expect(r.value).assertUndefined();
@@ -238,9 +222,23 @@ export default function Float32ArrayValuesTest(): void {
 
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_1300
+     * @tc.name testFloat32ArrayValues013
+     * @tc.desc Verify single-element array first done is false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayValues013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float32Array([5.0]);
+      const it = arr.values();
+      expect(it.next().done).assertFalse();
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_1400
      * @tc.name testFloat32ArrayValues014
-     * @tc.desc Verify single-element array first done is false
+     * @tc.desc Verify single-element array second done is true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -248,33 +246,19 @@ export default function Float32ArrayValuesTest(): void {
     it('testFloat32ArrayValues014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([5.0]);
       const it = arr.values();
-      expect(it.next().done).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_1500
-     * @tc.name testFloat32ArrayValues015
-     * @tc.desc Verify single-element array second done is true
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayValues015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([5.0]);
-      const it = arr.values();
       it.next();
       expect(it.next().done).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_1600
-     * @tc.name testFloat32ArrayValues016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_1500
+     * @tc.name testFloat32ArrayValues015
      * @tc.desc Verify single-element iterator is done after yielding the value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([5.0]);
       const it = arr.values();
       expect(it.next().value).assertEqual(5);
@@ -284,9 +268,23 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_1600
+     * @tc.name testFloat32ArrayValues016
+     * @tc.desc Verify two-element array first value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayValues016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float32Array([1.0, 2.0]);
+      const it = arr.values();
+      expect(it.next().value).assertEqual(1.0);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_1700
      * @tc.name testFloat32ArrayValues017
-     * @tc.desc Verify two-element array first value
+     * @tc.desc Verify two-element array second value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -294,13 +292,14 @@ export default function Float32ArrayValuesTest(): void {
     it('testFloat32ArrayValues017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0]);
       const it = arr.values();
-      expect(it.next().value).assertEqual(1.0);
+      it.next();
+      expect(it.next().value).assertEqual(2.0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_1800
      * @tc.name testFloat32ArrayValues018
-     * @tc.desc Verify two-element array second value
+     * @tc.desc Verify two-element array third done is true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -309,34 +308,19 @@ export default function Float32ArrayValuesTest(): void {
       const arr = new Float32Array([1.0, 2.0]);
       const it = arr.values();
       it.next();
-      expect(it.next().value).assertEqual(2.0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_1900
-     * @tc.name testFloat32ArrayValues019
-     * @tc.desc Verify two-element array third done is true
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayValues019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([1.0, 2.0]);
-      const it = arr.values();
-      it.next();
       it.next();
       expect(it.next().done).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_2000
-     * @tc.name testFloat32ArrayValues020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_1900
+     * @tc.name testFloat32ArrayValues019
      * @tc.desc Verify three-element array complete order 1 2 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0);
       const it = arr.values();
       expect(it.next().value).assertEqual(16);
@@ -346,14 +330,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_2100
-     * @tc.name testFloat32ArrayValues021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_2000
+     * @tc.name testFloat32ArrayValues020
      * @tc.desc Verify four-element array order preserved 10 20 30 40
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([10.0, 20.0, 30.0, 40.0]);
       const it = arr.values();
       expect(it.next().value).assertEqual(10.0);
@@ -363,14 +347,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_2200
-     * @tc.name testFloat32ArrayValues022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_2100
+     * @tc.name testFloat32ArrayValues021
      * @tc.desc Verify array with negative values order -1 0 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([-1.0, 0.0, 1.0]);
       const it = arr.values();
       expect(it.next().value).assertEqual(-1.0);
@@ -379,126 +363,126 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_2300
-     * @tc.name testFloat32ArrayValues023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_2200
+     * @tc.name testFloat32ArrayValues022
      * @tc.desc Verify Float32.MAX single-element iteration
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.4028234663852886e+38]);
       const it = arr.values();
       expect(it.next().value).assertEqual(3.4028234663852886e+38);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_2400
-     * @tc.name testFloat32ArrayValues024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_2300
+     * @tc.name testFloat32ArrayValues023
      * @tc.desc Verify minimum finite negative value -MAX single-element iteration
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([-3.4028234663852886e+38]);
       const it = arr.values();
       expect(it.next().value).assertEqual(-3.4028234663852886e+38);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_2500
-     * @tc.name testFloat32ArrayValues025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_2400
+     * @tc.name testFloat32ArrayValues024
      * @tc.desc Verify MIN_NORMAL minimum positive normal number iteration
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.1754943508222875e-38]);
       const it = arr.values();
       expect(it.next().value).assertEqual(1.1754943508222875e-38);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_2600
-     * @tc.name testFloat32ArrayValues026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_2500
+     * @tc.name testFloat32ArrayValues025
      * @tc.desc Verify MIN_VALUE minimum positive subnormal number iteration
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.401298464324817e-45]);
       const it = arr.values();
       expect(it.next().value).assertEqual(1.401298464324817e-45);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_2700
-     * @tc.name testFloat32ArrayValues027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_2600
+     * @tc.name testFloat32ArrayValues026
      * @tc.desc Verify NaN single-element iteration asserts NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([NaN]);
       const it = arr.values();
       expect(it.next().value).assertNaN();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_2800
-     * @tc.name testFloat32ArrayValues028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_2700
+     * @tc.name testFloat32ArrayValues027
      * @tc.desc Verify positive infinity single-element iteration
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([Number.POSITIVE_INFINITY]);
       const it = arr.values();
       expect(it.next().value).assertEqual(Number.POSITIVE_INFINITY);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_2900
-     * @tc.name testFloat32ArrayValues029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_2800
+     * @tc.name testFloat32ArrayValues028
      * @tc.desc Verify negative infinity single-element iteration
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([Number.NEGATIVE_INFINITY]);
       const it = arr.values();
       expect(it.next().value).assertEqual(Number.NEGATIVE_INFINITY);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_3000
-     * @tc.name testFloat32ArrayValues030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_2900
+     * @tc.name testFloat32ArrayValues029
      * @tc.desc Verify positive zero +0 single-element iteration
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([0.0]);
       const it = arr.values();
       expect(it.next().value).assertEqual(0.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_3100
-     * @tc.name testFloat32ArrayValues031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_3000
+     * @tc.name testFloat32ArrayValues030
      * @tc.desc Verify negative zero -0 single-element iteration detected via 1/x
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([-0.0]);
       const it = arr.values();
       const r = it.next();
@@ -506,15 +490,29 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_3200
-     * @tc.name testFloat32ArrayValues032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_3100
+     * @tc.name testFloat32ArrayValues031
      * @tc.desc Verify 0.1 single-element iteration value matches stored element (precision preserved)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([0.1]);
+      const it = arr.values();
+      expect(it.next().value).assertEqual(arr.$_get(0));
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_3200
+     * @tc.name testFloat32ArrayValues032
+     * @tc.desc Verify 0.2 single-element iteration value matches stored element (precision preserved)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayValues032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float32Array([0.2]);
       const it = arr.values();
       expect(it.next().value).assertEqual(arr.$_get(0));
     });
@@ -522,13 +520,13 @@ export default function Float32ArrayValuesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_3300
      * @tc.name testFloat32ArrayValues033
-     * @tc.desc Verify 0.2 single-element iteration value matches stored element (precision preserved)
+     * @tc.desc Verify 0.3 single-element iteration value matches stored element (precision preserved)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayValues033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([0.2]);
+      const arr = new Float32Array([0.3]);
       const it = arr.values();
       expect(it.next().value).assertEqual(arr.$_get(0));
     });
@@ -536,13 +534,13 @@ export default function Float32ArrayValuesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_3400
      * @tc.name testFloat32ArrayValues034
-     * @tc.desc Verify 0.3 single-element iteration value matches stored element (precision preserved)
+     * @tc.desc Verify 1.1 single-element iteration value matches stored element (precision preserved)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayValues034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([0.3]);
+      const arr = new Float32Array([1.1]);
       const it = arr.values();
       expect(it.next().value).assertEqual(arr.$_get(0));
     });
@@ -550,13 +548,13 @@ export default function Float32ArrayValuesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_3500
      * @tc.name testFloat32ArrayValues035
-     * @tc.desc Verify 1.1 single-element iteration value matches stored element (precision preserved)
+     * @tc.desc Verify 1.0000001 single-element iteration value matches stored element (precision preserved)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayValues035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([1.1]);
+      const arr = new Float32Array([1.0000001]);
       const it = arr.values();
       expect(it.next().value).assertEqual(arr.$_get(0));
     });
@@ -564,27 +562,27 @@ export default function Float32ArrayValuesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_3600
      * @tc.name testFloat32ArrayValues036
-     * @tc.desc Verify 1.0000001 single-element iteration value matches stored element (precision preserved)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayValues036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([1.0000001]);
-      const it = arr.values();
-      expect(it.next().value).assertEqual(arr.$_get(0));
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_3700
-     * @tc.name testFloat32ArrayValues037
      * @tc.desc Verify 16777216 (2^24) exact integer iteration
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([16777216]);
+      const it = arr.values();
+      expect(it.next().value).assertEqual(16777216);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_3700
+     * @tc.name testFloat32ArrayValues037
+     * @tc.desc Verify 16777217 (2^24+1) truncated to 16777216
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayValues037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float32Array([16777217]);
       const it = arr.values();
       expect(it.next().value).assertEqual(16777216);
     });
@@ -592,124 +590,110 @@ export default function Float32ArrayValuesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_3800
      * @tc.name testFloat32ArrayValues038
-     * @tc.desc Verify 16777217 (2^24+1) truncated to 16777216
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayValues038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([16777217]);
-      const it = arr.values();
-      expect(it.next().value).assertEqual(16777216);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_3900
-     * @tc.name testFloat32ArrayValues039
      * @tc.desc Verify 1.0e40 overflows to positive infinity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0e40]);
       const it = arr.values();
       expect(it.next().value).assertEqual(Number.POSITIVE_INFINITY);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_4000
-     * @tc.name testFloat32ArrayValues040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_3900
+     * @tc.name testFloat32ArrayValues039
      * @tc.desc Verify -1.0e40 overflows to negative infinity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([-1.0e40]);
       const it = arr.values();
       expect(it.next().value).assertEqual(Number.NEGATIVE_INFINITY);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_4100
-     * @tc.name testFloat32ArrayValues041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_4000
+     * @tc.name testFloat32ArrayValues040
      * @tc.desc Verify 1.0e-46 underflows to positive zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0e-46]);
       const it = arr.values();
       expect(it.next().value).assertEqual(0.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_4200
-     * @tc.name testFloat32ArrayValues042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_4100
+     * @tc.name testFloat32ArrayValues041
      * @tc.desc Verify 1048576 (2^20) exact integer iteration
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1048576]);
       const it = arr.values();
       expect(it.next().value).assertEqual(1048576);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_4300
-     * @tc.name testFloat32ArrayValues043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_4200
+     * @tc.name testFloat32ArrayValues042
      * @tc.desc Verify negative integer -1 iteration
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([-1]);
       const it = arr.values();
       expect(it.next().value).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_4400
-     * @tc.name testFloat32ArrayValues044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_4300
+     * @tc.name testFloat32ArrayValues043
      * @tc.desc Verify 2147483647 (2^31-1) truncated to 2147483648
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([2147483647]);
       const it = arr.values();
       expect(it.next().value).assertEqual(2147483648);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_4500
-     * @tc.name testFloat32ArrayValues045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_4400
+     * @tc.name testFloat32ArrayValues044
      * @tc.desc Verify -2147483648 (-2^31) exact iteration
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([-2147483648]);
       const it = arr.values();
       expect(it.next().value).assertEqual(-2147483648);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_4600
-     * @tc.name testFloat32ArrayValues046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_4500
+     * @tc.name testFloat32ArrayValues045
      * @tc.desc Verify scientific notation 1.0e3 equals 1000
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0e3]);
       const it = arr.values();
       expect(it.next().value).assertEqual(1000.0);
@@ -717,56 +701,56 @@ export default function Float32ArrayValuesTest(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_4700
-     * @tc.name testFloat32ArrayValues047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_4600
+     * @tc.name testFloat32ArrayValues046
      * @tc.desc Verify hexadecimal 1024.0 equals 1024
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1024.0]);
       const it = arr.values();
       expect(it.next().value).assertEqual(1024.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_4800
-     * @tc.name testFloat32ArrayValues048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_4700
+     * @tc.name testFloat32ArrayValues047
      * @tc.desc Verify octal 0o1000 equals 512
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([0o1000]);
       const it = arr.values();
       expect(it.next().value).assertEqual(512.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_4900
-     * @tc.name testFloat32ArrayValues049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_4800
+     * @tc.name testFloat32ArrayValues048
      * @tc.desc Verify binary 0b100000000 equals 256
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([0b100000000]);
       const it = arr.values();
       expect(it.next().value).assertEqual(256.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_5000
-     * @tc.name testFloat32ArrayValues050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_4900
+     * @tc.name testFloat32ArrayValues049
      * @tc.desc Verify five-element array complete sequence 1 2 3 4 5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0, 0.0, 1000000.0);
       const it = arr.values();
       expect(it.next().value).assertEqual(16);
@@ -778,14 +762,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_5100
-     * @tc.name testFloat32ArrayValues051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_5000
+     * @tc.name testFloat32ArrayValues050
      * @tc.desc Verify mixed boundary value sequence MAX MIN_VALUE NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.4028234663852886e+38, 1.401298464324817e-45, NaN]);
       const it = arr.values();
       expect(it.next().value).assertEqual(3.4028234663852886e+38);
@@ -794,14 +778,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_5200
-     * @tc.name testFloat32ArrayValues052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_5100
+     * @tc.name testFloat32ArrayValues051
      * @tc.desc Verify special value sequence Inf -Inf +0 -0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([Number.POSITIVE_INFINITY, Number.NEGATIVE_INFINITY, 0.0, -0.0]);
       const it = arr.values();
       expect(it.next().value).assertEqual(Number.POSITIVE_INFINITY);
@@ -812,14 +796,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_5300
-     * @tc.name testFloat32ArrayValues053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_5200
+     * @tc.name testFloat32ArrayValues052
      * @tc.desc Verify precision value sequence 0.1 0.2 0.3 bit-by-bit consistent with stored elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([0.1, 0.2, 0.3]);
       const it = arr.values();
       expect(it.next().value).assertEqual(arr.$_get(0));
@@ -828,14 +812,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_5400
-     * @tc.name testFloat32ArrayValues054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_5300
+     * @tc.name testFloat32ArrayValues053
      * @tc.desc Verify all-same-value sequence 7 7 7
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([7.0, 7.0, 7.0]);
       const it = arr.values();
       expect(it.next().value).assertEqual(7.0);
@@ -844,14 +828,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_5500
-     * @tc.name testFloat32ArrayValues055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_5400
+     * @tc.name testFloat32ArrayValues054
      * @tc.desc Verify negative value sequence -5 -4 -3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([-5.0, -4.0, -3.0]);
       const it = arr.values();
       expect(it.next().value).assertEqual(-5.0);
@@ -861,14 +845,14 @@ export default function Float32ArrayValuesTest(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_5600
-     * @tc.name testFloat32ArrayValues056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_5500
+     * @tc.name testFloat32ArrayValues055
      * @tc.desc Verify advancing one of two iterators does not affect the other
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([10.0, 20.0, 30.0]);
       const it1 = arr.values();
       const it2 = arr.values();
@@ -880,14 +864,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_5700
-     * @tc.name testFloat32ArrayValues057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_5600
+     * @tc.name testFloat32ArrayValues056
      * @tc.desc Verify two iterators advancing interleaved
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0);
       const it1 = arr.values();
       const it2 = arr.values();
@@ -902,14 +886,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_5800
-     * @tc.name testFloat32ArrayValues058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_5700
+     * @tc.name testFloat32ArrayValues057
      * @tc.desc Verify three iterators each start independently
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([5.0, 6.0]);
       const it1 = arr.values();
       const it2 = arr.values();
@@ -923,14 +907,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_5900
-     * @tc.name testFloat32ArrayValues059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_5800
+     * @tc.name testFloat32ArrayValues058
      * @tc.desc Verify after exhausting iterator A, iterator B is still at the start
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0]);
       const it1 = arr.values();
       it1.next();
@@ -943,14 +927,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_6000
-     * @tc.name testFloat32ArrayValues060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_5900
+     * @tc.name testFloat32ArrayValues059
      * @tc.desc Verify values() and $_iterator() iterators are independent of each other
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0]);
       const itV = arr.values();
       const itD = arr.$_iterator();
@@ -960,14 +944,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_6100
-     * @tc.name testFloat32ArrayValues061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_6000
+     * @tc.name testFloat32ArrayValues060
      * @tc.desc Verify values() and $_iterator() sequences are completely consistent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([4.0, 5.0, 6.0]);
       const itV = arr.values();
       const itD = arr.$_iterator();
@@ -984,14 +968,14 @@ export default function Float32ArrayValuesTest(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_6200
-     * @tc.name testFloat32ArrayValues062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_6100
+     * @tc.name testFloat32ArrayValues061
      * @tc.desc Verify two values() calls produce independent complete sequences
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.0, 6.0]);
       const it1 = arr.values();
       it1.next();
@@ -1005,14 +989,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_6300
-     * @tc.name testFloat32ArrayValues063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_6200
+     * @tc.name testFloat32ArrayValues062
      * @tc.desc Verify empty array values() and $_iterator() both first done true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(0);
       const itV = arr.values();
       const itD = arr.$_iterator();
@@ -1021,14 +1005,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_6400
-     * @tc.name testFloat32ArrayValues064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_6300
+     * @tc.name testFloat32ArrayValues063
      * @tc.desc Verify next() ignores passed arguments
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0]);
       const it = arr.values();
       const r = it.next();
@@ -1037,14 +1021,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_6500
-     * @tc.name testFloat32ArrayValues065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_6400
+     * @tc.name testFloat32ArrayValues064
      * @tc.desc Verify last element next still returns done false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([8.0, 9.0]);
       const it = arr.values();
       it.next();
@@ -1054,30 +1038,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_6600
-     * @tc.name testFloat32ArrayValues066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_6500
+     * @tc.name testFloat32ArrayValues065
      * @tc.desc Verify after exhaustion, continuing next returns done true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([1.0]);
-      const it = arr.values();
-      it.next();
-      const r = it.next();
-      expect(r.done).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_6700
-     * @tc.name testFloat32ArrayValues067
-     * @tc.desc Verify after exhaustion, continuing next returns done true
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayValues067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0]);
       const it = arr.values();
       it.next();
@@ -1087,14 +1055,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_6800
-     * @tc.name testFloat32ArrayValues068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_6600
+     * @tc.name testFloat32ArrayValues066
      * @tc.desc Verify three consecutive next calls beyond length all return done true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0]);
       const it = arr.values();
       it.next();
@@ -1108,14 +1076,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_6900
-     * @tc.name testFloat32ArrayValues069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_6700
+     * @tc.name testFloat32ArrayValues067
      * @tc.desc Verify after fill, iteration reflects the filled value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(3);
       arr.fill(9.0);
       const it = arr.values();
@@ -1125,14 +1093,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_7000
-     * @tc.name testFloat32ArrayValues070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_6800
+     * @tc.name testFloat32ArrayValues068
      * @tc.desc Verify after sort, iteration reflects the sorted order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.0, 1.0, 2.0]);
       arr.sort();
       const it = arr.values();
@@ -1142,14 +1110,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_7100
-     * @tc.name testFloat32ArrayValues071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_6900
+     * @tc.name testFloat32ArrayValues069
      * @tc.desc Verify after reverse, iteration reflects the reversed order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0);
       arr.reverse();
       const it = arr.values();
@@ -1159,14 +1127,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_7200
-     * @tc.name testFloat32ArrayValues072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_7000
+     * @tc.name testFloat32ArrayValues070
      * @tc.desc Verify after copyWithin, iteration reflects the copy result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       arr.copyWithin(0, 2, 4);
       const it = arr.values();
@@ -1175,14 +1143,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_7300
-     * @tc.name testFloat32ArrayValues073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_7100
+     * @tc.name testFloat32ArrayValues071
      * @tc.desc Verify after $_set, iteration reflects the new value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0]);
       arr.$_set(0, 99.0);
       const it = arr.values();
@@ -1191,14 +1159,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_7400
-     * @tc.name testFloat32ArrayValues074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_7200
+     * @tc.name testFloat32ArrayValues072
      * @tc.desc Verify after set(), iteration reflects the set value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0);
       arr.set([7.0, 8.0], 1);
       const it = arr.values();
@@ -1208,14 +1176,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_7500
-     * @tc.name testFloat32ArrayValues075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_7300
+     * @tc.name testFloat32ArrayValues073
      * @tc.desc Verify subarray view iteration only traverses view elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const view = arr.subarray(1, 3);
       const it = view.values();
@@ -1225,14 +1193,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_7600
-     * @tc.name testFloat32ArrayValues076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_7400
+     * @tc.name testFloat32ArrayValues074
      * @tc.desc Verify subarray offset view iteration
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([10.0, 20.0, 30.0, 40.0, 50.0]);
       const view = arr.subarray(2);
       const it = view.values();
@@ -1242,14 +1210,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_7700
-     * @tc.name testFloat32ArrayValues077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_7500
+     * @tc.name testFloat32ArrayValues075
      * @tc.desc Verify two views sharing buffer each independently iterate the first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const arr = new Float32Array(buf);
       arr.$_set(0, 10.0);
@@ -1265,14 +1233,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_7800
-     * @tc.name testFloat32ArrayValues078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_7600
+     * @tc.name testFloat32ArrayValues076
      * @tc.desc Verify write parent read child view iteration reflects parent array modification
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0);
       const view = arr.subarray(1, 3);
       arr.$_set(1, 99.0);
@@ -1281,14 +1249,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_7900
-     * @tc.name testFloat32ArrayValues079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_7700
+     * @tc.name testFloat32ArrayValues077
      * @tc.desc Verify Float32Array.of construction source iteration
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(100.0, 200.0);
       const it = arr.values();
       expect(it.next().value).assertEqual(100.0);
@@ -1296,14 +1264,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_8000
-     * @tc.name testFloat32ArrayValues080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_7800
+     * @tc.name testFloat32ArrayValues078
      * @tc.desc Verify Float32Array.from array source iteration
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.from([10.0, 20.0]);
       const it = arr.values();
       expect(it.next().value).assertEqual(10.0);
@@ -1311,14 +1279,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_8100
-     * @tc.name testFloat32ArrayValues081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_7900
+     * @tc.name testFloat32ArrayValues079
      * @tc.desc Verify Float32Array.from TypedArray source iteration
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = Float32Array.of(0x10, 0b1010, -1.0);
       const arr = Float32Array.from(src);
       const it = arr.values();
@@ -1328,14 +1296,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_8200
-     * @tc.name testFloat32ArrayValues082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_8000
+     * @tc.name testFloat32ArrayValues080
      * @tc.desc Verify Float32Array.from with mapFn source iteration
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.from([1, 2, 3], (value, index) => value + index);
       const it = arr.values();
       expect(it.next().value).assertEqual(1.0);
@@ -1344,14 +1312,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_8300
-     * @tc.name testFloat32ArrayValues083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_8100
+     * @tc.name testFloat32ArrayValues081
      * @tc.desc Verify Float32Array(N) default zero values iteration
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(3);
       const it = arr.values();
       expect(it.next().value).assertEqual(0.0);
@@ -1360,14 +1328,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_8400
-     * @tc.name testFloat32ArrayValues084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_8200
+     * @tc.name testFloat32ArrayValues082
      * @tc.desc Verify Float32Array.from empty array source iteration is done immediately
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.from([]);
       const it = arr.values();
       const r = it.next();
@@ -1376,14 +1344,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_8500
-     * @tc.name testFloat32ArrayValues085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_8300
+     * @tc.name testFloat32ArrayValues083
      * @tc.desc Verify ArrayBuffer view construction source iteration
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const arr = new Float32Array(buf);
       arr.$_set(0, 5.0);
@@ -1397,14 +1365,14 @@ export default function Float32ArrayValuesTest(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_8600
-     * @tc.name testFloat32ArrayValues086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_8400
+     * @tc.name testFloat32ArrayValues084
      * @tc.desc Verify new empty array next returns done true and leaves length 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(0);
       const it = arr.values();
       const r = it.next();
@@ -1414,14 +1382,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_8700
-     * @tc.name testFloat32ArrayValues087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_8500
+     * @tc.name testFloat32ArrayValues085
      * @tc.desc Verify exhausted iterator continuing next does not throw
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0]);
       const it = arr.values();
       it.next();
@@ -1432,14 +1400,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_8800
-     * @tc.name testFloat32ArrayValues088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_8600
+     * @tc.name testFloat32ArrayValues086
      * @tc.desc Verify array containing NaN iterates normally
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([NaN, 1.0]);
       const it = arr.values();
       expect(it.next().value).assertNaN();
@@ -1447,14 +1415,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_8900
-     * @tc.name testFloat32ArrayValues089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_8700
+     * @tc.name testFloat32ArrayValues087
      * @tc.desc Verify array containing positive and negative infinity iterates normally
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([Number.POSITIVE_INFINITY, Number.NEGATIVE_INFINITY]);
       const it = arr.values();
       expect(it.next().value).assertEqual(Number.POSITIVE_INFINITY);
@@ -1462,14 +1430,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_9000
-     * @tc.name testFloat32ArrayValues090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_8800
+     * @tc.name testFloat32ArrayValues088
      * @tc.desc Verify two-element array third next is done after two values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0]);
       const it = arr.values();
       expect(it.next().value).assertEqual(1);
@@ -1480,14 +1448,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_9100
-     * @tc.name testFloat32ArrayValues091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_8900
+     * @tc.name testFloat32ArrayValues089
      * @tc.desc Verify single MAX element done sequence false then true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.4028234663852886e+38]);
       const it = arr.values();
       expect(it.next().done).assertFalse();
@@ -1495,14 +1463,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_9200
-     * @tc.name testFloat32ArrayValues092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_9000
+     * @tc.name testFloat32ArrayValues090
      * @tc.desc Verify after exhaustion, multiple next calls stay done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([5.0]);
       const it = arr.values();
       it.next();
@@ -1518,14 +1486,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_9300
-     * @tc.name testFloat32ArrayValues093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_9100
+     * @tc.name testFloat32ArrayValues091
      * @tc.desc Verify three-element array middle element value assertion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([10.0, 20.0, 30.0]);
       const it = arr.values();
       it.next();
@@ -1535,14 +1503,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_9400
-     * @tc.name testFloat32ArrayValues094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_9200
+     * @tc.name testFloat32ArrayValues092
      * @tc.desc Verify positive zero and negative zero mixed array iteration order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([0.0, -0.0]);
       const it = arr.values();
       const a = it.next();
@@ -1552,14 +1520,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_9500
-     * @tc.name testFloat32ArrayValues095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_9300
+     * @tc.name testFloat32ArrayValues093
      * @tc.desc Verify Float32Array.of single-argument iteration
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(42.0);
       const it = arr.values();
       expect(it.next().value).assertEqual(42.0);
@@ -1568,14 +1536,14 @@ export default function Float32ArrayValuesTest(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_9600
-     * @tc.name testFloat32ArrayValues096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_9400
+     * @tc.name testFloat32ArrayValues094
      * @tc.desc Verify iterator values match $_get index by index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.5, 2.5, 3.5]);
       const it = arr.values();
       expect(it.next().value).assertEqual(arr.$_get(0));
@@ -1584,14 +1552,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_9700
-     * @tc.name testFloat32ArrayValues097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_9500
+     * @tc.name testFloat32ArrayValues095
      * @tc.desc Verify with() does not modify the original array, iteration still gets the original value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0]);
       const modified = arr.with(0, 99.0);
       const it = arr.values();
@@ -1600,14 +1568,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_9800
-     * @tc.name testFloat32ArrayValues098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_9600
+     * @tc.name testFloat32ArrayValues096
      * @tc.desc Verify toReversed result iterates in reversed order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0);
       const rev = arr.toReversed();
       const it = rev.values();
@@ -1617,14 +1585,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_9900
-     * @tc.name testFloat32ArrayValues099
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_9700
+     * @tc.name testFloat32ArrayValues097
      * @tc.desc Verify toSorted result iterates in ascending order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.0, 1.0, 2.0]);
       const sorted = arr.toSorted();
       const it = sorted.values();
@@ -1634,14 +1602,14 @@ export default function Float32ArrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_10000
-     * @tc.name testFloat32ArrayValues100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_9800
+     * @tc.name testFloat32ArrayValues098
      * @tc.desc Verify values iterator observes source updates before next is consumed
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayValues100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayValues098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = Float32Array.of(1.0, 2.0);
       const iter = source.values();
       source.$_set(0, 9.0);

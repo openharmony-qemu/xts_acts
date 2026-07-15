@@ -665,7 +665,7 @@ export default function Float32ArrayToSorted2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_4100
      * @tc.name testFloat32ArrayToSortedTWO041
-     * @tc.desc Verify three-element return value length equals 3
+     * @tc.desc Verify three-element return value byteLength equals 12
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -673,32 +673,18 @@ export default function Float32ArrayToSorted2Test(): void {
     it('testFloat32ArrayToSortedTWO041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([3.0, 1.0, 2.0]);
       const r = src.toSorted();
-      expect(r.length).assertEqual(3);
+      expect(r.byteLength).assertEqual(12);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_4200
      * @tc.name testFloat32ArrayToSortedTWO042
-     * @tc.desc Verify three-element return value byteLength equals 12
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayToSortedTWO042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const src: Float32Array = new Float32Array([3.0, 1.0, 2.0]);
-      const r = src.toSorted();
-      expect(r.byteLength).assertEqual(12);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_4300
-     * @tc.name testFloat32ArrayToSortedTWO043
      * @tc.desc Verify return value length and source length are both 6
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([6.0, 5.0, 4.0, 3.0, 2.0, 1.0]);
       const r = src.toSorted();
       expect(r.length).assertEqual(6);
@@ -706,14 +692,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_4400
-     * @tc.name testFloat32ArrayToSortedTWO044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_4300
+     * @tc.name testFloat32ArrayToSortedTWO043
      * @tc.desc Verify sixteen-element return value byteLength equals 64
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array =
         new Float32Array([16.0, 1.0, 15.0, 2.0, 14.0, 3.0, 13.0, 4.0, 12.0, 5.0, 11.0, 6.0, 10.0, 7.0, 9.0, 8.0]);
       const r = src.toSorted();
@@ -721,14 +707,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_4500
-     * @tc.name testFloat32ArrayToSortedTWO045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_4400
+     * @tc.name testFloat32ArrayToSortedTWO044
      * @tc.desc Verify original array length unchanged after sorting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([3.0, 1.0, 2.0]);
       const r = src.toSorted();
       expect(src.length).assertEqual(3);
@@ -736,14 +722,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_4600
-     * @tc.name testFloat32ArrayToSortedTWO046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_4500
+     * @tc.name testFloat32ArrayToSortedTWO045
      * @tc.desc Verify original array byteLength unchanged after sorting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([3.0, 1.0, 2.0]);
       const r = src.toSorted();
       expect(src.byteLength).assertEqual(12);
@@ -751,14 +737,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_4700
-     * @tc.name testFloat32ArrayToSortedTWO047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_4600
+     * @tc.name testFloat32ArrayToSortedTWO046
      * @tc.desc Verify original array first element unchanged after sorting a reverse-ordered source
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([3.0, 2.0, 1.0]);
       const r = src.toSorted();
       expect(src.$_get(0)).assertEqual(3.0);
@@ -766,14 +752,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_4800
-     * @tc.name testFloat32ArrayToSortedTWO048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_4700
+     * @tc.name testFloat32ArrayToSortedTWO047
      * @tc.desc Verify original array last element unchanged after sorting an ascending source
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = Float32Array.of(0x10, 0b1010, -1.0);
       const r = src.toSorted();
       expect(src.at(-1)).assertEqual(-1);
@@ -781,14 +767,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_4900
-     * @tc.name testFloat32ArrayToSortedTWO049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_4800
+     * @tc.name testFloat32ArrayToSortedTWO048
      * @tc.desc Verify original array element-by-element order completely unchanged after sorting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([4.0, 2.0, 5.0, 1.0, 3.0]);
       const expected: Float32Array = new Float32Array([4.0, 2.0, 5.0, 1.0, 3.0]);
       const r = src.toSorted();
@@ -799,14 +785,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_5000
-     * @tc.name testFloat32ArrayToSortedTWO050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_4900
+     * @tc.name testFloat32ArrayToSortedTWO049
      * @tc.desc Verify original array NaN position unchanged after sorting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([1.0, NaN, 2.0]);
       const r = src.toSorted();
       expect(src.$_get(1)).assertNaN();
@@ -814,14 +800,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_5100
-     * @tc.name testFloat32ArrayToSortedTWO051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_5000
+     * @tc.name testFloat32ArrayToSortedTWO050
      * @tc.desc Verify original array still unchanged after two consecutive toSorted calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([5.0, 3.0, 1.0]);
       const r1 = src.toSorted();
       const r2 = src.toSorted();
@@ -831,14 +817,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_5200
-     * @tc.name testFloat32ArrayToSortedTWO052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_5100
+     * @tc.name testFloat32ArrayToSortedTWO051
      * @tc.desc Verify original array buffer.byteLength unchanged after sorting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([2.0, 1.0]);
       const r = src.toSorted();
       expect(src.buffer.byteLength).assertEqual(8);
@@ -846,14 +832,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_5300
-     * @tc.name testFloat32ArrayToSortedTWO053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_5200
+     * @tc.name testFloat32ArrayToSortedTWO052
      * @tc.desc Verify original array byteOffset unchanged after sorting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([2.0, 1.0]);
       const r = src.toSorted();
       expect(src.byteOffset).assertEqual(0);
@@ -861,14 +847,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_5400
-     * @tc.name testFloat32ArrayToSortedTWO054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_5300
+     * @tc.name testFloat32ArrayToSortedTWO053
      * @tc.desc Verify original array element values at each position unchanged after sorting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([9.0, 4.0, 7.0]);
       const r = src.toSorted();
       expect(src.$_get(0)).assertEqual(9.0);
@@ -878,14 +864,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_5500
-     * @tc.name testFloat32ArrayToSortedTWO055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_5400
+     * @tc.name testFloat32ArrayToSortedTWO054
      * @tc.desc Verify writing to the return value does not affect the original array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([2.0, 1.0]);
       const r = src.toSorted();
       r.$_set(0, 777.0);
@@ -894,14 +880,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_5600
-     * @tc.name testFloat32ArrayToSortedTWO056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_5500
+     * @tc.name testFloat32ArrayToSortedTWO055
      * @tc.desc Verify original array at(-1) still equals the original last element after sorting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([6.0, 4.0, 2.0]);
       const r = src.toSorted();
       expect(src.at(-1)).assertEqual(2.0);
@@ -909,14 +895,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_5700
-     * @tc.name testFloat32ArrayToSortedTWO057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_5600
+     * @tc.name testFloat32ArrayToSortedTWO056
      * @tc.desc Verify toSorted chained with toSorted returns sorted content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([3.0, 1.0, 2.0]);
       const r = src.toSorted().toSorted();
       expect(r.length).assertEqual(3);
@@ -926,14 +912,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_5800
-     * @tc.name testFloat32ArrayToSortedTWO058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_5700
+     * @tc.name testFloat32ArrayToSortedTWO057
      * @tc.desc Verify toSorted chained with toSorted double-sort result is correct
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([3.0, 1.0, 2.0]);
       const r = src.toSorted().toSorted();
       expect(r.$_get(0)).assertEqual(1.0);
@@ -941,56 +927,56 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_5900
-     * @tc.name testFloat32ArrayToSortedTWO059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_5800
+     * @tc.name testFloat32ArrayToSortedTWO058
      * @tc.desc Verify toSorted chained length property access
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([5.0, 4.0, 3.0, 2.0, 1.0]);
       const r = src.toSorted().length;
       expect(r).assertEqual(5);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_6000
-     * @tc.name testFloat32ArrayToSortedTWO060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_5900
+     * @tc.name testFloat32ArrayToSortedTWO059
      * @tc.desc Verify toSorted chained $_get index access
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([9.0, 2.0, 6.0]);
       const r = src.toSorted().$_get(0);
       expect(r).assertEqual(2.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_6100
-     * @tc.name testFloat32ArrayToSortedTWO061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_6000
+     * @tc.name testFloat32ArrayToSortedTWO060
      * @tc.desc Verify toSorted chained at last-element access
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([9.0, 2.0, 6.0]);
       const r = src.toSorted().at(-1);
       expect(r).assertEqual(9.0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_6200
-     * @tc.name testFloat32ArrayToSortedTWO062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_6100
+     * @tc.name testFloat32ArrayToSortedTWO061
      * @tc.desc Verify toSorted triple-chained result is correct
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([4.0, 1.0, 3.0]);
       const r = src.toSorted().toSorted().toSorted();
       expect(r.$_get(0)).assertEqual(1.0);
@@ -998,14 +984,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_6300
-     * @tc.name testFloat32ArrayToSortedTWO063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_6200
+     * @tc.name testFloat32ArrayToSortedTWO062
      * @tc.desc Verify return value buffer and source buffer are independent (writing to source does not affect result)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([2.0, 1.0]);
       const r = src.toSorted();
       src.$_set(0, 888.0);
@@ -1014,14 +1000,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_6400
-     * @tc.name testFloat32ArrayToSortedTWO064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_6300
+     * @tc.name testFloat32ArrayToSortedTWO063
      * @tc.desc Verify writing to the return value does not affect the source array (buffer not shared)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([3.0, 1.0, 2.0]);
       const r = src.toSorted();
       r.$_set(1, 555.0);
@@ -1030,14 +1016,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_6500
-     * @tc.name testFloat32ArrayToSortedTWO065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_6400
+     * @tc.name testFloat32ArrayToSortedTWO064
      * @tc.desc Verify two toSorted result buffers are not shared with each other
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([7.0, 3.0, 5.0]);
       const r1 = src.toSorted();
       const r2 = src.toSorted();
@@ -1047,28 +1033,28 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_6600
-     * @tc.name testFloat32ArrayToSortedTWO066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_6500
+     * @tc.name testFloat32ArrayToSortedTWO065
      * @tc.desc Verify return value buffer.byteLength equals element count times 4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([4.0, 2.0, 6.0, 1.0]);
       const r = src.toSorted();
       expect(r.buffer.byteLength).assertEqual(16);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_6700
-     * @tc.name testFloat32ArrayToSortedTWO067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_6600
+     * @tc.name testFloat32ArrayToSortedTWO066
      * @tc.desc Verify return value is not a view of the source buffer (byteOffset 0 and writing to source does not affect result)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([5.0, 3.0]);
       const r = src.toSorted();
       expect(r.byteOffset).assertEqual(0);
@@ -1077,14 +1063,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_6800
-     * @tc.name testFloat32ArrayToSortedTWO068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_6700
+     * @tc.name testFloat32ArrayToSortedTWO067
      * @tc.desc Verify return value subarray shares buffer with the return value but is independent of the source
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([6.0, 2.0, 4.0]);
       const r = src.toSorted();
       const v = r.subarray(0, 2);
@@ -1094,14 +1080,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_6900
-     * @tc.name testFloat32ArrayToSortedTWO069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_6800
+     * @tc.name testFloat32ArrayToSortedTWO068
      * @tc.desc Verify return value unchanged after source fill (buffer not shared)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([5.0, 1.0, 3.0]);
       const r = src.toSorted();
       src.fill(0.0);
@@ -1110,14 +1096,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_7000
-     * @tc.name testFloat32ArrayToSortedTWO070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_6900
+     * @tc.name testFloat32ArrayToSortedTWO069
      * @tc.desc Verify return value keeps original sort order after modifying source elements (buffer independent)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([8.0, 2.0, 5.0]);
       const r = src.toSorted();
       src.$_set(0, 0.0);
@@ -1126,14 +1112,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_7100
-     * @tc.name testFloat32ArrayToSortedTWO071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_7000
+     * @tc.name testFloat32ArrayToSortedTWO070
      * @tc.desc Verify toSorted keeps duplicate values and leaves the source order unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const firstValue: number = 2.0;
       const duplicateValue: number = 1.0;
       const src: Float32Array = new Float32Array([firstValue, duplicateValue, duplicateValue]);
@@ -1145,14 +1131,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_7200
-     * @tc.name testFloat32ArrayToSortedTWO072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_7100
+     * @tc.name testFloat32ArrayToSortedTWO071
      * @tc.desc Verify toSorted result byteLength equals result length times BYTES_PER_ELEMENT
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array([9.0, 3.0, 6.0]);
       const sorted = src.toSorted();
       const expectLength: int = 3;
@@ -1162,14 +1148,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_7300
-     * @tc.name testFloat32ArrayToSortedTWO073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_7200
+     * @tc.name testFloat32ArrayToSortedTWO072
      * @tc.desc Verify toSorted on an offset view sorts only the view elements and does not alter the parent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const parent: Float32Array = new Float32Array([9.0, 4.0, 2.0, 8.0]);
       const view: Float32Array = parent.subarray(1, 3);
       const sorted = view.toSorted();
@@ -1180,14 +1166,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_7400
-     * @tc.name testFloat32ArrayToSortedTWO074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_7300
+     * @tc.name testFloat32ArrayToSortedTWO073
      * @tc.desc Verify empty toSorted result has length and byteLength zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Float32Array = new Float32Array(0);
       const sorted = src.toSorted();
       const expectLength: int = 0;
@@ -1197,14 +1183,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_7500
-     * @tc.name testFloat32ArrayToSortedTWO075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_7400
+     * @tc.name testFloat32ArrayToSortedTWO074
      * @tc.desc Verify single-element toSorted result stays independent after modifying the source
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const originalValue: number = 42.0;
       const changedValue: number = 7.0;
       const src: Float32Array = new Float32Array([originalValue]);
@@ -1215,14 +1201,14 @@ export default function Float32ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_7600
-     * @tc.name testFloat32ArrayToSortedTWO076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_7500
+     * @tc.name testFloat32ArrayToSortedTWO075
      * @tc.desc Verify toSorted preserves duplicate values in the returned array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToSortedTWO076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToSortedTWO075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = Float32Array.of(2.0, 1.0, 2.0);
       const sorted = source.toSorted();
       expect(sorted.$_get(0)).assertEqual(1.0);
