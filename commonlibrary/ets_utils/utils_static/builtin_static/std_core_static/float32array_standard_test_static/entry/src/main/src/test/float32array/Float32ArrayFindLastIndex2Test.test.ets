@@ -1495,5 +1495,20 @@ export default function Float32ArrayFindLastIndex2Test(): void {
       expect(parent.length).assertEqual(before);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LAST_INDEXTWO_9800
+     * @tc.name testFloat32ArrayFindLastIndexTWO098
+     * @tc.desc Verify findLastIndex on an offset view returns the view-local index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFindLastIndexTWO098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const parent = Float32Array.of(1.0, 2.0, 3.0, 2.0);
+      const view = parent.subarray(1, 4);
+      const index = view.findLastIndex((value: number): boolean => value === 2.0);
+      expect(index).assertEqual(2);
+    });
+
   });
 }

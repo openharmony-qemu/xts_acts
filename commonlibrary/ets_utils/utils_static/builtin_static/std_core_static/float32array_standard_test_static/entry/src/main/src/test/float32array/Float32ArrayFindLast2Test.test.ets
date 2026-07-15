@@ -1341,5 +1341,20 @@ export default function Float32ArrayFindLast2Test(): void {
       expect(result).assertEqual(7.0);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_8600
+     * @tc.name testFloat32ArrayFindLastTWO086
+     * @tc.desc Verify findLast on an offset view only searches elements inside the view
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFindLastTWO086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const parent = Float32Array.of(1.0, 8.0, 3.0, 9.0);
+      const view = parent.subarray(0, 3);
+      const result = view.findLast((value: number): boolean => value > 5.0);
+      expect(result).assertEqual(8.0);
+    });
+
   });
 }

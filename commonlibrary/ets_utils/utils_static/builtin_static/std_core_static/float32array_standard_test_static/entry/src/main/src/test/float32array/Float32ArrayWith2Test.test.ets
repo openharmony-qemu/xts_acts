@@ -1486,5 +1486,21 @@ export default function Float32ArrayWith2Test(): void {
       expect(result.$_get(2)).assertEqual(30.0);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_WITHTWO_9600
+     * @tc.name testFloat32ArrayWithTWO096
+     * @tc.desc Verify with returns an array backed by a different buffer from the source
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayWithTWO096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = Float32Array.of(1.0, 2.0, 3.0);
+      const result = source.with(1, 9.0);
+      expect(result.buffer === source.buffer).assertFalse();
+      result.$_set(0, 99.0);
+      expect(source.$_get(0)).assertEqual(1.0);
+    });
+
   });
 }

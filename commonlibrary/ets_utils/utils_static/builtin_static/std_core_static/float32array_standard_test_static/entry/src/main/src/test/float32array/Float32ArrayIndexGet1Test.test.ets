@@ -1036,5 +1036,23 @@ export default function Float32ArrayIndexGet1Test(): void {
       });
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETONE_6700
+     * @tc.name testFloat32ArrayIndexGetONE067
+     * @tc.desc Verify $_get negative index throws RangeError unlike at negative index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayIndexGetONE067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(1.0, 2.0);
+      try {
+        arr.$_get(-1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
   });
 }

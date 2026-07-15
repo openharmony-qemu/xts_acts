@@ -492,5 +492,112 @@ export default function Float32ArrayMoreActionsTest(): void {
       expect(arr.length).assertEqual(before);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_3000
+     * @tc.name testFloat32ArrayMore030
+     * @tc.desc Verify name property returns Float32Array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayMore030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float32Array = new Float32Array(2);
+      const expectName: string = 'Float32Array';
+      const actualName: string = arr.name;
+      expect(actualName).assertEqual(expectName);
+      expect(arr.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_3100
+     * @tc.name testFloat32ArrayMore031
+     * @tc.desc Verify offset view byteOffset byteLength and length are calculated from constructor arguments
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayMore031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const bufferBytes: number = 24;
+      const byteOffsetValue: number = 8;
+      const viewLengthValue: number = 3;
+      const buf: ArrayBuffer = new ArrayBuffer(bufferBytes);
+      const view: Float32Array = new Float32Array(buf, byteOffsetValue, viewLengthValue);
+      const expectByteLength: number = viewLengthValue * view.BYTES_PER_ELEMENT;
+      expect(view.byteOffset).assertEqual(byteOffsetValue);
+      expect(view.length).assertEqual(viewLengthValue);
+      expect(view.byteLength).assertEqual(expectByteLength);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_3200
+     * @tc.name testFloat32ArrayMore032
+     * @tc.desc Verify buffer property is the same ArrayBuffer passed to the constructor
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayMore032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const byteLengthValue: number = 16;
+      const buf: ArrayBuffer = new ArrayBuffer(byteLengthValue);
+      const view: Float32Array = new Float32Array(buf, 4, 2);
+      const expectByteLength: number = byteLengthValue;
+      expect(view.buffer).assertEqual(buf);
+      expect(view.buffer.byteLength).assertEqual(expectByteLength);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_3300
+     * @tc.name testFloat32ArrayMore033
+     * @tc.desc Verify $_iterator observes a later element update before that element is yielded
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayMore033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float32Array = Float32Array.of(1.0, 2.0, 3.0);
+      const it = arr.$_iterator();
+      const first = it.next();
+      const changedValue: number = 22.0;
+      arr.$_set(1, changedValue);
+      const second = it.next();
+      expect(first.value).assertEqual(1.0);
+      expect(second.value).assertEqual(changedValue);
+      expect(arr.$_get(1)).assertEqual(changedValue);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_3400
+     * @tc.name testFloat32ArrayMore034
+     * @tc.desc Verify empty constructor properties have zero lengths and the expected element byte size
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayMore034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float32Array = new Float32Array();
+      const expectLength: int = 0;
+      const expectByteLength: int = 0;
+      const expectElementBytes: int = 4;
+      expect(arr.length).assertEqual(expectLength);
+      expect(arr.byteLength).assertEqual(expectByteLength);
+      expect(arr.BYTES_PER_ELEMENT).assertEqual(expectElementBytes);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_MORE_3500
+     * @tc.name testFloat32ArrayMore035
+     * @tc.desc Verify ArrayBuffer offset constructor reports view length byteLength and byteOffset
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayMore035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(16);
+      const view = new Float32Array(buffer, 4, 2);
+      expect(view.length).assertEqual(2);
+      expect(view.byteLength).assertEqual(8);
+      expect(view.byteOffset).assertEqual(4);
+    });
+
   });
 }

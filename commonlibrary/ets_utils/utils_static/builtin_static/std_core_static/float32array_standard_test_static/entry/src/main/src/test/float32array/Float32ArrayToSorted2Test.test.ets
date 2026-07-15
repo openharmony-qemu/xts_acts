@@ -637,15 +637,15 @@ export default function Float32ArrayToSorted2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_3900
      * @tc.name testFloat32ArrayToSortedTWO039
-     * @tc.desc Verify empty source array return value length equals 0
+     * @tc.desc Verify toSorted return value is not the source array reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayToSortedTWO039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const src: Float32Array = new Float32Array([]);
+      const src: Float32Array = new Float32Array([3.0, 1.0, 2.0]);
       const r = src.toSorted();
-      expect(r.length).assertEqual(0);
+      expect(r === src).assertFalse();
     });
 
     /**
@@ -1123,6 +1123,111 @@ export default function Float32ArrayToSorted2Test(): void {
       src.$_set(0, 0.0);
       expect(r.$_get(2)).assertEqual(8.0);
       expect(src.$_get(0)).assertEqual(0.0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_7100
+     * @tc.name testFloat32ArrayToSortedTWO071
+     * @tc.desc Verify toSorted keeps duplicate values and leaves the source order unchanged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayToSortedTWO071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const firstValue: number = 2.0;
+      const duplicateValue: number = 1.0;
+      const src: Float32Array = new Float32Array([firstValue, duplicateValue, duplicateValue]);
+      const sorted = src.toSorted();
+      expect(sorted.$_get(0)).assertEqual(duplicateValue);
+      expect(sorted.$_get(1)).assertEqual(duplicateValue);
+      expect(sorted.$_get(2)).assertEqual(firstValue);
+      expect(src.$_get(0)).assertEqual(firstValue);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_7200
+     * @tc.name testFloat32ArrayToSortedTWO072
+     * @tc.desc Verify toSorted result byteLength equals result length times BYTES_PER_ELEMENT
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayToSortedTWO072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const src: Float32Array = new Float32Array([9.0, 3.0, 6.0]);
+      const sorted = src.toSorted();
+      const expectLength: int = 3;
+      const expectByteLength: int = expectLength * sorted.BYTES_PER_ELEMENT;
+      expect(sorted.length).assertEqual(expectLength);
+      expect(sorted.byteLength).assertEqual(expectByteLength);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_7300
+     * @tc.name testFloat32ArrayToSortedTWO073
+     * @tc.desc Verify toSorted on an offset view sorts only the view elements and does not alter the parent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayToSortedTWO073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const parent: Float32Array = new Float32Array([9.0, 4.0, 2.0, 8.0]);
+      const view: Float32Array = parent.subarray(1, 3);
+      const sorted = view.toSorted();
+      expect(sorted.$_get(0)).assertEqual(2.0);
+      expect(sorted.$_get(1)).assertEqual(4.0);
+      expect(parent.$_get(1)).assertEqual(4.0);
+      expect(parent.$_get(2)).assertEqual(2.0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_7400
+     * @tc.name testFloat32ArrayToSortedTWO074
+     * @tc.desc Verify empty toSorted result has length and byteLength zero
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayToSortedTWO074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const src: Float32Array = new Float32Array(0);
+      const sorted = src.toSorted();
+      const expectLength: int = 0;
+      const expectByteLength: int = 0;
+      expect(sorted.length).assertEqual(expectLength);
+      expect(sorted.byteLength).assertEqual(expectByteLength);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_7500
+     * @tc.name testFloat32ArrayToSortedTWO075
+     * @tc.desc Verify single-element toSorted result stays independent after modifying the source
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayToSortedTWO075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const originalValue: number = 42.0;
+      const changedValue: number = 7.0;
+      const src: Float32Array = new Float32Array([originalValue]);
+      const sorted = src.toSorted();
+      src.$_set(0, changedValue);
+      expect(sorted.$_get(0)).assertEqual(originalValue);
+      expect(src.$_get(0)).assertEqual(changedValue);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDTWO_7600
+     * @tc.name testFloat32ArrayToSortedTWO076
+     * @tc.desc Verify toSorted preserves duplicate values in the returned array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayToSortedTWO076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = Float32Array.of(2.0, 1.0, 2.0);
+      const sorted = source.toSorted();
+      expect(sorted.$_get(0)).assertEqual(1.0);
+      expect(sorted.$_get(1)).assertEqual(2.0);
+      expect(sorted.$_get(2)).assertEqual(2.0);
     });
 
   });

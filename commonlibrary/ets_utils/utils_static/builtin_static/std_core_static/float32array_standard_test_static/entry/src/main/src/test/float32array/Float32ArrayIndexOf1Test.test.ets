@@ -1425,5 +1425,18 @@ export default function Float32ArrayIndexOf1Test(): void {
       expect(arr.indexOf(9.0, -1)).assertEqual(2);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFONE_1070
+     * @tc.name testFloat32ArrayIndexOfONE107
+     * @tc.desc Verify fromIndex equal to length returns -1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayIndexOfONE107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(1.0, 2.0, 1.0);
+      expect(arr.indexOf(1.0, arr.length)).assertEqual(-1);
+    });
+
   });
 }

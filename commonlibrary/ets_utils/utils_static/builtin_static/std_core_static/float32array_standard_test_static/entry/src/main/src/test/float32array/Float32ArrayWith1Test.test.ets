@@ -1427,5 +1427,118 @@ export default function Float32ArrayWith1Test(): void {
       expect(s.$_get(0)).assertEqual(2);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_WITHONE_9500
+     * @tc.name testFloat32ArrayWithONE095
+     * @tc.desc Verify with(-1, value) throws RangeError for negative index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayWithONE095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const replacementValue: number = 99.0;
+      const source = Float32Array.of(1.0, 2.0, 3.0);
+      try {
+        source.with(-1, replacementValue);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_WITHONE_9600
+     * @tc.name testFloat32ArrayWithONE096
+     * @tc.desc Verify with result remains independent after the source is modified
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayWithONE096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const sourceFirst: number = 1.0;
+      const replacementValue: number = 50.0;
+      const changedSourceValue: number = 80.0;
+      const source = Float32Array.of(sourceFirst, 2.0);
+      const result = source.with(0, replacementValue);
+      source.$_set(0, changedSourceValue);
+      expect(result.$_get(0)).assertEqual(replacementValue);
+      expect(source.$_get(0)).assertEqual(changedSourceValue);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_WITHONE_9700
+     * @tc.name testFloat32ArrayWithONE097
+     * @tc.desc Verify with on an offset view returns a compact array with byteOffset zero
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayWithONE097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const parent = new Float32Array([10.0, 20.0, 30.0, 40.0]);
+      const view = parent.subarray(1, 3);
+      const replacementValue: number = 88.0;
+      const result = view.with(1, replacementValue);
+      expect(result.byteOffset).assertEqual(0);
+      expect(result.$_get(0)).assertEqual(20.0);
+      expect(result.$_get(1)).assertEqual(replacementValue);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_WITHONE_9800
+     * @tc.name testFloat32ArrayWithONE098
+     * @tc.desc Verify with can replace an element with NaN while leaving the source unchanged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayWithONE098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const sourceValue: number = 5.0;
+      const source = Float32Array.of(sourceValue, 6.0);
+      const result = source.with(0, NaN);
+      expect(result.$_get(0)).assertNaN();
+      expect(source.$_get(0)).assertEqual(sourceValue);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_WITHONE_9900
+     * @tc.name testFloat32ArrayWithONE099
+     * @tc.desc Verify with(-length, value) throws RangeError for negative index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayWithONE099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const replacementValue: number = 70.0;
+      const source = Float32Array.of(7.0, 8.0, 9.0);
+      const targetIndex: int = -source.length;
+      try {
+        source.with(targetIndex, replacementValue);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_WITHONE_10000
+     * @tc.name testFloat32ArrayWithONE100
+     * @tc.desc Verify negative index RangeError leaves all source elements unchanged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayWithONE100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = Float32Array.of(1.0, 2.0, 3.0);
+      try {
+        source.with(-1, 9.0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+      expect(source.$_get(0)).assertEqual(1.0);
+      expect(source.$_get(1)).assertEqual(2.0);
+      expect(source.$_get(2)).assertEqual(3.0);
+    });
+
   });
 }

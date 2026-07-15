@@ -1544,7 +1544,7 @@ export default function Float32ArrayToLocaleString1Test(): void {
     it('testFloat32ArrayToLocaleStringONE102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([Infinity]);
       const result = arr.toLocaleString('en-US');
-      expect(result).assertEqual('??);
+      expect(result).assertEqual('\u221E');
     });
 
     /**
@@ -1558,7 +1558,7 @@ export default function Float32ArrayToLocaleString1Test(): void {
     it('testFloat32ArrayToLocaleStringONE103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([-Infinity]);
       const result = arr.toLocaleString('en-US');
-      expect(result).assertEqual('-??);
+      expect(result).assertEqual('-\u221E');
     });
 
     /**
@@ -1586,7 +1586,7 @@ export default function Float32ArrayToLocaleString1Test(): void {
     it('testFloat32ArrayToLocaleStringONE105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([Infinity]);
       const result = arr.toLocaleString('zh-CN');
-      expect(result).assertEqual('??);
+      expect(result).assertEqual('\u221E');
     });
 
     /**
@@ -1600,7 +1600,7 @@ export default function Float32ArrayToLocaleString1Test(): void {
     it('testFloat32ArrayToLocaleStringONE106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1e40]);
       const result = arr.toLocaleString('en-US');
-      expect(result).assertEqual('??);
+      expect(result).assertEqual('\u221E');
     });
 
     /**
@@ -1686,6 +1686,22 @@ export default function Float32ArrayToLocaleString1Test(): void {
       let opts: Record<string, Int> = { 'minimumFractionDigits': 2, 'maximumFractionDigits': 2 };
       const result = arr.toLocaleString('en-US', opts);
       expect(result).assertEqual('12.5');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGONE_1130
+     * @tc.name testFloat32ArrayToLocaleStringONE113
+     * @tc.desc Verify useGrouping false option call returns a stable formatted string and leaves source unchanged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayToLocaleStringONE113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float32Array([1234.0]);
+      let opts: Record<string, Boolean> = { 'useGrouping': false };
+      const result = arr.toLocaleString('en-US', opts);
+      expect(result).assertEqual(arr.toLocaleString('en-US', opts));
+      expect(arr.$_get(0)).assertEqual(1234.0);
     });
 
   });

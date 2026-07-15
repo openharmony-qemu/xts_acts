@@ -1056,5 +1056,21 @@ export default function Float32ArrayToLocaleString2Test(): void {
       expect(arr.length).assertEqual(1);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_6800
+     * @tc.name testFloat32ArrayToLocaleStringTWO068
+     * @tc.desc Verify returned locale string remains a snapshot after the source changes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayToLocaleStringTWO068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(1.0, 2.0);
+      const result = arr.toLocaleString('en-US');
+      arr.$_set(0, 9.0);
+      expect(result).assertEqual('1,2');
+      expect(arr.toLocaleString('en-US')).assertEqual('9,2');
+    });
+
   });
 }

@@ -480,6 +480,114 @@ export default function Float32ArrayToString2Test(): void {
       expect(view.toString()).assertEqual('10,-1,0');
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_STRINGTWO_3100
+     * @tc.name testFloat32ArrayToStringTWO031
+     * @tc.desc Verify empty subarray toString returns an empty string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayToStringTWO031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const base = new Float32Array([1.0, 2.0, 3.0]);
+      const startIndex: int = 1;
+      const endIndex: int = 1;
+      const view = base.subarray(startIndex, endIndex);
+      const expectText: string = '';
+      expect(view.toString()).assertEqual(expectText);
+      expect(view.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_STRINGTWO_3200
+     * @tc.name testFloat32ArrayToStringTWO032
+     * @tc.desc Verify toString formats NaN and Infinity special values in sequence
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayToStringTWO032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float32Array([NaN, Infinity, -Infinity]);
+      const expectText: string = 'NaN,Infinity,-Infinity';
+      const actualText: string = arr.toString();
+      expect(actualText).assertEqual(expectText);
+      expect(arr.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_STRINGTWO_3300
+     * @tc.name testFloat32ArrayToStringTWO033
+     * @tc.desc Verify view toString reflects a backing array update made before the call
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayToStringTWO033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      const base = new Float32Array(buf);
+      const view = new Float32Array(buf, 4, 2);
+      const firstValue: number = 12.0;
+      const secondValue: number = 24.0;
+      base.$_set(1, firstValue);
+      base.$_set(2, secondValue);
+      const expectText: string = '12,24';
+      expect(view.toString()).assertEqual(expectText);
+      expect(view.byteOffset).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_STRINGTWO_3400
+     * @tc.name testFloat32ArrayToStringTWO034
+     * @tc.desc Verify toString does not modify length or byteLength
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayToStringTWO034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float32Array([4.0, 5.0]);
+      const beforeLength: int = arr.length;
+      const beforeByteLength: int = arr.byteLength;
+      const expectText: string = '4,5';
+      const actualText: string = arr.toString();
+      expect(actualText).assertEqual(expectText);
+      expect(arr.length).assertEqual(beforeLength);
+      expect(arr.byteLength).assertEqual(beforeByteLength);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_STRINGTWO_3500
+     * @tc.name testFloat32ArrayToStringTWO035
+     * @tc.desc Verify toString on a single-element offset view returns only that element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayToStringTWO035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(12);
+      const base = new Float32Array(buf);
+      base.$_set(0, 1.0);
+      base.$_set(1, 2.0);
+      base.$_set(2, 3.0);
+      const view = new Float32Array(buf, 4, 1);
+      const expectText: string = '2';
+      expect(view.toString()).assertEqual(expectText);
+      expect(view.length).assertEqual(1);
+    });
+
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_STRINGTWO_3600
+     * @tc.name testFloat32ArrayToStringTWO036
+     * @tc.desc Verify toString on an offset view only serializes the view range
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayToStringTWO036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const parent = Float32Array.of(1.0, 2.0, 3.0, 4.0);
+      const view = parent.subarray(1, 3);
+      expect(view.toString()).assertEqual('2,3');
+    });
 
   });
 }

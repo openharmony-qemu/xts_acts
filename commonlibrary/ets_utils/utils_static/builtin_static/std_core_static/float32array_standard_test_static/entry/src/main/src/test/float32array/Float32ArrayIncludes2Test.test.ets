@@ -1673,5 +1673,20 @@ export default function Float32ArrayIncludes2Test(): void {
       expect(b.$_get(0)).assertEqual(2.0);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INCLUDESTWO_1090
+     * @tc.name testFloat32ArrayIncludesTWO109
+     * @tc.desc Verify includes fromIndex on an offset view is relative to the view
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayIncludesTWO109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const parent = Float32Array.of(1.0, 2.0, 3.0, 4.0);
+      const view = parent.subarray(1, 4);
+      expect(view.includes(2.0, 1)).assertFalse();
+      expect(view.includes(3.0, 1)).assertTrue();
+    });
+
   });
 }

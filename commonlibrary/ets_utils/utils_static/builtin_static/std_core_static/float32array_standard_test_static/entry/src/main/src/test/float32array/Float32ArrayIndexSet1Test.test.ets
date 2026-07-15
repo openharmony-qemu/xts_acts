@@ -1692,5 +1692,26 @@ export default function Float32ArrayIndexSet1Test(): void {
       expect(arr.$_get(1)).assertEqual(66.0);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_SETONE_1130
+     * @tc.name testFloat32ArrayIndexSetONE113
+     * @tc.desc Verify negative index write throws RangeError and leaves all elements unchanged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayIndexSetONE113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(1.0, 2.0, 3.0);
+      try {
+        arr.$_set(-1, 9.0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+      expect(arr.$_get(0)).assertEqual(1.0);
+      expect(arr.$_get(1)).assertEqual(2.0);
+      expect(arr.$_get(2)).assertEqual(3.0);
+    });
+
   });
 }

@@ -1482,5 +1482,24 @@ export default function Float32ArrayFindLast1Test(): void {
       expect(found).assertEqual(9.0);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTONE_9900
+     * @tc.name testFloat32ArrayFindLastONE099
+     * @tc.desc Verify findLast short-circuits from the right when the last element matches
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFindLastONE099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(1.0, 2.0, 3.0);
+      let calls: int = 0;
+      const result = arr.findLast((value: number): boolean => {
+        calls++;
+        return value === 3.0;
+      });
+      expect(result).assertEqual(3.0);
+      expect(calls).assertEqual(1);
+    });
+
   });
 }

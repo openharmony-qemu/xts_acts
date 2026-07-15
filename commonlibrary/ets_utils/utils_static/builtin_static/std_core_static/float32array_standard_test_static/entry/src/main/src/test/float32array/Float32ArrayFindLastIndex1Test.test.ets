@@ -1679,5 +1679,28 @@ export default function Float32ArrayFindLastIndex1Test(): void {
       expect(idx).assertEqual(0);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LAST_INDEXONE_9300
+     * @tc.name testFloat32ArrayFindLastIndexONE093
+     * @tc.desc Verify findLastIndex propagates predicate exceptions during reverse traversal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFindLastIndexONE093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(1.0, 2.0, 3.0);
+      try {
+        arr.findLastIndex((value: number): boolean => {
+          if (value === 2.0) {
+            throw new Error('stop');
+          }
+          return false;
+        });
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+      }
+    });
+
   });
 }

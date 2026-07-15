@@ -290,15 +290,15 @@ export default function Float32ArrayToReversed2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_REVERSEDTWO_1700
      * @tc.name testFloat32ArrayToReversedTWO017
-     * @tc.desc Verify After reversing an empty array, the result length is 0
+     * @tc.desc Verify toReversed return value is not the source array reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayToReversedTWO017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([]);
+      const arr = new Float32Array([1.0, 2.0]);
       const rev = arr.toReversed();
-      expect(rev.length).assertEqual(0);
+      expect(rev === arr).assertFalse();
     });
 
     /**
@@ -1175,6 +1175,23 @@ export default function Float32ArrayToReversed2Test(): void {
       expect(rev.$_get(1)).assertEqual(10);
     });
 
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_REVERSEDTWO_7700
+     * @tc.name testFloat32ArrayToReversedTWO077
+     * @tc.desc Verify toReversed on an offset view returns a compact independent array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayToReversedTWO077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const parent = Float32Array.of(1.0, 2.0, 3.0, 4.0);
+      const view = parent.subarray(1, 4);
+      const reversed = view.toReversed();
+      expect(reversed.byteOffset).assertEqual(0);
+      reversed.$_set(0, 99.0);
+      expect(parent.$_get(3)).assertEqual(4.0);
+    });
 
   });
 }

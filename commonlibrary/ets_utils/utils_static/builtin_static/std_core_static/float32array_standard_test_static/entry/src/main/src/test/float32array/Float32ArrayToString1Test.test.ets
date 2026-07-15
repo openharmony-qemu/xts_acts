@@ -795,5 +795,19 @@ export default function Float32ArrayToString1Test(): void {
       expect(arr.toString()).assertEqual("0,0");
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_STRINGONE_5800
+     * @tc.name testFloat32ArrayToStringONE058
+     * @tc.desc Verify negative zero stringifies as 0 while the source keeps its sign bit
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayToStringONE058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(-0.0);
+      expect(arr.toString()).assertEqual('0');
+      expect(1.0 / arr.$_get(0)).assertEqual(-Infinity);
+    });
+
   });
 }

@@ -1844,5 +1844,22 @@ export default function Float32ArrayFrom2Test(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FROMTWO_1170
+     * @tc.name testFloat32ArrayFromTWO117
+     * @tc.desc Verify Set treats negative zero and positive zero as one source element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFromTWO117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<number>();
+      set.add(-0.0);
+      set.add(0.0);
+      const arr = Float32Array.from(set);
+      expect(arr.length).assertEqual(1);
+      expect(arr.$_get(0)).assertEqual(0.0);
+    });
+
   });
 }

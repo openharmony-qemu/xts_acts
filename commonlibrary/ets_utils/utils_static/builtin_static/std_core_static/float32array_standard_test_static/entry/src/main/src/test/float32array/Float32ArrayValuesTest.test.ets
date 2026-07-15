@@ -1633,5 +1633,20 @@ export default function Float32ArrayValuesTest(): void {
       expect(it.next().value).assertEqual(3.0);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_10000
+     * @tc.name testFloat32ArrayValues100
+     * @tc.desc Verify values iterator observes source updates before next is consumed
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayValues100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = Float32Array.of(1.0, 2.0);
+      const iter = source.values();
+      source.$_set(0, 9.0);
+      expect(iter.next().value).assertEqual(9.0);
+    });
+
   });
 }

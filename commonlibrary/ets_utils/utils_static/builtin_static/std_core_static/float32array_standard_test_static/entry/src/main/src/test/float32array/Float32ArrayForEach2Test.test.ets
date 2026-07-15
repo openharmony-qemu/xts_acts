@@ -1235,5 +1235,128 @@ export default function Float32ArrayForEach2Test(): void {
       });
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FOR_EACHTWO_7400
+     * @tc.name testFloat32ArrayForEachTWO074
+     * @tc.desc Verify empty array forEach does not call the callback
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayForEachTWO074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float32Array(0);
+      let callCount: int = 0;
+      arr.forEach((v: number, i: int, a: Float32Array): void => {
+        callCount++;
+      });
+      const expectCount: int = 0;
+      expect(callCount).assertEqual(expectCount);
+      expect(arr.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FOR_EACHTWO_7500
+     * @tc.name testFloat32ArrayForEachTWO075
+     * @tc.desc Verify forEach callback observes a previous callback update to a later element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayForEachTWO075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float32Array([1.0, 2.0, 3.0]);
+      const changedValue: number = 20.0;
+      let observedValue: number = 0.0;
+      arr.forEach((v: number, i: int, a: Float32Array): void => {
+        if (i === 0) {
+          a.$_set(1, changedValue);
+        }
+        if (i === 1) {
+          observedValue = v;
+        }
+      });
+      expect(observedValue).assertEqual(changedValue);
+      expect(arr.$_get(1)).assertEqual(changedValue);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FOR_EACHTWO_7600
+     * @tc.name testFloat32ArrayForEachTWO076
+     * @tc.desc Verify forEach on an offset view reports indexes relative to the view
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayForEachTWO076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(20);
+      const view = new Float32Array(buf, 8, 3);
+      let indexTotal: int = 0;
+      view.forEach((v: number, i: int, a: Float32Array): void => {
+        indexTotal = indexTotal + i;
+      });
+      const expectTotal: int = 3;
+      expect(indexTotal).assertEqual(expectTotal);
+      expect(view.byteOffset).assertEqual(8);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FOR_EACHTWO_7700
+     * @tc.name testFloat32ArrayForEachTWO077
+     * @tc.desc Verify forEach can update the current element through the callback array argument
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayForEachTWO077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float32Array([3.0, 6.0]);
+      const replacementValue: number = 9.0;
+      arr.forEach((v: number, i: int, a: Float32Array): void => {
+        if (i === 0) {
+          a.$_set(i, replacementValue);
+        }
+      });
+      expect(arr.$_get(0)).assertEqual(replacementValue);
+      expect(arr.$_get(1)).assertEqual(6.0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FOR_EACHTWO_7800
+     * @tc.name testFloat32ArrayForEachTWO078
+     * @tc.desc Verify forEach callback array argument is the same object as the receiver
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayForEachTWO078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float32Array([2.0]);
+      let sameArray: boolean = false;
+      arr.forEach((v: number, i: int, a: Float32Array): void => {
+        sameArray = a === arr;
+      });
+      expect(sameArray).assertTrue();
+      expect(arr.$_get(0)).assertEqual(2.0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FOR_EACHTWO_7900
+     * @tc.name testFloat32ArrayForEachTWO079
+     * @tc.desc Verify forEach observes updates made to later elements before visiting them
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayForEachTWO079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(1.0, 2.0, 3.0);
+      let seenSecond: number = 0.0;
+      arr.forEach((value: number, index: int, array: Float32Array): void => {
+        if (index === 0) {
+          array.$_set(1, 9.0);
+        }
+        if (index === 1) {
+          seenSecond = value;
+        }
+      });
+      expect(seenSecond).assertEqual(9.0);
+    });
+
   });
 }

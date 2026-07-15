@@ -1254,5 +1254,21 @@ export default function Float32ArrayToReversed1Test(): void {
       expect(result.length).assertEqual(3);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_REVERSEDONE_7700
+     * @tc.name testFloat32ArrayToReversedONE077
+     * @tc.desc Verify modifying the toReversed result does not affect the source array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayToReversedONE077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = Float32Array.of(1.0, 2.0, 3.0);
+      const reversed = source.toReversed();
+      reversed.$_set(0, 9.0);
+      expect(source.$_get(2)).assertEqual(3.0);
+      expect(reversed.$_get(0)).assertEqual(9.0);
+    });
+
   });
 }

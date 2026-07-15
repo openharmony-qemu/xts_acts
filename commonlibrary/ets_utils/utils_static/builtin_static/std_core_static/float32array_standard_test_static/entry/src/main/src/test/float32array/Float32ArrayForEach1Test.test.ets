@@ -1549,5 +1549,30 @@ export default function Float32ArrayForEach1Test(): void {
       expect(arr.$_get(3)).assertEqual(99.0);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FOR_EACHONE_8500
+     * @tc.name testFloat32ArrayForEachONE085
+     * @tc.desc Verify forEach propagates callback exceptions and stops iteration
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayForEachONE085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(1.0, 2.0, 3.0);
+      let calls: int = 0;
+      try {
+        arr.forEach((value: number): void => {
+          calls++;
+          if (value === 2.0) {
+            throw new Error('stop');
+          }
+        });
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+      }
+      expect(calls).assertEqual(2);
+    });
+
   });
 }

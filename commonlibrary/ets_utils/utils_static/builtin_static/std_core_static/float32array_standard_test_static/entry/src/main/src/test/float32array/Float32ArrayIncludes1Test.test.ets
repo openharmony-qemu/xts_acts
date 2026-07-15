@@ -1711,5 +1711,19 @@ export default function Float32ArrayIncludes1Test(): void {
     });
 
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INCLUDESONE_1200
+     * @tc.name testFloat32ArrayIncludesONE120
+     * @tc.desc Verify fromIndex -length starts searching from the first element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayIncludesONE120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(7.0, 8.0, 9.0);
+      const fromIndex: int = -arr.length;
+      expect(arr.includes(7.0, fromIndex)).assertTrue();
+    });
+
   });
 }

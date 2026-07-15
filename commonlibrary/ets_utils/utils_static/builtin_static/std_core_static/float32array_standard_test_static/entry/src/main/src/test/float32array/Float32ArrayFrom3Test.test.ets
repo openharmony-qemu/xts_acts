@@ -1854,5 +1854,30 @@ export default function Float32ArrayFrom3Test(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FROMTHREE_1140
+     * @tc.name testFloat32ArrayFromTHREE114
+     * @tc.desc Verify from iterable mapfn exceptions are propagated
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFromTHREE114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<number>();
+      set.add(1.0);
+      set.add(2.0);
+      try {
+        Float32Array.from(set, (value: number, index: number): number => {
+          if (index === 1) {
+            throw new Error('stop');
+          }
+          return value;
+        });
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+      }
+    });
+
   });
 }

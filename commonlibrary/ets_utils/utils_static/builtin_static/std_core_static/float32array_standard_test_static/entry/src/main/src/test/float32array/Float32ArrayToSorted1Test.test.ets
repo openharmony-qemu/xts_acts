@@ -1186,5 +1186,21 @@ export default function Float32ArrayToSorted1Test(): void {
       expect(s.$_get(1)).assertEqual(Infinity);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_SORTEDONE_7600
+     * @tc.name testFloat32ArrayToSortedONE076
+     * @tc.desc Verify toSorted orders infinities and finite values while leaving the source unchanged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayToSortedONE076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = Float32Array.of(Infinity, -Infinity, 1.0);
+      const sorted = source.toSorted();
+      expect(sorted.$_get(0)).assertEqual(-Infinity);
+      expect(sorted.$_get(2)).assertEqual(Infinity);
+      expect(source.$_get(0)).assertEqual(Infinity);
+    });
+
   });
 }

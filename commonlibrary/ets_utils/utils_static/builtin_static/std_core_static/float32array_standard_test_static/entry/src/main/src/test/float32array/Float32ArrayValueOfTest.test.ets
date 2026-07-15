@@ -1215,5 +1215,21 @@ export default function Float32ArrayValueOfTest(): void {
       expect(ok).assertTrue();
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUE_OF_8200
+     * @tc.name testFloat32ArrayValueOf082
+     * @tc.desc Verify chained valueOf calls return the same receiver reference
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayValueOf082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = Float32Array.of(1.0, 2.0);
+      const first = source.valueOf();
+      const second = first.valueOf();
+      expect(first === source).assertTrue();
+      expect(second === source).assertTrue();
+    });
+
   });
 }

@@ -1489,5 +1489,19 @@ export default function Float32ArrayIndexOf2Test(): void {
       expect(a.buffer).assertEqual(buf);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_1030
+     * @tc.name testFloat32ArrayIndexOfTWO103
+     * @tc.desc Verify indexOf on an offset view returns the view-local index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayIndexOfTWO103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const parent = Float32Array.of(1.0, 2.0, 3.0, 4.0);
+      const view = parent.subarray(1, 4);
+      expect(view.indexOf(3.0)).assertEqual(1);
+    });
+
   });
 }

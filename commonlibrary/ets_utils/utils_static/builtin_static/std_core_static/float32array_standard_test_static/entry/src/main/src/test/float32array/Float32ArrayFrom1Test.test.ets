@@ -1751,5 +1751,21 @@ export default function Float32ArrayFrom1Test(): void {
       expect(r.byteLength).assertEqual(12);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FROMONE_1150
+     * @tc.name testFloat32ArrayFromONE115
+     * @tc.desc Verify from(Float32Array) creates an independent copy after the source changes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFromONE115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = Float32Array.of(1.0, 2.0);
+      const copied = Float32Array.from(source);
+      source.$_set(0, 9.0);
+      expect(copied.$_get(0)).assertEqual(1.0);
+      expect(source.$_get(0)).assertEqual(9.0);
+    });
+
   });
 }

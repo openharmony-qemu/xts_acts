@@ -1594,5 +1594,115 @@ export default function Float32ArrayIndexSet2Test(): void {
       expect(arr.$_get(0) === arr.$_get(1)).assertEqual(false);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_SETTWO_1060
+     * @tc.name testFloat32ArrayIndexSetTWO106
+     * @tc.desc Verify $_set(-0, value) writes the first element only
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayIndexSetTWO106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const firstValue: number = 12.0;
+      const secondValue: number = 24.0;
+      const arr = new Float32Array([0.0, secondValue]);
+      arr.$_set(-0, firstValue);
+      const expectFirst: number = firstValue;
+      const expectSecond: number = secondValue;
+      expect(arr.$_get(0)).assertEqual(expectFirst);
+      expect(arr.$_get(1)).assertEqual(expectSecond);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_SETTWO_1070
+     * @tc.name testFloat32ArrayIndexSetTWO107
+     * @tc.desc Verify $_set on an offset view updates the corresponding parent element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayIndexSetTWO107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      const parent: Float32Array = new Float32Array(buf);
+      const view: Float32Array = new Float32Array(buf, 4, 2);
+      const expectValue: number = 77.0;
+      view.$_set(0, expectValue);
+      expect(parent.$_get(1)).assertEqual(expectValue);
+      expect(view.byteOffset).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_SETTWO_1080
+     * @tc.name testFloat32ArrayIndexSetTWO108
+     * @tc.desc Verify parent $_set updates a sibling view sharing the same backing buffer range
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayIndexSetTWO108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(12);
+      const parent: Float32Array = new Float32Array(buf);
+      const view: Float32Array = new Float32Array(buf, 4, 2);
+      const expectValue: number = 88.0;
+      parent.$_set(2, expectValue);
+      expect(view.$_get(1)).assertEqual(expectValue);
+      expect(parent.byteLength).assertEqual(12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_SETTWO_1090
+     * @tc.name testFloat32ArrayIndexSetTWO109
+     * @tc.desc Verify $_set at length minus one writes only the last element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayIndexSetTWO109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const firstValue: number = 1.0;
+      const middleValue: number = 2.0;
+      const lastValue: number = 99.0;
+      const arr = new Float32Array([firstValue, middleValue, 3.0]);
+      const lastIndex: int = arr.length - 1;
+      arr.$_set(lastIndex, lastValue);
+      expect(arr.$_get(0)).assertEqual(firstValue);
+      expect(arr.$_get(1)).assertEqual(middleValue);
+      expect(arr.$_get(2)).assertEqual(lastValue);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_SETTWO_1100
+     * @tc.name testFloat32ArrayIndexSetTWO110
+     * @tc.desc Verify $_set preserves negative zero sign in Float32 storage
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayIndexSetTWO110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float32Array(1);
+      const negativeZeroValue: number = -0.0;
+      arr.$_set(0, negativeZeroValue);
+      const actualValue: number = arr.$_get(0);
+      const expectValue: number = Number.NEGATIVE_INFINITY;
+      expect(1.0 / actualValue).assertEqual(expectValue);
+      expect(arr.length).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_SETTWO_1110
+     * @tc.name testFloat32ArrayIndexSetTWO111
+     * @tc.desc Verify $_set on an offset view writes through to the parent at the corresponding position
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayIndexSetTWO111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const parent = Float32Array.of(1.0, 2.0, 3.0, 4.0);
+      const view = parent.subarray(1, 3);
+      view.$_set(0, 9.0);
+      expect(parent.$_get(0)).assertEqual(1.0);
+      expect(parent.$_get(1)).assertEqual(9.0);
+      expect(parent.$_get(3)).assertEqual(4.0);
+    });
+
   });
 }
