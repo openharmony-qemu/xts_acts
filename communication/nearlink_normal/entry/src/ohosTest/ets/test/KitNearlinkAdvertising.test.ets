@@ -361,6 +361,15 @@ export default function advertisingTest() {
             console.info('[Nearlink Test] slee 100');
           }
         }
+        for(let i = 0;i <= 100;i++) {
+          if (startadvertising_start_state === advertising.AdvertisingState.STOPPED) {
+            console.info('[Nearlink Test]  startAdvertising stopAdvertising');
+            break;
+          } else {
+            await sleep(100);
+            console.info('[Nearlink Test] slee 100');
+          }
+        }
         advertising.offAdvertisingStateChange(onReceiveEvent);
         console.info('[Nearlink Test] offAdvertisingStateChange success');
       } catch (error) {
@@ -515,6 +524,15 @@ export default function advertisingTest() {
             console.info('[Nearlink Test] slee 100');
           }
         }
+        for(let i = 0;i <= 100;i++) {
+          if (startadvertising_start_state === advertising.AdvertisingState.STOPPED) {
+            console.info('[Nearlink Test]  startAdvertising stopAdvertising');
+            break;
+          } else {
+            await sleep(100);
+            console.info('[Nearlink Test] slee 100');
+          }
+        }
         advertising.offAdvertisingStateChange();
         console.info('[Nearlink Test] offAdvertisingStateChange success');
       } catch (error) {
@@ -554,6 +572,15 @@ export default function advertisingTest() {
             console.info('[Nearlink Test]  startAdvertising startAdvertising');
             await advertising.stopAdvertising(outAdvHandle);
             console.info('[Nearlink Test] stopAdvertising promise success');
+            break;
+          } else {
+            await sleep(100);
+            console.info('[Nearlink Test] slee 100');
+          }
+        }
+        for(let i = 0;i <= 100;i++) {
+          if (startadvertising_start_state === advertising.AdvertisingState.STOPPED) {
+            console.info('[Nearlink Test]  startAdvertising stopAdvertising');
             break;
           } else {
             await sleep(100);
@@ -728,6 +755,15 @@ export default function advertisingTest() {
             console.info('[Nearlink Test]  startAdvertising startAdvertising');
             await advertising.stopAdvertising(outAdvHandle);
             console.info('[Nearlink Test] stopAdvertising promise success');
+            break;
+          } else {
+            await sleep(100);
+            console.info('[Nearlink Test] slee 100');
+          }
+        }
+        for(let i = 0;i <= 100;i++) {
+          if (startadvertising_start_state === advertising.AdvertisingState.STOPPED) {
+            console.info('[Nearlink Test]  startAdvertising stopAdvertising');
             break;
           } else {
             await sleep(100);
