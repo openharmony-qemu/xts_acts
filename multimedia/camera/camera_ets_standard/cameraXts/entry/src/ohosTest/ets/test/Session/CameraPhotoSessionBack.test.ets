@@ -875,26 +875,26 @@ export default function CameraPhotoSessionBackTest() {
           mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
           await getCommitConfig(mPreviewOutput, mPhotoOutput);
           console.info(TAG, testName + ' session commitConfig successfully.');
-           let callbackDone = false;
-           mPhotoSession.start((error) => {
-             if (error !== undefined && error.code !== 0) {
-               console.error(TAG,
-                 testName + ' failed to start, err: ' + error.code + ', msg: ' + error.message);
-               expect().assertFail();
-             } else {
-               console.info(TAG, testName + ' session start passed.');
-               expect(true).assertTrue();
-             }
-             callbackDone = true;
-           });
-           for (let i = 0; i < 10; i++) {
-             await sleep(200);
-             if (callbackDone) {
-               break;
-             }
-           }
-           expect(callbackDone).assertTrue();
-           await mPhotoSession.stop();
+          let callbackDone = false;
+          mPhotoSession.start((error) => {
+            if (error !== undefined && error.code !== 0) {
+              console.error(TAG,
+                testName + ' failed to start, err: ' + error.code + ', msg: ' + error.message);
+              expect().assertFail();
+            } else {
+              console.info(TAG, testName + ' session start passed.');
+              expect(true).assertTrue();
+            }
+            callbackDone = true;
+          });
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
+            if (callbackDone) {
+              break;
+            }
+          }
+          expect(callbackDone).assertTrue();
+          await mPhotoSession.stop();
           console.info(TAG, testName + ' session stop passed.');
           await releasePhotoSession();
         }
@@ -979,26 +979,26 @@ export default function CameraPhotoSessionBackTest() {
         } else {
           expect(isEmpty(mPhotoSession)).assertFalse();
           console.info(TAG, testName + ' session created successfully.');
-           let callbackDone = false;
-           mPhotoSession.start((error) => {
-             if (error !== undefined && error.code !== 0) {
-               console.error(TAG,
-                 testName + ' failed to start, err: ' + error.code + ', msg: ' + error.message);
-               expect(error.code == cameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
-             } else {
-               console.info(TAG, testName + ' session start passed.');
-               expect(true).assertTrue();
-             }
-             callbackDone = true;
-           });
-           for (let i = 0; i < 10; i++) {
-             await sleep(200);
-             if (callbackDone) {
-               break;
-             }
-           }
-           expect(callbackDone).assertTrue();
-           mPhotoSession.beginConfig();
+          let callbackDone = false;
+          mPhotoSession.start((error) => {
+            if (error !== undefined && error.code !== 0) {
+              console.error(TAG,
+                testName + ' failed to start, err: ' + error.code + ', msg: ' + error.message);
+              expect(error.code == cameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
+            } else {
+              console.info(TAG, testName + ' session start passed.');
+              expect(true).assertTrue();
+            }
+            callbackDone = true;
+          });
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
+            if (callbackDone) {
+              break;
+            }
+          }
+          expect(callbackDone).assertTrue();
+          mPhotoSession.beginConfig();
           console.info(TAG, testName + ' beginConfig passed.');
           expect(true).assertTrue();
         }
@@ -1539,28 +1539,28 @@ export default function CameraPhotoSessionBackTest() {
           mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
           mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
           await getCommitConfig(mPreviewOutput, mPhotoOutput);
-           let callbackDone = false;
-           mPhotoSession.commitConfig((error) => {
-             if (error !== undefined && error.code !== 0) {
-               console.error(TAG,
-                 testName + ' failed to commitConfig, err: ' + error.code + ', msg: ' + error.message);
-               expect(error.code == cameraErrorCode.OPERATION_NOT_ALLOWED).assertTrue();
-             } else {
-               console.info(TAG, testName + ' session commitConfig passed.');
-               expect(true).assertTrue();
-             }
-             callbackDone = true;
-           });
-           for (let i = 0; i < 10; i++) {
-             await sleep(200);
-             if (callbackDone) {
-               break;
-             }
-           }
-           expect(callbackDone).assertTrue();
-           await mPhotoSession.release();
-         }
-         done();
+          let callbackDone = false;
+          mPhotoSession.commitConfig((error) => {
+            if (error !== undefined && error.code !== 0) {
+              console.error(TAG,
+                testName + ' failed to commitConfig, err: ' + error.code + ', msg: ' + error.message);
+              expect(error.code == cameraErrorCode.OPERATION_NOT_ALLOWED).assertTrue();
+            } else {
+              console.info(TAG, testName + ' session commitConfig passed.');
+              expect(true).assertTrue();
+            }
+            callbackDone = true;
+          });
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
+            if (callbackDone) {
+              break;
+            }
+          }
+          expect(callbackDone).assertTrue();
+          await mPhotoSession.release();
+        }
+        done();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
         expect(error.code == cameraErrorCode.SERVICE_FATAL_ERROR).assertTrue();
