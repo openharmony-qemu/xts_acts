@@ -93,7 +93,7 @@ struct WebComponent {
 
 
       Web({ src: $rawfile('example.html'), controller: this.controller }).key('InputmethodAttachedButton')
-	    .onInputmethodAttached(callback)
+	    .onInputmethodAttached(this.callback)
         .onInputmethodAttached(() => {
           console.log('inputmethod attached');
           inputMethod.getController().showTextInput();
