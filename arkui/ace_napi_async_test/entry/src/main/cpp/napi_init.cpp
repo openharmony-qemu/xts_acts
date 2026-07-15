@@ -1887,32 +1887,6 @@ static napi_value TestNapiCreateAsyncWork_NullExecute(napi_env env, napi_callbac
     return result;
 }
 
-static napi_value TestNapiCreateAsyncWork_NullEnv(napi_env env, napi_callback_info)
-{
-    napi_value async_resource_name = nullptr;
-    if (!CheckNapiCall(env, napi_create_string_utf8(env, "test", NAPI_AUTO_LENGTH, &async_resource_name))) {
-        return nullptr;
-    }
-    if (!CheckNapiAssertion(env, async_resource_name != nullptr, "async_resource_name should not be null")) {
-        return nullptr;
-    }
-
-    napi_async_work work = nullptr;
-    void* data = GetInvalidCounterData();
-    napi_status status = napi_create_async_work(nullptr, nullptr, async_resource_name,
-        ExecuteCallback, CompleteCallback, data, &work);
-    if (!CheckNapiAssertion(env,
-        status == napi_invalid_arg,
-        "napi_create_async_work with null env should return napi_invalid_arg")) {
-        return nullptr;
-    }
-    
-    napi_value result;
-    bool bRet = true;
-    napi_get_boolean(env, bRet, &result);
-    return result;
-}
-
 static napi_value TestNapiCreateAsyncWork_NullResult(napi_env env, napi_callback_info)
 {
     napi_value async_resource = nullptr;
@@ -2261,56 +2235,6 @@ static napi_value TestNapiQueueAsyncWork_CanceledWork(napi_env env, napi_callbac
     return promise;
 }
 
-static napi_value TestNapiQueueAsyncWork_DeletedWork(napi_env env, napi_callback_info)
-{
-    napi_value async_resource = nullptr;
-    napi_value async_resource_name = nullptr;
-    if (!CheckNapiCall(env, napi_create_string_utf8(env, "test", NAPI_AUTO_LENGTH, &async_resource_name))) {
-        return nullptr;
-    }
-    if (!CheckNapiAssertion(env, async_resource_name != nullptr, "async_resource_name should not be null")) {
-        return nullptr;
-    }
-    
-    napi_async_work work = nullptr;
-    void* data = GetInvalidCounterData();
-    
-    napi_status status = napi_create_async_work(env, async_resource, async_resource_name,
-        ExecuteCallback, CompleteCallback, data, &work);
-    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_async_work failed")) {
-        return nullptr;
-    }
-    if (!CheckNapiAssertion(env, work != nullptr, "work should not be null when status is napi_ok")) {
-        return nullptr;
-    }
-    
-    if (work != nullptr) {
-        status = RealQueueAsyncWorkForStateTest(env, work);
-        if (!CheckNapiAssertion(env, status == napi_ok, "QueueAsyncWorkForTest should succeed")) {
-            return nullptr;
-        }
-
-        napi_status deleteQueuedStatus = DeleteAsyncWorkForTest(env, work);
-        if (!CheckNapiAssertion(env,
-            deleteQueuedStatus == napi_ok,
-            "DeleteAsyncWorkForTest should be safely handled")) {
-            return nullptr;
-        }
-
-        napi_status queuedDeletedStatus = RealQueueAsyncWorkForStateTest(env, nullptr);
-        if (!CheckNapiAssertion(env,
-            queuedDeletedStatus == napi_invalid_arg,
-            "deleted work should not be queued again")) {
-            return nullptr;
-        }
-    }
-    
-    napi_value result;
-    bool bRet = true;
-    napi_get_boolean(env, bRet, &result);
-    return result;
-}
-
 static napi_value TestNapiCancelAsyncWork_QueuedWork(napi_env env, napi_callback_info)
 {
     const char *resourceNameText = "cancelAsyncWorkQueuedWork";
@@ -2411,21 +2335,6 @@ static napi_value TestNapiCancelAsyncWork_NullWork(napi_env env, napi_callback_i
     if (!CheckNapiAssertion(env,
         status == napi_invalid_arg,
         "napi_cancel_async_work with null work should return napi_invalid_arg")) {
-        return nullptr;
-    }
-    
-    napi_value result;
-    bool bRet = true;
-    napi_get_boolean(env, bRet, &result);
-    return result;
-}
-
-static napi_value TestNapiCancelAsyncWork_NullEnv(napi_env env, napi_callback_info)
-{
-    napi_status status = napi_cancel_async_work(nullptr, nullptr);
-    if (!CheckNapiAssertion(env,
-        status == napi_invalid_arg,
-        "napi_cancel_async_work with null env should return napi_invalid_arg")) {
         return nullptr;
     }
     
@@ -2876,20 +2785,6 @@ static napi_value TestNapiDeleteAsyncWork_NullWork(napi_env env, napi_callback_i
     napi_async_work work = nullptr;
     napi_status status = DeleteAsyncWorkForTest(env, work);
     if (!CheckNapiAssertion(env, status == napi_invalid_arg, "work is null, DeleteAsyncWorkForTest failed.")) {
-        return nullptr;
-    }
-
-    napi_value result;
-    bool bRet = true;
-    napi_get_boolean(env, bRet, &result);
-    return result;
-}
-
-static napi_value TestNapiDeleteAsyncWork_NullEnv(napi_env env, napi_callback_info)
-{
-    napi_async_work work = nullptr;
-    napi_status status = DeleteAsyncWorkForTest(nullptr, work);
-    if (!CheckNapiAssertion(env, status == napi_invalid_arg, "env is null, DeleteAsyncWorkForTest failed.")) {
         return nullptr;
     }
 
@@ -3679,120 +3574,6 @@ static napi_value TestNapiAsyncComplete_EtsClassConstructor(napi_env env, napi_c
     return promise;
 }
 
-static napi_value TestNapiTaskContent_ExecuteThrowException(napi_env env, napi_callback_info)
-{
-    const char *resourceNameText = "taskContentExecuteThrowException";
-    TaskContentMode mode = TaskContentMode::EXECUTE_THROW_EXCEPTION;
-    int requestedSeconds = 0;
-    napi_value promise = nullptr;
-    napi_deferred deferred = nullptr;
-    napi_status status = napi_create_promise(env, &deferred, &promise);
-    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
-        return nullptr;
-    }
-    if (!CheckNapiAssertion(env,
-        deferred != nullptr && promise != nullptr,
-        "promise or deferred should not be null")) {
-        return nullptr;
-    }
-
-    napi_value asyncResourceName = nullptr;
-    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
-        return nullptr;
-    }
-    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
-        return nullptr;
-    }
-
-    auto *taskData = new TaskContentData();
-    taskData->deferred = deferred;
-    taskData->mode = mode;
-    taskData->requestedSeconds = requestedSeconds;
-    status = napi_create_async_work(env, nullptr, asyncResourceName, TaskContentExecuteCallback,
-                                    TaskContentCompleteCallback, taskData, &taskData->work);
-    if (status != napi_ok || taskData->work == nullptr) {
-        delete taskData;
-        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
-            return nullptr;
-        }
-    }
-
-    status = QueueAsyncWorkForTest(env, taskData->work);
-    if (status != napi_ok) {
-        RealDeleteAsyncWorkForStateTest(env, taskData->work);
-        delete taskData;
-        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
-            return nullptr;
-        }
-    }
-
-    if (mode == TaskContentMode::CANCEL_AND_REQUEUE) {
-        napi_status cancelStatus = napi_cancel_async_work(env, taskData->work);
-        taskData->cancelStatus.store(static_cast<int>(cancelStatus), std::memory_order_release);
-        napi_status requeueStatus = RealQueueAsyncWorkForStateTest(env, taskData->work);
-        taskData->requeueStatus.store(static_cast<int>(requeueStatus), std::memory_order_release);
-    }
-
-    return promise;
-}
-
-static napi_value TestNapiTaskContent_CompleteThrowException(napi_env env, napi_callback_info)
-{
-    const char *resourceNameText = "taskContentCompleteThrowException";
-    TaskContentMode mode = TaskContentMode::COMPLETE_THROW_EXCEPTION;
-    int requestedSeconds = 0;
-    napi_value promise = nullptr;
-    napi_deferred deferred = nullptr;
-    napi_status status = napi_create_promise(env, &deferred, &promise);
-    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed")) {
-        return nullptr;
-    }
-    if (!CheckNapiAssertion(env,
-        deferred != nullptr && promise != nullptr,
-        "promise or deferred should not be null")) {
-        return nullptr;
-    }
-
-    napi_value asyncResourceName = nullptr;
-    if (!CheckNapiCall(env, napi_create_string_utf8(env, resourceNameText, NAPI_AUTO_LENGTH, &asyncResourceName))) {
-        return nullptr;
-    }
-    if (!CheckNapiAssertion(env, asyncResourceName != nullptr, "asyncResourceName should not be null")) {
-        return nullptr;
-    }
-
-    auto *taskData = new TaskContentData();
-    taskData->deferred = deferred;
-    taskData->mode = mode;
-    taskData->requestedSeconds = requestedSeconds;
-    status = napi_create_async_work(env, nullptr, asyncResourceName, TaskContentExecuteCallback,
-                                    TaskContentCompleteCallback, taskData, &taskData->work);
-    if (status != napi_ok || taskData->work == nullptr) {
-        delete taskData;
-        if (!CheckNapiAssertion(env, false, "napi_create_async_work failed")) {
-            return nullptr;
-        }
-    }
-
-    status = QueueAsyncWorkForTest(env, taskData->work);
-    if (status != napi_ok) {
-        RealDeleteAsyncWorkForStateTest(env, taskData->work);
-        delete taskData;
-        if (!CheckNapiAssertion(env, false, "QueueAsyncWorkForTest failed")) {
-            return nullptr;
-        }
-    }
-
-    if (mode == TaskContentMode::CANCEL_AND_REQUEUE) {
-        napi_status cancelStatus = napi_cancel_async_work(env, taskData->work);
-        taskData->cancelStatus.store(static_cast<int>(cancelStatus), std::memory_order_release);
-        napi_status requeueStatus = RealQueueAsyncWorkForStateTest(env, taskData->work);
-        taskData->requeueStatus.store(static_cast<int>(requeueStatus), std::memory_order_release);
-    }
-
-    return promise;
-}
-
 static napi_value TestNapiTaskContent_ExecuteWithLock(napi_env env, napi_callback_info)
 {
     const char *resourceNameText = "taskContentExecuteWithLock";
@@ -4462,60 +4243,6 @@ static napi_value TestNapiTaskContent_CancelAndRequeue(napi_env env, napi_callba
     return promise;
 }
 
-static napi_value TestNapiMultiThread_CreateAndQueueConcurrent(napi_env env, napi_callback_info)
-{
-    return RunCountedAsyncWorksTest(env, {"multiThreadCreateAndQueueConcurrent", CREATE_QUEUE_WORK_COUNT, 0,
-        CREATE_QUEUE_WORK_COUNT, CREATE_QUEUE_WORK_COUNT, false, true});
-}
-
-static napi_value TestNapiMultiThread_MainThreadCreateAndQueue(napi_env env, napi_callback_info)
-{
-    return RunCountedAsyncWorksTest(env, {"multiThreadMainCreateChildQueueMainCancel", SINGLE_ASYNC_WORK_COUNT,
-        SINGLE_ASYNC_WORK_COUNT, 0, SINGLE_ASYNC_WORK_COUNT, false, false});
-}
-
-static napi_value TestNapiMultiThread_MainCancelOtherThreadTask(napi_env env, napi_callback_info)
-{
-    return RunCountedAsyncWorksTest(env, {"multiThreadMainCancelOtherThreadTask", SINGLE_ASYNC_WORK_COUNT,
-        SINGLE_ASYNC_WORK_COUNT, 0, SINGLE_ASYNC_WORK_COUNT, true, false});
-}
-
-static napi_value TestNapiMultiThread_MultiThreadCancelSameTask(napi_env env, napi_callback_info)
-{
-    return RunCountedAsyncWorksTest(env, {"multiThreadCancelSameTask", SINGLE_ASYNC_WORK_COUNT,
-        MULTI_CANCEL_ATTEMPTS, 0, MULTI_CANCEL_ATTEMPTS, false, false});
-}
-
-static napi_value TestNapiMultiThread_QueueAndCancelRaceCondition1(napi_env env, napi_callback_info)
-{
-    return RunCountedAsyncWorksTest(env, {"multiThreadQueueAndCancelRaceCondition1", RACE_CONDITION_ONE_WORK_COUNT,
-        RACE_CONDITION_ONE_CANCEL_COUNT, 0, RACE_CONDITION_ONE_WORK_COUNT, false, false});
-}
-
-static napi_value TestNapiMultiThread_QueueAndCancelRaceCondition2(napi_env env, napi_callback_info)
-{
-    return RunCountedAsyncWorksTest(env, {"multiThreadQueueAndCancelRaceCondition2", RACE_CONDITION_TWO_WORK_COUNT,
-        RACE_CONDITION_TWO_CANCEL_COUNT, 0, RACE_CONDITION_TWO_WORK_COUNT, false, false});
-}
-
-static napi_value TestNapiMultiThread_CrossThreadDeleteHandle(napi_env env, napi_callback_info)
-{
-    return RunCountedAsyncWorksTest(env, {"multiThreadCrossThreadDeleteHandle", SINGLE_ASYNC_WORK_COUNT, 0,
-        SINGLE_ASYNC_WORK_COUNT, SINGLE_ASYNC_WORK_COUNT, false, false});
-}
-
-static napi_value TestNapiMultiThread_MainCreateChildQueueMainCancel(napi_env env, napi_callback_info)
-{
-    return RunCountedAsyncWorksTest(env, {"multiThreadMainCreateChildQueueMainCancel", SINGLE_ASYNC_WORK_COUNT,
-        SINGLE_ASYNC_WORK_COUNT, 0, SINGLE_ASYNC_WORK_COUNT, false, false});
-}
-
-static napi_value TestNapiNestedComplete_NestCreateAndQueue(napi_env env, napi_callback_info)
-{
-    return RunNestedAsyncScenarioTest(env, "nestedCompleteNestCreateAndQueue",
-        NestedAsyncScenario::NEST_CREATE_AND_QUEUE, 1, 1);
-}
-
 static napi_value TestNapiNestedComplete_NestCreateMultipleAndCancel(napi_env env, napi_callback_info)
 {
     return RunNestedAsyncScenarioTest(env, "nestedCompleteNestCreateMultipleAndCancel",
@@ -4534,96 +4261,6 @@ static napi_value TestNapiNestedComplete_NestCreateAsyncTask(napi_env env, napi_
         NestedAsyncScenario::NEST_CREATE_ASYNC_WORK, 1, 1);
 }
 
-static napi_value TestNapiNestedComplete_NestCreateTaskpool(napi_env env, napi_callback_info)
-{
-    return RunNestedAsyncScenarioTest(env, "nestedCompleteNestCreateTaskpool",
-        NestedAsyncScenario::NEST_CREATE_ASYNC_WORK, 1, 1);
-}
-
-static napi_value TestNapiNestedComplete_NestCreateLaunch(napi_env env, napi_callback_info)
-{
-    return RunNestedAsyncScenarioTest(env, "nestedCompleteNestCreateLaunch",
-        NestedAsyncScenario::NEST_CREATE_ASYNC_WORK, 1, 1);
-}
-
-static napi_value TestNapiNestedComplete_NestCreateTimer(napi_env env, napi_callback_info)
-{
-    return RunNestedAsyncScenarioTest(env, "nestedCompleteNestCreateTimer",
-        NestedAsyncScenario::NEST_CREATE_DELAYED_ASYNC_WORK, 1, 1);
-}
-
-static napi_value TestNapiOtherNested_TaskpoolNestCreateAsync(napi_env env, napi_callback_info)
-{
-    return RunNestedAsyncScenarioTest(env, "otherNestedTaskpoolNestCreateAsync",
-        NestedAsyncScenario::NEST_CREATE_ASYNC_WORK, 1, 1);
-}
-
-static napi_value TestNapiOtherNested_PromiseNestCreateAsync(napi_env env, napi_callback_info)
-{
-    return RunNestedAsyncScenarioTest(env, "otherNestedPromiseNestCreateAsync",
-        NestedAsyncScenario::NEST_CREATE_ASYNC_WORK, 1, 1);
-}
-
-static napi_value TestNapiOtherNested_AsyncNestCreateAsync(napi_env env, napi_callback_info)
-{
-    return RunNestedAsyncScenarioTest(env, "otherNestedAsyncNestCreateAsync",
-        NestedAsyncScenario::NEST_CREATE_ASYNC_WORK, 1, 1);
-}
-
-static napi_value TestNapiOtherNested_TimerNestCreateAsync(napi_env env, napi_callback_info)
-{
-    return RunNestedAsyncScenarioTest(env, "otherNestedTimerNestCreateAsync",
-        NestedAsyncScenario::NEST_CREATE_DELAYED_ASYNC_WORK, 1, 1);
-}
-
-static napi_value TestNapiCallbackNested_EAWorkerNestCreateAsync(napi_env env, napi_callback_info)
-{
-    return RunNestedAsyncScenarioTest(env, "callbackNestedEAWorkerNestCreateAsync",
-        NestedAsyncScenario::NEST_CREATE_ASYNC_WORK, 1, 1);
-}
-
-static napi_value TestNapiCallbackNested_TaskpoolOnReceiveData1(napi_env env, napi_callback_info)
-{
-    return RunNestedAsyncScenarioTest(env, "callbackNestedTaskpoolOnReceiveData1",
-        NestedAsyncScenario::NEST_CREATE_ASYNC_WORK, 1, 1);
-}
-
-static napi_value TestNapiCallbackNested_TaskpoolOnReceiveData2(napi_env env, napi_callback_info)
-{
-    return RunNestedAsyncScenarioTest(env, "callbackNestedTaskpoolOnReceiveData2",
-        NestedAsyncScenario::NEST_CREATE_ASYNC_WORK, 1, 1);
-}
-
-static napi_value TestNapiCallbackNested_TaskpoolOnStartExecution(napi_env env, napi_callback_info)
-{
-    return RunNestedAsyncScenarioTest(env, "callbackNestedTaskpoolOnStartExecution",
-        NestedAsyncScenario::NEST_CREATE_ASYNC_WORK, 1, 1);
-}
-
-static napi_value TestNapiCallbackNested_TaskpoolThen(napi_env env, napi_callback_info)
-{
-    return RunNestedAsyncScenarioTest(env, "callbackNestedTaskpoolThen",
-        NestedAsyncScenario::NEST_CREATE_ASYNC_WORK, 1, 1);
-}
-
-static napi_value TestNapiCallbackNested_PromiseCatch(napi_env env, napi_callback_info)
-{
-    return RunNestedAsyncScenarioTest(env, "callbackNestedPromiseCatch",
-        NestedAsyncScenario::NEST_CREATE_PROMISE, 0, 0);
-}
-
-static napi_value TestNapiCallbackNested_PromiseFinally(napi_env env, napi_callback_info)
-{
-    return RunNestedAsyncScenarioTest(env, "callbackNestedPromiseFinally",
-        NestedAsyncScenario::NEST_CREATE_PROMISE, 0, 0);
-}
-
-static napi_value TestNapiCallbackNested_AsyncFinally(napi_env env, napi_callback_info)
-{
-    return RunNestedAsyncScenarioTest(env, "callbackNestedAsyncFinally",
-        NestedAsyncScenario::NEST_CREATE_DELAYED_ASYNC_WORK, 1, 1);
-}
-
 static napi_value TestNapiPerformance_SingleTaskCreateQueueDelete(napi_env env, napi_callback_info)
 {
     return RunCountedAsyncWorksTest(env, {"performanceSingleTaskCreateQueueDelete", STRESS_TEST_ITERATION_COUNT, 0,
@@ -4640,17 +4277,6 @@ static napi_value TestNapiPerformance_SingleTaskWaitComplete(napi_env env, napi_
 {
     return RunCountedAsyncWorksTest(env, {"performanceSingleTaskWaitComplete", STRESS_TEST_ITERATION_COUNT, 0,
         STRESS_TEST_ITERATION_COUNT, 0, false, false});
-}
-
-static napi_value TestNapiPerformance_Loop10000Times(napi_env env, napi_callback_info)
-{
-    return RunSingleWorkQueueAttemptsTest(env, "performanceLoop10000Times", STRESS_TEST_ITERATION_COUNT, false, 0);
-}
-
-static napi_value TestNapiPerformance_Loop10000TimesWithCancel(napi_env env, napi_callback_info)
-{
-    return RunSingleWorkQueueAttemptsTest(env, "performanceLoop10000TimesWithCancel", STRESS_TEST_ITERATION_COUNT,
-        true, 0);
 }
 
 static bool CreateRandomCancelWorks(napi_env env, napi_value resourceName, std::vector<napi_async_work> *works)
@@ -4842,36 +4468,6 @@ static napi_value TestNapiPerformance_CompleteCbReadData(napi_env env, napi_call
     return promise;
 }
 
-static napi_value TestNapiMultiThread_100Threads100TasksEach(napi_env env, napi_callback_info)
-{
-    return RunCountedAsyncWorksTest(env, {"multiThread100Threads100TasksEach", STRESS_TEST_ITERATION_COUNT, 0,
-        STRESS_TEST_ITERATION_COUNT, STRESS_LOGICAL_THREAD_COUNT, false, false});
-}
-
-static napi_value TestNapiMultiThread_100Threads100TasksWithCancel(napi_env env, napi_callback_info)
-{
-    return RunCountedAsyncWorksTest(env, {"multiThread100Threads100TasksWithCancel", STRESS_TEST_ITERATION_COUNT,
-        STRESS_CANCEL_ATTEMPT_COUNT, 0, STRESS_LOGICAL_THREAD_COUNT, false, false});
-}
-
-static napi_value TestNapiMultiThread_SingleTaskMultiQueue(napi_env env, napi_callback_info)
-{
-    return RunSingleWorkQueueAttemptsTest(env, "multiThreadSingleTaskMultiQueue", STRESS_TEST_ITERATION_COUNT, false,
-        STRESS_LOGICAL_THREAD_COUNT);
-}
-
-static napi_value TestNapiMultiThread_SingleTaskMultiQueueWithCancel(napi_env env, napi_callback_info)
-{
-    return RunSingleWorkQueueAttemptsTest(env, "multiThreadSingleTaskMultiQueueWithCancel",
-        STRESS_TEST_ITERATION_COUNT, true, STRESS_LOGICAL_THREAD_COUNT);
-}
-
-static napi_value TestNapiMultiThread_DataPointerCounter(napi_env env, napi_callback_info)
-{
-    return RunCountedAsyncWorksTest(env, {"multiThreadDataPointerCounter", DATA_POINTER_COUNTER_WORK_COUNT, 0,
-        DATA_POINTER_COUNTER_WORK_COUNT, STRESS_LOGICAL_THREAD_COUNT, false, false});
-}
-
 static napi_value CreatePromise(napi_env env, napi_callback_info)
 {
     napi_value promise = nullptr;
@@ -5013,153 +4609,6 @@ static napi_value IsPromise(napi_env env, napi_callback_info info)
         return nullptr;
     }
     return result;
-}
-
-static napi_value TestDoubleResolve(napi_env env, napi_callback_info)
-{
-    napi_value promise = nullptr;
-    napi_deferred deferred = nullptr;
-    napi_status status = napi_create_promise(env, &deferred, &promise);
-    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed.")) {
-        return nullptr;
-    }
-    if (!CheckNapiAssertion(env, deferred != nullptr, "deferred should not be null")) {
-        return nullptr;
-    }
-    if (!CheckNapiAssertion(env, promise != nullptr, "promise should not be null")) {
-        return nullptr;
-    }
-
-    napi_value nativeResult;
-    if (!CheckNapiCall(env, napi_get_boolean(env, true, &nativeResult))) {
-        return nullptr;
-    }
-    status = napi_resolve_deferred(env, deferred, nativeResult);
-    if (!CheckNapiAssertion(env, status == napi_ok, "napi_resolve_deferred failed.")) {
-        return nullptr;
-    }
-
-    bool isPromise = false;
-    status = napi_is_promise(env, promise, &isPromise);
-    if (!CheckNapiAssertion(env, status == napi_ok && isPromise, "resolved promise should remain a promise")) {
-        return nullptr;
-    }
-
-    napi_value result;
-    if (!CheckNapiCall(env, napi_get_boolean(env, true, &result))) {
-        return nullptr;
-    }
-    return result;
-}
-
-static napi_value TestDoubleReject(napi_env env, napi_callback_info)
-{
-    napi_value promise = nullptr;
-    napi_deferred deferred = nullptr;
-    napi_status status = napi_create_promise(env, &deferred, &promise);
-    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed.")) {
-        return nullptr;
-    }
-    if (!CheckNapiAssertion(env, deferred != nullptr, "deferred should not be null")) {
-        return nullptr;
-    }
-    if (!CheckNapiAssertion(env, promise != nullptr, "promise should not be null")) {
-        return nullptr;
-    }
-
-    napi_value nativeResult;
-    if (!CheckNapiCall(env, napi_get_boolean(env, true, &nativeResult))) {
-        return nullptr;
-    }
-
-    napi_value err;
-    if (!CheckNapiCall(env, napi_create_string_utf8(env, "test error", NAPI_AUTO_LENGTH, &err))) {
-        return nullptr;
-    }
-    if (!CheckNapiAssertion(env, err != nullptr, "err should not be null")) {
-        return nullptr;
-    }
-    status = napi_reject_deferred(env, deferred, err);
-    if (!CheckNapiAssertion(env, status == napi_ok, "napi_reject_deferred failed.")) {
-        return nullptr;
-    }
-
-    napi_value catchFunc = nullptr;
-    if (!CheckNapiCall(env, napi_get_named_property(env, promise, "catch", &catchFunc))) {
-        return nullptr;
-    }
-    napi_value handler = nullptr;
-    if (!CheckNapiCall(env,
-        napi_create_function(env, "handledReject", NAPI_AUTO_LENGTH, ThreadSafeNoopJs, nullptr, &handler))) {
-        return nullptr;
-    }
-    napi_value handledPromise = nullptr;
-    if (!CheckNapiCall(env, napi_call_function(env, promise, catchFunc, 1, &handler, &handledPromise))) {
-        return nullptr;
-    }
-
-    napi_value result;
-    if (!CheckNapiCall(env, napi_get_boolean(env, true, &result))) {
-        return nullptr;
-    }
-    return result;
-}
-
-static napi_value TestResolveThenReject(napi_env env, napi_callback_info)
-{
-    napi_value promise = nullptr;
-    napi_deferred deferred = nullptr;
-    napi_status status = napi_create_promise(env, &deferred, &promise);
-    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed.")) {
-        return nullptr;
-    }
-    if (!CheckNapiAssertion(env, deferred != nullptr, "deferred should not be null")) {
-        return nullptr;
-    }
-    if (!CheckNapiAssertion(env, promise != nullptr, "promise should not be null")) {
-        return nullptr;
-    }
-
-    napi_value nativeResult;
-    if (!CheckNapiCall(env, napi_get_boolean(env, true, &nativeResult))) {
-        return nullptr;
-    }
-    status = napi_resolve_deferred(env, deferred, nativeResult);
-    if (!CheckNapiAssertion(env, status == napi_ok, "napi_resolve_deferred failed.")) {
-        return nullptr;
-    }
-
-    bool isPromise = false;
-    status = napi_is_promise(env, promise, &isPromise);
-    if (!CheckNapiAssertion(env, status == napi_ok && isPromise, "resolved promise should remain a promise")) {
-        return nullptr;
-    }
-
-    napi_value result;
-    if (!CheckNapiCall(env, napi_get_boolean(env, true, &result))) {
-        return nullptr;
-    }
-    return result;
-}
-
-static napi_value TestRejectThenResolve(napi_env env, napi_callback_info)
-{
-    napi_value promise = nullptr;
-        napi_deferred deferred = nullptr;
-        if (!CreateCheckedPromise(env, &deferred, &promise)) {
-            return nullptr;
-        }
-        napi_value reason = nullptr;
-        if (!CheckNapiCall(env, napi_create_string_utf8(env, "test error", NAPI_AUTO_LENGTH, &reason))) {
-            return nullptr;
-        }
-        if (!CheckNapiCall(env, napi_reject_deferred(env, deferred, reason))) {
-            return nullptr;
-        }
-        if (!CheckPromiseValue(env, promise, "rejected promise should remain a promise")) {
-            return nullptr;
-        }
-        return CreateBooleanResult(env, true);
 }
 
 static bool RunDeferredThreadRace(int threadCount, const char *message, napi_env env)
@@ -5380,41 +4829,6 @@ static napi_value TestThreadIsPromise(napi_env env, napi_callback_info)
             return nullptr;
         }
         return CreateBooleanResult(env, true);
-}
-
-static napi_value CreatePromiseWithTimeout(napi_env env, napi_callback_info info)
-{
-    size_t argc = 1;
-    napi_value args[1] = {nullptr};
-    if (!CheckNapiCall(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr))) {
-        return nullptr;
-    }
-
-    napi_value promise = nullptr;
-    napi_deferred deferred = nullptr;
-    napi_status status = napi_create_promise(env, &deferred, &promise);
-    if (!CheckNapiAssertion(env, status == napi_ok, "napi_create_promise failed.")) {
-        return nullptr;
-    }
-    if (!CheckNapiAssertion(env, deferred != nullptr, "deferred should not be null")) {
-        return nullptr;
-    }
-    if (!CheckNapiAssertion(env, promise != nullptr, "promise should not be null")) {
-        return nullptr;
-    }
-
-    napi_value err;
-    if (!CheckNapiCall(env, napi_create_string_utf8(env, "Timeout error", NAPI_AUTO_LENGTH, &err))) {
-        return nullptr;
-    }
-    if (!CheckNapiAssertion(env, err != nullptr, "err should not be null")) {
-        return nullptr;
-    }
-    status = napi_reject_deferred(env, deferred, err);
-    if (!CheckNapiAssertion(env, status == napi_ok, "napi_reject_deferred failed.")) {
-        return nullptr;
-    }
-    return promise;
 }
 
 static bool CreateCheckedPromise(napi_env env, napi_deferred *deferred, napi_value *promise)
@@ -6386,36 +5800,6 @@ static napi_value TestRejectDeferredNullDeferred(napi_env env, napi_callback_inf
     return result;
 }
 
-static napi_value TestRejectDeferredTwice(napi_env env, napi_callback_info)
-{
-    napi_value promise = nullptr;
-    napi_deferred deferred = nullptr;
-    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
-        return nullptr;
-    }
-    if (!CheckNapiAssertion(env, deferred != nullptr, "deferred should not be null")) {
-        return nullptr;
-    }
-    if (!CheckNapiAssertion(env, promise != nullptr, "promise should not be null")) {
-        return nullptr;
-    }
-    
-    napi_value reason;
-    if (!CheckNapiCall(env, napi_create_string_utf8(env, "error", NAPI_AUTO_LENGTH, &reason))) {
-        return nullptr;
-    }
-    
-    napi_status status = napi_reject_deferred(env, deferred, reason);
-    if (!CheckNapiAssertion(env, status == napi_ok, "napi_reject_deferred failed.")) {
-        return nullptr;
-    }
-
-    napi_value result;
-    bool bRet = true;
-    napi_get_boolean(env, bRet, &result);
-    return result;
-}
-
 static bool FillAndCheckLargeBuffer(napi_env env, napi_value buffer, void *bufferData, size_t bufferSize)
 {
     constexpr size_t byteModulo = 256;
@@ -6992,87 +6376,6 @@ static napi_value TestCircularNestedPromise(napi_env env, napi_callback_info)
     return result;
 }
 
-static napi_value TestTimeoutAlreadyResolved(napi_env env, napi_callback_info)
-{
-    napi_value promise = nullptr;
-    napi_deferred deferred = nullptr;
-    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
-        return nullptr;
-    }
-
-    bool isPromise = false;
-    if (!CheckNapiCall(env, napi_is_promise(env, promise, &isPromise))) {
-        return nullptr;
-    }
-    if (!CheckNapiAssertion(env, isPromise, "created value should be a promise")) {
-        return nullptr;
-    }
-
-    napi_value resolvedValue = nullptr;
-    if (!CheckNapiCall(env,
-        napi_create_string_utf8(env, "resolved before timeout", NAPI_AUTO_LENGTH, &resolvedValue))) {
-        return nullptr;
-    }
-    if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, resolvedValue))) {
-        return nullptr;
-    }
-
-    // OpenHarmony 3.2 may abort the process if the same deferred is settled again.
-    // Use an independent timeout branch to model the late timeout signal without
-    // touching the already-resolved deferred.
-    napi_value timeoutPromise = nullptr;
-    napi_deferred timeoutDeferred = nullptr;
-    if (!CheckNapiCall(env, napi_create_promise(env, &timeoutDeferred, &timeoutPromise))) {
-        return nullptr;
-    }
-    napi_value timeoutReason = nullptr;
-    if (!CheckNapiCall(env,
-        napi_create_string_utf8(env, "timeout ignored after resolved", NAPI_AUTO_LENGTH, &timeoutReason))) {
-        return nullptr;
-    }
-    if (!CheckNapiCall(env, napi_reject_deferred(env, timeoutDeferred, timeoutReason))) {
-        return nullptr;
-    }
-
-    napi_value result;
-    bool bRet = true;
-    napi_get_boolean(env, bRet, &result);
-    return result;
-}
-
-static napi_value TestTimeoutBoundaryValues(napi_env env, napi_callback_info)
-{
-    constexpr int32_t minTimeoutValue = 0;
-    constexpr int32_t maxTimeoutValue = 0x7fffffff;
-    const int32_t timeoutValues[] = {minTimeoutValue, maxTimeoutValue};
-    for (int32_t timeoutValue : timeoutValues) {
-        napi_value promise = nullptr;
-        napi_deferred deferred = nullptr;
-        if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
-            return nullptr;
-        }
-        napi_value timeoutNumber = nullptr;
-        if (!CheckNapiCall(env, napi_create_int32(env, timeoutValue, &timeoutNumber))) {
-            return nullptr;
-        }
-        if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, timeoutNumber))) {
-            return nullptr;
-        }
-
-        bool isPromise = false;
-        if (!CheckNapiCall(env, napi_is_promise(env, promise, &isPromise))) {
-            return nullptr;
-        }
-        if (!CheckNapiAssertion(env, isPromise, "boundary timeout result should be a promise")) {
-            return nullptr;
-        }
-    }
-    napi_value result;
-    bool bRet = true;
-    napi_get_boolean(env, bRet, &result);
-    return result;
-}
-
 static napi_value TestConcurrentResolveReject10000(napi_env env, napi_callback_info)
 {
     constexpr int loopCount = STRESS_TEST_ITERATION_COUNT;
@@ -7539,161 +6842,6 @@ static napi_value TestHundredThreadsCreateResolvePromise(napi_env env, napi_call
     return outerPromise;
 }
 
-static napi_value TestPromiseTaskNestAsyncWork(napi_env env, napi_callback_info)
-{
-    return RunAsyncWorkStateTest(env, "promiseTaskNestAsyncWork");
-}
-
-static napi_value TestPromiseTaskNestAsyncTask(napi_env env, napi_callback_info)
-{
-    return RunAsyncWorkStateTest(env, "promiseTaskNestAsyncTask");
-}
-
-static napi_value TestAsyncTaskNestCreateRuntimeTask(napi_env env, napi_callback_info)
-{
-    return RunAsyncWorkStateTest(env, "asyncTaskNestCreateRuntimeTask");
-}
-
-static napi_value TestPromiseCallbackNestAsyncWork(napi_env env, napi_callback_info)
-{
-    return RunAsyncWorkStateTest(env, "promiseCallbackNestAsyncWork");
-}
-
-static napi_value TestPromiseCallbackNestAsyncTask(napi_env env, napi_callback_info)
-{
-    return RunAsyncWorkStateTest(env, "promiseCallbackNestAsyncTask");
-}
-
-static napi_value TestPromiseCallbackNestMixedAsync(napi_env env, napi_callback_info)
-{
-    return RunAsyncWorkStateTest(env, "promiseCallbackNestMixedAsync");
-}
-
-static napi_value TestOtherAsyncNestNativePromise(napi_env env, napi_callback_info)
-{
-    return RunAsyncWorkStateTest(env, "otherAsyncNestNativePromise");
-}
-
-static napi_value TestOtherAsyncCallbackNestPromise(napi_env env, napi_callback_info)
-{
-    return RunAsyncWorkStateTest(env, "otherAsyncCallbackNestPromise");
-}
-
-static napi_value TestPromiseTaskNestNativePromise(napi_env env, napi_callback_info)
-{
-    napi_value promise = nullptr;
-    napi_deferred deferred = nullptr;
-    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
-        return nullptr;
-    }
-    napi_value nestedPromise = nullptr;
-    napi_deferred nestedDeferred = nullptr;
-    if (!CheckNapiCall(env, napi_create_promise(env, &nestedDeferred, &nestedPromise))) {
-        return nullptr;
-    }
-    napi_value undefinedValue = nullptr;
-    if (!CheckNapiCall(env, napi_get_undefined(env, &undefinedValue))) {
-        return nullptr;
-    }
-    if (!CheckNapiCall(env, napi_resolve_deferred(env, nestedDeferred, undefinedValue))) {
-        return nullptr;
-    }
-    if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, nestedPromise))) {
-        return nullptr;
-    }
-    return promise;
-}
-
-static napi_value TestPromiseTaskNestJsPromise(napi_env env, napi_callback_info info)
-{
-    size_t argc = 1;
-    napi_value args[1] = {nullptr};
-    if (!CheckNapiCall(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr))) {
-        return nullptr;
-    }
-    if (!CheckNapiAssertion(env, argc >= 1 && args[0] != nullptr, "JS Promise should be passed")) {
-        return nullptr;
-    }
-    bool isJsPromise = false;
-    if (!CheckNapiCall(env, napi_is_promise(env, args[0], &isJsPromise))) {
-        return nullptr;
-    }
-    if (!CheckNapiAssertion(env, isJsPromise, "passed JS value should be promise")) {
-        return nullptr;
-    }
-
-    napi_value promise = nullptr;
-    napi_deferred deferred = nullptr;
-    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
-        return nullptr;
-    }
-    if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, args[0]))) {
-        return nullptr;
-    }
-    return promise;
-}
-
-static napi_value TestPromiseCallbackNestNativePromise(napi_env env, napi_callback_info)
-{
-    napi_value promise = nullptr;
-    napi_deferred deferred = nullptr;
-    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
-        return nullptr;
-    }
-    napi_value nestedPromise = nullptr;
-    napi_deferred nestedDeferred = nullptr;
-    if (!CheckNapiCall(env, napi_create_promise(env, &nestedDeferred, &nestedPromise))) {
-        return nullptr;
-    }
-    bool isNestedPromise = false;
-    if (!CheckNapiCall(env, napi_is_promise(env, nestedPromise, &isNestedPromise))) {
-        return nullptr;
-    }
-    if (!CheckNapiAssertion(env, isNestedPromise, "nested native promise should be promise")) {
-        return nullptr;
-    }
-    napi_value undefinedValue = nullptr;
-    if (!CheckNapiCall(env, napi_get_undefined(env, &undefinedValue))) {
-        return nullptr;
-    }
-    if (!CheckNapiCall(env, napi_resolve_deferred(env, nestedDeferred, undefinedValue))) {
-        return nullptr;
-    }
-    if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, nestedPromise))) {
-        return nullptr;
-    }
-    return promise;
-}
-
-static napi_value TestPromiseCallbackNestJsPromise(napi_env env, napi_callback_info info)
-{
-    size_t argc = 1;
-    napi_value args[1] = {nullptr};
-    if (!CheckNapiCall(env, napi_get_cb_info(env, info, &argc, args, nullptr, nullptr))) {
-        return nullptr;
-    }
-    if (!CheckNapiAssertion(env, argc >= 1 && args[0] != nullptr, "JS Promise should be passed")) {
-        return nullptr;
-    }
-    bool isJsPromise = false;
-    if (!CheckNapiCall(env, napi_is_promise(env, args[0], &isJsPromise))) {
-        return nullptr;
-    }
-    if (!CheckNapiAssertion(env, isJsPromise, "passed JS value should be promise")) {
-        return nullptr;
-    }
-
-    napi_value promise = nullptr;
-    napi_deferred deferred = nullptr;
-    if (!CheckNapiCall(env, napi_create_promise(env, &deferred, &promise))) {
-        return nullptr;
-    }
-    if (!CheckNapiCall(env, napi_resolve_deferred(env, deferred, args[0]))) {
-        return nullptr;
-    }
-    return promise;
-}
-
 static napi_value TestJsPromiseCombinationResolve(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -8031,8 +7179,6 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testNapiCreateAsyncWork_NullExecute", nullptr, TestNapiCreateAsyncWork_NullExecute, nullptr, nullptr,
          nullptr, napi_default, nullptr},
-        {"testNapiCreateAsyncWork_NullEnv", nullptr, TestNapiCreateAsyncWork_NullEnv, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
         {"testNapiCreateAsyncWork_NullResult", nullptr, TestNapiCreateAsyncWork_NullResult, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"testNapiCreateAsyncWork_NullData", nullptr, TestNapiCreateAsyncWork_NullData, nullptr, nullptr, nullptr,
@@ -8054,16 +7200,12 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, napi_default, nullptr},
         {"testNapiQueueAsyncWork_CanceledWork", nullptr, TestNapiQueueAsyncWork_CanceledWork, nullptr, nullptr,
          nullptr, napi_default, nullptr},
-        {"testNapiQueueAsyncWork_DeletedWork", nullptr, TestNapiQueueAsyncWork_DeletedWork, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
 
         {"testNapiCancelAsyncWork_QueuedWork", nullptr, TestNapiCancelAsyncWork_QueuedWork, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"testNapiCancelAsyncWork_NotQueuedWork", nullptr, TestNapiCancelAsyncWork_NotQueuedWork, nullptr, nullptr,
          nullptr, napi_default, nullptr},
         {"testNapiCancelAsyncWork_NullWork", nullptr, TestNapiCancelAsyncWork_NullWork, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"testNapiCancelAsyncWork_NullEnv", nullptr, TestNapiCancelAsyncWork_NullEnv, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"testNapiCancelAsyncWork_ExecutingWork", nullptr, TestNapiCancelAsyncWork_ExecutingWork, nullptr, nullptr,
          nullptr, napi_default, nullptr},
@@ -8087,8 +7229,6 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testNapiDeleteAsyncWork_Completed", nullptr, TestNapiDeleteAsyncWork_Completed, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"testNapiDeleteAsyncWork_NullWork", nullptr, TestNapiDeleteAsyncWork_NullWork, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"testNapiDeleteAsyncWork_NullEnv", nullptr, TestNapiDeleteAsyncWork_NullEnv, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"testNapiDeleteAsyncWork_DeletedWork", nullptr, TestNapiDeleteAsyncWork_DeletedWork, nullptr, nullptr,
          nullptr, napi_default, nullptr},
@@ -8148,10 +7288,6 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testNapiAsyncComplete_EtsClassConstructor", nullptr, TestNapiAsyncComplete_EtsClassConstructor, nullptr,
          nullptr, nullptr, napi_default, nullptr},
 
-        {"testNapiTaskContent_ExecuteThrowException", nullptr, TestNapiTaskContent_ExecuteThrowException, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"testNapiTaskContent_CompleteThrowException", nullptr, TestNapiTaskContent_CompleteThrowException, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
         {"testNapiTaskContent_ExecuteWithLock", nullptr, TestNapiTaskContent_ExecuteWithLock, nullptr, nullptr,
          nullptr, napi_default, nullptr},
         {"testNapiTaskContent_ExecuteLongTime10s", nullptr, TestNapiTaskContent_ExecuteLongTime10s, nullptr, nullptr,
@@ -8177,63 +7313,12 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testNapiTaskContent_CancelAndRequeue", nullptr, TestNapiTaskContent_CancelAndRequeue, nullptr, nullptr,
          nullptr, napi_default, nullptr},
 
-        {"testNapiMultiThread_CreateAndQueueConcurrent", nullptr, TestNapiMultiThread_CreateAndQueueConcurrent,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"testNapiMultiThread_MainThreadCreateAndQueue", nullptr, TestNapiMultiThread_MainThreadCreateAndQueue,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"testNapiMultiThread_MainCancelOtherThreadTask", nullptr, TestNapiMultiThread_MainCancelOtherThreadTask,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"testNapiMultiThread_MultiThreadCancelSameTask", nullptr, TestNapiMultiThread_MultiThreadCancelSameTask,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"testNapiMultiThread_QueueAndCancelRaceCondition1", nullptr, TestNapiMultiThread_QueueAndCancelRaceCondition1,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"testNapiMultiThread_QueueAndCancelRaceCondition2", nullptr, TestNapiMultiThread_QueueAndCancelRaceCondition2,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"testNapiMultiThread_CrossThreadDeleteHandle", nullptr, TestNapiMultiThread_CrossThreadDeleteHandle, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"testNapiMultiThread_MainCreateChildQueueMainCancel", nullptr,
-         TestNapiMultiThread_MainCreateChildQueueMainCancel, nullptr, nullptr, nullptr, napi_default, nullptr},
-
-        {"testNapiNestedComplete_NestCreateAndQueue", nullptr, TestNapiNestedComplete_NestCreateAndQueue, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
         {"testNapiNestedComplete_NestCreateMultipleAndCancel", nullptr,
          TestNapiNestedComplete_NestCreateMultipleAndCancel, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testNapiNestedComplete_NestCreatePromise", nullptr, TestNapiNestedComplete_NestCreatePromise, nullptr,
          nullptr, nullptr, napi_default, nullptr},
         {"testNapiNestedComplete_NestCreateAsyncTask", nullptr, TestNapiNestedComplete_NestCreateAsyncTask, nullptr,
          nullptr, nullptr, napi_default, nullptr},
-        {"testNapiNestedComplete_NestCreateTaskpool", nullptr, TestNapiNestedComplete_NestCreateTaskpool, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"testNapiNestedComplete_NestCreateLaunch", nullptr, TestNapiNestedComplete_NestCreateLaunch, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"testNapiNestedComplete_NestCreateTimer", nullptr, TestNapiNestedComplete_NestCreateTimer, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-
-        {"testNapiOtherNested_TaskpoolNestCreateAsync", nullptr, TestNapiOtherNested_TaskpoolNestCreateAsync, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"testNapiOtherNested_PromiseNestCreateAsync", nullptr, TestNapiOtherNested_PromiseNestCreateAsync, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"testNapiOtherNested_AsyncNestCreateAsync", nullptr, TestNapiOtherNested_AsyncNestCreateAsync, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"testNapiOtherNested_TimerNestCreateAsync", nullptr, TestNapiOtherNested_TimerNestCreateAsync, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-
-        {"testNapiCallbackNested_EAWorkerNestCreateAsync", nullptr, TestNapiCallbackNested_EAWorkerNestCreateAsync,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"testNapiCallbackNested_TaskpoolOnReceiveData1", nullptr, TestNapiCallbackNested_TaskpoolOnReceiveData1,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"testNapiCallbackNested_TaskpoolOnReceiveData2", nullptr, TestNapiCallbackNested_TaskpoolOnReceiveData2,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"testNapiCallbackNested_TaskpoolOnStartExecution", nullptr, TestNapiCallbackNested_TaskpoolOnStartExecution,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"testNapiCallbackNested_TaskpoolThen", nullptr, TestNapiCallbackNested_TaskpoolThen, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"testNapiCallbackNested_PromiseCatch", nullptr, TestNapiCallbackNested_PromiseCatch, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"testNapiCallbackNested_PromiseFinally", nullptr, TestNapiCallbackNested_PromiseFinally, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"testNapiCallbackNested_AsyncFinally", nullptr, TestNapiCallbackNested_AsyncFinally, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
 
         {"testNapiPerformance_SingleTaskCreateQueueDelete", nullptr, TestNapiPerformance_SingleTaskCreateQueueDelete,
          nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -8241,10 +7326,6 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testNapiPerformance_SingleTaskWaitComplete", nullptr, TestNapiPerformance_SingleTaskWaitComplete, nullptr,
          nullptr, nullptr, napi_default, nullptr},
-        {"testNapiPerformance_Loop10000Times", nullptr, TestNapiPerformance_Loop10000Times, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"testNapiPerformance_Loop10000TimesWithCancel", nullptr, TestNapiPerformance_Loop10000TimesWithCancel,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testNapiPerformance_RandomCancelTasks", nullptr, TestNapiPerformance_RandomCancelTasks, nullptr, nullptr,
          nullptr, napi_default, nullptr},
         {"testNapiPerformance_Create10000TasksAndWaitComplete", nullptr,
@@ -8258,26 +7339,11 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testNapiPerformance_CompleteCbReadData", nullptr, TestNapiPerformance_CompleteCbReadData, nullptr, nullptr,
          nullptr, napi_default, nullptr},
 
-        {"testNapiMultiThread_100Threads100TasksEach", nullptr, TestNapiMultiThread_100Threads100TasksEach, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"testNapiMultiThread_100Threads100TasksWithCancel", nullptr, TestNapiMultiThread_100Threads100TasksWithCancel,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"testNapiMultiThread_SingleTaskMultiQueue", nullptr, TestNapiMultiThread_SingleTaskMultiQueue, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"testNapiMultiThread_SingleTaskMultiQueueWithCancel", nullptr,
-         TestNapiMultiThread_SingleTaskMultiQueueWithCancel, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"testNapiMultiThread_DataPointerCounter", nullptr, TestNapiMultiThread_DataPointerCounter, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-
         {"createPromise", nullptr, CreatePromise, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"createPromiseAndResolve", nullptr, CreatePromiseAndResolve, nullptr, nullptr, nullptr, napi_default,
          nullptr},
         {"createPromiseAndReject", nullptr, CreatePromiseAndReject, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"isPromise", nullptr, IsPromise, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"testDoubleResolve", nullptr, TestDoubleResolve, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"testDoubleReject", nullptr, TestDoubleReject, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"testResolveThenReject", nullptr, TestResolveThenReject, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"testRejectThenResolve", nullptr, TestRejectThenResolve, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testMultiThreadCreatePromise", nullptr, TestMultiThreadCreatePromise, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"testMultiThreadResolveSameDeferred", nullptr, TestMultiThreadResolveSameDeferred, nullptr, nullptr, nullptr,
@@ -8287,8 +7353,6 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testThreadSafeResolve", nullptr, TestThreadSafeResolve, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testThreadSafeReject", nullptr, TestThreadSafeReject, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testThreadIsPromise", nullptr, TestThreadIsPromise, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"createPromiseWithTimeout", nullptr, CreatePromiseWithTimeout, nullptr, nullptr, nullptr, napi_default,
-         nullptr},
         {"resolvePromiseWithValue", nullptr, ResolvePromiseWithValue, nullptr, nullptr, nullptr, napi_default,
          nullptr},
         {"rejectPromiseWithValue", nullptr, RejectPromiseWithValue, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -8328,8 +7392,6 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr},
         {"testRejectDeferredNullDeferred", nullptr, TestRejectDeferredNullDeferred, nullptr, nullptr, nullptr,
          napi_default, nullptr},
-        {"testRejectDeferredTwice", nullptr, TestRejectDeferredTwice, nullptr, nullptr, nullptr, napi_default,
-         nullptr},
         {"testLargeBufferResolve", nullptr, TestLargeBufferResolve, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testCircularObjectResolve", nullptr, TestCircularObjectResolve, nullptr, nullptr, nullptr, napi_default,
          nullptr},
@@ -8368,40 +7430,12 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr},
         {"testCircularNestedPromise", nullptr, TestCircularNestedPromise, nullptr, nullptr, nullptr, napi_default,
          nullptr},
-        {"testTimeoutAlreadyResolved", nullptr, TestTimeoutAlreadyResolved, nullptr, nullptr, nullptr, napi_default,
-         nullptr},
-        {"testTimeoutBoundaryValues", nullptr, TestTimeoutBoundaryValues, nullptr, nullptr, nullptr, napi_default,
-         nullptr},
         {"testConcurrentResolveReject10000", nullptr, TestConcurrentResolveReject10000, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"testThreadSafeLargeBuffer10000", nullptr, TestThreadSafeLargeBuffer10000, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"testHundredThreadsCreateResolvePromise", nullptr, TestHundredThreadsCreateResolvePromise, nullptr, nullptr,
          nullptr, napi_default, nullptr},
-        {"testPromiseTaskNestAsyncWork", nullptr, TestPromiseTaskNestAsyncWork, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"testPromiseTaskNestNativePromise", nullptr, TestPromiseTaskNestNativePromise, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"testPromiseTaskNestJsPromise", nullptr, TestPromiseTaskNestJsPromise, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"testPromiseTaskNestAsyncTask", nullptr, TestPromiseTaskNestAsyncTask, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"testAsyncTaskNestCreateRuntimeTask", nullptr, TestAsyncTaskNestCreateRuntimeTask, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"testPromiseCallbackNestAsyncWork", nullptr, TestPromiseCallbackNestAsyncWork, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"testPromiseCallbackNestNativePromise", nullptr, TestPromiseCallbackNestNativePromise, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"testPromiseCallbackNestJsPromise", nullptr, TestPromiseCallbackNestJsPromise, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"testPromiseCallbackNestAsyncTask", nullptr, TestPromiseCallbackNestAsyncTask, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"testPromiseCallbackNestMixedAsync", nullptr, TestPromiseCallbackNestMixedAsync, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"testOtherAsyncNestNativePromise", nullptr, TestOtherAsyncNestNativePromise, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"testOtherAsyncCallbackNestPromise", nullptr, TestOtherAsyncCallbackNestPromise, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
         {"testJsPromiseCombinationResolve", nullptr, TestJsPromiseCombinationResolve, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"testJsPromiseCatchFinallyReject", nullptr, TestJsPromiseCatchFinallyReject, nullptr, nullptr, nullptr,
