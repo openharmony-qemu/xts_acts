@@ -1918,6 +1918,276 @@ export default function Float32ArrayEntriesTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
+    it('testFloat32ArrayEntries114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(0x10, 0b1010, -1.0);
+      const it = arr.entries();
+      const a = (it.next().value!)[0];
+      const b = (it.next().value!)[0];
+      const c = (it.next().value!)[0];
+      expect(a).assertEqual(0);
+      expect(b).assertEqual(1);
+      expect(c).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_ENTRIES_1150
+     * @tc.name testFloat32ArrayEntries115
+     * @tc.desc Verify entry value cannot affect the original array by modifying the tuple
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayEntries115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(0x10, 0b1010, -1.0);
+      const it = arr.entries();
+      const e = it.next().value!;
+      expect(arr.$_get(0)).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_ENTRIES_1160
+     * @tc.name testFloat32ArrayEntries116
+     * @tc.desc Verify modifying an element during iteration entry reflects the new value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayEntries116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(0x10, 0b1010, -1.0);
+      const it = arr.entries();
+      const first = it.next();
+      arr.$_set(1, 99);
+      const second = it.next();
+      expect((second.value!)[1]).assertEqual(99);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_ENTRIES_1170
+     * @tc.name testFloat32ArrayEntries117
+     * @tc.desc Verify fill during iteration subsequent entry reflects the fill
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayEntries117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(1.0, 2.0, 3.0, 4.0);
+      const it = arr.entries();
+      it.next();
+      arr.fill(0);
+      const second = it.next();
+      expect((second.value!)[1]).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_ENTRIES_1180
+     * @tc.name testFloat32ArrayEntries118
+     * @tc.desc Verify reverse during iteration does not affect taken entry
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayEntries118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(1.0, 2.0, 3.0, 4.0);
+      const it = arr.entries();
+      const first = (it.next().value!)[1];
+      arr.reverse();
+      expect(first).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_ENTRIES_1190
+     * @tc.name testFloat32ArrayEntries119
+     * @tc.desc Verify entries nested calls are independent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayEntries119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(1.0, 2.0);
+      const outer = arr.entries();
+      const o0 = (outer.next().value!)[0];
+      const inner = arr.entries();
+      const i0 = (inner.next().value!)[0];
+      const o1 = (outer.next().value!)[0];
+      expect(o0).assertEqual(0);
+      expect(i0).assertEqual(0);
+      expect(o1).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_ENTRIES_1200
+     * @tc.name testFloat32ArrayEntries120
+     * @tc.desc Verify entries value used for reduce sum
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayEntries120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(1.0, 2.0, 3.0, 4.0);
+      let sum = 0;
+      for (let __f32i = 0; __f32i < arr.length; __f32i++) {
+        const e: Array<number> = [__f32i, arr.$_get(__f32i)];
+        sum += e[1];
+      }
+      expect(sum).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_ENTRIES_1210
+     * @tc.name testFloat32ArrayEntries121
+     * @tc.desc Verify entries iterates independently within map callback
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayEntries121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(1.0, 2.0);
+      const mapped = arr.map((v: number) => {
+        const it = arr.entries();
+        let c = 0;
+        for (let __f32e = it.next();!__f32e.done; __f32e = it.next()) {
+          const e = __f32e.value!;
+          c++;
+        }
+        return v + c;
+      });
+      const it = mapped.entries();
+      expect((it.next().value!)[1]).assertEqual(3);
+      expect((it.next().value!)[1]).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_ENTRIES_1220
+     * @tc.name testFloat32ArrayEntries122
+     * @tc.desc Verify entries and keys index are consistent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayEntries122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(0x10, 0b1010, -1.0);
+      const eit = arr.entries();
+      const kit = arr.keys();
+      for (let i = 0; i < 3; i++) {
+        expect((eit.next().value!)[0]).assertEqual(kit.next().value);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_ENTRIES_1230
+     * @tc.name testFloat32ArrayEntries123
+     * @tc.desc Verify entries and values value are consistent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayEntries123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(0x10, 0b1010, -1.0);
+      const eit = arr.entries();
+      const vit = arr.values();
+      for (let i = 0; i < 3; i++) {
+        expect((eit.next().value!)[1]).assertEqual(vit.next().value);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_ENTRIES_1240
+     * @tc.name testFloat32ArrayEntries124
+     * @tc.desc Verify entries tuple index and value are consistent across multiple bases
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayEntries124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(0b1, 0o2, 0x3);
+      const it = arr.entries();
+      expect((it.next().value!)[1]).assertEqual(1);
+      expect((it.next().value!)[1]).assertEqual(2);
+      expect((it.next().value!)[1]).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_ENTRIES_1250
+     * @tc.name testFloat32ArrayEntries125
+     * @tc.desc Verify single-element NaN array entries done sequence
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayEntries125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(NaN);
+      const it = arr.entries();
+      expect(it.next().done).assertFalse();
+      expect(it.next().done).assertTrue();
+      expect(it.next().done).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_ENTRIES_1260
+     * @tc.name testFloat32ArrayEntries126
+     * @tc.desc Verify two-element Infinity boundary array entries
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayEntries126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(Infinity, -Infinity);
+      const it = arr.entries();
+      expect((it.next().value!)[1]).assertEqual(Infinity);
+      expect((it.next().value!)[1]).assertEqual(-Infinity);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_ENTRIES_1270
+     * @tc.name testFloat32ArrayEntries127
+     * @tc.desc Verify large number of same values entries count is correct
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayEntries127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const src: Array<number> = [];
+      for (let i = 0; i < 50; i++) {
+        src.push(1);
+      }
+      const arr = Float32Array.from(src);
+      let count = 0;
+      for (let __f32i = 0; __f32i < arr.length; __f32i++) {
+        const e: Array<number> = [__f32i, arr.$_get(__f32i)];
+        count++;
+      }
+      expect(count).assertEqual(50);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_ENTRIES_1280
+     * @tc.name testFloat32ArrayEntries128
+     * @tc.desc Verify entries iterator has no return method
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayEntries128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(1.0);
+      const it = arr.entries();
+      const propNames: string[] = Object.getOwnPropertyNames(it);
+      expect(propNames.indexOf('return')).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_ENTRIES_1290
+     * @tc.name testFloat32ArrayEntries129
+     * @tc.desc Verify entries iterator has no throw method
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayEntries129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(1.0);
+      const it = arr.entries();
+      const propNames: string[] = Object.getOwnPropertyNames(it);
+      expect(propNames.indexOf('throw')).assertEqual(-1);
+    });
 
   });
 }
