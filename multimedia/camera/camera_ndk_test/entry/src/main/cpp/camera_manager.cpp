@@ -4641,6 +4641,35 @@ Camera_ErrorCode NDKCamera::DeleteZoomPointInfo(int useCaseCode)
     return ret_;
 }
 
+bool NDKCamera::IsLogViewAssistSupported(int useCaseCode)
+{
+    LOG("IsLogViewAssistSupported useCaseCode: %d", useCaseCode);
+    bool isLogViewAssistSupported;
+    if (useCaseCode == PARAMETER_OK) {
+        isLogViewAssistSupported = OH_PreviewOutput_IsLogViewAssistSupported(previewOutput_);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        isLogViewAssistSupported = OH_PreviewOutput_IsLogViewAssistSupported(nullptr);
+    }
+
+    LOG("OH_PreviewOutput_IsLogViewAssistSupported ret: %d", isLogViewAssistSupported);
+    return isLogViewAssistSupported;
+}
+
+Camera_ErrorCode NDKCamera::SetLogViewAssist(int useCaseCode, bool isEnable)
+{
+    LOG("SetLogViewAssist useCaseCode: %d", useCaseCode);
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_PreviewOutput_SetLogViewAssistEnable(previewOutput_, isEnable);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_PreviewOutput_SetLogViewAssistEnable(nullptr, isEnable);
+    }
+
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_PreviewOutput_SetLogViewAssistEnable failed.");
+    }
+    return ret_;
+}
+
 Camera_ErrorCode NDKCamera::CreatePhotoCaptureSettingExt(int useCaseCode)
 {
     if (useCaseCode == PARAMETER_OK) {

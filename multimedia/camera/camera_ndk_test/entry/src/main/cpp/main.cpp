@@ -19,6 +19,7 @@
 #include "ohcamera/camera.h"
 #include <string.h>
 #include "hilog/log.h"
+#include "native_color_space_manager/native_color_space_manager.h"
 
 static NDKCamera* ndkCamera_ = nullptr;
 const static int NUMBER_0 = 0;
@@ -4047,6 +4048,57 @@ static napi_value SetImageRotation(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value GetEnumColorSpaceName(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+
+    if (index == 0) {
+        napi_create_int32(env, BT2020_LOG_FULL, &result);
+    } else if (index == 1) {
+        napi_create_int32(env, BT2020_LOG_LIMIT, &result);
+    }
+
+    return result;
+}
+	 
+static napi_value IsLogViewAssistSupported(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+
+    napi_value result;
+    bool ret = ndkCamera_->IsLogViewAssistSupported(useCaseCode);
+    napi_get_boolean(env, ret, &result);
+    return result;
+}
+
+static napi_value SetLogViewAssist(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_value result;
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    bool isEnable;
+    napi_get_value_bool(env, args[1], &isEnable);
+    Camera_ErrorCode ret = ndkCamera_->SetLogViewAssist(useCaseCode, isEnable);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 static napi_value SetMirror(napi_env env, napi_callback_info info)
 {
     size_t argc = 2;
@@ -4470,6 +4522,12 @@ static napi_value Init(napi_env env, napi_value exports)
         {"getColorTint", nullptr, GetColorTint, nullptr, nullptr, nullptr, napi_default, nullptr },
         {"getZoomPointInfos", nullptr, GetZoomPointInfos, nullptr, nullptr, nullptr, napi_default, nullptr },
         {"deleteZoomPointInfo", nullptr, DeleteZoomPointInfo, nullptr, nullptr, nullptr, napi_default, nullptr },
+		
+        {"etEnumColorSpaceName", nullptr, GetEnumColorSpaceName, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"isLogViewAssistSupported", nullptr, IsLogViewAssistSupported, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"setLogViewAssistEnable", nullptr, SetLogViewAssist, nullptr, nullptr, nullptr, napi_default, nullptr},
+
     };
     napi_property_descriptor desc3[] = {
         {"oHCameraManagerTorchMode", nullptr, OHCameraManagerTorchMode, nullptr, nullptr, nullptr,
