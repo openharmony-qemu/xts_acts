@@ -115,110 +115,96 @@ export default function Float32ArrayToLocaleString2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_0600
      * @tc.name testFloat32ArrayToLocaleStringTWO006
-     * @tc.desc Verify single-element 1 array returns "1"
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayToLocaleStringTWO006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float32Array.of(1.0);
-      const result = arr.toLocaleString();
-      expect(result).assertEqual("1");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_0700
-     * @tc.name testFloat32ArrayToLocaleStringTWO007
      * @tc.desc Verify single-element 7 array returns "7"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(7.0);
       const result = arr.toLocaleString();
       expect(result).assertEqual("7");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_0800
-     * @tc.name testFloat32ArrayToLocaleStringTWO008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_0700
+     * @tc.name testFloat32ArrayToLocaleStringTWO007
      * @tc.desc Verify single-element -1 array returns "-1"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(-1.0);
       const result = arr.toLocaleString();
       expect(result).assertEqual("-1");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_0900
-     * @tc.name testFloat32ArrayToLocaleStringTWO009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_0800
+     * @tc.name testFloat32ArrayToLocaleStringTWO008
      * @tc.desc Verify empty array returns string of length 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(0);
       const result = arr.toLocaleString();
       expect(result.length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_1000
-     * @tc.name testFloat32ArrayToLocaleStringTWO010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_0900
+     * @tc.name testFloat32ArrayToLocaleStringTWO009
      * @tc.desc Verify returned string length matches the formatted value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(7.0);
       const result = arr.toLocaleString();
       expect(result.length).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_1100
-     * @tc.name testFloat32ArrayToLocaleStringTWO011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_1000
+     * @tc.name testFloat32ArrayToLocaleStringTWO010
      * @tc.desc Verify empty array arr.length stays 0 after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(0);
       arr.toLocaleString();
       expect(arr.length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_1200
-     * @tc.name testFloat32ArrayToLocaleStringTWO012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_1100
+     * @tc.name testFloat32ArrayToLocaleStringTWO011
      * @tc.desc Verify arr.BYTES_PER_ELEMENT stays 4 after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(1.0, 2.0);
       arr.toLocaleString();
       expect(arr.BYTES_PER_ELEMENT).assertEqual(4);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_1300
-     * @tc.name testFloat32ArrayToLocaleStringTWO013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_1200
+     * @tc.name testFloat32ArrayToLocaleStringTWO012
      * @tc.desc Verify single-element 1 array first element value unchanged after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(1.0);
       const before: number = arr.$_get(0);
       arr.toLocaleString();
@@ -226,29 +212,44 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_1400
-     * @tc.name testFloat32ArrayToLocaleStringTWO014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_1300
+     * @tc.name testFloat32ArrayToLocaleStringTWO013
      * @tc.desc Verify NaN element still NaN after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(NaN);
       arr.toLocaleString();
       expect(arr.$_get(0)).assertNaN();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_1500
-     * @tc.name testFloat32ArrayToLocaleStringTWO015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_1400
+     * @tc.name testFloat32ArrayToLocaleStringTWO014
      * @tc.desc Verify Infinity element value unchanged after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(Infinity);
+      const before: number = arr.$_get(0);
+      arr.toLocaleString();
+      expect(arr.$_get(0)).assertEqual(before);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_1500
+     * @tc.name testFloat32ArrayToLocaleStringTWO015
+     * @tc.desc Verify -Infinity element value unchanged after call
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayToLocaleStringTWO015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(-Infinity);
       const before: number = arr.$_get(0);
       arr.toLocaleString();
       expect(arr.$_get(0)).assertEqual(before);
@@ -257,13 +258,13 @@ export default function Float32ArrayToLocaleString2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_1600
      * @tc.name testFloat32ArrayToLocaleStringTWO016
-     * @tc.desc Verify -Infinity element value unchanged after call
+     * @tc.desc Verify 0.1 element stored value unchanged after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayToLocaleStringTWO016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float32Array.of(-Infinity);
+      const arr = Float32Array.of(0.1);
       const before: number = arr.$_get(0);
       arr.toLocaleString();
       expect(arr.$_get(0)).assertEqual(before);
@@ -272,13 +273,13 @@ export default function Float32ArrayToLocaleString2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_1700
      * @tc.name testFloat32ArrayToLocaleStringTWO017
-     * @tc.desc Verify 0.1 element stored value unchanged after call
+     * @tc.desc Verify 16777216 element value unchanged after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayToLocaleStringTWO017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float32Array.of(0.1);
+      const arr = Float32Array.of(16777216.0);
       const before: number = arr.$_get(0);
       arr.toLocaleString();
       expect(arr.$_get(0)).assertEqual(before);
@@ -287,13 +288,13 @@ export default function Float32ArrayToLocaleString2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_1800
      * @tc.name testFloat32ArrayToLocaleStringTWO018
-     * @tc.desc Verify 16777216 element value unchanged after call
+     * @tc.desc Verify 16777217 truncated value unchanged after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayToLocaleStringTWO018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float32Array.of(16777216.0);
+      const arr = Float32Array.of(16777217.0);
       const before: number = arr.$_get(0);
       arr.toLocaleString();
       expect(arr.$_get(0)).assertEqual(before);
@@ -302,13 +303,13 @@ export default function Float32ArrayToLocaleString2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_1900
      * @tc.name testFloat32ArrayToLocaleStringTWO019
-     * @tc.desc Verify 16777217 truncated value unchanged after call
+     * @tc.desc Verify 1.0e40 element overflowing to Infinity unchanged after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayToLocaleStringTWO019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float32Array.of(16777217.0);
+      const arr = Float32Array.of(1.0e40);
       const before: number = arr.$_get(0);
       arr.toLocaleString();
       expect(arr.$_get(0)).assertEqual(before);
@@ -317,13 +318,13 @@ export default function Float32ArrayToLocaleString2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_2000
      * @tc.name testFloat32ArrayToLocaleStringTWO020
-     * @tc.desc Verify 1.0e40 element overflowing to Infinity unchanged after call
+     * @tc.desc Verify Float32 minimum positive normal value element unchanged after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayToLocaleStringTWO020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float32Array.of(1.0e40);
+      const arr = Float32Array.of(1.1754943508222875e-38);
       const before: number = arr.$_get(0);
       arr.toLocaleString();
       expect(arr.$_get(0)).assertEqual(before);
@@ -332,27 +333,12 @@ export default function Float32ArrayToLocaleString2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_2100
      * @tc.name testFloat32ArrayToLocaleStringTWO021
-     * @tc.desc Verify Float32 minimum positive normal value element unchanged after call
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayToLocaleStringTWO021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float32Array.of(1.1754943508222875e-38);
-      const before: number = arr.$_get(0);
-      arr.toLocaleString();
-      expect(arr.$_get(0)).assertEqual(before);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_2200
-     * @tc.name testFloat32ArrayToLocaleStringTWO022
      * @tc.desc Verify -0 element sign bit preserved after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(-0.0);
       const before: number = 1 / arr.$_get(0);
       arr.toLocaleString();
@@ -360,14 +346,14 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_2300
-     * @tc.name testFloat32ArrayToLocaleStringTWO023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_2200
+     * @tc.name testFloat32ArrayToLocaleStringTWO022
      * @tc.desc Verify three-element array second element value unchanged after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0);
       const before: number = arr.$_get(1);
       arr.toLocaleString();
@@ -375,14 +361,14 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_2400
-     * @tc.name testFloat32ArrayToLocaleStringTWO024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_2300
+     * @tc.name testFloat32ArrayToLocaleStringTWO023
      * @tc.desc Verify three-element array last element value unchanged after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0);
       const before: number = arr.$_get(2);
       arr.toLocaleString();
@@ -390,14 +376,14 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_2500
-     * @tc.name testFloat32ArrayToLocaleStringTWO025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_2400
+     * @tc.name testFloat32ArrayToLocaleStringTWO024
      * @tc.desc Verify five-element array at(-1) value unchanged after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(5.0, 6.0, 7.0);
       const before: number = arr.at(-1)!;
       arr.toLocaleString();
@@ -405,14 +391,14 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_2600
-     * @tc.name testFloat32ArrayToLocaleStringTWO026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_2500
+     * @tc.name testFloat32ArrayToLocaleStringTWO025
      * @tc.desc Verify five-element array length unchanged after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0, 0.0, 1000000.0);
       const before: number = arr.length;
       arr.toLocaleString();
@@ -420,14 +406,14 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_2700
-     * @tc.name testFloat32ArrayToLocaleStringTWO027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_2600
+     * @tc.name testFloat32ArrayToLocaleStringTWO026
      * @tc.desc Verify five-element array byteLength unchanged after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0, 0.0, 1000000.0);
       const before: number = arr.byteLength;
       arr.toLocaleString();
@@ -435,14 +421,14 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_2800
-     * @tc.name testFloat32ArrayToLocaleStringTWO028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_2700
+     * @tc.name testFloat32ArrayToLocaleStringTWO027
      * @tc.desc Verify underlying buffer byteLength unchanged after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0);
       const buf = arr.buffer;
       const before: number = buf.byteLength;
@@ -451,14 +437,14 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_2900
-     * @tc.name testFloat32ArrayToLocaleStringTWO029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_2800
+     * @tc.name testFloat32ArrayToLocaleStringTWO028
      * @tc.desc Verify two consecutive calls return equal values proving no state change
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0);
       const r1 = arr.toLocaleString();
       const r2 = arr.toLocaleString();
@@ -466,15 +452,30 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_3000
-     * @tc.name testFloat32ArrayToLocaleStringTWO030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_2900
+     * @tc.name testFloat32ArrayToLocaleStringTWO029
      * @tc.desc Verify arr.$_get(0) value unchanged after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(42.0);
+      const before: number = arr.$_get(0);
+      arr.toLocaleString();
+      expect(arr.$_get(0)).assertEqual(before);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_3000
+     * @tc.name testFloat32ArrayToLocaleStringTWO030
+     * @tc.desc Verify 0.1 and 0.2 array first element stored value unchanged after call
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayToLocaleStringTWO030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(0.1, 0.2);
       const before: number = arr.$_get(0);
       arr.toLocaleString();
       expect(arr.$_get(0)).assertEqual(before);
@@ -483,13 +484,13 @@ export default function Float32ArrayToLocaleString2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_3100
      * @tc.name testFloat32ArrayToLocaleStringTWO031
-     * @tc.desc Verify 0.1 and 0.2 array first element stored value unchanged after call
+     * @tc.desc Verify decimal 1.5 element value unchanged after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayToLocaleStringTWO031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float32Array.of(0.1, 0.2);
+      const arr = Float32Array.of(1.5);
       const before: number = arr.$_get(0);
       arr.toLocaleString();
       expect(arr.$_get(0)).assertEqual(before);
@@ -498,27 +499,12 @@ export default function Float32ArrayToLocaleString2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_3200
      * @tc.name testFloat32ArrayToLocaleStringTWO032
-     * @tc.desc Verify decimal 1.5 element value unchanged after call
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayToLocaleStringTWO032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float32Array.of(1.5);
-      const before: number = arr.$_get(0);
-      arr.toLocaleString();
-      expect(arr.$_get(0)).assertEqual(before);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_3300
-     * @tc.name testFloat32ArrayToLocaleStringTWO033
      * @tc.desc Verify array reference unchanged after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0);
       const ref = arr;
       arr.toLocaleString();
@@ -526,23 +512,37 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_3400
-     * @tc.name testFloat32ArrayToLocaleStringTWO034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_3300
+     * @tc.name testFloat32ArrayToLocaleStringTWO033
      * @tc.desc Verify arr.BYTES_PER_ELEMENT still 4 after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(3.0, 4.0);
       arr.toLocaleString();
       expect(arr.BYTES_PER_ELEMENT).assertEqual(4);
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_3400
+     * @tc.name testFloat32ArrayToLocaleStringTWO034
+     * @tc.desc Verify arr.length still 3 after call
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayToLocaleStringTWO034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(4.0, 5.0, 6.0);
+      arr.toLocaleString();
+      expect(arr.length).assertEqual(3);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_3500
      * @tc.name testFloat32ArrayToLocaleStringTWO035
-     * @tc.desc Verify arr.length still 3 after call
+     * @tc.desc Verify arr.byteLength still 12 after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -550,32 +550,18 @@ export default function Float32ArrayToLocaleString2Test(): void {
     it('testFloat32ArrayToLocaleStringTWO035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(4.0, 5.0, 6.0);
       arr.toLocaleString();
-      expect(arr.length).assertEqual(3);
+      expect(arr.byteLength).assertEqual(12);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_3600
      * @tc.name testFloat32ArrayToLocaleStringTWO036
-     * @tc.desc Verify arr.byteLength still 12 after call
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayToLocaleStringTWO036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float32Array.of(4.0, 5.0, 6.0);
-      arr.toLocaleString();
-      expect(arr.byteLength).assertEqual(12);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_3700
-     * @tc.name testFloat32ArrayToLocaleStringTWO037
      * @tc.desc Verify array still writable after call proving not replaced by string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(5.0);
       arr.toLocaleString();
       arr.$_set(0, 99);
@@ -583,42 +569,42 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_3800
-     * @tc.name testFloat32ArrayToLocaleStringTWO038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_3700
+     * @tc.name testFloat32ArrayToLocaleStringTWO037
      * @tc.desc Verify array still readable via $_get after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(7.0);
       arr.toLocaleString();
       expect(arr.$_get(0)).assertEqual(7);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_3900
-     * @tc.name testFloat32ArrayToLocaleStringTWO039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_3800
+     * @tc.name testFloat32ArrayToLocaleStringTWO038
      * @tc.desc Verify array still readable via at after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(9.0);
       arr.toLocaleString();
       expect(arr.at(0)).assertEqual(9);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_4000
-     * @tc.name testFloat32ArrayToLocaleStringTWO040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_3900
+     * @tc.name testFloat32ArrayToLocaleStringTWO039
      * @tc.desc Verify array still iterable after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0);
       arr.toLocaleString();
       const it = arr.values();
@@ -626,28 +612,28 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_4100
-     * @tc.name testFloat32ArrayToLocaleStringTWO041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_4000
+     * @tc.name testFloat32ArrayToLocaleStringTWO040
      * @tc.desc Verify NaN receiver element is formatted as a string result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(NaN);
       const result = arr.toLocaleString("en-US");
       expect(result).assertEqual("NaN");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_4200
-     * @tc.name testFloat32ArrayToLocaleStringTWO042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_4100
+     * @tc.name testFloat32ArrayToLocaleStringTWO041
      * @tc.desc Verify toLocaleString returns formatted content and keeps the receiver unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(1.0);
       const result = arr.toLocaleString();
       expect(result).assertEqual("1");
@@ -655,14 +641,14 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_4300
-     * @tc.name testFloat32ArrayToLocaleStringTWO043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_4200
+     * @tc.name testFloat32ArrayToLocaleStringTWO042
      * @tc.desc Verify offset view receiver formats only the visible element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(12);
       const arr = new Float32Array(buf, 4, 1);
       arr.$_set(0, 42.0);
@@ -671,14 +657,14 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_4400
-     * @tc.name testFloat32ArrayToLocaleStringTWO044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_4300
+     * @tc.name testFloat32ArrayToLocaleStringTWO043
      * @tc.desc Verify repeated 2-argument options calls return the equal grouped string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(123456.0);
       let opts: Record<string, Int> = { 'minimumFractionDigits': 2 };
       const first = arr.toLocaleString("en-US", opts);
@@ -688,9 +674,24 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_4400
+     * @tc.name testFloat32ArrayToLocaleStringTWO044
+     * @tc.desc Verify view byteOffset stays 4 after call
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayToLocaleStringTWO044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf = new ArrayBuffer(16);
+      const arr = new Float32Array(buf, 4, 3);
+      arr.toLocaleString();
+      expect(arr.byteOffset).assertEqual(4);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_4500
      * @tc.name testFloat32ArrayToLocaleStringTWO045
-     * @tc.desc Verify view byteOffset stays 4 after call
+     * @tc.desc Verify view byteLength stays 12 after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -699,13 +700,13 @@ export default function Float32ArrayToLocaleString2Test(): void {
       const buf = new ArrayBuffer(16);
       const arr = new Float32Array(buf, 4, 3);
       arr.toLocaleString();
-      expect(arr.byteOffset).assertEqual(4);
+      expect(arr.byteLength).assertEqual(12);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_4600
      * @tc.name testFloat32ArrayToLocaleStringTWO046
-     * @tc.desc Verify view byteLength stays 12 after call
+     * @tc.desc Verify view buffer reference stays original ArrayBuffer after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -714,13 +715,13 @@ export default function Float32ArrayToLocaleString2Test(): void {
       const buf = new ArrayBuffer(16);
       const arr = new Float32Array(buf, 4, 3);
       arr.toLocaleString();
-      expect(arr.byteLength).assertEqual(12);
+      expect(arr.buffer).assertEqual(buf);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_4700
      * @tc.name testFloat32ArrayToLocaleStringTWO047
-     * @tc.desc Verify view buffer reference stays original ArrayBuffer after call
+     * @tc.desc Verify view length stays 3 after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -729,13 +730,13 @@ export default function Float32ArrayToLocaleString2Test(): void {
       const buf = new ArrayBuffer(16);
       const arr = new Float32Array(buf, 4, 3);
       arr.toLocaleString();
-      expect(arr.buffer).assertEqual(buf);
+      expect(arr.length).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_4800
      * @tc.name testFloat32ArrayToLocaleStringTWO048
-     * @tc.desc Verify view length stays 3 after call
+     * @tc.desc Verify ArrayBuffer.isView still true after view call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -744,33 +745,18 @@ export default function Float32ArrayToLocaleString2Test(): void {
       const buf = new ArrayBuffer(16);
       const arr = new Float32Array(buf, 4, 3);
       arr.toLocaleString();
-      expect(arr.length).assertEqual(3);
+      expect(ArrayBuffer.isView(arr)).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_4900
      * @tc.name testFloat32ArrayToLocaleStringTWO049
-     * @tc.desc Verify ArrayBuffer.isView still true after view call
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayToLocaleStringTWO049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(16);
-      const arr = new Float32Array(buf, 4, 3);
-      arr.toLocaleString();
-      expect(ArrayBuffer.isView(arr)).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_5000
-     * @tc.name testFloat32ArrayToLocaleStringTWO050
      * @tc.desc Verify view first element value unchanged after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const arr = new Float32Array(buf, 4, 3);
       arr.$_set(0, 1.5);
@@ -780,9 +766,24 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_5000
+     * @tc.name testFloat32ArrayToLocaleStringTWO050
+     * @tc.desc Verify parent array element unchanged after subarray view call
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayToLocaleStringTWO050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const base = Float32Array.of(0x10, 0b1010, -1.0, 0.0, 1000000.0);
+      const view = base.subarray(1, 3);
+      view.toLocaleString();
+      expect(base.$_get(1)).assertEqual(10);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_5100
      * @tc.name testFloat32ArrayToLocaleStringTWO051
-     * @tc.desc Verify parent array element unchanged after subarray view call
+     * @tc.desc Verify subarray view byteOffset stays 4 after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -791,13 +792,13 @@ export default function Float32ArrayToLocaleString2Test(): void {
       const base = Float32Array.of(0x10, 0b1010, -1.0, 0.0, 1000000.0);
       const view = base.subarray(1, 3);
       view.toLocaleString();
-      expect(base.$_get(1)).assertEqual(10);
+      expect(view.byteOffset).assertEqual(4);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_5200
      * @tc.name testFloat32ArrayToLocaleStringTWO052
-     * @tc.desc Verify subarray view byteOffset stays 4 after call
+     * @tc.desc Verify subarray view byteLength stays 8 after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -806,33 +807,18 @@ export default function Float32ArrayToLocaleString2Test(): void {
       const base = Float32Array.of(0x10, 0b1010, -1.0, 0.0, 1000000.0);
       const view = base.subarray(1, 3);
       view.toLocaleString();
-      expect(view.byteOffset).assertEqual(4);
+      expect(view.byteLength).assertEqual(8);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_5300
      * @tc.name testFloat32ArrayToLocaleStringTWO053
-     * @tc.desc Verify subarray view byteLength stays 8 after call
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayToLocaleStringTWO053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const base = Float32Array.of(0x10, 0b1010, -1.0, 0.0, 1000000.0);
-      const view = base.subarray(1, 3);
-      view.toLocaleString();
-      expect(view.byteLength).assertEqual(8);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_5400
-     * @tc.name testFloat32ArrayToLocaleStringTWO054
      * @tc.desc Verify shared buffer two views: calling one leaves the other view byteOffset unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const base = Float32Array.of(0x10, 0b1010, -1.0, 0.0, 1000000.0);
       const v1 = base.subarray(0, 2);
       const v2 = base.subarray(2, 5);
@@ -841,14 +827,14 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_5500
-     * @tc.name testFloat32ArrayToLocaleStringTWO055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_5400
+     * @tc.name testFloat32ArrayToLocaleStringTWO054
      * @tc.desc Verify underlying ArrayBuffer byteLength unchanged after view call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(20);
       const arr = new Float32Array(buf, 4, 4);
       arr.toLocaleString();
@@ -856,14 +842,14 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_5600
-     * @tc.name testFloat32ArrayToLocaleStringTWO056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_5500
+     * @tc.name testFloat32ArrayToLocaleStringTWO055
      * @tc.desc Verify DataView byteLength unchanged after view call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const arr = new Float32Array(buf, 0, 4);
       const dv = new DataView(buf);
@@ -872,14 +858,14 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_5700
-     * @tc.name testFloat32ArrayToLocaleStringTWO057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_5600
+     * @tc.name testFloat32ArrayToLocaleStringTWO056
      * @tc.desc Verify view still writable after call proving view not detached
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const arr = new Float32Array(buf, 4, 3);
       arr.toLocaleString();
@@ -888,14 +874,14 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_5800
-     * @tc.name testFloat32ArrayToLocaleStringTWO058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_5700
+     * @tc.name testFloat32ArrayToLocaleStringTWO057
      * @tc.desc Verify writing to view after call still reflects to parent array proving sharing preserved
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const base = Float32Array.of(0x10, 0b1010, -1.0, 0.0, 1000000.0);
       const view = base.subarray(1, 3);
       view.toLocaleString();
@@ -904,14 +890,14 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_5900
-     * @tc.name testFloat32ArrayToLocaleStringTWO059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_5800
+     * @tc.name testFloat32ArrayToLocaleStringTWO058
      * @tc.desc Verify view last element value unchanged after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const arr = new Float32Array(buf, 4, 3);
       arr.$_set(2, 7.5);
@@ -921,14 +907,14 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_6000
-     * @tc.name testFloat32ArrayToLocaleStringTWO060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_5900
+     * @tc.name testFloat32ArrayToLocaleStringTWO059
      * @tc.desc Verify view still iterable after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const arr = new Float32Array(buf, 4, 3);
       arr.$_set(0, 1);
@@ -940,14 +926,14 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_6100
-     * @tc.name testFloat32ArrayToLocaleStringTWO061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_6000
+     * @tc.name testFloat32ArrayToLocaleStringTWO060
      * @tc.desc Verify shared buffer two views: calling one leaves the other view element unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const base = Float32Array.of(0x10, 0b1010, -1.0, 0.0, 1000000.0);
       const v1 = base.subarray(0, 2);
       const v2 = base.subarray(2, 5);
@@ -957,14 +943,14 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_6200
-     * @tc.name testFloat32ArrayToLocaleStringTWO062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_6100
+     * @tc.name testFloat32ArrayToLocaleStringTWO061
      * @tc.desc Verify nested subarray view byteOffset stays 8 after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const base = Float32Array.of(1.0, 2.0, 3.0, 4.0, 5.0, 6.0);
       const v1 = base.subarray(1, 5);
       const v2 = v1.subarray(1, 3);
@@ -973,14 +959,14 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_6300
-     * @tc.name testFloat32ArrayToLocaleStringTWO063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_6200
+     * @tc.name testFloat32ArrayToLocaleStringTWO062
      * @tc.desc Verify view at(-1) value unchanged after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const arr = new Float32Array(buf, 4, 3);
       arr.$_set(2, 9);
@@ -991,14 +977,14 @@ export default function Float32ArrayToLocaleString2Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_6400
-     * @tc.name testFloat32ArrayToLocaleStringTWO064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_6300
+     * @tc.name testFloat32ArrayToLocaleStringTWO063
      * @tc.desc Verify all-NaN array formats each element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(3);
       arr.fill(NaN);
       const result = arr.toLocaleString();
@@ -1006,14 +992,14 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_6500
-     * @tc.name testFloat32ArrayToLocaleStringTWO065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_6400
+     * @tc.name testFloat32ArrayToLocaleStringTWO064
      * @tc.desc Verify mixed special-value receiver formats special numeric values with locale symbols
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(NaN, Infinity, -Infinity, 0.0, -0.0);
       const result = arr.toLocaleString();
       expect(result).assertEqual("NaN,\u221e,-\u221e,0,-0");
@@ -1023,14 +1009,14 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_6600
-     * @tc.name testFloat32ArrayToLocaleStringTWO066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_6500
+     * @tc.name testFloat32ArrayToLocaleStringTWO065
      * @tc.desc Verify offset view containing Float32 minimum positive normal value uses default localized formatting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(12);
       const arr = new Float32Array(buf, 4, 1);
       arr.$_set(0, 1.1754943508222875e-38);
@@ -1042,14 +1028,14 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_6700
-     * @tc.name testFloat32ArrayToLocaleStringTWO067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_6600
+     * @tc.name testFloat32ArrayToLocaleStringTWO066
      * @tc.desc Verify new Float32Array(1) default zero element formats as "0"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array(1);
       const result = arr.toLocaleString();
       expect(result).assertEqual("0");
@@ -1057,14 +1043,14 @@ export default function Float32ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_6800
-     * @tc.name testFloat32ArrayToLocaleStringTWO068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_LOCALE_STRINGTWO_6700
+     * @tc.name testFloat32ArrayToLocaleStringTWO067
      * @tc.desc Verify returned locale string remains a snapshot after the source changes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayToLocaleStringTWO068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayToLocaleStringTWO067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(1.0, 2.0);
       const result = arr.toLocaleString('en-US');
       arr.$_set(0, 9.0);
