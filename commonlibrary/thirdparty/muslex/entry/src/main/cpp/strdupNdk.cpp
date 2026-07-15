@@ -22,9 +22,12 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int kStableLoop10000 = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
+static constexpr size_t K_LONG_STR_SIZE = 10000;
+static constexpr size_t K_EXTRA_LONG_STR_SIZE = 100000;
+static constexpr size_t K_STR_COUNT = 5;
 
 static char* CallStrdup(const char* s)
 {
@@ -90,7 +93,7 @@ static napi_value StrdupNormal003(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    std::string longStr(10000, 'a');
+    std::string longStr(K_LONG_STR_SIZE, 'a');
     char* dup = CallStrdup(longStr.c_str());
     bool pass = (dup != nullptr && strcmp(dup, longStr.c_str()) == 0);
     free(dup);
@@ -146,7 +149,7 @@ static napi_value StrdupBoundary001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    std::string longStr(100000, 'a');
+    std::string longStr(K_EXTRA_LONG_STR_SIZE, 'a');
     char* dup = CallStrdup(longStr.c_str());
     bool pass = (dup != nullptr && strcmp(dup, longStr.c_str()) == 0);
     free(dup);
@@ -175,7 +178,7 @@ static napi_value StrdupStable001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     bool pass = true;
-    for (int i = 0; i < kStableLoop10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
         char* dup = CallStrdup("test");
         if (dup == nullptr || strcmp(dup, "test") != 0) {
             pass = false;
@@ -184,6 +187,19 @@ static napi_value StrdupStable001(napi_env env, napi_callback_info info)
         free(dup);
     }
     return ReturnInt32(env, pass ? 1 : 0);
+}
+
+static void StrdupWorker(std::atomic<bool>& hasError, const char* strings[])
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+                int idx = i % K_STR_COUNT;
+        char* dup = CallStrdup(strings[idx]);
+        if (dup == nullptr || strcmp(dup, strings[idx]) != 0) {
+            hasError = true;
+            return;
+        }
+        free(dup);
+    }
 }
 
 /* ==================== Multi-thread Tests ==================== */
@@ -197,19 +213,10 @@ static napi_value StrdupThread001(napi_env env, napi_callback_info info)
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     const char* strings[] = {"Hello", "World", "Test", "Strdup", "Thread"};
+    static_assert(sizeof(strings) / sizeof(strings[0]) == K_STR_COUNT, "K_STR_COUNT mismatch");
 
-    for (int t = 0; t < kThreadCount; ++t) {
-        threads.emplace_back([&hasError, strings]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
-                int idx = i % 5;
-                char* dup = CallStrdup(strings[idx]);
-                if (dup == nullptr || strcmp(dup, strings[idx]) != 0) {
-                    hasError = true;
-                    return;
-                }
-                free(dup);
-            }
-        });
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
+        threads.emplace_back(StrdupWorker, std::ref(hasError), strings);
     }
     for (auto& th : threads) {
         th.join();

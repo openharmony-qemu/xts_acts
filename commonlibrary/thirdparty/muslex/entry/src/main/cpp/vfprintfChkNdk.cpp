@@ -24,9 +24,9 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int kStableLoop10000 = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
 static int CallVfprintfChk(FILE* fp, int flags, const char* format, va_list va)
 {
@@ -42,8 +42,7 @@ static int CallVfprintfChk(FILE* fp, int flags, const char* format, va_list va)
 
 static FILE* CreateSandboxTempFile()
 {
-    char tmpPath[256];
-    snprintf(tmpPath, sizeof(tmpPath), "/data/storage/el2/base/temp/tmpfile_XXXXXX");
+    char tmpPath[] = "/data/storage/el2/base/temp/tmpfile_XXXXXX";
     int fd = mkstemp(tmpPath);
     if (fd == -1) {
         return nullptr;
@@ -189,8 +188,7 @@ static napi_value VfprintfChkAbnormal001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    char tmpPath[256];
-    snprintf(tmpPath, sizeof(tmpPath), "/data/storage/el2/base/temp/tmpfile_XXXXXX");
+    char tmpPath[] = "/data/storage/el2/base/temp/tmpfile_XXXXXX";
     int fd = mkstemp(tmpPath);
     if (fd == -1) {
         return ReturnInt32(env, 0);
@@ -266,10 +264,11 @@ static napi_value VfprintfChkBoundary001(napi_env env, napi_callback_info info)
     if (!tmp) {
         return ReturnInt32(env, 0);
     }
-    std::string longFmt(3000, 'x');
+    size_t fmtLen = 3000;
+    std::string longFmt(fmtLen, 'x');
     int ret = VfprintfHelper(tmp, 0, longFmt.c_str());
     if (fclose(tmp) != 0) {}
-    return ReturnInt32(env, (ret == 3000) ? 1 : 0);
+    return ReturnInt32(env, (ret == static_cast<int>(fmtLen)) ? 1 : 0);
 }
 
 /* TC-012: Very long output string */
@@ -282,10 +281,11 @@ static napi_value VfprintfChkBoundary002(napi_env env, napi_callback_info info)
     if (!tmp) {
         return ReturnInt32(env, 0);
     }
-    std::string longStr(2000, 'a');
+    size_t outLen = 2000;
+    std::string longStr(outLen, 'a');
     int ret = VfprintfHelper(tmp, 0, "%s", longStr.c_str());
     if (fclose(tmp) != 0) {}
-    return ReturnInt32(env, (ret == 2000) ? 1 : 0);
+    return ReturnInt32(env, (ret == static_cast<int>(outLen)) ? 1 : 0);
 }
 
 /* ==================== Stability Tests ==================== */
@@ -297,7 +297,7 @@ static napi_value VfprintfChkStable001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     bool pass = true;
-    for (int i = 0; i < kStableLoop10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
         FILE* tmp = CreateSandboxTempFile();
         if (!tmp) {
             pass = false;
@@ -313,6 +313,24 @@ static napi_value VfprintfChkStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+static void VfprintfChkWorker(std::atomic<bool>& hasError, const char* formats[])
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        FILE* tmp = CreateSandboxTempFile();
+        if (!tmp) {
+            hasError = true;
+            return;
+        }
+        int idx = i % 4;
+        int ret = VfprintfHelper(tmp, i % 2, formats[idx], "test", 123);
+        if (fclose(tmp) != 0) {}
+        if (ret < 0) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 /* ==================== Multi-thread Tests ==================== */
 
 /* TC-014: Multi-thread safety with different files */
@@ -325,23 +343,8 @@ static napi_value VfprintfChkThread001(napi_env env, napi_callback_info info)
     std::vector<std::thread> threads;
     const char* formats[] = {"%s %d", "Number: %d", "Hello %s", "%d + %d = %d"};
 
-    for (int t = 0; t < kThreadCount; ++t) {
-        threads.emplace_back([&hasError, formats]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
-                FILE* tmp = CreateSandboxTempFile();
-                if (!tmp) {
-                    hasError = true;
-                    return;
-                }
-                int idx = i % 4;
-                int ret = VfprintfHelper(tmp, i % 2, formats[idx], "test", 123);
-                if (fclose(tmp) != 0) {}
-                if (ret < 0) {
-                    hasError = true;
-                    return;
-                }
-            }
-        });
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
+        threads.emplace_back(VfprintfChkWorker, std::ref(hasError), formats);
     }
     for (auto& th : threads) {
         th.join();

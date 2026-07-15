@@ -21,9 +21,9 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int kStableLoop10000 = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
 static char* CallStrtokR(char* s, const char* sep, char** p)
 {
@@ -203,14 +203,15 @@ static napi_value StrtokRBoundary001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    std::string longStr(10000, 'a');
+    size_t longSize = 10000;
+    std::string longStr(longSize, 'a');
     char* str = strdup(longStr.c_str());
     if (!str) {
         return ReturnInt32(env, 0);
     }
     char* saveptr = nullptr;
     char* token = CallStrtokR(str, ",", &saveptr);
-    bool pass = (token != nullptr && strlen(token) == 10000);
+    bool pass = (token != nullptr && strlen(token) == longSize);
     free(str);
     return ReturnInt32(env, pass ? 1 : 0);
 }
@@ -251,7 +252,7 @@ static napi_value StrtokRStable001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     bool pass = true;
-    for (int i = 0; i < kStableLoop10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
         char str[] = "hello,world,test";
         char* saveptr = nullptr;
         char* token = CallStrtokR(str, ",", &saveptr);
@@ -261,6 +262,24 @@ static napi_value StrtokRStable001(napi_env env, napi_callback_info info)
         }
     }
     return ReturnInt32(env, pass ? 1 : 0);
+}
+
+static void StrtokRWorker(std::atomic<bool>& hasError)
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        char str[] = "a,b,c,d,e";
+        char* saveptr = nullptr;
+        int count = 0;
+        char* token = CallStrtokR(str, ",", &saveptr);
+        while (token != nullptr) {
+            count++;
+            token = CallStrtokR(nullptr, ",", &saveptr);
+        }
+        if (count != 5) {
+            hasError = true;
+            return;
+        }
+    }
 }
 
 /* ==================== Multi-thread Tests ==================== */
@@ -274,23 +293,8 @@ static napi_value StrtokRThread001(napi_env env, napi_callback_info info)
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
 
-    for (int t = 0; t < kThreadCount; ++t) {
-        threads.emplace_back([&hasError]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
-                char str[] = "a,b,c,d,e";
-                char* saveptr = nullptr;
-                int count = 0;
-                char* token = CallStrtokR(str, ",", &saveptr);
-                while (token != nullptr) {
-                    count++;
-                    token = CallStrtokR(nullptr, ",", &saveptr);
-                }
-                if (count != 5) {
-                    hasError = true;
-                    return;
-                }
-            }
-        });
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
+        threads.emplace_back(StrtokRWorker, std::ref(hasError));
     }
     for (auto& th : threads) {
         th.join();

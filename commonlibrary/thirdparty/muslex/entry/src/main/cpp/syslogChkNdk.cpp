@@ -22,9 +22,9 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int kStableLoop10000 = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
 static void CallSyslogChk(int flag, int priority, const char* fmt, ...)
 {
@@ -130,7 +130,8 @@ static napi_value SyslogChkNormal006(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     openlog("test", LOG_PID, LOG_USER);
-    std::string longMsg(5000, 'x');
+    size_t msgLen = 5000;
+    std::string longMsg(msgLen, 'x');
     CallSyslogChk(0, LOG_INFO, "%s", longMsg.c_str());
     closelog();
     return ReturnInt32(env, 1);
@@ -187,7 +188,7 @@ static napi_value SyslogChkStable001(napi_env env, napi_callback_info info)
     }
     openlog("test", LOG_PID, LOG_USER);
     bool pass = true;
-    for (int i = 0; i < kStableLoop10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
         CallSyslogChk(i % 2, LOG_INFO, "Stability test %d", i);
     }
     closelog();
@@ -206,9 +207,9 @@ static napi_value SyslogChkThread001(napi_env env, napi_callback_info info)
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
 
-    for (int t = 0; t < kThreadCount; ++t) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 int priority = (i % 4) + 1;
                 CallSyslogChk(i % 2, priority, "Thread %d message %d", i % 10, i);
                 // syslog may have internal locks, not crashing counts as pass

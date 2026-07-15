@@ -22,9 +22,9 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int kStableLoop = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_STABLE_LOOP = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
 static long long CallStrtollL(const char* nptr, char** endptr, int base, locale_t loc)
 {
@@ -135,7 +135,7 @@ static napi_value StrtollLStable001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     bool pass = true;
-    for (int i = 0; i < kStableLoop; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
         char* endptr = nullptr;
         long long ret = CallStrtollL("12345", &endptr, 10, LC_GLOBAL_LOCALE);
         if (ret != 12345) {
@@ -153,9 +153,9 @@ static napi_value StrtollLThread001(napi_env env, napi_callback_info info)
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < kThreadCount; ++t) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 char* endptr = nullptr;
                 CallStrtollL("12345", &endptr, 10, LC_GLOBAL_LOCALE);
             }

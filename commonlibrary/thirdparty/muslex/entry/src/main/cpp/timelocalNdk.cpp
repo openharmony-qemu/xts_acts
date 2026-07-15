@@ -22,9 +22,9 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int kStableLoop = 100;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 5;
+static constexpr int K_STABLE_LOOP = 100;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 5;
 
 static time_t CallTimelocal(struct tm* tm)
 {
@@ -56,8 +56,7 @@ static napi_value TimelocalNormal001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    struct tm t;
-    memset(&t, 0, sizeof(t));
+    struct tm t = {};
     t.tm_year = 2026 - 1900;
     t.tm_mon = 6;
     t.tm_mday = 1;
@@ -71,8 +70,7 @@ static napi_value TimelocalNormal002(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    struct tm t;
-    memset(&t, 0, sizeof(t));
+    struct tm t = {};
     t.tm_year = 70;
     t.tm_mon = 0;
     t.tm_mday = 1;
@@ -86,8 +84,7 @@ static napi_value TimelocalNormal003(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    struct tm t;
-    memset(&t, 0, sizeof(t));
+    struct tm t = {};
     t.tm_year = 2026 - 1900;
     t.tm_mon = 0;
     t.tm_mday = 1;
@@ -109,8 +106,7 @@ static napi_value TimelocalAbnormal001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    struct tm t;
-    memset(&t, 0, sizeof(t));
+    struct tm t = {};
     t.tm_year = 2026 - 1900;
     t.tm_mon = 0;
     t.tm_mday = 32;
@@ -123,8 +119,7 @@ static napi_value TimelocalAbnormal002(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    struct tm t;
-    memset(&t, 0, sizeof(t));
+    struct tm t = {};
     t.tm_year = 2026 - 1900;
     t.tm_mon = 13;
     time_t ret = CallTimelocal(&t);
@@ -136,8 +131,7 @@ static napi_value TimelocalBoundary001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    struct tm t;
-    memset(&t, 0, sizeof(t));
+    struct tm t = {};
     t.tm_year = 2038 - 1900;
     t.tm_mon = 0;
     t.tm_mday = 19;
@@ -153,8 +147,7 @@ static napi_value TimelocalBoundary002(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    struct tm t;
-    memset(&t, 0, sizeof(t));
+    struct tm t = {};
     t.tm_year = 0;
     t.tm_mon = 0;
     t.tm_mday = 1;
@@ -169,10 +162,9 @@ static napi_value TimelocalStable001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     bool pass = true;
-    for (int i = 0; i < kStableLoop; ++i) {
-        struct tm t;
-        memset(&t, 0, sizeof(t));
-        t.tm_year = 2026 - 1900;
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
+    struct tm t = {};
+    t.tm_year = 2026 - 1900;
         t.tm_mon = 0;
         t.tm_mday = 1;
         time_t ret = CallTimelocal(&t);
@@ -184,6 +176,21 @@ static napi_value TimelocalStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+static void TimelocalWorker(std::atomic<bool>& hasError)
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        struct tm tmVal = {};
+        tmVal.tm_year = 2026 - 1900;
+        tmVal.tm_mon = 0;
+        tmVal.tm_mday = 1;
+        time_t ret = CallTimelocal(&tmVal);
+        if (ret < 0) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 static napi_value TimelocalThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
@@ -191,21 +198,8 @@ static napi_value TimelocalThread001(napi_env env, napi_callback_info info)
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < kThreadCount; ++t) {
-        threads.emplace_back([&hasError]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
-                struct tm tmVal;
-                memset(&tmVal, 0, sizeof(tmVal));
-                tmVal.tm_year = 2026 - 1900;
-                tmVal.tm_mon = 0;
-                tmVal.tm_mday = 1;
-                time_t ret = CallTimelocal(&tmVal);
-                if (ret < 0) {
-                    hasError = true;
-                    return;
-                }
-            }
-        });
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
+        threads.emplace_back(TimelocalWorker, std::ref(hasError));
     }
     for (auto& th : threads) {
         th.join();

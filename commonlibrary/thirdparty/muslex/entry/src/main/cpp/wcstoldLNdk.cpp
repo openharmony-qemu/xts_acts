@@ -25,15 +25,15 @@
 #include <algorithm>
 #include <sstream>
 
-static constexpr int kStableLoop10000 = 20;
-static constexpr int kStableLoop1000 = 20;
-static constexpr int kThreadModulo = 3;
-static constexpr int kEnosysCheckLoop = 10;
-static constexpr size_t kLongStrPrefixLen = 200;
-static constexpr int kBufSize32 = 32;
-static constexpr int kBufSize64 = 64;
-static constexpr int kThreadStartId = 1;
-static constexpr int kThreadCount = 3;
+static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_STABLE_LOOP1000 = 20;
+static constexpr int K_THREAD_MODULO = 3;
+static constexpr int K_ENOSYS_CHECK_LOOP = 10;
+static constexpr size_t K_LONG_STR_PREFIX_LEN = 200;
+static constexpr int K_BUF_SIZE32 = 32;
+static constexpr int K_BUF_SIZE64 = 64;
+static constexpr int K_THREAD_START_ID = 1;
+static constexpr int K_THREAD_COUNT = 3;
 
 static long double CallWcstoldl(const wchar_t *nptr, wchar_t **endptr, locale_t loc)
 {
@@ -578,12 +578,12 @@ static napi_value WcstoldlStable001(napi_env env, napi_callback_info info)
     if (!loc) {
         return ReturnInt32(env, 0);
     }
-    for (int i = 0; i < kStableLoop10000; ++i) {
-        wchar_t buf[kBufSize32];
+    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
+        wchar_t buf[K_BUF_SIZE32];
         std::wostringstream oss;
         oss << i << L".123";
         std::wstring str = oss.str();
-        std::copy_n(str.c_str(), std::min(str.length() + 1, static_cast<size_t>(kBufSize32)), buf);
+        std::copy_n(str.c_str(), std::min(str.length() + 1, static_cast<size_t>(K_BUF_SIZE32)), buf);
         CallWcstoldl(buf, nullptr, loc);
     }
     freelocale(loc);
@@ -600,15 +600,15 @@ static napi_value WcstoldlStable002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     auto worker = [loc](int id) {
-        wchar_t buf[kBufSize64];
+        wchar_t buf[K_BUF_SIZE64];
         std::wostringstream oss;
-        oss << id << L".456e" << (id % kThreadModulo);
+        oss << id << L".456e" << (id % K_THREAD_MODULO);
         std::wstring str = oss.str();
-        std::copy_n(str.c_str(), std::min(str.length() + 1, static_cast<size_t>(kBufSize64)), buf);
+        std::copy_n(str.c_str(), std::min(str.length() + 1, static_cast<size_t>(K_BUF_SIZE64)), buf);
         CallWcstoldl(buf, nullptr, loc);
     };
     std::vector<std::thread> threads;
-    for (int id = kThreadStartId; id < kThreadStartId + kThreadCount; ++id) {
+    for (int id = K_THREAD_START_ID; id < K_THREAD_START_ID + K_THREAD_COUNT; ++id) {
         threads.emplace_back(worker, id);
     }
     for (auto& t : threads) {
@@ -623,7 +623,7 @@ static napi_value WcstoldlStable003(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    std::wstring longStr(kLongStrPrefixLen, L'X');
+    std::wstring longStr(K_LONG_STR_PREFIX_LEN, L'X');
     longStr += L"123.45";
     locale_t loc = OpenCLocale();
     if (!loc) {
@@ -644,7 +644,7 @@ static napi_value WcstoldlStable004(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    for (int i = 0; i < kStableLoop1000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP1000; ++i) {
         locale_t loc = newlocale(LC_ALL_MASK, "C", nullptr);
         if (!loc) {
             return ReturnInt32(env, 0);
@@ -662,14 +662,14 @@ static napi_value WcstoldlStable005(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     int enosysCount = 0;
-    for (int i = 0; i < kEnosysCheckLoop; ++i) {
+    for (int i = 0; i < K_ENOSYS_CHECK_LOOP; ++i) {
         errno = 0;
         CallWcstoldl(L"123", nullptr, nullptr);
         if (errno == ENOSYS) {
             enosysCount++;
         }
     }
-    if (enosysCount == kEnosysCheckLoop) {
+    if (enosysCount == K_ENOSYS_CHECK_LOOP) {
         return ReturnInt32(env, 0);
     }
     if (enosysCount == 0) {
