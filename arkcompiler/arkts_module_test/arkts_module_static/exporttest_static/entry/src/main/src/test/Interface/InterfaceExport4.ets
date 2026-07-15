@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
 * Copyright (C) 2024-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the License);
@@ -21,7 +21,7 @@ export interface User7 {
   email: string;
 };
 
-export const newUser7 = {
+export const newUser7:User7 = {
   name: 'John Doe',
   age: 30,
   email: 'johndoe@example.com'

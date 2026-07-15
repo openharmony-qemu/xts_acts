@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
 * Copyright (C) 2024 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -30,6 +30,6 @@ const myComplexObject: ComplexUnion = {
   value: 50,
 }as NumObj;
 
-export const myExport1 = myComplexObject;
+export const myExport1: ComplexUnion = myComplexObject;
 
 export { NumObj, StrObj, ComplexUnion };

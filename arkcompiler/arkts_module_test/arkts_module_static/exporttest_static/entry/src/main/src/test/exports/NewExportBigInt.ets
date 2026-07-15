@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
 * Copyright (C) 2024 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the License);
@@ -20,6 +20,6 @@ function addBigInt(a: BigInt): BigInt {
 
 const bigInt1 = 1234567890123456789012345678901234567890n;
 
-export const result = addBigInt(bigInt1);
+export const result: BigInt = addBigInt(bigInt1);
 
 export default result;
