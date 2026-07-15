@@ -47,7 +47,8 @@ static bool IsStubMode()
         return true;
     }
     errno = 0;
-    CallStrndup("test", 4);
+    int val4 = 4;
+    CallStrndup("test", val4);
     return (errno == ENOSYS);
 }
 

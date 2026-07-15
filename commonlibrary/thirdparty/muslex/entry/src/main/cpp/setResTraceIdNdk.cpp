@@ -68,7 +68,8 @@ static napi_value SetResTraceIdNormal001(napi_env env, napi_callback_info info)
     }
     uint32_t oldType = 0;
     uint64_t oldID = 0;
-    bool ret = CallSetResTraceId(1, 100, &oldType, &oldID);
+    int val100 = 100;
+    bool ret = CallSetResTraceId(1, val100, &oldType, &oldID);
     return ReturnInt32(env, ret ? 1 : 0);
 }
 
@@ -79,7 +80,8 @@ static napi_value SetResTraceIdNormal002(napi_env env, napi_callback_info info)
     }
     uint32_t oldType = 0;
     uint64_t oldID = 0;
-    CallSetResTraceId(1, 100, &oldType, &oldID);
+    int val100 = 100;
+    CallSetResTraceId(1, val100, &oldType, &oldID);
     uint32_t oldType2 = 0;
     uint64_t oldID2 = 0;
     bool ret = CallSetResTraceId(2, 200, &oldType2, &oldID2);
@@ -93,7 +95,8 @@ static napi_value SetResTraceIdNormal003(napi_env env, napi_callback_info info)
     }
     uint32_t oldType = 0;
     uint64_t oldID = 0;
-    bool ret1 = CallSetResTraceId(1, 100, &oldType, &oldID);
+    int val100 = 100;
+    bool ret1 = CallSetResTraceId(1, val100, &oldType, &oldID);
     bool ret2 = CallSetResTraceId(2, 200, &oldType, &oldID);
     return ReturnInt32(env, (ret1 && ret2) ? 1 : 0);
 }
@@ -112,7 +115,8 @@ static napi_value SetResTraceIdAbnormal001(napi_env env, napi_callback_info info
         return ReturnInt32(env, 0);
     }
     uint64_t oldID = 0;
-    CallSetResTraceId(1, 100, nullptr, &oldID);
+    int val100 = 100;
+    CallSetResTraceId(1, val100, nullptr, &oldID);
     return ReturnInt32(env, 1);
 }
 
@@ -122,7 +126,8 @@ static napi_value SetResTraceIdAbnormal002(napi_env env, napi_callback_info info
         return ReturnInt32(env, 0);
     }
     uint32_t oldType = 0;
-    CallSetResTraceId(1, 100, &oldType, nullptr);
+    int val100 = 100;
+    CallSetResTraceId(1, val100, &oldType, nullptr);
     return ReturnInt32(env, 1);
 }
 

@@ -102,7 +102,8 @@ static napi_value SetSigchainPreValidationAbnormal002(napi_env env, napi_callbac
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    CallSetSigchainPreValidationIgnore(100);
+    int val100 = 100;
+    CallSetSigchainPreValidationIgnore(val100);
     CallSetSigchainPreValidationIgnore(0);
     return ReturnInt32(env, 1);
 }
@@ -133,7 +134,8 @@ static napi_value SetSigchainPreValidationStable001(napi_env env, napi_callback_
     }
     bool pass = true;
     for (int i = 0; i < K_STABLE_LOOP; ++i) {
-        CallSetSigchainPreValidationIgnore(i % 2);
+        int val2 = 2;
+        CallSetSigchainPreValidationIgnore(i % val2);
     }
     CallSetSigchainPreValidationIgnore(0);
     return ReturnInt32(env, pass ? 1 : 0);
@@ -149,7 +151,8 @@ static napi_value SetSigchainPreValidationThread001(napi_env env, napi_callback_
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
             for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                CallSetSigchainPreValidationIgnore(i % 2);
+                int val2 = 2;
+                CallSetSigchainPreValidationIgnore(i % val2);
             }
         });
     }

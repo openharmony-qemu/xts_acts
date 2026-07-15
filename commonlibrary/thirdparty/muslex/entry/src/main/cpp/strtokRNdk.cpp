@@ -240,7 +240,8 @@ static napi_value StrtokRBoundary002(napi_env env, napi_callback_info info)
         token = CallStrtokR(nullptr, ",", &saveptr);
     }
     free(mutableStr);
-    return ReturnInt32(env, (count == 1001) ? 1 : 0);
+    int expectedTokens = 1001;
+    return ReturnInt32(env, (count == expectedTokens) ? 1 : 0);
 }
 
 /* ==================== Stability Tests ==================== */
@@ -275,7 +276,8 @@ static void StrtokRWorker(std::atomic<bool>& hasError)
             count++;
             token = CallStrtokR(nullptr, ",", &saveptr);
         }
-        if (count != 5) {
+        int modVal = 5;
+        if (count != modVal) {
             hasError = true;
             return;
         }

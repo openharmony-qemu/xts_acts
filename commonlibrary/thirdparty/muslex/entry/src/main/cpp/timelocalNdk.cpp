@@ -25,6 +25,7 @@
 static constexpr int K_STABLE_LOOP = 100;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 5;
+static constexpr int TM_YEAR_BASE = 1900;
 
 static time_t CallTimelocal(struct tm* tm)
 {
@@ -57,10 +58,14 @@ static napi_value TimelocalNormal001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     struct tm t = {};
-    t.tm_year = 2026 - 1900;
-    t.tm_mon = 6;
-    t.tm_mday = 1;
-    t.tm_hour = 12;
+    int testYear2026 = 2026;
+    t.tm_year = testYear2026 - TM_YEAR_BASE;
+    int july = 6;
+    t.tm_mon = july;
+    int day1 = 1;
+    t.tm_mday = day1;
+    int noon = 12;
+    t.tm_hour = noon;
     time_t ret = CallTimelocal(&t);
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
@@ -71,9 +76,12 @@ static napi_value TimelocalNormal002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     struct tm t = {};
-    t.tm_year = 70;
-    t.tm_mon = 0;
-    t.tm_mday = 1;
+    int epochYear = 1970;
+    t.tm_year = epochYear - 1900;
+    int jan = 0;
+    t.tm_mon = jan;
+    int day1 = 1;
+    t.tm_mday = day1;
     t.tm_isdst = -1;
     time_t ret = CallTimelocal(&t);
     return ReturnInt32(env, (ret != -1) ? 1 : 0);
@@ -85,9 +93,12 @@ static napi_value TimelocalNormal003(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     struct tm t = {};
-    t.tm_year = 2026 - 1900;
-    t.tm_mon = 0;
-    t.tm_mday = 1;
+    int testYear2026 = 2026;
+    t.tm_year = testYear2026 - TM_YEAR_BASE;
+    int jan = 0;
+    t.tm_mon = jan;
+    int day1 = 1;
+    t.tm_mday = day1;
     t.tm_isdst = -1;
     time_t ret = CallTimelocal(&t);
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
@@ -107,9 +118,12 @@ static napi_value TimelocalAbnormal001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     struct tm t = {};
-    t.tm_year = 2026 - 1900;
-    t.tm_mon = 0;
-    t.tm_mday = 32;
+    int testYear2026 = 2026;
+    t.tm_year = testYear2026 - TM_YEAR_BASE;
+    int jan = 0;
+    t.tm_mon = jan;
+    int invalidDay = 32;
+    t.tm_mday = invalidDay;
     time_t ret = CallTimelocal(&t);
     return ReturnInt32(env, 1);
 }
@@ -120,7 +134,8 @@ static napi_value TimelocalAbnormal002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     struct tm t = {};
-    t.tm_year = 2026 - 1900;
+    int testYear2026 = 2026;
+    t.tm_year = testYear2026 - TM_YEAR_BASE;
     t.tm_mon = 13;
     time_t ret = CallTimelocal(&t);
     return ReturnInt32(env, 1);
@@ -132,12 +147,18 @@ static napi_value TimelocalBoundary001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     struct tm t = {};
-    t.tm_year = 2038 - 1900;
-    t.tm_mon = 0;
-    t.tm_mday = 19;
-    t.tm_hour = 3;
-    t.tm_min = 14;
-    t.tm_sec = 7;
+    int testYear2038 = 2038;
+    t.tm_year = testYear2038 - TM_YEAR_BASE;
+    int jan = 0;
+    t.tm_mon = jan;
+    int day19 = 19;
+    t.tm_mday = day19;
+    int hour3 = 3;
+    t.tm_hour = hour3;
+    int min14 = 14;
+    t.tm_min = min14;
+    int sec7 = 7;
+    t.tm_sec = sec7;
     time_t ret = CallTimelocal(&t);
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
@@ -149,8 +170,10 @@ static napi_value TimelocalBoundary002(napi_env env, napi_callback_info info)
     }
     struct tm t = {};
     t.tm_year = 0;
-    t.tm_mon = 0;
-    t.tm_mday = 1;
+    int jan = 0;
+    t.tm_mon = jan;
+    int day1 = 1;
+    t.tm_mday = day1;
     t.tm_isdst = -1;
     time_t ret = CallTimelocal(&t);
     return ReturnInt32(env, (ret != -1) ? 1 : 0);
@@ -164,9 +187,12 @@ static napi_value TimelocalStable001(napi_env env, napi_callback_info info)
     bool pass = true;
     for (int i = 0; i < K_STABLE_LOOP; ++i) {
     struct tm t = {};
-    t.tm_year = 2026 - 1900;
-        t.tm_mon = 0;
-        t.tm_mday = 1;
+    int testYear2026 = 2026;
+    t.tm_year = testYear2026 - TM_YEAR_BASE;
+        int jan = 0;
+        t.tm_mon = jan;
+        int day1 = 1;
+        t.tm_mday = day1;
         time_t ret = CallTimelocal(&t);
         if (ret < 0) {
             pass = false;
@@ -180,9 +206,12 @@ static void TimelocalWorker(std::atomic<bool>& hasError)
 {
     for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
         struct tm tmVal = {};
-        tmVal.tm_year = 2026 - 1900;
-        tmVal.tm_mon = 0;
-        tmVal.tm_mday = 1;
+        int testYear2026 = 2026;
+        tmVal.tm_year = testYear2026 - TM_YEAR_BASE;
+        int jan = 0;
+        tmVal.tm_mon = jan;
+        int day1 = 1;
+        tmVal.tm_mday = day1;
         time_t ret = CallTimelocal(&tmVal);
         if (ret < 0) {
             hasError = true;

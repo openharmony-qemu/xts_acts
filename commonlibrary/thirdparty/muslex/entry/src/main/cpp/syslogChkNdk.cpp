@@ -24,6 +24,9 @@
 
 static constexpr int K_STABLE_LOOP10000 = 20;
 static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_LOG_MSG_LEN = 123;
+static constexpr int K_SYSLOG_VAL42 = 42;
+static constexpr int K_SYSLOG_VAL999 = 999;
 static constexpr int K_ITER_PER_THREAD = 10;
 
 static void CallSyslogChk(int flag, int priority, const char* fmt, ...)

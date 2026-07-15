@@ -100,7 +100,8 @@ static napi_value RawmemchrNormal003(napi_env env, napi_callback_info info)
     }
     const char* s = "Hello";
     void* result = CallRawmemchr(s, 'o');
-    const char* expected = s + 4;
+    int val4 = 4;
+    const char* expected = s + val4;
     return ReturnInt32(env, (result == expected) ? 1 : 0);
 }
 
@@ -206,7 +207,8 @@ static napi_value RawmemchrStable001(napi_env env, napi_callback_info info)
     bool pass = true;
     for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
         void* result = CallRawmemchr(s, 'o');
-        if (result != s + 4) {
+        int val4 = 4;
+        if (result != s + val4) {
             pass = false;
             break;
         }

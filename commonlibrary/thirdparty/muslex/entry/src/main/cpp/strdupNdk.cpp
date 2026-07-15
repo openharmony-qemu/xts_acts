@@ -120,7 +120,8 @@ static napi_value StrdupNormal005(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     std::string allAscii;
-    for (int i = 32; i < 127; ++i) {
+    int asciiMax = 127;
+    for (int i = 32; i < asciiMax; ++i) {
         allAscii += static_cast<char>(i);
     }
     char* dup = CallStrdup(allAscii.c_str());

@@ -24,6 +24,7 @@
 
 static constexpr int K_STABLE_LOOP = 20;
 static constexpr int K_THREAD_COUNT = 3;
+static constexpr int DECIMAL_BASE = 10;
 static constexpr int K_ITER_PER_THREAD = 10;
 
 static long long CallStrtollL(const char* nptr, char** endptr, int base, locale_t loc)
