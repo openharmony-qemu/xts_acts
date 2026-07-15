@@ -53,7 +53,7 @@ static int CallPthreadAttrSetaffinityNp(pthread_attr_t* attr, size_t cpusetsize,
     return func(attr, cpusetsize, cpuset);
 }
 
-static bool EnablePthreadExtPolicy() 
+static bool EnablePthreadExtPolicy()
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto setFunc = loader.GetSetPthreadExtFuncPolicy();

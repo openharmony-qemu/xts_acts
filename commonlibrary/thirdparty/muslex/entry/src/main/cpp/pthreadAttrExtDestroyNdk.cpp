@@ -38,7 +38,7 @@ static int CallPthreadAttrExtDestroy(pthread_attr_t* attr)
     return func(attr);
 }
 
-static bool EnablePthreadExtPolicy() 
+static bool EnablePthreadExtPolicy()
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto setFunc = loader.GetSetPthreadExtFuncPolicy();
