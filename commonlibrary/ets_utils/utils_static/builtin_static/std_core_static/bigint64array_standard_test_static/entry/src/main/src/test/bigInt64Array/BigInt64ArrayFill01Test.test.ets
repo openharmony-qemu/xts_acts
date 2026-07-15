@@ -265,11 +265,7 @@ export default function BigInt64ArrayFill01Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(99n, 0);
       for (let i = 0; i < 5; i++) {
-        if (i >= 0) {
-          expect(arr[i]).assertEqual(99n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(99n);
       }
     });
 
@@ -285,11 +281,7 @@ export default function BigInt64ArrayFill01Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(-99n, 0);
       for (let i = 0; i < 5; i++) {
-        if (i >= 0) {
-          expect(arr[i]).assertEqual(-99n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(-99n);
       }
     });
 
@@ -425,11 +417,7 @@ export default function BigInt64ArrayFill01Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(99n, 5);
       for (let i = 0; i < 5; i++) {
-        if (i >= 5) {
-          expect(arr[i]).assertEqual(99n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -445,11 +433,7 @@ export default function BigInt64ArrayFill01Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(-99n, 5);
       for (let i = 0; i < 5; i++) {
-        if (i >= 5) {
-          expect(arr[i]).assertEqual(-99n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -465,11 +449,7 @@ export default function BigInt64ArrayFill01Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(99n, 6);
       for (let i = 0; i < 5; i++) {
-        if (i >= 5) {
-          expect(arr[i]).assertEqual(99n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 

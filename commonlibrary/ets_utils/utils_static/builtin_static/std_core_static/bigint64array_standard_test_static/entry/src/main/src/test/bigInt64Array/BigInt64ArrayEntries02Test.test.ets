@@ -577,18 +577,15 @@ export default function BigInt64ArrayEntries02Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ENTRIES_TWO_3600
      * @tc.name testBigInt64ArrayEntriesTwo3600
-     * @tc.desc Verify `arr.entries()` produces a result where `arr.length` equals `len2`, `arr.length` equals `3`.
+     * @tc.desc Verify `arr.entries()` keeps the source array length equal to `3`.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayEntriesTwo3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n]);
-      let len1 = arr.length;
-      let iter = arr.entries();
-      let len2 = arr.length;
-      expect(len1).assertEqual(len2);
-      expect(len1).assertEqual(3);
+      arr.entries();
+      expect(arr.length).assertEqual(3);
     });
 
     /**
@@ -1048,7 +1045,7 @@ export default function BigInt64ArrayEntries02Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_ENTRIES_TWO_6500
      * @tc.name testBigInt64ArrayEntriesTwo6500
-     * @tc.desc Verify `arr.entries()` produces a result where `iter.next().value[1]` equals `0n`, `iter.next().value[1] !== undefined` is true.
+     * @tc.desc Verify an entries iterator observes an element updated before that element is visited.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1060,7 +1057,6 @@ export default function BigInt64ArrayEntries02Test(): void {
       arr[1] = 0n;
       let val = iter.next().value as [int, bigint];
       expect(val[1]).assertEqual(0n);
-      expect(val[1] !== undefined).assertEqual(true);
     });
 
   });

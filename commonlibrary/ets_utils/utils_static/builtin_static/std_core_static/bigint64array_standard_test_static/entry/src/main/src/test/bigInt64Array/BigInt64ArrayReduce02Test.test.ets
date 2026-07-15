@@ -2145,11 +2145,10 @@ export default function BigInt64ArrayReduce02Test(): void {
      */
     it('testBigInt64ArrayReduceTwo1320', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n, 4n]);
-      let lenBefore = arr.length;
       arr.reduce((acc: BigInt, curr: BigInt): BigInt => {
         return acc + curr;
       }, 0n);
-      expect(arr.length).assertEqual(lenBefore);
+      expect(arr.length).assertEqual(4);
     });
 
     /**

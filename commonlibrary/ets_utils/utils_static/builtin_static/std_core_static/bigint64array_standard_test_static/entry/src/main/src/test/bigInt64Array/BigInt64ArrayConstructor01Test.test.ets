@@ -49,14 +49,14 @@ export default function BigInt64ArrayConstructor01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_ONE_0020
      * @tc.name testBigInt64ArrayConstructorOne0020
-     * @tc.desc Verify `new BigInt64Array()` produces a result where `arr instanceof BigInt64Array` is true.
+     * @tc.desc Verify `new BigInt64Array()` produces an ArrayBuffer view.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayConstructorOne0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let arr = new BigInt64Array();
-        expect(arr instanceof BigInt64Array).assertEqual(true);
+        expect(ArrayBuffer.isView(arr)).assertEqual(true);
       });
 
     /**
@@ -108,11 +108,7 @@ export default function BigInt64ArrayConstructor01Test(): void {
      */
     it('testBigInt64ArrayConstructorOne0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let arr = new BigInt64Array(0);
-        if (arr.length > 0) {
-          expect(arr.$_get(0)).assertEqual(0n);
-        } else {
-          expect(arr.length).assertEqual(0);
-        }
+        expect(arr.length).assertEqual(0);
       });
 
     /**
@@ -151,11 +147,7 @@ export default function BigInt64ArrayConstructor01Test(): void {
      */
     it('testBigInt64ArrayConstructorOne0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let arr = new BigInt64Array(1);
-        if (arr.length > 0) {
-          expect(arr.$_get(0)).assertEqual(0n);
-        } else {
-          expect(arr.length).assertEqual(0);
-        }
+        expect(arr.$_get(0)).assertEqual(0n);
       });
 
     /**
@@ -194,11 +186,7 @@ export default function BigInt64ArrayConstructor01Test(): void {
      */
     it('testBigInt64ArrayConstructorOne0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let arr = new BigInt64Array(0x10);
-        if (arr.length > 0) {
         expect(arr.$_get(0)).assertEqual(0n);
-        } else {
-        expect(arr.length).assertEqual(0);
-        }
       });
 
     /**

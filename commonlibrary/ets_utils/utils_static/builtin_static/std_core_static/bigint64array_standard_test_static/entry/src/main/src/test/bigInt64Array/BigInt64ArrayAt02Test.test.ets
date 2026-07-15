@@ -646,61 +646,57 @@ export default function BigInt64ArrayAt02Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_AT_TWO_4500
      * @tc.name testBigInt64ArrayAtTwo4500
-     * @tc.desc Verify `arr.at(1)` produces a result where `new BigInt64Array([1n, 2n, 3n]).length` equals `lenOriginal`.
+     * @tc.desc Verify `arr.at(1)` keeps the source array length equal to `3`.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayAtTwo4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let arr = new BigInt64Array([1n, 2n, 3n]);
-        let lenOriginal = arr.length;
         arr.at(1);
-        expect(arr.length).assertEqual(lenOriginal);
+        expect(arr.length).assertEqual(3);
       });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_AT_TWO_4600
      * @tc.name testBigInt64ArrayAtTwo4600
-     * @tc.desc Verify `arr.at(-1)` produces a result where `new BigInt64Array([4n, 5n, 6n]).length` equals `lenOriginal`.
+     * @tc.desc Verify `arr.at(-1)` keeps the source array length equal to `3`.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayAtTwo4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let arr = new BigInt64Array([4n, 5n, 6n]);
-        let lenOriginal = arr.length;
         arr.at(-1);
-        expect(arr.length).assertEqual(lenOriginal);
+        expect(arr.length).assertEqual(3);
       });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_AT_TWO_4700
      * @tc.name testBigInt64ArrayAtTwo4700
-     * @tc.desc Verify `arr.at(arr.length + 5)` produces a result where `new BigInt64Array([7n, 8n]).length` equals `lenOriginal`.
+     * @tc.desc Verify `arr.at(arr.length + 5)` keeps the source array length equal to `2`.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayAtTwo4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let arr = new BigInt64Array([7n, 8n]);
-        let lenOriginal = arr.length;
         arr.at(arr.length + 5);
-        expect(arr.length).assertEqual(lenOriginal);
+        expect(arr.length).assertEqual(2);
       });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_AT_TWO_4800
      * @tc.name testBigInt64ArrayAtTwo4800
-     * @tc.desc Verify `arr.at(-arr.length - 10)` produces a result where `new BigInt64Array([9n, 10n]).length` equals `lenOriginal`.
+     * @tc.desc Verify `arr.at(-arr.length - 10)` keeps the source array length equal to `2`.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayAtTwo4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let arr = new BigInt64Array([9n, 10n]);
-        let lenOriginal = arr.length;
         arr.at(-arr.length - 10);
-        expect(arr.length).assertEqual(lenOriginal);
+        expect(arr.length).assertEqual(2);
       });
 
     /**

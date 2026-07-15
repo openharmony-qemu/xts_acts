@@ -581,9 +581,8 @@ export default function BigInt64Array04Test(): void {
      */
     it('testBigInt64ArrayFour0350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n]);
-      let lenBefore = arr.length;
       arr.fill(0n);
-      expect(arr.length).assertEqual(lenBefore);
+      expect(arr.length).assertEqual(3);
     });
 
     /**
@@ -596,9 +595,8 @@ export default function BigInt64Array04Test(): void {
      */
     it('testBigInt64ArrayFour0360', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([3n, 1n, 2n]);
-      let lenBefore = arr.length;
       arr.sort();
-      expect(arr.length).assertEqual(lenBefore);
+      expect(arr.length).assertEqual(3);
     });
 
     /**
@@ -611,9 +609,8 @@ export default function BigInt64Array04Test(): void {
      */
     it('testBigInt64ArrayFour0370', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n, 4n]);
-      let lenBefore = arr.length;
       arr.copyWithin(0, 2);
-      expect(arr.length).assertEqual(lenBefore);
+      expect(arr.length).assertEqual(4);
     });
 
     /**
@@ -626,10 +623,9 @@ export default function BigInt64Array04Test(): void {
      */
     it('testBigInt64ArrayFour0380', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n]);
-      let lenBefore = arr.length;
       let src = new BigInt64Array([9n, 8n]);
       arr.set(src, 1);
-      expect(arr.length).assertEqual(lenBefore);
+      expect(arr.length).assertEqual(3);
     });
 
     /**
@@ -687,9 +683,8 @@ export default function BigInt64Array04Test(): void {
      */
     it('testBigInt64ArrayFour0420', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
-      let lenBefore = arr.length;
       arr.reverse();
-      expect(arr.length).assertEqual(lenBefore);
+      expect(arr.length).assertEqual(5);
     });
 
     /**
@@ -1585,7 +1580,7 @@ export default function BigInt64Array04Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1030
      * @tc.name testBigInt64ArrayFour1030
-     * @tc.desc Verify map returns a BigInt64Array instance.
+     * @tc.desc Verify map returns a new array containing the mapped elements.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1593,13 +1588,15 @@ export default function BigInt64Array04Test(): void {
     it('testBigInt64ArrayFour1030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n]);
       let result = arr.map((v) => v);
-      expect(result instanceof BigInt64Array).assertTrue();
+      expect(result !== arr).assertTrue();
+      expect(result.length).assertEqual(3);
+      expect(result[2]).assertEqual(3n);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1040
      * @tc.name testBigInt64ArrayFour1040
-     * @tc.desc Verify filter returns a BigInt64Array instance.
+     * @tc.desc Verify filter returns a new array containing the matching elements.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1607,13 +1604,15 @@ export default function BigInt64Array04Test(): void {
     it('testBigInt64ArrayFour1040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n]);
       let result = arr.filter((v) => v > 0n);
-      expect(result instanceof BigInt64Array).assertTrue();
+      expect(result !== arr).assertTrue();
+      expect(result.length).assertEqual(2);
+      expect(result[1]).assertEqual(2n);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1050
      * @tc.name testBigInt64ArrayFour1050
-     * @tc.desc Verify slice returns a BigInt64Array instance.
+     * @tc.desc Verify slice returns a new array containing the selected elements.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1621,7 +1620,9 @@ export default function BigInt64Array04Test(): void {
     it('testBigInt64ArrayFour1050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n]);
       let result = arr.slice(0, 2);
-      expect(result instanceof BigInt64Array).assertTrue();
+      expect(result !== arr).assertTrue();
+      expect(result.length).assertEqual(2);
+      expect(result[1]).assertEqual(2n);
     });
 
     /**
@@ -1778,7 +1779,7 @@ export default function BigInt64Array04Test(): void {
     it('testBigInt64ArrayFour1160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n, 4n]);
       let result = arr.map((v) => v * 2n);
-      expect(result.length).assertEqual(arr.length);
+      expect(result.length).assertEqual(4);
     });
 
     /**

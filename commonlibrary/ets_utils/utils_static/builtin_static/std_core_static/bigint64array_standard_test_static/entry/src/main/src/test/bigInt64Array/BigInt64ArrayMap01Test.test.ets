@@ -945,7 +945,7 @@ export default function BigInt64ArrayMap01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_MAP_ONE_0600
      * @tc.name testBigInt64ArrayMapOne0600
-     * @tc.desc Verify map returns a BigInt64Array instance.
+     * @tc.desc Verify map returns a new array containing the mapped value.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -953,7 +953,8 @@ export default function BigInt64ArrayMap01Test(): void {
     it('testBigInt64ArrayMapOne0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n]);
       let mapped = arr.map((v) => v);
-      expect(mapped instanceof BigInt64Array).assertTrue();
+      expect(mapped !== arr).assertTrue();
+      expect(mapped[0]).assertEqual(1n);
     });
 
     /**
@@ -1454,10 +1455,9 @@ export default function BigInt64ArrayMap01Test(): void {
      * @tc.level Level 2
      */
     it('testBigInt64ArrayMapTwo0950', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr = new BigInt64Array([1n, 2n, 3n]);
-        let preLen = arr.length;
-        arr.map((val: bigint) => val * 2n);
-        expect(arr.length).assertEqual(preLen);
+      let arr = new BigInt64Array([1n, 2n, 3n]);
+      arr.map((val: bigint) => val * 2n);
+      expect(arr.length).assertEqual(3);
     });
 
     /**

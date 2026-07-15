@@ -911,7 +911,7 @@ export default function BigInt64ArrayReduceRight01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_RIGHT_ONE_5600
      * @tc.name testBigInt64ArrayReduceRightOne5600
-     * @tc.desc Verify an Array accumulator returns an Array instance.
+     * @tc.desc Verify an empty Array accumulator remains empty when the callback returns it unchanged.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -919,7 +919,7 @@ export default function BigInt64ArrayReduceRight01Test(): void {
     it('testBigInt64ArrayReduceRightOne5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n]);
       let res = arr.reduceRight<Array<BigInt>>((prev, curr) => prev, new Array<BigInt>());
-      expect(res instanceof Array).assertTrue();
+      expect(res.length).assertEqual(0);
     });
 
     /**
@@ -1077,10 +1077,9 @@ export default function BigInt64ArrayReduceRight01Test(): void {
      */
     it('testBigInt64ArrayReduceRightOne6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
-      let originalLength = arr.length;
       let originalByteLength = arr.byteLength;
       arr.reduceRight<BigInt>((prev, curr) => prev + curr, 0n);
-      expect(arr.length).assertEqual(originalLength);
+      expect(arr.length).assertEqual(5);
       expect(arr.byteLength).assertEqual(originalByteLength);
       expect(arr[0]).assertEqual(1n);
       expect(arr[4]).assertEqual(5n);

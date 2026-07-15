@@ -45,11 +45,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, 4, 1);
       for (let i = 0; i < 5; i++) {
-        if (i >= 4 && i < 1) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -65,11 +61,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, 4, 2);
       for (let i = 0; i < 5; i++) {
-        if (i >= 4 && i < 2) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -85,11 +77,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, 4, 4);
       for (let i = 0; i < 5; i++) {
-        if (i >= 4 && i < 4) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -145,11 +133,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, 4, -1);
       for (let i = 0; i < 5; i++) {
-        if (i >= 4 && i < 4) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -165,11 +149,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, 4, -2);
       for (let i = 0; i < 5; i++) {
-        if (i >= 4 && i < 3) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -185,11 +165,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, 4, -4);
       for (let i = 0; i < 5; i++) {
-        if (i >= 4 && i < 1) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -205,11 +181,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, 4, -5);
       for (let i = 0; i < 5; i++) {
-        if (i >= 4 && i < 0) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -225,11 +197,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, 4, -6);
       for (let i = 0; i < 5; i++) {
-        if (i >= 4 && i < 0) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -245,11 +213,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, 4, 0x3);
       for (let i = 0; i < 5; i++) {
-        if (i >= 4 && i < 3) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -265,11 +229,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, 4, 0b100);
       for (let i = 0; i < 5; i++) {
-        if (i >= 4 && i < 4) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -285,11 +245,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, -1, 0);
       for (let i = 0; i < 5; i++) {
-        if (i >= 4 && i < 0) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -305,11 +261,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, -1, 1);
       for (let i = 0; i < 5; i++) {
-        if (i >= 4 && i < 1) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -325,11 +277,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, -1, 2);
       for (let i = 0; i < 5; i++) {
-        if (i >= 4 && i < 2) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -345,11 +293,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, -1, 4);
       for (let i = 0; i < 5; i++) {
-        if (i >= 4 && i < 4) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -405,11 +349,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, -1, -1);
       for (let i = 0; i < 5; i++) {
-        if (i >= 4 && i < 4) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -425,11 +365,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, -1, -2);
       for (let i = 0; i < 5; i++) {
-        if (i >= 4 && i < 3) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -445,11 +381,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, -1, -4);
       for (let i = 0; i < 5; i++) {
-        if (i >= 4 && i < 1) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -465,11 +397,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, -1, -5);
       for (let i = 0; i < 5; i++) {
-        if (i >= 4 && i < 0) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -485,11 +413,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, -1, -6);
       for (let i = 0; i < 5; i++) {
-        if (i >= 4 && i < 0) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -505,11 +429,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, -1, 0x3);
       for (let i = 0; i < 5; i++) {
-        if (i >= 4 && i < 3) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -525,11 +445,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, -1, 0b100);
       for (let i = 0; i < 5; i++) {
-        if (i >= 4 && i < 4) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -545,11 +461,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, -4, 0);
       for (let i = 0; i < 5; i++) {
-        if (i >= 1 && i < 0) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -565,11 +477,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, -4, 1);
       for (let i = 0; i < 5; i++) {
-        if (i >= 1 && i < 1) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -705,11 +613,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, -4, -4);
       for (let i = 0; i < 5; i++) {
-        if (i >= 1 && i < 1) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -725,11 +629,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, -4, -5);
       for (let i = 0; i < 5; i++) {
-        if (i >= 1 && i < 0) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -745,11 +645,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, -4, -6);
       for (let i = 0; i < 5; i++) {
-        if (i >= 1 && i < 0) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -805,11 +701,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, -6, 0);
       for (let i = 0; i < 5; i++) {
-        if (i >= 0 && i < 0) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
       }
     });
 
@@ -885,11 +777,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, -6, 5);
       for (let i = 0; i < 5; i++) {
-        if (i >= 0 && i < 5) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(88n);
       }
     });
 
@@ -905,11 +793,7 @@ export default function BigInt64ArrayFill03Test(): void {
       let arr = new BigInt64Array([10n, 20n, 30n, 40n, 50n]);
       arr.fill(88n, -6, 6);
       for (let i = 0; i < 5; i++) {
-        if (i >= 0 && i < 5) {
-          expect(arr[i]).assertEqual(88n);
-        } else {
-          expect(arr[i]).assertEqual(BigInt((i + 1) * 10));
-        }
+        expect(arr[i]).assertEqual(88n);
       }
     });
 

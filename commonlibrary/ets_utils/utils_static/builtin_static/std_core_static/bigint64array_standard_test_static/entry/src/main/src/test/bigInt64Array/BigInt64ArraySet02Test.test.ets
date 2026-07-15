@@ -1315,9 +1315,8 @@ export default function BigInt64ArraySet0201Test(): void {
      */
     it('testBigInt64ArraySetTwo8200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array(5);
-      let len = arr.length;
       arr.set(2, 99n);
-      expect(arr.length).assertEqual(len);
+      expect(arr.length).assertEqual(5);
     });
 
     /**

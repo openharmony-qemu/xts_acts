@@ -277,16 +277,15 @@ export default function BigInt64ArrayIterator01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT_SIXTY_FOUR_ARRAY_ITERATOR_TWO_1700
      * @tc.name testBigInt64ArrayIteratorTwo1700
-     * @tc.desc Verify `arr.$_iterator()` produces a result where `new BigInt64Array([1n, 2n, 3n]).length` equals `origLen`.
+     * @tc.desc Verify `arr.$_iterator()` keeps the source array length equal to `3`.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayIteratorTwo1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n]);
-      let origLen = arr.length;
       arr.$_iterator();
-      expect(arr.length).assertEqual(origLen);
+      expect(arr.length).assertEqual(3);
     });
 
     /**
