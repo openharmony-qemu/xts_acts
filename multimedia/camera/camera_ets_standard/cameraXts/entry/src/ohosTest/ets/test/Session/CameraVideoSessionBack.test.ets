@@ -980,7 +980,7 @@ export default function CameraVideoSessionBackTest() {
           } else {
             expect(isEmpty(mVideoSession)).assertFalse();
             console.info(TAG, testName + ' session created successfully.');
-await videoSessionCommitConfig(testName);
+            await videoSessionCommitConfig(testName);
             let callbackDone = false;
             mVideoSession.start((error) => {
               if (error !== undefined && error.code !== 0) {
@@ -1084,7 +1084,7 @@ await videoSessionCommitConfig(testName);
           console.info(TAG, testName + ' cameraManager is null.');
           expect().assertFail();
         } else {
-expect(isEmpty(mVideoSession)).assertFalse();
+          expect(isEmpty(mVideoSession)).assertFalse();
           console.info(TAG, testName + ' session created successfully.');
           let callbackDone = false;
           mVideoSession.start(async (error) => {
