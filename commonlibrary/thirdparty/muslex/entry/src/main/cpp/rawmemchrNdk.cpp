@@ -135,9 +135,9 @@ static napi_value RawmemchrNormal006(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     std::string longStr(K_LONG_STR_SIZE, 'a');
-    longStr[K_LONG_STR_SIZE / 2] = 'X';
+    longStr[K_LONG_STR_SIZE / K_HALF_DIV] = 'X';
     void* result = CallRawmemchr(longStr.c_str(), 'X');
-    const char* expected = longStr.c_str() + K_LONG_STR_SIZE / 2;
+    const char* expected = longStr.c_str() + K_LONG_STR_SIZE / K_HALF_DIV;
     return ReturnInt32(env, (result == expected) ? 1 : 0);
 }
 

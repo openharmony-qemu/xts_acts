@@ -31,6 +31,8 @@ static constexpr int K_ITER_PER_THREAD = 10;
 static constexpr int SYSLOG_ERR_CODE = 123;
 static constexpr int SYSLOG_WARN_VAL = 42;
 static constexpr int SYSLOG_INVALID_PRIORITY = 999;
+static constexpr double SYSLOG_FLOAT_VAL = 3.14;
+static constexpr int SYSLOG_FLAG_MOD = 2;
 
 static void CallSyslogChk(int flag, int priority, const char* fmt, ...)
 {
@@ -97,7 +99,7 @@ static napi_value SyslogChkNormal003(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     openlog("test", LOG_PID, LOG_USER);
-    CallSyslogChk(0, LOG_WARNING, "%s %d %.2f", "warning", SYSLOG_WARN_VAL, 3.14);
+    CallSyslogChk(0, LOG_WARNING, "%s %d %.2f", "warning", SYSLOG_WARN_VAL, SYSLOG_FLOAT_VAL);
     closelog();
     return ReturnInt32(env, 1);
 }
