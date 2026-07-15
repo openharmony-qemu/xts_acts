@@ -248,35 +248,80 @@ export default function WebsocketServerStaticTest() {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerStartStatic0500';
       hilog.info(domain, tag, '%{public}s', `${caseName} test start`);
       try {
-        let testPort: number = 80;
-        let server: webSocket.WebSocketServer = webSocket.createWebSocketServer();
-        hilog.info(domain, tag, '%{public}s', `${caseName} --> server: ${server}`);
+        let server1: webSocket.WebSocketServer = webSocket.createWebSocketServer();
+        hilog.info(domain, tag, '%{public}s', `${caseName} --> server1: ${server1}`);
         let serverConfig: webSocket.WebSocketServerConfig = {
           serverIP: "0.0.0.0",
-          serverPort: testPort,
+          serverPort: 9058,
           maxConcurrentClientsNumber: 10,
-          maxConnectionsForOneClient: 4,
+          maxConnectionsForOneClient: 11,
         };
-
-        server.start(serverConfig).then(async (success: boolean) => {
+        
+        server1.start(serverConfig).then(async (success: boolean) => {
           if (success) {
-            hilog.info(domain, tag, '%{public}s', `${caseName} server start success`);
-            expectFail(`${caseName} server should fail with port occupied`);
-            server.stop();
-            done();
-            hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+            hilog.info(domain, tag, '%{public}s', `${caseName} server1 start success`);
+            let server2: webSocket.WebSocketServer = webSocket.createWebSocketServer();
+            hilog.info(domain, tag, '%{public}s', `${caseName} --> server2: ${server2}`);
+
+            server2.start(serverConfig).then(async (success2: boolean) => {
+              if (success2) {
+                hilog.info(domain, tag, '%{public}s', `${caseName} server2 start success`);
+                expectFail(`${caseName} server2 should fail with port occupied`);
+                server2.stop();
+                server1.stop();
+                done();
+                hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+              } else {
+                hilog.info(domain, tag, '%{public}s', `${caseName} server2 start fail - port may be occupied`);
+                expectFail(`${caseName} server2 should fail with specific error code`);
+                server1.stop();
+                done();
+                hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+              }
+            }).catch((error: Error) => {
+              let err = error as BusinessError;
+              hilog.info(domain, tag, '%{public}s', `${caseName} server2 error ${JSON.stringify(error)}`);
+              if (err && err.code === 2302007) {
+                hilog.info(domain, tag, '%{public}s', `${caseName} server2 correctly failed with port occupied error code 2302007`);
+                server1.stop();
+                done();
+                hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+              } else if (err && err.code) {
+                ExpectTrue(err.code === 2302007, `${caseName} test result error ${JSON.stringify(error)}`);
+                server1.stop();
+                done();
+                hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+              } else {
+                hilog.info(domain, tag, '%{public}s', `${caseName} server2 failed with empty error object - may be port occupied`);
+                ExpectTrue(false, `${caseName} server2 should fail with port occupied error code 2302007, but got empty error object`);
+                server1.stop();
+                done();
+                hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+              }
+            });
           } else {
-            hilog.info(domain, tag, '%{public}s', `${caseName} server start fail`);
-            expectFail(`${caseName} server start failed`);
+            hilog.info(domain, tag, '%{public}s', `${caseName} server1 start fail - port may already be occupied`);
+            expectFail(`${caseName} server1 failed to start, but this may be due to port occupation`);
             done();
             hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
           }
         }).catch((error: Error) => {
           let err = error as BusinessError;
-          hilog.info(domain, tag, '%{public}s', `${caseName} server error ${JSON.stringify(error)}`);
-          ExpectTrue(err.code === 2302007, `${caseName} test result error ${JSON.stringify(error)}`);
-          done();
-          hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+          hilog.info(domain, tag, '%{public}s', `${caseName} server1 error ${JSON.stringify(error)}`);
+          if (err && err.code === 2302007) {
+            hilog.info(domain, tag, '%{public}s', `${caseName} server1 failed with port occupied error code 2302007 - test passes`);
+            done();
+            hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+          } else if (err && err.code) {
+            ExpectTrue(err.code === 2302007, `${caseName} server1 should fail with port occupied error code 2302007, but got ${err.code}`);
+            done();
+            hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+          } else {
+            hilog.info(domain, tag, '%{public}s', `${caseName} server1 failed with empty error object - may be port occupied`);
+            ExpectTrue(false, `${caseName} server1 should fail with port occupied error code 2302007, but got empty error object`);
+            done();
+            hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+          }
         });
       } catch (err) {
         hilog.info(domain, tag, '%{public}s', `${caseName} catch error ${JSON.stringify(err)}`);
