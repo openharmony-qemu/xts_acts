@@ -1742,5 +1742,117 @@ export default function Float32ArrayFill2Test(): void {
       expect(arr.$_get(2)).assertEqual(5);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FILLTWO_1150
+     * @tc.name testFloat32ArrayFillTWO115
+     * @tc.desc Verify fill with start equal end leaves all elements unchanged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFillTWO115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const firstValue: number = 1.0;
+      const secondValue: number = 2.0;
+      const thirdValue: number = 3.0;
+      const arr = new Float32Array([firstValue, secondValue, thirdValue]);
+      const result = arr.fill(9.0, 1, 1);
+      expect(result).assertEqual(arr);
+      expect(arr.$_get(0)).assertEqual(firstValue);
+      expect(arr.$_get(1)).assertEqual(secondValue);
+      expect(arr.$_get(2)).assertEqual(thirdValue);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FILLTWO_1160
+     * @tc.name testFloat32ArrayFillTWO116
+     * @tc.desc Verify fill with start greater than end leaves all elements unchanged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFillTWO116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float32Array([4.0, 5.0, 6.0]);
+      const beforeText: string = arr.join(',');
+      const fillValue: number = 99.0;
+      arr.fill(fillValue, 2, 1);
+      const actualText: string = arr.join(',');
+      expect(actualText).assertEqual(beforeText);
+      expect(arr.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FILLTWO_1170
+     * @tc.name testFloat32ArrayFillTWO117
+     * @tc.desc Verify fill with negative start and negative end writes only the computed middle interval
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFillTWO117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
+      const fillValue: number = 8.0;
+      const startIndex: int = -3;
+      const endIndex: int = -1;
+      arr.fill(fillValue, startIndex, endIndex);
+      expect(arr.$_get(0)).assertEqual(1.0);
+      expect(arr.$_get(1)).assertEqual(fillValue);
+      expect(arr.$_get(2)).assertEqual(fillValue);
+      expect(arr.$_get(3)).assertEqual(4.0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FILLTWO_1180
+     * @tc.name testFloat32ArrayFillTWO118
+     * @tc.desc Verify fill with start at length leaves the array unchanged and returns this
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFillTWO118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float32Array([7.0, 8.0, 9.0]);
+      const startIndex: int = arr.length;
+      const beforeText: string = arr.join(',');
+      const result = arr.fill(1.0, startIndex);
+      expect(result).assertEqual(arr);
+      expect(arr.join(',')).assertEqual(beforeText);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FILLTWO_1190
+     * @tc.name testFloat32ArrayFillTWO119
+     * @tc.desc Verify fill with an end index below negative length leaves the array unchanged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFillTWO119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float32Array([11.0, 22.0, 33.0]);
+      const beforeFirst: number = arr.$_get(0);
+      const beforeSecond: number = arr.$_get(1);
+      const beforeThird: number = arr.$_get(2);
+      arr.fill(5.0, 0, -10);
+      expect(arr.$_get(0)).assertEqual(beforeFirst);
+      expect(arr.$_get(1)).assertEqual(beforeSecond);
+      expect(arr.$_get(2)).assertEqual(beforeThird);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FILLTWO_1200
+     * @tc.name testFloat32ArrayFillTWO120
+     * @tc.desc Verify fill on an offset view does not modify elements outside the view
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFillTWO120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const parent = Float32Array.of(1.0, 2.0, 3.0, 4.0);
+      const view = parent.subarray(1, 3);
+      view.fill(9.0);
+      expect(parent.$_get(0)).assertEqual(1.0);
+      expect(parent.$_get(1)).assertEqual(9.0);
+      expect(parent.$_get(2)).assertEqual(9.0);
+      expect(parent.$_get(3)).assertEqual(4.0);
+    });
+
   });
 }

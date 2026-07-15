@@ -1755,5 +1755,24 @@ export default function Float32ArrayFind2Test(): void {
       expect(arr.$_get(0)).assertEqual(16);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FINDTWO_9800
+     * @tc.name testFloat32ArrayFindTWO098
+     * @tc.desc Verify find short-circuits immediately after the first match
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFindTWO098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(1.0, 2.0, 3.0);
+      let calls: int = 0;
+      const result = arr.find((value: number): boolean => {
+        calls++;
+        return value === 2.0;
+      });
+      expect(result).assertEqual(2.0);
+      expect(calls).assertEqual(2);
+    });
+
   });
 }

@@ -1228,5 +1228,116 @@ export default function Float32ArrayAt2Test(): void {
       expect(view.byteLength).assertEqual(before);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_ATTWO_8200
+     * @tc.name testFloat32ArrayAtTWO082
+     * @tc.desc Verify at(-0) reads the first element and keeps length unchanged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayAtTWO082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const firstValue: number = 24.0;
+      const secondValue: number = 48.0;
+      const arr: Float32Array = Float32Array.of(firstValue, secondValue);
+      const beforeLength: int = arr.length;
+      const actualValue = arr.at(-0);
+      const expectValue: number = firstValue;
+      expect(actualValue).assertEqual(expectValue);
+      expect(arr.length).assertEqual(beforeLength);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_ATTWO_8300
+     * @tc.name testFloat32ArrayAtTWO083
+     * @tc.desc Verify at(index less than negative length) returns undefined without changing byteLength
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayAtTWO083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const firstValue: number = 1.0;
+      const secondValue: number = 2.0;
+      const arr: Float32Array = Float32Array.of(firstValue, secondValue);
+      const beforeByteLength: int = arr.byteLength;
+      const indexValue: int = -3;
+      const actualValue = arr.at(indexValue);
+      expect(actualValue).assertUndefined();
+      expect(arr.byteLength).assertEqual(beforeByteLength);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_ATTWO_8400
+     * @tc.name testFloat32ArrayAtTWO084
+     * @tc.desc Verify at(length) returns undefined and keeps the first element unchanged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayAtTWO084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const firstValue: number = 7.0;
+      const secondValue: number = 14.0;
+      const arr: Float32Array = Float32Array.of(firstValue, secondValue);
+      const indexValue: int = arr.length;
+      const actualValue = arr.at(indexValue);
+      const expectFirst: number = firstValue;
+      expect(actualValue).assertUndefined();
+      expect(arr.$_get(0)).assertEqual(expectFirst);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_ATTWO_8500
+     * @tc.name testFloat32ArrayAtTWO085
+     * @tc.desc Verify offset view at(0) observes a backing array update made before the call
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayAtTWO085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const byteLengthValue: number = 16;
+      const buf: ArrayBuffer = new ArrayBuffer(byteLengthValue);
+      const base: Float32Array = new Float32Array(buf);
+      const view: Float32Array = new Float32Array(buf, 4, 2);
+      const expectValue: number = 33.0;
+      base.$_set(1, expectValue);
+      const actualValue = view.at(0);
+      expect(actualValue).assertEqual(expectValue);
+      expect(view.byteOffset).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_ATTWO_8600
+     * @tc.name testFloat32ArrayAtTWO086
+     * @tc.desc Verify huge positive index returns undefined and keeps the backing buffer length unchanged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayAtTWO086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const byteLengthValue: number = 12;
+      const arr: Float32Array = new Float32Array(new ArrayBuffer(byteLengthValue));
+      const hugeIndex: int = 2147483647;
+      const expectByteLength: number = byteLengthValue;
+      const actualValue = arr.at(hugeIndex);
+      expect(actualValue).assertUndefined();
+      expect(arr.buffer.byteLength).assertEqual(expectByteLength);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_ATTWO_8700
+     * @tc.name testFloat32ArrayAtTWO087
+     * @tc.desc Verify negative indexes on an offset view are resolved relative to the view length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayAtTWO087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const parent = new Float32Array([1.0, 2.0, 3.0, 4.0]);
+      const view = parent.subarray(1, 4);
+      const firstIndex: int = -view.length;
+      expect(view.at(-1)).assertEqual(4.0);
+      expect(view.at(firstIndex)).assertEqual(2.0);
+    });
+
   });
 }

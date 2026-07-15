@@ -1913,5 +1913,24 @@ export default function Float32ArrayFill3Test(): void {
       expect(ret.byteLength).assertEqual(lenBefore);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FILLTHREE_1080
+     * @tc.name testFloat32ArrayFillTHREE108
+     * @tc.desc Verify float typed value and number value produce the same range fill result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFillTHREE108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const typedValue: float = 6;
+      const numberValue: number = 6;
+      const a = Float32Array.of(1.0, 2.0, 3.0);
+      const b = Float32Array.of(1.0, 2.0, 3.0);
+      a.fill(typedValue, 1, 3);
+      b.fill(numberValue, 1, 3);
+      expect(a.$_get(1)).assertEqual(b.$_get(1));
+      expect(a.$_get(2)).assertEqual(b.$_get(2));
+    });
+
   });
 }

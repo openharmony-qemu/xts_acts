@@ -840,5 +840,23 @@ export default function Float32ArrayCopyWithin1Test(): void {
       expect(arr.$_get(5)).assertEqual(6.0);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_COPY_WITHINONE_5500
+     * @tc.name testFloat32ArrayCopyWithinONE055
+     * @tc.desc Verify overlapping forward copy preserves source order
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayCopyWithinONE055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(1.0, 2.0, 3.0, 4.0, 5.0);
+      arr.copyWithin(1, 0, 4);
+      expect(arr.$_get(0)).assertEqual(1.0);
+      expect(arr.$_get(1)).assertEqual(1.0);
+      expect(arr.$_get(2)).assertEqual(2.0);
+      expect(arr.$_get(3)).assertEqual(3.0);
+      expect(arr.$_get(4)).assertEqual(4.0);
+    });
+
   });
 }

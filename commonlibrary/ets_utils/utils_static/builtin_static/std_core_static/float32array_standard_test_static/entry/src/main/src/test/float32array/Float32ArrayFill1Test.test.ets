@@ -1803,5 +1803,22 @@ export default function Float32ArrayFill1Test(): void {
       expect(base.$_get(3)).assertEqual(4.0);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FILLONE_1080
+     * @tc.name testFloat32ArrayFillONE108
+     * @tc.desc Verify fill with start greater than end is a no-op and returns this
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFillONE108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(1.0, 2.0, 3.0);
+      const result = arr.fill(9.0, 2, 1);
+      expect(result === arr).assertTrue();
+      expect(arr.$_get(0)).assertEqual(1.0);
+      expect(arr.$_get(1)).assertEqual(2.0);
+      expect(arr.$_get(2)).assertEqual(3.0);
+    });
+
   });
 }

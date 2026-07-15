@@ -186,18 +186,17 @@ export default function Float32ArrayEntriesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_ENTRIES_0100
      * @tc.name testFloat32ArrayEntries010
-     * @tc.desc Verify next() return object is non-null
+     * @tc.desc Verify next() value is an Array tuple
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayEntries010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float32Array.of(1.0);
-      const it = arr.entries();
-      const r = it.next();
-      expect(r.done).assertFalse();
+      const arr = Float32Array.of(3.0);
+      const r = arr.entries().next();
+      expect((r.value!).length).assertEqual(2);
       expect((r.value!)[0]).assertEqual(0);
-      expect((r.value!)[1]).assertEqual(1.0);
+      expect((r.value!)[1]).assertEqual(3);
     });
 
     /**
@@ -609,15 +608,17 @@ export default function Float32ArrayEntriesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_ENTRIES_0360
      * @tc.name testFloat32ArrayEntries036
-     * @tc.desc Verify done property is boolean true
+     * @tc.desc Verify each next() value tuple is a distinct object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayEntries036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array(0);
-      const r = arr.entries().next();
-      expect(r.done).assertTrue();
+      const arr = Float32Array.of(1.0, 2.0);
+      const it = arr.entries();
+      const first = it.next().value!;
+      const second = it.next().value!;
+      expect(first === second).assertFalse();
     });
 
     /**
@@ -2187,6 +2188,23 @@ export default function Float32ArrayEntriesTest(): void {
       const it = arr.entries();
       const propNames: string[] = Object.getOwnPropertyNames(it);
       expect(propNames.indexOf('throw')).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_ENTRIES_1300
+     * @tc.name testFloat32ArrayEntries130
+     * @tc.desc Verify entries iterator observes source updates before next is consumed
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayEntries130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(1.0, 2.0);
+      const iter = arr.entries();
+      arr.$_set(0, 9.0);
+      const first = iter.next();
+      expect((first.value!)[0]).assertEqual(0);
+      expect((first.value!)[1]).assertEqual(9.0);
     });
 
   });

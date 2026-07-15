@@ -383,5 +383,116 @@ export default function Float32ArrayCopyWithin2Test(): void {
       expect(parent.$_get(1)).assertEqual(7.0);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_COPY_WITHINTWO_2400
+     * @tc.name testFloat32ArrayCopyWithinTWO024
+     * @tc.desc Verify copyWithin with target equal start keeps all elements unchanged and returns this
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayCopyWithinTWO024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const firstValue: number = 1.0;
+      const secondValue: number = 2.0;
+      const thirdValue: number = 3.0;
+      const arr: Float32Array = Float32Array.of(firstValue, secondValue, thirdValue);
+      const result: Float32Array = arr.copyWithin(1, 1, 3);
+      expect(result).assertEqual(arr);
+      expect(arr.$_get(0)).assertEqual(firstValue);
+      expect(arr.$_get(1)).assertEqual(secondValue);
+      expect(arr.$_get(2)).assertEqual(thirdValue);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_COPY_WITHINTWO_2500
+     * @tc.name testFloat32ArrayCopyWithinTWO025
+     * @tc.desc Verify copyWithin with start equal end performs no write
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayCopyWithinTWO025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float32Array = Float32Array.of(4.0, 5.0, 6.0);
+      const beforeFirst: number = arr.$_get(0);
+      const beforeSecond: number = arr.$_get(1);
+      const beforeThird: number = arr.$_get(2);
+      arr.copyWithin(0, 2, 2);
+      expect(arr.$_get(0)).assertEqual(beforeFirst);
+      expect(arr.$_get(1)).assertEqual(beforeSecond);
+      expect(arr.$_get(2)).assertEqual(beforeThird);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_COPY_WITHINTWO_2600
+     * @tc.name testFloat32ArrayCopyWithinTWO026
+     * @tc.desc Verify copyWithin with target at length leaves the array unchanged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayCopyWithinTWO026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float32Array = Float32Array.of(7.0, 8.0, 9.0);
+      const targetIndex: int = arr.length;
+      const beforeText: string = arr.join(',');
+      arr.copyWithin(targetIndex, 0, 2);
+      const actualText: string = arr.join(',');
+      expect(actualText).assertEqual(beforeText);
+      expect(arr.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_COPY_WITHINTWO_2700
+     * @tc.name testFloat32ArrayCopyWithinTWO027
+     * @tc.desc Verify copyWithin with negative target writes at the computed last position
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayCopyWithinTWO027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const firstValue: number = 10.0;
+      const secondValue: number = 20.0;
+      const thirdValue: number = 30.0;
+      const arr: Float32Array = Float32Array.of(firstValue, secondValue, thirdValue);
+      arr.copyWithin(-1, 0, 1);
+      expect(arr.$_get(0)).assertEqual(firstValue);
+      expect(arr.$_get(1)).assertEqual(secondValue);
+      expect(arr.$_get(2)).assertEqual(firstValue);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_COPY_WITHINTWO_2800
+     * @tc.name testFloat32ArrayCopyWithinTWO028
+     * @tc.desc Verify overlapping copyWithin uses source order and produces the expected shifted sequence
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayCopyWithinTWO028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float32Array = Float32Array.of(1.0, 2.0, 3.0, 4.0);
+      const targetIndex: int = 1;
+      const startIndex: int = 0;
+      const endIndex: int = 3;
+      arr.copyWithin(targetIndex, startIndex, endIndex);
+      expect(arr.$_get(0)).assertEqual(1.0);
+      expect(arr.$_get(1)).assertEqual(1.0);
+      expect(arr.$_get(2)).assertEqual(2.0);
+      expect(arr.$_get(3)).assertEqual(3.0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_COPY_WITHINTWO_2900
+     * @tc.name testFloat32ArrayCopyWithinTWO029
+     * @tc.desc Verify negative target normalization still returns the receiver
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayCopyWithinTWO029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(1.0, 2.0, 3.0, 4.0);
+      const result = arr.copyWithin(-2, 0, 1);
+      expect(result === arr).assertTrue();
+      expect(arr.$_get(2)).assertEqual(1.0);
+    });
+
   });
 }

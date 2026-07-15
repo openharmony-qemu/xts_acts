@@ -1625,5 +1625,25 @@ export default function Float32ArrayFilter1Test(): void {
       expect(result.$_get(0)).assertEqual(9);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FILTERONE_9000
+     * @tc.name testFloat32ArrayFilterONE090
+     * @tc.desc Verify filter predicate observes source updates made during iteration
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFilterONE090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(1.0, 2.0, 3.0);
+      const result = arr.filter((value: number, index: int, array: Float32Array): boolean => {
+        if (index === 0) {
+          array.$_set(1, 9.0);
+        }
+        return value > 5.0;
+      });
+      expect(result.length).assertEqual(1);
+      expect(result.$_get(0)).assertEqual(9.0);
+    });
+
   });
 }

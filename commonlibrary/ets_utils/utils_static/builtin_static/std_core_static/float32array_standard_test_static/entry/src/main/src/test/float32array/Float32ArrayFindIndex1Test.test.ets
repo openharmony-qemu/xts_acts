@@ -1740,5 +1740,28 @@ export default function Float32ArrayFindIndex1Test(): void {
       expect(idx).assertEqual(2);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_INDEXONE_1070
+     * @tc.name testFloat32ArrayFindIndexONE107
+     * @tc.desc Verify findIndex propagates predicate exceptions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFindIndexONE107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(1.0, 2.0, 3.0);
+      try {
+        arr.findIndex((value: number): boolean => {
+          if (value === 2.0) {
+            throw new Error('stop');
+          }
+          return false;
+        });
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+      }
+    });
+
   });
 }

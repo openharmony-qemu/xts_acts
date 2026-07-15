@@ -967,16 +967,19 @@ export default function Float32ArrayFilter2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FILTERTWO_6400
      * @tc.name testFloat32ArrayFilterTWO064
-     * @tc.desc Verify filter result buffer is not equal to the original array buffer
+     * @tc.desc Verify filter callback third argument is the source array reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayFilterTWO064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = Float32Array.of(0x10, 0b1010, -1.0);
-      const r = src.filter((v: number, i: int, a: Float32Array) => true);
-      r.$_set(0, 99.0);
-      expect(src.$_get(0)).assertEqual(16);
+      let sameRef: boolean = false;
+      src.filter((v: number, i: int, a: Float32Array): boolean => {
+        sameRef = a === src;
+        return false;
+      });
+      expect(sameRef).assertTrue();
     });
 
     /**
@@ -1319,6 +1322,121 @@ export default function Float32ArrayFilter2Test(): void {
       const src = Float32Array.of(0x10, 0b1010, -1.0);
       const r = src.filter((v: number, i: int, a: Float32Array) => false);
       expect(r.indexOf(1.0)).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FILTERTWO_8700
+     * @tc.name testFloat32ArrayFilterTWO087
+     * @tc.desc Verify non-empty filter result is independent after modifying the source array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFilterTWO087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const src = new Float32Array([1.0, 2.0, 3.0, 4.0]);
+      const filtered = src.filter((v: number, i: int, a: Float32Array): boolean => v > 2.0);
+      const expectFirst: number = 3.0;
+      const expectSecond: number = 4.0;
+      src.$_set(2, 99.0);
+      expect(filtered.$_get(0)).assertEqual(expectFirst);
+      expect(filtered.$_get(1)).assertEqual(expectSecond);
+      expect(src.$_get(2)).assertEqual(99.0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FILTERTWO_8800
+     * @tc.name testFloat32ArrayFilterTWO088
+     * @tc.desc Verify filter on an offset view returns a compact array with byteOffset zero
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFilterTWO088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(20);
+      const view = new Float32Array(buf, 4, 4);
+      view.$_set(0, 1.0);
+      view.$_set(1, 2.0);
+      view.$_set(2, 3.0);
+      view.$_set(3, 4.0);
+      const filtered = view.filter((v: number, i: int, a: Float32Array): boolean => v > 2.0);
+      expect(filtered.byteOffset).assertEqual(0);
+      expect(filtered.length).assertEqual(2);
+      expect(filtered.$_get(0)).assertEqual(3.0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FILTERTWO_8900
+     * @tc.name testFloat32ArrayFilterTWO089
+     * @tc.desc Verify filter predicate is called exactly once for each source element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFilterTWO089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const src = new Float32Array([5.0, 6.0, 7.0, 8.0]);
+      let callCount: int = 0;
+      const filtered = src.filter((v: number, i: int, a: Float32Array): boolean => {
+        callCount++;
+        return v >= 7.0;
+      });
+      expect(callCount).assertEqual(src.length);
+      expect(filtered.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FILTERTWO_9000
+     * @tc.name testFloat32ArrayFilterTWO090
+     * @tc.desc Verify filter can keep only NaN values using global isNaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFilterTWO090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const src = new Float32Array([1.0, NaN, 2.0, NaN]);
+      const filtered = src.filter((v: number, i: int, a: Float32Array): boolean => isNaN(v));
+      expect(filtered.length).assertEqual(2);
+      expect(filtered.$_get(0)).assertNaN();
+      expect(filtered.$_get(1)).assertNaN();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FILTERTWO_9100
+     * @tc.name testFloat32ArrayFilterTWO091
+     * @tc.desc Verify filter observes a predicate update to a later element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFilterTWO091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const src = new Float32Array([1.0, 2.0, 3.0]);
+      const changedValue: number = 20.0;
+      const filtered = src.filter((v: number, i: int, a: Float32Array): boolean => {
+        if (i === 0) {
+          a.$_set(1, changedValue);
+        }
+        return v >= changedValue;
+      });
+      expect(filtered.length).assertEqual(1);
+      expect(filtered.$_get(0)).assertEqual(changedValue);
+      expect(src.$_get(1)).assertEqual(changedValue);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FILTERTWO_9200
+     * @tc.name testFloat32ArrayFilterTWO092
+     * @tc.desc Verify filtering an offset view returns a compact independent array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFilterTWO092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const parent = Float32Array.of(1.0, 2.0, 3.0, 4.0);
+      const view = parent.subarray(1, 4);
+      const filtered = view.filter((value: number): boolean => value > 2.0);
+      expect(filtered.byteOffset).assertEqual(0);
+      expect(filtered.length).assertEqual(2);
+      filtered.$_set(0, 99.0);
+      expect(parent.$_get(2)).assertEqual(3.0);
     });
 
   });

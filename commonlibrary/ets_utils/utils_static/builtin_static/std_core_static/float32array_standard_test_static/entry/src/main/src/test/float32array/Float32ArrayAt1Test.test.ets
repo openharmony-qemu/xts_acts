@@ -262,5 +262,21 @@ export default function Float32ArrayAt1Test(): void {
       expect(arr.at(-1)).assertUndefined();
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_ATONE_1800
+     * @tc.name testFloat32ArrayAtONE018
+     * @tc.desc Verify negative boundary indexes at(-length) and at(-length-1)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayAtONE018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(10.0, 20.0, 30.0);
+      const firstNegativeIndex: int = -arr.length;
+      const beforeFirstIndex: int = firstNegativeIndex - 1;
+      expect(arr.at(firstNegativeIndex)).assertEqual(10.0);
+      expect(arr.at(beforeFirstIndex)).assertUndefined();
+    });
+
   });
 }

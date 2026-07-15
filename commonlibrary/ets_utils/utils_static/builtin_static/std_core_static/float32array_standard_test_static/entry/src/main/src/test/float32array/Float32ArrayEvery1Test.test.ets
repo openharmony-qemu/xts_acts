@@ -1711,5 +1711,31 @@ export default function Float32ArrayEvery1Test(): void {
       expect(seenLast).assertEqual(9.0);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_EVERYONE_9300
+     * @tc.name testFloat32ArrayEveryONE093
+     * @tc.desc Verify predicate exception is propagated and later elements are not visited
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayEveryONE093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(1.0, 2.0, 3.0);
+      let visited: int = 0;
+      try {
+        arr.every((value: number): boolean => {
+          visited++;
+          if (value === 2.0) {
+            throw new Error('stop');
+          }
+          return true;
+        });
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+      }
+      expect(visited).assertEqual(2);
+    });
+
   });
 }

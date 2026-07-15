@@ -1469,5 +1469,126 @@ export default function Float32ArrayFindIndex2Test(): void {
       expect(callCount).assertEqual(arr.length);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_INDEXTWO_9100
+     * @tc.name testFloat32ArrayFindIndexTWO091
+     * @tc.desc Verify empty array findIndex returns -1 and does not call the predicate
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFindIndexTWO091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float32Array = new Float32Array(0);
+      let callCount: int = 0;
+      const result: number = arr.findIndex((value: number, index: int, array: Float32Array): boolean => {
+        callCount++;
+        return true;
+      });
+      const expectIndex: number = -1;
+      const expectCount: int = 0;
+      expect(result).assertEqual(expectIndex);
+      expect(callCount).assertEqual(expectCount);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_INDEXTWO_9200
+     * @tc.name testFloat32ArrayFindIndexTWO092
+     * @tc.desc Verify predicate mutation of a later element can be observed by a later predicate call
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFindIndexTWO092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float32Array = new Float32Array([1.0, 2.0, 3.0]);
+      const changedValue: number = 22.0;
+      const result: number = arr.findIndex((value: number, index: int, array: Float32Array): boolean => {
+        if (index === 0) {
+          array.$_set(1, changedValue);
+        }
+        return value === changedValue;
+      });
+      const expectIndex: number = 1;
+      expect(result).assertEqual(expectIndex);
+      expect(arr.$_get(1)).assertEqual(changedValue);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_INDEXTWO_9300
+     * @tc.name testFloat32ArrayFindIndexTWO093
+     * @tc.desc Verify first element match stops after one predicate call
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFindIndexTWO093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const matchValue: number = 5.0;
+      const arr: Float32Array = new Float32Array([matchValue, 6.0, 7.0]);
+      let callCount: int = 0;
+      const result: number = arr.findIndex((value: number, index: int, array: Float32Array): boolean => {
+        callCount++;
+        return value === matchValue;
+      });
+      expect(result).assertEqual(0);
+      expect(callCount).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_INDEXTWO_9400
+     * @tc.name testFloat32ArrayFindIndexTWO094
+     * @tc.desc Verify findIndex on an offset view reports an index relative to the view
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFindIndexTWO094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(20);
+      const parent: Float32Array = new Float32Array(buf);
+      const view: Float32Array = new Float32Array(buf, 8, 3);
+      const expectValue: number = 44.0;
+      parent.$_set(3, expectValue);
+      const result: number = view.findIndex((value: number, index: int, array: Float32Array): boolean => {
+        return value === expectValue;
+      });
+      const expectIndex: number = 1;
+      expect(result).assertEqual(expectIndex);
+      expect(view.byteOffset).assertEqual(8);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_INDEXTWO_9500
+     * @tc.name testFloat32ArrayFindIndexTWO095
+     * @tc.desc Verify no-match predicate can still modify the array while findIndex returns -1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFindIndexTWO095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Float32Array = new Float32Array([1.0, 2.0, 3.0]);
+      const changedValue: number = 30.0;
+      const result: number = arr.findIndex((value: number, index: int, array: Float32Array): boolean => {
+        if (index === 2) {
+          array.$_set(index, changedValue);
+        }
+        return false;
+      });
+      expect(result).assertEqual(-1);
+      expect(arr.$_get(2)).assertEqual(changedValue);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_INDEXTWO_9600
+     * @tc.name testFloat32ArrayFindIndexTWO096
+     * @tc.desc Verify findIndex on an offset view returns the view-local index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFindIndexTWO096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const parent = Float32Array.of(1.0, 2.0, 3.0, 4.0);
+      const view = parent.subarray(1, 4);
+      const index = view.findIndex((value: number): boolean => value === 3.0);
+      expect(index).assertEqual(1);
+    });
+
   });
 }

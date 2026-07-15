@@ -1634,5 +1634,31 @@ export default function Float32ArrayFind1Test(): void {
       expect(result).assertEqual(9.0);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FINDONE_8800
+     * @tc.name testFloat32ArrayFindONE088
+     * @tc.desc Verify find propagates predicate exceptions and stops iteration
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayFindONE088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float32Array.of(1.0, 2.0, 3.0);
+      let calls: int = 0;
+      try {
+        arr.find((value: number): boolean => {
+          calls++;
+          if (value === 2.0) {
+            throw new Error('stop');
+          }
+          return false;
+        });
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+      }
+      expect(calls).assertEqual(2);
+    });
+
   });
 }
