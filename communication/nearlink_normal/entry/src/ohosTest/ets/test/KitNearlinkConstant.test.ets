@@ -149,6 +149,9 @@ export default function constantTest() {
         let caseName = 'SUB_Communication_XTS_NearLink_Constant_Enum_0400';
         console.info(`${caseName} test start`);
         try {
+          let DEVICE_INVALID_CLASS: nearlinkConstant.DeviceClass = nearlinkConstant.DeviceClass.DEVICE_INVALID_CLASS;
+          console.info(`${caseName} DEVICE_INVALID_CLASS result:` + DEVICE_INVALID_CLASS);
+          expect(DEVICE_INVALID_CLASS).assertEqual(-1);
           let DEVICE_UNCATEGORIZED: nearlinkConstant.DeviceClass = nearlinkConstant.DeviceClass.DEVICE_UNCATEGORIZED;
           console.info(`${caseName} DEVICE_UNCATEGORIZED result:` + DEVICE_UNCATEGORIZED);
           expect(DEVICE_UNCATEGORIZED).assertEqual(0x000100);
