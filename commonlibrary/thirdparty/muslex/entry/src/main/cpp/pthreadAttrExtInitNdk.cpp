@@ -50,10 +50,28 @@ static int CallPthreadAttrExtDestroy(pthread_attr_t* attr)
     return func(attr);
 }
 
+static bool EnablePthreadExtPolicy() 
+{
+    auto& loader = LibcFunctionLoader::GetInstance();
+    auto setFunc = loader.GetSetPthreadExtFuncPolicy();
+    auto getFunc = loader.GetPthreadExtFuncPolicy();
+    if (!setFunc || !getFunc) {
+        return false;
+    }
+    setFunc(1);
+    return getFunc() != 0;
+}
+
 static bool IsStubMode()
 {
     auto& loader = LibcFunctionLoader::GetInstance();
-    return (loader.GetPthreadAttrExtInit() == nullptr);
+    if (loader.GetPthreadAttrExtInit() == nullptr) {
+        return true;
+    }
+    if (!EnablePthreadExtPolicy()) {
+        return true;
+    }
+    return false;
 }
 
 static napi_value ReturnInt32(napi_env env, int32_t value)

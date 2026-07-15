@@ -53,10 +53,28 @@ static int CallPthreadAttrSetaffinityNp(pthread_attr_t* attr, size_t cpusetsize,
     return func(attr, cpusetsize, cpuset);
 }
 
+static bool EnablePthreadExtPolicy() 
+{
+    auto& loader = LibcFunctionLoader::GetInstance();
+    auto setFunc = loader.GetSetPthreadExtFuncPolicy();
+    auto getFunc = loader.GetPthreadExtFuncPolicy();
+    if (!setFunc || !getFunc) {
+        return false;
+    }
+    setFunc(1);
+    return getFunc() != 0;
+}
+
 static bool IsStubMode()
 {
     auto& loader = LibcFunctionLoader::GetInstance();
-    return (loader.GetPthreadAttrGetaffinityNp() == nullptr);
+    if (loader.GetPthreadAttrGetaffinityNp() == nullptr) {
+        return true;
+    }
+    if (!EnablePthreadExtPolicy()) {
+        return true;
+    }
+    return false;
 }
 
 static napi_value ReturnInt32(napi_env env, int32_t value)
