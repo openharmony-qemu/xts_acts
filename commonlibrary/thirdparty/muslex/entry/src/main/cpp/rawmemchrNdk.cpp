@@ -27,6 +27,7 @@ static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
 static constexpr size_t K_LONG_STR_SIZE = 10000;
 static constexpr size_t K_STR_COUNT = 5;
+static constexpr int K_HALF_DIV = 2;
 
 static void* CallRawmemchr(const void* s, int c)
 {
