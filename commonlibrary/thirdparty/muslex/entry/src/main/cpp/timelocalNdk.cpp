@@ -77,7 +77,7 @@ static napi_value TimelocalNormal002(napi_env env, napi_callback_info info)
     }
     struct tm t = {};
     int epochYear = 1970;
-    t.tm_year = epochYear - 1900;
+    t.tm_year = epochYear - TM_YEAR_BASE;
     int jan = 0;
     t.tm_mon = jan;
     int day1 = 1;
@@ -136,7 +136,8 @@ static napi_value TimelocalAbnormal002(napi_env env, napi_callback_info info)
     struct tm t = {};
     int testYear2026 = 2026;
     t.tm_year = testYear2026 - TM_YEAR_BASE;
-    t.tm_mon = 13;
+    int invalidMonth = 13;
+    t.tm_mon = invalidMonth;
     time_t ret = CallTimelocal(&t);
     return ReturnInt32(env, 1);
 }

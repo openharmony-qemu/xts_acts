@@ -28,6 +28,9 @@ static constexpr int K_LOG_MSG_LEN = 123;
 static constexpr int K_SYSLOG_VAL42 = 42;
 static constexpr int K_SYSLOG_VAL999 = 999;
 static constexpr int K_ITER_PER_THREAD = 10;
+static constexpr int SYSLOG_ERR_CODE = 123;
+static constexpr int SYSLOG_WARN_VAL = 42;
+static constexpr int SYSLOG_INVALID_PRIORITY = 999;
 
 static void CallSyslogChk(int flag, int priority, const char* fmt, ...)
 {
@@ -82,7 +85,7 @@ static napi_value SyslogChkNormal002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     openlog("test", LOG_PID, LOG_USER);
-    CallSyslogChk(1, LOG_ERR, "Error code: %d", 123);
+    CallSyslogChk(1, LOG_ERR, "Error code: %d", SYSLOG_ERR_CODE);
     closelog();
     return ReturnInt32(env, 1);
 }
@@ -94,7 +97,7 @@ static napi_value SyslogChkNormal003(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     openlog("test", LOG_PID, LOG_USER);
-    CallSyslogChk(0, LOG_WARNING, "%s %d %.2f", "warning", 42, 3.14);
+    CallSyslogChk(0, LOG_WARNING, "%s %d %.2f", "warning", SYSLOG_WARN_VAL, 3.14);
     closelog();
     return ReturnInt32(env, 1);
 }
@@ -161,7 +164,7 @@ static napi_value SyslogChkAbnormal002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     openlog("test", LOG_PID, LOG_USER);
-    CallSyslogChk(0, 999, "Invalid priority");
+    CallSyslogChk(0, SYSLOG_INVALID_PRIORITY, "Invalid priority");
     closelog();
     return ReturnInt32(env, 1);
 }
