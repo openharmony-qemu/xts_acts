@@ -33,9 +33,7 @@ export default function GwpAsanRegisterFfrtNdkTest() {
      */
     it('testgwpAsanRegisterFfrtNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasanregffrtndktest.gwpAsanRegisterFfrtNormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 0) || (deviceType != '2in1' && resNum == 1);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -49,9 +47,7 @@ export default function GwpAsanRegisterFfrtNdkTest() {
      */
     it('testgwpAsanRegisterFfrtNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasanregffrtndktest.gwpAsanRegisterFfrtNormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 0) || (deviceType != '2in1' && resNum == 1);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -65,9 +61,7 @@ export default function GwpAsanRegisterFfrtNdkTest() {
      */
     it('testgwpAsanRegisterFfrtNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasanregffrtndktest.gwpAsanRegisterFfrtNormal003();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 0) || (deviceType != '2in1' && resNum == 1);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -81,9 +75,7 @@ export default function GwpAsanRegisterFfrtNdkTest() {
      */
     it('testgwpAsanRegisterFfrtNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasanregffrtndktest.gwpAsanRegisterFfrtNormal004();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 0) || (deviceType != '2in1' && resNum == 1);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -97,9 +89,7 @@ export default function GwpAsanRegisterFfrtNdkTest() {
      */
     it('testgwpAsanRegisterFfrtAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasanregffrtndktest.gwpAsanRegisterFfrtAbnormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 0) || (deviceType != '2in1' && resNum == 1);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -113,9 +103,7 @@ export default function GwpAsanRegisterFfrtNdkTest() {
      */
     it('testgwpAsanRegisterFfrtAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasanregffrtndktest.gwpAsanRegisterFfrtAbnormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 0) || (deviceType != '2in1' && resNum == 1);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -129,9 +117,7 @@ export default function GwpAsanRegisterFfrtNdkTest() {
      */
     it('testgwpAsanRegisterFfrtBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasanregffrtndktest.gwpAsanRegisterFfrtBoundary001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 0) || (deviceType != '2in1' && resNum == 1);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -145,9 +131,7 @@ export default function GwpAsanRegisterFfrtNdkTest() {
      */
     it('testgwpAsanRegisterFfrtBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasanregffrtndktest.gwpAsanRegisterFfrtBoundary002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 0) || (deviceType != '2in1' && resNum == 1);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -161,9 +145,7 @@ export default function GwpAsanRegisterFfrtNdkTest() {
      */
     it('testgwpAsanRegisterFfrtStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasanregffrtndktest.gwpAsanRegisterFfrtStable001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 0) || (deviceType != '2in1' && resNum == 1);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -177,9 +159,7 @@ export default function GwpAsanRegisterFfrtNdkTest() {
      */
     it('testgwpAsanRegisterFfrtThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libgwpasanregffrtndktest.gwpAsanRegisterFfrtThread001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 0) || (deviceType != '2in1' && resNum == 1);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
