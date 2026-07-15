@@ -62,9 +62,9 @@ struct TextSymbolWithEnvFontScaleExample {
         SymbolGlyph($r('sys.symbol.wifi'))
           .fontSize(14)
           .id('WithoutEnvSymbol')
-        Text('该文本不受 WithEnv 字体缩放影响')
+        Text('不受WithEnv影响')
           .fontSize(14)
-          .fontColor('#99182431')
+          .fontColor('#ff00ff')
           .id('WithoutEnvText')
       }
       .width('100%')
@@ -77,9 +77,9 @@ struct TextSymbolWithEnvFontScaleExample {
           SymbolGlyph($r('sys.symbol.wifi'))
             .fontSize(14)
             .id('WithEnvSymbol')
-          Text('该文本受 WithEnv 字体缩放影响')
+          Text('受WithEnv影响')
             .fontSize(14)
-            .fontColor('#99182431')
+            .fontColor('#ff00ff')
             .id('WithEnvText')
         }
         .width('100%')
