@@ -197,7 +197,7 @@ static napi_value SyslogChkStable001(napi_env env, napi_callback_info info)
     openlog("test", LOG_PID, LOG_USER);
     bool pass = true;
     for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
-        CallSyslogChk(i % 2, LOG_INFO, "Stability test %d", i);
+        CallSyslogChk(i % SYSLOG_FLAG_MOD, LOG_INFO, "Stability test %d", i);
     }
     closelog();
     return ReturnInt32(env, pass ? 1 : 0);
@@ -219,7 +219,7 @@ static napi_value SyslogChkThread001(napi_env env, napi_callback_info info)
         threads.emplace_back([&hasError]() {
             for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 int priority = (i % 4) + 1;
-                CallSyslogChk(i % 2, priority, "Thread %d message %d", i % 10, i);
+                CallSyslogChk(i % SYSLOG_FLAG_MOD, priority, "Thread %d message %d", i % 10, i);
                 // syslog may have internal locks, not crashing counts as pass
             }
         });
