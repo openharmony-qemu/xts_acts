@@ -34,7 +34,9 @@ struct WebComponent {
   @State isReceive: number = -1;
   @State isOnConsoleEnd: number = -1;
   @State flag:number = 1;
-
+  let callback: OnInputmethodAttachedCallback = ()=>{
+	console.log('inputmethod attached');
+  }
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: EVENT_ID_SET_SUITE_KEY,
@@ -91,6 +93,7 @@ struct WebComponent {
 
 
       Web({ src: $rawfile('example.html'), controller: this.controller }).key('InputmethodAttachedButton')
+	    .onInputmethodAttached(callback)
         .onInputmethodAttached(() => {
           console.log('inputmethod attached');
           inputMethod.getController().showTextInput();
