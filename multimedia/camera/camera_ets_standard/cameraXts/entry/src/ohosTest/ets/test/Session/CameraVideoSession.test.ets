@@ -1261,7 +1261,7 @@ export default function CameraVideoSessionTest() {
     it('release_video_session_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_video_session_callback_001';
       console.info(TAG, testName + ' begin.');
-try {
+      try {
         if (isEmpty(mCameraManager) && isEmpty(mSupportedModes)) {
           console.info(TAG, testName + ' cameraManager is null.');
           expect().assertFail();
