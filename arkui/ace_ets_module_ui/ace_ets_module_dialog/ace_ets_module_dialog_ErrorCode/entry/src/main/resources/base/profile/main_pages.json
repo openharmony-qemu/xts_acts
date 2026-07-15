@@ -1,0 +1,14 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/dialogErrorCode/showAlertDialog/ShowAlertDialogErrorCodeTest",
+    "MainAbility/pages/dialogErrorCode/showActionSheet/ShowActionSheetErrorCodeTest",
+    "MainAbility/pages/dialogErrorCode/showDialog/ShowDialogErrorCodeTest",
+    "MainAbility/pages/dialogErrorCode/showActionMenu/ShowActionMenuErrorCodeTest",
+    "MainAbility/pages/dialogErrorCode/openCustomDialog/OpenCustomDialogErrorCodeTest",
+    "MainAbility/pages/dialogErrorCode/presentCustomDialog/PresentCustomDialogErrorCodeTest",
+    "MainAbility/pages/dialogErrorCode/openCustomDialogWithController/OpenCustomDialogWithControllerErrorCodeTest",
+    "MainAbility/pages/dialogErrorCode/updateCustomDialog/UpdateCustomDialogErrorCodeTest",
+    "MainAbility/pages/dialogErrorCode/closeCustomDialog/CloseCustomDialogErrorCodeTest"
+  ]
+}
