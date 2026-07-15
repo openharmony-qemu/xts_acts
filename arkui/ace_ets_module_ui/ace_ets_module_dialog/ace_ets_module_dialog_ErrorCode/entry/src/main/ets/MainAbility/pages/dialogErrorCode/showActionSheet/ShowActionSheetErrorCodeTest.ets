@@ -17,7 +17,8 @@ import { DialogPresenter } from '@kit.ArkUI';
 /**
  * showActionSheet 错误码测试
  * 对应新接口: present(options: DialogOptions)
- * 错误码: 401(参数错误), 100001(内部错误), 103306(弹窗节点挂载失败)
+ * 自动化: 401, 0
+ * @manual-verify: 100001/103306/103308（见 SDK；禁 FilePicker）
  */
 import { BusinessError } from '@kit.BasicServicesKit';
 import {

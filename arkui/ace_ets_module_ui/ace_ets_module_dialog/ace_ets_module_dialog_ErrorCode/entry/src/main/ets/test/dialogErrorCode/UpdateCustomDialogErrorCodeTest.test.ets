@@ -49,6 +49,23 @@ export default function UpdateCustomDialogErrorCodeTest() {
     });
 
     /**
+     * @tc.number SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_OPTIONS_NULL_0100
+     * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_OPTIONS_NULL_0100
+     * @tc.desc   update options=null 成功或返回401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_OPTIONS_NULL_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      let driver: Driver = Driver.create();
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'UpdateCustomDialogErrorCodeTest_btn_options_null', 'UpdateCustomDialogErrorCodeTest');
+      expect(status).assertEqual('PASS');
+      done();
+    });
+
+    /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_NO_ARGS_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_UPDATECD_NO_ARGS_0100
      * @tc.desc   update 不传参数返回401

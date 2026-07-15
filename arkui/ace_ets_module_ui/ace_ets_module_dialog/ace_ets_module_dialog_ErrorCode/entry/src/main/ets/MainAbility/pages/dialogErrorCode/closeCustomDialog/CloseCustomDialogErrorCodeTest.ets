@@ -15,8 +15,10 @@
 
 /**
  * closeCustomDialog 错误码测试
- * 对应新接口: dismiss(target: number | ComponentContent)
- * 错误码: 401(参数错误), 100001(内部错误), 103301(内容错误), 103303(内容未找到)
+ * 对应新接口: DialogPresenter.dismiss(target)
+ * 自动化: 401(含 dispose 后 dismiss 实测), 103303, 0
+ * @manual-verify: 103301(引擎 contentNode 空才抛; dispose 落 401);
+ *   100001/103306/103308 见 docs+SDK；禁 FilePicker
  */
 import { ComponentContent } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -81,6 +83,11 @@ struct CloseCustomDialogErrorCodeTest {
               .onClick(() => this.testNull())
           }
 
+          Button('dispose 后 dismiss(content)')
+            .id('CloseCustomDialogErrorCodeTest_btn_disposed')
+            .fontSize(12).width('100%')
+            .onClick(() => this.testDisposed())
+
           Text('103303 - 弹窗内容未找到').fontSize(16).fontWeight(FontWeight.Medium).margin({ top: 8 })
           Row({ space: 8 }) {
             Button('未打开过的content').id('CloseCustomDialogErrorCodeTest_btn_not_opened')
@@ -91,49 +98,53 @@ struct CloseCustomDialogErrorCodeTest {
               .onClick(() => this.testInvalidId())
           }
           Button('已关闭后再dismiss(content)')
+            .id('CloseCustomDialogErrorCodeTest_btn_already_closed')
             .fontSize(12).width('100%')
             .onClick(() => this.testAlreadyClosed())
           Button('已关闭后再dismiss(dialogId)')
+            .id('CloseCustomDialogErrorCodeTest_btn_already_closed_id')
             .fontSize(12).width('100%')
             .onClick(() => this.testAlreadyClosedById())
 
           Text('固定样式dialog，dismiss(dialogId)').fontSize(16).fontWeight(FontWeight.Medium).margin({ top: 8 })
           Button('固定样式dismiss(dialogId)')
+            .id('CloseCustomDialogErrorCodeTest_btn_style_by_id')
             .fontSize(12).width('100%')
             .onClick(() => this.testStyleDialogById())
 
           Text('子窗测试').fontSize(16).fontWeight(FontWeight.Medium).margin({ top: 8 })
           Row({ space: 8 }) {
-            Button('dismiss(content)').id('CloseCustomDialogErrorCodeTest_btn_dismiss_content')
+            Button('子窗dismiss(content)')
+              .id('CloseCustomDialogErrorCodeTest_btn_subwin_content')
               .fontSize(12).layoutWeight(1)
               .onClick(() => this.testNormalByContentSubWin())
-            Button('dismiss(dialogId)').id('CloseCustomDialogErrorCodeTest_btn_dismiss_id')
+            Button('子窗dismiss(dialogId)')
+              .id('CloseCustomDialogErrorCodeTest_btn_subwin_id')
               .fontSize(12).layoutWeight(1)
               .onClick(() => this.testNormalByIdSubWin())
           }
-          Button('已关闭后再dismiss(content)')
+          Button('子窗已关闭后再dismiss(content)')
+            .id('CloseCustomDialogErrorCodeTest_btn_subwin_closed')
             .fontSize(12).width('100%')
             .onClick(() => this.testAlreadyClosedSubWin())
-          Button('已关闭后再dismiss(dialogId)')
+          Button('子窗已关闭后再dismiss(dialogId)')
+            .id('CloseCustomDialogErrorCodeTest_btn_subwin_closed_id')
             .fontSize(12).width('100%')
             .onClick(() => this.testAlreadyClosedByIdSubWin())
-          Button('固定样式dismiss(dialogId)')
+          Button('子窗固定样式dismiss(dialogId)')
+            .id('CloseCustomDialogErrorCodeTest_btn_subwin_style_id')
             .fontSize(12).width('100%')
             .onClick(() => this.testStyleDialogByIdSubWin())
 
-
-          
-          if (this.results.length > 0) {
-            Text(this.results[0].passed ? 'PASS' : 'FAILED')
-              .id('CloseCustomDialogErrorCodeTest_result_status')
-              .fontSize(1).height(1).opacity(0)
-            Text(this.results[0].label)
-              .id('CloseCustomDialogErrorCodeTest_result_label')
-              .fontSize(1).height(1).opacity(0)
-            Text(String(this.results[0].actualCode))
-              .id('CloseCustomDialogErrorCodeTest_result_actual')
-              .fontSize(1).height(1).opacity(0)
-          }
+          Text(this.results.length > 0 ? (this.results[0].passed ? 'PASS' : 'FAILED') : 'IDLE')
+            .id('CloseCustomDialogErrorCodeTest_result_status')
+            .fontSize(1).height(1).opacity(0)
+          Text(this.results.length > 0 ? this.results[0].label : '')
+            .id('CloseCustomDialogErrorCodeTest_result_label')
+            .fontSize(1).height(1).opacity(0)
+          Text(this.results.length > 0 ? String(this.results[0].actualCode) : '')
+            .id('CloseCustomDialogErrorCodeTest_result_actual')
+            .fontSize(1).height(1).opacity(0)
 
           Divider().margin({ top: 8 })
           Row() {
@@ -352,9 +363,13 @@ struct CloseCustomDialogErrorCodeTest {
       cn?.dispose();
       try {
         await dialog.dismiss(cn);
-        this.addResult('disposed content', 103301, -1);
-      } catch (innerErr) { this.addResult('disposed content', 103301, (innerErr as BusinessError).code); }
-    } catch (err) { this.addResult('disposed content', 103301, (err as BusinessError).code); }
+        this.addResult('disposed content', 401, -1);
+      } catch (innerErr) {
+        this.addResult('disposed content', 401, (innerErr as BusinessError).code);
+      }
+    } catch (err) {
+      this.addResult('disposed content', 401, (err as BusinessError).code);
+    }
   }
 
   async testNotOpened() {
@@ -395,15 +410,14 @@ struct CloseCustomDialogErrorCodeTest {
       await dialog.present(cn);
       await dialog.dismiss(cn);
       try {
-        dialog.dismiss(cn)
-          .then(()=>{
-            this.addResult('已关闭后再dismiss(content)', 103303, -1);
-          })
-          .catch((err: BusinessError) => {
-            this.addResult('promise 已关闭后再dismiss(content)', 103303, (err as BusinessError).code);
-          })
-      } catch (innerErr) { this.addResult('已关闭后再dismiss(content)', -1, (innerErr as BusinessError).code); }
-    } catch (err) { this.addResult('catch 已关闭后再dismiss(content)', -1, (err as BusinessError).code); }
+        await dialog.dismiss(cn);
+        this.addResult('已关闭后再dismiss(content)', 103303, -1);
+      } catch (innerErr) {
+        this.addResult('已关闭后再dismiss(content)', 103303, (innerErr as BusinessError).code);
+      }
+    } catch (err) {
+      this.addResult('已关闭后再dismiss(content)', 103303, (err as BusinessError).code);
+    }
   }
 
   async testAlreadyClosedById() {
@@ -418,15 +432,14 @@ struct CloseCustomDialogErrorCodeTest {
       let res = await dialog.present(cn);
       await dialog.dismiss(res.dialogId);
       try {
-        dialog.dismiss(res.dialogId)
-          .then(()=>{
-            this.addResult('已关闭后再dismiss(id)', 103303, -1);
-          })
-          .catch((err: BusinessError) => {
-            this.addResult('promise 已关闭后再dismiss(id)', 103303, (err as BusinessError).code);
-          })
-      } catch (innerErr) { this.addResult('已关闭后再dismiss(id)', -1, (innerErr as BusinessError).code); }
-    } catch (err) { this.addResult('已关闭后再dismiss(id)', -1, (err as BusinessError).code); }
+        await dialog.dismiss(res.dialogId);
+        this.addResult('已关闭后再dismiss(id)', 103303, -1);
+      } catch (innerErr) {
+        this.addResult('已关闭后再dismiss(id)', 103303, (innerErr as BusinessError).code);
+      }
+    } catch (err) {
+      this.addResult('已关闭后再dismiss(id)', 103303, (err as BusinessError).code);
+    }
   }
 
   async testAlreadyClosedSubWin() {

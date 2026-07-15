@@ -71,6 +71,57 @@ export default function PresentCustomDialogErrorCodeTest() {
     });
 
     /**
+     * @tc.number SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_CONTENT_STR_0100
+     * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_CONTENT_STR_0100
+     * @tc.desc   content=字符串 返回401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_CONTENT_STR_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      let driver: Driver = Driver.create();
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'PresentCustomDialogErrorCodeTest_btn_content_string', 'PresentCustomDialogErrorCodeTest');
+      expect(status).assertEqual('PASS');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_OPTIONS_NUM_0100
+     * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_OPTIONS_NUM_0100
+     * @tc.desc   options=数字 返回401或成功（与 OpenCD 对齐）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_OPTIONS_NUM_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      let driver: Driver = Driver.create();
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'PresentCustomDialogErrorCodeTest_btn_options_number', 'PresentCustomDialogErrorCodeTest');
+      expect(status).assertEqual('PASS');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_DISPOSED_0100
+     * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_DISPOSED_0100
+     * @tc.desc   dispose 后 present 返回401（103301 见 @manual-verify）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_DISPOSED_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      let driver: Driver = Driver.create();
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'PresentCustomDialogErrorCodeTest_btn_disposed', 'PresentCustomDialogErrorCodeTest');
+      expect(status).assertEqual('PASS');
+      done();
+    });
+
+    /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_DUP_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_DUP_0100
      * @tc.desc   重复打开返回103302
@@ -82,9 +133,8 @@ export default function PresentCustomDialogErrorCodeTest() {
       async (done: () => void): Promise<void> => {
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_DUP_0100] START');
       let driver: Driver = Driver.create();
-      await ErrorCodeAssert.clickById(driver, 'PresentCustomDialogErrorCodeTest_btn_duplicate');
-      await CommonFunc.sleep(1000);
-      let status: string = ErrorCodeAssert.readStatus('PresentCustomDialogErrorCodeTest');
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'PresentCustomDialogErrorCodeTest_btn_duplicate', 'PresentCustomDialogErrorCodeTest');
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_PRESENTCD_DUP_0100] status=' + status);
       expect(status).assertEqual('PASS');
       done();

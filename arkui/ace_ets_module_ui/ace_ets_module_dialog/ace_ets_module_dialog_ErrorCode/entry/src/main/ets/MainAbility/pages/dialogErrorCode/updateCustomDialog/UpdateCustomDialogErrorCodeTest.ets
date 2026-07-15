@@ -16,7 +16,8 @@
 /**
  * updateCustomDialog 错误码测试
  * 对应新接口: update(content: ComponentContent, options: DialogBaseOptions)
- * 错误码: 401(参数错误), 103301(内容错误), 103303(内容未找到)
+ * 自动化: 401(含 disposed update 实测), 103303, 0
+ * @manual-verify: 103301(引擎 contentNode 空才抛; dispose 落 401)
  */
 import { ComponentContent, dialog as dialogApi } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -172,7 +173,10 @@ struct UpdateCustomDialogErrorCodeTest {
       await dialog.present(cn);
       await dialog.update(cn, null);
       this.addResult('options=null', 0, 0);
-    } catch (err) { this.addResult('options=null', 401, (err as BusinessError).code); }
+      await dialog.dismiss(cn);
+    } catch (err) {
+      this.addResult('options=null', 401, (err as BusinessError).code);
+    }
   }
 
   async testNoArgs() {
