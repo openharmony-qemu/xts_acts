@@ -23,24 +23,24 @@
 #include <thread>
 #include <vector>
 
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
-static std::atomic<int> gPrepareCount{0};
-static std::atomic<int> gParentCount{0};
-static std::atomic<int> gChildCount{0};
+static std::atomic<int> g_prepareCount{0};
+static std::atomic<int> g_parentCount{0};
+static std::atomic<int> g_childCount{0};
 
 static void PrepareHandler()
 {
-    gPrepareCount++;
+    g_prepareCount++;
 }
 static void ParentHandler()
 {
-    gParentCount++;
+    g_parentCount++;
 }
 static void ChildHandler()
 {
-    gChildCount++;
+    g_childCount++;
 }
 
 static int CallRegisterAtfork(void (*prepare)(void), void (*parent)(void), void (*child)(void))
@@ -81,9 +81,9 @@ static napi_value RegisterAtforkNormal001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    gPrepareCount = 0;
-    gParentCount = 0;
-    gChildCount = 0;
+    g_prepareCount = 0;
+    g_parentCount = 0;
+    g_childCount = 0;
     int ret = CallRegisterAtfork(PrepareHandler, ParentHandler, ChildHandler);
     if (ret == 0) {
         pid_t pid = fork();
@@ -113,7 +113,7 @@ static napi_value RegisterAtforkNormal003(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    gPrepareCount = 0;
+    g_prepareCount = 0;
     int ret = CallRegisterAtfork(PrepareHandler, nullptr, nullptr);
     if (ret == 0) {
         pid_t pid = fork();
@@ -133,7 +133,7 @@ static napi_value RegisterAtforkNormal004(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    gParentCount = 0;
+    g_parentCount = 0;
     int ret = CallRegisterAtfork(nullptr, ParentHandler, nullptr);
     if (ret == 0) {
         pid_t pid = fork();
@@ -153,7 +153,7 @@ static napi_value RegisterAtforkNormal005(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    gChildCount = 0;
+    g_childCount = 0;
     int ret = CallRegisterAtfork(nullptr, nullptr, ChildHandler);
     if (ret == 0) {
         pid_t pid = fork();
@@ -227,6 +227,17 @@ static napi_value RegisterAtforkStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+static void RegisterAtforkWorker(std::atomic<bool>& hasError)
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        int ret = CallRegisterAtfork(nullptr, nullptr, nullptr);
+        if (ret != 0) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 /* ==================== Multi-thread Tests ==================== */
 
 /* TC-009: Multi-thread safety */
@@ -238,16 +249,8 @@ static napi_value RegisterAtforkThread001(napi_env env, napi_callback_info info)
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
 
-    for (int t = 0; t < kThreadCount; ++t) {
-        threads.emplace_back([&hasError]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
-                int ret = CallRegisterAtfork(nullptr, nullptr, nullptr);
-                if (ret != 0) {
-                    hasError = true;
-                    return;
-                }
-            }
-        });
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
+        threads.emplace_back(RegisterAtforkWorker, std::ref(hasError));
     }
     for (auto& th : threads) {
         th.join();

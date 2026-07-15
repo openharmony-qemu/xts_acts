@@ -23,8 +23,8 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
 static bool CallSchedCpufree(cpu_set_t* set)
 {
@@ -172,6 +172,18 @@ static napi_value SchedCpufreeStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+static void SchedCpufreeWorker(std::atomic<bool>& hasError)
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        cpu_set_t* set = CPU_ALLOC(1);
+        if (!set) {
+            hasError = true;
+            return;
+        }
+        CallSchedCpufree(set);
+    }
+}
+
 /* ==================== Multi-thread Tests ==================== */
 
 /* TC-008: Multi-thread safety */
@@ -183,17 +195,8 @@ static napi_value SchedCpufreeThread001(napi_env env, napi_callback_info info)
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
 
-    for (int t = 0; t < kThreadCount; ++t) {
-        threads.emplace_back([&hasError]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
-                cpu_set_t* set = CPU_ALLOC(1);
-                if (!set) {
-                    hasError = true;
-                    return;
-                }
-                CallSchedCpufree(set);
-            }
-        });
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
+        threads.emplace_back(SchedCpufreeWorker, std::ref(hasError));
     }
     for (auto& th : threads) {
         th.join();

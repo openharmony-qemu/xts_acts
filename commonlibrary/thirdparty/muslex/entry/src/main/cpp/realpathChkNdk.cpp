@@ -25,8 +25,8 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
 static char* CallRealpathChk(const char* path, char* resolved, size_t len)
 {
@@ -143,8 +143,9 @@ static napi_value RealpathChkAbnormal001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    char buf[10];
-    bool aborted = CheckAbortRealpath("/", buf, sizeof(buf));
+    size_t bufSz = 10;
+    char buf[bufSz];
+    bool aborted = CheckAbortRealpath("/", buf, bufSz);
     return ReturnInt32(env, aborted ? 1 : 0);
 }
 
@@ -216,6 +217,19 @@ static napi_value RealpathChkStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+static void RealpathChkWorker(std::atomic<bool>& hasError, const char* paths[])
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        int idx = i % 4;
+        char buf[PATH_MAX];
+        char* result = CallRealpathChk(paths[idx], buf, sizeof(buf));
+        if (result == nullptr) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 /* ==================== Multi-thread Tests ==================== */
 
 /* TC-012: Multi-thread safety */
@@ -228,18 +242,8 @@ static napi_value RealpathChkThread001(napi_env env, napi_callback_info info)
     std::vector<std::thread> threads;
     const char* paths[] = {"/", "/dev/null", ".", ".."};
 
-    for (int t = 0; t < kThreadCount; ++t) {
-        threads.emplace_back([&hasError, paths]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
-                int idx = i % 4;
-                char buf[PATH_MAX];
-                char* result = CallRealpathChk(paths[idx], buf, sizeof(buf));
-                if (result == nullptr) {
-                    hasError = true;
-                    return;
-                }
-            }
-        });
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
+        threads.emplace_back(RealpathChkWorker, std::ref(hasError), paths);
     }
     for (auto& th : threads) {
         th.join();

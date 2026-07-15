@@ -24,9 +24,14 @@
 
 typedef void (*ResTraceMoveFunc)(unsigned long long, void*, void*, size_t);
 
-static constexpr int kStableLoop = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_STABLE_LOOP = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
+static constexpr size_t K_ALLOC_100 = 100;
+static constexpr size_t K_ALLOC_200 = 200;
+static constexpr size_t K_ALLOC_50 = 50;
+static constexpr size_t K_ALLOC_1024 = 1024;
+static constexpr size_t K_ALLOC_2048 = 2048;
 
 static ResTraceMoveFunc GetResTraceMoveFunc()
 {
@@ -66,14 +71,14 @@ static napi_value ResTraceMoveNormal001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    void* oldAddr = malloc(100);
-    void* newAddr = malloc(200);
+    void* oldAddr = malloc(K_ALLOC_100);
+    void* newAddr = malloc(K_ALLOC_200);
     if (!oldAddr || !newAddr) {
         free(oldAddr);
         free(newAddr);
         return ReturnInt32(env, 0);
     }
-    bool ret = CallResTraceMove(1, oldAddr, newAddr, 200);
+    bool ret = CallResTraceMove(1, oldAddr, newAddr, K_ALLOC_200);
     free(oldAddr);
     free(newAddr);
     return ReturnInt32(env, ret ? 1 : 0);
@@ -84,14 +89,14 @@ static napi_value ResTraceMoveNormal002(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    void* oldAddr = malloc(100);
-    void* newAddr = malloc(100);
+    void* oldAddr = malloc(K_ALLOC_100);
+    void* newAddr = malloc(K_ALLOC_100);
     if (!oldAddr || !newAddr) {
         free(oldAddr);
         free(newAddr);
         return ReturnInt32(env, 0);
     }
-    bool ret = CallResTraceMove(0, oldAddr, newAddr, 100);
+    bool ret = CallResTraceMove(0, oldAddr, newAddr, K_ALLOC_100);
     free(oldAddr);
     free(newAddr);
     return ReturnInt32(env, ret ? 1 : 0);
@@ -102,14 +107,14 @@ static napi_value ResTraceMoveNormal003(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    void* addr1 = malloc(50);
-    void* addr2 = malloc(50);
+    void* addr1 = malloc(K_ALLOC_50);
+    void* addr2 = malloc(K_ALLOC_50);
     if (!addr1 || !addr2) {
         free(addr1);
         free(addr2);
         return ReturnInt32(env, 0);
     }
-    bool ret = CallResTraceMove(2, addr1, addr2, 50);
+    bool ret = CallResTraceMove(2, addr1, addr2, K_ALLOC_50);
     free(addr1);
     free(addr2);
     return ReturnInt32(env, ret ? 1 : 0);
@@ -128,11 +133,11 @@ static napi_value ResTraceMoveAbnormal001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    void* newAddr = malloc(100);
+    void* newAddr = malloc(K_ALLOC_100);
     if (!newAddr) {
         return ReturnInt32(env, 0);
     }
-    CallResTraceMove(1, nullptr, newAddr, 100);
+    CallResTraceMove(1, nullptr, newAddr, K_ALLOC_100);
     free(newAddr);
     return ReturnInt32(env, 1);
 }
@@ -142,11 +147,11 @@ static napi_value ResTraceMoveAbnormal002(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    void* oldAddr = malloc(100);
+    void* oldAddr = malloc(K_ALLOC_100);
     if (!oldAddr) {
         return ReturnInt32(env, 0);
     }
-    CallResTraceMove(1, oldAddr, nullptr, 100);
+    CallResTraceMove(1, oldAddr, nullptr, K_ALLOC_100);
     free(oldAddr);
     return ReturnInt32(env, 1);
 }
@@ -156,11 +161,11 @@ static napi_value ResTraceMoveBoundary001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    void* addr = malloc(100);
+    void* addr = malloc(K_ALLOC_100);
     if (!addr) {
         return ReturnInt32(env, 0);
     }
-    bool ret = CallResTraceMove(1, addr, addr, 100);
+    bool ret = CallResTraceMove(1, addr, addr, K_ALLOC_100);
     free(addr);
     return ReturnInt32(env, ret ? 1 : 0);
 }
@@ -170,14 +175,14 @@ static napi_value ResTraceMoveBoundary002(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    void* oldAddr = malloc(1024);
-    void* newAddr = malloc(2048);
+    void* oldAddr = malloc(K_ALLOC_1024);
+    void* newAddr = malloc(K_ALLOC_2048);
     if (!oldAddr || !newAddr) {
         free(oldAddr);
         free(newAddr);
         return ReturnInt32(env, 0);
     }
-    bool ret = CallResTraceMove(1, oldAddr, newAddr, 2048);
+    bool ret = CallResTraceMove(1, oldAddr, newAddr, K_ALLOC_2048);
     free(oldAddr);
     free(newAddr);
     return ReturnInt32(env, ret ? 1 : 0);
@@ -189,16 +194,16 @@ static napi_value ResTraceMoveStable001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     bool pass = true;
-    for (int i = 0; i < kStableLoop; ++i) {
-        void* oldAddr = malloc(100);
-        void* newAddr = malloc(200);
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
+        void* oldAddr = malloc(K_ALLOC_100);
+        void* newAddr = malloc(K_ALLOC_200);
         if (!oldAddr || !newAddr) {
             free(oldAddr);
             free(newAddr);
             pass = false;
             break;
         }
-        bool ret = CallResTraceMove(1, oldAddr, newAddr, 200);
+        bool ret = CallResTraceMove(1, oldAddr, newAddr, K_ALLOC_200);
         free(oldAddr);
         free(newAddr);
         if (!ret) {
@@ -209,6 +214,23 @@ static napi_value ResTraceMoveStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+static void ResTraceMoveWorker(std::atomic<bool>& hasError)
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        void* oldAddr = malloc(K_ALLOC_100);
+        void* newAddr = malloc(K_ALLOC_200);
+        if (!oldAddr || !newAddr) {
+            free(oldAddr);
+            free(newAddr);
+            hasError = true;
+            return;
+        }
+        CallResTraceMove(1, oldAddr, newAddr, K_ALLOC_200);
+        free(oldAddr);
+        free(newAddr);
+    }
+}
+
 static napi_value ResTraceMoveThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
@@ -216,22 +238,8 @@ static napi_value ResTraceMoveThread001(napi_env env, napi_callback_info info)
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < kThreadCount; ++t) {
-        threads.emplace_back([&hasError]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
-                void* oldAddr = malloc(100);
-                void* newAddr = malloc(200);
-                if (!oldAddr || !newAddr) {
-                    free(oldAddr);
-                    free(newAddr);
-                    hasError = true;
-                    return;
-                }
-                CallResTraceMove(1, oldAddr, newAddr, 200);
-                free(oldAddr);
-                free(newAddr);
-            }
-        });
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
+        threads.emplace_back(ResTraceMoveWorker, std::ref(hasError));
     }
     for (auto& th : threads) {
         th.join();

@@ -23,9 +23,9 @@
 
 typedef int (*CustomDnsResolverFunc)(const char*, const char*, const struct addrinfo*, struct addrinfo**);
 
-static constexpr int kStableLoop = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_STABLE_LOOP = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
 
 static int CallSetcustomdns(CustomDnsResolverFunc hookfunc)
 {
@@ -97,8 +97,7 @@ static napi_value SetcustomdnsNormal002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     CallSetcustomdns(DummyResolver);
-    struct addrinfo hints;
-    memset(&hints, 0, sizeof(hints));
+    struct addrinfo hints = {};
     hints.ai_family = AF_UNSPEC;
     struct addrinfo* res = nullptr;
     int ret = CallGetaddrinfoCustom("localhost", "80", &hints, &res);
@@ -175,7 +174,7 @@ static napi_value SetcustomdnsStable001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    for (int i = 0; i < kStableLoop; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
         CallSetcustomdns(DummyResolver);
         CallRemovecustomdns();
     }
@@ -189,9 +188,9 @@ static napi_value SetcustomdnsThread001(napi_env env, napi_callback_info info)
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < kThreadCount; ++t) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 CallSetcustomdns(DummyResolver);
                 CallRemovecustomdns();
             }

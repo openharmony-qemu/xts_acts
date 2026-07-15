@@ -22,9 +22,11 @@
 #include <atomic>
 #include <string>
 
-static constexpr int kStableLoop10000 = 20;
-static constexpr int kThreadCount = 3;
-static constexpr int kIterPerThread = 10;
+static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_THREAD_COUNT = 3;
+static constexpr int K_ITER_PER_THREAD = 10;
+static constexpr size_t K_LONG_STR_SIZE = 10000;
+static constexpr size_t K_STR_COUNT = 5;
 
 static void* CallRawmemchr(const void* s, int c)
 {
@@ -131,10 +133,10 @@ static napi_value RawmemchrNormal006(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    std::string longStr(10000, 'a');
-    longStr[5000] = 'X';
+    std::string longStr(K_LONG_STR_SIZE, 'a');
+    longStr[K_LONG_STR_SIZE / 2] = 'X';
     void* result = CallRawmemchr(longStr.c_str(), 'X');
-    const char* expected = longStr.c_str() + 5000;
+    const char* expected = longStr.c_str() + K_LONG_STR_SIZE / 2;
     return ReturnInt32(env, (result == expected) ? 1 : 0);
 }
 
@@ -164,9 +166,9 @@ static napi_value RawmemchrAbnormal002(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    std::string longStr(10000, 'a');
+    std::string longStr(K_LONG_STR_SIZE, 'a');
     void* result = CallRawmemchr(longStr.c_str(), 'X');
-    const char* expected = longStr.c_str() + 10000;
+    const char* expected = longStr.c_str() + K_LONG_STR_SIZE;
     // If result equals expected (pointing to NUL terminator), or result is nullptr
     // (stub implementation), both count as pass.
     if (result == expected || result == nullptr) {
@@ -183,9 +185,9 @@ static napi_value RawmemchrBoundary001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 0);
     }
-    std::string longStr(10000, 'a');
+    std::string longStr(K_LONG_STR_SIZE, 'a');
     void* result = CallRawmemchr(longStr.c_str(), '\0');
-    const char* expected = longStr.c_str() + 10000;
+    const char* expected = longStr.c_str() + K_LONG_STR_SIZE;
     if (result == expected || result == nullptr) {
         return ReturnInt32(env, 1);
     }
@@ -202,7 +204,7 @@ static napi_value RawmemchrStable001(napi_env env, napi_callback_info info)
     }
     const char* s = "HelloWorld";
     bool pass = true;
-    for (int i = 0; i < kStableLoop10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
         void* result = CallRawmemchr(s, 'o');
         if (result != s + 4) {
             pass = false;
@@ -210,6 +212,19 @@ static napi_value RawmemchrStable001(napi_env env, napi_callback_info info)
         }
     }
     return ReturnInt32(env, pass ? 1 : 0);
+}
+
+static void RawmemchrWorker(std::atomic<bool>& hasError, const char* strings[])
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+                int idx = i % K_STR_COUNT;
+        char c = strings[idx][i % K_STR_COUNT];
+        void* result = CallRawmemchr(strings[idx], c);
+        if (result == nullptr) {
+            hasError = true;
+            return;
+        }
+    }
 }
 
 /* ==================== Multi-thread Tests ==================== */
@@ -223,19 +238,10 @@ static napi_value RawmemchrThread001(napi_env env, napi_callback_info info)
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     const char* strings[] = {"Hello", "World", "Test", "Rawmemchr", "abcde"};
+    static_assert(sizeof(strings) / sizeof(strings[0]) == K_STR_COUNT, "K_STR_COUNT mismatch");
 
-    for (int t = 0; t < kThreadCount; ++t) {
-        threads.emplace_back([&hasError, strings]() {
-            for (int i = 0; i < kIterPerThread; ++i) {
-                int idx = i % 5;
-                char c = strings[idx][i % 5];
-                void* result = CallRawmemchr(strings[idx], c);
-                if (result == nullptr) {
-                    hasError = true;
-                    return;
-                }
-            }
-        });
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
+        threads.emplace_back(RawmemchrWorker, std::ref(hasError), strings);
     }
     for (auto& th : threads) {
         th.join();
