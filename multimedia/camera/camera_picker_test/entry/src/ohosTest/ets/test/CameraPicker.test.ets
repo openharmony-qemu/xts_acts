@@ -315,6 +315,7 @@ export function cameraPicker() {
         .catch((err:BusinessError)=>{
           console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0100 get pick error " + JSON.stringify(err));
           expect(true).assertFalse();
+          done();
         });
       await sleep(1000);
       await driveAllowFn();
@@ -347,6 +348,7 @@ export function cameraPicker() {
         .catch((err:BusinessError)=>{
           console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0101 get pick error " + JSON.stringify(err));
           expect(true).assertFalse();
+          done();
         });
       await sleep(1000);
       await driveAllowFn();
@@ -386,6 +388,7 @@ export function cameraPicker() {
         .catch((err:BusinessError)=>{
           console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0102 get pick error " + JSON.stringify(err));
           expect(true).assertFalse();
+          done();
         });
       await sleep(1000);
       await driveAllowFn();
@@ -418,6 +421,7 @@ export function cameraPicker() {
         .catch((err:BusinessError)=>{
           console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0103 get pick error " + JSON.stringify(err));
           expect(true).assertFalse();
+          done();
         });
       await sleep(1000);
       await driveAllowFn();

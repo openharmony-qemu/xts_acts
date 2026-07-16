@@ -16,7 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { camera } from '@kit.CameraKit';
 import { common } from '@kit.AbilityKit';
-import { cameraErrorCode, driveFn, getPermission, isEmpty } from '../common';
+import { cameraErrorCode, driveFn, getPermission, isEmpty, sleep } from '../common';
 import { indexSurfaceId } from '../../testability/pages/Index';
 import { BusinessError } from '@kit.BasicServicesKit';
 
@@ -227,6 +227,7 @@ export default function PreviewOutputTest() {
           let previewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
           await getPhotoSession(testName, previewOutput, photoOutput);
           console.info(TAG, testName + ' getPhotoSession passed.');
+          let isReleaseCallback = false;
           previewOutput.release((error) => {
             if (error !== undefined && error.code !== 0) {
               console.error(TAG,
@@ -236,7 +237,15 @@ export default function PreviewOutputTest() {
               console.info(TAG, testName + ' release passed.');
               expect(true).assertTrue();
             }
+            isReleaseCallback = true;
           });
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
+            if (isReleaseCallback) {
+              break;
+            }
+          }
+          expect(isReleaseCallback).assertTrue();
           await photoOutput.release();
           await mPhotoSession.release();
           console.info(TAG, testName + ' end.');

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -178,17 +178,25 @@ async function commitPreconfigCallback(done: Function, testName: string, type: c
       mPreviewOutput = mCameraManager.createPreviewOutput(indexSurfaceId);
       mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
       await beforeCommit(testName, mPreviewOutput, mPhotoOutput);
+      let callbackDone = false;
       mPhotoSession.commitConfig((error) => {
         if (error !== undefined && error.code !== 0) {
           console.error(TAG,
             testName + ' failed to commitConfig, err: ' + error.code + ', msg: ' + error.message);
           expect(error.code == cameraErrorCode.SERVICE_FATAL_ERROR).assertTrue();
-          done();
         } else {
           console.info(TAG, testName + ' session commitConfig passed.');
           expect(true).assertTrue();
         }
+        callbackDone = true;
       });
+      for (let i = 0; i < 10; i++) {
+        await sleep(200);
+        if (callbackDone) {
+          break;
+        }
+      }
+      expect(callbackDone).assertTrue();
       await releasePhotoSession();
     }
     done();
@@ -452,17 +460,25 @@ export default function CameraPhotoSessionTest() {
           mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
           mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
           await beforeCommit(testName, mPreviewOutput, mPhotoOutput);
+          let callbackDone = false;
           mPhotoSession.commitConfig((error) => {
             if (error !== undefined && error.code !== 0) {
               console.error(TAG,
                 testName + ' failed to commitConfig, err: ' + error.code + ', msg: ' + error.message);
               expect(error.code == cameraErrorCode.SERVICE_FATAL_ERROR).assertTrue();
-              done();
             } else {
               console.info(TAG, testName + ' session commitConfig passed.');
               expect(true).assertTrue();
             }
+            callbackDone = true;
           });
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
+            if (callbackDone) {
+              break;
+            }
+          }
+          expect(callbackDone).assertTrue();
           await releasePhotoSession();
         }
         done();
@@ -674,16 +690,24 @@ export default function CameraPhotoSessionTest() {
           mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
           await getCommitConfig(testName, mPreviewOutput, mPhotoOutput);
           console.info(TAG, testName + ' session commitConfig successfully.');
+          let callbackDone = false;
           mPhotoSession.start((error) => {
             if (error !== undefined && error.code !== 0) {
               console.error(TAG, testName + ' failed to start, err: ' + error.code + ', msg: ' + error.message);
               expect().assertFail();
-              done();
             } else {
               console.info(TAG, testName + ' session start passed.');
               expect(true).assertTrue();
             }
+            callbackDone = true;
           });
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
+            if (callbackDone) {
+              break;
+            }
+          }
+          expect(callbackDone).assertTrue();
           await mPhotoSession.stop();
           console.info(TAG, testName + ' session stop passed.');
           await releasePhotoSession();
@@ -759,17 +783,25 @@ export default function CameraPhotoSessionTest() {
         } else {
           expect(isEmpty(mPhotoSession)).assertFalse();
           console.info(TAG, testName + ' session created successfully.');
+          let callbackDone = false;
           mPhotoSession.start((error) => {
             if (error !== undefined && error.code !== 0) {
               console.error(TAG,
                 testName + ' failed to start, err: ' + error.code + ', msg: ' + error.message);
               expect(error.code == cameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
-              done();
             } else {
               console.info(TAG, testName + ' session start passed.');
               expect(true).assertTrue();
             }
+            callbackDone = true;
           });
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
+            if (callbackDone) {
+              break;
+            }
+          }
+          expect(callbackDone).assertTrue();
           mPhotoSession.beginConfig();
           console.info(TAG, testName + ' beginConfig passed.');
           expect(true).assertTrue();
@@ -838,17 +870,25 @@ export default function CameraPhotoSessionTest() {
           await getCommitConfig(testName, mPreviewOutput, mPhotoOutput);
           await mPhotoSession.start();
           console.info(TAG, testName + ' session start successfully.');
+          let callbackDone = false;
           mPhotoSession.stop((error) => {
             if (error !== undefined && error.code !== 0) {
               console.error(TAG,
                 testName + ' failed to stop, err: ' + error.code + ', msg: ' + error.message);
               expect(error.code == cameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
-              done();
             } else {
               console.info(TAG, testName + ' session stop passed.');
               expect(true).assertTrue();
             }
+            callbackDone = true;
           });
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
+            if (callbackDone) {
+              break;
+            }
+          }
+          expect(callbackDone).assertTrue();
           await releasePhotoSession();
         }
         done();
@@ -923,17 +963,25 @@ export default function CameraPhotoSessionTest() {
           console.info(TAG, testName + ' session created successfully.');
           await mPhotoSession.start();
           console.info(TAG, testName + ' session start successfully.');
+          let callbackDone = false;
           mPhotoSession.stop((error) => {
             if (error !== undefined && error.code !== 0) {
               console.error(TAG,
                 testName + ' failed to stop, err: ' + error.code + ', msg: ' + error.message);
               expect(error.code == cameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
-              done();
             } else {
               console.info(TAG, testName + ' session stop passed.');
               expect(true).assertTrue();
             }
+            callbackDone = true;
           });
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
+            if (callbackDone) {
+              break;
+            }
+          }
+          expect(callbackDone).assertTrue();
           mPhotoSession.beginConfig();
           console.info(TAG, testName + ' beginConfig passed.');
           expect(true).assertTrue();
@@ -1003,20 +1051,31 @@ export default function CameraPhotoSessionTest() {
         if (isEmpty(mCameraManager) && isEmpty(mSupportedModes)) {
           console.info(TAG, testName + ' cameraManager is null.');
           expect().assertFail();
+          done();
         } else {
           expect(isEmpty(mPhotoSession)).assertFalse();
           console.info(TAG, testName + ' session created successfully.');
+          let callbackDone = false;
           mPhotoSession.release((error) => {
             if (error !== undefined && error.code !== 0) {
               console.error(TAG,
                 testName + ' failed to commit the config, err: ' + error.code + ', msg: ' + error.message);
               expect().assertFail();
+            } else {
+              console.info(TAG, testName + ' session release passed.');
+              expect(true).assertTrue();
             }
-            console.info(TAG, testName + ' session release passed.');
-            expect(true).assertTrue();
+            callbackDone = true;
           })
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
+            if (callbackDone) {
+              break;
+            }
+          }
+          expect(callbackDone).assertTrue();
+          done();
         }
-        done();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
         expect().assertFail();
@@ -1172,17 +1231,25 @@ export default function CameraPhotoSessionTest() {
         } else {
           expect(isEmpty(mPhotoSession)).assertFalse();
           console.info(TAG, testName + ' session created successfully.');
+          let callbackDone = false;
           mPhotoSession.commitConfig((error) => {
             if (error !== undefined && error.code !== 0) {
               console.error(TAG,
                 testName + ' failed to commitConfig, err: ' + error.code + ', msg: ' + error.message);
               expect(error.code == cameraErrorCode.OPERATION_NOT_ALLOWED).assertTrue();
-              done();
             } else {
               console.info(TAG, testName + ' session commitConfig passed.');
               expect(true).assertTrue();
             }
+            callbackDone = true;
           });
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
+            if (callbackDone) {
+              break;
+            }
+          }
+          expect(callbackDone).assertTrue();
           await mPhotoSession.release();
         }
         done();
@@ -1215,17 +1282,25 @@ export default function CameraPhotoSessionTest() {
           mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
           mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
           await getCommitConfig(testName, mPreviewOutput, mPhotoOutput);
+          let callbackDone = false;
           mPhotoSession.commitConfig((error) => {
             if (error !== undefined && error.code !== 0) {
               console.error(TAG,
                 testName + ' failed to commitConfig, err: ' + error.code + ', msg: ' + error.message);
               expect(error.code == cameraErrorCode.OPERATION_NOT_ALLOWED).assertTrue();
-              done();
             } else {
               console.info(TAG, testName + ' session commitConfig passed.');
               expect(true).assertTrue();
             }
+            callbackDone = true;
           });
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
+            if (callbackDone) {
+              break;
+            }
+          }
+          expect(callbackDone).assertTrue();
           await releasePhotoSession();
         }
         done();
