@@ -267,16 +267,16 @@ export default function Float32ArrayForEach1Test(): void {
      */
     it('testFloat32ArrayForEachONE015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([NaN, Infinity, -0.0, 1.5]);
+      const seen = new Float32Array(4);
       let n = 0;
       arr.forEach((v: number, i: int, a: Float32Array): void => {
-        const expected = arr.$_get(i);
-        if (expected !== expected) {
-          expect(v).assertNaN();
-        } else {
-          expect(v).assertEqual(expected);
-        }
+        seen.$_set(i, v);
         n = n + 1;
       });
+      expect(seen.$_get(0)).assertNaN();
+      expect(seen.$_get(1)).assertEqual(Infinity);
+      expect(1 / seen.$_get(2)).assertEqual(Number.NEGATIVE_INFINITY);
+      expect(seen.$_get(3)).assertEqual(1.5);
       expect(n).assertEqual(4);
     });
 
@@ -470,7 +470,7 @@ export default function Float32ArrayForEach1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FOR_EACHONE_2700
      * @tc.name testFloat32ArrayForEachONE027
-     * @tc.desc Verify closure accumulates the sum (1+2+3=6)
+     * @tc.desc Verify closure accumulates the sum (16+10+(-1)=25)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

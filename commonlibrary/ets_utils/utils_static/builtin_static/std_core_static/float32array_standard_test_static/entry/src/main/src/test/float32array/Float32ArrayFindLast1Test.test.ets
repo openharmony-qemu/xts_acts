@@ -892,7 +892,7 @@ export default function Float32ArrayFindLast1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTONE_5900
      * @tc.name testFloat32ArrayFindLastONE059
-     * @tc.desc Verify Array [1,2,3], predicate value < 3 returns the last satisfying value 2
+     * @tc.desc Verify Float32Array [16,10,-1], predicate value === 0b1010 returns 10
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -920,7 +920,7 @@ export default function Float32ArrayFindLast1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTONE_6100
      * @tc.name testFloat32ArrayFindLastONE061
-     * @tc.desc Verify Array [1,2,3,4,5], predicate value >= 4 returns the last satisfying value 5
+     * @tc.desc Verify Float32Array [16,10,-1,0,1000000], predicate value === 1000000 returns 1000000
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -934,7 +934,7 @@ export default function Float32ArrayFindLast1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTONE_6200
      * @tc.name testFloat32ArrayFindLastONE062
-     * @tc.desc Verify Array [1,2,3,4,5], predicate value <= 2 returns the last satisfying value 2
+     * @tc.desc Verify Float32Array [16,10,-1,0,1000000], predicate value === 0b1010 returns 10
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

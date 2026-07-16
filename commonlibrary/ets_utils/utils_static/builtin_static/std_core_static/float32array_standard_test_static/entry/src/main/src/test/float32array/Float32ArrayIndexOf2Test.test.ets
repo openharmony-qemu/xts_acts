@@ -413,7 +413,6 @@ export default function Float32ArrayIndexOf2Test(): void {
       expect(a.indexOf(8)).assertEqual(1);
     });
 
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0270
      * @tc.name testFloat32ArrayIndexOfTWO027
@@ -690,359 +689,360 @@ export default function Float32ArrayIndexOf2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0480
      * @tc.name testFloat32ArrayIndexOfTWO048
-     * @tc.desc Verify the array contains NaN, searching for NaN returns -1
+     * @tc.desc Verify fromIndex equals length returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayIndexOfTWO048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float32Array.of(NaN, 1.0, 2.0);
-      expect(a.indexOf(NaN)).assertEqual(-1);
+      const a = Float32Array.of(0x10, 0b1010, -1.0);
+      expect(a.indexOf(0x10, 3)).assertEqual(-1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0490
      * @tc.name testFloat32ArrayIndexOfTWO049
-     * @tc.desc Verify fromIndex equals length returns -1
+     * @tc.desc Verify fromIndex greater than length returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayIndexOfTWO049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(0x10, 0b1010, -1.0);
-      expect(a.indexOf(0x10, 3)).assertEqual(-1);
+      expect(a.indexOf(0x10, 5)).assertEqual(-1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0500
      * @tc.name testFloat32ArrayIndexOfTWO050
-     * @tc.desc Verify fromIndex greater than length returns -1
+     * @tc.desc Verify fromIndex is a huge positive number returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayIndexOfTWO050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(0x10, 0b1010, -1.0);
-      expect(a.indexOf(0x10, 5)).assertEqual(-1);
+      expect(a.indexOf(0x10, 2147483647)).assertEqual(-1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0510
      * @tc.name testFloat32ArrayIndexOfTWO051
-     * @tc.desc Verify fromIndex is a huge positive number returns -1
+     * @tc.desc Verify fromIndex is -length-1, normalizes to 0 but the element is not found, returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayIndexOfTWO051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(0x10, 0b1010, -1.0);
-      expect(a.indexOf(0x10, 2147483647)).assertEqual(-1);
+      expect(a.indexOf(9, -4)).assertEqual(-1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0520
      * @tc.name testFloat32ArrayIndexOfTWO052
-     * @tc.desc Verify fromIndex is -length-1, normalizes to 0 but the element is not found, returns -1
+     * @tc.desc Verify searching for a value greater than all elements returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayIndexOfTWO052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(0x10, 0b1010, -1.0);
-      expect(a.indexOf(9, -4)).assertEqual(-1);
+      expect(a.indexOf(100)).assertEqual(-1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0530
      * @tc.name testFloat32ArrayIndexOfTWO053
-     * @tc.desc Verify searching for a value greater than all elements returns -1
+     * @tc.desc Verify searching for a value less than all elements returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayIndexOfTWO053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(0x10, 0b1010, -1.0);
-      expect(a.indexOf(100)).assertEqual(-1);
+      expect(a.indexOf(-100)).assertEqual(-1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0540
      * @tc.name testFloat32ArrayIndexOfTWO054
-     * @tc.desc Verify searching for a value less than all elements returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayIndexOfTWO054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float32Array.of(0x10, 0b1010, -1.0);
-      expect(a.indexOf(-100)).assertEqual(-1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0550
-     * @tc.name testFloat32ArrayIndexOfTWO055
      * @tc.desc Verify fromIndex exceeds the last occurrence returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(1.0, 2.0, 1.0, 2.0, 1.0);
       expect(a.indexOf(1, 5)).assertEqual(-1);
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0550
+     * @tc.name testFloat32ArrayIndexOfTWO055
+     * @tc.desc Verify a finite array searching for Infinity returns -1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayIndexOfTWO055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = Float32Array.of(0x10, 0b1010, -1.0);
+      expect(a.indexOf(Infinity)).assertEqual(-1);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0560
      * @tc.name testFloat32ArrayIndexOfTWO056
-     * @tc.desc Verify a finite array searching for Infinity returns -1
+     * @tc.desc Verify a positive array searching for -Infinity returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayIndexOfTWO056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(0x10, 0b1010, -1.0);
-      expect(a.indexOf(Infinity)).assertEqual(-1);
+      expect(a.indexOf(-Infinity)).assertEqual(-1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0570
      * @tc.name testFloat32ArrayIndexOfTWO057
-     * @tc.desc Verify a positive array searching for -Infinity returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayIndexOfTWO057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float32Array.of(0x10, 0b1010, -1.0);
-      expect(a.indexOf(-Infinity)).assertEqual(-1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0580
-     * @tc.name testFloat32ArrayIndexOfTWO058
      * @tc.desc Verify stores 1.0000001, searching for 1.0 returns -1 due to float32 precision
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(1.0000001);
       expect(a.indexOf(1.0)).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0590
-     * @tc.name testFloat32ArrayIndexOfTWO059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0580
+     * @tc.name testFloat32ArrayIndexOfTWO058
      * @tc.desc Verify stores 2^24+1 truncated to 16777216, searching for the stored value finds it at index 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(16777217.0);
       expect(a.indexOf(a[0])).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0600
-     * @tc.name testFloat32ArrayIndexOfTWO060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0590
+     * @tc.name testFloat32ArrayIndexOfTWO059
      * @tc.desc Verify stores 1.0e40 (overflows to Infinity), searching for 1.0e40 returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(1.0e40);
       expect(a.indexOf(1.0e40)).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0610
-     * @tc.name testFloat32ArrayIndexOfTWO061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0600
+     * @tc.name testFloat32ArrayIndexOfTWO060
      * @tc.desc Verify stores 1.0e-46 (underflows to +0), searching for 1.0e-46 returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(1.0e-46);
       expect(a.indexOf(1.0e-46)).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0620
-     * @tc.name testFloat32ArrayIndexOfTWO062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0610
+     * @tc.name testFloat32ArrayIndexOfTWO061
      * @tc.desc Verify a single-element array searching for a different value returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(5.0);
       expect(a.indexOf(6)).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0630
-     * @tc.name testFloat32ArrayIndexOfTWO063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0620
+     * @tc.name testFloat32ArrayIndexOfTWO062
      * @tc.desc Verify fromIndex is the element index plus 1 and there is only one occurrence, returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(0x10, 0b1010, -1.0);
       expect(a.indexOf(0b1010, 2)).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0640
-     * @tc.name testFloat32ArrayIndexOfTWO064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0630
+     * @tc.name testFloat32ArrayIndexOfTWO063
      * @tc.desc Verify stores 1.1, searching for 1.0000001 returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(1.1);
       expect(a.indexOf(1.0000001)).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0650
-     * @tc.name testFloat32ArrayIndexOfTWO065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0640
+     * @tc.name testFloat32ArrayIndexOfTWO064
      * @tc.desc Verify multiple NaN searching for NaN returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(NaN, NaN, NaN);
       expect(a.indexOf(NaN)).assertEqual(-1);
     });
 
-
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0660
-     * @tc.name testFloat32ArrayIndexOfTWO066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0650
+     * @tc.name testFloat32ArrayIndexOfTWO065
      * @tc.desc Verify NaN at the last position, searching for NaN returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(1.0, 2.0, NaN);
       expect(a.indexOf(NaN)).assertEqual(-1);
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0660
+     * @tc.name testFloat32ArrayIndexOfTWO066
+     * @tc.desc Verify contains NaN, searching for NaN with fromIndex returns -1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayIndexOfTWO066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = Float32Array.of(1.0, NaN, 3.0);
+      expect(a.indexOf(NaN, 1)).assertEqual(-1);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0670
      * @tc.name testFloat32ArrayIndexOfTWO067
-     * @tc.desc Verify contains NaN, searching for NaN with fromIndex returns -1
+     * @tc.desc Verify contains NaN, searching for NaN with a negative fromIndex returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayIndexOfTWO067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(1.0, NaN, 3.0);
-      expect(a.indexOf(NaN, 1)).assertEqual(-1);
+      expect(a.indexOf(NaN, -2)).assertEqual(-1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0680
      * @tc.name testFloat32ArrayIndexOfTWO068
-     * @tc.desc Verify contains NaN, searching for NaN with a negative fromIndex returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayIndexOfTWO068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float32Array.of(1.0, NaN, 3.0);
-      expect(a.indexOf(NaN, -2)).assertEqual(-1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0690
-     * @tc.name testFloat32ArrayIndexOfTWO069
      * @tc.desc Verify the array contains -0, searching for -0 returns its index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(1.0, -0.0, 2.0);
       expect(a.indexOf(-0)).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0700
-     * @tc.name testFloat32ArrayIndexOfTWO070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0690
+     * @tc.name testFloat32ArrayIndexOfTWO069
      * @tc.desc Verify the array contains +0 and -0, searching for +0 returns the first index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(-0.0, 0.0, 1.0);
       expect(a.indexOf(0)).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0710
-     * @tc.name testFloat32ArrayIndexOfTWO071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0700
+     * @tc.name testFloat32ArrayIndexOfTWO070
      * @tc.desc Verify stores 2^24+1 (truncated to 2^24), searching for 2^24 returns 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(16777217.0);
       expect(a.indexOf(16777216)).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0720
-     * @tc.name testFloat32ArrayIndexOfTWO072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0710
+     * @tc.name testFloat32ArrayIndexOfTWO071
      * @tc.desc Verify stores 1.0e40 (overflows to Infinity), searching for Infinity returns 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(1.0e40);
       expect(a.indexOf(Infinity)).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0730
-     * @tc.name testFloat32ArrayIndexOfTWO073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0720
+     * @tc.name testFloat32ArrayIndexOfTWO072
      * @tc.desc Verify stores 1.0e-46 (underflows to +0), searching for 0 returns 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(1.0e-46);
       expect(a.indexOf(0)).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0740
-     * @tc.name testFloat32ArrayIndexOfTWO074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0730
+     * @tc.name testFloat32ArrayIndexOfTWO073
      * @tc.desc Verify stores -1.0e40 (overflows to -Infinity), searching for -Infinity returns 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(-1.0e40);
       expect(a.indexOf(-Infinity)).assertEqual(0);
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0740
+     * @tc.name testFloat32ArrayIndexOfTWO074
+     * @tc.desc Verify length is unchanged after finding
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayIndexOfTWO074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = Float32Array.of(0x10, 0b1010, -1.0);
+      const before = a.length;
+      a.indexOf(0b1010);
+      expect(a.length).assertEqual(before);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0750
      * @tc.name testFloat32ArrayIndexOfTWO075
-     * @tc.desc Verify length is unchanged after finding
+     * @tc.desc Verify length is unchanged after not found
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1050,29 +1050,29 @@ export default function Float32ArrayIndexOf2Test(): void {
     it('testFloat32ArrayIndexOfTWO075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(0x10, 0b1010, -1.0);
       const before = a.length;
-      a.indexOf(0b1010);
+      a.indexOf(99);
       expect(a.length).assertEqual(before);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0760
      * @tc.name testFloat32ArrayIndexOfTWO076
-     * @tc.desc Verify length is unchanged after not found
+     * @tc.desc Verify byteLength is unchanged after finding
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayIndexOfTWO076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(0x10, 0b1010, -1.0);
-      const before = a.length;
-      a.indexOf(99);
-      expect(a.length).assertEqual(before);
+      const before = a.byteLength;
+      a.indexOf(0b1010);
+      expect(a.byteLength).assertEqual(before);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0770
      * @tc.name testFloat32ArrayIndexOfTWO077
-     * @tc.desc Verify byteLength is unchanged after finding
+     * @tc.desc Verify byteLength is unchanged after not found
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1080,34 +1080,19 @@ export default function Float32ArrayIndexOf2Test(): void {
     it('testFloat32ArrayIndexOfTWO077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(0x10, 0b1010, -1.0);
       const before = a.byteLength;
-      a.indexOf(0b1010);
+      a.indexOf(99);
       expect(a.byteLength).assertEqual(before);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0780
      * @tc.name testFloat32ArrayIndexOfTWO078
-     * @tc.desc Verify byteLength is unchanged after not found
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayIndexOfTWO078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float32Array.of(0x10, 0b1010, -1.0);
-      const before = a.byteLength;
-      a.indexOf(99);
-      expect(a.byteLength).assertEqual(before);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0790
-     * @tc.name testFloat32ArrayIndexOfTWO079
      * @tc.desc Verify byteLength is unchanged with fromIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(1.0, 2.0, 3.0, 4.0);
       const before = a.byteLength;
       a.indexOf(2, 2);
@@ -1115,14 +1100,14 @@ export default function Float32ArrayIndexOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0800
-     * @tc.name testFloat32ArrayIndexOfTWO080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0790
+     * @tc.name testFloat32ArrayIndexOfTWO079
      * @tc.desc Verify view array byteOffset is unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(20);
       const a = new Float32Array(buf, 4, 3);
       a.$_set(0, 1);
@@ -1134,14 +1119,14 @@ export default function Float32ArrayIndexOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0810
-     * @tc.name testFloat32ArrayIndexOfTWO081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0800
+     * @tc.name testFloat32ArrayIndexOfTWO080
      * @tc.desc Verify view array length is unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(20);
       const a = new Float32Array(buf, 8, 2);
       a.$_set(0, 1);
@@ -1152,14 +1137,14 @@ export default function Float32ArrayIndexOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0820
-     * @tc.name testFloat32ArrayIndexOfTWO082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0810
+     * @tc.name testFloat32ArrayIndexOfTWO081
      * @tc.desc Verify underlying buffer.byteLength is unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(0x10, 0b1010, -1.0);
       const before = a.buffer.byteLength;
       a.indexOf(0b1010);
@@ -1167,28 +1152,28 @@ export default function Float32ArrayIndexOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0830
-     * @tc.name testFloat32ArrayIndexOfTWO083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0820
+     * @tc.name testFloat32ArrayIndexOfTWO082
      * @tc.desc Verify after indexOf on an empty array length is still 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Float32Array(0);
       a.indexOf(1);
       expect(a.length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0840
-     * @tc.name testFloat32ArrayIndexOfTWO084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0830
+     * @tc.name testFloat32ArrayIndexOfTWO083
      * @tc.desc Verify view array byteLength is unchanged (with offset)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(24);
       const a = new Float32Array(buf, 4, 4);
       a.$_set(0, 1);
@@ -1201,93 +1186,107 @@ export default function Float32ArrayIndexOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0850
-     * @tc.name testFloat32ArrayIndexOfTWO085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0840
+     * @tc.name testFloat32ArrayIndexOfTWO084
      * @tc.desc Verify the first element value is unchanged after finding
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(0x10, 0b1010, -1.0);
       a.indexOf(0b1010);
       expect(a.$_get(0)).assertEqual(0x10);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0860
-     * @tc.name testFloat32ArrayIndexOfTWO086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0850
+     * @tc.name testFloat32ArrayIndexOfTWO085
      * @tc.desc Verify the first element value is unchanged after not found
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(0x10, 0b1010, -1.0);
       a.indexOf(99);
       expect(a.$_get(0)).assertEqual(0x10);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0870
-     * @tc.name testFloat32ArrayIndexOfTWO087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0860
+     * @tc.name testFloat32ArrayIndexOfTWO086
      * @tc.desc Verify the middle element value is unchanged with fromIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(1.0, 2.0, 3.0, 4.0);
       a.indexOf(3, 1);
       expect(a.$_get(2)).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0880
-     * @tc.name testFloat32ArrayIndexOfTWO088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0870
+     * @tc.name testFloat32ArrayIndexOfTWO087
      * @tc.desc Verify the element value is unchanged after searching for NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(NaN, 1.0, 2.0);
       a.indexOf(NaN);
       expect(a.$_get(1)).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0890
-     * @tc.name testFloat32ArrayIndexOfTWO089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0880
+     * @tc.name testFloat32ArrayIndexOfTWO088
      * @tc.desc Verify the element value is unchanged after searching for Float32.MAX
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(3.4028234663852886e+38, 1.0);
       a.indexOf(3.4028234663852886e+38);
       expect(a.$_get(0)).assertEqual(3.4028234663852886e+38);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0900
-     * @tc.name testFloat32ArrayIndexOfTWO090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0890
+     * @tc.name testFloat32ArrayIndexOfTWO089
      * @tc.desc Verify the element value is unchanged after searching for -0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(-0.0, 1.0);
       a.indexOf(-0);
       expect(a.$_get(0)).assertEqual(0);
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0900
+     * @tc.name testFloat32ArrayIndexOfTWO090
+     * @tc.desc Verify the last element at(-1) is unchanged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat32ArrayIndexOfTWO090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = Float32Array.of(0x10, 0b1010, -1.0);
+      a.indexOf(0b1010);
+      expect(a.at(-1)).assertEqual(-1.0);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0910
      * @tc.name testFloat32ArrayIndexOfTWO091
-     * @tc.desc Verify the last element at(-1) is unchanged
+     * @tc.desc Verify iterator content is unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1295,43 +1294,46 @@ export default function Float32ArrayIndexOf2Test(): void {
     it('testFloat32ArrayIndexOfTWO091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(0x10, 0b1010, -1.0);
       a.indexOf(0b1010);
-      expect(a.at(-1)).assertEqual(-1.0);
+      const it = a.values();
+      expect(it.next().value).assertEqual(0x10);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0920
      * @tc.name testFloat32ArrayIndexOfTWO092
-     * @tc.desc Verify iterator content is unchanged
+     * @tc.desc Verify the element value is unchanged after fromIndex is out of range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayIndexOfTWO092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float32Array.of(0x10, 0b1010, -1.0);
-      a.indexOf(0b1010);
-      const it = a.values();
-      expect(it.next().value).assertEqual(0x10);
+      a.indexOf(0x10, 10);
+      expect(a.$_get(0)).assertEqual(0x10);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0930
      * @tc.name testFloat32ArrayIndexOfTWO093
-     * @tc.desc Verify the element value is unchanged after fromIndex is out of range
+     * @tc.desc Verify after indexOf on a view array byteOffset is still 4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayIndexOfTWO093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float32Array.of(0x10, 0b1010, -1.0);
-      a.indexOf(0x10, 10);
-      expect(a.$_get(0)).assertEqual(0x10);
+      const buf = new ArrayBuffer(20);
+      const a = new Float32Array(buf, 4, 3);
+      a.$_set(0, 1);
+      a.$_set(1, 2);
+      a.$_set(2, 3);
+      a.indexOf(2);
+      expect(a.byteOffset).assertEqual(4);
     });
-
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0940
      * @tc.name testFloat32ArrayIndexOfTWO094
-     * @tc.desc Verify after indexOf on a view array byteOffset is still 4
+     * @tc.desc Verify after indexOf on a view array byteLength is still 12
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1343,36 +1345,18 @@ export default function Float32ArrayIndexOf2Test(): void {
       a.$_set(1, 2);
       a.$_set(2, 3);
       a.indexOf(2);
-      expect(a.byteOffset).assertEqual(4);
+      expect(a.byteLength).assertEqual(12);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0950
      * @tc.name testFloat32ArrayIndexOfTWO095
-     * @tc.desc Verify after indexOf on a view array byteLength is still 12
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayIndexOfTWO095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(20);
-      const a = new Float32Array(buf, 4, 3);
-      a.$_set(0, 1);
-      a.$_set(1, 2);
-      a.$_set(2, 3);
-      a.indexOf(2);
-      expect(a.byteLength).assertEqual(12);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0960
-     * @tc.name testFloat32ArrayIndexOfTWO096
      * @tc.desc Verify with a shared buffer, after view A searches view B data is unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const a = new Float32Array(buf, 0, 2);
       const b = new Float32Array(buf, 8, 2);
@@ -1385,14 +1369,14 @@ export default function Float32ArrayIndexOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0970
-     * @tc.name testFloat32ArrayIndexOfTWO097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0960
+     * @tc.name testFloat32ArrayIndexOfTWO096
      * @tc.desc Verify with a shared buffer, after view B searches view A data is unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const a = new Float32Array(buf, 0, 2);
       const b = new Float32Array(buf, 8, 2);
@@ -1405,14 +1389,14 @@ export default function Float32ArrayIndexOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0980
-     * @tc.name testFloat32ArrayIndexOfTWO098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0970
+     * @tc.name testFloat32ArrayIndexOfTWO097
      * @tc.desc Verify offset view indexOf returns the index relative to the view start
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(20);
       const a = new Float32Array(buf, 8, 3);
       a.$_set(0, 10);
@@ -1422,14 +1406,14 @@ export default function Float32ArrayIndexOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0990
-     * @tc.name testFloat32ArrayIndexOfTWO099
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0980
+     * @tc.name testFloat32ArrayIndexOfTWO098
      * @tc.desc Verify subarray shares buffer, after the original array searches the subarray view data is unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const base = Float32Array.of(0x10, 0b1010, -1.0, 0.0, 1000000.0);
       const sub = base.subarray(1, 4);
       base.indexOf(-1.0);
@@ -1437,14 +1421,14 @@ export default function Float32ArrayIndexOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_1000
-     * @tc.name testFloat32ArrayIndexOfTWO100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_0990
+     * @tc.name testFloat32ArrayIndexOfTWO099
      * @tc.desc Verify after the subarray view searches the original array data is unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const base = Float32Array.of(0x10, 0b1010, -1.0, 0.0, 1000000.0);
       const sub = base.subarray(1, 4);
       sub.indexOf(3);
@@ -1452,14 +1436,14 @@ export default function Float32ArrayIndexOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_1010
-     * @tc.name testFloat32ArrayIndexOfTWO101
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_1000
+     * @tc.name testFloat32ArrayIndexOfTWO100
      * @tc.desc Verify with a shared buffer the underlying byteLength is unchanged after searching
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(20);
       const a = new Float32Array(buf, 4, 3);
       a.$_set(0, 1);
@@ -1470,14 +1454,14 @@ export default function Float32ArrayIndexOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_1020
-     * @tc.name testFloat32ArrayIndexOfTWO102
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_1010
+     * @tc.name testFloat32ArrayIndexOfTWO101
      * @tc.desc Verify a view array searching not found returns -1 and the buffer reference is unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const a = new Float32Array(buf, 0, 4);
       a.$_set(0, 1);
@@ -1490,14 +1474,14 @@ export default function Float32ArrayIndexOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_1030
-     * @tc.name testFloat32ArrayIndexOfTWO103
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFTWO_1020
+     * @tc.name testFloat32ArrayIndexOfTWO102
      * @tc.desc Verify indexOf on an offset view returns the view-local index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayIndexOfTWO103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayIndexOfTWO102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const parent = Float32Array.of(1.0, 2.0, 3.0, 4.0);
       const view = parent.subarray(1, 4);
       expect(view.indexOf(3.0)).assertEqual(1);

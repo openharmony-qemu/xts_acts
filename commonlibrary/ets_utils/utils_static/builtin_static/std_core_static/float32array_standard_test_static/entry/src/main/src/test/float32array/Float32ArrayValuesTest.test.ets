@@ -315,7 +315,7 @@ export default function Float32ArrayValuesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_1900
      * @tc.name testFloat32ArrayValues019
-     * @tc.desc Verify three-element array complete order 1 2 3
+     * @tc.desc Verify three-element array complete order 16 10 -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -745,7 +745,7 @@ export default function Float32ArrayValuesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_4900
      * @tc.name testFloat32ArrayValues049
-     * @tc.desc Verify five-element array complete sequence 1 2 3 4 5
+     * @tc.desc Verify five-element array complete sequence 16 10 -1 0 1000000
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

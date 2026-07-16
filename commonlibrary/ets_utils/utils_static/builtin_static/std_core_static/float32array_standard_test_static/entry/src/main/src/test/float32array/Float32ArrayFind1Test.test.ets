@@ -997,7 +997,7 @@ export default function Float32ArrayFind1Test(): void {
       let captured: number = 0;
       arr.find((value, index, array) => {
         captured = value;
-        return value === 0b1010;
+        return value === 2.0;
       });
       expect(captured).assertEqual(2.0);
     });

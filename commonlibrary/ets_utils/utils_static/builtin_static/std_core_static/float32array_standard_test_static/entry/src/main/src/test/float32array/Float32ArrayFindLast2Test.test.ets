@@ -44,7 +44,7 @@ export default function Float32ArrayFindLast2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_0100
      * @tc.name testFloat32ArrayFindLastTWO001
-     * @tc.desc Verify selects the exact positive integer element
+     * @tc.desc Verify selects the exact negative integer element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -441,7 +441,6 @@ export default function Float32ArrayFindLast2Test(): void {
       expect(result).assertEqual(9.0);
     });
 
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_2900
      * @tc.name testFloat32ArrayFindLastTWO029
@@ -487,236 +486,208 @@ export default function Float32ArrayFindLast2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_3200
      * @tc.name testFloat32ArrayFindLastTWO032
-     * @tc.desc Verify returns +0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayFindLastTWO032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([1.0, 0.0]);
-      const result = arr.findLast((value: number) => value === 0);
-      expect(result).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_3300
-     * @tc.name testFloat32ArrayFindLastTWO033
-     * @tc.desc Verify returns -0 (distinguish positive and negative zero by reciprocal sign)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat32ArrayFindLastTWO033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float32Array([1.0, -0.0]);
-      const result = arr.findLast((value: number) => value === 0);
-      expect(1 / result).assertEqual(-Infinity);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_3400
-     * @tc.name testFloat32ArrayFindLastTWO034
      * @tc.desc Verify returns 0.1 under float32 precision (tolerance assertion)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([0.1, 1.0]);
       const result = arr.findLast((value: number) => value < 0.5);
       expect(Math.abs(result - 0.1) < 1e-6).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_3500
-     * @tc.name testFloat32ArrayFindLastTWO035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_3300
+     * @tc.name testFloat32ArrayFindLastTWO033
      * @tc.desc Verify returns 0.2 under float32 precision (tolerance assertion)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([0.2, 1.0]);
       const result = arr.findLast((value: number) => value < 0.5);
       expect(Math.abs(result - 0.2) < 1e-6).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_3600
-     * @tc.name testFloat32ArrayFindLastTWO036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_3400
+     * @tc.name testFloat32ArrayFindLastTWO034
      * @tc.desc Verify returns truncated stored value 16777216 of 2^24+1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([16777217, 1.0]);
       const result = arr.findLast((value: number) => value > 1000000);
       expect(result).assertEqual(16777216);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_3700
-     * @tc.name testFloat32ArrayFindLastTWO037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_3500
+     * @tc.name testFloat32ArrayFindLastTWO035
      * @tc.desc Verify 1.0e40 overflows to +Infinity then returns Infinity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0e40, 1.0]);
       const result = arr.findLast((value: number) => value === Infinity);
       expect(result).assertEqual(Infinity);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_3800
-     * @tc.name testFloat32ArrayFindLastTWO038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_3600
+     * @tc.name testFloat32ArrayFindLastTWO036
      * @tc.desc Verify -1.0e40 overflows to -Infinity then returns -Infinity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([-1.0e40, 1.0]);
       const result = arr.findLast((value: number) => value === -Infinity);
       expect(result).assertEqual(-Infinity);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_3900
-     * @tc.name testFloat32ArrayFindLastTWO039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_3700
+     * @tc.name testFloat32ArrayFindLastTWO037
      * @tc.desc Verify 1.0e-46 underflows to +0 then returns 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0e-46, 1.0]);
       const result = arr.findLast((value: number) => value === 0);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_4000
-     * @tc.name testFloat32ArrayFindLastTWO040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_3800
+     * @tc.name testFloat32ArrayFindLastTWO038
      * @tc.desc Verify hex integer literal 0x10 selects, returns 16
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([0x10, 1.0]);
       const result = arr.findLast((value: number) => value > 10);
       expect(result).assertEqual(16);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_4100
-     * @tc.name testFloat32ArrayFindLastTWO041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_3900
+     * @tc.name testFloat32ArrayFindLastTWO039
      * @tc.desc Verify octal literal 0o17 selects, returns 15
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([0o17, 1.0]);
       const result = arr.findLast((value: number) => value > 10);
       expect(result).assertEqual(15);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_4200
-     * @tc.name testFloat32ArrayFindLastTWO042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_4000
+     * @tc.name testFloat32ArrayFindLastTWO040
      * @tc.desc Verify binary literal 0b1010 selects, returns 10
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([0b1010, 1.0]);
       const result = arr.findLast((value: number) => value > 5);
       expect(result).assertEqual(10);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_4300
-     * @tc.name testFloat32ArrayFindLastTWO043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_4100
+     * @tc.name testFloat32ArrayFindLastTWO041
      * @tc.desc Verify scientific notation 1.0e3 selects, returns 1000
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0e3, 1.0]);
       const result = arr.findLast((value: number) => value > 500);
       expect(result).assertEqual(1000);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_4400
-     * @tc.name testFloat32ArrayFindLastTWO044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_4200
+     * @tc.name testFloat32ArrayFindLastTWO042
      * @tc.desc Verify scientific notation 1.0e-3 selects, returns 0.001 (tolerance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0e-3, 1.0]);
       const result = arr.findLast((value: number) => value > 0 && value < 0.5);
       expect(Math.abs(result - 0.001) < 1e-7).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_4500
-     * @tc.name testFloat32ArrayFindLastTWO045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_4300
+     * @tc.name testFloat32ArrayFindLastTWO043
      * @tc.desc Verify negative hex -0x10 selects, returns -16
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([-0x10, 1.0]);
       const result = arr.findLast((value: number) => value < 0);
       expect(result).assertEqual(-16);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_4600
-     * @tc.name testFloat32ArrayFindLastTWO046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_4400
+     * @tc.name testFloat32ArrayFindLastTWO044
      * @tc.desc Verify hex 0xff selects, returns 255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([0xff, 1.0]);
       const result = arr.findLast((value: number) => value > 200);
       expect(result).assertEqual(255);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_4700
-     * @tc.name testFloat32ArrayFindLastTWO047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_4500
+     * @tc.name testFloat32ArrayFindLastTWO045
      * @tc.desc Verify after selecting, length unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0);
       arr.findLast((value: number) => value > 1);
       expect(arr.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_4800
-     * @tc.name testFloat32ArrayFindLastTWO048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_4600
+     * @tc.name testFloat32ArrayFindLastTWO046
      * @tc.desc Verify after no match throws Error, length unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0);
       try {
         arr.findLast((value: number) => value > 100);
@@ -728,28 +699,28 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_4900
-     * @tc.name testFloat32ArrayFindLastTWO049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_4700
+     * @tc.name testFloat32ArrayFindLastTWO047
      * @tc.desc Verify after selecting, byteLength unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0);
       arr.findLast((value: number) => value > 1);
       expect(arr.byteLength).assertEqual(12);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_5000
-     * @tc.name testFloat32ArrayFindLastTWO050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_4800
+     * @tc.name testFloat32ArrayFindLastTWO048
      * @tc.desc Verify after no match throws Error, byteLength unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([4.0, 5.0]);
       try {
         arr.findLast((value: number) => value > 10);
@@ -761,14 +732,14 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_5100
-     * @tc.name testFloat32ArrayFindLastTWO051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_4900
+     * @tc.name testFloat32ArrayFindLastTWO049
      * @tc.desc Verify after empty array findLast throws Error, length is still 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([]);
       try {
         arr.findLast((value: number) => value > 0);
@@ -780,28 +751,28 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_5200
-     * @tc.name testFloat32ArrayFindLastTWO052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_5000
+     * @tc.name testFloat32ArrayFindLastTWO050
      * @tc.desc Verify after single-element array findLast, length unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([7.0]);
       arr.findLast((value: number) => value > 5);
       expect(arr.length).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_5300
-     * @tc.name testFloat32ArrayFindLastTWO053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_5100
+     * @tc.name testFloat32ArrayFindLastTWO051
      * @tc.desc Verify after view findLast, byteOffset unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(20);
       const view = new Float32Array(buf, 4, 4);
       view.$_set(0, 1.0);
@@ -813,14 +784,14 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_5400
-     * @tc.name testFloat32ArrayFindLastTWO054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_5200
+     * @tc.name testFloat32ArrayFindLastTWO052
      * @tc.desc Verify after view findLast, byteLength unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(24);
       const view = new Float32Array(buf, 8, 3);
       view.$_set(0, 1.0);
@@ -831,14 +802,14 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_5500
-     * @tc.name testFloat32ArrayFindLastTWO055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_5300
+     * @tc.name testFloat32ArrayFindLastTWO053
      * @tc.desc Verify after view findLast, length unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const view = new Float32Array(buf, 0, 4);
       view.$_set(0, 5.0);
@@ -850,28 +821,28 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_5600
-     * @tc.name testFloat32ArrayFindLastTWO056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_5400
+     * @tc.name testFloat32ArrayFindLastTWO054
      * @tc.desc Verify underlying ArrayBuffer capacity unchanged after findLast
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0]);
       arr.findLast((value: number) => value > 1);
       expect(arr.buffer.byteLength).assertEqual(8);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_5700
-     * @tc.name testFloat32ArrayFindLastTWO057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_5500
+     * @tc.name testFloat32ArrayFindLastTWO055
      * @tc.desc Verify after findLast, first element remains unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([10.0, 20.0, 30.0]);
       const snap = arr.$_get(0);
       arr.findLast((value: number) => value > 15);
@@ -879,14 +850,14 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_5800
-     * @tc.name testFloat32ArrayFindLastTWO058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_5600
+     * @tc.name testFloat32ArrayFindLastTWO056
      * @tc.desc Verify after findLast, last element remains unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([10.0, 20.0, 30.0]);
       const snap = arr.$_get(2);
       arr.findLast((value: number) => value > 15);
@@ -894,14 +865,14 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_5900
-     * @tc.name testFloat32ArrayFindLastTWO059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_5700
+     * @tc.name testFloat32ArrayFindLastTWO057
      * @tc.desc Verify after findLast, all elements remain unchanged (compared one by one)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const s0 = arr.$_get(0);
       const s1 = arr.$_get(1);
@@ -915,14 +886,14 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_6000
-     * @tc.name testFloat32ArrayFindLastTWO060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_5800
+     * @tc.name testFloat32ArrayFindLastTWO058
      * @tc.desc Verify two consecutive findLast return same value (idempotent)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 5.0, 2.0, 5.0, 3.0]);
       const r1 = arr.findLast((value: number) => value > 4);
       const r2 = arr.findLast((value: number) => value > 4);
@@ -930,14 +901,14 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_6100
-     * @tc.name testFloat32ArrayFindLastTWO061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_5900
+     * @tc.name testFloat32ArrayFindLastTWO059
      * @tc.desc Verify after findLast, original array can still write via $_set
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0);
       arr.findLast((value: number) => value > 1);
       arr.$_set(0, 99.0);
@@ -945,14 +916,14 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_6200
-     * @tc.name testFloat32ArrayFindLastTWO062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_6000
+     * @tc.name testFloat32ArrayFindLastTWO060
      * @tc.desc Verify after no match findLast throws Error, original array content unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0);
       const snap = arr.$_get(1);
       try {
@@ -965,14 +936,14 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_6300
-     * @tc.name testFloat32ArrayFindLastTWO063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_6100
+     * @tc.name testFloat32ArrayFindLastTWO061
      * @tc.desc Verify after selecting boundary value, original array boundary element retained
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, Infinity]);
       const snap = arr.$_get(1);
       arr.findLast((value: number) => value === Infinity);
@@ -980,28 +951,28 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_6400
-     * @tc.name testFloat32ArrayFindLastTWO064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_6200
+     * @tc.name testFloat32ArrayFindLastTWO062
      * @tc.desc Verify after selecting NaN, original array NaN element position retained
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, NaN]);
       arr.findLast((value: number) => Number.isNaN(value));
       expect(arr.$_get(1)).assertNaN();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_6500
-     * @tc.name testFloat32ArrayFindLastTWO065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_6300
+     * @tc.name testFloat32ArrayFindLastTWO063
      * @tc.desc Verify three consecutive findLast results are consistent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([3.0, 1.0, 4.0, 1.0, 5.0]);
       const r1 = arr.findLast((value: number) => value > 2);
       const r2 = arr.findLast((value: number) => value > 2);
@@ -1011,14 +982,14 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_6600
-     * @tc.name testFloat32ArrayFindLastTWO066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_6400
+     * @tc.name testFloat32ArrayFindLastTWO064
      * @tc.desc Verify after predicate reads multiple elements, original array last element still unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0, 6.0]);
       const snap = arr.$_get(5);
       arr.findLast((value: number) => value > 2);
@@ -1026,14 +997,14 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_6700
-     * @tc.name testFloat32ArrayFindLastTWO067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_6500
+     * @tc.name testFloat32ArrayFindLastTWO065
      * @tc.desc Verify findLast does not modify existing elements in buffer (cross-check with second view)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const arr = new Float32Array(buf);
       arr.$_set(0, 1.0);
@@ -1045,14 +1016,14 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_6800
-     * @tc.name testFloat32ArrayFindLastTWO068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_6600
+     * @tc.name testFloat32ArrayFindLastTWO066
      * @tc.desc Verify shared buffer: after writing another view, findLast reflects new value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const a = new Float32Array(buf, 0, 2);
       const b = new Float32Array(buf, 0, 2);
@@ -1064,14 +1035,14 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_6900
-     * @tc.name testFloat32ArrayFindLastTWO069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_6700
+     * @tc.name testFloat32ArrayFindLastTWO067
      * @tc.desc Verify after findLast, view buffer reference unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const view = new Float32Array(buf, 0, 2);
       view.$_set(0, 1.0);
@@ -1081,28 +1052,28 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_7000
-     * @tc.name testFloat32ArrayFindLastTWO070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_6800
+     * @tc.name testFloat32ArrayFindLastTWO068
      * @tc.desc Verify after findLast, isView is still true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0);
       arr.findLast((value: number) => value > 1);
       expect(ArrayBuffer.isView(arr)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_7100
-     * @tc.name testFloat32ArrayFindLastTWO071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_6900
+     * @tc.name testFloat32ArrayFindLastTWO069
      * @tc.desc Verify subarray view findLast returns correct value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const base = Float32Array.of(0x10, 0b1010, -1.0, 0.0, 1000000.0);
       const sub = base.subarray(1, 4);
       const result = sub.findLast((value: number) => value === 0.0);
@@ -1110,14 +1081,14 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_7200
-     * @tc.name testFloat32ArrayFindLastTWO072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_7000
+     * @tc.name testFloat32ArrayFindLastTWO070
      * @tc.desc Verify after subarray view findLast, byteOffset retained
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const base = Float32Array.of(0x10, 0b1010, -1.0, 0.0, 1000000.0);
       const sub = base.subarray(1, 4);
       sub.findLast((value: number) => value === 0.0);
@@ -1125,14 +1096,14 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_7300
-     * @tc.name testFloat32ArrayFindLastTWO073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_7100
+     * @tc.name testFloat32ArrayFindLastTWO071
      * @tc.desc Verify two non-overlapping views share buffer, each findLast does not affect each other
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const v1 = new Float32Array(buf, 0, 2);
       const v2 = new Float32Array(buf, 8, 2);
@@ -1147,14 +1118,14 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_7400
-     * @tc.name testFloat32ArrayFindLastTWO074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_7200
+     * @tc.name testFloat32ArrayFindLastTWO072
      * @tc.desc Verify offset view findLast reads view-local index correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(24);
       const view = new Float32Array(buf, 8, 3);
       view.$_set(0, 11.0);
@@ -1165,14 +1136,14 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_7500
-     * @tc.name testFloat32ArrayFindLastTWO075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_7300
+     * @tc.name testFloat32ArrayFindLastTWO073
      * @tc.desc Verify shared buffer write parent read child: findLast in child view reflects parent write
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const parent = new Float32Array([1.0, 2.0, 3.0, 4.0]);
       const child = parent.subarray(1, 3);
       parent.$_set(2, 99.0);
@@ -1181,14 +1152,14 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_7600
-     * @tc.name testFloat32ArrayFindLastTWO076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_7400
+     * @tc.name testFloat32ArrayFindLastTWO074
      * @tc.desc Verify whole-buffer view (offset 0) findLast returns correct value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(12);
       const view = new Float32Array(buf, 0, 3);
       view.$_set(0, 5.0);
@@ -1199,14 +1170,14 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_7700
-     * @tc.name testFloat32ArrayFindLastTWO077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_7500
+     * @tc.name testFloat32ArrayFindLastTWO075
      * @tc.desc Verify after findLast, view underlying buffer capacity retained
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const view = new Float32Array(buf, 4, 3);
       view.$_set(0, 1.0);
@@ -1217,14 +1188,14 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_7800
-     * @tc.name testFloat32ArrayFindLastTWO078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_7600
+     * @tc.name testFloat32ArrayFindLastTWO076
      * @tc.desc Verify findLast returns the last matching scalar value, distinguishing from filter returning Float32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0);
       const last = arr.findLast((value: number) => value !== 0x10);
       const filtered = arr.filter((value: number) => value !== 0x10);
@@ -1233,42 +1204,42 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_7900
-     * @tc.name testFloat32ArrayFindLastTWO079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_7700
+     * @tc.name testFloat32ArrayFindLastTWO077
      * @tc.desc Verify findLast return value equals direct index read (value is element not index)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 99.0, 4.0]);
       const result = arr.findLast((value: number) => value > 50);
       expect(result).assertEqual(arr.$_get(2));
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_8000
-     * @tc.name testFloat32ArrayFindLastTWO080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_7800
+     * @tc.name testFloat32ArrayFindLastTWO078
      * @tc.desc Verify findLast return value equals at() read
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 99.0]);
       const result = arr.findLast((value: number) => value > 50);
       expect(result).assertEqual(arr.at(3));
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_8100
-     * @tc.name testFloat32ArrayFindLastTWO081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_7900
+     * @tc.name testFloat32ArrayFindLastTWO079
      * @tc.desc Verify findLast return value used to construct new array (value can be propagated)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0);
       const result = arr.findLast((value: number) => value === -1.0);
       const next = new Float32Array([result, 4.0]);
@@ -1276,28 +1247,28 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_8200
-     * @tc.name testFloat32ArrayFindLastTWO082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_8000
+     * @tc.name testFloat32ArrayFindLastTWO080
      * @tc.desc Verify after findLast select, return value participates in arithmetic getting expected result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(0x10, 0b1010, -1.0);
       const result = arr.findLast((value: number) => value === -1.0);
       expect(result + 1).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_8300
-     * @tc.name testFloat32ArrayFindLastTWO083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_8100
+     * @tc.name testFloat32ArrayFindLastTWO081
      * @tc.desc Verify findLast return value can serve as comparison basis for another array findLast predicate
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float32Array([1.0, 5.0, 2.0]);
       const threshold = arr.findLast((value: number) => value > 4);
       const arr2 = new Float32Array([1.0, 6.0, 7.0]);
@@ -1306,14 +1277,14 @@ export default function Float32ArrayFindLast2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_8400
-     * @tc.name testFloat32ArrayFindLastTWO084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTTWO_8200
+     * @tc.name testFloat32ArrayFindLastTWO082
      * @tc.desc Verify findLast on an offset view only searches elements inside the view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat32ArrayFindLastTWO084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat32ArrayFindLastTWO082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const parent = Float32Array.of(1.0, 8.0, 3.0, 9.0);
       const view = parent.subarray(0, 3);
       const result = view.findLast((value: number): boolean => value > 5.0);
