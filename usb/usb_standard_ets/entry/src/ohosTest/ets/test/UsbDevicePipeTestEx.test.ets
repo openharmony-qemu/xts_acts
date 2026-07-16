@@ -165,7 +165,7 @@ function getPipe(testCaseName: string) {
 
 function toReleaseInterface(testCaseName: string, conIndex: number, interIndex: number) {
   let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
-  gDeviceList = deviceList.filter(device => !isFilteredDevice(device));
+  gDeviceList = deviceList.filter(device => !isFilteredDevice(device.vendorId, device.productId));
   let tmpInterface = gDeviceList[0].configs[conIndex].interfaces[interIndex];
   let isClaim = usbMgr.releaseInterface(gPipe, tmpInterface);
   console.info(TAG, `usb ${testCaseName} toReleaseInterface ret: ${JSON.stringify(isClaim)}`);
@@ -181,7 +181,7 @@ export default function UsbDevicePipeTestEx() {
 
       // version > 17  host currentMode = 2 device currentMode = 1
       let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
-      gDeviceList = deviceList.filter(device => !isFilteredDevice(device));
+      gDeviceList = deviceList.filter(device => !isFilteredDevice(device.vendorId, device.productId));
       isDeviceConnected = deviceConnected();
       if (isDeviceConnected) {
         let hasRight = usbMgr.hasRight(gDeviceList[0].name);
@@ -200,7 +200,7 @@ export default function UsbDevicePipeTestEx() {
       console.info(TAG, 'beforeEach: *************Usb Unit Test Ex Case*************');
       try {
         let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
-        gDeviceList = deviceList.filter(device => !isFilteredDevice(device));
+        gDeviceList = deviceList.filter(device => !isFilteredDevice(device.vendorId, device.productId));
       } catch (error) {
         console.info(TAG, 'beforeEach catch error : ' + error);
       }
