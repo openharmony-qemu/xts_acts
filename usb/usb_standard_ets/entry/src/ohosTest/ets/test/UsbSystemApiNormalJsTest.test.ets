@@ -25,7 +25,7 @@ export default function UsbSystemApiNormalJsTest() {
   describe('UsbSystemApiNormalJsTest', () => {
 
     const TAG: string = "[UsbSystemApiNormalJsTest]";
-    let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices().filter(device => !isFilteredDevice(device));
+    let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices().filter(device => !isFilteredDevice(device.vendorId, device.productId));
     let portCurrentMode = 0;
     
 
