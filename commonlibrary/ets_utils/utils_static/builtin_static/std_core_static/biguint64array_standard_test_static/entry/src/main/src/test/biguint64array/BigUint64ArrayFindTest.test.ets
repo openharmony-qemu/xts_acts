@@ -1982,3 +1982,258 @@ export default function biguint64arrayFindTest(): void {
       expect(observedIndexSum).assertEqual(1);
       expect(result).assertEqual(30n);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FIND_1010
+     * @tc.name testBigUint64ArrayFind101
+     * @tc.desc Verify find() on a subarray observes parent mutation within the live window
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFind101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = new BigUint64Array([10n, 20n, 30n, 40n]);
+      let beginIndex: int = 1;
+      let endIndex: int = 3;
+      let windowView = sourceArray.subarray(beginIndex, endIndex);
+      sourceArray[2] = 99n;
+      let result: bigint | undefined =
+        windowView.find((element: bigint, _index: int, _array: BigUint64Array): boolean => {
+          return element >= 90n;
+        });
+      expect(result).assertEqual(99n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FIND_1020
+     * @tc.name testBigUint64ArrayFind102
+     * @tc.desc Verify find() propagates an exception thrown on the last callback invocation
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFind102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = new BigUint64Array([1n, 2n, 3n]);
+      let callCount: int = 0;
+      try {
+        sourceArray.find((_element: bigint, index: int, _array: BigUint64Array): boolean => {
+          callCount = callCount + 1;
+          if (index === 2) {
+            throw new Error('last callback error');
+          }
+          return false;
+        });
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+      }
+      expect(callCount).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FIND_1030
+     * @tc.name testBigUint64ArrayFind103
+     * @tc.desc Verify find() on a nested byteOffset subarray uses local callback indices
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFind103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sharedBuffer = new ArrayBuffer(48);
+      let fullView = new BigUint64Array(sharedBuffer, 0, 6);
+      fullView[0] = 10n;
+      fullView[1] = 20n;
+      fullView[2] = 30n;
+      fullView[3] = 40n;
+      fullView[4] = 50n;
+      fullView[5] = 60n;
+      let byteOffset: int = 8;
+      let viewLength: int = 4;
+      let offsetView = new BigUint64Array(sharedBuffer, byteOffset, viewLength);
+      let nestedWindow = offsetView.subarray(1, 4);
+      let observedIndexSum: int = 0;
+      let result: bigint | undefined =
+        nestedWindow.find((element: bigint, index: int, array: BigUint64Array): boolean => {
+          observedIndexSum = observedIndexSum + index;
+          return array[index] === element && index === 2;
+        });
+      expect(result).assertEqual(50n);
+      expect(observedIndexSum).assertEqual(3);
+      expect(nestedWindow.byteOffset).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FIND_1040
+     * @tc.name testBigUint64ArrayFind104
+     * @tc.desc Verify find() on a slice copy from a byteOffset view does not observe later source writes
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFind104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sharedBuffer = new ArrayBuffer(48);
+      let fullView = new BigUint64Array(sharedBuffer, 0, 6);
+      fullView[0] = 10n;
+      fullView[1] = 20n;
+      fullView[2] = 30n;
+      fullView[3] = 40n;
+      fullView[4] = 50n;
+      fullView[5] = 60n;
+      let byteOffset: int = 8;
+      let viewLength: int = 4;
+      let offsetView = new BigUint64Array(sharedBuffer, byteOffset, viewLength);
+      let sliceCopy = offsetView.slice(1, 4);
+      fullView[2] = 777n;
+      let copiedValueResult: bigint | undefined =
+        sliceCopy.find((element: bigint, _index: int, _array: BigUint64Array): boolean => {
+          return element === 30n;
+        });
+      let sourceWriteResult: bigint | undefined =
+        sliceCopy.find((element: bigint, _index: int, _array: BigUint64Array): boolean => {
+          return element === 777n;
+        });
+      let differsFromSourceBuffer: boolean = sliceCopy.buffer !== sharedBuffer;
+      expect(copiedValueResult).assertEqual(30n);
+      expect(sourceWriteResult).assertEqual(undefined);
+      expect(differsFromSourceBuffer).assertTrue();
+      expect(fullView[2]).assertEqual(777n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FIND_1050
+     * @tc.name testBigUint64ArrayFind105
+     * @tc.desc Verify find() on a zero-length byteOffset view returns undefined without invoking the callback
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFind105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sharedBuffer = new ArrayBuffer(32);
+      let fullView = new BigUint64Array(sharedBuffer, 0, 4);
+      fullView[0] = 10n;
+      fullView[1] = 20n;
+      fullView[2] = 30n;
+      fullView[3] = 40n;
+      let byteOffset: int = 16;
+      let viewLength: int = 0;
+      let zeroLengthView = new BigUint64Array(sharedBuffer, byteOffset, viewLength);
+      let callCount: int = 0;
+      let result: bigint | undefined =
+        zeroLengthView.find((_element: bigint, _index: int, _array: BigUint64Array): boolean => {
+          callCount = callCount + 1;
+          return true;
+        });
+      expect(result).assertEqual(undefined);
+      expect(callCount).assertEqual(0);
+      expect(zeroLengthView.byteOffset).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FIND_1060
+     * @tc.name testBigUint64ArrayFind106
+     * @tc.desc Verify find() on a Set source uses callback values after duplicate removal
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFind106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceSet = new Set<BigInt>();
+      sourceSet.add(7n);
+      sourceSet.add(11n);
+      sourceSet.add(7n);
+      sourceSet.add(15n);
+      let sourceArray = new BigUint64Array(sourceSet);
+      let callCount: int = 0;
+      let result: bigint | undefined =
+        sourceArray.find((element: bigint, index: int, array: BigUint64Array): boolean => {
+          callCount = callCount + 1;
+          return element === 11n && index === 1 && array.length === 3;
+        });
+      expect(result).assertEqual(11n);
+      expect(callCount).assertEqual(2);
+      expect(sourceArray.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FIND_1070
+     * @tc.name testBigUint64ArrayFind107
+     * @tc.desc Verify find() on an advanced iterator source uses local callback indices
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFind107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let baseArray = BigUint64Array.of(5n, 10n, 15n, 20n);
+      let sourceIterator = baseArray.values();
+      sourceIterator.next();
+      let sourceArray = new BigUint64Array(sourceIterator);
+      let callCount: int = 0;
+      let result: bigint | undefined =
+        sourceArray.find((element: bigint, index: int, array: BigUint64Array): boolean => {
+          callCount = callCount + 1;
+          return element === 15n && index === 1 && array[0] === 10n;
+        });
+      expect(result).assertEqual(15n);
+      expect(callCount).assertEqual(2);
+      expect(sourceArray.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FIND_1080
+     * @tc.name testBigUint64ArrayFind108
+     * @tc.desc Verify find() short circuit prevents later callback side effects
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFind108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = new BigUint64Array([2n, 4n, 6n]);
+      let callCount: int = 0;
+      let result: bigint | undefined =
+        sourceArray.find((element: bigint, index: int, array: BigUint64Array): boolean => {
+          callCount = callCount + 1;
+          if (index === 2) {
+            array[0] = 99n;
+          }
+          return element === 4n;
+        });
+      expect(result).assertEqual(4n);
+      expect(callCount).assertEqual(2);
+      expect(sourceArray[0]).assertEqual(2n);
+      expect(sourceArray[2]).assertEqual(6n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FIND_1090
+     * @tc.name testBigUint64ArrayFind109
+     * @tc.desc Verify find() observes an unvisited source value written through an overlapping sibling view
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFind109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sharedBuffer: ArrayBuffer = new ArrayBuffer(32);
+      let sourceView = new BigUint64Array(sharedBuffer, 0, 3);
+      let siblingView = new BigUint64Array(sharedBuffer, 8, 2);
+      sourceView[0] = 1n;
+      sourceView[1] = 2n;
+      sourceView[2] = 3n;
+      let observedLaterValue: bigint = 0n;
+      let result: bigint | undefined =
+        sourceView.find((element: bigint, index: int, _array: BigUint64Array): boolean => {
+          if (index === 0) {
+            siblingView[0] = 9n;
+          }
+          if (index === 1) {
+            observedLaterValue = element;
+          }
+          return element === 9n;
+        });
+      expect(observedLaterValue).assertEqual(9n);
+      expect(result).assertEqual(9n);
+      expect(sourceView[1]).assertEqual(9n);
+      expect(siblingView[0]).assertEqual(9n);
+    });
+
+  });
+}
