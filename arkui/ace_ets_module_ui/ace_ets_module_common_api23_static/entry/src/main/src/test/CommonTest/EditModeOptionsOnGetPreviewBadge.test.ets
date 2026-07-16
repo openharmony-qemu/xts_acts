@@ -15,7 +15,7 @@
  */
 
 
-import { describe, it, expect, Level } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, it, expect, Level } from '../../../../hypium/index';
 import { EditModeOptions, OnGetPreviewBadgeCallback } from '@ohos.arkui.component';
 
 export default function EditModeOptionsOnGetPreviewBadgeTest() {

@@ -15,7 +15,7 @@
  */
 
 
-import { afterEach, beforeEach, describe, expect, it, Level,beforeAll } from '@ohos/hypium-binary/src/main/indexStatic';
+import { afterEach, beforeEach, describe, expect, it, Level,beforeAll } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';

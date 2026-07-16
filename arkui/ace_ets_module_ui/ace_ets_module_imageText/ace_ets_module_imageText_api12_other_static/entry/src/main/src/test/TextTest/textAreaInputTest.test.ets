@@ -23,7 +23,7 @@ import {
   it,
   expect,
   Level
-} from "@ohos/hypium-binary/src/main/indexStatic";
+} from "../../../../hypium/index";
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {
   Component,

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { Color, SelectedMode, $r } from '@ohos.arkui.component'
-import { describe, beforeEach, afterEach, it, expect, beforeAll, Level } from '@ohos/hypium-binary/src/main/indexStatic'
+import { describe, beforeEach, afterEach, it, expect, beforeAll, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../../ets/MainAbility/common/Utils'

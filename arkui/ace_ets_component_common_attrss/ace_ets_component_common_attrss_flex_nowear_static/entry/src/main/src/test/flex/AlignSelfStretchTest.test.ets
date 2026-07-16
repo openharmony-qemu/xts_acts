@@ -18,7 +18,7 @@
 import { AttrsManager, AlignItems } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect, beforeAll } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, expect, beforeAll } from '../../../../hypium/index';
 import { AlignRuleOption, VerticalAlign, HorizontalAlign, ItemAlign, FlexDirection, FlexWrap } from '@ohos.arkui.component';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import hilog from '@ohos.hilog'

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, Level, beforeAll } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, beforeEach, afterEach, it, expect, Level, beforeAll } from '../../../../hypium/index';
 import { TextCase } from '@ohos.arkui.component';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';

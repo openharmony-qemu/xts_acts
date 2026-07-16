@@ -15,7 +15,7 @@
  */
 
 
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium-binary/src/main/indexStatic';
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import hilog from '@ohos.hilog'

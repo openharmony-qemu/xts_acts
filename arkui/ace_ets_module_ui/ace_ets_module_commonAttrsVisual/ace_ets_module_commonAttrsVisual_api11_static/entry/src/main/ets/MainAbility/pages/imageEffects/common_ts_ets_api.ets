@@ -47,7 +47,7 @@ import {
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage, Environment, Link, PersistentStorage, State, StorageLink } from '@ohos.arkui.stateManagement';
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../../../hypium/index';
 import Log from '../../common/Log';
 import { RecordData } from '@ohos.base';
 

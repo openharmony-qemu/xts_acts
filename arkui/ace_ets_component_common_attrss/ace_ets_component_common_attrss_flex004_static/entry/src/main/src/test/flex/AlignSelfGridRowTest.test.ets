@@ -21,7 +21,7 @@ import Utils, {
   DefaultAlignItems,
 } from '../../../ets/MainAbility/common/Utils';
 import CommonTest from '../common/CommonTest';
-import { describe, expect, beforeAll } from '@ohos/hypium-binary/src/main/indexStatic'
+import { describe, expect, beforeAll } from '../../../../hypium/index'
 import { ItemAlign, VerticalAlign, HorizontalAlign } from '@ohos.arkui.component'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import hilog from '@ohos.hilog'

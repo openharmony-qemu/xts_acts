@@ -16,7 +16,7 @@
 
 import Utils, { BasePageConfig, PageConfig, RectValue, TestValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest from '../common/CommonTest';
-import { beforeAll, describe, expect } from '@ohos/hypium-binary/src/main/indexStatic';
+import { beforeAll, describe, expect } from '../../../../hypium/index';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';

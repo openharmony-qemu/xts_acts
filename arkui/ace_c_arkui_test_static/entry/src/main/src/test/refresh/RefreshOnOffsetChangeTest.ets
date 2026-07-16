@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, afterEach, Level, beforeAll, beforeEach } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, expect, it, afterEach, Level, beforeAll, beforeEach } from '../../../../hypium/index';
 import Utils from '../common/Utils';
 import { Driver, ON, MouseButton, Component, Point } from '@kit.TestKit';
 import { UtilsTest } from '../Util.test'

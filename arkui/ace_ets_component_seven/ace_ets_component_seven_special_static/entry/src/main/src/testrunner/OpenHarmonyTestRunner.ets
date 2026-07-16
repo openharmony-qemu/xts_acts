@@ -19,7 +19,7 @@ import { TestRunner } from '@kit.TestKit';
 
 import hilog from '@ohos.hilog';
 
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../hypium/index';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import testsuite from '../test/JsunitList.test';
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;

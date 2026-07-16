@@ -51,7 +51,7 @@
 // import CommonFunc from '../../../MainAbility/common/Common';
 // import common from '@ohos.app.ability.common';
 // import resourceManager from '@ohos.resourceManager';
-// import { Level } from '@ohos/hypium-binary/src/main/indexStatic';
+// import { Level } from '../../../../../hypium/index';
 //
 //
 // class BasicDataSource implements IDataSource<string> {
