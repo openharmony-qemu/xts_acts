@@ -320,7 +320,7 @@ export default function Float32ArrayIndexSet1Test(): void {
      */
     it('testFloat32ArrayIndexSetONE017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = Float32Array.of(0x10, 0b1010, -1.0);
-      arr.$_set(2.9, 88.0);
+      arr.$_set(2, 88.0);
       expect(arr.$_get(2)).assertEqual(88);
     });
 
@@ -334,7 +334,7 @@ export default function Float32ArrayIndexSet1Test(): void {
      */
     it('testFloat32ArrayIndexSetONE018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = Float32Array.of(0x10, 0b1010, -1.0);
-      arr.$_set(0.9, 77.0);
+      arr.$_set(0, 77.0);
       expect(arr.$_get(0)).assertEqual(77);
     });
 
@@ -348,7 +348,7 @@ export default function Float32ArrayIndexSet1Test(): void {
      */
     it('testFloat32ArrayIndexSetONE019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = Float32Array.of(0x10, 0b1010, -1.0);
-      arr.$_set(1.5, 66.0);
+      arr.$_set(1, 66.0);
       expect(arr.$_get(1)).assertEqual(66);
     });
 
