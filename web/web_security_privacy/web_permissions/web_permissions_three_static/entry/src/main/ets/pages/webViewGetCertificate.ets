@@ -30,7 +30,7 @@ import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter';
 import image from '@ohos.multimedia.image';
 import hilog from '@ohos.hilog';
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../hypium/index';
 import cert from '@ohos.security.cert';
 import { BusinessError, Callback, RecordData } from '@ohos.base'
 

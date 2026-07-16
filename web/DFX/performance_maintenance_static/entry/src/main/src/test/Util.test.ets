@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 import emitter from '@ohos.events.emitter';
-import { expect } from "@ohos/hypium-binary/src/main/indexStatic";
+import { expect } from "../../../hypium/index";
 import { Driver, ON } from '@ohos.UiTest';
 import { RecordData } from '@ohos.base';
 

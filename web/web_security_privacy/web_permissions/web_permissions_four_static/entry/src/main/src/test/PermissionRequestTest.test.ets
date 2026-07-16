@@ -15,7 +15,7 @@
  */
 import events_emitter from '@ohos.events.emitter';
 
-import { expect, Level, Size, TestType, beforeAll, beforeEach, afterEach, describe, it } from '@ohos/hypium-binary/src/main/indexStatic';
+import { expect, Level, Size, TestType, beforeAll, beforeEach, afterEach, describe, it } from '../../../hypium/index';
 import router from '@ohos.router';
 import { Utils, startAbility, stopApplication } from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';

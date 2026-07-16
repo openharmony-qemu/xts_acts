@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
+import { beforeAll, beforeEach, describe, it, Level, Size, TestType } from '../../../hypium/index';
 import Utils from './Util.test';
 import UtilsHelpers from './UtilsHelper'
 import inspector from '@ohos.arkui.inspector';

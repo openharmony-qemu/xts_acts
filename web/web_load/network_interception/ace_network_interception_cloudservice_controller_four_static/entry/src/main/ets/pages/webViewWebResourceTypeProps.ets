@@ -33,7 +33,7 @@ import { CustomBuilderT ,ForEach,NodeContainer,NativeEmbedVisibilityInfo,SslErro
 import { UIContext } from '@ohos.arkui.UIContext';
 import { BuilderNode, FrameNode, NodeController, NodeRenderType } from '@ohos.arkui.node';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../hypium/index';
 import testsuite from '../../src/test/List.test';
 import { Text,TouchType} from "@ohos.arkui.component"
 import image from '@ohos.multimedia.image';

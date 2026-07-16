@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "@ohos/hypium-binary/src/main/indexStatic";
+} from "../../../../../hypium/index";
 
 let expr_0_v: int|null = 5
 let expr_0_w = expr_0_v

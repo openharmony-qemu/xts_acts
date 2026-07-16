@@ -25,7 +25,7 @@ import {
   beforeEach,
   afterEach,
   afterAll
-} from '@ohos/hypium-binary/src/main/indexStatic';
+} from '../../../../../../hypium/index';
 import Utils from '../../../Util.test'
 
 // m_instance_method_overload: class A_inst, B_inst, foo1-foo2

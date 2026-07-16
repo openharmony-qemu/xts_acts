@@ -26,7 +26,7 @@ import {
   Level,
   Size,
   TestType
-} from '@ohos/hypium-binary/src/main/indexStatic';
+} from '../../../../../../hypium/index';
 class SomeTypeType1 {}
 type SomeType1 = SomeTypeType1
 class OtherTypeType1 {}

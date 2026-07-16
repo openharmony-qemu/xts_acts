@@ -27,7 +27,7 @@ import {
   Level,
   Size,
   TestType
-} from '@ohos/hypium-binary/src/main/indexStatic';
+} from '../../../../../../hypium/index';
 
 export default function BooleanEqualityOperatorsTest(): void {
   describe("BooleanEqualityOperatorsTest", () => {

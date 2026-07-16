@@ -15,15 +15,7 @@
  
 {
   "apiType": "stageMode",
-  "buildOption": {
-    "arkOptions": {
-      "runtimeOnly": {
-        "packages": [
-          "@ohos/hypium-binary"
-        ]
-      }
-    }
-  },
+  "buildOption": {},
   "buildOptionSet": [
     {
       "name": "release"

@@ -22,7 +22,7 @@ import {
   TestType,
   Level,
   Size
-} from "@ohos/hypium-binary/src/main/indexStatic";
+} from "../../../hypium/index";
 import Utils from './Util.test';
 import { BaseClass, sleep } from '../utils/Model';
 

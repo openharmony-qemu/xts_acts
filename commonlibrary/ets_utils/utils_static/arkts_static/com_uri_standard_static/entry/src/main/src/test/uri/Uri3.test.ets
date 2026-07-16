@@ -16,7 +16,7 @@
 
 import {
   describe, expect, it, Level, Size, TestType
-} from '@ohos/hypium-binary/src/main/indexStatic';
+} from '../../../../hypium/index';
 import uri from '@ohos.uri';
 import { BusinessError } from '@ohos.base';
 

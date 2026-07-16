@@ -19,7 +19,7 @@
  * of RegExpHelper covers species, subclassing, and error paths that would otherwise require duplicate mock RegExp setups.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium-binary/src/main/indexStatic';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 import {
   splitDirectSymbolSplit,

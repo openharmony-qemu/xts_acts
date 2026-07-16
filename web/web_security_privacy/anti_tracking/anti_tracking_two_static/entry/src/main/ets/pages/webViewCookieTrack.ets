@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../hypium/index';
 import testsuite from '../../src/test/List.test';
 import fs from '@ohos.file.fs';
 import { OnErrorReceiveEvent, IntelligentTrackingPreventionDetails, CacheMode, OnPageEndEvent, $rawfile, OnRenderExitedEvent, OnPageBeginEvent, RenderProcessNotRespondingReason, RenderProcessNotRespondingData, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component';

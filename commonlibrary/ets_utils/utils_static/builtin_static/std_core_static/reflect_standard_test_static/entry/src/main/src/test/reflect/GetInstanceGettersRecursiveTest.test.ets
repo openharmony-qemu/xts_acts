@@ -26,7 +26,7 @@ import {
   Level,
   Size,
   TestType
-} from '@ohos/hypium-binary/src/main/indexStatic';
+} from '../../../../hypium/index';
 import Utils from './../Util.test';
 
 class BasicGetterClass {

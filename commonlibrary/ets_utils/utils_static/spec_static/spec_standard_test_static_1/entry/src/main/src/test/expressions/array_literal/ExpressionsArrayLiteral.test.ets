@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "@ohos/hypium-binary/src/main/indexStatic";
+} from "../../../../../hypium/index";
 
 let arr: int[] = [0, 0, 0, 0]
 function foo_abrupt_0(cnt: int): int  {

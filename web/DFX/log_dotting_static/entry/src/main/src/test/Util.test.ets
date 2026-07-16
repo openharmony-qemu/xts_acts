@@ -1,6 +1,6 @@
 'use static';
 import events_emitter from '@ohos.events.emitter';
-import { expect } from "@ohos/hypium-binary/src/main/indexStatic";
+import { expect } from "../../../hypium/index";
 import { RecordData } from '@ohos.base';
 
 export default class Utils{

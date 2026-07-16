@@ -26,7 +26,7 @@ import {
   TestType,
   Size,
   Level
-} from '@ohos/hypium-binary/src/main/indexStatic';
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 function expectExpm1Reference(actual: double, expected: double, tolerance: double): void {

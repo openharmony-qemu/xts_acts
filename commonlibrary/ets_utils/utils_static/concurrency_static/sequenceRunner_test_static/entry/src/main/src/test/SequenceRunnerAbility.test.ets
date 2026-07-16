@@ -25,7 +25,7 @@ import {
   TestType,
   Level,
   Size
-} from '@ohos/hypium-binary/src/main/indexStatic';
+} from '../../../hypium/index';
 import hilog from '@ohos.hilog';
 import {
   stringTaskFunction1,

@@ -1,6 +1,6 @@
 'use static';
 
-import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
 
 export default function LinkedBlockingQueueStressTest(): void {
   describe('LinkedBlockingQueueStressTest', (): void => {

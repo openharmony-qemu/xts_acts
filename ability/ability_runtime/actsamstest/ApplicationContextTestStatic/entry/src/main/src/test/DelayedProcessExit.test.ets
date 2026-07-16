@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level, afterEach, beforeAll, beforeEach, afterAll } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, it, expect, Level, afterEach, beforeAll, beforeEach, afterAll } from '../../../hypium/index';
 import { common, Want } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import hilog from '@ohos.hilog';

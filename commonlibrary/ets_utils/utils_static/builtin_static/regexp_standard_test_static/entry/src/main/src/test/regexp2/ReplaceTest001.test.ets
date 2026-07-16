@@ -20,7 +20,7 @@
  * extreme callbacks and invalid-pattern throws so Hypium cases stay readable under long @tc metadata blocks.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium-binary/src/main/indexStatic';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 import {
   extreme17_1CustomSymbolReplaceObject,

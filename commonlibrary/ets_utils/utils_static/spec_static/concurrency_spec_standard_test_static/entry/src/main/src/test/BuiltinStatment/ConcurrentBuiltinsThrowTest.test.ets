@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from '@ohos/hypium-binary/src/main/indexStatic';
+} from '../../../../hypium/index';
 import { Input2, positiveNumbers, throwDivisor, UserWithAddressAddress } from '../pages/ThrowMethod';
 import {
   builtinsStatementThrow0100,

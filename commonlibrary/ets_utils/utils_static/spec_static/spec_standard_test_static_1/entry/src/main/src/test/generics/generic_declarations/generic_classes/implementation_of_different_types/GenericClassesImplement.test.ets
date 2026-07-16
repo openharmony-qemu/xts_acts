@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "@ohos/hypium-binary/src/main/indexStatic"
+} from "../../../../../../../hypium/index"
 
 interface GenericInterface_0<T> {
   process(data: T): T;

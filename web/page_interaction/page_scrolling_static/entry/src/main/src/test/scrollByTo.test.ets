@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium-binary/src/main/indexStatic';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Util.test';
 import { Driver, ON } from '@ohos.UiTest';

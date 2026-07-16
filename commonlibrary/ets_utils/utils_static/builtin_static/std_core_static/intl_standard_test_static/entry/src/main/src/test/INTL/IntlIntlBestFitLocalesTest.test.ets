@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 interface LocaleTestObject{
   name:string;
   age:number;

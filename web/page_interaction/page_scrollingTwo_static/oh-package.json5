@@ -2,8 +2,6 @@
 {
   "modelVersion": "6.0.0",
   "description": "page_scrollingTwo_static",
-  "dependencies": {
-    "@ohos/hypium-binary": "1.0.28-rc4"
-  },
+  "dependencies": {},
   "devDependencies": {}
 }

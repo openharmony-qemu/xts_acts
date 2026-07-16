@@ -10,7 +10,7 @@ import {
   TestType,
   Level,
   Size
-} from '@ohos/hypium-binary/src/main/indexStatic';
+} from '../../../../hypium/index';
 import HashMap from '@ohos.util.HashMap';
 import { BusinessError } from '@ohos.base';
 import Utils from '../Util.test';

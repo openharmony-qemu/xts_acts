@@ -19,7 +19,7 @@
  * Pulls both live RegExp operations and RegExpHelper stubs—splitting concerns would duplicate TC numbers across modules.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium-binary/src/main/indexStatic';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 import { regexpSymbolMatchAll } from './RegExpSymbols';
 import {

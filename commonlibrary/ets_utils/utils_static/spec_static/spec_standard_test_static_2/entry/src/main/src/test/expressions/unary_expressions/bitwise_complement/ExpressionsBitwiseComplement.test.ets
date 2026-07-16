@@ -25,7 +25,7 @@ import {
   TestType,
   Size,
   Level
-} from "@ohos/hypium-binary/src/main/indexStatic";
+} from "../../../../../../hypium/index";
 import Utils from '../../../Util.test'
 enum bitwise_complement_enum_Color { Red, Green, Blue }
 export default function ExpressionsBitwiseComplementTest(): void {

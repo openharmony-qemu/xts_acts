@@ -24,7 +24,7 @@ import {
   beforeEach,
   afterEach,
   afterAll
-} from "@ohos/hypium-binary/src/main/indexStatic";
+} from "../../../../../../hypium/index";
 import Utils from '../../../Util.test'
 
 class TestContainer {

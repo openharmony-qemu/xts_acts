@@ -25,13 +25,6 @@
         "armeabi-v7a",
         "x86_64"
       ]
-    },
-    "arkOptions": {
-      "runtimeOnly": {
-        "packages": [
-          "@ohos/hypium-binary"
-        ]
-      }
     }
   },
   "buildOptionSet": [],

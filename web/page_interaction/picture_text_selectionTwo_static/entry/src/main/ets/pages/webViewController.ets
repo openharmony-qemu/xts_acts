@@ -28,7 +28,7 @@ import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter'
 import Utils from '../../src/test/Utils.test';
 import image from '@ohos.multimedia.image';
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../hypium/index';
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import {BusinessError,Callback, RecordData } from '@ohos.base'
 import { UIContext, Router } from '@ohos.arkui.UIContext'

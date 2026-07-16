@@ -25,7 +25,7 @@ import {
   TestType,
   Size,
   Level
-} from "@ohos/hypium-binary/src/main/indexStatic";
+} from "../../../../../hypium/index";
 import Utils from '../../Util.test'
 
 class Person_class_composite_as_a_function_parameter {

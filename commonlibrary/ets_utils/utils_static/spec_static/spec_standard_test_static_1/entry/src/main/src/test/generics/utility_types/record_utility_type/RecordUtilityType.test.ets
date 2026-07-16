@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "@ohos/hypium-binary/src/main/indexStatic"
+} from "../../../../../../hypium/index"
 
 type R1_0 = Record<string, Error>
 function foo_0(p: R1_0): R1_0 {

@@ -25,7 +25,7 @@ import {
   Size,
   Level,
   beforeAll
-} from "@ohos/hypium-binary/src/main/indexStatic";
+} from "../../../hypium/index";
 import Utils from './Util.test';
 import {quitErrorMsg} from './Util.test';
 

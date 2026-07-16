@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../hypium/index';
 // import { taskpool } from '@kit.ArkTS';
 import { printArgs1, } from '../testability/pages/TaskMethodTest';
 import { BusinessError } from '@kit.BasicServicesKit';

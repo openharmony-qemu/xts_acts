@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level, beforeAll, afterEach } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, it, expect, Level, beforeAll, afterEach } from '../../../hypium/index';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import common from '@ohos.app.ability.common';

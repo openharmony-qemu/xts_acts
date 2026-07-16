@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
+import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium/index';
 import sleep from './Util.test';
 
 export default function atomicIntTest() {

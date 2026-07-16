@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "@ohos/hypium-binary/src/main/indexStatic";
+} from "../../../../../hypium/index";
 
 type F_args_type_evaluation = (p: string) => number
 type F_fcall_0 = (p: string) => number

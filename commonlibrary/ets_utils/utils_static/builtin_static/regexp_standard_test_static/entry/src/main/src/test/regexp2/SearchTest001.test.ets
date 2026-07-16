@@ -20,7 +20,7 @@
  * are awkward to express inline without drowning cases in try/catch noise.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium-binary/src/main/indexStatic';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 import { regexpSymbolSearch } from './RegExpSymbols';
 import {

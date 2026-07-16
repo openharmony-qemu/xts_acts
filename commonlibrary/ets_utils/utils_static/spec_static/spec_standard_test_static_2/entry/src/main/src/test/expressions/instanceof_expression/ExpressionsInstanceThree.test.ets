@@ -25,7 +25,7 @@ import {
   TestType,
   Size,
   Level
-} from "@ohos/hypium-binary/src/main/indexStatic";
+} from "../../../../../hypium/index";
 import Utils from '../../Util.test'
 import { I8, J, A17, B, C } from '../../Util.test'
 
