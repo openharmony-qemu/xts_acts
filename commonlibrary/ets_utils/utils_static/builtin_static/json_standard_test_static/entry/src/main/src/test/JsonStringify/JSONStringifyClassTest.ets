@@ -624,7 +624,7 @@ export default function JSONStringifyClassBasicTest(): void {
     it('JSONStringify_Class_Interface_004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const obj = new Test016MyClass();
       let result: string = JSON.stringify(obj);
-      expect(result).assertEqual('{"prop1":"value1", "prop2":42}');
+      expect(result).assertEqual('{"prop1":"value1","prop2":42}');
     });
 
     /**

@@ -1116,7 +1116,7 @@ export default function etsIntlPtsFunTest(): void {
       let options: Intl.DateTimeFormatOptions = { timeZone: 'UTC' };
       let value = date.toLocaleString('zh', options);
       console.log('DateTest007 :' + value);
-      expect(value).assertEqual('1970/1/1 上午12:00:00');
+      expect(value).assertEqual('1970/1/1 00:00:00');
     })
 
     /**

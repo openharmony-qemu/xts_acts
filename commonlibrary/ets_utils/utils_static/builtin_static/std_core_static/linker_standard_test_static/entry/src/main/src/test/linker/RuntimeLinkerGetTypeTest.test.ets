@@ -1188,8 +1188,8 @@ export default function RuntimeLinkerGetTypeTest(): void {
      */
     it('testRuntimeLinkerGetType069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const linker = getBootRuntimeLinker()
-      const type = linker.getType("std.core.Error")
-      expect(type!.toString()).assertEqual("std.core.Error")
+      const type = linker.getType("escompat.Error")
+      expect(type!.toString()).assertEqual("escompat.Error")
     });
 
     /**

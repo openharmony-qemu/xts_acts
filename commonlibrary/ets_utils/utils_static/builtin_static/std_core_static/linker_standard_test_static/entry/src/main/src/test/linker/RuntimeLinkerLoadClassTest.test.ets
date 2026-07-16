@@ -476,15 +476,15 @@ export default function RuntimeLinkerLoadClassTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_RUNTIME_LINKER_LOAD_CLASS_0300
      * @tc.name testRuntimeLinkerLoadClass030
-     * @tc.desc Verify loadClass can load std.core.Error with init true
+     * @tc.desc Verify loadClass can load escompat.Error with init true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testRuntimeLinkerLoadClass030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const linker = getBootRuntimeLinker()
-      const cls = linker.loadClass("std.core.Error", true)
-      expect(cls.getName()).assertEqual("std.core.Error")
+      const cls = linker.loadClass("escompat.Error", true)
+      expect(cls.getName()).assertEqual("escompat.Error")
     });
 
     /**
@@ -1192,15 +1192,15 @@ export default function RuntimeLinkerLoadClassTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_RUNTIME_LINKER_LOAD_CLASS_0700
      * @tc.name testRuntimeLinkerLoadClass070
-     * @tc.desc Verify loadClass can load std.core.Error class with correct name
+     * @tc.desc Verify loadClass can load escompat.Error class with correct name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testRuntimeLinkerLoadClass070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const linker = getBootRuntimeLinker()
-      const cls = linker.loadClass("std.core.Error", false)
-      expect(cls.getName()).assertEqual("std.core.Error")
+      const cls = linker.loadClass("escompat.Error", false)
+      expect(cls.getName()).assertEqual("escompat.Error")
     });
 
     /**
