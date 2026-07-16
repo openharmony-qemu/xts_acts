@@ -914,6 +914,7 @@ export default function ObjectGetOwnPropertyNamesTest(): void {
     it('testObjectGetOwnPropertyNames5000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: int[] = [];
       let names: string[] = Object.getOwnPropertyNames(arr as Object);
+      expect(names.includes("length")).assertTrue();
     });
 
     /**
@@ -928,6 +929,10 @@ export default function ObjectGetOwnPropertyNamesTest(): void {
       let arr: int[] = [10, 20, 30];
       let names: string[] = Object.getOwnPropertyNames(arr as Object);
       expect(names.length).assertEqual(4);
+      expect(names[0]).assertEqual('0');
+      expect(names[1]).assertEqual('1');
+      expect(names[2]).assertEqual('2');
+      expect(names[3]).assertEqual('length');
     });
 
     /**
@@ -942,6 +947,9 @@ export default function ObjectGetOwnPropertyNamesTest(): void {
       let s: string = 'ab';
       let names: string[] = Object.getOwnPropertyNames(s as Object);
       expect(names.length).assertEqual(3);
+      expect(names[0]).assertEqual('0');
+      expect(names[1]).assertEqual('1');
+      expect(names[2]).assertEqual('length');
     });
 
     /**
@@ -958,6 +966,8 @@ export default function ObjectGetOwnPropertyNamesTest(): void {
       p.age = 40;
       let names: string[] = Object.getOwnPropertyNames(p);
       expect(names.length).assertEqual(2);
+      expect(names[0]).assertEqual('name');
+      expect(names[1]).assertEqual('age');
     });
 
     /**
@@ -1015,6 +1025,8 @@ export default function ObjectGetOwnPropertyNamesTest(): void {
       } as Record<string, Any>;
       let names: string[] = Object.getOwnPropertyNames(rec);
       expect(names.length).assertEqual(10);
+      expect(names[0]).assertEqual('a0');
+      expect(names[9]).assertEqual('a9');
     });
 
     /**

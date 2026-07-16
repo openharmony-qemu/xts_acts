@@ -551,7 +551,8 @@ export default function ObjectEntriesTest(): void {
       let rec: Record<string, Any> = { "key": "val" } as Record<string, Any>;
       let entries = Object.entries(rec);
       let entryKey: string = entries[0]![0];
-      expect(typeof entryKey).assertEqual('string');
+      expect(entryKey).assertEqual("key");
+      expect(entries[0]![1] as string).assertEqual("val");
     });
 
     /**
@@ -1636,6 +1637,7 @@ export default function ObjectEntriesTest(): void {
       let rec: Record<string, Any> = { "obj": new Object() } as Record<string, Any>;
       let entries = Object.entries(rec);
       let val: Object = entries[0]![1] as Object;
+      expect(val.toString()).assertEqual("[object Object]");
     });
 
     /**
@@ -2105,6 +2107,10 @@ export default function ObjectEntriesTest(): void {
       p.age = 40;
       let entries = Object.entries(p);
       expect(entries.length).assertEqual(2);
+      expect(entries[0]![0]).assertEqual("name");
+      expect(entries[0]![1] as string).assertEqual("Bob");
+      expect(entries[1]![0]).assertEqual("age");
+      expect(entries[1]![1] as int).assertEqual(40);
     });
 
     /**

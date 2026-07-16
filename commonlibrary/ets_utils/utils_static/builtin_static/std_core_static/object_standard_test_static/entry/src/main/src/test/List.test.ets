@@ -1,4 +1,3 @@
-
 import objectAssignTest from './object/ObjectAssign.test';
 import objectConstructorTest from './object/ObjectConstructor.test';
 import objectEntriesTest from './object/ObjectEntries.test';

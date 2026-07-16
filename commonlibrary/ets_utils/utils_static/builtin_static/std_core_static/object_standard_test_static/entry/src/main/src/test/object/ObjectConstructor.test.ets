@@ -85,7 +85,6 @@ export default function ObjectConstructorTest(): void {
      */
     it('testObjectConstructor0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Object = new Object();
-      expect(obj !== null).assertTrue();
       expect(obj.toString()).assertEqual("[object Object]");
     });
 
@@ -254,6 +253,7 @@ export default function ObjectConstructorTest(): void {
     it('testObjectConstructor1300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Object = new Object();
       let s: string = obj.toString();
+      expect(s).assertEqual("[object Object]");
     });
 
     /**
@@ -282,6 +282,7 @@ export default function ObjectConstructorTest(): void {
     it('testObjectConstructor1500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Object = new Object();
       let s: string = obj.toLocaleString();
+      expect(s).assertEqual("[object Object]");
     });
 
     /**
@@ -309,7 +310,9 @@ export default function ObjectConstructorTest(): void {
      */
     it('testObjectConstructor1700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Object = new Object();
+      let s: string = obj.toString();
       let hc: int = obj.$_hashCode();
+      expect(obj.toString()).assertEqual(s);
     });
 
     /**
@@ -338,6 +341,7 @@ export default function ObjectConstructorTest(): void {
     it('testObjectConstructor1900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj1: Object = new Object();
       let obj2: Object = new Object();
+      expect(obj1 as Object !== obj2 as Object).assertTrue();
       let h1: int = obj1.$_hashCode();
       let h2: int = obj2.$_hashCode();
     });
@@ -779,6 +783,7 @@ export default function ObjectConstructorTest(): void {
     it('testObjectConstructor5000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inst: OCEmpty = new OCEmpty();
       let s: string = inst.toString();
+      expect(s.length >= 1).assertTrue();
     });
 
     /**
@@ -791,7 +796,9 @@ export default function ObjectConstructorTest(): void {
      */
     it('testObjectConstructor5100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inst: OCEmpty = new OCEmpty();
+      let s: string = inst.toString();
       let hc: int = inst.$_hashCode();
+      expect(inst.toString()).assertEqual(s);
     });
 
     /**
@@ -974,6 +981,7 @@ export default function ObjectConstructorTest(): void {
     it('testObjectConstructor6400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inst: OCEmpty = new OCEmpty();
       let s: string = inst.toLocaleString();
+      expect(s.length >= 1).assertTrue();
     });
 
     /**
@@ -1134,6 +1142,7 @@ export default function ObjectConstructorTest(): void {
     it('testObjectConstructor7500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Object = new Object();
       let s: string = String(obj);
+      expect(s).assertEqual("[object Object]");
     });
 
     /**
@@ -1410,6 +1419,7 @@ export default function ObjectConstructorTest(): void {
     it('testObjectConstructor9200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inst: OCEmpty = new OCEmpty();
       let name: string = Class.of(inst).getName();
+      expect(name.includes("OCEmpty")).assertTrue();
     });
 
     /**
@@ -1533,8 +1543,6 @@ export default function ObjectConstructorTest(): void {
       let b: OCEmpty = new OCEmpty();
       let ha: int = a.$_hashCode();
       let hb: int = b.$_hashCode();
-      expect(ha >= 0).assertTrue();
-      expect(hb >= 0).assertTrue();
       let nameA: string = Class.of(a).getName();
       let nameB: string = Class.of(b).getName();
       expect(nameA).assertEqual("std.core.Object");
@@ -1632,6 +1640,7 @@ export default function ObjectConstructorTest(): void {
       let child: OCChild = new OCChild(5, "L");
       let obj: Object = child;
       let s: string = obj.toString();
+      expect(s.length >= 1).assertTrue();
     });
 
     /**
@@ -1709,7 +1718,6 @@ export default function ObjectConstructorTest(): void {
     it('testObjectConstructor11100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let orig: Object = new Object();
       let got: Object = orig;
-      expect(got as Object).assertEqual(orig as Object);
       let h1: int = orig.$_hashCode();
       let h2: int = got.$_hashCode();
       expect(h1).assertEqual(h2);

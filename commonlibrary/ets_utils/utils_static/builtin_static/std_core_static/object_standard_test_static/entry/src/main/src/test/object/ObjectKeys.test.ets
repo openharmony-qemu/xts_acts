@@ -318,6 +318,8 @@ export default function ObjectKeysTest(): void {
       } as Record<string, Any>;
       let mixedKeys: string[] = Object.keys(mixedRec);
       expect(mixedKeys.length).assertEqual(2);
+      expect(mixedKeys[0]).assertEqual('nullVal');
+      expect(mixedKeys[1]).assertEqual('numVal');
     });
 
     /**
@@ -650,6 +652,10 @@ export default function ObjectKeysTest(): void {
       } as Record<string, Any>;
       let keys: string[] = Object.keys(record);
       expect(keys.length).assertEqual(4);
+      expect(keys[0]).assertEqual('p1');
+      expect(keys[1]).assertEqual('p2');
+      expect(keys[2]).assertEqual('p3');
+      expect(keys[3]).assertEqual('p4');
     });
 
     /**
@@ -667,6 +673,8 @@ export default function ObjectKeysTest(): void {
       } as Record<string, Any>;
       let twoKeys: string[] = Object.keys(twoPropRec);
       expect(twoKeys.length).assertEqual(2);
+      expect(twoKeys[0]).assertEqual('a');
+      expect(twoKeys[1]).assertEqual('b');
     });
 
     /**
@@ -970,6 +978,11 @@ export default function ObjectKeysTest(): void {
         'w': null
       } as Record<string, Any>;
       let keys: string[] = Object.keys(record);
+      expect(keys.length).assertEqual(4);
+      expect(keys[0]).assertEqual('x');
+      expect(keys[1]).assertEqual('y');
+      expect(keys[2]).assertEqual('z');
+      expect(keys[3]).assertEqual('w');
       expect(keys.length).assertEqual(Object.values(record).length);
       expect(keys.length).assertEqual(Object.entries(record).length);
       expect(keys.length).assertEqual(Object.keys(record).length);
@@ -1366,6 +1379,9 @@ export default function ObjectKeysTest(): void {
       let vals = Object.values(rec);
       let entries = Object.entries(rec);
       expect(keys.length).assertEqual(3);
+      expect(keys[0]).assertEqual('a');
+      expect(keys[1]).assertEqual('b');
+      expect(keys[2]).assertEqual('c');
       expect(keys.length).assertEqual(vals.length);
       expect(keys.length).assertEqual(entries.length);
     });

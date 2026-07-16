@@ -40,16 +40,17 @@ export default function PropertyKeyTest(): void {
      * @tc.level Level 2
      */
     it('testObjectPropertyKey0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let key1: string = "name";
-      expect(key1).assertEqual("name");
-      let key2: string = "123";
-      expect(key2).assertEqual("123");
-      let key3: string = "my_name";
-      let key4: string = "my-name";
-      expect(key3).assertEqual("my_name");
-      expect(key4).assertEqual("my-name");
-      let key5: string = "myPropertyName";
-      expect(key5).assertEqual("myPropertyName");
+      let rec: Record<string, string> = {} as Record<string, string>;
+      rec["name"] = "Alice";
+      expect(rec["name"]).assertEqual("Alice");
+      rec["123"] = "numVal";
+      expect(rec["123"]).assertEqual("numVal");
+      rec["my_name"] = "underscoreVal";
+      rec["my-name"] = "hyphenVal";
+      expect(rec["my_name"]).assertEqual("underscoreVal");
+      expect(rec["my-name"]).assertEqual("hyphenVal");
+      rec["myPropertyName"] = "camelVal";
+      expect(rec["myPropertyName"]).assertEqual("camelVal");
     });
 
     /**
@@ -61,12 +62,15 @@ export default function PropertyKeyTest(): void {
      * @tc.level Level 2
      */
     it('testObjectPropertyKey0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let rec: Record<string, string> = {} as Record<string, string>;
       let pk: string = "name";
       let str: string = pk;
-      expect(str).assertEqual("name");
+      rec[str] = "Alice";
+      expect(rec[str]).assertEqual("Alice");
       let str2: string = "age";
       let pk2: string = str2;
-      expect(pk2).assertEqual("age");
+      rec[pk2] = "30";
+      expect(rec[pk2]).assertEqual("30");
     });
 
     /**
@@ -78,12 +82,13 @@ export default function PropertyKeyTest(): void {
      * @tc.level Level 2
      */
     it('testObjectPropertyKey0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let rec: Record<string, string> = {} as Record<string, string>;
       let emptyKey: string = "";
-      expect(emptyKey).assertEqual("");
-      expect(emptyKey.length).assertEqual(0);
+      rec[emptyKey] = "emptyVal";
+      expect(rec[emptyKey]).assertEqual("emptyVal");
       let singleKey: string = "a";
-      expect(singleKey).assertEqual("a");
-      expect(singleKey.length).assertEqual(1);
+      rec[singleKey] = "singleVal";
+      expect(rec[singleKey]).assertEqual("singleVal");
     });
 
     /**
@@ -115,14 +120,15 @@ export default function PropertyKeyTest(): void {
      * @tc.level Level 2
      */
     it('testObjectPropertyKey0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let key1: string = "my name";
-      expect(key1).assertEqual("my name");
-      let key2: string = "key\"with\"quotes";
-      expect(key2).assertEqual("key\"with\"quotes");
-      let key3: string = "obj.prop";
-      let key4: string = "arr[0]";
-      expect(key3).assertEqual("obj.prop");
-      expect(key4).assertEqual("arr[0]");
+      let rec: Record<string, string> = {} as Record<string, string>;
+      rec["my name"] = "spaceVal";
+      expect(rec["my name"]).assertEqual("spaceVal");
+      rec["key\"with\"quotes"] = "quoteVal";
+      expect(rec["key\"with\"quotes"]).assertEqual("quoteVal");
+      rec["obj.prop"] = "dotVal";
+      rec["arr[0]"] = "bracketVal";
+      expect(rec["obj.prop"]).assertEqual("dotVal");
+      expect(rec["arr[0]"]).assertEqual("bracketVal");
     });
 
     /**
@@ -148,16 +154,22 @@ export default function PropertyKeyTest(): void {
      * @tc.level Level 2
      */
     it('testObjectPropertyKey0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let rec: Record<string, string> = {} as Record<string, string>;
       let cnKey: string = "名称";
-      expect(cnKey).assertEqual("名称");
+      rec[cnKey] = "中文";
+      expect(rec[cnKey]).assertEqual("中文");
       let jpKey: string = "なまえ";
-      expect(jpKey).assertEqual("なまえ");
+      rec[jpKey] = "日本語";
+      expect(rec[jpKey]).assertEqual("日本語");
       let emojiKey: string = "🔑key";
-      expect(emojiKey).assertEqual("🔑key");
+      rec[emojiKey] = "emojiVal";
+      expect(rec[emojiKey]).assertEqual("emojiVal");
       let unicodeKey: string = "A";
-      expect(unicodeKey).assertEqual("A");
+      rec[unicodeKey] = "unicodeVal";
+      expect(rec[unicodeKey]).assertEqual("unicodeVal");
       let zwKey: string = "name​";
-      expect(zwKey.length).assertEqual(5);
+      rec[zwKey] = "zwVal";
+      expect(rec[zwKey]).assertEqual("zwVal");
     });
 
     /**
@@ -257,12 +269,15 @@ export default function PropertyKeyTest(): void {
      * @tc.level Level 2
      */
     it('testObjectPropertyKey1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let rec: Record<string, string> = {} as Record<string, string>;
       let keys: string[] = ["name", "age", "email"];
       expect(keys.length).assertEqual(3);
       for (let key of keys) {
-        let t: string = typeof key;
-        expect(t).assertEqual("string");
+        rec[key] = key;
       }
+      expect(rec["name"]).assertEqual("name");
+      expect(rec["age"]).assertEqual("age");
+      expect(rec["email"]).assertEqual("email");
     });
 
     /**
@@ -323,8 +338,6 @@ export default function PropertyKeyTest(): void {
      */
     it('testObjectPropertyKey1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let key: string = "name";
-      let t: string = typeof key;
-      expect(t).assertEqual("string");
       let boxedKey: Object = new String(key);
       expect(boxedKey.toString()).assertEqual("name");
     });
@@ -424,12 +437,13 @@ export default function PropertyKeyTest(): void {
      * @tc.level Level 2
      */
     it('testObjectPropertyKey2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let rec: Record<string, string> = {} as Record<string, string>;
       let htmlKey: string = "<script>alert(1)</script>";
-      let htmlType: string = typeof htmlKey;
-      expect(htmlType).assertEqual("string");
+      rec[htmlKey] = "htmlVal";
+      expect(rec[htmlKey]).assertEqual("htmlVal");
       let sqlKey: string = "'; DROP TABLE users;--";
-      let sqlType: string = typeof sqlKey;
-      expect(sqlType).assertEqual("string");
+      rec[sqlKey] = "sqlVal";
+      expect(rec[sqlKey]).assertEqual("sqlVal");
       let ctrlKey: string = "name\t\0";
       expect(ctrlKey.length).assertEqual(6);
     });

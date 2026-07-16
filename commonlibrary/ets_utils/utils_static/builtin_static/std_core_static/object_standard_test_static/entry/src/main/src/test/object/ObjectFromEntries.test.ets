@@ -275,6 +275,7 @@ export default function ObjectFromEntriesTest(): void {
       let inputPairs: Array<[string, Any]> = [["k", 1]];
       let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
       let resultObject: Object = resultRecord;
+      expect(resultRecord["k"] as int).assertEqual(1);
     });
 
     /**
@@ -303,7 +304,9 @@ export default function ObjectFromEntriesTest(): void {
     it('testObjectFromEntries0170', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputPairs: Array<[string, Any]> = [["k", 1]];
       let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      let expectedVal: int = resultRecord["k"] as int;
       let hashCode: int = resultRecord.$_hashCode();
+      expect(resultRecord["k"] as int).assertEqual(expectedVal);
     });
 
     /**
