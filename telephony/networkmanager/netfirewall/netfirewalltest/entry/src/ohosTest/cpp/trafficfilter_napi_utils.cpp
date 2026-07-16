@@ -13,10 +13,15 @@
  * limitations under the License.
  */
 
+#include "napi/native_api.h"
 #include "trafficfilter_napi_utils.h"
 #include "hilog/log.h"
 #include <cstring>
 #include "cstdio"
+#include <arpa/inet.h>
+#include <string>
+#include "network/netmanager_ext/net_trafficfilter.h"
+
 
 static const int GLOBAL_NETSTACK = 0xFF00;
 static const char *TAG = "[trafficfilter_utils]";
@@ -40,41 +45,66 @@ OH_TrafficFilter_Redirector* TrafficFilterNapiUtils::GetRedirectorFromJs(napi_en
     return reinterpret_cast<OH_TrafficFilter_Redirector*>(ptr);
 }
 
-bool TrafficFilterNapiUtils::ParseIPAddress(napi_env env, napi_value jsObj, OH_TrafficFilter_IPAddress &ipAddr)
+bool TrafficFilterNapiUtils::ParseIPAddrElement(napi_env env, napi_value element,
+                                                int32_t family, OH_TrafficFilter_IPAddress& outIP)
 {
+    size_t bufSize = 0;
+    napi_get_value_string_utf8(env, element, nullptr, 0, &bufSize);
+    std::string ipString(bufSize, '\0');
+    napi_get_value_string_utf8(env, element, &ipString[0], bufSize + 1, &bufSize);
+    ipString.resize(bufSize);
+    
     napi_valuetype type;
-    napi_typeof(env, jsObj, &type);
-    if (type != napi_object) {
+    if (napi_typeof(env, element, &type) != napi_ok || type != napi_string) {
         return false;
     }
 
-    napi_value familyValue;
-    napi_get_named_property(env, jsObj, "family", &familyValue);
-    uint32_t family;
-    napi_get_value_uint32(env, familyValue, &family);
-    ipAddr.family = static_cast<OH_TrafficFilter_IPFamily>(family);
+    memset(outIP.addr, 0, OH_TRAFFICFILTER_IP_ADDRLEN);
+    int af = (family == OH_TRAFFICFILTER_IP_FAMILY_V6) ? AF_INET6 : AF_INET;
+    if (inet_pton(af, ipString.c_str(), outIP.addr) != 1) {
+        return false;
+    }
+    return true;
+}
 
-    napi_value addrValue;
-    napi_get_named_property(env, jsObj, "addr", &addrValue);
-    
-    bool isArray;
-    napi_is_array(env, addrValue, &isArray);
+bool TrafficFilterNapiUtils::ParseIPAddress(napi_env env,
+                                            napi_value obj,
+                                            OH_TrafficFilter_IPAddress& outIP)
+{
+    napi_valuetype type;
+    napi_value familyVal = nullptr;
+    if (napi_get_named_property(env, obj, "family", &familyVal) != napi_ok ||
+        napi_typeof(env, familyVal, &type) != napi_ok || type != napi_number) {
+        return false;
+    }
+    int32_t family = 0;
+    napi_get_value_int32(env, familyVal, &family);
+    if (family != OH_TRAFFICFILTER_IP_FAMILY_V4 && family != OH_TRAFFICFILTER_IP_FAMILY_V6) {
+        return false;
+    }
+    outIP.family = static_cast<OH_TrafficFilter_IPFamily>(family);
+
+    napi_value addrVal = nullptr;
+    if (napi_get_named_property(env, obj, "addr", &addrVal) != napi_ok) {
+        return false;
+    }
+    bool isArray = false;
+    napi_is_array(env, addrVal, &isArray);
     if (!isArray) {
         return false;
     }
-
-    uint32_t length;
-    napi_get_array_length(env, addrValue, &length);
-
-    for (uint32_t i = 0; i < length; i++) {
-        napi_value elem;
-        napi_get_element(env, addrValue, i, &elem);
-        uint32_t val;
-        napi_get_value_uint32(env, elem, &val);
-        ipAddr.addr[i] = static_cast<uint8_t>(val);
+    uint32_t length = 0;
+    napi_status status = napi_get_array_length(env, addrVal, &length);
+    if (status != napi_ok || length == 0) {
+        return false;
     }
-
-    return true;
+    napi_value element;
+    status = napi_get_element(env, addrVal, 0, &element);
+    if (status != napi_ok) {
+        return false;
+    }
+    
+    return ParseIPAddrElement(env, element, family, outIP);
 }
 
 bool TrafficFilterNapiUtils::ParseIPCidr(napi_env env, napi_value jsObj, OH_TrafficFilter_IPCidr &cidr)

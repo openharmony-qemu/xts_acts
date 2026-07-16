@@ -3,6 +3,7 @@ import TextCommonTest from './TextCommonTest/TextCommon.test';
 import TextCommonUITest from './TextCommonTest/TextCommonUI.test';
 import EditDecorationThicknessScaleTest from './EditCommonTest/EditDecorationThicknessScale.test';
 import SetTextSelectionClearPolicyTest from './UIContext/SetTextSelectionClearPolicy.test';
+import TextSymbolWithEnvFontScaleTest from './WithEnvTest/TextSymbolWithEnvFontScale.test';
 import TextMenuItemIdTest from './TextMenuItemIdTest/TextMenuItemId.test';
 
 export default function testsuite() {
@@ -10,4 +11,5 @@ export default function testsuite() {
   TextCommonUITest();
   EditDecorationThicknessScaleTest();
   SetTextSelectionClearPolicyTest();
+  TextSymbolWithEnvFontScaleTest();
 }

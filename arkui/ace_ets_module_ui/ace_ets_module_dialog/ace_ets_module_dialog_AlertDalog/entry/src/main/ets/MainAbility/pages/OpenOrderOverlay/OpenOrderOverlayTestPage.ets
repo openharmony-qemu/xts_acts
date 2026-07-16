@@ -300,6 +300,85 @@ struct OpenOrderOverlayTestPage {
             router.back();
           })
       }
+      Row({ space: 10 }) {
+        Button('levelUniqueId 0')
+          .id('btn_uniqueid_0')
+          .height('5%')
+          .width('20%')
+          .onClick(async () => {
+            let componentContent = new ComponentContent(
+              this.uiContext, wrapBuilder<[Params]>(builderText),
+              new Params('UniqueId0', { x: 0, y: 80 })
+            );
+            try {
+              await this.overlayNode.openOrderOverlay(undefined, {
+                levelMode: LevelMode.EMBEDDED,
+                levelUniqueId: 0
+              });
+              this.resultText = 'Success: EMBEDDED uniqueId=0';
+              this.contentArray.push(componentContent);
+            } catch (error) {
+              this.resultText = 'Error: ' + (error as Error).message;
+            }
+          })
+        Button('levelUniqueId 0')
+          .id('btn_uniqueid_0')
+          .height('5%')
+          .width('20%')
+          .onClick(async () => {
+            let componentContent = new ComponentContent(
+              this.uiContext, wrapBuilder<[Params]>(builderText),
+              new Params('UniqueId0', { x: 0, y: 80 })
+            );
+            try {
+              await this.overlayNode.openOrderOverlay(null, {
+                levelMode: LevelMode.EMBEDDED,
+                levelUniqueId: 0
+              });
+              this.resultText = 'Success: EMBEDDED uniqueId=0';
+              this.contentArray.push(componentContent);
+            } catch (error) {
+              this.resultText = 'Error: ' + (error as Error).message;
+            }
+          })
+
+        Button('levelUniqueId 0')
+          .id('btn_uniqueid_0')
+          .height('5%')
+          .width('20%')
+          .onClick(async () => {
+            let componentContent = new ComponentContent(
+              this.uiContext, wrapBuilder<[Params]>(builderText),
+              new Params('UniqueId0', { x: 0, y: 80 })
+            );
+            try {
+              await this.overlayNode.openOrderOverlay(componentContent, undefined);
+              this.resultText = 'Success: EMBEDDED uniqueId=0';
+              this.contentArray.push(componentContent);
+            } catch (error) {
+              this.resultText = 'Error: ' + (error as Error).message;
+            }
+          })
+
+        Button('levelUniqueId 0')
+          .id('btn_uniqueid_0')
+          .height('5%')
+          .width('20%')
+          .onClick(async () => {
+            let componentContent = new ComponentContent(
+              this.uiContext, wrapBuilder<[Params]>(builderText),
+              new Params('UniqueId0', { x: 0, y: 80 })
+            );
+            try {
+              await this.overlayNode.openOrderOverlay(componentContent, null);
+              this.resultText = 'Success: EMBEDDED uniqueId=0';
+              this.contentArray.push(componentContent);
+            } catch (error) {
+              this.resultText = 'Error: ' + (error as Error).message;
+            }
+          })
+
+      }
     }
     .width('100%')
     .height('100%')

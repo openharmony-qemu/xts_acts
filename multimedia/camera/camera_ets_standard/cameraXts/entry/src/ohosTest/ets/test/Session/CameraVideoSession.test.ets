@@ -234,17 +234,25 @@ async function commitPreconfigCallback(done: Function, testName: string, type: c
       mPreviewOutput = mCameraManager.createPreviewOutput(indexSurfaceId);
       mVideoOutput = mCameraManager.createVideoOutput(mVideoSurfaceId);
       await beforeCommit(testName, mPreviewOutput, mVideoOutput);
+      let callbackDone = false;
       mVideoSession.commitConfig((error) => {
         if (error !== undefined && error.code !== 0) {
           console.error(TAG,
             testName + ' failed to commitConfig, err: ' + error.code + ', msg: ' + error.message);
           expect(error.code == cameraErrorCode.SERVICE_FATAL_ERROR).assertTrue();
-          done();
         } else {
           console.info(TAG, testName + ' session commitConfig passed.');
           expect(true).assertTrue();
         }
+        callbackDone = true;
       });
+      for (let i = 0; i < 10; i++) {
+        await sleep(200);
+        if (callbackDone) {
+          break;
+        }
+      }
+      expect(callbackDone).assertTrue();
       await releaseVideoSession();
     }
     done();
@@ -278,17 +286,25 @@ async function commitPreconfigCallbackAbnormal(done: Function, testName: string,
       mPreviewOutput = mCameraManager.createPreviewOutput(indexSurfaceId);
       mVideoOutput = mCameraManager.createVideoOutput(mVideoSurfaceId);
       await beforeCommit(testName, mPreviewOutput, mVideoOutput);
+      let callbackDone = false;
       mVideoSession.commitConfig((error) => {
         if (error !== undefined && error.code !== 0) {
           console.error(TAG,
             testName + ' failed to commitConfig, err: ' + error.code + ', msg: ' + error.message);
           expect(error.code == cameraErrorCode.SERVICE_FATAL_ERROR).assertTrue();
-          done();
         } else {
           console.info(TAG, testName + ' session commitConfig passed.');
           expect(true).assertTrue();
         }
+        callbackDone = true;
       });
+      for (let i = 0; i < 10; i++) {
+        await sleep(200);
+        if (callbackDone) {
+          break;
+        }
+      }
+      expect(callbackDone).assertTrue();
       await releaseVideoSession();
     }
     done();
@@ -609,17 +625,25 @@ export default function CameraVideoSessionTest() {
             mVideoOutput = mCameraManager.createVideoOutput(mVideoProfile, mVideoSurfaceId);
             mPreviewOutput = mCameraManager.createPreviewOutput(mPreviewProfile, indexSurfaceId);
             await beforeCommit(testName, mPreviewOutput, mVideoOutput);
+            let callbackDone = false;
             mVideoSession.commitConfig((error) => {
               if (error !== undefined && error.code !== 0) {
                 console.error(TAG,
                   testName + ' failed to commitConfig, err: ' + error.code + ', msg: ' + error.message);
                 expect(error.code == cameraErrorCode.SERVICE_FATAL_ERROR).assertTrue();
-                done();
               } else {
                 console.info(TAG, testName + ' session commitConfig passed.');
                 expect(true).assertTrue();
               }
+              callbackDone = true;
             });
+            for (let i = 0; i < 10; i++) {
+              await sleep(200);
+              if (callbackDone) {
+                break;
+              }
+            }
+            expect(callbackDone).assertTrue();
             await releaseVideoSession();
           }
         }
@@ -873,17 +897,25 @@ export default function CameraVideoSessionTest() {
             expect(isEmpty(mVideoSession)).assertFalse();
             console.info(TAG, testName + ' session created successfully.');
             await videoSessionCommitConfig(testName);
+            let callbackDone = false;
             mVideoSession.start(async (error) => {
               if (error !== undefined && error.code !== 0) {
                 console.error(TAG, testName + ' failed to start, err: ' + error.code + ', msg: ' + error.message);
                 await mVideoSession.release();
                 expect().assertFail();
-                done();
               } else {
                 console.info(TAG, testName + ' session start passed.');
                 expect(true).assertTrue();
               }
+              callbackDone = true;
             });
+            for (let i = 0; i < 10; i++) {
+              await sleep(200);
+              if (callbackDone) {
+                break;
+              }
+            }
+            expect(callbackDone).assertTrue();
             await mVideoSession.stop();
             console.info(TAG, testName + ' session stop passed.');
             await mVideoSession.release();
@@ -962,17 +994,25 @@ export default function CameraVideoSessionTest() {
         } else {
           expect(isEmpty(mVideoSession)).assertFalse();
           console.info(TAG, testName + ' session created successfully.');
+          let callbackDone = false;
           mVideoSession.start((error) => {
             if (error !== undefined && error.code !== 0) {
               console.error(TAG,
                 testName + ' failed to start, err: ' + error.code + ', msg: ' + error.message);
               expect(error.code == cameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
-              done();
             } else {
               console.info(TAG, testName + ' session start passed.');
               expect(true).assertTrue();
             }
+            callbackDone = true;
           });
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
+            if (callbackDone) {
+              break;
+            }
+          }
+          expect(callbackDone).assertTrue();
           mVideoSession.beginConfig();
           console.info(TAG, testName + ' beginConfig passed.');
           expect(true).assertTrue();
@@ -1043,17 +1083,25 @@ export default function CameraVideoSessionTest() {
             await videoSessionCommitConfig(testName);
             await mVideoSession.start();
             console.info(TAG, testName + ' session start successfully.');
+            let callbackDone = false;
             mVideoSession.stop((error) => {
               if (error !== undefined && error.code !== 0) {
                 console.error(TAG,
                   testName + ' failed to stop, err: ' + error.code + ', msg: ' + error.message);
                 expect(error.code == cameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
-                done();
               } else {
                 console.info(TAG, testName + ' session stop passed.');
                 expect(true).assertTrue();
               }
+              callbackDone = true;
             });
+            for (let i = 0; i < 10; i++) {
+              await sleep(200);
+              if (callbackDone) {
+                break;
+              }
+            }
+            expect(callbackDone).assertTrue();
             await mVideoSession.release();
           }
         }
@@ -1130,17 +1178,25 @@ export default function CameraVideoSessionTest() {
           console.info(TAG, testName + ' session created successfully.');
           await mVideoSession.start();
           console.info(TAG, testName + ' session start successfully.');
+          let callbackDone = false;
           mVideoSession.stop((error) => {
             if (error !== undefined && error.code !== 0) {
               console.error(TAG,
                 testName + ' failed to stop, err: ' + error.code + ', msg: ' + error.message);
               expect(error.code == cameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
-              done();
             } else {
               console.info(TAG, testName + ' session stop passed.');
               expect(true).assertTrue();
             }
+            callbackDone = true;
           });
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
+            if (callbackDone) {
+              break;
+            }
+          }
+          expect(callbackDone).assertTrue();
           mVideoSession.beginConfig();
           console.info(TAG, testName + ' beginConfig passed.');
           expect(true).assertTrue();
@@ -1209,20 +1265,31 @@ export default function CameraVideoSessionTest() {
         if (isEmpty(mCameraManager) && isEmpty(mSupportedModes)) {
           console.info(TAG, testName + ' cameraManager is null.');
           expect().assertFail();
+          done();
         } else {
           expect(isEmpty(mVideoSession)).assertFalse();
           console.info(TAG, testName + ' session created successfully.');
+          let callbackDone = false;
           mVideoSession.release((error) => {
             if (error !== undefined && error.code !== 0) {
               console.error(TAG,
                 testName + ' failed to release callback, err: ' + error.code + ', msg: ' + error.message);
               expect().assertFail();
+            } else {
+              console.info(TAG, testName + ' session release passed.');
+              expect(true).assertTrue();
             }
-            console.info(TAG, testName + ' session release passed.');
-            expect(true).assertTrue();
+            callbackDone = true;
           });
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
+            if (callbackDone) {
+              break;
+            }
+          }
+          expect(callbackDone).assertTrue();
+          done();
         }
-        done();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
         expect().assertFail();
@@ -1379,17 +1446,25 @@ export default function CameraVideoSessionTest() {
         } else {
           expect(isEmpty(mVideoSession)).assertFalse();
           console.info(TAG, testName + ' session created successfully.');
+          let callbackDone = false;
           mVideoSession.commitConfig((error) => {
             if (error !== undefined && error.code !== 0) {
               console.error(TAG,
                 testName + ' failed to commitConfig, err: ' + error.code + ', msg: ' + error.message);
               expect(error.code == cameraErrorCode.OPERATION_NOT_ALLOWED).assertTrue();
-              done();
             } else {
               console.info(TAG, testName + ' session commitConfig passed.');
               expect(true).assertTrue();
             }
+            callbackDone = true;
           });
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
+            if (callbackDone) {
+              break;
+            }
+          }
+          expect(callbackDone).assertTrue();
           await mVideoSession.release();
         }
         done();
@@ -1424,17 +1499,25 @@ export default function CameraVideoSessionTest() {
             expect(isEmpty(mVideoSession)).assertFalse();
             console.info(TAG, testName + ' session created successfully.');
             await videoSessionCommitConfig(testName);
+            let callbackDone = false;
             mVideoSession.commitConfig((error) => {
               if (error !== undefined && error.code !== 0) {
                 console.error(TAG,
                   testName + ' failed to commitConfig, err: ' + error.code + ', msg: ' + error.message);
                 expect(error.code == cameraErrorCode.OPERATION_NOT_ALLOWED).assertTrue();
-                done();
               } else {
                 console.info(TAG, testName + ' session commitConfig passed.');
                 expect(true).assertTrue();
               }
+              callbackDone = true;
             });
+            for (let i = 0; i < 10; i++) {
+              await sleep(200);
+              if (callbackDone) {
+                break;
+              }
+            }
+            expect(callbackDone).assertTrue();
             await mVideoSession.release();
           }
         }

@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
 * Copyright (C) 2024 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the License);
@@ -13,6 +13,6 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-export const add1 = (a: number, b: number) => {
+export const add1:(a: number, b: number)=>number = (a: number, b: number) => {
   return a + b;
 };

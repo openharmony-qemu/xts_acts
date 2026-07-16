@@ -26,7 +26,7 @@ export default function CmsgNxthdrNdkTest() {
     });
     /**
      * @tc.name   testCmsgNxthdrNormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_CMSG_NXTHDR_0200
+     * @tc.number SUB_THIRDPARTY_MUSL_CMSG_NXTHDR_0100
      * @tc.desc   TC-001: CMSG_NXTHDR basic function verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -42,7 +42,7 @@ export default function CmsgNxthdrNdkTest() {
 
     /**
      * @tc.name   testCmsgNxthdrNormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_CMSG_NXTHDR_0201
+     * @tc.number SUB_THIRDPARTY_MUSL_CMSG_NXTHDR_0200
      * @tc.desc   TC-002: CMSG_NXTHDR single control message iteration
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -58,7 +58,7 @@ export default function CmsgNxthdrNdkTest() {
 
     /**
      * @tc.name   testCmsgNxthdrNormal003
-     * @tc.number SUB_THIRDPARTY_MUSL_CMSG_NXTHDR_0202
+     * @tc.number SUB_THIRDPARTY_MUSL_CMSG_NXTHDR_0300
      * @tc.desc   TC-003: CMSG_NXTHDR multi control message iteration
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -74,7 +74,7 @@ export default function CmsgNxthdrNdkTest() {
 
     /**
      * @tc.name   testCmsgNxthdrFunc001
-     * @tc.number SUB_THIRDPARTY_MUSL_CMSG_NXTHDR_0203
+     * @tc.number SUB_THIRDPARTY_MUSL_CMSG_NXTHDR_0400
      * @tc.desc   TC-004: CMSG_NXTHDR returns NULL at end of buffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -90,7 +90,7 @@ export default function CmsgNxthdrNdkTest() {
 
     /**
      * @tc.name   testCmsgNxthdrFunc002
-     * @tc.number SUB_THIRDPARTY_MUSL_CMSG_NXTHDR_0204
+     * @tc.number SUB_THIRDPARTY_MUSL_CMSG_NXTHDR_0500
      * @tc.desc   TC-005: CMSG_NXTHDR empty buffer handling
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -106,7 +106,7 @@ export default function CmsgNxthdrNdkTest() {
 
     /**
      * @tc.name   testCmsgNxthdrSpec001
-     * @tc.number SUB_THIRDPARTY_MUSL_CMSG_NXTHDR_0205
+     * @tc.number SUB_THIRDPARTY_MUSL_CMSG_NXTHDR_0600
      * @tc.desc   TC-006: PC device symbol existence and dlsym loading
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -122,7 +122,7 @@ export default function CmsgNxthdrNdkTest() {
 
     /**
      * @tc.name   testCmsgNxthdrSpec002
-     * @tc.number SUB_THIRDPARTY_MUSL_CMSG_NXTHDR_0206
+     * @tc.number SUB_THIRDPARTY_MUSL_CMSG_NXTHDR_0700
      * @tc.desc   TC-007: non-aarch64 symbol non-existence verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -138,7 +138,7 @@ export default function CmsgNxthdrNdkTest() {
 
     /**
      * @tc.name   testCmsgNxthdrSpec003
-     * @tc.number SUB_THIRDPARTY_MUSL_CMSG_NXTHDR_0207
+     * @tc.number SUB_THIRDPARTY_MUSL_CMSG_NXTHDR_0800
      * @tc.desc   TC-008: function pointer nullptr safety check
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -154,7 +154,7 @@ export default function CmsgNxthdrNdkTest() {
 
     /**
      * @tc.name   testCmsgNxthdrSpec004
-     * @tc.number SUB_THIRDPARTY_MUSL_CMSG_NXTHDR_0208
+     * @tc.number SUB_THIRDPARTY_MUSL_CMSG_NXTHDR_0900
      * @tc.desc   TC-009: non-PC device stub mode verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

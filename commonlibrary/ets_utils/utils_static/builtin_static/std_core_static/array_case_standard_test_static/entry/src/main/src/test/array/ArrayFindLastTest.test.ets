@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from '@ohos/hypium-binary/src/main/indexStatic';
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 class FindLastItem006 {
@@ -75,6 +75,8 @@ export default function ArrayFindLastTest(): void {
       expect(result).assertEqual(20);
       if (result != undefined) {
         expect(arr.lastIndexOf(result)).assertEqual(3);
+      }else {
+        expect().assertFail();
       }
     });
 
@@ -135,9 +137,10 @@ export default function ArrayFindLastTest(): void {
       i3.value = 10;
       const arr = new Array<FindLastItem006>(i1, i2, i3);
       const result = arr.findLast((item: FindLastItem006): boolean => item.value == 10);
-      expect(result != undefined).assertTrue();
       if (result != undefined) {
         expect(result === i3).assertTrue();
+      }else {
+        expect().assertFail();
       }
     });
 
@@ -167,11 +170,11 @@ export default function ArrayFindLastTest(): void {
       const arr = new Array<number>(10, 20, 30, 20, 10);
       const first = arr.find((v: number): boolean => v == 20);
       const last = arr.findLast((v: number): boolean => v == 20);
-      expect(first != undefined).assertTrue();
-      expect(last != undefined).assertTrue();
       if (first != undefined && last != undefined) {
         expect(arr.indexOf(first)).assertEqual(1);
         expect(arr.lastIndexOf(last)).assertEqual(3);
+      }else {
+        expect().assertFail();
       }
     });
 

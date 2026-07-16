@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
 * Copyright (C) 2024 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the License);
@@ -26,7 +26,7 @@ import { addFunction, divideFunction, multiplyFunction, subtractFunction } from 
 import * as mathFunc from '../utils/UtilsObject4'
 import { sleep } from '../utils/Utils';
 
-export default function ExportFunctionTest() {
+export default function ExportFunctionTest():void {
   describe('ExportFunctionTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

@@ -26,7 +26,7 @@ export default function DfxSetCrashLogConfigNdkTest() {
     });
     /**
      * @tc.name   testDfxSetCrashLogConfigNormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_DFX_SET_CRASH_LOG_CONFIG_0101
+     * @tc.number SUB_THIRDPARTY_MUSL_DFX_SET_CRASH_LOG_CONFIG_0100
      * @tc.desc   Set crash log config with valid type and value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -34,17 +34,17 @@ export default function DfxSetCrashLogConfigNdkTest() {
      */
     it('testDfxSetCrashLogConfigNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = dfxsetcrashlogconfigndktest.dfxSetCrashLogConfigNormal001();
-      // 该函数在当前 musl 构建中为 stub，直接返回 0
-      // 在 2in1 设备上可能返回 1，在非 2in1 设备上返回 0
-      // 由于 native 层已做判断，这里只需检查返回值
-      // 但为了匹配测试框架，我们接受 0 或 1
+      // 该函数在当前 musl 构建中为 stub，直接返�?0
+      // �?2in1 设备上可能返�?1，在�?2in1 设备上返�?0
+      // 由于 native 层已做判断，这里只需检查返回�?
+      // 但为了匹配测试框架，我们接受 0 �?1
       expect(resNum === 0 || resNum === 1).assertTrue();
       done();
     });
 
     /**
      * @tc.name   testDfxSetCrashLogConfigNormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_DFX_SET_CRASH_LOG_CONFIG_0102
+     * @tc.number SUB_THIRDPARTY_MUSL_DFX_SET_CRASH_LOG_CONFIG_0200
      * @tc.desc   Set crash log config with type=1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -58,7 +58,7 @@ export default function DfxSetCrashLogConfigNdkTest() {
 
     /**
      * @tc.name   testDfxSetCrashLogConfigNormal003
-     * @tc.number SUB_THIRDPARTY_MUSL_DFX_SET_CRASH_LOG_CONFIG_0103
+     * @tc.number SUB_THIRDPARTY_MUSL_DFX_SET_CRASH_LOG_CONFIG_0300
      * @tc.desc   Set crash log config with type=255 (max uint8_t)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -72,7 +72,7 @@ export default function DfxSetCrashLogConfigNdkTest() {
 
     /**
      * @tc.name   testDfxSetCrashLogConfigNormal004
-     * @tc.number SUB_THIRDPARTY_MUSL_DFX_SET_CRASH_LOG_CONFIG_0104
+     * @tc.number SUB_THIRDPARTY_MUSL_DFX_SET_CRASH_LOG_CONFIG_0400
      * @tc.desc   Set crash log config with value=0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -86,7 +86,7 @@ export default function DfxSetCrashLogConfigNdkTest() {
 
     /**
      * @tc.name   testDfxSetCrashLogConfigBoundary001
-     * @tc.number SUB_THIRDPARTY_MUSL_DFX_SET_CRASH_LOG_CONFIG_0105
+     * @tc.number SUB_THIRDPARTY_MUSL_DFX_SET_CRASH_LOG_CONFIG_0500
      * @tc.desc   Set crash log config with large value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -100,7 +100,7 @@ export default function DfxSetCrashLogConfigNdkTest() {
 
     /**
      * @tc.name   testDfxSetCrashLogConfigBoundary002
-     * @tc.number SUB_THIRDPARTY_MUSL_DFX_SET_CRASH_LOG_CONFIG_0106
+     * @tc.number SUB_THIRDPARTY_MUSL_DFX_SET_CRASH_LOG_CONFIG_0600
      * @tc.desc   Set crash log config with max uint32_t value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -114,7 +114,7 @@ export default function DfxSetCrashLogConfigNdkTest() {
 
     /**
      * @tc.name   testDfxSetCrashLogConfigStable001
-     * @tc.number SUB_THIRDPARTY_MUSL_DFX_SET_CRASH_LOG_CONFIG_0107
+     * @tc.number SUB_THIRDPARTY_MUSL_DFX_SET_CRASH_LOG_CONFIG_0700
      * @tc.desc   Repeated calls stability
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

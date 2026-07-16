@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from '@ohos/hypium-binary/src/main/indexStatic';
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 class Item024 {
@@ -375,7 +375,7 @@ export default function ArrayIteratorTest(): void {
 
       const entryResult = entriesIter.next();
       expect(entryResult.done).assertFalse();
-      expect(entryResult.value != undefined).assertTrue();
+      expect(JSON.stringify(entryResult.value)).assertEqual("[0,10]");
     });
 
     /**
@@ -512,9 +512,10 @@ export default function ArrayIteratorTest(): void {
       const iterator = arr.$_iterator();
       expect(iterator.next().value).assertEqual(1);
       const middle = iterator.next().value;
-      expect(middle != undefined).assertTrue();
       if (middle != undefined) {
         expect(Number.isNaN(middle)).assertTrue();
+      }else {
+        expect().assertFail();
       }
       expect(iterator.next().value).assertEqual(3);
     });

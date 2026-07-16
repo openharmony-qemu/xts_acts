@@ -2891,8 +2891,87 @@ export default function sSapTest() {
       }
       done();
     })
-    // SUB_Communication_XTS_NearLink_SSap_4700     // ========== ssap.Service 入参组合6 ========== 涉及到系统参数 故上库hits仓
-    // SUB_Communication_XTS_NearLink_SSap_4800     // ========== ssap.Service 入参组合7 ========== 涉及到系统参数 故上库hits仓
+    /**
+     * @tc.name SUB_Communication_XTS_NearLinkSys_SSap_4700
+     * @tc.number SUB_Communication_XTS_NearLinkSys_SSap_4700
+     * @tc.desc ssap server addService and removeService test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('SUB_Communication_XTS_NearLinkSys_SSap_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function)  => {
+      // ========== ssap.Service 入参组合6 ==========
+      let propertyDescriptor6: Array<ssap.PropertyDescriptor> = [];
+      let properties:Array<ssap.Property>=[];
+      let descriptor6: ssap.PropertyDescriptor = {
+        serviceUuid: UUID_Upp_Invailable,
+        propertyUuid: UUID_LOW_Invailable,
+        value: bufferDesc,
+        descriptorType: ssap.PropertyDescriptorType.PROPERTY,
+        isWriteable: false,
+      };
+      propertyDescriptor6[0] = descriptor6;
+      let property6: ssap.Property = {
+        serviceUuid: UUID_Upp_Invailable,
+        propertyUuid: UUID_LOW_Invailable,
+        value: bufferCCC,
+        descriptors: propertyDescriptor6,
+        operation: ssap.Operation.WRITE_NO_RESPONSE,
+      };
+      properties[0]=property6;
+      let service :ssap.Service={
+        serviceUuid: UUID_LOW_Invailable,
+        properties: properties,
+      }
+      try {
+        ssapServer.addService(service);
+        expect().assertFail();
+      }catch(err){
+        console.info('[Nearlink_test] add services fail '+JSON.stringify(err));
+        if (err.code === 801) {
+          console.info('api is not support');
+          expect(return_boolean === false).assertTrue();
+        } else {
+          expect(err.code).assertEqual(36100044);
+        }
+      }
+      done();
+    });
+    /**
+     * @tc.name SUB_Communication_XTS_NearLinkSys_SSap_4800
+     * @tc.number SUB_Communication_XTS_NearLinkSys_SSap_4800
+     * @tc.desc ssap server addService and removeService test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('SUB_Communication_XTS_NearLinkSys_SSap_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function)  => {
+      // ========== ssap.Service 入参组合7 ==========
+      let properties:Array<ssap.Property>=[];
+      let property7: ssap.Property = {
+        serviceUuid: UUID_LOW_Invailable,
+        propertyUuid: UUID_Upp_Invailable,
+        value: bufferCCC,
+      };
+      properties[0]=property7;
+      let service :ssap.Service={
+        serviceUuid: UUID_LOW_Invailable,
+        properties: properties
+      }
+      try {
+        ssapServer.addService(service);
+        expect().assertFail();
+      }catch(err){
+        console.info('[Nearlink_test] add services fail '+JSON.stringify(err));
+        if (err.code === 801) {
+          console.info('api is not support');
+          expect(return_boolean === false).assertTrue();
+        } else {
+          expect(err.code).assertEqual(36100044);
+        }
+      }
+      done();
+    });
     /**
      * @tc.name SUB_Communication_XTS_NearLink_SSap_4900
      * @tc.number SUB_Communication_XTS_NearLink_SSap_4900

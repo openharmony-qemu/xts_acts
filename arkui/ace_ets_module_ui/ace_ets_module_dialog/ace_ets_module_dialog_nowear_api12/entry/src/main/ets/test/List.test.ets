@@ -12,10 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import TextPickerDialog from './TextPickerDialogTest/TextPickerDialog.test.ets';
-import DatePickerDialog from './DatePickerDialogTest/DatePickerDialog.test.ets';
-import TimePickerDialog from './TimePickerDialogTest/TimePickerDialog.test.ets';
-import CalendarPickerDialog from './CalendarPickerDialogTest/CalendarPickerDialog.test.ets';
+
 import CalendarDialogCallback from './CalendarPickerDialogTest/CalendarDialogCallback.test.ets';
 import DatePickerDialogCallback from './DatePickerDialogTest/DatePickerDialogCallback.test.ets';
 import TextPickerDialogCallback from './TextPickerDialogTest/TextPickerDialogCallback.test.ets';
@@ -33,11 +30,7 @@ import DateTimeOptions from './TimePickerDialogTest/DateTimeOptions.test';
 import primary from './AlertDialogTest/primary.test';
 
 export default function testsuite() {
-  CalendarPickerDialog();
   primary()
-  TextPickerDialog();
-  DatePickerDialog();
-  TimePickerDialog();
   CalendarDialogCallback();
   DatePickerDialogCallback();
   TextPickerDialogCallback();

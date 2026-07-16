@@ -40,8 +40,8 @@ import { ColorMetrics, LengthMetrics  } from '@kit.ArkUI';
 @Entry
 @Component
 struct MyAutoRefreshSample {
-  @State colorMetrics: ColorMetrics = ColorMetrics.resourceColor($r('sys.color.font_primary')).autoRefresh!(true)
-  @State colorMetrics1: ColorMetrics = ColorMetrics.resourceColor($r('sys.color.font_primary')).autoRefresh!(false)
+  @State colorMetrics: ColorMetrics = ColorMetrics.resourceColor(Color.Pink).autoRefresh!(true)
+  @State colorMetrics1: ColorMetrics = ColorMetrics.resourceColor(Color.Pink).autoRefresh!(false)
   @State lengthMetrics: LengthMetrics = LengthMetrics.resource($r('sys.float.ohos_id_button_min_width')).autoRefresh!(true)
   @State lengthMetrics1: LengthMetrics = LengthMetrics.resource($r('sys.float.ohos_id_button_min_width')).autoRefresh!(false)
  

@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the License);
@@ -21,7 +21,7 @@ initModule('../../src/testrunner/OpenHarmonyTestRunner.ets')
 @Entry
 @Component
 struct Index {
-  @State stateVar: string = 'state var';
+  @State stateVar: string = 'export_test_static';
   message: string = 'var';
 
   changeValue() {

@@ -282,6 +282,8 @@ struct BindContextMenuByIsShowBlurMaskIndex {
       Button(`bg:${this.blurIds[idx]}`)
         .id(`BindContextMenuByIsShowBlurMask_btnBgBlur_${this.fmtIdx(idx)}`)
         .fontSize(8)
+        .width('30%')
+        .height('5%')
         .onClick(() => { this.setBgShow(idx, true); })
         .bindContextMenuByIsShow(this.getBgShow(idx), this.MyMenu, {
           backgroundBlurStyle: this.blurStyles[idx],
@@ -300,6 +302,8 @@ struct BindContextMenuByIsShowBlurMaskIndex {
       Button(`mk:${this.blurIds[idx]}`)
         .id(`BindContextMenuByIsShowBlurMask_btnMaskBlur_${this.fmtIdx(idx)}`)
         .fontSize(8)
+        .width('30%')
+        .height('5%')
         .onClick(() => { this.setMaskShow(idx, true); })
         .bindContextMenuByIsShow(this.getMaskShow(idx), this.MyMenu, {
           mask: { backgroundBlurStyle: this.blurStyles[idx] },
@@ -314,27 +318,27 @@ struct BindContextMenuByIsShowBlurMaskIndex {
 
   @Builder
   buildBlurStyleGrid() {
-    Column({ space: 4 }) {
+    Column() {
       Text('backgroundBlurStyle').fontSize(10).fontWeight(FontWeight.Bold)
-      Row({ space: 2 }) {
+      Row() {
         this.buildBgBlurBtn(0)
         this.buildBgBlurBtn(1)
         this.buildBgBlurBtn(2)
         this.buildBgBlurBtn(3)
       }
-      Row({ space: 2 }) {
+      Row() {
         this.buildBgBlurBtn(4)
         this.buildBgBlurBtn(5)
         this.buildBgBlurBtn(6)
         this.buildBgBlurBtn(7)
       }
-      Row({ space: 2 }) {
+      Row() {
         this.buildBgBlurBtn(8)
         this.buildBgBlurBtn(9)
         this.buildBgBlurBtn(10)
         this.buildBgBlurBtn(11)
       }
-      Row({ space: 2 }) {
+      Row() {
         this.buildBgBlurBtn(12)
       }
     }
@@ -342,27 +346,27 @@ struct BindContextMenuByIsShowBlurMaskIndex {
 
   @Builder
   buildMaskBlurGrid() {
-    Column({ space: 4 }) {
+    Column() {
       Text('mask.backgroundBlurStyle').fontSize(10).fontWeight(FontWeight.Bold)
-      Row({ space: 2 }) {
+      Row() {
         this.buildMaskBlurBtn(0)
         this.buildMaskBlurBtn(1)
         this.buildMaskBlurBtn(2)
         this.buildMaskBlurBtn(3)
       }
-      Row({ space: 2 }) {
+      Row() {
         this.buildMaskBlurBtn(4)
         this.buildMaskBlurBtn(5)
         this.buildMaskBlurBtn(6)
         this.buildMaskBlurBtn(7)
       }
-      Row({ space: 2 }) {
+      Row() {
         this.buildMaskBlurBtn(8)
         this.buildMaskBlurBtn(9)
         this.buildMaskBlurBtn(10)
         this.buildMaskBlurBtn(11)
       }
-      Row({ space: 2 }) {
+      Row() {
         this.buildMaskBlurBtn(12)
       }
     }
@@ -370,13 +374,15 @@ struct BindContextMenuByIsShowBlurMaskIndex {
 
   @Builder
   buildBlurOptionsSection() {
-    Column({ space: 4 }) {
+    Column() {
       Text('backgroundBlurStyleOptions').fontSize(10).fontWeight(FontWeight.Bold)
-      Row({ space: 4 }) {
+      Row() {
         Column() {
           Button('pol:FW')
             .id('BindContextMenuByIsShowBlurMask_btnBlurPolicy_01')
             .fontSize(9)
+            .width('30%')
+            .height('5%')
             .onClick(() => { this.isShowPolicy0 = true; })
             .bindContextMenuByIsShow(this.isShowPolicy0, this.MyMenu, {
               backgroundBlurStyleOptions: {
@@ -393,6 +399,8 @@ struct BindContextMenuByIsShowBlurMaskIndex {
           Button('pol:AA')
             .id('BindContextMenuByIsShowBlurMask_btnBlurPolicy_02')
             .fontSize(9)
+            .width('30%')
+            .height('5%')
             .onClick(() => { this.isShowPolicy1 = true; })
             .bindContextMenuByIsShow(this.isShowPolicy1, this.MyMenu, {
               backgroundBlurStyleOptions: {
@@ -409,6 +417,8 @@ struct BindContextMenuByIsShowBlurMaskIndex {
           Button('pol:AI')
             .id('BindContextMenuByIsShowBlurMask_btnBlurPolicy_03')
             .fontSize(9)
+            .width('30%')
+            .height('5%')
             .onClick(() => { this.isShowPolicy2 = true; })
             .bindContextMenuByIsShow(this.isShowPolicy2, this.MyMenu, {
               backgroundBlurStyleOptions: {
@@ -427,6 +437,8 @@ struct BindContextMenuByIsShowBlurMaskIndex {
           Button('cm:SYS')
             .id('BindContextMenuByIsShowBlurMask_btnBlurColorMode_01')
             .fontSize(9)
+            .width('30%')
+            .height('5%')
             .onClick(() => { this.isShowClrMode0 = true; })
             .bindContextMenuByIsShow(this.isShowClrMode0, this.MyMenu, {
               backgroundBlurStyleOptions: { colorMode: ThemeColorMode.SYSTEM },
@@ -441,6 +453,8 @@ struct BindContextMenuByIsShowBlurMaskIndex {
           Button('cm:LGT')
             .id('BindContextMenuByIsShowBlurMask_btnBlurColorMode_02')
             .fontSize(9)
+            .width('30%')
+            .height('5%')
             .onClick(() => { this.isShowClrMode1 = true; })
             .bindContextMenuByIsShow(this.isShowClrMode1, this.MyMenu, {
               backgroundBlurStyleOptions: { colorMode: ThemeColorMode.LIGHT },
@@ -455,6 +469,8 @@ struct BindContextMenuByIsShowBlurMaskIndex {
           Button('cm:DRK')
             .id('BindContextMenuByIsShowBlurMask_btnBlurColorMode_03')
             .fontSize(9)
+            .width('30%')
+            .height('5%')
             .onClick(() => { this.isShowClrMode2 = true; })
             .bindContextMenuByIsShow(this.isShowClrMode2, this.MyMenu, {
               backgroundBlurStyleOptions: { colorMode: ThemeColorMode.DARK },
@@ -466,11 +482,13 @@ struct BindContextMenuByIsShowBlurMaskIndex {
           Text(this.txtClrMode2).id('BindContextMenuByIsShowBlurMask_txtBlurColorMode_03').fontSize(8)
         }
       }
-      Row({ space: 4 }) {
+      Row() {
         Column() {
           Button('ad:DEF')
             .id('BindContextMenuByIsShowBlurMask_btnBlurAdaptiveColor_01')
             .fontSize(9)
+            .width('30%')
+            .height('5%')
             .onClick(() => { this.isShowAdapt0 = true; })
             .bindContextMenuByIsShow(this.isShowAdapt0, this.MyMenu, {
               backgroundBlurStyleOptions: { adaptiveColor: AdaptiveColor.DEFAULT },
@@ -485,6 +503,8 @@ struct BindContextMenuByIsShowBlurMaskIndex {
           Button('ad:AVG')
             .id('BindContextMenuByIsShowBlurMask_btnBlurAdaptiveColor_02')
             .fontSize(9)
+            .width('30%')
+            .height('5%')
             .onClick(() => { this.isShowAdapt1 = true; })
             .bindContextMenuByIsShow(this.isShowAdapt1, this.MyMenu, {
               backgroundBlurStyleOptions: { adaptiveColor: AdaptiveColor.AVERAGE },
@@ -501,13 +521,15 @@ struct BindContextMenuByIsShowBlurMaskIndex {
 
   @Builder
   buildEffectSection() {
-    Column({ space: 4 }) {
+    Column() {
       Text('backgroundEffect').fontSize(10).fontWeight(FontWeight.Bold)
-      Row({ space: 4 }) {
+      Row() {
         Column() {
           Button('efAd:DEF')
             .id('BindContextMenuByIsShowBlurMask_btnEffectAdaptiveColor_01')
             .fontSize(9)
+            .width('30%')
+            .height('5%')
             .onClick(() => { this.isShowEffAdapt0 = true; })
             .bindContextMenuByIsShow(this.isShowEffAdapt0, this.MyMenu, {
               backgroundEffect: {
@@ -525,6 +547,8 @@ struct BindContextMenuByIsShowBlurMaskIndex {
           Button('efAd:AVG')
             .id('BindContextMenuByIsShowBlurMask_btnEffectAdaptiveColor_02')
             .fontSize(9)
+            .width('30%')
+            .height('5%')
             .onClick(() => { this.isShowEffAdapt1 = true; })
             .bindContextMenuByIsShow(this.isShowEffAdapt1, this.MyMenu, {
               backgroundEffect: {
@@ -539,11 +563,13 @@ struct BindContextMenuByIsShowBlurMaskIndex {
           Text(this.txtEffAdapt1).id('BindContextMenuByIsShowBlurMask_txtEffectAdaptiveColor_02').fontSize(8)
         }
       }
-      Row({ space: 4 }) {
+      Row() {
         Column() {
           Button('efPl:FW')
             .id('BindContextMenuByIsShowBlurMask_btnEffectPolicy_01')
             .fontSize(9)
+            .width('30%')
+            .height('5%')
             .onClick(() => { this.isShowEffPolicy0 = true; })
             .bindContextMenuByIsShow(this.isShowEffPolicy0, this.MyMenu, {
               backgroundEffect: {
@@ -560,6 +586,8 @@ struct BindContextMenuByIsShowBlurMaskIndex {
           Button('efPl:AA')
             .id('BindContextMenuByIsShowBlurMask_btnEffectPolicy_02')
             .fontSize(9)
+            .width('30%')
+            .height('5%')
             .onClick(() => { this.isShowEffPolicy1 = true; })
             .bindContextMenuByIsShow(this.isShowEffPolicy1, this.MyMenu, {
               backgroundEffect: {
@@ -576,6 +604,8 @@ struct BindContextMenuByIsShowBlurMaskIndex {
           Button('efPl:AI')
             .id('BindContextMenuByIsShowBlurMask_btnEffectPolicy_03')
             .fontSize(9)
+            .width('30%')
+            .height('5%')
             .onClick(() => { this.isShowEffPolicy2 = true; })
             .bindContextMenuByIsShow(this.isShowEffPolicy2, this.MyMenu, {
               backgroundEffect: {
@@ -594,7 +624,7 @@ struct BindContextMenuByIsShowBlurMaskIndex {
 
   build() {
     Scroll() {
-      Column({ space: 8 }) {
+      Column() {
         this.buildBlurStyleGrid()
         this.buildMaskBlurGrid()
         this.buildBlurOptionsSection()

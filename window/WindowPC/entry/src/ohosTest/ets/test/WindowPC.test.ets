@@ -51,6 +51,39 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
   return windowStageStart
 }
 
+async function startTestAbility3(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
+  let want: Want = {
+    bundleName: AppStorage.get('bundleName'),
+    abilityName: 'StartTestAbility3'
+  };
+  if (options) {
+    await context.startAbility(want, options).then(() => {
+      console.info(`${caseName} Succeeded in starting StartTestAbility3.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting StartTestAbility3. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  } else {
+    await context.startAbility(want).then(() => {
+      console.info(`${caseName} Succeeded in starting StartTestAbility3.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting StartTestAbility3. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  }
+  await sleep(1000)
+  let windowStageStart3 = AppStorage.get('windowStageStartTest3') as window.WindowStage;
+  return windowStageStart3
+}
+
+async function terminateAbility3(caseName: string) {
+  let pageContext = AppStorage.get('contextTest3') as common.UIAbilityContext
+  await pageContext.terminateSelf().then(() => {
+    console.log(`${caseName} terminateSelf success`);
+  }).catch((err: BusinessError) => {
+    console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+  });
+  await sleep(1000)
+}
+
 async function terminateAbilityCycle(caseName: string) {
   let startNum = (AppStorage.get('startNum') ? AppStorage.get('startNum') : 0) as number
   console.log(`${caseName} startNum = ${startNum}`)
@@ -2443,6 +2476,16 @@ export default function windowPCTest() {
         try {
           let windowStageStart = await startAbility(message, context);
           let windowClassStart = windowStageStart.getMainWindowSync();
+          let windowStatus = windowClassStart.getWindowStatus();
+          console.info(`${message} windowStatus: ${windowStatus}`);
+          if (windowStatus != window.WindowStatusType.FLOATING) {
+            console.info(`${message} window is not floating, recover to floating`);
+            await windowClassStart.recover();
+            await sleep(1000);
+            windowStatus = windowClassStart.getWindowStatus();
+            console.info(`${message} after recover, windowStatus: ${windowStatus}`);
+            expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
+          }
           let displayId = windowClassStart.getWindowProperties().displayId
           let moveConfiguration: window.MoveConfiguration = {
             displayId: displayId
@@ -2453,17 +2496,18 @@ export default function windowPCTest() {
           }).catch(async (err: BusinessError) => {
             console.error(`${message} promise Failed to moveWindowToAsync, Cause code ${err.code}, message ${err.message} `);
             expect(err.code).assertEqual(801);
-            done();
           })
           await sleep(1000)
           let rect = windowClassStart.getWindowProperties().windowRect;
           console.info(`${message} windowRect:${JSON.stringify(rect)}`);
           expect(rect.left).assertEqual(300);
           expect(rect.top).assertEqual(300);
+          await terminateAbility(message);
           done();
         } catch (err) {
           console.log(`${message} Failed to test MoveConfiguration.errcode:${err.code}, Cause: ${err.message}`)
           expect(err.code).assertEqual(801);
+          await terminateAbility(message);
           done();
         }
       }
@@ -4160,19 +4204,19 @@ export default function windowPCTest() {
                     let options: StartOptions = {
                         windowMode: AbilityConstant.WindowMode.WINDOW_MODE_SPLIT_SECONDARY
                     };
-                    let windowStageStart: window.WindowStage = await startAbility(caseName, context!, options);
+                    let windowStageStart: window.WindowStage = await startTestAbility3(caseName, context!, options);
                     mainWindow = windowStageStart.getMainWindowSync();
                     expect(!!mainWindow).assertTrue();
                     mainWindow.on('windowStatusChange', callback);
                     await mainWindow.recover();
                     console.info(msgStr + 'Succeeded in recovering window from split screen.');
                     await sleep(1000);
-                    await startAbility(caseName, context!, options);
+                    await startTestAbility3(caseName, context!, options);
                     console.info(msgStr + 'Succeeded in start window from split screen.');
                     console.info(msgStr + `window status: ${finalStatus}`);
                     mainWindow.off('windowStatusChange', callback);
                     console.info(msgStr + 'Succeeded in unregistering windowStatusChange callback.');
-                    await terminateAbility(caseName);
+                    await terminateAbility3(caseName);
                     console.info(msgStr + 'Succeeded in terminating ability.');
                     expect(finalStatus).assertEqual(window.WindowStatusType.SPLIT_SCREEN);
                     done();
