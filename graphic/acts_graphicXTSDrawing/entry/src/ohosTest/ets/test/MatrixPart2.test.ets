@@ -1067,6 +1067,7 @@ export default function drawingTsMatrixPart2Test() {
         let stf: drawing.ScaleToFit = drawing.ScaleToFit.FILL_SCALE_TO_FIT ;
         matrix.setRectToRect( null,  { left: 100, top: 100, right: 200, bottom: 200}, stf)
         console.info(msg + ' setRectToRect successed');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` setRectToRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -1077,6 +1078,7 @@ export default function drawingTsMatrixPart2Test() {
         let stf: drawing.ScaleToFit = drawing.ScaleToFit.FILL_SCALE_TO_FIT ;
         matrix.setRectToRect( { left: 200, top: 200, right: 300, bottom: 400},  null,stf)
         console.info(msg + ' setRectToRect successed');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` setRectToRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -1087,6 +1089,7 @@ export default function drawingTsMatrixPart2Test() {
         let stf: drawing.ScaleToFit = drawing.ScaleToFit.FILL_SCALE_TO_FIT ;
         matrix.setRectToRect( { left: 200, top: 200, right: 300, bottom: 400},  { left: 200, top: 200, right: 300, bottom: 400},null)
         console.info(msg + ' setRectToRect successed');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` setRectToRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -1097,6 +1100,7 @@ export default function drawingTsMatrixPart2Test() {
         let stf: drawing.ScaleToFit = drawing.ScaleToFit.FILL_SCALE_TO_FIT ;
         matrix.setRectToRect( undefined,  { left: 100, top: 100, right: 200, bottom: 200},stf)
         console.info(msg + ' setRectToRect successed');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` setRectToRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -1107,6 +1111,7 @@ export default function drawingTsMatrixPart2Test() {
         let stf: drawing.ScaleToFit = drawing.ScaleToFit.FILL_SCALE_TO_FIT ;
         matrix.setRectToRect( { left: 200, top: 200, right: 300, bottom: 400},  undefined,stf)
         console.info(msg + ' setRectToRect successed');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` setRectToRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -1117,6 +1122,16 @@ export default function drawingTsMatrixPart2Test() {
         let stf: drawing.ScaleToFit = drawing.ScaleToFit.FILL_SCALE_TO_FIT ;
         matrix.setRectToRect( { left: 200, top: 200, right: 300, bottom: 400},  { left: 200, top: 200, right: 300, bottom: 400},stf)
         console.info(msg + ' setRectToRect successed');
+      } catch (e) {
+        console.info(msg + ` setRectToRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        let matrix = new drawing.Matrix();
+        let stf: drawing.ScaleToFit = drawing.ScaleToFit.FILL_SCALE_TO_FIT ;
+        matrix.setRectToRect( { left: 200, top: 200, right: 300, bottom: 400},  { left: 200, top: 200, right: 300, bottom: 400},undefined)
+        console.info(msg + ' setRectToRect successed');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` setRectToRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);

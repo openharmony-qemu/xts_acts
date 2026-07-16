@@ -125,8 +125,9 @@ export default function colorFilterTest() {
       const msg = 'testColorFilterCreateBlendModeColorFilterNull';
 
       try {
-        drawing.ColorFilter.createBlendModeColorFilter(undefined, drawing.BlendMode.SRC);
+        drawing.ColorFilter.createBlendModeColorFilter(null, drawing.BlendMode.SRC);
         console.info(msg + ' createBlendModeColorFilter successed');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -135,8 +136,41 @@ export default function colorFilterTest() {
       try {
         drawing.ColorFilter.createBlendModeColorFilter(undefined, drawing.BlendMode.SRC);
         console.info(msg + ' createBlendModeColorFilter successed');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.ColorFilter.createBlendModeColorFilter(0xffff0000, undefined);
+        console.info(msg + ' createBlendModeColorFilter 0xffff0000 undefined successed');
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + ` createBlendModeColorFilter 0xffff0000 undefined errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.ColorFilter.createBlendModeColorFilter(0xffff0000, null);
+        console.info(msg + ' createBlendModeColorFilter 0xffff0000 null successed');
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + ` createBlendModeColorFilter 0xffff0000 null errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, undefined);
+        console.info(msg + ' createBlendModeColorFilter  1 undefined successed');
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + ` createBlendModeColorFilter  1  undefined errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, null);
+        console.info(msg + ' createBlendModeColorFilter 2 null successed');
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + ` createBlendModeColorFilter 2 null errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
     });

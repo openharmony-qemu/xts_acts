@@ -837,6 +837,36 @@ export default function fontPart2Test() {
         expect().assertFail();
       }
     });
+    /**
+     * @tc.name   testFontEnableEmboldenNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_ENABLEEMBOLDEN_0100
+     * @tc.desc   Test for testFontEnableEmboldenNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFontEnableEmboldenNull' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
+      const msg = 'testFontEnableEmboldenNull';
+      let font = new drawing.Font();
+
+      try {
+        font.enableEmbolden(null);
+        console.info(msg + ' enableEmbolden null successed');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` enableEmbolden null errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+
+      try {
+        font.enableEmbolden(undefined);
+        console.info(msg + ' enableEmbolden undefined successed');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` enableEmbolden undefined errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+    });
 
     /**
      * @tc.name   testFontIsEmboldenMultipleCalls
