@@ -1188,11 +1188,7 @@ export default function adminManagerTest() {
         expect(otherAdmin?.parameters?.enableSource == 1).assertTrue();
         await adminManager.disableDeviceAdmin(OTHER_WANT);
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(false).assertTrue();
-        }
+        expect(Number(error.code) === 801).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -1230,11 +1226,7 @@ export default function adminManagerTest() {
         }
         await adminManager.disableDeviceAdmin(OTHER_WANT);
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(false).assertTrue();
-        }
+        expect(Number(error.code) === 801).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -1269,11 +1261,7 @@ export default function adminManagerTest() {
         let otherAdmin2: Want | undefined = res2.find((admin: Want) => admin.bundleName == OTHER_WANT.bundleName);
         expect(otherAdmin2?.parameters?.enableSource == 4).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(false).assertTrue();
-        }
+        expect(Number(error.code) === 801).assertTrue();
       } finally {
         await adminManager.disableAdmin(OTHER_WANT);
         await adminManager.disableAdmin(SELFWANT);
@@ -1305,11 +1293,7 @@ export default function adminManagerTest() {
         }
         await adminManager.disableDeviceAdmin(OTHER_WANT);
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(false).assertTrue();
-        }
+        expect(Number(error.code) === 801).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
