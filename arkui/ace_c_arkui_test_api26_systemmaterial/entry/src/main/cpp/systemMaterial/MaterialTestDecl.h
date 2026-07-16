@@ -34,6 +34,11 @@ napi_value TestImmersiveMaterialGetInteractiveNotSet001(napi_env env, napi_callb
 napi_value TestLightEffectOptionsLifecycle001(napi_env env, napi_callback_info info);
 napi_value TestImmersiveMaterialSetGetLightEffect001(napi_env env, napi_callback_info info);
 napi_value TestImmersiveMaterialGetLightEffectNotSet001(napi_env env, napi_callback_info info);
+napi_value TestImmersiveMaterialDestroyNull001(napi_env env, napi_callback_info info);
+napi_value TestImmersiveMaterialSetMaterialColorBoundary001(napi_env env, napi_callback_info info);
+napi_value TestImmersiveMaterialSetMaterialColorInvalid001(napi_env env, napi_callback_info info);
+napi_value TestLightEffectOptionsSetColorBoundary001(napi_env env, napi_callback_info info);
+napi_value TestLightEffectOptionsSetColorInvalid001(napi_env env, napi_callback_info info);
 
 napi_value TestCustomDialogSetSystemMaterial001(napi_env env, napi_callback_info info);
 napi_value TestCustomDialogSetSystemMaterial002(napi_env env, napi_callback_info info);

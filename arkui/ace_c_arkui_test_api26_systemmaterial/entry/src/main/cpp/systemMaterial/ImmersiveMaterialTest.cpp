@@ -198,4 +198,59 @@ napi_value TestImmersiveMaterialGetLightEffectNotSet001(napi_env env, napi_callb
     NAPI_END;
 }
 
+napi_value TestImmersiveMaterialDestroyNull001(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    OH_ArkUI_NativeModule_ImmersiveMaterial_Destroy(nullptr);
+    NAPI_END;
+}
+
+napi_value TestImmersiveMaterialSetMaterialColorBoundary001(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    const uint32_t colors[] = { COLOR_ILLEGAL, COLOR_WHITE, COLOR_BLACK, COLOR_RED };
+    for (auto color : colors) {
+        auto handle = CreateMaterial(ARKUI_IMMERSIVE_STYLE_REGULAR);
+        ASSERT_NOTNULL(handle);
+        ASSERT_EQ(OH_ArkUI_NativeModule_ImmersiveMaterial_SetMaterialColor(handle, color),
+                  ARKUI_ERROR_CODE_NO_ERROR);
+        uint32_t out = COLOR_ILLEGAL;
+        ASSERT_EQ(OH_ArkUI_NativeModule_ImmersiveMaterial_GetMaterialColor(handle, &out),
+                  ARKUI_ERROR_CODE_NO_ERROR);
+        ASSERT_EQ(out, color);
+        DestroyMaterial(handle);
+    }
+    NAPI_END;
+}
+
+napi_value TestImmersiveMaterialSetMaterialColorInvalid001(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    ASSERT_EQ(OH_ArkUI_NativeModule_ImmersiveMaterial_SetMaterialColor(nullptr, COLOR_RED),
+              ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
+napi_value TestLightEffectOptionsSetColorBoundary001(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    const uint32_t colors[] = { COLOR_ILLEGAL, COLOR_WHITE, COLOR_BLACK, COLOR_GREEN };
+    for (auto color : colors) {
+        auto options = OH_ArkUI_NativeModule_LightEffectOptions_Create();
+        ASSERT_NOTNULL(options);
+        ASSERT_EQ(OH_ArkUI_NativeModule_LightEffectOptions_SetColor(options, color),
+                  ARKUI_ERROR_CODE_NO_ERROR);
+        OH_ArkUI_NativeModule_LightEffectOptions_Destroy(options);
+    }
+    NAPI_END;
+}
+
+napi_value TestLightEffectOptionsSetColorInvalid001(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    ASSERT_EQ(OH_ArkUI_NativeModule_LightEffectOptions_SetColor(nullptr, COLOR_WHITE),
+              ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
 } // namespace ArkUICapiTest

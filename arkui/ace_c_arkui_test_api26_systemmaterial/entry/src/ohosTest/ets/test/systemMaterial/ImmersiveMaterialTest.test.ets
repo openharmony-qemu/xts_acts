@@ -236,5 +236,70 @@ export default function immersiveMaterialTest() {
       runCase('testNodeSetSystemMaterial001', done);
     });
 
+
+    /**
+     * @tc.name   SUB_ARKUI_CAPI_SYSTEMMATERIAL_1700
+     * @tc.number SUB_ARKUI_CAPI_SYSTEMMATERIAL_1700
+     * @tc.desc   Destroy immersive material with null handle does not crash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_CAPI_SYSTEMMATERIAL_1700', Level.LEVEL1, async (done: Function) => {
+      runCase('testImmersiveMaterialDestroyNull001', done);
+    });
+
+
+    /**
+     * @tc.name   SUB_ARKUI_CAPI_SYSTEMMATERIAL_1800
+     * @tc.number SUB_ARKUI_CAPI_SYSTEMMATERIAL_1800
+     * @tc.desc   Set and get material color boundary values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_CAPI_SYSTEMMATERIAL_1800', Level.LEVEL1, async (done: Function) => {
+      runCase('testImmersiveMaterialSetMaterialColorBoundary001', done);
+    });
+
+
+    /**
+     * @tc.name   SUB_ARKUI_CAPI_SYSTEMMATERIAL_1900
+     * @tc.number SUB_ARKUI_CAPI_SYSTEMMATERIAL_1900
+     * @tc.desc   Set material color with null handle returns invalid param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_CAPI_SYSTEMMATERIAL_1900', Level.LEVEL1, async (done: Function) => {
+      runCase('testImmersiveMaterialSetMaterialColorInvalid001', done);
+    });
+
+
+    /**
+     * @tc.name   SUB_ARKUI_CAPI_SYSTEMMATERIAL_2000
+     * @tc.number SUB_ARKUI_CAPI_SYSTEMMATERIAL_2000
+     * @tc.desc   Set light effect color boundary values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_CAPI_SYSTEMMATERIAL_2000', Level.LEVEL1, async (done: Function) => {
+      runCase('testLightEffectOptionsSetColorBoundary001', done);
+    });
+
+
+    /**
+     * @tc.name   SUB_ARKUI_CAPI_SYSTEMMATERIAL_2100
+     * @tc.number SUB_ARKUI_CAPI_SYSTEMMATERIAL_2100
+     * @tc.desc   Set light effect color with null options returns invalid param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_CAPI_SYSTEMMATERIAL_2100', Level.LEVEL1, async (done: Function) => {
+      runCase('testLightEffectOptionsSetColorInvalid001', done);
+    });
+
   });
 }
