@@ -17,7 +17,7 @@
 import { AnnoStatus } from './AnnoEnumSource'
 
 export @interface AnnoEnumDefault {
-  status: AnnoStatus = AnnoStatus.Active
+  status: string = 'ACTIVE'
 }
 
 export @interface AnnoStringDefault {
