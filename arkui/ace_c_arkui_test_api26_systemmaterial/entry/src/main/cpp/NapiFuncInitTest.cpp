@@ -28,7 +28,7 @@ static napi_property_descriptor MakeMaterialProp(const char *name, napi_callback
     return desc;
 }
 
-static napi_property_descriptor *GetMaterialProps(size_t *count)
+static napi_property_descriptor *GetMaterialCoreProps(size_t *count)
 {
     static napi_property_descriptor desc[] = {
         MakeMaterialProp("testImmersiveStyleEnumValues001", TestImmersiveStyleEnumValues001),
@@ -52,6 +52,14 @@ static napi_property_descriptor *GetMaterialProps(size_t *count)
             TestImmersiveMaterialSetMaterialColorInvalid001),
         MakeMaterialProp("testLightEffectOptionsSetColorBoundary001", TestLightEffectOptionsSetColorBoundary001),
         MakeMaterialProp("testLightEffectOptionsSetColorInvalid001", TestLightEffectOptionsSetColorInvalid001),
+    };
+    *count = sizeof(desc) / sizeof(desc[0]);
+    return desc;
+}
+
+static napi_property_descriptor *GetMaterialDialogProps(size_t *count)
+{
+    static napi_property_descriptor desc[] = {
         MakeMaterialProp("testCustomDialogSetSystemMaterial001", TestCustomDialogSetSystemMaterial001),
         MakeMaterialProp("testCustomDialogSetSystemMaterial002", TestCustomDialogSetSystemMaterial002),
         MakeMaterialProp("testCustomDialogSetSystemMaterial003", TestCustomDialogSetSystemMaterial003),
@@ -87,16 +95,28 @@ static napi_property_descriptor *GetMaterialProps(size_t *count)
     return desc;
 }
 
+static bool DefineMaterialProps(napi_env env, napi_value exports)
+{
+    size_t coreCount = 0;
+    size_t dialogCount = 0;
+    napi_property_descriptor *coreDesc = GetMaterialCoreProps(&coreCount);
+    napi_property_descriptor *dialogDesc = GetMaterialDialogProps(&dialogCount);
+    if (napi_define_properties(env, exports, coreCount, coreDesc) != napi_ok) {
+        return false;
+    }
+    if (napi_define_properties(env, exports, dialogCount, dialogDesc) != napi_ok) {
+        return false;
+    }
+    return true;
+}
+
 static napi_value Init(napi_env env, napi_value exports)
 {
     if ((env == nullptr) || (exports == nullptr)) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "env or exports is null");
         return nullptr;
     }
-
-    size_t count = 0;
-    napi_property_descriptor *desc = GetMaterialProps(&count);
-    if (napi_define_properties(env, exports, count, desc) != napi_ok) {
+    if (!DefineMaterialProps(env, exports)) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");
         return nullptr;
     }
