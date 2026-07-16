@@ -33,3 +33,15 @@ add_library(napicallbackriskndktest SHARED
     napicallbackrisk/callback_risk_common.h
     common/native_common.h)
 target_link_libraries(napicallbackriskndktest PUBLIC libace_napi.z.so libhilog_ndk.z.so)
+
+add_library(napispecdiffbatch1ndktest SHARED spec_diff/batch1/napispecdiffbatch1.cpp native_common.h)
+target_link_libraries(napispecdiffbatch1ndktest PUBLIC libace_napi.z.so libhilog_ndk.z.so)
+
+add_library(napispecdiffbatch2ndktest SHARED spec_diff/batch2/napispecdiffbatch2.cpp native_common.h)
+target_link_libraries(napispecdiffbatch2ndktest PUBLIC libace_napi.z.so libhilog_ndk.z.so)
+
+add_library(napispecdiffbatch3ndktest SHARED spec_diff/batch3/napispecdiffbatch3.cpp native_common.h)
+target_link_libraries(napispecdiffbatch3ndktest PUBLIC libace_napi.z.so libhilog_ndk.z.so)
+
+add_library(napispecdiffbatch4ndktest SHARED spec_diff/batch4/napispecdiffbatch4.cpp native_common.h)
+target_link_libraries(napispecdiffbatch4ndktest PUBLIC libace_napi.z.so libhilog_ndk.z.so)
