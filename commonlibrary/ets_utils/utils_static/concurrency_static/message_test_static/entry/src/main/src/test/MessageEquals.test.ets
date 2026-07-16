@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
 
 class CustomData {
     id: int = 0;

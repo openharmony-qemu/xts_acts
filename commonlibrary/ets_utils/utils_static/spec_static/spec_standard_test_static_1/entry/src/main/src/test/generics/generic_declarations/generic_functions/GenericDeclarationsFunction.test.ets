@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "@ohos/hypium-binary/src/main/indexStatic"
+} from "../../../../../../hypium/index"
 
 function processType_0<T>(input: T): T {
   if (typeof input === "string") {

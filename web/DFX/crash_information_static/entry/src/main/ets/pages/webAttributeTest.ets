@@ -18,7 +18,7 @@ import { OnRenderExitedEvent, Entry, Component, Column, Row, Button, ClickEvent,
 import { State } from '@ohos.arkui.stateManagement';
 import web_webview from '@ohos.web.webview';
 import { BusinessError, RecordData, Callback } from '@ohos.base';
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../hypium/index';
 import emitter from '@ohos.events.emitter';
 import testsuite from '../../src/test/List.test';
 import Utils from '../../src/test/Util.test';

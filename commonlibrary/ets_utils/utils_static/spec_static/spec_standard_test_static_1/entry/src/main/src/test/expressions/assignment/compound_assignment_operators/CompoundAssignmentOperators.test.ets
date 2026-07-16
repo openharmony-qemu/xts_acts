@@ -27,7 +27,7 @@ import {
     TestType,
     Size,
     Level
-} from "@ohos/hypium-binary/src/main/indexStatic";
+} from "../../../../../../hypium/index";
 
 export default function CompoundAssignmentOperatorsTest(): void {
   describe("CompoundAssignmentOperatorsTest", () => {

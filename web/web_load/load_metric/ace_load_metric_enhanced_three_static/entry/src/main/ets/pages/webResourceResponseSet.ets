@@ -17,7 +17,7 @@
 
 import { Entry, Component, Column, Row, Button, ClickEvent, Web, UIContext, WebResourceResponse, WebResourceRequest, Header } from '@ohos.arkui.component';
 import webview from '@ohos.web.webview';
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../hypium/index';
 import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Utils.test';

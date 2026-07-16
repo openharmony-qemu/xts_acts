@@ -25,7 +25,7 @@ import {
   TestType,
   Size,
   Level
-} from '@ohos/hypium-binary/src/main/indexStatic'
+} from '../../../hypium/index'
 // import { taskpool } from '@kit.ArkTS';
 import { sleep } from '../testability/pages/Utils';
 import {

@@ -31,7 +31,7 @@ import { Driver, MouseButton, UiWindow, ON, On } from '@kit.TestKit';
 import { webview } from '@kit.ArkWeb';
 import { Context } from '@kit.AbilityKit';
 import { util } from '@kit.ArkTS';
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../hypium/index';
 import { image } from '@kit.ImageKit';
 import { fileIo, fileUri } from '@kit.CoreFileKit';
 import { http } from '@kit.NetworkKit';

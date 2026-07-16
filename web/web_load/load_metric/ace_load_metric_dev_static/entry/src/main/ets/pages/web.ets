@@ -19,7 +19,7 @@ import { Button, ClickEvent, Column, Component, Entry, Row, Text, Web, } from '@
 import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter'
 import { BusinessError, Callback, RecordData } from '@ohos.base'
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../hypium/index';
 import Utils from '../../src/test/Utils.test';
 
 export class StringFields {

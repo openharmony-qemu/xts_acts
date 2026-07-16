@@ -20,7 +20,7 @@ import { State } from '@ohos.arkui.stateManagement'
 import { Button, ClickEvent, Column, Component, Entry, Row, Text, Web } from '@ohos.arkui.component'
 import { Driver, ON } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../hypium/index';
 import Utils from '../../src/test/Utils.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 

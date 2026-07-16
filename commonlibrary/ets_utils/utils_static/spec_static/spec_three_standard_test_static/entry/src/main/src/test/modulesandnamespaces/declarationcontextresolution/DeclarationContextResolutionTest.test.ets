@@ -14,7 +14,7 @@
  * limitations under the License.
 */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../hypium/index';
 import { dcrFunctionEnumDefault, dcrFunctionConstDefault } from "../modules/dcr_function_defaults"
 import { DcrCtorDefaultClass, DcrFieldInitClass, DcrMethodDefaultClass, DcrMethodOverrideBase, DcrMethodOverrideDerived } from "../modules/dcr_class_defaults"
 import { dcrPick } from "../modules/dcr_overload_defaults"

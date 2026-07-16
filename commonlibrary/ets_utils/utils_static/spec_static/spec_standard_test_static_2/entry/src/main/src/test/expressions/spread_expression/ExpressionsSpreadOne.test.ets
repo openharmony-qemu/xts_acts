@@ -25,7 +25,7 @@ import {
   TestType,
   Size,
   Level
-} from "@ohos/hypium-binary/src/main/indexStatic";
+} from "../../../../../hypium/index";
 import Utils from '../../Util.test'
 
 let a2_spex_const_44: [int, int] = [6, 5]

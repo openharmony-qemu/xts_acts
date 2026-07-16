@@ -2,8 +2,6 @@
 {
   "modelVersion": "6.0.0",
   "description": "array_buffer_standard_test_static — OpenHarmony static array buffer standard tests.",
-  "dependencies": {
-    "@ohos/hypium-binary": "1.0.28-rc4"
-  },
+  "dependencies": {},
   "devDependencies": {}
 }

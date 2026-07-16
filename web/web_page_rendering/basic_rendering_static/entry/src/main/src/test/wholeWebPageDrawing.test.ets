@@ -16,7 +16,7 @@
 
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
-import { beforeAll, beforeEach, describe, it, Level, Size, TestType, afterEach } from '@ohos/hypium-binary/src/main/indexStatic';
+import { beforeAll, beforeEach, describe, it, Level, Size, TestType, afterEach } from '../../../hypium/index';
 import Utils from './Util.test';
 import inspector from '@ohos.arkui.inspector';
 import UIAbility from '@ohos.app.ability.UIAbility';

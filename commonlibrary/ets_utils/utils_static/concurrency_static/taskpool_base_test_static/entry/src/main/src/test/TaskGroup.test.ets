@@ -10,7 +10,7 @@ import {
   TestType,
   Level,
   Size
-} from "@ohos/hypium-binary/src/main/indexStatic";
+} from "../../../hypium/index";
 
 function TaskGroup001(): void {
 }

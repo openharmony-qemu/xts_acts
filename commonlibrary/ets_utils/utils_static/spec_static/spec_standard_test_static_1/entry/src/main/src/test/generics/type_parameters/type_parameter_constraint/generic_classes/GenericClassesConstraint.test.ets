@@ -26,7 +26,7 @@ import {
   Size,
   Level,
   expect
-} from "@ohos/hypium-binary/src/main/indexStatic"
+} from "../../../../../../../hypium/index"
 
 class Int1 {
   value: int = 0

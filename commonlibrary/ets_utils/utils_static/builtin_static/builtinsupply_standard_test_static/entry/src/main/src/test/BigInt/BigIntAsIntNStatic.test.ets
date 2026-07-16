@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, afterAll} from '@ohos/hypium-binary/src/main/indexStatic';
+import {describe, beforeAll, beforeEach, afterEach, afterAll} from '../../../../hypium/index';
 export async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve) => {
     setTimeout(() => {

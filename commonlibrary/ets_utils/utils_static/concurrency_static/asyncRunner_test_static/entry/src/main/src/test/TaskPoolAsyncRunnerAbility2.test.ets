@@ -24,7 +24,7 @@ import {
   TestType,
   Size,
   Level
-} from '@ohos/hypium-binary/src/main/indexStatic'
+} from '../../../hypium/index'
 // import { ArkTSUtils, collections, taskpool } from '@kit.ArkTS';
 import {
   printArrayBuffer1,

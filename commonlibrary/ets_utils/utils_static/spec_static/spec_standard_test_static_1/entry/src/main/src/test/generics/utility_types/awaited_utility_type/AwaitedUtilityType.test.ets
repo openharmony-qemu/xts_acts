@@ -27,7 +27,7 @@ import {
   TestType,
   Size,
   Level
-} from "@ohos/hypium-binary/src/main/indexStatic"
+} from "../../../../../../hypium/index"
 
 interface I_22 {
   a: number

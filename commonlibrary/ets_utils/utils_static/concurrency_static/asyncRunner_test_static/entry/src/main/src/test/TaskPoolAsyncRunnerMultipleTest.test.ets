@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from '@ohos/hypium-binary/src/main/indexStatic';
+} from '../../../hypium/index';
 // import { taskpool } from '@kit.ArkTS';
 import { BusinessError } from '@kit.BasicServicesKit';
 import {

@@ -25,7 +25,7 @@ import {
   TestType,
   Size,
   Level
-} from "@ohos/hypium-binary/src/main/indexStatic";
+} from "../../../../../../hypium/index";
 import Utils from '../../../Util.test'
 
 let arr_abrupt01: number[] = [1, 2, 3]

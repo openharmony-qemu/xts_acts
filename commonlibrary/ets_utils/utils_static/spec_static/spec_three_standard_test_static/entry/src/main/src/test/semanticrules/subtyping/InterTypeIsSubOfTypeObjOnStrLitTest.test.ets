@@ -15,7 +15,7 @@
  */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
-  from '@ohos/hypium-binary/src/main/indexStatic';
+  from '../../../../../hypium/index';
 import Utils from '../../Util.test'
 
 function check_value_1(v: Object, v_id: number): void {

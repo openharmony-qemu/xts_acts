@@ -25,7 +25,7 @@ import {
   TestType,
   Size,
   Level
-} from "@ohos/hypium-binary/src/main/indexStatic";
+} from "../../../../../../hypium/index";
 import Utils from '../../../Util.test'
 
 enum unary_minus_int_enum_IntEnum: int {

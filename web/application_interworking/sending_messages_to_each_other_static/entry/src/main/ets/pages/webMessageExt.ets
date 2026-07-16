@@ -15,7 +15,7 @@
  */
 
 import webView from '@ohos.web.webview';
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../hypium/index';
 import testsuite from '../../src/test/List.test';
 import {OnPageEndEvent, Entry, Component, Column, Row, Button, ClickEvent, Web } from "@ohos.arkui.component"
 import { State } from "@ohos.arkui.stateManagement" // should be insert by ui-plugins

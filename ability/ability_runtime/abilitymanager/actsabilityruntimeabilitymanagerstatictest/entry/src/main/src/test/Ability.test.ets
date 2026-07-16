@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, afterEach, beforeAll, beforeEach } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level, afterEach, beforeAll, beforeEach } from "../../../hypium/index";
 import abilityManager from "@ohos.app.ability.abilityManager"
 import systemParameterEnhance from "@ohos.systemParameterEnhance"
 import hilog from '@ohos.hilog';

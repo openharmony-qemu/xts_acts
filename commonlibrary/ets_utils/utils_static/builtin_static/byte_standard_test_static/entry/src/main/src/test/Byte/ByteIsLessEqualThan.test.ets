@@ -24,7 +24,7 @@ import {
   Level,
   Size,
   TestType
-} from '@ohos/hypium-binary/src/main/indexStatic';
+} from '../../../../hypium/index';
 
 export default function ByteIsLessEqualThanTest_02(): void {
   describe("ByteIsLessEqualThanTest_02", () => {

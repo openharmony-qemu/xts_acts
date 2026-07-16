@@ -25,7 +25,7 @@ import {
   Web
 } from '@ohos.arkui.component'
 import events_emitter from '@ohos.events.emitter'
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../hypium/index';
 import { BusinessError,Callback, RecordData } from '@ohos.base'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import Utils from '../../src/test/Utils.test';

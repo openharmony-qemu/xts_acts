@@ -22,7 +22,7 @@ import { BusinessError, Callback, RecordData } from '@ohos.base';
 import image from '@ohos.multimedia.image';
 import appManager from '@ohos.app.ability.appManager';
 import { State } from '@ohos.arkui.stateManagement';
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../hypium/index';
 export class StringFields {
   public str: string = '';
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level, Size, TestType, xit, afterEach } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, Level, Size, TestType, xit, afterEach } from "../../../hypium/index";
 import { sleep } from '../testability/pages/utils';
 import {
   exclusiveTask,

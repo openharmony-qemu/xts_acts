@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from '@ohos/hypium-binary/src/main/indexStatic';
+} from '../../../../hypium/index';
 import { animal, MyObjects, Person, task, update } from '../pages/Utils';
 import {
   builtinsStatementForTest_1000,

@@ -1,5 +1,5 @@
 'use static';
-import { describe, it, xit, expect, TestType, Size, Level, afterEach, beforeAll } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, xit, expect, TestType, Size, Level, afterEach, beforeAll } from "../../../hypium/index";
 
 class Person {
   name: string;

@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../hypium/index';
 
 import { BusinessError } from '@ohos.base';
 import {

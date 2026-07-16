@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 import { BusinessError } from '@ohos.base';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../../hypium/index';
 import { condition, Ob, St, Arr, Big, Inter, Colour, cd } from '../pages/Function';
 
 async function sleep(time: int): Promise<int> {

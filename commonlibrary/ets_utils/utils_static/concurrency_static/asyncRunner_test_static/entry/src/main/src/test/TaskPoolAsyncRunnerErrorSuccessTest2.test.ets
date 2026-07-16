@@ -24,7 +24,7 @@ import {
   TestType,
   Size,
   Level
-} from '@ohos/hypium-binary/src/main/indexStatic'
+} from '../../../hypium/index'
 // import { ErrorEvent, MessageEvents, taskpool, worker } from '@kit.ArkTS';
 import {
   printArgs1,

@@ -2,8 +2,6 @@
 {
   "modelVersion": "6.0.0",
   "description": "string_standard_test_static — OpenHarmony static string standard tests.",
-  "dependencies": {
-    "@ohos/hypium-binary": "1.0.28-rc4"
-  },
+  "dependencies": {},
   "devDependencies": {}
 }

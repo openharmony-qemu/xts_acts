@@ -25,7 +25,7 @@ import {
   Level,
   Size,
   TestType
-} from '@ohos/hypium-binary/src/main/indexStatic';
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 import { FieldValue, StaticField, ReflectClass, createReflectClass, PLACEHOLDER_PASSWORD, PLACEHOLDER_TOKEN, PLACEHOLDER_API_KEY, PLACEHOLDER_SSN } from '../Util.test';
 

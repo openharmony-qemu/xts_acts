@@ -24,7 +24,7 @@ import Utils from '../../src/test/Util.test';
 import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter';
 import image from '@ohos.multimedia.image';
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../hypium/index';
 export class StringFields {
   public str: string = '';
 }

@@ -26,7 +26,7 @@ import {
   Size,
   Level,
   expect
-} from "@ohos/hypium-binary/src/main/indexStatic"
+} from "../../../../../../hypium/index"
 
 function foo_0<T, U>(p: T, q: U): [T, U] {
     return [p, q]

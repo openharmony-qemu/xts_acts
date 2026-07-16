@@ -24,7 +24,7 @@ import {
   TestType,
   Level,
   Size
-} from "@ohos/hypium-binary/src/main/indexStatic";
+} from "../../../hypium/index";
 import type { BusinessError } from '@ohos.base';
 
 import {

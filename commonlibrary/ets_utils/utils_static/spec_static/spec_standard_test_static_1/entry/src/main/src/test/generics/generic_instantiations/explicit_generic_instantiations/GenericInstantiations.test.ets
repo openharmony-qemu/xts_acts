@@ -26,7 +26,7 @@ import {
   Size,
   Level,
   expect
-} from "@ohos/hypium-binary/src/main/indexStatic"
+} from "../../../../../../hypium/index"
 
 class Cls_0<T, U> {
   a: T

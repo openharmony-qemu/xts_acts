@@ -27,7 +27,7 @@ import { Driver, ON } from '@ohos.UiTest';
 import common from '@ohos.app.ability.common';
 import PermissionsUtils from '../../src/test/PermissionsUtils.test';
 import { AppStorage } from '@ohos.arkui.stateManagement'
-import { expect } from '@ohos/hypium-binary/src/main/indexStatic';
+import { expect } from '../../../hypium/index';
 import abilityAccessCtrl, { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
 
 @Entry

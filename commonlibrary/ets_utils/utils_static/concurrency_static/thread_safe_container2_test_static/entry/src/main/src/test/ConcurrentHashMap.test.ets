@@ -1,5 +1,5 @@
 'use static';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, xit, Level, Size, TestType } from "@ohos/hypium-binary/src/main/indexStatic";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, xit, Level, Size, TestType } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 
 class CustomClass {

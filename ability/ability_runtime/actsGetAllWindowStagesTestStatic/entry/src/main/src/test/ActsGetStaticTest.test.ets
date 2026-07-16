@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeAll, describe, expect, it, Level, Size, TestType, afterEach } from '@ohos/hypium-binary/src/main/indexStatic';
+import { beforeAll, describe, expect, it, Level, Size, TestType, afterEach } from '../../../hypium/index';
 import hilog from '@ohos.hilog'
 import { BusinessError, RecordData } from '@ohos.base'
 import Utils from './Util.test';

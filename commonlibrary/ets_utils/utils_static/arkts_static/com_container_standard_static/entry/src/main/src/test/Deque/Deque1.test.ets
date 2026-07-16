@@ -24,7 +24,7 @@ import {
   TestType,
   Level,
   Size
-} from '@ohos/hypium-binary/src/main/indexStatic';
+} from '../../../../hypium/index';
 import Deque from '@ohos.util.Deque';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'

@@ -23,7 +23,7 @@ import Utils from '../../src/test/Util.test';
 import { BusinessError, RecordData } from '@ohos.base'
 import { Driver, ON } from '@ohos.UiTest';
 import hilog from '@ohos.hilog';
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../hypium/index';
 import testsuite from '../../src/test/List.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
