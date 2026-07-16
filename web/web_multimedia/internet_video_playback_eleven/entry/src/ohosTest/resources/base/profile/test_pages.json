@@ -2,6 +2,7 @@
   "src": [
     "testability/pages/Index",
     "testability/pages/WebViewControllerResumeAllTimers",
-	"testability/pages/EnableWebAVSession"
+    "testability/pages/EnableWebAVSession",
+    "testability/pages/EnableMediaNetworkProxy"
   ]
 }
