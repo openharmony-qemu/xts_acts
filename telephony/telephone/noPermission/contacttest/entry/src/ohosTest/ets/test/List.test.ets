@@ -14,9 +14,14 @@
  */
 
 import NoPermissionTest from './NoPermission.test'
+import NoPermissionOtherTest from './NoPermissionOther.test'
 import EmptyTest from './Empty.test';
 import sim from '@ohos.telephony.sim';
+import { deviceInfo } from '@kit.BasicServicesKit';
 
 export default function testsuite() {
   NoPermissionTest();
+  if (deviceInfo.deviceType !== 'wearable' && deviceInfo.deviceType !== 'default') {
+    NoPermissionOtherTest();
+  }
 }
