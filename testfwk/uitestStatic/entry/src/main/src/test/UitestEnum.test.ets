@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeAll, describe, it, expect,TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic"
+import { beforeAll, describe, it, expect,TestType, Size, Level } from "../../../hypium/index"
 import { Component, Driver, ON, On, MatchPattern, MouseButton,ResizeDirection, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@kit.TestKit'
 import  hilog  from '@ohos.hilog'
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识

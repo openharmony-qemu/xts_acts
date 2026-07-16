@@ -15,7 +15,7 @@
  */
 
 import hilog from '@ohos.hilog';
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
 import Want from '@ohos.app.ability.Want';
 import PrintExtensionAbility from '@ohos.app.ability.PrintExtensionAbility';
 import print from '@ohos.print';

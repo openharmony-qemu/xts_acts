@@ -1,5 +1,5 @@
 'use static';
-import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll} from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll} from "../../../hypium/index";
 import { hilog, hiAppEvent } from '@kit.PerformanceAnalysisKit';
 
 let domain: int = 0x2020; //日志标识,0x2828作为测试框架的业务标识

@@ -16,7 +16,7 @@
 import account from '@ohos.account.appAccount'
 import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
-import { describe, beforeAll, Hypium, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, beforeAll, Hypium, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import { BusinessError } from '@ohos.base'
 import hilog from '@ohos.hilog'
 import { AppStorage } from '@ohos.arkui.stateManagement'

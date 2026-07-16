@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, expect } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, expect } from "../../../hypium/index";
 
 export default function TcContainerTest(): void {
   describe("TcContainerTest", (): void => {

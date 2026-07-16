@@ -18,7 +18,7 @@ import MediaTestBase from './MediaTestBase.test';
 import media from '@ohos.multimedia.media'
 import audio from '@ohos.multimedia.audio';
 import { testAVPlayerFun, setSource, setSubtitle, PlayTest } from './AVPlayerTestBase.test';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "../../../hypium/index";
 import { BusinessError } from '@ohos.base';
 import resourceManager from '@ohos.resourceManager';
 import { globalThis } from './Util.test';

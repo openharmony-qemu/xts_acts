@@ -24,7 +24,7 @@ import {
   Level,
   Size,
   TestType
-} from "@ohos/hypium-binary/src/main/indexStatic";
+} from "../../../hypium/index";
 import factory from '@ohos.data.distributedKVStore'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import image from '@ohos.multimedia.image';
-import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll, beforeEach, afterEach, afterAll } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll, beforeEach, afterEach, afterAll } from "../../../hypium/index";
 import fs from '@ohos.file.fs';
 
 const TAG = 'ImageExifMetadataStaticTest:'

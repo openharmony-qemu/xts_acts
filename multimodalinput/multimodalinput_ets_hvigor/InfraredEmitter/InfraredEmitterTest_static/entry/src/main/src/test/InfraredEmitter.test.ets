@@ -1,5 +1,5 @@
 'use static';
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
 import infraredEmitter from '@ohos.multimodalInput.infraredEmitter';
 import { BusinessError } from "@ohos.base";
 import hilog from '@ohos.hilog';

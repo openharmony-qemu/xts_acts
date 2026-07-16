@@ -15,7 +15,7 @@
  */
 
 import image from "@ohos.multimedia.image";
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Hypium, Level } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Hypium, Level } from '../../../hypium/index';
 import { BusinessError } from '@ohos.base';
 import fs from '@ohos.file.fs'
 import { initialize } from './AbilityContextHelper.test';

@@ -16,7 +16,7 @@
 
 import cryptoFramework from "@ohos.security.cryptoFramework";
 import { BusinessError } from '@ohos.base';
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
 import * as asyCallback from "./utils/asysmmetricspec/publicAsymmetricSpecCallback";
 import * as asyPromise from "./utils/asysmmetricspec/publicAsymmetricSpecPromise";
 import * as common from "./utils/common/publicDoSpec";

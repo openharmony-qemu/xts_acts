@@ -15,7 +15,7 @@
  */
 
 import { BusinessError } from '@ohos.base';
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
 import * as asyPromise from "./utils/asymmetric/publicAsymmetricPromise";
 import * as asyCommon from "./utils/common/publicDoSpec";
 import * as asyCallback from "./utils/asymmetric/publicAsymmetricCallback";

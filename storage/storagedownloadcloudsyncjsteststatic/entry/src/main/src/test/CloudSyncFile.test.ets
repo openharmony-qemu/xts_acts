@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from "../../../hypium/index";
 import hilog from '@ohos.hilog';
 import cloudSync from '@ohos.file.cloudSync';
 import fileUri from '@ohos.file.fileuri';

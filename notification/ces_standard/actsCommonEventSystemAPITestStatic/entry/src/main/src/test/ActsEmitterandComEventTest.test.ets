@@ -17,7 +17,7 @@ import {BusinessError, RecordData} from '@ohos.base';
 import commonEventManager from '@ohos.commonEventManager';
 import hilog from '@ohos.hilog';
 import emitter from '@ohos.events.emitter';
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
 import Utils from './Util.test';
 import { Callback } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement'

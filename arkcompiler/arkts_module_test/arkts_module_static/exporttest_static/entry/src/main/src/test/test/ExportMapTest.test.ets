@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Size, Level, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Size, Level, TestType } from '../../../../hypium/index';
 import { sleep } from '../utils/Utils';
 import { A, GlobalInstance } from '../Map/IMapExport'
 

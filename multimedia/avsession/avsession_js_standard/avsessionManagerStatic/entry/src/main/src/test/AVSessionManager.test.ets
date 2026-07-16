@@ -15,7 +15,7 @@
 */
 
 import avSession from '@ohos.multimedia.avsession';
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from "../../../hypium/index";
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import common from '@ohos.app.ability.common';

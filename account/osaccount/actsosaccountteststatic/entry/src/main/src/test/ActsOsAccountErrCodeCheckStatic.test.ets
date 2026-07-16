@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import osAccount from '@ohos.account.osAccount'
-import { describe, beforeAll, afterEach, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, beforeAll, afterEach, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base'
 

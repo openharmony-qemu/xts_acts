@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, Hypium, TestType, Size, Level } from '@ohos/hypium-binary/src/main/indexStatic'
+import { describe, it, expect, beforeAll, Hypium, TestType, Size, Level } from '../../../../hypium/index'
 import Context from "application.Context"
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { fetchOption, getFileAsset, getAssetId, getPermission, driveFn, sleep } from '../Common.test.ets'

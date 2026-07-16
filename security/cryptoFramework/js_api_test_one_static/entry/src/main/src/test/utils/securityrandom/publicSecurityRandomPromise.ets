@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { expect } from "@ohos/hypium-binary/src/main/indexStatic";
+import { expect } from "../../../../../hypium/index";
 import cryptoFramework from "@ohos.security.cryptoFramework";
 import {
   stringTouInt8Array,

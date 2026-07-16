@@ -15,7 +15,7 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
-import { describe, it, expect, beforeAll, Hypium, TestType, Size, Level } from '@ohos/hypium-binary/src/main/indexStatic'
+import { describe, it, expect, beforeAll, Hypium, TestType, Size, Level } from '../../../../hypium/index'
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import { BusinessError } from '@ohos.base'
 import { sleep, getPermission, getBurstKey, photoFetchOption, fetchAllOption, driveFn } from '../Common.test.ets'

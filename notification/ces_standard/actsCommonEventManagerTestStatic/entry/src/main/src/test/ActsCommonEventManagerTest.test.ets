@@ -17,7 +17,7 @@ import commonEventManager from '@ohos.commonEventManager'
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Utils from './Util.test';
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
 import common from '@ohos.app.ability.common';
 import {BusinessError, RecordData} from '@ohos.base';
 import UIAbility from '@ohos.app.ability.UIAbility';

@@ -18,7 +18,7 @@ import bundle from '@ohos.bundle.bundleManager';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'
 import { BundleInfo } from 'bundleManager.BundleInfo';
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
 import shortcutManager from '@ohos.bundle.shortcutManager';
 
 let DOMAIN: int = 0x0000;

@@ -19,7 +19,7 @@ import { BusinessError } from '@ohos.base';
 import floatView from '@ohos.window.floatView';
 import floatingBall from '@ohos.window.floatingBall';
 import { AppStorage, LocalStorage } from '@ohos.arkui.stateManagement';
-import { describe, it, expect, TestType, Size, Level, beforeAll,beforeEach,afterEach} from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level, beforeAll,beforeEach,afterEach} from "../../../hypium/index";
 import { common, Want } from '@kit.AbilityKit';
 import window from '@ohos.window';
 import { image } from '@kit.ImageKit';

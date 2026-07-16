@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
 import { BusinessError } from '@ohos.base';
 import { cert } from '@kit.DeviceCertificateKit';
 import { stringToUint8Array } from "./utils/certificate/certPem";

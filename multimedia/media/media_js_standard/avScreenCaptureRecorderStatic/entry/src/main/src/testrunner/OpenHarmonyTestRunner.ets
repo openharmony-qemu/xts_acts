@@ -20,7 +20,7 @@ import { BusinessError } from '@ohos.base'
 import hilog from '@ohos.hilog';
 import { ShellCmdResult } from 'application.shellCmdResult';
 
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../hypium/index';
 import testsuite from '../test/List.test';
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
 let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;

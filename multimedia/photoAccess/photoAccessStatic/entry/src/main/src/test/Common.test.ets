@@ -25,7 +25,7 @@ import common from '@ohos.app.ability.common';
 import fileuri from "@ohos.file.fileuri";
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import fs, { ListFileOptions, Filter } from '@ohos.file.fs';
-import { describe, beforeAll, it, expect, TestType, Size, Level, Hypium } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, beforeAll, it, expect, TestType, Size, Level, Hypium } from "../../../hypium/index";
 import { Driver, MatchPattern, ON, Component } from '@ohos.UiTest';
 import Utils from './Util.test';
 

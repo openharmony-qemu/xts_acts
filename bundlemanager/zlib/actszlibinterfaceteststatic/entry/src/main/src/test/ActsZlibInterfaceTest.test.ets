@@ -15,7 +15,7 @@
 * limitations under the License.
 */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach} from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach} from "../../../hypium/index";
 import common from '@ohos.app.ability.common';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';

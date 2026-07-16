@@ -15,7 +15,7 @@
  */
 
 import image from '@ohos.multimedia.image';
-import { describe, beforeAll, afterEach, it, expect, Hypium, Level } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, beforeAll, afterEach, it, expect, Hypium, Level } from '../../../hypium/index';
 import colorSpaceManager from "@ohos.graphics.colorSpaceManager";
 import rpc from '@ohos.rpc';
 import hilog from '@ohos.hilog';

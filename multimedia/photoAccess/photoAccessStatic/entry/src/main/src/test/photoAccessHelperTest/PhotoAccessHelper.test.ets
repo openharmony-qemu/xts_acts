@@ -26,7 +26,7 @@
   TestType,
   Size,
   Level
-} from '@ohos/hypium-binary/src/main/indexStatic';
+} from '../../../../hypium/index';
 import Context from "application.Context";
 import { BusinessError } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';

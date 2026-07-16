@@ -24,7 +24,7 @@ import {
   beforeEach,
   afterEach,
   afterAll
-} from "@ohos/hypium-binary/src/main/indexStatic";
+} from "../../../hypium/index";
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';

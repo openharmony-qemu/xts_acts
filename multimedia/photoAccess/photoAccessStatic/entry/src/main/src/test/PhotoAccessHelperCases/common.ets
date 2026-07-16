@@ -16,7 +16,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
-import { expect } from '@ohos/hypium-binary/src/main/indexStatic';
+import { expect } from '../../../../hypium/index';
 import fs from '@ohos.file.fs';
 import buffer from '@ohos.buffer';
 import { BusinessError, Callback } from '@ohos.base';

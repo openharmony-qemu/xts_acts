@@ -17,7 +17,7 @@ import resourceManager from '@ohos.resourceManager';
 import Ability from '@ohos.app.ability.UIAbility'
 import Context from 'application.Context';
 import common from '@ohos.app.ability.common';
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach} from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach} from "../../../hypium/index";
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import fs from '@ohos.file.fs';
 import { collections } from '@kit.ArkTS';

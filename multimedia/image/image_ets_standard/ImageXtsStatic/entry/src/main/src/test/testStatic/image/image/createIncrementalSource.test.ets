@@ -17,7 +17,7 @@
 import { image } from '@kit.ImageKit';
 import fs from '@ohos.file.fs';
 import { BusinessError } from '@ohos.base';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Hypium } from '../../../../../../hypium/index';
 import { Context } from '@kit.AbilityKit';
 
 const TAG = 'ImageXts.createIncrementalSource';

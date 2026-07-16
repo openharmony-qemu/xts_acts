@@ -17,7 +17,7 @@
 import MediaTestBase from './MediaTestBase.test';
 import media from '@ohos.multimedia.media'
 import { setSource } from './AVPlayerTestBase.test';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "../../../hypium/index";
 import { globalThis } from './Util.test';
 
 const VIDEO_SOURCE = 'H264_AAC_AAC_multiAudio.mp4';

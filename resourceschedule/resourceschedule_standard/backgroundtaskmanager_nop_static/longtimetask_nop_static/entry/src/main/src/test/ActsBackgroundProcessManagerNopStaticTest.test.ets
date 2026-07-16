@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll, beforeEach, afterEach} from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll, beforeEach, afterEach} from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import backgroundProcessManager from '@ohos.resourceschedule.backgroundProcessManager';
 import { BusinessError } from "@ohos.base"

@@ -10,7 +10,7 @@ import {
   Level,
   Size,
   TestType
-} from "@ohos/hypium-binary/src/main/indexStatic";
+} from "../../../hypium/index";
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import relationalStore from '@ohos.data.relationalStore'
 import common from '@ohos.app.ability.common';

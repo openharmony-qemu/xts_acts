@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from "../../../hypium/index";
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import audio from '@ohos.multimedia.audio';
 import fileIo from '@ohos.file.fs';
-import { Hypium } from "@ohos/hypium-binary/src/main/indexStatic";
+import { Hypium } from "../../../hypium/index";
 import common from '@ohos.app.ability.common';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 

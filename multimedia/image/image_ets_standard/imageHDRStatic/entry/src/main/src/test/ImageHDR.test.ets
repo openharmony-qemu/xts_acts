@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import hilog from '@ohos.hilog';
-import { describe, beforeAll,beforeEach,afterEach, afterAll,it, expect, DEFAULT, Level, Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, beforeAll,beforeEach,afterEach, afterAll,it, expect, DEFAULT, Level, Hypium } from '../../../hypium/index';
 import image from '@ohos.multimedia.image';
 import fs from '@ohos.file.fs';
 import { initialize } from './AbilityContextHelper.test';

@@ -15,7 +15,7 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
-import { describe, it, expect, beforeAll, Hypium, TestType, Size, Level } from '@ohos/hypium-binary/src/main/indexStatic'
+import { describe, it, expect, beforeAll, Hypium, TestType, Size, Level } from '../../../../hypium/index'
 import media from '@ohos.multimedia.media';
 import Context from "application.Context"
 import fs from "@ohos.file.fs"

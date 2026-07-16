@@ -18,7 +18,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
 import hilog from '@ohos.hilog';
 import { BusinessError } from "@ohos.base";
-import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';

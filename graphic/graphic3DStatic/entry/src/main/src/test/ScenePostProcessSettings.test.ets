@@ -31,7 +31,7 @@ import {
   PostProcessSettings
 } from '@ohos.graphics.scene'
 import { $rawfile, Resource } from '@ohos.arkui.component'
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic'
+import { describe, expect, it, Level, Size, TestType } from '../../../hypium/index'
 
 export default function scenePostProcessSettingsTest() {
   describe('scenePostProcessSettingsTest', () => {
