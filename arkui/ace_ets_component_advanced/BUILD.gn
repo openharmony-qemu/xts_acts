@@ -19,7 +19,6 @@ group("componentAdvancedTest") {
     deps = [
       "ace_ets_component_advanced_arcalphabetindexer:componentArcAlphabetIndexerTest",
       "ace_ets_component_advanced_arcbutton:componentArcButtonTest",
-      "ace_ets_component_advanced_arclist:componentArcListTest",
       "ace_ets_component_advanced_arcslider:componentArcSliderTest",
       "ace_ets_component_advanced_arcswiper:componentArcSwiperTest",
       "ace_ets_component_advanced_list:componentListTest",
