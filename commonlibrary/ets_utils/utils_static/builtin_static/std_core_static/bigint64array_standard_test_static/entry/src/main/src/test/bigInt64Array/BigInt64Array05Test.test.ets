@@ -89,15 +89,19 @@ export default function BigInt64Array05Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FIVE_0300
      * @tc.name testBigInt64ArrayFive0300
-     * @tc.desc Verify constructor with an ArrayBuffer argument maps the full buffer view.
+     * @tc.desc Verify byteOffset alignment is checked before accepting a zero-length view.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFive0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf = new ArrayBuffer(40);
-      let arr = new BigInt64Array(buf);
-      expect(arr.length).assertEqual(5);
+      let buf: ArrayBuffer = new ArrayBuffer(16);
+      try {
+        new BigInt64Array(buf, 3, 0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**

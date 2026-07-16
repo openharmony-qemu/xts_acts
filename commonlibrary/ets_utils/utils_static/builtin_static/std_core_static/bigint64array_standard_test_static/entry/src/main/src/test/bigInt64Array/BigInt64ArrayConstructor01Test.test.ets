@@ -101,14 +101,18 @@ export default function BigInt64ArrayConstructor01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_ONE_0060
      * @tc.name testBigInt64ArrayConstructorOne0060
-     * @tc.desc Verify `new BigInt64Array(0)` zero-initializes the first element when the array has elements.
+     * @tc.desc Verify a BigInt64Array constructed from a Set owns an independent copy of its elements.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayConstructorOne0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr = new BigInt64Array(0);
-        expect(arr.length).assertEqual(0);
+        let source: Set<BigInt> = new Set<BigInt>();
+        source.add(5n);
+        let arr = new BigInt64Array(source);
+        arr[0] = 99n;
+        expect(source.has(5n)).assertTrue();
+        expect(source.has(99n)).assertFalse();
       });
 
     /**

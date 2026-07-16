@@ -2187,7 +2187,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1290
      * @tc.name testBigInt64ArraySet1290
-     * @tc.desc Verify set with FixedArray<E> 写入双元素 0 与 0
+     * @tc.desc Verify set with FixedArray<E> writes two elements: 0 and 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2220,7 +2220,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1310
      * @tc.name testBigInt64ArraySet1310
-     * @tc.desc Verify set with FixedArray<E> 写入双元素 0 与 正数
+     * @tc.desc Verify set with FixedArray<E> writes two elements: 0 and positive value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2254,7 +2254,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1330
      * @tc.name testBigInt64ArraySet1330
-     * @tc.desc Verify set with FixedArray<E> 写入双元素 0 与 负数
+     * @tc.desc Verify set with FixedArray<E> writes two elements: 0 and negative value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2292,7 +2292,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1350
      * @tc.name testBigInt64ArraySet1350
-     * @tc.desc Verify set with FixedArray<E> 写入双元素 0 与 maximum value
+     * @tc.desc Verify set with FixedArray<E> writes two elements: 0 and maximum value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2329,7 +2329,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1370
      * @tc.name testBigInt64ArraySet1370
-     * @tc.desc Verify set with FixedArray<E> 写入双元素 0 与 minimum value
+     * @tc.desc Verify set with FixedArray<E> writes two elements: 0 and minimum value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2367,7 +2367,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1390
      * @tc.name testBigInt64ArraySet1390
-     * @tc.desc Verify set with FixedArray<E> 写入双元素 正数 与 0
+     * @tc.desc Verify set with FixedArray<E> writes two elements: positive value and 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2401,7 +2401,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1410
      * @tc.name testBigInt64ArraySet1410
-     * @tc.desc Verify set with FixedArray<E> 写入双元素 正数 与 正数
+     * @tc.desc Verify set with FixedArray<E> writes two elements: positive value and positive value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2438,7 +2438,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1430
      * @tc.name testBigInt64ArraySet1430
-     * @tc.desc Verify set with FixedArray<E> 写入双元素 正数 与 负数
+     * @tc.desc Verify set with FixedArray<E> writes two elements: positive value and negative value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2471,7 +2471,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1450
      * @tc.name testBigInt64ArraySet1450
-     * @tc.desc Verify set with FixedArray<E> 写入双元素 正数 与 maximum value
+     * @tc.desc Verify set with FixedArray<E> writes two elements: positive value and maximum value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2506,7 +2506,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1470
      * @tc.name testBigInt64ArraySet1470
-     * @tc.desc Verify set with FixedArray<E> 写入双元素 正数 与 minimum value
+     * @tc.desc Verify set with FixedArray<E> writes two elements: positive value and minimum value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2540,7 +2540,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1490
      * @tc.name testBigInt64ArraySet1490
-     * @tc.desc Verify set with FixedArray<E> 写入双元素 负数 与 0
+     * @tc.desc Verify set with FixedArray<E> writes two elements: negative value and 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2575,7 +2575,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1510
      * @tc.name testBigInt64ArraySet1510
-     * @tc.desc Verify set with FixedArray<E> 写入双元素 负数 与 正数
+     * @tc.desc Verify set with FixedArray<E> writes two elements: negative value and positive value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2608,7 +2608,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1530
      * @tc.name testBigInt64ArraySet1530
-     * @tc.desc Verify set with FixedArray<E> 写入双元素 负数 与 负数
+     * @tc.desc Verify set with FixedArray<E> writes two elements: negative value and negative value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2641,7 +2641,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1550
      * @tc.name testBigInt64ArraySet1550
-     * @tc.desc Verify set with FixedArray<E> 写入双元素 负数 与 maximum value
+     * @tc.desc Verify set with FixedArray<E> writes two elements: negative value and maximum value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2675,7 +2675,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1570
      * @tc.name testBigInt64ArraySet1570
-     * @tc.desc Verify set with FixedArray<E> 写入双元素 负数 与 minimum value
+     * @tc.desc Verify set with FixedArray<E> writes two elements: negative value and minimum value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2709,7 +2709,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1590
      * @tc.name testBigInt64ArraySet1590
-     * @tc.desc Verify set with FixedArray<E> 写入双元素 maximum value 与 0
+     * @tc.desc Verify set with FixedArray<E> writes two elements: maximum value and 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2741,7 +2741,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1610
      * @tc.name testBigInt64ArraySet1610
-     * @tc.desc Verify set with FixedArray<E> 写入双元素 maximum value 与 正数
+     * @tc.desc Verify set with FixedArray<E> writes two elements: maximum value and positive value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2773,7 +2773,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1630
      * @tc.name testBigInt64ArraySet1630
-     * @tc.desc Verify set with FixedArray<E> 写入双元素 maximum value 与 负数
+     * @tc.desc Verify set with FixedArray<E> writes two elements: maximum value and negative value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2805,7 +2805,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1650
      * @tc.name testBigInt64ArraySet1650
-     * @tc.desc Verify set with FixedArray<E> 写入双元素 maximum value 与 maximum value
+     * @tc.desc Verify set with FixedArray<E> writes two elements: maximum value and maximum value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2838,7 +2838,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1670
      * @tc.name testBigInt64ArraySet1670
-     * @tc.desc Verify set with FixedArray<E> 写入双元素 maximum value 与 minimum value
+     * @tc.desc Verify set with FixedArray<E> writes two elements: maximum value and minimum value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2873,7 +2873,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1690
      * @tc.name testBigInt64ArraySet1690
-     * @tc.desc Verify set with FixedArray<E> 写入双元素 minimum value 与 0
+     * @tc.desc Verify set with FixedArray<E> writes two elements: minimum value and 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2905,7 +2905,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1710
      * @tc.name testBigInt64ArraySet1710
-     * @tc.desc Verify set with FixedArray<E> 写入双元素 minimum value 与 正数
+     * @tc.desc Verify set with FixedArray<E> writes two elements: minimum value and positive value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2941,7 +2941,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1730
      * @tc.name testBigInt64ArraySet1730
-     * @tc.desc Verify set with FixedArray<E> 写入双元素 minimum value 与 负数
+     * @tc.desc Verify set with FixedArray<E> writes two elements: minimum value and negative value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2974,7 +2974,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1750
      * @tc.name testBigInt64ArraySet1750
-     * @tc.desc Verify set with FixedArray<E> 写入双元素 minimum value 与 maximum value
+     * @tc.desc Verify set with FixedArray<E> writes two elements: minimum value and maximum value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -3008,7 +3008,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1770
      * @tc.name testBigInt64ArraySet1770
-     * @tc.desc Verify set with FixedArray<E> 写入双元素 minimum value 与 minimum value
+     * @tc.desc Verify set with FixedArray<E> writes two elements: minimum value and minimum value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -3043,7 +3043,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1790
      * @tc.name testBigInt64ArraySet1790
-     * @tc.desc Verify set with BigInt64Array 写入视图含 0 和 0
+     * @tc.desc Verify set with BigInt64Array writes a view containing 0 and 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -3059,7 +3059,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1800
      * @tc.name testBigInt64ArraySet1800
-     * @tc.desc Verify set with ArrayLike<BigInt> 写入类数组含 0 和 0
+     * @tc.desc Verify set with ArrayLike<BigInt> writes an array-like source containing 0 and 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -3074,7 +3074,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1810
      * @tc.name testBigInt64ArraySet1810
-     * @tc.desc Verify set with BigInt64Array 写入视图含 0 和 正数
+     * @tc.desc Verify set with BigInt64Array writes a view containing 0 and positive value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -3090,7 +3090,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1820
      * @tc.name testBigInt64ArraySet1820
-     * @tc.desc Verify set with ArrayLike<BigInt> 写入类数组含 0 和 正数
+     * @tc.desc Verify set with ArrayLike<BigInt> writes an array-like source containing 0 and positive value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -3105,7 +3105,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1830
      * @tc.name testBigInt64ArraySet1830
-     * @tc.desc Verify set with BigInt64Array 写入视图含 0 和 负数
+     * @tc.desc Verify set with BigInt64Array writes a view containing 0 and negative value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -3121,7 +3121,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1840
      * @tc.name testBigInt64ArraySet1840
-     * @tc.desc Verify set with ArrayLike<BigInt> 写入类数组含 0 和 负数
+     * @tc.desc Verify set with ArrayLike<BigInt> writes an array-like source containing 0 and negative value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -3136,7 +3136,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1850
      * @tc.name testBigInt64ArraySet1850
-     * @tc.desc Verify set with BigInt64Array 写入视图含 0 和 maximum value
+     * @tc.desc Verify set with BigInt64Array writes a view containing 0 and maximum value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -3152,7 +3152,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1860
      * @tc.name testBigInt64ArraySet1860
-     * @tc.desc Verify set with ArrayLike<BigInt> 写入类数组含 0 和 maximum value
+     * @tc.desc Verify set with ArrayLike<BigInt> writes an array-like source containing 0 and maximum value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -3167,7 +3167,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1870
      * @tc.name testBigInt64ArraySet1870
-     * @tc.desc Verify set with BigInt64Array 写入视图含 0 和 minimum value
+     * @tc.desc Verify set with BigInt64Array writes a view containing 0 and minimum value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -3183,7 +3183,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1880
      * @tc.name testBigInt64ArraySet1880
-     * @tc.desc Verify set with ArrayLike<BigInt> 写入类数组含 0 和 minimum value
+     * @tc.desc Verify set with ArrayLike<BigInt> writes an array-like source containing 0 and minimum value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -3198,7 +3198,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1890
      * @tc.name testBigInt64ArraySet1890
-     * @tc.desc Verify set with BigInt64Array 写入视图含 正数 和 0
+     * @tc.desc Verify set with BigInt64Array writes a view containing positive value and 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -3214,7 +3214,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1900
      * @tc.name testBigInt64ArraySet1900
-     * @tc.desc Verify set with ArrayLike<BigInt> 写入类数组含 正数 和 0
+     * @tc.desc Verify set with ArrayLike<BigInt> writes an array-like source containing positive value and 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -3229,7 +3229,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1910
      * @tc.name testBigInt64ArraySet1910
-     * @tc.desc Verify set with BigInt64Array 写入视图含 正数 和 正数
+     * @tc.desc Verify set with BigInt64Array writes a view containing positive value and positive value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -3245,7 +3245,7 @@ export default function BigInt64ArraySet01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_1920
      * @tc.name testBigInt64ArraySet1920
-     * @tc.desc Verify set with ArrayLike<BigInt> 写入类数组含 正数 和 正数
+     * @tc.desc Verify set with ArrayLike<BigInt> writes an array-like source containing positive value and positive value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

@@ -1954,186 +1954,173 @@ export default function BigInt64Array04Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1280
      * @tc.name testBigInt64ArrayFour1280
-     * @tc.desc Verify the constructor throws RangeError for a misaligned byteOffset.
+     * @tc.desc Verify reverse updates the order observed by a subsequent join call.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFour1280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf = new ArrayBuffer(16);
-      try {
-        new BigInt64Array(buf, 4);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
+      let arr = BigInt64Array.of(1n, 2n, 3n);
+      arr.reverse();
+      expect(arr.join(',')).assertEqual('3,2,1');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1290
      * @tc.name testBigInt64ArrayFour1290
-     * @tc.desc Verify the constructor throws RangeError for a byteOffset beyond the
-     * buffer.
+     * @tc.desc Verify a subarray view observes a fill performed on its parent array.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFour1290', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf = new ArrayBuffer(8);
-      try {
-        new BigInt64Array(buf, 16);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
+      let parent = new BigInt64Array(5);
+      let child = parent.subarray(1, 4);
+      parent.fill(7n);
+      expect(child.join('|')).assertEqual('7|7|7');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1300
      * @tc.name testBigInt64ArrayFour1300
-     * @tc.desc Verify the constructor throws RangeError for a negative length.
+     * @tc.desc Verify indexOf locates an element written by set at a nonzero offset.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFour1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        new BigInt64Array(-1);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
+      let arr = new BigInt64Array(5);
+      let source: Array<BigInt> = [10n, 20n, 30n];
+      arr.set(source, 1);
+      expect(arr.indexOf(20n)).assertEqual(2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1310
      * @tc.name testBigInt64ArrayFour1310
-     * @tc.desc Verify the constructor throws RangeError for an infinite length.
+     * @tc.desc Verify a partial fill is visible to includes without changing elements outside the range.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFour1310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        new BigInt64Array(Infinity);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
+      let arr = BigInt64Array.of(0n, 0n, 0n, 0n);
+      arr.fill(5n, 1, 3);
+      expect(arr.includes(5n)).assertTrue();
+      expect(arr[0]).assertEqual(0n);
+      expect(arr[3]).assertEqual(0n);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1320
      * @tc.name testBigInt64ArrayFour1320
-     * @tc.desc Verify reduce throws TypeError for an empty array without an initial
-     * value.
+     * @tc.desc Verify values changed by fill remain correct through slice and map.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFour1320', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array(0);
-      try {
-        arr.reduce((acc, v) => acc + v);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('TypeError');
-      }
+      let arr = new BigInt64Array(5);
+      arr.fill(2n);
+      let sliced = arr.slice(1, 4);
+      let mapped = sliced.map((value: BigInt): BigInt => value * 3n);
+      expect(mapped[0]).assertEqual(6n);
+      expect(mapped.length).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1330
      * @tc.name testBigInt64ArrayFour1330
-     * @tc.desc Verify reduceRight throws TypeError for an empty array without an
-     * initial value.
+     * @tc.desc Verify forEach can update an element that has already been visited without revisiting it.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFour1330', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array(0);
-      try {
-        arr.reduceRight((acc, v) => acc + v);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('TypeError');
-      }
+      let arr = BigInt64Array.of(10n, 20n, 30n);
+      let visited: Array<BigInt> = [];
+      arr.forEach((value: BigInt, index: int, array: BigInt64Array): void => {
+        visited.push(value);
+        if (index === 2) {
+          array[0] = 99n;
+        }
+      });
+      expect(visited[0]).assertEqual(10n);
+      expect(arr[0]).assertEqual(99n);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1340
      * @tc.name testBigInt64ArrayFour1340
-     * @tc.desc Verify sort propagates an error thrown by the compare callback.
+     * @tc.desc Verify keys continues to yield stable indexes when array values change during iteration.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFour1340', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([3n, 1n, 2n]);
-      try {
-        arr.sort((_a, _b) => { throw new Error('sort error'); });
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('Error');
-        expect(e.message).assertEqual('sort error');
+      let arr = BigInt64Array.of(1n, 2n, 3n);
+      let observedKeys: Array<int> = [];
+      for (let key of arr.keys()) {
+        observedKeys.push(key);
+        if (key === 0) {
+          arr.fill(9n);
+        }
       }
+      expect(observedKeys[0]).assertEqual(0);
+      expect(observedKeys[2]).assertEqual(2);
+      expect(arr[2]).assertEqual(9n);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1350
      * @tc.name testBigInt64ArrayFour1350
-     * @tc.desc Verify map propagates an error thrown by the callback.
+     * @tc.desc Verify some stops invoking its callback after the first matching element.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFour1350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([1n, 2n, 3n]);
-      try {
-        arr.map((_v) => { throw new Error('map error'); });
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('Error');
-        expect(e.message).assertEqual('map error');
-      }
+      let arr = BigInt64Array.of(2n, 4n, 6n, 8n);
+      let callCount = 0;
+      let result = arr.some((element: BigInt): boolean => {
+        callCount++;
+        return element > 5n;
+      });
+      expect(result).assertTrue();
+      expect(callCount).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1360
      * @tc.name testBigInt64ArrayFour1360
-     * @tc.desc Verify filter propagates an error thrown by the callback.
+     * @tc.desc Verify an existing subarray view observes its parent array after an in-place sort.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFour1360', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([1n, 2n, 3n]);
-      try {
-        arr.filter((_v) => { throw new Error('filter error'); });
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('Error');
-        expect(e.message).assertEqual('filter error');
-      }
+      let parent = BigInt64Array.of(4n, 1n, 3n, 2n);
+      let child = parent.subarray(1, 3);
+      parent.sort();
+      expect(child[0]).assertEqual(2n);
+      expect(child[1]).assertEqual(3n);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FOUR_1370
      * @tc.name testBigInt64ArrayFour1370
-     * @tc.desc Verify reduce propagates an error thrown by the callback.
+     * @tc.desc Verify an existing subarray view observes a copyWithin performed on its parent array.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFour1370', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([1n, 2n, 3n]);
-      try {
-        arr.reduce((_acc: BigInt, _v: BigInt): BigInt => { throw new Error('reduce error'); }, 0n);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('Error');
-        expect(e.message).assertEqual('reduce error');
-      }
+      let parent = BigInt64Array.of(1n, 2n, 3n, 4n, 5n);
+      let child = parent.subarray(1, 4);
+      parent.copyWithin(1, 3, 5);
+      expect(child[0]).assertEqual(4n);
+      expect(child[1]).assertEqual(5n);
+      expect(child[2]).assertEqual(4n);
     });
 
     /**

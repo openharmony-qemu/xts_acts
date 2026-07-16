@@ -390,86 +390,104 @@ export default function BigInt64ArrayConstructor02Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_0280
      * @tc.name testBigInt64ArrayConstructorTwo0280
-     * @tc.desc Verify `new BigInt64Array(buf)` produces a result where `arr.length` equals `3`.
+     * @tc.desc Verify explicit undefined byteOffset and length cover the entire buffer.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayConstructorTwo0280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf);
-        expect(arr.length).assertEqual(3);
-      });
+        let buf: ArrayBuffer = new ArrayBuffer(32);
+        let arr: BigInt64Array = new BigInt64Array(buf, undefined, undefined);
+        expect(arr.length).assertEqual(4);
+        expect(arr.byteOffset).assertEqual(0);
+      }
+    );
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_0290
      * @tc.name testBigInt64ArrayConstructorTwo0290
-     * @tc.desc Verify `new BigInt64Array(buf)` produces a result where `arr.length` equals `4`.
+     * @tc.desc Verify undefined byteOffset defaults to zero when length is specified.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayConstructorTwo0290', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(32);
-        let arr = new BigInt64Array(buf);
-        expect(arr.length).assertEqual(4);
-      });
+        let buf: ArrayBuffer = new ArrayBuffer(40);
+        let arr: BigInt64Array = new BigInt64Array(buf, undefined, 3);
+        expect(arr.byteOffset).assertEqual(0);
+        expect(arr.length).assertEqual(3);
+        expect(arr.byteLength).assertEqual(24);
+      }
+    );
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_0300
      * @tc.name testBigInt64ArrayConstructorTwo0300
-     * @tc.desc Verify `new BigInt64Array(buf)` produces a result where `arr.length` equals `8`.
+     * @tc.desc Verify undefined length uses all aligned bytes remaining after byteOffset.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayConstructorTwo0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(64);
-        let arr = new BigInt64Array(buf);
-        expect(arr.length).assertEqual(8);
-      });
+        let buf: ArrayBuffer = new ArrayBuffer(48);
+        let arr: BigInt64Array = new BigInt64Array(buf, 16, undefined);
+        expect(arr.byteOffset).assertEqual(16);
+        expect(arr.length).assertEqual(4);
+        expect(arr.byteLength).assertEqual(32);
+      }
+    );
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_0310
      * @tc.name testBigInt64ArrayConstructorTwo0310
-     * @tc.desc Verify `new BigInt64Array(buf)` produces a result where `arr.length` equals `16`.
+     * @tc.desc Verify zero byteOffset and undefined length cover the complete buffer.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayConstructorTwo0310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(128);
-        let arr = new BigInt64Array(buf);
-        expect(arr.length).assertEqual(16);
-      });
+        let buf: ArrayBuffer = new ArrayBuffer(64);
+        let arr: BigInt64Array = new BigInt64Array(buf, 0, undefined);
+        expect(arr.length).assertEqual(8);
+        expect(arr.byteLength).assertEqual(64);
+      }
+    );
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_0320
      * @tc.name testBigInt64ArrayConstructorTwo0320
-     * @tc.desc Verify `new BigInt64Array(buf)` produces a result where `arr.length` equals `32`.
+     * @tc.desc Verify an unaligned byteOffset throws RangeError when length is undefined.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayConstructorTwo0320', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(256);
-        let arr = new BigInt64Array(buf);
-        expect(arr.length).assertEqual(32);
-      });
+        let buf: ArrayBuffer = new ArrayBuffer(24);
+        try {
+          new BigInt64Array(buf, 1, undefined);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('RangeError');
+        }
+      }
+    );
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_0330
      * @tc.name testBigInt64ArrayConstructorTwo0330
-     * @tc.desc Verify `new BigInt64Array(buf)` produces a result where `arr.length` equals `128`.
+     * @tc.desc Verify undefined byteOffset and zero length create an empty view at offset zero.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayConstructorTwo0330', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(1024);
-        let arr = new BigInt64Array(buf);
-        expect(arr.length).assertEqual(128);
-      });
+        let buf: ArrayBuffer = new ArrayBuffer(16);
+        let arr: BigInt64Array = new BigInt64Array(buf, undefined, 0);
+        expect(arr.length).assertEqual(0);
+        expect(arr.byteLength).assertEqual(0);
+        expect(arr.byteOffset).assertEqual(0);
+      }
+    );
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_0340

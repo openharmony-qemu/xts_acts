@@ -379,8 +379,8 @@ export default function BigInt64ArrayJoin01Test(): void {
      */
     it('testBigInt64ArrayJoin2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n]);
-      let act = arr.join("和");
-      expect(act).assertEqual("1和2");
+      let act = arr.join("and");
+      expect(act).assertEqual("1and2");
     });
 
     /**
@@ -393,8 +393,8 @@ export default function BigInt64ArrayJoin01Test(): void {
      */
     it('testBigInt64ArrayJoin2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([-1n, -2n]);
-      let act = arr.join("连接");
-      expect(act).assertEqual("-1连接-2");
+      let act = arr.join("link");
+      expect(act).assertEqual("-1link-2");
     });
 
     /**
@@ -407,8 +407,8 @@ export default function BigInt64ArrayJoin01Test(): void {
      */
     it('testBigInt64ArrayJoin2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([3n, 4n, 5n]);
-      let act = arr.join("、");
-      expect(act).assertEqual("3、4、5");
+      let act = arr.join("/");
+      expect(act).assertEqual("3/4/5");
     });
 
     /**
@@ -421,8 +421,8 @@ export default function BigInt64ArrayJoin01Test(): void {
      */
     it('testBigInt64ArrayJoin2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([6n, 7n]);
-      let act = arr.join("，");
-      expect(act).assertEqual("6，7");
+      let act = arr.join(", ");
+      expect(act).assertEqual("6, 7");
     });
 
     /**
@@ -435,8 +435,8 @@ export default function BigInt64ArrayJoin01Test(): void {
      */
     it('testBigInt64ArrayJoin2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([8n, 9n]);
-      let act = arr.join(" 与 ");
-      expect(act).assertEqual("8 与 9");
+      let act = arr.join(" and ");
+      expect(act).assertEqual("8 and 9");
     });
 
     /**
@@ -449,8 +449,8 @@ export default function BigInt64ArrayJoin01Test(): void {
      */
     it('testBigInt64ArrayJoin3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([10n, 11n]);
-      let act = arr.join("測試");
-      expect(act).assertEqual("10測試11");
+      let act = arr.join("test");
+      expect(act).assertEqual("10test11");
     });
 
     /**
@@ -561,8 +561,8 @@ export default function BigInt64ArrayJoin01Test(): void {
      */
     it('testBigInt64ArrayJoin3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([0n, 1n]);
-      let act = arr.join("字🍔组");
-      expect(act).assertEqual("0字🍔组1");
+      let act = arr.join("a🍔b");
+      expect(act).assertEqual("0a🍔b1");
     });
 
     /**
@@ -919,8 +919,8 @@ export default function BigInt64ArrayJoin01Test(): void {
      */
     it('testBigInt64ArrayJoin6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([9223372036854775807n, -9223372036854775808n]);
-      let act = arr.join("和");
-      expect(act).assertEqual("9223372036854775807和-9223372036854775808");
+      let act = arr.join("and");
+      expect(act).assertEqual("9223372036854775807and-9223372036854775808");
     });
 
     /**

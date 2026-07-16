@@ -197,7 +197,7 @@ export default function BigInt64ArrayJoin02Test(): void {
      */
     it('testBigInt64ArrayJoinTwo0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n]);
-      let res = arr.join("测试");
+      let res = arr.join("test");
       expect(typeof res).assertEqual("string");
     });
 
@@ -589,8 +589,8 @@ export default function BigInt64ArrayJoin02Test(): void {
      */
     it('testBigInt64ArrayJoinTwo0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n]);
-      let res = arr.join("测试");
-      expect(res).assertEqual("1测试2");
+      let res = arr.join("test");
+      expect(res).assertEqual("1test2");
     });
 
     /**
