@@ -14,12 +14,12 @@
  */
  
 const FILTERED_DEVICES = [
-	{vendorId: 3034, productId: 33107},
-	{vendorId: 65535, productId: 14131},
-  ];
+  {vendorId: 3034, productId: 33107},
+  {vendorId: 65535, productId: 14131},
+];
    
-  export function isFilteredDevice(device) {
-	return FILTERED_DEVICES.some(item =>
-	  device.vendorId === item.vendorId && device.productId === item.productId
-	);
-  }
+export function isFilteredDevice(device) {
+  return FILTERED_DEVICES.some(item =>
+    device.vendorId === item.vendorId && device.productId === item.productId
+  );
+}
