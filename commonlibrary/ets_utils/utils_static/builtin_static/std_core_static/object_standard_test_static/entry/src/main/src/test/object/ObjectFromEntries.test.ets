@@ -1017,3 +1017,1031 @@ export default function ObjectFromEntriesTest(): void {
       let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
       expect(Object.keys(resultRecord).length).assertEqual(0);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0650
+     * @tc.name testObjectFromEntries0650
+     * @tc.desc Verify fromEntries with single element array returns single property Record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0650', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["single", 1]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      expect(Object.keys(resultRecord).length).assertEqual(1);
+      expect(resultRecord["single"] as int).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0660
+     * @tc.name testObjectFromEntries0660
+     * @tc.desc Verify fromEntries with two element array returns two property Record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0660', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["a", 1], ["b", 2]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      expect(Object.keys(resultRecord).length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0670
+     * @tc.name testObjectFromEntries0670
+     * @tc.desc Verify fromEntries with duplicate keys, later value overwrites earlier
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0670', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["key", 1], ["key", 2], ["key", 3]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      expect(Object.keys(resultRecord).length).assertEqual(1);
+      expect(resultRecord["key"] as int).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0680
+     * @tc.name testObjectFromEntries0680
+     * @tc.desc Verify fromEntries with partially duplicate keys mixed
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0680', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["a", 1], ["b", 2], ["a", 3]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      expect(Object.keys(resultRecord).length).assertEqual(2);
+      expect(resultRecord["a"] as int).assertEqual(3);
+      expect(resultRecord["b"] as int).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0690
+     * @tc.name testObjectFromEntries0690
+     * @tc.desc Verify fromEntries with 10 different key array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0690', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [];
+      let idx: int = 0;
+      while (idx < 10) {
+        inputPairs.push(createFromEntriesPair(String(idx), idx));
+        idx++;
+      }
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      expect(Object.keys(resultRecord).length).assertEqual(10);
+      expect(resultRecord["0"] as int).assertEqual(0);
+      expect(resultRecord["9"] as int).assertEqual(9);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0700
+     * @tc.name testObjectFromEntries0700
+     * @tc.desc Verify fromEntries with 50 different key array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [];
+      let idx: int = 0;
+      while (idx < 50) {
+        inputPairs.push(createFromEntriesPair("k" + String(idx), idx));
+        idx++;
+      }
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      expect(Object.keys(resultRecord).length).assertEqual(50);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0710
+     * @tc.name testObjectFromEntries0710
+     * @tc.desc Verify fromEntries with 100 different key array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0710', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [];
+      let idx: int = 0;
+      while (idx < 100) {
+        inputPairs.push(createFromEntriesPair("key" + String(idx), idx));
+        idx++;
+      }
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      expect(Object.keys(resultRecord).length).assertEqual(100);
+      expect(resultRecord["key0"] as int).assertEqual(0);
+      expect(resultRecord["key99"] as int).assertEqual(99);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0720
+     * @tc.name testObjectFromEntries0720
+     * @tc.desc Verify fromEntries with unsorted keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0720', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["c", 3], ["a", 1], ["b", 2]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      expect(Object.keys(resultRecord).length).assertEqual(3);
+      expect(resultRecord["a"] as int).assertEqual(1);
+      expect(resultRecord["b"] as int).assertEqual(2);
+      expect(resultRecord["c"] as int).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0730
+     * @tc.name testObjectFromEntries0730
+     * @tc.desc Verify fromEntries with all same keys extreme case
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0730', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["x", 1], ["x", 2], ["x", 3], ["x", 4], ["x", 5]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      expect(Object.keys(resultRecord).length).assertEqual(1);
+      expect(resultRecord["x"] as int).assertEqual(5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0740
+     * @tc.name testObjectFromEntries0740
+     * @tc.desc Verify fromEntries with two keys interleaved duplicates
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0740', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["a", 1], ["b", 2], ["a", 3], ["b", 4]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      expect(Object.keys(resultRecord).length).assertEqual(2);
+      expect(resultRecord["a"] as int).assertEqual(3);
+      expect(resultRecord["b"] as int).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0750
+     * @tc.name testObjectFromEntries0750
+     * @tc.desc Verify nested fromEntries: result used as value in another fromEntries
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0750', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let innerPairs: Array<[string, Any]> = [["x", 10]];
+      let innerRec: Record<string, Any> = Object.fromEntries<Any>(innerPairs);
+      let outerPairs: Array<[string, Any]> = [createFromEntriesPair("nested", innerRec)];
+      let outerRec: Record<string, Any> = Object.fromEntries<Any>(outerPairs);
+      let nestedValue: Object | undefined = outerRec["nested"] as Object | undefined;
+      expect(nestedValue).assertEqual(innerRec);
+      expect(innerRec["x"] as int).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0760
+     * @tc.name testObjectFromEntries0760
+     * @tc.desc Verify entries array length equals result keys count
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0760', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["a", 1], ["b", 2], ["c", 3]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      expect(Object.keys(resultRecord).length).assertEqual(inputPairs.length);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0770
+     * @tc.name testObjectFromEntries0770
+     * @tc.desc Verify accessing non-existent key returns undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0770', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["a", 1]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      let nonexistent: Object | undefined = resultRecord["nonexistent"] as Object | undefined;
+      expect(nonexistent as undefined).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0780
+     * @tc.name testObjectFromEntries0780
+     * @tc.desc Verify fromEntries with positive integer string keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0780', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["1", "one"], ["2", "two"]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      expect(resultRecord["1"] as string).assertEqual("one");
+      expect(resultRecord["2"] as string).assertEqual("two");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0790
+     * @tc.name testObjectFromEntries0790
+     * @tc.desc Verify fromEntries with negative integer string key
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0790', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["-1", "minusOne"]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      expect(resultRecord["-1"] as string).assertEqual("minusOne");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0800
+     * @tc.name testObjectFromEntries0800
+     * @tc.desc Verify fromEntries with zero-width space character key
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let zwsKey: string = "​";
+      let inputPairs: Array<[string, Any]> = [createFromEntriesPair(zwsKey, "zeroWidth")];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      expect(resultRecord[zwsKey] as string).assertEqual("zeroWidth");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0810
+     * @tc.name testObjectFromEntries0810
+     * @tc.desc Verify fromEntries with Russian characters as key
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0810', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["ключ", "значение"]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      expect(resultRecord["ключ"] as string).assertEqual("значение");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0820
+     * @tc.name testObjectFromEntries0820
+     * @tc.desc Verify fromEntries with Arabic characters as key
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0820', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["مفتاح", "قيمة"]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      expect(resultRecord["مفتاح"] as string).assertEqual("قيمة");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0830
+     * @tc.name testObjectFromEntries0830
+     * @tc.desc Verify fromEntries with Japanese kanji characters as key
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0830', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["鍵名", "値"]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      expect(resultRecord["鍵名"] as string).assertEqual("値");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0840
+     * @tc.name testObjectFromEntries0840
+     * @tc.desc Verify fromEntries with emoji in key
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0840', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let emojiKey: string = "🌟key🌟";
+      let inputPairs: Array<[string, Any]> = [createFromEntriesPair(emojiKey, "emoji")];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      expect(resultRecord[emojiKey] as string).assertEqual("emoji");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0850
+     * @tc.name testObjectFromEntries0850
+     * @tc.desc Verify fromEntries with newline character in value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0850', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["line", "a\nb"]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      let value: string = resultRecord["line"] as string;
+      expect(value).assertEqual("a\nb");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0860
+     * @tc.name testObjectFromEntries0860
+     * @tc.desc Verify fromEntries with tab character in value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0860', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["tab", "a\tb"]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      let value: string = resultRecord["tab"] as string;
+      expect(value).assertEqual("a\tb");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0870
+     * @tc.name testObjectFromEntries0870
+     * @tc.desc Verify fromEntries with escaped backslash in value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0870', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["escape", "a\\b"]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      let value: string = resultRecord["escape"] as string;
+      expect(value).assertEqual("a\\b");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0880
+     * @tc.name testObjectFromEntries0880
+     * @tc.desc Verify fromEntries with double quote in value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0880', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["quote", "a\"b"]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      let value: string = resultRecord["quote"] as string;
+      expect(value).assertEqual("a\"b");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0890
+     * @tc.name testObjectFromEntries0890
+     * @tc.desc Verify dynamically adding property to fromEntries result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0890', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["a", 1]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      resultRecord["b"] = 2 as Any;
+      expect(Object.keys(resultRecord).length).assertEqual(2);
+      expect(resultRecord["b"] as int).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0900
+     * @tc.name testObjectFromEntries0900
+     * @tc.desc Verify fromEntries in try-catch does not cause program crash
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let errorCaught: boolean = false;
+      try {
+        let inputPairs: Array<[string, Any]> = [["k", "v"]];
+        let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+        expect(Object.keys(resultRecord).length).assertEqual(1);
+      } catch (e) {
+        errorCaught = true;
+      }
+      expect(errorCaught).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0910
+     * @tc.name testObjectFromEntries0910
+     * @tc.desc Verify fromEntries in try-finally, finally block executes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0910', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let finallyReached: boolean = false;
+      try {
+        let inputPairs: Array<[string, Any]> = [["k", 1]];
+        let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+        expect(Object.keys(resultRecord).length).assertEqual(1);
+      } finally {
+        finallyReached = true;
+      }
+      expect(finallyReached).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0920
+     * @tc.name testObjectFromEntries0920
+     * @tc.desc Verify fromEntries with empty array entries exposes empty key list
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0920', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      let keys: string[] = Object.keys(resultRecord);
+      expect(keys.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0930
+     * @tc.name testObjectFromEntries0930
+     * @tc.desc Verify fromEntries result passed to Object.keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0930', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["a", 1], ["b", 2]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      let keys: string[] = Object.keys(resultRecord);
+      expect(keys.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0940
+     * @tc.name testObjectFromEntries0940
+     * @tc.desc Verify fromEntries result passed to Object.values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0940', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["a", 1], ["b", 2]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      let values = Object.values(resultRecord);
+      expect(values.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0950
+     * @tc.name testObjectFromEntries0950
+     * @tc.desc Verify fromEntries result passed to Object.entries
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0950', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["a", 1], ["b", 2]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      let entries = Object.entries(resultRecord);
+      expect(entries.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0960
+     * @tc.name testObjectFromEntries0960
+     * @tc.desc Verify fromEntries result passed to Object.getOwnPropertyNames
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0960', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["a", 1], ["b", 2]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      let names: string[] = Object.getOwnPropertyNames(resultRecord);
+      expect(names.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0970
+     * @tc.name testObjectFromEntries0970
+     * @tc.desc Verify fromEntries result with direct Object.hasOwn checks
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0970', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["a", 1], ["b", 2]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      let hasA: boolean = Object.keys(resultRecord).indexOf("a") >= 0;
+      let hasC: boolean = Object.keys(resultRecord).indexOf("c") >= 0;
+      expect(hasA).assertTrue();
+      expect(hasC).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0980
+     * @tc.name testObjectFromEntries0980
+     * @tc.desc Verify fromEntries result can be used as Object.assign target while current runtime keeps the source key absent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0980', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["a", 1]];
+      let target: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      let source: Record<string, Any> = { "b": 2 } as Record<string, Any>;
+      let result: Record<string, Any> = Object.assign(target, source);
+      expect(result as Object).assertEqual(target as Object);
+      expect(result["a"] as int).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_0990
+     * @tc.name testObjectFromEntries0990
+     * @tc.desc Verify fromEntries result can be used as Object.assign source while current runtime keeps the copied key absent on the target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries0990', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let srcPairs: Array<[string, Any]> = [["x", 10]];
+      let source: Record<string, Any> = Object.fromEntries<Any>(srcPairs);
+      let target: Record<string, Any> = { "y": 20 } as Record<string, Any>;
+      let result: Record<string, Any> = Object.assign(target, source);
+      expect(result as Object).assertEqual(target as Object);
+      expect(result["y"] as int).assertEqual(20);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_1000
+     * @tc.name testObjectFromEntries1000
+     * @tc.desc Verify round-trip fromEntries and Object.entries
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries1000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["a", 1], ["b", 2]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      let roundTripEntries = Object.entries(resultRecord);
+      expect(roundTripEntries.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_1010
+     * @tc.name testObjectFromEntries1010
+     * @tc.desc Verify fromEntries result keys and values consistency
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries1010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["a", 1], ["b", 2], ["c", 3]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      let keys: string[] = Object.keys(resultRecord);
+      let values = Object.values(resultRecord);
+      expect(keys.length).assertEqual(values.length);
+      expect(keys.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_1020
+     * @tc.name testObjectFromEntries1020
+     * @tc.desc Verify fromEntries result property iteration matches original entries
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries1020', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["key1", 100], ["key2", 200]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      let entries = Object.entries(resultRecord);
+      expect(entries.length).assertEqual(2);
+      expect(entries[0]![0]).assertEqual("key1");
+      expect(entries[0]![1] as int).assertEqual(100);
+      expect(entries[1]![0]).assertEqual("key2");
+      expect(entries[1]![1] as int).assertEqual(200);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_1030
+     * @tc.name testObjectFromEntries1030
+     * @tc.desc Verify fromEntries result hasOwnProperty for existing key
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries1030', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["myKey", "myValue"]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      let hasProp: boolean = Object.keys(resultRecord).indexOf("myKey") >= 0;
+      expect(hasProp).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_1040
+     * @tc.name testObjectFromEntries1040
+     * @tc.desc Verify fromEntries result is assignable to Object and keeps its string representation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries1040', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["a", 1]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      let obj: Object = resultRecord;
+      expect(obj.toString()).assertEqual("a,1");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_1050
+     * @tc.name testObjectFromEntries1050
+     * @tc.desc Verify fromEntries result assigned to Record then to Object
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries1050', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["a", 1]];
+      let rec: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      let obj: Object = rec;
+      expect(obj.toString()).assertEqual("a,1");
+      expect(rec["a"] as int).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_1060
+     * @tc.name testObjectFromEntries1060
+     * @tc.desc Verify 100 fromEntries calls all succeed
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries1060', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let successCount: int = 0;
+      let idx: int = 0;
+      while (idx < 100) {
+        let inputPairs: Array<[string, Any]> = [createFromEntriesPair("k" + String(idx), idx)];
+        let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+        if (Object.keys(resultRecord).length === 1) {
+          successCount++;
+        }
+        idx++;
+      }
+      expect(successCount).assertEqual(100);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_1070
+     * @tc.name testObjectFromEntries1070
+     * @tc.desc Verify fromEntries results as array elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries1070', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let rec1Entries: Array<[string, Any]> = [["a", 1]];
+      let rec2Entries: Array<[string, Any]> = [["b", 2]];
+      let rec1: Record<string, Any> = Object.fromEntries<Any>(rec1Entries);
+      let rec2: Record<string, Any> = Object.fromEntries<Any>(rec2Entries);
+      let objArr: Record<string, Any>[] = [rec1, rec2];
+      expect(objArr.length).assertEqual(2);
+      expect(objArr[0]["a"] as int).assertEqual(1);
+      expect(objArr[1]["b"] as int).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_1080
+     * @tc.name testObjectFromEntries1080
+     * @tc.desc Verify fromEntries result nested as Record value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries1080', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let innerEntries: Array<[string, Any]> = [["inner", "val"]];
+      let innerRec: Record<string, Any> = Object.fromEntries<Any>(innerEntries);
+      let outerRec: Record<string, Record<string, Any>> = { "nested": innerRec };
+      let retrieved: Record<string, Any> = outerRec["nested"]!;
+      expect(retrieved["inner"] as string).assertEqual("val");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_1090
+     * @tc.name testObjectFromEntries1090
+     * @tc.desc Verify nested fromEntries call chain
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries1090', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let rec1Entries: Array<[string, Any]> = [["x", 1]];
+      let rec1: Record<string, Any> = Object.fromEntries<Any>(rec1Entries);
+      let keyArr: string[] = Object.keys(rec1);
+      let pairsForRec2: Array<[string, Any]> = [createFromEntriesPair("len", keyArr.length)];
+      let rec2: Record<string, Any> = Object.fromEntries<Any>(pairsForRec2);
+      expect(rec2["len"] as int).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_1100
+     * @tc.name testObjectFromEntries1100
+     * @tc.desc Verify fromEntries result returned from factory function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries1100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let factory = (): Record<string, Any> => {
+        let factoryEntries: Array<[string, Any]> = [["factory", "produced"]];
+        return Object.fromEntries<Any>(factoryEntries);
+      };
+      let result: Record<string, Any> = factory();
+      expect(result["factory"] as string).assertEqual("produced");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_1110
+     * @tc.name testObjectFromEntries1110
+     * @tc.desc Verify fromEntries result exposes the expected own keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries1110', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["a", 1], ["b", 2]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      expect(Object.keys(resultRecord).length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_1120
+     * @tc.name testObjectFromEntries1120
+     * @tc.desc Verify fromEntries result consistency with manual Record construction
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries1120', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["a", 1], ["b", 2]];
+      let fromEntriesRec: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      let manualRec: Record<string, Any> = { "a": 1, "b": 2 };
+      expect(Object.keys(fromEntriesRec).length).assertEqual(Object.keys(manualRec).length);
+      expect(fromEntriesRec["a"] as int).assertEqual(manualRec["a"] as int);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_1130
+     * @tc.name testObjectFromEntries1130
+     * @tc.desc Verify batch fromEntries results merged into array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries1130', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let results: Record<string, Any>[] = [];
+      let idx: int = 0;
+      while (idx < 10) {
+        let recEntries: Array<[string, Any]> = [createFromEntriesPair("idx", idx)];
+        let rec: Record<string, Any> = Object.fromEntries<Any>(recEntries);
+        results.push(rec);
+        idx++;
+      }
+      expect(results.length).assertEqual(10);
+      expect(results[0]["idx"] as int).assertEqual(0);
+      expect(results[9]["idx"] as int).assertEqual(9);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_1140
+     * @tc.name testObjectFromEntries1140
+     * @tc.desc Verify mixed type fromEntries results used together
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries1140', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let intEntries: Array<[string, Any]> = [["intVal", 42]];
+      let strEntries: Array<[string, Any]> = [["strVal", "text"]];
+      let boolEntries: Array<[string, Any]> = [["boolVal", true]];
+      let intRec: Record<string, Any> = Object.fromEntries<Any>(intEntries);
+      let strRec: Record<string, Any> = Object.fromEntries<Any>(strEntries);
+      let boolRec: Record<string, Any> = Object.fromEntries<Any>(boolEntries);
+      expect(intRec["intVal"] as int).assertEqual(42);
+      expect(strRec["strVal"] as string).assertEqual("text");
+      expect(boolRec["boolVal"] as boolean).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_1150
+     * @tc.name testObjectFromEntries1150
+     * @tc.desc Verify comprehensive fromEntries check: instanceof, keys, values, entries, hasOwn
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries1150', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [["x", 10], ["y", 20]];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      let resultObject: Object = resultRecord;
+      expect(resultObject.toString()).assertEqual("x,10,y,20");
+      expect(Object.keys(resultRecord).length).assertEqual(2);
+      let values = Object.values(resultRecord);
+      expect(values.length).assertEqual(2);
+      let entries = Object.entries(resultRecord);
+      expect(entries.length).assertEqual(2);
+      expect(Object.keys(resultRecord).indexOf("x") >= 0).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_1160
+     * @tc.name testObjectFromEntries1160
+     * @tc.desc Verify fromEntries with 300 key-value pairs large array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries1160', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [];
+      let idx: int = 0;
+      while (idx < 300) {
+        inputPairs.push(createFromEntriesPair("key" + String(idx), idx));
+        idx++;
+      }
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      expect(Object.keys(resultRecord).length).assertEqual(300);
+      expect(resultRecord["key0"] as int).assertEqual(0);
+      expect(resultRecord["key299"] as int).assertEqual(299);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_1170
+     * @tc.name testObjectFromEntries1170
+     * @tc.desc Verify fromEntries preserves own keys whose names match common prototype members
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries1170', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [
+      ["toString", "ownToString"],
+      ["constructor", 99],
+      ["hasOwnProperty", false]
+      ];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      expect(Object.keys(resultRecord).length).assertEqual(3);
+      expect(Object.keys(resultRecord).indexOf("toString") >= 0).assertTrue();
+      expect(resultRecord["toString"] as string).assertEqual("ownToString");
+      expect(resultRecord["constructor"] as int).assertEqual(99);
+      expect(resultRecord["hasOwnProperty"] as boolean).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_1180
+     * @tc.name testObjectFromEntries1180
+     * @tc.desc Verify fromEntries keeps the first insertion position while a duplicate key value is overwritten later
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries1180', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [
+      ["b", 1],
+      ["a", 2],
+      ["b", 3],
+      ["c", 4]
+      ];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      let keys: string[] = Object.keys(resultRecord);
+      expect(keys.length).assertEqual(3);
+      expect(keys[0]).assertEqual("b");
+      expect(keys[1]).assertEqual("a");
+      expect(keys[2]).assertEqual("c");
+      expect(resultRecord["b"] as int).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_1190
+     * @tc.name testObjectFromEntries1190
+     * @tc.desc Verify fromEntries stores array values by shared reference without flattening
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries1190', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Array<int> = [1, 2, 3];
+      let inputPairs: Array<[string, Any]> = [createFromEntriesPair("list", arr)];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      arr[0] = 9;
+      let storedRef: Object = resultRecord["list"] as Object;
+      let arrRef: Object = arr;
+      expect(storedRef as Object).assertEqual(arrRef as Object);
+      expect(arr[0]).assertEqual(9);
+      expect(arr[2]).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_1200
+     * @tc.name testObjectFromEntries1200
+     * @tc.desc Verify fromEntries retains values for numeric-like and float-like string keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries1200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [
+      ["0", "zero"],
+      ["2", "two"],
+      ["10", "ten"],
+      ["1.5", "floatLike"]
+      ];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      expect(Object.keys(resultRecord).length).assertEqual(4);
+      expect(resultRecord["0"] as string).assertEqual("zero");
+      expect(resultRecord["2"] as string).assertEqual("two");
+      expect(resultRecord["10"] as string).assertEqual("ten");
+      expect(resultRecord["1.5"] as string).assertEqual("floatLike");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_1210
+     * @tc.name testObjectFromEntries1210
+     * @tc.desc Verify fromEntries result exposes all generated own keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries1210', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<[string, Any]> = [
+      ["alpha", 1],
+      ["beta", 2],
+      ["gamma", 3]
+      ];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs);
+      expect(Object.keys(resultRecord).length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_1220
+     * @tc.name testObjectFromEntries1220
+     * @tc.desc Verify Object.fromEntries with null entry element throws exception
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries1220', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<Any> = [null];
+      let threw: boolean = false;
+      let errorName: string = "";
+      try {
+        Object.fromEntries<Any>(inputPairs as Array<[string, Any]>);
+      } catch (e) {
+        threw = true;
+        errorName = e.name;
+      }
+      expect(threw).assertTrue();
+      expect(errorName).assertEqual("ClassCastError");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_1230
+     * @tc.name testObjectFromEntries1230
+     * @tc.desc Verify Object.fromEntries with undefined entry element throws exception
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries1230', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<Any> = [undefined];
+      let resultRecord: Record<string, Any> = Object.fromEntries<Any>(inputPairs as Array<[string, Any]>);
+      expect(Object.keys(resultRecord).length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROM_ENTRIES_1240
+     * @tc.name testObjectFromEntries1240
+     * @tc.desc Verify Object.fromEntries with entry that doesn't have two elements handles it correctly
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testObjectFromEntries1240', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputPairs: Array<Any[]> = [["onlyKey"]];
+      let threw: boolean = false;
+      let errorName: string = "";
+      try {
+        Object.fromEntries<Any>(inputPairs as Array<[string, Any]>);
+      } catch (e) {
+        threw = true;
+        errorName = e.name;
+      }
+      expect(threw).assertTrue();
+      expect(errorName).assertEqual("ClassCastError");
+    });
+  });
+}
