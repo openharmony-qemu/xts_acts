@@ -18,7 +18,29 @@
 #include "device_certificate/certmanager/cm_native_type.h"
 #include <cstdint>
 #include <string>
-#include <cstring>
+
+int SafeMemset(void* dst, size_t dstSize, const void* src, size_t len)
+{
+    if (dst == nullptr || src == nullptr) {
+        return EINVAL;
+    }
+    
+    if (dstSize == 0) {
+        return EINVAL;
+    }
+    
+    if (len > dstSize) {
+        return ERANGE;
+    }
+    
+    unsigned char *ptr = static_cast<unsigned char *>(dst);
+    unsigned char value = *(static_cast<const unsigned char *>(src));
+    for (size_t i = 0; i < len; i++) {
+        ptr[i] = value;
+    }
+
+    return 0;
+}
 
 static napi_value Add(napi_env env, napi_callback_info info)
 {
@@ -269,7 +291,7 @@ static napi_value OHCertManagerNativeApiPublicErr0100(napi_env env, napi_callbac
     
     OH_CM_Blob keyUri = {static_cast<uint32_t>(identity.length() + 1), (uint8_t*)identity.c_str()};
     OH_CM_Credential *credential = static_cast<OH_CM_Credential*>(malloc(sizeof(OH_CM_Credential)));
-    (void)memset(credential, 0, sizeof(OH_CM_Credential));
+    (void)SafeMemset(credential, sizeof(OH_CM_Credential), 0, sizeof(OH_CM_Credential));
 
     int32_t ohResult = OH_CertManager_GetPublicCertificate(&keyUri, credential);
     
@@ -441,7 +463,7 @@ static napi_value OHCertNativeCredTest0100(napi_env env, napi_callback_info info
         napi_throw_error(env, nullptr, "malloc credential error");
         return nullptr;
     }
-    (void)memset(credential, 0, sizeof(OH_CM_Credential));
+    (void)SafeMemset(credential, sizeof(OH_CM_Credential), 0, sizeof(OH_CM_Credential));
 
     int32_t ohResult = OH_CertManager_GetPrivateCertificate(&keyUri, credential);
     
