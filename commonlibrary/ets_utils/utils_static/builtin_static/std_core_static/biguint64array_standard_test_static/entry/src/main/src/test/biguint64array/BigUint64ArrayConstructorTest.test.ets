@@ -1987,3 +1987,1437 @@ export default function biguint64arrayConstructorTest(): void {
       expect(constructedArray.byteLength).assertEqual(32);
       expect(constructedArray[lastIndex]).assertEqual(0n);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1220
+     * @tc.name testBigUint64ArrayConstructor122
+     * @tc.desc Verify constructor(length: number) accepts octal literal 0o4 and initializes index 3 to 0n
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let octalLength: number = 0o4;
+      let constructedArray = new BigUint64Array(octalLength);
+      let lastIndex: int = constructedArray.length - 1;
+      expect(constructedArray.length).assertEqual(4);
+      expect(constructedArray.byteLength).assertEqual(32);
+      expect(constructedArray[lastIndex]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1230
+     * @tc.name testBigUint64ArrayConstructor123
+     * @tc.desc Verify constructor(length: number) accepts hexadecimal literal 0x04 and initializes index 3 to 0n
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let hexadecimalLength: number = 0x04;
+      let constructedArray = new BigUint64Array(hexadecimalLength);
+      let lastIndex: int = constructedArray.length - 1;
+      expect(constructedArray.length).assertEqual(4);
+      expect(constructedArray.byteLength).assertEqual(32);
+      expect(constructedArray[lastIndex]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1240
+     * @tc.name testBigUint64ArrayConstructor124
+     * @tc.desc Verify constructor(ArrayBuffer, byteOffset: int) accepts binary literal 0b1000 as byteOffset 8
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(24);
+      let binaryByteOffset: int = 0b1000;
+      let constructedArray = new BigUint64Array(sourceBuffer, binaryByteOffset);
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.byteLength).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1250
+     * @tc.name testBigUint64ArrayConstructor125
+     * @tc.desc Verify constructor(ArrayBuffer, byteOffset: int) accepts octal literal 0o10 as byteOffset 8
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(24);
+      let octalByteOffset: int = 0o10;
+      let constructedArray = new BigUint64Array(sourceBuffer, octalByteOffset);
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.byteLength).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1260
+     * @tc.name testBigUint64ArrayConstructor126
+     * @tc.desc Verify constructor(ArrayBuffer, byteOffset: int) accepts hexadecimal literal 0x08 as byteOffset 8
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(24);
+      let hexadecimalByteOffset: int = 0x08;
+      let constructedArray = new BigUint64Array(sourceBuffer, hexadecimalByteOffset);
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.byteLength).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1270
+     * @tc.name testBigUint64ArrayConstructor127
+     * @tc.desc Verify constructor(ArrayBuffer, int, length: int) accepts binary literal 0b100 as view length 4
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(32);
+      let byteOffset: int = 0;
+      let binaryViewLength: int = 0b100;
+      let constructedArray = new BigUint64Array(sourceBuffer, byteOffset, binaryViewLength);
+      expect(constructedArray.length).assertEqual(4);
+      expect(constructedArray.byteOffset).assertEqual(0);
+      expect(constructedArray.byteLength).assertEqual(32);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1280
+     * @tc.name testBigUint64ArrayConstructor128
+     * @tc.desc Verify constructor(ArrayBuffer, int, length: int) accepts octal literal 0o4 as view length 4
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(32);
+      let byteOffset: int = 0;
+      let octalViewLength: int = 0o4;
+      let constructedArray = new BigUint64Array(sourceBuffer, byteOffset, octalViewLength);
+      expect(constructedArray.length).assertEqual(4);
+      expect(constructedArray.byteOffset).assertEqual(0);
+      expect(constructedArray.byteLength).assertEqual(32);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1290
+     * @tc.name testBigUint64ArrayConstructor129
+     * @tc.desc Verify constructor(ArrayBuffer, int, length: int) accepts hexadecimal literal 0x04 as view length 4
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(32);
+      let byteOffset: int = 0;
+      let hexadecimalViewLength: int = 0x04;
+      let constructedArray = new BigUint64Array(sourceBuffer, byteOffset, hexadecimalViewLength);
+      expect(constructedArray.length).assertEqual(4);
+      expect(constructedArray.byteOffset).assertEqual(0);
+      expect(constructedArray.byteLength).assertEqual(32);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1300
+     * @tc.name testBigUint64ArrayConstructor130
+     * @tc.desc Verify constructor(ArrayBuffer, byteOffset: number) accepts binary literal 0b1000 as byteOffset 8
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(24);
+      let binaryByteOffset: number = 0b1000;
+      let constructedArray = new BigUint64Array(sourceBuffer, binaryByteOffset);
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.byteLength).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1310
+     * @tc.name testBigUint64ArrayConstructor131
+     * @tc.desc Verify constructor(ArrayBuffer, byteOffset: number) accepts octal literal 0o10 as byteOffset 8
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(24);
+      let octalByteOffset: number = 0o10;
+      let constructedArray = new BigUint64Array(sourceBuffer, octalByteOffset);
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.byteLength).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1320
+     * @tc.name testBigUint64ArrayConstructor132
+     * @tc.desc Verify constructor(ArrayBuffer, byteOffset: number) accepts hexadecimal literal 0x08 as byteOffset 8
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(24);
+      let hexadecimalByteOffset: number = 0x08;
+      let constructedArray = new BigUint64Array(sourceBuffer, hexadecimalByteOffset);
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.byteLength).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1330
+     * @tc.name testBigUint64ArrayConstructor133
+     * @tc.desc Verify constructor(ArrayBuffer, int, int) mixed radix byteOffset 0x08 and length 0b10 shares buffer
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(40);
+      let fullView = new BigUint64Array(sourceBuffer);
+      fullView[0] = 10n;
+      fullView[1] = 20n;
+      fullView[2] = 30n;
+      fullView[3] = 40n;
+      fullView[4] = 50n;
+      let hexadecimalByteOffset: int = 0x08;
+      let binaryViewLength: int = 0b10;
+      let constructedArray = new BigUint64Array(sourceBuffer, hexadecimalByteOffset, binaryViewLength);
+      constructedArray[1] = 333n;
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.byteLength).assertEqual(16);
+      expect(constructedArray[0]).assertEqual(20n);
+      expect(constructedArray[1]).assertEqual(333n);
+      expect(fullView[2]).assertEqual(333n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1340
+     * @tc.name testBigUint64ArrayConstructor134
+     * @tc.desc Verify constructor(ArrayBuffer, int, int) binary byteOffset and octal zero length creates empty shared view
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(24);
+      let binaryByteOffset: int = 0b1000;
+      let octalViewLength: int = 0o0;
+      let constructedArray = new BigUint64Array(sourceBuffer, binaryByteOffset, octalViewLength);
+      expect(constructedArray.length).assertEqual(0);
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.byteLength).assertEqual(0);
+      expect(constructedArray.buffer).assertEqual(sourceBuffer);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1350
+     * @tc.name testBigUint64ArrayConstructor135
+     * @tc.desc Verify constructor(ArrayBuffer, int, int) octal byteOffset 0o20 and hex length 0x02 maps middle view
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(48);
+      let fullView = new BigUint64Array(sourceBuffer);
+      fullView[0] = 5n;
+      fullView[1] = 10n;
+      fullView[2] = 15n;
+      fullView[3] = 20n;
+      fullView[4] = 25n;
+      fullView[5] = 30n;
+      let octalByteOffset: int = 0o20;
+      let hexadecimalViewLength: int = 0x02;
+      let constructedArray = new BigUint64Array(sourceBuffer, octalByteOffset, hexadecimalViewLength);
+      constructedArray[0] = 1515n;
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.byteOffset).assertEqual(16);
+      expect(constructedArray.byteLength).assertEqual(16);
+      expect(constructedArray[0]).assertEqual(1515n);
+      expect(constructedArray[1]).assertEqual(20n);
+      expect(fullView[2]).assertEqual(1515n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1360
+     * @tc.name testBigUint64ArrayConstructor136
+     * @tc.desc Verify constructor(length: number) accepts declared float length 2.9f and truncates to 2
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let floatLength: float = 2.9f;
+      let constructedArray = new BigUint64Array(floatLength);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.byteLength).assertEqual(16);
+      expect(constructedArray[1]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1370
+     * @tc.name testBigUint64ArrayConstructor137
+     * @tc.desc Verify constructor(ArrayBuffer, byteOffset: number) accepts declared double byteOffset 8.7 and truncates to 8
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(24);
+      let doubleByteOffset: double = 8.7;
+      let constructedArray = new BigUint64Array(sourceBuffer, doubleByteOffset);
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.byteLength).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1380
+     * @tc.name testBigUint64ArrayConstructor138
+     * @tc.desc Verify constructor(length: int) accepts declared byte length 4 and creates zero-filled elements
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let declaredLength: byte = 4;
+      let constructedArray = new BigUint64Array(declaredLength);
+      expect(constructedArray.length).assertEqual(4);
+      expect(constructedArray.byteLength).assertEqual(32);
+      expect(constructedArray[3]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1390
+     * @tc.name testBigUint64ArrayConstructor139
+     * @tc.desc Verify constructor(length: int) accepts declared short length 4 and creates zero-filled elements
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let declaredLength: short = 4;
+      let constructedArray = new BigUint64Array(declaredLength);
+      expect(constructedArray.length).assertEqual(4);
+      expect(constructedArray.byteLength).assertEqual(32);
+      expect(constructedArray[3]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1400
+     * @tc.name testBigUint64ArrayConstructor140
+     * @tc.desc Verify constructor(ArrayBuffer, byteOffset: int) accepts declared byte offset 8 and maps trailing view
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(24);
+      let fullView = new BigUint64Array(sourceBuffer);
+      fullView[1] = 44n;
+      let declaredByteOffset: byte = 8;
+      let constructedArray = new BigUint64Array(sourceBuffer, declaredByteOffset);
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray[0]).assertEqual(44n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1410
+     * @tc.name testBigUint64ArrayConstructor141
+     * @tc.desc Verify constructor(ArrayBuffer, byteOffset: int) accepts declared short offset 16 and maps tail view
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(32);
+      let fullView = new BigUint64Array(sourceBuffer);
+      fullView[2] = 88n;
+      let declaredByteOffset: short = 16;
+      let constructedArray = new BigUint64Array(sourceBuffer, declaredByteOffset);
+      expect(constructedArray.byteOffset).assertEqual(16);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray[0]).assertEqual(88n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1420
+     * @tc.name testBigUint64ArrayConstructor142
+     * @tc.desc Verify constructor(ArrayBuffer, int, length: int) accepts declared byte length 2 for offset view
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(32);
+      let fullView = new BigUint64Array(sourceBuffer);
+      fullView[1] = 21n;
+      fullView[2] = 34n;
+      let byteOffset: int = 8;
+      let declaredLength: byte = 2;
+      let constructedArray = new BigUint64Array(sourceBuffer, byteOffset, declaredLength);
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray[0]).assertEqual(21n);
+      expect(constructedArray[1]).assertEqual(34n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1430
+     * @tc.name testBigUint64ArrayConstructor143
+     * @tc.desc Verify constructor(ArrayBuffer, int, length: int) accepts declared short length 2 for leading view
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(32);
+      let fullView = new BigUint64Array(sourceBuffer);
+      fullView[0] = 55n;
+      fullView[1] = 89n;
+      let byteOffset: int = 0;
+      let declaredLength: short = 2;
+      let constructedArray = new BigUint64Array(sourceBuffer, byteOffset, declaredLength);
+      expect(constructedArray.byteOffset).assertEqual(0);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray[0]).assertEqual(55n);
+      expect(constructedArray[1]).assertEqual(89n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1440
+     * @tc.name testBigUint64ArrayConstructor144
+     * @tc.desc Verify constructor(length: number) accepts declared double length 3.8 and truncates to 3
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let doubleLength: double = 3.8;
+      let constructedArray = new BigUint64Array(doubleLength);
+      expect(constructedArray.length).assertEqual(3);
+      expect(constructedArray.byteLength).assertEqual(24);
+      expect(constructedArray[2]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1450
+     * @tc.name testBigUint64ArrayConstructor145
+     * @tc.desc Verify constructor(ArrayBuffer, byteOffset: number) accepts declared float byteOffset 8.7f and truncates to 8
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(24);
+      let floatByteOffset: float = 8.7f;
+      let constructedArray = new BigUint64Array(sourceBuffer, floatByteOffset);
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.byteLength).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1460
+     * @tc.name testBigUint64ArrayConstructor146
+     * @tc.desc Verify constructor(ArrayBuffer, byteOffset: byte, length: int) accepts declared byte offset 8 for an offset view
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(32);
+      let fullView = new BigUint64Array(sourceBuffer);
+      fullView[1] = 144n;
+      fullView[2] = 233n;
+      let declaredByteOffset: byte = 8;
+      let viewLength: int = 2;
+      let constructedArray = new BigUint64Array(sourceBuffer, declaredByteOffset, viewLength);
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray[0]).assertEqual(144n);
+      expect(constructedArray[1]).assertEqual(233n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1470
+     * @tc.name testBigUint64ArrayConstructor147
+     * @tc.desc Verify constructor(ArrayBuffer, byteOffset: short, length: int) accepts declared short offset 16 for a tail view
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(40);
+      let fullView = new BigUint64Array(sourceBuffer);
+      fullView[2] = 377n;
+      fullView[3] = 610n;
+      let declaredByteOffset: short = 16;
+      let viewLength: int = 2;
+      let constructedArray = new BigUint64Array(sourceBuffer, declaredByteOffset, viewLength);
+      expect(constructedArray.byteOffset).assertEqual(16);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray[0]).assertEqual(377n);
+      expect(constructedArray[1]).assertEqual(610n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1480
+     * @tc.name testBigUint64ArrayConstructor148
+     * @tc.desc Verify Array<number> source mutation after construction does not affect constructed values
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: Array<number> = [8, 16];
+      let constructedArray = new BigUint64Array(sourceValues);
+      sourceValues[0] = 32;
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray[0]).assertEqual(8n);
+      expect(constructedArray[1]).assertEqual(16n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1490
+     * @tc.name testBigUint64ArrayConstructor149
+     * @tc.desc Verify FixedArray<BigInt> source mutation after construction does not affect constructed values
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: FixedArray<BigInt> = [2n, 4n];
+      let constructedArray = new BigUint64Array(sourceValues);
+      sourceValues[1] = 8n;
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray[0]).assertEqual(2n);
+      expect(constructedArray[1]).assertEqual(4n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1500
+     * @tc.name testBigUint64ArrayConstructor150
+     * @tc.desc Verify Set<BigInt> duplicate source values construct unique insertion-order elements
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: Set<BigInt> = new Set<BigInt>();
+      sourceValues.add(9n);
+      sourceValues.add(9n);
+      sourceValues.add(10n);
+      let constructedArray = new BigUint64Array(sourceValues);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray[0]).assertEqual(9n);
+      expect(constructedArray[1]).assertEqual(10n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1510
+     * @tc.name testBigUint64ArrayConstructor151
+     * @tc.desc Verify Set<BigInt> source mutation after construction does not affect constructed values
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: Set<BigInt> = new Set<BigInt>();
+      sourceValues.add(3n);
+      sourceValues.add(5n);
+      let constructedArray = new BigUint64Array(sourceValues);
+      sourceValues.add(7n);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray[0]).assertEqual(3n);
+      expect(constructedArray[1]).assertEqual(5n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1520
+     * @tc.name testBigUint64ArrayConstructor152
+     * @tc.desc Verify subarray values iterator source copies window values independently from source mutation
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(12n, 24n, 36n);
+      let sourceIterator = sourceArray.subarray(1).values();
+      let constructedArray = new BigUint64Array(sourceIterator);
+      sourceArray[1] = 99n;
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray[0]).assertEqual(24n);
+      expect(constructedArray[1]).assertEqual(36n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1530
+     * @tc.name testBigUint64ArrayConstructor153
+     * @tc.desc Verify copy constructor from offset buffer view detaches values from later buffer mutation
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(32);
+      let fullView = new BigUint64Array(sourceBuffer);
+      fullView[1] = 20n;
+      fullView[2] = 30n;
+      let byteOffset: int = 8;
+      let viewLength: int = 2;
+      let sourceView = new BigUint64Array(sourceBuffer, byteOffset, viewLength);
+      let copiedArray = new BigUint64Array(sourceView);
+      fullView[1] = 99n;
+      expect(copiedArray.buffer !== sourceBuffer).assertTrue();
+      expect(copiedArray.byteOffset).assertEqual(0);
+      expect(copiedArray.length).assertEqual(2);
+      expect(copiedArray[0]).assertEqual(20n);
+      expect(copiedArray[1]).assertEqual(30n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1540
+     * @tc.name testBigUint64ArrayConstructor154
+     * @tc.desc Verify Array<number> source with base literal elements converts to BigInt values
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: Array<number> = [0x10, 0b100, 0o7];
+      let constructedArray = new BigUint64Array(sourceValues);
+      expect(constructedArray.length).assertEqual(3);
+      expect(constructedArray[0]).assertEqual(16n);
+      expect(constructedArray[1]).assertEqual(4n);
+      expect(constructedArray[2]).assertEqual(7n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1550
+     * @tc.name testBigUint64ArrayConstructor155
+     * @tc.desc Verify FixedArray<number> source with base literal elements converts to BigInt values
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: FixedArray<number> = [0x20, 0b101, 0o11];
+      let constructedArray = new BigUint64Array(sourceValues);
+      expect(constructedArray.length).assertEqual(3);
+      expect(constructedArray[0]).assertEqual(32n);
+      expect(constructedArray[1]).assertEqual(5n);
+      expect(constructedArray[2]).assertEqual(9n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1560
+     * @tc.name testBigUint64ArrayConstructor156
+     * @tc.desc Verify Set<BigInt> source with BigInt base literal conversions preserves insertion order
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: Set<BigInt> = new Set<BigInt>();
+      sourceValues.add(BigInt(0x10));
+      sourceValues.add(BigInt(0b101));
+      sourceValues.add(BigInt(0o11));
+      let constructedArray = new BigUint64Array(sourceValues);
+      expect(constructedArray.length).assertEqual(3);
+      expect(constructedArray[0]).assertEqual(16n);
+      expect(constructedArray[1]).assertEqual(5n);
+      expect(constructedArray[2]).assertEqual(9n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1570
+     * @tc.name testBigUint64ArrayConstructor157
+     * @tc.desc Verify constructor(Array<number>) accepts decimal element 255 and stores 255n
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: Array<number> = [255];
+      let constructedArray = new BigUint64Array(sourceValues);
+      expect(constructedArray.length).assertEqual(1);
+      expect(constructedArray[0]).assertEqual(255n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1580
+     * @tc.name testBigUint64ArrayConstructor158
+     * @tc.desc Verify constructor(Array<number>) accepts binary element 0b11111111 and stores 255n
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: Array<number> = [0b11111111];
+      let constructedArray = new BigUint64Array(sourceValues);
+      expect(constructedArray.length).assertEqual(1);
+      expect(constructedArray[0]).assertEqual(255n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1590
+     * @tc.name testBigUint64ArrayConstructor159
+     * @tc.desc Verify constructor(Array<number>) accepts octal element 0o377 and stores 255n
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: Array<number> = [0o377];
+      let constructedArray = new BigUint64Array(sourceValues);
+      expect(constructedArray.length).assertEqual(1);
+      expect(constructedArray[0]).assertEqual(255n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1600
+     * @tc.name testBigUint64ArrayConstructor160
+     * @tc.desc Verify constructor(Array<number>) accepts hexadecimal element 0xFF and stores 255n
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: Array<number> = [0xFF];
+      let constructedArray = new BigUint64Array(sourceValues);
+      expect(constructedArray.length).assertEqual(1);
+      expect(constructedArray[0]).assertEqual(255n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1610
+     * @tc.name testBigUint64ArrayConstructor161
+     * @tc.desc Verify constructor(length: number) accepts declared long length 4 and creates zero-filled elements
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let declaredLength: long = 4;
+      let constructedArray = new BigUint64Array(declaredLength);
+      expect(constructedArray.length).assertEqual(4);
+      expect(constructedArray.byteLength).assertEqual(32);
+      expect(constructedArray[3]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1620
+     * @tc.name testBigUint64ArrayConstructor162
+     * @tc.desc Verify constructor(ArrayBuffer, byteOffset: number) accepts declared long byteOffset 8
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(24);
+      let declaredByteOffset: long = 8;
+      let constructedArray = new BigUint64Array(sourceBuffer, declaredByteOffset);
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.byteLength).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1630
+     * @tc.name testBigUint64ArrayConstructor163
+     * @tc.desc Verify fractional number byteOffset truncates to tail window within ArrayBuffer
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(24);
+      let fullView = new BigUint64Array(sourceBuffer);
+      let tailValue: bigint = 303n;
+      fullView[2] = tailValue;
+      let fractionalByteOffset: number = 16.9;
+      let constructedArray = new BigUint64Array(sourceBuffer, fractionalByteOffset);
+      expect(constructedArray.byteOffset).assertEqual(16);
+      expect(constructedArray.length).assertEqual(1);
+      expect(constructedArray.byteLength).assertEqual(8);
+      expect(constructedArray[0]).assertEqual(tailValue);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1640
+     * @tc.name testBigUint64ArrayConstructor164
+     * @tc.desc Verify byteOffset at buffer end with zero length creates valid empty view
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(24);
+      let byteOffset: int = 24;
+      let viewLength: int = 0;
+      let constructedArray = new BigUint64Array(sourceBuffer, byteOffset, viewLength);
+      expect(constructedArray.byteOffset).assertEqual(24);
+      expect(constructedArray.length).assertEqual(0);
+      expect(constructedArray.byteLength).assertEqual(0);
+      expect(constructedArray.buffer).assertEqual(sourceBuffer);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1650
+     * @tc.name testBigUint64ArrayConstructor165
+     * @tc.desc Verify copy constructor from nested subarray window copies only current window values
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(40);
+      let fullView = new BigUint64Array(sourceBuffer);
+      fullView[0] = 11n;
+      fullView[1] = 22n;
+      fullView[2] = 33n;
+      fullView[3] = 44n;
+      fullView[4] = 55n;
+      let byteOffset: int = 8;
+      let viewLength: int = 3;
+      let offsetView = new BigUint64Array(sourceBuffer, byteOffset, viewLength);
+      let nestedWindow = offsetView.subarray(1, 3);
+      let copiedArray = new BigUint64Array(nestedWindow);
+      fullView[2] = 333n;
+      expect(copiedArray.buffer !== sourceBuffer).assertTrue();
+      expect(copiedArray.byteOffset).assertEqual(0);
+      expect(copiedArray.length).assertEqual(2);
+      expect(copiedArray[0]).assertEqual(33n);
+      expect(copiedArray[1]).assertEqual(44n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1660
+     * @tc.name testBigUint64ArrayConstructor166
+     * @tc.desc Verify copy constructor from slice window preserves snapshot after source mutations
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(32);
+      let fullView = new BigUint64Array(sourceBuffer);
+      fullView[0] = 70n;
+      fullView[1] = 80n;
+      fullView[2] = 90n;
+      fullView[3] = 100n;
+      let byteOffset: int = 8;
+      let viewLength: int = 3;
+      let offsetView = new BigUint64Array(sourceBuffer, byteOffset, viewLength);
+      let sliceWindow = offsetView.slice(1, 3);
+      let copiedArray = new BigUint64Array(sliceWindow);
+      fullView[2] = 900n;
+      sliceWindow[0] = 909n;
+      expect(copiedArray.buffer !== sliceWindow.buffer).assertTrue();
+      expect(copiedArray.length).assertEqual(2);
+      expect(copiedArray[0]).assertEqual(90n);
+      expect(copiedArray[1]).assertEqual(100n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1670
+     * @tc.name testBigUint64ArrayConstructor167
+     * @tc.desc Verify copy constructor from zero-length offset view creates detached empty buffer
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(16);
+      let byteOffset: int = 8;
+      let viewLength: int = 0;
+      let zeroWindow = new BigUint64Array(sourceBuffer, byteOffset, viewLength);
+      let copiedArray = new BigUint64Array(zeroWindow);
+      expect(copiedArray.buffer !== sourceBuffer).assertTrue();
+      expect(copiedArray.byteOffset).assertEqual(0);
+      expect(copiedArray.length).assertEqual(0);
+      expect(copiedArray.byteLength).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1680
+     * @tc.name testBigUint64ArrayConstructor168
+     * @tc.desc Verify constructor(Iterable<BigInt>) consumes partially advanced values iterator from current position
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(4n, 8n, 16n);
+      let sourceIterator = sourceArray.values();
+      sourceIterator.next();
+      let constructedArray = new BigUint64Array(sourceIterator);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray[0]).assertEqual(8n);
+      expect(constructedArray[1]).assertEqual(16n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1690
+     * @tc.name testBigUint64ArrayConstructor169
+     * @tc.desc Verify constructor(Iterable<BigInt>) reads source mutation made before iterator consumption
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(6n, 12n, 18n);
+      let sourceIterator = sourceArray.values();
+      sourceArray[1] = 120n;
+      let constructedArray = new BigUint64Array(sourceIterator);
+      expect(constructedArray.length).assertEqual(3);
+      expect(constructedArray[0]).assertEqual(6n);
+      expect(constructedArray[1]).assertEqual(120n);
+      expect(constructedArray[2]).assertEqual(18n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1700
+     * @tc.name testBigUint64ArrayConstructor170
+     * @tc.desc Verify declared double length 0.9 truncates to zero length
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let fractionalLength: double = 0.9;
+      let constructedArray = new BigUint64Array(fractionalLength);
+      expect(constructedArray.length).assertEqual(0);
+      expect(constructedArray.byteLength).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1710
+     * @tc.name testBigUint64ArrayConstructor171
+     * @tc.desc Verify declared long zero length creates an empty independent array
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let zeroLength: long = 0;
+      let constructedArray = new BigUint64Array(zeroLength);
+      expect(constructedArray.length).assertEqual(0);
+      expect(constructedArray.buffer.byteLength).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1720
+     * @tc.name testBigUint64ArrayConstructor172
+     * @tc.desc Verify negative zero number length creates an empty array
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let negativeZeroLength: number = -0.0;
+      let constructedArray = new BigUint64Array(negativeZeroLength);
+      expect(constructedArray.length).assertEqual(0);
+      expect(constructedArray.byteOffset).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1730
+     * @tc.name testBigUint64ArrayConstructor173
+     * @tc.desc Verify three-parameter constructor accepts declared long byteOffset 8
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(32);
+      let declaredByteOffset: long = 8;
+      let viewLength: int = 2;
+      let constructedArray = new BigUint64Array(sourceBuffer, declaredByteOffset, viewLength);
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1740
+     * @tc.name testBigUint64ArrayConstructor174
+     * @tc.desc Verify three-parameter constructor accepts declared long view length 2
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(32);
+      let byteOffset: int = 8;
+      let declaredViewLength: long = 2;
+      let constructedArray = new BigUint64Array(sourceBuffer, byteOffset, declaredViewLength);
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.byteLength).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1750
+     * @tc.name testBigUint64ArrayConstructor175
+     * @tc.desc Verify declared byte offset at buffer end supports a zero-length view
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(24);
+      let endByteOffset: byte = 24;
+      let zeroViewLength: int = 0;
+      let constructedArray = new BigUint64Array(sourceBuffer, endByteOffset, zeroViewLength);
+      expect(constructedArray.byteOffset).assertEqual(24);
+      expect(constructedArray.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1760
+     * @tc.name testBigUint64ArrayConstructor176
+     * @tc.desc Verify declared short offset and byte length form an exact tail view
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(32);
+      let tailByteOffset: short = 8;
+      let tailViewLength: byte = 3;
+      let constructedArray = new BigUint64Array(sourceBuffer, tailByteOffset, tailViewLength);
+      expect(constructedArray.byteOffset).assertEqual(8);
+      expect(constructedArray.byteLength).assertEqual(24);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1770
+     * @tc.name testBigUint64ArrayConstructor177
+     * @tc.desc Verify FixedArray int binary element converts to unsigned BigInt value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: FixedArray<int> = [0b11111111];
+      let constructedArray = new BigUint64Array(sourceValues);
+      expect(constructedArray[0]).assertEqual(255n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1780
+     * @tc.name testBigUint64ArrayConstructor178
+     * @tc.desc Verify FixedArray int negative element wraps to uint64 maximum minus one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: FixedArray<int> = [-2];
+      let constructedArray = new BigUint64Array(sourceValues);
+      expect(constructedArray[0]).assertEqual(18446744073709551614n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1790
+     * @tc.name testBigUint64ArrayConstructor179
+     * @tc.desc Verify FixedArray int elements convert to unsigned BigInt values
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: FixedArray<int> = [0, 2147483647];
+      let constructedArray = new BigUint64Array(sourceValues);
+      expect(constructedArray[0]).assertEqual(0n);
+      expect(constructedArray[1]).assertEqual(2147483647n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1800
+     * @tc.name testBigUint64ArrayConstructor180
+     * @tc.desc Verify FixedArray number 2^53 element converts exactly to BigInt
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: FixedArray<number> = [9007199254740992];
+      let constructedArray = new BigUint64Array(sourceValues);
+      expect(constructedArray[0]).assertEqual(9007199254740992n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1810
+     * @tc.name testBigUint64ArrayConstructor181
+     * @tc.desc Verify FixedArray number negative element wraps to uint64 maximum minus one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: FixedArray<number> = [-2];
+      let constructedArray = new BigUint64Array(sourceValues);
+      expect(constructedArray[0]).assertEqual(18446744073709551614n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1820
+     * @tc.name testBigUint64ArrayConstructor182
+     * @tc.desc Verify FixedArray double integral elements convert to BigInt values
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: FixedArray<double> = [0.0, 42.0];
+      let constructedArray = new BigUint64Array(sourceValues);
+      expect(constructedArray[0]).assertEqual(0n);
+      expect(constructedArray[1]).assertEqual(42n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1830
+     * @tc.name testBigUint64ArrayConstructor183
+     * @tc.desc Verify Array number element 2147483648 converts beyond signed int range
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: Array<number> = [2147483648];
+      let constructedArray = new BigUint64Array(sourceValues);
+      expect(constructedArray[0]).assertEqual(2147483648n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1840
+     * @tc.name testBigUint64ArrayConstructor184
+     * @tc.desc Verify Array number element -2 wraps to uint64 maximum minus one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: Array<number> = [-2];
+      let constructedArray = new BigUint64Array(sourceValues);
+      expect(constructedArray[0]).assertEqual(18446744073709551614n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1850
+     * @tc.name testBigUint64ArrayConstructor185
+     * @tc.desc Verify Array number element 2^53 converts exactly to BigInt
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: Array<number> = [9007199254740992];
+      let constructedArray = new BigUint64Array(sourceValues);
+      expect(constructedArray[0]).assertEqual(9007199254740992n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1860
+     * @tc.name testBigUint64ArrayConstructor186
+     * @tc.desc Verify Array number negative zero converts to unsigned zero
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: Array<number> = [-0.0];
+      let constructedArray = new BigUint64Array(sourceValues);
+      expect(constructedArray[0]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1870
+     * @tc.name testBigUint64ArrayConstructor187
+     * @tc.desc Verify Array BigInt maximum minus one value is preserved
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: Array<BigInt> = [18446744073709551614n];
+      let constructedArray = new BigUint64Array(sourceValues);
+      expect(constructedArray[0]).assertEqual(18446744073709551614n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1880
+     * @tc.name testBigUint64ArrayConstructor188
+     * @tc.desc Verify Array BigInt 2^63 value is preserved above signed long range
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: Array<BigInt> = [9223372036854775808n];
+      let constructedArray = new BigUint64Array(sourceValues);
+      expect(constructedArray[0]).assertEqual(9223372036854775808n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1890
+     * @tc.name testBigUint64ArrayConstructor189
+     * @tc.desc Verify Array BigInt -2n wraps to uint64 maximum minus one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: Array<BigInt> = [-2n];
+      let constructedArray = new BigUint64Array(sourceValues);
+      expect(constructedArray[0]).assertEqual(18446744073709551614n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1900
+     * @tc.name testBigUint64ArrayConstructor190
+     * @tc.desc Verify Array BigInt negative 2^64 wraps to zero
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: Array<BigInt> = [-18446744073709551616n];
+      let constructedArray = new BigUint64Array(sourceValues);
+      expect(constructedArray[0]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1910
+     * @tc.name testBigUint64ArrayConstructor191
+     * @tc.desc Verify Array BigInt below negative 2^64 wraps to uint64 maximum
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: Array<BigInt> = [-18446744073709551617n];
+      let constructedArray = new BigUint64Array(sourceValues);
+      expect(constructedArray[0]).assertEqual(18446744073709551615n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1920
+     * @tc.name testBigUint64ArrayConstructor192
+     * @tc.desc Verify FixedArray BigInt below negative 2^64 wraps to uint64 maximum
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: FixedArray<BigInt> = [-18446744073709551617n];
+      let constructedArray = new BigUint64Array(sourceValues);
+      expect(constructedArray[0]).assertEqual(18446744073709551615n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1930
+     * @tc.name testBigUint64ArrayConstructor193
+     * @tc.desc Verify Set BigInt -2n wraps while preserving insertion position
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues = new Set<BigInt>();
+      sourceValues.add(-2n);
+      sourceValues.add(5n);
+      let constructedArray = new BigUint64Array(sourceValues);
+      expect(constructedArray[0]).assertEqual(18446744073709551614n);
+      expect(constructedArray[1]).assertEqual(5n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1940
+     * @tc.name testBigUint64ArrayConstructor194
+     * @tc.desc Verify Set BigInt 2^64 plus one wraps while preserving insertion position
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues = new Set<BigInt>();
+      sourceValues.add(18446744073709551617n);
+      sourceValues.add(7n);
+      let constructedArray = new BigUint64Array(sourceValues);
+      expect(constructedArray[0]).assertEqual(1n);
+      expect(constructedArray[1]).assertEqual(7n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1950
+     * @tc.name testBigUint64ArrayConstructor195
+     * @tc.desc Verify constructor from an exhausted values iterator creates an empty array
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor195', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(3n);
+      let sourceIterator = sourceArray.values();
+      sourceIterator.next();
+      let constructedArray = new BigUint64Array(sourceIterator);
+      expect(constructedArray.length).assertEqual(0);
+      expect(constructedArray.byteLength).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1960
+     * @tc.name testBigUint64ArrayConstructor196
+     * @tc.desc Verify iterator construction observes mutation of an unread future element
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(2n, 4n, 8n);
+      let sourceIterator = sourceArray.values();
+      sourceIterator.next();
+      sourceArray[2] = 80n;
+      let constructedArray = new BigUint64Array(sourceIterator);
+      expect(constructedArray[0]).assertEqual(4n);
+      expect(constructedArray[1]).assertEqual(80n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1970
+     * @tc.name testBigUint64ArrayConstructor197
+     * @tc.desc Verify negative zero byteOffset maps the full buffer from offset zero
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(16);
+      let negativeZeroByteOffset: number = -0.0;
+      let constructedArray = new BigUint64Array(sourceBuffer, negativeZeroByteOffset);
+      expect(constructedArray.byteOffset).assertEqual(0);
+      expect(constructedArray.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1980
+     * @tc.name testBigUint64ArrayConstructor198
+     * @tc.desc Verify ArrayBuffer constructor accepts undefined offset and undefined length
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceBuffer = new ArrayBuffer(24);
+      let constructedArray = new BigUint64Array(sourceBuffer, undefined, undefined);
+      expect(constructedArray.byteOffset).assertEqual(0);
+      expect(constructedArray.length).assertEqual(3);
+      expect(constructedArray.byteLength).assertEqual(24);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_1990
+     * @tc.name testBigUint64ArrayConstructor199
+     * @tc.desc Verify ArrayBuffer constructor defaults undefined offset while applying explicit length
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceBuffer = new ArrayBuffer(24);
+      let explicitLength: number = 2.0;
+      let constructedArray = new BigUint64Array(sourceBuffer, undefined, explicitLength);
+      expect(constructedArray.buffer).assertEqual(sourceBuffer);
+      expect(constructedArray.byteOffset).assertEqual(0);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.byteLength).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2000
+     * @tc.name testBigUint64ArrayConstructor200
+     * @tc.desc Verify number length Double.NaN converts to an empty BigUint64Array
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let nanLength: number = Double.NaN;
+      let constructedArray = new BigUint64Array(nanLength);
+      expect(constructedArray.length).assertEqual(0);
+      expect(constructedArray.byteLength).assertEqual(0);
+      expect(constructedArray.byteOffset).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2010
+     * @tc.name testBigUint64ArrayConstructor201
+     * @tc.desc Verify float length Float.NaN converts to an empty BigUint64Array
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let nanLength: float = Float.NaN;
+      let constructedArray = new BigUint64Array(nanLength);
+      expect(constructedArray.length).assertEqual(0);
+      expect(constructedArray.byteLength).assertEqual(0);
+      expect(constructedArray.byteOffset).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2020
+     * @tc.name testBigUint64ArrayConstructor202
+     * @tc.desc Verify ArrayBuffer constructor converts Double.NaN byteOffset to zero
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceBuffer = new ArrayBuffer(16);
+      let nanByteOffset: number = Double.NaN;
+      let constructedArray = new BigUint64Array(sourceBuffer, nanByteOffset);
+      expect(constructedArray.buffer).assertEqual(sourceBuffer);
+      expect(constructedArray.byteOffset).assertEqual(0);
+      expect(constructedArray.length).assertEqual(2);
+      expect(constructedArray.byteLength).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2030
+     * @tc.name testBigUint64ArrayConstructor203
+     * @tc.desc Verify ArrayBuffer constructor converts Double.NaN length to an empty view
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceBuffer = new ArrayBuffer(16);
+      let nanViewLength: number = Double.NaN;
+      let constructedArray = new BigUint64Array(sourceBuffer, undefined, nanViewLength);
+      expect(constructedArray.buffer).assertEqual(sourceBuffer);
+      expect(constructedArray.byteOffset).assertEqual(0);
+      expect(constructedArray.length).assertEqual(0);
+      expect(constructedArray.byteLength).assertEqual(0);
+    });
+  });
+}
