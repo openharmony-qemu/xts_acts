@@ -1988,3 +1988,47 @@ export default function Uint8ArrayFrom03Test(): void {
       let result: Uint8Array = Uint8Array.from(src);
       expect(result.byteOffset).assertEqual(0);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_FROM03_1220
+     * @tc.name testUint8ArrayFrom122
+     * @tc.desc Verify from(ArrayLike) result has correct byteOffset
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayFrom122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Array<number> = [1, 2, 3];
+      let result: Uint8Array = Uint8Array.from(src);
+      expect(result.byteOffset).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_FROM03_1230
+     * @tc.name testUint8ArrayFrom123
+     * @tc.desc Verify from(Iterable) result has correct byteOffset
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayFrom123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Iterable<number> = [1, 2, 3];
+      let result: Uint8Array = Uint8Array.from(src);
+      expect(result.byteOffset).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_FROM03_1240
+     * @tc.name testUint8ArrayFrom124
+     * @tc.desc Verify from(FixedArray) result has correct buffer
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayFrom124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: FixedArray<int> = [1, 2, 3];
+      let result: Uint8Array = Uint8Array.from(src);
+      expect(result.buffer.byteLength).assertEqual(3);
+    });
+  });
+}
