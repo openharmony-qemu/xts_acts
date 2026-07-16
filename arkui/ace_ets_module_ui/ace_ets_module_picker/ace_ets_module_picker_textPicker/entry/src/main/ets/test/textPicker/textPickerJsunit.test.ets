@@ -175,6 +175,23 @@ export default function TextPickerJsunitTest() {
       // Illegal modification of properties of TextPicker component
       console.info('[TextPickerJsunit_0400] START');
       globalThis.value.message.notify({
+        name: 'fruits', value: ['banana1', 'orange2', 'peach3', 'grape4']
+      })
+      await CommonFunc.sleep(1000);
+      globalThis.value.message.notify({
+        name: 'select', value: 1
+      })
+      await CommonFunc.sleep(1000);
+      globalThis.value.message.notify({
+        name: 'parameterValue', value: 'peach3'
+      })
+      await CommonFunc.sleep(1000);
+      globalThis.value.message.notify({
+        name: 'defaultPickerItemHeight', value: 25
+      })
+      await CommonFunc.sleep(2000);
+      
+      globalThis.value.message.notify({
         name: 'fruits', value: 'abc'
       })
       await CommonFunc.sleep(1000);
@@ -204,7 +221,7 @@ export default function TextPickerJsunitTest() {
         .assertEqual('["icon:,text:banana1","icon:,text:orange2","icon:,text:peach3","icon:,text:grape4"]');
       expect(obj.$attrs.selected).assertEqual('1');
       //expect(obj.$attrs.value).assertEqual('');
-      expect(obj.$attrs.defaultPickerItemHeight).assertEqual('0.00fp');
+      expect(obj.$attrs.defaultPickerItemHeight).assertEqual('25.00fp');
       console.info('[TextPickerJsunit_0400] END');
       done();
     });
