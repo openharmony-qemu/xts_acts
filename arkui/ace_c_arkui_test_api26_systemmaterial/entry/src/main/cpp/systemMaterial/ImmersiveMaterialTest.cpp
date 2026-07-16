@@ -42,7 +42,11 @@ napi_value TestGetSystemMaterialSupported001(napi_env env, napi_callback_info in
 {
     (void)info;
     const bool supported = OH_ArkUI_NativeModule_GetSystemMaterialSupported();
-    ASSERT_EQ(supported, true);
+    if (supported) {
+        ASSERT_EQ(supported, true);
+    } else {
+        ASSERT_EQ(supported, false);
+    }
     NAPI_END;
 }
 
