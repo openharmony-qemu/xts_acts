@@ -15,7 +15,7 @@
  */
 
 
-import { afterEach, beforeEach, describe, expect, it, beforeAll,Level } from '@ohos/hypium-binary/src/main/indexStatic';
+import { afterEach, beforeEach, describe, expect, it, beforeAll,Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 
 import { LineCapStyle } from '@ohos.arkui.component'

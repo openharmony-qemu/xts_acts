@@ -15,7 +15,7 @@
  */
 
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
-import { expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
+import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 export type CallbackWithReturn = (data: BasePageConfig) => Promise<void> ;

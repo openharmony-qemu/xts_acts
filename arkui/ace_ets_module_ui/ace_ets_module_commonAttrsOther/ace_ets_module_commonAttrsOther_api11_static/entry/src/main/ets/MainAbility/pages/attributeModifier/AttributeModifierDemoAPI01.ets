@@ -47,7 +47,7 @@ import {
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage, Link, Observed, State } from '@ohos.arkui.stateManagement';
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../../../hypium/index';
 
 @Observed
 export class MyButtonModifier1 implements AttributeModifier<ButtonAttribute> {

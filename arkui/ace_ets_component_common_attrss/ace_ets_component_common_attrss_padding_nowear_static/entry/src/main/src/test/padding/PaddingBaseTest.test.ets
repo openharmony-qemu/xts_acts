@@ -16,7 +16,7 @@
 import Utils , { BasePageConfig, PageConfig, TestValue, RectValue,RectValueExpect }  from '../../../ets/MainAbility/common/Utils';
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import CommonTest from '../common/CommonTest';
-import { describe, expect, beforeAll } from '@ohos/hypium-binary/src/main/indexStatic'
+import { describe, expect, beforeAll } from '../../../../hypium/index'
 import { $r , Padding, Resource} from '@ohos.arkui.component'
 import {
   Color

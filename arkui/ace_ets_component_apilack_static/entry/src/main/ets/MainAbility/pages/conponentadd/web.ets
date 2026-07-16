@@ -15,7 +15,7 @@
  */
 import events_emitter from '@ohos.events.emitter';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../../../hypium/index';
 import testsuite from '../../../../src/test/List.test';
 import Utils from '../../common/Utils';
 import web_webview from '@ohos.web.webview';

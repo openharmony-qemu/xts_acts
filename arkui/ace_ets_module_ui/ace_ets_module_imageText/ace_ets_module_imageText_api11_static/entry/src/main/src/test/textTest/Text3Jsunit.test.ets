@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { TextAlign, TextOverflow } from '@ohos.arkui.component'
-import { describe, beforeEach, afterEach, it, expect, Level, beforeAll } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, beforeEach, afterEach, it, expect, Level, beforeAll } from "../../../../hypium/index";
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
 import CommonFunc from '../../../ets/MainAbility/common/Common';

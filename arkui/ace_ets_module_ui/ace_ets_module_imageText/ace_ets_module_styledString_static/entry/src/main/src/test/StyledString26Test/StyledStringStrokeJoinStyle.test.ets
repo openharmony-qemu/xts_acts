@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level, beforeAll, beforeEach  } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, it, expect, Level, beforeAll, beforeEach  } from '../../../../hypium/index';
 import {
   TextStyle,
   StyledStringKey,

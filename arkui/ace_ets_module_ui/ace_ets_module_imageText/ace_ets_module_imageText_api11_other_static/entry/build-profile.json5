@@ -17,7 +17,7 @@
   "buildOption": {
     "resOptions": {
       "copyCodeResource": {
-        "enable": true,
+        "enable": true
       }
     }
   },
@@ -34,14 +34,14 @@
           }
         }
       }
-    },
+    }
   ],
   "targets": [
     {
       "name": "default"
     },
     {
-      "name": "ohosTest",
+      "name": "ohosTest"
     }
   ]
 }

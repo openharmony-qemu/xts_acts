@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { CopyOptions } from '@ohos.arkui.component'
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it,expect, Level } from "@ohos/hypium-binary/src/main/indexStatic"
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it,expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter'
 import Utils from '../../../ets/MainAbility/common/Utils';

@@ -48,7 +48,7 @@ import {
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { AppStorage, Link, State } from '@ohos.arkui.stateManagement';
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../../../hypium/index';
 
 interface Inter1 {
   name: string

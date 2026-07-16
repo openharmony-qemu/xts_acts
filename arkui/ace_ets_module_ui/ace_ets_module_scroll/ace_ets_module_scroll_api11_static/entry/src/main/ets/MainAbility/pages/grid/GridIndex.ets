@@ -16,7 +16,7 @@
 
 import hilog from '@ohos.hilog';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic'
+import { Hypium } from '../../../../../hypium/index'
 import { Entry, Component, Row, Column, Text, FontWeight } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 

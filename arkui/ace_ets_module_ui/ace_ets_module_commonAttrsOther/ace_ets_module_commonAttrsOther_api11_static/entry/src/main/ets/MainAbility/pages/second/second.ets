@@ -17,7 +17,7 @@ import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Te
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage, Link, LocalStorage, State } from '@ohos.arkui.stateManagement';
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../../../hypium/index';
 const router = new Router()
 
 @Entry

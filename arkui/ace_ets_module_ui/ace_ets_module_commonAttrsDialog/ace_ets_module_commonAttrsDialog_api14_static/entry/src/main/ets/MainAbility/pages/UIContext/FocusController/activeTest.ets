@@ -20,7 +20,7 @@ import { BusinessError } from '@ohos.base';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage, Link, State } from '@ohos.arkui.stateManagement';
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../../../../hypium/index';
 @Entry
 @Component
 struct activeTest {

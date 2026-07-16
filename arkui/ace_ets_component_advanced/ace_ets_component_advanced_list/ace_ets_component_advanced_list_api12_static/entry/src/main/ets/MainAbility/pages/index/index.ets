@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic'
+import { Hypium } from '../../../../../hypium/index'
 import testsuite from '../../../../src/test/List.test'
 import { Entry, Component, Flex, Text, Button, FlexDirection, ItemAlign, FlexAlign, FontWeight, ButtonType, ClickEvent, Margin } from '@ohos.arkui.component'
 import { AppStorage } from '@ohos.arkui.stateManagement'

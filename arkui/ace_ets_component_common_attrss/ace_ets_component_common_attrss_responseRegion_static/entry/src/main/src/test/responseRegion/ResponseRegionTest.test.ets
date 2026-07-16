@@ -15,7 +15,7 @@
  */
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, SetValue, ResponseRegion } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, beforeAll, expect, afterEach } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, beforeAll, expect, afterEach } from '../../../../hypium/index';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { $r, Rectangle } from '@ohos.arkui.component';
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';

@@ -22,7 +22,7 @@ import {
   it,
   expect,
   Level
-} from '@ohos/hypium-binary/src/main/indexStatic'
+} from '../../../../hypium/index'
 import Utils from '../../../ets/MainAbility/common/Utils';
 import inspector from '@ohos.arkui.inspector'
 import CommonFunc from '../../../ets/MainAbility/common/Common';

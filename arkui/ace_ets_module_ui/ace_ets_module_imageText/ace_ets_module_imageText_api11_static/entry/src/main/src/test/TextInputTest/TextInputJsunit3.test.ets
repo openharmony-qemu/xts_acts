@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { Text, InputType, Color, TextAlign } from '@ohos.arkui.component';
-import { describe, beforeEach, afterEach, it, expect, Level, beforeAll } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, beforeEach, afterEach, it, expect, Level, beforeAll } from '../../../../hypium/index';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';

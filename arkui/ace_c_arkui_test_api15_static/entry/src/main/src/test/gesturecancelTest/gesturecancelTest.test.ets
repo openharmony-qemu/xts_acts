@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { expect, describe, it, afterEach, beforeEach, Level, beforeAll } from '@ohos/hypium-binary/src/main/indexStatic';
+import { expect, describe, it, afterEach, beforeEach, Level, beforeAll } from '../../../../hypium/index';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import Utils from '../common/Utils';
 import { AppStorage } from '@ohos.arkui.stateManagement';

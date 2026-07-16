@@ -18,7 +18,7 @@
 import Utils, { BasePageConfig, PageConfig, TestValue,GrowValue, ExpectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { describe, expect, beforeAll } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, expect, beforeAll } from '../../../../hypium/index';
 import { AlignRuleOption, VerticalAlign, HorizontalAlign,  Color, $r, Margin} from '@ohos.arkui.component';
 import { jsonx } from "std/core";
 import inspector from '@ohos.arkui.inspector';

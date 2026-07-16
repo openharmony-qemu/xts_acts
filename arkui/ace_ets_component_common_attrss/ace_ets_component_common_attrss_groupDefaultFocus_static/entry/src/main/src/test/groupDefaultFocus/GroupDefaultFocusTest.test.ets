@@ -15,7 +15,7 @@
  */
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, beforeAll, expect } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, beforeAll, expect } from '../../../../hypium/index';
 import { focusControl } from '@ohos.arkui.component';
 import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';

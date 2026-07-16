@@ -15,7 +15,7 @@
  */
 
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { describe,  beforeEach, afterEach, afterAll, it, expect, Level, beforeAll } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe,  beforeEach, afterEach, afterAll, it, expect, Level, beforeAll } from "../../../../hypium/index";
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import hilog from '@ohos.hilog'

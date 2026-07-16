@@ -16,7 +16,7 @@
 
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, Size } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect , beforeAll } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, expect , beforeAll } from '../../../../hypium/index';
 import { Position, ConstraintSizeOptions, CommonMethod } from '@ohos.arkui.component'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import hilog from '@ohos.hilog'

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import Utils, { BasePageConfig, PageConfig, TestValue, ZIndex } from '../../../ets/MainAbility/common/Utils';
-import { expect, it, Level,describe, Size, TestType,beforeAll } from '@ohos/hypium-binary/src/main/indexStatic';
+import { expect, it, Level,describe, Size, TestType,beforeAll } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
 import CommonTest from '../common/CommonTest'
 import { State, Link, StoragePropRef,AppStorage } from '@ohos.arkui.stateManagement'

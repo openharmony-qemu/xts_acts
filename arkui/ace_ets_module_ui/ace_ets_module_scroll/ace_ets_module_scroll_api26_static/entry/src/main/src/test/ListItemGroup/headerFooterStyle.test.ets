@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { ListItemGroupHeaderFooterStyle } from '@ohos.arkui.component'
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';

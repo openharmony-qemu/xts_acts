@@ -16,7 +16,7 @@
 
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import RectValue from '../../../../ets/MainAbility/common/Rect';
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import Utils from '../../../../ets/MainAbility/common/Utils';

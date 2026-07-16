@@ -33,7 +33,7 @@ import {
   State,
 } from '@ohos.arkui.stateManagement'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../../../hypium/index';
 import hilog from '@ohos.hilog';
 import testsuite from '../../../../src/test/List.test'
 

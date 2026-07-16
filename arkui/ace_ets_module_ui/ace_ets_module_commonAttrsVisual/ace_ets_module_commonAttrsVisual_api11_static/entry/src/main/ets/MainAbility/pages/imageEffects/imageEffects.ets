@@ -18,7 +18,7 @@ import hilog from '@ohos.hilog';
 import { $$, $r, Alignment, BindOptions, Button, ButtonType, ClickEvent, Color, ColoringStrategy, Column, ColumnOptions, Component, Entry, Flex, FlexAlign, FlexDirection, FlexOptions, FontWeight, Image, ItemAlign, Margin, Padding, Row, Scroll, ShadowOptions, ShadowStyle, SheetOptions, SheetType, SizeOptions, Text, TextAlign } from '@ohos.arkui.component';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage, Link, State } from '@ohos.arkui.stateManagement';
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../../../hypium/index';
 import { Callback, RecordData } from '@ohos.base';
 @Entry
 @Component

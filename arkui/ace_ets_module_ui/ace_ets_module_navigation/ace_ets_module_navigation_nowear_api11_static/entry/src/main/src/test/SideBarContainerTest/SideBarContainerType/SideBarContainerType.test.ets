@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import {SideBarContainerType} from '@ohos.arkui.component'
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import RectValue from '../../../../ets/MainAbility/common/Rect';

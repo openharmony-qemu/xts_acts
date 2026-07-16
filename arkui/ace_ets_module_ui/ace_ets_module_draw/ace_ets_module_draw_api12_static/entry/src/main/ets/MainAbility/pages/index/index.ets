@@ -15,7 +15,7 @@
  */
 import router from '@ohos.router';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect ,Hypium} from '@ohos/hypium-binary/src/main/indexStatic'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect ,Hypium} from '../../../../../hypium/index'
 import testsuite from '../../../../src/test/List.test'
 import {
   Row,

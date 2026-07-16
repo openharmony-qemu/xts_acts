@@ -23,7 +23,7 @@ import {
   it,
   expect,
   Level
-} from '@ohos/hypium-binary/src/main/indexStatic';
+} from '../../../../hypium/index';
 import router from '@ohos.router';
 // import { sendEventByKey } from '@internal.full.global'
 import {
