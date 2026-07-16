@@ -257,7 +257,7 @@ export default function InstanceMethodGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_GETNAME_0001
      * @tc.name testInstanceMethodGetName0001
-     * @tc.desc Verify that getName() requires no parameters
+     * @tc.desc Verify getName() returns the correct method name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -481,11 +481,10 @@ export default function InstanceMethodGetNameTest(): void {
      */
     it('testInstanceMethodGetName0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass031>();
-      let methods = cls.getInstanceMethods();
       let methodNameMap = new Map<string, string>();
-      for (let i = 0; i < methods.length; i++) {
-        methodNameMap.set(methods[i].getName(), methods[i].getName());
-      }
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
+        methodNameMap.set(method.getName(), method.getName());
+      });
       expect(methodNameMap.get('method1')).assertEqual('method1');
       expect(methodNameMap.get('method2')).assertEqual('method2');
       expect(methodNameMap.get('method3')).assertEqual('method3');
@@ -607,13 +606,12 @@ export default function InstanceMethodGetNameTest(): void {
      */
     it('testInstanceMethodGetName0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass047>();
-      let methods = cls.getInstanceMethods();
       let count: number = 0;
-      for (let i = 0; i < methods.length; i++) {
-        if (methods[i].getName() === 'overloadedMethod') {
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
+        if (method.getName() === 'overloadedMethod') {
           count++;
         }
-      }
+      });
       expect(count).assertEqual(2);
     });
 
@@ -667,11 +665,10 @@ export default function InstanceMethodGetNameTest(): void {
      */
     it('testInstanceMethodGetName0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass051>();
-      let methods = cls.getInstanceMethods();
       let nameSet = new Set<string>();
-      for (let i = 0; i < methods.length; i++) {
-        nameSet.add(methods[i].getName());
-      }
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
+        nameSet.add(method.getName());
+      });
       expect(nameSet.has('method1')).assertTrue();
       expect(nameSet.has('method2')).assertTrue();
       expect(nameSet.has('method3')).assertTrue();
@@ -738,6 +735,143 @@ export default function InstanceMethodGetNameTest(): void {
       expect(normalMethod!.getName()).assertEqual('normalMethod');
       let arrowField = cls.getInstanceMethod('arrowFuncField');
       expect(arrowField).assertUndefined();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_GETNAME_0030
+     * @tc.name testInstanceMethodGetName0030
+     * @tc.desc Verify getInstanceMethod with empty string returns undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInstanceMethodGetName0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MyClass001>();
+      let method = cls.getInstanceMethod('');
+      expect(method).assertUndefined();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_GETNAME_0031
+     * @tc.name testInstanceMethodGetName0031
+     * @tc.desc Verify getInstanceMethod with whitespace-only string returns undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInstanceMethodGetName0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MyClass001>();
+      let method = cls.getInstanceMethod('   ');
+      expect(method).assertUndefined();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_GETNAME_0032
+     * @tc.name testInstanceMethodGetName0032
+     * @tc.desc Verify getInstanceMethod with very long non-existent name returns undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInstanceMethodGetName0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MyClass001>();
+      let longName = 'a'.repeat(1000);
+      let method = cls.getInstanceMethod(longName);
+      expect(method).assertUndefined();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_GETNAME_0033
+     * @tc.name testInstanceMethodGetName0033
+     * @tc.desc Verify getInstanceMethod with special characters returns undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInstanceMethodGetName0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MyClass001>();
+      let m1 = cls.getInstanceMethod('!!!');
+      expect(m1).assertUndefined();
+      let m2 = cls.getInstanceMethod('@#$%');
+      expect(m2).assertUndefined();
+      let m3 = cls.getInstanceMethod('\n\t');
+      expect(m3).assertUndefined();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_GETNAME_0034
+     * @tc.name testInstanceMethodGetName0034
+     * @tc.desc Verify calling getName on undefined getInstanceMethod result throws NullPointerError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInstanceMethodGetName0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MyClass001>();
+      let method = cls.getInstanceMethod('nonExistentMethod');
+      expect(method).assertUndefined();
+      try {
+        let name = method!.getName();
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_GETNAME_0035
+     * @tc.name testInstanceMethodGetName0035
+     * @tc.desc Verify calling invoke on undefined getInstanceMethod result throws NullPointerError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInstanceMethodGetName0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MyClass001>();
+      let method = cls.getInstanceMethod('nonExistentMethod');
+      expect(method).assertUndefined();
+      let obj = new MyClass001();
+      try {
+        let result = method!.invoke(obj) as string;
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_GETNAME_0036
+     * @tc.name testInstanceMethodGetName0036
+     * @tc.desc Verify getInstanceMethod with mismatched parameterTypes returns undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInstanceMethodGetName0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MyClass001>();
+      let paramTypes: FixedArray<Class> = [Class.from<number>()];
+      let method = cls.getInstanceMethod('testMethod', paramTypes);
+      expect(method).assertUndefined();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_GETNAME_0037
+     * @tc.name testInstanceMethodGetName0037
+     * @tc.desc Verify getInstanceMethod with number-prefixed and mixed-case non-existent names returns undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testInstanceMethodGetName0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MyClass001>();
+      let m1 = cls.getInstanceMethod('123testMethod');
+      expect(m1).assertUndefined();
+      let m2 = cls.getInstanceMethod('TESTMETHOD');
+      expect(m2).assertUndefined();
+      let m3 = cls.getInstanceMethod('test_method');
+      expect(m3).assertUndefined();
+      let m4 = cls.getInstanceMethod('test.method');
+      expect(m4).assertUndefined();
     });
   });
 }

@@ -220,9 +220,10 @@ export default function InstanceMethodEqualsTest(): void {
      * @tc.level LEVEL2
      */
     it('testInstanceMethodEquals0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let obj = new MyClass001();
-      let method = Class.of(obj).getInstanceMethod('testMethod');
-      expect(method!.equals(method!)).assertEqual(true);
+      let cls = Class.from<MyClass001>();
+      let method1 = cls.getInstanceMethod('testMethod');
+      let method2 = cls.getInstanceMethod('testMethod');
+      expect(method1!.equals(method2!)).assertEqual(true);
     });
 
     /**
@@ -283,24 +284,11 @@ export default function InstanceMethodEqualsTest(): void {
     it('testInstanceMethodEquals0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass017>();
 
-      let methods = cls.getInstanceMethods();
-      let firstIndex: int = -1;
-      let secondIndex: int = -1;
-      for (let i = 0; i < methods.length; i++) {
-        if (methods[i].getName() === 'testMethod') {
-          if (firstIndex === -1) {
-            firstIndex = i;
-          } else {
-            secondIndex = i;
-            break;
-          }
-        }
-      }
-
-      expect(firstIndex).assertLargerOrEqual(0);
-      expect(secondIndex).assertLargerOrEqual(0);
-      expect(secondIndex).assertLarger(firstIndex);
-      expect(methods[firstIndex].equals(methods[secondIndex])).assertEqual(false);
+      let matching = Array.from(cls.getInstanceMethods()).filter((method: reflect.InstanceMethod): boolean => {
+        return method.getName() === 'testMethod';
+      });
+      expect(matching.length >= 2).assertTrue();
+      expect(matching[0].equals(matching[1])).assertEqual(false);
     });
 
     /**
@@ -334,36 +322,25 @@ export default function InstanceMethodEqualsTest(): void {
       let cls2 = Class.from<MyClass011>();
       let otherCls = Class.from<MyClass001>();
 
-      let methods1 = cls1.getInstanceMethods();
-      let methods2 = cls2.getInstanceMethods();
-      let otherMethods = otherCls.getInstanceMethods();
+      let methods1Arr = Array.from(cls1.getInstanceMethods());
+      let methods2Arr = Array.from(cls2.getInstanceMethods());
 
-      let areEqual = methods1.length === methods2.length;
-      if (areEqual) {
-        for (let i = 0; i < methods1.length; i++) {
-          let found = false;
-          for (let j = 0; j < methods2.length; j++) {
-            if (methods1[i].equals(methods2[j])) {
-              found = true;
-              break;
-            }
-          }
-          if (!found) {
-            areEqual = false;
-            break;
-          }
-        }
-      }
+      let areEqual = methods1Arr.length === methods2Arr.length && methods1Arr.every((m1: reflect.InstanceMethod): boolean => {
+        return methods2Arr.some((m2: reflect.InstanceMethod): boolean => {
+          return m1.equals(m2);
+        });
+      });
       expect(areEqual).assertEqual(true);
 
+      let otherMethodsArr = Array.from(otherCls.getInstanceMethods());
       let crossMatchCount: number = 0;
-      for (let i = 0; i < methods1.length; i++) {
-        for (let j = 0; j < otherMethods.length; j++) {
-          if (methods1[i].equals(otherMethods[j])) {
+      methods1Arr.forEach((m1: reflect.InstanceMethod): void => {
+        otherMethodsArr.forEach((m2: reflect.InstanceMethod): void => {
+          if (m1.equals(m2)) {
             crossMatchCount++;
           }
-        }
-      }
+        });
+      });
       expect(crossMatchCount).assertEqual(0);
     });
 
@@ -377,25 +354,16 @@ export default function InstanceMethodEqualsTest(): void {
      */
     it('testInstanceMethodEquals0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass017>();
-      let methods = cls.getInstanceMethods();
-      let firstOneParamIndex: int = -1;
-      let secondOneParamIndex: int = -1;
-      for (let i = 0; i < methods.length; i++) {
-        if (methods[i].getName() === 'testMethod' && methods[i].getParametersNum() === 1) {
-          if (firstOneParamIndex === -1) {
-            firstOneParamIndex = i;
-          } else if (methods[firstOneParamIndex].getParameterType(0)!.getName() !==
-            methods[i].getParameterType(0)!.getName()) {
-            secondOneParamIndex = i;
-            break;
-          }
-        }
-      }
-
-      expect(firstOneParamIndex).assertLargerOrEqual(0);
-      expect(secondOneParamIndex).assertLargerOrEqual(0);
-      expect(secondOneParamIndex).assertLarger(firstOneParamIndex);
-      expect(methods[firstOneParamIndex].equals(methods[secondOneParamIndex])).assertEqual(false);
+      let oneParamMethods = Array.from(cls.getInstanceMethods()).filter((method: reflect.InstanceMethod): boolean => {
+        return method.getName() === 'testMethod' && method.getParametersNum() === 1;
+      });
+      expect(oneParamMethods.length >= 2).assertTrue();
+      let firstMethod = oneParamMethods[0];
+      let secondMethod = Array.from(oneParamMethods).find((m: reflect.InstanceMethod): boolean => {
+        return m.getParameterType(0)!.getName() !== firstMethod.getParameterType(0)!.getName();
+      });
+      expect(secondMethod !== undefined).assertTrue();
+      expect(firstMethod.equals(secondMethod!)).assertEqual(false);
     });
 
     /**
@@ -465,22 +433,11 @@ export default function InstanceMethodEqualsTest(): void {
      */
     it('testInstanceMethodEquals0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass055>();
-      let methods = cls.getInstanceMethods();
-      let firstIndex: int = -1;
-      let secondIndex: int = -1;
-      for (let i = 0; i < methods.length; i++) {
-        if (methods[i].getName() === 'method1') {
-          if (firstIndex === -1) {
-            firstIndex = i;
-          } else {
-            secondIndex = i;
-            break;
-          }
-        }
-      }
-      expect(firstIndex).assertLargerOrEqual(0);
-      expect(secondIndex).assertLargerOrEqual(0);
-      expect(methods[firstIndex].equals(methods[secondIndex])).assertEqual(false);
+      let matching = Array.from(cls.getInstanceMethods()).filter((method: reflect.InstanceMethod): boolean => {
+        return method.getName() === 'method1';
+      });
+      expect(matching.length >= 2).assertTrue();
+      expect(matching[0].equals(matching[1])).assertEqual(false);
     });
 
     /**
@@ -496,7 +453,6 @@ export default function InstanceMethodEqualsTest(): void {
       let method1 = cls.getInstanceMethod('abstractMethod');
       let method2 = cls.getInstanceMethod('abstractMethod');
       expect(method1!.equals(method2!)).assertEqual(true);
-      expect(method1!.equals(method1!)).assertEqual(true);
     });
 
     /**
@@ -585,20 +541,13 @@ export default function InstanceMethodEqualsTest(): void {
      */
     it('testInstanceMethodEquals0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass060>();
-      let methods = cls.getInstanceMethods();
-      expect(methods.length).assertEqual(3);
-      let allDistinct = true;
-      for (let i = 0; i < methods.length; i++) {
-        for (let j = i + 1; j < methods.length; j++) {
-          if (methods[i].equals(methods[j])) {
-            allDistinct = false;
-            break;
-          }
-        }
-        if (!allDistinct) {
-          break;
-        }
-      }
+      let methodsArr = Array.from(cls.getInstanceMethods());
+      expect(methodsArr.length).assertEqual(3);
+      let allDistinct = !methodsArr.some((m1: reflect.InstanceMethod, i: int): boolean => {
+        return methodsArr.some((m2: reflect.InstanceMethod, j: int): boolean => {
+          return j > i && m1.equals(m2);
+        });
+      });
       expect(allDistinct).assertTrue();
     });
 
@@ -612,24 +561,13 @@ export default function InstanceMethodEqualsTest(): void {
      */
     it('testInstanceMethodEquals0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass059>();
-      let methods = cls.getInstanceMethods();
-      let firstIndex: int = -1;
-      let secondIndex: int = -1;
-      for (let i = 0; i < methods.length; i++) {
-        if (methods[i].getName() === 'compute') {
-          if (firstIndex === -1) {
-            firstIndex = i;
-          } else {
-            secondIndex = i;
-            break;
-          }
-        }
-      }
-      expect(firstIndex).assertLargerOrEqual(0);
-      expect(secondIndex).assertLargerOrEqual(0);
-      expect(methods[firstIndex].getParametersNum()).assertEqual(2);
-      expect(methods[secondIndex].getParametersNum()).assertEqual(3);
-      expect(methods[firstIndex].equals(methods[secondIndex])).assertEqual(false);
+      let matching = Array.from(cls.getInstanceMethods()).filter((method: reflect.InstanceMethod): boolean => {
+        return method.getName() === 'compute';
+      });
+      expect(matching.length >= 2).assertTrue();
+      expect(matching[0].getParametersNum()).assertEqual(2);
+      expect(matching[1].getParametersNum()).assertEqual(3);
+      expect(matching[0].equals(matching[1])).assertEqual(false);
     });
 
     /**

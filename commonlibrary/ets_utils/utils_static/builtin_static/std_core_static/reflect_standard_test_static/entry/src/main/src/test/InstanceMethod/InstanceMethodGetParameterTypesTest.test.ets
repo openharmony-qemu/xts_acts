@@ -346,7 +346,7 @@ export default function InstanceMethodGetParameterTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_GETPARAMETERTYPES_0001
      * @tc.name testInstanceMethodGetParameterTypes0001
-     * @tc.desc Verify that a normal call returns a FixedArray of all parameter types
+     * @tc.desc Verify that a normal call returns all parameter types in order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1072,11 +1072,10 @@ export default function InstanceMethodGetParameterTypesTest(): void {
     it('testInstanceMethodGetParameterTypes0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass061>();
       let method = cls.getInstanceMethod('testMethod');
-      let paramTypes = method!.getParameterTypes();
-      expect(paramTypes.length).assertEqual(3);
-      for (let i = 0; i < paramTypes.length; i++) {
-        expect(paramTypes[i].getName()).assertEqual(method!.getParameterType(i)!.getName());
-      }
+      expect(method!.getParameterTypes().length).assertEqual(3);
+      Array.from(method!.getParameterTypes()).forEach((pt: Class, i: int): void => {
+        expect(pt.getName()).assertEqual(method!.getParameterType(i)!.getName());
+      });
     });
 
     /**
@@ -1089,23 +1088,12 @@ export default function InstanceMethodGetParameterTypesTest(): void {
      */
     it('testInstanceMethodGetParameterTypes0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass062>();
-      let methods = cls.getInstanceMethods();
-      let firstIdx: int = -1;
-      let secondIdx: int = -1;
-      for (let i = 0; i < methods.length; i++) {
-        if (methods[i].getName() === 'overloadedMethod') {
-          if (firstIdx === -1) {
-            firstIdx = i;
-          } else {
-            secondIdx = i;
-            break;
-          }
-        }
-      }
-      expect(firstIdx).assertLargerOrEqual(0);
-      expect(secondIdx).assertLargerOrEqual(0);
-      let types1 = methods[firstIdx].getParameterTypes();
-      let types2 = methods[secondIdx].getParameterTypes();
+      let matching = Array.from(cls.getInstanceMethods()).filter((method: reflect.InstanceMethod): boolean => {
+        return method.getName() === 'overloadedMethod';
+      });
+      expect(matching.length >= 2).assertTrue();
+      let types1 = matching[0].getParameterTypes();
+      let types2 = matching[1].getParameterTypes();
       expect(types1.length).assertEqual(1);
       expect(types2.length).assertEqual(1);
       expect(types1[0].getName()).assertEqual('f64');

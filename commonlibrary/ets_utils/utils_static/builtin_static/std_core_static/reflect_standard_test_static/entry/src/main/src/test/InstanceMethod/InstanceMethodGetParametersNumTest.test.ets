@@ -311,7 +311,7 @@ export default function InstanceMethodGetParametersNumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_GETPARAMETERSNUM_0001
      * @tc.name testInstanceMethodGetParametersNum0001
-     * @tc.desc Verify that getParametersNum() requires no parameters
+     * @tc.desc Verify getParametersNum() returns the correct parameter count
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -553,13 +553,12 @@ export default function InstanceMethodGetParametersNumTest(): void {
      */
     it('testInstanceMethodGetParametersNum0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass030>();
-      let methods = cls.getInstanceMethods();
       let hasZero = false;
       let hasOne = false;
       let hasTwo = false;
-      for (let i = 0; i < methods.length; i++) {
-        if (methods[i].getName() === 'overloadMethod') {
-          let num = methods[i].getParametersNum();
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
+        if (method.getName() === 'overloadMethod') {
+          let num = method.getParametersNum();
           if (num === 0) {
             hasZero = true;
           }
@@ -570,7 +569,7 @@ export default function InstanceMethodGetParametersNumTest(): void {
             hasTwo = true;
           }
         }
-      }
+      });
       expect(hasZero).assertTrue();
       expect(hasOne).assertTrue();
       expect(hasTwo).assertTrue();
@@ -876,11 +875,10 @@ export default function InstanceMethodGetParametersNumTest(): void {
      */
     it('testInstanceMethodGetParametersNum0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass058>();
-      let methods = cls.getInstanceMethods();
       let totalParams: number = 0;
-      for (let i = 0; i < methods.length; i++) {
-        totalParams += methods[i].getParametersNum();
-      }
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
+        totalParams += method.getParametersNum();
+      });
       expect(totalParams).assertEqual(3);
     });
 

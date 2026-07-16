@@ -361,7 +361,7 @@ export default function InstanceMethodGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_GETRETURNTYPE_0001
      * @tc.name testInstanceMethodGetReturnType0001
-     * @tc.desc Verify that calling getReturnType() without parameters does not throw an error
+     * @tc.desc Verify getReturnType() returns the correct type (std.core.String) for a string-returning method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -596,7 +596,7 @@ export default function InstanceMethodGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_GETRETURNTYPE_0016
      * @tc.name testInstanceMethodGetReturnType0016
-     * @tc.desc Verify the return type of a method with an optional parameter returning string or undefined
+     * @tc.desc Verify the return type of a method declared as string | undefined reflects as std.core.String
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2

@@ -771,16 +771,16 @@ export default function InstanceMethodInvokeTest(): void {
       let a: number = 10;
       let b: number = 5;
 
-      for (let i = 0; i < operations.length; i++) {
-        let method = cls.getInstanceMethod(operations[i]);
+      operations.forEach((op: string): void => {
+        let method = cls.getInstanceMethod(op);
         let args: FixedArray<Object> = [a, b];
         let result = method!.invoke(calc, args) as number;
-        if (operations[i] === 'add') {
+        if (op === 'add') {
           expect(result).assertEqual(15);
         } else {
           expect(result).assertEqual(5);
         }
-      }
+      });
     });
 
     /**
@@ -1172,7 +1172,7 @@ export default function InstanceMethodInvokeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_INVOKE_0043
      * @tc.name testInstanceMethodInvoke0043
-     * @tc.desc Verify invoking a method with three integer parameters and arithmetic logic
+     * @tc.desc Verify invoking a method with three number parameters and arithmetic logic
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2

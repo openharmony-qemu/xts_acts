@@ -584,10 +584,9 @@ export default function InstanceMethodGetOwnerTest(): void {
       let cls = Class.from<MyClass031>();
       let methods = cls.getInstanceMethods();
       expect(methods.length).assertEqual(2);
-      for (let i = 0; i < methods.length; i++) {
-        let method = methods[i];
+      Array.from(methods).forEach((method: reflect.InstanceMethod): void => {
         assertOwnerNameMatches(method.getOwner().getName(), Class.from<MyClass031>().getName());
-      }
+      });
     });
 
     /**
@@ -623,15 +622,13 @@ export default function InstanceMethodGetOwnerTest(): void {
      */
     it('testInstanceMethodGetOwner0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass034>();
-      let methods = cls.getInstanceMethods();
       let overloadCount: number = 0;
-      for (let i = 0; i < methods.length; i++) {
-        let method = methods[i];
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
         if (method.getName() === 'overloadMethod') {
           overloadCount++;
           assertOwnerNameMatches(method.getOwner().getName(), Class.from<MyClass034>().getName());
         }
-      }
+      });
       expect(overloadCount).assertEqual(3);
     });
 
@@ -767,11 +764,10 @@ export default function InstanceMethodGetOwnerTest(): void {
      */
     it('testInstanceMethodGetOwner0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass057>();
-      let methods = cls.getInstanceMethods();
       let expectedOwner = Class.from<MyClass057>().getName();
-      for (let i = 0; i < methods.length; i++) {
-        assertOwnerNameMatches(methods[i].getOwner().getName(), expectedOwner);
-      }
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
+        assertOwnerNameMatches(method.getOwner().getName(), expectedOwner);
+      });
     });
 
     /**
@@ -794,7 +790,7 @@ export default function InstanceMethodGetOwnerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_GETOWNER_0029
      * @tc.name testInstanceMethodGetOwner0029
-     * @tc.desc Verify getOwner for abstract class concrete method points to abstract class
+     * @tc.desc Verify getOwner for a concrete method in a regular class points to the declaring class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2

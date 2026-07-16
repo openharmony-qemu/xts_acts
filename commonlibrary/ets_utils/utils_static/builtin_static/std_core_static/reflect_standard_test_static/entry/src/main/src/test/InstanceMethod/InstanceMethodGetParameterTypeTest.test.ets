@@ -361,12 +361,11 @@ export default function InstanceMethodGetParameterTypeTest(): void {
       let cls = Class.from<MyClass030>();
 
       let method = cls.getInstanceMethod('testMethod');
-      let paramTypes = method!.getParameterTypes();
-      expect(paramTypes.length).assertEqual(2);
-      for (let i = 0; i < paramTypes.length; i++) {
+      expect(method!.getParameterTypes().length).assertEqual(2);
+      Array.from(method!.getParameterTypes()).forEach((pt: Class, i: int): void => {
         let paramType = method!.getParameterType(i);
-        expect(paramType!.getName()).assertEqual(paramTypes[i].getName());
-      }
+        expect(paramType!.getName()).assertEqual(pt.getName());
+      });
     });
 
     /**
@@ -381,12 +380,11 @@ export default function InstanceMethodGetParameterTypeTest(): void {
       let cls = Class.from<MyClass031>();
 
       let method = cls.getInstanceMethod('testMethod');
-      let numParams = method!.getParametersNum();
-      expect(numParams).assertEqual(3);
+      expect(method!.getParametersNum()).assertEqual(3);
       let expectedNames: string[] = ['f64', 'std.core.String', 'u1'];
-      for (let i = 0; i < numParams; i++) {
-        expect(method!.getParameterType(i)!.getName()).assertEqual(expectedNames[i]);
-      }
+      expectedNames.forEach((name: string, i: int): void => {
+        expect(method!.getParameterType(i)!.getName()).assertEqual(name);
+      });
     });
 
     /**
@@ -520,7 +518,7 @@ export default function InstanceMethodGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_GETPARAMETERTYPE_0017
      * @tc.name testInstanceMethodGetParameterType0017
-     * @tc.desc Verify using getParameterType() to retrieve the method name and first parameter type
+     * @tc.desc Verify retrieving the method name via getName() and the first parameter type via getParameterType(0)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -839,10 +837,9 @@ export default function InstanceMethodGetParameterTypeTest(): void {
     it('testInstanceMethodGetParameterType0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass068>();
       let method = cls.getInstanceMethod('testMethod');
-      let paramTypes = method!.getParameterTypes();
-      for (let i = 0; i < paramTypes.length; i++) {
-        expect(method!.getParameterType(i)!.getName()).assertEqual(paramTypes[i].getName());
-      }
+      Array.from(method!.getParameterTypes()).forEach((pt: Class, i: int): void => {
+        expect(method!.getParameterType(i)!.getName()).assertEqual(pt.getName());
+      });
     });
 
     /**
@@ -893,16 +890,16 @@ export default function InstanceMethodGetParameterTypeTest(): void {
      */
     it('testInstanceMethodGetParameterType0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass070>();
-      let methods = cls.getInstanceMethods();
-      let target: int = -1;
-      for (let i = 0; i < methods.length; i++) {
-        if (methods[i].getName() === 'defaultValueMethod') {
-          target = i;
-          break;
+      let targetMethod: reflect.InstanceMethod | undefined;
+      Array.from(cls.getInstanceMethods()).some((method: reflect.InstanceMethod): boolean => {
+        if (method.getName() === 'defaultValueMethod') {
+          targetMethod = method;
+          return true;
         }
-      }
-      expect(target).assertLargerOrEqual(0);
-      let method = methods[target];
+        return false;
+      });
+      expect(targetMethod !== undefined).assertTrue();
+      let method = targetMethod!;
       expect(method.getParametersNum()).assertEqual(2);
       expect(method.getParameterType(0)!.getName()).assertEqual('f64');
       expect(method.getParameterType(1)!.getName()).assertEqual('std.core.String');
@@ -918,25 +915,14 @@ export default function InstanceMethodGetParameterTypeTest(): void {
      */
     it('testInstanceMethodGetParameterType0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass071>();
-      let methods = cls.getInstanceMethods();
-      let firstIdx: int = -1;
-      let secondIdx: int = -1;
-      for (let i = 0; i < methods.length; i++) {
-        if (methods[i].getName() === 'methodA') {
-          if (firstIdx === -1) {
-            firstIdx = i;
-          } else {
-            secondIdx = i;
-            break;
-          }
-        }
-      }
-      expect(firstIdx).assertLargerOrEqual(0);
-      expect(secondIdx).assertLargerOrEqual(0);
-      expect(methods[firstIdx].getParameterType(0)!.getName()).assertEqual('f64');
-      expect(methods[secondIdx].getParameterType(0)!.getName()).assertEqual('std.core.String');
-      expect(methods[firstIdx].getParametersNum()).assertEqual(1);
-      expect(methods[secondIdx].getParametersNum()).assertEqual(1);
+      let matching = Array.from(cls.getInstanceMethods()).filter((method: reflect.InstanceMethod): boolean => {
+        return method.getName() === 'methodA';
+      });
+      expect(matching.length >= 2).assertTrue();
+      expect(matching[0].getParameterType(0)!.getName()).assertEqual('f64');
+      expect(matching[1].getParameterType(0)!.getName()).assertEqual('std.core.String');
+      expect(matching[0].getParametersNum()).assertEqual(1);
+      expect(matching[1].getParametersNum()).assertEqual(1);
     });
 
   });
