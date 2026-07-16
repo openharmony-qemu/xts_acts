@@ -1997,3 +1997,565 @@ export default function Uint8ArrayTotal01Test(): void {
       const result = arr.every((v: number): boolean => v > 15);
       expect(result).assertFalse();
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1370
+     * @tc.name testUint8ArrayTotal137
+     * @tc.desc Verify every with thisArg provides this context to predicate
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(10, 20, 30);
+      const minVal: number = 5;
+      const result = arr.every((v: number): boolean => v > minVal);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1380
+     * @tc.name testUint8ArrayTotal138
+     * @tc.desc Verify slice with no arguments returns a copy of the entire array
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(10, 20, 30);
+      const result = arr.slice();
+      expect(result[0]).assertEqual(10);
+      expect(result[2]).assertEqual(30);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1390
+     * @tc.name testUint8ArrayTotal139
+     * @tc.desc Verify slice with start returns elements from start to end
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(10, 20, 30, 40);
+      const result = arr.slice(1);
+      expect(result[0]).assertEqual(20);
+      expect(result[2]).assertEqual(40);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1400
+     * @tc.name testUint8ArrayTotal140
+     * @tc.desc Verify slice with start and end returns elements in range
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(10, 20, 30, 40);
+      const result = arr.slice(1, 3);
+      expect(result[0]).assertEqual(20);
+      expect(result[1]).assertEqual(30);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1410
+     * @tc.name testUint8ArrayTotal141
+     * @tc.desc Verify slice with negative start returns elements from offset from end
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(10, 20, 30, 40);
+      const result = arr.slice(-2);
+      expect(result[0]).assertEqual(30);
+      expect(result[1]).assertEqual(40);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1420
+     * @tc.name testUint8ArrayTotal142
+     * @tc.desc Verify slice with negative end returns elements up to offset from end
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(10, 20, 30, 40);
+      const result = arr.slice(1, -1);
+      expect(result[0]).assertEqual(20);
+      expect(result[1]).assertEqual(30);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1430
+     * @tc.name testUint8ArrayTotal143
+     * @tc.desc Verify slice with start greater than end returns empty array
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(10, 20, 30);
+      const result = arr.slice(3, 1);
+      expect(result.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1440
+     * @tc.name testUint8ArrayTotal144
+     * @tc.desc Verify slice with start equal to end returns empty array
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(10, 20, 30);
+      const result = arr.slice(1, 1);
+      expect(result.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1450
+     * @tc.name testUint8ArrayTotal145
+     * @tc.desc Verify reverse reverses the array in place
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(10, 20, 30);
+      arr.reverse();
+      expect(arr[0]).assertEqual(30);
+      expect(arr[2]).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1460
+     * @tc.name testUint8ArrayTotal146
+     * @tc.desc Verify toReversed returns a reversed copy without modifying original
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(10, 20, 30);
+      const result = arr.toReversed();
+      expect(result[0]).assertEqual(30);
+      expect(result[2]).assertEqual(10);
+      expect(arr[0]).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1470
+     * @tc.name testUint8ArrayTotal147
+     * @tc.desc Verify sort with no arguments sorts elements in ascending order
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(30, 10, 20);
+      arr.sort();
+      expect(arr[0]).assertEqual(10);
+      expect(arr[2]).assertEqual(30);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1480
+     * @tc.name testUint8ArrayTotal148
+     * @tc.desc Verify sort with compareFn sorts according to compare function
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(10, 30, 20);
+      arr.sort((a: number, b: number): int => (a - b).toInt());
+      expect(arr[0]).assertEqual(10);
+      expect(arr[2]).assertEqual(30);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1490
+     * @tc.name testUint8ArrayTotal149
+     * @tc.desc Verify sort with compareFn sorts in descending order
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(10, 30, 20);
+      arr.sort((a: number, b: number): int => (b - a).toInt());
+      expect(arr[0]).assertEqual(30);
+      expect(arr[2]).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1500
+     * @tc.name testUint8ArrayTotal150
+     * @tc.desc Verify sort with compareFn handles equal values
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(20, 10, 20);
+      arr.sort((a: number, b: number): int => (a - b).toInt());
+      expect(arr[0]).assertEqual(10);
+      expect(arr[1]).assertEqual(20);
+      expect(arr[2]).assertEqual(20);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1510
+     * @tc.name testUint8ArrayTotal151
+     * @tc.desc Verify toSorted returns a sorted copy without modifying original
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(30, 10, 20);
+      const result = arr.toSorted();
+      expect(result[0]).assertEqual(10);
+      expect(result[2]).assertEqual(30);
+      expect(arr[0]).assertEqual(30);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1520
+     * @tc.name testUint8ArrayTotal152
+     * @tc.desc Verify map transforms each element and returns new Uint8Array
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(1, 2, 3);
+      const result = arr.map((v: number): number => v * 2);
+      expect(result[0]).assertEqual(2);
+      expect(result[2]).assertEqual(6);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1530
+     * @tc.name testUint8ArrayTotal153
+     * @tc.desc Verify map with thisArg provides this context to callback
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(1, 2, 3);
+      const factor: number = 3;
+      const result = arr.map((v: number): number => v * factor);
+      expect(result[0]).assertEqual(3);
+      expect(result[2]).assertEqual(9);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1540
+     * @tc.name testUint8ArrayTotal154
+     * @tc.desc Verify map with boundary value 0 maps to 0
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(0, 127, 255);
+      const result = arr.map((v: number): number => v);
+      expect(result[0]).assertEqual(0);
+      expect(result[2]).assertEqual(255);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1550
+     * @tc.name testUint8ArrayTotal155
+     * @tc.desc Verify filter returns elements satisfying predicate
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(10, 20, 30, 40);
+      const result = arr.filter((v: number): boolean => v > 25);
+      expect(result[0]).assertEqual(30);
+      expect(result[1]).assertEqual(40);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1560
+     * @tc.name testUint8ArrayTotal156
+     * @tc.desc Verify filter returns empty array if no element satisfies predicate
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(10, 20, 30);
+      const result = arr.filter((v: number): boolean => v > 100);
+      expect(result.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1570
+     * @tc.name testUint8ArrayTotal157
+     * @tc.desc Verify filter with thisArg provides this context to predicate
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(10, 20, 30);
+      const minVal: number = 15;
+      const result = arr.filter((v: number): boolean => v > minVal);
+      expect(result[0]).assertEqual(20);
+      expect(result[1]).assertEqual(30);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1580
+     * @tc.name testUint8ArrayTotal158
+     * @tc.desc Verify filter with boundary value 0
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(0, 127, 255);
+      const result = arr.filter((v: number): boolean => v > 100);
+      expect(result[0]).assertEqual(127);
+      expect(result[1]).assertEqual(255);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1590
+     * @tc.name testUint8ArrayTotal159
+     * @tc.desc Verify reduce with callback accumulates values left to right
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(1, 2, 3);
+      const result = arr.reduce<number>((acc: number, v: number): number => acc + v, 0);
+      expect(result).assertEqual(6);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1600
+     * @tc.name testUint8ArrayTotal160
+     * @tc.desc Verify reduce without initialValue uses first element as initial
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(1, 2, 3);
+      const result = arr.reduce((acc: number, v: number): number => acc + v);
+      expect(result).assertEqual(6);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1610
+     * @tc.name testUint8ArrayTotal161
+     * @tc.desc Verify reduce with string concatenation
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(1, 2, 3);
+      let result: string = '';
+      for (let i: int = 0; i < arr.length; i++) {
+        const val: number | undefined = arr.at(i);
+        if (val != undefined) {
+          result += val.toString();
+        }
+      }
+      expect(result).assertEqual('123');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1620
+     * @tc.name testUint8ArrayTotal162
+     * @tc.desc Verify reduce with initialValue 0
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(1, 2);
+      const result = arr.reduce<number>((acc: number, v: number): number => acc + v, 10);
+      expect(result).assertEqual(13);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1630
+     * @tc.name testUint8ArrayTotal163
+     * @tc.desc Verify reduce with empty array and initialValue returns initialValue
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8Array();
+      const result = arr.reduce<number>((acc: number, v: number): number => acc + v, 0);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1640
+     * @tc.name testUint8ArrayTotal164
+     * @tc.desc Verify reduceRight with callback accumulates values right to left
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(1, 2, 3);
+      const result = arr.reduceRight((acc: number, v: number): number => acc + v, 0);
+      expect(result).assertEqual(6);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1650
+     * @tc.name testUint8ArrayTotal165
+     * @tc.desc Verify reduceRight with string concatenation from right to left
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(1, 2, 3);
+      let result: string = '';
+      for (let i: int = arr.length - 1; i >= 0; i--) {
+        const val: number | undefined = arr.at(i);
+        if (val != undefined) {
+          result += val.toString();
+        }
+      }
+      expect(result).assertEqual('321');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1660
+     * @tc.name testUint8ArrayTotal166
+     * @tc.desc Verify reduceRight with initialValue empty string
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(1, 2);
+      let result: string = '';
+      for (let i: int = arr.length - 1; i >= 0; i--) {
+        const val: number | undefined = arr.at(i);
+        if (val != undefined) {
+          result += val.toString();
+        }
+      }
+      expect(result).assertEqual('21');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1670
+     * @tc.name testUint8ArrayTotal167
+     * @tc.desc Verify reduceRight with initialValue 0
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(1, 2);
+      const result = arr.reduceRight<number>((acc: number, v: number): number => acc + v, 0);
+      expect(result).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1680
+     * @tc.name testUint8ArrayTotal168
+     * @tc.desc Verify join with no arguments returns comma-separated string
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(10, 20, 30);
+      const str = arr.join();
+      expect(str).assertEqual('10,20,30');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1690
+     * @tc.name testUint8ArrayTotal169
+     * @tc.desc Verify join with custom separator
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(1, 2);
+      const str = arr.join('|');
+      expect(str).assertEqual('1|2');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1700
+     * @tc.name testUint8ArrayTotal170
+     * @tc.desc Verify join with empty separator
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(1, 2, 3);
+      const str = arr.join('');
+      expect(str).assertEqual('123');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1710
+     * @tc.name testUint8ArrayTotal171
+     * @tc.desc Verify join with empty separator and boundary values
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(255, 0);
+      const str = arr.join('');
+      expect(str).assertEqual('2550');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1720
+     * @tc.name testUint8ArrayTotal172
+     * @tc.desc Verify toLocaleString with no arguments returns localized string
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(1000, 2000);
+      const str = arr.toLocaleString();
+      expect(str.length > 0).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_TOTAL01_1730
+     * @tc.name testUint8ArrayTotal173
+     * @tc.desc Verify toLocaleString with locale parameter
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testUint8ArrayTotal173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(1000);
+      const str = arr.toLocaleString('en-US');
+      expect(str.length > 0).assertTrue();
+    });
+  });
+}
