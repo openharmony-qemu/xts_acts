@@ -1438,14 +1438,14 @@ export default function Float32ArrayEvery1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_EVERYONE_7700
      * @tc.name testFloat32ArrayEveryONE077
-     * @tc.desc Verify predicate judges the NaN element with e === e and returns false
+     * @tc.desc Verify predicate judges the NaN element with !Number.isNaN(e) and returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayEveryONE077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Float32Array = Float32Array.of(NaN);
-      const r: boolean = arr.every((e: number) => e === e);
+      const r: boolean = arr.every((e: number) => !Number.isNaN(e));
       expect(r).assertFalse();
     });
 

@@ -1357,14 +1357,14 @@ export default function Float32ArrayFilter2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FILTERTWO_8800
      * @tc.name testFloat32ArrayFilterTWO088
-     * @tc.desc Verify filter can keep only NaN values using global isNaN
+     * @tc.desc Verify filter can keep only NaN values using Number.isNaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat32ArrayFilterTWO088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new Float32Array([1.0, NaN, 2.0, NaN]);
-      const filtered = src.filter((v: number, i: int, a: Float32Array): boolean => isNaN(v));
+      const filtered = src.filter((v: number, i: int, a: Float32Array): boolean => Number.isNaN(v));
       expect(filtered.length).assertEqual(2);
       expect(filtered.$_get(0)).assertNaN();
       expect(filtered.$_get(1)).assertNaN();

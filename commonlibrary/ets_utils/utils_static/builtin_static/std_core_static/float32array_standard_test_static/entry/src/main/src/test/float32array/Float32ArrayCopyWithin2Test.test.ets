@@ -476,7 +476,7 @@ export default function Float32ArrayCopyWithin2Test(): void {
     it('testFloat32ArrayCopyWithinTWO028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Float32Array.of(1.0, 2.0, 3.0, 4.0);
       const result = arr.copyWithin(-2, 0, 1);
-      expect(result === arr).assertTrue();
+      expect(result).assertEqual(arr);
       expect(arr.$_get(2)).assertEqual(1.0);
     });
 

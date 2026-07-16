@@ -1351,6 +1351,7 @@ export default function Float32ArrayFrom3Test(): void {
         expect().assertFail();
       } catch (e) {
         caught = e as Error;
+        expect(e.name).assertEqual('TypeError');
       }
       expect(caught).assertEqual(marker);
     });

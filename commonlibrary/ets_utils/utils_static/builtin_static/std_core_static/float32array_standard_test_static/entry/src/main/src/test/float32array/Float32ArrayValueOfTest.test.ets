@@ -1227,8 +1227,8 @@ export default function Float32ArrayValueOfTest(): void {
       const source = Float32Array.of(1.0, 2.0);
       const first = source.valueOf();
       const second = first.valueOf();
-      expect(first === source).assertTrue();
-      expect(second === source).assertTrue();
+      expect(first).assertEqual(source);
+      expect(second).assertEqual(source);
     });
 
   });
