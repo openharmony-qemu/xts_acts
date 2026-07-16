@@ -17,11 +17,15 @@ import Utils from '../../test/Utils';
 import { BusinessError } from '@ohos.base';
 import { Driver, ON, UiDirection, BY, UiDriver } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
-import { waitForExist} from '../../test/WaitTest.test';
 import { webview } from '@kit.ArkWeb';
 import { inputMethod } from '@kit.IMEKit';
 const EVENT_ID_SET_SUITE_KEY = 178219;
 const driver = Driver.create();
+
+const callbackEvent: OnInputmethodAttachedCallback  = ()=> {
+  console.log('inputmethod attached');
+}
+
 @Entry
 @Component
 struct WebComponent {
@@ -34,9 +38,7 @@ struct WebComponent {
   @State isReceive: number = -1;
   @State isOnConsoleEnd: number = -1;
   @State flag:number = 1;
-  let callback: OnInputmethodAttachedCallback = ()=>{
-	console.log('inputmethod attached');
-  }
+
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: EVENT_ID_SET_SUITE_KEY,
@@ -76,7 +78,7 @@ struct WebComponent {
               let buttonOne = await driver.findComponent(ON.text('提交'));
               await  buttonOne.click()
               break;
-              }
+            }
             case "emitOnInputMethodAttached02": {
               this.flag = 2;
               let RedoButton = await driver.findComponent(ON.id("InputmethodAttachedButton"));
@@ -93,7 +95,7 @@ struct WebComponent {
 
 
       Web({ src: $rawfile('example.html'), controller: this.controller }).key('InputmethodAttachedButton')
-	    .onInputmethodAttached(this.callback)
+        .onInputmethodAttached(callbackEvent)
         .onInputmethodAttached(() => {
           console.log('inputmethod attached');
           inputMethod.getController().showTextInput();
@@ -104,9 +106,9 @@ struct WebComponent {
           }
 
         })
-            .onPageEnd((event) => {
-              console.log('onPageEnd url:' + event.url);
-               this.isPageEnd = 1;
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
         })
 
     }
