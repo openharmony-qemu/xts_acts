@@ -14,8 +14,10 @@
  */
 import InjectTouchEvent from './InjectTouchEvent.test';
 import windowNdk from './windowNdk.test';
+import windowProperties from './windowProperties.test'
 
 export default function testsuite() {
   windowNdk();
   InjectTouchEvent();
+  windowProperties();
 }
