@@ -90,7 +90,7 @@ export default function UsbApiInterruptTransferTest() {
     let devices: usbMgr.USBDevice;
     beforeAll( async (done: Function) => {
       console.log(TAG, '*************Usb Unit UsbApiParamErrJsunitTest Begin*************');
-      let gDeviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices().filter(device => !isFilteredDevice(device));
+      let gDeviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices().filter(device => !isFilteredDevice(device.vendorId, device.productId));
       console.info(TAG, 'usb unit begin test getDevices **********', JSON.stringify(gDeviceList));
       isDeviceConnected = deviceConnected(gDeviceList);
       console.info(TAG, 'isDeviceConnected:', isDeviceConnected);
