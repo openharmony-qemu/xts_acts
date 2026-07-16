@@ -219,8 +219,6 @@ export default function Float32ArrayValuesTest(): void {
       expect(r.value).assertUndefined();
     });
 
-
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_1300
      * @tc.name testFloat32ArrayValues013
@@ -965,8 +963,6 @@ export default function Float32ArrayValuesTest(): void {
       expect(itD.next().done).assertTrue();
     });
 
-
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_6100
      * @tc.name testFloat32ArrayValues061
@@ -1360,9 +1356,6 @@ export default function Float32ArrayValuesTest(): void {
       expect(it.next().value).assertEqual(5.0);
       expect(it.next().value).assertEqual(6.0);
     });
-
-
-
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_VALUES_8400

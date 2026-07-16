@@ -1019,8 +1019,6 @@ export default function Float32ArrayEvery1Test(): void {
       expect(seq).assertEqual('012');
     });
 
-
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_EVERYONE_5500
      * @tc.name testFloat32ArrayEveryONE055

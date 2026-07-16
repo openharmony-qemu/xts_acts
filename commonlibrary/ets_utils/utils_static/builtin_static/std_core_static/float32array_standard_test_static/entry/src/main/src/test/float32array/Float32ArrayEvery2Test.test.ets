@@ -143,9 +143,6 @@ export default function Float32ArrayEvery2Test(): void {
       expect(result).assertTrue();
     });
 
-
-
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_EVERYTWO_0800
      * @tc.name testFloat32ArrayEveryTWO008

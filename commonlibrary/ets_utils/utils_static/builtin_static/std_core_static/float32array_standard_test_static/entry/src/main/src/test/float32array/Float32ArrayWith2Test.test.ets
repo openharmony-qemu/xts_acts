@@ -1366,8 +1366,6 @@ export default function Float32ArrayWith2Test(): void {
       expect(result.$_get(2)).assertEqual(-Infinity);
     });
 
-
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_WITHTWO_8800
      * @tc.name testFloat32ArrayWithTWO088

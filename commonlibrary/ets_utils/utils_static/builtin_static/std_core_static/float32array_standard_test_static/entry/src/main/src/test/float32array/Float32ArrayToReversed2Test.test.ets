@@ -469,8 +469,6 @@ export default function Float32ArrayToReversed2Test(): void {
       expect(rev.$_get(2)).assertEqual(-1);
     });
 
-
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_REVERSEDTWO_3000
      * @tc.name testFloat32ArrayToReversedTWO030
@@ -621,9 +619,6 @@ export default function Float32ArrayToReversed2Test(): void {
       expect(rev.byteLength).assertEqual(0);
     });
 
-
-
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_REVERSEDTWO_4000
      * @tc.name testFloat32ArrayToReversedTWO040
@@ -651,8 +646,6 @@ export default function Float32ArrayToReversed2Test(): void {
       const rev = arr.toReversed();
       expect(rev.byteLength).assertEqual(arr.byteLength);
     });
-
-
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_TO_REVERSEDTWO_4200

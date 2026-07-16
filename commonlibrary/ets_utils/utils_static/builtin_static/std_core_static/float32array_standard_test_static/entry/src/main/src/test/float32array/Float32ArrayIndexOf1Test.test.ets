@@ -708,8 +708,6 @@ export default function Float32ArrayIndexOf1Test(): void {
       expect(arr.indexOf(9.0)).assertEqual(3);
     });
 
-
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_OFONE_0520
      * @tc.name testFloat32ArrayIndexOfONE052

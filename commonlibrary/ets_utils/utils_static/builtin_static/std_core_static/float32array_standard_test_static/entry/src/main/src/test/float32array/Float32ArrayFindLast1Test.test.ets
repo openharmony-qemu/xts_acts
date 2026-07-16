@@ -1137,8 +1137,6 @@ export default function Float32ArrayFindLast1Test(): void {
       }
     });
 
-
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FIND_LASTONE_7600
      * @tc.name testFloat32ArrayFindLastONE076

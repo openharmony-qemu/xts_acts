@@ -383,9 +383,6 @@ export default function Float32ArrayFrom3Test(): void {
       expect(r.length).assertEqual(1);
     });
 
-
-
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FROMTHREE_0240
      * @tc.name testFloat32ArrayFromTHREE024

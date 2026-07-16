@@ -624,8 +624,6 @@ export default function Float32ArrayIndexSet2Test(): void {
       expect(arr.buffer).assertEqual(before);
     });
 
-
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_SETTWO_0410
      * @tc.name testFloat32ArrayIndexSetTWO041

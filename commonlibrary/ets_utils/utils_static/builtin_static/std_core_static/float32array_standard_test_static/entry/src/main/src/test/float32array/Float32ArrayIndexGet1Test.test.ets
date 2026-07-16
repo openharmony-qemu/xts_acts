@@ -103,12 +103,6 @@ export default function Float32ArrayIndexGet1Test(): void {
       expect(arr.$_get(2)).assertEqual(-1);
     });
 
-
-
-
-
-
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETONE_0500
      * @tc.name testFloat32ArrayIndexGetONE005
@@ -153,12 +147,6 @@ export default function Float32ArrayIndexGet1Test(): void {
         arr.$_get(5);
       });
     });
-
-
-
-
-
-
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETONE_0800
@@ -911,11 +899,6 @@ export default function Float32ArrayIndexGet1Test(): void {
         arr.$_get(2);
       });
     });
-
-
-
-
-
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_INDEX_GETONE_5900

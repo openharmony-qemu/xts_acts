@@ -902,10 +902,6 @@ export default function Float32ArrayForEach1Test(): void {
       });
     });
 
-
-
-
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT32ARRAY_FOR_EACHONE_4900
      * @tc.name testFloat32ArrayForEachONE049
