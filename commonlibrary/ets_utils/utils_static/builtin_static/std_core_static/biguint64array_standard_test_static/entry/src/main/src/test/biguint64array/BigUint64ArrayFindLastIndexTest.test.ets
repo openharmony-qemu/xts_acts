@@ -1982,3 +1982,38 @@ export default function biguint64arrayFindLastIndexTest(): void {
       expect(sourceArray[0]).assertEqual(2n);
       expect(sourceArray[2]).assertEqual(6n);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FINDLASTINDEX_1030
+     * @tc.name testBigUint64ArrayFindLastIndex103
+     * @tc.desc Verify findLastIndex() observes an unvisited lower index written through an overlapping sibling view
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFindLastIndex103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sharedBuffer: ArrayBuffer = new ArrayBuffer(32);
+      let sourceView = new BigUint64Array(sharedBuffer, 0, 3);
+      let siblingView = new BigUint64Array(sharedBuffer, 8, 2);
+      sourceView[0] = 1n;
+      sourceView[1] = 2n;
+      sourceView[2] = 3n;
+      let observedLowerValue: bigint = 0n;
+      let result: int = sourceView.findLastIndex((element: bigint, index: int,
+        _array: BigUint64Array): boolean => {
+        if (index === 2) {
+          siblingView[0] = 9n;
+        }
+        if (index === 1) {
+          observedLowerValue = element;
+        }
+        return element === 9n;
+      });
+      expect(result).assertEqual(1);
+      expect(observedLowerValue).assertEqual(9n);
+      expect(sourceView[1]).assertEqual(9n);
+      expect(siblingView[0]).assertEqual(9n);
+    });
+
+  });
+}
