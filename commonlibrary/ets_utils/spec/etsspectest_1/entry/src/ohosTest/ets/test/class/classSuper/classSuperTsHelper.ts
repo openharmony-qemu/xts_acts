@@ -33,7 +33,7 @@ export function testGenericSuperCtor(): number {
 }
 
 /*
- * super(...args) spread passing â€?rest params in derived constructor may be restricted in ArkTS
+ * super(...args) spread passing -- rest params in derived constructor may be restricted in ArkTS
  */
 class SpreadBase {
   value1: number

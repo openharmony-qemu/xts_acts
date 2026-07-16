@@ -51,7 +51,7 @@ export function testComputedMethodCall(): string {
 }
 
 /*
- * Generator method test â€?generators not supported in ArkTS
+ * Generator method test -- generators not supported in ArkTS
  */
 class NumberGen {
   * countUp(limit: number): IterableIterator<number> {
@@ -96,7 +96,7 @@ export function testStaticComputedCalcValue(): number {
 }
 
 /*
- * Async generator method â€?not supported in ArkTS
+ * Async generator method -- not supported in ArkTS
  */
 class AsyncNumberGen {
   async * countUp(limit: number): AsyncIterableIterator<number> {

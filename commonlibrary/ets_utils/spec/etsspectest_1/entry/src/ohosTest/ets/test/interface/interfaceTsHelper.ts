@@ -145,7 +145,7 @@ export function testObjectModel(): string {
   let p: Point = raw
   if (p.x !== 3 || p.y !== 4) { return "read-fail" }
 
-  // missing property â†?undefined
+  // missing property -> undefined
   let obj: HasRequired = { id: 1 }
   let val = (obj as any).nonexistent
   if (val !== undefined) { return "undefined-fail" }
@@ -244,7 +244,7 @@ export function testConstructSignature(): string {
   return "ok"
 }
 
-// === #7: Interface readonly (erasure â€?not frozen) ===
+// === #7: Interface readonly (erasure -- not frozen)
 interface ReadonlyPoint {
   readonly x: number
   readonly y: number

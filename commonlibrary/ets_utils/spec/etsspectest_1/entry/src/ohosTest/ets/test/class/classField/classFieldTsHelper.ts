@@ -19,7 +19,7 @@ export function getBigintAsString(): string {
 }
 
 /*
- * Field init calling this.method() â€?uses `this` in field initializer
+* Field init calling this.method() -- uses
  * to invoke a prototype method, may be restricted in ArkTS
  */
 class WithMethodCall {
@@ -35,7 +35,7 @@ export function getWithMethodCallValue(): number {
 }
 
 /*
- * Symbol field test â€?Symbol() and indexed access not supported in ArkTS
+* Symbol field test -- Symbol()
  */
 const symFieldId = Symbol("fieldId")
 const symFieldName = Symbol("fieldName")

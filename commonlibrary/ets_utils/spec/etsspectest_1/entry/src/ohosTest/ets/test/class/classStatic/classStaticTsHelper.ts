@@ -34,7 +34,7 @@ export function getStaticThisMultiplied(factor: number): number {
 }
 
 /*
- * Static computed getter/setter â€?computed property names not supported in ArkTS
+* Static computed getter/setter -- computed
  */
 class StaticComputedAccessor {
   private static _internal: string = "init-value"
@@ -67,7 +67,7 @@ export function testStaticComputedSet(): string {
 }
 
 /*
- * Multiple static blocks â€?ArkTS only supports one static block
+* Multiple static blocks -- ArkTS only
  */
 class MultiStaticBlock {
   static step1: number = 0
