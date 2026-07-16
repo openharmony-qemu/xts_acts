@@ -1982,3 +1982,412 @@ export default function biguint64arrayEveryTest(): void {
         expect(e.name).assertEqual('Error');
       }
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_EVERY_1100
+     * @tc.name testBigUint64ArrayEvery110
+     * @tc.desc Verify every() callback mutation of a later source element can cause later predicate failure
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayEvery110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = new BigUint64Array([1n, 2n, 3n]);
+      let observedSecondElement: bigint = 0n;
+      let callCount: int = 0;
+      let result: boolean = sourceArray.every((element: bigint, index: int, array: BigUint64Array): boolean => {
+        callCount++;
+        if (index === 0) {
+          array[1] = 0n;
+        }
+        if (index === 1) {
+          observedSecondElement = element;
+        }
+        return element > 0n;
+      });
+      expect(result).assertFalse();
+      expect(callCount).assertEqual(2);
+      expect(observedSecondElement).assertEqual(0n);
+      expect(sourceArray[1]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_EVERY_1110
+     * @tc.name testBigUint64ArrayEvery111
+     * @tc.desc Verify every() on an ArrayBuffer offset view observes window values and local indices
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayEvery111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let buffer = new ArrayBuffer(32);
+      let baseView = new BigUint64Array(buffer);
+      baseView[0] = 10n;
+      baseView[1] = 20n;
+      baseView[2] = 30n;
+      baseView[3] = 40n;
+      let byteOffset: int = 8;
+      let viewLength: int = 2;
+      let windowView = new BigUint64Array(buffer, byteOffset, viewLength);
+      let observedValues: bigint[] = [];
+      let observedIndexSum: int = 0;
+      let result: boolean = windowView.every((element: bigint, index: int, array: BigUint64Array): boolean => {
+        observedValues.push(element);
+        observedIndexSum = observedIndexSum + index;
+        return array[index] === element;
+      });
+      expect(result).assertTrue();
+      expect(observedValues[0]).assertEqual(20n);
+      expect(observedValues[1]).assertEqual(30n);
+      expect(observedIndexSum).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_EVERY_1120
+     * @tc.name testBigUint64ArrayEvery112
+     * @tc.desc Verify every() on a subarray observes parent mutation within the live window
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayEvery112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = new BigUint64Array([10n, 20n, 30n, 40n]);
+      let beginIndex: int = 1;
+      let endIndex: int = 3;
+      let windowView = sourceArray.subarray(beginIndex, endIndex);
+      sourceArray[2] = 99n;
+      let observedValues: bigint[] = [];
+      let result: boolean = windowView.every((element: bigint, _index: int, _array: BigUint64Array): boolean => {
+        observedValues.push(element);
+        return element >= 20n;
+      });
+      expect(result).assertTrue();
+      expect(observedValues[0]).assertEqual(20n);
+      expect(observedValues[1]).assertEqual(99n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_EVERY_1130
+     * @tc.name testBigUint64ArrayEvery113
+     * @tc.desc Verify every() stops after a middle predicate exception and propagates the error
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayEvery113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = new BigUint64Array([1n, 2n, 3n]);
+      let callCount: int = 0;
+      try {
+        sourceArray.every((_element: bigint, index: int, _array: BigUint64Array): boolean => {
+          callCount++;
+          if (index === 1) {
+            throw new Error('middle callback error');
+          }
+          return true;
+        });
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+      }
+      expect(callCount).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_EVERY_1140
+     * @tc.name testBigUint64ArrayEvery114
+     * @tc.desc Verify every() on a nested byteOffset subarray uses local callback indices
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayEvery114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sharedBuffer = new ArrayBuffer(56);
+      let fullView = new BigUint64Array(sharedBuffer, 0, 7);
+      fullView[0] = 10n;
+      fullView[1] = 20n;
+      fullView[2] = 30n;
+      fullView[3] = 40n;
+      fullView[4] = 50n;
+      fullView[5] = 60n;
+      fullView[6] = 70n;
+      let byteOffset: int = 8;
+      let viewLength: int = 5;
+      let offsetView = new BigUint64Array(sharedBuffer, byteOffset, viewLength);
+      let nestedWindow = offsetView.subarray(1, 4);
+      let indexSum: int = 0;
+      let result: boolean = nestedWindow.every(
+        (element: bigint, index: int, array: BigUint64Array): boolean => {
+          indexSum = indexSum + index;
+          return array[index] === element && element >= 30n;
+        });
+      expect(result).assertTrue();
+      expect(indexSum).assertEqual(3);
+      expect(nestedWindow.byteOffset).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_EVERY_1150
+     * @tc.name testBigUint64ArrayEvery115
+     * @tc.desc Verify every() on a slice copy from a byteOffset view ignores later source writes
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayEvery115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sharedBuffer = new ArrayBuffer(48);
+      let fullView = new BigUint64Array(sharedBuffer, 0, 6);
+      fullView[0] = 10n;
+      fullView[1] = 20n;
+      fullView[2] = 30n;
+      fullView[3] = 40n;
+      fullView[4] = 50n;
+      fullView[5] = 60n;
+      let byteOffset: int = 8;
+      let viewLength: int = 4;
+      let offsetView = new BigUint64Array(sharedBuffer, byteOffset, viewLength);
+      let sliceCopy = offsetView.slice(1, 4);
+      fullView[2] = 777n;
+      let valueTotal: bigint = 0n;
+      let result: boolean = sliceCopy.every((element: bigint): boolean => {
+        valueTotal = valueTotal + element;
+        return element <= 50n;
+      });
+      let usesIndependentBuffer: boolean = sliceCopy.buffer !== sharedBuffer;
+      expect(result).assertTrue();
+      expect(valueTotal).assertEqual(120n);
+      expect(sliceCopy[0]).assertEqual(30n);
+      expect(fullView[2]).assertEqual(777n);
+      expect(usesIndependentBuffer).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_EVERY_1160
+     * @tc.name testBigUint64ArrayEvery116
+     * @tc.desc Verify every() on a zero-length byteOffset view returns true without invoking the callback
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayEvery116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sharedBuffer = new ArrayBuffer(32);
+      let fullView = new BigUint64Array(sharedBuffer, 0, 4);
+      fullView[0] = 10n;
+      fullView[1] = 20n;
+      fullView[2] = 30n;
+      fullView[3] = 40n;
+      let byteOffset: int = 16;
+      let viewLength: int = 0;
+      let zeroLengthView = new BigUint64Array(sharedBuffer, byteOffset, viewLength);
+      let callCount: int = 0;
+      let result: boolean = zeroLengthView.every(
+        (_element: bigint, _index: int, _array: BigUint64Array): boolean => {
+          callCount = callCount + 1;
+          return false;
+        });
+      expect(result).assertTrue();
+      expect(callCount).assertEqual(0);
+      expect(zeroLengthView.byteOffset).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_EVERY_1170
+     * @tc.name testBigUint64ArrayEvery117
+     * @tc.desc Verify every() on a Set source observes values after duplicate removal
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayEvery117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceSet = new Set<BigInt>();
+      sourceSet.add(7n);
+      sourceSet.add(11n);
+      sourceSet.add(7n);
+      sourceSet.add(15n);
+      let sourceArray = new BigUint64Array(sourceSet);
+      let valueTotal: bigint = 0n;
+      let indexSum: int = 0;
+      let result: boolean =
+        sourceArray.every((element: bigint, index: int, array: BigUint64Array): boolean => {
+          valueTotal = valueTotal + element;
+          indexSum = indexSum + index;
+          return array.length === 3 && element < 20n;
+        });
+      expect(result).assertTrue();
+      expect(valueTotal).assertEqual(33n);
+      expect(indexSum).assertEqual(3);
+      expect(sourceArray.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_EVERY_1180
+     * @tc.name testBigUint64ArrayEvery118
+     * @tc.desc Verify every() on an advanced iterator source uses local callback indices
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayEvery118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let baseArray = BigUint64Array.of(5n, 10n, 15n, 20n);
+      let sourceIterator = baseArray.values();
+      sourceIterator.next();
+      let sourceArray = new BigUint64Array(sourceIterator);
+      let callCount: int = 0;
+      let lastObservedIndex: int = -1;
+      let result: boolean =
+        sourceArray.every((element: bigint, index: int, array: BigUint64Array): boolean => {
+          callCount = callCount + 1;
+          lastObservedIndex = index;
+          return array[0] === 10n && element >= 10n && index < array.length;
+        });
+      expect(result).assertTrue();
+      expect(callCount).assertEqual(3);
+      expect(lastObservedIndex).assertEqual(2);
+      expect(sourceArray.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_EVERY_1190
+     * @tc.name testBigUint64ArrayEvery119
+     * @tc.desc Verify every() short circuit prevents later callback side effects
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayEvery119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = new BigUint64Array([2n, 4n, 6n]);
+      let callCount: int = 0;
+      let result: boolean = sourceArray.every((element: bigint, index: int, array: BigUint64Array): boolean => {
+        callCount = callCount + 1;
+        if (index === 2) {
+          array[0] = 99n;
+        }
+        return element < 4n;
+      });
+      expect(result).assertFalse();
+      expect(callCount).assertEqual(2);
+      expect(sourceArray[0]).assertEqual(2n);
+      expect(sourceArray[2]).assertEqual(6n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_EVERY_1200
+     * @tc.name testBigUint64ArrayEvery120
+     * @tc.desc Verify every() callback writing the current source element keeps the captured value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayEvery120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = new BigUint64Array([5n, 10n, 15n]);
+      let capturedElement: bigint = 0n;
+      let callCount: int = 0;
+      let result: boolean = sourceArray.every((element: bigint, index: int, array: BigUint64Array): boolean => {
+        callCount = callCount + 1;
+        if (index === 0) {
+          capturedElement = element;
+          array[index] = 105n;
+          return element === 5n;
+        }
+        return element > 0n;
+      });
+      expect(result).assertTrue();
+      expect(callCount).assertEqual(3);
+      expect(capturedElement).assertEqual(5n);
+      expect(sourceArray[0]).assertEqual(105n);
+      expect(sourceArray[1]).assertEqual(10n);
+      expect(sourceArray[2]).assertEqual(15n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_EVERY_1210
+     * @tc.name testBigUint64ArrayEvery121
+     * @tc.desc Verify every() propagates an Error thrown on the last predicate callback
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayEvery121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = new BigUint64Array([3n, 6n, 9n]);
+      let callCount: int = 0;
+      try {
+        sourceArray.every((_element: bigint, index: int, _array: BigUint64Array): boolean => {
+          callCount = callCount + 1;
+          if (index === 2) {
+            throw new Error('last callback error');
+          }
+          return true;
+        });
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+      }
+      expect(callCount).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_EVERY_1220
+     * @tc.name testBigUint64ArrayEvery122
+     * @tc.desc Verify every() callback writing an already visited source element keeps its captured value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayEvery122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = new BigUint64Array([2n, 4n, 6n]);
+      let firstCapturedElement: bigint = 0n;
+      let callCount: int = 0;
+      let result: boolean = sourceArray.every((element: bigint, index: int, array: BigUint64Array): boolean => {
+        callCount = callCount + 1;
+        if (index === 0) {
+          firstCapturedElement = element;
+        }
+        if (index === 1) {
+          array[0] = 99n;
+        }
+        return element > 0n;
+      });
+      expect(result).assertTrue();
+      expect(callCount).assertEqual(3);
+      expect(firstCapturedElement).assertEqual(2n);
+      expect(sourceArray[0]).assertEqual(99n);
+      expect(sourceArray[1]).assertEqual(4n);
+      expect(sourceArray[2]).assertEqual(6n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_EVERY_1230
+     * @tc.name testBigUint64ArrayEvery123
+     * @tc.desc Verify every() observes an unvisited value written through an overlapping sibling view
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayEvery123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sharedBuffer = new ArrayBuffer(32);
+      let sourceView = new BigUint64Array(sharedBuffer, 0, 3);
+      sourceView[0] = 2n;
+      sourceView[1] = 4n;
+      sourceView[2] = 6n;
+      let siblingView = new BigUint64Array(sharedBuffer, 8, 3);
+      let observedSecondElement: bigint = 0n;
+      let callCount: int = 0;
+      let result: boolean = sourceView.every((element: bigint, index: int,
+        _array: BigUint64Array): boolean => {
+        callCount = callCount + 1;
+        if (index === 0) {
+          siblingView[0] = 8n;
+        }
+        if (index === 1) {
+          observedSecondElement = element;
+        }
+        return element % 2n === 0n;
+      });
+      expect(result).assertTrue();
+      expect(callCount).assertEqual(3);
+      expect(observedSecondElement).assertEqual(8n);
+      expect(sourceView[1]).assertEqual(8n);
+      expect(siblingView[0]).assertEqual(8n);
+    });
+
+  });
+}
