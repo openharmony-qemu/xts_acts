@@ -19,6 +19,8 @@
 #include "securec.h"
 #include "hctest.h"
 #include "samgr_lite.h"
+#include "samgr_maintenance.h"
+
 
 #define OPER_INTERVAL 200    // 200 ms
 #define PRESSURE_BASE (1024 * 10)
@@ -26,7 +28,7 @@
 enum MessageId {
     MSG_NO, // receiver does not send response
     MSG_RT, // receiver send response
-    MSG_FW, // receiver forward message 
+    MSG_FW, // receiver forward message
 };
 
 struct Payload {
@@ -37,9 +39,9 @@ struct Payload {
 
 typedef struct DemoApi {
     INHERIT_IUNKNOWN;
-    uint32 *(*SAMGR_SendSharedRequestProxy)(const Identity *identity, const Request *request, uint32 *token, 
+    uint32 *(*SAMGR_SendSharedRequestProxy)(const Identity *identity, const Request *request, uint32 *token,
                                             Handler handler);
-    int32 (*SAMGR_SendSharedDirectRequestProxy)(const Identity *id, const Request *req, const Response *resp, 
+    int32 (*SAMGR_SendSharedDirectRequestProxy)(const Identity *id, const Request *req, const Response *resp,
                                                 uint32 **ref, Handler handler);
 } DemoApi;
 
@@ -62,13 +64,13 @@ typedef struct ExampleService {
     Identity identity;
 } ExampleService;
 
-static uint32 *SAMGR_SendSharedRequestProxy(const Identity *identity, const Request *request, uint32 *token, 
+static uint32 *SAMGR_SendSharedRequestProxy(const Identity *identity, const Request *request, uint32 *token,
                                             Handler handler)
 {
     return SAMGR_SendSharedRequest(identity, request, token, handler);
 }
 
-static int32 SAMGR_SendSharedDirectRequestProxy(const Identity *id, const Request *req, const Response *resp, 
+static int32 SAMGR_SendSharedDirectRequestProxy(const Identity *id, const Request *req, const Response *resp,
                                                 uint32 **ref, Handler handler)
 {
     return SAMGR_SendSharedDirectRequest(id, req, resp, ref, handler);
@@ -80,32 +82,11 @@ static const char *GetName(Service *service)
     return "S_sendShareReq";
 }
 
-static BOOL Initialize(Service *service, Identity identity)
-{
-    ExampleService *example = (ExampleService *)service;
-    example->identity = identity;
-    return TRUE;
-}
-
-static BOOL MessageHandle(Service *service, Request *msg)
-{
-    (void)service;
-    (void)msg;
-    return FALSE;
-}
-
-static TaskConfig GetTaskConfig(Service *service)
-{
-    (void)service;
-    TaskConfig config = {LEVEL_HIGH, PRI_ABOVE_NORMAL, 0x800, 20, SHARED_TASK};
-    return config;
-}
-
 static ExampleService g_service = {
     .GetName = GetName,
-    .Initialize = Initialize,
-    .MessageHandle = MessageHandle,
-    .GetTaskConfig = GetTaskConfig,
+    .Initialize = SamgrTestDefaultInitialize,
+    .MessageHandle = SamgrTestMessageHandle,
+    .GetTaskConfig = SamgrTestGetTaskConfig,
     .ref = 1,
     .iUnknown = {
         DEFAULT_IUNKNOWN_IMPL,
@@ -130,19 +111,6 @@ static const char *FEATURE_GetName03(Feature *feature)
     return "feature03";
 }
 
-static void FEATURE_OnInitialize(Feature *feature, Service *parent, Identity identity)
-{
-    DemoFeature *demoFeature = (DemoFeature *)feature;
-    demoFeature->identity = identity;
-    (void)parent;
-}
-
-static void FEATURE_OnStop(Feature *feature, Identity identity)
-{
-    (void)feature;
-    (void)identity;
-}
-
 static BOOL FEATURE_OnMessage(Feature *feature, Request *request)
 {
     DemoFeature *demoFeature = (DemoFeature *)feature;
@@ -153,104 +121,10 @@ static BOOL FEATURE_OnMessage(Feature *feature, Request *request)
     return TRUE;
 }
 
-static BOOL FEATURE_OnMessage02(Feature *feature, Request *request)
-{
-    int32 returnCode = 0;
-    DemoFeature *demoFeature = (DemoFeature *)feature;
-    demoFeature->featureCalledCount++;
-
-    if (demoFeature->latestRequest != NULL) {
-        free(demoFeature->latestRequest);
-    }
-    int requestLen;
-    if (request->len > 0) {
-        requestLen = request->len;
-    } else {
-        requestLen = strlen((char *)request->data) + 1;
-    }
-    demoFeature->latestRequest = (char *)malloc(requestLen * sizeof(char));
-    if (demoFeature->latestRequest == NULL) {
-        TEST_FAIL();
-    }
-    errno_t error = strcpy_s(demoFeature->latestRequest, requestLen, (char *)request->data);
-    if (error != EOK) {
-        TEST_FAIL();
-    }
-
-    switch (request->msgId) {
-        case MSG_NO:
-            returnCode = 0;
-            break;
-        case MSG_RT:
-        {
-            Response response = {
-                .data = "Yes, you did!",
-                .len = 0,
-                };
-            returnCode = SAMGR_SendResponse(request, &response);
-        };
-        break;
-        case MSG_FW:
-        {
-            returnCode = 0;
-        };
-        break;
-    }
-    demoFeature->featureStatus = ((returnCode == 0) ? TRUE : FALSE);
-    return demoFeature->featureStatus;
-}
-
-static BOOL FEATURE_OnMessage03(Feature *feature, Request *request)
-{
-    int32 returnCode = 0;
-    DemoFeature *demoFeature = (DemoFeature *)feature;
-    demoFeature->featureCalledCount++;
-
-    if (demoFeature->latestRequest != NULL) {
-        free(demoFeature->latestRequest);
-    }
-    int requestLen;
-    if (request->len > 0) {
-        requestLen = request->len;
-    } else {
-        requestLen = strlen((char *)request->data) + 1;
-    }
-    demoFeature->latestRequest = (char *)malloc(requestLen * sizeof(char));
-    if (demoFeature->latestRequest == NULL) {
-        TEST_FAIL();
-    }
-    errno_t error = strcpy_s(demoFeature->latestRequest, requestLen, (char *)request->data);
-    if (error != EOK) {
-        TEST_FAIL();
-    }
-
-    switch (request->msgId) {
-        case MSG_NO:
-            returnCode = 0;
-            break;
-        case MSG_RT:
-        {
-            Response response = {
-                .data = "Yes, you did!",
-                .len = 0,
-                };
-            returnCode = SAMGR_SendResponse(request, &response);
-        };
-        break;
-        case MSG_FW:
-        {
-            returnCode = 0;
-        };
-        break;
-    }
-    demoFeature->featureStatus = ((returnCode == 0) ? TRUE : FALSE);
-    return demoFeature->featureStatus;
-}
-
 static DemoFeature g_feature = {
     .GetName = FEATURE_GetName,
-    .OnInitialize = FEATURE_OnInitialize,
-    .OnStop = FEATURE_OnStop,
+    .OnInitialize = SamgrTestFeatureOnInitializeId44,
+    .OnStop = SamgrTestFeatureOnStop,
     .OnMessage = FEATURE_OnMessage,
     .ref = 1,
     .iUnknown = {
@@ -265,9 +139,9 @@ static DemoFeature g_feature = {
 };
 static DemoFeature g_feature02 = {
     .GetName = FEATURE_GetName02,
-    .OnInitialize = FEATURE_OnInitialize,
-    .OnStop = FEATURE_OnStop,
-    .OnMessage = FEATURE_OnMessage02,
+    .OnInitialize = SamgrTestFeatureOnInitializeId44,
+    .OnStop = SamgrTestFeatureOnStop,
+    .OnMessage = SamgrTestFeatureOnMessageWithSwitch,
     .ref = 0,
     .iUnknown = {
         DEFAULT_IUNKNOWN_IMPL,
@@ -281,9 +155,9 @@ static DemoFeature g_feature02 = {
 };
 static DemoFeature g_feature03 = {
     .GetName = FEATURE_GetName03,
-    .OnInitialize = FEATURE_OnInitialize,
-    .OnStop = FEATURE_OnStop,
-    .OnMessage = FEATURE_OnMessage03,
+    .OnInitialize = SamgrTestFeatureOnInitializeId44,
+    .OnStop = SamgrTestFeatureOnStop,
+    .OnMessage = SamgrTestFeatureOnMessageWithSwitch,
     .ref = 0,
     .iUnknown = {
         DEFAULT_IUNKNOWN_IMPL,
@@ -298,51 +172,19 @@ static DemoFeature g_feature03 = {
 
 static void ServiceInit(void)
 {
-    BOOL result = SAMGR_GetInstance()->RegisterService((Service *)&g_service);
-    if (result == FALSE) {
-        printf("[hctest]E RegisterService failed.\n");
-    }
+    SamgrTestRegisterService((Service *)&g_service);
 }
 SYSEX_SERVICE_INIT(ServiceInit);
 
 static void FeatureInit(void)
 {
-    BOOL result1 = SAMGR_GetInstance()->RegisterDefaultFeatureApi("S_sendShareReq", GET_IUNKNOWN(g_feature));
-
-    BOOL result2 = SAMGR_GetInstance()->RegisterFeature("S_sendShareReq", (Feature *)&g_feature02);
-    BOOL result3 = SAMGR_GetInstance()->RegisterFeatureApi("S_sendShareReq", "feature02", 
-                                                           GET_IUNKNOWN(g_feature02));
-
-    BOOL result4 = SAMGR_GetInstance()->RegisterFeature("S_sendShareReq", (Feature *)&g_feature03);
-    BOOL result5 = SAMGR_GetInstance()->RegisterFeatureApi("S_sendShareReq", "feature03", 
-                                                           GET_IUNKNOWN(g_feature03));
-    if (result1 == FALSE || result2 == FALSE || result3 == FALSE || result4 == FALSE || result5 == FALSE) {
-        printf("[hctest]E failed to register feature or api.\n");
-    }
+    SamgrTestRegisterDefaultFeatureApi("S_sendShareReq", GET_IUNKNOWN(g_feature));
+    SamgrTestRegisterFeature("S_sendShareReq", (Feature *)&g_feature02);
+    SamgrTestRegisterFeatureApi("S_sendShareReq", "feature02", GET_IUNKNOWN(g_feature02));
+    SamgrTestRegisterFeature("S_sendShareReq", (Feature *)&g_feature03);
+    SamgrTestRegisterFeatureApi("S_sendShareReq", "feature03", GET_IUNKNOWN(g_feature03));
 }
 SYSEX_FEATURE_INIT(FeatureInit);
-
-static DemoApi *GetIUnknown(const char *serviceName, const char *featureName)
-{
-    DemoApi *demoApi = NULL;
-    IUnknown *iUnknown = SAMGR_GetInstance()->GetFeatureApi(serviceName, featureName);
-    if (iUnknown == NULL) {
-        printf("[hctest]failed to GetFeatureApi.\n");
-        return NULL;
-    }
-    int result = iUnknown->QueryInterface(iUnknown, 0, (void **)&demoApi);
-    if (result == 0 && demoApi != NULL) {
-        return demoApi;
-    } else {
-        printf("[hctest]failed to QueryInterface.\n");
-        return NULL;
-    }
-}
-
-static void ReleaseIUnknown(DemoApi *demoApi)
-{
-    demoApi->Release((IUnknown *)demoApi);
-}
 
 static void DemoHandlerAndCheck(const Request *request, const Response *response)
 {
@@ -363,6 +205,13 @@ static BOOL SendSharedRequestTestSuiteSetUp(void)
 
 static BOOL SendSharedRequestTestSuiteTearDown(void)
 {
+    SAMGR_GetInstance()->UnregisterFeatureApi("S_sendShareReq", "feature02");
+    SAMGR_GetInstance()->UnregisterFeature("S_sendShareReq", "feature02");
+    SAMGR_GetInstance()->UnregisterFeatureApi("S_sendShareReq", "feature03");
+    SAMGR_GetInstance()->UnregisterFeature("S_sendShareReq", "feature03");
+    SAMGR_GetInstance()->UnregisterDefaultFeatureApi("S_sendShareReq");
+    SAMGR_GetInstance()->UnregisterService("S_sendShareReq");
+
     return TRUE;
 }
 
@@ -376,7 +225,7 @@ static BOOL SendSharedRequestTestSuiteTearDown(void)
  */
 LITE_TEST_CASE(SendSharedRequestTestSuite, testSendSharedRequest0010, Function | MediumTest | Level2)
 {
-    DemoApi *demoApi = GetIUnknown("S_sendShareReq", "feature02");
+    DemoApi *demoApi = (DemoApi *)SamgrTestGetIUnknown("S_sendShareReq", "feature02");
     if (demoApi == NULL) {
         TEST_FAIL();
     }
@@ -403,9 +252,7 @@ LITE_TEST_CASE(SendSharedRequestTestSuite, testSendSharedRequest0010, Function |
     TEST_ASSERT_EQUAL_INT(feature->featureCalledCount, 1);
     TEST_ASSERT_EQUAL_INT(strcmp(feature->latestRequest, body), 0);
 
-    free(request.data);
-    request.data = NULL;
-    ReleaseIUnknown(demoApi);
+    demoApi->Release((IUnknown *)demoApi);
 }
 
 /**
@@ -418,7 +265,7 @@ LITE_TEST_CASE(SendSharedRequestTestSuite, testSendSharedRequest0010, Function |
  */
 LITE_TEST_CASE(SendSharedRequestTestSuite, testSendSharedDirectRequest0010, Function | MediumTest | Level2)
 {
-    DemoApi *demoApi = GetIUnknown("S_sendShareReq", "feature02");
+    DemoApi *demoApi = (DemoApi *)SamgrTestGetIUnknown("S_sendShareReq", "feature02");
     if (demoApi == NULL) {
         TEST_FAIL();
     }
@@ -450,9 +297,7 @@ LITE_TEST_CASE(SendSharedRequestTestSuite, testSendSharedDirectRequest0010, Func
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(feature->featureCalledCount, 0);
 
-    free(request.data);
-    request.data = NULL;
-    ReleaseIUnknown(demoApi);
+    demoApi->Release((IUnknown *)demoApi);
 }
 
 RUN_TEST_SUITE(SendSharedRequestTestSuite);
