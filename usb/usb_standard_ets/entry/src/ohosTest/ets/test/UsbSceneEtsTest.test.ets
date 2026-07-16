@@ -33,7 +33,7 @@ async function executeUsbRequest(
 ): Promise<number> {
   let devicePipe: usbMgr.USBDevicePipe | undefined;
   try {
-    const devicesList: Array<usbMgr.USBDevice> = usbMgr.getDevices().filter(device => !isFilteredDevice(device));
+    const devicesList: Array<usbMgr.USBDevice> = usbMgr.getDevices().filter(device => !isFilteredDevice(device.vendorId, device.productId));
     if (!devicesList || devicesList.length === 0) {
       console.info(TAG, "No USB devices connected");
       throw new Error("No devices available");
@@ -100,7 +100,7 @@ export default function UsbSceneEtsTest() {
 
     beforeAll(async () => {
       console.log('*************Usb Unit UsbSceneEtsTest Begin*************');
-      let gDeviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices().filter(device => !isFilteredDevice(device));
+      let gDeviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices().filter(device => !isFilteredDevice(device.vendorId, device.productId));
       if (!gDeviceList || gDeviceList.length === 0) {
         console.info(TAG, 'No USB devices connected');
         return;
