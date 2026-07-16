@@ -1982,3 +1982,38 @@ export default function biguint64arrayFilterTest(): void {
       expect(filterResult[0]).assertEqual(15n);
       expect(filterResult[1]).assertEqual(20n);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FILTER_1030
+     * @tc.name testBigUint64ArrayFilter103
+     * @tc.desc Verify filter() observes an unvisited source value written through an overlapping sibling view
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFilter103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sharedBuffer: ArrayBuffer = new ArrayBuffer(32);
+      let sourceView = new BigUint64Array(sharedBuffer, 0, 3);
+      let siblingView = new BigUint64Array(sharedBuffer, 8, 2);
+      sourceView[0] = 1n;
+      sourceView[1] = 2n;
+      sourceView[2] = 3n;
+      let observedLaterValue: bigint = 0n;
+      let filterResult = sourceView.filter((element: bigint, index: int,
+        _array: BigUint64Array): boolean => {
+        if (index === 0) {
+          siblingView[0] = 9n;
+        }
+        if (index === 1) {
+          observedLaterValue = element;
+        }
+        return element === 9n;
+      });
+      expect(observedLaterValue).assertEqual(9n);
+      expect(sourceView[1]).assertEqual(9n);
+      expect(siblingView[0]).assertEqual(9n);
+      expect(filterResult.length).assertEqual(1);
+      expect(filterResult[0]).assertEqual(9n);
+    });
+  });
+}
