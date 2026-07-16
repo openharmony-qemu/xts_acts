@@ -127,3 +127,31 @@ export interface myObj {
 
 export const getFrameMetrics: () => myObj;
 export const getFrameMetricsCBCount:() => number;
+
+export interface DensityResult {
+    resultCode: number;
+    cppDensity: number;
+}
+
+export interface DensityInfoResult {
+    resultCode: number;
+    info: number;
+}
+
+export const testDensityInfoGetDefaultDensity: (windowId: number) => DensityResult;
+export const testDensityInfoGetDefaultDensityWithNullInfo: () => number;
+export const testDensityInfoGetDefaultDensityWithNullDensity: () => number;
+export const testDensityInfoGetSystemDensity: (windowId: number) => DensityResult;
+export const testDensityInfoGetSystemDensityWithNullInfo: () => number;
+export const testDensityInfoGetSystemDensityWithNullDensity: () => number;
+export const testDensityInfoGetCustomDensity: (windowId: number) => DensityResult;
+export const testDensityInfoGetCustomDensityWithNullInfo: () => number;
+export const testDensityInfoGetCustomDensityWithNullDensity: () => number;
+export const testGetDensityInfoCopy: (windowId: number) => DensityInfoResult;
+export const testGetDensityInfoCopyWithNullInfo: () => number;
+export const testDensityInfoRelease: (info: number) => number;
+export const testDensityInfoReleaseWithNullInfo: () => number;
+export const testRegisterDensityInfoChangeCallback: (windowId: number, callback: Function) => number;
+export const testRegisterDensityInfoChangeCallbackWithNullCallback: (windowId: number) => number;
+export const testUnregisterDensityInfoChangeCallback: (windowId: number, callback: Function) => number;
+export const testUnregisterDensityInfoChangeCallbackWithNullCallback: (windowId: number) => number;
