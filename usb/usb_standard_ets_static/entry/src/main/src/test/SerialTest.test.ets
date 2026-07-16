@@ -788,11 +788,12 @@ export default function SerialTest() {
           hilog.info(domain, TAG, 'usb testGetAttributeRet baudRate:' + typeof(attribute.baudRate));
           hilog.info(domain, TAG, 'usb testGetAttributeRet dataBits:' + typeof(attribute.dataBits));
           hilog.info(domain, TAG, 'usb testGetAttributeRet stopBits:' + typeof(attribute.stopBits));
-          expect(typeof(attribute)).assertEqual("object");
-          expect(typeof(attribute.parity)).assertEqual("int");
-          expect(typeof(attribute.baudRate)).assertEqual("int");
-          expect(typeof(attribute.dataBits)).assertEqual("int");
-          expect(typeof(attribute.stopBits)).assertEqual("int");
+          expect(typeof (attribute)).assertEqual("object");
+          expect(typeof (attribute.parity)).assertEqual("byte");
+          expect(typeof (attribute.baudRate)).assertEqual("int");
+          expect(typeof (attribute.dataBits)).assertEqual("byte");
+          expect(typeof (attribute.stopBits)).assertEqual("byte");
+          serialManager.close(portId);
           done();
         } catch (error) {
           hilog.error(domain, TAG, 'testGetAttributeRet catch err name: ', error);
@@ -826,8 +827,9 @@ export default function SerialTest() {
           serialManager.close(openPortId);
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testReadInputUndefined catch err name: ', error.name, ', message: ', error.message);
+          hilog.error(domain, TAG, `testReadInputUndefined catch error: ${error.code}, ${error.message}`);
           expect().assertFail();
+          done();
         }
       }
     })
@@ -857,8 +859,9 @@ export default function SerialTest() {
           serialManager.close(openPortId);
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testReadSyncUndefined catch err code: ', error.code, ', message: ', error.message);
+          hilog.error(domain, TAG, `testReadSyncUndefined catch error: ${error.code}, ${error.message}`);
           expect().assertFail();
+          done();
         }
       }
     })
@@ -886,8 +889,9 @@ export default function SerialTest() {
           serialManager.close(openPortId);
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testWriteUndefined catch err name: ', error.name, ', message: ', error.message);
+          hilog.error(domain, TAG, `testWriteUndefined catch error: ${error.code}, ${error.message}`);
           expect().assertFail();
+          done();
         }
       }
     })
@@ -915,8 +919,9 @@ export default function SerialTest() {
           serialManager.close(openPortId);
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testWriteSyncUndefined catch err code: ', error.code, ', message: ', error.message);
+          hilog.error(domain, TAG, `testWriteSyncUndefined catch error: ${error.code}, ${error.message}`);
           expect().assertFail();
+          done();
         }
       }
     })
