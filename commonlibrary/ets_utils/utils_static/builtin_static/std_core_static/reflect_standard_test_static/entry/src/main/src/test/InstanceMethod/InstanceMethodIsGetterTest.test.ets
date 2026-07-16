@@ -421,16 +421,14 @@ export default function InstanceMethodIsGetterTest(): void {
      */
     it('testInstanceMethodIsGetter0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass015>();
-      let methods = cls.getInstanceMethods();
       let getterCount: number = 0;
       let getterName = '';
-      for (let i = 0; i < methods.length; i++) {
-        let method = methods[i];
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
         if (method.isGetter()) {
           getterCount++;
           getterName = method.getName();
         }
-      }
+      });
       expect(getterCount).assertEqual(1);
       expect(getterName).assertEqual('%%get-value');
     });
@@ -616,13 +614,12 @@ export default function InstanceMethodIsGetterTest(): void {
      */
     it('testInstanceMethodIsGetter0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass035>();
-      let methods = cls.getInstanceMethods();
       let getterCount: number = 0;
-      for (let i = 0; i < methods.length; i++) {
-        if (methods[i].isGetter()) {
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
+        if (method.isGetter()) {
           getterCount++;
         }
-      }
+      });
       expect(getterCount).assertEqual(3);
     });
 

@@ -504,15 +504,14 @@ export default function InstanceMethodIsPublicTest(): void {
      */
     it('testInstanceMethodIsPublic0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass028>();
-      let methods = cls.getInstanceMethods();
       let publicMethodCount: number = 0;
-      for (let i = 0; i < methods.length; i++) {
-        if (methods[i].isPublic()) {
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
+        if (method.isPublic()) {
           publicMethodCount++;
-          expect(methods[i].isPrivate()).assertEqual(false);
-          expect(methods[i].isProtected()).assertEqual(false);
+          expect(method.isPrivate()).assertEqual(false);
+          expect(method.isProtected()).assertEqual(false);
         }
-      }
+      });
       expect(publicMethodCount).assertEqual(1);
     });
 
@@ -650,10 +649,9 @@ export default function InstanceMethodIsPublicTest(): void {
      */
     it('testInstanceMethodIsPublic0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass053>();
-      let methods = cls.getInstanceMethods();
-      for (let i = 0; i < methods.length; i++) {
-        expect(methods[i].isPublic()).assertEqual(true);
-      }
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
+        expect(method.isPublic()).assertEqual(true);
+      });
     });
 
     /**
@@ -736,9 +734,9 @@ export default function InstanceMethodIsPublicTest(): void {
       let cls = Class.from<MyClass058>();
       let methods = cls.getInstanceMethods();
       expect(methods.length).assertEqual(4);
-      for (let i = 0; i < methods.length; i++) {
-        expect(methods[i].isPublic()).assertEqual(true);
-      }
+      Array.from(methods).forEach((method: reflect.InstanceMethod): void => {
+        expect(method.isPublic()).assertEqual(true);
+      });
     });
 
     /**

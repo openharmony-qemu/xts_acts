@@ -379,14 +379,9 @@ export default function InstanceMethodIsProtectedTest(): void {
      */
     it('testInstanceMethodIsProtected0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass017>();
-      let methods = cls.getInstanceMethods();
-      let hasProtected = false;
-      for (let i = 0; i < methods.length; i++) {
-        let method = methods[i];
-        if (method.isProtected()) {
-          hasProtected = true;
-        }
-      }
+      let hasProtected = Array.from(cls.getInstanceMethods()).some((method: reflect.InstanceMethod): boolean => {
+        return method.isProtected();
+      });
       expect(hasProtected).assertEqual(false);
     });
 
@@ -400,13 +395,12 @@ export default function InstanceMethodIsProtectedTest(): void {
      */
     it('testInstanceMethodIsProtected0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass018>();
-      let methods = cls.getInstanceMethods();
       let protectedMethodCount: number = 0;
-      for (let i = 0; i < methods.length; i++) {
-        if (methods[i].isProtected()) {
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
+        if (method.isProtected()) {
           protectedMethodCount++;
         }
-      }
+      });
       expect(protectedMethodCount).assertEqual(0);
     });
 
@@ -558,10 +552,9 @@ export default function InstanceMethodIsProtectedTest(): void {
      */
     it('testInstanceMethodIsProtected0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass038>();
-      let methods = cls.getInstanceMethods();
-      for (let i = 0; i < methods.length; i++) {
-        expect(methods[i].isProtected()).assertEqual(false);
-      }
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
+        expect(method.isProtected()).assertEqual(false);
+      });
     });
 
     /**

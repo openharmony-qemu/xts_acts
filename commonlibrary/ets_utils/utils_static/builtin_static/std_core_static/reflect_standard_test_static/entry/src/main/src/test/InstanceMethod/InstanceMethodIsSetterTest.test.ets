@@ -408,16 +408,14 @@ export default function InstanceMethodIsSetterTest(): void {
      */
     it('testInstanceMethodIsSetter0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass015>();
-      let methods = cls.getInstanceMethods();
       let setterCount: number = 0;
       let setterName = '';
-      for (let i = 0; i < methods.length; i++) {
-        let method = methods[i];
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
         if (method.isSetter()) {
           setterCount++;
           setterName = method.getName();
         }
-      }
+      });
       expect(setterCount).assertEqual(1);
       expect(setterName).assertEqual('%%set-value');
     });
@@ -600,13 +598,12 @@ export default function InstanceMethodIsSetterTest(): void {
      */
     it('testInstanceMethodIsSetter0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass035>();
-      let methods = cls.getInstanceMethods();
       let setterCount: number = 0;
-      for (let i = 0; i < methods.length; i++) {
-        if (methods[i].isSetter()) {
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
+        if (method.isSetter()) {
           setterCount++;
         }
-      }
+      });
       expect(setterCount).assertEqual(3);
     });
 

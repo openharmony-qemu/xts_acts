@@ -441,14 +441,9 @@ export default function InstanceMethodIsPrivateTest(): void {
      */
     it('testInstanceMethodIsPrivate0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass015>();
-      let methods = cls.getInstanceMethods();
-      let hasPrivate = false;
-      for (let i = 0; i < methods.length; i++) {
-        let method = methods[i];
-        if (method.isPrivate()) {
-          hasPrivate = true;
-        }
-      }
+      let hasPrivate = Array.from(cls.getInstanceMethods()).some((method: reflect.InstanceMethod): boolean => {
+        return method.isPrivate();
+      });
       expect(hasPrivate).assertEqual(false);
     });
 
@@ -462,13 +457,12 @@ export default function InstanceMethodIsPrivateTest(): void {
      */
     it('testInstanceMethodIsPrivate0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass016>();
-      let methods = cls.getInstanceMethods();
       let privateMethodCount: number = 0;
-      for (let i = 0; i < methods.length; i++) {
-        if (methods[i].isPrivate()) {
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
+        if (method.isPrivate()) {
           privateMethodCount++;
         }
-      }
+      });
       expect(privateMethodCount).assertEqual(0);
     });
 
@@ -556,10 +550,9 @@ export default function InstanceMethodIsPrivateTest(): void {
      */
     it('testInstanceMethodIsPrivate0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass033>();
-      let methods = cls.getInstanceMethods();
-      for (let i = 0; i < methods.length; i++) {
-        expect(methods[i].isPrivate()).assertEqual(false);
-      }
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
+        expect(method.isPrivate()).assertEqual(false);
+      });
     });
 
     /**
@@ -901,9 +894,9 @@ export default function InstanceMethodIsPrivateTest(): void {
       let cls = Class.from<MyClass055>();
       let methods = cls.getInstanceMethods();
       expect(methods.length).assertEqual(5);
-      for (let i = 0; i < methods.length; i++) {
-        expect(methods[i].isPrivate()).assertEqual(false);
-      }
+      Array.from(methods).forEach((method: reflect.InstanceMethod): void => {
+        expect(method.isPrivate()).assertEqual(false);
+      });
     });
 
     /**

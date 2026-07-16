@@ -494,15 +494,14 @@ export default function InstanceMethodIsNativeTest(): void {
      */
     it('testInstanceMethodIsNative0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass020>();
-      let methods = cls.getInstanceMethods();
       let nonNativeCount: number = 0;
       let nonNativeMethodName: string = '';
-      for (let i = 0; i < methods.length; i++) {
-        if (!methods[i].isNative()) {
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
+        if (!method.isNative()) {
           nonNativeCount++;
-          nonNativeMethodName = methods[i].getName();
+          nonNativeMethodName = method.getName();
         }
-      }
+      });
       expect(nonNativeCount).assertEqual(1);
       expect(nonNativeMethodName).assertEqual('userMethod');
     });
@@ -665,10 +664,9 @@ export default function InstanceMethodIsNativeTest(): void {
      */
     it('testInstanceMethodIsNative0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass038>();
-      let methods = cls.getInstanceMethods();
-      for (let i = 0; i < methods.length; i++) {
-        expect(methods[i].isNative()).assertEqual(false);
-      }
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
+        expect(method.isNative()).assertEqual(false);
+      });
     });
 
     /**
@@ -960,10 +958,9 @@ export default function InstanceMethodIsNativeTest(): void {
      */
     it('testInstanceMethodIsNative0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass055>();
-      let methods = cls.getInstanceMethods();
-      for (let i = 0; i < methods.length; i++) {
-        expect(methods[i].isNative()).assertEqual(false);
-      }
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
+        expect(method.isNative()).assertEqual(false);
+      });
     });
 
     /**

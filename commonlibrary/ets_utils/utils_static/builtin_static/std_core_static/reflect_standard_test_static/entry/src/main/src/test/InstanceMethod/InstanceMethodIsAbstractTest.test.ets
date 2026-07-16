@@ -406,14 +406,12 @@ export default function InstanceMethodIsAbstractTest(): void {
      */
     it('testInstanceMethodIsAbstract0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass015>();
-      let methods = cls.getInstanceMethods();
       let abstractMethodCount: number = 0;
-      for (let i = 0; i < methods.length; i++) {
-        let method = methods[i];
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
         if (method.isAbstract()) {
           abstractMethodCount++;
         }
-      }
+      });
       expect(abstractMethodCount).assertEqual(1);
     });
 
@@ -427,24 +425,14 @@ export default function InstanceMethodIsAbstractTest(): void {
      */
     it('testInstanceMethodIsAbstract0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let absCls = Class.from<AbstractClass017>();
-      let absMethods = absCls.getInstanceMethods();
-      let hasAbstract = false;
-      for (let i = 0; i < absMethods.length; i++) {
-        if (absMethods[i].isAbstract()) {
-          hasAbstract = true;
-          break;
-        }
-      }
+      let hasAbstract = Array.from(absCls.getInstanceMethods()).some((method: reflect.InstanceMethod): boolean => {
+        return method.isAbstract();
+      });
       expect(hasAbstract).assertEqual(true);
       let concCls = Class.from<ConcreteClass017>();
-      let concMethods = concCls.getInstanceMethods();
-      hasAbstract = false;
-      for (let i = 0; i < concMethods.length; i++) {
-        if (concMethods[i].isAbstract()) {
-          hasAbstract = true;
-          break;
-        }
-      }
+      hasAbstract = Array.from(concCls.getInstanceMethods()).some((method: reflect.InstanceMethod): boolean => {
+        return method.isAbstract();
+      });
       expect(hasAbstract).assertEqual(false);
     });
 
@@ -490,11 +478,10 @@ export default function InstanceMethodIsAbstractTest(): void {
      */
     it('testInstanceMethodIsAbstract0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ConcreteClass026>();
-      let methods = cls.getInstanceMethods();
-      expect(methods.length).assertEqual(2);
-      for (let i = 0; i < methods.length; i++) {
-        expect(methods[i].isAbstract()).assertEqual(false);
-      }
+      expect(cls.getInstanceMethods().length).assertEqual(2);
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
+        expect(method.isAbstract()).assertEqual(false);
+      });
     });
 
     /**
@@ -579,10 +566,9 @@ export default function InstanceMethodIsAbstractTest(): void {
      */
     it('testInstanceMethodIsAbstract0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ConcreteClass034>();
-      let methods = cls.getInstanceMethods();
-      for (let i = 0; i < methods.length; i++) {
-        expect(methods[i].isAbstract()).assertEqual(false);
-      }
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
+        expect(method.isAbstract()).assertEqual(false);
+      });
     });
 
     /**
@@ -880,13 +866,12 @@ export default function InstanceMethodIsAbstractTest(): void {
      */
     it('testInstanceMethodIsAbstract0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass051>();
-      let methods = cls.getInstanceMethods();
       let abstractCount: number = 0;
-      for (let i = 0; i < methods.length; i++) {
-        if (methods[i].isAbstract()) {
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
+        if (method.isAbstract()) {
           abstractCount++;
         }
-      }
+      });
       expect(abstractCount).assertEqual(3);
     });
 
@@ -954,7 +939,7 @@ export default function InstanceMethodIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_ISABSTRACT_0041
      * @tc.name testInstanceMethodIsAbstract0041
-     * @tc.desc Verify getter is not classified as abstract instance method
+     * @tc.desc Verify that a getter is not retrievable by its bare property name via getInstanceMethod
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2

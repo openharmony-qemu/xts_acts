@@ -408,14 +408,12 @@ export default function InstanceMethodIsFinalTest(): void {
      */
     it('testInstanceMethodIsFinal0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass018>();
-      let methods = cls.getInstanceMethods();
       let finalMethodCount: number = 0;
-      for (let i = 0; i < methods.length; i++) {
-        let method = methods[i];
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
         if (method.isFinal()) {
           finalMethodCount++;
         }
-      }
+      });
       expect(finalMethodCount).assertEqual(1);
     });
 
@@ -543,16 +541,15 @@ export default function InstanceMethodIsFinalTest(): void {
      */
     it('testInstanceMethodIsFinal0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass036>();
-      let methods = cls.getInstanceMethods();
       let finalCount: number = 0;
       let nonFinalCount: number = 0;
-      for (let i = 0; i < methods.length; i++) {
-        if (methods[i].isFinal()) {
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
+        if (method.isFinal()) {
           finalCount++;
         } else {
           nonFinalCount++;
         }
-      }
+      });
       expect(finalCount).assertEqual(1);
       expect(nonFinalCount).assertEqual(1);
     });
@@ -810,13 +807,12 @@ export default function InstanceMethodIsFinalTest(): void {
      */
     it('testInstanceMethodIsFinal0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass052>();
-      let methods = cls.getInstanceMethods();
       let finalCount: number = 0;
-      for (let i = 0; i < methods.length; i++) {
-        if (methods[i].isFinal()) {
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
+        if (method.isFinal()) {
           finalCount++;
         }
-      }
+      });
       expect(finalCount).assertEqual(3);
     });
 

@@ -579,14 +579,12 @@ export default function InstanceMethodIsAsyncTest(): void {
      */
     it('testInstanceMethodIsAsync0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass017>();
-      let methods = cls.getInstanceMethods();
       let asyncMethodCount: number = 0;
-      for (let i = 0; i < methods.length; i++) {
-        let method = methods[i];
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
         if (method.isAsync()) {
           asyncMethodCount++;
         }
-      }
+      });
       expect(asyncMethodCount).assertEqual(1);
     });
 
@@ -712,16 +710,15 @@ export default function InstanceMethodIsAsyncTest(): void {
      */
     it('testInstanceMethodIsAsync0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass034>();
-      let methods = cls.getInstanceMethods();
       let asyncCount: number = 0;
       let syncCount: number = 0;
-      for (let i = 0; i < methods.length; i++) {
-        if (methods[i].isAsync()) {
+      Array.from(cls.getInstanceMethods()).forEach((method: reflect.InstanceMethod): void => {
+        if (method.isAsync()) {
           asyncCount++;
         } else {
           syncCount++;
         }
-      }
+      });
       expect(asyncCount).assertEqual(1);
       expect(syncCount).assertEqual(3);
     });
