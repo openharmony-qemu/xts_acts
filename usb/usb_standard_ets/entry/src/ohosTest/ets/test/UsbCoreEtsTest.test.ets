@@ -85,7 +85,7 @@ export default function UsbCoreEtsTest() {
 
       // version > 17  host currentMode = 2 device currentMode = 1
       let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
-      gDeviceList = deviceList.filter(device => !isFilteredDevice(device));
+      gDeviceList = deviceList.filter(device => !isFilteredDevice(device.vendorId, device.productId));
       console.info(TAG, 'beforeAll: usb case gDeviceList.length return: ' + JSON.stringify(gDeviceList));
       isDeviceConnected = deviceConnected();
       if (isDeviceConnected) {
@@ -103,7 +103,7 @@ export default function UsbCoreEtsTest() {
     beforeEach(() =>  {
       console.info(TAG, 'beforeEach: *************Usb Unit Test  Case*************');
       let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
-      gDeviceList = deviceList.filter(device => !isFilteredDevice(device));
+      gDeviceList = deviceList.filter(device => !isFilteredDevice(device.vendorId, device.productId));
       if (isDeviceConnected) {
         devices = gDeviceList[0];
         console.info(TAG, 'beforeEach return devices : ' + JSON.stringify(devices));
