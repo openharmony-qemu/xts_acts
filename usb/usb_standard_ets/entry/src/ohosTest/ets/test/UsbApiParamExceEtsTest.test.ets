@@ -95,7 +95,7 @@ export default function UsbApiParamExceEtsTest() {
 
       // version > 17  host currentMode = 2 device currentMode = 1
       let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
-      gDeviceList = deviceList.filter(device => !isFilteredDevice(device));
+      gDeviceList = deviceList.filter(device => !isFilteredDevice(device.vendorId, device.productId));
       isDeviceConnected = deviceConnected();
       if (isDeviceConnected) {
         let hasRight = usbMgr.hasRight(gDeviceList[0].name);
@@ -115,7 +115,7 @@ export default function UsbApiParamExceEtsTest() {
     beforeEach(() => {
       console.info(TAG, 'beforeEach: *************Usb Unit Test CaseEx*************');
       let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
-      gDeviceList = deviceList.filter(device => !isFilteredDevice(device));
+      gDeviceList = deviceList.filter(device => !isFilteredDevice(device.vendorId, device.productId));
       if (isDeviceConnected) {
         devices = gDeviceList[0];
         console.info(TAG, 'beforeEach return devices : ' + JSON.stringify(devices));
