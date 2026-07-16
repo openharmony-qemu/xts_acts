@@ -1995,3 +1995,640 @@ export default function biguint64arrayCopyWithinTest(): void {
       expect(immutableSourceArray[2]).assertEqual(3n);
       expect(immutableSourceArray[3]).assertEqual(4n);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1200
+     * @tc.name testBigUint64ArrayCopyWithin120
+     * @tc.desc Verify copyWithin on non-zero byteOffset view writes back only inside the shared buffer window
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sharedBuffer = new ArrayBuffer(40);
+      let fullView = new BigUint64Array(sharedBuffer);
+      fullView[0] = 10n;
+      fullView[1] = 20n;
+      fullView[2] = 30n;
+      fullView[3] = 40n;
+      fullView[4] = 50n;
+      let byteOffset: int = 8;
+      let viewLength: int = 3;
+      let windowView = new BigUint64Array(sharedBuffer, byteOffset, viewLength);
+      let targetIndex: int = 1;
+      let startIndex: int = 0;
+      let endIndex: int = 2;
+      windowView.copyWithin(targetIndex, startIndex, endIndex);
+      expect(fullView[0]).assertEqual(10n);
+      expect(fullView[1]).assertEqual(20n);
+      expect(fullView[2]).assertEqual(20n);
+      expect(fullView[3]).assertEqual(30n);
+      expect(fullView[4]).assertEqual(50n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1210
+     * @tc.name testBigUint64ArrayCopyWithin121
+     * @tc.desc Verify copyWithin on a subarray window writes the copied range back to the parent array
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let parentArray = new BigUint64Array([10n, 20n, 30n, 40n, 50n, 60n]);
+      let windowView = parentArray.subarray(1, 5);
+      let targetIndex: int = 1;
+      let startIndex: int = 2;
+      let endIndex: int = 4;
+      windowView.copyWithin(targetIndex, startIndex, endIndex);
+      expect(parentArray[0]).assertEqual(10n);
+      expect(parentArray[1]).assertEqual(20n);
+      expect(parentArray[2]).assertEqual(40n);
+      expect(parentArray[3]).assertEqual(50n);
+      expect(parentArray[4]).assertEqual(50n);
+      expect(parentArray[5]).assertEqual(60n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1220
+     * @tc.name testBigUint64ArrayCopyWithin122
+     * @tc.desc Verify copyWithin negative start is normalized inside a subarray window before parent writeback
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let parentArray = new BigUint64Array([1n, 2n, 3n, 4n, 5n, 6n, 7n]);
+      let windowView = parentArray.subarray(2, 6);
+      let targetIndex: int = 0;
+      let startIndex: int = -2;
+      windowView.copyWithin(targetIndex, startIndex);
+      expect(parentArray[0]).assertEqual(1n);
+      expect(parentArray[1]).assertEqual(2n);
+      expect(parentArray[2]).assertEqual(5n);
+      expect(parentArray[3]).assertEqual(6n);
+      expect(parentArray[4]).assertEqual(5n);
+      expect(parentArray[5]).assertEqual(6n);
+      expect(parentArray[6]).assertEqual(7n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1230
+     * @tc.name testBigUint64ArrayCopyWithin123
+     * @tc.desc Verify copyWithin(target: int) accepts decimal literal 2 and writes [0,2) to index 2
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: Array<BigInt> = [10n, 20n, 30n, 40n, 50n];
+      let sourceArray = new BigUint64Array(sourceValues);
+      let decimalTarget: int = 2;
+      let startIndex: int = 0;
+      let endIndex: int = 2;
+      sourceArray.copyWithin(decimalTarget, startIndex, endIndex);
+      expect(sourceArray[0]).assertEqual(10n);
+      expect(sourceArray[1]).assertEqual(20n);
+      expect(sourceArray[2]).assertEqual(10n);
+      expect(sourceArray[3]).assertEqual(20n);
+      expect(sourceArray[4]).assertEqual(50n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1240
+     * @tc.name testBigUint64ArrayCopyWithin124
+     * @tc.desc Verify copyWithin clamps start below zero and end beyond length before reverse overlap copy
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceValues: Array<BigInt> = [10n, 20n, 30n, 40n, 50n, 60n];
+      let sourceArray = new BigUint64Array(sourceValues);
+      let targetIndex: int = 1;
+      let underflowStart: int = -10;
+      let overflowEnd: int = 10;
+      sourceArray.copyWithin(targetIndex, underflowStart, overflowEnd);
+      expect(sourceArray[0]).assertEqual(10n);
+      expect(sourceArray[1]).assertEqual(10n);
+      expect(sourceArray[2]).assertEqual(20n);
+      expect(sourceArray[3]).assertEqual(30n);
+      expect(sourceArray[4]).assertEqual(40n);
+      expect(sourceArray[5]).assertEqual(50n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1250
+     * @tc.name testBigUint64ArrayCopyWithin125
+     * @tc.desc Verify subarray copyWithin clamps negative target and overflow end within window before parent writeback
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let parentArray = new BigUint64Array([1n, 2n, 3n, 4n, 5n, 6n, 7n]);
+      let windowView = parentArray.subarray(1, 6);
+      let targetIndex: int = -2;
+      let startIndex: int = 0;
+      let overflowEnd: int = 10;
+      windowView.copyWithin(targetIndex, startIndex, overflowEnd);
+      expect(parentArray[0]).assertEqual(1n);
+      expect(parentArray[1]).assertEqual(2n);
+      expect(parentArray[2]).assertEqual(3n);
+      expect(parentArray[3]).assertEqual(4n);
+      expect(parentArray[4]).assertEqual(2n);
+      expect(parentArray[5]).assertEqual(3n);
+      expect(parentArray[6]).assertEqual(7n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1260
+     * @tc.name testBigUint64ArrayCopyWithin126
+     * @tc.desc Verify nested subarray copyWithin from a byteOffset view writes to the correct shared buffer positions
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(64);
+      let fullView = new BigUint64Array(sourceBuffer);
+      fullView[0] = 10n;
+      fullView[1] = 20n;
+      fullView[2] = 30n;
+      fullView[3] = 40n;
+      fullView[4] = 50n;
+      fullView[5] = 60n;
+      fullView[6] = 70n;
+      fullView[7] = 80n;
+      let byteOffset: int = 8;
+      let offsetLength: int = 6;
+      let offsetView = new BigUint64Array(sourceBuffer, byteOffset, offsetLength);
+      let middleWindow = offsetView.subarray(1, 5);
+      let nestedWindow = middleWindow.subarray(1, 4);
+      let targetIndex: int = 1;
+      let startIndex: int = 0;
+      let endIndex: int = 2;
+      nestedWindow.copyWithin(targetIndex, startIndex, endIndex);
+      expect(fullView[0]).assertEqual(10n);
+      expect(fullView[1]).assertEqual(20n);
+      expect(fullView[2]).assertEqual(30n);
+      expect(fullView[3]).assertEqual(40n);
+      expect(fullView[4]).assertEqual(40n);
+      expect(fullView[5]).assertEqual(50n);
+      expect(fullView[6]).assertEqual(70n);
+      expect(fullView[7]).assertEqual(80n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1270
+     * @tc.name testBigUint64ArrayCopyWithin127
+     * @tc.desc Verify copyWithin on a slice window mutates the independent copy without changing the source buffer
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(48);
+      let fullView = new BigUint64Array(sourceBuffer);
+      fullView[0] = 10n;
+      fullView[1] = 20n;
+      fullView[2] = 30n;
+      fullView[3] = 40n;
+      fullView[4] = 50n;
+      fullView[5] = 60n;
+      let byteOffset: int = 8;
+      let offsetLength: int = 4;
+      let offsetView = new BigUint64Array(sourceBuffer, byteOffset, offsetLength);
+      let sliceBegin: int = 1;
+      let sliceEnd: int = 4;
+      let sliceWindow = offsetView.slice(sliceBegin, sliceEnd);
+      let targetIndex: int = 1;
+      let startIndex: int = 0;
+      let endIndex: int = 2;
+      sliceWindow.copyWithin(targetIndex, startIndex, endIndex);
+      let usesIndependentBuffer: boolean = sliceWindow.buffer !== sourceBuffer;
+      expect(usesIndependentBuffer).assertTrue();
+      expect(sliceWindow[0]).assertEqual(30n);
+      expect(sliceWindow[1]).assertEqual(30n);
+      expect(sliceWindow[2]).assertEqual(40n);
+      expect(fullView[0]).assertEqual(10n);
+      expect(fullView[1]).assertEqual(20n);
+      expect(fullView[2]).assertEqual(30n);
+      expect(fullView[3]).assertEqual(40n);
+      expect(fullView[4]).assertEqual(50n);
+      expect(fullView[5]).assertEqual(60n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1280
+     * @tc.name testBigUint64ArrayCopyWithin128
+     * @tc.desc Verify zero-length byteOffset view copyWithin is a no-op and preserves source data
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(32);
+      let fullView = new BigUint64Array(sourceBuffer);
+      fullView[0] = 10n;
+      fullView[1] = 20n;
+      fullView[2] = 30n;
+      fullView[3] = 40n;
+      let byteOffset: int = 16;
+      let viewLength: int = 0;
+      let zeroLengthView = new BigUint64Array(sourceBuffer, byteOffset, viewLength);
+      let targetIndex: int = 0;
+      let startIndex: int = 0;
+      let endIndex: int = 0;
+      let returnedView: BigUint64Array = zeroLengthView.copyWithin(targetIndex, startIndex, endIndex);
+      expect(returnedView).assertEqual(zeroLengthView);
+      expect(zeroLengthView.length).assertEqual(0);
+      expect(zeroLengthView.byteOffset).assertEqual(16);
+      expect(zeroLengthView.byteLength).assertEqual(0);
+      expect(fullView[0]).assertEqual(10n);
+      expect(fullView[1]).assertEqual(20n);
+      expect(fullView[2]).assertEqual(30n);
+      expect(fullView[3]).assertEqual(40n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1290
+     * @tc.name testBigUint64ArrayCopyWithin129
+     * @tc.desc Verify byte source converted by toInt supplies target index 2
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n, 50n);
+      let byteTarget: byte = 2;
+      let targetIndex: int = byteTarget.toInt();
+      let startIndex: int = 0;
+      let endIndex: int = 2;
+      sourceArray.copyWithin(targetIndex, startIndex, endIndex);
+      expect(sourceArray[2]).assertEqual(10n);
+      expect(sourceArray[3]).assertEqual(20n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1300
+     * @tc.name testBigUint64ArrayCopyWithin130
+     * @tc.desc Verify short source converted by toInt supplies start index 2
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n, 50n);
+      let shortStart: short = 2;
+      let targetIndex: int = 0;
+      let startIndex: int = shortStart.toInt();
+      let endIndex: int = 4;
+      sourceArray.copyWithin(targetIndex, startIndex, endIndex);
+      expect(sourceArray[0]).assertEqual(30n);
+      expect(sourceArray[1]).assertEqual(40n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1310
+     * @tc.name testBigUint64ArrayCopyWithin131
+     * @tc.desc Verify long source converted by toInt supplies end index 4
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n, 50n);
+      let longEnd: long = 4;
+      let targetIndex: int = 0;
+      let startIndex: int = 1;
+      let endIndex: int = longEnd.toInt();
+      sourceArray.copyWithin(targetIndex, startIndex, endIndex);
+      expect(sourceArray[0]).assertEqual(20n);
+      expect(sourceArray[2]).assertEqual(40n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1320
+     * @tc.name testBigUint64ArrayCopyWithin132
+     * @tc.desc Verify float source 2.9f converted by toInt supplies target index 2
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n, 50n);
+      let floatTarget: float = 2.9f;
+      let targetIndex: int = floatTarget.toInt();
+      let startIndex: int = 0;
+      let endIndex: int = 2;
+      sourceArray.copyWithin(targetIndex, startIndex, endIndex);
+      expect(sourceArray[2]).assertEqual(10n);
+      expect(sourceArray[3]).assertEqual(20n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1330
+     * @tc.name testBigUint64ArrayCopyWithin133
+     * @tc.desc Verify negative long source converted by toInt supplies target index -2
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n, 50n);
+      let longTarget: long = -2;
+      let targetIndex: int = longTarget.toInt();
+      let startIndex: int = 0;
+      let endIndex: int = 2;
+      sourceArray.copyWithin(targetIndex, startIndex, endIndex);
+      expect(sourceArray[3]).assertEqual(10n);
+      expect(sourceArray[4]).assertEqual(20n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1340
+     * @tc.name testBigUint64ArrayCopyWithin134
+     * @tc.desc Verify copyWithin truncates float start 1.9f to index 1 and copies 20n and 30n to indices zero and one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n, 50n);
+      let floatStart: float = 1.9f;
+      let targetIndex: int = 0;
+      let startIndex: int = floatStart.toInt();
+      let endIndex: int = 3;
+      sourceArray.copyWithin(targetIndex, startIndex, endIndex);
+      expect(sourceArray[0]).assertEqual(20n);
+      expect(sourceArray[1]).assertEqual(30n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1350
+     * @tc.name testBigUint64ArrayCopyWithin135
+     * @tc.desc Verify byte source converted by toInt supplies end index 4
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n, 50n);
+      let byteEnd: byte = 4;
+      let targetIndex: int = 0;
+      let startIndex: int = 1;
+      let endIndex: int = byteEnd.toInt();
+      sourceArray.copyWithin(targetIndex, startIndex, endIndex);
+      expect(sourceArray[0]).assertEqual(20n);
+      expect(sourceArray[2]).assertEqual(40n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1360
+     * @tc.name testBigUint64ArrayCopyWithin136
+     * @tc.desc Verify negative short source converted by toInt supplies target index -2
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n, 50n);
+      let shortTarget: short = -2;
+      let targetIndex: int = shortTarget.toInt();
+      let startIndex: int = 1;
+      let endIndex: int = 4;
+      sourceArray.copyWithin(targetIndex, startIndex, endIndex);
+      expect(sourceArray[3]).assertEqual(20n);
+      expect(sourceArray[4]).assertEqual(30n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1370
+     * @tc.name testBigUint64ArrayCopyWithin137
+     * @tc.desc Verify target -1 and overflow end copy only the first source element to the tail
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(1n, 2n, 3n, 4n, 5n);
+      let targetIndex: int = -1;
+      let startIndex: int = 0;
+      let overflowEnd: int = sourceArray.length + 1;
+      sourceArray.copyWithin(targetIndex, startIndex, overflowEnd);
+      expect(sourceArray[4]).assertEqual(1n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1380
+     * @tc.name testBigUint64ArrayCopyWithin138
+     * @tc.desc Verify int-min start and int-max end clamp before reverse overlap copying
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(1n, 2n, 3n, 4n, 5n);
+      let targetIndex: int = 1;
+      let minimumStart: int = -2147483648;
+      let maximumEnd: int = 2147483647;
+      sourceArray.copyWithin(targetIndex, minimumStart, maximumEnd);
+      expect(sourceArray[1]).assertEqual(1n);
+      expect(sourceArray[4]).assertEqual(4n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1390
+     * @tc.name testBigUint64ArrayCopyWithin139
+     * @tc.desc Verify int-min target clamps to zero before copying a bounded middle range
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(1n, 2n, 3n, 4n, 5n);
+      let minimumTarget: int = -2147483648;
+      let startIndex: int = 2;
+      let endIndex: int = 4;
+      sourceArray.copyWithin(minimumTarget, startIndex, endIndex);
+      expect(sourceArray[0]).assertEqual(3n);
+      expect(sourceArray[1]).assertEqual(4n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1400
+     * @tc.name testBigUint64ArrayCopyWithin140
+     * @tc.desc Verify int-min end clamps to zero and makes the source interval empty
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(1n, 2n, 3n, 4n, 5n, 6n);
+      let targetIndex: int = 0;
+      let startIndex: int = 3;
+      let minimumEnd: int = -2147483648;
+      sourceArray.copyWithin(targetIndex, startIndex, minimumEnd);
+      expect(sourceArray[0]).assertEqual(1n);
+      expect(sourceArray[5]).assertEqual(6n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1410
+     * @tc.name testBigUint64ArrayCopyWithin141
+     * @tc.desc Verify sibling write before copyWithin is read from the shared source window
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(40);
+      let fullView = new BigUint64Array(sourceBuffer);
+      fullView[0] = 10n;
+      fullView[1] = 20n;
+      fullView[2] = 30n;
+      fullView[3] = 40n;
+      let windowView = new BigUint64Array(sourceBuffer, 8, 3);
+      fullView[2] = 300n;
+      windowView.copyWithin(0, 1, 3);
+      expect(fullView[1]).assertEqual(300n);
+      expect(fullView[2]).assertEqual(40n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1420
+     * @tc.name testBigUint64ArrayCopyWithin142
+     * @tc.desc Verify backing write outside a view remains unchanged during copyWithin
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(32);
+      let fullView = new BigUint64Array(sourceBuffer);
+      fullView[0] = 999n;
+      fullView[1] = 20n;
+      fullView[2] = 30n;
+      let windowView = new BigUint64Array(sourceBuffer, 8, 2);
+      windowView.copyWithin(0, 1);
+      expect(fullView[0]).assertEqual(999n);
+      expect(windowView[0]).assertEqual(30n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1430
+     * @tc.name testBigUint64ArrayCopyWithin143
+     * @tc.desc Verify negative target normalization inside an offset view writes back to its parent
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let parentArray = BigUint64Array.of(1n, 2n, 3n, 4n, 5n, 6n);
+      let windowView = parentArray.subarray(1, 5);
+      windowView.copyWithin(-2, 0, 3);
+      expect(parentArray[3]).assertEqual(2n);
+      expect(parentArray[4]).assertEqual(3n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1440
+     * @tc.name testBigUint64ArrayCopyWithin144
+     * @tc.desc Verify overflow end clamps inside an offset view before parent writeback
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let parentArray = BigUint64Array.of(1n, 2n, 3n, 4n, 5n, 6n);
+      let windowView = parentArray.subarray(1, 5);
+      let overflowEnd: int = 100;
+      windowView.copyWithin(0, 2, overflowEnd);
+      expect(parentArray[1]).assertEqual(4n);
+      expect(parentArray[2]).assertEqual(5n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1450
+     * @tc.name testBigUint64ArrayCopyWithin145
+     * @tc.desc Verify negative start inside a nested subarray is resolved against the nested length
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let parentArray = BigUint64Array.of(1n, 2n, 3n, 4n, 5n, 6n, 7n);
+      let middleWindow = parentArray.subarray(1, 6);
+      let nestedWindow = middleWindow.subarray(1, 4);
+      nestedWindow.copyWithin(0, -1);
+      expect(parentArray[2]).assertEqual(5n);
+      expect(parentArray[3]).assertEqual(4n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1460
+     * @tc.name testBigUint64ArrayCopyWithin146
+     * @tc.desc Verify a later sibling write remains visible through the mutated shared view
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(32);
+      let fullView = new BigUint64Array(sourceBuffer);
+      fullView[0] = 1n;
+      fullView[1] = 2n;
+      fullView[2] = 3n;
+      fullView[3] = 4n;
+      let windowView = new BigUint64Array(sourceBuffer, 0, 4);
+      windowView.copyWithin(1, 0, 2);
+      fullView[1] = 11n;
+      expect(windowView[1]).assertEqual(11n);
+      expect(windowView[2]).assertEqual(2n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1470
+     * @tc.name testBigUint64ArrayCopyWithin147
+     * @tc.desc Verify a slice snapshot stays detached after parent mutation before copyWithin
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let parentArray = BigUint64Array.of(10n, 20n, 30n, 40n, 50n);
+      let sliceWindow = parentArray.slice(1, 4);
+      parentArray[2] = 300n;
+      sliceWindow.copyWithin(1, 0, 2);
+      expect(sliceWindow[0]).assertEqual(20n);
+      expect(sliceWindow[1]).assertEqual(20n);
+      expect(sliceWindow[2]).assertEqual(30n);
+      expect(parentArray[2]).assertEqual(300n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1480
+     * @tc.name testBigUint64ArrayCopyWithin148
+     * @tc.desc Verify overlapping sibling views both expose copyWithin writeback cells
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceBuffer = new ArrayBuffer(40);
+      let fullView = new BigUint64Array(sourceBuffer);
+      fullView[0] = 10n;
+      fullView[1] = 20n;
+      fullView[2] = 30n;
+      fullView[3] = 40n;
+      fullView[4] = 50n;
+      let firstView = new BigUint64Array(sourceBuffer, 8, 3);
+      let secondView = new BigUint64Array(sourceBuffer, 16, 3);
+      firstView.copyWithin(1, 0, 2);
+      expect(secondView[0]).assertEqual(20n);
+      expect(secondView[1]).assertEqual(30n);
+      expect(secondView[2]).assertEqual(50n);
+    });
+  });
+}
