@@ -1283,6 +1283,124 @@ export default function SerialTest() {
     })
 
     /**
+     * @tc.name   testReadUndefined_0100
+     * @tc.number SUB_USB_HostMgr_Serial_Read_Undefined_0100
+     * @tc.desc   timeout undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testReadUndefined_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'testReadUndefined_0100 start');
+      if (await checkDevice() === false) {
+        done();
+        return;
+      }
+
+      const readBuffer: Uint8Array = new Uint8Array(1024);
+      try {
+        serial.open(openPortId);
+        const length: number = await serial.read(openPortId, readBuffer, undefined);
+        console.info(TAG, 'testReadUndefined_0100 length = ', length);
+        expect(length >= 0).assertTrue();
+      } catch (error) {
+        console.error(TAG, 'testReadUndefined_0100 catch err: ', error);
+        expect().assertFail();
+      } finally {
+        serial.close(openPortId);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testReadSyncUndefined_0100
+     * @tc.number SUB_USB_HostMgr_Serial_ReadSync_Undefined_0100
+     * @tc.desc   timeout undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testReadSyncUndefined_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'testReadSyncUndefined_0100 start');
+      if (await checkDevice() === false) {
+        done();
+        return;
+      }
+
+      const readBuffer: Uint8Array = new Uint8Array(1024);
+      try {
+        serial.open(openPortId);
+        const length: number = await serial.readSync(openPortId, readBuffer, undefined);
+        console.info(TAG, 'testReadSyncUndefined_0100 length = ', length);
+        expect(length >= 0).assertTrue();
+      } catch (error) {
+        console.error(TAG, 'testReadSyncUndefined_0100 catch err: ', error);
+        expect().assertFail();
+      } finally {
+        serial.close(openPortId);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testWriteUndefined_0100
+     * @tc.number SUB_USB_HostMgr_Serial_Write_Undefined_0100
+     * @tc.desc   timeout undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWriteUndefined_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'testWriteUndefined_0100 start');
+      if (await checkDevice() === false) {
+        done();
+        return;
+      }
+
+      const writeBuffer: Uint8Array = new Uint8Array(buffer.from('Hello World', 'utf-8').buffer);
+      try {
+        serial.open(openPortId);
+        const length: number = await serial.write(openPortId, writeBuffer, undefined);
+        expect(length >= 0).assertTrue();
+      } catch (error) {
+        console.error(TAG, 'testWriteUndefined_0100 catch err: ', error);
+        expect().assertFail();
+      } finally {
+        serial.close(openPortId);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testWriteSyncUndefined_0100
+     * @tc.number SUB_USB_HostMgr_Serial_WriteSync_Undefined_0100
+     * @tc.desc   timeout undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWriteSyncUndefined_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'testWriteSyncUndefined_0100 start');
+      if (await checkDevice() === false) {
+        done();
+        return;
+      }
+
+      const writeBuffer: Uint8Array = new Uint8Array(buffer.from('Hello World', 'utf-8').buffer);
+      try {
+        serial.open(openPortId);
+        const length: number = await serial.writeSync(openPortId, writeBuffer, undefined);
+        expect(length >= 0).assertTrue();
+      } catch (error) {
+        console.error(TAG, 'testWriteSyncUndefined_0100 catch err: ', error);
+        expect().assertFail();
+      } finally {
+        serial.close(openPortId);
+        done();
+      }
+    })
+
+    /**
      * @tc.name   testCancelSerialRight001
      * @tc.number SUB_USB_HostMgr_Serial_JS_cancelSerialRight_Func_0100
      * @tc.desc   cancelSerialRight successfully.
