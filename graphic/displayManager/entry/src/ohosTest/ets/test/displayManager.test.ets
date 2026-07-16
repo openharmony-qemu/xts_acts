@@ -3167,19 +3167,19 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
       try {
         let windowClass = await windowStage.getMainWindow();
         await windowClass.setWindowBrightness(1);
-        let driver: Driver = Driver.create();
-        let buttonOne = await driver.findComponent(ON.text('next page'));
-        console.info(caseName + `buttonOne is ${JSON.stringify(buttonOne)}`);
-        if(buttonOne){
-          await buttonOne.click();
-        }
-        await sleep(100);
         let brightnessChangeCount1 = 0;
         let brightnessChangeCount2 = 0;
         let callback1Triggered = false;
         let callback2Triggered = false;
 
         if(deviceType !== 'tv' && !isDeskTop) {
+          let driver: Driver = Driver.create();
+          let buttonOne = await driver.findComponent(ON.text('next page'));
+          console.info(caseName + `buttonOne is ${JSON.stringify(buttonOne)}`);
+          if(buttonOne){
+            await buttonOne.click();
+          }
+          await sleep(100);
           const callback1 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
             console.info(caseName + ' Callback1 triggered');
             console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
