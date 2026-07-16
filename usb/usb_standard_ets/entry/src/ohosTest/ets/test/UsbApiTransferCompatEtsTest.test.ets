@@ -178,7 +178,7 @@ function toClaimInterface(testCaseName: string, pip: usbMgr.USBDevicePipe, tInte
 
 function toReleaseInterface(testCaseName: string) {
   let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
-  gDeviceList = deviceList.filter(device => !isFilteredDevice(device));
+  gDeviceList = deviceList.filter(device => !isFilteredDevice(device.vendorId, device.productId));
   testParam = getTransferTestParam();
   let ret = usbMgr.releaseInterface(tmpPipe, testParam.interface);
   console.info(TAG, `usb ${testCaseName} releaseInterface ret: ${ret}`);
@@ -193,7 +193,7 @@ export default function UsbApiTransferCompatEtsTest() {
 
       // version > 17  host currentMode = 2 device currentMode = 1
       let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
-      gDeviceList = deviceList.filter(device => !isFilteredDevice(device));
+      gDeviceList = deviceList.filter(device => !isFilteredDevice(device.vendorId, device.productId));
       isDeviceConnected = deviceConnected();
       if (isDeviceConnected) {
         let hasRight = usbMgr.hasRight(gDeviceList[0].name);
@@ -214,7 +214,7 @@ export default function UsbApiTransferCompatEtsTest() {
     beforeEach(() => {
       console.info(TAG, 'beforeEach: *************Usb Unit Test CaseEx*************');
       let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
-      gDeviceList = deviceList.filter(device => !isFilteredDevice(device));
+      gDeviceList = deviceList.filter(device => !isFilteredDevice(device.vendorId, device.productId));
       if (isDeviceConnected) {
         devices = gDeviceList[0];
         console.info(TAG, 'beforeEach return devices : ' + JSON.stringify(devices));
