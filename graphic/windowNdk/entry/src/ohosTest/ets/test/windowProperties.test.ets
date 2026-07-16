@@ -659,36 +659,44 @@ export default function windowProperties() {
       let caseName = "registerDensityInfoChangeCallbackReturn0100";
       console.info(`${caseName}: start...`);
       
-      let callbackCalled = false;
-      let callback = (windowId: number, info: number) => {
-        console.info(`${caseName}: callback triggered, windowId: ${windowId}, info: ${info}`);
-        callbackCalled = true;
-      };
+      let isSupport = canIUse('SystemCapability.Window.SessionManager');
+      console.info(`${caseName} isSupport: ${isSupport}`);
       
-      let result = windowNdkTest.testRegisterDensityInfoChangeCallback(windowId, callback);
-      console.info(`${caseName}: register result: ${result}`);
-      expect(result).assertEqual(WS_OK);
+      if (isSupport !== true) {
+        console.info(`${caseName}: 此设备不支持SystemCapability.Window.SessionManager能力`);
+        done();
+      } else {
+        let callbackCalled = false;
+        let callback = (windowId: number, info: number) => {
+          console.info(`${caseName}: callback triggered, windowId: ${windowId}, info: ${info}`);
+          callbackCalled = true;
+        };
+        
+        let result = windowNdkTest.testRegisterDensityInfoChangeCallback(windowId, callback);
+        console.info(`${caseName}: register result: ${result}`);
+        expect(result).assertEqual(WS_OK);
 
-      let tsDensityInfo = WindowClass.getWindowDensityInfo();
-      console.info(`${caseName}: tsDensityInfo: ${JSON.stringify(tsDensityInfo)}`);
-      console.info(`${caseName}: CustomDensity: ${JSON.stringify(typeof tsDensityInfo.customDensity)}`);
-      
-      await sleep(100);
-      windowStage.setCustomDensity(tsDensityInfo.customDensity + 0.1);
-      await sleep(100);
+        let tsDensityInfo = WindowClass.getWindowDensityInfo();
+        console.info(`${caseName}: tsDensityInfo: ${JSON.stringify(tsDensityInfo)}`);
+        console.info(`${caseName}: CustomDensity: ${JSON.stringify(typeof tsDensityInfo.customDensity)}`);
+        
+        await sleep(100);
+        windowStage.setCustomDensity(tsDensityInfo.customDensity + 0.1);
+        await sleep(100);
 
-      tsDensityInfo = WindowClass.getWindowDensityInfo();
-      console.info(`${caseName}: tsDensityInfo: ${JSON.stringify(tsDensityInfo)}`);
-      
-      console.info(`${caseName}: callbackCalled: ${callbackCalled}`);
-      expect(callbackCalled).assertTrue();
-      
-      let unregisterResult = windowNdkTest.testUnregisterDensityInfoChangeCallback(windowId, callback);
-      console.info(`${caseName}: unregister result: ${unregisterResult}`);
-      expect(unregisterResult).assertEqual(WS_OK);
-      
+        tsDensityInfo = WindowClass.getWindowDensityInfo();
+        console.info(`${caseName}: tsDensityInfo: ${JSON.stringify(tsDensityInfo)}`);
+        
+        console.info(`${caseName}: callbackCalled: ${callbackCalled}`);
+        expect(callbackCalled).assertTrue();
+        
+        let unregisterResult = windowNdkTest.testUnregisterDensityInfoChangeCallback(windowId, callback);
+        console.info(`${caseName}: unregister result: ${unregisterResult}`);
+        expect(unregisterResult).assertEqual(WS_OK);
+        
+        done();
+      }
       console.info(`${caseName}: end...`);
-      done();
     })
 
     /**
@@ -699,59 +707,67 @@ export default function windowProperties() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('registerDensityInfoChangeCallbackReturn0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+it('registerDensityInfoChangeCallbackReturn0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "registerDensityInfoChangeCallbackReturn0200";
       console.info(`${caseName}: start...`);
       
-      let callback1Called = false;
-      let callback2Called = false;
+      let isSupport = canIUse('SystemCapability.Window.SessionManager');
+      console.info(`${caseName} isSupport: ${isSupport}`);
+      
+      if (isSupport !== true) {
+        console.info(`${caseName}: 此设备不支持SystemCapability.Window.SessionManager能力`);
+        done();
+      } else {
+        let callback1Called = false;
+        let callback2Called = false;
 
-      let subWindow = await windowStage.createSubWindow('registerDensityInfoChangeCallbackReturn0200');
-      let subWindowId = subWindow.getWindowProperties().id;
-      console.info(`${caseName}: subWindowId: ${subWindowId}`);
-      
-      let callback1 = (windowId: number, info: number) => {
-        console.info(`${caseName}: callback1 triggered, windowId: ${windowId}, info: ${info}`);
-        callback1Called = true;
-      };
-      
-      let callback2 = (windowId: number, info: number) => {
-        console.info(`${caseName}: callback2 triggered, windowId: ${windowId}, info: ${info}`);
-        callback2Called = true;
-      };
-      
-      let result1 = windowNdkTest.testRegisterDensityInfoChangeCallback(subWindowId, callback1);
-      console.info(`${caseName}: register callback1 result: ${result1}`);
-      expect(result1).assertEqual(WS_OK);
-      
-      let result2 = windowNdkTest.testRegisterDensityInfoChangeCallback(windowId, callback2);
-      console.info(`${caseName}: register callback2 result: ${result2}`);
-      expect(result2).assertEqual(WS_OK);
-      
-      let unregisterResult1 = windowNdkTest.testUnregisterDensityInfoChangeCallback(subWindowId, callback1);
-      console.info(`${caseName}: unregister callback1 result: ${unregisterResult1}`);
-      expect(unregisterResult1).assertEqual(WS_OK);
-      
-      await sleep(100);
-      let tsDensityInfo = WindowClass.getWindowDensityInfo();
-      console.info(`${caseName}: tsDensityInfo: ${JSON.stringify(tsDensityInfo)}`);
-      windowStage.setCustomDensity(tsDensityInfo.customDensity + 0.1);
-      tsDensityInfo = WindowClass.getWindowDensityInfo();
-      console.info(`${caseName}: tsDensityInfo: ${JSON.stringify(tsDensityInfo)}`);
-      await sleep(100);
-      
-      console.info(`${caseName}: callback1Called: ${callback1Called}, callback2Called: ${callback2Called}`);
-      expect(callback1Called).assertFalse();
-      expect(callback2Called).assertTrue();
-      
-      let unregisterResult2 = windowNdkTest.testUnregisterDensityInfoChangeCallback(windowId, callback2);
-      console.info(`${caseName}: unregister callback2 result: ${unregisterResult2}`);
-      expect(unregisterResult2).assertEqual(WS_OK);
+        let subWindow = await windowStage.createSubWindow('registerDensityInfoChangeCallbackReturn0200');
+        let subWindowId = subWindow.getWindowProperties().id;
+        console.info(`${caseName}: subWindowId: ${subWindowId}`);
+        
+        let callback1 = (windowId: number, info: number) => {
+          console.info(`${caseName}: callback1 triggered, windowId: ${windowId}, info: ${info}`);
+          callback1Called = true;
+        };
+        
+        let callback2 = (windowId: number, info: number) => {
+          console.info(`${caseName}: callback2 triggered, windowId: ${windowId}, info: ${info}`);
+          callback2Called = true;
+        };
+        
+        let result1 = windowNdkTest.testRegisterDensityInfoChangeCallback(subWindowId, callback1);
+        console.info(`${caseName}: register callback1 result: ${result1}`);
+        expect(result1).assertEqual(WS_OK);
+        
+        let result2 = windowNdkTest.testRegisterDensityInfoChangeCallback(windowId, callback2);
+        console.info(`${caseName}: register callback2 result: ${result2}`);
+        expect(result2).assertEqual(WS_OK);
+        
+        let unregisterResult1 = windowNdkTest.testUnregisterDensityInfoChangeCallback(subWindowId, callback1);
+        console.info(`${caseName}: unregister callback1 result: ${unregisterResult1}`);
+        expect(unregisterResult1).assertEqual(WS_OK);
+        
+        await sleep(100);
+        let tsDensityInfo = WindowClass.getWindowDensityInfo();
+        console.info(`${caseName}: tsDensityInfo: ${JSON.stringify(tsDensityInfo)}`);
+        windowStage.setCustomDensity(tsDensityInfo.customDensity + 0.1);
+        tsDensityInfo = WindowClass.getWindowDensityInfo();
+        console.info(`${caseName}: tsDensityInfo: ${JSON.stringify(tsDensityInfo)}`);
+        await sleep(100);
+        
+        console.info(`${caseName}: callback1Called: ${callback1Called}, callback2Called: ${callback2Called}`);
+        expect(callback1Called).assertFalse();
+        expect(callback2Called).assertTrue();
+        
+        let unregisterResult2 = windowNdkTest.testUnregisterDensityInfoChangeCallback(windowId, callback2);
+        console.info(`${caseName}: unregister callback2 result: ${unregisterResult2}`);
+        expect(unregisterResult2).assertEqual(WS_OK);
 
-      await subWindow.destroyWindow();
-      
+        await subWindow.destroyWindow();
+        
+        done();
+      }
       console.info(`${caseName}: end...`);
-      done();
     })
 
     /**
@@ -766,39 +782,47 @@ export default function windowProperties() {
       let caseName = "registerDensityInfoChangeCallbackReturn0300";
       console.info(`${caseName}: start...`);
       
-      let callbackCount = 0;
+      let isSupport = canIUse('SystemCapability.Window.SessionManager');
+      console.info(`${caseName} isSupport: ${isSupport}`);
       
-      let callback = (windowId: number, info: number) => {
-        console.info(`${caseName}: callback triggered, windowId: ${windowId}, info: ${info}`);
-        callbackCount++;
-      };
-      
-      let result1 = windowNdkTest.testRegisterDensityInfoChangeCallback(windowId, callback);
-      console.info(`${caseName}: register first result: ${result1}`);
-      expect(result1).assertEqual(WS_OK);
-      
-      let result2 = windowNdkTest.testRegisterDensityInfoChangeCallback(windowId, callback);
-      console.info(`${caseName}: register second result: ${result2}`);
-      expect(result2).assertEqual(WS_OK);
-      
-      await sleep(100);
-      callbackCount = 0;
-      let tsDensityInfo = WindowClass.getWindowDensityInfo();
-      console.info(`${caseName}: tsDensityInfo: ${JSON.stringify(tsDensityInfo)}`);
-      windowStage.setCustomDensity(tsDensityInfo.customDensity + 0.1);
-      tsDensityInfo = WindowClass.getWindowDensityInfo();
-      console.info(`${caseName}: tsDensityInfo: ${JSON.stringify(tsDensityInfo)}`);
-      await sleep(100);
-      
-      console.info(`${caseName}: callbackCount: ${callbackCount}`);
-      expect(callbackCount).assertEqual(1);
-      
-      let unregisterResult = windowNdkTest.testUnregisterDensityInfoChangeCallback(windowId, callback);
-      console.info(`${caseName}: unregister result: ${unregisterResult}`);
-      expect(unregisterResult).assertEqual(WS_OK);
-      
+      if (isSupport !== true) {
+        console.info(`${caseName}: 此设备不支持SystemCapability.Window.SessionManager能力`);
+        done();
+      } else {
+        let callbackCount = 0;
+        
+        let callback = (windowId: number, info: number) => {
+          console.info(`${caseName}: callback triggered, windowId: ${windowId}, info: ${info}`);
+          callbackCount++;
+        };
+        
+        let result1 = windowNdkTest.testRegisterDensityInfoChangeCallback(windowId, callback);
+        console.info(`${caseName}: register first result: ${result1}`);
+        expect(result1).assertEqual(WS_OK);
+        
+        let result2 = windowNdkTest.testRegisterDensityInfoChangeCallback(windowId, callback);
+        console.info(`${caseName}: register second result: ${result2}`);
+        expect(result2).assertEqual(WS_OK);
+        
+        await sleep(100);
+        callbackCount = 0;
+        let tsDensityInfo = WindowClass.getWindowDensityInfo();
+        console.info(`${caseName}: tsDensityInfo: ${JSON.stringify(tsDensityInfo)}`);
+        windowStage.setCustomDensity(tsDensityInfo.customDensity + 0.1);
+        tsDensityInfo = WindowClass.getWindowDensityInfo();
+        console.info(`${caseName}: tsDensityInfo: ${JSON.stringify(tsDensityInfo)}`);
+        await sleep(100);
+        
+        console.info(`${caseName}: callbackCount: ${callbackCount}`);
+        expect(callbackCount).assertEqual(1);
+        
+        let unregisterResult = windowNdkTest.testUnregisterDensityInfoChangeCallback(windowId, callback);
+        console.info(`${caseName}: unregister result: ${unregisterResult}`);
+        expect(unregisterResult).assertEqual(WS_OK);
+        
+        done();
+      }
       console.info(`${caseName}: end...`);
-      done();
     })
 
     /**
@@ -809,61 +833,69 @@ export default function windowProperties() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('registerDensityInfoChangeCallbackReturn0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+it('registerDensityInfoChangeCallbackReturn0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "registerDensityInfoChangeCallbackReturn0400";
       console.info(`${caseName}: start...`);
       
-      let callback1Called = false;
-      let callback2Called = false;
+      let isSupport = canIUse('SystemCapability.Window.SessionManager');
+      console.info(`${caseName} isSupport: ${isSupport}`);
+      
+      if (isSupport !== true) {
+        console.info(`${caseName}: 此设备不支持SystemCapability.Window.SessionManager能力`);
+        done();
+      } else {
+        let callback1Called = false;
+        let callback2Called = false;
 
-      let subWindow = await windowStage.createSubWindow('registerDensityInfoChangeCallbackReturn0400');
-      let subWindowId = subWindow.getWindowProperties().id;
-      console.info(`${caseName}: subWindowId: ${subWindowId}`);
-      
-      let callback1 = (windowId: number, info: number) => {
-        console.info(`${caseName}: callback1 triggered, windowId: ${windowId}, info: ${info}`);
-        callback1Called = true;
-      };
-      
-      let callback2 = (windowId: number, info: number) => {
-        console.info(`${caseName}: callback2 triggered, windowId: ${windowId}, info: ${info}`);
-        callback2Called = true;
-      };
-      
-      let result1 = windowNdkTest.testRegisterDensityInfoChangeCallback(windowId, callback1);
-      console.info(`${caseName}: register callback1 result: ${result1}`);
-      expect(result1).assertEqual(WS_OK);
-      
-      let result2 = windowNdkTest.testRegisterDensityInfoChangeCallback(subWindowId, callback2);
-      console.info(`${caseName}: register callback2 result: ${result2}`);
-      expect(result2).assertEqual(WS_OK);
-      
-      let unregisterResult1 = windowNdkTest.testUnregisterDensityInfoChangeCallback(windowId, callback1);
-      console.info(`${caseName}: unregister callback1 result: ${unregisterResult1}`);
-      expect(unregisterResult1).assertEqual(WS_OK);
-      
-      let unregisterResult2 = windowNdkTest.testUnregisterDensityInfoChangeCallback(subWindowId, callback2);
-      console.info(`${caseName}: unregister callback2 result: ${unregisterResult2}`);
-      expect(unregisterResult2).assertEqual(WS_OK);
-      
-      await sleep(100);
-      callback1Called = false;
-      callback2Called = false;
-      let tsDensityInfo = WindowClass.getWindowDensityInfo();
-      console.info(`${caseName}: tsDensityInfo: ${JSON.stringify(tsDensityInfo)}`);
-      windowStage.setCustomDensity(tsDensityInfo.customDensity + 0.1);
-      tsDensityInfo = WindowClass.getWindowDensityInfo();
-      console.info(`${caseName}: tsDensityInfo: ${JSON.stringify(tsDensityInfo)}`);
-      await sleep(100);
-      
-      console.info(`${caseName}: callback1Called: ${callback1Called}, callback2Called: ${callback2Called}`);
-      expect(callback1Called).assertFalse();
-      expect(callback2Called).assertFalse();
+        let subWindow = await windowStage.createSubWindow('registerDensityInfoChangeCallbackReturn0400');
+        let subWindowId = subWindow.getWindowProperties().id;
+        console.info(`${caseName}: subWindowId: ${subWindowId}`);
+        
+        let callback1 = (windowId: number, info: number) => {
+          console.info(`${caseName}: callback1 triggered, windowId: ${windowId}, info: ${info}`);
+          callback1Called = true;
+        };
+        
+        let callback2 = (windowId: number, info: number) => {
+          console.info(`${caseName}: callback2 triggered, windowId: ${windowId}, info: ${info}`);
+          callback2Called = true;
+        };
+        
+        let result1 = windowNdkTest.testRegisterDensityInfoChangeCallback(windowId, callback1);
+        console.info(`${caseName}: register callback1 result: ${result1}`);
+        expect(result1).assertEqual(WS_OK);
+        
+        let result2 = windowNdkTest.testRegisterDensityInfoChangeCallback(subWindowId, callback2);
+        console.info(`${caseName}: register callback2 result: ${result2}`);
+        expect(result2).assertEqual(WS_OK);
+        
+        let unregisterResult1 = windowNdkTest.testUnregisterDensityInfoChangeCallback(windowId, callback1);
+        console.info(`${caseName}: unregister callback1 result: ${unregisterResult1}`);
+        expect(unregisterResult1).assertEqual(WS_OK);
+        
+        let unregisterResult2 = windowNdkTest.testUnregisterDensityInfoChangeCallback(subWindowId, callback2);
+        console.info(`${caseName}: unregister callback2 result: ${unregisterResult2}`);
+        expect(unregisterResult2).assertEqual(WS_OK);
+        
+        await sleep(100);
+        callback1Called = false;
+        callback2Called = false;
+        let tsDensityInfo = WindowClass.getWindowDensityInfo();
+        console.info(`${caseName}: tsDensityInfo: ${JSON.stringify(tsDensityInfo)}`);
+        windowStage.setCustomDensity(tsDensityInfo.customDensity + 0.1);
+        tsDensityInfo = WindowClass.getWindowDensityInfo();
+        console.info(`${caseName}: tsDensityInfo: ${JSON.stringify(tsDensityInfo)}`);
+        await sleep(100);
+        
+        console.info(`${caseName}: callback1Called: ${callback1Called}, callback2Called: ${callback2Called}`);
+        expect(callback1Called).assertFalse();
+        expect(callback2Called).assertFalse();
 
-      await subWindow.destroyWindow();
-      
+        await subWindow.destroyWindow();
+        
+        done();
+      }
       console.info(`${caseName}: end...`);
-      done();
     })
 
     /**
@@ -878,57 +910,65 @@ export default function windowProperties() {
       let caseName = "registerDensityInfoChangeCallbackReturn0500";
       console.info(`${caseName}: start...`);
       
-      let callback1Called = 0;
+      let isSupport = canIUse('SystemCapability.Window.SessionManager');
+      console.info(`${caseName} isSupport: ${isSupport}`);
       
-      let callback1 = (windowId: number, info: number) => {
-        console.info(`${caseName}: callback1 triggered, windowId: ${windowId}, info: ${info}`);
-        callback1Called = 1
-      };
-      
-      let callback2 = (windowId: number, info: number) => {
-        console.info(`${caseName}: callback2 triggered, windowId: ${windowId}, info: ${info}`);
-        callback1Called = 2
-      };
+      if (isSupport !== true) {
+        console.info(`${caseName}: 此设备不支持SystemCapability.Window.SessionManager能力`);
+        done();
+      } else {
+        let callback1Called = 0;
+        
+        let callback1 = (windowId: number, info: number) => {
+          console.info(`${caseName}: callback1 triggered, windowId: ${windowId}, info: ${info}`);
+          callback1Called = 1
+        };
+        
+        let callback2 = (windowId: number, info: number) => {
+          console.info(`${caseName}: callback2 triggered, windowId: ${windowId}, info: ${info}`);
+          callback1Called = 2
+        };
 
-      let subWindow = await windowStage.createSubWindow('registerDensityInfoChangeCallbackReturn0500');
-      let subWindowId = subWindow.getWindowProperties().id;
-      console.info(`${caseName}: subWindowId: ${subWindowId}`);
-      
-      let result1 = windowNdkTest.testRegisterDensityInfoChangeCallback(subWindowId, callback1);
-      console.info(`${caseName}: register callback1 result: ${result1}`);
-      expect(result1).assertEqual(WS_OK);
-      
-      let result2 = windowNdkTest.testRegisterDensityInfoChangeCallback(windowId, callback2);
-      console.info(`${caseName}: register callback2 result: ${result2}`);
-      expect(result2).assertEqual(WS_OK);
-      
-      await sleep(100);
-      let tsDensityInfo = WindowClass.getWindowDensityInfo();
-      console.info(`${caseName}: tsDensityInfo: ${JSON.stringify(tsDensityInfo)}`);
-      let newCustomDensity = Math.min(tsDensityInfo.customDensity + 0.1, 4);
-      if (newCustomDensity === tsDensityInfo.customDensity) {
-        newCustomDensity = Math.max(tsDensityInfo.customDensity - 0.1, 0.5);
+        let subWindow = await windowStage.createSubWindow('registerDensityInfoChangeCallbackReturn0500');
+        let subWindowId = subWindow.getWindowProperties().id;
+        console.info(`${caseName}: subWindowId: ${subWindowId}`);
+        
+        let result1 = windowNdkTest.testRegisterDensityInfoChangeCallback(subWindowId, callback1);
+        console.info(`${caseName}: register callback1 result: ${result1}`);
+        expect(result1).assertEqual(WS_OK);
+        
+        let result2 = windowNdkTest.testRegisterDensityInfoChangeCallback(windowId, callback2);
+        console.info(`${caseName}: register callback2 result: ${result2}`);
+        expect(result2).assertEqual(WS_OK);
+        
+        await sleep(100);
+        let tsDensityInfo = WindowClass.getWindowDensityInfo();
+        console.info(`${caseName}: tsDensityInfo: ${JSON.stringify(tsDensityInfo)}`);
+        let newCustomDensity = Math.min(tsDensityInfo.customDensity + 0.1, 4);
+        if (newCustomDensity === tsDensityInfo.customDensity) {
+          newCustomDensity = Math.max(tsDensityInfo.customDensity - 0.1, 0.5);
+        }
+        windowStage.setCustomDensity(newCustomDensity);
+        tsDensityInfo = WindowClass.getWindowDensityInfo();
+        console.info(`${caseName}: tsDensityInfo: ${JSON.stringify(tsDensityInfo)}`);
+        await sleep(100);
+        
+        console.info(`${caseName}: callback1Called: ${JSON.stringify(callback1Called)}`);
+        expect(callback1Called).assertEqual(2);
+        
+        let unregisterResult1 = windowNdkTest.testUnregisterDensityInfoChangeCallback(subWindowId, callback1);
+        console.info(`${caseName}: unregister callback1 result: ${unregisterResult1}`);
+        expect(unregisterResult1).assertEqual(WS_OK);
+        
+        let unregisterResult2 = windowNdkTest.testUnregisterDensityInfoChangeCallback(windowId, callback2);
+        console.info(`${caseName}: unregister callback2 result: ${unregisterResult2}`);
+        expect(unregisterResult2).assertEqual(WS_OK);
+
+        await subWindow.destroyWindow();
+        
+        done();
       }
-      windowStage.setCustomDensity(newCustomDensity);
-      tsDensityInfo = WindowClass.getWindowDensityInfo();
-      console.info(`${caseName}: tsDensityInfo: ${JSON.stringify(tsDensityInfo)}`);
-      await sleep(100);
-      
-      console.info(`${caseName}: callback1Called: ${JSON.stringify(callback1Called)}`);
-      expect(callback1Called).assertEqual(2);
-      
-      let unregisterResult1 = windowNdkTest.testUnregisterDensityInfoChangeCallback(subWindowId, callback1);
-      console.info(`${caseName}: unregister callback1 result: ${unregisterResult1}`);
-      expect(unregisterResult1).assertEqual(WS_OK);
-      
-      let unregisterResult2 = windowNdkTest.testUnregisterDensityInfoChangeCallback(windowId, callback2);
-      console.info(`${caseName}: unregister callback2 result: ${unregisterResult2}`);
-      expect(unregisterResult2).assertEqual(WS_OK);
-
-      await subWindow.destroyWindow();
-      
       console.info(`${caseName}: end...`);
-      done();
     })
 
     /**
@@ -1022,20 +1062,28 @@ export default function windowProperties() {
       let caseName = "unregisterDensityInfoChangeCallbackReturn0100";
       console.info(`${caseName}: start...`);
       
-      let callback = (windowId: number, info: number) => {
-        console.info(`${caseName}: callback triggered, windowId: ${windowId}, info: ${info}`);
-      };
+      let isSupport = canIUse('SystemCapability.Window.SessionManager');
+      console.info(`${caseName} isSupport: ${isSupport}`);
       
-      let registerResult = windowNdkTest.testRegisterDensityInfoChangeCallback(windowId, callback);
-      console.info(`${caseName}: register result: ${registerResult}`);
-      expect(registerResult).assertEqual(WS_OK);
-      
-      let unregisterResult = windowNdkTest.testUnregisterDensityInfoChangeCallback(windowId, callback);
-      console.info(`${caseName}: unregister result: ${unregisterResult}`);
-      expect(unregisterResult).assertEqual(WS_OK);
-      
+      if (isSupport !== true) {
+        console.info(`${caseName}: 此设备不支持SystemCapability.Window.SessionManager能力`);
+        done();
+      } else {
+        let callback = (windowId: number, info: number) => {
+          console.info(`${caseName}: callback triggered, windowId: ${windowId}, info: ${info}`);
+        };
+        
+        let registerResult = windowNdkTest.testRegisterDensityInfoChangeCallback(windowId, callback);
+        console.info(`${caseName}: register result: ${registerResult}`);
+        expect(registerResult).assertEqual(WS_OK);
+        
+        let unregisterResult = windowNdkTest.testUnregisterDensityInfoChangeCallback(windowId, callback);
+        console.info(`${caseName}: unregister result: ${unregisterResult}`);
+        expect(unregisterResult).assertEqual(WS_OK);
+        
+        done();
+      }
       console.info(`${caseName}: end...`);
-      done();
     })
 
     /**
