@@ -820,6 +820,38 @@ export default function drawingTsPath3Test() {
         console.info(msg + `test 5 getSegment . errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
+      try {
+        path.getSegment(undefined, 10.0, 20.0, true, dstPath)
+        console.info(msg + `test 6 getSegment error`);
+        expect().assertFail()
+      } catch (e) {
+        console.info(msg + `test 6 getSegment . errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        path.getSegment(null, 10.0, 20.0, true, dstPath)
+        console.info(msg + `test 6 getSegment error`);
+        expect().assertFail()
+      } catch (e) {
+        console.info(msg + `test 6 getSegment . errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        path.getSegment(true, 10.0, 20.0, null, dstPath)
+        console.info(msg + `test 7 getSegment error`);
+        expect().assertFail()
+      } catch (e) {
+        console.info(msg + `test 7 getSegment . errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        path.getSegment(true, 10.0, 20.0, undefined, dstPath)
+        console.info(msg + `test 8 getSegment error`);
+        expect().assertFail()
+      } catch (e) {
+        console.info(msg + `test 8 getSegment . errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect(e.code).assertEqual(401);
+      }
     })
   })
 }
