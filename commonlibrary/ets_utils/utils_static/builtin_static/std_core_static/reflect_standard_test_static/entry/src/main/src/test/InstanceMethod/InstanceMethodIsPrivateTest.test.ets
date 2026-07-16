@@ -463,7 +463,7 @@ export default function InstanceMethodIsPrivateTest(): void {
     it('testInstanceMethodIsPrivate0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass016>();
       let methods = cls.getInstanceMethods();
-      let privateMethodCount: int = 0;
+      let privateMethodCount: number = 0;
       for (let i = 0; i < methods.length; i++) {
         if (methods[i].isPrivate()) {
           privateMethodCount++;

@@ -877,7 +877,7 @@ export default function InstanceMethodGetParametersNumTest(): void {
     it('testInstanceMethodGetParametersNum0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass058>();
       let methods = cls.getInstanceMethods();
-      let totalParams: int = 0;
+      let totalParams: number = 0;
       for (let i = 0; i < methods.length; i++) {
         totalParams += methods[i].getParametersNum();
       }

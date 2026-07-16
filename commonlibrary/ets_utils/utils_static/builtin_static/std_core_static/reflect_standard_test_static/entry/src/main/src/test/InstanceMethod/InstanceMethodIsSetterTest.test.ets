@@ -259,26 +259,6 @@ class MyClass038 {
   }
 }
 
-
-class CustomType053 {
-}
-
-class ParentSetter059 {
-  private _val: number = 0;
-
-  public set parentVal(v: number) {
-    this._val = v;
-  }
-}
-
-class ParentSetter060 {
-  private _val: number = 0;
-
-  public set overrideVal(v: number) {
-    this._val = v;
-  }
-}
-
 export default function InstanceMethodIsSetterTest(): void {
   describe('InstanceMethodIsSetterTest', (): void => {
     beforeAll(() => {
@@ -429,7 +409,7 @@ export default function InstanceMethodIsSetterTest(): void {
     it('testInstanceMethodIsSetter0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass015>();
       let methods = cls.getInstanceMethods();
-      let setterCount: int = 0;
+      let setterCount: number = 0;
       let setterName = '';
       for (let i = 0; i < methods.length; i++) {
         let method = methods[i];
@@ -621,7 +601,7 @@ export default function InstanceMethodIsSetterTest(): void {
     it('testInstanceMethodIsSetter0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass035>();
       let methods = cls.getInstanceMethods();
-      let setterCount: int = 0;
+      let setterCount: number = 0;
       for (let i = 0; i < methods.length; i++) {
         if (methods[i].isSetter()) {
           setterCount++;

@@ -78,12 +78,6 @@ class MyClass008 {
   }
 }
 
-class MyClass009 {
-  public async returnPromise(): Promise<string> {
-    return "async result";
-  }
-}
-
 class MyClass010 {
   public async returnPromiseNumber(): Promise<number> {
     return 123;

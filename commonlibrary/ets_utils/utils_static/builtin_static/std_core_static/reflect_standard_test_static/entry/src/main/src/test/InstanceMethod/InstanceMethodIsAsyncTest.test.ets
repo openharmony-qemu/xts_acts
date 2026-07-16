@@ -580,7 +580,7 @@ export default function InstanceMethodIsAsyncTest(): void {
     it('testInstanceMethodIsAsync0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass017>();
       let methods = cls.getInstanceMethods();
-      let asyncMethodCount: int = 0;
+      let asyncMethodCount: number = 0;
       for (let i = 0; i < methods.length; i++) {
         let method = methods[i];
         if (method.isAsync()) {
@@ -713,8 +713,8 @@ export default function InstanceMethodIsAsyncTest(): void {
     it('testInstanceMethodIsAsync0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass034>();
       let methods = cls.getInstanceMethods();
-      let asyncCount: int = 0;
-      let syncCount: int = 0;
+      let asyncCount: number = 0;
+      let syncCount: number = 0;
       for (let i = 0; i < methods.length; i++) {
         if (methods[i].isAsync()) {
           asyncCount++;

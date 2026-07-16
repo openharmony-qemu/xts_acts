@@ -232,10 +232,6 @@ class MyClass071 {
   }
 }
 
-
-class CustomType061 {
-}
-
 export default function InstanceMethodGetParameterTypeTest(): void {
   describe('InstanceMethodGetParameterTypeTest', (): void => {
     beforeAll(() => {

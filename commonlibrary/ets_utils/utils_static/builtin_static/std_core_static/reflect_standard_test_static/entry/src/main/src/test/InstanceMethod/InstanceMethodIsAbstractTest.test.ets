@@ -37,16 +37,8 @@ class MyClass005 {
   }
 }
 
-abstract class MyClass006 {
-  public abstract publicAbstractMethod(): void;
-}
-
 abstract class MyClass007 {
   protected abstract protectedAbstractMethod(): void;
-}
-
-abstract class MyClass010 {
-  public abstract testMethod(): void;
 }
 
 abstract class AbstractClass011 {
@@ -415,7 +407,7 @@ export default function InstanceMethodIsAbstractTest(): void {
     it('testInstanceMethodIsAbstract0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass015>();
       let methods = cls.getInstanceMethods();
-      let abstractMethodCount: int = 0;
+      let abstractMethodCount: number = 0;
       for (let i = 0; i < methods.length; i++) {
         let method = methods[i];
         if (method.isAbstract()) {
@@ -889,7 +881,7 @@ export default function InstanceMethodIsAbstractTest(): void {
     it('testInstanceMethodIsAbstract0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass051>();
       let methods = cls.getInstanceMethods();
-      let abstractCount: int = 0;
+      let abstractCount: number = 0;
       for (let i = 0; i < methods.length; i++) {
         if (methods[i].isAbstract()) {
           abstractCount++;

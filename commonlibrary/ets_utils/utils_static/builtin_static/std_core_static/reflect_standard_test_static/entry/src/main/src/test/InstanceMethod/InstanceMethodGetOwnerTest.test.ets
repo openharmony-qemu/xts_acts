@@ -299,20 +299,6 @@ class MidParentClass060 extends GrandParentClass060 {
 class ChildClass060 extends MidParentClass060 {
 }
 
-
-class CustomType062 {
-}
-
-class OwnerParent067 {
-  public inheritedOwnerMethod(): void {
-  }
-}
-
-class OwnerParent068 {
-  public overrideOwnerMethod(): void {
-  }
-}
-
 export default function InstanceMethodGetOwnerTest(): void {
   describe('InstanceMethodGetOwnerTest', (): void => {
     beforeAll(() => {
@@ -638,7 +624,7 @@ export default function InstanceMethodGetOwnerTest(): void {
     it('testInstanceMethodGetOwner0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass034>();
       let methods = cls.getInstanceMethods();
-      let overloadCount: int = 0;
+      let overloadCount: number = 0;
       for (let i = 0; i < methods.length; i++) {
         let method = methods[i];
         if (method.getName() === 'overloadMethod') {

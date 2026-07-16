@@ -35,7 +35,7 @@ class MyClass001 {
 }
 
 class MyClass003 {
-  public testMethod(a: int, b: string): string {
+  public testMethod(a: number, b: string): string {
     return "test" + a.toString() + ":" + b;
   }
 }
@@ -60,19 +60,19 @@ class MyClass011 {
 }
 
 class MyClass012 {
-  public testMethod(a: int): string {
+  public testMethod(a: number): string {
     return "test100";
   }
 }
 
 class MyClass013 {
-  public testMethod(a: int): string {
+  public testMethod(a: number): string {
     return "test100";
   }
 }
 
 class MyClass015 {
-  public returnNumber(): int {
+  public returnNumber(): number {
     return 123;
   }
 }
@@ -101,19 +101,19 @@ class MyClass019 {
 }
 
 class MyClass021 {
-  public singleParam(a: int): int {
+  public singleParam(a: number): number {
     return a * 2;
   }
 }
 
 class MyClass022 {
-  public multiParams(a: int, b: string, c: boolean): string {
+  public multiParams(a: number, b: string, c: boolean): string {
     return a.toString() + ":" + b + ":" + c.toString();
   }
 }
 
 class MyClass023 {
-  public optionalParam(a: int, b?: string): string {
+  public optionalParam(a: number, b?: string): string {
     if (b !== undefined) {
       return a.toString() + ":" + b;
     }
@@ -158,45 +158,45 @@ class ChildClass032 extends ParentClass032 {
 }
 
 class MyClass033 {
-  public add(a: int, b: int): int {
+  public add(a: number, b: number): number {
     return a + b;
   }
 
-  public multiply(a: int, b: int): int {
+  public multiply(a: number, b: number): number {
     return a * b;
   }
 }
 
 class MyClass034 {
-  private _value: int = 0;
+  private _value: number = 0;
 
-  public setValue(v: int): MyClass034 {
+  public setValue(v: number): MyClass034 {
     this._value = v;
     return this;
   }
 
-  public getValue(): int {
+  public getValue(): number {
     return this._value;
   }
 
-  public multiply(v: int): MyClass034 {
+  public multiply(v: number): MyClass034 {
     this._value *= v;
     return this;
   }
 }
 
 class Calculator035 {
-  public add(a: int, b: int): int {
+  public add(a: number, b: number): number {
     return a + b;
   }
 
-  public subtract(a: int, b: int): int {
+  public subtract(a: number, b: number): number {
     return a - b;
   }
 }
 
 class MyClass037 {
-  public testNumber(n: int): int {
+  public testNumber(n: number): number {
     return n;
   }
 
@@ -216,39 +216,39 @@ class MyClass038 {
 }
 
 class MyClass039 {
-  public processArray(arr: int[]): int {
+  public processArray(arr: number[]): number {
     return arr.length;
   }
 }
 
 class MyClass040 {
-  private _value: int = 42;
+  private _value: number = 42;
 
-  public get value(): int {
+  public get value(): number {
     return this._value;
   }
 }
 
 class MyClass041 {
-  private _value: int = 0;
+  private _value: number = 0;
 
-  public set value(v: int) {
+  public set value(v: number) {
     this._value = v;
   }
 
-  public get value(): int {
+  public get value(): number {
     return this._value;
   }
 }
 
 class MyClass044 {
-  private value: int;
+  private value: number;
 
-  constructor(value: int) {
+  constructor(value: number) {
     this.value = value;
   }
 
-  public getValue(): int {
+  public getValue(): number {
     return this.value;
   }
 }
@@ -322,7 +322,7 @@ class ChildClass057 extends ParentClass057 {
 }
 
 class MyClass058 {
-  public compute(a: int, b: int, c: int): int {
+  public compute(a: number, b: number, c: number): number {
     return a * b + c;
   }
 }
@@ -350,19 +350,6 @@ class MyClass061 {
 
   public instanceMethod(): string {
     return 'instance';
-  }
-}
-
-
-class InvokeParent067 {
-  public parentInvokeMethod(): string {
-    return 'parent';
-  }
-}
-
-class InvokeParent068 {
-  public overrideInvokeMethod(): string {
-    return 'parent';
   }
 }
 
@@ -406,7 +393,8 @@ export default function InstanceMethodInvokeTest(): void {
       let obj = new MyClass003();
       let cls = Class.of(obj);
       let method = cls.getInstanceMethod('testMethod');
-      let args: FixedArray<Object> = [100, "hello"];
+      let numArg: number = 100;
+      let args: FixedArray<Object> = [numArg, "hello"];
       let result = method!.invoke(obj, args) as string;
       expect(result).assertEqual("test100:hello");
     });
@@ -503,7 +491,7 @@ export default function InstanceMethodInvokeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_INVOKE_0007
      * @tc.name testInstanceMethodInvoke0007
-     * @tc.desc Verify a method returning int type
+     * @tc.desc Verify a method returning number type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -512,7 +500,7 @@ export default function InstanceMethodInvokeTest(): void {
       let obj = new MyClass015();
       let cls = Class.of(obj);
       let method = cls.getInstanceMethod('returnNumber');
-      let result = method!.invoke(obj) as int;
+      let result = method!.invoke(obj) as number;
       expect(result).assertEqual(123);
     });
 
@@ -594,8 +582,9 @@ export default function InstanceMethodInvokeTest(): void {
       let obj = new MyClass021();
       let cls = Class.of(obj);
       let method = cls.getInstanceMethod('singleParam');
-      let args: FixedArray<Object> = [21];
-      let result = method!.invoke(obj, args) as int;
+      let numArg: number = 21;
+      let args: FixedArray<Object> = [numArg];
+      let result = method!.invoke(obj, args) as number;
       expect(result).assertEqual(42);
     });
 
@@ -611,7 +600,8 @@ export default function InstanceMethodInvokeTest(): void {
       let obj = new MyClass022();
       let cls = Class.of(obj);
       let method = cls.getInstanceMethod('multiParams');
-      let args: FixedArray<Object> = [100, "test", true];
+      let numArg: number = 100;
+      let args: FixedArray<Object> = [numArg, "test", true];
       let result = method!.invoke(obj, args) as string;
       expect(result).assertEqual("100:test:true");
     });
@@ -629,7 +619,8 @@ export default function InstanceMethodInvokeTest(): void {
       let cls = Class.of(obj);
       let method = cls.getInstanceMethod('optionalParam');
 
-      let args2: FixedArray<Object> = [100, "custom"];
+      let numArg: number = 100;
+      let args2: FixedArray<Object> = [numArg, "custom"];
       let result2 = method!.invoke(obj, args2) as string;
       expect(result2).assertEqual("100:custom");
     });
@@ -728,8 +719,10 @@ export default function InstanceMethodInvokeTest(): void {
 
       let methodName = "add";
       let method = cls.getInstanceMethod(methodName);
-      let args: FixedArray<Object> = [10, 20];
-      let result = method!.invoke(obj, args) as int;
+      let a: number = 10;
+      let b: number = 20;
+      let args: FixedArray<Object> = [a, b];
+      let result = method!.invoke(obj, args) as number;
       expect(result).assertEqual(30);
     });
 
@@ -749,14 +742,16 @@ export default function InstanceMethodInvokeTest(): void {
       let multiplyMethod = cls.getInstanceMethod('multiply');
       let getValueMethod = cls.getInstanceMethod('getValue');
 
-      let args1: FixedArray<Object> = [5];
+      let v1: number = 5;
+      let args1: FixedArray<Object> = [v1];
       let chainedObj = setValueMethod!.invoke(obj, args1) as MyClass034;
-      let valueAfterSet = getValueMethod!.invoke(chainedObj) as int;
+      let valueAfterSet = getValueMethod!.invoke(chainedObj) as number;
       expect(valueAfterSet).assertEqual(5);
 
-      let args2: FixedArray<Object> = [2];
+      let v2: number = 2;
+      let args2: FixedArray<Object> = [v2];
       let multipliedObj = multiplyMethod!.invoke(chainedObj, args2) as MyClass034;
-      let valueAfterMultiply = getValueMethod!.invoke(multipliedObj) as int;
+      let valueAfterMultiply = getValueMethod!.invoke(multipliedObj) as number;
       expect(valueAfterMultiply).assertEqual(10);
     });
 
@@ -773,13 +768,13 @@ export default function InstanceMethodInvokeTest(): void {
       let cls = Class.of(calc);
 
       let operations = ['add', 'subtract'];
-      let a = 10;
-      let b = 5;
+      let a: number = 10;
+      let b: number = 5;
 
       for (let i = 0; i < operations.length; i++) {
         let method = cls.getInstanceMethod(operations[i]);
         let args: FixedArray<Object> = [a, b];
-        let result = method!.invoke(calc, args) as int;
+        let result = method!.invoke(calc, args) as number;
         if (operations[i] === 'add') {
           expect(result).assertEqual(15);
         } else {
@@ -801,8 +796,9 @@ export default function InstanceMethodInvokeTest(): void {
       let cls = Class.of(obj);
 
       let numMethod = cls.getInstanceMethod('testNumber');
-      let args1: FixedArray<Object> = [123];
-      let result1 = numMethod!.invoke(obj, args1) as int;
+      let numArg: number = 123;
+      let args1: FixedArray<Object> = [numArg];
+      let result1 = numMethod!.invoke(obj, args1) as number;
       expect(result1).assertEqual(123);
 
       let strMethod = cls.getInstanceMethod('testString');
@@ -846,7 +842,7 @@ export default function InstanceMethodInvokeTest(): void {
       let cls = Class.of(obj);
       let method = cls.getInstanceMethod('processArray');
       let args: FixedArray<Object> = [[1, 2, 3, 4, 5]];
-      let result = method!.invoke(obj, args) as int;
+      let result = method!.invoke(obj, args) as number;
       expect(result).assertEqual(5);
     });
 
@@ -862,7 +858,7 @@ export default function InstanceMethodInvokeTest(): void {
       let obj = new MyClass040();
       let cls = Class.of(obj);
       let method = cls.getInstanceMethod('%%get-value');
-      let result = method!.invoke(obj) as int;
+      let result = method!.invoke(obj) as number;
       expect(result).assertEqual(42);
     });
 
@@ -880,10 +876,11 @@ export default function InstanceMethodInvokeTest(): void {
       let setter = cls.getInstanceMethod('%%set-value');
       let getter = cls.getInstanceMethod('%%get-value');
 
-      let args: FixedArray<Object> = [100];
+      let v: number = 100;
+      let args: FixedArray<Object> = [v];
       setter!.invoke(obj, args);
 
-      let result = getter!.invoke(obj) as int;
+      let result = getter!.invoke(obj) as number;
       expect(result).assertEqual(100);
     });
 
@@ -901,8 +898,8 @@ export default function InstanceMethodInvokeTest(): void {
       let cls = Class.of(obj1);
       let method = cls.getInstanceMethod('getValue');
 
-      let result1 = method!.invoke(obj1) as int;
-      let result2 = method!.invoke(obj2) as int;
+      let result1 = method!.invoke(obj1) as number;
+      let result2 = method!.invoke(obj2) as number;
       expect(result1).assertEqual(10);
       expect(result2).assertEqual(20);
     });
@@ -1016,7 +1013,7 @@ export default function InstanceMethodInvokeTest(): void {
     it('testInstanceMethodInvoke0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new MyClass003();
       let cls = Class.from<MyClass003>();
-      let paramTypes: FixedArray<Class> = [Class.from<int>(), Class.from<string>()];
+      let paramTypes: FixedArray<Class> = [Class.from<number>(), Class.from<string>()];
       let method = cls.getInstanceMethod('testMethod', paramTypes);
       if (method !== undefined && method !== null) {
         let args: FixedArray<Object> = [100, "hello"];
@@ -1184,8 +1181,11 @@ export default function InstanceMethodInvokeTest(): void {
       let obj = new MyClass058();
       let cls = Class.of(obj);
       let method = cls.getInstanceMethod('compute');
-      let args: FixedArray<Object> = [3, 4, 5];
-      let result = method!.invoke(obj, args) as int;
+      let a: number = 3;
+      let b: number = 4;
+      let c: number = 5;
+      let args: FixedArray<Object> = [a, b, c];
+      let result = method!.invoke(obj, args) as number;
       expect(result).assertEqual(17);
     });
 

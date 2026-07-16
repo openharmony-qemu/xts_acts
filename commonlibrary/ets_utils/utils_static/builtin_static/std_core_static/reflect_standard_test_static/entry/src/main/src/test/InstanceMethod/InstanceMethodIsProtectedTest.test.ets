@@ -234,27 +234,6 @@ class MyClass043 {
   }
 }
 
-class ParentClass049 {
-  public overrideMethod(): void {
-  }
-}
-
-class ParentClass055 {
-  public parentPublicMethod(): void {
-  }
-}
-
-
-class ProtectedParent051 {
-  public pubParentMethod(): void {
-  }
-}
-
-class ProtectedParent052 {
-  public pubOverride(): void {
-  }
-}
-
 export default function InstanceMethodIsProtectedTest(): void {
   describe('InstanceMethodIsProtectedTest', (): void => {
     beforeAll(() => {
@@ -422,7 +401,7 @@ export default function InstanceMethodIsProtectedTest(): void {
     it('testInstanceMethodIsProtected0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass018>();
       let methods = cls.getInstanceMethods();
-      let protectedMethodCount: int = 0;
+      let protectedMethodCount: number = 0;
       for (let i = 0; i < methods.length; i++) {
         if (methods[i].isProtected()) {
           protectedMethodCount++;

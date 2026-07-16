@@ -292,19 +292,6 @@ class PublicClass041 {
   }
 }
 
-class CustomType043 {
-}
-
-class PublicParent054 {
-  public pubParentMethod(): void {
-  }
-}
-
-class PublicParent055 {
-  public pubOverride(): void {
-  }
-}
-
 export default function InstanceMethodIsPublicTest(): void {
   describe('InstanceMethodIsPublicTest', (): void => {
     beforeAll(() => {
@@ -518,7 +505,7 @@ export default function InstanceMethodIsPublicTest(): void {
     it('testInstanceMethodIsPublic0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass028>();
       let methods = cls.getInstanceMethods();
-      let publicMethodCount: int = 0;
+      let publicMethodCount: number = 0;
       for (let i = 0; i < methods.length; i++) {
         if (methods[i].isPublic()) {
           publicMethodCount++;

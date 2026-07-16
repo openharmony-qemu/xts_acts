@@ -28,17 +28,6 @@ import {
 } from '../../../../hypium/index';
 import Utils from './../Util.test';
 
-class MyClass006 {
-  public publicMethod(): void {
-  }
-
-  private privateMethod(): void {
-  }
-
-  protected protectedMethod(): void {
-  }
-}
-
 class MyClass007 {
   public constructor() {
   }
@@ -288,9 +277,6 @@ class ParentClass050 extends GrandparentClass050 {
   }
 }
 
-class ChildClass050 extends ParentClass050 {
-}
-
 class MyClass051 {
   public getMapMethod(): Map<string, number> {
     return new Map<string, number>();
@@ -383,7 +369,7 @@ export default function InstanceMethodIsNativeTest(): void {
      * @tc.level LEVEL2
      */
     it('testInstanceMethodIsNative0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<Array<int>>();
+      let cls = Class.from<Array<number>>();
       let method = cls.getInstanceMethod('$_set');
       expect(method!.getName()).assertEqual('$_set');
       expect(method!.isNative()).assertEqual(true);
@@ -509,7 +495,7 @@ export default function InstanceMethodIsNativeTest(): void {
     it('testInstanceMethodIsNative0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass020>();
       let methods = cls.getInstanceMethods();
-      let nonNativeCount: int = 0;
+      let nonNativeCount: number = 0;
       let nonNativeMethodName: string = '';
       for (let i = 0; i < methods.length; i++) {
         if (!methods[i].isNative()) {

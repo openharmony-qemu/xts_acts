@@ -62,7 +62,7 @@ class MyClass004 {
 }
 
 class MyClass005 {
-  public intParam(a: int): void {
+  public intParam(a: number): void {
   }
 }
 
@@ -408,7 +408,7 @@ export default function InstanceMethodGetParameterTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_GETPARAMETERTYPES_0004
      * @tc.name testInstanceMethodGetParameterTypes0004
-     * @tc.desc Verify int type as a parameter
+     * @tc.desc Verify number type as a parameter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -416,7 +416,7 @@ export default function InstanceMethodGetParameterTypesTest(): void {
     it('testInstanceMethodGetParameterTypes0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass005>();
       let method = cls.getInstanceMethod('intParam');
-      expect(method!.getParameterTypes()[0].getName()).assertEqual('i32');
+      expect(method!.getParameterTypes()[0].getName()).assertEqual('f64');
     });
 
     /**

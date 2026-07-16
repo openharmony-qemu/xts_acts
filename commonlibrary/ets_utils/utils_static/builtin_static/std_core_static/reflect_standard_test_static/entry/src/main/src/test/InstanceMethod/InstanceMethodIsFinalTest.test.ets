@@ -64,11 +64,6 @@ class MyClass010 {
   }
 }
 
-class MyClass013 {
-  public final testMethod(): void {
-  }
-}
-
 class MyClass014 {
   public final async finalAsyncMethod(): Promise<void> {
   }
@@ -414,7 +409,7 @@ export default function InstanceMethodIsFinalTest(): void {
     it('testInstanceMethodIsFinal0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass018>();
       let methods = cls.getInstanceMethods();
-      let finalMethodCount: int = 0;
+      let finalMethodCount: number = 0;
       for (let i = 0; i < methods.length; i++) {
         let method = methods[i];
         if (method.isFinal()) {
@@ -549,8 +544,8 @@ export default function InstanceMethodIsFinalTest(): void {
     it('testInstanceMethodIsFinal0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass036>();
       let methods = cls.getInstanceMethods();
-      let finalCount: int = 0;
-      let nonFinalCount: int = 0;
+      let finalCount: number = 0;
+      let nonFinalCount: number = 0;
       for (let i = 0; i < methods.length; i++) {
         if (methods[i].isFinal()) {
           finalCount++;
@@ -816,7 +811,7 @@ export default function InstanceMethodIsFinalTest(): void {
     it('testInstanceMethodIsFinal0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass052>();
       let methods = cls.getInstanceMethods();
-      let finalCount: int = 0;
+      let finalCount: number = 0;
       for (let i = 0; i < methods.length; i++) {
         if (methods[i].isFinal()) {
           finalCount++;

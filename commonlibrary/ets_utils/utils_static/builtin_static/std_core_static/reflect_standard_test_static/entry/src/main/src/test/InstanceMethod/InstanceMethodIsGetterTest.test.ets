@@ -272,38 +272,6 @@ class MyClass038 {
   }
 }
 
-class ParentClass043 {
-  private _value: number = 0;
-
-  public get value(): number {
-    return this._value;
-  }
-}
-
-abstract class AbstractClass052 {
-  public abstract get name(): string;
-}
-
-
-class CustomType053 {
-}
-
-class ParentGetter059 {
-  private _val: number = 0;
-
-  public get parentVal(): number {
-    return this._val;
-  }
-}
-
-class ParentGetter060 {
-  private _val: number = 0;
-
-  public get overrideVal(): number {
-    return this._val;
-  }
-}
-
 export default function InstanceMethodIsGetterTest(): void {
   describe('InstanceMethodIsGetterTest', (): void => {
     beforeAll(() => {
@@ -454,7 +422,7 @@ export default function InstanceMethodIsGetterTest(): void {
     it('testInstanceMethodIsGetter0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass015>();
       let methods = cls.getInstanceMethods();
-      let getterCount: int = 0;
+      let getterCount: number = 0;
       let getterName = '';
       for (let i = 0; i < methods.length; i++) {
         let method = methods[i];
@@ -649,7 +617,7 @@ export default function InstanceMethodIsGetterTest(): void {
     it('testInstanceMethodIsGetter0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass035>();
       let methods = cls.getInstanceMethods();
-      let getterCount: int = 0;
+      let getterCount: number = 0;
       for (let i = 0; i < methods.length; i++) {
         if (methods[i].isGetter()) {
           getterCount++;

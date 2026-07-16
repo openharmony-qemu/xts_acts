@@ -142,16 +142,11 @@ class MyClass058 {
   }
 }
 
-class OtherClass058 {
-  public testMethod(): void {
-  }
-}
-
 class MyClass059 {
-  public compute(a: int, b: int): int {
+  public compute(a: number, b: number): number {
     return a + b;
   }
-  public compute(a: int, b: int, c: int): int {
+  public compute(a: number, b: number, c: number): number {
     return a + b + c;
   }
 }
@@ -164,67 +159,6 @@ class MyClass060 {
   }
 
   public thirdMethod(): void {
-  }
-}
-
-class ParentClass061 {
-  public sharedMethod(): void {
-  }
-}
-
-class ChildClass061 extends ParentClass061 {
-  public override sharedMethod(): void {
-  }
-}
-
-
-class EqualsClass070 {
-  public methodA(): void {
-  }
-
-  public methodB(): void {
-  }
-}
-
-class EqualsClass071 {
-  public methodA(): void {
-  }
-}
-
-class EqualsParent072 {
-  public parentMethod(): void {
-  }
-}
-
-class EqualsChild072 extends EqualsParent072 {
-}
-
-class EqualsParent073 {
-  public overrideMethod(): string {
-    return 'parent';
-  }
-}
-
-class EqualsChild073 extends EqualsParent073 {
-  public override overrideMethod(): string {
-    return 'child';
-  }
-}
-
-class EqualsClass074 {
-  public async asyncMethod(): Promise<void> {
-  }
-}
-
-class EqualsClass075 {
-  private _val: number = 0;
-
-  public get val(): number {
-    return this._val;
-  }
-
-  public set val(v: number) {
-    this._val = v;
   }
 }
 
@@ -247,43 +181,6 @@ class EqualsClass078 {
 class EqualsClass079 {
   public methodWithRest(...args: string[]): void {
   }
-}
-
-class EqualsClass080 {
-  public returnNumber(): number {
-    return 1;
-  }
-
-  public returnString(): string {
-    return 'a';
-  }
-}
-
-class EqualsClass081 {
-  public method1(): void {
-  }
-
-  public method2(): void {
-  }
-
-  public method3(): void {
-  }
-
-  public method4(): void {
-  }
-}
-
-class EqualsClass082 {
-  public testMethod(): void {
-  }
-}
-
-class EqualsOther082 {
-  public testMethod(): void {
-  }
-}
-
-class EqualsEmpty083 {
 }
 
 export default function InstanceMethodEqualsTest(): void {
@@ -459,7 +356,7 @@ export default function InstanceMethodEqualsTest(): void {
       }
       expect(areEqual).assertEqual(true);
 
-      let crossMatchCount: int = 0;
+      let crossMatchCount: number = 0;
       for (let i = 0; i < methods1.length; i++) {
         for (let j = 0; j < otherMethods.length; j++) {
           if (methods1[i].equals(otherMethods[j])) {

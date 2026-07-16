@@ -145,19 +145,6 @@ class MyClass032 {
   }
 }
 
-class MyClass040 {
-  public returnNumber(): number {
-    return 100;
-  }
-
-  public returnVoid(): void {
-  }
-
-  public returnNever(): never {
-    throw new Error('never');
-  }
-}
-
 class CustomUser041 {
 }
 
@@ -185,10 +172,6 @@ class MyClass044 {
 class MyClass045 {
   public defaultParam(a: number, b: string = 'default'): void {
   }
-}
-
-abstract class AbstractClass046 {
-  public abstract abstractMethod(): void;
 }
 
 class MyClass047 {
@@ -233,12 +216,6 @@ class MyClass051 {
   }
 }
 
-class MyClass052 {
-  public testMethod(): string {
-    return 'test';
-  }
-}
-
 class MyClass053 {
   public $$specialMethod(): void {
   }
@@ -253,18 +230,6 @@ class MyClass053 {
 class MyClass054 {
   public async asyncReturnString(): Promise<string> {
     return 'async';
-  }
-}
-
-class MyClass055 {
-  private _value: number = 0;
-
-  public get value(): number {
-    return this._value;
-  }
-
-  public set value(v: number) {
-    this._value = v;
   }
 }
 
@@ -643,7 +608,7 @@ export default function InstanceMethodGetNameTest(): void {
     it('testInstanceMethodGetName0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass047>();
       let methods = cls.getInstanceMethods();
-      let count: int = 0;
+      let count: number = 0;
       for (let i = 0; i < methods.length; i++) {
         if (methods[i].getName() === 'overloadedMethod') {
           count++;
