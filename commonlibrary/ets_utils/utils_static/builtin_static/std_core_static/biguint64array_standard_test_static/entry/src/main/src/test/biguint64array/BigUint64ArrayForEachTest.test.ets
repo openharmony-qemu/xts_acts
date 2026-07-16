@@ -1992,3 +1992,691 @@ export default function biguint64arrayForEachTest(): void {
       });
       expect(sourceArray.length).assertEqual(3);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1080
+     * @tc.name testBigUint64ArrayForEach108
+     * @tc.desc Verify forEach() leaves buffer offset length view properties unchanged
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buffer = new ArrayBuffer(32);
+      let sourceArray = new BigUint64Array(buffer, 8, 2);
+      sourceArray[0] = 11n;
+      sourceArray[1] = 22n;
+      sourceArray.forEach((_element: bigint, _index: int, _array: BigUint64Array): void => {
+      });
+      expect(sourceArray.length).assertEqual(2);
+      expect(sourceArray.byteOffset).assertEqual(8);
+      expect(sourceArray[0]).assertEqual(11n);
+      expect(sourceArray[1]).assertEqual(22n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1090
+     * @tc.name testBigUint64ArrayForEach109
+     * @tc.desc Verify forEach() on parent array leaves subarray elements unchanged
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let parentArray = new BigUint64Array([10n, 20n, 30n, 40n]);
+      let subArray = parentArray.subarray(1, 3);
+      parentArray.forEach((_element: bigint, _index: int, _array: BigUint64Array): void => {
+      });
+      expect(subArray[0]).assertEqual(20n);
+      expect(subArray[1]).assertEqual(30n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1100
+     * @tc.name testBigUint64ArrayForEach110
+     * @tc.desc Verify forEach() on subarray leaves parent element outside range unchanged
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let parentArray = new BigUint64Array([5n, 15n, 25n, 35n]);
+      let subArray = parentArray.subarray(1, 3);
+      subArray.forEach((_element: bigint, _index: int, _array: BigUint64Array): void => {
+      });
+      expect(parentArray[0]).assertEqual(5n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1110
+     * @tc.name testBigUint64ArrayForEach111
+     * @tc.desc Verify forEach() on subarray leaves parent element inside range unchanged
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let parentArray = new BigUint64Array([2n, 4n, 6n, 8n]);
+      let subArray = parentArray.subarray(1, 2);
+      subArray.forEach((_element: bigint, _index: int, _array: BigUint64Array): void => {
+      });
+      expect(parentArray[1]).assertEqual(4n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1120
+     * @tc.name testBigUint64ArrayForEach112
+     * @tc.desc Verify forEach() on subarray leaves parent array length unchanged
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let parentArray = new BigUint64Array([1n, 3n, 5n, 7n, 9n]);
+      let subArray = parentArray.subarray(0, 2);
+      subArray.forEach((_element: bigint, _index: int, _array: BigUint64Array): void => {
+      });
+      expect(parentArray.length).assertEqual(5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1130
+     * @tc.name testBigUint64ArrayForEach113
+     * @tc.desc Verify forEach() on subarray leaves parent byteLength unchanged
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let parentArray = new BigUint64Array([2n, 4n, 6n]);
+      let subArray = parentArray.subarray(1, 2);
+      subArray.forEach((_element: bigint, _index: int, _array: BigUint64Array): void => {
+      });
+      expect(parentArray.byteLength).assertEqual(24);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1140
+     * @tc.name testBigUint64ArrayForEach114
+     * @tc.desc Verify forEach() on subarray keeps parent buffer sharing observable
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let parentArray = new BigUint64Array([8n, 16n, 24n]);
+      let subArray = parentArray.subarray(0, 1);
+      let savedBuffer = parentArray.buffer;
+      subArray.forEach((_element: bigint, _index: int, _array: BigUint64Array): void => {
+      });
+      parentArray[0] = 999n;
+      let verifyView = new BigUint64Array(savedBuffer, 0);
+      expect(verifyView[0]).assertEqual(999n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1150
+     * @tc.name testBigUint64ArrayForEach115
+     * @tc.desc Verify forEach() on one offset view leaves another offset view unchanged
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buffer = new ArrayBuffer(32);
+      let firstView = new BigUint64Array(buffer, 0);
+      let secondView = new BigUint64Array(buffer, 16);
+      firstView[0] = 42n;
+      firstView[1] = 99n;
+      secondView[0] = 77n;
+      secondView[1] = 88n;
+      firstView.forEach((_element: bigint, _index: int, _array: BigUint64Array): void => {
+      });
+      expect(secondView[0]).assertEqual(77n);
+      expect(secondView[1]).assertEqual(88n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1160
+     * @tc.name testBigUint64ArrayForEach116
+     * @tc.desc Verify forEach() on one full buffer view preserves the other full view values
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buffer = new ArrayBuffer(16);
+      let firstView = new BigUint64Array(buffer, 0);
+      let secondView = new BigUint64Array(buffer, 0);
+      firstView[0] = 33n;
+      firstView[1] = 66n;
+      firstView.forEach((_element: bigint, _index: int, _array: BigUint64Array): void => {
+      });
+      expect(secondView[0]).assertEqual(33n);
+      expect(secondView[1]).assertEqual(66n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1170
+     * @tc.name testBigUint64ArrayForEach117
+     * @tc.desc Verify forEach() on offset view leaves bytes before the view unchanged
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buffer = new ArrayBuffer(24);
+      let fullView = new BigUint64Array(buffer, 0);
+      let offsetView = new BigUint64Array(buffer, 8);
+      fullView[0] = 11n;
+      fullView[1] = 22n;
+      fullView[2] = 33n;
+      offsetView.forEach((_element: bigint, _index: int, _array: BigUint64Array): void => {
+      });
+      expect(fullView[0]).assertEqual(11n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1180
+     * @tc.name testBigUint64ArrayForEach118
+     * @tc.desc Verify forEach() on offset view leaves bytes after the view unchanged
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buffer = new ArrayBuffer(32);
+      let fullView = new BigUint64Array(buffer, 0);
+      let offsetView = new BigUint64Array(buffer, 8, 2);
+      fullView[0] = 5n;
+      fullView[1] = 15n;
+      fullView[2] = 25n;
+      fullView[3] = 35n;
+      offsetView.forEach((_element: bigint, _index: int, _array: BigUint64Array): void => {
+      });
+      expect(fullView[3]).assertEqual(35n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1190
+     * @tc.name testBigUint64ArrayForEach119
+     * @tc.desc Verify innermost subarray forEach() leaves root ancestor elements unchanged
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let rootArray = new BigUint64Array([1n, 2n, 3n, 4n, 5n, 6n]);
+      let middleArray = rootArray.subarray(1, 5);
+      let leafArray = middleArray.subarray(1, 3);
+      leafArray.forEach((_element: bigint, _index: int, _array: BigUint64Array): void => {
+      });
+      expect(rootArray[0]).assertEqual(1n);
+      expect(rootArray[1]).assertEqual(2n);
+      expect(rootArray[2]).assertEqual(3n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1200
+     * @tc.name testBigUint64ArrayForEach120
+     * @tc.desc Verify innermost subarray forEach() leaves middle-level elements unchanged
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let rootArray = new BigUint64Array([10n, 20n, 30n, 40n, 50n]);
+      let middleArray = rootArray.subarray(0, 4);
+      let leafArray = middleArray.subarray(2, 4);
+      leafArray.forEach((_element: bigint, _index: int, _array: BigUint64Array): void => {
+      });
+      expect(middleArray[0]).assertEqual(10n);
+      expect(middleArray[1]).assertEqual(20n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1210
+     * @tc.name testBigUint64ArrayForEach121
+     * @tc.desc Verify forEach() on a middle shared view preserves outer views
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buffer = new ArrayBuffer(40);
+      let leftView = new BigUint64Array(buffer, 0);
+      let middleView = new BigUint64Array(buffer, 8, 2);
+      let rightView = new BigUint64Array(buffer, 24);
+      leftView[0] = 1n;
+      leftView[1] = 2n;
+      rightView[0] = 9n;
+      rightView[1] = 10n;
+      middleView.forEach((_element: bigint, _index: int, _array: BigUint64Array): void => {
+      });
+      expect(leftView[1]).assertEqual(2n);
+      expect(rightView[0]).assertEqual(9n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1220
+     * @tc.name testBigUint64ArrayForEach122
+     * @tc.desc Verify parent forEach() leaves subarray length unchanged
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let parentArray = new BigUint64Array([7n, 14n, 21n, 28n]);
+      let subArray = parentArray.subarray(0, 2);
+      parentArray.forEach((_element: bigint, _index: int, _array: BigUint64Array): void => {
+      });
+      expect(subArray.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1230
+     * @tc.name testBigUint64ArrayForEach123
+     * @tc.desc Verify parent forEach() leaves subarray byteOffset unchanged
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let parentArray = new BigUint64Array([3n, 6n, 9n, 12n]);
+      let subArray = parentArray.subarray(2, 4);
+      let beforeByteOffset: int = subArray.byteOffset;
+      parentArray.forEach((_element: bigint, _index: int, _array: BigUint64Array): void => {
+      });
+      expect(subArray.byteOffset).assertEqual(beforeByteOffset);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1240
+     * @tc.name testBigUint64ArrayForEach124
+     * @tc.desc Verify forEach() on buffer subarray leaves buffer elements outside the view unchanged
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buffer = new ArrayBuffer(32);
+      let fullView = new BigUint64Array(buffer, 0);
+      fullView[0] = 100n;
+      fullView[1] = 200n;
+      fullView[2] = 300n;
+      fullView[3] = 400n;
+      let subArray = fullView.subarray(1, 3);
+      subArray.forEach((_element: bigint, _index: int, _array: BigUint64Array): void => {
+      });
+      expect(fullView[0]).assertEqual(100n);
+      expect(fullView[3]).assertEqual(400n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1250
+     * @tc.name testBigUint64ArrayForEach125
+     * @tc.desc Verify shared buffer byteLength is unchanged across views after forEach()
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buffer = new ArrayBuffer(16);
+      let firstView = new BigUint64Array(buffer, 0);
+      let secondView = new BigUint64Array(buffer, 0);
+      firstView[0] = 13n;
+      firstView.forEach((_element: bigint, _index: int, _array: BigUint64Array): void => {
+      });
+      expect(firstView.buffer.byteLength).assertEqual(16);
+      expect(secondView.buffer.byteLength).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1260
+     * @tc.name testBigUint64ArrayForEach126
+     * @tc.desc Verify forEach() returns undefined after executing callbacks
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = new BigUint64Array([2n, 4n]);
+      let callbackTotal: bigint = 0n;
+      let returnedValue = sourceArray.forEach((element: bigint): void => {
+        callbackTotal = callbackTotal + element;
+      });
+      expect(returnedValue).assertEqual(undefined);
+      expect(callbackTotal).assertEqual(6n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1270
+     * @tc.name testBigUint64ArrayForEach127
+     * @tc.desc Verify forEach() on an ArrayBuffer offset view reports local callback indices in ascending order
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sharedBuffer: ArrayBuffer = new ArrayBuffer(32);
+      let baseView = new BigUint64Array(sharedBuffer);
+      baseView[0] = 10n;
+      baseView[1] = 20n;
+      baseView[2] = 30n;
+      baseView[3] = 40n;
+      let byteOffset: int = 8;
+      let viewLength: int = 2;
+      let windowView = new BigUint64Array(sharedBuffer, byteOffset, viewLength);
+      let capturedIndices: int[] = [];
+      windowView.forEach((_element: bigint, index: int, array: BigUint64Array): void => {
+        capturedIndices.push(index);
+        expect(array.byteOffset).assertEqual(byteOffset);
+      });
+      expect(capturedIndices[0]).assertEqual(0);
+      expect(capturedIndices[1]).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1280
+     * @tc.name testBigUint64ArrayForEach128
+     * @tc.desc Verify forEach() on a subarray observes parent mutation within the live window
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = new BigUint64Array([10n, 20n, 30n, 40n]);
+      let beginIndex: int = 1;
+      let endIndex: int = 3;
+      let windowView = sourceArray.subarray(beginIndex, endIndex);
+      sourceArray[2] = 99n;
+      let observedValue: bigint = 0n;
+      windowView.forEach((element: bigint, index: int): void => {
+        if (index === 1) {
+          observedValue = element;
+        }
+      });
+      expect(observedValue).assertEqual(99n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1290
+     * @tc.name testBigUint64ArrayForEach129
+     * @tc.desc Verify forEach() writes through an ArrayBuffer offset view into the shared base view
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sharedBuffer: ArrayBuffer = new ArrayBuffer(32);
+      let baseView = new BigUint64Array(sharedBuffer);
+      baseView[0] = 1n;
+      baseView[1] = 2n;
+      baseView[2] = 3n;
+      baseView[3] = 4n;
+      let byteOffset: int = 8;
+      let viewLength: int = 2;
+      let windowView = new BigUint64Array(sharedBuffer, byteOffset, viewLength);
+      windowView.forEach((element: bigint, index: int, array: BigUint64Array): void => {
+        array[index] = element + 10n;
+      });
+      expect(baseView[0]).assertEqual(1n);
+      expect(baseView[1]).assertEqual(12n);
+      expect(baseView[2]).assertEqual(13n);
+      expect(baseView[3]).assertEqual(4n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1300
+     * @tc.name testBigUint64ArrayForEach130
+     * @tc.desc Verify forEach() on a nested byteOffset subarray uses local callback indices
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sharedBuffer = new ArrayBuffer(56);
+      let fullView = new BigUint64Array(sharedBuffer, 0, 7);
+      fullView[0] = 10n;
+      fullView[1] = 20n;
+      fullView[2] = 30n;
+      fullView[3] = 40n;
+      fullView[4] = 50n;
+      fullView[5] = 60n;
+      fullView[6] = 70n;
+      let byteOffset: int = 8;
+      let viewLength: int = 5;
+      let offsetView = new BigUint64Array(sharedBuffer, byteOffset, viewLength);
+      let nestedWindow = offsetView.subarray(1, 4);
+      let indexSum: int = 0;
+      let valueTotal: bigint = 0n;
+      nestedWindow.forEach((element: bigint, index: int, array: BigUint64Array): void => {
+        indexSum = indexSum + index;
+        valueTotal = valueTotal + array[index];
+        expect(array[index]).assertEqual(element);
+      });
+      expect(indexSum).assertEqual(3);
+      expect(valueTotal).assertEqual(120n);
+      expect(nestedWindow.byteOffset).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1310
+     * @tc.name testBigUint64ArrayForEach131
+     * @tc.desc Verify forEach() on a slice copy from a byteOffset view ignores later source writes
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sharedBuffer = new ArrayBuffer(48);
+      let fullView = new BigUint64Array(sharedBuffer, 0, 6);
+      fullView[0] = 10n;
+      fullView[1] = 20n;
+      fullView[2] = 30n;
+      fullView[3] = 40n;
+      fullView[4] = 50n;
+      fullView[5] = 60n;
+      let byteOffset: int = 8;
+      let viewLength: int = 4;
+      let offsetView = new BigUint64Array(sharedBuffer, byteOffset, viewLength);
+      let sliceCopy = offsetView.slice(1, 4);
+      fullView[2] = 777n;
+      let valueTotal: bigint = 0n;
+      sliceCopy.forEach((element: bigint): void => {
+        valueTotal = valueTotal + element;
+      });
+      let usesIndependentBuffer: boolean = sliceCopy.buffer !== sharedBuffer;
+      expect(valueTotal).assertEqual(120n);
+      expect(sliceCopy[0]).assertEqual(30n);
+      expect(fullView[2]).assertEqual(777n);
+      expect(usesIndependentBuffer).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1320
+     * @tc.name testBigUint64ArrayForEach132
+     * @tc.desc Verify forEach() on a zero-length byteOffset view does not invoke the callback
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sharedBuffer = new ArrayBuffer(32);
+      let fullView = new BigUint64Array(sharedBuffer, 0, 4);
+      fullView[0] = 10n;
+      fullView[1] = 20n;
+      fullView[2] = 30n;
+      fullView[3] = 40n;
+      let byteOffset: int = 16;
+      let viewLength: int = 0;
+      let zeroLengthView = new BigUint64Array(sharedBuffer, byteOffset, viewLength);
+      let callCount: int = 0;
+      let returnedValue = zeroLengthView.forEach(
+        (_element: bigint, _index: int, _array: BigUint64Array): void => {
+          callCount = callCount + 1;
+        });
+      expect(returnedValue).assertEqual(undefined);
+      expect(callCount).assertEqual(0);
+      expect(zeroLengthView.byteOffset).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1330
+     * @tc.name testBigUint64ArrayForEach133
+     * @tc.desc Verify forEach() on a Set source observes values after duplicate removal
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceSet = new Set<BigInt>();
+      sourceSet.add(7n);
+      sourceSet.add(11n);
+      sourceSet.add(7n);
+      sourceSet.add(15n);
+      let sourceArray = new BigUint64Array(sourceSet);
+      let valueTotal: bigint = 0n;
+      let indexSum: int = 0;
+      let observedLength: int = 0;
+      sourceArray.forEach((element: bigint, index: int, array: BigUint64Array): void => {
+        valueTotal = valueTotal + element;
+        indexSum = indexSum + index;
+        observedLength = array.length;
+      });
+      expect(valueTotal).assertEqual(33n);
+      expect(indexSum).assertEqual(3);
+      expect(observedLength).assertEqual(3);
+      expect(sourceArray.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1340
+     * @tc.name testBigUint64ArrayForEach134
+     * @tc.desc Verify forEach() on an advanced iterator source uses local callback indices
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let baseArray = BigUint64Array.of(5n, 10n, 15n, 20n);
+      let sourceIterator = baseArray.values();
+      sourceIterator.next();
+      let sourceArray = new BigUint64Array(sourceIterator);
+      let firstObservedElement: bigint = 0n;
+      let valueTotal: bigint = 0n;
+      let lastObservedIndex: int = -1;
+      sourceArray.forEach((element: bigint, index: int, array: BigUint64Array): void => {
+        if (index === 0) {
+          firstObservedElement = element;
+        }
+        valueTotal = valueTotal + array[index];
+        lastObservedIndex = index;
+      });
+      expect(firstObservedElement).assertEqual(10n);
+      expect(valueTotal).assertEqual(45n);
+      expect(lastObservedIndex).assertEqual(2);
+      expect(sourceArray.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1350
+     * @tc.name testBigUint64ArrayForEach135
+     * @tc.desc Verify forEach() callback observes an unvisited element changed by an earlier callback
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = new BigUint64Array([2n, 4n, 6n]);
+      let observedTailValue: bigint = 0n;
+      let callCount: int = 0;
+      sourceArray.forEach((element: bigint, index: int, array: BigUint64Array): void => {
+        callCount = callCount + 1;
+        if (index === 0) {
+          array[2] = 99n;
+        }
+        if (index === 2) {
+          observedTailValue = element;
+        }
+      });
+      expect(callCount).assertEqual(3);
+      expect(observedTailValue).assertEqual(99n);
+      expect(sourceArray[2]).assertEqual(99n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1360
+     * @tc.name testBigUint64ArrayForEach136
+     * @tc.desc Verify forEach() current callback value remains a snapshot after writing the same source index
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = new BigUint64Array([10n, 20n, 30n]);
+      let observedCurrentValue: bigint = 0n;
+      sourceArray.forEach((element: bigint, index: int, array: BigUint64Array): void => {
+        if (index === 1) {
+          array[index] = 99n;
+          observedCurrentValue = element;
+        }
+      });
+      expect(observedCurrentValue).assertEqual(20n);
+      expect(sourceArray[1]).assertEqual(99n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1370
+     * @tc.name testBigUint64ArrayForEach137
+     * @tc.desc Verify forEach() later write to a visited index does not change the previously captured value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = new BigUint64Array([2n, 4n, 6n]);
+      let capturedValues: bigint[] = [];
+      sourceArray.forEach((element: bigint, index: int, array: BigUint64Array): void => {
+        capturedValues.push(element);
+        if (index === 2) {
+          array[0] = 77n;
+        }
+      });
+      expect(capturedValues[0]).assertEqual(2n);
+      expect(capturedValues[1]).assertEqual(4n);
+      expect(capturedValues[2]).assertEqual(6n);
+      expect(sourceArray[0]).assertEqual(77n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FOR_EACH_1380
+     * @tc.name testBigUint64ArrayForEach138
+     * @tc.desc Verify forEach() observes an unvisited source value written through an overlapping sibling view
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayForEach138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sharedBuffer: ArrayBuffer = new ArrayBuffer(32);
+      let sourceView = new BigUint64Array(sharedBuffer, 0, 3);
+      let siblingView = new BigUint64Array(sharedBuffer, 8, 2);
+      sourceView[0] = 1n;
+      sourceView[1] = 2n;
+      sourceView[2] = 3n;
+      let observedLaterValue: bigint = 0n;
+      sourceView.forEach((element: bigint, index: int, _array: BigUint64Array): void => {
+        if (index === 0) {
+          siblingView[0] = 9n;
+        }
+        if (index === 1) {
+          observedLaterValue = element;
+        }
+      });
+      expect(observedLaterValue).assertEqual(9n);
+      expect(sourceView[1]).assertEqual(9n);
+      expect(siblingView[0]).assertEqual(9n);
+      expect(sourceView[2]).assertEqual(3n);
+    });
+  });
+}
