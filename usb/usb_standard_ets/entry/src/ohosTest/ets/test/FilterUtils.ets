@@ -22,8 +22,8 @@ const FILTERED_DEVICES: DeviceFilter[] = [
   { vendorId: 65535, productId: 14131 },
 ];
 
-export function isFilteredDevice(device: DeviceFilter): boolean {
+export function isFilteredDevice(vendorId: number, productId: number): boolean {
   return FILTERED_DEVICES.some(item =>
-  device.vendorId === item.vendorId && device.productId === item.productId
+    vendorId === item.vendorId && productId === item.productId
   );
 }
