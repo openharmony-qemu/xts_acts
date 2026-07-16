@@ -64,10 +64,6 @@ function makePoint(x: number, y: number): Point {
   return new Point(x, y)
 }
 
-function usePointCtor(ctor: object): Point {
-  return new Point(0, 0)
-}
-
 interface Drawable {
   draw(): string
 }
@@ -234,7 +230,7 @@ export default function ClassTypeTest() {
      */
     it('testClassValueVariable0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let Ctor = Point
-      let p: Point = new Point(10, 20)
+      let p: Point = new Ctor(10, 20)
       expect(p.x).assertEqual(10)
       expect(p.y).assertEqual(20)
     })
@@ -248,7 +244,7 @@ export default function ClassTypeTest() {
      * @tc.level     Level 2
      */
     it('testClassValueParam0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let p: Point = usePointCtor(Point)
+      let p: TsPoint = createWithCtor(TsPoint, 0, 0)
       expect(p.x).assertEqual(0)
       expect(p.y).assertEqual(0)
     })
@@ -263,7 +259,7 @@ export default function ClassTypeTest() {
      */
     it('testClassValueNew0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let Ctor = Point
-      let p: Point = new Point(3, 4)
+      let p: Point = new Ctor(3, 4)
       expect(p.magnitude()).assertEqual(25)
     })
 

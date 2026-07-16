@@ -50,8 +50,6 @@ export default function ClassOverrideTest() {
     })
     afterAll(() => {
     })
-    afterAll(() => {
-    })
 
     /**
      * @tc.number    SUB_CLASS_OVERRIDE_0100

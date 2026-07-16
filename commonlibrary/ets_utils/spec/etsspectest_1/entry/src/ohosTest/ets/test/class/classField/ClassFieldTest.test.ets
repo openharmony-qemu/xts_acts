@@ -27,10 +27,7 @@ import {
 import utils from '../../Utils';
 import {
   getWithMethodCallValue,
-  getBigintAsString,
-  testSymbolFieldReadId,
-  testSymbolFieldReadName,
-  testSymbolFieldWrite
+  getBigintAsString
 } from './classFieldTsHelper'
 
 class SingleField {
@@ -87,6 +84,38 @@ class StaticFieldClass {
   public static count: number = 0
 }
 
+class InnerObj {
+  public v: number
+  constructor(v: number) {
+    this.v = v
+  }
+}
+
+class OuterWithNew {
+  public inner: InnerObj = new InnerObj(42)
+}
+
+class InnerData {
+  public id: number
+  public label: string
+  constructor(id: number, label: string) {
+    this.id = id
+    this.label = label
+  }
+}
+
+class ClassTypedField {
+  public data: InnerData
+  public items: InnerData[]
+  constructor(data: InnerData, items: InnerData[]) {
+    this.data = data
+    this.items = items
+  }
+  public getFirstItem(): InnerData {
+    return this.items[0]
+  }
+}
+
 class Box<T> {
   public value: T
 
@@ -107,33 +136,7 @@ class ArrayField {
 class HasInitNoReassign {
   public value: number = 42
   public label: string = 'init'
-
   constructor() {
-    // constructor exists but does not reassign fields
-  }
-}
-
-class InnerData {
-  public id: number
-  public label: string
-
-  constructor(id: number, label: string) {
-    this.id = id
-    this.label = label
-  }
-}
-
-class ClassTypedField {
-  public data: InnerData
-  public items: InnerData[]
-
-  constructor(data: InnerData, items: InnerData[]) {
-    this.data = data
-    this.items = items
-  }
-
-  public getFirstItem(): InnerData {
-    return this.items[0]
   }
 }
 
@@ -245,6 +248,27 @@ export default function ClassFieldTest() {
       expect(StaticFieldClass.count).assertEqual(0)
     })
 
+    /**
+     * @tc.number    SUB_CLASS_FIELD_0800
+     * @tc.name      testFieldInitNewExpr0001
+     * @tc.desc      Verify field initializer with new expression
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testFieldInitNewExpr0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let obj: OuterWithNew = new OuterWithNew()
+      expect(obj.inner.v).assertEqual(42)
+    })
+
+    /**
+     * @tc.number    SUB_CLASS_FIELD_0900
+     * @tc.name      testFieldGeneric0001
+     * @tc.desc      Verify generic class field with different types
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it('testFieldGeneric0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let boxNum: Box<number> = new Box<number>(42)
       expect(boxNum.value).assertEqual(42)
@@ -256,7 +280,7 @@ export default function ClassFieldTest() {
     })
 
     /**
-     * @tc.number    SUB_CLASS_FIELD_1300
+     * @tc.number    SUB_CLASS_FIELD_1000
      * @tc.name      testFieldArray0001
      * @tc.desc      Verify array field with number and string element types
      * @tc.size      MediumTest
@@ -275,7 +299,7 @@ export default function ClassFieldTest() {
     })
 
     /**
-     * @tc.number    SUB_CLASS_FIELD_1350
+     * @tc.number    SUB_CLASS_FIELD_1100
      * @tc.name      testFieldInitNoReassign0001
      * @tc.desc      Verify field keeps initializer value when constructor does not reassign
      * @tc.size      MediumTest
@@ -289,7 +313,7 @@ export default function ClassFieldTest() {
     })
 
     /**
-     * @tc.number    SUB_CLASS_FIELD_1400
+     * @tc.number    SUB_CLASS_FIELD_1200
      * @tc.name      testFieldClassTyped0001
      * @tc.desc      Verify field typed as class type and array of class type
      * @tc.size      MediumTest
@@ -307,7 +331,7 @@ export default function ClassFieldTest() {
     })
 
     /**
-     * @tc.number    SUB_CLASS_FIELD_1500
+     * @tc.number    SUB_CLASS_FIELD_1300
      * @tc.name      testFieldBigint0001
      * @tc.desc      Verify bigint field via TS helper
      * @tc.size      MediumTest
@@ -320,7 +344,7 @@ export default function ClassFieldTest() {
     })
 
     /**
-     * @tc.number    SUB_CLASS_FIELD_1900
+     * @tc.number    SUB_CLASS_FIELD_1400
      * @tc.name      testFieldInitMethodCall0001
      * @tc.desc      Verify field initializer calls this.method()
      * @tc.size      MediumTest

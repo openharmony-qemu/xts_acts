@@ -94,6 +94,7 @@ export default function ClassInheritanceTest() {
       let result: number = testPassthroughGeneric()
       expect(result).assertEqual(50)
     })
+
     /**
      * @tc.number    SUB_CLASS_INHERITANCE_0400
      * @tc.name      testClassExtendsBuiltin0001
@@ -109,24 +110,6 @@ export default function ClassInheritanceTest() {
       expect(err.message).assertEqual("not found")
       expect(err.code).assertEqual(404)
       expect(err.getCode()).assertEqual(404)
-    })
-
-    /**
-     * @tc.number    SUB_CLASS_INHERITANCE_0500
-     * @tc.name      testExtendsNull0001
-     * @tc.desc      Verify class extends null creates instance without Object.prototype chain
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testExtendsNull0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      class NullProto {
-        public value: number = 1
-      }
-
-      let obj: NullProto = new NullProto()
-      expect(obj.value).assertEqual(1)
-      expect(obj instanceof NullProto).assertEqual(true)
     })
   })
 }

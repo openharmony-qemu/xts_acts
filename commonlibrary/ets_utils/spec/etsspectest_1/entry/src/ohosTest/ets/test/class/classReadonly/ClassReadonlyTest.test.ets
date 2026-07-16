@@ -46,8 +46,6 @@ export default function ClassReadonlyTest() {
     })
     afterAll(() => {
     })
-    afterAll(() => {
-    })
 
     /**
      * @tc.number    SUB_CLASS_READONLY_0100

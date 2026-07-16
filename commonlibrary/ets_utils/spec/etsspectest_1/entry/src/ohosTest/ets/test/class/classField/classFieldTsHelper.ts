@@ -37,8 +37,8 @@ export function getWithMethodCallValue(): number {
 /*
 * Symbol field test -- Symbol()
  */
-const symFieldId = Symbol("fieldId")
-const symFieldName = Symbol("fieldName")
+const symFieldId : unique symbol= Symbol("fieldId")
+const symFieldName : unique symbol= Symbol("fieldName")
 
 class SymbolField {
   [symFieldId] = 100
