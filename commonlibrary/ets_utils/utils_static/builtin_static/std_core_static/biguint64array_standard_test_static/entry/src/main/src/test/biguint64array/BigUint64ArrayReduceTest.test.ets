@@ -1984,3 +1984,258 @@ export default function biguint64arrayReduceTest(): void {
       expect(sourceView.length).assertEqual(3);
       expect(reducedText).assertEqual('30:0|40:1|50:2|');
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_REDUCE_0970
+     * @tc.name testBigUint64ArrayReduce097
+     * @tc.desc Verify reduce() on a slice copy from byteOffset view ignores later source writes
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayReduce097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sharedBuffer: ArrayBuffer = new ArrayBuffer(40);
+      let fullView = new BigUint64Array(sharedBuffer, 0, 5);
+      fullView[0] = 10n;
+      fullView[1] = 20n;
+      fullView[2] = 30n;
+      fullView[3] = 40n;
+      fullView[4] = 50n;
+      let sourceView = new BigUint64Array(sharedBuffer, 8, 3);
+      let beginIndex: int = 1;
+      let endIndex: int = 3;
+      let sliceCopy = sourceView.slice(beginIndex, endIndex);
+      sourceView[1] = 777n;
+      let reducedValue = sliceCopy.reduce<bigint>((previousValue: bigint, currentValue: bigint,
+        _currentIndex: int, _array: BigUint64Array): bigint => {
+        return previousValue + currentValue;
+      }, 0n);
+      let sharesSliceBuffer: boolean = sliceCopy.buffer === sharedBuffer;
+      expect(sharesSliceBuffer).assertFalse();
+      expect(sliceCopy[0]).assertEqual(30n);
+      expect(sliceCopy[1]).assertEqual(40n);
+      expect(sourceView[1]).assertEqual(777n);
+      expect(reducedValue).assertEqual(70n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_REDUCE_0980
+     * @tc.name testBigUint64ArrayReduce098
+     * @tc.desc Verify reduce() on zero-length byteOffset view returns initial value without callback
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayReduce098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sharedBuffer: ArrayBuffer = new ArrayBuffer(24);
+      let byteOffset: int = 16;
+      let viewLength: int = 0;
+      let sourceView = new BigUint64Array(sharedBuffer, byteOffset, viewLength);
+      let callCount: int = 0;
+      let reducedValue = sourceView.reduce<bigint>((previousValue: bigint, currentValue: bigint,
+        _currentIndex: int, _array: BigUint64Array): bigint => {
+        callCount = callCount + 1;
+        return previousValue + currentValue;
+      }, 88n);
+      expect(sourceView.byteOffset).assertEqual(16);
+      expect(sourceView.length).assertEqual(0);
+      expect(reducedValue).assertEqual(88n);
+      expect(callCount).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_REDUCE_0990
+     * @tc.name testBigUint64ArrayReduce099
+     * @tc.desc Verify reduce() on a Set source accumulates values after duplicate removal
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayReduce099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceSet = new Set<BigInt>();
+      sourceSet.add(7n);
+      sourceSet.add(11n);
+      sourceSet.add(7n);
+      sourceSet.add(15n);
+      let sourceArray = new BigUint64Array(sourceSet);
+      let reducedText = sourceArray.reduce<string>((previousValue: string, currentValue: bigint,
+        currentIndex: int, array: BigUint64Array): string => {
+        return previousValue + currentValue.toString() + ':' + currentIndex.toString() + ':' +
+          array.length.toString() + '|';
+      }, '');
+      expect(sourceArray.length).assertEqual(3);
+      expect(reducedText).assertEqual('7:0:3|11:1:3|15:2:3|');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_REDUCE_1000
+     * @tc.name testBigUint64ArrayReduce100
+     * @tc.desc Verify reduce() without initial value on an advanced iterator source starts from the remaining window
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayReduce100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let baseArray = BigUint64Array.of(5n, 10n, 15n, 20n);
+      let sourceIterator = baseArray.values();
+      sourceIterator.next();
+      let sourceArray = new BigUint64Array(sourceIterator);
+      let firstIndex: int = -1;
+      let firstPreviousValue: bigint = 0n;
+      let firstCurrentValue: bigint = 0n;
+      let reducedValue = sourceArray.reduce((previousValue: bigint, currentValue: bigint,
+        currentIndex: int, _array: BigUint64Array): bigint => {
+        if (firstIndex === -1) {
+          firstIndex = currentIndex;
+          firstPreviousValue = previousValue;
+          firstCurrentValue = currentValue;
+        }
+        return previousValue + currentValue + BigInt(currentIndex);
+      });
+      expect(sourceArray.length).assertEqual(3);
+      expect(firstIndex).assertEqual(1);
+      expect(firstPreviousValue).assertEqual(10n);
+      expect(firstCurrentValue).assertEqual(15n);
+      expect(reducedValue).assertEqual(48n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_REDUCE_1010
+     * @tc.name testBigUint64ArrayReduce101
+     * @tc.desc Verify reduce() without initial value keeps captured previousValue after source mutation
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayReduce101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = new BigUint64Array([5n, 10n, 15n]);
+      let observedPreviousValue: bigint = 0n;
+      let observedCurrentValue: bigint = 0n;
+      let observedFirstIndex: int = -1;
+      let reducedValue = sourceArray.reduce((previousValue: bigint, currentValue: bigint,
+        currentIndex: int, array: BigUint64Array): bigint => {
+        if (observedFirstIndex === -1) {
+          observedFirstIndex = currentIndex;
+          observedPreviousValue = previousValue;
+          observedCurrentValue = currentValue;
+          array[0] = 99n;
+        }
+        return previousValue + currentValue;
+      });
+      expect(observedFirstIndex).assertEqual(1);
+      expect(observedPreviousValue).assertEqual(5n);
+      expect(observedCurrentValue).assertEqual(10n);
+      expect(sourceArray[0]).assertEqual(99n);
+      expect(reducedValue).assertEqual(30n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_REDUCE_1020
+     * @tc.name testBigUint64ArrayReduce102
+     * @tc.desc Verify reduce() with an Array accumulator appends values in left to right order
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayReduce102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = new BigUint64Array([4n, 5n, 6n]);
+      let initialValues: Array<bigint> = [];
+      let reducedValues = sourceArray.reduce<Array<bigint>>((previousValues: Array<bigint>, currentValue: bigint,
+        _currentIndex: int, _array: BigUint64Array): Array<bigint> => {
+        previousValues.push(currentValue);
+        return previousValues;
+      }, initialValues);
+      let returnsInitialArray: boolean = reducedValues === initialValues;
+      expect(returnsInitialArray).assertTrue();
+      expect(reducedValues.length).assertEqual(3);
+      expect(reducedValues[0]).assertEqual(4n);
+      expect(reducedValues[1]).assertEqual(5n);
+      expect(reducedValues[2]).assertEqual(6n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_REDUCE_1030
+     * @tc.name testBigUint64ArrayReduce103
+     * @tc.desc Verify reduce() treats explicit undefined as the generic initial value at index zero
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayReduce103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = new BigUint64Array([9n]);
+      let observedUndefinedInitial: boolean = false;
+      let observedIndex: int = -1;
+      let reducedValue = sourceArray.reduce<bigint | undefined>((previousValue: bigint | undefined,
+        currentValue: bigint, currentIndex: int, _array: BigUint64Array): bigint | undefined => {
+        observedUndefinedInitial = previousValue === undefined;
+        observedIndex = currentIndex;
+        return currentValue;
+      }, undefined);
+      expect(observedUndefinedInitial).assertTrue();
+      expect(observedIndex).assertEqual(0);
+      expect(reducedValue).assertEqual(9n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_REDUCE_1040
+     * @tc.name testBigUint64ArrayReduce104
+     * @tc.desc Verify reduce() without initial value throws TypeError on an empty subarray view
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayReduce104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let parentArray = new BigUint64Array([1n, 2n, 3n]);
+      let beginIndex: int = 1;
+      let endIndex: int = 1;
+      let sourceView = parentArray.subarray(beginIndex, endIndex);
+      let callCount: int = 0;
+      try {
+        sourceView.reduce((previousValue: bigint, currentValue: bigint,
+          _currentIndex: int, _array: BigUint64Array): bigint => {
+          callCount = callCount + 1;
+          return previousValue + currentValue;
+        });
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+      expect(sourceView.length).assertEqual(0);
+      expect(callCount).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_REDUCE_1050
+     * @tc.name testBigUint64ArrayReduce105
+     * @tc.desc Verify reduce() observes an unvisited source value written through an overlapping sibling view
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayReduce105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sharedBuffer: ArrayBuffer = new ArrayBuffer(32);
+      let sourceView = new BigUint64Array(sharedBuffer, 0, 3);
+      let siblingView = new BigUint64Array(sharedBuffer, 8, 2);
+      sourceView[0] = 1n;
+      sourceView[1] = 2n;
+      sourceView[2] = 3n;
+      let observedLaterValue: bigint = 0n;
+      let initialValue: bigint = 0n;
+      let reducedValue = sourceView.reduce<bigint>((previousValue: bigint, currentValue: bigint,
+        currentIndex: int, _array: BigUint64Array): bigint => {
+        if (currentIndex === 0) {
+          siblingView[0] = 9n;
+        }
+        if (currentIndex === 1) {
+          observedLaterValue = currentValue;
+        }
+        return previousValue + currentValue;
+      }, initialValue);
+      expect(observedLaterValue).assertEqual(9n);
+      expect(reducedValue).assertEqual(13n);
+      expect(sourceView[1]).assertEqual(9n);
+      expect(siblingView[0]).assertEqual(9n);
+    });
+
+  });
+}
