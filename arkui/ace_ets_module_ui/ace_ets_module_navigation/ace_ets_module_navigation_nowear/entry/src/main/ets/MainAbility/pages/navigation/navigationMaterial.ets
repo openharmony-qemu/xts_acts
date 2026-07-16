@@ -98,11 +98,12 @@ struct NavigationTitleMaterialDemo {
             .width('100%')
         }.width('100%').height('100%')
       }
+      .id('nav_systemMaterial_true')
       .width('100%')
       .height('30%')
       .mode(NavigationMode.Stack)
       .navDestination(this.MyMap)
-      .title('', {
+      .title('true', {
         systemMaterial: new uiMaterial.ImmersiveMaterial({
           style: uiMaterial.ImmersiveStyle.ULTRA_THIN,
           colorInvert: true,
@@ -121,11 +122,12 @@ struct NavigationTitleMaterialDemo {
             .width('100%')
         }.width('100%').height('100%')
       }
+      .id('nav_systemMaterial_false')
       .width('100%')
       .height('20%')
       .mode(NavigationMode.Stack)
       .navDestination(this.MyMap)
-      .title('', {
+      .title('false', {
         systemMaterial: new uiMaterial.ImmersiveMaterial({
           style: uiMaterial.ImmersiveStyle.THIN,
           materialColor: '#80FF0000',
@@ -145,11 +147,12 @@ struct NavigationTitleMaterialDemo {
             .width('100%')
         }.width('100%').height('100%')
       }
+      .id('nav_systemMaterial_un')
       .width('100%')
       .height('20%')
       .mode(NavigationMode.Stack)
       .navDestination(this.MyMap)
-      .title('', {
+      .title('un', {
         systemMaterial: new uiMaterial.ImmersiveMaterial({
           style: uiMaterial.ImmersiveStyle.REGULAR,
           materialColor: undefined,
@@ -169,11 +172,12 @@ struct NavigationTitleMaterialDemo {
             .width('100%')
         }.width('100%').height('100%')
       }
+      .id('nav_systemMaterial_null')
       .width('100%')
       .height('20%')
       .mode(NavigationMode.Stack)
       .navDestination(this.MyMap)
-      .title('', {
+      .title('null', {
         systemMaterial: new uiMaterial.ImmersiveMaterial({
           style: uiMaterial.ImmersiveStyle.ULTRA_THICK,
           materialColor: null,
