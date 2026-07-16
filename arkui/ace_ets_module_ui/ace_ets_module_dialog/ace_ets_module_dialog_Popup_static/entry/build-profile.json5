@@ -14,11 +14,7 @@
  */
 {
   "apiType": "stageMode",
-  "buildOption": {
-    "arkOptions": {
-      "runtimeOnly": { "packages": [] }
-    }
-  },
+  "buildOption": {},
   "buildOptionSet": [
     {
       "name": "release",

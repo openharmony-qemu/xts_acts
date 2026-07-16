@@ -15,7 +15,7 @@
  */
 
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium';
+import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { abilityDelegatorRegistry, Driver, ON, MatchPattern, Component } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -74,15 +74,13 @@ export default function PopupNodeTest(): void {
 
       console.info('PopupTest: popupTextOptionsText START');
       let driver = Driver.create();
-      let textComponent:Component | null =
-        await driver.findComponent(ON.text('PopupTextOptions_text_test_value', MatchPattern.EQUALS));
+      let textComponent:Component | null = await driver.findComponent(ON.text('PopupTextOptions_text_test_value', MatchPattern.EQUALS));
       if(textComponent){
         console.info('PopupTest: textComponent object: ' + JSON.stringify(textComponent));
         console.info('PopupTest: textComponent object getText: ' + await textComponent.getText());
         console.info('PopupTest: textComponent object getText: ' + textComponent.getText().toString());
         console.info('PopupTest: textComponent object getType: ' + JSON.stringify(textComponent.getType()));
-        console.info('PopupTest: textComponent object getDescription: ' +
-          JSON.stringify(textComponent.getDescription()));
+        console.info('PopupTest: textComponent object getDescription: ' + JSON.stringify(textComponent.getDescription()));
         expect(textComponent !== null).assertEqual(true);
         console.info('PopupTest: popupTextOptionsText END');
       } else {
@@ -104,8 +102,7 @@ export default function PopupNodeTest(): void {
       console.info('PopupTest: popupTextOptionsFontSize START');
       try {
         const driver = Driver.create();
-        const textComponent =
-          await driver.findComponent(ON.text('PopupTextOptions_text_test_value', MatchPattern.EQUALS));
+        const textComponent = await driver.findComponent(ON.text('PopupTextOptions_text_test_value', MatchPattern.EQUALS));
         expect(!!textComponent).assertEqual(true);
         console.info('PopupTest: textComponent object tree =', JSON.stringify(textComponent));
         console.info('PopupTest: popupTextOptionsFontSize - fontSize should be 20');
@@ -129,8 +126,7 @@ export default function PopupNodeTest(): void {
       console.info('PopupTest: popupTextOptionsFontColor START');
       try {
         const driver = Driver.create();
-        const textComponent =
-          await driver.findComponent(ON.text('PopupTextOptions_text_test_value', MatchPattern.EQUALS));
+        const textComponent = await driver.findComponent(ON.text('PopupTextOptions_text_test_value', MatchPattern.EQUALS));
         expect(!!textComponent).assertEqual(true);
         console.info('PopupTest: textComponent object tree =', JSON.stringify(textComponent));
         console.info('PopupTest: popupTextOptionsFontColor - fontColor should be Color.Red');
@@ -154,15 +150,13 @@ export default function PopupNodeTest(): void {
       console.info('PopupTest: popupTextOptionsFontWeight START');
       try {
         const driver = Driver.create();
-        const titleComponent:Component | null =
-          await driver.findComponent(ON.text('PopupOptions_title_test_value', MatchPattern.EQUALS));
+        const titleComponent:Component | null = await driver.findComponent(ON.text('PopupOptions_title_test_value', MatchPattern.EQUALS));
         if(titleComponent){
           console.info('PopupTest: titleComponent object: ' + JSON.stringify(titleComponent));
           console.info('PopupTest: titleComponent object getText: ' + await titleComponent.getText());
           console.info('PopupTest: titleComponent object getText: ' + titleComponent.getText().toString());
           console.info('PopupTest: titleComponent object getType: ' + JSON.stringify(titleComponent.getType()));
-          console.info('PopupTest: titleComponent object getDescription: ' +
-            JSON.stringify(titleComponent.getDescription()));
+          console.info('PopupTest: titleComponent object getDescription: ' + JSON.stringify(titleComponent.getDescription()));
           expect(!!titleComponent).assertEqual(true);
         }
         console.info('PopupTest: titleComponent object tree =', JSON.stringify(titleComponent));
@@ -187,8 +181,7 @@ export default function PopupNodeTest(): void {
       console.info('PopupTest: popupButtonOptionsText START');
       try {
         const driver = Driver.create();
-        const popupButton =
-          await driver.findComponent(ON.text('PopupButtonOptions_text_test_value', MatchPattern.EQUALS));
+        const popupButton = await driver.findComponent(ON.text('PopupButtonOptions_text_test_value', MatchPattern.EQUALS));
         expect(!!popupButton).assertEqual(true);
         console.info('PopupTest: popupButton object tree =', JSON.stringify(popupButton));
         expect(popupButton !== null).assertEqual(true);
@@ -212,8 +205,7 @@ export default function PopupNodeTest(): void {
       console.info('PopupTest: popupButtonOptionsFontSize START');
       try {
         const driver = Driver.create();
-        const popupButton =
-          await driver.findComponent(ON.text('PopupButtonOptions_text_test_value', MatchPattern.EQUALS));
+        const popupButton = await driver.findComponent(ON.text('PopupButtonOptions_text_test_value', MatchPattern.EQUALS));
         expect(!!popupButton).assertEqual(true);
         console.info('PopupTest: popupButton object tree =', JSON.stringify(popupButton));
         console.info('PopupTest: popupButtonOptionsFontSize - fontSize should be 18');
@@ -237,8 +229,7 @@ export default function PopupNodeTest(): void {
       console.info('PopupTest: popupButtonOptionsFontColor START');
       try {
         const driver = Driver.create();
-        const popupButton =
-          await driver.findComponent(ON.text('PopupButtonOptions_text_test_value', MatchPattern.EQUALS));
+        const popupButton = await driver.findComponent(ON.text('PopupButtonOptions_text_test_value', MatchPattern.EQUALS));
         expect(!!popupButton).assertEqual(true);
         console.info('PopupTest: popupButton object tree =', JSON.stringify(popupButton));
         console.info('PopupTest: popupButtonOptionsFontColor - fontColor should be Color.Blue');
@@ -381,8 +372,7 @@ export default function PopupNodeTest(): void {
       console.info('PopupTest: popupOptionsDirection START');
       try {
         const driver = Driver.create();
-        const textComponent =
-          await driver.findComponent(ON.text('PopupTextOptions_text_test_value', MatchPattern.EQUALS));
+        const textComponent = await driver.findComponent(ON.text('PopupTextOptions_text_test_value', MatchPattern.EQUALS));
         expect(!!textComponent).assertEqual(true);
         console.info('PopupTest: textComponent object tree =', JSON.stringify(textComponent));
         console.info('PopupTest: popupOptionsDirection - direction should be Direction.Rtl');
@@ -406,8 +396,7 @@ export default function PopupNodeTest(): void {
       console.info('PopupTest: popupOptionsMaxWidth START');
       try {
         const driver = Driver.create();
-        const textComponent =
-          await driver.findComponent(ON.text('PopupTextOptions_text_test_value', MatchPattern.EQUALS));
+        const textComponent = await driver.findComponent(ON.text('PopupTextOptions_text_test_value', MatchPattern.EQUALS));
         expect(!!textComponent).assertEqual(true);
         console.info('PopupTest: textComponent object tree =', JSON.stringify(textComponent));
         console.info('PopupTest: popupOptionsMaxWidth - maxWidth should be 300vp');
@@ -477,8 +466,7 @@ export default function PopupNodeTest(): void {
       console.info('PopupTest: popupOptionsTitle START');
       try {
         const driver = Driver.create();
-        const titleComponent =
-          await driver.findComponent(ON.text('PopupOptions_title_test_value', MatchPattern.EQUALS));
+        const titleComponent = await driver.findComponent(ON.text('PopupOptions_title_test_value', MatchPattern.EQUALS));
         console.info('PopupTest: titleComponent object tree =', JSON.stringify(titleComponent));
         expect(titleComponent !== null).assertEqual(true);
         console.info('PopupTest: popupOptionsTitle END');
@@ -501,8 +489,7 @@ export default function PopupNodeTest(): void {
       console.info('PopupTest: popupOptionsOnClose START');
       try {
         const driver = Driver.create();
-        const textComponent =
-          await driver.findComponent(ON.text('PopupTextOptions_text_test_value', MatchPattern.EQUALS));
+        const textComponent = await driver.findComponent(ON.text('PopupTextOptions_text_test_value', MatchPattern.EQUALS));
         expect(!!textComponent).assertEqual(true);
         console.info('PopupTest: textComponent object tree =', JSON.stringify(textComponent));
         console.info('PopupTest: popupOptionsOnClose END');
@@ -525,8 +512,7 @@ export default function PopupNodeTest(): void {
       console.info('PopupTest: popupButtonOptionsAction START');
       try {
         const driver = Driver.create();
-        const popupButton =
-          await driver.findComponent(ON.text('PopupButtonOptions_text_test_value', MatchPattern.EQUALS));
+        const popupButton = await driver.findComponent(ON.text('PopupButtonOptions_text_test_value', MatchPattern.EQUALS));
         expect(!!popupButton).assertEqual(true);
         await ((await driver.findComponent(ON.id('PLACEHOLDER'))) as Component).click();
         await Utils.sleep(SLEEP_TIME);
