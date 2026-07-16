@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, beforeAll, afterAll, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 import { BusinessError } from '@ohos.base';
 import serial from "@ohos.busManager.serial";

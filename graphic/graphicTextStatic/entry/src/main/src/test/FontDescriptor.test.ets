@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import text from "@ohos.graphics.text";
 import { $rawfile, Resource } from '@ohos.arkui.component';
 

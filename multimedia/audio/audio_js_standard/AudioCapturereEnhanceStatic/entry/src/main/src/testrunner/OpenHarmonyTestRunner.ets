@@ -16,7 +16,7 @@
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { BusinessError } from '@ohos.base';
 import { TestRunner } from '@kit.TestKit';
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../hypium/index';
 import hilog from '@ohos.hilog';
 import testsuite from '../test/List.test';
 import { ShellCmdResult } from 'application.shellCmdResult';

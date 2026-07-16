@@ -17,7 +17,7 @@
 import MediaTestBase from './MediaTestBase.test';
 import media from '@ohos.multimedia.media';
 import resourceManager from '@ohos.resourceManager';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "../../../hypium/index";
 import image from "@ohos.multimedia.image";
 import { BusinessError } from '@ohos.base';
 import fs, {ReadOptions} from '@ohos.file.fs';

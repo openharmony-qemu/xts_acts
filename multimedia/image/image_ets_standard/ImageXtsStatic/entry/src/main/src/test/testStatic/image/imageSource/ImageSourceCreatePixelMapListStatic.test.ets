@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level ,Hypium} from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level ,Hypium} from '../../../../../../hypium/index';
 import { image } from '@kit.ImageKit';
 import { BusinessError } from '@ohos.base';
 import { fileIo as fs } from '@kit.CoreFileKit';

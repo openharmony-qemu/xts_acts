@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import metadataBinding from '@ohos.multimodalAwareness.metadataBinding'
-import { describe, beforeAll, Hypium, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, beforeAll, Hypium, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import { BusinessError } from '@ohos.base'
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';

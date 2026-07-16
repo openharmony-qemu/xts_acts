@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeEach, afterEach } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level, beforeEach, afterEach } from "../../../hypium/index";
 import { sleep, startAbility, stopAbility } from './Common';
 import picker from '@ohos.file.picker';
 import hilog from '@ohos.hilog';

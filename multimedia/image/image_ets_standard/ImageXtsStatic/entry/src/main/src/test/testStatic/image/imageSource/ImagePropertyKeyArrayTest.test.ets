@@ -16,7 +16,7 @@
 
 import { image } from '@kit.ImageKit';
 import fs from '@ohos.file.fs';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, Hypium, it, Level } from '@ohos/hypium-binary/src/main/indexStatic';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, Hypium, it, Level } from '../../../../../../hypium/index';
 import { common } from '@kit.AbilityKit';
 import { BusinessError } from '@ohos.base';
 

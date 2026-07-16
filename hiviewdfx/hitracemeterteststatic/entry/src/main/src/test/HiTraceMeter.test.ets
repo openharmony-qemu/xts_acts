@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level} from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level} from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import hiTraceMeter from '@ohos.hiTraceMeter'
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识

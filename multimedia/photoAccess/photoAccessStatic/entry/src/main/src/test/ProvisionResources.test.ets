@@ -28,7 +28,7 @@ import {
   TestType,
   Size,
   Level
-} from "@ohos/hypium-binary/src/main/indexStatic";
+} from "../../../hypium/index";
 import Context from "application.Context"
 
 import { sleep, getPermission, pushCreateAsset, pushCreateAssetSingle, driveFn } from './Common.test.ets';

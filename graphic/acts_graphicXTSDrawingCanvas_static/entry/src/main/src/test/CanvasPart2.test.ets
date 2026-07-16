@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Size, Level } from "../../../hypium/index";
 import image from '@ohos.multimedia.image';
 import drawing from '@ohos.graphics.drawing';
 import { getEnumCount } from './Util.test';

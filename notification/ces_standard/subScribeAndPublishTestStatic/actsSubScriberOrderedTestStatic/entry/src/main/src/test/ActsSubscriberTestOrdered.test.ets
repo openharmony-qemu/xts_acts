@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import commonEventManager from '@ohos.commonEventManager'
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium-binary/src/main/indexStatic'
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '../../../hypium/index'
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';

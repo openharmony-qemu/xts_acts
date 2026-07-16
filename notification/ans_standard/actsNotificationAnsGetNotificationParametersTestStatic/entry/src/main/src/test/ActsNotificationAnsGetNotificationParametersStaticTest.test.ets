@@ -21,7 +21,7 @@ import { BusinessError, Callback, RecordData } from '@ohos.base';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { notificationManager, notificationSubscribe } from '@kit.NotificationKit';
 import { emitter } from '@kit.BasicServicesKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../hypium/index';
 import { abilityAccessCtrl, bundleManager, bundleResourceManager, installer, wantAgent } from '@kit.AbilityKit';
 import { Driver, ON } from '@ohos.UiTest';
 import { AppStorage } from '@ohos.arkui.stateManagement';

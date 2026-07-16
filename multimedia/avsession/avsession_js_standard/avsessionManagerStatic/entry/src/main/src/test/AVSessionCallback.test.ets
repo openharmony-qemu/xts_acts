@@ -15,7 +15,7 @@
  */
 
 import avSession from '@ohos.multimedia.avsession';
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from '../../../hypium/index';
 import image from '@ohos.multimedia.image';
 import wantAgent, { WantAgent } from '@ohos.app.ability.wantAgent';
 import Utils from './Util.test';

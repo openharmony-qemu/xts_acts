@@ -15,7 +15,7 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
-import { describe, it, expect, beforeAll, Level, beforeEach, afterEach, afterAll, Hypium } from '@ohos/hypium-binary/src/main/indexStatic'
+import { describe, it, expect, beforeAll, Level, beforeEach, afterEach, afterAll, Hypium } from '../../../../hypium/index'
 import { common } from '@kit.AbilityKit';
 import { fetchOption, getPermission, LOG_TAG } from '../common';
 import { BusinessError } from '@kit.BasicServicesKit';

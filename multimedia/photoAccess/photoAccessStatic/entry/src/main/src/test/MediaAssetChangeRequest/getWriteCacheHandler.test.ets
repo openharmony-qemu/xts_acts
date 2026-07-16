@@ -16,7 +16,7 @@
 
 import fs from '@ohos.file.fs';
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
-import { describe, it, expect, beforeAll, Hypium, TestType, Size, Level } from '@ohos/hypium-binary/src/main/indexStatic'
+import { describe, it, expect, beforeAll, Hypium, TestType, Size, Level } from '../../../../hypium/index'
 import { driveFn, fetchOption, getPermission, sleep } from '../Common.test.ets'
 import Context from "application.Context"
 

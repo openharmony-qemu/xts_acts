@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-binary/src/main/indexStatic';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import { reExportConstValue, ReExportClass, reExportFunction } from '../exports_reexport/ReExportChain';
 import { renamedConstValue, RenamedClass, renamedFunction } from '../exports_reexport/ReExportRename';
 import { ReExportDefaultAsNamedClass } from '../exports_reexport/ReExportDefaultAsNamed';

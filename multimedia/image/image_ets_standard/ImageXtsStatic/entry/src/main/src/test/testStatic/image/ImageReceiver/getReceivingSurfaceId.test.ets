@@ -25,7 +25,7 @@ import {
   expect,
   Level,
   Hypium
-} from '@ohos/hypium-binary/src/main/indexStatic';
+} from '../../../../../../hypium/index';
 import { BusinessError } from '@ohos.base';
 
 const TAG = 'ImageReceiver.GetReceivingSurfaceId'

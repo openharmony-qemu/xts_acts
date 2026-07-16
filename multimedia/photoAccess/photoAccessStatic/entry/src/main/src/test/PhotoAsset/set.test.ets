@@ -17,7 +17,7 @@
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import Context from "application.Context"
-import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll } from "../../../../hypium/index";
 import { BusinessError } from '@ohos.base'
 import hilog from '@ohos.hilog'
 import { sleep, getPermission, driveFn } from '../Common.test.ets'

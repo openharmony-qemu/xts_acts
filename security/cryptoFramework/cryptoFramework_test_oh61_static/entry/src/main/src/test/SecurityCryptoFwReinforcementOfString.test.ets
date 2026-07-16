@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 import { BusinessError } from '@ohos.base';
 import { hkdfCallback, generatorKeyPair, RSA_3072_PRIVATE_KEY_PEM, RSA_3072_PUBLIC_KEY_PEM } from './utils/asymKey/asymKey';

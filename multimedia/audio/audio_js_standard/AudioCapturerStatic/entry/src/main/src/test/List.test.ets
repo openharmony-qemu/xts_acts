@@ -21,7 +21,7 @@ import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
 import { Permissions }  from 'permissions';
 import { Driver, ON, MatchPattern } from '@ohos.UiTest'
 import { UIContext } from '@ohos.arkui.UIContext'
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../hypium/index';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';

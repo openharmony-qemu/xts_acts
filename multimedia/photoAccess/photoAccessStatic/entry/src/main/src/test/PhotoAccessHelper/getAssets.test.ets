@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll } from "@ohos/hypium-binary/src/main/indexStatic";
+ import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll } from "../../../../hypium/index";
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import hilog from '@ohos.hilog'
 import Context from "application.Context"

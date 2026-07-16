@@ -16,7 +16,7 @@
 
 import audio from '@ohos.multimedia.audio';
 import fileio from '@ohos.file.fs';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Hypium, Level, TestType, Size } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Hypium, Level, TestType, Size } from '../../../hypium/index';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Driver } from '@ohos.UiTest';
 import { ON } from '@ohos.UiTest';

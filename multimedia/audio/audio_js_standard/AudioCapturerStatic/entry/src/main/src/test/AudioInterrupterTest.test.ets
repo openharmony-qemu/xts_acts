@@ -16,7 +16,7 @@
 import audio from '@ohos.multimedia.audio';
 import { Driver, ON, MatchPattern } from '@ohos.UiTest'
 import { BusinessError } from '@ohos.base';
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from "../../../hypium/index";
 import Utils from './Util.test';
 
 let render1: audio.AudioRenderer | undefined;

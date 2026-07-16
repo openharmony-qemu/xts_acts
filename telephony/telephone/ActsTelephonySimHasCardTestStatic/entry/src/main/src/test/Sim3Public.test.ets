@@ -16,7 +16,7 @@
 
 import { BusinessError } from '@ohos.base';
 import sim from '@ohos.telephony.sim';
-import { describe, it, expect, beforeAll, Level, TestType, Size } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, it, expect, beforeAll, Level, TestType, Size } from '../../../hypium/index';
 import bundleManager from '@ohos.bundle.bundleManager';
 import account from '@ohos.account.osAccount';
 import hilog from '@ohos.hilog';

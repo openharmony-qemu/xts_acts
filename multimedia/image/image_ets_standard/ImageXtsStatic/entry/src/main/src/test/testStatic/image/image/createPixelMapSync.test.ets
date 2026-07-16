@@ -15,7 +15,7 @@
  */
 
 import { image } from '@kit.ImageKit';
-import {afterAll,afterEach,beforeAll,beforeEach,describe,expect,Hypium, it, Level } from '@ohos/hypium-binary/src/main/indexStatic';
+import {afterAll,afterEach,beforeAll,beforeEach,describe,expect,Hypium, it, Level } from '../../../../../../hypium/index';
 
 const TAG = 'createPixelMapSync';
 

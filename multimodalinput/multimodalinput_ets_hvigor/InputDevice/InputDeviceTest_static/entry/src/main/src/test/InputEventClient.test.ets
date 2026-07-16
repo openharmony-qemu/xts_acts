@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { inputEventClient, KeyCode, Axis, Button, } from '@kit.InputKit';
-import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic"
+import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index"
 import { BusinessError } from "@ohos.base"
 import hilog from '@ohos.hilog'
 

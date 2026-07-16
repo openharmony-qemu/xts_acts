@@ -15,7 +15,7 @@
  */
 
 import avMusicTemplate from '@ohos.multimedia.avMusicTemplate';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-binary/src/main/indexStatic';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { CommonConstants } from '../constants/CommonConstants.test';
 import { CommonUtils } from '../utils/CommonUtil.test';
 import { BusinessError } from '@kit.BasicServicesKit';

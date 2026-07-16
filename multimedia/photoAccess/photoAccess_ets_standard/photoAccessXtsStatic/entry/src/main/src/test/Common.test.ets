@@ -20,7 +20,7 @@ import { BusinessError } from '@ohos.base';
 import { Component, Context } from '@kit.ArkUI';
 import Utils from './Util.test';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { expect, Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { expect, Hypium } from '../../../hypium/index';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import { Driver, MatchPattern, ON } from '@kit.TestKit';

@@ -15,8 +15,8 @@
  */
 
 import media from '@ohos.multimedia.media';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium-binary/src/main/indexStatic";
-import { Hypium } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "../../../hypium/index";
+import { Hypium } from "../../../hypium/index";
 
 export default function AVPlayerMediaSource() {
   let player: media.AVPlayer | undefined;

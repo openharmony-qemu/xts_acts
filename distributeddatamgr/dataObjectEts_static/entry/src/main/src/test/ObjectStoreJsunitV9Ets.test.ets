@@ -24,7 +24,7 @@ import {
   Level,
   Size,
   TestType
-} from "@ohos/hypium-binary/src/main/indexStatic";
+} from "../../../hypium/index";
 import distributedObject from '@ohos.data.distributedDataObject';
 import commonType from '@ohos.data.commonType';
 import Context from 'application.BaseContext'

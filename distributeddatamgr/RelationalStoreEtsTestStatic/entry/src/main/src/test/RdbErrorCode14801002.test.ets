@@ -10,7 +10,7 @@ import {
   Level,
   Size,
   TestType
-} from "@ohos/hypium-binary/src/main/indexStatic";
+} from "../../../hypium/index";
 import relationalStore from '@ohos.data.relationalStore'
 import common from '@ohos.app.ability.common';
 import { AppStorage } from '@ohos.arkui.stateManagement';

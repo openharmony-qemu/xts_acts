@@ -17,7 +17,7 @@
 import notificationManager from '@ohos.notificationManager';
 import hilog from '@ohos.hilog'
 import { Component,Driver,ON,On,MatchPattern,MouseButton,WindowMode,UIElementInfo,UiDirection,PointerMatrix,DisplayRotation } from '@ohos.UiTest'
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "@ohos/hypium-binary/src/main/indexStatic"
+import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index"
 import Utils from './Util.test';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';

@@ -17,7 +17,7 @@
 import { BusinessError } from '@ohos.base';
 import notificationManager from '@ohos.notificationManager'
 import notificationSubscribe from '@ohos.notificationSubscribe';
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import UIAbility from '@ohos.app.ability.UIAbility';

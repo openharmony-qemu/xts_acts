@@ -29,7 +29,7 @@ import {
   PointerMatrix,
   DisplayRotation
 } from '@ohos.UiTest'
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "@ohos/hypium-binary/src/main/indexStatic"
+import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index"
 import Utils from './Util.test';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';

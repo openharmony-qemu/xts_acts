@@ -18,7 +18,7 @@ import { BusinessError } from '@ohos.base';
 import { TestRunner } from '@kit.TestKit';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
-import { Hypium } from '@ohos/hypium-binary/src/main/indexStatic';
+import { Hypium } from '../../../hypium/index';
 import testsuite from '../test/List.test';
 import { ShellCmdResult } from 'application.shellCmdResult';
 

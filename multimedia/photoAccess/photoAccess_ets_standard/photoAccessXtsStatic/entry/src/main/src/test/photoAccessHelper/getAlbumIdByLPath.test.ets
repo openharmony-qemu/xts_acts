@@ -15,7 +15,7 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
-import { describe, it, expect, beforeAll, Level, Hypium } from '@ohos/hypium-binary/src/main/indexStatic'
+import { describe, it, expect, beforeAll, Level, Hypium } from '../../../../hypium/index'
 import {
   sleep,
   getPermission,

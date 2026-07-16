@@ -18,7 +18,7 @@ import { State} from '@ohos.arkui.stateManagement' // should be insert by ui-plu
 import hilog from '@ohos.hilog'
 import { XComponentOptions, XComponentController, XComponent } from 'arkui.component.xcomponent'
 import { XComponentType } from 'arkui.component.enums';
-import { Hypium } from "@ohos/hypium-binary/src/main/indexStatic";
+import { Hypium } from "../../../hypium/index";
 
 class MyController extends XComponentController {
   onSurfaceCreated(surfaceId: string): void {
