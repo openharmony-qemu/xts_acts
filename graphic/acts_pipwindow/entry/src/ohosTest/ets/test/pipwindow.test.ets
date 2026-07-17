@@ -6585,13 +6585,8 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
           });
         } catch (error) {
           console.log(msgStr + ' Failed2 to start pip. Cause:' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
-          if (canIUse("SystemCapability.Window.SessionManager")) {
-            expect(error.code).assertEqual(401);
-            done();
-          } else {
-            expect(error.code).assertEqual(801);
-            done();
-          }
+          expect(error.code).assertEqual(401);
+          done();
         }
       }
 
@@ -6673,13 +6668,8 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         done();
       } catch (err) {
         console.log(msgStr + 'www data Failed to stateChange_Function_ Callback' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
-        if (canIUse("SystemCapability.Window.SessionManager")) {
-          expect(err.code).assertEqual(401);
-          done();
-        } else {
-          expect(err.code).assertEqual(801);
-          done();
-        }
+        expect(err.code).assertEqual(401);
+        done();
       }
     })
 
