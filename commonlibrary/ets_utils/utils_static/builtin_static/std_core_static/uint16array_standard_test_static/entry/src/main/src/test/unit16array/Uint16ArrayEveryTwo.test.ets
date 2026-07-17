@@ -35,14 +35,14 @@ export default function uint16ArrayEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_0100
-     * @tc.name testUint16ArrayEvery02_001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY_TWO_0100
+     * @tc.name testUint16ArrayEveryTwo001
      * @tc.desc Verify undefined false every false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayEvery02_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayEveryTwo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
         let arr = Uint16Array.of(4, 5, 6);
         let callCount = 0;
         let result = arr.every((v) => {
@@ -54,14 +54,14 @@ export default function uint16ArrayEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_0200
-     * @tc.name testUint16ArrayEvery02_002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY_TWO_0200
+     * @tc.name testUint16ArrayEveryTwo002
      * @tc.desc Verify every observes source-array mutation during callback iteration
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayEvery02_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayEveryTwo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         let arr: Uint16Array = Uint16Array.of(1, 2, 3);
         let result: boolean = arr.every((v: number, i: int, a: Uint16Array): boolean => {
@@ -75,14 +75,14 @@ export default function uint16ArrayEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_0300
-     * @tc.name testUint16ArrayEvery02_003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY_TWO_0300
+     * @tc.name testUint16ArrayEveryTwo003
      * @tc.desc Verify every iterates all elements when all satisfy, returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayEvery02_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayEveryTwo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         let arr: Uint16Array = Uint16Array.of(2, 4, 6, 8);
         let callCount: int = 0;
@@ -96,14 +96,14 @@ export default function uint16ArrayEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_0400
-     * @tc.name testUint16ArrayEvery02_004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY_TWO_0400
+     * @tc.name testUint16ArrayEveryTwo004
      * @tc.desc Verify every propagates an Error thrown by the callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayEvery02_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayEveryTwo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         let arr: Uint16Array = Uint16Array.of(4, 5, 6);
         try {
@@ -118,14 +118,14 @@ export default function uint16ArrayEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_0500
-     * @tc.name testUint16ArrayEvery02_005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY_TWO_0500
+     * @tc.name testUint16ArrayEveryTwo005
      * @tc.desc Verify every propagates an Error thrown for the first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayEvery02_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayEveryTwo005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         let arr: Uint16Array = Uint16Array.of(0, 1, 2);
         try {
@@ -143,14 +143,14 @@ export default function uint16ArrayEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_0600
-     * @tc.name testUint16ArrayEvery02_006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY_TWO_0600
+     * @tc.name testUint16ArrayEveryTwo006
      * @tc.desc Verify every returns true without invoking the callback for an empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayEvery02_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayEveryTwo006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         let arr: Uint16Array = new Uint16Array();
         let called: boolean = false;
@@ -164,14 +164,14 @@ export default function uint16ArrayEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_0700
-     * @tc.name testUint16ArrayEvery02_007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY_TWO_0700
+     * @tc.name testUint16ArrayEveryTwo007
      * @tc.desc Verify every
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayEvery02_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayEveryTwo007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         let arr: Uint16Array = Uint16Array.of(10, 20, 30);
         let origLen: int = arr.length;
@@ -181,14 +181,14 @@ export default function uint16ArrayEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_0800
-     * @tc.name testUint16ArrayEvery02_008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY_TWO_0800
+     * @tc.name testUint16ArrayEveryTwo008
      * @tc.desc Verify every
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayEvery02_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayEveryTwo008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         let arr: Uint16Array = Uint16Array.of(10, 20, 30);
         arr.every((v: number): boolean => v > 0);
@@ -199,14 +199,14 @@ export default function uint16ArrayEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_0900
-     * @tc.name testUint16ArrayEvery02_009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY_TWO_0900
+     * @tc.name testUint16ArrayEveryTwo009
      * @tc.desc Verify every
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayEvery02_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayEveryTwo009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         let arr: Uint16Array = Uint16Array.of(1, 0, 2);
         arr.every((v: number): boolean => v > 0);
@@ -218,14 +218,14 @@ export default function uint16ArrayEvery02Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_1000
-     * @tc.name testUint16ArrayEvery02_010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY_TWO_1000
+     * @tc.name testUint16ArrayEveryTwo010
      * @tc.desc Verify every on slice() result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayEvery02_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayEveryTwo010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         let arr: Uint16Array = Uint16Array.of(1, 2, 3, 4, 5);
         let sliced: Uint16Array = arr.slice(1, 4);
@@ -236,14 +236,14 @@ export default function uint16ArrayEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_1100
-     * @tc.name testUint16ArrayEvery02_011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY_TWO_1100
+     * @tc.name testUint16ArrayEveryTwo011
      * @tc.desc Verify every on reversed array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayEvery02_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayEveryTwo011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         let arr: Uint16Array = Uint16Array.of(3, 2, 1);
         arr.reverse();
@@ -253,14 +253,14 @@ export default function uint16ArrayEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_1200
-     * @tc.name testUint16ArrayEvery02_012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY_TWO_1200
+     * @tc.name testUint16ArrayEveryTwo012
      * @tc.desc Verify every on sorted array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayEvery02_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayEveryTwo012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         let arr: Uint16Array = Uint16Array.of(5, 3, 1, 4, 2);
         arr.sort();
@@ -270,14 +270,14 @@ export default function uint16ArrayEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_1300
-     * @tc.name testUint16ArrayEvery02_013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY_TWO_1300
+     * @tc.name testUint16ArrayEveryTwo013
      * @tc.desc Verify every on array created from Uint16Array.from()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayEvery02_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayEveryTwo013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         let arr: Uint16Array = Uint16Array.from([10, 20, 30, 40]);
         let result: boolean = arr.every((v: number): boolean => v % 10 === 0);
@@ -286,14 +286,14 @@ export default function uint16ArrayEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_1400
-     * @tc.name testUint16ArrayEvery02_014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY_TWO_1400
+     * @tc.name testUint16ArrayEveryTwo014
      * @tc.desc Verify every on array after copyWithin()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayEvery02_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayEveryTwo014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         let arr: Uint16Array = Uint16Array.of(1, 2, 3, 4, 5);
         arr.copyWithin(3, 0, 2);
@@ -305,69 +305,61 @@ export default function uint16ArrayEvery02Test(): void {
       }
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_1500
+
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_1600
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_1500
-     * @tc.name testUint16ArrayEvery02_015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY_TWO_1500
+     * @tc.name testUint16ArrayEveryTwo015
      * @tc.desc Verify every first callback false invokes callback once
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayEvery02_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint16ArrayEveryTwo015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let count: int = 0;
             Uint16Array.of(1, 2, 3).every((value: number): boolean => { count++; return false; });
             expect(count).assertEqual(1);
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_1800
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_1600
-     * @tc.name testUint16ArrayEvery02_016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY_TWO_1600
+     * @tc.name testUint16ArrayEveryTwo016
      * @tc.desc Verify every callback receives increasing indices
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayEvery02_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint16ArrayEveryTwo016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let expected: int = 0;
             Uint16Array.of(1, 2, 3).every((value: number, index: int): boolean => { expect(index).assertEqual(expected); expected++; return true; });
             expect(expected).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_1700
-     * @tc.name testUint16ArrayEvery02_017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY_TWO_1700
+     * @tc.name testUint16ArrayEveryTwo017
      * @tc.desc Verify every callback receives the original receiver
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayEvery02_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint16ArrayEveryTwo017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let source: Uint16Array = Uint16Array.of(1, 2);
             let same: boolean = source.every((value: number, index: int, array: Uint16Array): boolean => array === source);
             expect(same).assertTrue();
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_2100
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_1800
-     * @tc.name testUint16ArrayEvery02_018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY_TWO_1800
+     * @tc.name testUint16ArrayEveryTwo018
      * @tc.desc Verify every mutation of an earlier element does not revisit it
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayEvery02_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint16ArrayEveryTwo018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let source: Uint16Array = Uint16Array.of(1, 2);
             let count: int = 0;
             let result: boolean = source.every((value: number, index: int, array: Uint16Array): boolean => {
@@ -378,14 +370,14 @@ export default function uint16ArrayEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_1900
-     * @tc.name testUint16ArrayEvery02_019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY_TWO_1900
+     * @tc.name testUint16ArrayEveryTwo019
      * @tc.desc Verify every alias mutation affects an unvisited element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayEvery02_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint16ArrayEveryTwo019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer: ArrayBuffer = new ArrayBuffer(6);
             let source: Uint16Array = new Uint16Array(buffer);
             source.set([1, 2, 3]);
@@ -397,65 +389,65 @@ export default function uint16ArrayEvery02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_2000
-     * @tc.name testUint16ArrayEvery02_020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY_TWO_2000
+     * @tc.name testUint16ArrayEveryTwo020
      * @tc.desc Verify every offset view excludes values outside its range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayEvery02_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint16ArrayEveryTwo020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let all: Uint16Array = Uint16Array.of(0, 2, 4, 0);
             let view: Uint16Array = new Uint16Array(all.buffer, 2, 2);
             expect(view.every((value: number): boolean => value > 0)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_2100
-     * @tc.name testUint16ArrayEvery02_021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY_TWO_2100
+     * @tc.name testUint16ArrayEveryTwo021
      * @tc.desc Verify every callback-thrown Error propagates
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayEvery02_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint16ArrayEveryTwo021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try { Uint16Array.of(1).every((value: number): boolean => { throw new Error('every marker'); }); expect().assertFail(); } catch (e) { expect(e.message).assertEqual('every marker'); }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_2200
-     * @tc.name testUint16ArrayEvery02_022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY_TWO_2200
+     * @tc.name testUint16ArrayEveryTwo022
      * @tc.desc Verify every maximum Uint16 value satisfies an inclusive predicate
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayEvery02_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint16ArrayEveryTwo022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Uint16Array.of(65535).every((value: number): boolean => value <= 65535)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_2300
-     * @tc.name testUint16ArrayEvery02_023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY_TWO_2300
+     * @tc.name testUint16ArrayEveryTwo023
      * @tc.desc Verify every predicate can compare each value with receiver first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayEvery02_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint16ArrayEveryTwo023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let source: Uint16Array = Uint16Array.of(2, 4, 6);
             expect(source.every((value: number, index: int, array: Uint16Array): boolean => value >= array[0])).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY02_2400
-     * @tc.name testUint16ArrayEvery02_024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_EVERY_TWO_2400
+     * @tc.name testUint16ArrayEveryTwo024
      * @tc.desc Verify every predicate failure at last element visits full length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayEvery02_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint16ArrayEveryTwo024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let count: int = 0;
             let result: boolean = Uint16Array.of(1, 2, 0).every((value: number): boolean => { count++; return value > 0; });
             expect(result).assertFalse();
