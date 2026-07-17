@@ -29,7 +29,8 @@ import {
   AISessionEvent,
   AISessionResultType,
   AISessionType,
-  OnAISessionCallback
+  OnAISessionCallback,
+  OnInputmethodAttachedCallback
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import { Callback, RecordData } from '@ohos.base';
