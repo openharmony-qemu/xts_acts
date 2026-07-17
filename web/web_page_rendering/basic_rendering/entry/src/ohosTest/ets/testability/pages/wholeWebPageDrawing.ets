@@ -173,7 +173,7 @@ struct wholeWebPageDrawing {
           }
         })
       }
-      Web({src: $rawfile("indexdemo.html"), controller: this.controller, renderMode: RenderMode.ASYNC_RENDER})
+      Web({src: 'www.example.com', controller: this.controller, renderMode: RenderMode.ASYNC_RENDER})
         .onPageEnd((event) => {
           console.log('web pageEnd==>' + event.url);
           this.isComplete = 0;

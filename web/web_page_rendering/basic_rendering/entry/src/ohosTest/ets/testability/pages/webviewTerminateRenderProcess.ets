@@ -71,7 +71,7 @@ struct webviewTerminateRenderProcess {
                   break;
                 }
                 this.isComplete = -1;
-                this.controller.loadUrl($rawfile("indexdemo.html"));
+                this.controller.loadUrl('www.baidu.com');
                 await waitForExist(() => this.isComplete, this.str, 0);
                 let result = this.controller.terminateRenderProcess();
                 console.log("terminateRenderProcess result: " + result);
@@ -92,7 +92,7 @@ struct webviewTerminateRenderProcess {
                   break;
                 }
                 this.isComplete = -1;
-                this.controller.loadUrl($rawfile("indexdemo.html"));
+                this.controller.loadUrl('www.baidu.com');
                 await waitForExist(() => this.isComplete, this.str, 0);
                  let result = this.controller.terminateRenderProcess();
                  console.log("terminateRenderProcess result: " + result);
@@ -154,7 +154,7 @@ struct webviewTerminateRenderProcess {
         })
       }
 
-      Web({ src: $rawfile("indexdemo.html"), controller: this.controller })
+      Web({ src: 'https://wrong.host.badssl.com', controller: this.controller })
 
       .onOverScroll((event) => {
           console.info('x = ' + event.xOffset)

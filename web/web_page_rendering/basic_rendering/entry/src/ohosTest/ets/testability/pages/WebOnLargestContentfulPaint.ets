@@ -62,12 +62,12 @@ struct WebOnLargestContentfulPaint {
               let value: boolean = false;
               this.text = [0, 0, 0, 0, 0, 0]
               try {
-                this.controller.loadUrl($rawfile("indexdemo.html"));
+                this.controller.loadUrl('www.example.com');
                 this.isComplete = -1;
                 this.controller.removeCache(true);
                 await waitForExist(() => this.isComplete, this.str, 0);
                 this.isComplete = -1;
-                this.controller.loadUrl($rawfile("indexdemo.html"));
+                this.controller.loadUrl('www.example.com');
                 await waitForExist(() => this.isComplete, this.str, 0);
                 if (
                   this.text[0] != 0
@@ -91,12 +91,12 @@ struct WebOnLargestContentfulPaint {
               let value: boolean = false;
               this.text = [0, 0, 0, 0, 0, 0]
               try {
-                this.controller.loadUrl($rawfile("indexdemo.html"));
+                this.controller.loadUrl('https://www.iana.org/help/example-domains');
                 this.isComplete = -1;
                 this.controller.removeCache(true);
                 await waitForExist(() => this.isComplete, this.str, 0);
                 this.isComplete = -1;
-                this.controller.loadUrl($rawfile("indexdemo.html"));
+                this.controller.loadUrl('https://www.iana.org/help/example-domains');
                 await waitForExist(() => this.isComplete, this.str, 0);
                 if (
                   this.text[0] != 0
@@ -119,7 +119,7 @@ struct WebOnLargestContentfulPaint {
         })
       }
 
-      Web({ src: $rawfile("indexdemo.html"), controller: this.controller })
+      Web({ src: 'www.example.com', controller: this.controller })
         .onPageEnd((event) => {
           console.log('web pageEnd==>' + event.url);
           this.isComplete = 0;
