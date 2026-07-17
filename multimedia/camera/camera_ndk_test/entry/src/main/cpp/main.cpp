@@ -4066,7 +4066,7 @@ static napi_value GetEnumColorSpaceName(napi_env env, napi_callback_info info)
 
     return result;
 }
-	 
+
 static napi_value IsLogViewAssistSupported(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -4523,7 +4523,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"getZoomPointInfos", nullptr, GetZoomPointInfos, nullptr, nullptr, nullptr, napi_default, nullptr },
         {"deleteZoomPointInfo", nullptr, DeleteZoomPointInfo, nullptr, nullptr, nullptr, napi_default, nullptr },
 		
-        {"etEnumColorSpaceName", nullptr, GetEnumColorSpaceName, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getEnumColorSpaceName", nullptr, GetEnumColorSpaceName, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"isLogViewAssistSupported", nullptr, IsLogViewAssistSupported, nullptr, nullptr, nullptr,
             napi_default, nullptr},
         {"setLogViewAssistEnable", nullptr, SetLogViewAssist, nullptr, nullptr, nullptr, napi_default, nullptr},
