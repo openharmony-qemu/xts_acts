@@ -689,8 +689,6 @@ export const getZoomPointInfos: (index: number) => number;
 
 export const deleteZoomPointInfo: (index: number) => number;
 
-export const destroyCameraNotificationInfo: (index: number) => number;
- 	 
 export const getEnumColorSpaceName: (index: number) => number;
 
 export const isLogViewAssistSupported: (index: number) => boolean;
