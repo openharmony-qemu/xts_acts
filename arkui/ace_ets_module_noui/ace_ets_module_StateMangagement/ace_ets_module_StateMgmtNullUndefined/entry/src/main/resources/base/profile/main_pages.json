@@ -1,0 +1,10 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/decoratorCover/EntryOptionsCover",
+    "MainAbility/pages/decoratorCover/StorageDecoratorsCover",
+    "MainAbility/pages/decoratorCover/MonitorValueCover",
+    "MainAbility/pages/decoratorCover/EnvDecoratorCover",
+    "MainAbility/pages/decoratorCover/ReuseOptionsCover"
+  ]
+}
