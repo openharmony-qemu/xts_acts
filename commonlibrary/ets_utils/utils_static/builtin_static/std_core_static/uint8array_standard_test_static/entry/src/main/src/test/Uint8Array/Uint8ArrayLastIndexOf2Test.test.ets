@@ -156,7 +156,7 @@ export default function Uint8ArrayLastIndexOf2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_LAST_INDEX_OF2_0900
      * @tc.name testUint8ArrayLastIndexOf009
-     * @tc.desc Verify return type is number when searchElement=256 overflow truncation
+     * @tc.desc Verify return type is number when searchElement=256, no overflow truncation, returns -1
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -164,13 +164,13 @@ export default function Uint8ArrayLastIndexOf2Test(): void {
     it('testUint8ArrayLastIndexOf009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint8Array = new Uint8Array([0, 1]);
       const r: number = arr.lastIndexOf(256);
-      expect(r).assertEqual(0);
+      expect(r).assertEqual(-1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_LAST_INDEX_OF2_1000
      * @tc.name testUint8ArrayLastIndexOf010
-     * @tc.desc Verify return type is number when searchElement=-1 wraparound
+     * @tc.desc Verify return type is number when searchElement=-1, no wraparound, returns -1
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -178,7 +178,7 @@ export default function Uint8ArrayLastIndexOf2Test(): void {
     it('testUint8ArrayLastIndexOf010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint8Array = new Uint8Array([255]);
       const r: number = arr.lastIndexOf(-1);
-      expect(r).assertEqual(0);
+      expect(r).assertEqual(-1);
     });
 
     /**
@@ -612,7 +612,7 @@ export default function Uint8ArrayLastIndexOf2Test(): void {
     it('testUint8ArrayLastIndexOf041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint8Array = new Uint8Array([0, 1]);
       const r: int = arr.lastIndexOf(256);
-      expect(r).assertEqual(0);
+      expect(r).assertEqual(-1);
     });
 
     /**
@@ -626,7 +626,7 @@ export default function Uint8ArrayLastIndexOf2Test(): void {
     it('testUint8ArrayLastIndexOf042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint8Array = new Uint8Array([255, 0]);
       const r: int = arr.lastIndexOf(-1);
-      expect(r).assertEqual(0);
+      expect(r).assertEqual(-1);
     });
 
     /**
@@ -646,7 +646,7 @@ export default function Uint8ArrayLastIndexOf2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_LAST_INDEX_OF2_4400
      * @tc.name testUint8ArrayLastIndexOf044
-     * @tc.desc Verify searchElement=0x100 truncated to 0 finds 0 value
+     * @tc.desc Verify searchElement=0x100 does not truncate to 0, 0x100 !== 0, returns -1
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -654,7 +654,7 @@ export default function Uint8ArrayLastIndexOf2Test(): void {
     it('testUint8ArrayLastIndexOf044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint8Array = new Uint8Array([0, 1]);
       const r: int = arr.lastIndexOf(0x100);
-      expect(r).assertEqual(0);
+      expect(r).assertEqual(-1);
     });
 
     /**
