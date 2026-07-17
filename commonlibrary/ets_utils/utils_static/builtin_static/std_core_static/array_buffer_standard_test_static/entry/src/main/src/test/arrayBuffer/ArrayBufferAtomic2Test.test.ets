@@ -3974,3 +3974,2002 @@ export default function arrayBufferAtomic2Test(): void {
       const old = buffer.atomicXorI64(0, 0, Int.toLong(-1));
       expect(old).assertEqual(9223372036854775807);
     });
+
+    /**
+     * @tc.name testArrayBufferAtomic0240
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2400
+     * @tc.desc Verify all I64 operations on 8-byte buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreI64(0, 0, Int.toLong(100000));
+      expect(buffer.atomicLoadI64(0, 0)).assertEqual(Int.toLong(100000));
+      let old = buffer.atomicAddI64(0, 0, Int.toLong(50000));
+      expect(old).assertEqual(Int.toLong(100000));
+      expect(buffer.atomicLoadI64(0, 0)).assertEqual(Int.toLong(150000));
+      old = buffer.atomicSubI64(0, 0, Int.toLong(50000));
+      expect(old).assertEqual(Int.toLong(150000));
+      expect(buffer.atomicLoadI64(0, 0)).assertEqual(Int.toLong(100000));
+      old = buffer.atomicAndI64(0, 0, 0x00000000FFFFFFFF);
+      expect(old).assertEqual(Int.toLong(100000));
+      expect(buffer.atomicLoadI64(0, 0)).assertEqual(Int.toLong(100000));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0241
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2410
+     * @tc.desc Verify Exchange and CAS on 8-byte buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0241', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreI64(0, 0, Int.toLong(1000));
+      const oldEx = buffer.atomicExchangeI64(0, 0, Int.toLong(2000));
+      expect(oldEx).assertEqual(Int.toLong(1000));
+      expect(buffer.atomicLoadI64(0, 0)).assertEqual(Int.toLong(2000));
+      const oldCas = buffer.atomicCompareExchangeI64(0, 0, Int.toLong(2000), Int.toLong(3000));
+      expect(oldCas).assertEqual(Int.toLong(2000));
+      expect(buffer.atomicLoadI64(0, 0)).assertEqual(Int.toLong(3000));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0242
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2420
+     * @tc.desc Verify I64 operations on last valid addr=8 (index=0, byteOffset=8 in 16-byte buffer)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0242', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(16);
+      buffer.atomicStoreI64(0, 8, Int.toLong(-1));
+      expect(buffer.atomicLoadI64(0, 8)).assertEqual(Int.toLong(-1));
+      let old = buffer.atomicAddI64(0, 8, Int.toLong(1));
+      expect(old).assertEqual(Int.toLong(-1));
+      expect(buffer.atomicLoadI64(0, 8)).assertEqual(Int.toLong(0));
+      buffer.atomicStoreI64(0, 8, 9223372036854775807);
+      old = buffer.atomicSubI64(0, 8, Int.toLong(1));
+      expect(old).assertEqual(9223372036854775807);
+      expect(buffer.atomicLoadI64(0, 8)).assertEqual(9223372036854775806);
+      buffer.atomicStoreI64(0, 8, Int.toLong(100));
+      old = buffer.atomicExchangeI64(0, 8, Int.toLong(200));
+      expect(old).assertEqual(Int.toLong(100));
+      expect(buffer.atomicLoadI64(0, 8)).assertEqual(Int.toLong(200));
+      buffer.atomicStoreI64(0, 8, Int.toLong(300));
+      old = buffer.atomicCompareExchangeI64(0, 8, Int.toLong(300), Int.toLong(400));
+      expect(old).assertEqual(Int.toLong(300));
+      expect(buffer.atomicLoadI64(0, 8)).assertEqual(Int.toLong(400));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0243
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2430
+     * @tc.desc Verify I64 at addr 0-7 does not affect addr 8-15
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0243', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(16);
+      buffer.atomicStoreI64(0, 0, 1311768467294899696);
+      buffer.atomicStoreI64(0, 8, -81985529216486896);
+      buffer.atomicAddI64(0, 0, Int.toLong(1));
+      expect(buffer.atomicLoadI64(0, 8)).assertEqual(-81985529216486896);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0244
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2440
+     * @tc.desc Verify I64 Add MAX+1 = MIN
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0244', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreI64(0, 0, 9223372036854775807);
+      buffer.atomicAddI64(0, 0, Int.toLong(1));
+      expect(buffer.atomicLoadI64(0, 0)).assertEqual(-9223372036854775807 - 1);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0245
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2450
+     * @tc.desc Verify I64 Add overflow wraps to -8446744073709551616
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0245', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreI64(0, 0, 5000000000000000000);
+      buffer.atomicAddI64(0, 0, 5000000000000000000);
+      const result = buffer.atomicLoadI64(0, 0);
+      expect(result).assertEqual(-8446744073709551616);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0246
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2460
+     * @tc.desc Verify I64 Sub MIN-1 = MAX
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0246', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreI64(0, 0, -9223372036854775807 - 1);
+      buffer.atomicSubI64(0, 0, Int.toLong(1));
+      expect(buffer.atomicLoadI64(0, 0)).assertEqual(9223372036854775807);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0247
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2470
+     * @tc.desc Verify I64 CAS expected=MIN: Store MIN, CAS(MIN,MAX), Load MAX
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0247', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreI64(0, 0, -9223372036854775807 - 1);
+      const old = buffer.atomicCompareExchangeI64(0, 0, -9223372036854775807 - 1, 9223372036854775807);
+      expect(old).assertEqual(-9223372036854775807 - 1);
+      expect(buffer.atomicLoadI64(0, 0)).assertEqual(9223372036854775807);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0248
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2480
+     * @tc.desc Verify I64 CAS chain: MIN -> -1 -> 0 -> MAX
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0248', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreI64(0, 0, -9223372036854775807 - 1);
+      let old = buffer.atomicCompareExchangeI64(0, 0, -9223372036854775807 - 1, Int.toLong(-1));
+      expect(old).assertEqual(-9223372036854775807 - 1);
+      old = buffer.atomicCompareExchangeI64(0, 0, Int.toLong(-1), Int.toLong(0));
+      expect(old).assertEqual(Int.toLong(-1));
+      old = buffer.atomicCompareExchangeI64(0, 0, Int.toLong(0), 9223372036854775807);
+      expect(old).assertEqual(Int.toLong(0));
+      expect(buffer.atomicLoadI64(0, 0)).assertEqual(9223372036854775807);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0249
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2490
+     * @tc.desc Verify I64 store -1, U64 load returns -1 (same 0xFF...FF)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0249', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreI64(0, 0, Int.toLong(-1));
+      expect(buffer.atomicLoadU64(0, 0)).assertEqual(Int.toLong(-1));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0250
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2500
+     * @tc.desc Verify I64 + I32 non-overlapping coexistence
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(12);
+      buffer.atomicStoreI64(0, 0, Int.toLong(1000000));
+      buffer.atomicStoreI32(0, 8, 50000);
+      expect(buffer.atomicLoadI64(0, 0)).assertEqual(Int.toLong(1000000));
+      expect(buffer.atomicLoadI32(0, 8)).assertEqual(Int.toLong(50000));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0251
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2510
+     * @tc.desc Verify resize(16) then atomicLoadI64 on new area = 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0251', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8, 16);
+      buffer.resize(16);
+      expect(buffer.atomicLoadI64(0, 8)).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0252
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2520
+     * @tc.desc Verify resize(16) then StoreI64 and LoadI64 on new area
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0252', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8, 16);
+      buffer.resize(16);
+      buffer.atomicStoreI64(0, 8, Int.toLong(50000));
+      expect(buffer.atomicLoadI64(0, 8)).assertEqual(Int.toLong(50000));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0253
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2530
+     * @tc.desc Verify resize(16) then AddI64 overflow on new area
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0253', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8, 16);
+      buffer.resize(16);
+      buffer.atomicStoreI64(0, 8, 9223372036854775807);
+      buffer.atomicAddI64(0, 8, Int.toLong(1));
+      expect(buffer.atomicLoadI64(0, 8)).assertEqual(-9223372036854775807 - 1);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0254
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2540
+     * @tc.desc Verify I64 overflow stability: 5 times same buffer MAX+1=MIN
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0254', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      for (let i = 0; i < 5; i++) {
+        buffer.atomicStoreI64(0, 0, 9223372036854775807);
+        buffer.atomicAddI64(0, 0, Int.toLong(1));
+        expect(buffer.atomicLoadI64(0, 0)).assertEqual(-9223372036854775807 - 1);
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0255
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2550
+     * @tc.desc Verify I64 stability with new buffer each time
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0255', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      for (let i = 0; i < 5; i++) {
+        const buffer: ArrayBuffer = new ArrayBuffer(8);
+        buffer.atomicStoreI64(0, 0, Int.toLong(1000));
+        buffer.atomicAddI64(0, 0, Int.toLong(500));
+        buffer.atomicSubI64(0, 0, Int.toLong(200));
+        expect(buffer.atomicLoadI64(0, 0)).assertEqual(Int.toLong(1300));
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0256
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2560
+     * @tc.desc Verify atomicAddU64 returns old max on wrap
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0256', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreU64(0, 0, Int.toLong(-1));
+      const old = buffer.atomicAddU64(0, 0, Int.toLong(1));
+      expect(old).assertEqual(Int.toLong(-1));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0257
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2570
+     * @tc.desc Verify atomicSubU64 returns old 0 on wrap
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0257', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreU64(0, 0, Int.toLong(0));
+      const old = buffer.atomicSubU64(0, 0, Int.toLong(1));
+      expect(old).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0258
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2580
+     * @tc.desc Verify atomicAndU64 returns old max
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0258', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreU64(0, 0, Int.toLong(-1));
+      const old = buffer.atomicAndU64(0, 0, 0x7FFFFFFFFFFFFFFF);
+      expect(old).assertEqual(Int.toLong(-1));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0259
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2590
+     * @tc.desc Verify atomicExchangeU64 returns old high value
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0259', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreU64(0, 0, -9223372036854775807 - 1);
+      const old = buffer.atomicExchangeU64(0, 0, Int.toLong(100));
+      expect(old).assertEqual(-9223372036854775807 - 1);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0260
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2600
+     * @tc.desc Verify all U64 operations on 8-byte buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreU64(0, 0, Int.toLong(1000));
+      expect(buffer.atomicLoadU64(0, 0)).assertEqual(Int.toLong(1000));
+      let old = buffer.atomicAddU64(0, 0, Int.toLong(500));
+      expect(old).assertEqual(Int.toLong(1000));
+      expect(buffer.atomicLoadU64(0, 0)).assertEqual(Int.toLong(1500));
+      old = buffer.atomicSubU64(0, 0, Int.toLong(500));
+      expect(old).assertEqual(Int.toLong(1500));
+      expect(buffer.atomicLoadU64(0, 0)).assertEqual(Int.toLong(1000));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0261
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2610
+     * @tc.desc Verify atomicXorU64 returns old value and self-xor = 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0261', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(8);
+      buf.atomicStoreU64(0, 0, Int.toLong(12345));
+      const old = buf.atomicXorU64(0, 0, Int.toLong(12345));
+      expect(old).assertEqual(Int.toLong(12345));
+      expect(buf.atomicLoadU64(0, 0)).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0262
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2620
+     * @tc.desc Verify Exchange and CAS on 8-byte buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0262', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreU64(0, 0, Int.toLong(1000));
+      const oldEx = buffer.atomicExchangeU64(0, 0, Int.toLong(2000));
+      expect(oldEx).assertEqual(Int.toLong(1000));
+      expect(buffer.atomicLoadU64(0, 0)).assertEqual(Int.toLong(2000));
+      const oldCas = buffer.atomicCompareExchangeU64(0, 0, Int.toLong(2000), Int.toLong(3000));
+      expect(oldCas).assertEqual(Int.toLong(2000));
+      expect(buffer.atomicLoadU64(0, 0)).assertEqual(Int.toLong(3000));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0263
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2630
+     * @tc.desc Verify U64 Add max+1 = 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0263', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreU64(0, 0, Int.toLong(-1));
+      buffer.atomicAddU64(0, 0, Int.toLong(1));
+      expect(buffer.atomicLoadU64(0, 0)).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0264
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2640
+     * @tc.desc Verify U64 Sub 0-1 = wrap to max
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0264', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreU64(0, 0, Int.toLong(0));
+      buffer.atomicSubU64(0, 0, Int.toLong(1));
+      expect(buffer.atomicLoadU64(0, 0)).assertEqual(Int.toLong(-1));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0265
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2650
+     * @tc.desc Verify U64 CAS: Store 0, CAS(0,max), Load max
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0265', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreU64(0, 0, Int.toLong(0));
+      const old = buffer.atomicCompareExchangeU64(0, 0, Int.toLong(0), Int.toLong(-1));
+      expect(old).assertEqual(Int.toLong(0));
+      expect(buffer.atomicLoadU64(0, 0)).assertEqual(Int.toLong(-1));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0266
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2660
+     * @tc.desc Verify U64 CAS chain: 0 -> 2^63 -> max
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0266', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreU64(0, 0, Int.toLong(0));
+      let old = buffer.atomicCompareExchangeU64(0, 0, Int.toLong(0), -9223372036854775807 - 1);
+      expect(old).assertEqual(Int.toLong(0));
+      old = buffer.atomicCompareExchangeU64(0, 0, -9223372036854775807 - 1, Int.toLong(-1));
+      expect(old).assertEqual(-9223372036854775807 - 1);
+      expect(buffer.atomicLoadU64(0, 0)).assertEqual(Int.toLong(-1));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0267
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2670
+     * @tc.desc Verify U64 And clears high bit: max & 0x7FFF... = 2^63-1
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0267', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreU64(0, 0, Int.toLong(-1));
+      buffer.atomicAndU64(0, 0, 9223372036854775807);
+      expect(buffer.atomicLoadU64(0, 0)).assertEqual(9223372036854775807);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0268
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2680
+     * @tc.desc Verify U64 Or sets high bit: 0 | 2^63 = 2^63
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0268', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreU64(0, 0, Int.toLong(0));
+      buffer.atomicOrU64(0, 0, -9223372036854775807 - 1);
+      expect(buffer.atomicLoadU64(0, 0)).assertEqual(-9223372036854775807 - 1);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0269
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2690
+     * @tc.desc Verify resize(16) then atomicLoadU64 on new area = 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0269', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8, 16);
+      buffer.resize(16);
+      expect(buffer.atomicLoadU64(0, 8)).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0270
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2700
+     * @tc.desc Verify resize(16) then StoreU64 and LoadU64 on new area
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8, 16);
+      buffer.resize(16);
+      buffer.atomicStoreU64(0, 8, Int.toLong(50000));
+      expect(buffer.atomicLoadU64(0, 8)).assertEqual(Int.toLong(50000));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0271
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2710
+     * @tc.desc Verify resize(16) then AddU64 wrap on new area
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0271', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8, 16);
+      buffer.resize(16);
+      buffer.atomicStoreU64(0, 8, Int.toLong(-1));
+      buffer.atomicAddU64(0, 8, Int.toLong(1));
+      expect(buffer.atomicLoadU64(0, 8)).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0272
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2720
+     * @tc.desc Verify U64 wrap stability: 5 times same buffer max+1=0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0272', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      for (let i = 0; i < 5; i++) {
+        buffer.atomicStoreU64(0, 0, Int.toLong(-1));
+        buffer.atomicAddU64(0, 0, Int.toLong(1));
+        expect(buffer.atomicLoadU64(0, 0)).assertEqual(Int.toLong(0));
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0273
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2730
+     * @tc.desc Verify U64 stability with new buffer each time
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0273', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      for (let i = 0; i < 5; i++) {
+        const buffer: ArrayBuffer = new ArrayBuffer(8);
+        buffer.atomicStoreU64(0, 0, Int.toLong(1000));
+        buffer.atomicAddU64(0, 0, Int.toLong(500));
+        buffer.atomicSubU64(0, 0, Int.toLong(200));
+        expect(buffer.atomicLoadU64(0, 0)).assertEqual(Int.toLong(1300));
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0274
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2740
+     * @tc.desc Verify atomicAndI64 with large values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0274', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      buf.atomicStoreI64(0, 0, Int.toLong(-1));
+      buf.atomicAndI64(0, 0, -1085102592571150096);
+      const r: long = buf.atomicLoadI64(0, 0);
+      expect(r).assertEqual(-1085102592571150096);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0275
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2750
+     * @tc.desc Verify atomicOrI64 with large values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0275', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      buf.atomicStoreI64(0, 0, 0x0F0F0F0F0F0F0F0F);
+      buf.atomicOrI64(0, 0, -1085102592571150096);
+      const r: long = buf.atomicLoadI64(0, 0);
+      expect(r).assertEqual(Int.toLong(-1));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0276
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2760
+     * @tc.desc Verify atomicExchangeI64 with large values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0276', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      buf.atomicStoreI64(0, 0, Int.toLong(1111111111));
+      buf.atomicExchangeI64(0, 0, 9999999999);
+      const r: long = buf.atomicLoadI64(0, 0);
+      expect(r).assertEqual(9999999999);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0277
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2770
+     * @tc.desc Verify atomicCompareExchangeI64 matches and swaps
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0277', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      buf.atomicStoreI64(0, 0, 5000000000);
+      buf.atomicCompareExchangeI64(0, 0, 5000000000, 8000000000);
+      const r: long = buf.atomicLoadI64(0, 0);
+      expect(r).assertEqual(8000000000);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0278
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2780
+     * @tc.desc Verify atomicLoadI64 returns large value stored
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0278', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      buf.atomicStoreI64(0, 0, 9876543210);
+      const r: long = buf.atomicLoadI64(0, 0);
+      expect(r).assertEqual(9876543210);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0279
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2790
+     * @tc.desc Verify atomicStoreU32 then atomicLoadU32
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0279', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      buf.atomicStoreU32(0, 0, -1296041472);
+      const r: long = buf.atomicLoadU32(0, 0);
+      expect(r).assertEqual(2998925824);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0280
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2800
+     * @tc.desc Verify atomicStoreU64 then atomicLoadU64 for large values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      buf.atomicStoreU64(0, 0, 9000000000000000000);
+      const r: long = buf.atomicLoadU64(0, 0);
+      expect(r).assertEqual(9000000000000000000);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0281
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2810
+     * @tc.desc Verify I8 and I16 in overlapping regions do not interfere
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0281', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(8);
+      buf.atomicStoreI8(0, 0, Int.toByte(10));
+      buf.atomicStoreI16(0, 1, Int.toShort(300));
+      const r8: long = buf.atomicLoadI8(0, 0);
+      const r16: long = buf.atomicLoadI16(0, 1);
+      expect(r8).assertEqual(Int.toLong(10));
+      expect(r16).assertEqual(Int.toLong(300));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0282
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2820
+     * @tc.desc Verify atomicStoreI32 at non-zero byteOffset
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0282', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      buf.atomicStoreI32(0, 8, 42);
+      const r: long = buf.atomicLoadI32(0, 8);
+      expect(r).assertEqual(Int.toLong(42));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0283
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2830
+     * @tc.desc Verify atomicStoreI64 then atomicLoadI64
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0283', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      buf.atomicStoreI64(0, 0, 5000000000);
+      const r: long = buf.atomicLoadI64(0, 0);
+      expect(r).assertEqual(5000000000);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0284
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2840
+     * @tc.desc Verify atomicAddI64 accumulates large values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0284', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      buf.atomicStoreI64(0, 0, 10000000000);
+      buf.atomicAddI64(0, 0, Int.toLong(2000000000));
+      const r: long = buf.atomicLoadI64(0, 0);
+      expect(r).assertEqual(12000000000);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0285
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2850
+     * @tc.desc Verify atomicAddU32 with large value
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0285', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(8);
+      buf.atomicAddU32(0, 0, -1296041472);
+      const r: long = buf.atomicLoadU32(0, 0);
+      expect(r).assertEqual(2998925824);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0286
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2860
+     * @tc.desc Verify atomicStoreU32 then atomicLoadU32 for large uint32 value (4000000000)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0286', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(8);
+      buf.atomicStoreU32(0, 0, -294967296);
+      const r: long = buf.atomicLoadU32(0, 0);
+      expect(r).assertEqual(4000000000);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0287
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2870
+     * @tc.desc Verify atomicAddU64 with large value
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0287', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      const r: long = buf.atomicAddU64(0, 0, 5000000000000);
+      expect(r).assertEqual(Int.toLong(0));
+      expect(buf.atomicLoadU64(0, 0)).assertEqual(5000000000000);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0288
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2880
+     * @tc.desc Verify atomicStoreU64 then atomicLoadU64
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0288', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      buf.atomicStoreU64(0, 0, 6000000000000);
+      const r: long = buf.atomicLoadU64(0, 0);
+      expect(r).assertEqual(6000000000000);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0289
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2890
+     * @tc.desc Verify atomicAddI64 with negative value works correctly
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0289', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      buf.atomicStoreI64(0, 0, Int.toLong(100));
+      buf.atomicAddI64(0, 0, Int.toLong(-50));
+      const r: long = buf.atomicLoadI64(0, 0);
+      expect(r).assertEqual(Int.toLong(50));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0290
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2900
+     * @tc.desc Verify atomicSubI64 large value
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0290', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      buf.atomicStoreI64(0, 0, 10000000000);
+      buf.atomicSubI64(0, 0, 3000000000);
+      const r: long = buf.atomicLoadI64(0, 0);
+      expect(r).assertEqual(7000000000);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0291
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2910
+     * @tc.desc Verify atomicAndI64 with zero clears
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0291', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      buf.atomicStoreI64(0, 0, Int.toLong(-1));
+      buf.atomicAndI64(0, 0, Int.toLong(0));
+      const r: long = buf.atomicLoadI64(0, 0);
+      expect(r).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0292
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2920
+     * @tc.desc Verify atomicOrI64 with all ones sets max
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0292', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      buf.atomicStoreI64(0, 0, Int.toLong(0));
+      buf.atomicOrI64(0, 0, Int.toLong(-1));
+      const r: long = buf.atomicLoadI64(0, 0);
+      expect(r).assertEqual(Int.toLong(-1));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0293
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2930
+     * @tc.desc Verify atomicExchangeI64 zero
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0293', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      buf.atomicStoreI64(0, 0, 9876543210);
+      buf.atomicExchangeI64(0, 0, Int.toLong(0));
+      const r: long = buf.atomicLoadI64(0, 0);
+      expect(r).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0294
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2940
+     * @tc.desc Verify atomicCompareExchangeI64 negative values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0294', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      buf.atomicStoreI64(0, 0, Int.toLong(-100));
+      buf.atomicCompareExchangeI64(0, 0, Int.toLong(-100), Int.toLong(200));
+      const r: long = buf.atomicLoadI64(0, 0);
+      expect(r).assertEqual(Int.toLong(200));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0295
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2950
+     * @tc.desc Verify atomicStoreI64 zero
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0295', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      buf.atomicStoreI64(0, 0, Int.toLong(0));
+      const r: long = buf.atomicLoadI64(0, 0);
+      expect(r).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0296
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2960
+     * @tc.desc Verify atomicAddU64 max value wrap
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0296', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      buf.atomicStoreU64(0, 0, Int.toLong(-1));
+      buf.atomicAddU64(0, 0, Int.toLong(1));
+      const r: long = buf.atomicLoadU64(0, 0);
+      expect(r).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0297
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2970
+     * @tc.desc Verify atomicSubU64 wraps correctly
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0297', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      buf.atomicStoreU64(0, 0, Int.toLong(0));
+      buf.atomicSubU64(0, 0, Int.toLong(1));
+      const r: long = buf.atomicLoadU64(0, 0);
+      expect(r).assertEqual(Int.toLong(-1));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0298
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2980
+     * @tc.desc Verify atomicXorI64 self XOR zero
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0298', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      buf.atomicStoreI64(0, 0, -6066930334832433271);
+      buf.atomicXorI64(0, 0, -6066930334832433271);
+      const r: long = buf.atomicLoadI64(0, 0);
+      expect(r).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0299
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2990
+     * @tc.desc Verify multiple I64 operations accumulate at same index
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0299', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(16);
+      buf.atomicStoreI64(0, 0, Int.toLong(0));
+      buf.atomicAddI64(0, 0, Int.toLong(1000000000));
+      buf.atomicAddI64(0, 0, Int.toLong(2000000000));
+      buf.atomicAddI64(0, 0, 3000000000);
+      const r: long = buf.atomicLoadI64(0, 0);
+      expect(r).assertEqual(6000000000);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3000
+     * @tc.desc Verify I64 operations at different offsets are independent
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(24);
+      buf.atomicStoreI64(0, 0, Int.toLong(1111111111));
+      buf.atomicStoreI64(0, 8, 2222222222);
+      const r0: long = buf.atomicLoadI64(0, 0);
+      const r8: long = buf.atomicLoadI64(0, 8);
+      expect(r0).assertEqual(Int.toLong(1111111111));
+      expect(r8).assertEqual(2222222222);
+    });
+
+
+    /**
+     * @tc.name testArrayBufferAtomic0301
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3010
+     * @tc.desc Verify atomicExchangeU32 swaps large value
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(8);
+      buf.atomicStoreU32(0, 0, 1111111111);
+      buf.atomicExchangeU32(0, 0, -2072745010);
+      const r: long = buf.atomicLoadU32(0, 0);
+      expect(r).assertEqual(2222222286);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0302
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3020
+     * @tc.desc Verify atomicCompareExchangeU32 matches
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0302', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(8);
+      buf.atomicStoreU32(0, 0, -1296041472);
+      buf.atomicCompareExchangeU32(0, 0, -1296041472, -294967296);
+      const r: long = buf.atomicLoadU32(0, 0);
+      expect(r).assertEqual(4000000000);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0303
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3030
+     * @tc.desc Verify atomicCompareExchangeU32 no match
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0303', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(8);
+      buf.atomicStoreU32(0, 0, -1296041472);
+      buf.atomicCompareExchangeU32(0, 0, 1000000000, -294967296);
+      const r: long = buf.atomicLoadU32(0, 0);
+      expect(r).assertEqual(2998925824);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0304
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3040
+     * @tc.desc I16 index out of bounds throws IndexOutOfBoundsError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0304', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicLoadI16(100, 0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0305
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3050
+     * @tc.desc I32 index out of bounds throws IndexOutOfBoundsError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0305', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicLoadI32(100, 0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0306
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3060
+     * @tc.desc I64 index out of bounds throws IndexOutOfBoundsError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0306', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(8);
+      try {
+        buffer.atomicLoadI64(100, 0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0307
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3070
+     * @tc.desc U8 index out of bounds throws IndexOutOfBoundsError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0307', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicLoadU8(100, 0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0308
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3080
+     * @tc.desc U16 index out of bounds throws IndexOutOfBoundsError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0308', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicLoadU16(100, 0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0309
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3090
+     * @tc.desc U32 index out of bounds throws IndexOutOfBoundsError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0309', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicLoadU32(100, 0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0310
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3100
+     * @tc.desc U64 index out of bounds throws IndexOutOfBoundsError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(8);
+      try {
+        buffer.atomicLoadU64(100, 0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0311
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3110
+     * @tc.desc byteOffset out of bounds for I32
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0311', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicLoadI32(0, 4);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0312
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3120
+     * @tc.desc U16 byteOffset out of bounds
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0312', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(2);
+      try {
+        buffer.atomicLoadU16(0, 2);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0313
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3130
+     * @tc.desc U32 byteOffset out of bounds
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0313', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicLoadU32(0, 4);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0314
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3140
+     * @tc.desc U64 byteOffset out of bounds
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0314', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(8);
+      try {
+        buffer.atomicLoadU64(0, 8);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0315
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3150
+     * @tc.desc I8 store on zero-length buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0315', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(0);
+      try {
+        buffer.atomicStoreI8(0, 0, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0316
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3160
+     * @tc.desc I16 store on zero-length buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0316', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(0);
+      try {
+        buffer.atomicStoreI16(0, 0, Int.toShort(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0317
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3170
+     * @tc.desc I32 store on zero-length buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0317', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(0);
+      try {
+        buffer.atomicStoreI32(0, 0, 1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0318
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3180
+     * @tc.desc I64 store on zero-length buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0318', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(0);
+      try {
+        buffer.atomicStoreI64(0, 0, Int.toLong(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0319
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3190
+     * @tc.desc U8 store on zero-length buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0319', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(0);
+      try {
+        buffer.atomicStoreU8(0, 0, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0320
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3200
+     * @tc.desc U16 store on zero-length buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0320', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(0);
+      try {
+        buffer.atomicStoreU16(0, 0, Int.toShort(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0321
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3210
+     * @tc.desc U32 store on zero-length buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0321', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(0);
+      try {
+        buffer.atomicStoreU32(0, 0, 1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0322
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3220
+     * @tc.desc U64 store on zero-length buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0322', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(0);
+      try {
+        buffer.atomicStoreU64(0, 0, Int.toLong(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0323
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3230
+     * @tc.desc I8 add on zero-length buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0323', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(0);
+      try {
+        buffer.atomicAddI8(0, 0, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0324
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3240
+     * @tc.desc I32 add on zero-length buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0324', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(0);
+      try {
+        buffer.atomicAddI32(0, 0, 1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0325
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3250
+     * @tc.desc I64 add on zero-length buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0325', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(0);
+      try {
+        buffer.atomicAddI64(0, 0, Int.toLong(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0326
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3260
+     * @tc.desc U32 add on zero-length buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0326', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(0);
+      try {
+        buffer.atomicAddU32(0, 0, 1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0327
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3270
+     * @tc.desc Verify atomicLoadI8 index out of bounds throws exception (index=9 on 4-byte buffer)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0327', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicLoadI8(9, 0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0328
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3280
+     * @tc.desc Verify atomicStoreI8 index out of bounds throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0328', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicStoreI8(4, 0, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0329
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3290
+     * @tc.desc Verify atomicAddI8 index out of bounds throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0329', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicAddI8(4, 0, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0330
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3300
+     * @tc.desc Verify atomicSubI8 index out of bounds throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0330', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicSubI8(4, 0, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0331
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3310
+     * @tc.desc Verify atomicAndI8 index out of bounds throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0331', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicAndI8(4, 0, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0332
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3320
+     * @tc.desc Verify atomicOrI8 index out of bounds throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0332', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicOrI8(4, 0, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0333
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3330
+     * @tc.desc Verify atomicXorI8 index out of bounds throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0333', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicXorI8(4, 0, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0334
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3340
+     * @tc.desc Verify atomicExchangeI8 index out of bounds throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0334', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicExchangeI8(4, 0, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0335
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3350
+     * @tc.desc Verify atomicCompareExchangeI8 index out of bounds throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0335', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicCompareExchangeI8(4, 0, Int.toByte(0), Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0336
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3360
+     * @tc.desc Verify atomicLoadI8 byteOffset out of bounds throws exception (byteOffset=4 on 4-byte buffer)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0336', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicLoadI8(0, 4);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0337
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3370
+     * @tc.desc Verify atomicStoreI8 byteOffset out of bounds throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0337', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicStoreI8(0, 4, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0338
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3380
+     * @tc.desc Verify atomicLoadI8 index+byteOffset combined out of bounds throws exception (index=2, byteOffset=2 on 4-byte buffer -> addr=4)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0338', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicLoadI8(2, 2);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0339
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3390
+     * @tc.desc Verify atomicStoreI8 index+byteOffset combined out of bounds throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0339', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicStoreI8(2, 2, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0340
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3400
+     * @tc.desc Verify atomicAddI8 index+byteOffset combined out of bounds throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0340', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicAddI8(2, 2, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0341
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3410
+     * @tc.desc Verify atomicSubI8 index+byteOffset combined out of bounds throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0341', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicSubI8(2, 2, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0342
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3420
+     * @tc.desc Verify atomicAndI8 index+byteOffset combined out of bounds throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0342', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicAndI8(2, 2, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0343
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3430
+     * @tc.desc Verify atomicOrI8 index+byteOffset combined out of bounds throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0343', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicOrI8(2, 2, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0344
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3440
+     * @tc.desc Verify atomicXorI8 index+byteOffset combined out of bounds throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0344', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicXorI8(2, 2, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0345
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3450
+     * @tc.desc Verify atomicExchangeI8 index+byteOffset combined out of bounds throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0345', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicExchangeI8(2, 2, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0346
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3460
+     * @tc.desc Verify atomicCompareExchangeI8 index+byteOffset combined out of bounds throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0346', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicCompareExchangeI8(2, 2, Int.toByte(0), Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0347
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3470
+     * @tc.desc Verify atomicLoadI8 with negative index throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0347', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicLoadI8(-1, 0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0348
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3480
+     * @tc.desc Verify atomicLoadI8 with negative byteOffset throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0348', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicLoadI8(0, -1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0349
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3490
+     * @tc.desc Verify atomicStoreI8 with negative index throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0349', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicStoreI8(-1, 0, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0350
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3500
+     * @tc.desc Verify atomicStoreI8 with negative byteOffset throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicStoreI8(0, -1, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0351
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3510
+     * @tc.desc Verify atomicAddI8 with negative index throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0351', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicAddI8(-1, 0, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0352
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3520
+     * @tc.desc Verify atomicSubI8 with negative byteOffset throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0352', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicSubI8(0, -1, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0353
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3530
+     * @tc.desc Verify atomicAndI8 with negative index throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0353', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicAndI8(-1, 0, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0354
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3540
+     * @tc.desc Verify atomicOrI8 with negative byteOffset throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0354', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicOrI8(0, -1, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0355
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3550
+     * @tc.desc Verify atomicXorI8 with negative index throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0355', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicXorI8(-1, 0, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0356
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3560
+     * @tc.desc Verify atomicExchangeI8 with negative byteOffset throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0356', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicExchangeI8(0, -1, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
