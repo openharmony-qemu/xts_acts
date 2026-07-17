@@ -492,6 +492,10 @@ public:
     Camera_ErrorCode GetColorTint(int useCaseCode);
     int32_t GetZoomPointInfos(int useCaseCode);
     Camera_ErrorCode DeleteZoomPointInfo(int useCaseCode);
+	
+    // log view assist
+    bool IsLogViewAssistSupported(int useCaseCode);
+    Camera_ErrorCode SetLogViewAssist(int useCaseCode, bool enable);
 
     Camera_ErrorCode CreatePhotoCaptureSettingExt(int useCaseCode);
     Camera_ErrorCode DestroyPhotoCaptureSettingExt(int useCaseCode);
