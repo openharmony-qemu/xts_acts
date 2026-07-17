@@ -16,6 +16,7 @@
 import usbMgr from '@ohos.usbManager';
 import { UiDriver, BY } from '@ohos.UiTest';
 import CheckEmptyUtils from './CheckEmptyUtils.js';
+import { isFilteredDevice } from './FilterUtils';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 
 let gDeviceList: Array<usbMgr.USBDevice>;
@@ -83,7 +84,8 @@ export default function UsbCoreEtsTest() {
       console.log(TAG, '*************Usb Unit UsbCoreEtsTest Begin*************');
 
       // version > 17  host currentMode = 2 device currentMode = 1
-      gDeviceList = usbMgr.getDevices();
+      let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
+      gDeviceList = deviceList.filter(device => !isFilteredDevice(device.vendorId, device.productId));
       console.info(TAG, 'beforeAll: usb case gDeviceList.length return: ' + JSON.stringify(gDeviceList));
       isDeviceConnected = deviceConnected();
       if (isDeviceConnected) {
@@ -100,7 +102,8 @@ export default function UsbCoreEtsTest() {
 
     beforeEach(() =>  {
       console.info(TAG, 'beforeEach: *************Usb Unit Test  Case*************');
-      gDeviceList = usbMgr.getDevices();
+      let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
+      gDeviceList = deviceList.filter(device => !isFilteredDevice(device.vendorId, device.productId));
       if (isDeviceConnected) {
         devices = gDeviceList[0];
         console.info(TAG, 'beforeEach return devices : ' + JSON.stringify(devices));

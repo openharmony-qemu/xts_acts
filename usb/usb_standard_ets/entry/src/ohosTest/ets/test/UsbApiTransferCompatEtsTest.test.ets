@@ -17,6 +17,7 @@ import usbMgr from '@ohos.usbManager';
 import { UiDriver, BY } from '@ohos.UiTest';
 import { BusinessError } from '@ohos.base'
 import CheckEmptyUtils from './CheckEmptyUtils.js';
+import { isFilteredDevice } from './FilterUtils';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 
 const TAG = "[UsbApiTransferCompatEtsTest]";
@@ -176,7 +177,8 @@ function toClaimInterface(testCaseName: string, pip: usbMgr.USBDevicePipe, tInte
 }
 
 function toReleaseInterface(testCaseName: string) {
-  gDeviceList = usbMgr.getDevices();
+  let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
+  gDeviceList = deviceList.filter(device => !isFilteredDevice(device.vendorId, device.productId));
   testParam = getTransferTestParam();
   let ret = usbMgr.releaseInterface(tmpPipe, testParam.interface);
   console.info(TAG, `usb ${testCaseName} releaseInterface ret: ${ret}`);
@@ -190,7 +192,8 @@ export default function UsbApiTransferCompatEtsTest() {
       console.log(TAG, '*************Usb Unit UsbApiTransferCompatEtsTest Begin*************');
 
       // version > 17  host currentMode = 2 device currentMode = 1
-      gDeviceList = usbMgr.getDevices();
+      let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
+      gDeviceList = deviceList.filter(device => !isFilteredDevice(device.vendorId, device.productId));
       isDeviceConnected = deviceConnected();
       if (isDeviceConnected) {
         let hasRight = usbMgr.hasRight(gDeviceList[0].name);
@@ -210,7 +213,8 @@ export default function UsbApiTransferCompatEtsTest() {
 
     beforeEach(() => {
       console.info(TAG, 'beforeEach: *************Usb Unit Test CaseEx*************');
-      gDeviceList = usbMgr.getDevices();
+      let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
+      gDeviceList = deviceList.filter(device => !isFilteredDevice(device.vendorId, device.productId));
       if (isDeviceConnected) {
         devices = gDeviceList[0];
         console.info(TAG, 'beforeEach return devices : ' + JSON.stringify(devices));

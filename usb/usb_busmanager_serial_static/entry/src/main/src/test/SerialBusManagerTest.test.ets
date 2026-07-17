@@ -89,7 +89,7 @@ export default function SerialBusManagerTest(): void {
     let gPort1: serial.SerialPort | null = null;
     let gPortInfo1: serial.SerialPortInfo | null = null;
 
-    beforeAll(async (done: () => void): Promise<void> => {
+    beforeAll(async (): Promise<void> => {
       console.info(TAG, 'beforeAll start');
       try {
         let portList: serial.SerialPort[] = await serial.getSerialPortList();
@@ -102,31 +102,25 @@ export default function SerialBusManagerTest(): void {
           }
           console.info(TAG, 'beforeAll portInfo: ', JSON.stringify(gPortInfo));
         }
-        done()
       } catch (error) {
         console.info(TAG, 'beforeAll error: ', JSON.stringify(error));
-        done()
       }
     })
 
-    afterAll(async (done: () => void): Promise<void> => {
+    afterAll(async (): Promise<void> => {
       console.info(TAG, 'afterAll');
       if (gPort != null) {
         try {
           await gPort?.close();
-          done()
         } catch (err) {
           console.error(TAG, 'afterAll close error: ', JSON.stringify(err));
-          done()
         }
       }
       if (gPort1 != null) {
         try {
           await gPort1?.close();
-          done()
         } catch (err) {
           console.error(TAG, 'afterAll close error: ', JSON.stringify(err));
-          done()
         }
       }
     })

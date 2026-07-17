@@ -17,7 +17,7 @@ import usbManager from '@ohos.usbManager';
 import { UiDriver, BY } from '@ohos.UiTest';
 import CheckEmptyUtils from './CheckEmptyUtils.js';
 import EventConstants from './EventConstants.js';
-import parameter from '@ohos.systemparameter';
+import { isFilteredDevice } from './FilterUtils.js';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 
 /* usb device pipe test */
@@ -45,7 +45,8 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
     console.info(TAG, 'usb unit begin test getversion :' + Version);
 
     // version > 17  host currentMode = 2 device currentMode = 1
-    gDeviceList = usbManager.getDevices();
+    let deviceList = usbManager.getDevices();
+ 	  gDeviceList = deviceList.filter(device => !isFilteredDevice(device));
     isDeviceConnected = deviceConnected();
     if (isDeviceConnected) {
       let hasRight = usbManager.hasRight(gDeviceList[0].name);
@@ -62,7 +63,8 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
   beforeEach(function () {
     console.info(TAG, 'beforeEach: *************Usb Unit Test Ex Case*************');
-    gDeviceList = usbManager.getDevices();
+    let deviceList = usbManager.getDevices();
+ 	  gDeviceList = deviceList.filter(device => !isFilteredDevice(device));
     console.info(TAG, 'beforeEach return devices : ' + JSON.stringify(gDeviceList));
   })
   afterEach(function () {
@@ -185,7 +187,8 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
 
 
   function toReleaseInterface(testCaseName, conIndex, interIndex) {
-    gDeviceList = usbManager.getDevices();
+    let deviceList = usbManager.getDevices();
+ 	  gDeviceList = deviceList.filter(device => !isFilteredDevice(device));
     let tmpInterface = gDeviceList[0].configs[conIndex].interfaces[interIndex];
     let isClaim = usbManager.releaseInterface(gPipe, tmpInterface);
     console.info(TAG, `usb ${testCaseName} toReleaseInterface ret: ${JSON.stringify(isClaim)}`);
