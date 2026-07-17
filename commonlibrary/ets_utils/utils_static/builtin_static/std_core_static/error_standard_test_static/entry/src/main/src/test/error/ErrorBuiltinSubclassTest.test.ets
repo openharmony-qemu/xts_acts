@@ -115,6 +115,7 @@ export default function ErrorBuiltinSubclassTest(): void {
         throw new ArrayStoreError('<script>alert(1)</script>');
       } catch (e) {
         expect(e instanceof Error).assertTrue();
+        expect(e.name).assertEqual("ArrayStoreError");
         hasStack = e.stack !== undefined;
       }
       expect(hasStack).assertTrue();
@@ -166,6 +167,7 @@ export default function ErrorBuiltinSubclassTest(): void {
         throw new AssertionError('25:00:00');
       } catch (e) {
         expect(e instanceof Error).assertTrue();
+        expect(e.name).assertEqual("AssertionError");
         hasStack = e.stack !== undefined;
       }
       expect(hasStack).assertTrue();
@@ -217,6 +219,7 @@ export default function ErrorBuiltinSubclassTest(): void {
         throw new FormatError('622202********1234');
       } catch (e) {
         expect(e instanceof Error).assertTrue();
+        expect(e.name).assertEqual("FormatError");
         hasStack = e.stack !== undefined;
       }
       expect(hasStack).assertTrue();
@@ -268,6 +271,7 @@ export default function ErrorBuiltinSubclassTest(): void {
         throw new InstantiationError('stack test');
       } catch (e) {
         expect(e instanceof Error).assertTrue();
+        expect(e.name).assertEqual("InstantiationError");
         hasStack = e.stack !== undefined;
       }
       expect(hasStack).assertTrue();
@@ -319,6 +323,7 @@ export default function ErrorBuiltinSubclassTest(): void {
         throw new InternalError('stack test');
       } catch (e) {
         expect(e instanceof Error).assertTrue();
+        expect(e.name).assertEqual("InternalError");
         hasStack = e.stack !== undefined;
       }
       expect(hasStack).assertTrue();

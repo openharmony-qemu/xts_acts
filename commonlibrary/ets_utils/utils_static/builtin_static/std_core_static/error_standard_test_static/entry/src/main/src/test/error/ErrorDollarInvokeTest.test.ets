@@ -1687,11 +1687,14 @@ export default function ErrorDollarInvokeTest(): void {
      */
     it('testErrorDollarInvoke105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = Error.$_invoke('metadata-stable');
-      let summary: string = '';
       for (let i: int = 0; i < 100; i++) {
-        summary = err.name + ':' + err.code + ':' + err.message;
+        let n: string = err.name;
+        let c: int = err.code;
+        let m: string = err.message;
+        expect(n).assertEqual('Error');
+        expect(c).assertEqual(0);
+        expect(m).assertEqual('metadata-stable');
       }
-      expect(summary).assertEqual('Error:0:metadata-stable');
     });
 
     /**

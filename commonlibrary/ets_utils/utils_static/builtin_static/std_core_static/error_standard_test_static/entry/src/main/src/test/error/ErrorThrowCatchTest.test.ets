@@ -178,15 +178,13 @@ export default function ErrorThrowCatchTest(): void {
      * @tc.level Level 2
      */
     it('testErrorThrowCatch006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let isErr: boolean = false;
       let caughtMsg: string = "";
       try {
         throw new Error("instance test");
       } catch (e) {
-        isErr = e instanceof Error;
         caughtMsg = e.message;
+        expect(e.name).assertEqual("Error");
       }
-      expect(isErr).assertTrue();
       expect(caughtMsg).assertEqual("instance test");
     });
 
@@ -535,36 +533,12 @@ export default function ErrorThrowCatchTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_2200
      * @tc.name testErrorThrowCatch022
-     * @tc.desc Verify try-catch-finally all blocks execute in order
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     */
-    it('testErrorThrowCatch022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let trace: string = "";
-      let caughtMsg: string = "";
-      try {
-        trace += "t";
-        throw new Error("test");
-      } catch (e) {
-        trace += "c";
-        caughtMsg = e.message;
-      } finally {
-        trace += "f";
-      }
-      expect(trace).assertEqual("tcf");
-      expect(caughtMsg).assertEqual("test");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_2300
-     * @tc.name testErrorThrowCatch023
      * @tc.desc Verify finally block executes when no exception occurs
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let trace: string = "";
       let err: Error = new Error("not-thrown");
       try {
@@ -579,14 +553,14 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_2400
-     * @tc.name testErrorThrowCatch024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_2300
+     * @tc.name testErrorThrowCatch023
      * @tc.desc Verify caught error can be rethrown to outer catch
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let outerMsg: string = "";
       try {
         try {
@@ -601,14 +575,14 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_2500
-     * @tc.name testErrorThrowCatch025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_2400
+     * @tc.name testErrorThrowCatch024
      * @tc.desc Verify catch-wrap creates new Error preserving original as cause
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let outerMsg: string = "";
       let rootMsg: string = "";
       try {
@@ -626,14 +600,14 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_2600
-     * @tc.name testErrorThrowCatch026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_2500
+     * @tc.name testErrorThrowCatch025
      * @tc.desc Verify multiple catch-wrap levels preserve full cause chain
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let outerMsg: string = "";
       let middleMsg: string = "";
       let rootMsg: string = "";
@@ -658,14 +632,14 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_2700
-     * @tc.name testErrorThrowCatch027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_2600
+     * @tc.name testErrorThrowCatch026
      * @tc.desc Verify 2-level nested try-catch isolation
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let trace: string = "";
       let innerMsg: string = "";
       try {
@@ -683,14 +657,14 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_2800
-     * @tc.name testErrorThrowCatch028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_2700
+     * @tc.name testErrorThrowCatch027
      * @tc.desc Verify 3-level nested try-catch each level catches and rethrows
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let catches: string[] = [];
       let messages: string[] = [];
       try {
@@ -720,14 +694,14 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_2900
-     * @tc.name testErrorThrowCatch029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_2800
+     * @tc.name testErrorThrowCatch028
      * @tc.desc Verify for loop try-catch catches error in each iteration
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let catchCount: number = 0;
       let lastMessage: string = "";
       for (let i: number = 0; i < 5; i++) {
@@ -743,14 +717,14 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_3000
-     * @tc.name testErrorThrowCatch030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_2900
+     * @tc.name testErrorThrowCatch029
      * @tc.desc Verify while loop try-catch catches error each iteration
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let count: number = 0;
       let firstMessage: string = "";
       let i: number = 0;
@@ -770,14 +744,14 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_3100
-     * @tc.name testErrorThrowCatch031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_3000
+     * @tc.name testErrorThrowCatch030
      * @tc.desc Verify throw in for loop body interrupts the loop
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let iterated: number = 0;
       try {
         for (let i: number = 0; i < 10; i++) {
@@ -793,14 +767,14 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_3200
-     * @tc.name testErrorThrowCatch032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_3100
+     * @tc.name testErrorThrowCatch031
      * @tc.desc Verify throw in switch case is caught by outer catch
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let val: number = 2;
         switch (val) {
@@ -817,14 +791,14 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_3300
-     * @tc.name testErrorThrowCatch033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_3200
+     * @tc.name testErrorThrowCatch032
      * @tc.desc Verify throw inside arrow function is caught at call site
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let fn: () => void = (): void => {
         throw new Error("arrow throw");
       };
@@ -836,14 +810,14 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_3400
-     * @tc.name testErrorThrowCatch034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_3300
+     * @tc.name testErrorThrowCatch033
      * @tc.desc Verify try block with return still executes finally
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let trace: string = "";
       const fn = (): string => {
         try {
@@ -863,14 +837,14 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_3500
-     * @tc.name testErrorThrowCatch035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_3400
+     * @tc.name testErrorThrowCatch034
      * @tc.desc Verify exception in finally overrides exception from catch
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let caughtMsg: string = "";
       try {
         try {
@@ -887,14 +861,14 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_3600
-     * @tc.name testErrorThrowCatch036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_3500
+     * @tc.name testErrorThrowCatch035
      * @tc.desc Verify nested finally blocks execute in correct order
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let order: string = "";
       let caughtMsg: string = "";
       try {
@@ -914,14 +888,14 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_3700
-     * @tc.name testErrorThrowCatch037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_3600
+     * @tc.name testErrorThrowCatch036
      * @tc.desc Verify instanceof check in catch block identifies Error type
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         throw new TypeError("type error msg");
       } catch (e) {
@@ -931,14 +905,14 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_3800
-     * @tc.name testErrorThrowCatch038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_3700
+     * @tc.name testErrorThrowCatch037
      * @tc.desc Verify Error properties name/code/message accessible in catch
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = new Error("prop test");
       err.code = 42;
       try {
@@ -951,14 +925,14 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_3900
-     * @tc.name testErrorThrowCatch039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_3800
+     * @tc.name testErrorThrowCatch038
      * @tc.desc Verify modifying error properties in finally is visible
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: Error = new Error("initial");
       try {
         throw e;
@@ -971,14 +945,14 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_4000
-     * @tc.name testErrorThrowCatch040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_3900
+     * @tc.name testErrorThrowCatch039
      * @tc.desc Verify catch can conditionally rethrow based on error message
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let outerMsg: string = "";
       try {
         try {
@@ -996,14 +970,14 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_4100
-     * @tc.name testErrorThrowCatch041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_4000
+     * @tc.name testErrorThrowCatch040
      * @tc.desc Verify execution continues normally after catch recovery
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let trace: string = "";
       try {
         trace += "t";
@@ -1017,66 +991,66 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_4200
-     * @tc.name testErrorThrowCatch042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_4100
+     * @tc.name testErrorThrowCatch041
      * @tc.desc Verify TypeError triggers retry recovery path
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = handleWithRecovery("type");
       expect(result).assertEqual("TypeError: type mismatch: retry with conversion");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_4300
-     * @tc.name testErrorThrowCatch043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_4200
+     * @tc.name testErrorThrowCatch042
      * @tc.desc Verify RangeError triggers clamp recovery path
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = handleWithRecovery("range");
       expect(result).assertEqual("RangeError: out of range: clamp value");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_4400
-     * @tc.name testErrorThrowCatch044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_4300
+     * @tc.name testErrorThrowCatch043
      * @tc.desc Verify generic Error triggers fallback recovery path
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = handleWithRecovery("custom");
       expect(result).assertEqual("CustomError: custom failure: generic fallback");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_4500
-     * @tc.name testErrorThrowCatch045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_4400
+     * @tc.name testErrorThrowCatch044
      * @tc.desc Verify unknown error type triggers default fallback
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = handleWithRecovery("unknown");
       expect(result).assertEqual("Error: unknown error: generic fallback");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_4600
-     * @tc.name testErrorThrowCatch046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_4500
+     * @tc.name testErrorThrowCatch045
      * @tc.desc Verify catch block executes fallback assignment and state is restored
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let state: string = "initial";
       let caughtMsg: string = "";
       try {
@@ -1090,14 +1064,14 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_4700
-     * @tc.name testErrorThrowCatch047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_4600
+     * @tc.name testErrorThrowCatch046
      * @tc.desc Verify Error thrown from nested function call preserves type and message
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inner = (): void => {
         throw new TypeError("nested type error");
       };
@@ -1113,14 +1087,14 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_4800
-     * @tc.name testErrorThrowCatch048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_4700
+     * @tc.name testErrorThrowCatch047
      * @tc.desc Verify Error with cause thrown from inner function preserves cause
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cause: Error = new Error("root");
       let inner = (): void => {
         throw new Error("wrapped", { cause: cause });
@@ -1135,32 +1109,33 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_4900
-     * @tc.name testErrorThrowCatch049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_4800
+     * @tc.name testErrorThrowCatch048
      * @tc.desc Verify RangeError thrown and caught preserves message
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let msg: string = "";
       try {
         throw new RangeError("out of bounds");
       } catch (e) {
         msg = e.message;
+        expect(e.name).assertEqual("RangeError");
       }
       expect(msg).assertEqual("out of bounds");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_5000
-     * @tc.name testErrorThrowCatch050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_4900
+     * @tc.name testErrorThrowCatch049
      * @tc.desc Verify Error thrown inside callback is caught by caller try-catch
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let invoke = (callback: () => void): void => {
         callback();
       };
@@ -1169,19 +1144,20 @@ export default function ErrorThrowCatchTest(): void {
           throw new Error("callback error");
         });
       } catch (e) {
+        expect(e.name).assertEqual("Error");
         expect(e.message).assertEqual("callback error");
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_5100
-     * @tc.name testErrorThrowCatch051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_5000
+     * @tc.name testErrorThrowCatch050
      * @tc.desc Verify thrown BusinessError preserves code and message after catch
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let caughtCode: number = 0;
       let caughtMessage: string = '';
       try {
@@ -1196,14 +1172,14 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_5200
-     * @tc.name testErrorThrowCatch052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_5100
+     * @tc.name testErrorThrowCatch051
      * @tc.desc Verify caught BusinessError can be wrapped as Error cause
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let causeMessage: string = '';
       try {
         throw new BusinessError(504, 'business-origin');
@@ -1216,14 +1192,14 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_5300
-     * @tc.name testErrorThrowCatch053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_5200
+     * @tc.name testErrorThrowCatch052
      * @tc.desc Verify BusinessError stack is readable after throw
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let stackText: string = "";
       try {
         throw new BusinessError(505, 'stack-business');
@@ -1237,14 +1213,14 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_5400
-     * @tc.name testErrorThrowCatch054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_5300
+     * @tc.name testErrorThrowCatch053
      * @tc.desc Verify BusinessError rethrow preserves same object reference
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let original: BusinessError = new BusinessError(506, 'rethrow-business');
       let caughtReference: BusinessError | undefined = undefined;
       try {
@@ -1260,14 +1236,14 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_5500
-     * @tc.name testErrorThrowCatch055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_5400
+     * @tc.name testErrorThrowCatch054
      * @tc.desc Verify nested try finally preserves thrown BusinessError values
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let trace: string = "";
       let caughtCode: number = 0;
       try {
@@ -1286,14 +1262,14 @@ export default function ErrorThrowCatchTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_5600
-     * @tc.name testErrorThrowCatch056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_5500
+     * @tc.name testErrorThrowCatch055
      * @tc.desc Verify nested try-catch with TypeError wrapped as RangeError rethrow
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let outerMsg: string = '';
       try {
         try {
@@ -1303,31 +1279,37 @@ export default function ErrorThrowCatchTest(): void {
         }
       } catch (e) {
         outerMsg = e.message;
+        expect(e.name).assertEqual("RangeError");
       }
       expect(outerMsg).assertEqual('wrapped-range');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_5700
-     * @tc.name testErrorThrowCatch057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_THROW_CATCH_5600
+     * @tc.name testErrorThrowCatch056
      * @tc.desc Verify multiple Error subclasses in sequential try-catch blocks
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorThrowCatch057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorThrowCatch056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let results: string[] = [];
+      let names: string[] = [];
       let errors: Error[] = [new TypeError('t'), new RangeError('r'), new SyntaxError('s')];
       for (let i: int = 0; i < 3; i++) {
         try {
           throw errors[i];
         } catch (e) {
           results.push(e.message);
+          names.push(e.name);
         }
       }
       expect(results[0]).assertEqual('t');
       expect(results[1]).assertEqual('r');
       expect(results[2]).assertEqual('s');
+      expect(names[0]).assertEqual('TypeError');
+      expect(names[1]).assertEqual('RangeError');
+      expect(names[2]).assertEqual('SyntaxError');
     });
   });
 }

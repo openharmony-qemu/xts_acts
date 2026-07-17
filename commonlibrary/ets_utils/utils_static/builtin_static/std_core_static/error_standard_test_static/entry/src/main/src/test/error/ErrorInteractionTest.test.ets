@@ -576,7 +576,6 @@ export default function ErrorInteractionTest(): void {
         try {
           throw new Error("original");
         } catch (e) {
-          // handled
         } finally {
           throw new Error("from finally");
         }
@@ -598,8 +597,8 @@ export default function ErrorInteractionTest(): void {
       let returnSuppressed: boolean = true;
       try {
         try {
-          return; // this return should be suppressed by finally throw
-          returnSuppressed = false; // unreachable
+          return;
+          returnSuppressed = false;
         } finally {
           throw new Error("finally throw suppresses return");
         }
@@ -607,6 +606,7 @@ export default function ErrorInteractionTest(): void {
         expect(e.name).assertEqual("Error");
         expect(e.message).assertEqual("finally throw suppresses return");
       }
+      expect(returnSuppressed).assertTrue();
     });
 
     /**
@@ -788,9 +788,8 @@ export default function ErrorInteractionTest(): void {
           throw new RangeError("range");
         } catch (e) {
           if (e instanceof TypeError) {
-            // handled
           } else {
-            throw e; // rethrow non-TypeError
+            throw e;
           }
         }
       } catch (e) {
@@ -839,6 +838,9 @@ export default function ErrorInteractionTest(): void {
         e.code = -1;
         e.message = "still safe";
         e.name = "SafeError";
+        expect(e.name).assertEqual("SafeError");
+        expect(e.code).assertEqual(-1);
+        expect(e.message).assertEqual("still safe");
       } catch (e) {
         threw = true;
       }
@@ -862,6 +864,11 @@ export default function ErrorInteractionTest(): void {
         let m: string = e.message;
         let ca: Object | undefined = e.cause;
         let s: string | undefined = e.stack;
+        expect(n).assertEqual("Error");
+        expect(c).assertEqual(99);
+        expect(m).assertEqual("access test");
+        expect(ca).assertUndefined();
+        expect(s !== undefined).assertTrue();
       } catch (e) {
         threw = true;
       }

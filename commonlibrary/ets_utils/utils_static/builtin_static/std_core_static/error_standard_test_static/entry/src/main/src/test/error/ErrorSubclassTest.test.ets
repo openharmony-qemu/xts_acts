@@ -1859,7 +1859,6 @@ export default function ErrorSubclassTest(): void {
       }
     });
 
-    // 多分支 catch 类型收窄
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_SUBCLASS_1170
      * @tc.name testErrorSubclass117

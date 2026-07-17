@@ -770,7 +770,6 @@ export default function ErrorToStringTest(): void {
       let msg: string = 'a\tb\nc';
       let e: Error = new Error('Ctrl', msg);
       expect(e.toString()).assertEqual('Ctrl: ' + msg);
-      expect(e.toString()).assertEqual('Ctrl: ' + msg);
     });
 
     /**
@@ -1392,7 +1391,6 @@ export default function ErrorToStringTest(): void {
     it('testErrorToString086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let msg: string = 'before\fafter';
       let e: Error = new Error('FF', msg);
-      expect(e.toString()).assertEqual('FF: ' + msg);
       expect(e.toString()).assertEqual('FF: ' + msg);
     });
 

@@ -1255,8 +1255,10 @@ export default function ErrorAggregateInvokeTest(): void {
       let last = AggregateError.$_invoke([new Error("a")]);
       for (let i = 0; i < 49; i++) {
         last = AggregateError.$_invoke([new Error("a")]);
+        expect(last.errors.length).assertEqual(1);
+        expect(last.errors[0].message).assertEqual("a");
+        expect(last instanceof AggregateError).assertTrue();
       }
-      expect(last.errors.length).assertEqual(1);
     });
 
     /**

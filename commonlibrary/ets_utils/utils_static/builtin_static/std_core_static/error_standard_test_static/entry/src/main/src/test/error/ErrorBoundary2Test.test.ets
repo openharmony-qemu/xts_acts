@@ -419,8 +419,6 @@ export default function ErrorBoundary2Test(): void {
       expect(((l1.cause as Error).message)).assertEqual('\u200B');
     });
 
-    // ===== From ErrorEdgeCaseTest (027~047) =====
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_2700
      * @tc.name testErrorBoundary2027
@@ -739,8 +737,6 @@ export default function ErrorBoundary2Test(): void {
       let e: Error = new Error(ctrlMsg);
       expect(e.message).assertEqual(ctrlMsg);
     });
-
-    // ===== From AdvancedEdgeTest (048~059) =====
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_4800
@@ -1098,14 +1094,14 @@ export default function ErrorBoundary2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_7100
-     * @tc.name testErrorBoundary2071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_7000
+     * @tc.name testErrorBoundary2070
      * @tc.desc Verify constructor(name, code, message) preserves emoji and Chinese in name
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorBoundary2071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorBoundary2070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = new Error('😀测试', 1001, 'name-boundary-emoji');
       expect(err.name).assertEqual('😀测试');
       expect(err.code).assertEqual(1001);
@@ -1113,14 +1109,14 @@ export default function ErrorBoundary2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_7200
-     * @tc.name testErrorBoundary2072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_7100
+     * @tc.name testErrorBoundary2071
      * @tc.desc Verify constructor(name, code, message) preserves replacement character in name
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorBoundary2072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorBoundary2071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = new Error('\uFFFD', 1001, 'name-boundary-replacement');
       expect(err.name).assertEqual('\uFFFD');
       expect(err.code).assertEqual(1001);
@@ -1128,14 +1124,14 @@ export default function ErrorBoundary2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_7300
-     * @tc.name testErrorBoundary2073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_7200
+     * @tc.name testErrorBoundary2072
      * @tc.desc Verify constructor(name, code, message) preserves isolated surrogate in name
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorBoundary2073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorBoundary2072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = new Error('\uDC04', 1001, 'name-boundary-surrogate');
       expect(err.name).assertEqual('\uDC04');
       expect(err.code).assertEqual(1001);
@@ -1143,28 +1139,28 @@ export default function ErrorBoundary2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_7400
-     * @tc.name testErrorBoundary2074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_7300
+     * @tc.name testErrorBoundary2073
      * @tc.desc Verify writing tab character to message property is preserved
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorBoundary2074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorBoundary2073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = new Error('base');
       err.message = '\t';
       expect(err.message).assertEqual('\t');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_7500
-     * @tc.name testErrorBoundary2075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_7400
+     * @tc.name testErrorBoundary2074
      * @tc.desc Verify writing newline character to message property is preserved
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level Level 2
      */
-    it('testErrorBoundary2075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testErrorBoundary2074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: Error = new Error('base');
       err.message = '\n';
       expect(err.message).assertEqual('\n');
