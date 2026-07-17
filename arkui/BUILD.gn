@@ -58,6 +58,7 @@ group("arkui") {
       "ace_c_arkui_test_api20_static:ActsAceCArkUI20StaticTest",
       "ace_c_arkui_test_static:ActsAceCArkUIStaticTest",
       "ace_ets_component_apilack_static:ActsAceEtsApiLackStaticTest",
+      "ace_napi_async_test:ActsAceNapiEtsAsyncTest",
     ]
   } else {
     deps = [
@@ -122,6 +123,7 @@ group("arkui") {
       "ace_c_arkui_test_static:ActsAceCArkUIStaticTest",
       "ace_c_arkui_testwearcrop_static:ActsAceCArkUIWearCropStaticTest",
       "ace_ets_component_apilack_static:ActsAceEtsApiLackStaticTest",
+      "ace_napi_async_test:ActsAceNapiEtsAsyncTest",
     ]
   }
 }
