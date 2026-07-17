@@ -1,12 +1,25 @@
 {
   "app": {
-    "signingConfigs": [],
+    "signingConfigs": [
+      {
+        "name": "default",
+        "material": {
+          "certpath": "C:/Users/Administrator/.ohos/config/openharmony/default_int8array_standard_test_static_WXf59rgpXODECumgtY1JcqIP_tIyz0sR7iwJKngxZxQ=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001BEED84F39413238FC7738A1B4D827B991EBF261A593CA0B00A32FE065089C2CB015A5D893562427",
+          "profile": "C:/Users/Administrator/.ohos/config/openharmony/default_int8array_standard_test_static_WXf59rgpXODECumgtY1JcqIP_tIyz0sR7iwJKngxZxQ=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:/Users/Administrator/.ohos/config/openharmony/default_int8array_standard_test_static_WXf59rgpXODECumgtY1JcqIP_tIyz0sR7iwJKngxZxQ=.p12",
+          "storePassword": "0000001B4709150A59ABD4C5F43305956A94854811AB239F8A1E0C0271284C32ADEE270271BBC9F84DC9E0"
+        }
+      }
+    ],
     "products": [
       {
         "name": "default",
         "signingConfig": "default",
-        "compatibleSdkVersion": "26.0.0",
-        "compileSdkVersion": "26.0.0",
+        "compatibleSdkVersion": "26",
+        "compileSdkVersion": "26",
         "arkTSVersion": "1.2",
         "runtimeOS": "OpenHarmony",
         "buildOption": {
@@ -15,6 +28,7 @@
             "useNormalizedOHMUrl": true
           }
         },
+        "targetSdkVersion": "26"
       }
     ],
     "buildModeSet": [
