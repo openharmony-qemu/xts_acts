@@ -14,7 +14,7 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import { assertUnexpectedError } from './NullUndefinedAssertHelper';
+import { assertUnexpectedError } from '../common/NullUndefinedAssertHelper';
 
 export default function abstractPropertyNullUndefinedTest() {
   describe('AbstractPropertyNullUndefinedTest', () => {

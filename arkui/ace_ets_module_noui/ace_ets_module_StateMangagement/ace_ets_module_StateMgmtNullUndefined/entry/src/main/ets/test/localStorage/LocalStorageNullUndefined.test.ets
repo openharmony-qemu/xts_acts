@@ -14,7 +14,7 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import { assertCallCompleted, assertUnexpectedError } from './NullUndefinedAssertHelper';
+import { assertCallCompleted, assertExpectedError, assertUnexpectedError } from '../common/NullUndefinedAssertHelper';
 
 export default function localStorageNullUndefinedTest() {
   describe('LocalStorageNullUndefinedTest', () => {

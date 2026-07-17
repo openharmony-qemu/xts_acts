@@ -14,7 +14,7 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import { assertCallCompleted, assertUnexpectedError } from './NullUndefinedAssertHelper';
+import { assertCallCompleted, assertUnexpectedError } from '../common/NullUndefinedAssertHelper';
 
 export default function globalResNullUndefinedTest() {
   describe('GlobalResNullUndefinedTest', () => {
@@ -102,5 +102,46 @@ export default function globalResNullUndefinedTest() {
       console.info('[global_rawfile_value_undefined_001] END');
     });
 
+    /**
+     * @tc.number global_r_params_null_001
+     * @tc.name global_r_params_null_001
+     * @tc.desc Test $r with null params rest argument
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL2
+     */
+    it('global_r_params_null_001', Level.LEVEL2, () => {
+      console.info('[global_r_params_null_001] START');
+      try {
+        const param: Object | null = null;
+        $r('app.string.entry_label', param);
+        assertCallCompleted();
+      } catch (err) {
+        console.error('[global_r_params_null_001] Error: ' + JSON.stringify(err));
+        assertUnexpectedError();
+      }
+      console.info('[global_r_params_null_001] END');
+    });
+
+    /**
+     * @tc.number global_r_params_undefined_001
+     * @tc.name global_r_params_undefined_001
+     * @tc.desc Test $r with undefined params rest argument
+     * @tc.type FUNCTION
+     * @tc.size SMALLTEST
+     * @tc.level LEVEL2
+     */
+    it('global_r_params_undefined_001', Level.LEVEL2, () => {
+      console.info('[global_r_params_undefined_001] START');
+      try {
+        const param: Object | undefined = undefined;
+        $r('app.string.entry_label', param);
+        assertCallCompleted();
+      } catch (err) {
+        console.error('[global_r_params_undefined_001] Error: ' + JSON.stringify(err));
+        assertUnexpectedError();
+      }
+      console.info('[global_r_params_undefined_001] END');
+    });
   });
 }

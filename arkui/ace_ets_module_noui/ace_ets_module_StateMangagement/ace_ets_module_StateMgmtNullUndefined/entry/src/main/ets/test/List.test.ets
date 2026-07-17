@@ -13,16 +13,27 @@
  * limitations under the License.
  */
 
-import appStorageNullUndefinedTest from './nullUndefined/AppStorageNullUndefined.test';
-import localStorageNullUndefinedTest from './nullUndefined/LocalStorageNullUndefined.test';
-import environmentNullUndefinedTest from './nullUndefined/EnvironmentNullUndefined.test';
-import persistentStorageNullUndefinedTest from './nullUndefined/PersistentStorageNullUndefined.test';
-import appStorageV2NullUndefinedTest from './nullUndefined/AppStorageV2NullUndefined.test';
-import persistenceV2NullUndefinedTest from './nullUndefined/PersistenceV2NullUndefined.test';
-import uiUtilsNullUndefinedTest from './nullUndefined/UIUtilsNullUndefined.test';
-import globalResNullUndefinedTest from './nullUndefined/GlobalResNullUndefined.test';
-import abstractPropertyNullUndefinedTest from './nullUndefined/AbstractPropertyNullUndefined.test';
-import decoratorNullUndefinedTest from './nullUndefined/DecoratorNullUndefined.test';
+import appStorageNullUndefinedTest from './appStorage/AppStorageNullUndefined.test';
+import localStorageNullUndefinedTest from './localStorage/LocalStorageNullUndefined.test';
+import environmentNullUndefinedTest from './environment/EnvironmentNullUndefined.test';
+import persistentStorageNullUndefinedTest from './persistentStorage/PersistentStorageNullUndefined.test';
+import appStorageV2NullUndefinedTest from './appStorageV2/AppStorageV2NullUndefined.test';
+import persistenceV2NullUndefinedTest from './persistenceV2/PersistenceV2NullUndefined.test';
+import uiUtilsNullUndefinedTest from './uiUtils/UIUtilsNullUndefined.test';
+import uiUtilsOptionsNullUndefinedTest from './uiUtils/UIUtilsOptionsNullUndefined.test';
+import globalResNullUndefinedTest from './global/GlobalResNullUndefined.test';
+import abstractPropertyNullUndefinedTest from './abstractProperty/AbstractPropertyNullUndefined.test';
+import connectOptionsNullUndefinedTest from './connectOptions/ConnectOptionsNullUndefined.test';
+import entryOptionsNullUndefinedTest from './entry/EntryOptionsNullUndefined.test';
+import providerConsumerNullUndefinedTest from './decorators/ProviderConsumerNullUndefined.test';
+import storageDecoratorsNullUndefinedTest from './decorators/StorageDecoratorsNullUndefined.test';
+import provideConsumeNullUndefinedTest from './decorators/ProvideConsumeNullUndefined.test';
+import previewExtendNullUndefinedTest from './decorators/PreviewExtendNullUndefined.test';
+import envDecoratorNullUndefinedTest from './env/EnvDecoratorNullUndefined.test';
+import monitorValueNullUndefinedTest from './monitor/MonitorValueNullUndefined.test';
+import reuseOptionsNullUndefinedTest from './reuse/ReuseOptionsNullUndefined.test';
+import lifecycleReuseNullUndefinedTest from './lifecycle/LifecycleReuseNullUndefined.test';
+import noArgSmokeNullUndefinedTest from './noArg/NoArgSmokeNullUndefined.test';
 
 export default function testsuite() {
   appStorageNullUndefinedTest();
@@ -32,7 +43,18 @@ export default function testsuite() {
   appStorageV2NullUndefinedTest();
   persistenceV2NullUndefinedTest();
   uiUtilsNullUndefinedTest();
+  uiUtilsOptionsNullUndefinedTest();
   globalResNullUndefinedTest();
   abstractPropertyNullUndefinedTest();
-  decoratorNullUndefinedTest();
+  connectOptionsNullUndefinedTest();
+  entryOptionsNullUndefinedTest();
+  providerConsumerNullUndefinedTest();
+  storageDecoratorsNullUndefinedTest();
+  provideConsumeNullUndefinedTest();
+  previewExtendNullUndefinedTest();
+  envDecoratorNullUndefinedTest();
+  monitorValueNullUndefinedTest();
+  reuseOptionsNullUndefinedTest();
+  lifecycleReuseNullUndefinedTest();
+  noArgSmokeNullUndefinedTest();
 }
