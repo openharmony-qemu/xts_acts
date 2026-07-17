@@ -35,14 +35,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_0100
-     * @tc.name testUint16ArrayForEach01_001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_0100
+     * @tc.name testUint16ArrayForEachOne001
      * @tc.desc Verify forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = new Uint16Array();
         let called = false;
@@ -54,14 +54,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_0200
-     * @tc.name testUint16ArrayForEach01_002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_0200
+     * @tc.name testUint16ArrayForEachOne002
      * @tc.desc Verify 0 value 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(0);
         let received: number = -1;
@@ -73,14 +73,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_0300
-     * @tc.name testUint16ArrayForEach01_003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_0300
+     * @tc.name testUint16ArrayForEachOne003
      * @tc.desc Verify 3.14 3 value 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(3.14);
         let received: number = -1;
@@ -92,14 +92,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_0400
-     * @tc.name testUint16ArrayForEach01_004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_0400
+     * @tc.name testUint16ArrayForEachOne004
      * @tc.desc Verify NaN 0 value 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(Number.NaN);
         let received: number = -1;
@@ -111,14 +111,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_0500
-     * @tc.name testUint16ArrayForEach01_005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_0500
+     * @tc.name testUint16ArrayForEachOne005
      * @tc.desc Verify index 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(42);
         let receivedIndex = -1;
@@ -130,14 +130,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_0600
-     * @tc.name testUint16ArrayForEach01_006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_0600
+     * @tc.name testUint16ArrayForEachOne006
      * @tc.desc Verify 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(42);
         let count = 0;
@@ -149,14 +149,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_0700
-     * @tc.name testUint16ArrayForEach01_007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_0700
+     * @tc.name testUint16ArrayForEachOne007
      * @tc.desc Verify array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(42);
         let receivedArray: Uint16Array | undefined = undefined;
@@ -168,14 +168,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_0800
-     * @tc.name testUint16ArrayForEach01_008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_0800
+     * @tc.name testUint16ArrayForEachOne008
      * @tc.desc Verify array.length 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(42);
         let arrLen = -1;
@@ -187,14 +187,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_0900
-     * @tc.name testUint16ArrayForEach01_009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_0900
+     * @tc.name testUint16ArrayForEachOne009
      * @tc.desc Verify array[0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(99);
         let readBack: number = -1;
@@ -206,14 +206,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_1000
-     * @tc.name testUint16ArrayForEach01_010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_1000
+     * @tc.name testUint16ArrayForEachOne010
      * @tc.desc Verify 2 array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(10, 20);
         const arrays: Array<Uint16Array> = [];
@@ -226,14 +226,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_1100
-     * @tc.name testUint16ArrayForEach01_011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_1100
+     * @tc.name testUint16ArrayForEachOne011
      * @tc.desc Verify 3 value 1,2,3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(1, 2, 3);
         const collected: Array<number> = [];
@@ -247,14 +247,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_1200
-     * @tc.name testUint16ArrayForEach01_012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_1200
+     * @tc.name testUint16ArrayForEachOne012
      * @tc.desc Verify 3 index 0,1,2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(1, 2, 3);
         const indices: Array<int> = [];
@@ -268,14 +268,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_1300
-     * @tc.name testUint16ArrayForEach01_013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_1300
+     * @tc.name testUint16ArrayForEachOne013
      * @tc.desc Verify 10 0 9 45
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = new Uint16Array(10);
         for (let i = 0; i < 10; i++) {
@@ -290,14 +290,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_1400
-     * @tc.name testUint16ArrayForEach01_014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_1400
+     * @tc.name testUint16ArrayForEachOne014
      * @tc.desc Verify 100 100
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = new Uint16Array(100);
         for (let i = 0; i < 100; i++) {
@@ -312,14 +312,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_1500
-     * @tc.name testUint16ArrayForEach01_015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_1500
+     * @tc.name testUint16ArrayForEachOne015
      * @tc.desc Verify 0 forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(0, 100);
         let first: number = -1;
@@ -333,14 +333,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_1600
-     * @tc.name testUint16ArrayForEach01_016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_1600
+     * @tc.name testUint16ArrayForEachOne016
      * @tc.desc Verify 65536 0 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(65536, 100);
         let first: number = -1;
@@ -354,14 +354,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_1700
-     * @tc.name testUint16ArrayForEach01_017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_1700
+     * @tc.name testUint16ArrayForEachOne017
      * @tc.desc Verify NaN 0 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(Number.NaN, 100);
         let first: number = -1;
@@ -375,14 +375,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_1800
-     * @tc.name testUint16ArrayForEach01_018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_1800
+     * @tc.name testUint16ArrayForEachOne018
      * @tc.desc Verify forEach accepts a reusable callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(1, 2, 3);
         let sum = 0;
@@ -395,14 +395,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_1900
-     * @tc.name testUint16ArrayForEach01_019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_1900
+     * @tc.name testUint16ArrayForEachOne019
      * @tc.desc Verify value/index/array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(1, 2, 3);
         const results: Array<string> = [];
@@ -416,14 +416,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_2000
-     * @tc.name testUint16ArrayForEach01_020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_2000
+     * @tc.name testUint16ArrayForEachOne020
      * @tc.desc Verify new Uint16Array(5) forEach 5 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = new Uint16Array(5);
         let count = 0;
@@ -440,14 +440,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_2100
-     * @tc.name testUint16ArrayForEach01_021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_2100
+     * @tc.name testUint16ArrayForEachOne021
      * @tc.desc Verify Uint16Array.from(FixedArray) forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const src: FixedArray<int> = [5, 10, 15];
         const arr = Uint16Array.from(src);
@@ -460,14 +460,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_2200
-     * @tc.name testUint16ArrayForEach01_022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_2200
+     * @tc.name testUint16ArrayForEachOne022
      * @tc.desc Verify new Uint16Array(other) forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const src = Uint16Array.of(2, 4, 6);
         const arr = new Uint16Array(src);
@@ -480,14 +480,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_2300
-     * @tc.name testUint16ArrayForEach01_023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_2300
+     * @tc.name testUint16ArrayForEachOne023
      * @tc.desc Verify new Uint16Array(ArrayBuffer) forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const buf = new ArrayBuffer(6);
         const arr = new Uint16Array(buf);
@@ -503,14 +503,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_2400
-     * @tc.name testUint16ArrayForEach01_024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_2400
+     * @tc.name testUint16ArrayForEachOne024
      * @tc.desc Verify subarray forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(1, 2, 3, 4, 5);
         const sub = arr.subarray(1, 4);
@@ -525,14 +525,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_2500
-     * @tc.name testUint16ArrayForEach01_025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_2500
+     * @tc.name testUint16ArrayForEachOne025
      * @tc.desc Verify new Uint16Array(length:number) forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const len: number = 4.0;
         const arr = new Uint16Array(len);
@@ -547,14 +547,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_2600
-     * @tc.name testUint16ArrayForEach01_026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_2600
+     * @tc.name testUint16ArrayForEachOne026
      * @tc.desc Verify Uint16Array.from with mapfn forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const src: Array<number> = [1, 2, 3];
         const arr = Uint16Array.from(src, (v: number, k: number): number => v * 10);
@@ -569,14 +569,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_2700
-     * @tc.name testUint16ArrayForEach01_027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_2700
+     * @tc.name testUint16ArrayForEachOne027
      * @tc.desc Verify forEach undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(1, 2);
         const result = arr.forEach(() => {});
@@ -585,14 +585,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_2800
-     * @tc.name testUint16ArrayForEach01_028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_2800
+     * @tc.name testUint16ArrayForEachOne028
      * @tc.desc Verify Error forEach catch
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(1, 2, 3);
         let threw = false;
@@ -612,14 +612,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_2900
-     * @tc.name testUint16ArrayForEach01_029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_2900
+     * @tc.name testUint16ArrayForEachOne029
      * @tc.desc Verify forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(1, 2, 3);
         let visitedSecond = false;
@@ -638,14 +638,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_3000
-     * @tc.name testUint16ArrayForEach01_030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_3000
+     * @tc.name testUint16ArrayForEachOne030
      * @tc.desc Verify forEach stops after a callback throws at index 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(1, 2, 3, 4, 5);
         let visitedCount = 0;
@@ -663,21 +663,17 @@ export default function uint16ArrayForEach01Test(): void {
       }
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_3100
+
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_3200
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_3100
-     * @tc.name testUint16ArrayForEach01_031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_3100
+     * @tc.name testUint16ArrayForEachOne031
      * @tc.desc Verify forEach callback can update each array element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(1, 2, 3);
         arr.forEach((value: number, index: int) => {
@@ -690,14 +686,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_3200
-     * @tc.name testUint16ArrayForEach01_032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_3200
+     * @tc.name testUint16ArrayForEachOne032
      * @tc.desc Verify set
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(1, 2, 3);
         arr.forEach((value: number, index: int) => {
@@ -710,14 +706,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_3300
-     * @tc.name testUint16ArrayForEach01_033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_3300
+     * @tc.name testUint16ArrayForEachOne033
      * @tc.desc Verify forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(1, 2, 3);
         let count1 = 0;
@@ -734,14 +730,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_3400
-     * @tc.name testUint16ArrayForEach01_034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_3400
+     * @tc.name testUint16ArrayForEachOne034
      * @tc.desc Verify index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(5, 10, 15, 20);
         const threshold: Array<number> = [8, 12, 18, 25];
@@ -757,14 +753,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_3500
-     * @tc.name testUint16ArrayForEach01_035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_3500
+     * @tc.name testUint16ArrayForEachOne035
      * @tc.desc Verify forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(1, 2, 3);
         const snapshot = Uint16Array.of(1, 2, 3);
@@ -778,14 +774,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_3600
-     * @tc.name testUint16ArrayForEach01_036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_3600
+     * @tc.name testUint16ArrayForEachOne036
      * @tc.desc Verify forEach length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(1, 2, 3);
         const beforeLen = arr.length;
@@ -796,14 +792,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_3700
-     * @tc.name testUint16ArrayForEach01_037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_3700
+     * @tc.name testUint16ArrayForEachOne037
      * @tc.desc Verify forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(1, 2, 3);
         arr[0] = 100;
@@ -817,14 +813,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_3800
-     * @tc.name testUint16ArrayForEach01_038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_3800
+     * @tc.name testUint16ArrayForEachOne038
      * @tc.desc Verify forEach forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const outer = Uint16Array.of(1, 2);
         const inner = Uint16Array.of(10, 20);
@@ -841,14 +837,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_3900
-     * @tc.name testUint16ArrayForEach01_039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_3900
+     * @tc.name testUint16ArrayForEachOne039
      * @tc.desc Verify sort forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(3, 1, 2);
         arr.sort();
@@ -863,14 +859,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_4000
-     * @tc.name testUint16ArrayForEach01_040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_4000
+     * @tc.name testUint16ArrayForEachOne040
      * @tc.desc Verify reverse forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(1, 2, 3);
         arr.reverse();
@@ -885,14 +881,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_4100
-     * @tc.name testUint16ArrayForEach01_041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_4100
+     * @tc.name testUint16ArrayForEachOne041
      * @tc.desc Verify fill forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = new Uint16Array(4);
         arr.fill(42);
@@ -907,14 +903,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_4200
-     * @tc.name testUint16ArrayForEach01_042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_4200
+     * @tc.name testUint16ArrayForEachOne042
      * @tc.desc Verify set forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = new Uint16Array(3);
         const src: FixedArray<int> = [7, 8, 9];
@@ -930,14 +926,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_4300
-     * @tc.name testUint16ArrayForEach01_043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_4300
+     * @tc.name testUint16ArrayForEachOne043
      * @tc.desc Verify copyWithin forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(1, 2, 3, 4);
         arr.copyWithin(0, 2);
@@ -951,14 +947,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_4400
-     * @tc.name testUint16ArrayForEach01_044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_4400
+     * @tc.name testUint16ArrayForEachOne044
      * @tc.desc Verify filter forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(1, 2, 3, 4, 5);
         const filtered = arr.filter((v: number): boolean => v > 2);
@@ -973,14 +969,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_4500
-     * @tc.name testUint16ArrayForEach01_045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_4500
+     * @tc.name testUint16ArrayForEachOne045
      * @tc.desc Verify map forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(1, 2, 3);
         const mapped = arr.map((v: number): number => v * 10);
@@ -994,38 +990,17 @@ export default function uint16ArrayForEach01Test(): void {
       }
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_4600
-     * @tc.name testUint16ArrayForEach01_046
-     * @tc.desc Verify slice forEach
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayForEach01_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      {
-        const arr = Uint16Array.of(1, 2, 3, 4, 5);
-        const sliced = arr.slice(1, 4);
-        const collected: Array<number> = [];
-        sliced.forEach((value: number) => {
-          collected.push(value);
-        });
-        expect(collected.length).assertEqual(3);
-        expect(collected.at(0)).assertEqual(2);
-        expect(collected.at(2)).assertEqual(4);
-      }
-    });
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_4700
-     * @tc.name testUint16ArrayForEach01_047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_4700
+     * @tc.name testUint16ArrayForEachOne047
      * @tc.desc Verify subarray forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(10, 20, 30, 40, 50);
         const sub = arr.subarray(2, 5);
@@ -1040,14 +1015,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_4800
-     * @tc.name testUint16ArrayForEach01_048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_4800
+     * @tc.name testUint16ArrayForEachOne048
      * @tc.desc Verify forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(1, 2, 3, 4);
         const sub = arr.subarray(1, 3);
@@ -1063,14 +1038,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_4900
-     * @tc.name testUint16ArrayForEach01_049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_4900
+     * @tc.name testUint16ArrayForEachOne049
      * @tc.desc Verify forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(1, 2, 3, 4);
         const sub = arr.subarray(1, 3);
@@ -1086,14 +1061,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_5000
-     * @tc.name testUint16ArrayForEach01_050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_5000
+     * @tc.name testUint16ArrayForEachOne050
      * @tc.desc Verify byteOffset forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const buf = new ArrayBuffer(8);
         const view1 = new Uint16Array(buf, 0, 2);
@@ -1118,14 +1093,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_5100
-     * @tc.name testUint16ArrayForEach01_051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_5100
+     * @tc.name testUint16ArrayForEachOne051
      * @tc.desc Verify buffer forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const buf = new ArrayBuffer(6);
         const viewA = new Uint16Array(buf);
@@ -1144,14 +1119,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_5200
-     * @tc.name testUint16ArrayForEach01_052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_5200
+     * @tc.name testUint16ArrayForEachOne052
      * @tc.desc Verify buffer forEach buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const buf = new ArrayBuffer(6);
         const arr = new Uint16Array(buf);
@@ -1169,14 +1144,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_5300
-     * @tc.name testUint16ArrayForEach01_053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_5300
+     * @tc.name testUint16ArrayForEachOne053
      * @tc.desc Verify value number
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(42);
         let valueType = "";
@@ -1188,14 +1163,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_5400
-     * @tc.name testUint16ArrayForEach01_054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_5400
+     * @tc.name testUint16ArrayForEachOne054
      * @tc.desc Verify array.buffer buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const buf = new ArrayBuffer(4);
         const arr = new Uint16Array(buf);
@@ -1212,14 +1187,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_5500
-     * @tc.name testUint16ArrayForEach01_055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_5500
+     * @tc.name testUint16ArrayForEachOne055
      * @tc.desc Verify array.length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(1, 2, 3, 4, 5);
         let arrLen = -1;
@@ -1233,14 +1208,14 @@ export default function uint16ArrayForEach01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_5600
-     * @tc.name testUint16ArrayForEach01_056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_5600
+     * @tc.name testUint16ArrayForEachOne056
      * @tc.desc Verify forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr1 = Uint16Array.of(1, 2);
         const arr2 = Uint16Array.of(10, 20);
@@ -1261,14 +1236,14 @@ export default function uint16ArrayForEach01Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOREACH01_5700
-     * @tc.name testUint16ArrayForEach01_057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FOR_EACH_ONE_5700
+     * @tc.name testUint16ArrayForEachOne057
      * @tc.desc Verify forEach order on sorted array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayForEach01_057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayForEachOne057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       {
         const arr = Uint16Array.of(5, 3, 1, 4, 2);
         arr.sort();
