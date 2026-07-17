@@ -18,8 +18,8 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-export default function uint16ArrayFill201Test(): void {
-  describe('Uint16ArrayFill201Test', () => {
+export default function uint16ArrayFill03Test(): void {
+  describe('Uint16ArrayFill03Test', () => {
     beforeAll(() => {
     });
 
@@ -34,14 +34,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_0100
-     * @tc.name testUint16ArrayFill201_001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0001
+     * @tc.name testUint16ArrayFillThree001
      * @tc.desc Verify fill value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(3);
       arr.fill(42);
       expect(arr.at(0)).assertEqual(42);
@@ -50,14 +50,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_0200
-     * @tc.name testUint16ArrayFill201_002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0002
+     * @tc.name testUint16ArrayFillThree002
      * @tc.desc Verify fill value start
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(42, 2);
       expect(arr.at(0)).assertEqual(0);
@@ -66,14 +66,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_0300
-     * @tc.name testUint16ArrayFill201_003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0003
+     * @tc.name testUint16ArrayFillThree003
      * @tc.desc Verify fill value start end
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(42, 1, 4);
       expect(arr.at(0)).assertEqual(0);
@@ -83,14 +83,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_0400
-     * @tc.name testUint16ArrayFill201_004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0004
+     * @tc.name testUint16ArrayFillThree004
      * @tc.desc Verify value 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array([1, 2, 3]);
       arr.fill(0);
       expect(arr.at(0)).assertEqual(0);
@@ -99,14 +99,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_0500
-     * @tc.name testUint16ArrayFill201_005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0005
+     * @tc.name testUint16ArrayFillThree005
      * @tc.desc Verify value 65535
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(3);
       arr.fill(65535);
       expect(arr.at(0)).assertEqual(65535);
@@ -115,14 +115,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_0600
-     * @tc.name testUint16ArrayFill201_006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0006
+     * @tc.name testUint16ArrayFillThree006
      * @tc.desc Verify value 65536 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(3);
       arr.fill(65536);
       expect(arr.at(0)).assertEqual(0);
@@ -131,14 +131,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_0700
-     * @tc.name testUint16ArrayFill201_007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0007
+     * @tc.name testUint16ArrayFillThree007
      * @tc.desc Verify value -1 65535
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(3);
       arr.fill(-1);
       expect(arr.at(0)).assertEqual(65535);
@@ -147,14 +147,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_0800
-     * @tc.name testUint16ArrayFill201_008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0008
+     * @tc.name testUint16ArrayFillThree008
      * @tc.desc Verify value 32768
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(3);
       arr.fill(32768);
       expect(arr.at(0)).assertEqual(32768);
@@ -163,14 +163,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_0900
-     * @tc.name testUint16ArrayFill201_009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0009
+     * @tc.name testUint16ArrayFillThree009
      * @tc.desc Verify value 0x10000 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(3);
       arr.fill(0x10000);
       expect(arr.at(0)).assertEqual(0);
@@ -179,14 +179,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_1000
-     * @tc.name testUint16ArrayFill201_010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0010
+     * @tc.name testUint16ArrayFillThree010
      * @tc.desc Verify value 3.14 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(3);
       arr.fill(3.14);
       expect(arr.at(0)).assertEqual(3);
@@ -195,14 +195,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_1100
-     * @tc.name testUint16ArrayFill201_011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0011
+     * @tc.name testUint16ArrayFillThree011
      * @tc.desc Verify value 65535.9 65535
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(3);
       arr.fill(65535.9);
       expect(arr.at(0)).assertEqual(65535);
@@ -211,14 +211,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_1200
-     * @tc.name testUint16ArrayFill201_012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0012
+     * @tc.name testUint16ArrayFillThree012
      * @tc.desc Verify value -0.5 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(3);
       arr.fill(-0.5);
       expect(arr.at(0)).assertEqual(0);
@@ -227,14 +227,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_1300
-     * @tc.name testUint16ArrayFill201_013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0013
+     * @tc.name testUint16ArrayFillThree013
      * @tc.desc Verify value NaN 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(3);
       arr.fill(Number.NaN);
       expect(arr.at(0)).assertEqual(0);
@@ -243,14 +243,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_1400
-     * @tc.name testUint16ArrayFill201_014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0014
+     * @tc.name testUint16ArrayFillThree014
      * @tc.desc Verify value 1e5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(3);
       arr.fill(1e5);
       expect(arr.at(0)).assertEqual(34464);
@@ -259,14 +259,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_1500
-     * @tc.name testUint16ArrayFill201_015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0015
+     * @tc.name testUint16ArrayFillThree015
      * @tc.desc Verify value 0.999 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(3);
       arr.fill(0.999);
       expect(arr.at(0)).assertEqual(0);
@@ -275,14 +275,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_1600
-     * @tc.name testUint16ArrayFill201_016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0016
+     * @tc.name testUint16ArrayFillThree016
      * @tc.desc Verify value 1.999 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(3);
       arr.fill(1.999);
       expect(arr.at(0)).assertEqual(1);
@@ -291,14 +291,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_1700
-     * @tc.name testUint16ArrayFill201_017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0017
+     * @tc.name testUint16ArrayFillThree017
      * @tc.desc Verify value 65537 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(3);
       arr.fill(65537);
       expect(arr.at(0)).assertEqual(1);
@@ -307,14 +307,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_1800
-     * @tc.name testUint16ArrayFill201_018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0018
+     * @tc.name testUint16ArrayFillThree018
      * @tc.desc Verify value -2 65534
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(3);
       arr.fill(-2);
       expect(arr.at(0)).assertEqual(65534);
@@ -323,14 +323,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_1900
-     * @tc.name testUint16ArrayFill201_019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0019
+     * @tc.name testUint16ArrayFillThree019
      * @tc.desc Verify value 128
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(3);
       arr.fill(128);
       expect(arr.at(0)).assertEqual(128);
@@ -339,110 +339,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_2000
-     * @tc.name testUint16ArrayFill201_020
-     * @tc.desc Verify value 255
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFill201_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr: Uint16Array = new Uint16Array(3);
-      arr.fill(255);
-      expect(arr.at(0)).assertEqual(255);
-      expect(arr.at(1)).assertEqual(255);
-      expect(arr.at(2)).assertEqual(255);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_2100
-     * @tc.name testUint16ArrayFill201_021
-     * @tc.desc Verify value 256
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFill201_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr: Uint16Array = new Uint16Array(3);
-      arr.fill(256);
-      expect(arr.at(0)).assertEqual(256);
-      expect(arr.at(1)).assertEqual(256);
-      expect(arr.at(2)).assertEqual(256);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_2200
-     * @tc.name testUint16ArrayFill201_022
-     * @tc.desc Verify value 65535-1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFill201_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr: Uint16Array = new Uint16Array(3);
-      arr.fill(65535 - 1);
-      expect(arr.at(0)).assertEqual(65534);
-      expect(arr.at(1)).assertEqual(65534);
-      expect(arr.at(2)).assertEqual(65534);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_2300
-     * @tc.name testUint16ArrayFill201_023
-     * @tc.desc Verify value 50000
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFill201_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr: Uint16Array = new Uint16Array(3);
-      arr.fill(50000);
-      expect(arr.at(0)).assertEqual(50000);
-      expect(arr.at(1)).assertEqual(50000);
-      expect(arr.at(2)).assertEqual(50000);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_2400
-     * @tc.name testUint16ArrayFill201_024
-     * @tc.desc Verify value 60000
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFill201_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr: Uint16Array = new Uint16Array(3);
-      arr.fill(60000);
-      expect(arr.at(0)).assertEqual(60000);
-      expect(arr.at(1)).assertEqual(60000);
-      expect(arr.at(2)).assertEqual(60000);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_2500
-     * @tc.name testUint16ArrayFill201_025
-     * @tc.desc Verify value 100
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFill201_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr: Uint16Array = new Uint16Array(3);
-      arr.fill(100);
-      expect(arr.at(0)).assertEqual(100);
-      expect(arr.at(1)).assertEqual(100);
-      expect(arr.at(2)).assertEqual(100);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_2600
-     * @tc.name testUint16ArrayFill201_026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0020
+     * @tc.name testUint16ArrayFillThree020
      * @tc.desc Verify value 65536*10+7 7
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(3);
       arr.fill(65536 * 10 + 7);
       expect(arr.at(0)).assertEqual(7);
@@ -451,14 +355,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_2700
-     * @tc.name testUint16ArrayFill201_027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0021
+     * @tc.name testUint16ArrayFillThree021
      * @tc.desc Verify start 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(42, 0);
       expect(arr.at(0)).assertEqual(42);
@@ -466,45 +370,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_2800
-     * @tc.name testUint16ArrayFill201_028
-     * @tc.desc Verify start 1 1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFill201_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr: Uint16Array = new Uint16Array(5);
-      arr.fill(42, 1);
-      expect(arr.at(0)).assertEqual(0);
-      expect(arr.at(1)).assertEqual(42);
-      expect(arr.at(4)).assertEqual(42);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_2900
-     * @tc.name testUint16ArrayFill201_029
-     * @tc.desc Verify start length-1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFill201_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr: Uint16Array = new Uint16Array(5);
-      arr.fill(42, 4);
-      expect(arr.at(3)).assertEqual(0);
-      expect(arr.at(4)).assertEqual(42);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_3000
-     * @tc.name testUint16ArrayFill201_030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0022
+     * @tc.name testUint16ArrayFillThree022
      * @tc.desc Verify start length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(42, 5);
       expect(arr.at(0)).assertEqual(0);
@@ -512,29 +385,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_3100
-     * @tc.name testUint16ArrayFill201_031
-     * @tc.desc Verify start length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFill201_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr: Uint16Array = new Uint16Array(5);
-      arr.fill(42, 6);
-      expect(arr.at(0)).assertEqual(0);
-      expect(arr.at(4)).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_3200
-     * @tc.name testUint16ArrayFill201_032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0023
+     * @tc.name testUint16ArrayFillThree023
      * @tc.desc Verify start -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(42, -1);
       expect(arr.at(3)).assertEqual(0);
@@ -542,14 +400,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_3300
-     * @tc.name testUint16ArrayFill201_033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0024
+     * @tc.name testUint16ArrayFillThree024
      * @tc.desc Verify start -length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(42, -5);
       expect(arr.at(0)).assertEqual(42);
@@ -557,29 +415,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_3400
-     * @tc.name testUint16ArrayFill201_034
-     * @tc.desc Verify start -length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFill201_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr: Uint16Array = new Uint16Array(5);
-      arr.fill(42, -6);
-      expect(arr.at(0)).assertEqual(42);
-      expect(arr.at(4)).assertEqual(42);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_3500
-     * @tc.name testUint16ArrayFill201_035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0025
+     * @tc.name testUint16ArrayFillThree025
      * @tc.desc Verify start
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(42, 9999);
       expect(arr.at(0)).assertEqual(0);
@@ -587,14 +430,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_3600
-     * @tc.name testUint16ArrayFill201_036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0026
+     * @tc.name testUint16ArrayFillThree026
      * @tc.desc Verify start
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(42, -9999);
       expect(arr.at(0)).assertEqual(42);
@@ -602,14 +445,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_3700
-     * @tc.name testUint16ArrayFill201_037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0027
+     * @tc.name testUint16ArrayFillThree027
      * @tc.desc Verify start 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(42, 2);
       expect(arr.at(0)).assertEqual(0);
@@ -619,14 +462,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_3800
-     * @tc.name testUint16ArrayFill201_038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0028
+     * @tc.name testUint16ArrayFillThree028
      * @tc.desc Verify start 3.14 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(42, 3);
       expect(arr.at(2)).assertEqual(0);
@@ -635,30 +478,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_3900
-     * @tc.name testUint16ArrayFill201_039
-     * @tc.desc Verify start -3.14 -3
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFill201_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr: Uint16Array = new Uint16Array(5);
-      arr.fill(42, -3);
-      expect(arr.at(2)).assertEqual(42);
-      expect(arr.at(3)).assertEqual(42);
-      expect(arr.at(4)).assertEqual(42);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_4000
-     * @tc.name testUint16ArrayFill201_040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0029
+     * @tc.name testUint16ArrayFillThree029
      * @tc.desc Verify start -2 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(42, -2);
       expect(arr.at(2)).assertEqual(0);
@@ -667,14 +494,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_4100
-     * @tc.name testUint16ArrayFill201_041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0030
+     * @tc.name testUint16ArrayFillThree030
      * @tc.desc Verify start -3 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(42, -3);
       expect(arr.at(1)).assertEqual(0);
@@ -683,14 +510,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_4200
-     * @tc.name testUint16ArrayFill201_042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0031
+     * @tc.name testUint16ArrayFillThree031
      * @tc.desc Verify start 0 value=65536
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(65536, 0);
       expect(arr.at(0)).assertEqual(0);
@@ -698,14 +525,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_4300
-     * @tc.name testUint16ArrayFill201_043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0032
+     * @tc.name testUint16ArrayFillThree032
      * @tc.desc Verify start 0 value=-1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(-1, 0);
       expect(arr.at(0)).assertEqual(65535);
@@ -713,14 +540,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_4400
-     * @tc.name testUint16ArrayFill201_044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0033
+     * @tc.name testUint16ArrayFillThree033
      * @tc.desc Verify start 0 NaN value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(Number.NaN, 0);
       expect(arr.at(0)).assertEqual(0);
@@ -728,14 +555,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_4500
-     * @tc.name testUint16ArrayFill201_045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0034
+     * @tc.name testUint16ArrayFillThree034
      * @tc.desc Verify start 0 Infinity value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(Number.POSITIVE_INFINITY, 0);
       expect(arr.at(0)).assertEqual(0);
@@ -743,14 +570,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_4600
-     * @tc.name testUint16ArrayFill201_046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0035
+     * @tc.name testUint16ArrayFillThree035
      * @tc.desc Verify end 1 [0,1)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(42, 0, 1);
       expect(arr.at(0)).assertEqual(42);
@@ -759,30 +586,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_4700
-     * @tc.name testUint16ArrayFill201_047
-     * @tc.desc Verify end 3 [0,3)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFill201_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr: Uint16Array = new Uint16Array(5);
-      arr.fill(42, 0, 3);
-      expect(arr.at(0)).assertEqual(42);
-      expect(arr.at(2)).assertEqual(42);
-      expect(arr.at(3)).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_4800
-     * @tc.name testUint16ArrayFill201_048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0036
+     * @tc.name testUint16ArrayFillThree036
      * @tc.desc Verify end length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(42, 0, 5);
       expect(arr.at(0)).assertEqual(42);
@@ -790,29 +601,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_4900
-     * @tc.name testUint16ArrayFill201_049
-     * @tc.desc Verify end length length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFill201_049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr: Uint16Array = new Uint16Array(5);
-      arr.fill(42, 0, 6);
-      expect(arr.at(0)).assertEqual(42);
-      expect(arr.at(4)).assertEqual(42);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_5000
-     * @tc.name testUint16ArrayFill201_050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0037
+     * @tc.name testUint16ArrayFillThree037
      * @tc.desc Verify end 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(42, 0, 0);
       expect(arr.at(0)).assertEqual(0);
@@ -820,14 +616,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_5100
-     * @tc.name testUint16ArrayFill201_051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0038
+     * @tc.name testUint16ArrayFillThree038
      * @tc.desc Verify end -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(42, 0, -1);
       expect(arr.at(0)).assertEqual(42);
@@ -836,14 +632,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_5200
-     * @tc.name testUint16ArrayFill201_052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0039
+     * @tc.name testUint16ArrayFillThree039
      * @tc.desc Verify end -length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(42, 0, -5);
       expect(arr.at(0)).assertEqual(0);
@@ -851,44 +647,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_5300
-     * @tc.name testUint16ArrayFill201_053
-     * @tc.desc Verify end -length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFill201_053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr: Uint16Array = new Uint16Array(5);
-      arr.fill(42, 0, -6);
-      expect(arr.at(0)).assertEqual(0);
-      expect(arr.at(4)).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_5400
-     * @tc.name testUint16ArrayFill201_054
-     * @tc.desc Verify end length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFill201_054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr: Uint16Array = new Uint16Array(5);
-      arr.fill(42, 0, 9999);
-      expect(arr.at(0)).assertEqual(42);
-      expect(arr.at(4)).assertEqual(42);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_5500
-     * @tc.name testUint16ArrayFill201_055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0040
+     * @tc.name testUint16ArrayFillThree040
      * @tc.desc Verify end
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(42, 0, -9999);
       expect(arr.at(0)).assertEqual(0);
@@ -896,62 +662,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_5600
-     * @tc.name testUint16ArrayFill201_056
-     * @tc.desc Verify end -3.14 -3
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFill201_056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr: Uint16Array = new Uint16Array(5);
-      arr.fill(42, 0, -3);
-      expect(arr.at(0)).assertEqual(42);
-      expect(arr.at(1)).assertEqual(42);
-      expect(arr.at(2)).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_5700
-     * @tc.name testUint16ArrayFill201_057
-     * @tc.desc Verify end 2 [0,2)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFill201_057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr: Uint16Array = new Uint16Array(5);
-      arr.fill(42, 0, 2);
-      expect(arr.at(0)).assertEqual(42);
-      expect(arr.at(1)).assertEqual(42);
-      expect(arr.at(2)).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_5800
-     * @tc.name testUint16ArrayFill201_058
-     * @tc.desc Verify end 4 [0,4)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFill201_058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr: Uint16Array = new Uint16Array(5);
-      arr.fill(42, 0, 4);
-      expect(arr.at(0)).assertEqual(42);
-      expect(arr.at(3)).assertEqual(42);
-      expect(arr.at(4)).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_5900
-     * @tc.name testUint16ArrayFill201_059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0041
+     * @tc.name testUint16ArrayFillThree041
      * @tc.desc Verify end -2 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(42, 0, -2);
       expect(arr.at(0)).assertEqual(42);
@@ -961,14 +679,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_6000
-     * @tc.name testUint16ArrayFill201_060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0042
+     * @tc.name testUint16ArrayFillThree042
      * @tc.desc Verify end -3 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(42, 0, -3);
       expect(arr.at(0)).assertEqual(42);
@@ -978,14 +696,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_6100
-     * @tc.name testUint16ArrayFill201_061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0043
+     * @tc.name testUint16ArrayFillThree043
      * @tc.desc Verify end 1 value=65536
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(65536, 0, 1);
       expect(arr.at(0)).assertEqual(0);
@@ -993,14 +711,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_6200
-     * @tc.name testUint16ArrayFill201_062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0044
+     * @tc.name testUint16ArrayFillThree044
      * @tc.desc Verify end 1 value=-1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(-1, 0, 1);
       expect(arr.at(0)).assertEqual(65535);
@@ -1008,14 +726,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_6300
-     * @tc.name testUint16ArrayFill201_063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0045
+     * @tc.name testUint16ArrayFillThree045
      * @tc.desc Verify end 1 NaN value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(Number.NaN, 0, 1);
       expect(arr.at(0)).assertEqual(0);
@@ -1023,42 +741,42 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_6400
-     * @tc.name testUint16ArrayFill201_064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0046
+     * @tc.name testUint16ArrayFillThree046
      * @tc.desc Verify fill Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(3);
       let result: Uint16Array = arr.fill(42);
       expect(result instanceof Uint16Array).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_6500
-     * @tc.name testUint16ArrayFill201_065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0047
+     * @tc.name testUint16ArrayFillThree047
      * @tc.desc Verify fill this
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(3);
       let result: Uint16Array = arr.fill(42);
       expect(result).assertEqual(arr);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_6600
-     * @tc.name testUint16ArrayFill201_066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0048
+     * @tc.name testUint16ArrayFillThree048
      * @tc.desc Verify fill
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(3);
       arr.fill(42).fill(0);
       expect(arr.at(0)).assertEqual(0);
@@ -1067,14 +785,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_6700
-     * @tc.name testUint16ArrayFill201_067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0049
+     * @tc.name testUint16ArrayFillThree049
      * @tc.desc Verify fill
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(3);
       arr.fill(10).fill(20).fill(30);
       expect(arr.at(0)).assertEqual(30);
@@ -1083,14 +801,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_6800
-     * @tc.name testUint16ArrayFill201_068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0050
+     * @tc.name testUint16ArrayFillThree050
      * @tc.desc Verify fill length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(3);
       let lenBefore: int = arr.length;
       arr.fill(42);
@@ -1098,14 +816,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_6900
-     * @tc.name testUint16ArrayFill201_069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0051
+     * @tc.name testUint16ArrayFillThree051
      * @tc.desc Verify fill
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(0);
       let result: Uint16Array = arr.fill(42);
       expect(result).assertEqual(arr);
@@ -1113,28 +831,28 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_7000
-     * @tc.name testUint16ArrayFill201_070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0052
+     * @tc.name testUint16ArrayFillThree052
      * @tc.desc Verify fill
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(1);
       arr.fill(42);
       expect(arr.at(0)).assertEqual(42);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_7100
-     * @tc.name testUint16ArrayFill201_071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0053
+     * @tc.name testUint16ArrayFillThree053
      * @tc.desc Verify fill
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(100);
       arr.fill(42);
       expect(arr.at(0)).assertEqual(42);
@@ -1143,14 +861,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_7200
-     * @tc.name testUint16ArrayFill201_072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0054
+     * @tc.name testUint16ArrayFillThree054
      * @tc.desc Verify fill buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(3);
       let bufBefore: ArrayBuffer = arr.buffer;
       arr.fill(42);
@@ -1158,14 +876,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_7300
-     * @tc.name testUint16ArrayFill201_073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0055
+     * @tc.name testUint16ArrayFillThree055
      * @tc.desc Verify fill byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(3);
       let blBefore: int = arr.byteLength;
       arr.fill(42);
@@ -1173,14 +891,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_7400
-     * @tc.name testUint16ArrayFill201_074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0056
+     * @tc.name testUint16ArrayFillThree056
      * @tc.desc Verify fill byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(3);
       let offBefore: int = arr.byteOffset;
       arr.fill(42);
@@ -1188,14 +906,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_7500
-     * @tc.name testUint16ArrayFill201_075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0057
+     * @tc.name testUint16ArrayFillThree057
      * @tc.desc Verify fill forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(77);
       let count: int = 0;
@@ -1208,14 +926,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_7600
-     * @tc.name testUint16ArrayFill201_076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0058
+     * @tc.name testUint16ArrayFillThree058
      * @tc.desc Verify fill(65536, 0, 3) 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(65536, 0, 3);
       expect(arr.at(0)).assertEqual(0);
@@ -1225,14 +943,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_7700
-     * @tc.name testUint16ArrayFill201_077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0059
+     * @tc.name testUint16ArrayFillThree059
      * @tc.desc Verify fill(-1, 1, 4) 65535
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(-1, 1, 4);
       expect(arr.at(0)).assertEqual(0);
@@ -1243,14 +961,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_7800
-     * @tc.name testUint16ArrayFill201_078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0060
+     * @tc.name testUint16ArrayFillThree060
      * @tc.desc Verify fill(3.14, 0, 2) 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(3.14, 0, 2);
       expect(arr.at(0)).assertEqual(3);
@@ -1259,14 +977,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_7900
-     * @tc.name testUint16ArrayFill201_079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0061
+     * @tc.name testUint16ArrayFillThree061
      * @tc.desc Verify fill(NaN, 1, 5)NaN 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(Number.NaN, 1, 5);
       expect(arr.at(0)).assertEqual(0);
@@ -1275,14 +993,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_8000
-     * @tc.name testUint16ArrayFill201_080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0062
+     * @tc.name testUint16ArrayFillThree062
      * @tc.desc Verify fill(Infinity, 0, 4)Infinity 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(Number.POSITIVE_INFINITY, 0, 4);
       expect(arr.at(0)).assertEqual(0);
@@ -1291,14 +1009,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_8100
-     * @tc.name testUint16ArrayFill201_081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0063
+     * @tc.name testUint16ArrayFillThree063
      * @tc.desc Verify fill(-Infinity, 2, 5)-Infinity 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(-Number.POSITIVE_INFINITY, 2, 5);
       expect(arr.at(0)).assertEqual(0);
@@ -1308,14 +1026,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_8200
-     * @tc.name testUint16ArrayFill201_082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0064
+     * @tc.name testUint16ArrayFillThree064
      * @tc.desc Verify fill(65536+32768, 0, 5) 32768
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(65536 + 32768, 0, 5);
       expect(arr.at(0)).assertEqual(32768);
@@ -1324,14 +1042,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_8300
-     * @tc.name testUint16ArrayFill201_083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0065
+     * @tc.name testUint16ArrayFillThree065
      * @tc.desc Verify fill(-32768, 0, 3) 32768
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(-32768, 0, 3);
       expect(arr.at(0)).assertEqual(32768);
@@ -1341,14 +1059,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_8400
-     * @tc.name testUint16ArrayFill201_084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0066
+     * @tc.name testUint16ArrayFillThree066
      * @tc.desc Verify fill(65536.5, 0, 2) + 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(65536.5, 0, 2);
       expect(arr.at(0)).assertEqual(0);
@@ -1357,14 +1075,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_8500
-     * @tc.name testUint16ArrayFill201_085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0067
+     * @tc.name testUint16ArrayFillThree067
      * @tc.desc Verify fill(-1.5, 0, 3) 65535
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(-1.5, 0, 3);
       expect(arr.at(0)).assertEqual(65535);
@@ -1374,14 +1092,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_8600
-     * @tc.name testUint16ArrayFill201_086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0068
+     * @tc.name testUint16ArrayFillThree068
      * @tc.desc Verify fill(0x1FFFF, 1, 4) 65535
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(0x1FFFF, 1, 4);
       expect(arr.at(0)).assertEqual(0);
@@ -1392,14 +1110,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_8700
-     * @tc.name testUint16ArrayFill201_087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0069
+     * @tc.name testUint16ArrayFillThree069
      * @tc.desc Verify fill(-65536-1, 0, 2) 65535
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(5);
       arr.fill(-65536 - 1, 0, 2);
       expect(arr.at(0)).assertEqual(65535);
@@ -1408,14 +1126,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_8800
-     * @tc.name testUint16ArrayFill201_088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0070
+     * @tc.name testUint16ArrayFillThree070
      * @tc.desc Verify fill with value = 0x8000 (32768) on full array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(4);
       arr.fill(0x8000);
       expect(arr.at(0)).assertEqual(32768);
@@ -1425,14 +1143,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_8900
-     * @tc.name testUint16ArrayFill201_089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0071
+     * @tc.name testUint16ArrayFillThree071
      * @tc.desc Verify fill with start = -4, end = -1 on length 5 array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array([1, 2, 3, 4, 5]);
       arr.fill(999, -4, -1);
       expect(arr.at(0)).assertEqual(1);
@@ -1443,14 +1161,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_9000
-     * @tc.name testUint16ArrayFill201_090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0072
+     * @tc.name testUint16ArrayFillThree072
      * @tc.desc Verify fill with value = 65535.5 (should truncate to 65535)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(3);
       arr.fill(65535.5);
       expect(arr.at(0)).assertEqual(65535);
@@ -1459,14 +1177,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_9100
-     * @tc.name testUint16ArrayFill201_091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0073
+     * @tc.name testUint16ArrayFillThree073
      * @tc.desc Verify fill with value = -32767 (becomes 65536 - 32767 = 32769)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array(2);
       arr.fill(-32767, 0, 2);
       expect(arr.at(0)).assertEqual(32769);
@@ -1474,14 +1192,14 @@ export default function uint16ArrayFill201Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL201_9200
-     * @tc.name testUint16ArrayFill201_092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0074
+     * @tc.name testUint16ArrayFillThree074
      * @tc.desc Verify fill after modifying array elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFill201_092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFillThree074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array([10, 20, 30, 40]);
       arr[0] = 999;
       arr[3] = 888;
@@ -1490,6 +1208,42 @@ export default function uint16ArrayFill201Test(): void {
       expect(arr.at(1)).assertEqual(111);
       expect(arr.at(2)).assertEqual(111);
       expect(arr.at(3)).assertEqual(888);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0075
+     * @tc.name testUint16ArrayFillThree075
+     * @tc.desc Verify fill clamps an end greater than length and fills through the final element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayFillThree075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr: Uint16Array = Uint16Array.of(1, 2, 3, 4, 5);
+      arr.fill(42, 1, 9999);
+      expect(arr.at(0)).assertEqual(1);
+      expect(arr.at(1)).assertEqual(42);
+      expect(arr.at(2)).assertEqual(42);
+      expect(arr.at(3)).assertEqual(42);
+      expect(arr.at(4)).assertEqual(42);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FILL_THREE_0076
+     * @tc.name testUint16ArrayFillThree076
+     * @tc.desc Verify fill stores the Uint16 maximum from a 16-bit binary literal within the selected range
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint16ArrayFillThree076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let arr: Uint16Array = new Uint16Array(5);
+      arr.fill(0b1111111111111111, 1, 4);
+      expect(arr.at(0)).assertEqual(0);
+      expect(arr.at(1)).assertEqual(65535);
+      expect(arr.at(2)).assertEqual(65535);
+      expect(arr.at(3)).assertEqual(65535);
+      expect(arr.at(4)).assertEqual(0);
     });
 
   });
