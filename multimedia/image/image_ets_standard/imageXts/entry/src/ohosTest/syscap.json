@@ -4,9 +4,7 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.FileManagement.UserFileManager.Core",
-                    "SystemCapability.FileManagement.UserFileManager.DistributedCore",
-                    "SystemCapability.FileManagement.PhotoAccessHelper.Core"
+                    "SystemCapability.Multimedia.Image.Core"
                 ]
             }
         ]
