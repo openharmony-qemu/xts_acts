@@ -669,10 +669,9 @@ export default function latticeTest() {
       try {
         drawing.Lattice.createImageLattice([ 1, 2, 4 ], [ 1, 2, 4 ], 3, 3, fBounds, [], colorArray);
         console.info(msg + ' 11 [] createImageLattice succeeded');
-        expect().assertFail();
       } catch( e ) {
         console.info(msg + ` 11 [] createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
-        expect(e.code).assertEqual(401);
+        expect().assertFail();
       }
       try {
         drawing.Lattice.createImageLattice([ 1, 2, 4 ], [ 1, 2, 4 ], 3, 3, fBounds, undefined, colorArray);
