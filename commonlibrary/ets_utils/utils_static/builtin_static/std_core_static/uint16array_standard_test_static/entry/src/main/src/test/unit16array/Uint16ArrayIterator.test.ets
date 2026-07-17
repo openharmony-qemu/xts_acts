@@ -35,14 +35,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0001
-     * @tc.name testUint16Array$Iterator001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0001
+     * @tc.name testUint16ArrayIterator001
      * @tc.desc Verify values() next()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([42]);
       let iter = arr.values();
       let result = iter.next().value;
@@ -50,14 +50,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0002
-     * @tc.name testUint16Array$Iterator002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0002
+     * @tc.name testUint16ArrayIterator002
      * @tc.desc Verify for...of
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array(0);
       let count = 0;
       for (let v of arr) {
@@ -67,42 +67,42 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0003
-     * @tc.name testUint16Array$Iterator003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0003
+     * @tc.name testUint16ArrayIterator003
      * @tc.desc Verify values() next().value undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array(0);
       let iter = arr.values();
       expect(iter.next().value).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0004
-     * @tc.name testUint16Array$Iterator004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0004
+     * @tc.name testUint16ArrayIterator004
      * @tc.desc Verify values() next().done true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array(0);
       let iter = arr.values();
       expect(iter.next().done).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0005
-     * @tc.name testUint16Array$Iterator005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0005
+     * @tc.name testUint16ArrayIterator005
      * @tc.desc Verify [0] for...of 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([0]);
       let result: number = -1;
       for (let v of arr) {
@@ -112,111 +112,42 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0006
-     * @tc.name testUint16Array$Iterator006
-     * @tc.desc Verify [1] for...of 1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16Array$Iterator006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr = new Uint16Array([1]);
-      let result: number = -1;
-      for (let v of arr) {
-        result = v;
-      }
-      expect(result).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0007
-     * @tc.name testUint16Array$Iterator007
-     * @tc.desc Verify [65535] for...of 65535
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16Array$Iterator007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr = new Uint16Array([65535]);
-      let result: number = -1;
-      for (let v of arr) {
-        result = v;
-      }
-      expect(result).assertEqual(65535);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0008
-     * @tc.name testUint16Array$Iterator008
-     * @tc.desc Verify [0xFF] for...of 255
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16Array$Iterator008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr = new Uint16Array([0xFF]);
-      let result: number = -1;
-      for (let v of arr) {
-        result = v;
-      }
-      expect(result).assertEqual(255);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0009
-     * @tc.name testUint16Array$Iterator009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0006
+     * @tc.name testUint16ArrayIterator006
      * @tc.desc Verify [65535] Uint16Array.from
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([65535]);
       let result = Uint16Array.from(arr);
       expect(result.at(0)).assertEqual(65535);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0010
-     * @tc.name testUint16Array$Iterator010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0007
+     * @tc.name testUint16ArrayIterator007
      * @tc.desc Verify [0] Uint16Array.from
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([0]);
       let result = Uint16Array.from(arr);
       expect(result.at(0)).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0011
-     * @tc.name testUint16Array$Iterator011
-     * @tc.desc Verify [1,2] for...of 1 2
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16Array$Iterator011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr = new Uint16Array([1, 2]);
-      let results: number[] = [];
-      for (let v of arr) {
-        results.push(v);
-      }
-      expect(results.at(0)).assertEqual(1);
-      expect(results.at(1)).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0012
-     * @tc.name testUint16Array$Iterator012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0008
+     * @tc.name testUint16ArrayIterator008
      * @tc.desc Verify [10,20,30] for...of
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([10, 20, 30]);
       let results: number[] = [];
       for (let v of arr) {
@@ -228,33 +159,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0013
-     * @tc.name testUint16Array$Iterator013
-     * @tc.desc Verify [0,32768,65535] for...of
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16Array$Iterator013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr = new Uint16Array([0, 32768, 65535]);
-      let results: number[] = [];
-      for (let v of arr) {
-        results.push(v);
-      }
-      expect(results.at(0)).assertEqual(0);
-      expect(results.at(1)).assertEqual(32768);
-      expect(results.at(2)).assertEqual(65535);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0014
-     * @tc.name testUint16Array$Iterator014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0009
+     * @tc.name testUint16ArrayIterator009
      * @tc.desc Verify 100 for...of
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array(100);
       for (let i = 0; i < 100; i++) {
         arr[i] = i;
@@ -275,14 +187,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0015
-     * @tc.name testUint16Array$Iterator015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0010
+     * @tc.name testUint16ArrayIterator010
      * @tc.desc Verify [1,2,3,4,5] Uint16Array.from
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([1, 2, 3, 4, 5]);
       let result = Uint16Array.from(arr);
       expect(result.at(0)).assertEqual(1);
@@ -294,14 +206,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0016
-     * @tc.name testUint16Array$Iterator016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0011
+     * @tc.name testUint16ArrayIterator011
      * @tc.desc Verify 3.14 3 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([3.14]);
       let result: number = -1;
       for (let v of arr) {
@@ -311,14 +223,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0017
-     * @tc.name testUint16Array$Iterator017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0012
+     * @tc.name testUint16ArrayIterator012
      * @tc.desc Verify NaN 0 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([Number.NaN]);
       let result: number = -1;
       for (let v of arr) {
@@ -328,14 +240,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0018
-     * @tc.name testUint16Array$Iterator018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0013
+     * @tc.name testUint16ArrayIterator013
      * @tc.desc Verify -1 65535 65535
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([-1]);
       let result: number = -1;
       for (let v of arr) {
@@ -345,14 +257,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0019
-     * @tc.name testUint16Array$Iterator019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0014
+     * @tc.name testUint16ArrayIterator014
      * @tc.desc Verify 65536 0 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([65536]);
       let result: number = -1;
       for (let v of arr) {
@@ -362,14 +274,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0020
-     * @tc.name testUint16Array$Iterator020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0015
+     * @tc.name testUint16ArrayIterator015
      * @tc.desc Verify -0.5 0 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([-0.5]);
       let result: number = -1;
       for (let v of arr) {
@@ -379,14 +291,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0021
-     * @tc.name testUint16Array$Iterator021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0016
+     * @tc.name testUint16ArrayIterator016
      * @tc.desc Verify Infinity 0 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([Number.POSITIVE_INFINITY]);
       let result: number = -1;
       for (let v of arr) {
@@ -396,14 +308,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0022
-     * @tc.name testUint16Array$Iterator022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0017
+     * @tc.name testUint16ArrayIterator017
      * @tc.desc Verify -Infinity 0 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([-Number.POSITIVE_INFINITY]);
       let result: number = -1;
       for (let v of arr) {
@@ -413,14 +325,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0023
-     * @tc.name testUint16Array$Iterator023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0018
+     * @tc.name testUint16ArrayIterator018
      * @tc.desc Verify 65535.9 65535 65535
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([65535.9]);
       let result: number = -1;
       for (let v of arr) {
@@ -430,14 +342,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0024
-     * @tc.name testUint16Array$Iterator024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0019
+     * @tc.name testUint16ArrayIterator019
      * @tc.desc Verify for...of values() for...of
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array(0);
       let count1 = 0;
       for (let v of arr) {
@@ -453,14 +365,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0025
-     * @tc.name testUint16Array$Iterator025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0020
+     * @tc.name testUint16ArrayIterator020
      * @tc.desc Verify for...of values()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([42]);
       let v1: number = -1;
       for (let v of arr) {
@@ -476,14 +388,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0026
-     * @tc.name testUint16Array$Iterator026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0021
+     * @tc.name testUint16ArrayIterator021
      * @tc.desc Verify for...of values()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([1, 2, 3]);
       let r1: number[] = [];
       for (let v of arr) {
@@ -508,14 +420,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0027
-     * @tc.name testUint16Array$Iterator027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0022
+     * @tc.name testUint16ArrayIterator022
      * @tc.desc Verify for...of values()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([0, 32768, 65535]);
       let r1: number[] = [];
       for (let v of arr) {
@@ -537,14 +449,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0028
-     * @tc.name testUint16Array$Iterator028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0023
+     * @tc.name testUint16ArrayIterator023
      * @tc.desc Verify for...of break
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([1, 2, 3, 4, 5]);
       let count = 0;
       for (let v of arr) {
@@ -557,14 +469,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0029
-     * @tc.name testUint16Array$Iterator029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0024
+     * @tc.name testUint16ArrayIterator024
      * @tc.desc Verify for...of continue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([1, 2, 3]);
       let sum = 0;
       for (let v of arr) {
@@ -577,14 +489,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0030
-     * @tc.name testUint16Array$Iterator030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0025
+     * @tc.name testUint16ArrayIterator025
      * @tc.desc Verify for...of
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([1, 2]);
       let outerCount = 0;
       for (let v1 of arr) {
@@ -596,14 +508,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0031
-     * @tc.name testUint16Array$Iterator031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0026
+     * @tc.name testUint16ArrayIterator026
      * @tc.desc Verify for...of
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([10, 20]);
       let count1 = 0;
       for (let v of arr) {
@@ -618,28 +530,28 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0032
-     * @tc.name testUint16Array$Iterator032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0027
+     * @tc.name testUint16ArrayIterator027
      * @tc.desc Verify values() next()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([100, 200]);
       let iter = arr.values();
       expect(iter.next().value).assertEqual(100);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0033
-     * @tc.name testUint16Array$Iterator033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0028
+     * @tc.name testUint16ArrayIterator028
      * @tc.desc Verify values() next()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([100, 200]);
       let iter = arr.values();
       iter.next();
@@ -647,14 +559,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0034
-     * @tc.name testUint16Array$Iterator034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0029
+     * @tc.name testUint16ArrayIterator029
      * @tc.desc Verify values() done true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([1, 2]);
       let iter = arr.values();
       iter.next();
@@ -663,14 +575,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0035
-     * @tc.name testUint16Array$Iterator035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0030
+     * @tc.name testUint16ArrayIterator030
      * @tc.desc Verify values() next() done=true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([1]);
       let iter = arr.values();
       iter.next();
@@ -679,14 +591,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0036
-     * @tc.name testUint16Array$Iterator036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0031
+     * @tc.name testUint16ArrayIterator031
      * @tc.desc Verify values()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([1, 2, 3]);
       let iter1 = arr.values();
       let iter2 = arr.values();
@@ -696,14 +608,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0037
-     * @tc.name testUint16Array$Iterator037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0032
+     * @tc.name testUint16ArrayIterator032
      * @tc.desc Verify next() done false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([5]);
       let iter = arr.values();
       let ret = iter.next();
@@ -712,14 +624,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0038
-     * @tc.name testUint16Array$Iterator038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0033
+     * @tc.name testUint16ArrayIterator033
      * @tc.desc Verify values() next() done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array(0);
       let iter = arr.values();
       iter.next();
@@ -727,14 +639,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0039
-     * @tc.name testUint16Array$Iterator039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0034
+     * @tc.name testUint16ArrayIterator034
      * @tc.desc Verify length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([1, 2, 3]);
       let count = 0;
       let values: number[] = [];
@@ -750,14 +662,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0040
-     * @tc.name testUint16Array$Iterator040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0035
+     * @tc.name testUint16ArrayIterator035
      * @tc.desc Verify [0,0,0] for...of 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([0, 0, 0]);
       let sum = 0;
       let count = 0;
@@ -775,14 +687,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0041
-     * @tc.name testUint16Array$Iterator041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0036
+     * @tc.name testUint16ArrayIterator036
      * @tc.desc Verify [65535,65535] for...of 65535
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([65535, 65535]);
       let sum = 0;
       let values: number[] = [];
@@ -796,14 +708,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0042
-     * @tc.name testUint16Array$Iterator042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0037
+     * @tc.name testUint16ArrayIterator037
      * @tc.desc Verify [0,65535,32768,255] for...of
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([0, 65535, 32768, 255]);
       let results: number[] = [];
       for (let v of arr) {
@@ -816,14 +728,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0043
-     * @tc.name testUint16Array$Iterator043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0038
+     * @tc.name testUint16ArrayIterator038
      * @tc.desc Verify [1,2,3,4,5] for...of
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([1, 2, 3, 4, 5]);
       let results: number[] = [];
       for (let v of arr) {
@@ -837,14 +749,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0044
-     * @tc.name testUint16Array$Iterator044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0039
+     * @tc.name testUint16ArrayIterator039
      * @tc.desc Verify [5,4,3,2,1] for...of
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([5, 4, 3, 2, 1]);
       let results: number[] = [];
       for (let v of arr) {
@@ -858,14 +770,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0045
-     * @tc.name testUint16Array$Iterator045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0040
+     * @tc.name testUint16ArrayIterator040
      * @tc.desc Verify [0x10, 0x100, 0x1000] for...of
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([0x10, 0x100, 0x1000]);
       let results: number[] = [];
       for (let v of arr) {
@@ -877,14 +789,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0046
-     * @tc.name testUint16Array$Iterator046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0041
+     * @tc.name testUint16ArrayIterator041
      * @tc.desc Verify [0o377] for...of 255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([0o377]);
       let result: number = -1;
       for (let v of arr) {
@@ -894,14 +806,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0047
-     * @tc.name testUint16Array$Iterator047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0042
+     * @tc.name testUint16ArrayIterator042
      * @tc.desc Verify [0b11111111] for...of 255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([0b11111111]);
       let result: number = -1;
       for (let v of arr) {
@@ -911,14 +823,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0048
-     * @tc.name testUint16Array$Iterator048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0043
+     * @tc.name testUint16ArrayIterator043
      * @tc.desc Verify default iteration observes mutation of an unvisited element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([1, 2, 3]);
       let sum = 0;
       for (let v of arr) {
@@ -931,42 +843,42 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0049
-     * @tc.name testUint16Array$Iterator049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0044
+     * @tc.name testUint16ArrayIterator044
      * @tc.desc Verify Array.from
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array(0);
       let result = Array.from(arr);
       expect(result.length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0050
-     * @tc.name testUint16Array$Iterator050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0045
+     * @tc.name testUint16ArrayIterator045
      * @tc.desc Verify Array.from
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([42]);
       let result = Array.from(arr);
       expect(result.at(0)).assertEqual(42);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0051
-     * @tc.name testUint16Array$Iterator051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0046
+     * @tc.name testUint16ArrayIterator046
      * @tc.desc Verify Array.from
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([10, 20, 30, 40, 50]);
       let result = Array.from(arr);
       expect(result.at(0)).assertEqual(10);
@@ -978,14 +890,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0052
-     * @tc.name testUint16Array$Iterator052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0047
+     * @tc.name testUint16ArrayIterator047
      * @tc.desc Verify Array.from
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayIterator047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = new Uint16Array([0, 65535]);
       let result = Array.from(arr);
       expect(result.at(0)).assertEqual(0);
@@ -993,28 +905,28 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0053
-     * @tc.name testUint16Array$Iterator053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0048
+     * @tc.name testUint16ArrayIterator048
      * @tc.desc Verify empty values iterator is immediately done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint16ArrayIterator048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Uint16Array = new Uint16Array();
             let item = arr.values().next();
             expect(item.done).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0054
-     * @tc.name testUint16Array$Iterator054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0049
+     * @tc.name testUint16ArrayIterator049
      * @tc.desc Verify values iterator remains done after exhaustion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint16ArrayIterator049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let iterator = Uint16Array.of(7).values();
             iterator.next();
             expect(iterator.next().done).assertTrue();
@@ -1022,14 +934,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0055
-     * @tc.name testUint16Array$Iterator055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0050
+     * @tc.name testUint16ArrayIterator050
      * @tc.desc Verify values iterator observes a later source mutation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint16ArrayIterator050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
             let iterator = arr.values();
             expect(iterator.next().value).assertEqual(10);
@@ -1038,14 +950,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0056
-     * @tc.name testUint16Array$Iterator056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0051
+     * @tc.name testUint16ArrayIterator051
      * @tc.desc Verify values iterator observes mutation through an alias view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint16ArrayIterator051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer: ArrayBuffer = new ArrayBuffer(6);
             let arr: Uint16Array = new Uint16Array(buffer);
             arr.set([1, 2, 3]);
@@ -1057,14 +969,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0057
-     * @tc.name testUint16Array$Iterator057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0052
+     * @tc.name testUint16ArrayIterator052
      * @tc.desc Verify values iterator over an offset view starts at the view first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint16ArrayIterator052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer: ArrayBuffer = new ArrayBuffer(10);
             let all: Uint16Array = new Uint16Array(buffer);
             all.set([5, 10, 15, 20, 25]);
@@ -1075,14 +987,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0058
-     * @tc.name testUint16Array$Iterator058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0053
+     * @tc.name testUint16ArrayIterator053
      * @tc.desc Verify two values iterators maintain independent positions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint16ArrayIterator053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Uint16Array = Uint16Array.of(4, 5);
             let first = arr.values();
             let second = arr.values();
@@ -1092,14 +1004,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0059
-     * @tc.name testUint16Array$Iterator059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0054
+     * @tc.name testUint16ArrayIterator054
      * @tc.desc Verify default iteration preserves Uint16 boundary values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint16ArrayIterator054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Uint16Array = Uint16Array.of(0, 32768, 65535);
             let values: Array<number> = [];
             for (let value of arr) { values.push(value); }
@@ -1109,14 +1021,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0060
-     * @tc.name testUint16Array$Iterator060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0055
+     * @tc.name testUint16ArrayIterator055
      * @tc.desc Verify iterator created before copyWithin reads the copied values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint16ArrayIterator055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Uint16Array = Uint16Array.of(1, 2, 3, 4);
             let iterator = arr.values();
             expect(iterator.next().value).assertEqual(1);
@@ -1126,14 +1038,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0061
-     * @tc.name testUint16Array$Iterator061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0056
+     * @tc.name testUint16ArrayIterator056
      * @tc.desc Verify default iteration over an offset view yields only the visible view elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint16ArrayIterator056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let backing: Uint16Array = Uint16Array.of(5, 10, 15, 20, 25);
       let view: Uint16Array = new Uint16Array(backing.buffer, 4, 2);
       let values: Array<number> = [];
@@ -1146,14 +1058,14 @@ export default function uint16Array$IteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_$_ITERATOR_0062
-     * @tc.name testUint16Array$Iterator062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_ITERATOR_0057
+     * @tc.name testUint16ArrayIterator057
      * @tc.desc Verify a values iterator observes fill changes to unconsumed elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16Array$Iterator062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint16ArrayIterator057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let array: Uint16Array = Uint16Array.of(1, 2, 3);
       let iterator = array.values();
       expect(iterator.next().value).assertEqual(1);

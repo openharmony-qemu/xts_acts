@@ -35,42 +35,42 @@ export default function uint16ArrayJoin02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_JOIN02_0100
-     * @tc.name testUint16ArrayJoin02_001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_JOIN_TWO_0100
+     * @tc.name testUint16ArrayJoinTwo001
      * @tc.desc Verify join()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayJoin02_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayJoinTwo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 22, 333);
       const result = arr.join();
       expect(result).assertEqual("1,22,333");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_JOIN02_0200
-     * @tc.name testUint16ArrayJoin02_002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_JOIN_TWO_0200
+     * @tc.name testUint16ArrayJoinTwo002
      * @tc.desc Verify join("")
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayJoin02_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayJoinTwo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(10, 20, 30);
       const result = arr.join("");
       expect(result).assertEqual("102030");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_JOIN02_0300
-     * @tc.name testUint16ArrayJoin02_003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_JOIN_TWO_0300
+     * @tc.name testUint16ArrayJoinTwo003
      * @tc.desc Verify join() toString()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayJoin02_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayJoinTwo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(10, 20, 30);
       const joinResult = arr.join();
       const toStringResult = arr.toString();
@@ -79,28 +79,28 @@ export default function uint16ArrayJoin02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_JOIN02_0400
-     * @tc.name testUint16ArrayJoin02_004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_JOIN_TWO_0400
+     * @tc.name testUint16ArrayJoinTwo004
      * @tc.desc Verify join()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayJoin02_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayJoinTwo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(99);
       const result = arr.join("|");
       expect(result).assertEqual("99");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_JOIN02_0500
-     * @tc.name testUint16ArrayJoin02_005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_JOIN_TWO_0500
+     * @tc.name testUint16ArrayJoinTwo005
      * @tc.desc Verify join()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayJoin02_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayJoinTwo005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 2, 3);
       const before = arr.join();
       const after = arr.join();
@@ -110,14 +110,14 @@ export default function uint16ArrayJoin02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_JOIN02_0600
-     * @tc.name testUint16ArrayJoin02_006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_JOIN_TWO_0600
+     * @tc.name testUint16ArrayJoinTwo006
      * @tc.desc Verify empty array join()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayJoin02_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayJoinTwo006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array(0);
       const joinResult = arr.join();
       const toStringResult = arr.toString();
@@ -126,14 +126,14 @@ export default function uint16ArrayJoin02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_JOIN02_0700
-     * @tc.name testUint16ArrayJoin02_007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_JOIN_TWO_0700
+     * @tc.name testUint16ArrayJoinTwo007
      * @tc.desc Verify single element 0 join() and toString()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayJoin02_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayJoinTwo007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(0);
       const joinResult = arr.join();
       const toStringResult = arr.toString();
@@ -142,14 +142,14 @@ export default function uint16ArrayJoin02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_JOIN02_0800
-     * @tc.name testUint16ArrayJoin02_008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_JOIN_TWO_0800
+     * @tc.name testUint16ArrayJoinTwo008
      * @tc.desc Verify single element 65535 join() and toString()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayJoin02_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayJoinTwo008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(65535);
       const joinResult = arr.join();
       const toStringResult = arr.toString();
@@ -158,14 +158,14 @@ export default function uint16ArrayJoin02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_JOIN02_0900
-     * @tc.name testUint16ArrayJoin02_009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_JOIN_TWO_0900
+     * @tc.name testUint16ArrayJoinTwo009
      * @tc.desc Verify all elements equal 65535 join() and toString()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayJoin02_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayJoinTwo009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(65535, 65535, 65535);
       const joinResult = arr.join();
       const toStringResult = arr.toString();
@@ -174,14 +174,14 @@ export default function uint16ArrayJoin02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_JOIN02_1000
-     * @tc.name testUint16ArrayJoin02_010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_JOIN_TWO_1000
+     * @tc.name testUint16ArrayJoinTwo010
      * @tc.desc Verify boundary values (0, 32768, 65535) join() and toString()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayJoin02_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayJoinTwo010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(0, 32768, 65535);
       const joinResult = arr.join();
       const toStringResult = arr.toString();
@@ -190,14 +190,14 @@ export default function uint16ArrayJoin02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_JOIN02_1100
-     * @tc.name testUint16ArrayJoin02_011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_JOIN_TWO_1100
+     * @tc.name testUint16ArrayJoinTwo011
      * @tc.desc Verify custom separator "-" and toString() equivalence
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayJoin02_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayJoinTwo011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 2, 3);
       const joinResultComma = arr.join();
       const toStringResult = arr.toString();
@@ -207,14 +207,14 @@ export default function uint16ArrayJoin02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_JOIN02_1200
-     * @tc.name testUint16ArrayJoin02_012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_JOIN_TWO_1200
+     * @tc.name testUint16ArrayJoinTwo012
      * @tc.desc Verify custom separator " " (space) and toString()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayJoin02_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayJoinTwo012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(10, 20, 30, 40, 50);
       const joinResultSpace = arr.join(" ");
       const joinResultComma = arr.join();
@@ -224,14 +224,14 @@ export default function uint16ArrayJoin02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_JOIN02_1300
-     * @tc.name testUint16ArrayJoin02_013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_JOIN_TWO_1300
+     * @tc.name testUint16ArrayJoinTwo013
      * @tc.desc Verify join reads current values only from a shared nonzero-offset view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayJoin02_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUint16ArrayJoinTwo013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let backing: Uint16Array = Uint16Array.of(9, 1, 2, 3, 9);
       let view: Uint16Array = new Uint16Array(backing.buffer, 2, 3);
       let alias: Uint16Array = new Uint16Array(backing.buffer);
