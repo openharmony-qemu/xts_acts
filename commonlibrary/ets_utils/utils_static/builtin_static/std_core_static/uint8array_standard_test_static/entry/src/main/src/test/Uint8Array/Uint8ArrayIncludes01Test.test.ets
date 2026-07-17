@@ -181,7 +181,7 @@ export default function Uint8ArrayIncludes01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_INCLUDES01_1100
      * @tc.name testUint8ArrayIncludes011
-     * @tc.desc Verify searchElement as 256 (truncated to 0), element 0 exists in array, returns true
+     * @tc.desc Verify searchElement as 256, 256 is truncated to 0, element 0 exists in array, returns true
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -189,7 +189,7 @@ export default function Uint8ArrayIncludes01Test(): void {
     it('testUint8ArrayIncludes011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Uint8Array = new Uint8Array([0, 127, 255]);
       let result: boolean = arr.includes(256);
-      expect(result).assertTrue();
+      expect(result).assertFalse();
     });
 
     /**
@@ -209,7 +209,7 @@ export default function Uint8ArrayIncludes01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_INCLUDES01_1300
      * @tc.name testUint8ArrayIncludes013
-     * @tc.desc Verify searchElement as -1 (wrapped to 255), element 255 exists in array, returns true
+     * @tc.desc Verify searchElement as -1, -1 is not wrapped to 255, 256 !== 255, returns false
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -217,7 +217,7 @@ export default function Uint8ArrayIncludes01Test(): void {
     it('testUint8ArrayIncludes013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Uint8Array = new Uint8Array([0, 127, 255]);
       let result: boolean = arr.includes(-1);
-      expect(result).assertTrue();
+      expect(result).assertFalse();
     });
 
     /**
@@ -237,7 +237,7 @@ export default function Uint8ArrayIncludes01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_INCLUDES01_1500
      * @tc.name testUint8ArrayIncludes015
-     * @tc.desc Verify searchElement as 511 (511&0xFF=255), element 255 exists in array, returns true
+     * @tc.desc Verify searchElement as 511, 511 is not truncated to 255, returns false
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -245,7 +245,7 @@ export default function Uint8ArrayIncludes01Test(): void {
     it('testUint8ArrayIncludes015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Uint8Array = new Uint8Array([255, 0, 1]);
       let result: boolean = arr.includes(511);
-      expect(result).assertTrue();
+      expect(result).assertFalse();
     });
 
     /**
@@ -265,7 +265,7 @@ export default function Uint8ArrayIncludes01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_INCLUDES01_1700
      * @tc.name testUint8ArrayIncludes017
-     * @tc.desc Verify searchElement as -255 (wrapped to 1), element 1 exists in array, returns true
+     * @tc.desc Verify searchElement as -255, -255 is not wrapped to 1, returns false
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -273,7 +273,7 @@ export default function Uint8ArrayIncludes01Test(): void {
     it('testUint8ArrayIncludes017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Uint8Array = new Uint8Array([1, 0, 2]);
       let result: boolean = arr.includes(-255);
-      expect(result).assertTrue();
+      expect(result).assertFalse();
     });
 
     /**
@@ -293,7 +293,7 @@ export default function Uint8ArrayIncludes01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_INCLUDES01_1900
      * @tc.name testUint8ArrayIncludes019
-     * @tc.desc Verify searchElement as 257 (257&0xFF=1), element 1 exists in array, returns true
+     * @tc.desc Verify searchElement as 257, 257 is not truncated to 1, returns false
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -301,7 +301,7 @@ export default function Uint8ArrayIncludes01Test(): void {
     it('testUint8ArrayIncludes019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Uint8Array = new Uint8Array([1, 0, 255]);
       let result: boolean = arr.includes(257);
-      expect(result).assertTrue();
+      expect(result).assertFalse();
     });
 
     /**
@@ -321,7 +321,7 @@ export default function Uint8ArrayIncludes01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_INCLUDES01_2100
      * @tc.name testUint8ArrayIncludes021
-     * @tc.desc Verify searchElement as -2 (wrapped to 254), element 254 exists in array, returns true
+     * @tc.desc Verify searchElement as -2, -2 is not wrapped to 254, returns false
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -329,7 +329,7 @@ export default function Uint8ArrayIncludes01Test(): void {
     it('testUint8ArrayIncludes021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Uint8Array = new Uint8Array([254, 0, 127]);
       let result: boolean = arr.includes(-2);
-      expect(result).assertTrue();
+      expect(result).assertFalse();
     });
 
     /**
@@ -349,7 +349,7 @@ export default function Uint8ArrayIncludes01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_INCLUDES01_2300
      * @tc.name testUint8ArrayIncludes023
-     * @tc.desc Verify searchElement as -256 (wrapped to 0), element 0 exists in array, returns true
+     * @tc.desc Verify searchElement as -256, -256 is not wrapped to 0, returns false
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -357,7 +357,7 @@ export default function Uint8ArrayIncludes01Test(): void {
     it('testUint8ArrayIncludes023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Uint8Array = new Uint8Array([0, 127, 255]);
       let result: boolean = arr.includes(-256);
-      expect(result).assertTrue();
+      expect(result).assertFalse();
     });
 
     /**
@@ -433,7 +433,7 @@ export default function Uint8ArrayIncludes01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_INCLUDES01_2900
      * @tc.name testUint8ArrayIncludes029
-     * @tc.desc Verify searchElement as 0x100 (256, truncated to 0), element 0 exists in array
+     * @tc.desc Verify searchElement as 0x100 (256), 256 is not truncated to 0, returns false
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -441,7 +441,7 @@ export default function Uint8ArrayIncludes01Test(): void {
     it('testUint8ArrayIncludes029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Uint8Array = new Uint8Array([0, 127, 255]);
       let result: boolean = arr.includes(0x100);
-      expect(result).assertTrue();
+      expect(result).assertFalse();
     });
 
     /**
@@ -1371,7 +1371,7 @@ export default function Uint8ArrayIncludes01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_INCLUDES01_9600
      * @tc.name testUint8ArrayIncludes096
-     * @tc.desc Verify fromIndex=1 and searchElement as 256 (truncated to 0), array index 1 has 0
+     * @tc.desc Verify fromIndex=1 and searchElement as 256, 256 is not truncated to 0, returns false
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1379,13 +1379,13 @@ export default function Uint8ArrayIncludes01Test(): void {
     it('testUint8ArrayIncludes096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Uint8Array = new Uint8Array([1, 0, 255]);
       let result: boolean = arr.includes(256, 1);
-      expect(result).assertTrue();
+      expect(result).assertFalse();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_INCLUDES01_9700
      * @tc.name testUint8ArrayIncludes097
-     * @tc.desc Verify fromIndex=2 and searchElement as -1 (wrapped to 255), array index 2 has 255
+     * @tc.desc Verify fromIndex=2 and searchElement as -1, -1 is not wrapped to 255, returns false
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1393,7 +1393,7 @@ export default function Uint8ArrayIncludes01Test(): void {
     it('testUint8ArrayIncludes097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Uint8Array = new Uint8Array([1, 0, 255]);
       let result: boolean = arr.includes(-1, 2);
-      expect(result).assertTrue();
+      expect(result).assertFalse();
     });
 
     /**
