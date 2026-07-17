@@ -19,8 +19,8 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-export default function uint16ArrayFromPart3Test(): void {
-  describe('Uint16ArrayFromPart3Test', () => {
+export default function uint16ArrayFrom04Test(): void {
+  describe('Uint16ArrayFrom04Test', () => {
     beforeAll(() => {
     });
 
@@ -35,14 +35,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_0100
-     * @tc.name testUint16ArrayFromPart3_001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_0100
+     * @tc.name testUint16ArrayFromFour001
      * @tc.desc Verify Array<number> from
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let fa: Array<number> = [10, 20, 30];
       let r = Uint16Array.from(fa);
       expect(r.length).assertEqual(3);
@@ -52,14 +52,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_0200
-     * @tc.name testUint16ArrayFromPart3_002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_0200
+     * @tc.name testUint16ArrayFromFour002
      * @tc.desc Verify Set<number> from
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let s = new Set<number>();
       s.add(100);
       s.add(200);
@@ -70,14 +70,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_0300
-     * @tc.name testUint16ArrayFromPart3_003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_0300
+     * @tc.name testUint16ArrayFromFour003
      * @tc.desc Verify Uint16Array from
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let src = Uint16Array.of(50, 150, 250);
       let r = Uint16Array.from(src);
       expect(r.length).assertEqual(3);
@@ -87,14 +87,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_0400
-     * @tc.name testUint16ArrayFromPart3_004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_0400
+     * @tc.name testUint16ArrayFromFour004
      * @tc.desc Verify Uint16Array.from converts Set<number> values without a map function
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let si = new Set<number>();
       si.add(7.0);
       si.add(8.0);
@@ -105,14 +105,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_0500
-     * @tc.name testUint16ArrayFromPart3_005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_0500
+     * @tc.name testUint16ArrayFromFour005
      * @tc.desc Verify Set<number> {0, 65535}
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let s = new Set<number>();
       s.add(0);
       s.add(65535);
@@ -122,14 +122,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_0600
-     * @tc.name testUint16ArrayFromPart3_006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_0600
+     * @tc.name testUint16ArrayFromFour006
      * @tc.desc Verify Uint16Array 0 65535
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let src = Uint16Array.of(0, 65535);
       let r = Uint16Array.from(src);
       expect(r.at(0)).assertEqual(0);
@@ -137,70 +137,57 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_0700
-     * @tc.name testUint16ArrayFromPart3_007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_0700
+     * @tc.name testUint16ArrayFromFour007
      * @tc.desc Verify Array<number> [] Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let fa: Array<number> = [];
       let r = Uint16Array.from(fa);
       expect(r.length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_0800
-     * @tc.name testUint16ArrayFromPart3_008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_0800
+     * @tc.name testUint16ArrayFromFour008
      * @tc.desc Verify Set<number> Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let s = new Set<number>();
       let r = Uint16Array.from(s);
       expect(r.length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_0900
-     * @tc.name testUint16ArrayFromPart3_009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_0900
+     * @tc.name testUint16ArrayFromFour009
      * @tc.desc Verify Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let src = new Uint16Array(0);
       let r = Uint16Array.from(src);
       expect(r.length).assertEqual(0);
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_1000
-     * @tc.name testUint16ArrayFromPart3_010
-     * @tc.desc Verify Iterable<number> Uint16Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFromPart3_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let si = new Set<number>();
-      let r = Uint16Array.from(si);
-      expect(r.length).assertEqual(0);
-    });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_1100
-     * @tc.name testUint16ArrayFromPart3_011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_1100
+     * @tc.name testUint16ArrayFromFour011
      * @tc.desc Verify Array<number> Array<number>
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let fa: Array<number> = [42, 99];
       let an: Array<number> = [42.0, 99.0];
       let r1 = Uint16Array.from(fa);
@@ -211,14 +198,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_1200
-     * @tc.name testUint16ArrayFromPart3_012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_1200
+     * @tc.name testUint16ArrayFromFour012
      * @tc.desc Verify Set<number> Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let s = new Set<number>();
       s.add(33);
       s.add(66);
@@ -231,14 +218,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_1300
-     * @tc.name testUint16ArrayFromPart3_013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_1300
+     * @tc.name testUint16ArrayFromFour013
      * @tc.desc Verify Array<number> Set<number>
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let fa: Array<number> = [77, 88];
       let s = new Set<number>();
       s.add(77);
@@ -251,14 +238,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_1400
-     * @tc.name testUint16ArrayFromPart3_014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_1400
+     * @tc.name testUint16ArrayFromFour014
      * @tc.desc Verify Array<number> Iterable<number>
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let an: Array<number> = [11.0, 22.0];
       let si = new Set<number>();
       si.add(11.0);
@@ -271,14 +258,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_1500
-     * @tc.name testUint16ArrayFromPart3_015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_1500
+     * @tc.name testUint16ArrayFromFour015
      * @tc.desc Verify Array<number> [32768] Array<number>
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let fa: Array<number> = [32768];
       let an: Array<number> = [32768.0];
       let r1 = Uint16Array.from(fa);
@@ -288,14 +275,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_1600
-     * @tc.name testUint16ArrayFromPart3_016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_1600
+     * @tc.name testUint16ArrayFromFour016
      * @tc.desc Verify Uint16Array.from maps Array<number> indices to values 1, 2, and 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let r = Uint16Array.from(Array.of<number>(5, 6, 7), (v: number, k: number): number => { return k + 1; });
       expect(r.length).assertEqual(3);
       expect(r.at(0)).assertEqual(1);
@@ -304,14 +291,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_1700
-     * @tc.name testUint16ArrayFromPart3_017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_1700
+     * @tc.name testUint16ArrayFromFour017
      * @tc.desc Verify mapfn<U=number> number
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let an: Array<number> = [10.0, 20.0, 30.0];
       let r = Uint16Array.from(an, (v: number, k: number): number => { return v + 5.0; });
       expect(r.at(0)).assertEqual(15);
@@ -320,14 +307,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_1800
-     * @tc.name testUint16ArrayFromPart3_018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_1800
+     * @tc.name testUint16ArrayFromFour018
      * @tc.desc Verify Iterable<number> mapfn mapfn +1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let si = new Set<number>();
       si.add(3.0);
       si.add(7.0);
@@ -337,14 +324,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_1900
-     * @tc.name testUint16ArrayFromPart3_019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_1900
+     * @tc.name testUint16ArrayFromFour019
      * @tc.desc Verify Iterable<number> mapfn index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let si = new Set<number>();
       si.add(100.0);
       si.add(200.0);
@@ -354,120 +341,120 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_2000
-     * @tc.name testUint16ArrayFromPart3_020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_2000
+     * @tc.name testUint16ArrayFromFour020
      * @tc.desc Verify mapfn 65535
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let fa: Array<number> = [1];
       let r = Uint16Array.from(Array.of<number>(1), (v: number, k: number): number => { return 70000; });
       expect(r.at(0)).assertEqual(4464);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_2100
-     * @tc.name testUint16ArrayFromPart3_021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_2100
+     * @tc.name testUint16ArrayFromFour021
      * @tc.desc Verify mapfn
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let r = Uint16Array.from(Array.of<number>(1), (v: number, k: number): number => { return -1; });
       expect(r.at(0)).assertEqual(65535);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_2200
-     * @tc.name testUint16ArrayFromPart3_022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_2200
+     * @tc.name testUint16ArrayFromFour022
      * @tc.desc Verify mapfn 3.14
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let r = Uint16Array.from(Array.of<number>(1), (v: number, k: number): number => { return 3.14; });
       expect(r.at(0)).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_2300
-     * @tc.name testUint16ArrayFromPart3_023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_2300
+     * @tc.name testUint16ArrayFromFour023
      * @tc.desc Verify mapfn NaN 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let r = Uint16Array.from(Array.of<number>(1), (v: number, k: number): number => { return Number.NaN; });
       expect(r.at(0)).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_2400
-     * @tc.name testUint16ArrayFromPart3_024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_2400
+     * @tc.name testUint16ArrayFromFour024
      * @tc.desc Verify mapfn Infinity 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let r = Uint16Array.from(Array.of<number>(1), (v: number, k: number): number => { return Number.POSITIVE_INFINITY; });
       expect(r.at(0)).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_2500
-     * @tc.name testUint16ArrayFromPart3_025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_2500
+     * @tc.name testUint16ArrayFromFour025
      * @tc.desc Verify mapfn -Infinity 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let r = Uint16Array.from(Array.of<number>(1), (v: number, k: number): number => { return -Number.POSITIVE_INFINITY; });
       expect(r.at(0)).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_2600
-     * @tc.name testUint16ArrayFromPart3_026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_2600
+     * @tc.name testUint16ArrayFromFour026
      * @tc.desc Verify mapfn 65536 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let r = Uint16Array.from(Array.of<number>(1), (v: number, k: number): number => { return 65536; });
       expect(r.at(0)).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_2700
-     * @tc.name testUint16ArrayFromPart3_027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_2700
+     * @tc.name testUint16ArrayFromFour027
      * @tc.desc Verify Array<number> BYTES_PER_ELEMENT 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let fa: Array<number> = [1];
       let r = Uint16Array.from(fa);
       expect(r.BYTES_PER_ELEMENT).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_2800
-     * @tc.name testUint16ArrayFromPart3_028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_2800
+     * @tc.name testUint16ArrayFromFour028
      * @tc.desc Verify Set<number> BYTES_PER_ELEMENT 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let s = new Set<number>();
       s.add(1);
       let r = Uint16Array.from(s);
@@ -475,42 +462,42 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_2900
-     * @tc.name testUint16ArrayFromPart3_029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_2900
+     * @tc.name testUint16ArrayFromFour029
      * @tc.desc Verify Uint16Array BYTES_PER_ELEMENT 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let src = Uint16Array.of(1);
       let r = Uint16Array.from(src);
       expect(r.BYTES_PER_ELEMENT).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_3000
-     * @tc.name testUint16ArrayFromPart3_030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_3000
+     * @tc.name testUint16ArrayFromFour030
      * @tc.desc Verify Array<number> BYTES_PER_ELEMENT 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let an: Array<number> = [1.0];
       let r = Uint16Array.from(an);
       expect(r.BYTES_PER_ELEMENT).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_3100
-     * @tc.name testUint16ArrayFromPart3_031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_3100
+     * @tc.name testUint16ArrayFromFour031
      * @tc.desc Verify Iterable<number> BYTES_PER_ELEMENT 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let si = new Set<number>();
       si.add(1.0);
       let r = Uint16Array.from(si);
@@ -518,28 +505,28 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_3200
-     * @tc.name testUint16ArrayFromPart3_032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_3200
+     * @tc.name testUint16ArrayFromFour032
      * @tc.desc Verify Array<number> conversion returns a Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let fa: Array<number> = [1];
       let r = Uint16Array.from(fa);
       expect(r instanceof Uint16Array).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_3300
-     * @tc.name testUint16ArrayFromPart3_033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_3300
+     * @tc.name testUint16ArrayFromFour033
      * @tc.desc Verify Set<number> conversion returns a Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let s = new Set<number>();
       s.add(1);
       let r = Uint16Array.from(s);
@@ -547,42 +534,42 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_3400
-     * @tc.name testUint16ArrayFromPart3_034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_3400
+     * @tc.name testUint16ArrayFromFour034
      * @tc.desc Verify Uint16Array conversion returns a Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let src = Uint16Array.of(1);
       let r = Uint16Array.from(src);
       expect(r instanceof Uint16Array).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_3500
-     * @tc.name testUint16ArrayFromPart3_035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_3500
+     * @tc.name testUint16ArrayFromFour035
      * @tc.desc Verify Array<number> conversion returns a Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let an: Array<number> = [1.0];
       let r = Uint16Array.from(an);
       expect(r instanceof Uint16Array).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_3600
-     * @tc.name testUint16ArrayFromPart3_036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_3600
+     * @tc.name testUint16ArrayFromFour036
      * @tc.desc Verify Iterable<number> conversion returns a Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let si = new Set<number>();
       si.add(1.0);
       let r = Uint16Array.from(si);
@@ -590,28 +577,28 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_3700
-     * @tc.name testUint16ArrayFromPart3_037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_3700
+     * @tc.name testUint16ArrayFromFour037
      * @tc.desc Verify Array<number> byteOffset 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let fa: Array<number> = [1, 2];
       let r = Uint16Array.from(fa);
       expect(r.byteOffset).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_3800
-     * @tc.name testUint16ArrayFromPart3_038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_3800
+     * @tc.name testUint16ArrayFromFour038
      * @tc.desc Verify Set<number> byteOffset 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let s = new Set<number>();
       s.add(1);
       s.add(2);
@@ -620,42 +607,42 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_3900
-     * @tc.name testUint16ArrayFromPart3_039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_3900
+     * @tc.name testUint16ArrayFromFour039
      * @tc.desc Verify Uint16Array byteOffset 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let src = Uint16Array.of(1, 2);
       let r = Uint16Array.from(src);
       expect(r.byteOffset).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_4000
-     * @tc.name testUint16ArrayFromPart3_040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_4000
+     * @tc.name testUint16ArrayFromFour040
      * @tc.desc Verify Array<number> byteOffset 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let an: Array<number> = [1.0, 2.0];
       let r = Uint16Array.from(an);
       expect(r.byteOffset).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_4100
-     * @tc.name testUint16ArrayFromPart3_041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_4100
+     * @tc.name testUint16ArrayFromFour041
      * @tc.desc Verify Iterable<number> byteOffset 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let si = new Set<number>();
       si.add(1.0);
       si.add(2.0);
@@ -664,28 +651,28 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_4200
-     * @tc.name testUint16ArrayFromPart3_042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_4200
+     * @tc.name testUint16ArrayFromFour042
      * @tc.desc Verify Array<number> byteLength length * 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let fa: Array<number> = [10, 20, 30];
       let r = Uint16Array.from(fa);
       expect(r.byteLength).assertEqual(6);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_4300
-     * @tc.name testUint16ArrayFromPart3_043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_4300
+     * @tc.name testUint16ArrayFromFour043
      * @tc.desc Verify Set<number> byteLength length * 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let s = new Set<number>();
       s.add(10);
       s.add(20);
@@ -695,42 +682,42 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_4400
-     * @tc.name testUint16ArrayFromPart3_044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_4400
+     * @tc.name testUint16ArrayFromFour044
      * @tc.desc Verify Uint16Array byteLength length * 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let src = Uint16Array.of(10, 20, 30);
       let r = Uint16Array.from(src);
       expect(r.byteLength).assertEqual(6);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_4500
-     * @tc.name testUint16ArrayFromPart3_045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_4500
+     * @tc.name testUint16ArrayFromFour045
      * @tc.desc Verify Array<number> byteLength length * 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let an: Array<number> = [10.0, 20.0, 30.0];
       let r = Uint16Array.from(an);
       expect(r.byteLength).assertEqual(6);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_4600
-     * @tc.name testUint16ArrayFromPart3_046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_4600
+     * @tc.name testUint16ArrayFromFour046
      * @tc.desc Verify Iterable<number> byteLength length * 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let si = new Set<number>();
       si.add(10.0);
       si.add(20.0);
@@ -739,100 +726,33 @@ export default function uint16ArrayFromPart3Test(): void {
       expect(r.byteLength).assertEqual(6);
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_4700
-     * @tc.name testUint16ArrayFromPart3_047
-     * @tc.desc Verify Array<number> Uint16Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFromPart3_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let fa: Array<number> = [1];
-      let r = Uint16Array.from(fa);
-      expect(r instanceof Uint16Array).assertTrue();
-    });
+
+
+
+
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_4800
-     * @tc.name testUint16ArrayFromPart3_048
-     * @tc.desc Verify Set<number> Uint16Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFromPart3_048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let s = new Set<number>();
-      s.add(1);
-      let r = Uint16Array.from(s);
-      expect(r instanceof Uint16Array).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_4900
-     * @tc.name testUint16ArrayFromPart3_049
-     * @tc.desc Verify Uint16Array Uint16Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFromPart3_049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let src = Uint16Array.of(1);
-      let r = Uint16Array.from(src);
-      expect(r instanceof Uint16Array).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_5000
-     * @tc.name testUint16ArrayFromPart3_050
-     * @tc.desc Verify Array<number> Uint16Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFromPart3_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let an: Array<number> = [1.0];
-      let r = Uint16Array.from(an);
-      expect(r instanceof Uint16Array).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_5100
-     * @tc.name testUint16ArrayFromPart3_051
-     * @tc.desc Verify Iterable<number> Uint16Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFromPart3_051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let si = new Set<number>();
-      si.add(1.0);
-      let r = Uint16Array.from(si);
-      expect(r instanceof Uint16Array).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_5200
-     * @tc.name testUint16ArrayFromPart3_052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_5200
+     * @tc.name testUint16ArrayFromFour052
      * @tc.desc Verify Uint16Array.from maps Array<number> to a Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let r = Uint16Array.from(Array.of<number>(1), (v: number, k: number): number => { return 1; });
       expect(r instanceof Uint16Array).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_5300
-     * @tc.name testUint16ArrayFromPart3_053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_5300
+     * @tc.name testUint16ArrayFromFour053
      * @tc.desc Verify Iterable<number> mapfn Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let si = new Set<number>();
       si.add(1.0);
       let r = Uint16Array.from(si, (v: number, k: number): number => { return v; });
@@ -840,28 +760,28 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_5400
-     * @tc.name testUint16ArrayFromPart3_054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_5400
+     * @tc.name testUint16ArrayFromFour054
      * @tc.desc Verify Array<number> toString
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let fa: Array<number> = [100, 200, 300];
       let r = Uint16Array.from(fa);
       expect(r.toString()).assertEqual("100,200,300");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_5500
-     * @tc.name testUint16ArrayFromPart3_055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_5500
+     * @tc.name testUint16ArrayFromFour055
      * @tc.desc Verify Set<number> toString
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let s = new Set<number>();
       s.add(100);
       s.add(200);
@@ -871,42 +791,42 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_5600
-     * @tc.name testUint16ArrayFromPart3_056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_5600
+     * @tc.name testUint16ArrayFromFour056
      * @tc.desc Verify Uint16Array toString
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let src = Uint16Array.of(100, 200, 300);
       let r = Uint16Array.from(src);
       expect(r.toString()).assertEqual("100,200,300");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_5700
-     * @tc.name testUint16ArrayFromPart3_057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_5700
+     * @tc.name testUint16ArrayFromFour057
      * @tc.desc Verify Array<number> toString
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let an: Array<number> = [100.0, 200.0, 300.0];
       let r = Uint16Array.from(an);
       expect(r.toString()).assertEqual("100,200,300");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_5800
-     * @tc.name testUint16ArrayFromPart3_058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_5800
+     * @tc.name testUint16ArrayFromFour058
      * @tc.desc Verify Iterable<number> toString
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let si = new Set<number>();
       si.add(100.0);
       si.add(200.0);
@@ -916,28 +836,28 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_5900
-     * @tc.name testUint16ArrayFromPart3_059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_5900
+     * @tc.name testUint16ArrayFromFour059
      * @tc.desc Verify Array<number> valueOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let fa: Array<number> = [1, 2];
       let r = Uint16Array.from(fa);
       expect(r.valueOf()).assertEqual(r);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_6000
-     * @tc.name testUint16ArrayFromPart3_060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_6000
+     * @tc.name testUint16ArrayFromFour060
      * @tc.desc Verify Set<number> valueOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let s = new Set<number>();
       s.add(1);
       s.add(2);
@@ -946,42 +866,42 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_6100
-     * @tc.name testUint16ArrayFromPart3_061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_6100
+     * @tc.name testUint16ArrayFromFour061
      * @tc.desc Verify Uint16Array valueOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let src = Uint16Array.of(1, 2);
       let r = Uint16Array.from(src);
       expect(r.valueOf()).assertEqual(r);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_6200
-     * @tc.name testUint16ArrayFromPart3_062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_6200
+     * @tc.name testUint16ArrayFromFour062
      * @tc.desc Verify Array<number> valueOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let an: Array<number> = [1.0, 2.0];
       let r = Uint16Array.from(an);
       expect(r.valueOf()).assertEqual(r);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_6300
-     * @tc.name testUint16ArrayFromPart3_063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_6300
+     * @tc.name testUint16ArrayFromFour063
      * @tc.desc Verify Iterable<number> valueOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let si = new Set<number>();
       si.add(1.0);
       si.add(2.0);
@@ -990,28 +910,28 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_6400
-     * @tc.name testUint16ArrayFromPart3_064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_6400
+     * @tc.name testUint16ArrayFromFour064
      * @tc.desc Verify Array<number> join
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let fa: Array<number> = [5, 10, 15];
       let r = Uint16Array.from(fa);
       expect(r.join()).assertEqual("5,10,15");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_6500
-     * @tc.name testUint16ArrayFromPart3_065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_6500
+     * @tc.name testUint16ArrayFromFour065
      * @tc.desc Verify Set<number> join
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let s = new Set<number>();
       s.add(5);
       s.add(10);
@@ -1021,28 +941,28 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_6600
-     * @tc.name testUint16ArrayFromPart3_066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_6600
+     * @tc.name testUint16ArrayFromFour066
      * @tc.desc Verify Uint16Array join
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let src = Uint16Array.of(5, 10, 15);
       let r = Uint16Array.from(src);
       expect(r.join()).assertEqual(src.join());
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_6700
-     * @tc.name testUint16ArrayFromPart3_067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_6700
+     * @tc.name testUint16ArrayFromFour067
      * @tc.desc Verify mapfn Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         Uint16Array.from(Array.of<number>(1, 2), (v: number, k: number): number => {
           throw new Error("mapfn error");
@@ -1054,14 +974,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_6800
-     * @tc.name testUint16ArrayFromPart3_068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_6800
+     * @tc.name testUint16ArrayFromFour068
      * @tc.desc Verify Iterable<number> mapfn Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         let si = new Set<number>();
         si.add(1.0);
@@ -1076,14 +996,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_6900
-     * @tc.name testUint16ArrayFromPart3_069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_6900
+     * @tc.name testUint16ArrayFromFour069
      * @tc.desc Verify from
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         Uint16Array.from(Array.of<number>(1), (v: number, k: number): number => {
           throw new Error("abort");
@@ -1094,18 +1014,16 @@ export default function uint16ArrayFromPart3Test(): void {
       }
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_7000
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_7000
-     * @tc.name testUint16ArrayFromPart3_070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_7000
+     * @tc.name testUint16ArrayFromFour070
      * @tc.desc Verify undefined mapfn result throws ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       try {
         let r = Uint16Array.from(Array.of<number>(1), (v: number, k: number): number => {
           return undefined as number;
@@ -1116,30 +1034,16 @@ export default function uint16ArrayFromPart3Test(): void {
       }
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_7100
-     * @tc.name testUint16ArrayFromPart3_071
-     * @tc.desc Verify mapfn NaN 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFromPart3_071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let r = Uint16Array.from(Array.of<number>(1), (v: number, k: number): number => {
-        return Number.NaN;
-      });
-      expect(r.at(0)).assertEqual(0);
-    });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_7200
-     * @tc.name testUint16ArrayFromPart3_072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_7200
+     * @tc.name testUint16ArrayFromFour072
      * @tc.desc Verify with mapfn
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let called: boolean = false;
       Uint16Array.from([], (v: number, k: number): number => {
         called = true;
@@ -1149,28 +1053,28 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_7300
-     * @tc.name testUint16ArrayFromPart3_073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_7300
+     * @tc.name testUint16ArrayFromFour073
      * @tc.desc Verify Uint16Array from buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let src = Uint16Array.of(1, 2, 3);
       let r = Uint16Array.from(src);
       expect((r.buffer) !== (src.buffer)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_7400
-     * @tc.name testUint16ArrayFromPart3_074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_7400
+     * @tc.name testUint16ArrayFromFour074
      * @tc.desc Verify Uint16Array from
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let src = Uint16Array.of(10, 20, 30);
       let r = Uint16Array.from(src);
       expect(r.at(0)).assertEqual(src.at(0));
@@ -1179,14 +1083,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_7500
-     * @tc.name testUint16ArrayFromPart3_075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_7500
+     * @tc.name testUint16ArrayFromFour075
      * @tc.desc Verify Array<number> from buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let fa: Array<number> = [5, 10];
       let r = Uint16Array.from(fa);
       let buf = r.buffer;
@@ -1194,14 +1098,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_7600
-     * @tc.name testUint16ArrayFromPart3_076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_7600
+     * @tc.name testUint16ArrayFromFour076
      * @tc.desc Verify Array<number> from buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let an: Array<number> = [3.0, 6.0];
       let r = Uint16Array.from(an);
       let buf = r.buffer;
@@ -1209,14 +1113,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_7700
-     * @tc.name testUint16ArrayFromPart3_077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_7700
+     * @tc.name testUint16ArrayFromFour077
      * @tc.desc Verify Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let src = Uint16Array.of(100, 200, 300);
       let r = Uint16Array.from(src);
       src[0] = 999;
@@ -1224,14 +1128,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_7800
-     * @tc.name testUint16ArrayFromPart3_078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_7800
+     * @tc.name testUint16ArrayFromFour078
      * @tc.desc Verify Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let src = Uint16Array.of(100, 200, 300);
       let r = Uint16Array.from(src);
       r[0] = 888;
@@ -1239,14 +1143,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_7900
-     * @tc.name testUint16ArrayFromPart3_079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_7900
+     * @tc.name testUint16ArrayFromFour079
      * @tc.desc Verify from
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let fa: Array<number> = [1, 2];
       let r1 = Uint16Array.from(fa);
       let r2 = Uint16Array.from(fa);
@@ -1256,14 +1160,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_8000
-     * @tc.name testUint16ArrayFromPart3_080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_8000
+     * @tc.name testUint16ArrayFromFour080
      * @tc.desc Verify from
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let fa: Array<number> = [10, 20];
       let r1 = Uint16Array.from(fa);
       let r2 = Uint16Array.from(fa);
@@ -1272,14 +1176,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_8100
-     * @tc.name testUint16ArrayFromPart3_081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_8100
+     * @tc.name testUint16ArrayFromFour081
      * @tc.desc Verify from Set<number> Set
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let s = new Set<number>();
       s.add(1);
       s.add(2);
@@ -1289,14 +1193,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_8200
-     * @tc.name testUint16ArrayFromPart3_082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_8200
+     * @tc.name testUint16ArrayFromFour082
      * @tc.desc Verify from Array<number>
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let an: Array<number> = [1.0, 2.0];
       let r = Uint16Array.from(an);
       an[0] = 999.0;
@@ -1304,14 +1208,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_8300
-     * @tc.name testUint16ArrayFromPart3_083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_8300
+     * @tc.name testUint16ArrayFromFour083
      * @tc.desc Verify buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let fa: Array<number> = [50, 60];
       let s = new Set<number>();
       s.add(50);
@@ -1324,14 +1228,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_8400
-     * @tc.name testUint16ArrayFromPart3_084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_8400
+     * @tc.name testUint16ArrayFromFour084
      * @tc.desc Verify Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let src = Uint16Array.of(1, 2, 3, 4, 5);
       let r = Uint16Array.from(src);
       r[4] = 99;
@@ -1340,14 +1244,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_8500
-     * @tc.name testUint16ArrayFromPart3_085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_8500
+     * @tc.name testUint16ArrayFromFour085
      * @tc.desc Verify from ArrayBuffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let src = Uint16Array.of(255, 0, 65535);
       let r = Uint16Array.from(src);
       expect(r instanceof Uint16Array).assertTrue();
@@ -1357,14 +1261,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_8600
-     * @tc.name testUint16ArrayFromPart3_086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_8600
+     * @tc.name testUint16ArrayFromFour086
      * @tc.desc Verify from
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let fa: Array<number> = [42];
       let src = Uint16Array.of(42);
       let an: Array<number> = [42.0];
@@ -1379,14 +1283,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_8700
-     * @tc.name testUint16ArrayFromPart3_087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_8700
+     * @tc.name testUint16ArrayFromFour087
      * @tc.desc Verify from buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let fa: Array<number> = [];
       let src = new Uint16Array(0);
       let an: Array<number> = [];
@@ -1399,14 +1303,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_8800
-     * @tc.name testUint16ArrayFromPart3_088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_8800
+     * @tc.name testUint16ArrayFromFour088
      * @tc.desc Verify from with mapfn using index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Array<number> = [10, 20, 30, 40];
       let r = Uint16Array.from(arr, (v: number, k: number): number => k * 200);
       expect(r.at(0)).assertEqual(0);
@@ -1415,14 +1319,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_8900
-     * @tc.name testUint16ArrayFromPart3_089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_8900
+     * @tc.name testUint16ArrayFromFour089
      * @tc.desc Verify from array with 0xFFFF, 0x8000, 0x7FFF
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Array<number> = [0xFFFF, 0x8000, 0x7FFF];
       let r = Uint16Array.from(arr);
       expect(r.at(0)).assertEqual(65535);
@@ -1431,14 +1335,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_9000
-     * @tc.name testUint16ArrayFromPart3_090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_9000
+     * @tc.name testUint16ArrayFromFour090
      * @tc.desc Verify from Set with duplicate values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let s = new Set<number>();
       s.add(1);
       s.add(1);
@@ -1450,14 +1354,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_9100
-     * @tc.name testUint16ArrayFromPart3_091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_9100
+     * @tc.name testUint16ArrayFromFour091
      * @tc.desc Verify from with mapfn on Set
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let s = new Set<number>();
       s.add(1);
       s.add(2);
@@ -1469,14 +1373,14 @@ export default function uint16ArrayFromPart3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_PART3_9200
-     * @tc.name testUint16ArrayFromPart3_092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FROM_FOUR_9200
+     * @tc.name testUint16ArrayFromFour092
      * @tc.desc Verify from with array containing floats
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFromPart3_092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFromFour092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Array<number> = [1.9, 2.5, 3.1];
       let r = Uint16Array.from(arr);
       expect(r.at(0)).assertEqual(1);
