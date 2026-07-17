@@ -181,7 +181,7 @@ export default function Uint8ArrayLastIndexOf01Test(): void {
      */
     it('testUint8ArrayLastIndexOf011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint8Array = new Uint8Array([0, 10, 20]);
-      expect(arr.lastIndexOf(256)).assertEqual(0);
+      expect(arr.lastIndexOf(256)).assertEqual(-1);
     });
 
     /**
@@ -194,7 +194,7 @@ export default function Uint8ArrayLastIndexOf01Test(): void {
      */
     it('testUint8ArrayLastIndexOf012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint8Array = new Uint8Array([255, 10, 20]);
-      expect(arr.lastIndexOf(-1)).assertEqual(0);
+      expect(arr.lastIndexOf(-1)).assertEqual(-1);
     });
 
     /**
@@ -207,7 +207,7 @@ export default function Uint8ArrayLastIndexOf01Test(): void {
      */
     it('testUint8ArrayLastIndexOf013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint8Array = new Uint8Array([1, 10, 20]);
-      expect(arr.lastIndexOf(-255)).assertEqual(0);
+      expect(arr.lastIndexOf(-255)).assertEqual(-1);
     });
 
     /**
