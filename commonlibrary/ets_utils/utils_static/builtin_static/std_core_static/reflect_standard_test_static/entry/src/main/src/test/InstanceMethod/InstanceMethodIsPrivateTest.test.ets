@@ -562,8 +562,6 @@ export default function InstanceMethodIsPrivateTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
-     * @knownIssue childCls.getInstanceMethod for inherited methods returns undefined on current platform.
-     *             When platform supports inherited method lookup, remove the guard.
      */
     it('testInstanceMethodIsPrivate0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parentCls = Class.from<ParentClass034>();

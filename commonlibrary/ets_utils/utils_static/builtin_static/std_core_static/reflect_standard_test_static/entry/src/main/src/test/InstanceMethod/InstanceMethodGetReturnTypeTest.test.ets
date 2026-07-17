@@ -979,8 +979,6 @@ export default function InstanceMethodGetReturnTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
-     * @knownIssue childCls.getInstanceMethod for inherited methods returns undefined on current platform.
-     *             When platform supports inherited method lookup, remove the guard.
      */
     it('testInstanceMethodGetReturnType0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<ChildClass067>();

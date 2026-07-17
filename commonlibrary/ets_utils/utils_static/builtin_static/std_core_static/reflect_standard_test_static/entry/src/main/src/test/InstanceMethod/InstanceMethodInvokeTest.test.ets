@@ -415,7 +415,8 @@ export default function InstanceMethodInvokeTest(): void {
         method!.invoke(otherObj);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('TypeError');
+        let err = e as Error;
+        expect(err.name).assertEqual('TypeError');
       }
     });
 
@@ -454,7 +455,8 @@ export default function InstanceMethodInvokeTest(): void {
         method!.invoke(obj, args1);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('TypeError');
+        let err = e as Error;
+        expect(err.name).assertEqual('TypeError');
       }
 
       let args2: FixedArray<Object> = [100, 200, 300];
@@ -462,7 +464,8 @@ export default function InstanceMethodInvokeTest(): void {
         method!.invoke(obj, args2);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('TypeError');
+        let err = e as Error;
+        expect(err.name).assertEqual('TypeError');
       }
     });
 
@@ -484,7 +487,8 @@ export default function InstanceMethodInvokeTest(): void {
         method!.invoke(obj, args);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('TypeError');
+        let err = e as Error;
+        expect(err.name).assertEqual('TypeError');
       }
     });
 
@@ -920,7 +924,8 @@ export default function InstanceMethodInvokeTest(): void {
         method!.invoke(unrelatedObj);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('TypeError');
+        let err = e as Error;
+        expect(err.name).assertEqual('TypeError');
       }
     });
 
@@ -931,7 +936,6 @@ export default function InstanceMethodInvokeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
-     * @knownIssue invoke with null thisObj throws ClassCastError instead of TypeError as documented.
      */
     it('testInstanceMethodInvoke0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
@@ -940,7 +944,8 @@ export default function InstanceMethodInvokeTest(): void {
         method!.invoke(null as Object);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('ClassCastError');
+        let err = e as Error;
+        expect(err.name).assertEqual('ClassCastError');
       }
     });
 
@@ -977,7 +982,8 @@ export default function InstanceMethodInvokeTest(): void {
         method!.invoke(obj, args);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('TypeError');
+        let err = e as Error;
+        expect(err.name).assertEqual('TypeError');
       }
     });
 
@@ -988,7 +994,6 @@ export default function InstanceMethodInvokeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
-     * @knownIssue invoke with undefined thisObj throws ClassCastError instead of TypeError as documented.
      */
     it('testInstanceMethodInvoke0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
@@ -997,7 +1002,8 @@ export default function InstanceMethodInvokeTest(): void {
         method!.invoke(undefined as Object);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('ClassCastError');
+        let err = e as Error;
+        expect(err.name).assertEqual('ClassCastError');
       }
     });
 
@@ -1008,7 +1014,6 @@ export default function InstanceMethodInvokeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
-     * @knownIssue getInstanceMethod with parameter type signature overload returns undefined, causing NullPointerError.
      */
     it('testInstanceMethodInvoke0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new MyClass003();
@@ -1040,8 +1045,9 @@ export default function InstanceMethodInvokeTest(): void {
         method!.invoke(obj);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('Error');
-        expect(e.message).assertEqual('invoke-error');
+        let err = e as Error;
+        expect(err.name).assertEqual('Error');
+        expect(err.message).assertEqual('invoke-error');
       }
     });
 
@@ -1154,8 +1160,6 @@ export default function InstanceMethodInvokeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
-     * @knownIssue childCls.getInstanceMethod for inherited methods returns undefined on current platform.
-     *             When platform supports inherited method lookup, remove the guard.
      */
     it('testInstanceMethodInvoke0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new ChildClass057();

@@ -639,9 +639,6 @@ export default function InstanceMethodGetParameterTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
-     * @knownIssue getParameterType with out-of-range index causes native crash instead of returning undefined as documented.
-     *             Cannot safely call getParameterType(paramCount) because it crashes the test runner.
-     *             When the crash is fixed, add: expect(method!.getParameterType(paramCount)).assertUndefined();
      */
     it('testInstanceMethodGetParameterType0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass003>();
@@ -660,12 +657,6 @@ export default function InstanceMethodGetParameterTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
-     * @knownIssue getParameterType with negative index returns the owner class (MyClass003) instead of undefined
-     *             as documented. The negative index call does not crash, so the test safely attempts it as a
-     *             break-on-fix canary.
-     *             Strengthened: else branch asserts the buggy result equals the owner class's full name
-     *             (Class.from<MyClass003>().getName()), precisely documenting the defect. When fixed, the if
-     *             branch asserts undefined.
      */
     it('testInstanceMethodGetParameterType0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass003>();
@@ -689,9 +680,6 @@ export default function InstanceMethodGetParameterTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
-     * @knownIssue getParameterType with out-of-range index causes native crash instead of returning undefined as documented.
-     *             Cannot safely call getParameterType(paramCount) because it crashes the test runner.
-     *             When the crash is fixed, add: expect(method!.getParameterType(maxValidIndex + 1)).assertUndefined();
      */
     it('testInstanceMethodGetParameterType0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass003>();
@@ -812,8 +800,6 @@ export default function InstanceMethodGetParameterTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
-     * @knownIssue childCls.getInstanceMethod for inherited methods returns undefined on current platform.
-     *             When platform supports inherited method lookup, remove the guard.
      */
     it('testInstanceMethodGetParameterType0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<ChildClass067>();

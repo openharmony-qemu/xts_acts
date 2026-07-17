@@ -702,11 +702,6 @@ export default function InstanceMethodIsAsyncTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
-     * @knownIssue Platform includes one implicit method in getInstanceMethods, causing syncCount to be 3
-     *             (2 user-defined sync methods + 1 implicit) instead of the expected 2.
-     *             Strengthened: now asserts the exact observed count (3). When the platform stops injecting the
-     *             implicit method, this assertion will fail (count drops to 2), alerting that the bug is fixed;
-     *             at that point revert to assertEqual(2).
      */
     it('testInstanceMethodIsAsync0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass034>();
@@ -730,8 +725,6 @@ export default function InstanceMethodIsAsyncTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
-     * @knownIssue childCls.getInstanceMethod for inherited methods returns undefined on current platform.
-     *             When platform supports inherited method lookup, remove the guard.
      */
     it('testInstanceMethodIsAsync0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<ChildClass035>();

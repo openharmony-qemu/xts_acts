@@ -622,8 +622,6 @@ export default function InstanceMethodGetNameTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
-     * @knownIssue childCls.getInstanceMethod for inherited methods returns undefined on current platform.
-     *             When platform supports inherited method lookup, remove the guard.
      */
     it('testInstanceMethodGetName0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parentCls = Class.from<ParentClass048>();
@@ -814,7 +812,8 @@ export default function InstanceMethodGetNameTest(): void {
         let name = method!.getName();
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('NullPointerError');
+        let err = e as Error;
+        expect(err.name).assertEqual('NullPointerError');
       }
     });
 
@@ -835,7 +834,8 @@ export default function InstanceMethodGetNameTest(): void {
         let result = method!.invoke(obj) as string;
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('NullPointerError');
+        let err = e as Error;
+        expect(err.name).assertEqual('NullPointerError');
       }
     });
 
