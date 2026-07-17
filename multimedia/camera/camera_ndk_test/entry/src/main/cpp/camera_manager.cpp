@@ -4670,6 +4670,7 @@ Camera_ErrorCode NDKCamera::SetLogViewAssist(int useCaseCode, bool isEnable)
     return ret_;
 }
 
+
 Camera_ErrorCode NDKCamera::CreatePhotoCaptureSettingExt(int useCaseCode)
 {
     if (useCaseCode == PARAMETER_OK) {
