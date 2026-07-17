@@ -744,6 +744,7 @@ export default function Float64ArraySortTest(): void {
         arr.sort((a: number, b: number): Int => {
           throw new RangeError('test error');
         })
+        expect().assertFail();
 
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
@@ -764,6 +765,7 @@ export default function Float64ArraySortTest(): void {
         arr.sort((a: number, b: number): Int => {
           throw new TypeError('test error');
         })
+        expect().assertFail();
 
       } catch (e) {
         expect(e.name).assertEqual("TypeError");
@@ -784,6 +786,7 @@ export default function Float64ArraySortTest(): void {
         arr.sort((a: number, b: number): Int => {
           throw new Error('test error');
         })
+        expect().assertFail();
 
       } catch (e) {
         expect(e.name).assertEqual("Error");
@@ -807,6 +810,7 @@ export default function Float64ArraySortTest(): void {
           }
           return 0;
         })
+        expect().assertFail();
 
       } catch (e) {
         expect(e.name).assertEqual("Error");
@@ -831,6 +835,7 @@ export default function Float64ArraySortTest(): void {
           }
           return 0;
         })
+        expect().assertFail();
 
       } catch (e) {
         expect(e.name).assertEqual("Error");
@@ -855,6 +860,7 @@ export default function Float64ArraySortTest(): void {
           throwingFn();
           return 0;
         })
+        expect().assertFail();
 
       } catch (e) {
         expect(e.name).assertEqual("Error");
@@ -864,21 +870,21 @@ export default function Float64ArraySortTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_3400
      * @tc.name testFloat64ArraySort034
-     * @tc.desc Verify sort((a: number, b: number) exception handling
+     * @tc.desc Verify sort compareFn is not called for empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArraySort034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let called: boolean = false;
       const arr = new Float64Array();
-      try {
-        arr.sort((a: number, b: number): Int => {
-          throw new Error('empty array throw');
-        })
-
-      } catch (e) {
-        expect(e.name).assertEqual("Error");
-      }
+      const result = arr.sort((a: number, b: number): Int => {
+        called = true;
+        return 0;
+      });
+      expect(result).assertEqual(arr);
+      expect(arr.length).assertEqual(0);
+      expect(called).assertFalse();
     });
 
     /**

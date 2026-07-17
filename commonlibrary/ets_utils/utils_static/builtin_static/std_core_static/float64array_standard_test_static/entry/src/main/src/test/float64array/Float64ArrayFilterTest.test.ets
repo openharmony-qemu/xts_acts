@@ -1422,7 +1422,9 @@ export default function Float64ArrayFilterTest(): void {
           throw new Error("test");
         });
 
+        expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual("Error");
         expect(arr.length).assertEqual(threeValue);
         const actVal18 = arr.$_get(0);
         const expectVal = pointOne;

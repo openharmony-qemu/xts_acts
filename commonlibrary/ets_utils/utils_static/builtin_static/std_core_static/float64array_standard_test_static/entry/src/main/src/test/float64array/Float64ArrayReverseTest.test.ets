@@ -1550,20 +1550,19 @@ export default function float64ArrayReverseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0900
      * @tc.name testFloat64ArrayReverse090
-     * @tc.desc Verify hex literal array reverse first
+     * @tc.desc Verify reverse return value mutation updates original array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayReverse090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const hexValue10: number = 0x10;
-      const hexValue20: number = 0x20;
-      const hexValue30: number = 0x30;
-      const fortyeightPointzero: number = 48.0;
-      const arr = Float64Array.of(hexValue10, hexValue20, hexValue30);
-      arr.reverse();
-      const expectVal = fortyeightPointzero;
-      expect(arr[0]).assertEqual(expectVal);
+      const fillValue99: number = 99.0;
+      const arr = Float64Array.of(1.0, 2.0, 3.0);
+      const result = arr.reverse();
+      result.$_set(0, fillValue99);
+      expect(result).assertEqual(arr);
+      expect(arr.$_get(0)).assertEqual(fillValue99);
+      expect(arr.$_get(2)).assertEqual(1.0);
     });
 
     /**
@@ -1588,36 +1587,43 @@ export default function float64ArrayReverseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0920
      * @tc.name testFloat64ArrayReverse092
-     * @tc.desc Verify octal literal array reverse first
+     * @tc.desc Verify reverse preserves -0.0 sign when moved to first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayReverse092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const twentyfourPointzero: number = 24.0;
-      const arr = new Float64Array([0o10, 0o20, 0o30]);
+      const negativeInfinity: number = -Infinity;
+      const arr = Float64Array.of(1.0, 0.0, -0.0);
       arr.reverse();
-      const expectVal = twentyfourPointzero;
-      expect(arr[0]).assertEqual(expectVal);
+      expect(1.0 / arr.$_get(0)).assertEqual(negativeInfinity);
+      expect(arr.$_get(2)).assertEqual(1.0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_0930
      * @tc.name testFloat64ArrayReverse093
-     * @tc.desc Verify binary literal array reverse first
+     * @tc.desc Verify reverse on subarray mutates only visible parent window
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayReverse093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const binaryValue10: number = 0b10;
-      const binaryValue100: number = 0b100;
-      const binaryValue1000: number = 0b1000;
-      const eightPointZero: number = 8.0;
-      const arr = Float64Array.of(binaryValue10, binaryValue100, binaryValue1000);
-      arr.reverse();
-      const expectVal = eightPointZero;
-      expect(arr[0]).assertEqual(expectVal);
+      const buffer = new ArrayBuffer(40);
+      const parent = new Float64Array(buffer);
+      parent.$_set(0, 10.0);
+      parent.$_set(1, 20.0);
+      parent.$_set(2, 30.0);
+      parent.$_set(3, 40.0);
+      parent.$_set(4, 50.0);
+      const view = new Float64Array(buffer, 8, 3);
+      const result = view.reverse();
+      expect(result).assertEqual(view);
+      expect(parent.$_get(0)).assertEqual(10.0);
+      expect(parent.$_get(1)).assertEqual(40.0);
+      expect(parent.$_get(2)).assertEqual(30.0);
+      expect(parent.$_get(3)).assertEqual(20.0);
+      expect(parent.$_get(4)).assertEqual(50.0);
     });
 
     /**
@@ -1895,18 +1901,20 @@ export default function float64ArrayReverseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1100
      * @tc.name testFloat64ArrayReverse110
-     * @tc.desc Verify first index value after reverse
+     * @tc.desc Verify reverse twice restores full order and keeps buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayReverse110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointFive: number = 1.5;
-      const zeroValue: number = 0;
-      const arr = new Float64Array([0.5, onePointFive]);
-      arr.reverse();
-      const expectVal = onePointFive;
-      expect(arr[0]).assertEqual(expectVal);
+      const arr = Float64Array.of(0.5, 1.5, 0.25, 0.125);
+      const originalBuffer = arr.buffer;
+      arr.reverse().reverse();
+      expect(arr.buffer).assertEqual(originalBuffer);
+      expect(arr.$_get(0)).assertEqual(0.5);
+      expect(arr.$_get(1)).assertEqual(1.5);
+      expect(arr.$_get(2)).assertEqual(0.25);
+      expect(arr.$_get(3)).assertEqual(0.125);
     });
 
     /**

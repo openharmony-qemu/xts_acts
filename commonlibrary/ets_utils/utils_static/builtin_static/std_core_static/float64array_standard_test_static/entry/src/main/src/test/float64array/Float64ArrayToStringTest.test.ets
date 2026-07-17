@@ -722,41 +722,35 @@ export default function float64ArrayToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_4300
      * @tc.name testFloat64ArrayToString043
-     * @tc.desc Verify toString does not throw on normal array
+     * @tc.desc Verify toString returns string for normal array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const values = new Float64Array([1.0]);
-        values.toString();
-      } catch (e) {
-        expect(e).assertNull();
-      }
+      const values = new Float64Array([1.0]);
+      const result = values.toString();
+      expect(result).assertEqual("1");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_4400
      * @tc.name testFloat64ArrayToString044
-     * @tc.desc Verify toString does not throw on empty array
+     * @tc.desc Verify toString returns empty string for empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const values = new Float64Array();
-        values.toString();
-      } catch (e) {
-        expect(e).assertNull();
-      }
+      const values = new Float64Array();
+      const result = values.toString();
+      expect(result).assertEqual("");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSTRING_4500
      * @tc.name testFloat64ArrayToString045
-     * @tc.desc Verify toString does not throw on array with special values
+     * @tc.desc Verify toString returns NaN and Infinity string for special values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -765,12 +759,9 @@ export default function float64ArrayToStringTest(): void {
       const nanValue: number = Number.NaN;
       const positiveInfinity: number = Number.POSITIVE_INFINITY;
       const negativeInfinity: number = Number.NEGATIVE_INFINITY;
-      try {
-        const values = new Float64Array([nanValue, positiveInfinity, negativeInfinity]);
-        values.toString();
-      } catch (e) {
-        expect(e).assertNull();
-      }
+      const values = new Float64Array([nanValue, positiveInfinity, negativeInfinity]);
+      const result = values.toString();
+      expect(result).assertEqual("NaN,Infinity,-Infinity");
     });
 
     /**

@@ -1195,6 +1195,7 @@ export default function Float64ArrayForEachTest(): void {
           secondCalled = true;
         })
 
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
@@ -1227,6 +1228,7 @@ export default function Float64ArrayForEachTest(): void {
           }
         })
 
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
@@ -1263,6 +1265,7 @@ export default function Float64ArrayForEachTest(): void {
           }
         })
 
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
@@ -3492,4 +3495,3 @@ export default function Float64ArrayForEachTest(): void {
 
   })
 }
-

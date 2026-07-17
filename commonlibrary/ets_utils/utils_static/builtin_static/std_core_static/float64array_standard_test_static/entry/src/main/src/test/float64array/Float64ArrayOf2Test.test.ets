@@ -769,34 +769,12 @@ export default function Float64ArrayOf2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_3600
      * @tc.name testFloat64ArrayOf2036
-     * @tc.desc Verify of with number type variables
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayOf2036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const twoValue: number = 2;
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const result = Float64Array.of(1.0, 2.0);
-      expect(result.length).assertEqual(twoValue);
-      const actVal57 = result.$_get(0);
-      const expectVal = onePointZero;
-      expect(actVal57).assertEqual(expectVal);
-      const actVal58 = result.$_get(1);
-      const expectVal2 = twoPointZero;
-      expect(actVal58).assertEqual(expectVal2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_3700
-     * @tc.name testFloat64ArrayOf2037
      * @tc.desc Verify of with double type variables
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayOf2037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayOf2036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const twoValue: number = 2;
       const hundredPointfive: number = 100.5;
       const num200Pointfive: number = 200.5;
@@ -813,14 +791,14 @@ export default function Float64ArrayOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_3800
-     * @tc.name testFloat64ArrayOf2038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_3700
+     * @tc.name testFloat64ArrayOf2037
      * @tc.desc Verify of with mixed number and double type variables
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayOf2038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayOf2037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const twoValue: number = 2;
       const fiftyPointZero: number = 50.0;
       const num150Pointfive: number = 150.5;
@@ -836,14 +814,14 @@ export default function Float64ArrayOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_3900
-     * @tc.name testFloat64ArrayOf2039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_3800
+     * @tc.name testFloat64ArrayOf2038
      * @tc.desc Verify of with int type variables converted to float
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayOf2039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayOf2038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const twoValue: number = 2;
       const tenPointZero: number = 10.0;
       const twentyPointZero: number = 20.0;
@@ -860,14 +838,14 @@ export default function Float64ArrayOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_4000
-     * @tc.name testFloat64ArrayOf2040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_3900
+     * @tc.name testFloat64ArrayOf2039
      * @tc.desc Verify of return value elements match the input values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayOf2040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayOf2039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointOne: number = 0.1;
       const maxSafeInteger: number = 9007199254740991;
       const zeroValue: number = 0;
@@ -884,28 +862,28 @@ export default function Float64ArrayOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_4100
-     * @tc.name testFloat64ArrayOf2041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_4000
+     * @tc.name testFloat64ArrayOf2040
      * @tc.desc Verify two of calls produce arrays with independent buffers
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayOf2041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayOf2040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result1 = Float64Array.of(0.1, 9007199254740991);
       const result2 = Float64Array.of(0.5, 1.5);
       expect(result1.buffer).not().assertEqual(result2.buffer);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_4200
-     * @tc.name testFloat64ArrayOf2042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_4100
+     * @tc.name testFloat64ArrayOf2041
      * @tc.desc Verify of return array elements can be modified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayOf2042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayOf2041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const num999Pointzero: number = 999.0;
       const result = Float64Array.of(-32768, -128, 0);
       result.$_set(0, num999Pointzero);
@@ -915,14 +893,14 @@ export default function Float64ArrayOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_4300
-     * @tc.name testFloat64ArrayOf2043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_4200
+     * @tc.name testFloat64ArrayOf2042
      * @tc.desc Verify modifying of return array does not affect the original input values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayOf2043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayOf2042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroPointZero: number = 0.0;
       const tenPointZero: number = 10.0;
       const a: number = 10.0;
@@ -933,14 +911,14 @@ export default function Float64ArrayOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_4400
-     * @tc.name testFloat64ArrayOf2044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_4300
+     * @tc.name testFloat64ArrayOf2043
      * @tc.desc Verify of with value exceeding double range saturates to Infinity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayOf2044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayOf2043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const oneValue: number = 1;
       const positiveInfinity: number = Infinity;
       const overflow: double = 1.7976931348623157e+308 * 2.0;
@@ -952,14 +930,14 @@ export default function Float64ArrayOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_4500
-     * @tc.name testFloat64ArrayOf2045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_4400
+     * @tc.name testFloat64ArrayOf2044
      * @tc.desc Verify of with negative value exceeding double range saturates to -Infinity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayOf2045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayOf2044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const oneValue: number = 1;
       const negativeInfinity: number = -Infinity;
       const overflow: double = -(1.7976931348623157e+308 * 2.0);
@@ -971,14 +949,14 @@ export default function Float64ArrayOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_4600
-     * @tc.name testFloat64ArrayOf2046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_4500
+     * @tc.name testFloat64ArrayOf2045
      * @tc.desc Verify of with positive zero and negative zero distinguished by division
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayOf2046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayOf2045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const twoValue: number = 2;
       const negativeReciprocalInt16Min: number = -0.000030517578125;
       const negativeReciprocalInt8Min: number = -0.0078125;
@@ -993,14 +971,14 @@ export default function Float64ArrayOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_4700
-     * @tc.name testFloat64ArrayOf2047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_4600
+     * @tc.name testFloat64ArrayOf2046
      * @tc.desc Verify of with binary number literal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayOf2047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayOf2046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const binaryValue1010: number = 0b1010;
       const binaryValue1111: number = 0b1111;
       const twoValue: number = 2;
@@ -1013,14 +991,14 @@ export default function Float64ArrayOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_4800
-     * @tc.name testFloat64ArrayOf2048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_4700
+     * @tc.name testFloat64ArrayOf2047
      * @tc.desc Verify of with integer boundary values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayOf2048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayOf2047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const maxSafeInteger: number = Number.MAX_SAFE_INTEGER;
       const minSafeInteger: number = Number.MIN_SAFE_INTEGER;
       const twoValue: number = 2;
@@ -1033,14 +1011,14 @@ export default function Float64ArrayOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_4900
-     * @tc.name testFloat64ArrayOf2049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_4800
+     * @tc.name testFloat64ArrayOf2048
      * @tc.desc Verify of number overload keeps decimal values in insertion order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayOf2049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayOf2048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float64Array.of(2.5, 1.5, 3.5);
       expect(a.length).assertEqual(3);
       const actVal73 = a.toString();
@@ -1049,14 +1027,14 @@ export default function Float64ArrayOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_5000
-     * @tc.name testFloat64ArrayOf2050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_4900
+     * @tc.name testFloat64ArrayOf2049
      * @tc.desc Verify of number overload result can be sorted without changing source
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayOf2050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayOf2049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float64Array.of(3.5, 1.5, 2.5);
       const s = a.toSorted();
       const actVal74 = s.toString();
@@ -1068,14 +1046,14 @@ export default function Float64ArrayOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_5100
-     * @tc.name testFloat64ArrayOf2051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_5000
+     * @tc.name testFloat64ArrayOf2050
      * @tc.desc Verify of number overload result can be reversed without changing source
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayOf2051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayOf2050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float64Array.of(1.5, 2.5, 3.5);
       const r = a.toReversed();
       const actVal76 = r.toString();
@@ -1087,14 +1065,14 @@ export default function Float64ArrayOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_5200
-     * @tc.name testFloat64ArrayOf2052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_5100
+     * @tc.name testFloat64ArrayOf2051
      * @tc.desc Verify of number overload preserves subnormal signed pair
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayOf2052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayOf2051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float64Array.of(Double.MIN_VALUE, -Double.MIN_VALUE);
       expect(a.length).assertEqual(2);
       const actVal78 = a.$_get(0);
@@ -1106,14 +1084,14 @@ export default function Float64ArrayOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_5300
-     * @tc.name testFloat64ArrayOf2053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_5200
+     * @tc.name testFloat64ArrayOf2052
      * @tc.desc Verify of number overload preserves NaN between finite neighbors
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayOf2053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayOf2052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float64Array.of(1.0, NaN, 2.0);
       expect(a.length).assertEqual(3);
       const actVal80 = a.$_get(0);
@@ -1128,14 +1106,14 @@ export default function Float64ArrayOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_5400
-     * @tc.name testFloat64ArrayOf2054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_5300
+     * @tc.name testFloat64ArrayOf2053
      * @tc.desc Verify of number overload stores infinity boundaries in order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayOf2054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayOf2053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float64Array.of(-Infinity, 0.0, Infinity);
       expect(a.length).assertEqual(3);
       const actVal83 = a.$_get(0);
@@ -1147,28 +1125,28 @@ export default function Float64ArrayOf2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_5500
-     * @tc.name testFloat64ArrayOf2055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_5400
+     * @tc.name testFloat64ArrayOf2054
      * @tc.desc Verify of number overload creates zero byteOffset array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayOf2055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayOf2054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float64Array.of(9.0, 8.0);
       expect(a.byteOffset).assertEqual(0);
       expect(a.byteLength).assertEqual(16);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_5600
-     * @tc.name testFloat64ArrayOf2056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_5500
+     * @tc.name testFloat64ArrayOf2055
      * @tc.desc Verify of number overload supports immediate indexed rewrite
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayOf2056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayOf2055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = Float64Array.of(4.0, 5.0, 6.0);
       a.$_set(1, 50.0);
       const actVal85 = a.toString();

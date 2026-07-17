@@ -2728,5 +2728,25 @@ export default function float64ArrayFillTest(): void {
       const expectVal6 = negativeInfinity;
       expect(actVal305).assertEqual(expectVal6);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_1190
+     * @tc.name testFloat64ArrayFill119
+     * @tc.desc Verify fill on a subarray updates only the selected local range and parent slots
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const parent = new Float64Array([1.0, 2.0, 3.0, 4.0, 5.0]);
+      const child = parent.subarray(1, 4);
+      child.fill(9.0, 1, 2);
+      expect(child[0]).assertEqual(2.0);
+      expect(child[1]).assertEqual(9.0);
+      expect(child[2]).assertEqual(4.0);
+      expect(parent[0]).assertEqual(1.0);
+      expect(parent[2]).assertEqual(9.0);
+      expect(parent[4]).assertEqual(5.0);
+    });
   })
 }

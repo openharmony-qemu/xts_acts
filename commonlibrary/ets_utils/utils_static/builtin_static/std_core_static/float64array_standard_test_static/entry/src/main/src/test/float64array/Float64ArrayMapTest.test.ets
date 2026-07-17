@@ -940,7 +940,8 @@ export default function Float64ArrayMapTest(): void {
           throw new Error("err");
         })
 
-      } catch (e) { /* expected */
+        expect().assertFail();
+      } catch (e) {
         expect(e.name).assertEqual("Error");
       }
       const actVal35 = arr.$_get(0);
@@ -2662,6 +2663,28 @@ export default function Float64ArrayMapTest(): void {
       })
       expect(result[0]).assertEqual(pointFive);
       expect(result[1]).assertEqual(onePointFive);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1280
+     * @tc.name testFloat64ArrayMap128
+     * @tc.desc Verify map reads an updated unvisited source element through the callback array parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
+      const result = arr.map((value: number, index: int, array: Float64Array): number => {
+        if (index === 0) {
+          array.$_set(2, 99.0);
+        }
+        return value;
+      });
+      expect(result[0]).assertEqual(1.0);
+      expect(result[1]).assertEqual(2.0);
+      expect(result[2]).assertEqual(99.0);
+      expect(arr[2]).assertEqual(99.0);
     });
 
   })

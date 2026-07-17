@@ -1872,6 +1872,7 @@ export default function float64ArraySet2Test(): void {
       const arr = Float64Array.of(pointOne, 9007199254740991, zeroValue);
       try {
         arr.set(Float64Array.of(0.5, 1.5), 3);
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
@@ -1896,6 +1897,7 @@ export default function float64ArraySet2Test(): void {
       const arr = new Float64Array([-32768, -128, 0]);
       try {
         arr.set(Float64Array.of(-2147483648), 3);
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
@@ -1915,6 +1917,7 @@ export default function float64ArraySet2Test(): void {
       const arr = new Float64Array([0.1, 9007199254740991]);
       try {
         arr.set(Float64Array.of(0.5), 3);
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
@@ -1968,6 +1971,24 @@ export default function float64ArraySet2Test(): void {
       const actVal71 = dest.$_get(0);
       const expectVal = int32MinValue;
       expect(actVal71).assertEqual(expectVal);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SET_2_9500
+     * @tc.name testFloat64ArraySet2095
+     * @tc.desc Verify set from an overlapping Float64Array view copies source values before writing
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySet2095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const parent = new Float64Array([1.0, 2.0, 3.0, 4.0]);
+      const source = parent.subarray(0, 3);
+      parent.set(source, 1);
+      expect(parent[0]).assertEqual(1.0);
+      expect(parent[1]).assertEqual(1.0);
+      expect(parent[2]).assertEqual(2.0);
+      expect(parent[3]).assertEqual(3.0);
     });
   })
 }

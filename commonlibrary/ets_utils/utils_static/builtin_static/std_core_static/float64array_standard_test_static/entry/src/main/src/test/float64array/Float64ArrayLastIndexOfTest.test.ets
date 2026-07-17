@@ -1113,34 +1113,12 @@ export default function float64ArrayLastIndexOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_5400
      * @tc.name testFloat64ArrayLastIndexOf054
-     * @tc.desc Verify lastIndexOf with fromIndex=-2 searches from second-to-last
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayLastIndexOf054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const negativeOne: number = -1;
-      const int8MinValue: number = -128;
-      const oneValue: number = 1;
-      const arr = new Float64Array([-32768, -128, 0]);
-      const idx = arr.lastIndexOf(onePointZero, -2);
-      const expectVal = negativeOne;
-      expect(idx).assertEqual(expectVal);
-      const idxFound = arr.lastIndexOf(int8MinValue, -2);
-      const expectVal2 = oneValue;
-      expect(idxFound).assertEqual(expectVal2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_5500
-     * @tc.name testFloat64ArrayLastIndexOf055
      * @tc.desc Verify lastIndexOf with fromIndex=2 skips indices 0-1 when searching backward
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
       const twoPointZero: number = 2.0;
       const negativeOne: number = -1;
@@ -1155,14 +1133,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_5600
-     * @tc.name testFloat64ArrayLastIndexOf056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_5500
+     * @tc.name testFloat64ArrayLastIndexOf055
      * @tc.desc Verify lastIndexOf matches +0.0 against +0.0 element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroPointZero: number = 0.0;
       const twoValue: number = 2;
       const arr = new Float64Array([0.1, 9007199254740991, 0]);
@@ -1172,14 +1150,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_5700
-     * @tc.name testFloat64ArrayLastIndexOf057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_5600
+     * @tc.name testFloat64ArrayLastIndexOf056
      * @tc.desc Verify lastIndexOf with +0.0 does not match -0.0 element when array has -0.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroPointZero: number = 0.0;
       const negativeOne: number = -1;
       const arr = new Float64Array([0.5, 1.5, 0.25]);
@@ -1189,14 +1167,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_5800
-     * @tc.name testFloat64ArrayLastIndexOf058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_5700
+     * @tc.name testFloat64ArrayLastIndexOf057
      * @tc.desc Verify lastIndexOf with -Infinity not in array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const negativeInfinity: number = -Infinity;
       const negativeOne: number = -1;
       const arr = new Float64Array([-32768, -128, 0]);
@@ -1206,14 +1184,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_5900
-     * @tc.name testFloat64ArrayLastIndexOf059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_5800
+     * @tc.name testFloat64ArrayLastIndexOf058
      * @tc.desc Verify lastIndexOf with Infinity not in array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const positiveInfinity: number = Infinity;
       const negativeOne: number = -1;
       const arr = Float64Array.of(-2147483648, -1, 0);
@@ -1223,14 +1201,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_6000
-     * @tc.name testFloat64ArrayLastIndexOf060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_5900
+     * @tc.name testFloat64ArrayLastIndexOf059
      * @tc.desc Verify lastIndexOf finds MAX_VALUE at correct position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const oneValue: number = 1;
       const max: number = 1.7976931348623157e+308;
       const arr = new Float64Array([0.0, max, -max]);
@@ -1240,14 +1218,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_6100
-     * @tc.name testFloat64ArrayLastIndexOf061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_6000
+     * @tc.name testFloat64ArrayLastIndexOf060
      * @tc.desc Verify lastIndexOf finds negative MAX_VALUE at correct position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const twoValue: number = 2;
       const max: number = 1.7976931348623157e+308;
       const arr = new Float64Array([0.0, max, -max]);
@@ -1257,14 +1235,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_6200
-     * @tc.name testFloat64ArrayLastIndexOf062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_6100
+     * @tc.name testFloat64ArrayLastIndexOf061
      * @tc.desc Verify lastIndexOf with MIN_SAFE_INTEGER
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const negativeMaxSafeIntegerValue: number = -9007199254740991.0;
       const negativeOne: number = -1;
       const arr = Float64Array.of(-2147483648, -1, 0);
@@ -1274,14 +1252,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_6300
-     * @tc.name testFloat64ArrayLastIndexOf063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_6200
+     * @tc.name testFloat64ArrayLastIndexOf062
      * @tc.desc Verify lastIndexOf with repeated elements fromIndex=0 returns first
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
       const twoPointZero: number = 2.0;
       const negativeOne: number = -1;
@@ -1295,14 +1273,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_6400
-     * @tc.name testFloat64ArrayLastIndexOf064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_6300
+     * @tc.name testFloat64ArrayLastIndexOf063
      * @tc.desc Verify lastIndexOf with repeated elements fromIndex=1 returns rightmost within range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointTwoFive: number = 0.25;
       const twoPointZero: number = 2.0;
       const negativeOne: number = -1;
@@ -1317,14 +1295,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_6500
-     * @tc.name testFloat64ArrayLastIndexOf065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_6400
+     * @tc.name testFloat64ArrayLastIndexOf064
      * @tc.desc Verify lastIndexOf with repeated elements fromIndex=2 returns last
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
       const twoPointZero: number = 2.0;
       const negativeOne: number = -1;
@@ -1339,14 +1317,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_6600
-     * @tc.name testFloat64ArrayLastIndexOf066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_6500
+     * @tc.name testFloat64ArrayLastIndexOf065
      * @tc.desc Verify lastIndexOf with repeated elements fromIndex=3 returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
       const twoPointZero: number = 2.0;
       const negativeOne: number = -1;
@@ -1357,14 +1335,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_6700
-     * @tc.name testFloat64ArrayLastIndexOf067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_6600
+     * @tc.name testFloat64ArrayLastIndexOf066
      * @tc.desc Verify lastIndexOf with repeated elements fromIndex=-1 returns last
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
       const twoPointZero: number = 2.0;
       const negativeOne: number = -1;
@@ -1379,14 +1357,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_6800
-     * @tc.name testFloat64ArrayLastIndexOf068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_6700
+     * @tc.name testFloat64ArrayLastIndexOf067
      * @tc.desc Verify lastIndexOf with repeated elements fromIndex=-2 returns second
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointTwoFive: number = 0.25;
       const twoPointZero: number = 2.0;
       const negativeOne: number = -1;
@@ -1401,14 +1379,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_6900
-     * @tc.name testFloat64ArrayLastIndexOf069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_6800
+     * @tc.name testFloat64ArrayLastIndexOf068
      * @tc.desc Verify lastIndexOf with repeated elements fromIndex=-3 returns first
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
       const twoPointZero: number = 2.0;
       const negativeOne: number = -1;
@@ -1422,14 +1400,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_7000
-     * @tc.name testFloat64ArrayLastIndexOf070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_6900
+     * @tc.name testFloat64ArrayLastIndexOf069
      * @tc.desc Verify lastIndexOf with repeated elements fromIndex=-4 returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
       const twoPointZero: number = 2.0;
       const negativeOne: number = -1;
@@ -1440,14 +1418,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_7100
-     * @tc.name testFloat64ArrayLastIndexOf071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_7000
+     * @tc.name testFloat64ArrayLastIndexOf070
      * @tc.desc Verify lastIndexOf on empty array with NaN returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nanValue: number = NaN;
       const negativeOne: number = -1;
       const arr = new Float64Array(0);
@@ -1457,14 +1435,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_7200
-     * @tc.name testFloat64ArrayLastIndexOf072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_7100
+     * @tc.name testFloat64ArrayLastIndexOf071
      * @tc.desc Verify lastIndexOf on empty array with Infinity returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const positiveInfinity: number = Infinity;
       const negativeOne: number = -1;
       const arr = new Float64Array(0);
@@ -1474,14 +1452,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_7300
-     * @tc.name testFloat64ArrayLastIndexOf073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_7200
+     * @tc.name testFloat64ArrayLastIndexOf072
      * @tc.desc Verify lastIndexOf on single-element array with fromIndex=1 returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fillValue42: number = 42.0;
       const negativeOne: number = -1;
       const arr = Float64Array.of(0.1);
@@ -1491,14 +1469,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_7400
-     * @tc.name testFloat64ArrayLastIndexOf074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_7300
+     * @tc.name testFloat64ArrayLastIndexOf073
      * @tc.desc Verify lastIndexOf on single-element array with fromIndex=-1 finds element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointFive: number = 0.5;
       const fillValue42: number = 42.0;
       const negativeOne: number = -1;
@@ -1513,14 +1491,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_7500
-     * @tc.name testFloat64ArrayLastIndexOf075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_7400
+     * @tc.name testFloat64ArrayLastIndexOf074
      * @tc.desc Verify lastIndexOf on single NaN element returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nanValue: number = NaN;
       const negativeOne: number = -1;
       const arr = new Float64Array([-32768]);
@@ -1530,14 +1508,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_7600
-     * @tc.name testFloat64ArrayLastIndexOf076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_7500
+     * @tc.name testFloat64ArrayLastIndexOf075
      * @tc.desc Verify lastIndexOf finds last element in large array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const onePointZero: number = 1.0;
       const num999Value: number = 999;
       const arr = new Float64Array(1000);
@@ -1548,14 +1526,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_7700
-     * @tc.name testFloat64ArrayLastIndexOf077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_7600
+     * @tc.name testFloat64ArrayLastIndexOf076
      * @tc.desc Verify lastIndexOf finds first element in large array from end
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const onePointZero: number = 1.0;
       const zeroValue: number = 0;
       const arr = new Float64Array(1000);
@@ -1566,14 +1544,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_7800
-     * @tc.name testFloat64ArrayLastIndexOf078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_7700
+     * @tc.name testFloat64ArrayLastIndexOf077
      * @tc.desc Verify lastIndexOf finds middle element in large array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const onePointZero: number = 1.0;
       const num500Value: number = 500;
       const arr = new Float64Array(1000);
@@ -1584,14 +1562,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_7900
-     * @tc.name testFloat64ArrayLastIndexOf079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_7800
+     * @tc.name testFloat64ArrayLastIndexOf078
      * @tc.desc Verify lastIndexOf with fromIndex=500 finds element in large array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const onePointZero: number = 1.0;
       const negativeOne: number = -1;
       const arr = new Float64Array(1000);
@@ -1602,14 +1580,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_8000
-     * @tc.name testFloat64ArrayLastIndexOf080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_7900
+     * @tc.name testFloat64ArrayLastIndexOf079
      * @tc.desc Verify lastIndexOf with fromIndex=500 finds element at index 300
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const onePointZero: number = 1.0;
       const num300Value: number = 300;
       const arr = new Float64Array(1000);
@@ -1620,14 +1598,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_8100
-     * @tc.name testFloat64ArrayLastIndexOf081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_8000
+     * @tc.name testFloat64ArrayLastIndexOf080
      * @tc.desc Verify lastIndexOf with fromIndex=-500 finds last element in large array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const onePointZero: number = 1.0;
       const negativeOne: number = -1;
       const arr = new Float64Array(1000);
@@ -1638,14 +1616,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_8200
-     * @tc.name testFloat64ArrayLastIndexOf082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_8100
+     * @tc.name testFloat64ArrayLastIndexOf081
      * @tc.desc Verify lastIndexOf with fromIndex=-1000 finds first element in large array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const onePointZero: number = 1.0;
       const zeroValue: number = 0;
       const arr = new Float64Array(1000);
@@ -1656,14 +1634,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_8300
-     * @tc.name testFloat64ArrayLastIndexOf083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_8200
+     * @tc.name testFloat64ArrayLastIndexOf082
      * @tc.desc Verify lastIndexOf with fromIndex=-1001 out of bounds in large array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const onePointZero: number = 1.0;
       const negativeOne: number = -1;
       const arr = new Float64Array(1000);
@@ -1674,14 +1652,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_8400
-     * @tc.name testFloat64ArrayLastIndexOf084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_8300
+     * @tc.name testFloat64ArrayLastIndexOf083
      * @tc.desc Verify lastIndexOf finds last of all identical elements in large array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const sevenPointZero: number = 7.0;
       const ninetynineValue: number = 99;
       const arr = new Float64Array(100);
@@ -1694,14 +1672,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_8500
-     * @tc.name testFloat64ArrayLastIndexOf085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_8400
+     * @tc.name testFloat64ArrayLastIndexOf084
      * @tc.desc Verify lastIndexOf with fromIndex=50 finds last element in all-identical large array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const sevenPointZero: number = 7.0;
       const fiftyValue: number = 50;
       const arr = new Float64Array(100);
@@ -1714,14 +1692,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_8600
-     * @tc.name testFloat64ArrayLastIndexOf086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_8500
+     * @tc.name testFloat64ArrayLastIndexOf085
      * @tc.desc Verify lastIndexOf finds value in array with mixed boundary values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
       const num123Pointfourfivesix: number = 123.456;
       const twoPointZero: number = 2.0;
@@ -1744,14 +1722,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_8700
-     * @tc.name testFloat64ArrayLastIndexOf087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_8600
+     * @tc.name testFloat64ArrayLastIndexOf086
      * @tc.desc Verify lastIndexOf with fromIndex=3 in mixed boundary array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
       const sciValue10e6: number = 1.0e6;
       const num999999Pointninenine: number = 999999.99;
@@ -1772,14 +1750,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_8800
-     * @tc.name testFloat64ArrayLastIndexOf088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_8700
+     * @tc.name testFloat64ArrayLastIndexOf087
      * @tc.desc Verify lastIndexOf with fromIndex=-4 in mixed array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointOneTwoFive: number = 0.125;
       const zeroValue: number = 0;
       const twoPointZero: number = 2.0;
@@ -1797,14 +1775,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_8900
-     * @tc.name testFloat64ArrayLastIndexOf089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_8800
+     * @tc.name testFloat64ArrayLastIndexOf088
      * @tc.desc Verify lastIndexOf finds Infinity not in mixed boundary array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
       const positiveInfinity: number = Infinity;
       const negativeOne: number = -1;
@@ -1815,14 +1793,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_9000
-     * @tc.name testFloat64ArrayLastIndexOf090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_8900
+     * @tc.name testFloat64ArrayLastIndexOf089
      * @tc.desc Verify lastIndexOf finds -Infinity not in mixed boundary array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
       const negativeInfinity: number = -Infinity;
       const negativeOne: number = -1;
@@ -1833,14 +1811,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_9100
-     * @tc.name testFloat64ArrayLastIndexOf091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_9000
+     * @tc.name testFloat64ArrayLastIndexOf090
      * @tc.desc Verify lastIndexOf returns -1 for NaN search in mixed boundary array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
       const nanValue: number = NaN;
       const negativeOne: number = -1;
@@ -1851,14 +1829,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_9200
-     * @tc.name testFloat64ArrayLastIndexOf092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_9100
+     * @tc.name testFloat64ArrayLastIndexOf091
      * @tc.desc Verify lastIndexOf fromIndex=5 in mixed boundary array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
       const negativeInfinity: number = -Infinity;
       const negativeOne: number = -1;
@@ -1871,14 +1849,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_9300
-     * @tc.name testFloat64ArrayLastIndexOf093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_9200
+     * @tc.name testFloat64ArrayLastIndexOf092
      * @tc.desc Verify lastIndexOf fromIndex=-3 searching NaN in mixed boundary array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
       const nanValue: number = NaN;
       const negativeOne: number = -1;
@@ -1889,14 +1867,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_9400
-     * @tc.name testFloat64ArrayLastIndexOf094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_9300
+     * @tc.name testFloat64ArrayLastIndexOf093
      * @tc.desc Verify lastIndexOf with searchElement as 1e0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int32MinValue: number = -2147483648;
       const zeroValue: number = 0;
       const sciValue1e0: number = 1e0;
@@ -1911,14 +1889,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_9500
-     * @tc.name testFloat64ArrayLastIndexOf095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_9400
+     * @tc.name testFloat64ArrayLastIndexOf094
      * @tc.desc Verify lastIndexOf with searchElement as 1e-323
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const sciValue10e323: number = 1.0e-323;
       const negativeOne: number = -1;
       const arr = new Float64Array([0.1, 9007199254740991, 0]);
@@ -1928,14 +1906,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_9600
-     * @tc.name testFloat64ArrayLastIndexOf096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_9500
+     * @tc.name testFloat64ArrayLastIndexOf095
      * @tc.desc Verify lastIndexOf with searchElement as negative scientific notation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const negsciValue1e2: number = -1e2;
       const negativeOne: number = -1;
       const arr = new Float64Array([0.5, 1.5, 0.25]);
@@ -1945,14 +1923,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_9700
-     * @tc.name testFloat64ArrayLastIndexOf097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_9600
+     * @tc.name testFloat64ArrayLastIndexOf096
      * @tc.desc Verify lastIndexOf with searchElement as float 2.5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const twoPointFive: number = 2.5;
       const negativeOne: number = -1;
       const arr = new Float64Array([-32768, -128, 0]);
@@ -1962,14 +1940,14 @@ export default function float64ArrayLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_9800
-     * @tc.name testFloat64ArrayLastIndexOf098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_9700
+     * @tc.name testFloat64ArrayLastIndexOf097
      * @tc.desc Verify lastIndexOf with searchElement as negative float -2.5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayLastIndexOf098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayLastIndexOf097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const negtwoPointfive: number = -2.5;
       const negativeOne: number = -1;
       const arr = Float64Array.of(-2147483648, -1, 0);

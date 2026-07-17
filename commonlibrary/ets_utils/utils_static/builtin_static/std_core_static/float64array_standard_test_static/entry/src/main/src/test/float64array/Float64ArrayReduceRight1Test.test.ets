@@ -438,16 +438,17 @@ export default function Float64ArrayReduceRight1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_1_2300
      * @tc.name testFloat64ArrayReduceRight1023
-     * @tc.desc Verify reduceRight single element Double.MAX_VALUE returns MAX_VALUE
+     * @tc.desc Verify reduceRight with initial 0.0 subtracts Double.MAX_VALUE into negative Double.MAX_VALUE
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight1023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const doubleMaxValue: number = 1.7976931348623157e+308;
+      const zeroValue: number = 0.0;
+      const doubleMaxValue: number = Double.MAX_VALUE;
       const arr = new Float64Array([doubleMaxValue]);
-      const result = arr.reduceRight((prev, curr) => prev + curr);
-      const expectVal = doubleMaxValue;
+      const result = arr.reduceRight((prev: number, curr: number): number => prev - curr, zeroValue);
+      const expectVal = -doubleMaxValue;
       expect(result).assertEqual(expectVal);
     });
 
@@ -939,16 +940,14 @@ export default function Float64ArrayReduceRight1Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight1052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const sixPointZero: number = 6.0;
       const arr = new Float64Array([1.0, 2.0, 3.0]);
       const result = arr.reduceRight((prev, curr) => {
         if (curr === 3.0) {
           return Infinity;
         }
         return prev + curr;
-      });
-      const expectVal = sixPointZero;
-      expect(result).assertEqual(expectVal);
+      }, 0.0);
+      expect(result).assertEqual(Infinity);
     });
 
     /**
@@ -960,16 +959,14 @@ export default function Float64ArrayReduceRight1Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight1053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const sixPointZero: number = 6.0;
       const arr = new Float64Array([1.0, 2.0, 3.0]);
       const result = arr.reduceRight((prev, curr) => {
         if (curr === 3.0) {
           return -Infinity;
         }
         return prev + curr;
-      });
-      const expectVal = sixPointZero;
-      expect(result).assertEqual(expectVal);
+      }, 0.0);
+      expect(result).assertEqual(-Infinity);
     });
 
     /**
@@ -987,9 +984,9 @@ export default function Float64ArrayReduceRight1Test(): void {
           return NaN;
         }
         return prev + curr;
-      });
+      }, 0.0);
       const actVal3 = Number.isNaN(result);
-      const expectVal = false;
+      const expectVal = true;
       expect(actVal3).assertEqual(expectVal);
     });
 
@@ -1002,15 +999,14 @@ export default function Float64ArrayReduceRight1Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight1055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const sixPointZero: number = 6.0;
       const arr = new Float64Array([1.0, 2.0, 3.0]);
       const result = arr.reduceRight((prev, curr) => {
         if (curr === 3.0) {
           return 0;
         }
         return prev + curr;
-      });
-      const expectVal = sixPointZero;
+      }, 0.0);
+      const expectVal = 3.0;
       expect(result).assertEqual(expectVal);
     });
 

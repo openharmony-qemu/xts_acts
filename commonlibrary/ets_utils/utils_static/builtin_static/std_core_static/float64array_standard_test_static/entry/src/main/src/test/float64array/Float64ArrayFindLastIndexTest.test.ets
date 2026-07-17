@@ -2251,17 +2251,31 @@ export default function Float64ArrayFindLastIndexTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_1100
      * @tc.name testFloat64ArrayFindLastIndex110
-     * @tc.desc Verify findLastIndex returns -1 when not found
+     * @tc.desc Verify findLastIndex scans mixed boundary values backward and returns -1 when target is absent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayFindLastIndex110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const negativeOne: number = -1;
-      const values = new Float64Array([-2147483648, -1, 0]);
-      const actVal7 = values.findLastIndex((value) => value > 10);
+      const doubleMaxValue: number = Double.MAX_VALUE;
+      const negativeDoubleMaxValue: number = -Double.MAX_VALUE;
+      const positiveInfinity: number = Infinity;
+      const negativeInfinity: number = -Infinity;
+      const doubleMinValue: number = Double.MIN_VALUE;
+      const values = new Float64Array([doubleMaxValue, negativeDoubleMaxValue, positiveInfinity, negativeInfinity]);
+      const visited: Array<int> = [];
+      const actVal7 = values.findLastIndex((value: number, index: int): boolean => {
+        visited.push(index);
+        return value === doubleMinValue;
+      });
       const expectVal = negativeOne;
       expect(actVal7).assertEqual(expectVal);
+      expect(visited.length).assertEqual(4);
+      expect(visited[0]).assertEqual(3);
+      expect(visited[1]).assertEqual(2);
+      expect(visited[2]).assertEqual(1);
+      expect(visited[3]).assertEqual(0);
     });
 
     /**
@@ -2437,6 +2451,26 @@ export default function Float64ArrayFindLastIndexTest(): void {
       const idx = arr.findLastIndex((e: number): boolean => e === doubleMinValue);
       const expectVal = 0;
       expect(idx).assertEqual(expectVal);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_1210
+     * @tc.name testFloat64ArrayFindLastIndex121
+     * @tc.desc Verify findLastIndex reads a value modified at an earlier reverse position
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float64Array([1.0, 2.0, 3.0, 4.0]);
+      const result = arr.findLastIndex((value: number, index: int, array: Float64Array): boolean => {
+        if (index === 3) {
+          array.$_set(0, 99.0);
+        }
+        return value === 99.0;
+      });
+      expect(result).assertEqual(0);
+      expect(arr[0]).assertEqual(99.0);
     });
 
   })

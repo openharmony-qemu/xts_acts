@@ -1175,46 +1175,12 @@ export default function Float64ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_6700
      * @tc.name testFloat64ArrayConstructor1067
-     * @tc.desc Verify overload 9 offset 8 alignment success
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayConstructor1067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const eightValue: number = 8;
-      const twoValue: number = 2;
-      const buffer = new ArrayBuffer(24);
-      const view = new Float64Array(buffer, 8);
-      expect(view.byteOffset).assertEqual(eightValue);
-      expect(view.length).assertEqual(twoValue);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_6800
-     * @tc.name testFloat64ArrayConstructor1068
-     * @tc.desc Verify overload 9 offset 16 alignment success
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayConstructor1068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const sixteenValue: number = 16;
-      const twoValue: number = 2;
-      const buffer = new ArrayBuffer(32);
-      const view = new Float64Array(buffer, 16);
-      expect(view.byteOffset).assertEqual(sixteenValue);
-      expect(view.length).assertEqual(twoValue);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_6900
-     * @tc.name testFloat64ArrayConstructor1069
      * @tc.desc Verify overload 9 offset 24 alignment success
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayConstructor1069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayConstructor1067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const twentyfourValue: number = 24;
       const twoValue: number = 2;
       const buffer = new ArrayBuffer(40);
@@ -1224,14 +1190,14 @@ export default function Float64ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_7000
-     * @tc.name testFloat64ArrayConstructor1070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_6800
+     * @tc.name testFloat64ArrayConstructor1068
      * @tc.desc Verify overload 9 negative offset -1 throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayConstructor1070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayConstructor1068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const buffer = new ArrayBuffer(16);
         new Float64Array(buffer, -1);
@@ -1242,14 +1208,14 @@ export default function Float64ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_7100
-     * @tc.name testFloat64ArrayConstructor1071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_6900
+     * @tc.name testFloat64ArrayConstructor1069
      * @tc.desc Verify overload 13 ArrayLike containing overflow value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayConstructor1071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayConstructor1069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const positiveInfinity: number = Infinity;
       const src: Array<number> = [Infinity];
       const arrayLike: ArrayLike<Number> = src;
@@ -1259,14 +1225,14 @@ export default function Float64ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_7200
-     * @tc.name testFloat64ArrayConstructor1072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_7000
+     * @tc.name testFloat64ArrayConstructor1070
      * @tc.desc Verify overload 5 FixedArray constructor return type is Float64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayConstructor1072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayConstructor1070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numbers: FixedArray<number> = [1.0];
       const values = new Float64Array(numbers);
       const obj: Object = values as Object;
@@ -1279,14 +1245,14 @@ export default function Float64ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_7300
-     * @tc.name testFloat64ArrayConstructor1073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_7100
+     * @tc.name testFloat64ArrayConstructor1071
      * @tc.desc Verify overload 9 ArrayBuffer constructor return type is Float64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayConstructor1073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayConstructor1071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(16);
       const view = new Float64Array(buffer, 0);
       const obj: Object = view as Object;
@@ -1299,14 +1265,14 @@ export default function Float64ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_7400
-     * @tc.name testFloat64ArrayConstructor1074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_7200
+     * @tc.name testFloat64ArrayConstructor1072
      * @tc.desc Verify overload 13 ArrayLike constructor return type is Float64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayConstructor1074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayConstructor1072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [1.0];
       const arrayLike: ArrayLike<Number> = src;
       const values = new Float64Array(arrayLike);
@@ -1320,14 +1286,14 @@ export default function Float64ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_7500
-     * @tc.name testFloat64ArrayConstructor1075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_7300
+     * @tc.name testFloat64ArrayConstructor1073
      * @tc.desc Verify overload 13 ArrayBuffer constructor returns view with isView true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayConstructor1075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayConstructor1073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(16);
       const view = new Float64Array(buffer);
       const obj: Object = view as Object;
@@ -1340,14 +1306,14 @@ export default function Float64ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_7600
-     * @tc.name testFloat64ArrayConstructor1076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_7400
+     * @tc.name testFloat64ArrayConstructor1074
      * @tc.desc Verify overload 9 byteOffset plus byteLength exceeds buffer throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayConstructor1076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayConstructor1074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const buffer = new ArrayBuffer(16);
         new Float64Array(buffer, 8, 2);
@@ -1358,14 +1324,14 @@ export default function Float64ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_7700
-     * @tc.name testFloat64ArrayConstructor1077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_7500
+     * @tc.name testFloat64ArrayConstructor1075
      * @tc.desc Verify overload 5 FixedArray Number generic construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayConstructor1077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayConstructor1075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const threeValue: number = 3;
       const onePointZero: number = 1.0;
       const numbers: FixedArray<Number> = [1.0, 2.0, 3.0];
@@ -1375,14 +1341,14 @@ export default function Float64ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_7800
-     * @tc.name testFloat64ArrayConstructor1078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_7600
+     * @tc.name testFloat64ArrayConstructor1076
      * @tc.desc Verify overload 9 ArrayBuffer offset Number.MAX_SAFE_INTEGER throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayConstructor1078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayConstructor1076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const buffer = new ArrayBuffer(16);
         new Float64Array(buffer, 9007199254740991);
@@ -1393,14 +1359,14 @@ export default function Float64ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_7900
-     * @tc.name testFloat64ArrayConstructor1079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_7700
+     * @tc.name testFloat64ArrayConstructor1077
      * @tc.desc Verify overload 9 ArrayBuffer offset Number.MIN_SAFE_INTEGER throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayConstructor1079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayConstructor1077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const buffer = new ArrayBuffer(16);
         new Float64Array(buffer, -9007199254740991);
@@ -1411,14 +1377,14 @@ export default function Float64ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_8000
-     * @tc.name testFloat64ArrayConstructor1080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_7800
+     * @tc.name testFloat64ArrayConstructor1078
      * @tc.desc Verify overload 13 ArrayLike with undefined element becomes NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayConstructor1080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayConstructor1078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [1.0, NaN, 3.0];
       const arrayLike: ArrayLike<Number> = src;
       const values = new Float64Array(arrayLike);
@@ -1428,14 +1394,14 @@ export default function Float64ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_8100
-     * @tc.name testFloat64ArrayConstructor1081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_7900
+     * @tc.name testFloat64ArrayConstructor1079
      * @tc.desc Verify overload 13 ArrayLike containing zero element copies value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayConstructor1081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayConstructor1079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroPointZero: number = 0.0;
       const src: Array<number> = [1.0, 0.0, 3.0];
       const arrayLike: ArrayLike<Number> = src;
@@ -1445,14 +1411,14 @@ export default function Float64ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_8200
-     * @tc.name testFloat64ArrayConstructor1082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_8000
+     * @tc.name testFloat64ArrayConstructor1080
      * @tc.desc Verify overload 13 ArrayLike preserves NaN element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayConstructor1082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayConstructor1080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const threeValue: number = 3;
       const src: Array<number> = [1.0, NaN, 3.0];
       const arrayLike: ArrayLike<Number> = src;
@@ -1464,14 +1430,14 @@ export default function Float64ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_8300
-     * @tc.name testFloat64ArrayConstructor1083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_8100
+     * @tc.name testFloat64ArrayConstructor1081
      * @tc.desc Verify overload 13 ArrayLike shared buffer write visibility across views
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayConstructor1083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayConstructor1081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const onePointfourone: number = 1.41;
       const ninePointninenine: number = 9.99;
       const buffer = new ArrayBuffer(24);
@@ -1484,28 +1450,28 @@ export default function Float64ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_8400
-     * @tc.name testFloat64ArrayConstructor1084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_8200
+     * @tc.name testFloat64ArrayConstructor1082
      * @tc.desc Verify constructor length 3 initializes first element to zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayConstructor1084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayConstructor1082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array(3);
       expect(arr[0]).assertEqual(0.0);
       expect(arr.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_8500
-     * @tc.name testFloat64ArrayConstructor1085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_8300
+     * @tc.name testFloat64ArrayConstructor1083
      * @tc.desc Verify constructor with hex literal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayConstructor1085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayConstructor1083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const num255Value: number = 255;
       const arr = new Float64Array(0xFF);
       const expectVal = num255Value;
@@ -1513,14 +1479,14 @@ export default function Float64ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_8600
-     * @tc.name testFloat64ArrayConstructor1086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_8400
+     * @tc.name testFloat64ArrayConstructor1084
      * @tc.desc Verify constructor with binary literal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayConstructor1086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayConstructor1084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const num255Value: number = 255;
       const arr = new Float64Array(0b11111111);
       const expectVal = num255Value;
@@ -1528,14 +1494,14 @@ export default function Float64ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_8700
-     * @tc.name testFloat64ArrayConstructor1087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_1_8500
+     * @tc.name testFloat64ArrayConstructor1085
      * @tc.desc Verify constructor with Infinity as length throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayConstructor1087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayConstructor1085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         new Float64Array(Double.POSITIVE_INFINITY);
         expect().assertFail();

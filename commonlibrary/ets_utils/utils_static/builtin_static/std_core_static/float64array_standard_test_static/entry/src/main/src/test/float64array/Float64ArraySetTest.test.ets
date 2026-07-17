@@ -504,20 +504,25 @@ export default function float64ArraySetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SET_2500
      * @tc.name testFloat64ArraySet025
-     * @tc.desc Verify set with overflow offset throws RangeError
+     * @tc.desc Verify set from Float64Array with INT_MAX offset throws RangeError and keeps target elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArraySet025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const dest = new Float64Array(3);
-      const src = Float64Array.of(-2147483648, -1);
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const targetOffset: int = 2147483647;
+      const dest = new Float64Array([onePointZero, twoPointZero]);
+      const src = new Float64Array([9.0]);
       try {
-        dest.set(src, 3);
+        dest.set(src, targetOffset);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
+      expect(dest[0]).assertEqual(onePointZero);
+      expect(dest[1]).assertEqual(twoPointZero);
     });
 
     /**
@@ -1247,61 +1252,60 @@ export default function float64ArraySetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SET_6200
      * @tc.name testFloat64ArraySet062
-     * @tc.desc Verify set byteOffset 15.9 with ArrayBuffer(24) throws RangeError
+     * @tc.desc Verify set copies reverse overlapping subarray into same buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArraySet062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const negativeOne: number = -1;
-      const buf = new ArrayBuffer(24);
-      try {
-        const arr = new Float64Array(buf, 15.9);
-        arr.set(new Float64Array([1.0, 2.0]), 0);
-        expect(arr.byteOffset % 8).assertEqual(negativeOne);
-      } catch (e) {
-        expect(e.name).assertEqual("RangeError");
-      }
+      const arr = Float64Array.of(1.0, 2.0, 3.0, 4.0);
+      const src = arr.subarray(1, 4);
+      arr.set(src, 0);
+      expect(arr.$_get(0)).assertEqual(2.0);
+      expect(arr.$_get(1)).assertEqual(3.0);
+      expect(arr.$_get(2)).assertEqual(4.0);
+      expect(arr.$_get(3)).assertEqual(4.0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SET_6300
      * @tc.name testFloat64ArraySet063
-     * @tc.desc Verify set byteOffset 7.5 with ArrayBuffer(16) throws RangeError
+     * @tc.desc Verify set with valid offset but insufficient capacity throws RangeError atomically
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArraySet063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const negativeOne: number = -1;
-      const buf = new ArrayBuffer(16);
+      const dest = Float64Array.of(10.0, 20.0, 30.0);
+      const src = Float64Array.of(1.0, 2.0);
       try {
-        const arr = new Float64Array(buf, 7.5);
-        arr.set(new Float64Array([1.0, 2.0]), 0);
-        expect(arr.byteOffset % 8).assertEqual(negativeOne);
+        dest.set(src, 2);
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
+        expect(dest.$_get(0)).assertEqual(10.0);
+        expect(dest.$_get(1)).assertEqual(20.0);
+        expect(dest.$_get(2)).assertEqual(30.0);
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SET_6400
      * @tc.name testFloat64ArraySet064
-     * @tc.desc Verify set byteOffset 100.01 with ArrayBuffer(200) throws RangeError
+     * @tc.desc Verify set copies -0.0 from subarray preserving sign
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArraySet064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const negativeOne: number = -1;
-      const buf = new ArrayBuffer(200);
-      try {
-        const arr = new Float64Array(buf, 100.01);
-        arr.set(new Float64Array([1.0, 2.0]), 0);
-        expect(arr.byteOffset % 8).assertEqual(negativeOne);
-      } catch (e) {
-        expect(e.name).assertEqual("RangeError");
-      }
+      const negativeInfinity: number = -Infinity;
+      const parent = Float64Array.of(1.0, -0.0, 2.0);
+      const src = parent.subarray(1, 2);
+      const dest = Float64Array.of(9.0, 9.0);
+      dest.set(src, 1);
+      expect(dest.$_get(0)).assertEqual(9.0);
+      expect(1.0 / dest.$_get(1)).assertEqual(negativeInfinity);
+      expect(1.0 / parent.$_get(1)).assertEqual(negativeInfinity);
     });
 
     /**

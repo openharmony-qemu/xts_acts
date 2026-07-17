@@ -1525,5 +1525,21 @@ export default function Float64ArrayReduce2Test(): void {
       expect(result).assertEqual(expectVal);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_8800
+     * @tc.name testFloat64ArrayReduce2088
+     * @tc.desc Verify reduce preserves Double.MIN_VALUE after cancelling positive and negative Double.MAX_VALUE
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce2088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const doubleMinValue: number = Double.MIN_VALUE;
+      const doubleMaxValue: number = Double.MAX_VALUE;
+      const arr = new Float64Array([doubleMaxValue, -doubleMaxValue, doubleMinValue]);
+      const result = arr.reduce((sum, value) => sum + value, 0.0);
+      expect(result).assertEqual(doubleMinValue);
+    });
+
   })
 }

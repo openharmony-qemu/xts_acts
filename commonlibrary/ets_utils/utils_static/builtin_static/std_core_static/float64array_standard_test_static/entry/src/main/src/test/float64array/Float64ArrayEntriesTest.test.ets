@@ -623,21 +623,23 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const fourValue: number = 4;
-      const values = new Float64Array([-32768, -128, 0, 127]);
-      const iter = values.entries();
-      let expectedIndex = 0;
+      const sourceData = new Float64Array([-32768, -128, 0, 127]);
+      const iter = sourceData.entries();
+      let currentIndex = 0;
       let entry = iter.next();
-      let loopIdx = 0;
+
       while (!entry.done) {
-        const expectVal = expectedIndex;
-        expect(loopIdx).assertEqual(expectVal);
-        expectedIndex += 1;
-        loopIdx += 1;
+        const entryValue = entry.value!;
+        expect(entryValue[0]).assertEqual(currentIndex);
+        expect(entryValue[1]).assertEqual(sourceData[currentIndex]);
+
+        currentIndex += 1;
         entry = iter.next();
       }
-      const expectVal2 = fourValue;
-      expect(expectedIndex).assertEqual(expectVal2);
+      const expectVal = sourceData.length;
+      expect(currentIndex).assertEqual(expectVal);
+      const finalEntry = iter.next();
+      expect(finalEntry.done).assertEqual(true);
     });
 
     /**

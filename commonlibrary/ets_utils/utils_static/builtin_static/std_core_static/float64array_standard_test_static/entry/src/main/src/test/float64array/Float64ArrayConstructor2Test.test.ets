@@ -347,12 +347,15 @@ export default function Float64ArrayConstructor2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayConstructor2018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const oneValue: number = 1;
-      const fifteenValue: number = 15;
-      const buf = new ArrayBuffer(15);
+      const elemCount: number = 1;
+      const elemTotalByte: number = 8;
+      const bufferTotalByte: number = 15;
+      const buf = new ArrayBuffer(bufferTotalByte);
       const arr = new Float64Array(buf, 0);
-      expect(arr.length).assertEqual(oneValue);
-      expect(arr.byteLength).assertEqual(fifteenValue);
+      expect(arr.length).assertEqual(elemCount);
+      expect(arr.byteLength).assertEqual(elemTotalByte);
+      expect(arr.byteOffset).assertEqual(0);
+      expect(arr.buffer).assertEqual(buf);
     });
 
     /**

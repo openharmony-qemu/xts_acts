@@ -627,6 +627,7 @@ export default function float64ArrayDollarSetTest(): void {
       arr.$_set(1, maxSafeInteger);
       try {
         arr.$_set(100, oobWriteValue);
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
@@ -913,6 +914,7 @@ export default function float64ArrayDollarSetTest(): void {
       const arr = new Float64Array(3);
       try {
         arr.$_set(100, sciLarge);
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
@@ -1013,6 +1015,7 @@ export default function float64ArrayDollarSetTest(): void {
       const arr = new Float64Array(0);
       try {
         arr.$_set(0, minSafeInteger);
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
@@ -1119,6 +1122,7 @@ export default function float64ArrayDollarSetTest(): void {
       const arr = new Float64Array(0);
       try {
         arr.$_set(0, negSciLarge);
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
@@ -1437,6 +1441,7 @@ export default function float64ArrayDollarSetTest(): void {
       const arr = new Float64Array(buf, 8, 2);
       try {
         arr.$_set(100, sciSmall);
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
@@ -1457,6 +1462,7 @@ export default function float64ArrayDollarSetTest(): void {
       const arr = new Float64Array(3);
       try {
         arr.$_set(-100, negSciLarge);
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
@@ -1718,6 +1724,7 @@ export default function float64ArrayDollarSetTest(): void {
       let caught = false;
       try {
         a.$_set(2, oobWriteValue);
+        expect().assertFail();
       } catch (e) {
         caught = true;
         expect(e.name).assertEqual("RangeError");
@@ -1746,6 +1753,7 @@ export default function float64ArrayDollarSetTest(): void {
       let caught = false;
       try {
         a.$_set(-1, oobWriteValue);
+        expect().assertFail();
       } catch (e) {
         caught = true;
         expect(e.name).assertEqual("RangeError");
@@ -1761,4 +1769,3 @@ export default function float64ArrayDollarSetTest(): void {
     });
   })
 }
-

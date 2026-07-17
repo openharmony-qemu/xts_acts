@@ -1114,7 +1114,8 @@ export default function Float64ArrayFindIndexTest(): void {
           return false;
         })
 
-      } catch (e) { /* expected */
+        expect().assertFail();
+      } catch (e) {
         expect(e.name).assertEqual("Error");
       }
       expect(arr.length).assertEqual(threeValue);
@@ -1144,6 +1145,7 @@ export default function Float64ArrayFindIndexTest(): void {
           return false;
         })
 
+        expect().assertFail();
       } catch (e) { /* expected */
         expect(e.name).assertEqual("Error");
       }
