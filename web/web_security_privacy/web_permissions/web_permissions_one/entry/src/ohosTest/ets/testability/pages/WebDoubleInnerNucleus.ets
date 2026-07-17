@@ -49,7 +49,7 @@ struct Webdoubleinnernucleus {
           }
         })
       }
-      Web({ src: $rawfile("permissionRequestTest.html"), controller: this.controller })
+      Web({ src: 'www.example.com', controller: this.controller })
         .onPageEnd((event) => {
           console.log('onPageEnd url：' + event.url);
           this.isPageEnd = 0;

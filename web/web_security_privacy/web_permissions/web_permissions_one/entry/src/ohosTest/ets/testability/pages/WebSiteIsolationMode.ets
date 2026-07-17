@@ -116,7 +116,7 @@ struct WebSiteIsolationMode {
           }
         })
       }
-      Web({ src: $rawfile("permissionRequestTest.html"), controller: this.controller })
+      Web({ src: 'https://www.w3school.com.cn/tiy/t.asp?f=tags_iframe', controller: this.controller })
         .javaScriptAccess(true)
         .fileAccess(true)
         .onlineImageAccess(true)
