@@ -34,14 +34,14 @@ add_library(napicallbackriskndktest SHARED
     common/native_common.h)
 target_link_libraries(napicallbackriskndktest PUBLIC libace_napi.z.so libhilog_ndk.z.so)
 
-add_library(napispecdiffbatch1ndktest SHARED napispecdiff/batch1/napispecdiffbatch1.cpp native_common.h)
+add_library(napispecdiffbatch1ndktest SHARED napispecdiff/batch1/napispecdiffbatch1.cpp common/native_common.h)
 target_link_libraries(napispecdiffbatch1ndktest PUBLIC libace_napi.z.so libhilog_ndk.z.so)
 
-add_library(napispecdiffbatch2ndktest SHARED napispecdiff/batch2/napispecdiffbatch2.cpp native_common.h)
+add_library(napispecdiffbatch2ndktest SHARED napispecdiff/batch2/napispecdiffbatch2.cpp common/native_common.h)
 target_link_libraries(napispecdiffbatch2ndktest PUBLIC libace_napi.z.so libhilog_ndk.z.so)
 
-add_library(napispecdiffbatch3ndktest SHARED napispecdiff/batch3/napispecdiffbatch3.cpp native_common.h)
+add_library(napispecdiffbatch3ndktest SHARED napispecdiff/batch3/napispecdiffbatch3.cpp common/native_common.h)
 target_link_libraries(napispecdiffbatch3ndktest PUBLIC libace_napi.z.so libhilog_ndk.z.so)
 
-add_library(napispecdiffbatch4ndktest SHARED napispecdiff/batch4/napispecdiffbatch4.cpp native_common.h)
+add_library(napispecdiffbatch4ndktest SHARED napispecdiff/batch4/napispecdiffbatch4.cpp common/native_common.h)
 target_link_libraries(napispecdiffbatch4ndktest PUBLIC libace_napi.z.so libhilog_ndk.z.so)
