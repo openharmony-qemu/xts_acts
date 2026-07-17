@@ -16,24 +16,37 @@
 import { uiObserver } from '@kit.ArkUI';
 
 /**
- * Cover EnvDecorator (@Env) via page load.
+ * Cover CustomEnvKey.create / SystemProperties / @Env(SystemProperties)。
+ * @Env(null|undefined) 编不过见 null_undefined_compile_failures.md；
+ * Method Env(null|undefined) 已在 EnvDecoratorCover 覆盖。
  */
 @Entry
 @ComponentV2
-struct EnvDecoratorCover {
+struct CustomEnvCover {
   @Env(SystemProperties.BREAK_POINT) bp: uiObserver.WindowSizeLayoutBreakpointInfo;
+  @Local keyReady: string = 'init';
+
+  aboutToAppear(): void {
+    try {
+      const key = CustomEnvKey.create<string>();
+      this.keyReady = key !== undefined ? 'key:ok' : 'key:none';
+    } catch (err) {
+      console.error('[CustomEnvCover] CustomEnvKey.create error: ' + JSON.stringify(err));
+      this.keyReady = 'key:error';
+    }
+  }
 
   build() {
     Column() {
-      Text('EnvDecoratorCover')
-        .id('env_deco_cover_title')
+      Text('CustomEnvCover')
+        .id('custom_env_cover_title')
         .fontSize(16)
         .height('5%')
-      Text(`w:${this.bp.widthBreakpoint}`)
-        .id('env_deco_cover_w')
+      Text(`bpW:${this.bp.widthBreakpoint}`)
+        .id('custom_env_cover_bp')
         .height('5%')
-      Text(`h:${this.bp.heightBreakpoint}`)
-        .id('env_deco_cover_h')
+      Text(this.keyReady)
+        .id('custom_env_cover_key')
         .height('5%')
     }
     .width('100%')
