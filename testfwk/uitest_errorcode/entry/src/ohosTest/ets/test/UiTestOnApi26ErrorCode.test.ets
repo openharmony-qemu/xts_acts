@@ -41,7 +41,9 @@ export default function uitestOnApi26Test() {
         expect().assertFail();
       } catch (error) {
         console.info(`testOnIsBeforeComponentNullInvalid,error.code, ${JSON.stringify(error)}`);
+        console.info(`testOnIsBeforeComponentNullInvalid,error.message, ${JSON.stringify(error.message)}`);
         expect(error.code).assertEqual(ParameterErrorCode);
+        expect(error.message).assertContain('Check arg0 failed');
       }
       console.info(`testOnIsBeforeComponentNullInvalid over`);
     });
@@ -81,7 +83,9 @@ export default function uitestOnApi26Test() {
         expect().assertFail();
       } catch (error) {
         console.info(`testOnIsAfterComponentNullInvalid,error.code, ${JSON.stringify(error)}`);
+        console.info(`testOnIsAfterComponentNullInvalid,error.message, ${JSON.stringify(error.message)}`);
         expect(error.code).assertEqual(ParameterErrorCode);
+        expect(error.message).assertContain('Check arg0 failed');
       }
       console.info(`testOnIsAfterComponentNullInvalid over`);
     });
@@ -121,7 +125,9 @@ export default function uitestOnApi26Test() {
         expect().assertFail();
       } catch (error) {
         console.info(`testOnWithinComponentNullInvalid,error.code, ${JSON.stringify(error)}`);
+        console.info(`testOnWithinComponentNullInvalid,error.message, ${JSON.stringify(error.message)}`);
         expect(error.code).assertEqual(ParameterErrorCode);
+        expect(error.message).assertContain('Check arg0 failed');
       }
       console.info(`testOnWithinComponentNullInvalid over`);
     });
