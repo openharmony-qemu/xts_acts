@@ -4976,47 +4976,89 @@ export default function continuationManagerTest() {
         })
 
         /**
-         * @tc.name   testOffDeviceSelectedError16600001_001
-         * @tc.number continuationManagerErrorCodeFullTest_010
-         * @tc.desc   Test off deviceSelected error code 16600001 - system ability abnormal
+         * @tc.name   testOffDeviceUnselected16600001
+         * @tc.number testOffDeviceUnselected16600001
+         * @tc.desc   Test continuationManager.off('deviceUnselected') with error code 16600001
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.level  LEVEL0
          */
-        it('testOffDeviceSelectedError16600001_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-            console.info("----------------------testOffDeviceSelectedError16600001_001 start----------------------");
+        it('testOffDeviceUnselected16600001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testOffDeviceUnselected16600001 start----------------------");
             try {
-                continuationManager.off("deviceSelected", -999);
+                continuationManager.off("deviceUnselected", token);
+                console.log('testOffDeviceUnselected16600001 should throw error');
+                expect().assertFail();
+                done();
             } catch (error) {
-                console.info("testOffDeviceSelectedError16600001_001 catch error is" + JSON.stringify(error));
-                if (error.code === 16600001) {
-                    expect(error.code == 16600001).assertTrue();
-                } else if (error.code === 16600002) {
-                    expect(error.code == 16600002).assertTrue();
-                }
+                console.log("testOffDeviceUnselected16600001 catch error is" + JSON.stringify(error));
+                expect(error.code == 16600001).assertTrue();
                 done();
             }
-            console.info("----------------------testOffDeviceSelectedError16600001_001 end----------------------");
+            console.info("----------------------testOffDeviceUnselected16600001 end----------------------");
         })
 
         /**
-         * @tc.name   testOffDeviceSelectedError16600002_001
-         * @tc.number continuationManagerErrorCodeFullTest_011
-         * @tc.desc   Test off deviceSelected error code 16600002 - token not registered
+         * @tc.name   testOffDeviceUnselected16600002
+         * @tc.number testOffDeviceUnselected16600002
+         * @tc.desc   Test continuationManager.off('deviceUnselected') with error code 16600002
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.level  LEVEL0
          */
-        it('testOffDeviceSelectedError16600002_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-            console.info("----------------------testOffDeviceSelectedError16600002_001 start----------------------");
+        it('testOffDeviceUnselected16600002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testOffDeviceUnselected16600002 start----------------------");
+            let unregisteredToken = 999999;
             try {
-                continuationManager.off("deviceSelected", 999999);
+                continuationManager.off("deviceUnselected", unregisteredToken);
+                console.log('testOffDeviceUnselected16600002 should throw error');
+                expect().assertFail();
+                done();
             } catch (error) {
-                console.info("testOffDeviceSelectedError16600002_001 catch error is" + JSON.stringify(error));
+                console.log("testOffDeviceUnselected16600002 catch error is" + JSON.stringify(error));
                 expect(error.code == 16600002).assertTrue();
                 done();
             }
-            console.info("----------------------testOffDeviceSelectedError16600002_001 end----------------------");
+            console.info("----------------------testOffDeviceUnselected16600002 end----------------------");
+        })
+
+        /**
+         * @tc.name   testOffDeviceUnselected16600004
+         * @tc.number testOffDeviceUnselected16600004
+         * @tc.desc   Test continuationManager.off('deviceUnselected') with error code 16600004
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testOffDeviceUnselected16600004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testOffDeviceUnselected16600004 start----------------------");
+            try {
+                continuationManager.on("deviceUnselected", token, (data) => {
+                    console.info('testOffDeviceUnselected16600004 onDeviceUnselected success');
+                    expect(data.length == 0).assertTrue();
+                });
+
+                setTimeout(() => {
+                    try {
+                        continuationManager.on("deviceUnselected", token, (data) => {
+                            console.info('testOffDeviceUnselected16600004 onDeviceUnselected second call');
+                            expect(data.length == 0).assertTrue();
+                        });
+                        console.log('testOffDeviceUnselected16600004 should throw error');
+                        expect().assertFail();
+                        done();
+                    } catch (error) {
+                        console.log("testOffDeviceUnselected16600004 catch error is" + JSON.stringify(error));
+                        expect(error.code == 16600004).assertTrue();
+                        done();
+                    }
+                }, 100);
+            } catch (error) {
+                console.log("testOffDeviceUnselected16600004 catch error is" + JSON.stringify(error));
+                expect(error.code == 16600004).assertTrue();
+                done();
+            }
+            console.info("----------------------testOffDeviceUnselected16600004 end----------------------");
         })
 
         /**
