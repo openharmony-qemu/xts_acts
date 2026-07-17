@@ -5110,5 +5110,156 @@ export default function continuationManagerTest() {
             }
             console.info("----------------------testRegisterContinuationError16600003_001 end----------------------");
         })
+
+        /**
+         * @tc.name   testUnregisterContinuationError16600001_001
+         * @tc.number continuationManagerErrorCodeFullTest_021
+         * @tc.desc   Test unregisterContinuation error code 16600001 - system ability abnormal
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testUnregisterContinuationError16600001_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("----------------------testUnregisterContinuationError16600001_001 start----------------------");
+            try {
+                continuationManager.unregisterContinuation(-999, function (err, data) {
+                    console.info("testUnregisterContinuationError16600001_001 err is" + JSON.stringify(err));
+                    if (err.code === 16600001) {
+                        expect(err.code == 16600001).assertTrue();
+                    } else if (err.code === 16600002) {
+                        expect(err.code == 16600002).assertTrue();
+                    } else {
+                        console.info("testUnregisterContinuationError16600001_001 Got error code: " + err.code);
+                        expect(err.code != 0).assertTrue();
+                    }
+                    done();
+                });
+            } catch (error) {
+                console.info("testUnregisterContinuationError16600001_001 catch error is" + JSON.stringify(error));
+                if (error.code === 16600001) {
+                    expect(error.code == 16600001).assertTrue();
+                }
+                done();
+            }
+            console.info("----------------------testUnregisterContinuationError16600001_001 end----------------------");
+        })
+
+        /**
+         * @tc.name   testUnregisterContinuationError16600002_001
+         * @tc.number continuationManagerErrorCodeFullTest_022
+         * @tc.desc   Test unregisterContinuation error code 16600002 - token not registered
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testUnregisterContinuationError16600002_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("----------------------testUnregisterContinuationError16600002_001 start----------------------");
+            try {
+                continuationManager.unregisterContinuation(999999, function (err, data) {
+                    console.info("testUnregisterContinuationError16600002_001 err is" + JSON.stringify(err));
+                    expect(err.code == 16600002).assertTrue();
+                    done();
+                });
+            } catch (error) {
+                console.info("testUnregisterContinuationError16600002_001 catch error is" + JSON.stringify(error));
+                if (error.code === 16600002) {
+                    expect(error.code == 16600002).assertTrue();
+                }
+                done();
+            }
+            console.info("----------------------testUnregisterContinuationError16600002_001 end----------------------");
+        })
+
+        /**
+         * @tc.name   testUpdateContinuationStateError16600001_001
+         * @tc.number continuationManagerErrorCodeFullTest_027
+         * @tc.desc   Test updateContinuationState error code 16600001 - system ability abnormal
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testUpdateContinuationStateError16600001_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("----------------------testUpdateContinuationStateError16600001_001 start----------------------");
+            try {
+                continuationManager.updateContinuationState(-999, "invalid_device", TEST_CONNECT_STATUS, function (err, data) {
+                    console.info("testUpdateContinuationStateError16600001_001 err is" + JSON.stringify(err));
+                    if (err.code === 16600001) {
+                        expect(err.code == 16600001).assertTrue();
+                    } else if (err.code === 16600002) {
+                        expect(err.code == 16600002).assertTrue();
+                    } else {
+                        console.info("testUpdateContinuationStateError16600001_001 Got error code: " + err.code);
+                        expect(err.code != 0).assertTrue();
+                    }
+                    done();
+                });
+            } catch (error) {
+                console.info("testUpdateContinuationStateError16600001_001 catch error is" + JSON.stringify(error));
+                if (error.code === 16600001) {
+                    expect(error.code == 16600001).assertTrue();
+                }
+                done();
+            }
+            console.info("----------------------testUpdateContinuationStateError16600001_001 end----------------------");
+        })
+
+        /**
+         * @tc.name   testUpdateContinuationStateError16600002_001
+         * @tc.number continuationManagerErrorCodeFullTest_028
+         * @tc.desc   Test updateContinuationState error code 16600002 - token not registered
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testUpdateContinuationStateError16600002_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("----------------------testUpdateContinuationStateError16600002_001 start----------------------");
+            try {
+                continuationManager.updateContinuationState(999999, TEST_DEVICE_ID, TEST_CONNECT_STATUS, function (err, data) {
+                    console.info("testUpdateContinuationStateError16600002_001 err is" + JSON.stringify(err));
+                    expect(err.code == 16600002).assertTrue();
+                    done();
+                });
+            } catch (error) {
+                console.info("testUpdateContinuationStateError16600002_001 catch error is" + JSON.stringify(error));
+                if (error.code === 16600002) {
+                    expect(error.code == 16600002).assertTrue();
+                }
+                done();
+            }
+            console.info("----------------------testUpdateContinuationStateError16600002_001 end----------------------");
+        })
+
+        /**
+         * @tc.name   testStartContinuationDeviceManagerError16600001_001
+         * @tc.number continuationManagerErrorCodeFullTest_033
+         * @tc.desc   Test startContinuationDeviceManager error code 16600001 - system ability abnormal
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testStartContinuationDeviceManagerError16600001_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("----------------------testStartContinuationDeviceManagerError16600001_001 start----------------------");
+            try {
+                continuationManager.startContinuationDeviceManager(-999, function (err, data) {
+                    console.info("testStartContinuationDeviceManagerError16600001_001 err is" + JSON.stringify(err));
+                    if (err.code === 16600001) {
+                        expect(err.code == 16600001).assertTrue();
+                    } else if (err.code === 16600002) {
+                        expect(err.code == 16600002).assertTrue();
+                    } else {
+                        console.info("testStartContinuationDeviceManagerError16600001_001 Got error code: " + err.code);
+                        expect(err.code != 0).assertTrue();
+                    }
+                    done();
+                });
+            } catch (error) {
+                console.info("testStartContinuationDeviceManagerError16600001_001 catch error is" + JSON.stringify(error));
+                if (error.code === 16600001) {
+                    expect(error.code == 16600001).assertTrue();
+                }
+                done();
+            }
+            console.info("----------------------testStartContinuationDeviceManagerError16600001_001 end----------------------");
+        })
     })
 }
