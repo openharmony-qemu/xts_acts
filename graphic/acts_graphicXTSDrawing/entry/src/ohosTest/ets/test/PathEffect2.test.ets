@@ -447,6 +447,14 @@ export default function PathEffect2() {
           console.info(msg + ` 8 createPathDashEffect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect(e.code).assertEqual(401);
         }
+      try {
+        let effect = drawing.PathEffect.createPathDashEffect(path1, 50, -30, 88888);
+        console.info(msg + ' 9 drawing.PathEffect.createPathDashEffect success ');
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + ` 9 createPathDashEffect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
       })
   })
 }

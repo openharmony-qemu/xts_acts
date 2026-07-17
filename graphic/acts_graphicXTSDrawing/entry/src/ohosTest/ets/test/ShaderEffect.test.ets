@@ -1412,6 +1412,22 @@ export default function shadowEffectTest() {
         console.info(msg + ` createLightingColorFilter shader4 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
       }
+      try {
+        let shader4 = drawing.ShaderEffect.createComposeShader(dstShader, srcShader, null);
+        console.info(msg + ' createLightingColorFilter null successed');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` createLightingColorFilter null errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let shader4 = drawing.ShaderEffect.createComposeShader(dstShader, srcShader, undefined);
+        console.info(msg + ' createLightingColorFilter undefined successed');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` createLightingColorFilter undefined errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
     });
     /**
      * @tc.name   testShaderEffectCreateComposeShaderAbnormal

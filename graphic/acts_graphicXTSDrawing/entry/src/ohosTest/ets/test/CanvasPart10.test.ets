@@ -161,6 +161,24 @@ export default function DrawingTsCanvasPart10Test(): void {
         console.info(msg + ` errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
+      try {
+        canvas.drawColor(0x00FFFFFF, undefined);
+        console.info(msg + ' undefined drawColor with blendMode succeeded');
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` undefined errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        canvas.drawColor(0x00FFFFFF, null);
+        console.info(msg + ' null drawColor with blendMode succeeded');
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` null errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
     })
 
     /**

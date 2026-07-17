@@ -923,6 +923,14 @@ export default function drawingTsCanvasTest() {
         console.info(msg + `10 drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
+      try {
+        canvas.drawColor(255, 10, 10, 10, 8888);
+        console.info(msg + '11 drawColor successed');
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + `11 drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
     })
     /**
      * @tc.name   testCanvasDrawColorNull
@@ -938,6 +946,7 @@ export default function drawingTsCanvasTest() {
       try {
         canvas.drawColor(null, drawing.BlendMode.CLEAR);
         console.info(msg + 'drawColor successed');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -945,15 +954,25 @@ export default function drawingTsCanvasTest() {
       try {
         canvas.drawColor(undefined, drawing.BlendMode.CLEAR);
         console.info(msg + 'drawColor successed');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
       try {
         canvas.drawColor({ alpha: 0x00, red: 0x00, green: 0x00, blue: 0x00}, undefined);
-        console.info(msg + 'drawColor successed');
+        console.info(msg + 'drawColor undefined successed');
+        expect().assertFail();
       } catch (e) {
-        console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        console.info(msg + `drawColor undefined errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        canvas.drawColor({ alpha: 0x00, red: 0x00, green: 0x00, blue: 0x00}, null);
+        console.info(msg + 'drawColor null successed');
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + `drawColor null errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
     })
