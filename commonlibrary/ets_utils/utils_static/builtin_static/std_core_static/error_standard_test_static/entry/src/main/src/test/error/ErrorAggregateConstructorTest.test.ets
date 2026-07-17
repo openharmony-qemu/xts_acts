@@ -750,7 +750,7 @@ export default function ErrorAggregateConstructorTest(): void {
     it('testErrorAggregateConstructor041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err: AggregateError =
         new AggregateError([new Error('d0'), new Error('d1'), new Error('d2'), new Error('d3'), new Error('d4'),
-          new Error('d5'), new Error('d6'), new Error('d7'), new Error('d8'), new Error('d9'), new Error('d10'),
+          new Error('d5'), new Error('d6'), new Error('d7'), new Error('d18'), new Error('d9'), new Error('d10'),
           new Error('d11'), new Error('d12'), new SyntaxError('d13')], '2026-07-11T00:00:00Z');
       expect(err.message).assertEqual('2026-07-11T00:00:00Z');
       expect(err.errors.length).assertEqual(14);
