@@ -11,9 +11,7 @@
 **/.test
 /oh-package-lock.json5
 /autosign
-/signature
 *.hap
-*.p7b
 *.p12
 *.cer
 *.jar
