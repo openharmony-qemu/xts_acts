@@ -49,6 +49,13 @@ struct ExtendableImageBuiltIn {
         .overlay('png', { align: Alignment.Bottom, offset: { x: 0, y: 20 } })
         .border({ width: 2, color: Color.Pink })
         .objectFit(ImageFit.TOP_START)
+      MyImage(undefined)
+        .id('ExtendableImage_002')
+        .width() // 调用重写属性
+        .newAttribute() // 调用自定义属性
+        .overlay('png', { align: Alignment.Bottom, offset: { x: 0, y: 20 } })
+        .border({ width: 2, color: Color.Pink })
+        .objectFit(ImageFit.TOP_START)
     }
   }
 }

@@ -65,13 +65,18 @@ import EnvBreakpoint2 from './Env/EnvBreakpoint2.test';
 import ExtendableButtonBuiltInTest from './ExtendBuiltIn/ExtendableButtonBuiltInTest.test';
 import ExtendableColumnBuiltInTest from './ExtendBuiltIn/ExtendableColumnBuiltInTest.test';
 import ExtendableGridBuiltInTest from './ExtendBuiltIn/ExtendableGridBuiltInTest.test';
+import ExtendableGridBuiltInUndefinedTest from './ExtendBuiltIn/ExtendableGridBuiltInUndefinedTest.test';
 import ExtendableGridItemBuiltInTest from './ExtendBuiltIn/ExtendableGridItemBuiltInTest.test';
+import ExtendableGridItemBuiltInUndefinedTest from './ExtendBuiltIn/ExtendableGridItemBuiltInUndefinedTest.test';
 import ExtendableImageBuiltInTest from './ExtendBuiltIn/ExtendableImageBuiltInTest.test';
 import ExtendableListBuiltInTest from './ExtendBuiltIn/ExtendableListBuiltInTest.test';
+import ExtendableListBuiltInUndefinedTest from './ExtendBuiltIn/ExtendableListBuiltInUndefinedTest.test';
 import ExtendableListItemBuiltInTest from './ExtendBuiltIn/ExtendableListItemBuiltInTest.test';
+import ExtendableListItemBuiltInUndefinedTest from './ExtendBuiltIn/ExtendableListItemBuiltInUndefinedTest.test';
 import ExtendableRelativeContainerBuiltInTest from './ExtendBuiltIn/ExtendableRelativeContainerBuiltInTest.test';
 import ExtendableRowBuiltInTest from './ExtendBuiltIn/ExtendableRowBuiltInTest.test';
 import ExtendableStackBuiltInTest from './ExtendBuiltIn/ExtendableStackBuiltInTest.test';
+import ExtendableStackBuiltInUndefinedTest from './ExtendBuiltIn/ExtendableStackBuiltInUndefinedTest.test';
 import ExtendableTextBuiltInTest from './ExtendBuiltIn/ExtendableTextBuiltInTest.test';
 import ExtendableToggleBuiltInTest from './ExtendBuiltIn/ExtendableToggleBuiltInTest.test';
 
@@ -80,7 +85,9 @@ export default function testsuite(): void {
   ArrayLikeStringTest(); 
   GlobalReusePool004Test();
   ExtendableListBuiltInTest();
+  ExtendableListBuiltInUndefinedTest();
   ExtendableListItemBuiltInTest();
+  ExtendableListItemBuiltInUndefinedTest();
   //RepeatCloseReuseTest0110(); 
   //RepeatLazyTest0150();  
   //repeatReusableFalse(); 
@@ -130,11 +137,14 @@ export default function testsuite(): void {
   ExtendableButtonBuiltInTest();
   ExtendableColumnBuiltInTest();
   ExtendableGridBuiltInTest();
+  ExtendableGridBuiltInUndefinedTest();
   ExtendableGridItemBuiltInTest();
+  ExtendableGridItemBuiltInUndefinedTest();
   ExtendableImageBuiltInTest();
   ExtendableRelativeContainerBuiltInTest();
   ExtendableRowBuiltInTest();
   ExtendableStackBuiltInTest();
+  ExtendableStackBuiltInUndefinedTest();
   ExtendableTextBuiltInTest();
   ExtendableToggleBuiltInTest();
 }

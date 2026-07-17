@@ -52,5 +52,12 @@ struct ExtendableColumnBuiltIn {
     }
     .newAttribute() // 调用自定义属性
     .id('ExtendableColumn_002')
+    .margin(20)
+    MyColumn(undefined) {
+      Text('Hello ArkUI2')
+        .id('ExtendableColumn_003')
+    }
+    .newAttribute() // 调用自定义属性
+    .id('ExtendableColumn_004')
   }
 }

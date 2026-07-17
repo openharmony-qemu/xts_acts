@@ -170,5 +170,27 @@ export default function ExtendableImageBuiltInTest() {
       console.info('[ExtendableImageBuiltIn_Overlay_0500] END');
       done();
     });
+
+    /**
+     * @tc.name: ExtendableImageBuiltIn_UndeFined_0600
+     * @tc.number: SUB_ARKUI_EXTENDABLE_IMAGE_UNDEFINED_0600
+     * @tc.desc: Test ExtendableImage with overlay attribute
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     * @tc.level: Level1
+     */
+    it('ExtendableImageBuiltIn_UndeFined_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[ExtendableImageBuiltIn_UndeFined_0600] START');
+      await CommonFunc.sleep(1000);
+      let strJson1: string = inspector.getInspectorByKey('ExtendableImage_001');
+      let strJson2: string = inspector.getInspectorByKey('ExtendableImage_002');
+      await CommonFunc.sleep(1000);
+      let srcUndefined1=JSON.parseJsonElement(strJson1).getElement('$attrs').getString('src')
+      let srcUndefined2=JSON.parseJsonElement(strJson2).getElement('$attrs').getString('src')
+      expect(srcUndefined1).assertContain('png');
+      expect(srcUndefined2).assertEqual('');
+      console.info('[ExtendableImageBuiltIn_UndeFined_0600] END');
+      done();
+    });
   });
 }

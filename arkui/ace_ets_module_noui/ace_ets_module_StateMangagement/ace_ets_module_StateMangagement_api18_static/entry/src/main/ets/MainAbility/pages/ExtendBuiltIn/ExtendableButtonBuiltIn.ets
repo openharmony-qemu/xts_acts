@@ -64,6 +64,10 @@ struct ExtendableButtonBuiltIn {
         .onClick((e: ClickEvent) => {
           this.str += '~';
         })
+      // 覆盖undefined
+      MyButton(this.str, undefined)
+        .newAttribute() // 调用自定义属性
+        .id('ExtendableButton_003')
     }
   }
 }

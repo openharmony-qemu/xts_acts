@@ -174,5 +174,23 @@ export default function ExtendableButtonBuiltInTest() {
       console.info('[ExtendableButtonBuiltIn_ClickEvent_0500] END');
       done();
     });
+
+    /**
+     * @tc.name: ExtendableButtonBuiltIn_Undefined_0600
+     * @tc.number: SUB_ARKUI_EXTENDABLE_BUTTON_UNDEFINED_0600
+     * @tc.desc: ExtendableButtonBuiltIn_Undefined_0600
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     * @tc.level: Level1
+     */
+    it('ExtendableButtonBuiltIn_Undefined_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[ExtendableButtonBuiltIn_Undefined_0600] START');
+      await CommonFunc.sleep(1000);
+      let strJsonNew = inspector.getInspectorByKey('ExtendableButton_003');
+      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('type')).assertEqual('ButtonType.ROUNDED_RECTANGLE');
+      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('width')).assertEqual('30.00%');
+      console.info('[ExtendableButtonBuiltIn_Undefined_0600] END');
+      done();
+    });
   });
 }
