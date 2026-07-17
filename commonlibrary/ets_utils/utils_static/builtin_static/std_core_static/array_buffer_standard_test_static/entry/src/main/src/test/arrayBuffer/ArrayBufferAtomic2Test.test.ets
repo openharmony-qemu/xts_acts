@@ -1994,3 +1994,1983 @@ export default function arrayBufferAtomic2Test(): void {
       buffer.atomicSubI16(0, 0, Int.toShort(-5000));
       expect(buffer.atomicLoadI16(0, 0)).assertEqual(Int.toLong(-30536));
     });
+
+    /**
+     * @tc.name testArrayBufferAtomic0120
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1200
+     * @tc.desc Verify I16 consecutive Sub: -32000-3000-3000 = 27536
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI16(0, 0, Int.toShort(-32000));
+      buffer.atomicSubI16(0, 0, Int.toShort(3000));
+      expect(buffer.atomicLoadI16(0, 0)).assertEqual(Int.toLong(30536));
+      buffer.atomicSubI16(0, 0, Int.toShort(3000));
+      expect(buffer.atomicLoadI16(0, 0)).assertEqual(Int.toLong(27536));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0121
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1210
+     * @tc.desc Verify I16 Add then Sub at non-zero address: (0,2) Add 100, Sub 100 -> original
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI16(0, 2, Int.toShort(5000));
+      buffer.atomicAddI16(0, 2, Int.toShort(100));
+      expect(buffer.atomicLoadI16(0, 2)).assertEqual(Int.toLong(5100));
+      buffer.atomicSubI16(0, 2, Int.toShort(100));
+      expect(buffer.atomicLoadI16(0, 2)).assertEqual(Int.toLong(5000));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0122
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1220
+     * @tc.desc Verify I16 CAS success: Store -1, CAS(-1,0), Load 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI16(0, 0, Int.toShort(-1));
+      const old = buffer.atomicCompareExchangeI16(0, 0, Int.toShort(-1), Int.toShort(0));
+      expect(old).assertEqual(Int.toLong(-1));
+      expect(buffer.atomicLoadI16(0, 0)).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0123
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1230
+     * @tc.desc Verify I16 CAS failure: Store 32767, CAS(-32768,0), Load 32767
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI16(0, 0, Int.toShort(32767));
+      const old = buffer.atomicCompareExchangeI16(0, 0, Int.toShort(-32768), Int.toShort(0));
+      expect(old).assertEqual(Int.toLong(32767));
+      expect(buffer.atomicLoadI16(0, 0)).assertEqual(Int.toLong(32767));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0124
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1240
+     * @tc.desc Verify I16 CAS expected=-32768: Store -32768, CAS(-32768,32767), Load 32767
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI16(0, 0, Int.toShort(-32768));
+      const old = buffer.atomicCompareExchangeI16(0, 0, Int.toShort(-32768), Int.toShort(32767));
+      expect(old).assertEqual(Int.toLong(-32768));
+      expect(buffer.atomicLoadI16(0, 0)).assertEqual(Int.toLong(32767));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0125
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1250
+     * @tc.desc Verify I16 CAS replacement=-32768: Store 0, CAS(0,-32768), Load -32768
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI16(0, 0, Int.toShort(0));
+      const old = buffer.atomicCompareExchangeI16(0, 0, Int.toShort(0), Int.toShort(-32768));
+      expect(old).assertEqual(Int.toLong(0));
+      expect(buffer.atomicLoadI16(0, 0)).assertEqual(Int.toLong(-32768));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0126
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1260
+     * @tc.desc Verify I16 CAS retry: CAS(99,200) fail, CAS(100,200) success
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI16(0, 0, Int.toShort(100));
+      let old = buffer.atomicCompareExchangeI16(0, 0, Int.toShort(99), Int.toShort(200));
+      expect(old).assertEqual(Int.toLong(100));
+      old = buffer.atomicCompareExchangeI16(0, 0, Int.toShort(100), Int.toShort(200));
+      expect(old).assertEqual(Int.toLong(100));
+      expect(buffer.atomicLoadI16(0, 0)).assertEqual(Int.toLong(200));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0127
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1270
+     * @tc.desc Verify I16 CAS chain: -32768 -> -1 -> 0 -> 32767
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI16(0, 0, Int.toShort(-32768));
+      let old = buffer.atomicCompareExchangeI16(0, 0, Int.toShort(-32768), Int.toShort(-1));
+      expect(old).assertEqual(Int.toLong(-32768));
+      old = buffer.atomicCompareExchangeI16(0, 0, Int.toShort(-1), Int.toShort(0));
+      expect(old).assertEqual(Int.toLong(-1));
+      old = buffer.atomicCompareExchangeI16(0, 0, Int.toShort(0), Int.toShort(32767));
+      expect(old).assertEqual(Int.toLong(0));
+      expect(buffer.atomicLoadI16(0, 0)).assertEqual(Int.toLong(32767));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0128
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1280
+     * @tc.desc Verify I16 And clears sign bit: -1 & 0x7FFF = 32767
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI16(0, 0, Int.toShort(-1));
+      buffer.atomicAndI16(0, 0, Int.toShort(0x7FFF));
+      expect(buffer.atomicLoadI16(0, 0)).assertEqual(Int.toLong(32767));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0129
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1290
+     * @tc.desc Verify I16 And preserves sign bit: -1 & 0x8000 = -32768
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI16(0, 0, Int.toShort(-1));
+      buffer.atomicAndI16(0, 0, Int.toShort(0x8000));
+      expect(buffer.atomicLoadI16(0, 0)).assertEqual(Int.toLong(-32768));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0130
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1300
+     * @tc.desc Verify I16 Or sets sign bit: 32767 | 0x8000 = -1
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI16(0, 0, Int.toShort(32767));
+      buffer.atomicOrI16(0, 0, Int.toShort(0x8000));
+      expect(buffer.atomicLoadI16(0, 0)).assertEqual(Int.toLong(-1));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0131
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1310
+     * @tc.desc Verify I16 Or all 1s: 0 | 0xFFFF = -1
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI16(0, 0, Int.toShort(0));
+      buffer.atomicOrI16(0, 0, Int.toShort(0xFFFF));
+      expect(buffer.atomicLoadI16(0, 0)).assertEqual(Int.toLong(-1));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0132
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1320
+     * @tc.desc Verify I16 Xor flips sign bit: 32767 ^ 0x8000 = -1
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI16(0, 0, Int.toShort(32767));
+      buffer.atomicXorI16(0, 0, Int.toShort(0x8000));
+      expect(buffer.atomicLoadI16(0, 0)).assertEqual(Int.toLong(-1));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0133
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1330
+     * @tc.desc Verify I16 Xor self = 0: -1 ^ -1 = 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI16(0, 0, Int.toShort(-1));
+      buffer.atomicXorI16(0, 0, Int.toShort(-1));
+      expect(buffer.atomicLoadI16(0, 0)).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0134
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1340
+     * @tc.desc Verify I16 And+Or combination: Store 0xFFFF, And 0x00FF, Or 0x0100 = 0x01FF
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI16(0, 0, Int.toShort(0xFFFF));
+      buffer.atomicAndI16(0, 0, Int.toShort(0x00FF));
+      buffer.atomicOrI16(0, 0, Int.toShort(0x0100));
+      expect(buffer.atomicLoadI16(0, 0)).assertEqual(Int.toLong(0x01FF));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0135
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1350
+     * @tc.desc Verify Int.toShort(32768) -> -32768
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI16(0, 0, Int.toShort(32768));
+      expect(buffer.atomicLoadI16(0, 0)).assertEqual(Int.toLong(-32768));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0136
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1360
+     * @tc.desc Verify Int.toShort(65535) -> -1
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI16(0, 0, Int.toShort(65535));
+      expect(buffer.atomicLoadI16(0, 0)).assertEqual(Int.toLong(-1));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0137
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1370
+     * @tc.desc Verify Int.toShort(-32769) -> 32767
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI16(0, 0, Int.toShort(-32769));
+      expect(buffer.atomicLoadI16(0, 0)).assertEqual(Int.toLong(32767));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0138
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1380
+     * @tc.desc Verify Add with truncated operand: Store 1, Add Int.toShort(65535)=-1, Load 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI16(0, 0, Int.toShort(1));
+      buffer.atomicAddI16(0, 0, Int.toShort(65535));
+      expect(buffer.atomicLoadI16(0, 0)).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0139
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1390
+     * @tc.desc Verify Sub with truncated operand: Store 1, Sub Int.toShort(65535)=-1, Load 2
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI16(0, 0, Int.toShort(1));
+      buffer.atomicSubI16(0, 0, Int.toShort(65535));
+      expect(buffer.atomicLoadI16(0, 0)).assertEqual(Int.toLong(2));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0140
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1400
+     * @tc.desc Verify I16 store -1, U16 load returns 65535 (0xFFFF)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI16(0, 0, Int.toShort(-1));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(65535));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0141
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1410
+     * @tc.desc Verify I16 store -32768, U16 load returns 32768 (0x8000)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI16(0, 0, Int.toShort(-32768));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(32768));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0142
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1420
+     * @tc.desc Verify I16 + U8 non-overlapping coexistence
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI16(0, 0, Int.toShort(1000));
+      buffer.atomicStoreU8(2, 0, Int.toByte(200));
+      expect(buffer.atomicLoadI16(0, 0)).assertEqual(Int.toLong(1000));
+      expect(buffer.atomicLoadU8(2, 0)).assertEqual(Int.toLong(200));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0143
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1430
+     * @tc.desc Verify set() then atomicLoadI16 reads correctly
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.set(0, Int.toByte(10));
+      buffer.set(1, Int.toByte(0));
+      buffer.atomicAddI16(0, 0, Int.toShort(5));
+      expect(buffer.atomicLoadI16(0, 0)).assertEqual(Int.toLong(15));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0144
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1440
+     * @tc.desc Verify atomicStoreI16 then at() on first byte
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI16(0, 0, Int.toShort(0x1234));
+      const lo = buffer.at(0);
+      const hi = buffer.at(1);
+      expect(Byte.toInt(lo)).assertEqual(Int.toLong(0x34));
+      expect(Byte.toInt(hi)).assertEqual(Int.toLong(0x12));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0145
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1450
+     * @tc.desc Verify resize(4) then atomicLoadI16 on new area returns 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(2, 4);
+      buffer.resize(4);
+      expect(buffer.atomicLoadI16(0, 2)).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0146
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1460
+     * @tc.desc Verify resize(4) then StoreI16 and LoadI16 on new area
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(2, 4);
+      buffer.resize(4);
+      buffer.atomicStoreI16(0, 2, Int.toShort(5000));
+      expect(buffer.atomicLoadI16(0, 2)).assertEqual(Int.toLong(5000));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0147
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1470
+     * @tc.desc Verify resize(4) then AddI16 overflow: Store 32767 at addr 2, Add 1, Load -32768
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(2, 4);
+      buffer.resize(4);
+      buffer.atomicStoreI16(0, 2, Int.toShort(32767));
+      buffer.atomicAddI16(0, 2, Int.toShort(1));
+      expect(buffer.atomicLoadI16(0, 2)).assertEqual(Int.toLong(-32768));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0148
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1480
+     * @tc.desc Verify I16 overflow stability: 5 times same buffer 32767+1=-32768
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      for (let i = 0; i < 5; i++) {
+        buffer.atomicStoreI16(0, 0, Int.toShort(32767));
+        buffer.atomicAddI16(0, 0, Int.toShort(1));
+        expect(buffer.atomicLoadI16(0, 0)).assertEqual(Int.toLong(-32768));
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0149
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1490
+     * @tc.desc Verify I16 stability with new buffer each time
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      for (let i = 0; i < 5; i++) {
+        const buffer: ArrayBuffer = new ArrayBuffer(4);
+        buffer.atomicStoreI16(0, 0, Int.toShort(1000));
+        buffer.atomicAddI16(0, 0, Int.toShort(500));
+        buffer.atomicSubI16(0, 0, Int.toShort(200));
+        expect(buffer.atomicLoadI16(0, 0)).assertEqual(Int.toLong(1300));
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0150
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1500
+     * @tc.desc Verify atomicAddU16 returns old 65535 when wrap
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(65535));
+      const old = buffer.atomicAddU16(0, 0, Int.toShort(1));
+      expect(old).assertEqual(Int.toLong(65535));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0151
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1510
+     * @tc.desc Verify atomicSubU16 returns old 0 when wrap
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(0));
+      const old = buffer.atomicSubU16(0, 0, Int.toShort(1));
+      expect(old).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0152
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1520
+     * @tc.desc Verify atomicAndU16 returns old 65535
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(65535));
+      const old = buffer.atomicAndU16(0, 0, Int.toShort(0x00FF));
+      expect(old).assertEqual(Int.toLong(65535));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0153
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1530
+     * @tc.desc Verify atomicOrU16 returns old 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(0));
+      const old = buffer.atomicOrU16(0, 0, Int.toShort(0xFFFF));
+      expect(old).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0154
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1540
+     * @tc.desc Verify atomicXorU16 returns old 32768
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(32768));
+      const old = buffer.atomicXorU16(0, 0, Int.toShort(0xFFFF));
+      expect(old).assertEqual(Int.toLong(32768));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0155
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1550
+     * @tc.desc Verify atomicExchangeU16 returns old 50000
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(50000));
+      const old = buffer.atomicExchangeU16(0, 0, Int.toShort(10000));
+      expect(old).assertEqual(Int.toLong(50000));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0156
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1560
+     * @tc.desc Verify all U16 operations on 2-byte buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(2);
+      buffer.atomicStoreU16(0, 0, Int.toShort(1000));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(1000));
+      let old = buffer.atomicAddU16(0, 0, Int.toShort(500));
+      expect(old).assertEqual(Int.toLong(1000));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(1500));
+      old = buffer.atomicSubU16(0, 0, Int.toShort(500));
+      expect(old).assertEqual(Int.toLong(1500));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(1000));
+      old = buffer.atomicAndU16(0, 0, Int.toShort(0x00FF));
+      expect(old).assertEqual(Int.toLong(1000));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(232));
+      old = buffer.atomicOrU16(0, 0, Int.toShort(0xFF00));
+      expect(old).assertEqual(Int.toLong(232));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(65512));
+      old = buffer.atomicXorU16(0, 0, Int.toShort(0xFFFF));
+      expect(old).assertEqual(Int.toLong(65512));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(23));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0157
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1570
+     * @tc.desc Verify Exchange and CAS on 2-byte buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(2);
+      buffer.atomicStoreU16(0, 0, Int.toShort(100));
+      const oldEx = buffer.atomicExchangeU16(0, 0, Int.toShort(200));
+      expect(oldEx).assertEqual(Int.toLong(100));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(200));
+      const oldCas = buffer.atomicCompareExchangeU16(0, 0, Int.toShort(200), Int.toShort(300));
+      expect(oldCas).assertEqual(Int.toLong(200));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(300));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0158
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1580
+     * @tc.desc Verify all U16 operations on last valid addr=2 (index=0, byteOffset=2 in 4-byte buffer)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 2, Int.toShort(65535));
+      expect(buffer.atomicLoadU16(0, 2)).assertEqual(Int.toLong(65535));
+      let old = buffer.atomicAddU16(0, 2, Int.toShort(1));
+      expect(old).assertEqual(Int.toLong(65535));
+      expect(buffer.atomicLoadU16(0, 2)).assertEqual(Int.toLong(0));
+      buffer.atomicStoreU16(0, 2, Int.toShort(50000));
+      old = buffer.atomicSubU16(0, 2, Int.toShort(1));
+      expect(old).assertEqual(Int.toLong(50000));
+      expect(buffer.atomicLoadU16(0, 2)).assertEqual(Int.toLong(49999));
+      buffer.atomicStoreU16(0, 2, Int.toShort(0xFFFF));
+      old = buffer.atomicAndU16(0, 2, Int.toShort(0x7FFF));
+      expect(old).assertEqual(Int.toLong(65535));
+      expect(buffer.atomicLoadU16(0, 2)).assertEqual(Int.toLong(32767));
+      buffer.atomicStoreU16(0, 2, Int.toShort(0));
+      old = buffer.atomicOrU16(0, 2, Int.toShort(0x8000));
+      expect(old).assertEqual(Int.toLong(0));
+      expect(buffer.atomicLoadU16(0, 2)).assertEqual(Int.toLong(32768));
+      buffer.atomicStoreU16(0, 2, Int.toShort(0x7FFF));
+      old = buffer.atomicXorU16(0, 2, Int.toShort(0x8000));
+      expect(old).assertEqual(Int.toLong(32767));
+      expect(buffer.atomicLoadU16(0, 2)).assertEqual(Int.toLong(65535));
+      buffer.atomicStoreU16(0, 2, Int.toShort(100));
+      old = buffer.atomicExchangeU16(0, 2, Int.toShort(200));
+      expect(old).assertEqual(Int.toLong(100));
+      expect(buffer.atomicLoadU16(0, 2)).assertEqual(Int.toLong(200));
+      buffer.atomicStoreU16(0, 2, Int.toShort(300));
+      old = buffer.atomicCompareExchangeU16(0, 2, Int.toShort(300), Int.toShort(400));
+      expect(old).assertEqual(Int.toLong(300));
+      expect(buffer.atomicLoadU16(0, 2)).assertEqual(Int.toLong(400));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0159
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1590
+     * @tc.desc Verify U16 at addr 0-1 does not affect addr 2-3
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(0x1234));
+      buffer.atomicStoreU16(0, 2, Int.toShort(0x5678));
+      buffer.atomicAddU16(0, 0, Int.toShort(1));
+      expect(buffer.atomicLoadU16(0, 2)).assertEqual(Int.toLong(0x5678));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0160
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1600
+     * @tc.desc Verify U16 Add 65000 + 1000 = 464 (wrap)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(65000));
+      buffer.atomicAddU16(0, 0, Int.toShort(1000));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(464));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0161
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1610
+     * @tc.desc Verify U16 consecutive Add wrap: 64000+1000+1000 = 464 (U16 wrap)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(64000));
+      buffer.atomicAddU16(0, 0, Int.toShort(1000));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(65000));
+      buffer.atomicAddU16(0, 0, Int.toShort(1000));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(464));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0162
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1620
+     * @tc.desc Verify U16 Add at non-zero address: (1,2) Store 65534, Add 3, Load 1
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(6);
+      buffer.atomicStoreU16(1, 2, Int.toShort(65534));
+      buffer.atomicAddU16(1, 2, Int.toShort(3));
+      expect(buffer.atomicLoadU16(1, 2)).assertEqual(Int.toLong(1));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0163
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1630
+     * @tc.desc Verify U16 Sub 100 - 200 = 65436 (wrap)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(100));
+      buffer.atomicSubU16(0, 0, Int.toShort(200));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(65436));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0164
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1640
+     * @tc.desc Verify U16 consecutive Sub wrap: 100-50-100 = 65486 (U16 wrap)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(100));
+      buffer.atomicSubU16(0, 0, Int.toShort(50));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(50));
+      buffer.atomicSubU16(0, 0, Int.toShort(100));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(65486));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0165
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1650
+     * @tc.desc Verify U16 CAS success: Store 50000, CAS(50000,60000), Load 60000
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(50000));
+      const old = buffer.atomicCompareExchangeU16(0, 0, Int.toShort(50000), Int.toShort(60000));
+      expect(old).assertEqual(Int.toLong(50000));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(60000));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0166
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1660
+     * @tc.desc Verify U16 CAS failure: Store 60000, CAS(50000,0), Load 60000
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(60000));
+      const old = buffer.atomicCompareExchangeU16(0, 0, Int.toShort(50000), Int.toShort(0));
+      expect(old).assertEqual(Int.toLong(60000));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(60000));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0167
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1670
+     * @tc.desc Verify U16 CAS boundary: Store 0, CAS(0,65535), Load 65535
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(0));
+      const old = buffer.atomicCompareExchangeU16(0, 0, Int.toShort(0), Int.toShort(65535));
+      expect(old).assertEqual(Int.toLong(0));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(65535));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0168
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1680
+     * @tc.desc Verify U16 CAS chain: 0 -> 32768 -> 65535
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(0));
+      let old = buffer.atomicCompareExchangeU16(0, 0, Int.toShort(0), Int.toShort(32768));
+      expect(old).assertEqual(Int.toLong(0));
+      old = buffer.atomicCompareExchangeU16(0, 0, Int.toShort(32768), Int.toShort(65535));
+      expect(old).assertEqual(Int.toLong(32768));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(65535));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0169
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1690
+     * @tc.desc Verify U16 CAS retry: fail then success
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(100));
+      let old = buffer.atomicCompareExchangeU16(0, 0, Int.toShort(99), Int.toShort(200));
+      expect(old).assertEqual(Int.toLong(100));
+      old = buffer.atomicCompareExchangeU16(0, 0, Int.toShort(100), Int.toShort(200));
+      expect(old).assertEqual(Int.toLong(100));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(200));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0170
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1700
+     * @tc.desc Verify U16 And clears high bit: 65535 & 0x7FFF = 32767
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(65535));
+      buffer.atomicAndU16(0, 0, Int.toShort(0x7FFF));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(32767));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0171
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1710
+     * @tc.desc Verify U16 Or sets high bit: 0 | 0x8000 = 32768
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(0));
+      buffer.atomicOrU16(0, 0, Int.toShort(0x8000));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(32768));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0172
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1720
+     * @tc.desc Verify U16 Xor flips high bit: 32767 ^ 0x8000 = 65535
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(32767));
+      buffer.atomicXorU16(0, 0, Int.toShort(0x8000));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(65535));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0173
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1730
+     * @tc.desc Verify U16 Xor self = 0: 32768 ^ 32768 = 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(32768));
+      buffer.atomicXorU16(0, 0, Int.toShort(32768));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0174
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1740
+     * @tc.desc Verify U16 bit combination: 0xFFFF & 0x00FF | 0x0100 = 0x01FF
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(0xFFFF));
+      buffer.atomicAndU16(0, 0, Int.toShort(0x00FF));
+      buffer.atomicOrU16(0, 0, Int.toShort(0x0100));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(0x01FF));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0175
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1750
+     * @tc.desc Verify Int.toShort(65536) -> 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(65536));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0176
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1760
+     * @tc.desc Verify Int.toShort(-1) -> 65535
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(-1));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(65535));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0177
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1770
+     * @tc.desc Verify Int.toShort(-32768) -> 32768
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(-32768));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(32768));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0178
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1780
+     * @tc.desc Verify Add with truncated operand: Store 1, Add Int.toShort(-1)=65535, Load 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(1));
+      buffer.atomicAddU16(0, 0, Int.toShort(-1));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0179
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1790
+     * @tc.desc Verify Sub with truncated operand: Store 1, Sub Int.toShort(-1)=65535, Load 2
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(1));
+      buffer.atomicSubU16(0, 0, Int.toShort(-1));
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(2));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0180
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1800
+     * @tc.desc Verify U16 store 65535, I16 load returns -1
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU16(0, 0, Int.toShort(65535));
+      expect(buffer.atomicLoadI16(0, 0)).assertEqual(Int.toLong(-1));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0181
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1810
+     * @tc.desc Verify U16 + I32 non-overlapping coexistence (non-aligned access)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreU16(0, 0, Int.toShort(50000));
+      buffer.atomicStoreI32(1, 0, 1000000);
+      expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(50000));
+      expect(buffer.atomicLoadI32(1, 0)).assertEqual(Int.toLong(1000000));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0182
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1820
+     * @tc.desc Verify resize(4) then atomicLoadU16 on new area = 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(2, 4);
+      buffer.resize(4);
+      expect(buffer.atomicLoadU16(0, 2)).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0183
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1830
+     * @tc.desc Verify resize(4) then StoreU16 and LoadU16 on new area
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(2, 4);
+      buffer.resize(4);
+      buffer.atomicStoreU16(0, 2, Int.toShort(40000));
+      expect(buffer.atomicLoadU16(0, 2)).assertEqual(Int.toLong(40000));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0184
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1840
+     * @tc.desc Verify resize(4) then AddU16 wrap: Store 65535 at addr 2, Add 1, Load 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(2, 4);
+      buffer.resize(4);
+      buffer.atomicStoreU16(0, 2, Int.toShort(65535));
+      buffer.atomicAddU16(0, 2, Int.toShort(1));
+      expect(buffer.atomicLoadU16(0, 2)).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0185
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1850
+     * @tc.desc Verify U16 wrap stability: 5 times same buffer 65535+1=0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      for (let i = 0; i < 5; i++) {
+        buffer.atomicStoreU16(0, 0, Int.toShort(65535));
+        buffer.atomicAddU16(0, 0, Int.toShort(1));
+        expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(0));
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0186
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1860
+     * @tc.desc Verify U16 stability with new buffer each time
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      for (let i = 0; i < 5; i++) {
+        const buffer: ArrayBuffer = new ArrayBuffer(4);
+        buffer.atomicStoreU16(0, 0, Int.toShort(1000));
+        buffer.atomicAddU16(0, 0, Int.toShort(500));
+        buffer.atomicSubU16(0, 0, Int.toShort(200));
+        expect(buffer.atomicLoadU16(0, 0)).assertEqual(Int.toLong(1300));
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0187
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1870
+     * @tc.desc Verify atomicAddI32 returns old 2147483647 (MAX) on overflow
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI32(0, 0, 2147483647);
+      const old = buffer.atomicAddI32(0, 0, 1);
+      expect(old).assertEqual(Int.toLong(2147483647));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0188
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1880
+     * @tc.desc Verify atomicSubI32 returns old -2147483648 on underflow
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI32(0, 0, -2147483648);
+      const old = buffer.atomicSubI32(0, 0, 1);
+      expect(old).assertEqual(Int.toLong(-2147483648));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0189
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1890
+     * @tc.desc Verify atomicAndI32 returns old -1
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI32(0, 0, -1);
+      const old = buffer.atomicAndI32(0, 0, 2147483647);
+      expect(old).assertEqual(Int.toLong(-1));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0190
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1900
+     * @tc.desc Verify atomicOrI32 returns old 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI32(0, 0, 0);
+      const old = buffer.atomicOrI32(0, 0, -1);
+      expect(old).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0191
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1910
+     * @tc.desc Verify atomicXorI32 returns old 2147483647
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI32(0, 0, 2147483647);
+      const old = buffer.atomicXorI32(0, 0, -1);
+      expect(old).assertEqual(Int.toLong(2147483647));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0192
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1920
+     * @tc.desc Verify atomicExchangeI32 returns old -2147483648
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI32(0, 0, -2147483648);
+      const old = buffer.atomicExchangeI32(0, 0, 2147483647);
+      expect(old).assertEqual(Int.toLong(-2147483648));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0193
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1930
+     * @tc.desc Verify all I32 operations on 4-byte buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI32(0, 0, 100000);
+      expect(buffer.atomicLoadI32(0, 0)).assertEqual(Int.toLong(100000));
+      let old = buffer.atomicAddI32(0, 0, 50000);
+      expect(old).assertEqual(Int.toLong(100000));
+      expect(buffer.atomicLoadI32(0, 0)).assertEqual(Int.toLong(150000));
+      old = buffer.atomicSubI32(0, 0, 50000);
+      expect(old).assertEqual(Int.toLong(150000));
+      expect(buffer.atomicLoadI32(0, 0)).assertEqual(Int.toLong(100000));
+      old = buffer.atomicAndI32(0, 0, 65535);
+      expect(old).assertEqual(Int.toLong(100000));
+      expect(buffer.atomicLoadI32(0, 0)).assertEqual(Int.toLong(34464));
+      old = buffer.atomicOrI32(0, 0, -65536);
+      expect(old).assertEqual(Int.toLong(34464));
+      expect(buffer.atomicLoadI32(0, 0)).assertEqual(Int.toLong(-31072));
+      old = buffer.atomicXorI32(0, 0, -1);
+      expect(old).assertEqual(Int.toLong(-31072));
+      expect(buffer.atomicLoadI32(0, 0)).assertEqual(Int.toLong(31071));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0194
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1940
+     * @tc.desc Verify Exchange and CAS on 4-byte buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI32(0, 0, 1000);
+      const oldEx = buffer.atomicExchangeI32(0, 0, 2000);
+      expect(oldEx).assertEqual(Int.toLong(1000));
+      expect(buffer.atomicLoadI32(0, 0)).assertEqual(Int.toLong(2000));
+      const oldCas = buffer.atomicCompareExchangeI32(0, 0, 2000, 3000);
+      expect(oldCas).assertEqual(Int.toLong(2000));
+      expect(buffer.atomicLoadI32(0, 0)).assertEqual(Int.toLong(3000));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0195
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1950
+     * @tc.desc Verify all I32 operations on last valid addr=4 (index=0, byteOffset=4 in 8-byte buffer)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0195', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreI32(0, 4, -1);
+      expect(buffer.atomicLoadI32(0, 4)).assertEqual(Int.toLong(-1));
+      let old = buffer.atomicAddI32(0, 4, 1);
+      expect(old).assertEqual(Int.toLong(-1));
+      expect(buffer.atomicLoadI32(0, 4)).assertEqual(Int.toLong(0));
+      buffer.atomicStoreI32(0, 4, 2147483647);
+      old = buffer.atomicSubI32(0, 4, 1);
+      expect(old).assertEqual(Int.toLong(2147483647));
+      expect(buffer.atomicLoadI32(0, 4)).assertEqual(Int.toLong(2147483646));
+      buffer.atomicStoreI32(0, 4, -1);
+      old = buffer.atomicAndI32(0, 4, 2147483647);
+      expect(old).assertEqual(Int.toLong(-1));
+      expect(buffer.atomicLoadI32(0, 4)).assertEqual(Int.toLong(2147483647));
+      buffer.atomicStoreI32(0, 4, 0);
+      old = buffer.atomicOrI32(0, 4, -2147483648);
+      expect(old).assertEqual(Int.toLong(0));
+      expect(buffer.atomicLoadI32(0, 4)).assertEqual(Int.toLong(-2147483648));
+      buffer.atomicStoreI32(0, 4, 1000);
+      old = buffer.atomicExchangeI32(0, 4, 2000);
+      expect(old).assertEqual(Int.toLong(1000));
+      expect(buffer.atomicLoadI32(0, 4)).assertEqual(Int.toLong(2000));
+      buffer.atomicStoreI32(0, 4, 3000);
+      old = buffer.atomicCompareExchangeI32(0, 4, 3000, 4000);
+      expect(old).assertEqual(Int.toLong(3000));
+      expect(buffer.atomicLoadI32(0, 4)).assertEqual(Int.toLong(4000));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0196
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1960
+     * @tc.desc Verify I32 at addr 0-3 does not affect addr 4-7
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreI32(0, 0, 305419896);
+      buffer.atomicStoreI32(0, 4, -1698898192);
+      buffer.atomicAddI32(0, 0, 1);
+      expect(buffer.atomicLoadI32(0, 4)).assertEqual(Int.toLong(-1698898192));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0197
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1970
+     * @tc.desc Verify I32 Add 2000000000 + 500000000 = -1794967296 (overflow)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI32(0, 0, 2000000000);
+      buffer.atomicAddI32(0, 0, 500000000);
+      expect(buffer.atomicLoadI32(0, 0)).assertEqual(Int.toLong(-1794967296));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0198
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1980
+     * @tc.desc Verify I32 Add -1500000000 + (-1000000000) = 1794967296 (neg wrap)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI32(0, 0, -1500000000);
+      buffer.atomicAddI32(0, 0, -1000000000);
+      expect(buffer.atomicLoadI32(0, 0)).assertEqual(Int.toLong(1794967296));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0199
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_1990
+     * @tc.desc Verify I32 consecutive Add: 2000000000+100000000+100000000 = -2094967296
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI32(0, 0, 2000000000);
+      buffer.atomicAddI32(0, 0, 100000000);
+      expect(buffer.atomicLoadI32(0, 0)).assertEqual(Int.toLong(2100000000));
+      buffer.atomicAddI32(0, 0, 100000000);
+      expect(buffer.atomicLoadI32(0, 0)).assertEqual(Int.toLong(-2094967296));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2000
+     * @tc.desc Verify I32 Sub -2000000000 - 500000000 = 1794967296 (underflow)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI32(0, 0, -2000000000);
+      buffer.atomicSubI32(0, 0, 500000000);
+      expect(buffer.atomicLoadI32(0, 0)).assertEqual(Int.toLong(1794967296));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0201
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2010
+     * @tc.desc Verify I32 consecutive Sub: -2000000000-100000000-100000000 = 2094967296
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI32(0, 0, -2000000000);
+      buffer.atomicSubI32(0, 0, 100000000);
+      expect(buffer.atomicLoadI32(0, 0)).assertEqual(Int.toLong(-2100000000));
+      buffer.atomicSubI32(0, 0, 100000000);
+      expect(buffer.atomicLoadI32(0, 0)).assertEqual(Int.toLong(2094967296));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0202
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2020
+     * @tc.desc Verify I32 CAS expected=-2147483648: Store MIN, CAS(MIN,MAX), Load MAX
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI32(0, 0, -2147483648);
+      const old = buffer.atomicCompareExchangeI32(0, 0, -2147483648, 2147483647);
+      expect(old).assertEqual(Int.toLong(-2147483648));
+      expect(buffer.atomicLoadI32(0, 0)).assertEqual(Int.toLong(2147483647));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0203
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2030
+     * @tc.desc Verify I32 CAS chain: MIN -> -1 -> 0 -> MAX
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI32(0, 0, -2147483648);
+      let old = buffer.atomicCompareExchangeI32(0, 0, -2147483648, -1);
+      expect(old).assertEqual(Int.toLong(-2147483648));
+      old = buffer.atomicCompareExchangeI32(0, 0, -1, 0);
+      expect(old).assertEqual(Int.toLong(-1));
+      old = buffer.atomicCompareExchangeI32(0, 0, 0, 2147483647);
+      expect(old).assertEqual(Int.toLong(0));
+      expect(buffer.atomicLoadI32(0, 0)).assertEqual(Int.toLong(2147483647));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0204
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2040
+     * @tc.desc Verify I32 And clears sign bit: -1 & 2147483647 = 2147483647
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI32(0, 0, -1);
+      buffer.atomicAndI32(0, 0, 2147483647);
+      expect(buffer.atomicLoadI32(0, 0)).assertEqual(Int.toLong(2147483647));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0205
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2050
+     * @tc.desc Verify I32 And preserves sign bit: -1 & -2147483648 = -2147483648
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI32(0, 0, -1);
+      buffer.atomicAndI32(0, 0, -2147483648);
+      expect(buffer.atomicLoadI32(0, 0)).assertEqual(Int.toLong(-2147483648));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0206
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2060
+     * @tc.desc Verify I32 store -1, U32 load returns 4294967295
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreI32(0, 0, -1);
+      expect(buffer.atomicLoadU32(0, 0)).assertEqual(4294967295);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0207
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2070
+     * @tc.desc Verify I32 + I16 non-overlapping coexistence
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreI32(0, 0, 1000000);
+      buffer.atomicStoreI16(0, 4, Int.toShort(1000));
+      expect(buffer.atomicLoadI32(0, 0)).assertEqual(Int.toLong(1000000));
+      expect(buffer.atomicLoadI16(0, 4)).assertEqual(Int.toLong(1000));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0208
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2080
+     * @tc.desc Verify resize(8) then atomicLoadI32 on new area = 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4, 8);
+      buffer.resize(8);
+      expect(buffer.atomicLoadI32(0, 4)).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0209
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2090
+     * @tc.desc Verify resize(8) then StoreI32 and LoadI32 on new area
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4, 8);
+      buffer.resize(8);
+      buffer.atomicStoreI32(0, 4, 50000);
+      expect(buffer.atomicLoadI32(0, 4)).assertEqual(Int.toLong(50000));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0210
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2100
+     * @tc.desc Verify resize(8) then AddI32 overflow on new area
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4, 8);
+      buffer.resize(8);
+      buffer.atomicStoreI32(0, 4, 2147483647);
+      buffer.atomicAddI32(0, 4, 1);
+      expect(buffer.atomicLoadI32(0, 4)).assertEqual(Int.toLong(-2147483648));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0211
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2110
+     * @tc.desc Verify I32 overflow stability: 5 times same buffer MAX+1=MIN
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      for (let i = 0; i < 5; i++) {
+        buffer.atomicStoreI32(0, 0, 2147483647);
+        buffer.atomicAddI32(0, 0, 1);
+        expect(buffer.atomicLoadI32(0, 0)).assertEqual(Int.toLong(-2147483648));
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0212
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2120
+     * @tc.desc Verify I32 stability with new buffer each time
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      for (let i = 0; i < 5; i++) {
+        const buffer: ArrayBuffer = new ArrayBuffer(4);
+        buffer.atomicStoreI32(0, 0, 1000);
+        buffer.atomicAddI32(0, 0, 500);
+        buffer.atomicSubI32(0, 0, 200);
+        expect(buffer.atomicLoadI32(0, 0)).assertEqual(Int.toLong(1300));
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0213
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2130
+     * @tc.desc Verify atomicAddU32 returns old 4294967295 (all 1s) on wrap
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU32(0, 0, -1);
+      const old = buffer.atomicAddU32(0, 0, 1);
+      expect(old).assertEqual(4294967295);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0214
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2140
+     * @tc.desc Verify atomicSubU32 returns old 0 on wrap
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU32(0, 0, 0);
+      const old = buffer.atomicSubU32(0, 0, 1);
+      expect(old).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0215
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2150
+     * @tc.desc Verify atomicAndU32 returns old 4294967295
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU32(0, 0, -1);
+      const old = buffer.atomicAndU32(0, 0, 65535);
+      expect(old).assertEqual(4294967295);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0216
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2160
+     * @tc.desc Verify atomicOrU32 returns old 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU32(0, 0, 0);
+      const old = buffer.atomicOrU32(0, 0, -1);
+      expect(old).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0217
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2170
+     * @tc.desc Verify atomicExchangeU32 returns old 3000000000
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU32(0, 0, -1294967296);
+      const old = buffer.atomicExchangeU32(0, 0, 100);
+      expect(old).assertEqual(3000000000);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0218
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2180
+     * @tc.desc Verify all U32 operations on 4-byte buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU32(0, 0, 1000);
+      expect(buffer.atomicLoadU32(0, 0)).assertEqual(Int.toLong(1000));
+      let old = buffer.atomicAddU32(0, 0, 500);
+      expect(old).assertEqual(Int.toLong(1000));
+      expect(buffer.atomicLoadU32(0, 0)).assertEqual(Int.toLong(1500));
+      old = buffer.atomicSubU32(0, 0, 500);
+      expect(old).assertEqual(Int.toLong(1500));
+      expect(buffer.atomicLoadU32(0, 0)).assertEqual(Int.toLong(1000));
+      old = buffer.atomicAndU32(0, 0, 65535);
+      expect(old).assertEqual(Int.toLong(1000));
+      expect(buffer.atomicLoadU32(0, 0)).assertEqual(Int.toLong(1000));
+      old = buffer.atomicOrU32(0, 0, -65536);
+      expect(old).assertEqual(Int.toLong(1000));
+      expect(buffer.atomicLoadU32(0, 0)).assertEqual(4294902760);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0219
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2190
+     * @tc.desc Verify Exchange and CAS on 4-byte buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU32(0, 0, 1000);
+      const oldEx = buffer.atomicExchangeU32(0, 0, 2000);
+      expect(oldEx).assertEqual(Int.toLong(1000));
+      expect(buffer.atomicLoadU32(0, 0)).assertEqual(Int.toLong(2000));
+      const oldCas = buffer.atomicCompareExchangeU32(0, 0, 2000, 3000);
+      expect(oldCas).assertEqual(Int.toLong(2000));
+      expect(buffer.atomicLoadU32(0, 0)).assertEqual(Int.toLong(3000));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0220
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2200
+     * @tc.desc Verify all U32 operations on last valid addr=4 (index=0, byteOffset=4 in 8-byte buffer)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreU32(0, 4, -1);
+      expect(buffer.atomicLoadU32(0, 4)).assertEqual(4294967295);
+      let old = buffer.atomicAddU32(0, 4, 1);
+      expect(old).assertEqual(4294967295);
+      expect(buffer.atomicLoadU32(0, 4)).assertEqual(Int.toLong(0));
+      buffer.atomicStoreU32(0, 4, -1294967296);
+      old = buffer.atomicSubU32(0, 4, 1);
+      expect(old).assertEqual(3000000000);
+      expect(buffer.atomicLoadU32(0, 4)).assertEqual(2999999999);
+      buffer.atomicStoreU32(0, 4, 100);
+      old = buffer.atomicExchangeU32(0, 4, 200);
+      expect(old).assertEqual(Int.toLong(100));
+      expect(buffer.atomicLoadU32(0, 4)).assertEqual(Int.toLong(200));
+      buffer.atomicStoreU32(0, 4, 300);
+      old = buffer.atomicCompareExchangeU32(0, 4, 300, 400);
+      expect(old).assertEqual(Int.toLong(300));
+      expect(buffer.atomicLoadU32(0, 4)).assertEqual(Int.toLong(400));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0221
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2210
+     * @tc.desc Verify U32 Add 4000000000 + 500000000 = 205032704 (U32 wrap)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU32(0, 0, -294967296);
+      buffer.atomicAddU32(0, 0, 500000000);
+      expect(buffer.atomicLoadU32(0, 0)).assertEqual(Int.toLong(205032704));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0222
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2220
+     * @tc.desc Verify U32 consecutive Add wrap: 4000000000+300000000+300000000 = 305032704
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU32(0, 0, -294967296);
+      buffer.atomicAddU32(0, 0, 300000000);
+      expect(buffer.atomicLoadU32(0, 0)).assertEqual(Int.toLong(5032704));
+      buffer.atomicAddU32(0, 0, 300000000);
+      expect(buffer.atomicLoadU32(0, 0)).assertEqual(Int.toLong(305032704));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0223
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2230
+     * @tc.desc Verify U32 Sub 100 - 200 = wrap
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0223', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU32(0, 0, 100);
+      buffer.atomicSubU32(0, 0, 200);
+      expect(buffer.atomicLoadU32(0, 0)).assertEqual(4294967196);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0224
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2240
+     * @tc.desc Verify U32 CAS success: Store 4000000000, CAS, Load new
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0224', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU32(0, 0, -294967296);
+      const old = buffer.atomicCompareExchangeU32(0, 0, -294967296, 100);
+      expect(old).assertEqual(4000000000);
+      expect(buffer.atomicLoadU32(0, 0)).assertEqual(Int.toLong(100));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0225
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2250
+     * @tc.desc Verify U32 CAS chain: 0 -> 2147483648 -> 4294967295
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0225', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU32(0, 0, 0);
+      let old = buffer.atomicCompareExchangeU32(0, 0, 0, -2147483648);
+      expect(old).assertEqual(Int.toLong(0));
+      old = buffer.atomicCompareExchangeU32(0, 0, -2147483648, -1);
+      expect(old).assertEqual(2147483648);
+      expect(buffer.atomicLoadU32(0, 0)).assertEqual(4294967295);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0226
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2260
+     * @tc.desc Verify U32 CAS retry: fail then success
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0226', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU32(0, 0, 100);
+      let old = buffer.atomicCompareExchangeU32(0, 0, 99, 200);
+      expect(old).assertEqual(Int.toLong(100));
+      old = buffer.atomicCompareExchangeU32(0, 0, 100, 200);
+      expect(old).assertEqual(Int.toLong(100));
+      expect(buffer.atomicLoadU32(0, 0)).assertEqual(Int.toLong(200));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0227
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2270
+     * @tc.desc Verify U32 And clears high bit: 4294967295 & 2147483647 = 2147483647
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0227', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU32(0, 0, -1);
+      buffer.atomicAndU32(0, 0, 2147483647);
+      expect(buffer.atomicLoadU32(0, 0)).assertEqual(Int.toLong(2147483647));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0228
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2280
+     * @tc.desc Verify U32 Or sets high bit: 0 | -2147483648 = 2147483648
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0228', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU32(0, 0, 0);
+      buffer.atomicOrU32(0, 0, -2147483648);
+      expect(buffer.atomicLoadU32(0, 0)).assertEqual(2147483648);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0229
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2290
+     * @tc.desc Verify U32 Xor self = 0: 2147483648 ^ 2147483648 = 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0229', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU32(0, 0, -2147483648);
+      buffer.atomicXorU32(0, 0, -2147483648);
+      expect(buffer.atomicLoadU32(0, 0)).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0230
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2300
+     * @tc.desc Verify U32 store 4294967295, I32 load returns -1
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      buffer.atomicStoreU32(0, 0, -1);
+      expect(buffer.atomicLoadI32(0, 0)).assertEqual(Int.toLong(-1));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0231
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2310
+     * @tc.desc Verify resize(8) then atomicLoadU32 on new area = 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0231', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4, 8);
+      buffer.resize(8);
+      expect(buffer.atomicLoadU32(0, 4)).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0232
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2320
+     * @tc.desc Verify resize(8) then StoreU32 and LoadU32 on new area
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0232', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4, 8);
+      buffer.resize(8);
+      buffer.atomicStoreU32(0, 4, -1294967296);
+      expect(buffer.atomicLoadU32(0, 4)).assertEqual(3000000000);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0233
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2330
+     * @tc.desc Verify resize(8) then AddU32 wrap on new area
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0233', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4, 8);
+      buffer.resize(8);
+      buffer.atomicStoreU32(0, 4, -1);
+      buffer.atomicAddU32(0, 4, 1);
+      expect(buffer.atomicLoadU32(0, 4)).assertEqual(Int.toLong(0));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0234
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2340
+     * @tc.desc Verify U32 wrap stability: 5 times same buffer 4294967295+1=0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0234', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(4);
+      for (let i = 0; i < 5; i++) {
+        buffer.atomicStoreU32(0, 0, -1);
+        buffer.atomicAddU32(0, 0, 1);
+        expect(buffer.atomicLoadU32(0, 0)).assertEqual(Int.toLong(0));
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0235
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2350
+     * @tc.desc Verify U32 stability with new buffer each time
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0235', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      for (let i = 0; i < 5; i++) {
+        const buffer: ArrayBuffer = new ArrayBuffer(4);
+        buffer.atomicStoreU32(0, 0, 1000);
+        buffer.atomicAddU32(0, 0, 500);
+        buffer.atomicSubU32(0, 0, 200);
+        expect(buffer.atomicLoadU32(0, 0)).assertEqual(Int.toLong(1300));
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0236
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2360
+     * @tc.desc Verify atomicAddI64 returns old MAX when overflow
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0236', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreI64(0, 0, 9223372036854775807);
+      const old = buffer.atomicAddI64(0, 0, Int.toLong(1));
+      expect(old).assertEqual(9223372036854775807);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0237
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2370
+     * @tc.desc Verify atomicSubI64 returns old MIN when underflow
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0237', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreI64(0, 0, -9223372036854775807 - 1);
+      const old = buffer.atomicSubI64(0, 0, Int.toLong(1));
+      expect(old).assertEqual(-9223372036854775807 - 1);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0238
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2380
+     * @tc.desc Verify atomicAndI64 returns old -1
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0238', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreI64(0, 0, Int.toLong(-1));
+      const old = buffer.atomicAndI64(0, 0, 0x7FFFFFFFFFFFFFFF);
+      expect(old).assertEqual(Int.toLong(-1));
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0239
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2390
+     * @tc.desc Verify atomicXorI64 returns old MAX
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0239', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer: ArrayBuffer = new ArrayBuffer(8);
+      buffer.atomicStoreI64(0, 0, 9223372036854775807);
+      const old = buffer.atomicXorI64(0, 0, Int.toLong(-1));
+      expect(old).assertEqual(9223372036854775807);
+    });
