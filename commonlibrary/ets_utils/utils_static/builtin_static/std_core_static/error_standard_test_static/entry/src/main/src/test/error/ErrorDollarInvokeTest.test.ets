@@ -24,7 +24,7 @@ import {
   Level,
   Size,
   TestType
-} from '@ohos/hypium-binary/src/main/indexStatic';
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 class ErrorInvokeCausePayload {
@@ -1994,5 +1994,56 @@ export default function ErrorDollarInvokeTest(): void {
         expect((e as Error).name).assertEqual('ClassCastError');
       }
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_1230
+     * @tc.name testErrorDollarInvoke123
+     * @tc.desc Verify Error.$_invoke with valid message and explicit undefined options defaults cause to undefined
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorDollarInvoke123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = Error.$_invoke('invoke-null-cause', undefined);
+      expect(err.message).assertEqual('invoke-null-cause');
+      expect(err.cause).assertEqual(undefined);
+      expect(err.name).assertEqual('Error');
+      expect(err.code).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_1240
+     * @tc.name testErrorDollarInvoke124
+     * @tc.desc Verify Error.$_invoke throws ClassCastError when null is passed as message
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorDollarInvoke124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let err: Error = Error.$_invoke(null as Object as string);
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('ClassCastError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_DOLLAR_INVOKE_1250
+     * @tc.name testErrorDollarInvoke125
+     * @tc.desc Verify Error.$_invoke throws ClassCastError when undefined cast through Object is passed as message
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorDollarInvoke125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let err: Error = Error.$_invoke(undefined as Object as string);
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('ClassCastError');
+      }
+    });
+
   });
 }

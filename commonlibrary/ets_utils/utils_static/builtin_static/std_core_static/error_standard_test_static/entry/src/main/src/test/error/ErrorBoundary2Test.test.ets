@@ -24,7 +24,7 @@ import {
   Level,
   Size,
   TestType
-} from '@ohos/hypium-binary/src/main/indexStatic';
+} from '../../../../hypium/index';
 import { BusinessError } from '@kit.BasicServicesKit';
 import Utils from '../Util.test';
 
@@ -983,6 +983,191 @@ export default function ErrorBoundary2Test(): void {
       expect(e2.cause).assertUndefined();
       expect(e3.cause).assertUndefined();
       expect(e4.cause).assertUndefined();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_6200
+     * @tc.name testErrorBoundary2062
+     * @tc.desc Verify writing tab character to name property is preserved
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorBoundary2062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = new Error('base');
+      err.name = '\t';
+      expect(err.name).assertEqual('\t');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_6300
+     * @tc.name testErrorBoundary2063
+     * @tc.desc Verify writing newline character to name property is preserved
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorBoundary2063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = new Error('base');
+      err.name = '\n';
+      expect(err.name).assertEqual('\n');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_6400
+     * @tc.name testErrorBoundary2064
+     * @tc.desc Verify writing CRLF to name property is preserved
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorBoundary2064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = new Error('base');
+      err.name = '\r\n';
+      expect(err.name).assertEqual('\r\n');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_6500
+     * @tc.name testErrorBoundary2065
+     * @tc.desc Verify writing zero-width space to name property is preserved
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorBoundary2065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = new Error('base');
+      err.name = '\u200B';
+      expect(err.name).assertEqual('\u200B');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_6600
+     * @tc.name testErrorBoundary2066
+     * @tc.desc Verify writing emoji and Chinese characters to name property is preserved
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorBoundary2066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = new Error('base');
+      err.name = '😀测试';
+      expect(err.name).assertEqual('😀测试');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_6700
+     * @tc.name testErrorBoundary2067
+     * @tc.desc Verify writing double emoji characters to name property is preserved
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorBoundary2067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = new Error('base');
+      err.name = '🔥🔥';
+      expect(err.name).assertEqual('🔥🔥');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_6800
+     * @tc.name testErrorBoundary2068
+     * @tc.desc Verify writing replacement character to name property is preserved
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorBoundary2068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = new Error('base');
+      err.name = '\uFFFD';
+      expect(err.name).assertEqual('\uFFFD');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_6900
+     * @tc.name testErrorBoundary2069
+     * @tc.desc Verify writing isolated surrogate character to name property is preserved
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorBoundary2069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = new Error('base');
+      err.name = '\uDC04';
+      expect(err.name).assertEqual('\uDC04');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_7100
+     * @tc.name testErrorBoundary2071
+     * @tc.desc Verify constructor(name, code, message) preserves emoji and Chinese in name
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorBoundary2071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = new Error('😀测试', 1001, 'name-boundary-emoji');
+      expect(err.name).assertEqual('😀测试');
+      expect(err.code).assertEqual(1001);
+      expect(err.message).assertEqual('name-boundary-emoji');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_7200
+     * @tc.name testErrorBoundary2072
+     * @tc.desc Verify constructor(name, code, message) preserves replacement character in name
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorBoundary2072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = new Error('\uFFFD', 1001, 'name-boundary-replacement');
+      expect(err.name).assertEqual('\uFFFD');
+      expect(err.code).assertEqual(1001);
+      expect(err.message).assertEqual('name-boundary-replacement');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_7300
+     * @tc.name testErrorBoundary2073
+     * @tc.desc Verify constructor(name, code, message) preserves isolated surrogate in name
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorBoundary2073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = new Error('\uDC04', 1001, 'name-boundary-surrogate');
+      expect(err.name).assertEqual('\uDC04');
+      expect(err.code).assertEqual(1001);
+      expect(err.message).assertEqual('name-boundary-surrogate');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_7400
+     * @tc.name testErrorBoundary2074
+     * @tc.desc Verify writing tab character to message property is preserved
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorBoundary2074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = new Error('base');
+      err.message = '\t';
+      expect(err.message).assertEqual('\t');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERROR_BOUNDARY_2_7500
+     * @tc.name testErrorBoundary2075
+     * @tc.desc Verify writing newline character to message property is preserved
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     */
+    it('testErrorBoundary2075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: Error = new Error('base');
+      err.message = '\n';
+      expect(err.message).assertEqual('\n');
     });
   });
 }
