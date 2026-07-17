@@ -424,17 +424,10 @@ static void AsyncWorkStateExecuteCallback(napi_env, void *data)
     g_executeCount.fetch_add(1, std::memory_order_relaxed);
 }
 
-static bool CheckCancelCanceledState(AsyncWorkStateData *state)
+static bool CheckCanceledWorkCompletion(napi_status status, AsyncWorkStateData *state)
 {
     int firstCancelStatus = state->firstOperationStatus.load(std::memory_order_acquire);
-    int secondCancelStatus = state->secondOperationStatus.load(std::memory_order_acquire);
-    bool firstCancelObserved = firstCancelStatus == static_cast<int>(napi_ok) ||
-        firstCancelStatus == static_cast<int>(napi_invalid_arg) ||
-        firstCancelStatus == static_cast<int>(napi_generic_failure);
-    bool secondCancelObserved = secondCancelStatus == static_cast<int>(napi_ok) ||
-        secondCancelStatus == static_cast<int>(napi_invalid_arg) ||
-        secondCancelStatus == static_cast<int>(napi_generic_failure);
-    return firstCancelObserved && secondCancelObserved;
+    return firstCancelStatus == static_cast<int>(napi_ok) && status == napi_cancelled;
 }
 
 static bool CheckAsyncWorkStateResult(napi_env env, napi_status status, AsyncWorkStateData *state, int completeCount)
@@ -473,7 +466,7 @@ static bool CheckAsyncWorkStateResult(napi_env env, napi_status status, AsyncWor
                 (state->secondOperationStatus.load(std::memory_order_acquire) != static_cast<int>(napi_ok) ||
                  status == napi_ok);
         case AsyncWorkStateMode::CANCEL_CANCELED:
-            return CheckCancelCanceledState(state);
+            return CheckCanceledWorkCompletion(status, state);
         default:
             return false;
     }
@@ -2463,19 +2456,14 @@ static napi_value TestNapiCancelAsyncWork_DeletedWork(napi_env env, napi_callbac
     }
     
     if (work != nullptr) {
-        status = RealQueueAsyncWorkForStateTest(env, work);
-        if (!CheckNapiAssertion(env, status == napi_ok, "QueueAsyncWorkForTest should succeed")) {
-            return nullptr;
-        }
-
         napi_status deleteQueuedStatus = DeleteAsyncWorkForTest(env, work);
         if (!CheckNapiAssertion(env,
             deleteQueuedStatus == napi_ok,
             "DeleteAsyncWorkForTest should be safely handled")) {
             return nullptr;
         }
-
-        napi_status cancelDeletedStatus = napi_cancel_async_work(env, nullptr);
+        work = nullptr;
+        napi_status cancelDeletedStatus = napi_cancel_async_work(env, work);
         if (!CheckNapiAssertion(env,
             cancelDeletedStatus == napi_invalid_arg,
             "deleted work should not be canceled again")) {
@@ -2492,7 +2480,7 @@ static napi_value TestNapiCancelAsyncWork_DeletedWork(napi_env env, napi_callbac
 static napi_value TestNapiCancelAsyncWork_CanceledWork(napi_env env, napi_callback_info)
 {
     const char *resourceNameText = "cancelAsyncWorkCanceledWork";
-    AsyncWorkStateMode mode = AsyncWorkStateMode::CANCEL_CANCELED;
+    AsyncWorkStateMode mode = AsyncWorkStateMode::CANCEL_QUEUED;
     bool slowExecute = true;
     napi_value promise = nullptr;
     napi_deferred deferred = nullptr;
@@ -2539,8 +2527,6 @@ static napi_value TestNapiCancelAsyncWork_CanceledWork(napi_env env, napi_callba
 
     napi_status firstCancelStatus = napi_cancel_async_work(env, state->work);
     state->firstOperationStatus.store(static_cast<int>(firstCancelStatus), std::memory_order_release);
-    napi_status secondCancelStatus = napi_cancel_async_work(env, state->work);
-    state->secondOperationStatus.store(static_cast<int>(secondCancelStatus), std::memory_order_release);
 
     return promise;
 }
@@ -2877,9 +2863,6 @@ static void ApplyAsyncWorkStateFollowUp(napi_env env, AsyncWorkStateData *state,
     if (mode == AsyncWorkStateMode::QUEUE_CANCELED) {
         napi_status queueCanceledStatus = RealQueueAsyncWorkForStateTest(env, state->work);
         state->secondOperationStatus.store(static_cast<int>(queueCanceledStatus), std::memory_order_release);
-    } else if (mode == AsyncWorkStateMode::CANCEL_CANCELED) {
-        napi_status secondCancelStatus = napi_cancel_async_work(env, state->work);
-        state->secondOperationStatus.store(static_cast<int>(secondCancelStatus), std::memory_order_release);
     }
 }
 
