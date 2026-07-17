@@ -5973,3 +5973,188 @@ export default function arrayBufferAtomic2Test(): void {
         expect(e.name).assertEqual('IndexOutOfBoundsError');
       }
     });
+
+    /**
+     * @tc.name testArrayBufferAtomic0357
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3570
+     * @tc.desc Verify atomicCompareExchangeI8 with negative index throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0357', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        buffer.atomicCompareExchangeI8(-1, 0, Int.toByte(0), Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0358
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3580
+     * @tc.desc Verify atomicLoadI8 on zero-length buffer throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0358', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(0);
+      try {
+        buffer.atomicLoadI8(0, 0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0359
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3590
+     * @tc.desc Verify atomicSubI8 on zero-length buffer throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0359', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(0);
+      try {
+        buffer.atomicSubI8(0, 0, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0360
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3600
+     * @tc.desc Verify atomicAndI8 on zero-length buffer throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0360', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(0);
+      try {
+        buffer.atomicAndI8(0, 0, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0361
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3610
+     * @tc.desc Verify atomicOrI8 on zero-length buffer throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0361', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(0);
+      try {
+        buffer.atomicOrI8(0, 0, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0362
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3620
+     * @tc.desc Verify atomicXorI8 on zero-length buffer throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0362', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(0);
+      try {
+        buffer.atomicXorI8(0, 0, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0363
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3630
+     * @tc.desc Verify atomicExchangeI8 on zero-length buffer throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0363', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(0);
+      try {
+        buffer.atomicExchangeI8(0, 0, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0364
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3640
+     * @tc.desc Verify atomicCompareExchangeI8 on zero-length buffer throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0364', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(0);
+      try {
+        buffer.atomicCompareExchangeI8(0, 0, Int.toByte(0), Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+
+    /**
+     * @tc.name testArrayBufferAtomic0365
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3650
+     * @tc.desc Verify resize shrink: resize(2) then atomicLoadI8 at addr 3 throws exception
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0365', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4, 4);
+      buffer.resize(2);
+      try {
+        buffer.atomicLoadI8(3, 0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0366
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_3660
+     * @tc.desc Verify resize shrink then RMW methods throw: resize(2) then atomicAddI8(3,0,1)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0366', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4, 4);
+      buffer.resize(2);
+      try {
+        buffer.atomicAddI8(3, 0, Int.toByte(1));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
+  });
+}
