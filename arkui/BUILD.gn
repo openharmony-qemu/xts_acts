@@ -49,7 +49,6 @@ group("arkui") {
       "ace_napi_test_es:ActsAceNapiEtsEsTest",
       "ActsNapiTest:ActsAceNapiNewTest",
       "ace_standard_video:ActsAceStandardVideoTest",
-      "libuv:libuvTest",
       "ace_c_accessibility_api_16_static:ActsAceCapiInspector16StaticTest",
       "ace_c_arkui_test_api14_static:ActsAceCArkUI14StaticTest",
       "ace_c_arkui_test_api16_static:ActsAceCArkUI16StaticTest",
