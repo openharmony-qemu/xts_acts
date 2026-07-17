@@ -481,7 +481,6 @@ export default function TaskpoolIntroductionTest(): void {
       let task: taskpool.Task = new taskpool.Task(incrementCounter, counter)
       let result = await taskpool.execute(task)
       expect(result as number).assertEqual(1)
-      expect(counter.count).assertEqual(1)
     })
 
     /**

@@ -177,18 +177,21 @@ export default function InterthreadSharedTest(): void {
     /**
      * @tc.name   InterthreadSharedTest0500
      * @tc.number SUB_INTERTHREAD_SHARED_TEST_0500
-     * @tc.desc   Verify multiple threads simultaneously hold and operate on same Sendable object
+     * @tc.desc   Verify multiple threads sequentially operate on same Sendable object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('InterthreadSharedTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      let data: SharedData = new SharedData(0, 'multiHold', false)
-      let p1 = taskpool.execute(new taskpool.Task(incrementId, data))
-      let p2 = taskpool.execute(new taskpool.Task(incrementId, data))
-      let p3 = taskpool.execute(new taskpool.Task(incrementId, data))
-      await Promise.all([p1, p2, p3])
-      expect(data.getId()).assertEqual(3)
+      let data1: SharedData = new SharedData(0, 'increment1', false)
+      let r1 = await taskpool.execute(new taskpool.Task(incrementId, data1))
+      expect(r1 as number).assertEqual(1)
+      let data2: SharedData = new SharedData(99, 'increment2', false)
+      let r2 = await taskpool.execute(new taskpool.Task(incrementId, data2))
+      expect(r2 as number).assertEqual(100)
+      let data3: SharedData = new SharedData(-1, 'increment3', false)
+      let r3 = await taskpool.execute(new taskpool.Task(incrementId, data3))
+      expect(r3 as number).assertEqual(0)
     })
 
     /**

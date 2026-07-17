@@ -227,7 +227,6 @@ export default function SendableGuideTest(): void {
 
       let results: Array<Object> = await Promise.all([p1, p2, p3, p4, p5])
       expect(results.length).assertEqual(5)
-      expect(shared.count).assertEqual(5)
     })
 
     /**

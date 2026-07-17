@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { taskpool, worker, ErrorEvent, MessageEvents } from '@kit.ArkTS';
+import { WorkerExchange, createEchoWorkerExchange } from '../WorkerHelper';
 
 // ==================== @Concurrent Functions ====================
 
@@ -299,11 +300,21 @@ function ioErrorTask(input: number): string {
 
 export default function TaskTypeTest(): void {
   describe('TaskTypeTest', (): void => {
+    let currentWorker: worker.ThreadWorker | null = null
+
     beforeAll((): void => {})
     beforeEach((): void => {})
-    afterEach((): void => {})
+    afterEach(async (): Promise<void> => {
+      if (currentWorker !== null) {
+        await new Promise<void>((resolve: Function) => {
+          currentWorker!.onexit = (): void => { resolve() }
+          currentWorker!.terminate()
+        })
+        currentWorker = null
+      }
+    })
     afterAll(async (): Promise<void> => {
-      await Promise.resolve()
+      await new Promise<void>((resolve: Function) => { setTimeout((): void => resolve(undefined), 500) })
     })
 
     // ==================== Section 2.1: time-consuming-task-overview ====================
@@ -1069,15 +1080,15 @@ export default function TaskTypeTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskTypeTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      let wk: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
+      currentWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
       let result: string = await new Promise<string>((resolve: (value: string) => void) => {
-        wk.onmessage = (e: MessageEvents): void => {
+        currentWorker!.onmessage = (e: MessageEvents): void => {
           resolve(e.data as string)
         }
-        wk.postMessage('hello')
+        currentWorker!.postMessage('hello')
       })
       expect(result).assertEqual('hello received')
-      wk.terminate()
+      await new Promise<void>((resolve: Function) => { currentWorker!.onexit = (code: number): void => { resolve() }; currentWorker!.terminate() }); currentWorker = null
     })
 
     /**
@@ -1089,17 +1100,17 @@ export default function TaskTypeTest(): void {
      * @tc.level  LEVEL1
      */
     it('TaskTypeTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let wk: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/LongTaskWorker.ets')
+      currentWorker = new worker.ThreadWorker('entry_test/ets/workers/LongTaskWorker.ets')
       let messages: string[] = []
       await new Promise<void>((resolve: () => void) => {
-        wk.onmessage = (e: MessageEvents): void => {
+        currentWorker!.onmessage = (e: MessageEvents): void => {
           let msg: string = e.data as string
           messages.push(msg)
           if (msg === 'complete') {
             resolve()
           }
         }
-        wk.postMessage('start')
+        currentWorker!.postMessage('start')
       })
       let tickCount: number = 0
       for (let i: number = 0; i < messages.length; i++) {
@@ -1109,7 +1120,7 @@ export default function TaskTypeTest(): void {
       }
       expect(tickCount >= 3).assertTrue()
       expect(messages[messages.length - 1]).assertEqual('complete')
-      wk.terminate()
+      await new Promise<void>((resolve: Function) => { currentWorker!.onexit = (code: number): void => { resolve() }; currentWorker!.terminate() }); currentWorker = null
     })
 
     /**
@@ -1121,26 +1132,27 @@ export default function TaskTypeTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskTypeTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      let wk: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/LongTaskWorker.ets')
+      currentWorker = new worker.ThreadWorker('entry_test/ets/workers/LongTaskWorker.ets')
       let msgCount: number = 0
-      wk.onmessage = (e: MessageEvents): void => {
+      currentWorker!.onmessage = (e: MessageEvents): void => {
         msgCount++
       }
-      wk.postMessage('start')
+      currentWorker!.postMessage('start')
       // Wait for at least one message to confirm worker is active
       await new Promise<void>((resolve: Function) => {
-        wk.onmessage = (e: MessageEvents): void => {
+        currentWorker!.onmessage = (e: MessageEvents): void => {
           msgCount++
           resolve()
         }
       })
       let countAfter: number = msgCount
       await new Promise<void>((resolve: Function) => {
-        wk.onexit = (code: number): void => {
+        currentWorker!.onexit = (code: number): void => {
           resolve()
         }
-        wk.terminate()
+        currentWorker!.terminate()
       })
+      currentWorker = null
       expect(msgCount).assertEqual(countAfter)
     })
 
@@ -1153,15 +1165,15 @@ export default function TaskTypeTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskTypeTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      let wk: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
+      currentWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
       let result: number = await new Promise<number>((resolve: (value: number) => void) => {
-        wk.onmessage = (e: MessageEvents): void => {
+        currentWorker!.onmessage = (e: MessageEvents): void => {
           resolve(e.data as number)
         }
-        wk.postMessage('compute')
+        currentWorker!.postMessage('compute')
       })
       expect(result).assertEqual(49995000)
-      wk.terminate()
+      await new Promise<void>((resolve: Function) => { currentWorker!.onexit = (code: number): void => { resolve() }; currentWorker!.terminate() }); currentWorker = null
     })
 
     // ==================== Section 2.7: resident-task-guide ====================
@@ -1175,9 +1187,9 @@ export default function TaskTypeTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskTypeTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      let wk: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
-      expect(wk !== undefined).assertTrue()
-      wk.terminate()
+      currentWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
+      expect(currentWorker !== undefined).assertTrue()
+      await new Promise<void>((resolve: Function) => { currentWorker!.onexit = (code: number): void => { resolve() }; currentWorker!.terminate() }); currentWorker = null
     })
 
     /**
@@ -1189,15 +1201,15 @@ export default function TaskTypeTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskTypeTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      let wk: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
+      currentWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
       let result: string = await new Promise<string>((resolve: (value: string) => void) => {
-        wk.onmessage = (e: MessageEvents): void => {
+        currentWorker!.onmessage = (e: MessageEvents): void => {
           resolve(e.data as string)
         }
-        wk.postMessage('hello')
+        currentWorker!.postMessage('hello')
       })
       expect(result).assertEqual('hello received')
-      wk.terminate()
+      await new Promise<void>((resolve: Function) => { currentWorker!.onexit = (code: number): void => { resolve() }; currentWorker!.terminate() }); currentWorker = null
     })
 
     /**
@@ -1209,15 +1221,15 @@ export default function TaskTypeTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskTypeTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      let wk: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
+      currentWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
       let result: string = await new Promise<string>((resolve: (value: string) => void) => {
-        wk.onmessage = (e: MessageEvents): void => {
+        currentWorker!.onmessage = (e: MessageEvents): void => {
           resolve(e.data as string)
         }
-        wk.postMessage('ping')
+        currentWorker!.postMessage('ping')
       })
       expect(result).assertEqual('pong')
-      wk.terminate()
+      await new Promise<void>((resolve: Function) => { currentWorker!.onexit = (code: number): void => { resolve() }; currentWorker!.terminate() }); currentWorker = null
     })
 
     /**
@@ -1229,15 +1241,15 @@ export default function TaskTypeTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskTypeTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      let wk: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
+      currentWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
       let result: string = await new Promise<string>((resolve: (value: string) => void) => {
-        wk.onmessage = (e: MessageEvents): void => {
+        currentWorker!.onmessage = (e: MessageEvents): void => {
           resolve(e.data as string)
         }
-        wk.postMessage('test_data')
+        currentWorker!.postMessage('test_data')
       })
       expect(result).assertEqual('echo: test_data')
-      wk.terminate()
+      await new Promise<void>((resolve: Function) => { currentWorker!.onexit = (code: number): void => { resolve() }; currentWorker!.terminate() }); currentWorker = null
     })
 
     /**
@@ -1249,23 +1261,24 @@ export default function TaskTypeTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskTypeTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      let wk: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/LongTaskWorker.ets')
+      currentWorker = new worker.ThreadWorker('entry_test/ets/workers/LongTaskWorker.ets')
       let msgCount: number = 0
       let firstMsgPromise: Promise<void> = new Promise<void>((resolve: Function) => {
-        wk.onmessage = (e: MessageEvents): void => {
+        currentWorker!.onmessage = (e: MessageEvents): void => {
           msgCount++
           resolve()
         }
       })
-      wk.postMessage('start')
+      currentWorker!.postMessage('start')
       await firstMsgPromise
       let countBefore: number = msgCount
       await new Promise<void>((resolve: Function) => {
-        wk.onexit = (code: number): void => {
+        currentWorker!.onexit = (code: number): void => {
           resolve()
         }
-        wk.terminate()
+        currentWorker!.terminate()
       })
+      currentWorker = null
       expect(msgCount).assertEqual(countBefore)
       expect(countBefore > 0).assertTrue()
     })
@@ -1279,13 +1292,14 @@ export default function TaskTypeTest(): void {
      * @tc.level  LEVEL1
      */
     it('TaskTypeTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let wk: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
+      currentWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
       let exitCode: number = await new Promise<number>((resolve: (value: number) => void) => {
-        wk.onexit = (code: number): void => {
+        currentWorker!.onexit = (code: number): void => {
           resolve(code)
         }
-        wk.terminate()
+        currentWorker!.terminate()
       })
+      currentWorker = null
       expect(exitCode).assertEqual(0)
     })
 
@@ -1298,18 +1312,19 @@ export default function TaskTypeTest(): void {
      * @tc.level  LEVEL1
      */
     it('TaskTypeTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let wk: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
+      currentWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
       let result: string = await new Promise<string>((resolve: (value: string) => void) => {
-        wk.onmessage = (e: MessageEvents): void => {
+        currentWorker!.onmessage = (e: MessageEvents): void => {
           resolve(e.data as string)
         }
-        wk.postMessage('hello')
+        currentWorker!.postMessage('hello')
       })
       expect(result).assertEqual('hello received')
       await new Promise<void>((resolve: Function) => {
-        wk.onexit = (code: number): void => { resolve() }
-        wk.terminate()
+        currentWorker!.onexit = (code: number): void => { resolve() }
+        currentWorker!.terminate()
       })
+      currentWorker = null
     })
 
     /**
@@ -1321,18 +1336,19 @@ export default function TaskTypeTest(): void {
      * @tc.level  LEVEL1
      */
     it('TaskTypeTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let wk: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
+      currentWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
       let result: string = await new Promise<string>((resolve: (value: string) => void) => {
-        wk.onmessage = (e: MessageEvents): void => {
+        currentWorker!.onmessage = (e: MessageEvents): void => {
           resolve(e.data as string)
         }
-        wk.postMessage('multiply_test')
+        currentWorker!.postMessage('multiply_test')
       })
       expect(result).assertEqual('echo: multiply_test')
       await new Promise<void>((resolve: Function) => {
-        wk.onexit = (code: number): void => { resolve() }
-        wk.terminate()
+        currentWorker!.onexit = (code: number): void => { resolve() }
+        currentWorker!.terminate()
       })
+      currentWorker = null
     })
 
     /**
@@ -1344,22 +1360,22 @@ export default function TaskTypeTest(): void {
      * @tc.level  LEVEL1
      */
     it('TaskTypeTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let wk: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
+      currentWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
       let responses: string[] = []
       let allReceived: Promise<void> = new Promise<void>((resolve: () => void) => {
-        wk.onmessage = (e: MessageEvents): void => {
+        currentWorker!.onmessage = (e: MessageEvents): void => {
           responses.push(e.data as string)
           if (responses.length >= 3) {
             resolve()
           }
         }
       })
-      wk.postMessage('hello')
-      wk.postMessage('ping')
-      wk.postMessage('world')
+      currentWorker!.postMessage('hello')
+      currentWorker!.postMessage('ping')
+      currentWorker!.postMessage('world')
       await allReceived
       expect(responses.length).assertEqual(3)
-      wk.terminate()
+      await new Promise<void>((resolve: Function) => { currentWorker!.onexit = (code: number): void => { resolve() }; currentWorker!.terminate() }); currentWorker = null
     })
 
     /**
@@ -1371,18 +1387,19 @@ export default function TaskTypeTest(): void {
      * @tc.level  LEVEL0
      */
     it('TaskTypeTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      let wk: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
+      currentWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
       let result: string = await new Promise<string>((resolve: (value: string) => void) => {
-        wk.onmessage = (e: MessageEvents): void => {
+        currentWorker!.onmessage = (e: MessageEvents): void => {
           resolve(e.data as string)
         }
-        wk.postMessage('error_trigger')
+        currentWorker!.postMessage('error_trigger')
       })
       expect(result).assertEqual('echo: error_trigger')
       await new Promise<void>((resolve: Function) => {
-        wk.onexit = (code: number): void => { resolve() }
-        wk.terminate()
+        currentWorker!.onexit = (code: number): void => { resolve() }
+        currentWorker!.terminate()
       })
+      currentWorker = null
     })
 
     /**
@@ -1394,23 +1411,14 @@ export default function TaskTypeTest(): void {
      * @tc.level  LEVEL1
      */
     it('TaskTypeTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let wk: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
-      let r1: string = await new Promise<string>((resolve: (value: string) => void) => {
-        wk.onmessage = (e: MessageEvents): void => { resolve(e.data as string) }
-        wk.postMessage('hello')
-      })
+      let exchange: WorkerExchange = await createEchoWorkerExchange('entry_test/ets/workers/EchoWorker.ets')
+      currentWorker = exchange.getWorker()
+      let r1: string = await exchange.sendString('hello')
       expect(r1).assertEqual('hello received')
-      let r2: string = await new Promise<string>((resolve: (value: string) => void) => {
-        wk.onmessage = (e: MessageEvents): void => { resolve(e.data as string) }
-        wk.postMessage('ping')
-      })
+      let r2: string = await exchange.sendString('ping')
       expect(r2).assertEqual('pong')
-      let r3: string = await new Promise<string>((resolve: (value: string) => void) => {
-        wk.onmessage = (e: MessageEvents): void => { resolve(e.data as string) }
-        wk.postMessage('bidirectional')
-      })
+      let r3: string = await exchange.sendString('bidirectional')
       expect(r3).assertEqual('echo: bidirectional')
-      wk.terminate()
     })
 
     /**
@@ -1434,8 +1442,8 @@ export default function TaskTypeTest(): void {
       })
       expect(r1).assertEqual('hello received')
       expect(r2).assertEqual('pong')
-      wk1.terminate()
-      wk2.terminate()
+      await new Promise<void>((resolve: Function) => { wk1.onexit = (): void => { resolve() }; wk1.terminate() })
+      await new Promise<void>((resolve: Function) => { wk2.onexit = (): void => { resolve() }; wk2.terminate() })
     })
 
     // ==================== Section 2.8: sync-task-development ====================
@@ -1480,18 +1488,19 @@ export default function TaskTypeTest(): void {
      * @tc.level  LEVEL1
      */
     it('TaskTypeTest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let wk: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
+      currentWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
       let result: string = await new Promise<string>((resolve: (value: string) => void) => {
-        wk.onmessage = (e: MessageEvents): void => {
+        currentWorker!.onmessage = (e: MessageEvents): void => {
           resolve(e.data as string)
         }
-        wk.postMessage('sync_compute')
+        currentWorker!.postMessage('sync_compute')
       })
       expect(result).assertEqual('echo: sync_compute')
       await new Promise<void>((resolve: Function) => {
-        wk.onexit = (code: number): void => { resolve() }
-        wk.terminate()
+        currentWorker!.onexit = (code: number): void => { resolve() }
+        currentWorker!.terminate()
       })
+      currentWorker = null
     })
 
     /**
@@ -1572,18 +1581,19 @@ export default function TaskTypeTest(): void {
      * @tc.level  LEVEL1
      */
     it('TaskTypeTest6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let wk: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
+      currentWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
       let result: string = await new Promise<string>((resolve: (value: string) => void) => {
-        wk.onmessage = (e: MessageEvents): void => {
+        currentWorker!.onmessage = (e: MessageEvents): void => {
           resolve(e.data as string)
         }
-        wk.postMessage('subtract_test')
+        currentWorker!.postMessage('subtract_test')
       })
       expect(result).assertEqual('echo: subtract_test')
       await new Promise<void>((resolve: Function) => {
-        wk.onexit = (code: number): void => { resolve() }
-        wk.terminate()
+        currentWorker!.onexit = (code: number): void => { resolve() }
+        currentWorker!.terminate()
       })
+      currentWorker = null
     })
 
     /**
@@ -1783,18 +1793,19 @@ export default function TaskTypeTest(): void {
      * @tc.level  LEVEL1
      */
     it('TaskTypeTest7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let wk: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
+      currentWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
       let result: number = await new Promise<number>((resolve: (value: number) => void) => {
-        wk.onmessage = (e: MessageEvents): void => {
+        currentWorker!.onmessage = (e: MessageEvents): void => {
           resolve(e.data as number)
         }
-        wk.postMessage('compute')
+        currentWorker!.postMessage('compute')
       })
       expect(result > 0).assertTrue()
       let exitCode: number = await new Promise<number>((resolve: (value: number) => void) => {
-        wk.onexit = (code: number): void => { resolve(code) }
-        wk.terminate()
+        currentWorker!.onexit = (code: number): void => { resolve(code) }
+        currentWorker!.terminate()
       })
+      currentWorker = null
       expect(exitCode).assertEqual(0)
     })
 

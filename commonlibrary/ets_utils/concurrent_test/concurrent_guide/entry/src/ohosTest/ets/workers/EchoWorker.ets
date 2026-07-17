@@ -19,7 +19,9 @@ const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
 
 workerPort.onmessage = (e: MessageEvents): void => {
   let data: string = e.data as string
-  if (data === 'hello') {
+  if (data === '__ready__') {
+    workerPort.postMessage('ready')
+  } else if (data === 'hello') {
     workerPort.postMessage('hello received')
   } else if (data === 'ping') {
     workerPort.postMessage('pong')

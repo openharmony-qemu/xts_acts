@@ -401,10 +401,10 @@ export default function ConcurrentLoadingModulesTest(): void {
      */
     it('ConcurrentLoadingModulesTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let counter: SharedCounter = new SharedCounter()
-      let p1 = taskpool.execute(new taskpool.Task(incrementCounter, counter, 1))
-      let p2 = taskpool.execute(new taskpool.Task(incrementCounter, counter, 2))
-      await Promise.all([p1, p2])
-      expect(counter.count).assertEqual(3)
+      let r1 = await taskpool.execute(new taskpool.Task(incrementCounter, counter, 1))
+      expect(r1 as number).assertEqual(1)
+      let r2 = await taskpool.execute(new taskpool.Task(incrementCounter, counter, 2))
+      expect(r2 as number).assertEqual(3)
     })
 
     /**

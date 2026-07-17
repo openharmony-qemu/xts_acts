@@ -35,14 +35,17 @@ export default function WorkerSendableTest(): void {
 
     beforeAll((): void => {})
     beforeEach((): void => {})
-    afterEach((): void => {
+    afterEach(async (): Promise<void> => {
       if (currentWorker !== null) {
-        currentWorker.terminate()
+        await new Promise<void>((resolve: Function) => {
+          currentWorker!.onexit = (): void => { resolve() }
+          currentWorker!.terminate()
+        })
         currentWorker = null
       }
     })
     afterAll(async (): Promise<void> => {
-      await Promise.resolve()
+      await new Promise<void>((resolve: Function) => { setTimeout((): void => resolve(undefined), 500) })
     })
 
     /**

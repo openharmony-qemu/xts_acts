@@ -9,7 +9,9 @@ const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
 
 workerPort.onmessage = (e: MessageEvents): void => {
   let msgType: string = (e.data as Record<string, Object>)['type'] as string
-  if (msgType === 'calculate') {
+  if (msgType === '__ready__') {
+    workerPort.postMessage({ type: 'ready' })
+  } else if (msgType === 'calculate') {
     let a: number = (e.data as Record<string, Object>)['a'] as number
     let b: number = (e.data as Record<string, Object>)['b'] as number
     let op: string = (e.data as Record<string, Object>)['op'] as string

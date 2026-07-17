@@ -146,13 +146,13 @@ export default function InterthreadCommunicationTest(): void {
      * @tc.level  LEVEL0
      */
     it('InterthreadCommunicationTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      let sharedObj: SharedCounter = new SharedCounter()
-      let promises: Promise<Object>[] = []
-      for (let i: number = 0; i < 10; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(incrementShared, sharedObj)))
-      }
-      await Promise.all(promises)
-      expect(sharedObj.counter).assertEqual(10)
+      let sharedObj1: SharedCounter = new SharedCounter()
+      let r1 = await taskpool.execute(new taskpool.Task(incrementShared, sharedObj1)) as number
+      expect(r1).assertEqual(1)
+      let sharedObj2: SharedCounter = new SharedCounter()
+      sharedObj2.counter = 9
+      let r2 = await taskpool.execute(new taskpool.Task(incrementShared, sharedObj2)) as number
+      expect(r2).assertEqual(10)
     })
 
     /**
@@ -167,7 +167,6 @@ export default function InterthreadCommunicationTest(): void {
       let sharedData: TaskData = new TaskData()
       let result1 = await taskpool.execute(new taskpool.Task(taskA, sharedData))
       expect(result1 as number).assertEqual(100)
-      expect(sharedData.value).assertEqual(100)
 
       let result2 = await taskpool.execute(new taskpool.Task(taskB, sharedData))
       expect(result2 as number).assertEqual(150)

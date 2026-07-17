@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { worker, ErrorEvent, MessageEvents } from '@kit.ArkTS';
+import { WorkerExchange, createEchoWorkerExchange } from '../WorkerHelper';
 
 export default function WorkerCommunicationTest(): void {
   describe('WorkerCommunicationOverviewTest', (): void => {
@@ -22,14 +23,17 @@ export default function WorkerCommunicationTest(): void {
 
     beforeAll((): void => {})
     beforeEach((): void => {})
-    afterEach((): void => {
+    afterEach(async (): Promise<void> => {
       if (currentWorker !== null) {
-        currentWorker.terminate()
+        await new Promise<void>((resolve: Function) => {
+          currentWorker!.onexit = (): void => { resolve() }
+          currentWorker!.terminate()
+        })
         currentWorker = null
       }
     })
     afterAll(async (): Promise<void> => {
-      await Promise.resolve()
+      await new Promise<void>((resolve: Function) => { setTimeout((): void => resolve(undefined), 500) })
     })
 
     /**
@@ -160,30 +164,16 @@ export default function WorkerCommunicationTest(): void {
      * @tc.level  LEVEL1
      */
     it('WorkerCommunicationOverviewTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      currentWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
+      let exchange: WorkerExchange = await createEchoWorkerExchange('entry_test/ets/workers/EchoWorker.ets')
+      currentWorker = exchange.getWorker()
 
-      let result1: string = await new Promise<string>((resolve: (value: string) => void) => {
-        currentWorker!.onmessage = (e: MessageEvents): void => {
-          resolve(e.data as string)
-        }
-        currentWorker!.postMessage('hello')
-      })
+      let result1: string = await exchange.sendString('hello')
       expect(result1).assertEqual('hello received')
 
-      let result2: string = await new Promise<string>((resolve: (value: string) => void) => {
-        currentWorker!.onmessage = (e: MessageEvents): void => {
-          resolve(e.data as string)
-        }
-        currentWorker!.postMessage('ping')
-      })
+      let result2: string = await exchange.sendString('ping')
       expect(result2).assertEqual('pong')
 
-      let result3: string = await new Promise<string>((resolve: (value: string) => void) => {
-        currentWorker!.onmessage = (e: MessageEvents): void => {
-          resolve(e.data as string)
-        }
-        currentWorker!.postMessage('test data')
-      })
+      let result3: string = await exchange.sendString('test data')
       expect(result3).assertEqual('echo: test data')
     })
   })

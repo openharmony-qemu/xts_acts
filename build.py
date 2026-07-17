@@ -41,8 +41,8 @@ USAGE
 class XtsBuild:
 
     def __init__(self, commandline):
-        self._xts_root_dir = os.path.dirname(os.path.realpath(__file__))
-        self._code_root_dir = os.path.realpath(os.path.join(self._xts_root_dir, '../../..'))
+        self._xts_root_dir = os.path.dirname(os.path.abspath(__file__))
+        self._code_root_dir = os.path.abspath(os.path.join(self._xts_root_dir, '../../..'))
         self._accurate_dir = os.path.join(self._code_root_dir, "test/xts/tools/ci")
         self._change_list_file = "{}/change_info.json".format(self._code_root_dir)
         self._python_path = "{}/prebuilts/python/linux-x86/current/bin".format(self._code_root_dir)

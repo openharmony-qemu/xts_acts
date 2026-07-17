@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { worker, ErrorEvent, MessageEvents } from '@kit.ArkTS';
+import { WorkerExchange, createEchoWorkerExchange, createTaskTypeWorkerExchange, CalculateRequest, EchoRequest } from '../WorkerHelper';
 
 export default function WorkerCommunicationTest(): void {
   describe('WorkerCommunicationTest', (): void => {
@@ -22,14 +23,17 @@ export default function WorkerCommunicationTest(): void {
 
     beforeAll((): void => {})
     beforeEach((): void => {})
-    afterEach((): void => {
+    afterEach(async (): Promise<void> => {
       if (currentWorker !== null) {
-        currentWorker.terminate()
+        await new Promise<void>((resolve: Function) => {
+          currentWorker!.onexit = (): void => { resolve() }
+          currentWorker!.terminate()
+        })
         currentWorker = null
       }
     })
     afterAll(async (): Promise<void> => {
-      await Promise.resolve()
+      await new Promise<void>((resolve: Function) => { setTimeout((): void => resolve(undefined), 500) })
     })
 
     /**
@@ -158,27 +162,13 @@ export default function WorkerCommunicationTest(): void {
      * @tc.level  LEVEL0
      */
     it('WorkerCommunicationTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      currentWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
-      let r1: string = await new Promise<string>((resolve: (value: string) => void) => {
-        currentWorker!.onmessage = (e: MessageEvents): void => {
-          resolve(e.data as string)
-        }
-        currentWorker!.postMessage('hello')
-      })
+      let exchange: WorkerExchange = await createEchoWorkerExchange('entry_test/ets/workers/EchoWorker.ets')
+      currentWorker = exchange.getWorker()
+      let r1: string = await exchange.sendString('hello')
       expect(r1).assertEqual('hello received')
-      let r2: string = await new Promise<string>((resolve: (value: string) => void) => {
-        currentWorker!.onmessage = (e: MessageEvents): void => {
-          resolve(e.data as string)
-        }
-        currentWorker!.postMessage('ping')
-      })
+      let r2: string = await exchange.sendString('ping')
       expect(r2).assertEqual('pong')
-      let r3: string = await new Promise<string>((resolve: (value: string) => void) => {
-        currentWorker!.onmessage = (e: MessageEvents): void => {
-          resolve(e.data as string)
-        }
-        currentWorker!.postMessage('custom')
-      })
+      let r3: string = await exchange.sendString('custom')
       expect(r3).assertEqual('echo: custom')
     })
 
@@ -257,37 +247,15 @@ export default function WorkerCommunicationTest(): void {
      * @tc.level  LEVEL1
      */
     it('WorkerCommunicationTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      currentWorker = new worker.ThreadWorker('entry_test/ets/workers/TaskTypeWorker.ets')
-      let addResult: number = await new Promise<number>((resolve: (value: number) => void) => {
-        currentWorker!.onmessage = (e: MessageEvents): void => {
-          let data = e.data as Record<string, Object>
-          if ((data['type'] as string) === 'calc_result') {
-            resolve(data['value'] as number)
-          }
-        }
-        currentWorker!.postMessage({ type: 'calculate', a: 10, b: 20, op: 'add' })
-      })
-      expect(addResult).assertEqual(30)
-      let mulResult: number = await new Promise<number>((resolve: (value: number) => void) => {
-        currentWorker!.onmessage = (e: MessageEvents): void => {
-          let data = e.data as Record<string, Object>
-          if ((data['type'] as string) === 'calc_result') {
-            resolve(data['value'] as number)
-          }
-        }
-        currentWorker!.postMessage({ type: 'calculate', a: 7, b: 8, op: 'multiply' })
-      })
-      expect(mulResult).assertEqual(56)
-      let echoResult: string = await new Promise<string>((resolve: (value: string) => void) => {
-        currentWorker!.onmessage = (e: MessageEvents): void => {
-          let data = e.data as Record<string, Object>
-          if ((data['type'] as string) === 'echo_response') {
-            resolve(data['payload'] as string)
-          }
-        }
-        currentWorker!.postMessage({ type: 'echo', payload: 'hello_worker' })
-      })
-      expect(echoResult).assertEqual('hello_worker')
+      let exchange: WorkerExchange = await createTaskTypeWorkerExchange('entry_test/ets/workers/TaskTypeWorker.ets')
+      currentWorker = exchange.getWorker()
+      let addData: Record<string, Object> = await exchange.send(new CalculateRequest(10, 20, 'add')) as Record<string, Object>
+      expect(addData['value'] as number).assertEqual(30)
+      let mulData: Record<string, Object> = await exchange.send(new CalculateRequest(7, 8, 'multiply')) as Record<string, Object>
+      expect(mulData['value'] as number).assertEqual(56)
+      let echoData: Record<string, Object> = await exchange.send(new EchoRequest('hello_worker')) as Record<string, Object>
+      expect((echoData['type'] as string) === 'echo_response').assertTrue()
+      expect(echoData['payload'] as string).assertEqual('hello_worker')
     })
   })
 }

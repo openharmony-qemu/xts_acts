@@ -58,7 +58,7 @@ export default function WorkerInvokeTest(): void {
       }
     })
     afterAll(async (): Promise<void> => {
-      await Promise.resolve()
+      await new Promise<void>((resolve: Function) => { setTimeout((): void => resolve(undefined), 500) })
     })
 
     /**
@@ -252,9 +252,23 @@ export default function WorkerInvokeTest(): void {
      * @tc.level  LEVEL0
      */
     it('WorkerInvokeTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      // Register host object before any Worker messaging to avoid call_error race.
       currentWorker = new worker.ThreadWorker('entry_test/ets/workers/InvokeWorker.ets')
       let obj: TestCallObject = new TestCallObject()
-      currentWorker.registerGlobalCallObject('argsObj', obj)
+      currentWorker.registerGlobalCallObject('argsObj0800', obj)
+
+      // Warm up Worker thread; only resolve on ready (ignore unrelated messages).
+      await new Promise<void>((resolve: (value: void) => void) => {
+        currentWorker!.onmessage = (e: MessageEvents): void => {
+          let data = e.data as Record<string, Object>
+          if ((data['type'] as string) === 'ready') {
+            resolve()
+          }
+        }
+        currentWorker!.postMessage({ type: '__ready__' })
+      })
+
+      // Filter call_result only; call_error/unknown must not resolve with undefined value.
       let result: number = await new Promise<number>((resolve: (value: number) => void) => {
         currentWorker!.onmessage = (e: MessageEvents): void => {
           let data = e.data as Record<string, Object>
@@ -262,7 +276,7 @@ export default function WorkerInvokeTest(): void {
             resolve(data['value'] as number)
           }
         }
-        currentWorker!.postMessage({ type: 'call_add_values', objName: 'argsObj' })
+        currentWorker!.postMessage({ type: 'call_add_values', objName: 'argsObj0800' })
       })
       expect(result).assertEqual(30)
     })

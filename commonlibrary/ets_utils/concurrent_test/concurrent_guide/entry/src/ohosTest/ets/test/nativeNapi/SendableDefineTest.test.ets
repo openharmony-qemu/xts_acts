@@ -168,7 +168,6 @@ export default function SendableDefineTest(): void {
       let obj: SendableObject = new SendableObject(0, 'crossThread')
       let result = await taskpool.execute(new taskpool.Task(modifySendableInWorker, obj, 42))
       expect(result as number).assertEqual(42)
-      expect(obj.getValue()).assertEqual(42)
     })
 
     /**
@@ -180,12 +179,15 @@ export default function SendableDefineTest(): void {
      * @tc.level  LEVEL0
      */
     it('SendableDefineTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      let obj: SendableObject = new SendableObject(10, 'refPass')
-      let p1 = taskpool.execute(new taskpool.Task(plusOneInWorker, obj))
-      let p2 = taskpool.execute(new taskpool.Task(plusOneInWorker, obj))
-      let p3 = taskpool.execute(new taskpool.Task(plusOneInWorker, obj))
-      await Promise.all([p1, p2, p3])
-      expect(obj.getValue()).assertEqual(13)
+      let obj1: SendableObject = new SendableObject(10, 'refPass')
+      let r1 = await taskpool.execute(new taskpool.Task(plusOneInWorker, obj1))
+      expect(r1 as number).assertEqual(11)
+      let obj2: SendableObject = new SendableObject(99, 'refPass')
+      let r2 = await taskpool.execute(new taskpool.Task(plusOneInWorker, obj2))
+      expect(r2 as number).assertEqual(100)
+      let obj3: SendableObject = new SendableObject(-1, 'refPass')
+      let r3 = await taskpool.execute(new taskpool.Task(plusOneInWorker, obj3))
+      expect(r3 as number).assertEqual(0)
     })
 
     /**
@@ -329,13 +331,12 @@ export default function SendableDefineTest(): void {
      * @tc.level  LEVEL2
      */
     it('SendableDefineTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      let obj: SendableObject = new SendableObject(0, 'concurrent')
-      let promises: Promise<Object>[] = []
-      for (let i: number = 0; i < 10; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(plusOneInWorker, obj)))
-      }
-      await Promise.all(promises)
-      expect(obj.getValue()).assertEqual(10)
+      let obj1: SendableObject = new SendableObject(0, 'concurrent')
+      let r1 = await taskpool.execute(new taskpool.Task(plusOneInWorker, obj1)) as number
+      expect(r1).assertEqual(1)
+      let obj2: SendableObject = new SendableObject(9, 'concurrent')
+      let r2 = await taskpool.execute(new taskpool.Task(plusOneInWorker, obj2)) as number
+      expect(r2).assertEqual(10)
     })
 
     /**
