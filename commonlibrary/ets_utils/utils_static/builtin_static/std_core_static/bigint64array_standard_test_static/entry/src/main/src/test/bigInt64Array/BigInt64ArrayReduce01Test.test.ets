@@ -2877,22 +2877,25 @@ export default function BigInt64ArrayReduce01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REDUCE_ONE_1920
      * @tc.name testBigInt64ArrayReduceOne1920
-     * @tc.desc Verify reduce returns the bigint accumulator unchanged on each callback call.
+     * @tc.desc Verify reduce invokes the callback for every element with the unchanged bigint
+     * accumulator and returns the initial value.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayReduceOne1920', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array([1n, 2n, 3n, 4n, 5n]);
+      let callbackCount = 0;
       let res = arr.reduce((acc: BigInt, curr: BigInt, idx: int, a: BigInt64Array): BigInt => {
+        expect(acc).assertEqual(5n);
+        expect(curr).assertEqual(arr[idx]);
+        expect(idx).assertEqual(callbackCount);
+        expect(a === arr).assertTrue();
+        callbackCount++;
         return acc;
       }, 5n);
-      let expected = 5n;
-      for (let i = 0; i < arr.length; i++) {
-        let cbRes = expected;
-        expected = cbRes;
-      }
-      expect(res).assertEqual(expected);
+      expect(callbackCount).assertEqual(arr.length);
+      expect(res).assertEqual(5n);
     });
 
     /**

@@ -788,8 +788,8 @@ export default function BigInt64ArrayReverse02Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_TWO_4600
      * @tc.name testBigInt64ArrayReverseTwo4600
-     * @tc.desc Verify reverse on shared buffer with BigInt64Array and Int32Array mixed views
-     * keeps data consistent across element sizes.
+     * @tc.desc Verify reversing the BigInt64Array swaps the corresponding Int32Array word pairs
+     * in the shared buffer.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -800,9 +800,17 @@ export default function BigInt64ArrayReverse02Test(): void {
       bi64[0] = 1n;
       bi64[1] = 2n;
       let i32 = new Int32Array(buf);
+      let oldI32_0 = i32[0];
+      let oldI32_1 = i32[1];
+      let oldI32_2 = i32[2];
+      let oldI32_3 = i32[3];
       bi64.reverse();
       expect(bi64[0]).assertEqual(2n);
       expect(bi64[1]).assertEqual(1n);
+      expect(i32[0]).assertEqual(oldI32_2);
+      expect(i32[1]).assertEqual(oldI32_3);
+      expect(i32[2]).assertEqual(oldI32_0);
+      expect(i32[3]).assertEqual(oldI32_1);
     });
 
     /**

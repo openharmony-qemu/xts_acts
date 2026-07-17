@@ -767,15 +767,17 @@ export default function BigInt64ArrayFilter02Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FILTER_TWO_5100
      * @tc.name testBigInt64ArrayFilterTwo5100
-     * @tc.desc Verify `src.filter((val) => true)` produces a result where `ret[0]` equals `min`, `ret[1]` equals `min`.
+     * @tc.desc Verify filtering for the minimum BigInt64 value returns both matching elements
+     * and excludes non-matching elements.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFilterTwo5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let min = -9223372036854775807n - 1n;
-      let src = new BigInt64Array([min, min]);
-      let ret = src.filter((val: bigint) => true);
+      let src = new BigInt64Array([min, 0n, min]);
+      let ret = src.filter((val: bigint) => val === min);
+      expect(ret.length).assertEqual(2);
       expect(ret[0]).assertEqual(min);
       expect(ret[1]).assertEqual(min);
     });
@@ -1106,10 +1108,11 @@ export default function BigInt64ArrayFilter02Test(): void {
      */
     it('testBigInt64ArrayFilterTwo7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src = new BigInt64Array([50n, 60n, 70n]);
-      let srcRef = src;
-      src.filter((val: bigint) => val === 60n);
-      let isSameRef = (srcRef === src);
-      expect(isSameRef).assertEqual(true);
+      let res = src.filter((val: bigint) => val === 60n);
+      let isSameRef = res === src;
+      expect(isSameRef).assertEqual(false);
+      expect(res.length).assertEqual(1);
+      expect(res[0]).assertEqual(60n);
     });
 
   });

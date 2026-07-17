@@ -530,11 +530,13 @@ export default function BigInt64ArraySet0202Test(): void {
      * @tc.level Level 2
      */
     it('testBigInt64ArraySetThree2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let target = new BigInt64Array([11n, 22n, 33n, 44n, 55n]);
-      let src = new BigInt64Array([101n]);
-      target.set(src, 2147483647);
-      expect(target[0]).assertEqual(11n);
-      expect(target[4]).assertEqual(55n);
+      let arr = new BigInt64Array(3);
+      try {
+        arr.set([1n], -10);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
@@ -813,6 +815,25 @@ export default function BigInt64ArraySet0202Test(): void {
       expect(target[2]).assertEqual(3n);
       expect(full[0]).assertEqual(99n);
       expect(full[4]).assertEqual(55n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_SET_TWO_ZERO_TWO_4100
+     * @tc.name testBigInt64ArraySetThree4100
+     * @tc.desc Verify set succeeds when the source exactly fills the target from a non zero offset to the end.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArraySetThree4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let target = new BigInt64Array([11n, 22n, 33n, 44n, 55n]);
+      let src = new BigInt64Array([101n, 202n, 303n]);
+      target.set(src, 2);
+      expect(target[0]).assertEqual(11n);
+      expect(target[1]).assertEqual(22n);
+      expect(target[2]).assertEqual(101n);
+      expect(target[3]).assertEqual(202n);
+      expect(target[4]).assertEqual(303n);
     });
   });
 }

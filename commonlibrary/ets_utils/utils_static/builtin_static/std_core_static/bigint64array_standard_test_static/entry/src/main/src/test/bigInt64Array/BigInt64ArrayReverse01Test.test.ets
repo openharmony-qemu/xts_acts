@@ -140,15 +140,15 @@ export default function BigInt64ArrayReverse01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_ONE_0700
      * @tc.name testBigInt64ArrayReverseOne0700
-     * @tc.desc Verify reverse swaps elements when the array contains zero values.
+     * @tc.desc Verify reverse swaps a zero value and a nonzero value.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayReverseOne0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([0n, 0n]);
+      let arr = new BigInt64Array([0n, 1n]);
       arr.reverse();
-      expect(arr[0]).assertEqual(0n);
+      expect(arr[0]).assertEqual(1n);
       expect(arr[1]).assertEqual(0n);
     });
 
@@ -371,19 +371,21 @@ export default function BigInt64ArrayReverse01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_ONE_2000
      * @tc.name testBigInt64ArrayReverseOne2000
-     * @tc.desc Verify reverse on a constructor-created all-zero array keeps all zeros.
+     * @tc.desc Verify reverse swaps distinct values assigned at both ends of a constructor-created array.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayReverseOne2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new BigInt64Array(5);
+      arr[0] = 1n;
+      arr[4] = 2n;
       arr.reverse();
-      expect(arr[0]).assertEqual(0n);
+      expect(arr[0]).assertEqual(2n);
       expect(arr[1]).assertEqual(0n);
       expect(arr[2]).assertEqual(0n);
       expect(arr[3]).assertEqual(0n);
-      expect(arr[4]).assertEqual(0n);
+      expect(arr[4]).assertEqual(1n);
     });
 
     /**
@@ -429,17 +431,17 @@ export default function BigInt64ArrayReverse01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_ONE_2300
      * @tc.name testBigInt64ArrayReverseOne2300
-     * @tc.desc Verify reverse on an array with all identical non-zero values shows no change.
+     * @tc.desc Verify reverse changes the order of four distinct non-zero values.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayReverseOne2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([7n, 7n, 7n, 7n]);
+      let arr = new BigInt64Array([7n, 8n, 9n, 10n]);
       arr.reverse();
-      expect(arr[0]).assertEqual(7n);
-      expect(arr[1]).assertEqual(7n);
-      expect(arr[2]).assertEqual(7n);
+      expect(arr[0]).assertEqual(10n);
+      expect(arr[1]).assertEqual(9n);
+      expect(arr[2]).assertEqual(8n);
       expect(arr[3]).assertEqual(7n);
     });
 
@@ -559,16 +561,16 @@ export default function BigInt64ArrayReverse01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_REVERSE_ONE_3000
      * @tc.name testBigInt64ArrayReverseOne3000
-     * @tc.desc Verify reverse on an array of all -1 values shows no visible change.
+     * @tc.desc Verify reverse changes the order of distinct negative values.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayReverseOne3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([-1n, -1n, -1n]);
+      let arr = new BigInt64Array([-1n, -2n, -3n]);
       arr.reverse();
-      expect(arr[0]).assertEqual(-1n);
-      expect(arr[1]).assertEqual(-1n);
+      expect(arr[0]).assertEqual(-3n);
+      expect(arr[1]).assertEqual(-2n);
       expect(arr[2]).assertEqual(-1n);
     });
 

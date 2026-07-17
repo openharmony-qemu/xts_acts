@@ -1342,115 +1342,138 @@ export default function BigInt64ArrayCopyWithin03Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_COPY_WITHIN_THREE_0910
      * @tc.name testBigInt64ArrayCopyWithinThree0910
-     * @tc.desc Verify `arr_a1.copyWithin(1, 0)` produces a result where `ref_a1.length` equals `4`, `new BigInt64Array([7n, 7n, 7n, 7n])[0]` equals `7n`.
+     * @tc.desc Verify `arr_a1.copyWithin(1, 0)` updates the array to `[7n, 7n, 8n, 9n]`.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayCopyWithinThree0910', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr_a1 = new BigInt64Array([7n, 7n, 7n, 7n]);
+        let arr_a1 = new BigInt64Array([7n, 8n, 9n, 10n]);
         let ref_a1 = arr_a1.copyWithin(1, 0);
         expect(ref_a1.length).assertEqual(4);
         expect(arr_a1[0]).assertEqual(7n);
+        expect(arr_a1[1]).assertEqual(7n);
+        expect(arr_a1[2]).assertEqual(8n);
+        expect(arr_a1[3]).assertEqual(9n);
       });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_COPY_WITHIN_THREE_0920
      * @tc.name testBigInt64ArrayCopyWithinThree0920
-     * @tc.desc Verify `arr_a2.copyWithin(0, 1)` produces a result where `new BigInt64Array([8n, 8n, 8n, 8n])[0]` equals `8n`, `new BigInt64Array([8n, 8n, 8n, 8n])[3]` equals `8n`.
+     * @tc.desc Verify `arr_a2.copyWithin(0, 1)` updates the array to `[9n, 10n, 11n, 11n]`.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayCopyWithinThree0920', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr_a2 = new BigInt64Array([8n, 8n, 8n, 8n]);
+        let arr_a2 = new BigInt64Array([8n, 9n, 10n, 11n]);
         arr_a2.copyWithin(0, 1);
-        expect(arr_a2[0]).assertEqual(8n);
-        expect(arr_a2[3]).assertEqual(8n);
+        expect(arr_a2[0]).assertEqual(9n);
+        expect(arr_a2[1]).assertEqual(10n);
+        expect(arr_a2[2]).assertEqual(11n);
+        expect(arr_a2[3]).assertEqual(11n);
       });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_COPY_WITHIN_THREE_0930
      * @tc.name testBigInt64ArrayCopyWithinThree0930
-     * @tc.desc Verify `arr_a3.copyWithin(2, 0)` produces a result where `new BigInt64Array([9n, 9n, 9n, 9n])[3]` equals `9n`.
+     * @tc.desc Verify `arr_a3.copyWithin(2, 0)` updates the array to `[9n, 10n, 9n, 10n]`.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayCopyWithinThree0930', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr_a3 = new BigInt64Array([9n, 9n, 9n, 9n]);
+        let arr_a3 = new BigInt64Array([9n, 10n, 11n, 12n]);
         arr_a3.copyWithin(2, 0);
-        expect(arr_a3[3]).assertEqual(9n);
+        expect(arr_a3[0]).assertEqual(9n);
+        expect(arr_a3[1]).assertEqual(10n);
+        expect(arr_a3[2]).assertEqual(9n);
+        expect(arr_a3[3]).assertEqual(10n);
       });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_COPY_WITHIN_THREE_0940
      * @tc.name testBigInt64ArrayCopyWithinThree0940
-     * @tc.desc Verify `arr_a4.copyWithin(0, 2)` produces a result where `new BigInt64Array([10n, 10n, 10n, 10n])[0]` equals `10n`.
+     * @tc.desc Verify `arr_a4.copyWithin(0, 2)` updates the array to `[12n, 13n, 12n, 13n]`.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayCopyWithinThree0940', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr_a4 = new BigInt64Array([10n, 10n, 10n, 10n]);
+        let arr_a4 = new BigInt64Array([10n, 11n, 12n, 13n]);
         arr_a4.copyWithin(0, 2);
-        expect(arr_a4[0]).assertEqual(10n);
+        expect(arr_a4[0]).assertEqual(12n);
+        expect(arr_a4[1]).assertEqual(13n);
+        expect(arr_a4[2]).assertEqual(12n);
+        expect(arr_a4[3]).assertEqual(13n);
       });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_COPY_WITHIN_THREE_0950
      * @tc.name testBigInt64ArrayCopyWithinThree0950
-     * @tc.desc Verify `arr_a5.copyWithin(-1, 0)` produces a result where `new BigInt64Array([11n, 11n, 11n, 11n])[3]` equals `11n`.
+     * @tc.desc Verify `arr_a5.copyWithin(-1, 0)` updates the array to `[11n, 12n, 13n, 11n]`.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayCopyWithinThree0950', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr_a5 = new BigInt64Array([11n, 11n, 11n, 11n]);
+        let arr_a5 = new BigInt64Array([11n, 12n, 13n, 14n]);
         arr_a5.copyWithin(-1, 0);
+        expect(arr_a5[0]).assertEqual(11n);
+        expect(arr_a5[1]).assertEqual(12n);
+        expect(arr_a5[2]).assertEqual(13n);
         expect(arr_a5[3]).assertEqual(11n);
       });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_COPY_WITHIN_THREE_0960
      * @tc.name testBigInt64ArrayCopyWithinThree0960
-     * @tc.desc Verify `arr_a6.copyWithin(0, -1)` produces a result where `new BigInt64Array([12n, 12n, 12n, 12n])[0]` equals `12n`.
+     * @tc.desc Verify `arr_a6.copyWithin(0, -1)` updates the array to `[15n, 13n, 14n, 15n]`.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayCopyWithinThree0960', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr_a6 = new BigInt64Array([12n, 12n, 12n, 12n]);
+        let arr_a6 = new BigInt64Array([12n, 13n, 14n, 15n]);
         arr_a6.copyWithin(0, -1);
-        expect(arr_a6[0]).assertEqual(12n);
+        expect(arr_a6[0]).assertEqual(15n);
+        expect(arr_a6[1]).assertEqual(13n);
+        expect(arr_a6[2]).assertEqual(14n);
+        expect(arr_a6[3]).assertEqual(15n);
       });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_COPY_WITHIN_THREE_0970
      * @tc.name testBigInt64ArrayCopyWithinThree0970
-     * @tc.desc Verify `arr_a7.copyWithin(1, 0, 2)` produces a result where `new BigInt64Array([13n, 13n, 13n, 13n])[1]` equals `13n`.
+     * @tc.desc Verify `arr_a7.copyWithin(1, 0, 2)` updates the array to `[13n, 13n, 14n, 16n]`.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayCopyWithinThree0970', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr_a7 = new BigInt64Array([13n, 13n, 13n, 13n]);
+        let arr_a7 = new BigInt64Array([13n, 14n, 15n, 16n]);
         arr_a7.copyWithin(1, 0, 2);
+        expect(arr_a7[0]).assertEqual(13n);
         expect(arr_a7[1]).assertEqual(13n);
+        expect(arr_a7[2]).assertEqual(14n);
+        expect(arr_a7[3]).assertEqual(16n);
       });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_COPY_WITHIN_THREE_0980
      * @tc.name testBigInt64ArrayCopyWithinThree0980
-     * @tc.desc Verify `arr_a8.copyWithin(0, 1, 3)` produces a result where `new BigInt64Array([14n, 14n, 14n, 14n])[0]` equals `14n`.
+     * @tc.desc Verify `arr_a8.copyWithin(0, 1, 3)` updates the array to `[15n, 16n, 16n, 17n]`.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayCopyWithinThree0980', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arr_a8 = new BigInt64Array([14n, 14n, 14n, 14n]);
+        let arr_a8 = new BigInt64Array([14n, 15n, 16n, 17n]);
         arr_a8.copyWithin(0, 1, 3);
-        expect(arr_a8[0]).assertEqual(14n);
+        expect(arr_a8[0]).assertEqual(15n);
+        expect(arr_a8[1]).assertEqual(16n);
+        expect(arr_a8[2]).assertEqual(16n);
+        expect(arr_a8[3]).assertEqual(17n);
       });
 
     /**

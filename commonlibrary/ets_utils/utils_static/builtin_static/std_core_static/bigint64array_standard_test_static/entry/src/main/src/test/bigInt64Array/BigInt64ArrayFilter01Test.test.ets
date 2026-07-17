@@ -884,37 +884,20 @@ export default function BigInt64ArrayFilter01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FILTER_ONE_5000
      * @tc.name testBigInt64ArrayFilterOne5000
-     * @tc.desc Verify `arr.filter((val) => { return val === 0n; })` produces a result where `res.length` equals `0`, `new BigInt64Array([10n, 20n, 30n])[0]` equals `99n`.
+     * @tc.desc Verify filtering for `10n` returns all matching elements in a new BigInt64Array.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayFilterOne5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([10n, 20n, 30n]);
-      let res = arr.filter((val) => {
-        return val === 0n;
-      });
-      expect(res.length).assertEqual(0);
-      arr[0] = 99n;
-      expect(arr[0]).assertEqual(99n);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_FILTER_ONE_5100
-     * @tc.name testBigInt64ArrayFilterOne5100
-     * @tc.desc Verify `arr.filter((val) => { return val === 10n; })` produces a result where `new BigInt64Array([10n, 20n, 30n])[0]` equals `10n`, `res[0]` equals `88n`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayFilterOne5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new BigInt64Array([10n, 20n, 30n]);
+      let arr = new BigInt64Array([10n, 20n, 10n, 30n]);
       let res = arr.filter((val) => {
         return val === 10n;
       });
-      res[0] = 88n;
-      expect(arr[0]).assertEqual(10n);
-      expect(res[0]).assertEqual(88n);
+      expect(res === arr).assertFalse();
+      expect(res.length).assertEqual(2);
+      expect(res[0]).assertEqual(10n);
+      expect(res[1]).assertEqual(10n);
     });
 
   });
