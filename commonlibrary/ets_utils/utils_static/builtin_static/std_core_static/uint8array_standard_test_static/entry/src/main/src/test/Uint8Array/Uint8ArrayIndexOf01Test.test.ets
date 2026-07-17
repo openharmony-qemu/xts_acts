@@ -229,7 +229,7 @@ export default function Uint8ArrayIndexOf01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_INDEX_OF01_1400
      * @tc.name testUint8ArrayIndexOf014
-     * @tc.desc Verify indexOf with searchElement=256 (truncated to 0), element 0 exists in array at index 0
+     * @tc.desc Verify indexOf with searchElement=256, 256 is not truncated to 0, returns -1
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -237,13 +237,13 @@ export default function Uint8ArrayIndexOf01Test(): void {
     it('testUint8ArrayIndexOf014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Uint8Array = new Uint8Array([0]);
       let r: number = arr.indexOf(256);
-      expect(r).assertEqual(0);
+      expect(r).assertEqual(-1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_INDEX_OF01_1500
      * @tc.name testUint8ArrayIndexOf015
-     * @tc.desc Verify indexOf with searchElement=-1 (wrapped to 255), element 255 exists in array at index 0
+     * @tc.desc Verify indexOf with searchElement=-1, -1 is not wrapped to 255, returns -1
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -251,7 +251,7 @@ export default function Uint8ArrayIndexOf01Test(): void {
     it('testUint8ArrayIndexOf015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Uint8Array = new Uint8Array([255]);
       let r: number = arr.indexOf(-1);
-      expect(r).assertEqual(0);
+      expect(r).assertEqual(-1);
     });
 
     /**
@@ -327,7 +327,7 @@ export default function Uint8ArrayIndexOf01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_INDEX_OF01_2100
      * @tc.name testUint8ArrayIndexOf021
-     * @tc.desc Verify indexOf with searchElement=0x100 (truncated to 0), element 0 exists in array at index 0
+     * @tc.desc Verify indexOf with searchElement=0x100, 0x100 is not truncated to 0, returns -1
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -335,7 +335,7 @@ export default function Uint8ArrayIndexOf01Test(): void {
     it('testUint8ArrayIndexOf021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Uint8Array = new Uint8Array([0, 1, 2]);
       let r: number = arr.indexOf(0x100);
-      expect(r).assertEqual(0);
+      expect(r).assertEqual(-1);
     });
 
     /**
@@ -509,7 +509,7 @@ export default function Uint8ArrayIndexOf01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UINT8ARRAY_INDEX_OF01_3400
      * @tc.name testUint8ArrayIndexOf034
-     * @tc.desc Verify indexOf with searchElement=-2147483648 (truncated to 0), element 0 exists in array at index 0
+     * @tc.desc Verify indexOf with searchElement=-2147483648, not truncated to 0, returns -1
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -517,7 +517,7 @@ export default function Uint8ArrayIndexOf01Test(): void {
     it('testUint8ArrayIndexOf034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Uint8Array = new Uint8Array([0, 1, 2]);
       let r: number = arr.indexOf(-2147483648);
-      expect(r).assertEqual(0);
+      expect(r).assertEqual(-1);
     });
 
     /**
