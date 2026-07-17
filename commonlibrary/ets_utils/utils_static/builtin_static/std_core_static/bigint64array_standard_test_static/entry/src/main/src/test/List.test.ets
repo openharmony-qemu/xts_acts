@@ -1,4 +1,4 @@
-'use static';
+'use static'
 
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
@@ -22,12 +22,6 @@ import BigInt64ArrayAt02Test from './bigInt64Array/BigInt64ArrayAt02Test.test';
 import BigInt64ArrayAt03Test from './bigInt64Array/BigInt64ArrayAt03Test.test';
 import BigInt64ArrayConstructor01Test from './bigInt64Array/BigInt64ArrayConstructor01Test.test';
 import BigInt64ArrayConstructor02Test from './bigInt64Array/BigInt64ArrayConstructor02Test.test';
-import BigInt64ArrayConstructor03Test from './bigInt64Array/BigInt64ArrayConstructor03Test.test';
-import BigInt64ArrayConstructor04Test from './bigInt64Array/BigInt64ArrayConstructor04Test.test';
-import BigInt64ArrayConstructor05Test from './bigInt64Array/BigInt64ArrayConstructor05Test.test';
-import BigInt64ArrayConstructor06Test from './bigInt64Array/BigInt64ArrayConstructor06Test.test';
-import BigInt64ArrayConstructor07Test from './bigInt64Array/BigInt64ArrayConstructor07Test.test';
-import BigInt64ArrayConstructor08Test from './bigInt64Array/BigInt64ArrayConstructor08Test.test';
 import BigInt64ArrayCopyWithin01Test from './bigInt64Array/BigInt64ArrayCopyWithin01Test.test';
 import BigInt64ArrayCopyWithin02Test from './bigInt64Array/BigInt64ArrayCopyWithin02Test.test';
 import BigInt64ArrayCopyWithin03Test from './bigInt64Array/BigInt64ArrayCopyWithin03Test.test';
@@ -50,8 +44,8 @@ import BigInt64ArrayFindLastIndex02Test from './bigInt64Array/BigInt64ArrayFindL
 import BigInt64ArrayFindLastIndex03Test from './bigInt64Array/BigInt64ArrayFindLastIndex03Test.test';
 import BigInt64ArrayForEach02Test from './bigInt64Array/BigInt64ArrayForEach02Test.test';
 import BigInt64ArrayFrom01Test from './bigInt64Array/BigInt64ArrayFrom01Test.test';
-import BigInt64ArrayFrom03Test from './bigInt64Array/BigInt64ArrayFrom03Test.test';
-import BigInt64ArrayFrom04Test from './bigInt64Array/BigInt64ArrayFrom04Test.test';
+import BigInt64ArrayFrom0301Test from './bigInt64Array/BigInt64ArrayFrom03Test.test';
+import BigInt64ArrayFrom0302Test from './bigInt64Array/BigInt64ArrayFrom04Test.test';
 import BigInt64ArrayIncludes01Test from './bigInt64Array/BigInt64ArrayIncludes01Test.test';
 import BigInt64ArrayIndexOf01Test from './bigInt64Array/BigInt64ArrayIndexOf01Test.test';
 import BigInt64ArrayIndexOf02Test from './bigInt64Array/BigInt64ArrayIndexOf02Test.test';
@@ -89,12 +83,6 @@ export default function testsuite(): void {
   BigInt64ArrayAt03Test();
   BigInt64ArrayConstructor01Test();
   BigInt64ArrayConstructor02Test();
-  BigInt64ArrayConstructor03Test();
-  BigInt64ArrayConstructor04Test();
-  BigInt64ArrayConstructor05Test();
-  BigInt64ArrayConstructor06Test();
-  BigInt64ArrayConstructor07Test();
-  BigInt64ArrayConstructor08Test();
   BigInt64ArrayCopyWithin01Test();
   BigInt64ArrayCopyWithin02Test();
   BigInt64ArrayCopyWithin03Test();
@@ -117,15 +105,15 @@ export default function testsuite(): void {
   BigInt64ArrayFindLastIndex03Test();
   BigInt64ArrayForEach02Test();
   BigInt64ArrayFrom01Test();
-  BigInt64ArrayFrom02Test();
-  BigInt64ArrayFrom03Test();
-  BigInt64ArrayFrom04Test();
+  BigInt64ArrayFrom0301Test();
+  BigInt64ArrayFrom0302Test();
   BigInt64ArrayIncludes01Test();
   BigInt64ArrayIndexOf01Test();
   BigInt64ArrayIndexOf02Test();
   BigInt64ArrayJoin01Test();
   BigInt64ArrayJoin02Test();
   BigInt64ArrayForEach01Test();
+  BigInt64ArrayFrom02Test();
   BigInt64ArrayKeys01Test();
   BigInt64ArrayLastIndexOf01Test();
   BigInt64ArrayMap01Test();

@@ -41,765 +41,408 @@ export default function BigInt64ArrayConstructor02Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayConstructorTwo1360', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(16);
-        let arr = new BigInt64Array(buf, 0, 1);
-        expect(arr.byteLength).assertEqual(8);
-      });
+    it('testBigInt64ArrayConstructorTwo0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let min = -9223372036854775807n - 1n;
+      let max = 9223372036854775807n;
+      let arr = new BigInt64Array([min, -15n, 0n, 15n, max]);
+      expect(arr.length).assertEqual(5);
+      expect(arr.$_get(0)).assertEqual(min);
+      expect(arr.$_get(1)).assertEqual(-15n);
+      expect(arr.$_get(2)).assertEqual(0n);
+      expect(arr.$_get(3)).assertEqual(15n);
+      expect(arr.$_get(4)).assertEqual(max);
+    });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1370
-     * @tc.name testBigInt64ArrayConstructorTwo1370
-     * @tc.desc Verify `arr.$_set(0, 5n)` produces a result where `new BigInt64Array(buf, 0, 1).$_get(0)` equals `5n`.
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_0200
+     * @tc.name testBigInt64ArrayConstructorTwo0200
+     * @tc.desc Verify an empty ArrayBuffer creates an empty view with zero offset.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayConstructorTwo1370', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(16);
-        let arr = new BigInt64Array(buf, 0, 1);
-        arr.$_set(0, 5n);
-        let view = new BigInt64Array(buf, 0, 1);
-        expect(view.$_get(0)).assertEqual(5n);
-      });
+    it('testBigInt64ArrayConstructorTwo0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(0);
+      let arr = new BigInt64Array(buf);
+      expect(arr.length).assertEqual(0);
+      expect(arr.byteLength).assertEqual(0);
+      expect(arr.byteOffset).assertEqual(0);
+      expect(arr.buffer).assertEqual(buf);
+    });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1380
-     * @tc.name testBigInt64ArrayConstructorTwo1380
-     * @tc.desc Verify `new BigInt64Array(buf, 0, 2)` produces a result where `arr.length` equals `2`.
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_0300
+     * @tc.name testBigInt64ArrayConstructorTwo0300
+     * @tc.desc Verify an aligned ArrayBuffer is fully covered when byteOffset and length are omitted.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayConstructorTwo1380', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(16);
-        let arr = new BigInt64Array(buf, 0, 2);
-        expect(arr.length).assertEqual(2);
-      });
+    it('testBigInt64ArrayConstructorTwo0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(16);
+      let arr = new BigInt64Array(buf);
+      expect(arr.length).assertEqual(2);
+      expect(arr.byteLength).assertEqual(16);
+      expect(arr.byteOffset).assertEqual(0);
+      expect(arr.buffer).assertEqual(buf);
+    });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1390
-     * @tc.name testBigInt64ArrayConstructorTwo1390
-     * @tc.desc Verify `new BigInt64Array(buf, 0, 2)` produces a result where `arr.byteLength` equals `16`.
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_0400
+     * @tc.name testBigInt64ArrayConstructorTwo0400
+     * @tc.desc Verify explicit undefined byteOffset and length cover the entire buffer.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayConstructorTwo1390', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(16);
-        let arr = new BigInt64Array(buf, 0, 2);
-        expect(arr.byteLength).assertEqual(16);
-      });
+    it('testBigInt64ArrayConstructorTwo0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf: ArrayBuffer = new ArrayBuffer(32);
+      let arr: BigInt64Array = new BigInt64Array(buf, undefined, undefined);
+      expect(arr.length).assertEqual(4);
+      expect(arr.byteLength).assertEqual(32);
+      expect(arr.byteOffset).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_0500
+     * @tc.name testBigInt64ArrayConstructorTwo0500
+     * @tc.desc Verify undefined byteOffset defaults to zero when an explicit length is provided.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorTwo0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf: ArrayBuffer = new ArrayBuffer(40);
+      let arr: BigInt64Array = new BigInt64Array(buf, undefined, 3);
+      expect(arr.length).assertEqual(3);
+      expect(arr.byteLength).assertEqual(24);
+      expect(arr.byteOffset).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_0600
+     * @tc.name testBigInt64ArrayConstructorTwo0600
+     * @tc.desc Verify undefined length uses all aligned bytes remaining after a nonzero byteOffset.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorTwo0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf: ArrayBuffer = new ArrayBuffer(48);
+      let arr: BigInt64Array = new BigInt64Array(buf, 16, undefined);
+      expect(arr.length).assertEqual(4);
+      expect(arr.byteLength).assertEqual(32);
+      expect(arr.byteOffset).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_0700
+     * @tc.name testBigInt64ArrayConstructorTwo0700
+     * @tc.desc Verify an unaligned byteOffset throws RangeError.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorTwo0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf: ArrayBuffer = new ArrayBuffer(24);
+      try {
+        new BigInt64Array(buf, 1, undefined);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_0800
+     * @tc.name testBigInt64ArrayConstructorTwo0800
+     * @tc.desc Verify an explicit zero length creates an empty view on a nonempty buffer.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorTwo0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf: ArrayBuffer = new ArrayBuffer(16);
+      let arr: BigInt64Array = new BigInt64Array(buf, undefined, 0);
+      expect(arr.length).assertEqual(0);
+      expect(arr.byteLength).assertEqual(0);
+      expect(arr.byteOffset).assertEqual(0);
+      expect(arr.buffer).assertEqual(buf);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_0900
+     * @tc.name testBigInt64ArrayConstructorTwo0900
+     * @tc.desc Verify a zero-length view can start exactly at the end of the buffer.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorTwo0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(8);
+      let arr = new BigInt64Array(buf, 8, 0);
+      expect(arr.length).assertEqual(0);
+      expect(arr.byteLength).assertEqual(0);
+      expect(arr.byteOffset).assertEqual(8);
+      expect(arr.buffer).assertEqual(buf);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1000
+     * @tc.name testBigInt64ArrayConstructorTwo1000
+     * @tc.desc Verify a zero-length view with a nonzero aligned offset keeps the requested offset.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorTwo1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(32);
+      let arr = new BigInt64Array(buf, 8, 0);
+      expect(arr.length).assertEqual(0);
+      expect(arr.byteLength).assertEqual(0);
+      expect(arr.byteOffset).assertEqual(8);
+      expect(arr.buffer).assertEqual(buf);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1100
+     * @tc.name testBigInt64ArrayConstructorTwo1100
+     * @tc.desc Verify an offset view can consume all remaining aligned bytes in a small buffer.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorTwo1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(32);
+      let arr = new BigInt64Array(buf, 8, 3);
+      expect(arr.length).assertEqual(3);
+      expect(arr.byteLength).assertEqual(24);
+      expect(arr.byteOffset).assertEqual(8);
+      expect(arr.buffer).assertEqual(buf);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1200
+     * @tc.name testBigInt64ArrayConstructorTwo1200
+     * @tc.desc Verify a one-element tail view shares writes with another view of the same buffer region.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorTwo1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(32);
+      let arr = new BigInt64Array(buf, 24, 1);
+      arr.$_set(0, 5n);
+      let view = new BigInt64Array(buf, 24, 1);
+      expect(arr.length).assertEqual(1);
+      expect(arr.byteLength).assertEqual(8);
+      expect(arr.byteOffset).assertEqual(24);
+      expect(view.$_get(0)).assertEqual(5n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1300
+     * @tc.name testBigInt64ArrayConstructorTwo1300
+     * @tc.desc Verify an explicit length can cover a complete 64-byte buffer.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigInt64ArrayConstructorTwo1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(64);
+      let arr = new BigInt64Array(buf, 0, 8);
+      expect(arr.length).assertEqual(8);
+      expect(arr.byteLength).assertEqual(64);
+      expect(arr.byteOffset).assertEqual(0);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1400
      * @tc.name testBigInt64ArrayConstructorTwo1400
-     * @tc.desc Verify `arr.$_set(0, 5n)` produces a result where `new BigInt64Array(buf, 0, 1).$_get(0)` equals `5n`.
+     * @tc.desc Verify the maximum valid length after a 16-byte offset in a 64-byte buffer.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayConstructorTwo1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(16);
-        let arr = new BigInt64Array(buf, 0, 2);
-        arr.$_set(0, 5n);
-        let view = new BigInt64Array(buf, 0, 1);
-        expect(view.$_get(0)).assertEqual(5n);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1410
-     * @tc.name testBigInt64ArrayConstructorTwo1410
-     * @tc.desc Verify `new BigInt64Array(buf, 8, 0)` produces a result where `arr.length` equals `0`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1410', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(16);
-        let arr = new BigInt64Array(buf, 8, 0);
-        expect(arr.length).assertEqual(0);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1420
-     * @tc.name testBigInt64ArrayConstructorTwo1420
-     * @tc.desc Verify `new BigInt64Array(buf, 8, 0)` produces a result where `arr.byteLength` equals `0`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1420', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(16);
-        let arr = new BigInt64Array(buf, 8, 0);
-        expect(arr.byteLength).assertEqual(0);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1430
-     * @tc.name testBigInt64ArrayConstructorTwo1430
-     * @tc.desc Verify `new BigInt64Array(buf, 8, 1)` produces a result where `arr.length` equals `1`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1430', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(16);
-        let arr = new BigInt64Array(buf, 8, 1);
-        expect(arr.length).assertEqual(1);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1440
-     * @tc.name testBigInt64ArrayConstructorTwo1440
-     * @tc.desc Verify `new BigInt64Array(buf, 8, 1)` produces a result where `arr.byteLength` equals `8`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1440', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(16);
-        let arr = new BigInt64Array(buf, 8, 1);
-        expect(arr.byteLength).assertEqual(8);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1450
-     * @tc.name testBigInt64ArrayConstructorTwo1450
-     * @tc.desc Verify `arr.$_set(0, 5n)` produces a result where `new BigInt64Array(buf, 8, 1).$_get(0)` equals `5n`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1450', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(16);
-        let arr = new BigInt64Array(buf, 8, 1);
-        arr.$_set(0, 5n);
-        let view = new BigInt64Array(buf, 8, 1);
-        expect(view.$_get(0)).assertEqual(5n);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1460
-     * @tc.name testBigInt64ArrayConstructorTwo1460
-     * @tc.desc Verify `new BigInt64Array(buf, 16, 0)` produces a result where `arr.length` equals `0`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1460', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(16);
-        let arr = new BigInt64Array(buf, 16, 0);
-        expect(arr.length).assertEqual(0);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1470
-     * @tc.name testBigInt64ArrayConstructorTwo1470
-     * @tc.desc Verify `new BigInt64Array(buf, 16, 0)` produces a result where `arr.byteLength` equals `0`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1470', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(16);
-        let arr = new BigInt64Array(buf, 16, 0);
-        expect(arr.byteLength).assertEqual(0);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1480
-     * @tc.name testBigInt64ArrayConstructorTwo1480
-     * @tc.desc Verify `new BigInt64Array(buf, 0, 0)` produces a result where `arr.length` equals `0`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1480', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf, 0, 0);
-        expect(arr.length).assertEqual(0);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1490
-     * @tc.name testBigInt64ArrayConstructorTwo1490
-     * @tc.desc Verify `new BigInt64Array(buf, 0, 0)` produces a result where `arr.byteLength` equals `0`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1490', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf, 0, 0);
-        expect(arr.byteLength).assertEqual(0);
-      });
+      let buf = new ArrayBuffer(64);
+      let arr = new BigInt64Array(buf, 16, 6);
+      expect(arr.length).assertEqual(6);
+      expect(arr.byteLength).assertEqual(48);
+      expect(arr.byteOffset).assertEqual(16);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1500
      * @tc.name testBigInt64ArrayConstructorTwo1500
-     * @tc.desc Verify `new BigInt64Array(buf, 0, 1)` produces a result where `arr.length` equals `1`.
+     * @tc.desc Verify an explicit maximum length can cover a complete 128-byte buffer.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayConstructorTwo1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf, 0, 1);
-        expect(arr.length).assertEqual(1);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1510
-     * @tc.name testBigInt64ArrayConstructorTwo1510
-     * @tc.desc Verify `new BigInt64Array(buf, 0, 1)` produces a result where `arr.byteLength` equals `8`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1510', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf, 0, 1);
-        expect(arr.byteLength).assertEqual(8);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1520
-     * @tc.name testBigInt64ArrayConstructorTwo1520
-     * @tc.desc Verify `arr.$_set(0, 5n)` produces a result where `new BigInt64Array(buf, 0, 1).$_get(0)` equals `5n`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1520', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf, 0, 1);
-        arr.$_set(0, 5n);
-        let view = new BigInt64Array(buf, 0, 1);
-        expect(view.$_get(0)).assertEqual(5n);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1530
-     * @tc.name testBigInt64ArrayConstructorTwo1530
-     * @tc.desc Verify `new BigInt64Array(buf, 0, 2)` produces a result where `arr.length` equals `2`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1530', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf, 0, 2);
-        expect(arr.length).assertEqual(2);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1540
-     * @tc.name testBigInt64ArrayConstructorTwo1540
-     * @tc.desc Verify `new BigInt64Array(buf, 0, 2)` produces a result where `arr.byteLength` equals `16`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1540', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf, 0, 2);
-        expect(arr.byteLength).assertEqual(16);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1550
-     * @tc.name testBigInt64ArrayConstructorTwo1550
-     * @tc.desc Verify `arr.$_set(0, 5n)` produces a result where `new BigInt64Array(buf, 0, 1).$_get(0)` equals `5n`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1550', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf, 0, 2);
-        arr.$_set(0, 5n);
-        let view = new BigInt64Array(buf, 0, 1);
-        expect(view.$_get(0)).assertEqual(5n);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1560
-     * @tc.name testBigInt64ArrayConstructorTwo1560
-     * @tc.desc Verify `new BigInt64Array(buf, 0, 3)` produces a result where `arr.length` equals `3`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1560', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf, 0, 3);
-        expect(arr.length).assertEqual(3);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1570
-     * @tc.name testBigInt64ArrayConstructorTwo1570
-     * @tc.desc Verify `new BigInt64Array(buf, 0, 3)` produces a result where `arr.byteLength` equals `24`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1570', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf, 0, 3);
-        expect(arr.byteLength).assertEqual(24);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1580
-     * @tc.name testBigInt64ArrayConstructorTwo1580
-     * @tc.desc Verify `arr.$_set(0, 5n)` produces a result where `new BigInt64Array(buf, 0, 1).$_get(0)` equals `5n`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1580', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf, 0, 3);
-        arr.$_set(0, 5n);
-        let view = new BigInt64Array(buf, 0, 1);
-        expect(view.$_get(0)).assertEqual(5n);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1590
-     * @tc.name testBigInt64ArrayConstructorTwo1590
-     * @tc.desc Verify `new BigInt64Array(buf, 8, 0)` produces a result where `arr.length` equals `0`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1590', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf, 8, 0);
-        expect(arr.length).assertEqual(0);
-      });
+      let buf = new ArrayBuffer(128);
+      let arr = new BigInt64Array(buf, 0, 16);
+      expect(arr.length).assertEqual(16);
+      expect(arr.byteLength).assertEqual(128);
+      expect(arr.byteOffset).assertEqual(0);
+      expect(arr.buffer).assertEqual(buf);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1600
      * @tc.name testBigInt64ArrayConstructorTwo1600
-     * @tc.desc Verify `new BigInt64Array(buf, 8, 0)` produces a result where `arr.byteLength` equals `0`.
+     * @tc.desc Verify the maximum valid length after an 8-byte offset in a 128-byte buffer.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayConstructorTwo1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf, 8, 0);
-        expect(arr.byteLength).assertEqual(0);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1610
-     * @tc.name testBigInt64ArrayConstructorTwo1610
-     * @tc.desc Verify `new BigInt64Array(buf, 8, 1)` produces a result where `arr.length` equals `1`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1610', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf, 8, 1);
-        expect(arr.length).assertEqual(1);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1620
-     * @tc.name testBigInt64ArrayConstructorTwo1620
-     * @tc.desc Verify `new BigInt64Array(buf, 8, 1)` produces a result where `arr.byteLength` equals `8`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1620', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf, 8, 1);
-        expect(arr.byteLength).assertEqual(8);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1630
-     * @tc.name testBigInt64ArrayConstructorTwo1630
-     * @tc.desc Verify `arr.$_set(0, 5n)` produces a result where `new BigInt64Array(buf, 8, 1).$_get(0)` equals `5n`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1630', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf, 8, 1);
-        arr.$_set(0, 5n);
-        let view = new BigInt64Array(buf, 8, 1);
-        expect(view.$_get(0)).assertEqual(5n);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1640
-     * @tc.name testBigInt64ArrayConstructorTwo1640
-     * @tc.desc Verify `new BigInt64Array(buf, 8, 2)` produces a result where `arr.length` equals `2`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1640', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf, 8, 2);
-        expect(arr.length).assertEqual(2);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1650
-     * @tc.name testBigInt64ArrayConstructorTwo1650
-     * @tc.desc Verify `new BigInt64Array(buf, 8, 2)` produces a result where `arr.byteLength` equals `16`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1650', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf, 8, 2);
-        expect(arr.byteLength).assertEqual(16);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1660
-     * @tc.name testBigInt64ArrayConstructorTwo1660
-     * @tc.desc Verify `arr.$_set(0, 5n)` produces a result where `new BigInt64Array(buf, 8, 1).$_get(0)` equals `5n`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1660', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf, 8, 2);
-        arr.$_set(0, 5n);
-        let view = new BigInt64Array(buf, 8, 1);
-        expect(view.$_get(0)).assertEqual(5n);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1670
-     * @tc.name testBigInt64ArrayConstructorTwo1670
-     * @tc.desc Verify `new BigInt64Array(buf, 16, 0)` produces a result where `arr.length` equals `0`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1670', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf, 16, 0);
-        expect(arr.length).assertEqual(0);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1680
-     * @tc.name testBigInt64ArrayConstructorTwo1680
-     * @tc.desc Verify `new BigInt64Array(buf, 16, 0)` produces a result where `arr.byteLength` equals `0`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1680', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf, 16, 0);
-        expect(arr.byteLength).assertEqual(0);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1690
-     * @tc.name testBigInt64ArrayConstructorTwo1690
-     * @tc.desc Verify `new BigInt64Array(buf, 16, 1)` produces a result where `arr.length` equals `1`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1690', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf, 16, 1);
-        expect(arr.length).assertEqual(1);
-      });
+      let buf = new ArrayBuffer(128);
+      let arr = new BigInt64Array(buf, 8, 15);
+      expect(arr.length).assertEqual(15);
+      expect(arr.byteLength).assertEqual(120);
+      expect(arr.byteOffset).assertEqual(8);
+      expect(arr.buffer).assertEqual(buf);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1700
      * @tc.name testBigInt64ArrayConstructorTwo1700
-     * @tc.desc Verify `new BigInt64Array(buf, 16, 1)` produces a result where `arr.byteLength` equals `8`.
+     * @tc.desc Verify the maximum valid length after a 24-byte offset in a 128-byte buffer.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayConstructorTwo1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf, 16, 1);
-        expect(arr.byteLength).assertEqual(8);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1710
-     * @tc.name testBigInt64ArrayConstructorTwo1710
-     * @tc.desc Verify `arr.$_set(0, 5n)` produces a result where `new BigInt64Array(buf, 16, 1).$_get(0)` equals `5n`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1710', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf, 16, 1);
-        arr.$_set(0, 5n);
-        let view = new BigInt64Array(buf, 16, 1);
-        expect(view.$_get(0)).assertEqual(5n);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1720
-     * @tc.name testBigInt64ArrayConstructorTwo1720
-     * @tc.desc Verify `new BigInt64Array(buf, 24, 0)` produces a result where `arr.length` equals `0`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1720', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf, 24, 0);
-        expect(arr.length).assertEqual(0);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1730
-     * @tc.name testBigInt64ArrayConstructorTwo1730
-     * @tc.desc Verify `new BigInt64Array(buf, 24, 0)` produces a result where `arr.byteLength` equals `0`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1730', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(24);
-        let arr = new BigInt64Array(buf, 24, 0);
-        expect(arr.byteLength).assertEqual(0);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1740
-     * @tc.name testBigInt64ArrayConstructorTwo1740
-     * @tc.desc Verify `new BigInt64Array(buf, 0, 0)` produces a result where `arr.length` equals `0`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1740', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(32);
-        let arr = new BigInt64Array(buf, 0, 0);
-        expect(arr.length).assertEqual(0);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1750
-     * @tc.name testBigInt64ArrayConstructorTwo1750
-     * @tc.desc Verify `new BigInt64Array(buf, 0, 0)` produces a result where `arr.byteLength` equals `0`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1750', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(32);
-        let arr = new BigInt64Array(buf, 0, 0);
-        expect(arr.byteLength).assertEqual(0);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1760
-     * @tc.name testBigInt64ArrayConstructorTwo1760
-     * @tc.desc Verify `new BigInt64Array(buf, 0, 1)` produces a result where `arr.length` equals `1`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1760', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(32);
-        let arr = new BigInt64Array(buf, 0, 1);
-        expect(arr.length).assertEqual(1);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1770
-     * @tc.name testBigInt64ArrayConstructorTwo1770
-     * @tc.desc Verify `new BigInt64Array(buf, 0, 1)` produces a result where `arr.byteLength` equals `8`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1770', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(32);
-        let arr = new BigInt64Array(buf, 0, 1);
-        expect(arr.byteLength).assertEqual(8);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1780
-     * @tc.name testBigInt64ArrayConstructorTwo1780
-     * @tc.desc Verify `arr.$_set(0, 5n)` produces a result where `new BigInt64Array(buf, 0, 1).$_get(0)` equals `5n`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1780', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(32);
-        let arr = new BigInt64Array(buf, 0, 1);
-        arr.$_set(0, 5n);
-        let view = new BigInt64Array(buf, 0, 1);
-        expect(view.$_get(0)).assertEqual(5n);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1790
-     * @tc.name testBigInt64ArrayConstructorTwo1790
-     * @tc.desc Verify `new BigInt64Array(buf, 0, 2)` produces a result where `arr.length` equals `2`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1790', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(32);
-        let arr = new BigInt64Array(buf, 0, 2);
-        expect(arr.length).assertEqual(2);
-      });
+      let buf = new ArrayBuffer(128);
+      let arr = new BigInt64Array(buf, 24, 13);
+      expect(arr.length).assertEqual(13);
+      expect(arr.byteLength).assertEqual(104);
+      expect(arr.byteOffset).assertEqual(24);
+      expect(arr.buffer).assertEqual(buf);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1800
      * @tc.name testBigInt64ArrayConstructorTwo1800
-     * @tc.desc Verify `new BigInt64Array(buf, 0, 2)` produces a result where `arr.byteLength` equals `16`.
+     * @tc.desc Verify an explicit maximum length can cover a complete 256-byte buffer.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigInt64ArrayConstructorTwo1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(32);
-        let arr = new BigInt64Array(buf, 0, 2);
-        expect(arr.byteLength).assertEqual(16);
-      });
+      let buf = new ArrayBuffer(256);
+      let arr = new BigInt64Array(buf, 0, 32);
+      expect(arr.length).assertEqual(32);
+      expect(arr.byteLength).assertEqual(256);
+      expect(arr.byteOffset).assertEqual(0);
+      expect(arr.buffer).assertEqual(buf);
+    });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1810
-     * @tc.name testBigInt64ArrayConstructorTwo1810
-     * @tc.desc Verify `arr.$_set(0, 5n)` produces a result where `new BigInt64Array(buf, 0, 1).$_get(0)` equals `5n`.
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1900
+     * @tc.name testBigInt64ArrayConstructorTwo1900
+     * @tc.desc Verify the maximum valid length after an 8-byte offset in a 256-byte buffer.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayConstructorTwo1810', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(32);
-        let arr = new BigInt64Array(buf, 0, 2);
-        arr.$_set(0, 5n);
-        let view = new BigInt64Array(buf, 0, 1);
-        expect(view.$_get(0)).assertEqual(5n);
-      });
+    it('testBigInt64ArrayConstructorTwo1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(256);
+      let arr = new BigInt64Array(buf, 8, 31);
+      expect(arr.length).assertEqual(31);
+      expect(arr.byteLength).assertEqual(248);
+      expect(arr.byteOffset).assertEqual(8);
+      expect(arr.buffer).assertEqual(buf);
+    });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1820
-     * @tc.name testBigInt64ArrayConstructorTwo1820
-     * @tc.desc Verify `new BigInt64Array(buf, 0, 3)` produces a result where `arr.length` equals `3`.
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_2000
+     * @tc.name testBigInt64ArrayConstructorTwo2000
+     * @tc.desc Verify the maximum valid length after a 24-byte offset in a 256-byte buffer.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayConstructorTwo1820', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(32);
-        let arr = new BigInt64Array(buf, 0, 3);
-        expect(arr.length).assertEqual(3);
-      });
+    it('testBigInt64ArrayConstructorTwo2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(256);
+      let arr = new BigInt64Array(buf, 24, 29);
+      expect(arr.length).assertEqual(29);
+      expect(arr.byteLength).assertEqual(232);
+      expect(arr.byteOffset).assertEqual(24);
+      expect(arr.buffer).assertEqual(buf);
+    });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1830
-     * @tc.name testBigInt64ArrayConstructorTwo1830
-     * @tc.desc Verify `new BigInt64Array(buf, 0, 3)` produces a result where `arr.byteLength` equals `24`.
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_2100
+     * @tc.name testBigInt64ArrayConstructorTwo2100
+     * @tc.desc Verify a partial view on a large buffer has the requested size and shares writes.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayConstructorTwo1830', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(32);
-        let arr = new BigInt64Array(buf, 0, 3);
-        expect(arr.byteLength).assertEqual(24);
-      });
+    it('testBigInt64ArrayConstructorTwo2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(1024);
+      let arr = new BigInt64Array(buf, 0, 32);
+      arr.$_set(0, 5n);
+      let view = new BigInt64Array(buf, 0, 1);
+      expect(arr.length).assertEqual(32);
+      expect(arr.byteLength).assertEqual(256);
+      expect(arr.byteOffset).assertEqual(0);
+      expect(view.$_get(0)).assertEqual(5n);
+    });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1840
-     * @tc.name testBigInt64ArrayConstructorTwo1840
-     * @tc.desc Verify `arr.$_set(0, 5n)` produces a result where `new BigInt64Array(buf, 0, 1).$_get(0)` equals `5n`.
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_2200
+     * @tc.name testBigInt64ArrayConstructorTwo2200
+     * @tc.desc Verify a large non-power-of-two length creates the requested partial view.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayConstructorTwo1840', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(32);
-        let arr = new BigInt64Array(buf, 0, 3);
-        arr.$_set(0, 5n);
-        let view = new BigInt64Array(buf, 0, 1);
-        expect(view.$_get(0)).assertEqual(5n);
-      });
+    it('testBigInt64ArrayConstructorTwo2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(1024);
+      let arr = new BigInt64Array(buf, 0, 100);
+      expect(arr.length).assertEqual(100);
+      expect(arr.byteLength).assertEqual(800);
+      expect(arr.byteOffset).assertEqual(0);
+      expect(arr.buffer).assertEqual(buf);
+    });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1850
-     * @tc.name testBigInt64ArrayConstructorTwo1850
-     * @tc.desc Verify `new BigInt64Array(buf, 0, 4)` produces a result where `arr.length` equals `4`.
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_2300
+     * @tc.name testBigInt64ArrayConstructorTwo2300
+     * @tc.desc Verify an explicit maximum length can cover a complete 1024-byte buffer.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayConstructorTwo1850', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(32);
-        let arr = new BigInt64Array(buf, 0, 4);
-        expect(arr.length).assertEqual(4);
-      });
+    it('testBigInt64ArrayConstructorTwo2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(1024);
+      let arr = new BigInt64Array(buf, 0, 128);
+      expect(arr.length).assertEqual(128);
+      expect(arr.byteLength).assertEqual(1024);
+      expect(arr.byteOffset).assertEqual(0);
+      expect(arr.buffer).assertEqual(buf);
+    });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1860
-     * @tc.name testBigInt64ArrayConstructorTwo1860
-     * @tc.desc Verify `new BigInt64Array(buf, 0, 4)` produces a result where `arr.byteLength` equals `32`.
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_2400
+     * @tc.name testBigInt64ArrayConstructorTwo2400
+     * @tc.desc Verify the maximum valid length after an 8-byte offset in a 1024-byte buffer.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigInt64ArrayConstructorTwo1860', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(32);
-        let arr = new BigInt64Array(buf, 0, 4);
-        expect(arr.byteLength).assertEqual(32);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1870
-     * @tc.name testBigInt64ArrayConstructorTwo1870
-     * @tc.desc Verify `arr.$_set(0, 5n)` produces a result where `new BigInt64Array(buf, 0, 1).$_get(0)` equals `5n`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1870', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(32);
-        let arr = new BigInt64Array(buf, 0, 4);
-        arr.$_set(0, 5n);
-        let view = new BigInt64Array(buf, 0, 1);
-        expect(view.$_get(0)).assertEqual(5n);
-      });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIG_INT64_ARRAY_CONSTRUCTOR_TWO_1880
-     * @tc.name testBigInt64ArrayConstructorTwo1880
-     * @tc.desc Verify `new BigInt64Array(buf, 8, 0)` produces a result where `arr.length` equals `0`.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigInt64ArrayConstructorTwo1880', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let buf = new ArrayBuffer(32);
-        let arr = new BigInt64Array(buf, 8, 0);
-        expect(arr.length).assertEqual(0);
-      });
+    it('testBigInt64ArrayConstructorTwo2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buf = new ArrayBuffer(1024);
+      let arr = new BigInt64Array(buf, 8, 127);
+      expect(arr.length).assertEqual(127);
+      expect(arr.byteLength).assertEqual(1016);
+      expect(arr.byteOffset).assertEqual(8);
+      expect(arr.buffer).assertEqual(buf);
+    });
 
   });
 }
