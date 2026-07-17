@@ -20,6 +20,11 @@ import napiCallbackRiskFinalizerTest from './NapiCallbackRisk/NapiCallbackRiskFi
 import napiCallbackRiskAsyncTest from './NapiCallbackRisk/NapiCallbackRiskAsync.test';
 import napiCallbackRiskJsModuleTest from './NapiCallbackRisk/NapiCallbackRiskJsModule.test';
 import napiCallbackRiskNativeBindingTest from './NapiCallbackRisk/NapiCallbackRiskNativeBinding.test';
+import napiSpecDiffBatch1StableTest from './NapiSpecDiff/batch1/NapiSpecDiffBatch1Stable.test';
+import napiSpecDiffBatch2LifecycleTest from './NapiSpecDiff/batch2/NapiSpecDiffBatch2Lifecycle.test';
+import napiSpecDiffBatch3RuntimeSendableTest from './NapiSpecDiff/batch3/NapiSpecDiffBatch3RuntimeSendable.test';
+import napiSpecDiffBatch4StressProbeTest from './NapiSpecDiff/batch4/NapiSpecDiffBatch4StressProbe.test';
+
 
 export default function testsuite() {
   bufferTest();
@@ -31,4 +36,9 @@ export default function testsuite() {
   napiCallbackRiskAsyncTest();
   napiCallbackRiskJsModuleTest();
   napiCallbackRiskNativeBindingTest();
+
+  napiSpecDiffBatch1StableTest();
+  napiSpecDiffBatch2LifecycleTest();
+  napiSpecDiffBatch3RuntimeSendableTest();
+  napiSpecDiffBatch4StressProbeTest();
 }
