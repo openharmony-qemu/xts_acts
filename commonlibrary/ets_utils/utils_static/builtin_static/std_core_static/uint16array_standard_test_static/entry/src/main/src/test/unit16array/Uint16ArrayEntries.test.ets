@@ -105,13 +105,11 @@ export default function uint16ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testUint16ArrayEntries004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      {
         const arr: Uint16Array = new Uint16Array();
         const iter = arr.entries();
         iter.next();
         expect(iter.next().done).assertEqual(true);
         expect(iter.next().done).assertEqual(true);
-      }
     });
 
     /**
