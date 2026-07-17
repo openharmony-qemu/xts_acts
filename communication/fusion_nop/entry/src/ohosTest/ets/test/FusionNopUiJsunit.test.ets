@@ -148,7 +148,7 @@ export default function fusionNopUiJsunit() {
         console.info("[fusion_js] testStartRangingErrcode201 error: " + JSON.stringify(err));
         if (err.code === 801) {
           console.info("设备 is not support.");
-          expect(Number(err.code)).assertEqual(801);
+          expect(err.code).assertEqual(801);
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
@@ -185,7 +185,14 @@ export default function fusionNopUiJsunit() {
       } catch (err) {
         let error: BusinessError = err as BusinessError;
         console.info("[fusion_js] testStopRangingErrcode201 error: " + JSON.stringify(error));
-        expect(error.code).assertEqual(201);
+        if (err.code === 801) {
+          console.info("设备 is not support.");
+          expect(err.code).assertEqual(801);
+          let isSupport: boolean = ranging.isRangingSupported();
+          expect(isSupport).assertFalse();
+        } else {
+          expect(err.code).assertEqual(201);
+        }
         done();
       }
     });
@@ -209,7 +216,7 @@ export default function fusionNopUiJsunit() {
         console.info("[fusion_js] testStartPassiveRangingErrcode201 error: " + JSON.stringify(err));
         if (err.code === 801) {
           console.info("设备 is not support.");
-          expect(Number(err.code)).assertEqual(801);
+          expect(err.code).assertEqual(801);
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
@@ -241,7 +248,7 @@ export default function fusionNopUiJsunit() {
         console.info("[fusion_js] testStopPassiveRangingErrcode201 error: " + JSON.stringify(err));
         if (err.code === 801) {
           console.info("设备 is not support.");
-          expect(Number(err.code)).assertEqual(801);
+          expect(err.code).assertEqual(801);
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
@@ -270,7 +277,7 @@ export default function fusionNopUiJsunit() {
         console.info("[fusion_js] testGetRangingCapabilityErrcode201 error: " + JSON.stringify(err));
         if (err.code === 801) {
           console.info("设备 is not support.");
-          expect(Number(err.code)).assertEqual(801);
+          expect(err.code).assertEqual(801);
           let isSupport: boolean = ranging.isRangingSupported();
           console.info("[fusion_js] isRangingSupported value is: " + JSON.stringify(isSupport));
           expect(isSupport).assertFalse();

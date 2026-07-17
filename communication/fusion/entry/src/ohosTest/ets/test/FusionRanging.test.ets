@@ -63,12 +63,8 @@ export default function RangingTest() {
         console.info("[fusion_js]isRangingSupported value is: " + JSON.stringify(isSupport));
         expect(typeof isSupport).assertEqual("boolean");
       }catch (err){
-        if (err.code === 801) {
-          console.info("设备 is not support.");
-          expect(Number(err.code)).assertEqual(801);
-        }else {
-          expect().assertFail();
-        }
+        console.info("[fusion_js] isRangingSupported error: " + JSON.stringify(err));
+        expect().assertFail();
       }
     });
 
@@ -91,7 +87,7 @@ export default function RangingTest() {
         console.info("[fusion_js] testGetRangingCapabilityParam001 error: " + JSON.stringify(err));
         if (err.code === 801) {
           console.info("设备 is not support.");
-          expect(Number(err.code)).assertEqual(801);
+          expect(err.code).assertEqual(801);
           let isSupport: boolean = ranging.isRangingSupported();
           console.info("[fusion_js] isRangingSupported value is: " + JSON.stringify(isSupport));
           expect(isSupport).assertFalse();
@@ -130,7 +126,7 @@ export default function RangingTest() {
         console.info("[fusion_js] testStartRanging error: " + JSON.stringify(err));
         if (err.code === 801) {
           console.info("设备 is not support.");
-          expect(Number(err.code)).assertEqual(801);
+          expect(err.code).assertEqual(801);
           let isSupport: boolean = ranging.isRangingSupported();
           console.info("[fusion_js] isRangingSupported value is: " + JSON.stringify(isSupport));
           expect(isSupport).assertFalse();
@@ -164,7 +160,7 @@ export default function RangingTest() {
         console.info("[fusion_js] testStartRanging error: " + JSON.stringify(err));
         if (err.code === 801) {
           console.info("设备 is not support.");
-          expect(Number(err.code)).assertEqual(801);
+          expect(err.code).assertEqual(801);
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
@@ -198,7 +194,7 @@ export default function RangingTest() {
         console.info("[fusion_js] testStartRanging error: " + JSON.stringify(err));
         if (err.code === 801) {
           console.info("设备 is not support.");
-          expect(Number(err.code)).assertEqual(801);
+          expect(err.code).assertEqual(801);
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
@@ -236,7 +232,7 @@ export default function RangingTest() {
         console.info("[fusion_js] testStopRangingErrcode34000050 error: " + JSON.stringify(err));
         if (err.code === 801) {
           console.info("设备 is not support.");
-          expect(Number(err.code)).assertEqual(801);
+          expect(err.code).assertEqual(801);
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
@@ -274,7 +270,7 @@ export default function RangingTest() {
         console.info("[fusion_js] testStopRangingErrcode34900054 error: " + JSON.stringify(err));
         if (err.code === 801) {
           console.info("设备 is not support.");
-          expect(Number(err.code)).assertEqual(801);
+          expect(err.code).assertEqual(801);
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
@@ -310,7 +306,7 @@ export default function RangingTest() {
         console.info("[fusion_js] testStopRangingEmptyDeviceId error: " + JSON.stringify(err));
         if (err.code === 801) {
           console.info("设备 is not support.");
-          expect(Number(err.code)).assertEqual(801);
+          expect(err.code).assertEqual(801);
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
@@ -340,7 +336,7 @@ export default function RangingTest() {
         console.info("[fusion_js] testStopRangingParam002 error: " + JSON.stringify(err));
         if (err.code === 801) {
           console.info("设备 is not support.");
-          expect(Number(err.code)).assertEqual(801);
+          expect(err.code).assertEqual(801);
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
@@ -370,7 +366,7 @@ export default function RangingTest() {
         console.info("[fusion_js] testStartPassiveRangingParamEnum002 error: " + JSON.stringify(err));
         if (err.code === 801) {
           console.info("设备 is not support.");
-          expect(Number(err.code)).assertEqual(801);
+          expect(err.code).assertEqual(801);
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
@@ -404,7 +400,7 @@ export default function RangingTest() {
         console.info("[fusion_js] testStopPassiveRangingParamNumber002 error: " + JSON.stringify(err));
         if (err.code === 801) {
           console.info("设备 is not support.");
-          expect(Number(err.code)).assertEqual(801);
+          expect(err.code).assertEqual(801);
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
@@ -431,9 +427,10 @@ export default function RangingTest() {
         });
         console.info("[fusion_js] testOnRangingStateChangeCallback001 success ");
       }catch (err){
+        console.info("[fusion_js] testOnRangingStateChangeCallback001 error: " + JSON.stringify(err));
         if (err.code === 801) {
           console.info("设备 is not support.");
-          expect(Number(err.code)).assertEqual(801);
+          expect(err.code).assertEqual(801);
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
@@ -462,9 +459,10 @@ export default function RangingTest() {
         ranging.offRangingStateChange(callback);
         console.info("[fusion_js] testOffRangingStateChangeParam001 success.");
       }catch(err) {
+        console.info("[fusion_js] testOffRangingStateChangeParam001 error: " + JSON.stringify(err));
         if (err.code === 801) {
           console.info("设备 is not support.");
-          expect(Number(err.code)).assertEqual(801);
+          expect(err.code).assertEqual(801);
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
@@ -496,9 +494,10 @@ export default function RangingTest() {
         ranging.offRangingStateChange();
         console.info("[fusion_js] testOffRangingStateChangeParam002 success.");
       }catch(err){
+        console.info("[fusion_js] testOffRangingStateChangeParam002 error: " + JSON.stringify(err));
         if (err.code === 801) {
           console.info("设备 is not support.");
-          expect(Number(err.code)).assertEqual(801);
+          expect(err.code).assertEqual(801);
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
@@ -531,9 +530,15 @@ export default function RangingTest() {
         expect().assertFail();
         done();
       } catch (err) {
-        let error: BusinessError = err as BusinessError;
-        console.info("[fusion_js] testStartRangingErrcode34900052 error: " + JSON.stringify(error));
-        expect(error.code).assertEqual(34900052);
+        console.info("[fusion_js] testStartRangingErrcode34900052 error: " + JSON.stringify(err));
+        if (err.code === 801) {
+          console.info("设备 is not support.");
+          expect(err.code).assertEqual(801);
+          let isSupport: boolean = ranging.isRangingSupported();
+          expect(isSupport).assertFalse();
+        } else {
+          expect(err.code).assertEqual(34900052);
+        }
         done();
       }
     });
@@ -565,7 +570,7 @@ export default function RangingTest() {
         console.info("[fusion_js] testStartRangingParamEnum002 error: " + JSON.stringify(err));
         if (err.code === 801) {
           console.info("设备 is not support.");
-          expect(Number(err.code)).assertEqual(801);
+          expect(err.code).assertEqual(801);
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
@@ -598,7 +603,7 @@ export default function RangingTest() {
         console.info("[fusion_js] testStartPassiveRangingParam001 error: " + JSON.stringify(err));
         if (err.code === 801) {
           console.info("设备 is not support.");
-          expect(Number(err.code)).assertEqual(801);
+          expect(err.code).assertEqual(801);
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
@@ -630,7 +635,7 @@ export default function RangingTest() {
         console.info("[fusion_js] testStopPassiveRangingParam001 error: " + JSON.stringify(err));
         if (err.code === 801) {
           console.info("设备 is not support.");
-          expect(Number(err.code)).assertEqual(801);
+          expect(err.code).assertEqual(801);
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
@@ -666,7 +671,7 @@ export default function RangingTest() {
         console.info("[fusion_js] testStartRangingParamEnum003 error: " + JSON.stringify(err));
         if (err.code === 801) {
           console.info("设备 is not support.");
-          expect(Number(err.code)).assertEqual(801);
+          expect(err.code).assertEqual(801);
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
@@ -697,7 +702,14 @@ export default function RangingTest() {
       } catch (err) {
         let error: BusinessError = err as BusinessError;
         console.info("[fusion_js] testStopPassiveRangingErrcode34900052 error: " + JSON.stringify(error));
-        expect(error.code).assertEqual(34900052);
+        if (err.code === 801) {
+          console.info("设备 is not support.");
+          expect(err.code).assertEqual(801);
+          let isSupport: boolean = ranging.isRangingSupported();
+          expect(isSupport).assertFalse();
+        } else {
+          expect(error.code).assertEqual(34900052);
+        }
         done();
       }
     });
@@ -729,7 +741,7 @@ export default function RangingTest() {
         console.info("[fusion_js] testStopRangingWrongType error: " + JSON.stringify(err));
         if (err.code === 801) {
           console.info("设备 is not support.");
-          expect(Number(err.code)).assertEqual(801);
+          expect(err.code).assertEqual(801);
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
@@ -765,7 +777,7 @@ export default function RangingTest() {
         console.info("[fusion_js] testStopRangingWrongType error: " + JSON.stringify(err));
         if (err.code === 801) {
           console.info("设备 is not support.");
-          expect(Number(err.code)).assertEqual(801);
+          expect(err.code).assertEqual(801);
           let isSupport: boolean = ranging.isRangingSupported();
           expect(isSupport).assertFalse();
         } else {
