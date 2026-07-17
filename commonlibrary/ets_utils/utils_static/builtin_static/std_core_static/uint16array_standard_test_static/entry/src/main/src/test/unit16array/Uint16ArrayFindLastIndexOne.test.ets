@@ -34,1050 +34,1022 @@ export default function uint16ArrayFindLastIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_0100
-     * @tc.name testUint16ArrayFindLastIndex01_001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0001
+     * @tc.name testUint16ArrayFindLastIndexOne001
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value === 30);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_0200
-     * @tc.name testUint16ArrayFindLastIndex01_002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0002
+     * @tc.name testUint16ArrayFindLastIndexOne002
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 10);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value === 10);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_0300
-     * @tc.name testUint16ArrayFindLastIndex01_003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0003
+     * @tc.name testUint16ArrayFindLastIndexOne003
      * @tc.desc Verify findLastIndex 20
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30, 20, 10);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value === 20);
       expect(result).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_0400
-     * @tc.name testUint16ArrayFindLastIndex01_004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0004
+     * @tc.name testUint16ArrayFindLastIndexOne004
      * @tc.desc Verify findLastIndex 10
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30, 20, 10);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value === 10);
       expect(result).assertEqual(4);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_0500
-     * @tc.name testUint16ArrayFindLastIndex01_005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0005
+     * @tc.name testUint16ArrayFindLastIndexOne005
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30, 20, 10);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value === 30);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_0600
-     * @tc.name testUint16ArrayFindLastIndex01_006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0006
+     * @tc.name testUint16ArrayFindLastIndexOne006
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 10, 10);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value === 10);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_0700
-     * @tc.name testUint16ArrayFindLastIndex01_007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0007
+     * @tc.name testUint16ArrayFindLastIndexOne007
      * @tc.desc Verify findLastIndex -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value === 99);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_0800
-     * @tc.name testUint16ArrayFindLastIndex01_008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0008
+     * @tc.name testUint16ArrayFindLastIndexOne008
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr: Uint16Array = Uint16Array.of(10, 20, 30);
-      let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value !== 10);
-      expect(result).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_0900
-     * @tc.name testUint16ArrayFindLastIndex01_009
-     * @tc.desc Verify findLastIndex
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFindLastIndex01_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr: Uint16Array = Uint16Array.of(10, 20, 30);
-      let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value !== 20);
-      expect(result).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_1000
-     * @tc.name testUint16ArrayFindLastIndex01_010
-     * @tc.desc Verify findLastIndex
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testUint16ArrayFindLastIndex01_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value !== 30);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_1100
-     * @tc.name testUint16ArrayFindLastIndex01_011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0009
+     * @tc.name testUint16ArrayFindLastIndexOne009
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value !== 99);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_1200
-     * @tc.name testUint16ArrayFindLastIndex01_012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0010
+     * @tc.name testUint16ArrayFindLastIndexOne010
      * @tc.desc Verify findLastIndex -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 10, 10);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value !== 10);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_1300
-     * @tc.name testUint16ArrayFindLastIndex01_013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0011
+     * @tc.name testUint16ArrayFindLastIndexOne011
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value === 10 || value === 30);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_1400
-     * @tc.name testUint16ArrayFindLastIndex01_014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0012
+     * @tc.name testUint16ArrayFindLastIndexOne012
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value > 25);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_1500
-     * @tc.name testUint16ArrayFindLastIndex01_015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0013
+     * @tc.name testUint16ArrayFindLastIndexOne013
      * @tc.desc Verify findLastIndex -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value > 30);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_1600
-     * @tc.name testUint16ArrayFindLastIndex01_016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0014
+     * @tc.name testUint16ArrayFindLastIndexOne014
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value < 15);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_1700
-     * @tc.name testUint16ArrayFindLastIndex01_017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0015
+     * @tc.name testUint16ArrayFindLastIndexOne015
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value < 25);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_1800
-     * @tc.name testUint16ArrayFindLastIndex01_018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0016
+     * @tc.name testUint16ArrayFindLastIndexOne016
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value < 35);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_1900
-     * @tc.name testUint16ArrayFindLastIndex01_019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0017
+     * @tc.name testUint16ArrayFindLastIndexOne017
      * @tc.desc Verify findLastIndex -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value < 10);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_2000
-     * @tc.name testUint16ArrayFindLastIndex01_020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0018
+     * @tc.name testUint16ArrayFindLastIndexOne018
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value >= 20);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_2100
-     * @tc.name testUint16ArrayFindLastIndex01_021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0019
+     * @tc.name testUint16ArrayFindLastIndexOne019
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value >= 30);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_2200
-     * @tc.name testUint16ArrayFindLastIndex01_022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0020
+     * @tc.name testUint16ArrayFindLastIndexOne020
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value <= 10);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_2300
-     * @tc.name testUint16ArrayFindLastIndex01_023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0021
+     * @tc.name testUint16ArrayFindLastIndexOne021
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value <= 20);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_2400
-     * @tc.name testUint16ArrayFindLastIndex01_024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0022
+     * @tc.name testUint16ArrayFindLastIndexOne022
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value > 10 && value < 30);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_2500
-     * @tc.name testUint16ArrayFindLastIndex01_025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0023
+     * @tc.name testUint16ArrayFindLastIndexOne023
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value >= 15 && value <= 25);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_2600
-     * @tc.name testUint16ArrayFindLastIndex01_026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0024
+     * @tc.name testUint16ArrayFindLastIndexOne024
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(5, 15, 25);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value > 10 && value < 20);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_2700
-     * @tc.name testUint16ArrayFindLastIndex01_027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0025
+     * @tc.name testUint16ArrayFindLastIndexOne025
      * @tc.desc Verify findLastIndex 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(0, 1, 2);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value === 0);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_2800
-     * @tc.name testUint16ArrayFindLastIndex01_028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0026
+     * @tc.name testUint16ArrayFindLastIndexOne026
      * @tc.desc Verify findLastIndex 65535
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(0, 65535, 32768);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value === 65535);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_2900
-     * @tc.name testUint16ArrayFindLastIndex01_029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0027
+     * @tc.name testUint16ArrayFindLastIndexOne027
      * @tc.desc Verify findLastIndex 32768
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(0, 65535, 32768);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value === 32768);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_3000
-     * @tc.name testUint16ArrayFindLastIndex01_030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0028
+     * @tc.name testUint16ArrayFindLastIndexOne028
      * @tc.desc Verify findLastIndex 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(0, 65535, 32768);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value === 0);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_3100
-     * @tc.name testUint16ArrayFindLastIndex01_031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0029
+     * @tc.name testUint16ArrayFindLastIndexOne029
      * @tc.desc Verify findLastIndex 65535
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(0, 65535, 65535);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value === 65535);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_3200
-     * @tc.name testUint16ArrayFindLastIndex01_032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0030
+     * @tc.name testUint16ArrayFindLastIndexOne030
      * @tc.desc Verify findLastIndex 0 65535
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(65535, 0, 65535);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value === 0);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_3300
-     * @tc.name testUint16ArrayFindLastIndex01_033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0031
+     * @tc.name testUint16ArrayFindLastIndexOne031
      * @tc.desc Verify findLastIndex 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(0, 0, 0);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value === 0);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_3400
-     * @tc.name testUint16ArrayFindLastIndex01_034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0032
+     * @tc.name testUint16ArrayFindLastIndexOne032
      * @tc.desc Verify findLastIndex 65535
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(65535, 65535, 65535);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value === 65535);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_3500
-     * @tc.name testUint16ArrayFindLastIndex01_035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0033
+     * @tc.name testUint16ArrayFindLastIndexOne033
      * @tc.desc Verify findLastIndex 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(1, 2, 3);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value > 0);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_3600
-     * @tc.name testUint16ArrayFindLastIndex01_036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0034
+     * @tc.name testUint16ArrayFindLastIndexOne034
      * @tc.desc Verify findLastIndex 0 -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(0, 0, 0);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value > 0);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_3700
-     * @tc.name testUint16ArrayFindLastIndex01_037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0035
+     * @tc.name testUint16ArrayFindLastIndexOne035
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(0, 65535, 0);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value !== 0);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_3800
-     * @tc.name testUint16ArrayFindLastIndex01_038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0036
+     * @tc.name testUint16ArrayFindLastIndexOne036
      * @tc.desc Verify findLastIndex 32768
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(0, 65535, 32768);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value >= 32768);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_3900
-     * @tc.name testUint16ArrayFindLastIndex01_039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0037
+     * @tc.name testUint16ArrayFindLastIndexOne037
      * @tc.desc Verify findLastIndex 32768
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(0, 65535, 32768);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value <= 32768);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_4000
-     * @tc.name testUint16ArrayFindLastIndex01_040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0038
+     * @tc.name testUint16ArrayFindLastIndexOne038
      * @tc.desc Verify findLastIndex 65535 -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(0, 65535, 32768);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value > 65535);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_4100
-     * @tc.name testUint16ArrayFindLastIndex01_041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0039
+     * @tc.name testUint16ArrayFindLastIndexOne039
      * @tc.desc Verify findLastIndex 0 -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(0, 65535, 32768);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value < 0);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_4200
-     * @tc.name testUint16ArrayFindLastIndex01_042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0040
+     * @tc.name testUint16ArrayFindLastIndexOne040
      * @tc.desc Verify findLastIndex 2 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => index === 2);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_4300
-     * @tc.name testUint16ArrayFindLastIndex01_043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0041
+     * @tc.name testUint16ArrayFindLastIndexOne041
      * @tc.desc Verify findLastIndex -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => index === 5);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_4400
-     * @tc.name testUint16ArrayFindLastIndex01_044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0042
+     * @tc.name testUint16ArrayFindLastIndexOne042
      * @tc.desc Verify findLastIndex 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => index > 0);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_4500
-     * @tc.name testUint16ArrayFindLastIndex01_045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0043
+     * @tc.name testUint16ArrayFindLastIndexOne043
      * @tc.desc Verify findLastIndex 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => index < 2);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_4600
-     * @tc.name testUint16ArrayFindLastIndex01_046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0044
+     * @tc.name testUint16ArrayFindLastIndexOne044
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30, 40);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => index % 2 === 0);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_4700
-     * @tc.name testUint16ArrayFindLastIndex01_047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0045
+     * @tc.name testUint16ArrayFindLastIndexOne045
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30, 40);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => index % 2 !== 0);
       expect(result).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_4800
-     * @tc.name testUint16ArrayFindLastIndex01_048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0046
+     * @tc.name testUint16ArrayFindLastIndexOne046
      * @tc.desc Verify findLastIndex 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => index >= 0);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_4900
-     * @tc.name testUint16ArrayFindLastIndex01_049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0047
+     * @tc.name testUint16ArrayFindLastIndexOne047
      * @tc.desc Verify findLastIndex 0 -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => index < 0);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_5000
-     * @tc.name testUint16ArrayFindLastIndex01_050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0048
+     * @tc.name testUint16ArrayFindLastIndexOne048
      * @tc.desc Verify findLastIndex array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => array.length === 3);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_5100
-     * @tc.name testUint16ArrayFindLastIndex01_051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0049
+     * @tc.name testUint16ArrayFindLastIndexOne049
      * @tc.desc Verify findLastIndex array -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => array.length < 2);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_5200
-     * @tc.name testUint16ArrayFindLastIndex01_052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0050
+     * @tc.name testUint16ArrayFindLastIndexOne050
      * @tc.desc Verify findLastIndex array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => array[0] === value);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_5300
-     * @tc.name testUint16ArrayFindLastIndex01_053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0051
+     * @tc.name testUint16ArrayFindLastIndexOne051
      * @tc.desc Verify findLastIndex array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => array[0] < value);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_5400
-     * @tc.name testUint16ArrayFindLastIndex01_054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0052
+     * @tc.name testUint16ArrayFindLastIndexOne052
      * @tc.desc Verify findLastIndex array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => array[1] > value);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_5500
-     * @tc.name testUint16ArrayFindLastIndex01_055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0053
+     * @tc.name testUint16ArrayFindLastIndexOne053
      * @tc.desc Verify findLastIndex array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => array[index] === value);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_5600
-     * @tc.name testUint16ArrayFindLastIndex01_056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0054
+     * @tc.name testUint16ArrayFindLastIndexOne054
      * @tc.desc Verify findLastIndex array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => array[0] + array[1] === value);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_5700
-     * @tc.name testUint16ArrayFindLastIndex01_057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0055
+     * @tc.name testUint16ArrayFindLastIndexOne055
      * @tc.desc Verify findLastIndex array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => array[1] + array[2] === value + 20);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_5800
-     * @tc.name testUint16ArrayFindLastIndex01_058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0056
+     * @tc.name testUint16ArrayFindLastIndexOne056
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(2, 4, 6);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value % 2 === 0);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_5900
-     * @tc.name testUint16ArrayFindLastIndex01_059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0057
+     * @tc.name testUint16ArrayFindLastIndexOne057
      * @tc.desc Verify findLastIndex -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(1, 3, 5);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value % 2 === 0);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_6000
-     * @tc.name testUint16ArrayFindLastIndex01_060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0058
+     * @tc.name testUint16ArrayFindLastIndexOne058
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(1, 2, 3);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value % 2 !== 0);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_6100
-     * @tc.name testUint16ArrayFindLastIndex01_061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0059
+     * @tc.name testUint16ArrayFindLastIndexOne059
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(1, 2, 3);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value % 2 === 0);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_6200
-     * @tc.name testUint16ArrayFindLastIndex01_062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0060
+     * @tc.name testUint16ArrayFindLastIndexOne060
      * @tc.desc Verify findLastIndex 5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(5, 10, 15);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value % 5 === 0);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_6300
-     * @tc.name testUint16ArrayFindLastIndex01_063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0061
+     * @tc.name testUint16ArrayFindLastIndexOne061
      * @tc.desc Verify findLastIndex 3 6
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(6, 12, 18);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value % 3 === 0 && value % 6 === 0);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_6400
-     * @tc.name testUint16ArrayFindLastIndex01_064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0062
+     * @tc.name testUint16ArrayFindLastIndexOne062
      * @tc.desc Verify findLastIndex 10 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 21, 32);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value % 10 === 2);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_6500
-     * @tc.name testUint16ArrayFindLastIndex01_065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0063
+     * @tc.name testUint16ArrayFindLastIndexOne063
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value / 10 === 3);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_6600
-     * @tc.name testUint16ArrayFindLastIndex01_066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0064
+     * @tc.name testUint16ArrayFindLastIndexOne064
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => true);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_6700
-     * @tc.name testUint16ArrayFindLastIndex01_067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0065
+     * @tc.name testUint16ArrayFindLastIndexOne065
      * @tc.desc Verify findLastIndex -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10, 20, 30);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => false);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_6800
-     * @tc.name testUint16ArrayFindLastIndex01_068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0066
+     * @tc.name testUint16ArrayFindLastIndexOne066
      * @tc.desc Verify findLastIndex -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = new Uint16Array();
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value === 1);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_6900
-     * @tc.name testUint16ArrayFindLastIndex01_069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0067
+     * @tc.name testUint16ArrayFindLastIndexOne067
      * @tc.desc Verify findLastIndex 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value === 10);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_7000
-     * @tc.name testUint16ArrayFindLastIndex01_070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0068
+     * @tc.name testUint16ArrayFindLastIndexOne068
      * @tc.desc Verify findLastIndex -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(10);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value === 5);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_7100
-     * @tc.name testUint16ArrayFindLastIndex01_071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0069
+     * @tc.name testUint16ArrayFindLastIndexOne069
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(1, 2);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value === 2);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_7200
-     * @tc.name testUint16ArrayFindLastIndex01_072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0070
+     * @tc.name testUint16ArrayFindLastIndexOne070
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(1, 2, 3, 4, 5);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value === 5);
       expect(result).assertEqual(4);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_7300
-     * @tc.name testUint16ArrayFindLastIndex01_073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0071
+     * @tc.name testUint16ArrayFindLastIndexOne071
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(1, 2, 3, 4, 5);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value > 3);
       expect(result).assertEqual(4);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_7400
-     * @tc.name testUint16ArrayFindLastIndex01_074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0072
+     * @tc.name testUint16ArrayFindLastIndexOne072
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value === 10);
       expect(result).assertEqual(9);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDLASTINDEX01_7500
-     * @tc.name testUint16ArrayFindLastIndex01_075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_LAST_INDEX_ONE_0073
+     * @tc.name testUint16ArrayFindLastIndexOne073
      * @tc.desc Verify findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindLastIndex01_075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindLastIndexOne073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr: Uint16Array = Uint16Array.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
       let result: int = arr.findLastIndex((value: number, index: int, array: Uint16Array): boolean => value > 8);
       expect(result).assertEqual(9);

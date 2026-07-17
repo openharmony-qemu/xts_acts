@@ -35,14 +35,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_0100
-     * @tc.name testUint16ArrayFindIndex01_001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_0100
+     * @tc.name testUint16ArrayFindIndexOne001
      * @tc.desc Verify value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(10, 20, 30);
       let captured: number = 0;
       arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
@@ -56,14 +56,14 @@ export default function uint16ArrayFindIndex01Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_0200
-     * @tc.name testUint16ArrayFindIndex01_002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_0200
+     * @tc.name testUint16ArrayFindIndexOne002
      * @tc.desc Verify value index array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(5, 10, 15);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value > 7;
@@ -72,14 +72,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_0300
-     * @tc.name testUint16ArrayFindIndex01_003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_0300
+     * @tc.name testUint16ArrayFindIndexOne003
      * @tc.desc Verify index 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(5, 10);
       let firstIndex: int = -1;
       arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
@@ -90,14 +90,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_0400
-     * @tc.name testUint16ArrayFindIndex01_004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_0400
+     * @tc.name testUint16ArrayFindIndexOne004
      * @tc.desc Verify index 0,1,2,...
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(5, 10, 15);
       const indices: Array<int> = [];
       arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
@@ -111,14 +111,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_0500
-     * @tc.name testUint16ArrayFindIndex01_005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_0500
+     * @tc.name testUint16ArrayFindIndexOne005
      * @tc.desc Verify index value array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(100, 200, 300);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return index === 2;
@@ -127,14 +127,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_0600
-     * @tc.name testUint16ArrayFindIndex01_006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_0600
+     * @tc.name testUint16ArrayFindIndexOne006
      * @tc.desc Verify array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(5, 10);
       let capturedArr: Uint16Array = Uint16Array.of();
       let callCount: int = 0;
@@ -149,14 +149,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_0700
-     * @tc.name testUint16ArrayFindIndex01_007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_0700
+     * @tc.name testUint16ArrayFindIndexOne007
      * @tc.desc Verify array length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 2, 3, 4);
       let arrLen: int = 0;
       arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
@@ -167,14 +167,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_0800
-     * @tc.name testUint16ArrayFindIndex01_008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_0800
+     * @tc.name testUint16ArrayFindIndexOne008
      * @tc.desc Verify array value index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 2, 3);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return array.length === 3;
@@ -183,14 +183,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_0900
-     * @tc.name testUint16ArrayFindIndex01_009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_0900
+     * @tc.name testUint16ArrayFindIndexOne009
      * @tc.desc Verify value/index/array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(42, 99);
       let ok: boolean = false;
       arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
@@ -201,14 +201,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_1000
-     * @tc.name testUint16ArrayFindIndex01_010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_1000
+     * @tc.name testUint16ArrayFindIndexOne010
      * @tc.desc Verify callback values match array elements at each index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(10, 20, 30);
       let allCorrect: boolean = true;
       let callCount: int = 0;
@@ -223,14 +223,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_1100
-     * @tc.name testUint16ArrayFindIndex01_011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_1100
+     * @tc.name testUint16ArrayFindIndexOne011
      * @tc.desc Verify (index 0) 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(10, 20, 30);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value > 5;
@@ -239,14 +239,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_1200
-     * @tc.name testUint16ArrayFindIndex01_012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_1200
+     * @tc.name testUint16ArrayFindIndexOne012
      * @tc.desc Verify (index 1)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(0, 5, 5);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value === 5;
@@ -255,14 +255,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_1300
-     * @tc.name testUint16ArrayFindIndex01_013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_1300
+     * @tc.name testUint16ArrayFindIndexOne013
      * @tc.desc Verify -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 2, 3);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value > 100;
@@ -271,14 +271,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_1400
-     * @tc.name testUint16ArrayFindIndex01_014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_1400
+     * @tc.name testUint16ArrayFindIndexOne014
      * @tc.desc Verify -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(5);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value === 10;
@@ -287,14 +287,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_1500
-     * @tc.name testUint16ArrayFindIndex01_015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_1500
+     * @tc.name testUint16ArrayFindIndexOne015
      * @tc.desc Verify -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(10, 20, 30);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value < 5;
@@ -303,14 +303,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_1600
-     * @tc.name testUint16ArrayFindIndex01_016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_1600
+     * @tc.name testUint16ArrayFindIndexOne016
      * @tc.desc Verify new Uint16Array(0) -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array(0);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return true;
@@ -321,14 +321,14 @@ export default function uint16ArrayFindIndex01Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_1700
-     * @tc.name testUint16ArrayFindIndex01_017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_1700
+     * @tc.name testUint16ArrayFindIndexOne017
      * @tc.desc Verify 0, value===0 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(0, 1);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value === 0;
@@ -337,14 +337,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_1800
-     * @tc.name testUint16ArrayFindIndex01_018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_1800
+     * @tc.name testUint16ArrayFindIndexOne018
      * @tc.desc Verify 65535, value===65535 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(65535, 0);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value === 65535;
@@ -353,14 +353,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_1900
-     * @tc.name testUint16ArrayFindIndex01_019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_1900
+     * @tc.name testUint16ArrayFindIndexOne019
      * @tc.desc Verify 32768, value===32768 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(32768);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value === 32768;
@@ -369,14 +369,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_2000
-     * @tc.name testUint16ArrayFindIndex01_020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_2000
+     * @tc.name testUint16ArrayFindIndexOne020
      * @tc.desc Verify 0 65535, value===65535 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(0, 65535);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value === 65535;
@@ -385,14 +385,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_2100
-     * @tc.name testUint16ArrayFindIndex01_021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_2100
+     * @tc.name testUint16ArrayFindIndexOne021
      * @tc.desc Verify 3.14 3, value===3 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array(1);
       arr[0] = 3.14;
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
@@ -402,14 +402,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_2200
-     * @tc.name testUint16ArrayFindIndex01_022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_2200
+     * @tc.name testUint16ArrayFindIndexOne022
      * @tc.desc Verify 65535.9 65535, value===65535 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array(1);
       arr[0] = 65535.9;
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
@@ -419,28 +419,28 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_2300
-     * @tc.name testUint16ArrayFindIndex01_023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_2300
+     * @tc.name testUint16ArrayFindIndexOne023
      * @tc.desc Verify concise predicate returns index 1 for first value greater than 15
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(10, 20, 30);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => value > 15);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_2400
-     * @tc.name testUint16ArrayFindIndex01_024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_2400
+     * @tc.name testUint16ArrayFindIndexOne024
      * @tc.desc Verify lambda
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 2, 3);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value % 2 === 0;
@@ -449,28 +449,28 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_2500
-     * @tc.name testUint16ArrayFindIndex01_025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_2500
+     * @tc.name testUint16ArrayFindIndexOne025
      * @tc.desc Verify value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 2, 3);
       const result: int = arr.findIndex((value: number): boolean => value > 1);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_2600
-     * @tc.name testUint16ArrayFindIndex01_026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_2600
+     * @tc.name testUint16ArrayFindIndexOne026
      * @tc.desc Verify value > threshold
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(5, 10, 15);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value > 12;
@@ -479,14 +479,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_2700
-     * @tc.name testUint16ArrayFindIndex01_027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_2700
+     * @tc.name testUint16ArrayFindIndexOne027
      * @tc.desc Verify value < threshold
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(10, 5, 1);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value < 6;
@@ -495,14 +495,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_2800
-     * @tc.name testUint16ArrayFindIndex01_028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_2800
+     * @tc.name testUint16ArrayFindIndexOne028
      * @tc.desc Verify value >= threshold
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 5, 10);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value >= 5;
@@ -511,14 +511,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_2900
-     * @tc.name testUint16ArrayFindIndex01_029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_2900
+     * @tc.name testUint16ArrayFindIndexOne029
      * @tc.desc Verify value <= threshold
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(10, 5, 1);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value <= 5;
@@ -527,14 +527,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_3000
-     * @tc.name testUint16ArrayFindIndex01_030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_3000
+     * @tc.name testUint16ArrayFindIndexOne030
      * @tc.desc Verify value !== threshold
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(5, 5, 10);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value !== 5;
@@ -543,14 +543,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_3100
-     * @tc.name testUint16ArrayFindIndex01_031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_3100
+     * @tc.name testUint16ArrayFindIndexOne031
      * @tc.desc Verify value === threshold
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(0, 100, 200);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value === 100;
@@ -559,14 +559,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_3200
-     * @tc.name testUint16ArrayFindIndex01_032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_3200
+     * @tc.name testUint16ArrayFindIndexOne032
      * @tc.desc Verify index === n
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(10, 20, 30, 40);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return index === 2;
@@ -575,14 +575,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_3300
-     * @tc.name testUint16ArrayFindIndex01_033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_3300
+     * @tc.name testUint16ArrayFindIndexOne033
      * @tc.desc Verify index >= n
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(10, 20, 30, 40);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return index >= 2;
@@ -591,14 +591,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_3400
-     * @tc.name testUint16ArrayFindIndex01_034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_3400
+     * @tc.name testUint16ArrayFindIndexOne034
      * @tc.desc Verify index === 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(10, 20, 30);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return index === 0;
@@ -607,14 +607,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_3500
-     * @tc.name testUint16ArrayFindIndex01_035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_3500
+     * @tc.name testUint16ArrayFindIndexOne035
      * @tc.desc Verify value % 2 === 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 3, 4, 7);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value % 2 === 0;
@@ -623,14 +623,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_3600
-     * @tc.name testUint16ArrayFindIndex01_036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_3600
+     * @tc.name testUint16ArrayFindIndexOne036
      * @tc.desc Verify value % 2 === 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(2, 4, 5, 8);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value % 2 === 1;
@@ -639,14 +639,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_3700
-     * @tc.name testUint16ArrayFindIndex01_037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_3700
+     * @tc.name testUint16ArrayFindIndexOne037
      * @tc.desc Verify index % 2 === 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(10, 20, 30, 40);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return index % 2 === 0;
@@ -655,14 +655,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_3800
-     * @tc.name testUint16ArrayFindIndex01_038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_3800
+     * @tc.name testUint16ArrayFindIndexOne038
      * @tc.desc Verify value > 0 && value < 100
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(0, 50, 200);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value > 0 && value < 100;
@@ -671,14 +671,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_3900
-     * @tc.name testUint16ArrayFindIndex01_039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_3900
+     * @tc.name testUint16ArrayFindIndexOne039
      * @tc.desc Verify index > 0 && value > 32768
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(100, 50000, 60000);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return index > 0 && value > 32768;
@@ -687,14 +687,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_4000
-     * @tc.name testUint16ArrayFindIndex01_040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_4000
+     * @tc.name testUint16ArrayFindIndexOne040
      * @tc.desc Verify value === 0 || value === 65535
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(100, 65535, 0);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value === 0 || value === 65535;
@@ -703,14 +703,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_4100
-     * @tc.name testUint16ArrayFindIndex01_041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_4100
+     * @tc.name testUint16ArrayFindIndexOne041
      * @tc.desc Verify 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 2);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value === 2;
@@ -719,14 +719,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_4200
-     * @tc.name testUint16ArrayFindIndex01_042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_4200
+     * @tc.name testUint16ArrayFindIndexOne042
      * @tc.desc Verify 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 2, 3);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value === 3;
@@ -735,14 +735,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_4300
-     * @tc.name testUint16ArrayFindIndex01_043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_4300
+     * @tc.name testUint16ArrayFindIndexOne043
      * @tc.desc Verify 10
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(99, 0, 0, 0, 0, 0, 0, 0, 0, 0);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value === 99;
@@ -751,14 +751,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_4400
-     * @tc.name testUint16ArrayFindIndex01_044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_4400
+     * @tc.name testUint16ArrayFindIndexOne044
      * @tc.desc Verify 10
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(0, 0, 0, 0, 0, 0, 0, 0, 0, 99);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value === 99;
@@ -767,14 +767,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_4500
-     * @tc.name testUint16ArrayFindIndex01_045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_4500
+     * @tc.name testUint16ArrayFindIndexOne045
      * @tc.desc Verify 10
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value > 100;
@@ -783,14 +783,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_4600
-     * @tc.name testUint16ArrayFindIndex01_046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_4600
+     * @tc.name testUint16ArrayFindIndexOne046
      * @tc.desc Verify 100
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array(100);
       arr[0] = 42;
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
@@ -802,14 +802,14 @@ export default function uint16ArrayFindIndex01Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_4700
-     * @tc.name testUint16ArrayFindIndex01_047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_4700
+     * @tc.name testUint16ArrayFindIndexOne047
      * @tc.desc Verify 100
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array(100);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value === 999;
@@ -818,14 +818,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_4800
-     * @tc.name testUint16ArrayFindIndex01_048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_4800
+     * @tc.name testUint16ArrayFindIndexOne048
      * @tc.desc Verify 5, ===5 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(5, 5, 5, 5);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value === 5;
@@ -834,14 +834,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_4900
-     * @tc.name testUint16ArrayFindIndex01_049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_4900
+     * @tc.name testUint16ArrayFindIndexOne049
      * @tc.desc Verify 5, ===6 -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(5, 5, 5, 5);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value === 6;
@@ -850,14 +850,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_5000
-     * @tc.name testUint16ArrayFindIndex01_050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_5000
+     * @tc.name testUint16ArrayFindIndexOne050
      * @tc.desc Verify 0, ===0 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(0, 0, 0);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value === 0;
@@ -866,14 +866,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_5100
-     * @tc.name testUint16ArrayFindIndex01_051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_5100
+     * @tc.name testUint16ArrayFindIndexOne051
      * @tc.desc Verify 65535, ===65535 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(65535, 65535);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value === 65535;
@@ -882,14 +882,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_5200
-     * @tc.name testUint16ArrayFindIndex01_052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_5200
+     * @tc.name testUint16ArrayFindIndexOne052
      * @tc.desc Verify -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(7, 7, 7, 7);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value !== 7;
@@ -898,14 +898,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_5300
-     * @tc.name testUint16ArrayFindIndex01_053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_5300
+     * @tc.name testUint16ArrayFindIndexOne053
      * @tc.desc Verify Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 2, 3);
       try {
         arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
@@ -921,14 +921,14 @@ export default function uint16ArrayFindIndex01Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_5400
-     * @tc.name testUint16ArrayFindIndex01_054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_5400
+     * @tc.name testUint16ArrayFindIndexOne054
      * @tc.desc Verify callback mutation changes the first array element to 99
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(10, 20, 30);
       arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         if (index === 0) {
@@ -940,14 +940,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_5500
-     * @tc.name testUint16ArrayFindIndex01_055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_5500
+     * @tc.name testUint16ArrayFindIndexOne055
      * @tc.desc Verify predicate visits all elements and accumulates a sum of 6 when no value matches
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 2, 3);
       let sum: number = 0;
       arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
@@ -958,14 +958,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_5600
-     * @tc.name testUint16ArrayFindIndex01_056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_5600
+     * @tc.name testUint16ArrayFindIndexOne056
      * @tc.desc Verify predicate captures threshold 2 and returns index 2 for the first greater value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 2, 3, 4);
       let threshold: int = 2;
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
@@ -975,14 +975,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_5700
-     * @tc.name testUint16ArrayFindIndex01_057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_5700
+     * @tc.name testUint16ArrayFindIndexOne057
      * @tc.desc Verify callback can mutate the next array element to 99
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 2, 3);
       arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         if (index === 0) {
@@ -994,14 +994,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_5800
-     * @tc.name testUint16ArrayFindIndex01_058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_5800
+     * @tc.name testUint16ArrayFindIndexOne058
      * @tc.desc Verify predicate is called three times before value 3 matches
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 2, 3, 4, 5);
       let callCount: int = 0;
       arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
@@ -1012,14 +1012,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_5900
-     * @tc.name testUint16ArrayFindIndex01_059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_5900
+     * @tc.name testUint16ArrayFindIndexOne059
      * @tc.desc Verify predicate is called for all three elements when no value matches
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 2, 3);
       let callCount: int = 0;
       arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
@@ -1030,14 +1030,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_6000
-     * @tc.name testUint16ArrayFindIndex01_060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_6000
+     * @tc.name testUint16ArrayFindIndexOne060
      * @tc.desc Verify index 0 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 2, 3);
       let callCount: int = 0;
       arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
@@ -1048,14 +1048,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_6100
-     * @tc.name testUint16ArrayFindIndex01_061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_6100
+     * @tc.name testUint16ArrayFindIndexOne061
      * @tc.desc Verify subarray findIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(10, 20, 30, 40);
       const view = arr.subarray(1, 3);
       const result: int = view.findIndex((value: number, index: int, array: Uint16Array): boolean => {
@@ -1065,14 +1065,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_6200
-     * @tc.name testUint16ArrayFindIndex01_062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_6200
+     * @tc.name testUint16ArrayFindIndexOne062
      * @tc.desc Verify buffer findIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const buf = new ArrayBuffer(8);
       const arr = new Uint16Array(buf);
       arr[0] = 100;
@@ -1086,14 +1086,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_6300
-     * @tc.name testUint16ArrayFindIndex01_063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_6300
+     * @tc.name testUint16ArrayFindIndexOne063
      * @tc.desc Verify subarray 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(10, 20, 30, 40);
       const view = arr.subarray(2);
       const result: int = view.findIndex((value: number, index: int, array: Uint16Array): boolean => {
@@ -1103,14 +1103,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_6400
-     * @tc.name testUint16ArrayFindIndex01_064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_6400
+     * @tc.name testUint16ArrayFindIndexOne064
      * @tc.desc Verify fill findIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array(5);
       arr.fill(42);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
@@ -1120,14 +1120,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_6500
-     * @tc.name testUint16ArrayFindIndex01_065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_6500
+     * @tc.name testUint16ArrayFindIndexOne065
      * @tc.desc Verify set findIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array(3);
       arr.set([10, 20, 30] as FixedArray<int>, 0);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
@@ -1137,14 +1137,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_6600
-     * @tc.name testUint16ArrayFindIndex01_066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_6600
+     * @tc.name testUint16ArrayFindIndexOne066
      * @tc.desc Verify reverse findIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(10, 20, 30);
       arr.reverse();
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
@@ -1154,14 +1154,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_6700
-     * @tc.name testUint16ArrayFindIndex01_067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_6700
+     * @tc.name testUint16ArrayFindIndexOne067
      * @tc.desc Verify sort findIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(30, 10, 20);
       arr.sort();
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
@@ -1171,14 +1171,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_6800
-     * @tc.name testUint16ArrayFindIndex01_068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_6800
+     * @tc.name testUint16ArrayFindIndexOne068
      * @tc.desc Verify copyWithin findIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 2, 3, 4);
       arr.copyWithin(0, 2, 4);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
@@ -1188,14 +1188,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_6900
-     * @tc.name testUint16ArrayFindIndex01_069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_6900
+     * @tc.name testUint16ArrayFindIndexOne069
      * @tc.desc Verify filter findIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 2, 3, 4, 5);
       const filtered = arr.filter((value: number, index: int, array: Uint16Array): boolean => {
         return value > 2;
@@ -1207,14 +1207,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_7000
-     * @tc.name testUint16ArrayFindIndex01_070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_7000
+     * @tc.name testUint16ArrayFindIndexOne070
      * @tc.desc Verify map findIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 2, 3);
       const mapped = arr.map((value: number, index: int, array: Uint16Array): number => {
         return value * 10;
@@ -1226,14 +1226,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_7100
-     * @tc.name testUint16ArrayFindIndex01_071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_7100
+     * @tc.name testUint16ArrayFindIndexOne071
      * @tc.desc Verify slice findIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(10, 20, 30, 40, 50);
       const sliced = arr.slice(1, 4);
       const result: int = sliced.findIndex((value: number, index: int, array: Uint16Array): boolean => {
@@ -1245,14 +1245,14 @@ export default function uint16ArrayFindIndex01Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_7200
-     * @tc.name testUint16ArrayFindIndex01_072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_7200
+     * @tc.name testUint16ArrayFindIndexOne072
      * @tc.desc Verify findIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 2, 3);
       const r1: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value > 1;
@@ -1265,14 +1265,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_7300
-     * @tc.name testUint16ArrayFindIndex01_073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_7300
+     * @tc.name testUint16ArrayFindIndexOne073
      * @tc.desc Verify findIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 2, 3);
       const before: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value === 99;
@@ -1286,14 +1286,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_7400
-     * @tc.name testUint16ArrayFindIndex01_074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_7400
+     * @tc.name testUint16ArrayFindIndexOne074
      * @tc.desc Verify findIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 2, 3, 4, 5);
       const r1: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return value % 2 === 0;
@@ -1306,14 +1306,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_7500
-     * @tc.name testUint16ArrayFindIndex01_075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_7500
+     * @tc.name testUint16ArrayFindIndexOne075
      * @tc.desc Verify findIndex findIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 2, 3, 4);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         if (index > 0) {
@@ -1328,14 +1328,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_7600
-     * @tc.name testUint16ArrayFindIndex01_076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_7600
+     * @tc.name testUint16ArrayFindIndexOne076
      * @tc.desc Verify findIndex forEach
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 2, 3);
       let total: number = 0;
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
@@ -1351,14 +1351,14 @@ export default function uint16ArrayFindIndex01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_7700
-     * @tc.name testUint16ArrayFindIndex01_077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_7700
+     * @tc.name testUint16ArrayFindIndexOne077
      * @tc.desc Verify true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(10, 20);
       const result: int = arr.findIndex((value: number, index: int, array: Uint16Array): boolean => {
         return true;
@@ -1368,14 +1368,14 @@ export default function uint16ArrayFindIndex01Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FINDINDEX01_7800
-     * @tc.name testUint16ArrayFindIndex01_078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT16ARRAY_FIND_INDEX_ONE_7800
+     * @tc.name testUint16ArrayFindIndexOne078
      * @tc.desc Verify callCount equals length when predicate returns false for all
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testUint16ArrayFindIndex01_078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testUint16ArrayFindIndexOne078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr = Uint16Array.of(1, 2, 3, 4);
       let callCount: int = 0;
       const result: int = arr.findIndex((value: number): boolean => {
