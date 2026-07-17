@@ -1898,3 +1898,46 @@ export default function uint32ArrayFromTest3(): void {
      */
     it('testUint32ArrayFrom119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Array<number> = [1, 2, 3];
+      const r1: Uint32Array = Uint32Array.from(a);
+      const r2: Uint32Array = Uint32Array.from(r1);
+      a[0] = 999;
+      r1.$_set(1, 888);
+      expect(r2.$_get(0)).assertEqual(1);
+      expect(r2.$_get(1)).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT32ARRAY_FROM_THREE_1200
+     * @tc.name testUint32ArrayFrom120
+     * @tc.desc Verify from + mapfn Array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint32ArrayFrom120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Array<number> = [1, 2, 3];
+      const it: Iterable<number> = a;
+      const r: Uint32Array = Uint32Array.from<number>(it, (v: number, k: number): number => v);
+      a[0] = 500;
+      expect(r.$_get(0)).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UINT32ARRAY_FROM_THREE_1210
+     * @tc.name testUint32ArrayFrom121
+     * @tc.desc Verify subarray from result buffer buffer
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testUint32ArrayFrom121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Array<number> = [1, 2, 3, 4];
+      const r: Uint32Array = Uint32Array.from(a);
+      const sub: Uint32Array = r.subarray(1, 3);
+      sub.$_set(0, 111);
+      expect(r.$_get(1)).assertEqual(111);
+      expect(a[1]).assertEqual(2);
+    });
+
+  });
+}
