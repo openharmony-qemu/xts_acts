@@ -1998,3 +1998,1264 @@ export default function arrayBufferProperty2Test(): void {
       buf.resize(6);
       expect(dv.buffer).assertEqual(buf);
     });
+
+    /**
+     * @tc.name testArrayBufferProperty0128
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1280
+     * @tc.desc Verify constructor with length=5 (int)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(5);
+      expect(buf.byteLength).assertEqual(5);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0129
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1290
+     * @tc.desc Verify constructor with length=20 (int)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(20);
+      expect(buf.byteLength).assertEqual(20);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0130
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1300
+     * @tc.desc Verify constructor with length=50 (int)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(50);
+      expect(buf.byteLength).assertEqual(50);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0131
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1310
+     * @tc.desc Verify constructor with length=100 (int)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(100);
+      expect(buf.byteLength).assertEqual(100);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0132
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1320
+     * @tc.desc Verify constructor with length=0xFF (hex 255)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(0xFF);
+      expect(buf.byteLength).assertEqual(255);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0133
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1330
+     * @tc.desc Verify constructor with length=0b1111 (binary 15)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(0b1111);
+      expect(buf.byteLength).assertEqual(15);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0134
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1340
+     * @tc.desc Verify constructor with length=-1 throws RangeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(-1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0135
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1350
+     * @tc.desc Verify constructor with length=-2147483648 throws RangeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(-2147483648);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0136
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1360
+     * @tc.desc Verify constructor with maxByteLength < length throws RangeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(8, 4);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0137
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1370
+     * @tc.desc Verify constructor with maxByteLength=-1 throws RangeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(2, -1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0138
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1380
+     * @tc.desc Verify constructor with length=0, maxByteLength=0xFF
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(0, 0xFF);
+      expect(buf.resizable).assertTrue();
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0139
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1390
+     * @tc.desc Verify constructor with length=0, maxByteLength=0b10000000
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(0, 0b10000000);
+      expect(buf.resizable).assertTrue();
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0140
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1400
+     * @tc.desc Verify constructor with length=5.0 (number) returns correct byteLength
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(5.0);
+      expect(buf.byteLength).assertEqual(5);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0141
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1410
+     * @tc.desc Verify constructor with length=1e2 (scientific) creates 100-byte buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(1e2);
+      expect(buf.byteLength).assertEqual(100);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0142
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1420
+     * @tc.desc Verify constructor with length=-1.0 throws RangeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(-1.0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0143
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1430
+     * @tc.desc Verify int and number overload constructors produce same byteLength
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const bufInt: ArrayBuffer = new ArrayBuffer(10, 20);
+      const bufNum: ArrayBuffer = new ArrayBuffer(10.0, 20.0);
+      expect(bufInt.byteLength).assertEqual(bufNum.byteLength);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0144
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1440
+     * @tc.desc Verify int and number overload resizable match
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const bufInt: ArrayBuffer = new ArrayBuffer(1, 5);
+      const bufNum: ArrayBuffer = new ArrayBuffer(1.0, 5.0);
+      expect(bufInt.resizable).assertTrue();
+      expect(bufNum.resizable).assertTrue();
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0145
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1450
+     * @tc.desc Verify int and number overload detached match
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const bufInt: ArrayBuffer = new ArrayBuffer(3, 9);
+      const bufNum: ArrayBuffer = new ArrayBuffer(3.0, 9.0);
+      expect(bufInt.detached).assertFalse();
+      expect(bufNum.detached).assertFalse();
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0146
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1460
+     * @tc.desc Verify same params create independent buffers
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf1: ArrayBuffer = new ArrayBuffer(100, 200);
+      const buf2: ArrayBuffer = new ArrayBuffer(100, 200);
+      expect(buf1.byteLength).assertEqual(buf2.byteLength);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0147
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1470
+     * @tc.desc Verify multiple different size constructors do not interfere
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf1: ArrayBuffer = new ArrayBuffer(10, 20);
+      const buf2: ArrayBuffer = new ArrayBuffer(20, 40);
+      const buf3: ArrayBuffer = new ArrayBuffer(30, 60);
+      expect(buf1.byteLength + buf2.byteLength + buf3.byteLength).assertEqual(60);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0148
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1480
+     * @tc.desc Verify constructor with length=8, maxByteLength=32 returns byteLength 8
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(8, 32);
+      expect(buf.byteLength).assertEqual(8);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0149
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1490
+     * @tc.desc Verify constructor with length=0, maxByteLength=8 produces resizable buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(0, 8);
+      expect(buf.byteLength).assertEqual(0);
+      expect(buf.resizable).assertTrue();
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0150
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1500
+     * @tc.desc Verify constructor with length=8, maxByteLength=8: resizable is true when maxByteLength equals length
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(8, 8);
+      expect(buf.byteLength).assertEqual(8);
+      expect(buf.resizable).assertTrue();
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0151
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1510
+     * @tc.desc Verify constructor with length=1, maxByteLength=2 (minimal resizable difference)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(1, 2);
+      expect(buf.byteLength).assertEqual(1);
+      expect(buf.resizable).assertTrue();
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0152
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1520
+     * @tc.desc Verify constructor with hex length 0xA0, max 0xFF
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(0xA0, 0xFF);
+      expect(buf.byteLength).assertEqual(160);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0153
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1530
+     * @tc.desc Verify constructor with binary length and max values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(0b1100100, 0b111110100);
+      expect(buf.byteLength).assertEqual(100);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0154
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1540
+     * @tc.desc Verify constructor with octal values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(0o200, 0o1000);
+      expect(buf.byteLength).assertEqual(128);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0155
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1550
+     * @tc.desc Verify constructor with scientific notation
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(1e5);
+      expect(buf.byteLength).assertEqual(100000);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0156
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1560
+     * @tc.desc Verify constructor scientific notation with maxByteLength
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(1e5, 2e5);
+      expect(buf.byteLength).assertEqual(100000);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0157
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1570
+     * @tc.desc Verify constructor resizable buffer can be resized
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(4, 16);
+      buf.resize(8);
+      expect(buf.byteLength).assertEqual(8);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0158
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1580
+     * @tc.desc Verify non-resizable buffer resize throws TypeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(4);
+      try {
+        buf.resize(8);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0159
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1590
+     * @tc.desc Verify maxByteLength=length constructor also throws RangeError on resize
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(4, 4);
+      try {
+        buf.resize(8);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0160
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1600
+     * @tc.desc Verify constructor slice produces non-shared buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(16, 32);
+      const sliced: ArrayBuffer = buf.slice(0, 8);
+      expect(sliced.byteLength).assertEqual(8);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0161
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1610
+     * @tc.desc Verify constructor int-to-int truncation: 3.7 as int -> 3
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(Double.toInt(3.7));
+      expect(buf.byteLength).assertEqual(3);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0162
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1620
+     * @tc.desc Verify constructor with negative length throws RangeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(-2);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0163
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1630
+     * @tc.desc Verify length=-2147483647 throws RangeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(-2147483647);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0164
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1640
+     * @tc.desc Verify length=32, maxByteLength=16 throws RangeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(32, 16);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0165
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1650
+     * @tc.desc Verify both length and maxByteLength negative throws RangeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(-1, -1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0166
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1660
+     * @tc.desc Verify length=-100, maxByteLength=100 throws RangeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(-100, 100);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0167
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1670
+     * @tc.desc Verify length=2147483647, maxByteLength=0 throws RangeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(2147483647, 0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0168
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1680
+     * @tc.desc Verify length=2147483647, maxByteLength=1 throws RangeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(2147483647, 1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0169
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1690
+     * @tc.desc Verify length=2147483647, maxByteLength=-2147483648 throws RangeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(2147483647, -2147483648);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0170
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1700
+     * @tc.desc Verify maxByteLength=-128 throws RangeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(0, -128);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0171
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1710
+     * @tc.desc Verify maxByteLength=-2147483648 throws RangeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(0, -2147483648);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0172
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1720
+     * @tc.desc Verify number overload maxByteLength=-1.0 throws RangeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(2, -1.0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0173
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1730
+     * @tc.desc Verify number overload length=5.0, maxByteLength=3.0 throws RangeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(5.0, 3.0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0174
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1740
+     * @tc.desc Verify length=2, maxByteLength=0 throws RangeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(2, 0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0175
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1750
+     * @tc.desc Verify int overload: 3.9 as int, 2 as int (length > maxByteLength after truncation)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(Double.toInt(3.9), 2);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0176
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1760
+     * @tc.desc Verify number overload length=65535.0 (short max)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(65535.0);
+      expect(buf.byteLength).assertEqual(65535);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0177
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1770
+     * @tc.desc Verify number overload length=65535.0, maxByteLength=65535.0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(65535.0, 65535.0);
+      expect(buf.byteLength).assertEqual(65535);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0178
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1780
+     * @tc.desc Verify length=0xFF (hex), maxByteLength=0xFFFF (hex)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(0xFF, 0xFFFF);
+      expect(buf.byteLength).assertEqual(255);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0179
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1790
+     * @tc.desc Verify length=0x100 (hex 256) buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(0x100);
+      expect(buf.byteLength).assertEqual(256);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0180
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1800
+     * @tc.desc Verify length=65536 (64KB boundary)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(65536);
+      expect(buf.byteLength).assertEqual(65536);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0181
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1810
+     * @tc.desc Verify length=1048576 (1MB boundary)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(1048576);
+      expect(buf.byteLength).assertEqual(1048576);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0182
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1820
+     * @tc.desc Verify number overload length=1000.5 truncates to 1000
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(1000.5);
+      expect(buf.byteLength).assertEqual(1000);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0183
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1830
+     * @tc.desc Verify number overload length=0.00001 truncates to 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(0.00001);
+      expect(buf.byteLength).assertEqual(0);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0184
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1840
+     * @tc.desc Verify constructor with double 0.0 creates zero-length non-resizable buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(0.0);
+      expect(buf.byteLength).assertEqual(0);
+      expect(buf.resizable).assertFalse();
+      expect(buf.detached).assertFalse();
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0185
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1850
+     * @tc.desc Verify new ArrayBuffer(127.0) creates 127-byte buffer (byte max boundary)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(127.0);
+      expect(buf.byteLength).assertEqual(127);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0186
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1860
+     * @tc.desc Verify new ArrayBuffer(3.999) truncates to 3 (fractional truncation)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(3.999);
+      expect(buf.byteLength).assertEqual(3);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0187
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1870
+     * @tc.desc Verify new ArrayBuffer(1.9) truncates to 1 (fractional truncation)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(1.9);
+      expect(buf.byteLength).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0188
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1880
+     * @tc.desc Verify new ArrayBuffer(2.1) truncates to 2 (fractional truncation)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(2.1);
+      expect(buf.byteLength).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0189
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1890
+     * @tc.desc Verify new ArrayBuffer(-2147483648.0) with int min negative throws RangeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(-2147483648.0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0190
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1900
+     * @tc.desc Verify new ArrayBuffer(-0.0) treats negative zero as zero
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(-0.0);
+      expect(buf.byteLength).assertEqual(0);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0191
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1910
+     * @tc.desc Verify new ArrayBuffer(0.0, 5.0) creates resizable buffer with maxByteLength 5
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(0.0, 5.0);
+      expect(buf.byteLength).assertEqual(0);
+      expect(buf.resizable).assertTrue();
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0192
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1920
+     * @tc.desc Verify new ArrayBuffer(4.0, 4.0) with equal params, resizable is true but max=length
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(4.0, 4.0);
+      expect(buf.byteLength).assertEqual(4);
+      expect(buf.resizable).assertTrue();
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0193
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1930
+     * @tc.desc Verify new ArrayBuffer(1.5, 8.8) truncates both fractional params
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(1.5, 8.8);
+      expect(buf.byteLength).assertEqual(1);
+      expect(buf.resizable).assertTrue();
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0194
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1940
+     * @tc.desc Verify new ArrayBuffer(0.0, -1.0) with negative maxByteLength throws RangeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const buf: ArrayBuffer = new ArrayBuffer(0.0, -1.0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0195
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1950
+     * @tc.desc Verify new ArrayBuffer(0.0, -0.0) treats negative zero maxByteLength as zero
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0195', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(0.0, -0.0);
+      expect(buf.byteLength).assertEqual(0);
+      expect(buf.resizable).assertTrue();
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0196
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1960
+     * @tc.desc Verify new ArrayBuffer(0b1010) with binary literal creates 10-byte buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(0b1010);
+      expect(buf.byteLength).assertEqual(10);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0197
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1970
+     * @tc.desc Verify new ArrayBuffer(0o77) with octal literal creates 63-byte buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(0o77);
+      expect(buf.byteLength).assertEqual(63);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0198
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1980
+     * @tc.desc Verify new ArrayBuffer(1.5e5) with decimal scientific notation creates 150000-byte buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(1.5e5);
+      expect(buf.byteLength).assertEqual(150000);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0199
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1990
+     * @tc.desc Verify new ArrayBuffer(1e-5) truncates extremely small positive to 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(1e-5);
+      expect(buf.byteLength).assertEqual(0);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2000
+     * @tc.desc Verify new ArrayBuffer(3.14159) truncates pi to 3 bytes
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(3.14159);
+      expect(buf.byteLength).assertEqual(3);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0201
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2010
+     * @tc.desc Verify new ArrayBuffer(2.71828) truncates e to 2 bytes
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(2.71828);
+      expect(buf.byteLength).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0202
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2020
+     * @tc.desc Verify new ArrayBuffer(0.5) truncates to 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(0.5);
+      expect(buf.byteLength).assertEqual(0);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0203
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2030
+     * @tc.desc Verify new ArrayBuffer(2.0, 5.5) truncates maxByteLength from 5.5 to 5
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(2.0, 5.5);
+      expect(buf.byteLength).assertEqual(2);
+      expect(buf.resizable).assertTrue();
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0204
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2040
+     * @tc.desc Verify new ArrayBuffer(5.0, 5.0001) truncates maxByteLength to 5, equal to length
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(5.0, 5.0001);
+      expect(buf.byteLength).assertEqual(5);
+      expect(buf.resizable).assertTrue();
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0205
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2050
+     * @tc.desc Verify new ArrayBuffer(0.0, 0.0) creates empty resizable buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(0.0, 0.0);
+      expect(buf.byteLength).assertEqual(0);
+      expect(buf.resizable).assertTrue();
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0206
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2060
+     * @tc.desc Verify new ArrayBuffer(0.0, 1.0) creates empty resizable buffer, then resize to 1
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(0.0, 1.0);
+      expect(buf.byteLength).assertEqual(0);
+      buf.resize(1);
+      expect(buf.byteLength).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0207
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2070
+     * @tc.desc Verify new ArrayBuffer(2.0, 8.0) then resize to 6 works correctly
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(2.0, 8.0);
+      buf.resize(6);
+      expect(buf.byteLength).assertEqual(6);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0208
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2080
+     * @tc.desc Verify new ArrayBuffer(4.0) without maxByteLength throws TypeError on resize
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(4.0);
+      try {
+        buf.resize(8);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0209
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2090
+     * @tc.desc Verify new ArrayBuffer(0.0, 256.0) creates buffer with maxByteLength 256
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(0.0, 256.0);
+      expect(buf.byteLength).assertEqual(0);
+      expect(buf.resizable).assertTrue();
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0210
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2100
+     * @tc.desc Verify new ArrayBuffer(65536.0, 131072.0) creates buffer with large boundaries
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(65536.0, 131072.0);
+      expect(buf.byteLength).assertEqual(65536);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0211
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2110
+     * @tc.desc Verify new ArrayBuffer(1.0, 65535.0) creates resizable buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(1.0, 65535.0);
+      expect(buf.resizable).assertTrue();
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0212
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2120
+     * @tc.desc Verify new ArrayBuffer(65534.0, 65535.0) creates buffer near max
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(65534.0, 65535.0);
+      expect(buf.byteLength).assertEqual(65534);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0213
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2130
+     * @tc.desc Verify new ArrayBuffer(0.0) has byteLength 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(0.0);
+      expect(buf.byteLength).assertEqual(0);
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0214
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2140
+     * @tc.desc Verify new ArrayBuffer(4.0) initial content is all zero bytes
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf: ArrayBuffer = new ArrayBuffer(4.0);
+      expect(buf.at(0)).assertEqual(Int.toByte(0));
+      expect(buf.at(1)).assertEqual(Int.toByte(0));
+      expect(buf.at(2)).assertEqual(Int.toByte(0));
+      expect(buf.at(3)).assertEqual(Int.toByte(0));
+    });
+  });
+}
