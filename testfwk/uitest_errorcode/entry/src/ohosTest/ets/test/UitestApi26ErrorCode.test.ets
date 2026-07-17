@@ -1641,6 +1641,125 @@ export default function uitestApi26ErrorTest() {
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyConcurrentCalls over');
     });
 
+    /**
+     * @tc.name   testDriverTriggerPenKeyKeyOutOfRangeAboveMax
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_ERROR_1000
+     * @tc.desc   Test Driver.triggerPenKey with key value 3 (above max enum value 2), expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyKeyOutOfRangeAboveMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyKeyOutOfRangeAboveMax start');
+      try {
+        await driver.triggerPenKey(3 as PenKey, PenMode.AIR_MOUSE, PenKeyOperation.CLICK);
+        expect().assertFail();
+      } catch (error) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyKeyOutOfRangeAboveMax error: ' + error.code);
+        expect(error.code).assertEqual(ParameterErrorCode);
+      }
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyKeyOutOfRangeAboveMax over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyKeyOutOfRangeNegative
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_ERROR_1100
+     * @tc.desc   Test Driver.triggerPenKey with key value -1 (negative, outside enum definition), expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyKeyOutOfRangeNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyKeyOutOfRangeNegative start');
+      try {
+        await driver.triggerPenKey(-1 as PenKey, PenMode.AIR_MOUSE, PenKeyOperation.CLICK);
+        expect().assertFail();
+      } catch (error) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyKeyOutOfRangeNegative error: ' + error.code);
+        expect(error.code).assertEqual(ParameterErrorCode);
+      }
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyKeyOutOfRangeNegative over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyModeOutOfRangeAboveMax
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_ERROR_1200
+     * @tc.desc   Test Driver.triggerPenKey with mode value 2 (above max enum value 1), expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyModeOutOfRangeAboveMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyModeOutOfRangeAboveMax start');
+      try {
+        await driver.triggerPenKey(PenKey.HANDWRITING, 2 as PenMode, PenKeyOperation.CLICK);
+        expect().assertFail();
+      } catch (error) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyModeOutOfRangeAboveMax error: ' + error.code);
+        expect(error.code).assertEqual(ParameterErrorCode);
+      }
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyModeOutOfRangeAboveMax over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyModeOutOfRangeNegative
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_ERROR_1300
+     * @tc.desc   Test Driver.triggerPenKey with mode value -1 (negative, outside enum definition), expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyModeOutOfRangeNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyModeOutOfRangeNegative start');
+      try {
+        await driver.triggerPenKey(PenKey.HANDWRITING, -1 as PenMode, PenKeyOperation.CLICK);
+        expect().assertFail();
+      } catch (error) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyModeOutOfRangeNegative error: ' + error.code);
+        expect(error.code).assertEqual(ParameterErrorCode);
+      }
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyModeOutOfRangeNegative over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyOperationOutOfRangeAboveMax
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_ERROR_1400
+     * @tc.desc   Test Driver.triggerPenKey with operation value 2 (above max enum value 1), expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyOperationOutOfRangeAboveMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyOperationOutOfRangeAboveMax start');
+      try {
+        await driver.triggerPenKey(PenKey.HANDWRITING, PenMode.AIR_MOUSE, 2 as PenKeyOperation);
+        expect().assertFail();
+      } catch (error) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyOperationOutOfRangeAboveMax error: ' + error.code);
+        expect(error.code).assertEqual(ParameterErrorCode);
+      }
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyOperationOutOfRangeAboveMax over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyOperationOutOfRangeNegative
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_ERROR_1500
+     * @tc.desc   Test Driver.triggerPenKey with operation value -1 (negative, outside enum definition), expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyOperationOutOfRangeNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyOperationOutOfRangeNegative start');
+      try {
+        await driver.triggerPenKey(PenKey.HANDWRITING, PenMode.HANDWRITING, -1 as PenKeyOperation);
+        expect().assertFail();
+      } catch (error) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyOperationOutOfRangeNegative error: ' + error.code);
+        expect(error.code).assertEqual(ParameterErrorCode);
+      }
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyOperationOutOfRangeNegative over');
+    });
 
   })
 }
