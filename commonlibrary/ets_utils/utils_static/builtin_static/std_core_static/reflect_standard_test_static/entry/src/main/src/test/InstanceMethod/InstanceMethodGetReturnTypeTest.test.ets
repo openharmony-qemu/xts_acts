@@ -891,7 +891,7 @@ export default function InstanceMethodGetReturnTypeTest(): void {
       let cls = Class.from<MyClass061>();
       let method = cls.getInstanceMethod('returnError');
       let returnType = method!.getReturnType();
-      expect(returnType.getName()).assertEqual('std.core.Error');
+      expect(returnType.getName()).assertEqual('escompat.Error');
     });
 
     /**

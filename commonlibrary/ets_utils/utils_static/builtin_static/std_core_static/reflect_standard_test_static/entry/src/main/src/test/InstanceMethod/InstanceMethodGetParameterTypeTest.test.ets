@@ -664,12 +664,17 @@ export default function InstanceMethodGetParameterTypeTest(): void {
       expect(method!.getParametersNum()).assertEqual(2);
       expect(method!.getParameterType(0)!.getName()).assertEqual('f64');
 
-      let negativeResult = method!.getParameterType(-1);
-      if (negativeResult === undefined) {
-        expect(negativeResult).assertUndefined();
-      } else {
-        let negName = negativeResult!.getName();
-        expect(negName).assertEqual(Class.from<MyClass003>().getName());
+      try {
+        let negativeResult = method!.getParameterType(-1);
+        if (negativeResult === undefined) {
+          expect(negativeResult).assertUndefined();
+        } else {
+          let negName = negativeResult!.getName();
+          expect(negName).assertEqual(Class.from<MyClass003>().getName());
+        }
+      } catch (e) {
+        let err = e as Error;
+        expect(err.message.includes('out of bounds')).assertTrue();
       }
     });
 

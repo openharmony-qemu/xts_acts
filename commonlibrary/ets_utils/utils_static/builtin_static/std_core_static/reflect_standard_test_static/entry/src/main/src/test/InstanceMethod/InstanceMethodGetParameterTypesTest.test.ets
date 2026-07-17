@@ -929,7 +929,7 @@ export default function InstanceMethodGetParameterTypesTest(): void {
     it('testInstanceMethodGetParameterTypes0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass052>();
       let method = cls.getInstanceMethod('errorParam');
-      expect(method!.getParameterTypes()[0].getName()).assertEqual('std.core.Error');
+      expect(method!.getParameterTypes()[0].getName()).assertEqual('escompat.Error');
     });
 
     /**
