@@ -185,7 +185,7 @@ struct webViewObjectEmbed2 {
           .width(this.nodeContainerWidth)
           .height(this.nodeContainerHeight)
           .backgroundColor(Color.Yellow)
-        Web({ src: 'www.example.com', controller: this.controller })
+        Web({ src: $rawfile('index.html'), controller: this.controller })
           .onPageEnd((event) => {
             console.log('web pageEnd==>' + event.url);
             this.isComplete = 0;
