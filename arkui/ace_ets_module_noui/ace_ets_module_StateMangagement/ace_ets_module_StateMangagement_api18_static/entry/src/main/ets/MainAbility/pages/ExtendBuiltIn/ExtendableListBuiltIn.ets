@@ -60,9 +60,9 @@ struct ExtendableListBuiltIn {
         ListItem() {
           Text(item.toString())
             .id('ExtendableList_002')
+            .height('5%')
             .fontSize(16)
             .textAlign(TextAlign.Center)
-            .size({ height: 100, width: '100%' })
             .onClick(() => {
               this.arr[0] += 'a';
             })

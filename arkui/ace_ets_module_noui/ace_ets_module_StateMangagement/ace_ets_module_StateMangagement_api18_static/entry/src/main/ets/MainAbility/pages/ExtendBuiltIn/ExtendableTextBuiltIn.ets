@@ -51,6 +51,7 @@ struct ExtendableTextBuiltIn {
         .height('50%')
       MyText(undefined)
         .id('ExtendableText_003')
+        .height('5%')
     }
   }
 }

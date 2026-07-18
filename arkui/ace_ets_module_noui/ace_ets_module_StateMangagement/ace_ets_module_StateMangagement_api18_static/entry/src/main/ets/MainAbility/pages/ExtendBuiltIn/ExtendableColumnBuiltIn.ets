@@ -48,7 +48,9 @@ struct ExtendableColumnBuiltIn {
     MyColumn({ space: 100 } as ColumnOptions) {
       Text('Hello World')
         .id('ExtendableColumn_001')
+        .height('5%')
       Text('Hello ArkUI')
+        .height('5%')
     }
     .newAttribute() // 调用自定义属性
     .id('ExtendableColumn_002')
@@ -56,6 +58,7 @@ struct ExtendableColumnBuiltIn {
     MyColumn(undefined) {
       Text('Hello ArkUI2')
         .id('ExtendableColumn_003')
+        .height('5%')
     }
     .newAttribute() // 调用自定义属性
     .id('ExtendableColumn_004')

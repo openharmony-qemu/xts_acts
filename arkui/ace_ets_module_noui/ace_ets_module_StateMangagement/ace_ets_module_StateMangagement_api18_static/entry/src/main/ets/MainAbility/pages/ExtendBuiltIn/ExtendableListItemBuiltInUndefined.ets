@@ -56,10 +56,9 @@ struct ExtendableListItemBuiltInUndefined {
       ForEach(this.arr, (item: string) => {
         MyListItem(undefined) {
           Text(item.toString())
-            .id('ExtendableListItem_001')
+            .height('5%')
             .fontSize(16)
             .textAlign(TextAlign.Center)
-            .size({ height: 100, width: '100%' })
             .onClick(() => {
               this.arr[0] += 'a';
             })

@@ -52,7 +52,7 @@ struct ExtendableGridBuiltIn {
       ForEach(this.data, (item: number) => {
         GridItem() {
           Text('N' + item)
-            .height(80)
+            .height('5%')
         }
         .backgroundColor(Color.Orange)
       })

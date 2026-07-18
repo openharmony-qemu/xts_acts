@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+ 
 import ArrayLikeStringTest from './ArrayLikeTest/ArrayLikeStringTest.test';
 import RepeatCloseReuseTest0110 from './repeat/RepeatCloseReuseTest0110.test';
 import RepeatLazyTest0150 from './repeat/RepeatLazyTest0150.test';
@@ -79,10 +79,10 @@ import ExtendableStackBuiltInTest from './ExtendBuiltIn/ExtendableStackBuiltInTe
 import ExtendableStackBuiltInUndefinedTest from './ExtendBuiltIn/ExtendableStackBuiltInUndefinedTest.test';
 import ExtendableTextBuiltInTest from './ExtendBuiltIn/ExtendableTextBuiltInTest.test';
 import ExtendableToggleBuiltInTest from './ExtendBuiltIn/ExtendableToggleBuiltInTest.test';
-
-
+ 
+ 
 export default function testsuite(): void {
-  ArrayLikeStringTest(); 
+  ArrayLikeStringTest();
   GlobalReusePool004Test();
   ExtendableListBuiltInTest();
   ExtendableListBuiltInUndefinedTest();
@@ -103,7 +103,7 @@ export default function testsuite(): void {
   AddMonitorObservedV2Map(); 
   AddMonitorObservedV2Set(); 
   AddMonitorErrorCode();
-  AddMonitorParentChild();
+  AddMonitorParentChild(); 
   AddMonitorTwoDimensionalArray(); 
   BasicPrefetcherMethods();
   IDataSourcePrefetchingMethods();

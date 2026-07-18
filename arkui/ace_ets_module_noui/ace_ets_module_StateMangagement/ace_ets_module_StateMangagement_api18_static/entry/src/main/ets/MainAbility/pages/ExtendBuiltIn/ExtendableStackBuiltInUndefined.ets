@@ -47,8 +47,7 @@ struct ExtendableStackBuiltInUndefined {
     Column() {
       MyStack(undefined) {
         Text('Hello World')
-          .width('90%')
-          .height('100%')
+          .height('5%')
           .backgroundColor(0xd2cab3)
       }
       .height('40%')

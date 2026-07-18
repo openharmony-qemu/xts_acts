@@ -46,12 +46,14 @@ struct ExtendableRowBuiltIn {
   build() {
     MyRow({ space: 100 } as RowOptions) {
       Text('Hello World')
+        .height('5%')
     }
     .height()
     .border({ width: 2, color: '#6699FF' })
     .id('ExtendableRow_001')
     MyRow(undefined) {
       Text('Hello ArkUI')
+        .height('5%')
         .margin('25%')
     }
     .height()
