@@ -81,7 +81,7 @@ import ExtendableTextBuiltInTest from './ExtendBuiltIn/ExtendableTextBuiltInTest
 import ExtendableToggleBuiltInTest from './ExtendBuiltIn/ExtendableToggleBuiltInTest.test';
  
  
-export default function testsuite(): void {
+export default function testsuite() {
   ArrayLikeStringTest();
   GlobalReusePool004Test();
   ExtendableListBuiltInTest();
