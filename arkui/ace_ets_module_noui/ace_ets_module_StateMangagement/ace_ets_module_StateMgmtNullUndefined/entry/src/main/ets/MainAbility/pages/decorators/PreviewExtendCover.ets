@@ -37,7 +37,7 @@ struct PreviewExtendChild {
 
 @ObservedV2
 class TypeSample {
-  @Trace num: number = 1;
+  @Trace public num: number = 1;
 }
 
 @ReusableV2

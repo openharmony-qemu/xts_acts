@@ -66,5 +66,4 @@
 
 最近一次整包连跑：**21 Suites / 215 Pass / 0 Fail**（补 `ConnectOptionsCollections_defaultCreator_undefined` 后建议再跑 ConnectOptions 套件确认）。
 
-详细表：`null_undefined_final_audit.md`（终审）  
 编不过归档：`null_undefined_compile_failures.md`
