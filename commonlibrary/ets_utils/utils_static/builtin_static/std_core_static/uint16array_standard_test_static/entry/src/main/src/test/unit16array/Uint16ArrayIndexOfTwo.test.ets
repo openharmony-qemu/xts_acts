@@ -127,9 +127,9 @@ export default function uint16ArrayIndexOf02Test(): void {
      * @tc.level Level 2
      */
     it('testUint16ArrayIndexOfTwo007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr: Uint16Array = new Uint16Array([5, 5, 5]);
+      let arr: Uint16Array = new Uint16Array([3, 5, 5]);
       let result: int = arr.indexOf(5);
-      expect(result).assertEqual(0);
+      expect(result).assertEqual(1);
     });
 
     /**
@@ -281,9 +281,9 @@ export default function uint16ArrayIndexOf02Test(): void {
      * @tc.level Level 2
      */
     it('testUint16ArrayIndexOfTwo018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let arr: Uint16Array = new Uint16Array([7, 7, 7, 7]);
+      let arr: Uint16Array = new Uint16Array([1, 7, 7, 9]);
       let result: int = arr.indexOf(7);
-      expect(result).assertEqual(0);
+      expect(result).assertEqual(1);
     });
 
     /**

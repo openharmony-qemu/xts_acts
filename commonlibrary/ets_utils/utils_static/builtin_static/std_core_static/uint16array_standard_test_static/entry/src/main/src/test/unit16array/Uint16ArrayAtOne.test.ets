@@ -401,12 +401,8 @@ export default function uint16ArrayAt01Test(): void {
      */
     it('testUint16ArrayAtOne028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let arr = Uint16Array.of(10, 20, 30);
-      try {
-        let v = arr.at(arr.length);
-        expect(v).assertUndefined();
-      } catch (e) {
-        expect(e.name).assertEqual('Error');
-      }
+      let v = arr.at(arr.length);
+      expect(v).assertUndefined();
     });
 
     /**
