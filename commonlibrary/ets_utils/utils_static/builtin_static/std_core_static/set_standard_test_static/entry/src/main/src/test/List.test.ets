@@ -37,6 +37,16 @@ import ReadonlySetValuesTest from "./readonlySet/ReadonlySetValuesTest.test";
 import SetIteratorDollarIteratorTest from "./setIterator/SetIteratorDollarIteratorTest.test";
 import SetIteratorNextTest from "./setIterator/SetIteratorNextTest.test";
 
+import ReadonlySetEntries2Test from "./readonlySet/ReadonlySetEntries2Test.test";
+import ReadonlySetForEach2Test from "./readonlySet/ReadonlySetForEach2Test.test";
+import ReadonlySetHas2Test from "./readonlySet/ReadonlySetHas2Test.test";
+import ReadonlySetKeys2Test from "./readonlySet/ReadonlySetKeys2Test.test";
+import ReadonlySetSize2Test from "./readonlySet/ReadonlySetSize2Test.test";
+import ReadonlySetValues2Test from "./readonlySet/ReadonlySetValues2Test.test";
+import SetIteratorDollarIterator2Test from "./setIterator/SetIteratorDollarIterator2Test.test";
+import SetIteratorNext2Test from "./setIterator/SetIteratorNext2Test.test";
+import SetIteratorTest2Test from "./setIterator/SetIteratorTest2Test.test";
+
 
 export default function testsuite(): void {
 
@@ -63,4 +73,13 @@ export default function testsuite(): void {
    SetIteratorDollarIteratorTest();
    SetIteratorNextTest();
 
+   ReadonlySetEntries2Test();
+   ReadonlySetForEach2Test();
+   ReadonlySetHas2Test();
+   ReadonlySetKeys2Test();
+   ReadonlySetSize2Test();
+   ReadonlySetValues2Test();
+   SetIteratorDollarIterator2Test();
+   SetIteratorNext2Test();
+   SetIteratorTest2Test();
 }
