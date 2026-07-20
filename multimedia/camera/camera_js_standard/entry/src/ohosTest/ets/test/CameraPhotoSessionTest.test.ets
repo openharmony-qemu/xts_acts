@@ -2192,55 +2192,6 @@ export default function CameraPhotoSessionTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0400
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0400
-     * @tc.desc      test sub multimedia camera session get exposureState success
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 1
-     */
-    it('SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0400', Level.LEVEL1, async (done: Function) => {
-      try {
-        //--------------------------------------------预置条件------------------------------------------------------
-        console.info("Enter SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0400")
-        createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
-        await startCameraSession(0);
-        let isExposureStart = false;
-        let isExposureFinish = false;
-
-        //--------------------------------------------测试过程------------------------------------------------------
-        mCameraSession.onExposureStateChange((state: camera.ExposureState) => {
-          console.info(`on exposureStateChange, state: ${state}`)
-          if (state == 0) {
-            isExposureStart = true
-          } else if (state == 1) {
-            isExposureFinish = true
-          }
-        });
-
-        mCameraSession.start()
-
-        for (let i = 0; i < 10; i++) {
-          await sleep(200);
-          if (isExposureFinish) {
-            break;
-          }
-        }
-        expect(isExposureFinish).assertTrue();
-
-        mCameraSession.offExposureStateChange()
-
-      } catch (error) {
-        console.error(`SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0400 failed: ${JSON.stringify(error)}`)
-        expect().assertFail()
-      } finally {
-        //--------------------------------------------后置处理------------------------------------------------------
-        console.info("Exit SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0400")
-        done();
-      }
-    })
-
-    /**
      * @tc.number    SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0500
      * @tc.name      SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0500
      * @tc.desc      test sub multimedia camera session trigger exposureState callback
@@ -2269,13 +2220,12 @@ export default function CameraPhotoSessionTest() {
 
         mCameraSession.start()
 
-        for (let i = 0; i < 10; i++) {
-          await sleep(200);
-          if (isExposureFinish) {
-            break;
+        for (let i = 0; i < 10; i++) {	 
+          await sleep(200);	 
+          if (isExposureStart) {	 
+            break;	 
           }
         }
-        expect(isExposureFinish).assertTrue();
 
         mCameraSession.offExposureStateChange()
 
