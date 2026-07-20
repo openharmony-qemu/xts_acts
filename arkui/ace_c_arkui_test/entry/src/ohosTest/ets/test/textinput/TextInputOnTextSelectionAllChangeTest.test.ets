@@ -16,6 +16,12 @@
 import { beforeAll, describe, expect, it, Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
 import nativeRender from 'libnativerender.so'
+import {KeyCode} from '@ohos.multimodalInput.keyCode';
+import {
+  Component,
+  Driver,
+  ON,
+} from '@ohos.UiTest';
 
 export default function textInputOnTextSelectionAllChangeTest() {
 
@@ -36,8 +42,10 @@ export default function textInputOnTextSelectionAllChangeTest() {
      * @tc.level  LEVEL1
      */
     it('testTextInputOnTextSelectionAllChange001', Level.LEVEL1, async (done: Function) => {
+      let driver = Driver.create();
       focusControl.requestFocus('OnTextSelectionAllChangeTestTextInput')
       await Utils.sleep(1000)
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A);
       let dataArray: number[][] = nativeRender.getTextInputSelectAllData();
       console.log('testTextInputOnTextSelectionAllChange001', JSON.stringify(dataArray))
       let textInputSelectionData: number[] = dataArray[0];
