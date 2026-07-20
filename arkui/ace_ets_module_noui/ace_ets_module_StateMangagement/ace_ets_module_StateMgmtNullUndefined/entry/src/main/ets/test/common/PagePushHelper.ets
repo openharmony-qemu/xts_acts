@@ -28,7 +28,9 @@ export async function pushPage(url: string, pageName: string): Promise<void> {
       await CommonFunc.sleep(1500);
     }
   } catch (err) {
+    // 页面装饰器/JS 崩溃时 pushUrl 会失败（如 code 100001）；必须抛出，禁止吞错假绿
     console.error('[PagePushHelper] push ' + pageName + ' error: ' + JSON.stringify(err));
+    throw err;
   }
 }
 
