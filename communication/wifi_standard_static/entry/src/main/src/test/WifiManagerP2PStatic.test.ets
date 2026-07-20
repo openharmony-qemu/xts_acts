@@ -473,7 +473,7 @@ export default function actsWifiManagerP2PTest() {
           // 以下为可选值
           let select_enum: wifiManager.DeviceAddressType | undefined = wifiP2pDevice.deviceAddressType;
           hilog.info(domain, tag, `${caseName} wifiP2pDevice deviceAddressType:` + select_enum + `, type: ` + typeof select_enum);
-          const deviceAddressTypeValues: (undefined | int)[] = [undefined, wifiManager.DeviceAddressType.RANDOM_DEVICE_ADDRESS, wifiManager.DeviceAddressType.REAL_DEVICE_ADDRESS];
+          const deviceAddressTypeValues: (wifiManager.DeviceAddressType | undefined)[] = [undefined, wifiManager.DeviceAddressType.RANDOM_DEVICE_ADDRESS, wifiManager.DeviceAddressType.REAL_DEVICE_ADDRESS];
           expect(deviceAddressTypeValues.includes(select_enum)).assertTrue();
         }else{
           expect().assertFail();
@@ -560,7 +560,7 @@ export default function actsWifiManagerP2PTest() {
           // 以下为可选值
           let select_enum: wifiManager.DeviceAddressType | undefined = wifiP2pDevice.deviceAddressType;
           hilog.info(domain, tag, `${caseName} wifiP2pDevice deviceAddressType:` + select_enum + `, type: ` + typeof select_enum);
-          const deviceAddressTypeValues: (undefined | int)[] = [undefined, wifiManager.DeviceAddressType.RANDOM_DEVICE_ADDRESS, wifiManager.DeviceAddressType.REAL_DEVICE_ADDRESS];
+          const deviceAddressTypeValues: (wifiManager.DeviceAddressType | undefined)[] = [undefined, wifiManager.DeviceAddressType.RANDOM_DEVICE_ADDRESS, wifiManager.DeviceAddressType.REAL_DEVICE_ADDRESS];
           expect(deviceAddressTypeValues.includes(select_enum)).assertTrue();
         }else{
           expect().assertFail();
@@ -1222,7 +1222,7 @@ export default function actsWifiManagerP2PTest() {
           // 以下为可选值
           let select_enum: wifiManager.DeviceAddressType | undefined = result[0].deviceAddressType;
           hilog.info(domain, tag, `${caseName} getP2pPeerDevices wifiP2pDevice deviceAddressType:` + select_enum + `, type: ` + typeof select_enum);
-          const deviceAddressTypeValues: (undefined | int)[] = [undefined, wifiManager.DeviceAddressType.RANDOM_DEVICE_ADDRESS, wifiManager.DeviceAddressType.REAL_DEVICE_ADDRESS];
+          const deviceAddressTypeValues: (wifiManager.DeviceAddressType | undefined)[] = [undefined, wifiManager.DeviceAddressType.RANDOM_DEVICE_ADDRESS, wifiManager.DeviceAddressType.REAL_DEVICE_ADDRESS];
           expect(deviceAddressTypeValues.includes(select_enum)).assertTrue();
         } else {
           hilog.info(domain, tag, `${caseName} getP2pPeerDevices Callback 空数组`);
@@ -1276,7 +1276,7 @@ export default function actsWifiManagerP2PTest() {
         // 以下为可选值
         let select_enum: wifiManager.DeviceAddressType | undefined = wifiP2pDevice.deviceAddressType;
         hilog.info(domain, tag, `${caseName} wifiP2pDevice deviceAddressType:` + select_enum + `, type: ` + typeof select_enum);
-        const deviceAddressTypeValues: (undefined | int)[] = [undefined, wifiManager.DeviceAddressType.RANDOM_DEVICE_ADDRESS, wifiManager.DeviceAddressType.REAL_DEVICE_ADDRESS];
+        const deviceAddressTypeValues: (wifiManager.DeviceAddressType | undefined)[] = [undefined, wifiManager.DeviceAddressType.RANDOM_DEVICE_ADDRESS, wifiManager.DeviceAddressType.REAL_DEVICE_ADDRESS];
         expect(deviceAddressTypeValues.includes(select_enum)).assertTrue();
       } catch (err) {
         hilog.error(domain, tag, "get error:" + JSON.stringify(err));
@@ -1326,7 +1326,7 @@ export default function actsWifiManagerP2PTest() {
         // 以下为可选值
         let select_enum: wifiManager.DeviceAddressType | undefined = wifiP2pDevice.deviceAddressType;
         hilog.info(domain, tag, `${caseName} wifiP2pDevice deviceAddressType:` + select_enum + `, type: ` + typeof select_enum);
-        const deviceAddressTypeValues: (undefined | int)[] = [undefined, wifiManager.DeviceAddressType.RANDOM_DEVICE_ADDRESS, wifiManager.DeviceAddressType.REAL_DEVICE_ADDRESS];
+        const deviceAddressTypeValues: (wifiManager.DeviceAddressType | undefined)[] = [undefined, wifiManager.DeviceAddressType.RANDOM_DEVICE_ADDRESS, wifiManager.DeviceAddressType.REAL_DEVICE_ADDRESS];
         expect(deviceAddressTypeValues.includes(select_enum)).assertTrue();
       } catch (err) {
         hilog.error(domain, tag, 'use callback api get err:' + JSON.stringify(err));
@@ -1461,7 +1461,7 @@ export default function actsWifiManagerP2PTest() {
           // 以下为可选值
           let select_enum: wifiManager.DeviceAddressType | undefined = result[0].deviceAddressType;
           hilog.info(domain, tag, `${caseName} getP2pPeerDevices wifiP2pDevice deviceAddressType:` + select_enum + `, type: ` + typeof select_enum);
-          const deviceAddressTypeValues: (undefined | int)[] = [undefined, wifiManager.DeviceAddressType.RANDOM_DEVICE_ADDRESS, wifiManager.DeviceAddressType.REAL_DEVICE_ADDRESS];
+          const deviceAddressTypeValues: (wifiManager.DeviceAddressType | undefined)[] = [undefined, wifiManager.DeviceAddressType.RANDOM_DEVICE_ADDRESS, wifiManager.DeviceAddressType.REAL_DEVICE_ADDRESS];
           expect(deviceAddressTypeValues.includes(select_enum)).assertTrue();
         } else {
           hilog.info(domain, tag, `${caseName} getP2pPeerDevices Promise 空数组`);

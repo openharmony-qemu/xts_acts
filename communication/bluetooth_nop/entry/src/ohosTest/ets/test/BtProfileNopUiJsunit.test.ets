@@ -116,10 +116,9 @@ export default function btProfileNopUiJsunit() {
      * @tc.level LEVEL1
      * @co.authored.by.agent
      */
-    it('SUB_COMMUNICATION_BLUETOOTH_PAN_ISTETHERINGON_NOP_0100', Level.LEVEL1,   () => {
-      let panProfile: pan.PanProfile = pan.createPanProfile();
-
+     it('SUB_COMMUNICATION_BLUETOOTH_PAN_ISTETHERINGON_NOP_0100', Level.LEVEL1,   () => {
       try {
+        let panProfile: pan.PanProfile = pan.createPanProfile();
         panProfile.isTetheringOn();
         expect().assertFail();
       } catch (err) {
