@@ -774,38 +774,40 @@ export default function RdbStoreCallbackNullTest(){
      * @tc.level      Level 2
      */
 	it('SUB_DDM_RDB_GETRDBSTORE_ENUM_TOKEN_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-	  async (done: () => void): Promise<void> => {
-		const caseName = 'SUB_DDM_RDB_GETRDBSTORE_ENUM_TOKEN_003';
-		console.info(TAG + `************* ${caseName} start *************`);
-		try {
-		  const isCustomSupported = relationalStore.isTokenizerSupported(relationalStore.Tokenizer.CUSTOM_TOKENIZER);
-		  if (!isCustomSupported) {
-			console.info(TAG + `${caseName} custom tokenizer not supported`);
-			done();
-		  }
-		  const storeConfig: relationalStore.StoreConfig = {
-			name: 'Token_CUSTOM_DEFAULT.db',
-			securityLevel: relationalStore.SecurityLevel.S3,
-			tokenizer: relationalStore.Tokenizer.CUSTOM_TOKENIZER
-		  };
-		  try {
-		    let rdbStore = await relationalStore.getRdbStore(context!, storeConfig);
-		    console.info(TAG + `${caseName} success`);
-		    expect(rdbStore!== undefined).assertEqual(true);
-		    await relationalStore.deleteRdbStore(context!, storeConfig);
-		    done();
-		  } catch (err) {
-		    console.error(TAG + `${caseName} fail: code=${err.code}, msg=${err.message}`);
-		    expect(null).assertFail();
-		    done();
-		  }
-		} catch (e) {
-		  const err = e as BusinessError;
-		  console.error(TAG + `${caseName} catch exception: code=${err.code}, msg=${err.message}`);
-		  expect(null).assertFail();
-		  done();
-		}
-	  });
+      async (done: () => void): Promise<void> => {
+        const caseName = 'SUB_DDM_RDB_GETRDBSTORE_ENUM_TOKEN_003';
+        console.info(TAG + `************* ${caseName} start *************`);
+        const isCustomSupported = relationalStore.isTokenizerSupported(relationalStore.Tokenizer.CUSTOM_TOKENIZER);
+        if (!isCustomSupported) {
+          console.info(TAG + `${caseName} custom tokenizer not supported`);
+          done();
+        } else {
+          try {
+            const storeConfig: relationalStore.StoreConfig = {
+              name: 'Token_CUSTOM_DEFAULT.db',
+              securityLevel: relationalStore.SecurityLevel.S3,
+              tokenizer: relationalStore.Tokenizer.CUSTOM_TOKENIZER
+            };
+            relationalStore.getRdbStore(context!, storeConfig, (err, rdbStore) => {
+              if (err) {
+                console.error(TAG + `${caseName} fail: code=${err.code}, msg=${err.message}`);
+                expect(null).assertFail();
+                done();
+              } else {
+                console.info(TAG + `${caseName} success`);
+                expect(rdbStore!== undefined).assertEqual(true);
+                waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
+                done();
+              }
+            });
+          } catch (e) {
+            const err = e as BusinessError;
+            console.error(TAG + `${caseName} catch exception: code=${err.code}, msg=${err.message}`);
+            expect(null).assertFail();
+            done();
+          }
+        }
+      });
 	  
 	/**
      * @tc.name       SUB_DDM_RDB_GETRDBSTORE_callback_ERR_001
