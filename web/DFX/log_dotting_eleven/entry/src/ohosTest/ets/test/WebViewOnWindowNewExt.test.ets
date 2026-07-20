@@ -116,7 +116,7 @@ export default function WebViewOnWindowNewExtTest() {
      */
     it('testWebViewOnWindowNewExt004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitWebViewOnWindowNewExt004', 101009)
-      Utils.registerEvent('testWebViewOnWindowNewExt004', 'https://www.baidu.com/', 20260121, done);
+      Utils.registerContainEvent('testWebViewOnWindowNewExt004', 'index.html', 20260121, done);
       await Utils.waitAndClickComponent(driver, "WebViewOnWindowNewExtButton","testWebViewOnWindowNewExt004");
     })
 

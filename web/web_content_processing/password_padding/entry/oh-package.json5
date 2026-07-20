@@ -20,5 +20,7 @@
   "description": "Please describe the basic information.",
   "main": "",
   "version": "1.0.0",
-  "dependencies": {}
+  "dependencies": {
+    "library": "file:../libs/xtstestserver.har"
+  }
 }
