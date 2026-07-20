@@ -48,7 +48,8 @@
 
 | 装饰器 | null/undefined 入参 | 说明 |
 |--------|---------------------|------|
-| @Provider / @Consumer / @Monitor | **已传** | DecoratorNullArgsCover |
+| @Provider / @Consumer | **已传** | DecoratorNullArgsCover |
+| @Monitor(null/undefined) | **不可测，已删** | 运行时崩溃；异常入参用例已删除，不测正常参数；见 compile_failures |
 | @StorageProp / @StorageLink / @LocalStorageProp / @LocalStorageLink | **已传** | StorageWatchNullArgsCover |
 | @Provide / @Consume | **编不过** | 页面合法 string 键覆盖 + 归档 |
 | @Watch(null) | **编不过** | 合法回调名覆盖 + 归档 |

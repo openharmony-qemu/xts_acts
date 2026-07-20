@@ -9,7 +9,7 @@
 | `appStorage/` | @StorageProp/@StorageLink/@Watch/@LocalStorage* |
 | `entry/` | @Entry / EntryOptions.storage |
 | `env/` | @Env / EnvDecorator / CustomEnvKey / SystemProperties |
-| `decorators/` | @Provider/@Consumer/@Monitor/@Provide/@Consume/@Preview/@Extend/@Component*/@ReusableV2 |
+| `decorators/` | @Provider/@Consumer/@Provide/@Consume/@Preview/@Extend/@Component*/@ReusableV2（@Monitor null/undefined 已删） |
 | `monitor/` | IMonitor.value(null/undefined) |
 | `reuse/` | ReuseOptions / @ReusableV2.reuse |
 | `lifecycle/` | CustomComponentLifecycle / IReusePool / aboutToReuse |

@@ -33,17 +33,22 @@
 | `@Env(null/undefined)` | null/undefined | 仅接受合法 `SystemProperties`（如 BREAK_POINT） |
 | `@Type(...)` | （本工程） | `Cannot find name 'Type'`（以 `@Trace` + ObservedV2 页面覆盖） |
 
+## 编译通过但运行时崩溃（不可挂页面加载路径）
+
+| 接口 | 异常值 | 现象（设备 hilog） | 处理 |
+|------|--------|-------------------|------|
+| `@Monitor(null)` / `@Monitor(undefined)`（含 options 第二参 null/undefined） | null/undefined | `TypeError: Cannot read property enableWildcard of null`；页面无法加载 | **异常入参用例已删除**（不测正常参数）；归档本表 |
+
 ## 编译通过的异常参数（必须写用例/页面）
 
 | 接口 | 写法 |
 |------|------|
 | `@Provider(null/undefined)` | DecoratorNullArgsCover |
 | `@Consumer(null/undefined)` | DecoratorNullArgsCover |
-| `@Monitor(null/undefined)` | DecoratorNullArgsCover / MonitorValueCover |
 | `@StorageProp/@StorageLink/@LocalStorage*(null/undefined)` | StorageWatchNullArgsCover |
 | `@Watch(undefined)` | StorageWatchNullArgsCover（仅 WARN，可编） |
 | `Method Env(null/undefined)` | EnvDecoratorCover.aboutToAppear |
-| `IMonitor.value(null/undefined)` | MonitorValueCover |
+| `IMonitor.value(null/undefined)` | MonitorValueCover（合法 `@Monitor('name')`） |
 | `EntryOptions.storage: undefined` | EntryOptionsNullUndefinedTest |
 | `ReuseOptions.reuseId: undefined` | ReuseOptionsNullUndefinedTest |
 | `ConnectOptions*.default*Creator: undefined` | ConnectOptionsNullUndefinedTest |

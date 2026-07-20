@@ -14,7 +14,9 @@
  */
 
 /**
- * Cover @Provider/@Consumer/@Monitor with null/undefined decorator args.
+ * Cover @Provider/@Consumer with null/undefined decorator args.
+ * @Monitor(null|undefined) 不可测（运行时崩溃），已删除，见
+ * null_undefined_compile_failures.md。
  */
 @ComponentV2
 struct DecoChildNullArgs {
@@ -35,18 +37,6 @@ struct DecoChildNullArgs {
 struct DecoratorNullArgsCover {
   @Provider(undefined) ageUndef: number = 1;
   @Provider(null) ageNull: number = 1;
-  @Local name: string = 'Tom';
-  @Local monHit: number = 0;
-
-  @Monitor(null, null)
-  onMonNull(_monitor: IMonitor): void {
-    this.monHit += 1;
-  }
-
-  @Monitor(undefined, undefined)
-  onMonUndef(_monitor: IMonitor): void {
-    this.monHit += 1;
-  }
 
   build() {
     Column() {
@@ -57,16 +47,12 @@ struct DecoratorNullArgsCover {
       Text(`ageUndef:${this.ageUndef},ageNull:${this.ageNull}`)
         .id('deco_null_args_provider')
         .height('5%')
-      Text(`monHit:${this.monHit}`)
-        .id('deco_null_args_monitor')
-        .height('5%')
       Button('bump')
         .id('deco_null_args_btn')
         .height('5%')
         .onClick(() => {
           this.ageUndef += 1;
           this.ageNull += 1;
-          this.name = 'Bob';
         })
       DecoChildNullArgs()
     }

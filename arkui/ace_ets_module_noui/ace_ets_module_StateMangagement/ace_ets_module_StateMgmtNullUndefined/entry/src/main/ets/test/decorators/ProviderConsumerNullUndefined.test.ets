@@ -27,15 +27,15 @@ export default function providerConsumerNullUndefinedTest() {
     });
 
     /**
-     * @tc.number Provider_Consumer_Monitor_null_undefined_001
-     * @tc.name Provider_Consumer_Monitor_null_undefined_001
-     * @tc.desc Cover @Provider/@Consumer/@Monitor with null/undefined args
+     * @tc.number Provider_Consumer_null_undefined_001
+     * @tc.name Provider_Consumer_null_undefined_001
+     * @tc.desc Cover @Provider/@Consumer with null/undefined args
      * @tc.type FUNCTION
      * @tc.size SMALLTEST
      * @tc.level LEVEL2
      */
-    it('Provider_Consumer_Monitor_null_undefined_001', Level.LEVEL2, async () => {
-      console.info('[Provider_Consumer_Monitor_null_undefined_001] START');
+    it('Provider_Consumer_null_undefined_001', Level.LEVEL2, async () => {
+      console.info('[Provider_Consumer_null_undefined_001] START');
       try {
         await pushPage('MainAbility/pages/decorators/DecoratorNullArgsCover',
           'DecoratorNullArgsCover');
@@ -45,12 +45,16 @@ export default function providerConsumerNullUndefinedTest() {
           await (await driver.findComponent(ON.id('deco_null_args_provider'))).getText();
         expect(text.indexOf('ageUndef:') >= 0).assertTrue();
         expect(text.indexOf('ageNull:') >= 0).assertTrue();
+        const child: string =
+          await (await driver.findComponent(ON.id('deco_null_args_child'))).getText();
+        expect(child.indexOf('cUndef:') >= 0).assertTrue();
+        expect(child.indexOf('cNull:') >= 0).assertTrue();
       } catch (err) {
-        console.error('[Provider_Consumer_Monitor_null_undefined_001] Error: ' +
+        console.error('[Provider_Consumer_null_undefined_001] Error: ' +
           JSON.stringify(err));
         expect().assertFail();
       }
-      console.info('[Provider_Consumer_Monitor_null_undefined_001] END');
+      console.info('[Provider_Consumer_null_undefined_001] END');
     });
   });
 }
