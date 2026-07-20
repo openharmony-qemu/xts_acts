@@ -172,7 +172,7 @@ export default function ObjectConstructorTest(): void {
      */
     it('testObjectConstructor0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Object = new Object();
-      let vals = Object.values(obj);
+      let vals: Array<Any> = Object.values(obj);
       expect(vals.length).assertEqual(0);
     });
 
@@ -311,7 +311,6 @@ export default function ObjectConstructorTest(): void {
     it('testObjectConstructor1700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Object = new Object();
       let s: string = obj.toString();
-      let hc: int = obj.$_hashCode();
       expect(obj.toString()).assertEqual(s);
     });
 
@@ -342,8 +341,6 @@ export default function ObjectConstructorTest(): void {
       let obj1: Object = new Object();
       let obj2: Object = new Object();
       expect(obj1 as Object !== obj2 as Object).assertTrue();
-      let h1: int = obj1.$_hashCode();
-      let h2: int = obj2.$_hashCode();
     });
 
     /**

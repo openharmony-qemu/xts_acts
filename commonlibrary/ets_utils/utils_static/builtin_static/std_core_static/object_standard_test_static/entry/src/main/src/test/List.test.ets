@@ -1,3 +1,4 @@
+import abilityTest from './Ability.test';
 import objectAssignTest from './object/ObjectAssign.test';
 import objectConstructorTest from './object/ObjectConstructor.test';
 import objectEntriesTest from './object/ObjectEntries.test';
@@ -12,6 +13,7 @@ import objectToStringTest from './object/ObjectToString.test';
 import objectValuesTest from './object/ObjectValues.test';
 
 export default function testsuite(): void {
+  abilityTest();
   objectAssignTest();
   objectConstructorTest();
   objectEntriesTest();
