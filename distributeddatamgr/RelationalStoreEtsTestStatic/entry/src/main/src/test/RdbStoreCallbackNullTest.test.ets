@@ -103,19 +103,21 @@ export default function RdbStoreCallbackNullTest(){
 			name: 'RequiredTest_S1.db',
 			securityLevel: relationalStore.SecurityLevel.S1
 		  };
-		  try {
-		    let rdbStore = await relationalStore.getRdbStore(context!, storeConfig);
-		    console.info(TAG + `${caseName} success`);
-		    expect(rdbStore!== undefined).assertEqual(true);
-		    expect(rdbStore!.version).assertEqual(0);
-		    expect(rdbStore!.rebuilt).assertEqual(0);
-		    await relationalStore.deleteRdbStore(context!, storeConfig);
-		    done();
-		  } catch (err) {
-		    console.error(TAG + `${caseName} fail: ${err.code}, ${err.message}`);
-		    expect(null).assertFail();
-		    done();
-		  }
+		  relationalStore.getRdbStore(context!, storeConfig, (err, rdbStore) => {
+			if (err) {
+			  console.error(TAG + `${caseName} fail: ${err.code}, ${err.message}`);
+			  expect(null).assertFail();
+			  done();
+			} else {
+			  console.info(TAG + `${caseName} success`);
+			  expect(rdbStore!== undefined).assertEqual(true);
+			  expect(rdbStore!.version).assertEqual(0);
+			  expect(rdbStore!.rebuilt).assertEqual(0);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
+			  done();
+			}
+
+		  });
 		} catch (e) {
 		  const err = e as BusinessError;
 		  console.error(TAG + `${caseName} catch exception: ${err.code}, ${err.message}`);
@@ -141,17 +143,18 @@ export default function RdbStoreCallbackNullTest(){
 			name: 'RequiredTest_S2.db',
 			securityLevel: relationalStore.SecurityLevel.S2
 		  };
-		  try {
-		    let rdbStore = await relationalStore.getRdbStore(context!, storeConfig);
-		    console.info(TAG + `${caseName} success`);
-		    expect(rdbStore!== undefined).assertEqual(true);
-		    await relationalStore.deleteRdbStore(context!, storeConfig);
-		    done();
-		  } catch (err) {
-		    console.error(TAG + `${caseName} fail: ${err.code}, ${err.message}`);
-		    expect(null).assertFail();
-		    done();
-		  }
+		  relationalStore.getRdbStore(context!, storeConfig, (err, rdbStore) => {
+			if (err) {
+			  console.error(TAG + `${caseName} fail: ${err.code}, ${err.message}`);
+			  expect(null).assertFail();
+			  done();
+			} else {
+			  console.info(TAG + `${caseName} success`);
+			  expect(rdbStore!== undefined).assertEqual(true);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
+			  done();
+			}
+		  });
 		} catch (e) {
 		  const err = e as BusinessError;
 		  console.error(TAG + `${caseName} catch exception: ${err.code}, ${err.message}`);
@@ -177,17 +180,20 @@ export default function RdbStoreCallbackNullTest(){
 			name: 'RequiredTest_S3.db',
 			securityLevel: relationalStore.SecurityLevel.S3
 		  };
-		  try {
-		    let rdbStore = await relationalStore.getRdbStore(context!, storeConfig);
-		    console.info(TAG + `${caseName} success`);
-		    expect(rdbStore!== undefined).assertEqual(true);
-		    await relationalStore.deleteRdbStore(context!, storeConfig);
-		    done();
-		  } catch (err) {
-		    console.error(TAG + `${caseName} fail: ${err.code}, ${err.message}`);
-		    expect(null).assertFail();
-		    done();
-		  }
+		  relationalStore.getRdbStore(context!, storeConfig, (err, rdbStore) => {
+			if (err) {
+			  console.error(TAG + `${caseName} fail: ${err.code}, ${err.message}`);
+			  expect(null).assertFail();
+			  done();
+			} else {
+			  console.info(TAG + `${caseName} success`);
+			  expect(rdbStore!== undefined).assertEqual(true);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
+			  done();
+			}
+
+
+		  });
 		} catch (e) {
 		  const err = e as BusinessError;
 		  console.error(TAG + `${caseName} catch exception: ${err.code}, ${err.message}`);
@@ -213,17 +219,18 @@ export default function RdbStoreCallbackNullTest(){
 			name: 'RequiredTest_S4.db',
 			securityLevel: relationalStore.SecurityLevel.S4
 		  };
-		  try {
-		    let rdbStore = await relationalStore.getRdbStore(context!, storeConfig);
-		    console.info(TAG + `${caseName} success`);
-		    expect(rdbStore!== undefined).assertEqual(true);
-		    await relationalStore.deleteRdbStore(context!, storeConfig);
-		    done();
-		  } catch (err) {
-		    console.error(TAG + `${caseName} fail: ${err.code}, ${err.message}`);
-		    expect(null).assertFail();
-		    done();
-		  }
+		  relationalStore.getRdbStore(context!, storeConfig, (err, rdbStore) => {
+			if (err) {
+			  console.error(TAG + `${caseName} fail: ${err.code}, ${err.message}`);
+			  expect(null).assertFail();
+			  done();
+			} else {
+			  console.info(TAG + `${caseName} success`);
+			  expect(rdbStore!== undefined).assertEqual(true);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
+			  done();
+			}
+		  });
 		} catch (e) {
 		  const err = e as BusinessError;
 		  console.error(TAG + `${caseName} catch exception: ${err.code}, ${err.message}`);
@@ -256,17 +263,18 @@ export default function RdbStoreCallbackNullTest(){
 			allowRebuild: true,
 			enableSemanticIndex: true,
 		  };
-		  try {
-		    let rdbStore = await relationalStore.getRdbStore(context!, storeConfig);
-		    console.info(TAG + `${caseName} success`);
-		    expect(rdbStore!== undefined).assertEqual(true);
-		    await relationalStore.deleteRdbStore(context!, storeConfig);
-		    done();
-		  } catch (err) {
-		    console.error(TAG + `${caseName} fail: ${err.code}, ${err.message}`);
-		    expect(801).assertEqual(err.code);
-		    done();
-		  }
+		  relationalStore.getRdbStore(context!, storeConfig, (err, rdbStore) => {
+			if (err) {
+			  console.error(TAG + `${caseName} fail: ${err.code}, ${err.message}`);
+			  expect(801).assertEqual(err.code);
+			  done();
+			} else {
+			  console.info(TAG + `${caseName} success`);
+			  expect(rdbStore!== undefined).assertEqual(true);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
+			  done();
+			}
+		  });
 		} catch (e) {
 		  const err = e as BusinessError;
 		  console.error(TAG + `${caseName} catch exception: ${err.code}, ${err.message}`);
@@ -299,17 +307,18 @@ export default function RdbStoreCallbackNullTest(){
 			allowRebuild: false,
 			enableSemanticIndex: false
 		  };
-		  try {
-		    let rdbStore = await relationalStore.getRdbStore(context!, storeConfig);
-		    console.info(TAG + `${caseName} success`);
-		    expect(rdbStore!== undefined).assertEqual(true);
-		    await relationalStore.deleteRdbStore(context!, storeConfig);
-		    done();
-		  } catch (err) {
-		    console.error(TAG + `${caseName} fail: ${err.code}, ${err.message}`);
-		    expect(null).assertFail();
-		    done();
-		  }
+		  relationalStore.getRdbStore(context!, storeConfig, (err, rdbStore) => {
+			if (err) {
+			  console.error(TAG + `${caseName} fail: ${err.code}, ${err.message}`);
+			  expect(null).assertFail();
+			  done();
+			} else {
+			  console.info(TAG + `${caseName} success`);
+			  expect(rdbStore!== undefined).assertEqual(true);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
+			  done();
+			}
+		  });
 		} catch (e) {
 		  const err = e as BusinessError;
 		  console.error(TAG + `${caseName} catch exception: ${err.code}, ${err.message}`);
@@ -339,17 +348,18 @@ export default function RdbStoreCallbackNullTest(){
 			dataGroupId: '',
 			pluginLibs: []
 		  };
-		  try {
-		    let rdbStore = await relationalStore.getRdbStore(context!, storeConfig);
-		    console.info(TAG + `${caseName} success`);
-		    expect(rdbStore!== undefined).assertEqual(true);
-		    await relationalStore.deleteRdbStore(context!, storeConfig);
-		    done();
-		  } catch (err) {
-		    console.error(TAG + `${caseName} fail: ${err.code}, ${err.message}`);
-		    expect(null).assertFail();
-		    done();
-		  }
+		  relationalStore.getRdbStore(context!, storeConfig, (err, rdbStore) => {
+			if (err) {
+			  console.error(TAG + `${caseName} fail: ${err.code}, ${err.message}`);
+			  expect(null).assertFail();
+			  done();
+			} else {
+			  console.info(TAG + `${caseName} success`);
+			  expect(rdbStore!== undefined).assertEqual(true);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
+			  done();
+			}
+		  });
 		} catch (e) {
 		  const err = e as BusinessError;
 		  console.error(TAG + `${caseName} catch exception: ${err.code}, ${err.message}`);
@@ -459,17 +469,18 @@ export default function RdbStoreCallbackNullTest(){
 			  kdfAlgo: relationalStore.KdfAlgo.KDF_SHA1
 			}
 		  };
-		  try {
-		    let rdbStore = await relationalStore.getRdbStore(context!, storeConfig);
-		    console.info(TAG + `${caseName} success`);
-		    expect(rdbStore!== undefined).assertEqual(true);
-		    await relationalStore.deleteRdbStore(context!, storeConfig);
-		    done();
-		  } catch (err) {
-		    console.error(TAG + `${caseName} fail: code=${err.code}, msg=${err.message}`);
-		    expect(null).assertFail();
-		    done();
-		  }
+		  relationalStore.getRdbStore(context!, storeConfig, (err, rdbStore) => {
+			if (err) {
+			  console.error(TAG + `${caseName} fail: code=${err.code}, msg=${err.message}`);
+			  expect(null).assertFail();
+			  done();
+			} else {
+			  console.info(TAG + `${caseName} success`);
+			  expect(rdbStore!== undefined).assertEqual(true);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
+			  done();
+			}
+		  });
 		} catch (e) {
 		  const err = e as BusinessError;
 		  console.error(TAG + `${caseName} catch exception: code=${err.code}, msg=${err.message}`);
@@ -502,17 +513,18 @@ export default function RdbStoreCallbackNullTest(){
 			  kdfAlgo: relationalStore.KdfAlgo.KDF_SHA256
 			}
 		  };
-		  try {
-		    let rdbStore = await relationalStore.getRdbStore(context!, storeConfig);
-		    console.info(TAG + `${caseName} success`);
-		    expect(rdbStore!== undefined).assertEqual(true);
-		    await relationalStore.deleteRdbStore(context!, storeConfig);
-		    done();
-		  } catch (err) {
-		    console.error(TAG + `${caseName} fail: code=${err.code}, msg=${err.message}`);
-		    expect(null).assertFail();
-		    done();
-		  }
+		  relationalStore.getRdbStore(context!, storeConfig, (err, rdbStore) => {
+			if (err) {
+			  console.error(TAG + `${caseName} fail: code=${err.code}, msg=${err.message}`);
+			  expect(null).assertFail();
+			  done();
+			} else {
+			  console.info(TAG + `${caseName} success`);
+			  expect(rdbStore!== undefined).assertEqual(true);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
+			  done();
+			}
+		  });
 		} catch (e) {
 		  const err = e as BusinessError;
 		  console.error(TAG + `${caseName} catch exception: code=${err.code}, msg=${err.message}`);
@@ -545,17 +557,18 @@ export default function RdbStoreCallbackNullTest(){
 			  kdfAlgo: relationalStore.KdfAlgo.KDF_SHA512
 			}
 		  };
-		  try {
-		    let rdbStore = await relationalStore.getRdbStore(context!, storeConfig);
-		    console.info(TAG + `${caseName} success`);
-		    expect(rdbStore!== undefined).assertEqual(true);
-		    await relationalStore.deleteRdbStore(context!, storeConfig);
-		    done();
-		  } catch (err) {
-		    console.error(TAG + `${caseName} fail: code=${err.code}, msg=${err.message}`);
-		    expect(null).assertFail();
-		    done();
-		  }
+		  relationalStore.getRdbStore(context!, storeConfig, (err, rdbStore) => {
+			if (err) {
+			  console.error(TAG + `${caseName} fail: code=${err.code}, msg=${err.message}`);
+			  expect(null).assertFail();
+			  done();
+			} else {
+			  console.info(TAG + `${caseName} success`);
+			  expect(rdbStore!== undefined).assertEqual(true);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
+			  done();
+			}
+		  });
 		} catch (e) {
 		  const err = e as BusinessError;
 		  console.error(TAG + `${caseName} catch exception: code=${err.code}, msg=${err.message}`);
@@ -588,17 +601,18 @@ export default function RdbStoreCallbackNullTest(){
 			  kdfAlgo: relationalStore.KdfAlgo.KDF_SHA256
 			}
 		  };
-		  try {
-		    let rdbStore = await relationalStore.getRdbStore(context!, storeConfig);
-		    console.info(TAG + `${caseName} success`);
-		    expect(rdbStore!== undefined).assertEqual(true);
-		    await relationalStore.deleteRdbStore(context!, storeConfig);
-		    done();
-		  } catch (err) {
-		    console.error(TAG + `${caseName} fail: code=${err.code}, msg=${err.message}`);
-		    expect(null).assertFail();
-		    done();
-		  }
+		  relationalStore.getRdbStore(context!, storeConfig, (err, rdbStore) => {
+			if (err) {
+			  console.error(TAG + `${caseName} fail: code=${err.code}, msg=${err.message}`);
+			  expect(null).assertFail();
+			  done();
+			} else {
+			  console.info(TAG + `${caseName} success`);
+			  expect(rdbStore!== undefined).assertEqual(true);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
+			  done();
+			}
+		  });
 		} catch (e) {
 		  const err = e as BusinessError;
 		  console.error(TAG + `${caseName} catch exception: code=${err.code}, msg=${err.message}`);
@@ -631,17 +645,18 @@ export default function RdbStoreCallbackNullTest(){
 			  kdfAlgo: relationalStore.KdfAlgo.KDF_SHA512
 			}
 		  };
-		  try {
-		    let rdbStore = await relationalStore.getRdbStore(context!, storeConfig);
-		    console.info(TAG + `${caseName} success`);
-		    expect(rdbStore!== undefined).assertEqual(true);
-		             await relationalStore.deleteRdbStore(context!, storeConfig);
-		    done();
-		  } catch (err) {
-		    console.error(TAG + `${caseName} fail: code=${err.code}, msg=${err.message}`);
-		    expect(null).assertFail();
-		    done();
-		  }
+		  relationalStore.getRdbStore(context!, storeConfig, (err, rdbStore) => {
+			if (err) {
+			  console.error(TAG + `${caseName} fail: code=${err.code}, msg=${err.message}`);
+			  expect(null).assertFail();
+			  done();
+			} else {
+			  console.info(TAG + `${caseName} success`);
+			  expect(rdbStore!== undefined).assertEqual(true);
+              waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
+			  done();
+			}
+		  });
 		} catch (e) {
 		  const err = e as BusinessError;
 		  console.error(TAG + `${caseName} catch exception: code=${err.code}, msg=${err.message}`);
@@ -672,17 +687,18 @@ export default function RdbStoreCallbackNullTest(){
 			  encryptionAlgo: relationalStore.EncryptionAlgo.PLAIN_TEXT
 			}
 		  };
-		  try {
-		    let rdbStore = await relationalStore.getRdbStore(context!, storeConfig);
-		    console.info(TAG + `${caseName} success`);
-		    expect(rdbStore!== undefined).assertEqual(true);
-		             await relationalStore.deleteRdbStore(context!, storeConfig);
-		    done();
-		  } catch (err) {
-		    console.error(TAG + `${caseName} fail: code=${err.code}, msg=${err.message}`);
-		    expect(null).assertFail();
-		    done();
-		  }
+		  relationalStore.getRdbStore(context!, storeConfig, (err, rdbStore) => {
+			if (err) {
+			  console.error(TAG + `${caseName} fail: code=${err.code}, msg=${err.message}`);
+			  expect(null).assertFail();
+			  done();
+			} else {
+			  console.info(TAG + `${caseName} success`);
+			  expect(rdbStore!== undefined).assertEqual(true);
+              waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
+			  done();
+			}
+		  });
 		} catch (e) {
 		  const err = e as BusinessError;
 		  console.error(TAG + `${caseName} catch exception: code=${err.code}, msg=${err.message}`);
@@ -709,17 +725,18 @@ export default function RdbStoreCallbackNullTest(){
 			securityLevel: relationalStore.SecurityLevel.S3,
 			tokenizer: relationalStore.Tokenizer.NONE_TOKENIZER
 		  };
-		  try {
-		    let rdbStore = await relationalStore.getRdbStore(context!, storeConfig);
-		    console.info(TAG + `${caseName} success`);
-		    expect(rdbStore!== undefined).assertEqual(true);
-		    await relationalStore.deleteRdbStore(context!, storeConfig);
-		    done();
-		  } catch (err) {
-		    console.error(TAG + `${caseName} fail: code=${err.code}, msg=${err.message}`);
-		    expect(null).assertFail();
-		    done();
-		  }
+		  relationalStore.getRdbStore(context!, storeConfig, (err, rdbStore) => {
+			if (err) {
+			  console.error(TAG + `${caseName} fail: code=${err.code}, msg=${err.message}`);
+			  expect(null).assertFail();
+			  done();
+			} else {
+			  console.info(TAG + `${caseName} success`);
+			  expect(rdbStore!== undefined).assertEqual(true);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
+			  done();
+			}
+		  });
 		} catch (e) {
 		  const err = e as BusinessError;
 		  console.error(TAG + `${caseName} catch exception: code=${err.code}, msg=${err.message}`);
@@ -746,17 +763,18 @@ export default function RdbStoreCallbackNullTest(){
 			securityLevel: relationalStore.SecurityLevel.S3,
 			tokenizer: relationalStore.Tokenizer.ICU_TOKENIZER
 		  };
-		  try {
-		    let rdbStore = await relationalStore.getRdbStore(context!, storeConfig);
-		    console.info(TAG + `${caseName} success`);
-		    expect(rdbStore!== undefined).assertEqual(true);
-		    await relationalStore.deleteRdbStore(context!, storeConfig);
-		    done();
-		  } catch (err) {
-		    console.error(TAG + `${caseName} fail: code=${err.code}, msg=${err.message}`);
-		    expect(null).assertFail();
-		    done();
-		  }
+		  relationalStore.getRdbStore(context!, storeConfig, (err, rdbStore) => {
+			if (err) {
+			  console.error(TAG + `${caseName} fail: code=${err.code}, msg=${err.message}`);
+			  expect(null).assertFail();
+			  done();
+			} else {
+			  console.info(TAG + `${caseName} success`);
+			  expect(rdbStore!== undefined).assertEqual(true);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
+			  done();
+			}
+		  });
 		} catch (e) {
 		  const err = e as BusinessError;
 		  console.error(TAG + `${caseName} catch exception: code=${err.code}, msg=${err.message}`);
@@ -840,7 +858,7 @@ export default function RdbStoreCallbackNullTest(){
 			} else {
 			  console.info(TAG + `${caseName} success`);
 			  expect(rdbStore!== undefined).assertEqual(true);
-			  (rdbStore as relationalStore.RdbStore).close().awaitSync()
+			  waitForCompletion(async () => {await (rdbStore as relationalStore.RdbStore).close();})
 			  relationalStore.getRdbStore(context!, storeConfig1, (err, rdbStore1) => {
 				if (err) {
 				console.error(TAG + `${caseName} fail2: code=${err.code}, msg=${err.message}`);
@@ -849,7 +867,7 @@ export default function RdbStoreCallbackNullTest(){
 				} else {
 				console.info(TAG + `${caseName} success2`);
 				expect(rdbStore1!== undefined).assertEqual(true);
-			    relationalStore.deleteRdbStore(context!, storeConfig1).awaitSync()
+			    waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig1);})
 				done();
 				}
 			});
@@ -888,12 +906,16 @@ export default function RdbStoreCallbackNullTest(){
 			securityLevel: relationalStore.SecurityLevel.S1,
 		  };
 		  
-		  try {
-		    let rdbStore = await relationalStore.getRdbStore(context!, storeConfig);
-		    console.info(TAG + `${caseName} success`);
-		    expect(rdbStore!== undefined).assertEqual(true);
-		    await (rdbStore as relationalStore.RdbStore).close();
-		    relationalStore.getRdbStore(context!, storeConfig1, (err, rdbStore1) => {
+		  relationalStore.getRdbStore(context!, storeConfig, (err, rdbStore) => {
+			if (err) {
+			  console.error(TAG + `${caseName} fail: code=${err.code}, msg=${err.message}`);
+			  expect(null).assertFail();
+			  done();
+			} else {
+			  console.info(TAG + `${caseName} success`);
+			  expect(rdbStore!== undefined).assertEqual(true);
+			  waitForCompletion(async () => {await (rdbStore as relationalStore.RdbStore).close();})
+			  relationalStore.getRdbStore(context!, storeConfig1, (err, rdbStore1) => {
 				if (err) {
 				console.error(TAG + `${caseName} fail2: code=${err.code}, msg=${err.message}`);
 				expect(err.code).assertEqual(14800017);
@@ -905,11 +927,8 @@ export default function RdbStoreCallbackNullTest(){
 				done();
 				}
 			});
-		  } catch (err) {
-		    console.error(TAG + `${caseName} fail: code=${err.code}, msg=${err.message}`);
-		    expect(null).assertFail();
-		    done();
-		  }
+			}
+		  });
 		  
 		} catch (e) {
 		  const err = e as BusinessError;
@@ -952,7 +971,7 @@ export default function RdbStoreCallbackNullTest(){
 			} else {
 			  console.info(TAG + `${caseName} success`);
 			  expect(rdbStore!== undefined).assertEqual(true);
-			  (rdbStore as relationalStore.RdbStore).close().awaitSync()
+			  waitForCompletion(async () => {await (rdbStore as relationalStore.RdbStore).close();})
 			  relationalStore.getRdbStore(context!, storeConfig1, (err, rdbStore1) => {
 				if (err) {
 				console.error(TAG + `${caseName} fail2: code=${err.code}, msg=${err.message}`);
@@ -961,7 +980,7 @@ export default function RdbStoreCallbackNullTest(){
 				} else {
 				console.info(TAG + `${caseName} success2`);
 				expect(rdbStore1!== undefined).assertEqual(true);
-			    relationalStore.deleteRdbStore(context!, storeConfig1).awaitSync()
+			    waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig1);})
 				done();
 				}
 			});
@@ -1009,7 +1028,7 @@ export default function RdbStoreCallbackNullTest(){
 			} else {
 			  console.info(TAG + `${caseName} success`);
 			  expect(rdbStore!== undefined).assertEqual(true);
-			  (rdbStore as relationalStore.RdbStore).close().awaitSync()
+			  waitForCompletion(async () => {await (rdbStore as relationalStore.RdbStore).close();})
 			  relationalStore.getRdbStore(context!, storeConfig1, (err, rdbStore1) => {
 				if (err) {
 				console.error(TAG + `${caseName} fail2: code=${err.code}, msg=${err.message}`);
@@ -1018,7 +1037,7 @@ export default function RdbStoreCallbackNullTest(){
 				} else {
 				console.info(TAG + `${caseName} success2`);
 				expect(rdbStore1!== undefined).assertEqual(true);
-			    relationalStore.deleteRdbStore(context!, storeConfig1).awaitSync()
+			    waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig1);})
 				done();
 				}
 			});
@@ -1058,12 +1077,16 @@ export default function RdbStoreCallbackNullTest(){
 			encrypt: false
 		  };
 		  
-		  try {
-		    let rdbStore = await relationalStore.getRdbStore(context!, storeConfig);
-		    console.info(TAG + `${caseName} success`);
-		    expect(rdbStore!== undefined).assertEqual(true);
-		    await (rdbStore as relationalStore.RdbStore).close();
-		    relationalStore.getRdbStore(context!, storeConfig1, (err, rdbStore1) => {
+		  relationalStore.getRdbStore(context!, storeConfig, (err, rdbStore) => {
+			if (err) {
+			  console.error(TAG + `${caseName} fail: code=${err.code}, msg=${err.message}`);
+			  expect(null).assertFail();
+			  done();
+			} else {
+			  console.info(TAG + `${caseName} success`);
+			  expect(rdbStore!== undefined).assertEqual(true);
+			  waitForCompletion(async () => {await (rdbStore as relationalStore.RdbStore).close();})
+			  relationalStore.getRdbStore(context!, storeConfig1, (err, rdbStore1) => {
 				if (err) {
 				console.error(TAG + `${caseName} fail2: code=${err.code}, msg=${err.message}`);
 				expect(err.code).assertEqual(14800011);
@@ -1074,11 +1097,8 @@ export default function RdbStoreCallbackNullTest(){
 				done();
 				}
 			});
-		  } catch (err) {
-		    console.error(TAG + `${caseName} fail: code=${err.code}, msg=${err.message}`);
-		    expect(null).assertFail();
-		    done();
-		  }
+			}
+		  });
 		  
 		} catch (e) {
 		  const err = e as BusinessError;
@@ -1109,17 +1129,20 @@ export default function RdbStoreCallbackNullTest(){
             dataGroupId: '',
             pluginLibs: ['']
           };
-          try {
-            let rdbStore = await relationalStore.getRdbStore(context!, storeConfig);
-            console.info(TAG + `${caseName} success`);
-            expect(rdbStore!== undefined).assertEqual(true);
-            await relationalStore.deleteRdbStore(context!, storeConfig);
-            done();
-          } catch (err) {
-            console.error(TAG + `${caseName} fail: ${err.code}, ${err.message}`);
-            expect(null).assertFail();
-            done();
-          }
+          relationalStore.getRdbStore(context!, storeConfig, (err, rdbStore) => {
+			waitForCompletion(async () => {
+            if (err) {
+              console.error(TAG + `${caseName} fail: ${err.code}, ${err.message}`);
+              expect(null).assertFail();
+              done();
+            } else {
+              console.info(TAG + `${caseName} success`);
+              expect(rdbStore!== undefined).assertEqual(true);
+              await relationalStore.deleteRdbStore(context!, storeConfig);
+              done();
+            }
+			})
+          });
         } catch (e) {
           const err = e as BusinessError;
           console.error(TAG + `${caseName} catch exception: ${err.code}, ${err.message}`);
