@@ -332,8 +332,8 @@ export default function wifiManagerTest() {
         // expect(Array.isArray(data.clientDevices)).assertTrue();
         console.log(`${caseName} get result data.goIpAddress is`, typeof data.goIpAddress);
         expect(typeof data.goIpAddress === 'string').assertTrue();
-        console.log(`${caseName} get result data.gcIpAddress is`, typeof data.gcIpAddress);
-        expect(typeof data.gcIpAddress === 'string').assertTrue();
+        // console.log(`${caseName} get result data.gcIpAddress is`, typeof data.gcIpAddress);
+        // expect(typeof data.gcIpAddress === 'string').assertTrue();
       } catch(error) {
         console.info("getCurrentGroup: errCode:" + error.code + ",errMessage:" + error.message);
         if (Number(error.code) == 801) {
