@@ -7,6 +7,7 @@ import PathIterator from './PathIterator.test';
 import DrawingTsLatticeTest from "./Lattice.test";
 import maskFilterTest from './MaskFilter.test';
 import roundRectTest from "./RoundRect.test";
+import DrawingTsRoundRectPart2Test from "./RoundRectPart2.test";
 import samplingOptionsTest  from "./SamplingOptions.test";
 import shadowEffectTest from './ShaderEffect.test'
 import shadowLayerTest from './ShadowLayer.test';
@@ -24,6 +25,7 @@ export default function testsuite() {
   DrawingTsLatticeTest();
   maskFilterTest();
   roundRectTest();
+  DrawingTsRoundRectPart2Test();
   shadowEffectTest();
   shadowLayerTest();
   toolTest();
