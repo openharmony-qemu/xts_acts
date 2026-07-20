@@ -235,14 +235,14 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.name   AUDIO_RINGTONE_PUBLIC_PLAY_0001
-     * @tc.number AUDIO_RINGTONE_PUBLIC_PLAY_0001
+     * @tc.name   AUDIO_RINGTONE_PUBLIC_PLAY_0100
+     * @tc.number AUDIO_RINGTONE_PUBLIC_PLAY_0100
      * @tc.desc   SUCCESS
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("AUDIO_RINGTONE_PUBLIC_PLAY_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it("AUDIO_RINGTONE_PUBLIC_PLAY_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let audioManager: audio.AudioManager = audio.getAudioManager();
         let audioRoutingManager: audio.AudioRoutingManager = audioManager.getRoutingManager();
@@ -263,35 +263,35 @@ export default function AudioHapticTest() {
         systemSoundPlayer = data;
 
         await systemSoundPlayer?.load(systemSoundType).then(() => {
-        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0001 Succeeded in calling the load method.');
+        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0100 Succeeded in calling the load method.');
         }).catch((err: BusinessError) => {
-           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0001 Failed to call the load method. Code: ${err.code}, message: ${err.message}`);
+           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0100 Failed to call the load method. Code: ${err.code}, message: ${err.message}`);
            expect(false).assertTrue();
         });
 
         await systemSoundPlayer?.play(systemSoundType).then(() => {
-        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0001 Succeeded in calling the play method.');
+        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0100 Succeeded in calling the play method.');
         }).catch((err: BusinessError) => {
-           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0001 Failed to call the play method. Code: ${err.code}, message: ${err.message}`);
+           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0100 Failed to call the play method. Code: ${err.code}, message: ${err.message}`);
            expect(false).assertTrue();
         });
 
         await systemSoundPlayer?.unload(systemSoundType).then(() => {
-        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0001 Succeeded in calling the unload method.');
+        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0100 Succeeded in calling the unload method.');
         }).catch((err: BusinessError) => {
-           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0001 Failed to call the unload method. Code: ${err.code}, message: ${err.message}`);
+           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0100 Failed to call the unload method. Code: ${err.code}, message: ${err.message}`);
            expect(false).assertTrue();
         });
 
         await systemSoundPlayer?.release().then(() => {
-        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0001 Succeeded in calling the release method.');
+        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0100 Succeeded in calling the release method.');
         }).catch((err: BusinessError) => {
-           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0001 Failed to call the release method. Code: ${err.code}, message: ${err.message}`);
+           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0100 Failed to call the release method. Code: ${err.code}, message: ${err.message}`);
            expect(false).assertTrue();
         });
        
       } catch(error) {
-        console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0001 ERROR, code: ${error.code}, message: ${error.message}`);
+        console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0100 ERROR, code: ${error.code}, message: ${error.message}`);
         expect(false).assertTrue();
         done();
       }
@@ -299,14 +299,14 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.name   AUDIO_RINGTONE_PUBLIC_PLAY_0002
-     * @tc.number AUDIO_RINGTONE_PUBLIC_PLAY_0002
+     * @tc.name   AUDIO_RINGTONE_PUBLIC_PLAY_0200
+     * @tc.number AUDIO_RINGTONE_PUBLIC_PLAY_0200
      * @tc.desc   Parameter Check Load Failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("AUDIO_RINGTONE_PUBLIC_PLAY_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("AUDIO_RINGTONE_PUBLIC_PLAY_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
         let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.PHOTO_SHUTTER;
@@ -315,35 +315,35 @@ export default function AudioHapticTest() {
         systemSoundPlayer = data;
 
         await systemSoundPlayer?.load(errorType).then(() => {
-        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0002 Succeeded in calling the load method.');
+        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0200 Succeeded in calling the load method.');
         }).catch((err: BusinessError) => {
-           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0002 Failed to call the load method. Code: ${err.code}, message: ${err.message}`);
+           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0200 Failed to call the load method. Code: ${err.code}, message: ${err.message}`);
            expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.PARAMETER_INCORRECT);
         });
 
         await systemSoundPlayer?.play(systemSoundType).then(() => {
-        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0002 Succeeded in calling the play method.');
+        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0200 Succeeded in calling the play method.');
         }).catch((err: BusinessError) => {
-           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0002 Failed to call the play method. Code: ${err.code}, message: ${err.message}`);
+           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0200 Failed to call the play method. Code: ${err.code}, message: ${err.message}`);
            expect(false).assertTrue();
         });
 
         await systemSoundPlayer?.unload(systemSoundType).then(() => {
-        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0002 Succeeded in calling the unload method.');
+        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0200 Succeeded in calling the unload method.');
         }).catch((err: BusinessError) => {
-           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0002 Failed to call the unload method. Code: ${err.code}, message: ${err.message}`);
+           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0200 Failed to call the unload method. Code: ${err.code}, message: ${err.message}`);
            expect(false).assertTrue();
         });
 
         await systemSoundPlayer?.release().then(() => {
-        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0002 Succeeded in calling the release method.');
+        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0200 Succeeded in calling the release method.');
         }).catch((err: BusinessError) => {
-           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0002 Failed to call the release method. Code: ${err.code}, message: ${err.message}`);
+           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0200 Failed to call the release method. Code: ${err.code}, message: ${err.message}`);
            expect(false).assertTrue();
         });
        
       } catch(error) {
-        console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0002 ERROR, code: ${error.code}, message: ${error.message}`);
+        console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0200 ERROR, code: ${error.code}, message: ${error.message}`);
         expect(Number(error.code)).assertEqual(SystemSoundManagerErrorCode.PARAMETER_INCORRECT);
         done();
       }
@@ -351,14 +351,14 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.name   AUDIO_RINGTONE_PUBLIC_PLAY_0003
-     * @tc.number AUDIO_RINGTONE_PUBLIC_PLAY_0003
+     * @tc.name   AUDIO_RINGTONE_PUBLIC_PLAY_0300
+     * @tc.number AUDIO_RINGTONE_PUBLIC_PLAY_0300
      * @tc.desc   Parameter Check Play Failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("AUDIO_RINGTONE_PUBLIC_PLAY_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("AUDIO_RINGTONE_PUBLIC_PLAY_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         let audioManager: audio.AudioManager = audio.getAudioManager();
         let audioRoutingManager: audio.AudioRoutingManager = audioManager.getRoutingManager();
@@ -379,35 +379,35 @@ export default function AudioHapticTest() {
         systemSoundPlayer = data;
 
         await systemSoundPlayer?.load(systemSoundType).then(() => {
-        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0003 Succeeded in calling the load method.');
+        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0300 Succeeded in calling the load method.');
         }).catch((err: BusinessError) => {
-           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0003 Failed to call the load method. Code: ${err.code}, message: ${err.message}`);
+           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0300 Failed to call the load method. Code: ${err.code}, message: ${err.message}`);
            expect(false).assertTrue();
         });
 
         await systemSoundPlayer?.play(errorType).then(() => {
-        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0003 Succeeded in calling the play method.');
+        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0300 Succeeded in calling the play method.');
         }).catch((err: BusinessError) => {
-           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0003 Failed to call the play method. Code: ${err.code}, message: ${err.message}`);
+           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0300 Failed to call the play method. Code: ${err.code}, message: ${err.message}`);
            expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.PARAMETER_INCORRECT);
         });
 
         await systemSoundPlayer?.unload(systemSoundType).then(() => {
-        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0003 Succeeded in calling the unload method.');
+        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0300 Succeeded in calling the unload method.');
         }).catch((err: BusinessError) => {
-           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0003 Failed to call the unload method. Code: ${err.code}, message: ${err.message}`);
+           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0300 Failed to call the unload method. Code: ${err.code}, message: ${err.message}`);
            expect(false).assertTrue();
         });
 
         await systemSoundPlayer?.release().then(() => {
-        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0003 Succeeded in calling the release method.');
+        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0300 Succeeded in calling the release method.');
         }).catch((err: BusinessError) => {
-           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0003 Failed to call the release method. Code: ${err.code}, message: ${err.message}`);
+           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0300 Failed to call the release method. Code: ${err.code}, message: ${err.message}`);
            expect(false).assertTrue();
         });
        
       } catch(error) {
-        console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0003 ERROR, code: ${error.code}, message: ${error.message}`);
+        console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0300 ERROR, code: ${error.code}, message: ${error.message}`);
         expect(Number(error.code)).assertEqual(SystemSoundManagerErrorCode.PARAMETER_INCORRECT);
         done();
       }
@@ -415,14 +415,14 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.name   AUDIO_RINGTONE_PUBLIC_PLAY_0004
-     * @tc.number AUDIO_RINGTONE_PUBLIC_PLAY_0004
+     * @tc.name   AUDIO_RINGTONE_PUBLIC_PLAY_0400
+     * @tc.number AUDIO_RINGTONE_PUBLIC_PLAY_0400
      * @tc.desc   Parameter Check Unload Failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("AUDIO_RINGTONE_PUBLIC_PLAY_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("AUDIO_RINGTONE_PUBLIC_PLAY_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         let audioManager: audio.AudioManager = audio.getAudioManager();
         let audioRoutingManager: audio.AudioRoutingManager = audioManager.getRoutingManager();
@@ -443,35 +443,35 @@ export default function AudioHapticTest() {
         systemSoundPlayer = data;
 
         await systemSoundPlayer?.load(systemSoundType).then(() => {
-        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0004 Succeeded in calling the load method.');
+        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0400 Succeeded in calling the load method.');
         }).catch((err: BusinessError) => {
-           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0004 Failed to call the load method. Code: ${err.code}, message: ${err.message}`);
+           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0400 Failed to call the load method. Code: ${err.code}, message: ${err.message}`);
            expect(false).assertTrue();
         });
 
         await systemSoundPlayer?.play(systemSoundType).then(() => {
-        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0004 Succeeded in calling the play method.');
+        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0400 Succeeded in calling the play method.');
         }).catch((err: BusinessError) => {
-           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0004 Failed to call the play method. Code: ${err.code}, message: ${err.message}`);
+           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0400 Failed to call the play method. Code: ${err.code}, message: ${err.message}`);
            expect(false).assertTrue();
         });
 
         await systemSoundPlayer?.unload(errorType).then(() => {
-        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0004 Succeeded in calling the unload method.');
+        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0400 Succeeded in calling the unload method.');
         }).catch((err: BusinessError) => {
-           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0004 Failed to call the unload method. Code: ${err.code}, message: ${err.message}`);
+           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0400 Failed to call the unload method. Code: ${err.code}, message: ${err.message}`);
            expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.PARAMETER_INCORRECT);
         });
 
         await systemSoundPlayer?.release().then(() => {
-        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0004 Succeeded in calling the release method.');
+        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0400 Succeeded in calling the release method.');
         }).catch((err: BusinessError) => {
-           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0004 Failed to call the release method. Code: ${err.code}, message: ${err.message}`);
+           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0400 Failed to call the release method. Code: ${err.code}, message: ${err.message}`);
            expect(false).assertTrue();
         });
        
       } catch(error) {
-        console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0004 ERROR, code: ${error.code}, message: ${error.message}`);
+        console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0400 ERROR, code: ${error.code}, message: ${error.message}`);
         expect(Number(error.code)).assertEqual(SystemSoundManagerErrorCode.PARAMETER_INCORRECT);
         done();
       }
@@ -479,14 +479,14 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.name   AUDIO_RINGTONE_PUBLIC_PLAY_0005
-     * @tc.number AUDIO_RINGTONE_PUBLIC_PLAY_0005
+     * @tc.name   AUDIO_RINGTONE_PUBLIC_PLAY_0500
+     * @tc.number AUDIO_RINGTONE_PUBLIC_PLAY_0500
      * @tc.desc   SUCCESS
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("AUDIO_RINGTONE_PUBLIC_PLAY_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it("AUDIO_RINGTONE_PUBLIC_PLAY_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let audioManager: audio.AudioManager = audio.getAudioManager();
         let audioRoutingManager: audio.AudioRoutingManager = audioManager.getRoutingManager();
@@ -506,35 +506,35 @@ export default function AudioHapticTest() {
         systemSoundPlayer = data;
 
         await systemSoundPlayer?.load(systemSoundType).then(() => {
-        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0005 Succeeded in calling the load method.');
+        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0500 Succeeded in calling the load method.');
         }).catch((err: BusinessError) => {
-           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0005 Failed to call the load method. Code: ${err.code}, message: ${err.message}`);
+           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0500 Failed to call the load method. Code: ${err.code}, message: ${err.message}`);
            expect(false).assertTrue();
         });
 
         await systemSoundPlayer?.play(systemSoundType).then(() => {
-        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0005 Succeeded in calling the play method.');
+        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0500 Succeeded in calling the play method.');
         }).catch((err: BusinessError) => {
-           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0005 Failed to call the play method. Code: ${err.code}, message: ${err.message}`);
+           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0500 Failed to call the play method. Code: ${err.code}, message: ${err.message}`);
            expect(false).assertTrue();
         });
 
         await systemSoundPlayer?.unload(systemSoundType).then(() => {
-        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0005 Succeeded in calling the unload method.');
+        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0500 Succeeded in calling the unload method.');
         }).catch((err: BusinessError) => {
-           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0005 Failed to call the unload method. Code: ${err.code}, message: ${err.message}`);
+           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0500 Failed to call the unload method. Code: ${err.code}, message: ${err.message}`);
            expect(false).assertTrue();
         });
 
         await systemSoundPlayer?.release().then(() => {
-        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0005 Succeeded in calling the release method.');
+        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0500 Succeeded in calling the release method.');
         }).catch((err: BusinessError) => {
-           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0005 Failed to call the release method. Code: ${err.code}, message: ${err.message}`);
+           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0500 Failed to call the release method. Code: ${err.code}, message: ${err.message}`);
            expect(false).assertTrue();
         });
        
       } catch(error) {
-        console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0005 ERROR, code: ${error.code}, message: ${error.message}`);
+        console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0500 ERROR, code: ${error.code}, message: ${error.message}`);
         expect(false).assertTrue();
         done();
       }
@@ -542,14 +542,14 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.name   AUDIO_RINGTONE_PUBLIC_PLAY_0006
-     * @tc.number AUDIO_RINGTONE_PUBLIC_PLAY_0006
+     * @tc.name   AUDIO_RINGTONE_PUBLIC_PLAY_0600
+     * @tc.number AUDIO_RINGTONE_PUBLIC_PLAY_0600
      * @tc.desc   Parameter Check Load Failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("AUDIO_RINGTONE_PUBLIC_PLAY_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("AUDIO_RINGTONE_PUBLIC_PLAY_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
         let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.VIDEO_RECORDING_BEGIN;
@@ -558,35 +558,35 @@ export default function AudioHapticTest() {
         systemSoundPlayer = data;
 
         await systemSoundPlayer?.load(errorType).then(() => {
-        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0006 Succeeded in calling the load method.');
+        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0600 Succeeded in calling the load method.');
         }).catch((err: BusinessError) => {
-           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0006 Failed to call the load method. Code: ${err.code}, message: ${err.message}`);
+           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0600 Failed to call the load method. Code: ${err.code}, message: ${err.message}`);
            expect(Number(err.code)).assertEqual(SystemSoundManagerErrorCode.PARAMETER_INCORRECT);
         });
 
         await systemSoundPlayer?.play(systemSoundType).then(() => {
-        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0006 Succeeded in calling the play method.');
+        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0600 Succeeded in calling the play method.');
         }).catch((err: BusinessError) => {
-           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0006 Failed to call the play method. Code: ${err.code}, message: ${err.message}`);
+           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0600 Failed to call the play method. Code: ${err.code}, message: ${err.message}`);
            expect(false).assertTrue();
         });
 
         await systemSoundPlayer?.unload(systemSoundType).then(() => {
-        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0006 Succeeded in calling the unload method.');
+        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0600 Succeeded in calling the unload method.');
         }).catch((err: BusinessError) => {
-           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0006 Failed to call the unload method. Code: ${err.code}, message: ${err.message}`);
+           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0600 Failed to call the unload method. Code: ${err.code}, message: ${err.message}`);
            expect(false).assertTrue();
         });
 
         await systemSoundPlayer?.release().then(() => {
-        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0006 Succeeded in calling the release method.');
+        console.info('AUDIO_RINGTONE_PUBLIC_PLAY_0600 Succeeded in calling the release method.');
         }).catch((err: BusinessError) => {
-           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0006 Failed to call the release method. Code: ${err.code}, message: ${err.message}`);
+           console.error(`AUDIO_RINGTONE_PUBLIC_PLAY_0600 Failed to call the release method. Code: ${err.code}, message: ${err.message}`);
            expect(false).assertTrue();
         });
        
       } catch(error) {
-        console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0006 ERROR, code: ${error.code}, message: ${error.message}`);
+        console.log(`${tag}, AUDIO_RINGTONE_PUBLIC_PLAY_0600 ERROR, code: ${error.code}, message: ${error.message}`);
         expect(Number(error.code)).assertEqual(SystemSoundManagerErrorCode.PARAMETER_INCORRECT);
         done();
       }
