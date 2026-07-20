@@ -1991,3 +1991,758 @@ export default function ReadonlySetEntries2Test(): void {
       expect(e2[0].source).assertEqual("xyz");
       expect(iter.next().done).assertTrue();
     });
+
+    /**
+     * @tc.name testReadonlySetEntries095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_0950
+     * @tc.desc Verify ReadonlySet<Object> entries() traverses Object objects
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p1: Object = new Object();
+      const p2: Object = new Object();
+      const set: ReadonlySet<Object> = new Set<Object>([p1, p2]);
+      const iter = set.entries();
+      let e1 = iter.next().value as [Object, Object];
+      expect(e1[0] === p1).assertTrue();
+      let e2 = iter.next().value as [Object, Object];
+      expect(e2[0] === p2).assertTrue();
+      expect(iter.next().done).assertTrue();
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_0960
+     * @tc.desc Verify ReadonlySet<WeakMap<Object, int>> entries() traverses WeakMap objects
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const wm1: WeakMap<Object, int> = new WeakMap<Object, int>();
+      const wm2: WeakMap<Object, int> = new WeakMap<Object, int>();
+      const set: ReadonlySet<WeakMap<Object, int>> = new Set<WeakMap<Object, int>>([wm1, wm2]);
+      const iter = set.entries();
+      let e1 = iter.next().value as [WeakMap<Object, int>, WeakMap<Object, int>];
+      expect(e1[0] === wm1).assertTrue();
+      let e2 = iter.next().value as [WeakMap<Object, int>, WeakMap<Object, int>];
+      expect(e2[0] === wm2).assertTrue();
+      expect(iter.next().done).assertTrue();
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_0970
+     * @tc.desc Verify ReadonlySet<WeakSet<Object>> entries() traverses WeakSet objects
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const ws1: WeakSet<Object> = new WeakSet<Object>();
+      const ws2: WeakSet<Object> = new WeakSet<Object>();
+      const set: ReadonlySet<WeakSet<Object>> = new Set<WeakSet<Object>>([ws1, ws2]);
+      const iter = set.entries();
+      let e1 = iter.next().value as [WeakSet<Object>, WeakSet<Object>];
+      expect(e1[0] === ws1).assertTrue();
+      let e2 = iter.next().value as [WeakSet<Object>, WeakSet<Object>];
+      expect(e2[0] === ws2).assertTrue();
+      expect(iter.next().done).assertTrue();
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_0980
+     * @tc.desc Verify underlying Set delete removes Error from entries traversal
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e1: Error = new Error("a");
+      let ms: Set<Error> = new Set<Error>([e1, new Error("b")]);
+      const view: ReadonlySet<Error> = ms;
+      ms.delete(e1);
+      let count: int = 0;
+      for (const _ of view.entries()) {
+        count++;
+      }
+      expect(count).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries099
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_0990
+     * @tc.desc Verify underlying Set delete removes Date from entries traversal
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const d1: Date = new Date(1);
+      let ms: Set<Date> = new Set<Date>([d1, new Date(2)]);
+      const view: ReadonlySet<Date> = ms;
+      ms.delete(d1);
+      let count: int = 0;
+      for (const _ of view.entries()) {
+        count++;
+      }
+      expect(count).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1000
+     * @tc.desc Verify underlying Set delete removes RegExp from entries traversal
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: RegExp = new RegExp("a");
+      let ms: Set<RegExp> = new Set<RegExp>([r1, new RegExp("b")]);
+      const view: ReadonlySet<RegExp> = ms;
+      ms.delete(r1);
+      let count: int = 0;
+      for (const _ of view.entries()) {
+        count++;
+      }
+      expect(count).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries101
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1010
+     * @tc.desc Verify underlying Set delete removes Promise from entries traversal
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p1: Object = new Object();
+      const p2: Object = new Object();
+      let ms: Set<Object> = new Set<Object>([p1, p2]);
+      const view: ReadonlySet<Object> = ms;
+      ms.delete(p1);
+      let count: int = 0;
+      for (const _ of view.entries()) {
+        count++;
+      }
+      expect(count).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries102
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1020
+     * @tc.desc Verify underlying Set delete removes WeakMap from entries traversal
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const wm1: WeakMap<Object, int> = new WeakMap<Object, int>();
+      const wm2: WeakMap<Object, int> = new WeakMap<Object, int>();
+      let ms: Set<WeakMap<Object, int>> = new Set<WeakMap<Object, int>>([wm1, wm2]);
+      const view: ReadonlySet<WeakMap<Object, int>> = ms;
+      ms.delete(wm1);
+      let count: int = 0;
+      for (const _ of view.entries()) {
+        count++;
+      }
+      expect(count).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries103
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1030
+     * @tc.desc Verify underlying Set delete removes WeakSet from entries traversal
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const ws1: WeakSet<Object> = new WeakSet<Object>();
+      const ws2: WeakSet<Object> = new WeakSet<Object>();
+      let ms: Set<WeakSet<Object>> = new Set<WeakSet<Object>>([ws1, ws2]);
+      const view: ReadonlySet<WeakSet<Object>> = ms;
+      ms.delete(ws1);
+      let count: int = 0;
+      for (const _ of view.entries()) {
+        count++;
+      }
+      expect(count).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries104
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1040
+     * @tc.desc Verify underlying Set clear empties Error entries traversal
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let ms: Set<Error> = new Set<Error>([new Error("a"), new Error("b")]);
+      const view: ReadonlySet<Error> = ms;
+      ms.clear();
+      let count: int = 0;
+      for (const _ of view.entries()) {
+        count++;
+      }
+      expect(count).assertEqual(0);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries105
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1050
+     * @tc.desc Verify underlying Set clear empties Date entries traversal
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let ms: Set<Date> = new Set<Date>([new Date(1), new Date(2)]);
+      const view: ReadonlySet<Date> = ms;
+      ms.clear();
+      let count: int = 0;
+      for (const _ of view.entries()) {
+        count++;
+      }
+      expect(count).assertEqual(0);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries106
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1060
+     * @tc.desc Verify underlying Set clear empties RegExp entries traversal
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let ms: Set<RegExp> = new Set<RegExp>([new RegExp("a"), new RegExp("b")]);
+      const view: ReadonlySet<RegExp> = ms;
+      ms.clear();
+      let count: int = 0;
+      for (const _ of view.entries()) {
+        count++;
+      }
+      expect(count).assertEqual(0);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries107
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1070
+     * @tc.desc Verify underlying Set clear empties Promise entries traversal
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p1: Object = new Object();
+      const p2: Object = new Object();
+      let ms: Set<Object> = new Set<Object>([p1, p2]);
+      const view: ReadonlySet<Object> = ms;
+      ms.clear();
+      let count: int = 0;
+      for (const _ of view.entries()) {
+        count++;
+      }
+      expect(count).assertEqual(0);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries108
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1080
+     * @tc.desc Verify underlying Set clear empties WeakMap entries traversal
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const wm1: WeakMap<Object, int> = new WeakMap<Object, int>();
+      const wm2: WeakMap<Object, int> = new WeakMap<Object, int>();
+      let ms: Set<WeakMap<Object, int>> = new Set<WeakMap<Object, int>>([wm1, wm2]);
+      const view: ReadonlySet<WeakMap<Object, int>> = ms;
+      ms.clear();
+      let count: int = 0;
+      for (const _ of view.entries()) {
+        count++;
+      }
+      expect(count).assertEqual(0);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries109
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1090
+     * @tc.desc Verify underlying Set clear empties WeakSet entries traversal
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const ws1: WeakSet<Object> = new WeakSet<Object>();
+      const ws2: WeakSet<Object> = new WeakSet<Object>();
+      let ms: Set<WeakSet<Object>> = new Set<WeakSet<Object>>([ws1, ws2]);
+      const view: ReadonlySet<WeakSet<Object>> = ms;
+      ms.clear();
+      let count: int = 0;
+      for (const _ of view.entries()) {
+        count++;
+      }
+      expect(count).assertEqual(0);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries110
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1100
+     * @tc.desc Verify empty ReadonlySet<Error> entries traversal is empty
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: ReadonlySet<Error> = new Set<Error>();
+      let count: int = 0;
+      for (const _ of set.entries()) {
+        count++;
+      }
+      expect(count).assertEqual(0);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries111
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1110
+     * @tc.desc Verify empty ReadonlySet<Date> entries traversal is empty
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: ReadonlySet<Date> = new Set<Date>();
+      let count: int = 0;
+      for (const _ of set.entries()) {
+        count++;
+      }
+      expect(count).assertEqual(0);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries112
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1120
+     * @tc.desc Verify empty ReadonlySet<RegExp> entries traversal is empty
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: ReadonlySet<RegExp> = new Set<RegExp>();
+      let count: int = 0;
+      for (const _ of set.entries()) {
+        count++;
+      }
+      expect(count).assertEqual(0);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries113
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1130
+     * @tc.desc Verify empty ReadonlySet<Object> entries traversal is empty
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: ReadonlySet<Object> = new Set<Object>();
+      let count: int = 0;
+      for (const _ of set.entries()) {
+        count++;
+      }
+      expect(count).assertEqual(0);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries114
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1140
+     * @tc.desc Verify empty ReadonlySet<WeakMap<Object, int>> entries traversal is empty
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: ReadonlySet<WeakMap<Object, int>> = new Set<WeakMap<Object, int>>();
+      let count: int = 0;
+      for (const _ of set.entries()) {
+        count++;
+      }
+      expect(count).assertEqual(0);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries115
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1150
+     * @tc.desc Verify empty ReadonlySet<WeakSet<Object>> entries traversal is empty
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: ReadonlySet<WeakSet<Object>> = new Set<WeakSet<Object>>();
+      let count: int = 0;
+      for (const _ of set.entries()) {
+        count++;
+      }
+      expect(count).assertEqual(0);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries116
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1160
+     * @tc.desc Verify single-element ReadonlySet<Error> entries traverses one entry then done
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e1: Error = new Error("a");
+      const set: ReadonlySet<Error> = new Set<Error>([e1]);
+      const iter = set.entries();
+      expect(iter.next().done).assertFalse();
+      expect(iter.next().done).assertTrue();
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries117
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1170
+     * @tc.desc Verify single-element ReadonlySet<Date> entries traverses one entry then done
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const d1: Date = new Date(1);
+      const set: ReadonlySet<Date> = new Set<Date>([d1]);
+      const iter = set.entries();
+      expect(iter.next().done).assertFalse();
+      expect(iter.next().done).assertTrue();
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries118
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1180
+     * @tc.desc Verify single-element ReadonlySet<RegExp> entries traverses one entry then done
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: RegExp = new RegExp("a");
+      const set: ReadonlySet<RegExp> = new Set<RegExp>([r1]);
+      const iter = set.entries();
+      expect(iter.next().done).assertFalse();
+      expect(iter.next().done).assertTrue();
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries119
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1190
+     * @tc.desc Verify single-element ReadonlySet<Object> entries traverses one entry then done
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p1: Object = new Object();
+      const set: ReadonlySet<Object> = new Set<Object>([p1]);
+      const iter = set.entries();
+      expect(iter.next().done).assertFalse();
+      expect(iter.next().done).assertTrue();
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries120
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1200
+     * @tc.desc Verify single-element ReadonlySet<WeakMap<Object, int>> entries traverses one entry then done
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const wm1: WeakMap<Object, int> = new WeakMap<Object, int>();
+      const set: ReadonlySet<WeakMap<Object, int>> = new Set<WeakMap<Object, int>>([wm1]);
+      const iter = set.entries();
+      expect(iter.next().done).assertFalse();
+      expect(iter.next().done).assertTrue();
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries121
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1210
+     * @tc.desc Verify single-element ReadonlySet<WeakSet<Object>> entries traverses one entry then done
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const ws1: WeakSet<Object> = new WeakSet<Object>();
+      const set: ReadonlySet<WeakSet<Object>> = new Set<WeakSet<Object>>([ws1]);
+      const iter = set.entries();
+      expect(iter.next().done).assertFalse();
+      expect(iter.next().done).assertTrue();
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries122
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1220
+     * @tc.desc Verify duplicate Error references deduplicate in entries traversal
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e1: Error = new Error("a");
+      const set: ReadonlySet<Error> = new Set<Error>([e1, e1]);
+      let count: int = 0;
+      for (const _ of set.entries()) {
+        count++;
+      }
+      expect(count).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries123
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1230
+     * @tc.desc Verify duplicate Date references deduplicate in entries traversal
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const d1: Date = new Date(1);
+      const set: ReadonlySet<Date> = new Set<Date>([d1, d1]);
+      let count: int = 0;
+      for (const _ of set.entries()) {
+        count++;
+      }
+      expect(count).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries124
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1240
+     * @tc.desc Verify duplicate RegExp references deduplicate in entries traversal
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: RegExp = new RegExp("a");
+      const set: ReadonlySet<RegExp> = new Set<RegExp>([r1, r1]);
+      let count: int = 0;
+      for (const _ of set.entries()) {
+        count++;
+      }
+      expect(count).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries125
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1250
+     * @tc.desc Verify duplicate Promise references deduplicate in entries traversal
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p1: Object = new Object();
+      const set: ReadonlySet<Object> = new Set<Object>([p1, p1]);
+      let count: int = 0;
+      for (const _ of set.entries()) {
+        count++;
+      }
+      expect(count).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries126
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1260
+     * @tc.desc Verify duplicate WeakMap references deduplicate in entries traversal
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const wm1: WeakMap<Object, int> = new WeakMap<Object, int>();
+      const set: ReadonlySet<WeakMap<Object, int>> = new Set<WeakMap<Object, int>>([wm1, wm1]);
+      let count: int = 0;
+      for (const _ of set.entries()) {
+        count++;
+      }
+      expect(count).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries127
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1270
+     * @tc.desc Verify duplicate WeakSet references deduplicate in entries traversal
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const ws1: WeakSet<Object> = new WeakSet<Object>();
+      const set: ReadonlySet<WeakSet<Object>> = new Set<WeakSet<Object>>([ws1, ws1]);
+      let count: int = 0;
+      for (const _ of set.entries()) {
+        count++;
+      }
+      expect(count).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries128
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1280
+     * @tc.desc Verify entries() traverses mutated Error object state
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e1: Error = new Error("old");
+      const set: ReadonlySet<Error> = new Set<Error>([e1]);
+      e1.message = "new";
+      const iter = set.entries();
+      let entry = iter.next().value as [Error, Error];
+      expect(entry[0].message).assertEqual("new");
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries129
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1290
+     * @tc.desc Verify entries() traverses mutated Date object state
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const d1: Date = new Date(100);
+      const set: ReadonlySet<Date> = new Set<Date>([d1]);
+      d1.setTime(999);
+      const iter = set.entries();
+      let entry = iter.next().value as [Date, Date];
+      expect(entry[0].getTime()).assertEqual(999);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries130
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1300
+     * @tc.desc Verify underlying Set add reflected in Error entries
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let ms: Set<Error> = new Set<Error>([new Error("a")]);
+      const view: ReadonlySet<Error> = ms;
+      ms.add(new Error("b"));
+      let count: int = 0;
+      for (const _ of view.entries()) { count++; }
+      expect(count).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries131
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1310
+     * @tc.desc Verify underlying Set add reflected in Date entries
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let ms: Set<Date> = new Set<Date>([new Date(1)]);
+      const view: ReadonlySet<Date> = ms;
+      ms.add(new Date(2));
+      let count: int = 0;
+      for (const _ of view.entries()) { count++; }
+      expect(count).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries132
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1320
+     * @tc.desc Verify underlying Set add reflected in RegExp entries
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let ms: Set<RegExp> = new Set<RegExp>([new RegExp("a")]);
+      const view: ReadonlySet<RegExp> = ms;
+      ms.add(new RegExp("b"));
+      let count: int = 0;
+      for (const _ of view.entries()) { count++; }
+      expect(count).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries133
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1330
+     * @tc.desc Verify underlying Set add reflected in Promise entries
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p1: Object = new Object();
+      const p2: Object = new Object();
+      let ms: Set<Object> = new Set<Object>([p1]);
+      const view: ReadonlySet<Object> = ms;
+      ms.add(p2);
+      let count: int = 0;
+      for (const _ of view.entries()) { count++; }
+      expect(count).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries134
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1340
+     * @tc.desc Verify underlying Set add reflected in WeakMap entries
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const wm1: WeakMap<Object, int> = new WeakMap<Object, int>();
+      const wm2: WeakMap<Object, int> = new WeakMap<Object, int>();
+      let ms: Set<WeakMap<Object, int>> = new Set<WeakMap<Object, int>>([wm1]);
+      const view: ReadonlySet<WeakMap<Object, int>> = ms;
+      ms.add(wm2);
+      let count: int = 0;
+      for (const _ of view.entries()) { count++; }
+      expect(count).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries135
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_1350
+     * @tc.desc Verify underlying Set add reflected in WeakSet entries
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const ws1: WeakSet<Object> = new WeakSet<Object>();
+      const ws2: WeakSet<Object> = new WeakSet<Object>();
+      let ms: Set<WeakSet<Object>> = new Set<WeakSet<Object>>([ws1]);
+      const view: ReadonlySet<WeakSet<Object>> = ms;
+      ms.add(ws2);
+      let count: int = 0;
+      for (const _ of view.entries()) { count++; }
+      expect(count).assertEqual(2);
+    });
+
+  });
+}
+
