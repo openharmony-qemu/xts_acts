@@ -12,10 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 {
   "apiType": "stageMode",
-  "buildOption": {},
+  "buildOption": {
+  },
   "buildOptionSet": [
     {
       "name": "release",
@@ -29,14 +30,14 @@
           }
         }
       }
-    }
+    },
   ],
   "targets": [
     {
       "name": "default"
     },
     {
-      "name": "ohosTest"
+      "name": "ohosTest",
     }
   ]
 }
