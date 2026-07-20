@@ -463,7 +463,8 @@ export default function bluetoothAccessTest() {
                 let isNotSupport = false;
                 access.disableBluetoothAsync().then(() => {
                     hilog.info(domain, tag, "disableBluetoothAsync success");
-                }).catch(async(err: Error) => {
+                }).catch((err: Error) => {
+                    waitForCompletion(async() => {
                     hilog.info(domain, tag, "disableBluetoothAsync get error:" + JSON.stringify(err));
                     if (Number(err.code) === 801) {
                         hilog.info(domain, tag, 'api is not support');
@@ -476,6 +477,7 @@ export default function bluetoothAccessTest() {
                         expect(Number(err.code) === 2900013).assertTrue();
                     }
                     await Utils.clickRequestPermission("关闭");
+                    })
                 });
                 await Utils.msSleep(2000);
                 if (!isNotSupport) {
@@ -501,7 +503,8 @@ export default function bluetoothAccessTest() {
                 let isNotSupports = false;
                 access.enableBluetoothAsync().then(() => {
                     hilog.info(domain, tag, "enableBluetoothAsync success");
-                }).catch(async(err: Error) => {
+                }).catch((err: Error) => {
+                    waitForCompletion(async() => {                    
                     hilog.info(domain, tag, "enableBluetoothAsync get error:" + JSON.stringify(err));
                     if (Number(err.code) === 801) {
                         hilog.info(domain, tag, 'api is not support');
@@ -514,6 +517,7 @@ export default function bluetoothAccessTest() {
                         expect(Number(err.code) === 2900013).assertTrue();
                     }
                     await Utils.clickRequestPermission("开启");
+                    })
                 });
                 if (!isNotSupports) {
                     await Utils.msSleep(11000);
@@ -558,6 +562,89 @@ export default function bluetoothAccessTest() {
                 }
             }
             access.offStateChange();
+            done();
+        })
+
+        /**
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHACCESS_ISVALIDRANDOMDEVICEID_ADD_0100
+         * @tc.name    SUB_COMMUNICATION_BLUETOOTHACCESS_ISVALIDRANDOMDEVICEID_ADD_0100
+         * @tc.desc    Test isValidRandomDeviceId API errorCode 401(empty string)
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("SUB_COMMUNICATION_BLUETOOTHACCESS_ISVALIDRANDOMDEVICEID_ADD_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let isValidRandom = access.isValidRandomDeviceId("");
+                hilog.info(domain, tag, "isValidRandomDeviceId success");
+                expect(isValidRandom).assertFalse();
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "isValidRandomDeviceId get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code === 801);
+                } else {
+                    expect(err.code).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHACCESS_ADDPERSISTENTDEVICEID_ADD_0100
+         * @tc.name    SUB_COMMUNICATION_BLUETOOTHACCESS_ADDPERSISTENTDEVICEID_ADD_0100
+         * @tc.desc    Test addPersistentDeviceId API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("SUB_COMMUNICATION_BLUETOOTHACCESS_ADDPERSISTENTDEVICEID_ADD_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                await access.addPersistentDeviceId("").then(() => {
+                    hilog.info(domain, tag, "addPersistentDeviceId success");
+                });
+                expect().assertFail();
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "addPersistentDeviceId get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code === 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHACCESS_DELETEPERSISTENTDEVICEID_ADD_0100
+         * @tc.name    SUB_COMMUNICATION_BLUETOOTHACCESS_DELETEPERSISTENTDEVICEID_ADD_0100
+         * @tc.desc    Test deletePersistentDeviceId API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("SUB_COMMUNICATION_BLUETOOTHACCESS_DELETEPERSISTENTDEVICEID_ADD_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                await access.deletePersistentDeviceId("").then(() => {
+                    hilog.info(domain, tag, "deletePersistentDeviceId success");
+                });
+                expect().assertFail();
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "deletePersistentDeviceId get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code === 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
             done();
         })
     })

@@ -215,24 +215,34 @@ export default function actsWifiFunctionsTest() {
             }
             let isSupport1 = wifi.isFeatureSupported(wifiUtils.WIFI_FEATURE_INFRA);
             console.info("[wifi_test] isFeatureSupported -> " + isSupport1);
+            expect(typeof isSupport1).assertEqual('boolean');
             let isSupport2 = wifi.isFeatureSupported(wifiUtils.WIFI_FEATURE_INFRA_5G);
             console.info("[wifi_test] isFeatureSupported2 -> " + isSupport2);
+            expect(typeof isSupport2).assertEqual('boolean');
             let isSupport3 = wifi.isFeatureSupported(wifiUtils.WIFI_GAS_ANQP);
             console.info("[wifi_test] isFeatureSupported3 -> " + isSupport3);
+            expect(typeof isSupport3).assertEqual('boolean');
             let isSupport4 = wifi.isFeatureSupported(wifiUtils.WIFI_WIFI_DIRECT);
             console.info("[wifi_test] isFeatureSupported4 -> " + isSupport4);
+            expect(typeof isSupport4).assertEqual('boolean');
             let isSupport5 = wifi.isFeatureSupported(wifiUtils.WIFI_FEATURE_MOBILE_HOTSPOT);
             console.info("[wifi_test] isFeatureSupported5 -> " + isSupport5);
+            expect(typeof isSupport5).assertEqual('boolean');
             let isSupport6 = wifi.isFeatureSupported(wifiUtils.WIFI_FEATURE_AWARE);
             console.info("[wifi_test] isFeatureSupported6 -> " + isSupport6);
+            expect(typeof isSupport6).assertEqual('boolean');
             let isSupport7 = wifi.isFeatureSupported(wifiUtils.WIFI_FEATURE_AP_STA);
             console.info("[wifi_test] isFeatureSupported7 -> " + isSupport7);
+            expect(typeof isSupport7).assertEqual('boolean');
             let isSupport8 = wifi.isFeatureSupported(wifiUtils.WIFI_FEATURE_WPA3_SAE);
             console.info("[wifi_test] isFeatureSupported8 -> " + isSupport8);
+            expect(typeof isSupport8).assertEqual('boolean');
             let isSupport9 = wifi.isFeatureSupported(wifiUtils.WIFI_FEATURE_WPA3_SUITE_B);
             console.info("[wifi_test] isFeatureSupported9 -> " + isSupport9);
+            expect(typeof isSupport9).assertEqual('boolean');
             let isSupport = wifi.isFeatureSupported(wifiUtils.WIFI_FEATURE_OWE);
             console.info("[wifi_test] isFeatureSupported -> " + isSupport);
+            expect(typeof isSupport).assertEqual('boolean');
         })
 
         /**
@@ -316,4 +326,3 @@ export default function actsWifiFunctionsTest() {
         console.log("*************[wifi_test] start wifi js unit test end*************");
     })
 }
-

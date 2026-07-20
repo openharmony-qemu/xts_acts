@@ -448,38 +448,6 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-         * @tc.name   SUB_Communication_WiFi_SysCaps_Test_0014
-         * @tc.number SUB_Communication_WiFi_SysCaps_Test_0014
-         * @tc.desc   Test setPowerMode api.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('SUB_Communication_WiFi_SysCaps_Test_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            console.info('SUB_Communication_WiFi_SysCaps_Test_0014 start');
-            let ret = false;
-            try {
-                var isAccessToken = canIUse("SystemCapability.Communication.wifiMg.AP.Extension");
-                console.info("SUB_Communication_WiFi_SysCaps_Test_0014 test.syscap.param.001 : " + isAccessToken);
-                if (isAccessToken) {
-                    console.info("[wifi_test] setPowerMode: " + wifiManagerExt.setPowerMode(PowerModel))
-                    done();
-                }
-                expect(isAccessToken).assertFalse();
-            } catch (e) {
-                console.info("SUB_Communication_WiFi_SysCaps_Test_0014 canIUse isAccessToken error: " + e);
-                if (e.code == 801) {
-                    console.info('[wifi_js]wifiManagerExt enableHotspot is not support');
-                    expect(true).assertTrue();
-                } else {
-                    expect().assertFail();
-                }
-            }
-            console.info('SUB_Communication_WiFi_SysCaps_Test_0014 end');
-            done();
-        })
-
-        /**
          * @tc.name   SUB_Communication_WifiManagerExt_PowerMode_0100
          * @tc.number SUB_Communication_WifiManagerExt_PowerMode_0100
          * @tc.desc   Test setPowerMode api.

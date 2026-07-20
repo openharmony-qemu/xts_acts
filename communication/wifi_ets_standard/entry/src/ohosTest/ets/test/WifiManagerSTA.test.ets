@@ -535,6 +535,26 @@ export default function wifiSta() {
       }
       done();
     })
+    /**
+     * @tc.number Communication_WiFi_XTS_WIFIMANAGER_ENUMVALUE_0200
+     * @tc.name Communication_WiFi_XTS_WIFIMANAGER_ENUMVALUE_0200
+     * @tc.desc WifiCapability	WIFI_AUTO_ENABLE test.
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     */
+    it("Communication_WiFi_XTS_WIFIMANAGER_ENUMVALUE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      let caseName = "LOG_Communication_WiFi_XTS_WIFIMANAGER_ENUMVALUE_0200";
+      try {
+        let WIFI_AUTO_ENABLE: wifiMg.WifiCapability = wifiMg.WifiCapability.WIFI_AUTO_ENABLE;
+        console.info(`[wifi_js]${caseName}WIFI_AUTO_ENABLE:` + WIFI_AUTO_ENABLE);
+        expect(WIFI_AUTO_ENABLE).assertEqual(0);
+      } catch (err) {
+        console.info(`[wifi_js]${caseName}constant WIFI_AUTO_ENABLE get errCode:` + err.code + `,errMessage:` + err.message);
+        expect().assertFail();
+      }
+      done();
+    });
 
     /**
      * @tc.number SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0001
