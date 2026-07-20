@@ -115,6 +115,7 @@ export default function AVPlayerGeTSeekableTimeRangesTest() {
       stateChangeFuncs[PREPARED] = async () => {
         await avPlayer.getSeekableTimeRanges().then(async (timeRanges) => {
           console.info(TAG, testName + ` getSeekableTimeRanges success: ` + JSON.stringify(timeRanges));
+          expect(timeRanges.length > 0).assertTrue();
           expect(timeRanges.length == 1).assertTrue();
           expect(timeRanges[0].min == 0).assertTrue();
           expect(timeRanges[0].max == avPlayer.duration).assertTrue();

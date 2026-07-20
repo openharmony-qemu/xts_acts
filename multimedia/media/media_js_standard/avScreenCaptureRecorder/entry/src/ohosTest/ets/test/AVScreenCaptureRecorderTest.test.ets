@@ -1505,5 +1505,73 @@ export default function AVScreenCaptureRecorderTest() {
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0200 end');
       done();
     })
+
+        /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0300
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0300
+    * @tc.desc   AvScreenCaptureRecorder
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0300', Level.LEVEL0, async (done: Function) => {
+    console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0300 start');
+      let captureRecorder: media.AVScreenCaptureRecorder;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if(captureRecorder == null)
+      {
+        expect().assertFail();
+      }
+      try {
+        await captureRecorder!.setContentAutoRotation(null).then(() => {
+        console.info('avScreenCaptureRecorder setContentAutoRotation success');
+        }).catch((err: BusinessError) => {
+          console.error('avScreenCaptureRecorder setContentAutoRotation failed, error: ' + err.message);
+          expect().assertFail();
+        });
+      } catch (err) {
+        console.error('avScreenCaptureRecorder setContentAutoRotation failed, error: ' + err.message + err.code);
+        expect(err.code).assertEqual(401);
+      }
+
+      await captureRecorder.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0300 end');
+      done();
+    })
+
+        /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0400
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0400
+    * @tc.desc   AvScreenCaptureRecorder
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0400', Level.LEVEL0, async (done: Function) => {
+    console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0400 start');
+      let captureRecorder: media.AVScreenCaptureRecorder;
+      captureRecorder = await media.createAVScreenCaptureRecorder();
+      console.info('createAVScreenCaptureRecorder success');
+      if(captureRecorder == null)
+      {
+        expect().assertFail();
+      }
+      try {
+        await captureRecorder!.setContentAutoRotation(undefined).then(() => {
+        console.info('avScreenCaptureRecorder setContentAutoRotation success');
+        }).catch((err: BusinessError) => {
+          console.error('avScreenCaptureRecorder setContentAutoRotation failed, error: ' + err.message);
+          expect().assertFail();
+        });
+      } catch (err) {
+        console.error('avScreenCaptureRecorder setContentAutoRotation failed, error: ' + err.message + err.code);
+        expect(err.code).assertEqual(401);
+      }
+
+      await captureRecorder.release();
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CONTENT_AUTO_ROTATION_0400 end');
+      done();
+    })
   })
 }

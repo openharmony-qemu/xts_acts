@@ -120,6 +120,7 @@ export default function AVPlayerGetLoadedTimeRangesTest() {
         console.info(TAG, testName + ` case getLoadedTimeRanges start`);
         await avPlayer.getLoadedTimeRanges().then(async (timeRanges) => {
           console.info(TAG, testName + ` getLoadedTimeRanges success: ` + JSON.stringify(timeRanges));
+          expect(timeRanges.length > 0).assertTrue();
           expect(timeRanges.length == 1).assertTrue();
           expect(timeRanges[0].min == 0).assertTrue();
           expect(timeRanges[0].max == avPlayer.duration).assertTrue();
