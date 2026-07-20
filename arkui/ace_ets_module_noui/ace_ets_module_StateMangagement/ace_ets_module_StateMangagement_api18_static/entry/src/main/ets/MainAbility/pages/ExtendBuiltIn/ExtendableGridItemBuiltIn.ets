@@ -53,7 +53,7 @@ struct ExtendableGridItemBuiltIn {
         MyGridItem() {
           Text('N' + item)
             .id('ExtendableGridItem_002')
-            .height(80)
+            .height('5%')
         }
         .newAttribute() // 调用自定义属性
         .id('ExtendableGridItem_001')

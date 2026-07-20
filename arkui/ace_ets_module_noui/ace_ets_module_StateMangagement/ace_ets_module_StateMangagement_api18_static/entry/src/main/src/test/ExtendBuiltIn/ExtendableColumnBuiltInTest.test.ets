@@ -107,5 +107,29 @@ export default function ExtendableColumnBuiltInTest() {
       console.info('[ExtendableColumnBuiltIn_CustomAttribute_0200] END');
       done();
     });
+
+    /**
+     * @tc.name: ExtendableColumnBuiltIn_CustomAttribute_0300
+     * @tc.number: SUB_ARKUI_EXTENDABLE_COLUMN_CUSTOM_ATTRIBUTE_0300
+     * @tc.desc: Test ExtendableColumn with custom newAttribute method that sets width and height
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     * @tc.level: Level1
+     */
+    it('ExtendableColumnBuiltIn_CustomAttribute_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[ExtendableColumnBuiltIn_CustomAttribute_0200] START');
+      await CommonFunc.sleep(1000);
+      let strJson: string = inspector.getInspectorByKey('ExtendableColumn_002');
+      await CommonFunc.sleep(1000);
+      let strJson2: string = inspector.getInspectorByKey('ExtendableColumn_004');
+      await CommonFunc.sleep(1000);
+      let space1=JSON.parseJsonElement(strJson).getElement('$attrs').getString('space')
+      let space2=JSON.parseJsonElement(strJson2).getElement('$attrs').getString('space')
+      expect(space1).assertEqual('100.00vp');
+      expect(space2).assertEqual('0.00px');
+      await CommonFunc.sleep(1000);
+      console.info('[ExtendableColumnBuiltIn_CustomAttribute_0300] END');
+      done();
+    });
   });
 }

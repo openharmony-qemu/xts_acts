@@ -46,6 +46,7 @@ struct ExtendableRelativeContainerBuiltIn {
   build() {
     MyRelativeContainer() {
       Text('RelativeContainer')
+        .height('5%')
     }
     .border({ width: 2, color: '#6699FF' })
     .newAttribute()

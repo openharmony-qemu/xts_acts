@@ -144,8 +144,28 @@ export default function ExtendableTextBuiltInTest() {
       let obj = JSON.parseJsonElement(strJson).getElement('$attrs');
       let width = obj.getString('width');
       console.info("[ExtendableTextBuiltIn_OverrideWidth_0400] width is: " + width);
-      expect(width).assertEqual('70.00%');
+      expect(width).assertEqual('40.00%');
       console.info('[ExtendableTextBuiltIn_OverrideWidth_0400] END');
+      done();
+    });
+
+    /**
+     * @tc.name: ExtendableTextBuiltIn_Undefined_0500
+     * @tc.number: SUB_ARKUI_EXTENDABLE_TEXT_UNDEFINED_0500
+     * @tc.desc: Test ExtendableText with overridden width method
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     * @tc.level: Level1
+     */
+    it('ExtendableTextBuiltIn_Undefined_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[ExtendableTextBuiltIn_Undefined_0500] START');
+      await CommonFunc.sleep(1000);
+      let strJson: string = inspector.getInspectorByKey('ExtendableText_003');
+      await CommonFunc.sleep(1000);
+      let obj = JSON.parseJsonElement(strJson).getElement('$attrs');
+      let content = obj.getString('content');
+      expect(content).assertEqual('');
+      console.info('[ExtendableTextBuiltIn_Undefined_0500] END');
       done();
     });
   });

@@ -61,6 +61,11 @@
     "MainAbility/pages/ExtendBuiltIn/ExtendableRowBuiltIn",
     "MainAbility/pages/ExtendBuiltIn/ExtendableStackBuiltIn",
     "MainAbility/pages/ExtendBuiltIn/ExtendableTextBuiltIn",
-    "MainAbility/pages/ExtendBuiltIn/ExtendableToggleBuiltIn"
+    "MainAbility/pages/ExtendBuiltIn/ExtendableToggleBuiltIn",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableGridBuiltInUndefined",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableGridItemBuiltInUndefined",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableListBuiltInUndefined",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableListItemBuiltInUndefined",
+    "MainAbility/pages/ExtendBuiltIn/ExtendableStackBuiltInUndefined"
   ]
 }
