@@ -423,7 +423,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithinAbilityStat
           expect(buttonTwo).assertContain('允许获取本机通知')
         }
         await Utils.msSleep(2000)
-        let scrollBar = await driver.findComponent(ON.type('List').isAfter(ON.text('应用获取本机通知')))
+        let scrollBar = await driver.findComponent(ON.text('zzztest'));
         console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
         expect(scrollBar != null).assertTrue()
         scrollBar?.scrollToBottom()
