@@ -10,3 +10,6 @@
 /.clang-tidy
 **/.test
 /.appanalyzer
+# local vendored static hypium (do not commit)
+entry/src/hypium/
+autosign/

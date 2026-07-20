@@ -29,6 +29,9 @@
     "MainAbility/pages/popup/PopupOptionsLevelMode",
     "MainAbility/pages/popup/PopupCommonOptionsLevelMode",
     "MainAbility/pages/popup/CustomPopupOptionsLevelMode",
-    "MainAbility/pages/dialogSystemMaterial/BaseDialogOptionsDisplayModeInSubWindow"
+    "MainAbility/pages/dialogSystemMaterial/BaseDialogOptionsDisplayModeInSubWindow",
+    "MainAbility/pages/popup/PopupOptionsBackgroundEffect",
+    "MainAbility/pages/popup/CustomPopupOptionsBackgroundEffect",
+    "MainAbility/pages/popup/PopupCommonOptionsBackgroundEffect"
   ]
 }

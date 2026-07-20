@@ -15,8 +15,10 @@
 
 /**
  * openCustomDialog 错误码测试
- * 对应新接口: present(content: ComponentContent, options?)
- * 错误码: 401(参数错误), 100001(内部错误), 103301(内容错误), 103302(内容已存在), 103306(挂载失败)
+ * 对应新接口: DialogPresenter.present(content, options?)
+ * 自动化: 401(含 dispose 后 present 实测), 103302, 0(含子窗正例)
+ * @manual-verify: 103301(引擎 contentNode 空才抛, DialogPresenter 路径 dispose 落 401);
+ *   100001/103306/103308/103307 见 docs+SDK；禁 FilePicker
  */
 import { ComponentContent, DialogPresenter } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -82,12 +84,15 @@ struct OpenCustomDialogErrorCodeTest {
             Button('options=数字').id('OpenCustomDialogErrorCodeTest_btn_options_number').fontSize(12).layoutWeight(1)
               .onClick(() => this.testInvalidOptions())
           }
+          Button('dispose 后 present')
+            .id('OpenCustomDialogErrorCodeTest_btn_disposed')
+            .fontSize(12).width('100%')
+            .onClick(() => this.testDisposedPresent())
 
           Text('103302 - 弹窗内容已存在').fontSize(16).fontWeight(FontWeight.Medium).margin({ top: 8 })
           Button('同一ComponentContent重复打开').id('OpenCustomDialogErrorCodeTest_btn_duplicate')
             .fontSize(12).width('100%')
             .onClick(() => this.testDuplicate())
-
 
           Text('子窗模式 present（自动化稳妥对照）')
             .fontSize(16).fontWeight(FontWeight.Medium).margin({ top: 8 })
@@ -149,6 +154,18 @@ struct OpenCustomDialogErrorCodeTest {
     }
     .title('openCustomDialog 错误码').titleMode(NavigationTitleMode.Mini)
     .mode(NavigationMode.Stack)
+  }
+
+  async testDisposedPresent() {
+    let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
+    let cn: ComponentContent<Params> | null = this.makeContent('Disposed');
+    try {
+      cn?.dispose();
+      await (dialog.present as Function)(cn as Object);
+      this.addResult('dispose后present', 401, -1);
+    } catch (err) {
+      this.addResult('dispose后present', 401, (err as BusinessError).code);
+    }
   }
 
   async testUEC() {
@@ -236,16 +253,15 @@ struct OpenCustomDialogErrorCodeTest {
   }
 
   async testInvalidOptions() {
+    let dialog: DialogPresenter = this.getUIContext().getDialogPresenter();
+    let cn: ComponentContent<Params> | null = this.makeContent('T');
     try {
-      let uiContext = this.getUIContext();
-      let cn: ComponentContent<Params> | null = null;
-      if (uiContext.getHostContext() != undefined) {
-        cn = new ComponentContent(uiContext, wrapBuilder(builderDialog), new Params('T',
-          uiContext.getHostContext()!!.getApplicationContext().resourceManager.getConfigurationSync().colorMode))
-      }
-      await (this.getUIContext().getDialogPresenter().present as Function)(cn, 123);
+      await (dialog.present as Function)(cn as Object, 123);
       this.addResult('options=数字', 0, 0);
-    } catch (err) { this.addResult('options=数字', 401, (err as BusinessError).code); }
+      await (dialog.dismiss as Function)(cn as Object);
+    } catch (err) {
+      this.addResult('options=数字', 401, (err as BusinessError).code);
+    }
   }
 
   async testDuplicate() {

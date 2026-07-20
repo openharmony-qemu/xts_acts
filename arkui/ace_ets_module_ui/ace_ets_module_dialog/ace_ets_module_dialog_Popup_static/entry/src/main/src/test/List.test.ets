@@ -27,6 +27,12 @@ import PopupCommonOptionsLevelModeTest from './popupLevelMode/PopupCommonOptions
 import CustomPopupOptionsLevelModeTest from './popupLevelMode/CustomPopupOptionsLevelModeTest.test';
 import BaseDialogOptionsDisplayModeInSubWindowTest from
   './dialogSystemMaterial/BaseDialogOptionsDisplayModeInSubWindow.test';
+import PopupOptionsBackgroundEffectTest from
+  './popupBackgroundEffect/PopupOptionsBackgroundEffectTest.test';
+import CustomPopupOptionsBackgroundEffectTest from
+  './popupBackgroundEffect/CustomPopupOptionsBackgroundEffectTest.test';
+import PopupCommonOptionsBackgroundEffectTest from
+  './popupBackgroundEffect/PopupCommonOptionsBackgroundEffectTest.test';
 
 export default function testsuite(): void {
   PopupOptionsSystemMaterialTest();
@@ -41,4 +47,7 @@ export default function testsuite(): void {
   PopupCommonOptionsLevelModeTest();
   CustomPopupOptionsLevelModeTest();
   BaseDialogOptionsDisplayModeInSubWindowTest();
+  PopupOptionsBackgroundEffectTest();
+  CustomPopupOptionsBackgroundEffectTest();
+  PopupCommonOptionsBackgroundEffectTest();
 }

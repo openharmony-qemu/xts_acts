@@ -16,7 +16,8 @@
 /**
  * showDialog 错误码测试
  * 对应新接口: present(options: DialogOptions)
- * 错误码: 401, 100001, 103306
+ * 自动化: 401, 0(含 showInSubWindow 正例)
+ * @manual-verify: 100001/103306/103308（SDK DialogPresenter；禁 FilePicker）
  */
 import { BusinessError } from '@kit.BasicServicesKit';
 import {

@@ -69,6 +69,60 @@ export default function OpenCustomDialogWithControllerErrorCodeTest() {
     });
 
     /**
+     * @tc.number SUB_ARKUI_DIALOG_ERRCODE_OCDC_CONTENT_STR_0100
+     * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_OCDC_CONTENT_STR_0100
+     * @tc.desc   content=字符串 返回401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_DIALOG_ERRCODE_OCDC_CONTENT_STR_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      let driver: Driver = Driver.create();
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'OpenCustomDialogWithControllerErrorCodeTest_btn_content_string',
+        'OpenCustomDialogWithControllerErrorCodeTest');
+      expect(status).assertEqual('PASS');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_DIALOG_ERRCODE_OCDC_OPTIONS_NUM_0100
+     * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_OCDC_OPTIONS_NUM_0100
+     * @tc.desc   options=数字 返回401或成功（与 OpenCD 对齐）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_DIALOG_ERRCODE_OCDC_OPTIONS_NUM_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      let driver: Driver = Driver.create();
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'OpenCustomDialogWithControllerErrorCodeTest_btn_options_number',
+        'OpenCustomDialogWithControllerErrorCodeTest');
+      expect(status).assertEqual('PASS');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_DIALOG_ERRCODE_OCDC_DISPOSED_0100
+     * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_OCDC_DISPOSED_0100
+     * @tc.desc   dispose 后 present 返回401（103301 见 @manual-verify）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_DIALOG_ERRCODE_OCDC_DISPOSED_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      let driver: Driver = Driver.create();
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'OpenCustomDialogWithControllerErrorCodeTest_btn_disposed',
+        'OpenCustomDialogWithControllerErrorCodeTest');
+      expect(status).assertEqual('PASS');
+      done();
+    });
+
+    /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_OCDC_DUP_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_OCDC_DUP_0100
      * @tc.desc   重复打开返回103302

@@ -15,7 +15,6 @@
 
 import { describe, beforeEach, it, expect, Level } from '@ohos/hypium';
 import { Driver } from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/common/Common';
 import ErrorCodeAssert from './ErrorCodeAssert';
 
 export default function CloseCustomDialogErrorCodeTest() {
@@ -63,6 +62,23 @@ export default function CloseCustomDialogErrorCodeTest() {
       let status: string = await ErrorCodeAssert.clickAndWaitStatus(
         driver, 'CloseCustomDialogErrorCodeTest_btn_target_null', 'CloseCustomDialogErrorCodeTest');
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_NULL_0100] status=' + status);
+      expect(status).assertEqual('PASS');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_DISPOSED_0100
+     * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_DISPOSED_0100
+     * @tc.desc   dispose 后 dismiss(content) 返回401（103301 见 @manual-verify）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_DISPOSED_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      let driver: Driver = Driver.create();
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'CloseCustomDialogErrorCodeTest_btn_disposed', 'CloseCustomDialogErrorCodeTest');
       expect(status).assertEqual('PASS');
       done();
     });
@@ -120,6 +136,74 @@ export default function CloseCustomDialogErrorCodeTest() {
       let status: string = await ErrorCodeAssert.clickAndWaitStatus(
         driver, 'CloseCustomDialogErrorCodeTest_btn_dismiss_content', 'CloseCustomDialogErrorCodeTest');
       console.info('[ARKUI_DYN][SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_BY_CONTENT_0100] status=' + status);
+      expect(status).assertEqual('PASS');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_BY_ID_0100
+     * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_BY_ID_0100
+     * @tc.desc   dismiss(dialogId) 正常流程
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_BY_ID_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      let driver: Driver = Driver.create();
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'CloseCustomDialogErrorCodeTest_btn_dismiss_id', 'CloseCustomDialogErrorCodeTest');
+      expect(status).assertEqual('PASS');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_ALREADY_CLOSED_0100
+     * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_ALREADY_CLOSED_0100
+     * @tc.desc   已关闭后再 dismiss(content) 返回103303
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_ALREADY_CLOSED_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      let driver: Driver = Driver.create();
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'CloseCustomDialogErrorCodeTest_btn_already_closed', 'CloseCustomDialogErrorCodeTest');
+      expect(status).assertEqual('PASS');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_ALREADY_CLOSED_ID_0100
+     * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_ALREADY_CLOSED_ID_0100
+     * @tc.desc   已关闭后再 dismiss(dialogId) 返回103303
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_ALREADY_CLOSED_ID_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      let driver: Driver = Driver.create();
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'CloseCustomDialogErrorCodeTest_btn_already_closed_id', 'CloseCustomDialogErrorCodeTest');
+      expect(status).assertEqual('PASS');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_SUBWIN_CONTENT_0100
+     * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_SUBWIN_CONTENT_0100
+     * @tc.desc   子窗 dismiss(content) 正常流程
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_DIALOG_ERRCODE_CLOSECD_SUBWIN_CONTENT_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      let driver: Driver = Driver.create();
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'CloseCustomDialogErrorCodeTest_btn_subwin_content', 'CloseCustomDialogErrorCodeTest');
       expect(status).assertEqual('PASS');
       done();
     });

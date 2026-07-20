@@ -105,6 +105,23 @@ export default function OpenCustomDialogErrorCodeTest() {
     });
 
     /**
+     * @tc.number SUB_ARKUI_DIALOG_ERRCODE_OPENCD_DISPOSED_0100
+     * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_OPENCD_DISPOSED_0100
+     * @tc.desc   dispose 后 present 返回401（103301 见 @manual-verify）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_DIALOG_ERRCODE_OPENCD_DISPOSED_0100', Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+      let driver: Driver = Driver.create();
+      let status: string = await ErrorCodeAssert.clickAndWaitStatus(
+        driver, 'OpenCustomDialogErrorCodeTest_btn_disposed', 'OpenCustomDialogErrorCodeTest');
+      expect(status).assertEqual('PASS');
+      done();
+    });
+
+    /**
      * @tc.number SUB_ARKUI_DIALOG_ERRCODE_OPENCD_DUP_0100
      * @tc.name   SUB_ARKUI_DIALOG_ERRCODE_OPENCD_DUP_0100
      * @tc.desc   重复打开返回103302
