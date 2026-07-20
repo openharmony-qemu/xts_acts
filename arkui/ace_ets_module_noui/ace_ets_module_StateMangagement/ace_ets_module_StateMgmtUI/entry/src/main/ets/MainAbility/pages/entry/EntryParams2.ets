@@ -34,7 +34,7 @@ struct Child0002 {
     }
   }
 }
-@Entry({routeName: 'EntryParams',storage: storage0001, useSharedStorage: true})
+@Entry({routeName: 'EntryParams2',storage: storage0001, useSharedStorage: true})
 @Component
 struct EntryParams2 {
   @State flag: boolean = true;

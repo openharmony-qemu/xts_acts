@@ -17,7 +17,7 @@ let para0003: Record<string, number> = { 'PropC': 49 };
 let storage0003: LocalStorage = new LocalStorage(para0003);
 
 @Component
-struct Child0001 {
+struct Child0003 {
   @LocalStorageLink('PropC') childLinkNumber: number = 1;
 
   build() {
@@ -57,7 +57,7 @@ struct EntryParamsUndefined {
         .id('btn3')
         .height('5%')
       if (this.flag) {
-        Child0001()
+        Child0003()
       }
     }
   }
