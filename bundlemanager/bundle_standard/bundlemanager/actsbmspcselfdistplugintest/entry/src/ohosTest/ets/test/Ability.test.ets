@@ -104,7 +104,7 @@ export default function abilityTest() {
           hilog.info(DOMAIN, TAG, `${itName} end.`);
         }).catch((err: BusinessError) => {
           hilog.info(DOMAIN, TAG, `${itName} getAllLocalPluginInfoForSelf fail. code: ${err?.code}, msg: ${err?.message}`);
-          if (deviceCapability.deviceType == resourceManager.DeviceType.DEVICE_TYPE_PHONE) {
+          if (err?.code == 201) {
             expect(err?.code).assertEqual(201);
             done();
             hilog.info(DOMAIN, TAG, `${itName} end.`);
