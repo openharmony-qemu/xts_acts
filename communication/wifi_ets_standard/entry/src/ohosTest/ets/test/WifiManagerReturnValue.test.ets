@@ -16,7 +16,25 @@ import wifiManager from '@ohos.wifiManager';
 import wifi from '@ohos.wifi';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import { BusinessError } from '@ohos.base';
-
+function sleep(delay:number): Promise<void> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, delay);
+  }); 
+}
+function getCurrentGroupCallback():Promise<wifiManager.WifiP2pGroupInfo>{ 
+  return new Promise<wifiManager.WifiP2pGroupInfo>((resolve, reject) => {
+    wifiManager.getCurrentGroup((err: BusinessError, data: wifiManager.WifiP2pGroupInfo) => {
+      if (err) {
+        console.error('failed to get current group: ' + JSON.stringify(err));
+        reject(err);
+      }
+      console.info("get current group: " + JSON.stringify(data));
+      resolve(data);
+    });
+  });
+}
 export default function wifiManagerTest() {
   describe('wifiManagerTest', async () => {
     beforeAll(async (done: Function) => {
