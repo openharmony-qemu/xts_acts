@@ -556,7 +556,7 @@ export default function TypeErasureTest():void {
     /**
      * @tc.number    SUB_TYPE_ERASURE_TEST_INSTANCEOF_0200
      * @tc.name      testTypeErasureInstanceOf0002
-     * @tc.desc      FixedArray instanceof test - instanceof_gen_0
+     * @tc.desc      FixedArray instanceof test without erased type arguments - instanceof_gen_0
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -564,7 +564,7 @@ export default function TypeErasureTest():void {
     it("testTypeErasureInstanceOf0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x : FixedArray<string> = ["a", "b", "c"]
       let result: FixedArray<string> = x
-      expect(result instanceof FixedArray<string>).assertTrue()
+      expect(result instanceof FixedArray<string | undefined>).assertTrue()
     });
 
     /**

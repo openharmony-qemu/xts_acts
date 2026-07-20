@@ -2215,11 +2215,11 @@ export default function FieldInitializationTest(): void {
           let c: C_F092 = new C_F092()
           b.field = handlerA
           c.field = handlerAInt
-      expect(a.field instanceof HandlerNothing_F092).assertTrue()
+      expect(a.field instanceof (() => never)).assertTrue()
       expect(a.field(new B_F092, 7).v).assertEqual(-567)
-      expect(b.field instanceof HandlerA_F092).assertTrue()
+      expect(b.field instanceof ((a: Any) => never)).assertTrue()
       expect(b.field(new B_F092, 7).v).assertEqual(13)
-      expect(c.field instanceof HandlerAInt_F092).assertTrue()
+      expect(c.field instanceof ((a: Any, b: Any) => never)).assertTrue()
       expect(c.field(new B_F092, 7).v).assertEqual(-20)
     })
 
