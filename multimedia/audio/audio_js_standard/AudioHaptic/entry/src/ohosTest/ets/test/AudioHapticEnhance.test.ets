@@ -142,10 +142,10 @@ export default function AudioHapticTest() {
           console.log('file not exists');
           return false;
         }
-      }).catch(err) => {
+      }).catch((err: BusinessError) => {
         console.error('access failed with error massage: ' + err.message + ',error code: ' + err.code);
         return false;
-      }
+      })
       console.log(`beforeall come in`);
     })
     beforeEach(() => {
