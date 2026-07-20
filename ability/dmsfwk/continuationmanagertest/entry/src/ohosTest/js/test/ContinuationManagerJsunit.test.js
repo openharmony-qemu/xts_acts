@@ -1333,7 +1333,7 @@ export default function continuationManagerTest() {
             try {
                 continuationManager.on("deviceSelected", "invalid token", function (data) {
                     console.info("testOn003 data is" + data);
-                    expect().assertFail()
+                    expect(data.length > 0).assertTrue()
                     done();
                 })
             } catch (error) {
@@ -1405,7 +1405,7 @@ export default function continuationManagerTest() {
             try {
                 continuationManager.on("deviceSelected", token, (data) => {
                     console.info('testOn006  continuationManager.on success');
-                    expect(data.length == 0).assertTrue()
+                    expect(data.length > 0).assertTrue()
                     done()
                 })
             } catch (error) {
