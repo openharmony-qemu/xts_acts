@@ -1990,3 +1990,354 @@ export default function ReadonlySetHas2Test(): void {
       const set: ReadonlySet<WeakMap<Object, int>> = new Set<WeakMap<Object, int>>();
       expect(set.has(wm1)).assertFalse();
     });
+
+    /**
+     * @tc.name testReadonlySetHas126
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_1260
+     * @tc.desc Verify has() on empty ReadonlySet<WeakSet<Object>> returns false
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetHas126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const ws1: WeakSet<Object> = new WeakSet<Object>();
+      const set: ReadonlySet<WeakSet<Object>> = new Set<WeakSet<Object>>();
+      expect(set.has(ws1)).assertFalse();
+    });
+
+    /**
+     * @tc.name testReadonlySetHas127
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_1270
+     * @tc.desc Verify has() on single-element Error Set returns true
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetHas127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e1: Error = new Error("a");
+      const set: ReadonlySet<Error> = new Set<Error>([e1]);
+      expect(set.has(e1)).assertTrue();
+      expect(set.has(new Error("b"))).assertFalse();
+    });
+
+    /**
+     * @tc.name testReadonlySetHas128
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_1280
+     * @tc.desc Verify has() on single-element Date Set returns true
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetHas128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const d1: Date = new Date(1);
+      const set: ReadonlySet<Date> = new Set<Date>([d1]);
+      expect(set.has(d1)).assertTrue();
+      expect(set.has(new Date(2))).assertFalse();
+    });
+
+    /**
+     * @tc.name testReadonlySetHas129
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_1290
+     * @tc.desc Verify has() on single-element RegExp Set returns true
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetHas129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: RegExp = new RegExp("a");
+      const set: ReadonlySet<RegExp> = new Set<RegExp>([r1]);
+      expect(set.has(r1)).assertTrue();
+      expect(set.has(new RegExp("b"))).assertFalse();
+    });
+
+    /**
+     * @tc.name testReadonlySetHas130
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_1300
+     * @tc.desc Verify has() on single-element Promise Set returns true
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetHas130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p1: Object = new Object();
+      const set: ReadonlySet<Object> = new Set<Object>([p1]);
+      expect(set.has(p1)).assertTrue();
+    });
+
+    /**
+     * @tc.name testReadonlySetHas131
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_1310
+     * @tc.desc Verify has() on single-element WeakMap Set returns true
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetHas131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const wm1: WeakMap<Object, int> = new WeakMap<Object, int>();
+      const set: ReadonlySet<WeakMap<Object, int>> = new Set<WeakMap<Object, int>>([wm1]);
+      expect(set.has(wm1)).assertTrue();
+    });
+
+    /**
+     * @tc.name testReadonlySetHas132
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_1320
+     * @tc.desc Verify has() on single-element WeakSet Set returns true
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetHas132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const ws1: WeakSet<Object> = new WeakSet<Object>();
+      const set: ReadonlySet<WeakSet<Object>> = new Set<WeakSet<Object>>([ws1]);
+      expect(set.has(ws1)).assertTrue();
+    });
+
+    /**
+     * @tc.name testReadonlySetHas133
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_1330
+     * @tc.desc Verify duplicate Error reference does not affect has
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetHas133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e1: Error = new Error("a");
+      const set: ReadonlySet<Error> = new Set<Error>([e1, e1]);
+      expect(set.has(e1)).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetHas134
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_1340
+     * @tc.desc Verify duplicate Date reference does not affect has
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetHas134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const d1: Date = new Date(1);
+      const set: ReadonlySet<Date> = new Set<Date>([d1, d1]);
+      expect(set.has(d1)).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetHas135
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_1350
+     * @tc.desc Verify duplicate RegExp reference does not affect has
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetHas135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: RegExp = new RegExp("a");
+      const set: ReadonlySet<RegExp> = new Set<RegExp>([r1, r1]);
+      expect(set.has(r1)).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetHas136
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_1360
+     * @tc.desc Verify duplicate Promise reference does not affect has
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetHas136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p1: Object = new Object();
+      const set: ReadonlySet<Object> = new Set<Object>([p1, p1]);
+      expect(set.has(p1)).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetHas137
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_1370
+     * @tc.desc Verify duplicate WeakMap reference does not affect has
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetHas137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const wm1: WeakMap<Object, int> = new WeakMap<Object, int>();
+      const set: ReadonlySet<WeakMap<Object, int>> = new Set<WeakMap<Object, int>>([wm1, wm1]);
+      expect(set.has(wm1)).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetHas138
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_1380
+     * @tc.desc Verify duplicate WeakSet reference does not affect has
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetHas138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const ws1: WeakSet<Object> = new WeakSet<Object>();
+      const set: ReadonlySet<WeakSet<Object>> = new Set<WeakSet<Object>>([ws1, ws1]);
+      expect(set.has(ws1)).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetHas139
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_1390
+     * @tc.desc Verify has() still true after mutating Error.message
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetHas139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e1: Error = new Error("original");
+      const set: ReadonlySet<Error> = new Set<Error>([e1]);
+      e1.message = "mutated";
+      expect(set.has(e1)).assertTrue();
+    });
+
+    /**
+     * @tc.name testReadonlySetHas140
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_1400
+     * @tc.desc Verify has() still true after mutating Date via setTime
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetHas140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const d1: Date = new Date(100);
+      const set: ReadonlySet<Date> = new Set<Date>([d1]);
+      d1.setTime(999);
+      expect(set.has(d1)).assertTrue();
+    });
+
+    /**
+     * @tc.name testReadonlySetHas141
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_1410
+     * @tc.desc Verify has() still true after WeakMap internal mutation
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetHas141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const wm1: WeakMap<Object, int> = new WeakMap<Object, int>();
+      const set: ReadonlySet<WeakMap<Object, int>> = new Set<WeakMap<Object, int>>([wm1]);
+      const key: Object = new Object();
+      wm1.set(key, 42);
+      expect(set.has(wm1)).assertTrue();
+    });
+
+    /**
+     * @tc.name testReadonlySetHas142
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_1420
+     * @tc.desc Verify has() still true after WeakSet internal mutation
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetHas142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const ws1: WeakSet<Object> = new WeakSet<Object>();
+      const set: ReadonlySet<WeakSet<Object>> = new Set<WeakSet<Object>>([ws1]);
+      ws1.add(new Object());
+      expect(set.has(ws1)).assertTrue();
+    });
+
+    /**
+     * @tc.name testReadonlySetHas143
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_1430
+     * @tc.desc Verify underlying Set add reflected in Error has
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetHas143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let ms: Set<Error> = new Set<Error>();
+      const view: ReadonlySet<Error> = ms;
+      const e1: Error = new Error("a");
+      ms.add(e1);
+      expect(view.has(e1)).assertTrue();
+    });
+
+    /**
+     * @tc.name testReadonlySetHas144
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_1440
+     * @tc.desc Verify underlying Set add reflected in Date has
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetHas144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let ms: Set<Date> = new Set<Date>();
+      const view: ReadonlySet<Date> = ms;
+      const d1: Date = new Date(1);
+      ms.add(d1);
+      expect(view.has(d1)).assertTrue();
+    });
+
+    /**
+     * @tc.name testReadonlySetHas145
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_1450
+     * @tc.desc Verify underlying Set add reflected in RegExp has
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetHas145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let ms: Set<RegExp> = new Set<RegExp>();
+      const view: ReadonlySet<RegExp> = ms;
+      const r1: RegExp = new RegExp("a");
+      ms.add(r1);
+      expect(view.has(r1)).assertTrue();
+    });
+
+    /**
+     * @tc.name testReadonlySetHas146
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_1460
+     * @tc.desc Verify underlying Set add reflected in Promise has
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetHas146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let ms: Set<Object> = new Set<Object>();
+      const view: ReadonlySet<Object> = ms;
+      const p1: Object = new Object();
+      ms.add(p1);
+      expect(view.has(p1)).assertTrue();
+    });
+
+    /**
+     * @tc.name testReadonlySetHas147
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_1470
+     * @tc.desc Verify underlying Set add reflected in WeakMap has
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetHas147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let ms: Set<WeakMap<Object, int>> = new Set<WeakMap<Object, int>>();
+      const view: ReadonlySet<WeakMap<Object, int>> = ms;
+      const wm1: WeakMap<Object, int> = new WeakMap<Object, int>();
+      ms.add(wm1);
+      expect(view.has(wm1)).assertTrue();
+    });
+
+    /**
+     * @tc.name testReadonlySetHas148
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_1480
+     * @tc.desc Verify underlying Set add reflected in WeakSet has
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetHas148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let ms: Set<WeakSet<Object>> = new Set<WeakSet<Object>>();
+      const view: ReadonlySet<WeakSet<Object>> = ms;
+      const ws1: WeakSet<Object> = new WeakSet<Object>();
+      ms.add(ws1);
+      expect(view.has(ws1)).assertTrue();
+    });
+
+  });
+}
