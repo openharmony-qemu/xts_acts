@@ -32,7 +32,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../hypium/index'
+} from '@ohos/hypium-binary/src/main/indexStatic'
 import { Driver, ON } from '@ohos.UiTest'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import commonEventManager from '@ohos.commonEventManager'
@@ -141,7 +141,7 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
           expect(buttonOne).assertContain('允许通知')
         }
         await Utils.msSleep(3000)
-        let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
+        let scrollBar = await driver.findComponent(ON.text('桌面角标'));
         console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
         await scrollBar?.scrollToBottom()
         await Utils.msSleep(1000)
@@ -155,7 +155,7 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
           console.info(`${testNum} null button`);
           expect(buttonTwo).assertContain('桌面角标')
         }
-        let scrollBar1 = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
+        let scrollBar1 = await driver.findComponent(ON.text('桌面角标'));
         console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar1)} `);
         await scrollBar1?.scrollToTop()
         await Utils.msSleep(1500)
@@ -258,7 +258,7 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
           expect(buttonOne).assertContain('允许通知')
         }
         await Utils.msSleep(1500)
-        let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
+        let scrollBar = await driver.findComponent(ON.text('横幅通知'));
         console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
         await scrollBar?.scrollToBottom()
         await Utils.msSleep(500)
