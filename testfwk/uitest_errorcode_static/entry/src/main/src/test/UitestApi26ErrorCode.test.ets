@@ -15,7 +15,7 @@
  */
 
 import { beforeAll, describe, it, expect, TestType, Size, Level } from "../../../hypium/index"
-import { Driver, PenKey, PenKeyOperation, PenMode, Point, TouchOptions, PenKeyOperationOptions } from '@kit.TestKit'
+import { Driver, PenKey, PenKeyOperation, PenMode, Point, TouchOptions, PenKeyOperationOptions, ON } from '@kit.TestKit'
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'
 
@@ -785,10 +785,10 @@ export default function uitestApi26ErrorTest(): void {
       console.info(`testOnIsBeforeComponentInvalid_static start`);
       try {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-        await driver.delayMs(waitUiReadyMs);
-        let text2 = await driver.findComponent(ON.text('dialog'));
+        await driver!.delayMs(waitUiReadyMs);
+        let text2 = await driver!.findComponent(ON.text('dialog'));
         await stopApplication('com.uitestScene.acts');
-        await driver.delayMs(waitUiReadyMs);
+        await driver!.delayMs(waitUiReadyMs);
         ON.beforeComponent(text2);
         expect().assertFail();
       } catch (error) {
@@ -812,11 +812,11 @@ export default function uitestApi26ErrorTest(): void {
       console.info(`testOnIsAfterComponentInvalid_static start`);
       try {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-        await driver.delayMs(waitUiReadyMs);
-        let text2 = await driver.findComponent(ON.text('dialog'));
-        await driver.delayMs(waitUiReadyMs);
+        await driver!.delayMs(waitUiReadyMs);
+        let text2 = await driver!.findComponent(ON.text('dialog'));
+        await driver!.delayMs(waitUiReadyMs);
         await stopApplication('com.uitestScene.acts');
-        await driver.delayMs(waitUiReadyMs);
+        await driver!.delayMs(waitUiReadyMs);
         ON.afterComponent(text2);
         expect().assertFail();
       } catch (error) {
@@ -840,11 +840,11 @@ export default function uitestApi26ErrorTest(): void {
       console.info(`testOnWithinComponentInvalid_static start`);
       try {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-        await driver.delayMs(waitUiReadyMs);
-        let scroller = await driver.findComponent(ON.type('Scroll'));
-        await driver.delayMs(waitUiReadyMs);
+        await driver!.delayMs(waitUiReadyMs);
+        let scroller = await driver!.findComponent(ON.type('Scroll'));
+        await driver!.delayMs(waitUiReadyMs);
         await stopApplication('com.uitestScene.acts');
-        await driver.delayMs(waitUiReadyMs);
+        await driver!.delayMs(waitUiReadyMs);
         ON.withinComponent(scroller)
         expect().assertFail();
       } catch (error) {
