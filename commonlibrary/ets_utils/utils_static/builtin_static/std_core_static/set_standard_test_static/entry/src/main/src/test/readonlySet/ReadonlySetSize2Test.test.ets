@@ -1993,3 +1993,225 @@ export default function ReadonlySetSize2Test(): void {
       const set: ReadonlySet<RegExp> = new Set<RegExp>([new RegExp("a")]);
       expect(set.size).assertEqual(1);
     });
+
+    /**
+     * @tc.name testReadonlySetSize131
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETSIZE_1310
+     * @tc.desc Verify single-element Object Set size is 1
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetSize131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: ReadonlySet<Object> = new Set<Object>([new Object()]);
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetSize132
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETSIZE_1320
+     * @tc.desc Verify single-element WeakMap Set size is 1
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetSize132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: ReadonlySet<WeakMap<Object, int>> = new Set<WeakMap<Object, int>>([new WeakMap<Object, int>()]);
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetSize133
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETSIZE_1330
+     * @tc.desc Verify single-element WeakSet Set size is 1
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetSize133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: ReadonlySet<WeakSet<Object>> = new Set<WeakSet<Object>>([new WeakSet<Object>()]);
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetSize134
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETSIZE_1340
+     * @tc.desc Verify duplicate Error refs count as size 1
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetSize134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e1: Error = new Error("a");
+      const set: ReadonlySet<Error> = new Set<Error>([e1, e1]);
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetSize135
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETSIZE_1350
+     * @tc.desc Verify duplicate Date refs count as size 1
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetSize135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const d1: Date = new Date(1);
+      const set: ReadonlySet<Date> = new Set<Date>([d1, d1]);
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetSize136
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETSIZE_1360
+     * @tc.desc Verify duplicate RegExp refs count as size 1
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetSize136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: RegExp = new RegExp("a");
+      const set: ReadonlySet<RegExp> = new Set<RegExp>([r1, r1]);
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetSize137
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETSIZE_1370
+     * @tc.desc Verify duplicate Object refs count as size 1
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetSize137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj1: Object = new Object();
+      const set: ReadonlySet<Object> = new Set<Object>([obj1, obj1]);
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetSize138
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETSIZE_1380
+     * @tc.desc Verify duplicate WeakMap refs count as size 1
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetSize138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const wm1: WeakMap<Object, int> = new WeakMap<Object, int>();
+      const set: ReadonlySet<WeakMap<Object, int>> = new Set<WeakMap<Object, int>>([wm1, wm1]);
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetSize139
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETSIZE_1390
+     * @tc.desc Verify duplicate WeakSet refs count as size 1
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetSize139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const ws1: WeakSet<Object> = new WeakSet<Object>();
+      const set: ReadonlySet<WeakSet<Object>> = new Set<WeakSet<Object>>([ws1, ws1]);
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetSize140
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETSIZE_1400
+     * @tc.desc Verify underlying Set add increases Error size
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetSize140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let ms: Set<Error> = new Set<Error>([new Error("a")]);
+      const view: ReadonlySet<Error> = ms;
+      ms.add(new Error("b"));
+      expect(view.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testReadonlySetSize141
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETSIZE_1410
+     * @tc.desc Verify underlying Set add increases Date size
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetSize141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let ms: Set<Date> = new Set<Date>([new Date(1)]);
+      const view: ReadonlySet<Date> = ms;
+      ms.add(new Date(2));
+      expect(view.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testReadonlySetSize142
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETSIZE_1420
+     * @tc.desc Verify underlying Set add increases RegExp size
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetSize142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let ms: Set<RegExp> = new Set<RegExp>([new RegExp("a")]);
+      const view: ReadonlySet<RegExp> = ms;
+      ms.add(new RegExp("b"));
+      expect(view.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testReadonlySetSize143
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETSIZE_1430
+     * @tc.desc Verify underlying Set add increases Object size
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetSize143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj1: Object = new Object();
+      const obj2: Object = new Object();
+      let ms: Set<Object> = new Set<Object>([obj1]);
+      const view: ReadonlySet<Object> = ms;
+      ms.add(obj2);
+      expect(view.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testReadonlySetSize144
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETSIZE_1440
+     * @tc.desc Verify underlying Set add increases WeakMap size
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetSize144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const wm1: WeakMap<Object, int> = new WeakMap<Object, int>();
+      const wm2: WeakMap<Object, int> = new WeakMap<Object, int>();
+      let ms: Set<WeakMap<Object, int>> = new Set<WeakMap<Object, int>>([wm1]);
+      const view: ReadonlySet<WeakMap<Object, int>> = ms;
+      ms.add(wm2);
+      expect(view.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testReadonlySetSize145
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETSIZE_1450
+     * @tc.desc Verify underlying Set add increases WeakSet size
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetSize145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const ws1: WeakSet<Object> = new WeakSet<Object>();
+      const ws2: WeakSet<Object> = new WeakSet<Object>();
+      let ms: Set<WeakSet<Object>> = new Set<WeakSet<Object>>([ws1]);
+      const view: ReadonlySet<WeakSet<Object>> = ms;
+      ms.add(ws2);
+      expect(view.size).assertEqual(2);
+    });
+
+  });
+}
