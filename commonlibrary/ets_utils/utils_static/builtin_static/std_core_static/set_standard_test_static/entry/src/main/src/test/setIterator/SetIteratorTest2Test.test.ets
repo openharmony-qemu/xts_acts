@@ -1989,3 +1989,124 @@ export default function SetIteratorTest2Test(): void {
       for (const _ of set.$_iterator()) { count++; }
       expect(count).assertEqual(1);
     });
+
+    /**
+     * @tc.name testSetIteratorTest105
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_1050
+     * @tc.desc Verify duplicate WeakSet refs deduplicate in $_iterator
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetIteratorTest105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const ws1: WeakSet<Object> = new WeakSet<Object>();
+      const set = new Set<WeakSet<Object>>([ws1, ws1]);
+      let count = 0;
+      for (const _ of set.$_iterator()) { count++; }
+      expect(count).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetIteratorTest106
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_1060
+     * @tc.desc Verify $_iterator reflects Error added to underlying Set before iteration
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetIteratorTest106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<Error>([new Error("a")]);
+      set.add(new Error("b"));
+      let count = 0;
+      for (const _ of set.$_iterator()) { count++; }
+      expect(count).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testSetIteratorTest107
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_1070
+     * @tc.desc Verify $_iterator reflects Date added to underlying Set before iteration
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetIteratorTest107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<Date>([new Date(1)]);
+      set.add(new Date(2));
+      let count = 0;
+      for (const _ of set.$_iterator()) { count++; }
+      expect(count).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testSetIteratorTest108
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_1080
+     * @tc.desc Verify $_iterator reflects RegExp added to underlying Set before iteration
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetIteratorTest108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<RegExp>([new RegExp("a")]);
+      set.add(new RegExp("b"));
+      let count = 0;
+      for (const _ of set.$_iterator()) { count++; }
+      expect(count).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testSetIteratorTest109
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_1090
+     * @tc.desc Verify $_iterator reflects Object added to underlying Set before iteration
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetIteratorTest109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj1: Object = new Object();
+      const obj2: Object = new Object();
+      const set = new Set<Object>([obj1]);
+      set.add(obj2);
+      let count = 0;
+      for (const _ of set.$_iterator()) { count++; }
+      expect(count).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testSetIteratorTest110
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_1100
+     * @tc.desc Verify $_iterator reflects WeakMap added to underlying Set before iteration
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetIteratorTest110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const wm1: WeakMap<Object, int> = new WeakMap<Object, int>();
+      const wm2: WeakMap<Object, int> = new WeakMap<Object, int>();
+      const set = new Set<WeakMap<Object, int>>([wm1]);
+      set.add(wm2);
+      let count = 0;
+      for (const _ of set.$_iterator()) { count++; }
+      expect(count).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testSetIteratorTest111
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_1110
+     * @tc.desc Verify $_iterator reflects WeakSet added to underlying Set before iteration
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetIteratorTest111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const ws1: WeakSet<Object> = new WeakSet<Object>();
+      const ws2: WeakSet<Object> = new WeakSet<Object>();
+      const set = new Set<WeakSet<Object>>([ws1]);
+      set.add(ws2);
+      let count = 0;
+      for (const _ of set.$_iterator()) { count++; }
+      expect(count).assertEqual(2);
+    });
+
+  });
+}
