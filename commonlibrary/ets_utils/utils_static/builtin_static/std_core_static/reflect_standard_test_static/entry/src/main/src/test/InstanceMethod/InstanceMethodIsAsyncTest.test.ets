@@ -721,7 +721,7 @@ export default function InstanceMethodIsAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_ISASYNC_0021
      * @tc.name testInstanceMethodIsAsync0021
-     * @tc.desc Verify inherited async method has isAsync true in child class
+     * @tc.desc Verify getInstanceMethod returns undefined for inherited async method on child class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -729,11 +729,7 @@ export default function InstanceMethodIsAsyncTest(): void {
     it('testInstanceMethodIsAsync0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<ChildClass035>();
       let method = childCls.getInstanceMethod('parentAsync');
-      if (method !== undefined) {
-        expect(method!.isAsync()).assertEqual(true);
-      } else {
-        expect(method).assertUndefined();
-      }
+      expect(method).assertUndefined();
     });
 
     /**

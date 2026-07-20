@@ -618,7 +618,7 @@ export default function InstanceMethodGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_GETNAME_0023
      * @tc.name testInstanceMethodGetName0023
-     * @tc.desc Verify getName for inherited method from parent class
+     * @tc.desc Verify getInstanceMethod returns undefined for inherited method on child class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -629,11 +629,7 @@ export default function InstanceMethodGetNameTest(): void {
       let parentMethod = parentCls.getInstanceMethod('parentMethod');
       let childMethod = childCls.getInstanceMethod('parentMethod');
       expect(parentMethod!.getName()).assertEqual('parentMethod');
-      if (childMethod !== undefined) {
-        expect(childMethod!.getName()).assertEqual('parentMethod');
-      } else {
-        expect(childMethod).assertUndefined();
-      }
+      expect(childMethod).assertUndefined();
     });
 
     /**
@@ -809,7 +805,7 @@ export default function InstanceMethodGetNameTest(): void {
       let method = cls.getInstanceMethod('nonExistentMethod');
       expect(method).assertUndefined();
       try {
-        let name = method!.getName();
+        method!.getName();
         expect().assertFail();
       } catch (e) {
         let err = e as Error;
@@ -831,7 +827,7 @@ export default function InstanceMethodGetNameTest(): void {
       expect(method).assertUndefined();
       let obj = new MyClass001();
       try {
-        let result = method!.invoke(obj) as string;
+        method!.invoke(obj);
         expect().assertFail();
       } catch (e) {
         let err = e as Error;

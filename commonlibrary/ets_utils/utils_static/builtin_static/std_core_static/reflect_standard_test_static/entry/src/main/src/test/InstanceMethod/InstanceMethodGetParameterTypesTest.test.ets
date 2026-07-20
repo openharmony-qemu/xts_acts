@@ -1041,7 +1041,7 @@ export default function InstanceMethodGetParameterTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_GETPARAMETERTYPES_0041
      * @tc.name testInstanceMethodGetParameterTypes0041
-     * @tc.desc Verify parameter types of an inherited method from child class
+     * @tc.desc Verify getInstanceMethod returns undefined for inherited method on child class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1049,14 +1049,7 @@ export default function InstanceMethodGetParameterTypesTest(): void {
     it('testInstanceMethodGetParameterTypes0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<ChildClass060>();
       let method = childCls.getInstanceMethod('parentMethod');
-      if (method !== undefined) {
-        let paramTypes = method!.getParameterTypes();
-        expect(paramTypes.length).assertEqual(2);
-        expect(paramTypes[0].getName()).assertEqual('f64');
-        expect(paramTypes[1].getName()).assertEqual('std.core.String');
-      } else {
-        expect(method).assertUndefined();
-      }
+      expect(method).assertUndefined();
     });
 
     /**
@@ -1089,7 +1082,7 @@ export default function InstanceMethodGetParameterTypesTest(): void {
       let matching = Array.from(cls.getInstanceMethods()).filter((method: reflect.InstanceMethod): boolean => {
         return method.getName() === 'overloadedMethod';
       });
-      expect(matching.length >= 2).assertTrue();
+      expect(matching.length).assertEqual(2);
       let types1 = matching[0].getParameterTypes();
       let types2 = matching[1].getParameterTypes();
       expect(types1.length).assertEqual(1);

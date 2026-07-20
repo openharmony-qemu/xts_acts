@@ -665,13 +665,8 @@ export default function InstanceMethodGetParameterTypeTest(): void {
       expect(method!.getParameterType(0)!.getName()).assertEqual('f64');
 
       try {
-        let negativeResult = method!.getParameterType(-1);
-        if (negativeResult === undefined) {
-          expect(negativeResult).assertUndefined();
-        } else {
-          let negName = negativeResult!.getName();
-          expect(negName).assertEqual(Class.from<MyClass003>().getName());
-        }
+        method!.getParameterType(-1);
+        expect().assertFail();
       } catch (e) {
         let err = e as Error;
         expect(err.message.includes('out of bounds')).assertTrue();
@@ -801,7 +796,7 @@ export default function InstanceMethodGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_GETPARAMETERTYPE_0033
      * @tc.name testInstanceMethodGetParameterType0033
-     * @tc.desc Verify getParameterType for inherited method from child class
+     * @tc.desc Verify getInstanceMethod returns undefined for inherited method on child class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -809,12 +804,7 @@ export default function InstanceMethodGetParameterTypeTest(): void {
     it('testInstanceMethodGetParameterType0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<ChildClass067>();
       let method = childCls.getInstanceMethod('parentMethod');
-      if (method !== undefined) {
-        expect(method!.getParameterType(0)!.getName()).assertEqual('f64');
-        expect(method!.getParameterType(1)!.getName()).assertEqual('std.core.String');
-      } else {
-        expect(method).assertUndefined();
-      }
+      expect(method).assertUndefined();
     });
 
     /**
@@ -909,7 +899,7 @@ export default function InstanceMethodGetParameterTypeTest(): void {
       let matching = Array.from(cls.getInstanceMethods()).filter((method: reflect.InstanceMethod): boolean => {
         return method.getName() === 'methodA';
       });
-      expect(matching.length >= 2).assertTrue();
+      expect(matching.length).assertEqual(2);
       expect(matching[0].getParameterType(0)!.getName()).assertEqual('f64');
       expect(matching[1].getParameterType(0)!.getName()).assertEqual('std.core.String');
       expect(matching[0].getParametersNum()).assertEqual(1);

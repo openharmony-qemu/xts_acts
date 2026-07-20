@@ -663,7 +663,7 @@ export default function InstanceMethodGetOwnerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_GETOWNER_0022
      * @tc.name testInstanceMethodGetOwner0022
-     * @tc.desc Verify getOwner for deep inheritance chain method points to original declaring class
+     * @tc.desc Verify getInstanceMethod returns undefined for inherited method on child class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -671,11 +671,7 @@ export default function InstanceMethodGetOwnerTest(): void {
     it('testInstanceMethodGetOwner0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let deepCls = Class.from<DeepChild051>();
       let method = deepCls.getInstanceMethod('deepMethod');
-      if (method !== undefined) {
-        assertOwnerNameMatches(method!.getOwner().getName(), Class.from<GrandGrandParent051>().getName());
-      } else {
-        expect(method).assertUndefined();
-      }
+      expect(method).assertUndefined();
     });
 
     /**
@@ -732,7 +728,7 @@ export default function InstanceMethodGetOwnerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_GETOWNER_0026
      * @tc.name testInstanceMethodGetOwner0026
-     * @tc.desc Verify getOwner for inherited method points to parent not child
+     * @tc.desc Verify getInstanceMethod returns undefined for inherited method on child class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -743,11 +739,7 @@ export default function InstanceMethodGetOwnerTest(): void {
       let parentMethod = parentCls.getInstanceMethod('baseMethod');
       let childMethod = childCls.getInstanceMethod('baseMethod');
       assertOwnerNameMatches(parentMethod!.getOwner().getName(), Class.from<ParentClass054>().getName());
-      if (childMethod !== undefined) {
-        assertOwnerNameMatches(childMethod!.getOwner().getName(), Class.from<ParentClass054>().getName());
-      } else {
-        expect(childMethod).assertUndefined();
-      }
+      expect(childMethod).assertUndefined();
     });
 
     /**
@@ -830,7 +822,6 @@ export default function InstanceMethodGetOwnerTest(): void {
       let setterOwner = setter!.getOwner().getName();
       assertOwnerNameMatches(getterOwner, Class.from<MyClass027>().getName());
       assertOwnerNameMatches(setterOwner, Class.from<MyClass027>().getName());
-      expect(getterOwner).assertEqual(setterOwner);
     });
 
     /**
@@ -851,7 +842,7 @@ export default function InstanceMethodGetOwnerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_GETOWNER_0033
      * @tc.name testInstanceMethodGetOwner0033
-     * @tc.desc Verify getOwner for method in multi-level hierarchy - each level method points to its declarer
+     * @tc.desc Verify getInstanceMethod returns undefined for inherited methods on child class; child's own method is accessible
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -861,23 +852,15 @@ export default function InstanceMethodGetOwnerTest(): void {
       let grandMethod = childCls.getInstanceMethod('grandParentMethod');
       let parentMethod = childCls.getInstanceMethod('parentMethod');
       let childMethod = childCls.getInstanceMethod('childMethod');
-      if (grandMethod !== undefined) {
-        assertOwnerNameMatches(grandMethod!.getOwner().getName(), Class.from<GrandParentClass033>().getName());
-      } else {
-        expect(grandMethod).assertUndefined();
-      }
-      if (parentMethod !== undefined) {
-        assertOwnerNameMatches(parentMethod!.getOwner().getName(), Class.from<ParentClass033>().getName());
-      } else {
-        expect(parentMethod).assertUndefined();
-      }
+      expect(grandMethod).assertUndefined();
+      expect(parentMethod).assertUndefined();
       assertOwnerNameMatches(childMethod!.getOwner().getName(), Class.from<ChildClass033>().getName());
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_GETOWNER_0034
      * @tc.name testInstanceMethodGetOwner0034
-     * @tc.desc Verify getOwner for zero-override pure empty subclass inherits parent method owner
+     * @tc.desc Verify getInstanceMethod returns undefined for inherited method on child class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -888,17 +871,13 @@ export default function InstanceMethodGetOwnerTest(): void {
       let parentMethod = parentCls.getInstanceMethod('baseMethod');
       assertOwnerNameMatches(parentMethod!.getOwner().getName(), Class.from<ParentClass059>().getName());
       let childMethod = childCls.getInstanceMethod('baseMethod');
-      if (childMethod !== undefined) {
-        assertOwnerNameMatches(childMethod!.getOwner().getName(), Class.from<ParentClass059>().getName());
-      } else {
-        expect(childMethod).assertUndefined();
-      }
+      expect(childMethod).assertUndefined();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_GETOWNER_0035
      * @tc.name testInstanceMethodGetOwner0035
-     * @tc.desc Verify getOwner for method in 3-level inheritance chain points to original declarer
+     * @tc.desc Verify getInstanceMethod returns undefined for inherited method on child class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -909,11 +888,7 @@ export default function InstanceMethodGetOwnerTest(): void {
       let grandMethod = grandCls.getInstanceMethod('deepMethod');
       assertOwnerNameMatches(grandMethod!.getOwner().getName(), Class.from<GrandParentClass060>().getName());
       let childMethod = childCls.getInstanceMethod('deepMethod');
-      if (childMethod !== undefined) {
-        assertOwnerNameMatches(childMethod!.getOwner().getName(), Class.from<GrandParentClass060>().getName());
-      } else {
-        expect(childMethod).assertUndefined();
-      }
+      expect(childMethod).assertUndefined();
     });
 
   });

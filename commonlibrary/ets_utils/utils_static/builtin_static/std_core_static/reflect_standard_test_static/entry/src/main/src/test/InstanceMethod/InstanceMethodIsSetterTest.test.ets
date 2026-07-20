@@ -610,7 +610,7 @@ export default function InstanceMethodIsSetterTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_ISSETTER_0022
      * @tc.name testInstanceMethodIsSetter0022
-     * @tc.desc Verify inherited setter has isSetter true in child class
+     * @tc.desc Verify getInstanceMethod returns undefined for inherited setter on child class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -620,11 +620,7 @@ export default function InstanceMethodIsSetterTest(): void {
       let childCls = Class.from<ChildClass036>();
       expect(parentCls.getInstanceMethod('%%set-value')!.isSetter()).assertEqual(true);
       let childMethod = childCls.getInstanceMethod('%%set-value');
-      if (childMethod !== undefined) {
-        expect(childMethod!.isSetter()).assertEqual(true);
-      } else {
-        expect(childMethod).assertUndefined();
-      }
+      expect(childMethod).assertUndefined();
     });
 
     /**

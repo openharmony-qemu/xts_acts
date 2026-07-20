@@ -657,7 +657,7 @@ export default function InstanceMethodIsPublicTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_ISPUBLIC_0023
      * @tc.name testInstanceMethodIsPublic0023
-     * @tc.desc Verify inherited public method returns true for isPublic in child class
+     * @tc.desc Verify getInstanceMethod returns undefined for inherited method on child class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -667,11 +667,7 @@ export default function InstanceMethodIsPublicTest(): void {
       let childCls = Class.from<ChildClass054>();
       expect(parentCls.getInstanceMethod('parentMethod')!.isPublic()).assertEqual(true);
       let childMethod = childCls.getInstanceMethod('parentMethod');
-      if (childMethod !== undefined) {
-        expect(childMethod!.isPublic()).assertEqual(true);
-      } else {
-        expect(childMethod).assertUndefined();
-      }
+      expect(childMethod).assertUndefined();
     });
 
     /**

@@ -558,7 +558,7 @@ export default function InstanceMethodIsPrivateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_ISPRIVATE_0015
      * @tc.name testInstanceMethodIsPrivate0015
-     * @tc.desc Verify inherited public method is not private in child class
+     * @tc.desc Verify getInstanceMethod returns undefined for inherited method on child class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -568,11 +568,7 @@ export default function InstanceMethodIsPrivateTest(): void {
       let childCls = Class.from<ChildClass034>();
       expect(parentCls.getInstanceMethod('parentMethod')!.isPrivate()).assertEqual(false);
       let childMethod = childCls.getInstanceMethod('parentMethod');
-      if (childMethod !== undefined) {
-        expect(childMethod!.isPrivate()).assertEqual(false);
-      } else {
-        expect(childMethod).assertUndefined();
-      }
+      expect(childMethod).assertUndefined();
     });
 
     /**
@@ -651,12 +647,8 @@ export default function InstanceMethodIsPrivateTest(): void {
       let concreteMethod = cls.getInstanceMethod('concreteMethod');
       expect(concreteMethod!.isPrivate()).assertEqual(false);
       let abstractMethod = cls.getInstanceMethod('abstractMethod');
-      if (abstractMethod !== undefined) {
-        expect(abstractMethod!.isPrivate()).assertEqual(false);
-        expect(abstractMethod!.isAbstract()).assertEqual(true);
-      } else {
-        expect(abstractMethod).assertUndefined();
-      }
+      expect(abstractMethod!.isPrivate()).assertEqual(false);
+      expect(abstractMethod!.isAbstract()).assertEqual(true);
     });
 
     /**

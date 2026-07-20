@@ -975,7 +975,7 @@ export default function InstanceMethodGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_GETRETURNTYPE_0041
      * @tc.name testInstanceMethodGetReturnType0041
-     * @tc.desc Verify the return type of an inherited method from child class context
+     * @tc.desc Verify getInstanceMethod returns undefined for inherited method on child class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -983,11 +983,7 @@ export default function InstanceMethodGetReturnTypeTest(): void {
     it('testInstanceMethodGetReturnType0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<ChildClass067>();
       let method = childCls.getInstanceMethod('getParentType');
-      if (method !== undefined) {
-        expect(method!.getReturnType().getName()).assertEqual('std.core.String');
-      } else {
-        expect(method).assertUndefined();
-      }
+      expect(method).assertUndefined();
     });
   });
 }

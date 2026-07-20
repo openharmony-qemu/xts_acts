@@ -672,7 +672,7 @@ export default function InstanceMethodIsNativeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_ISNATIVE_0021
      * @tc.name testInstanceMethodIsNative0021
-     * @tc.desc Verify inherited method is non-native in child class
+     * @tc.desc Verify getInstanceMethod returns undefined for inherited method on child class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -682,11 +682,7 @@ export default function InstanceMethodIsNativeTest(): void {
       let childCls = Class.from<ChildClass039>();
       expect(parentCls.getInstanceMethod('parentMethod')!.isNative()).assertEqual(false);
       let childMethod = childCls.getInstanceMethod('parentMethod');
-      if (childMethod !== undefined) {
-        expect(childMethod!.isNative()).assertEqual(false);
-      } else {
-        expect(childMethod).assertUndefined();
-      }
+      expect(childMethod).assertUndefined();
     });
 
     /**

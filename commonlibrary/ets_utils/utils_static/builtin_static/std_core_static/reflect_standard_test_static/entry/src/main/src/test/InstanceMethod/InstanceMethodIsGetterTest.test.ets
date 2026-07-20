@@ -626,7 +626,7 @@ export default function InstanceMethodIsGetterTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_ISGETTER_0022
      * @tc.name testInstanceMethodIsGetter0022
-     * @tc.desc Verify inherited getter has isGetter true in child class
+     * @tc.desc Verify getInstanceMethod returns undefined for inherited getter on child class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -636,11 +636,7 @@ export default function InstanceMethodIsGetterTest(): void {
       let childCls = Class.from<ChildClass036>();
       expect(parentCls.getInstanceMethod('%%get-value')!.isGetter()).assertEqual(true);
       let childMethod = childCls.getInstanceMethod('%%get-value');
-      if (childMethod !== undefined) {
-        expect(childMethod!.isGetter()).assertEqual(true);
-      } else {
-        expect(childMethod).assertUndefined();
-      }
+      expect(childMethod).assertUndefined();
     });
 
     /**

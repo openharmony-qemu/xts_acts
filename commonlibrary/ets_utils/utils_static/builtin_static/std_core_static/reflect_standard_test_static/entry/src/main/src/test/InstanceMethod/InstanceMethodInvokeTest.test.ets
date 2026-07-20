@@ -521,7 +521,7 @@ export default function InstanceMethodInvokeTest(): void {
       let cls = Class.of(obj);
       let method = cls.getInstanceMethod('returnBoolean');
       let result = method!.invoke(obj) as boolean;
-      expect(result).assertTrue();
+      expect(result).assertEqual(true);
     });
 
     /**
@@ -813,7 +813,7 @@ export default function InstanceMethodInvokeTest(): void {
       let boolMethod = cls.getInstanceMethod('testBoolean');
       let args3: FixedArray<Object> = [true];
       let result3 = boolMethod!.invoke(obj, args3) as boolean;
-      expect(result3).assertTrue();
+      expect(result3).assertEqual(true);
     });
 
     /**
@@ -1020,13 +1020,7 @@ export default function InstanceMethodInvokeTest(): void {
       let cls = Class.from<MyClass003>();
       let paramTypes: FixedArray<Class> = [Class.from<number>(), Class.from<string>()];
       let method = cls.getInstanceMethod('testMethod', paramTypes);
-      if (method !== undefined && method !== null) {
-        let args: FixedArray<Object> = [100, "hello"];
-        let result = method!.invoke(obj, args) as string;
-        expect(result).assertEqual("test100:hello");
-      } else {
-        expect(method).assertUndefined();
-      }
+      expect(method).assertUndefined();
     });
 
     /**
@@ -1156,7 +1150,7 @@ export default function InstanceMethodInvokeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_INVOKE_0042
      * @tc.name testInstanceMethodInvoke0042
-     * @tc.desc Verify invoking an inherited method from child class instance
+     * @tc.desc Verify getInstanceMethod returns undefined for inherited method on child class; no invocation occurs
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -1165,12 +1159,7 @@ export default function InstanceMethodInvokeTest(): void {
       let obj = new ChildClass057();
       let cls = Class.of(obj);
       let method = cls.getInstanceMethod('sharedMethod');
-      if (method !== undefined) {
-        let result = method!.invoke(obj) as string;
-        expect(result).assertEqual('parent-shared');
-      } else {
-        expect(method).assertUndefined();
-      }
+      expect(method).assertUndefined();
     });
 
     /**
@@ -1226,7 +1215,7 @@ export default function InstanceMethodInvokeTest(): void {
       let method = cls.getInstanceMethod('acceptBoolean');
       let args: FixedArray<Object> = [false];
       let result = method!.invoke(obj, args) as boolean;
-      expect(result).assertTrue();
+      expect(result).assertEqual(true);
     });
 
     /**

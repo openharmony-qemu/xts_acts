@@ -771,7 +771,7 @@ export default function InstanceMethodGetParametersNumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_GETPARAMETERSNUM_0030
      * @tc.name testInstanceMethodGetParametersNum0030
-     * @tc.desc Verify parameter count for inherited method from child class context
+     * @tc.desc Verify getInstanceMethod returns undefined for inherited method on child class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -781,11 +781,7 @@ export default function InstanceMethodGetParametersNumTest(): void {
       let childCls = Class.from<ChildClass055>();
       expect(parentCls.getInstanceMethod('parentMethod')!.getParametersNum()).assertEqual(2);
       let childMethod = childCls.getInstanceMethod('parentMethod');
-      if (childMethod !== undefined) {
-        expect(childMethod!.getParametersNum()).assertEqual(2);
-      } else {
-        expect(childMethod).assertUndefined();
-      }
+      expect(childMethod).assertUndefined();
     });
 
     /**

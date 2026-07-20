@@ -287,7 +287,7 @@ export default function InstanceMethodEqualsTest(): void {
       let matching = Array.from(cls.getInstanceMethods()).filter((method: reflect.InstanceMethod): boolean => {
         return method.getName() === 'testMethod';
       });
-      expect(matching.length >= 2).assertTrue();
+      expect(matching.length).assertEqual(3);
       expect(matching[0].equals(matching[1])).assertEqual(false);
     });
 
@@ -357,7 +357,7 @@ export default function InstanceMethodEqualsTest(): void {
       let oneParamMethods = Array.from(cls.getInstanceMethods()).filter((method: reflect.InstanceMethod): boolean => {
         return method.getName() === 'testMethod' && method.getParametersNum() === 1;
       });
-      expect(oneParamMethods.length >= 2).assertTrue();
+      expect(oneParamMethods.length).assertEqual(2);
       let firstMethod = oneParamMethods[0];
       let secondMethod = Array.from(oneParamMethods).find((m: reflect.InstanceMethod): boolean => {
         return m.getParameterType(0)!.getName() !== firstMethod.getParameterType(0)!.getName();
@@ -386,7 +386,7 @@ export default function InstanceMethodEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEMETHOD_EQUALS_0010
      * @tc.name testInstanceMethodEquals0010
-     * @tc.desc Verify inherited method from parent equals itself across parent and child class contexts
+     * @tc.desc Verify getInstanceMethod returns undefined for inherited method on child class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -396,12 +396,7 @@ export default function InstanceMethodEqualsTest(): void {
       let childCls = Class.from<ChildClass050>();
       let parentMethod = parentCls.getInstanceMethod('inheritedMethod');
       let childMethod = childCls.getInstanceMethod('inheritedMethod');
-      if (childMethod !== undefined) {
-        expect(parentMethod!.equals(childMethod!)).assertEqual(true);
-        expect(childMethod!.equals(parentMethod!)).assertEqual(true);
-      } else {
-        expect(childMethod).assertUndefined();
-      }
+      expect(childMethod).assertUndefined();
     });
 
     /**
@@ -434,7 +429,7 @@ export default function InstanceMethodEqualsTest(): void {
       let matching = Array.from(cls.getInstanceMethods()).filter((method: reflect.InstanceMethod): boolean => {
         return method.getName() === 'method1';
       });
-      expect(matching.length >= 2).assertTrue();
+      expect(matching.length).assertEqual(2);
       expect(matching[0].equals(matching[1])).assertEqual(false);
     });
 
@@ -562,7 +557,7 @@ export default function InstanceMethodEqualsTest(): void {
       let matching = Array.from(cls.getInstanceMethods()).filter((method: reflect.InstanceMethod): boolean => {
         return method.getName() === 'compute';
       });
-      expect(matching.length >= 2).assertTrue();
+      expect(matching.length).assertEqual(2);
       expect(matching[0].getParametersNum()).assertEqual(2);
       expect(matching[1].getParametersNum()).assertEqual(3);
       expect(matching[0].equals(matching[1])).assertEqual(false);
