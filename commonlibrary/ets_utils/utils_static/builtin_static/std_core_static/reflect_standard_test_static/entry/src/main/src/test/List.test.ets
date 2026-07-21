@@ -97,6 +97,24 @@ import InstanceFieldGetNameTest from "./InstanceField/InstanceFieldGetNameTest.t
 import InstanceFieldGetOwnerTest from "./InstanceField/InstanceFieldGetOwnerTest.test";
 import InstanceFieldGetTypeTest from "./InstanceField/InstanceFieldGetTypeTest.test";
 
+import InstanceMethodEqualsTest from './InstanceMethod/InstanceMethodEqualsTest.test';
+import InstanceMethodGetNameTest from './InstanceMethod/InstanceMethodGetNameTest.test';
+import InstanceMethodGetOwnerTest from './InstanceMethod/InstanceMethodGetOwnerTest.test';
+import InstanceMethodGetParameterTypesTest from './InstanceMethod/InstanceMethodGetParameterTypesTest.test';
+import InstanceMethodGetParameterTypeTest from './InstanceMethod/InstanceMethodGetParameterTypeTest.test';
+import InstanceMethodGetParametersNumTest from './InstanceMethod/InstanceMethodGetParametersNumTest.test';
+import InstanceMethodGetReturnTypeTest from './InstanceMethod/InstanceMethodGetReturnTypeTest.test';
+import InstanceMethodInvokeTest from './InstanceMethod/InstanceMethodInvokeTest.test';
+import InstanceMethodIsAbstractTest from './InstanceMethod/InstanceMethodIsAbstractTest.test';
+import InstanceMethodIsAsyncTest from './InstanceMethod/InstanceMethodIsAsyncTest.test';
+import InstanceMethodIsFinalTest from './InstanceMethod/InstanceMethodIsFinalTest.test';
+import InstanceMethodIsGetterTest from './InstanceMethod/InstanceMethodIsGetterTest.test';
+import InstanceMethodIsNativeTest from './InstanceMethod/InstanceMethodIsNativeTest.test';
+import InstanceMethodIsPrivateTest from './InstanceMethod/InstanceMethodIsPrivateTest.test';
+import InstanceMethodIsProtectedTest from './InstanceMethod/InstanceMethodIsProtectedTest.test';
+import InstanceMethodIsPublicTest from './InstanceMethod/InstanceMethodIsPublicTest.test';
+import InstanceMethodIsSetterTest from './InstanceMethod/InstanceMethodIsSetterTest.test';
+
 
 
 export default function testsuite(): void {
@@ -182,4 +200,22 @@ export default function testsuite(): void {
   InstanceFieldGetNameTest();
   InstanceFieldGetOwnerTest();
   InstanceFieldGetTypeTest();
+
+  InstanceMethodEqualsTest();
+  InstanceMethodGetNameTest();
+  InstanceMethodGetOwnerTest();
+  InstanceMethodGetParameterTypesTest();
+  InstanceMethodGetParameterTypeTest();
+  InstanceMethodGetParametersNumTest();
+  InstanceMethodGetReturnTypeTest();
+  InstanceMethodInvokeTest();
+  InstanceMethodIsAbstractTest();
+  InstanceMethodIsAsyncTest();
+  InstanceMethodIsFinalTest();
+  InstanceMethodIsGetterTest();
+  InstanceMethodIsNativeTest();
+  InstanceMethodIsPrivateTest();
+  InstanceMethodIsProtectedTest();
+  InstanceMethodIsPublicTest();
+  InstanceMethodIsSetterTest();
 }
