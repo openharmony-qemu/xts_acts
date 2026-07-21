@@ -89,14 +89,14 @@ export default function typedUArraysConstructorTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2420
-     * @tc.name testTypedUArraysConstructor0202_242
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_0100
+     * @tc.name testTypedUArraysConstructor0202_001
      * @tc.desc Verify buffer subarray filter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_242', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       let result = arr.subarray(1, 3).filter((v) => v > 2);
       expect(result.length === 1).assertTrue();
@@ -104,14 +104,14 @@ export default function typedUArraysConstructorTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2430
-     * @tc.name testTypedUArraysConstructor0202_243
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_0200
+     * @tc.name testTypedUArraysConstructor0202_002
      * @tc.desc Verify buffer toReversed filter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_243', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       let result = reverseUint8Array(arr).filter((v) => v > 2);
       expect(result.length === 2).assertTrue();
@@ -120,14 +120,14 @@ export default function typedUArraysConstructorTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2440
-     * @tc.name testTypedUArraysConstructor0202_244
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_0300
+     * @tc.name testTypedUArraysConstructor0202_003
      * @tc.desc Verify buffer toSorted filter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_244', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       let result = arr.filter((v) => v > 2);
       expect(result.length === 2).assertTrue();
@@ -136,729 +136,690 @@ export default function typedUArraysConstructorTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2450
-     * @tc.name testTypedUArraysConstructor0202_245
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_0400
+     * @tc.name testTypedUArraysConstructor0202_004
      * @tc.desc Verify buffer map find
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_245', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       const found = arr.map((v) => v * 2).find((v) => v > 4);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2460
-     * @tc.name testTypedUArraysConstructor0202_246
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_0500
+     * @tc.name testTypedUArraysConstructor0202_005
      * @tc.desc Verify buffer filter find
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_246', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       const found = arr.filter((v) => v > 2).find((v) => v > 3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2470
-     * @tc.name testTypedUArraysConstructor0202_247
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_0600
+     * @tc.name testTypedUArraysConstructor0202_006
      * @tc.desc Verify buffer slice find
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_247', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       const found = arr.slice(1, 3).find((v) => v > 2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2480
-     * @tc.name testTypedUArraysConstructor0202_248
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_0700
+     * @tc.name testTypedUArraysConstructor0202_007
      * @tc.desc Verify buffer subarray find
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_248', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       const found = arr.subarray(1, 3).find((v) => v > 2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2490
-     * @tc.name testTypedUArraysConstructor0202_249
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_0800
+     * @tc.name testTypedUArraysConstructor0202_008
      * @tc.desc Verify buffer toReversed find
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_249', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       const found = reverseUint8Array(arr).find((v) => v > 2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2500
-     * @tc.name testTypedUArraysConstructor0202_250
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_0900
+     * @tc.name testTypedUArraysConstructor0202_009
      * @tc.desc Verify buffer toSorted find
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       const found = arr.filter((v) => v > 2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2510
-     * @tc.name testTypedUArraysConstructor0202_251
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_1000
+     * @tc.name testTypedUArraysConstructor0202_010
      * @tc.desc Verify buffer map findLast
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_251', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       const found = findLastUint8(arr.map((v) => v * 2), (v: number, _index: number, _array: Uint8Array): boolean => v > 4);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2520
-     * @tc.name testTypedUArraysConstructor0202_252
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_1100
+     * @tc.name testTypedUArraysConstructor0202_011
      * @tc.desc Verify buffer filter findLast
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_252', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       const found = findLastUint8(arr.filter((v) => v > 2), (v: number, _index: number, _array: Uint8Array): boolean => v < 4);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2530
-     * @tc.name testTypedUArraysConstructor0202_253
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_1200
+     * @tc.name testTypedUArraysConstructor0202_012
      * @tc.desc Verify buffer slice findLast
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_253', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       const found = findLastUint8(arr.slice(1, 3), (v: number, _index: number, _array: Uint8Array): boolean => v > 2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2540
-     * @tc.name testTypedUArraysConstructor0202_254
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_1300
+     * @tc.name testTypedUArraysConstructor0202_013
      * @tc.desc Verify buffer subarray findLast
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_254', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       const found = findLastUint8(arr.subarray(1, 3), (v: number, _index: number, _array: Uint8Array): boolean => v > 2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2550
-     * @tc.name testTypedUArraysConstructor0202_255
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_1400
+     * @tc.name testTypedUArraysConstructor0202_014
      * @tc.desc Verify buffer toReversed findLast
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_255', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       const found = findLastUint8(reverseUint8Array(arr), (v: number, _index: number, _array: Uint8Array): boolean => v > 2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2560
-     * @tc.name testTypedUArraysConstructor0202_256
-     * @tc.desc Verify buffer toSorted findLast
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysConstructor0202_256', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([1, 2, 3, 4]);
-      const found = arr.filter((v) => v > 2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2570
-     * @tc.name testTypedUArraysConstructor0202_257
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_1500
+     * @tc.name testTypedUArraysConstructor0202_015
      * @tc.desc Verify buffer map every
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_257', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.map((v) => v * 2).every((v) => v > 0)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2580
-     * @tc.name testTypedUArraysConstructor0202_258
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_1600
+     * @tc.name testTypedUArraysConstructor0202_016
      * @tc.desc Verify buffer filter every
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_258', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.filter((v) => v > 2).every((v) => v < 5)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2590
-     * @tc.name testTypedUArraysConstructor0202_259
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_1700
+     * @tc.name testTypedUArraysConstructor0202_017
      * @tc.desc Verify buffer slice every
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_259', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.slice(1, 3).every((v) => v > 1)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2600
-     * @tc.name testTypedUArraysConstructor0202_260
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_1800
+     * @tc.name testTypedUArraysConstructor0202_018
      * @tc.desc Verify buffer subarray every
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.subarray(1, 3).every((v) => v > 1)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2610
-     * @tc.name testTypedUArraysConstructor0202_261
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_1900
+     * @tc.name testTypedUArraysConstructor0202_019
      * @tc.desc Verify buffer toReversed every
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_261', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(reverseUint8Array(arr).every((v) => v > 0)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2620
-     * @tc.name testTypedUArraysConstructor0202_262
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2000
+     * @tc.name testTypedUArraysConstructor0202_020
      * @tc.desc Verify buffer toSorted every
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_262', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.filter((v) => v > 0).every((v) => v > 0)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2630
-     * @tc.name testTypedUArraysConstructor0202_263
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2100
+     * @tc.name testTypedUArraysConstructor0202_021
      * @tc.desc Verify buffer map some
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_263', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.map((v) => v * 2).some((v) => v > 5)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2640
-     * @tc.name testTypedUArraysConstructor0202_264
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2200
+     * @tc.name testTypedUArraysConstructor0202_022
      * @tc.desc Verify buffer filter some
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_264', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.filter((v) => v > 2).some((v) => v < 4)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2650
-     * @tc.name testTypedUArraysConstructor0202_265
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2300
+     * @tc.name testTypedUArraysConstructor0202_023
      * @tc.desc Verify buffer slice some
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_265', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.slice(1, 3).some((v) => v > 2)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2660
-     * @tc.name testTypedUArraysConstructor0202_266
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2400
+     * @tc.name testTypedUArraysConstructor0202_024
      * @tc.desc Verify buffer subarray some
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_266', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.subarray(1, 3).some((v) => v > 2)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2670
-     * @tc.name testTypedUArraysConstructor0202_267
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2500
+     * @tc.name testTypedUArraysConstructor0202_025
      * @tc.desc Verify buffer toReversed some
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_267', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(reverseUint8Array(arr).some((v) => v > 3)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2680
-     * @tc.name testTypedUArraysConstructor0202_268
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2600
+     * @tc.name testTypedUArraysConstructor0202_026
      * @tc.desc Verify buffer toSorted some
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_268', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.filter((v) => v > 3).some((v) => v > 3)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2690
-     * @tc.name testTypedUArraysConstructor0202_269
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2700
+     * @tc.name testTypedUArraysConstructor0202_027
      * @tc.desc Verify buffer map includes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_269', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.map((v) => v * 2).includes(6)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2700
-     * @tc.name testTypedUArraysConstructor0202_270
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2800
+     * @tc.name testTypedUArraysConstructor0202_028
      * @tc.desc Verify buffer filter includes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.filter((v) => v > 2).includes(4)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2710
-     * @tc.name testTypedUArraysConstructor0202_271
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2900
+     * @tc.name testTypedUArraysConstructor0202_029
      * @tc.desc Verify buffer slice includes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_271', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.slice(1, 3).includes(3)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2720
-     * @tc.name testTypedUArraysConstructor0202_272
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_3000
+     * @tc.name testTypedUArraysConstructor0202_030
      * @tc.desc Verify buffer subarray includes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_272', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.subarray(1, 3).includes(3)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2730
-     * @tc.name testTypedUArraysConstructor0202_273
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_3100
+     * @tc.name testTypedUArraysConstructor0202_031
      * @tc.desc Verify buffer toReversed includes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_273', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(reverseUint8Array(arr).includes(1)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2740
-     * @tc.name testTypedUArraysConstructor0202_274
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_3200
+     * @tc.name testTypedUArraysConstructor0202_032
      * @tc.desc Verify buffer toSorted includes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_274', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(sortUint8Array(arr).includes(1)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2750
-     * @tc.name testTypedUArraysConstructor0202_275
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_3300
+     * @tc.name testTypedUArraysConstructor0202_033
      * @tc.desc Verify buffer map indexOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_275', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.map((v) => v * 2).indexOf(6)).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2760
-     * @tc.name testTypedUArraysConstructor0202_276
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_3400
+     * @tc.name testTypedUArraysConstructor0202_034
      * @tc.desc Verify buffer filter indexOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_276', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.filter((v) => v > 2).indexOf(4)).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2770
-     * @tc.name testTypedUArraysConstructor0202_277
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_3500
+     * @tc.name testTypedUArraysConstructor0202_035
      * @tc.desc Verify buffer slice indexOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_277', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.slice(1, 3).indexOf(3)).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2780
-     * @tc.name testTypedUArraysConstructor0202_278
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_3600
+     * @tc.name testTypedUArraysConstructor0202_036
      * @tc.desc Verify buffer subarray indexOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_278', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.subarray(1, 3).indexOf(3)).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2790
-     * @tc.name testTypedUArraysConstructor0202_279
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_3700
+     * @tc.name testTypedUArraysConstructor0202_037
      * @tc.desc Verify buffer toReversed indexOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_279', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(reverseUint8Array(arr).indexOf(1)).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2800
-     * @tc.name testTypedUArraysConstructor0202_280
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_3800
+     * @tc.name testTypedUArraysConstructor0202_038
      * @tc.desc Verify buffer toSorted indexOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(sortUint8Array(arr)[0]).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2810
-     * @tc.name testTypedUArraysConstructor0202_281
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_3900
+     * @tc.name testTypedUArraysConstructor0202_039
      * @tc.desc Verify buffer map lastIndexOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_281', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.map((v) => v * 2).lastIndexOf(6)).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2820
-     * @tc.name testTypedUArraysConstructor0202_282
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_4000
+     * @tc.name testTypedUArraysConstructor0202_040
      * @tc.desc Verify buffer filter lastIndexOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_282', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.filter((v) => v > 2).lastIndexOf(4)).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2830
-     * @tc.name testTypedUArraysConstructor0202_283
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_4100
+     * @tc.name testTypedUArraysConstructor0202_041
      * @tc.desc Verify buffer slice lastIndexOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_283', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.slice(1, 3).lastIndexOf(3)).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2840
-     * @tc.name testTypedUArraysConstructor0202_284
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_4200
+     * @tc.name testTypedUArraysConstructor0202_042
      * @tc.desc Verify buffer subarray lastIndexOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_284', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.subarray(1, 3).lastIndexOf(3)).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2850
-     * @tc.name testTypedUArraysConstructor0202_285
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_4300
+     * @tc.name testTypedUArraysConstructor0202_043
      * @tc.desc Verify buffer toReversed lastIndexOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_285', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(reverseUint8Array(arr).lastIndexOf(1)).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2860
-     * @tc.name testTypedUArraysConstructor0202_286
-     * @tc.desc Verify buffer toSorted lastIndexOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysConstructor0202_286', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([1, 2, 3, 4]);
-      expect(sortUint8Array(arr)[0]).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2870
-     * @tc.name testTypedUArraysConstructor0202_287
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_4400
+     * @tc.name testTypedUArraysConstructor0202_044
      * @tc.desc Verify buffer map findIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_287', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.map((v) => v * 2).findIndex((v) => v > 4)).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2880
-     * @tc.name testTypedUArraysConstructor0202_288
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_4500
+     * @tc.name testTypedUArraysConstructor0202_045
      * @tc.desc Verify buffer filter findIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_288', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.filter((v) => v > 2).findIndex((v) => v > 3)).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2890
-     * @tc.name testTypedUArraysConstructor0202_289
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_4600
+     * @tc.name testTypedUArraysConstructor0202_046
      * @tc.desc Verify buffer slice findIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_289', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.slice(1, 3).findIndex((v) => v > 2)).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2900
-     * @tc.name testTypedUArraysConstructor0202_290
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_4700
+     * @tc.name testTypedUArraysConstructor0202_047
      * @tc.desc Verify buffer subarray findIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_290', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.subarray(1, 3).findIndex((v) => v > 2)).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2910
-     * @tc.name testTypedUArraysConstructor0202_291
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_4800
+     * @tc.name testTypedUArraysConstructor0202_048
      * @tc.desc Verify buffer toReversed findIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_291', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(reverseUint8Array(arr).findIndex((v) => v > 2)).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2920
-     * @tc.name testTypedUArraysConstructor0202_292
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_4900
+     * @tc.name testTypedUArraysConstructor0202_049
      * @tc.desc Verify buffer toSorted findIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_292', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(arr.filter((v) => v > 2).length).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2930
-     * @tc.name testTypedUArraysConstructor0202_293
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_5000
+     * @tc.name testTypedUArraysConstructor0202_050
      * @tc.desc Verify buffer map findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_293', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(findLastIndexUint8(arr.map((v) => v * 2), (v: number, _index: number, _array: Uint8Array): boolean => v > 4)).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2940
-     * @tc.name testTypedUArraysConstructor0202_294
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_5100
+     * @tc.name testTypedUArraysConstructor0202_051
      * @tc.desc Verify buffer filter findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_294', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(findLastIndexUint8(arr.filter((v) => v > 2), (v: number, _index: number, _array: Uint8Array): boolean => v < 4)).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2950
-     * @tc.name testTypedUArraysConstructor0202_295
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_5200
+     * @tc.name testTypedUArraysConstructor0202_052
      * @tc.desc Verify buffer slice findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_295', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(findLastIndexUint8(arr.slice(1, 3), (v: number, _index: number, _array: Uint8Array): boolean => v > 2)).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2960
-     * @tc.name testTypedUArraysConstructor0202_296
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_5300
+     * @tc.name testTypedUArraysConstructor0202_053
      * @tc.desc Verify buffer subarray findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_296', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(findLastIndexUint8(arr.subarray(1, 3), (v: number, _index: number, _array: Uint8Array): boolean => v > 2)).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2970
-     * @tc.name testTypedUArraysConstructor0202_297
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_5400
+     * @tc.name testTypedUArraysConstructor0202_054
      * @tc.desc Verify buffer toReversed findLastIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_297', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       expect(findLastIndexUint8(reverseUint8Array(arr), (v: number, _index: number, _array: Uint8Array): boolean => v > 2)).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2980
-     * @tc.name testTypedUArraysConstructor0202_298
-     * @tc.desc Verify buffer toSorted findLastIndex
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysConstructor0202_298', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([1, 2, 3, 4]);
-      expect(arr.filter((v) => v > 2).length).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_2990
-     * @tc.name testTypedUArraysConstructor0202_299
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_5500
+     * @tc.name testTypedUArraysConstructor0202_055
      * @tc.desc Verify buffer map reduce
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_299', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       const sum = arr.map((v) => v * 2).reduce((a, b) => a + b);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_3000
-     * @tc.name testTypedUArraysConstructor0202_300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0202_5600
+     * @tc.name testTypedUArraysConstructor0202_056
      * @tc.desc Verify buffer filter reduce
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0202_300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0202_056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4]);
       const sum = arr.filter((v) => v > 2).reduce((a, b) => a + b);
     });

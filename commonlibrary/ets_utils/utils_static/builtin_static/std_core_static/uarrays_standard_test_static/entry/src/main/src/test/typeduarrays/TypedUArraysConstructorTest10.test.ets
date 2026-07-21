@@ -32,7 +32,7 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0100
      * @tc.name testTypedUArraysConstructor0402_001
      * @tc.desc Verify
      * @tc.size MediumTest
@@ -48,45 +48,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0200
      * @tc.name testTypedUArraysConstructor0402_002
-     * @tc.desc Verify
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysConstructor0402_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-      } catch (e) {
-        expect(true).assertTrue();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0030
-     * @tc.name testTypedUArraysConstructor0402_003
-     * @tc.desc Verify
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysConstructor0402_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        // ArkTS: new Uint8Array({}) - invalid args not allowed at compile time
-      } catch (e) {
-        expect(true).assertTrue();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0040
-     * @tc.name testTypedUArraysConstructor0402_004
      * @tc.desc Verify Buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const buf = new ArrayBuffer(8);
         const arr = new Uint8Array(buf);
@@ -96,93 +65,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0050
-     * @tc.name testTypedUArraysConstructor0402_005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0300
+     * @tc.name testTypedUArraysConstructor0402_003
      * @tc.desc Verify
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-      } catch (e) {
-        expect(true).assertTrue();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0060
-     * @tc.name testTypedUArraysConstructor0402_006
-     * @tc.desc Verify Date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysConstructor0402_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        // ArkTS: new Uint8Array(new Date()) - invalid args not allowed at compile time
-      } catch (e) {
-        expect(true).assertTrue();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0070
-     * @tc.name testTypedUArraysConstructor0402_007
-     * @tc.desc Verify Map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysConstructor0402_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        // ArkTS: new Uint8Array(new Map()) - invalid args not allowed at compile time
-      } catch (e) {
-        expect(true).assertTrue();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0080
-     * @tc.name testTypedUArraysConstructor0402_008
-     * @tc.desc Verify Set
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysConstructor0402_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        // ArkTS: new Uint8Array(new Set()) - invalid args not allowed at compile time
-      } catch (e) {
-        expect(true).assertTrue();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0090
-     * @tc.name testTypedUArraysConstructor0402_009
-     * @tc.desc Verify Promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysConstructor0402_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        // ArkTS: new Uint8Array(Promise.resolve()) - invalid args not allowed at compile time
-      } catch (e) {
-        expect(true).assertTrue();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0100
-     * @tc.name testTypedUArraysConstructor0402_010
-     * @tc.desc Verify
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysConstructor0402_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [];
       for (let i = 0; i < 10000; i++) {
         src.push(i % 256);
@@ -196,14 +86,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0110
-     * @tc.name testTypedUArraysConstructor0402_011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0400
+     * @tc.name testTypedUArraysConstructor0402_004
      * @tc.desc Verify
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [1.9, 2.5, 3.1];
       const arr = new Uint8Array(src);
       const val2: number = arr[0];
@@ -215,14 +105,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0120
-     * @tc.name testTypedUArraysConstructor0402_012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0500
+     * @tc.name testTypedUArraysConstructor0402_005
      * @tc.desc Verify
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [1e2, 2e1, 3e0];
       const arr = new Uint8Array(src);
       const val5: number = arr[0];
@@ -234,14 +124,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0130
-     * @tc.name testTypedUArraysConstructor0402_013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0600
+     * @tc.name testTypedUArraysConstructor0402_006
      * @tc.desc Verify
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [-1.5, -0.5];
       const arr = new Uint8Array(src);
       const val8: number = arr[0];
@@ -251,14 +141,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0140
-     * @tc.name testTypedUArraysConstructor0402_014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0700
+     * @tc.name testTypedUArraysConstructor0402_007
      * @tc.desc Verify
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [300, 500, 1000];
       const arr = new Uint8Array(src);
       const val10: number = arr[0];
@@ -270,14 +160,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0150
-     * @tc.name testTypedUArraysConstructor0402_015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0800
+     * @tc.name testTypedUArraysConstructor0402_008
      * @tc.desc Verify
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [1, 2, 3];
       const arr = new Uint8Array(src);
       // ArkTS limitation: throw used to mark test boundary
@@ -286,14 +176,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0160
-     * @tc.name testTypedUArraysConstructor0402_016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0900
+     * @tc.name testTypedUArraysConstructor0402_009
      * @tc.desc Verify
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [1, 2, 3];
       const arr = new Uint8Array(src);
       // ArkTS limitation: throw used to mark test boundary
@@ -302,14 +192,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0170
-     * @tc.name testTypedUArraysConstructor0402_017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_1000
+     * @tc.name testTypedUArraysConstructor0402_010
      * @tc.desc Verify 0x80 Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [0x80];
       const arr = new Uint8Array(src);
       const val15: number = arr[0];
@@ -317,14 +207,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0180
-     * @tc.name testTypedUArraysConstructor0402_018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_1100
+     * @tc.name testTypedUArraysConstructor0402_011
      * @tc.desc Verify 0x8000 Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [0x8000];
       const arr = new Uint16Array(src);
       const val16: number = arr[0];
@@ -332,14 +222,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0190
-     * @tc.name testTypedUArraysConstructor0402_019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_1200
+     * @tc.name testTypedUArraysConstructor0402_012
      * @tc.desc Verify 0x80000000 Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [0x80000000];
       // ArkTS limitation: throw used to mark test boundary
       /* const arr = new Uint32Array(src);
@@ -348,14 +238,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0200
-     * @tc.name testTypedUArraysConstructor0402_020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_1300
+     * @tc.name testTypedUArraysConstructor0402_013
      * @tc.desc Verify 1 Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [1];
       const arr = new Uint8ClampedArray(src);
       const val18: number = arr[0];
@@ -363,14 +253,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0210
-     * @tc.name testTypedUArraysConstructor0402_021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_1400
+     * @tc.name testTypedUArraysConstructor0402_014
      * @tc.desc Verify 127 Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [127];
       const arr = new Uint8ClampedArray(src);
       const val19: number = arr[0];
@@ -378,14 +268,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0220
-     * @tc.name testTypedUArraysConstructor0402_022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_1500
+     * @tc.name testTypedUArraysConstructor0402_015
      * @tc.desc Verify 0x7F Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [0x7F];
       const arr = new Uint8ClampedArray(src);
       const val20: number = arr[0];
@@ -393,14 +283,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0230
-     * @tc.name testTypedUArraysConstructor0402_023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_1600
+     * @tc.name testTypedUArraysConstructor0402_016
      * @tc.desc Verify 0x80 Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [0x80];
       const arr = new Uint8ClampedArray(src);
       const val21: number = arr[0];
@@ -408,14 +298,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0240
-     * @tc.name testTypedUArraysConstructor0402_024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_1700
+     * @tc.name testTypedUArraysConstructor0402_017
      * @tc.desc Verify [255,0,255] Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [255, 0, 255];
       const arr = new Uint8Array(src);
       const val22: number = arr[0];
@@ -427,14 +317,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0250
-     * @tc.name testTypedUArraysConstructor0402_025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_1800
+     * @tc.name testTypedUArraysConstructor0402_018
      * @tc.desc Verify [65535,0,65535] Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [65535, 0, 65535];
       const arr = new Uint16Array(src);
       const val25: number = arr[0];
@@ -446,14 +336,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0260
-     * @tc.name testTypedUArraysConstructor0402_026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_1900
+     * @tc.name testTypedUArraysConstructor0402_019
      * @tc.desc Verify [4294967295,0,4294967295] Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [4294967295, 0, 4294967295];
       const arr = new Uint32Array(src);
       const val28: number = arr[0];
@@ -465,14 +355,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0270
-     * @tc.name testTypedUArraysConstructor0402_027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_2000
+     * @tc.name testTypedUArraysConstructor0402_020
      * @tc.desc Verify [BigInt('18446744073709551615'),0n,BigInt('18446744073709551615')] BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [BigInt('18446744073709551615'), 0n, BigInt('18446744073709551615')];
       const arr = new BigUint64Array(src);
       const val31: BigInt = arr[0];
@@ -484,14 +374,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0280
-     * @tc.name testTypedUArraysConstructor0402_028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_2100
+     * @tc.name testTypedUArraysConstructor0402_021
      * @tc.desc Verify 2147483647 Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Array<number> = [2147483647];
       const arr = new Uint32Array(src);
       const val34: number = arr[0];
@@ -499,14 +389,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0290
-     * @tc.name testTypedUArraysConstructor0402_029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_2200
+     * @tc.name testTypedUArraysConstructor0402_022
      * @tc.desc Verify 32767 Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [32767];
       const arr = new Uint16Array(src);
       const val35: number = arr[0];
@@ -514,14 +404,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0300
-     * @tc.name testTypedUArraysConstructor0402_030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_2300
+     * @tc.name testTypedUArraysConstructor0402_023
      * @tc.desc Verify 127 Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [127];
       const arr = new Uint8Array(src);
       const val36: number = arr[0];
@@ -529,14 +419,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0310
-     * @tc.name testTypedUArraysConstructor0402_031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_2400
+     * @tc.name testTypedUArraysConstructor0402_024
      * @tc.desc Verify 1 Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [1];
       const arr = new Uint8Array(src);
       const val37: number = arr[0];
@@ -544,14 +434,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0320
-     * @tc.name testTypedUArraysConstructor0402_032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_2500
+     * @tc.name testTypedUArraysConstructor0402_025
      * @tc.desc Verify 1 Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [1];
       const arr = new Uint16Array(src);
       const val38: number = arr[0];
@@ -559,14 +449,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0330
-     * @tc.name testTypedUArraysConstructor0402_033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_2600
+     * @tc.name testTypedUArraysConstructor0402_026
      * @tc.desc Verify 1 Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [1];
       const arr = new Uint32Array(src);
       const val39: number = arr[0];
@@ -574,14 +464,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0340
-     * @tc.name testTypedUArraysConstructor0402_034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_2700
+     * @tc.name testTypedUArraysConstructor0402_027
      * @tc.desc Verify 1n BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [1n];
       const arr = new BigUint64Array(src);
       const val40: BigInt = arr[0];
@@ -589,14 +479,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0350
-     * @tc.name testTypedUArraysConstructor0402_035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_2800
+     * @tc.name testTypedUArraysConstructor0402_028
      * @tc.desc Verify [0,1,2,3,4,5,6,7,8,9] Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
       const arr = new Uint8Array(src);
       expect(arr.length).assertEqual(10);
@@ -607,14 +497,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0360
-     * @tc.name testTypedUArraysConstructor0402_036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_2900
+     * @tc.name testTypedUArraysConstructor0402_029
      * @tc.desc Verify [0,1,2,3,4,5,6,7,8,9] Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
       const arr = new Uint16Array(src);
       expect(arr.length).assertEqual(10);
@@ -625,14 +515,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0370
-     * @tc.name testTypedUArraysConstructor0402_037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_3000
+     * @tc.name testTypedUArraysConstructor0402_030
      * @tc.desc Verify [0,1,2,3,4,5,6,7,8,9] Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
       const arr = new Uint32Array(src);
       expect(arr.length).assertEqual(10);
@@ -643,14 +533,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0380
-     * @tc.name testTypedUArraysConstructor0402_038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_3100
+     * @tc.name testTypedUArraysConstructor0402_031
      * @tc.desc Verify [0n,1n,2n,3n,4n,5n,6n,7n,8n,9n] BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [0n, 1n, 2n, 3n, 4n, 5n, 6n, 7n, 8n, 9n];
       const arr = new BigUint64Array(src);
       expect(arr.length).assertEqual(10);
@@ -661,14 +551,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0390
-     * @tc.name testTypedUArraysConstructor0402_039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_3200
+     * @tc.name testTypedUArraysConstructor0402_032
      * @tc.desc Verify 0.5 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [0.5];
       const arr = new Uint8Array(src);
       const val49: number = arr[0];
@@ -676,14 +566,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0400
-     * @tc.name testTypedUArraysConstructor0402_040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_3300
+     * @tc.name testTypedUArraysConstructor0402_033
      * @tc.desc Verify 0.9 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [0.9];
       const arr = new Uint8Array(src);
       const val50: number = arr[0];
@@ -691,14 +581,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0410
-     * @tc.name testTypedUArraysConstructor0402_041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_3400
+     * @tc.name testTypedUArraysConstructor0402_034
      * @tc.desc Verify 255.9 255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [255.9];
       const arr = new Uint8Array(src);
       const val51: number = arr[0];
@@ -706,14 +596,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0420
-     * @tc.name testTypedUArraysConstructor0402_042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_3500
+     * @tc.name testTypedUArraysConstructor0402_035
      * @tc.desc Verify -0.5 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [-0.5];
       const arr = new Uint8Array(src);
       const val52: number = arr[0];
@@ -721,14 +611,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0430
-     * @tc.name testTypedUArraysConstructor0402_043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_3600
+     * @tc.name testTypedUArraysConstructor0402_036
      * @tc.desc Verify Uint8ClampedArray 0.5 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [0.5];
       const arr = new Uint8ClampedArray(src);
       const val53: number = arr[0];
@@ -736,14 +626,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0440
-     * @tc.name testTypedUArraysConstructor0402_044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_3700
+     * @tc.name testTypedUArraysConstructor0402_037
      * @tc.desc Verify Uint8ClampedArray 0.9 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [0.9];
       const arr = new Uint8ClampedArray(src);
       const val54: number = arr[0];
@@ -751,14 +641,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0450
-     * @tc.name testTypedUArraysConstructor0402_045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_3800
+     * @tc.name testTypedUArraysConstructor0402_038
      * @tc.desc Verify Uint8ClampedArray 255.5 255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [255.5];
       const arr = new Uint8ClampedArray(src);
       const val55: number = arr[0];
@@ -766,14 +656,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0460
-     * @tc.name testTypedUArraysConstructor0402_046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_3900
+     * @tc.name testTypedUArraysConstructor0402_039
      * @tc.desc Verify Uint8ClampedArray 255.9 256 255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [255.9];
       const arr = new Uint8ClampedArray(src);
       const val56: number = arr[0];
@@ -781,14 +671,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0470
-     * @tc.name testTypedUArraysConstructor0402_047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_4000
+     * @tc.name testTypedUArraysConstructor0402_040
      * @tc.desc Verify [0,127,128,255] Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [0, 127, 128, 255];
       const arr = new Uint8Array(src);
       const val57: number = arr[0];
@@ -802,14 +692,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0480
-     * @tc.name testTypedUArraysConstructor0402_048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_4100
+     * @tc.name testTypedUArraysConstructor0402_041
      * @tc.desc Verify [0,32767,32768,65535] Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [0, 32767, 32768, 65535];
       const arr = new Uint16Array(src);
       const val61: number = arr[0];
@@ -823,14 +713,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0490
-     * @tc.name testTypedUArraysConstructor0402_049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_4200
+     * @tc.name testTypedUArraysConstructor0402_042
      * @tc.desc Verify [0,2147483647,2147483648,4294967295] Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [0, 2147483647, 2147483648, 4294967295];
       const arr = new Uint32Array(src);
       const val65: number = arr[0];
@@ -844,14 +734,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0500
-     * @tc.name testTypedUArraysConstructor0402_050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_4300
+     * @tc.name testTypedUArraysConstructor0402_043
      * @tc.desc Verify [0,0.1,0.2,0.3] Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [0, 0.1, 0.2, 0.3];
       const arr = new Uint8Array(src);
       const val69: number = arr[0];
@@ -865,14 +755,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0510
-     * @tc.name testTypedUArraysConstructor0402_051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_4400
+     * @tc.name testTypedUArraysConstructor0402_044
      * @tc.desc Verify [255,255.1,255.5,255.9] Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [255, 255.1, 255.5, 255.9];
       const arr = new Uint8Array(src);
       const val73: number = arr[0];
@@ -886,14 +776,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0520
-     * @tc.name testTypedUArraysConstructor0402_052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_4500
+     * @tc.name testTypedUArraysConstructor0402_045
      * @tc.desc Verify [-1,-2,-3] Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [-1, -2, -3];
       const arr = new Uint8Array(src);
       const val77: number = arr[0];
@@ -905,14 +795,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0530
-     * @tc.name testTypedUArraysConstructor0402_053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_4600
+     * @tc.name testTypedUArraysConstructor0402_046
      * @tc.desc Verify [-1,-2,-3] Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [-1, -2, -3];
       const arr = new Uint16Array(src);
       const val80: number = arr[0];
@@ -924,14 +814,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0540
-     * @tc.name testTypedUArraysConstructor0402_054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_4700
+     * @tc.name testTypedUArraysConstructor0402_047
      * @tc.desc Verify [-1,-2,-3] Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [-1, -2, -3];
       const arr = new Uint32Array(src);
       const val83: number = arr[0];
@@ -943,14 +833,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0550
-     * @tc.name testTypedUArraysConstructor0402_055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_4800
+     * @tc.name testTypedUArraysConstructor0402_048
      * @tc.desc Verify [-1,-2,-3] Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [-1, -2, -3];
       const arr = new Uint8ClampedArray(src);
       const val86: number = arr[0];
@@ -962,14 +852,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0560
-     * @tc.name testTypedUArraysConstructor0402_056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_4900
+     * @tc.name testTypedUArraysConstructor0402_049
      * @tc.desc Verify [256,257,258] Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [256, 257, 258];
       const arr = new Uint8Array(src);
       const val89: number = arr[0];
@@ -981,14 +871,14 @@ export default function typedUArraysConstructorTest10(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_0570
-     * @tc.name testTypedUArraysConstructor0402_057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0402_5000
+     * @tc.name testTypedUArraysConstructor0402_050
      * @tc.desc Verify [65536,65537,65538] Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0402_057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0402_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = [65536, 65537, 65538];
       const arr = new Uint16Array(src);
       const val92: number = arr[0];

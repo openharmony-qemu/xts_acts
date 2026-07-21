@@ -246,28 +246,30 @@ export default function typedUArraysConstructorTest08(): void {
       expect(arr[0]).assertEqual(1)
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_1700    it('testTypedUArraysConstructor0302_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8ClampedArray([1, 2, 3]);
-      try {
-        const val = arr[10];
-        expect(val).assertUndefined();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
+     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_1700
+     * @tc.name testTypedUArraysConstructor0302_017
+     * @tc.desc Verify Uint8ClampedArray fixedArray undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTypedUArraysConstructor0302_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8ClampedArray([1, 2, 3])
+      expect(arr.length > 10 ? arr[10] : undefined).assertUndefined()
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_1800
      * @tc.name testTypedUArraysConstructor0302_018
-     * @tc.desc Verify Uint8ClampedArray fixedArray undefined
+     * @tc.desc Verify Uint8ClampedArray fixedArray toString
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testTypedUArraysConstructor0302_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3])
-      expect(arr.length > 10 ? arr[10] : undefined).assertUndefined()
+      expect(arr.toString()).assertEqual('1,2,3')
     });
 
     /**
@@ -279,77 +281,34 @@ export default function typedUArraysConstructorTest08(): void {
      * @tc.level Level 2
      */
     it('testTypedUArraysConstructor0302_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8ClampedArray([1, 2, 3])
-      expect(arr.toString()).assertEqual('1,2,3')
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_2000
-     * @tc.name testTypedUArraysConstructor0302_020
-     * @tc.desc Verify Uint8ClampedArray fixedArray toString
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysConstructor0302_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([])
       expect(arr.toString()).assertEqual('')
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_2100
-     * @tc.name testTypedUArraysConstructor0302_021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_2000
+     * @tc.name testTypedUArraysConstructor0302_020
      * @tc.desc Verify Uint8ClampedArray null fixedArray TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
+    it('testTypedUArraysConstructor0302_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      } catch (e) {
+        expect(typeof e).assertEqual('object')
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_2100
+     * @tc.name testTypedUArraysConstructor0302_021
+     * @tc.desc Verify Uint8ClampedArray fixedArray TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
     it('testTypedUArraysConstructor0302_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-      } catch (e) {
-        expect(typeof e).assertEqual('object')
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_2200
-     * @tc.name testTypedUArraysConstructor0302_022
-     * @tc.desc Verify Uint8ClampedArray undefined fixedArray TypeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysConstructor0302_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-      } catch (e) {
-        expect(typeof e).assertEqual('object')
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_2300
-     * @tc.name testTypedUArraysConstructor0302_023
-     * @tc.desc Verify Uint8ClampedArray fixedArray TypeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysConstructor0302_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-      } catch (e) {
-        expect(typeof e).assertEqual('object')
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_2400
-     * @tc.name testTypedUArraysConstructor0302_024
-     * @tc.desc Verify Uint8ClampedArray fixedArray TypeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysConstructor0302_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const _arr = new Uint8ClampedArray(5)
       } catch (e) {
@@ -358,14 +317,14 @@ export default function typedUArraysConstructorTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_2500
-     * @tc.name testTypedUArraysConstructor0302_025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_2200
+     * @tc.name testTypedUArraysConstructor0302_022
      * @tc.desc Verify Uint8ClampedArray fixedArray TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0302_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0302_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         throw new Error('invalid constructor input')
       } catch (e) {
@@ -374,14 +333,14 @@ export default function typedUArraysConstructorTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_2600
-     * @tc.name testTypedUArraysConstructor0302_026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_2300
+     * @tc.name testTypedUArraysConstructor0302_023
      * @tc.desc Verify Uint8ClampedArray ArrayBuffer fixedArray TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0302_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0302_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const _arr = new Uint8ClampedArray(new ArrayBuffer(8))
       } catch (e) {
@@ -390,104 +349,14 @@ export default function typedUArraysConstructorTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_2700
-     * @tc.name testTypedUArraysConstructor0302_027
-     * @tc.desc Verify Uint8ClampedArray fixedArray TypeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysConstructor0302_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-      } catch (e) {
-        expect(typeof e).assertEqual('object')
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_2800
-     * @tc.name testTypedUArraysConstructor0302_028
-     * @tc.desc Verify Uint8ClampedArray fixedArray TypeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysConstructor0302_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-      } catch (e) {
-        expect(typeof e).assertEqual('object')
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_2900
-     * @tc.name testTypedUArraysConstructor0302_029
-     * @tc.desc Verify Uint8ClampedArray null fixedArray TypeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysConstructor0302_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-      } catch (e) {
-        expect(typeof e).assertEqual('object')
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_3000
-     * @tc.name testTypedUArraysConstructor0302_030
-     * @tc.desc Verify Uint8ClampedArray undefined fixedArray TypeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysConstructor0302_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-      } catch (e) {
-        expect(typeof e).assertEqual('object')
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_3100
-     * @tc.name testTypedUArraysConstructor0302_031
-     * @tc.desc Verify Uint8ClampedArray fixedArray TypeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysConstructor0302_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-      } catch (e) {
-        expect(typeof e).assertEqual('object')
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_3200
-     * @tc.name testTypedUArraysConstructor0302_032
-     * @tc.desc Verify Uint8ClampedArray BigInt fixedArray TypeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysConstructor0302_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-      } catch (e) {
-        expect(typeof e).assertEqual('object')
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_3300
-     * @tc.name testTypedUArraysConstructor0302_033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_2400
+     * @tc.name testTypedUArraysConstructor0302_024
      * @tc.desc Verify BigUint64Array Double fixedArray TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0302_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0302_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         throw new Error('invalid BigUint64Array input')
       } catch (e) {
@@ -496,44 +365,29 @@ export default function typedUArraysConstructorTest08(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_3400
-     * @tc.name testTypedUArraysConstructor0302_034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_2500
+     * @tc.name testTypedUArraysConstructor0302_025
      * @tc.desc Verify BigUint64Array BigInt fixedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0302_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0302_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([-1n])
       expect(arr[0]).assertEqual(BigInt('18446744073709551615'))
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_3500
-     * @tc.name testTypedUArraysConstructor0302_035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_2600
+     * @tc.name testTypedUArraysConstructor0302_026
      * @tc.desc Verify BigUint64Array BigInt fixedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructor0302_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructor0302_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([BigInt('18446744073709551616')])
       expect(arr[0]).assertEqual(0n)
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_Constructor0302_3600
-     * @tc.name testTypedUArraysConstructor0302_036
-     * @tc.desc Verify BigUint64Array null fixedArray TypeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysConstructor0302_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-      } catch (e) {
-        expect(typeof e).assertEqual('object')
-      }
     });
 
     /**
