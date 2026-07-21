@@ -124,7 +124,7 @@ export default function GlobalConfigurationTest(): void {
 
     /**
      * @tc.name   GlobalConfigurationTest0100
-     * @tc.number SUB_GLOBAL_CONFIGURATION_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIGURATION_TEST_0100
      * @tc.desc   Verify @Sendable class GlobalConfig definition and default state
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -139,7 +139,7 @@ export default function GlobalConfigurationTest(): void {
 
     /**
      * @tc.name   GlobalConfigurationTest0200
-     * @tc.number SUB_GLOBAL_CONFIGURATION_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIGURATION_TEST_0200
      * @tc.desc   Verify AsyncLock creation with GlobalConfig
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -152,7 +152,7 @@ export default function GlobalConfigurationTest(): void {
 
     /**
      * @tc.name   GlobalConfigurationTest0300
-     * @tc.number SUB_GLOBAL_CONFIGURATION_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIGURATION_TEST_0300
      * @tc.desc   Verify lockAsync EXCLUSIVE mode write operation with login
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -170,7 +170,7 @@ export default function GlobalConfigurationTest(): void {
 
     /**
      * @tc.name   GlobalConfigurationTest0400
-     * @tc.number SUB_GLOBAL_CONFIGURATION_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIGURATION_TEST_0400
      * @tc.desc   Verify lockAsync SHARED mode read operation with getIsLogin and getUser
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -192,7 +192,7 @@ export default function GlobalConfigurationTest(): void {
 
     /**
      * @tc.name   GlobalConfigurationTest0500
-     * @tc.number SUB_GLOBAL_CONFIGURATION_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIGURATION_TEST_0500
      * @tc.desc   Verify login and logout methods work correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -210,7 +210,7 @@ export default function GlobalConfigurationTest(): void {
 
     /**
      * @tc.name   GlobalConfigurationTest0600
-     * @tc.number SUB_GLOBAL_CONFIGURATION_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIGURATION_TEST_0600
      * @tc.desc   Verify setWifiState and isWifiOn methods work correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -227,7 +227,7 @@ export default function GlobalConfigurationTest(): void {
 
     /**
      * @tc.name   GlobalConfigurationTest0700
-     * @tc.number SUB_GLOBAL_CONFIGURATION_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIGURATION_TEST_0700
      * @tc.desc   Verify UI main thread access to global configuration
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -244,7 +244,7 @@ export default function GlobalConfigurationTest(): void {
 
     /**
      * @tc.name   GlobalConfigurationTest0800
-     * @tc.number SUB_GLOBAL_CONFIGURATION_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIGURATION_TEST_0800
      * @tc.desc   Verify TaskPool sub-thread access to global configuration
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -260,7 +260,7 @@ export default function GlobalConfigurationTest(): void {
 
     /**
      * @tc.name   GlobalConfigurationTest0900
-     * @tc.number SUB_GLOBAL_CONFIGURATION_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIGURATION_TEST_0900
      * @tc.desc   Verify multiple threads concurrent read with SHARED lock
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -281,7 +281,7 @@ export default function GlobalConfigurationTest(): void {
 
     /**
      * @tc.name   GlobalConfigurationTest1000
-     * @tc.number SUB_GLOBAL_CONFIGURATION_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIGURATION_TEST_1000
      * @tc.desc   Verify multiple threads concurrent write with EXCLUSIVE lock mutual exclusion
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -300,7 +300,7 @@ export default function GlobalConfigurationTest(): void {
 
     /**
      * @tc.name   GlobalConfigurationTest1100
-     * @tc.number SUB_GLOBAL_CONFIGURATION_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIGURATION_TEST_1100
      * @tc.desc   Verify read and write concurrent conflict with lock mutual exclusion
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -317,7 +317,7 @@ export default function GlobalConfigurationTest(): void {
 
     /**
      * @tc.name   GlobalConfigurationTest1200
-     * @tc.number SUB_GLOBAL_CONFIGURATION_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIGURATION_TEST_1200
      * @tc.desc   Verify data consistency after thread A modifies config and thread B reads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -332,7 +332,7 @@ export default function GlobalConfigurationTest(): void {
 
     /**
      * @tc.name   GlobalConfigurationTest1300
-     * @tc.number SUB_GLOBAL_CONFIGURATION_TEST_1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIGURATION_TEST_1300
      * @tc.desc   Verify empty username login handling
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -347,7 +347,7 @@ export default function GlobalConfigurationTest(): void {
 
     /**
      * @tc.name   GlobalConfigurationTest1400
-     * @tc.number SUB_GLOBAL_CONFIGURATION_TEST_1400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIGURATION_TEST_1400
      * @tc.desc   Verify logout without prior login
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -362,7 +362,7 @@ export default function GlobalConfigurationTest(): void {
 
     /**
      * @tc.name   GlobalConfigurationTest1500
-     * @tc.number SUB_GLOBAL_CONFIGURATION_TEST_1500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIGURATION_TEST_1500
      * @tc.desc   Verify repeated login replaces previous user
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -378,7 +378,7 @@ export default function GlobalConfigurationTest(): void {
 
     /**
      * @tc.name   GlobalConfigurationTest1600
-     * @tc.number SUB_GLOBAL_CONFIGURATION_TEST_1600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIGURATION_TEST_1600
      * @tc.desc   Verify long username string storage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -393,7 +393,7 @@ export default function GlobalConfigurationTest(): void {
 
     /**
      * @tc.name   GlobalConfigurationTest1700
-     * @tc.number SUB_GLOBAL_CONFIGURATION_TEST_1700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIGURATION_TEST_1700
      * @tc.desc   Verify lockAsync callback throwing exception releases lock
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -420,7 +420,7 @@ export default function GlobalConfigurationTest(): void {
 
     /**
      * @tc.name   GlobalConfigurationTest1800
-     * @tc.number SUB_GLOBAL_CONFIGURATION_TEST_1800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIGURATION_TEST_1800
      * @tc.desc   Verify wifi state toggle cross-thread via TaskPool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -437,7 +437,7 @@ export default function GlobalConfigurationTest(): void {
 
     /**
      * @tc.name   GlobalConfigurationTest1900
-     * @tc.number SUB_GLOBAL_CONFIGURATION_TEST_1900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIGURATION_TEST_1900
      * @tc.desc   Verify high concurrent read/write pressure with AsyncLock stability
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -456,7 +456,7 @@ export default function GlobalConfigurationTest(): void {
 
     /**
      * @tc.name   GlobalConfigurationTest2000
-     * @tc.number SUB_GLOBAL_CONFIGURATION_TEST_2000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIGURATION_TEST_2000
      * @tc.desc   Verify sequential login and logout operations maintain correct state
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -475,7 +475,7 @@ export default function GlobalConfigurationTest(): void {
 
     /**
      * @tc.name   GlobalConfigurationTest2100
-     * @tc.number SUB_GLOBAL_CONFIGURATION_TEST_2100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIGURATION_TEST_2100
      * @tc.desc   Verify concurrent logout operations from multiple threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

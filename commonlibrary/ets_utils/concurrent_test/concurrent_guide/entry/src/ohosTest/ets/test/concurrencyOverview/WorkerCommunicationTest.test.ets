@@ -25,7 +25,7 @@ export default function WorkerCommunicationTest(): void {
     beforeEach((): void => {})
     afterEach(async (): Promise<void> => {
       if (currentWorker !== null) {
-        await new Promise<void>((resolve: Function) => {
+        await new Promise<void>((resolve: () => void) => {
           currentWorker!.onexit = (): void => { resolve() }
           currentWorker!.terminate()
         })
@@ -33,12 +33,12 @@ export default function WorkerCommunicationTest(): void {
       }
     })
     afterAll(async (): Promise<void> => {
-      await new Promise<void>((resolve: Function) => { setTimeout((): void => resolve(undefined), 500) })
+      await new Promise<void>((resolve: () => void) => { setTimeout((): void => resolve(), 500) })
     })
 
     /**
      * @tc.name   WorkerCommunicationOverviewTest0100
-     * @tc.number SUB_WORKER_COMMUNICATION_OVERVIEW_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_COMMUNICATION_OVERVIEW_TEST_0100
      * @tc.desc   Verify Worker thread creation and basic message echo communication
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -59,7 +59,7 @@ export default function WorkerCommunicationTest(): void {
 
     /**
      * @tc.name   WorkerCommunicationOverviewTest0200
-     * @tc.number SUB_WORKER_COMMUNICATION_OVERVIEW_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_COMMUNICATION_OVERVIEW_TEST_0200
      * @tc.desc   Verify Worker ping-pong message exchange pattern
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -80,7 +80,7 @@ export default function WorkerCommunicationTest(): void {
 
     /**
      * @tc.name   WorkerCommunicationOverviewTest0300
-     * @tc.number SUB_WORKER_COMMUNICATION_OVERVIEW_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_COMMUNICATION_OVERVIEW_TEST_0300
      * @tc.desc   Verify Worker handles compute task and returns calculation result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -101,7 +101,7 @@ export default function WorkerCommunicationTest(): void {
 
     /**
      * @tc.name   WorkerCommunicationOverviewTest0400
-     * @tc.number SUB_WORKER_COMMUNICATION_OVERVIEW_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_COMMUNICATION_OVERVIEW_TEST_0400
      * @tc.desc   Verify Worker handles long-running task with periodic tick messages
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -134,7 +134,7 @@ export default function WorkerCommunicationTest(): void {
 
     /**
      * @tc.name   WorkerCommunicationOverviewTest0500
-     * @tc.number SUB_WORKER_COMMUNICATION_OVERVIEW_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_COMMUNICATION_OVERVIEW_TEST_0500
      * @tc.desc   Verify Worker onexit callback is invoked after terminate
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -157,7 +157,7 @@ export default function WorkerCommunicationTest(): void {
 
     /**
      * @tc.name   WorkerCommunicationOverviewTest0600
-     * @tc.number SUB_WORKER_COMMUNICATION_OVERVIEW_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_COMMUNICATION_OVERVIEW_TEST_0600
      * @tc.desc   Verify Worker handles multiple sequential message exchanges correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

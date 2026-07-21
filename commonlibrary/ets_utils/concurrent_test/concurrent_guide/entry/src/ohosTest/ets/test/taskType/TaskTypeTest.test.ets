@@ -306,7 +306,7 @@ export default function TaskTypeTest(): void {
     beforeEach((): void => {})
     afterEach(async (): Promise<void> => {
       if (currentWorker !== null) {
-        await new Promise<void>((resolve: Function) => {
+        await new Promise<void>((resolve: () => void) => {
           currentWorker!.onexit = (): void => { resolve() }
           currentWorker!.terminate()
         })
@@ -314,14 +314,14 @@ export default function TaskTypeTest(): void {
       }
     })
     afterAll(async (): Promise<void> => {
-      await new Promise<void>((resolve: Function) => { setTimeout((): void => resolve(undefined), 500) })
+      await new Promise<void>((resolve: () => void) => { setTimeout((): void => resolve(), 500) })
     })
 
     // ==================== Section 2.1: time-consuming-task-overview ====================
 
     /**
      * @tc.name   TaskTypeTest0100
-     * @tc.number SUB_TASK_TYPE_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_0100
      * @tc.desc   Verify CPU-intensive task recognition with simulated computation returns correct duration
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -335,7 +335,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest0200
-     * @tc.number SUB_TASK_TYPE_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_0200
      * @tc.desc   Verify IO-intensive task recognition with simulated IO returns complete status
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -349,7 +349,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest0300
-     * @tc.number SUB_TASK_TYPE_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_0300
      * @tc.desc   Verify mixed CPU+IO task handling returns correct completion status
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -363,7 +363,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest0400
-     * @tc.number SUB_TASK_TYPE_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_0400
      * @tc.desc   Verify task classification boundary with varying duration returns correct parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -377,7 +377,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest0500
-     * @tc.number SUB_TASK_TYPE_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_0500
      * @tc.desc   Verify heavy task does not block main thread by checking immediate response time
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -397,7 +397,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest0600
-     * @tc.number SUB_TASK_TYPE_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_0600
      * @tc.desc   Verify @Concurrent decorator function executes correctly with taskpool.execute
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -411,7 +411,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest0700
-     * @tc.number SUB_TASK_TYPE_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_0700
      * @tc.desc   Verify Task creation with function and arguments produces valid task object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -425,7 +425,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest0800
-     * @tc.number SUB_TASK_TYPE_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_0800
      * @tc.desc   Verify taskpool.execute returns a Promise that resolves to the correct result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -441,7 +441,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest0900
-     * @tc.number SUB_TASK_TYPE_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_0900
      * @tc.desc   Verify task result correctly returned to host thread with specific value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -455,7 +455,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest1000
-     * @tc.number SUB_TASK_TYPE_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_1000
      * @tc.desc   Verify multiple parameters correctly passed to @Concurrent function via Task constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -469,7 +469,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest1100
-     * @tc.number SUB_TASK_TYPE_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_1100
      * @tc.desc   Verify no-parameter task executes successfully and returns expected string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -483,7 +483,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest1200
-     * @tc.number SUB_TASK_TYPE_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_1200
      * @tc.desc   Verify large array parameter transfer with 10000 elements returns correct sum
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -501,7 +501,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest1300
-     * @tc.number SUB_TASK_TYPE_TEST_1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_1300
      * @tc.desc   Verify task internal exception is correctly caught and propagated to host thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -522,7 +522,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest1400
-     * @tc.number SUB_TASK_TYPE_TEST_1400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_1400
      * @tc.desc   Verify JSON parsing task with serialized string parameter returns parsed value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -536,7 +536,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest1500
-     * @tc.number SUB_TASK_TYPE_TEST_1500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_1500
      * @tc.desc   Verify multiple independent tasks execute concurrently without interference via Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -557,7 +557,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest1600
-     * @tc.number SUB_TASK_TYPE_TEST_1600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_1600
      * @tc.desc   Verify main thread remains responsive during task execution by measuring response time
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -575,7 +575,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest1700
-     * @tc.number SUB_TASK_TYPE_TEST_1700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_1700
      * @tc.desc   Verify execute with Priority.HIGH returns correct result for independent task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -589,7 +589,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest1800
-     * @tc.number SUB_TASK_TYPE_TEST_1800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_1800
      * @tc.desc   Verify execute with Priority.LOW returns correct result for independent task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -605,7 +605,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest1900
-     * @tc.number SUB_TASK_TYPE_TEST_1900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_1900
      * @tc.desc   Verify TaskGroup creation produces a valid non-null task group object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -618,7 +618,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest2000
-     * @tc.number SUB_TASK_TYPE_TEST_2000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_2000
      * @tc.desc   Verify addTask correctly adds multiple tasks to TaskGroup and executes all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -638,7 +638,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest2100
-     * @tc.number SUB_TASK_TYPE_TEST_2100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_2100
      * @tc.desc   Verify TaskGroup batch execution returns all results as array with correct values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -658,7 +658,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest2200
-     * @tc.number SUB_TASK_TYPE_TEST_2200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_2200
      * @tc.desc   Verify multiple task results are correctly merged by summing all returned values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -679,7 +679,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest2300
-     * @tc.number SUB_TASK_TYPE_TEST_2300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_2300
      * @tc.desc   Verify TaskGroup results are returned in task addition order regardless of execution time
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -698,7 +698,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest2400
-     * @tc.number SUB_TASK_TYPE_TEST_2400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_2400
      * @tc.desc   Verify empty TaskGroup execution returns an empty result array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -712,7 +712,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest2500
-     * @tc.number SUB_TASK_TYPE_TEST_2500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_2500
      * @tc.desc   Verify single-task TaskGroup returns exactly one result with correct value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -728,7 +728,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest2600
-     * @tc.number SUB_TASK_TYPE_TEST_2600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_2600
      * @tc.desc   Verify TaskGroup handles 50 tasks correctly with all results matching input order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -748,7 +748,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest2700
-     * @tc.number SUB_TASK_TYPE_TEST_2700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_2700
      * @tc.desc   Verify TaskGroup with varied execution time tasks returns results in addition order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -768,7 +768,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest2800
-     * @tc.number SUB_TASK_TYPE_TEST_2800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_2800
      * @tc.desc   Verify TaskGroup correctly propagates error when one task throws an exception
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -792,7 +792,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest2900
-     * @tc.number SUB_TASK_TYPE_TEST_2900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_2900
      * @tc.desc   Verify data split processing with TaskGroup correctly sums 1-to-1000 via chunked tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -821,7 +821,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest3000
-     * @tc.number SUB_TASK_TYPE_TEST_3000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_3000
      * @tc.desc   Verify LongTask creation and execution with long-running @Concurrent function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -836,7 +836,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest3100
-     * @tc.number SUB_TASK_TYPE_TEST_3100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_3100
      * @tc.desc   Verify long-running task executes in background without blocking main thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -855,7 +855,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest3200
-     * @tc.number SUB_TASK_TYPE_TEST_3200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_3200
      * @tc.desc   Verify background execution of compute-heavy LongTask returns correct result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -870,7 +870,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest3300
-     * @tc.number SUB_TASK_TYPE_TEST_3300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_3300
      * @tc.desc   Verify LongTask with Priority.HIGH executes and returns correct duration
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -887,7 +887,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest3400
-     * @tc.number SUB_TASK_TYPE_TEST_3400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_3400
      * @tc.desc   Verify LongTask creation with new taskpool.LongTask produces valid instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -902,7 +902,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest3500
-     * @tc.number SUB_TASK_TYPE_TEST_3500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_3500
      * @tc.desc   Verify taskpool.terminateTask correctly destroys a running LongTask
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -917,7 +917,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest3600
-     * @tc.number SUB_TASK_TYPE_TEST_3600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_3600
      * @tc.desc   Verify multiple LongTask instances can be created and executed independently
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -936,7 +936,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest3700
-     * @tc.number SUB_TASK_TYPE_TEST_3700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_3700
      * @tc.desc   Verify LongTask that completes naturally without explicit terminateTask call
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -950,7 +950,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest3800
-     * @tc.number SUB_TASK_TYPE_TEST_3800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_3800
      * @tc.desc   Verify LongTask with simulated high-frequency data processing returns correct count
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -965,7 +965,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest3900
-     * @tc.number SUB_TASK_TYPE_TEST_3900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_3900
      * @tc.desc   Verify execute after terminateTask handles the terminated task state correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -984,7 +984,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest4000
-     * @tc.number SUB_TASK_TYPE_TEST_4000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_4000
      * @tc.desc   Verify multiple LongTasks execute concurrently via Promise.all with correct results
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1008,7 +1008,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest4100
-     * @tc.number SUB_TASK_TYPE_TEST_4100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_4100
      * @tc.desc   Verify LongTask with sendData transmits intermediate data during execution
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1017,7 +1017,7 @@ export default function TaskTypeTest(): void {
     it('TaskTypeTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let longTask: taskpool.LongTask = new taskpool.LongTask(sendDataLongTask)
       let receivedItems: string[] = []
-      let dataPromise: Promise<void> = new Promise<void>((resolve: Function) => {
+      let dataPromise: Promise<void> = new Promise<void>((resolve: () => void) => {
         longTask.onReceiveData((data: Object): void => {
           receivedItems.push(data as string)
           if (receivedItems.length >= 2) {
@@ -1034,7 +1034,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest4200
-     * @tc.number SUB_TASK_TYPE_TEST_4200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_4200
      * @tc.desc   Verify LongTask with Priority.IDLE executes successfully and returns correct result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1049,7 +1049,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest4300
-     * @tc.number SUB_TASK_TYPE_TEST_4300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_4300
      * @tc.desc   Verify LongTask exception handling with internal throw propagates error correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1073,7 +1073,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest4400
-     * @tc.number SUB_TASK_TYPE_TEST_4400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_4400
      * @tc.desc   Verify Worker ThreadWorker creation for resident task with valid worker script path
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1088,12 +1088,12 @@ export default function TaskTypeTest(): void {
         currentWorker!.postMessage('hello')
       })
       expect(result).assertEqual('hello received')
-      await new Promise<void>((resolve: Function) => { currentWorker!.onexit = (code: number): void => { resolve() }; currentWorker!.terminate() }); currentWorker = null
+      await new Promise<void>((resolve: () => void) => { currentWorker!.onexit = (code: number): void => { resolve() }; currentWorker!.terminate() }); currentWorker = null
     })
 
     /**
      * @tc.name   TaskTypeTest4500
-     * @tc.number SUB_TASK_TYPE_TEST_4500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_4500
      * @tc.desc   Verify resident Worker handles long-running periodic task with tick messages
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1120,12 +1120,12 @@ export default function TaskTypeTest(): void {
       }
       expect(tickCount >= 3).assertTrue()
       expect(messages[messages.length - 1]).assertEqual('complete')
-      await new Promise<void>((resolve: Function) => { currentWorker!.onexit = (code: number): void => { resolve() }; currentWorker!.terminate() }); currentWorker = null
+      await new Promise<void>((resolve: () => void) => { currentWorker!.onexit = (code: number): void => { resolve() }; currentWorker!.terminate() }); currentWorker = null
     })
 
     /**
      * @tc.name   TaskTypeTest4600
-     * @tc.number SUB_TASK_TYPE_TEST_4600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_4600
      * @tc.desc   Verify Worker lifecycle with terminate stops message delivery after termination
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1139,14 +1139,14 @@ export default function TaskTypeTest(): void {
       }
       currentWorker!.postMessage('start')
       // Wait for at least one message to confirm worker is active
-      await new Promise<void>((resolve: Function) => {
+      await new Promise<void>((resolve: () => void) => {
         currentWorker!.onmessage = (e: MessageEvents): void => {
           msgCount++
           resolve()
         }
       })
       let countAfter: number = msgCount
-      await new Promise<void>((resolve: Function) => {
+      await new Promise<void>((resolve: () => void) => {
         currentWorker!.onexit = (code: number): void => {
           resolve()
         }
@@ -1158,7 +1158,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest4700
-     * @tc.number SUB_TASK_TYPE_TEST_4700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_4700
      * @tc.desc   Verify Worker handles compute task and returns calculation result via postMessage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1173,14 +1173,14 @@ export default function TaskTypeTest(): void {
         currentWorker!.postMessage('compute')
       })
       expect(result).assertEqual(49995000)
-      await new Promise<void>((resolve: Function) => { currentWorker!.onexit = (code: number): void => { resolve() }; currentWorker!.terminate() }); currentWorker = null
+      await new Promise<void>((resolve: () => void) => { currentWorker!.onexit = (code: number): void => { resolve() }; currentWorker!.terminate() }); currentWorker = null
     })
 
     // ==================== Section 2.7: resident-task-guide ====================
 
     /**
      * @tc.name   TaskTypeTest4800
-     * @tc.number SUB_TASK_TYPE_TEST_4800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_4800
      * @tc.desc   Verify Worker creation with ThreadWorker constructor produces valid instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1189,12 +1189,12 @@ export default function TaskTypeTest(): void {
     it('TaskTypeTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       currentWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
       expect(currentWorker !== undefined).assertTrue()
-      await new Promise<void>((resolve: Function) => { currentWorker!.onexit = (code: number): void => { resolve() }; currentWorker!.terminate() }); currentWorker = null
+      await new Promise<void>((resolve: () => void) => { currentWorker!.onexit = (code: number): void => { resolve() }; currentWorker!.terminate() }); currentWorker = null
     })
 
     /**
      * @tc.name   TaskTypeTest4900
-     * @tc.number SUB_TASK_TYPE_TEST_4900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_4900
      * @tc.desc   Verify postMessage sends message from host to Worker and receives echo response
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1209,12 +1209,12 @@ export default function TaskTypeTest(): void {
         currentWorker!.postMessage('hello')
       })
       expect(result).assertEqual('hello received')
-      await new Promise<void>((resolve: Function) => { currentWorker!.onexit = (code: number): void => { resolve() }; currentWorker!.terminate() }); currentWorker = null
+      await new Promise<void>((resolve: () => void) => { currentWorker!.onexit = (code: number): void => { resolve() }; currentWorker!.terminate() }); currentWorker = null
     })
 
     /**
      * @tc.name   TaskTypeTest5000
-     * @tc.number SUB_TASK_TYPE_TEST_5000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_5000
      * @tc.desc   Verify onmessage receives ping-pong response from Worker thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1229,12 +1229,12 @@ export default function TaskTypeTest(): void {
         currentWorker!.postMessage('ping')
       })
       expect(result).assertEqual('pong')
-      await new Promise<void>((resolve: Function) => { currentWorker!.onexit = (code: number): void => { resolve() }; currentWorker!.terminate() }); currentWorker = null
+      await new Promise<void>((resolve: () => void) => { currentWorker!.onexit = (code: number): void => { resolve() }; currentWorker!.terminate() }); currentWorker = null
     })
 
     /**
      * @tc.name   TaskTypeTest5100
-     * @tc.number SUB_TASK_TYPE_TEST_5100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_5100
      * @tc.desc   Verify Worker handles echo message with arbitrary data and returns prefixed response
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1249,12 +1249,12 @@ export default function TaskTypeTest(): void {
         currentWorker!.postMessage('test_data')
       })
       expect(result).assertEqual('echo: test_data')
-      await new Promise<void>((resolve: Function) => { currentWorker!.onexit = (code: number): void => { resolve() }; currentWorker!.terminate() }); currentWorker = null
+      await new Promise<void>((resolve: () => void) => { currentWorker!.onexit = (code: number): void => { resolve() }; currentWorker!.terminate() }); currentWorker = null
     })
 
     /**
      * @tc.name   TaskTypeTest5200
-     * @tc.number SUB_TASK_TYPE_TEST_5200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_5200
      * @tc.desc   Verify Worker terminate stops execution and no further messages are received
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1263,7 +1263,7 @@ export default function TaskTypeTest(): void {
     it('TaskTypeTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       currentWorker = new worker.ThreadWorker('entry_test/ets/workers/LongTaskWorker.ets')
       let msgCount: number = 0
-      let firstMsgPromise: Promise<void> = new Promise<void>((resolve: Function) => {
+      let firstMsgPromise: Promise<void> = new Promise<void>((resolve: () => void) => {
         currentWorker!.onmessage = (e: MessageEvents): void => {
           msgCount++
           resolve()
@@ -1272,7 +1272,7 @@ export default function TaskTypeTest(): void {
       currentWorker!.postMessage('start')
       await firstMsgPromise
       let countBefore: number = msgCount
-      await new Promise<void>((resolve: Function) => {
+      await new Promise<void>((resolve: () => void) => {
         currentWorker!.onexit = (code: number): void => {
           resolve()
         }
@@ -1285,7 +1285,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest5300
-     * @tc.number SUB_TASK_TYPE_TEST_5300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_5300
      * @tc.desc   Verify Worker onexit callback fires with exit code after terminate is called
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1305,7 +1305,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest5400
-     * @tc.number SUB_TASK_TYPE_TEST_5400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_5400
      * @tc.desc   Verify Worker message type identification with calculate add operation via TaskTypeWorker
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1320,7 +1320,7 @@ export default function TaskTypeTest(): void {
         currentWorker!.postMessage('hello')
       })
       expect(result).assertEqual('hello received')
-      await new Promise<void>((resolve: Function) => {
+      await new Promise<void>((resolve: () => void) => {
         currentWorker!.onexit = (code: number): void => { resolve() }
         currentWorker!.terminate()
       })
@@ -1329,7 +1329,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest5500
-     * @tc.number SUB_TASK_TYPE_TEST_5500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_5500
      * @tc.desc   Verify Worker handles echo message with different content via message type dispatch
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1344,7 +1344,7 @@ export default function TaskTypeTest(): void {
         currentWorker!.postMessage('multiply_test')
       })
       expect(result).assertEqual('echo: multiply_test')
-      await new Promise<void>((resolve: Function) => {
+      await new Promise<void>((resolve: () => void) => {
         currentWorker!.onexit = (code: number): void => { resolve() }
         currentWorker!.terminate()
       })
@@ -1353,7 +1353,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest5600
-     * @tc.number SUB_TASK_TYPE_TEST_5600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_5600
      * @tc.desc   Verify Worker high-frequency message exchange stability with multiple sequential messages
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1375,12 +1375,12 @@ export default function TaskTypeTest(): void {
       currentWorker!.postMessage('world')
       await allReceived
       expect(responses.length).assertEqual(3)
-      await new Promise<void>((resolve: Function) => { currentWorker!.onexit = (code: number): void => { resolve() }; currentWorker!.terminate() }); currentWorker = null
+      await new Promise<void>((resolve: () => void) => { currentWorker!.onexit = (code: number): void => { resolve() }; currentWorker!.terminate() }); currentWorker = null
     })
 
     /**
      * @tc.name   TaskTypeTest5700
-     * @tc.number SUB_TASK_TYPE_TEST_5700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_5700
      * @tc.desc   Verify Worker internal error propagates to host thread via onerror callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1395,7 +1395,7 @@ export default function TaskTypeTest(): void {
         currentWorker!.postMessage('error_trigger')
       })
       expect(result).assertEqual('echo: error_trigger')
-      await new Promise<void>((resolve: Function) => {
+      await new Promise<void>((resolve: () => void) => {
         currentWorker!.onexit = (code: number): void => { resolve() }
         currentWorker!.terminate()
       })
@@ -1404,7 +1404,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest5800
-     * @tc.number SUB_TASK_TYPE_TEST_5800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_5800
      * @tc.desc   Verify bidirectional Worker communication with multiple request-response cycles
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1425,7 +1425,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest5900
-     * @tc.number SUB_TASK_TYPE_TEST_5900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_5900
      * @tc.desc   Verify duplicate Worker creation with same script creates independent instances
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1444,15 +1444,15 @@ export default function TaskTypeTest(): void {
       })
       expect(r1).assertEqual('hello received')
       expect(r2).assertEqual('pong')
-      await new Promise<void>((resolve: Function) => { wk1.onexit = (): void => { resolve() }; wk1.terminate() })
-      await new Promise<void>((resolve: Function) => { wk2.onexit = (): void => { resolve() }; wk2.terminate() })
+      await new Promise<void>((resolve: () => void) => { wk1.onexit = (): void => { resolve() }; wk1.terminate() })
+      await new Promise<void>((resolve: () => void) => { wk2.onexit = (): void => { resolve() }; wk2.terminate() })
     })
 
     // ==================== Section 2.8: sync-task-development ====================
 
     /**
      * @tc.name   TaskTypeTest6000
-     * @tc.number SUB_TASK_TYPE_TEST_6000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_6000
      * @tc.desc   Verify TaskPool executes independent synchronous task returning correct sum
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1466,7 +1466,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest6100
-     * @tc.number SUB_TASK_TYPE_TEST_6100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_6100
      * @tc.desc   Verify static method as sync task executes correctly via taskpool.execute
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1483,7 +1483,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest6200
-     * @tc.number SUB_TASK_TYPE_TEST_6200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_6200
      * @tc.desc   Verify Worker executes synchronous computation via message-based dispatch
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1498,7 +1498,7 @@ export default function TaskTypeTest(): void {
         currentWorker!.postMessage('sync_compute')
       })
       expect(result).assertEqual('echo: sync_compute')
-      await new Promise<void>((resolve: Function) => {
+      await new Promise<void>((resolve: () => void) => {
         currentWorker!.onexit = (code: number): void => { resolve() }
         currentWorker!.terminate()
       })
@@ -1507,7 +1507,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest6300
-     * @tc.number SUB_TASK_TYPE_TEST_6300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_6300
      * @tc.desc   Verify task chain execution with dependent results across three sequential tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1524,7 +1524,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest6400
-     * @tc.number SUB_TASK_TYPE_TEST_6400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_6400
      * @tc.desc   Verify multiple independent sync tasks execute in parallel via Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1542,7 +1542,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest6500
-     * @tc.number SUB_TASK_TYPE_TEST_6500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_6500
      * @tc.desc   Verify strongly dependent tasks execute serially with correct intermediate results
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1556,7 +1556,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest6600
-     * @tc.number SUB_TASK_TYPE_TEST_6600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_6600
      * @tc.desc   Verify Actor model memory isolation with concurrent tasks not modifying original data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1576,7 +1576,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest6700
-     * @tc.number SUB_TASK_TYPE_TEST_6700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_6700
      * @tc.desc   Verify Worker handles subtract operation via message type dispatch
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1591,7 +1591,7 @@ export default function TaskTypeTest(): void {
         currentWorker!.postMessage('subtract_test')
       })
       expect(result).assertEqual('echo: subtract_test')
-      await new Promise<void>((resolve: Function) => {
+      await new Promise<void>((resolve: () => void) => {
         currentWorker!.onexit = (code: number): void => { resolve() }
         currentWorker!.terminate()
       })
@@ -1600,7 +1600,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest6800
-     * @tc.number SUB_TASK_TYPE_TEST_6800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_6800
      * @tc.desc   Verify task chain with TaskGroup batch processing followed by aggregation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1623,7 +1623,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest6900
-     * @tc.number SUB_TASK_TYPE_TEST_6900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_6900
      * @tc.desc   Verify TaskGroup handles CPU-intensive tasks with correct results for all tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1641,7 +1641,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest7000
-     * @tc.number SUB_TASK_TYPE_TEST_7000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_7000
      * @tc.desc   Verify taskpool.Priority.HIGH setting for CPU-intensive task execution
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1655,7 +1655,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest7100
-     * @tc.number SUB_TASK_TYPE_TEST_7100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_7100
      * @tc.desc   Verify data segmentation with TaskGroup correctly sums 1-to-1000 via parallel chunks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1682,7 +1682,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest7200
-     * @tc.number SUB_TASK_TYPE_TEST_7200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_7200
      * @tc.desc   Verify TaskGroup result aggregation with range-based partial computations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1703,7 +1703,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest7300
-     * @tc.number SUB_TASK_TYPE_TEST_7300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_7300
      * @tc.desc   Verify task duration boundary judgment with short task completing via TaskPool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1717,7 +1717,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest7400
-     * @tc.number SUB_TASK_TYPE_TEST_7400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_7400
      * @tc.desc   Verify uneven data segmentation with 105 elements split into 20-element chunks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1746,7 +1746,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest7500
-     * @tc.number SUB_TASK_TYPE_TEST_7500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_7500
      * @tc.desc   Verify multiple high-priority tasks execute correctly when submitted concurrently
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1767,7 +1767,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest7600
-     * @tc.number SUB_TASK_TYPE_TEST_7600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_7600
      * @tc.desc   Verify CPU-intensive task exception handling when empty data is provided
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1788,7 +1788,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest7700
-     * @tc.number SUB_TASK_TYPE_TEST_7700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_7700
      * @tc.desc   Verify Worker termination timing after task completion with onexit callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1813,7 +1813,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest7800
-     * @tc.number SUB_TASK_TYPE_TEST_7800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_7800
      * @tc.desc   Verify multi-core utilization with parallel CPU-intensive tasks via TaskGroup
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1832,7 +1832,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest7900
-     * @tc.number SUB_TASK_TYPE_TEST_7900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_7900
      * @tc.desc   Verify high and low priority tasks coexist correctly when submitted together
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1852,7 +1852,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest8000
-     * @tc.number SUB_TASK_TYPE_TEST_8000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_8000
      * @tc.desc   Verify simulated async IO operation returns correct completion status
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1866,7 +1866,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest8100
-     * @tc.number SUB_TASK_TYPE_TEST_8100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_8100
      * @tc.desc   Verify TaskPool executes IO-intensive concurrent function returning correct result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1880,7 +1880,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest8200
-     * @tc.number SUB_TASK_TYPE_TEST_8200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_8200
      * @tc.desc   Verify Promise.all handles multiple concurrent IO operations returning all results
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1899,7 +1899,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest8300
-     * @tc.number SUB_TASK_TYPE_TEST_8300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_8300
      * @tc.desc   Verify mixed IO and CPU intensive tasks execute concurrently with correct results
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1923,7 +1923,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest8400
-     * @tc.number SUB_TASK_TYPE_TEST_8400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_8400
      * @tc.desc   Verify IO task error handling when task throws exception on invalid input
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1944,7 +1944,7 @@ export default function TaskTypeTest(): void {
 
     /**
      * @tc.name   TaskTypeTest8500
-     * @tc.number SUB_TASK_TYPE_TEST_8500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASK_TYPE_TEST_8500
      * @tc.desc   Verify IO task concurrency control with 20 simultaneous tasks via TaskGroup
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

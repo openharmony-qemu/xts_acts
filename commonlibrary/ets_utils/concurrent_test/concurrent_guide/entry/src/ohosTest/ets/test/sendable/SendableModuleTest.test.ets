@@ -62,7 +62,7 @@ export default function SendableModuleTest(): void {
 
     /**
      * @tc.name   SendableModuleTest0100
-     * @tc.number SUB_SENDABLE_MODULE_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_MODULE_TEST_0100
      * @tc.desc   Verify shared module with use shared declaration exports valid Sendable objects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -75,7 +75,7 @@ export default function SendableModuleTest(): void {
 
     /**
      * @tc.name   SendableModuleTest0200
-     * @tc.number SUB_SENDABLE_MODULE_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_MODULE_TEST_0200
      * @tc.desc   Verify shared module singleton instance is accessible from main thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -88,7 +88,7 @@ export default function SendableModuleTest(): void {
 
     /**
      * @tc.name   SendableModuleTest0300
-     * @tc.number SUB_SENDABLE_MODULE_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_MODULE_TEST_0300
      * @tc.desc   Verify multi-thread access to same shared module instance via TaskPool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -108,7 +108,7 @@ export default function SendableModuleTest(): void {
 
     /**
      * @tc.name   SendableModuleTest0400
-     * @tc.number SUB_SENDABLE_MODULE_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_MODULE_TEST_0400
      * @tc.desc   Verify thread data sharing through shared module data store
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -127,7 +127,7 @@ export default function SendableModuleTest(): void {
 
     /**
      * @tc.name   SendableModuleTest0500
-     * @tc.number SUB_SENDABLE_MODULE_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_MODULE_TEST_0500
      * @tc.desc   Verify TaskPool task uses shared module exported object correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -148,7 +148,7 @@ export default function SendableModuleTest(): void {
 
     /**
      * @tc.name   SendableModuleTest0600
-     * @tc.number SUB_SENDABLE_MODULE_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_MODULE_TEST_0600
      * @tc.desc   Verify concurrent counter increment with AsyncLock protection in shared module
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -170,7 +170,7 @@ export default function SendableModuleTest(): void {
 
     /**
      * @tc.name   SendableModuleTest0700
-     * @tc.number SUB_SENDABLE_MODULE_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_MODULE_TEST_0700
      * @tc.desc   Verify data consistency with multiple read and write operations on shared module
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -193,7 +193,7 @@ export default function SendableModuleTest(): void {
 
     /**
      * @tc.name   SendableModuleTest0800
-     * @tc.number SUB_SENDABLE_MODULE_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_MODULE_TEST_0800
      * @tc.desc   Verify shared module exports Sendable type that passes isSendable in worker
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -207,7 +207,7 @@ export default function SendableModuleTest(): void {
 
     /**
      * @tc.name   SendableModuleTest0900
-     * @tc.number SUB_SENDABLE_MODULE_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_MODULE_TEST_0900
      * @tc.desc   Verify shared module data store items are accessible across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -222,7 +222,7 @@ export default function SendableModuleTest(): void {
 
     /**
      * @tc.name   SendableModuleTest1000
-     * @tc.number SUB_SENDABLE_MODULE_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_MODULE_TEST_1000
      * @tc.desc   Verify shared module lazy loading behavior with sequential access pattern
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -179,7 +179,7 @@ export default function BatchDatabaseOpsTest(): void {
 
     /**
      * @tc.name   BatchDatabaseOpsTest0100
-     * @tc.number SUB_BATCH_DATABASE_OPS_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_DATABASE_OPS_TEST_0100
      * @tc.desc   Verify relationalStore.getRdbStore creates database instance correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -193,7 +193,7 @@ export default function BatchDatabaseOpsTest(): void {
 
     /**
      * @tc.name   BatchDatabaseOpsTest0200
-     * @tc.number SUB_BATCH_DATABASE_OPS_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_DATABASE_OPS_TEST_0200
      * @tc.desc   Verify StoreConfig with name and securityLevel configuration
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -211,7 +211,7 @@ export default function BatchDatabaseOpsTest(): void {
 
     /**
      * @tc.name   BatchDatabaseOpsTest0300
-     * @tc.number SUB_BATCH_DATABASE_OPS_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_DATABASE_OPS_TEST_0300
      * @tc.desc   Verify executeSql creates table successfully
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -229,7 +229,7 @@ export default function BatchDatabaseOpsTest(): void {
 
     /**
      * @tc.name   BatchDatabaseOpsTest0400
-     * @tc.number SUB_BATCH_DATABASE_OPS_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_DATABASE_OPS_TEST_0400
      * @tc.desc   Verify batchInsert inserts multiple rows correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -248,7 +248,7 @@ export default function BatchDatabaseOpsTest(): void {
 
     /**
      * @tc.name   BatchDatabaseOpsTest0500
-     * @tc.number SUB_BATCH_DATABASE_OPS_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_DATABASE_OPS_TEST_0500
      * @tc.desc   Verify query with RdbPredicates returns correct ResultSet
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -271,7 +271,7 @@ export default function BatchDatabaseOpsTest(): void {
 
     /**
      * @tc.name   BatchDatabaseOpsTest0600
-     * @tc.number SUB_BATCH_DATABASE_OPS_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_DATABASE_OPS_TEST_0600
      * @tc.desc   Verify deleteRdbStore deletes database file correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -289,7 +289,7 @@ export default function BatchDatabaseOpsTest(): void {
 
     /**
      * @tc.name   BatchDatabaseOpsTest0700
-     * @tc.number SUB_BATCH_DATABASE_OPS_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_DATABASE_OPS_TEST_0700
      * @tc.desc   Verify ResultSet goToFirstRow/goToNextRow/getRow operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -316,7 +316,7 @@ export default function BatchDatabaseOpsTest(): void {
 
     /**
      * @tc.name   BatchDatabaseOpsTest0800
-     * @tc.number SUB_BATCH_DATABASE_OPS_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_DATABASE_OPS_TEST_0800
      * @tc.desc   Verify ResultSet.close() closes result set without error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -333,7 +333,7 @@ export default function BatchDatabaseOpsTest(): void {
 
     /**
      * @tc.name   BatchDatabaseOpsTest0900
-     * @tc.number SUB_BATCH_DATABASE_OPS_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_DATABASE_OPS_TEST_0900
      * @tc.desc   Verify SharedValuesBucket @Sendable wrapper for database data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -349,7 +349,7 @@ export default function BatchDatabaseOpsTest(): void {
 
     /**
      * @tc.name   BatchDatabaseOpsTest1000
-     * @tc.number SUB_BATCH_DATABASE_OPS_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_DATABASE_OPS_TEST_1000
      * @tc.desc   Verify collections.Array.create creates typed array for data storage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -364,7 +364,7 @@ export default function BatchDatabaseOpsTest(): void {
 
     /**
      * @tc.name   BatchDatabaseOpsTest1100
-     * @tc.number SUB_BATCH_DATABASE_OPS_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_DATABASE_OPS_TEST_1100
      * @tc.desc   Verify Material class holds Sendable array property
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -380,7 +380,7 @@ export default function BatchDatabaseOpsTest(): void {
 
     /**
      * @tc.name   BatchDatabaseOpsTest1200
-     * @tc.number SUB_BATCH_DATABASE_OPS_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_DATABASE_OPS_TEST_1200
      * @tc.desc   Verify TaskPool sub-thread executes batch insert operation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -396,7 +396,7 @@ export default function BatchDatabaseOpsTest(): void {
 
     /**
      * @tc.name   BatchDatabaseOpsTest1300
-     * @tc.number SUB_BATCH_DATABASE_OPS_TEST_1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_DATABASE_OPS_TEST_1300
      * @tc.desc   Verify TaskPool sub-thread executes query and returns Sendable data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -414,7 +414,7 @@ export default function BatchDatabaseOpsTest(): void {
 
     /**
      * @tc.name   BatchDatabaseOpsTest1400
-     * @tc.number SUB_BATCH_DATABASE_OPS_TEST_1400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_DATABASE_OPS_TEST_1400
      * @tc.desc   Verify Sendable data cross-thread passing performance advantage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -438,7 +438,7 @@ export default function BatchDatabaseOpsTest(): void {
 
     /**
      * @tc.name   BatchDatabaseOpsTest1500
-     * @tc.number SUB_BATCH_DATABASE_OPS_TEST_1500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_DATABASE_OPS_TEST_1500
      * @tc.desc   Verify main thread receives Sendable data returned from sub-thread query
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -456,7 +456,7 @@ export default function BatchDatabaseOpsTest(): void {
 
     /**
      * @tc.name   BatchDatabaseOpsTest1600
-     * @tc.number SUB_BATCH_DATABASE_OPS_TEST_1600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_DATABASE_OPS_TEST_1600
      * @tc.desc   Verify consecutive TaskPool.execute calls for database operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -474,7 +474,7 @@ export default function BatchDatabaseOpsTest(): void {
 
     /**
      * @tc.name   BatchDatabaseOpsTest1700
-     * @tc.number SUB_BATCH_DATABASE_OPS_TEST_1700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_DATABASE_OPS_TEST_1700
      * @tc.desc   Verify empty data array insert handling
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -494,7 +494,7 @@ export default function BatchDatabaseOpsTest(): void {
 
     /**
      * @tc.name   BatchDatabaseOpsTest1800
-     * @tc.number SUB_BATCH_DATABASE_OPS_TEST_1800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_DATABASE_OPS_TEST_1800
      * @tc.desc   Verify large data volume insert performance with 100 rows
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -518,7 +518,7 @@ export default function BatchDatabaseOpsTest(): void {
 
     /**
      * @tc.name   BatchDatabaseOpsTest1900
-     * @tc.number SUB_BATCH_DATABASE_OPS_TEST_1900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_DATABASE_OPS_TEST_1900
      * @tc.desc   Verify long string field storage in name column
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -543,7 +543,7 @@ export default function BatchDatabaseOpsTest(): void {
 
     /**
      * @tc.name   BatchDatabaseOpsTest2000
-     * @tc.number SUB_BATCH_DATABASE_OPS_TEST_2000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_DATABASE_OPS_TEST_2000
      * @tc.desc   Verify empty table query returns empty result set
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -563,7 +563,7 @@ export default function BatchDatabaseOpsTest(): void {
 
     /**
      * @tc.name   BatchDatabaseOpsTest2100
-     * @tc.number SUB_BATCH_DATABASE_OPS_TEST_2100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_DATABASE_OPS_TEST_2100
      * @tc.desc   Verify SQL syntax error throws appropriate error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -585,7 +585,7 @@ export default function BatchDatabaseOpsTest(): void {
 
     /**
      * @tc.name   BatchDatabaseOpsTest2200
-     * @tc.number SUB_BATCH_DATABASE_OPS_TEST_2200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_DATABASE_OPS_TEST_2200
      * @tc.desc   Verify query on non-existent table throws error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -608,7 +608,7 @@ export default function BatchDatabaseOpsTest(): void {
 
     /**
      * @tc.name   BatchDatabaseOpsTest2300
-     * @tc.number SUB_BATCH_DATABASE_OPS_TEST_2300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_DATABASE_OPS_TEST_2300
      * @tc.desc   Verify batch insert performance measurement with timing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -630,7 +630,7 @@ export default function BatchDatabaseOpsTest(): void {
 
     /**
      * @tc.name   BatchDatabaseOpsTest2400
-     * @tc.number SUB_BATCH_DATABASE_OPS_TEST_2400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_DATABASE_OPS_TEST_2400
      * @tc.desc   Verify different security levels S1/S2/S3/S4 for StoreConfig
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -657,7 +657,7 @@ export default function BatchDatabaseOpsTest(): void {
 
     /**
      * @tc.name   BatchDatabaseOpsTest2500
-     * @tc.number SUB_BATCH_DATABASE_OPS_TEST_2500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_DATABASE_OPS_TEST_2500
      * @tc.desc   Verify frequent database create and delete operations stability
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

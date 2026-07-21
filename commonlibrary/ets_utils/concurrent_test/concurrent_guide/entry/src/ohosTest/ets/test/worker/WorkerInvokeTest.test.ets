@@ -58,12 +58,12 @@ export default function WorkerInvokeTest(): void {
       }
     })
     afterAll(async (): Promise<void> => {
-      await new Promise<void>((resolve: Function) => { setTimeout((): void => resolve(undefined), 500) })
+      await new Promise<void>((resolve: () => void) => { setTimeout((): void => resolve(), 500) })
     })
 
     /**
      * @tc.name   WorkerInvokeTest0100
-     * @tc.number SUB_WORKER_INVOKE_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INVOKE_TEST_0100
      * @tc.desc   Verify registerGlobalCallObject registers object on host thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -87,7 +87,7 @@ export default function WorkerInvokeTest(): void {
 
     /**
      * @tc.name   WorkerInvokeTest0200
-     * @tc.number SUB_WORKER_INVOKE_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INVOKE_TEST_0200
      * @tc.desc   Verify Worker calls host no-arg method and gets return value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -111,7 +111,7 @@ export default function WorkerInvokeTest(): void {
 
     /**
      * @tc.name   WorkerInvokeTest0300
-     * @tc.number SUB_WORKER_INVOKE_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INVOKE_TEST_0300
      * @tc.desc   Verify callGlobalCallObjectMethod returns correct string value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -136,7 +136,7 @@ export default function WorkerInvokeTest(): void {
 
     /**
      * @tc.name   WorkerInvokeTest0400
-     * @tc.number SUB_WORKER_INVOKE_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INVOKE_TEST_0400
      * @tc.desc   Verify callGlobalCallObjectMethod executes synchronously
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -163,7 +163,7 @@ export default function WorkerInvokeTest(): void {
 
     /**
      * @tc.name   WorkerInvokeTest0500
-     * @tc.number SUB_WORKER_INVOKE_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INVOKE_TEST_0500
      * @tc.desc   Verify multiple objects registered and callable independently
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -199,7 +199,7 @@ export default function WorkerInvokeTest(): void {
 
     /**
      * @tc.name   WorkerInvokeTest0600
-     * @tc.number SUB_WORKER_INVOKE_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INVOKE_TEST_0600
      * @tc.desc   Verify calling nonexistent method on registered object returns error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -223,7 +223,7 @@ export default function WorkerInvokeTest(): void {
 
     /**
      * @tc.name   WorkerInvokeTest0700
-     * @tc.number SUB_WORKER_INVOKE_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INVOKE_TEST_0700
      * @tc.desc   Verify calling method on nonexistent object returns error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -245,7 +245,7 @@ export default function WorkerInvokeTest(): void {
 
     /**
      * @tc.name   WorkerInvokeTest0800
-     * @tc.number SUB_WORKER_INVOKE_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INVOKE_TEST_0800
      * @tc.desc   Verify callGlobalCallObjectMethod with method arguments returns correct result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -283,7 +283,7 @@ export default function WorkerInvokeTest(): void {
 
     /**
      * @tc.name   WorkerInvokeTest0900
-     * @tc.number SUB_WORKER_INVOKE_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INVOKE_TEST_0900
      * @tc.desc   Verify unregisterGlobalCallObject removes registered object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -318,7 +318,7 @@ export default function WorkerInvokeTest(): void {
 
     /**
      * @tc.name   WorkerInvokeTest1000
-     * @tc.number SUB_WORKER_INVOKE_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INVOKE_TEST_1000
      * @tc.desc   Verify calling method after Worker terminated throws error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

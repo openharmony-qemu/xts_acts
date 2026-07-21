@@ -73,7 +73,7 @@ export default function BufferTest(): void {
 
     /**
      * @tc.name   BufferTest0100
-     * @tc.number SUB_OBJECT_TRANSFER_BUFFER_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_BUFFER_TEST_0100
      * @tc.desc   Verify Uint8Array creation and cross-thread transfer with length verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -90,7 +90,7 @@ export default function BufferTest(): void {
 
     /**
      * @tc.name   BufferTest0200
-     * @tc.number SUB_OBJECT_TRANSFER_BUFFER_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_BUFFER_TEST_0200
      * @tc.desc   Verify Uint8Array cross-thread data sum verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -107,7 +107,7 @@ export default function BufferTest(): void {
 
     /**
      * @tc.name   BufferTest0300
-     * @tc.number SUB_OBJECT_TRANSFER_BUFFER_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_BUFFER_TEST_0300
      * @tc.desc   Verify Uint8Array index read/write operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -127,7 +127,7 @@ export default function BufferTest(): void {
 
     /**
      * @tc.name   BufferTest0400
-     * @tc.number SUB_OBJECT_TRANSFER_BUFFER_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_BUFFER_TEST_0400
      * @tc.desc   Verify ArrayBuffer cross-thread transfer with byteLength verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -141,7 +141,7 @@ export default function BufferTest(): void {
 
     /**
      * @tc.name   BufferTest0500
-     * @tc.number SUB_OBJECT_TRANSFER_BUFFER_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_BUFFER_TEST_0500
      * @tc.desc   Verify Int32Array cross-thread transfer with sum verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -155,7 +155,7 @@ export default function BufferTest(): void {
 
     /**
      * @tc.name   BufferTest0600
-     * @tc.number SUB_OBJECT_TRANSFER_BUFFER_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_BUFFER_TEST_0600
      * @tc.desc   Verify Float32Array cross-thread transfer with sum verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -169,7 +169,7 @@ export default function BufferTest(): void {
 
     /**
      * @tc.name   BufferTest0700
-     * @tc.number SUB_OBJECT_TRANSFER_BUFFER_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_BUFFER_TEST_0700
      * @tc.desc   Verify Uint8Array with all bytes set to max value 255
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -186,7 +186,7 @@ export default function BufferTest(): void {
 
     /**
      * @tc.name   BufferTest0800
-     * @tc.number SUB_OBJECT_TRANSFER_BUFFER_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_BUFFER_TEST_0800
      * @tc.desc   Verify Uint8Array with zero-filled data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -202,7 +202,7 @@ export default function BufferTest(): void {
 
     /**
      * @tc.name   BufferTest0900
-     * @tc.number SUB_OBJECT_TRANSFER_BUFFER_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_BUFFER_TEST_0900
      * @tc.desc   Verify large capacity Uint8Array creation and cross-thread transfer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -219,7 +219,7 @@ export default function BufferTest(): void {
 
     /**
      * @tc.name   BufferTest1000
-     * @tc.number SUB_OBJECT_TRANSFER_BUFFER_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_BUFFER_TEST_1000
      * @tc.desc   Verify Uint8Array data pattern preservation after cross-thread transfer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -240,7 +240,7 @@ export default function BufferTest(): void {
 
     /**
      * @tc.name   BufferTest1100
-     * @tc.number SUB_OBJECT_TRANSFER_BUFFER_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_BUFFER_TEST_1100
      * @tc.desc   Verify Uint8Array with single element cross-thread transfer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -254,7 +254,7 @@ export default function BufferTest(): void {
 
     /**
      * @tc.name   BufferTest1200
-     * @tc.number SUB_OBJECT_TRANSFER_BUFFER_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_BUFFER_TEST_1200
      * @tc.desc   Verify multiple Uint8Array objects passed simultaneously via Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -274,7 +274,7 @@ export default function BufferTest(): void {
 
     /**
      * @tc.name   BufferTest1300
-     * @tc.number SUB_OBJECT_TRANSFER_BUFFER_TEST_1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_BUFFER_TEST_1300
      * @tc.desc   Verify Uint8Array with alternating byte pattern
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -292,7 +292,7 @@ export default function BufferTest(): void {
 
     /**
      * @tc.name   BufferTest1400
-     * @tc.number SUB_OBJECT_TRANSFER_BUFFER_TEST_1400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_BUFFER_TEST_1400
      * @tc.desc   Verify Uint8Array read/write performance with large buffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -314,7 +314,7 @@ export default function BufferTest(): void {
 
     /**
      * @tc.name   BufferTest1500
-     * @tc.number SUB_OBJECT_TRANSFER_BUFFER_TEST_1500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_BUFFER_TEST_1500
      * @tc.desc   Verify Uint8Array sequential byte pattern cross-thread verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -331,7 +331,7 @@ export default function BufferTest(): void {
 
     /**
      * @tc.name   BufferTest1600
-     * @tc.number SUB_OBJECT_TRANSFER_BUFFER_TEST_1600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_BUFFER_TEST_1600
      * @tc.desc   Verify ArrayBuffer shares memory with Uint8Array view
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -349,7 +349,7 @@ export default function BufferTest(): void {
 
     /**
      * @tc.name   BufferTest1700
-     * @tc.number SUB_OBJECT_TRANSFER_BUFFER_TEST_1700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_BUFFER_TEST_1700
      * @tc.desc   Verify ArrayBuffer cross-thread large data transfer performance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -367,7 +367,7 @@ export default function BufferTest(): void {
 
     /**
      * @tc.name   BufferTest1800
-     * @tc.number SUB_OBJECT_TRANSFER_BUFFER_TEST_1800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_BUFFER_TEST_1800
      * @tc.desc   Verify Uint8Array.subarray creates view sharing same buffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -385,7 +385,7 @@ export default function BufferTest(): void {
 
     /**
      * @tc.name   BufferTest1900
-     * @tc.number SUB_OBJECT_TRANSFER_BUFFER_TEST_1900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_BUFFER_TEST_1900
      * @tc.desc   Verify Uint8Array.slice creates independent copy
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -402,7 +402,7 @@ export default function BufferTest(): void {
 
     /**
      * @tc.name   BufferTest2000
-     * @tc.number SUB_OBJECT_TRANSFER_BUFFER_TEST_2000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_BUFFER_TEST_2000
      * @tc.desc   Verify Int32Array with negative values cross-thread transfer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

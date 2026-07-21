@@ -25,7 +25,7 @@ export default function WorkerIntroductionTest(): void {
     beforeEach((): void => {})
     afterEach(async (): Promise<void> => {
       if (currentWorker !== null) {
-        await new Promise<void>((resolve: Function) => {
+        await new Promise<void>((resolve: () => void) => {
           currentWorker!.onexit = (): void => { resolve() }
           currentWorker!.terminate()
         })
@@ -33,12 +33,12 @@ export default function WorkerIntroductionTest(): void {
       }
     })
     afterAll(async (): Promise<void> => {
-      await new Promise<void>((resolve: Function) => { setTimeout((): void => resolve(undefined), 500) })
+      await new Promise<void>((resolve: () => void) => { setTimeout((): void => resolve(), 500) })
     })
 
     /**
      * @tc.name   WorkerIntroductionTest0100
-     * @tc.number SUB_WORKER_INTRODUCTION_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTRODUCTION_TEST_0100
      * @tc.desc   Verify Worker manual creation and basic message communication
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -57,7 +57,7 @@ export default function WorkerIntroductionTest(): void {
 
     /**
      * @tc.name   WorkerIntroductionTest0200
-     * @tc.number SUB_WORKER_INTRODUCTION_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTRODUCTION_TEST_0200
      * @tc.desc   Verify Worker loading with Stage model path syntax moduleName/ets/relativePath
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -76,7 +76,7 @@ export default function WorkerIntroductionTest(): void {
 
     /**
      * @tc.name   WorkerIntroductionTest0300
-     * @tc.number SUB_WORKER_INTRODUCTION_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTRODUCTION_TEST_0300
      * @tc.desc   Verify Worker loading with Stage model path syntax @moduleName/ets/relativePath
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -95,7 +95,7 @@ export default function WorkerIntroductionTest(): void {
 
     /**
      * @tc.name   WorkerIntroductionTest0400
-     * @tc.number SUB_WORKER_INTRODUCTION_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTRODUCTION_TEST_0400
      * @tc.desc   Verify Worker creation with invalid path throws error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -115,7 +115,7 @@ export default function WorkerIntroductionTest(): void {
 
     /**
      * @tc.name   WorkerIntroductionTest0500
-     * @tc.number SUB_WORKER_INTRODUCTION_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTRODUCTION_TEST_0500
      * @tc.desc   Verify Worker normal creation returns valid instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -135,7 +135,7 @@ export default function WorkerIntroductionTest(): void {
 
     /**
      * @tc.name   WorkerIntroductionTest0600
-     * @tc.number SUB_WORKER_INTRODUCTION_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTRODUCTION_TEST_0600
      * @tc.desc   Verify Worker terminate destroys worker and triggers onexit
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -156,7 +156,7 @@ export default function WorkerIntroductionTest(): void {
 
     /**
      * @tc.name   WorkerIntroductionTest0700
-     * @tc.number SUB_WORKER_INTRODUCTION_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTRODUCTION_TEST_0700
      * @tc.desc   Verify Worker close() destroys worker from within worker thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -180,7 +180,7 @@ export default function WorkerIntroductionTest(): void {
 
     /**
      * @tc.name   WorkerIntroductionTest0800
-     * @tc.number SUB_WORKER_INTRODUCTION_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTRODUCTION_TEST_0800
      * @tc.desc   Verify onexit callback is registered and triggered on worker exit
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -206,7 +206,7 @@ export default function WorkerIntroductionTest(): void {
 
     /**
      * @tc.name   WorkerIntroductionTest0900
-     * @tc.number SUB_WORKER_INTRODUCTION_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTRODUCTION_TEST_0900
      * @tc.desc   Verify Worker normal exit returns code 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -227,7 +227,7 @@ export default function WorkerIntroductionTest(): void {
 
     /**
      * @tc.name   WorkerIntroductionTest1000
-     * @tc.number SUB_WORKER_INTRODUCTION_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTRODUCTION_TEST_1000
      * @tc.desc   Verify Worker abnormal exit returns non-zero code when error thrown
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -257,7 +257,7 @@ export default function WorkerIntroductionTest(): void {
 
     /**
      * @tc.name   WorkerIntroductionTest1100
-     * @tc.number SUB_WORKER_INTRODUCTION_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTRODUCTION_TEST_1100
      * @tc.desc   Verify calling postMessage after Worker terminated throws error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -285,7 +285,7 @@ export default function WorkerIntroductionTest(): void {
 
     /**
      * @tc.name   WorkerIntroductionTest1200
-     * @tc.number SUB_WORKER_INTRODUCTION_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTRODUCTION_TEST_1200
      * @tc.desc   Verify Worker async exit timing - worker not immediately destroyed after terminate
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -311,7 +311,7 @@ export default function WorkerIntroductionTest(): void {
 
     /**
      * @tc.name   WorkerIntroductionTest1300
-     * @tc.number SUB_WORKER_INTRODUCTION_TEST_1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTRODUCTION_TEST_1300
      * @tc.desc   Verify multiple Workers can be created simultaneously and terminated cleanly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -327,7 +327,7 @@ export default function WorkerIntroductionTest(): void {
       expect(workers.length).assertEqual(maxCount)
       let exitPromises: Promise<void>[] = []
       for (let i: number = 0; i < workers.length; i++) {
-        let p: Promise<void> = new Promise<void>((resolve: Function) => {
+        let p: Promise<void> = new Promise<void>((resolve: () => void) => {
           workers[i].onexit = (code: number): void => {
             resolve()
           }
@@ -340,7 +340,7 @@ export default function WorkerIntroductionTest(): void {
 
     /**
      * @tc.name   WorkerIntroductionTest1400
-     * @tc.number SUB_WORKER_INTRODUCTION_TEST_1400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTRODUCTION_TEST_1400
      * @tc.desc   Verify batch Worker creation and termination lifecycle management
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -356,7 +356,7 @@ export default function WorkerIntroductionTest(): void {
       expect(workers.length).assertEqual(maxCount)
       let exitPromises: Promise<void>[] = []
       for (let i: number = 0; i < workers.length; i++) {
-        let p: Promise<void> = new Promise<void>((resolve: Function) => {
+        let p: Promise<void> = new Promise<void>((resolve: () => void) => {
           workers[i].onexit = (code: number): void => {
             resolve()
           }
@@ -369,7 +369,7 @@ export default function WorkerIntroductionTest(): void {
 
     /**
      * @tc.name   WorkerIntroductionTest1500
-     * @tc.number SUB_WORKER_INTRODUCTION_TEST_1500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTRODUCTION_TEST_1500
      * @tc.desc   Verify onmessage callback receives message from Worker
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -388,7 +388,7 @@ export default function WorkerIntroductionTest(): void {
 
     /**
      * @tc.name   WorkerIntroductionTest1600
-     * @tc.number SUB_WORKER_INTRODUCTION_TEST_1600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTRODUCTION_TEST_1600
      * @tc.desc   Verify onmessageerror callback registration and Worker continues functioning
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -412,7 +412,7 @@ export default function WorkerIntroductionTest(): void {
 
     /**
      * @tc.name   WorkerIntroductionTest1700
-     * @tc.number SUB_WORKER_INTRODUCTION_TEST_1700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTRODUCTION_TEST_1700
      * @tc.desc   Verify onerror callback fires when Worker throws uncaught exception
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -441,7 +441,7 @@ export default function WorkerIntroductionTest(): void {
 
     /**
      * @tc.name   WorkerIntroductionTest1800
-     * @tc.number SUB_WORKER_INTRODUCTION_TEST_1800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTRODUCTION_TEST_1800
      * @tc.desc   Verify parent Worker creates child Worker successfully
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -462,7 +462,7 @@ export default function WorkerIntroductionTest(): void {
 
     /**
      * @tc.name   WorkerIntroductionTest1900
-     * @tc.number SUB_WORKER_INTRODUCTION_TEST_1900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTRODUCTION_TEST_1900
      * @tc.desc   Verify multi-level message passing from host through parent to child Worker
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -484,7 +484,7 @@ export default function WorkerIntroductionTest(): void {
 
     /**
      * @tc.name   WorkerIntroductionTest2000
-     * @tc.number SUB_WORKER_INTRODUCTION_TEST_2000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTRODUCTION_TEST_2000
      * @tc.desc   Verify recommended terminate order - child Worker before parent Worker
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -508,7 +508,7 @@ export default function WorkerIntroductionTest(): void {
 
     /**
      * @tc.name   WorkerIntroductionTest2100
-     * @tc.number SUB_WORKER_INTRODUCTION_TEST_2100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTRODUCTION_TEST_2100
      * @tc.desc   Verify Worker handles multiple sequential message exchanges correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

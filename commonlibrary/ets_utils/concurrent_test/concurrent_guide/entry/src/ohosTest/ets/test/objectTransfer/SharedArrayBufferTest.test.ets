@@ -133,7 +133,7 @@ export default function SharedArrayBufferTest(): void {
 
     /**
      * @tc.name   SharedArrayBufferTest0100
-     * @tc.number SUB_SHARED_ARRAYBUFFER_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_ARRAYBUFFER_TEST_0100
      * @tc.desc   Verify SharedArrayBuffer creation and byteLength cross-thread verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -147,7 +147,7 @@ export default function SharedArrayBufferTest(): void {
 
     /**
      * @tc.name   SharedArrayBufferTest0200
-     * @tc.number SUB_SHARED_ARRAYBUFFER_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_ARRAYBUFFER_TEST_0200
      * @tc.desc   Verify Int32Array TypedArray view creation and Atomics.store/load
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -165,7 +165,7 @@ export default function SharedArrayBufferTest(): void {
 
     /**
      * @tc.name   SharedArrayBufferTest0300
-     * @tc.number SUB_SHARED_ARRAYBUFFER_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_ARRAYBUFFER_TEST_0300
      * @tc.desc   Verify Int8Array TypedArray view creation and Atomics.store/load
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -180,7 +180,7 @@ export default function SharedArrayBufferTest(): void {
 
     /**
      * @tc.name   SharedArrayBufferTest0400
-     * @tc.number SUB_SHARED_ARRAYBUFFER_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_ARRAYBUFFER_TEST_0400
      * @tc.desc   Verify Atomics.add atomic increment operation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -197,7 +197,7 @@ export default function SharedArrayBufferTest(): void {
 
     /**
      * @tc.name   SharedArrayBufferTest0500
-     * @tc.number SUB_SHARED_ARRAYBUFFER_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_ARRAYBUFFER_TEST_0500
      * @tc.desc   Verify Atomics.sub atomic subtract operation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -214,7 +214,7 @@ export default function SharedArrayBufferTest(): void {
 
     /**
      * @tc.name   SharedArrayBufferTest0600
-     * @tc.number SUB_SHARED_ARRAYBUFFER_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_ARRAYBUFFER_TEST_0600
      * @tc.desc   Verify Atomics.compareExchange success when expected matches
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -231,7 +231,7 @@ export default function SharedArrayBufferTest(): void {
 
     /**
      * @tc.name   SharedArrayBufferTest0700
-     * @tc.number SUB_SHARED_ARRAYBUFFER_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_ARRAYBUFFER_TEST_0700
      * @tc.desc   Verify Atomics.compareExchange failure when expected does not match
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -248,7 +248,7 @@ export default function SharedArrayBufferTest(): void {
 
     /**
      * @tc.name   SharedArrayBufferTest0800
-     * @tc.number SUB_SHARED_ARRAYBUFFER_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_ARRAYBUFFER_TEST_0800
      * @tc.desc   Verify Atomics.exchange operation replaces value and returns old
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -265,7 +265,7 @@ export default function SharedArrayBufferTest(): void {
 
     /**
      * @tc.name   SharedArrayBufferTest0900
-     * @tc.number SUB_SHARED_ARRAYBUFFER_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_ARRAYBUFFER_TEST_0900
      * @tc.desc   Verify multiple concurrent Atomics.add operations maintain consistency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -285,7 +285,7 @@ export default function SharedArrayBufferTest(): void {
 
     /**
      * @tc.name   SharedArrayBufferTest1000
-     * @tc.number SUB_SHARED_ARRAYBUFFER_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_ARRAYBUFFER_TEST_1000
      * @tc.desc   Verify concurrent read and write operations with data race protection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -306,7 +306,7 @@ export default function SharedArrayBufferTest(): void {
 
     /**
      * @tc.name   SharedArrayBufferTest1100
-     * @tc.number SUB_SHARED_ARRAYBUFFER_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_ARRAYBUFFER_TEST_1100
      * @tc.desc   Verify Atomics.wait timeout returns timed-out after specified duration
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -325,7 +325,7 @@ export default function SharedArrayBufferTest(): void {
 
     /**
      * @tc.name   SharedArrayBufferTest1200
-     * @tc.number SUB_SHARED_ARRAYBUFFER_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_ARRAYBUFFER_TEST_1200
      * @tc.desc   Verify Atomics.notify wakes up waiting thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -342,7 +342,7 @@ export default function SharedArrayBufferTest(): void {
 
     /**
      * @tc.name   SharedArrayBufferTest1300
-     * @tc.number SUB_SHARED_ARRAYBUFFER_TEST_1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_ARRAYBUFFER_TEST_1300
      * @tc.desc   Verify Atomics operation with invalid out-of-bounds index throws error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -356,7 +356,7 @@ export default function SharedArrayBufferTest(): void {
 
     /**
      * @tc.name   SharedArrayBufferTest1400
-     * @tc.number SUB_SHARED_ARRAYBUFFER_TEST_1400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_ARRAYBUFFER_TEST_1400
      * @tc.desc   Verify SharedArrayBuffer shared memory visible between main and worker threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -374,7 +374,7 @@ export default function SharedArrayBufferTest(): void {
 
     /**
      * @tc.name   SharedArrayBufferTest1500
-     * @tc.number SUB_SHARED_ARRAYBUFFER_TEST_1500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_ARRAYBUFFER_TEST_1500
      * @tc.desc   Verify multiple index Atomics store and load operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -393,7 +393,7 @@ export default function SharedArrayBufferTest(): void {
 
     /**
      * @tc.name   SharedArrayBufferTest1600
-     * @tc.number SUB_SHARED_ARRAYBUFFER_TEST_1600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_ARRAYBUFFER_TEST_1600
      * @tc.desc   Verify Atomics.add returns previous value before increment
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -410,7 +410,7 @@ export default function SharedArrayBufferTest(): void {
 
     /**
      * @tc.name   SharedArrayBufferTest1700
-     * @tc.number SUB_SHARED_ARRAYBUFFER_TEST_1700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_ARRAYBUFFER_TEST_1700
      * @tc.desc   Verify large SharedArrayBuffer creation and access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -424,7 +424,7 @@ export default function SharedArrayBufferTest(): void {
 
     /**
      * @tc.name   SharedArrayBufferTest1800
-     * @tc.number SUB_SHARED_ARRAYBUFFER_TEST_1800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_ARRAYBUFFER_TEST_1800
      * @tc.desc   Verify Atomics.sub returns previous value before subtraction
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

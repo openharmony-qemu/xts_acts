@@ -117,7 +117,7 @@ export default function InterthreadSharedTest(): void {
 
     /**
      * @tc.name   InterthreadSharedTest0100
-     * @tc.number SUB_INTERTHREAD_SHARED_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_INTERTHREAD_SHARED_TEST_0100
      * @tc.desc   Verify Sendable object serialization via TaskPool passing and deserialization
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -131,7 +131,7 @@ export default function InterthreadSharedTest(): void {
 
     /**
      * @tc.name   InterthreadSharedTest0200
-     * @tc.number SUB_INTERTHREAD_SHARED_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_INTERTHREAD_SHARED_TEST_0200
      * @tc.desc   Verify Sendable object deserialized in worker thread has correct type
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -145,7 +145,7 @@ export default function InterthreadSharedTest(): void {
 
     /**
      * @tc.name   InterthreadSharedTest0300
-     * @tc.number SUB_INTERTHREAD_SHARED_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_INTERTHREAD_SHARED_TEST_0300
      * @tc.desc   Verify Sendable object created in worker thread returned to main thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -161,7 +161,7 @@ export default function InterthreadSharedTest(): void {
 
     /**
      * @tc.name   InterthreadSharedTest0400
-     * @tc.number SUB_INTERTHREAD_SHARED_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_INTERTHREAD_SHARED_TEST_0400
      * @tc.desc   Verify Sendable reference passing allows cross-thread modification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -176,7 +176,7 @@ export default function InterthreadSharedTest(): void {
 
     /**
      * @tc.name   InterthreadSharedTest0500
-     * @tc.number SUB_INTERTHREAD_SHARED_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_INTERTHREAD_SHARED_TEST_0500
      * @tc.desc   Verify multiple threads sequentially operate on same Sendable object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -196,7 +196,7 @@ export default function InterthreadSharedTest(): void {
 
     /**
      * @tc.name   InterthreadSharedTest0600
-     * @tc.number SUB_INTERTHREAD_SHARED_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_INTERTHREAD_SHARED_TEST_0600
      * @tc.desc   Verify cross-thread operation consistency after modification and read
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -213,7 +213,7 @@ export default function InterthreadSharedTest(): void {
 
     /**
      * @tc.name   InterthreadSharedTest0700
-     * @tc.number SUB_INTERTHREAD_SHARED_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_INTERTHREAD_SHARED_TEST_0700
      * @tc.desc   Verify large capacity Sendable object serialization performance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -228,7 +228,7 @@ export default function InterthreadSharedTest(): void {
 
     /**
      * @tc.name   InterthreadSharedTest0800
-     * @tc.number SUB_INTERTHREAD_SHARED_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_INTERTHREAD_SHARED_TEST_0800
      * @tc.desc   Verify repeated serialization of same Sendable object across multiple tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -244,7 +244,7 @@ export default function InterthreadSharedTest(): void {
 
     /**
      * @tc.name   InterthreadSharedTest0900
-     * @tc.number SUB_INTERTHREAD_SHARED_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_INTERTHREAD_SHARED_TEST_0900
      * @tc.desc   Verify non-Sendable plain object cannot be passed to TaskPool causing error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -258,7 +258,7 @@ export default function InterthreadSharedTest(): void {
 
     /**
      * @tc.name   InterthreadSharedTest1000
-     * @tc.number SUB_INTERTHREAD_SHARED_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_INTERTHREAD_SHARED_TEST_1000
      * @tc.desc   Verify Sendable object state check after cross-thread operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -276,7 +276,7 @@ export default function InterthreadSharedTest(): void {
 
     /**
      * @tc.name   InterthreadSharedTest1100
-     * @tc.number SUB_INTERTHREAD_SHARED_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_INTERTHREAD_SHARED_TEST_1100
      * @tc.desc   Verify concurrent serialization of different Sendable objects from multiple tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -294,7 +294,7 @@ export default function InterthreadSharedTest(): void {
 
     /**
      * @tc.name   InterthreadSharedTest1200
-     * @tc.number SUB_INTERTHREAD_SHARED_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_INTERTHREAD_SHARED_TEST_1200
      * @tc.desc   Verify concurrent deserialization of different data from multiple parallel tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -312,7 +312,7 @@ export default function InterthreadSharedTest(): void {
 
     /**
      * @tc.name   InterthreadSharedTest1300
-     * @tc.number SUB_INTERTHREAD_SHARED_TEST_1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_INTERTHREAD_SHARED_TEST_1300
      * @tc.desc   Verify Sendable object with boolean flag cross-thread consistency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -329,7 +329,7 @@ export default function InterthreadSharedTest(): void {
 
     /**
      * @tc.name   InterthreadSharedTest1400
-     * @tc.number SUB_INTERTHREAD_SHARED_TEST_1400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_INTERTHREAD_SHARED_TEST_1400
      * @tc.desc   Verify Sendable object payload string cross-thread modification and retrieval
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -345,7 +345,7 @@ export default function InterthreadSharedTest(): void {
 
     /**
      * @tc.name   InterthreadSharedTest1500
-     * @tc.number SUB_INTERTHREAD_SHARED_TEST_1500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_INTERTHREAD_SHARED_TEST_1500
      * @tc.desc   Verify frequent create and pass Sendable objects stability across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -139,7 +139,7 @@ export default function ContainerObjectTest(): void {
 
     /**
      * @tc.name   ContainerObjectTest0100
-     * @tc.number SUB_CONTAINER_OBJECT_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONTAINER_OBJECT_TEST_0100
      * @tc.desc   Verify sorted array container cross-thread serialization with number elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -156,7 +156,7 @@ export default function ContainerObjectTest(): void {
 
     /**
      * @tc.name   ContainerObjectTest0200
-     * @tc.number SUB_CONTAINER_OBJECT_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONTAINER_OBJECT_TEST_0200
      * @tc.desc   Verify container getFirst returns smallest element after cross-thread sort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -170,7 +170,7 @@ export default function ContainerObjectTest(): void {
 
     /**
      * @tc.name   ContainerObjectTest0300
-     * @tc.number SUB_CONTAINER_OBJECT_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONTAINER_OBJECT_TEST_0300
      * @tc.desc   Verify container getLast returns largest element after cross-thread sort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -184,7 +184,7 @@ export default function ContainerObjectTest(): void {
 
     /**
      * @tc.name   ContainerObjectTest0400
-     * @tc.number SUB_CONTAINER_OBJECT_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONTAINER_OBJECT_TEST_0400
      * @tc.desc   Verify Set container add/delete/has/size operations after cross-thread transfer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -203,7 +203,7 @@ export default function ContainerObjectTest(): void {
 
     /**
      * @tc.name   ContainerObjectTest0500
-     * @tc.number SUB_CONTAINER_OBJECT_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONTAINER_OBJECT_TEST_0500
      * @tc.desc   Verify container forEach iteration after cross-thread transfer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -220,7 +220,7 @@ export default function ContainerObjectTest(): void {
 
     /**
      * @tc.name   ContainerObjectTest0600
-     * @tc.number SUB_CONTAINER_OBJECT_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONTAINER_OBJECT_TEST_0600
      * @tc.desc   Verify string container cross-thread serialization
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -234,7 +234,7 @@ export default function ContainerObjectTest(): void {
 
     /**
      * @tc.name   ContainerObjectTest0700
-     * @tc.number SUB_CONTAINER_OBJECT_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONTAINER_OBJECT_TEST_0700
      * @tc.desc   Verify sorted container maintains correct ordering after cross-thread transfer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -248,7 +248,7 @@ export default function ContainerObjectTest(): void {
 
     /**
      * @tc.name   ContainerObjectTest0800
-     * @tc.number SUB_CONTAINER_OBJECT_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONTAINER_OBJECT_TEST_0800
      * @tc.desc   Verify Set container deduplication - duplicate elements are ignored
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -262,7 +262,7 @@ export default function ContainerObjectTest(): void {
 
     /**
      * @tc.name   ContainerObjectTest0900
-     * @tc.number SUB_CONTAINER_OBJECT_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONTAINER_OBJECT_TEST_0900
      * @tc.desc   Verify container clear operation after cross-thread transfer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -276,7 +276,7 @@ export default function ContainerObjectTest(): void {
 
     /**
      * @tc.name   ContainerObjectTest1000
-     * @tc.number SUB_CONTAINER_OBJECT_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONTAINER_OBJECT_TEST_1000
      * @tc.desc   Verify large capacity container with 1000 elements transfer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -289,7 +289,7 @@ export default function ContainerObjectTest(): void {
 
     /**
      * @tc.name   ContainerObjectTest1100
-     * @tc.number SUB_CONTAINER_OBJECT_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONTAINER_OBJECT_TEST_1100
      * @tc.desc   Verify large capacity container with 10000 elements transfer performance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -305,7 +305,7 @@ export default function ContainerObjectTest(): void {
 
     /**
      * @tc.name   ContainerObjectTest1200
-     * @tc.number SUB_CONTAINER_OBJECT_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONTAINER_OBJECT_TEST_1200
      * @tc.desc   Verify multiple container objects passed simultaneously via Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -323,7 +323,7 @@ export default function ContainerObjectTest(): void {
 
     /**
      * @tc.name   ContainerObjectTest1300
-     * @tc.number SUB_CONTAINER_OBJECT_TEST_1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONTAINER_OBJECT_TEST_1300
      * @tc.desc   Verify container with single element cross-thread transfer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -336,7 +336,7 @@ export default function ContainerObjectTest(): void {
 
     /**
      * @tc.name   ContainerObjectTest1400
-     * @tc.number SUB_CONTAINER_OBJECT_TEST_1400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONTAINER_OBJECT_TEST_1400
      * @tc.desc   Verify container with negative number elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -350,7 +350,7 @@ export default function ContainerObjectTest(): void {
 
     /**
      * @tc.name   ContainerObjectTest1500
-     * @tc.number SUB_CONTAINER_OBJECT_TEST_1500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONTAINER_OBJECT_TEST_1500
      * @tc.desc   Verify collections.Array container cross-thread serialization
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

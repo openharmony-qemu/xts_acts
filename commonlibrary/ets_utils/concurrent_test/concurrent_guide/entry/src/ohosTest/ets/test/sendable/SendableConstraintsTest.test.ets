@@ -169,7 +169,7 @@ export default function SendableConstraintsTest(): void {
 
     /**
      * @tc.name   SendableConstraintsTest0100
-     * @tc.number SUB_SENDABLE_CONSTRAINTS_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINTS_TEST_0100
      * @tc.desc   Verify Sendable class extends another Sendable class works correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -187,7 +187,7 @@ export default function SendableConstraintsTest(): void {
 
     /**
      * @tc.name   SendableConstraintsTest0200
-     * @tc.number SUB_SENDABLE_CONSTRAINTS_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINTS_TEST_0200
      * @tc.desc   Verify non-Sendable class extends non-Sendable class works normally
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -204,7 +204,7 @@ export default function SendableConstraintsTest(): void {
 
     /**
      * @tc.name   SendableConstraintsTest0300
-     * @tc.number SUB_SENDABLE_CONSTRAINTS_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINTS_TEST_0300
      * @tc.desc   Verify @Sendable decorated class is correctly identified by isSendable check
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -217,7 +217,7 @@ export default function SendableConstraintsTest(): void {
 
     /**
      * @tc.name   SendableConstraintsTest0400
-     * @tc.number SUB_SENDABLE_CONSTRAINTS_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINTS_TEST_0400
      * @tc.desc   Verify all supported data types in Sendable class members
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -242,7 +242,7 @@ export default function SendableConstraintsTest(): void {
 
     /**
      * @tc.name   SendableConstraintsTest0500
-     * @tc.number SUB_SENDABLE_CONSTRAINTS_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINTS_TEST_0500
      * @tc.desc   Verify collections Array Map Set as Sendable class members across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -261,7 +261,7 @@ export default function SendableConstraintsTest(): void {
 
     /**
      * @tc.name   SendableConstraintsTest0600
-     * @tc.number SUB_SENDABLE_CONSTRAINTS_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINTS_TEST_0600
      * @tc.desc   Verify AsyncLock as Sendable class member for thread-safe operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -281,7 +281,7 @@ export default function SendableConstraintsTest(): void {
 
     /**
      * @tc.name   SendableConstraintsTest0700
-     * @tc.number SUB_SENDABLE_CONSTRAINTS_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINTS_TEST_0700
      * @tc.desc   Verify SendableLruCache as Sendable class member works correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -302,7 +302,7 @@ export default function SendableConstraintsTest(): void {
 
     /**
      * @tc.name   SendableConstraintsTest0800
-     * @tc.number SUB_SENDABLE_CONSTRAINTS_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINTS_TEST_0800
      * @tc.desc   Verify Sendable generic type with collections Array works correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -319,7 +319,7 @@ export default function SendableConstraintsTest(): void {
 
     /**
      * @tc.name   SendableConstraintsTest0900
-     * @tc.number SUB_SENDABLE_CONSTRAINTS_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINTS_TEST_0900
      * @tc.desc   Verify access to top-level Sendable class instance from Concurrent function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -335,7 +335,7 @@ export default function SendableConstraintsTest(): void {
 
     /**
      * @tc.name   SendableConstraintsTest1000
-     * @tc.number SUB_SENDABLE_CONSTRAINTS_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINTS_TEST_1000
      * @tc.desc   Verify @Sendable decorator on class validates Sendable constraints
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -356,7 +356,7 @@ export default function SendableConstraintsTest(): void {
 
     /**
      * @tc.name   SendableConstraintsTest1100
-     * @tc.number SUB_SENDABLE_CONSTRAINTS_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINTS_TEST_1100
      * @tc.desc   Verify @Sendable decorator on function validates Sendable constraints
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -369,7 +369,7 @@ export default function SendableConstraintsTest(): void {
 
     /**
      * @tc.name   SendableConstraintsTest1200
-     * @tc.number SUB_SENDABLE_CONSTRAINTS_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINTS_TEST_1200
      * @tc.desc   Verify Sendable function type alias works with Sendable function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -383,7 +383,7 @@ export default function SendableConstraintsTest(): void {
 
     /**
      * @tc.name   SendableConstraintsTest1300
-     * @tc.number SUB_SENDABLE_CONSTRAINTS_TEST_1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINTS_TEST_1300
      * @tc.desc   Verify new expression creates Sendable object correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -398,7 +398,7 @@ export default function SendableConstraintsTest(): void {
 
     /**
      * @tc.name   SendableConstraintsTest1400
-     * @tc.number SUB_SENDABLE_CONSTRAINTS_TEST_1400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINTS_TEST_1400
      * @tc.desc   Verify Sendable to non-Sendable type conversion works
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -414,7 +414,7 @@ export default function SendableConstraintsTest(): void {
 
     /**
      * @tc.name   SendableConstraintsTest1500
-     * @tc.number SUB_SENDABLE_CONSTRAINTS_TEST_1500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINTS_TEST_1500
      * @tc.desc   Verify Sendable function type and normal function work together
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -429,7 +429,7 @@ export default function SendableConstraintsTest(): void {
 
     /**
      * @tc.name   SendableConstraintsTest1600
-     * @tc.number SUB_SENDABLE_CONSTRAINTS_TEST_1600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINTS_TEST_1600
      * @tc.desc   Verify Sendable class member functions work correctly after cross-thread transfer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -450,7 +450,7 @@ export default function SendableConstraintsTest(): void {
 
     /**
      * @tc.name   SendableConstraintsTest1700
-     * @tc.number SUB_SENDABLE_CONSTRAINTS_TEST_1700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINTS_TEST_1700
      * @tc.desc   Verify all Sendable class members are explicitly initialized with default values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -466,7 +466,7 @@ export default function SendableConstraintsTest(): void {
 
     /**
      * @tc.name   SendableConstraintsTest1800
-     * @tc.number SUB_SENDABLE_CONSTRAINTS_TEST_1800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINTS_TEST_1800
      * @tc.desc   Verify const enum member works correctly in Sendable class across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

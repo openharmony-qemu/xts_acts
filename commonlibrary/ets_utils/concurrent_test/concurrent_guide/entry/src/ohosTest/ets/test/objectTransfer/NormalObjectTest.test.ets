@@ -152,7 +152,7 @@ export default function NormalObjectTest(): void {
 
     /**
      * @tc.name   NormalObjectTest0100
-     * @tc.number SUB_NORMAL_OBJECT_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_NORMAL_OBJECT_TEST_0100
      * @tc.desc   Verify number/string/boolean basic types serialization transfer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -165,7 +165,7 @@ export default function NormalObjectTest(): void {
 
     /**
      * @tc.name   NormalObjectTest0200
-     * @tc.number SUB_NORMAL_OBJECT_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_NORMAL_OBJECT_TEST_0200
      * @tc.desc   Verify Date object cross-thread serialization via timestamp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -179,7 +179,7 @@ export default function NormalObjectTest(): void {
 
     /**
      * @tc.name   NormalObjectTest0300
-     * @tc.number SUB_NORMAL_OBJECT_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_NORMAL_OBJECT_TEST_0300
      * @tc.desc   Verify Date object returned from worker thread has correct timestamp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -193,7 +193,7 @@ export default function NormalObjectTest(): void {
 
     /**
      * @tc.name   NormalObjectTest0400
-     * @tc.number SUB_NORMAL_OBJECT_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_NORMAL_OBJECT_TEST_0400
      * @tc.desc   Verify RegExp object cross-thread serialization and test operation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -206,7 +206,7 @@ export default function NormalObjectTest(): void {
 
     /**
      * @tc.name   NormalObjectTest0500
-     * @tc.number SUB_NORMAL_OBJECT_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_NORMAL_OBJECT_TEST_0500
      * @tc.desc   Verify RegExp with no match returns false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -219,7 +219,7 @@ export default function NormalObjectTest(): void {
 
     /**
      * @tc.name   NormalObjectTest0600
-     * @tc.number SUB_NORMAL_OBJECT_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_NORMAL_OBJECT_TEST_0600
      * @tc.desc   Verify Array object cross-thread serialization with number elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -233,7 +233,7 @@ export default function NormalObjectTest(): void {
 
     /**
      * @tc.name   NormalObjectTest0700
-     * @tc.number SUB_NORMAL_OBJECT_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_NORMAL_OBJECT_TEST_0700
      * @tc.desc   Verify Array object cross-thread serialization with string elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -247,7 +247,7 @@ export default function NormalObjectTest(): void {
 
     /**
      * @tc.name   NormalObjectTest0800
-     * @tc.number SUB_NORMAL_OBJECT_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_NORMAL_OBJECT_TEST_0800
      * @tc.desc   Verify Map data cross-thread serialization via parallel arrays
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -262,7 +262,7 @@ export default function NormalObjectTest(): void {
 
     /**
      * @tc.name   NormalObjectTest0900
-     * @tc.number SUB_NORMAL_OBJECT_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_NORMAL_OBJECT_TEST_0900
      * @tc.desc   Verify Set data cross-thread serialization via array reconstruction
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -276,7 +276,7 @@ export default function NormalObjectTest(): void {
 
     /**
      * @tc.name   NormalObjectTest1000
-     * @tc.number SUB_NORMAL_OBJECT_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_NORMAL_OBJECT_TEST_1000
      * @tc.desc   Verify ArrayBuffer cross-thread copy serialization
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -293,7 +293,7 @@ export default function NormalObjectTest(): void {
 
     /**
      * @tc.name   NormalObjectTest1100
-     * @tc.number SUB_NORMAL_OBJECT_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_NORMAL_OBJECT_TEST_1100
      * @tc.desc   Verify Int8Array TypedArray cross-thread serialization
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -307,7 +307,7 @@ export default function NormalObjectTest(): void {
 
     /**
      * @tc.name   NormalObjectTest1200
-     * @tc.number SUB_NORMAL_OBJECT_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_NORMAL_OBJECT_TEST_1200
      * @tc.desc   Verify Int32Array TypedArray cross-thread serialization with sum
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -321,7 +321,7 @@ export default function NormalObjectTest(): void {
 
     /**
      * @tc.name   NormalObjectTest1300
-     * @tc.number SUB_NORMAL_OBJECT_TEST_1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_NORMAL_OBJECT_TEST_1300
      * @tc.desc   Verify Float64Array TypedArray cross-thread serialization
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -335,7 +335,7 @@ export default function NormalObjectTest(): void {
 
     /**
      * @tc.name   NormalObjectTest1400
-     * @tc.number SUB_NORMAL_OBJECT_TEST_1400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_NORMAL_OBJECT_TEST_1400
      * @tc.desc   Verify Symbol type cannot be serialized via TaskPool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -351,7 +351,7 @@ export default function NormalObjectTest(): void {
 
     /**
      * @tc.name   NormalObjectTest1500
-     * @tc.number SUB_NORMAL_OBJECT_TEST_1500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_NORMAL_OBJECT_TEST_1500
      * @tc.desc   Verify @Sendable class instance methods preserved across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -365,7 +365,7 @@ export default function NormalObjectTest(): void {
 
     /**
      * @tc.name   NormalObjectTest1600
-     * @tc.number SUB_NORMAL_OBJECT_TEST_1600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_NORMAL_OBJECT_TEST_1600
      * @tc.desc   Verify @Sendable class getValue method works across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -379,7 +379,7 @@ export default function NormalObjectTest(): void {
 
     /**
      * @tc.name   NormalObjectTest1700
-     * @tc.number SUB_NORMAL_OBJECT_TEST_1700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_NORMAL_OBJECT_TEST_1700
      * @tc.desc   Verify deep nested object data serialization via flattened parameters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -392,7 +392,7 @@ export default function NormalObjectTest(): void {
 
     /**
      * @tc.name   NormalObjectTest1800
-     * @tc.number SUB_NORMAL_OBJECT_TEST_1800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_NORMAL_OBJECT_TEST_1800
      * @tc.desc   Verify large number of properties object serialization
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -406,7 +406,7 @@ export default function NormalObjectTest(): void {
 
     /**
      * @tc.name   NormalObjectTest1900
-     * @tc.number SUB_NORMAL_OBJECT_TEST_1900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_NORMAL_OBJECT_TEST_1900
      * @tc.desc   Verify multiple different type arrays passed simultaneously
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -422,7 +422,7 @@ export default function NormalObjectTest(): void {
 
     /**
      * @tc.name   NormalObjectTest2000
-     * @tc.number SUB_NORMAL_OBJECT_TEST_2000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_NORMAL_OBJECT_TEST_2000
      * @tc.desc   Verify multi-thread concurrent passing of same Sendable object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -443,7 +443,7 @@ export default function NormalObjectTest(): void {
 
     /**
      * @tc.name   NormalObjectTest2100
-     * @tc.number SUB_NORMAL_OBJECT_TEST_2100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_NORMAL_OBJECT_TEST_2100
      * @tc.desc   Verify value copy independence - original number unchanged after transfer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -457,7 +457,7 @@ export default function NormalObjectTest(): void {
 
     /**
      * @tc.name   NormalObjectTest2200
-     * @tc.number SUB_NORMAL_OBJECT_TEST_2200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_NORMAL_OBJECT_TEST_2200
      * @tc.desc   Verify empty array serialization transfer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -471,7 +471,7 @@ export default function NormalObjectTest(): void {
 
     /**
      * @tc.name   NormalObjectTest2300
-     * @tc.number SUB_NORMAL_OBJECT_TEST_2300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_NORMAL_OBJECT_TEST_2300
      * @tc.desc   Verify large array serialization with 1000 elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -488,7 +488,7 @@ export default function NormalObjectTest(): void {
 
     /**
      * @tc.name   NormalObjectTest2400
-     * @tc.number SUB_NORMAL_OBJECT_TEST_2400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_NORMAL_OBJECT_TEST_2400
      * @tc.desc   Verify boolean false value serialization correctness
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -501,7 +501,7 @@ export default function NormalObjectTest(): void {
 
     /**
      * @tc.name   NormalObjectTest2500
-     * @tc.number SUB_NORMAL_OBJECT_TEST_2500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_NORMAL_OBJECT_TEST_2500
      * @tc.desc   Verify @Sendable object cross-thread reference modification visible to main thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

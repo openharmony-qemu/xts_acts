@@ -114,7 +114,7 @@ export default function TaskpoolWaterflowTest(): void {
 
     /**
      * @tc.name   TaskpoolWaterflowTest0100
-     * @tc.number SUB_TASKPOOL_WATERFLOW_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_WATERFLOW_TEST_0100
      * @tc.desc   Verify TaskPool database query simulation returns correct number of DataItem objects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -132,7 +132,7 @@ export default function TaskpoolWaterflowTest(): void {
 
     /**
      * @tc.name   TaskpoolWaterflowTest0200
-     * @tc.number SUB_TASKPOOL_WATERFLOW_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_WATERFLOW_TEST_0200
      * @tc.desc   Verify sendData returns page notification from worker thread during data loading
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -141,7 +141,7 @@ export default function TaskpoolWaterflowTest(): void {
     it('TaskpoolWaterflowTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let receivedPages = new collections.Array<number>()
       let task: taskpool.Task = new taskpool.Task(loadDataWithNotifyTask, 1, 10)
-      let dataPromise: Promise<void> = new Promise<void>((resolve: Function) => {
+      let dataPromise: Promise<void> = new Promise<void>((resolve: () => void) => {
         task.onReceiveData((data: Object): void => {
           receivedPages.push(data as number)
           resolve()
@@ -158,7 +158,7 @@ export default function TaskpoolWaterflowTest(): void {
 
     /**
      * @tc.name   TaskpoolWaterflowTest0300
-     * @tc.number SUB_TASKPOOL_WATERFLOW_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_WATERFLOW_TEST_0300
      * @tc.desc   Verify lazy loading simulation with 3 sequential page loads returns correct data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -180,7 +180,7 @@ export default function TaskpoolWaterflowTest(): void {
 
     /**
      * @tc.name   TaskpoolWaterflowTest0400
-     * @tc.number SUB_TASKPOOL_WATERFLOW_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_WATERFLOW_TEST_0400
      * @tc.desc   Verify load more on scroll simulation appends new data correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -210,7 +210,7 @@ export default function TaskpoolWaterflowTest(): void {
 
     /**
      * @tc.name   TaskpoolWaterflowTest0500
-     * @tc.number SUB_TASKPOOL_WATERFLOW_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_WATERFLOW_TEST_0500
      * @tc.desc   Verify empty data query returns empty collections.Array with zero length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -225,7 +225,7 @@ export default function TaskpoolWaterflowTest(): void {
 
     /**
      * @tc.name   TaskpoolWaterflowTest0600
-     * @tc.number SUB_TASKPOOL_WATERFLOW_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_WATERFLOW_TEST_0600
      * @tc.desc   Verify large data query with 5000 items returns correct total count
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -239,7 +239,7 @@ export default function TaskpoolWaterflowTest(): void {
 
     /**
      * @tc.name   TaskpoolWaterflowTest0700
-     * @tc.number SUB_TASKPOOL_WATERFLOW_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_WATERFLOW_TEST_0700
      * @tc.desc   Verify database query exception is caught by execute promise rejection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -260,7 +260,7 @@ export default function TaskpoolWaterflowTest(): void {
 
     /**
      * @tc.name   TaskpoolWaterflowTest0800
-     * @tc.number SUB_TASKPOOL_WATERFLOW_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_WATERFLOW_TEST_0800
      * @tc.desc   Verify scroll-triggered data loading returns correct page data by index
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -278,7 +278,7 @@ export default function TaskpoolWaterflowTest(): void {
 
     /**
      * @tc.name   TaskpoolWaterflowTest0900
-     * @tc.number SUB_TASKPOOL_WATERFLOW_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_WATERFLOW_TEST_0900
      * @tc.desc   Verify concurrent page loading with Promise.all loads 5 pages simultaneously
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -301,7 +301,7 @@ export default function TaskpoolWaterflowTest(): void {
 
     /**
      * @tc.name   TaskpoolWaterflowTest1000
-     * @tc.number SUB_TASKPOOL_WATERFLOW_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_WATERFLOW_TEST_1000
      * @tc.desc   Verify database query with offset pagination returns correct sliced data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -319,7 +319,7 @@ export default function TaskpoolWaterflowTest(): void {
 
     /**
      * @tc.name   TaskpoolWaterflowTest1100
-     * @tc.number SUB_TASKPOOL_WATERFLOW_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_WATERFLOW_TEST_1100
      * @tc.desc   Verify multiple sequential load-more operations accumulate data correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -347,7 +347,7 @@ export default function TaskpoolWaterflowTest(): void {
 
     /**
      * @tc.name   TaskpoolWaterflowTest1200
-     * @tc.number SUB_TASKPOOL_WATERFLOW_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_WATERFLOW_TEST_1200
      * @tc.desc   Verify sendData progress notification during multi-page loading scenario
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -357,7 +357,7 @@ export default function TaskpoolWaterflowTest(): void {
       let loadedPages = new collections.Array<number>()
 
       let task1: taskpool.Task = new taskpool.Task(loadDataWithNotifyTask, 0, 10)
-      let task1Promise: Promise<void> = new Promise<void>((resolve: Function) => {
+      let task1Promise: Promise<void> = new Promise<void>((resolve: () => void) => {
         task1.onReceiveData((data: Object): void => {
           loadedPages.push(data as number)
           resolve()
@@ -367,7 +367,7 @@ export default function TaskpoolWaterflowTest(): void {
       await task1Promise
 
       let task2: taskpool.Task = new taskpool.Task(loadDataWithNotifyTask, 1, 10)
-      let task2Promise: Promise<void> = new Promise<void>((resolve: Function) => {
+      let task2Promise: Promise<void> = new Promise<void>((resolve: () => void) => {
         task2.onReceiveData((data: Object): void => {
           loadedPages.push(data as number)
           resolve()

@@ -52,7 +52,7 @@ export default function AsyncLockTest(): void {
 
     /**
      * @tc.name   AsyncLockTest0100
-     * @tc.number SUB_ARKTS_UTILS_ASYNCLOCK_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_ASYNCLOCK_TEST_0100
      * @tc.desc   Verify AsyncLock constructor creates a valid lock object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -69,7 +69,7 @@ export default function AsyncLockTest(): void {
 
     /**
      * @tc.name   AsyncLockTest0200
-     * @tc.number SUB_ARKTS_UTILS_ASYNCLOCK_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_ASYNCLOCK_TEST_0200
      * @tc.desc   Verify AsyncLock.lockAsync() executes callback and returns correct result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -85,7 +85,7 @@ export default function AsyncLockTest(): void {
 
     /**
      * @tc.name   AsyncLockTest0300
-     * @tc.number SUB_ARKTS_UTILS_ASYNCLOCK_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_ASYNCLOCK_TEST_0300
      * @tc.desc   Verify AsyncLock.lockAsync() passes return value from callback to caller
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -102,7 +102,7 @@ export default function AsyncLockTest(): void {
 
     /**
      * @tc.name   AsyncLockTest0400
-     * @tc.number SUB_ARKTS_UTILS_ASYNCLOCK_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_ASYNCLOCK_TEST_0400
      * @tc.desc   Verify AsyncLock can be passed across TaskPool threads and maintains mutex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -121,7 +121,7 @@ export default function AsyncLockTest(): void {
 
     /**
      * @tc.name   AsyncLockTest0500
-     * @tc.number SUB_ARKTS_UTILS_ASYNCLOCK_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_ASYNCLOCK_TEST_0500
      * @tc.desc   Verify AsyncLock auto-releases after callback completes allowing sequential acquisition
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -145,7 +145,7 @@ export default function AsyncLockTest(): void {
 
     /**
      * @tc.name   AsyncLockTest0600
-     * @tc.number SUB_ARKTS_UTILS_ASYNCLOCK_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_ASYNCLOCK_TEST_0600
      * @tc.desc   Verify AsyncLock protects shared counter with 10 concurrent tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -164,7 +164,7 @@ export default function AsyncLockTest(): void {
 
     /**
      * @tc.name   AsyncLockTest0700
-     * @tc.number SUB_ARKTS_UTILS_ASYNCLOCK_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_ASYNCLOCK_TEST_0700
      * @tc.desc   Verify AsyncLock sequential usage with multiple acquire-release cycles
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -186,7 +186,7 @@ export default function AsyncLockTest(): void {
 
     /**
      * @tc.name   AsyncLockTest0800
-     * @tc.number SUB_ARKTS_UTILS_ASYNCLOCK_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_ASYNCLOCK_TEST_0800
      * @tc.desc   Verify AsyncLock.lockAsync() with empty callback returning undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -204,7 +204,7 @@ export default function AsyncLockTest(): void {
 
     /**
      * @tc.name   AsyncLockTest0900
-     * @tc.number SUB_ARKTS_UTILS_ASYNCLOCK_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_ASYNCLOCK_TEST_0900
      * @tc.desc   Verify AsyncLock releases lock after callback throws exception
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -234,7 +234,7 @@ export default function AsyncLockTest(): void {
 
     /**
      * @tc.name   AsyncLockTest1000
-     * @tc.number SUB_ARKTS_UTILS_ASYNCLOCK_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_ASYNCLOCK_TEST_1000
      * @tc.desc   Verify AsyncLock.lockAsync() without await maintains correct execution order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -258,7 +258,7 @@ export default function AsyncLockTest(): void {
 
     /**
      * @tc.name   AsyncLockTest1100
-     * @tc.number SUB_ARKTS_UTILS_ASYNCLOCK_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_ASYNCLOCK_TEST_1100
      * @tc.desc   Verify AsyncLock with 100 concurrent tasks for stress mutex correctness
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -277,7 +277,7 @@ export default function AsyncLockTest(): void {
 
     /**
      * @tc.name   AsyncLockTest1200
-     * @tc.number SUB_ARKTS_UTILS_ASYNCLOCK_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_ASYNCLOCK_TEST_1200
      * @tc.desc   Verify AsyncLock lifecycle stability after repeated acquire-release operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -298,7 +298,7 @@ export default function AsyncLockTest(): void {
 
     /**
      * @tc.name   AsyncLockTest1300
-     * @tc.number SUB_ARKTS_UTILS_ASYNCLOCK_TEST_1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_ASYNCLOCK_TEST_1300
      * @tc.desc   Verify AsyncLock with concurrent tasks each performing multiple increments
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

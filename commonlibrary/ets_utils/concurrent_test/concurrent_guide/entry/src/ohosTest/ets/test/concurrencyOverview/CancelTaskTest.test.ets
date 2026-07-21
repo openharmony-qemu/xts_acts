@@ -52,7 +52,7 @@ export default function CancelTaskTest(): void {
 
     /**
      * @tc.name   CancelTaskTest0100
-     * @tc.number SUB_CANCEL_TASK_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CANCEL_TASK_TEST_0100
      * @tc.desc   Verify Task object taskId property is a valid number
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -66,7 +66,7 @@ export default function CancelTaskTest(): void {
 
     /**
      * @tc.name   CancelTaskTest0200
-     * @tc.number SUB_CANCEL_TASK_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CANCEL_TASK_TEST_0200
      * @tc.desc   Verify taskpool.cancel cancels task by taskId before execution
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -91,7 +91,7 @@ export default function CancelTaskTest(): void {
 
     /**
      * @tc.name   CancelTaskTest0300
-     * @tc.number SUB_CANCEL_TASK_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CANCEL_TASK_TEST_0300
      * @tc.desc   Verify Sendable class can store and retrieve task ID correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -109,7 +109,7 @@ export default function CancelTaskTest(): void {
 
     /**
      * @tc.name   CancelTaskTest0400
-     * @tc.number SUB_CANCEL_TASK_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CANCEL_TASK_TEST_0400
      * @tc.desc   Verify taskpool.executeDelayed executes task after specified delay
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -128,7 +128,7 @@ export default function CancelTaskTest(): void {
 
     /**
      * @tc.name   CancelTaskTest0500
-     * @tc.number SUB_CANCEL_TASK_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CANCEL_TASK_TEST_0500
      * @tc.desc   Verify executing a canceled task throws task has been canceled exception
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

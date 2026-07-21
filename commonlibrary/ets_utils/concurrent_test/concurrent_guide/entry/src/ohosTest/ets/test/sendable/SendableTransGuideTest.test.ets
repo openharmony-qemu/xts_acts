@@ -101,7 +101,7 @@ export default function SendableTransGuideTest(): void {
 
     /**
      * @tc.name   SendableTransGuideTest0100
-     * @tc.number SUB_SENDABLE_TRANS_GUIDE_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_TRANS_GUIDE_TEST_0100
      * @tc.desc   Verify ASON stringify and parse round-trip for Sendable object deserialization
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -125,7 +125,7 @@ export default function SendableTransGuideTest(): void {
 
     /**
      * @tc.name   SendableTransGuideTest0200
-     * @tc.number SUB_SENDABLE_TRANS_GUIDE_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_TRANS_GUIDE_TEST_0200
      * @tc.desc   Verify Sendable object can be transferred and processed in TaskPool task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -146,7 +146,7 @@ export default function SendableTransGuideTest(): void {
 
     /**
      * @tc.name   SendableTransGuideTest0300
-     * @tc.number SUB_SENDABLE_TRANS_GUIDE_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_TRANS_GUIDE_TEST_0300
      * @tc.desc   Verify ASON parse restores Sendable object data from JSON string correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -168,7 +168,7 @@ export default function SendableTransGuideTest(): void {
 
     /**
      * @tc.name   SendableTransGuideTest0400
-     * @tc.number SUB_SENDABLE_TRANS_GUIDE_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_TRANS_GUIDE_TEST_0400
      * @tc.desc   Verify ArkTSUtils isSendable correctly identifies Sendable objects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -184,7 +184,7 @@ export default function SendableTransGuideTest(): void {
 
     /**
      * @tc.name   SendableTransGuideTest0500
-     * @tc.number SUB_SENDABLE_TRANS_GUIDE_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_TRANS_GUIDE_TEST_0500
      * @tc.desc   Verify collections container types transfer correctly across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -202,7 +202,7 @@ export default function SendableTransGuideTest(): void {
 
     /**
      * @tc.name   SendableTransGuideTest0600
-     * @tc.number SUB_SENDABLE_TRANS_GUIDE_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_TRANS_GUIDE_TEST_0600
      * @tc.desc   Verify nested Sendable objects serialize and transfer correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -220,7 +220,7 @@ export default function SendableTransGuideTest(): void {
 
     /**
      * @tc.name   SendableTransGuideTest0700
-     * @tc.number SUB_SENDABLE_TRANS_GUIDE_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_TRANS_GUIDE_TEST_0700
      * @tc.desc   Verify empty Sendable object transfers correctly with default values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -236,7 +236,7 @@ export default function SendableTransGuideTest(): void {
 
     /**
      * @tc.name   SendableTransGuideTest0800
-     * @tc.number SUB_SENDABLE_TRANS_GUIDE_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_TRANS_GUIDE_TEST_0800
      * @tc.desc   Verify ASON parse throws error for invalid JSON string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -257,7 +257,7 @@ export default function SendableTransGuideTest(): void {
 
     /**
      * @tc.name   SendableTransGuideTest0900
-     * @tc.number SUB_SENDABLE_TRANS_GUIDE_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_TRANS_GUIDE_TEST_0900
      * @tc.desc   Verify ASON stringify handles nested Sendable objects correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -279,7 +279,7 @@ export default function SendableTransGuideTest(): void {
 
     /**
      * @tc.name   SendableTransGuideTest1000
-     * @tc.number SUB_SENDABLE_TRANS_GUIDE_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_TRANS_GUIDE_TEST_1000
      * @tc.desc   Verify Sendable object returned from TaskPool task maintains data integrity
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -301,7 +301,7 @@ export default function SendableTransGuideTest(): void {
 
     /**
      * @tc.name   SendableTransGuideTest1100
-     * @tc.number SUB_SENDABLE_TRANS_GUIDE_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_TRANS_GUIDE_TEST_1100
      * @tc.desc   Verify ASON stringify produces valid JSON for Sendable with collections Array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -323,7 +323,7 @@ export default function SendableTransGuideTest(): void {
 
     /**
      * @tc.name   SendableTransGuideTest1200
-     * @tc.number SUB_SENDABLE_TRANS_GUIDE_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_TRANS_GUIDE_TEST_1200
      * @tc.desc   Verify multiple concurrent TaskPool tasks each process different Sendable objects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -350,7 +350,7 @@ export default function SendableTransGuideTest(): void {
 
     /**
      * @tc.name   SendableTransGuideTest1300
-     * @tc.number SUB_SENDABLE_TRANS_GUIDE_TEST_1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_TRANS_GUIDE_TEST_1300
      * @tc.desc   Verify Sendable object data survives ASON round-trip with all field types
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -374,7 +374,7 @@ export default function SendableTransGuideTest(): void {
 
     /**
      * @tc.name   SendableTransGuideTest1400
-     * @tc.number SUB_SENDABLE_TRANS_GUIDE_TEST_1400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_TRANS_GUIDE_TEST_1400
      * @tc.desc   Verify isSendable returns false for non-Sendable plain objects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -387,7 +387,7 @@ export default function SendableTransGuideTest(): void {
 
     /**
      * @tc.name   SendableTransGuideTest1500
-     * @tc.number SUB_SENDABLE_TRANS_GUIDE_TEST_1500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_TRANS_GUIDE_TEST_1500
      * @tc.desc   Verify TaskPool task returns Sendable object that passes isSendable check
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

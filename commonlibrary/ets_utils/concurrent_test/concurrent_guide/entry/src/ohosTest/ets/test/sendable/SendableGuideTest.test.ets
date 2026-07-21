@@ -113,7 +113,7 @@ export default function SendableGuideTest(): void {
 
     /**
      * @tc.name   SendableGuideTest0100
-     * @tc.number SUB_SENDABLE_GUIDE_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_GUIDE_TEST_0100
      * @tc.desc   Verify cross-thread large data transfer with collections.Array over 100KB
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -133,7 +133,7 @@ export default function SendableGuideTest(): void {
 
     /**
      * @tc.name   SendableGuideTest0200
-     * @tc.number SUB_SENDABLE_GUIDE_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_GUIDE_TEST_0200
      * @tc.desc   Verify Sendable class with methods can be passed and invoked across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -150,7 +150,7 @@ export default function SendableGuideTest(): void {
 
     /**
      * @tc.name   SendableGuideTest0300
-     * @tc.number SUB_SENDABLE_GUIDE_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_GUIDE_TEST_0300
      * @tc.desc   Verify TaskPool data transfer with taskpool.Task carrying Sendable object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -168,7 +168,7 @@ export default function SendableGuideTest(): void {
 
     /**
      * @tc.name   SendableGuideTest0400
-     * @tc.number SUB_SENDABLE_GUIDE_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_GUIDE_TEST_0400
      * @tc.desc   Verify ASON stringify and parse work with Sendable objects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -191,7 +191,7 @@ export default function SendableGuideTest(): void {
 
     /**
      * @tc.name   SendableGuideTest0500
-     * @tc.number SUB_SENDABLE_GUIDE_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_GUIDE_TEST_0500
      * @tc.desc   Verify nested Sendable objects transfer correctly across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -209,7 +209,7 @@ export default function SendableGuideTest(): void {
 
     /**
      * @tc.name   SendableGuideTest0600
-     * @tc.number SUB_SENDABLE_GUIDE_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_GUIDE_TEST_0600
      * @tc.desc   Verify multiple TaskPool tasks concurrently access same Sendable object with AsyncLock
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -231,7 +231,7 @@ export default function SendableGuideTest(): void {
 
     /**
      * @tc.name   SendableGuideTest0700
-     * @tc.number SUB_SENDABLE_GUIDE_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_GUIDE_TEST_0700
      * @tc.desc   Verify Sendable object reference identity preserved across thread boundary
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -251,7 +251,7 @@ export default function SendableGuideTest(): void {
 
     /**
      * @tc.name   SendableGuideTest0800
-     * @tc.number SUB_SENDABLE_GUIDE_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_GUIDE_TEST_0800
      * @tc.desc   Verify large data transfer performance baseline with Sendable reference passing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -272,7 +272,7 @@ export default function SendableGuideTest(): void {
 
     /**
      * @tc.name   SendableGuideTest0900
-     * @tc.number SUB_SENDABLE_GUIDE_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_GUIDE_TEST_0900
      * @tc.desc   Verify Sendable class method getValue works correctly after cross-thread transfer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -290,7 +290,7 @@ export default function SendableGuideTest(): void {
 
     /**
      * @tc.name   SendableGuideTest1000
-     * @tc.number SUB_SENDABLE_GUIDE_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_GUIDE_TEST_1000
      * @tc.desc   Verify ASON round-trip preserves Sendable nested object data integrity
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

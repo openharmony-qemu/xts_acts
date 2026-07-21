@@ -129,7 +129,7 @@ export default function ConcurrentLoadingModulesTest(): void {
 
     /**
      * @tc.name   ConcurrentLoadingModulesTest0100
-     * @tc.number SUB_CONCURRENT_LOADING_MODULES_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_LOADING_MODULES_TEST_0100
      * @tc.desc   Verify @Sendable class Calculator definition and static init method
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -144,7 +144,7 @@ export default function ConcurrentLoadingModulesTest(): void {
 
     /**
      * @tc.name   ConcurrentLoadingModulesTest0200
-     * @tc.number SUB_CONCURRENT_LOADING_MODULES_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_LOADING_MODULES_TEST_0200
      * @tc.desc   Verify Calculator business methods add/sub/mul/div return correct results
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -161,7 +161,7 @@ export default function ConcurrentLoadingModulesTest(): void {
 
     /**
      * @tc.name   ConcurrentLoadingModulesTest0300
-     * @tc.number SUB_CONCURRENT_LOADING_MODULES_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_LOADING_MODULES_TEST_0300
      * @tc.desc   Verify collections.Array usage in Sendable class for history tracking
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -177,7 +177,7 @@ export default function ConcurrentLoadingModulesTest(): void {
 
     /**
      * @tc.name   ConcurrentLoadingModulesTest0400
-     * @tc.number SUB_CONCURRENT_LOADING_MODULES_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_LOADING_MODULES_TEST_0400
      * @tc.desc   Verify @Concurrent function with taskpool.execute returns Sendable instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -190,7 +190,7 @@ export default function ConcurrentLoadingModulesTest(): void {
 
     /**
      * @tc.name   ConcurrentLoadingModulesTest0500
-     * @tc.number SUB_CONCURRENT_LOADING_MODULES_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_LOADING_MODULES_TEST_0500
      * @tc.desc   Verify Promise return handling with await for concurrent task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -203,7 +203,7 @@ export default function ConcurrentLoadingModulesTest(): void {
 
     /**
      * @tc.name   ConcurrentLoadingModulesTest0600
-     * @tc.number SUB_CONCURRENT_LOADING_MODULES_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_LOADING_MODULES_TEST_0600
      * @tc.desc   Verify multiple concurrent tasks parallel execution via Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -220,7 +220,7 @@ export default function ConcurrentLoadingModulesTest(): void {
 
     /**
      * @tc.name   ConcurrentLoadingModulesTest0700
-     * @tc.number SUB_CONCURRENT_LOADING_MODULES_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_LOADING_MODULES_TEST_0700
      * @tc.desc   Verify parallel execution of multiple tasks returns correct results
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -239,7 +239,7 @@ export default function ConcurrentLoadingModulesTest(): void {
 
     /**
      * @tc.name   ConcurrentLoadingModulesTest0800
-     * @tc.number SUB_CONCURRENT_LOADING_MODULES_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_LOADING_MODULES_TEST_0800
      * @tc.desc   Verify main thread uses Sendable Calculator module directly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -254,7 +254,7 @@ export default function ConcurrentLoadingModulesTest(): void {
 
     /**
      * @tc.name   ConcurrentLoadingModulesTest0900
-     * @tc.number SUB_CONCURRENT_LOADING_MODULES_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_LOADING_MODULES_TEST_0900
      * @tc.desc   Verify TimerSdk countdown method execution
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -272,7 +272,7 @@ export default function ConcurrentLoadingModulesTest(): void {
 
     /**
      * @tc.name   ConcurrentLoadingModulesTest1000
-     * @tc.number SUB_CONCURRENT_LOADING_MODULES_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_LOADING_MODULES_TEST_1000
      * @tc.desc   Verify cross-thread concurrent task with SharedCounter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -287,7 +287,7 @@ export default function ConcurrentLoadingModulesTest(): void {
 
     /**
      * @tc.name   ConcurrentLoadingModulesTest1100
-     * @tc.number SUB_CONCURRENT_LOADING_MODULES_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_LOADING_MODULES_TEST_1100
      * @tc.desc   Verify EmptyModule Sendable class creation and default value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -300,7 +300,7 @@ export default function ConcurrentLoadingModulesTest(): void {
 
     /**
      * @tc.name   ConcurrentLoadingModulesTest1200
-     * @tc.number SUB_CONCURRENT_LOADING_MODULES_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_LOADING_MODULES_TEST_1200
      * @tc.desc   Verify Sendable class with large history array data storage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -317,7 +317,7 @@ export default function ConcurrentLoadingModulesTest(): void {
 
     /**
      * @tc.name   ConcurrentLoadingModulesTest1300
-     * @tc.number SUB_CONCURRENT_LOADING_MODULES_TEST_1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_LOADING_MODULES_TEST_1300
      * @tc.desc   Verify concurrent function throwing exception causes Promise reject
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -337,7 +337,7 @@ export default function ConcurrentLoadingModulesTest(): void {
 
     /**
      * @tc.name   ConcurrentLoadingModulesTest1400
-     * @tc.number SUB_CONCURRENT_LOADING_MODULES_TEST_1400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_LOADING_MODULES_TEST_1400
      * @tc.desc   Verify Sendable Calculator has correct method types
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -354,7 +354,7 @@ export default function ConcurrentLoadingModulesTest(): void {
 
     /**
      * @tc.name   ConcurrentLoadingModulesTest1500
-     * @tc.number SUB_CONCURRENT_LOADING_MODULES_TEST_1500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_LOADING_MODULES_TEST_1500
      * @tc.desc   Verify cold start time comparison between direct and concurrent execution
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -375,7 +375,7 @@ export default function ConcurrentLoadingModulesTest(): void {
 
     /**
      * @tc.name   ConcurrentLoadingModulesTest1600
-     * @tc.number SUB_CONCURRENT_LOADING_MODULES_TEST_1600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_LOADING_MODULES_TEST_1600
      * @tc.desc   Verify parallel efficiency with multiple concurrent tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -393,7 +393,7 @@ export default function ConcurrentLoadingModulesTest(): void {
 
     /**
      * @tc.name   ConcurrentLoadingModulesTest1700
-     * @tc.number SUB_CONCURRENT_LOADING_MODULES_TEST_1700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_LOADING_MODULES_TEST_1700
      * @tc.desc   Verify SharedCounter used across multiple concurrent TaskPool tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -409,7 +409,7 @@ export default function ConcurrentLoadingModulesTest(): void {
 
     /**
      * @tc.name   ConcurrentLoadingModulesTest1800
-     * @tc.number SUB_CONCURRENT_LOADING_MODULES_TEST_1800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_LOADING_MODULES_TEST_1800
      * @tc.desc   Verify frequent concurrent task execution stability
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -424,7 +424,7 @@ export default function ConcurrentLoadingModulesTest(): void {
 
     /**
      * @tc.name   ConcurrentLoadingModulesTest1900
-     * @tc.number SUB_CONCURRENT_LOADING_MODULES_TEST_1900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_LOADING_MODULES_TEST_1900
      * @tc.desc   Verify TimerSdk cross-thread data consistency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -440,7 +440,7 @@ export default function ConcurrentLoadingModulesTest(): void {
 
     /**
      * @tc.name   ConcurrentLoadingModulesTest2000
-     * @tc.number SUB_CONCURRENT_LOADING_MODULES_TEST_2000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_LOADING_MODULES_TEST_2000
      * @tc.desc   Verify concurrent task number limit handling with 50 parallel tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

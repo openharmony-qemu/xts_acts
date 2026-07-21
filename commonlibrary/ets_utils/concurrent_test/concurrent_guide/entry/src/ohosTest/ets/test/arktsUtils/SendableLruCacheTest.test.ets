@@ -27,7 +27,7 @@ export default function SendableLruCacheTest(): void {
 
     /**
      * @tc.name   SendableLruCacheTest0100
-     * @tc.number SUB_ARKTS_UTILS_SENDABLELRUCACHE_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_SENDABLELRUCACHE_TEST_0100
      * @tc.desc   Verify SendableLruCache constructor creates empty cache with specified capacity
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -41,7 +41,7 @@ export default function SendableLruCacheTest(): void {
 
     /**
      * @tc.name   SendableLruCacheTest0200
-     * @tc.number SUB_ARKTS_UTILS_SENDABLELRUCACHE_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_SENDABLELRUCACHE_TEST_0200
      * @tc.desc   Verify SendableLruCache put and get operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -59,7 +59,7 @@ export default function SendableLruCacheTest(): void {
 
     /**
      * @tc.name   SendableLruCacheTest0300
-     * @tc.number SUB_ARKTS_UTILS_SENDABLELRUCACHE_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_SENDABLELRUCACHE_TEST_0300
      * @tc.desc   Verify SendableLruCache keys returns all keys
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -77,7 +77,7 @@ export default function SendableLruCacheTest(): void {
 
     /**
      * @tc.name   SendableLruCacheTest0400
-     * @tc.number SUB_ARKTS_UTILS_SENDABLELRUCACHE_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_SENDABLELRUCACHE_TEST_0400
      * @tc.desc   Verify SendableLruCache remove and clear operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -99,7 +99,7 @@ export default function SendableLruCacheTest(): void {
 
     /**
      * @tc.name   SendableLruCacheTest0500
-     * @tc.number SUB_ARKTS_UTILS_SENDABLELRUCACHE_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_SENDABLELRUCACHE_TEST_0500
      * @tc.desc   Verify SendableLruCache LRU eviction when exceeding capacity
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -127,7 +127,7 @@ export default function SendableLruCacheTest(): void {
 
     /**
      * @tc.name   SendableLruCacheTest0600
-     * @tc.number SUB_ARKTS_UTILS_SENDABLELRUCACHE_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_SENDABLELRUCACHE_TEST_0600
      * @tc.desc   Verify SendableLruCache get updates access order for LRU eviction
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -156,7 +156,7 @@ export default function SendableLruCacheTest(): void {
 
     /**
      * @tc.name   SendableLruCacheTest0700
-     * @tc.number SUB_ARKTS_UTILS_SENDABLELRUCACHE_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_SENDABLELRUCACHE_TEST_0700
      * @tc.desc   Verify SendableLruCache contains returns false for non-existent keys
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -172,7 +172,7 @@ export default function SendableLruCacheTest(): void {
 
     /**
      * @tc.name   SendableLruCacheTest0800
-     * @tc.number SUB_ARKTS_UTILS_SENDABLELRUCACHE_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_SENDABLELRUCACHE_TEST_0800
      * @tc.desc   Verify SendableLruCache put overwrites existing key value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

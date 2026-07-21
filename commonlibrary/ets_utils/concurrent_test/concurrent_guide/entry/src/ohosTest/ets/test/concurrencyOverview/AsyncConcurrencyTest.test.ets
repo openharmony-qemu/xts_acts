@@ -26,7 +26,7 @@ export default function AsyncConcurrencyTest(): void {
 
     /**
      * @tc.name   AsyncConcurrencyTest0100
-     * @tc.number SUB_ASYNC_CONCURRENCY_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASYNC_CONCURRENCY_TEST_0100
      * @tc.desc   Verify Promise constructor creates a valid Promise object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -43,7 +43,7 @@ export default function AsyncConcurrencyTest(): void {
 
     /**
      * @tc.name   AsyncConcurrencyTest0200
-     * @tc.number SUB_ASYNC_CONCURRENCY_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASYNC_CONCURRENCY_TEST_0200
      * @tc.desc   Verify Promise is in pending state after creation without resolve/reject
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -56,7 +56,7 @@ export default function AsyncConcurrencyTest(): void {
 
     /**
      * @tc.name   AsyncConcurrencyTest0300
-     * @tc.number SUB_ASYNC_CONCURRENCY_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASYNC_CONCURRENCY_TEST_0300
      * @tc.desc   Verify Promise transitions to fulfilled state after resolve
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -72,7 +72,7 @@ export default function AsyncConcurrencyTest(): void {
 
     /**
      * @tc.name   AsyncConcurrencyTest0400
-     * @tc.number SUB_ASYNC_CONCURRENCY_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASYNC_CONCURRENCY_TEST_0400
      * @tc.desc   Verify Promise transitions to rejected state after reject
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -95,7 +95,7 @@ export default function AsyncConcurrencyTest(): void {
 
     /**
      * @tc.name   AsyncConcurrencyTest0500
-     * @tc.number SUB_ASYNC_CONCURRENCY_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASYNC_CONCURRENCY_TEST_0500
      * @tc.desc   Verify Promise.then with single parameter handles fulfilled state
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -111,7 +111,7 @@ export default function AsyncConcurrencyTest(): void {
 
     /**
      * @tc.name   AsyncConcurrencyTest0600
-     * @tc.number SUB_ASYNC_CONCURRENCY_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASYNC_CONCURRENCY_TEST_0600
      * @tc.desc   Verify Promise.then with dual parameters handles fulfilled and rejected states
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -135,7 +135,7 @@ export default function AsyncConcurrencyTest(): void {
 
     /**
      * @tc.name   AsyncConcurrencyTest0700
-     * @tc.number SUB_ASYNC_CONCURRENCY_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASYNC_CONCURRENCY_TEST_0700
      * @tc.desc   Verify Promise.catch captures rejected state exception
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -151,7 +151,7 @@ export default function AsyncConcurrencyTest(): void {
 
     /**
      * @tc.name   AsyncConcurrencyTest0800
-     * @tc.number SUB_ASYNC_CONCURRENCY_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASYNC_CONCURRENCY_TEST_0800
      * @tc.desc   Verify Promise.finally executes regardless of success or failure
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -180,7 +180,7 @@ export default function AsyncConcurrencyTest(): void {
 
     /**
      * @tc.name   AsyncConcurrencyTest0900
-     * @tc.number SUB_ASYNC_CONCURRENCY_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASYNC_CONCURRENCY_TEST_0900
      * @tc.desc   Verify async function declaration returns a Promise object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -198,7 +198,7 @@ export default function AsyncConcurrencyTest(): void {
 
     /**
      * @tc.name   AsyncConcurrencyTest1000
-     * @tc.number SUB_ASYNC_CONCURRENCY_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASYNC_CONCURRENCY_TEST_1000
      * @tc.desc   Verify await pauses execution until Promise resolves
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -215,7 +215,7 @@ export default function AsyncConcurrencyTest(): void {
 
     /**
      * @tc.name   AsyncConcurrencyTest1100
-     * @tc.number SUB_ASYNC_CONCURRENCY_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASYNC_CONCURRENCY_TEST_1100
      * @tc.desc   Verify async function exception triggers Promise rejected state
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -238,7 +238,7 @@ export default function AsyncConcurrencyTest(): void {
 
     /**
      * @tc.name   AsyncConcurrencyTest1200
-     * @tc.number SUB_ASYNC_CONCURRENCY_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASYNC_CONCURRENCY_TEST_1200
      * @tc.desc   Verify try/catch captures await exception inside async function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -258,7 +258,7 @@ export default function AsyncConcurrencyTest(): void {
 
     /**
      * @tc.name   AsyncConcurrencyTest1300
-     * @tc.number SUB_ASYNC_CONCURRENCY_TEST_1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASYNC_CONCURRENCY_TEST_1300
      * @tc.desc   Verify multiple await statements execute sequentially
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -66,7 +66,7 @@ export default function ConcurrencyOverviewTest(): void {
 
     /**
      * @tc.name   ConcurrencyOverviewTest0100
-     * @tc.number SUB_CONCURRENCY_OVERVIEW_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENCY_OVERVIEW_TEST_0100
      * @tc.desc   Verify async/await provides async concurrency for I/O tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -83,7 +83,7 @@ export default function ConcurrencyOverviewTest(): void {
 
     /**
      * @tc.name   ConcurrencyOverviewTest0200
-     * @tc.number SUB_CONCURRENCY_OVERVIEW_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENCY_OVERVIEW_TEST_0200
      * @tc.desc   Verify TaskPool provides multi-thread concurrency for CPU tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -97,7 +97,7 @@ export default function ConcurrencyOverviewTest(): void {
 
     /**
      * @tc.name   ConcurrencyOverviewTest0300
-     * @tc.number SUB_CONCURRENCY_OVERVIEW_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENCY_OVERVIEW_TEST_0300
      * @tc.desc   Verify Actor model with independent memory and data serialization
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -113,7 +113,7 @@ export default function ConcurrencyOverviewTest(): void {
 
     /**
      * @tc.name   ConcurrencyOverviewTest0400
-     * @tc.number SUB_CONCURRENCY_OVERVIEW_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENCY_OVERVIEW_TEST_0400
      * @tc.desc   Verify taskpool.Task creation and taskpool.execute execution
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -127,7 +127,7 @@ export default function ConcurrencyOverviewTest(): void {
 
     /**
      * @tc.name   ConcurrencyOverviewTest0500
-     * @tc.number SUB_CONCURRENCY_OVERVIEW_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENCY_OVERVIEW_TEST_0500
      * @tc.desc   Verify TaskPool task error handling with try/catch
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -152,7 +152,7 @@ export default function ConcurrencyOverviewTest(): void {
 
     /**
      * @tc.name   ConcurrencyOverviewTest0600
-     * @tc.number SUB_CONCURRENCY_OVERVIEW_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENCY_OVERVIEW_TEST_0600
      * @tc.desc   Verify TaskPool serialization failure with non-serializable input
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

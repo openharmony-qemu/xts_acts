@@ -82,7 +82,7 @@ export default function SendableDefineTest(): void {
 
     /**
      * @tc.name   SendableDefineTest0100
-     * @tc.number SUB_SENDABLE_DEFINE_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_DEFINE_TEST_0100
      * @tc.desc   Verify Sendable class definition with constructor creates valid object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -97,7 +97,7 @@ export default function SendableDefineTest(): void {
 
     /**
      * @tc.name   SendableDefineTest0200
-     * @tc.number SUB_SENDABLE_DEFINE_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_DEFINE_TEST_0200
      * @tc.desc   Verify Sendable class constructor with default empty constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -111,7 +111,7 @@ export default function SendableDefineTest(): void {
 
     /**
      * @tc.name   SendableDefineTest0300
-     * @tc.number SUB_SENDABLE_DEFINE_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_DEFINE_TEST_0300
      * @tc.desc   Verify Sendable object getter method returns correct value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -125,7 +125,7 @@ export default function SendableDefineTest(): void {
 
     /**
      * @tc.name   SendableDefineTest0400
-     * @tc.number SUB_SENDABLE_DEFINE_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_DEFINE_TEST_0400
      * @tc.desc   Verify Sendable object setter method updates value correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -141,7 +141,7 @@ export default function SendableDefineTest(): void {
 
     /**
      * @tc.name   SendableDefineTest0500
-     * @tc.number SUB_SENDABLE_DEFINE_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_DEFINE_TEST_0500
      * @tc.desc   Verify Sendable object method plusOne increments and returns correct value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -158,7 +158,7 @@ export default function SendableDefineTest(): void {
 
     /**
      * @tc.name   SendableDefineTest0600
-     * @tc.number SUB_SENDABLE_DEFINE_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_DEFINE_TEST_0600
      * @tc.desc   Verify Sendable object created in UI main thread passed to TaskPool and modified
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -172,7 +172,7 @@ export default function SendableDefineTest(): void {
 
     /**
      * @tc.name   SendableDefineTest0700
-     * @tc.number SUB_SENDABLE_DEFINE_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_DEFINE_TEST_0700
      * @tc.desc   Verify Sendable object reference passing across threads maintains data consistency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -192,7 +192,7 @@ export default function SendableDefineTest(): void {
 
     /**
      * @tc.name   SendableDefineTest0800
-     * @tc.number SUB_SENDABLE_DEFINE_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_DEFINE_TEST_0800
      * @tc.desc   Verify main thread reads Sendable object after TaskPool sub-thread modification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -209,7 +209,7 @@ export default function SendableDefineTest(): void {
 
     /**
      * @tc.name   SendableDefineTest0900
-     * @tc.number SUB_SENDABLE_DEFINE_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_DEFINE_TEST_0900
      * @tc.desc   Verify Sendable object with zero-value constructor parameters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -223,7 +223,7 @@ export default function SendableDefineTest(): void {
 
     /**
      * @tc.name   SendableDefineTest1000
-     * @tc.number SUB_SENDABLE_DEFINE_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_DEFINE_TEST_1000
      * @tc.desc   Verify Sendable object with extreme large number parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -237,7 +237,7 @@ export default function SendableDefineTest(): void {
 
     /**
      * @tc.name   SendableDefineTest1100
-     * @tc.number SUB_SENDABLE_DEFINE_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_DEFINE_TEST_1100
      * @tc.desc   Verify Sendable object with extreme small number parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -250,7 +250,7 @@ export default function SendableDefineTest(): void {
 
     /**
      * @tc.name   SendableDefineTest1200
-     * @tc.number SUB_SENDABLE_DEFINE_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_DEFINE_TEST_1200
      * @tc.desc   Verify Sendable object value property set to Number.MAX_VALUE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -264,7 +264,7 @@ export default function SendableDefineTest(): void {
 
     /**
      * @tc.name   SendableDefineTest1300
-     * @tc.number SUB_SENDABLE_DEFINE_TEST_1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_DEFINE_TEST_1300
      * @tc.desc   Verify Sendable object value property set to Number.MIN_VALUE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -278,7 +278,7 @@ export default function SendableDefineTest(): void {
 
     /**
      * @tc.name   SendableDefineTest1400
-     * @tc.number SUB_SENDABLE_DEFINE_TEST_1400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_DEFINE_TEST_1400
      * @tc.desc   Verify Sendable object with negative value parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -293,7 +293,7 @@ export default function SendableDefineTest(): void {
 
     /**
      * @tc.name   SendableDefineTest1500
-     * @tc.number SUB_SENDABLE_DEFINE_TEST_1500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_DEFINE_TEST_1500
      * @tc.desc   Verify multiple Sendable objects created independently maintain separate state
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -311,7 +311,7 @@ export default function SendableDefineTest(): void {
 
     /**
      * @tc.name   SendableDefineTest1600
-     * @tc.number SUB_SENDABLE_DEFINE_TEST_1600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_DEFINE_TEST_1600
      * @tc.desc   Verify Sendable object with floating point value parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -324,7 +324,7 @@ export default function SendableDefineTest(): void {
 
     /**
      * @tc.name   SendableDefineTest1700
-     * @tc.number SUB_SENDABLE_DEFINE_TEST_1700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_DEFINE_TEST_1700
      * @tc.desc   Verify Sendable object cross-thread modification with concurrent read and write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -341,7 +341,7 @@ export default function SendableDefineTest(): void {
 
     /**
      * @tc.name   SendableDefineTest1800
-     * @tc.number SUB_SENDABLE_DEFINE_TEST_1800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_DEFINE_TEST_1800
      * @tc.desc   Verify Sendable object property direct access and modification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

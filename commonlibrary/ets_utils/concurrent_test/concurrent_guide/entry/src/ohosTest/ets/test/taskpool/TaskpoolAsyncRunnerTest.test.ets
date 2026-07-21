@@ -56,7 +56,7 @@ export default function TaskpoolAsyncRunnerTest(): void {
 
     /**
      * @tc.name   TaskpoolAsyncRunnerTest0100
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_ASYNC_RUNNER_TEST_0100
      * @tc.desc   Verify AsyncRunner creation with runningCapacity and basic task execution
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -71,7 +71,7 @@ export default function TaskpoolAsyncRunnerTest(): void {
 
     /**
      * @tc.name   TaskpoolAsyncRunnerTest0200
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_ASYNC_RUNNER_TEST_0200
      * @tc.desc   Verify AsyncRunner named constructor creates singleton queue with same name
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -86,7 +86,7 @@ export default function TaskpoolAsyncRunnerTest(): void {
 
     /**
      * @tc.name   TaskpoolAsyncRunnerTest0300
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_ASYNC_RUNNER_TEST_0300
      * @tc.desc   Verify AsyncRunner concurrency control with runningCapacity=2 executing 5 tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -108,7 +108,7 @@ export default function TaskpoolAsyncRunnerTest(): void {
 
     /**
      * @tc.name   TaskpoolAsyncRunnerTest0400
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_ASYNC_RUNNER_TEST_0400
      * @tc.desc   Verify AsyncRunner with waitingCapacity=0 allows unlimited queued tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -127,7 +127,7 @@ export default function TaskpoolAsyncRunnerTest(): void {
 
     /**
      * @tc.name   TaskpoolAsyncRunnerTest0500
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_ASYNC_RUNNER_TEST_0500
      * @tc.desc   Verify AsyncRunner task execution result correctness with string return type
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -142,7 +142,7 @@ export default function TaskpoolAsyncRunnerTest(): void {
 
     /**
      * @tc.name   TaskpoolAsyncRunnerTest0600
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_ASYNC_RUNNER_TEST_0600
      * @tc.desc   Verify AsyncRunner with zero runningCapacity throws parameter error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -162,7 +162,7 @@ export default function TaskpoolAsyncRunnerTest(): void {
 
     /**
      * @tc.name   TaskpoolAsyncRunnerTest0700
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_ASYNC_RUNNER_TEST_0700
      * @tc.desc   Verify AsyncRunner with runningCapacity=1 executes tasks serially and correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -177,7 +177,7 @@ export default function TaskpoolAsyncRunnerTest(): void {
 
     /**
      * @tc.name   TaskpoolAsyncRunnerTest0800
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_ASYNC_RUNNER_TEST_0800
      * @tc.desc   Verify AsyncRunner with large runningCapacity exceeding thread limit works correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -192,7 +192,7 @@ export default function TaskpoolAsyncRunnerTest(): void {
 
     /**
      * @tc.name   TaskpoolAsyncRunnerTest0900
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_ASYNC_RUNNER_TEST_0900
      * @tc.desc   Verify AsyncRunner task execution exception caught by execute promise rejection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -214,7 +214,7 @@ export default function TaskpoolAsyncRunnerTest(): void {
 
     /**
      * @tc.name   TaskpoolAsyncRunnerTest1000
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_ASYNC_RUNNER_TEST_1000
      * @tc.desc   Verify AsyncRunner with Priority.HIGH executes task and returns correct result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -229,7 +229,7 @@ export default function TaskpoolAsyncRunnerTest(): void {
 
     /**
      * @tc.name   TaskpoolAsyncRunnerTest1100
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_ASYNC_RUNNER_TEST_1100
      * @tc.desc   Verify multiple independent AsyncRunner instances execute tasks concurrently
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -249,7 +249,7 @@ export default function TaskpoolAsyncRunnerTest(): void {
 
     /**
      * @tc.name   TaskpoolAsyncRunnerTest1200
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_ASYNC_RUNNER_TEST_1200
      * @tc.desc   Verify AsyncRunner sequential task execution with 8 tasks one by one
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -271,7 +271,7 @@ export default function TaskpoolAsyncRunnerTest(): void {
 
     /**
      * @tc.name   TaskpoolAsyncRunnerTest1300
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_TEST_1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_ASYNC_RUNNER_TEST_1300
      * @tc.desc   Verify AsyncRunner with negative waitingCapacity throws parameter error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -291,7 +291,7 @@ export default function TaskpoolAsyncRunnerTest(): void {
 
     /**
      * @tc.name   TaskpoolAsyncRunnerTest1400
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_TEST_1400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_ASYNC_RUNNER_TEST_1400
      * @tc.desc   Verify AsyncRunner compute task with two parameters returns correct sum
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -306,7 +306,7 @@ export default function TaskpoolAsyncRunnerTest(): void {
 
     /**
      * @tc.name   TaskpoolAsyncRunnerTest1500
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_TEST_1500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_ASYNC_RUNNER_TEST_1500
      * @tc.desc   Verify AsyncRunner with large batch of 20 concurrent tasks completes all correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -328,7 +328,7 @@ export default function TaskpoolAsyncRunnerTest(): void {
 
     /**
      * @tc.name   TaskpoolAsyncRunnerTest1600
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_TEST_1600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_ASYNC_RUNNER_TEST_1600
      * @tc.desc   Verify AsyncRunner with runningCapacity=1 executes tasks serially in order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

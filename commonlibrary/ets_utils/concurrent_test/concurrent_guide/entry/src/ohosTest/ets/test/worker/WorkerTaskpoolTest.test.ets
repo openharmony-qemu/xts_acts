@@ -24,7 +24,7 @@ export default function WorkerTaskpoolTest(): void {
     beforeEach((): void => {})
     afterEach(async (): Promise<void> => {
       if (currentWorker !== null) {
-        await new Promise<void>((resolve: Function) => {
+        await new Promise<void>((resolve: () => void) => {
           currentWorker!.onexit = (): void => { resolve() }
           currentWorker!.terminate()
         })
@@ -32,12 +32,12 @@ export default function WorkerTaskpoolTest(): void {
       }
     })
     afterAll(async (): Promise<void> => {
-      await new Promise<void>((resolve: Function) => { setTimeout((): void => resolve(undefined), 500) })
+      await new Promise<void>((resolve: () => void) => { setTimeout((): void => resolve(), 500) })
     })
 
     /**
      * @tc.name   WorkerTaskpoolTest0100
-     * @tc.number SUB_WORKER_TASKPOOL_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_TASKPOOL_TEST_0100
      * @tc.desc   Verify Worker creates TaskPool task and returns computed result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -59,7 +59,7 @@ export default function WorkerTaskpoolTest(): void {
 
     /**
      * @tc.name   WorkerTaskpoolTest0200
-     * @tc.number SUB_WORKER_TASKPOOL_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_TASKPOOL_TEST_0200
      * @tc.desc   Verify Worker waits for TaskPool async result using await pattern
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -81,7 +81,7 @@ export default function WorkerTaskpoolTest(): void {
 
     /**
      * @tc.name   WorkerTaskpoolTest0300
-     * @tc.number SUB_WORKER_TASKPOOL_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_TASKPOOL_TEST_0300
      * @tc.desc   Verify Worker propagates TaskPool result back to host thread via postMessage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -106,7 +106,7 @@ export default function WorkerTaskpoolTest(): void {
 
     /**
      * @tc.name   WorkerTaskpoolTest0400
-     * @tc.number SUB_WORKER_TASKPOOL_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_TASKPOOL_TEST_0400
      * @tc.desc   Verify Worker creates multiple concurrent TaskPool tasks and returns all results
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -143,7 +143,7 @@ export default function WorkerTaskpoolTest(): void {
 
     /**
      * @tc.name   WorkerTaskpoolTest0500
-     * @tc.number SUB_WORKER_TASKPOOL_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_TASKPOOL_TEST_0500
      * @tc.desc   Verify Worker handles large computation TaskPool task correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -165,7 +165,7 @@ export default function WorkerTaskpoolTest(): void {
 
     /**
      * @tc.name   WorkerTaskpoolTest0600
-     * @tc.number SUB_WORKER_TASKPOOL_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_TASKPOOL_TEST_0600
      * @tc.desc   Verify Worker and TaskPool thread execute concurrently without blocking
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -197,7 +197,7 @@ export default function WorkerTaskpoolTest(): void {
 
     /**
      * @tc.name   WorkerTaskpoolTest0700
-     * @tc.number SUB_WORKER_TASKPOOL_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_TASKPOOL_TEST_0700
      * @tc.desc   Verify multiple Workers each create TaskPool tasks independently
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -245,10 +245,10 @@ export default function WorkerTaskpoolTest(): void {
       }
       expect(has25).assertTrue()
       expect(has64).assertTrue()
-      let exit1: Promise<void> = new Promise<void>((resolve: Function) => {
+      let exit1: Promise<void> = new Promise<void>((resolve: () => void) => {
         worker1.onexit = (code: number): void => { resolve() }
       })
-      let exit2: Promise<void> = new Promise<void>((resolve: Function) => {
+      let exit2: Promise<void> = new Promise<void>((resolve: () => void) => {
         worker2.onexit = (code: number): void => { resolve() }
       })
       worker1.terminate()
@@ -258,7 +258,7 @@ export default function WorkerTaskpoolTest(): void {
 
     /**
      * @tc.name   WorkerTaskpoolTest0800
-     * @tc.number SUB_WORKER_TASKPOOL_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_TASKPOOL_TEST_0800
      * @tc.desc   Verify Worker handles TaskPool task execution failure gracefully
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

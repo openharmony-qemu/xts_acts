@@ -115,7 +115,7 @@ export default function TaskpoolIntroductionTest(): void {
 
     /**
      * @tc.name   TaskpoolIntroductionTest0100
-     * @tc.number SUB_TASKPOOL_INTRODUCTION_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTRODUCTION_TEST_0100
      * @tc.desc   Verify basic Task creation and execution with @Concurrent function returns correct result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -129,7 +129,7 @@ export default function TaskpoolIntroductionTest(): void {
 
     /**
      * @tc.name   TaskpoolIntroductionTest0200
-     * @tc.number SUB_TASKPOOL_INTRODUCTION_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTRODUCTION_TEST_0200
      * @tc.desc   Verify @Concurrent decorator function executes correctly in TaskPool worker thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -143,7 +143,7 @@ export default function TaskpoolIntroductionTest(): void {
 
     /**
      * @tc.name   TaskpoolIntroductionTest0300
-     * @tc.number SUB_TASKPOOL_INTRODUCTION_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTRODUCTION_TEST_0300
      * @tc.desc   Verify Task parameter serialization with number, string and collections.Array types
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -159,7 +159,7 @@ export default function TaskpoolIntroductionTest(): void {
 
     /**
      * @tc.name   TaskpoolIntroductionTest0400
-     * @tc.number SUB_TASKPOOL_INTRODUCTION_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTRODUCTION_TEST_0400
      * @tc.desc   Verify Task return value serialization with collections.Map containing multiple entries
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -176,7 +176,7 @@ export default function TaskpoolIntroductionTest(): void {
 
     /**
      * @tc.name   TaskpoolIntroductionTest0500
-     * @tc.number SUB_TASKPOOL_INTRODUCTION_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTRODUCTION_TEST_0500
      * @tc.desc   Verify Task execution with Priority.HIGH returns correct result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -190,7 +190,7 @@ export default function TaskpoolIntroductionTest(): void {
 
     /**
      * @tc.name   TaskpoolIntroductionTest0600
-     * @tc.number SUB_TASKPOOL_INTRODUCTION_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTRODUCTION_TEST_0600
      * @tc.desc   Verify Task execution with Priority.MEDIUM returns correct result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -204,7 +204,7 @@ export default function TaskpoolIntroductionTest(): void {
 
     /**
      * @tc.name   TaskpoolIntroductionTest0700
-     * @tc.number SUB_TASKPOOL_INTRODUCTION_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTRODUCTION_TEST_0700
      * @tc.desc   Verify Task execution with Priority.LOW returns correct result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -218,7 +218,7 @@ export default function TaskpoolIntroductionTest(): void {
 
     /**
      * @tc.name   TaskpoolIntroductionTest0800
-     * @tc.number SUB_TASKPOOL_INTRODUCTION_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTRODUCTION_TEST_0800
      * @tc.desc   Verify Task execution with Priority.IDLE returns correct result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -232,7 +232,7 @@ export default function TaskpoolIntroductionTest(): void {
 
     /**
      * @tc.name   TaskpoolIntroductionTest0900
-     * @tc.number SUB_TASKPOOL_INTRODUCTION_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTRODUCTION_TEST_0900
      * @tc.desc   Verify taskpool.cancel() cancels a pending task and throws error on await
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -251,7 +251,7 @@ export default function TaskpoolIntroductionTest(): void {
 
     /**
      * @tc.name   TaskpoolIntroductionTest1000
-     * @tc.number SUB_TASKPOOL_INTRODUCTION_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTRODUCTION_TEST_1000
      * @tc.desc   Verify TaskGroup creation, adding multiple tasks and executing returns all results
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -272,7 +272,7 @@ export default function TaskpoolIntroductionTest(): void {
 
     /**
      * @tc.name   TaskpoolIntroductionTest1100
-     * @tc.number SUB_TASKPOOL_INTRODUCTION_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTRODUCTION_TEST_1100
      * @tc.desc   Verify async @Concurrent function returns fulfilled Promise result correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -286,7 +286,7 @@ export default function TaskpoolIntroductionTest(): void {
 
     /**
      * @tc.name   TaskpoolIntroductionTest1200
-     * @tc.number SUB_TASKPOOL_INTRODUCTION_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTRODUCTION_TEST_1200
      * @tc.desc   Verify Task.sendData sends message from worker thread received via onReceiveData callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -295,7 +295,7 @@ export default function TaskpoolIntroductionTest(): void {
     it('TaskpoolIntroductionTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let receivedData = new collections.Array<string>()
       let task: taskpool.Task = new taskpool.Task(sendDataBasicTask)
-      let dataPromise: Promise<void> = new Promise<void>((resolve: Function) => {
+      let dataPromise: Promise<void> = new Promise<void>((resolve: () => void) => {
         task.onReceiveData((data: Object): void => {
           receivedData.push(data as string)
           resolve()
@@ -310,7 +310,7 @@ export default function TaskpoolIntroductionTest(): void {
 
     /**
      * @tc.name   TaskpoolIntroductionTest1300
-     * @tc.number SUB_TASKPOOL_INTRODUCTION_TEST_1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTRODUCTION_TEST_1300
      * @tc.desc   Verify multiple Task.sendData calls deliver all messages in order to host thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -319,7 +319,7 @@ export default function TaskpoolIntroductionTest(): void {
     it('TaskpoolIntroductionTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let progressData = new collections.Array<number>()
       let task: taskpool.Task = new taskpool.Task(sendDataMultiTask)
-      let allDataPromise: Promise<void> = new Promise<void>((resolve: Function) => {
+      let allDataPromise: Promise<void> = new Promise<void>((resolve: () => void) => {
         task.onReceiveData((data: Object): void => {
           progressData.push(data as number)
           if (progressData.length >= 4) {
@@ -337,7 +337,7 @@ export default function TaskpoolIntroductionTest(): void {
 
     /**
      * @tc.name   TaskpoolIntroductionTest1400
-     * @tc.number SUB_TASKPOOL_INTRODUCTION_TEST_1400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTRODUCTION_TEST_1400
      * @tc.desc   Verify large data serialization transfer with collections.Array of 10000 elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -351,7 +351,7 @@ export default function TaskpoolIntroductionTest(): void {
 
     /**
      * @tc.name   TaskpoolIntroductionTest1500
-     * @tc.number SUB_TASKPOOL_INTRODUCTION_TEST_1500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTRODUCTION_TEST_1500
      * @tc.desc   Verify task returning rejected Promise throws error caught by try/catch
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -372,7 +372,7 @@ export default function TaskpoolIntroductionTest(): void {
 
     /**
      * @tc.name   TaskpoolIntroductionTest1600
-     * @tc.number SUB_TASKPOOL_INTRODUCTION_TEST_1600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTRODUCTION_TEST_1600
      * @tc.desc   Verify task throwing Error inside @Concurrent function is caught by execute catch
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -393,7 +393,7 @@ export default function TaskpoolIntroductionTest(): void {
 
     /**
      * @tc.name   TaskpoolIntroductionTest1700
-     * @tc.number SUB_TASKPOOL_INTRODUCTION_TEST_1700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTRODUCTION_TEST_1700
      * @tc.desc   Verify 50 concurrent tasks execute correctly with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -415,7 +415,7 @@ export default function TaskpoolIntroductionTest(): void {
 
     /**
      * @tc.name   TaskpoolIntroductionTest1800
-     * @tc.number SUB_TASKPOOL_INTRODUCTION_TEST_1800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTRODUCTION_TEST_1800
      * @tc.desc   Verify high priority task executes before low priority task when submitted together
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -435,7 +435,7 @@ export default function TaskpoolIntroductionTest(): void {
 
     /**
      * @tc.name   TaskpoolIntroductionTest1900
-     * @tc.number SUB_TASKPOOL_INTRODUCTION_TEST_1900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTRODUCTION_TEST_1900
      * @tc.desc   Verify thread reuse by executing 10 sequential tasks and validating all results
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -456,7 +456,7 @@ export default function TaskpoolIntroductionTest(): void {
 
     /**
      * @tc.name   TaskpoolIntroductionTest2000
-     * @tc.number SUB_TASKPOOL_INTRODUCTION_TEST_2000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTRODUCTION_TEST_2000
      * @tc.desc   Verify async @Concurrent function with try/catch handles Promise rejection and returns fallback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -470,7 +470,7 @@ export default function TaskpoolIntroductionTest(): void {
 
     /**
      * @tc.name   TaskpoolIntroductionTest2100
-     * @tc.number SUB_TASKPOOL_INTRODUCTION_TEST_2100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTRODUCTION_TEST_2100
      * @tc.desc   Verify Sendable object shared reference with @Sendable class across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -485,7 +485,7 @@ export default function TaskpoolIntroductionTest(): void {
 
     /**
      * @tc.name   TaskpoolIntroductionTest2200
-     * @tc.number SUB_TASKPOOL_INTRODUCTION_TEST_2200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTRODUCTION_TEST_2200
      * @tc.desc   Verify TaskGroup with Priority.HIGH executes all tasks and returns correct aggregated results
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

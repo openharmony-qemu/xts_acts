@@ -80,7 +80,7 @@ export default function SerializableViewTest(): void {
 
     /**
      * @tc.name   SerializableViewTest0100
-     * @tc.number SUB_SERIALIZABLE_VIEW_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERIALIZABLE_VIEW_TEST_0100
      * @tc.desc   Verify Sendable object serialization via TaskPool passing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -94,7 +94,7 @@ export default function SerializableViewTest(): void {
 
     /**
      * @tc.name   SerializableViewTest0200
-     * @tc.number SUB_SERIALIZABLE_VIEW_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERIALIZABLE_VIEW_TEST_0200
      * @tc.desc   Verify normal object data serialization via primitive parameters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -107,7 +107,7 @@ export default function SerializableViewTest(): void {
 
     /**
      * @tc.name   SerializableViewTest0300
-     * @tc.number SUB_SERIALIZABLE_VIEW_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERIALIZABLE_VIEW_TEST_0300
      * @tc.desc   Verify ArrayBuffer serialization transfer via TaskPool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -123,7 +123,7 @@ export default function SerializableViewTest(): void {
 
     /**
      * @tc.name   SerializableViewTest0400
-     * @tc.number SUB_SERIALIZABLE_VIEW_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERIALIZABLE_VIEW_TEST_0400
      * @tc.desc   Verify SharedArrayBuffer serialization and shared access via TaskPool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -139,7 +139,7 @@ export default function SerializableViewTest(): void {
 
     /**
      * @tc.name   SerializableViewTest0500
-     * @tc.number SUB_SERIALIZABLE_VIEW_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERIALIZABLE_VIEW_TEST_0500
      * @tc.desc   Verify TaskPool thread communication with Sendable data roundtrip
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -154,7 +154,7 @@ export default function SerializableViewTest(): void {
 
     /**
      * @tc.name   SerializableViewTest0600
-     * @tc.number SUB_SERIALIZABLE_VIEW_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERIALIZABLE_VIEW_TEST_0600
      * @tc.desc   Verify value copy mechanism - normal object modification isolation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -171,7 +171,7 @@ export default function SerializableViewTest(): void {
 
     /**
      * @tc.name   SerializableViewTest0700
-     * @tc.number SUB_SERIALIZABLE_VIEW_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERIALIZABLE_VIEW_TEST_0700
      * @tc.desc   Verify 15MB data near 16MB serialization limit succeeds
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -187,7 +187,7 @@ export default function SerializableViewTest(): void {
 
     /**
      * @tc.name   SerializableViewTest0800
-     * @tc.number SUB_SERIALIZABLE_VIEW_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERIALIZABLE_VIEW_TEST_0800
      * @tc.desc   Verify large ArrayBuffer transfer via TaskPool succeeds
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -203,7 +203,7 @@ export default function SerializableViewTest(): void {
 
     /**
      * @tc.name   SerializableViewTest0900
-     * @tc.number SUB_SERIALIZABLE_VIEW_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERIALIZABLE_VIEW_TEST_0900
      * @tc.desc   Verify multiple TaskPool tasks simultaneously pass same Sendable object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -223,7 +223,7 @@ export default function SerializableViewTest(): void {
 
     /**
      * @tc.name   SerializableViewTest1000
-     * @tc.number SUB_SERIALIZABLE_VIEW_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERIALIZABLE_VIEW_TEST_1000
      * @tc.desc   Verify Sendable object with string property serialization
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -237,7 +237,7 @@ export default function SerializableViewTest(): void {
 
     /**
      * @tc.name   SerializableViewTest1100
-     * @tc.number SUB_SERIALIZABLE_VIEW_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERIALIZABLE_VIEW_TEST_1100
      * @tc.desc   Verify Sendable object cross-thread modification preserves reference
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -251,7 +251,7 @@ export default function SerializableViewTest(): void {
 
     /**
      * @tc.name   SerializableViewTest1200
-     * @tc.number SUB_SERIALIZABLE_VIEW_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERIALIZABLE_VIEW_TEST_1200
      * @tc.desc   Verify SharedArrayBuffer shared memory modification visible across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -268,7 +268,7 @@ export default function SerializableViewTest(): void {
 
     /**
      * @tc.name   SerializableViewTest1300
-     * @tc.number SUB_SERIALIZABLE_VIEW_TEST_1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERIALIZABLE_VIEW_TEST_1300
      * @tc.desc   Verify ArrayBuffer serialization with small data size
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -284,7 +284,7 @@ export default function SerializableViewTest(): void {
 
     /**
      * @tc.name   SerializableViewTest1400
-     * @tc.number SUB_SERIALIZABLE_VIEW_TEST_1400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERIALIZABLE_VIEW_TEST_1400
      * @tc.desc   Verify 1MB ArrayBuffer serialization performance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -302,7 +302,7 @@ export default function SerializableViewTest(): void {
 
     /**
      * @tc.name   SerializableViewTest1500
-     * @tc.number SUB_SERIALIZABLE_VIEW_TEST_1500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERIALIZABLE_VIEW_TEST_1500
      * @tc.desc   Verify Sendable object with zero-value constructor serialization
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -316,7 +316,7 @@ export default function SerializableViewTest(): void {
 
     /**
      * @tc.name   SerializableViewTest1600
-     * @tc.number SUB_SERIALIZABLE_VIEW_TEST_1600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERIALIZABLE_VIEW_TEST_1600
      * @tc.desc   Verify serialization memory isolation - normal object value unchanged after transfer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -332,7 +332,7 @@ export default function SerializableViewTest(): void {
 
     /**
      * @tc.name   SerializableViewTest1700
-     * @tc.number SUB_SERIALIZABLE_VIEW_TEST_1700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERIALIZABLE_VIEW_TEST_1700
      * @tc.desc   Verify concurrent serialization of multiple different Sendable objects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -350,7 +350,7 @@ export default function SerializableViewTest(): void {
 
     /**
      * @tc.name   SerializableViewTest1800
-     * @tc.number SUB_SERIALIZABLE_VIEW_TEST_1800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERIALIZABLE_VIEW_TEST_1800
      * @tc.desc   Verify 10MB data serialization within limit succeeds
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

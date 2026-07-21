@@ -86,7 +86,7 @@ export default function InterthreadCommunicationTest(): void {
 
     /**
      * @tc.name   InterthreadCommunicationTest0100
-     * @tc.number SUB_INTERTHREAD_COMMUNICATION_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_INTERTHREAD_COMMUNICATION_TEST_0100
      * @tc.desc   Verify Structured Clone algorithm with object serialization across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -100,7 +100,7 @@ export default function InterthreadCommunicationTest(): void {
 
     /**
      * @tc.name   InterthreadCommunicationTest0200
-     * @tc.number SUB_INTERTHREAD_COMMUNICATION_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_INTERTHREAD_COMMUNICATION_TEST_0200
      * @tc.desc   Verify ArrayBuffer cross-thread transfer behavior
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -118,7 +118,7 @@ export default function InterthreadCommunicationTest(): void {
 
     /**
      * @tc.name   InterthreadCommunicationTest0300
-     * @tc.number SUB_INTERTHREAD_COMMUNICATION_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_INTERTHREAD_COMMUNICATION_TEST_0300
      * @tc.desc   Verify SharedArrayBuffer cross-thread shared access with atomic operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -139,7 +139,7 @@ export default function InterthreadCommunicationTest(): void {
 
     /**
      * @tc.name   InterthreadCommunicationTest0400
-     * @tc.number SUB_INTERTHREAD_COMMUNICATION_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_INTERTHREAD_COMMUNICATION_TEST_0400
      * @tc.desc   Verify Sendable object cross-thread sharing with concurrent modification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -157,7 +157,7 @@ export default function InterthreadCommunicationTest(): void {
 
     /**
      * @tc.name   InterthreadCommunicationTest0500
-     * @tc.number SUB_INTERTHREAD_COMMUNICATION_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_INTERTHREAD_COMMUNICATION_TEST_0500
      * @tc.desc   Verify TaskPool cross-task Sendable object passing between sequential tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -174,7 +174,7 @@ export default function InterthreadCommunicationTest(): void {
 
     /**
      * @tc.name   InterthreadCommunicationTest0600
-     * @tc.number SUB_INTERTHREAD_COMMUNICATION_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_INTERTHREAD_COMMUNICATION_TEST_0600
      * @tc.desc   Verify basic types (number, string, boolean) transfer across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -188,7 +188,7 @@ export default function InterthreadCommunicationTest(): void {
 
     /**
      * @tc.name   InterthreadCommunicationTest0700
-     * @tc.number SUB_INTERTHREAD_COMMUNICATION_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_INTERTHREAD_COMMUNICATION_TEST_0700
      * @tc.desc   Verify array serialization and deserialization across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

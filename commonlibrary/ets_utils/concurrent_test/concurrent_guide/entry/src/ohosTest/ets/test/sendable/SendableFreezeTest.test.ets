@@ -112,7 +112,7 @@ export default function SendableFreezeTest(): void {
 
     /**
      * @tc.name   SendableFreezeTest0100
-     * @tc.number SUB_SENDABLE_FREEZE_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_FREEZE_TEST_0100
      * @tc.desc   Verify Object freeze via ts helper freezes Sendable object successfully
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -130,7 +130,7 @@ export default function SendableFreezeTest(): void {
 
     /**
      * @tc.name   SendableFreezeTest0200
-     * @tc.number SUB_SENDABLE_FREEZE_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_FREEZE_TEST_0200
      * @tc.desc   Verify frozen Sendable object properties are readable across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -151,7 +151,7 @@ export default function SendableFreezeTest(): void {
 
     /**
      * @tc.name   SendableFreezeTest0300
-     * @tc.number SUB_SENDABLE_FREEZE_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_FREEZE_TEST_0300
      * @tc.desc   Verify frozen Sendable object can be transferred to TaskPool task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -172,7 +172,7 @@ export default function SendableFreezeTest(): void {
 
     /**
      * @tc.name   SendableFreezeTest0400
-     * @tc.number SUB_SENDABLE_FREEZE_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_FREEZE_TEST_0400
      * @tc.desc   Verify modifying frozen Sendable object property throws exception in task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -199,7 +199,7 @@ export default function SendableFreezeTest(): void {
 
     /**
      * @tc.name   SendableFreezeTest0500
-     * @tc.number SUB_SENDABLE_FREEZE_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_FREEZE_TEST_0500
      * @tc.desc   Verify frozen Sendable object cannot be modified in main thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -227,7 +227,7 @@ export default function SendableFreezeTest(): void {
 
     /**
      * @tc.name   SendableFreezeTest0600
-     * @tc.number SUB_SENDABLE_FREEZE_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_FREEZE_TEST_0600
      * @tc.desc   Verify frozen Sendable object is still Sendable after freeze
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -245,7 +245,7 @@ export default function SendableFreezeTest(): void {
 
     /**
      * @tc.name   SendableFreezeTest0700
-     * @tc.number SUB_SENDABLE_FREEZE_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_FREEZE_TEST_0700
      * @tc.desc   Verify multiple threads concurrently read frozen Sendable without lock
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -272,7 +272,7 @@ export default function SendableFreezeTest(): void {
 
     /**
      * @tc.name   SendableFreezeTest0800
-     * @tc.number SUB_SENDABLE_FREEZE_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_FREEZE_TEST_0800
      * @tc.desc   Verify nested Sendable objects can be frozen and read across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -292,7 +292,7 @@ export default function SendableFreezeTest(): void {
 
     /**
      * @tc.name   SendableFreezeTest0900
-     * @tc.number SUB_SENDABLE_FREEZE_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_FREEZE_TEST_0900
      * @tc.desc   Verify repeated freeze on same Sendable object is idempotent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -323,7 +323,7 @@ export default function SendableFreezeTest(): void {
 
     /**
      * @tc.name   SendableFreezeTest1000
-     * @tc.number SUB_SENDABLE_FREEZE_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_FREEZE_TEST_1000
      * @tc.desc   Verify freeze operation has minimal performance overhead
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -345,7 +345,7 @@ export default function SendableFreezeTest(): void {
 
     /**
      * @tc.name   SendableFreezeTest1100
-     * @tc.number SUB_SENDABLE_FREEZE_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_FREEZE_TEST_1100
      * @tc.desc   Verify frozen Sendable object passes isSendable check in worker thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -365,7 +365,7 @@ export default function SendableFreezeTest(): void {
 
     /**
      * @tc.name   SendableFreezeTest1200
-     * @tc.number SUB_SENDABLE_FREEZE_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_FREEZE_TEST_1200
      * @tc.desc   Verify frozen ReadOnlyConfig can be read from multiple concurrent tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

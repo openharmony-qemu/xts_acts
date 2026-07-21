@@ -54,7 +54,7 @@ export default function MultithreadDevelopTest(): void {
 
     /**
      * @tc.name   MultithreadDevelopTest0100
-     * @tc.number SUB_MULTITHREAD_DEVELOP_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTITHREAD_DEVELOP_TEST_0100
      * @tc.desc   Verify TaskPool handles time-consuming computation tasks correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -68,7 +68,7 @@ export default function MultithreadDevelopTest(): void {
 
     /**
      * @tc.name   MultithreadDevelopTest0200
-     * @tc.number SUB_MULTITHREAD_DEVELOP_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTITHREAD_DEVELOP_TEST_0200
      * @tc.desc   Verify TaskPool handles CPU-intensive tasks with data chunking
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -94,7 +94,7 @@ export default function MultithreadDevelopTest(): void {
 
     /**
      * @tc.name   MultithreadDevelopTest0300
-     * @tc.number SUB_MULTITHREAD_DEVELOP_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTITHREAD_DEVELOP_TEST_0300
      * @tc.desc   Verify parallel computation correctness by comparing sequential and parallel results
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -88,7 +88,7 @@ export default function TaskpoolVsWorkerTest(): void {
 
     /**
      * @tc.name   TaskpoolVsWorkerTest0100
-     * @tc.number SUB_TASKPOOL_VS_WORKER_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_VS_WORKER_TEST_0100
      * @tc.desc   Verify TaskPool cancel capability by canceling a pending task before completion
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -111,7 +111,7 @@ export default function TaskpoolVsWorkerTest(): void {
 
     /**
      * @tc.name   TaskpoolVsWorkerTest0200
-     * @tc.number SUB_TASKPOOL_VS_WORKER_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_VS_WORKER_TEST_0200
      * @tc.desc   Verify TaskPool thread reuse by executing 10 sequential tasks without creating new threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -132,7 +132,7 @@ export default function TaskpoolVsWorkerTest(): void {
 
     /**
      * @tc.name   TaskpoolVsWorkerTest0300
-     * @tc.number SUB_TASKPOOL_VS_WORKER_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_VS_WORKER_TEST_0300
      * @tc.desc   Verify TaskPool TaskGroup batch execution returns all results in single call
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -153,7 +153,7 @@ export default function TaskpoolVsWorkerTest(): void {
 
     /**
      * @tc.name   TaskpoolVsWorkerTest0400
-     * @tc.number SUB_TASKPOOL_VS_WORKER_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_VS_WORKER_TEST_0400
      * @tc.desc   Verify TaskPool priority scheduling with HIGH, MEDIUM, LOW priorities
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -174,7 +174,7 @@ export default function TaskpoolVsWorkerTest(): void {
 
     /**
      * @tc.name   TaskpoolVsWorkerTest0500
-     * @tc.number SUB_TASKPOOL_VS_WORKER_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_VS_WORKER_TEST_0500
      * @tc.desc   Verify TaskPool sendData communication from worker thread to host thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -183,7 +183,7 @@ export default function TaskpoolVsWorkerTest(): void {
     it('TaskpoolVsWorkerTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let receivedData = new collections.Array<number>()
       let task: taskpool.Task = new taskpool.Task(vsWorkerSendDataTask, 5)
-      let dataPromise: Promise<void> = new Promise<void>((resolve: Function) => {
+      let dataPromise: Promise<void> = new Promise<void>((resolve: () => void) => {
         task.onReceiveData((data: Object): void => {
           receivedData.push(data as number)
           resolve()
@@ -198,7 +198,7 @@ export default function TaskpoolVsWorkerTest(): void {
 
     /**
      * @tc.name   TaskpoolVsWorkerTest0600
-     * @tc.number SUB_TASKPOOL_VS_WORKER_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_VS_WORKER_TEST_0600
      * @tc.desc   Verify TaskPool auto lifecycle management with task creation, execution and completion
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -220,7 +220,7 @@ export default function TaskpoolVsWorkerTest(): void {
 
     /**
      * @tc.name   TaskpoolVsWorkerTest0700
-     * @tc.number SUB_TASKPOOL_VS_WORKER_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_VS_WORKER_TEST_0700
      * @tc.desc   Verify TaskPool parameter passing with collections.Array serialization across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -237,7 +237,7 @@ export default function TaskpoolVsWorkerTest(): void {
 
     /**
      * @tc.name   TaskpoolVsWorkerTest0800
-     * @tc.number SUB_TASKPOOL_VS_WORKER_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_VS_WORKER_TEST_0800
      * @tc.desc   Verify TaskPool with Sendable object reference passing modifies shared data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -255,7 +255,7 @@ export default function TaskpoolVsWorkerTest(): void {
 
     /**
      * @tc.name   TaskpoolVsWorkerTest0900
-     * @tc.number SUB_TASKPOOL_VS_WORKER_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_VS_WORKER_TEST_0900
      * @tc.desc   Verify TaskPool AsyncRunner concurrency control limits simultaneous task execution
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -277,7 +277,7 @@ export default function TaskpoolVsWorkerTest(): void {
 
     /**
      * @tc.name   TaskpoolVsWorkerTest1000
-     * @tc.number SUB_TASKPOOL_VS_WORKER_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_VS_WORKER_TEST_1000
      * @tc.desc   Verify TaskPool concurrent multi-task execution with 30 simultaneous tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -298,7 +298,7 @@ export default function TaskpoolVsWorkerTest(): void {
 
     /**
      * @tc.name   TaskpoolVsWorkerTest1100
-     * @tc.number SUB_TASKPOOL_VS_WORKER_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_VS_WORKER_TEST_1100
      * @tc.desc   Verify TaskPool task dependency with addDependency ensuring dependent task runs first
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -317,7 +317,7 @@ export default function TaskpoolVsWorkerTest(): void {
 
     /**
      * @tc.name   TaskpoolVsWorkerTest1200
-     * @tc.number SUB_TASKPOOL_VS_WORKER_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_VS_WORKER_TEST_1200
      * @tc.desc   Verify TaskPool delay execution with executeDelayed schedules task after given time
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -334,7 +334,7 @@ export default function TaskpoolVsWorkerTest(): void {
 
     /**
      * @tc.name   TaskpoolVsWorkerTest1300
-     * @tc.number SUB_TASKPOOL_VS_WORKER_TEST_1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_VS_WORKER_TEST_1300
      * @tc.desc   Verify TaskPool periodic task execution with executePeriodically fires multiple times
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -343,7 +343,7 @@ export default function TaskpoolVsWorkerTest(): void {
     it('TaskpoolVsWorkerTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let receivedData = new collections.Array<number>()
       let task: taskpool.Task = new taskpool.Task(vsWorkerPeriodicTask)
-      let dataPromise: Promise<void> = new Promise<void>((resolve: Function) => {
+      let dataPromise: Promise<void> = new Promise<void>((resolve: () => void) => {
         task.onReceiveData((data: Object): void => {
           receivedData.push(data as number)
           resolve()
@@ -357,7 +357,7 @@ export default function TaskpoolVsWorkerTest(): void {
 
     /**
      * @tc.name   TaskpoolVsWorkerTest1400
-     * @tc.number SUB_TASKPOOL_VS_WORKER_TEST_1400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_VS_WORKER_TEST_1400
      * @tc.desc   Verify TaskPool sendData combined with task result verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -366,7 +366,7 @@ export default function TaskpoolVsWorkerTest(): void {
     it('TaskpoolVsWorkerTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let receivedNotify = new collections.Array<number>()
       let task: taskpool.Task = new taskpool.Task(vsWorkerSendDataTask, 3)
-      let dataPromise: Promise<void> = new Promise<void>((resolve: Function) => {
+      let dataPromise: Promise<void> = new Promise<void>((resolve: () => void) => {
         task.onReceiveData((data: Object): void => {
           receivedNotify.push(data as number)
           resolve()
@@ -381,7 +381,7 @@ export default function TaskpoolVsWorkerTest(): void {
 
     /**
      * @tc.name   TaskpoolVsWorkerTest1500
-     * @tc.number SUB_TASKPOOL_VS_WORKER_TEST_1500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_VS_WORKER_TEST_1500
      * @tc.desc   Verify TaskPool CPU intensive task returns correct computation result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

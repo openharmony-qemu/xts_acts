@@ -46,7 +46,7 @@ export default function CollectionsTest(): void {
 
     /**
      * @tc.name   CollectionsTest0100
-     * @tc.number SUB_ARKTS_UTILS_COLLECTIONS_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_COLLECTIONS_TEST_0100
      * @tc.desc   Verify Array.create creates array with specified length and initial value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -62,7 +62,7 @@ export default function CollectionsTest(): void {
 
     /**
      * @tc.name   CollectionsTest0200
-     * @tc.number SUB_ARKTS_UTILS_COLLECTIONS_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_COLLECTIONS_TEST_0200
      * @tc.desc   Verify Array constructor with element arguments
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -78,7 +78,7 @@ export default function CollectionsTest(): void {
 
     /**
      * @tc.name   CollectionsTest0300
-     * @tc.number SUB_ARKTS_UTILS_COLLECTIONS_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_COLLECTIONS_TEST_0300
      * @tc.desc   Verify Array.from converts native array to collections.Array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -94,7 +94,7 @@ export default function CollectionsTest(): void {
 
     /**
      * @tc.name   CollectionsTest0400
-     * @tc.number SUB_ARKTS_UTILS_COLLECTIONS_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_COLLECTIONS_TEST_0400
      * @tc.desc   Verify Array.isArray distinguishes collections.Array from native array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -109,7 +109,7 @@ export default function CollectionsTest(): void {
 
     /**
      * @tc.name   CollectionsTest0500
-     * @tc.number SUB_ARKTS_UTILS_COLLECTIONS_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_COLLECTIONS_TEST_0500
      * @tc.desc   Verify Array push, pop, shift, unshift, splice operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -148,7 +148,7 @@ export default function CollectionsTest(): void {
 
     /**
      * @tc.name   CollectionsTest0600
-     * @tc.number SUB_ARKTS_UTILS_COLLECTIONS_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_COLLECTIONS_TEST_0600
      * @tc.desc   Verify Array forEach, map, filter, reduce traversal methods
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -176,7 +176,7 @@ export default function CollectionsTest(): void {
 
     /**
      * @tc.name   CollectionsTest0700
-     * @tc.number SUB_ARKTS_UTILS_COLLECTIONS_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_COLLECTIONS_TEST_0700
      * @tc.desc   Verify Array fail-fast throws exception when modified during traversal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -201,7 +201,7 @@ export default function CollectionsTest(): void {
 
     /**
      * @tc.name   CollectionsTest0800
-     * @tc.number SUB_ARKTS_UTILS_COLLECTIONS_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_COLLECTIONS_TEST_0800
      * @tc.desc   Verify Array cross-thread reference passing via TaskPool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -217,7 +217,7 @@ export default function CollectionsTest(): void {
 
     /**
      * @tc.name   CollectionsTest0900
-     * @tc.number SUB_ARKTS_UTILS_COLLECTIONS_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_COLLECTIONS_TEST_0900
      * @tc.desc   Verify Array with AsyncLock for thread-safe concurrent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -238,7 +238,7 @@ export default function CollectionsTest(): void {
 
     /**
      * @tc.name   CollectionsTest1000
-     * @tc.number SUB_ARKTS_UTILS_COLLECTIONS_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_COLLECTIONS_TEST_1000
      * @tc.desc   Verify Map constructor creates empty map
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -251,7 +251,7 @@ export default function CollectionsTest(): void {
 
     /**
      * @tc.name   CollectionsTest1100
-     * @tc.number SUB_ARKTS_UTILS_COLLECTIONS_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_COLLECTIONS_TEST_1100
      * @tc.desc   Verify Map set and get operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -267,7 +267,7 @@ export default function CollectionsTest(): void {
 
     /**
      * @tc.name   CollectionsTest1200
-     * @tc.number SUB_ARKTS_UTILS_COLLECTIONS_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_COLLECTIONS_TEST_1200
      * @tc.desc   Verify Map has, delete, and clear operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -293,7 +293,7 @@ export default function CollectionsTest(): void {
 
     /**
      * @tc.name   CollectionsTest1300
-     * @tc.number SUB_ARKTS_UTILS_COLLECTIONS_TEST_1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_COLLECTIONS_TEST_1300
      * @tc.desc   Verify Set constructor with elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -309,7 +309,7 @@ export default function CollectionsTest(): void {
 
     /**
      * @tc.name   CollectionsTest1400
-     * @tc.number SUB_ARKTS_UTILS_COLLECTIONS_TEST_1400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_COLLECTIONS_TEST_1400
      * @tc.desc   Verify Set add, has, delete operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -330,7 +330,7 @@ export default function CollectionsTest(): void {
 
     /**
      * @tc.name   CollectionsTest1500
-     * @tc.number SUB_ARKTS_UTILS_COLLECTIONS_TEST_1500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_COLLECTIONS_TEST_1500
      * @tc.desc   Verify Set handles duplicate elements correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -350,7 +350,7 @@ export default function CollectionsTest(): void {
 
     /**
      * @tc.name   CollectionsTest1600
-     * @tc.number SUB_ARKTS_UTILS_COLLECTIONS_TEST_1600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_COLLECTIONS_TEST_1600
      * @tc.desc   Verify TypedArray constructors for Int8Array, Uint16Array, Int32Array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -372,7 +372,7 @@ export default function CollectionsTest(): void {
 
     /**
      * @tc.name   CollectionsTest1700
-     * @tc.number SUB_ARKTS_UTILS_COLLECTIONS_TEST_1700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_COLLECTIONS_TEST_1700
      * @tc.desc   Verify TypedArray buffer property returns underlying ArrayBuffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -386,7 +386,7 @@ export default function CollectionsTest(): void {
 
     /**
      * @tc.name   CollectionsTest1800
-     * @tc.number SUB_ARKTS_UTILS_COLLECTIONS_TEST_1800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_COLLECTIONS_TEST_1800
      * @tc.desc   Verify TypedArray type boundary values and overflow behavior
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

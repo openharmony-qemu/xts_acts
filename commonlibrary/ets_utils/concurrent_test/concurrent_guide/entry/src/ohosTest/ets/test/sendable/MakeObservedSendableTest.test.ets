@@ -127,7 +127,7 @@ export default function MakeObservedSendableTest(): void {
 
     /**
      * @tc.name   MakeObservedSendableTest0100
-     * @tc.number SUB_MAKE_OBSERVED_SENDABLE_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MAKE_OBSERVED_SENDABLE_TEST_0100
      * @tc.desc   Verify Sendable object creation and property modification for observable pattern
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -150,7 +150,7 @@ export default function MakeObservedSendableTest(): void {
 
     /**
      * @tc.name   MakeObservedSendableTest0200
-     * @tc.number SUB_MAKE_OBSERVED_SENDABLE_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MAKE_OBSERVED_SENDABLE_TEST_0200
      * @tc.desc   Verify Sendable UIState property changes are observable and consistent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -173,7 +173,7 @@ export default function MakeObservedSendableTest(): void {
 
     /**
      * @tc.name   MakeObservedSendableTest0300
-     * @tc.number SUB_MAKE_OBSERVED_SENDABLE_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MAKE_OBSERVED_SENDABLE_TEST_0300
      * @tc.desc   Verify Sendable object property binding with collections Array works correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -188,7 +188,7 @@ export default function MakeObservedSendableTest(): void {
 
     /**
      * @tc.name   MakeObservedSendableTest0400
-     * @tc.number SUB_MAKE_OBSERVED_SENDABLE_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MAKE_OBSERVED_SENDABLE_TEST_0400
      * @tc.desc   Verify whole data replacement from TaskPool returned Sendable object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -211,7 +211,7 @@ export default function MakeObservedSendableTest(): void {
 
     /**
      * @tc.name   MakeObservedSendableTest0500
-     * @tc.number SUB_MAKE_OBSERVED_SENDABLE_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MAKE_OBSERVED_SENDABLE_TEST_0500
      * @tc.desc   Verify TaskPool task returns Sendable object with correct data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -228,7 +228,7 @@ export default function MakeObservedSendableTest(): void {
 
     /**
      * @tc.name   MakeObservedSendableTest0600
-     * @tc.number SUB_MAKE_OBSERVED_SENDABLE_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MAKE_OBSERVED_SENDABLE_TEST_0600
      * @tc.desc   Verify Concurrent function returns Sendable object from TaskPool execution
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -243,7 +243,7 @@ export default function MakeObservedSendableTest(): void {
 
     /**
      * @tc.name   MakeObservedSendableTest0700
-     * @tc.number SUB_MAKE_OBSERVED_SENDABLE_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MAKE_OBSERVED_SENDABLE_TEST_0700
      * @tc.desc   Verify multiple concurrent TaskPool tasks return correct Sendable results
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -267,7 +267,7 @@ export default function MakeObservedSendableTest(): void {
 
     /**
      * @tc.name   MakeObservedSendableTest0800
-     * @tc.number SUB_MAKE_OBSERVED_SENDABLE_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MAKE_OBSERVED_SENDABLE_TEST_0800
      * @tc.desc   Verify WatchedState property modification pattern for UI observation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -289,7 +289,7 @@ export default function MakeObservedSendableTest(): void {
 
     /**
      * @tc.name   MakeObservedSendableTest0900
-     * @tc.number SUB_MAKE_OBSERVED_SENDABLE_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MAKE_OBSERVED_SENDABLE_TEST_0900
      * @tc.desc   Verify ClickState update pattern with history tracking
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -311,7 +311,7 @@ export default function MakeObservedSendableTest(): void {
 
     /**
      * @tc.name   MakeObservedSendableTest1000
-     * @tc.number SUB_MAKE_OBSERVED_SENDABLE_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MAKE_OBSERVED_SENDABLE_TEST_1000
      * @tc.desc   Verify async data fetch pattern with Sendable collections Array result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -333,7 +333,7 @@ export default function MakeObservedSendableTest(): void {
 
     /**
      * @tc.name   MakeObservedSendableTest1100
-     * @tc.number SUB_MAKE_OBSERVED_SENDABLE_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MAKE_OBSERVED_SENDABLE_TEST_1100
      * @tc.desc   Verify empty Sendable object creation with default values for observation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -353,7 +353,7 @@ export default function MakeObservedSendableTest(): void {
 
     /**
      * @tc.name   MakeObservedSendableTest1200
-     * @tc.number SUB_MAKE_OBSERVED_SENDABLE_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MAKE_OBSERVED_SENDABLE_TEST_1200
      * @tc.desc   Verify concurrent data update with AsyncLock protection maintains consistency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

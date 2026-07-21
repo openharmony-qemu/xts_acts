@@ -57,7 +57,7 @@ export default function ConditionVariableTest(): void {
 
     /**
      * @tc.name   ConditionVariableTest0100
-     * @tc.number SUB_ARKTS_UTILS_CONDITIONVARIABLE_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_CONDITIONVARIABLE_TEST_0100
      * @tc.desc   Verify ConditionVariable constructor creates a valid object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -70,7 +70,7 @@ export default function ConditionVariableTest(): void {
 
     /**
      * @tc.name   ConditionVariableTest0200
-     * @tc.number SUB_ARKTS_UTILS_CONDITIONVARIABLE_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_CONDITIONVARIABLE_TEST_0200
      * @tc.desc   Verify ConditionVariable.request() returns same instance for same name
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -98,7 +98,7 @@ export default function ConditionVariableTest(): void {
 
     /**
      * @tc.name   ConditionVariableTest0300
-     * @tc.number SUB_ARKTS_UTILS_CONDITIONVARIABLE_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_CONDITIONVARIABLE_TEST_0300
      * @tc.desc   Verify ConditionVariable.wait() blocks until notifyOne is called
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -123,7 +123,7 @@ export default function ConditionVariableTest(): void {
 
     /**
      * @tc.name   ConditionVariableTest0400
-     * @tc.number SUB_ARKTS_UTILS_CONDITIONVARIABLE_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_CONDITIONVARIABLE_TEST_0400
      * @tc.desc   Verify ConditionVariable.waitFor() returns after timeout
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -144,7 +144,7 @@ export default function ConditionVariableTest(): void {
 
     /**
      * @tc.name   ConditionVariableTest0500
-     * @tc.number SUB_ARKTS_UTILS_CONDITIONVARIABLE_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_CONDITIONVARIABLE_TEST_0500
      * @tc.desc   Verify notifyOne wakes only one waiting task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -172,7 +172,7 @@ export default function ConditionVariableTest(): void {
 
     /**
      * @tc.name   ConditionVariableTest0600
-     * @tc.number SUB_ARKTS_UTILS_CONDITIONVARIABLE_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_CONDITIONVARIABLE_TEST_0600
      * @tc.desc   Verify notifyAll wakes all waiting tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -195,7 +195,7 @@ export default function ConditionVariableTest(): void {
 
     /**
      * @tc.name   ConditionVariableTest0700
-     * @tc.number SUB_ARKTS_UTILS_CONDITIONVARIABLE_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_CONDITIONVARIABLE_TEST_0700
      * @tc.desc   Verify ConditionVariable can be passed across TaskPool threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -224,7 +224,7 @@ export default function ConditionVariableTest(): void {
 
     /**
      * @tc.name   ConditionVariableTest0800
-     * @tc.number SUB_ARKTS_UTILS_CONDITIONVARIABLE_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_CONDITIONVARIABLE_TEST_0800
      * @tc.desc   Verify ConditionVariable.waitFor() with zero timeout returns immediately
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -242,7 +242,7 @@ export default function ConditionVariableTest(): void {
 
     /**
      * @tc.name   ConditionVariableTest0900
-     * @tc.number SUB_ARKTS_UTILS_CONDITIONVARIABLE_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_CONDITIONVARIABLE_TEST_0900
      * @tc.desc   Verify notifyOne/notifyAll with no waiters does not throw exception
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -263,7 +263,7 @@ export default function ConditionVariableTest(): void {
 
     /**
      * @tc.name   ConditionVariableTest1000
-     * @tc.number SUB_ARKTS_UTILS_CONDITIONVARIABLE_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_CONDITIONVARIABLE_TEST_1000
      * @tc.desc   Verify ConditionVariable request with different names returns different instances
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -279,7 +279,7 @@ export default function ConditionVariableTest(): void {
 
     /**
      * @tc.name   ConditionVariableTest1100
-     * @tc.number SUB_ARKTS_UTILS_CONDITIONVARIABLE_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_CONDITIONVARIABLE_TEST_1100
      * @tc.desc   Verify ConditionVariable cross-task wait/notify with shared counter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -309,7 +309,7 @@ export default function ConditionVariableTest(): void {
 
     /**
      * @tc.name   ConditionVariableTest1200
-     * @tc.number SUB_ARKTS_UTILS_CONDITIONVARIABLE_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_CONDITIONVARIABLE_TEST_1200
      * @tc.desc   Verify ConditionVariable.waitFor() can be woken by notify before timeout
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -88,7 +88,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest0100
-     * @tc.number SUB_OBJECT_TRANSFER_ARRAYBUFFER_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_ARRAYBUFFER_TEST_0100
      * @tc.desc   Verify ArrayBuffer copy mode via setTransferList([]) preserves original
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -109,7 +109,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest0200
-     * @tc.number SUB_OBJECT_TRANSFER_ARRAYBUFFER_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_ARRAYBUFFER_TEST_0200
      * @tc.desc   Verify ArrayBuffer default transfer mode detaches original buffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -130,7 +130,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest0300
-     * @tc.number SUB_OBJECT_TRANSFER_ARRAYBUFFER_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_ARRAYBUFFER_TEST_0300
      * @tc.desc   Verify ArrayBuffer.slice() creates independent copy for parallel processing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -169,7 +169,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest0400
-     * @tc.number SUB_OBJECT_TRANSFER_ARRAYBUFFER_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_ARRAYBUFFER_TEST_0400
      * @tc.desc   Verify TaskGroup batch processing with multiple ArrayBuffer slices
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -193,7 +193,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest0500
-     * @tc.number SUB_OBJECT_TRANSFER_ARRAYBUFFER_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_ARRAYBUFFER_TEST_0500
      * @tc.desc   Verify task return ArrayBuffer uses transfer mode by default
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -210,7 +210,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest0600
-     * @tc.number SUB_OBJECT_TRANSFER_ARRAYBUFFER_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_ARRAYBUFFER_TEST_0600
      * @tc.desc   Verify 1MB large ArrayBuffer transfer performance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -228,7 +228,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest0700
-     * @tc.number SUB_OBJECT_TRANSFER_ARRAYBUFFER_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_ARRAYBUFFER_TEST_0700
      * @tc.desc   Verify 10MB ArrayBuffer transfer within serialization limit
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -246,7 +246,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest0800
-     * @tc.number SUB_OBJECT_TRANSFER_ARRAYBUFFER_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_ARRAYBUFFER_TEST_0800
      * @tc.desc   Verify 8 slices parallel processing of ArrayBuffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -270,7 +270,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest0900
-     * @tc.number SUB_OBJECT_TRANSFER_ARRAYBUFFER_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_ARRAYBUFFER_TEST_0900
      * @tc.desc   Verify copy vs transfer performance comparison
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -302,7 +302,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest1000
-     * @tc.number SUB_OBJECT_TRANSFER_ARRAYBUFFER_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_ARRAYBUFFER_TEST_1000
      * @tc.desc   Verify multiple ArrayBuffer objects passed simultaneously
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -322,7 +322,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest1100
-     * @tc.number SUB_OBJECT_TRANSFER_ARRAYBUFFER_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_ARRAYBUFFER_TEST_1100
      * @tc.desc   Verify result concatenation from multiple tasks returning ArrayBuffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -358,7 +358,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest1200
-     * @tc.number SUB_OBJECT_TRANSFER_ARRAYBUFFER_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_ARRAYBUFFER_TEST_1200
      * @tc.desc   Verify returned ArrayBuffer can be re-transferred to another task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -380,7 +380,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest1300
-     * @tc.number SUB_OBJECT_TRANSFER_ARRAYBUFFER_TEST_1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_ARRAYBUFFER_TEST_1300
      * @tc.desc   Verify ArrayBuffer slice with zero length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -394,7 +394,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest1400
-     * @tc.number SUB_OBJECT_TRANSFER_ARRAYBUFFER_TEST_1400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_ARRAYBUFFER_TEST_1400
      * @tc.desc   Verify ArrayBuffer slice preserves data content
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -415,7 +415,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest1500
-     * @tc.number SUB_OBJECT_TRANSFER_ARRAYBUFFER_TEST_1500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_ARRAYBUFFER_TEST_1500
      * @tc.desc   Verify 16 slice parallel processing of ArrayBuffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -439,7 +439,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest1600
-     * @tc.number SUB_OBJECT_TRANSFER_ARRAYBUFFER_TEST_1600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_ARRAYBUFFER_TEST_1600
      * @tc.desc   Verify copy mode data independence - modifying original does not affect copy
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -460,7 +460,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest1700
-     * @tc.number SUB_OBJECT_TRANSFER_ARRAYBUFFER_TEST_1700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_ARRAYBUFFER_TEST_1700
      * @tc.desc   Verify TaskGroup with chunk processing returns correct number of results
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -487,7 +487,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest1800
-     * @tc.number SUB_OBJECT_TRANSFER_ARRAYBUFFER_TEST_1800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_OBJECT_TRANSFER_ARRAYBUFFER_TEST_1800
      * @tc.desc   Verify ArrayBuffer with small size copy and transfer both work correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

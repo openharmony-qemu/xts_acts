@@ -26,7 +26,7 @@ export default function CommonLibraryFaqTest(): void {
 
     /**
      * @tc.name   CommonLibraryFaqTest0100
-     * @tc.number SUB_COMMON_LIBRARY_FAQ_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_COMMON_LIBRARY_FAQ_TEST_0100
      * @tc.desc   Verify setTimeout and setInterval create timers that execute correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -35,8 +35,8 @@ export default function CommonLibraryFaqTest(): void {
     it('CommonLibraryFaqTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let timeoutExecuted: boolean = false
       let intervalCount: number = 0
-      let timeoutResolve: Function = (): void => {}
-      let timeoutPromise: Promise<void> = new Promise<void>((resolve: Function) => {
+      let timeoutResolve: () => void = (): void => {}
+      let timeoutPromise: Promise<void> = new Promise<void>((resolve: () => void) => {
         timeoutResolve = resolve
       })
 
@@ -50,7 +50,7 @@ export default function CommonLibraryFaqTest(): void {
       }, 200)
 
       // Wait for timeout to execute and at least 3 intervals
-      let intervalPromise: Promise<void> = new Promise<void>((resolve: Function) => {
+      let intervalPromise: Promise<void> = new Promise<void>((resolve: () => void) => {
         let checkInterval: number = setInterval((): void => {
           if (intervalCount >= 3) {
             clearInterval(checkInterval)
@@ -70,7 +70,7 @@ export default function CommonLibraryFaqTest(): void {
 
     /**
      * @tc.name   CommonLibraryFaqTest0200
-     * @tc.number SUB_COMMON_LIBRARY_FAQ_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_COMMON_LIBRARY_FAQ_TEST_0200
      * @tc.desc   Verify clearTimeout and clearInterval prevent timer execution
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -86,14 +86,14 @@ export default function CommonLibraryFaqTest(): void {
       clearTimeout(timeoutId)
 
       // Wait beyond the timer delay to confirm it does not execute
-      await new Promise<void>((resolve: Function) => setTimeout(resolve, 600))
+      await new Promise<void>((resolve: () => void) => setTimeout(resolve, 600))
 
       expect(executed).assertFalse()
     })
 
     /**
      * @tc.name   CommonLibraryFaqTest0300
-     * @tc.number SUB_COMMON_LIBRARY_FAQ_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_COMMON_LIBRARY_FAQ_TEST_0300
      * @tc.desc   Verify timer ID initial value does not cause accidental clearing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -112,7 +112,7 @@ export default function CommonLibraryFaqTest(): void {
       }
 
       // Wait beyond the timer delay to confirm it does not execute
-      await new Promise<void>((resolve: Function) => setTimeout(resolve, 600))
+      await new Promise<void>((resolve: () => void) => setTimeout(resolve, 600))
 
       if (timeoutId !== 0) {
         expect(executed).assertFalse()

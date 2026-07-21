@@ -94,7 +94,7 @@ export default function ConcurrencyFaqTest(): void {
 
     /**
      * @tc.name   ConcurrencyFaqTest0100
-     * @tc.number SUB_CONCURRENCY_FAQ_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENCY_FAQ_TEST_0100
      * @tc.desc   Verify TaskPool exception catching with try/catch for throwing task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -115,7 +115,7 @@ export default function ConcurrencyFaqTest(): void {
 
     /**
      * @tc.name   ConcurrencyFaqTest0200
-     * @tc.number SUB_CONCURRENCY_FAQ_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENCY_FAQ_TEST_0200
      * @tc.desc   Verify TaskPool priority setting with HIGH/MEDIUM/LOW levels
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -138,7 +138,7 @@ export default function ConcurrencyFaqTest(): void {
 
     /**
      * @tc.name   ConcurrencyFaqTest0300
-     * @tc.number SUB_CONCURRENCY_FAQ_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENCY_FAQ_TEST_0300
      * @tc.desc   Verify SequenceRunner executes tasks in serial order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -165,7 +165,7 @@ export default function ConcurrencyFaqTest(): void {
 
     /**
      * @tc.name   ConcurrencyFaqTest0400
-     * @tc.number SUB_CONCURRENCY_FAQ_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENCY_FAQ_TEST_0400
      * @tc.desc   Verify Sendable object property is accessible in Concurrent function across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -181,7 +181,7 @@ export default function ConcurrencyFaqTest(): void {
 
     /**
      * @tc.name   ConcurrencyFaqTest0500
-     * @tc.number SUB_CONCURRENCY_FAQ_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENCY_FAQ_TEST_0500
      * @tc.desc   Verify Sendable property can be modified with same type value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -196,7 +196,7 @@ export default function ConcurrencyFaqTest(): void {
 
     /**
      * @tc.name   ConcurrencyFaqTest0600
-     * @tc.number SUB_CONCURRENCY_FAQ_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENCY_FAQ_TEST_0600
      * @tc.desc   Verify TaskPool handles 100 concurrent tasks without failure
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -214,7 +214,7 @@ export default function ConcurrencyFaqTest(): void {
 
     /**
      * @tc.name   ConcurrencyFaqTest0700
-     * @tc.number SUB_CONCURRENCY_FAQ_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENCY_FAQ_TEST_0700
      * @tc.desc   Verify Concurrent function executes correctly with arithmetic computation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -228,7 +228,7 @@ export default function ConcurrencyFaqTest(): void {
 
     /**
      * @tc.name   ConcurrencyFaqTest0800
-     * @tc.number SUB_CONCURRENCY_FAQ_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENCY_FAQ_TEST_0800
      * @tc.desc   Verify Sendable object data modification across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -245,7 +245,7 @@ export default function ConcurrencyFaqTest(): void {
 
     /**
      * @tc.name   ConcurrencyFaqTest0900
-     * @tc.number SUB_CONCURRENCY_FAQ_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENCY_FAQ_TEST_0900
      * @tc.desc   Verify SequenceRunner maintains strict execution order with ordered tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -277,7 +277,7 @@ export default function ConcurrencyFaqTest(): void {
 
     /**
      * @tc.name   ConcurrencyFaqTest1000
-     * @tc.number SUB_CONCURRENCY_FAQ_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENCY_FAQ_TEST_1000
      * @tc.desc   Verify TaskPool task execution with multiple concurrent priority tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -298,7 +298,7 @@ export default function ConcurrencyFaqTest(): void {
 
     /**
      * @tc.name   ConcurrencyFaqTest1100
-     * @tc.number SUB_CONCURRENCY_FAQ_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENCY_FAQ_TEST_1100
      * @tc.desc   Verify TaskPool correctly returns string result from task that simulates error handling
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -312,7 +312,7 @@ export default function ConcurrencyFaqTest(): void {
 
     /**
      * @tc.name   ConcurrencyFaqTest1200
-     * @tc.number SUB_CONCURRENCY_FAQ_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENCY_FAQ_TEST_1200
      * @tc.desc   Verify Sendable object property modification is visible to caller thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -329,7 +329,7 @@ export default function ConcurrencyFaqTest(): void {
 
     /**
      * @tc.name   ConcurrencyFaqTest1300
-     * @tc.number SUB_CONCURRENCY_FAQ_TEST_1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENCY_FAQ_TEST_1300
      * @tc.desc   Verify unhandled Promise rejection can be caught at caller level
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

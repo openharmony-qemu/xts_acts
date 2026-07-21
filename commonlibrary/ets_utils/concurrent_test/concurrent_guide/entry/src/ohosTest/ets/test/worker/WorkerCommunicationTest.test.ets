@@ -25,7 +25,7 @@ export default function WorkerCommunicationTest(): void {
     beforeEach((): void => {})
     afterEach(async (): Promise<void> => {
       if (currentWorker !== null) {
-        await new Promise<void>((resolve: Function) => {
+        await new Promise<void>((resolve: () => void) => {
           currentWorker!.onexit = (): void => { resolve() }
           currentWorker!.terminate()
         })
@@ -33,12 +33,12 @@ export default function WorkerCommunicationTest(): void {
       }
     })
     afterAll(async (): Promise<void> => {
-      await new Promise<void>((resolve: Function) => { setTimeout((): void => resolve(undefined), 500) })
+      await new Promise<void>((resolve: () => void) => { setTimeout((): void => resolve(), 500) })
     })
 
     /**
      * @tc.name   WorkerCommunicationTest0100
-     * @tc.number SUB_WORKER_COMMUNICATION_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_COMMUNICATION_TEST_0100
      * @tc.desc   Verify host thread sends string message and Worker echoes back
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -57,7 +57,7 @@ export default function WorkerCommunicationTest(): void {
 
     /**
      * @tc.name   WorkerCommunicationTest0200
-     * @tc.number SUB_WORKER_COMMUNICATION_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_COMMUNICATION_TEST_0200
      * @tc.desc   Verify Worker returns computed result to host thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -76,7 +76,7 @@ export default function WorkerCommunicationTest(): void {
 
     /**
      * @tc.name   WorkerCommunicationTest0300
-     * @tc.number SUB_WORKER_COMMUNICATION_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_COMMUNICATION_TEST_0300
      * @tc.desc   Verify string type message round-trip between host and Worker
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -95,7 +95,7 @@ export default function WorkerCommunicationTest(): void {
 
     /**
      * @tc.name   WorkerCommunicationTest0400
-     * @tc.number SUB_WORKER_COMMUNICATION_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_COMMUNICATION_TEST_0400
      * @tc.desc   Verify Worker processes long-running task with periodic status messages
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -126,7 +126,7 @@ export default function WorkerCommunicationTest(): void {
 
     /**
      * @tc.name   WorkerCommunicationTest0500
-     * @tc.number SUB_WORKER_COMMUNICATION_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_COMMUNICATION_TEST_0500
      * @tc.desc   Verify rapid sequential message sending and ordered processing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -155,7 +155,7 @@ export default function WorkerCommunicationTest(): void {
 
     /**
      * @tc.name   WorkerCommunicationTest0600
-     * @tc.number SUB_WORKER_COMMUNICATION_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_COMMUNICATION_TEST_0600
      * @tc.desc   Verify bidirectional communication with multiple message exchanges
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -176,7 +176,7 @@ export default function WorkerCommunicationTest(): void {
 
     /**
      * @tc.name   WorkerCommunicationTest0700
-     * @tc.number SUB_WORKER_COMMUNICATION_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_COMMUNICATION_TEST_0700
      * @tc.desc   Verify Worker receives and processes object type message
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -199,7 +199,7 @@ export default function WorkerCommunicationTest(): void {
 
     /**
      * @tc.name   WorkerCommunicationTest0800
-     * @tc.number SUB_WORKER_COMMUNICATION_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_COMMUNICATION_TEST_0800
      * @tc.desc   Verify Worker handles empty string message correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -218,7 +218,7 @@ export default function WorkerCommunicationTest(): void {
 
     /**
      * @tc.name   WorkerCommunicationTest0900
-     * @tc.number SUB_WORKER_COMMUNICATION_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_COMMUNICATION_TEST_0900
      * @tc.desc   Verify Worker handles large volume data message within serialization limit
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -242,7 +242,7 @@ export default function WorkerCommunicationTest(): void {
 
     /**
      * @tc.name   WorkerCommunicationTest1000
-     * @tc.number SUB_WORKER_COMMUNICATION_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_COMMUNICATION_TEST_1000
      * @tc.desc   Verify Worker handles multiple message types in sequence correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

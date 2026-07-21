@@ -37,7 +37,7 @@ export default function WorkerSendableTest(): void {
     beforeEach((): void => {})
     afterEach(async (): Promise<void> => {
       if (currentWorker !== null) {
-        await new Promise<void>((resolve: Function) => {
+        await new Promise<void>((resolve: () => void) => {
           currentWorker!.onexit = (): void => { resolve() }
           currentWorker!.terminate()
         })
@@ -45,12 +45,12 @@ export default function WorkerSendableTest(): void {
       }
     })
     afterAll(async (): Promise<void> => {
-      await new Promise<void>((resolve: Function) => { setTimeout((): void => resolve(undefined), 500) })
+      await new Promise<void>((resolve: () => void) => { setTimeout((): void => resolve(), 500) })
     })
 
     /**
      * @tc.name   WorkerSendableTest0100
-     * @tc.number SUB_WORKER_SENDABLE_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_SENDABLE_TEST_0100
      * @tc.desc   Verify Sendable class definition with decorated properties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -71,7 +71,7 @@ export default function WorkerSendableTest(): void {
 
     /**
      * @tc.name   WorkerSendableTest0200
-     * @tc.number SUB_WORKER_SENDABLE_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_SENDABLE_TEST_0200
      * @tc.desc   Verify postMessageWithSharedSendable sends Sendable object to Worker
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -89,7 +89,7 @@ export default function WorkerSendableTest(): void {
 
     /**
      * @tc.name   WorkerSendableTest0300
-     * @tc.number SUB_WORKER_SENDABLE_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_SENDABLE_TEST_0300
      * @tc.desc   Verify host sends data to Worker and Worker responds via postMessage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -108,7 +108,7 @@ export default function WorkerSendableTest(): void {
 
     /**
      * @tc.name   WorkerSendableTest0400
-     * @tc.number SUB_WORKER_SENDABLE_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_SENDABLE_TEST_0400
      * @tc.desc   Verify Worker processes sendable test message and returns structured response
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -130,7 +130,7 @@ export default function WorkerSendableTest(): void {
 
     /**
      * @tc.name   WorkerSendableTest0500
-     * @tc.number SUB_WORKER_SENDABLE_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_SENDABLE_TEST_0500
      * @tc.desc   Verify Sendable object properties remain accessible after sending to Worker
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -150,7 +150,7 @@ export default function WorkerSendableTest(): void {
 
     /**
      * @tc.name   WorkerSendableTest0600
-     * @tc.number SUB_WORKER_SENDABLE_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_SENDABLE_TEST_0600
      * @tc.desc   Verify Sendable object with multiple property types round-trip communication
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -172,7 +172,7 @@ export default function WorkerSendableTest(): void {
 
     /**
      * @tc.name   WorkerSendableTest0700
-     * @tc.number SUB_WORKER_SENDABLE_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_SENDABLE_TEST_0700
      * @tc.desc   Verify regular object serialization transfer via postMessage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -194,7 +194,7 @@ export default function WorkerSendableTest(): void {
 
     /**
      * @tc.name   WorkerSendableTest0800
-     * @tc.number SUB_WORKER_SENDABLE_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_SENDABLE_TEST_0800
      * @tc.desc   Verify Sendable object bidirectional transfer between host and Worker
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -221,7 +221,7 @@ export default function WorkerSendableTest(): void {
 
     /**
      * @tc.name   WorkerSendableTest0900
-     * @tc.number SUB_WORKER_SENDABLE_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_SENDABLE_TEST_0900
      * @tc.desc   Verify collections.Array Sendable container works with Worker communication
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -240,7 +240,7 @@ export default function WorkerSendableTest(): void {
 
     /**
      * @tc.name   WorkerSendableTest1000
-     * @tc.number SUB_WORKER_SENDABLE_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_SENDABLE_TEST_1000
      * @tc.desc   Verify multiple Workers concurrent communication with host thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -296,13 +296,13 @@ export default function WorkerSendableTest(): void {
       expect(hasW1).assertTrue()
       expect(hasW2).assertTrue()
       expect(hasW3).assertTrue()
-      let exit1: Promise<void> = new Promise<void>((resolve: Function) => {
+      let exit1: Promise<void> = new Promise<void>((resolve: () => void) => {
         worker1.onexit = (code: number): void => { resolve() }
       })
-      let exit2: Promise<void> = new Promise<void>((resolve: Function) => {
+      let exit2: Promise<void> = new Promise<void>((resolve: () => void) => {
         worker2.onexit = (code: number): void => { resolve() }
       })
-      let exit3: Promise<void> = new Promise<void>((resolve: Function) => {
+      let exit3: Promise<void> = new Promise<void>((resolve: () => void) => {
         worker3.onexit = (code: number): void => { resolve() }
       })
       worker1.terminate()
@@ -313,7 +313,7 @@ export default function WorkerSendableTest(): void {
 
     /**
      * @tc.name   WorkerSendableTest1100
-     * @tc.number SUB_WORKER_SENDABLE_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_SENDABLE_TEST_1100
      * @tc.desc   Verify Sendable object shared via postMessageWithSharedSendable with EchoWorker
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -341,7 +341,7 @@ export default function WorkerSendableTest(): void {
 
     /**
      * @tc.name   WorkerSendableTest1200
-     * @tc.number SUB_WORKER_SENDABLE_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_SENDABLE_TEST_1200
      * @tc.desc   Verify Sendable object property modification after shared transfer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -112,7 +112,7 @@ export default function TaskpoolCommunicationTest(): void {
 
     /**
      * @tc.name   TaskpoolCommunicationTest0100
-     * @tc.number SUB_TASKPOOL_COMMUNICATION_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_COMMUNICATION_TEST_0100
      * @tc.desc   Verify Task.sendData sends string data from worker thread received by onReceiveData
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -121,7 +121,7 @@ export default function TaskpoolCommunicationTest(): void {
     it('TaskpoolCommunicationTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let receivedData = new collections.Array<string>()
       let task: taskpool.Task = new taskpool.Task(sendDataStringTask)
-      let dataPromise: Promise<void> = new Promise<void>((resolve: Function) => {
+      let dataPromise: Promise<void> = new Promise<void>((resolve: () => void) => {
         task.onReceiveData((data: Object): void => {
           receivedData.push(data as string)
           resolve()
@@ -136,7 +136,7 @@ export default function TaskpoolCommunicationTest(): void {
 
     /**
      * @tc.name   TaskpoolCommunicationTest0200
-     * @tc.number SUB_TASKPOOL_COMMUNICATION_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_COMMUNICATION_TEST_0200
      * @tc.desc   Verify onReceiveData callback receives all multiple sendData messages in order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -145,7 +145,7 @@ export default function TaskpoolCommunicationTest(): void {
     it('TaskpoolCommunicationTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let receivedValues = new collections.Array<number>()
       let task: taskpool.Task = new taskpool.Task(sendDataMultiTask)
-      let dataPromise: Promise<void> = new Promise<void>((resolve: Function) => {
+      let dataPromise: Promise<void> = new Promise<void>((resolve: () => void) => {
         task.onReceiveData((data: Object): void => {
           receivedValues.push(data as number)
           if (receivedValues.length >= 3) {
@@ -164,7 +164,7 @@ export default function TaskpoolCommunicationTest(): void {
 
     /**
      * @tc.name   TaskpoolCommunicationTest0300
-     * @tc.number SUB_TASKPOOL_COMMUNICATION_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_COMMUNICATION_TEST_0300
      * @tc.desc   Verify real-time progress notification with 4 sequential sendData calls
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -173,7 +173,7 @@ export default function TaskpoolCommunicationTest(): void {
     it('TaskpoolCommunicationTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let progressData = new collections.Array<number>()
       let task: taskpool.Task = new taskpool.Task(sendDataProgressTask)
-      let dataPromise: Promise<void> = new Promise<void>((resolve: Function) => {
+      let dataPromise: Promise<void> = new Promise<void>((resolve: () => void) => {
         task.onReceiveData((data: Object): void => {
           progressData.push(data as number)
           if (progressData.length >= 4) {
@@ -193,7 +193,7 @@ export default function TaskpoolCommunicationTest(): void {
 
     /**
      * @tc.name   TaskpoolCommunicationTest0400
-     * @tc.number SUB_TASKPOOL_COMMUNICATION_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_COMMUNICATION_TEST_0400
      * @tc.desc   Verify sendData transfers complex Sendable object with nested collections.Array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -206,7 +206,7 @@ export default function TaskpoolCommunicationTest(): void {
       data.name = 'test'
       data.valueCount = 3
       let task: taskpool.Task = new taskpool.Task(sendDataComplexTask, data)
-      let dataPromise: Promise<void> = new Promise<void>((resolve: Function) => {
+      let dataPromise: Promise<void> = new Promise<void>((resolve: () => void) => {
         task.onReceiveData((d: Object): void => {
           receivedObj.push(d as ComplexData)
           resolve()
@@ -223,7 +223,7 @@ export default function TaskpoolCommunicationTest(): void {
 
     /**
      * @tc.name   TaskpoolCommunicationTest0500
-     * @tc.number SUB_TASKPOOL_COMMUNICATION_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_COMMUNICATION_TEST_0500
      * @tc.desc   Verify sendData transfers number types including integer and float correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -232,7 +232,7 @@ export default function TaskpoolCommunicationTest(): void {
     it('TaskpoolCommunicationTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let receivedNumbers = new collections.Array<number>()
       let task: taskpool.Task = new taskpool.Task(sendDataNumberTask)
-      let dataPromise: Promise<void> = new Promise<void>((resolve: Function) => {
+      let dataPromise: Promise<void> = new Promise<void>((resolve: () => void) => {
         task.onReceiveData((data: Object): void => {
           receivedNumbers.push(data as number)
           if (receivedNumbers.length >= 2) {
@@ -250,7 +250,7 @@ export default function TaskpoolCommunicationTest(): void {
 
     /**
      * @tc.name   TaskpoolCommunicationTest0600
-     * @tc.number SUB_TASKPOOL_COMMUNICATION_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_COMMUNICATION_TEST_0600
      * @tc.desc   Verify sendData transfers boolean values true and false correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -259,7 +259,7 @@ export default function TaskpoolCommunicationTest(): void {
     it('TaskpoolCommunicationTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let receivedBools = new collections.Array<boolean>()
       let task: taskpool.Task = new taskpool.Task(sendDataBoolTask)
-      let dataPromise: Promise<void> = new Promise<void>((resolve: Function) => {
+      let dataPromise: Promise<void> = new Promise<void>((resolve: () => void) => {
         task.onReceiveData((data: Object): void => {
           receivedBools.push(data as boolean)
           if (receivedBools.length >= 2) {
@@ -277,7 +277,7 @@ export default function TaskpoolCommunicationTest(): void {
 
     /**
      * @tc.name   TaskpoolCommunicationTest0700
-     * @tc.number SUB_TASKPOOL_COMMUNICATION_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_COMMUNICATION_TEST_0700
      * @tc.desc   Verify sendData with null value is received correctly by onReceiveData
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -286,7 +286,7 @@ export default function TaskpoolCommunicationTest(): void {
     it('TaskpoolCommunicationTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let receivedCount: number = 0
       let task: taskpool.Task = new taskpool.Task(sendDataNullTask)
-      let dataPromise: Promise<void> = new Promise<void>((resolve: Function) => {
+      let dataPromise: Promise<void> = new Promise<void>((resolve: () => void) => {
         task.onReceiveData((data: Object): void => {
           receivedCount++
           resolve()
@@ -300,7 +300,7 @@ export default function TaskpoolCommunicationTest(): void {
 
     /**
      * @tc.name   TaskpoolCommunicationTest0800
-     * @tc.number SUB_TASKPOOL_COMMUNICATION_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_COMMUNICATION_TEST_0800
      * @tc.desc   Verify sendData with undefined value is received by onReceiveData callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -309,7 +309,7 @@ export default function TaskpoolCommunicationTest(): void {
     it('TaskpoolCommunicationTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let receivedCount: number = 0
       let task: taskpool.Task = new taskpool.Task(sendDataUndefinedTask)
-      let dataPromise: Promise<void> = new Promise<void>((resolve: Function) => {
+      let dataPromise: Promise<void> = new Promise<void>((resolve: () => void) => {
         task.onReceiveData((data: Object): void => {
           receivedCount++
           resolve()
@@ -323,7 +323,7 @@ export default function TaskpoolCommunicationTest(): void {
 
     /**
      * @tc.name   TaskpoolCommunicationTest0900
-     * @tc.number SUB_TASKPOOL_COMMUNICATION_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_COMMUNICATION_TEST_0900
      * @tc.desc   Verify multiple tasks with sendData correctly route messages to respective onReceiveData
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -334,7 +334,7 @@ export default function TaskpoolCommunicationTest(): void {
       let task2Data = new collections.Array<number>()
 
       let task1: taskpool.Task = new taskpool.Task(sendDataMultiNotifyTask, 1)
-      let task1Promise: Promise<void> = new Promise<void>((resolve: Function) => {
+      let task1Promise: Promise<void> = new Promise<void>((resolve: () => void) => {
         task1.onReceiveData((data: Object): void => {
           task1Data.push(data as number)
           if (task1Data.length >= 2) {
@@ -344,7 +344,7 @@ export default function TaskpoolCommunicationTest(): void {
       })
 
       let task2: taskpool.Task = new taskpool.Task(sendDataMultiNotifyTask, 2)
-      let task2Promise: Promise<void> = new Promise<void>((resolve: Function) => {
+      let task2Promise: Promise<void> = new Promise<void>((resolve: () => void) => {
         task2.onReceiveData((data: Object): void => {
           task2Data.push(data as number)
           if (task2Data.length >= 2) {
@@ -371,7 +371,7 @@ export default function TaskpoolCommunicationTest(): void {
 
     /**
      * @tc.name   TaskpoolCommunicationTest1000
-     * @tc.number SUB_TASKPOOL_COMMUNICATION_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_COMMUNICATION_TEST_1000
      * @tc.desc   Verify sendData transfers collections.Array data structure correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -380,7 +380,7 @@ export default function TaskpoolCommunicationTest(): void {
     it('TaskpoolCommunicationTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let receivedArrays = new collections.Array<collections.Array<number>>()
       let task: taskpool.Task = new taskpool.Task(sendDataArrayTask)
-      let dataPromise: Promise<void> = new Promise<void>((resolve: Function) => {
+      let dataPromise: Promise<void> = new Promise<void>((resolve: () => void) => {
         task.onReceiveData((data: Object): void => {
           receivedArrays.push(data as collections.Array<number>)
           resolve()
@@ -397,7 +397,7 @@ export default function TaskpoolCommunicationTest(): void {
 
     /**
      * @tc.name   TaskpoolCommunicationTest1100
-     * @tc.number SUB_TASKPOOL_COMMUNICATION_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_COMMUNICATION_TEST_1100
      * @tc.desc   Verify batch sendData with 10 messages all received by onReceiveData callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -406,7 +406,7 @@ export default function TaskpoolCommunicationTest(): void {
     it('TaskpoolCommunicationTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let receivedBatch = new collections.Array<number>()
       let task: taskpool.Task = new taskpool.Task(sendDataBatchTask, 10)
-      let dataPromise: Promise<void> = new Promise<void>((resolve: Function) => {
+      let dataPromise: Promise<void> = new Promise<void>((resolve: () => void) => {
         task.onReceiveData((data: Object): void => {
           receivedBatch.push(data as number)
           if (receivedBatch.length >= 10) {
@@ -425,7 +425,7 @@ export default function TaskpoolCommunicationTest(): void {
 
     /**
      * @tc.name   TaskpoolCommunicationTest1200
-     * @tc.number SUB_TASKPOOL_COMMUNICATION_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_COMMUNICATION_TEST_1200
      * @tc.desc   Verify sendData with empty string is received correctly by host thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -434,7 +434,7 @@ export default function TaskpoolCommunicationTest(): void {
     it('TaskpoolCommunicationTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let receivedStrings = new collections.Array<string>()
       let task: taskpool.Task = new taskpool.Task(sendDataEmptyStringTask)
-      let dataPromise: Promise<void> = new Promise<void>((resolve: Function) => {
+      let dataPromise: Promise<void> = new Promise<void>((resolve: () => void) => {
         task.onReceiveData((data: Object): void => {
           receivedStrings.push(data as string)
           resolve()

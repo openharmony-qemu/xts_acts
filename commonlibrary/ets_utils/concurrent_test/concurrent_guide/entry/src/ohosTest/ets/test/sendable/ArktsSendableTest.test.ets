@@ -205,7 +205,7 @@ export default function ArktsSendableTest(): void {
 
     /**
      * @tc.name   ArktsSendableTest0100
-     * @tc.number SUB_ARKTS_SENDABLE_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_SENDABLE_TEST_0100
      * @tc.desc   Verify Sendable class implements ISendable interface detected by isSendable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -218,7 +218,7 @@ export default function ArktsSendableTest(): void {
 
     /**
      * @tc.name   ArktsSendableTest0200
-     * @tc.number SUB_ARKTS_SENDABLE_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_SENDABLE_TEST_0200
      * @tc.desc   Verify @Sendable decorator validates Sendable class constraints
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -239,7 +239,7 @@ export default function ArktsSendableTest(): void {
 
     /**
      * @tc.name   ArktsSendableTest0300
-     * @tc.number SUB_ARKTS_SENDABLE_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_SENDABLE_TEST_0300
      * @tc.desc   Verify @Sendable decorator on function works correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -252,7 +252,7 @@ export default function ArktsSendableTest(): void {
 
     /**
      * @tc.name   ArktsSendableTest0400
-     * @tc.number SUB_ARKTS_SENDABLE_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_SENDABLE_TEST_0400
      * @tc.desc   Verify const enum as Sendable class member works across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -269,7 +269,7 @@ export default function ArktsSendableTest(): void {
 
     /**
      * @tc.name   ArktsSendableTest0500
-     * @tc.number SUB_ARKTS_SENDABLE_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_SENDABLE_TEST_0500
      * @tc.desc   Verify all basic types boolean number string bigint null undefined in Sendable class
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -293,7 +293,7 @@ export default function ArktsSendableTest(): void {
 
     /**
      * @tc.name   ArktsSendableTest0600
-     * @tc.number SUB_ARKTS_SENDABLE_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_SENDABLE_TEST_0600
      * @tc.desc   Verify collections containers Array Map Set as Sendable members across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -312,7 +312,7 @@ export default function ArktsSendableTest(): void {
 
     /**
      * @tc.name   ArktsSendableTest0700
-     * @tc.number SUB_ARKTS_SENDABLE_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_SENDABLE_TEST_0700
      * @tc.desc   Verify AsyncLock object as Sendable member for thread-safe increment
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -334,7 +334,7 @@ export default function ArktsSendableTest(): void {
 
     /**
      * @tc.name   ArktsSendableTest0800
-     * @tc.number SUB_ARKTS_SENDABLE_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_SENDABLE_TEST_0800
      * @tc.desc   Verify ConditionVariable as Sendable member for signal wait mechanism
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -353,7 +353,7 @@ export default function ArktsSendableTest(): void {
 
     /**
      * @tc.name   ArktsSendableTest0900
-     * @tc.number SUB_ARKTS_SENDABLE_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_SENDABLE_TEST_0900
      * @tc.desc   Verify SendableLruCache as Sendable member stores and retrieves items
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -383,7 +383,7 @@ export default function ArktsSendableTest(): void {
 
     /**
      * @tc.name   ArktsSendableTest1000
-     * @tc.number SUB_ARKTS_SENDABLE_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_SENDABLE_TEST_1000
      * @tc.desc   Verify Union type with Sendable classes works correctly across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -401,7 +401,7 @@ export default function ArktsSendableTest(): void {
 
     /**
      * @tc.name   ArktsSendableTest1100
-     * @tc.number SUB_ARKTS_SENDABLE_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_SENDABLE_TEST_1100
      * @tc.desc   Verify SharedHeap allocation Sendable object passes isSendable in worker thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -421,7 +421,7 @@ export default function ArktsSendableTest(): void {
 
     /**
      * @tc.name   ArktsSendableTest1200
-     * @tc.number SUB_ARKTS_SENDABLE_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_SENDABLE_TEST_1200
      * @tc.desc   Verify Sendable object reference identity preserved across thread boundary
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -441,7 +441,7 @@ export default function ArktsSendableTest(): void {
 
     /**
      * @tc.name   ArktsSendableTest1300
-     * @tc.number SUB_ARKTS_SENDABLE_TEST_1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_SENDABLE_TEST_1300
      * @tc.desc   Verify AsyncLock protects concurrent writes ensuring data consistency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -464,7 +464,7 @@ export default function ArktsSendableTest(): void {
 
     /**
      * @tc.name   ArktsSendableTest1400
-     * @tc.number SUB_ARKTS_SENDABLE_TEST_1400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_SENDABLE_TEST_1400
      * @tc.desc   Verify concurrent data access with AsyncLock protection maintains consistent results
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -487,7 +487,7 @@ export default function ArktsSendableTest(): void {
 
     /**
      * @tc.name   ArktsSendableTest1500
-     * @tc.number SUB_ARKTS_SENDABLE_TEST_1500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_SENDABLE_TEST_1500
      * @tc.desc   Verify 100KB Sendable data transfer completes within reasonable time
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -505,7 +505,7 @@ export default function ArktsSendableTest(): void {
 
     /**
      * @tc.name   ArktsSendableTest1600
-     * @tc.number SUB_ARKTS_SENDABLE_TEST_1600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_SENDABLE_TEST_1600
      * @tc.desc   Verify Sendable class with private field using private keyword works correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -525,7 +525,7 @@ export default function ArktsSendableTest(): void {
 
     /**
      * @tc.name   ArktsSendableTest1700
-     * @tc.number SUB_ARKTS_SENDABLE_TEST_1700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_SENDABLE_TEST_1700
      * @tc.desc   Verify const enum LogLevel Info value works in Sendable class
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -542,7 +542,7 @@ export default function ArktsSendableTest(): void {
 
     /**
      * @tc.name   ArktsSendableTest1800
-     * @tc.number SUB_ARKTS_SENDABLE_TEST_1800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_SENDABLE_TEST_1800
      * @tc.desc   Verify Union type with TypeB variant works correctly in TaskPool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

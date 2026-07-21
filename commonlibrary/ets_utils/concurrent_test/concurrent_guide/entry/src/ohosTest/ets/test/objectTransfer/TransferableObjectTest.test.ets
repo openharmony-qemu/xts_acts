@@ -82,7 +82,7 @@ export default function TransferableObjectTest(): void {
 
     /**
      * @tc.name   TransferableObjectTest0100
-     * @tc.number SUB_TRANSFERABLE_OBJECT_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TRANSFERABLE_OBJECT_TEST_0100
      * @tc.desc   Verify ArrayBuffer transfer mode - original thread byteLength becomes 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -103,7 +103,7 @@ export default function TransferableObjectTest(): void {
 
     /**
      * @tc.name   TransferableObjectTest0200
-     * @tc.number SUB_TRANSFERABLE_OBJECT_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TRANSFERABLE_OBJECT_TEST_0200
      * @tc.desc   Verify setTransferList([]) switches to copy mode - original thread retains buffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -120,7 +120,7 @@ export default function TransferableObjectTest(): void {
 
     /**
      * @tc.name   TransferableObjectTest0300
-     * @tc.number SUB_TRANSFERABLE_OBJECT_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TRANSFERABLE_OBJECT_TEST_0300
      * @tc.desc   Verify transferred buffer is inaccessible from original thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -144,7 +144,7 @@ export default function TransferableObjectTest(): void {
 
     /**
      * @tc.name   TransferableObjectTest0400
-     * @tc.number SUB_TRANSFERABLE_OBJECT_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TRANSFERABLE_OBJECT_TEST_0400
      * @tc.desc   Verify ApplicationContext shared transfer via TaskPool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -159,7 +159,7 @@ export default function TransferableObjectTest(): void {
 
     /**
      * @tc.name   TransferableObjectTest0500
-     * @tc.number SUB_TRANSFERABLE_OBJECT_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TRANSFERABLE_OBJECT_TEST_0500
      * @tc.desc   Verify copy mode preserves data content in original buffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -182,7 +182,7 @@ export default function TransferableObjectTest(): void {
 
     /**
      * @tc.name   TransferableObjectTest0600
-     * @tc.number SUB_TRANSFERABLE_OBJECT_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TRANSFERABLE_OBJECT_TEST_0600
      * @tc.desc   Verify task return value ArrayBuffer uses transfer mode by default
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -196,7 +196,7 @@ export default function TransferableObjectTest(): void {
 
     /**
      * @tc.name   TransferableObjectTest0700
-     * @tc.number SUB_TRANSFERABLE_OBJECT_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TRANSFERABLE_OBJECT_TEST_0700
      * @tc.desc   Verify returned ArrayBuffer can be transferred to another task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -218,7 +218,7 @@ export default function TransferableObjectTest(): void {
 
     /**
      * @tc.name   TransferableObjectTest0800
-     * @tc.number SUB_TRANSFERABLE_OBJECT_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TRANSFERABLE_OBJECT_TEST_0800
      * @tc.desc   Verify multiple ArrayBuffer objects transferred simultaneously
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -233,7 +233,7 @@ export default function TransferableObjectTest(): void {
 
     /**
      * @tc.name   TransferableObjectTest0900
-     * @tc.number SUB_TRANSFERABLE_OBJECT_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TRANSFERABLE_OBJECT_TEST_0900
      * @tc.desc   Verify ApplicationContext remains accessible after shared transfer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -249,7 +249,7 @@ export default function TransferableObjectTest(): void {
 
     /**
      * @tc.name   TransferableObjectTest1000
-     * @tc.number SUB_TRANSFERABLE_OBJECT_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TRANSFERABLE_OBJECT_TEST_1000
      * @tc.desc   Verify ArrayBuffer transfer with data content verification in worker
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -273,7 +273,7 @@ export default function TransferableObjectTest(): void {
 
     /**
      * @tc.name   TransferableObjectTest1100
-     * @tc.number SUB_TRANSFERABLE_OBJECT_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TRANSFERABLE_OBJECT_TEST_1100
      * @tc.desc   Verify copy mode with setTransferList for small buffer data integrity
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -296,7 +296,7 @@ export default function TransferableObjectTest(): void {
 
     /**
      * @tc.name   TransferableObjectTest1200
-     * @tc.number SUB_TRANSFERABLE_OBJECT_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TRANSFERABLE_OBJECT_TEST_1200
      * @tc.desc   Verify large ArrayBuffer transfer mode performance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
