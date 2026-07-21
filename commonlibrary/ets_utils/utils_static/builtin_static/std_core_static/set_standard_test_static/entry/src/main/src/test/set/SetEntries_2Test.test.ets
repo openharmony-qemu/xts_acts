@@ -3991,3 +3991,648 @@ for (let i: int = 0; i < 100; i++) {
       expect(results.length).assertEqual(5);
       }
     });
+
+    /**
+     * @tc.name testEntries187
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_1870
+     * @tc.desc Verify entries availability
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<int>([1, 2, 3]);
+      for (let e of set.entries()) {
+        expect(e[0]).assertEqual(e[1]);
+      }
+      expect(set.size).assertEqual(3);
+    });
+
+    /**
+     * @tc.name testEntries188
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_1880
+     * @tc.desc Verify byte add after iteration completes
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<byte>([1, 2, 3]);
+      const arr: number[] = [];
+        for (let entry of set.entries()) {
+          let key = entry[0];
+
+          arr.push(key);
+        }
+      set.add(4);
+      expect(arr.length).assertEqual(3);
+      expect(set.size).assertEqual(4);
+    });
+
+    /**
+     * @tc.name testEntries189
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_1890
+     * @tc.desc Verify entries serialization with Array.from
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<int>([100, 200, 300]);
+      const entries: int[][] = [];
+      for (let e of set.entries()) { entries.push([e[0], e[1]]); }
+      expect(entries.length).assertEqual(3);
+      expect(entries[0][0]).assertEqual(entries[0][1]);
+      expect(entries[0][0]).assertEqual(100);
+    });
+
+    /**
+     * @tc.name testEntries190
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_1900
+     * @tc.desc Verify entries with spread operator
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set1 = new Set<int>([1, 2]);
+      let set2 = new Set<int>([3, 4]);
+      let merged = new Set<int>();
+      for (const v of set1) { merged.add(v); }
+      for (const v of set2) { merged.add(v); }
+      let count = 0;
+      for (let e of merged.entries()) {
+        count++;
+      }
+      expect(count).assertEqual(4);
+      expect(merged.has(1)).assertTrue();
+      expect(merged.has(4)).assertTrue();
+    });
+
+    /**
+     * @tc.name testEntries191
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_1910
+     * @tc.desc Verify entries with union type int|string
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<int | string>([1, "a", 2, "b"]);
+      let count = 0;
+      for (let e of set.entries()) {
+        count++;
+        expect(e[0]).assertEqual(e[1]);
+      }
+      expect(count).assertEqual(4);
+      expect(set.has(1)).assertTrue();
+      expect(set.has("a")).assertTrue();
+      expect(set.has(2)).assertTrue();
+      expect(set.has("b")).assertTrue();
+    });
+
+    /**
+     * @tc.name testEntries192
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_1920
+     * @tc.desc Verify entries iteration on Set<byte> with binary/hex/octal values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<byte> = new Set<byte>();
+      set.add(0b1010 as byte);
+      set.add(-1 as byte);
+      set.add(-1 as byte);
+      let count = 0;
+      for (let e of set.entries()) {
+        count++;
+        expect(e[0]).assertEqual(e[1]);
+      }
+      expect(count).assertEqual(2);
+      expect(set.has(0b1010 as byte)).assertTrue();
+      expect(set.has(-1 as byte)).assertTrue();
+    });
+
+    /**
+     * @tc.name testEntries193
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_1930
+     * @tc.desc Verify entries iteration on Set<number[]> with array elements
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<number[]> = new Set<number[]>();
+      const a1: number[] = [1, 2, 3];
+      const a2: number[] = [4, 5, 6];
+      set.add(a1);
+      set.add(a2);
+      let count = 0;
+      for (let e of set.entries()) {
+        count++;
+        expect(e[0]).assertEqual(e[1]);
+      }
+      expect(count).assertEqual(2);
+      expect(set.has(a1)).assertTrue();
+      expect(set.has(a2)).assertTrue();
+    });
+
+    /**
+     * @tc.name testEntries194
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_1940
+     * @tc.desc Verify entries() iterator protocol with next().value
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>([10, 20, 30]);
+      const iter = set.entries();
+      let entry: [int, int] | undefined = iter.next().value;
+      if (entry !== undefined) {
+        expect(entry[0]).assertEqual(10);
+        expect(entry[1]).assertEqual(10);
+      }
+      entry = iter.next().value;
+      if (entry !== undefined) {
+        expect(entry[0]).assertEqual(20);
+        expect(entry[1]).assertEqual(20);
+      }
+      entry = iter.next().value;
+      if (entry !== undefined) {
+        expect(entry[0]).assertEqual(30);
+        expect(entry[1]).assertEqual(30);
+      }
+      expect(iter.next().value).assertUndefined();
+    });
+
+    /**
+     * @tc.name testEntries195
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_1950
+     * @tc.desc Verify entries return value type is IterableIterator
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries195', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>([1, 2, 3]);
+      const entries = set.entries();
+      let count = 0;
+      for (let e of entries) {
+        count++;
+        expect(e[0]).assertEqual(e[1]);
+      }
+      expect(count).assertEqual(3);
+    });
+
+    /**
+     * @tc.name testEntries196
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_1960
+     * @tc.desc Verify entries byte -128
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const s: Set<byte> = new Set<byte>();
+      s.add(-128);
+      expect(s.has(-128)).assertTrue();
+      expect(s.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testEntries197
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_1970
+     * @tc.desc Verify entries byte 127
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const s: Set<byte> = new Set<byte>();
+      s.add(127);
+      expect(s.has(127)).assertTrue();
+      expect(s.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testEntries198
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_1980
+     * @tc.desc Verify entries short -32768
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const s: Set<short> = new Set<short>();
+      s.add(-32768);
+      expect(s.has(-32768)).assertTrue();
+      expect(s.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testEntries199
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_1990
+     * @tc.desc Verify entries short 32767
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const s: Set<short> = new Set<short>();
+      s.add(32767);
+      expect(s.has(32767)).assertTrue();
+      expect(s.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testEntries200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_2000
+     * @tc.desc Verify entries with byte off-by-one boundary values (MIN+1=-127, MAX-1=126)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<byte> = new Set<byte>([-127 as byte, 126 as byte]);
+      const arr: byte[] = [];
+      for (let e of set.entries()) {
+        expect(e[0]).assertEqual(e[1]);
+        arr.push(e[0]);
+      }
+      expect(arr.length).assertEqual(2);
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testEntries201
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_2010
+     * @tc.desc Verify entries with short off-by-one boundary values (MIN+1=-32767, MAX-1=32766)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<short> = new Set<short>([-32767 as short, 32766 as short]);
+      const arr: short[] = [];
+      for (let e of set.entries()) {
+        expect(e[0]).assertEqual(e[1]);
+        arr.push(e[0]);
+      }
+      expect(arr.length).assertEqual(2);
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testEntries202
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_2020
+     * @tc.desc Verify Set<char> entries() with Unicode chars returns [v,v]
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<char> = new Set<char>([c'a', c'中', c'\n']);
+      let count: int = 0;
+      for (const entry of set.entries()) {
+        expect(entry[0]).assertEqual(entry[1]);
+        count++;
+      }
+      expect(count).assertEqual(3);
+    });
+
+    /**
+     * @tc.name testEntries203
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_2030
+     * @tc.desc Verify Set<Date> entries() returns [v, v] for Date refs
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const d1 = new Date(2025, 0, 1);
+      const d2 = new Date(2025, 6, 1);
+      const set: Set<Date> = new Set<Date>([d1, d2]);
+      let count: int = 0;
+      for (const entry of set.entries()) {
+        expect(entry[0]).assertEqual(entry[1]);
+        count++;
+      }
+      expect(count).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testEntries204
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_2040
+     * @tc.desc Verify Set<RegExp> entries() iteration
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1 = new RegExp("abc");
+      const r2 = new RegExp("def", "i");
+      const set: Set<RegExp> = new Set<RegExp>([r1, r2]);
+      let count: int = 0;
+      for (const entry of set.entries()) {
+        expect(entry[0]).assertEqual(entry[1]);
+        count++;
+      }
+      expect(count).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testEntries205
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_2050
+     * @tc.desc Verify Set<object> entries() with POJO refs
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj1 = new ObjTest(1);
+      const obj2 = new ObjTest(1);
+      const set: Set<object> = new Set<object>([obj1, obj2]);
+      let count: int = 0;
+      for (const entry of set.entries()) {
+        expect(entry[0]).assertEqual(entry[1]);
+        count++;
+      }
+      expect(count).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testEntries206
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_2060
+     * @tc.desc Verify Set<Set<int>> nested Set entries()
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner1 = new Set<int>([1]);
+      const inner2 = new Set<int>([2]);
+      const outer: Set<Set<int>> = new Set<Set<int>>([inner1, inner2]);
+      let total: int = 0;
+      for (const entry of outer.entries()) {
+        total += entry[0].size;
+        expect(entry[0]).assertEqual(entry[1]);
+      }
+      expect(total).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testEntries207
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_2070
+     * @tc.desc Verify Set<Set<int>> nested Set entries() (no-arg add)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner1 = new Set<int>([1]);
+      const inner2 = new Set<int>([2]);
+      const outer: Set<Set<int>> = new Set<Set<int>>();
+      outer.add(inner1);
+      outer.add(inner2);
+
+      let total: int = 0;
+      for (const entry of outer.entries()) {
+        total += entry[0].size;
+        expect(entry[0]).assertEqual(entry[1]);
+      }
+      expect(total).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testEntries208
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_2080
+     * @tc.desc Verify Set<Record> entries() iteration
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: Record<string, int> = { 'a': 1 };
+      const r2: Record<string, int> = { 'b': 2 };
+      const set: Set<Record<string, int>> = new Set<Record<string, int>>([r1, r2]);
+      let count: int = 0;
+      for (const entry of set.entries()) {
+        expect(entry[0]).assertEqual(entry[1]);
+        count++;
+      }
+      expect(count).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testEntries209
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_2090
+     * @tc.desc Verify Set<Record> entries() iteration (no-arg add)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: Record<string, int> = { 'a': 1 };
+      const r2: Record<string, int> = { 'b': 2 };
+      const set: Set<Record<string, int>> = new Set<Record<string, int>>();
+      set.add(r1);
+      set.add(r2);
+
+      let count: int = 0;
+      for (const entry of set.entries()) {
+        expect(entry[0]).assertEqual(entry[1]);
+        count++;
+      }
+      expect(count).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testEntries210
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_2100
+     * @tc.desc Verify Set<Int8Array> entries() iteration
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a1 = new Int8Array([1]);
+      const a2 = new Int8Array([2]);
+      const set: Set<Int8Array> = new Set<Int8Array>([a1, a2]);
+      let count: int = 0;
+      for (const entry of set.entries()) {
+        expect(entry[0]).assertEqual(entry[1]);
+        count++;
+      }
+      expect(count).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testEntries211
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_2110
+     * @tc.desc Verify Set<Int8Array> entries() iteration (no-arg add)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a1 = new Int8Array([1]);
+      const a2 = new Int8Array([2]);
+      const set: Set<Int8Array> = new Set<Int8Array>();
+      set.add(a1);
+      set.add(a2);
+
+      let count: int = 0;
+      for (const entry of set.entries()) {
+        expect(entry[0]).assertEqual(entry[1]);
+        count++;
+      }
+      expect(count).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testEntries212
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_2120
+     * @tc.desc Verify Set<WeakMap> and Set<WeakSet> entries()
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const wm = new WeakMap<object, number>();
+      const ws = new WeakSet<object>();
+      const setWm: Set<WeakMap<object, number>> = new Set<WeakMap<object, number>>([wm]);
+      const setWs: Set<WeakSet<object>> = new Set<WeakSet<object>>([ws]);
+      let c1: int = 0;
+      let c2: int = 0;
+      for (const e of setWm.entries()) { expect(e[0]).assertEqual(e[1]); c1++; }
+      for (const e of setWs.entries()) { expect(e[0]).assertEqual(e[1]); c2++; }
+      expect(c1).assertEqual(1);
+      expect(c2).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testEntries213
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_2130
+     * @tc.desc Verify Set<WeakMap> and Set<WeakSet> entries() (no-arg add)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const wm = new WeakMap<object, number>();
+      const ws = new WeakSet<object>();
+      const setWm: Set<WeakMap<object, number>> = new Set<WeakMap<object, number>>();
+      setWm.add(wm);
+
+      const setWs: Set<WeakSet<object>> = new Set<WeakSet<object>>([ws]);
+      let c1: int = 0;
+      let c2: int = 0;
+      for (const e of setWm.entries()) { expect(e[0]).assertEqual(e[1]); c1++; }
+      for (const e of setWs.entries()) { expect(e[0]).assertEqual(e[1]); c2++; }
+      expect(c1).assertEqual(1);
+      expect(c2).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testEntries214
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_2140
+     * @tc.desc Verify Set<bigint> entries() returns [v,v] pairs
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<bigint> = new Set<bigint>([1n, 2n, 3n]);
+      let count: int = 0;
+      for (const entry of set.entries()) {
+        expect(entry[0]).assertEqual(entry[1]);
+        count++;
+      }
+      expect(count).assertEqual(3);
+    });
+
+    /**
+     * @tc.name testEntries215
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_2150
+     * @tc.desc Verify Set<float> entries() with Float.POSITIVE_INFINITY
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<float> = new Set<float>();
+      set.add(1.0 as float);
+      set.add(-1.5 as float);
+      set.add(Float.POSITIVE_INFINITY);
+      let count: int = 0;
+      for (const entry of set.entries()) {
+        expect(entry[0]).assertEqual(entry[1]);
+        count++;
+      }
+      expect(count).assertEqual(3);
+    });
+
+    /**
+     * @tc.name testEntries216
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_2160
+     * @tc.desc Verify Set<Error> entries() returns [error, error] pairs
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e1: Error = new Error('a');
+      const e2: TypeError = new TypeError('b');
+      const set: Set<Error> = new Set<Error>([e1, e2]);
+      let count: int = 0;
+      for (const entry of set.entries()) {
+        expect(entry[0]).assertEqual(entry[1]);
+        count++;
+      }
+      expect(count).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testEntries217
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_2170
+     * @tc.desc Verify Set<Promise<Set<int>>> entries() nested Promise generic
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner: Set<int> = new Set<int>([42]);
+      const p: Promise<Set<int>> = Promise.resolve(inner);
+      const set: Set<Promise<Set<int>>> = new Set<Promise<Set<int>>>([p]);
+      let count: int = 0;
+      for (const entry of set.entries()) {
+        expect(entry[0]).assertEqual(entry[1]);
+        count++;
+      }
+      expect(count).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testEntries218
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_P1_2180
+     * @tc.desc Verify Set<jsonx.JsonElement> entries() with JSON parsed objects
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testEntries218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const j1: jsonx.JsonElement = JSON.parseJsonElement('{"a":1}');
+      const j2: jsonx.JsonElement = JSON.parseJsonElement('{"b":2}');
+      const set: Set<jsonx.JsonElement> = new Set<jsonx.JsonElement>([j1, j2]);
+      let count: int = 0;
+      for (const entry of set.entries()) {
+        expect(entry[0]).assertEqual(entry[1]);
+        count++;
+      }
+      expect(count).assertEqual(2);
+    });
+  });
+}
+
