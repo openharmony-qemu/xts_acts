@@ -1262,6 +1262,7 @@ export default function GraphicTextAPI2602() {
         let fontCollection: text.FontCollection = new text.FontCollection();
         try {
           fontCollection.setParagraphCachesEnabled(undefined);
+          expect().assertFail();
           done();
         } catch (err) {
           console.error(msgStr + ' error: ' + JSON.stringify(err));
@@ -1288,6 +1289,7 @@ export default function GraphicTextAPI2602() {
         let fontCollection: text.FontCollection = new text.FontCollection();
         try {
           fontCollection.setParagraphCachesEnabled(null);
+          expect().assertFail();
           done();
         } catch (err) {
           console.error(msgStr + ' error: ' + JSON.stringify(err));

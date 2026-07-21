@@ -718,6 +718,7 @@ export default function GraphicTextAPI24() {
         try {
           let ranges = paragraph.getCharacterRangeForGlyphRange(glyphRange, null);
           console.info(msgStr + 'ranges null success ', JSON.stringify(ranges));
+          expect().assertFail();
         } catch(err){
           console.error(msgStr + 'ranges null error ', err.code);
           expect(err.code).assertEqual(25900001);
@@ -725,6 +726,7 @@ export default function GraphicTextAPI24() {
         try {
           let ranges = paragraph.getCharacterRangeForGlyphRange(glyphRange, undefined);
           console.info(msgStr + 'ranges undefined success ', JSON.stringify(ranges));
+          expect().assertFail();
         } catch(err){
           console.error(msgStr + 'ranges undefined error ', err.code);
           expect(err.code).assertEqual(25900001);
@@ -759,6 +761,7 @@ export default function GraphicTextAPI24() {
         try {
           let ranges = paragraph.getGlyphRangeForCharacterRange(glyphRange, null);
           console.info(msgStr + 'ranges null success ', JSON.stringify(ranges));
+          expect().assertFail();
         } catch(err){
           console.error(msgStr + 'ranges null error ', err.code);
           expect(err.code).assertEqual(25900001);
@@ -766,6 +769,7 @@ export default function GraphicTextAPI24() {
         try {
           let ranges = paragraph.getGlyphRangeForCharacterRange(glyphRange, undefined);
           console.info(msgStr + 'ranges undefined success ', JSON.stringify(ranges));
+          expect().assertFail();
         } catch(err){
           console.error(msgStr + 'ranges undefined error ', err.code);
           expect(err.code).assertEqual(25900001);
@@ -802,6 +806,7 @@ export default function GraphicTextAPI24() {
         try {
           let position1 = paragraph.getCharacterPositionAtCoordinate(x, y, null);
           console.info(msgStr + 'position1 success ', JSON.stringify(position1));
+          expect().assertFail();
         } catch(err){
           console.error(msgStr + 'position1 error ', err.code);
           expect(err.code).assertEqual(401);
@@ -809,6 +814,7 @@ export default function GraphicTextAPI24() {
         try {
           let position2 = paragraph.getCharacterPositionAtCoordinate(x, y, undefined);
           console.info(msgStr + 'position2 success ', JSON.stringify(position2));
+          expect().assertFail();
         } catch(err){
           console.error(msgStr + 'position2 error ', err.code);
           expect(err.code).assertEqual(401);
