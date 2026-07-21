@@ -127,33 +127,12 @@ export default function biguint64arrayToReversedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_0500
      * @tc.name testBigUint64ArrayToReversed005
-     * @tc.desc Verify toReversed() on an even length array maps every position to the opposite side
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testBigUint64ArrayToReversed005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceArray = new BigUint64Array([1n, 2n, 3n, 4n, 5n, 6n]);
-      let resultArray = sourceArray.toReversed();
-      expect(resultArray[0]).assertEqual(6n);
-      expect(resultArray[1]).assertEqual(5n);
-      expect(resultArray[2]).assertEqual(4n);
-      expect(resultArray[3]).assertEqual(3n);
-      expect(resultArray[4]).assertEqual(2n);
-      expect(resultArray[5]).assertEqual(1n);
-      expect(sourceArray[0]).assertEqual(1n);
-      expect(sourceArray[5]).assertEqual(6n);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_0600
-     * @tc.name testBigUint64ArrayToReversed006
      * @tc.desc Verify toReversed() preserves all zero elements in a new array
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array(4);
       let resultArray = sourceArray.toReversed();
       expect(resultArray.length).assertEqual(4);
@@ -165,14 +144,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_0700
-     * @tc.name testBigUint64ArrayToReversed007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_0600
+     * @tc.name testBigUint64ArrayToReversed006
      * @tc.desc Verify toReversed() moves max uint64 from the end to the start
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([0n, 1n, MAX_UINT64_VALUE]);
       let resultArray = sourceArray.toReversed();
       expect(resultArray[0]).assertEqual(MAX_UINT64_VALUE);
@@ -182,14 +161,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_0800
-     * @tc.name testBigUint64ArrayToReversed008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_0700
+     * @tc.name testBigUint64ArrayToReversed007
      * @tc.desc Verify toReversed() preserves adjacent uint64 maximum boundary values
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([MAX_UINT64_VALUE, MAX_UINT64_VALUE - 1n, MAX_UINT64_VALUE - 2n]);
       let resultArray = sourceArray.toReversed();
       expect(resultArray[0]).assertEqual(MAX_UINT64_VALUE - 2n);
@@ -199,14 +178,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_0900
-     * @tc.name testBigUint64ArrayToReversed009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_0800
+     * @tc.name testBigUint64ArrayToReversed008
      * @tc.desc Verify toReversed() preserves values greater than signed long max
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let highBoundaryValue: bigint = 9223372036854775808n;
       let sourceArray = new BigUint64Array([10n, highBoundaryValue, 30n]);
       let resultArray = sourceArray.toReversed();
@@ -217,14 +196,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_1000
-     * @tc.name testBigUint64ArrayToReversed010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_0900
+     * @tc.name testBigUint64ArrayToReversed009
      * @tc.desc Verify toReversed() preserves modulo stored values for negative BigInt writes
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array(3);
       sourceArray[0] = -1n;
       sourceArray[1] = 0n;
@@ -237,14 +216,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_1100
-     * @tc.name testBigUint64ArrayToReversed011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_1000
+     * @tc.name testBigUint64ArrayToReversed010
      * @tc.desc Verify toReversed() preserves modulo stored values for overflow BigInt writes
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array(3);
       sourceArray[0] = UINT64_MODULUS_VALUE;
       sourceArray[1] = 42n;
@@ -257,14 +236,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_1200
-     * @tc.name testBigUint64ArrayToReversed012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_1100
+     * @tc.name testBigUint64ArrayToReversed011
      * @tc.desc Verify toReversed() handles signed long minimum stored as uint64 midpoint
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([-9223372036854775808n, 7n, 8n]);
       let resultArray = sourceArray.toReversed();
       expect(resultArray[0]).assertEqual(8n);
@@ -274,14 +253,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_1300
-     * @tc.name testBigUint64ArrayToReversed013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_1200
+     * @tc.name testBigUint64ArrayToReversed012
      * @tc.desc Verify toReversed() can be applied after values are written through set()
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array(4);
       sourceArray.set(new BigUint64Array([10n, 20n, 30n, 40n]));
       let resultArray = sourceArray.toReversed();
@@ -293,14 +272,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_1400
-     * @tc.name testBigUint64ArrayToReversed014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_1300
+     * @tc.name testBigUint64ArrayToReversed013
      * @tc.desc Verify toReversed() works on a BigUint64Array.of() result
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = BigUint64Array.of(5n, 10n, 15n, 20n);
       let resultArray = sourceArray.toReversed();
       expect(resultArray[0]).assertEqual(20n);
@@ -311,14 +290,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_1500
-     * @tc.name testBigUint64ArrayToReversed015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_1400
+     * @tc.name testBigUint64ArrayToReversed014
      * @tc.desc Verify toReversed() works on a BigUint64Array.from(Array) result
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceValues: Array<BigInt> = [1n, 2n, 3n, 4n];
       let sourceArray = BigUint64Array.from(sourceValues);
       let resultArray = sourceArray.toReversed();
@@ -329,14 +308,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_1600
-     * @tc.name testBigUint64ArrayToReversed016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_1500
+     * @tc.name testBigUint64ArrayToReversed015
      * @tc.desc Verify toReversed() works on a BigUint64Array.from(FixedArray) result
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceValues: FixedArray<BigInt> = [100n, 200n, 300n];
       let sourceArray = BigUint64Array.from(sourceValues);
       let resultArray = sourceArray.toReversed();
@@ -346,14 +325,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_1700
-     * @tc.name testBigUint64ArrayToReversed017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_1600
+     * @tc.name testBigUint64ArrayToReversed016
      * @tc.desc Verify toReversed() works on a BigUint64Array.from(Set) result
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceSet: Set<BigInt> = new Set<BigInt>();
       sourceSet.add(11n);
       sourceSet.add(22n);
@@ -366,14 +345,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_1800
-     * @tc.name testBigUint64ArrayToReversed018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_1700
+     * @tc.name testBigUint64ArrayToReversed017
      * @tc.desc Verify toReversed() works on a BigUint64Array.from(Array mapfn) result
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceValues: Array<BigInt> = [1n, 2n, 3n];
       let sourceArray = BigUint64Array.from(sourceValues, (element: bigint, _index: number): bigint => {
         return element * 10n;
@@ -385,14 +364,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_1900
-     * @tc.name testBigUint64ArrayToReversed019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_1800
+     * @tc.name testBigUint64ArrayToReversed018
      * @tc.desc Verify toReversed() result has typed-array properties and a new zero-offset buffer
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([1n, 2n, 3n]);
       let resultArray = sourceArray.toReversed();
       let usesDistinctBuffer: boolean = resultArray.buffer !== sourceArray.buffer;
@@ -405,14 +384,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_2000
-     * @tc.name testBigUint64ArrayToReversed020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_1900
+     * @tc.name testBigUint64ArrayToReversed019
      * @tc.desc Verify modifying toReversed() result does not affect the source array
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([1n, 2n, 3n]);
       let resultArray = sourceArray.toReversed();
       resultArray[0] = 100n;
@@ -424,14 +403,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_2100
-     * @tc.name testBigUint64ArrayToReversed021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_2000
+     * @tc.name testBigUint64ArrayToReversed020
      * @tc.desc Verify modifying source after toReversed() does not affect the returned array
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([1n, 2n, 3n]);
       let resultArray = sourceArray.toReversed();
       sourceArray[0] = 999n;
@@ -442,14 +421,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_2200
-     * @tc.name testBigUint64ArrayToReversed022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_2100
+     * @tc.name testBigUint64ArrayToReversed021
      * @tc.desc Verify toReversed() preserves source length byteLength byteOffset and buffer
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceBuffer = new ArrayBuffer(40);
       let sourceArray = new BigUint64Array(sourceBuffer, 8, 3);
       sourceArray[0] = 10n;
@@ -469,14 +448,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_2300
-     * @tc.name testBigUint64ArrayToReversed023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_2200
+     * @tc.name testBigUint64ArrayToReversed022
      * @tc.desc Verify toReversed() on an ArrayBuffer backed view returns an independent zero-offset array
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceBuffer = new ArrayBuffer(24);
       let sourceArray = new BigUint64Array(sourceBuffer, 0, 3);
       sourceArray[0] = 100n;
@@ -493,14 +472,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_2400
-     * @tc.name testBigUint64ArrayToReversed024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_2300
+     * @tc.name testBigUint64ArrayToReversed023
      * @tc.desc Verify toReversed() on a nonzero byteOffset view only copies the selected window
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceBuffer = new ArrayBuffer(40);
       let fullView = new BigUint64Array(sourceBuffer, 0, 5);
       fullView[0] = 1n;
@@ -520,14 +499,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_2500
-     * @tc.name testBigUint64ArrayToReversed025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_2400
+     * @tc.name testBigUint64ArrayToReversed024
      * @tc.desc Verify toReversed() on a subarray view copies only the view range
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parentArray = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
       let childView = parentArray.subarray(1, 4);
       let resultArray = childView.toReversed();
@@ -542,14 +521,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_2600
-     * @tc.name testBigUint64ArrayToReversed026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_2500
+     * @tc.name testBigUint64ArrayToReversed025
      * @tc.desc Verify double toReversed() restores element order in a distinct array
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([5n, 6n, 7n, 8n]);
       let resultArray = sourceArray.toReversed().toReversed();
       let usesDistinctArray: boolean = resultArray !== sourceArray;
@@ -563,14 +542,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_2700
-     * @tc.name testBigUint64ArrayToReversed027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_2600
+     * @tc.name testBigUint64ArrayToReversed026
      * @tc.desc Verify repeated toReversed() calls do not mutate the source array
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([1n, 2n, 3n]);
       let firstResult = sourceArray.toReversed();
       let secondResult = sourceArray.toReversed();
@@ -584,14 +563,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_2800
-     * @tc.name testBigUint64ArrayToReversed028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_2700
+     * @tc.name testBigUint64ArrayToReversed027
      * @tc.desc Verify toReversed() can be applied to a larger array and maps boundary indexes correctly
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array(20);
       for (let index: int = 0; index < 20; index++) {
         sourceArray[index] = BigInt(index);
@@ -607,14 +586,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_2900
-     * @tc.name testBigUint64ArrayToReversed029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_2800
+     * @tc.name testBigUint64ArrayToReversed028
      * @tc.desc Verify toReversed() result can be mutated by fill without affecting the source
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
       let resultArray = sourceArray.toReversed();
       resultArray.fill(0n, 0, 2);
@@ -627,14 +606,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_3000
-     * @tc.name testBigUint64ArrayToReversed030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_2900
+     * @tc.name testBigUint64ArrayToReversed029
      * @tc.desc Verify toReversed() result can be consumed by join slice and set in reversed order
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([1n, 2n, 3n, 4n]);
       let resultArray = sourceArray.toReversed();
       let slicedArray = resultArray.slice(1, 3);
@@ -650,14 +629,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_3100
-     * @tc.name testBigUint64ArrayToReversed031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_3000
+     * @tc.name testBigUint64ArrayToReversed030
      * @tc.desc Verify toReversed() from byteOffset view returns an independent zero offset reversed copy
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceBuffer = new ArrayBuffer(40);
       let fullView = new BigUint64Array(sourceBuffer, 0, 5);
       fullView[0] = 10n;
@@ -684,14 +663,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_3200
-     * @tc.name testBigUint64ArrayToReversed032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_3100
+     * @tc.name testBigUint64ArrayToReversed031
      * @tc.desc Verify toReversed() on a nested byteOffset subarray returns an independent reversed copy
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sharedBuffer: ArrayBuffer = new ArrayBuffer(48);
       let fullView = new BigUint64Array(sharedBuffer, 0, 6);
       fullView[0] = 60n;
@@ -721,14 +700,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_3300
-     * @tc.name testBigUint64ArrayToReversed033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_3200
+     * @tc.name testBigUint64ArrayToReversed032
      * @tc.desc Verify toReversed() on a slice copy from byteOffset view ignores later source writes
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sharedBuffer: ArrayBuffer = new ArrayBuffer(40);
       let fullView = new BigUint64Array(sharedBuffer, 0, 5);
       fullView[0] = 90n;
@@ -752,14 +731,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_3400
-     * @tc.name testBigUint64ArrayToReversed034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_3300
+     * @tc.name testBigUint64ArrayToReversed033
      * @tc.desc Verify toReversed() on a zero-length byteOffset view returns an empty zero-offset copy
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sharedBuffer: ArrayBuffer = new ArrayBuffer(24);
       let byteOffset: int = 16;
       let viewLength: int = 0;
@@ -775,14 +754,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_3500
-     * @tc.name testBigUint64ArrayToReversed035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_3400
+     * @tc.name testBigUint64ArrayToReversed034
      * @tc.desc Verify toReversed() on Set-constructed array reverses unique insertion order into a new array
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceValues: Set<BigInt> = new Set<BigInt>();
       sourceValues.add(7n);
       sourceValues.add(11n);
@@ -802,14 +781,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_3600
-     * @tc.name testBigUint64ArrayToReversed036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_3500
+     * @tc.name testBigUint64ArrayToReversed035
      * @tc.desc Verify toReversed() on iterator-constructed array starts from advanced iterator position
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = BigUint64Array.of(5n, 10n, 15n, 20n);
       let sourceIterator = sourceArray.values();
       sourceIterator.next();
@@ -825,14 +804,14 @@ export default function biguint64arrayToReversedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_3700
-     * @tc.name testBigUint64ArrayToReversed037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TO_REVERSED_3600
+     * @tc.name testBigUint64ArrayToReversed036
      * @tc.desc Verify sibling view writes after toReversed() do not change the returned reversed copy
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayToReversed037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayToReversed036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sharedBuffer: ArrayBuffer = new ArrayBuffer(40);
       let fullView = new BigUint64Array(sharedBuffer, 0, 5);
       fullView[0] = 10n;
@@ -853,6 +832,51 @@ export default function biguint64arrayToReversedTest(): void {
       expect(resultArray[0]).assertEqual(40n);
       expect(resultArray[1]).assertEqual(30n);
       expect(resultArray[2]).assertEqual(20n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TOREVERSED_3700
+     * @tc.name testBigUint64ArrayToReversed037
+     * @tc.desc Verify toReversed copies binary integer values into reversed order without mutating source
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayToReversed037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = BigUint64Array.of(BigInt(0b101010), 1n);
+      let resultArray = sourceArray.toReversed();
+      expect(resultArray.join(',')).assertEqual('1,42');
+      expect(sourceArray.join(',')).assertEqual('42,1');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TOREVERSED_3800
+     * @tc.name testBigUint64ArrayToReversed038
+     * @tc.desc Verify toReversed copies octal integer values into reversed order without mutating source
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayToReversed038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = BigUint64Array.of(BigInt(0o52), 1n);
+      let resultArray = sourceArray.toReversed();
+      expect(resultArray.join(',')).assertEqual('1,42');
+      expect(sourceArray.join(',')).assertEqual('42,1');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TOREVERSED_3900
+     * @tc.name testBigUint64ArrayToReversed039
+     * @tc.desc Verify toReversed copies hexadecimal integer values into reversed order without mutating source
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayToReversed039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = BigUint64Array.of(BigInt(0x2A), 1n);
+      let resultArray = sourceArray.toReversed();
+      expect(resultArray.join(',')).assertEqual('1,42');
+      expect(sourceArray.join(',')).assertEqual('42,1');
     });
   });
 }
