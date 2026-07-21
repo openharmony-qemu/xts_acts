@@ -104,11 +104,8 @@ export class WorkerExchange {
       } catch (e) {
         this.pendingResolve = null
         this.pendingReject = null
-        if (e instanceof Error) {
-          reject(e)
-        } else {
-          reject(new Error('WorkerExchange.postMessage failed'))
-        }
+        // Keep original error object (e.g. BusinessError with code) for caller assertions
+        reject(e as Error)
       }
     })
   }
