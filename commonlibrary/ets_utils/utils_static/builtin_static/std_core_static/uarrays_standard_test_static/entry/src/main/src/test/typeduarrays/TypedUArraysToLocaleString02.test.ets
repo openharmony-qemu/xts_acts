@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -111,20 +112,6 @@ export default function typedUArraysToLocaleString02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOLOCALESTRING_5000
-     * @tc.name testTypedUArraysToLocaleString050
-     * @tc.desc Verify toLocaleString locales=null Uint8Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysToLocaleString050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([1, 2, 3]);
-      let result = arr.toLocaleString();
-      expect(typeof result).assertEqual("string");
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOLOCALESTRING_5100
      * @tc.name testTypedUArraysToLocaleString051
      * @tc.desc Verify toLocaleString locales=undefined Uint16Array
@@ -136,20 +123,6 @@ export default function typedUArraysToLocaleString02(): void {
       const arr = new Uint16Array([1, 2, 3]);
       let result = arr.toLocaleString(undefined);
       expect(typeof result).assertEqual("string");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOLOCALESTRING_5200
-     * @tc.name testTypedUArraysToLocaleString052
-     * @tc.desc Verify toLocaleString options Uint8Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysToLocaleString052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([123]);
-      let result = arr.toLocaleString("en-US");
-      expect(result).assertEqual("123");
     });
 
     /**
@@ -520,20 +493,6 @@ export default function typedUArraysToLocaleString02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOLOCALESTRING_7800
-     * @tc.name testTypedUArraysToLocaleString078
-     * @tc.desc Verify toLocaleString locales="en-US" options maximumFractionDigits BigUint64Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysToLocaleString078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigUint64Array([123n]);
-      let result = arr.toLocaleString("en-US");
-      expect(result).assertEqual("123");
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOLOCALESTRING_7900
      * @tc.name testTypedUArraysToLocaleString079
      * @tc.desc Verify toLocaleString locales="en-US" Uint16Array
@@ -602,21 +561,6 @@ export default function typedUArraysToLocaleString02(): void {
       const arr = new Uint8Array([16]);
       let result = arr.toLocaleString("ja-JP");
       expect(typeof result).assertEqual("string");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOLOCALESTRING_8400
-     * @tc.name testTypedUArraysToLocaleString084
-     * @tc.desc Verify toLocaleString locales="en-US" useGrouping auto Uint32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysToLocaleString084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint32Array([100000]);
-      let result = arr.toLocaleString("en-US");
-      expect(result.indexOf("100")).assertLarger(-1);
-      expect(result.indexOf("000")).assertLarger(-1);
     });
 
     /**

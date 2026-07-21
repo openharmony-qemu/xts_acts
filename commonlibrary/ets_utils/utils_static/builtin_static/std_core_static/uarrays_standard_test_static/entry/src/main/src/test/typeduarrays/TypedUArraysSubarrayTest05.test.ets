@@ -43,8 +43,7 @@ export default function typedUArraysSubarrayTest05(): void {
      */
     it('testTypedUArraysSubarray02041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
-      let result = arr.subarray(1, 1);
-      expect(result.length).assertEqual(0);
+      expect(arr.subarray(1, 1).length).assertEqual(0);
     });
 
     /**
@@ -93,8 +92,7 @@ export default function typedUArraysSubarrayTest05(): void {
      */
     it('testTypedUArraysSubarray02044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3]);
-      let result = arr.subarray(0, 2);
-      expect(Uint8Array.BYTES_PER_ELEMENT).assertEqual(Uint8Array.BYTES_PER_ELEMENT);
+      expect(arr.subarray(0, 2).length).assertEqual(2);
     });
 
     /**
@@ -107,8 +105,7 @@ export default function typedUArraysSubarrayTest05(): void {
      */
     it('testTypedUArraysSubarray02045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([10, 20, 30]);
-      let result = arr.subarray(1, 3);
-      expect(Uint16Array.BYTES_PER_ELEMENT).assertEqual(Uint16Array.BYTES_PER_ELEMENT);
+      expect(arr.subarray(1, 3).length).assertEqual(2);
     });
 
     /**
@@ -121,8 +118,7 @@ export default function typedUArraysSubarrayTest05(): void {
      */
     it('testTypedUArraysSubarray02046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([100, 200, 300]);
-      let result = arr.subarray(0, 2);
-      expect(Uint32Array.BYTES_PER_ELEMENT).assertEqual(Uint32Array.BYTES_PER_ELEMENT);
+      expect(arr.subarray(0, 2).length).assertEqual(2);
     });
 
     /**
@@ -135,8 +131,7 @@ export default function typedUArraysSubarrayTest05(): void {
      */
     it('testTypedUArraysSubarray02047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3]);
-      let result = arr.subarray(0, 2);
-      expect(Uint8ClampedArray.BYTES_PER_ELEMENT).assertEqual(Uint8ClampedArray.BYTES_PER_ELEMENT);
+      expect(arr.subarray(0, 2).length).assertEqual(2);
     });
 
     /**
@@ -149,8 +144,7 @@ export default function typedUArraysSubarrayTest05(): void {
      */
     it('testTypedUArraysSubarray02048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
-      let result = arr.subarray(1, 3);
-      expect(BigUint64Array.BYTES_PER_ELEMENT).assertEqual(BigUint64Array.BYTES_PER_ELEMENT);
+      expect(arr.subarray(1, 3).length).assertEqual(2);
     });
 
     /**
@@ -199,9 +193,7 @@ export default function typedUArraysSubarrayTest05(): void {
      */
     it('testTypedUArraysSubarray02051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
-      const sub = arr.subarray(1, 4);
-      const val36 = arr[1] ;
-      expect(val36).assertEqual(2);
+      expect(arr.subarray(1, 4).length).assertEqual(3);
     });
 
     /**
@@ -214,9 +206,7 @@ export default function typedUArraysSubarrayTest05(): void {
      */
     it('testTypedUArraysSubarray02052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
-      const sub = arr.subarray(0, 3);
-      const val37 = arr[1] ;
-      expect(val37).assertEqual(2);
+      expect(arr.subarray(0, 3).length).assertEqual(3);
     });
 
     /**
@@ -244,9 +234,7 @@ export default function typedUArraysSubarrayTest05(): void {
      */
     it('testTypedUArraysSubarray02054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
-      const sub = arr.subarray(1, 4);
-      const val39 = arr[1] ;
-      expect(val39).assertEqual(2n);
+      expect(arr.subarray(1, 4).length).assertEqual(3);
     });
 
     /**
@@ -259,9 +247,7 @@ export default function typedUArraysSubarrayTest05(): void {
      */
     it('testTypedUArraysSubarray02055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([10, 20, 30, 40, 50]);
-      const sub = arr.subarray(0, 3);
-      const val40 = arr[2] ;
-      expect(val40).assertEqual(30);
+      expect(arr.subarray(0, 3).length).assertEqual(3);
     });
 
     /**
@@ -274,9 +260,7 @@ export default function typedUArraysSubarrayTest05(): void {
      */
     it('testTypedUArraysSubarray02056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([100, 200, 300, 400, 500]);
-      const sub = arr.subarray(1, 4);
-      const val41 = arr[1] ;
-      expect(val41).assertEqual(200);
+      expect(arr.subarray(1, 4).length).assertEqual(3);
     });
 
     /**
@@ -289,15 +273,13 @@ export default function typedUArraysSubarrayTest05(): void {
      */
     it('testTypedUArraysSubarray02057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
-      const sub = arr.subarray(2, 5);
-      const val42 = arr[3] ;
-      expect(val42).assertEqual(4);
+      expect(arr.subarray(2, 5).length).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SUBARRAY02_5800
      * @tc.name testTypedUArraysSubarray02058
-     * @tc.desc Verify subarray begin=NaN 0 Uint8Array
+     * @tc.desc Verify subarray begin=0 Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -311,7 +293,7 @@ export default function typedUArraysSubarrayTest05(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SUBARRAY02_5900
      * @tc.name testTypedUArraysSubarray02059
-     * @tc.desc Verify subarray end=NaN 0 Uint8Array
+     * @tc.desc Verify subarray end=0 Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -325,7 +307,7 @@ export default function typedUArraysSubarrayTest05(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SUBARRAY02_6000
      * @tc.name testTypedUArraysSubarray02060
-     * @tc.desc Verify subarray begin=undefined 0 Uint8Array
+     * @tc.desc Verify subarray begin=0 Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -353,7 +335,7 @@ export default function typedUArraysSubarrayTest05(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SUBARRAY02_6200
      * @tc.name testTypedUArraysSubarray02062
-     * @tc.desc Verify subarray begin=null 0 Uint8Array
+     * @tc.desc Verify subarray begin=0 Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -587,7 +569,6 @@ export default function typedUArraysSubarrayTest05(): void {
     it('testTypedUArraysSubarray02078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3]);
       let result = arr.subarray(0, 0);
-      expect(Uint8Array.BYTES_PER_ELEMENT).assertEqual(Uint8Array.BYTES_PER_ELEMENT);
       expect(result.length).assertEqual(0);
     });
 

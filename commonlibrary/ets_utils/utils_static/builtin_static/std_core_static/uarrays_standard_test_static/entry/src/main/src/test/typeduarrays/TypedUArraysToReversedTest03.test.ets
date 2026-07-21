@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +17,6 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-// AUTO_TYPED_ARRAY_HELPERS_START
 function reverseBigUint64ArrayValue(source: BigUint64Array): BigUint64Array {
   const result = new BigUint64Array(source.length);
   for (let i: number = 0; i < source.length; i++) {
@@ -57,7 +57,6 @@ function reverseUint8ClampedArrayValue(source: Uint8ClampedArray): Uint8ClampedA
   return result;
 }
 
-// AUTO_TYPED_ARRAY_HELPERS_END
 
 export default function typedUArraysToReversedTest03(): void {
   describe('TypedUArraysToReversedTest03', (): void => {
@@ -250,8 +249,17 @@ export default function typedUArraysToReversedTest03(): void {
     it('testTypedUArraysToReversedPart202_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const arr = new Uint8Array(buf);
+      arr[0] = 1;
+      arr[1] = 2;
       const ret = reverseUint8ArrayValue(arr);
-      expect(ret).assertEqual(new Uint8Array([2, 1]));
+      const val0 = ret[6];
+      expect(val0).assertEqual(2);
+      const val1 = ret[7];
+      expect(val1).assertEqual(1);
+      const val2 = ret[0];
+      expect(val2).assertEqual(0);
+      const val3 = ret[3];
+      expect(val3).assertEqual(0);
     });
 
     /**

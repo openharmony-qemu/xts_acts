@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +17,6 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-// AUTO_TYPED_ARRAY_HELPERS_START
 function reverseBigUint64ArrayValue(source: BigUint64Array): BigUint64Array {
   const result = new BigUint64Array(source.length);
   for (let i: number = 0; i < source.length; i++) {
@@ -57,7 +57,6 @@ function reverseUint8ClampedArrayValue(source: Uint8ClampedArray): Uint8ClampedA
   return result;
 }
 
-// AUTO_TYPED_ARRAY_HELPERS_END
 
 export default function typedUArraysToReversedTest02(): void {
   describe('TypedUArraysToReversedTest02', (): void => {
@@ -85,7 +84,7 @@ export default function typedUArraysToReversedTest02(): void {
     it('testTypedUArraysToReversedPart201_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       const ret = reverseUint8ArrayValue(arr);
-      expect(typeof ret).assertEqual('object');
+      expect(ret.length).assertEqual(arr.length);
     });
 
     /**
@@ -99,7 +98,7 @@ export default function typedUArraysToReversedTest02(): void {
     it('testTypedUArraysToReversedPart201_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3, 4, 5]);
       const ret = reverseUint16ArrayValue(arr);
-      expect(typeof ret).assertEqual('object');
+      expect(ret.length).assertEqual(arr.length);
     });
 
     /**
@@ -113,7 +112,7 @@ export default function typedUArraysToReversedTest02(): void {
     it('testTypedUArraysToReversedPart201_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1, 2, 3, 4, 5]);
       const ret = reverseUint32ArrayValue(arr);
-      expect(typeof ret).assertEqual('object');
+      expect(ret.length).assertEqual(arr.length);
     });
 
     /**
@@ -127,7 +126,7 @@ export default function typedUArraysToReversedTest02(): void {
     it('testTypedUArraysToReversedPart201_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
       const ret = reverseUint8ClampedArrayValue(arr);
-      expect(typeof ret).assertEqual('object');
+      expect(ret.length).assertEqual(arr.length);
     });
 
     /**
@@ -141,7 +140,7 @@ export default function typedUArraysToReversedTest02(): void {
     it('testTypedUArraysToReversedPart201_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
       const ret = reverseBigUint64ArrayValue(arr);
-      expect(typeof ret).assertEqual('object');
+      expect(ret.length).assertEqual(arr.length);
     });
 
     /**
@@ -155,7 +154,7 @@ export default function typedUArraysToReversedTest02(): void {
     it('testTypedUArraysToReversedPart201_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(0);
       const ret = reverseUint8ArrayValue(arr);
-      expect(typeof ret).assertEqual('object');
+      expect(ret.length).assertEqual(arr.length);
     });
 
     /**
@@ -169,7 +168,7 @@ export default function typedUArraysToReversedTest02(): void {
     it('testTypedUArraysToReversedPart201_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([42]);
       const ret = reverseUint8ArrayValue(arr);
-      expect(typeof ret).assertEqual('object');
+      expect(ret.length).assertEqual(arr.length);
     });
 
     /**
@@ -183,7 +182,7 @@ export default function typedUArraysToReversedTest02(): void {
     it('testTypedUArraysToReversedPart201_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       const ret = reverseUint8ArrayValue(arr);
-      expect(typeof ret).assertEqual('object');
+      expect(ret.length).assertEqual(arr.length);
     });
 
     /**
@@ -197,7 +196,7 @@ export default function typedUArraysToReversedTest02(): void {
     it('testTypedUArraysToReversedPart201_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3, 4, 5]);
       const ret = reverseUint16ArrayValue(arr);
-      expect(typeof ret).assertEqual('object');
+      expect(ret.length).assertEqual(arr.length);
     });
 
     /**
@@ -211,7 +210,7 @@ export default function typedUArraysToReversedTest02(): void {
     it('testTypedUArraysToReversedPart201_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1, 2, 3, 4, 5]);
       const ret = reverseUint32ArrayValue(arr);
-      expect(typeof ret).assertEqual('object');
+      expect(ret.length).assertEqual(arr.length);
     });
 
     /**
@@ -225,7 +224,7 @@ export default function typedUArraysToReversedTest02(): void {
     it('testTypedUArraysToReversedPart201_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
       const ret = reverseUint8ClampedArrayValue(arr);
-      expect(typeof ret).assertEqual('object');
+      expect(ret.length).assertEqual(arr.length);
     });
 
     /**
@@ -239,7 +238,7 @@ export default function typedUArraysToReversedTest02(): void {
     it('testTypedUArraysToReversedPart201_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
       const ret = reverseBigUint64ArrayValue(arr);
-      expect(typeof ret).assertEqual('object');
+      expect(ret.length).assertEqual(arr.length);
     });
 
     /**
@@ -253,7 +252,7 @@ export default function typedUArraysToReversedTest02(): void {
     it('testTypedUArraysToReversedPart201_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([0, 1, 2, 3]);
       const ret = reverseUint8ArrayValue(arr);
-      expect(typeof ret).assertEqual('object');
+      expect(ret.length).assertEqual(arr.length);
     });
 
     /**
@@ -267,7 +266,7 @@ export default function typedUArraysToReversedTest02(): void {
     it('testTypedUArraysToReversedPart201_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([0, 1, 2, 3]);
       const ret = reverseUint16ArrayValue(arr);
-      expect(typeof ret).assertEqual('object');
+      expect(ret.length).assertEqual(arr.length);
     });
 
     /**
@@ -281,7 +280,7 @@ export default function typedUArraysToReversedTest02(): void {
     it('testTypedUArraysToReversedPart201_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([0, 1, 2, 3]);
       const ret = reverseUint32ArrayValue(arr);
-      expect(typeof ret).assertEqual('object');
+      expect(ret.length).assertEqual(arr.length);
     });
 
     /**
@@ -295,7 +294,7 @@ export default function typedUArraysToReversedTest02(): void {
     it('testTypedUArraysToReversedPart201_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([0, 1, 2, 3]);
       const ret = reverseUint8ClampedArrayValue(arr);
-      expect(typeof ret).assertEqual('object');
+      expect(ret.length).assertEqual(arr.length);
     });
 
     /**
@@ -309,7 +308,7 @@ export default function typedUArraysToReversedTest02(): void {
     it('testTypedUArraysToReversedPart201_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([0n, 1n, 2n, 3n]);
       const ret = reverseBigUint64ArrayValue(arr);
-      expect(typeof ret).assertEqual('object');
+      expect(ret.length).assertEqual(arr.length);
     });
 
     /**

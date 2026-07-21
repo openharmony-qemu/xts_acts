@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +17,6 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-// AUTO_TYPED_ARRAY_HELPERS_START
 function reverseBigUint64ArrayValue(source: BigUint64Array): BigUint64Array {
   const result = new BigUint64Array(source.length);
   for (let i: number = 0; i < source.length; i++) {
@@ -57,7 +57,6 @@ function reverseUint8ClampedArrayValue(source: Uint8ClampedArray): Uint8ClampedA
   return result;
 }
 
-// AUTO_TYPED_ARRAY_HELPERS_END
 
 export default function typedUArraysToReversedTest05(): void {
   describe('TypedUArraysToReversedTest05', (): void => {
@@ -365,13 +364,13 @@ export default function typedUArraysToReversedTest05(): void {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       let result = reverseUint8ArrayValue(arr);
       const val81 = result[0];
-      expect(val81).assertEqual(1);
+      expect(val81).assertEqual(5);
       const val82 = result[1];
-      expect(val82).assertEqual(2);
+      expect(val82).assertEqual(4);
       const val83 = result[3];
-      expect(val83).assertEqual(4);
+      expect(val83).assertEqual(2);
       const val84 = result[4];
-      expect(val84).assertEqual(5);
+      expect(val84).assertEqual(1);
     });
 
     /**
@@ -386,9 +385,9 @@ export default function typedUArraysToReversedTest05(): void {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
       let result = reverseBigUint64ArrayValue(arr);
       const val85 = result[0];
-      expect(val85).assertEqual(1n);
+      expect(val85).assertEqual(5n);
       const val86 = result[4];
-      expect(val86).assertEqual(5n);
+      expect(val86).assertEqual(1n);
     });
 
     /**
@@ -468,7 +467,6 @@ export default function typedUArraysToReversedTest05(): void {
     it('testTypedUArraysToReversed01064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3]);
       const reversed = reverseUint8ArrayValue(arr);
-      // toReversed should not mutate the original array
       const val91 = arr[0];
       expect(val91).assertEqual(1);
       const val92 = arr[2];
@@ -591,7 +589,6 @@ export default function typedUArraysToReversedTest05(): void {
     it('testTypedUArraysToReversed01070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([99]);
       let result = reverseUint8ArrayValue(arr);
-      // result is known to be Uint8Array at compile time
       const val112 = result[0];
       expect(val112).assertEqual(99);
     });
@@ -771,13 +768,13 @@ export default function typedUArraysToReversedTest05(): void {
       const arr = new Uint8Array([10, 20, 30, 40]);
       let result = reverseUint8ArrayValue(arr);
       const val136 = result[0];
-      expect(val136).assertEqual(10);
+      expect(val136).assertEqual(40);
       const val137 = result[1];
-      expect(val137).assertEqual(20);
+      expect(val137).assertEqual(30);
       const val138 = result[2];
-      expect(val138).assertEqual(30);
+      expect(val138).assertEqual(20);
       const val139 = result[3];
-      expect(val139).assertEqual(40);
+      expect(val139).assertEqual(10);
     });
 
     /**
@@ -792,9 +789,9 @@ export default function typedUArraysToReversedTest05(): void {
       const arr = new Uint16Array([1, 2, 3]);
       let result = reverseUint16ArrayValue(arr);
       const val140 = result[0];
-      expect(val140).assertEqual(1);
+      expect(val140).assertEqual(3);
       const val141 = result[2];
-      expect(val141).assertEqual(3);
+      expect(val141).assertEqual(1);
     });
 
     /**
@@ -809,9 +806,9 @@ export default function typedUArraysToReversedTest05(): void {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n]);
       let result = reverseBigUint64ArrayValue(arr);
       const val142 = result[0];
-      expect(val142).assertEqual(1n);
+      expect(val142).assertEqual(4n);
       const val143 = result[3];
-      expect(val143).assertEqual(4n);
+      expect(val143).assertEqual(1n);
     });
 
     /**

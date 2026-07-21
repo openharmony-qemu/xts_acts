@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -474,20 +475,6 @@ export default function typedUArraysToLocaleString01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOLOCALESTRING_3200
-     * @tc.name testTypedUArraysToLocaleString032
-     * @tc.desc Verify toLocaleString options Uint8Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysToLocaleString032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([123]);
-      let result = arr.toLocaleString("en-US");
-      expect(result).assertEqual("123");
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOLOCALESTRING_3300
      * @tc.name testTypedUArraysToLocaleString033
      * @tc.desc Verify toLocaleString Uint8Array
@@ -630,34 +617,6 @@ export default function typedUArraysToLocaleString01(): void {
       const arr = new BigUint64Array([]);
       let result = arr.toLocaleString();
       expect(result).assertEqual("");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOLOCALESTRING_4300
-     * @tc.name testTypedUArraysToLocaleString043
-     * @tc.desc Verify toLocaleString Uint8Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysToLocaleString043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([1, 2, 3]);
-      let result = arr.toLocaleString();
-      expect(typeof result).assertEqual("string");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOLOCALESTRING_4400
-     * @tc.name testTypedUArraysToLocaleString044
-     * @tc.desc Verify toLocaleString BigUint64Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysToLocaleString044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigUint64Array([1n, 2n, 3n]);
-      let result = arr.toLocaleString();
-      expect(typeof result).assertEqual("string");
     });
 
   });

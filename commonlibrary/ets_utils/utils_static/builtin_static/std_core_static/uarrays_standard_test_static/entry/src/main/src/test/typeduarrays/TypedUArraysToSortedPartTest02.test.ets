@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -113,6 +114,14 @@ export default function typedUArraysToSortedPartTest02(): void {
      * @tc.level Level 2
      */
     
+    it('testTypedUArraysToSortedPart201_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8Array([3, 1, 2]);
+      const sorted = arr.toSorted();
+      expect(sorted[0]).assertEqual(1);
+      expect(sorted[1]).assertEqual(2);
+      expect(sorted[2]).assertEqual(3);
+    });
+    
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSORTED_PART201_5000
      * @tc.name testTypedUArraysToSortedPart201_050
@@ -123,7 +132,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(0);
-      let result = expect(sortUint8ArrayValue(arr)).assertEqual(0);
+      const result = sortUint8ArrayValue(arr);
+      expect(result.byteLength).assertEqual(0);
     });
 
     /**
@@ -136,7 +146,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([42]);
-      let result = expect(sortUint16ArrayValue(arr)).assertEqual(2);
+      const result = sortUint16ArrayValue(arr);
+      expect(result.byteLength).assertEqual(2);
     });
 
     /**
@@ -149,7 +160,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([42n]);
-      let result = expect(sortBigUint64ArrayValue(arr)).assertEqual(8);
+      const result = sortBigUint64ArrayValue(arr);
+      expect(result.byteLength).assertEqual(8);
     });
 
     /**
@@ -162,7 +174,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([3, 1, 2]);
-      let result = expect(sortUint8ArrayValue(arr)).assertEqual(1);
+      const result = sortUint8ArrayValue(arr);
+      expect(result.BYTES_PER_ELEMENT).assertEqual(1);
     });
 
     /**
@@ -175,7 +188,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([3, 1, 2]);
-      let result = expect(sortUint16ArrayValue(arr)).assertEqual(2);
+      const result = sortUint16ArrayValue(arr);
+      expect(result.BYTES_PER_ELEMENT).assertEqual(2);
     });
 
     /**
@@ -188,7 +202,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([3, 1, 2]);
-      let result = expect(sortUint32ArrayValue(arr)).assertEqual(4);
+      const result = sortUint32ArrayValue(arr);
+      expect(result.BYTES_PER_ELEMENT).assertEqual(4);
     });
 
     /**
@@ -201,7 +216,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([3, 1, 2]);
-      let result = expect(sortUint8ClampedArrayValue(arr)).assertEqual(1);
+      const result = sortUint8ClampedArrayValue(arr);
+      expect(result.BYTES_PER_ELEMENT).assertEqual(1);
     });
 
     /**
@@ -214,7 +230,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([3n, 1n, 2n]);
-      let result = expect(sortBigUint64ArrayValue(arr)).assertEqual(8);
+      const result = sortBigUint64ArrayValue(arr);
+      expect(result.BYTES_PER_ELEMENT).assertEqual(8);
     });
 
     /**
@@ -227,7 +244,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([3, 1, 2]);
-      let result = expect(sortUint8ArrayValue(arr)).assertEqual('Uint8Array');
+      const result = sortUint8ArrayValue(arr);
+      expect(result instanceof Uint8Array).assertTrue();
     });
 
     /**
@@ -240,7 +258,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([3, 1, 2]);
-      let result = expect(sortUint16ArrayValue(arr)).assertEqual('Uint16Array');
+      const result = sortUint16ArrayValue(arr);
+      expect(result instanceof Uint16Array).assertTrue();
     });
 
     /**
@@ -253,7 +272,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([3, 1, 2]);
-      let result = expect(sortUint32ArrayValue(arr)).assertEqual('Uint32Array');
+      const result = sortUint32ArrayValue(arr);
+      expect(result instanceof Uint32Array).assertTrue();
     });
 
     /**
@@ -266,7 +286,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([3, 1, 2]);
-      let result = expect(sortUint8ClampedArrayValue(arr)).assertEqual('Uint8ClampedArray');
+      const result = sortUint8ClampedArrayValue(arr);
+      expect(result instanceof Uint8ClampedArray).assertTrue();
     });
 
     /**
@@ -279,7 +300,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([3n, 1n, 2n]);
-      let result = expect(sortBigUint64ArrayValue(arr)).assertEqual('BigUint64Array');
+      const result = sortBigUint64ArrayValue(arr);
+      expect(result instanceof BigUint64Array).assertTrue();
     });
 
     /**
@@ -292,7 +314,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([3, 1, 2]);
-      let result = expect(sortUint8ArrayValue(arr)).assertEqual(new Uint8Array([3, 1, 2]));
+      const result = sortUint8ArrayValue(arr);
+      expect(result.toString()).assertEqual((new Uint8Array([1, 2, 3])).toString());
     });
 
     /**
@@ -305,7 +328,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([300, 100, 200]);
-      let result = expect(sortUint16ArrayValue(arr)).assertEqual(new Uint16Array([300, 100, 200]));
+      const result = sortUint16ArrayValue(arr);
+      expect(result.toString()).assertEqual((new Uint16Array([100, 200, 300])).toString());
     });
 
     /**
@@ -318,7 +342,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([4294967295, 0, 2147483647]);
-      let result = expect(sortUint32ArrayValue(arr)).assertEqual(new Uint32Array([4294967295, 0, 2147483647]));
+      const result = sortUint32ArrayValue(arr);
+      expect(result.toString()).assertEqual((new Uint32Array([0, 2147483647, 4294967295])).toString());
     });
 
     /**
@@ -331,7 +356,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([200, 50, 100]);
-      let result = expect(sortUint8ClampedArrayValue(arr)).assertEqual(new Uint8ClampedArray([200, 50, 100]));
+      const result = sortUint8ClampedArrayValue(arr);
+      expect(result.toString()).assertEqual((new Uint8ClampedArray([50, 100, 200])).toString());
     });
 
     /**
@@ -344,7 +370,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([BigInt('18446744073709551615'), 1n, 0n]);
-      let result = expect(sortBigUint64ArrayValue(arr)).assertEqual(new BigUint64Array([BigInt('18446744073709551615'), 1n, 0n]));
+      const result = sortBigUint64ArrayValue(arr);
+      expect(result.toString()).assertEqual((new BigUint64Array([0n, 1n, BigInt('18446744073709551615')])).toString());
     });
 
     /**
@@ -358,7 +385,7 @@ export default function typedUArraysToSortedPartTest02(): void {
     it('testTypedUArraysToSortedPart201_068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([3, 1, 2]);
       let result = sortUint8ArrayValue(arr);
-      expect(arr).assertEqual(new Uint8Array([3, 1, 2]));
+      expect(arr.toString()).assertEqual((new Uint8Array([3, 1, 2])).toString());
     });
 
     /**
@@ -372,7 +399,7 @@ export default function typedUArraysToSortedPartTest02(): void {
     it('testTypedUArraysToSortedPart201_069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([3, 1, 2]);
       let result = sortUint16ArrayValue(arr);
-      expect(arr).assertEqual(new Uint16Array([3, 1, 2]));
+      expect(arr.toString()).assertEqual((new Uint16Array([3, 1, 2])).toString());
     });
 
     /**
@@ -386,7 +413,7 @@ export default function typedUArraysToSortedPartTest02(): void {
     it('testTypedUArraysToSortedPart201_070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([3n, 1n, 2n]);
       let result = sortBigUint64ArrayValue(arr);
-      expect(arr).assertEqual(new BigUint64Array([3n, 1n, 2n]));
+      expect(arr.toString()).assertEqual((new BigUint64Array([3n, 1n, 2n])).toString());
     });
 
     /**
@@ -399,11 +426,10 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([3, 1, 2]);
-      let result = expect(sortUint8ArrayValue(arr)).assertEqual(3);
-      const val1 = arr[1] ;
-      expect(val1).assertEqual(1);
-      const val2 = arr[2] ;
-      expect(val2).assertEqual(2);
+      const result = sortUint8ArrayValue(arr);
+      expect(result[2]).assertEqual(3);
+      expect(arr[1]).assertEqual(1);
+      expect(arr[2]).assertEqual(2);
     });
 
     /**
@@ -416,24 +442,10 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([300, 100, 200]);
-      let result = expect(sortUint16ArrayValue(arr)).assertEqual(300);
-      const val4 = arr[1] ;
-      expect(val4).assertEqual(100);
-      const val5 = arr[2] ;
-      expect(val5).assertEqual(200);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSORTED_PART201_7300
-     * @tc.name testTypedUArraysToSortedPart201_073
-     * @tc.desc Verify Uint8Array toSorted
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysToSortedPart201_073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array(0);
-      let result = expect(sortUint8ArrayValue(arr)).assertEqual(0);
+      const result = sortUint16ArrayValue(arr);
+      expect(result[2]).assertEqual(300);
+      expect(arr[1]).assertEqual(100);
+      expect(arr[2]).assertEqual(200);
     });
 
     /**
@@ -446,7 +458,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([42]);
-      let result = expect(sortUint8ArrayValue(arr)).assertEqual(42);
+      const result = sortUint8ArrayValue(arr);
+      expect(result[0]).assertEqual(42);
     });
 
     /**
@@ -459,7 +472,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([3, 1, 2]);
-      let result = expect(sortUint8ArrayValue(arr)).assertEqual(false);
+      const result = sortUint8ArrayValue(arr);
+      expect(result === arr).assertEqual(false);
     });
 
     /**
@@ -472,7 +486,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([3, 1, 2]);
-      let result = expect(sortUint16ArrayValue(arr)).assertEqual(false);
+      const result = sortUint16ArrayValue(arr);
+      expect(result === arr).assertEqual(false);
     });
 
     /**
@@ -485,7 +500,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([3, 1, 2]);
-      let result = expect(sortUint32ArrayValue(arr)).assertEqual(false);
+      const result = sortUint32ArrayValue(arr);
+      expect(result === arr).assertEqual(false);
     });
 
     /**
@@ -498,7 +514,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([3, 1, 2]);
-      let result = expect(sortUint8ClampedArrayValue(arr)).assertEqual(false);
+      const result = sortUint8ClampedArrayValue(arr);
+      expect(result === arr).assertEqual(false);
     });
 
     /**
@@ -511,7 +528,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([3n, 1n, 2n]);
-      let result = expect(sortBigUint64ArrayValue(arr)).assertEqual(false);
+      const result = sortBigUint64ArrayValue(arr);
+      expect(result === arr).assertEqual(false);
     });
 
     /**
@@ -538,7 +556,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(0);
-      let result = expect(sortUint8ArrayValue(arr)).assertEqual(false);
+      const result = sortUint8ArrayValue(arr);
+      expect(result === arr).assertEqual(false);
     });
 
     /**
@@ -551,73 +570,10 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([42]);
-      let result = expect(sortUint8ArrayValue(arr)).assertEqual(false);
+      const result = sortUint8ArrayValue(arr);
+      expect(result === arr).assertEqual(false);
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSORTED_PART201_8300
-     * @tc.name testTypedUArraysToSortedPart201_083
-     * @tc.desc Verify Uint8Array toSorted buffer buffer
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysToSortedPart201_083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([3, 1, 2]);
-      let result = expect(sortUint8ArrayValue(arr)).assertEqual(false);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSORTED_PART201_8400
-     * @tc.name testTypedUArraysToSortedPart201_084
-     * @tc.desc Verify Uint16Array toSorted buffer buffer
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysToSortedPart201_084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint16Array([3, 1, 2]);
-      let result = expect(sortUint16ArrayValue(arr)).assertEqual(false);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSORTED_PART201_8500
-     * @tc.name testTypedUArraysToSortedPart201_085
-     * @tc.desc Verify Uint32Array toSorted buffer buffer
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysToSortedPart201_085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint32Array([3, 1, 2]);
-      let result = expect(sortUint32ArrayValue(arr)).assertEqual(false);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSORTED_PART201_8600
-     * @tc.name testTypedUArraysToSortedPart201_086
-     * @tc.desc Verify Uint8ClampedArray toSorted buffer buffer
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysToSortedPart201_086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8ClampedArray([3, 1, 2]);
-      let result = expect(sortUint8ClampedArrayValue(arr)).assertEqual(false);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSORTED_PART201_8700
-     * @tc.name testTypedUArraysToSortedPart201_087
-     * @tc.desc Verify BigUint64Array toSorted buffer buffer
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysToSortedPart201_087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigUint64Array([3n, 1n, 2n]);
-      let result = expect(sortBigUint64ArrayValue(arr)).assertEqual(false);
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSORTED_PART201_8800
@@ -629,7 +585,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([3, 1, 2]);
-      let result = expect(sortUint8ArrayValue(arr)).assertEqual(3);
+      const result = sortUint8ArrayValue(arr);
+      expect(result[2]).assertEqual(3);
     });
 
     /**
@@ -642,20 +599,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([300, 100, 200]);
-      let result = expect(sortUint16ArrayValue(arr)).assertEqual(300);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSORTED_PART201_9000
-     * @tc.name testTypedUArraysToSortedPart201_090
-     * @tc.desc Verify Uint8Array buffer
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysToSortedPart201_090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([3, 1, 2]);
-      let result = expect(sortUint8ArrayValue(arr)).assertEqual(1);
+      const result = sortUint16ArrayValue(arr);
+      expect(result[2]).assertEqual(300);
     });
 
     /**
@@ -668,7 +613,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([300, 100, 200]);
-      let result = expect(sortUint16ArrayValue(arr)).assertEqual(100);
+      const result = sortUint16ArrayValue(arr);
+      expect(result[0]).assertEqual(100);
     });
 
     /**
@@ -681,7 +627,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([3, 1, 2]);
-      let result = expect(sortUint8ArrayValue(arr)).assertEqual(0);
+      const result = sortUint8ArrayValue(arr);
+      expect(result.byteOffset).assertEqual(0);
     });
 
     /**
@@ -694,7 +641,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([3, 1, 2]);
-      let result = expect(sortUint16ArrayValue(arr)).assertEqual(0);
+      const result = sortUint16ArrayValue(arr);
+      expect(result.byteOffset).assertEqual(0);
     });
 
     /**
@@ -707,7 +655,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([3, 1, 2]);
-      let result = expect(sortUint32ArrayValue(arr)).assertEqual(0);
+      const result = sortUint32ArrayValue(arr);
+      expect(result.byteOffset).assertEqual(0);
     });
 
     /**
@@ -720,7 +669,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([3, 1, 2]);
-      let result = expect(sortUint8ClampedArrayValue(arr)).assertEqual(0);
+      const result = sortUint8ClampedArrayValue(arr);
+      expect(result.byteOffset).assertEqual(0);
     });
 
     /**
@@ -733,7 +683,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([3n, 1n, 2n]);
-      let result = expect(sortBigUint64ArrayValue(arr)).assertEqual(0);
+      const result = sortBigUint64ArrayValue(arr);
+      expect(result.byteOffset).assertEqual(0);
     });
 
     /**
@@ -747,8 +698,8 @@ export default function typedUArraysToSortedPartTest02(): void {
     it('testTypedUArraysToSortedPart201_097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const view = new Uint8Array(buf, 4, 3);
-      
-      let result = expect(sortUint8ArrayValue(view)).assertEqual(0);
+      const result = sortUint8ArrayValue(view);
+      expect(result.byteOffset).assertEqual(0);
     });
 
     /**
@@ -762,8 +713,8 @@ export default function typedUArraysToSortedPartTest02(): void {
     it('testTypedUArraysToSortedPart201_098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const view = new Uint16Array(buf, 4, 3);
-      
-      let result = expect(sortUint16ArrayValue(view)).assertEqual(0);
+      const result = sortUint16ArrayValue(view);
+      expect(result.byteOffset).assertEqual(0);
     });
 
     /**
@@ -776,7 +727,8 @@ export default function typedUArraysToSortedPartTest02(): void {
      */
     it('testTypedUArraysToSortedPart201_099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 1, 1]);
-      let result = expect(sortUint8ArrayValue(arr)).assertEqual(new Uint8Array([1, 1, 1]));
+      const result = sortUint8ArrayValue(arr);
+      expect(result.toString()).assertEqual((new Uint8Array([1, 1, 1])).toString());
     });
 
     // ============ slice tests ============

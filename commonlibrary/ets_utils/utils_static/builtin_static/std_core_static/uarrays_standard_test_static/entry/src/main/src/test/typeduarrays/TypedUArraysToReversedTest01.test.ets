@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +17,6 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-// AUTO_TYPED_ARRAY_HELPERS_START
 function reverseBigUint64ArrayValue(source: BigUint64Array): BigUint64Array {
   const result = new BigUint64Array(source.length);
   for (let i: number = 0; i < source.length; i++) {
@@ -57,7 +57,6 @@ function reverseUint8ClampedArrayValue(source: Uint8ClampedArray): Uint8ClampedA
   return result;
 }
 
-// AUTO_TYPED_ARRAY_HELPERS_END
 
 export default function typedUArraysToReversedTest01(): void {
   describe('TypedUArraysToReversedTest01', (): void => {
@@ -453,7 +452,7 @@ export default function typedUArraysToReversedTest01(): void {
     it('testTypedUArraysToReversed01024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3]);
       let result = reverseUint8ArrayValue(arr);
-      expect(result != arr).assertTrue();
+      expect(result === arr).assertEqual(false);
     });
 
     /**
@@ -467,7 +466,7 @@ export default function typedUArraysToReversedTest01(): void {
     it('testTypedUArraysToReversed01025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([10, 20, 30]);
       let result = reverseUint16ArrayValue(arr);
-      expect(result != arr).assertTrue();
+      expect(result === arr).assertEqual(false);
     });
 
     /**
@@ -481,7 +480,7 @@ export default function typedUArraysToReversedTest01(): void {
     it('testTypedUArraysToReversed01026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([100, 200, 300]);
       let result = reverseUint32ArrayValue(arr);
-      expect(result != arr).assertTrue();
+      expect(result === arr).assertEqual(false);
     });
 
     /**
@@ -495,7 +494,7 @@ export default function typedUArraysToReversedTest01(): void {
     it('testTypedUArraysToReversed01027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3]);
       let result = reverseUint8ClampedArrayValue(arr);
-      expect(result != arr).assertTrue();
+      expect(result === arr).assertEqual(false);
     });
 
     /**
@@ -509,7 +508,7 @@ export default function typedUArraysToReversedTest01(): void {
     it('testTypedUArraysToReversed01028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
       let result = reverseBigUint64ArrayValue(arr);
-      expect(result != arr).assertTrue();
+      expect(result === arr).assertEqual(false);
     });
 
     /**
@@ -638,7 +637,10 @@ export default function typedUArraysToReversedTest01(): void {
     it('testTypedUArraysToReversed01036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3]);
       let result = reverseUint8ArrayValue(arr);
-      // result is known to be Uint8Array at compile time
+      const val0 = result[0];
+      expect(val0).assertEqual(3);
+      const val2 = result[2];
+      expect(val2).assertEqual(1);
     });
 
     /**
@@ -652,7 +654,10 @@ export default function typedUArraysToReversedTest01(): void {
     it('testTypedUArraysToReversed01037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([10, 20, 30]);
       let result = reverseUint16ArrayValue(arr);
-      // result is known to be Uint16Array at compile time
+      const val0 = result[0];
+      expect(val0).assertEqual(30);
+      const val2 = result[2];
+      expect(val2).assertEqual(10);
     });
 
     /**
@@ -666,7 +671,10 @@ export default function typedUArraysToReversedTest01(): void {
     it('testTypedUArraysToReversed01038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([100, 200, 300]);
       let result = reverseUint32ArrayValue(arr);
-      // result is known to be Uint32Array at compile time
+      const val0 = result[0];
+      expect(val0).assertEqual(300);
+      const val2 = result[2];
+      expect(val2).assertEqual(100);
     });
 
     /**
@@ -680,7 +688,10 @@ export default function typedUArraysToReversedTest01(): void {
     it('testTypedUArraysToReversed01039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3]);
       let result = reverseUint8ClampedArrayValue(arr);
-      // result is known to be Uint8ClampedArray at compile time
+      const val0 = result[0];
+      expect(val0).assertEqual(3);
+      const val2 = result[2];
+      expect(val2).assertEqual(1);
     });
 
     /**
@@ -694,7 +705,10 @@ export default function typedUArraysToReversedTest01(): void {
     it('testTypedUArraysToReversed01040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
       let result = reverseBigUint64ArrayValue(arr);
-      // result is known to be BigUint64Array at compile time
+      const val0 = result[0];
+      expect(val0).assertEqual(3n);
+      const val2 = result[2];
+      expect(val2).assertEqual(1n);
     });
 
     /**
