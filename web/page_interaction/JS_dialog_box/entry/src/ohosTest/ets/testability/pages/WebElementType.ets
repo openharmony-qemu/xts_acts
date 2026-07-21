@@ -18,6 +18,7 @@ import { pasteboard } from '@kit.BasicServicesKit';
 import { waitForExist } from '../../test/WaitTest.test';
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
+import { XtsTestServer } from 'library';
 interface PreviewBuilderParam {
   previewImage: Resource | string | undefined;
   width: number;
@@ -33,6 +34,7 @@ const EVENT_ID_SET_SUITE_KEY = 177201;
 @Component
 struct SelectionMenuLongPress {
   controller: webview.WebviewController = new webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @Builder PreviewBuilder($$: PreviewBuilderParam){
     Column() {
       Stack(){
@@ -130,6 +132,10 @@ struct SelectionMenuLongPress {
     }
   }
 
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+  }
+
   build() {
     Column() {
       Row() {
@@ -150,7 +156,7 @@ struct SelectionMenuLongPress {
         })
       }
       Text('WebElementType').id('WebElementTypeLink').fontSize(18)
-      Web({ src: $rawfile("newbee.html"), controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('newbee.html'), controller: this.controller })
         .height('90%')
         .scale({x:this.scaleValue, y:this.scaleValue, z:1})
         .enableHapticFeedback(this.enableWebHapticFeedback)

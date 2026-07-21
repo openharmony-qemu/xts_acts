@@ -20,11 +20,13 @@ import events_emitter from '@ohos.events.emitter';
 import { waitForExist} from '../../test/WaitTest.test';
 import { Driver, ON, MouseButton} from '@ohos.UiTest';
 import {inputMethod} from '@kit.IMEKit';
+import { XtsTestServer } from 'library';
 
 @Entry
 @Component
 struct WebComponent {
   webController: webview.WebviewController = new webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State isRefreshing: boolean = false;
   @State isForceZoomEnabled: boolean = false;
   @State flag:number = 1;
@@ -42,6 +44,10 @@ struct WebComponent {
       let e: business_error.BusinessError = error as business_error.BusinessError;
       console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
     }
+  }
+
+  aboutToDisappear() {
+    this.webController.loadUrl(this.mServer.getShutdownUrl())
   }
 
   onPageShow() {
@@ -73,7 +79,7 @@ struct WebComponent {
               try {
                 this.isForceZoomEnabled = true;
                 this.isPageEnd = -1
-                this.webController.loadUrl('www.example.com')
+                this.webController.loadUrl(this.mServer.getAssetUrl('index.html'))
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
                 this.isPageEnd = -1;
                 this.webController.loadUrl($rawfile("WebForceEnableZoom.html"))

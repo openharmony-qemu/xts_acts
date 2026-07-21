@@ -16,6 +16,7 @@
 import business_error from '@ohos.base';
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_SUITE_KEY = 176001;
 
@@ -23,6 +24,7 @@ const EVENT_ID_SET_SUITE_KEY = 176001;
 @Component
 struct WebControllerHitTest {
   controller: WebController = new WebController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = ""
   @State hitType: number = -1
   @State isPageEnd: number = -1;
@@ -61,6 +63,10 @@ struct WebControllerHitTest {
     console.log("HitTestType Map: " + HitTestType.Map)
     console.log("HitTestType Phone: " + HitTestType.Phone)
     console.log("HitTestType Unknown: " + HitTestType.Unknown)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl({ url: this.mServer.getShutdownUrl() });
   }
 
   build() {

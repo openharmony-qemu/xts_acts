@@ -20,6 +20,7 @@ import events_emitter from '@ohos.events.emitter';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import { BusinessError } from '@ohos.base';
 import { Driver, MouseButton, UiWindow, ON, On } from '@kit.TestKit';
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_SUITE_KEY = 183601;
 let driver = Driver.create()
@@ -31,6 +32,7 @@ struct WebViewMenuShowResult {
   @State menuShowState: string = ''
   @State userAgentPC:string = "";
   controller: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
 
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
@@ -47,6 +49,10 @@ struct WebViewMenuShowResult {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -265,7 +271,7 @@ struct WebViewMenuShowResult {
         })
       }
 
-      Web({ src: $rawfile("indexJru.html"), controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('indexJru.html'), controller: this.controller })
         .key("WebViewMenuShowResultTestWebView")
         .onContextMenuShow((event) => {
           if (event) {

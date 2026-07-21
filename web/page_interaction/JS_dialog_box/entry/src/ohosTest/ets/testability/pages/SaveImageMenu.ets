@@ -24,6 +24,7 @@ import { image } from '@kit.ImageKit';
 import { fileIo, fileUri } from '@kit.CoreFileKit';
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
 import { http } from '@kit.NetworkKit';
+import { XtsTestServer } from 'library';
 const EVENT_ID_SET_SUITE_KEY = 177008;
 const TAG = 'WebContextMenuResult ';
 const driver = Driver.create();
@@ -33,6 +34,7 @@ const driver = Driver.create();
   struct BindMenuTest {
   pageInfos: NavPathStack = new NavPathStack();
   controller: webview.WebviewController = new webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   private result: WebContextMenuResult | undefined = undefined;
   @State linkUrl: string = '';
   @State offsetX: number = 0;
@@ -111,8 +113,8 @@ const driver = Driver.create();
     } else if (this.imageStr.search(new RegExp('resource://rawfile/')) === 0) {
       console.log(TAG, `Is rawfile image`);
       return;
-    } else if (this.imageStr.search(new RegExp('https://')) === 0) {
-      console.log(TAG, `Is https image`);
+    } else if (this.imageStr.search(new RegExp('https?://')) === 0) {
+      console.log(TAG, `Is web image`);
     } else {
       console.error(TAG, `Invalid image string ${this.imageStr}`);
       this.imageStr = "";
@@ -173,6 +175,10 @@ const driver = Driver.create();
       }
     }
   }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+  }
   build() {
         Column({space: 10}) {
           Row() {
@@ -199,7 +205,7 @@ const driver = Driver.create();
                 case "SaveImageMenu02": {
                   this.flag = 2;
                   this.isPageEnd = -1;
-                  this.controller.loadUrl("resource://rawfile/online.html");
+                  this.controller.loadUrl(this.mServer.getAssetUrl('online.html'));
                   await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let webRect = Utils.getComponentRect('WebContextMenuResult');
                   let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);

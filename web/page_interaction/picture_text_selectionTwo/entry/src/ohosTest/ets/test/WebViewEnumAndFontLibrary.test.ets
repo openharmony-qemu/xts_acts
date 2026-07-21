@@ -104,7 +104,7 @@ export default function WebViewEnumAndFontLibrary() {
     it('testWebContextMenuParamGetLinkUrl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamGetLinkUrl", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testWebContextMenuParamGetLinkUrl001", "http://www.baidu.com/", 183230, () => { isReturn = true });
+      Utils.registerEvent("testWebContextMenuParamGetLinkUrl001", "http://localhost:8080/assets/second.html", 183230, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "emitWebContextMenuParamGetLinkUrl");
       await Utils.waitForExist(() => isReturn, "emitWebContextMenuParamGetLinkUrl" + '_returnCheck', true, 500);
       done();
@@ -121,7 +121,7 @@ export default function WebViewEnumAndFontLibrary() {
     it('testWebContextMenuParamGetUnfilteredLinkUrl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebContextMenuParamGetUnfilteredLinkUrl", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
-      Utils.registerEvent("testWebContextMenuParamGetUnfilteredLinkUrl001", "http://www.baidu.com/", 183240,  () => { isReturn = true });
+      Utils.registerEvent("testWebContextMenuParamGetUnfilteredLinkUrl001", "http://localhost:8080/assets/second.html", 183240,  () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "buttonEnumAndFontLibrary", "testWebContextMenuParamGetUnfilteredLinkUrl001");
       await Utils.waitForExist(() => isReturn, "emitWebContextMenuParamGetUnfilteredLinkUrl" + '_returnCheck', true, 500);
       done();

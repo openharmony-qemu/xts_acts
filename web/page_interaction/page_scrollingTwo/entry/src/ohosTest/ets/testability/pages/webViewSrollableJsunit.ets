@@ -19,6 +19,7 @@ import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
 import { Driver } from '@kit.TestKit';
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_SUITE_KEY = 182301;
 let driver: Driver = Driver.create();
@@ -28,6 +29,7 @@ let driver: Driver = Driver.create();
 struct webViewScrollable {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
   controller1: web_webview.WebviewController = new web_webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = "emitScrollableOne";
   @State res: boolean = false;
   @State xNum: number = 0;
@@ -53,6 +55,10 @@ struct webViewScrollable {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -783,7 +789,7 @@ struct webViewScrollable {
               }
               case "emitScrollableThirty": {
                 this.isPageEnd = -1;
-                this.controller.loadUrl('www.example.com')
+                this.controller.loadUrl(this.mServer.getAssetUrl('index.html'))
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 this.controller.setScrollable(true);
                 this.scrollForwardEnums = NestedScrollMode.SELF_FIRST;
@@ -808,7 +814,7 @@ struct webViewScrollable {
               }
               case "emitScrollableThirtyOne": {
                 this.isPageEnd = -1;
-                this.controller.loadUrl('www.example.com')
+                this.controller.loadUrl(this.mServer.getAssetUrl('index.html'))
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 this.controller.setScrollable(true);
                 this.scrollForwardEnums = NestedScrollMode.PARENT_FIRST;
@@ -833,7 +839,7 @@ struct webViewScrollable {
               }
               case "emitScrollableThirtyTwo": {
                 this.isPageEnd = -1;
-                this.controller.loadUrl('www.example.com')
+                this.controller.loadUrl(this.mServer.getAssetUrl('index.html'))
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 this.controller.setScrollable(true);
                 this.scrollForwardEnums = NestedScrollMode.PARALLEL;
@@ -858,7 +864,7 @@ struct webViewScrollable {
               }
               case "emitScrollableThirtyThree": {
                 this.isPageEnd = -1;
-                this.controller.loadUrl('www.example.com')
+                this.controller.loadUrl(this.mServer.getAssetUrl('index.html'))
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 this.controller.setScrollable(true);
                 this.scrollForwardEnums = NestedScrollMode.SELF_ONLY;
@@ -889,7 +895,7 @@ struct webViewScrollable {
               }
               case "emitScrollableThirtyFour": {
                 this.isPageEnd = -1;
-                this.controller.loadUrl('www.example.com')
+                this.controller.loadUrl(this.mServer.getAssetUrl('index.html'))
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1,)
                 this.controller.setScrollable(true);
                 this.scrollBackwardEnums = NestedScrollMode.SELF_FIRST;
@@ -919,7 +925,7 @@ struct webViewScrollable {
               }
               case "emitScrollableThirtyFive": {
                 this.isPageEnd = -1;
-                this.controller.loadUrl('www.example.com')
+                this.controller.loadUrl(this.mServer.getAssetUrl('index.html'))
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 this.controller.setScrollable(true);
                 this.scrollBackwardEnums = NestedScrollMode.PARENT_FIRST;
@@ -949,7 +955,7 @@ struct webViewScrollable {
               }
               case "emitScrollableThirtySix": {
                 this.isPageEnd = -1;
-                this.controller.loadUrl('www.example.com')
+                this.controller.loadUrl(this.mServer.getAssetUrl('index.html'))
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 this.controller.setScrollable(true);
                 this.scrollBackwardEnums = NestedScrollMode.PARALLEL;

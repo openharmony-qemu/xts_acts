@@ -18,6 +18,7 @@ import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import business_error, { BusinessError } from '@ohos.base';
 import { Driver, MouseButton, UiWindow, ON, On } from '@ohos.UiTest';
+import { XtsTestServer } from 'library';
 
 class TestObj {
   constructor() {
@@ -67,6 +68,7 @@ struct WebViewEnumAndFontLibrary {
   }
 
   controller: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   testObj: TestObj = new TestObj()
   @State Permission: Boolean = false
   @State str: string = ""
@@ -122,6 +124,10 @@ struct WebViewEnumAndFontLibrary {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -207,7 +213,7 @@ struct WebViewEnumAndFontLibrary {
             case "emitWebContextMenuParamGetMediaType": {
               this.onlineImageAccessAttr = false;
               this.isPageEnd = -1
-              this.controller.loadUrl("resource://rawfile/indexJru.html")
+              this.controller.loadUrl(this.mServer.getAssetUrl('indexJru.html'))
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
@@ -278,7 +284,7 @@ struct WebViewEnumAndFontLibrary {
               await Utils.waitForReleaseDriver(this.str,driver)
               Utils.emitEvent(Number(this.EditStateFlags), 183330)
               this.isPageEnd = -1
-              this.controller.loadUrl("resource://rawfile/indexJru.html")
+              this.controller.loadUrl(this.mServer.getAssetUrl('indexJru.html'))
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.FileSelectorMode = 0
               break;
@@ -311,7 +317,7 @@ struct WebViewEnumAndFontLibrary {
               await Utils.waitForReleaseDriver(this.str,driver)
               Utils.emitEvent(Number(this.EditStateFlags), 183360)
               this.isPageEnd = -1
-              this.controller.loadUrl("resource://rawfile/indexJru.html")
+              this.controller.loadUrl(this.mServer.getAssetUrl('indexJru.html'))
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               break;
             }
@@ -322,7 +328,7 @@ struct WebViewEnumAndFontLibrary {
               Utils.emitEvent(this.MediaTypeArr[this.MediaType], 183370)
               this.MediaType = 0
               this.isPageEnd = -1
-              this.controller.loadUrl("resource://rawfile/indexJru.html")
+              this.controller.loadUrl(this.mServer.getAssetUrl('indexJru.html'))
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               break;
             }
@@ -356,7 +362,7 @@ struct WebViewEnumAndFontLibrary {
         Text(this.webResultText).fontSize(20)
       }
 
-      Web({ src: $rawfile("indexJru.html"), controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('indexJru.html'), controller: this.controller })
         .onControllerAttached(() => {
           try {
             let id = this.controller.getWebId();

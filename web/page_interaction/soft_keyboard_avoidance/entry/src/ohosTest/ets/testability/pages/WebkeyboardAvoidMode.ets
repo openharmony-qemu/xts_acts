@@ -19,6 +19,7 @@ import events_emitter from '@ohos.events.emitter';
 import { BusinessError } from '@ohos.base';
 import { Driver } from '@kit.TestKit';
 import { ON } from '@kit.TestKit';
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_SUITE_KEY = 180101;
 let driver = Driver.create();
@@ -27,6 +28,7 @@ let driver = Driver.create();
 @Component
 struct WebkeyboardAvoidMode {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State avoidMode: WebKeyboardAvoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT;
   @State str: string = ""
   @State userAgentPC:string = "";
@@ -58,6 +60,10 @@ struct WebkeyboardAvoidMode {
     }
   }
 
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+  }
+
   build() {
     Column() {
       Row() {
@@ -74,7 +80,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT
               this.isPageEnd = -1
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1
               this.controller.loadUrl("resource://rawfile/index388.html");
@@ -100,7 +106,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT
               this.isPageEnd = -1
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
@@ -126,7 +132,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT
               this.isPageEnd = -1
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
@@ -151,7 +157,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
@@ -176,7 +182,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
@@ -201,7 +207,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 100)
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
@@ -226,7 +232,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.OVERLAYS_CONTENT
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
@@ -251,7 +257,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.OVERLAYS_CONTENT
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
@@ -276,7 +282,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.OVERLAYS_CONTENT
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
@@ -301,7 +307,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.OVERLAYS_CONTENT
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
@@ -326,7 +332,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.OVERLAYS_CONTENT
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
@@ -354,7 +360,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.OVERLAYS_CONTENT
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
@@ -379,7 +385,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_VISUAL
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
@@ -404,7 +410,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_VISUAL
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
@@ -429,7 +435,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_VISUAL
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
@@ -454,7 +460,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_VISUAL
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
@@ -479,7 +485,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_VISUAL
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index377.html");
@@ -504,7 +510,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_VISUAL
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index388.html");
@@ -529,7 +535,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index378.html");
@@ -554,7 +560,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index378.html");
@@ -579,7 +585,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index378.html");
@@ -604,7 +610,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index378.html");
@@ -629,7 +635,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index378.html");
@@ -654,7 +660,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index378.html");
@@ -679,7 +685,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.OVERLAYS_CONTENT
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index378.html");
@@ -704,7 +710,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.OVERLAYS_CONTENT
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index378.html");
@@ -729,7 +735,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.OVERLAYS_CONTENT
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index378.html");
@@ -754,7 +760,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.OVERLAYS_CONTENT
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index378.html");
@@ -779,7 +785,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.OVERLAYS_CONTENT
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index378.html");
@@ -804,7 +810,7 @@ struct WebkeyboardAvoidMode {
                 }
               this.avoidMode = WebKeyboardAvoidMode.OVERLAYS_CONTENT
               this.isPageEnd = -1;
-              this.controller.loadUrl("www.example.com");
+              this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/index378.html");

@@ -15,6 +15,7 @@
 
 import events_emitter from '@ohos.events.emitter';
 import webView from '@ohos.web.webview';
+import { XtsTestServer } from 'library';
 import Utils from '../../test/Utils.test';
 
 const EVENT_ID_SET_SUITE_KEY = 127101;
@@ -23,6 +24,7 @@ const EVENT_ID_SET_SUITE_KEY = 127101;
 @Component
 struct WebOnFirstContentfulPaint {
   controller: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = '';
   @State javaScriptAccess: boolean = true;
   @State fileAccess: boolean = true;
@@ -46,6 +48,10 @@ struct WebOnFirstContentfulPaint {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -102,7 +108,7 @@ struct WebOnFirstContentfulPaint {
         })
       }
 
-      Web({ src: 'https://www.openharmony.cn', controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('dataSubmit.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .visibility(this.vis)
         .fileAccess(this.fileAccess)

@@ -9,7 +9,7 @@
         const invalidFile = new File([], 'fake.txt', { type: 'text/plain' });
         formData.append('file', invalidFile);
 
-        fetch('https://www.example.com', {
+        fetch(`${window.location.origin}/assets/index.html`, {
           method: 'POST',
           body: formData
         }).then(response => response.json())

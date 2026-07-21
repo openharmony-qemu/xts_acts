@@ -18,11 +18,13 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
+import { XtsTestServer } from 'library';
 
 @Entry
 @Component
 struct webOnBeforeUnload {
   controller: WebController = new WebController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = "emitOnBeforeUnloadWebC";
   @State firstId: number = 402;
   @State javaScriptAccess: boolean = true;
@@ -112,7 +114,7 @@ struct webOnBeforeUnload {
         })
       }
 
-      Web({ src: $rawfile('onBeforeUnloadTest.html'), controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('onBeforeUnloadTest.html'), controller: this.controller })
         .key("TestwebOnBeforeUnload")
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)
@@ -130,5 +132,9 @@ struct webOnBeforeUnload {
           return true
         })
     }
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl({url: this.mServer.getShutdownUrl()});
   }
 }

@@ -18,6 +18,7 @@ import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import business_error, { BusinessError } from '@ohos.base';
 import { Driver, ON } from '@kit.TestKit';
+import { XtsTestServer } from 'library';
 
 class TestObj {
   constructor() {
@@ -66,6 +67,7 @@ struct WebViewEnumAndFontLibrary {
   }
 
   controller: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   testObj: TestObj = new TestObj()
   @State Permission: Boolean = false
   @State str: string = ""
@@ -129,6 +131,10 @@ struct WebViewEnumAndFontLibrary {
     }
   }
 
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+  }
+
   build() {
     Column() {
       Row() {
@@ -148,7 +154,7 @@ struct WebViewEnumAndFontLibrary {
                 Utils.emitEvent(Number(this.FileSelectorMode), 177610)
                 this.FileSelectorMode = 0
                 this.isPageEnd = -1
-                this.controller.loadUrl("resource://rawfile/indexJru.html")
+                this.controller.loadUrl(this.mServer.getAssetUrl('indexJru.html'))
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 break;
               } else {
@@ -178,7 +184,7 @@ struct WebViewEnumAndFontLibrary {
         Text(this.webResultText).fontSize(20)
       }
 
-      Web({ src: $rawfile("indexJru.html"), controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('indexJru.html'), controller: this.controller })
         .onControllerAttached(() => {
           try {
             let id = this.controller.getWebId();

@@ -18,6 +18,7 @@ import business_error from '@ohos.base';
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
 import { Driver } from '@kit.TestKit';
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_SUITE_KEY = 176301;
 
@@ -25,6 +26,7 @@ const EVENT_ID_SET_SUITE_KEY = 176301;
 @Component
 struct WebViewControllerHitTest {
   controller: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = ""
   @State hitType: number = -1
   hitTestValue?: webView.HitTestValue
@@ -65,6 +67,10 @@ struct WebViewControllerHitTest {
     console.log("webView.WebHitTestType Map: " + webView.WebHitTestType.Map)
     console.log("webView.WebHitTestType Phone: " + webView.WebHitTestType.Phone)
     console.log("webView.WebHitTestType Unknown: " + webView.WebHitTestType.Unknown)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   build() {

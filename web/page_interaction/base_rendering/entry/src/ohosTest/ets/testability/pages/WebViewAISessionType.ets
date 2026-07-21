@@ -3,6 +3,7 @@ import { fileIo as fs } from '@kit.CoreFileKit'
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils.test';
 import { Driver, MouseButton, ON, On } from '@kit.TestKit';
+import { XtsTestServer } from 'library';
 let driver = Driver.create();
 const EVENT_ID_SET_SUITE_KEY = 183129;
 
@@ -10,6 +11,7 @@ const EVENT_ID_SET_SUITE_KEY = 183129;
 @Component
 struct Summarizer {
   controller: webview.WebviewController = new webview.WebviewController()
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = ""
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
@@ -25,6 +27,10 @@ struct Summarizer {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
 
@@ -327,7 +333,7 @@ struct Summarizer {
                 if(canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   console.log('emitWebViewProofreader0555')
                   this.isPageEnd = -1;
-                  this.controller.loadUrl("resource://rawfile/proofreader.html");
+                  this.controller.loadUrl(this.mServer.getAssetUrl('proofreader.html'));
                   await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('开始校对'));
                   await buttonOne.click();
@@ -345,7 +351,7 @@ struct Summarizer {
                 if(canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   console.log('emitWebViewProofreader0666')
                   this.isPageEnd = -1;
-                  this.controller.loadUrl("resource://rawfile/proofreader.html");
+                  this.controller.loadUrl(this.mServer.getAssetUrl('proofreader.html'));
                   await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('返回导航页'));
                   await buttonOne.click();

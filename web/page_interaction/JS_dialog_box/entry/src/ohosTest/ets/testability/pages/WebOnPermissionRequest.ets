@@ -111,6 +111,7 @@ struct WebOnPermissionRequest {
                 } else {
                   Utils.emitEvent('"deny"', 177410)
                 }
+                break;
               }
               case "emitPermissionRequestGrant001": {
                 await Utils.waitForReleaseDriver(this.str, driver)
@@ -123,7 +124,10 @@ struct WebOnPermissionRequest {
                   try {
                     this.deny = false;
                     this.isRunJSEnd = -1
-                    this.controller.runJavaScript("getMedia()").then((result) => {
+                    this.isOnConsoleEnd = -1
+                    this.controller.runJavaScript(
+                      "document.getElementById('error').innerHTML=''; getMedia();")
+                      .then((result) => {
                       console.log('wait for JS end, result: ' + result)
                       this.isRunJSEnd = 1
                     }).catch((error: BusinessError) => {
@@ -152,15 +156,18 @@ struct WebOnPermissionRequest {
                     await Utils.waitForExist(()=>this.isOperateEnd, this.str+' isOperateEnd', 1, 1000);
                     await Utils.waitForExist(()=>this.isOnConsoleEnd, this.str+' isOnConsoleEnd', 1, 1000);
                     await Utils.waitForExist(()=>this.isRunJSEnd, this.str+' isRunJSEnd', 1, 1000);
-                    this.controller.runJavaScript("getResult()", (error, result) => {
-                      if (error) {
-                        console.info('getResult() return error: ' + error)
+                    // MediaStream then() may update DOM after console; poll until grant.
+                    let grantResult: string = '"deny"';
+                    for (let i = 0; i < 10; i++) {
+                      await Utils.sleep(300);
+                      const result = await this.controller.runJavaScript("getResult()");
+                      console.info('getResult() poll: ' + result)
+                      if (result === '"grant"' || result === 'grant') {
+                        grantResult = '"grant"';
+                        break;
                       }
-                      if (result) {
-                        console.info('getResult() return result: ' + result)
-                        Utils.emitEvent(result, 177420)
-                      }
-                    })
+                    }
+                    Utils.emitEvent(grantResult, 177420)
 
                   } catch (error) {
                     console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -169,6 +176,7 @@ struct WebOnPermissionRequest {
                 } else {
                   Utils.emitEvent('"grant"', 177420)
                 }
+                break;
               }
             }
           })

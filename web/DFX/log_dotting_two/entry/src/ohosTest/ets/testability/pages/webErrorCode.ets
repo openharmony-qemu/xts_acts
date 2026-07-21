@@ -22,6 +22,7 @@ import events_emitter from '@ohos.events.emitter';
 import fs from '@ohos.file.fs';
 import { JsProxyObject } from '../../test/Interfaces';
 import business_error from '@ohos.base';
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_EMIT_KEY = 114080;
 
@@ -43,6 +44,7 @@ class testObj {
 struct Index {
   controller: webView.WebviewController = new webView.WebviewController();
   controllerNull: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   responseWeb: WebResourceResponse = new WebResourceResponse()
   @State webResult: string = ' ';
   @State str: string = ""
@@ -119,6 +121,10 @@ struct Index {
       let e: business_error.BusinessError = error as business_error.BusinessError;
       console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
     }
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   build() {
@@ -283,7 +289,7 @@ struct Index {
             }
             case "emitLoadUrl": {
               try {
-                this.controllerNull.loadUrl('https://docs.openharmony.cn/');
+                this.controllerNull.loadUrl(this.mServer.getAssetUrl('index.html'));
               } catch (error) {
                 Utils.emitEvent(error.code, 114230)
               }
@@ -638,7 +644,7 @@ struct Index {
 
             case "testPrepareForPageLoadError001": {
               try {
-                webView.WebviewController.prepareForPageLoad("https://www.huawei.com/cn/", true, 7);
+                webView.WebviewController.prepareForPageLoad(this.mServer.getAssetUrl('index.html'), true, 7);
                 Utils.emitEvent(this.no_error, 114590)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);

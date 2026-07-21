@@ -18,6 +18,7 @@ import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { JsProxyObject } from '../../test/Interfaces';
 import business_error from '@ohos.base';
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_EMIT_KEY = 113550;
 
@@ -26,12 +27,16 @@ const EVENT_ID_SET_EMIT_KEY = 113550;
 struct Index {
   controller: webView.WebviewController = new webView.WebviewController();
   controllerNull: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   nativePort: webView.WebMessagePort | null = null;
   responseWeb: WebResourceResponse = new WebResourceResponse()
   @State str: string = ""
   @State javaScriptAccess: boolean = true;
   @State isPageEnd: number = -1;
   @State isReceive: number = -1;
+  @State validCookieUrl: string = '';
+  @State invalidPrefixCookieUrl: string = '';
+  @State invalidSchemeCookieUrl: string = '';
   no_error: string = "no error happened"
 
   onPageShow() {
@@ -44,6 +49,20 @@ struct Index {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_EMIT_KEY)
+  }
+
+  aboutToAppear() {
+    this.validCookieUrl = this.mServer.getCookieUrl('dottingtwo_cookie');
+    this.invalidPrefixCookieUrl = `,${this.validCookieUrl}`;
+    if (this.validCookieUrl.startsWith('http://')) {
+      this.invalidSchemeCookieUrl = this.validCookieUrl.replace('http://', 'h,ttp://');
+    } else {
+      this.invalidSchemeCookieUrl = this.validCookieUrl.replace('https://', 'h,ttps://');
+    }
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -94,7 +113,7 @@ struct Index {
 
             case "testGetCookieError002": {
               try {
-                let value = webView.WebCookieManager.getCookie(',https://www.OpenHarmony.cn');
+                let value = webView.WebCookieManager.getCookie(this.invalidPrefixCookieUrl);
                 console.log("value: " + value);
                 Utils.emitEvent(this.no_error, 113570)
               } catch (error) {
@@ -107,7 +126,7 @@ struct Index {
 
             case "testGetCookieError003": {
               try {
-                let value = webView.WebCookieManager.getCookie('h,ttp://www.OpenHarmony.cn');
+                let value = webView.WebCookieManager.getCookie(this.invalidSchemeCookieUrl);
                 console.log("value: " + value);
                 Utils.emitEvent(this.no_error, 113580)
               } catch (error) {
@@ -145,7 +164,7 @@ struct Index {
 
             case "testSetCookieError002": {
               try {
-                webView.WebCookieManager.setCookie(',http://www.example.com', 'a=b');
+                webView.WebCookieManager.setCookie(this.invalidPrefixCookieUrl, 'a=b');
                 Utils.emitEvent(this.no_error, 113610)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -169,7 +188,7 @@ struct Index {
 
             case "testSetCookieError004": {
               try {
-                webView.WebCookieManager.setCookie('https://www.example.com', '');
+                webView.WebCookieManager.setCookie(this.validCookieUrl, '');
                 Utils.emitEvent(this.no_error, 113630)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -181,7 +200,7 @@ struct Index {
 
             case "testSetCookieError005": {
               try {
-                webView.WebCookieManager.setCookie('https://www.example.com', ' ');
+                webView.WebCookieManager.setCookie(this.validCookieUrl, ' ');
                 Utils.emitEvent(this.no_error, 113640)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -205,7 +224,7 @@ struct Index {
 
             case "testFetchCookieSync002": {
               try {
-                webView.WebCookieManager.fetchCookieSync(',https://ww.OpenHarmony.cn');
+                webView.WebCookieManager.fetchCookieSync(this.invalidPrefixCookieUrl);
                 Utils.emitEvent(this.no_error, 113660)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -217,7 +236,7 @@ struct Index {
 
             case "testFetchCookieSync003": {
               try {
-                webView.WebCookieManager.fetchCookieSync('h,ttp://ww.OpenHarmony.cn');
+                webView.WebCookieManager.fetchCookieSync(this.invalidSchemeCookieUrl);
                 Utils.emitEvent(this.no_error, 113670)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -259,7 +278,7 @@ struct Index {
 
             case "testFetchCookie002": {
               try {
-                webView.WebCookieManager.fetchCookie(',https://ww.OpenHarmony.cn', (error, cookie) => {
+                webView.WebCookieManager.fetchCookie(this.invalidPrefixCookieUrl, (error, cookie) => {
                   if (error) {
                     console.log('error: ' + JSON.stringify(error));
                     Utils.emitEvent(error.code + error.message, 113700)
@@ -277,7 +296,7 @@ struct Index {
 
             case "testFetchCookie003": {
               try {
-                webView.WebCookieManager.fetchCookie('h,ttp://ww.OpenHarmony.cn', (error, cookie) => {
+                webView.WebCookieManager.fetchCookie(this.invalidSchemeCookieUrl, (error, cookie) => {
                   if (error) {
                     console.log('error: ' + JSON.stringify(error));
                     Utils.emitEvent(error.code + error.message, 113710)
@@ -331,7 +350,7 @@ struct Index {
 
             case "testFetchCookie006": {
               try {
-                webView.WebCookieManager.fetchCookie(',https://ww.OpenHarmony.cn')
+                webView.WebCookieManager.fetchCookie(this.invalidPrefixCookieUrl)
                   .then(cookie => {
                     console.log('fetchCookie cookie = ' + cookie);
                   })
@@ -349,7 +368,7 @@ struct Index {
 
             case "testFetchCookie007": {
               try {
-                webView.WebCookieManager.fetchCookie('h,ttp://ww.OpenHarmony.cn')
+                webView.WebCookieManager.fetchCookie(this.invalidSchemeCookieUrl)
                   .then(cookie => {
                     console.log('fetchCookie cookie = ' + cookie);
                   })
@@ -397,7 +416,7 @@ struct Index {
 
             case "testConfigCookieSync002": {
               try {
-                webView.WebCookieManager.configCookieSync(',https://ww.OpenHarmony.cn', 'a=b');
+                webView.WebCookieManager.configCookieSync(this.invalidPrefixCookieUrl, 'a=b');
                 Utils.emitEvent(this.no_error, 113780)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -409,7 +428,7 @@ struct Index {
 
             case "testConfigCookieSync003": {
               try {
-                webView.WebCookieManager.configCookieSync('h,ttp://ww.OpenHarmony.cn', 'a=b');
+                webView.WebCookieManager.configCookieSync(this.invalidSchemeCookieUrl, 'a=b');
                 Utils.emitEvent(this.no_error, 113790)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -433,7 +452,7 @@ struct Index {
 
             case "testConfigCookieSync005": {
               try {
-                webView.WebCookieManager.configCookieSync('https://www.example.com', '');
+                webView.WebCookieManager.configCookieSync(this.validCookieUrl, '');
                 Utils.emitEvent(this.no_error, 113810)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -462,7 +481,7 @@ struct Index {
 
             case "testConfigCookie002": {
               try {
-                webView.WebCookieManager.configCookie(',https://ww.OpenHarmony.cn', "a=d", (error) => {
+                webView.WebCookieManager.configCookie(this.invalidPrefixCookieUrl, "a=d", (error) => {
                   if (error) {
                     console.log('error: ' + JSON.stringify(error));
                     Utils.emitEvent(error.code + error.message, 113830)
@@ -479,7 +498,7 @@ struct Index {
 
             case "testConfigCookie003": {
               try {
-                webView.WebCookieManager.configCookie('h,ttp://ww.OpenHarmony.cn', "a=d", (error) => {
+                webView.WebCookieManager.configCookie(this.invalidSchemeCookieUrl, "a=d", (error) => {
                   if (error) {
                     console.log('error: ' + JSON.stringify(error));
                     Utils.emitEvent(error.code + error.message, 113840)
@@ -513,7 +532,7 @@ struct Index {
 
             case "testConfigCookie005": {
               try {
-                webView.WebCookieManager.configCookie('https://www.example.com', "", (error) => {
+                webView.WebCookieManager.configCookie(this.validCookieUrl, "", (error) => {
                   if (error) {
                     console.log('error: ' + JSON.stringify(error));
                     Utils.emitEvent(String(error.code), 113860)
@@ -548,7 +567,7 @@ struct Index {
 
             case "testConfigCookie007": {
               try {
-                webView.WebCookieManager.configCookie(',https://ww.OpenHarmony.cn', 'a=e')
+                webView.WebCookieManager.configCookie(this.invalidPrefixCookieUrl, 'a=e')
                   .then(() => {
                     console.log('configCookie success!');
                   })
@@ -566,7 +585,7 @@ struct Index {
 
             case "testConfigCookie008": {
               try {
-                webView.WebCookieManager.configCookie('h,ttp://ww.OpenHarmony.cn', 'a=e')
+                webView.WebCookieManager.configCookie(this.invalidSchemeCookieUrl, 'a=e')
                   .then(() => {
                     console.log('configCookie success!');
                   })
@@ -602,7 +621,7 @@ struct Index {
 
             case "testConfigCookie010": {
               try {
-                webView.WebCookieManager.configCookie('https://www.example.com', "")
+                webView.WebCookieManager.configCookie(this.validCookieUrl, "")
                   .then(() => {
                     console.log('configCookie success!');
                   })

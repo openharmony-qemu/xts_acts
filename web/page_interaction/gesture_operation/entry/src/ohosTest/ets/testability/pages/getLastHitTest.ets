@@ -18,6 +18,7 @@ import prompt from '@ohos.promptAction';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import { Driver, ON } from '@kit.TestKit';
+import { XtsTestServer } from 'library';
 
 
 const EVENT_ID_SET_SUITE_KEY = 181001;
@@ -27,6 +28,7 @@ let driver = Driver.create();
 @Component
 struct getLastHitTest {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State url: string = ''
   @State sm: number = 0
   @State sm2: string = '黑盒'
@@ -76,7 +78,7 @@ struct getLastHitTest {
                 let component = await driver.findComponent(ON.text('www.example.com'));
                 await component.click();
                 await Utils.waitForExist(()=>this.isOnLoadInterceptEnd, this.str+' isOnLoadInterceptEnd', 1, 1000);
-                Utils.emitEvent(this.sm == 2 && this.sm2 == 'https://www.example.com/' , 181010)
+                Utils.emitEvent(this.sm == 2 && this.sm2.includes('/assets/second.html'), 181010)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -94,7 +96,7 @@ struct getLastHitTest {
       }
 
 
-        Web({ src: $rawfile('getLastHitTest.html'), controller: this.controller })
+        Web({ src: this.mServer.getAssetUrl('getLastHitTest.html'), controller: this.controller })
           .height("75%")
           .domStorageAccess(true)
           .onInterceptKeyboardAttach(()=>{
@@ -113,7 +115,8 @@ struct getLastHitTest {
             } catch (e) {
               console.log(e.toString())
             }
-            if (event.data.getRequestUrl().match("resource")) {
+            let requestUrl = event.data.getRequestUrl();
+            if (requestUrl.match("resource") || requestUrl.startsWith(this.mServer.getBaseUri())) {
               this.isOnLoadInterceptEnd = 1
               return false
             } else {
@@ -128,6 +131,10 @@ struct getLastHitTest {
 
     }.width('100%').height('100%')
 
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
 

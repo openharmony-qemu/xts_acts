@@ -27,6 +27,7 @@ let emitKey = "";
 let tcName = ''
 const EVENT_ID_SET_SUITE_KEY = 176301;
 const driver = Driver.create();
+const XTS_ASSET_URL_PREFIX = 'http://localhost:8080/assets';
 
 export default function webViewControllerHitTest() {
 
@@ -226,7 +227,7 @@ export default function webViewControllerHitTest() {
       tcName = 'testGetHitTestValue010'
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent(tcName, 'https://openharmony.cn/', 176400, () => { isReturn = true });
+      Utils.registerEvent(tcName, `${XTS_ASSET_URL_PREFIX}/index.html`, 176400, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
@@ -245,7 +246,7 @@ export default function webViewControllerHitTest() {
       tcName = 'testGetHitTestValue011'
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
-      Utils.registerEvent(tcName, 'resource://rawfile/icon.png', 176410, () => { isReturn = true });
+      Utils.registerEvent(tcName, `${XTS_ASSET_URL_PREFIX}/icon.png`, 176410, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
@@ -264,6 +265,7 @@ export default function webViewControllerHitTest() {
       tcName = 'testGetHitTestValue012'
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
+      // page still loads resource://rawfile/hitTypeImg.html (local rawfile, not XtsTestServer)
       Utils.registerEvent(tcName, 'resource://rawfile/icon.png', 176420, () => { isReturn = true });
       Utils.waitAndClickComponent(driver, "WebViewControllerHitTestButton", tcName);
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);

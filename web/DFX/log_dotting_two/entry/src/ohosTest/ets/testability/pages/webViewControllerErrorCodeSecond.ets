@@ -17,6 +17,7 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import business_error from '@ohos.base';
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_EMIT_KEY = 115550;
 
@@ -25,6 +26,7 @@ const EVENT_ID_SET_EMIT_KEY = 115550;
 struct Index {
   controller: webView.WebviewController = new webView.WebviewController();
   controllerNull: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   schemeHandler: webView.WebSchemeHandler = new webView.WebSchemeHandler();
   nativePort: webView.WebMessagePort | null = null;
   responseWeb: WebResourceResponse = new WebResourceResponse();
@@ -45,6 +47,10 @@ struct Index {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_EMIT_KEY)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -71,8 +77,8 @@ struct Index {
                 this.controllerNull.loadData('<html><body bgcolor=\"white\">Source:<pre>source</pre></body></html>',
                   'text/html',
                   'UTF-8',
-                  'www.example.com',
-                  'www.baidu.com'
+                  this.mServer.getAssetUrl('index.html'),
+                  this.mServer.getAssetUrl('second.html')
                 );
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;

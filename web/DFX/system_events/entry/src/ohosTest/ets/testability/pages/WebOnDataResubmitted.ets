@@ -15,6 +15,7 @@
 
 import events_emitter from '@ohos.events.emitter';
 import webView from '@ohos.web.webview';
+import { XtsTestServer } from 'library';
 import Utils from '../../test/Utils.test';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '@ohos/hypium';
@@ -28,6 +29,7 @@ const driver = Driver.create();
 @Component
 struct WebOnDataResubmitted {
   controller: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = '';
   @State onDataResubmittedCalled: boolean = false;
   @State resend: boolean = true;
@@ -48,6 +50,10 @@ struct WebOnDataResubmitted {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -100,7 +106,7 @@ struct WebOnDataResubmitted {
             case 'emitDataResubmissionHandlerResend': {
               try {
                 this.isPageEnd =-1;
-                this.controller.loadUrl('resource://rawfile/dataSubmit.html');
+                this.controller.loadUrl(this.mServer.getAssetUrl('dataSubmit.html'));
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 500);
                 this.title = ''
                 this.isPageEnd =-1;
@@ -118,7 +124,7 @@ struct WebOnDataResubmitted {
             case 'emitDataResubmissionHandlerCancel': {
               try {
                 this.isPageEnd =-1;
-                this.controller.loadUrl('resource://rawfile/dataSubmit.html');
+                this.controller.loadUrl(this.mServer.getAssetUrl('dataSubmit.html'));
                 await Utils.waitForExist(()=>this.isPageEnd, 'isPageEnd', 1, 1000);
                 this.title = ''
                 this.resend = false
@@ -138,7 +144,7 @@ struct WebOnDataResubmitted {
         })
       }
 
-      Web({ src: $rawfile('dataSubmit.html'), controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('dataSubmit.html'), controller: this.controller })
         .key('WebOnDataResubmittedTestWebView')
         .javaScriptAccess(true)
         .onDataResubmitted((event) => {

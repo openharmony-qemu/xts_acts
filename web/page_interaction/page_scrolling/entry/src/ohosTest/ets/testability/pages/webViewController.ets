@@ -19,6 +19,7 @@ import events_emitter from '@ohos.events.emitter';
 import { JsProxyObject } from '../../test/Interfaces';
 import image from '@ohos.multimedia.image';
 import { Driver } from '@kit.TestKit';
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_SUITE_KEY = 179801;
 let driver = Driver.create();
@@ -27,6 +28,7 @@ let driver = Driver.create();
 @Component
 struct webViewController {
   controller: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = ""
   @State onScrollCallBack: boolean = false
   @State javaScriptAccess: boolean = true
@@ -57,6 +59,10 @@ struct webViewController {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -128,7 +134,7 @@ struct webViewController {
             case "testOnOverScroll001": {
               try {
                 this.isPageEnd = -1
-                this.controller.loadUrl("https://www.example.com/");
+                this.controller.loadUrl(this.mServer.getAssetUrl('overScroll.html'));
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 this.onOverScrollCallBack = false
                 await driver.swipe(X, Y - 60, X, Y + 60);
@@ -144,10 +150,11 @@ struct webViewController {
             case "testOnOverScroll002": {
               try {
                 this.isPageEnd = -1
-                this.controller.loadUrl("https://www.example.com/");
+                this.controller.loadUrl(this.mServer.getAssetUrl('overScroll.html'));
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 this.onOverScrollCallBack = false
                 await driver.swipe(X, Y + 230, X, Y - 200);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 Utils.emitEvent(this.onOverScrollCallBack, 179850)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -159,7 +166,7 @@ struct webViewController {
             case "testOnOverScroll003": {
               try {
                 this.isPageEnd = -1
-                this.controller.loadUrl("https://www.example.com/");
+                this.controller.loadUrl(this.mServer.getAssetUrl('overScroll.html'));
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 this.onOverScrollCallBack = false
                 await driver.swipe(X + 60, Y, X - 60, Y);
@@ -174,7 +181,7 @@ struct webViewController {
             case "testOnOverScroll004": {
               try {
                 this.isPageEnd = -1
-                this.controller.loadUrl("https://www.example.com/");
+                this.controller.loadUrl(this.mServer.getAssetUrl('overScroll.html'));
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 this.onOverScrollCallBack = false
                 await driver.swipe(X - 60, Y, X + 60, Y);

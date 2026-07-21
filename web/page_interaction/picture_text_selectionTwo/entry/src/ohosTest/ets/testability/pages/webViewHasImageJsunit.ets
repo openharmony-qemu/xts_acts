@@ -19,6 +19,7 @@ import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
 import { BusinessError } from '@ohos.base';
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_SUITE_KEY = 183501;
 
@@ -26,6 +27,7 @@ const EVENT_ID_SET_SUITE_KEY = 183501;
 @Component
 struct webViewHasImage {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = "emitHasImagePm";
   @State webId: number = 0;
   @State hasImagePm: boolean = true;
@@ -65,6 +67,10 @@ struct webViewHasImage {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   build() {
@@ -113,7 +119,7 @@ struct webViewHasImage {
             }
             case "emitHasImagePmOnline": {
               this.isPageEnd = -1;
-              this.controller.loadUrl($rawfile('onlineImageAccess.html'))
+              this.controller.loadUrl(this.mServer.getAssetUrl('onlineImageAccess.html'))
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               try {
                 this.controller.hasImage().then((data) => {
@@ -166,7 +172,7 @@ struct webViewHasImage {
             }
             case "emitHasImageCbOnline": {
               this.isPageEnd = -1;
-              this.controller.loadUrl($rawfile('onlineImageAccess.html'))
+              this.controller.loadUrl(this.mServer.getAssetUrl('onlineImageAccess.html'))
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               try {
                 this.controller.hasImage((error, data) => {

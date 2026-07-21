@@ -48,15 +48,15 @@
         //返回的Promise对象
         let promise = navigator.mediaDevices.getUserMedia(constraints);
         //then()异步，调用MediaStream对象作为参数
-        promise.catch(error => {
-            document.getElementById("error").innerHTML = 'deny';
-        }).then(function (MediaStream) {
+        promise.then(function (MediaStream) {
             console.info("then MediaStream is " + MediaStream)
             if(MediaStream){
                 video.srcObject = MediaStream;
                 video.play();
                 document.getElementById("error").innerHTML = 'grant';
             }
+        }).catch(error => {
+            document.getElementById("error").innerHTML = 'deny';
         });
     }
 

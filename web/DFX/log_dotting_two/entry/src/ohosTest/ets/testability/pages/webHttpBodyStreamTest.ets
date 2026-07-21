@@ -19,6 +19,7 @@ import business_error, { BusinessError } from '@ohos.base'
 import { buffer } from '@kit.ArkTS';
 import { WebNetErrorList } from '@kit.ArkWeb';
 import { URL } from '../../test/Config';
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_EMIT_KEY = 114610;
 
@@ -26,6 +27,7 @@ const EVENT_ID_SET_EMIT_KEY = 114610;
 @Component
 struct webHttpBodyStreamTest {
   controller: webview.WebviewController = new webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   schemeHandler: webview.WebSchemeHandler = new webview.WebSchemeHandler()
   httpBodyStream: webview.WebHttpBodyStream|null = null
   @State emitKey: string = '';
@@ -53,6 +55,10 @@ struct webHttpBodyStreamTest {
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+  }
   
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
       if (eventData != null) {
@@ -76,7 +82,7 @@ struct webHttpBodyStreamTest {
                 case 'emitWebView_WebHttpBodyStream_READ': {
                   try {
                     let postData = buffer.from(this.htmlData);
-                    this.controller.postUrl(URL, postData.buffer);
+                    this.controller.postUrl(this.mServer.getAbsoluteUrl(URL), postData.buffer);
                   } catch (error) {
                     console.error(`postUrl ErrorCode: ${(error as BusinessError).code},
                        postUrl Message: ${(error as BusinessError).message}`);
@@ -86,7 +92,7 @@ struct webHttpBodyStreamTest {
               }
             })
           }
-          Web({ src: $rawfile('post_data.html'), controller: this.controller })
+          Web({ src: this.mServer.getAssetUrl('post_data.html'), controller: this.controller })
             .javaScriptAccess(this.javaScriptAccess)
             .fileAccess(this.fileAccess)
             .imageAccess(this.imageAccess)

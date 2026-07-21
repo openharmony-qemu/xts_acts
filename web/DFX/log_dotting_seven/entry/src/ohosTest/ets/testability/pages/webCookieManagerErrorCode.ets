@@ -18,6 +18,7 @@ import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import business_error from '@ohos.base';
 import {waitForAssert, waitForExist} from '../../test/WaitTest';
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_SUITE_KEY = 123201;
 
@@ -26,6 +27,7 @@ const EVENT_ID_SET_SUITE_KEY = 123201;
 struct Index {
   controller: webView.WebviewController = new webView.WebviewController();
   controllerNull: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   nativePort: webView.WebMessagePort | null = null;
   responseWeb: WebResourceResponse = new WebResourceResponse();
   @State str: string = '';
@@ -45,6 +47,7 @@ struct Index {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -113,7 +116,7 @@ struct Index {
             }
             case 'testConfigCookieSyncIncognitoError002': {
               try {
-                webView.WebCookieManager.configCookieSync('https://www.example.com', '', true);
+                webView.WebCookieManager.configCookieSync(this.mServer.getAssetUrl('index.html'), '', true);
                 Utils.emitEvent(this.no_error, 123230);
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;

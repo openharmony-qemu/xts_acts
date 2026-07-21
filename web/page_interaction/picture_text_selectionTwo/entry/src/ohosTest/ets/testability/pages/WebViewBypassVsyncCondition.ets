@@ -16,12 +16,14 @@ import events_emitter from '@ohos.events.emitter';
 import webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import { waitForExist} from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 const EVENT_ID_SET_SUITE_KEY = 183001;
 
 @Entry
 @Component
 struct WebComponent {
   controller: webview.WebviewController = new webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   condition: WebBypassVsyncCondition[] = [WebBypassVsyncCondition.SCROLLBY_FROM_ZERO_OFFSET,WebBypassVsyncCondition.NONE];
   @State emitKey: string = '';
   @State isReceive: number = -1;
@@ -38,6 +40,10 @@ struct WebComponent {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -71,7 +77,7 @@ struct WebComponent {
         }
       })
 
-      Web({ src: 'www.example.com', controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.controller })
         .bypassVsyncCondition(WebBypassVsyncCondition.SCROLLBY_FROM_ZERO_OFFSET)
         .onPageEnd((event) => {
           console.log('onPageEnd url:' + event.url);
