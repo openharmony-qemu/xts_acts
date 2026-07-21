@@ -1,3 +1,5 @@
+'use static';
+
 import ProcessErrorHandlerConstructorGeneratedTest
   from "./errorhandler/ProcessErrorHandlerConstructorGeneratedTest.test";
 import ProcessErrorHandlerConstructorTest from "./errorhandler/ProcessErrorHandlerConstructorTest.test";
