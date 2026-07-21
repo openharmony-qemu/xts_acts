@@ -122,11 +122,26 @@ export default function geolocationTest_GeoErr() {
 
         afterEach(async function (done) {
             console.info('afterEach case');
+            let offEvents = ['locationServiceState', 'locationEnabledChange', 'locationChange'];
+            for (let event of offEvents) {
+                try {
+                    geolocationm.off(event);
+                    console.info('[lbs_js] afterEach off ' + event + ' success');
+                } catch (error) {
+                    console.error('[lbs_js] afterEach off ' + event + ' error.' + JSON.stringify(error));
+                }
+            }
+            try {
+                geolocation.off('locationServiceState');
+                console.info('[lbs_js] afterEach geolocation off locationServiceState success');
+            } catch (error) {
+                console.error('[lbs_js] afterEach geolocation off locationServiceState error.' + JSON.stringify(error));
+            }
             try {
                 await geolocationm.enableLocation();
                 console.info('[lbs_js] afterEach enableLocation success');
             } catch (error) {
-                console.info('[lbs_js] afterEach enableLocation error.' + JSON.stringify(error));
+                console.error('[lbs_js] afterEach enableLocation error.' + JSON.stringify(error));
             }
             done();
         })
