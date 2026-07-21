@@ -41,6 +41,8 @@ USAGE
 class XtsBuild:
 
     def __init__(self, commandline):
+        # Use abspath (not realpath): CI mounts acts via symlink under the OH tree.
+        # realpath would resolve into the project clone and break ../../.. to code root.
         self._xts_root_dir = os.path.dirname(os.path.abspath(__file__))
         self._code_root_dir = os.path.abspath(os.path.join(self._xts_root_dir, '../../..'))
         self._accurate_dir = os.path.join(self._code_root_dir, "test/xts/tools/ci")

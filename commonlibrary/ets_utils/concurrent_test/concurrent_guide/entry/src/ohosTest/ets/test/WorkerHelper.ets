@@ -91,10 +91,11 @@ export class WorkerExchange {
   send(data: string | Object): Promise<Object> {
     // Force serial await: concurrent send would overwrite pending and hang the previous Promise
     if (this.pendingResolve !== null) {
-      throw new Error('WorkerExchange.send requires serial await; previous request still pending')
+      return Promise.reject(new Error(
+        'WorkerExchange.send requires serial await; previous request still pending')) as Promise<Object>
     }
     if (this.terminated) {
-      throw new Error('WorkerExchange already terminated')
+      return Promise.reject(new Error('WorkerExchange already terminated')) as Promise<Object>
     }
     return new Promise<Object>((resolve: (value: Object) => void, reject: (reason: Error) => void) => {
       this.pendingResolve = resolve

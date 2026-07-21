@@ -133,7 +133,7 @@ export default function ConditionVariableTest(): void {
       let cv: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable()
       let completed: boolean = false
       try {
-        await cv.waitFor(1000)
+        await cv.waitFor(100)
         completed = true
       } catch (e) {
         // waitFor should not throw on timeout
