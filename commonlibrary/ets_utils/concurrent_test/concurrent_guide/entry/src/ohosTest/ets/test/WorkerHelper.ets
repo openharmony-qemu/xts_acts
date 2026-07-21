@@ -1,9 +1,19 @@
 /*
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
-import { worker, MessageEvents } from '@kit.ArkTS';
+import { worker, MessageEvents, ErrorEvent } from '@kit.ArkTS';
 
 const WORKER_READY_PROBE: string = '__ready__'
 const ECHO_WORKER_READY: string = 'ready'
@@ -60,10 +70,22 @@ export class WorkerExchange {
         resolver(e.data as Object)
       }
     }
+    this.wk.onerror = (e: ErrorEvent): void => {
+      this.rejectPending(new Error(e.message))
+    }
   }
 
   getWorker(): worker.ThreadWorker {
     return this.wk
+  }
+
+  private rejectPending(err: Error): void {
+    if (this.pendingReject !== null) {
+      let rejector: (reason: Error) => void = this.pendingReject
+      this.pendingResolve = null
+      this.pendingReject = null
+      rejector(err)
+    }
   }
 
   send(data: string | Object): Promise<Object> {
@@ -77,7 +99,17 @@ export class WorkerExchange {
     return new Promise<Object>((resolve: (value: Object) => void, reject: (reason: Error) => void) => {
       this.pendingResolve = resolve
       this.pendingReject = reject
-      this.wk.postMessage(data)
+      try {
+        this.wk.postMessage(data)
+      } catch (e) {
+        this.pendingResolve = null
+        this.pendingReject = null
+        if (e instanceof Error) {
+          reject(e)
+        } else {
+          reject(new Error('WorkerExchange.postMessage failed'))
+        }
+      }
     })
   }
 
@@ -93,12 +125,7 @@ export class WorkerExchange {
       return
     }
     this.terminated = true
-    if (this.pendingReject !== null) {
-      let rejector: (err: Error) => void = this.pendingReject
-      this.pendingResolve = null
-      this.pendingReject = null
-      rejector(new Error('WorkerExchange terminated'))
-    }
+    this.rejectPending(new Error('WorkerExchange terminated'))
     await new Promise<void>((resolve: () => void) => {
       this.wk.onexit = (): void => {
         resolve()
