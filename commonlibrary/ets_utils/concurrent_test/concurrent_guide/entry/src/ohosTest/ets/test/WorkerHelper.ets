@@ -46,15 +46,17 @@ export class CallAddValuesRequest {
 
 export class WorkerExchange {
   private wk: worker.ThreadWorker
-  private pending: ((data: Object) => void) | null = null
+  private pendingResolve: ((data: Object) => void) | null = null
+  private pendingReject: ((err: Error) => void) | null = null
   private terminated: boolean = false
 
   constructor(wk: worker.ThreadWorker) {
     this.wk = wk
     this.wk.onmessage = (e: MessageEvents): void => {
-      if (this.pending !== null) {
-        let resolver: (data: Object) => void = this.pending
-        this.pending = null
+      if (this.pendingResolve !== null) {
+        let resolver: (data: Object) => void = this.pendingResolve
+        this.pendingResolve = null
+        this.pendingReject = null
         resolver(e.data as Object)
       }
     }
@@ -66,14 +68,15 @@ export class WorkerExchange {
 
   send(data: string | Object): Promise<Object> {
     // Force serial await: concurrent send would overwrite pending and hang the previous Promise
-    if (this.pending !== null) {
+    if (this.pendingResolve !== null) {
       throw new Error('WorkerExchange.send requires serial await; previous request still pending')
     }
     if (this.terminated) {
       throw new Error('WorkerExchange already terminated')
     }
-    return new Promise<Object>((resolve: (value: Object) => void) => {
-      this.pending = resolve
+    return new Promise<Object>((resolve: (value: Object) => void, reject: (reason: Error) => void) => {
+      this.pendingResolve = resolve
+      this.pendingReject = reject
       this.wk.postMessage(data)
     })
   }
@@ -90,7 +93,12 @@ export class WorkerExchange {
       return
     }
     this.terminated = true
-    this.pending = null
+    if (this.pendingReject !== null) {
+      let rejector: (err: Error) => void = this.pendingReject
+      this.pendingResolve = null
+      this.pendingReject = null
+      rejector(new Error('WorkerExchange terminated'))
+    }
     await new Promise<void>((resolve: () => void) => {
       this.wk.onexit = (): void => {
         resolve()
