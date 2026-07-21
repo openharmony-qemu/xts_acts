@@ -195,10 +195,11 @@ export default function AsyncLockTest(): void {
     it('AsyncLockTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
       let executed: boolean = false
-      await lock.lockAsync(() => {
+      let result: void = await lock.lockAsync((): void => {
         executed = true
       })
       expect(executed).assertTrue()
+      expect(result === undefined).assertTrue()
     })
 
     /**

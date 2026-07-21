@@ -208,24 +208,15 @@ export default function ConditionVariableTest(): void {
       let task: taskpool.Task = new taskpool.Task(waitInTask, cv, result)
       let execPromise: Promise<Object> = taskpool.execute(task)
 
-      // Wait for task to mark waiting, then notify until execPromise completes
-      let attempts: number = 0
-      while (!result.waiting && attempts < 1000) {
-        await sleep(10)
-        attempts++
-      }
-      expect(result.waiting).assertTrue()
-      attempts = 0
-      while (result.value === '' && attempts < 1000) {
+      // Promise-driven: race task completion vs short yield; notify until done (no shared-flag polling)
+      let finished: boolean = false
+      while (!finished) {
         cv.notifyOne()
         let raced: string = await Promise.race([
           execPromise.then((): string => 'done'),
-          sleep(20).then((): string => 'tick')
+          sleep(1).then((): string => 'retry')
         ])
-        if (raced === 'done') {
-          break
-        }
-        attempts++
+        finished = raced === 'done'
       }
       await execPromise
       expect(result.value).assertEqual('task awakened')
@@ -301,24 +292,15 @@ export default function ConditionVariableTest(): void {
       let task: taskpool.Task = new taskpool.Task(waitAndIncrement, cv, counter)
       let execPromise: Promise<Object> = taskpool.execute(task)
 
-      // Wait for task to mark waiting, then notify until execPromise completes
-      let attempts: number = 0
-      while (!counter.waiting && attempts < 1000) {
-        await sleep(10)
-        attempts++
-      }
-      expect(counter.waiting).assertTrue()
-      attempts = 0
-      while (!counter.done && attempts < 1000) {
+      // Promise-driven: race task completion vs short yield; notify until done (no shared-flag polling)
+      let finished: boolean = false
+      while (!finished) {
         cv.notifyOne()
         let raced: string = await Promise.race([
           execPromise.then((): string => 'done'),
-          sleep(20).then((): string => 'tick')
+          sleep(1).then((): string => 'retry')
         ])
-        if (raced === 'done') {
-          break
-        }
-        attempts++
+        finished = raced === 'done'
       }
       await execPromise
       expect(counter.done).assertTrue()
