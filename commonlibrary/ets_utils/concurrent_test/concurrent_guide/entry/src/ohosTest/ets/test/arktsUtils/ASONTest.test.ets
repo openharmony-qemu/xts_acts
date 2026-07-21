@@ -171,7 +171,8 @@ export default function ASONTest(): void {
         expect().assertFail()
       } catch (e) {
         caughtError = true
-        
+        expect(e instanceof Error).assertTrue()
+        expect((e as Error).name).assertEqual('SyntaxError')
       }
       expect(caughtError).assertTrue()
     })

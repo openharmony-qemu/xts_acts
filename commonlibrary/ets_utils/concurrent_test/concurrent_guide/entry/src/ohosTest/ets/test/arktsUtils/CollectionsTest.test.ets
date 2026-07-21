@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections, taskpool, ArkTSUtils } from '@kit.ArkTS';
+import { BusinessError } from '@ohos.base';
 
 @Concurrent
 async function safePush(lock: ArkTSUtils.locks.AsyncLock,
@@ -182,8 +183,12 @@ export default function CollectionsTest(): void {
         arr.forEach((value: number) => {
           arr.push(value + 10)
         })
+        expect().assertFail()
       } catch (e) {
         caughtError = true
+        let err: BusinessError = e as BusinessError
+        expect(typeof err.code).assertEqual('number')
+        expect(err.code).assertEqual(10200201)
       }
       expect(caughtError).assertTrue()
     })

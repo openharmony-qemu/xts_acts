@@ -228,7 +228,9 @@ export default function AsyncLockTest(): void {
         expect().assertFail()
       } catch (e) {
         caughtError = true
-        
+        expect(e instanceof Error).assertTrue()
+        expect((e as Error).name).assertEqual('Error')
+        expect((e as Error).message).assertEqual('callback error')
       }
       expect(caughtError).assertTrue()
       let result: string = await lock.lockAsync(() => {
