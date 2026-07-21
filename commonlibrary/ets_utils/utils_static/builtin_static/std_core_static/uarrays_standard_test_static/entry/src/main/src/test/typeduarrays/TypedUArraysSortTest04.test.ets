@@ -41,22 +41,22 @@ export default function typedUArraysSortTest04(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
       const ret = arr.sort();
       const val26 = ret[0];
-      expect(val26).assertEqual(3n);
+      expect(val26).assertEqual(1n);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_5100
-     * @tc.name testTypedUArraysSortPart201_051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_0200
+     * @tc.name testTypedUArraysSortPart201_002
      * @tc.desc Verify sort compareFunction ret[1] BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
       const ret = arr.sort();
       const val27 = ret[1];
@@ -64,133 +64,141 @@ export default function typedUArraysSortTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_5200
-     * @tc.name testTypedUArraysSortPart201_052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_0300
+     * @tc.name testTypedUArraysSortPart201_003
      * @tc.desc Verify sort compareFunction ret[2] BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
       const ret = arr.sort();
       const val28 = ret[2];
-      expect(val28).assertEqual(1n);
+      expect(val28).assertEqual(3n);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_5300
-     * @tc.name testTypedUArraysSortPart201_053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_0400
+     * @tc.name testTypedUArraysSortPart201_004
      * @tc.desc Verify sort length 3 Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([300, 100, 200]);
-      const ret = expect(arr.sort()).assertEqual(3);
+      const ret = arr.sort();
+      expect(ret.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_5400
-     * @tc.name testTypedUArraysSortPart201_054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_0500
+     * @tc.name testTypedUArraysSortPart201_005
      * @tc.desc Verify sort length 3 Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([3000000000, 1000000000, 2000000000]);
-      const ret = expect(arr.sort()).assertEqual(3);
+      const ret = arr.sort();
+      expect(ret.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_5500
-     * @tc.name testTypedUArraysSortPart201_055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_0600
+     * @tc.name testTypedUArraysSortPart201_006
      * @tc.desc Verify sort length 3 Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([3, 1, 2]);
-      const ret = expect(arr.sort()).assertEqual(3);
+      const ret = arr.sort();
+      expect(ret.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_5600
-     * @tc.name testTypedUArraysSortPart201_056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_0700
+     * @tc.name testTypedUArraysSortPart201_007
      * @tc.desc Verify sort length 3 BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([3n, 1n, 2n]);
-      const ret = expect(arr.sort()).assertEqual(3);
+      const ret = arr.sort();
+      expect(ret.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_5700
-     * @tc.name testTypedUArraysSortPart201_057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_0800
+     * @tc.name testTypedUArraysSortPart201_008
      * @tc.desc Verify sort length length Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([300, 100, 200]);
-      const ret = expect(arr.sort()).assertEqual(arr.length);
+      const ret = arr.sort();
+      expect(ret.length).assertEqual(arr.length);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_5800
-     * @tc.name testTypedUArraysSortPart201_058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_0900
+     * @tc.name testTypedUArraysSortPart201_009
      * @tc.desc Verify sort length length Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([3000000000, 1000000000, 2000000000]);
-      const ret = expect(arr.sort()).assertEqual(arr.length);
+      const ret = arr.sort();
+      expect(ret.length).assertEqual(arr.length);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_5900
-     * @tc.name testTypedUArraysSortPart201_059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_1000
+     * @tc.name testTypedUArraysSortPart201_010
      * @tc.desc Verify sort length length Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([3, 1, 2]);
-      const ret = expect(arr.sort()).assertEqual(arr.length);
+      const ret = arr.sort();
+      expect(ret.length).assertEqual(arr.length);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_6000
-     * @tc.name testTypedUArraysSortPart201_060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_1100
+     * @tc.name testTypedUArraysSortPart201_011
      * @tc.desc Verify sort length length BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([3n, 1n, 2n]);
-      const ret = expect(arr.sort()).assertEqual(arr.length);
+      const ret = arr.sort();
+      expect(ret.length).assertEqual(arr.length);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_6100
-     * @tc.name testTypedUArraysSortPart201_061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_1200
+     * @tc.name testTypedUArraysSortPart201_012
      * @tc.desc Verify sort compareFunction length 3 Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([300, 100, 200]);
       const ret = arr.sort();
       expect(ret.length).assertEqual(3);
@@ -198,159 +206,145 @@ export default function typedUArraysSortTest04(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_6200
-     * @tc.name testTypedUArraysSortPart201_062
-     * @tc.desc Verify sort compareFunction length 3 Uint32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysSortPart201_062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint32Array([3000000000, 1000000000, 2000000000]);
-      const ret = arr.sort();
-      expect(ret.length).assertEqual(3);
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_6300
-     * @tc.name testTypedUArraysSortPart201_063
-     * @tc.desc Verify sort compareFunction length 3 Uint8ClampedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysSortPart201_063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8ClampedArray([3, 1, 2]);
-      const ret = arr.sort();
-      expect(ret.length).assertEqual(3);
-    });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_6400
-     * @tc.name testTypedUArraysSortPart201_064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_1300
+     * @tc.name testTypedUArraysSortPart201_013
      * @tc.desc Verify sort compareFunction length 3 BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([3n, 1n, 2n]);
       const ret = arr.sort();
       expect(ret.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_6500
-     * @tc.name testTypedUArraysSortPart201_065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_1400
+     * @tc.name testTypedUArraysSortPart201_014
      * @tc.desc Verify sort byteLength 6 Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([300, 100, 200]);
-      const ret = expect(arr.sort()).assertEqual(6);
+      const ret = arr.sort();
+      expect(ret.byteLength).assertEqual(6);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_6600
-     * @tc.name testTypedUArraysSortPart201_066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_1500
+     * @tc.name testTypedUArraysSortPart201_015
      * @tc.desc Verify sort byteLength 12 Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([3000000000, 1000000000, 2000000000]);
-      const ret = expect(arr.sort()).assertEqual(12);
+      const ret = arr.sort();
+      expect(ret.byteLength).assertEqual(12);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_6700
-     * @tc.name testTypedUArraysSortPart201_067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_1600
+     * @tc.name testTypedUArraysSortPart201_016
      * @tc.desc Verify sort byteLength 3 Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([3, 1, 2]);
-      const ret = expect(arr.sort()).assertEqual(3);
+      const ret = arr.sort();
+      expect(ret.byteLength).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_6800
-     * @tc.name testTypedUArraysSortPart201_068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_1700
+     * @tc.name testTypedUArraysSortPart201_017
      * @tc.desc Verify sort byteLength 24 BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([3n, 1n, 2n]);
-      const ret = expect(arr.sort()).assertEqual(24);
+      const ret = arr.sort();
+      expect(ret.byteLength).assertEqual(24);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_6900
-     * @tc.name testTypedUArraysSortPart201_069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_1800
+     * @tc.name testTypedUArraysSortPart201_018
      * @tc.desc Verify sort byteLength byteLength Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([300, 100, 200]);
-      const ret = expect(arr.sort()).assertEqual(arr.byteLength);
+      const ret = arr.sort();
+      expect(ret.byteLength).assertEqual(arr.byteLength);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_7000
-     * @tc.name testTypedUArraysSortPart201_070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_1900
+     * @tc.name testTypedUArraysSortPart201_019
      * @tc.desc Verify sort byteLength byteLength Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([3000000000, 1000000000, 2000000000]);
-      const ret = expect(arr.sort()).assertEqual(arr.byteLength);
+      const ret = arr.sort();
+      expect(ret.byteLength).assertEqual(arr.byteLength);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_7100
-     * @tc.name testTypedUArraysSortPart201_071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_2000
+     * @tc.name testTypedUArraysSortPart201_020
      * @tc.desc Verify sort byteLength byteLength Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([3, 1, 2]);
-      const ret = expect(arr.sort()).assertEqual(arr.byteLength);
+      const ret = arr.sort();
+      expect(ret.byteLength).assertEqual(arr.byteLength);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_7200
-     * @tc.name testTypedUArraysSortPart201_072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_2100
+     * @tc.name testTypedUArraysSortPart201_021
      * @tc.desc Verify sort byteLength byteLength BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([3n, 1n, 2n]);
-      const ret = expect(arr.sort()).assertEqual(arr.byteLength);
+      const ret = arr.sort();
+      expect(ret.byteLength).assertEqual(arr.byteLength);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_7300
-     * @tc.name testTypedUArraysSortPart201_073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_2200
+     * @tc.name testTypedUArraysSortPart201_022
      * @tc.desc Verify sort compareFunction byteLength 6 Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([300, 100, 200]);
       const ret = arr.sort();
       expect(ret.byteLength).assertEqual(6);
@@ -358,482 +352,482 @@ export default function typedUArraysSortTest04(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_7400
-     * @tc.name testTypedUArraysSortPart201_074
-     * @tc.desc Verify sort compareFunction byteLength 12 Uint32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysSortPart201_074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint32Array([3000000000, 1000000000, 2000000000]);
-      const ret = arr.sort();
-      expect(ret.byteLength).assertEqual(12);
-    });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_7500
-     * @tc.name testTypedUArraysSortPart201_075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_2300
+     * @tc.name testTypedUArraysSortPart201_023
      * @tc.desc Verify sort compareFunction byteLength 3 Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([3, 1, 2]);
       const ret = arr.sort();
       expect(ret.byteLength).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_7600
-     * @tc.name testTypedUArraysSortPart201_076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_2400
+     * @tc.name testTypedUArraysSortPart201_024
      * @tc.desc Verify sort compareFunction byteLength 24 BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([3n, 1n, 2n]);
       const ret = arr.sort();
       expect(ret.byteLength).assertEqual(24);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_7700
-     * @tc.name testTypedUArraysSortPart201_077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_2500
+     * @tc.name testTypedUArraysSortPart201_025
      * @tc.desc Verify sort Uint16Array compareFunction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([300, 100, 200]);
       const ret = arr.sort();
       expect(ret === arr).assertEqual(true);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_7800
-     * @tc.name testTypedUArraysSortPart201_078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_2600
+     * @tc.name testTypedUArraysSortPart201_026
      * @tc.desc Verify sort Uint32Array compareFunction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([3000000000, 1000000000, 2000000000]);
       const ret = arr.sort();
       expect(ret === arr).assertEqual(true);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_7900
-     * @tc.name testTypedUArraysSortPart201_079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_2700
+     * @tc.name testTypedUArraysSortPart201_027
      * @tc.desc Verify sort Uint8ClampedArray compareFunction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([3, 1, 2]);
       const ret = arr.sort();
       expect(ret === arr).assertEqual(true);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_8000
-     * @tc.name testTypedUArraysSortPart201_080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_2800
+     * @tc.name testTypedUArraysSortPart201_028
      * @tc.desc Verify sort BigUint64Array compareFunction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([3n, 1n, 2n]);
       const ret = arr.sort();
       expect(ret === arr).assertEqual(true);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_8100
-     * @tc.name testTypedUArraysSortPart201_081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_2900
+     * @tc.name testTypedUArraysSortPart201_029
      * @tc.desc Verify sort buffer Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(6);
-      const arr = new Uint16Array(buf);
-      
-      const ret = expect(arr.sort()).assertEqual(buf);
+    it('testTypedUArraysSortPart201_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint16Array(new ArrayBuffer(6));
+
+      const ret = arr.sort();
+      expect(ret.buffer).assertEqual(arr.buffer);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_8200
-     * @tc.name testTypedUArraysSortPart201_082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_3000
+     * @tc.name testTypedUArraysSortPart201_030
      * @tc.desc Verify sort buffer Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(12);
-      const arr = new Uint32Array(buf);
-      
-      const ret = expect(arr.sort()).assertEqual(buf);
+    it('testTypedUArraysSortPart201_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint32Array(new ArrayBuffer(12));
+
+      const ret = arr.sort();
+      expect(ret.buffer).assertEqual(arr.buffer);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_8300
-     * @tc.name testTypedUArraysSortPart201_083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_3100
+     * @tc.name testTypedUArraysSortPart201_031
      * @tc.desc Verify sort buffer Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(3);
-      const arr = new Uint8ClampedArray(buf);
-      
-      const ret = expect(arr.sort()).assertEqual(buf);
+    it('testTypedUArraysSortPart201_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8ClampedArray(new ArrayBuffer(3));
+
+      const ret = arr.sort();
+      expect(ret.buffer).assertEqual(arr.buffer);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_8400
-     * @tc.name testTypedUArraysSortPart201_084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_3200
+     * @tc.name testTypedUArraysSortPart201_032
      * @tc.desc Verify sort buffer BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(24);
-      const arr = new BigUint64Array(buf);
-      
-      const ret = expect(arr.sort()).assertEqual(buf);
+    it('testTypedUArraysSortPart201_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigUint64Array(new ArrayBuffer(24));
+
+      const ret = arr.sort();
+      expect(ret.buffer).assertEqual(arr.buffer);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_8500
-     * @tc.name testTypedUArraysSortPart201_085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_3300
+     * @tc.name testTypedUArraysSortPart201_033
      * @tc.desc Verify sort byteOffset Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(16);
-      const arr = new Uint16Array(buf, 4, 3);
-      
-      const ret = expect(arr.sort()).assertEqual(4);
+    it('testTypedUArraysSortPart201_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint16Array(new ArrayBuffer(16), 4, 3);
+      const ret = arr.sort();
+      expect(ret.byteOffset).assertEqual(4);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_8600
-     * @tc.name testTypedUArraysSortPart201_086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_3400
+     * @tc.name testTypedUArraysSortPart201_034
      * @tc.desc Verify sort byteOffset Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(32);
-      const arr = new Uint32Array(buf, 8, 3);
-      
-      const ret = expect(arr.sort()).assertEqual(8);
+    it('testTypedUArraysSortPart201_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint32Array(new ArrayBuffer(32), 8, 3);
+      const ret = arr.sort();
+      expect(ret.byteOffset).assertEqual(8);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_8700
-     * @tc.name testTypedUArraysSortPart201_087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_3500
+     * @tc.name testTypedUArraysSortPart201_035
      * @tc.desc Verify sort byteOffset Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(16);
-      const arr = new Uint8ClampedArray(buf, 4, 3);
-      
-      const ret = expect(arr.sort()).assertEqual(4);
+    it('testTypedUArraysSortPart201_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8ClampedArray(new ArrayBuffer(16), 4, 3);
+      const ret = arr.sort();
+      expect(ret.byteOffset).assertEqual(4);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_8800
-     * @tc.name testTypedUArraysSortPart201_088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_3600
+     * @tc.name testTypedUArraysSortPart201_036
      * @tc.desc Verify sort byteOffset BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(64);
-      const arr = new BigUint64Array(buf, 16, 3);
-      
-      const ret = expect(arr.sort()).assertEqual(16);
+    it('testTypedUArraysSortPart201_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigUint64Array(new ArrayBuffer(64), 16, 3);
+      const ret = arr.sort();
+      expect(ret.byteOffset).assertEqual(16);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_8900
-     * @tc.name testTypedUArraysSortPart201_089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_3700
+     * @tc.name testTypedUArraysSortPart201_037
      * @tc.desc Verify sort BYTES_PER_ELEMENT Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([3, 1, 2]);
-      const ret = expect(arr.sort()).assertEqual(1);
+      const ret = arr.sort();
+      expect(ret.BYTES_PER_ELEMENT).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_9000
-     * @tc.name testTypedUArraysSortPart201_090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_3800
+     * @tc.name testTypedUArraysSortPart201_038
      * @tc.desc Verify sort BYTES_PER_ELEMENT Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([3000000000, 1000000000, 2000000000]);
-      const ret = expect(arr.sort()).assertEqual(4);
+      const ret = arr.sort();
+      expect(ret.BYTES_PER_ELEMENT).assertEqual(4);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_9100
-     * @tc.name testTypedUArraysSortPart201_091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_3900
+     * @tc.name testTypedUArraysSortPart201_039
      * @tc.desc Verify sort BYTES_PER_ELEMENT Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([3, 1, 2]);
-      const ret = expect(arr.sort()).assertEqual(1);
+      const ret = arr.sort();
+      expect(ret.BYTES_PER_ELEMENT).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_9200
-     * @tc.name testTypedUArraysSortPart201_092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_4000
+     * @tc.name testTypedUArraysSortPart201_040
      * @tc.desc Verify sort BYTES_PER_ELEMENT BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([3n, 1n, 2n]);
-      const ret = expect(arr.sort()).assertEqual(8);
+      const ret = arr.sort();
+      expect(ret.BYTES_PER_ELEMENT).assertEqual(8);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_9300
-     * @tc.name testTypedUArraysSortPart201_093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_4100
+     * @tc.name testTypedUArraysSortPart201_041
      * @tc.desc Verify sort constructor Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([300, 100, 200]);
-      const ret = expect(arr.sort()).assertEqual('Uint16Array');
+      const ret = arr.sort();
+      expect(ret instanceof Uint16Array).assertEqual(true);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_9400
-     * @tc.name testTypedUArraysSortPart201_094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_4200
+     * @tc.name testTypedUArraysSortPart201_042
      * @tc.desc Verify sort constructor Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([3000000000, 1000000000, 2000000000]);
-      const ret = expect(arr.sort()).assertEqual('Uint32Array');
+      const ret = arr.sort();
+      expect(ret instanceof Uint32Array).assertEqual(true);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_9500
-     * @tc.name testTypedUArraysSortPart201_095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_4300
+     * @tc.name testTypedUArraysSortPart201_043
      * @tc.desc Verify sort constructor Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([3, 1, 2]);
-      const ret = expect(arr.sort()).assertEqual('Uint8ClampedArray');
+      const ret = arr.sort();
+      expect(ret instanceof Uint8ClampedArray).assertEqual(true);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_9600
-     * @tc.name testTypedUArraysSortPart201_096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_4400
+     * @tc.name testTypedUArraysSortPart201_044
      * @tc.desc Verify sort constructor BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([3n, 1n, 2n]);
-      const ret = expect(arr.sort()).assertEqual('BigUint64Array');
+      const ret = arr.sort();
+      expect(ret instanceof BigUint64Array).assertEqual(true);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_9700
-     * @tc.name testTypedUArraysSortPart201_097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_4500
+     * @tc.name testTypedUArraysSortPart201_045
      * @tc.desc Verify sort Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([300, 100, 200]);
       const ret = arr.sort();
       expect(ret).assertEqual(arr);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_9800
-     * @tc.name testTypedUArraysSortPart201_098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_4600
+     * @tc.name testTypedUArraysSortPart201_046
      * @tc.desc Verify sort Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([3000000000, 1000000000, 2000000000]);
       const ret = arr.sort();
       expect(ret).assertEqual(arr);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_9900
-     * @tc.name testTypedUArraysSortPart201_099
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_4700
+     * @tc.name testTypedUArraysSortPart201_047
      * @tc.desc Verify sort Uint8ClampedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([3, 1, 2]);
       const ret = arr.sort();
       expect(ret).assertEqual(arr);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_1000
-     * @tc.name testTypedUArraysSortPart201_100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_4800
+     * @tc.name testTypedUArraysSortPart201_048
      * @tc.desc Verify toSorted length Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([300, 100, 200]);
-      const ret = expect(arr.toSorted()).assertEqual(3);
+      const ret = arr.toSorted();
+      expect(ret.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_1100
-     * @tc.name testTypedUArraysSortPart201_101
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_4900
+     * @tc.name testTypedUArraysSortPart201_049
      * @tc.desc Verify toSorted length BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([3n, 1n, 2n]);
-      const ret = expect(arr.toSorted()).assertEqual(3);
+      const ret = arr.toSorted();
+      expect(ret.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_1200
-     * @tc.name testTypedUArraysSortPart201_102
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_5000
+     * @tc.name testTypedUArraysSortPart201_050
      * @tc.desc Verify toSorted byteLength Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([300, 100, 200]);
-      const ret = expect(arr.toSorted()).assertEqual(6);
+      const ret = arr.toSorted();
+      expect(ret.byteLength).assertEqual(6);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_1300
-     * @tc.name testTypedUArraysSortPart201_103
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_5100
+     * @tc.name testTypedUArraysSortPart201_051
      * @tc.desc Verify toSorted byteLength BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([3n, 1n, 2n]);
-      const ret = expect(arr.toSorted()).assertEqual(24);
+      const ret = arr.toSorted();
+      expect(ret.byteLength).assertEqual(24);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_1400
-     * @tc.name testTypedUArraysSortPart201_104
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_5200
+     * @tc.name testTypedUArraysSortPart201_052
      * @tc.desc Verify toSorted BYTES_PER_ELEMENT Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([3, 1, 2]);
-      const ret = expect(arr.toSorted()).assertEqual(1);
+      const ret = arr.toSorted();
+      expect(ret.BYTES_PER_ELEMENT).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_1500
-     * @tc.name testTypedUArraysSortPart201_105
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_5300
+     * @tc.name testTypedUArraysSortPart201_053
      * @tc.desc Verify toSorted constructor Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([300, 100, 200]);
-      const ret = expect(arr.toSorted()).assertEqual('Uint16Array');
+      const ret = arr.toSorted();
+      expect(ret instanceof Uint16Array).assertEqual(true);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_1600
-     * @tc.name testTypedUArraysSortPart201_106
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_5400
+     * @tc.name testTypedUArraysSortPart201_054
      * @tc.desc Verify toSorted constructor BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([3n, 1n, 2n]);
-      const ret = expect(arr.toSorted()).assertEqual('BigUint64Array');
+      const ret = arr.toSorted();
+      expect(ret instanceof BigUint64Array).assertEqual(true);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_1700
-     * @tc.name testTypedUArraysSortPart201_107
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_5500
+     * @tc.name testTypedUArraysSortPart201_055
      * @tc.desc Verify toSorted Uint16Array returns different object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([300, 100, 200]);
       const ret = arr.toSorted();
       expect(ret === arr).assertEqual(false);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_1800
-     * @tc.name testTypedUArraysSortPart201_108
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SORT_PART201_5600
+     * @tc.name testTypedUArraysSortPart201_056
      * @tc.desc Verify toSorted BigUint64Array returns different object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysSortPart201_108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysSortPart201_056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([3n, 1n, 2n]);
       const ret = arr.toSorted();
       expect(ret === arr).assertEqual(false);
