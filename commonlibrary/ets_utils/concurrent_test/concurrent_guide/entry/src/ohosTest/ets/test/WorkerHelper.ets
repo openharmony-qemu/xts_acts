@@ -64,6 +64,10 @@ export class WorkerExchange {
   }
 
   send(data: string | Object): Promise<Object> {
+    // Force serial await: concurrent send would overwrite pending and hang the previous Promise
+    if (this.pending !== null) {
+      throw new Error('WorkerExchange.send requires serial await; previous request still pending')
+    }
     return new Promise<Object>((resolve: (value: Object) => void) => {
       this.pending = resolve
       this.wk.postMessage(data)

@@ -15,7 +15,6 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { ArkTSUtils, collections } from '@kit.ArkTS';
-import { BusinessError } from '@ohos.base';
 
 @Sendable
 class TestPerson {
@@ -173,13 +172,10 @@ export default function ASONTest(): void {
         expect().assertFail()
       } catch (e) {
         caughtError = true
-        // Docs mention BusinessError 401; runtime and asonutilstest throw SyntaxError
+        // Invalid JSON throws SyntaxError (confirmed on device / asonutilstest);
+        // docs list BusinessError 401 but runtime has no numeric code on this path.
         expect(e instanceof Error).assertTrue()
         expect((e as Error).name).assertEqual('SyntaxError')
-        let err: BusinessError = e as BusinessError
-        if (typeof err.code === 'number') {
-          expect(err.code).assertEqual(401)
-        }
       }
       expect(caughtError).assertTrue()
     })

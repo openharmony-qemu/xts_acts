@@ -238,12 +238,15 @@ export default function ConditionVariableTest(): void {
      */
     it('ConditionVariableTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let cv: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable()
+      let completed: boolean = false
       try {
         cv.notifyOne()
         cv.notifyAll()
+        completed = true
       } catch (e) {
         expect().assertFail()
       }
+      expect(completed).assertTrue()
     })
 
     /**
