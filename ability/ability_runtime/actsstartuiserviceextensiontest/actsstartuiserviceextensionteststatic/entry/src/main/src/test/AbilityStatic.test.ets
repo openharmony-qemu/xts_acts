@@ -582,8 +582,12 @@ export default function abilitystaticTest() {
         bundleName: `${RELY_BUNDLE_NAME}`,
         abilityName: 'EntryAbility'
       }
-      await testAbilityContext!.startAbility(want);
-      await Utils.msSleep(2000);
+      try{
+        await testAbilityContext!.startAbility(want);
+        await Utils.msSleep(2000);
+      }catch(e){
+        hilog.info(domain, tag, 'startAbility err rely is running:' + JSON.stringify(e));
+      }
       abilityManager.getAbilityRunningInfos()
       .then((data: abilityManager.AbilityRunningInfo[]): void => {
         hilog.info(domain, tag, 'data: ' + JSON.stringify(data[0]));
