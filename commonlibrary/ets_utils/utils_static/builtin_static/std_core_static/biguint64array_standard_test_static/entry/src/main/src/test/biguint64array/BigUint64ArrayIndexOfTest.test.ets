@@ -1479,5 +1479,86 @@ export default function biguint64arrayIndexOfTest(): void {
       expect(laterView[0]).assertEqual(66n);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INDEXOF_9300
+     * @tc.name testBigUint64ArrayIndexOf093
+     * @tc.desc Verify binary negative fromIndex minus two returns the tail duplicate index
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIndexOf093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let targetArray = BigUint64Array.of(42n, 1n, 42n, 2n);
+      expect(targetArray.indexOf(42n, -0b10)).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INDEXOF_9400
+     * @tc.name testBigUint64ArrayIndexOf094
+     * @tc.desc Verify octal negative fromIndex minus two returns the tail duplicate index
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIndexOf094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let targetArray = BigUint64Array.of(42n, 1n, 42n, 2n);
+      expect(targetArray.indexOf(42n, -0o2)).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INDEXOF_9500
+     * @tc.name testBigUint64ArrayIndexOf095
+     * @tc.desc Verify hexadecimal negative fromIndex minus two returns the tail duplicate index
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIndexOf095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let targetArray = BigUint64Array.of(42n, 1n, 42n, 2n);
+      expect(targetArray.indexOf(42n, -0x2)).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INDEXOF_9600
+     * @tc.name testBigUint64ArrayIndexOf096
+     * @tc.desc Verify number source converted by toInt supplies fromIndex two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIndexOf096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let numberIndexSource: number = 2.9;
+      let targetArray = BigUint64Array.of(42n, 1n, 42n, 2n);
+      expect(targetArray.indexOf(42n, numberIndexSource.toInt())).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INDEXOF_9700
+     * @tc.name testBigUint64ArrayIndexOf097
+     * @tc.desc Verify float source converted by toInt supplies search element forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIndexOf097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let floatSearchSource: float = 42.9f;
+      let targetArray = BigUint64Array.of(10n, 42n, 30n);
+      expect(targetArray.indexOf(floatSearchSource.toInt())).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INDEXOF_9800
+     * @tc.name testBigUint64ArrayIndexOf098
+     * @tc.desc Verify double source converted by toInt supplies absent search element forty three
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIndexOf098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let doubleSearchSource: double = 43.9;
+      let targetArray = BigUint64Array.of(10n, 42n, 30n);
+      expect(targetArray.indexOf(doubleSearchSource.toInt())).assertEqual(-1);
+    });
+
   });
 }

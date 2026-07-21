@@ -1496,5 +1496,86 @@ export default function biguint64arrayIncludesTest(): void {
       expect(targetArray.length).assertEqual(3);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INCLUDES_9400
+     * @tc.name testBigUint64ArrayIncludes094
+     * @tc.desc Verify binary negative fromIndex minus two finds the tail duplicate
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIncludes094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let targetArray = BigUint64Array.of(42n, 1n, 42n, 2n);
+      expect(targetArray.includes(42n, -0b10)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INCLUDES_9500
+     * @tc.name testBigUint64ArrayIncludes095
+     * @tc.desc Verify octal negative fromIndex minus two finds the tail duplicate
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIncludes095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let targetArray = BigUint64Array.of(42n, 1n, 42n, 2n);
+      expect(targetArray.includes(42n, -0o2)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INCLUDES_9600
+     * @tc.name testBigUint64ArrayIncludes096
+     * @tc.desc Verify hexadecimal negative fromIndex minus two finds the tail duplicate
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIncludes096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let targetArray = BigUint64Array.of(42n, 1n, 42n, 2n);
+      expect(targetArray.includes(42n, -0x2)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INCLUDES_9700
+     * @tc.name testBigUint64ArrayIncludes097
+     * @tc.desc Verify number source converted by toInt supplies fromIndex two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIncludes097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let numberIndexSource: number = 2.9;
+      let targetArray = BigUint64Array.of(42n, 1n, 42n, 2n);
+      expect(targetArray.includes(42n, numberIndexSource.toInt())).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INCLUDES_9800
+     * @tc.name testBigUint64ArrayIncludes098
+     * @tc.desc Verify float source converted by toInt supplies search element forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIncludes098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let floatSearchSource: float = 42.9f;
+      let targetArray = BigUint64Array.of(10n, 42n, 30n);
+      expect(targetArray.includes(floatSearchSource.toInt())).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INCLUDES_9900
+     * @tc.name testBigUint64ArrayIncludes099
+     * @tc.desc Verify double source converted by toInt supplies absent search element forty three
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIncludes099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let doubleSearchSource: double = 43.9;
+      let targetArray = BigUint64Array.of(10n, 42n, 30n);
+      expect(targetArray.includes(doubleSearchSource.toInt())).assertFalse();
+    });
+
   });
 }

@@ -1639,5 +1639,86 @@ export default function biguint64arrayAtTest(): void {
       expect(result).assertEqual(40n);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_AT_1040
+     * @tc.name testBigUint64ArrayAt104
+     * @tc.desc Verify binary positive index two returns the third element
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayAt104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n);
+      expect(sourceArray.at(0b10)).assertEqual(30n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_AT_1050
+     * @tc.name testBigUint64ArrayAt105
+     * @tc.desc Verify octal negative index minus one returns the last element
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayAt105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n);
+      expect(sourceArray.at(-0o1)).assertEqual(30n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_AT_1060
+     * @tc.name testBigUint64ArrayAt106
+     * @tc.desc Verify hexadecimal negative index minus one returns the last element
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayAt106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n);
+      expect(sourceArray.at(-0x1)).assertEqual(30n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_AT_1070
+     * @tc.name testBigUint64ArrayAt107
+     * @tc.desc Verify byte source converted by toInt supplies positive index two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayAt107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let byteIndexSource: byte = 2;
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n);
+      expect(sourceArray.at(byteIndexSource.toInt())).assertEqual(30n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_AT_1080
+     * @tc.name testBigUint64ArrayAt108
+     * @tc.desc Verify short source converted by toInt supplies negative index minus one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayAt108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let shortIndexSource: short = -1;
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n);
+      expect(sourceArray.at(shortIndexSource.toInt())).assertEqual(30n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_AT_1090
+     * @tc.name testBigUint64ArrayAt109
+     * @tc.desc Verify number source converted by toInt supplies truncated positive index two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayAt109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let numberIndexSource: number = 2.9;
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n);
+      expect(sourceArray.at(numberIndexSource.toInt())).assertEqual(30n);
+    });
+
   });
 }

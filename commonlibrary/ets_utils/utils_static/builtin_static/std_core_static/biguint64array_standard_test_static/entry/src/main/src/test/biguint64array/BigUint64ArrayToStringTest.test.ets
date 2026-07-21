@@ -746,5 +746,44 @@ export default function biguint64arrayToStringTest(): void {
       let stringResult = sourceView.toString();
       expect(stringResult).assertEqual('20,30');
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TOSTRING_4100
+     * @tc.name testBigUint64ArrayToString041
+     * @tc.desc Verify toString emits decimal strings for binary integer values converted through BigInt
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayToString041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = BigUint64Array.of(BigInt(0b101010), BigInt(0b11111111));
+      expect(sourceArray.toString()).assertEqual('42,255');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TOSTRING_4200
+     * @tc.name testBigUint64ArrayToString042
+     * @tc.desc Verify toString emits decimal strings for octal integer values converted through BigInt
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayToString042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = BigUint64Array.of(BigInt(0o52), BigInt(0o377));
+      expect(sourceArray.toString()).assertEqual('42,255');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_TOSTRING_4300
+     * @tc.name testBigUint64ArrayToString043
+     * @tc.desc Verify toString emits decimal strings for hexadecimal integer values converted through BigInt
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayToString043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = BigUint64Array.of(BigInt(0x2A), BigInt(0xFF));
+      expect(sourceArray.toString()).assertEqual('42,255');
+    });
   });
 }

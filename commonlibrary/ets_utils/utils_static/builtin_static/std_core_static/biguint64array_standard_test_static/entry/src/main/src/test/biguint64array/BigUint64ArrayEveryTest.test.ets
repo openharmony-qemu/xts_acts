@@ -2389,5 +2389,44 @@ export default function biguint64arrayEveryTest(): void {
       expect(siblingView[0]).assertEqual(8n);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_EVERY_1240
+     * @tc.name testBigUint64ArrayEvery124
+     * @tc.desc Verify every matches binary integer values converted through BigInt
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayEvery124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = BigUint64Array.of(BigInt(0b101010), BigInt(0b101010));
+      expect(sourceArray.every((value: bigint): boolean => value === 42n)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_EVERY_1250
+     * @tc.name testBigUint64ArrayEvery125
+     * @tc.desc Verify every matches octal integer values converted through BigInt
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayEvery125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = BigUint64Array.of(BigInt(0o52), BigInt(0o52));
+      expect(sourceArray.every((value: bigint): boolean => value === 42n)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_EVERY_1260
+     * @tc.name testBigUint64ArrayEvery126
+     * @tc.desc Verify every matches hexadecimal integer values converted through BigInt
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayEvery126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = BigUint64Array.of(BigInt(0x2A), BigInt(0x2A));
+      expect(sourceArray.every((value: bigint): boolean => value === 42n)).assertTrue();
+    });
+
   });
 }

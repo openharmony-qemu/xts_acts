@@ -1244,5 +1244,47 @@ export default function biguint64arrayEntriesTest(): void {
       expect(secondIteratorSecondResult.value![1]).assertEqual(20n);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_ENTRIES_6500
+     * @tc.name testBigUint64ArrayEntries065
+     * @tc.desc Verify entries yields a binary integer converted to BigInt with index zero
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayEntries065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let firstEntry = BigUint64Array.of(BigInt(0b101010)).entries().next().value!;
+      expect(firstEntry[0]).assertEqual(0);
+      expect(firstEntry[1]).assertEqual(42n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_ENTRIES_6600
+     * @tc.name testBigUint64ArrayEntries066
+     * @tc.desc Verify entries yields an octal integer converted to BigInt with index zero
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayEntries066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let firstEntry = BigUint64Array.of(BigInt(0o52)).entries().next().value!;
+      expect(firstEntry[0]).assertEqual(0);
+      expect(firstEntry[1]).assertEqual(42n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_ENTRIES_6700
+     * @tc.name testBigUint64ArrayEntries067
+     * @tc.desc Verify entries yields a hexadecimal integer converted to BigInt with index zero
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayEntries067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let firstEntry = BigUint64Array.of(BigInt(0x2A)).entries().next().value!;
+      expect(firstEntry[0]).assertEqual(0);
+      expect(firstEntry[1]).assertEqual(42n);
+    });
+
   });
 }
