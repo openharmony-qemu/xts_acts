@@ -22,6 +22,7 @@ import web_webview from '@ohos.web.webview'
 import image from "@ohos.multimedia.image";
 import { BusinessError } from '@ohos.base';
 import { waitForExist } from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 @Entry
 @Component
 struct wholeWebPageDrawing {
@@ -29,6 +30,7 @@ struct wholeWebPageDrawing {
   @State isReceive: number = -1;
   @State isComplete: number = -1;
   controller: web_webview.WebviewController = new web_webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
 
   aboutToAppear(): void {
     try {
@@ -36,6 +38,10 @@ struct wholeWebPageDrawing {
     } catch (error) {
       console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
     }
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   onPageShow(){
@@ -70,6 +76,10 @@ struct wholeWebPageDrawing {
           switch (this.str) {
             case "wholeWebPageDrawing0100": {
               try {
+                // ensure pageEnd after previous suite may have shutdown shared server port
+                this.isComplete = -1;
+                this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
+                await waitForExist(() => this.isComplete, this.str, 0);
                 this.controller.webPageSnapshot({ id: "hello", size: { width: 100, height: 100 } }, (error, result) => {
                   if (error) {
                     console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
@@ -173,7 +183,7 @@ struct wholeWebPageDrawing {
           }
         })
       }
-      Web({src: 'www.example.com', controller: this.controller, renderMode: RenderMode.ASYNC_RENDER})
+      Web({src: this.mServer.getAssetUrl('index.html'), controller: this.controller, renderMode: RenderMode.ASYNC_RENDER})
         .onPageEnd((event) => {
           console.log('web pageEnd==>' + event.url);
           this.isComplete = 0;

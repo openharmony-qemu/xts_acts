@@ -49,7 +49,8 @@ struct Webdoubleinnernucleus {
           }
         })
       }
-      Web({ src: 'www.example.com', controller: this.controller })
+      // 本用例仅需 onPageEnd 后读取引擎版本；用本地 rawfile，避免本地 httpserver 启动竞态导致 15s 超时
+      Web({ src: $rawfile('index.html'), controller: this.controller })
         .onPageEnd((event) => {
           console.log('onPageEnd url：' + event.url);
           this.isPageEnd = 0;

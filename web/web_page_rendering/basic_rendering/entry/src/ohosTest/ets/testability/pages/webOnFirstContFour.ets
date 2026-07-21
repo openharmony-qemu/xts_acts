@@ -18,11 +18,13 @@ import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
+import { XtsTestServer } from 'library';
 
 @Entry
 @Component
 struct webOnFirstContFour {
   controller: WebController = new WebController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = "emitRefreshOnfirstcontentfulpaintWebc";
   @State firstId: number = 151700;
   @State firstcontentfulpaint: boolean = false;
@@ -36,6 +38,11 @@ struct webOnFirstContFour {
     " CHrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.27";
   @State firstBoo: boolean = false;
   @State isComplete: number = -1;
+
+  aboutToDisappear() {
+    this.controller.loadUrl({ url: this.mServer.getShutdownUrl() });
+  }
+
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 151690,
@@ -77,7 +84,7 @@ struct webOnFirstContFour {
         })
       }
 
-      Web({ src: 'www.baidu.com', controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('onfirstcontentfulpaint.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)
         .imageAccess(this.imageAccess)

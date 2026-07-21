@@ -20,15 +20,21 @@ import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview'
 import { waitForExist } from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 @Entry
 @Component
 struct webviewTerminateRenderProcess {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = "";
   @State userAgentPC:string = '';
   @State isComplete: number = -1;
   @State isRunJSEnd: number = -1;
   @State isReceive: number = -1;
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+  }
 
   onPageShow(){
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -71,7 +77,7 @@ struct webviewTerminateRenderProcess {
                   break;
                 }
                 this.isComplete = -1;
-                this.controller.loadUrl('www.baidu.com');
+                this.controller.loadUrl(this.mServer.getAssetUrl('baidu.html'));
                 await waitForExist(() => this.isComplete, this.str, 0);
                 let result = this.controller.terminateRenderProcess();
                 console.log("terminateRenderProcess result: " + result);
@@ -92,15 +98,16 @@ struct webviewTerminateRenderProcess {
                   break;
                 }
                 this.isComplete = -1;
-                this.controller.loadUrl('www.baidu.com');
+                this.controller.loadUrl(this.mServer.getAssetUrl('baidu.html'));
                 await waitForExist(() => this.isComplete, this.str, 0);
-                 let result = this.controller.terminateRenderProcess();
-                 console.log("terminateRenderProcess result: " + result);
+                // 先取 title 再 terminate，避免渲染进程退出后 title 不可用导致误失败
                 let title = this.controller.getTitle();
-                console.log("title: " + title);
-                if ((this.controller.getTitle()).includes("百度")) {
+                console.log("title before terminate: " + title);
+                let result = this.controller.terminateRenderProcess();
+                console.log("terminateRenderProcess result: " + result);
+                if (title.includes("百度")) {
                   Utils.emitEvent(true, 152150)
-                  console.log("title:" + this.controller.getTitle())
+                  console.log("title:" + title)
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -154,7 +161,8 @@ struct webviewTerminateRenderProcess {
         })
       }
 
-      Web({ src: 'https://wrong.host.badssl.com', controller: this.controller })
+      // 初始页改为离线可加载资源，保证 beforeEach 后 isComplete 可及时就绪
+      Web({ src: this.mServer.getAssetUrl('baidu.html'), controller: this.controller })
 
       .onOverScroll((event) => {
           console.info('x = ' + event.xOffset)

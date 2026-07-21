@@ -19,10 +19,12 @@ import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import { waitForExist } from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 @Entry
 @Component
 struct webOnFirstContThree {
   controller: WebController = new WebController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = "emitLoadUrlOnfirstcontentfulpaintWebc";
   @State firstId: number = 151800;
   @State firstcontentfulpaint: boolean = false;
@@ -36,6 +38,11 @@ struct webOnFirstContThree {
     " CHrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.27";
   @State isComplete: number = -1;
   @State isReceive: number = -1;
+
+  aboutToDisappear() {
+    this.controller.loadUrl({ url: this.mServer.getShutdownUrl() });
+  }
+
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 151790,
@@ -66,9 +73,11 @@ struct webOnFirstContThree {
             case "emitLoadUrlOnfirstcontentfulpaintWebc": {
               try {
                 this.isComplete = -1;
+                this.firstcontentfulpaint = false;
                 this.controller.clearHistory();
-                this.controller.loadUrl({ url: "https://m.weibo.cn" });
+                this.controller.loadUrl({ url: this.mServer.getAssetUrl('onfirstcontentfulpaint.html') });
                 await waitForExist(() => this.isComplete, this.str, 0);
+                await waitForExist(() => this.firstcontentfulpaint ? 0 : -1, this.str, 0);
                 console.log("action of emitLoadUrlOnfirstcontentfulpaintWebc is loadUrl");
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -80,7 +89,7 @@ struct webOnFirstContThree {
         })
       }
 
-      Web({ src: 'www.baidu.com', controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('baidu.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)
         .imageAccess(this.imageAccess)

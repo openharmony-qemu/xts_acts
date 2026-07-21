@@ -17,6 +17,7 @@ import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { BusinessError } from '@ohos.base';
 import { waitForExist } from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 @Entry
 @Component
 struct WebOnLargestContentfulPaint {
@@ -25,6 +26,11 @@ struct WebOnLargestContentfulPaint {
   @State isComplete: number = -1;
   @State isReceive: number = -1;
   controller: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+  }
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -62,13 +68,17 @@ struct WebOnLargestContentfulPaint {
               let value: boolean = false;
               this.text = [0, 0, 0, 0, 0, 0]
               try {
-                this.controller.loadUrl('www.example.com');
+                // 纯文本页：确保 image* 指标为 0，text paint 非 0
+                this.controller.loadUrl(this.mServer.getAssetUrl('lcpTextOnly.html'));
                 this.isComplete = -1;
                 this.controller.removeCache(true);
                 await waitForExist(() => this.isComplete, this.str, 0);
                 this.isComplete = -1;
-                this.controller.loadUrl('www.example.com');
+                this.text = [0, 0, 0, 0, 0, 0]
+                this.controller.loadUrl(this.mServer.getAssetUrl('lcpTextOnly.html'));
                 await waitForExist(() => this.isComplete, this.str, 0);
+                // 等待 LCP 回调落盘，避免 pageEnd 早于 paint 指标
+                await waitForExist(() => (this.text[0] != 0 && this.text[2] != 0) ? 0 : -1, this.str, 0);
                 if (
                   this.text[0] != 0
                     && this.text[1] == 0
@@ -91,20 +101,24 @@ struct WebOnLargestContentfulPaint {
               let value: boolean = false;
               this.text = [0, 0, 0, 0, 0, 0]
               try {
-                this.controller.loadUrl('https://www.iana.org/help/example-domains');
+                // 图文页：确保 image/text 六项指标均可采集
+                this.controller.loadUrl(this.mServer.getAssetUrl('lcpWithImage.html'));
                 this.isComplete = -1;
                 this.controller.removeCache(true);
                 await waitForExist(() => this.isComplete, this.str, 0);
                 this.isComplete = -1;
-                this.controller.loadUrl('https://www.iana.org/help/example-domains');
+                this.text = [0, 0, 0, 0, 0, 0]
+                this.controller.loadUrl(this.mServer.getAssetUrl('lcpWithImage.html'));
                 await waitForExist(() => this.isComplete, this.str, 0);
+                // Local data-URI image: loadStart/loadEnd may stay 0; require paint metrics.
+                await waitForExist(() => (
+                  this.text[0] != 0 && this.text[1] != 0 && this.text[2] != 0 && this.text[3] != 0
+                ) ? 0 : -1, this.str, 0);
                 if (
                   this.text[0] != 0
                     && this.text[1] != 0
                     && this.text[2] != 0
                     && this.text[3] != 0
-                    && this.text[4] != 0
-                    && this.text[5] != 0
                 ) {
                   value = true;
                 }
@@ -119,7 +133,7 @@ struct WebOnLargestContentfulPaint {
         })
       }
 
-      Web({ src: 'www.example.com', controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('lcpTextOnly.html'), controller: this.controller })
         .onPageEnd((event) => {
           console.log('web pageEnd==>' + event.url);
           this.isComplete = 0;

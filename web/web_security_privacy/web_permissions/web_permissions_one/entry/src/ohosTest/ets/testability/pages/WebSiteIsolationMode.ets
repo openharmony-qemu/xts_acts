@@ -19,12 +19,14 @@ import Utils from '../../test/Utils';
 import { Driver, MouseButton, UiWindow, ON, On  } from '@ohos.UiTest';
 import web_webview from '@ohos.web.webview';
 import business_error from '@ohos.base'
+import { XtsTestServer } from 'library';
 
 @Entry
 @Component
 struct WebSiteIsolationMode {
   @State webviewcontroller: web_webview.WebviewController = new web_webview.WebviewController();
   controller: web_webview.WebviewController = new web_webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State result:number = 0;
   @State emitKey: string = '';
   @State isReceive: number = -1;
@@ -32,6 +34,11 @@ struct WebSiteIsolationMode {
   @State url: string = '';
   @State SiteIsolationModeArr: web_webview.SiteIsolationMode[] = [web_webview.SiteIsolationMode.PARTIAL,web_webview.SiteIsolationMode.STRICT]
   @State RenderProcessModeArr: web_webview.RenderProcessMode[] = [web_webview.RenderProcessMode.MULTIPLE,web_webview.RenderProcessMode.SINGLE]
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+  }
+
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 162001,
@@ -116,7 +123,7 @@ struct WebSiteIsolationMode {
           }
         })
       }
-      Web({ src: 'https://www.w3school.com.cn/tiy/t.asp?f=tags_iframe', controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.controller })
         .javaScriptAccess(true)
         .fileAccess(true)
         .onlineImageAccess(true)
