@@ -1419,6 +1419,8 @@ export default function TaskTypeTest(): void {
       expect(r2).assertEqual('pong')
       let r3: string = await exchange.sendString('bidirectional')
       expect(r3).assertEqual('echo: bidirectional')
+      await exchange.terminate()
+      currentWorker = null
     })
 
     /**

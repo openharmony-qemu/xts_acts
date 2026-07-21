@@ -523,6 +523,8 @@ export default function WorkerIntroductionTest(): void {
       expect(result2).assertEqual('pong')
       let result3: string = await exchange.sendString('test_data')
       expect(result3).assertEqual('echo: test_data')
+      await exchange.terminate()
+      currentWorker = null
     })
   })
 }

@@ -47,6 +47,7 @@ export class CallAddValuesRequest {
 export class WorkerExchange {
   private wk: worker.ThreadWorker
   private pending: ((data: Object) => void) | null = null
+  private terminated: boolean = false
 
   constructor(wk: worker.ThreadWorker) {
     this.wk = wk
@@ -68,6 +69,9 @@ export class WorkerExchange {
     if (this.pending !== null) {
       throw new Error('WorkerExchange.send requires serial await; previous request still pending')
     }
+    if (this.terminated) {
+      throw new Error('WorkerExchange already terminated')
+    }
     return new Promise<Object>((resolve: (value: Object) => void) => {
       this.pending = resolve
       this.wk.postMessage(data)
@@ -76,6 +80,23 @@ export class WorkerExchange {
 
   sendString(data: string): Promise<string> {
     return this.send(data) as Promise<string>
+  }
+
+  /**
+   * Release the underlying ThreadWorker. Safe to call once; subsequent calls are no-ops.
+   */
+  async terminate(): Promise<void> {
+    if (this.terminated) {
+      return
+    }
+    this.terminated = true
+    this.pending = null
+    await new Promise<void>((resolve: () => void) => {
+      this.wk.onexit = (): void => {
+        resolve()
+      }
+      this.wk.terminate()
+    })
   }
 }
 

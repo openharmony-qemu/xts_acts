@@ -170,6 +170,8 @@ export default function WorkerCommunicationTest(): void {
       expect(r2).assertEqual('pong')
       let r3: string = await exchange.sendString('custom')
       expect(r3).assertEqual('echo: custom')
+      await exchange.terminate()
+      currentWorker = null
     })
 
     /**
@@ -256,6 +258,8 @@ export default function WorkerCommunicationTest(): void {
       let echoData: Record<string, Object> = await exchange.send(new EchoRequest('hello_worker')) as Record<string, Object>
       expect((echoData['type'] as string) === 'echo_response').assertTrue()
       expect(echoData['payload'] as string).assertEqual('hello_worker')
+      await exchange.terminate()
+      currentWorker = null
     })
   })
 }

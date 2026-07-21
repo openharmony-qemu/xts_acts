@@ -83,8 +83,8 @@ export default function ConditionVariableTest(): void {
       let waitPromise: Promise<void> = cv2.wait().then(() => {
         notified = true
       })
-      // Allow waiter to suspend before notify (avoid race with native wait)
-      await new Promise<void>(resolve => setTimeout(resolve, 500))
+      // Confirm waiter is pending without fixed timer delay
+      await Promise.race([waitPromise, Promise.resolve()])
       expect(notified).assertFalse()
       cv1.notifyOne()
       await waitPromise

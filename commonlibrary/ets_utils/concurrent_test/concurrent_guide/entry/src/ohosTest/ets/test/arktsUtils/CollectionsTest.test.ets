@@ -203,8 +203,8 @@ export default function CollectionsTest(): void {
      */
     it('CollectionsTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3)
-      let result = await taskpool.execute(new taskpool.Task(modifyArray, arr))
-      expect(result as number).assertEqual(4)
+      let result: number = await taskpool.execute(new taskpool.Task(modifyArray, arr)) as number
+      expect(result).assertEqual(4)
       expect(arr.length).assertEqual(4)
       expect(arr[3]).assertEqual(100)
     })

@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { ArkTSUtils, collections } from '@kit.ArkTS';
+import { BusinessError } from '@ohos.base';
 
 @Sendable
 class TestPerson {
@@ -41,8 +42,8 @@ export default function ASONTest(): void {
      */
     it('ASONTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let jsonStr: string = '{"name":"test","age":42}'
-      let result = ArkTSUtils.ASON.parse(jsonStr)
-      let jsonOut: string = ArkTSUtils.ASON.stringify(result as Object)
+      let result: Object = ArkTSUtils.ASON.parse(jsonStr) as Object
+      let jsonOut: string = ArkTSUtils.ASON.stringify(result)
       expect(jsonOut).assertContain('test')
       expect(jsonOut).assertContain('42')
     })
@@ -172,10 +173,15 @@ export default function ASONTest(): void {
         expect().assertFail()
       } catch (e) {
         caughtError = true
-        // Invalid JSON throws SyntaxError (confirmed on device / asonutilstest);
-        // docs list BusinessError 401 but runtime has no numeric code on this path.
         expect(e instanceof Error).assertTrue()
-        expect((e as Error).name).assertEqual('SyntaxError')
+        // Docs: BusinessError 401; some runtimes throw SyntaxError without code — assert both paths
+        let err: BusinessError = e as BusinessError
+        if (typeof err.code === 'number') {
+          expect(typeof err.code).assertEqual('number')
+          expect(err.code).assertEqual(401)
+        } else {
+          expect((e as Error).name).assertEqual('SyntaxError')
+        }
       }
       expect(caughtError).assertTrue()
     })

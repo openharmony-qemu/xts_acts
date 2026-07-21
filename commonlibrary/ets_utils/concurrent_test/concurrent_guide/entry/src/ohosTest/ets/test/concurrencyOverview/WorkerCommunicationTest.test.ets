@@ -175,6 +175,8 @@ export default function WorkerCommunicationTest(): void {
 
       let result3: string = await exchange.sendString('test data')
       expect(result3).assertEqual('echo: test data')
+      await exchange.terminate()
+      currentWorker = null
     })
   })
 }
