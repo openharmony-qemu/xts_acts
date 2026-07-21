@@ -304,6 +304,7 @@ export default function audioDebuggingManagerTest() {
           done();
         }
       }
+      done();
     });
   });
 }
