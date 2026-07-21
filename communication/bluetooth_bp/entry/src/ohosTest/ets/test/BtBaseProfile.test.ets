@@ -205,8 +205,8 @@ export default function btBaseProfileTest() {
       try {
         let state : bluetooth.ProfileConnectionState = A2dpSourceProfile.getConnectionState("11:22:33:AA:BB:FF");
         console.info("the connection state:" + state);
-        // 蓝区没有校验传入地址能否转成真实地址，进入后续判断，发现该设备没有连接，返回0
-        expect(state).assertEqual(bluetooth.ProfileConnectionState.STATE_DISCONNECTED);
+        // 蓝区没有校验传入地址能否转成真实地址，进入后续判断，发现该设备没有连接，返回bluetooth.ProfileConnectionState.STATE_DISCONNECTED
+        expect(state).assertEqual(0);
       } catch (err) {
         console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === '801' || err.code === '2900004') {
@@ -373,8 +373,8 @@ export default function btBaseProfileTest() {
       try {
         let state : bluetooth.ProfileConnectionState = HandsFreeAudioGatewayProfile.getConnectionState("11:22:33:AA:BB:FF");
         console.info("the connection state:" + state);
-        // 蓝区没有校验传入地址能否转成真实地址，进入后续判断，发现该设备没有连接，返回0
-        expect(state).assertEqual(bluetooth.ProfileConnectionState.STATE_DISCONNECTED);
+        // 蓝区没有校验传入地址能否转成真实地址，进入后续判断，发现该设备没有连接，返回bluetooth.ProfileConnectionState.STATE_DISCONNECTED
+        expect(state).assertEqual(0);
       } catch (err) {
         console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === '801') {
@@ -483,8 +483,8 @@ export default function btBaseProfileTest() {
       try {
         let state : bluetooth.ProfileConnectionState = HidHostProfile.getConnectionState("11:22:33:AA:BB:FF");
         console.info("the connection state:" + state);
-        // 蓝区没有校验传入地址能否转成真实地址，进入后续判断，发现该设备没有连接，返回0
-        expect(state).assertEqual(bluetooth.ProfileConnectionState.STATE_DISCONNECTED);
+        // 蓝区没有校验传入地址能否转成真实地址，进入后续判断，发现该设备没有连接，返回bluetooth.ProfileConnectionState.STATE_DISCONNECTED
+        expect(state).assertEqual(0);
       } catch (err) {
         console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === '801') {
