@@ -504,25 +504,23 @@ export default function float64ArraySetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SET_2500
      * @tc.name testFloat64ArraySet025
-     * @tc.desc Verify set from Float64Array with INT_MAX offset throws RangeError and keeps target elements
+     * @tc.desc Verify failed set preserves target byteLength and existing element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArraySet025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const targetOffset: int = 2147483647;
-      const dest = new Float64Array([onePointZero, twoPointZero]);
-      const src = new Float64Array([9.0]);
+      const target: Float64Array = Float64Array.of(7.0);
+      const src: Float64Array = Float64Array.of(1.0, 2.0);
+      const beforeByteLength: int = target.byteLength;
       try {
-        dest.set(src, targetOffset);
+        target.set(src);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
-      expect(dest[0]).assertEqual(onePointZero);
-      expect(dest[1]).assertEqual(twoPointZero);
+      expect(target.byteLength).assertEqual(beforeByteLength);
+      expect(target.$_get(0)).assertEqual(7.0);
     });
 
     /**

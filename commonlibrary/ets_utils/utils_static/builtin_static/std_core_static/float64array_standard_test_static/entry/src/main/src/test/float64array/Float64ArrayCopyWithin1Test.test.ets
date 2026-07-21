@@ -986,21 +986,20 @@ export default function Float64ArrayCopyWithin1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_4900
      * @tc.name testFloat64ArrayCopyWithin049
-     * @tc.desc Verify single-param copyWithin negative target keeps original tail values
+     * @tc.desc Verify copyWithin on subarray view modifies parent corresponding slots
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayCopyWithin049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const piApprox: number = 3.14;
-      const negative99Point99: number = -99.99;
-      const arr = Float64Array.of(pointFive, onePointFive, piApprox, negative99Point99);
-      const result = arr.copyWithin(-2);
-      expect(result).assertEqual(arr);
-      expect(result[2]).assertEqual(pointFive);
-      expect(result[3]).assertEqual(onePointFive);
+      const parent: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0, 5.0]);
+      const child: Float64Array = parent.subarray(0, 4);
+      const result = child.copyWithin(2, 0, 1);
+      expect(result).assertEqual(child);
+      expect(parent.$_get(0)).assertEqual(1.0);
+      expect(parent.$_get(1)).assertEqual(2.0);
+      expect(parent.$_get(2)).assertEqual(1.0);
+      expect(parent.$_get(4)).assertEqual(5.0);
     });
 
     /**

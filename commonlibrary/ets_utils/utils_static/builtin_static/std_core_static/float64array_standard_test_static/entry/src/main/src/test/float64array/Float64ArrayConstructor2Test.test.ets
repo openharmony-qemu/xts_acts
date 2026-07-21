@@ -341,21 +341,18 @@ export default function Float64ArrayConstructor2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_2_1800
      * @tc.name testFloat64ArrayConstructor2018
-     * @tc.desc Verify overload 6 buf is 15-byte ArrayBuffer non-8-multiple
+     * @tc.desc Verify overload 6 undefined length derives remaining elements from byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFloat64ArrayConstructor2018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const elemCount: number = 1;
-      const elemTotalByte: number = 8;
-      const bufferTotalByte: number = 15;
-      const buf = new ArrayBuffer(bufferTotalByte);
-      const arr = new Float64Array(buf, 0);
-      expect(arr.length).assertEqual(elemCount);
-      expect(arr.byteLength).assertEqual(elemTotalByte);
-      expect(arr.byteOffset).assertEqual(0);
-      expect(arr.buffer).assertEqual(buf);
+      const buf: ArrayBuffer = new ArrayBuffer(24);
+      const view: Float64Array = new Float64Array(buf, 8, undefined);
+      expect(view.byteOffset).assertEqual(8);
+      expect(view.byteLength).assertEqual(16);
+      expect(view.length).assertEqual(2);
+      expect(view.buffer).assertEqual(buf);
     });
 
     /**
