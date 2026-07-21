@@ -49,6 +49,8 @@ import classAndModuleAugmentationTest from "./ClassAndModuleAugmentation/ClassAn
 import complexDataTypeMatchingEnhancementTest from "./ComplexDataTypeMatchingEnhancement/ComplexDataTypeMatchingEnhancementTest.test";
 import functionTypeInferenceEnhancementTest from "./FunctionTypeInferenceEnhancement/FunctionTypeInferenceEnhancementTest.test";
 import genericSpecTypeCheckingEnhancementTest from "./GenericSpecTypeCheckingEnhancement/GenericSpecTypeCheckingEnhancementTest.test";
+import classPropertyMappingNormalizationTest from "./ClassPropertyMappingNormalization/ClassPropertyMappingNormalization.test";
+import symbolAndSyntaxDisambiguationTest from "./SymbolAndSyntaxDisambiguation/SymbolAndSyntaxDisambiguation.test";
 
 export default function testsuite() {
   builtinsBlockTest();
@@ -102,4 +104,6 @@ export default function testsuite() {
   complexDataTypeMatchingEnhancementTest();
   functionTypeInferenceEnhancementTest();
   genericSpecTypeCheckingEnhancementTest();
+  classPropertyMappingNormalizationTest();
+  symbolAndSyntaxDisambiguationTest();
 }
