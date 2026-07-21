@@ -20,13 +20,14 @@
         "type": "ShellKit",
         "run-command": [
             "remount",
-            "mkdir /data/test"
+            "mkdir /data/app/el2/100/base/com.example.avplayeraudiondk/files",
+            "chmod 777 -R /data/app/el2/100/base/com.example.avplayeraudiondk/files"
         ]
     },
     {
         "type": "PushKit",
         "push": [
-            "./resource/audio/01.mp3 -> /data/test/"
+            "./resource/audio/01.mp3 -> /data/app/el2/100/base/com.example.avplayeraudiondk/files/"
         ]
     },
     {
