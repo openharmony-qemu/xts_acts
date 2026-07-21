@@ -578,16 +578,27 @@ export default function abilitystaticTest() {
      */
     it("SUB_Ability_AbilityManager_GetAbilityRunningInfos_PROMISE_static_001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let tag = 'SUB_Ability_AbilityManager_GetAbilityRunningInfos_PROMISE_static_001';
+      const want: Want = {
+        bundleName: `${RELY_BUNDLE_NAME}`,
+        abilityName: 'EntryAbility'
+      }
+      await testAbilityContext!.startAbility(want);
+      await Utils.msSleep(2000);
       abilityManager.getAbilityRunningInfos()
       .then((data: abilityManager.AbilityRunningInfo[]): void => {
         hilog.info(domain, tag, 'data: ' + JSON.stringify(data[0]));
-        expect(data[0].ability.bundleName).assertEqual('com.acts.startuiserviceextensionrely.static');
-        expect(data[0].pid).assertLargerOrEqual(0);
-        expect(data[0].uid).assertLargerOrEqual(0);
-        expect(data[0].processName).assertEqual("com.acts.startuiserviceextensionrely.static");
-        expect(data[0].abilityState).not().assertNull();
-        expect(data[0].startTime).assertLarger(0);
-        done();
+        for(let i = 0; i < data.length; i++){
+          if(data[i].ability.bundleName == 'com.acts.startuiserviceextensionrely.static'){
+            expect(data[i].ability.bundleName).assertEqual('com.acts.startuiserviceextensionrely.static');
+            expect(data[i].pid).assertLargerOrEqual(0);
+            expect(data[i].uid).assertLargerOrEqual(0);
+            expect(data[i].processName).assertEqual("com.acts.startuiserviceextensionrely.static");
+            expect(data[i].abilityState).not().assertNull();
+            expect(data[i].startTime).assertLarger(0);
+            done();
+          }
+        }
+
       })
       .catch((err): void => {
         if (err instanceof BusinessError) {
