@@ -384,7 +384,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithinAbilityStat
         notificationExtensionSubscription.openSubscriptionSettingsWithResult(testContext).then((data) => {
           console.info(`${testNum}openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data?.userGrantEnabled).assertEqual(true)
-          expect(JSON.stringify(data?.grantedBundleInfos)).assertContain('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest.static","appIndex":0,"appName":"zzztest"}')
+          expect(JSON.stringify(data?.grantedBundleInfos)).assertContain('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest.static","appIndex":0,"appName":"AAAtest"}')
         }).catch((e:Error) => {
           let err = e as BusinessError
           console.error(`${testNum}failed to call openSubscriptionSettingsWithResult  ${err.code}, ${err.message}`)
@@ -423,12 +423,12 @@ export default function ActsNotificationAnsopenWindowWithResultWithinAbilityStat
           expect(buttonTwo).assertContain('允许获取本机通知')
         }
         await Utils.msSleep(2000)
-        let scrollBar = await driver.findComponent(ON.text('zzztest'));
-        console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-        expect(scrollBar != null).assertTrue()
-        scrollBar?.scrollToBottom()
-        await Utils.msSleep(60000)
-        let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.originalText('zzztest')));
+        //let scrollBar = await driver.findComponent(ON.type('List').isAfter(ON.text('全部')))
+        //console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
+        //expect(scrollBar != null).assertTrue()
+        //scrollBar?.scrollToBottom()
+        //await Utils.msSleep(60000)
+        let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.originalText('AAAtest')));
         console.info(`${testNum} button is ${JSON.stringify(button)}`);
         if (button !== null) {
           await Utils.msSleep(500)
@@ -436,7 +436,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithinAbilityStat
           await Utils.msSleep(500)
         } else {
           console.info(`${testNum} null button`);
-          expect(button).assertContain('zzztest')
+          expect(button).assertContain('AAAtest')
         }
         let buttonThree = await driver.findComponent(ON.text('确定'));
         console.info(`${testNum} button is ${JSON.stringify(buttonThree)}`);
@@ -451,7 +451,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithinAbilityStat
         notificationExtensionSubscription.openSubscriptionSettingsWithResult(testContext).then((data) => {
           console.info(`${testNum}openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data?.userGrantEnabled).assertEqual(true)
-          expect(JSON.stringify(data?.grantedBundleInfos)).assertContain('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest.static","appIndex":0,"appName":"zzztest"}')
+          expect(JSON.stringify(data?.grantedBundleInfos)).assertContain('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest.static","appIndex":0,"appName":"AAAtest"}')
           done()
         }).catch((e:Error) => {
           let err = e as BusinessError
