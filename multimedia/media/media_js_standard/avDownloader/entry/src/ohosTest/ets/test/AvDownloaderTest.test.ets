@@ -883,6 +883,38 @@ export default function AvDownloaderTest() {
       }
     })
 
+    it('allowsCellularAccess_003', Level.Level1, async (done: Function) => {
+      console.info(`${TAG}: allowsCellularAccess_003 start`);
+      try {
+        expect(avDownloaderManager != null).assertTrue();
+        if (avDownloaderManager != null) {
+          avDownloaderManager.allowsCellularAccess(null);
+          console.info(`${TAG}: allowsCellularAccess_003 set true success`);
+        }
+        done();
+      } catch (err) {
+        console.error(`${TAG}: allowsCellularAccess_003 failed, err: ${err}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    it('allowsCellularAccess_004', Level.Level1, async (done: Function) => {
+      console.info(`${TAG}: allowsCellularAccess_004 start`);
+      try {
+        expect(avDownloaderManager != null).assertTrue();
+        if (avDownloaderManager != null) {
+          avDownloaderManager.allowsCellularAccess(undefined);
+          console.info(`${TAG}: allowsCellularAccess_004 set true success`);
+        }
+        done();
+      } catch (err) {
+        console.error(`${TAG}: allowsCellularAccess_004 failed, err: ${err}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
     it('release_001', Level.Level1, async (done: Function) => {
       console.info(`${TAG}: release_001 start`);
       try {
