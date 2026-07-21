@@ -20,6 +20,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { Driver, ON } from '@kit.TestKit';
 import settings from '@ohos.settings';
 import { display } from '@kit.ArkUI';
+import deviceInfo from '@ohos.deviceInfo';
 
 export default function windowKeyBorad() {
   describe('windowKeyBorad', async () => {
