@@ -986,31 +986,12 @@ export default function Float64ArrayCopyWithin1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_4900
      * @tc.name testFloat64ArrayCopyWithin049
-     * @tc.desc Verify copyWithin on subarray view modifies parent corresponding slots
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFloat64ArrayCopyWithin049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const parent: Float64Array = new Float64Array([1.0, 2.0, 3.0, 4.0, 5.0]);
-      const child: Float64Array = parent.subarray(0, 4);
-      const result = child.copyWithin(2, 0, 1);
-      expect(result).assertEqual(child);
-      expect(parent.$_get(0)).assertEqual(1.0);
-      expect(parent.$_get(1)).assertEqual(2.0);
-      expect(parent.$_get(2)).assertEqual(1.0);
-      expect(parent.$_get(4)).assertEqual(5.0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_5000
-     * @tc.name testFloat64ArrayCopyWithin050
      * @tc.desc Verify copyWithin with hex values 0xAD 0x7F 0x80 0x7FFF 0x8000 target=0 start=2 end=4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayCopyWithin050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayCopyWithin049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const hexValueAD: number = 0xAD;
       const hexValue7F: number = 0x7F;
       const hexValue80: number = 0x80;
@@ -1028,14 +1009,14 @@ export default function Float64ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_5100
-     * @tc.name testFloat64ArrayCopyWithin051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_5000
+     * @tc.name testFloat64ArrayCopyWithin050
      * @tc.desc Verify copyWithin with negative and positive boundary values target=0 start=2 end=4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayCopyWithin051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayCopyWithin050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int32MaxValue: number = 2147483647;
       const negativeOne: number = -1;
       const arr = new Float64Array([-32768, -128, int32MaxValue, -1, -32767]);
@@ -1045,14 +1026,14 @@ export default function Float64ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_5200
-     * @tc.name testFloat64ArrayCopyWithin052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_5100
+     * @tc.name testFloat64ArrayCopyWithin051
      * @tc.desc Verify copyWithin with extreme values on 4-element array target=0 start=2 end=4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayCopyWithin052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayCopyWithin051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numberMaxValue: number = Number.MAX_VALUE;
       const numberMinValue: number = Number.MIN_VALUE;
       const arr = new Float64Array([numberMaxValue, numberMaxValue / 2.0, numberMaxValue, numberMinValue]);
@@ -1062,14 +1043,14 @@ export default function Float64ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_5300
-     * @tc.name testFloat64ArrayCopyWithin053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_5200
+     * @tc.name testFloat64ArrayCopyWithin052
      * @tc.desc Verify copyWithin with tiny values on 4-element array target=0 start=2 end=4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayCopyWithin053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayCopyWithin052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numberMinValue: number = Number.MIN_VALUE;
       const twoPointZero: number = 2.0;
       const arr =
@@ -1080,14 +1061,14 @@ export default function Float64ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_5400
-     * @tc.name testFloat64ArrayCopyWithin054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_5300
+     * @tc.name testFloat64ArrayCopyWithin053
      * @tc.desc Verify copyWithin with NaN and Infinity on 4-element array target=0 start=2 end=4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayCopyWithin054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayCopyWithin053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nanValue: number = Number.NaN;
       const negativeInfinity: number = Number.NEGATIVE_INFINITY;
       const positiveInfinity: number = Number.POSITIVE_INFINITY;
@@ -1099,14 +1080,14 @@ export default function Float64ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_5500
-     * @tc.name testFloat64ArrayCopyWithin055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_5400
+     * @tc.name testFloat64ArrayCopyWithin054
      * @tc.desc Verify copyWithin with NaN and Infinity values target=1 start=3 end=5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayCopyWithin055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayCopyWithin054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nanValue: number = Number.NaN;
       const negativeInfinity: number = Number.NEGATIVE_INFINITY;
       const positiveInfinity: number = Number.POSITIVE_INFINITY;
@@ -1123,14 +1104,14 @@ export default function Float64ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_5600
-     * @tc.name testFloat64ArrayCopyWithin056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_5500
+     * @tc.name testFloat64ArrayCopyWithin055
      * @tc.desc Verify copyWithin with hex literal values target=1 start=3 end=5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayCopyWithin056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayCopyWithin055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const hexValue7FFF: number = 0x7FFF;
       const hexValue8000: number = 0x8000;
       const hexValueFF: number = 0xFF;
@@ -1145,14 +1126,14 @@ export default function Float64ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_5700
-     * @tc.name testFloat64ArrayCopyWithin057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_5600
+     * @tc.name testFloat64ArrayCopyWithin056
      * @tc.desc Verify copyWithin with binary literal values on 5-element array target=0 start=2 end=4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayCopyWithin057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayCopyWithin056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const binaryValue1010: number = 0b1010;
       const binaryValue1111: number = 0b1111;
       const binaryValue1: number = 0b1;
@@ -1166,14 +1147,14 @@ export default function Float64ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_5800
-     * @tc.name testFloat64ArrayCopyWithin058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_5700
+     * @tc.name testFloat64ArrayCopyWithin057
      * @tc.desc Verify copyWithin with extreme values mixed with MIN_VALUE target=0 start=2 end=4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayCopyWithin058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayCopyWithin057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numberMaxValue: number = Number.MAX_VALUE;
       const numberMinValue: number = Number.MIN_VALUE;
       const arr =
@@ -1184,14 +1165,14 @@ export default function Float64ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_5900
-     * @tc.name testFloat64ArrayCopyWithin059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_5800
+     * @tc.name testFloat64ArrayCopyWithin058
      * @tc.desc Verify copyWithin with mixed precision values target=0 start=2 end=4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayCopyWithin059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayCopyWithin058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointOne: number = 0.1;
       const tinyValue1e20: number = 1e-20;
       const tinyValue1e21: number = 1e-21;
@@ -1202,14 +1183,14 @@ export default function Float64ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_6000
-     * @tc.name testFloat64ArrayCopyWithin060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_5900
+     * @tc.name testFloat64ArrayCopyWithin059
      * @tc.desc Verify copyWithin with hex literal values target=0 start=0 end=2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayCopyWithin060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayCopyWithin059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const hexValue7FFF: number = 0x7FFF;
       const hexValue8000: number = 0x8000;
       const hexValueFF: number = 0xFF;
@@ -1224,14 +1205,14 @@ export default function Float64ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_6100
-     * @tc.name testFloat64ArrayCopyWithin061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_6000
+     * @tc.name testFloat64ArrayCopyWithin060
      * @tc.desc Verify copyWithin with undefined end parameter treated as length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayCopyWithin061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayCopyWithin060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int32MinValue: number = -2147483648;
       const negativeOne: number = -1;
       const int16NegMaxValue: number = -32767;
@@ -1243,14 +1224,14 @@ export default function Float64ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_6200
-     * @tc.name testFloat64ArrayCopyWithin062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_6100
+     * @tc.name testFloat64ArrayCopyWithin061
      * @tc.desc Verify copyWithin with target=0 alone keeps array unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayCopyWithin062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayCopyWithin061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const hexValue7FFF: number = 0x7FFF;
       const hexValue8000: number = 0x8000;
       const hexValueFF: number = 0xFF;
@@ -1266,14 +1247,14 @@ export default function Float64ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_6300
-     * @tc.name testFloat64ArrayCopyWithin063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_6200
+     * @tc.name testFloat64ArrayCopyWithin062
      * @tc.desc Verify copyWithin with target=1 alone copies leading elements to tail
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayCopyWithin063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayCopyWithin062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointFive: number = 0.5;
       const onePointFive: number = 1.5;
       const piApprox: number = 3.14;
@@ -1286,14 +1267,14 @@ export default function Float64ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_6400
-     * @tc.name testFloat64ArrayCopyWithin064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_6300
+     * @tc.name testFloat64ArrayCopyWithin063
      * @tc.desc Verify copyWithin with extreme values and negative target
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayCopyWithin064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayCopyWithin063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numberMaxValue: number = Number.MAX_VALUE;
       const numberMinValue: number = Number.MIN_VALUE;
       const arr =
@@ -1304,14 +1285,14 @@ export default function Float64ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_6500
-     * @tc.name testFloat64ArrayCopyWithin065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_COPY_WITHIN_6400
+     * @tc.name testFloat64ArrayCopyWithin064
      * @tc.desc Verify copyWithin with NaN and Infinity values and negative target
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFloat64ArrayCopyWithin065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFloat64ArrayCopyWithin064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nanValue: number = Number.NaN;
       const negativeInfinity: number = Number.NEGATIVE_INFINITY;
       const positiveInfinity: number = Number.POSITIVE_INFINITY;
