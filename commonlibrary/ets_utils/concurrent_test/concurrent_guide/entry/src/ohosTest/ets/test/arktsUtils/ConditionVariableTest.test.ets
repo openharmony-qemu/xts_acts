@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2026 RKH Corp.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -83,8 +83,9 @@ export default function ConditionVariableTest(): void {
       let waitPromise: Promise<void> = cv2.wait().then(() => {
         notified = true
       })
-      // Use Promise.race to confirm waiter is pending without timer wait
-      await Promise.race([waitPromise, Promise.resolve()])
+      // Allow waiter to suspend before notify (avoid race with native wait)
+      await new Promise<void>(resolve => setTimeout(resolve, 500))
+      expect(notified).assertFalse()
       cv1.notifyOne()
       await waitPromise
       expect(notified).assertTrue()
@@ -131,6 +132,7 @@ export default function ConditionVariableTest(): void {
         completed = true
       } catch (e) {
         // waitFor should not throw on timeout
+        expect().assertFail()
       }
       expect(completed).assertTrue()
     })
@@ -236,14 +238,12 @@ export default function ConditionVariableTest(): void {
      */
     it('ConditionVariableTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let cv: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable()
-      let noError: boolean = true
       try {
         cv.notifyOne()
         cv.notifyAll()
       } catch (e) {
-        noError = false
+        expect().assertFail()
       }
-      expect(noError).assertTrue()
     })
 
     /**

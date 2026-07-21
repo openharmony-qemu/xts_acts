@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2026 RKH Corp.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -228,6 +228,7 @@ export default function AsyncLockTest(): void {
         expect().assertFail()
       } catch (e) {
         caughtError = true
+        // Callback throws plain Error (not system BusinessError with code)
         expect(e instanceof Error).assertTrue()
         expect((e as Error).name).assertEqual('Error')
         expect((e as Error).message).assertEqual('callback error')

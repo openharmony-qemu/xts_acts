@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2026 RKH Corp.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { ArkTSUtils, collections } from '@kit.ArkTS';
+import { BusinessError } from '@ohos.base';
 
 @Sendable
 class TestPerson {
@@ -145,7 +146,7 @@ export default function ASONTest(): void {
      * @tc.level  LEVEL1
      */
     it('ASONTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let jsonStr: string = '{"value":12345}'
+      let jsonStr: string = '{"value":112233445566778899}'
       let options: ArkTSUtils.ASON.ParseOptions = {
         bigIntMode: ArkTSUtils.ASON.BigIntMode.PARSE_AS_BIGINT,
         parseReturnType: ArkTSUtils.ASON.ParseReturnType.MAP
@@ -153,6 +154,7 @@ export default function ASONTest(): void {
       let result: collections.Map<string, bigint> =
         ArkTSUtils.ASON.parse(jsonStr, undefined, options) as collections.Map<string, bigint>
       expect(result.size).assertEqual(1)
+      expect(result.get('value') === 112233445566778899n).assertTrue()
     })
 
     /**
@@ -171,8 +173,13 @@ export default function ASONTest(): void {
         expect().assertFail()
       } catch (e) {
         caughtError = true
+        // Docs mention BusinessError 401; runtime and asonutilstest throw SyntaxError
         expect(e instanceof Error).assertTrue()
         expect((e as Error).name).assertEqual('SyntaxError')
+        let err: BusinessError = e as BusinessError
+        if (typeof err.code === 'number') {
+          expect(err.code).assertEqual(401)
+        }
       }
       expect(caughtError).assertTrue()
     })
