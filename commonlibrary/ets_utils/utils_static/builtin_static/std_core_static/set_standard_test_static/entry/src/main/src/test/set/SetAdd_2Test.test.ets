@@ -1990,3 +1990,1135 @@ export default function SetAdd_2Test(): void {
       set.add(1.0);
       expect(set.size).assertEqual(1);
     });
+
+    /**
+     * @tc.name testSetAdd120
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1200
+     * @tc.desc Verify negativeNaN
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<double>();
+      set.add(-Double.NaN);
+      expect(set.has(-Double.NaN)).assertTrue();
+      expect(set.has(Double.NaN)).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd121
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1210
+     * @tc.desc Verify ulp
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<double>();
+      set.add(Number.EPSILON / 2);
+      expect(set.has(Number.EPSILON / 2)).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd122
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1220
+     * @tc.desc Verify With backslash string add
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<string>();
+      set.add("test\\path");
+      expect(set.has("test\\path")).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd123
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1230
+     * @tc.desc Verify With quotes string add
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<string>();
+      set.add('他说“测试”');
+      expect(set.has('他说“测试”')).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd124
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1240
+     * @tc.desc Verify string Emoji string add (surrogate pair)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<string>();
+      set.add('😀测试');
+      expect(set.has('😀测试')).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd125
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1250
+     * @tc.desc Verify Control characters string add
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<string>();
+      set.add("");
+      expect(set.has("")).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd126
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1260
+     * @tc.desc Verify Private use area string add
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<string>();
+      set.add("");
+      expect(set.has("")).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd127
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1270
+     * @tc.desc Verify Surrogate pair string add
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<string>();
+      set.add("𐀀");
+      expect(set.has("𐀀")).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd128
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1280
+     * @tc.desc Verify Combining diacritics string add
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<string>();
+      set.add("à");
+      expect(set.has("à")).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd129
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1290
+     * @tc.desc Verify Math symbols string add
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<string>();
+      set.add('∑∏∫∂');
+      expect(set.has('∑∏∫∂')).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd130
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1300
+     * @tc.desc Verify Consecutive whitespace string add
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<string>();
+      set.add("a    b");
+      expect(set.has("a    b")).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd131
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1310
+     * @tc.desc Verify With leading/trailing spaces string add
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<string>();
+      set.add("  test  ");
+      expect(set.has("  test  ")).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd132
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1320
+     * @tc.desc Verify Case sensitivity verification
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<string>();
+      set.add("Hello");
+      expect(set.has("Hello")).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd133
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1330
+     * @tc.desc Verify Numeric string and number after conversion string comparison
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<string>();
+      set.add("123");
+      expect(set.has("123")).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd134
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1340
+     * @tc.desc Verify Boolean string comparison
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<string>();
+      set.add("true");
+      expect(set.has("true")).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd135
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1350
+     * @tc.desc Verify Hex escape characters add
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<string>();
+      set.add("\x48\x65\x6C\x6C\x6F");
+      expect(set.has("\x48\x65\x6C\x6C\x6F")).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd136
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1360
+     * @tc.desc Verify Add delete add round-trip operation verification
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<byte>();
+      set.add(1);
+      expect(set.has(1)).assertTrue();
+      expect(set.size).assertEqual(1);
+      set.delete(1);
+      expect(set.has(1)).assertFalse();
+      expect(set.size).assertEqual(0);
+      set.add(1);
+      expect(set.has(1)).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd137
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1370
+     * @tc.desc Verify add int.MinValue+1 boundary value
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>();
+      set.add(-2147483647);
+      expect(set.has(-2147483647)).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd138
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1380
+     * @tc.desc Verify add int.MaxValue-1 boundary value
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>();
+      set.add(2147483646);
+      expect(set.has(2147483646)).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd139
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1390
+     * @tc.desc Verify add long.MinValue+1 boundary value
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<long> = new Set<long>();
+      let nearMinLong: long = -9223372036854775807;
+      set.add(nearMinLong);
+      expect(set.has(nearMinLong)).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd140
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1400
+     * @tc.desc Verify add long.MaxValue-1 boundary value
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<long> = new Set<long>();
+      let nearMaxLong: long = 9223372036854775806;
+      set.add(nearMaxLong);
+      expect(set.has(nearMaxLong)).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd141
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1410
+     * @tc.desc Verify add -Float.MIN_VALUE boundary value
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<double>();
+      set.add(-1.4e-45);
+      expect(set.has(-1.4e-45)).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd142
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1420
+     * @tc.desc Verify copy via iteration
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set1 = new Set<int>([1, 2]);
+      let set2 = new Set<int>();
+      for (const v of set1) { set2.add(v); }
+      set2.add(3);
+      set2.add(4);
+      expect(set2.size).assertEqual(4);
+      expect(set2.has(1)).assertTrue();
+      expect(set2.has(4)).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetAdd143
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1430
+     * @tc.desc Verify generic unionType
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<int | string>();
+      set.add(1);
+      set.add("a");
+      expect(set.size).assertEqual(2);
+      expect(set.has(1)).assertTrue();
+      expect(set.has("a")).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetAdd144
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1440
+     * @tc.desc Verify add and has on Set\<int\>
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<int>();
+      set.add(42);
+      expect(set.has(42)).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetAdd145
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1450
+     * @tc.desc Verify sequentialMulti
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<int>();
+      for (let i: int = 0; i < 10; i++) {
+        set.add(i);
+      }
+      expect(set.size).assertEqual(10);
+    });
+
+    /**
+     * @tc.name testSetAdd146
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1460
+     * @tc.desc Verify largeSet
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<int>();
+      for (let i: int = 0; i < 1000; i++) {
+        set.add(i);
+      }
+      expect(set.size).assertEqual(1000);
+      expect(set.has(999)).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetAdd147
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1470
+     * @tc.desc Verify add Double.NaN
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const s: Set<double> = new Set<double>();
+      s.add(Double.NaN);
+      expect(s.has(Double.NaN)).assertTrue();
+      expect(s.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd148
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1480
+     * @tc.desc Verify add Double.POSITIVE_INFINITY
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const s: Set<double> = new Set<double>();
+      s.add(Double.POSITIVE_INFINITY);
+      expect(s.has(Double.POSITIVE_INFINITY)).assertTrue();
+      expect(s.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd149
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1490
+     * @tc.desc Verify add Double.NEGATIVE_INFINITY
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const s: Set<double> = new Set<double>();
+      s.add(Double.NEGATIVE_INFINITY);
+      expect(s.has(Double.NEGATIVE_INFINITY)).assertTrue();
+      expect(s.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd150
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1500
+     * @tc.desc Verify binary valueAndStatic
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const innerSet: Set<byte> = new Set<byte>();
+      innerSet.add(0b1010 as byte);
+      innerSet.add(-1 as byte);
+      innerSet.add(-1 as byte);
+      const outerSet: Set<Set<byte>> = new Set<Set<byte>>();
+      outerSet.add(innerSet);
+      expect(outerSet.size).assertEqual(1);
+      expect(outerSet.has(innerSet)).assertTrue();
+      let count = 0;
+      for (let s of outerSet.values()) {
+        count++;
+        expect(s.has(0b1010 as byte)).assertTrue();
+        expect(s.has(-1 as byte)).assertTrue();
+      }
+      expect(count).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd151
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1510
+     * @tc.desc Verify Set<Set<byte>> add
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const innerSet: Set<byte> = new Set<byte>();
+      innerSet.add(0b1010 as byte);
+      innerSet.add(-1 as byte);
+      const outerSet: Set<Set<byte>> = new Set<Set<byte>>([innerSet]);
+      expect(outerSet.size).assertEqual(1);
+      expect(outerSet.has(innerSet)).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetAdd152
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1520
+     * @tc.desc Verify Set<Set<byte>> add (no-arg)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const innerSet: Set<byte> = new Set<byte>();
+      innerSet.add(0b1010 as byte);
+      innerSet.add(-1 as byte);
+      const outerSet: Set<Set<byte>> = new Set<Set<byte>>();
+      outerSet.add(innerSet);
+
+      expect(outerSet.size).assertEqual(1);
+      expect(outerSet.has(innerSet)).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetAdd153
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1530
+     * @tc.desc Verify add Number.EPSILON * 2
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const s: Set<double> = new Set<double>();
+      s.add(Number.EPSILON * 2);
+      expect(s.has(Number.EPSILON * 2)).assertTrue();
+      expect(s.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd154
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1540
+     * @tc.desc Verify 1.0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const s: Set<double> = new Set<double>();
+      s.add(1.0);
+      expect(s.has(1.0)).assertTrue();
+      expect(s.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd155
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1550
+     * @tc.desc Verify returnThis
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>();
+      set.add(10);
+      const returned: Set<int> = set.add(20);
+      returned.add(30);
+      expect(set.size).assertEqual(3);
+      expect(set.has(10)).assertTrue();
+      expect(set.has(20)).assertTrue();
+      expect(set.has(30)).assertTrue();
+      set.add(2).add(3).add(4);
+      expect(set.size).assertEqual(6);
+    });
+
+    /**
+     * @tc.name testSetAdd156
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1560
+     * @tc.desc Verify add +0.0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const s: Set<double> = new Set<double>();
+      s.add(+0.0);
+      expect(s.has(+0.0)).assertTrue();
+      expect(s.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd157
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1570
+     * @tc.desc Verify add -0.0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const s: Set<double> = new Set<double>();
+      s.add(-0.0);
+      expect(s.has(-0.0)).assertTrue();
+      expect(s.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd158
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1580
+     * @tc.desc Verify add 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const s: Set<number> = new Set<number>();
+      s.add(0);
+      expect(s.has(0)).assertTrue();
+      expect(s.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd159
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1590
+     * @tc.desc Verify add -0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const s: Set<number> = new Set<number>();
+      s.add(-0);
+      expect(s.has(-0)).assertTrue();
+      expect(s.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd160
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1600
+     * @tc.desc Verify Set<float> chain add with Float.POSITIVE_INFINITY
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<float> = new Set<float>();
+      set.add(1.0 as float).add(Float.NEGATIVE_INFINITY).add(Float.POSITIVE_INFINITY);
+      expect(set.size).assertEqual(3);
+      expect(set.has(Float.NEGATIVE_INFINITY)).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetAdd161
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1610
+     * @tc.desc Verify chain call add(1).add(2).add(3).delete(2).has(1) returns set ref
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>();
+      set.add(1).add(2).add(3);
+      expect(set.delete(2)).assertTrue();
+      expect(set.has(1)).assertTrue();
+      expect(set.has(2)).assertFalse();
+      expect(set.has(3)).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetAdd162
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1620
+     * @tc.desc Verify Set<Date> add: same ref dedup, different ref same value NOT dedup
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<Date> = new Set<Date>();
+      const d = new Date(2025, 0, 1);
+      set.add(d);
+      set.add(d);
+      expect(set.size).assertEqual(1);
+      set.add(new Date(2025, 0, 1));
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testSetAdd163
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1630
+     * @tc.desc Verify Set<RegExp> add: literal vs constructor refs
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<RegExp> = new Set<RegExp>();
+      const r1 = new RegExp("abc");
+      const r2 = new RegExp("abc");
+      set.add(r1);
+      set.add(r2);
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testSetAdd164
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1640
+     * @tc.desc Verify Set<ObjTest> add: same ref dedup, different ref same value NOT dedup
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<ObjTest> = new Set<ObjTest>();
+      const obj = new ObjTest(1);
+      set.add(obj);
+      set.add(obj);
+      expect(set.size).assertEqual(1);
+      set.add(new ObjTest(1));
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testSetAdd165
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1650
+     * @tc.desc Verify Set<Map> add Map instances with ref semantics
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const m1 = new Map<string, number>();
+      m1.set('key', 42);
+      const m2 = new Map<string, number>();
+      m2.set('key', 42);
+      const set: Set<Map<string, number>> = new Set<Map<string, number>>();
+      set.add(m1);
+      set.add(m2);
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testSetAdd166
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1660
+     * @tc.desc Verify Set<Map> add Map instances
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const m1 = new Map<string, number>();
+      m1.set('key', 42);
+      const m2 = new Map<string, number>();
+      m2.set('key', 42);
+      const set: Set<Map<string, number>> = new Set<Map<string, number>>([m1, m2]);
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testSetAdd167
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1670
+     * @tc.desc Verify Set<Map> add Map instances with array constructor (no-arg add)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const m1 = new Map<string, number>();
+      m1.set('key', 42);
+      const m2 = new Map<string, number>();
+      m2.set('key', 42);
+      const set: Set<Map<string, number>> = new Set<Map<string, number>>();
+      set.add(m1);
+      set.add(m2);
+
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testSetAdd168
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1680
+     * @tc.desc Verify Set<Set<int>> nested Set add with ref semantics
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const outer: Set<Set<int>> = new Set<Set<int>>();
+      const s1 = new Set<int>([1, 2]);
+      const s2 = new Set<int>([1, 2]);
+      outer.add(s1);
+      outer.add(s2);
+      expect(outer.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testSetAdd169
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1690
+     * @tc.desc Verify Set<Set<int>> nested Set add with array constructor
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const s1 = new Set<int>([1, 2]);
+      const s2 = new Set<int>([1, 2]);
+      const outer: Set<Set<int>> = new Set<Set<int>>([s1, s2]);
+      expect(outer.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testSetAdd170
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1700
+     * @tc.desc Verify Set<Set<int>> nested Set add with array constructor (no-arg add)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const s1 = new Set<int>([1, 2]);
+      const s2 = new Set<int>([1, 2]);
+      const outer: Set<Set<int>> = new Set<Set<int>>();
+      outer.add(s1);
+      outer.add(s2);
+
+      expect(outer.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testSetAdd171
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1710
+     * @tc.desc Verify Set<Record> add with ref-based dedup
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<Record<string, int>> = new Set<Record<string, int>>();
+      const r1: Record<string, int> = { 'x': 1 };
+      const r2: Record<string, int> = { 'x': 1 };
+      set.add(r1);
+      set.add(r2);
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testSetAdd172
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1720
+     * @tc.desc Verify Set<Record> add
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: Record<string, int> = { 'x': 1 };
+      const r2: Record<string, int> = { 'x': 1 };
+      const s: Set<Record<string, int>> = new Set<Record<string, int>>([r1, r2]);
+      expect(s.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testSetAdd173
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1730
+     * @tc.desc Verify Set<Record> add with array constructor (no-arg add)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: Record<string, int> = { 'x': 1 };
+      const r2: Record<string, int> = { 'x': 1 };
+      const s: Set<Record<string, int>> = new Set<Record<string, int>>();
+      s.add(r1);
+      s.add(r2);
+
+      expect(s.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testSetAdd174
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1740
+     * @tc.desc Verify Set<Int8Array> add TypedArray with ref semantics
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<Int8Array> = new Set<Int8Array>();
+      const a1 = new Int8Array([1, 2]);
+      const a2 = new Int8Array([1, 2]);
+      set.add(a1);
+      set.add(a2);
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testSetAdd175
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1750
+     * @tc.desc Verify Set<WeakMap> add WeakMap instances
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<WeakMap<object, number>> = new Set<WeakMap<object, number>>();
+      const wm = new WeakMap<object, number>();
+      set.add(wm);
+      set.add(wm);
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd176
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1760
+     * @tc.desc Verify Set<WeakSet> add WeakSet instances
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<WeakSet<object>> = new Set<WeakSet<object>>();
+      const ws = new WeakSet<object>();
+      set.add(ws);
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd177
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1770
+     * @tc.desc Verify Set<Error> add Error instances: same ref dedup, different ref NOT dedup
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<Error> = new Set<Error>();
+      const e1 = new Error('msg');
+      const e2 = new Error('msg');
+      set.add(e1);
+      set.add(e2);
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testSetAdd178
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1780
+     * @tc.desc Verify Set<Set<Set<int>>> triple nested Set add
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const l3: Set<Set<Set<int>>> = new Set<Set<Set<int>>>();
+      const inner: Set<int> = new Set<int>([1, 2]);
+      const mid: Set<Set<int>> = new Set<Set<int>>();
+      mid.add(inner);
+      l3.add(mid);
+      expect(l3.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd179
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1790
+     * @tc.desc Verify Set<Map<string, Set<int>>> mixed generic nesting
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<Map<string, Set<int>>> = new Set<Map<string, Set<int>>>();
+      const inner: Set<int> = new Set<int>([1, 2]);
+      const m: Map<string, Set<int>> = new Map<string, Set<int>>();
+      m.set('key', inner);
+      set.add(m);
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd180
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1800
+     * @tc.desc Verify Set<number[]> add array-typed elements
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<number[]> = new Set<number[]>();
+      const a1: number[] = [1, 2, 3];
+      const a2: number[] = [1, 2, 3];
+      set.add(a1);
+      set.add(a2);
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testSetAdd181
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1810
+     * @tc.desc Verify Set<Promise<Set<int>>> nested Promise generic
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<Promise<Set<int>>> = new Set<Promise<Set<int>>>();
+      const inner: Set<int> = new Set<int>([42]);
+      const p: Promise<Set<int>> = Promise.resolve(inner);
+      set.add(p);
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd182
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1820
+     * @tc.desc Verify Set<Record<string, number[]>> Record with array value
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<Record<string, number[]>> = new Set<Record<string, number[]>>();
+      const r1: Record<string, number[]> = { 'a': [1, 2] };
+      const r2: Record<string, number[]> = { 'a': [1, 2] };
+      set.add(r1);
+      set.add(r2);
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testSetAdd183
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1830
+     * @tc.desc Verify Set<bigint> add with value dedup and BigInt constructor from hex
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<bigint> = new Set<bigint>();
+      set.add(0n);
+      set.add(1n);
+      set.add(BigInt(0xFF));
+      set.add(1n);
+      expect(set.size).assertEqual(3);
+      expect(set.has(BigInt(0xFF))).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetAdd184
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1840
+     * @tc.desc Verify Set<char> add single chars and Unicode with c prefix
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<char> = new Set<char>();
+      set.add(c'a');
+      set.add(c'中');
+      set.add(c'\n');
+      expect(set.size).assertEqual(3);
+    });
+
+    /**
+     * @tc.name testSetAdd185
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1850
+     * @tc.desc Verify Set<char> dedup same char value
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<char> = new Set<char>();
+      set.add(c'Z');
+      set.add(c'Z');
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd186
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1860
+     * @tc.desc Verify Set<char> chain add with digit and letter chars
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<char> = new Set<char>();
+      set.add(c'0').add(c'A').add(c'z');
+      expect(set.size).assertEqual(3);
+    });
+
+    /**
+     * @tc.name testSetAdd187
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1870
+     * @tc.desc Verify Set<object> add POJO: same ref dedup, different refs counted
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<object> = new Set<object>();
+      const obj1: object = new ObjTest(1);
+      const obj2: object = new ObjTest(1);
+      set.add(obj1);
+      set.add(obj1);
+      set.add(obj2);
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testSetAdd188
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SETADD_P1_1880
+     * @tc.desc Verify Set<jsonx.JsonElement> add JSON parsed objects: same ref dedup
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<jsonx.JsonElement> = new Set<jsonx.JsonElement>();
+      const j1: jsonx.JsonElement = JSON.parseJsonElement('{"a":1}');
+      const j2: jsonx.JsonElement = JSON.parseJsonElement('{"a":1}');
+      set.add(j1);
+      set.add(j1);
+      set.add(j2);
+      expect(set.size).assertEqual(2);
+    });
+  });
+}
+
