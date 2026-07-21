@@ -105,6 +105,7 @@ export async function createEchoWorkerExchange(path: string): Promise<WorkerExch
   let exchange: WorkerExchange = new WorkerExchange(wk)
   let resp: string = await exchange.sendString(WORKER_READY_PROBE)
   if (resp !== ECHO_WORKER_READY) {
+    await exchange.terminate()
     throw new Error('EchoWorker not ready')
   }
   return exchange
@@ -116,6 +117,7 @@ export async function createTaskTypeWorkerExchange(path: string): Promise<Worker
   let readyReq: WorkerReadyRequest = new WorkerReadyRequest()
   let resp: Record<string, Object> = await exchange.send(readyReq) as Record<string, Object>
   if ((resp['type'] as string) !== OBJECT_WORKER_READY) {
+    await exchange.terminate()
     throw new Error('TaskTypeWorker not ready')
   }
   return exchange
@@ -127,6 +129,7 @@ export async function createInvokeWorkerExchange(path: string): Promise<WorkerEx
   let readyReq: WorkerReadyRequest = new WorkerReadyRequest()
   let resp: Record<string, Object> = await exchange.send(readyReq) as Record<string, Object>
   if ((resp['type'] as string) !== OBJECT_WORKER_READY) {
+    await exchange.terminate()
     throw new Error('InvokeWorker not ready')
   }
   return exchange

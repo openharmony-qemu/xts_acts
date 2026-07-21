@@ -256,7 +256,7 @@ export default function WorkerCommunicationTest(): void {
       let mulData: Record<string, Object> = await exchange.send(new CalculateRequest(7, 8, 'multiply')) as Record<string, Object>
       expect(mulData['value'] as number).assertEqual(56)
       let echoData: Record<string, Object> = await exchange.send(new EchoRequest('hello_worker')) as Record<string, Object>
-      expect((echoData['type'] as string) === 'echo_response').assertTrue()
+      expect(echoData['type'] as string).assertEqual('echo_response')
       expect(echoData['payload'] as string).assertEqual('hello_worker')
       await exchange.terminate()
       currentWorker = null
