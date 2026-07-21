@@ -1988,3 +1988,1638 @@ export default function SetConstructor4_2Test(): void {
       set.add('x');
       expect(set.size).assertEqual(1);
     });
+
+    /**
+     * @tc.name testConstructor4_119
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1190
+     * @tc.desc Verify Set<ObjTest> with bucket count handles single element
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<ObjTest> = new Set<ObjTest>(16);
+      set.add(new ObjTest(1));
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testConstructor4_120
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1200
+     * @tc.desc Verify Set<byte> with bucket count handles byte overflow truncation via as-byte narrowing
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<byte> = new Set<byte>(16);
+      set.add(-128 as byte);
+      set.add(127 as byte);
+      expect(set.has(-128 as byte)).assertTrue();
+      expect(set.has(127 as byte)).assertTrue();
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testConstructor4_121
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1210
+     * @tc.desc Verify Set<short> with bucket count handles short overflow truncation via as-short narrowing
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<short> = new Set<short>(16);
+      set.add(-32768 as short);
+      set.add(32767 as short);
+      expect(set.has(-32768 as short)).assertTrue();
+      expect(set.has(32767 as short)).assertTrue();
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testConstructor4_122
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1220
+     * @tc.desc Verify Set with bucket count handles custom class as generic parameter
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj = new ObjTest(1);
+      const set: Set<ObjTest> = new Set<ObjTest>(16);
+      set.add(obj);
+      expect(set.has(obj)).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testConstructor4_123
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1230
+     * @tc.desc Verify Set with bucket count handles multiple custom class instances
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const o1 = new ObjTest(1);
+      const o2 = new ObjTest(1);
+      const o3 = new ObjTest(1);
+      const set: Set<ObjTest> = new Set<ObjTest>(16);
+      set.add(o1);
+      set.add(o2);
+      set.add(o3);
+      expect(set.size).assertEqual(3);
+      expect(set.has(o2)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_124
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1240
+     * @tc.desc Verify Set with bucket count deduplicates same custom class reference
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj = new ObjTest(1);
+      const set: Set<ObjTest> = new Set<ObjTest>(32);
+      set.add(obj);
+      set.add(obj);
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testConstructor4_125
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1250
+     * @tc.desc Verify Set<int> with bucket count constructed then populated from array
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(32);
+      for (const v of [1, 2, 3, 4, 5]) {
+        set.add(v);
+      }
+      expect(set.size).assertEqual(5);
+    });
+
+    /**
+     * @tc.name testConstructor4_126
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1260
+     * @tc.desc Verify Set<int> with bucket count created and spread into array
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(16);
+      set.add(1);
+      set.add(2);
+      set.add(3);
+      const arr: number[] = [];
+      for (const v of set) { arr.push(v); }
+      expect(arr.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.name testConstructor4_127
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1270
+     * @tc.desc Verify Set<double> with bucket count handles scientific notation values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<double> = new Set<double>(16);
+      set.add(1.0e5);
+      set.add(1.0e-5);
+      set.add(3.0e10);
+      expect(set.size).assertEqual(3);
+      expect(set.has(1.0e5)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_128
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1280
+     * @tc.desc Verify Set<double> with bucket count handles -0.0 and 0.0 as same value
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<double> = new Set<double>(16);
+      set.add(0.0);
+      set.add(-0.0);
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testConstructor4_129
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1290
+     * @tc.desc Verify Set<int> with various bucket counts all work correctly
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const s4: Set<int> = new Set<int>(4);
+      const s8: Set<int> = new Set<int>(8);
+      const s16: Set<int> = new Set<int>(16);
+      const s32: Set<int> = new Set<int>(32);
+      const s64: Set<int> = new Set<int>(64);
+      s4.add(1); s8.add(1); s16.add(1); s32.add(1); s64.add(1);
+      expect(s4.size).assertEqual(1);
+      expect(s8.size).assertEqual(1);
+      expect(s16.size).assertEqual(1);
+      expect(s32.size).assertEqual(1);
+      expect(s64.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testConstructor4_130
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1300
+     * @tc.desc Verify Set<byte> with bucket count handles -128 minimum byte value
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<byte> = new Set<byte>(16);
+      set.add(-128 as byte);
+      expect(set.has(-128 as byte)).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testConstructor4_131
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1310
+     * @tc.desc Verify Set<byte> with bucket count handles 127 maximum byte value
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<byte> = new Set<byte>(16);
+      set.add(127);
+      expect(set.has(127)).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testConstructor4_132
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1320
+     * @tc.desc Verify Set<short> with bucket count handles -32768 minimum short value
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<short> = new Set<short>(16);
+      set.add(-32768);
+      expect(set.has(-32768)).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testConstructor4_133
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1330
+     * @tc.desc Verify Set<short> with bucket count handles 32767 maximum short value
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<short> = new Set<short>(16);
+      set.add(32767);
+      expect(set.has(32767)).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testConstructor4_134
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1340
+     * @tc.desc Verify Set<int> with all common bucket sizes produces correct behavior
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const sizes: int[] = [0, 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024];
+      for (const s of sizes) {
+        const set: Set<int> = new Set<int>(s);
+        set.add(42);
+        expect(set.has(42)).assertTrue();
+        expect(set.size).assertEqual(1);
+      }
+    });
+
+    /**
+     * @tc.name testConstructor4_135
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1350
+     * @tc.desc Verify Set<string> with all common bucket sizes
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const sizes: int[] = [0, 1, 2, 4, 8, 16, 32, 64, 128];
+      for (const s of sizes) {
+        const set: Set<string> = new Set<string>(s);
+        set.add("test");
+        expect(set.has("test")).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name testConstructor4_136
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1360
+     * @tc.desc Verify Set<int> reuse after clear with bucket count
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(32);
+      set.add(1);
+      set.add(2);
+      set.clear();
+      expect(set.size).assertEqual(0);
+      set.add(3);
+      set.add(4);
+      expect(set.size).assertEqual(2);
+      expect(set.has(3)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_137
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1370
+     * @tc.desc Verify Set<int> delete non-existent element after construction
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(32);
+      set.add(1);
+      const result: boolean = set.delete(999);
+      expect(result).assertFalse();
+      expect(set.size).assertEqual(1);
+      set.add(999);
+      expect(set.has(999)).assertTrue();
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testConstructor4_138
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1380
+     * @tc.desc Verify Set<int> add and delete sequence after construction
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(16);
+      set.add(1);
+      set.add(2);
+      set.add(3);
+      set.delete(2);
+      expect(set.size).assertEqual(2);
+      set.add(4);
+      expect(set.size).assertEqual(3);
+      set.delete(1);
+      set.delete(3);
+      expect(set.size).assertEqual(1);
+      expect(set.has(4)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_139
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1390
+     * @tc.desc Verify Set<long> with bucket count handles large values via as-long narrowing
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<long> = new Set<long>(16);
+      set.add(1000 as long);
+      set.add(2000 as long);
+      set.add(3000 as long);
+      expect(set.size).assertEqual(3);
+      expect(set.has(1000 as long)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_140
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1400
+     * @tc.desc Verify Set<int> values() after construction with bucket count
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(16);
+      set.add(10);
+      set.add(20);
+      const result: number[] = [];
+      for (const v of set.values()) {
+        result.push(v);
+      }
+      expect(result.length).assertEqual(2);
+      expect(result[0]).assertEqual(10);
+    });
+
+    /**
+     * @tc.name testConstructor4_141
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1410
+     * @tc.desc Verify Set<int> keys() after construction with bucket count
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(16);
+      set.add(100);
+      set.add(200);
+      const keys: number[] = [];
+      for (const k of set.keys()) {
+        keys.push(k);
+      }
+      expect(keys.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testConstructor4_142
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1420
+     * @tc.desc Verify Set<int> entries() after construction with bucket count
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(16);
+      set.add(1);
+      set.add(2);
+      set.add(3);
+      let count: int = 0;
+      for (const e of set.entries()) {
+        expect(e[0]).assertEqual(e[1]);
+        count++;
+      }
+      expect(count).assertEqual(3);
+    });
+
+    /**
+     * @tc.name testConstructor4_143
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1430
+     * @tc.desc Verify Set<int> with bucket count can be converted via Array.from
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(16);
+      set.add(1);
+      set.add(2);
+      const arr: int[] = Array.from(set);
+      expect(arr.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testConstructor4_144
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1440
+     * @tc.desc Verify Set<string> with bucket count handles concatenated string elements
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<string> = new Set<string>(16);
+      set.add("a" + "b");
+      set.add("hello " + "world");
+      expect(set.size).assertEqual(2);
+      expect(set.has("ab")).assertTrue();
+      expect(set.has("hello world")).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_145
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1450
+     * @tc.desc Verify Set<string> with bucket count handles string interpolation
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<string> = new Set<string>(16);
+      const val: long = 42;
+      set.add("value is " + val.toString());
+      expect(set.has("value is 42")).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testConstructor4_146
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1460
+     * @tc.desc Verify Set<byte> with bucket count handles all byte boundary values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<byte> = new Set<byte>(32);
+      set.add(-128 as byte);
+      set.add(-1);
+      set.add(0);
+      set.add(1);
+      set.add(127);
+      expect(set.size).assertEqual(5);
+    });
+
+    /**
+     * @tc.name testConstructor4_147
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1470
+     * @tc.desc Verify Set<short> with bucket count handles all short boundary values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<short> = new Set<short>(32);
+      set.add(-32768);
+      set.add(-1);
+      set.add(0);
+      set.add(1);
+      set.add(32767);
+      expect(set.size).assertEqual(5);
+    });
+
+    /**
+     * @tc.name testConstructor4_148
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1480
+     * @tc.desc Verify Set<int> with bucket count handles all int boundary values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(32);
+      set.add(Int.MIN_VALUE);
+      set.add(-1);
+      set.add(0);
+      set.add(1);
+      set.add(2147483647);
+      expect(set.size).assertEqual(5);
+    });
+
+    /**
+     * @tc.name testConstructor4_149
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1490
+     * @tc.desc Verify Set<long> with bucket count handles all long boundary values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<long> = new Set<long>(32);
+      set.add(-9223372036854775807 - 1);
+      const n1: long = -1;
+      const z: long = 0;
+      const p1: long = 1;
+      set.add(n1);
+      set.add(z);
+      set.add(p1);
+      set.add(9223372036854775807);
+      expect(set.size).assertEqual(5);
+    });
+
+    /**
+     * @tc.name testConstructor4_150
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1500
+     * @tc.desc Verify Set<double> bucket count, Number.MIN_VALUE
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<double> = new Set<double>(32);
+      set.add(Number.MIN_VALUE);
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testConstructor4_151
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1510
+     * @tc.desc Verify Set<double> bucket count, Number.MAX_VALUE
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<double> = new Set<double>(32);
+      set.add(Number.MAX_VALUE);
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testConstructor4_152
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1520
+     * @tc.desc Verify Set<double> edge cases with Number.MAX_VALUE
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<double> = new Set<double>(16);
+      set.add(Number.MAX_VALUE);
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testConstructor4_153
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1530
+     * @tc.desc Verify Set<double> edge cases with Number.MIN_VALUE
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<double> = new Set<double>(16);
+      set.add(Number.MIN_VALUE);
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testConstructor4_154
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1540
+     * @tc.desc Verify Set<int> with bucket count handles many dense values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(32);
+      for (let i: int = 0; i < 50; i++) {
+        set.add(i);
+      }
+      expect(set.size).assertEqual(50);
+      expect(set.has(0)).assertTrue();
+      expect(set.has(49)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_155
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1550
+     * @tc.desc Verify Set<int> with bucket count handles int values from bitwise ops
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(16);
+      set.add(1 | 2);
+      set.add(7 & 3);
+      set.add(1 << 3);
+      set.add(16 >> 2);
+      expect(set.size).assertEqual(3);
+      expect(set.has(3)).assertTrue();
+      expect(set.has(8)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_156
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1560
+     * @tc.desc Verify Set<int> with bucket count handles int values from arithmetic
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(16);
+      set.add(10 + 20);
+      set.add(100 - 50);
+      set.add(6 * 7);
+      set.add(100 / 3);
+      set.add(100 % 7);
+      expect(set.size).assertEqual(5);
+      expect(set.has(30)).assertTrue();
+      expect(set.has(42)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_157
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1570
+     * @tc.desc Verify Set<int> with bucket count handles negated int values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(16);
+      set.add(-42);
+      set.add(-(-42));
+      expect(set.size).assertEqual(2);
+      expect(set.has(-42)).assertTrue();
+      expect(set.has(42)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_158
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1580
+     * @tc.desc Verify Set<long> with bucket count handles long arithmetic results
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<long> = new Set<long>(16);
+      const a: long = 100;
+      const b: long = 200;
+      const c: long = 1000;
+      const d: long = 500;
+      const e: long = 50;
+      const f: long = 3;
+      const g: long = 1000;
+      set.add(a + b);
+      set.add(c - d);
+      set.add(e * f);
+      set.add(g / f);
+      expect(set.size).assertEqual(4);
+    });
+
+    /**
+     * @tc.name testConstructor4_159
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1590
+     * @tc.desc Verify Set<double> with bucket count handles float math results
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<double> = new Set<double>(16);
+      set.add(1.0 + 2.0);
+      set.add(10.0 / 3.0);
+      set.add(2.0 * 3.0);
+      expect(set.size).assertEqual(3);
+      expect(set.has(6.0)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_160
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1600
+     * @tc.desc Verify Set<int> supports for-of iteration protocol
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(16);
+      set.add(1);
+      set.add(2);
+      set.add(3);
+      let sum: number = 0;
+      for (const v of set) {
+        sum += v;
+      }
+      expect(sum).assertEqual(6);
+    });
+
+    /**
+     * @tc.name testConstructor4_161
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1610
+     * @tc.desc Verify Set<int> with bucket count supports destructuring
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(16);
+      set.add(10);
+      set.add(20);
+      set.add(30);
+      const arr: int[] = [];
+      for (const v of set) { arr.push(v); }
+      expect(arr.length).assertEqual(3);
+      expect(arr[0]).assertEqual(10);
+    });
+
+    /**
+     * @tc.name testConstructor4_162
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1620
+     * @tc.desc Verify Set<string> with bucket count handles trimmed string values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<string> = new Set<string>(16);
+      set.add("  hello  ".trim());
+      set.add("world".trim());
+      expect(set.size).assertEqual(2);
+      expect(set.has("hello")).assertTrue();
+      expect(set.has("world")).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_163
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1630
+     * @tc.desc Verify Set<string> with bucket count handles substring results
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<string> = new Set<string>(16);
+      set.add("abcdef".substring(0, 3));
+      set.add("abcdef".substring(3, 6));
+      expect(set.size).assertEqual(2);
+      expect(set.has("abc")).assertTrue();
+      expect(set.has("def")).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_164
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1640
+     * @tc.desc Verify Set<string> with bucket count handles case conversion results
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<string> = new Set<string>(16);
+      set.add("Hello".toUpperCase());
+      set.add("HELLO".toLowerCase());
+      expect(set.size).assertEqual(2);
+      expect(set.has("HELLO")).assertTrue();
+      expect(set.has("hello")).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_165
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1650
+     * @tc.desc Verify Set<string> with bucket count handles string replace results
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<string> = new Set<string>(16);
+      set.add("hello world".replace("world", "there"));
+      expect(set.has("hello there")).assertTrue();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testConstructor4_166
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1660
+     * @tc.desc Verify Set<int> with small bucket count
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(1);
+      set.add(1);
+      set.add(2);
+      set.add(3);
+      expect(set.size).assertEqual(3);
+    });
+
+    /**
+     * @tc.name testConstructor4_167
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1670
+     * @tc.desc Verify Set<int> with large bucket count
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(10000);
+      set.add(1);
+      set.add(2);
+      set.add(3);
+      expect(set.size).assertEqual(3);
+    });
+
+    /**
+     * @tc.name testConstructor4_168
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1680
+     * @tc.desc Verify Set<int> with prime bucket count
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(97);
+      set.add(1);
+      set.add(2);
+      set.add(3);
+      expect(set.size).assertEqual(3);
+    });
+
+    /**
+     * @tc.name testConstructor4_169
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1690
+     * @tc.desc Verify Set<int> with power of two bucket count
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(1024);
+      set.add(1);
+      set.add(2);
+      set.add(3);
+      expect(set.size).assertEqual(3);
+    });
+
+    /**
+     * @tc.name testConstructor4_170
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1700
+     * @tc.desc Verify Set<int> with bucket count 64
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(64);
+      for (let i: int = 0; i < 64; i++) {
+        set.add(i);
+      }
+      expect(set.size).assertEqual(64);
+    });
+
+    /**
+     * @tc.name testConstructor4_171
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1710
+     * @tc.desc Verify Set<int> with bucket count 128
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(128);
+      for (let i: int = 0; i < 128; i++) {
+        set.add(i);
+      }
+      expect(set.size).assertEqual(128);
+    });
+
+    /**
+     * @tc.name testConstructor4_172
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1720
+     * @tc.desc Verify Set<int> with many hash collisions using same bucket
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(16);
+      for (let i: int = 0; i < 1000; i += 16) {
+        set.add(i);
+      }
+      expect(set.size).assertEqual(63);
+    });
+
+    /**
+     * @tc.name testConstructor4_173
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1730
+     * @tc.desc Verify Set<int> with negative bucket count
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(-1);
+      set.add(1);
+      expect(set.size).assertEqual(1);
+      expect(set.has(1)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_174
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1740
+     * @tc.desc Verify Set<int> with zero bucket count
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(0);
+      set.add(1);
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testConstructor4_175
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1750
+     * @tc.desc Verify Set<double> with bucket count handles negative scientific notation
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<double> = new Set<double>(16);
+      set.add(-1.5e2);
+      set.add(-3.14e1);
+      set.add(-2.0e0);
+      expect(set.size).assertEqual(3);
+    });
+
+    /**
+     * @tc.name testConstructor4_176
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1760
+     * @tc.desc Verify Set<double> with bucket count handles various scientific powers
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<double> = new Set<double>(16);
+      set.add(1e0);
+      set.add(1e1);
+      set.add(1e2);
+      set.add(1e3);
+      set.add(1e-1);
+      set.add(1e-2);
+      expect(set.size).assertEqual(6);
+    });
+
+    /**
+     * @tc.name testConstructor4_177
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1770
+     * @tc.desc Verify Set<byte> with bucket count handles hex byte literals
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<byte> = new Set<byte>(16);
+      set.add(0x00);
+      set.add(0x0F);
+      set.add(-1 as byte);
+      expect(set.size).assertEqual(3);
+    });
+
+    /**
+     * @tc.name testConstructor4_178
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1780
+     * @tc.desc Verify Set<short> with bucket count handles hex/octal short literals
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<short> = new Set<short>(16);
+      set.add(0x7FFF);
+      set.add(0x0000);
+      set.add(0o7777);
+      expect(set.size).assertEqual(3);
+    });
+
+    /**
+     * @tc.name testConstructor4_179
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1790
+     * @tc.desc Verify Set<long> with bucket count handles hex/octal/binary long literals
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<long> = new Set<long>(16);
+      set.add(0xDEADBEEF);
+      set.add(0o77777777);
+      set.add(0b10101010);
+      expect(set.size).assertEqual(3);
+    });
+
+    /**
+     * @tc.name testConstructor4_180
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1800
+     * @tc.desc Verify Set<int> hashCode consistency after bucket count construction
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set1: Set<int> = new Set<int>(16);
+      const set2: Set<int> = new Set<int>(16);
+      set1.add(42);
+      set2.add(42);
+      expect(set1.has(42)).assertTrue();
+      expect(set2.has(42)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_181
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1810
+     * @tc.desc Verify Set<int> with bucket count supports spread to array
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(16);
+      set.add(10);
+      set.add(20);
+      set.add(30);
+      const arr: int[] = [];
+      for (const v of set) { arr.push(v); }
+      expect(arr.length).assertEqual(3);
+      expect(arr.includes(10)).assertTrue();
+      expect(arr.includes(20)).assertTrue();
+      expect(arr.includes(30)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_182
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1820
+     * @tc.desc Verify Set<int> operations after delete
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(16);
+      set.add(1);
+      set.add(2);
+      set.add(3);
+      set.delete(2);
+      expect(set.size).assertEqual(2);
+      expect(set.has(1)).assertTrue();
+      expect(set.has(3)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_183
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1830
+     * @tc.desc Verify Set<int> operations after clear
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(16);
+      set.add(1);
+      set.add(2);
+      set.add(3);
+      set.clear();
+      expect(set.size).assertEqual(0);
+      set.add(4);
+      expect(set.size).assertEqual(1);
+      expect(set.has(4)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_184
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1840
+     * @tc.desc Verify conversion from Set<int> to Array
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(16);
+      set.add(5);
+      set.add(10);
+      set.add(15);
+      const arr: int[] = Array.from(set);
+      expect(arr.length).assertEqual(3);
+      expect(arr[0]).assertEqual(5);
+    });
+
+    /**
+     * @tc.name testConstructor4_185
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1850
+     * @tc.desc Verify subset check simulation between two Set<int>
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const setA: Set<int> = new Set<int>(16);
+      const setB: Set<int> = new Set<int>(16);
+      for (let i: int = 0; i < 5; i++) {
+        setA.add(i);
+      }
+      for (let i: int = 0; i < 10; i++) {
+        setB.add(i);
+      }
+      let allInB: boolean = true;
+      for (const v of setA) {
+        if (!setB.has(v)) {
+          allInB = false;
+          break;
+        }
+      }
+      expect(allInB).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_186
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1860
+     * @tc.desc Verify union simulation between two Set<int>
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const setA: Set<int> = new Set<int>(16);
+      const setB: Set<int> = new Set<int>(16);
+      setA.add(1);
+      setA.add(2);
+      setA.add(3);
+      setB.add(3);
+      setB.add(4);
+      setB.add(5);
+      const union: Set<int> = new Set<int>(32);
+      for (const v of setA) {
+        union.add(v);
+      }
+      for (const v of setB) {
+        union.add(v);
+      }
+      expect(union.size).assertEqual(5);
+    });
+
+    /**
+     * @tc.name testConstructor4_187
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1870
+     * @tc.desc Verify intersection simulation between two Set<int>
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const setA: Set<int> = new Set<int>(16);
+      const setB: Set<int> = new Set<int>(16);
+      setA.add(1);
+      setA.add(2);
+      setA.add(3);
+      setB.add(2);
+      setB.add(3);
+      setB.add(4);
+      const intersection: Set<int> = new Set<int>(16);
+      for (const v of setA) {
+        if (setB.has(v)) {
+          intersection.add(v);
+        }
+      }
+      expect(intersection.size).assertEqual(2);
+      expect(intersection.has(2)).assertTrue();
+      expect(intersection.has(3)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_188
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1880
+     * @tc.desc Verify difference simulation between two Set<int>
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const setA: Set<int> = new Set<int>(16);
+      const setB: Set<int> = new Set<int>(16);
+      setA.add(1);
+      setA.add(2);
+      setA.add(3);
+      setB.add(2);
+      setB.add(3);
+      setB.add(4);
+      const diff: Set<int> = new Set<int>(16);
+      for (const v of setA) {
+        if (!setB.has(v)) {
+          diff.add(v);
+        }
+      }
+      expect(diff.size).assertEqual(1);
+      expect(diff.has(1)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_189
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1890
+     * @tc.desc Verify symmetric difference between two Set<int>
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const setA: Set<int> = new Set<int>(16);
+      const setB: Set<int> = new Set<int>(16);
+      setA.add(1);
+      setA.add(2);
+      setB.add(2);
+      setB.add(3);
+      const symDiff: Set<int> = new Set<int>(16);
+      for (const v of setA) {
+        if (!setB.has(v)) {
+          symDiff.add(v);
+        }
+      }
+      for (const v of setB) {
+        if (!setA.has(v)) {
+          symDiff.add(v);
+        }
+      }
+      expect(symDiff.size).assertEqual(2);
+      expect(symDiff.has(1)).assertTrue();
+      expect(symDiff.has(3)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_190
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1900
+     * @tc.desc Verify Set<int> has after adding duplicate value
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(16);
+      set.add(1);
+      set.add(1);
+      expect(set.size).assertEqual(1);
+      expect(set.has(1)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_191
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1910
+     * @tc.desc Verify Set<int> copy construct via entries iterable
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const src: Set<int> = new Set<int>(16);
+      src.add(1);
+      src.add(2);
+      src.add(3);
+      const dest: Set<int> = new Set<int>(src);
+      expect(dest.size).assertEqual(3);
+      expect(dest.has(1)).assertTrue();
+      expect(dest.has(2)).assertTrue();
+      expect(dest.has(3)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_192
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1920
+     * @tc.desc Verify constructing Set<int> from Array<int>
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: int[] = [1, 2, 3, 4, 5];
+      const set: Set<int> = new Set<int>(arr);
+      expect(set.size).assertEqual(5);
+      expect(set.has(1)).assertTrue();
+      expect(set.has(5)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_193
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1930
+     * @tc.desc Verify constructing Set<int> from Array<int> with bucket count
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: int[] = [1, 2, 3, 4, 5];
+      const set: Set<int> = new Set<int>(32);
+      for (const v of arr) {
+        set.add(v);
+      }
+      expect(set.size).assertEqual(5);
+    });
+
+    /**
+     * @tc.name testConstructor4_194
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1940
+     * @tc.desc Verify converting empty Set<int> to array
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<int> = new Set<int>(16);
+      const arr: int[] = [];
+      for (const v of set) { arr.push(v); }
+      expect(arr.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.name testConstructor4_195
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1950
+     * @tc.desc Verify constructing Set<string> from string array with bucket count
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_195', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: string[] = ["a", "b", "c"];
+      const set: Set<string> = new Set<string>(arr);
+      expect(set.size).assertEqual(3);
+      expect(set.has("a")).assertTrue();
+      expect(set.has("c")).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_196
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1960
+     * @tc.desc Verify constructor with union type Set<string | int> combining string and int elements
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<string | int> = new Set<string | int>(["hello", 42, "world"]);
+      expect(set.size).assertEqual(3);
+      expect(set.has("hello")).assertTrue();
+      expect(set.has(42)).assertTrue();
+      expect(set.has("world")).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_197
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1970
+     * @tc.desc Verify Set<float> bucketsCount constructor with Float.NaN
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<float> = new Set<float>(8);
+      set.add(Float.NaN);
+      set.add(3.14 as float);
+      expect(set.size).assertEqual(2);
+      expect(set.has(Float.NaN)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_198
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1980
+     * @tc.desc Verify Set<char> bucketsCount constructor
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<char> = new Set<char>(4);
+      set.add(c'a');
+      set.add(c'中');
+      expect(set.size).assertEqual(2);
+      expect(set.has(c'a')).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_199
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_1990
+     * @tc.desc Verify Set<number> bucketsCount constructor with Number.POSITIVE_INFINITY
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<number> = new Set<number>(5);
+      set.add(0);
+      set.add(Number.POSITIVE_INFINITY);
+      set.add(Number.NaN);
+      expect(set.size).assertEqual(3);
+    });
+
+    /**
+     * @tc.name testConstructor4_200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_2000
+     * @tc.desc Verify Set<Date> bucketsCount constructor
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<Date> = new Set<Date>(4);
+      const d = new Date(2025, 0, 1);
+      set.add(d);
+      expect(set.size).assertEqual(1);
+      expect(set.has(d)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_201
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_2010
+     * @tc.desc Verify Set<RegExp> bucketsCount constructor
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<RegExp> = new Set<RegExp>(4);
+      const r = new RegExp("test");
+      set.add(r);
+      expect(set.has(r)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_202
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_2020
+     * @tc.desc Verify Set<object> bucketsCount constructor
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<object> = new Set<object>(8);
+      const obj = new ObjTest(1);
+      set.add(obj);
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testConstructor4_203
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_2030
+     * @tc.desc Verify Set<Map> bucketsCount constructor
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<Map<string, number>> = new Set<Map<string, number>>(4);
+      const m = new Map<string, number>();
+      m.set('k', 1);
+      set.add(m);
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testConstructor4_204
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_2040
+     * @tc.desc Verify Set<Set<int>> bucketsCount nested constructor
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const outer: Set<Set<int>> = new Set<Set<int>>(8);
+      const inner = new Set<int>([1, 2]);
+      outer.add(inner);
+      expect(outer.has(inner)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_205
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_2050
+     * @tc.desc Verify Set<Record> bucketsCount constructor
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<Record<string, int>> = new Set<Record<string, int>>(4);
+      const r: Record<string, int> = { 'x': 1 };
+      set.add(r);
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testConstructor4_206
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_2060
+     * @tc.desc Verify Set<Error> bucketsCount constructor
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<Error> = new Set<Error>(4);
+      const e = new Error('buckets test');
+      set.add(e);
+      expect(set.has(e)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_207
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_2070
+     * @tc.desc Verify Set<WeakMap> and Set<WeakSet> bucketsCount constructors
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const setWm: Set<WeakMap<object, number>> = new Set<WeakMap<object, number>>(4);
+      const setWs: Set<WeakSet<object>> = new Set<WeakSet<object>>(4);
+      expect(setWm.size).assertEqual(0);
+      expect(setWs.size).assertEqual(0);
+    });
+
+    /**
+     * @tc.name testConstructor4_208
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_2080
+     * @tc.desc Verify Set<Int8Array> bucketsCount constructor
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<Int8Array> = new Set<Int8Array>(4);
+      const arr = new Int8Array([10, 20]);
+      set.add(arr);
+      expect(set.size).assertEqual(1);
+      expect(set.has(arr)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_209
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_2090
+     * @tc.desc Verify Set<bigint> bucketsCount constructor
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<bigint> = new Set<bigint>(16);
+      set.add(1n);
+      expect(set.size).assertEqual(1);
+      expect(set.has(1n)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_210
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_2100
+     * @tc.desc Verify Set<Promise<Set<int>>> bucketsCount constructor with nested Promise generic
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner: Set<int> = new Set<int>([42]);
+      const p: Promise<Set<int>> = Promise.resolve(inner);
+      const set: Set<Promise<Set<int>>> = new Set<Promise<Set<int>>>(4);
+      set.add(p);
+      expect(set.size).assertEqual(1);
+      expect(set.has(p)).assertTrue();
+    });
+
+    /**
+     * @tc.name testConstructor4_211
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR4_P1_2110
+     * @tc.desc Verify Set<jsonx.JsonElement> bucketsCount constructor with JSON parsed objects
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testConstructor4_211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const j1: jsonx.JsonElement = JSON.parseJsonElement('{"a":1}');
+      const set: Set<jsonx.JsonElement> = new Set<jsonx.JsonElement>(4);
+      set.add(j1);
+      expect(set.size).assertEqual(1);
+      expect(set.has(j1)).assertTrue();
+    });
+
+  });
+}
+
