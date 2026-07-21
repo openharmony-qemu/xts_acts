@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { ArkTSUtils, taskpool } from '@kit.ArkTS';
+import { sleep } from '../Utils';
 
 @Sendable
 class TaskResult {
@@ -207,23 +208,24 @@ export default function ConditionVariableTest(): void {
       let task: taskpool.Task = new taskpool.Task(waitInTask, cv, result)
       let execPromise: Promise<Object> = taskpool.execute(task)
 
-      // Poll until task signals it is entering wait (no fixed 500ms delay)
-      let waitDeadline: number = Date.now() + 10000
-      while (!result.waiting && Date.now() < waitDeadline) {
-        await new Promise<void>((resolve: Function) => setTimeout(resolve, 10))
+      // Wait for task to mark waiting, then notify until execPromise completes
+      let attempts: number = 0
+      while (!result.waiting && attempts < 1000) {
+        await sleep(10)
+        attempts++
       }
       expect(result.waiting).assertTrue()
-      // Retry notify until awakened (covers race between flag set and native wait)
-      let notifyDeadline: number = Date.now() + 10000
-      while (result.value === '' && Date.now() < notifyDeadline) {
+      attempts = 0
+      while (result.value === '' && attempts < 1000) {
         cv.notifyOne()
         let raced: string = await Promise.race([
           execPromise.then((): string => 'done'),
-          new Promise<string>((resolve: Function) => setTimeout((): void => resolve('tick'), 20))
+          sleep(20).then((): string => 'tick')
         ])
         if (raced === 'done') {
           break
         }
+        attempts++
       }
       await execPromise
       expect(result.value).assertEqual('task awakened')
@@ -299,22 +301,24 @@ export default function ConditionVariableTest(): void {
       let task: taskpool.Task = new taskpool.Task(waitAndIncrement, cv, counter)
       let execPromise: Promise<Object> = taskpool.execute(task)
 
-      // Poll until task signals it is entering wait (no fixed 500ms delay)
-      let waitDeadline: number = Date.now() + 10000
-      while (!counter.waiting && Date.now() < waitDeadline) {
-        await new Promise<void>((resolve: Function) => setTimeout(resolve, 10))
+      // Wait for task to mark waiting, then notify until execPromise completes
+      let attempts: number = 0
+      while (!counter.waiting && attempts < 1000) {
+        await sleep(10)
+        attempts++
       }
       expect(counter.waiting).assertTrue()
-      let notifyDeadline: number = Date.now() + 10000
-      while (!counter.done && Date.now() < notifyDeadline) {
+      attempts = 0
+      while (!counter.done && attempts < 1000) {
         cv.notifyOne()
         let raced: string = await Promise.race([
           execPromise.then((): string => 'done'),
-          new Promise<string>((resolve: Function) => setTimeout((): void => resolve('tick'), 20))
+          sleep(20).then((): string => 'tick')
         ])
         if (raced === 'done') {
           break
         }
+        attempts++
       }
       await execPromise
       expect(counter.done).assertTrue()
