@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -548,13 +549,8 @@ export default function typedUArraysToStringTest06(): void {
      */
     it('testTypedUArraysToString02_059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3]);
-      let result = '';
-      try {
-        result = arr.toString();
-        expect(result.length > 0).assertTrue();
-      } catch (e) {
-        expect(typeof e).assertEqual('object');
-      }
+      let result = arr.toString();
+      expect(result).assertEqual("1,2,3");
     });
 
     /**
@@ -567,13 +563,8 @@ export default function typedUArraysToStringTest06(): void {
      */
     it('testTypedUArraysToString02_060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
-      let result = '';
-      try {
-        result = arr.toString();
-        expect(result.length > 0).assertTrue();
-      } catch (e) {
-        expect(typeof e).assertEqual('object');
-      }
+      let result = arr.toString();
+      expect(result).assertEqual("1,2,3");
     });
 
     /**

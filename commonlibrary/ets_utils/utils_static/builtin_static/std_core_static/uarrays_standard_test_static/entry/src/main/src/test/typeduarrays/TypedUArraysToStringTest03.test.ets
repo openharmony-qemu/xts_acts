@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -730,6 +731,10 @@ export default function typedUArraysToStringTest03(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    
+    it('testTypedUArraysToString03_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint16Array([1, 2, 3]);
+      let result = arr.toString();
+      expect(result).assertEqual("1,2,3");
+    });
   });
 }

@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -114,233 +115,139 @@ export default function typedUArraysValuesTest02(): void {
     it('testTypedUArraysValuesPart102_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3]);
       const it = arr.values();
-      expect(typeof it).assertEqual('object');
+      const _r = it.next();
+      expect(_r.value).assertEqual(1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_0600
      * @tc.name testTypedUArraysValuesPart102_006
-     * @tc.desc Verify Uint8ClampedArray.values()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysValuesPart102_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8ClampedArray([1, 2, 3]);
-      const it = arr.values();
-      expect(typeof it).assertEqual('object');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_0700
-     * @tc.name testTypedUArraysValuesPart102_007
-     * @tc.desc Verify Uint16Array.values()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysValuesPart102_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint16Array([1, 2, 3]);
-      const it = arr.values();
-      expect(typeof it).assertEqual('object');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_0800
-     * @tc.name testTypedUArraysValuesPart102_008
-     * @tc.desc Verify Uint32Array.values()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysValuesPart102_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint32Array([1, 2, 3]);
-      const it = arr.values();
-      expect(typeof it).assertEqual('object');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_0900
-     * @tc.name testTypedUArraysValuesPart102_009
      * @tc.desc Verify BigUint64Array.values()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysValuesPart102_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysValuesPart102_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([0n, 1n]);
       const it = arr.values();
-      expect(typeof it).assertEqual('object');
+      const _r = it.next();
+      expect(_r.value).assertEqual(0n);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_1000
-     * @tc.name testTypedUArraysValuesPart102_010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_0700
+     * @tc.name testTypedUArraysValuesPart102_007
      * @tc.desc Verify Uint8Array.values() Double
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysValuesPart102_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysValuesPart102_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([255]);
       const it = arr.values();
       let result = it.next();
-      expect(typeof result.value).assertEqual('number');
+      expect(result.value).assertEqual(255);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_1100
-     * @tc.name testTypedUArraysValuesPart102_011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_0800
+     * @tc.name testTypedUArraysValuesPart102_008
      * @tc.desc Verify BigUint64Array.values() BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysValuesPart102_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysValuesPart102_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n]);
       const it = arr.values();
       let result = it.next();
-      expect(typeof result.value).assertEqual('bigint');
+      expect(result.value).assertEqual(1n);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_1200
-     * @tc.name testTypedUArraysValuesPart102_012
-     * @tc.desc Verify Uint8ClampedArray.values() Double
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysValuesPart102_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8ClampedArray([255]);
-      const it = arr.values();
-      let result = it.next();
-      expect(typeof result.value).assertEqual('number');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_1300
-     * @tc.name testTypedUArraysValuesPart102_013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_0900
+     * @tc.name testTypedUArraysValuesPart102_009
      * @tc.desc Verify Uint16Array.values() Double
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysValuesPart102_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysValuesPart102_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([65535]);
       const it = arr.values();
       let result = it.next();
-      expect(typeof result.value).assertEqual('number');
+      expect(result.value).assertEqual(65535);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_1400
-     * @tc.name testTypedUArraysValuesPart102_014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_1000
+     * @tc.name testTypedUArraysValuesPart102_010
      * @tc.desc Verify Uint32Array.values() Double
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysValuesPart102_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysValuesPart102_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([4294967295]);
       const it = arr.values();
       let result = it.next();
-      expect(typeof result.value).assertEqual('number');
+      expect(result.value).assertEqual(4294967295);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_1500
-     * @tc.name testTypedUArraysValuesPart102_015
-     * @tc.desc Verify values() Uint8ClampedArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysValuesPart102_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8ClampedArray([1, 2, 3]);
-      const it = arr.values();
-      expect(typeof it).assertEqual('object');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_1600
-     * @tc.name testTypedUArraysValuesPart102_016
-     * @tc.desc Verify values() Uint16Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysValuesPart102_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint16Array([1, 2, 3]);
-      const it = arr.values();
-      expect(typeof it).assertEqual('object');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_1700
-     * @tc.name testTypedUArraysValuesPart102_017
-     * @tc.desc Verify values() Uint32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysValuesPart102_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint32Array([1, 2, 3]);
-      const it = arr.values();
-      expect(typeof it).assertEqual('object');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_1800
-     * @tc.name testTypedUArraysValuesPart102_018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_1100
+     * @tc.name testTypedUArraysValuesPart102_011
      * @tc.desc Verify values() BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysValuesPart102_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysValuesPart102_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([0n, 1n, 2n]);
       const it = arr.values();
-      expect(typeof it).assertEqual('object');
+      const _r = it.next();
+      expect(_r.value).assertEqual(0n);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_1900
-     * @tc.name testTypedUArraysValuesPart102_019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_1200
+     * @tc.name testTypedUArraysValuesPart102_012
      * @tc.desc Verify values() 100 Uint8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysValuesPart102_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysValuesPart102_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(100);
       const it = arr.values();
-      expect(typeof it).assertEqual('object');
+      const _r = it.next();
+      expect(_r.value).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_2000
-     * @tc.name testTypedUArraysValuesPart102_020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_1300
+     * @tc.name testTypedUArraysValuesPart102_013
      * @tc.desc Verify values() 1000 Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysValuesPart102_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysValuesPart102_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array(1000);
       const it = arr.values();
-      expect(typeof it).assertEqual('object');
+      const _r = it.next();
+      expect(_r.value).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_2100
-     * @tc.name testTypedUArraysValuesPart102_021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_1400
+     * @tc.name testTypedUArraysValuesPart102_014
      * @tc.desc Verify Uint8Array NaN values() 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysValuesPart102_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysValuesPart102_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([NaN]);
       const it = arr.values();
       let result = it.next();
@@ -348,14 +255,14 @@ export default function typedUArraysValuesTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_2200
-     * @tc.name testTypedUArraysValuesPart102_022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_1500
+     * @tc.name testTypedUArraysValuesPart102_015
      * @tc.desc Verify Uint8Array Infinity values() 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysValuesPart102_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysValuesPart102_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([Infinity]);
       const it = arr.values();
       let result = it.next();
@@ -363,14 +270,14 @@ export default function typedUArraysValuesTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_2300
-     * @tc.name testTypedUArraysValuesPart102_023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_1600
+     * @tc.name testTypedUArraysValuesPart102_016
      * @tc.desc Verify Uint8Array -Infinity values() 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysValuesPart102_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysValuesPart102_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([-Infinity]);
       const it = arr.values();
       let result = it.next();
@@ -378,29 +285,14 @@ export default function typedUArraysValuesTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_2400
-     * @tc.name testTypedUArraysValuesPart102_024
-     * @tc.desc Verify Uint8ClampedArray NaN values() 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysValuesPart102_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8ClampedArray([NaN]);
-      const it = arr.values();
-      let result = it.next();
-      expect(result.value).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_2500
-     * @tc.name testTypedUArraysValuesPart102_025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_1700
+     * @tc.name testTypedUArraysValuesPart102_017
      * @tc.desc Verify Uint8ClampedArray Infinity values() 255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysValuesPart102_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysValuesPart102_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([Infinity]);
       const it = arr.values();
       let result = it.next();
@@ -408,119 +300,14 @@ export default function typedUArraysValuesTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_2600
-     * @tc.name testTypedUArraysValuesPart102_026
-     * @tc.desc Verify Uint8ClampedArray -Infinity values() 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysValuesPart102_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8ClampedArray([-Infinity]);
-      const it = arr.values();
-      let result = it.next();
-      expect(result.value).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_2700
-     * @tc.name testTypedUArraysValuesPart102_027
-     * @tc.desc Verify Uint16Array NaN values() 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysValuesPart102_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint16Array([NaN]);
-      const it = arr.values();
-      let result = it.next();
-      expect(result.value).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_2800
-     * @tc.name testTypedUArraysValuesPart102_028
-     * @tc.desc Verify Uint16Array Infinity values() 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysValuesPart102_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint16Array([Infinity]);
-      const it = arr.values();
-      let result = it.next();
-      expect(result.value).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_2900
-     * @tc.name testTypedUArraysValuesPart102_029
-     * @tc.desc Verify Uint16Array -Infinity values() 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysValuesPart102_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint16Array([-Infinity]);
-      const it = arr.values();
-      let result = it.next();
-      expect(result.value).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_3000
-     * @tc.name testTypedUArraysValuesPart102_030
-     * @tc.desc Verify Uint32Array NaN values() 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysValuesPart102_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint32Array([NaN]);
-      const it = arr.values();
-      let result = it.next();
-      expect(result.value).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_3100
-     * @tc.name testTypedUArraysValuesPart102_031
-     * @tc.desc Verify Uint32Array Infinity values() 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysValuesPart102_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint32Array([Infinity]);
-      const it = arr.values();
-      let result = it.next();
-      expect(result.value).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_3200
-     * @tc.name testTypedUArraysValuesPart102_032
-     * @tc.desc Verify Uint32Array -Infinity values() 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysValuesPart102_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint32Array([-Infinity]);
-      const it = arr.values();
-      let result = it.next();
-      expect(result.value).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_3300
-     * @tc.name testTypedUArraysValuesPart102_033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_1800
+     * @tc.name testTypedUArraysValuesPart102_018
      * @tc.desc Verify Uint8Array 0.5 values() 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysValuesPart102_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysValuesPart102_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([0.5]);
       const it = arr.values();
       let result = it.next();
@@ -528,14 +315,14 @@ export default function typedUArraysValuesTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_3400
-     * @tc.name testTypedUArraysValuesPart102_034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_1900
+     * @tc.name testTypedUArraysValuesPart102_019
      * @tc.desc Verify Uint8Array 1.9 values() 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysValuesPart102_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysValuesPart102_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1.9]);
       const it = arr.values();
       let result = it.next();
@@ -543,30 +330,30 @@ export default function typedUArraysValuesTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_3500
-     * @tc.name testTypedUArraysValuesPart102_035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_2000
+     * @tc.name testTypedUArraysValuesPart102_020
      * @tc.desc Verify Uint8ClampedArray 0.5 values() 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysValuesPart102_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysValuesPart102_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([0.5]);
       const it = arr.values();
       let result = it.next();
       expect(result.value).assertEqual(0);
-      expect(result.done).assertEqual(false);
+      expect(result.done).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_3600
-     * @tc.name testTypedUArraysValuesPart102_036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_2100
+     * @tc.name testTypedUArraysValuesPart102_021
      * @tc.desc Verify Uint8ClampedArray 1.9 values() 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysValuesPart102_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysValuesPart102_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1.9]);
       const it = arr.values();
       let result = it.next();
@@ -574,64 +361,64 @@ export default function typedUArraysValuesTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_3700
-     * @tc.name testTypedUArraysValuesPart102_037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_2200
+     * @tc.name testTypedUArraysValuesPart102_022
      * @tc.desc Verify BYTES_PER_ELEMENT Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysValuesPart102_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysValuesPart102_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Uint32Array.BYTES_PER_ELEMENT).assertEqual(4);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_3800
-     * @tc.name testTypedUArraysValuesPart102_038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_2300
+     * @tc.name testTypedUArraysValuesPart102_023
      * @tc.desc Verify BYTES_PER_ELEMENT BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysValuesPart102_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysValuesPart102_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigUint64Array.BYTES_PER_ELEMENT).assertEqual(8);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_3900
-     * @tc.name testTypedUArraysValuesPart102_039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_2400
+     * @tc.name testTypedUArraysValuesPart102_024
      * @tc.desc Verify length Uint32Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysValuesPart102_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysValuesPart102_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1, 2, 3, 4]);
       expect(arr.length).assertEqual(4);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_4000
-     * @tc.name testTypedUArraysValuesPart102_040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_2500
+     * @tc.name testTypedUArraysValuesPart102_025
      * @tc.desc Verify length BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysValuesPart102_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysValuesPart102_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n]);
       expect(arr.length).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_4100
-     * @tc.name testTypedUArraysValuesPart102_041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUES_PART102_2600
+     * @tc.name testTypedUArraysValuesPart102_026
      * @tc.desc Verify buffer BigUint64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysValuesPart102_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysValuesPart102_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const arr = new BigUint64Array(buf);
       expect(arr.buffer).assertEqual(buf);

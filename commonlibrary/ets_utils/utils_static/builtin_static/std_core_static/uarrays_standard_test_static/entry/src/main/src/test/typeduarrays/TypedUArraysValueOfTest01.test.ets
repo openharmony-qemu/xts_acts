@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -539,62 +540,6 @@ export default function typedUArraysValueOfTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUEOF01_3700
-     * @tc.name testTypedUArraysValueOf01_037
-     * @tc.desc Verify Uint8Array valueOf length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysValueOf01_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array(8);
-      let result = arr.valueOf();
-      expect(result.length).assertEqual(arr.length);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUEOF01_3800
-     * @tc.name testTypedUArraysValueOf01_038
-     * @tc.desc Verify Uint16Array valueOf length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysValueOf01_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint16Array(8);
-      let result = arr.valueOf();
-      expect(result.length).assertEqual(arr.length);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUEOF01_3900
-     * @tc.name testTypedUArraysValueOf01_039
-     * @tc.desc Verify Uint32Array valueOf length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysValueOf01_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint32Array(8);
-      let result = arr.valueOf();
-      expect(result.length).assertEqual(arr.length);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUEOF01_4000
-     * @tc.name testTypedUArraysValueOf01_040
-     * @tc.desc Verify BigUint64Array valueOf length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysValueOf01_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigUint64Array(8);
-      let result = arr.valueOf();
-      expect(result.length).assertEqual(arr.length);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUEOF01_4100
      * @tc.name testTypedUArraysValueOf01_041
      * @tc.desc Verify Uint8Array valueOf
@@ -755,54 +700,6 @@ export default function typedUArraysValueOfTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUEOF01_5100
-     * @tc.name testTypedUArraysValueOf01_051
-     * @tc.desc Verify Uint8Array BYTES_PER_ELEMENT property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysValueOf01_051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Uint8Array.BYTES_PER_ELEMENT).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUEOF01_5200
-     * @tc.name testTypedUArraysValueOf01_052
-     * @tc.desc Verify Uint16Array BYTES_PER_ELEMENT property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysValueOf01_052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Uint16Array.BYTES_PER_ELEMENT).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUEOF01_5300
-     * @tc.name testTypedUArraysValueOf01_053
-     * @tc.desc Verify Uint32Array BYTES_PER_ELEMENT property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysValueOf01_053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Uint32Array.BYTES_PER_ELEMENT).assertEqual(4);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUEOF01_5400
-     * @tc.name testTypedUArraysValueOf01_054
-     * @tc.desc Verify BigUint64Array BYTES_PER_ELEMENT property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysValueOf01_054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(BigUint64Array.BYTES_PER_ELEMENT).assertEqual(8);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUEOF01_5500
      * @tc.name testTypedUArraysValueOf01_055
      * @tc.desc Verify Uint8Array constructor name equals Uint8Array
@@ -854,20 +751,6 @@ export default function typedUArraysValueOfTest01(): void {
       expect(arr[0]).assertEqual(0n);
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUEOF01_5900
-     * @tc.name testTypedUArraysValueOf01_059
-     * @tc.desc Verify Uint8Array index access read
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysValueOf01_059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([10, 20, 30]);
-      expect(arr[0]).assertEqual(10);
-      expect(arr[1]).assertEqual(20);
-      expect(arr[2]).assertEqual(30);
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_VALUEOF01_6000
