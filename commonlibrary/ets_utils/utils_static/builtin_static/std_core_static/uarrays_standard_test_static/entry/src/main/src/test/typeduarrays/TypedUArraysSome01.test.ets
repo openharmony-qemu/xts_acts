@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -77,34 +78,6 @@ export default function typedUArraysSome01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SOME_0400
-     * @tc.name testTypedUArraysSome004
-     * @tc.desc Verify some
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysSome004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([1, 2, 3]);
-      let result = arr.some((v) => v > 0);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SOME_0500
-     * @tc.name testTypedUArraysSome005
-     * @tc.desc Verify predicate TypeError Uint8Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysSome005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([1, 2, 3]);
-      let result = arr.some((v) => v > 0);
-      expect(result).assertTrue();
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SOME_0600
      * @tc.name testTypedUArraysSome006
      * @tc.desc Verify predicate TypeError Uint16Array
@@ -170,9 +143,10 @@ export default function typedUArraysSome01(): void {
      */
     it('testTypedUArraysSome010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3]);
-      arr.some((v) => {
+      let result = arr.some((v) => {
         return v >= 0;
       });
+      expect(result).assertTrue();
     });
 
     /**
@@ -201,9 +175,10 @@ export default function typedUArraysSome01(): void {
      */
     it('testTypedUArraysSome012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3]);
-      arr.some((v) => {
+      let result = arr.some((v) => {
         return v > 0;
       });
+      expect(result).assertTrue();
     });
 
     /**
@@ -680,6 +655,14 @@ export default function typedUArraysSome01(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
+    
+    it('testTypedUArraysSome042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8ClampedArray([1, 2, 3]);
+      const result = arr.some((v) => {
+        return v > 0;
+      });
+      expect(result).assertEqual(true);
+    });
     
   });
 }

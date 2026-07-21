@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,22 +14,13 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function typedUArraysSliceTest04(): void {
-  describe('TypedUArraysSliceTest04', (): void => {
-    beforeAll((): void => {
-    });
-
+  describe('TypedUArraysSliceTest04', () => {
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    });
-
-    afterEach((): void => {
-    });
-
-    afterAll((): void => {
     });
 
     /**
@@ -203,7 +195,7 @@ export default function typedUArraysSliceTest04(): void {
     it('testTypedUArraysSlicePart202_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       const ret = arr.slice();
-      expect(ret === arr).assertEqual(false);
+      expect(ret !== arr).assertTrue();
     });
 
     /**
@@ -217,7 +209,7 @@ export default function typedUArraysSliceTest04(): void {
     it('testTypedUArraysSlicePart202_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       const ret = arr.slice(1);
-      expect(ret === arr).assertEqual(false);
+      expect(ret !== arr).assertTrue();
     });
 
     /**
@@ -231,7 +223,7 @@ export default function typedUArraysSliceTest04(): void {
     it('testTypedUArraysSlicePart202_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       const ret = arr.slice(2, 4);
-      expect(ret === arr).assertEqual(false);
+      expect(ret !== arr).assertTrue();
     });
 
     /**
@@ -245,7 +237,7 @@ export default function typedUArraysSliceTest04(): void {
     it('testTypedUArraysSlicePart202_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       const ret = arr.slice(-2);
-      expect(ret === arr).assertEqual(false);
+      expect(ret !== arr).assertTrue();
     });
 
     /**
@@ -259,7 +251,7 @@ export default function typedUArraysSliceTest04(): void {
     it('testTypedUArraysSlicePart202_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3, 4, 5]);
       const ret = arr.slice();
-      expect(ret === arr).assertEqual(false);
+      expect(ret !== arr).assertTrue();
     });
 
     /**
@@ -273,7 +265,7 @@ export default function typedUArraysSliceTest04(): void {
     it('testTypedUArraysSlicePart202_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1, 2, 3, 4, 5]);
       const ret = arr.slice();
-      expect(ret === arr).assertEqual(false);
+      expect(ret !== arr).assertTrue();
     });
 
     /**
@@ -287,7 +279,7 @@ export default function typedUArraysSliceTest04(): void {
     it('testTypedUArraysSlicePart202_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
       const ret = arr.slice();
-      expect(ret === arr).assertEqual(false);
+      expect(ret !== arr).assertTrue();
     });
 
     /**
@@ -301,7 +293,7 @@ export default function typedUArraysSliceTest04(): void {
     it('testTypedUArraysSlicePart202_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
       const ret = arr.slice();
-      expect(ret === arr).assertEqual(false);
+      expect(ret !== arr).assertTrue();
     });
 
     /**
@@ -315,7 +307,7 @@ export default function typedUArraysSliceTest04(): void {
     it('testTypedUArraysSlicePart202_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       const ret = arr.slice();
-      expect(ret).assertEqual('Uint8Array');
+      expect(ret instanceof Uint8Array).assertTrue();
     });
 
     /**
@@ -329,7 +321,7 @@ export default function typedUArraysSliceTest04(): void {
     it('testTypedUArraysSlicePart202_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3, 4, 5]);
       const ret = arr.slice();
-      expect(ret).assertEqual('Uint16Array');
+      expect(ret instanceof Uint16Array).assertTrue();
     });
 
     /**
@@ -343,7 +335,7 @@ export default function typedUArraysSliceTest04(): void {
     it('testTypedUArraysSlicePart202_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1, 2, 3, 4, 5]);
       const ret = arr.slice();
-      expect(ret).assertEqual('Uint32Array');
+      expect(ret instanceof Uint32Array).assertTrue();
     });
 
     /**
@@ -357,7 +349,7 @@ export default function typedUArraysSliceTest04(): void {
     it('testTypedUArraysSlicePart202_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
       const ret = arr.slice();
-      expect(ret).assertEqual('Uint8ClampedArray');
+      expect(ret instanceof Uint8ClampedArray).assertTrue();
     });
 
     /**
@@ -371,7 +363,7 @@ export default function typedUArraysSliceTest04(): void {
     it('testTypedUArraysSlicePart202_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
       const ret = arr.slice();
-      expect(ret).assertEqual('BigUint64Array');
+      expect(ret instanceof BigUint64Array).assertTrue();
     });
 
     /**
@@ -384,7 +376,6 @@ export default function typedUArraysSliceTest04(): void {
      */
     it('testTypedUArraysSlicePart202_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
-      const ret = arr.slice();
       expect(Uint8Array.BYTES_PER_ELEMENT).assertEqual(1);
     });
 
@@ -398,7 +389,6 @@ export default function typedUArraysSliceTest04(): void {
      */
     it('testTypedUArraysSlicePart202_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3, 4, 5]);
-      const ret = arr.slice();
       expect(Uint16Array.BYTES_PER_ELEMENT).assertEqual(2);
     });
 
@@ -412,7 +402,6 @@ export default function typedUArraysSliceTest04(): void {
      */
     it('testTypedUArraysSlicePart202_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1, 2, 3, 4, 5]);
-      const ret = arr.slice();
       expect(Uint32Array.BYTES_PER_ELEMENT).assertEqual(4);
     });
 
@@ -426,7 +415,6 @@ export default function typedUArraysSliceTest04(): void {
      */
     it('testTypedUArraysSlicePart202_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
-      const ret = arr.slice();
       expect(Uint8ClampedArray.BYTES_PER_ELEMENT).assertEqual(1);
     });
 
@@ -440,7 +428,6 @@ export default function typedUArraysSliceTest04(): void {
      */
     it('testTypedUArraysSlicePart202_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
-      const ret = arr.slice();
       expect(BigUint64Array.BYTES_PER_ELEMENT).assertEqual(8);
     });
 
@@ -454,7 +441,6 @@ export default function typedUArraysSliceTest04(): void {
      */
     it('testTypedUArraysSlicePart202_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
-      const ret = arr.slice();
       expect(Uint8Array.BYTES_PER_ELEMENT).assertEqual(1);
     });
 
@@ -468,7 +454,6 @@ export default function typedUArraysSliceTest04(): void {
      */
     it('testTypedUArraysSlicePart202_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3, 4, 5]);
-      const ret = arr.slice();
       expect(Uint16Array.BYTES_PER_ELEMENT).assertEqual(2);
     });
 
@@ -482,7 +467,6 @@ export default function typedUArraysSliceTest04(): void {
      */
     it('testTypedUArraysSlicePart202_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1, 2, 3, 4, 5]);
-      const ret = arr.slice();
       expect(Uint32Array.BYTES_PER_ELEMENT).assertEqual(4);
     });
 
@@ -496,7 +480,6 @@ export default function typedUArraysSliceTest04(): void {
      */
     it('testTypedUArraysSlicePart202_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
-      const ret = arr.slice();
       expect(Uint8ClampedArray.BYTES_PER_ELEMENT).assertEqual(1);
     });
 
@@ -510,7 +493,6 @@ export default function typedUArraysSliceTest04(): void {
      */
     it('testTypedUArraysSlicePart202_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
-      const ret = arr.slice();
       expect(BigUint64Array.BYTES_PER_ELEMENT).assertEqual(8);
     });
 
@@ -664,7 +646,6 @@ export default function typedUArraysSliceTest04(): void {
      */
     it('testTypedUArraysSlicePart202_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
-      const ret = arr.slice();
       const val21 = arr[0] ;
       expect(val21).assertEqual(1);
     });
@@ -679,7 +660,6 @@ export default function typedUArraysSliceTest04(): void {
      */
     it('testTypedUArraysSlicePart202_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
-      const ret = arr.slice(1);
       const val22 = arr[1] ;
       expect(val22).assertEqual(2);
     });
@@ -694,7 +674,6 @@ export default function typedUArraysSliceTest04(): void {
      */
     it('testTypedUArraysSlicePart202_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
-      const ret = arr.slice(2, 4);
       const val23 = arr[2] ;
       expect(val23).assertEqual(3);
     });
@@ -709,7 +688,6 @@ export default function typedUArraysSliceTest04(): void {
      */
     it('testTypedUArraysSlicePart202_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3, 4, 5]);
-      const ret = arr.slice();
       const val24 = arr[2] ;
       expect(val24).assertEqual(3);
     });
@@ -724,7 +702,6 @@ export default function typedUArraysSliceTest04(): void {
      */
     it('testTypedUArraysSlicePart202_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1, 2, 3, 4, 5]);
-      const ret = arr.slice();
       const val25 = arr[2] ;
       expect(val25).assertEqual(3);
     });
@@ -739,7 +716,6 @@ export default function typedUArraysSliceTest04(): void {
      */
     it('testTypedUArraysSlicePart202_048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3, 4, 5]);
-      const ret = arr.slice();
       const val26 = arr[2] ;
       expect(val26).assertEqual(3);
     });
@@ -754,7 +730,6 @@ export default function typedUArraysSliceTest04(): void {
      */
     it('testTypedUArraysSlicePart202_049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n, 4n, 5n]);
-      const ret = arr.slice();
       const val27 = arr[2];
       expect(val27).assertEqual(3n);
     });
@@ -962,7 +937,7 @@ export default function typedUArraysSliceTest04(): void {
       const ret = arr.reverse();
       expect(ret[0]).assertEqual(5);
       expect(ret[4]).assertEqual(1);
-      expect(ret === arr).assertEqual(true);
+      expect(ret).assertEqual(arr);
     });
 
     /**
@@ -1181,7 +1156,7 @@ export default function typedUArraysSliceTest04(): void {
     it('testTypedUArraysSlicePart202_077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3]);
       const val = arr.valueOf();
-      expect(val === arr).assertEqual(true);
+      expect(val).assertEqual(arr);
     });
 
     /**
@@ -1195,7 +1170,7 @@ export default function typedUArraysSliceTest04(): void {
     it('testTypedUArraysSlicePart202_078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([10, 20, 30]);
       const val = arr.valueOf();
-      expect(val === arr).assertEqual(true);
+      expect(val).assertEqual(arr);
     });
 
     /**
@@ -1209,7 +1184,7 @@ export default function typedUArraysSliceTest04(): void {
     it('testTypedUArraysSlicePart202_079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
       const val = arr.valueOf();
-      expect(val === arr).assertEqual(true);
+      expect(val).assertEqual(arr);
     });
 
     /**

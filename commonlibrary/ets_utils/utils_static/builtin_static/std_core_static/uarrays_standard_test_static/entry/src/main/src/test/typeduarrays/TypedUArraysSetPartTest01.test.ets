@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -39,6 +40,16 @@ export default function typedUArraysSetPartTest01(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
+    
+    it('testTypedUArraysSetPart101_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Uint8Array(4);
+      const src = new Uint8Array([1, 2, 3, 4]);
+      arr.set(src);
+      expect(arr[0]).assertEqual(1);
+      expect(arr[1]).assertEqual(2);
+      expect(arr[2]).assertEqual(3);
+      expect(arr[3]).assertEqual(4);
+    });
     
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET_PART101_5000
@@ -337,7 +348,7 @@ export default function typedUArraysSetPartTest01(): void {
       const arr = new Uint8ClampedArray([0]);
       arr.set([0.5]);
       const val96 = arr[0];
-      expect(val96).assertEqual(1);
+      expect(val96).assertEqual(0);
     });
 
     /**
@@ -414,7 +425,7 @@ export default function typedUArraysSetPartTest01(): void {
       const val101 = arr[0];
       expect(val101).assertEqual(0);
       const val102 = arr[1];
-      expect(val102).assertEqual(1);
+      expect(val102).assertEqual(0);
       const val103 = arr[2];
       expect(val103).assertEqual(255);
       const val104 = arr[3];
@@ -712,12 +723,13 @@ export default function typedUArraysSetPartTest01(): void {
      * @tc.level Level 2
      */
     it('testTypedUArraysSetPart101_092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([0, 0, 0, 0]);
-      arr.set([1, 2], -2);
-      const val143 = arr[2];
-      expect(val143).assertEqual(1);
-      const val144 = arr[3];
-      expect(val144).assertEqual(2);
+      try {
+        const arr = new Uint8Array([0, 0, 0, 0]);
+        arr.set([1, 2], -2);
+        expect(true).assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
@@ -729,12 +741,13 @@ export default function typedUArraysSetPartTest01(): void {
      * @tc.level Level 2
      */
     it('testTypedUArraysSetPart101_093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([0, 0, 0, 0]);
-      arr.set([1, 2], -3);
-      const val145 = arr[1];
-      expect(val145).assertEqual(1);
-      const val146 = arr[2];
-      expect(val146).assertEqual(2);
+      try {
+        const arr = new Uint8Array([0, 0, 0, 0]);
+        arr.set([1, 2], -3);
+        expect(true).assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
@@ -746,10 +759,13 @@ export default function typedUArraysSetPartTest01(): void {
      * @tc.level Level 2
      */
     it('testTypedUArraysSetPart101_094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([0, 0, 0, 0]);
-      arr.set([42], -4);
-      const val147 = arr[0];
-      expect(val147).assertEqual(42);
+      try {
+        const arr = new Uint8Array([0, 0, 0, 0]);
+        arr.set([42], -4);
+        expect(true).assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
@@ -803,38 +819,5 @@ export default function typedUArraysSetPartTest01(): void {
       }
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET_PART101_9800
-     * @tc.name testTypedUArraysSetPart101_098
-     * @tc.desc Verify offset Infinity Uint8Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysSetPart101_098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const arr = new Uint8Array([0, 0, 0]);
-        throw new Error('ArkTS limitation')
-      } catch (e) {
-        expect(true).assertTrue();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SET_PART101_9900
-     * @tc.name testTypedUArraysSetPart101_099
-     * @tc.desc Verify offset -Infinity Uint8Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysSetPart101_099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const arr = new Uint8Array([0, 0, 0]);
-        throw new Error('ArkTS limitation')
-      } catch (e) {
-        expect(true).assertTrue();
-      }
-    });
   });
 }

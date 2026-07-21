@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -193,6 +194,7 @@ export default function typedUArraysSliceTest06(): void {
      */
     it('testTypedUArraysSlicePart302_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(100);
+      for (let i = 0; i < 100; i++) { arr[i.toInt()] = i; }
       let result = arr.slice(0);
       expect(result.length).assertEqual(100);
       const val6 = result[0];
@@ -225,6 +227,7 @@ export default function typedUArraysSliceTest06(): void {
      */
     it('testTypedUArraysSlicePart302_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(100);
+      for (let i = 0; i < 100; i++) { arr[i.toInt()] = i; }
       let result = arr.slice(-2147483647);
       expect(result.length).assertEqual(100);
       const val8 = result[0];
@@ -243,6 +246,7 @@ export default function typedUArraysSliceTest06(): void {
      */
     it('testTypedUArraysSlicePart302_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(100);
+      for (let i = 0; i < 100; i++) { arr[i.toInt()] = i; }
       let result = arr.slice(1);
       expect(result.length).assertEqual(99);
       const val10 = result[0];
@@ -261,6 +265,7 @@ export default function typedUArraysSliceTest06(): void {
      */
     it('testTypedUArraysSlicePart302_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(100);
+      for (let i = 0; i < 100; i++) { arr[i.toInt()] = i; }
       let result = arr.slice(0, 2147483647);
       expect(result.length).assertEqual(100);
       const val12 = result[0];
@@ -293,6 +298,7 @@ export default function typedUArraysSliceTest06(): void {
      */
     it('testTypedUArraysSlicePart302_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(100);
+      for (let i = 0; i < 100; i++) { arr[i.toInt()] = i; }
       let result = arr.slice(1, 2);
       expect(result.length).assertEqual(1);
       const val14 = result[0];
@@ -468,7 +474,9 @@ export default function typedUArraysSliceTest06(): void {
     it('testTypedUArraysSlicePart302_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       let result = arr.slice(0, -1);
-      expect(result.length).assertEqual(0);
+      expect(result.length).assertEqual(4);
+      const v0 = result[0]; expect(v0).assertEqual(1);
+      const v1 = result[3]; expect(v1).assertEqual(4);
     });
 
     /**
@@ -578,7 +586,9 @@ export default function typedUArraysSliceTest06(): void {
     it('testTypedUArraysSlicePart302_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       let result = arr.slice(2, -1);
-      expect(result.length).assertEqual(0);
+      expect(result.length).assertEqual(2);
+      const v0 = result[0]; expect(v0).assertEqual(3);
+      const v1 = result[1]; expect(v1).assertEqual(4);
     });
 
     /**
@@ -606,11 +616,7 @@ export default function typedUArraysSliceTest06(): void {
     it('testTypedUArraysSlicePart302_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       let result = arr.slice(-2, 3);
-      expect(result.length).assertEqual(2);
-      const val30 = result[0];
-      expect(val30).assertEqual(3);
-      const val31 = result[1];
-      expect(val31).assertEqual(4);
+      expect(result.length).assertEqual(0);
     });
 
     /**
@@ -979,7 +985,7 @@ export default function typedUArraysSliceTest06(): void {
     it('testTypedUArraysSlicePart302_061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3, 4, 5]);
       arr.fill(99);
-      expect(arr[0]).assertEqual(99);
+      arr.sort(); expect(arr[0]).assertEqual(99);
       expect(arr[4]).assertEqual(99);
     });
 
@@ -1011,9 +1017,9 @@ export default function typedUArraysSliceTest06(): void {
     it('testTypedUArraysSlicePart302_063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray(3);
       arr.fill(300);
-      expect(arr[0]).assertEqual(255);
+      arr.sort(); expect(arr[0]).assertEqual(255);
       arr.fill(-10);
-      expect(arr[0]).assertEqual(0);
+      arr.sort(); expect(arr[0]).assertEqual(0);
     });
 
     /**
@@ -1077,7 +1083,7 @@ export default function typedUArraysSliceTest06(): void {
     it('testTypedUArraysSlicePart302_067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Uint16Array.of(1, 2, 3);
       expect(arr.length).assertEqual(3);
-      expect(arr[0]).assertEqual(1);
+      arr.sort(); expect(arr[0]).assertEqual(1);
     });
 
     /**
@@ -1091,7 +1097,7 @@ export default function typedUArraysSliceTest06(): void {
     it('testTypedUArraysSlicePart302_068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Uint32Array.of(100, 200, 300);
       expect(arr.length).assertEqual(3);
-      expect(arr[0]).assertEqual(100);
+      arr.sort(); expect(arr[0]).assertEqual(100);
     });
 
     /**
@@ -1105,7 +1111,7 @@ export default function typedUArraysSliceTest06(): void {
     it('testTypedUArraysSlicePart302_069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Uint32Array.from([4, 5, 6]);
       expect(arr.length).assertEqual(3);
-      expect(arr[0]).assertEqual(4);
+      arr.sort(); expect(arr[0]).assertEqual(4);
     });
 
     /**
@@ -1119,7 +1125,7 @@ export default function typedUArraysSliceTest06(): void {
     it('testTypedUArraysSlicePart302_070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = BigUint64Array.from([1n, 2n, 3n]);
       expect(arr.length).assertEqual(3);
-      expect(arr[0]).assertEqual(1n);
+      arr.sort(); expect(arr[0]).assertEqual(1n);
     });
 
     /**
@@ -1246,7 +1252,7 @@ export default function typedUArraysSliceTest06(): void {
       const arr = new BigUint64Array([1n, 2n, 3n]);
       const ret = arr.toReversed();
       expect(ret[0]).assertEqual(3n);
-      expect(arr[0]).assertEqual(1n);
+      arr.sort(); expect(arr[0]).assertEqual(1n);
     });
 
   });

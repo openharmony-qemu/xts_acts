@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -931,7 +932,7 @@ export default function typedUArraysSliceTest05(): void {
       const result = arr.find((x: number) => {
         return x > 200;
       });
-      expect(result).assertEqual(undefined);
+      expect(result).assertUndefined();
     });
 
     /**
@@ -961,7 +962,7 @@ export default function typedUArraysSliceTest05(): void {
     it('testTypedUArraysSlicePart301_061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30]);
       const iter = arr.entries();
-      expect(iter).not().assertNull();
+      expect(iter.next().done).assertEqual(false);
     });
 
     /**
@@ -975,7 +976,7 @@ export default function typedUArraysSliceTest05(): void {
     it('testTypedUArraysSlicePart301_062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30]);
       const iter = arr.keys();
-      expect(iter).not().assertNull();
+      expect(iter.next().done).assertEqual(false);
     });
 
     /**
@@ -989,7 +990,7 @@ export default function typedUArraysSliceTest05(): void {
     it('testTypedUArraysSlicePart301_063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([10, 20, 30]);
       const iter = arr.values();
-      expect(iter).not().assertNull();
+      expect(iter.next().done).assertEqual(false);
     });
 
     /**

@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 function isNonNull(val: Object | null): boolean {
@@ -21,20 +22,10 @@ function isNonNull(val: Object | null): boolean {
 }
 
 export default function typedUArraysSliceTest03(): void {
-  describe('TypedUArraysSliceTest03', (): void => {
-    beforeAll((): void => {
-    });
-
+  describe('TypedUArraysSliceTest03', () => {
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
-
-    afterEach((): void => {
-    });
-
-    afterAll((): void => {
-    });
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_SLICE_PART201_0100
      * @tc.name testTypedUArraysSlicePart201_001
