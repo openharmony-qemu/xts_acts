@@ -136,34 +136,55 @@ export class WorkerExchange {
 export async function createEchoWorkerExchange(path: string): Promise<WorkerExchange> {
   let wk: worker.ThreadWorker = new worker.ThreadWorker(path)
   let exchange: WorkerExchange = new WorkerExchange(wk)
-  let resp: string = await exchange.sendString(WORKER_READY_PROBE)
-  if (resp !== ECHO_WORKER_READY) {
+  try {
+    let resp: string = await exchange.sendString(WORKER_READY_PROBE)
+    if (resp !== ECHO_WORKER_READY) {
+      throw new Error('EchoWorker not ready')
+    }
+    return exchange
+  } catch (e) {
     await exchange.terminate()
-    throw new Error('EchoWorker not ready')
+    if (e instanceof Error) {
+      throw e
+    }
+    throw new Error('EchoWorker ready probe failed')
   }
-  return exchange
 }
 
 export async function createTaskTypeWorkerExchange(path: string): Promise<WorkerExchange> {
   let wk: worker.ThreadWorker = new worker.ThreadWorker(path)
   let exchange: WorkerExchange = new WorkerExchange(wk)
-  let readyReq: WorkerReadyRequest = new WorkerReadyRequest()
-  let resp: Record<string, Object> = await exchange.send(readyReq) as Record<string, Object>
-  if ((resp['type'] as string) !== OBJECT_WORKER_READY) {
+  try {
+    let readyReq: WorkerReadyRequest = new WorkerReadyRequest()
+    let resp: Record<string, Object> = await exchange.send(readyReq) as Record<string, Object>
+    if ((resp['type'] as string) !== OBJECT_WORKER_READY) {
+      throw new Error('TaskTypeWorker not ready')
+    }
+    return exchange
+  } catch (e) {
     await exchange.terminate()
-    throw new Error('TaskTypeWorker not ready')
+    if (e instanceof Error) {
+      throw e
+    }
+    throw new Error('TaskTypeWorker ready probe failed')
   }
-  return exchange
 }
 
 export async function createInvokeWorkerExchange(path: string): Promise<WorkerExchange> {
   let wk: worker.ThreadWorker = new worker.ThreadWorker(path)
   let exchange: WorkerExchange = new WorkerExchange(wk)
-  let readyReq: WorkerReadyRequest = new WorkerReadyRequest()
-  let resp: Record<string, Object> = await exchange.send(readyReq) as Record<string, Object>
-  if ((resp['type'] as string) !== OBJECT_WORKER_READY) {
+  try {
+    let readyReq: WorkerReadyRequest = new WorkerReadyRequest()
+    let resp: Record<string, Object> = await exchange.send(readyReq) as Record<string, Object>
+    if ((resp['type'] as string) !== OBJECT_WORKER_READY) {
+      throw new Error('InvokeWorker not ready')
+    }
+    return exchange
+  } catch (e) {
     await exchange.terminate()
-    throw new Error('InvokeWorker not ready')
+    if (e instanceof Error) {
+      throw e
+    }
+    throw new Error('InvokeWorker ready probe failed')
   }
-  return exchange
 }
