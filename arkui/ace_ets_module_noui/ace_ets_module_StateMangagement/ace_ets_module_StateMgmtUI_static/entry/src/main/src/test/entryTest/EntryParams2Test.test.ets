@@ -79,7 +79,7 @@ export default function EntryParams2Test() {
       let btn = await driver.findComponent(ON.id("btn2"));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('propA');
+      let strJson: string = inspector.getInspectorByKey('propB');
       await CommonFunc.sleep(1000);
       let text_1 = JSON.parseJsonElement(strJson).getElement('$attrs').getString('content');
       expect(text_1).assertEqual('2');
