@@ -1,3 +1,4 @@
+'use static';
 import abilityTest from './Ability.test';
 import objectAssignTest from './object/ObjectAssign.test';
 import objectConstructorTest from './object/ObjectConstructor.test';
