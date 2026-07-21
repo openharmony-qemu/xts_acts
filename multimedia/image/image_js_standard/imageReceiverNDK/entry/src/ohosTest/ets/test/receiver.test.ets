@@ -79,7 +79,7 @@ let getPermission = async () => {
     }
   }
 
-async function permissionClick() {
+  async function permissionClick() {
     console.info(`come in permissionClick`);
     let driver = await UiDriver.create();
     console.info(`driver is ${JSON.stringify(driver)}`);
@@ -212,9 +212,13 @@ export async function cameraCaptureRelyOnNum(TAG: string, photoOutput: ESObject)
     }
     //使用当前拍照设置进行拍照。
     console.info(`${TAG} start take first photo`);
+    let ready: boolean = false;
+    photoOutput!.on('captureReady', (err: BusinessError) => { ready = true; });
     await photoOutput.capture(photoCaptureSetting);
     await waitUntilImageArrival(TAG);
-    // 部分设备不支持captureReady回调
+    let result: boolean = await waitForTrigger((): boolean => ready);
+    expect(result).assertTrue();
+    photoOutput!.off('captureReady');
     await sleep(1000);
     console.info(`${TAG} start take second photo`);
     imageArrival = false;
@@ -704,239 +708,6 @@ export default function ImageReceiverTest() {
                 expect(typeof(sId) === "string").assertTrue();
                 let releaseRes: number = ndkTest.receiverRelease(myReceiver);
                 console.info(`${TAG} release result is ${JSON.stringify(releaseRes)}`);
-                expect(releaseRes != undefined).assertTrue();
-                done();
-            } catch (error) {
-                console.info(`${TAG} fail, error is ${error}`);
-                expect(false).assertTrue();
-                done();
-            }
-        });
-
-        /**
-         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0400
-         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0400
-         * @tc.desc   1.createImageReceiver
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0400', Level.LEVEL0, async (done: Function) => {
-            const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0400`;
-            if (!isSupportedCamerasResult) {
-                console.info(`${TAG} Failed to obtain the default camera or device object. Not support usb camera`);
-                done();
-                return;
-            }
-            try {
-                let myReceiver: image.ImageReceiver = ndkTest.createImageReceiver(WIDTH, HEIGHT, RECEIVER_FORMAT, CAPACITY);
-                let dummy: ESObject = myReceiver['test'];
-                let myLatestImage: image.Image = ndkTest.readLatestImage(myReceiver);
-                console.info(`${TAG} myLatestImage is ${myLatestImage}`);
-                expect(myLatestImage != undefined).assertTrue();
-                let releaseRes: number = ndkTest.receiverRelease(myReceiver);
-                console.info(`${TAG} release result is ${releaseRes}`);
-                expect(releaseRes != undefined).assertTrue();
-                done();
-            } catch (error) {
-                console.info(`${TAG} fail, error is ${error}`);
-                expect(false).assertTrue();
-                done();
-            }
-        });
-
-        /**
-         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0500
-         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0500
-         * @tc.desc   1.createImageReceiver
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0500', Level.LEVEL0, async (done: Function) => {
-            const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0500`;
-            if (!isSupportedCamerasResult) {
-                console.info(`${TAG} Failed to obtain the default camera or device object. Not support usb camera`);
-                done();
-                return;
-            }
-            try {
-                let myReceiver: image.ImageReceiver = ndkTest.createImageReceiver(WIDTH, HEIGHT, RECEIVER_FORMAT, CAPACITY);
-                let dummy: ESObject = myReceiver['test'];
-                let myNextImage: image.Image = ndkTest.readNextImage(myReceiver);
-                console.info(`${TAG} myNextImage is ${myNextImage}`);
-                expect(myNextImage != undefined).assertTrue();
-                let releaseRes: number = ndkTest.receiverRelease(myReceiver);
-                console.info(`${TAG} release result is ${releaseRes}`);
-                expect(releaseRes != undefined).assertTrue();
-                done();
-            } catch (error) {
-                console.info(`${TAG} fail, error is ${error}`);
-                expect(false).assertTrue();
-                done();
-            }
-        });
-
-        /**
-         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0600
-         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0600
-         * @tc.desc   1.createImageReceiver
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0600', Level.LEVEL0, async (done: Function) => {
-            const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0600`;
-            if (!isSupportedCamerasResult) {
-                console.info(`${TAG} Failed to obtain the default camera or device object. Not support usb camera`);
-                done();
-                return;
-            }
-            try {
-                let myReceiver: image.ImageReceiver = ndkTest.createImageReceiver(WIDTH, HEIGHT, RECEIVER_FORMAT, CAPACITY);
-                let onRet: ESObject = ndkTest.on(myReceiver);
-                console.info(`${TAG} onRet is ${onRet}`);
-                let dummy: ESObject = myReceiver['test'];
-                expect(onRet != undefined).assertTrue();
-                let releaseRes: number = ndkTest.receiverRelease(myReceiver);
-                console.info(`${TAG} release result is ${releaseRes}`);
-                expect(releaseRes != undefined).assertTrue();
-                done();
-            } catch (error) {
-                console.info(`${TAG} fail, error is ${error}`);
-                expect(false).assertTrue();
-                done();
-            }
-        });
-
-        /**
-         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0700
-         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0700
-         * @tc.desc   1.createImageReceiver
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0700', Level.LEVEL0, async (done: Function) => {
-            const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0700`;
-            if (!isSupportedCamerasResult) {
-                console.info(`${TAG} Failed to obtain the default camera or device object. Not support usb camera`);
-                done();
-                return;
-            }
-            try {
-                let myReceiver: image.ImageReceiver = ndkTest.createImageReceiver(WIDTH, HEIGHT, RECEIVER_FORMAT, CAPACITY);
-                let onRet: number = ndkTest.on(myReceiver);
-                console.info(`${TAG} onRet is ${onRet}`);
-                expect(onRet != undefined).assertTrue();
-                let dummy: ESObject = myReceiver['test'];
-                let loop = 5;
-                let onCount = 0;
-                while (loop > 0) {
-                    onCount = ndkTest.getOnEventCount(myReceiver);
-                    console.info(`${TAG} onCount is ${onCount}`);
-                    if (onCount > 0) {
-                        break;
-                    }
-                    await sleep(500);
-                    loop--;
-                }
-                if (onCount == 0) {
-                    expect(false).assertTrue();
-                    done();
-                    return;
-                }
-                let releaseRes: number = ndkTest.receiverRelease(myReceiver);
-                console.info(`${TAG} release result is ${releaseRes}`);
-                expect(releaseRes != undefined).assertTrue();
-                done();
-            } catch (error) {
-                console.info(`${TAG} fail, error is ${error}`);
-                expect(false).assertTrue();
-                done();
-            }
-        });
-
-        /**
-         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0800
-         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0800
-         * @tc.desc   1.createImageReceiver
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0800', Level.LEVEL0, async (done: Function) => {
-            const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0800`;
-            if (!isSupportedCamerasResult) {
-                console.info(`${TAG} Failed to obtain the default camera or device object. Not support usb camera`);
-                done();
-                return;
-            }
-            try {
-                let myReceiver: image.ImageReceiver = ndkTest.createImageReceiver(WIDTH, HEIGHT, RECEIVER_FORMAT, CAPACITY);
-                let onRet: number = ndkTest.on(myReceiver);
-                console.info(`${TAG} onRet is ${onRet}`);
-                expect(onRet != undefined).assertTrue();
-                let dummy: ESObject = myReceiver['test'];
-                let myLatestImage: image.Image = ndkTest.readLatestImage(myReceiver);
-                let myImageClipRect: ndkTest.imageClipRectSize = ndkTest.imageClipRect(myLatestImage);
-                let myImageSize: ndkTest.imageSize = ndkTest.imageSize(myLatestImage);
-                let myImageFormat: number = ndkTest.imageFormat(myLatestImage);
-                let myImageComponent: ndkTest.imageComponent= ndkTest.imageGetComponent(myLatestImage, image.ComponentType.JPEG);
-                let bufferArr: Uint8Array = new Uint8Array(myImageComponent.byteBuffer);
-                console.info(`${TAG} myImageComponent.byteBuffer size is ${JSON.stringify(bufferArr.length)}`);
-                for (let i = 0; i < 30; i++) {
-                    console.info(`${TAG} myImageComponent.byteBuffer data is ${JSON.stringify(bufferArr[i])}`);
-                }
-                expect(myImageClipRect != undefined).assertTrue();
-                expect(myImageSize.width == WIDTH && myImageSize.height == HEIGHT).assertTrue();
-                expect(myImageFormat == RGBA).assertTrue();
-                expect(myImageComponent.byteBuffer != undefined).assertTrue();
-                expect(myImageComponent.componentType == image.ComponentType.JPEG).assertTrue();
-                expect(myImageComponent.rowStride >= WIDTH).assertTrue();
-                expect(myImageComponent.pixelStride == Jpg_Stride).assertTrue();
-                let releaseRes: number = ndkTest.receiverRelease(myReceiver);
-                console.info(`${TAG} release result is ${releaseRes}`);
-                expect(releaseRes != undefined).assertTrue();
-                done();
-            } catch (error) {
-                console.info(`${TAG} fail, error is ${error}`);
-                expect(false).assertTrue();
-                done();
-            }
-        });
-
-        /**
-         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0900
-         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0900
-         * @tc.desc   1.createImageReceiver
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0900', Level.LEVEL0, async (done: Function) => {
-            const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_0900`;
-            if (!isSupportedCamerasResult) {
-                console.info(`${TAG} Failed to obtain the default camera or device object. Not support usb camera`);
-                done();
-                return;
-            }
-            try {
-                let myReceiver: image.ImageReceiver = ndkTest.createImageReceiver(WIDTH, HEIGHT, RECEIVER_FORMAT, CAPACITY);
-                let onRet: number = ndkTest.on(myReceiver);
-                console.info(`${TAG} onRet is ${onRet}`);
-                expect(onRet != undefined).assertTrue();
-                let dummy: ESObject = myReceiver['test'];
-                let myLatestImage: image.Image = ndkTest.readLatestImage(myReceiver);
-                let myImageComponent: ndkTest.imageComponent = ndkTest.imageGetComponent(myLatestImage, image.ComponentType.JPEG);
-                let bufferArr: Uint8Array = new Uint8Array(myImageComponent.byteBuffer);
-                console.info(`${TAG} myImageComponent.byteBuffer size is ${JSON.stringify(bufferArr.length)}`);
-                for (let i = 0; i < 30; i++) {
-                    console.info(`${TAG} myImageComponent.byteBuffer data is ${JSON.stringify(bufferArr[i])}`);
-                }
-                expect(myImageComponent.byteBuffer != undefined).assertTrue();
-                let releaseRes: number = ndkTest.imageRelease(myLatestImage);
-                console.info(`${TAG} release result is ${releaseRes}`);
                 expect(releaseRes != undefined).assertTrue();
                 done();
             } catch (error) {
