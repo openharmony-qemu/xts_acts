@@ -98,7 +98,7 @@ export default function uitestApi26ErrorTest(): void {
       } catch (err) {
         console.log(`${TestTag}, testDriverClickAtErrorPressureTooSmall_static error.message: ${JSON.stringify(err.message)}`);
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
-        expect((err as BusinessError).message).assertContain('Check arg0 failed');
+        expect((err as BusinessError).message).assertContain('Pressure must ranges form 0 to 1');
       }
       console.log(`${TestTag}, testDriverClickAtErrorPressureTooSmall end`);
     });
@@ -184,7 +184,7 @@ export default function uitestApi26ErrorTest(): void {
       } catch (err) {
         console.log(`${TestTag}, testDriverLongClickAtErrorDurationTooSmall_static error.message: ${JSON.stringify(err.message)}`);
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
-        expect((err as BusinessError).message).assertContain('Check arg0 failed');
+        expect((err as BusinessError).message).assertContain('Duration must be at least 1500ms');
       }
       console.log(`${TestTag}, testDriverLongClickAtErrorDurationTooSmall end`);
     });
@@ -307,7 +307,7 @@ export default function uitestApi26ErrorTest(): void {
         console.info(`${TestTag}, testDriverSwipeBetweenSpeedNegative error is: ${JSON.stringify(err)}`)
         console.log(`${TestTag}, testDriverSwipeBetweenSpeedNegative_static error.message: ${JSON.stringify(err.message)}`);
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
-        expect((err as BusinessError).message).assertContain('Check arg0 failed');
+        expect((err as BusinessError).message).assertContain('Expect integer which cannot be less than 0');
       }
       console.info(`${TestTag}, testDriverSwipeBetweenSpeedNegative end`);
     });
