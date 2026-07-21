@@ -251,6 +251,96 @@ export default function webErrorPageTest() {
       });
       sendEventByKey('WebErrorPageButton', 10, '');
     })
+    /**
+     * @tc.name   testSetErrorPageEnabledWithSubframe01
+     * @tc.number SUB_ACE_WEB_ERRORPAGE_API_0009
+     * @tc.desc   test setErrorPageEnabled(true, true) getErrorPageEnabled true getSubframeErrorPageEnabled true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetErrorPageEnabledWithSubframe01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitSetErrorPageEnabledWithSubframe01', 19);
+      Utils.registerBaseEvent('testSetErrorPageEnabledWithSubframe01', 'true,true', 2026072101, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      sendEventByKey('WebErrorPageButton', 10, '');
+    })
+    /**
+     * @tc.name   testSetErrorPageEnabledWithSubframe02
+     * @tc.number SUB_ACE_WEB_ERRORPAGE_API_0010
+     * @tc.desc   test setErrorPageEnabled(true, false) getErrorPageEnabled true getSubframeErrorPageEnabled false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetErrorPageEnabledWithSubframe02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitSetErrorPageEnabledWithSubframe02', 19);
+      Utils.registerBaseEvent('testSetErrorPageEnabledWithSubframe02', 'true,false', 2026072102, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      sendEventByKey('WebErrorPageButton', 10, '');
+    })
+    /**
+     * @tc.name   testSetErrorPageEnabledWithSubframe03
+     * @tc.number SUB_ACE_WEB_ERRORPAGE_API_0011
+     * @tc.desc   test setErrorPageEnabled(false, true); when enable is false, subframe error page stays disabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetErrorPageEnabledWithSubframe03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitSetErrorPageEnabledWithSubframe03', 19);
+      Utils.registerBaseEvent('testSetErrorPageEnabledWithSubframe03', 'false,false', 2026072103, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      sendEventByKey('WebErrorPageButton', 10, '');
+    })
+    /**
+     * @tc.name   testSetErrorPageEnabledWithSubframe04
+     * @tc.number SUB_ACE_WEB_ERRORPAGE_API_0012
+     * @tc.desc   test setErrorPageEnabled(false, false) getErrorPageEnabled false getSubframeErrorPageEnabled false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetErrorPageEnabledWithSubframe04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitSetErrorPageEnabledWithSubframe04', 19);
+      Utils.registerBaseEvent('testSetErrorPageEnabledWithSubframe04', 'false,false', 2026072104, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      sendEventByKey('WebErrorPageButton', 10, '');
+    })
+    /**
+     * @tc.name   testSetErrorPageEnabledWithSubframeErrorCode01
+     * @tc.number SUB_ACE_WEB_ERRORPAGE_API_0013
+     * @tc.desc   test setErrorPageEnabled(enable, includeSubframe) init error 17100001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetErrorPageEnabledWithSubframeErrorCode01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitSetErrorPageEnabledWithSubframeErrorCode01', 19);
+      Utils.registerBaseEvent('testSetErrorPageEnabledWithSubframeErrorCode01', 17100001, 2026072105, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      sendEventByKey('WebErrorPageButton', 10, '');
+    })
+    /**
+     * @tc.name   testGetSubframeErrorPageEnabledErrorCode01
+     * @tc.number SUB_ACE_WEB_ERRORPAGE_API_0014
+     * @tc.desc   test getSubframeErrorPageEnabled init error 17100001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetSubframeErrorPageEnabledErrorCode01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitGetSubframeErrorPageEnabledErrorCode01', 19);
+      Utils.registerBaseEvent('testGetSubframeErrorPageEnabledErrorCode01', 17100001, 2026072106, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      sendEventByKey('WebErrorPageButton', 10, '');
+    })
 
   })
 }
