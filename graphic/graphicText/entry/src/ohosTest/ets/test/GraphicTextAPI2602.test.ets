@@ -1244,5 +1244,57 @@ export default function GraphicTextAPI2602() {
         }
       })
 
+    /**
+     * @tc.name   testSetParagraphCachesEnabledUndefined
+     * @tc.number SUB_GRAPHIC_FontCollection_testSetParagraphCachesEnabledUndefined_0100
+     * @tc.desc   Test FontCollection testSetParagraphCachesEnabledUndefined property set to undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetParagraphCachesEnabledUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testSetParagraphCachesEnabledUndefined===="
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        let fontCollection: text.FontCollection = new text.FontCollection();
+        try {
+          fontCollection.setParagraphCachesEnabled(undefined);
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect(err.code).assertEqual(401);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testSetParagraphCachesEnabledNull
+     * @tc.number SUB_GRAPHIC_FontCollection_testSetParagraphCachesEnabledNull_0100
+     * @tc.desc   Test FontCollection testSetParagraphCachesEnabledNull property set to null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetParagraphCachesEnabledNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testSetParagraphCachesEnabledNull===="
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        let fontCollection: text.FontCollection = new text.FontCollection();
+        try {
+          fontCollection.setParagraphCachesEnabled(null);
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect(err.code).assertEqual(401);
+          done();
+        }
+      })
+
   })
 }
