@@ -471,7 +471,7 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if(isStatusBarVisible && !isFreeWindowMode){
+      if((isStatusBarVisible && !isFreeWindowMode)|| deviceType == 'tv'){
         WindowClass.off('avoidAreaChange')
         expect(flag).assertEqual(true)
         done()
@@ -503,7 +503,7 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if(isStatusBarVisible && !isFreeWindowMode){
+      if((isStatusBarVisible && !isFreeWindowMode)|| deviceType == 'tv'){
         WindowClass.off('avoidAreaChange')
         windowNdkTest.setWindowStatusBarEnabled(windowId, true, false);
         await sleep(500)
@@ -1820,7 +1820,7 @@ export default function windowNdk() {
       let result2 = windowNdkTest.setWindowStatusBarEnabled(windowId, true, true);
       console.info(`${caseName}: result2: ${result2}`);
       await sleep(200);
-      if (canIUseRes === false ||(deviceType === 'phone' && isFreeWindowMode === false) || (deviceType === 'tablet' && isFreeWindowMode === false)) {
+      if (canIUseRes === false ||(deviceType === 'phone' && isFreeWindowMode === false) || (deviceType === 'tablet' && isFreeWindowMode === false) || deviceType === 'tv') {
         expect(result2).assertEqual(0);
         expect(areaChangeType).assertEqual(window.AvoidAreaType.TYPE_SYSTEM);
         expect(flag).assertEqual(true);
@@ -1828,7 +1828,7 @@ export default function windowNdk() {
         expect(areaChange!.topRect.height).assertLarger(0);
         WindowClass.off('avoidAreaChange');
         done();
-      } else if (deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'car' || (deviceType === 'tablet' && isFreeWindowMode === true)) {
+      } else if (deviceType === 'wearable' || deviceType === '2in1' || deviceType === 'car' || (deviceType === 'tablet' && isFreeWindowMode === true)) {
         expect(result2).assertEqual(0);
         expect(flag).assertEqual(false);
         WindowClass.off('avoidAreaChange');
