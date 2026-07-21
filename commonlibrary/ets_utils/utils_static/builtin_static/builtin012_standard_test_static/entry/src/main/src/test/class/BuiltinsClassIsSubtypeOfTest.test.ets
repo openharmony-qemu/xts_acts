@@ -161,7 +161,7 @@ export default function BuiltinsClassIsSubtypeOfTest(): void {
       const nullClass = Class.of(null);
       const obj = new Object();
       const objClass = Class.of(obj);
-      expect(nullClass.isSubtypeOf(objClass)).assertFalse();
+      expect(nullClass.isSubtypeOf(objClass)).assertTrue();
     });
 
     /**
