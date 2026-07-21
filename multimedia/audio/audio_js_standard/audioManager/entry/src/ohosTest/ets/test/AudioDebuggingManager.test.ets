@@ -591,7 +591,8 @@ export default function audioDebuggingManagerTest() {
      * @tc.level   LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_PRINT_LOOPBACK_INFO_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
+      let isAudioLoopbackSupported = audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE);
+      if (isAudioLoopbackSupported) {
         try {
           debugManager = audioManager.getDebuggingManager();
           let audioLoopback: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
@@ -604,6 +605,7 @@ export default function audioDebuggingManagerTest() {
           done();
         }
       }
+      done();
     });
 
     /**
@@ -636,7 +638,8 @@ export default function audioDebuggingManagerTest() {
      * @tc.level   LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_PRINT_LOOPBACK_INFO_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
+      let isAudioLoopbackSupported = audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE);
+      if (isAudioLoopbackSupported) {
         try {
           debugManager = audioManager.getDebuggingManager();
           
@@ -652,6 +655,7 @@ export default function audioDebuggingManagerTest() {
           done();
         }
       }
+      done();
     });
 
     /**
@@ -663,7 +667,8 @@ export default function audioDebuggingManagerTest() {
      * @tc.level   LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_PRINT_LOOPBACK_INFO_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
+      let isAudioLoopbackSupported = audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE);
+      if (isAudioLoopbackSupported) {
         try {
           debugManager = audioManager.getDebuggingManager();
           
@@ -679,6 +684,7 @@ export default function audioDebuggingManagerTest() {
           done();
         }
       }
+      done();
     });
 
     /**

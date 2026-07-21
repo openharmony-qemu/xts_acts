@@ -283,7 +283,8 @@ export default function audioDebuggingManagerTest() {
      * @tc.level   LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_PRINT_LOOPBACK_STATIC_INFO_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
+      let isAudioLoopbackSupported = audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE);
+      if (isAudioLoopbackSupported) {
         try {
           let audioManager: audio.AudioManager = audio.getAudioManager();
           let debugManager: audio.AudioDebuggingManager = audioManager.getDebuggingManager();
@@ -303,6 +304,7 @@ export default function audioDebuggingManagerTest() {
           done();
         }
       }
+      done();
     });
   });
 }
