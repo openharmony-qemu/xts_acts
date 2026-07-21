@@ -33,13 +33,13 @@ export default function typedUArraysConstructorTest15(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_ConstructorTestMindMapMerged_0100
-     * @tc.name testTypedUArraysConstructorTestMindMapMerged1
+     * @tc.name testTypedUArraysConstructorTestMindMapMerged001
      * @tc.desc Verify 0 length 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructorTestMindMapMerged1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructorTestMindMapMerged001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Uint8Array().length).assertEqual(0);
       expect(new Uint8ClampedArray().length).assertEqual(0);
       expect(new Uint16Array().length).assertEqual(0);
@@ -49,13 +49,13 @@ export default function typedUArraysConstructorTest15(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_ConstructorTestMindMapMerged_0200
-     * @tc.name testTypedUArraysConstructorTestMindMapMerged2
+     * @tc.name testTypedUArraysConstructorTestMindMapMerged002
      * @tc.desc Verify 0 byteLength 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructorTestMindMapMerged2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructorTestMindMapMerged002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Uint8Array().byteLength).assertEqual(0);
       expect(new Uint8ClampedArray().byteLength).assertEqual(0);
       expect(new Uint16Array().byteLength).assertEqual(0);
@@ -65,13 +65,13 @@ export default function typedUArraysConstructorTest15(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_ConstructorTestMindMapMerged_0300
-     * @tc.name testTypedUArraysConstructorTestMindMapMerged3
+     * @tc.name testTypedUArraysConstructorTestMindMapMerged003
      * @tc.desc Verify
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructorTestMindMapMerged3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructorTestMindMapMerged003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(10);
       expect(arr.length).assertEqual(10);
       expect(arr.byteLength).assertEqual(10);
@@ -79,13 +79,13 @@ export default function typedUArraysConstructorTest15(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_ConstructorTestMindMapMerged_0400
-     * @tc.name testTypedUArraysConstructorTestMindMapMerged4
+     * @tc.name testTypedUArraysConstructorTestMindMapMerged004
      * @tc.desc Verify
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructorTestMindMapMerged4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructorTestMindMapMerged004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const u16 = new Uint16Array(10);
       const u32 = new Uint32Array(10);
       const big = new BigUint64Array(10);
@@ -98,13 +98,13 @@ export default function typedUArraysConstructorTest15(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_ConstructorTestMindMapMerged_0500
-     * @tc.name testTypedUArraysConstructorTestMindMapMerged5
+     * @tc.name testTypedUArraysConstructorTestMindMapMerged005
      * @tc.desc Verify length=0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructorTestMindMapMerged5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructorTestMindMapMerged005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(0);
       expect(arr.length).assertEqual(0);
       expect(arr.byteLength).assertEqual(0);
@@ -112,13 +112,13 @@ export default function typedUArraysConstructorTest15(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_ConstructorTestMindMapMerged_0600
-     * @tc.name testTypedUArraysConstructorTestMindMapMerged6
+     * @tc.name testTypedUArraysConstructorTestMindMapMerged006
      * @tc.desc Verify RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructorTestMindMapMerged6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructorTestMindMapMerged006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         new Uint8Array(-1);
         expect().assertFail();
@@ -129,13 +129,13 @@ export default function typedUArraysConstructorTest15(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_ConstructorTestMindMapMerged_0700
-     * @tc.name testTypedUArraysConstructorTestMindMapMerged7
+     * @tc.name testTypedUArraysConstructorTestMindMapMerged007
      * @tc.desc Verify
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructorTestMindMapMerged7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructorTestMindMapMerged007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(5.9);
       expect(arr.length).assertEqual(5);
     });
@@ -179,13 +179,13 @@ export default function typedUArraysConstructorTest15(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_ConstructorTestMindMapMerged_1000
-     * @tc.name testTypedUArraysConstructorTestMindMapMerged8
+     * @tc.name testTypedUArraysConstructorTestMindMapMerged010
      * @tc.desc Verify TypedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructorTestMindMapMerged8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructorTestMindMapMerged010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new Uint16Array([100, 200, 300]);
       const arr = new Uint8Array(src);
       expect(arr.length).assertEqual(3);
@@ -195,13 +195,13 @@ export default function typedUArraysConstructorTest15(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_ConstructorTestMindMapMerged_1100
-     * @tc.name testTypedUArraysConstructorTestMindMapMerged9
+     * @tc.name testTypedUArraysConstructorTestMindMapMerged011
      * @tc.desc Verify BigUint64Array BigInt Double
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructorTestMindMapMerged9', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructorTestMindMapMerged011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new BigUint64Array([10n, 20n, 30n]);
       expect(src.length).assertEqual(3);
       expect(src[0]).assertEqual(10n);
@@ -209,13 +209,13 @@ export default function typedUArraysConstructorTest15(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_ConstructorTestMindMapMerged_1200
-     * @tc.name testTypedUArraysConstructorTestMindMapMerged10
+     * @tc.name testTypedUArraysConstructorTestMindMapMerged012
      * @tc.desc Verify TypedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructorTestMindMapMerged10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructorTestMindMapMerged012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new Uint8Array(0);
       const arr = new Uint8Array(src);
       expect(arr.length).assertEqual(0);
@@ -223,13 +223,13 @@ export default function typedUArraysConstructorTest15(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_ConstructorTestMindMapMerged_1300
-     * @tc.name testTypedUArraysConstructorTestMindMapMerged11
+     * @tc.name testTypedUArraysConstructorTestMindMapMerged013
      * @tc.desc Verify
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructorTestMindMapMerged11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructorTestMindMapMerged013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new Uint8Array([1, 2, 3]);
       const arr = new Uint8Array(src);
       expect(arr.length).assertEqual(3);
@@ -239,13 +239,13 @@ export default function typedUArraysConstructorTest15(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_ConstructorTestMindMapMerged_1400
-     * @tc.name testTypedUArraysConstructorTestMindMapMerged12
+     * @tc.name testTypedUArraysConstructorTestMindMapMerged014
      * @tc.desc Verify Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructorTestMindMapMerged12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructorTestMindMapMerged014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3]);
       expect(arr.length).assertEqual(3);
       const val6: number = arr[0];
@@ -256,26 +256,26 @@ export default function typedUArraysConstructorTest15(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_ConstructorTestMindMapMerged_1500
-     * @tc.name testTypedUArraysConstructorTestMindMapMerged13
+     * @tc.name testTypedUArraysConstructorTestMindMapMerged015
      * @tc.desc Verify
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructorTestMindMapMerged13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructorTestMindMapMerged015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([]);
       expect(arr.length).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_ConstructorTestMindMapMerged_1600
-     * @tc.name testTypedUArraysConstructorTestMindMapMerged14
+     * @tc.name testTypedUArraysConstructorTestMindMapMerged016
      * @tc.desc Verify
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructorTestMindMapMerged14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructorTestMindMapMerged016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([42]);
       expect(arr.length).assertEqual(1);
       const val8: number = arr[0];
@@ -284,13 +284,13 @@ export default function typedUArraysConstructorTest15(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_ConstructorTestMindMapMerged_1700
-     * @tc.name testTypedUArraysConstructorTestMindMapMerged15
+     * @tc.name testTypedUArraysConstructorTestMindMapMerged017
      * @tc.desc Verify /
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructorTestMindMapMerged15', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructorTestMindMapMerged017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const u8 = new Uint8Array([256]);
       const u8c = new Uint8ClampedArray([256]);
       const val9 = u8[0];
@@ -331,13 +331,13 @@ export default function typedUArraysConstructorTest15(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_ConstructorTestMindMapMerged_2000
-     * @tc.name testTypedUArraysConstructorTestMindMapMerged16
+     * @tc.name testTypedUArraysConstructorTestMindMapMerged020
      * @tc.desc Verify 2 (buffer, byteOffset)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructorTestMindMapMerged16', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructorTestMindMapMerged020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const arr = new Uint8Array(buf, 4);
       expect(arr.byteOffset).assertEqual(4);
@@ -346,13 +346,13 @@ export default function typedUArraysConstructorTest15(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_ConstructorTestMindMapMerged_2100
-     * @tc.name testTypedUArraysConstructorTestMindMapMerged17
+     * @tc.name testTypedUArraysConstructorTestMindMapMerged021
      * @tc.desc Verify 3 (buffer, byteOffset, length)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructorTestMindMapMerged17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructorTestMindMapMerged021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const arr = new Uint8Array(buf, 4, 6);
       expect(arr.byteOffset).assertEqual(4);
@@ -362,13 +362,13 @@ export default function typedUArraysConstructorTest15(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_ConstructorTestMindMapMerged_2200
-     * @tc.name testTypedUArraysConstructorTestMindMapMerged18
+     * @tc.name testTypedUArraysConstructorTestMindMapMerged022
      * @tc.desc Verify buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructorTestMindMapMerged18', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructorTestMindMapMerged022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(32);
       const u16 = new Uint16Array(buf, 0, 4);
       const u32 = new Uint32Array(buf, 16, 2);
@@ -380,13 +380,13 @@ export default function typedUArraysConstructorTest15(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_ConstructorTestMindMapMerged_2300
-     * @tc.name testTypedUArraysConstructorTestMindMapMerged19
+     * @tc.name testTypedUArraysConstructorTestMindMapMerged023
      * @tc.desc Verify byteOffset RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructorTestMindMapMerged19', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructorTestMindMapMerged023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       try {
         new Uint32Array(buf, 1, 2); // offset=1 IsNot4-byte aligned
@@ -398,13 +398,13 @@ export default function typedUArraysConstructorTest15(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_ConstructorTestMindMapMerged_2400
-     * @tc.name testTypedUArraysConstructorTestMindMapMerged20
+     * @tc.name testTypedUArraysConstructorTestMindMapMerged024
      * @tc.desc Verify byteOffset + length RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructorTestMindMapMerged20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructorTestMindMapMerged024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       try {
         new Uint8Array(buf, 4, 10);
@@ -416,13 +416,13 @@ export default function typedUArraysConstructorTest15(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_ConstructorTestMindMapMerged_2500
-     * @tc.name testTypedUArraysConstructorTestMindMapMerged21
+     * @tc.name testTypedUArraysConstructorTestMindMapMerged025
      * @tc.desc Verify Set
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructorTestMindMapMerged21', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructorTestMindMapMerged025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<number>([1, 2, 3]);
       const arr = new Uint8Array(set);
       expect(arr.length).assertEqual(3);
@@ -432,13 +432,13 @@ export default function typedUArraysConstructorTest15(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_ConstructorTestMindMapMerged_2600
-     * @tc.name testTypedUArraysConstructorTestMindMapMerged22
+     * @tc.name testTypedUArraysConstructorTestMindMapMerged026
      * @tc.desc Verify Map.values()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructorTestMindMapMerged22', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructorTestMindMapMerged026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Map<number, number>([[0, 10], [1, 20]]);
       const arr = new Uint8Array(map.values());
       expect(arr.length).assertEqual(2);
@@ -448,13 +448,13 @@ export default function typedUArraysConstructorTest15(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_ConstructorTestMindMapMerged_2700
-     * @tc.name testTypedUArraysConstructorTestMindMapMerged23
+     * @tc.name testTypedUArraysConstructorTestMindMapMerged027
      * @tc.desc Verify null/undefined TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTypedUArraysConstructorTestMindMapMerged23', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTypedUArraysConstructorTestMindMapMerged027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // ArkTS limitation: cannot test null/undefined as constructor argument
     });
 
