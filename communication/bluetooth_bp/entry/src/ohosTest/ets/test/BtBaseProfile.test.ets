@@ -205,13 +205,15 @@ export default function btBaseProfileTest() {
       try {
         let state : bluetooth.ProfileConnectionState = A2dpSourceProfile.getConnectionState("11:22:33:AA:BB:FF");
         console.info("the connection state:" + state);
-        expect().assertFail();
+        // 蓝区没有校验传入地址能否转成真实地址，进入后续判断，发现该设备没有连接，返回0
+        expect(state).assertEqual(bluetooth.ProfileConnectionState.STATE_DISCONNECTED);
       } catch (err) {
         console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === '801' || err.code === '2900004') {
           console.info('[bluetooth_js]getConnectionState is not support or profile not support');
           expect(err.code === '801' || err.code === '2900004').assertTrue();
         } else {
+          // 黄区尝试转换地址为真实地址，转换失败报错2900099
           expect(err.code).assertEqual('2900099');
         };
       }
@@ -371,13 +373,15 @@ export default function btBaseProfileTest() {
       try {
         let state : bluetooth.ProfileConnectionState = HandsFreeAudioGatewayProfile.getConnectionState("11:22:33:AA:BB:FF");
         console.info("the connection state:" + state);
-        expect().assertFail();
+        // 蓝区没有校验传入地址能否转成真实地址，进入后续判断，发现该设备没有连接，返回0
+        expect(state).assertEqual(bluetooth.ProfileConnectionState.STATE_DISCONNECTED);
       } catch (err) {
         console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === '801') {
           console.info('[bluetooth_js]getConnectionState is not support');
           expect(err.code).assertEqual('801');
         } else {
+          // 黄区尝试转换地址为真实地址，转换失败报错2900099
           expect(err.code).assertEqual('2900099');
         };
       }
@@ -479,13 +483,15 @@ export default function btBaseProfileTest() {
       try {
         let state : bluetooth.ProfileConnectionState = HidHostProfile.getConnectionState("11:22:33:AA:BB:FF");
         console.info("the connection state:" + state);
-        expect().assertFail();
+        // 蓝区没有校验传入地址能否转成真实地址，进入后续判断，发现该设备没有连接，返回0
+        expect(state).assertEqual(bluetooth.ProfileConnectionState.STATE_DISCONNECTED);
       } catch (err) {
         console.error("bluetooth getConnectionState errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === '801') {
           console.info('[bluetooth_js]getConnectionState is not support');
           expect(err.code).assertEqual('801');
         } else {
+          // 黄区尝试转换地址为真实地址，转换失败报错2900099
           expect(err.code).assertEqual('2900099');
         }
       }
