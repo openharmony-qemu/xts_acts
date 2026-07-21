@@ -309,6 +309,11 @@ export async function pushCreateAsset(context: Context, names: Array<string>):
       let fileName = fileNames[i];
       let filePath = pathDir + '/' + fileName;
       let fileUri = fileuri.getUriFromPath(filePath);
+      const stats = fs.statSync(filePath);
+      const fileSize = stats.size;
+      if (fileSize <= 0) {
+        continue;
+      }
       let rawExtension: string = fileName.split('.')[1];
       for (let j = 0; j < names.length; j++) {
         let name = names[j];
@@ -464,4 +469,45 @@ export async function pushCreateAssetSingle(context: Context, names: Array<strin
   } catch (err) {
     console.error('Push_createAsset push resource failed: ' + err)
   }
+}
+
+export async function waitForLcdSizePopulated(displayName: string, timeoutMs: int = 10000): Promise<boolean> {
+  let waitedMs = 0;
+  const checkIntervalMs = 500;
+
+  while (waitedMs < timeoutMs) {
+    try {
+      let appContext: Context = Hypium.get("context") as Context;
+      const helper = photoAccessHelper.getPhotoAccessHelper(appContext);
+
+      const predicates = new dataSharePredicates.DataSharePredicates();
+      predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
+
+      const fetchOps: photoAccessHelper.FetchOptions = {
+        fetchColumns: [photoAccessHelper.PhotoKeys.LCD_SIZE],
+        predicates: predicates
+      };
+
+      let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
+      let asset = await fetchResult.getFirstObject();
+      fetchResult.close();
+
+      let lcdSize = asset.get(photoAccessHelper.PhotoKeys.LCD_SIZE) as string;
+
+      hilog.info(0x0000, testTag, `waitForLcdSizePopulated: ${displayName} lcd_size = ${lcdSize}`);
+
+      if (lcdSize !== undefined && lcdSize !== null && lcdSize !== '') {
+        hilog.info(0x0000, testTag, `waitForLcdSizePopulated: ${displayName} lcd_size populated successfully`);
+        return true;
+      }
+    } catch (error) {
+      hilog.info(0x0000, testTag, `waitForLcdSizePopulated: ${displayName} error = ${error}`);
+    }
+
+    await sleep(checkIntervalMs);
+    waitedMs += checkIntervalMs;
+  }
+
+  hilog.error(0x0000, testTag, `waitForLcdSizePopulated: ${displayName} timeout after ${timeoutMs}ms`);
+  return false;
 }
