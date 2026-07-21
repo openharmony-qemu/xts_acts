@@ -23,6 +23,7 @@ import { AbilityConstant, Configuration, ConfigurationConstant, UIAbility, Want 
 import { webview } from '@kit.ArkWeb';
 import { pasteboard } from '@kit.BasicServicesKit';
 import { Driver, MouseButton, UiWindow, ON, On } from '@kit.TestKit';
+import { XtsTestServer } from 'library';
 const EVENT_ID_SET_SUITE_KEY = 183128;
 let driver = Driver.create();
 
@@ -30,6 +31,7 @@ let driver = Driver.create();
 @Component
 struct webViewController {
   controller: webview.WebviewController = new webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = ""
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
@@ -44,6 +46,10 @@ struct webViewController {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -70,7 +76,7 @@ struct webViewController {
           switch (this.str) {
             case "emitOnTextSelectionChange01": {
                 this.isPageEnd = -1
-                this.controller.loadUrl("https://www-file.huawei.com/minisite/media/annual_report/annual_report_2022_cn.pdf")
+                this.controller.loadUrl(this.mServer.getAssetUrl('text.html'))
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 Utils.emitEvent("onTextSelectionChange", 202601211);
                 break;
@@ -78,7 +84,7 @@ struct webViewController {
 
             case "emitOnTextSelectionChange02": {
               this.isPageEnd = -1
-              this.controller.loadUrl("https://www-file.huawei.com/minisite/media/annual_report/annual_report_2022_cn.pdf")
+              this.controller.loadUrl(this.mServer.getAssetUrl('text.html'))
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               Utils.emitEvent("selectionText", 202601212);
               break;
@@ -88,7 +94,7 @@ struct webViewController {
         })
       }
 
-      Web({ src: 'https://www-file.huawei.com/minisite/media/annual_report/annual_report_2022_cn.pdf', controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('text.html'), controller: this.controller })
         .width('100%')
         .height('50%%')
         .onTextSelectionChange((selectionText: string) => {

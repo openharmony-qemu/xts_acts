@@ -20,12 +20,18 @@ import image from '@ohos.multimedia.image';
 import { JsProxyObject } from '../../test/Interfaces';
 import { BusinessError } from '@ohos.base';
 import {waitForExist} from '../../test/WaitTest';
+import { XtsTestServer } from 'library';
 
 @Entry
 @Component
 struct PrecompileJavaScriptTest {
   controller: webView.WebviewController = new webView.WebviewController();
   message: webView.WebMessageExt = new webView.WebMessageExt();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
+  srcUrl: string = this.mServer.getAssetUrl('index.html');
+  precompileUrl: string = this.mServer.getAssetUrl('local_script.js');
+  precompileNoSchemeUrl: string = this.precompileUrl.replace(/^[A-Za-z]+:\/\//, '');
+  precompileSchemeOnlyUrl: string = this.precompileUrl.split('//')[0] + '//';
   @State str: string = ""
   @State javaScriptAccess: boolean = true;
   @State isReceive: number = -1;
@@ -42,6 +48,10 @@ struct PrecompileJavaScriptTest {
 
   onPageHide() {
     events_emitter.off(120060)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -77,7 +87,7 @@ struct PrecompileJavaScriptTest {
           switch (this.str) {
             case "testPrecompileJavaScript002": {
               let msg = "testPrecompileJavaScript002"
-              this.controller.precompileJavaScript("https://", 'hawe', {
+              this.controller.precompileJavaScript(this.precompileSchemeOnlyUrl, 'hawe', {
                 responseHeaders: [
                   {
                     headerKey: "E-Tag",
@@ -111,7 +121,7 @@ struct PrecompileJavaScriptTest {
             }
             case "testPrecompileJavaScript004": {
               let msg = "testPrecompileJavaScript004"
-              this.controller.precompileJavaScript("www.baidu.com", 'hawe', {
+              this.controller.precompileJavaScript(this.precompileNoSchemeUrl, 'hawe', {
                 responseHeaders: [
                   {
                     headerKey: "E-Tag",
@@ -128,7 +138,7 @@ struct PrecompileJavaScriptTest {
             }
             case "testPrecompileJavaScript007": {
               let msg = "testPrecompileJavaScript007"
-              this.controller.precompileJavaScript('https://exmaple.com/example.js', '', {
+              this.controller.precompileJavaScript(this.precompileUrl, '', {
                 responseHeaders: [
                   {
                     headerKey: "E-Tag",
@@ -145,7 +155,7 @@ struct PrecompileJavaScriptTest {
             }
             case "testPrecompileJavaScript008": {
               let msg = "testPrecompileJavaScript008"
-              this.controller.precompileJavaScript('https://exmaple.com/example.js', ' ', {
+              this.controller.precompileJavaScript(this.precompileUrl, ' ', {
                 responseHeaders: [
                   {
                     headerKey: "E-Tag",
@@ -163,7 +173,7 @@ struct PrecompileJavaScriptTest {
             case "testPrecompileJavaScript009": {
               let msg = "testPrecompileJavaScript009"
               try {
-                this.controller.precompileJavaScript('https://exmaple.com/example.js', null, {
+                this.controller.precompileJavaScript(this.precompileUrl, null, {
                   responseHeaders: [
                     {
                       headerKey: "E-Tag",
@@ -184,7 +194,7 @@ struct PrecompileJavaScriptTest {
             case "testPrecompileJavaScript010": {
               let msg = "testPrecompileJavaScript010"
               try {
-                this.controller.precompileJavaScript('https://exmaple.com/example.js', undefined, {
+                this.controller.precompileJavaScript(this.precompileUrl, undefined, {
                   responseHeaders: [
                     {
                       headerKey: "E-Tag",
@@ -204,7 +214,7 @@ struct PrecompileJavaScriptTest {
             }
             case "testPrecompileJavaScript012": {
               let msg = "testPrecompileJavaScript012"
-              this.controller.precompileJavaScript('https://exmaple.com/example.js', 'hawe', undefined)
+              this.controller.precompileJavaScript(this.precompileUrl, 'hawe', undefined)
                 .then((res) => {
                   console.info(msg + " precompile result: " + res);
                   Utils.emitEvent(res, 120140)
@@ -216,7 +226,7 @@ struct PrecompileJavaScriptTest {
             }
             case "testPrecompileJavaScript013": {
               let msg = "testPrecompileJavaScript013"
-              this.controller.precompileJavaScript("https://exmaple.com/example.js", 'hawe', {
+              this.controller.precompileJavaScript(this.precompileUrl, 'hawe', {
                 responseHeaders: [
                   {
                     headerKey: "E-Tag",
@@ -233,7 +243,7 @@ struct PrecompileJavaScriptTest {
             }
             case "testPrecompileJavaScript014": {
               let msg = "testPrecompileJavaScript014"
-              this.controller.precompileJavaScript("https://exmaple.com/example.js", 'hawe', {
+              this.controller.precompileJavaScript(this.precompileUrl, 'hawe', {
                 responseHeaders: [
                   {
                     headerKey: "Last-Modified",
@@ -250,7 +260,7 @@ struct PrecompileJavaScriptTest {
             }
             case "testPrecompileJavaScript015": {
               let msg = "testPrecompileJavaScript015"
-              this.controller.precompileJavaScript("https://exmaple.com/example.js", 'hawe', {
+              this.controller.precompileJavaScript(this.precompileUrl, 'hawe', {
                 responseHeaders: [
                   {
                     headerKey: "abc",
@@ -267,7 +277,7 @@ struct PrecompileJavaScriptTest {
             }
             case "testPrecompileJavaScript016": {
               let msg = "testPrecompileJavaScript016"
-              this.controller.precompileJavaScript("https://exmaple.com/example.js", 'hawe', {
+              this.controller.precompileJavaScript(this.precompileUrl, 'hawe', {
                 responseHeaders: [
                   {
                     headerKey: "",
@@ -284,7 +294,7 @@ struct PrecompileJavaScriptTest {
             }
             case "testPrecompileJavaScript017": {
               let msg = "testPrecompileJavaScript017"
-              this.controller.precompileJavaScript("https://exmaple.com/example.js", 'hawe', {
+              this.controller.precompileJavaScript(this.precompileUrl, 'hawe', {
                 responseHeaders: [
                   {
                     headerKey: " ",
@@ -301,7 +311,7 @@ struct PrecompileJavaScriptTest {
             }
             case "testPrecompileJavaScript018": {
               let msg = "testPrecompileJavaScript018"
-              this.controller.precompileJavaScript("https://exmaple.com/example.js", 'hawe', {
+              this.controller.precompileJavaScript(this.precompileUrl, 'hawe', {
                 responseHeaders: [
                   {
                     headerKey: "中文",
@@ -320,7 +330,7 @@ struct PrecompileJavaScriptTest {
               let msg = "testPrecompileJavaScript019"
               getContext().resourceManager.getRawFileContent("index.html").then((content) => {
                 console.log(msg + " getRawFileContent result: " + content)
-                this.controller.precompileJavaScript("https://exmaple.com/example.js", content, {
+                this.controller.precompileJavaScript(this.precompileUrl, content, {
                   responseHeaders: [
                     {
                       headerKey: "E-Tag",
@@ -342,7 +352,7 @@ struct PrecompileJavaScriptTest {
         })
       }
 
-      Web({ src: $rawfile('index.html'), controller: this.controller })
+      Web({ src: this.srcUrl, controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .javaScriptProxy({
           object: this.jsObj,

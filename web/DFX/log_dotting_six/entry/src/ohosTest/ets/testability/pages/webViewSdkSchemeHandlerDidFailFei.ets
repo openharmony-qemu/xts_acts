@@ -19,10 +19,12 @@ import business_error from '@ohos.base'
 import buffer from '@ohos.buffer'
 import { WebNetErrorList } from '@ohos.web.netErrorList'
 import {waitForExist} from '../../test/WaitTest';
+import { XtsTestServer } from 'library';
 @Entry
 @Component
 struct webViewSdkSchemeHandler {
   controller: webview.WebviewController = new webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), true);
   schemeHandler: webview.WebSchemeHandler = new webview.WebSchemeHandler()
   httpBodyStream: webview.WebHttpBodyStream|null = null
   @State emitKey: string = '';
@@ -62,6 +64,11 @@ struct webViewSdkSchemeHandler {
     }
   }
   
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+  }
+
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
       if (eventData != null) {
           console.info('valueChangeCallBack:' + JSON.stringify(eventData));
@@ -84,295 +91,295 @@ struct webViewSdkSchemeHandler {
                 switch (this.emitKey) {
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative0': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative0 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative1': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative1 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative2': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative2 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative3': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative3 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative4': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative4 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative5': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative5 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative6': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative6 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative7': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative7 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative8': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative8 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative9': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative9 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative10': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative10 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative11': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative11 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative12': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative12 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative13': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative13 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative14': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative14 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative15': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative15 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative16': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative16 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative17': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative17 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative18': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative18 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative19': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative19 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative20': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative20 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative21': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative21 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative22': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative22 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative23': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative23 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative25': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative25 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative26': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative26 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative27': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative27 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative29': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative29 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative30': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative30 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative31': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative31 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative32': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative32 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative100': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative100 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative101': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative101 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative102': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative102 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative103': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative103 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative104': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative104 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative105': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative105 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative106': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative106 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative107': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative107 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative108': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative108 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative109': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative109 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative110': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative110 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative111': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative111 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative112': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative112 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative113': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative113 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative114': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative114 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative115': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative115 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative117': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative117 IsPageEnd', 0);
                     break;
                   }
                   case 'emitWebViewSdkSchemeHandlerDidFailNegative118': {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
                     await waitForExist(()=>this.isPageEnd, 'emitWebViewSdkSchemeHandlerDidFailNegative118 IsPageEnd', 0);
                     break;
                   }

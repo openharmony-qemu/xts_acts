@@ -17,6 +17,7 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
 import { CommonConstants } from '../../test/Constant.test';
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_EMIT_KEY = 111850;
 
@@ -24,6 +25,7 @@ const EVENT_ID_SET_EMIT_KEY = 111850;
 @Component
 struct webViewContPageAndprepareForPageLoadErrorTwo {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State javaScriptAccess: boolean = true;
   @State fileAccess: boolean = true;
   @State domStorageAccess: boolean = false;
@@ -46,6 +48,10 @@ struct webViewContPageAndprepareForPageLoadErrorTwo {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_EMIT_KEY)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -90,7 +96,8 @@ struct webViewContPageAndprepareForPageLoadErrorTwo {
             }
             case "emitPrepareForPageLoadErrTwo": {
               try {
-                web_webview.WebviewController.prepareForPageLoad(CommonConstants.TEST_URL, true, 7);
+                web_webview.WebviewController.prepareForPageLoad(this.mServer.getAssetUrl(CommonConstants.TEST_URL),
+                 true, 7);
               } catch (error) {
                 console.error(`prepareForPageLoad fail, ErrorCode: ${error.code},  Message: ${error.message}`);
                 this.errorCode = error.code;
@@ -102,7 +109,7 @@ struct webViewContPageAndprepareForPageLoadErrorTwo {
         })
       }
 
-      Web({ src: 'www.example.com', controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)
         .imageAccess(this.imageAccess)
