@@ -30,6 +30,8 @@ export default function windowKeyBorad() {
     let isPCStatus: string = '';
     let isFreeWindowMode = false;
     let driver: Driver;
+    let deviceType: string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
