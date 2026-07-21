@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,7 +33,7 @@ export default function typedUArraysCopyWithinTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_0100
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_0100
      * @tc.name testTypedUArraysCopyWithinPart301_001
      * @tc.desc Verify target null TypeError Uint8Array
      * @tc.size MediumTest
@@ -45,12 +46,12 @@ export default function typedUArraysCopyWithinTest05(): void {
         (arr).copyWithin(0, 0);
         expect(arr.length).assertEqual(5);
       } catch (e) {
-        expect(typeof e).assertEqual('object');
+        expect(e.name).assertEqual('Error');
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_0200
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_0200
      * @tc.name testTypedUArraysCopyWithinPart301_002
      * @tc.desc Verify target null TypeError Uint16Array
      * @tc.size MediumTest
@@ -63,12 +64,12 @@ export default function typedUArraysCopyWithinTest05(): void {
         (arr).copyWithin(0, 0);
         expect(arr.length).assertEqual(5);
       } catch (e) {
-        expect(typeof e).assertEqual('object');
+        expect(e.name).assertEqual('Error');
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_0300
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_0300
      * @tc.name testTypedUArraysCopyWithinPart301_003
      * @tc.desc Verify target null TypeError Uint32Array
      * @tc.size MediumTest
@@ -81,12 +82,12 @@ export default function typedUArraysCopyWithinTest05(): void {
         (arr).copyWithin(0, 0);
         expect(arr.length).assertEqual(5);
       } catch (e) {
-        expect(typeof e).assertEqual('object');
+        expect(e.name).assertEqual('Error');
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_0400
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_0400
      * @tc.name testTypedUArraysCopyWithinPart301_004
      * @tc.desc Verify target null TypeError Uint8ClampedArray
      * @tc.size MediumTest
@@ -99,12 +100,12 @@ export default function typedUArraysCopyWithinTest05(): void {
         (arr).copyWithin(0, 0);
         expect(arr.length).assertEqual(5);
       } catch (e) {
-        expect(typeof e).assertEqual('object');
+        expect(e.name).assertEqual('Error');
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_0500
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_0500
      * @tc.name testTypedUArraysCopyWithinPart301_005
      * @tc.desc Verify target null TypeError BigUint64Array
      * @tc.size MediumTest
@@ -117,12 +118,12 @@ export default function typedUArraysCopyWithinTest05(): void {
         (arr).copyWithin(0, 0);
         expect(arr.length).assertEqual(5);
       } catch (e) {
-        expect(typeof e).assertEqual('object');
+        expect(e.name).assertEqual('Error');
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_0600
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_0600
      * @tc.name testTypedUArraysCopyWithinPart301_006
      * @tc.desc Verify start null TypeError Uint8Array
      * @tc.size MediumTest
@@ -135,13 +136,12 @@ export default function typedUArraysCopyWithinTest05(): void {
         (arr as number).toFixed();
         expect(true).assertFail();
       } catch (e) {
-        expect(typeof e).assertEqual("object");
+        expect(e.name).assertEqual("ClassCastError");
       }
-      return;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_0700
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_0700
      * @tc.name testTypedUArraysCopyWithinPart301_007
      * @tc.desc Verify start null TypeError Uint16Array
      * @tc.size MediumTest
@@ -154,13 +154,12 @@ export default function typedUArraysCopyWithinTest05(): void {
         (arr as number).toFixed();
         expect(true).assertFail();
       } catch (e) {
-        expect(typeof e).assertEqual("object");
+        expect(e.name).assertEqual("ClassCastError");
       }
-      return;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_0800
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_0800
      * @tc.name testTypedUArraysCopyWithinPart301_008
      * @tc.desc Verify start null TypeError Uint32Array
      * @tc.size MediumTest
@@ -173,13 +172,12 @@ export default function typedUArraysCopyWithinTest05(): void {
         (arr as number).toFixed();
         expect(true).assertFail();
       } catch (e) {
-        expect(typeof e).assertEqual("object");
+        expect(e.name).assertEqual("ClassCastError");
       }
-      return;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_0900
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_0900
      * @tc.name testTypedUArraysCopyWithinPart301_009
      * @tc.desc Verify start null TypeError Uint8ClampedArray
      * @tc.size MediumTest
@@ -192,13 +190,12 @@ export default function typedUArraysCopyWithinTest05(): void {
         (arr as number).toFixed();
         expect(true).assertFail();
       } catch (e) {
-        expect(typeof e).assertEqual("object");
+        expect(e.name).assertEqual("ClassCastError");
       }
-      return;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_1000
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_1000
      * @tc.name testTypedUArraysCopyWithinPart301_010
      * @tc.desc Verify start null TypeError BigUint64Array
      * @tc.size MediumTest
@@ -211,13 +208,12 @@ export default function typedUArraysCopyWithinTest05(): void {
         (arr as number).toFixed();
         expect(true).assertFail();
       } catch (e) {
-        expect(typeof e).assertEqual("object");
+        expect(e.name).assertEqual("ClassCastError");
       }
-      return;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_1100
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_1100
      * @tc.name testTypedUArraysCopyWithinPart301_011
      * @tc.desc Verify end null TypeError Uint8Array
      * @tc.size MediumTest
@@ -230,13 +226,12 @@ export default function typedUArraysCopyWithinTest05(): void {
         (arr as number).toFixed();
         expect(true).assertFail();
       } catch (e) {
-        expect(typeof e).assertEqual("object");
+        expect(e.name).assertEqual("ClassCastError");
       }
-      return;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_1200
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_1200
      * @tc.name testTypedUArraysCopyWithinPart301_012
      * @tc.desc Verify end null TypeError Uint16Array
      * @tc.size MediumTest
@@ -249,13 +244,12 @@ export default function typedUArraysCopyWithinTest05(): void {
         (arr as number).toFixed();
         expect(true).assertFail();
       } catch (e) {
-        expect(typeof e).assertEqual("object");
+        expect(e.name).assertEqual("ClassCastError");
       }
-      return;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_1300
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_1300
      * @tc.name testTypedUArraysCopyWithinPart301_013
      * @tc.desc Verify end null TypeError Uint32Array
      * @tc.size MediumTest
@@ -268,13 +262,12 @@ export default function typedUArraysCopyWithinTest05(): void {
         (arr as number).toFixed();
         expect(true).assertFail();
       } catch (e) {
-        expect(typeof e).assertEqual("object");
+        expect(e.name).assertEqual("ClassCastError");
       }
-      return;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_1400
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_1400
      * @tc.name testTypedUArraysCopyWithinPart301_014
      * @tc.desc Verify end null TypeError Uint8ClampedArray
      * @tc.size MediumTest
@@ -287,13 +280,12 @@ export default function typedUArraysCopyWithinTest05(): void {
         (arr as number).toFixed();
         expect(true).assertFail();
       } catch (e) {
-        expect(typeof e).assertEqual("object");
+        expect(e.name).assertEqual("ClassCastError");
       }
-      return;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_1500
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_1500
      * @tc.name testTypedUArraysCopyWithinPart301_015
      * @tc.desc Verify end null TypeError BigUint64Array
      * @tc.size MediumTest
@@ -306,13 +298,12 @@ export default function typedUArraysCopyWithinTest05(): void {
         (arr as number).toFixed();
         expect(true).assertFail();
       } catch (e) {
-        expect(typeof e).assertEqual("object");
+        expect(e.name).assertEqual("ClassCastError");
       }
-      return;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_1600
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_1600
      * @tc.name testTypedUArraysCopyWithinPart301_016
      * @tc.desc Verify target TypeError Uint8Array
      * @tc.size MediumTest
@@ -325,12 +316,12 @@ export default function typedUArraysCopyWithinTest05(): void {
         (arr).copyWithin(0, 0);
         expect(arr.length).assertEqual(5);
       } catch (e) {
-        expect(typeof e).assertEqual('object');
+        expect(e.name).assertEqual('Error');
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_1700
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_1700
      * @tc.name testTypedUArraysCopyWithinPart301_017
      * @tc.desc Verify start TypeError Uint16Array
      * @tc.size MediumTest
@@ -343,13 +334,12 @@ export default function typedUArraysCopyWithinTest05(): void {
         (arr as number).toFixed();
         expect(true).assertFail();
       } catch (e) {
-        expect(typeof e).assertEqual("object");
+        expect(e.name).assertEqual("ClassCastError");
       }
-      return;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_1800
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_1800
      * @tc.name testTypedUArraysCopyWithinPart301_018
      * @tc.desc Verify end TypeError Uint32Array
      * @tc.size MediumTest
@@ -362,13 +352,12 @@ export default function typedUArraysCopyWithinTest05(): void {
         (arr as number).toFixed();
         expect(true).assertFail();
       } catch (e) {
-        expect(typeof e).assertEqual("object");
+        expect(e.name).assertEqual("ClassCastError");
       }
-      return;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_1900
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_1900
      * @tc.name testTypedUArraysCopyWithinPart301_019
      * @tc.desc Verify target TypeError Uint8ClampedArray
      * @tc.size MediumTest
@@ -381,12 +370,12 @@ export default function typedUArraysCopyWithinTest05(): void {
         (arr).copyWithin(0, 0);
         expect(arr.length).assertEqual(5);
       } catch (e) {
-        expect(typeof e).assertEqual('object');
+        expect(e.name).assertEqual('Error');
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_2000
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_2000
      * @tc.name testTypedUArraysCopyWithinPart301_020
      * @tc.desc Verify start TypeError BigUint64Array
      * @tc.size MediumTest
@@ -399,13 +388,12 @@ export default function typedUArraysCopyWithinTest05(): void {
         (arr as number).toFixed();
         expect(true).assertFail();
       } catch (e) {
-        expect(typeof e).assertEqual("object");
+        expect(e.name).assertEqual("ClassCastError");
       }
-      return;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_2100
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_2100
      * @tc.name testTypedUArraysCopyWithinPart301_021
      * @tc.desc Verify target TypeError Uint8Array
      * @tc.size MediumTest
@@ -418,12 +406,12 @@ export default function typedUArraysCopyWithinTest05(): void {
         (arr).copyWithin(0, 0);
         expect(arr.length).assertEqual(5);
       } catch (e) {
-        expect(typeof e).assertEqual('object');
+        expect(e.name).assertEqual('Error');
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_2200
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_2200
      * @tc.name testTypedUArraysCopyWithinPart301_022
      * @tc.desc Verify start TypeError Uint16Array
      * @tc.size MediumTest
@@ -436,13 +424,12 @@ export default function typedUArraysCopyWithinTest05(): void {
         (arr as number).toFixed();
         expect(true).assertFail();
       } catch (e) {
-        expect(typeof e).assertEqual("object");
+        expect(e.name).assertEqual("ClassCastError");
       }
-      return;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_2300
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_2300
      * @tc.name testTypedUArraysCopyWithinPart301_023
      * @tc.desc Verify end TypeError Uint32Array
      * @tc.size MediumTest
@@ -455,13 +442,12 @@ export default function typedUArraysCopyWithinTest05(): void {
         (arr as number).toFixed();
         expect(true).assertFail();
       } catch (e) {
-        expect(typeof e).assertEqual("object");
+        expect(e.name).assertEqual("ClassCastError");
       }
-      return;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_2400
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_2400
      * @tc.name testTypedUArraysCopyWithinPart301_024
      * @tc.desc Verify target undefined TypeError Uint8ClampedArray
      * @tc.size MediumTest
@@ -474,12 +460,12 @@ export default function typedUArraysCopyWithinTest05(): void {
         (arr).copyWithin(0, 0);
         expect(arr.length).assertEqual(5);
       } catch (e) {
-        expect(typeof e).assertEqual('object');
+        expect(e.name).assertEqual('Error');
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_2500
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_2500
      * @tc.name testTypedUArraysCopyWithinPart301_025
      * @tc.desc Verify start undefined TypeError BigUint64Array
      * @tc.size MediumTest
@@ -492,13 +478,12 @@ export default function typedUArraysCopyWithinTest05(): void {
         (arr as number).toFixed();
         expect(true).assertFail();
       } catch (e) {
-        expect(typeof e).assertEqual("object");
+        expect(e.name).assertEqual("ClassCastError");
       }
-      return;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_2600
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_2600
      * @tc.name testTypedUArraysCopyWithinPart301_026
      * @tc.desc Verify copyWithin Uint8Array
      * @tc.size MediumTest
@@ -512,7 +497,7 @@ export default function typedUArraysCopyWithinTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_2700
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_2700
      * @tc.name testTypedUArraysCopyWithinPart301_027
      * @tc.desc Verify copyWithin Uint16Array
      * @tc.size MediumTest
@@ -526,7 +511,7 @@ export default function typedUArraysCopyWithinTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_2800
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_2800
      * @tc.name testTypedUArraysCopyWithinPart301_028
      * @tc.desc Verify copyWithin Uint32Array
      * @tc.size MediumTest
@@ -540,7 +525,7 @@ export default function typedUArraysCopyWithinTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_2900
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_2900
      * @tc.name testTypedUArraysCopyWithinPart301_029
      * @tc.desc Verify copyWithin Uint8ClampedArray
      * @tc.size MediumTest
@@ -554,7 +539,7 @@ export default function typedUArraysCopyWithinTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_3000
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_3000
      * @tc.name testTypedUArraysCopyWithinPart301_030
      * @tc.desc Verify copyWithin BigUint64Array
      * @tc.size MediumTest
@@ -568,7 +553,7 @@ export default function typedUArraysCopyWithinTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_3100
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_3100
      * @tc.name testTypedUArraysCopyWithinPart301_031
      * @tc.desc Verify copyWithin Uint8Array
      * @tc.size MediumTest
@@ -583,7 +568,7 @@ export default function typedUArraysCopyWithinTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_3200
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_3200
      * @tc.name testTypedUArraysCopyWithinPart301_032
      * @tc.desc Verify copyWithin Uint16Array
      * @tc.size MediumTest
@@ -598,7 +583,7 @@ export default function typedUArraysCopyWithinTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_3300
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_3300
      * @tc.name testTypedUArraysCopyWithinPart301_033
      * @tc.desc Verify copyWithin Uint32Array
      * @tc.size MediumTest
@@ -613,7 +598,7 @@ export default function typedUArraysCopyWithinTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_3400
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_3400
      * @tc.name testTypedUArraysCopyWithinPart301_034
      * @tc.desc Verify copyWithin Uint8ClampedArray
      * @tc.size MediumTest
@@ -628,7 +613,7 @@ export default function typedUArraysCopyWithinTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_3500
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_3500
      * @tc.name testTypedUArraysCopyWithinPart301_035
      * @tc.desc Verify copyWithin BigUint64Array
      * @tc.size MediumTest
@@ -643,7 +628,7 @@ export default function typedUArraysCopyWithinTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_3600
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_3600
      * @tc.name testTypedUArraysCopyWithinPart301_036
      * @tc.desc Verify copyWithin Uint8Array
      * @tc.size MediumTest
@@ -660,7 +645,7 @@ export default function typedUArraysCopyWithinTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_3700
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_3700
      * @tc.name testTypedUArraysCopyWithinPart301_037
      * @tc.desc Verify copyWithin Uint16Array
      * @tc.size MediumTest
@@ -677,7 +662,7 @@ export default function typedUArraysCopyWithinTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_3800
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_3800
      * @tc.name testTypedUArraysCopyWithinPart301_038
      * @tc.desc Verify copyWithin Uint32Array
      * @tc.size MediumTest
@@ -692,7 +677,7 @@ export default function typedUArraysCopyWithinTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_3900
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_3900
      * @tc.name testTypedUArraysCopyWithinPart301_039
      * @tc.desc Verify copyWithin Uint8ClampedArray
      * @tc.size MediumTest
@@ -709,7 +694,7 @@ export default function typedUArraysCopyWithinTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_4000
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_4000
      * @tc.name testTypedUArraysCopyWithinPart301_040
      * @tc.desc Verify copyWithin BigUint64Array
      * @tc.size MediumTest
@@ -724,7 +709,7 @@ export default function typedUArraysCopyWithinTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_4100
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_4100
      * @tc.name testTypedUArraysCopyWithinPart301_041
      * @tc.desc Verify target Uint8Array
      * @tc.size MediumTest
@@ -741,7 +726,7 @@ export default function typedUArraysCopyWithinTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_4200
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_4200
      * @tc.name testTypedUArraysCopyWithinPart301_042
      * @tc.desc Verify target Uint16Array
      * @tc.size MediumTest
@@ -758,7 +743,7 @@ export default function typedUArraysCopyWithinTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_4300
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_4300
      * @tc.name testTypedUArraysCopyWithinPart301_043
      * @tc.desc Verify target Uint32Array
      * @tc.size MediumTest
@@ -775,7 +760,7 @@ export default function typedUArraysCopyWithinTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_4400
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_4400
      * @tc.name testTypedUArraysCopyWithinPart301_044
      * @tc.desc Verify target Uint8ClampedArray
      * @tc.size MediumTest
@@ -792,7 +777,7 @@ export default function typedUArraysCopyWithinTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_4500
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_4500
      * @tc.name testTypedUArraysCopyWithinPart301_045
      * @tc.desc Verify target BigUint64Array
      * @tc.size MediumTest
@@ -809,7 +794,7 @@ export default function typedUArraysCopyWithinTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_4600
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_4600
      * @tc.name testTypedUArraysCopyWithinPart301_046
      * @tc.desc Verify start Uint8Array
      * @tc.size MediumTest
@@ -828,7 +813,7 @@ export default function typedUArraysCopyWithinTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_4700
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_4700
      * @tc.name testTypedUArraysCopyWithinPart301_047
      * @tc.desc Verify start Uint16Array
      * @tc.size MediumTest
@@ -847,7 +832,7 @@ export default function typedUArraysCopyWithinTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_4800
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_4800
      * @tc.name testTypedUArraysCopyWithinPart301_048
      * @tc.desc Verify start Uint32Array
      * @tc.size MediumTest
@@ -866,7 +851,7 @@ export default function typedUArraysCopyWithinTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_4900
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_4900
      * @tc.name testTypedUArraysCopyWithinPart301_049
      * @tc.desc Verify start Uint8ClampedArray
      * @tc.size MediumTest
@@ -885,7 +870,7 @@ export default function typedUArraysCopyWithinTest05(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_5000
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_COPYWITHIN_PART301_5000
      * @tc.name testTypedUArraysCopyWithinPart301_050
      * @tc.desc Verify start BigUint64Array
      * @tc.size MediumTest

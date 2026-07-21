@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -39,7 +40,11 @@ export default function typedUArraysOfPartTest02(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    
+    it('testTypedUArraysOfPart201_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(1, 2, 3);
+      expect(arr instanceof Uint8Array).assertEqual(true);
+    });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OF_PART201_5000
      * @tc.name testTypedUArraysOfPart201_050

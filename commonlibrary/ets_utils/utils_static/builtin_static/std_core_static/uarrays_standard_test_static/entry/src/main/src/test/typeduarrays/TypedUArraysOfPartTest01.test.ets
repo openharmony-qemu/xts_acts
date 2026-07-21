@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -39,7 +40,14 @@ export default function typedUArraysOfPartTest01(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    
+    it('testTypedUArraysOfPart1_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Uint8Array.of(1, 2, 3);
+      expect(arr[0]).assertEqual(1);
+      expect(arr[1]).assertEqual(2);
+      expect(arr[2]).assertEqual(3);
+      expect(arr.length).assertEqual(3);
+    });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_OF_PART1_4600
      * @tc.name testTypedUArraysOfPart1_046
@@ -665,9 +673,12 @@ export default function typedUArraysOfPartTest01(): void {
      * @tc.level Level 2
      */
     it('testTypedUArraysOfPart1_090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = BigUint64Array.of(Number.NaN);
-      const val72 = arr[0] ;
-      expect(val72).assertEqual(0n);
+      try {
+        BigUint64Array.of(Number.NaN);
+        expect(true).assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
 
     /**
@@ -679,9 +690,12 @@ export default function typedUArraysOfPartTest01(): void {
      * @tc.level Level 2
      */
     it('testTypedUArraysOfPart1_091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = BigUint64Array.of(Number.POSITIVE_INFINITY);
-      const val73 = arr[0] ;
-      expect(val73).assertEqual(0n);
+      try {
+        BigUint64Array.of(Number.POSITIVE_INFINITY);
+        expect(true).assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
     });
   });
 }

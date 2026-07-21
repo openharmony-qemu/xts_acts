@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -42,7 +43,9 @@ export default function typedUArraysDefaultIteratorTest03(): void {
     it('testTypedUArraysDefaultIterator02001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3]);
       const it = arr.values();
-      expect(typeof it).assertEqual('object');
+      const r = it.next();
+      expect(r.value).assertEqual(1);
+      expect(r.done).assertFalse();
     });
 
     /**
@@ -56,7 +59,9 @@ export default function typedUArraysDefaultIteratorTest03(): void {
     it('testTypedUArraysDefaultIterator02002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8ClampedArray([1, 2, 3]);
       const it = arr.values();
-      expect(typeof it).assertEqual('object');
+      const r = it.next();
+      expect(r.value).assertEqual(1);
+      expect(r.done).assertFalse();
     });
 
     /**
@@ -70,7 +75,9 @@ export default function typedUArraysDefaultIteratorTest03(): void {
     it('testTypedUArraysDefaultIterator02003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint16Array([1, 2, 3]);
       const it = arr.values();
-      expect(typeof it).assertEqual('object');
+      const r = it.next();
+      expect(r.value).assertEqual(1);
+      expect(r.done).assertFalse();
     });
 
     /**
@@ -84,7 +91,9 @@ export default function typedUArraysDefaultIteratorTest03(): void {
     it('testTypedUArraysDefaultIterator02004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint32Array([1, 2, 3]);
       const it = arr.values();
-      expect(typeof it).assertEqual('object');
+      const r = it.next();
+      expect(r.value).assertEqual(1);
+      expect(r.done).assertFalse();
     });
 
     /**
@@ -98,7 +107,9 @@ export default function typedUArraysDefaultIteratorTest03(): void {
     it('testTypedUArraysDefaultIterator02005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([0n, 1n]);
       const it = arr.values();
-      expect(typeof it).assertEqual('object');
+      const r = it.next();
+      expect(r.value).assertEqual(0n);
+      expect(r.done).assertFalse();
     });
 
     /**
@@ -112,7 +123,8 @@ export default function typedUArraysDefaultIteratorTest03(): void {
     it('testTypedUArraysDefaultIterator02006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array(0);
       const it = arr.values();
-      expect(typeof it).assertEqual('object');
+      const r = it.next();
+      expect(r.done).assertTrue();
     });
 
     /**
@@ -126,7 +138,8 @@ export default function typedUArraysDefaultIteratorTest03(): void {
     it('testTypedUArraysDefaultIterator02007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array(0);
       const it = arr.values();
-      expect(typeof it).assertEqual('object');
+      const r = it.next();
+      expect(r.done).assertTrue();
     });
 
     /**
@@ -141,7 +154,8 @@ export default function typedUArraysDefaultIteratorTest03(): void {
       const arr = new Uint8Array([1]);
       const it = arr.values();
       let result = it.next();
-      expect(typeof result).assertEqual('object');
+      expect(result.value).assertEqual(1);
+      expect(result.done).assertFalse();
     });
 
     /**
@@ -156,7 +170,8 @@ export default function typedUArraysDefaultIteratorTest03(): void {
       const arr = new BigUint64Array([1n]);
       const it = arr.values();
       let result = it.next();
-      expect(typeof result).assertEqual('object');
+      expect(result.value).assertEqual(1n);
+      expect(result.done).assertFalse();
     });
 
     /**
@@ -171,7 +186,7 @@ export default function typedUArraysDefaultIteratorTest03(): void {
       const arr = new Uint8Array([255]);
       const it = arr.values();
       let result = it.next();
-      expect(typeof result.value).assertEqual('number');
+      expect(result.value).assertEqual(255);
     });
 
     /**
@@ -186,7 +201,7 @@ export default function typedUArraysDefaultIteratorTest03(): void {
       const arr = new BigUint64Array([1n]);
       const it = arr.values();
       let result = it.next();
-      expect(typeof result.value).assertEqual('bigint');
+      expect(result.value).assertEqual(1n);
     });
 
     /**
@@ -201,7 +216,7 @@ export default function typedUArraysDefaultIteratorTest03(): void {
       const arr = new Uint8ClampedArray([255]);
       const it = arr.values();
       let result = it.next();
-      expect(typeof result.value).assertEqual('number');
+      expect(result.value).assertEqual(255);
     });
 
     /**
@@ -216,7 +231,7 @@ export default function typedUArraysDefaultIteratorTest03(): void {
       const arr = new Uint16Array([65535]);
       const it = arr.values();
       let result = it.next();
-      expect(typeof result.value).assertEqual('number');
+      expect(result.value).assertEqual(65535);
     });
 
     /**
@@ -231,7 +246,7 @@ export default function typedUArraysDefaultIteratorTest03(): void {
       const arr = new Uint32Array([4294967295]);
       const it = arr.values();
       let result = it.next();
-      expect(typeof result.value).assertEqual('number');
+      expect(result.value).assertEqual(4294967295);
     });
 
     /**
@@ -246,7 +261,7 @@ export default function typedUArraysDefaultIteratorTest03(): void {
       const arr = new Uint8Array([1]);
       const it = arr.values();
       let result = it.next();
-      expect(typeof result.done).assertEqual('boolean');
+      expect(result.done).assertFalse();
     });
 
     /**
@@ -261,7 +276,7 @@ export default function typedUArraysDefaultIteratorTest03(): void {
       const arr = new BigUint64Array([1n]);
       const it = arr.values();
       let result = it.next();
-      expect(typeof result.done).assertEqual('boolean');
+      expect(result.done).assertFalse();
     });
 
     /**

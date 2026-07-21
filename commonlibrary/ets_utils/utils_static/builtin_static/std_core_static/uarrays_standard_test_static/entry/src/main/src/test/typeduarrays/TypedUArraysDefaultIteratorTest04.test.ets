@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -350,7 +351,8 @@ export default function typedUArraysDefaultIteratorTest04(): void {
       const arr = new Uint16Array([100, 200]);
       const iterator = arr.values();
       let result = iterator.next();
-      expect(typeof result.value).assertEqual('number');
+      expect(result.value).assertEqual(100);
+      expect(result.done).assertFalse();
     });
 
     /**
@@ -365,7 +367,8 @@ export default function typedUArraysDefaultIteratorTest04(): void {
       const arr = new BigUint64Array([100n, 200n]);
       const iterator = arr.values();
       let result = iterator.next();
-      expect(typeof result.value).assertEqual('bigint');
+      expect(result.value).assertEqual(100n);
+      expect(result.done).assertFalse();
     });
 
     /**
@@ -455,7 +458,9 @@ export default function typedUArraysDefaultIteratorTest04(): void {
     it('testTypedUArraysDefaultIterator0101_072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2]);
       const iter = arr.values();
-      expect(typeof iter.next).assertEqual('function');
+      const result = iter.next();
+      expect(result.value).assertEqual(1);
+      expect(result.done).assertFalse();
     });
 
     /**
