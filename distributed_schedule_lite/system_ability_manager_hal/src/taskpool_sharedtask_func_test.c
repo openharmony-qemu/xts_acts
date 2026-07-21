@@ -248,8 +248,6 @@ LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0010, Function | MediumTest
     TEST_ASSERT_EQUAL_INT(result2 == 0, TRUE);
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(g_createFeature[0].featureCalledCount == 1, TRUE);
-    free(request.data);
-    request.data = NULL;
 
     // *************************** //
     DefaultFeatureApi *defaultApi = (DefaultFeatureApi *)SamgrTestGetDefaultIUnknown("SharedTask01");
@@ -272,8 +270,6 @@ LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0010, Function | MediumTest
     TEST_ASSERT_EQUAL_INT(result2 == 0, TRUE);
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(g_service[0].serviceCalledCount == 1, TRUE);
-    free(request2.data);
-    request2.data = NULL;
     defaultApi->Release((IUnknown *)defaultApi);
     demoApi->Release((IUnknown *)demoApi);
 };
@@ -308,8 +304,6 @@ LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0020, Function | MediumTest
     TEST_ASSERT_EQUAL_INT(result2 == 0, TRUE);
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(g_createFeature[1].featureCalledCount == 1, TRUE);
-    free(request.data);
-    request.data = NULL;
 
     // *************************** //
     DefaultFeatureApi *defaultApi = (DefaultFeatureApi *)SamgrTestGetDefaultIUnknown("SharedTask02");
@@ -332,8 +326,6 @@ LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0020, Function | MediumTest
     TEST_ASSERT_EQUAL_INT(result2 == 0, TRUE);
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(g_service[1].serviceCalledCount == 1, TRUE);
-    free(request2.data);
-    request2.data = NULL;
     defaultApi->Release((IUnknown *)defaultApi);
     demoApi->Release((IUnknown *)demoApi);
 };
@@ -361,8 +353,6 @@ LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0030, Function | MediumTest
     }
     strcpy_s(request.data, request.len, body);
     defaultApi->SendRequestProxyDF(&(g_service[0].identity), &request, NULL);
-    free(request.data);
-    request.data = NULL;
 
     DefaultFeatureApi *defaultApi2 = (DefaultFeatureApi *)SamgrTestGetDefaultIUnknown("SharedTask01");
     if (defaultApi2 == NULL) {
@@ -376,8 +366,6 @@ LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0030, Function | MediumTest
     }
     strcpy_s(request2.data, request2.len, body);
     defaultApi2->SendRequestProxyDF(&(g_service[1].identity), &request2, NULL);
-    free(request2.data);
-    request2.data = NULL;
 
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(g_threadID11 == g_threadID21, TRUE);
@@ -408,8 +396,6 @@ LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0040, Function | MediumTest
     }
     strcpy_s(request1.data, request1.len, body);
     demoApi->SendRequestProxyF(&(g_createFeature[0].identity), &request1, NULL);
-    free(request1.data);
-    request1.data = NULL;
 
     DemoApi *demoApi2 = (DemoApi *)SamgrTestGetIUnknown("SharedTask02", "featureName501");
     if (demoApi2 == NULL) {
@@ -423,8 +409,6 @@ LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0040, Function | MediumTest
     }
     strcpy_s(request2.data, request2.len, body);
     demoApi2->SendRequestProxyF(&(g_createFeature[1].identity), &request2, NULL);
-    free(request2.data);
-    request2.data = NULL;
 
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(g_threadID12 == g_threadID22, TRUE);

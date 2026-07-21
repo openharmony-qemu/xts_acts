@@ -260,9 +260,6 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0010, Function | MediumTest 
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(feature->featureCalledCount == 1, TRUE);
     TEST_ASSERT_EQUAL_INT(strcmp(feature->latestRequest, body), 0);
-    free(request.data);
-    request.data = NULL;
-
     demoApi->Release((IUnknown *)demoApi);
 }
 
@@ -302,8 +299,6 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0020, Function | MediumTest 
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(feature->featureCalledCount == 1, TRUE);
     TEST_ASSERT_EQUAL_INT(strcmp(feature->latestRequest, body), 0);
-    free(request.data);
-    request.data = NULL;
 
     demoApi->Release((IUnknown *)demoApi);
 }
@@ -335,8 +330,6 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0030, Function | MediumTest 
     int32 result = demoApi->SAMGR_SendRequestProxy(&identityX, &request, NULL);
     TEST_ASSERT_EQUAL_INT(result != 0, TRUE);
 
-    free(request.data);
-    request.data = NULL;
     demoApi->Release((IUnknown *)demoApi);
 }
 
@@ -403,8 +396,6 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0050, Function | MediumTest 
     result = demoApi->SAMGR_SendRequestProxy(&feature->identity, NULL, NULL);
     TEST_ASSERT_EQUAL_INT(result != 0, TRUE);
 
-    free(request.data);
-    request.data = NULL;
     demoApi->Release((IUnknown *)demoApi);
 }
 
@@ -445,8 +436,6 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0060, Function | MediumTest 
 
     result = demoApi->SAMGR_SendRequestProxy(&feature->identity, &request2, NULL);
     TEST_ASSERT_EQUAL_INT(result == 0, TRUE);
-    free(request2.data);
-    request2.data = NULL;
 
     demoApi->Release((IUnknown *)demoApi);
 }
@@ -483,8 +472,6 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0070, Function | MediumTest 
     int32 result = demoApi->SAMGR_SendRequestProxy(&feature->identity, &request, SamgrTestDefaultHandler);
     TEST_ASSERT_EQUAL_INT(result, 0);
     TEST_ASSERT_EQUAL_INT(strcmp(feature->latestRequest, body), 0);
-    free(request.data);
-    request.data = NULL;
 
     demoApi->Release((IUnknown *)demoApi);
 }
@@ -522,8 +509,6 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0080, Function | MediumTest 
         int32 result = demoApi->SAMGR_SendRequestProxy(&feature->identity, &request, SamgrTestDefaultHandler);
         TEST_ASSERT_EQUAL_INT(result, 0);
         TEST_ASSERT_EQUAL_INT(strcmp(feature->latestRequest, body), 0);
-        free(request.data);
-        request.data = NULL;
 
         demoApi->Release((IUnknown *)demoApi);
     }
