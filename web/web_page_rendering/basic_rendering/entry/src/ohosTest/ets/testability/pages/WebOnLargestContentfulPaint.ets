@@ -110,15 +110,18 @@ struct WebOnLargestContentfulPaint {
                 this.text = [0, 0, 0, 0, 0, 0]
                 this.controller.loadUrl(this.mServer.getAssetUrl('lcpWithImage.html'));
                 await waitForExist(() => this.isComplete, this.str, 0);
-                // Local data-URI image: loadStart/loadEnd may stay 0; require paint metrics.
+                // Require all six LCP metrics (same as original online-image case).
                 await waitForExist(() => (
-                  this.text[0] != 0 && this.text[1] != 0 && this.text[2] != 0 && this.text[3] != 0
+                  this.text[0] != 0 && this.text[1] != 0 && this.text[2] != 0
+                    && this.text[3] != 0 && this.text[4] != 0 && this.text[5] != 0
                 ) ? 0 : -1, this.str, 0);
                 if (
                   this.text[0] != 0
                     && this.text[1] != 0
                     && this.text[2] != 0
                     && this.text[3] != 0
+                    && this.text[4] != 0
+                    && this.text[5] != 0
                 ) {
                   value = true;
                 }
