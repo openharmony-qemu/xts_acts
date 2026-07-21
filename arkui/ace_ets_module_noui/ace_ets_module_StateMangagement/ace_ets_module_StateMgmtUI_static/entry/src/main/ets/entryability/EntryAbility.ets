@@ -20,6 +20,7 @@ import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import { MyCallback } from '../models/MyCallback';
+import {LocalStorage} from '@ohos.arkui.stateManagement'
 
 
 class EntryAbility extends UIAbility {
@@ -30,7 +31,9 @@ class EntryAbility extends UIAbility {
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onWindowStageCreate');
     try {
-      windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError<void> | null): void => {
+      let storage = new LocalStorage();
+      storage.setOrCreate('PropAM', 3);
+      windowStage.loadContent('MainAbility/pages/index/index', storage, (err: BusinessError<void> | null): void => {
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent entering');
         MyCallback.runCasesOfCallback();
         if (err?.code) {
