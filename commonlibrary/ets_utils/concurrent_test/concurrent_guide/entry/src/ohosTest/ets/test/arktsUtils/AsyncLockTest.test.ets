@@ -31,15 +31,6 @@ async function taskWithLock(lock: ArkTSUtils.locks.AsyncLock, counter: SharedCou
 }
 
 @Concurrent
-async function taskWithLockLarge(lock: ArkTSUtils.locks.AsyncLock, counter: SharedCounter): Promise<number> {
-  let result: number = await lock.lockAsync(() => {
-    counter.count++
-    return counter.count
-  })
-  return result
-}
-
-@Concurrent
 async function incrementTen(lock: ArkTSUtils.locks.AsyncLock, counter: SharedCounter): Promise<number> {
   let result: number = await lock.lockAsync(() => {
     for (let i: number = 0; i < 10; i++) {
@@ -277,7 +268,7 @@ export default function AsyncLockTest(): void {
       let counter: SharedCounter = new SharedCounter()
       let promises: Promise<Object>[] = []
       for (let i: number = 0; i < 100; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(taskWithLockLarge, lock, counter)))
+        promises.push(taskpool.execute(new taskpool.Task(taskWithLock, lock, counter)))
       }
       await Promise.all(promises)
       expect(counter.count).assertEqual(100)

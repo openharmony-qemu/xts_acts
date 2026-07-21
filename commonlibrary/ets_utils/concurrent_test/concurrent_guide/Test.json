@@ -1,5 +1,5 @@
 {
-    "description": "Configuration for hjunit demo Tests",
+    "description": "Configuration for ActsConcurrentGuideTest",
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "180000",
