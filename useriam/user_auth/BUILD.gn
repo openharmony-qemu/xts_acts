@@ -19,7 +19,10 @@ group("user_auth") {
       "user_auth_ets:ActsUserAuthEtsTest",
       "user_auth_ets_part2:ActsUserAuthEtsTwoTest",
       "user_auth_ets_permission:ActsUserAuthEtsPermissionTest",
-      "user_auth_ets_system:ActsUserAuthEtsSystemTest"
+      "user_auth_ets_system:ActsUserAuthEtsSystemTest",
+      "user_auth_ets_part2_static:ActsUserAuthEtsPart2StaticTest",
+      "user_auth_ets_permission_static:ActsUserAuthEtsPermissionStaticTest",
+      "user_auth_ets_system_static:ActsUserAuthEtsSystemStaticTest"
     ]
   }
 }
