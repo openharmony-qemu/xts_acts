@@ -17,11 +17,11 @@
 from devicetest.core.test_case import TestCase, Step
 from PermissionUtils import PermissionUtils
 
-# @tc.number: STD-SECURITY-0100
-# @tc.name: testPermissionsNotMissing
-# @tc.desc: 【STD-SECURITY-0100】必须支持权限模型，并且执行权限模型定义的每个权限类型，不应省略、更改或忽略任何权限。
-class testPermissionsNotMissing(TestCase):
 
+# @tc.number STD-SECURITY-0100
+# @tc.name   testPermissionsNotMissing
+# @tc.desc  【STD-SECURITY-0100】必须支持权限模型，并且执行权限模型定义的每个权限类型，不应省略、更改或忽略任何权限。
+class testPermissionsNotMissing(TestCase):
     def __init__(self, controllers):
         self.TAG = self.__class__.__name__
         super().__init__(self.TAG, controllers)
@@ -33,16 +33,16 @@ class testPermissionsNotMissing(TestCase):
         Step("Process")
         permissionBundleInfo = self.device1.execute_shell_command("bm dump -n ohos.global.systemres")
         permissionUtils = PermissionUtils()
+        self.log.info(f'系统权限列表: {permissionUtils.systemPermissionList}')
+        self.log.info(f'用户权限列表: {permissionUtils.userPermissionList}')
         devicePermissionList = permissionUtils.getDevicePermissionList(permissionBundleInfo)
-        missingList = []
-        for permission in permissionUtils.systemPermissionList:
-            if permission not in devicePermissionList:
-                missingList.append(permission)
-        for permission in permissionUtils.userPermissionList:
-            if permission not in devicePermissionList:
-                missingList.append(permission)
-        if len(missingList) != 0:
-            self.log.info('These permissions has missed. missingList: [' + ', '.join(missingList) + ']')
+        self.log.info(f'设备权限列表: {devicePermissionList}')
+
+        all_permissions = permissionUtils.systemPermissionList + permissionUtils.userPermissionList
+        missingList = [p for p in all_permissions if p not in devicePermissionList]
+
+        if missingList:
+            self.log.info(f'以下权限在设备上缺失: {missingList}')
             assert False
 
     def teardown(self):
