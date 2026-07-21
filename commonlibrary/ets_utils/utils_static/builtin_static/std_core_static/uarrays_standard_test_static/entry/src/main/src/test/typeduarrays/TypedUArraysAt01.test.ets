@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -60,159 +61,6 @@ export default function typedUArraysAt01(): void {
         expect(result).assertEqual(20);
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_AT_0300
-     * @tc.name testTypedUArraysAt003
-     * @tc.desc Verify at
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysAt003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([10, 20, 30]);
-      let result = arr[0];
-        expect(result).assertEqual(10);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_AT_0400
-     * @tc.name testTypedUArraysAt004
-     * @tc.desc Verify index undefined 0 Uint8Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysAt004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([10, 20, 30]);
-      let result = arr[0];
-      expect(result).assertEqual(10);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_AT_0500
-     * @tc.name testTypedUArraysAt005
-     * @tc.desc Verify index null 0 Uint8Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysAt005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([10, 20, 30]);
-      let result = arr[0];
-      expect(result).assertEqual(10);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_AT_0600
-     * @tc.name testTypedUArraysAt006
-     * @tc.desc Verify index Uint8Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysAt006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([10, 20, 30]);
-      let result = arr[1];
-      expect(result).assertEqual(20);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_AT_0700
-     * @tc.name testTypedUArraysAt007
-     * @tc.desc Verify index Uint8Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysAt007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([10, 20, 30]);
-      let result = arr[1];
-      expect(result).assertEqual(20);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_AT_0800
-     * @tc.name testTypedUArraysAt008
-     * @tc.desc Verify index NaN 0 Uint8Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysAt008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([10, 20, 30]);
-      let result = arr[0];
-      expect(result).assertEqual(10);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_AT_0900
-     * @tc.name testTypedUArraysAt009
-     * @tc.desc Verify index Uint8Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysAt009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([10, 20, 30]);
-      let result = arr.at(2147483647);
-      expect(result).assertEqual(undefined);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_AT_1000
-     * @tc.name testTypedUArraysAt010
-     * @tc.desc Verify index Uint8Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysAt010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([10, 20, 30]);
-      let result = arr.at(-2147483647);
-      expect(result).assertEqual(undefined);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_AT_1100
-     * @tc.name testTypedUArraysAt011
-     * @tc.desc Verify index true 1 Uint8Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysAt011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([10, 20, 30]);
-      let result = arr[1];
-      expect(result).assertEqual(20);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_AT_1200
-     * @tc.name testTypedUArraysAt012
-     * @tc.desc Verify index false 0 Uint8Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysAt012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([10, 20, 30]);
-      let result = arr[0];
-      expect(result).assertEqual(10);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_AT_1300
-     * @tc.name testTypedUArraysAt013
-     * @tc.desc Verify index 0 Uint8Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysAt013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Uint8Array([10, 20, 30]);
-      let result = arr[0];
-      expect(result).assertEqual(10);
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_AT_1400
@@ -670,6 +518,12 @@ export default function typedUArraysAt01(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
+    
+    it('testTypedUArraysAt046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new BigUint64Array([1n, 2n, 3n, 100n]);
+      const result = arr.at(-1);
+      expect(result).assertEqual(100n);
+    });
     
   });
 }

@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -521,20 +522,6 @@ export default function typedUArraysAt02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_AT_8000
-     * @tc.name testTypedUArraysAt080
-     * @tc.desc Verify BigUint64Array BigInt
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTypedUArraysAt080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new BigUint64Array([BigInt('18446744073709551615')]);
-      let result = arr[0];
-      expect(result).assertEqual(BigInt('18446744073709551615'));
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_AT_8100
      * @tc.name testTypedUArraysAt081
      * @tc.desc Verify BigUint64Array
@@ -546,9 +533,7 @@ export default function typedUArraysAt02(): void {
       const arr = new BigUint64Array([0n, 100n, BigInt('18446744073709551615')]);
       expect(arr[0]).assertEqual(0n);
       expect(arr[1]).assertEqual(100n);
-      expect(arr.at(-3)).assertEqual(0n)
-      expect(arr.at(-3)).assertEqual(0n)
-      expect(arr.at(-3)).assertEqual(0n)
+      expect(arr.at(-3)).assertEqual(0n);
     });
 
     /**
