@@ -122,16 +122,22 @@ export default function CollectionsTest(): void {
       expect(arr.length).assertEqual(4)
       expect(arr[3]).assertEqual(4)
 
-      let popped: number = arr.pop() as number
-      expect(popped).assertEqual(4)
+      let popped: number | undefined = arr.pop()
+      expect(popped !== undefined).assertTrue()
+      if (popped !== undefined) {
+        expect(popped).assertEqual(4)
+      }
       expect(arr.length).assertEqual(3)
 
       arr.unshift(0)
       expect(arr.length).assertEqual(4)
       expect(arr[0]).assertEqual(0)
 
-      let shifted: number = arr.shift() as number
-      expect(shifted).assertEqual(0)
+      let shifted: number | undefined = arr.shift()
+      expect(shifted !== undefined).assertTrue()
+      if (shifted !== undefined) {
+        expect(shifted).assertEqual(0)
+      }
       expect(arr.length).assertEqual(3)
 
       arr.splice(1, 1, 5, 6)

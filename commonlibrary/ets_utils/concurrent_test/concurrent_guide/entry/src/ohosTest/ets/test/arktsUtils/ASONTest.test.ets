@@ -33,7 +33,7 @@ export default function ASONTest(): void {
 
     /**
      * @tc.name   ASONTest0100
-     * @tc.number SUB_ARKTS_UTILS_ASON_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASON_TEST_0100
      * @tc.desc   Verify ASON.parse converts JSON string to Sendable object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -49,7 +49,7 @@ export default function ASONTest(): void {
 
     /**
      * @tc.name   ASONTest0200
-     * @tc.number SUB_ARKTS_UTILS_ASON_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASON_TEST_0200
      * @tc.desc   Verify ASON.stringify serializes Sendable object to JSON string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -66,7 +66,7 @@ export default function ASONTest(): void {
 
     /**
      * @tc.name   ASONTest0300
-     * @tc.number SUB_ARKTS_UTILS_ASON_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASON_TEST_0300
      * @tc.desc   Verify ASON.stringify converts collections.Map to JSON string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -85,7 +85,7 @@ export default function ASONTest(): void {
 
     /**
      * @tc.name   ASONTest0400
-     * @tc.number SUB_ARKTS_UTILS_ASON_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASON_TEST_0400
      * @tc.desc   Verify ASON.stringify converts collections.Set to JSON string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -104,7 +104,7 @@ export default function ASONTest(): void {
 
     /**
      * @tc.name   ASONTest0500
-     * @tc.number SUB_ARKTS_UTILS_ASON_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASON_TEST_0500
      * @tc.desc   Verify ASON.stringify converts native Map to JSON string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -121,7 +121,7 @@ export default function ASONTest(): void {
 
     /**
      * @tc.name   ASONTest0600
-     * @tc.number SUB_ARKTS_UTILS_ASON_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASON_TEST_0600
      * @tc.desc   Verify ASON.stringify converts native Set to JSON string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -138,7 +138,7 @@ export default function ASONTest(): void {
 
     /**
      * @tc.name   ASONTest0700
-     * @tc.number SUB_ARKTS_UTILS_ASON_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASON_TEST_0700
      * @tc.desc   Verify ASON.parse with ParseOptions bigIntMode configuration
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -158,7 +158,7 @@ export default function ASONTest(): void {
 
     /**
      * @tc.name   ASONTest0800
-     * @tc.number SUB_ARKTS_UTILS_ASON_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASON_TEST_0800
      * @tc.desc   Verify ASON.parse throws error for invalid JSON string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -180,7 +180,7 @@ export default function ASONTest(): void {
 
     /**
      * @tc.name   ASONTest0900
-     * @tc.number SUB_ARKTS_UTILS_ASON_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASON_TEST_0900
      * @tc.desc   Verify ASON.stringify with collections.Array produces valid JSON
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
