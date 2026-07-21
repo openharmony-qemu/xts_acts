@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,12 +14,10 @@
  * limitations under the License.
  */
 
-'use static';
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-// AUTO_TYPED_ARRAY_HELPERS_START
 function sortBigUint64ArrayValue(source: BigUint64Array): BigUint64Array {
   const result = new BigUint64Array(source);
   for (let i: number = 0; i < result.length; i++) {
@@ -61,7 +60,6 @@ function sortUint8ArrayValue(source: Uint8Array): Uint8Array {
   return result;
 }
 
-// AUTO_TYPED_ARRAY_HELPERS_END
 
 export default function typedUArraysToSortedTest02(): void {
   describe('TypedUArraysToSortedTest02', (): void => {
@@ -79,7 +77,7 @@ export default function typedUArraysToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSORTED_PART102_0100
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSORTED_PART102_0100
      * @tc.name testTypedUArraysToSortedPart102_001
      * @tc.desc Verify BigUint64Array
      * @tc.size MediumTest
@@ -98,7 +96,7 @@ expect(result.length).assertEqual(5);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSORTED_PART102_0200
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSORTED_PART102_0200
      * @tc.name testTypedUArraysToSortedPart102_002
      * @tc.desc Verify Uint8Array compareFn
      * @tc.size MediumTest
@@ -116,7 +114,7 @@ expect(result.length).assertEqual(5);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSORTED_PART102_0300
+@tc.number SUB_COMMONLIBRARY_UTIL_TYPEDUARRAYS_TOSORTED_PART102_0300
      * @tc.name testTypedUArraysToSortedPart102_003
      * @tc.desc Verify Uint16Array compareFn
      * @tc.size MediumTest
