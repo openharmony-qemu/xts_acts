@@ -1629,5 +1629,93 @@ export default function biguint64arraySetTest(): void {
       expect(fullView[5]).assertEqual(22n);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_8100
+     * @tc.name testBigUint64ArraySet081
+     * @tc.desc Verify binary insert position one writes a BigInt value to the middle element
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let targetArray = BigUint64Array.of(10n, 20n, 30n);
+      targetArray.set(0b1, 42n);
+      expect(targetArray.join(',')).assertEqual('10,42,30');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_8200
+     * @tc.name testBigUint64ArraySet082
+     * @tc.desc Verify octal insert position one writes a BigInt value to the middle element
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let targetArray = BigUint64Array.of(10n, 20n, 30n);
+      targetArray.set(0o1, 42n);
+      expect(targetArray.join(',')).assertEqual('10,42,30');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_8300
+     * @tc.name testBigUint64ArraySet083
+     * @tc.desc Verify hexadecimal insert position one writes a BigInt value to the middle element
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let targetArray = BigUint64Array.of(10n, 20n, 30n);
+      targetArray.set(0x1, 42n);
+      expect(targetArray.join(',')).assertEqual('10,42,30');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_8400
+     * @tc.name testBigUint64ArraySet084
+     * @tc.desc Verify number source converted by toInt supplies scalar insert position one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let numberIndexSource: number = 1.9;
+      let targetArray = BigUint64Array.of(10n, 20n, 30n);
+      targetArray.set(numberIndexSource.toInt(), 55n);
+      expect(targetArray[1]).assertEqual(55n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_8500
+     * @tc.name testBigUint64ArraySet085
+     * @tc.desc Verify byte source converted by toInt supplies typed array offset one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let byteOffsetSource: byte = 1;
+      let targetArray = BigUint64Array.of(1n, 2n, 3n, 4n);
+      let sourceArray = BigUint64Array.of(70n, 80n);
+      targetArray.set(sourceArray, byteOffsetSource.toInt());
+      expect(targetArray.join(',')).assertEqual('1,70,80,4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SET_8600
+     * @tc.name testBigUint64ArraySet086
+     * @tc.desc Verify number source converted by toInt supplies scalar value forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySet086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let numberValueSource: number = 42.9;
+      let targetArray = new BigUint64Array(2);
+      targetArray.set(1, numberValueSource.toInt());
+      expect(targetArray[1]).assertEqual(42n);
+    });
+
   });
 }

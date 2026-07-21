@@ -1320,5 +1320,99 @@ export default function biguint64arraySubarrayTest(): void {
       expect(resultArray.buffer).assertEqual(sourceBuffer);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SUBARRAY_6600
+     * @tc.name testBigUint64ArraySubarray066
+     * @tc.desc Verify binary negative begin minus two creates a shared tail view
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySubarray066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
+      let resultArray = sourceArray.subarray(-0b10);
+      resultArray[0] = 300n;
+      expect(sourceArray[2]).assertEqual(300n);
+      expect(resultArray.buffer).assertEqual(sourceArray.buffer);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SUBARRAY_6700
+     * @tc.name testBigUint64ArraySubarray067
+     * @tc.desc Verify octal negative begin minus two creates a shared tail view
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySubarray067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
+      let resultArray = sourceArray.subarray(-0o2);
+      resultArray[1] = 400n;
+      expect(sourceArray[3]).assertEqual(400n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SUBARRAY_6800
+     * @tc.name testBigUint64ArraySubarray068
+     * @tc.desc Verify hexadecimal negative begin minus two creates a shared tail view
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySubarray068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
+      let resultArray = sourceArray.subarray(-0x2);
+      expect(resultArray.join(',')).assertEqual('30,40');
+      expect(resultArray.buffer).assertEqual(sourceArray.buffer);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SUBARRAY_6900
+     * @tc.name testBigUint64ArraySubarray069
+     * @tc.desc Verify byte source converted by toInt supplies shared begin index two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySubarray069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let byteBeginSource: byte = 2;
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
+      let resultArray = sourceArray.subarray(byteBeginSource.toInt());
+      resultArray[0] = 300n;
+      expect(sourceArray[2]).assertEqual(300n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SUBARRAY_7000
+     * @tc.name testBigUint64ArraySubarray070
+     * @tc.desc Verify short source converted by toInt supplies shared exclusive end index three
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySubarray070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let shortEndSource: short = 3;
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
+      let resultArray = sourceArray.subarray(1, shortEndSource.toInt());
+      resultArray[1] = 300n;
+      expect(sourceArray[2]).assertEqual(300n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SUBARRAY_7100
+     * @tc.name testBigUint64ArraySubarray071
+     * @tc.desc Verify number source converted by toInt supplies truncated shared begin index two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySubarray071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let numberBeginSource: number = 2.9;
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
+      let resultArray = sourceArray.subarray(numberBeginSource.toInt());
+      expect(resultArray.join(',')).assertEqual('30,40');
+      expect(resultArray.buffer).assertEqual(sourceArray.buffer);
+    });
+
   });
 }

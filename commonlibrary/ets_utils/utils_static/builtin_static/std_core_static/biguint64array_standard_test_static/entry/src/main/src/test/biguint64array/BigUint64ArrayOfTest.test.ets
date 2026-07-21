@@ -1015,5 +1015,86 @@ export default function biguint64arrayOfTest(): void {
         expect(e.name).assertEqual('RangeError');
       }
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_OF_6200
+     * @tc.name testBigUint64ArrayOf062
+     * @tc.desc Verify binary negative integer minus two wraps to maximum uint64 minus one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayOf062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let resultArray = BigUint64Array.of(-0b10);
+      expect(resultArray[0]).assertEqual(18446744073709551614n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_OF_6300
+     * @tc.name testBigUint64ArrayOf063
+     * @tc.desc Verify octal negative integer minus two wraps to maximum uint64 minus one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayOf063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let resultArray = BigUint64Array.of(-0o2);
+      expect(resultArray[0]).assertEqual(18446744073709551614n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_OF_6400
+     * @tc.name testBigUint64ArrayOf064
+     * @tc.desc Verify hexadecimal negative integer minus two wraps to maximum uint64 minus one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayOf064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let resultArray = BigUint64Array.of(-0x2);
+      expect(resultArray[0]).assertEqual(18446744073709551614n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_OF_6500
+     * @tc.name testBigUint64ArrayOf065
+     * @tc.desc Verify byte source converted by toInt creates value forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayOf065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let byteValueSource: byte = 42;
+      let resultArray = BigUint64Array.of(byteValueSource.toInt());
+      expect(resultArray[0]).assertEqual(42n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_OF_6600
+     * @tc.name testBigUint64ArrayOf066
+     * @tc.desc Verify number source converted by toInt creates truncated value forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayOf066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let numberValueSource: number = 42.9;
+      let resultArray = BigUint64Array.of(numberValueSource.toInt());
+      expect(resultArray[0]).assertEqual(42n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_OF_6700
+     * @tc.name testBigUint64ArrayOf067
+     * @tc.desc Verify double source converted by toInt creates truncated value forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayOf067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let doubleValueSource: double = 42.9;
+      let resultArray = BigUint64Array.of(doubleValueSource.toInt());
+      expect(resultArray[0]).assertEqual(42n);
+    });
   });
 }

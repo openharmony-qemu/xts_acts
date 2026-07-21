@@ -1213,5 +1213,98 @@ export default function biguint64arrayWithTest(): void {
         expect(sourceArray[1]).assertEqual(20n);
       }
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_WITH_6300
+     * @tc.name testBigUint64ArrayWith063
+     * @tc.desc Verify binary index one returns an independent replacement array
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayWith063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n);
+      let replacedArray = sourceArray.with(0b1, 42n);
+      expect(replacedArray.join(',')).assertEqual('10,42,30');
+      expect(sourceArray[1]).assertEqual(20n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_WITH_6400
+     * @tc.name testBigUint64ArrayWith064
+     * @tc.desc Verify octal index one returns an independent replacement array
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayWith064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n);
+      let replacedArray = sourceArray.with(0o1, 42n);
+      expect(replacedArray.join(',')).assertEqual('10,42,30');
+      expect(sourceArray[1]).assertEqual(20n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_WITH_6500
+     * @tc.name testBigUint64ArrayWith065
+     * @tc.desc Verify hexadecimal index one returns an independent replacement array
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayWith065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n);
+      let replacedArray = sourceArray.with(0x1, 42n);
+      expect(replacedArray.join(',')).assertEqual('10,42,30');
+      expect(sourceArray[1]).assertEqual(20n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_WITH_6600
+     * @tc.name testBigUint64ArrayWith066
+     * @tc.desc Verify byte source converted by toInt supplies replacement index one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayWith066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let byteIndexSource: byte = 1;
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n);
+      let replacedArray = sourceArray.with(byteIndexSource.toInt(), 55n);
+      expect(replacedArray[1]).assertEqual(55n);
+      expect(sourceArray[1]).assertEqual(20n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_WITH_6700
+     * @tc.name testBigUint64ArrayWith067
+     * @tc.desc Verify short source converted by toInt supplies replacement index one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayWith067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let shortIndexSource: short = 1;
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n);
+      let replacedArray = sourceArray.with(shortIndexSource.toInt(), 55n);
+      expect(replacedArray[1]).assertEqual(55n);
+      expect(sourceArray[1]).assertEqual(20n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_WITH_6800
+     * @tc.name testBigUint64ArrayWith068
+     * @tc.desc Verify number source converted by toInt supplies truncated replacement index one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayWith068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let numberIndexSource: number = 1.9;
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n);
+      let replacedArray = sourceArray.with(numberIndexSource.toInt(), 55n);
+      expect(replacedArray[1]).assertEqual(55n);
+      expect(sourceArray[1]).assertEqual(20n);
+    });
   });
 }

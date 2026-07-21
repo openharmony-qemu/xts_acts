@@ -1601,5 +1601,92 @@ export default function biguint64arrayIndexSetTest(): void {
       expect(sourceArray.$_get(4)).assertEqual(50n);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INDEXSET_8900
+     * @tc.name testBigUint64ArrayIndexSet089
+     * @tc.desc Verify binary index one stores a BigInt value in the middle element
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIndexSet089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let targetArray = BigUint64Array.of(10n, 20n, 30n);
+      targetArray.$_set(0b1, 42n);
+      expect(targetArray.join(',')).assertEqual('10,42,30');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INDEXSET_9000
+     * @tc.name testBigUint64ArrayIndexSet090
+     * @tc.desc Verify octal index one stores a BigInt value in the middle element
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIndexSet090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let targetArray = BigUint64Array.of(10n, 20n, 30n);
+      targetArray.$_set(0o1, 42n);
+      expect(targetArray.join(',')).assertEqual('10,42,30');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INDEXSET_9100
+     * @tc.name testBigUint64ArrayIndexSet091
+     * @tc.desc Verify hexadecimal index one stores a BigInt value in the middle element
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIndexSet091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let targetArray = BigUint64Array.of(10n, 20n, 30n);
+      targetArray.$_set(0x1, 42n);
+      expect(targetArray.join(',')).assertEqual('10,42,30');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INDEXSET_9200
+     * @tc.name testBigUint64ArrayIndexSet092
+     * @tc.desc Verify number source converted by toInt supplies index one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIndexSet092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let numberIndexSource: number = 1.9;
+      let targetArray = BigUint64Array.of(10n, 20n, 30n);
+      targetArray.$_set(numberIndexSource.toInt(), 55n);
+      expect(targetArray[1]).assertEqual(55n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INDEXSET_9300
+     * @tc.name testBigUint64ArrayIndexSet093
+     * @tc.desc Verify byte source converted by toInt supplies value forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIndexSet093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let byteValueSource: byte = 42;
+      let targetArray = new BigUint64Array(2);
+      targetArray.$_set(1, byteValueSource.toInt());
+      expect(targetArray[1]).assertEqual(42n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_INDEXSET_9400
+     * @tc.name testBigUint64ArrayIndexSet094
+     * @tc.desc Verify number source converted by toInt supplies truncated value forty two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayIndexSet094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let numberValueSource: number = 42.9;
+      let targetArray = new BigUint64Array(2);
+      targetArray.$_set(1, numberValueSource.toInt());
+      expect(targetArray[1]).assertEqual(42n);
+    });
+
   });
 }

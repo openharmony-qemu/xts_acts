@@ -3419,5 +3419,140 @@ export default function biguint64arrayConstructorTest(): void {
       expect(constructedArray.length).assertEqual(0);
       expect(constructedArray.byteLength).assertEqual(0);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2040
+     * @tc.name testBigUint64ArrayConstructor204
+     * @tc.desc Verify constructor length uses binary zero and creates an empty array
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let binaryLength: int = 0b0;
+      let constructedArray = new BigUint64Array(binaryLength);
+      expect(constructedArray.length).assertEqual(0);
+      expect(constructedArray.byteLength).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2050
+     * @tc.name testBigUint64ArrayConstructor205
+     * @tc.desc Verify constructor length uses octal zero and creates an empty array
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let octalLength: int = 0o0;
+      let constructedArray = new BigUint64Array(octalLength);
+      expect(constructedArray.length).assertEqual(0);
+      expect(constructedArray.byteLength).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2060
+     * @tc.name testBigUint64ArrayConstructor206
+     * @tc.desc Verify constructor length uses hexadecimal zero and creates an empty array
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let hexadecimalLength: int = 0x0;
+      let constructedArray = new BigUint64Array(hexadecimalLength);
+      expect(constructedArray.length).assertEqual(0);
+      expect(constructedArray.byteLength).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2070
+     * @tc.name testBigUint64ArrayConstructor207
+     * @tc.desc Verify byte source converted by toInt supplies constructor length four
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let byteLengthSource: byte = 4;
+      let constructedArray = new BigUint64Array(byteLengthSource.toInt());
+      expect(constructedArray.length).assertEqual(4);
+      expect(constructedArray[3]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2080
+     * @tc.name testBigUint64ArrayConstructor208
+     * @tc.desc Verify short source converted by toInt supplies constructor length four
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let shortLengthSource: short = 4;
+      let constructedArray = new BigUint64Array(shortLengthSource.toInt());
+      expect(constructedArray.length).assertEqual(4);
+      expect(constructedArray.byteLength).assertEqual(32);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2090
+     * @tc.name testBigUint64ArrayConstructor209
+     * @tc.desc Verify long source converted by toInt supplies constructor length four
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let longLengthSource: long = 4294967300;
+      let constructedArray = new BigUint64Array(longLengthSource.toInt());
+      expect(constructedArray.length).assertEqual(4);
+      expect(constructedArray.byteLength).assertEqual(32);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2100
+     * @tc.name testBigUint64ArrayConstructor210
+     * @tc.desc Verify number source converted by toInt supplies truncated constructor length four
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let numberLengthSource: number = 4.9;
+      let constructedArray = new BigUint64Array(numberLengthSource.toInt());
+      expect(constructedArray.length).assertEqual(4);
+      expect(constructedArray.byteLength).assertEqual(32);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2110
+     * @tc.name testBigUint64ArrayConstructor211
+     * @tc.desc Verify float source converted by toInt supplies truncated constructor length four
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let floatLengthSource: float = 4.9f;
+      let constructedArray = new BigUint64Array(floatLengthSource.toInt());
+      expect(constructedArray.length).assertEqual(4);
+      expect(constructedArray[3]).assertEqual(0n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_CONSTRUCTOR_2120
+     * @tc.name testBigUint64ArrayConstructor212
+     * @tc.desc Verify double source converted by toInt supplies truncated constructor length four
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayConstructor212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let doubleLengthSource: double = 4.9;
+      let constructedArray = new BigUint64Array(doubleLengthSource.toInt());
+      expect(constructedArray.length).assertEqual(4);
+      expect(constructedArray[3]).assertEqual(0n);
+    });
   });
 }

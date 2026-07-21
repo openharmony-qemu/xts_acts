@@ -1136,5 +1136,93 @@ export default function biguint64arraySliceTest(): void {
       expect(resultArray[0]).assertEqual(40n);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SLICE_5700
+     * @tc.name testBigUint64ArraySlice057
+     * @tc.desc Verify binary negative begin minus two copies the final two elements
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySlice057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
+      let resultArray = sourceArray.slice(-0b10);
+      sourceArray[2] = 300n;
+      expect(resultArray.join(',')).assertEqual('30,40');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SLICE_5800
+     * @tc.name testBigUint64ArraySlice058
+     * @tc.desc Verify octal negative begin minus two copies the final two elements
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySlice058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
+      let resultArray = sourceArray.slice(-0o2);
+      expect(resultArray.join(',')).assertEqual('30,40');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SLICE_5900
+     * @tc.name testBigUint64ArraySlice059
+     * @tc.desc Verify hexadecimal negative begin minus two copies the final two elements
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySlice059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
+      let resultArray = sourceArray.slice(-0x2);
+      expect(resultArray.join(',')).assertEqual('30,40');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SLICE_6000
+     * @tc.name testBigUint64ArraySlice060
+     * @tc.desc Verify byte source converted by toInt supplies begin index two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySlice060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let byteBeginSource: byte = 2;
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
+      let resultArray = sourceArray.slice(byteBeginSource.toInt());
+      expect(resultArray.join(',')).assertEqual('30,40');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SLICE_6100
+     * @tc.name testBigUint64ArraySlice061
+     * @tc.desc Verify short source converted by toInt supplies exclusive end index three
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySlice061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let shortEndSource: short = 3;
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
+      let resultArray = sourceArray.slice(1, shortEndSource.toInt());
+      expect(resultArray.join(',')).assertEqual('20,30');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_SLICE_6200
+     * @tc.name testBigUint64ArraySlice062
+     * @tc.desc Verify number source converted by toInt supplies truncated begin index two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArraySlice062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let numberBeginSource: number = 2.9;
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
+      let resultArray = sourceArray.slice(numberBeginSource.toInt());
+      expect(resultArray.join(',')).assertEqual('30,40');
+    });
+
   });
 }

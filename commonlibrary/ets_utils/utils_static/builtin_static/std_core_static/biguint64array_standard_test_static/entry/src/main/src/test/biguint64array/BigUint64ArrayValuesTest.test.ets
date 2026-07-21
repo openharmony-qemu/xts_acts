@@ -116,27 +116,12 @@ export default function biguint64arrayValuesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_0500
      * @tc.name testBigUint64ArrayValues005
-     * @tc.desc Verify values() yields zero BigInt elements exactly
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testBigUint64ArrayValues005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceArray = new BigUint64Array([0n]);
-      let firstResult = sourceArray.values().next();
-      expect(firstResult.done).assertFalse();
-      expect(firstResult.value).assertEqual(0n);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_0600
-     * @tc.name testBigUint64ArrayValues006
      * @tc.desc Verify values() yields the max uint64 BigInt element exactly
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([MAX_UINT64_VALUE]);
       let firstResult = sourceArray.values().next();
       expect(firstResult.done).assertFalse();
@@ -144,14 +129,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_0700
-     * @tc.name testBigUint64ArrayValues007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_0600
+     * @tc.name testBigUint64ArrayValues006
      * @tc.desc Verify values() yields three elements in source order
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([1n, 2n, 3n]);
       let valuesIterator = sourceArray.values();
       expect(valuesIterator.next().value).assertEqual(1n);
@@ -160,14 +145,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_0800
-     * @tc.name testBigUint64ArrayValues008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_0700
+     * @tc.name testBigUint64ArrayValues007
      * @tc.desc Verify values() is done after all source elements are consumed
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([1n, 2n, 3n]);
       let valuesIterator = sourceArray.values();
       valuesIterator.next();
@@ -177,14 +162,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_0900
-     * @tc.name testBigUint64ArrayValues009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_0800
+     * @tc.name testBigUint64ArrayValues008
      * @tc.desc Verify values() preserves repeated equal element values
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([5n, 5n, 5n]);
       let valuesIterator = sourceArray.values();
       expect(valuesIterator.next().value).assertEqual(5n);
@@ -193,14 +178,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_1000
-     * @tc.name testBigUint64ArrayValues010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_0900
+     * @tc.name testBigUint64ArrayValues009
      * @tc.desc Verify values() preserves zero max uint64 and one order
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([0n, MAX_UINT64_VALUE, 1n]);
       let valuesIterator = sourceArray.values();
       expect(valuesIterator.next().value).assertEqual(0n);
@@ -209,14 +194,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_1100
-     * @tc.name testBigUint64ArrayValues011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_1000
+     * @tc.name testBigUint64ArrayValues010
      * @tc.desc Verify values() yields stored values after uint64 conversion
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([-1n, UINT64_MODULUS_VALUE + 1n]);
       let valuesIterator = sourceArray.values();
       expect(valuesIterator.next().value).assertEqual(MAX_UINT64_VALUE);
@@ -224,14 +209,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_1200
-     * @tc.name testBigUint64ArrayValues012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_1100
+     * @tc.name testBigUint64ArrayValues011
      * @tc.desc Verify values() on a length constructed array yields zero elements
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array(3);
       let valuesIterator = sourceArray.values();
       expect(valuesIterator.next().value).assertEqual(0n);
@@ -241,14 +226,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_1300
-     * @tc.name testBigUint64ArrayValues013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_1200
+     * @tc.name testBigUint64ArrayValues012
      * @tc.desc Verify values() on an of() result yields argument order
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = BigUint64Array.of(10n, 20n);
       let valuesIterator = sourceArray.values();
       expect(valuesIterator.next().value).assertEqual(10n);
@@ -256,14 +241,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_1400
-     * @tc.name testBigUint64ArrayValues014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_1300
+     * @tc.name testBigUint64ArrayValues013
      * @tc.desc Verify values() on a from() result yields source array order
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = BigUint64Array.from([4n, 5n, 6n]);
       let valuesIterator = sourceArray.values();
       expect(valuesIterator.next().value).assertEqual(4n);
@@ -272,14 +257,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_1500
-     * @tc.name testBigUint64ArrayValues015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_1400
+     * @tc.name testBigUint64ArrayValues014
      * @tc.desc Verify values() on a copied array is independent from later source writes
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let originalArray = new BigUint64Array([7n, 8n, 9n]);
       let copiedArray = new BigUint64Array(originalArray);
       originalArray[0] = 70n;
@@ -290,14 +275,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_1600
-     * @tc.name testBigUint64ArrayValues016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_1500
+     * @tc.name testBigUint64ArrayValues015
      * @tc.desc Verify values() on a whole ArrayBuffer view yields buffer backed values
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceBuffer = new ArrayBuffer(16);
       let sourceArray = new BigUint64Array(sourceBuffer);
       sourceArray[0] = 99n;
@@ -308,14 +293,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_1700
-     * @tc.name testBigUint64ArrayValues017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_1600
+     * @tc.name testBigUint64ArrayValues016
      * @tc.desc Verify values() on an offset ArrayBuffer view yields only the view window
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceBuffer = new ArrayBuffer(32);
       let fullView = new BigUint64Array(sourceBuffer);
       fullView[0] = 10n;
@@ -330,14 +315,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_1800
-     * @tc.name testBigUint64ArrayValues018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_1700
+     * @tc.name testBigUint64ArrayValues017
      * @tc.desc Verify values() on a subarray view yields only the view range
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([1n, 2n, 3n, 4n]);
       let childView = sourceArray.subarray(1, 3);
       let valuesIterator = childView.values();
@@ -347,14 +332,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_1900
-     * @tc.name testBigUint64ArrayValues019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_1800
+     * @tc.name testBigUint64ArrayValues018
      * @tc.desc Verify values() on a slice copy is unaffected by later source writes
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([10n, 20n, 30n, 40n]);
       let slicedArray = sourceArray.slice(1, 3);
       sourceArray[1] = 200n;
@@ -364,14 +349,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_2000
-     * @tc.name testBigUint64ArrayValues020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_1900
+     * @tc.name testBigUint64ArrayValues019
      * @tc.desc Verify two values() iterators over the same array keep independent cursors
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([1n, 2n, 3n]);
       let firstIterator = sourceArray.values();
       let secondIterator = sourceArray.values();
@@ -381,14 +366,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_2100
-     * @tc.name testBigUint64ArrayValues021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_2000
+     * @tc.name testBigUint64ArrayValues020
      * @tc.desc Verify a new values() iterator starts from the first element after partial consumption
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([100n, 200n, 300n]);
       let consumedIterator = sourceArray.values();
       consumedIterator.next();
@@ -398,14 +383,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_2200
-     * @tc.name testBigUint64ArrayValues022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_2100
+     * @tc.name testBigUint64ArrayValues021
      * @tc.desc Verify values() and the default iterator yield the same first element
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([8n, 9n]);
       let valuesIterator = sourceArray.values();
       let defaultIterator = sourceArray.$_iterator();
@@ -414,14 +399,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_2300
-     * @tc.name testBigUint64ArrayValues023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_2200
+     * @tc.name testBigUint64ArrayValues022
      * @tc.desc Verify for-of over values() collects elements in source order
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([10n, 20n, 30n]);
       let collectedValues: bigint[] = [];
       for (let elementValue of sourceArray.values()) {
@@ -433,14 +418,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_2400
-     * @tc.name testBigUint64ArrayValues024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_2300
+     * @tc.name testBigUint64ArrayValues023
      * @tc.desc Verify for-of over values() on an empty array does not enter the loop body
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let emptyArray = new BigUint64Array(0);
       let loopCount: int = 0;
       for (let elementValue of emptyArray.values()) {
@@ -451,14 +436,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_2500
-     * @tc.name testBigUint64ArrayValues025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_2400
+     * @tc.name testBigUint64ArrayValues024
      * @tc.desc Verify nested for-of over values() creates independent iterators
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([1n, 2n]);
       let outerCount: int = 0;
       let innerCount: int = 0;
@@ -475,14 +460,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_2600
-     * @tc.name testBigUint64ArrayValues026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_2500
+     * @tc.name testBigUint64ArrayValues025
      * @tc.desc Verify a values() iterator itself can be consumed by for-of
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([5n, 6n, 7n]);
       let valuesIterator = sourceArray.values();
       let loopCount: int = 0;
@@ -494,14 +479,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_2700
-     * @tc.name testBigUint64ArrayValues027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_2600
+     * @tc.name testBigUint64ArrayValues026
      * @tc.desc Verify creating a values() iterator does not change source metadata
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([1n, 2n, 3n]);
       let lengthBefore: int = sourceArray.length;
       let byteLengthBefore: int = sourceArray.byteLength;
@@ -512,14 +497,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_2800
-     * @tc.name testBigUint64ArrayValues028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_2700
+     * @tc.name testBigUint64ArrayValues027
      * @tc.desc Verify consuming a values() iterator does not modify source elements
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([11n, 22n, 33n]);
       let valuesIterator = sourceArray.values();
       valuesIterator.next();
@@ -531,14 +516,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_2900
-     * @tc.name testBigUint64ArrayValues029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_2800
+     * @tc.name testBigUint64ArrayValues028
      * @tc.desc Verify a new values() iterator observes writes made before iterator creation
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([1n, 2n, 3n]);
       sourceArray[1] = 999n;
       let valuesIterator = sourceArray.values();
@@ -548,14 +533,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_3000
-     * @tc.name testBigUint64ArrayValues030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_2900
+     * @tc.name testBigUint64ArrayValues029
      * @tc.desc Verify a values() iterator observes writes made before its first next() call
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([1n, 2n]);
       let valuesIterator = sourceArray.values();
       sourceArray[0] = 100n;
@@ -564,14 +549,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_3100
-     * @tc.name testBigUint64ArrayValues031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_3000
+     * @tc.name testBigUint64ArrayValues030
      * @tc.desc Verify a values() iterator observes later writes to unvisited elements
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([1n, 2n, 3n]);
       let valuesIterator = sourceArray.values();
       expect(valuesIterator.next().value).assertEqual(1n);
@@ -581,14 +566,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_3200
-     * @tc.name testBigUint64ArrayValues032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_3100
+     * @tc.name testBigUint64ArrayValues031
      * @tc.desc Verify exhausted values() iterators keep returning done true
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([1n]);
       let valuesIterator = sourceArray.values();
       valuesIterator.next();
@@ -598,14 +583,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_3300
-     * @tc.name testBigUint64ArrayValues033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_3200
+     * @tc.name testBigUint64ArrayValues032
      * @tc.desc Verify values() on a subarray view observes parent writes inside the shared window before iteration
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parentArray = new BigUint64Array([10n, 20n, 30n, 40n, 50n]);
       let subarrayView = parentArray.subarray(1, 4);
       let hexadecimalSourceValue: int = 0x2A;
@@ -619,14 +604,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_3400
-     * @tc.name testBigUint64ArrayValues034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_3300
+     * @tc.name testBigUint64ArrayValues033
      * @tc.desc Verify values() on a nested subarray from a byteOffset view yields only the nested window values
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceBuffer = new ArrayBuffer(48);
       let fullView = new BigUint64Array(sourceBuffer, 0, 6);
       fullView[0] = 10n;
@@ -644,14 +629,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_3500
-     * @tc.name testBigUint64ArrayValues035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_3400
+     * @tc.name testBigUint64ArrayValues034
      * @tc.desc Verify values() on a length-bounded byteOffset subarray yields current window values
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sharedBuffer: ArrayBuffer = new ArrayBuffer(56);
       let fullView = new BigUint64Array(sharedBuffer, 0, 7);
       fullView[0] = 10n;
@@ -678,14 +663,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_3600
-     * @tc.name testBigUint64ArrayValues036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_3500
+     * @tc.name testBigUint64ArrayValues035
      * @tc.desc Verify values() on a slice copy from byteOffset view ignores later source writes
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sharedBuffer: ArrayBuffer = new ArrayBuffer(40);
       let fullView = new BigUint64Array(sharedBuffer, 0, 5);
       fullView[0] = 10n;
@@ -709,14 +694,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_3700
-     * @tc.name testBigUint64ArrayValues037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_3600
+     * @tc.name testBigUint64ArrayValues036
      * @tc.desc Verify values() on a zero-length byteOffset view is exhausted immediately
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sharedBuffer: ArrayBuffer = new ArrayBuffer(24);
       let byteOffset: int = 16;
       let viewLength: int = 0;
@@ -729,14 +714,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_3800
-     * @tc.name testBigUint64ArrayValues038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_3700
+     * @tc.name testBigUint64ArrayValues037
      * @tc.desc Verify values() on a Set source reflects insertion order after duplicate removal
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceSet = new Set<BigInt>();
       sourceSet.add(7n);
       sourceSet.add(11n);
@@ -752,14 +737,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_3900
-     * @tc.name testBigUint64ArrayValues039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_3800
+     * @tc.name testBigUint64ArrayValues038
      * @tc.desc Verify values() on an advanced iterator source starts at the current cursor
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let baseArray = BigUint64Array.of(5n, 10n, 15n, 20n);
       let sourceIterator = baseArray.values();
       sourceIterator.next();
@@ -773,14 +758,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_4000
-     * @tc.name testBigUint64ArrayValues040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_3900
+     * @tc.name testBigUint64ArrayValues039
      * @tc.desc Verify values() yielded value stays stable after the source element is modified
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([4n, 8n]);
       let valuesIterator = sourceArray.values();
       let firstResult = valuesIterator.next();
@@ -792,14 +777,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_4100
-     * @tc.name testBigUint64ArrayValues041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_4000
+     * @tc.name testBigUint64ArrayValues040
      * @tc.desc Verify exhausted values() iterator remains exhausted after source array writes
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([9n]);
       let valuesIterator = sourceArray.values();
       valuesIterator.next();
@@ -814,14 +799,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_4200
-     * @tc.name testBigUint64ArrayValues042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_4100
+     * @tc.name testBigUint64ArrayValues041
      * @tc.desc Verify values() on a byteOffset view observes shared window writes after iterator creation
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sharedBuffer: ArrayBuffer = new ArrayBuffer(32);
       let fullView = new BigUint64Array(sharedBuffer, 0, 4);
       fullView[0] = 10n;
@@ -839,14 +824,14 @@ export default function biguint64arrayValuesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_4300
-     * @tc.name testBigUint64ArrayValues043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_VALUES_4200
+     * @tc.name testBigUint64ArrayValues042
      * @tc.desc Verify two values() iterators keep independent cursors during alternating advancement
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBigUint64ArrayValues043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigUint64ArrayValues042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = new BigUint64Array([5n, 10n, 15n]);
       let firstIterator = sourceArray.values();
       let secondIterator = sourceArray.values();

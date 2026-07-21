@@ -2630,5 +2630,101 @@ export default function biguint64arrayCopyWithinTest(): void {
       expect(secondView[1]).assertEqual(30n);
       expect(secondView[2]).assertEqual(50n);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1490
+     * @tc.name testBigUint64ArrayCopyWithin149
+     * @tc.desc Verify binary negative target minus two writes the copied prefix to the last two positions
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
+      let binaryTarget: int = -0b10;
+      sourceArray.copyWithin(binaryTarget, 0, 2);
+      expect(sourceArray[2]).assertEqual(10n);
+      expect(sourceArray[3]).assertEqual(20n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1500
+     * @tc.name testBigUint64ArrayCopyWithin150
+     * @tc.desc Verify octal negative target minus two writes the copied prefix to the last two positions
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
+      let octalTarget: int = -0o2;
+      sourceArray.copyWithin(octalTarget, 0, 2);
+      expect(sourceArray[2]).assertEqual(10n);
+      expect(sourceArray[3]).assertEqual(20n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1510
+     * @tc.name testBigUint64ArrayCopyWithin151
+     * @tc.desc Verify hexadecimal negative target minus two writes the copied prefix to the last two positions
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
+      let hexadecimalTarget: int = -0x2;
+      sourceArray.copyWithin(hexadecimalTarget, 0, 2);
+      expect(sourceArray[2]).assertEqual(10n);
+      expect(sourceArray[3]).assertEqual(20n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1520
+     * @tc.name testBigUint64ArrayCopyWithin152
+     * @tc.desc Verify double source converted by toInt supplies target index two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
+      let doubleTargetSource: double = 2.9;
+      sourceArray.copyWithin(doubleTargetSource.toInt(), 0, 2);
+      expect(sourceArray[2]).assertEqual(10n);
+      expect(sourceArray[3]).assertEqual(20n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1530
+     * @tc.name testBigUint64ArrayCopyWithin153
+     * @tc.desc Verify number source converted by toInt supplies start index two
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n);
+      let numberStartSource: number = 2.9;
+      sourceArray.copyWithin(0, numberStartSource.toInt(), 4);
+      expect(sourceArray[0]).assertEqual(30n);
+      expect(sourceArray[1]).assertEqual(40n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_COPYWITHIN_1540
+     * @tc.name testBigUint64ArrayCopyWithin154
+     * @tc.desc Verify short source converted by toInt supplies exclusive end index four
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayCopyWithin154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sourceArray = BigUint64Array.of(10n, 20n, 30n, 40n, 50n);
+      let shortEndSource: short = 4;
+      sourceArray.copyWithin(0, 1, shortEndSource.toInt());
+      expect(sourceArray[0]).assertEqual(20n);
+      expect(sourceArray[2]).assertEqual(40n);
+    });
   });
 }

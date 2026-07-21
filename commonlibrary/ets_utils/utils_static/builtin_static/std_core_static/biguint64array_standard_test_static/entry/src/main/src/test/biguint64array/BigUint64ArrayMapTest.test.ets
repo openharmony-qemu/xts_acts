@@ -1728,5 +1728,92 @@ export default function biguint64arrayMapTest(): void {
       expect(sourceView[1]).assertEqual(9n);
       expect(siblingView[0]).assertEqual(9n);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_MAP_8200
+     * @tc.name testBigUint64ArrayMap082
+     * @tc.desc Verify map returns a binary integer converted to BigInt for every element
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayMap082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = BigUint64Array.of(1n, 2n);
+      let resultArray = sourceArray.map((_element: bigint): bigint => BigInt(0b101010));
+      expect(resultArray.join(',')).assertEqual('42,42');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_MAP_8300
+     * @tc.name testBigUint64ArrayMap083
+     * @tc.desc Verify map returns an octal integer converted to BigInt for every element
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayMap083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = BigUint64Array.of(1n, 2n);
+      let resultArray = sourceArray.map((_element: bigint): bigint => BigInt(0o52));
+      expect(resultArray.join(',')).assertEqual('42,42');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_MAP_8400
+     * @tc.name testBigUint64ArrayMap084
+     * @tc.desc Verify map returns a hexadecimal integer converted to BigInt for every element
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayMap084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = BigUint64Array.of(1n, 2n);
+      let resultArray = sourceArray.map((_element: bigint): bigint => BigInt(0x2A));
+      expect(resultArray.join(',')).assertEqual('42,42');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_MAP_8500
+     * @tc.name testBigUint64ArrayMap085
+     * @tc.desc Verify byte source converted by toInt supplies a BigInt callback result
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayMap085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let byteValueSource: byte = 42;
+      let sourceArray = BigUint64Array.of(1n, 2n);
+      let resultArray = sourceArray.map((_element: bigint): bigint => BigInt(byteValueSource.toInt()));
+      expect(resultArray.join(',')).assertEqual('42,42');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_MAP_8600
+     * @tc.name testBigUint64ArrayMap086
+     * @tc.desc Verify number source converted by toInt supplies a truncated BigInt callback result
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayMap086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let numberValueSource: number = 42.9;
+      let sourceArray = BigUint64Array.of(1n, 2n);
+      let resultArray = sourceArray.map((_element: bigint): bigint => BigInt(numberValueSource.toInt()));
+      expect(resultArray.join(',')).assertEqual('42,42');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_MAP_8700
+     * @tc.name testBigUint64ArrayMap087
+     * @tc.desc Verify double source converted by toInt supplies a truncated BigInt callback result
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayMap087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let doubleValueSource: double = 42.9;
+      let sourceArray = BigUint64Array.of(1n, 2n);
+      let resultArray = sourceArray.map((_element: bigint): bigint => BigInt(doubleValueSource.toInt()));
+      expect(resultArray.join(',')).assertEqual('42,42');
+    });
   });
 }

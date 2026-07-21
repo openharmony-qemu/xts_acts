@@ -2237,5 +2237,98 @@ export default function biguint64arrayReduceTest(): void {
       expect(siblingView[0]).assertEqual(9n);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_REDUCE_1060
+     * @tc.name testBigUint64ArrayReduce106
+     * @tc.desc Verify reduce sums binary integer values converted through BigInt
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayReduce106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = BigUint64Array.of(BigInt(0b1), BigInt(0b10), BigInt(0b11));
+      let reducedValue = sourceArray.reduce<bigint>((sum: bigint, value: bigint): bigint => sum + value,
+        BigInt(0b0));
+      expect(reducedValue).assertEqual(6n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_REDUCE_1070
+     * @tc.name testBigUint64ArrayReduce107
+     * @tc.desc Verify reduce sums octal integer values converted through BigInt
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayReduce107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = BigUint64Array.of(BigInt(0o1), BigInt(0o2), BigInt(0o3));
+      let reducedValue = sourceArray.reduce<bigint>((sum: bigint, value: bigint): bigint => sum + value,
+        BigInt(0o0));
+      expect(reducedValue).assertEqual(6n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_REDUCE_1080
+     * @tc.name testBigUint64ArrayReduce108
+     * @tc.desc Verify reduce sums hexadecimal integer values converted through BigInt
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayReduce108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray = BigUint64Array.of(BigInt(0x1), BigInt(0x2), BigInt(0x3));
+      let reducedValue = sourceArray.reduce<bigint>((sum: bigint, value: bigint): bigint => sum + value,
+        BigInt(0x0));
+      expect(reducedValue).assertEqual(6n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_REDUCE_1090
+     * @tc.name testBigUint64ArrayReduce109
+     * @tc.desc Verify byte source converted by toInt supplies a number accumulator initial value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayReduce109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let byteInitialSource: byte = 1;
+      let sourceArray = BigUint64Array.of(10n, 20n);
+      let reducedValue = sourceArray.reduce<number>((count: number, _value: bigint): number => count + 1,
+        byteInitialSource.toInt());
+      expect(reducedValue).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_REDUCE_1100
+     * @tc.name testBigUint64ArrayReduce110
+     * @tc.desc Verify number source converted by toInt supplies a truncated accumulator initial value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayReduce110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let numberInitialSource: number = 1.9;
+      let sourceArray = BigUint64Array.of(10n, 20n);
+      let reducedValue = sourceArray.reduce<number>((count: number, _value: bigint): number => count + 1,
+        numberInitialSource.toInt());
+      expect(reducedValue).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_REDUCE_1110
+     * @tc.name testBigUint64ArrayReduce111
+     * @tc.desc Verify double source converted by toInt supplies a truncated accumulator initial value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayReduce111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let doubleInitialSource: double = 1.9;
+      let sourceArray = BigUint64Array.of(10n, 20n);
+      let reducedValue = sourceArray.reduce<number>((count: number, _value: bigint): number => count + 1,
+        doubleInitialSource.toInt());
+      expect(reducedValue).assertEqual(3);
+    });
+
   });
 }

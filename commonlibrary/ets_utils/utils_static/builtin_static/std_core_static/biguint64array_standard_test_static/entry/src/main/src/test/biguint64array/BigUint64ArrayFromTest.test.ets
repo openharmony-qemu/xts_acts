@@ -1983,5 +1983,89 @@ export default function biguint64arrayFromTest(): void {
       expect(resultArray.length).assertEqual(1);
       expect(resultArray[0]).assertEqual(16777216n);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FROM_1030
+     * @tc.name testBigUint64ArrayFrom103
+     * @tc.desc Verify Array BigInt source preserves a value created from binary integer input
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFrom103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray: Array<BigInt> = [BigInt(0b11111111)];
+      let resultArray = BigUint64Array.from(sourceArray);
+      expect(resultArray[0]).assertEqual(255n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FROM_1040
+     * @tc.name testBigUint64ArrayFrom104
+     * @tc.desc Verify Array BigInt source preserves a value created from hexadecimal integer input
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFrom104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray: Array<BigInt> = [BigInt(0xFF)];
+      let resultArray = BigUint64Array.from(sourceArray);
+      expect(resultArray[0]).assertEqual(255n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FROM_1050
+     * @tc.name testBigUint64ArrayFrom105
+     * @tc.desc Verify ArrayLike byte source converts each value explicitly through toInt
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFrom105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray: Array<byte> = [1, 2, 3];
+      let resultArray = BigUint64Array.from(sourceArray, (element: byte): BigInt => BigInt(element.toInt()));
+      expect(resultArray.join(',')).assertEqual('1,2,3');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FROM_1060
+     * @tc.name testBigUint64ArrayFrom106
+     * @tc.desc Verify ArrayLike short source converts each value explicitly through toInt
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFrom106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray: Array<short> = [10, 20];
+      let resultArray = BigUint64Array.from(sourceArray, (element: short): BigInt => BigInt(element.toInt()));
+      expect(resultArray.join(',')).assertEqual('10,20');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FROM_1070
+     * @tc.name testBigUint64ArrayFrom107
+     * @tc.desc Verify ArrayLike long source converts each value explicitly through toInt
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFrom107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray: Array<long> = [4294967297, 4294967298];
+      let resultArray = BigUint64Array.from(sourceArray, (element: long): BigInt => BigInt(element.toInt()));
+      expect(resultArray.join(',')).assertEqual('1,2');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_FROM_1080
+     * @tc.name testBigUint64ArrayFrom108
+     * @tc.desc Verify ArrayLike double source truncates each value explicitly through toInt
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayFrom108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceArray: Array<double> = [1.9, 2.9];
+      let resultArray = BigUint64Array.from(sourceArray, (element: double): BigInt => BigInt(element.toInt()));
+      expect(resultArray.join(',')).assertEqual('1,2');
+    });
   });
 }

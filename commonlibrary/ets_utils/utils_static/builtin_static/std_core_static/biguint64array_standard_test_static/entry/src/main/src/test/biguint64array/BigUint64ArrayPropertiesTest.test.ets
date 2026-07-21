@@ -952,5 +952,92 @@ export default function biguint64arrayPropertiesTest(): void {
       expect(bufferView.byteLength).assertEqual(16);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_PROPERTIES_5200
+     * @tc.name testBigUint64ArrayProperties052
+     * @tc.desc Verify binary length four derives length and byteLength properties
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayProperties052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let targetArray = new BigUint64Array(0b100);
+      expect(targetArray.length).assertEqual(4);
+      expect(targetArray.byteLength).assertEqual(32);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_PROPERTIES_5300
+     * @tc.name testBigUint64ArrayProperties053
+     * @tc.desc Verify octal length four derives length and byteLength properties
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayProperties053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let targetArray = new BigUint64Array(0o4);
+      expect(targetArray.length).assertEqual(4);
+      expect(targetArray.byteLength).assertEqual(32);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_PROPERTIES_5400
+     * @tc.name testBigUint64ArrayProperties054
+     * @tc.desc Verify hexadecimal length four derives length and byteLength properties
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayProperties054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let targetArray = new BigUint64Array(0x4);
+      expect(targetArray.length).assertEqual(4);
+      expect(targetArray.byteLength).assertEqual(32);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_PROPERTIES_5500
+     * @tc.name testBigUint64ArrayProperties055
+     * @tc.desc Verify byte source converted by toInt derives length four properties
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayProperties055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let byteLengthSource: byte = 4;
+      let targetArray = new BigUint64Array(byteLengthSource.toInt());
+      expect(targetArray.length).assertEqual(4);
+      expect(targetArray.byteLength).assertEqual(32);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_PROPERTIES_5600
+     * @tc.name testBigUint64ArrayProperties056
+     * @tc.desc Verify short source converted by toInt derives length four properties
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayProperties056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let shortLengthSource: short = 4;
+      let targetArray = new BigUint64Array(shortLengthSource.toInt());
+      expect(targetArray.length).assertEqual(4);
+      expect(targetArray.byteLength).assertEqual(32);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGUINT64ARRAY_PROPERTIES_5700
+     * @tc.name testBigUint64ArrayProperties057
+     * @tc.desc Verify number source converted by toInt derives truncated length four properties
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testBigUint64ArrayProperties057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let numberLengthSource: number = 4.9;
+      let targetArray = new BigUint64Array(numberLengthSource.toInt());
+      expect(targetArray.length).assertEqual(4);
+      expect(targetArray.byteLength).assertEqual(32);
+    });
+
   });
 }
