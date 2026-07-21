@@ -19,16 +19,19 @@ import { ArkTSUtils, taskpool } from '@kit.ArkTS';
 @Sendable
 class TaskResult {
   value: string = ''
+  waiting: boolean = false
 }
 
 @Sendable
 class WaitCounter {
   count: number = 0
   done: boolean = false
+  waiting: boolean = false
 }
 
 @Concurrent
 async function waitInTask(cv: ArkTSUtils.locks.ConditionVariable, result: TaskResult): Promise<void> {
+  result.waiting = true
   await cv.wait()
   result.value = 'task awakened'
 }
@@ -36,6 +39,7 @@ async function waitInTask(cv: ArkTSUtils.locks.ConditionVariable, result: TaskRe
 @Concurrent
 async function waitAndIncrement(cv: ArkTSUtils.locks.ConditionVariable,
   counter: WaitCounter): Promise<void> {
+  counter.waiting = true
   await cv.wait()
   counter.count++
   counter.done = true
@@ -203,9 +207,24 @@ export default function ConditionVariableTest(): void {
       let task: taskpool.Task = new taskpool.Task(waitInTask, cv, result)
       let execPromise: Promise<Object> = taskpool.execute(task)
 
-      // Give task time to start and reach cv.wait()
-      await new Promise<void>(resolve => setTimeout(resolve, 500))
-      cv.notifyOne()
+      // Poll until task signals it is entering wait (no fixed 500ms delay)
+      let waitDeadline: number = Date.now() + 10000
+      while (!result.waiting && Date.now() < waitDeadline) {
+        await new Promise<void>((resolve: Function) => setTimeout(resolve, 10))
+      }
+      expect(result.waiting).assertTrue()
+      // Retry notify until awakened (covers race between flag set and native wait)
+      let notifyDeadline: number = Date.now() + 10000
+      while (result.value === '' && Date.now() < notifyDeadline) {
+        cv.notifyOne()
+        let raced: string = await Promise.race([
+          execPromise.then((): string => 'done'),
+          new Promise<string>((resolve: Function) => setTimeout((): void => resolve('tick'), 20))
+        ])
+        if (raced === 'done') {
+          break
+        }
+      }
       await execPromise
       expect(result.value).assertEqual('task awakened')
     })
@@ -280,9 +299,23 @@ export default function ConditionVariableTest(): void {
       let task: taskpool.Task = new taskpool.Task(waitAndIncrement, cv, counter)
       let execPromise: Promise<Object> = taskpool.execute(task)
 
-      // Give task time to start and reach cv.wait()
-      await new Promise<void>(resolve => setTimeout(resolve, 500))
-      cv.notifyOne()
+      // Poll until task signals it is entering wait (no fixed 500ms delay)
+      let waitDeadline: number = Date.now() + 10000
+      while (!counter.waiting && Date.now() < waitDeadline) {
+        await new Promise<void>((resolve: Function) => setTimeout(resolve, 10))
+      }
+      expect(counter.waiting).assertTrue()
+      let notifyDeadline: number = Date.now() + 10000
+      while (!counter.done && Date.now() < notifyDeadline) {
+        cv.notifyOne()
+        let raced: string = await Promise.race([
+          execPromise.then((): string => 'done'),
+          new Promise<string>((resolve: Function) => setTimeout((): void => resolve('tick'), 20))
+        ])
+        if (raced === 'done') {
+          break
+        }
+      }
       await execPromise
       expect(counter.done).assertTrue()
       expect(counter.count).assertEqual(1)
