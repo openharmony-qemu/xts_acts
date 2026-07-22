@@ -55,6 +55,7 @@ import PhotoSessIsoInfoChangeTest from './camera/PhotoSessionInfoChange.test';
 import ManualFocusQueryTest from './camera/ManualFocusQuery.test';
 import CameraOISQueryTest from './camera/CameraOISQuery.test';
 import CameraManualExposureTest from './camera/CameraManualExposureTest.test';
+import CameraPhotoOutputSuppTest from './camera/CameraPhotoOutputSuppTest.test';
 
 
 export default function testsuite() {
@@ -114,4 +115,5 @@ export default function testsuite() {
   ManualFocusQueryTest();
   CameraOISQueryTest();
   CameraManualExposureTest();
+  CameraPhotoOutputSuppTest();
 }
