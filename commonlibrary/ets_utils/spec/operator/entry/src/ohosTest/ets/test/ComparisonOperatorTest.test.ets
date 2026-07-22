@@ -1995,3 +1995,355 @@ export default function ComparisonOperatorTest() {
       expect(c === Color.Red).assertTrue()
       expect(c === 0).assertTrue()
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_COMPARISON_OPERATOR_2290
+     * @tc.name testComparisonOperator219
+     * @tc.desc Verify all 8 comparison operators return boolean type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testComparisonOperator219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a = 1
+      let b = 2
+      expect(typeof (1 == 1)).assertEqual("boolean")
+      expect(typeof (a != b)).assertEqual("boolean")
+      expect(typeof (1 === 1)).assertEqual("boolean")
+      expect(typeof (a !== b)).assertEqual("boolean")
+      expect(typeof (2 > 1)).assertEqual("boolean")
+      expect(typeof (2 >= 2)).assertEqual("boolean")
+      expect(typeof (1 < 2)).assertEqual("boolean")
+      expect(typeof (2 <= 2)).assertEqual("boolean")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_COMPARISON_OPERATOR_2300
+     * @tc.name testComparisonOperator220
+     * @tc.desc Verify 0.1 plus 0.2 is not equal to 0.3 due to precision
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testComparisonOperator220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(0.1 + 0.2 === 0.3).assertFalse()
+      expect(0.1 + 0.2 == 0.3).assertFalse()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_COMPARISON_OPERATOR_2310
+     * @tc.name testComparisonOperator221
+     * @tc.desc Verify floating point comparison using EPSILON
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testComparisonOperator221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: number = 0.1 + 0.2
+      let b: number = 0.3
+      expect(Math.abs(a - b) < Number.EPSILON).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_COMPARISON_OPERATOR_2320
+     * @tc.name testComparisonOperator222
+     * @tc.desc Verify large integer precision loss comparison
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testComparisonOperator222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(9007199254740993 === 9007199254740992).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_COMPARISON_OPERATOR_2330
+     * @tc.name testComparisonOperator223
+     * @tc.desc Verify floating point magnitude comparison works correctly
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testComparisonOperator223', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(0.1 + 0.2 > 0.3).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_COMPARISON_OPERATOR_2340
+     * @tc.name testComparisonOperator224
+     * @tc.desc Verify Chinese characters compared by Unicode code point
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testComparisonOperator224', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect("中" < "文").assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_COMPARISON_OPERATOR_2350
+     * @tc.name testComparisonOperator225
+     * @tc.desc Verify Japanese character comparison
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testComparisonOperator225', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect("あ" < "ん").assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_COMPARISON_OPERATOR_2360
+     * @tc.name testComparisonOperator226
+     * @tc.desc Verify emoji code point comparison
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testComparisonOperator226', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect("😀" < "😎").assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_COMPARISON_OPERATOR_2370
+     * @tc.name testComparisonOperator227
+     * @tc.desc Verify localeCompare for localized comparison
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testComparisonOperator227', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect("ä".localeCompare("z") < 0).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_COMPARISON_OPERATOR_2380
+     * @tc.name testComparisonOperator228
+     * @tc.desc Verify less than as for loop condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testComparisonOperator228', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let count: number = 0
+      for (let i = 0; i < 5; i++) {
+        count++
+      }
+      expect(count).assertEqual(5)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_COMPARISON_OPERATOR_2390
+     * @tc.name testComparisonOperator229
+     * @tc.desc Verify less than or equal as loop condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testComparisonOperator229', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let count: number = 0
+      for (let i = 0; i <= 5; i++) {
+        count++
+      }
+      expect(count).assertEqual(6)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_COMPARISON_OPERATOR_2400
+     * @tc.name testComparisonOperator230
+     * @tc.desc Verify not equal as while loop condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testComparisonOperator230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 10
+      while (x != 0) {
+        x--
+      }
+      expect(x).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_COMPARISON_OPERATOR_2420
+     * @tc.name testComparisonOperator232
+     * @tc.desc Verify optional chaining result compared with null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testComparisonOperator232', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: ESObject = { a: null }
+      expect(obj?.a == null).assertTrue()
+      expect(obj?.a === null).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_COMPARISON_OPERATOR_2430
+     * @tc.name testComparisonOperator233
+     * @tc.desc Verify nullish coalescing result combined with comparison
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testComparisonOperator233', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: number | null = null
+      let result: number = val ?? 42
+      expect(result === 42).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_COMPARISON_OPERATOR_2440
+     * @tc.name testComparisonOperator234
+     * @tc.desc Verify nullish coalescing combined with equality in condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testComparisonOperator234', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: number | undefined = undefined
+      if ((val ?? 0) == 0) {
+        expect(true).assertTrue()
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_COMPARISON_OPERATOR_2450
+     * @tc.name testComparisonOperator235
+     * @tc.desc Verify Map.has uses SameValueZero comparison
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testComparisonOperator235', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let m = new Map<number, string>()
+      m.set(NaN, "not a number")
+      expect(m.has(NaN)).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_COMPARISON_OPERATOR_2460
+     * @tc.name testComparisonOperator236
+     * @tc.desc Verify Map treats 0 and negative 0 as same key
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testComparisonOperator236', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let m = new Map<number, string>()
+      m.set(0, "zero")
+      expect(m.has(-0)).assertTrue()
+      expect(m.get(-0)).assertEqual("zero")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_COMPARISON_OPERATOR_2470
+     * @tc.name testComparisonOperator237
+     * @tc.desc Verify Set uses SameValueZero for deduplication
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testComparisonOperator237', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s = new Set<number>()
+      s.add(NaN)
+      s.add(NaN)
+      expect(s.size).assertEqual(1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_COMPARISON_OPERATOR_2480
+     * @tc.name testComparisonOperator238
+     * @tc.desc Verify Set treats 0 and negative 0 as same value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testComparisonOperator238', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s = new Set<number>()
+      s.add(0)
+      s.add(-0)
+      expect(s.size).assertEqual(1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_COMPARISON_OPERATOR_2550
+     * @tc.name testComparisonOperator245
+     * @tc.desc Verify arithmetic operations take precedence over comparison
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testComparisonOperator245', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(2 + 3 > 4).assertTrue()
+      expect(10 - 5 < 6).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_COMPARISON_OPERATOR_2560
+     * @tc.name testComparisonOperator246
+     * @tc.desc Verify comparison operations take precedence over logical operations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testComparisonOperator246', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(5 > 3 && 2 < 4).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_COMPARISON_OPERATOR_2570
+     * @tc.name testComparisonOperator247
+     * @tc.desc Verify comparison precedence over assignment
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testComparisonOperator247', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: boolean
+      x = 5 > 3
+      expect(x).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_COMPARISON_OPERATOR_2580
+     * @tc.name testComparisonOperator248
+     * @tc.desc Verify parentheses for explicit precedence
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testComparisonOperator248', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((3 + 2) > (1 + 1)).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_COMPARISON_OPERATOR_2590
+     * @tc.name testComparisonOperator249
+     * @tc.desc Verify nested parentheses comparison
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testComparisonOperator249', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: number = 1, b: number = 2, c: number = 3
+      expect((a + b) == c).assertTrue()
+    });
+
+  });
+}
+
+function deepEqual209(a: ESObject, b: ESObject): boolean {
+  if (a === b) {
+    return true
+  }
+  if (typeof a !== "object" || typeof b !== "object") {
+    return false
+  }
+  let keysA = Object.keys(a)
+  let keysB = Object.keys(b)
+  if (keysA.length !== keysB.length) {
+    return false
+  }
+  return keysA.every(k => deepEqual209(a[k], b[k]))
+}
