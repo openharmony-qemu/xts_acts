@@ -1,0 +1,225 @@
+/*
+ * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import taskpool from '@ohos.taskpool'
+import { collections } from '@kit.ArkTS'
+import { ArkTSUtils } from '@kit.ArkTS'
+import Utils from '../utils'
+
+@Sendable
+class UploadProgressTracker {
+  public totalChunks_: number = 0
+  public completedChunks_: number = 0
+  public chunkProgress_: collections.Map<number, number>
+
+  public failedChunks_: collections.Array<number>
+
+  public lock_: ArkTSUtils.locks.AsyncLock
+
+  constructor(chunkProgress_: collections.Map<number, number>, failedChunks_: collections.Array<number>, lock_: ArkTSUtils.locks.AsyncLock) {
+    this.chunkProgress_ = chunkProgress_
+    this.failedChunks_ = failedChunks_
+    this.lock_ = lock_
+  }
+
+
+  async setTotalChunks(total: number): Promise<void> {
+    await this.lock_.lockAsync((): void => {
+      this.totalChunks_ = total
+      this.completedChunks_ = 0
+      this.chunkProgress_.clear()
+      while (this.failedChunks_.length > 0) { this.failedChunks_.pop() }
+      for (let i: number = 0; i < total; i++) {
+        this.chunkProgress_.set(i, 0)
+      }
+    })
+  }
+
+  async updateChunkProgress(chunkIndex: number, progress: number): Promise<void> {
+    await this.lock_.lockAsync((): void => {
+      if (this.chunkProgress_.has(chunkIndex)) {
+        this.chunkProgress_.set(chunkIndex, Math.min(100, progress))
+        if (progress >= 100) {
+          this.completedChunks_++
+        }
+      }
+    })
+  }
+
+  async markChunkFailed(chunkIndex: number): Promise<void> {
+    await this.lock_.lockAsync((): void => {
+      this.failedChunks_.push(chunkIndex)
+    })
+  }
+
+  async getChunkProgress(chunkIndex: number): Promise<number> {
+    return await this.lock_.lockAsync((): number => {
+      return this.chunkProgress_.get(chunkIndex) ?? 0
+    })
+  }
+
+  async getOverallProgress(): Promise<number> {
+    return await this.lock_.lockAsync((): number => {
+      if (this.totalChunks_ === 0) return 0
+      let totalProgress: number = 0
+      this.chunkProgress_.forEach((value: number) => {
+        totalProgress += value
+      })
+      return Math.floor(totalProgress / this.totalChunks_)
+    })
+  }
+
+  async getCompletedChunks(): Promise<number> {
+    return await this.lock_.lockAsync((): number => this.completedChunks_)
+  }
+
+  async getFailedChunks(): Promise<number> {
+    return await this.lock_.lockAsync((): number => this.failedChunks_.length)
+  }
+
+  async isCompleted(): Promise<boolean> {
+    return await this.lock_.lockAsync((): boolean => this.completedChunks_ >= this.totalChunks_)
+  }
+
+  async reset(): Promise<void> {
+    await this.lock_.lockAsync((): void => {
+      this.totalChunks_ = 0
+      this.completedChunks_ = 0
+      this.chunkProgress_.clear()
+      while (this.failedChunks_.length > 0) { this.failedChunks_.pop() }
+    })
+  }
+}
+
+@Concurrent
+async function uploadChunkTask(tracker: UploadProgressTracker, chunkIndex: number): Promise<void> {
+  return await tracker.lock_.lockAsync((): void => {
+    tracker.chunkProgress_.set(chunkIndex, 100)
+    tracker.completedChunks_++
+
+  })
+}
+
+function executeTasksGetObjects(tasks: taskpool.Task[]): Promise<Object[]> {
+  const promises: Promise<Object>[] = []
+  for (let i: number = 0; i < tasks.length; i++) {
+    promises.push(taskpool.execute(tasks[i]))
+  }
+  return Promise.all(promises)
+}
+
+export default function BuiltinsUploadProgressTest(): void {
+  describe('BuiltinsUploadProgressTest', () => {
+    let tracker: UploadProgressTracker
+
+    beforeEach(async (): Promise<void> => {
+      tracker = new UploadProgressTracker(new collections.Map<number, number>(), new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
+    })
+
+    afterEach(async (): Promise<void> => {
+      await tracker.reset()
+    })
+
+    it('BuiltinsUploadProgressTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      await tracker.setTotalChunks(1)
+      expect(await tracker.getChunkProgress(0)).assertEqual(0)
+      expect(await tracker.getOverallProgress()).assertEqual(0)
+    })
+
+    it('BuiltinsUploadProgressTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      await tracker.setTotalChunks(1)
+      await tracker.updateChunkProgress(0, 50)
+      expect(await tracker.getChunkProgress(0)).assertEqual(50)
+      expect(await tracker.getOverallProgress()).assertEqual(50)
+    })
+
+    it('BuiltinsUploadProgressTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      await tracker.setTotalChunks(1)
+      await tracker.updateChunkProgress(0, 100)
+      expect(await tracker.getChunkProgress(0)).assertEqual(100)
+      expect(await tracker.getCompletedChunks()).assertEqual(1)
+      expect(await tracker.isCompleted()).assertTrue()
+    })
+
+    it('BuiltinsUploadProgressTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      await tracker.setTotalChunks(5)
+      const tasks: taskpool.Task[] = []
+      for (let i: number = 0; i < 5; i++) {
+        tasks.push(new taskpool.Task(uploadChunkTask, tracker, i))
+      }
+      await executeTasksGetObjects(tasks)
+      expect(await tracker.getCompletedChunks()).assertEqual(5)
+      expect(await tracker.isCompleted()).assertTrue()
+    })
+
+    it('BuiltinsUploadProgressTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      await tracker.setTotalChunks(5)
+      for (let i: number = 0; i < 5; i++) {
+        await tracker.updateChunkProgress(i, 50)
+      }
+      expect(await tracker.getOverallProgress()).assertEqual(50)
+    })
+
+    it('BuiltinsUploadProgressTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      await tracker.setTotalChunks(3)
+      const tasks: taskpool.Task[] = []
+      for (let i: number = 0; i < 3; i++) {
+        tasks.push(new taskpool.Task(uploadChunkTask, tracker, i))
+      }
+      await executeTasksGetObjects(tasks)
+      expect(await tracker.getOverallProgress()).assertEqual(100)
+    })
+
+    it('BuiltinsUploadProgressTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      await tracker.setTotalChunks(3)
+      await tracker.updateChunkProgress(0, 100)
+      await tracker.updateChunkProgress(1, 50)
+      await tracker.updateChunkProgress(2, 0)
+      expect(await tracker.getOverallProgress()).assertEqual(50)
+    })
+
+    it('BuiltinsUploadProgressTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      await tracker.setTotalChunks(3)
+      await tracker.markChunkFailed(1)
+      expect(await tracker.getFailedChunks()).assertEqual(1)
+    })
+
+    it('BuiltinsUploadProgressTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      await tracker.setTotalChunks(3)
+      await tracker.updateChunkProgress(0, 100)
+      await tracker.markChunkFailed(1)
+      expect(await tracker.getCompletedChunks()).assertEqual(1)
+      expect(await tracker.getFailedChunks()).assertEqual(1)
+    })
+
+    it('BuiltinsUploadProgressTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      await tracker.setTotalChunks(2)
+      await tracker.markChunkFailed(0)
+      await tracker.updateChunkProgress(0, 30)
+      expect(await tracker.getChunkProgress(0)).assertEqual(30)
+    })
+
+    it('BuiltinsUploadProgressTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      await tracker.setTotalChunks(3)
+      await tracker.updateChunkProgress(0, 100)
+      await tracker.updateChunkProgress(1, 100)
+      await tracker.updateChunkProgress(2, 100)
+      expect(await tracker.isCompleted()).assertTrue()
+      await tracker.reset()
+      expect(await tracker.getCompletedChunks()).assertEqual(0)
+    })
+  })
+}
