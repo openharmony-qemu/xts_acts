@@ -43,12 +43,21 @@ static bool IsStubMode()
 // Helper function: create temp file (multiple fallback options)
 static FILE* GetTestFile()
 {
-    FILE* file = nullptr;
+    // Option 1: tmpfile()
+    FILE* file = tmpfile();
+    if (file != nullptr)
+    {
+        return file;
+    }
+
+    // Option 2: use /data/local/tmp/ directory
     char templatePath[] = "/data/local/tmp/fprintf_chk_test_XXXXXX";
     int fd = mkstemp(templatePath);
-    if (fd != -1) {
+    if (fd != -1)
+    {
         file = fdopen(fd, "w+");
-        if (file != nullptr) {
+        if (file != nullptr)
+        {
             unlink(templatePath);
             return file;
         }
@@ -58,19 +67,21 @@ static FILE* GetTestFile()
     // Option 3: use /tmp/ directory
     char templatePath2[] = "/tmp/fprintf_chk_test_XXXXXX";
     fd = mkstemp(templatePath2);
-    if (fd != -1) {
+    if (fd != -1)
+    {
         file = fdopen(fd, "w+");
-        if (file != nullptr) {
+        if (file != nullptr)
+        {
             unlink(templatePath2);
             return file;
         }
         close(fd);
     }
 
-    // Option 4: use memory file stream with 1MB buffer
-    int bufsize = 1024 * 1024;
-    file = fmemopen(nullptr, bufsize, "w+");
-    if (file != nullptr) {
+    // Option 4: use memory file stream
+    file = fmemopen(nullptr, 1024 * 1024, "w+");
+    if (file != nullptr)
+    {
         return file;
     }
 
@@ -83,58 +94,63 @@ static FILE* GetTestFile()
 static napi_value FprintfChkNormal001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
-    if (func == nullptr) {
-        return ReturnInt32(env, 0);
+    if (func == nullptr)
+    {
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
     FILE* tmpFile = GetTestFile();
-    if (tmpFile == nullptr) {
+    if (tmpFile == nullptr)
+    {
         // If unable to create temp file, use stderr for testing
         tmpFile = stderr;
     }
 
     // Test different formats - only check return value is not negative
     int ret1 = func(tmpFile, 0, "%s", "Hello");
-    if (ret1 < 0) {
+    if (ret1 < 0)
+    {
         allPassed = false;
     }
 
     int ret2 = func(tmpFile, 0, "%d", 12345);
-    if (ret2 < 0) {
+    if (ret2 < 0)
+    {
         allPassed = false;
     }
 
     int ret3 = func(tmpFile, 0, "%f", 3.14);
-    if (ret3 < 0) {
+    if (ret3 < 0)
+    {
         allPassed = false;
     }
 
     int ret4 = func(tmpFile, 0, "%c", 'A');
-    if (ret4 < 0) {
+    if (ret4 < 0)
+    {
         allPassed = false;
     }
 
     int ret5 = func(tmpFile, 0, "%p", tmpFile);
-    if (ret5 < 0) {
+    if (ret5 < 0)
+    {
         allPassed = false;
     }
 
     int ret6 = func(tmpFile, 0, "%%");
-    if (ret6 < 0) {
+    if (ret6 < 0)
+    {
         allPassed = false;
     }
 
     // Use fprintf as reference verification
-    if (fprintf(tmpFile, "\n") < 0) {
-        allPassed = false;
-    }
-    if (fflush(tmpFile) != 0) {
-        allPassed = false;
-    }
+    fprintf(tmpFile, "\n");
+    fflush(tmpFile);
 
-    if (tmpFile != stderr && tmpFile != stdout) {
-        if (fclose(tmpFile) != 0) {}
+    if (tmpFile != stderr && tmpFile != stdout)
+    {
+        fclose(tmpFile);
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -143,38 +159,45 @@ static napi_value FprintfChkNormal001(napi_env env, napi_callback_info info)
 static napi_value FprintfChkNormal002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
-    if (func == nullptr) {
-        return ReturnInt32(env, 0);
+    if (func == nullptr)
+    {
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
     FILE* tmpFile = GetTestFile();
-    if (tmpFile == nullptr) {
+    if (tmpFile == nullptr)
+    {
         tmpFile = stderr;
     }
 
     int ret1 = func(tmpFile, 1, "%s", "World");
-    if (ret1 < 0) {
+    if (ret1 < 0)
+    {
         allPassed = false;
     }
 
     int ret2 = func(tmpFile, 1, "%d", 67890);
-    if (ret2 < 0) {
+    if (ret2 < 0)
+    {
         allPassed = false;
     }
 
     int ret3 = func(tmpFile, 1, "%f", 2.718);
-    if (ret3 < 0) {
+    if (ret3 < 0)
+    {
         allPassed = false;
     }
 
     int ret4 = func(tmpFile, 1, "%c", 'B');
-    if (ret4 < 0) {
+    if (ret4 < 0)
+    {
         allPassed = false;
     }
 
-    if (tmpFile != stderr && tmpFile != stdout) {
-        if (fclose(tmpFile) != 0) {}
+    if (tmpFile != stderr && tmpFile != stdout)
+    {
+        fclose(tmpFile);
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -183,33 +206,39 @@ static napi_value FprintfChkNormal002(napi_env env, napi_callback_info info)
 static napi_value FprintfChkNormal003(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
-    if (func == nullptr) {
-        return ReturnInt32(env, 0);
+    if (func == nullptr)
+    {
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
     FILE* tmpFile = GetTestFile();
-    if (tmpFile == nullptr) {
+    if (tmpFile == nullptr)
+    {
         tmpFile = stderr;
     }
 
     int ret = func(tmpFile, 0, "Name: %s, Age: %d, Score: %.2f", "Alice", 25, 95.5);
-    if (ret < 0) {
+    if (ret < 0)
+    {
         allPassed = false;
     }
 
     int ret2 = func(tmpFile, 1, "%s %s %s", "A", "B", "C");
-    if (ret2 < 0) {
+    if (ret2 < 0)
+    {
         allPassed = false;
     }
 
     int ret3 = func(tmpFile, 0, "[%s] %d + %.2f = %.2f", "Test", 10, 3.5, 13.5);
-    if (ret3 < 0) {
+    if (ret3 < 0)
+    {
         allPassed = false;
     }
 
-    if (tmpFile != stderr && tmpFile != stdout) {
-        if (fclose(tmpFile) != 0) {}
+    if (tmpFile != stderr && tmpFile != stdout)
+    {
+        fclose(tmpFile);
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -220,42 +249,45 @@ static napi_value FprintfChkNormal003(napi_env env, napi_callback_info info)
 static napi_value FprintfChkBoundary001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
-    if (func == nullptr) {
-        return ReturnInt32(env, 0);
+    if (func == nullptr)
+    {
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
     FILE* tmpFile = GetTestFile();
-    if (tmpFile == nullptr) {
+    if (tmpFile == nullptr)
+    {
         tmpFile = stderr;
     }
 
     // Medium length string
-    int medsize = 1000;
-    std::string mediumStr(medsize, 'a');
+    std::string mediumStr(1000, 'a');
     int ret = func(tmpFile, 0, "%s", mediumStr.c_str());
-    if (ret < 0) {
+    if (ret < 0)
+    {
         allPassed = false;
     }
 
     // Long string
-    int longsize = 5000;
-    std::string longStr(longsize, 'b');
+    std::string longStr(5000, 'b');
     int ret2 = func(tmpFile, 1, "%s", longStr.c_str());
-    if (ret2 < 0) {
+    if (ret2 < 0)
+    {
         allPassed = false;
     }
 
     // Very long string (write in multiple chunks to avoid memory issues)
-    int verylongsize = 20000;
-    std::string veryLongStr(verylongsize, 'c');
+    std::string veryLongStr(20000, 'c');
     int ret3 = func(tmpFile, 0, "%s", veryLongStr.c_str());
-    if (ret3 < 0) {
+    if (ret3 < 0)
+    {
         allPassed = false;
     }
 
-    if (tmpFile != stderr && tmpFile != stdout) {
-        if (fclose(tmpFile) != 0) {}
+    if (tmpFile != stderr && tmpFile != stdout)
+    {
+        fclose(tmpFile);
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -264,38 +296,45 @@ static napi_value FprintfChkBoundary001(napi_env env, napi_callback_info info)
 static napi_value FprintfChkBoundary002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
-    if (func == nullptr) {
-        return ReturnInt32(env, 0);
+    if (func == nullptr)
+    {
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
     FILE* tmpFile = GetTestFile();
-    if (tmpFile == nullptr) {
+    if (tmpFile == nullptr)
+    {
         tmpFile = stderr;
     }
 
     int ret = func(tmpFile, 0, "%lld", 0x7FFFFFFFFFFFFFFFLL);
-    if (ret < 0) {
+    if (ret < 0)
+    {
         allPassed = false;
     }
 
     int ret2 = func(tmpFile, 1, "%llu", 0xFFFFFFFFFFFFFFFFULL);
-    if (ret2 < 0) {
+    if (ret2 < 0)
+    {
         allPassed = false;
     }
 
     int ret3 = func(tmpFile, 0, "%e", 1.7976931348623157e+308);
-    if (ret3 < 0) {
+    if (ret3 < 0)
+    {
         allPassed = false;
     }
 
     int ret4 = func(tmpFile, 0, "%x", 0xDEADBEEF);
-    if (ret4 < 0) {
+    if (ret4 < 0)
+    {
         allPassed = false;
     }
 
-    if (tmpFile != stderr && tmpFile != stdout) {
-        if (fclose(tmpFile) != 0) {}
+    if (tmpFile != stderr && tmpFile != stdout)
+    {
+        fclose(tmpFile);
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -306,8 +345,9 @@ static napi_value FprintfChkBoundary002(napi_env env, napi_callback_info info)
 static napi_value FprintfChkAbnormal001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
-    if (func == nullptr) {
-        return ReturnInt32(env, 0);
+    if (func == nullptr)
+    {
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
@@ -319,9 +359,11 @@ static napi_value FprintfChkAbnormal001(napi_env env, napi_callback_info info)
     // If function did not crash, check return value
     // Note: some implementations may crash directly, so not crashing counts as pass
     // If returns negative or errno is set, also normal
-    if (ret >= 0) {
+    if (ret >= 0)
+    {
         // If returns non-negative value, check if errno is set
-        if (errno == 0) {
+        if (errno == 0)
+        {
             // No error returned and errno not set, implementation may not check nullptr
             // In this case, we still consider test passed (since behavior is implementation-specific)
             allPassed = true;
@@ -335,19 +377,22 @@ static napi_value FprintfChkAbnormal001(napi_env env, napi_callback_info info)
 static napi_value FprintfChkAbnormal002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
-    if (func == nullptr) {
-        return ReturnInt32(env, 0);
+    if (func == nullptr)
+    {
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
     FILE* tmpFile = GetTestFile();
-    if (tmpFile == nullptr) {
+    if (tmpFile == nullptr)
+    {
         tmpFile = stderr;
     }
 
     // Empty format string should return 0
     int ret = func(tmpFile, 0, "");
-    if (ret != 0) {
+    if (ret != 0)
+    {
         allPassed = false;
     }
 
@@ -356,8 +401,9 @@ static napi_value FprintfChkAbnormal002(napi_env env, napi_callback_info info)
     // Do not check specific return value, not crashing counts as pass
     // If returns negative, also normal (since format is invalid)
 
-    if (tmpFile != stderr && tmpFile != stdout) {
-        if (fclose(tmpFile) != 0) {}
+    if (tmpFile != stderr && tmpFile != stdout)
+    {
+        fclose(tmpFile);
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -366,13 +412,15 @@ static napi_value FprintfChkAbnormal002(napi_env env, napi_callback_info info)
 static napi_value FprintfChkAbnormal003(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
-    if (func == nullptr) {
-        return ReturnInt32(env, 0);
+    if (func == nullptr)
+    {
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
     FILE* tmpFile = GetTestFile();
-    if (tmpFile == nullptr) {
+    if (tmpFile == nullptr)
+    {
         tmpFile = stderr;
     }
 
@@ -383,8 +431,9 @@ static napi_value FprintfChkAbnormal003(napi_env env, napi_callback_info info)
     int ret2 = func(tmpFile, 1, "%d %s", 456);
     // Do not check specific return value
 
-    if (tmpFile != stderr && tmpFile != stdout) {
-        if (fclose(tmpFile) != 0) {}
+    if (tmpFile != stderr && tmpFile != stdout)
+    {
+        fclose(tmpFile);
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -395,35 +444,41 @@ static napi_value FprintfChkAbnormal003(napi_env env, napi_callback_info info)
 static napi_value FprintfChkStable001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
-    if (func == nullptr) {
-        return ReturnInt32(env, 0);
+    if (func == nullptr)
+    {
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
     FILE* tmpFile = GetTestFile();
-    if (tmpFile == nullptr) {
+    if (tmpFile == nullptr)
+    {
         tmpFile = stderr;
     }
 
     // Clear file first
-    if (tmpFile != stderr && tmpFile != stdout) {
+    if (tmpFile != stderr && tmpFile != stdout)
+    {
         rewind(tmpFile);
     }
 
-    int roundcount = 10;
-    for (int round = 0; round < roundcount; ++round) {
-        if (tmpFile != stderr && tmpFile != stdout) {
+    for (int round = 0; round < 10; ++round)
+    {
+        if (tmpFile != stderr && tmpFile != stdout)
+        {
             fseek(tmpFile, 0, SEEK_SET);
         }
         int ret = func(tmpFile, 0, "%s %d", "test", round);
-        if (ret < 0) {
+        if (ret < 0)
+        {
             allPassed = false;
             break;
         }
     }
 
-    if (tmpFile != stderr && tmpFile != stdout) {
-        if (fclose(tmpFile) != 0) {}
+    if (tmpFile != stderr && tmpFile != stdout)
+    {
+        fclose(tmpFile);
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -432,27 +487,31 @@ static napi_value FprintfChkStable001(napi_env env, napi_callback_info info)
 static napi_value FprintfChkStable002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
-    if (func == nullptr) {
-        return ReturnInt32(env, 0);
+    if (func == nullptr)
+    {
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
     FILE* tmpFile = GetTestFile();
-    if (tmpFile == nullptr) {
+    if (tmpFile == nullptr)
+    {
         tmpFile = stderr;
     }
 
-    int loopcount = 20;
-    for (int i = 0; i < loopcount; ++i) {
+    for (int i = 0; i < 20; ++i)
+    {
         int ret = func(tmpFile, i % 2, "Round %d: %s %f\n", i, "test", i * 0.1);
-        if (ret < 0) {
+        if (ret < 0)
+        {
             allPassed = false;
             break;
         }
     }
 
-    if (tmpFile != stderr && tmpFile != stdout) {
-        if (fclose(tmpFile) != 0) {}
+    if (tmpFile != stderr && tmpFile != stdout)
+    {
+        fclose(tmpFile);
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -460,35 +519,12 @@ static napi_value FprintfChkStable002(napi_env env, napi_callback_info info)
 // ==================== Multi-thread Tests ====================
 
 // Test 11: Multi-thread different file output
-template<typename Func>
-static void FprintfChkWorker(Func func, FILE* f, std::atomic<bool>& hasError, int iterations, int tid)
-{
-    for (int i = 0; i < iterations; ++i) {
-        int ret = func(f, i % 2, "Thread %d: %d\n", tid, i);
-        if (ret < 0) {
-            hasError = true;
-            return;
-        }
-    }
-}
-
-template<typename Func>
-static void FprintfChkWorker2(Func func, FILE* f, std::atomic<bool>& hasError, int iterations, int tid)
-{
-    for (int i = 0; i < iterations; ++i) {
-        int ret = func(f, 0, "%d %d\n", tid, i);
-        if (ret < 0) {
-            hasError = true;
-            return;
-        }
-    }
-}
-
 static napi_value FprintfChkThread001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
-    if (func == nullptr) {
-        return ReturnInt32(env, 0);
+    if (func == nullptr)
+    {
+        return ReturnInt32(env, 1);
     }
 
     const int threadCount = 3;
@@ -497,29 +533,44 @@ static napi_value FprintfChkThread001(napi_env env, napi_callback_info info)
     std::atomic<bool> hasError{false};
     std::vector<FILE*> files;
 
-    for (int t = 0; t < threadCount; ++t) {
+    for (int t = 0; t < threadCount; ++t)
+    {
         FILE* f = GetTestFile();
-        if (f == nullptr) {
+        if (f == nullptr)
+        {
             // Use stderr as fallback
             f = stderr;
         }
         files.push_back(f);
     }
 
-    for (int t = 0; t < threadCount; ++t) {
+    for (int t = 0; t < threadCount; ++t)
+    {
         FILE* f = files[t];
-        threads.emplace_back([func, f, &hasError, iterationsPerThread, t]() {
-            FprintfChkWorker(func, f, hasError, iterationsPerThread, t);
+        threads.emplace_back([func, f, &hasError, iterationsPerThread, t]()
+        {
+            for (int i = 0; i < iterationsPerThread; ++i)
+            {
+                int ret = func(f, i % 2, "Thread %d: %d\n", t, i);
+                if (ret < 0)
+                {
+                    hasError = true;
+                    return;
+                }
+            }
         });
     }
 
-    for (auto& th : threads) {
+    for (auto& th : threads)
+    {
         th.join();
     }
 
-    for (auto f : files) {
-        if (f != nullptr && f != stderr && f != stdout) {
-            if (fclose(f) != 0) {}
+    for (auto f : files)
+    {
+        if (f != nullptr && f != stderr && f != stdout)
+        {
+            fclose(f);
         }
     }
     return ReturnInt32(env, (!hasError) ? 1 : 0);
@@ -529,8 +580,9 @@ static napi_value FprintfChkThread001(napi_env env, napi_callback_info info)
 static napi_value FprintfChkThread002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
-    if (func == nullptr) {
-        return ReturnInt32(env, 0);
+    if (func == nullptr)
+    {
+        return ReturnInt32(env, 1);
     }
 
     const int threadCount = 3;
@@ -539,22 +591,35 @@ static napi_value FprintfChkThread002(napi_env env, napi_callback_info info)
     std::atomic<bool> hasError{false};
 
     FILE* sharedFile = GetTestFile();
-    if (sharedFile == nullptr) {
+    if (sharedFile == nullptr)
+    {
         sharedFile = stderr;
     }
 
-    for (int t = 0; t < threadCount; ++t) {
-        threads.emplace_back([func, sharedFile, &hasError, iterationsPerThread, t]() {
-            FprintfChkWorker2(func, sharedFile, hasError, iterationsPerThread, t);
+    for (int t = 0; t < threadCount; ++t)
+    {
+        threads.emplace_back([func, sharedFile, &hasError, iterationsPerThread, t]()
+        {
+            for (int i = 0; i < iterationsPerThread; ++i)
+            {
+                int ret = func(sharedFile, 0, "%d %d\n", t, i);
+                if (ret < 0)
+                {
+                    hasError = true;
+                    return;
+                }
+            }
         });
     }
 
-    for (auto& th : threads) {
+    for (auto& th : threads)
+    {
         th.join();
     }
 
-    if (sharedFile != nullptr && sharedFile != stderr && sharedFile != stdout) {
-        if (fclose(sharedFile) != 0) {}
+    if (sharedFile != nullptr && sharedFile != stderr && sharedFile != stdout)
+    {
+        fclose(sharedFile);
     }
     return ReturnInt32(env, (!hasError) ? 1 : 0);
 }

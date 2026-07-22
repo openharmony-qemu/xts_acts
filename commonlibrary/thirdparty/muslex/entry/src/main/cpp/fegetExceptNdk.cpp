@@ -38,7 +38,8 @@ static int CallFegetexcept()
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetFegetexcept();
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return -1;
     }
@@ -50,7 +51,8 @@ static int CallFeenableexcept(int excepts)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetFeenableexcept();
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return -1;
     }
@@ -62,7 +64,8 @@ static int CallFedisableexcept(int excepts)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetFedisableexcept();
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return -1;
     }
@@ -85,8 +88,9 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value FegetexceptNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     feclearexcept(FE_ALL_EXCEPT);
     CallFeenableexcept(FE_DIVBYZERO);
@@ -96,8 +100,9 @@ static napi_value FegetexceptNormal001(napi_env env, napi_callback_info info)
 
 static napi_value FegetexceptNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     feclearexcept(FE_ALL_EXCEPT);
     CallFedisableexcept(FE_ALL_EXCEPT);
@@ -107,8 +112,9 @@ static napi_value FegetexceptNormal002(napi_env env, napi_callback_info info)
 
 static napi_value FegetexceptNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     feclearexcept(FE_ALL_EXCEPT);
     CallFeenableexcept(FE_DIVBYZERO | FE_INVALID);
@@ -119,16 +125,18 @@ static napi_value FegetexceptNormal003(napi_env env, napi_callback_info info)
 
 static napi_value FegetexceptNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
 
 static napi_value FegetexceptAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     int ret = CallFegetexcept();
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
@@ -136,8 +144,9 @@ static napi_value FegetexceptAbnormal001(napi_env env, napi_callback_info info)
 
 static napi_value FegetexceptAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     feclearexcept(FE_ALL_EXCEPT);
     int ret1 = CallFegetexcept();
@@ -147,8 +156,9 @@ static napi_value FegetexceptAbnormal002(napi_env env, napi_callback_info info)
 
 static napi_value FegetexceptBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     feclearexcept(FE_ALL_EXCEPT);
     CallFeenableexcept(FE_ALL_EXCEPT);
@@ -159,8 +169,9 @@ static napi_value FegetexceptBoundary001(napi_env env, napi_callback_info info)
 
 static napi_value FegetexceptBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     feclearexcept(FE_ALL_EXCEPT);
     CallFeenableexcept(FE_ALL_EXCEPT);
@@ -171,14 +182,17 @@ static napi_value FegetexceptBoundary002(napi_env env, napi_callback_info info)
 
 static napi_value FegetexceptStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP; ++i)
+    {
         feclearexcept(FE_ALL_EXCEPT);
         int ret = CallFegetexcept();
-        if (ret < 0) {
+        if (ret < 0)
+        {
             pass = false;
             break;
         }
@@ -186,30 +200,31 @@ static napi_value FegetexceptStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void FegetexceptWorker(std::atomic<bool>& hasError)
-{
-    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-        int ret = CallFegetexcept();
-        if (ret < 0) {
-            hasError = true;
-            return;
-        }
-    }
-}
-
 static napi_value FegetexceptThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError]() {
-            FegetexceptWorker(hasError);
+    for (int t = 0; t < K_THREAD_COUNT; ++t)
+    {
+        threads.emplace_back([&hasError]()
+        {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
+            {
+                int ret = CallFegetexcept();
+                if (ret < 0)
+                {
+                    hasError = true;
+                    return;
+                }
+            }
         });
     }
-    for (auto& th : threads) {
+    for (auto& th : threads)
+    {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);

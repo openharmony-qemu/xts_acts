@@ -39,34 +39,42 @@ static bool IsStubMode()
 static napi_value FinitefNormal001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFinitef();
-    if (func == nullptr) {
-        return ReturnInt32(env, 0);
+    if (func == nullptr)
+    {
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
     // Zero
-    if (func(0.0f) == 0) {
+    if (func(0.0f) == 0)
+    {
         allPassed = false;
     }
     // Positive
-    if (func(3.14f) == 0) {
+    if (func(3.14f) == 0)
+    {
         allPassed = false;
     }
-    if (func(100.0f) == 0) {
+    if (func(100.0f) == 0)
+    {
         allPassed = false;
     }
     // Negative
-    if (func(-3.14f) == 0) {
+    if (func(-3.14f) == 0)
+    {
         allPassed = false;
     }
-    if (func(-100.0f) == 0) {
+    if (func(-100.0f) == 0)
+    {
         allPassed = false;
     }
     // Decimal
-    if (func(0.0001f) == 0) {
+    if (func(0.0001f) == 0)
+    {
         allPassed = false;
     }
-    if (func(-0.0001f) == 0) {
+    if (func(-0.0001f) == 0)
+    {
         allPassed = false;
     }
 
@@ -77,18 +85,22 @@ static napi_value FinitefNormal001(napi_env env, napi_callback_info info)
 static napi_value FinitefNormal002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFinitef();
-    if (func == nullptr) {
-        return ReturnInt32(env, 0);
+    if (func == nullptr)
+    {
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
-    if (func(HUGE_VALF) != 0) {
+    if (func(HUGE_VALF) != 0)
+    {
         allPassed = false;
     }
-    if (func(-HUGE_VALF) != 0) {
+    if (func(-HUGE_VALF) != 0)
+    {
         allPassed = false;
     }
-    if (func(NAN) != 0) {
+    if (func(NAN) != 0)
+    {
         allPassed = false;
     }
 
@@ -101,21 +113,26 @@ static napi_value FinitefNormal002(napi_env env, napi_callback_info info)
 static napi_value FinitefBoundary001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFinitef();
-    if (func == nullptr) {
-        return ReturnInt32(env, 0);
+    if (func == nullptr)
+    {
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
-    if (func(FLT_MAX) == 0) {
+    if (func(FLT_MAX) == 0)
+    {
         allPassed = false;
     }
-    if (func(FLT_MIN) == 0) {
+    if (func(FLT_MIN) == 0)
+    {
         allPassed = false;
     }
-    if (func(-FLT_MAX) == 0) {
+    if (func(-FLT_MAX) == 0)
+    {
         allPassed = false;
     }
-    if (func(-FLT_MIN) == 0) {
+    if (func(-FLT_MIN) == 0)
+    {
         allPassed = false;
     }
 
@@ -126,24 +143,29 @@ static napi_value FinitefBoundary001(napi_env env, napi_callback_info info)
 static napi_value FinitefBoundary002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFinitef();
-    if (func == nullptr) {
-        return ReturnInt32(env, 0);
+    if (func == nullptr)
+    {
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
     float nearInf = 3.402823e38f;
-    if (func(nearInf) == 0) {
+    if (func(nearInf) == 0)
+    {
         allPassed = false;
     }
-    if (func(-nearInf) == 0) {
+    if (func(-nearInf) == 0)
+    {
         allPassed = false;
     }
 
     float nearZero = 1.4e-45f;
-    if (func(nearZero) == 0) {
+    if (func(nearZero) == 0)
+    {
         allPassed = false;
     }
-    if (func(-nearZero) == 0) {
+    if (func(-nearZero) == 0)
+    {
         allPassed = false;
     }
 
@@ -156,26 +178,31 @@ static napi_value FinitefBoundary002(napi_env env, napi_callback_info info)
 static napi_value FinitefAbnormal001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFinitef();
-    if (func == nullptr) {
-        return ReturnInt32(env, 0);
+    if (func == nullptr)
+    {
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
-    if (func(NAN) != 0) {
+    if (func(NAN) != 0)
+    {
         allPassed = false;
     }
     
     union { float f; uint32_t i; } nan1 = { .i = 0x7FC00001 };
     union { float f; uint32_t i; } nan2 = { .i = 0x7FC00002 };
-    if (func(nan1.f) != 0) {
+    if (func(nan1.f) != 0)
+    {
         allPassed = false;
     }
-    if (func(nan2.f) != 0) {
+    if (func(nan2.f) != 0)
+    {
         allPassed = false;
     }
 
     union { float f; uint32_t i; } snan = { .i = 0x7FA00000 };
-    if (func(snan.f) != 0) {
+    if (func(snan.f) != 0)
+    {
         allPassed = false;
     }
 
@@ -188,28 +215,32 @@ static napi_value FinitefAbnormal001(napi_env env, napi_callback_info info)
 static napi_value FinitefStable001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFinitef();
-    if (func == nullptr) {
-        return ReturnInt32(env, 0);
+    if (func == nullptr)
+    {
+        return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
     float testVals[] = {0.0f, 3.14f, -3.14f, HUGE_VALF, -HUGE_VALF, NAN};
     int results[6];
-    int resultscount = 6;
 
-    for (int i = 0; i < resultscount; ++i) {
+    for (int i = 0; i < 6; ++i)
+    {
         results[i] = func(testVals[i]);
     }
 
-    int roundcount = 20;
-    for (int round = 0; round < roundcount; ++round) {
-        for (int i = 0; i < resultscount; ++i) {
-            if (func(testVals[i]) != results[i]) {
+    for (int round = 0; round < 20; ++round)
+    {
+        for (int i = 0; i < 6; ++i)
+        {
+            if (func(testVals[i]) != results[i])
+            {
                 allPassed = false;
                 break;
             }
         }
-        if (!allPassed) {
+        if (!allPassed)
+        {
             break;
         }
     }
@@ -220,26 +251,12 @@ static napi_value FinitefStable001(napi_env env, napi_callback_info info)
 // ==================== Multi-thread Tests ====================
 
 // Test 7: Multi-thread concurrent
-template<typename Func>
-static void ThreadWorker(Func func, std::atomic<bool>& hasError,
-    const float* testVals, int iterations)
-{
-    for (int i = 0; i < iterations; ++i) {
-        int idx = i % 5;
-        int expected = (idx == 0 || idx == 1) ? 1 : 0;
-        int actual = func(testVals[idx]);
-        if ((actual != 0 && expected == 0) || (actual == 0 && expected != 0)) {
-            hasError = true;
-            return;
-        }
-    }
-}
-
 static napi_value FinitefThread001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFinitef();
-    if (func == nullptr) {
-        return ReturnInt32(env, 0);
+    if (func == nullptr)
+    {
+        return ReturnInt32(env, 1);
     }
 
     const int threadCount = 3;
@@ -248,13 +265,26 @@ static napi_value FinitefThread001(napi_env env, napi_callback_info info)
     std::atomic<bool> hasError{false};
     float testVals[] = {0.0f, 3.14f, HUGE_VALF, -HUGE_VALF, NAN};
 
-    for (int t = 0; t < threadCount; ++t) {
-        threads.emplace_back([func, &hasError, testVals, iterationsPerThread]() {
-            ThreadWorker(func, hasError, testVals, iterationsPerThread);
+    for (int t = 0; t < threadCount; ++t)
+    {
+        threads.emplace_back([func, &hasError, testVals, iterationsPerThread]()
+        {
+            for (int i = 0; i < iterationsPerThread; ++i)
+            {
+                int idx = i % 5;
+                int expected = (idx == 0 || idx == 1) ? 1 : 0;
+                int actual = func(testVals[idx]);
+                if ((actual != 0 && expected == 0) || (actual == 0 && expected != 0))
+                {
+                    hasError = true;
+                    return;
+                }
+            }
         });
     }
 
-    for (auto& th : threads) {
+    for (auto& th : threads)
+    {
         th.join();
     }
 

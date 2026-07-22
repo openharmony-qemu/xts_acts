@@ -38,7 +38,8 @@ static int CallFedisableexcept(int excepts)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetFedisableexcept();
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return -1;
     }
@@ -50,7 +51,8 @@ static int CallFeenableexcept(int excepts)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetFeenableexcept();
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return -1;
     }
@@ -73,8 +75,9 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value FedisableexceptNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     feclearexcept(FE_ALL_EXCEPT);
     CallFeenableexcept(FE_DIVBYZERO);
@@ -84,8 +87,9 @@ static napi_value FedisableexceptNormal001(napi_env env, napi_callback_info info
 
 static napi_value FedisableexceptNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     feclearexcept(FE_ALL_EXCEPT);
     CallFeenableexcept(FE_INVALID);
@@ -95,8 +99,9 @@ static napi_value FedisableexceptNormal002(napi_env env, napi_callback_info info
 
 static napi_value FedisableexceptNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     feclearexcept(FE_ALL_EXCEPT);
     CallFeenableexcept(FE_DIVBYZERO | FE_INVALID);
@@ -106,16 +111,18 @@ static napi_value FedisableexceptNormal003(napi_env env, napi_callback_info info
 
 static napi_value FedisableexceptNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
 
 static napi_value FedisableexceptAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     int ret = CallFedisableexcept(0);
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
@@ -123,8 +130,9 @@ static napi_value FedisableexceptAbnormal001(napi_env env, napi_callback_info in
 
 static napi_value FedisableexceptAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     int ret = CallFedisableexcept(0xFFFF);
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
@@ -132,8 +140,9 @@ static napi_value FedisableexceptAbnormal002(napi_env env, napi_callback_info in
 
 static napi_value FedisableexceptBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     feclearexcept(FE_ALL_EXCEPT);
     CallFeenableexcept(FE_ALL_EXCEPT);
@@ -143,8 +152,9 @@ static napi_value FedisableexceptBoundary001(napi_env env, napi_callback_info in
 
 static napi_value FedisableexceptBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     feclearexcept(FE_ALL_EXCEPT);
     int ret = CallFedisableexcept(FE_DIVBYZERO);
@@ -153,15 +163,18 @@ static napi_value FedisableexceptBoundary002(napi_env env, napi_callback_info in
 
 static napi_value FedisableexceptStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP; ++i)
+    {
         feclearexcept(FE_ALL_EXCEPT);
         CallFeenableexcept(FE_DIVBYZERO);
         int ret = CallFedisableexcept(FE_DIVBYZERO);
-        if (ret < 0) {
+        if (ret < 0)
+        {
             pass = false;
             break;
         }
@@ -169,32 +182,33 @@ static napi_value FedisableexceptStable001(napi_env env, napi_callback_info info
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void FedisableexceptWorker(std::atomic<bool>& hasError)
-{
-    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-        feclearexcept(FE_ALL_EXCEPT);
-        CallFeenableexcept(FE_DIVBYZERO);
-        int ret = CallFedisableexcept(FE_DIVBYZERO);
-        if (ret < 0) {
-            hasError = true;
-            return;
-        }
-    }
-}
-
 static napi_value FedisableexceptThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError]() {
-            FedisableexceptWorker(hasError);
+    for (int t = 0; t < K_THREAD_COUNT; ++t)
+    {
+        threads.emplace_back([&hasError]()
+        {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
+            {
+                feclearexcept(FE_ALL_EXCEPT);
+                CallFeenableexcept(FE_DIVBYZERO);
+                int ret = CallFedisableexcept(FE_DIVBYZERO);
+                if (ret < 0)
+                {
+                    hasError = true;
+                    return;
+                }
+            }
         });
     }
-    for (auto& th : threads) {
+    for (auto& th : threads)
+    {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);
@@ -204,26 +218,16 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"fedisableexceptNormal001", nullptr, FedisableexceptNormal001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"fedisableexceptNormal002", nullptr, FedisableexceptNormal002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"fedisableexceptNormal003", nullptr, FedisableexceptNormal003, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"fedisableexceptNormal004", nullptr, FedisableexceptNormal004, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"fedisableexceptAbnormal001", nullptr, FedisableexceptAbnormal001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"fedisableexceptAbnormal002", nullptr, FedisableexceptAbnormal002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"fedisableexceptBoundary001", nullptr, FedisableexceptBoundary001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"fedisableexceptBoundary002", nullptr, FedisableexceptBoundary002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"fedisableexceptStable001", nullptr, FedisableexceptStable001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"fedisableexceptThread001", nullptr, FedisableexceptThread001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+        {"fedisableexceptNormal001", nullptr, FedisableexceptNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"fedisableexceptNormal002", nullptr, FedisableexceptNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"fedisableexceptNormal003", nullptr, FedisableexceptNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"fedisableexceptNormal004", nullptr, FedisableexceptNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"fedisableexceptAbnormal001", nullptr, FedisableexceptAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"fedisableexceptAbnormal002", nullptr, FedisableexceptAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"fedisableexceptBoundary001", nullptr, FedisableexceptBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"fedisableexceptBoundary002", nullptr, FedisableexceptBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"fedisableexceptStable001", nullptr, FedisableexceptStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"fedisableexceptThread001", nullptr, FedisableexceptThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,13 +25,13 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int K_BUF_SIZE10 = 10;
-static constexpr int K_TEST_LEN5 = 5;
-static constexpr int K_TEST_LEN9 = 9;
-static constexpr int K_TEST_LEN20 = 20;
-static constexpr int K_STABLE_LOOP10000 = 20;
-static constexpr int K_STABLE_LOOP1000 = 20;
-static constexpr int K_STABLE_LOOP100000 = 200;
+static constexpr int K_BUF_SIZE_10 = 10;
+static constexpr int K_TEST_LEN_5 = 5;
+static constexpr int K_TEST_LEN_9 = 9;
+static constexpr int K_TEST_LEN_20 = 20;
+static constexpr int K_STABLE_LOOP_10000 = 20;
+static constexpr int K_STABLE_LOOP_1000 = 20;
+static constexpr int K_STABLE_LOOP_100000 = 200;
 static constexpr int K_THREAD_WORK_LOOP = 10;
 static constexpr int K_BUF_IDX_ZERO = 0;
 static constexpr int K_THREAD_COUNT = 3;
@@ -40,7 +40,8 @@ static void CallExplicitBzeroChk(void *dest, size_t len, size_t dstLen)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = reinterpret_cast<void (*)(void*, size_t, size_t)>(loader.GetExplicitBzeroChk());
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return;
     }
@@ -50,7 +51,8 @@ static void CallExplicitBzeroChk(void *dest, size_t len, size_t dstLen)
 static bool IsStubMode()
 {
     auto& loader = LibcFunctionLoader::GetInstance();
-    if (!loader.GetExplicitBzeroChk()) {
+    if (!loader.GetExplicitBzeroChk())
+    {
         return true;
     }
     char buf[4];
@@ -62,15 +64,18 @@ static bool IsStubMode()
 
 static bool CheckAbortExplicitBzero(void *dest, size_t len, size_t dstLen)
 {
-    if (IsStubMode()) {
+    if (IsStubMode())
+    {
         return false;
     }
     int status;
     pid_t pid = fork();
-    if (pid == -1) {
+    if (pid == -1)
+    {
         return false;
     }
-    if (pid == 0) {
+    if (pid == 0)
+    {
         CallExplicitBzeroChk(dest, len, dstLen);
         _exit(0);
     }
@@ -88,14 +93,18 @@ static napi_value ReturnInt32(napi_env env, int32_t val)
 /* ----- Original simple test ----- */
 static napi_value ExplicitBzeroChk(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
-    } else {
-        char buf[K_BUF_SIZE10];
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
+    } else
+    {
+        char buf[K_BUF_SIZE_10];
         std::fill_n(buf, sizeof(buf), 1);
         CallExplicitBzeroChk(buf, sizeof(buf), sizeof(buf));
-        for (int i = 0; i < K_BUF_SIZE10; ++i) {
-            if (buf[i] != 0) {
+        for (int i = 0; i < K_BUF_SIZE_10; ++i)
+        {
+            if (buf[i] != 0)
+            {
                 return ReturnInt32(env, 0);
             }
         }
@@ -106,14 +115,17 @@ static napi_value ExplicitBzeroChk(napi_env env, napi_callback_info info)
 /* ---------- Normal parameter tests ---------- */
 static napi_value ExplicitBzeroChkNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    char buf[K_BUF_SIZE10];
+    char buf[K_BUF_SIZE_10];
     std::fill_n(buf, sizeof(buf), 1);
-    CallExplicitBzeroChk(buf, K_BUF_SIZE10, K_BUF_SIZE10);
-    for (int i = 0; i < K_BUF_SIZE10; ++i) {
-        if (buf[i] != 0) {
+    CallExplicitBzeroChk(buf, K_BUF_SIZE_10, K_BUF_SIZE_10);
+    for (int i = 0; i < K_BUF_SIZE_10; ++i)
+    {
+        if (buf[i] != 0)
+        {
             return ReturnInt32(env, 0);
         }
     }
@@ -122,19 +134,24 @@ static napi_value ExplicitBzeroChkNormal001(napi_env env, napi_callback_info inf
 
 static napi_value ExplicitBzeroChkNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    char buf[K_BUF_SIZE10];
+    char buf[K_BUF_SIZE_10];
     std::fill_n(buf, sizeof(buf), 1);
-    CallExplicitBzeroChk(buf, K_TEST_LEN5, K_BUF_SIZE10);
-    for (int i = 0; i < K_TEST_LEN5; ++i) {
-        if (buf[i] != 0) {
+    CallExplicitBzeroChk(buf, K_TEST_LEN_5, K_BUF_SIZE_10);
+    for (int i = 0; i < K_TEST_LEN_5; ++i)
+    {
+        if (buf[i] != 0)
+        {
             return ReturnInt32(env, 0);
         }
     }
-    for (int i = K_TEST_LEN5; i < K_BUF_SIZE10; ++i) {
-        if (buf[i] != 1) {
+    for (int i = K_TEST_LEN_5; i < K_BUF_SIZE_10; ++i)
+    {
+        if (buf[i] != 1)
+        {
             return ReturnInt32(env, 0);
         }
     }
@@ -143,15 +160,17 @@ static napi_value ExplicitBzeroChkNormal002(napi_env env, napi_callback_info inf
 
 static napi_value ExplicitBzeroChkNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    char buf[K_BUF_SIZE10];
-    char backup[K_BUF_SIZE10];
+    char buf[K_BUF_SIZE_10];
+    char backup[K_BUF_SIZE_10];
     std::fill_n(buf, sizeof(buf), 1);
     std::copy_n(buf, sizeof(buf), backup);
-    CallExplicitBzeroChk(buf, 0, K_BUF_SIZE10);
-    if (std::memcmp(buf, backup, sizeof(buf)) == 0) {
+    CallExplicitBzeroChk(buf, 0, K_BUF_SIZE_10);
+    if (std::memcmp(buf, backup, sizeof(buf)) == 0)
+    {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 0);
@@ -159,13 +178,15 @@ static napi_value ExplicitBzeroChkNormal003(napi_env env, napi_callback_info inf
 
 static napi_value ExplicitBzeroChkNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    char buf[K_BUF_SIZE10];
+    char buf[K_BUF_SIZE_10];
     std::fill_n(buf, sizeof(buf), 1);
-    CallExplicitBzeroChk(buf, 1, K_BUF_SIZE10);
-    if (buf[0] == 0 && buf[1] == 1) {
+    CallExplicitBzeroChk(buf, 1, K_BUF_SIZE_10);
+    if (buf[0] == 0 && buf[1] == 1)
+    {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 0);
@@ -174,12 +195,14 @@ static napi_value ExplicitBzeroChkNormal004(napi_env env, napi_callback_info inf
 /* ---------- Abnormal parameter tests ---------- */
 static napi_value ExplicitBzeroChkAbnormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     char buf = 1;
     CallExplicitBzeroChk(&buf, 0, 0);
-    if (buf == 1) {
+    if (buf == 1)
+    {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 0);
@@ -188,12 +211,14 @@ static napi_value ExplicitBzeroChkAbnormal003(napi_env env, napi_callback_info i
 /* ---------- Boundary value tests ---------- */
 static napi_value ExplicitBzeroChkBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     char buf = 1;
     CallExplicitBzeroChk(&buf, 0, 0);
-    if (buf == 1) {
+    if (buf == 1)
+    {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 0);
@@ -201,12 +226,14 @@ static napi_value ExplicitBzeroChkBoundary001(napi_env env, napi_callback_info i
 
 static napi_value ExplicitBzeroChkBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     char buf[1] = {1};
     CallExplicitBzeroChk(buf, 1, 1);
-    if (buf[0] == 0) {
+    if (buf[0] == 0)
+    {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 0);
@@ -214,18 +241,22 @@ static napi_value ExplicitBzeroChkBoundary002(napi_env env, napi_callback_info i
 
 static napi_value ExplicitBzeroChkBoundary003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    char buf[K_BUF_SIZE10];
+    char buf[K_BUF_SIZE_10];
     std::fill_n(buf, sizeof(buf), 1);
-    CallExplicitBzeroChk(buf, K_TEST_LEN9, K_BUF_SIZE10);
-    for (int i = 0; i < K_TEST_LEN9; ++i) {
-        if (buf[i] != 0) {
+    CallExplicitBzeroChk(buf, K_TEST_LEN_9, K_BUF_SIZE_10);
+    for (int i = 0; i < K_TEST_LEN_9; ++i)
+    {
+        if (buf[i] != 0)
+        {
             return ReturnInt32(env, 0);
         }
     }
-    if (buf[K_TEST_LEN9] != 1) {
+    if (buf[K_TEST_LEN_9] != 1)
+    {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
@@ -234,14 +265,17 @@ static napi_value ExplicitBzeroChkBoundary003(napi_env env, napi_callback_info i
 /* ---------- Functional tests ---------- */
 static napi_value ExplicitBzeroChkFunc001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    volatile char buf[K_BUF_SIZE10];
+    volatile char buf[K_BUF_SIZE_10];
     std::fill_n(const_cast<char*>(buf), sizeof(buf), 1);
     CallExplicitBzeroChk(const_cast<char*>(buf), sizeof(buf), sizeof(buf));
-    for (int i = 0; i < K_BUF_SIZE10; ++i) {
-        if (buf[i] != 0) {
+    for (int i = 0; i < K_BUF_SIZE_10; ++i)
+    {
+        if (buf[i] != 0)
+        {
             return ReturnInt32(env, 0);
         }
     }
@@ -250,15 +284,17 @@ static napi_value ExplicitBzeroChkFunc001(napi_env env, napi_callback_info info)
 
 static napi_value ExplicitBzeroChkFunc002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    char buf[K_BUF_SIZE10];
-    char backup[K_BUF_SIZE10];
+    char buf[K_BUF_SIZE_10];
+    char backup[K_BUF_SIZE_10];
     std::fill_n(buf, sizeof(buf), 1);
     std::copy_n(buf, sizeof(buf), backup);
-    CallExplicitBzeroChk(buf, 0, K_BUF_SIZE10);
-    if (std::memcmp(buf, backup, sizeof(buf)) == 0) {
+    CallExplicitBzeroChk(buf, 0, K_BUF_SIZE_10);
+    if (std::memcmp(buf, backup, sizeof(buf)) == 0)
+    {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 0);
@@ -267,16 +303,18 @@ static napi_value ExplicitBzeroChkFunc002(napi_env env, napi_callback_info info)
 // In stub mode, the function returns ENOSYS and does not modify memory; this test expects that behavior.
 static napi_value ExplicitBzeroChkFunc003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    char buf[K_BUF_SIZE10];
-    char backup[K_BUF_SIZE10];
+    char buf[K_BUF_SIZE_10];
+    char backup[K_BUF_SIZE_10];
     std::fill_n(buf, sizeof(buf), 1);
     std::copy_n(buf, sizeof(buf), backup);
     errno = 0;
-    CallExplicitBzeroChk(buf, K_TEST_LEN5, K_BUF_SIZE10);
-    if (std::memcmp(buf, backup, sizeof(buf)) < 0) {
+    CallExplicitBzeroChk(buf, K_TEST_LEN_5, K_BUF_SIZE_10);
+    if (std::memcmp(buf, backup, sizeof(buf)) < 0)
+    {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 0);
@@ -284,8 +322,9 @@ static napi_value ExplicitBzeroChkFunc003(napi_env env, napi_callback_info info)
 
 static napi_value ExplicitBzeroChkFunc004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
@@ -293,12 +332,15 @@ static napi_value ExplicitBzeroChkFunc004(napi_env env, napi_callback_info info)
 /* Stability tests */
 static bool StableWorkerFunc()
 {
-    for (int i = 0; i < K_THREAD_WORK_LOOP; ++i) {
-        char buf[K_BUF_SIZE10];
+    for (int i = 0; i < K_THREAD_WORK_LOOP; ++i)
+    {
+        char buf[K_BUF_SIZE_10];
         std::fill_n(buf, sizeof(buf), 1);
-        CallExplicitBzeroChk(buf, K_BUF_SIZE10, K_BUF_SIZE10);
-        for (int j = 0; j < K_BUF_SIZE10; ++j) {
-            if (buf[j] != 0) {
+        CallExplicitBzeroChk(buf, K_BUF_SIZE_10, K_BUF_SIZE_10);
+        for (int j = 0; j < K_BUF_SIZE_10; ++j)
+        {
+            if (buf[j] != 0)
+            {
                 return false;
             }
         }
@@ -308,20 +350,26 @@ static bool StableWorkerFunc()
 
 static napi_value ExplicitBzeroChkStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
-        char buf[K_BUF_SIZE10];
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i)
+    {
+        char buf[K_BUF_SIZE_10];
         std::fill_n(buf, sizeof(buf), 1);
-        CallExplicitBzeroChk(buf, K_TEST_LEN5, K_BUF_SIZE10);
-        for (int j = 0; j < K_TEST_LEN5; ++j) {
-            if (buf[j] != 0) {
+        CallExplicitBzeroChk(buf, K_TEST_LEN_5, K_BUF_SIZE_10);
+        for (int j = 0; j < K_TEST_LEN_5; ++j)
+        {
+            if (buf[j] != 0)
+            {
                 return ReturnInt32(env, 0);
             }
         }
-        for (int j = K_TEST_LEN5; j < K_BUF_SIZE10; ++j) {
-            if (buf[j] != 1) {
+        for (int j = K_TEST_LEN_5; j < K_BUF_SIZE_10; ++j)
+        {
+            if (buf[j] != 1)
+            {
                 return ReturnInt32(env, 0);
             }
         }
@@ -331,19 +379,24 @@ static napi_value ExplicitBzeroChkStable001(napi_env env, napi_callback_info inf
 
 static napi_value ExplicitBzeroChkStable002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> allSuccess(true);
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&allSuccess]() {
-            if (!StableWorkerFunc()) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t)
+    {
+        threads.emplace_back([&allSuccess]()
+        {
+            if (!StableWorkerFunc())
+            {
                 allSuccess.store(false);
             }
         });
     }
-    for (auto& th : threads) {
+    for (auto& th : threads)
+    {
         th.join();
     }
     return ReturnInt32(env, allSuccess.load() ? 1 : 0);
@@ -351,16 +404,20 @@ static napi_value ExplicitBzeroChkStable002(napi_env env, napi_callback_info inf
 
 static napi_value ExplicitBzeroChkStable004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
 
-    for (int i = 0; i < K_STABLE_LOOP100000; ++i) {
-        char buf[K_BUF_SIZE10];
+    for (int i = 0; i < K_STABLE_LOOP_100000; ++i)
+    {
+        char buf[K_BUF_SIZE_10];
         std::fill_n(buf, sizeof(buf), 1);
-        CallExplicitBzeroChk(buf, K_BUF_SIZE10, K_BUF_SIZE10);
-        for (int j = 0; j < K_BUF_SIZE10; ++j) {
-            if (buf[j] != 0) {
+        CallExplicitBzeroChk(buf, K_BUF_SIZE_10, K_BUF_SIZE_10);
+        for (int j = 0; j < K_BUF_SIZE_10; ++j)
+        {
+            if (buf[j] != 0)
+            {
                 ReturnInt32(env, 0);
             }
         }
