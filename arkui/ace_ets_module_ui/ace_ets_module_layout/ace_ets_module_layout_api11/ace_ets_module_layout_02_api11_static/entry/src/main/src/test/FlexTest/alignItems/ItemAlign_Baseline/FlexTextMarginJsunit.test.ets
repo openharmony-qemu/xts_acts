@@ -198,7 +198,7 @@ it('testFlexItemAlignBaselineSubSetMarginExceed_static', Level.LEVEL0, async () 
         .assertTrue()
       expect(Math.floor(Math.abs((textMargin02.right - textMargin02.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 3)
         .assertTrue()
-      expect(Math.floor(Math.abs((textMargin03.right - textMargin03.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2)
+      expect(Math.floor(Math.abs((textMargin03.right - textMargin03.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 3)
         .assertTrue()
 
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')

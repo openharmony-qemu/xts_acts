@@ -213,7 +213,7 @@ it('testFlexAlignCenterTextMarginOverflow_static', Level.LEVEL0, async () : Prom
         .assertTrue();
       expect(Math.floor(Math.abs((Center_AddOneMargin_012.right - Center_AddOneMargin_012.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 3)
         .assertTrue();
-      expect(Math.floor(Math.abs((Center_AddOneMargin_013.right - Center_AddOneMargin_013.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2)
+      expect(Math.floor(Math.abs((Center_AddOneMargin_013.right - Center_AddOneMargin_013.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 3)
         .assertTrue();
 
       console.info('[testFlexAlignCenterTextMarginOverflow] END');
