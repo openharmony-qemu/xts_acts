@@ -44,7 +44,7 @@ function testOperateDevice() {
       deviceControl.operateDevice(SELFWANT, LOCK_SCREEN);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200001).assertTrue();
+      expect(Number(error.code) == 9200001).assertTrue();
     }
     done();
   });
@@ -63,7 +63,7 @@ function testOperateDevice() {
       deviceControl.operateDevice(SELFWANT, LOCK_SCREEN);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200002).assertTrue();
+      expect(Number(error.code) == 9200002).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -188,7 +188,7 @@ function testOperateDevice() {
       deviceControl.operateDevice(SELFWANT, LOCK_SCREEN, OPERATE_DEVICE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200001).assertTrue();
+      expect(Number(error.code) == 9200001).assertTrue();
     }
     done();
   });
@@ -207,7 +207,7 @@ function testOperateDevice() {
       deviceControl.operateDevice(SELFWANT, LOCK_SCREEN, OPERATE_DEVICE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200002).assertTrue();
+      expect(Number(error.code) == 9200002).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -353,10 +353,10 @@ function testOperateDevice() {
       deviceControl.operateDevice(SELFWANT, deviceControl.Operation.DISK_ERASURE);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 9200001).assertTrue();
+        expect(error.code === 9200001).assertTrue();
       }
     }
     done();
@@ -376,10 +376,10 @@ function testOperateDevice() {
       deviceControl.operateDevice(SELFWANT, deviceControl.Operation.DISK_ERASURE);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 9200002).assertTrue();
+        expect(error.code === 9200002).assertTrue();
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -428,10 +428,10 @@ function testOperateDevice() {
       deviceControl.operateDevice(SELFWANT, deviceControl.Operation.DISK_ERASURE);
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 9200010).assertTrue();
+        expect(error.code === 9200010).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -453,10 +453,10 @@ function testOperateDevice() {
       deviceControl.operateDevice(SELFWANT, deviceControl.Operation.DISK_ERASURE, "test");
       expect(false).assertTrue();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 9200012).assertTrue();
+        expect(error.code === 9200012).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);

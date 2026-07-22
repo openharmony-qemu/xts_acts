@@ -242,10 +242,10 @@ export default function adminManagerTest() {
         await adminManager.enableSelfDeviceAdmin(SELFWANT, "");
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
+        if (error.code === 801) {
+          expect(error.code === 801).assertTrue();
         } else {
-          expect(Number(error.code) === 201).assertTrue();
+          expect(error.code === 201).assertTrue();
         }
       }
       done();

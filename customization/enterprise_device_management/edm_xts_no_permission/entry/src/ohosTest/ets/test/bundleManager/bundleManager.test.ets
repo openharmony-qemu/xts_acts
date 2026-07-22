@@ -713,7 +713,7 @@ export default function bundleManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_getInstalledBundleStorageStats_0100 error 201 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 201).assertTrue();
+        expect(error.code === 201).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }

@@ -3012,7 +3012,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.BLUETOOTH, deviceSettings.SwitchStatus.OFF);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 9200001).assertTrue();
+        expect(error.code === 9200001).assertTrue();
       }
       done();
     });
@@ -3031,7 +3031,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setSwitchStatus(null, deviceSettings.SwitchKey.NEARLINK, deviceSettings.SwitchStatus.OFF);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -3052,7 +3052,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setSwitchStatus(SELFWANT, null, deviceSettings.SwitchStatus.OFF);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -3073,7 +3073,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.NEARLINK, null);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -3094,7 +3094,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setSwitchStatus(undefined, deviceSettings.SwitchKey.WIFI, deviceSettings.SwitchStatus.ON);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -3115,7 +3115,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setSwitchStatus(SELFWANT, undefined, deviceSettings.SwitchStatus.ON);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -3136,7 +3136,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.WIFI, undefined);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -3161,7 +3161,7 @@ export default function deviceSettingsTest() {
         let result: boolean = wifiManager.isWifiActiveSync(SELFWANT);
         expect(result === true).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 9200002).assertTrue();
+        expect(error.code === 9200002).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -3182,7 +3182,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setSwitchStatus(SELFWANT, KEY_INVALID, deviceSettings.SwitchStatus.OFF);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 801).assertTrue();
+        expect(error.code === 801).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -3203,7 +3203,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.WIFI, STATUS_INVALID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 9200012).assertTrue();
+        expect(error.code === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -3225,7 +3225,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.WIFI, deviceSettings.SwitchStatus.ON);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 203).assertTrue();
+        expect(error.code === 203).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -3294,7 +3294,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.BLUETOOTH, deviceSettings.SwitchStatus.FORCE_ON);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 9200002).assertTrue();
+        expect(error.code === 9200002).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -3317,7 +3317,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.BLUETOOTH, deviceSettings.SwitchStatus.FORCE_ON);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 203).assertTrue();
+        expect(error.code === 203).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -3362,10 +3362,10 @@ export default function deviceSettingsTest() {
         deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.NFC, deviceSettings.SwitchStatus.ON);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
+        if (error.code === 801) {
+          expect(error.code === 801).assertTrue();
         } else {
-          expect(Number(error.code) === 203).assertTrue();
+          expect(error.code === 203).assertTrue();
         }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -3387,10 +3387,10 @@ export default function deviceSettingsTest() {
         deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.NFC, STATUS_INVALID);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
+        if (error.code === 801) {
+          expect(error.code === 801).assertTrue();
         } else {
-          expect(Number(error.code) === 9200012).assertTrue();
+          expect(error.code === 9200012).assertTrue();
         }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
