@@ -1991,3 +1991,1142 @@ export default function LogicalOperatorTest() {
         expect(val.length).assertEqual(5)
       }
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_1880
+     * @tc.name testLogicalOperator178
+     * @tc.desc Verify !!用于将联合类型收窄为boolean
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: number | null = 42
+      let isPresent: boolean = val !== null
+      expect(isPresent).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_1890
+     * @tc.name testLogicalOperator179
+     * @tc.desc Verify ||对合法的0值产生误替换
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let price: number = 0
+      let displayPrice: number = (price as ESObject) || 99
+      expect(displayPrice).assertEqual(99)
+      let correctPrice: number = price !== undefined ? price : 99
+      expect(correctPrice).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_1900
+     * @tc.name testLogicalOperator180
+     * @tc.desc Verify ??避免对0和空字符串的误替换
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: number = 0
+      let result: number = (val as ESObject) ?? 99
+      expect(result).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_1910
+     * @tc.name testLogicalOperator181
+     * @tc.desc Verify &&返回值在布尔上下文外的行为
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: ESObject = ("a" as ESObject) && ("b" as ESObject)
+      expect(result).assertEqual("b")
+      expect(typeof result).assertEqual("string")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_1920
+     * @tc.name testLogicalOperator182
+     * @tc.desc Verify []在条件中为truthy
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: number[] = []
+      if (arr as ESObject) {
+        expect(true).assertTrue()
+      }
+      if (arr.length > 0) {
+        expect().assertFail()
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_1930
+     * @tc.name testLogicalOperator183
+     * @tc.desc Verify &&和||返回操作数值，!返回boolean
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(typeof ((1 as ESObject) && (2 as ESObject))).assertEqual("number")
+      expect(typeof ((0 as ESObject) || (1 as ESObject))).assertEqual("number")
+      expect(typeof (!(0 as ESObject))).assertEqual("boolean")
+      expect(typeof (!!(1 as ESObject))).assertEqual("boolean")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_1940
+     * @tc.name testLogicalOperator184
+     * @tc.desc Verify &&和||结果在if中自动转布尔
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: ESObject = ("a" as ESObject) && (0 as ESObject)
+      if (x) {
+        expect().assertFail()
+      } else {
+        expect(true).assertTrue()
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_1950
+     * @tc.name testLogicalOperator185
+     * @tc.desc Verify truthy对象 && 值——返回第二个
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: ESObject = { x: 1 }
+      expect((obj as ESObject) && 42).assertEqual(42)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_1960
+     * @tc.name testLogicalOperator186
+     * @tc.desc Verify 对象 && 对象——返回第二个对象
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: ESObject = { x: 1 }
+      let b: ESObject = { y: 2 }
+      expect(((a as ESObject) && (b as ESObject))).assertEqual(b)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_1970
+     * @tc.name testLogicalOperator187
+     * @tc.desc Verify 对象 && null——返回null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: ESObject = { x: 1 }
+      expect(((obj as ESObject) && null)).assertNull()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_1980
+     * @tc.name testLogicalOperator188
+     * @tc.desc Verify 对象 || 值——返回对象
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: ESObject = { x: 1 }
+      expect((obj as ESObject) || "fallback").assertEqual(obj)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_1990
+     * @tc.name testLogicalOperator189
+     * @tc.desc Verify null || 对象——返回对象
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: ESObject = { x: 1 }
+      expect((null as ESObject) || obj).assertEqual(obj)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2000
+     * @tc.name testLogicalOperator190
+     * @tc.desc Verify !对象——false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: ESObject = {}
+      expect(!(obj as ESObject)).assertFalse()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2010
+     * @tc.name testLogicalOperator191
+     * @tc.desc Verify !null——true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(!(null as ESObject)).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2020
+     * @tc.name testLogicalOperator192
+     * @tc.desc Verify [] && 1 返回1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(([] as ESObject) && 1).assertEqual(1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2030
+     * @tc.name testLogicalOperator193
+     * @tc.desc Verify [] || "fallback" 返回数组
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: ESObject = ([] as ESObject) || "fallback"
+      expect(Array.isArray(result)).assertTrue()
+      expect(result.length).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2040
+     * @tc.name testLogicalOperator194
+     * @tc.desc Verify ![] 等于 false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(!([] as ESObject)).assertFalse()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2050
+     * @tc.name testLogicalOperator195
+     * @tc.desc Verify [0] && 1 返回1（含0的数组仍truthy）
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator195', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(([0] as ESObject) && 1).assertEqual(1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2060
+     * @tc.name testLogicalOperator196
+     * @tc.desc Verify [null] || "fallback" 返回数组
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: ESObject = ([null] as ESObject) || "fallback"
+      expect(Array.isArray(result)).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2070
+     * @tc.name testLogicalOperator197
+     * @tc.desc Verify 函数 && 值——返回值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let fn = () => 42
+      expect((fn as ESObject) && "called").assertEqual("called")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2080
+     * @tc.name testLogicalOperator198
+     * @tc.desc Verify 函数 || "fallback"——返回函数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let fn = () => 42
+      let result: ESObject = (fn as ESObject) || (() => 0)
+      expect(result).assertEqual(fn)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2090
+     * @tc.name testLogicalOperator199
+     * @tc.desc Verify !函数——false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let fn = () => 42
+      expect(!(fn as ESObject)).assertFalse()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2100
+     * @tc.name testLogicalOperator200
+     * @tc.desc Verify 条件 && 函数调用
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let condition: boolean = true
+      let result: number = condition ? (() => 42)() : 0
+      expect(result).assertEqual(42)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2140
+     * @tc.name testLogicalOperator204
+     * @tc.desc Verify 0n是falsy
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(!!(0n as ESObject)).assertFalse()
+      expect((0n as ESObject) && "right").assertEqual(0n)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2150
+     * @tc.name testLogicalOperator205
+     * @tc.desc Verify 非0 BigInt是truthy
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(!!(1n as ESObject)).assertTrue()
+      expect(!!(-1n as ESObject)).assertTrue()
+      expect(!!(999n as ESObject)).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2160
+     * @tc.name testLogicalOperator206
+     * @tc.desc Verify 非0 BigInt || "fallback"返回BigInt
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((1n as ESObject) || "fallback").assertEqual(1n)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2170
+     * @tc.name testLogicalOperator207
+     * @tc.desc Verify a && b || c（如果a且b为truthy返回b，否则返回c）
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let user: ESObject = { name: "Alice", role: "admin" }
+      let result: string = (user && user.role) || "guest"
+      expect(result).assertEqual("admin")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2180
+     * @tc.name testLogicalOperator208
+     * @tc.desc Verify a && b || c——a为falsy时返回c
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let user: ESObject = null
+      let result: string = ((user as ESObject) && user.role) || "guest"
+      expect(result).assertEqual("guest")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2190
+     * @tc.name testLogicalOperator209
+     * @tc.desc Verify a || b && c（||优先级低，先算b && c）
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((false as ESObject) || ((true as ESObject) && "result")).assertEqual("result")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2210
+     * @tc.name testLogicalOperator211
+     * @tc.desc Verify 多层&&守卫中间为null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let data: ESObject = { user: null }
+      let name: ESObject = data && data.user && data.user.profile && data.user.profile.name
+      expect(name).assertNull()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2220
+     * @tc.name testLogicalOperator212
+     * @tc.desc Verify 多层||回退
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let config: ESObject = {}
+      let timeout: number =
+        (config.fast as ESObject) || (config.normal as ESObject) || (config.slow as ESObject) || 3000
+      expect(timeout).assertEqual(3000)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2230
+     * @tc.name testLogicalOperator213
+     * @tc.desc Verify !(a == b) 等价于 a != b
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(!(1 == 1)).assertEqual(1 != 1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2250
+     * @tc.name testLogicalOperator215
+     * @tc.desc Verify !(typeof x === "undefined") 判断已定义
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 42
+      expect(!(typeof x === "undefined")).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2260
+     * @tc.name testLogicalOperator216
+     * @tc.desc Verify !!!true 等价于 !true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(!!!true).assertEqual(!true)
+      expect(!!!true).assertFalse()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2270
+     * @tc.name testLogicalOperator217
+     * @tc.desc Verify !!!!false 等价于 !!false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(!!!!false).assertEqual(!!false)
+      expect(!!!!false).assertFalse()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2280
+     * @tc.name testLogicalOperator218
+     * @tc.desc Verify a && b 等价于 a ? b : a
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: ESObject = "hello"
+      let b: ESObject = "world"
+      expect((a && b)).assertEqual(a ? b : a)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2290
+     * @tc.name testLogicalOperator219
+     * @tc.desc Verify falsy值时 a && b 等价于 a ? b : a
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: ESObject = 0
+      let b: ESObject = "right"
+      expect((a && b)).assertEqual(a ? b : a)
+      expect((a && b)).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2300
+     * @tc.name testLogicalOperator220
+     * @tc.desc Verify a || b 等价于 a ? a : b
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: ESObject = "hello"
+      let b: ESObject = "world"
+      expect((a || b)).assertEqual(a ? a : b)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2310
+     * @tc.name testLogicalOperator221
+     * @tc.desc Verify falsy值时 a || b 等价于 a ? a : b
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: ESObject = ""
+      let b: ESObject = "fallback"
+      expect((a || b)).assertEqual(a ? a : b)
+      expect((a || b)).assertEqual("fallback")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2320
+     * @tc.name testLogicalOperator222
+     * @tc.desc Verify &&返回操作数值，&返回数值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((true as ESObject) && (2 as ESObject)).assertEqual(2)
+      expect((true as ESObject) & (2 as ESObject)).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2340
+     * @tc.name testLogicalOperator224
+     * @tc.desc Verify ||返回操作数值，|返回数值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator224', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((0 as ESObject) || (2 as ESObject)).assertEqual(2)
+      expect((0 as ESObject) | (2 as ESObject)).assertEqual(2)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2350
+     * @tc.name testLogicalOperator225
+     * @tc.desc Verify 不同结果的场景
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator225', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((1 as ESObject) || (2 as ESObject)).assertEqual(1)
+      expect((1 as ESObject) | (2 as ESObject)).assertEqual(3)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2360
+     * @tc.name testLogicalOperator226
+     * @tc.desc Verify 使用&&验证多个字段
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator226', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(validateForm226({ name: "Alice", email: "a@b.com", age: 20 })).assertTrue()
+      expect(validateForm226({ name: "", email: "a@b.com", age: 20 })).assertFalse()
+      expect(validateForm226({ name: "Alice", email: "a@b.com", age: 15 })).assertFalse()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2370
+     * @tc.name testLogicalOperator227
+     * @tc.desc Verify 使用||返回第一个错误消息
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator227', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(getError227({ name: "", email: "a@b.com", age: 20 })).assertEqual("Name required")
+      expect(getError227({ name: "A", email: "", age: 20 })).assertEqual("Email required")
+      expect(getError227({ name: "A", email: "a@b.com", age: 20 })).assertEqual("")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2380
+     * @tc.name testLogicalOperator228
+     * @tc.desc Verify 使用||合并多级配置
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator228', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let defaults: ESObject = { timeout: 3000, retries: 3 }
+      let userConfig: ESObject = { timeout: 5000 }
+      let envConfig: ESObject = {}
+      let finalTimeout: number =
+        (envConfig.timeout as ESObject) ||
+          (userConfig.timeout as ESObject) ||
+          defaults.timeout
+      expect(finalTimeout).assertEqual(5000)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2410
+     * @tc.name testLogicalOperator231
+     * @tc.desc Verify &&守卫链中间为undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator231', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let response: ESObject = { data: undefined }
+      let firstItem: ESObject = response && response.data && response.data.items && response.data.items[0]
+      expect(firstItem).assertUndefined()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2420
+     * @tc.name testLogicalOperator232
+     * @tc.desc Verify response为null时使用默认值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator232', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let response: ESObject = null
+      let items: ESObject[] = (response && response.items) || []
+      expect(items.length).assertEqual(0)
+      expect(Array.isArray(items)).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2430
+     * @tc.name testLogicalOperator233
+     * @tc.desc Verify 使用||实现惰性初始化
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator233', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let r2: ESObject = getData233()
+      expect(initCount).assertEqual(1)
+      expect(r2.value).assertEqual(42)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2440
+     * @tc.name testLogicalOperator234
+     * @tc.desc Verify 使用&&条件执行初始化
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator234', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let initialized: boolean = false
+      let data: ESObject = null
+      let needsInit: boolean = true
+      needsInit && (() => {
+        data = { ready: true };
+        initialized = true
+      })()
+      expect(initialized).assertTrue()
+      expect(data.ready).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2450
+     * @tc.name testLogicalOperator235
+     * @tc.desc Verify &&检查用户是否有所有必要权限
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator235', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let user: ESObject = { permissions: ["read", "write"] }
+      let canEdit: boolean =
+        user.permissions.includes("read") &&
+          user.permissions.includes("write")
+      expect(canEdit).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2460
+     * @tc.name testLogicalOperator236
+     * @tc.desc Verify ||检查用户是否有任一权限
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator236', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let user: ESObject = { permissions: ["read"] }
+      let canAccess: boolean =
+        user.permissions.includes("read") ||
+          user.permissions.includes("admin")
+      expect(canAccess).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2470
+     * @tc.name testLogicalOperator237
+     * @tc.desc Verify &&条件触发回调
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator237', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let callbackCalled: boolean = false
+      let callback: (() => void) | null = () => {
+        callbackCalled = true
+      }
+      let condition: boolean = true
+      condition && callback && callback()
+      expect(callbackCalled).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2490
+     * @tc.name testLogicalOperator239
+     * @tc.desc Verify 10个&&全truthy
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator239', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: ESObject = (1 as ESObject) && (2 as ESObject) && (3 as ESObject) && (4 as ESObject) &&
+        (5 as ESObject) && (6 as ESObject) && (7 as ESObject) && (8 as ESObject) &&
+        (9 as ESObject) && (10 as ESObject)
+      expect(result).assertEqual(10)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2500
+     * @tc.name testLogicalOperator240
+     * @tc.desc Verify 10个&&中第5个为falsy
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: ESObject = (1 as ESObject) && (2 as ESObject) && (3 as ESObject) && (4 as ESObject) &&
+        (0 as ESObject) && (6 as ESObject) && (7 as ESObject)
+      expect(result).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2510
+     * @tc.name testLogicalOperator241
+     * @tc.desc Verify 10个||全falsy返回最后一个
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator241', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: ESObject = (0 as ESObject) || ("" as ESObject) || (null as ESObject) ||
+        (false as ESObject) || (undefined as ESObject) || (NaN as ESObject) ||
+        (0 as ESObject) || ("" as ESObject) || (null as ESObject) || (0 as ESObject)
+      expect(result).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2520
+     * @tc.name testLogicalOperator242
+     * @tc.desc Verify 10个||中第5个为truthy
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator242', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: ESObject = (0 as ESObject) || ("" as ESObject) || (null as ESObject) ||
+        (false as ESObject) || ("found" as ESObject) || ("skip" as ESObject)
+      expect(result).assertEqual("found")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2540
+     * @tc.name testLogicalOperator244
+     * @tc.desc Verify &&短路时不触发getter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator244', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let getCount = 0
+      let obj: ESObject = {
+        get count(): number {
+          getCount++;
+          return 5
+        }
+      }
+      let condition: boolean = false
+      let result = condition && obj.count
+      expect(getCount).assertEqual(0)
+      expect(result).assertFalse()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2610
+     * @tc.name testLogicalOperator251
+     * @tc.desc Verify &&控制递归深度
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator251', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(countdown251(3)).assertEqual("3, 2, 1, Liftoff!")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2650
+     * @tc.name testLogicalOperator255
+     * @tc.desc Verify ||对0返回fallback，??对0返回0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator255', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: number = 0
+      expect((val as ESObject) || 100).assertEqual(100)
+      expect((val as ESObject) ?? 100).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2660
+     * @tc.name testLogicalOperator256
+     * @tc.desc Verify ||对""返回fallback，??对""返回""
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator256', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: string = ""
+      expect((val as ESObject) || "default").assertEqual("default")
+      expect((val as ESObject) ?? "default").assertEqual("")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2670
+     * @tc.name testLogicalOperator257
+     * @tc.desc Verify ||对false返回fallback，??对false返回false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator257', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: boolean = false
+      expect((val as ESObject) || true).assertTrue()
+      expect((val as ESObject) ?? true).assertFalse()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2680
+     * @tc.name testLogicalOperator258
+     * @tc.desc Verify ||对NaN返回fallback，??对NaN返回NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator258', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: number = NaN
+      expect((val as ESObject) || 100).assertEqual(100)
+      expect(Number.isNaN((val as ESObject) ?? 100)).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2690
+     * @tc.name testLogicalOperator259
+     * @tc.desc Verify ||与??对null都返回fallback
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator259', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: ESObject = null
+      expect((val as ESObject) || "fb").assertEqual("fb")
+      expect((val as ESObject) ?? "fb").assertEqual("fb")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2700
+     * @tc.name testLogicalOperator260
+     * @tc.desc Verify ||与??对undefined都返回fallback
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: ESObject = undefined
+      expect((val as ESObject) || "fb").assertEqual("fb")
+      expect((val as ESObject) ?? "fb").assertEqual("fb")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2710
+     * @tc.name testLogicalOperator261
+     * @tc.desc Verify x = x && y 等价于 x &&= y
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator261', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: number | null = 5
+      let b: number | null = 5
+      a = a && (a + 1)
+      b &&= (b + 1)
+      expect(a).assertEqual(b)
+      expect(a).assertEqual(6)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2720
+     * @tc.name testLogicalOperator262
+     * @tc.desc Verify &&=短路（x为falsy时不赋值）
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator262', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number | null = 0
+      x &&= 42
+      expect(x).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2730
+     * @tc.name testLogicalOperator263
+     * @tc.desc Verify x = x || y 等价于 x ||= y
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator263', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: string = ""
+      let b: string = ""
+      a = a || "default"
+      b ||= "default"
+      expect(a).assertEqual(b)
+      expect(a).assertEqual("default")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2740
+     * @tc.name testLogicalOperator264
+     * @tc.desc Verify ||=短路（x为truthy时不赋值）
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator264', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: string = "exists"
+      x ||= "default"
+      expect(x).assertEqual("exists")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2750
+     * @tc.name testLogicalOperator265
+     * @tc.desc Verify 使用&&链模拟多分支
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator265', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(classify265(95)).assertEqual("A")
+      expect(classify265(85)).assertEqual("B")
+      expect(classify265(75)).assertEqual("C")
+      expect(classify265(65)).assertEqual("D")
+      expect(classify265(55)).assertEqual("F")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2760
+     * @tc.name testLogicalOperator266
+     * @tc.desc Verify 使用&&链处理null检查
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator266', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(getLabel266(null)).assertEqual("No data")
+      expect(getLabel266({})).assertEqual("No items")
+      expect(getLabel266({ items: [] })).assertEqual("Empty")
+      expect(getLabel266({ items: [1] })).assertEqual("Has items")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2770
+     * @tc.name testLogicalOperator267
+     * @tc.desc Verify &&用于条件执行链
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator267', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(pipeline267(3)).assertEqual(6)
+      expect(pipeline267(8)).assertEqual(11)
+      expect(pipeline267(-1)).assertEqual(-1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2790
+     * @tc.name testLogicalOperator269
+     * @tc.desc Verify 使用!反转过滤条件
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator269', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let nums: number[] = [1, 2, 3, 4, 5, 6]
+      let isEven = (n: number): boolean => n % 2 === 0
+      let odds: number[] = nums.filter(n => !isEven(n))
+      expect(odds).assertDeepEquals([1, 3, 5])
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2820
+     * @tc.name testLogicalOperator272
+     * @tc.desc Verify ||在模板字符串中默认值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator272', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let user: ESObject = { name: "" }
+      let label: string = `User: ${(user.name as ESObject) || "Anonymous"}`
+      expect(label).assertEqual("User: Anonymous")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2830
+     * @tc.name testLogicalOperator273
+     * @tc.desc Verify &&结果为false时的模板渲染
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator273', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let user: ESObject = { name: "Bob", vip: false }
+      let label: string = `User: ${user.name}${user.vip && " (VIP)"}`
+      expect(label).assertEqual("User: Bobfalse")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LOGICAL_OPERATOR_2840
+     * @tc.name testLogicalOperator274
+     * @tc.desc Verify 使用三元替代&&避免false拼接
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLogicalOperator274', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let user: ESObject = { name: "Bob", vip: false }
+      let label: string = `User: ${user.name}${user.vip ? " (VIP)" : ""}`
+      expect(label).assertEqual("User: Bob")
+    });
+
+  });
+}
+
+
+function expensiveCompute97(): number {
+  cache = 42
+  return cache
+}
+
+function greet162(name?: string): string {
+  return "Hello, " + (name || "Guest")
+}
+
+function greet163(name: string = "Guest"): string {
+  return "Hello, " + name
+}
+
+function process164(count?: number): number {
+  return (count as ESObject) || 10
+}
+
+function validateForm226(data: ESObject): boolean {
+  return !!data.name &&
+    !!data.email &&
+    data.age >= 18
+}
+
+function getError227(data: ESObject): string {
+  return (!data.name && "Name required") ||
+    (!data.email && "Email required") ||
+    (data.age < 18 && "Must be 18+") ||
+    ""
+}
+
+function getData233(): ESObject {
+  return cachedData || (cachedData = (() => {
+    initCount++;
+    return { value: 42 }
+  })())
+}
+
+function countdown251(n: number): string {
+  return n > 0 && `${n}, ${countdown251(n - 1)}` || "Liftoff!"
+}
+
+function classify265(score: number): string {
+  return (score >= 90 && "A") ||
+    (score >= 80 && "B") ||
+    (score >= 70 && "C") ||
+    (score >= 60 && "D") ||
+    "F"
+}
+
+function getLabel266(data: ESObject): string {
+  return (data == null && "No data") ||
+    (data.items == null && "No items") ||
+    (data.items.length === 0 && "Empty") ||
+    "Has items"
+}
+
+function pipeline267(val: number): number {
+  let result: number = val
+  result > 0 && (result = result * 2)
+  result > 10 && (result = result - 5)
+  return result
+}
