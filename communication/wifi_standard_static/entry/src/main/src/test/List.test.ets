@@ -21,7 +21,7 @@ import wifiManager from '@ohos.wifiManager';
 let iswifisupport: boolean = true;
 try {
   iswifisupport = wifiManager.isWlanSupported();
-  console.info('[WIFI_List] isWlanSupported result:' + support);
+  console.info('[WIFI_List] isWlanSupported result:' + iswifisupport);
 } catch (error) {
   console.error('[WIFI_List] isWlanSupported get error:' + JSON.stringify(error.code) + JSON.stringify(error.message));
 }
