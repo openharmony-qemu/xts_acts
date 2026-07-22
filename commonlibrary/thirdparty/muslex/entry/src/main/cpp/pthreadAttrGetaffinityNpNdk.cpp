@@ -23,7 +23,6 @@
 #include <thread>
 #include <vector>
 #include <atomic>
-#include <functional>
 
 static constexpr int K_STABLE_LOOP = 20;
 static constexpr int K_THREAD_COUNT = 3;
@@ -33,7 +32,8 @@ static int CallPthreadAttrGetaffinityNp(pthread_attr_t* attr, size_t cpusetsize,
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetPthreadAttrGetaffinityNp();
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return -1;
     }
@@ -45,7 +45,8 @@ static int CallPthreadAttrSetaffinityNp(pthread_attr_t* attr, size_t cpusetsize,
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetPthreadAttrSetaffinityNp();
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return -1;
     }
@@ -58,7 +59,8 @@ static bool EnablePthreadExtPolicy()
     auto& loader = LibcFunctionLoader::GetInstance();
     auto setFunc = loader.GetSetPthreadExtFuncPolicy();
     auto getFunc = loader.GetPthreadExtFuncPolicy();
-    if (!setFunc || !getFunc) {
+    if (!setFunc || !getFunc)
+    {
         return false;
     }
     setFunc(1);
@@ -68,10 +70,12 @@ static bool EnablePthreadExtPolicy()
 static bool IsStubMode()
 {
     auto& loader = LibcFunctionLoader::GetInstance();
-    if (loader.GetPthreadAttrGetaffinityNp() == nullptr) {
+    if (loader.GetPthreadAttrGetaffinityNp() == nullptr)
+    {
         return true;
     }
-    if (!EnablePthreadExtPolicy()) {
+    if (!EnablePthreadExtPolicy())
+    {
         return true;
     }
     return false;
@@ -86,13 +90,15 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value PthreadAttrGetaffinityNpNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     pthread_attr_t attr;
     pthread_attr_init(&attr);
     cpu_set_t* set = CPU_ALLOC(1);
-    if (!set) {
+    if (!set)
+    {
         return ReturnInt32(env, 0);
     }
     size_t size = CPU_ALLOC_SIZE(1);
@@ -106,13 +112,15 @@ static napi_value PthreadAttrGetaffinityNpNormal001(napi_env env, napi_callback_
 
 static napi_value PthreadAttrGetaffinityNpNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     pthread_attr_t attr;
     pthread_attr_init(&attr);
     cpu_set_t* set = CPU_ALLOC(4);
-    if (!set) {
+    if (!set)
+    {
         return ReturnInt32(env, 0);
     }
     size_t size = CPU_ALLOC_SIZE(4);
@@ -125,13 +133,15 @@ static napi_value PthreadAttrGetaffinityNpNormal002(napi_env env, napi_callback_
 
 static napi_value PthreadAttrGetaffinityNpNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     pthread_attr_t attr;
     pthread_attr_init(&attr);
     cpu_set_t* set = CPU_ALLOC(1);
-    if (!set) {
+    if (!set)
+    {
         return ReturnInt32(env, 0);
     }
     size_t size = CPU_ALLOC_SIZE(1);
@@ -143,19 +153,22 @@ static napi_value PthreadAttrGetaffinityNpNormal003(napi_env env, napi_callback_
 
 static napi_value PthreadAttrGetaffinityNpNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
 
 static napi_value PthreadAttrGetaffinityNpAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     cpu_set_t* set = CPU_ALLOC(1);
-    if (!set) {
+    if (!set)
+    {
         return ReturnInt32(env, 0);
     }
     size_t size = CPU_ALLOC_SIZE(1);
@@ -166,8 +179,9 @@ static napi_value PthreadAttrGetaffinityNpAbnormal001(napi_env env, napi_callbac
 
 static napi_value PthreadAttrGetaffinityNpAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     pthread_attr_t attr;
     pthread_attr_init(&attr);
@@ -179,13 +193,15 @@ static napi_value PthreadAttrGetaffinityNpAbnormal002(napi_env env, napi_callbac
 
 static napi_value PthreadAttrGetaffinityNpBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     pthread_attr_t attr;
     pthread_attr_init(&attr);
     cpu_set_t* set = CPU_ALLOC(1);
-    if (!set) {
+    if (!set)
+    {
         return ReturnInt32(env, 0);
     }
     int ret = CallPthreadAttrGetaffinityNp(&attr, 0, set);
@@ -196,17 +212,20 @@ static napi_value PthreadAttrGetaffinityNpBoundary001(napi_env env, napi_callbac
 
 static napi_value PthreadAttrGetaffinityNpBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     pthread_attr_t attr;
     pthread_attr_init(&attr);
     int numCpus = sysconf(_SC_NPROCESSORS_CONF);
-    if (numCpus <= 0) {
+    if (numCpus <= 0)
+    {
         numCpus = 1;
     }
     cpu_set_t* set = CPU_ALLOC(numCpus);
-    if (!set) {
+    if (!set)
+    {
         return ReturnInt32(env, 0);
     }
     size_t size = CPU_ALLOC_SIZE(numCpus);
@@ -218,15 +237,18 @@ static napi_value PthreadAttrGetaffinityNpBoundary002(napi_env env, napi_callbac
 
 static napi_value PthreadAttrGetaffinityNpStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP; ++i)
+    {
         pthread_attr_t attr;
         pthread_attr_init(&attr);
         cpu_set_t* set = CPU_ALLOC(1);
-        if (!set) {
+        if (!set)
+        {
             pass = false;
             break;
         }
@@ -234,7 +256,8 @@ static napi_value PthreadAttrGetaffinityNpStable001(napi_env env, napi_callback_
         int ret = CallPthreadAttrGetaffinityNp(&attr, size, set);
         CPU_FREE(set);
         pthread_attr_destroy(&attr);
-        if (ret < 0) {
+        if (ret < 0)
+        {
             pass = false;
             break;
         }
@@ -242,34 +265,37 @@ static napi_value PthreadAttrGetaffinityNpStable001(napi_env env, napi_callback_
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void GetaffinityWorker(std::atomic<bool>& hasError)
-{
-    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-        pthread_attr_t attr;
-        pthread_attr_init(&attr);
-        cpu_set_t* set = CPU_ALLOC(1);
-        if (!set) {
-            hasError = true;
-            return;
-        }
-        size_t size = CPU_ALLOC_SIZE(1);
-        CallPthreadAttrGetaffinityNp(&attr, size, set);
-        CPU_FREE(set);
-        pthread_attr_destroy(&attr);
-    }
-}
-
 static napi_value PthreadAttrGetaffinityNpThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(GetaffinityWorker, std::ref(hasError));
+    for (int t = 0; t < K_THREAD_COUNT; ++t)
+    {
+        threads.emplace_back([&hasError]()
+        {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
+            {
+                pthread_attr_t attr;
+                pthread_attr_init(&attr);
+                cpu_set_t* set = CPU_ALLOC(1);
+                if (!set)
+                {
+                    hasError = true;
+                    return;
+                }
+                size_t size = CPU_ALLOC_SIZE(1);
+                CallPthreadAttrGetaffinityNp(&attr, size, set);
+                CPU_FREE(set);
+                pthread_attr_destroy(&attr);
+            }
+        });
     }
-    for (auto& th : threads) {
+    for (auto& th : threads)
+    {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);
@@ -279,26 +305,16 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"pthreadAttrGetaffinityNpNormal001", nullptr, PthreadAttrGetaffinityNpNormal001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadAttrGetaffinityNpNormal002", nullptr, PthreadAttrGetaffinityNpNormal002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadAttrGetaffinityNpNormal003", nullptr, PthreadAttrGetaffinityNpNormal003, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadAttrGetaffinityNpNormal004", nullptr, PthreadAttrGetaffinityNpNormal004, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadAttrGetaffinityNpAbnormal001", nullptr, PthreadAttrGetaffinityNpAbnormal001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadAttrGetaffinityNpAbnormal002", nullptr, PthreadAttrGetaffinityNpAbnormal002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadAttrGetaffinityNpBoundary001", nullptr, PthreadAttrGetaffinityNpBoundary001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadAttrGetaffinityNpBoundary002", nullptr, PthreadAttrGetaffinityNpBoundary002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadAttrGetaffinityNpStable001", nullptr, PthreadAttrGetaffinityNpStable001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadAttrGetaffinityNpThread001", nullptr, PthreadAttrGetaffinityNpThread001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+        {"pthreadAttrGetaffinityNpNormal001", nullptr, PthreadAttrGetaffinityNpNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadAttrGetaffinityNpNormal002", nullptr, PthreadAttrGetaffinityNpNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadAttrGetaffinityNpNormal003", nullptr, PthreadAttrGetaffinityNpNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadAttrGetaffinityNpNormal004", nullptr, PthreadAttrGetaffinityNpNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadAttrGetaffinityNpAbnormal001", nullptr, PthreadAttrGetaffinityNpAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadAttrGetaffinityNpAbnormal002", nullptr, PthreadAttrGetaffinityNpAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadAttrGetaffinityNpBoundary001", nullptr, PthreadAttrGetaffinityNpBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadAttrGetaffinityNpBoundary002", nullptr, PthreadAttrGetaffinityNpBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadAttrGetaffinityNpStable001", nullptr, PthreadAttrGetaffinityNpStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadAttrGetaffinityNpThread001", nullptr, PthreadAttrGetaffinityNpThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

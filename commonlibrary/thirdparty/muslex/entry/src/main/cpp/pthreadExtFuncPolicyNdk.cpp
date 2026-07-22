@@ -20,7 +20,6 @@
 #include <thread>
 #include <vector>
 #include <atomic>
-#include <functional>
 
 static constexpr int K_STABLE_LOOP = 20;
 static constexpr int K_THREAD_COUNT = 3;
@@ -30,7 +29,8 @@ static int CallPthreadExtFuncPolicy()
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetPthreadExtFuncPolicy();
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return -1;
     }
@@ -53,8 +53,9 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value PthreadExtFuncPolicyNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     int ret = CallPthreadExtFuncPolicy();
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
@@ -62,12 +63,14 @@ static napi_value PthreadExtFuncPolicyNormal001(napi_env env, napi_callback_info
 
 static napi_value PthreadExtFuncPolicyNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     auto& loader = LibcFunctionLoader::GetInstance();
     auto setFunc = loader.GetSetPthreadExtFuncPolicy();
-    if (setFunc) {
+    if (setFunc)
+    {
         setFunc(0);
     }
     int ret = CallPthreadExtFuncPolicy();
@@ -76,8 +79,9 @@ static napi_value PthreadExtFuncPolicyNormal002(napi_env env, napi_callback_info
 
 static napi_value PthreadExtFuncPolicyNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     int ret1 = CallPthreadExtFuncPolicy();
     int ret2 = CallPthreadExtFuncPolicy();
@@ -86,16 +90,18 @@ static napi_value PthreadExtFuncPolicyNormal003(napi_env env, napi_callback_info
 
 static napi_value PthreadExtFuncPolicyNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
 
 static napi_value PthreadExtFuncPolicyAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     int ret = CallPthreadExtFuncPolicy();
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
@@ -103,13 +109,15 @@ static napi_value PthreadExtFuncPolicyAbnormal001(napi_env env, napi_callback_in
 
 static napi_value PthreadExtFuncPolicyAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    int loopcount = 20;
-    for (int i = 0; i < loopcount; ++i) {
+    for (int i = 0; i < 20; ++i)
+    {
         int ret = CallPthreadExtFuncPolicy();
-        if (ret < 0) {
+        if (ret < 0)
+        {
             return ReturnInt32(env, 0);
         }
     }
@@ -118,8 +126,9 @@ static napi_value PthreadExtFuncPolicyAbnormal002(napi_env env, napi_callback_in
 
 static napi_value PthreadExtFuncPolicyBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     int ret = CallPthreadExtFuncPolicy();
     return ReturnInt32(env, (ret >= 0 && ret <= 1) ? 1 : 0);
@@ -127,12 +136,14 @@ static napi_value PthreadExtFuncPolicyBoundary001(napi_env env, napi_callback_in
 
 static napi_value PthreadExtFuncPolicyBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     auto& loader = LibcFunctionLoader::GetInstance();
     auto setFunc = loader.GetSetPthreadExtFuncPolicy();
-    if (setFunc) {
+    if (setFunc)
+    {
         setFunc(1);
     }
     int ret = CallPthreadExtFuncPolicy();
@@ -141,13 +152,16 @@ static napi_value PthreadExtFuncPolicyBoundary002(napi_env env, napi_callback_in
 
 static napi_value PthreadExtFuncPolicyStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP; ++i)
+    {
         int ret = CallPthreadExtFuncPolicy();
-        if (ret < 0) {
+        if (ret < 0)
+        {
             pass = false;
             break;
         }
@@ -155,28 +169,31 @@ static napi_value PthreadExtFuncPolicyStable001(napi_env env, napi_callback_info
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void ExtFuncPolicyWorker(std::atomic<bool>& hasError)
-{
-    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-        int ret = CallPthreadExtFuncPolicy();
-        if (ret < 0) {
-            hasError = true;
-            return;
-        }
-    }
-}
-
 static napi_value PthreadExtFuncPolicyThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(ExtFuncPolicyWorker, std::ref(hasError));
+    for (int t = 0; t < K_THREAD_COUNT; ++t)
+    {
+        threads.emplace_back([&hasError]()
+        {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
+            {
+                int ret = CallPthreadExtFuncPolicy();
+                if (ret < 0)
+                {
+                    hasError = true;
+                    return;
+                }
+            }
+        });
     }
-    for (auto& th : threads) {
+    for (auto& th : threads)
+    {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);
@@ -186,26 +203,16 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"pthreadExtFuncPolicyNormal001", nullptr, PthreadExtFuncPolicyNormal001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadExtFuncPolicyNormal002", nullptr, PthreadExtFuncPolicyNormal002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadExtFuncPolicyNormal003", nullptr, PthreadExtFuncPolicyNormal003, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadExtFuncPolicyNormal004", nullptr, PthreadExtFuncPolicyNormal004, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadExtFuncPolicyAbnormal001", nullptr, PthreadExtFuncPolicyAbnormal001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadExtFuncPolicyAbnormal002", nullptr, PthreadExtFuncPolicyAbnormal002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadExtFuncPolicyBoundary001", nullptr, PthreadExtFuncPolicyBoundary001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadExtFuncPolicyBoundary002", nullptr, PthreadExtFuncPolicyBoundary002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadExtFuncPolicyStable001", nullptr, PthreadExtFuncPolicyStable001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadExtFuncPolicyThread001", nullptr, PthreadExtFuncPolicyThread001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+        {"pthreadExtFuncPolicyNormal001", nullptr, PthreadExtFuncPolicyNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadExtFuncPolicyNormal002", nullptr, PthreadExtFuncPolicyNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadExtFuncPolicyNormal003", nullptr, PthreadExtFuncPolicyNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadExtFuncPolicyNormal004", nullptr, PthreadExtFuncPolicyNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadExtFuncPolicyAbnormal001", nullptr, PthreadExtFuncPolicyAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadExtFuncPolicyAbnormal002", nullptr, PthreadExtFuncPolicyAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadExtFuncPolicyBoundary001", nullptr, PthreadExtFuncPolicyBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadExtFuncPolicyBoundary002", nullptr, PthreadExtFuncPolicyBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadExtFuncPolicyStable001", nullptr, PthreadExtFuncPolicyStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadExtFuncPolicyThread001", nullptr, PthreadExtFuncPolicyThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

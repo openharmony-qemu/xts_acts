@@ -30,7 +30,8 @@ static int CallPthreadAttrExtInit(pthread_attr_t* attr)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetPthreadAttrExtInit();
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return -1;
     }
@@ -42,7 +43,8 @@ static int CallPthreadAttrExtDestroy(pthread_attr_t* attr)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetPthreadAttrExtDestroy();
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return -1;
     }
@@ -55,7 +57,8 @@ static bool EnablePthreadExtPolicy()
     auto& loader = LibcFunctionLoader::GetInstance();
     auto setFunc = loader.GetSetPthreadExtFuncPolicy();
     auto getFunc = loader.GetPthreadExtFuncPolicy();
-    if (!setFunc || !getFunc) {
+    if (!setFunc || !getFunc)
+    {
         return false;
     }
     setFunc(1);
@@ -65,10 +68,12 @@ static bool EnablePthreadExtPolicy()
 static bool IsStubMode()
 {
     auto& loader = LibcFunctionLoader::GetInstance();
-    if (loader.GetPthreadAttrExtInit() == nullptr) {
+    if (loader.GetPthreadAttrExtInit() == nullptr)
+    {
         return true;
     }
-    if (!EnablePthreadExtPolicy()) {
+    if (!EnablePthreadExtPolicy())
+    {
         return true;
     }
     return false;
@@ -83,14 +88,17 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value PthreadAttrExtInitNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    pthread_attr_t attr = {};
+    pthread_attr_t attr;
+    memset(&attr, 0, sizeof(attr));
     int ret = CallPthreadAttrExtInit(&attr);
     auto& loader = LibcFunctionLoader::GetInstance();
     auto destroyFunc = loader.GetPthreadAttrExtDestroy();
-    if (destroyFunc) {
+    if (destroyFunc)
+    {
         destroyFunc(&attr);
     }
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
@@ -98,14 +106,17 @@ static napi_value PthreadAttrExtInitNormal001(napi_env env, napi_callback_info i
 
 static napi_value PthreadAttrExtInitNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    pthread_attr_t attr = {};
+    pthread_attr_t attr;
+    memset(&attr, 0, sizeof(attr));
     int ret = CallPthreadAttrExtInit(&attr);
     auto& loader = LibcFunctionLoader::GetInstance();
     auto destroyFunc = loader.GetPthreadAttrExtDestroy();
-    if (destroyFunc) {
+    if (destroyFunc)
+    {
         destroyFunc(&attr);
     }
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
@@ -113,18 +124,22 @@ static napi_value PthreadAttrExtInitNormal002(napi_env env, napi_callback_info i
 
 static napi_value PthreadAttrExtInitNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    pthread_attr_t attr = {};
+    pthread_attr_t attr;
+    memset(&attr, 0, sizeof(attr));
     CallPthreadAttrExtInit(&attr);
     auto& loader = LibcFunctionLoader::GetInstance();
     auto destroyFunc = loader.GetPthreadAttrExtDestroy();
-    if (destroyFunc) {
+    if (destroyFunc)
+    {
         destroyFunc(&attr);
     }
     int ret = CallPthreadAttrExtInit(&attr);
-    if (destroyFunc) {
+    if (destroyFunc)
+    {
         destroyFunc(&attr);
     }
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
@@ -132,16 +147,18 @@ static napi_value PthreadAttrExtInitNormal003(napi_env env, napi_callback_info i
 
 static napi_value PthreadAttrExtInitNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
 
 static napi_value PthreadAttrExtInitAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     int ret = CallPthreadAttrExtInit(nullptr);
     return ReturnInt32(env, 1);
@@ -149,15 +166,18 @@ static napi_value PthreadAttrExtInitAbnormal001(napi_env env, napi_callback_info
 
 static napi_value PthreadAttrExtInitAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    pthread_attr_t attr = {};
+    pthread_attr_t attr;
+    memset(&attr, 0, sizeof(attr));
     CallPthreadAttrExtInit(&attr);
     int ret = CallPthreadAttrExtInit(&attr);
     auto& loader = LibcFunctionLoader::GetInstance();
     auto destroyFunc = loader.GetPthreadAttrExtDestroy();
-    if (destroyFunc) {
+    if (destroyFunc)
+    {
         destroyFunc(&attr);
     }
     return ReturnInt32(env, 1);
@@ -165,20 +185,24 @@ static napi_value PthreadAttrExtInitAbnormal002(napi_env env, napi_callback_info
 
 static napi_value PthreadAttrExtInitBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    int loopcount = 10;
     bool pass = true;
-    for (int i = 0; i < loopcount; ++i) {
-        pthread_attr_t attr = {};
+    for (int i = 0; i < 10; ++i)
+    {
+        pthread_attr_t attr;
+        memset(&attr, 0, sizeof(attr));
         int ret = CallPthreadAttrExtInit(&attr);
         auto& loader = LibcFunctionLoader::GetInstance();
         auto destroyFunc = loader.GetPthreadAttrExtDestroy();
-        if (destroyFunc) {
+        if (destroyFunc)
+        {
             destroyFunc(&attr);
         }
-        if (ret != 0) {
+        if (ret != 0)
+        {
             pass = false;
             break;
         }
@@ -188,10 +212,12 @@ static napi_value PthreadAttrExtInitBoundary001(napi_env env, napi_callback_info
 
 static napi_value PthreadAttrExtInitBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    pthread_attr_t attr = {};
+    pthread_attr_t attr;
+    memset(&attr, 0, sizeof(attr));
     CallPthreadAttrExtInit(&attr);
     CallPthreadAttrExtDestroy(&attr);
     int ret = CallPthreadAttrExtInit(&attr);
@@ -201,15 +227,19 @@ static napi_value PthreadAttrExtInitBoundary002(napi_env env, napi_callback_info
 
 static napi_value PthreadAttrExtInitStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i) {
-        pthread_attr_t attr = {};
+    for (int i = 0; i < K_STABLE_LOOP; ++i)
+    {
+        pthread_attr_t attr;
+        memset(&attr, 0, sizeof(attr));
         int ret = CallPthreadAttrExtInit(&attr);
         CallPthreadAttrExtDestroy(&attr);
-        if (ret != 0) {
+        if (ret != 0)
+        {
             pass = false;
             break;
         }
@@ -219,21 +249,27 @@ static napi_value PthreadAttrExtInitStable001(napi_env env, napi_callback_info i
 
 static napi_value PthreadAttrExtInitThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                pthread_attr_t attr = {};
+    for (int t = 0; t < K_THREAD_COUNT; ++t)
+    {
+        threads.emplace_back([&hasError]()
+        {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
+            {
+                pthread_attr_t attr;
+                memset(&attr, 0, sizeof(attr));
                 CallPthreadAttrExtInit(&attr);
                 CallPthreadAttrExtDestroy(&attr);
             }
         });
     }
-    for (auto& th : threads) {
+    for (auto& th : threads)
+    {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);
@@ -243,26 +279,16 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"pthreadAttrExtInitNormal001", nullptr, PthreadAttrExtInitNormal001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadAttrExtInitNormal002", nullptr, PthreadAttrExtInitNormal002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadAttrExtInitNormal003", nullptr, PthreadAttrExtInitNormal003, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadAttrExtInitNormal004", nullptr, PthreadAttrExtInitNormal004, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadAttrExtInitAbnormal001", nullptr, PthreadAttrExtInitAbnormal001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadAttrExtInitAbnormal002", nullptr, PthreadAttrExtInitAbnormal002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadAttrExtInitBoundary001", nullptr, PthreadAttrExtInitBoundary001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadAttrExtInitBoundary002", nullptr, PthreadAttrExtInitBoundary002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadAttrExtInitStable001", nullptr, PthreadAttrExtInitStable001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"pthreadAttrExtInitThread001", nullptr, PthreadAttrExtInitThread001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+        {"pthreadAttrExtInitNormal001", nullptr, PthreadAttrExtInitNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadAttrExtInitNormal002", nullptr, PthreadAttrExtInitNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadAttrExtInitNormal003", nullptr, PthreadAttrExtInitNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadAttrExtInitNormal004", nullptr, PthreadAttrExtInitNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadAttrExtInitAbnormal001", nullptr, PthreadAttrExtInitAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadAttrExtInitAbnormal002", nullptr, PthreadAttrExtInitAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadAttrExtInitBoundary001", nullptr, PthreadAttrExtInitBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadAttrExtInitBoundary002", nullptr, PthreadAttrExtInitBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadAttrExtInitStable001", nullptr, PthreadAttrExtInitStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadAttrExtInitThread001", nullptr, PthreadAttrExtInitThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
