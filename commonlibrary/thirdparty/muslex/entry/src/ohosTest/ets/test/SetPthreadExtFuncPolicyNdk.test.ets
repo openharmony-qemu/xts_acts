@@ -16,7 +16,6 @@
 import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
 import libsetpthreadextfuncpolicyndktest from 'libsetpthreadextfuncpolicyndktest.so';
-import { deviceInfo } from '@kit.BasicServicesKit';
 
 export default function SetPthreadExtFuncPolicyNdkTest() {
   describe('SetPthreadExtFuncPolicyNdkTest', () => {
@@ -33,9 +32,7 @@ export default function SetPthreadExtFuncPolicyNdkTest() {
      */
     it('testsetPthreadExtFuncPolicyNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libsetpthreadextfuncpolicyndktest.setPthreadExtFuncPolicyNormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -49,9 +46,7 @@ export default function SetPthreadExtFuncPolicyNdkTest() {
      */
     it('testsetPthreadExtFuncPolicyNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libsetpthreadextfuncpolicyndktest.setPthreadExtFuncPolicyNormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -65,9 +60,7 @@ export default function SetPthreadExtFuncPolicyNdkTest() {
      */
     it('testsetPthreadExtFuncPolicyNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libsetpthreadextfuncpolicyndktest.setPthreadExtFuncPolicyNormal003();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -81,9 +74,7 @@ export default function SetPthreadExtFuncPolicyNdkTest() {
      */
     it('testsetPthreadExtFuncPolicyNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libsetpthreadextfuncpolicyndktest.setPthreadExtFuncPolicyNormal004();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -97,9 +88,7 @@ export default function SetPthreadExtFuncPolicyNdkTest() {
      */
     it('testsetPthreadExtFuncPolicyAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libsetpthreadextfuncpolicyndktest.setPthreadExtFuncPolicyAbnormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -113,9 +102,7 @@ export default function SetPthreadExtFuncPolicyNdkTest() {
      */
     it('testsetPthreadExtFuncPolicyAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libsetpthreadextfuncpolicyndktest.setPthreadExtFuncPolicyAbnormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -129,9 +116,7 @@ export default function SetPthreadExtFuncPolicyNdkTest() {
      */
     it('testsetPthreadExtFuncPolicyBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libsetpthreadextfuncpolicyndktest.setPthreadExtFuncPolicyBoundary001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -145,9 +130,7 @@ export default function SetPthreadExtFuncPolicyNdkTest() {
      */
     it('testsetPthreadExtFuncPolicyBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libsetpthreadextfuncpolicyndktest.setPthreadExtFuncPolicyBoundary002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -161,9 +144,7 @@ export default function SetPthreadExtFuncPolicyNdkTest() {
      */
     it('testsetPthreadExtFuncPolicyStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libsetpthreadextfuncpolicyndktest.setPthreadExtFuncPolicyStable001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
@@ -177,9 +158,7 @@ export default function SetPthreadExtFuncPolicyNdkTest() {
      */
     it('testsetPthreadExtFuncPolicyThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = libsetpthreadextfuncpolicyndktest.setPthreadExtFuncPolicyThread001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
+      expect(resNum == 1).assertTrue();
       done();
     });
 
