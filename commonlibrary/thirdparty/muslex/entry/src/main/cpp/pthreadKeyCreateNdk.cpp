@@ -224,8 +224,7 @@ static napi_value PthreadKeyCreateThread001(napi_env env, napi_callback_info inf
     std::vector<std::thread> threads;
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError, key]()
-        {
+        threads.emplace_back([&hasError, key]() {
             for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 int* val = new int(i);
                 if (pthread_setspecific(key, val) != 0) {

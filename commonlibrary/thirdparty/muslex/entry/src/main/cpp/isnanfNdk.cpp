@@ -207,8 +207,7 @@ static napi_value IsnanfThread001(napi_env env, napi_callback_info info)
     int expected[] = {1, 0, 0, 0, 0};
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError, testVals, expected]()
-        {
+        threads.emplace_back([&hasError, testVals, expected]() {
             for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 int idx = i % 5;
                 int ret = CallIsnanf(testVals[idx]);

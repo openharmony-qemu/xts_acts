@@ -184,8 +184,7 @@ static napi_value SchedCpufreeThread001(napi_env env, napi_callback_info info)
     std::vector<std::thread> threads;
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError]()
-        {
+        threads.emplace_back([&hasError]() {
             for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 cpu_set_t* set = CPU_ALLOC(1);
                 if (!set) {

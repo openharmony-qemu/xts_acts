@@ -33,8 +33,8 @@ static bool IsStubMode()
     return LibcFunctionLoader::GetInstance().GetFinite() == nullptr;
 }
 
-static constexpr double smallFinite = 0.0001;
-static constexpr double largeFinite = 100.0;
+static constexpr double SMALL_FINITE = 0.0001;
+static constexpr double LARGE_FINITE = 100.0;
 
 // ==================== Normal Parameter Tests ====================
 
@@ -47,29 +47,30 @@ static napi_value FiniteNormal001(napi_env env, napi_callback_info info)
     }
 
     bool allPassed = true;
+    double testFinite = 3.14;
     // Zero
     if (func(0.0) == 0) {
         allPassed = false;
     }
     // Positive
-    if (func(3.14) == 0) {
+    if (func(testFinite) == 0) {
         allPassed = false;
     }
-    if (func(largeFinite) == 0) {
+    if (func(LARGE_FINITE) == 0) {
         allPassed = false;
     }
     // Negative
-    if (func(-3.14) == 0) {
+    if (func(-testFinite) == 0) {
         allPassed = false;
     }
-    if (func(-largeFinite) == 0) {
+    if (func(-LARGE_FINITE) == 0) {
         allPassed = false;
     }
     // Decimal
-    if (func(smallFinite) == 0) {
+    if (func(SMALL_FINITE) == 0) {
         allPassed = false;
     }
-    if (func(-smallFinite) == 0) {
+    if (func(-SMALL_FINITE) == 0) {
         allPassed = false;
     }
 
@@ -250,8 +251,7 @@ static napi_value FiniteThread001(napi_env env, napi_callback_info info)
     double testVals[] = {0.0, 3.14, INFINITY, -INFINITY, NAN};
 
     for (int t = 0; t < threadCount; ++t) {
-        threads.emplace_back([func, &hasError, testVals, iterationsPerThread]()
-        {
+        threads.emplace_back([func, &hasError, testVals, iterationsPerThread]() {
             for (int i = 0; i < iterationsPerThread; ++i) {
                 int idx = i % 5;
                 int expected = (idx == 0 || idx == 1) ? 1 : 0;

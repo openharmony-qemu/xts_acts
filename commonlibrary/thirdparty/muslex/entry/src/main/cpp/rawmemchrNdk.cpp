@@ -229,8 +229,7 @@ static napi_value RawmemchrThread001(napi_env env, napi_callback_info info)
     const char* strings[] = {"Hello", "World", "Test", "Rawmemchr", "abcde"};
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError, strings]()
-        {
+        threads.emplace_back([&hasError, strings]() {
             for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 int idx = i % 5;
                 char c = strings[idx][i % 5];

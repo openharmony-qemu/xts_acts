@@ -42,8 +42,7 @@ static bool IsStubMode()
         return true;
     }
     /* Setup a valid msghdr with a dummy cmsghdr to test stub mode */
-    char controlBuf[256];
-    memset(controlBuf, 0, sizeof(controlBuf));
+    char controlBuf[256] = {};
     cmsghdr* cmsg = reinterpret_cast<cmsghdr*>(controlBuf);
     cmsg->cmsg_len = CMSG_LEN(sizeof(int));
     cmsg->cmsg_level = SOL_SOCKET;
@@ -69,8 +68,7 @@ static napi_value CmsgNxthdrNormal001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
-    char controlBuf[1024];
-    memset(controlBuf, 0, sizeof(controlBuf));
+    char controlBuf[256] = {};
 
     // Setup first cmsghdr
     cmsghdr* cmsg1 = reinterpret_cast<cmsghdr*>(controlBuf);
@@ -131,8 +129,7 @@ static napi_value CmsgNxthdrNormal003(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
-    char controlBuf[1024];
-    memset(controlBuf, 0, sizeof(controlBuf));
+    char controlBuf[256] = {};
 
     cmsghdr* cmsg = reinterpret_cast<cmsghdr*>(controlBuf);
     cmsg->cmsg_len = CMSG_LEN(sizeof(int));
@@ -163,8 +160,7 @@ static napi_value CmsgNxthdrFunc001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
-    char controlBuf[1024];
-    memset(controlBuf, 0, sizeof(controlBuf));
+    char controlBuf[256] = {};
 
     cmsghdr* cmsg = reinterpret_cast<cmsghdr*>(controlBuf);
     cmsg->cmsg_len = CMSG_LEN(sizeof(int));
@@ -195,8 +191,7 @@ static napi_value CmsgNxthdrFunc002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     // Test: cmsg_len < sizeof(cmsghdr) -> NULL
-    char controlBuf[1024];
-    memset(controlBuf, 0, sizeof(controlBuf));
+    char controlBuf[256] = {};
 
     cmsghdr* cmsg = reinterpret_cast<cmsghdr*>(controlBuf);
     cmsg->cmsg_len = sizeof(cmsghdr) - 1; // invalid length
@@ -230,8 +225,7 @@ static napi_value CmsgNxthdrSpec002(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
-    char controlBuf[256];
-    memset(controlBuf, 0, sizeof(controlBuf));
+    char controlBuf[256] = {};
     cmsghdr* cmsg = reinterpret_cast<cmsghdr*>(controlBuf);
     cmsg->cmsg_len = CMSG_LEN(sizeof(int));
     cmsg->cmsg_level = SOL_SOCKET;
@@ -258,8 +252,7 @@ static napi_value CmsgNxthdrSpec004(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
-    char controlBuf[256];
-    memset(controlBuf, 0, sizeof(controlBuf));
+    char controlBuf[256] = {};
     cmsghdr* cmsg = reinterpret_cast<cmsghdr*>(controlBuf);
     cmsg->cmsg_len = CMSG_LEN(sizeof(int));
     cmsg->cmsg_level = SOL_SOCKET;

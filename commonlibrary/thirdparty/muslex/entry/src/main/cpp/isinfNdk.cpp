@@ -21,8 +21,8 @@
 #include <vector>
 #include <atomic>
 
-static constexpr double largeFinite = 100.0;
-static constexpr double finitetest = 3.14;
+static constexpr double LARGE_FINITE = 100.0;
+static constexpr double FINITETEST = 3.14;
 
 static napi_value ReturnInt32(napi_env env, int32_t value)
 {
@@ -92,16 +92,16 @@ static napi_value IsinfNormal004(napi_env env, napi_callback_info info)
     if (func(0.0) != 0) {
         allPassed = false;
     }
-    if (func(finitetest) != 0) {
+    if (func(FINITETEST) != 0) {
         allPassed = false;
     }
-    if (func(-finitetest) != 0) {
+    if (func(-FINITETEST) != 0) {
         allPassed = false;
     }
-    if (func(largeFinite) != 0) {
+    if (func(LARGE_FINITE) != 0) {
         allPassed = false;
     }
-    if (func(-largeFinite) != 0) {
+    if (func(-LARGE_FINITE) != 0) {
         allPassed = false;
     }
 
@@ -226,7 +226,7 @@ static napi_value IsinfStable001(napi_env env, napi_callback_info info)
     }
 
     bool allPassed = true;
-    double testVals[] = {0.0, finitetest, INFINITY, -INFINITY, NAN};
+    double testVals[] = {0.0, FINITETEST, INFINITY, -INFINITY, NAN};
     int testCount = 5;
     int results[testCount];
 
@@ -291,8 +291,7 @@ static napi_value IsinfThread001(napi_env env, napi_callback_info info)
     int expected[] = {0, 0, 1, -1, 0};
 
     for (int t = 0; t < threadCount; ++t) {
-        threads.emplace_back([func, &hasError, testVals, expected, iterationsPerThread]()
-        {
+        threads.emplace_back([func, &hasError, testVals, expected, iterationsPerThread]() {
             for (int i = 0; i < iterationsPerThread; ++i) {
                 int idx = i % 5;
                 if (func(testVals[idx]) != expected[idx]) {
@@ -323,8 +322,7 @@ static napi_value IsinfThread002(napi_env env, napi_callback_info info)
     std::atomic<bool> hasError{false};
 
     for (int t = 0; t < threadCount; ++t) {
-        threads.emplace_back([func, &hasError]()
-        {
+        threads.emplace_back([func, &hasError]() {
             int roundCount = 10;
             for (int round = 0; round < roundCount; ++round) {
                 if (func(INFINITY) != 1) {

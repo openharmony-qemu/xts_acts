@@ -269,8 +269,7 @@ static napi_value GetauxvalThread001(napi_env env, napi_callback_info info)
     unsigned long items[] = {AT_PAGESZ, AT_SECURE, AT_CLKTCK, AT_RANDOM};
 
     for (int t = 0; t < threadCount; ++t) {
-        threads.emplace_back([func, &hasError, items, iterationsPerThread]()
-        {
+        threads.emplace_back([func, &hasError, items, iterationsPerThread]() {
             for (int i = 0; i < iterationsPerThread; ++i) {
                 int basiccount = 4;
                 int idx = i % basiccount;
@@ -306,8 +305,7 @@ static napi_value GetauxvalThread002(napi_env env, napi_callback_info info)
     int basiccount = 4;
 
     for (int t = 0; t < threadCount; ++t) {
-        threads.emplace_back([func, &hasError, allItems, iterationsPerThread, t, basiccount]()
-        {
+        threads.emplace_back([func, &hasError, allItems, iterationsPerThread, t, basiccount]() {
             for (int i = 0; i < iterationsPerThread; ++i) {
                 int idx = (i + t) % 8;
                 unsigned long result = func(allItems[idx]);

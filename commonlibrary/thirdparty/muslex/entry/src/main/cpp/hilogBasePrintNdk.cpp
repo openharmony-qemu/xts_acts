@@ -155,8 +155,7 @@ static napi_value HilogBasePrintThread001(napi_env env, napi_callback_info info)
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError]()
-        {
+        threads.emplace_back([&hasError]() {
             for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 int ret = CallHilogBasePrint(K_LOG_APP, K_LOG_INFO, 0xD000900, "TEST_TAG", "thread test %d", i);
                 if (ret < 0) {

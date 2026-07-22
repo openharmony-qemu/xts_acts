@@ -222,8 +222,7 @@ static napi_value IsinffThreadSafety001(napi_env env, napi_callback_info info)
     std::atomic<bool> hasError{false};
 
     for (int t = 0; t < threadCount; ++t) {
-        threads.emplace_back([isinff, &hasError, iterationsPerThread]()
-        {
+        threads.emplace_back([isinff, &hasError, iterationsPerThread]() {
             for (int i = 0; i < iterationsPerThread; ++i) {
                 if (isinff(HUGE_VALF) != 1) {
                     hasError = true;

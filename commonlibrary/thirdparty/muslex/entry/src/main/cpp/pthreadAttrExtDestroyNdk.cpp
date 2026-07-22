@@ -202,8 +202,7 @@ static napi_value PthreadAttrExtDestroyThread001(napi_env env, napi_callback_inf
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError]()
-        {
+        threads.emplace_back([&hasError]() {
             for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 pthread_attr_t attr;
                 pthread_attr_init(&attr);

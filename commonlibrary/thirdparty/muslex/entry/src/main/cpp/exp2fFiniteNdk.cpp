@@ -382,8 +382,7 @@ static napi_value Exp2fFiniteThread001(napi_env env, napi_callback_info info)
     std::atomic<bool> hasError{false};
 
     for (int t = 0; t < threadCount; ++t) {
-        threads.emplace_back([func, &hasError, iterationsPerThread]()
-        {
+        threads.emplace_back([func, &hasError, iterationsPerThread]() {
             float epsilon = 1e-6f;
             for (int i = 0; i < iterationsPerThread; ++i) {
                 float val = (i % 20) / 2.0f - 5.0f;
@@ -418,8 +417,7 @@ static napi_value Exp2fFiniteThread002(napi_env env, napi_callback_info info)
     float testVals[] = {0.0f, 0.5f, 1.0f, 2.0f, -1.0f, -0.5f, 5.0f, -5.0f, 10.0f, -10.0f};
 
     for (int t = 0; t < threadCount; ++t) {
-        threads.emplace_back([func, &hasError, testVals]()
-        {
+        threads.emplace_back([func, &hasError, testVals]() {
             float epsilon = 1e-6f;
             int roundCount = 10;
             for (int round = 0; round < roundCount; ++round) {

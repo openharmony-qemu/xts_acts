@@ -227,8 +227,7 @@ static napi_value PrintfChkThread001(napi_env env, napi_callback_info info)
     const char* formats[] = {"%s %d", "Number: %d", "Hello %s", "%d + %d = %d"};
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError, formats]()
-        {
+        threads.emplace_back([&hasError, formats]() {
             for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 int idx = i % 4;
                 int ret = CallPrintfChk(i % 2, formats[idx], "test", 123);

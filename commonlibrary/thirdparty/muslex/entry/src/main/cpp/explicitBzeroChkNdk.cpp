@@ -337,8 +337,7 @@ static napi_value ExplicitBzeroChkStable002(napi_env env, napi_callback_info inf
     std::atomic<bool> allSuccess(true);
     std::vector<std::thread> threads;
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&allSuccess]()
-        {
+        threads.emplace_back([&allSuccess]() {
             if (!StableWorkerFunc()) {
                 allSuccess.store(false);
             }

@@ -43,13 +43,9 @@ static bool IsStubMode()
 // Helper function: create temp file (multiple fallback options)
 static FILE* GetTestFile()
 {
-    // Option 1: tmpfile()
-    FILE* file = tmpfile();
-    if (file != nullptr) {
-        return file;
-    }
+    FILE* file = nullptr;
 
-    // Option 2: use /data/local/tmp/ directory
+    // Option 1: use /data/local/tmp/ directory
     char templatePath[] = "/data/local/tmp/fprintf_chk_test_XXXXXX";
     int fd = mkstemp(templatePath);
     if (fd != -1) {
@@ -490,8 +486,7 @@ static napi_value FprintfChkThread001(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < threadCount; ++t) {
         FILE* f = files[t];
-        threads.emplace_back([func, f, &hasError, iterationsPerThread, t]()
-        {
+        threads.emplace_back([func, f, &hasError, iterationsPerThread, t]() {
             for (int i = 0; i < iterationsPerThread; ++i) {
                 int ret = func(f, i % 2, "Thread %d: %d\n", t, i);
                 if (ret < 0) {
@@ -533,8 +528,7 @@ static napi_value FprintfChkThread002(napi_env env, napi_callback_info info)
     }
 
     for (int t = 0; t < threadCount; ++t) {
-        threads.emplace_back([func, sharedFile, &hasError, iterationsPerThread, t]()
-        {
+        threads.emplace_back([func, sharedFile, &hasError, iterationsPerThread, t]() {
             for (int i = 0; i < iterationsPerThread; ++i) {
                 int ret = func(sharedFile, 0, "%d %d\n", t, i);
                 if (ret < 0) {

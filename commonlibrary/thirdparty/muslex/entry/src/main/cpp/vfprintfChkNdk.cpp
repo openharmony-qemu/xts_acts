@@ -326,8 +326,7 @@ static napi_value VfprintfChkThread001(napi_env env, napi_callback_info info)
     const char* formats[] = {"%s %d", "Number: %d", "Hello %s", "%d + %d = %d"};
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError, formats]()
-        {
+        threads.emplace_back([&hasError, formats]() {
             for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 FILE* tmp = CreateSandboxTempFile();
                 if (!tmp) {

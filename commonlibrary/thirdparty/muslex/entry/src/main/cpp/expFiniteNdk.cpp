@@ -321,8 +321,7 @@ static napi_value ExpFiniteThread001(napi_env env, napi_callback_info info)
     std::atomic<int> completedCount{0};
 
     for (int t = 0; t < threadCount; ++t) {
-        threads.emplace_back([func, &hasError, iterationsPerThread, &completedCount]()
-        {
+        threads.emplace_back([func, &hasError, iterationsPerThread, &completedCount]() {
             for (int i = 0; i < iterationsPerThread; ++i) {
                 double val = (i % 20) / 2.0 - 5.0; // -5.0 to 5.0
                 double expected = std::exp(val);
@@ -357,8 +356,7 @@ static napi_value ExpFiniteThread002(napi_env env, napi_callback_info info)
     double testVals[] = {0.0, 0.5, 1.0, 2.0, -1.0, -0.5, 5.0, -5.0, K_EXP_TEST_VAL_10, -K_EXP_TEST_VAL_10};
 
     for (int t = 0; t < threadCount; ++t) {
-        threads.emplace_back([func, &hasError, testVals]()
-        {
+        threads.emplace_back([func, &hasError, testVals]() {
             for (int round = 0; round < K_EXP_STABLE_LOOP_10; ++round) {
                 for (double val : testVals) {
                     double expected = std::exp(val);

@@ -247,7 +247,7 @@ static napi_value AsprintfChkStable001(napi_env env, napi_callback_info info)
     for (int i = 0; i < K_STABLE_LOOP_1000; ++i) {
         char* buf = nullptr;
         int ret = CallAsprintfChk(&buf, 0, "test");
-        if (ret != 4 || buf == nullptr || strcmp(buf, "test") != 0) {
+        if (ret != STRLEN_TEST || buf == nullptr || strcmp(buf, "test") != 0) {
             failCount++;
         }
         if (buf) {
@@ -296,7 +296,7 @@ static napi_value AsprintfChkSpec001(napi_env env, napi_callback_info info)
     }
     char* buf = nullptr;
     int ret = CallAsprintfChk(&buf, 0, "hello");
-    if (ret != 5 || buf == nullptr || strcmp(buf, "hello") != 0) {
+    if (ret != STRLEN_HELLO || buf == nullptr || strcmp(buf, "hello") != 0) {
         if (buf) {
             free(buf);
         }
@@ -317,7 +317,7 @@ static napi_value AsprintfChkSpec002(napi_env env, napi_callback_info info)
     }
     char* buf = nullptr;
     int ret = funcPtr(&buf, 0, "hello");
-    if (ret != 5 || buf == nullptr) {
+    if (ret != STRLEN_HELLO || buf == nullptr) {
         if (buf) {
             free(buf);
         }
@@ -336,7 +336,7 @@ static napi_value AsprintfChkSpec003(napi_env env, napi_callback_info info)
     if (ret == -1 && errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
-    if (ret == 4 && errno == 0 && buf != nullptr && strcmp(buf, "test") == 0) {
+    if (ret == STRLEN_TEST && errno == 0 && buf != nullptr && strcmp(buf, "test") == 0) {
         free(buf);
         return ReturnInt32(env, 1);
     }

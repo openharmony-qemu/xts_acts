@@ -234,8 +234,7 @@ static napi_value FinitefThread001(napi_env env, napi_callback_info info)
     float testVals[] = {0.0f, 3.14f, HUGE_VALF, -HUGE_VALF, NAN};
 
     for (int t = 0; t < threadCount; ++t) {
-        threads.emplace_back([func, &hasError, testVals, iterationsPerThread]()
-        {
+        threads.emplace_back([func, &hasError, testVals, iterationsPerThread]() {
             for (int i = 0; i < iterationsPerThread; ++i) {
                 int idx = i % 5;
                 int expected = (idx == 0 || idx == 1) ? 1 : 0;

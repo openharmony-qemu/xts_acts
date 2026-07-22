@@ -159,8 +159,7 @@ static napi_value PowFiniteThread001(napi_env env, napi_callback_info info)
     double testY[] = {3.0, 2.0, 0.5, 100.0, 2.0};
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError, testX, testY]()
-        {
+        threads.emplace_back([&hasError, testX, testY]() {
             for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 int idx = i % 5;
                 double expected = std::pow(testX[idx], testY[idx]);

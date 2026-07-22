@@ -94,7 +94,7 @@ static napi_value SyslogChkNormal003(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     openlog("test", LOG_PID, LOG_USER);
-    CallSyslogChk(0, LOG_WARNING, "%s %d %.2f", "warning", SYSLOG_WARN_VAL, 3.14);
+    CallSyslogChk(0, LOG_WARNING, "%s %d %.2f", "warning", SYSLOG_WARN_VAL, SYSLOG_FLOAT_VAL);
     closelog();
     return ReturnInt32(env, 1);
 }
@@ -161,7 +161,7 @@ static napi_value SyslogChkAbnormal002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     openlog("test", LOG_PID, LOG_USER);
-    CallSyslogChk(0, 999, "Invalid priority");
+    CallSyslogChk(0, SYSLOG_INVALID_PRIORITY, "Invalid priority");
     closelog();
     return ReturnInt32(env, 1);
 }
@@ -211,11 +211,10 @@ static napi_value SyslogChkThread001(napi_env env, napi_callback_info info)
     std::vector<std::thread> threads;
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError]()
-        {
+        threads.emplace_back([&hasError]() {
             for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 int priority = (i % 4) + 1;
-                CallSyslogChk(i % SYSLOG_FLAG_MOD, priority, "Thread %d message %d", i % 10, i);
+                CallSyslogChk(i % SYSLOG_FLAG_MOD, priority, "Thread %d message %d", i % SYSLOG_ITH_MOD, i);
                 // syslog may have internal locks, not crashing counts as pass
             }
         });

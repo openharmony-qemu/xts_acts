@@ -227,15 +227,15 @@ static napi_value Atan2FiniteFunc002(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
-    double inputs_y[] = {0.0, -0.0, 1.0, -1.0, NAN, INFINITY, -INFINITY};
-    double inputs_x[] = {0.0, -0.0, 0.0, 0.0, 1.0, 1.0, 1.0};
+    double inputsY[] = {0.0, -0.0, 1.0, -1.0, NAN, INFINITY, -INFINITY};
+    double inputsX[] = {0.0, -0.0, 0.0, 0.0, 1.0, 1.0, 1.0};
     int count = 7;
     for (int i = 0; i < count; ++i) {
         errno = 0;
 #if HAS_FENV_EXCEPTIONS
         feclearexcept(FE_ALL_EXCEPT);
 #endif
-        CallAtan2Finite(inputs_y[i], inputs_x[i]);
+        CallAtan2Finite(inputsY[i], inputsX[i]);
         if (errno != 0) {
             return ReturnInt32(env, 0);
         }

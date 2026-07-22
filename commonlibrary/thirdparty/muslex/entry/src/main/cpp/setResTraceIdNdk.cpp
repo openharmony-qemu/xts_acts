@@ -26,8 +26,8 @@ typedef void (*SetResTraceIdFunc)(uint32_t, uint64_t, uint32_t*, uint64_t*);
 static constexpr int K_STABLE_LOOP = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
-static constexpr int traceVal = 100;
-static constexpr int traceVal200 = 200;
+static constexpr int TRACE_VAL = 100;
+static constexpr int TRACE_VAL200 = 200;
 
 static SetResTraceIdFunc GetSetResTraceIdFunc()
 {
@@ -70,7 +70,7 @@ static napi_value SetResTraceIdNormal001(napi_env env, napi_callback_info info)
     }
     uint32_t oldType = 0;
     uint64_t oldID = 0;
-    bool ret = CallSetResTraceId(1, traceVal, &oldType, &oldID);
+    bool ret = CallSetResTraceId(1, TRACE_VAL, &oldType, &oldID);
     return ReturnInt32(env, ret ? 1 : 0);
 }
 
@@ -81,10 +81,10 @@ static napi_value SetResTraceIdNormal002(napi_env env, napi_callback_info info)
     }
     uint32_t oldType = 0;
     uint64_t oldID = 0;
-    CallSetResTraceId(1, traceVal, &oldType, &oldID);
+    CallSetResTraceId(1, TRACE_VAL, &oldType, &oldID);
     uint32_t oldType2 = 0;
     uint64_t oldID2 = 0;
-    bool ret = CallSetResTraceId(2, traceVal200, &oldType2, &oldID2);
+    bool ret = CallSetResTraceId(2, TRACE_VAL200, &oldType2, &oldID2);
     return ReturnInt32(env, ret ? 1 : 0);
 }
 
@@ -95,8 +95,8 @@ static napi_value SetResTraceIdNormal003(napi_env env, napi_callback_info info)
     }
     uint32_t oldType = 0;
     uint64_t oldID = 0;
-    bool ret1 = CallSetResTraceId(1, traceVal, &oldType, &oldID);
-    bool ret2 = CallSetResTraceId(2, traceVal200, &oldType, &oldID);
+    bool ret1 = CallSetResTraceId(1, TRACE_VAL, &oldType, &oldID);
+    bool ret2 = CallSetResTraceId(2, TRACE_VAL200, &oldType, &oldID);
     return ReturnInt32(env, (ret1 && ret2) ? 1 : 0);
 }
 
@@ -114,7 +114,7 @@ static napi_value SetResTraceIdAbnormal001(napi_env env, napi_callback_info info
         return ReturnInt32(env, 1);
     }
     uint64_t oldID = 0;
-    CallSetResTraceId(1, traceVal, nullptr, &oldID);
+    CallSetResTraceId(1, TRACE_VAL, nullptr, &oldID);
     return ReturnInt32(env, 1);
 }
 
@@ -124,7 +124,7 @@ static napi_value SetResTraceIdAbnormal002(napi_env env, napi_callback_info info
         return ReturnInt32(env, 1);
     }
     uint32_t oldType = 0;
-    CallSetResTraceId(1, traceVal, &oldType, nullptr);
+    CallSetResTraceId(1, TRACE_VAL, &oldType, nullptr);
     return ReturnInt32(env, 1);
 }
 
@@ -176,8 +176,7 @@ static napi_value SetResTraceIdThread001(napi_env env, napi_callback_info info)
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError]()
-        {
+        threads.emplace_back([&hasError]() {
             for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 uint32_t oldType = 0;
                 uint64_t oldID = 0;

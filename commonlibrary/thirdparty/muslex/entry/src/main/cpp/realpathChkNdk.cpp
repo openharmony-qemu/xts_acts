@@ -229,8 +229,7 @@ static napi_value RealpathChkThread001(napi_env env, napi_callback_info info)
     const char* paths[] = {"/", "/dev/null", ".", ".."};
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError, paths]()
-        {
+        threads.emplace_back([&hasError, paths]() {
             for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 int idx = i % 4;
                 char buf[PATH_MAX];
