@@ -20,7 +20,6 @@ import webCookieManagerFetchCookieTwo from './WebCookieManagerFetchCookieTwo.tes
 import webCookieManagerFetchCookieThree from './WebCookieManagerFetchCookieThree.test'
 import webCookieManagerExistCookie from './WebCookieManagerExistCookie.test'
 import webCookieManagerFetchCookieIncognito from './WebCookieManagerFetchCookieIncognito.test'
-import webCookieManagerFetchCookiePartitioned from './WebCookieManagerFetchCookiePartitioned.test'
 import webCookieManagerConfigCookie from './WebCookieManagerConfigCookie.test'
 import webCookieManagerConfigCookieSync from './WebCookieManagerConfigCookieSync.test'
 import WebHttpCookies from './WebHttpCookies.test'
@@ -34,7 +33,6 @@ export default function testsuite() {
   webCookieManagerFetchCookieThree()
   webCookieManagerExistCookie()
   webCookieManagerFetchCookieIncognito()
-  webCookieManagerFetchCookiePartitioned()
   webCookieManagerConfigCookie()
   webCookieManagerConfigCookieSync()
   WebHttpCookies()

@@ -314,6 +314,133 @@ struct WebConfigCookieSync {
                   }
                   break
                 }
+                case 'emitFetchCookieSyncPartitioned001': {
+                  let setCode = testNapi.setConfigCookieSync(URL_EXAMPLE, 'part=syncTrue', false, false)
+                  let resultCode = testNapi.fetchCookieSyncPartitioned(URL_EXAMPLE, false, false, true)
+                  let resultValue = testNapi.getFetchCookieSyncPartitionedValue()
+                  console.log('emitFetchCookieSyncPartitioned001 setCode:' + setCode +
+                    ' resultCode:' + resultCode + ' resultValue:' + resultValue)
+                  if (resultCode === 0 && resultValue === 'part=syncTrue') {
+                    Utils.emitEvent(true, 147740)
+                  } else {
+                    Utils.emitEvent(false, 147740)
+                  }
+                  break
+                }
+                case 'emitFetchCookieSyncPartitioned002': {
+                  let setCode = testNapi.setConfigCookieSync(URL_EXAMPLE, 'part=syncFalse', false, false)
+                  let resultCode = testNapi.fetchCookieSyncPartitioned(URL_EXAMPLE, false, false, false)
+                  let resultValue = testNapi.getFetchCookieSyncPartitionedValue()
+                  console.log('emitFetchCookieSyncPartitioned002 setCode:' + setCode +
+                    ' resultCode:' + resultCode + ' resultValue:' + resultValue)
+                  if (resultCode === 0 && resultValue === 'part=syncFalse') {
+                    Utils.emitEvent(true, 147750)
+                  } else {
+                    Utils.emitEvent(false, 147750)
+                  }
+                  break
+                }
+                case 'emitFetchCookieSyncPartitioned003': {
+                  let setCode = testNapi.setConfigCookieSync(URL_EXAMPLE, 'part=httpOnly', false, true)
+                  let resultCode = testNapi.fetchCookieSyncPartitioned(URL_EXAMPLE, false, true, true)
+                  let resultValue = testNapi.getFetchCookieSyncPartitionedValue()
+                  console.log('emitFetchCookieSyncPartitioned003 setCode:' + setCode +
+                    ' resultCode:' + resultCode + ' resultValue:' + resultValue)
+                  if (resultCode === 0 && resultValue === 'part=httpOnly') {
+                    Utils.emitEvent(true, 147760)
+                  } else {
+                    Utils.emitEvent(false, 147760)
+                  }
+                  break
+                }
+                case 'emitFetchCookieSyncPartitioned004': {
+                  let setCode = testNapi.setConfigCookieSync(URL_EXAMPLE, 'part=incognito', true, false)
+                  let resultCode = testNapi.fetchCookieSyncPartitioned(URL_EXAMPLE, true, false, true)
+                  let resultValue = testNapi.getFetchCookieSyncPartitionedValue()
+                  console.log('emitFetchCookieSyncPartitioned004 setCode:' + setCode +
+                    ' resultCode:' + resultCode + ' resultValue:' + resultValue)
+                  if (resultCode === 0 && resultValue === 'part=incognito') {
+                    Utils.emitEvent(true, 147770)
+                  } else {
+                    Utils.emitEvent(false, 147770)
+                  }
+                  break
+                }
+                case 'emitFetchCookieSyncPartitionedInvalidUrl005': {
+                  let resultCode = testNapi.fetchCookieSyncPartitioned('', false, false, true)
+                  console.log('emitFetchCookieSyncPartitionedInvalidUrl005 resultCode:' + resultCode)
+                  if (resultCode === 17100103) {
+                    Utils.emitEvent(true, 147780)
+                  } else {
+                    Utils.emitEvent(false, 147780)
+                  }
+                  break
+                }
+                case 'emitFetchCookieSyncPartitionedInvalidParam006': {
+                  let resultCode = testNapi.fetchCookieSyncPartitionedInvalidParam(URL_EXAMPLE, false, false, true)
+                  console.log('emitFetchCookieSyncPartitionedInvalidParam006 resultCode:' + resultCode)
+                  if (resultCode === 17100101) {
+                    Utils.emitEvent(true, 147790)
+                  } else {
+                    Utils.emitEvent(false, 147790)
+                  }
+                  break
+                }
+                case 'emitFetchCookieAsyncPartitioned007': {
+                  let setCode = testNapi.setConfigCookieSync(URL_EXAMPLE, 'part=asyncTrue', false, false)
+                  testNapi.fetchCookieAsyncPartitioned(URL_EXAMPLE, false, false, true)
+                  await waitForExist(() => testNapi.getFetchCookieAsyncPartitionedCode(),
+                    'emitFetchCookieAsyncPartitioned007', 0, 500)
+                  let resultCode = testNapi.getFetchCookieAsyncPartitionedCode()
+                  let resultValue = testNapi.getFetchCookieAsyncPartitionedValue()
+                  console.log('emitFetchCookieAsyncPartitioned007 setCode:' + setCode +
+                    ' resultCode:' + resultCode + ' resultValue:' + resultValue)
+                  if (resultCode === 0 && resultValue === 'part=asyncTrue') {
+                    Utils.emitEvent(true, 147800)
+                  } else {
+                    Utils.emitEvent(false, 147800)
+                  }
+                  break
+                }
+                case 'emitFetchCookieAsyncPartitioned008': {
+                  let setCode = testNapi.setConfigCookieSync(URL_EXAMPLE, 'part=asyncFalse', false, false)
+                  testNapi.fetchCookieAsyncPartitioned(URL_EXAMPLE, false, false, false)
+                  await waitForExist(() => testNapi.getFetchCookieAsyncPartitionedCode(),
+                    'emitFetchCookieAsyncPartitioned008', 0, 500)
+                  let resultCode = testNapi.getFetchCookieAsyncPartitionedCode()
+                  let resultValue = testNapi.getFetchCookieAsyncPartitionedValue()
+                  console.log('emitFetchCookieAsyncPartitioned008 setCode:' + setCode +
+                    ' resultCode:' + resultCode + ' resultValue:' + resultValue)
+                  if (resultCode === 0 && resultValue === 'part=asyncFalse') {
+                    Utils.emitEvent(true, 147810)
+                  } else {
+                    Utils.emitEvent(false, 147810)
+                  }
+                  break
+                }
+                case 'emitFetchCookieAsyncPartitionedInvalidUrl009': {
+                  testNapi.fetchCookieAsyncPartitioned('', false, false, true)
+                  await waitForExist(() => testNapi.getFetchCookieAsyncPartitionedCode(),
+                    'emitFetchCookieAsyncPartitionedInvalidUrl009', 17100103, 500)
+                  let resultCode = testNapi.getFetchCookieAsyncPartitionedCode()
+                  console.log('emitFetchCookieAsyncPartitionedInvalidUrl009 resultCode:' + resultCode)
+                  if (resultCode === 17100103) {
+                    Utils.emitEvent(true, 147820)
+                  } else {
+                    Utils.emitEvent(false, 147820)
+                  }
+                  break
+                }
+                case 'emitFetchCookieAsyncPartitionedNullCallback010': {
+                  let resultValue = testNapi.fetchCookieAsyncPartitionedNullCallback(URL_EXAMPLE, false, false, true)
+                  console.log('emitFetchCookieAsyncPartitionedNullCallback010 resultValue:' + resultValue)
+                  if (resultValue === 1) {
+                    Utils.emitEvent(true, 147830)
+                  } else {
+                    Utils.emitEvent(false, 147830)
+                  }
+                  break
+                }
                 default :
                   break
               }

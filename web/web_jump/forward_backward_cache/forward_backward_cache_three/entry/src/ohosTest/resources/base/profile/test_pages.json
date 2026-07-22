@@ -8,7 +8,6 @@
     "testability/pages/WebCookieManagerFetchCookieThree",
     "testability/pages/WebCookieManagerExistCookie",
     "testability/pages/WebCookieManagerFetchCookieIncognito",
-    "testability/pages/WebCookieManagerFetchCookiePartitioned",
     "testability/pages/WebCookieManagerConfigCookie",
     "testability/pages/WebCookieManagerConfigCookieSync"
   ]

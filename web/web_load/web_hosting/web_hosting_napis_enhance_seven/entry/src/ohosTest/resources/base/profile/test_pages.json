@@ -2,7 +2,6 @@
   "src": [
     "testability/pages/Index",
     "testability/pages/WebConfigCookieSync",
-    "testability/pages/WebArkWebCookieManagerSaveCookie",
-    "testability/pages/WebFetchCookiePartitioned"
+    "testability/pages/WebArkWebCookieManagerSaveCookie"
   ]
 }

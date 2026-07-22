@@ -419,5 +419,195 @@ export default function WebConfigCookieSync() {
       done();
     })
 
+    /**
+     * @tc.name   testFetchCookieSyncPartitioned001
+     * @tc.number SUB_ACE_WEB_OH_ARKWEBCOOKIEMANAGER_FETCHCOOKIESYNC_PARTITIONED_0001
+     * @tc.desc   test OH_ArkWebCookieManager_FetchCookieSync includePartitionedCookies true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFetchCookieSyncPartitioned001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitFetchCookieSyncPartitioned001", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testFetchCookieSyncPartitioned001", true, 147740, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testFetchCookieSyncPartitioned001', true,1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testFetchCookieSyncPartitioned002
+     * @tc.number SUB_ACE_WEB_OH_ARKWEBCOOKIEMANAGER_FETCHCOOKIESYNC_PARTITIONED_0002
+     * @tc.desc   test OH_ArkWebCookieManager_FetchCookieSync includePartitionedCookies false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFetchCookieSyncPartitioned002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitFetchCookieSyncPartitioned002", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testFetchCookieSyncPartitioned002", true, 147750, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testFetchCookieSyncPartitioned002', true,1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testFetchCookieSyncPartitioned003
+     * @tc.number SUB_ACE_WEB_OH_ARKWEBCOOKIEMANAGER_FETCHCOOKIESYNC_PARTITIONED_0003
+     * @tc.desc   test OH_ArkWebCookieManager_FetchCookieSync includeHttpOnly and includePartitionedCookies true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFetchCookieSyncPartitioned003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitFetchCookieSyncPartitioned003", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testFetchCookieSyncPartitioned003", true, 147760, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testFetchCookieSyncPartitioned003', true,1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testFetchCookieSyncPartitioned004
+     * @tc.number SUB_ACE_WEB_OH_ARKWEBCOOKIEMANAGER_FETCHCOOKIESYNC_PARTITIONED_0004
+     * @tc.desc   test OH_ArkWebCookieManager_FetchCookieSync incognito and includePartitionedCookies true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFetchCookieSyncPartitioned004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitFetchCookieSyncPartitioned004", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testFetchCookieSyncPartitioned004", true, 147770, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testFetchCookieSyncPartitioned004', true,1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testFetchCookieSyncPartitionedInvalidUrl005
+     * @tc.number SUB_ACE_WEB_OH_ARKWEBCOOKIEMANAGER_FETCHCOOKIESYNC_PARTITIONED_0005
+     * @tc.desc   test OH_ArkWebCookieManager_FetchCookieSync invalid url error 17100103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFetchCookieSyncPartitionedInvalidUrl005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitFetchCookieSyncPartitionedInvalidUrl005", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testFetchCookieSyncPartitionedInvalidUrl005", true, 147780, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testFetchCookieSyncPartitionedInvalidUrl005', true,1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testFetchCookieSyncPartitionedInvalidParam006
+     * @tc.number SUB_ACE_WEB_OH_ARKWEBCOOKIEMANAGER_FETCHCOOKIESYNC_PARTITIONED_0006
+     * @tc.desc   test OH_ArkWebCookieManager_FetchCookieSync nullptr cookieValue error 17100101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFetchCookieSyncPartitionedInvalidParam006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitFetchCookieSyncPartitionedInvalidParam006", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testFetchCookieSyncPartitionedInvalidParam006", true, 147790, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testFetchCookieSyncPartitionedInvalidParam006', true,1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testFetchCookieAsyncPartitioned007
+     * @tc.number SUB_ACE_WEB_OH_ARKWEBCOOKIEMANAGER_FETCHCOOKIEASYNC_PARTITIONED_0007
+     * @tc.desc   test OH_ArkWebCookieManager_FetchCookieAsync includePartitionedCookies true and callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFetchCookieAsyncPartitioned007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitFetchCookieAsyncPartitioned007", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testFetchCookieAsyncPartitioned007", true, 147800, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testFetchCookieAsyncPartitioned007', true,1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testFetchCookieAsyncPartitioned008
+     * @tc.number SUB_ACE_WEB_OH_ARKWEBCOOKIEMANAGER_FETCHCOOKIEASYNC_PARTITIONED_0008
+     * @tc.desc   test OH_ArkWebCookieManager_FetchCookieAsync includePartitionedCookies false and callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFetchCookieAsyncPartitioned008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitFetchCookieAsyncPartitioned008", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testFetchCookieAsyncPartitioned008", true, 147810, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testFetchCookieAsyncPartitioned008', true,1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testFetchCookieAsyncPartitionedInvalidUrl009
+     * @tc.number SUB_ACE_WEB_OH_ARKWEBCOOKIEMANAGER_FETCHCOOKIEASYNC_PARTITIONED_0009
+     * @tc.desc   test OH_ArkWebCookieManager_FetchCookieAsync invalid url callback error 17100103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFetchCookieAsyncPartitionedInvalidUrl009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitFetchCookieAsyncPartitionedInvalidUrl009", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testFetchCookieAsyncPartitionedInvalidUrl009", true, 147820, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testFetchCookieAsyncPartitionedInvalidUrl009', true,1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testFetchCookieAsyncPartitionedNullCallback010
+     * @tc.number SUB_ACE_WEB_OH_ARKWEBCOOKIEMANAGER_FETCHCOOKIEASYNC_PARTITIONED_0010
+     * @tc.desc   test OH_ArkWebCookieManager_FetchCookieAsync nullptr callback no crash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testFetchCookieAsyncPartitionedNullCallback010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("emitFetchCookieAsyncPartitionedNullCallback010", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testFetchCookieAsyncPartitionedNullCallback010", true, 147830, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testFetchCookieAsyncPartitionedNullCallback010', true,1000);
+      done();
+    })
+
   })
 }

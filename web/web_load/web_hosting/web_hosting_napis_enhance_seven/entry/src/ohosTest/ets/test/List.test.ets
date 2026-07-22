@@ -16,10 +16,8 @@
 import webConfigCookieSync from './WebConfigCookieSync.test'
 import webArkWebCookieManagerSaveCookie from './WebArkWebCookieManagerSaveCookie.test'
 import lazyInitializeWebEngineInCookieManager from './LazyInitializeWebEngineInCookieManager.test'
-import webFetchCookiePartitioned from './WebFetchCookiePartitioned.test'
 
 export default function testsuite() {
   webConfigCookieSync()
   lazyInitializeWebEngineInCookieManager()
-  webFetchCookiePartitioned()
 }
