@@ -23,9 +23,8 @@
 #include <thread>
 #include <vector>
 #include <atomic>
-#include <functional>
 
-static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_STABLE_LOOP_10000 = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
 
@@ -33,13 +32,15 @@ static int CallPrintfChk(int flag, const char* fmt, ...)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetPrintfChk();
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return -1;
     }
     
     // Check if fmt is NULL
-    if (fmt == nullptr) {
+    if (fmt == nullptr)
+    {
         errno = EINVAL;
         return -1;
     }
@@ -57,7 +58,8 @@ static int CallPrintfChk(int flag, const char* fmt, ...)
 static bool IsStubMode()
 {
     auto& loader = LibcFunctionLoader::GetInstance();
-    if (!loader.GetPrintfChk()) {
+    if (!loader.GetPrintfChk())
+    {
         return true;
     }
     errno = 0;
@@ -77,8 +79,9 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 /* TC-001: Basic formatting with flag=0 */
 static napi_value PrintfChkNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     int ret = CallPrintfChk(0, "Hello %s", "World");
     return ReturnInt32(env, (ret > 0) ? 1 : 0);
@@ -87,8 +90,9 @@ static napi_value PrintfChkNormal001(napi_env env, napi_callback_info info)
 /* TC-002: Basic formatting with flag=1 */
 static napi_value PrintfChkNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     int ret = CallPrintfChk(1, "Number: %d", 42);
     return ReturnInt32(env, (ret > 0) ? 1 : 0);
@@ -97,8 +101,9 @@ static napi_value PrintfChkNormal002(napi_env env, napi_callback_info info)
 /* TC-003: Empty format string */
 static napi_value PrintfChkNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     int ret = CallPrintfChk(0, "");
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
@@ -107,8 +112,9 @@ static napi_value PrintfChkNormal003(napi_env env, napi_callback_info info)
 /* TC-004: Multiple format specifiers */
 static napi_value PrintfChkNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     int ret = CallPrintfChk(0, "%s %d %.2f", "test", 123, 4.56);
     return ReturnInt32(env, (ret > 0) ? 1 : 0);
@@ -117,8 +123,9 @@ static napi_value PrintfChkNormal004(napi_env env, napi_callback_info info)
 /* TC-005: Percent sign escaping */
 static napi_value PrintfChkNormal005(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     int ret = CallPrintfChk(0, "%% %d%%", 100);
     return ReturnInt32(env, (ret > 0) ? 1 : 0);
@@ -127,8 +134,9 @@ static napi_value PrintfChkNormal005(napi_env env, napi_callback_info info)
 /* TC-006: Flag=1 vs flag=0 consistency with same format */
 static napi_value PrintfChkNormal006(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     int ret0 = CallPrintfChk(0, "Hello %s", "World");
     int ret1 = CallPrintfChk(1, "Hello %s", "World");
@@ -140,8 +148,9 @@ static napi_value PrintfChkNormal006(napi_env env, napi_callback_info info)
 /* TC-007: NULL format string (should handle gracefully) */
 static napi_value PrintfChkAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     int ret = CallPrintfChk(0, nullptr);
     // Expected return -1 (error), function should not crash
@@ -151,8 +160,9 @@ static napi_value PrintfChkAbnormal001(napi_env env, napi_callback_info info)
 /* TC-008: Format string with missing argument */
 static napi_value PrintfChkAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     // Missing argument, but function should not crash
     int ret = CallPrintfChk(0, "%d %s", 123);
@@ -163,8 +173,9 @@ static napi_value PrintfChkAbnormal002(napi_env env, napi_callback_info info)
 /* TC-009: Format string with too many arguments */
 static napi_value PrintfChkAbnormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     int ret = CallPrintfChk(0, "%d", 123, 456, 789);
     return ReturnInt32(env, (ret > 0) ? 1 : 0);
@@ -175,25 +186,25 @@ static napi_value PrintfChkAbnormal003(napi_env env, napi_callback_info info)
 /* TC-010: Very long format string */
 static napi_value PrintfChkBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    int fmtsize = 3000;
-    std::string longFmt(fmtsize, 'x');
+    std::string longFmt(3000, 'x');
     int ret = CallPrintfChk(0, longFmt.c_str());
-    return ReturnInt32(env, (ret == fmtsize) ? 1 : 0);
+    return ReturnInt32(env, (ret == 3000) ? 1 : 0);
 }
 
 /* TC-011: Very long output string */
 static napi_value PrintfChkBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    int strsize = 2000;
-    std::string longStr(strsize, 'a');
+    std::string longStr(2000, 'a');
     int ret = CallPrintfChk(0, "%s", longStr.c_str());
-    return ReturnInt32(env, (ret == strsize) ? 1 : 0);
+    return ReturnInt32(env, (ret == 2000) ? 1 : 0);
 }
 
 /* ==================== Stability Tests ==================== */
@@ -201,13 +212,16 @@ static napi_value PrintfChkBoundary002(napi_env env, napi_callback_info info)
 /* TC-012: 10000 repeated calls stability */
 static napi_value PrintfChkStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i)
+    {
         int ret = CallPrintfChk(i % 2, "Test %d", i);
-        if (ret < 0) {
+        if (ret < 0)
+        {
             pass = false;
             break;
         }
@@ -215,34 +229,37 @@ static napi_value PrintfChkStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void PrintfChkThreadWorker(std::atomic<bool>& hasError, const char** formats)
-{
-    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-        int idx = i % 4;
-        int ret = CallPrintfChk(i % 2, formats[idx], "test", 123);
-        if (ret < 0) {
-            hasError = true;
-            return;
-        }
-    }
-}
-
 /* ==================== Multi-thread Tests ==================== */
 
 /* TC-013: Multi-thread safety */
 static napi_value PrintfChkThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     const char* formats[] = {"%s %d", "Number: %d", "Hello %s", "%d + %d = %d"};
 
-    for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(PrintfChkThreadWorker, std::ref(hasError), formats);
+    for (int t = 0; t < K_THREAD_COUNT; ++t)
+    {
+        threads.emplace_back([&hasError, formats]()
+        {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
+            {
+                int idx = i % 4;
+                int ret = CallPrintfChk(i % 2, formats[idx], "test", 123);
+                if (ret < 0)
+                {
+                    hasError = true;
+                    return;
+                }
+            }
+        });
     }
-    for (auto& th : threads) {
+    for (auto& th : threads)
+    {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);

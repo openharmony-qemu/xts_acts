@@ -20,18 +20,17 @@
 #include <thread>
 #include <vector>
 #include <atomic>
-#include <functional>
 
 static constexpr int K_STABLE_LOOP = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
-static constexpr int K_VERSION_MAX_LEN = 256;
 
 static const char* CallMuslVersion()
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetMuslVersion();
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return nullptr;
     }
@@ -54,8 +53,9 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value MuslVersionNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     const char* ver = CallMuslVersion();
     return ReturnInt32(env, (ver != nullptr) ? 1 : 0);
@@ -63,11 +63,13 @@ static napi_value MuslVersionNormal001(napi_env env, napi_callback_info info)
 
 static napi_value MuslVersionNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     const char* ver = CallMuslVersion();
-    if (!ver) {
+    if (!ver)
+    {
         return ReturnInt32(env, 0);
     }
     size_t len = strlen(ver);
@@ -76,12 +78,14 @@ static napi_value MuslVersionNormal002(napi_env env, napi_callback_info info)
 
 static napi_value MuslVersionNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     const char* ver1 = CallMuslVersion();
     const char* ver2 = CallMuslVersion();
-    if (!ver1 || !ver2) {
+    if (!ver1 || !ver2)
+    {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, (strcmp(ver1, ver2) == 0) ? 1 : 0);
@@ -89,16 +93,18 @@ static napi_value MuslVersionNormal003(napi_env env, napi_callback_info info)
 
 static napi_value MuslVersionNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
 
 static napi_value MuslVersionAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     const char* ver = CallMuslVersion();
     return ReturnInt32(env, (ver != nullptr) ? 1 : 0);
@@ -106,13 +112,15 @@ static napi_value MuslVersionAbnormal001(napi_env env, napi_callback_info info)
 
 static napi_value MuslVersionAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    int loopcount = 20;
-    for (int i = 0; i < loopcount; ++i) {
+    for (int i = 0; i < 20; ++i)
+    {
         const char* ver = CallMuslVersion();
-        if (!ver) {
+        if (!ver)
+        {
             return ReturnInt32(env, 0);
         }
     }
@@ -121,23 +129,27 @@ static napi_value MuslVersionAbnormal002(napi_env env, napi_callback_info info)
 
 static napi_value MuslVersionBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     const char* ver = CallMuslVersion();
-    if (!ver) {
+    if (!ver)
+    {
         return ReturnInt32(env, 0);
     }
-    return ReturnInt32(env, (strlen(ver) < K_VERSION_MAX_LEN) ? 1 : 0);
+    return ReturnInt32(env, (strlen(ver) < 256) ? 1 : 0);
 }
 
 static napi_value MuslVersionBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     const char* ver = CallMuslVersion();
-    if (!ver) {
+    if (!ver)
+    {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, (strlen(ver) > 0) ? 1 : 0);
@@ -145,13 +157,16 @@ static napi_value MuslVersionBoundary002(napi_env env, napi_callback_info info)
 
 static napi_value MuslVersionStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP; ++i)
+    {
         const char* ver = CallMuslVersion();
-        if (!ver) {
+        if (!ver)
+        {
             pass = false;
             break;
         }
@@ -159,28 +174,31 @@ static napi_value MuslVersionStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void MuslVersionThreadWorker(std::atomic<bool>& hasError)
-{
-    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-        const char* ver = CallMuslVersion();
-        if (!ver) {
-            hasError = true;
-            return;
-        }
-    }
-}
-
 static napi_value MuslVersionThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(MuslVersionThreadWorker, std::ref(hasError));
+    for (int t = 0; t < K_THREAD_COUNT; ++t)
+    {
+        threads.emplace_back([&hasError]()
+        {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
+            {
+                const char* ver = CallMuslVersion();
+                if (!ver)
+                {
+                    hasError = true;
+                    return;
+                }
+            }
+        });
     }
-    for (auto& th : threads) {
+    for (auto& th : threads)
+    {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);
