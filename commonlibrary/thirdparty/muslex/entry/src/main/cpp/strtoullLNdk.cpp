@@ -34,8 +34,7 @@ static unsigned long long CallStrtoullL(const char* nptr, char** endptr, int bas
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetStrtoullL();
-    if (!func)
-    {
+    if (!func) {
         errno = ENOSYS;
         return 0;
     }
@@ -58,8 +57,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value StrtoullLNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     char* endptr = nullptr;
@@ -69,8 +67,7 @@ static napi_value StrtoullLNormal001(napi_env env, napi_callback_info info)
 
 static napi_value StrtoullLNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     char* endptr = nullptr;
@@ -80,8 +77,7 @@ static napi_value StrtoullLNormal002(napi_env env, napi_callback_info info)
 
 static napi_value StrtoullLNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     char* endptr = nullptr;
@@ -91,8 +87,7 @@ static napi_value StrtoullLNormal003(napi_env env, napi_callback_info info)
 
 static napi_value StrtoullLNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
@@ -100,8 +95,7 @@ static napi_value StrtoullLNormal004(napi_env env, napi_callback_info info)
 
 static napi_value StrtoullLAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     char* endptr = nullptr;
@@ -111,8 +105,7 @@ static napi_value StrtoullLAbnormal001(napi_env env, napi_callback_info info)
 
 static napi_value StrtoullLAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     char* endptr = nullptr;
@@ -122,8 +115,7 @@ static napi_value StrtoullLAbnormal002(napi_env env, napi_callback_info info)
 
 static napi_value StrtoullLBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     char* endptr = nullptr;
@@ -133,8 +125,7 @@ static napi_value StrtoullLBoundary001(napi_env env, napi_callback_info info)
 
 static napi_value StrtoullLBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     char* endptr = nullptr;
@@ -144,17 +135,14 @@ static napi_value StrtoullLBoundary002(napi_env env, napi_callback_info info)
 
 static napi_value StrtoullLStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i)
-    {
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
         char* endptr = nullptr;
         unsigned long long ret = CallStrtoullL("12345", &endptr, DECIMAL_BASE, LC_GLOBAL_LOCALE);
-        if (ret != TEST_NUM_VAL)
-        {
+        if (ret != TEST_NUM_VAL) {
             pass = false;
             break;
         }
@@ -164,25 +152,21 @@ static napi_value StrtoullLStable001(napi_env env, napi_callback_info info)
 
 static napi_value StrtoullLThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t)
-    {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]()
         {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
-            {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 char* endptr = nullptr;
                 CallStrtoullL("12345", &endptr, DECIMAL_BASE, LC_GLOBAL_LOCALE);
             }
         });
     }
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);

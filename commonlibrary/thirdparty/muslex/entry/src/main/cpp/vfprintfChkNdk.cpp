@@ -32,8 +32,7 @@ static int CallVfprintfChk(FILE* fp, int flags, const char* format, va_list va)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetVfprintfChk();
-    if (!func)
-    {
+    if (!func) {
         errno = ENOSYS;
         return -1;
     }
@@ -45,8 +44,7 @@ static FILE* CreateSandboxTempFile()
 {
     char tmpPath[] = "/data/storage/el2/base/temp/tmpfile_XXXXXX";
     int fd = mkstemp(tmpPath);
-    if (fd == -1)
-    {
+    if (fd == -1) {
         return nullptr;
     }
     unlink(tmpPath);
@@ -65,14 +63,12 @@ static int VfprintfHelper(FILE* fp, int flags, const char* format, ...)
 static bool IsStubMode()
 {
     auto& loader = LibcFunctionLoader::GetInstance();
-    if (!loader.GetVfprintfChk())
-    {
+    if (!loader.GetVfprintfChk()) {
         return true;
     }
 
     FILE* tmp = CreateSandboxTempFile();
-    if (!tmp)
-    {
+    if (!tmp) {
         return true;
     }
 
@@ -95,13 +91,11 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 /* TC-001: Basic formatting with flag=0 */
 static napi_value VfprintfChkNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
-    if (!tmp)
-    {
+    if (!tmp) {
         return ReturnInt32(env, 0);
     }
     int ret = VfprintfHelper(tmp, 0, "Hello %s", "World");
@@ -112,13 +106,11 @@ static napi_value VfprintfChkNormal001(napi_env env, napi_callback_info info)
 /* TC-002: Basic formatting with flag=1 */
 static napi_value VfprintfChkNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
-    if (!tmp)
-    {
+    if (!tmp) {
         return ReturnInt32(env, 0);
     }
     int ret = VfprintfHelper(tmp, 1, "Number: %d", 42);
@@ -129,13 +121,11 @@ static napi_value VfprintfChkNormal002(napi_env env, napi_callback_info info)
 /* TC-003: Multiple format specifiers */
 static napi_value VfprintfChkNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
-    if (!tmp)
-    {
+    if (!tmp) {
         return ReturnInt32(env, 0);
     }
     int ret = VfprintfHelper(tmp, 0, "%s %d %.2f", "test", 123, 4.56);
@@ -146,13 +136,11 @@ static napi_value VfprintfChkNormal003(napi_env env, napi_callback_info info)
 /* TC-004: Empty format string */
 static napi_value VfprintfChkNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
-    if (!tmp)
-    {
+    if (!tmp) {
         return ReturnInt32(env, 0);
     }
     int ret = VfprintfHelper(tmp, 0, "");
@@ -163,13 +151,11 @@ static napi_value VfprintfChkNormal004(napi_env env, napi_callback_info info)
 /* TC-005: flag=1 vs flag=0 consistency */
 static napi_value VfprintfChkNormal005(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
-    if (!tmp)
-    {
+    if (!tmp) {
         return ReturnInt32(env, 0);
     }
     int ret0 = VfprintfHelper(tmp, 0, "Hello %s", "World");
@@ -182,13 +168,11 @@ static napi_value VfprintfChkNormal005(napi_env env, napi_callback_info info)
 /* TC-006: Percent sign escaping */
 static napi_value VfprintfChkNormal006(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
-    if (!tmp)
-    {
+    if (!tmp) {
         return ReturnInt32(env, 0);
     }
     int ret = VfprintfHelper(tmp, 0, "%% %d%%", 100);
@@ -201,21 +185,18 @@ static napi_value VfprintfChkNormal006(napi_env env, napi_callback_info info)
 /* TC-007: Read-only FILE* should fail (EBADF) */
 static napi_value VfprintfChkAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     char tmpPath[] = "/data/storage/el2/base/temp/tmpfile_XXXXXX";
     int fd = mkstemp(tmpPath);
-    if (fd == -1)
-    {
+    if (fd == -1) {
         return ReturnInt32(env, 0);
     }
     close(fd);
     FILE* tmp = fopen(tmpPath, "r");
     unlink(tmpPath);
-    if (!tmp)
-    {
+    if (!tmp) {
         return ReturnInt32(env, 0);
     }
     errno = 0;
@@ -227,13 +208,11 @@ static napi_value VfprintfChkAbnormal001(napi_env env, napi_callback_info info)
 /* TC-008: NULL format string should fail */
 static napi_value VfprintfChkAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
-    if (!tmp)
-    {
+    if (!tmp) {
         return ReturnInt32(env, 0);
     }
     errno = 0;
@@ -245,13 +224,11 @@ static napi_value VfprintfChkAbnormal002(napi_env env, napi_callback_info info)
 /* TC-009: Format string with missing argument */
 static napi_value VfprintfChkAbnormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
-    if (!tmp)
-    {
+    if (!tmp) {
         return ReturnInt32(env, 0);
     }
     // Missing argument, function should not crash
@@ -263,13 +240,11 @@ static napi_value VfprintfChkAbnormal003(napi_env env, napi_callback_info info)
 /* TC-010: Format string with too many arguments */
 static napi_value VfprintfChkAbnormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
-    if (!tmp)
-    {
+    if (!tmp) {
         return ReturnInt32(env, 0);
     }
     int ret = VfprintfHelper(tmp, 0, "%d", 123, 456, 789);
@@ -282,13 +257,11 @@ static napi_value VfprintfChkAbnormal004(napi_env env, napi_callback_info info)
 /* TC-011: Very long format string */
 static napi_value VfprintfChkBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
-    if (!tmp)
-    {
+    if (!tmp) {
         return ReturnInt32(env, 0);
     }
     int fmtSize = 3000;
@@ -301,13 +274,11 @@ static napi_value VfprintfChkBoundary001(napi_env env, napi_callback_info info)
 /* TC-012: Very long output string */
 static napi_value VfprintfChkBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
-    if (!tmp)
-    {
+    if (!tmp) {
         return ReturnInt32(env, 0);
     }
     int strSize = 2000;
@@ -322,23 +293,19 @@ static napi_value VfprintfChkBoundary002(napi_env env, napi_callback_info info)
 /* TC-013: 10000 repeated calls stability */
 static napi_value VfprintfChkStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP_10000; ++i)
-    {
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i) {
         FILE* tmp = CreateSandboxTempFile();
-        if (!tmp)
-        {
+        if (!tmp) {
             pass = false;
             break;
         }
         int ret = VfprintfHelper(tmp, i % 2, "Test %d", i);
         if (fclose(tmp) != 0) {}
-        if (ret < 0)
-        {
+        if (ret < 0) {
             pass = false;
             break;
         }
@@ -351,39 +318,33 @@ static napi_value VfprintfChkStable001(napi_env env, napi_callback_info info)
 /* TC-014: Multi-thread safety with different files */
 static napi_value VfprintfChkThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     const char* formats[] = {"%s %d", "Number: %d", "Hello %s", "%d + %d = %d"};
 
-    for (int t = 0; t < K_THREAD_COUNT; ++t)
-    {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError, formats]()
         {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
-            {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 FILE* tmp = CreateSandboxTempFile();
-                if (!tmp)
-                {
+                if (!tmp) {
                     hasError = true;
                     return;
                 }
                 int idx = i % 4;
                 int ret = VfprintfHelper(tmp, i % 2, formats[idx], "test", 123);
                 if (fclose(tmp) != 0) {}
-                if (ret < 0)
-                {
+                if (ret < 0) {
                     hasError = true;
                     return;
                 }
             }
         });
     }
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);

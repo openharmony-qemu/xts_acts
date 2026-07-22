@@ -34,8 +34,7 @@ static time_t CallTimelocal(struct tm* tm)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetTimelocal();
-    if (!func)
-    {
+    if (!func) {
         errno = ENOSYS;
         return -1;
     }
@@ -58,8 +57,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value TimelocalNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     struct tm t = {};
@@ -75,8 +73,7 @@ static napi_value TimelocalNormal001(napi_env env, napi_callback_info info)
 
 static napi_value TimelocalNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     struct tm t = {};
@@ -90,8 +87,7 @@ static napi_value TimelocalNormal002(napi_env env, napi_callback_info info)
 
 static napi_value TimelocalNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     struct tm t = {};
@@ -105,8 +101,7 @@ static napi_value TimelocalNormal003(napi_env env, napi_callback_info info)
 
 static napi_value TimelocalNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
@@ -114,8 +109,7 @@ static napi_value TimelocalNormal004(napi_env env, napi_callback_info info)
 
 static napi_value TimelocalAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     struct tm t = {};
@@ -129,8 +123,7 @@ static napi_value TimelocalAbnormal001(napi_env env, napi_callback_info info)
 
 static napi_value TimelocalAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     struct tm t = {};
@@ -143,8 +136,7 @@ static napi_value TimelocalAbnormal002(napi_env env, napi_callback_info info)
 
 static napi_value TimelocalBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     struct tm t = {};
@@ -164,8 +156,7 @@ static napi_value TimelocalBoundary001(napi_env env, napi_callback_info info)
 
 static napi_value TimelocalBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     struct tm t = {};
@@ -179,20 +170,17 @@ static napi_value TimelocalBoundary002(napi_env env, napi_callback_info info)
 
 static napi_value TimelocalStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i)
-    {
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
         struct tm t = {};
         t.tm_year = testYear2026 - TM_YEAR_BASE;
         t.tm_mon = 0;
         t.tm_mday = 1;
         time_t ret = CallTimelocal(&t);
-        if (ret < 0)
-        {
+        if (ret < 0) {
             pass = false;
             break;
         }
@@ -202,33 +190,28 @@ static napi_value TimelocalStable001(napi_env env, napi_callback_info info)
 
 static napi_value TimelocalThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t)
-    {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]()
         {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
-            {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 struct tm tmVal = {};
                 tmVal.tm_year = testYear2026 - TM_YEAR_BASE;
                 tmVal.tm_mon = 0;
                 tmVal.tm_mday = 1;
                 time_t ret = CallTimelocal(&tmVal);
-                if (ret < 0)
-                {
+                if (ret < 0) {
                     hasError = true;
                     return;
                 }
             }
         });
     }
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);

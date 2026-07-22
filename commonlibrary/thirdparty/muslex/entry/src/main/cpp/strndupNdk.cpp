@@ -31,8 +31,7 @@ static char* CallStrndup(const char* s, size_t n)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetStrndup();
-    if (!func)
-    {
+    if (!func) {
         errno = ENOSYS;
         return nullptr;
     }
@@ -43,8 +42,7 @@ static char* CallStrndup(const char* s, size_t n)
 static bool IsStubMode()
 {
     auto& loader = LibcFunctionLoader::GetInstance();
-    if (!loader.GetStrndup())
-    {
+    if (!loader.GetStrndup()) {
         return true;
     }
     errno = 0;
@@ -65,8 +63,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 /* TC-001: Duplicate first 5 chars */
 static napi_value StrndupNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     const char* orig = "Hello World";
@@ -79,8 +76,7 @@ static napi_value StrndupNormal001(napi_env env, napi_callback_info info)
 /* TC-002: n larger than string length */
 static napi_value StrndupNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     const char* orig = "Hi";
@@ -93,8 +89,7 @@ static napi_value StrndupNormal002(napi_env env, napi_callback_info info)
 /* TC-003: n = 0 should return empty string */
 static napi_value StrndupNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     const char* orig = "Hello";
@@ -107,8 +102,7 @@ static napi_value StrndupNormal003(napi_env env, napi_callback_info info)
 /* TC-004: Duplicate string with embedded NUL */
 static napi_value StrndupNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     const char orig[] = "Hello\0World";
@@ -122,8 +116,7 @@ static napi_value StrndupNormal004(napi_env env, napi_callback_info info)
 /* TC-005: n exactly equals string length */
 static napi_value StrndupNormal005(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     const char* orig = "Hello";
@@ -138,8 +131,7 @@ static napi_value StrndupNormal005(napi_env env, napi_callback_info info)
 /* TC-006: NULL input should return NULL */
 static napi_value StrndupAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     char* result = CallStrndup(nullptr, 5);
@@ -149,8 +141,7 @@ static napi_value StrndupAbnormal001(napi_env env, napi_callback_info info)
 /* TC-007: n = SIZE_MAX (should handle gracefully) */
 static napi_value StrndupAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     const char* orig = "test";
@@ -165,8 +156,7 @@ static napi_value StrndupAbnormal002(napi_env env, napi_callback_info info)
 /* TC-008: n = 1 with empty string */
 static napi_value StrndupBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     const char* orig = "";
@@ -179,8 +169,7 @@ static napi_value StrndupBoundary001(napi_env env, napi_callback_info info)
 /* TC-009: Very long string with n smaller than length */
 static napi_value StrndupBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::string longStr(K_LONG_STR_SIZE, 'a');
@@ -195,16 +184,13 @@ static napi_value StrndupBoundary002(napi_env env, napi_callback_info info)
 /* TC-010: 10000 repeated calls stability */
 static napi_value StrndupStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP_10000; ++i)
-    {
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i) {
         char* dup = CallStrndup("Hello World", 5);
-        if (dup == nullptr || strcmp(dup, "Hello") != 0)
-        {
+        if (dup == nullptr || strcmp(dup, "Hello") != 0) {
             pass = false;
             break;
         }
@@ -218,25 +204,21 @@ static napi_value StrndupStable001(napi_env env, napi_callback_info info)
 /* TC-011: Multi-thread safety */
 static napi_value StrndupThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     const char* strings[] = {"Hello", "World", "Test", "Strndup", "Thread"};
 
-    for (int t = 0; t < K_THREAD_COUNT; ++t)
-    {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError, strings]()
         {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
-            {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 int idx = i % 5;
                 int len = (i % 3) + 2;
                 char* dup = CallStrndup(strings[idx], len);
-                if (dup == nullptr)
-                {
+                if (dup == nullptr) {
                     hasError = true;
                     return;
                 }
@@ -244,8 +226,7 @@ static napi_value StrndupThread001(napi_env env, napi_callback_info info)
             }
         });
     }
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);
