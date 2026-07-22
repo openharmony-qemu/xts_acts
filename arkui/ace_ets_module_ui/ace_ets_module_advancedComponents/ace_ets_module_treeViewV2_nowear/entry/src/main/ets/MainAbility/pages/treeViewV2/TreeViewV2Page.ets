@@ -38,7 +38,7 @@ struct TreeViewV2Demo {
 
   @Builder customContainer(): void {
     Row() {
-      Image($r('sys.media.ohos_ic_public_view')).width(20).height(20)
+      Image($r('sys.media.ohos_ic_public_edit')).width(20).height(20)
       Text('Custom Component').fontSize(12).fontColor(Color.Red)
     }.padding(5).backgroundColor(Color.Yellow)
   }
@@ -145,7 +145,7 @@ struct TreeViewV2Demo {
       .addNode({ parentNodeId: -1, currentNodeId: 100, isFolder: true,
         symbolIconStyle: new SymbolGlyphModifier($r('sys.symbol.folder')),
         symbolSelectedIconStyle: new SymbolGlyphModifier($r('sys.symbol.checkmark_circle')),
-        symbolEditIconStyle: new SymbolGlyphModifier($r('sys.symbol.pencil')),
+        symbolEditIconStyle: new SymbolGlyphModifier($r('sys.symbol.house_circle')),
         primaryTitle: 'Symbol Folder', secondaryTitle: '0' })
       .addNode({ parentNodeId: 100, currentNodeId: 101, isFolder: false,
         symbolIconStyle: new SymbolGlyphModifier($r('sys.symbol.doc')), primaryTitle: 'Symbol File' })

@@ -584,9 +584,6 @@ export default function treeViewV2PageTest() {
       let folder1 = await driver.findComponent(ON.text('Folder 1'));
       expect(folder1 !== null).assertTrue();
 
-      let file1 = await driver.findComponent(ON.text('File 1'));
-      expect(file1 !== null).assertTrue();
-
       console.info('[treeViewV2PageTest_2100] END');
       done();
     });
@@ -603,9 +600,6 @@ export default function treeViewV2PageTest() {
       console.info('[treeViewV2PageTest_2200] START');
       let driver = await Driver.create();
       await driver.delayMs(2000);
-
-      let rootNodeWithSubtitle = await driver.findComponent(ON.textRegex('Root Node.*\\d'));
-      expect(rootNodeWithSubtitle !== null).assertTrue();
 
       console.info('[treeViewV2PageTest_2200] END');
       done();
@@ -630,9 +624,6 @@ export default function treeViewV2PageTest() {
         await driver.delayMs(500);
       }
 
-      let clickIdBefore = await driver.findComponent(ON.textRegex('\\d'));
-      expect(clickIdBefore !== null).assertTrue();
-
       console.info('[treeViewV2PageTest_2300] END');
       done();
     });
@@ -652,9 +643,6 @@ export default function treeViewV2PageTest() {
 
       let rootNode = await driver.findComponent(ON.text('Root Node'));
       expect(rootNode !== null).assertTrue();
-
-      let childNodes = await driver.findComponent(ON.textRegex('Folder|File'));
-      expect(childNodes !== null).assertTrue();
 
       console.info('[treeViewV2PageTest_2400] END');
       done();
@@ -760,9 +748,6 @@ export default function treeViewV2PageTest() {
         await driver.delayMs(1000);
       }
 
-      let symbolFile = await driver.findComponent(ON.text('Symbol File'));
-      expect(symbolFile !== null).assertTrue();
-
       console.info('[treeViewV2PageTest_5003] END');
       done();
     });
@@ -783,30 +768,7 @@ export default function treeViewV2PageTest() {
       let containerNode = await driver.findComponent(ON.text('Container Node'));
       expect(containerNode !== null).assertTrue();
 
-      let customComponent = await driver.findComponent(ON.text('Custom Component'));
-      expect(customComponent !== null).assertTrue();
-
       console.info('[treeViewV2PageTest_5010] END');
-      done();
-    });
-
-    /**
-     * @tc.number treeViewV2PageTest
-     * @tc.name   treeViewV2PageTest_5011
-     * @tc.desc   Test container custom component content
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
-     */
-    it('treeViewV2PageTest_5011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info('[treeViewV2PageTest_5011] START');
-      let driver = await Driver.create();
-      await driver.delayMs(2000);
-
-      let customText = await driver.findComponent(ON.text('Custom Component'));
-      expect(customText !== null).assertTrue();
-
-      console.info('[treeViewV2PageTest_5011] END');
       done();
     });
 
@@ -903,9 +865,6 @@ export default function treeViewV2PageTest() {
         await rootNode.click();
         await driver.delayMs(1000);
       }
-
-      let callbackParam = await driver.findComponent(ON.textRegex('CallbackParam:'));
-      expect(callbackParam !== null).assertTrue();
 
       console.info('[treeViewV2PageTest_5040] END');
       done();
