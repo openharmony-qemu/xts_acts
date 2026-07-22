@@ -1989,3 +1989,1987 @@ export default function AssignmentOperatorTest() {
       x &&= "new"
       expect(x).assertEqual("")
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_1650
+     * @tc.name testAssignmentOperator155
+     * @tc.desc Verify 左操作数为null时不赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number | null = null
+      x &&= 42
+      expect(x).assertNull()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_1660
+     * @tc.name testAssignmentOperator156
+     * @tc.desc Verify 左操作数为undefined时不赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number | undefined = undefined
+      x &&= 42
+      expect(x).assertUndefined()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_1670
+     * @tc.name testAssignmentOperator157
+     * @tc.desc Verify 左操作数为NaN时不赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = NaN
+      x &&= 42
+      expect(Number.isNaN(x)).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_1680
+     * @tc.name testAssignmentOperator158
+     * @tc.desc Verify 左操作数为falsy时右操作数函数不被调用
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let called: boolean = false
+      let x: number = 0
+      x &&= (() => {
+        called = true;
+        return 42
+      })()
+      expect(called).assertFalse()
+      expect(x).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_1690
+     * @tc.name testAssignmentOperator159
+     * @tc.desc Verify 左操作数为truthy时右操作数函数被调用
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let called: boolean = false
+      let x: number = 1
+      x &&= (() => {
+        called = true;
+        return 42
+      })()
+      expect(called).assertTrue()
+      expect(x).assertEqual(42)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_1700
+     * @tc.name testAssignmentOperator160
+     * @tc.desc Verify 左操作数为0时，赋值为右操作数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 0
+      x ||= 10
+      expect(x).assertEqual(10)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_1710
+     * @tc.name testAssignmentOperator161
+     * @tc.desc Verify 左操作数为空字符串时，赋值为右操作数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: string = ""
+      x ||= "default"
+      expect(x).assertEqual("default")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_1720
+     * @tc.name testAssignmentOperator162
+     * @tc.desc Verify 左操作数为false时，赋值为右操作数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: boolean = false
+      x ||= true
+      expect(x).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_1730
+     * @tc.name testAssignmentOperator163
+     * @tc.desc Verify 左操作数为null时，赋值为右操作数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number | null = null
+      x ||= 42
+      expect(x).assertEqual(42)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_1740
+     * @tc.name testAssignmentOperator164
+     * @tc.desc Verify 左操作数为undefined时，赋值为右操作数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number | undefined = undefined
+      x ||= 42
+      expect(x).assertEqual(42)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_1750
+     * @tc.name testAssignmentOperator165
+     * @tc.desc Verify 左操作数为NaN时，赋值为右操作数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = NaN
+      x ||= 42
+      expect(x).assertEqual(42)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_1760
+     * @tc.name testAssignmentOperator166
+     * @tc.desc Verify 左操作数为非零数字时保持原值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 42
+      x ||= 99
+      expect(x).assertEqual(42)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_1770
+     * @tc.name testAssignmentOperator167
+     * @tc.desc Verify 左操作数为非空字符串时保持原值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: string = "hello"
+      x ||= "world"
+      expect(x).assertEqual("hello")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_1780
+     * @tc.name testAssignmentOperator168
+     * @tc.desc Verify 左操作数为truthy时右操作数函数不被调用
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let called: boolean = false
+      let x: number = 1
+      x ||= (() => {
+        called = true;
+        return 42
+      })()
+      expect(called).assertFalse()
+      expect(x).assertEqual(1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_1790
+     * @tc.name testAssignmentOperator169
+     * @tc.desc Verify 左操作数为null时，赋值为右操作数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number | null = null
+      x ??= 42
+      expect(x).assertEqual(42)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_1800
+     * @tc.name testAssignmentOperator170
+     * @tc.desc Verify 左操作数为undefined时，赋值为右操作数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number | undefined = undefined
+      x ??= 42
+      expect(x).assertEqual(42)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_1810
+     * @tc.name testAssignmentOperator171
+     * @tc.desc Verify 左操作数为0时保持原值（??=与||=的区别）
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 0
+      x ??= 42
+      expect(x).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_1820
+     * @tc.name testAssignmentOperator172
+     * @tc.desc Verify 左操作数为空字符串时保持原值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: string = ""
+      x ??= "default"
+      expect(x).assertEqual("")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_1830
+     * @tc.name testAssignmentOperator173
+     * @tc.desc Verify 左操作数为false时保持原值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: boolean = false
+      x ??= true
+      expect(x).assertFalse()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_1840
+     * @tc.name testAssignmentOperator174
+     * @tc.desc Verify 左操作数为NaN时保持原值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = NaN
+      x ??= 42
+      expect(Number.isNaN(x)).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_1850
+     * @tc.name testAssignmentOperator175
+     * @tc.desc Verify 左操作数为非空对象时保持原值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 42
+      x ??= 99
+      expect(x).assertEqual(42)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_1860
+     * @tc.name testAssignmentOperator176
+     * @tc.desc Verify 左操作数非null/undefined时右操作数函数不被调用
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let called: boolean = false
+      let x: number = 0
+      x ??= (() => {
+        called = true;
+        return 42
+      })()
+      expect(called).assertFalse()
+      expect(x).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_1870
+     * @tc.name testAssignmentOperator177
+     * @tc.desc Verify 左操作数为null时右操作数函数被调用
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let called: boolean = false
+      let x: number | null = null
+      x ??= (() => {
+        called = true;
+        return 42
+      })()
+      expect(called).assertTrue()
+      expect(x).assertEqual(42)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2110
+     * @tc.name testAssignmentOperator201
+     * @tc.desc Verify 复合赋值优先级低于算术运算
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 5
+      x += 3 * 2
+      expect(x).assertEqual(11)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2120
+     * @tc.name testAssignmentOperator202
+     * @tc.desc Verify 赋值运算从右到左结合
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: number, b: number
+      a = b = 5 + 3
+      expect(a).assertEqual(8)
+      expect(b).assertEqual(8)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2130
+     * @tc.name testAssignmentOperator203
+     * @tc.desc Verify 多次复合赋值累加
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 1
+      x += 1
+      x += 1
+      x += 1
+      expect(x).assertEqual(4)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2140
+     * @tc.name testAssignmentOperator204
+     * @tc.desc Verify 混合复合赋值运算
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 10
+      x += 5
+      x *= 2
+      x -= 10
+      expect(x).assertEqual(20)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2150
+     * @tc.name testAssignmentOperator205
+     * @tc.desc Verify 复合赋值表达式返回赋值后的值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 5
+      let result = (x += 3)
+      expect(result).assertEqual(8)
+      expect(x).assertEqual(8)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2160
+     * @tc.name testAssignmentOperator206
+     * @tc.desc Verify 逻辑赋值表达式返回值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number | null = null
+      let result = (x ??= 42)
+      expect(result).assertEqual(42)
+      expect(x).assertEqual(42)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2170
+     * @tc.name testAssignmentOperator207
+     * @tc.desc Verify 对象属性基本赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: Record<string, number> = {}
+      obj.key = 42
+      expect(obj.key).assertEqual(42)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2200
+     * @tc.name testAssignmentOperator210
+     * @tc.desc Verify 数组元素基本赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: number[] = [1, 2, 3]
+      arr[1] = 42
+      expect(arr[1]).assertEqual(42)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2210
+     * @tc.name testAssignmentOperator211
+     * @tc.desc Verify 数组元素复合赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: number[] = [1, 2, 3]
+      arr[0] += 10
+      expect(arr[0]).assertEqual(11)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2220
+     * @tc.name testAssignmentOperator212
+     * @tc.desc Verify 数组越界索引赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: number[] = [1, 2, 3]
+      arr[10] = 99
+      expect(arr[10]).assertEqual(99)
+      expect(arr.length).assertEqual(11)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2230
+     * @tc.name testAssignmentOperator213
+     * @tc.desc Verify 十六进制正数赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 0xFF
+      expect(x).assertEqual(255)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2240
+     * @tc.name testAssignmentOperator214
+     * @tc.desc Verify 十六进制大数赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 0x7FFFFFFF
+      expect(x).assertEqual(2147483647)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2250
+     * @tc.name testAssignmentOperator215
+     * @tc.desc Verify 十六进制复合赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 0x10
+      x += 0x0F
+      expect(x).assertEqual(31)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2260
+     * @tc.name testAssignmentOperator216
+     * @tc.desc Verify 八进制赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 0o17
+      expect(x).assertEqual(15)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2270
+     * @tc.name testAssignmentOperator217
+     * @tc.desc Verify 二进制赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 0b1010
+      expect(x).assertEqual(10)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2280
+     * @tc.name testAssignmentOperator218
+     * @tc.desc Verify 二进制位运算复合赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 0b1100
+      x &= 0b1010
+      expect(x).assertEqual(8)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2290
+     * @tc.name testAssignmentOperator219
+     * @tc.desc Verify 科学计数法赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 1e3
+      expect(x).assertEqual(1000)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2300
+     * @tc.name testAssignmentOperator220
+     * @tc.desc Verify 负指数科学计数法赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 1e-7
+      expect(x).assertEqual(0.0000001)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2310
+     * @tc.name testAssignmentOperator221
+     * @tc.desc Verify 大指数科学计数法赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 1.5e308
+      expect(x).assertEqual(1.5e308)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2320
+     * @tc.name testAssignmentOperator222
+     * @tc.desc Verify 指数复合赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 1e2
+      x *= 1e1
+      expect(x).assertEqual(1000)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2330
+     * @tc.name testAssignmentOperator223
+     * @tc.desc Verify 0.1 + 0.2浮点精度问题
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator223', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 0.1
+      x += 0.2
+      expect(x).assertEqual(0.30000000000000004)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2340
+     * @tc.name testAssignmentOperator224
+     * @tc.desc Verify 0.1 + 0.2不等于0.3
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator224', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 0.1
+      x += 0.2
+      expect(x === 0.3).assertFalse()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2350
+     * @tc.name testAssignmentOperator225
+     * @tc.desc Verify 大整数精度丢失
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator225', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 9007199254740993
+      expect(x).assertEqual(9007199254740992)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2360
+     * @tc.name testAssignmentOperator226
+     * @tc.desc Verify 大整数复合赋值精度丢失
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator226', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = Number.MAX_SAFE_INTEGER
+      x += 2
+      expect(x).assertEqual(Number.MAX_SAFE_INTEGER + 2)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2370
+     * @tc.name testAssignmentOperator227
+     * @tc.desc Verify Number.EPSILON加法赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator227', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 1.0
+      x += Number.EPSILON
+      expect(x).assertEqual(1.0 + Number.EPSILON)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2380
+     * @tc.name testAssignmentOperator228
+     * @tc.desc Verify 极小浮点数下溢
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator228', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = Number.MIN_VALUE
+      x /= 2
+      expect(x).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2400
+     * @tc.name testAssignmentOperator230
+     * @tc.desc Verify 最小正规格化浮点数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 2.2250738585072014e-308
+      expect(x > 0).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2410
+     * @tc.name testAssignmentOperator231
+     * @tc.desc Verify 最小次规格化浮点数赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator231', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 5e-324
+      expect(x > 0).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2460
+     * @tc.name testAssignmentOperator236
+     * @tc.desc Verify string += number拼接
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator236', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: string = "count: "
+      x += 42
+      expect(x).assertEqual("count: 42")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2470
+     * @tc.name testAssignmentOperator237
+     * @tc.desc Verify string += boolean拼接
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator237', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: string = "flag: "
+      x += true
+      expect(x).assertEqual("flag: true")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2480
+     * @tc.name testAssignmentOperator238
+     * @tc.desc Verify string += null拼接（使用ESObject绕过类型检查）
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator238', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: string = "val: "
+      x += (null as ESObject)
+      expect(x).assertEqual("val: null")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2490
+     * @tc.name testAssignmentOperator239
+     * @tc.desc Verify string += undefined拼接
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator239', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: string = "val: "
+      x += (undefined as ESObject)
+      expect(x).assertEqual("val: undefined")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2500
+     * @tc.name testAssignmentOperator240
+     * @tc.desc Verify string += 对象拼接
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: string = "obj: "
+      x += ({ a: 1 } as ESObject)
+      expect(x).assertEqual("obj: [object Object]")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2510
+     * @tc.name testAssignmentOperator241
+     * @tc.desc Verify string += 数组拼接
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator241', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: string = "arr: "
+      x += ([1, 2, 3] as ESObject)
+      expect(x).assertEqual("arr: 1,2,3")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2520
+     * @tc.name testAssignmentOperator242
+     * @tc.desc Verify string += NaN拼接
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator242', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: string = "result: "
+      x += (NaN as ESObject)
+      expect(x).assertEqual("result: NaN")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2530
+     * @tc.name testAssignmentOperator243
+     * @tc.desc Verify string += Infinity拼接
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator243', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: string = "result: "
+      x += (Infinity as ESObject)
+      expect(x).assertEqual("result: Infinity")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2540
+     * @tc.name testAssignmentOperator244
+     * @tc.desc Verify Number()转换string后赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator244', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = Number("42")
+      expect(x).assertEqual(42)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2550
+     * @tc.name testAssignmentOperator245
+     * @tc.desc Verify Number()转换非数字字符串
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator245', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = Number("abc")
+      expect(Number.isNaN(x)).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2560
+     * @tc.name testAssignmentOperator246
+     * @tc.desc Verify Number()转换空字符串
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator246', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = Number("")
+      expect(x).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2570
+     * @tc.name testAssignmentOperator247
+     * @tc.desc Verify Number()转换boolean
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator247', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = Number(true)
+      expect(x).assertEqual(1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2580
+     * @tc.name testAssignmentOperator248
+     * @tc.desc Verify String()转换number后赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator248', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: string = String(42)
+      expect(x).assertEqual("42")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2590
+     * @tc.name testAssignmentOperator249
+     * @tc.desc Verify String()转换NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator249', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: string = String(NaN)
+      expect(x).assertEqual("NaN")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2600
+     * @tc.name testAssignmentOperator250
+     * @tc.desc Verify String()转换Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: string = String(Infinity)
+      expect(x).assertEqual("Infinity")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2610
+     * @tc.name testAssignmentOperator251
+     * @tc.desc Verify String()转换null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator251', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: string = String(null as ESObject)
+      expect(x).assertEqual("null")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2620
+     * @tc.name testAssignmentOperator252
+     * @tc.desc Verify Boolean()转换number（0为false）
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator252', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: boolean = Boolean(0)
+      expect(x).assertFalse()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2630
+     * @tc.name testAssignmentOperator253
+     * @tc.desc Verify Boolean()转换number（非零为true）
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator253', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: boolean = Boolean(42)
+      expect(x).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2640
+     * @tc.name testAssignmentOperator254
+     * @tc.desc Verify Boolean()转换空字符串
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator254', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: boolean = Boolean("")
+      expect(x).assertFalse()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2650
+     * @tc.name testAssignmentOperator255
+     * @tc.desc Verify Boolean()转换非空字符串
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator255', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: boolean = Boolean("hello")
+      expect(x).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2680
+     * @tc.name testAssignmentOperator258
+     * @tc.desc Verify const数组元素可以修改（引用不变）
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator258', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[] = [1, 2, 3]
+      arr[0] = 99
+      expect(arr[0]).assertEqual(99)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2690
+     * @tc.name testAssignmentOperator259
+     * @tc.desc Verify const数组push操作合法
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator259', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[] = [1, 2]
+      arr.push(3)
+      expect(arr.length).assertEqual(3)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2700
+     * @tc.name testAssignmentOperator260
+     * @tc.desc Verify const对象属性可以修改
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: ESObject = { a: 1 }
+      obj.a = 42
+      obj.b = 99
+      expect(obj.a).assertEqual(42)
+      expect(obj.b).assertEqual(99)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2710
+     * @tc.name testAssignmentOperator261
+     * @tc.desc Verify const对象属性复合赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator261', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: ESObject = { count: 5 }
+      obj.count += 10
+      expect(obj.count).assertEqual(15)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2720
+     * @tc.name testAssignmentOperator262
+     * @tc.desc Verify let块级作用域内重新赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator262', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 1
+      {
+        let x: number = 2
+        expect(x).assertEqual(2)
+      }
+      expect(x).assertEqual(1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2730
+     * @tc.name testAssignmentOperator263
+     * @tc.desc Verify let在循环中每次迭代新作用域
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator263', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let funcs: (() => number)[] = []
+      for (let i = 0; i < 3; i++) {
+        funcs.push(() => i)
+      }
+      expect(funcs[0]()).assertEqual(0)
+      expect(funcs[1]()).assertEqual(1)
+      expect(funcs[2]()).assertEqual(2)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2740
+     * @tc.name testAssignmentOperator264
+     * @tc.desc Verify let在if块中赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator264', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 10
+      if (true) {
+        let x: number = 20
+        x += 5
+        expect(x).assertEqual(25)
+      }
+      expect(x).assertEqual(10)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2750
+     * @tc.name testAssignmentOperator265
+     * @tc.desc Verify 外层变量在块内修改
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator265', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 10
+      {
+        x = 20
+      }
+      expect(x).assertEqual(20)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2760
+     * @tc.name testAssignmentOperator266
+     * @tc.desc Verify 通过setter赋值触发自定义逻辑
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator266', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let stored: number = 0
+      const obj: ESObject = {
+        set value(v: number) {
+          stored = v * 2
+        }
+      }
+      obj.value = 5
+      expect(stored).assertEqual(10)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2770
+     * @tc.name testAssignmentOperator267
+     * @tc.desc Verify setter中赋值验证范围
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator267', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let stored: number = 0
+      const obj: ESObject = {
+        set val(v: number) {
+          stored = v > 100 ? 100 : v
+        }
+      }
+      obj.val = 200
+      expect(stored).assertEqual(100)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2780
+     * @tc.name testAssignmentOperator268
+     * @tc.desc Verify getter读取setter设置的值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator268', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let _data: number = 0
+      const obj: ESObject = {
+        get data(): number {
+          return _data
+        },
+        set data(v: number) {
+          _data = v + 1
+        }
+      }
+      obj.data = 10
+      expect(obj.data).assertEqual(11)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2790
+     * @tc.name testAssignmentOperator269
+     * @tc.desc Verify 复合赋值通过setter触发
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator269', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let _count: number = 0
+      const obj: ESObject = {
+        get count(): number {
+          return _count
+        },
+        set count(v: number) {
+          _count = v
+        }
+      }
+      obj.count = 5
+      obj.count += 3
+      expect(obj.count).assertEqual(8)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2800
+     * @tc.name testAssignmentOperator270
+     * @tc.desc Verify 类实例通过setter赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let temp = new Temperature270()
+      temp.celsius = 25
+      expect(temp.celsius).assertEqual(25)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2810
+     * @tc.name testAssignmentOperator271
+     * @tc.desc Verify 类setter中进行单位转换
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator271', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let temp = new Temperature271()
+      temp.fahrenheit = 212
+      expect(temp.fahrenheit).assertEqual(212)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2820
+     * @tc.name testAssignmentOperator272
+     * @tc.desc Verify 类属性复合赋值通过setter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator272', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let c = new Counter272()
+      c.value = 10
+      c.value += 5
+      c.value *= 2
+      expect(c.value).assertEqual(30)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2840
+     * @tc.name testAssignmentOperator274
+     * @tc.desc Verify 条件为true时赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator274', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let age: number = 20
+      let status: string = age >= 18 ? "adult" : "minor"
+      expect(status).assertEqual("adult")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2850
+     * @tc.name testAssignmentOperator275
+     * @tc.desc Verify 条件为false时赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator275', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let age: number = 15
+      let status: string = age >= 18 ? "adult" : "minor"
+      expect(status).assertEqual("minor")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2860
+     * @tc.name testAssignmentOperator276
+     * @tc.desc Verify 三元赋值number
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator276', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let flag: boolean = true
+      let x: number = flag ? 1 : 0
+      expect(x).assertEqual(1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2870
+     * @tc.name testAssignmentOperator277
+     * @tc.desc Verify 三元嵌套赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator277', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let score: number = 75
+      let grade: string = score >= 90 ? "A" : score >= 60 ? "B" : "C"
+      expect(grade).assertEqual("B")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2880
+     * @tc.name testAssignmentOperator278
+     * @tc.desc Verify 三元赋值对象
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator278', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let isAdmin: boolean = true
+      let config: ESObject = isAdmin ? { role: "admin", level: 5 } : { role: "user", level: 1 }
+      expect(config.role).assertEqual("admin")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2890
+     * @tc.name testAssignmentOperator279
+     * @tc.desc Verify += 三元表达式结果
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator279', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 5
+      let bonus: boolean = true
+      x += bonus ? 10 : 0
+      expect(x).assertEqual(15)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2900
+     * @tc.name testAssignmentOperator280
+     * @tc.desc Verify *= 三元表达式结果
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 3
+      let double: boolean = true
+      x *= double ? 2 : 1
+      expect(x).assertEqual(6)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2910
+     * @tc.name testAssignmentOperator281
+     * @tc.desc Verify 逻辑与短路返回赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator281', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number | undefined = undefined
+      let result: number = x && (x as number) || 0
+      expect(result).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2920
+     * @tc.name testAssignmentOperator282
+     * @tc.desc Verify 逻辑或设置默认值赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator282', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: string | undefined = undefined
+      let name: string = input || "default"
+      expect(name).assertEqual("default")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2930
+     * @tc.name testAssignmentOperator283
+     * @tc.desc Verify 逻辑或设置默认值（实际值优先）
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator283', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: string = "hello"
+      let name: string = input || "default"
+      expect(name).assertEqual("hello")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2940
+     * @tc.name testAssignmentOperator284
+     * @tc.desc Verify nullish合并设置默认值赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator284', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: number | null = null
+      let val: number = input ?? 0
+      expect(val).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2950
+     * @tc.name testAssignmentOperator285
+     * @tc.desc Verify nullish合并（0不是nullish，保持0）
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator285', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: number | null = 0
+      let val: number = input ?? 99
+      expect(val).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2960
+     * @tc.name testAssignmentOperator286
+     * @tc.desc Verify 展开数组到新数组
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator286', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: number[] = [1, 2, 3]
+      let b: number[] = [...a, 4, 5]
+      expect(b.length).assertEqual(5)
+      expect(b[0]).assertEqual(1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2970
+     * @tc.name testAssignmentOperator287
+     * @tc.desc Verify 展开多个数组
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator287', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: number[] = [1, 2]
+      let b: number[] = [3, 4]
+      let c: number[] = [...a, ...b]
+      expect(c.length).assertEqual(4)
+      expect(c[2]).assertEqual(3)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2980
+     * @tc.name testAssignmentOperator288
+     * @tc.desc Verify 展开空数组
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator288', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: number[] = []
+      let b: number[] = [...a, 1]
+      expect(b.length).assertEqual(1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_2990
+     * @tc.name testAssignmentOperator289
+     * @tc.desc Verify 展开后在头部插入
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator289', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: number[] = [2, 3]
+      let b: number[] = [1, ...a]
+      expect(b[0]).assertEqual(1)
+      expect(b[1]).assertEqual(2)
+      expect(b[2]).assertEqual(3)
+    });
+
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3050
+     * @tc.name testAssignmentOperator295
+     * @tc.desc Verify for循环计数器自增赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator295', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: number = 0
+      for (let i = 1; i <= 5; i++) {
+        sum += i
+      }
+      expect(sum).assertEqual(15)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3060
+     * @tc.name testAssignmentOperator296
+     * @tc.desc Verify for循环计数器自减赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator296', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let product: number = 1
+      for (let i = 5; i >= 1; i--) {
+        product *= i
+      }
+      expect(product).assertEqual(120)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3070
+     * @tc.name testAssignmentOperator297
+     * @tc.desc Verify 循环体内复合赋值累加
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator297', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let total: number = 100
+      for (let i = 0; i < 3; i++) {
+        total -= 10
+      }
+      expect(total).assertEqual(70)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3080
+     * @tc.name testAssignmentOperator298
+     * @tc.desc Verify for循环填充数组
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator298', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: number[] = []
+      for (let i = 0; i < 5; i++) {
+        arr[i] = i * i
+      }
+      expect(arr[3]).assertEqual(9)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3090
+     * @tc.name testAssignmentOperator299
+     * @tc.desc Verify 循环修改数组元素
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator299', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: number[] = [1, 2, 3, 4, 5]
+      for (let i = 0; i < arr.length; i++) {
+        arr[i] *= 2
+      }
+      expect(arr[2]).assertEqual(6)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3100
+     * @tc.name testAssignmentOperator300
+     * @tc.desc Verify for...of迭代数组赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: number[] = [10, 20, 30]
+      let sum: number = 0
+      for (const val of arr) {
+        sum += val
+      }
+      expect(sum).assertEqual(60)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3110
+     * @tc.name testAssignmentOperator301
+     * @tc.desc Verify for...of迭代字符串
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: string = ""
+      for (const ch of "ABC") {
+        result += ch
+      }
+      expect(result).assertEqual("ABC")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3150
+     * @tc.name testAssignmentOperator305
+     * @tc.desc Verify while循环中条件赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator305', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let data: number[] = [1, 2, 3]
+      let i: number = 0
+      let sum: number = 0
+      while (i < data.length) {
+        sum += data[i]
+        i++
+      }
+      expect(sum).assertEqual(6)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3160
+     * @tc.name testAssignmentOperator306
+     * @tc.desc Verify do-while循环中赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator306', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 0
+      do {
+        x += 5
+      } while (x < 20)
+      expect(x).assertEqual(20)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3170
+     * @tc.name testAssignmentOperator307
+     * @tc.desc Verify 闭包捕获并修改外部变量
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator307', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let count: number = 0
+      let increment = () => {
+        count++
+      }
+      increment()
+      increment()
+      increment()
+      expect(count).assertEqual(3)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3180
+     * @tc.name testAssignmentOperator308
+     * @tc.desc Verify 闭包中复合赋值外部变量
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator308', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let total: number = 10
+      let addAndReturn = (n: number): number => {
+        total += n
+        return total
+      }
+      let r1 = addAndReturn(5)
+      let r2 = addAndReturn(3)
+      expect(r1).assertEqual(15)
+      expect(r2).assertEqual(18)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3190
+     * @tc.name testAssignmentOperator309
+     * @tc.desc Verify 多个闭包共享同一变量
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator309', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: number = 0
+      let set = (n: number) => {
+        val = n
+      }
+      let get = (): number => val
+      set(42)
+      expect(get()).assertEqual(42)
+      set(99)
+      expect(get()).assertEqual(99)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3350
+     * @tc.name testAssignmentOperator325
+     * @tc.desc Verify 使用变量作为属性名赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator325', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let key: string = "dynamic"
+      let obj: ESObject = {}
+      obj[key] = 42
+      expect(obj.dynamic).assertEqual(42)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3360
+     * @tc.name testAssignmentOperator326
+     * @tc.desc Verify 使用表达式作为属性名赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator326', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: ESObject = {}
+      let i: number = 5
+      obj["key" + i] = "val"
+      expect(obj.key5).assertEqual("val")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3370
+     * @tc.name testAssignmentOperator327
+     * @tc.desc Verify 使用数字作为属性名赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator327', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: ESObject = {}
+      let idx: number = 42
+      obj[idx] = "found"
+      expect(obj[42]).assertEqual("found")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3380
+     * @tc.name testAssignmentOperator328
+     * @tc.desc Verify 计算属性复合赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator328', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let key: string = "count"
+      let obj: ESObject = { count: 5 }
+      obj[key] += 10
+      expect(obj.count).assertEqual(15)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3430
+     * @tc.name testAssignmentOperator333
+     * @tc.desc Verify 类静态属性基本赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator333', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      Config333.version = "2.0"
+      expect(Config333.version).assertEqual("2.0")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3440
+     * @tc.name testAssignmentOperator334
+     * @tc.desc Verify 类静态属性复合赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator334', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      Counter334.count += 5
+      Counter334.count += 3
+      expect(Counter334.count).assertEqual(8)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3450
+     * @tc.name testAssignmentOperator335
+     * @tc.desc Verify 静态属性在所有实例间共享
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator335', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      new Instance335()
+      new Instance335()
+      new Instance335()
+      expect(Instance335.total).assertEqual(3)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3460
+     * @tc.name testAssignmentOperator336
+     * @tc.desc Verify 构造函数中实例属性赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator336', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let p = new Point336(3, 4)
+      expect(p.x).assertEqual(3)
+      expect(p.y).assertEqual(4)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3470
+     * @tc.name testAssignmentOperator337
+     * @tc.desc Verify 实例属性复合赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator337', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let acc = new Bank337()
+      acc.balance += 100
+      acc.balance += 50
+      acc.balance -= 30
+      expect(acc.balance).assertEqual(120)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3480
+     * @tc.name testAssignmentOperator338
+     * @tc.desc Verify 实例属性字符串拼接赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator338', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let logger = new Logger338()
+      logger.log += "[INFO] "
+      logger.log += "Started"
+      expect(logger.log).assertEqual("[INFO] Started")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3500
+     * @tc.name testAssignmentOperator340
+     * @tc.desc Verify Map.set基本赋值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator340', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let m = new Map<string, number>()
+      m.set("a", 1)
+      m.set("b", 2)
+      expect(m.get("a")).assertEqual(1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3510
+     * @tc.name testAssignmentOperator341
+     * @tc.desc Verify Map.set覆盖已有键
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator341', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let m = new Map<string, number>()
+      m.set("a", 1)
+      m.set("a", 99)
+      expect(m.get("a")).assertEqual(99)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3520
+     * @tc.name testAssignmentOperator342
+     * @tc.desc Verify Map.set返回Map实例（可链式调用）
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator342', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let m = new Map<string, number>()
+      m.set("a", 1).set("b", 2).set("c", 3)
+      expect(m.size).assertEqual(3)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3540
+     * @tc.name testAssignmentOperator344
+     * @tc.desc Verify Set.add基本操作
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator344', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s = new Set<number>()
+      s.add(1)
+      s.add(2)
+      s.add(3)
+      expect(s.size).assertEqual(3)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3550
+     * @tc.name testAssignmentOperator345
+     * @tc.desc Verify Set.add去重
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator345', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s = new Set<number>()
+      s.add(1)
+      s.add(1)
+      s.add(1)
+      expect(s.size).assertEqual(1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3560
+     * @tc.name testAssignmentOperator346
+     * @tc.desc Verify Set.add链式调用
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator346', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s = new Set<number>()
+      s.add(1).add(2).add(3)
+      expect(s.size).assertEqual(3)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3570
+     * @tc.name testAssignmentOperator347
+     * @tc.desc Verify Set.add NaN去重（NaN在Set中视为相同）
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator347', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s = new Set<number>()
+      s.add(NaN)
+      s.add(NaN)
+      expect(s.size).assertEqual(1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3580
+     * @tc.name testAssignmentOperator348
+     * @tc.desc Verify 累加器求和
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator348', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: number[] = [1, 2, 3, 4, 5]
+      let sum: number = 0
+      for (const n of arr) {
+        sum += n
+      }
+      expect(sum).assertEqual(15)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ASSIGNMENT_OPERATOR_3590
+     * @tc.name testAssignmentOperator349
+     * @tc.desc Verify 累乘器求积
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAssignmentOperator349', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: number[] = [1, 2, 3, 4, 5]
+      let product: number = 1
+      for (const n of arr) {
+        product *= n
+      }
+      expect(product).assertEqual(120)
+    });
