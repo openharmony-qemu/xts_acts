@@ -363,5 +363,76 @@ export default function DeviceStatusMotionTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_1400
+     * @tc.number SUB_MSDP_DeviceStatus_API_Motion_1400
+     * @tc.desc   on_operatingHandChanged multicallback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MSDP_DeviceStatus_API_Motion_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
+      console.info(`SUB_MSDP_DeviceStatus_API_Motion_1400 enter`);
+      let callback1 = (data) => {
+        console.info('SUB_MSDP_DeviceStatus_API_Motion_1400 callback1 success, OperatingHandStatus: ' + data);
+      }
+      let callback2 = (data) => {
+        console.info('SUB_MSDP_DeviceStatus_API_Motion_1400 callback2 success, OperatingHandStatus: ' + data);
+      }
+      try {
+        motion.on('operatingHandChanged', callback1);
+        motion.on('operatingHandChanged', callback2);
+        sleep(1000);
+        motion.off('operatingHandChanged', callback1);
+        motion.off('operatingHandChanged', callback2);
+        console.info('SUB_MSDP_DeviceStatus_API_Motion_1400 on_operatingHandChanged success');
+        done();
+      } catch (error) {
+        console.info(`SUB_MSDP_DeviceStatus_API_Motion_1400: ${JSON.stringify(error, ['code', 'message'])}`);
+        if(error.code == 801) {
+          expect(error.message == "The device does not support this API.");
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_1500
+     * @tc.number SUB_MSDP_DeviceStatus_API_Motion_1500
+     * @tc.desc   on_holdingHandChanged multicallback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MSDP_DeviceStatus_API_Motion_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
+      console.info(`SUB_MSDP_DeviceStatus_API_Motion_1500 enter`);
+      let callback1 = (data) => {
+        console.info('SUB_MSDP_DeviceStatus_API_Motion_1500 callback1 success, HoldingHandStatus: ' + data);
+      }
+      let callback2 = (data) => {
+        console.info('SUB_MSDP_DeviceStatus_API_Motion_1500 callback2 success, HoldingHandStatus: ' + data);
+      }
+      try {
+        motion.on('holdingHandChanged', callback1);
+        motion.on('holdingHandChanged', callback2);
+        sleep(1000);
+        motion.off('holdingHandChanged', callback1);
+        motion.off('holdingHandChanged', callback2);
+        console.info('SUB_MSDP_DeviceStatus_API_Motion_1500 on_holdingHandChanged success');
+        done();
+      } catch (error) {
+        console.info(`SUB_MSDP_DeviceStatus_API_Motion_1500: ${JSON.stringify(error, ['code', 'message'])}`);
+        if(error.code == 801) {
+          expect(error.message == "The device does not support this API.");
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    })
+
   })
 }
