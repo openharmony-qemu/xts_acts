@@ -6995,7 +6995,7 @@ export default function audioCapturer() {
           }
 
         } catch (err) {
-          console.error(`${TAG}: setNoiseReductionMode FIDELITY failed: ${err.code}, ${err.message}`);
+          console.info(`${TAG}: setNoiseReductionMode FIDELITY failed: ${err.code}, ${err.message}`);
           expect(false).assertTrue();
         } finally {
           if (audioCapturer) {
@@ -7045,7 +7045,7 @@ export default function audioCapturer() {
             expect(false).assertTrue();
           }
         } catch (err) {
-          console.error(`${TAG}: setNoiseReductionMode FIDELITY failed: ${err.code}, ${err.message}`);
+          console.info(`${TAG}: setNoiseReductionMode FIDELITY failed: ${err.code}, ${err.message}`);
           expect(err.code).assertEqual(6800101);
         } finally {
           if (audioCapturer) {
@@ -7095,7 +7095,7 @@ export default function audioCapturer() {
             expect(false).assertTrue();
           }
         } catch (err) {
-          console.error(`${TAG}: setNoiseReductionMode FIDELITY failed: ${err.code}, ${err.message}`);
+          console.info(`${TAG}: setNoiseReductionMode FIDELITY failed: ${err.code}, ${err.message}`);
           expect(err.code).assertEqual(6800101);
         } finally {
           if (audioCapturer) {
@@ -7203,7 +7203,7 @@ export default function audioCapturer() {
             expect(false).assertTrue();
           }
         } catch (err) {
-          console.error(`${TAG}: setNoiseReductionMode FIDELITY failed: ${err.code}, ${err.message}`);
+          console.info(`${TAG}: setNoiseReductionMode FIDELITY failed: ${err.code}, ${err.message}`);
           expect(err.code).assertEqual(6800103);
         } finally {
           if (audioCapturer) {
