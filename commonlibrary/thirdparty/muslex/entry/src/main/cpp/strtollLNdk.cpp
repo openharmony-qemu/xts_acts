@@ -24,18 +24,14 @@
 
 static constexpr int K_STABLE_LOOP = 20;
 static constexpr int K_THREAD_COUNT = 3;
-static constexpr int DECIMAL_BASE = 10;
-static constexpr int HEX_BASE = 16;
-static constexpr int HEX_FF_VAL = 255;
-static constexpr long long TEST_NUM_VAL = 12345;
-static constexpr long long TEST_NEG_VAL = -9876;
 static constexpr int K_ITER_PER_THREAD = 10;
 
 static long long CallStrtollL(const char* nptr, char** endptr, int base, locale_t loc)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetStrtollL();
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return -1;
     }
@@ -58,92 +54,103 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value StrtollLNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     char* endptr = nullptr;
-    long long ret = CallStrtollL("12345", &endptr, DECIMAL_BASE, LC_GLOBAL_LOCALE);
-    return ReturnInt32(env, (ret == TEST_NUM_VAL && endptr != nullptr) ? 1 : 0);
+    long long ret = CallStrtollL("12345", &endptr, 10, LC_GLOBAL_LOCALE);
+    return ReturnInt32(env, (ret == 12345 && endptr != nullptr) ? 1 : 0);
 }
 
 static napi_value StrtollLNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     char* endptr = nullptr;
-    long long ret = CallStrtollL("0xff", &endptr, HEX_BASE, LC_GLOBAL_LOCALE);
-    return ReturnInt32(env, (ret == HEX_FF_VAL && endptr != nullptr) ? 1 : 0);
+    long long ret = CallStrtollL("0xff", &endptr, 16, LC_GLOBAL_LOCALE);
+    return ReturnInt32(env, (ret == 255 && endptr != nullptr) ? 1 : 0);
 }
 
 static napi_value StrtollLNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     char* endptr = nullptr;
-    long long ret = CallStrtollL("-9876", &endptr, DECIMAL_BASE, LC_GLOBAL_LOCALE);
-    return ReturnInt32(env, (ret == TEST_NEG_VAL && endptr != nullptr) ? 1 : 0);
+    long long ret = CallStrtollL("-9876", &endptr, 10, LC_GLOBAL_LOCALE);
+    return ReturnInt32(env, (ret == -9876 && endptr != nullptr) ? 1 : 0);
 }
 
 static napi_value StrtollLNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
 
 static napi_value StrtollLAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     char* endptr = nullptr;
-    long long ret = CallStrtollL("", &endptr, DECIMAL_BASE, LC_GLOBAL_LOCALE);
+    long long ret = CallStrtollL("", &endptr, 10, LC_GLOBAL_LOCALE);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
 }
 
 static napi_value StrtollLAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     char* endptr = nullptr;
-    long long ret = CallStrtollL("abcxyz", &endptr, DECIMAL_BASE, LC_GLOBAL_LOCALE);
+    long long ret = CallStrtollL("abcxyz", &endptr, 10, LC_GLOBAL_LOCALE);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
 }
 
 static napi_value StrtollLBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     char* endptr = nullptr;
-    long long ret = CallStrtollL("9223372036854775807", &endptr, DECIMAL_BASE, LC_GLOBAL_LOCALE);
+    long long ret = CallStrtollL("9223372036854775807", &endptr, 10, LC_GLOBAL_LOCALE);
     return ReturnInt32(env, (ret == LLONG_MAX) ? 1 : 0);
 }
 
 static napi_value StrtollLBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     char* endptr = nullptr;
-    long long ret = CallStrtollL("-9223372036854775808", &endptr, DECIMAL_BASE, LC_GLOBAL_LOCALE);
+    long long ret = CallStrtollL("-9223372036854775808", &endptr, 10, LC_GLOBAL_LOCALE);
     return ReturnInt32(env, (ret == LLONG_MIN) ? 1 : 0);
 }
 
 static napi_value StrtollLStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP; ++i)
+    {
         char* endptr = nullptr;
-        long long ret = CallStrtollL("12345", &endptr, DECIMAL_BASE, LC_GLOBAL_LOCALE);
-        if (ret != TEST_NUM_VAL) {
+        long long ret = CallStrtollL("12345", &endptr, 10, LC_GLOBAL_LOCALE);
+        if (ret != 12345)
+        {
             pass = false;
             break;
         }
@@ -153,20 +160,25 @@ static napi_value StrtollLStable001(napi_env env, napi_callback_info info)
 
 static napi_value StrtollLThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t)
+    {
+        threads.emplace_back([&hasError]()
+        {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
+            {
                 char* endptr = nullptr;
-                CallStrtollL("12345", &endptr, DECIMAL_BASE, LC_GLOBAL_LOCALE);
+                CallStrtollL("12345", &endptr, 10, LC_GLOBAL_LOCALE);
             }
         });
     }
-    for (auto& th : threads) {
+    for (auto& th : threads)
+    {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);

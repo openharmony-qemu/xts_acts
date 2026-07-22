@@ -25,13 +25,13 @@
 static constexpr int K_STABLE_LOOP = 100;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 5;
-static constexpr int TM_YEAR_BASE = 1900;
 
 static time_t CallTimelocal(struct tm* tm)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetTimelocal();
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return -1;
     }
@@ -54,34 +54,31 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value TimelocalNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    struct tm t = {};
-    int testYear2026 = 2026;
-    t.tm_year = testYear2026 - TM_YEAR_BASE;
-    int july = 6;
-    t.tm_mon = july;
-    int day1 = 1;
-    t.tm_mday = day1;
-    int noon = 12;
-    t.tm_hour = noon;
+    struct tm t;
+    memset(&t, 0, sizeof(t));
+    t.tm_year = 2026 - 1900;
+    t.tm_mon = 6;
+    t.tm_mday = 1;
+    t.tm_hour = 12;
     time_t ret = CallTimelocal(&t);
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
 static napi_value TimelocalNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    struct tm t = {};
-    int epochYear = 1970;
-    t.tm_year = epochYear - TM_YEAR_BASE;
-    int jan = 0;
-    t.tm_mon = jan;
-    int day1 = 1;
-    t.tm_mday = day1;
+    struct tm t;
+    memset(&t, 0, sizeof(t));
+    t.tm_year = 70;
+    t.tm_mon = 0;
+    t.tm_mday = 1;
     t.tm_isdst = -1;
     time_t ret = CallTimelocal(&t);
     return ReturnInt32(env, (ret != -1) ? 1 : 0);
@@ -89,16 +86,15 @@ static napi_value TimelocalNormal002(napi_env env, napi_callback_info info)
 
 static napi_value TimelocalNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    struct tm t = {};
-    int testYear2026 = 2026;
-    t.tm_year = testYear2026 - TM_YEAR_BASE;
-    int jan = 0;
-    t.tm_mon = jan;
-    int day1 = 1;
-    t.tm_mday = day1;
+    struct tm t;
+    memset(&t, 0, sizeof(t));
+    t.tm_year = 2026 - 1900;
+    t.tm_mon = 0;
+    t.tm_mday = 1;
     t.tm_isdst = -1;
     time_t ret = CallTimelocal(&t);
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
@@ -106,75 +102,71 @@ static napi_value TimelocalNormal003(napi_env env, napi_callback_info info)
 
 static napi_value TimelocalNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
 
 static napi_value TimelocalAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    struct tm t = {};
-    int testYear2026 = 2026;
-    t.tm_year = testYear2026 - TM_YEAR_BASE;
-    int jan = 0;
-    t.tm_mon = jan;
-    int invalidDay = 32;
-    t.tm_mday = invalidDay;
+    struct tm t;
+    memset(&t, 0, sizeof(t));
+    t.tm_year = 2026 - 1900;
+    t.tm_mon = 0;
+    t.tm_mday = 32;
     time_t ret = CallTimelocal(&t);
     return ReturnInt32(env, 1);
 }
 
 static napi_value TimelocalAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    struct tm t = {};
-    int testYear2026 = 2026;
-    t.tm_year = testYear2026 - TM_YEAR_BASE;
-    int invalidMonth = 13;
-    t.tm_mon = invalidMonth;
+    struct tm t;
+    memset(&t, 0, sizeof(t));
+    t.tm_year = 2026 - 1900;
+    t.tm_mon = 13;
     time_t ret = CallTimelocal(&t);
     return ReturnInt32(env, 1);
 }
 
 static napi_value TimelocalBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    struct tm t = {};
-    int testYear2038 = 2038;
-    t.tm_year = testYear2038 - TM_YEAR_BASE;
-    int jan = 0;
-    t.tm_mon = jan;
-    int day19 = 19;
-    t.tm_mday = day19;
-    int hour3 = 3;
-    t.tm_hour = hour3;
-    int min14 = 14;
-    t.tm_min = min14;
-    int sec7 = 7;
-    t.tm_sec = sec7;
+    struct tm t;
+    memset(&t, 0, sizeof(t));
+    t.tm_year = 2038 - 1900;
+    t.tm_mon = 0;
+    t.tm_mday = 19;
+    t.tm_hour = 3;
+    t.tm_min = 14;
+    t.tm_sec = 7;
     time_t ret = CallTimelocal(&t);
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
 static napi_value TimelocalBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    struct tm t = {};
+    struct tm t;
+    memset(&t, 0, sizeof(t));
     t.tm_year = 0;
-    int jan = 0;
-    t.tm_mon = jan;
-    int day1 = 1;
-    t.tm_mday = day1;
+    t.tm_mon = 0;
+    t.tm_mday = 1;
     t.tm_isdst = -1;
     time_t ret = CallTimelocal(&t);
     return ReturnInt32(env, (ret != -1) ? 1 : 0);
@@ -182,20 +174,21 @@ static napi_value TimelocalBoundary002(napi_env env, napi_callback_info info)
 
 static napi_value TimelocalStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i) {
-    struct tm t = {};
-    int testYear2026 = 2026;
-    t.tm_year = testYear2026 - TM_YEAR_BASE;
-        int jan = 0;
-        t.tm_mon = jan;
-        int day1 = 1;
-        t.tm_mday = day1;
+    for (int i = 0; i < K_STABLE_LOOP; ++i)
+    {
+        struct tm t;
+        memset(&t, 0, sizeof(t));
+        t.tm_year = 2026 - 1900;
+        t.tm_mon = 0;
+        t.tm_mday = 1;
         time_t ret = CallTimelocal(&t);
-        if (ret < 0) {
+        if (ret < 0)
+        {
             pass = false;
             break;
         }
@@ -203,35 +196,36 @@ static napi_value TimelocalStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void TimelocalWorker(std::atomic<bool>& hasError)
-{
-    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-        struct tm tmVal = {};
-        int testYear2026 = 2026;
-        tmVal.tm_year = testYear2026 - TM_YEAR_BASE;
-        int jan = 0;
-        tmVal.tm_mon = jan;
-        int day1 = 1;
-        tmVal.tm_mday = day1;
-        time_t ret = CallTimelocal(&tmVal);
-        if (ret < 0) {
-            hasError = true;
-            return;
-        }
-    }
-}
-
 static napi_value TimelocalThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(TimelocalWorker, std::ref(hasError));
+    for (int t = 0; t < K_THREAD_COUNT; ++t)
+    {
+        threads.emplace_back([&hasError]()
+        {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
+            {
+                struct tm tmVal;
+                memset(&tmVal, 0, sizeof(tmVal));
+                tmVal.tm_year = 2026 - 1900;
+                tmVal.tm_mon = 0;
+                tmVal.tm_mday = 1;
+                time_t ret = CallTimelocal(&tmVal);
+                if (ret < 0)
+                {
+                    hasError = true;
+                    return;
+                }
+            }
+        });
     }
-    for (auto& th : threads) {
+    for (auto& th : threads)
+    {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);

@@ -36,11 +36,11 @@ static SetResTraceIdFunc GetSetResTraceIdFunc()
     return cachedFunc;
 }
 
-static bool CallSetResTraceId(uint32_t newTraceType, uint64_t newTraceID,
-    uint32_t* pOldTraceType, uint64_t* pOldTraceID)
+static bool CallSetResTraceId(uint32_t newTraceType, uint64_t newTraceID, uint32_t* pOldTraceType, uint64_t* pOldTraceID)
 {
     auto func = GetSetResTraceIdFunc();
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return false;
     }
@@ -63,25 +63,25 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value SetResTraceIdNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     uint32_t oldType = 0;
     uint64_t oldID = 0;
-    int val100 = 100;
-    bool ret = CallSetResTraceId(1, val100, &oldType, &oldID);
+    bool ret = CallSetResTraceId(1, 100, &oldType, &oldID);
     return ReturnInt32(env, ret ? 1 : 0);
 }
 
 static napi_value SetResTraceIdNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     uint32_t oldType = 0;
     uint64_t oldID = 0;
-    int val100 = 100;
-    CallSetResTraceId(1, val100, &oldType, &oldID);
+    CallSetResTraceId(1, 100, &oldType, &oldID);
     uint32_t oldType2 = 0;
     uint64_t oldID2 = 0;
     bool ret = CallSetResTraceId(2, 200, &oldType2, &oldID2);
@@ -90,51 +90,53 @@ static napi_value SetResTraceIdNormal002(napi_env env, napi_callback_info info)
 
 static napi_value SetResTraceIdNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     uint32_t oldType = 0;
     uint64_t oldID = 0;
-    int val100 = 100;
-    bool ret1 = CallSetResTraceId(1, val100, &oldType, &oldID);
+    bool ret1 = CallSetResTraceId(1, 100, &oldType, &oldID);
     bool ret2 = CallSetResTraceId(2, 200, &oldType, &oldID);
     return ReturnInt32(env, (ret1 && ret2) ? 1 : 0);
 }
 
 static napi_value SetResTraceIdNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
 
 static napi_value SetResTraceIdAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     uint64_t oldID = 0;
-    int val100 = 100;
-    CallSetResTraceId(1, val100, nullptr, &oldID);
+    CallSetResTraceId(1, 100, nullptr, &oldID);
     return ReturnInt32(env, 1);
 }
 
 static napi_value SetResTraceIdAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     uint32_t oldType = 0;
-    int val100 = 100;
-    CallSetResTraceId(1, val100, &oldType, nullptr);
+    CallSetResTraceId(1, 100, &oldType, nullptr);
     return ReturnInt32(env, 1);
 }
 
 static napi_value SetResTraceIdBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     uint32_t oldType = 0;
     uint64_t oldID = 0;
@@ -144,8 +146,9 @@ static napi_value SetResTraceIdBoundary001(napi_env env, napi_callback_info info
 
 static napi_value SetResTraceIdBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     uint32_t oldType = 0;
     uint64_t oldID = 0;
@@ -155,15 +158,18 @@ static napi_value SetResTraceIdBoundary002(napi_env env, napi_callback_info info
 
 static napi_value SetResTraceIdStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP; ++i)
+    {
         uint32_t oldType = 0;
         uint64_t oldID = 0;
         bool ret = CallSetResTraceId(1, i, &oldType, &oldID);
-        if (!ret) {
+        if (!ret)
+        {
             pass = false;
             break;
         }
@@ -173,21 +179,26 @@ static napi_value SetResTraceIdStable001(napi_env env, napi_callback_info info)
 
 static napi_value SetResTraceIdThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t)
+    {
+        threads.emplace_back([&hasError]()
+        {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
+            {
                 uint32_t oldType = 0;
                 uint64_t oldID = 0;
                 CallSetResTraceId(1, i, &oldType, &oldID);
             }
         });
     }
-    for (auto& th : threads) {
+    for (auto& th : threads)
+    {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);
@@ -201,14 +212,10 @@ static napi_value Init(napi_env env, napi_value exports)
         {"setResTraceIdNormal002", nullptr, SetResTraceIdNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"setResTraceIdNormal003", nullptr, SetResTraceIdNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"setResTraceIdNormal004", nullptr, SetResTraceIdNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"setResTraceIdAbnormal001", nullptr, SetResTraceIdAbnormal001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"setResTraceIdAbnormal002", nullptr, SetResTraceIdAbnormal002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"setResTraceIdBoundary001", nullptr, SetResTraceIdBoundary001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"setResTraceIdBoundary002", nullptr, SetResTraceIdBoundary002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+        {"setResTraceIdAbnormal001", nullptr, SetResTraceIdAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"setResTraceIdAbnormal002", nullptr, SetResTraceIdAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"setResTraceIdBoundary001", nullptr, SetResTraceIdBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"setResTraceIdBoundary002", nullptr, SetResTraceIdBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"setResTraceIdStable001", nullptr, SetResTraceIdStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"setResTraceIdThread001", nullptr, SetResTraceIdThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
     };

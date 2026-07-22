@@ -21,7 +21,7 @@
 #include <vector>
 #include <atomic>
 
-static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_STABLE_LOOP_10000 = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
 
@@ -29,7 +29,8 @@ static char* CallStrtokR(char* s, const char* sep, char** p)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetStrtokR();
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return nullptr;
     }
@@ -40,7 +41,8 @@ static char* CallStrtokR(char* s, const char* sep, char** p)
 static bool IsStubMode()
 {
     auto& loader = LibcFunctionLoader::GetInstance();
-    if (!loader.GetStrtokR()) {
+    if (!loader.GetStrtokR())
+    {
         return true;
     }
     char* p = nullptr;
@@ -61,19 +63,22 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 /* TC-001: Basic tokenization */
 static napi_value StrtokRNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     char str[] = "hello,world,test";
     char* saveptr = nullptr;
     char* token = CallStrtokR(str, ",", &saveptr);
     bool pass = (token != nullptr && strcmp(token, "hello") == 0);
-    if (!pass) {
+    if (!pass)
+    {
         return ReturnInt32(env, 0);
     }
     token = CallStrtokR(nullptr, ",", &saveptr);
     pass = (token != nullptr && strcmp(token, "world") == 0);
-    if (!pass) {
+    if (!pass)
+    {
         return ReturnInt32(env, 0);
     }
     token = CallStrtokR(nullptr, ",", &saveptr);
@@ -84,19 +89,22 @@ static napi_value StrtokRNormal001(napi_env env, napi_callback_info info)
 /* TC-002: Multiple delimiters */
 static napi_value StrtokRNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     char str[] = "hello,,world;test";
     char* saveptr = nullptr;
     char* token = CallStrtokR(str, ",;", &saveptr);
     bool pass = (token != nullptr && strcmp(token, "hello") == 0);
-    if (!pass) {
+    if (!pass)
+    {
         return ReturnInt32(env, 0);
     }
     token = CallStrtokR(nullptr, ",;", &saveptr);
     pass = (token != nullptr && strcmp(token, "world") == 0);
-    if (!pass) {
+    if (!pass)
+    {
         return ReturnInt32(env, 0);
     }
     token = CallStrtokR(nullptr, ",;", &saveptr);
@@ -107,14 +115,16 @@ static napi_value StrtokRNormal002(napi_env env, napi_callback_info info)
 /* TC-003: Consecutive delimiters */
 static napi_value StrtokRNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     char str[] = "hello,,world";
     char* saveptr = nullptr;
     char* token = CallStrtokR(str, ",", &saveptr);
     bool pass = (token != nullptr && strcmp(token, "hello") == 0);
-    if (!pass) {
+    if (!pass)
+    {
         return ReturnInt32(env, 0);
     }
     token = CallStrtokR(nullptr, ",", &saveptr);
@@ -125,14 +135,16 @@ static napi_value StrtokRNormal003(napi_env env, napi_callback_info info)
 /* TC-004: Token with leading delimiters */
 static napi_value StrtokRNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     char str[] = ",hello,world";
     char* saveptr = nullptr;
     char* token = CallStrtokR(str, ",", &saveptr);
     bool pass = (token != nullptr && strcmp(token, "hello") == 0);
-    if (!pass) {
+    if (!pass)
+    {
         return ReturnInt32(env, 0);
     }
     token = CallStrtokR(nullptr, ",", &saveptr);
@@ -143,14 +155,16 @@ static napi_value StrtokRNormal004(napi_env env, napi_callback_info info)
 /* TC-005: Token with trailing delimiters */
 static napi_value StrtokRNormal005(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     char str[] = "hello,world,";
     char* saveptr = nullptr;
     char* token = CallStrtokR(str, ",", &saveptr);
     bool pass = (token != nullptr && strcmp(token, "hello") == 0);
-    if (!pass) {
+    if (!pass)
+    {
         return ReturnInt32(env, 0);
     }
     token = CallStrtokR(nullptr, ",", &saveptr);
@@ -161,8 +175,9 @@ static napi_value StrtokRNormal005(napi_env env, napi_callback_info info)
 /* TC-006: NULL input returns NULL */
 static napi_value StrtokRNormal006(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     char* saveptr = nullptr;
     char* token = CallStrtokR(nullptr, ",", &saveptr);
@@ -172,8 +187,9 @@ static napi_value StrtokRNormal006(napi_env env, napi_callback_info info)
 /* TC-007: Empty string */
 static napi_value StrtokRNormal007(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     char str[] = "";
     char* saveptr = nullptr;
@@ -186,8 +202,9 @@ static napi_value StrtokRNormal007(napi_env env, napi_callback_info info)
 /* TC-008: sep = NULL (should not crash in stub) */
 static napi_value StrtokRAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     char str[] = "hello,world";
     char* saveptr = nullptr;
@@ -200,18 +217,19 @@ static napi_value StrtokRAbnormal001(napi_env env, napi_callback_info info)
 /* TC-009: Very long string with single token */
 static napi_value StrtokRBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    size_t longSize = 10000;
-    std::string longStr(longSize, 'a');
+    std::string longStr(10000, 'a');
     char* str = strdup(longStr.c_str());
-    if (!str) {
+    if (!str)
+    {
         return ReturnInt32(env, 0);
     }
     char* saveptr = nullptr;
     char* token = CallStrtokR(str, ",", &saveptr);
-    bool pass = (token != nullptr && strlen(token) == longSize);
+    bool pass = (token != nullptr && strlen(token) == 10000);
     free(str);
     return ReturnInt32(env, pass ? 1 : 0);
 }
@@ -219,29 +237,31 @@ static napi_value StrtokRBoundary001(napi_env env, napi_callback_info info)
 /* TC-010: Many small tokens */
 static napi_value StrtokRBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    int tokencount = 1000;
     std::string str;
-    for (int i = 0; i < tokencount; ++i) {
+    for (int i = 0; i < 1000; ++i)
+    {
         str += "a,";
     }
     str += "b";
     char* mutableStr = strdup(str.c_str());
-    if (!mutableStr) {
+    if (!mutableStr)
+    {
         return ReturnInt32(env, 0);
     }
     char* saveptr = nullptr;
     char* token = CallStrtokR(mutableStr, ",", &saveptr);
     int count = 0;
-    while (token != nullptr) {
+    while (token != nullptr)
+    {
         count++;
         token = CallStrtokR(nullptr, ",", &saveptr);
     }
     free(mutableStr);
-    int expectedTokens = 1001;
-    return ReturnInt32(env, (count == expectedTokens) ? 1 : 0);
+    return ReturnInt32(env, (count == 1001) ? 1 : 0);
 }
 
 /* ==================== Stability Tests ==================== */
@@ -249,15 +269,18 @@ static napi_value StrtokRBoundary002(napi_env env, napi_callback_info info)
 /* TC-011: 10000 repeated calls stability */
 static napi_value StrtokRStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i)
+    {
         char str[] = "hello,world,test";
         char* saveptr = nullptr;
         char* token = CallStrtokR(str, ",", &saveptr);
-        if (token == nullptr || strcmp(token, "hello") != 0) {
+        if (token == nullptr || strcmp(token, "hello") != 0)
+        {
             pass = false;
             break;
         }
@@ -265,40 +288,43 @@ static napi_value StrtokRStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void StrtokRWorker(std::atomic<bool>& hasError)
-{
-    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-        char str[] = "a,b,c,d,e";
-        char* saveptr = nullptr;
-        int count = 0;
-        char* token = CallStrtokR(str, ",", &saveptr);
-        while (token != nullptr) {
-            count++;
-            token = CallStrtokR(nullptr, ",", &saveptr);
-        }
-        int modVal = 5;
-        if (count != modVal) {
-            hasError = true;
-            return;
-        }
-    }
-}
-
 /* ==================== Multi-thread Tests ==================== */
 
 /* TC-012: Multi-thread safety (each thread uses its own saveptr) */
 static napi_value StrtokRThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
 
-    for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(StrtokRWorker, std::ref(hasError));
+    for (int t = 0; t < K_THREAD_COUNT; ++t)
+    {
+        threads.emplace_back([&hasError]()
+        {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
+            {
+                char str[] = "a,b,c,d,e";
+                char* saveptr = nullptr;
+                int count = 0;
+                char* token = CallStrtokR(str, ",", &saveptr);
+                while (token != nullptr)
+                {
+                    count++;
+                    token = CallStrtokR(nullptr, ",", &saveptr);
+                }
+                if (count != 5)
+                {
+                    hasError = true;
+                    return;
+                }
+            }
+        });
     }
-    for (auto& th : threads) {
+    for (auto& th : threads)
+    {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);

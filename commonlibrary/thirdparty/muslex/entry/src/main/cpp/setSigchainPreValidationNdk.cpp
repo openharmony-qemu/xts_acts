@@ -28,7 +28,8 @@ static bool CallSetSigchainPreValidationIgnore(int value)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetSetSigchainPreValidationIgnore();
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return false;
     }
@@ -52,8 +53,9 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value SetSigchainPreValidationNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     bool ret = CallSetSigchainPreValidationIgnore(1);
     CallSetSigchainPreValidationIgnore(0);
@@ -62,8 +64,9 @@ static napi_value SetSigchainPreValidationNormal001(napi_env env, napi_callback_
 
 static napi_value SetSigchainPreValidationNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     bool ret = CallSetSigchainPreValidationIgnore(0);
     return ReturnInt32(env, ret ? 1 : 0);
@@ -71,8 +74,9 @@ static napi_value SetSigchainPreValidationNormal002(napi_env env, napi_callback_
 
 static napi_value SetSigchainPreValidationNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     CallSetSigchainPreValidationIgnore(1);
     CallSetSigchainPreValidationIgnore(0);
@@ -81,16 +85,18 @@ static napi_value SetSigchainPreValidationNormal003(napi_env env, napi_callback_
 
 static napi_value SetSigchainPreValidationNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
 
 static napi_value SetSigchainPreValidationAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     CallSetSigchainPreValidationIgnore(-1);
     CallSetSigchainPreValidationIgnore(0);
@@ -99,19 +105,20 @@ static napi_value SetSigchainPreValidationAbnormal001(napi_env env, napi_callbac
 
 static napi_value SetSigchainPreValidationAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    int val100 = 100;
-    CallSetSigchainPreValidationIgnore(val100);
+    CallSetSigchainPreValidationIgnore(100);
     CallSetSigchainPreValidationIgnore(0);
     return ReturnInt32(env, 1);
 }
 
 static napi_value SetSigchainPreValidationBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     bool ret = CallSetSigchainPreValidationIgnore(0);
     return ReturnInt32(env, ret ? 1 : 0);
@@ -119,8 +126,9 @@ static napi_value SetSigchainPreValidationBoundary001(napi_env env, napi_callbac
 
 static napi_value SetSigchainPreValidationBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     bool ret = CallSetSigchainPreValidationIgnore(1);
     CallSetSigchainPreValidationIgnore(0);
@@ -129,13 +137,14 @@ static napi_value SetSigchainPreValidationBoundary002(napi_env env, napi_callbac
 
 static napi_value SetSigchainPreValidationStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i) {
-        int val2 = 2;
-        CallSetSigchainPreValidationIgnore(i % val2);
+    for (int i = 0; i < K_STABLE_LOOP; ++i)
+    {
+        CallSetSigchainPreValidationIgnore(i % 2);
     }
     CallSetSigchainPreValidationIgnore(0);
     return ReturnInt32(env, pass ? 1 : 0);
@@ -143,20 +152,24 @@ static napi_value SetSigchainPreValidationStable001(napi_env env, napi_callback_
 
 static napi_value SetSigchainPreValidationThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                int val2 = 2;
-                CallSetSigchainPreValidationIgnore(i % val2);
+    for (int t = 0; t < K_THREAD_COUNT; ++t)
+    {
+        threads.emplace_back([&hasError]()
+        {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
+            {
+                CallSetSigchainPreValidationIgnore(i % 2);
             }
         });
     }
-    for (auto& th : threads) {
+    for (auto& th : threads)
+    {
         th.join();
     }
     CallSetSigchainPreValidationIgnore(0);
@@ -167,26 +180,16 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"setSigchainPreValidationNormal001", nullptr, SetSigchainPreValidationNormal001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"setSigchainPreValidationNormal002", nullptr, SetSigchainPreValidationNormal002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"setSigchainPreValidationNormal003", nullptr, SetSigchainPreValidationNormal003, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"setSigchainPreValidationNormal004", nullptr, SetSigchainPreValidationNormal004, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"setSigchainPreValidationAbnormal001", nullptr, SetSigchainPreValidationAbnormal001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"setSigchainPreValidationAbnormal002", nullptr, SetSigchainPreValidationAbnormal002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"setSigchainPreValidationBoundary001", nullptr, SetSigchainPreValidationBoundary001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"setSigchainPreValidationBoundary002", nullptr, SetSigchainPreValidationBoundary002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"setSigchainPreValidationStable001", nullptr, SetSigchainPreValidationStable001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"setSigchainPreValidationThread001", nullptr, SetSigchainPreValidationThread001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+        {"setSigchainPreValidationNormal001", nullptr, SetSigchainPreValidationNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"setSigchainPreValidationNormal002", nullptr, SetSigchainPreValidationNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"setSigchainPreValidationNormal003", nullptr, SetSigchainPreValidationNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"setSigchainPreValidationNormal004", nullptr, SetSigchainPreValidationNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"setSigchainPreValidationAbnormal001", nullptr, SetSigchainPreValidationAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"setSigchainPreValidationAbnormal002", nullptr, SetSigchainPreValidationAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"setSigchainPreValidationBoundary001", nullptr, SetSigchainPreValidationBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"setSigchainPreValidationBoundary002", nullptr, SetSigchainPreValidationBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"setSigchainPreValidationStable001", nullptr, SetSigchainPreValidationStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"setSigchainPreValidationThread001", nullptr, SetSigchainPreValidationThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
