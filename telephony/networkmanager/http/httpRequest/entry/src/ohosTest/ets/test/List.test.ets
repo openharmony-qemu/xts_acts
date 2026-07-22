@@ -53,7 +53,6 @@ export default function testsuite() {
       HttpRequestMethodTest();
       HttpRequestAndDestroyTest();
       HttpRequestInStreamTest();
-      HttpRequestOptionsTest();
       HttpRequestSniTest();
       httpErrorCodeTest();
       HttpRequestInactivityMsTest();
@@ -65,6 +64,14 @@ export default function testsuite() {
       HttpRequestTlcpEnablePartialChainTest();
       HttpRequestTlsEnablePartialChainTest();
       HttpBodyParametersTest();
+      connection.getNetCapabilities(netHandle, (error: BusinessError, data: connection.NetCapabilities) => {
+        if (error) {
+          return;
+        }
+        if (data.bearerTypes[0] === connection.NetBearType.BEARER_CELLULAR) {
+          HttpRequestOptionsTest();
+        }
+      });
     } else {
       EmptyTest();
     }
