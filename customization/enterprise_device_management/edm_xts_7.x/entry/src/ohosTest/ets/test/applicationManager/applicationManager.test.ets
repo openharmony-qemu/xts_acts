@@ -942,17 +942,17 @@ export default function applicationManagerTest() {
         expect(typeof (windowStateInfo.isOnDock)).assertEqual("boolean");
         expect(windowStateInfo.name.length > 0).assertTrue();
         if (state === applicationManager.WindowState.DISCONNECT) {
-          expect(Number(state)).assertEqual(0);
+          expect(state).assertEqual(applicationManager.WindowState.DISCONNECT);
         } else if (state === applicationManager.WindowState.CONNECT) {
-          expect(Number(state)).assertEqual(1);
+          expect(state).assertEqual(applicationManager.WindowState.CONNECT);
         } else if (state === applicationManager.WindowState.FOREGROUND) {
-          expect(Number(state)).assertEqual(2);
+          expect(state).assertEqual(applicationManager.WindowState.FOREGROUND);
         } else if (state === applicationManager.WindowState.ACTIVE) {
-          expect(Number(state)).assertEqual(3);
+          expect(state).assertEqual(applicationManager.WindowState.ACTIVE);
         } else if (state === applicationManager.WindowState.INACTIVE) {
-          expect(Number(state)).assertEqual(4);
+          expect(state).assertEqual(applicationManager.WindowState.INACTIVE);
         } else if (state === applicationManager.WindowState.BACKGROUND) {
-          expect(Number(state)).assertEqual(5);
+          expect(state).assertEqual(applicationManager.WindowState.BACKGROUND);
         } else {
           expect(false).assertTrue();
         }

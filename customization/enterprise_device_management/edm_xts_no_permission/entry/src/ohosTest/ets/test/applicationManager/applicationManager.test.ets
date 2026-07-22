@@ -970,7 +970,7 @@ export default function applicationManagerTest() {
       await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
         expect(false).assertTrue();
       }).catch ((error: BusinessError)=> {
-        expect(Number(error.code) === 201).assertTrue();
+        expect(error.code === 201).assertTrue();
       }).finally(async () => {
         await adminManager.disableAdmin(SELFWANT);
       });
@@ -993,7 +993,7 @@ export default function applicationManagerTest() {
         applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 201).assertTrue();
+        expect(error.code === 201).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
