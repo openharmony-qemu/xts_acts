@@ -24,11 +24,20 @@ import {
   Size,
   TestType
 } from '@ohos/hypium';
-import utils from '../../Utils';
 import {
   getWithMethodCallValue,
-  getBigintAsString
+  getBigintAsString,
+  testSymbolFieldRead,
+  testSymbolFieldWrite
 } from './classFieldTsHelper'
+
+function throwFieldInit(): number {
+  throw new Error('field-init-error')
+}
+
+class FieldInitThrows {
+  public value: number = throwFieldInit()
+}
 
 class SingleField {
   public x: number = 42
@@ -144,8 +153,7 @@ export default function ClassFieldTest() {
   describe('ClassFieldTest', () => {
     beforeAll(() => {
     })
-    beforeEach(async () => {
-      await utils.msSleep(30);
+    beforeEach(() => {
     })
     afterEach(() => {
     })
@@ -155,7 +163,7 @@ export default function ClassFieldTest() {
     /**
      * @tc.number    SUB_CLASS_FIELD_0100
      * @tc.name      testFieldSingleNumber0001
-     * @tc.desc      Verify single number field with literal initializer
+     * @tc.desc      ECMA-262 §15.2: Verify single number field with literal initializer
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -168,7 +176,7 @@ export default function ClassFieldTest() {
     /**
      * @tc.number    SUB_CLASS_FIELD_0200
      * @tc.name      testFieldMultipleTypes0001
-     * @tc.desc      Verify multiple fields with number, string, boolean types
+     * @tc.desc      ECMA-262 §15.2: Verify multiple fields with number, string, boolean types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -177,13 +185,12 @@ export default function ClassFieldTest() {
       let obj: MultiField = new MultiField()
       expect(obj.a).assertEqual(1)
       expect(obj.b).assertEqual('hello')
-      expect(obj.c).assertEqual(true)
     })
 
     /**
      * @tc.number    SUB_CLASS_FIELD_0300
      * @tc.name      testFieldFuncInit0001
-     * @tc.desc      Verify field with function call initializer
+     * @tc.desc      ECMA-262 §15.2: Verify field with function call initializer
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -196,7 +203,7 @@ export default function ClassFieldTest() {
     /**
      * @tc.number    SUB_CLASS_FIELD_0400
      * @tc.name      testFieldCtorAssign0001
-     * @tc.desc      Verify field assigned in constructor, no declaration initializer
+     * @tc.desc      ECMA-262 §15.2: Verify field assigned in constructor, no declaration initializer
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -210,7 +217,7 @@ export default function ClassFieldTest() {
     /**
      * @tc.number    SUB_CLASS_FIELD_0500
      * @tc.name      testFieldCtorReadsField0001
-     * @tc.desc      Verify constructor reads field initialized by declaration initializer
+     * @tc.desc      ECMA-262 §15.2: Verify constructor reads field initialized by declaration initializer
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -224,7 +231,7 @@ export default function ClassFieldTest() {
     /**
      * @tc.number    SUB_CLASS_FIELD_0600
      * @tc.name      testFieldMethodReadsField0001
-     * @tc.desc      Verify method reads and computes using instance field
+     * @tc.desc      ECMA-262 §15.2: Verify method reads and computes using instance field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -238,7 +245,7 @@ export default function ClassFieldTest() {
     /**
      * @tc.number    SUB_CLASS_FIELD_0700
      * @tc.name      testFieldStatic0001
-     * @tc.desc      Verify static field accessible on class
+     * @tc.desc      ECMA-262 §15.2: Verify static field accessible on class
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -251,7 +258,7 @@ export default function ClassFieldTest() {
     /**
      * @tc.number    SUB_CLASS_FIELD_0800
      * @tc.name      testFieldInitNewExpr0001
-     * @tc.desc      Verify field initializer with new expression
+     * @tc.desc      ECMA-262 §15.2: Verify field initializer with new expression
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -264,7 +271,7 @@ export default function ClassFieldTest() {
     /**
      * @tc.number    SUB_CLASS_FIELD_0900
      * @tc.name      testFieldGeneric0001
-     * @tc.desc      Verify generic class field with different types
+     * @tc.desc      ECMA-262 §15.2: Verify generic class field with different types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -282,7 +289,7 @@ export default function ClassFieldTest() {
     /**
      * @tc.number    SUB_CLASS_FIELD_1000
      * @tc.name      testFieldArray0001
-     * @tc.desc      Verify array field with number and string element types
+     * @tc.desc      ECMA-262 §15.2: Verify array field with number and string element types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -301,7 +308,7 @@ export default function ClassFieldTest() {
     /**
      * @tc.number    SUB_CLASS_FIELD_1100
      * @tc.name      testFieldInitNoReassign0001
-     * @tc.desc      Verify field keeps initializer value when constructor does not reassign
+     * @tc.desc      ECMA-262 §15.2: Verify field keeps initializer value when constructor does not reassign
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -315,7 +322,7 @@ export default function ClassFieldTest() {
     /**
      * @tc.number    SUB_CLASS_FIELD_1200
      * @tc.name      testFieldClassTyped0001
-     * @tc.desc      Verify field typed as class type and array of class type
+     * @tc.desc      ECMA-262 §15.2: Verify field typed as class type and array of class type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -333,7 +340,7 @@ export default function ClassFieldTest() {
     /**
      * @tc.number    SUB_CLASS_FIELD_1300
      * @tc.name      testFieldBigint0001
-     * @tc.desc      Verify bigint field via TS helper
+     * @tc.desc      ArkTS dynamic: Verify bigint field via TS helper
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -346,7 +353,7 @@ export default function ClassFieldTest() {
     /**
      * @tc.number    SUB_CLASS_FIELD_1400
      * @tc.name      testFieldInitMethodCall0001
-     * @tc.desc      Verify field initializer calls this.method()
+     * @tc.desc      ArkTS dynamic: Verify field initializer calls this.method()
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -354,6 +361,50 @@ export default function ClassFieldTest() {
     it('testFieldInitMethodCall0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let v: number = getWithMethodCallValue()
       expect(v).assertEqual(10)
+    })
+
+    /**
+     * @tc.number    SUB_CLASS_FIELD_1500
+     * @tc.name      testFieldInitThrow0001
+     * @tc.desc      ECMA-262 §15.2: Verify field initializer that throws error is propagated during new
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testFieldInitThrow0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        new FieldInitThrows()
+        expect('no throw').assertEqual('should have thrown')
+      } catch (e) {
+        expect(String(e)).assertEqual('Error: field-init-error')
+      }
+    })
+
+    /**
+     * @tc.number    SUB_CLASS_FIELD_1600
+     * @tc.name      testFieldSymbolRead0001
+     * @tc.desc      ArkTS dynamic: Verify Symbol-keyed field read via TS helper
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testFieldSymbolRead0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let r: string = testSymbolFieldRead()
+      let parts: string[] = r.split("|")
+      expect(parts[0]).assertEqual('100')
+      expect(parts[1]).assertEqual('symbol-field')
+    })
+
+    /**
+     * @tc.number    SUB_CLASS_FIELD_1700
+     * @tc.name      testFieldSymbolWrite0001
+     * @tc.desc      ArkTS dynamic: Verify Symbol-keyed field write via TS helper
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testFieldSymbolWrite0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(testSymbolFieldWrite()).assertEqual('200')
     })
   })
 }

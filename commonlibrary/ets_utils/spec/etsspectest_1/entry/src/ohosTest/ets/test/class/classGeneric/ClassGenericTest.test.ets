@@ -24,15 +24,13 @@ import {
   Size,
   TestType
 } from '@ohos/hypium';
-import utils from '../../Utils';
 import { testGenericMethod, testGenericConstraint } from './classGenericTsHelper'
 
 export default function ClassGenericTest() {
   describe('ClassGenericTest', () => {
     beforeAll(() => {
     })
-    beforeEach(async () => {
-      await utils.msSleep(30);
+    beforeEach(() => {
     })
     afterEach(() => {
     })
@@ -42,7 +40,7 @@ export default function ClassGenericTest() {
     /**
      * @tc.number    SUB_CLASS_GENERIC_0100
      * @tc.name      testGenericMethod0001
-     * @tc.desc      Verify generic method map<U> in generic class with type transformation
+     * @tc.desc      ArkTS dynamic: Verify generic method map<U> in generic class with type transformation
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -54,7 +52,7 @@ export default function ClassGenericTest() {
     /**
      * @tc.number    SUB_CLASS_GENERIC_0200
      * @tc.name      testGenericConstraint0001
-     * @tc.desc      Verify generic class with extends constraint on type parameter
+     * @tc.desc      ArkTS dynamic (TS structural): Verify generic constraint T extends HasLength with structurally compatible type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2

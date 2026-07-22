@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-export class Mapper<T> {
+class Mapper<T> {
   value: T
 
   constructor(v: T) {
@@ -31,12 +31,12 @@ export function testGenericMethod(): string {
   return result
 }
 
-// Generic constraint
+// Generic constraint -- TS structural typing: string satisfies HasLength via length property
 interface HasLength {
   length: number
 }
 
-export class ConstrainedContainer<T extends HasLength> {
+class ConstrainedContainer<T extends HasLength> {
   item: T
 
   constructor(item: T) {

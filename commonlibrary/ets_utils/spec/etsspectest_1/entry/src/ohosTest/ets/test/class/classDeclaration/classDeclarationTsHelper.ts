@@ -53,7 +53,7 @@ export function testComputedAccessor(): string {
 }
 
 // Anonymous class expression
-export function testAnonymousClassExpression(): string {
+export function testAnonymousClassExpression(): void {
   let Point = class {
     x: number
     y: number
@@ -68,23 +68,14 @@ export function testAnonymousClassExpression(): string {
     }
   }
   let p = new Point(3, 4)
-  if (p.x !== 3) {
-    return "fail-x"
-  }
-  if (p.y !== 4) {
-    return "fail-y"
-  }
-  if (p.magnitude() !== 25) {
-    return "fail-mag"
-  }
-  if (!(p instanceof Point)) {
-    return "fail-instanceof"
-  }
-  return "ok"
+  if (p.x !== 3) { throw new Error("fail-x") }
+  if (p.y !== 4) { throw new Error("fail-y") }
+  if (p.magnitude() !== 25) { throw new Error("fail-mag") }
+  if (!(p instanceof Point)) { throw new Error("fail-instanceof") }
 }
 
 // Named class expression
-export function testNamedClassExpression(): string {
+export function testNamedClassExpression(): void {
   let Factory = class MyClass {
     id: number
 
@@ -97,16 +88,9 @@ export function testNamedClassExpression(): string {
     }
   }
   let obj = new Factory(42)
-  if (obj.id !== 42) {
-    return "fail-id"
-  }
-  if (obj.getId() !== 42) {
-    return "fail-getId"
-  }
-  if (!(obj instanceof Factory)) {
-    return "fail-instanceof"
-  }
-  return "ok"
+  if (obj.id !== 42) { throw new Error("fail-id") }
+  if (obj.getId() !== 42) { throw new Error("fail-getId") }
+  if (!(obj instanceof Factory)) { throw new Error("fail-instanceof") }
 }
 
 // Class expression with extends
@@ -118,7 +102,7 @@ class BaseForExpr {
   }
 }
 
-export function testExpressionExtends(): string {
+export function testExpressionExtends(): void {
   let Derived = class extends BaseForExpr {
     derivedValue: number = 1
 
@@ -127,17 +111,8 @@ export function testExpressionExtends(): string {
     }
   }
   let obj = new Derived(0)
-  if (obj.value !== 0) {
-    return "fail-value"
-  }
-  if (obj.derivedValue !== 1) {
-    return "fail-derived"
-  }
-  if (obj.getBase() !== 0) {
-    return "fail-getBase"
-  }
-  if (!(obj instanceof BaseForExpr)) {
-    return "fail-instanceof"
-  }
-  return "ok"
+  if (obj.value !== 0) { throw new Error("fail-value") }
+  if (obj.derivedValue !== 1) { throw new Error("fail-derived") }
+  if (obj.getBase() !== 0) { throw new Error("fail-getBase") }
+  if (!(obj instanceof BaseForExpr)) { throw new Error("fail-instanceof") }
 }

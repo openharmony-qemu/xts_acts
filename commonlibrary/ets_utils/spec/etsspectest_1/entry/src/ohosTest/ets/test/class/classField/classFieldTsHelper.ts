@@ -35,28 +35,20 @@ export function getWithMethodCallValue(): number {
 }
 
 /*
-* Symbol field test -- Symbol()
+ * Symbol field test -- Symbol() is supported in .ts helper (arkts-no-symbol only applies to .ets)
  */
-const symFieldId : unique symbol= Symbol("fieldId")
-const symFieldName : unique symbol= Symbol("fieldName")
+const symId: any = Symbol("symId")
+const symName: any = Symbol("symName")
 
-class SymbolField {
-  [symFieldId] = 100
-  [symFieldName] = "symbol-field"
+export function testSymbolFieldRead(): string {
+  let obj: any = { x: 1 }
+  obj[symId] = 100
+  obj[symName] = "symbol-field"
+  return String(obj[symId]) + "|" + obj[symName]
 }
 
-export function testSymbolFieldReadId(): any {
-  let obj: any = new SymbolField()
-  return obj[symFieldId]
-}
-
-export function testSymbolFieldReadName(): any {
-  let obj: any = new SymbolField()
-  return obj[symFieldName]
-}
-
-export function testSymbolFieldWrite(): any {
-  let obj: any = new SymbolField()
-  obj[symFieldId] = 200
-  return obj[symFieldId]
+export function testSymbolFieldWrite(): string {
+  let obj: any = { x: 1 }
+  obj[symId] = 200
+  return String(obj[symId])
 }

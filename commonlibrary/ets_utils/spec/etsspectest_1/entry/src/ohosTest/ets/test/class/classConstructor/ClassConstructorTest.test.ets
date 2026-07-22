@@ -24,7 +24,6 @@ import {
   Size,
   TestType
 } from '@ohos/hypium';
-import utils from '../../Utils';
 import { testDefaultDerivedCtorPassthrough, testNewTargetPropagation } from './classConstructorTsHelper'
 
 class EmptyCtor {
@@ -90,6 +89,33 @@ class CtorDefault {
   constructor(x: number = 5, label: string = 'default') {
     this.x = x
     this.label = label
+  }
+}
+
+let sideEffectCount: number = 0
+
+function sideEffectDefault(): string {
+  sideEffectCount++
+  return 'side-effect'
+}
+
+class CtorSideEffect {
+  public a: string
+  public b: string
+
+  constructor(a: string, b: string = sideEffectDefault()) {
+    this.a = a
+    this.b = b
+  }
+}
+
+class CtorRestMixed {
+  public prefix: string
+  public items: number[]
+
+  constructor(prefix: string, ...items: number[]) {
+    this.prefix = prefix
+    this.items = items
   }
 }
 
@@ -198,8 +224,8 @@ export default function ClassConstructorTest() {
   describe('ClassConstructorTest', () => {
     beforeAll(() => {
     })
-    beforeEach(async () => {
-      await utils.msSleep(30);
+    beforeEach(() => {
+      sideEffectCount = 0
     })
     afterEach(() => {
     })
@@ -209,7 +235,7 @@ export default function ClassConstructorTest() {
     /**
      * @tc.number    SUB_CLASS_CONSTRUCTOR_0100
      * @tc.name      testCtorEmpty0001
-     * @tc.desc      Verify explicit empty constructor creates instance
+     * @tc.desc      ECMA-262 §15.2: Verify explicit empty constructor creates instance
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -222,7 +248,7 @@ export default function ClassConstructorTest() {
     /**
      * @tc.number    SUB_CLASS_CONSTRUCTOR_0200
      * @tc.name      testCtorParamInit0001
-     * @tc.desc      Verify constructor with parameters initializes fields
+     * @tc.desc      ECMA-262 §15.2: Verify constructor with parameters initializes fields
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -236,7 +262,7 @@ export default function ClassConstructorTest() {
     /**
      * @tc.number    SUB_CLASS_CONSTRUCTOR_0300
      * @tc.name      testCtorCallMethod0001
-     * @tc.desc      Verify constructor calls instance method
+     * @tc.desc      ECMA-262 §15.2: Verify constructor calls instance method
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -249,7 +275,7 @@ export default function ClassConstructorTest() {
     /**
      * @tc.number    SUB_CLASS_CONSTRUCTOR_0400
      * @tc.name      testCtorAccessStatic0001
-     * @tc.desc      Verify constructor accesses static member
+     * @tc.desc      ECMA-262 §15.2: Verify constructor accesses static member
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -262,7 +288,7 @@ export default function ClassConstructorTest() {
     /**
      * @tc.number    SUB_CLASS_CONSTRUCTOR_0500
      * @tc.name      testCtorOptionalParam0001
-     * @tc.desc      Verify constructor with optional parameter
+     * @tc.desc      ECMA-262 §15.2: Verify constructor with optional parameter
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -279,7 +305,7 @@ export default function ClassConstructorTest() {
     /**
      * @tc.number    SUB_CLASS_CONSTRUCTOR_0600
      * @tc.name      testCtorRestParam0001
-     * @tc.desc      Verify constructor with rest parameter
+     * @tc.desc      ECMA-262 §15.2: Verify constructor with rest parameter
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -295,7 +321,7 @@ export default function ClassConstructorTest() {
     /**
      * @tc.number    SUB_CLASS_CONSTRUCTOR_0700
      * @tc.name      testCtorDefaultParam0001
-     * @tc.desc      Verify constructor with default parameter values
+     * @tc.desc      ECMA-262 §15.2: Verify constructor with default parameter values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -312,7 +338,7 @@ export default function ClassConstructorTest() {
     /**
      * @tc.number    SUB_CLASS_CONSTRUCTOR_0800
      * @tc.name      testCtorClassParam0001
-     * @tc.desc      Verify constructor with class typed parameter
+     * @tc.desc      ECMA-262 §15.2: Verify constructor with class typed parameter
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -326,7 +352,7 @@ export default function ClassConstructorTest() {
     /**
      * @tc.number    SUB_CLASS_CONSTRUCTOR_0900
      * @tc.name      testCtorInterfaceParam0001
-     * @tc.desc      Verify constructor with interface typed parameter
+     * @tc.desc      ECMA-262 §15.2: Verify constructor with interface typed parameter
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -340,7 +366,7 @@ export default function ClassConstructorTest() {
     /**
      * @tc.number    SUB_CLASS_CONSTRUCTOR_1000
      * @tc.name      testCtorArrayParam0001
-     * @tc.desc      Verify constructor with array typed parameter
+     * @tc.desc      ECMA-262 §15.2: Verify constructor with array typed parameter
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -354,7 +380,7 @@ export default function ClassConstructorTest() {
     /**
      * @tc.number    SUB_CLASS_CONSTRUCTOR_1300
      * @tc.name      testCtorSuperThenThis0001
-     * @tc.desc      Verify super() then access this field in derived constructor
+     * @tc.desc      ECMA-262 §15.2: Verify super() then access this field in derived constructor
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -368,7 +394,7 @@ export default function ClassConstructorTest() {
     /**
      * @tc.number    SUB_CLASS_CONSTRUCTOR_1400
      * @tc.name      testCtorSuperWithArg0001
-     * @tc.desc      Verify derived constructor passes args via super()
+     * @tc.desc      ECMA-262 §15.2: Verify derived constructor passes args via super()
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -382,7 +408,7 @@ export default function ClassConstructorTest() {
     /**
      * @tc.number    SUB_CLASS_CONSTRUCTOR_1500
      * @tc.name      testCtorGeneric0001
-     * @tc.desc      Verify generic class constructor with type parameter
+     * @tc.desc      ECMA-262 §15.2: Verify generic class constructor with type parameter
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -398,7 +424,7 @@ export default function ClassConstructorTest() {
     /**
      * @tc.number    SUB_CLASS_CONSTRUCTOR_1600
      * @tc.name      testCtorDefaultDerivedPassthrough0001
-     * @tc.desc      Verify derived class without explicit ctor passes args to base ctor via default super(...args)
+     * @tc.desc      ArkTS dynamic: Verify derived class without explicit ctor passes args to base ctor via default super(...args)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -411,7 +437,7 @@ export default function ClassConstructorTest() {
     /**
      * @tc.number    SUB_CLASS_CONSTRUCTOR_1700
      * @tc.name      testCtorNewTarget0001
-     * @tc.desc      Verify new.target propagates through inheritance chain
+     * @tc.desc      ArkTS dynamic: Verify new.target propagates through inheritance chain
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -419,6 +445,43 @@ export default function ClassConstructorTest() {
     it('testCtorNewTarget0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let s: string = testNewTargetPropagation()
       expect(s).assertEqual('child')
+    })
+
+    /**
+     * @tc.number    SUB_CLASS_CONSTRUCTOR_1800
+     * @tc.name      testCtorDefaultSideEffect0001
+     * @tc.desc      ECMA-262 §15.2: Verify default param side effect runs only when arg is omitted
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testCtorDefaultSideEffect0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      sideEffectCount = 0
+      let obj: CtorSideEffect = new CtorSideEffect('provided', 'explicit')
+      expect(obj.a).assertEqual('provided')
+      expect(obj.b).assertEqual('explicit')
+      expect(sideEffectCount).assertEqual(0)
+
+      let obj2: CtorSideEffect = new CtorSideEffect('only')
+      expect(obj2.a).assertEqual('only')
+      expect(obj2.b).assertEqual('side-effect')
+      expect(sideEffectCount).assertEqual(1)
+    })
+
+    /**
+     * @tc.number    SUB_CLASS_CONSTRUCTOR_1900
+     * @tc.name      testCtorRestMixed0001
+     * @tc.desc      ECMA-262 §15.2: Verify constructor with regular param followed by rest param
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testCtorRestMixed0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let obj: CtorRestMixed = new CtorRestMixed('nums', 1, 2, 3)
+      expect(obj.prefix).assertEqual('nums')
+      expect(obj.items.length).assertEqual(3)
+      expect(obj.items[0]).assertEqual(1)
+      expect(obj.items[2]).assertEqual(3)
     })
   })
 }

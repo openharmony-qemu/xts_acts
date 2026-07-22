@@ -9,7 +9,7 @@ import ClassInheritanceTest from './class/classInheritance/ClassInheritanceTest.
 import ClassVisibilityTest from './class/classVisibility/ClassVisibilityTest.test';
 import ClassSuperTest from './class/classSuper/ClassSuperTest.test';
 import ClassStaticTest from './class/classStatic/ClassStaticTest.test';
-import ClassObjectLiteralTest from './class/classObjectLiteral/ClassObjectLiteralTest.test';
+import InterfaceObjectLiteralTest from './interface/InterfaceObjectLiteralTest.test';
 import ClassGenericTest from './class/classGeneric/ClassGenericTest.test';
 import ClassAbstractTest from './class/classAbstract/ClassAbstractTest.test';
 import ClassInterfaceTest from './class/classInterface/ClassInterfaceTest.test';
@@ -31,7 +31,7 @@ export default function testsuite() {
   ClassVisibilityTest();
   ClassSuperTest();
   ClassStaticTest();
-  ClassObjectLiteralTest();
+  InterfaceObjectLiteralTest();
   ClassGenericTest();
   ClassAbstractTest();
   ClassInterfaceTest();

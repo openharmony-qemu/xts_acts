@@ -24,15 +24,13 @@ import {
   Size,
   TestType
 } from '@ohos/hypium';
-import utils from '../../Utils';
 import { testMultiAbstractChain } from './classAbstractTsHelper'
 
 export default function ClassAbstractTest() {
   describe('ClassAbstractTest', () => {
     beforeAll(() => {
     })
-    beforeEach(async () => {
-      await utils.msSleep(30);
+    beforeEach(() => {
     })
     afterEach(() => {
     })
@@ -42,7 +40,7 @@ export default function ClassAbstractTest() {
     /**
      * @tc.number    SUB_CLASS_ABSTRACT_0100
      * @tc.name      testMultiAbstractChain0001
-     * @tc.desc      Verify multi-level abstract inheritance: A abstract -> B abstract -> C concrete
+     * @tc.desc      ArkTS dynamic: Verify multi-level abstract inheritance: A abstract -> B abstract -> C concrete
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
