@@ -276,7 +276,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           await sleep(100)
         }
         await sleep(1000)
-        let button2 = await driver.findComponent(ON.type('Toggle').isAfter(ON.originalText('AAAopenWindow')));
+        let button2 = await driver.findComponent(ON.type('Toggle').isAfter(ON.originalText('全部')));
         console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
         if (button2 !== null) {
           console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
