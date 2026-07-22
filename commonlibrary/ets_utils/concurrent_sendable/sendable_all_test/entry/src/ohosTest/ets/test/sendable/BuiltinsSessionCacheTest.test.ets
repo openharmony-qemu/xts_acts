@@ -13,10 +13,9 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
-import { collections } from '@kit.ArkTS'
-import { ArkTSUtils } from '@kit.ArkTS'
+import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
 
 @Sendable
@@ -93,15 +92,11 @@ export default function BuiltinsSessionCacheTest(): void {
   describe('BuiltinsSessionCacheTest', (): void => {
     let cache: SessionCacheManager
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       const timestampsArg: collections.Map<string, number> = new collections.Map<string, number>()
       const cacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(200)
       cache = new SessionCacheManager(timestampsArg, cacheArg)
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     /**
      * @tc.name   testSessionCache0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SESSION_CACHE_TEST_0100

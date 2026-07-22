@@ -13,10 +13,9 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
-import { collections } from '@kit.ArkTS'
-import { ArkTSUtils } from '@kit.ArkTS'
+import { ArkTSUtils, collections } from '@kit.ArkTS'
 
 @Sendable
 class VersionHistoryEntry {
@@ -140,15 +139,11 @@ export default function BuiltinsConfigVersionTest(): void {
   describe('BuiltinsConfigVersionTest', (): void => {
     let versionManager: ConfigVersionManager
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       const configMapArg: collections.Map<string, string> = new collections.Map<string, string>()
       const versionHistoryArg: collections.Array<VersionHistoryEntry> = new collections.Array<VersionHistoryEntry>()
       versionManager = new ConfigVersionManager(configMapArg, versionHistoryArg, new ArkTSUtils.locks.AsyncLock())
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     /**
      * @tc.name   testConfigVersion0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_VERSION_TEST_0100

@@ -13,10 +13,9 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
-import { collections } from '@kit.ArkTS'
-import { ArkTSUtils } from '@kit.ArkTS'
+import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
 
 const enum Environment {
@@ -125,7 +124,6 @@ export default function BuiltinsEnvironmentConfigTest(): void {
   describe('BuiltinsEnvironmentConfigTest', (): void => {
     let envManager: EnvironmentConfigManager
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       const envConfigs: collections.Map<Environment, collections.Map<string, string>> = new collections.Map<Environment, collections.Map<string, string>>()
       envConfigs.set(Environment.DEVELOPMENT, new collections.Map<string, string>())
@@ -133,9 +131,6 @@ export default function BuiltinsEnvironmentConfigTest(): void {
       envConfigs.set(Environment.PRODUCTION, new collections.Map<string, string>())
       envManager = new EnvironmentConfigManager(new ArkTSUtils.locks.AsyncLock(), envConfigs)
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     /**
      * @tc.name   testEnvironmentConfig0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ENVIRONMENT_CONFIG_TEST_0100

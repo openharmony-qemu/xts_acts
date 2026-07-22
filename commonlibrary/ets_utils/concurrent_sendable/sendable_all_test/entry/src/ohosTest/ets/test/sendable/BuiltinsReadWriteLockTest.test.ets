@@ -1,4 +1,4 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils } from '@kit.ArkTS'
 import Utils from '../utils'
@@ -93,13 +93,9 @@ export default function BuiltinsReadWriteLockTest(): void {
   describe('BuiltinsReadWriteLockTest', (): void => {
     let resource: ReadWriteResource
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       resource = new ReadWriteResource(new ArkTSUtils.locks.AsyncLock(), new ArkTSUtils.locks.ConditionVariable(), new ArkTSUtils.locks.ConditionVariable())
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     it('testReadWriteLock0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await resource.write(100)
       const value: number = await resource.read()

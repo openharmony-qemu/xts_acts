@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { collections, ArkTSUtils } from '@kit.ArkTS'
 import Utils from '../utils'
@@ -125,13 +125,9 @@ export default function BuiltinsErrorResultCollectTest(): void {
   describe('BuiltinsErrorResultCollectTest', (): void => {
     let collector: ErrorResultCollector
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       collector = new ErrorResultCollector(new collections.Array<string>(), new collections.Array<string>(), new collections.Map<number, string>(), new collections.Map<number, string>(), new collections.Map<number, number>(), new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     /**
      * @tc.name   testErrorResultCollect0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ERROR_RESULT_COLLECT_TEST_0100

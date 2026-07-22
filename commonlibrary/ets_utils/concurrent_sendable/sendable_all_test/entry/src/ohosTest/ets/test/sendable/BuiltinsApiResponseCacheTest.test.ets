@@ -13,11 +13,10 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import { BusinessError } from '@kit.BasicServicesKit'
 import taskpool from '@ohos.taskpool'
-import { collections } from '@kit.ArkTS'
-import { ArkTSUtils } from '@kit.ArkTS'
+import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
 
 const API_CACHE_EMPTY_KEY_MSG: string = 'ApiCacheManager key is empty'
@@ -131,15 +130,11 @@ export default function BuiltinsApiResponseCacheTest(): void {
   describe('BuiltinsApiResponseCacheTest', (): void => {
     let cache: ApiCacheManager
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       const timestampsArg: collections.Map<string, number> = new collections.Map<string, number>()
       const cacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(100)
       cache = new ApiCacheManager(timestampsArg, cacheArg, new ArkTSUtils.locks.AsyncLock())
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     /**
      * @tc.name   testApiResponseCache0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_API_RESPONSE_CACHE_TEST_0100

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
@@ -91,13 +91,9 @@ export default function BuiltinsBoundedQueueTest(): void {
   describe('BuiltinsBoundedQueueTest', (): void => {
     let queue: BoundedQueue
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       queue = new BoundedQueue(10, new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     it('testBoundedQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       expect(await queue.size()).assertEqual(0)
       expect(await queue.isEmpty()).assertTrue()

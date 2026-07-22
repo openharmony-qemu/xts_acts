@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils } from '@kit.ArkTS'
 import { NestedSharedCounter } from '../../../workers/sendable'
@@ -45,11 +45,6 @@ function outerErrorTask(): number {
 
 export default function BuiltinsSendableNestedTest(): void {
   describe('BuiltinsSendableNestedTest', (): void => {
-    beforeAll((): void => {})
-    beforeEach((): void => {})
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     /**
      * @tc.name   testSendableNested0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_NESTED_TEST_0100
@@ -128,10 +123,13 @@ export default function BuiltinsSendableNestedTest(): void {
           nestedResult = value as number
         })
       })
+      let caught: boolean = false
       try {
         await taskpool.execute(task)
       } catch (e) {
-        // expected error
+        caught = true
+        const err: Error = e as Error
+        expect(err.message).assertContain('outer error')
       }
       await new Promise<void>((resolve): void => {
         const checkInterval = setInterval((): void => {
@@ -141,6 +139,8 @@ export default function BuiltinsSendableNestedTest(): void {
           }
         }, 10)
       })
+      // Failure may arrive via reject and/or onExecutionFailed; nested task proves the error path ran.
+      expect(caught || nestedResult >= 1).assertTrue()
       expect(counter.count_).assertEqual(1)
     })
 

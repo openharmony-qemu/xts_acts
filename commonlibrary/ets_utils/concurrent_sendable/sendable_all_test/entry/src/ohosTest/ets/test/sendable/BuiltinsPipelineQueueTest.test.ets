@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
@@ -151,13 +151,9 @@ export default function BuiltinsPipelineQueueTest(): void {
   describe('BuiltinsPipelineQueueTest', (): void => {
     let pipeline: PipelineStageQueue
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       pipeline = new PipelineStageQueue(new collections.Array<number>(), new collections.Array<number>(), new collections.Array<number>(), new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     it('testPipelineQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pipeline.inputStage1(5)
       expect(await pipeline.getStage1Size()).assertEqual(1)

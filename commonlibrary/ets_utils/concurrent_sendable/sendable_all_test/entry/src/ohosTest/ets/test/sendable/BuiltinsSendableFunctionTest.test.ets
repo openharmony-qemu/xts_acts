@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import {
   SinglePropSendableClass,
@@ -31,11 +31,6 @@ function callSendableFuncInTaskPool(): number {
 
 export default function BuiltinsSendableFunctionTest(): void {
   describe('BuiltinsSendableFunctionTest', (): void => {
-    beforeAll((): void => {})
-    beforeEach((): void => {})
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     /**
      * @tc.name   testSendableFunction0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_FUNCTION_TEST_0100

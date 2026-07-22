@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ValidSendableClass } from '../../../workers/sendable'
 import { collections } from '@kit.ArkTS'
@@ -52,11 +52,6 @@ function modifySendableArrayFunc(arr: collections.Array<number>): number {
 
 export default function BuiltinsSendableConstraintTest(): void {
   describe('BuiltinsSendableConstraintTest', (): void => {
-    beforeAll((): void => {})
-    beforeEach((): void => {})
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     /**
      * @tc.name   testSendableConstraint0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINT_TEST_0100

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { collections, ArkTSUtils } from '@kit.ArkTS'
 import Utils from '../utils'
@@ -81,13 +81,9 @@ export default function BuiltinsDataResultCollectTest(): void {
   describe('BuiltinsDataResultCollectTest', (): void => {
     let collector: DataResultCollector
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       collector = new DataResultCollector(new collections.Array<string>(), new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     it('testDataResultCollect0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await collector.addResult(1, 'result_1')
       expect(collector.getResultCount()).assertEqual(1)

@@ -13,10 +13,9 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
-import { collections } from '@kit.ArkTS'
-import { ArkTSUtils } from '@kit.ArkTS'
+import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
 
 @Sendable
@@ -173,8 +172,6 @@ class BoundaryCache {
 
 export default function BuiltinsCacheIRTest(): void {
   describe('BuiltinsCacheIRTest', (): void => {
-    afterEach((): void => {})
-
     /**
      * @tc.name   testCacheIR0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CACHE_IR_TEST_0100

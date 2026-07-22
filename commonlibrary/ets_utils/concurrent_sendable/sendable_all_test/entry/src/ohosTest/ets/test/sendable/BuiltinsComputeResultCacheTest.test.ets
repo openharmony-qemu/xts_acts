@@ -13,10 +13,9 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
-import { collections } from '@kit.ArkTS'
-import { ArkTSUtils } from '@kit.ArkTS'
+import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
 
 @Sendable
@@ -114,14 +113,10 @@ export default function BuiltinsComputeResultCacheTest(): void {
   describe('BuiltinsComputeResultCacheTest', (): void => {
     let cache: ComputeResultCache
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       const cacheArg: ArkTSUtils.SendableLruCache<string, number> = new ArkTSUtils.SendableLruCache<string, number>(100)
       cache = new ComputeResultCache(cacheArg)
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     /**
      * @tc.name   testComputeResultCache0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_COMPUTE_RESULT_CACHE_TEST_0100

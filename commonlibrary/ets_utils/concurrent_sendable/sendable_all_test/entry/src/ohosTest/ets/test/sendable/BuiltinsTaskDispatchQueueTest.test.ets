@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
@@ -90,13 +90,9 @@ export default function BuiltinsTaskDispatchQueueTest(): void {
   describe('BuiltinsTaskDispatchQueueTest', (): void => {
     let queue: TaskDispatchQueue
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       queue = new TaskDispatchQueue(new collections.Array<number>(), new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     it('testTaskDispatchQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await queue.enqueue(1)
       expect(await queue.getPendingSize()).assertEqual(1)

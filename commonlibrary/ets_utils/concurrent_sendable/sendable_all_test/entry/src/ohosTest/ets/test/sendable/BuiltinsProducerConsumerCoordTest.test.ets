@@ -1,4 +1,4 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
@@ -126,13 +126,9 @@ export default function BuiltinsProducerConsumerCoordTest(): void {
   describe('BuiltinsProducerConsumerCoordTest', (): void => {
     let pcb: ProducerConsumerBuffer
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       pcb = new ProducerConsumerBuffer(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock(), new ArkTSUtils.locks.ConditionVariable(), new ArkTSUtils.locks.ConditionVariable())
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     it('testProducerConsumerCoord0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pcb.produce(100)
       const item: number = await pcb.consume()

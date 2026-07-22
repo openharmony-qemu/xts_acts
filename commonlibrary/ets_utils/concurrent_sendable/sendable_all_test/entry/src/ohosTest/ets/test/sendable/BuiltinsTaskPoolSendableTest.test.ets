@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { SharedCounter, SharedArrayContainer } from '../../../workers/sendable'
 import Utils from '../utils'
@@ -49,11 +49,6 @@ function readSharedCounter(counter: SharedCounter): number {
 
 export default function BuiltinsTaskPoolSendableTest(): void {
   describe('BuiltinsTaskPoolSendableTest', (): void => {
-    beforeAll((): void => {})
-    beforeEach((): void => {})
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     /**
      * @tc.name   testTaskPoolSendable0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_SENDABLE_TEST_0100

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import {
   BooleanSendable,
@@ -37,11 +37,6 @@ function readNumberInTask(instance: NumberSendable): number {
 
 export default function BuiltinsSendableBasicTypeTest(): void {
   describe('BuiltinsSendableBasicTypeTest', (): void => {
-    beforeAll((): void => {})
-    beforeEach((): void => {})
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     /**
      * @tc.name   testSendableBasicType0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_BASIC_TYPE_TEST_0100

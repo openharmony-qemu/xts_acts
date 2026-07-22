@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { collections, ArkTSUtils } from '@kit.ArkTS'
 import Utils from '../utils'
@@ -134,13 +134,9 @@ export default function BuiltinsImageResultCollectTest(): void {
   describe('BuiltinsImageResultCollectTest', (): void => {
     let collector: ImageResultCollector
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       collector = new ImageResultCollector(new collections.Array<string>(), new collections.Array<string>(), new collections.Map<number, string>(), new collections.Array<number>(), new collections.Array<number>(), new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     it('testImageResultCollect0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await collector.addSuccessResult(1, 'processed_image_1')
       expect(collector.getSuccessCount()).assertEqual(1)

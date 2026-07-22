@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { collections } from '@kit.ArkTS'
 import Utils from '../utils'
@@ -88,13 +88,9 @@ export default function BuiltinsSharedCounterResourceRefTest(): void {
   describe('BuiltinsSharedCounterResourceRefTest', (): void => {
     let refCounter: ResourceRefCounter
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       refCounter = new ResourceRefCounter('test_resource', new collections.Array<string>())
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     it('testSharedCounterResourceRef0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       expect(refCounter.getRefCount()).assertEqual(0)
       expect(refCounter.isReferenced()).assertFalse()

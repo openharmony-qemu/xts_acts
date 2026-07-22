@@ -13,10 +13,9 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
-import { collections } from '@kit.ArkTS'
-import { ArkTSUtils } from '@kit.ArkTS'
+import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
 
 @Sendable
@@ -355,11 +354,6 @@ function readGCObjValue(o: IRGCObject): number {
 
 export default function BuiltinsIRReinforcementTest(): void {
   describe('BuiltinsIRReinforcementTest', (): void => {
-    beforeAll((): void => {})
-    beforeEach((): void => {})
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     /**
      * @tc.name   testIRReinforcement0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_0100

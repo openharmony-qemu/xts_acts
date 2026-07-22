@@ -13,10 +13,9 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
-import { collections } from '@kit.ArkTS'
-import { ArkTSUtils } from '@kit.ArkTS'
+import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
 
 @Sendable
@@ -175,8 +174,6 @@ class BatchConfigManager {
 
 export default function BuiltinsConfigIRTest(): void {
   describe('BuiltinsConfigIRTest', (): void => {
-    afterEach((): void => {})
-
     /**
      * @tc.name   testConfigIR0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_IR_TEST_0100

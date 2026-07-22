@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect } from '@ohos/hypium'
 import { worker, MessageEvents } from '@kit.ArkTS'
 import { SendableCounter } from '../../../workers/sendable'
 import Utils from '../utils'
@@ -22,9 +22,5 @@ const WORKER_PATH = '../../workers/sendable_worker.ets'
 
 export default function BuiltinsWorkerSendableTest(): void {
   describe('BuiltinsWorkerSendableTest', (): void => {
-    beforeAll((): void => {})
-    beforeEach((): void => {})
-    afterEach((): void => {})
-    afterAll((): void => {})
   })
 }

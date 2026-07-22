@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { collections, ArkTSUtils } from '@kit.ArkTS'
 import Utils from '../utils'
@@ -101,13 +101,9 @@ export default function BuiltinsSharedCounterDownloadTest(): void {
   describe('BuiltinsSharedCounterDownloadTest', (): void => {
     let progress: DownloadProgress
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       progress = new DownloadProgress(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     it('testSharedCounterDownload0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       progress.setTotalChunks(1)
       expect(progress.getChunkProgress(0)).assertEqual(0)

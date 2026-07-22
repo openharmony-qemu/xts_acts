@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
@@ -147,11 +147,6 @@ function produceIRTask(v: number): number {
 
 export default function BuiltinsQueueIRTest(): void {
   describe('BuiltinsQueueIRTest', (): void => {
-    beforeAll((): void => {})
-    beforeEach((): void => {})
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     it('testQueueIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 1024; i++) {

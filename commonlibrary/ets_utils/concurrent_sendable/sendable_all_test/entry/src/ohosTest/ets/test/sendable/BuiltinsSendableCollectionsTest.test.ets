@@ -13,17 +13,12 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import { collections, ArkTSUtils } from '@kit.ArkTS'
 import Utils from '../utils'
 
 export default function BuiltinsSendableCollectionsTest(): void {
   describe('BuiltinsSendableCollectionsTest', (): void => {
-    beforeAll((): void => {})
-    beforeEach((): void => {})
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     /**
      * @tc.name   testSendableCollections0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_COLLECTIONS_TEST_0100

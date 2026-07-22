@@ -13,10 +13,9 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
-import { collections } from '@kit.ArkTS'
-import { ArkTSUtils } from '@kit.ArkTS'
+import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
 
 @Sendable
@@ -93,8 +92,6 @@ export default function BuiltinsConfigStabilityTest(): void {
     beforeEach((): void => {
       configManager = new StabilityConfigManager(new collections.Map<string, string>(), new ArkTSUtils.locks.AsyncLock())
     })
-
-    afterEach((): void => {})
 
     /**
      * @tc.name   testConfigStability0100

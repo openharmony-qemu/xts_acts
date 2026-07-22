@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import Utils from '../utils'
 
@@ -83,13 +83,9 @@ export default function BuiltinsSharedCounterInventoryTest(): void {
   describe('BuiltinsSharedCounterInventoryTest', (): void => {
     let inventory: InventoryCounter
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       inventory = new InventoryCounter()
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     it('testSharedCounterInventory0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       inventory.setStock(100)
       expect(inventory.getStock()).assertEqual(100)

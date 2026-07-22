@@ -13,10 +13,9 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
-import { collections } from '@kit.ArkTS'
-import { ArkTSUtils } from '@kit.ArkTS'
+import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
 
 @Sendable
@@ -132,11 +131,6 @@ function readSetSize(s: collections.Set<number>): number {
 
 export default function BuiltinsDictModeTriggerTest(): void {
   describe('BuiltinsDictModeTriggerTest', (): void => {
-    beforeAll((): void => {})
-    beforeEach((): void => {})
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     /**
      * @tc.name   testDictModeTrigger0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DICT_MODE_TRIGGER_TEST_0100

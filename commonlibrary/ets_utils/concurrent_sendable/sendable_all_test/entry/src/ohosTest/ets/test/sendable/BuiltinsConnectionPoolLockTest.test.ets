@@ -1,4 +1,4 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
@@ -114,11 +114,6 @@ function acquireConnectionId(): number {
 }
 
 @Concurrent
-function releaseConnectionId(): number {
-  return 0
-}
-
-@Concurrent
 function connectionNotifyTask(): void {
   taskpool.Task.sendData({ action: 'acquired', connId: 1 })
   taskpool.Task.sendData({ action: 'used', connId: 1 })
@@ -129,14 +124,10 @@ export default function BuiltinsConnectionPoolLockTest(): void {
   describe('BuiltinsConnectionPoolLockTest', (): void => {
     let pool: ConnectionPool
 
-    beforeAll((): void => {})
     beforeEach(async (): Promise<void> => {
       pool = new ConnectionPool(new collections.Array<boolean>(), new ArkTSUtils.locks.AsyncLock(), new ArkTSUtils.locks.ConditionVariable())
       await pool.initialize(5)
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     it('testConnectionPoolLock0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       expect(await pool.getTotalCount()).assertEqual(5)
       expect(await pool.getAvailableCount()).assertEqual(5)

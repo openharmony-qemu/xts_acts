@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { collections, ArkTSUtils } from '@kit.ArkTS'
 import Utils from '../utils'
@@ -104,15 +104,11 @@ export default function BuiltinsDbQueryCacheTest(): void {
   describe('BuiltinsDbQueryCacheTest', (): void => {
     let cache: DatabaseQueryCache
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       const lockArg: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
       const cacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(100)
       cache = new DatabaseQueryCache(lockArg, cacheArg)
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     it('testDbQueryCache0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await cache.set('query_1', 'result_1')
       expect(cache.length()).assertEqual(1)

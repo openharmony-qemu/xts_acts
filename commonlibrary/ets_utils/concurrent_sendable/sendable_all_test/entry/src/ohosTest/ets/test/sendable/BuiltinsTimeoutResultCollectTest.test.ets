@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { collections, ArkTSUtils } from '@kit.ArkTS'
 import Utils from '../utils'
@@ -120,13 +120,9 @@ export default function BuiltinsTimeoutResultCollectTest(): void {
   describe('BuiltinsTimeoutResultCollectTest', (): void => {
     let collector: TimeoutResultCollector
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       collector = new TimeoutResultCollector(new collections.Map<number, string>(), new collections.Map<number, string>(), new collections.Map<number, string>(), new collections.Map<number, number>(), new ArkTSUtils.locks.AsyncLock())
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     it('testTimeoutResultCollect0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addPendingTask(1, 'task_1')
       expect(collector.getPendingCount()).assertEqual(1)

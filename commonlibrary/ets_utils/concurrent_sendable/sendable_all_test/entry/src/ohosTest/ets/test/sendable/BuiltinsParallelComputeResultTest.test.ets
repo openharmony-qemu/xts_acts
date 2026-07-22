@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { collections, ArkTSUtils } from '@kit.ArkTS'
 import Utils from '../utils'
@@ -120,13 +120,9 @@ export default function BuiltinsParallelComputeResultTest(): void {
   describe('BuiltinsParallelComputeResultTest', (): void => {
     let collector: NumericResultCollector
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       collector = new NumericResultCollector(new collections.Array<number>(), new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     it('testParallelComputeResult0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addValue(10)
       expect(collector.getCount()).assertEqual(1)

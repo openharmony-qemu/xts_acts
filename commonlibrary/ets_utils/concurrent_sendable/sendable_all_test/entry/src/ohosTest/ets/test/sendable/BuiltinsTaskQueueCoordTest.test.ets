@@ -1,4 +1,4 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
@@ -163,13 +163,9 @@ export default function BuiltinsTaskQueueCoordTest(): void {
   describe('BuiltinsTaskQueueCoordTest', (): void => {
     let queue: TaskQueue
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       queue = new TaskQueue(new collections.Array<TaskItem>(), new ArkTSUtils.locks.AsyncLock(), new ArkTSUtils.locks.ConditionVariable(), new ArkTSUtils.locks.ConditionVariable())
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     it('testTaskQueueCoord0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const task: TaskItem = createTask(1, 'task_1', 0)
       await queue.enqueue(task)

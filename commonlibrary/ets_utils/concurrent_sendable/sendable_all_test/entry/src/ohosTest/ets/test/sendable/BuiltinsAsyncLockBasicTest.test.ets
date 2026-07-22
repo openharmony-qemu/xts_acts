@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils } from '@kit.ArkTS'
 import Utils from '../utils'
@@ -55,13 +55,9 @@ export default function BuiltinsAsyncLockBasicTest(): void {
   describe('BuiltinsAsyncLockBasicTest', (): void => {
     let counter: LockCounter
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       counter = new LockCounter(new ArkTSUtils.locks.AsyncLock())
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     /**
      * @tc.name   testAsyncLockBasic0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASYNC_LOCK_BASIC_TEST_0100

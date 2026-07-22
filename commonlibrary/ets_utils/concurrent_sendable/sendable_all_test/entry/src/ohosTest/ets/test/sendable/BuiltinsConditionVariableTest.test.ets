@@ -1,4 +1,4 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
@@ -222,15 +222,11 @@ export default function BuiltinsConditionVariableTest(): void {
     let waitCounter: WaitCounter
     let cvManager: ConditionVariableManager
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       buffer = new CondBuffer(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock(), new ArkTSUtils.locks.ConditionVariable(), new ArkTSUtils.locks.ConditionVariable())
       waitCounter = new WaitCounter(new ArkTSUtils.locks.AsyncLock(), new ArkTSUtils.locks.ConditionVariable())
       cvManager = new ConditionVariableManager(new ArkTSUtils.locks.AsyncLock(), new collections.Array<WaitQueueItem>(), new ArkTSUtils.locks.ConditionVariable())
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     it('testConditionVariable0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const size: number = await buffer.size()
       expect(size).assertEqual(0)

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
 import { LogEntry } from '../../../workers/sendable'
@@ -106,13 +106,9 @@ export default function BuiltinsLogCollectorQueueTest(): void {
   describe('BuiltinsLogCollectorQueueTest', (): void => {
     let logQueue: LogCollectorQueue
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       logQueue = new LogCollectorQueue(new collections.Array<LogEntry>(), new ArkTSUtils.locks.AsyncLock())
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     it('testLogCollectorQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const success: boolean = await logQueue.enqueue(LogLevel.INFO, 'test log', Date.now())
       expect(success).assertTrue()

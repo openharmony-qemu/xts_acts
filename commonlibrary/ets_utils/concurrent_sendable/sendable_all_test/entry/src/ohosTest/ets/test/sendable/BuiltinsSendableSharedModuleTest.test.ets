@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { SharedSingleton } from '../../../workers/sendable'
 import Utils from '../utils'
@@ -37,13 +37,9 @@ function incrementSharedSingleton(instance: SharedSingleton): number {
 export default function BuiltinsSendableSharedModuleTest(): void {
   describe('BuiltinsSendableSharedModuleTest', (): void => {
     let singleton: SharedSingleton
-    beforeAll((): void => {})
     beforeEach((): void => {
       singleton = new SharedSingleton()
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     /**
      * @tc.name   testSendableSharedModule0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_SHARED_MODULE_TEST_0100

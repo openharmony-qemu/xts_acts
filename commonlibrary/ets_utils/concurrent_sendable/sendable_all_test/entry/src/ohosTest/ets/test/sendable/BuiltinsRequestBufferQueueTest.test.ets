@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils, collections } from '@kit.ArkTS'
 import { Request } from '../../../workers/sendable'
@@ -101,13 +101,9 @@ export default function BuiltinsRequestBufferQueueTest(): void {
   describe('BuiltinsRequestBufferQueueTest', (): void => {
     let bufferQueue: RequestBufferQueue
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       bufferQueue = new RequestBufferQueue(new collections.Array<Request>(), new ArkTSUtils.locks.AsyncLock())
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     it('testRequestBufferQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const success: boolean = await bufferQueue.bufferRequest(1, 'GET', 'test')
       expect(success).assertTrue()

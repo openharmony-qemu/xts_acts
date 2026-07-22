@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { collections, ArkTSUtils } from '@kit.ArkTS'
 import Utils from '../utils'
@@ -101,16 +101,12 @@ export default function BuiltinsImageCacheTest(): void {
   describe('BuiltinsImageCacheTest', (): void => {
     let cache: ImageCacheManager
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       const sizeInfoArg: collections.Map<string, string> = new collections.Map<string, string>()
       const lockArg: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
       const cacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(50)
       cache = new ImageCacheManager(sizeInfoArg, lockArg, cacheArg)
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     it('testImageCache0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await cache.setImage('https://img.example.com/photo1.jpg', 'image_data_1', '1920x1080')
       let value: string | undefined = await cache.getImage('https://img.example.com/photo1.jpg')

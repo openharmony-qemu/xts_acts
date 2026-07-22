@@ -13,10 +13,9 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
-import { collections } from '@kit.ArkTS'
-import { ArkTSUtils } from '@kit.ArkTS'
+import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
 
 @Sendable
@@ -166,11 +165,6 @@ function workerReceiveIRTest(o: IRTestClass): number {
 
 export default function BuiltinsIROptimizationTest(): void {
   describe('BuiltinsIROptimizationTest', (): void => {
-    beforeAll((): void => {})
-    beforeEach((): void => {})
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     /**
      * @tc.name   testIROptimization0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_0100

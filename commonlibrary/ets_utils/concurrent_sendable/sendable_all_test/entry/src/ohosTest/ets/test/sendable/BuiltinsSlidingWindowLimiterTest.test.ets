@@ -13,10 +13,9 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
-import { collections } from '@kit.ArkTS'
-import { ArkTSUtils } from '@kit.ArkTS'
+import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
 
 @Sendable
@@ -198,8 +197,6 @@ export default function BuiltinsSlidingWindowLimiterTest(): void {
         manager.totalSuccess_.clear()
       })
     })
-
-    afterEach((): void => {})
 
     it('testSlidingWindowLimiter0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const limiter: SlidingWindowLimiter = await manager.createLimiter('test_window', 1000, 5)

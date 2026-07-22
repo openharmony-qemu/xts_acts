@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, afterEach, it, expect } from '@ohos/hypium'
 import { worker, MessageEvents, collections } from '@kit.ArkTS'
 import { SharedConfigForWorker, WorkerConfigData } from '../../../workers/sendable'
 import Utils from '../utils'

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { worker, MessageEvents } from '@kit.ArkTS'
 import { SendableCounter } from '../../../workers/sendable'
@@ -84,13 +84,9 @@ export default function BuiltinsSharedCounterTaskCompleteTest(): void {
   describe('BuiltinsSharedCounterTaskCompleteTest', (): void => {
     let counter: TaskCompletionCounter
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       counter = new TaskCompletionCounter()
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     it('testSharedCounterTaskComplete0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       expect(counter.getCompleted()).assertEqual(0)
       expect(counter.getFailed()).assertEqual(0)
@@ -112,9 +108,14 @@ export default function BuiltinsSharedCounterTaskCompleteTest(): void {
         await taskpool.execute(task)
       } catch (e) {
         caught = true
+        const err: Error = e as Error
+        expect(err.message).assertContain('task failed')
       }
-      // Verify the failed task ran: either execute threw, or counter was incremented before throw
+      // execute may surface the throw, or only record failed_ before reject; accept either observed path.
       expect(caught || counter.getFailed() > 0).assertTrue()
+      if (!caught) {
+        expect(counter.getFailed()).assertLargerOrEqual(1)
+      }
     })
 
     it('testSharedCounterTaskComplete0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {

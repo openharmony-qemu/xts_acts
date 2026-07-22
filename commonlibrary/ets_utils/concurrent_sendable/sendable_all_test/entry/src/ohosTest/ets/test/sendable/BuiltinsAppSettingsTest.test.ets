@@ -13,10 +13,9 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
-import { collections } from '@kit.ArkTS'
-import { ArkTSUtils } from '@kit.ArkTS'
+import { ArkTSUtils, collections } from '@kit.ArkTS'
 
 @Sendable
 class AppSettingsManager {
@@ -163,13 +162,9 @@ export default function BuiltinsAppSettingsTest(): void {
   describe('BuiltinsAppSettingsTest', (): void => {
     let settingsManager: AppSettingsManager
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       settingsManager = new AppSettingsManager(new collections.Map<string, string>(), new collections.Map<string, string>(), new collections.Map<string, boolean>(), new ArkTSUtils.locks.AsyncLock())
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     /**
      * @tc.name   testAppSettings0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APP_SETTINGS_TEST_0100

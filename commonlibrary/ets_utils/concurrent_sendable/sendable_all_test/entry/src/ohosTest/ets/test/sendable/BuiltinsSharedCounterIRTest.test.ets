@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { collections } from '@kit.ArkTS'
 import Utils from '../utils'
@@ -72,13 +72,9 @@ export default function BuiltinsSharedCounterIRTest(): void {
   describe('BuiltinsSharedCounterIRTest', (): void => {
     let counter: IRCounter
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       counter = new IRCounter(new collections.Map<string, number>())
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     it('testSharedCounterIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       counter.count_ = 10
       counter.threshold_ = 50

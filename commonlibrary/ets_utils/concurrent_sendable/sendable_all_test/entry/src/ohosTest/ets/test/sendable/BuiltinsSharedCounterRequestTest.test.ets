@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import Utils from '../utils'
 
@@ -105,13 +105,9 @@ export default function BuiltinsSharedCounterRequestTest(): void {
   describe('BuiltinsSharedCounterRequestTest', (): void => {
     let counter: RequestCounter
 
-    beforeAll((): void => {})
     beforeEach((): void => {
       counter = new RequestCounter()
     })
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     it('testSharedCounterRequest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       counter.recordRequest(RequestType.GET, true)
       expect(counter.getTotal()).assertEqual(1)

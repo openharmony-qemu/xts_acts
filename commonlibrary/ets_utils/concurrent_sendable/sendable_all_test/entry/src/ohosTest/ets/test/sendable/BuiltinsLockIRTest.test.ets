@@ -1,4 +1,4 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils } from '@kit.ArkTS'
 import Utils from '../utils'
@@ -172,11 +172,6 @@ function readCrossThreadValue(lockObj: CrossThreadLock): number {
 
 export default function BuiltinsLockIRTest(): void {
   describe('BuiltinsLockIRTest', (): void => {
-    beforeAll((): void => {})
-    beforeEach((): void => {})
-    afterEach((): void => {})
-    afterAll((): void => {})
-
     it('testLockIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const resource: IRLockResource = new IRLockResource(new ArkTSUtils.locks.AsyncLock())
       const status: number[] = await resource.getLockStatus()

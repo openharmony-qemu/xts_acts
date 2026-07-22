@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
 import { collections, ArkTSUtils } from '@kit.ArkTS'
 import Utils from '../utils'
@@ -156,8 +156,6 @@ function computeResult(id: number): number {
 
 export default function BuiltinsResultCollectIRTest(): void {
   describe('BuiltinsResultCollectIRTest', (): void => {
-    afterEach((): void => {})
-
     it('testResultCollectIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const collector: IRResultCollector = new IRResultCollector(new collections.Map<number, string>())
       collector.total_ = 100
