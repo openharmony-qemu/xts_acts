@@ -41,8 +41,7 @@ static RestraceFunc GetRestraceFunc()
 static bool CallRestrace(unsigned long long mask, void* addr, size_t size, const char* tag, bool is_using)
 {
     auto func = GetRestraceFunc();
-    if (!func)
-    {
+    if (!func) {
         errno = ENOSYS;
         return false;
     }
@@ -65,13 +64,11 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value RestraceNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     void* addr = malloc(K_ALLOC_100);
-    if (!addr)
-    {
+    if (!addr) {
         return ReturnInt32(env, 0);
     }
     bool ret = CallRestrace(1, addr, K_ALLOC_100, "test", true);
@@ -81,13 +78,11 @@ static napi_value RestraceNormal001(napi_env env, napi_callback_info info)
 
 static napi_value RestraceNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     void* addr = malloc(K_ALLOC_100);
-    if (!addr)
-    {
+    if (!addr) {
         return ReturnInt32(env, 0);
     }
     bool ret = CallRestrace(1, addr, K_ALLOC_100, "test", false);
@@ -97,13 +92,11 @@ static napi_value RestraceNormal002(napi_env env, napi_callback_info info)
 
 static napi_value RestraceNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     void* addr = malloc(200);
-    if (!addr)
-    {
+    if (!addr) {
         return ReturnInt32(env, 0);
     }
     bool ret = CallRestrace(2, addr, 200, "tag2", true);
@@ -113,8 +106,7 @@ static napi_value RestraceNormal003(napi_env env, napi_callback_info info)
 
 static napi_value RestraceNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
@@ -122,8 +114,7 @@ static napi_value RestraceNormal004(napi_env env, napi_callback_info info)
 
 static napi_value RestraceAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     CallRestrace(1, nullptr, K_ALLOC_100, "test", true);
@@ -132,13 +123,11 @@ static napi_value RestraceAbnormal001(napi_env env, napi_callback_info info)
 
 static napi_value RestraceAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     void* addr = malloc(K_ALLOC_100);
-    if (!addr)
-    {
+    if (!addr) {
         return ReturnInt32(env, 0);
     }
     CallRestrace(1, addr, K_ALLOC_100, nullptr, true);
@@ -148,13 +137,11 @@ static napi_value RestraceAbnormal002(napi_env env, napi_callback_info info)
 
 static napi_value RestraceBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     void* addr = malloc(K_ALLOC_100);
-    if (!addr)
-    {
+    if (!addr) {
         return ReturnInt32(env, 0);
     }
     bool ret = CallRestrace(1, addr, 0, "test", true);
@@ -164,13 +151,11 @@ static napi_value RestraceBoundary001(napi_env env, napi_callback_info info)
 
 static napi_value RestraceBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     void* addr = malloc(K_ALLOC_100);
-    if (!addr)
-    {
+    if (!addr) {
         return ReturnInt32(env, 0);
     }
     bool ret = CallRestrace(0, addr, K_ALLOC_100, "test", true);
@@ -180,23 +165,19 @@ static napi_value RestraceBoundary002(napi_env env, napi_callback_info info)
 
 static napi_value RestraceStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i)
-    {
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
         void* addr = malloc(K_ALLOC_100);
-        if (!addr)
-        {
+        if (!addr) {
             pass = false;
             break;
         }
         bool ret = CallRestrace(1, addr, K_ALLOC_100, "test", true);
         free(addr);
-        if (!ret)
-        {
+        if (!ret) {
             pass = false;
             break;
         }
@@ -206,21 +187,17 @@ static napi_value RestraceStable001(napi_env env, napi_callback_info info)
 
 static napi_value RestraceThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t)
-    {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]()
         {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
-            {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 void* addr = malloc(K_ALLOC_100);
-                if (!addr)
-                {
+                if (!addr) {
                     hasError = true;
                     return;
                 }
@@ -229,8 +206,7 @@ static napi_value RestraceThread001(napi_env env, napi_callback_info info)
             }
         });
     }
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);

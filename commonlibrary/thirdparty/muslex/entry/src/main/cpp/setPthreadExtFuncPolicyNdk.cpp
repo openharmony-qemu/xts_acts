@@ -30,8 +30,7 @@ static bool CallSetPthreadExtFuncPolicy(int flag)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetSetPthreadExtFuncPolicy();
-    if (!func)
-    {
+    if (!func) {
         errno = ENOSYS;
         return false;
     }
@@ -55,8 +54,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value SetPthreadExtFuncPolicyNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool ret = CallSetPthreadExtFuncPolicy(0);
@@ -65,8 +63,7 @@ static napi_value SetPthreadExtFuncPolicyNormal001(napi_env env, napi_callback_i
 
 static napi_value SetPthreadExtFuncPolicyNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool ret = CallSetPthreadExtFuncPolicy(1);
@@ -75,16 +72,14 @@ static napi_value SetPthreadExtFuncPolicyNormal002(napi_env env, napi_callback_i
 
 static napi_value SetPthreadExtFuncPolicyNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     CallSetPthreadExtFuncPolicy(1);
     auto& loader = LibcFunctionLoader::GetInstance();
     auto getFunc = loader.GetPthreadExtFuncPolicy();
     int val = -1;
-    if (getFunc)
-    {
+    if (getFunc) {
         val = getFunc();
     }
     CallSetPthreadExtFuncPolicy(0);
@@ -93,8 +88,7 @@ static napi_value SetPthreadExtFuncPolicyNormal003(napi_env env, napi_callback_i
 
 static napi_value SetPthreadExtFuncPolicyNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
@@ -102,8 +96,7 @@ static napi_value SetPthreadExtFuncPolicyNormal004(napi_env env, napi_callback_i
 
 static napi_value SetPthreadExtFuncPolicyAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     CallSetPthreadExtFuncPolicy(-1);
@@ -112,8 +105,7 @@ static napi_value SetPthreadExtFuncPolicyAbnormal001(napi_env env, napi_callback
 
 static napi_value SetPthreadExtFuncPolicyAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     CallSetPthreadExtFuncPolicy(INT_MAX);
@@ -123,8 +115,7 @@ static napi_value SetPthreadExtFuncPolicyAbnormal002(napi_env env, napi_callback
 
 static napi_value SetPthreadExtFuncPolicyBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool ret = CallSetPthreadExtFuncPolicy(0);
@@ -133,8 +124,7 @@ static napi_value SetPthreadExtFuncPolicyBoundary001(napi_env env, napi_callback
 
 static napi_value SetPthreadExtFuncPolicyBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool ret = CallSetPthreadExtFuncPolicy(1);
@@ -144,13 +134,11 @@ static napi_value SetPthreadExtFuncPolicyBoundary002(napi_env env, napi_callback
 
 static napi_value SetPthreadExtFuncPolicyStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i)
-    {
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
         CallSetPthreadExtFuncPolicy(i % K_FLAG_MOD);
     }
     CallSetPthreadExtFuncPolicy(0);
@@ -159,24 +147,20 @@ static napi_value SetPthreadExtFuncPolicyStable001(napi_env env, napi_callback_i
 
 static napi_value SetPthreadExtFuncPolicyThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t)
-    {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]()
         {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
-            {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 CallSetPthreadExtFuncPolicy(i % K_FLAG_MOD);
             }
         });
     }
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
     CallSetPthreadExtFuncPolicy(0);

@@ -29,8 +29,7 @@ static int CallRemovecustomdns()
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetRemovecustomdns();
-    if (!func)
-    {
+    if (!func) {
         errno = ENOSYS;
         return -1;
     }
@@ -53,8 +52,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value RemovecustomdnsNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int ret = CallRemovecustomdns();
@@ -63,14 +61,12 @@ static napi_value RemovecustomdnsNormal001(napi_env env, napi_callback_info info
 
 static napi_value RemovecustomdnsNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     auto& loader = LibcFunctionLoader::GetInstance();
     auto setFunc = loader.GetSetcustomdns();
-    if (setFunc)
-    {
+    if (setFunc) {
         setFunc(nullptr);
     }
     int ret = CallRemovecustomdns();
@@ -79,8 +75,7 @@ static napi_value RemovecustomdnsNormal002(napi_env env, napi_callback_info info
 
 static napi_value RemovecustomdnsNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     CallRemovecustomdns();
@@ -90,8 +85,7 @@ static napi_value RemovecustomdnsNormal003(napi_env env, napi_callback_info info
 
 static napi_value RemovecustomdnsNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
@@ -99,8 +93,7 @@ static napi_value RemovecustomdnsNormal004(napi_env env, napi_callback_info info
 
 static napi_value RemovecustomdnsAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int ret = CallRemovecustomdns();
@@ -109,16 +102,13 @@ static napi_value RemovecustomdnsAbnormal001(napi_env env, napi_callback_info in
 
 static napi_value RemovecustomdnsAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int loopCount = 20;
-    for (int i = 0; i < loopCount; ++i)
-    {
+    for (int i = 0; i < loopCount; ++i) {
         int ret = CallRemovecustomdns();
-        if (ret < 0)
-        {
+        if (ret < 0) {
             return ReturnInt32(env, 0);
         }
     }
@@ -127,14 +117,12 @@ static napi_value RemovecustomdnsAbnormal002(napi_env env, napi_callback_info in
 
 static napi_value RemovecustomdnsBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool pass = true;
     int loopCount = 10;
-    for (int i = 0; i < loopCount; ++i)
-    {
+    for (int i = 0; i < loopCount; ++i) {
         CallRemovecustomdns();
     }
     return ReturnInt32(env, pass ? 1 : 0);
@@ -142,8 +130,7 @@ static napi_value RemovecustomdnsBoundary001(napi_env env, napi_callback_info in
 
 static napi_value RemovecustomdnsBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int ret = CallRemovecustomdns();
@@ -152,16 +139,13 @@ static napi_value RemovecustomdnsBoundary002(napi_env env, napi_callback_info in
 
 static napi_value RemovecustomdnsStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i)
-    {
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
         int ret = CallRemovecustomdns();
-        if (ret < 0)
-        {
+        if (ret < 0) {
             pass = false;
             break;
         }
@@ -171,24 +155,20 @@ static napi_value RemovecustomdnsStable001(napi_env env, napi_callback_info info
 
 static napi_value RemovecustomdnsThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t)
-    {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]()
         {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
-            {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 CallRemovecustomdns();
             }
         });
     }
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);

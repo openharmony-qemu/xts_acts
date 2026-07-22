@@ -29,8 +29,7 @@ static bool CallSetSigchainPreValidationIgnore(int value)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetSetSigchainPreValidationIgnore();
-    if (!func)
-    {
+    if (!func) {
         errno = ENOSYS;
         return false;
     }
@@ -54,8 +53,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value SetSigchainPreValidationNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool ret = CallSetSigchainPreValidationIgnore(1);
@@ -65,8 +63,7 @@ static napi_value SetSigchainPreValidationNormal001(napi_env env, napi_callback_
 
 static napi_value SetSigchainPreValidationNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool ret = CallSetSigchainPreValidationIgnore(0);
@@ -75,8 +72,7 @@ static napi_value SetSigchainPreValidationNormal002(napi_env env, napi_callback_
 
 static napi_value SetSigchainPreValidationNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     CallSetSigchainPreValidationIgnore(1);
@@ -86,8 +82,7 @@ static napi_value SetSigchainPreValidationNormal003(napi_env env, napi_callback_
 
 static napi_value SetSigchainPreValidationNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
@@ -95,8 +90,7 @@ static napi_value SetSigchainPreValidationNormal004(napi_env env, napi_callback_
 
 static napi_value SetSigchainPreValidationAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     CallSetSigchainPreValidationIgnore(-1);
@@ -106,8 +100,7 @@ static napi_value SetSigchainPreValidationAbnormal001(napi_env env, napi_callbac
 
 static napi_value SetSigchainPreValidationAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int sigVal = 100;
@@ -118,8 +111,7 @@ static napi_value SetSigchainPreValidationAbnormal002(napi_env env, napi_callbac
 
 static napi_value SetSigchainPreValidationBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool ret = CallSetSigchainPreValidationIgnore(0);
@@ -128,8 +120,7 @@ static napi_value SetSigchainPreValidationBoundary001(napi_env env, napi_callbac
 
 static napi_value SetSigchainPreValidationBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool ret = CallSetSigchainPreValidationIgnore(1);
@@ -139,13 +130,11 @@ static napi_value SetSigchainPreValidationBoundary002(napi_env env, napi_callbac
 
 static napi_value SetSigchainPreValidationStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i)
-    {
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
         CallSetSigchainPreValidationIgnore(i % K_SIG_MOD);
     }
     CallSetSigchainPreValidationIgnore(0);
@@ -154,24 +143,20 @@ static napi_value SetSigchainPreValidationStable001(napi_env env, napi_callback_
 
 static napi_value SetSigchainPreValidationThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t)
-    {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]()
         {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
-            {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 CallSetSigchainPreValidationIgnore(i % K_SIG_MOD);
             }
         });
     }
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
     CallSetSigchainPreValidationIgnore(0);
