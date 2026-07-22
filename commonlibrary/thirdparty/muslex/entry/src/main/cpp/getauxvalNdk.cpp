@@ -176,7 +176,7 @@ static napi_value GetauxvalAbnormal002(napi_env env, napi_callback_info info)
     }
 
     errno = 0;
-    unsigned long result = func((unsigned long)-1);
+    unsigned long result = func(static_cast<unsigned long>(-1));
     if (result != 0)
     {
         return ReturnInt32(env, 0);
@@ -230,14 +230,16 @@ static napi_value GetauxvalStable001(napi_env env, napi_callback_info info)
     unsigned long items[] = {AT_PAGESZ, AT_SECURE, AT_CLKTCK, AT_RANDOM};
     unsigned long results[4];
 
-    for (int i = 0; i < 4; ++i)
+    int itemCount = 4;
+    for (int i = 0; i < itemCount; ++i)
     {
         results[i] = func(items[i]);
     }
 
-    for (int round = 0; round < 20; ++round)
+    int roundCount = 20;
+    for (int round = 0; round < roundCount; ++round)
     {
-        for (int i = 0; i < 4; ++i)
+        for (int i = 0; i < itemCount; ++i)
         {
             if (func(items[i]) != results[i])
             {
@@ -266,9 +268,11 @@ static napi_value GetauxvalStable002(napi_env env, napi_callback_info info)
     bool allPassed = true;
     unsigned long items[] = {AT_PAGESZ, AT_SECURE, AT_CLKTCK, AT_RANDOM};
 
-    for (int i = 0; i < 20; ++i)
+    int loopCount = 20;
+    int basiccount = 4;
+    for (int i = 0; i < loopCount; ++i)
     {
-        int idx = i % 4;
+        int idx = i % basiccount;
         unsigned long result = func(items[idx]);
         if (result == 0 && idx != 1) { // AT_SECURE may be 0
             allPassed = false;
@@ -302,7 +306,8 @@ static napi_value GetauxvalThread001(napi_env env, napi_callback_info info)
         {
             for (int i = 0; i < iterationsPerThread; ++i)
             {
-                int idx = i % 4;
+                int basiccount = 4;
+                int idx = i % basiccount;
                 unsigned long result = func(items[idx]);
                 if (result == 0 && idx != 1)
                 {
@@ -335,17 +340,18 @@ static napi_value GetauxvalThread002(napi_env env, napi_callback_info info)
     std::vector<std::thread> threads;
     std::atomic<bool> hasError{false};
     unsigned long allItems[] = {AT_PAGESZ, AT_SECURE, AT_CLKTCK, AT_RANDOM, AT_ENTRY, AT_UID, AT_EUID, AT_GID};
+    int basiccount = 4;
 
     for (int t = 0; t < threadCount; ++t)
     {
-        threads.emplace_back([func, &hasError, allItems, iterationsPerThread, t]()
+        threads.emplace_back([func, &hasError, allItems, iterationsPerThread, t, basiccount]()
         {
             for (int i = 0; i < iterationsPerThread; ++i)
             {
                 int idx = (i + t) % 8;
                 unsigned long result = func(allItems[idx]);
                 // Verify return value and errno
-                if (result == 0 && idx >= 4) { // Some items may not exist
+                if (result == 0 && idx >= basiccount) { // Some items may not exist
                     // Not necessarily an error, continue
                 }
             }

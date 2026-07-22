@@ -90,8 +90,10 @@ static napi_value GetResTraceIdNormal003(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    uint32_t t1 = 0, t2 = 0;
-    uint64_t id1 = 0, id2 = 0;
+    uint32_t t1 = 0;
+    uint32_t t2 = 0;
+    uint64_t id1 = 0;
+    uint64_t id2 = 0;
     CallGetResTraceId(&t1, &id1);
     CallGetResTraceId(&t2, &id2);
     return ReturnInt32(env, 1);
@@ -202,10 +204,14 @@ static napi_value Init(napi_env env, napi_value exports)
         {"getResTraceIdNormal002", nullptr, GetResTraceIdNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getResTraceIdNormal003", nullptr, GetResTraceIdNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getResTraceIdNormal004", nullptr, GetResTraceIdNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getResTraceIdAbnormal001", nullptr, GetResTraceIdAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getResTraceIdAbnormal002", nullptr, GetResTraceIdAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getResTraceIdBoundary001", nullptr, GetResTraceIdBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getResTraceIdBoundary002", nullptr, GetResTraceIdBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getResTraceIdAbnormal001", nullptr, GetResTraceIdAbnormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"getResTraceIdAbnormal002", nullptr, GetResTraceIdAbnormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"getResTraceIdBoundary001", nullptr, GetResTraceIdBoundary001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"getResTraceIdBoundary002", nullptr, GetResTraceIdBoundary002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
         {"getResTraceIdStable001", nullptr, GetResTraceIdStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getResTraceIdThread001", nullptr, GetResTraceIdThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
     };

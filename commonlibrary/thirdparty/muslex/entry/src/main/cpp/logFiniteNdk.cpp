@@ -206,7 +206,8 @@ static napi_value LogFiniteThread001(napi_env env, napi_callback_info info)
     std::vector<std::thread> threads;
     double testVals[] = {1.0, std::exp(1.0), 100.0, 0.5, 10.0};
 
-    CallLogFinite(2.0);
+    double testVal2 = 2.0;
+    CallLogFinite(testVal2);
     if (errno == ENOSYS)
     {
         return ReturnInt32(env, 1);

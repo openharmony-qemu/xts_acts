@@ -18,6 +18,8 @@
 #include <cerrno>
 #include <cstdint>
 
+static constexpr int K_DIV_VAL = 10;
+
 static int CallDFXSetCrashLogConfig(uint8_t type, uint32_t value)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
@@ -115,9 +117,10 @@ static napi_value DFXSetCrashLogConfigBoundary002(napi_env env, napi_callback_in
 /* TC-007: Repeated calls stability */
 static napi_value DFXSetCrashLogConfigStable001(napi_env env, napi_callback_info info)
 {
-    for (int i = 0; i < 20; ++i)
+    int loopCount = 20;
+    for (int i = 0; i < loopCount; ++i)
     {
-        int ret = CallDFXSetCrashLogConfig(i % 10, i);
+        int ret = CallDFXSetCrashLogConfig(i % K_DIV_VAL, i);
         if (ret == -1 && errno == ENOSYS)
         {
             return ReturnInt32(env, 1);

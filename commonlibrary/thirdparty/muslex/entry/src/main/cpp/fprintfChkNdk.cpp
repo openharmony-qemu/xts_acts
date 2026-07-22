@@ -79,7 +79,8 @@ static FILE* GetTestFile()
     }
 
     // Option 4: use memory file stream
-    file = fmemopen(nullptr, 1024 * 1024, "w+");
+    int oneMB = 1024 * 1024;
+    file = fmemopen(nullptr, oneMB, "w+");
     if (file != nullptr)
     {
         return file;
@@ -145,12 +146,16 @@ static napi_value FprintfChkNormal001(napi_env env, napi_callback_info info)
     }
 
     // Use fprintf as reference verification
-    fprintf(tmpFile, "\n");
-    fflush(tmpFile);
+    if (fprintf(tmpFile, "\n") < 0) {
+        allPassed = false;
+    }
+    if (fflush(tmpFile) != 0) {
+        allPassed = false;
+    }
 
     if (tmpFile != stderr && tmpFile != stdout)
     {
-        fclose(tmpFile);
+        if (fclose(tmpFile) != 0) {}
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -197,7 +202,7 @@ static napi_value FprintfChkNormal002(napi_env env, napi_callback_info info)
 
     if (tmpFile != stderr && tmpFile != stdout)
     {
-        fclose(tmpFile);
+        if (fclose(tmpFile) != 0) {}
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -238,7 +243,7 @@ static napi_value FprintfChkNormal003(napi_env env, napi_callback_info info)
 
     if (tmpFile != stderr && tmpFile != stdout)
     {
-        fclose(tmpFile);
+        if (fclose(tmpFile) != 0) {}
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -262,7 +267,8 @@ static napi_value FprintfChkBoundary001(napi_env env, napi_callback_info info)
     }
 
     // Medium length string
-    std::string mediumStr(1000, 'a');
+    int medSize = 1000;
+    std::string mediumStr(medSize, 'a');
     int ret = func(tmpFile, 0, "%s", mediumStr.c_str());
     if (ret < 0)
     {
@@ -270,7 +276,8 @@ static napi_value FprintfChkBoundary001(napi_env env, napi_callback_info info)
     }
 
     // Long string
-    std::string longStr(5000, 'b');
+    int longSize = 5000;
+    std::string longStr(longSize, 'b');
     int ret2 = func(tmpFile, 1, "%s", longStr.c_str());
     if (ret2 < 0)
     {
@@ -278,7 +285,8 @@ static napi_value FprintfChkBoundary001(napi_env env, napi_callback_info info)
     }
 
     // Very long string (write in multiple chunks to avoid memory issues)
-    std::string veryLongStr(20000, 'c');
+    int veryLongSize = 20000;
+    std::string veryLongStr(veryLongSize, 'c');
     int ret3 = func(tmpFile, 0, "%s", veryLongStr.c_str());
     if (ret3 < 0)
     {
@@ -287,7 +295,7 @@ static napi_value FprintfChkBoundary001(napi_env env, napi_callback_info info)
 
     if (tmpFile != stderr && tmpFile != stdout)
     {
-        fclose(tmpFile);
+        if (fclose(tmpFile) != 0) {}
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -334,7 +342,7 @@ static napi_value FprintfChkBoundary002(napi_env env, napi_callback_info info)
 
     if (tmpFile != stderr && tmpFile != stdout)
     {
-        fclose(tmpFile);
+        if (fclose(tmpFile) != 0) {}
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -403,7 +411,7 @@ static napi_value FprintfChkAbnormal002(napi_env env, napi_callback_info info)
 
     if (tmpFile != stderr && tmpFile != stdout)
     {
-        fclose(tmpFile);
+        if (fclose(tmpFile) != 0) {}
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -433,7 +441,7 @@ static napi_value FprintfChkAbnormal003(napi_env env, napi_callback_info info)
 
     if (tmpFile != stderr && tmpFile != stdout)
     {
-        fclose(tmpFile);
+        if (fclose(tmpFile) != 0) {}
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -462,7 +470,8 @@ static napi_value FprintfChkStable001(napi_env env, napi_callback_info info)
         rewind(tmpFile);
     }
 
-    for (int round = 0; round < 10; ++round)
+    int roundCount = 10;
+    for (int round = 0; round < roundCount; ++round)
     {
         if (tmpFile != stderr && tmpFile != stdout)
         {
@@ -478,7 +487,7 @@ static napi_value FprintfChkStable001(napi_env env, napi_callback_info info)
 
     if (tmpFile != stderr && tmpFile != stdout)
     {
-        fclose(tmpFile);
+        if (fclose(tmpFile) != 0) {}
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -499,7 +508,8 @@ static napi_value FprintfChkStable002(napi_env env, napi_callback_info info)
         tmpFile = stderr;
     }
 
-    for (int i = 0; i < 20; ++i)
+    int loopCount = 20;
+    for (int i = 0; i < loopCount; ++i)
     {
         int ret = func(tmpFile, i % 2, "Round %d: %s %f\n", i, "test", i * 0.1);
         if (ret < 0)
@@ -511,7 +521,7 @@ static napi_value FprintfChkStable002(napi_env env, napi_callback_info info)
 
     if (tmpFile != stderr && tmpFile != stdout)
     {
-        fclose(tmpFile);
+        if (fclose(tmpFile) != 0) {}
     }
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
@@ -570,7 +580,7 @@ static napi_value FprintfChkThread001(napi_env env, napi_callback_info info)
     {
         if (f != nullptr && f != stderr && f != stdout)
         {
-            fclose(f);
+            if (fclose(f) != 0) {}
         }
     }
     return ReturnInt32(env, (!hasError) ? 1 : 0);
@@ -619,7 +629,7 @@ static napi_value FprintfChkThread002(napi_env env, napi_callback_info info)
 
     if (sharedFile != nullptr && sharedFile != stderr && sharedFile != stdout)
     {
-        fclose(sharedFile);
+        if (fclose(sharedFile) != 0) {}
     }
     return ReturnInt32(env, (!hasError) ? 1 : 0);
 }

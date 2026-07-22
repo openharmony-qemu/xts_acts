@@ -135,7 +135,8 @@ static napi_value HilogBasePrintBoundary002(napi_env env, napi_callback_info inf
     {
         return ReturnInt32(env, 1);
     }
-    std::string longMsg(2000, 'a');
+    int msgSize = 2000;
+    std::string longMsg(msgSize, 'a');
     int ret = CallHilogBasePrint(K_LOG_APP, K_LOG_INFO, 0xD000900, "TEST_TAG", "%s", longMsg.c_str());
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
@@ -196,10 +197,14 @@ static napi_value Init(napi_env env, napi_value exports)
         {"hilogBasePrintNormal002", nullptr, HilogBasePrintNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"hilogBasePrintNormal003", nullptr, HilogBasePrintNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"hilogBasePrintNormal004", nullptr, HilogBasePrintNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBasePrintAbnormal001", nullptr, HilogBasePrintAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBasePrintAbnormal002", nullptr, HilogBasePrintAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBasePrintBoundary001", nullptr, HilogBasePrintBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBasePrintBoundary002", nullptr, HilogBasePrintBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"hilogBasePrintAbnormal001", nullptr, HilogBasePrintAbnormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBasePrintAbnormal002", nullptr, HilogBasePrintAbnormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBasePrintBoundary001", nullptr, HilogBasePrintBoundary001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBasePrintBoundary002", nullptr, HilogBasePrintBoundary002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
         {"hilogBasePrintStable001", nullptr, HilogBasePrintStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"hilogBasePrintThread001", nullptr, HilogBasePrintThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
     };

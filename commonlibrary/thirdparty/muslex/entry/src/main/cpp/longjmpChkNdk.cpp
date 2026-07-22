@@ -62,13 +62,14 @@ static napi_value LongjmpChkNormal002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     auto func = LibcFunctionLoader::GetInstance().GetLongjmpChk();
+    int longjmpVal456 = 456;
     jmp_buf jb;
     int ret = setjmp(jb);
     if (ret == 0)
     {
-        func(jb, 456);
+        func(jb, longjmpVal456);
     }
-    return ReturnInt32(env, (ret == 456) ? 1 : 0);
+    return ReturnInt32(env, (ret == longjmpVal456) ? 1 : 0);
 }
 
 static napi_value LongjmpChkNormal003(napi_env env, napi_callback_info info)
@@ -146,13 +147,14 @@ static napi_value LongjmpChkBoundary002(napi_env env, napi_callback_info info)
     int outer_ret = setjmp(outer_jb);
     if (outer_ret == 0)
     {
-        jmp_buf inner_jb;
-        volatile int inner_ret = setjmp(inner_jb);
-        if (inner_ret == 0)
+        jmp_buf innerJb;
+        volatile int innerRet = setjmp(innerJb);
+        int longjmpVal42 = 42;
+        if (innerRet == 0)
         {
-            func(inner_jb, 42);
+            func(innerJb, longjmpVal42);
         }
-        func(outer_jb, (inner_ret == 42) ? 1 : 2);
+        func(outer_jb, (innerRet == longjmpVal42) ? 1 : 2);
     }
     return ReturnInt32(env, (outer_ret == 1) ? 1 : 0);
 }

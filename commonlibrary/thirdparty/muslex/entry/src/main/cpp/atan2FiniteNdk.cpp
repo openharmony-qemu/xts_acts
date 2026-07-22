@@ -37,6 +37,8 @@
 #endif
 
 static constexpr int K_STABLE_LOOP_10000 = 20;
+static constexpr double K_ATAN2_X = 1.0;
+static constexpr double K_ATAN2_Y = 2.0;
 
 static double CallAtan2Finite(double y, double x)
 {
@@ -234,8 +236,8 @@ static napi_value Atan2FiniteFunc001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     errno = 0;
-    double result = CallAtan2Finite(1.0, 2.0);
-    if (std::fabs(result - std::atan2(1.0, 2.0)) > 1e-15)
+    double result = CallAtan2Finite(K_ATAN2_X, K_ATAN2_Y);
+    if (std::fabs(result - std::atan2(K_ATAN2_X, K_ATAN2_Y)) > 1e-15)
     {
         return ReturnInt32(env, 0);
     }
@@ -285,10 +287,10 @@ static napi_value Atan2FiniteStable001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     int failCount = 0;
-    double expected = std::atan2(1.0, 2.0);
+    double expected = std::atan2(K_ATAN2_X, K_ATAN2_Y);
     for (int i = 0; i < K_STABLE_LOOP_10000; ++i)
     {
-        double result = CallAtan2Finite(1.0, 2.0);
+        double result = CallAtan2Finite(K_ATAN2_X, K_ATAN2_Y);
         if (std::fabs(result - expected) > 1e-15)
         {
             failCount++;
@@ -306,8 +308,8 @@ static napi_value Atan2FiniteSpec001(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    double result = func(1.0, 2.0);
-    if (std::fabs(result - std::atan2(1.0, 2.0)) > 1e-15)
+    double result = func(K_ATAN2_X, K_ATAN2_Y);
+    if (std::fabs(result - std::atan2(K_ATAN2_X, K_ATAN2_Y)) > 1e-15)
     {
         return ReturnInt32(env, 0);
     }
@@ -324,8 +326,8 @@ static napi_value Atan2FiniteSpec002(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    double result = funcPtr(1.0, 2.0);
-    if (std::fabs(result - std::atan2(1.0, 2.0)) > 1e-15)
+    double result = funcPtr(K_ATAN2_X, K_ATAN2_Y);
+    if (std::fabs(result - std::atan2(K_ATAN2_X, K_ATAN2_Y)) > 1e-15)
     {
         return ReturnInt32(env, 0);
     }
@@ -336,12 +338,12 @@ static napi_value Atan2FiniteSpec002(napi_env env, napi_callback_info info)
 static napi_value Atan2FiniteSpec003(napi_env env, napi_callback_info info)
 {
     errno = 0;
-    double result = CallAtan2Finite(1.0, 2.0);
+    double result = CallAtan2Finite(K_ATAN2_X, K_ATAN2_Y);
     if (errno == ENOSYS)
     {
         return ReturnInt32(env, 1);
     }
-    if (std::fabs(result - std::atan2(1.0, 2.0)) < 1e-15 && errno == 0)
+    if (std::fabs(result - std::atan2(K_ATAN2_X, K_ATAN2_Y)) < 1e-15 && errno == 0)
     {
         return ReturnInt32(env, 1);
     }
@@ -357,8 +359,8 @@ static napi_value Atan2FiniteSpec004(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     errno = 0;
-    double result = CallAtan2Finite(1.0, 2.0);
-    if (std::fabs(result - std::atan2(1.0, 2.0)) < 1e-15 && errno == 0)
+    double result = CallAtan2Finite(K_ATAN2_X, K_ATAN2_Y);
+    if (std::fabs(result - std::atan2(K_ATAN2_X, K_ATAN2_Y)) < 1e-15 && errno == 0)
     {
         return ReturnInt32(env, 1);
     }
@@ -369,14 +371,14 @@ static napi_value Atan2FiniteSpec004(napi_env env, napi_callback_info info)
 static napi_value Atan2FiniteSpec005(napi_env env, napi_callback_info info)
 {
     errno = 0;
-    double result = CallAtan2Finite(1.0, 2.0);
+    double result = CallAtan2Finite(K_ATAN2_X, K_ATAN2_Y);
     int e = errno;
     if (e == ENOSYS)
     {
         return ReturnInt32(env, 1);
     } else
     {
-        if (std::fabs(result - std::atan2(1.0, 2.0)) < 1e-15 && e == 0)
+        if (std::fabs(result - std::atan2(K_ATAN2_X, K_ATAN2_Y)) < 1e-15 && e == 0)
         {
             return ReturnInt32(env, 1);
         }

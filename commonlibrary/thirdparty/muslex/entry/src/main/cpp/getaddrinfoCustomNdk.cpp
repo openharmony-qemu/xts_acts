@@ -59,8 +59,7 @@ static napi_value GetaddrinfoCustomNormal001(napi_env env, napi_callback_info in
     {
         return ReturnInt32(env, 1);
     }
-    struct addrinfo hints;
-    memset(&hints, 0, sizeof(hints));
+    struct addrinfo hints = {};
     hints.ai_family = AF_UNSPEC;
     hints.ai_socktype = SOCK_STREAM;
     struct addrinfo* res = nullptr;
@@ -78,8 +77,7 @@ static napi_value GetaddrinfoCustomNormal002(napi_env env, napi_callback_info in
     {
         return ReturnInt32(env, 1);
     }
-    struct addrinfo hints;
-    memset(&hints, 0, sizeof(hints));
+    struct addrinfo hints = {};
     hints.ai_family = AF_INET;
     hints.ai_socktype = SOCK_STREAM;
     struct addrinfo* res = nullptr;
@@ -97,8 +95,7 @@ static napi_value GetaddrinfoCustomNormal003(napi_env env, napi_callback_info in
     {
         return ReturnInt32(env, 1);
     }
-    struct addrinfo hints;
-    memset(&hints, 0, sizeof(hints));
+    struct addrinfo hints = {};
     hints.ai_family = AF_INET;
     struct addrinfo* res = nullptr;
     CallGetaddrinfoCustom(nullptr, "80", &hints, &res);
@@ -139,8 +136,7 @@ static napi_value GetaddrinfoCustomAbnormal002(napi_env env, napi_callback_info 
     {
         return ReturnInt32(env, 1);
     }
-    struct addrinfo hints;
-    memset(&hints, 0, sizeof(hints));
+    struct addrinfo hints = {};
     hints.ai_family = AF_UNSPEC;
     struct addrinfo* res = nullptr;
     int ret = CallGetaddrinfoCustom("nonexistent.invalid.host", nullptr, &hints, &res);
@@ -157,8 +153,7 @@ static napi_value GetaddrinfoCustomBoundary001(napi_env env, napi_callback_info 
     {
         return ReturnInt32(env, 1);
     }
-    struct addrinfo hints;
-    memset(&hints, 0, sizeof(hints));
+    struct addrinfo hints = {};
     hints.ai_family = AF_UNSPEC;
     struct addrinfo* res = nullptr;
     int ret = CallGetaddrinfoCustom("", nullptr, &hints, &res);
@@ -175,8 +170,7 @@ static napi_value GetaddrinfoCustomBoundary002(napi_env env, napi_callback_info 
     {
         return ReturnInt32(env, 1);
     }
-    struct addrinfo hints;
-    memset(&hints, 0, sizeof(hints));
+    struct addrinfo hints = {};
     hints.ai_family = AF_UNSPEC;
     struct addrinfo* res = nullptr;
     CallGetaddrinfoCustom("localhost", "65535", &hints, &res);
@@ -195,8 +189,7 @@ static napi_value GetaddrinfoCustomStable001(napi_env env, napi_callback_info in
     }
     for (int i = 0; i < K_STABLE_LOOP; ++i)
     {
-        struct addrinfo hints;
-        memset(&hints, 0, sizeof(hints));
+        struct addrinfo hints = {};
         hints.ai_family = AF_UNSPEC;
         struct addrinfo* res = nullptr;
         CallGetaddrinfoCustom("localhost", "80", &hints, &res);
@@ -222,8 +215,7 @@ static napi_value GetaddrinfoCustomThread001(napi_env env, napi_callback_info in
         {
             for (int i = 0; i < K_ITER_PER_THREAD; ++i)
             {
-                struct addrinfo hints;
-                memset(&hints, 0, sizeof(hints));
+                struct addrinfo hints = {};
                 hints.ai_family = AF_UNSPEC;
                 struct addrinfo* res = nullptr;
                 CallGetaddrinfoCustom("localhost", "80", &hints, &res);
@@ -245,16 +237,26 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"getaddrinfoCustomNormal001", nullptr, GetaddrinfoCustomNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getaddrinfoCustomNormal002", nullptr, GetaddrinfoCustomNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getaddrinfoCustomNormal003", nullptr, GetaddrinfoCustomNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getaddrinfoCustomNormal004", nullptr, GetaddrinfoCustomNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getaddrinfoCustomAbnormal001", nullptr, GetaddrinfoCustomAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getaddrinfoCustomAbnormal002", nullptr, GetaddrinfoCustomAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getaddrinfoCustomBoundary001", nullptr, GetaddrinfoCustomBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getaddrinfoCustomBoundary002", nullptr, GetaddrinfoCustomBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getaddrinfoCustomStable001", nullptr, GetaddrinfoCustomStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getaddrinfoCustomThread001", nullptr, GetaddrinfoCustomThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getaddrinfoCustomNormal001", nullptr, GetaddrinfoCustomNormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"getaddrinfoCustomNormal002", nullptr, GetaddrinfoCustomNormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"getaddrinfoCustomNormal003", nullptr, GetaddrinfoCustomNormal003, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"getaddrinfoCustomNormal004", nullptr, GetaddrinfoCustomNormal004, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"getaddrinfoCustomAbnormal001", nullptr, GetaddrinfoCustomAbnormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"getaddrinfoCustomAbnormal002", nullptr, GetaddrinfoCustomAbnormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"getaddrinfoCustomBoundary001", nullptr, GetaddrinfoCustomBoundary001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"getaddrinfoCustomBoundary002", nullptr, GetaddrinfoCustomBoundary002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"getaddrinfoCustomStable001", nullptr, GetaddrinfoCustomStable001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"getaddrinfoCustomThread001", nullptr, GetaddrinfoCustomThread001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

@@ -76,8 +76,9 @@ static napi_value AsprintfChkNormal001(napi_env env, napi_callback_info info)
     }
     char* buf = nullptr;
     errno = 0;
+    int expectedLen = 8;
     int ret = CallAsprintfChk(&buf, 0, "hello %d", 42);
-    if (ret != 8)
+    if (ret != expectedLen)
     {
         if (buf)
         {
@@ -111,8 +112,9 @@ static napi_value AsprintfChkNormal002(napi_env env, napi_callback_info info)
     }
     char* buf = nullptr;
     errno = 0;
+    int expectedLen = 8;
     int ret = CallAsprintfChk(&buf, 1, "%s-%d", "test", 100);
-    if (ret != 8)
+    if (ret != expectedLen)
     {
         if (buf)
         {
@@ -202,7 +204,8 @@ static napi_value AsprintfChkFunc001(napi_env env, napi_callback_info info)
     }
     char* buf = nullptr;
     int ret = CallAsprintfChk(&buf, 0, "%d", 12345);
-    if (ret != 5)
+    int helloLen = 5;
+    if (ret != helloLen)
     {
         if (buf)
         {
@@ -409,7 +412,8 @@ static napi_value AsprintfChkSpec004(napi_env env, napi_callback_info info)
     errno = 0;
     char* buf = nullptr;
     int ret = CallAsprintfChk(&buf, 0, "test");
-    if (ret == 4 && errno == 0 && buf != nullptr && strcmp(buf, "test") == 0)
+    int strLen4 = 4;
+    if (ret == strLen4 && errno == 0 && buf != nullptr && strcmp(buf, "test") == 0)
     {
         free(buf);
         return ReturnInt32(env, 1);
@@ -433,7 +437,8 @@ static napi_value AsprintfChkSpec005(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     } else
     {
-        if (ret == 4 && e == 0 && buf != nullptr && strcmp(buf, "test") == 0)
+        int strLen4 = 4;
+        if (ret == strLen4 && e == 0 && buf != nullptr && strcmp(buf, "test") == 0)
         {
             free(buf);
             return ReturnInt32(env, 1);

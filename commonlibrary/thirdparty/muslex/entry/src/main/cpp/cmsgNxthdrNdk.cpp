@@ -19,6 +19,10 @@
 #include <cstring>
 #include <sys/socket.h>
 
+static constexpr int K_CMSG_TEST_DATA_2025 = 2025;
+static constexpr int K_CMSG_TEST_DATA_2026 = 2026;
+static constexpr int K_CMSG_COUNT = 2;
+
 static cmsghdr* CallCmsgNxthdr(msghdr* mhdr, cmsghdr* cmsg)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
@@ -76,7 +80,7 @@ static napi_value CmsgNxthdrNormal001(napi_env env, napi_callback_info info)
     cmsg1->cmsg_len = CMSG_LEN(sizeof(int));
     cmsg1->cmsg_level = SOL_SOCKET;
     cmsg1->cmsg_type = SCM_RIGHTS;
-    *reinterpret_cast<int*>(CMSG_DATA(cmsg1)) = 2025;
+    *reinterpret_cast<int*>(CMSG_DATA(cmsg1)) = K_CMSG_TEST_DATA_2025;
 
     // Setup second cmsghdr
     size_t offset1 = CMSG_SPACE(sizeof(int));
@@ -84,11 +88,11 @@ static napi_value CmsgNxthdrNormal001(napi_env env, napi_callback_info info)
     cmsg2->cmsg_len = CMSG_LEN(sizeof(int));
     cmsg2->cmsg_level = SOL_SOCKET;
     cmsg2->cmsg_type = SCM_RIGHTS;
-    *reinterpret_cast<int*>(CMSG_DATA(cmsg2)) = 2026;
+    *reinterpret_cast<int*>(CMSG_DATA(cmsg2)) = K_CMSG_TEST_DATA_2026;
 
     msghdr msg = {};
     msg.msg_control = controlBuf;
-    msg.msg_controllen = CMSG_SPACE(sizeof(int)) * 2;
+    msg.msg_controllen = CMSG_SPACE(sizeof(int)) * K_CMSG_COUNT;
 
     cmsghdr* first = CMSG_FIRSTHDR(&msg);
     if (first == nullptr || first != cmsg1)
@@ -143,7 +147,7 @@ static napi_value CmsgNxthdrNormal003(napi_env env, napi_callback_info info)
     cmsg->cmsg_len = CMSG_LEN(sizeof(int));
     cmsg->cmsg_level = SOL_SOCKET;
     cmsg->cmsg_type = SCM_RIGHTS;
-    *reinterpret_cast<int*>(CMSG_DATA(cmsg)) = 2025;
+    *reinterpret_cast<int*>(CMSG_DATA(cmsg)) = K_CMSG_TEST_DATA_2025;
 
     msghdr msg = {};
     msg.msg_control = controlBuf;

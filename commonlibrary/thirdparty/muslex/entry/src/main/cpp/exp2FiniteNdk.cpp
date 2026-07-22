@@ -37,6 +37,10 @@
 #endif
 
 static constexpr int K_STABLE_LOOP_10000 = 20;
+static constexpr double K_EXP2_INPUT_3 = 3.0;
+static constexpr double K_EXP2_INPUT_1 = 1.0;
+static constexpr double K_EXP2_RESULT_3 = 8.0;
+static constexpr double K_EXP2_RESULT_1 = 2.0;
 
 static double CallExp2Finite(double x)
 {
@@ -59,7 +63,7 @@ static bool IsStubMode()
         return true;
     }
     errno = 0;
-    double result = CallExp2Finite(1.0);
+    double result = CallExp2Finite(K_EXP2_INPUT_1);
     if (result == 0.0 && errno == ENOSYS)
     {
         return true;
@@ -83,7 +87,7 @@ static napi_value Exp2FiniteNormal001(napi_env env, napi_callback_info info)
     }
     /* use hardcoded exact expected values: 2^x */
     struct { double x; double expected; } cases[] = {
-        {0.0, 1.0}, {1.0, 2.0}, {-1.0, 0.5}, {2.0, 4.0}, {-2.0, 0.25}, {3.0, 8.0}
+        {0.0, 1.0}, {1.0, 2.0}, {-1.0, 0.5}, {2.0, 4.0}, {-2.0, 0.25}, {K_EXP2_INPUT_3, K_EXP2_RESULT_3}
     };
     int count = sizeof(cases) / sizeof(cases[0]);
     for (int i = 0; i < count; ++i)
@@ -165,8 +169,8 @@ static napi_value Exp2FiniteFunc001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     errno = 0;
-    double result = CallExp2Finite(3.0);
-    if (std::fabs(result - 8.0) > 1e-15)
+    double result = CallExp2Finite(K_EXP2_INPUT_3);
+    if (std::fabs(result - K_EXP2_RESULT_3) > 1e-15)
     {
         return ReturnInt32(env, 0);
     }
@@ -229,8 +233,8 @@ static napi_value Exp2FiniteStable001(napi_env env, napi_callback_info info)
     int failCount = 0;
     for (int i = 0; i < K_STABLE_LOOP_10000; ++i)
     {
-        double result = CallExp2Finite(3.0);
-        if (std::fabs(result - 8.0) > 1e-15)
+        double result = CallExp2Finite(K_EXP2_INPUT_3);
+        if (std::fabs(result - K_EXP2_RESULT_3) > 1e-15)
         {
             failCount++;
         }
@@ -251,8 +255,8 @@ static napi_value Exp2FiniteSpec001(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    double result = func(3.0);
-    if (std::fabs(result - 8.0) > 1e-15)
+    double result = func(K_EXP2_INPUT_3);
+    if (std::fabs(result - K_EXP2_RESULT_3) > 1e-15)
     {
         return ReturnInt32(env, 0);
     }
@@ -273,8 +277,8 @@ static napi_value Exp2FiniteSpec002(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    double result = funcPtr(3.0);
-    if (std::fabs(result - 8.0) > 1e-15)
+    double result = funcPtr(K_EXP2_INPUT_3);
+    if (std::fabs(result - K_EXP2_RESULT_3) > 1e-15)
     {
         return ReturnInt32(env, 0);
     }
@@ -289,12 +293,12 @@ static napi_value Exp2FiniteSpec003(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     errno = 0;
-    double result = CallExp2Finite(3.0);
+    double result = CallExp2Finite(K_EXP2_INPUT_3);
     if (errno == ENOSYS)
     {
         return ReturnInt32(env, 1);
     }
-    if (std::fabs(result - 8.0) < 1e-15 && errno == 0)
+    if (std::fabs(result - K_EXP2_RESULT_3) < 1e-15 && errno == 0)
     {
         return ReturnInt32(env, 1);
     }
@@ -310,8 +314,8 @@ static napi_value Exp2FiniteSpec004(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     errno = 0;
-    double result = CallExp2Finite(1.0);
-    if (std::fabs(result - 2.0) < 1e-15 && errno == 0)
+    double result = CallExp2Finite(K_EXP2_INPUT_1);
+    if (std::fabs(result - K_EXP2_RESULT_1) < 1e-15 && errno == 0)
     {
         return ReturnInt32(env, 1);
     }
@@ -326,13 +330,13 @@ static napi_value Exp2FiniteSpec005(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     errno = 0;
-    double result = CallExp2Finite(3.0);
+    double result = CallExp2Finite(K_EXP2_INPUT_3);
     int e = errno;
     if (e == ENOSYS)
     {
         return ReturnInt32(env, 1);
     }
-    if (std::fabs(result - 8.0) < 1e-15 && e == 0)
+    if (std::fabs(result - K_EXP2_RESULT_3) < 1e-15 && e == 0)
     {
         return ReturnInt32(env, 1);
     }

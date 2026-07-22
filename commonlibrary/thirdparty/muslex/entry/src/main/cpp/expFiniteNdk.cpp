@@ -23,6 +23,14 @@
 #include <atomic>
 #include <chrono>
 
+static constexpr double K_EXP_TEST_VAL_0_5 = 0.5;
+static constexpr double K_EXP_TEST_VAL_2_5 = 2.5;
+static constexpr double K_EXP_TEST_VAL_10 = 10.0;
+static constexpr double K_EXP_TEST_VAL_20 = 20.0;
+static constexpr int K_EXP_TEST_VAL_COUNT = 6;
+static constexpr int K_EXP_STABLE_LOOP_20 = 20;
+static constexpr int K_EXP_STABLE_LOOP_10 = 10;
+
 static napi_value ReturnInt32(napi_env env, int32_t value)
 {
     napi_value result = nullptr;
@@ -57,7 +65,7 @@ static napi_value ExpFiniteNormal001(napi_env env, napi_callback_info info)
     {
         allPassed = false;
     }
-    if (std::abs(func(2.5) - std::exp(2.5)) > 1e-9)
+    if (std::abs(func(K_EXP_TEST_VAL_2_5) - std::exp(K_EXP_TEST_VAL_2_5)) > 1e-9)
     {
         allPassed = false;
     }
@@ -66,16 +74,16 @@ static napi_value ExpFiniteNormal001(napi_env env, napi_callback_info info)
     {
         allPassed = false;
     }
-    if (std::abs(func(-2.5) - std::exp(-2.5)) > 1e-9)
+    if (std::abs(func(-K_EXP_TEST_VAL_2_5) - std::exp(-K_EXP_TEST_VAL_2_5)) > 1e-9)
     {
         allPassed = false;
     }
     // Decimal
-    if (std::abs(func(0.5) - std::exp(0.5)) > 1e-9)
+    if (std::abs(func(K_EXP_TEST_VAL_0_5) - std::exp(K_EXP_TEST_VAL_0_5)) > 1e-9)
     {
         allPassed = false;
     }
-    if (std::abs(func(-0.5) - std::exp(-0.5)) > 1e-9)
+    if (std::abs(func(-K_EXP_TEST_VAL_0_5) - std::exp(-K_EXP_TEST_VAL_0_5)) > 1e-9)
     {
         allPassed = false;
     }
@@ -94,21 +102,21 @@ static napi_value ExpFiniteNormal002(napi_env env, napi_callback_info info)
 
     bool allPassed = true;
     // Larger positive
-    double result1 = func(10.0);
-    if (std::abs(result1 - std::exp(10.0)) > 1e-6)
+    double result1 = func(K_EXP_TEST_VAL_10);
+    if (std::abs(result1 - std::exp(K_EXP_TEST_VAL_10)) > 1e-6)
     {
         allPassed = false;
     }
     
-    double result2 = func(20.0);
-    if (std::abs(result2 - std::exp(20.0)) > 1e-6)
+    double result2 = func(K_EXP_TEST_VAL_20);
+    if (std::abs(result2 - std::exp(K_EXP_TEST_VAL_20)) > 1e-6)
     {
         allPassed = false;
     }
 
     // Smaller negative
-    double result3 = func(-10.0);
-    if (std::abs(result3 - std::exp(-10.0)) > 1e-9)
+    double result3 = func(-K_EXP_TEST_VAL_10);
+    if (std::abs(result3 - std::exp(-K_EXP_TEST_VAL_10)) > 1e-9)
     {
         allPassed = false;
     }
@@ -279,18 +287,18 @@ static napi_value ExpFiniteStable001(napi_env env, napi_callback_info info)
 
     bool allPassed = true;
     double testVals[] = {0.0, 0.5, 1.0, 2.0, -1.0, -0.5};
-    double results[6];
+    double results[K_EXP_TEST_VAL_COUNT];
 
     // First call
-    for (int i = 0; i < 6; ++i)
+    for (int i = 0; i < K_EXP_TEST_VAL_COUNT; ++i)
     {
         results[i] = func(testVals[i]);
     }
 
     // Repeated calls, verify consistency
-    for (int round = 0; round < 20; ++round)
+    for (int round = 0; round < K_EXP_STABLE_LOOP_20; ++round)
     {
-        for (int i = 0; i < 6; ++i)
+        for (int i = 0; i < K_EXP_TEST_VAL_COUNT; ++i)
         {
             double current = func(testVals[i]);
             if (std::abs(current - results[i]) > 1e-9)
@@ -318,12 +326,13 @@ static napi_value ExpFiniteStable002(napi_env env, napi_callback_info info)
     }
 
     bool allPassed = true;
+    double testMax = 5.0;
     // Massive continuous calls, ensure no crash
-    for (int i = 0; i < 20; ++i)
+    for (int i = 0; i < K_EXP_STABLE_LOOP_20; ++i)
     {
         double val = (i % 100) / 10.0 - 5.0; // -5.0 to 5.0
         double result = func(val);
-        if (!std::isfinite(result) && val < 5.0)
+        if (!std::isfinite(result) && val < testMax)
         {
             allPassed = false;
             break;
@@ -389,13 +398,13 @@ static napi_value ExpFiniteThread002(napi_env env, napi_callback_info info)
     const int threadCount = 3;
     std::vector<std::thread> threads;
     std::atomic<bool> hasError{false};
-    double testVals[] = {0.0, 0.5, 1.0, 2.0, -1.0, -0.5, 5.0, -5.0, 10.0, -10.0};
+    double testVals[] = {0.0, 0.5, 1.0, 2.0, -1.0, -0.5, 5.0, -5.0, K_EXP_TEST_VAL_10, -K_EXP_TEST_VAL_10};
 
     for (int t = 0; t < threadCount; ++t)
     {
         threads.emplace_back([func, &hasError, testVals]()
         {
-            for (int round = 0; round < 10; ++round)
+            for (int round = 0; round < K_EXP_STABLE_LOOP_10; ++round)
             {
                 for (double val : testVals)
                 {

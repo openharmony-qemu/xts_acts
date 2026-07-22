@@ -179,16 +179,26 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"hilogBaseIsLoggableNormal001", nullptr, HilogBaseIsLoggableNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBaseIsLoggableNormal002", nullptr, HilogBaseIsLoggableNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBaseIsLoggableNormal003", nullptr, HilogBaseIsLoggableNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBaseIsLoggableNormal004", nullptr, HilogBaseIsLoggableNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBaseIsLoggableAbnormal001", nullptr, HilogBaseIsLoggableAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBaseIsLoggableAbnormal002", nullptr, HilogBaseIsLoggableAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBaseIsLoggableBoundary001", nullptr, HilogBaseIsLoggableBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBaseIsLoggableBoundary002", nullptr, HilogBaseIsLoggableBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBaseIsLoggableStable001", nullptr, HilogBaseIsLoggableStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"hilogBaseIsLoggableThread001", nullptr, HilogBaseIsLoggableThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"hilogBaseIsLoggableNormal001", nullptr, HilogBaseIsLoggableNormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBaseIsLoggableNormal002", nullptr, HilogBaseIsLoggableNormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBaseIsLoggableNormal003", nullptr, HilogBaseIsLoggableNormal003, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBaseIsLoggableNormal004", nullptr, HilogBaseIsLoggableNormal004, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBaseIsLoggableAbnormal001", nullptr, HilogBaseIsLoggableAbnormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBaseIsLoggableAbnormal002", nullptr, HilogBaseIsLoggableAbnormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBaseIsLoggableBoundary001", nullptr, HilogBaseIsLoggableBoundary001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBaseIsLoggableBoundary002", nullptr, HilogBaseIsLoggableBoundary002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBaseIsLoggableStable001", nullptr, HilogBaseIsLoggableStable001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hilogBaseIsLoggableThread001", nullptr, HilogBaseIsLoggableThread001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

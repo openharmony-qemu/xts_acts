@@ -21,6 +21,9 @@
 #include <vector>
 #include <atomic>
 
+static constexpr double largeFinite = 100.0;
+static constexpr double finitetest = 3.14;
+
 static napi_value ReturnInt32(napi_env env, int32_t value)
 {
     napi_value result = nullptr;
@@ -97,19 +100,19 @@ static napi_value IsinfNormal004(napi_env env, napi_callback_info info)
     {
         allPassed = false;
     }
-    if (func(3.14) != 0)
+    if (func(finitetest) != 0)
     {
         allPassed = false;
     }
-    if (func(-3.14) != 0)
+    if (func(-finitetest) != 0)
     {
         allPassed = false;
     }
-    if (func(100.0) != 0)
+    if (func(largeFinite) != 0)
     {
         allPassed = false;
     }
-    if (func(-100.0) != 0)
+    if (func(-largeFinite) != 0)
     {
         allPassed = false;
     }
@@ -254,17 +257,19 @@ static napi_value IsinfStable001(napi_env env, napi_callback_info info)
     }
 
     bool allPassed = true;
-    double testVals[] = {0.0, 3.14, INFINITY, -INFINITY, NAN};
-    int results[5];
+    double testVals[] = {0.0, finitetest, INFINITY, -INFINITY, NAN};
+    int testCount = 5;
+    int results[testCount];
 
-    for (int i = 0; i < 5; ++i)
+    for (int i = 0; i < testCount; ++i)
     {
         results[i] = func(testVals[i]);
     }
 
-    for (int round = 0; round < 20; ++round)
+    int roundCount = 20;
+    for (int round = 0; round < roundCount; ++round)
     {
-        for (int i = 0; i < 5; ++i)
+        for (int i = 0; i < testCount; ++i)
         {
             if (func(testVals[i]) != results[i])
             {
@@ -291,7 +296,8 @@ static napi_value IsinfStable002(napi_env env, napi_callback_info info)
     }
 
     bool allPassed = true;
-    for (int i = 0; i < 20; ++i)
+    int loopCount = 20;
+    for (int i = 0; i < loopCount; ++i)
     {
         double val = (i % 100) / 10.0 - 5.0;
         int expected = 0;
@@ -365,7 +371,8 @@ static napi_value IsinfThread002(napi_env env, napi_callback_info info)
     {
         threads.emplace_back([func, &hasError]()
         {
-            for (int round = 0; round < 10; ++round)
+            int roundCount = 10;
+            for (int round = 0; round < roundCount; ++round)
             {
                 if (func(INFINITY) != 1)
                 {

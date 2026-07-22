@@ -91,7 +91,8 @@ static napi_value Log10FiniteNormal003(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     double result = CallLog10Finite(100.0);
-    return ReturnInt32(env, (fabs(result - 2.0) < 1e-15) ? 1 : 0);
+    double expected = 2.0;
+    return ReturnInt32(env, (fabs(result - expected) < 1e-15) ? 1 : 0);
 }
 
 /* TC-004: log10(0.1) = -1.0 */
@@ -113,7 +114,8 @@ static napi_value Log10FiniteNormal005(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     double result = CallLog10Finite(1000.0);
-    return ReturnInt32(env, (fabs(result - 3.0) < 1e-15) ? 1 : 0);
+    double expected3 = 3.0;
+    return ReturnInt32(env, (fabs(result - expected3) < 1e-15) ? 1 : 0);
 }
 
 /* TC-006: log10(2.0) matches std::log10 */

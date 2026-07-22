@@ -26,6 +26,7 @@
 static constexpr int K_STABLE_LOOP_10000 = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
+static constexpr double K_LOG2_TEST_VAL = 2.0;
 
 static double CallLog2Finite(double x)
 {
@@ -73,12 +74,12 @@ static napi_value Log2FiniteNormal002(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    double result = CallLog2Finite(2.0);
+    double result = CallLog2Finite(K_LOG2_TEST_VAL);
     if (errno == ENOSYS)
     {
         return ReturnInt32(env, 1);
     }
-    double expected = std::log2(2.0);
+    double expected = std::log2(K_LOG2_TEST_VAL);
     return ReturnInt32(env, (fabs(result - expected) < 1e-12) ? 1 : 0);
 }
 
@@ -179,10 +180,10 @@ static napi_value Log2FiniteStable001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     bool pass = true;
-    double expected = std::log2(2.0);
+    double expected = std::log2(K_LOG2_TEST_VAL);
     for (int i = 0; i < K_STABLE_LOOP_10000; ++i)
     {
-        double result = CallLog2Finite(2.0);
+        double result = CallLog2Finite(K_LOG2_TEST_VAL);
         if (errno == ENOSYS)
         {
             return ReturnInt32(env, 1);
@@ -204,9 +205,9 @@ static napi_value Log2FiniteThread001(napi_env env, napi_callback_info info)
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    double testVals[] = {1.0, 2.0, 4.0, 8.0, 0.5};
+    double testVals[] = {1.0, K_LOG2_TEST_VAL, 4.0, 8.0, 0.5};
 
-    CallLog2Finite(2.0);
+    CallLog2Finite(K_LOG2_TEST_VAL);
     if (errno == ENOSYS)
     {
         return ReturnInt32(env, 1);

@@ -33,6 +33,9 @@ static bool IsStubMode()
     return LibcFunctionLoader::GetInstance().GetFinite() == nullptr;
 }
 
+static constexpr double smallFinite = 0.0001;
+static constexpr double largeFinite = 100.0;
+
 // ==================== Normal Parameter Tests ====================
 
 // Test 1: Basic finite value identification
@@ -55,7 +58,7 @@ static napi_value FiniteNormal001(napi_env env, napi_callback_info info)
     {
         allPassed = false;
     }
-    if (func(100.0) == 0)
+    if (func(largeFinite) == 0)
     {
         allPassed = false;
     }
@@ -64,16 +67,16 @@ static napi_value FiniteNormal001(napi_env env, napi_callback_info info)
     {
         allPassed = false;
     }
-    if (func(-100.0) == 0)
+    if (func(-largeFinite) == 0)
     {
         allPassed = false;
     }
     // Decimal
-    if (func(0.0001) == 0)
+    if (func(smallFinite) == 0)
     {
         allPassed = false;
     }
-    if (func(-0.0001) == 0)
+    if (func(-smallFinite) == 0)
     {
         allPassed = false;
     }
@@ -235,16 +238,18 @@ static napi_value FiniteStable001(napi_env env, napi_callback_info info)
 
     bool allPassed = true;
     double testVals[] = {0.0, 3.14, -3.14, INFINITY, -INFINITY, NAN};
-    int results[6];
+    int resultCount = 6;
+    int results[resultCount];
 
-    for (int i = 0; i < 6; ++i)
+    for (int i = 0; i < resultCount; ++i)
     {
         results[i] = func(testVals[i]);
     }
 
-    for (int round = 0; round < 20; ++round)
+    int roundCount = 20;
+    for (int round = 0; round < roundCount; ++round)
     {
-        for (int i = 0; i < 6; ++i)
+        for (int i = 0; i < resultCount; ++i)
         {
             if (func(testVals[i]) != results[i])
             {

@@ -60,7 +60,7 @@ static auto GetExp2fFinite()
     func(0.0f);
     if (errno == ENOSYS)
     {
-        return (decltype(func))nullptr;
+        return static_cast<decltype(func)>(nullptr);
     }
     return func;
 }
@@ -359,16 +359,18 @@ static napi_value Exp2fFiniteStable001(napi_env env, napi_callback_info info)
 
     bool allPassed = true;
     float testVals[] = {0.0f, 0.5f, 1.0f, 2.0f, -1.0f, -0.5f, 3.0f, -3.0f};
-    float results[8];
+    int exp2fTestCount = 8;
+    float results[exp2fTestCount];
 
-    for (int i = 0; i < 8; ++i)
+    for (int i = 0; i < exp2fTestCount; ++i)
     {
         results[i] = func(testVals[i]);
     }
 
-    for (int round = 0; round < 20; ++round)
+    int roundCount = 20;
+    for (int round = 0; round < roundCount; ++round)
     {
-        for (int i = 0; i < 8; ++i)
+        for (int i = 0; i < exp2fTestCount; ++i)
         {
             float current = func(testVals[i]);
             if (fabsf(current - results[i]) > 1e-9f)
@@ -396,8 +398,9 @@ static napi_value Exp2fFiniteStable002(napi_env env, napi_callback_info info)
     }
 
     bool allPassed = true;
+    int loopCount = 20;
 
-    for (int i = 0; i < 20; ++i)
+    for (int i = 0; i < loopCount; ++i)
     {
         float val = (i % 100) / 10.0f - 5.0f;
         float result = func(val);
@@ -473,7 +476,8 @@ static napi_value Exp2fFiniteThread002(napi_env env, napi_callback_info info)
         threads.emplace_back([func, &hasError, testVals]()
         {
             float epsilon = 1e-6f;
-            for (int round = 0; round < 10; ++round)
+            int roundCount = 10;
+            for (int round = 0; round < roundCount; ++round)
             {
                 for (float val : testVals)
                 {
