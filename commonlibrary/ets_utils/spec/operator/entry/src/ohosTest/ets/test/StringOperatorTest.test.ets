@@ -1986,3 +1986,1950 @@ export default function StringOperatorTest() {
       expect("啊" < "阿").assertTrue()
       expect("你" < "好").assertTrue()
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1650
+     * @tc.name testStringOperator155
+     * @tc.desc Verify letter greater than comparison
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect("banana" > "apple").assertTrue()
+      expect("apple" > "banana").assertFalse()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1660
+     * @tc.name testStringOperator156
+     * @tc.desc Verify longer string greater than shorter with same prefix
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect("abcd" > "abc").assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1670
+     * @tc.name testStringOperator157
+     * @tc.desc Verify less equal returns true for identical strings
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect("abc" <= "abc").assertTrue()
+      expect("abc" >= "abc").assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1680
+     * @tc.name testStringOperator158
+     * @tc.desc Verify less equal for different strings
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect("apple" <= "banana").assertTrue()
+      expect("banana" <= "apple").assertFalse()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1690
+     * @tc.name testStringOperator159
+     * @tc.desc Verify string compared with number converts to number
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(("10" as ESObject) < 20).assertTrue()
+      expect(("10" as ESObject) > 5).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1700
+     * @tc.name testStringOperator160
+     * @tc.desc Verify non-numeric string compared with number converts to NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(("abc" as ESObject) < 10).assertFalse()
+      expect(("abc" as ESObject) > 10).assertFalse()
+      expect(("abc" as ESObject) >= 10).assertFalse()
+      expect(("abc" as ESObject) <= 10).assertFalse()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1710
+     * @tc.name testStringOperator161
+     * @tc.desc Verify empty string converts to 0 in comparison
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(("" as ESObject) < 1).assertTrue()
+      expect(("" as ESObject) > -1).assertTrue()
+      expect(("" as ESObject) == 0).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1720
+     * @tc.name testStringOperator162
+     * @tc.desc Verify localeCompare returns numeric value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect("apple".localeCompare("banana") < 0).assertTrue()
+      expect("banana".localeCompare("apple") > 0).assertTrue()
+      expect("apple".localeCompare("apple")).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1730
+     * @tc.name testStringOperator163
+     * @tc.desc Verify URL query parameter concatenation with plus
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let baseURL: string = "https://api.example.com/users"
+      let page: number = 1
+      let size: number = 10
+      let url: string = `${baseURL}?page=${page}&size=${size}`
+      expect(url).assertEqual("https://api.example.com/users?page=1&size=10")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1740
+     * @tc.name testStringOperator164
+     * @tc.desc Verify conditional URL parameter concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let baseURL: string = "https://api.example.com/data"
+      let params: string[] = []
+      params.push("type=all")
+      params.push("page=1")
+      let hasFilter: boolean = true
+      if (hasFilter) {
+        params.push("filter=active")
+      }
+      let url: string = baseURL + "?" + params.join("&")
+      expect(url).assertEqual("https://api.example.com/data?type=all&page=1&filter=active")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1750
+     * @tc.name testStringOperator165
+     * @tc.desc Verify path segment concatenation with slash handling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(joinPath165("/api", "/users")).assertEqual("/api/users")
+      expect(joinPath165("/api/", "users")).assertEqual("/api/users")
+      expect(joinPath165("/api/", "/users")).assertEqual("/api/users")
+      expect(joinPath165("/api", "users")).assertEqual("/api/users")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1760
+     * @tc.name testStringOperator166
+     * @tc.desc Verify log message concatenation with plus
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let level: string = "INFO"
+      let module: string = "Auth"
+      let message: string = "User logged in"
+      let log: string = `[${level}] [${module}] ${message}`
+      expect(log).assertEqual("[INFO] [Auth] User logged in")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1770
+     * @tc.name testStringOperator167
+     * @tc.desc Verify log concatenation with timestamp
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let timestamp: string = "2024-01-15T10:30:00"
+      let userId: number = 42
+      let action: string = "login"
+      let log: string = `${timestamp} | user=${userId} | action=${action}`
+      expect(log).assertEqual("2024-01-15T10:30:00 | user=42 | action=login")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1780
+     * @tc.name testStringOperator168
+     * @tc.desc Verify error message concatenation with variables
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(formatError168("email", "", "is required"))
+        .assertEqual('Validation failed: field "email" with value "" is required')
+      expect(formatError168("age", -1, "must be positive"))
+        .assertEqual('Validation failed: field "age" with value "-1" must be positive')
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1790
+     * @tc.name testStringOperator169
+     * @tc.desc Verify HTML generation with template string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let tag: string = "div"
+      let className: string = "container"
+      let content: string = "Hello"
+      let html: string = `<${tag} class="${className}">${content}</${tag}>`
+      expect(html).assertEqual('<div class="container">Hello</div>')
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1800
+     * @tc.name testStringOperator170
+     * @tc.desc Verify list HTML concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let items: string[] = ["Apple", "Banana", "Cherry"]
+      let listHTML: string = "<ul>" +
+        items.map(item => `<li>${item}</li>`).join("") +
+        "</ul>"
+      expect(listHTML).assertEqual("<ul><li>Apple</li><li>Banana</li><li>Cherry</li></ul>")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1810
+     * @tc.name testStringOperator171
+     * @tc.desc Verify CSV row generation with join
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let headers: string[] = ["name", "age", "city"]
+      let row: (string | number)[] = ["Alice", 30, "Beijing"]
+      let csv: string = headers.join(",") + "\n" + row.join(",")
+      expect(csv).assertEqual("name,age,city\nAlice,30,Beijing")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1820
+     * @tc.name testStringOperator172
+     * @tc.desc Verify comma field needs quote wrapping
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+
+      let row: string = ["Alice", csvField172("Beijing, China"), "30"].join(",")
+      expect(row).assertEqual('Alice,"Beijing, China",30')
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1830
+     * @tc.name testStringOperator173
+     * @tc.desc Verify dynamic SQL WHERE clause building with plus equals
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sql: string = "SELECT * FROM users WHERE 1=1"
+      let name: string | null = "Alice"
+      let age: number | null = 30
+      let city: string | null = null
+      if (name) {
+        sql += ` AND name='${name}'`
+      }
+      if (age) {
+        sql += ` AND age=${age}`
+      }
+      if (city) {
+        sql += ` AND city='${city}'`
+      }
+      expect(sql).assertEqual("SELECT * FROM users WHERE 1=1 AND name='Alice' AND age=30")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1840
+     * @tc.name testStringOperator174
+     * @tc.desc Verify number to binary string concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let n: number = 255
+      expect(`0b${n.toString(2)}`).assertEqual("0b11111111")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1850
+     * @tc.name testStringOperator175
+     * @tc.desc Verify number to hex string concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let n: number = 255
+      expect(`0x${n.toString(16)}`).assertEqual("0xff")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1860
+     * @tc.name testStringOperator176
+     * @tc.desc Verify number to octal string concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let n: number = 64
+      expect(`0o${n.toString(8)}`).assertEqual("0o100")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1870
+     * @tc.name testStringOperator177
+     * @tc.desc Verify amount concatenation with currency symbol
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let amount: number = 99.5
+      expect(`$${amount.toFixed(2)}`).assertEqual("$99.50")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1880
+     * @tc.name testStringOperator178
+     * @tc.desc Verify integer amount with thousands separator
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let amount: number = 1234567
+      let formatted: string = amount.toLocaleString("en-US")
+      expect(`$${formatted}`).assertEqual("$1,234,567")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1890
+     * @tc.name testStringOperator179
+     * @tc.desc Verify string numeric addition becomes concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input1: string = "10"
+      let input2: string = "20"
+      expect((input1 as ESObject) + input2).assertEqual("1020")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1900
+     * @tc.name testStringOperator180
+     * @tc.desc Verify Number or parseInt conversion needed
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input1: string = "10"
+      let input2: string = "20"
+      expect(Number(input1) + Number(input2)).assertEqual(30)
+    });
+
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1920
+     * @tc.name testStringOperator182
+     * @tc.desc Verify direct object concatenation yields object Object
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let user: ESObject = { name: "Alice", age: 30 }
+      expect(("User: " as ESObject) + user).assertEqual("User: [object Object]")
+      expect("User: " + JSON.stringify(user)).assertEqual('User: {"name":"Alice","age":30}')
+      expect(`User: ${user.name}`).assertEqual("User: Alice")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1930
+     * @tc.name testStringOperator183
+     * @tc.desc Verify array and string concatenation with comma join
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let items: number[] = [1, 2, 3]
+      expect(("Items: " as ESObject) + items).assertEqual("Items: 1,2,3")
+      expect("Items: " + JSON.stringify(items)).assertEqual("Items: [1,2,3]")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1940
+     * @tc.name testStringOperator184
+     * @tc.desc Verify empty array disappears after concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let empty: ESObject[] = []
+      expect(("Before" as ESObject) + empty + "After").assertEqual("BeforeAfter")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1950
+     * @tc.name testStringOperator185
+     * @tc.desc Verify null becomes null string in concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let data: string | null = null
+      let result: string = `Value: ${(data as ESObject) ?? "N/A"}`
+      expect(result).assertEqual("Value: N/A")
+      let result2: string = `Value: ${data}`
+      expect(result2).assertEqual("Value: null")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1960
+     * @tc.name testStringOperator186
+     * @tc.desc Verify undefined becomes undefined string in concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let data: string | undefined = undefined
+      let result: string = `Value: ${(data as ESObject) ?? "default"}`
+      expect(result).assertEqual("Value: default")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1970
+     * @tc.name testStringOperator187
+     * @tc.desc Verify loop plus equals equals join with same result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let n: number = 100
+      let s1: string = ""
+      for (let i = 0; i < n; i++) {
+        s1 += `${i},`
+      }
+      let parts: string[] = []
+      for (let i = 0; i < n; i++) {
+        parts.push(`${i},`)
+      }
+      let s2: string = parts.join("")
+      expect(s1).assertEqual(s2)
+      expect(s1.split(",").length).assertEqual(101)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1980
+     * @tc.name testStringOperator188
+     * @tc.desc Verify and operator returning false becomes false in template
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let isVIP: boolean = false
+      let s1: string = `Status: ${isVIP && "VIP"}`
+      expect(s1).assertEqual("Status: false")
+      let s2: string = `Status: ${isVIP ? "VIP" : "Regular"}`
+      expect(s2).assertEqual("Status: Regular")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_1990
+     * @tc.name testStringOperator189
+     * @tc.desc Verify numeric 0 displays as 0 not empty in template
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let count: number = 0
+      expect(`Count: ${count}`).assertEqual("Count: 0")
+      let display: string = count ? `${count}` : ""
+      expect(`Count: ${display}`).assertEqual("Count: ")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2000
+     * @tc.name testStringOperator190
+     * @tc.desc Verify TS allows string plus string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: string = "hello"
+      let b: string = "world"
+      let result: string = a + b
+      expect(result).assertEqual("helloworld")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2010
+     * @tc.name testStringOperator191
+     * @tc.desc Verify TS does not allow string plus number directly
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = "x"
+      let n: number = 42
+      let r: string = (s as ESObject) + n
+      expect(r).assertEqual("x42")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2020
+     * @tc.name testStringOperator192
+     * @tc.desc Verify string plus equals string is type safe
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = "abc"
+      s += "def"
+      expect(s).assertEqual("abcdef")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2030
+     * @tc.name testStringOperator193
+     * @tc.desc Verify string plus equals number requires as ESObject
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = "x"
+      s += (42 as ESObject)
+      expect(s).assertEqual("x42")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2040
+     * @tc.name testStringOperator194
+     * @tc.desc Verify number auto converts to string in template
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let n: number = 42
+      let b: boolean = true
+      let s: string = `${n} ${b}`
+      expect(s).assertEqual("42 true")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2050
+     * @tc.name testStringOperator195
+     * @tc.desc Verify object auto converts to string in template
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator195', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: ESObject = { x: 1 }
+      let s: string = `${obj}`
+      expect(s).assertEqual("[object Object]")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2060
+     * @tc.name testStringOperator196
+     * @tc.desc Verify string or null handling in template
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(greet196("Alice")).assertEqual("Hello, Alice")
+      expect(greet196(null)).assertEqual("Hello, Guest")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2070
+     * @tc.name testStringOperator197
+     * @tc.desc Verify string or undefined handling in template
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(format197("test")).assertEqual("Value: test")
+      expect(format197(undefined)).assertEqual("Value: N/A")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2100
+     * @tc.name testStringOperator200
+     * @tc.desc Verify MDN my plus string example
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect("my " + "string").assertEqual("my string")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2110
+     * @tc.name testStringOperator201
+     * @tc.desc Verify MDN myString plus equals bet example
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let myString: string = "alpha"
+      myString += "bet"
+      expect(myString).assertEqual("alphabet")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2120
+     * @tc.name testStringOperator202
+     * @tc.desc Verify plus does not modify original strings
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: string = "hello"
+      let b: string = "world"
+      let c: string = a + b
+      expect(a).assertEqual("hello")
+      expect(b).assertEqual("world")
+      expect(c).assertEqual("helloworld")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2130
+     * @tc.name testStringOperator203
+     * @tc.desc Verify plus equals does not modify reference creating new string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: string = "abc"
+      let ref: string = a
+      a += "def"
+      expect(a).assertEqual("abcdef")
+      expect(ref).assertEqual("abc")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2140
+     * @tc.name testStringOperator204
+     * @tc.desc Verify typeof string plus string result is string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(typeof ("a" + "b")).assertEqual("string")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2160
+     * @tc.name testStringOperator206
+     * @tc.desc Verify typeof plus equals expression result is string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = "x"
+      let result = (s += "y")
+      expect(typeof result).assertEqual("string")
+      expect(result).assertEqual("xy")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2170
+     * @tc.name testStringOperator207
+     * @tc.desc Verify concatenated string length equals sum of individual lengths
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: string = "Hello"
+      let b: string = "World"
+      expect((a + b).length).assertEqual(a.length + b.length)
+      expect((a + b).length).assertEqual(10)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2180
+     * @tc.name testStringOperator208
+     * @tc.desc Verify empty string concatenation does not affect length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: string = "test"
+      expect((a + "").length).assertEqual(a.length)
+      expect(("" + a).length).assertEqual(a.length)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2190
+     * @tc.name testStringOperator209
+     * @tc.desc Verify accessing characters by index after concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = "AB" + "CD"
+      expect(s[0]).assertEqual("A")
+      expect(s[1]).assertEqual("B")
+      expect(s[2]).assertEqual("C")
+      expect(s[3]).assertEqual("D")
+      expect(s.length).assertEqual(4)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2200
+     * @tc.name testStringOperator210
+     * @tc.desc Verify String fromCharCode plus string concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = String.fromCharCode(65) + String.fromCharCode(66)
+      expect(s).assertEqual("AB")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2210
+     * @tc.name testStringOperator211
+     * @tc.desc Verify complex output with plus plus equals and template string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let name: string = "Alice"
+      let scores: number[] = [85, 92, 78]
+      let average: number = scores.reduce((a, b) => a + b, 0) / scores.length
+      let grade: string = average >= 90 ? "A" : average >= 80 ? "B" : "C"
+
+      let report: string = `=== Student Report ===\n`
+      report += `Name: ${name}\n`
+      report += `Scores: ${scores.join(", ")}\n`
+      report += `Average: ${average.toFixed(1)}\n`
+      report += `Grade: ${grade}`
+
+      expect(report).assertEqual(
+        "=== Student Report ===\nName: Alice\nScores: 85, 92, 78\nAverage: 85.0\nGrade: B"
+      )
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2230
+     * @tc.name testStringOperator213
+     * @tc.desc Verify dynamic regex string building with plus
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let pattern: string = "\\d+"
+      let flags: string = "g"
+      let re = new RegExp(pattern, flags)
+      expect(re.test("12345")).assertTrue()
+      expect(re.test("abc")).assertFalse()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2240
+     * @tc.name testStringOperator214
+     * @tc.desc Verify bubble sort using less than comparison
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let names: string[] = ["Charlie", "Alice", "Bob"]
+      for (let i = 0; i < names.length - 1; i++) {
+        for (let j = 0; j < names.length - 1 - i; j++) {
+          if (names[j] > names[j + 1]) {
+            let temp = names[j]
+            names[j] = names[j + 1]
+            names[j + 1] = temp
+          }
+        }
+      }
+      expect(names).assertDeepEquals(["Alice", "Bob", "Charlie"])
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2320
+     * @tc.name testStringOperator222
+     * @tc.desc Verify toUpperCase then concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let name: string = "alice"
+      expect("Hello, " + name.toUpperCase()).assertEqual("Hello, ALICE")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2330
+     * @tc.name testStringOperator223
+     * @tc.desc Verify both strings toUpperCase then concatenate
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator223', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect("abc".toUpperCase() + "def".toUpperCase()).assertEqual("ABCDEF")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2340
+     * @tc.name testStringOperator224
+     * @tc.desc Verify toLowerCase then concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator224', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect("HELLO".toLowerCase() + " WORLD".toLowerCase()).assertEqual("hello world")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2350
+     * @tc.name testStringOperator225
+     * @tc.desc Verify capitalize first letter concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator225', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(capitalize225("hELLO")).assertEqual("Hello")
+      expect(capitalize225("WORLD")).assertEqual("World")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2370
+     * @tc.name testStringOperator227
+     * @tc.desc Verify German eszett toUpperCase
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator227', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect("ß".toUpperCase()).assertEqual("SS")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2380
+     * @tc.name testStringOperator228
+     * @tc.desc Verify Turkish i toUpperCase
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator228', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect("i".toUpperCase()).assertEqual("I")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2390
+     * @tc.name testStringOperator229
+     * @tc.desc Verify string with spaces concatenation preserves spaces
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator229', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect("  hello  " + "  world  ").assertEqual("  hello    world  ")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2400
+     * @tc.name testStringOperator230
+     * @tc.desc Verify trim then concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: string = "  hello  "
+      let b: string = "  world  "
+      expect(a.trim() + " " + b.trim()).assertEqual("hello world")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2410
+     * @tc.name testStringOperator231
+     * @tc.desc Verify trimStart then concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator231', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = "   hello   "
+      expect(s.trimStart() + "!").assertEqual("hello   !")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2420
+     * @tc.name testStringOperator232
+     * @tc.desc Verify trimEnd then concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator232', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = "   hello   "
+      expect("!" + s.trimEnd()).assertEqual("!   hello")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2430
+     * @tc.name testStringOperator233
+     * @tc.desc Verify tab plus space concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator233', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = "Col1\t" + "Col2 " + "Col3"
+      expect(s.includes("\t")).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2440
+     * @tc.name testStringOperator234
+     * @tc.desc Verify non-breaking space concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator234', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let nbsp: string = "\u00A0"
+      let result: string = "Hello" + nbsp + "World"
+      expect(result.length).assertEqual(11)
+      expect(result !== "Hello World").assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2450
+     * @tc.name testStringOperator235
+     * @tc.desc Verify zero-width space concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator235', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let zwsp: string = "\u200B"
+      let result: string = "Hello" + zwsp + "World"
+      expect(result.length).assertEqual(11)
+      expect(result.startsWith("Hello")).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2470
+     * @tc.name testStringOperator237
+     * @tc.desc Verify extra space compression then concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator237', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(normalizeSpace237("  hello   world  ") + "!").assertEqual("hello world!")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2480
+     * @tc.name testStringOperator238
+     * @tc.desc Verify split by comma then join with dash
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator238', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let csv: string = "a,b,c,d"
+      let result: string = csv.split(",").join("-")
+      expect(result).assertEqual("a-b-c-d")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2490
+     * @tc.name testStringOperator239
+     * @tc.desc Verify empty string split to char array then join
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator239', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = "Hello"
+      expect(s.split("").reverse().join("")).assertEqual("olleH")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2500
+     * @tc.name testStringOperator240
+     * @tc.desc Verify filter then rejoin
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let words: string = "the quick brown fox"
+      let longWords: string = words.split(" ").filter(w => w.length > 3).join(" ")
+      expect(longWords).assertEqual("quick brown")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2510
+     * @tc.name testStringOperator241
+     * @tc.desc Verify replace then rejoin
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator241', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let items: string = "apple,banana,cherry"
+      let result: string = items.split(",").map(s => s.toUpperCase()).join("|")
+      expect(result).assertEqual("APPLE|BANANA|CHERRY")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2520
+     * @tc.name testStringOperator242
+     * @tc.desc Verify slice then concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator242', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = "Hello World"
+      expect(s.slice(0, 5) + " " + s.slice(6)).assertEqual("Hello World")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2530
+     * @tc.name testStringOperator243
+     * @tc.desc Verify substring then concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator243', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = "Hello World"
+      expect(s.substring(0, 5) + " - " + s.substring(6)).assertEqual("Hello - World")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2540
+     * @tc.name testStringOperator244
+     * @tc.desc Verify replacing middle part with slice concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator244', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = "Hello World"
+      let replacement: string = "Beautiful"
+      let result: string = s.slice(0, 6) + replacement + s.slice(11)
+      expect(result).assertEqual("Hello Beautiful")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2550
+     * @tc.name testStringOperator245
+     * @tc.desc Verify padStart alignment then concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator245', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let nums: string[] = ["1", "10", "100"]
+      let padded: string = nums.map(n => n.padStart(3, "0")).join(", ")
+      expect(padded).assertEqual("001, 010, 100")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2560
+     * @tc.name testStringOperator246
+     * @tc.desc Verify padEnd alignment then concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator246', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let labels: string[] = ["Name", "Age", "City"]
+      let values: string[] = ["Alice", "30", "Beijing"]
+      let rows: string = labels.map((l, i) => l.padEnd(8) + values[i]).join("\n")
+      expect(rows).assertEqual("Name    Alice\nAge     30\nCity    Beijing")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2570
+     * @tc.name testStringOperator247
+     * @tc.desc Verify padStart truncates when exceeding target length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator247', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect("abc".padStart(10, "12")).assertEqual("1212121abc")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2580
+     * @tc.name testStringOperator248
+     * @tc.desc Verify padEnd then concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator248', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect("5".padEnd(3, "0") + "%").assertEqual("500%")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2600
+     * @tc.name testStringOperator250
+     * @tc.desc Verify strings raw contains unescaped raw text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(rawTag250`Line1\nLine2`).assertEqual("Line1\\nLine2")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2610
+     * @tc.name testStringOperator251
+     * @tc.desc Verify custom html tag function escapes special characters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator251', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let userInput: string = '<script>alert("xss")</script>'
+      expect(html251`<div>${userInput}</div>`).assertEqual(
+        '<div>&lt;script&gt;alert(&quot;xss&quot;)&lt;/script&gt;</div>'
+      )
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2620
+     * @tc.name testStringOperator252
+     * @tc.desc Verify custom format tag like printf
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator252', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(format252`Price: ${9.999}, Count: ${5}`).assertEqual("Price: 10.00, Count: 5.00")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2630
+     * @tc.name testStringOperator253
+     * @tc.desc Verify NFC merges combining characters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator253', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let composed: string = "\u00E9"
+      let decomposed: string = "e\u0301"
+      expect(composed).assertEqual(decomposed.normalize("NFC"))
+      expect(composed.length).assertEqual(1)
+      expect(decomposed.length).assertEqual(2)
+      expect(decomposed.normalize("NFC").length).assertEqual(1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2640
+     * @tc.name testStringOperator254
+     * @tc.desc Verify NFD decomposes combined characters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator254', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let composed: string = "\u00E9"
+      let nfd: string = composed.normalize("NFD")
+      expect(nfd.length).assertEqual(2)
+      expect(nfd).assertEqual("e\u0301")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2650
+     * @tc.name testStringOperator255
+     * @tc.desc Verify different normalization forms produce different lengths
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator255', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let nfc: string = "\u00E9"
+      let nfd: string = "e\u0301"
+      let s1: string = "cafe" + nfc
+      let s2: string = "cafe" + nfd
+      expect(s1.length).assertEqual(5)
+      expect(s2.length).assertEqual(6)
+      expect(s1.normalize("NFC")).assertEqual(s2.normalize("NFC"))
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2660
+     * @tc.name testStringOperator256
+     * @tc.desc Verify Korean syllable NFC NFD difference
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator256', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let composed: string = "\uD55C"
+      let decomposed: string = "\u110B\u1161\u11BC"
+      expect(composed.length).assertEqual(1)
+      expect(decomposed.length).assertEqual(3)
+      expect(composed).assertEqual('한')
+      expect(decomposed.normalize("NFC")).assertEqual('앙')
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2670
+     * @tc.name testStringOperator257
+     * @tc.desc Verify Map to query string conversion
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator257', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let params = new Map<string, string>()
+      params.set("name", "Alice")
+      params.set("age", "30")
+      let parts: string[] = []
+      params.forEach((v, k) => parts.push(`${k}=${v}`))
+      let query: string = parts.join("&")
+      expect(query).assertEqual("name=Alice&age=30")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2690
+     * @tc.name testStringOperator259
+     * @tc.desc Verify Set deduplication then concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator259', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let tags = new Set<string>(["js", "ts", "js", "arkts", "ts"])
+      let result: string = Array.from(tags).join(", ")
+      expect(result).assertEqual("js, ts, arkts")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2700
+     * @tc.name testStringOperator260
+     * @tc.desc Verify Set numbers to string concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let nums = new Set<number>([3, 1, 2, 3, 1])
+      let result: string = Array.from(nums).sort().map(n => `${n}`).join("-")
+      expect(result).assertEqual("1-2-3")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2710
+     * @tc.name testStringOperator261
+     * @tc.desc Verify string list deduplication and rejoin
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator261', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: string = "apple,banana,apple,cherry,banana"
+      let unique: string = Array.from(new Set(input.split(","))).join(",")
+      expect(unique).assertEqual("apple,banana,cherry")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2720
+     * @tc.name testStringOperator262
+     * @tc.desc Verify object concatenation after JSON stringify
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator262', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let user: GeneratedObjectLiteralInterface_2 = { name: "Alice", age: 30 }
+      let log: string = "Data: " + JSON.stringify(user)
+      expect(log).assertEqual('Data: {"name":"Alice","age":30}')
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2730
+     * @tc.name testStringOperator263
+     * @tc.desc Verify array serialization then concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator263', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: number[] = [1, 2, 3]
+      let s: string = "Array: " + JSON.stringify(arr)
+      expect(s).assertEqual("Array: [1,2,3]")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2740
+     * @tc.name testStringOperator264
+     * @tc.desc Verify indented JSON serialization concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator264', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let data: GeneratedObjectLiteralInterface_3 = { name: "Alice", age: 30 }
+      let formatted: string = JSON.stringify(data, null, 2)
+      let lines: string[] = formatted.split("\n")
+      expect(lines[0]).assertEqual("{")
+      expect(lines[1].includes('"name"')).assertTrue()
+      expect(lines[lines.length - 1]).assertEqual("}")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2760
+     * @tc.name testStringOperator266
+     * @tc.desc Verify parse JSON and extract values for concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator266', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let jsonStr: string = '{"name":"Alice","city":"Beijing"}'
+      let parsed: ESObject = JSON.parse(jsonStr)
+      expect(`${parsed.name} from ${parsed.city}`).assertEqual("Alice from Beijing")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2770
+     * @tc.name testStringOperator267
+     * @tc.desc Verify building JSON string array with plus
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator267', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let users: string[] = ["Alice", "Bob", "Charlie"]
+      let jsonArr: string = "[" + users.map(u => `"${u}"`).join(",") + "]"
+      expect(JSON.parse(jsonArr)).assertDeepEquals(["Alice", "Bob", "Charlie"])
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2780
+     * @tc.name testStringOperator268
+     * @tc.desc Verify repeat generates repeated string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator268', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect("ab".repeat(3)).assertEqual("ababab")
+      expect("-".repeat(5)).assertEqual("-----")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2790
+     * @tc.name testStringOperator269
+     * @tc.desc Verify repeat zero returns empty string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator269', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect("abc".repeat(0)).assertEqual("")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2800
+     * @tc.name testStringOperator270
+     * @tc.desc Verify repeat one returns original string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect("abc".repeat(1)).assertEqual("abc")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2820
+     * @tc.name testStringOperator272
+     * @tc.desc Verify repeat generates indentation then concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator272', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let code: string = "function() {" + "\n" +
+        indent272("return 42;", 1) + "\n" +
+        indent272("function() {" + "\n" +
+          indent272("return 0;", 2) + "\n" +
+          indent272("}", 1), 1) + "\n" +
+        "}"
+      expect(code.includes("    return 0;")).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2830
+     * @tc.name testStringOperator273
+     * @tc.desc Verify repeat negative throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator273', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let caught: boolean = false
+      try {
+        "ab".repeat(-1)
+      } catch (e) {
+        caught = true
+        expect((e as Error).name).assertEqual("RangeError")
+      }
+      expect(caught).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2840
+     * @tc.name testStringOperator274
+     * @tc.desc Verify repeat Infinity throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator274', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let caught: boolean = false
+      try {
+        "ab".repeat(Infinity)
+      } catch (e) {
+        caught = true
+      }
+      expect(caught).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2850
+     * @tc.name testStringOperator275
+     * @tc.desc Verify fixed digit number concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator275', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let ids: number[] = [1, 23, 456, 7890]
+      let formatted: string = ids.map(n => `${n}`.padStart(4, "0")).join(", ")
+      expect(formatted).assertEqual("0001, 0023, 0456, 7890")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2860
+     * @tc.name testStringOperator276
+     * @tc.desc Verify hex address padding
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator276', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let addr: number = 255
+      expect("0x" + addr.toString(16).padStart(4, "0")).assertEqual("0x00ff")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2870
+     * @tc.name testStringOperator277
+     * @tc.desc Verify table column alignment
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator277', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let rows: string[][] = [
+        ["Name", "Age", "City"],
+        ["Alice", "30", "Beijing"],
+        ["Bob", "25", "Shanghai"]
+      ]
+      let table: string = rows.map(row =>
+      row.map((cell, i) => {
+        let width: number = i === 0 ? 8 : i === 1 ? 4 : 10
+        return cell.padEnd(width)
+      }).join("")
+      ).join("\n")
+      expect(table.split("\n").length).assertEqual(3)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2880
+     * @tc.name testStringOperator278
+     * @tc.desc Verify padStart unchanged when target less than original length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator278', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect("Hello".padStart(3, "x")).assertEqual("Hello")
+      expect("Hello".padEnd(3, "x")).assertEqual("Hello")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2890
+     * @tc.name testStringOperator279
+     * @tc.desc Verify padStart unchanged when target equals original length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator279', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect("Hello".padStart(5, "x")).assertEqual("Hello")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2900
+     * @tc.name testStringOperator280
+     * @tc.desc Verify recursive tree structure string generation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: string = treeToString280(tree)
+      expect(result).assertEqual("root\n  child1\n    grandchild1\n  child2")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2920
+     * @tc.name testStringOperator282
+     * @tc.desc Verify recursive string reversal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator282', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(reverseStr282("hello")).assertEqual("olleh")
+      expect(reverseStr282("")).assertEqual("")
+      expect(reverseStr282("a")).assertEqual("a")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2930
+     * @tc.name testStringOperator283
+     * @tc.desc Verify recursive replacement of all matches
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator283', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(replaceAll283("a-b-c-d", "-", "+")).assertEqual("a+b+c+d")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2940
+     * @tc.name testStringOperator284
+     * @tc.desc Verify RGB to hex color string concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator284', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(rgbToHex284(255, 128, 0)).assertEqual("#ff8000")
+      expect(rgbToHex284(0, 0, 0)).assertEqual("#000000")
+      expect(rgbToHex284(255, 255, 255)).assertEqual("#ffffff")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2950
+     * @tc.name testStringOperator285
+     * @tc.desc Verify hex color string to RGB parsing
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator285', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(hexToRgb285("#ff8000")).assertEqual("rgb(255, 128, 0)")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2960
+     * @tc.name testStringOperator286
+     * @tc.desc Verify adjusted RGB string concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator286', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(adjustBrightness286("#808080", 1.5)).assertEqual("#c0c0c0")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_2990
+     * @tc.name testStringOperator289
+     * @tc.desc Verify charCodeAt then concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator289', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = "AB"
+      let codes: number[] = []
+      for (let i = 0; i < s.length; i++) {
+        codes.push(s.charCodeAt(i))
+      }
+      expect(codes).assertDeepEquals([65, 66])
+      let rebuilt: string = codes.map(c => String.fromCharCode(c)).join("")
+      expect(rebuilt).assertEqual("AB")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_3000
+     * @tc.name testStringOperator290
+     * @tc.desc Verify codePointAt for emoji concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator290', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let emoji: string = "😀"
+      expect(emoji.codePointAt(0)).assertEqual(0x1F600)
+      expect(emoji.length).assertEqual(2)
+      let rebuilt: string = String.fromCodePoint(0x1F600)
+      expect(rebuilt).assertEqual(emoji)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_3010
+     * @tc.name testStringOperator291
+     * @tc.desc Verify debugging object concatenation output
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator291', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let config: ESObject = { host: "localhost", port: 8080 }
+      let bad: string = `Config: ${config}`
+      expect(bad).assertEqual("Config: [object Object]")
+      let good: string = `Config: ${JSON.stringify(config)}`
+      expect(good).assertEqual('Config: {"host":"localhost","port":8080}')
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_3020
+     * @tc.name testStringOperator292
+     * @tc.desc Verify reduce result concatenation with string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator292', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let prices: string[] = ["10", "20", "30"]
+      let total1: ESObject = prices.reduce((acc: ESObject, p: string) => acc + p, "")
+      expect(total1).assertEqual("102030")
+      let total2: number = prices.reduce((acc: number, p: string) => acc + Number(p), 0)
+      expect(total2).assertEqual(60)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_3030
+     * @tc.name testStringOperator293
+     * @tc.desc Verify nullish coalescing for safe null concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator293', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(safeConcat293("Hello", "World")).assertEqual("HelloWorld")
+      expect(safeConcat293(null, "World")).assertEqual("World")
+      expect(safeConcat293("Hello", null)).assertEqual("Hello")
+      expect(safeConcat293(null, null)).assertEqual("")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_3050
+     * @tc.name testStringOperator295
+     * @tc.desc Verify number exceeding MAX SAFE INTEGER concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator295', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let big: number = 9007199254740993
+      let s: string = `${big}`
+      expect(s).assertEqual("9007199254740992")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_3060
+     * @tc.name testStringOperator296
+     * @tc.desc Verify BigInt avoids precision loss
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator296', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let big: bigint = 9007199254740993n
+      let s: string = `${big}`
+      expect(s).assertEqual("9007199254740993")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_3070
+     * @tc.name testStringOperator297
+     * @tc.desc Verify 0.1 plus 0.2 precision issue in concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator297', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: number = 0.1 + 0.2
+      expect(`${result}`).assertEqual("0.30000000000000004")
+      expect(`${result.toFixed(2)}`).assertEqual("0.30")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_3080
+     * @tc.name testStringOperator298
+     * @tc.desc Verify composed and decomposed characters are not equal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator298', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let composed: string = "\u00E9"
+      let decomposed: string = "e\u0301"
+      expect(composed === decomposed).assertFalse()
+      expect(composed === decomposed.normalize("NFC")).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_3090
+     * @tc.name testStringOperator299
+     * @tc.desc Verify full-width and half-width digits are not equal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator299', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect("１２３" < "123" || "１２３" > "123").assertTrue()
+      expect("１２３".length).assertEqual(3)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_3100
+     * @tc.name testStringOperator300
+     * @tc.desc Verify 10000 times plus equals concatenation result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = ""
+      let expected: string = ""
+      for (let i = 0; i < 10000; i++) {
+        s += "x"
+        expected += "x"
+      }
+      expect(s.length).assertEqual(10000)
+      expect(s === expected).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_3110
+     * @tc.name testStringOperator301
+     * @tc.desc Verify array join equals plus equals for large concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let parts: string[] = []
+      let concat: string = ""
+      for (let i = 0; i < 1000; i++) {
+        parts.push(`${i}`)
+        concat += `${i}`
+      }
+      expect(parts.join("")).assertEqual(concat)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_3120
+     * @tc.name testStringOperator302
+     * @tc.desc Verify composite key lookup in Map
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator302', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cache = new Map<string, number>()
+      cache.set("user:1:profile", 42)
+      let userId: string = "1"
+      let result: number | undefined = cache.get(`user:${userId}:profile`)
+      expect(result).assertEqual(42)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_3130
+     * @tc.name testStringOperator303
+     * @tc.desc Verify object toString as key concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator303', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cache = new Map<string, string>()
+      let obj1: ESObject = { id: 1 }
+      let obj2: ESObject = { id: 2 }
+      cache.set(`${obj1}`, "data1")
+      cache.set(`${obj2}`, "data2")
+      expect(cache.size).assertEqual(1)
+      expect(cache.get("[object Object]")).assertEqual("data2")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_3140
+     * @tc.name testStringOperator304
+     * @tc.desc Verify empty string comparison behavior
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator304', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect("" < "a").assertTrue()
+      expect("" === "").assertTrue()
+      expect("".length).assertEqual(0)
+      expect(("" as ESObject) + "").assertEqual("")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_3150
+     * @tc.name testStringOperator305
+     * @tc.desc Verify spaces affect comparison result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator305', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect("abc" < "abc ").assertTrue()
+      expect("abc " < "abc").assertFalse()
+      expect(" abc" < "abc").assertTrue()
+      expect("abc" < "abd").assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_3160
+     * @tc.name testStringOperator306
+     * @tc.desc Verify subclass inherited toString in concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator306', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let d = new Dog306()
+      expect(("It's a " as ESObject) + (d as ESObject)).assertEqual("It's a Dog")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_3170
+     * @tc.name testStringOperator307
+     * @tc.desc Verify overridden toString affects concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator307', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let price = new Money307(99.99, "USD")
+      expect(`Price: ${price}`).assertEqual("Price: 99.99 USD")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_OPERATOR_3190
+     * @tc.name testStringOperator309
+     * @tc.desc Verify object without valueOf uses toString then converts to number in comparison
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStringOperator309', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: ESObject = {
+        toString() {
+          return "10"
+        }
+      }
+      expect((obj as ESObject) < 20).assertTrue()
+      expect((obj as ESObject) > 5).assertTrue()
+      expect(("x" as ESObject) + obj).assertEqual("x10")
+    });
+  });
