@@ -104,4 +104,12 @@ export default {
         this.back();
     },
 
+    changeResultPass() {
+        this.changeResult(this.pass);
+    },
+
+    changeResultFail() {
+        this.changeResult(this.fail);
+    },
+
 };

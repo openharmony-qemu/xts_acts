@@ -18,7 +18,7 @@ limitations under the License.
     API测试
   </text>
   <list class="todo-wraper" onswipe="swipeEvent" ref="list">
-    <list-item for="{{todolist}}" class="listItem" key="idx">
+    <list-item for="{{todolist}}" class="listItem">
       <input
               type="button"
               class="buttonStyle"

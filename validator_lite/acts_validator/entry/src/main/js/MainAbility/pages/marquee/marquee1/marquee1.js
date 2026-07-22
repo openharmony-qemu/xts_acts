@@ -40,8 +40,8 @@ export default {
     router.replace({
       uri: 'pages/help/index',
       params: {
-        step: '操作步骤：点击红色的跑马灯',
-        result: '预期结果：红色跑马灯速度发生变化',
+                step: '操作步骤：点击红色的跑马灯',
+                result: '预期结果：红色跑马灯速度发生变化',
         url: 'pages/marquee/marquee1/marquee1',
         itemIndex: this.itemIndex
       }
@@ -62,4 +62,12 @@ export default {
     getApp().data.keyList[this.title] = result;
     this.back();
   },
+
+    changeResultPass() {
+        this.changeResult(this.pass);
+    },
+
+    changeResultFail() {
+        this.changeResult(this.fail);
+    },
 };

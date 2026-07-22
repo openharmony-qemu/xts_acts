@@ -145,8 +145,8 @@ export default {
     router.replace({
       uri: 'pages/help/index',
       params: {
-        step: '操作步骤：点击测试storage按钮',
-        result: '预期结果：屏幕上显示各接口的测试结果',
+                step: '操作步骤：点击测试storage按钮',
+                result: '预期结果：屏幕上显示各接口的测试结果',
         url: 'pages/storage/storage01/index',
         itemIndex: this.itemIndex
       }
@@ -167,4 +167,12 @@ export default {
     getApp().data.keyList[this.title] = result;
     this.back();
   },
+
+    changeResultPass() {
+        this.changeResult(this.pass);
+    },
+
+    changeResultFail() {
+        this.changeResult(this.fail);
+    },
 };
