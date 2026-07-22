@@ -3957,6 +3957,45 @@ export default function ReminderAgentTest() {
                 done();
             }
         })
+
+        /**
+         * @tc.name   testPublishReminderEmptyWant_0141
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_14100
+         * @tc.desc   test publish callback want is empty.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("testPublishReminderNullWant_0141", Level.LEVEL0, async function (done) {
+            console.info('----------------------testPublishReminderNullWant_0141---------------------------');
+            let timer = {
+                reminderType: 121,
+                triggerTimeInSeconds: 0,
+                wantAgent: {
+                    pkgName: "",
+                    abilityName: ""
+                },
+                maxScreenWantAgent: {
+                    pkgName: "",
+                    abilityName: ""
+                },
+            }
+            try {
+                reminderAgent.publishReminder(timer, (err, reminderId) => {
+                    if(err){
+                        console.info('testPublishReminderNullWant_0141 publishReminder err code is :' + err.code + err.message)
+                        expect(err.code).assertEqual(401);
+                        done(); 
+                    }else{
+                        console.info("testPublishReminderNullWant_0141 reminderId=" + reminderId);
+                        expect(reminderId).assertLarger(0);
+                        done()
+                    }
+                });
+            } catch (error) {
+                console.info("testPublishReminderNullWant_0141 catch err.code" + error.code + err.message)
+            }
+        })
     })
 
 }

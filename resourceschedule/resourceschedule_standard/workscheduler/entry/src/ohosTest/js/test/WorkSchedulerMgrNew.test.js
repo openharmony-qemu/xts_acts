@@ -1160,5 +1160,32 @@ export default function WorkSchedulerMgrNewTest() {
             console.info("testStartWorkNEW033 stop----------------error: " + error.code);
         }
         })
+
+        /**
+         * @tc.name   testStartWorkNEW034
+         * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_NEW_XTS_3400
+         * @tc.desc   BatteryStatus and storageRequest is out enum range.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("testStartWorkNEW034", Level.LEVEL0, async function (done) {
+            console.info('----------------------testStartWorkNEW034---------------------------');
+            workScheduler.stopAndClearWorks();
+            let workInfo = {
+                workId: 1,
+                bundleName: "ohos.acts.resourceschedule.workscheduler.js.function",
+                abilityName: "com.mytest.abilityName",
+                batteryStatus: 121,
+                storageRequest: 121
+            }
+            try{
+                workScheduler.stopWork(workInfo);
+            }catch(error){
+                console.info("testStartWorkNEW034 ----------------error: " + error.code);
+                expect(error.code).assertEqual("401");
+                done();
+            }
+        })
     })
 }
