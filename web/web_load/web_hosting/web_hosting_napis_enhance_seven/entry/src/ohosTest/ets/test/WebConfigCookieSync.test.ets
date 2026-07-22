@@ -609,5 +609,253 @@ export default function WebConfigCookieSync() {
       done();
     })
 
+
+    /**
+     * @tc.name   testEtsFetchCookieSyncPartitioned001
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_0100
+     * @tc.desc   test fetchCookieSync includePartitionedCookies true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testEtsFetchCookieSyncPartitioned001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitEtsFetchCookieSyncPartitioned001", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testEtsFetchCookieSyncPartitioned001", true, 147840, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testEtsFetchCookieSyncPartitioned001', true,1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testEtsFetchCookieSyncPartitioned002
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_0200
+     * @tc.desc   test fetchCookieSync includePartitionedCookies false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testEtsFetchCookieSyncPartitioned002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitEtsFetchCookieSyncPartitioned002", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testEtsFetchCookieSyncPartitioned002", true, 147850, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testEtsFetchCookieSyncPartitioned002', true,1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testEtsFetchCookieSyncPartitioned003
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_0300
+     * @tc.desc   test fetchCookieSync omit includePartitionedCookies (default false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testEtsFetchCookieSyncPartitioned003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitEtsFetchCookieSyncPartitioned003", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testEtsFetchCookieSyncPartitioned003", true, 147860, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testEtsFetchCookieSyncPartitioned003', true,1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testEtsFetchCookieSyncPartitioned004
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_0400
+     * @tc.desc   test fetchCookieSync incognito true and includePartitionedCookies true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testEtsFetchCookieSyncPartitioned004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitEtsFetchCookieSyncPartitioned004", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testEtsFetchCookieSyncPartitioned004", true, 147870, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testEtsFetchCookieSyncPartitioned004', true,1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testEtsFetchCookiePartitioned005
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_0500
+     * @tc.desc   test fetchCookie Promise includePartitionedCookies true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testEtsFetchCookiePartitioned005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitEtsFetchCookiePartitioned005", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testEtsFetchCookiePartitioned005", true, 147880, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testEtsFetchCookiePartitioned005', true,1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testEtsFetchCookiePartitioned006
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_0600
+     * @tc.desc   test fetchCookie Promise includePartitionedCookies false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testEtsFetchCookiePartitioned006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitEtsFetchCookiePartitioned006", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testEtsFetchCookiePartitioned006", true, 147890, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testEtsFetchCookiePartitioned006', true,1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testEtsFetchCookiePartitioned007
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_0700
+     * @tc.desc   test fetchCookie Promise incognito and includePartitionedCookies true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testEtsFetchCookiePartitioned007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitEtsFetchCookiePartitioned007", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testEtsFetchCookiePartitioned007", true, 147900, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testEtsFetchCookiePartitioned007', true,1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testEtsFetchCookieSyncPartitionedErrorUrl008
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_ERROR_0800
+     * @tc.desc   test fetchCookieSync invalid url error 17100002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testEtsFetchCookieSyncPartitionedErrorUrl008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitEtsFetchCookieSyncPartitionedErrorUrl008", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testEtsFetchCookieSyncPartitionedErrorUrl008", true, 147910, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testEtsFetchCookieSyncPartitionedErrorUrl008', true,1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testEtsFetchCookiePartitionedErrorUrl009
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_ERROR_0900
+     * @tc.desc   test fetchCookie invalid url error 17100002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testEtsFetchCookiePartitionedErrorUrl009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitEtsFetchCookiePartitionedErrorUrl009", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testEtsFetchCookiePartitionedErrorUrl009", true, 147920, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testEtsFetchCookiePartitionedErrorUrl009', true,1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testEtsFetchCookieSyncPartitionedNull010
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_ERROR_1000
+     * @tc.desc   test fetchCookieSync includePartitionedCookies null (401 or default false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testEtsFetchCookieSyncPartitionedNull010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitEtsFetchCookieSyncPartitionedNull010", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testEtsFetchCookieSyncPartitionedNull010", true, 147930, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testEtsFetchCookieSyncPartitionedNull010', true,1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testEtsFetchCookieSyncPartitionedUndefined011
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_ERROR_1100
+     * @tc.desc   test fetchCookieSync includePartitionedCookies undefined (401 or default false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testEtsFetchCookieSyncPartitionedUndefined011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitEtsFetchCookieSyncPartitionedUndefined011", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testEtsFetchCookieSyncPartitionedUndefined011", true, 147940, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testEtsFetchCookieSyncPartitionedUndefined011', true,1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testEtsFetchCookiePartitionedNull012
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_ERROR_1200
+     * @tc.desc   test fetchCookie includePartitionedCookies null (401 or default false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testEtsFetchCookiePartitionedNull012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitEtsFetchCookiePartitionedNull012", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testEtsFetchCookiePartitionedNull012", true, 147950, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testEtsFetchCookiePartitionedNull012', true,1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testEtsFetchCookiePartitionedUndefined013
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_FETCHCOOKIE_PARTITIONED_ERROR_1300
+     * @tc.desc   test fetchCookie includePartitionedCookies undefined (401 or default false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testEtsFetchCookiePartitionedUndefined013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitEtsFetchCookiePartitionedUndefined013", 147501)
+      let isReturn = false;
+      Utils.registerBaseEvent("testEtsFetchCookiePartitionedUndefined013", true, 147960, ()=>{isReturn = true}, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.waitAndClickComponent("ConfigCookieSync",driver)
+      await waitForExist(()=>isReturn, 'testEtsFetchCookiePartitionedUndefined013', true,1000);
+      done();
+    })
+
   })
 }

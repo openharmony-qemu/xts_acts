@@ -19,6 +19,7 @@ import Utils from '../../test/Utils.test';
 import { waitForExist } from '../../test/WaitTest.test';
 import { URL_EXAMPLE } from '../../test/Config.test';
 import testNapi from 'libentry.so'
+import business_error from '@ohos.base'
 
 @Entry
 @Component
@@ -438,6 +439,301 @@ struct WebConfigCookieSync {
                     Utils.emitEvent(true, 147830)
                   } else {
                     Utils.emitEvent(false, 147830)
+                  }
+                  break
+                }
+
+                case 'emitEtsFetchCookieSyncPartitioned001': {
+                  let resultValue: string = '0'
+                  try {
+                    web_webview.WebCookieManager.clearAllCookiesSync();
+                    web_webview.WebCookieManager.configCookieSync(URL_EXAMPLE, 'part=true', false);
+                    resultValue = web_webview.WebCookieManager.fetchCookieSync(URL_EXAMPLE, false, true);
+                    console.log('emitEtsFetchCookieSyncPartitioned001 cookie : ' + resultValue);
+                  } catch (error) {
+                    let e: business_error.BusinessError = error as business_error.BusinessError;
+                    console.error(`emitEtsFetchCookieSyncPartitioned001 ErrorCode: ${e.code},  Message: ${e.message}`);
+                    resultValue = String(e.code)
+                  }
+                  if (resultValue === 'part=true') {
+                    Utils.emitEvent(true, 147840)
+                  } else {
+                    Utils.emitEvent(false, 147840)
+                  }
+                  break
+                }
+                case 'emitEtsFetchCookieSyncPartitioned002': {
+                  let resultValue: string = '0'
+                  try {
+                    web_webview.WebCookieManager.clearAllCookiesSync();
+                    web_webview.WebCookieManager.configCookieSync(URL_EXAMPLE, 'part=false', false);
+                    resultValue = web_webview.WebCookieManager.fetchCookieSync(URL_EXAMPLE, false, false);
+                    console.log('emitEtsFetchCookieSyncPartitioned002 cookie : ' + resultValue);
+                  } catch (error) {
+                    let e: business_error.BusinessError = error as business_error.BusinessError;
+                    console.error(`emitEtsFetchCookieSyncPartitioned002 ErrorCode: ${e.code},  Message: ${e.message}`);
+                    resultValue = String(e.code)
+                  }
+                  if (resultValue === 'part=false') {
+                    Utils.emitEvent(true, 147850)
+                  } else {
+                    Utils.emitEvent(false, 147850)
+                  }
+                  break
+                }
+                case 'emitEtsFetchCookieSyncPartitioned003': {
+                  let resultValue: string = '0'
+                  try {
+                    web_webview.WebCookieManager.clearAllCookiesSync();
+                    web_webview.WebCookieManager.configCookieSync(URL_EXAMPLE, 'part=default', false);
+                    resultValue = web_webview.WebCookieManager.fetchCookieSync(URL_EXAMPLE, false);
+                    console.log('emitEtsFetchCookieSyncPartitioned003 cookie : ' + resultValue);
+                  } catch (error) {
+                    let e: business_error.BusinessError = error as business_error.BusinessError;
+                    console.error(`emitEtsFetchCookieSyncPartitioned003 ErrorCode: ${e.code},  Message: ${e.message}`);
+                    resultValue = String(e.code)
+                  }
+                  if (resultValue === 'part=default') {
+                    Utils.emitEvent(true, 147860)
+                  } else {
+                    Utils.emitEvent(false, 147860)
+                  }
+                  break
+                }
+                case 'emitEtsFetchCookieSyncPartitioned004': {
+                  let resultValue: string = '0'
+                  try {
+                    web_webview.WebCookieManager.clearAllCookiesSync(true);
+                    web_webview.WebCookieManager.configCookieSync(URL_EXAMPLE, 'part=incognito', true);
+                    resultValue = web_webview.WebCookieManager.fetchCookieSync(URL_EXAMPLE, true, true);
+                    console.log('emitEtsFetchCookieSyncPartitioned004 cookie : ' + resultValue);
+                  } catch (error) {
+                    let e: business_error.BusinessError = error as business_error.BusinessError;
+                    console.error(`emitEtsFetchCookieSyncPartitioned004 ErrorCode: ${e.code},  Message: ${e.message}`);
+                    resultValue = String(e.code)
+                  }
+                  if (resultValue === 'part=incognito') {
+                    Utils.emitEvent(true, 147870)
+                  } else {
+                    Utils.emitEvent(false, 147870)
+                  }
+                  break
+                }
+                case 'emitEtsFetchCookiePartitioned005': {
+                  let resultValue: string = '0'
+                  try {
+                    web_webview.WebCookieManager.clearAllCookiesSync();
+                    web_webview.WebCookieManager.configCookieSync(URL_EXAMPLE, 'async=true', false);
+                    web_webview.WebCookieManager.fetchCookie(URL_EXAMPLE, false, true)
+                      .then(cookie => {
+                        console.log('emitEtsFetchCookiePartitioned005 cookie : ' + cookie);
+                        resultValue = cookie
+                      })
+                      .catch((error: business_error.BusinessError) => {
+                        console.error(`emitEtsFetchCookiePartitioned005 ErrorCode: ${error.code},  Message: ${error.message}`);
+                        resultValue = String(error.code)
+                      })
+                  } catch (error) {
+                    let e: business_error.BusinessError = error as business_error.BusinessError;
+                    console.error(`emitEtsFetchCookiePartitioned005 ErrorCode: ${e.code},  Message: ${e.message}`);
+                    resultValue = String(e.code)
+                  }
+                  await waitForExist(() => resultValue, 'emitEtsFetchCookiePartitioned005', 'async=true', 200)
+                  if (resultValue === 'async=true') {
+                    Utils.emitEvent(true, 147880)
+                  } else {
+                    Utils.emitEvent(false, 147880)
+                  }
+                  break
+                }
+                case 'emitEtsFetchCookiePartitioned006': {
+                  let resultValue: string = '0'
+                  try {
+                    web_webview.WebCookieManager.clearAllCookiesSync();
+                    web_webview.WebCookieManager.configCookieSync(URL_EXAMPLE, 'async=false', false);
+                    web_webview.WebCookieManager.fetchCookie(URL_EXAMPLE, false, false)
+                      .then(cookie => {
+                        console.log('emitEtsFetchCookiePartitioned006 cookie : ' + cookie);
+                        resultValue = cookie
+                      })
+                      .catch((error: business_error.BusinessError) => {
+                        console.error(`emitEtsFetchCookiePartitioned006 ErrorCode: ${error.code},  Message: ${error.message}`);
+                        resultValue = String(error.code)
+                      })
+                  } catch (error) {
+                    let e: business_error.BusinessError = error as business_error.BusinessError;
+                    console.error(`emitEtsFetchCookiePartitioned006 ErrorCode: ${e.code},  Message: ${e.message}`);
+                    resultValue = String(e.code)
+                  }
+                  await waitForExist(() => resultValue, 'emitEtsFetchCookiePartitioned006', 'async=false', 200)
+                  if (resultValue === 'async=false') {
+                    Utils.emitEvent(true, 147890)
+                  } else {
+                    Utils.emitEvent(false, 147890)
+                  }
+                  break
+                }
+                case 'emitEtsFetchCookiePartitioned007': {
+                  let resultValue: string = '0'
+                  try {
+                    web_webview.WebCookieManager.clearAllCookiesSync(true);
+                    web_webview.WebCookieManager.configCookieSync(URL_EXAMPLE, 'async=incognito', true);
+                    web_webview.WebCookieManager.fetchCookie(URL_EXAMPLE, true, true)
+                      .then(cookie => {
+                        console.log('emitEtsFetchCookiePartitioned007 cookie : ' + cookie);
+                        resultValue = cookie
+                      })
+                      .catch((error: business_error.BusinessError) => {
+                        console.error(`emitEtsFetchCookiePartitioned007 ErrorCode: ${error.code},  Message: ${error.message}`);
+                        resultValue = String(error.code)
+                      })
+                  } catch (error) {
+                    let e: business_error.BusinessError = error as business_error.BusinessError;
+                    console.error(`emitEtsFetchCookiePartitioned007 ErrorCode: ${e.code},  Message: ${e.message}`);
+                    resultValue = String(e.code)
+                  }
+                  await waitForExist(() => resultValue, 'emitEtsFetchCookiePartitioned007', 'async=incognito', 200)
+                  if (resultValue === 'async=incognito') {
+                    Utils.emitEvent(true, 147900)
+                  } else {
+                    Utils.emitEvent(false, 147900)
+                  }
+                  break
+                }
+                case 'emitEtsFetchCookieSyncPartitionedErrorUrl008': {
+                  let resultValue: string = ''
+                  try {
+                    web_webview.WebCookieManager.clearAllCookiesSync();
+                    web_webview.WebCookieManager.fetchCookieSync('', false, true);
+                  } catch (error) {
+                    let e: business_error.BusinessError = error as business_error.BusinessError;
+                    console.error(`emitEtsFetchCookieSyncPartitionedErrorUrl008 ErrorCode: ${e.code},  Message: ${e.message}`);
+                    resultValue = e.code + e.message
+                  }
+                  if (resultValue === '17100002URL error. No valid cookie found for the specified URL.') {
+                    Utils.emitEvent(true, 147910)
+                  } else {
+                    Utils.emitEvent(false, 147910)
+                  }
+                  break
+                }
+                case 'emitEtsFetchCookiePartitionedErrorUrl009': {
+                  let resultValue: string = ''
+                  try {
+                    web_webview.WebCookieManager.clearAllCookiesSync();
+                    web_webview.WebCookieManager.fetchCookie('', false, true)
+                      .then(cookie => {
+                        console.log('emitEtsFetchCookiePartitionedErrorUrl009 cookie : ' + cookie);
+                        resultValue = cookie
+                      })
+                      .catch((error: business_error.BusinessError) => {
+                        console.error(`emitEtsFetchCookiePartitionedErrorUrl009 ErrorCode: ${error.code},  Message: ${error.message}`);
+                        resultValue = error.code + error.message
+                      })
+                  } catch (error) {
+                    let e: business_error.BusinessError = error as business_error.BusinessError;
+                    console.error(`emitEtsFetchCookiePartitionedErrorUrl009 ErrorCode: ${e.code},  Message: ${e.message}`);
+                    resultValue = e.code + e.message
+                  }
+                  await waitForExist(() => resultValue !== '', 'emitEtsFetchCookiePartitionedErrorUrl009', true, 200)
+                  if (resultValue === '17100002URL error. No valid cookie found for the specified URL.') {
+                    Utils.emitEvent(true, 147920)
+                  } else {
+                    Utils.emitEvent(false, 147920)
+                  }
+                  break
+                }
+                case 'emitEtsFetchCookieSyncPartitionedNull010': {
+                  let resultValue: string = '0'
+                  try {
+                    web_webview.WebCookieManager.clearAllCookiesSync();
+                    web_webview.WebCookieManager.configCookieSync(URL_EXAMPLE, 'part=null', false);
+                    resultValue = web_webview.WebCookieManager.fetchCookieSync(URL_EXAMPLE, false, null);
+                    console.log('emitEtsFetchCookieSyncPartitionedNull010 cookie : ' + resultValue);
+                  } catch (error) {
+                    let e: business_error.BusinessError = error as business_error.BusinessError;
+                    console.error(`emitEtsFetchCookieSyncPartitionedNull010 ErrorCode: ${e.code},  Message: ${e.message}`);
+                    resultValue = String(e.code)
+                  }
+                  if (resultValue === 'part=null' || resultValue === '401') {
+                    Utils.emitEvent(true, 147930)
+                  } else {
+                    Utils.emitEvent(false, 147930)
+                  }
+                  break
+                }
+                case 'emitEtsFetchCookieSyncPartitionedUndefined011': {
+                  let resultValue: string = '0'
+                  try {
+                    web_webview.WebCookieManager.clearAllCookiesSync();
+                    web_webview.WebCookieManager.configCookieSync(URL_EXAMPLE, 'part=undefined', false);
+                    resultValue = web_webview.WebCookieManager.fetchCookieSync(URL_EXAMPLE, false, undefined);
+                    console.log('emitEtsFetchCookieSyncPartitionedUndefined011 cookie : ' + resultValue);
+                  } catch (error) {
+                    let e: business_error.BusinessError = error as business_error.BusinessError;
+                    console.error(`emitEtsFetchCookieSyncPartitionedUndefined011 ErrorCode: ${e.code},  Message: ${e.message}`);
+                    resultValue = String(e.code)
+                  }
+                  if (resultValue === 'part=undefined' || resultValue === '401') {
+                    Utils.emitEvent(true, 147940)
+                  } else {
+                    Utils.emitEvent(false, 147940)
+                  }
+                  break
+                }
+                case 'emitEtsFetchCookiePartitionedNull012': {
+                  let resultValue: string = '0'
+                  try {
+                    web_webview.WebCookieManager.clearAllCookiesSync();
+                    web_webview.WebCookieManager.configCookieSync(URL_EXAMPLE, 'async=null', false);
+                    web_webview.WebCookieManager.fetchCookie(URL_EXAMPLE, false, null)
+                      .then(cookie => {
+                        console.log('emitEtsFetchCookiePartitionedNull012 cookie : ' + cookie);
+                        resultValue = cookie
+                      })
+                      .catch((error: business_error.BusinessError) => {
+                        console.error(`emitEtsFetchCookiePartitionedNull012 ErrorCode: ${error.code},  Message: ${error.message}`);
+                        resultValue = String(error.code)
+                      })
+                  } catch (error) {
+                    let e: business_error.BusinessError = error as business_error.BusinessError;
+                    console.error(`emitEtsFetchCookiePartitionedNull012 ErrorCode: ${e.code},  Message: ${e.message}`);
+                    resultValue = String(e.code)
+                  }
+                  await waitForExist(() => (resultValue === 'async=null' || resultValue === '401'),
+                    'emitEtsFetchCookiePartitionedNull012', true, 200)
+                  if (resultValue === 'async=null' || resultValue === '401') {
+                    Utils.emitEvent(true, 147950)
+                  } else {
+                    Utils.emitEvent(false, 147950)
+                  }
+                  break
+                }
+                case 'emitEtsFetchCookiePartitionedUndefined013': {
+                  let resultValue: string = '0'
+                  try {
+                    web_webview.WebCookieManager.clearAllCookiesSync();
+                    web_webview.WebCookieManager.configCookieSync(URL_EXAMPLE, 'async=undefined', false);
+                    web_webview.WebCookieManager.fetchCookie(URL_EXAMPLE, false, undefined)
+                      .then(cookie => {
+                        console.log('emitEtsFetchCookiePartitionedUndefined013 cookie : ' + cookie);
+                        resultValue = cookie
+                      })
+                      .catch((error: business_error.BusinessError) => {
+                        console.error(`emitEtsFetchCookiePartitionedUndefined013 ErrorCode: ${error.code},  Message: ${error.message}`);
+                        resultValue = String(error.code)
+                      })
+                  } catch (error) {
+                    let e: business_error.BusinessError = error as business_error.BusinessError;
+                    console.error(`emitEtsFetchCookiePartitionedUndefined013 ErrorCode: ${e.code},  Message: ${e.message}`);
+                    resultValue = String(e.code)
+                  }
+                  await waitForExist(() => (resultValue === 'async=undefined' || resultValue === '401'),
+                    'emitEtsFetchCookiePartitionedUndefined013', true, 200)
+                  if (resultValue === 'async=undefined' || resultValue === '401') {
+                    Utils.emitEvent(true, 147960)
+                  } else {
+                    Utils.emitEvent(false, 147960)
                   }
                   break
                 }
