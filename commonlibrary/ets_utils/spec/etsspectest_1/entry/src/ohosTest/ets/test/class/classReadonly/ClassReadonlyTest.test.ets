@@ -13,8 +13,14 @@
  * limitations under the License.
  */
 import { describe, expect, it, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
-import utils from '../../Utils';
 
+/*
+ * NOTE: readonly is a compile-time constraint in ArkTS.
+ * The compiler rejects reassignment to readonly fields outside declaration/constructor,
+ * so XTS can only verify the positive path (values are readable).
+ * Negative tests (confirming that reassignment is rejected) require compile-fail
+ * testing, which is outside XTS scope.
+ */
 class ReadonlyDecl {
   public readonly id: number = 100
   public readonly label: string = 'fixed'
@@ -39,8 +45,7 @@ export default function ClassReadonlyTest() {
   describe('ClassReadonlyTest', () => {
     beforeAll(() => {
     })
-    beforeEach(async () => {
-      await utils.msSleep(30);
+    beforeEach(() => {
     })
     afterEach(() => {
     })
@@ -50,7 +55,7 @@ export default function ClassReadonlyTest() {
     /**
      * @tc.number    SUB_CLASS_READONLY_0100
      * @tc.name      testReadonlyDecl0001
-     * @tc.desc      Verify readonly field initialized at declaration is readable
+     * @tc.desc      ArkTS dynamic: Verify readonly field initialized at declaration is readable (positive only; compile-time constraint not testable in XTS)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -64,7 +69,7 @@ export default function ClassReadonlyTest() {
     /**
      * @tc.number    SUB_CLASS_READONLY_0200
      * @tc.name      testReadonlyCtor0001
-     * @tc.desc      Verify readonly field initialized in constructor is readable
+     * @tc.desc      ArkTS dynamic: Verify readonly field initialized in constructor is readable (positive only; compile-time constraint not testable in XTS)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -78,7 +83,7 @@ export default function ClassReadonlyTest() {
     /**
      * @tc.number    SUB_CLASS_READONLY_0300
      * @tc.name      testReadonlyStatic0001
-     * @tc.desc      Verify readonly static field is readable
+     * @tc.desc      ArkTS dynamic: Verify readonly static field is readable (positive only; compile-time constraint not testable in XTS)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2

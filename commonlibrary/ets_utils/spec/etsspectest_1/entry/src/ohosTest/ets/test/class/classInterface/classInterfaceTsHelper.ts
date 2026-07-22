@@ -25,7 +25,7 @@ interface C extends A, B {
   getC(): string
 }
 
-export class MultiInterfaceImpl implements C {
+class MultiInterfaceImpl implements C {
   getA(): string {
     return "impl-A"
   }
@@ -51,7 +51,7 @@ interface Container<T> {
   getValue(): T
 }
 
-export class StringContainer implements Container<string> {
+class StringContainer implements Container<string> {
   value: string
 
   constructor(v: string) {
@@ -63,7 +63,7 @@ export class StringContainer implements Container<string> {
   }
 }
 
-export class NumberContainer implements Container<number> {
+class NumberContainer implements Container<number> {
   value: number
 
   constructor(v: number) {

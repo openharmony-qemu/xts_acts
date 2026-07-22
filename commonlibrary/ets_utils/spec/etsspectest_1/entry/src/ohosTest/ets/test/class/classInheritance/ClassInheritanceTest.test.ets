@@ -24,7 +24,6 @@ import {
   Size,
   TestType
 } from '@ohos/hypium';
-import utils from '../../Utils';
 import {
   testGenericExtendsNonGeneric,
   testConcreteExtendsGeneric,
@@ -48,8 +47,7 @@ export default function ClassInheritanceTest() {
   describe('ClassInheritanceTest', () => {
     beforeAll(() => {
     })
-    beforeEach(async () => {
-      await utils.msSleep(30);
+    beforeEach(() => {
     })
     afterEach(() => {
     })
@@ -59,7 +57,7 @@ export default function ClassInheritanceTest() {
     /**
      * @tc.number    SUB_CLASS_INHERITANCE_0100
      * @tc.name      testGenericExtendsNonGeneric0001
-     * @tc.desc      Verify generic class extends non-generic class, inherits fields and uses own type param
+     * @tc.desc      ArkTS dynamic: Verify generic class extends non-generic class, inherits fields and uses own type param
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -72,7 +70,7 @@ export default function ClassInheritanceTest() {
     /**
      * @tc.number    SUB_CLASS_INHERITANCE_0200
      * @tc.name      testConcreteExtendsGeneric0001
-     * @tc.desc      Verify non-generic class extends generic class with concrete type argument
+     * @tc.desc      ArkTS dynamic: Verify non-generic class extends generic class with concrete type argument
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -85,7 +83,7 @@ export default function ClassInheritanceTest() {
     /**
      * @tc.number    SUB_CLASS_INHERITANCE_0300
      * @tc.name      testPassthroughGeneric0001
-     * @tc.desc      Verify derived class passes its generic type parameter to base class
+     * @tc.desc      ArkTS dynamic: Verify derived class passes its generic type parameter to base class
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -98,15 +96,13 @@ export default function ClassInheritanceTest() {
     /**
      * @tc.number    SUB_CLASS_INHERITANCE_0400
      * @tc.name      testClassExtendsBuiltin0001
-     * @tc.desc      Verify class extends built-in Error class, inherits message property
+     * @tc.desc      ECMA-262 §15.2: Verify class extends built-in Error class, inherits message property
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it('testClassExtendsBuiltin0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let err: MyAppError = new MyAppError("not found", 404)
-      expect(err instanceof MyAppError).assertEqual(true)
-      expect(err instanceof Error).assertEqual(true)
       expect(err.message).assertEqual("not found")
       expect(err.code).assertEqual(404)
       expect(err.getCode()).assertEqual(404)

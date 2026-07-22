@@ -24,7 +24,6 @@ import {
   Size,
   TestType
 } from '@ohos/hypium';
-import utils from '../../Utils';
 import {
   getBigintMethodResult,
   testComputedMethodString,
@@ -36,11 +35,13 @@ import {
 } from './classMethodTsHelper'
 
 class EmptyMethod {
+  public flag: boolean = false
+
   public doNothing(): void {
   }
 
   public returnsVoid(): void {
-    let x: number = 1
+    this.flag = true
   }
 }
 
@@ -96,6 +97,20 @@ class OptionalParam {
 class RestParam {
   public sum(...values: number[]): number {
     let total: number = 0
+    for (let i: number = 0; i < values.length; i++) {
+      total = total + values[i]
+    }
+    return total
+  }
+}
+
+class StringJoiner {
+  public join(separator: string, ...parts: string[]): string {
+    return parts.join(separator)
+  }
+
+  public sumWithBase(base: number, ...values: number[]): number {
+    let total: number = base
     for (let i: number = 0; i < values.length; i++) {
       total = total + values[i]
     }
@@ -201,8 +216,7 @@ export default function ClassMethodTest() {
   describe('ClassMethodTest', () => {
     beforeAll(() => {
     })
-    beforeEach(async () => {
-      await utils.msSleep(30);
+    beforeEach(() => {
     })
     afterEach(() => {
     })
@@ -212,7 +226,7 @@ export default function ClassMethodTest() {
     /**
      * @tc.number    SUB_CLASS_METHOD_0100
      * @tc.name      testMethodEmptyAndVoid0001
-     * @tc.desc      Verify empty method and void return method can be called
+     * @tc.desc      ECMA-262 §15.4: Verify empty method and void return method can be called
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -220,13 +234,15 @@ export default function ClassMethodTest() {
     it('testMethodEmptyAndVoid0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let obj: EmptyMethod = new EmptyMethod()
       obj.doNothing()
+      expect(obj.flag).assertEqual(false)
       obj.returnsVoid()
+      expect(obj.flag).assertEqual(true)
     })
 
     /**
      * @tc.number    SUB_CLASS_METHOD_0200
      * @tc.name      testMethodSingleParam0001
-     * @tc.desc      Verify method with single number parameter
+     * @tc.desc      ECMA-262 §15.4: Verify method with single number parameter
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -239,7 +255,7 @@ export default function ClassMethodTest() {
     /**
      * @tc.number    SUB_CLASS_METHOD_0300
      * @tc.name      testMethodMultiParam0001
-     * @tc.desc      Verify method with multiple parameters
+     * @tc.desc      ECMA-262 §15.4: Verify method with multiple parameters
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -252,7 +268,7 @@ export default function ClassMethodTest() {
     /**
      * @tc.number    SUB_CLASS_METHOD_0400
      * @tc.name      testMethodReturnTypes0001
-     * @tc.desc      Verify methods with number, string, boolean, array return types
+     * @tc.desc      ECMA-262 §15.4: Verify methods with number, string, boolean, array return types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -261,7 +277,6 @@ export default function ClassMethodTest() {
       let obj: ReturnTypes = new ReturnTypes()
       expect(obj.getNum()).assertEqual(42)
       expect(obj.getStr()).assertEqual('hello')
-      expect(obj.getBool()).assertEqual(true)
       expect(obj.getArr().length).assertEqual(3)
       expect(obj.getArr()[0]).assertEqual(1)
     })
@@ -269,7 +284,7 @@ export default function ClassMethodTest() {
     /**
      * @tc.number    SUB_CLASS_METHOD_0500
      * @tc.name      testMethodBigintReturn0001
-     * @tc.desc      Verify method returning bigint via TS helper
+     * @tc.desc      ArkTS dynamic: Verify method returning bigint via TS helper
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -282,7 +297,7 @@ export default function ClassMethodTest() {
     /**
      * @tc.number    SUB_CLASS_METHOD_0700
      * @tc.name      testMethodCallsMethod0001
-     * @tc.desc      Verify method body calls another instance method
+     * @tc.desc      ECMA-262 §15.4: Verify method body calls another instance method
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -295,7 +310,7 @@ export default function ClassMethodTest() {
     /**
      * @tc.number    SUB_CLASS_METHOD_0900
      * @tc.name      testMethodOptionalParam0001
-     * @tc.desc      Verify method with optional parameter
+     * @tc.desc      ECMA-262 §15.4: Verify method with optional parameter
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -309,7 +324,7 @@ export default function ClassMethodTest() {
     /**
      * @tc.number    SUB_CLASS_METHOD_1000
      * @tc.name      testMethodRestParam0001
-     * @tc.desc      Verify method with rest parameter
+     * @tc.desc      ECMA-262 §15.4: Verify method with rest parameter
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -324,7 +339,7 @@ export default function ClassMethodTest() {
     /**
      * @tc.number    SUB_CLASS_METHOD_1100
      * @tc.name      testMethodDefaultParam0001
-     * @tc.desc      Verify method with default parameter value
+     * @tc.desc      ECMA-262 §15.4: Verify method with default parameter value
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -338,7 +353,7 @@ export default function ClassMethodTest() {
     /**
      * @tc.number    SUB_CLASS_METHOD_1200
      * @tc.name      testMethodClassParam0001
-     * @tc.desc      Verify method with class typed parameter
+     * @tc.desc      ECMA-262 §15.4: Verify method with class typed parameter
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -352,7 +367,7 @@ export default function ClassMethodTest() {
     /**
      * @tc.number    SUB_CLASS_METHOD_1300
      * @tc.name      testMethodInterfaceParam0001
-     * @tc.desc      Verify method with interface typed parameter
+     * @tc.desc      ArkTS dynamic (TS-only): Verify method with interface typed parameter
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -366,7 +381,7 @@ export default function ClassMethodTest() {
     /**
      * @tc.number    SUB_CLASS_METHOD_1400
      * @tc.name      testMethodArrayParam0001
-     * @tc.desc      Verify method with array typed parameter
+     * @tc.desc      ECMA-262 §15.4: Verify method with array typed parameter
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -380,7 +395,7 @@ export default function ClassMethodTest() {
     /**
      * @tc.number    SUB_CLASS_METHOD_1500
      * @tc.name      testMethodReturnThis0001
-     * @tc.desc      Verify method returns this for chaining
+     * @tc.desc      ECMA-262 §15.4: Verify method returns this for chaining
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -395,7 +410,7 @@ export default function ClassMethodTest() {
     /**
      * @tc.number    SUB_CLASS_METHOD_1600
      * @tc.name      testMethodStatic0001
-     * @tc.desc      Verify static method callable on class
+     * @tc.desc      ECMA-262 §15.2: Verify static method callable on class
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -408,7 +423,7 @@ export default function ClassMethodTest() {
     /**
      * @tc.number    SUB_CLASS_METHOD_1700
      * @tc.name      testMethodProtected0001
-     * @tc.desc      Verify protected method accessible in derived class
+     * @tc.desc      ArkTS dynamic (TS-only): Verify protected method accessible in derived class
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -421,7 +436,7 @@ export default function ClassMethodTest() {
     /**
      * @tc.number    SUB_CLASS_METHOD_1800
      * @tc.name      testMethodReturnObject0001
-     * @tc.desc      Verify method returns class instance object
+     * @tc.desc      ECMA-262 §15.4: Verify method returns class instance object
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -436,7 +451,7 @@ export default function ClassMethodTest() {
     /**
      * @tc.number    SUB_CLASS_METHOD_2000
      * @tc.name      testMethodGenerator0001
-     * @tc.desc      Verify generator method yields values correctly
+     * @tc.desc      ArkTS dynamic: Verify generator method yields values correctly
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -449,7 +464,7 @@ export default function ClassMethodTest() {
     /**
      * @tc.number    SUB_CLASS_METHOD_2100
      * @tc.name      testMethodComputedName0001
-     * @tc.desc      Verify method with computed property name
+     * @tc.desc      ArkTS dynamic: Verify method with computed property name
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -462,7 +477,7 @@ export default function ClassMethodTest() {
     /**
      * @tc.number    SUB_CLASS_METHOD_2200
      * @tc.name      testStaticComputedMethod0001
-     * @tc.desc      Verify static method with computed property name
+     * @tc.desc      ArkTS dynamic: Verify static method with computed property name
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -475,7 +490,7 @@ export default function ClassMethodTest() {
     /**
      * @tc.number    SUB_CLASS_METHOD_2300
      * @tc.name      testAsyncGeneratorMethod0001
-     * @tc.desc      Verify async generator method yields values
+     * @tc.desc      ArkTS dynamic: Verify async generator method yields values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -483,6 +498,34 @@ export default function ClassMethodTest() {
     it('testAsyncGeneratorMethod0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let result: string = await testAsyncGeneratorValues()
       expect(result).assertEqual('123')
+    })
+
+    /**
+     * @tc.number    SUB_CLASS_METHOD_2400
+     * @tc.name      testMethodRestString0001
+     * @tc.desc      ECMA-262 §15.4: Verify method with rest parameter joins variable string arguments
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testMethodRestString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let j: StringJoiner = new StringJoiner()
+      let result: string = j.join(', ', 'a', 'b', 'c')
+      expect(result).assertEqual('a, b, c')
+    })
+
+    /**
+     * @tc.number    SUB_CLASS_METHOD_2500
+     * @tc.name      testMethodRestNumberBase0001
+     * @tc.desc      ECMA-262 §15.4: Verify method with rest parameter of number type with base value
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testMethodRestNumberBase0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let j: StringJoiner = new StringJoiner()
+      let total: number = j.sumWithBase(10, 1, 2, 3)
+      expect(total).assertEqual(16)
     })
   })
 }

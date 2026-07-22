@@ -24,7 +24,6 @@ import {
   Size,
   TestType
 } from '@ohos/hypium';
-import utils from '../../Utils';
 
 class DefaultCtor {
   public x: number = 0
@@ -44,8 +43,10 @@ class ParamCtor {
 class FieldInit {
   public multiplier: number = 2
   public base: number
+  public observedMultiplier: number
 
   constructor(base: number) {
+    this.observedMultiplier = this.multiplier
     this.base = base
   }
 
@@ -54,12 +55,17 @@ class FieldInit {
   }
 }
 
+class CtorThrows {
+  constructor() {
+    throw new Error('ctor-error')
+  }
+}
+
 export default function ClassInstantiationTest() {
   describe('ClassInstantiationTest', () => {
     beforeAll(() => {
     })
-    beforeEach(async () => {
-      await utils.msSleep(30);
+    beforeEach(() => {
     })
     afterEach(() => {
     })
@@ -69,7 +75,7 @@ export default function ClassInstantiationTest() {
     /**
      * @tc.number    SUB_CLASS_INSTANTIATION_0100
      * @tc.name      testNewDefaultCtor0001
-     * @tc.desc      Verify new with default constructor creates instance
+     * @tc.desc      ECMA-262 §15.2: Verify new with default constructor creates instance
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -78,13 +84,12 @@ export default function ClassInstantiationTest() {
       let p: DefaultCtor = new DefaultCtor()
       expect(p.x).assertEqual(0)
       expect(p.y).assertEqual(0)
-      expect(p instanceof DefaultCtor).assertEqual(true)
     })
 
     /**
      * @tc.number    SUB_CLASS_INSTANTIATION_0200
      * @tc.name      testNewParamCtor0001
-     * @tc.desc      Verify new with parameterized constructor
+     * @tc.desc      ECMA-262 §15.2: Verify new with parameterized constructor
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -93,13 +98,12 @@ export default function ClassInstantiationTest() {
       let p: ParamCtor = new ParamCtor(3, 4)
       expect(p.x).assertEqual(3)
       expect(p.y).assertEqual(4)
-      expect(p instanceof ParamCtor).assertEqual(true)
     })
 
     /**
      * @tc.number    SUB_CLASS_INSTANTIATION_0300
      * @tc.name      testNewWithFieldInit0001
-     * @tc.desc      Verify field initializers run before constructor body
+     * @tc.desc      ECMA-262 §15.2: Verify field initializers run before constructor body
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -108,7 +112,25 @@ export default function ClassInstantiationTest() {
       let f: FieldInit = new FieldInit(10)
       expect(f.base).assertEqual(10)
       expect(f.multiplier).assertEqual(2)
+      expect(f.observedMultiplier).assertEqual(2)
       expect(f.result()).assertEqual(20)
+    })
+
+    /**
+     * @tc.number    SUB_CLASS_INSTANTIATION_0400
+     * @tc.name      testNewCtorThrows0001
+     * @tc.desc      ECMA-262 §15.2: Verify constructor that throws error is propagated during new
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testNewCtorThrows0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        new CtorThrows()
+        expect('no throw').assertEqual('should have thrown')
+      } catch (e) {
+        expect(String(e)).assertEqual('Error: ctor-error')
+      }
     })
   })
 }

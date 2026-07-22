@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 import { describe, expect, it, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
-import utils from '../../Utils';
 
 class BaseGreet {
   public speak(): string {
@@ -39,12 +38,62 @@ class OverrideCompute extends BaseCompute {
   }
 }
 
+class BaseGetter {
+  public get value(): string {
+    return 'base-getter'
+  }
+}
+
+class OverrideGetter extends BaseGetter {
+  public get value(): string {
+    return 'override-getter'
+  }
+}
+
+class BaseSetter {
+  private _val: string = 'base'
+  public get val(): string {
+    return this._val
+  }
+  public set val(v: string) {
+    this._val = v + '-set'
+  }
+}
+
+class OverrideSetter extends BaseSetter {
+  public get val(): string {
+    return super.val
+  }
+  public set val(v: string) {
+    super.val = v + '-overridden'
+  }
+}
+
+class BaseStatic {
+  public static whoami(): string {
+    return 'base-static'
+  }
+}
+
+class OverrideStatic extends BaseStatic {
+  public static whoami(): string {
+    return 'override-static'
+  }
+}
+
+class BaseField {
+  public name: string = 'base-name'
+}
+
+class ShadowField extends BaseField {
+  public name: string = 'shadow-name'
+}
+
 export default function ClassOverrideTest() {
   describe('ClassOverrideTest', () => {
     beforeAll(() => {
     })
-    beforeEach(async () => {
-      await utils.msSleep(30);
+    beforeEach(() => {
     })
     afterEach(() => {
     })
@@ -54,7 +103,7 @@ export default function ClassOverrideTest() {
     /**
      * @tc.number    SUB_CLASS_OVERRIDE_0100
      * @tc.name      testOverrideMethod0001
-     * @tc.desc      Verify derived class method overrides base class method
+     * @tc.desc      ECMA-262 §15.2: Verify derived class method overrides base class method
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -67,7 +116,7 @@ export default function ClassOverrideTest() {
     /**
      * @tc.number    SUB_CLASS_OVERRIDE_0200
      * @tc.name      testOverrideSuperCall0001
-     * @tc.desc      Verify override method can call super.method() then add own logic
+     * @tc.desc      ECMA-262 §15.2: Verify override method can call super.method() then add own logic
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -80,7 +129,7 @@ export default function ClassOverrideTest() {
     /**
      * @tc.number    SUB_CLASS_OVERRIDE_0300
      * @tc.name      testBaseRefDerivedOverride0001
-     * @tc.desc      Verify base type reference calls derived override method at runtime
+     * @tc.desc      ECMA-262 §15.2: Verify base type reference calls derived override method at runtime
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -89,6 +138,61 @@ export default function ClassOverrideTest() {
       let obj: OverrideCompute = new OverrideCompute()
       let base: BaseCompute = obj
       expect(base.compute()).assertEqual(20)
+    })
+
+    /**
+     * @tc.number    SUB_CLASS_OVERRIDE_0400
+     * @tc.name      testOverrideGetter0001
+     * @tc.desc      ECMA-262 §15.2: Verify derived class getter overrides base class getter
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testOverrideGetter0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let obj: OverrideGetter = new OverrideGetter()
+      expect(obj.value).assertEqual('override-getter')
+    })
+
+    /**
+     * @tc.number    SUB_CLASS_OVERRIDE_0500
+     * @tc.name      testOverrideSetter0001
+     * @tc.desc      ECMA-262 §15.2: Verify derived class setter overrides base class setter with super call
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testOverrideSetter0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let obj: OverrideSetter = new OverrideSetter()
+      obj.val = 'input'
+      expect(obj.val).assertEqual('input-overridden-set')
+    })
+
+    /**
+     * @tc.number    SUB_CLASS_OVERRIDE_0600
+     * @tc.name      testOverrideStatic0001
+     * @tc.desc      ECMA-262 §15.2: Verify derived class static method overrides base class static method
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testOverrideStatic0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BaseStatic.whoami()).assertEqual('base-static')
+      expect(OverrideStatic.whoami()).assertEqual('override-static')
+    })
+
+    /**
+     * @tc.number    SUB_CLASS_OVERRIDE_0700
+     * @tc.name      testFieldInitOrder0001
+     * @tc.desc      ECMA-262 §15.2: Verify child field init runs after base field init (final value is child's, regardless of reference type)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testFieldInitOrder0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let base: BaseField = new ShadowField()
+      let shadow: ShadowField = new ShadowField()
+      expect(base.name).assertEqual('shadow-name')
+      expect(shadow.name).assertEqual('shadow-name')
     })
   })
 }

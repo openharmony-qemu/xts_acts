@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 import { describe, expect, it, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
-import utils from '../../Utils';
 
 class FieldBeforeCtor {
   public value: number = 1
@@ -31,12 +30,23 @@ class BaseField {
 }
 
 class DerivedFieldAfterSuper extends BaseField {
-  public derivedValue: string
+  public derivedValue: string = this.baseValue + '-ext'
 
   constructor() {
     super()
-    this.derivedValue = this.baseValue + '-ext'
   }
+}
+
+class GrandParent {
+  public grandValue: string = 'grand'
+}
+
+class Parent extends GrandParent {
+  public parentValue: string = 'parent-' + this.grandValue
+}
+
+class Child extends Parent {
+  public childValue: string = 'child-' + this.parentValue
 }
 
 class StaticRefOrder {
@@ -57,8 +67,7 @@ export default function ClassInitOrderTest() {
   describe('ClassInitOrderTest', () => {
     beforeAll(() => {
     })
-    beforeEach(async () => {
-      await utils.msSleep(30);
+    beforeEach(() => {
     })
     afterEach(() => {
     })
@@ -68,7 +77,7 @@ export default function ClassInitOrderTest() {
     /**
      * @tc.number    SUB_CLASS_INITORDER_0100
      * @tc.name      testFieldBeforeCtor0001
-     * @tc.desc      Verify field initializer runs before constructor body
+     * @tc.desc      ECMA-262 §15.2: Verify field initializer runs before constructor body
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -81,7 +90,7 @@ export default function ClassInitOrderTest() {
     /**
      * @tc.number    SUB_CLASS_INITORDER_0200
      * @tc.name      testDerivedFieldAfterSuper0001
-     * @tc.desc      Verify derived class field initializer runs after super() returns
+     * @tc.desc      ECMA-262 §15.2: Verify derived class field initializer runs after super() returns
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -95,7 +104,7 @@ export default function ClassInitOrderTest() {
     /**
      * @tc.number    SUB_CLASS_INITORDER_0300
      * @tc.name      testStaticRefOrder0001
-     * @tc.desc      Verify static field can reference earlier static field
+     * @tc.desc      ECMA-262 §15.2: Verify static field can reference earlier static field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -108,7 +117,7 @@ export default function ClassInitOrderTest() {
     /**
      * @tc.number    SUB_CLASS_INITORDER_0400
      * @tc.name      testStaticBlockOrder0001
-     * @tc.desc      Verify static block initializes fields in declaration order
+     * @tc.desc      ECMA-262 §15.2: Verify static block initializes fields in declaration order
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -116,6 +125,21 @@ export default function ClassInitOrderTest() {
     it('testStaticBlockOrder0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(StaticBlockOrder.step1).assertEqual(10)
       expect(StaticBlockOrder.step2).assertEqual(20)
+    })
+
+    /**
+     * @tc.number    SUB_CLASS_INITORDER_0500
+     * @tc.name      testMultiLevelInitOrder0001
+     * @tc.desc      ECMA-262 §15.2: Verify three-level inheritance field init order: GrandParent -> Parent -> Child
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testMultiLevelInitOrder0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let obj: Child = new Child()
+      expect(obj.grandValue).assertEqual('grand')
+      expect(obj.parentValue).assertEqual('parent-grand')
+      expect(obj.childValue).assertEqual('child-parent-grand')
     })
   })
 }

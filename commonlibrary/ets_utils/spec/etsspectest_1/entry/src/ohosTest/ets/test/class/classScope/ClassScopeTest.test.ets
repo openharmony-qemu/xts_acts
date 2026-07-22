@@ -13,18 +13,17 @@
  * limitations under the License.
  */
 import { describe, expect, it, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
-import utils from '../../Utils';
 
-class ScopeOuter {
-  public outerValue: string = 'outer'
+class ClassA {
+  public valueA: string = 'A'
 
-  public makeInner(): ScopeInner {
-    return new ScopeInner()
+  public createB(): ClassB {
+    return new ClassB()
   }
 }
 
-class ScopeInner {
-  public innerValue: string = 'inner'
+class ClassB {
+  public valueB: string = 'B'
 }
 
 class RefPriorField {
@@ -36,8 +35,7 @@ export default function ClassScopeTest() {
   describe('ClassScopeTest', () => {
     beforeAll(() => {
     })
-    beforeEach(async () => {
-      await utils.msSleep(30);
+    beforeEach(() => {
     })
     afterEach(() => {
     })
@@ -46,23 +44,23 @@ export default function ClassScopeTest() {
 
     /**
      * @tc.number    SUB_CLASS_SCOPE_0100
-     * @tc.name      testNestedScope0001
-     * @tc.desc      Verify outer class method can create inner class instance
+     * @tc.name      testClassCreateAnother0001
+     * @tc.desc      ECMA-262 §15.2: Verify one class method creates instance of another class
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testNestedScope0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let o: ScopeOuter = new ScopeOuter()
-      let i: ScopeInner = o.makeInner()
-      expect(o.outerValue).assertEqual('outer')
-      expect(i.innerValue).assertEqual('inner')
+    it('testClassCreateAnother0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let a: ClassA = new ClassA()
+      let b: ClassB = a.createB()
+      expect(a.valueA).assertEqual('A')
+      expect(b.valueB).assertEqual('B')
     })
 
     /**
      * @tc.number    SUB_CLASS_SCOPE_0200
      * @tc.name      testFieldRefPrior0001
-     * @tc.desc      Verify field initializer can reference prior declared field
+     * @tc.desc      ECMA-262 §15.2: Verify field initializer can reference prior declared field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2

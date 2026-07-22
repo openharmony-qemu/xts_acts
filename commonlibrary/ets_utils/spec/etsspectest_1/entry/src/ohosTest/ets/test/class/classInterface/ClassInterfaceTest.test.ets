@@ -24,15 +24,13 @@ import {
   Size,
   TestType
 } from '@ohos/hypium';
-import utils from '../../Utils';
 import { testMultiInterfaceExtends, testGenericInterfaceImpl } from './classInterfaceTsHelper'
 
 export default function ClassInterfaceTest() {
   describe('ClassInterfaceTest', () => {
     beforeAll(() => {
     })
-    beforeEach(async () => {
-      await utils.msSleep(30);
+    beforeEach(() => {
     })
     afterEach(() => {
     })
@@ -42,32 +40,27 @@ export default function ClassInterfaceTest() {
     /**
      * @tc.number    SUB_CLASS_INTERFACE_0100
      * @tc.name      testMultiInterfaceExtends0001
-     * @tc.desc      Verify class implements interface that extends multiple base interfaces
+     * @tc.desc      ArkTS dynamic: Verify class implements interface that extends multiple base interfaces
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it('testMultiInterfaceExtends0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let r: string = testMultiInterfaceExtends()
-      let parts: string[] = r.split("|")
-      expect(parts[0]).assertEqual('impl-A')
-      expect(parts[1]).assertEqual('impl-B')
-      expect(parts[2]).assertEqual('impl-C')
+      expect(r).assertEqual('impl-A|impl-B|impl-C')
     })
 
     /**
      * @tc.number    SUB_CLASS_INTERFACE_0200
      * @tc.name      testGenericInterfaceImpl0001
-     * @tc.desc      Verify class implements generic interface with concrete type arguments
+     * @tc.desc      ArkTS dynamic: Verify class implements generic interface with concrete type arguments
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it('testGenericInterfaceImpl0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let r: string = testGenericInterfaceImpl()
-      let parts: string[] = r.split("|")
-      expect(parts[0]).assertEqual('hello')
-      expect(parts[1]).assertEqual('42')
+      expect(r).assertEqual('hello|42')
     })
   })
 }
