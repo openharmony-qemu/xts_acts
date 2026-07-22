@@ -22,7 +22,7 @@ import wifiReturnValue from './WifiReturnValue.test.js'
 import wifiCoverageTest from './WifiCoverage.test.js'
 import wifiManager from '@ohos.wifiManager';
 
-let iswifisupport = false;
+let iswifisupport = true;
 try {
   iswifisupport = wifiManager.isWlanSupported();
   console.info('[WIFI_List] isWlanSupported result:' + support);
