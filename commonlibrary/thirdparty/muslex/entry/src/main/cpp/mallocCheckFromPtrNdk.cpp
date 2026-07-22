@@ -21,7 +21,6 @@
 #include <thread>
 #include <vector>
 #include <atomic>
-#include <functional>
 
 static constexpr int K_STABLE_LOOP = 20;
 static constexpr int K_THREAD_COUNT = 3;
@@ -31,7 +30,8 @@ static int CallMallocCheckFromPtr(void* ptr)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetMallocCheckFromPtr();
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return -1;
     }
@@ -43,14 +43,17 @@ static bool IsStubMode()
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetMallocCheckFromPtr();
-    if (!func) {
+    if (!func)
+    {
         return true;
     }
     static bool checked = false;
     static bool isStub = false;
-    if (!checked) {
+    if (!checked)
+    {
         void* ptr = malloc(1);
-        if (ptr) {
+        if (ptr)
+        {
             errno = 0;
             int ret = func(ptr);
             free(ptr);
@@ -70,11 +73,13 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value MallocCheckFromPtrNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     void* ptr = malloc(100);
-    if (!ptr) {
+    if (!ptr)
+    {
         return ReturnInt32(env, 0);
     }
     int ret = CallMallocCheckFromPtr(ptr);
@@ -84,11 +89,13 @@ static napi_value MallocCheckFromPtrNormal001(napi_env env, napi_callback_info i
 
 static napi_value MallocCheckFromPtrNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     void* ptr = malloc(100);
-    if (!ptr) {
+    if (!ptr)
+    {
         return ReturnInt32(env, 0);
     }
     int ret = CallMallocCheckFromPtr(static_cast<char*>(ptr) + 10);
@@ -98,8 +105,9 @@ static napi_value MallocCheckFromPtrNormal002(napi_env env, napi_callback_info i
 
 static napi_value MallocCheckFromPtrNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     int ret = CallMallocCheckFromPtr(nullptr);
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
@@ -107,16 +115,18 @@ static napi_value MallocCheckFromPtrNormal003(napi_env env, napi_callback_info i
 
 static napi_value MallocCheckFromPtrNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
 
 static napi_value MallocCheckFromPtrAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     int ret = CallMallocCheckFromPtr(reinterpret_cast<void*>(0xDEADBEEF));
     return ReturnInt32(env, 1);
@@ -124,26 +134,29 @@ static napi_value MallocCheckFromPtrAbnormal001(napi_env env, napi_callback_info
 
 static napi_value MallocCheckFromPtrAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     void* ptr = malloc(100);
-    if (!ptr) {
+    if (!ptr)
+    {
         return ReturnInt32(env, 0);
     }
     free(ptr);
-    ptr = nullptr;
     int ret = CallMallocCheckFromPtr(ptr);
     return ReturnInt32(env, 1);
 }
 
 static napi_value MallocCheckFromPtrBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     void* ptr = malloc(1);
-    if (!ptr) {
+    if (!ptr)
+    {
         return ReturnInt32(env, 0);
     }
     int ret = CallMallocCheckFromPtr(ptr);
@@ -153,11 +166,13 @@ static napi_value MallocCheckFromPtrBoundary001(napi_env env, napi_callback_info
 
 static napi_value MallocCheckFromPtrBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     void* ptr = malloc(1024 * 1024);
-    if (!ptr) {
+    if (!ptr)
+    {
         return ReturnInt32(env, 0);
     }
     int ret = CallMallocCheckFromPtr(ptr);
@@ -167,19 +182,23 @@ static napi_value MallocCheckFromPtrBoundary002(napi_env env, napi_callback_info
 
 static napi_value MallocCheckFromPtrStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP; ++i)
+    {
         void* ptr = malloc(100);
-        if (!ptr) {
+        if (!ptr)
+        {
             pass = false;
             break;
         }
         int ret = CallMallocCheckFromPtr(ptr);
         free(ptr);
-        if (ret < 0) {
+        if (ret < 0)
+        {
             pass = false;
             break;
         }
@@ -187,30 +206,33 @@ static napi_value MallocCheckFromPtrStable001(napi_env env, napi_callback_info i
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void MallocCheckThreadWorker(std::atomic<bool>& hasError)
-{
-    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-        void* ptr = malloc(100);
-        if (!ptr) {
-            hasError = true;
-            return;
-        }
-        CallMallocCheckFromPtr(ptr);
-        free(ptr);
-    }
-}
-
 static napi_value MallocCheckFromPtrThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(MallocCheckThreadWorker, std::ref(hasError));
+    for (int t = 0; t < K_THREAD_COUNT; ++t)
+    {
+        threads.emplace_back([&hasError]()
+        {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
+            {
+                void* ptr = malloc(100);
+                if (!ptr)
+                {
+                    hasError = true;
+                    return;
+                }
+                CallMallocCheckFromPtr(ptr);
+                free(ptr);
+            }
+        });
     }
-    for (auto& th : threads) {
+    for (auto& th : threads)
+    {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);
@@ -220,26 +242,16 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"mallocCheckFromPtrNormal001", nullptr, MallocCheckFromPtrNormal001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"mallocCheckFromPtrNormal002", nullptr, MallocCheckFromPtrNormal002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"mallocCheckFromPtrNormal003", nullptr, MallocCheckFromPtrNormal003, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"mallocCheckFromPtrNormal004", nullptr, MallocCheckFromPtrNormal004, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"mallocCheckFromPtrAbnormal001", nullptr, MallocCheckFromPtrAbnormal001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"mallocCheckFromPtrAbnormal002", nullptr, MallocCheckFromPtrAbnormal002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"mallocCheckFromPtrBoundary001", nullptr, MallocCheckFromPtrBoundary001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"mallocCheckFromPtrBoundary002", nullptr, MallocCheckFromPtrBoundary002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"mallocCheckFromPtrStable001", nullptr, MallocCheckFromPtrStable001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"mallocCheckFromPtrThread001", nullptr, MallocCheckFromPtrThread001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+        {"mallocCheckFromPtrNormal001", nullptr, MallocCheckFromPtrNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"mallocCheckFromPtrNormal002", nullptr, MallocCheckFromPtrNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"mallocCheckFromPtrNormal003", nullptr, MallocCheckFromPtrNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"mallocCheckFromPtrNormal004", nullptr, MallocCheckFromPtrNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"mallocCheckFromPtrAbnormal001", nullptr, MallocCheckFromPtrAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"mallocCheckFromPtrAbnormal002", nullptr, MallocCheckFromPtrAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"mallocCheckFromPtrBoundary001", nullptr, MallocCheckFromPtrBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"mallocCheckFromPtrBoundary002", nullptr, MallocCheckFromPtrBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"mallocCheckFromPtrStable001", nullptr, MallocCheckFromPtrStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"mallocCheckFromPtrThread001", nullptr, MallocCheckFromPtrThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

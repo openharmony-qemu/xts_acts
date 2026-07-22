@@ -25,13 +25,13 @@
 static constexpr int K_STABLE_LOOP = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
-static constexpr int TM_YEAR_BASE = 1900;
 
 static time_t CallMktimeNoenv(struct tm* tm)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetMktimeNoenv();
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return -1;
     }
@@ -54,30 +54,29 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value MktimeNoenvNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    struct tm t = {};
-    int testYear = 2026;
-    t.tm_year = testYear - TM_YEAR_BASE;
-    int july = 6;
-    t.tm_mon = july;
-    int day1 = 1;
-    t.tm_mday = day1;
-    int noon = 12;
-    t.tm_hour = noon;
+    struct tm t;
+    memset(&t, 0, sizeof(t));
+    t.tm_year = 2026 - 1900;
+    t.tm_mon = 6;
+    t.tm_mday = 1;
+    t.tm_hour = 12;
     time_t ret = CallMktimeNoenv(&t);
     return ReturnInt32(env, (ret != -1 || errno != EOVERFLOW) ? 1 : 0);
 }
 
 static napi_value MktimeNoenvNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    struct tm t = {};
-    int epochYear = 1970;
-    t.tm_year = epochYear - TM_YEAR_BASE;
+    struct tm t;
+    memset(&t, 0, sizeof(t));
+    t.tm_year = 70;
     t.tm_mon = 0;
     t.tm_mday = 1;
     time_t ret = CallMktimeNoenv(&t);
@@ -86,49 +85,51 @@ static napi_value MktimeNoenvNormal002(napi_env env, napi_callback_info info)
 
 static napi_value MktimeNoenvNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    struct tm t = {};
-    int testYear = 2050;
-    t.tm_year = testYear - TM_YEAR_BASE;
-    int december = 11;
-    t.tm_mon = december;
-    int lastday = 31;
-    t.tm_mday = lastday;
+    struct tm t;
+    memset(&t, 0, sizeof(t));
+    t.tm_year = 2050 - 1900;
+    t.tm_mon = 11;
+    t.tm_mday = 31;
     time_t ret = CallMktimeNoenv(&t);
     return ReturnInt32(env, (ret != -1 || errno != EOVERFLOW) ? 1 : 0);
 }
 
 static napi_value MktimeNoenvNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
 
 static napi_value MktimeNoenvAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    struct tm t = {};
-    int testYear = 2026;
-    t.tm_year = testYear - TM_YEAR_BASE;
+    struct tm t;
+    memset(&t, 0, sizeof(t));
+    t.tm_year = 2026 - 1900;
     t.tm_mon = 0;
-    int invaliddom = 32;
-    t.tm_mday = invaliddom;
+    t.tm_mday = 32;
     time_t ret = CallMktimeNoenv(&t);
     return ReturnInt32(env, 1);
 }
 
 static napi_value MktimeNoenvAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    struct tm t = {};
+    struct tm t;
+    memset(&t, 0, sizeof(t));
     t.tm_year = -1;
     t.tm_mon = -1;
     t.tm_mday = -1;
@@ -138,31 +139,30 @@ static napi_value MktimeNoenvAbnormal002(napi_env env, napi_callback_info info)
 
 static napi_value MktimeNoenvBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    struct tm t = {};
-    int testYear = 2038;
-    t.tm_year = testYear - TM_YEAR_BASE;
+    struct tm t;
+    memset(&t, 0, sizeof(t));
+    t.tm_year = 2038 - 1900;
     t.tm_mon = 0;
-    int boundaryDay = 19;
-    t.tm_mday = boundaryDay;
-    int boundaryHour = 3;
-    t.tm_hour = boundaryHour;
-    int boundaryMin = 14;
-    t.tm_min = boundaryMin;
-    int testsec = 7;
-    t.tm_sec = testsec;
+    t.tm_mday = 19;
+    t.tm_hour = 3;
+    t.tm_min = 14;
+    t.tm_sec = 7;
     time_t ret = CallMktimeNoenv(&t);
     return ReturnInt32(env, (ret != -1 || errno != EOVERFLOW) ? 1 : 0);
 }
 
 static napi_value MktimeNoenvBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    struct tm t = {};
+    struct tm t;
+    memset(&t, 0, sizeof(t));
     t.tm_year = 0;
     t.tm_mon = 0;
     t.tm_mday = 1;
@@ -172,18 +172,21 @@ static napi_value MktimeNoenvBoundary002(napi_env env, napi_callback_info info)
 
 static napi_value MktimeNoenvStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i) {
-        struct tm t = {};
-        int testYear = 2026;
-    t.tm_year = testYear - TM_YEAR_BASE;
+    for (int i = 0; i < K_STABLE_LOOP; ++i)
+    {
+        struct tm t;
+        memset(&t, 0, sizeof(t));
+        t.tm_year = 2026 - 1900;
         t.tm_mon = 0;
         t.tm_mday = 1;
         time_t ret = CallMktimeNoenv(&t);
-        if (ret == -1 && errno == EOVERFLOW) {
+        if (ret == -1 && errno == EOVERFLOW)
+        {
             pass = false;
             break;
         }
@@ -191,35 +194,36 @@ static napi_value MktimeNoenvStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void MktimeNoenvWorker(std::atomic<bool>& hasError)
-{
-    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-        struct tm tmVal = {};
-        int testYear = 2026;
-        tmVal.tm_year = testYear - TM_YEAR_BASE;
-        tmVal.tm_mon = 0;
-        tmVal.tm_mday = 1;
-        time_t ret = CallMktimeNoenv(&tmVal);
-        if (ret == -1 && errno == EOVERFLOW) {
-            hasError = true;
-            return;
-        }
-    }
-}
-
 static napi_value MktimeNoenvThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError]() {
-            MktimeNoenvWorker(hasError);
+    for (int t = 0; t < K_THREAD_COUNT; ++t)
+    {
+        threads.emplace_back([&hasError]()
+        {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
+            {
+                struct tm tmVal;
+                memset(&tmVal, 0, sizeof(tmVal));
+                tmVal.tm_year = 2026 - 1900;
+                tmVal.tm_mon = 0;
+                tmVal.tm_mday = 1;
+                time_t ret = CallMktimeNoenv(&tmVal);
+                if (ret == -1 && errno == EOVERFLOW)
+                {
+                    hasError = true;
+                    return;
+                }
+            }
         });
     }
-    for (auto& th : threads) {
+    for (auto& th : threads)
+    {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);
