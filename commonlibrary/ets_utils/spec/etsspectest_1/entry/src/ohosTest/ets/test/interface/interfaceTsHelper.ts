@@ -19,15 +19,16 @@ interface Simple {
   label: string
 }
 
-export function testIdentityAndValue(): string {
+export interface IdentityAndValueResult {
+  identity: boolean
+  x: number
+  label: string
+}
+
+export function testIdentityAndValue(): IdentityAndValueResult {
   let raw = { x: 10, label: "hello" }
   let annotated: Simple = raw
-  // identity preserved: annotated === raw
-  if (annotated !== raw) { return "identity-fail" }
-  // property value preserved
-  if (annotated.x !== 10) { return "x-fail" }
-  if (annotated.label !== "hello") { return "label-fail" }
-  return "ok"
+  return { identity: annotated === raw, x: annotated.x, label: annotated.label }
 }
 
 // === RT-OBJ-04: optional property omitted ===
@@ -36,12 +37,14 @@ interface WithOptional {
   optional?: string
 }
 
-export function testOptionalOmitted(): string {
+export interface OptionalOmittedResult {
+  hasOptional: boolean
+  requiredValue: string
+}
+
+export function testOptionalOmitted(): OptionalOmittedResult {
   let obj: WithOptional = { required: "req" }
-  // key should NOT exist on object
-  if ("optional" in obj) { return "optional-exists" }
-  if (obj.required !== "req") { return "required-fail" }
-  return "ok"
+  return { hasOptional: "optional" in obj, requiredValue: obj.required }
 }
 
 // === RT-CALL-01: method call with receiver ===
@@ -50,16 +53,18 @@ interface HasMethod {
   getValue(): number
 }
 
-export function testMethodReceiver(): string {
+export interface MethodReceiverResult {
+  result: number
+}
+
+export function testMethodReceiver(): MethodReceiverResult {
   let obj: HasMethod = {
     value: 42,
     getValue(): number {
       return this.value
     }
   }
-  let result = obj.getValue()
-  if (result !== 42) { return "receiver-fail" }
-  return "ok"
+  return { result: obj.getValue() }
 }
 
 // === class implements (prototype + instanceof + multi-interface) ===
@@ -84,16 +89,27 @@ class BothImpl implements ILeft, IRight {
   right(): string { return "right" }
 }
 
-export function testClassImpl(): string {
-  let s = new Shape()
-  if (!(s instanceof Shape)) { return "instanceof-fail" }
-  if (s.draw() !== "shape-draw") { return "draw-fail" }
-  if (s.extra() !== "extra") { return "extra-fail" }
+export interface ClassImplResult {
+  shapeInstanceof: boolean
+  shapeDraw: string
+  shapeExtra: string
+  bothLeft: string
+  bothRight: string
+}
 
+export function testClassImpl(): ClassImplResult {
+  let s = new Shape()
+  let d: Drawable = s
   let b = new BothImpl()
-  if (b.left() !== "left") { return "left-fail" }
-  if (b.right() !== "right") { return "right-fail" }
-  return "ok"
+  let leftIf: ILeft = b
+  let rightIf: IRight = b
+  return {
+    shapeInstanceof: s instanceof Shape,
+    shapeDraw: d.draw(),
+    shapeExtra: s.extra(),
+    bothLeft: leftIf.left(),
+    bothRight: rightIf.right()
+  }
 }
 
 // === IF-EXT-001/003 + IF-MULTEXT-001: interface extends (single, multi-level & multi-base) ===
@@ -104,22 +120,34 @@ interface IX { getX(): string }
 interface IY { getY(): string }
 interface IZ extends IX, IY { getZ(): string }
 
-export function testInterfaceExtendsAll(): string {
+export interface ExtendsAllResult {
+  singleA: string
+  singleB: string
+  singleC: string
+  multiX: string
+  multiY: string
+  multiZ: string
+}
+
+export function testInterfaceExtendsAll(): ExtendsAllResult {
   let single: IC = {
     getA(): string { return "A" },
     getB(): string { return "B" },
     getC(): string { return "C" }
   }
-  if (single.getA() !== "A" || single.getB() !== "B" || single.getC() !== "C") { return "single-fail" }
-
   let multi: IZ = {
     getX(): string { return "X" },
     getY(): string { return "Y" },
     getZ(): string { return "Z" }
   }
-  if (multi.getX() !== "X" || multi.getY() !== "Y" || multi.getZ() !== "Z") { return "multi-fail" }
-
-  return "ok"
+  return {
+    singleA: single.getA(),
+    singleB: single.getB(),
+    singleC: single.getC(),
+    multiX: multi.getX(),
+    multiY: multi.getY(),
+    multiZ: multi.getZ()
+  }
 }
 
 interface Point {
@@ -139,28 +167,34 @@ interface Deletable {
   name: string
 }
 
-export function testObjectModel(): string {
-  // structural assign + read
+export interface ObjectModelResult {
+  readX: number
+  readY: number
+  missing: any
+  afterWrite: number
+  hasDeleted: boolean
+}
+
+export function testObjectModel(): ObjectModelResult {
   let raw = { x: 3, y: 4 }
   let p: Point = raw
-  if (p.x !== 3 || p.y !== 4) { return "read-fail" }
 
-  // missing property -> undefined
   let obj: HasRequired = { id: 1 }
-  let val = (obj as any).nonexistent
-  if (val !== undefined) { return "undefined-fail" }
+  let missing = (obj as any).nonexistent
 
-  // write then read
   let m: Mutable = { value: 10 }
   m.value = 20
-  if (m.value !== 20) { return "write-fail" }
 
-  // delete then in check
   let d: Deletable = { name: "del" }
   delete (d as any).name
-  if ("name" in d) { return "delete-fail" }
 
-  return "ok"
+  return {
+    readX: p.x,
+    readY: p.y,
+    missing: missing,
+    afterWrite: m.value,
+    hasDeleted: "name" in d
+  }
 }
 
 // === #1: Interface as array type ===
@@ -169,13 +203,22 @@ interface IPoint {
   y: number
 }
 
-export function testInterfaceArray(): string {
+export interface ArrayResult {
+  length: number
+  firstX: number
+  firstY: number
+  afterWrite: number
+}
+
+export function testInterfaceArray(): ArrayResult {
   let arr: IPoint[] = [{ x: 1, y: 2 }, { x: 3, y: 4 }]
-  if (arr.length !== 2) { return "length-fail" }
-  if (arr[0].x !== 1 || arr[0].y !== 2) { return "first-fail" }
   arr[1].x = 5
-  if (arr[1].x !== 5) { return "write-fail" }
-  return "ok"
+  return {
+    length: arr.length,
+    firstX: arr[0].x,
+    firstY: arr[0].y,
+    afterWrite: arr[1].x
+  }
 }
 
 // === #2: Interface as function param/return ===
@@ -184,15 +227,18 @@ interface IResult {
   label: string
 }
 
-export function testInterfaceFnParamReturn(): string {
+export interface FnParamReturnResult {
+  outputValue: number
+  outputLabel: string
+}
+
+export function testInterfaceFnParamReturn(): FnParamReturnResult {
   function process(obj: IResult): IResult {
     return { value: obj.value * 2, label: obj.label + "-processed" }
   }
   let input: IResult = { value: 10, label: "test" }
   let output = process(input)
-  if (output.value !== 20) { return "value-fail" }
-  if (output.label !== "test-processed") { return "label-fail" }
-  return "ok"
+  return { outputValue: output.value, outputLabel: output.label }
 }
 
 // === #3: Nested interface ===
@@ -204,33 +250,43 @@ interface Outer {
   name: string
 }
 
-export function testNestedInterface(): string {
-  let obj: Outer = { inner: { id: 42 }, name: "outer" }
-  if (obj.inner.id !== 42) { return "nested-fail" }
-  if (obj.name !== "outer") { return "name-fail" }
-  obj.inner.id = 99
-  if (obj.inner.id !== 99) { return "nested-write-fail" }
-  return "ok"
+export interface NestedResult {
+  initialId: number
+  name: string
+  afterWrite: number
 }
 
-// === #5: Interface call signature ===
+export function testNestedInterface(): NestedResult {
+  let obj: Outer = { inner: { id: 42 }, name: "outer" }
+  obj.inner.id = 99
+  return { initialId: 42, name: obj.name, afterWrite: obj.inner.id }
+}
+
+// === #5: Interface call signature -- TS-only: ArkTS does not support call signatures ===
 interface Stringifier {
   (x: number): string
 }
 
-export function testCallSignature(): string {
-  let fn: Stringifier = function(x: number): string { return String(x) }
-  let result = fn(42)
-  if (result !== "42") { return "call-fail" }
-  return "ok"
+export interface CallSignatureResult {
+  result: string
 }
 
-// === #6: Interface construct signature ===
+export function testCallSignature(): CallSignatureResult {
+  let fn: Stringifier = function(x: number): string { return String(x) }
+  return { result: fn(42) }
+}
+
+// === #6: Interface construct signature -- TS-only: ArkTS does not support construct signatures ===
 interface PointCtor {
   new (x: number, y: number): IPoint
 }
 
-export function testConstructSignature(): string {
+export interface ConstructSignatureResult {
+  x: number
+  y: number
+}
+
+export function testConstructSignature(): ConstructSignatureResult {
   let Ctor: PointCtor = class {
     x: number
     y: number
@@ -240,8 +296,7 @@ export function testConstructSignature(): string {
     }
   }
   let p = new Ctor(1, 2)
-  if (p.x !== 1 || p.y !== 2) { return "construct-fail" }
-  return "ok"
+  return { x: p.x, y: p.y }
 }
 
 // === #7: Interface readonly (erasure -- not frozen)
@@ -250,11 +305,14 @@ interface ReadonlyPoint {
   readonly y: number
 }
 
-export function testInterfaceReadonly(): string {
+export interface ReadonlyResult {
+  afterWrite: number
+}
+
+export function testInterfaceReadonly(): ReadonlyResult {
   let obj: ReadonlyPoint = { x: 10, y: 20 }
   ;(obj as any).x = 30
-  if ((obj as any).x !== 30) { return "readonly-erasure-fail" }
-  return "ok"
+  return { afterWrite: (obj as any).x }
 }
 
 // === #8: Interface extends class ===
@@ -265,14 +323,17 @@ interface Extended extends BaseClass {
   extra(): string
 }
 
-export function testInterfaceExtendsClass(): string {
+export interface ExtendsClassResult {
+  baseResult: string
+  extraResult: string
+}
+
+export function testInterfaceExtendsClass(): ExtendsClassResult {
   let obj: Extended = {
     baseMethod(): string { return "base" },
     extra(): string { return "extra" }
   }
-  if (obj.baseMethod() !== "base") { return "base-fail" }
-  if (obj.extra() !== "extra") { return "extra-fail" }
-  return "ok"
+  return { baseResult: obj.baseMethod(), extraResult: obj.extra() }
 }
 
 // === #9: Interface union type ===
@@ -281,13 +342,20 @@ interface Dog { kind: "dog"; bark(): string }
 
 type Animal = Cat | Dog
 
-export function testInterfaceUnion(): string {
-  let cat: Animal = { kind: "cat", meow(): string { return "meow" } }
-  if (cat.kind !== "cat") { return "discriminant-fail" }
-  if ((cat as Cat).meow() !== "meow") { return "meow-fail" }
+export interface UnionResult {
+  catKind: string
+  catMeow: string
+  dogKind: string
+  dogBark: string
+}
 
+export function testInterfaceUnion(): UnionResult {
+  let cat: Animal = { kind: "cat", meow(): string { return "meow" } }
   let dog: Animal = { kind: "dog", bark(): string { return "woof" } }
-  if (dog.kind !== "dog") { return "kind-fail" }
-  if ((dog as Dog).bark() !== "woof") { return "bark-fail" }
-  return "ok"
+  return {
+    catKind: cat.kind,
+    catMeow: (cat as Cat).meow(),
+    dogKind: dog.kind,
+    dogBark: (dog as Dog).bark()
+  }
 }

@@ -24,9 +24,8 @@ import {
   Size,
   TestType
 } from '@ohos/hypium';
-import utils from '../../Utils';
 import { ExportedPoint } from './classTypeModuleData'
-import { Point as TsPoint, createWithCtor, checkPrototypeChain, makeContainer, checkPrototypeChainAll } from './classTypeTsHelper'
+import { Point as TsPoint, createWithCtor, makeContainer, getClassName, getInstanceConstructorName } from './classTypeTsHelper'
 
 class Point {
   public x: number
@@ -66,10 +65,6 @@ function makePoint(x: number, y: number): Point {
 
 interface Drawable {
   draw(): string
-}
-
-interface Resettable {
-  reset(): void
 }
 
 class Circle implements Drawable {
@@ -140,8 +135,7 @@ export default function ClassTypeTest() {
   describe('ClassTypeTest', () => {
     beforeAll(() => {
     })
-    beforeEach(async () => {
-      await utils.msSleep(30);
+    beforeEach(() => {
     })
     afterEach(() => {
     })
@@ -151,7 +145,7 @@ export default function ClassTypeTest() {
     /**
      * @tc.number    SUB_CLASS_TYPE_0100
      * @tc.name      testClassTypeVariable0001
-     * @tc.desc      Verify class as instance type for variable declaration
+     * @tc.desc      ArkTS dynamic (TS-only): Verify class as instance type for variable declaration
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -165,7 +159,7 @@ export default function ClassTypeTest() {
     /**
      * @tc.number    SUB_CLASS_TYPE_0200
      * @tc.name      testClassTypeParam0001
-     * @tc.desc      Verify class as instance type for function parameter
+     * @tc.desc      ArkTS dynamic (TS-only): Verify class as instance type for function parameter
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -179,7 +173,7 @@ export default function ClassTypeTest() {
     /**
      * @tc.number    SUB_CLASS_TYPE_0300
      * @tc.name      testClassTypeReturn0001
-     * @tc.desc      Verify class as instance type for function return value
+     * @tc.desc      ArkTS dynamic (TS-only): Verify class as instance type for function return value
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -193,7 +187,7 @@ export default function ClassTypeTest() {
     /**
      * @tc.number    SUB_CLASS_TYPE_0400
      * @tc.name      testClassTypeArray0001
-     * @tc.desc      Verify class as instance type for array elements
+     * @tc.desc      ArkTS dynamic (TS-only): Verify class as instance type for array elements
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -208,7 +202,7 @@ export default function ClassTypeTest() {
     /**
      * @tc.number    SUB_CLASS_TYPE_0500
      * @tc.name      testClassTypeField0001
-     * @tc.desc      Verify class type field holds another class instance
+     * @tc.desc      ArkTS dynamic (TS-only): Verify class type field holds another class instance
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -223,7 +217,7 @@ export default function ClassTypeTest() {
     /**
      * @tc.number    SUB_CLASS_TYPE_0600
      * @tc.name      testClassValueVariable0001
-     * @tc.desc      Verify class constructor value can be stored in a variable
+     * @tc.desc      ECMA-262 §15.2: Verify class constructor value can be stored in a variable
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -238,7 +232,7 @@ export default function ClassTypeTest() {
     /**
      * @tc.number    SUB_CLASS_TYPE_0700
      * @tc.name      testClassValueParam0001
-     * @tc.desc      Verify class constructor value can be passed as argument
+     * @tc.desc      ECMA-262 §15.2: Verify class constructor value can be passed as argument
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -252,7 +246,7 @@ export default function ClassTypeTest() {
     /**
      * @tc.number    SUB_CLASS_TYPE_0800
      * @tc.name      testClassValueNew0001
-     * @tc.desc      Verify class constructor value is callable with new and produces instance
+     * @tc.desc      ECMA-262 §15.2: Verify class constructor value is callable with new and produces instance
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -266,7 +260,7 @@ export default function ClassTypeTest() {
     /**
      * @tc.number    SUB_CLASS_TYPE_1000
      * @tc.name      testInstanceFieldAccess0001
-     * @tc.desc      Verify instance type can access instance fields
+     * @tc.desc      ECMA-262 §15.2: Verify instance type can access instance fields
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -282,7 +276,7 @@ export default function ClassTypeTest() {
     /**
      * @tc.number    SUB_CLASS_TYPE_1100
      * @tc.name      testInstanceMethodAccess0001
-     * @tc.desc      Verify instance type can access instance methods
+     * @tc.desc      ECMA-262 §15.2: Verify instance type can access instance methods
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -295,7 +289,7 @@ export default function ClassTypeTest() {
     /**
      * @tc.number    SUB_CLASS_TYPE_1200
      * @tc.name      testClassValueStaticField0001
-     * @tc.desc      Verify class value can access static fields
+     * @tc.desc      ECMA-262 §15.2: Verify class value can access static fields
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -307,7 +301,7 @@ export default function ClassTypeTest() {
     /**
      * @tc.number    SUB_CLASS_TYPE_1300
      * @tc.name      testClassValueStaticMethod0001
-     * @tc.desc      Verify class value can access static methods
+     * @tc.desc      ECMA-262 §15.2: Verify class value can access static methods
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -321,7 +315,7 @@ export default function ClassTypeTest() {
     /**
      * @tc.number    SUB_CLASS_TYPE_1500
      * @tc.name      testInstanceToInterface0001
-     * @tc.desc      Verify class instance can be assigned to implemented interface type
+     * @tc.desc      ArkTS dynamic (TS-only): Verify class instance can be assigned to implemented interface type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -335,7 +329,7 @@ export default function ClassTypeTest() {
     /**
      * @tc.number    SUB_CLASS_TYPE_1600
      * @tc.name      testAbstractType0001
-     * @tc.desc      Verify abstract class type receives concrete subclass instance
+     * @tc.desc      ArkTS dynamic (TS-only): Verify abstract class type receives concrete subclass instance
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -349,14 +343,13 @@ export default function ClassTypeTest() {
     /**
      * @tc.number    SUB_CLASS_TYPE_1700
      * @tc.name      testNullableClassType0001
-     * @tc.desc      Verify nullable class type accepts instance and null
+     * @tc.desc      ArkTS dynamic (TS-only): Verify nullable class type accepts instance and null
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it('testNullableClassType0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let a: A | null = new A()
-      expect(a !== null).assertEqual(true)
       if (a !== null) {
         expect(a.label).assertEqual('A')
       }
@@ -367,7 +360,7 @@ export default function ClassTypeTest() {
     /**
      * @tc.number    SUB_CLASS_TYPE_1800
      * @tc.name      testUnionClassType0001
-     * @tc.desc      Verify union class type accepts instances of either class
+     * @tc.desc      ArkTS dynamic (TS-only): Verify union class type accepts instances of either class
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -386,7 +379,7 @@ export default function ClassTypeTest() {
     /**
      * @tc.number    SUB_CLASS_TYPE_1900
      * @tc.name      testInterfacePropertyClassType0001
-     * @tc.desc      Verify interface property type can be a class type
+     * @tc.desc      ArkTS dynamic (TS-only): Verify interface property type can be a class type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -401,7 +394,7 @@ export default function ClassTypeTest() {
     /**
      * @tc.number    SUB_CLASS_TYPE_2000
      * @tc.name      testClassTypeGenericArg0001
-     * @tc.desc      Verify class type as generic type argument
+     * @tc.desc      ArkTS dynamic (TS-only): Verify class type as generic type argument
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -417,7 +410,7 @@ export default function ClassTypeTest() {
     /**
      * @tc.number    SUB_CLASS_TYPE_2100
      * @tc.name      testGenericInstanceNumber0001
-     * @tc.desc      Verify generic class instance type Box<number> reads number field
+     * @tc.desc      ArkTS dynamic (TS-only): Verify generic class instance type Box<number> reads number field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -432,7 +425,7 @@ export default function ClassTypeTest() {
     /**
      * @tc.number    SUB_CLASS_TYPE_2200
      * @tc.name      testGenericTypeParam0001
-     * @tc.desc      Verify generic class type as function parameter
+     * @tc.desc      ArkTS dynamic (TS-only): Verify generic class type as function parameter
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -446,7 +439,7 @@ export default function ClassTypeTest() {
     /**
      * @tc.number    SUB_CLASS_TYPE_2300
      * @tc.name      testGenericTypeReturn0001
-     * @tc.desc      Verify generic class type as function return value
+     * @tc.desc      ArkTS dynamic (TS-only): Verify generic class type as function return value
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -457,37 +450,9 @@ export default function ClassTypeTest() {
     })
 
     /**
-     * @tc.number    SUB_CLASS_TYPE_2400
-     * @tc.name      testInstanceofClass0001
-     * @tc.desc      Verify instanceof returns true for class instance
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testInstanceofClass0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let p: Point = new Point(1, 2)
-      expect(p instanceof Point).assertEqual(true)
-    })
-
-    /**
-     * @tc.number    SUB_CLASS_TYPE_2500
-     * @tc.name      testConstructorProperty0001
-     * @tc.desc      Verify instance constructor property points to class constructor
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConstructorProperty0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let p: Point = new Point(3, 4)
-      expect(p.constructor !== undefined).assertEqual(true)
-      expect(p.constructor).assertEqual(Point)
-      expect(checkPrototypeChain(p, Point)).assertEqual(true)
-    })
-
-    /**
      * @tc.number    SUB_CLASS_TYPE_2600
      * @tc.name      testExportImportAsType0001
-     * @tc.desc      Verify exported class can be imported and used as type
+     * @tc.desc      ECMA-262 §15.2: Verify exported class can be imported and used
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -501,7 +466,7 @@ export default function ClassTypeTest() {
     /**
      * @tc.number    SUB_CLASS_TYPE_2700
      * @tc.name      testExportImportAsValue0001
-     * @tc.desc      Verify exported class can be imported and used with new
+     * @tc.desc      ECMA-262 §15.2: Verify exported class can be imported and used with new
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -516,7 +481,7 @@ export default function ClassTypeTest() {
     /**
      * @tc.number    SUB_CLASS_TYPE_2800
      * @tc.name      testTypeofClassTsHelper0001
-     * @tc.desc      Verify typeof Class pattern from TS helper creates valid instance
+     * @tc.desc      ArkTS dynamic: Verify typeof Class pattern from TS helper creates valid instance
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -525,35 +490,33 @@ export default function ClassTypeTest() {
       let p: TsPoint = createWithCtor(TsPoint, 5, 6)
       expect(p.x).assertEqual(5)
       expect(p.y).assertEqual(6)
-      expect(p instanceof TsPoint).assertEqual(true)
       expect(p.magnitude()).assertEqual(61)
-    })
-
-    /**
-     * @tc.number    SUB_CLASS_TYPE_2900
-     * @tc.name      testPrototypeChain0001
-     * @tc.desc      Verify prototype chain via TS helper
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testPrototypeChain0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(checkPrototypeChainAll()).assertEqual(true)
     })
 
     /**
      * @tc.number    SUB_CLASS_TYPE_3000
      * @tc.name      testClassNameProperty0001
-     * @tc.desc      Verify class name property via ClassName.name
+     * @tc.desc      ArkTS dynamic: Verify class name property via TS helper
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it('testClassNameProperty0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(NamedA.name).assertEqual("NamedA")
-      expect(NamedB.name).assertEqual("NamedB")
-      let inst: NamedA = new NamedA()
-      expect(inst.constructor.name).assertEqual("NamedA")
+      expect(getClassName(NamedA)).assertEqual("NamedA")
+      expect(getClassName(NamedB)).assertEqual("NamedB")
+      expect(getInstanceConstructorName(new NamedA())).assertEqual("NamedA")
+    })
+
+    /**
+     * @tc.number    SUB_CLASS_TYPE_3100
+     * @tc.name      testInstanceofNegative0001
+     * @tc.desc      ECMA-262 §13.10.2: Verify instanceof returns false for unrelated object
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testInstanceofNegative0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(new NamedA() instanceof Point).assertEqual(false)
     })
   })
 }

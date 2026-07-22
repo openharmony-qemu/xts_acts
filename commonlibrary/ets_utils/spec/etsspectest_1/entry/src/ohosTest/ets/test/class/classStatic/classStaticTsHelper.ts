@@ -38,7 +38,6 @@ export function getStaticThisMultiplied(factor: number): number {
  */
 class StaticComputedAccessor {
   private static _internal: string = "init-value"
-  private static _flag: boolean = false
 
   static get ["status"](): string {
     return StaticComputedAccessor._internal
@@ -46,14 +45,6 @@ class StaticComputedAccessor {
 
   static set ["status"](v: string) {
     StaticComputedAccessor._internal = v
-  }
-
-  static get ["active"](): boolean {
-    return StaticComputedAccessor._flag
-  }
-
-  static set ["active"](v: boolean) {
-    StaticComputedAccessor._flag = v
   }
 }
 
@@ -67,8 +58,8 @@ export function testStaticComputedSet(): string {
 }
 
 /*
-* Multiple static blocks -- ArkTS only
- */
+ * Multiple static blocks -- ArkTS-Dyn/ECMAScript (ArkTS Static permits a single block)
+  */
 class MultiStaticBlock {
   static step1: number = 0
   static step2: number = 0
@@ -86,4 +77,61 @@ class MultiStaticBlock {
 
 export function testMultiStaticBlockResult(): string {
   return String(MultiStaticBlock.step1) + "|" + String(MultiStaticBlock.step2) + "|" + String(MultiStaticBlock.step3)
+}
+
+/*
+ * Static block inheritance: child access triggers parent static block
+ * NOTE: StaticBlockChild.parentValue accesses inherited static field,
+ * which may be rejected by ArkTS static mode. Works in dynamic mode (XTS).
+ */
+class StaticBlockParent {
+  static parentValue: number = 0
+  static {
+    StaticBlockParent.parentValue = 100
+  }
+}
+
+class StaticBlockChild extends StaticBlockParent {
+  static childValue: number = 0
+  static {
+    StaticBlockChild.childValue = StaticBlockParent.parentValue + 50
+  }
+}
+
+export function testStaticBlockInheritance(): string {
+  return String(StaticBlockChild.parentValue) + "|" + String(StaticBlockChild.childValue)
+}
+
+/*
+ * Static field + static block mixed order
+ */
+class MixedStaticOrder {
+  static first: number = 10
+  static second: number = 0
+  static {
+    MixedStaticOrder.second = MixedStaticOrder.first * 2
+  }
+  static third: number = MixedStaticOrder.second + 5
+}
+
+export function testStaticMixedOrder(): string {
+  return String(MixedStaticOrder.first) + "|" + String(MixedStaticOrder.second) + "|" + String(MixedStaticOrder.third)
+}
+
+/*
+ * Static inheritance -- moved from .ets to avoid compile rejection in ArkTS static mode.
+ * TS/ArkTS-Dyn: Child class references parent static members via child class name.
+ */
+class StaticParent {
+  static parentField: string = 'parent-field'
+  static parentMethod(): string {
+    return 'parent-method'
+  }
+}
+
+class StaticChild extends StaticParent {
+}
+
+export function testStaticInheritance(): string {
+  return StaticChild.parentField + "|" + StaticChild.parentMethod()
 }

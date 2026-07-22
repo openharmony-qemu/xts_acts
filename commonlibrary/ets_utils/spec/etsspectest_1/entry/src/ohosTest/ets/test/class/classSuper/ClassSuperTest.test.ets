@@ -24,8 +24,7 @@ import {
   Size,
   TestType
 } from '@ohos/hypium';
-import utils from '../../Utils';
-import { testGenericSuperCtor, testSuperSpreadArgs } from './classSuperTsHelper'
+import { testGenericSuperCtor, testSuperSpreadArgs, testSuperComputed, testSuperStaticMethod, testSuperComputedSymbol, testSuperComputedGetter, testSuperComputedSideEffect } from './classSuperTsHelper'
 
 // design 017: subclass calls super.protectedMethod()
 class SuperProtectedBase {
@@ -54,44 +53,11 @@ class NamedBase {
 class NamedChild extends NamedBase implements Named {
 }
 
-// design 023: static method calls super.staticMethod()
-class StaticSuperBase {
-  public static getBaseLabel(): string {
-    return 'static-base'
-  }
-}
-
-class StaticSuperChild extends StaticSuperBase {
-  public static getChildLabel(): string {
-    return super.getBaseLabel() + '-child'
-  }
-}
-
-class SuperComputedBase {
-  public greet(): string {
-    return 'hello'
-  }
-
-  public farewell(): string {
-    return 'goodbye'
-  }
-}
-
-class SuperComputedChild extends SuperComputedBase {
-  public callMethod(name: string): string {
-    if (name === 'greet') {
-      return super.greet()
-    }
-    return super.farewell()
-  }
-}
-
 export default function ClassSuperTest() {
   describe('ClassSuperTest', () => {
     beforeAll(() => {
     })
-    beforeEach(async () => {
-      await utils.msSleep(30);
+    beforeEach(() => {
     })
     afterEach(() => {
     })
@@ -101,7 +67,7 @@ export default function ClassSuperTest() {
     /**
      * @tc.number    SUB_CLASS_SUPER_0100
      * @tc.name      testSuperProtectedMethod0001
-     * @tc.desc      Verify subclass calls base class protected method via super
+     * @tc.desc      ArkTS dynamic: Verify subclass calls base class protected method via super
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -114,7 +80,7 @@ export default function ClassSuperTest() {
     /**
      * @tc.number    SUB_CLASS_SUPER_0200
      * @tc.name      testSuperInterfaceViaInheritance0001
-     * @tc.desc      Verify subclass implements interface by inheriting base method
+     * @tc.desc      ArkTS dynamic: Verify subclass implements interface by inheriting base method
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -128,7 +94,7 @@ export default function ClassSuperTest() {
     /**
      * @tc.number    SUB_CLASS_SUPER_0300
      * @tc.name      testSuperGenericCtor0001
-     * @tc.desc      Verify generic base constructor called via super()
+     * @tc.desc      ArkTS dynamic: Verify generic base constructor called via super()
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -141,33 +107,71 @@ export default function ClassSuperTest() {
     /**
      * @tc.number    SUB_CLASS_SUPER_0400
      * @tc.name      testSuperStaticMethod0001
-     * @tc.desc      Verify derived class static method calls base class static method via super
+     * @tc.desc      ArkTS dynamic: Verify derived class static method calls base class static method via super
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it('testSuperStaticMethod0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(StaticSuperChild.getChildLabel()).assertEqual('static-base-child')
+      expect(testSuperStaticMethod()).assertEqual('static-base-child')
     })
 
     /**
      * @tc.number    SUB_CLASS_SUPER_0500
      * @tc.name      testSuperComputedMethod0001
-     * @tc.desc      Verify super.method() with dynamic method name selection
+     * @tc.desc      ArkTS dynamic: Verify super[name]() computed property access with method name string
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it('testSuperComputedMethod0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let obj: SuperComputedChild = new SuperComputedChild()
-      expect(obj.callMethod('greet')).assertEqual('hello')
-      expect(obj.callMethod('farewell')).assertEqual('goodbye')
+      expect(testSuperComputed('greet')).assertEqual('hello')
+      expect(testSuperComputed('farewell')).assertEqual('goodbye')
     })
 
     /**
      * @tc.number    SUB_CLASS_SUPER_0600
+     * @tc.name      testSuperComputedSymbol0001
+     * @tc.desc      ArkTS dynamic: Verify super[sym]() computed property access with Symbol key
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testSuperComputedSymbol0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(testSuperComputedSymbol()).assertEqual('symbol-result')
+    })
+
+    /**
+     * @tc.number    SUB_CLASS_SUPER_0700
+     * @tc.name      testSuperComputedGetter0001
+     * @tc.desc      ArkTS dynamic: Verify super[name] computed property access with getter
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testSuperComputedGetter0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(testSuperComputedGetter()).assertEqual('getter-value')
+    })
+
+    /**
+     * @tc.number    SUB_CLASS_SUPER_0800
+     * @tc.name      testSuperComputedSideEffect0001
+     * @tc.desc      ArkTS dynamic: Verify super[expr]() evaluates key expression before method call
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testSuperComputedSideEffect0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let result: string = testSuperComputedSideEffect()
+      let parts: string[] = result.split("|")
+      expect(parts[0]).assertEqual('hello')
+      expect(parts[1]).assertEqual('1')
+    })
+
+    /**
+     * @tc.number    SUB_CLASS_SUPER_0900
      * @tc.name      testSuperSpreadArgs0001
-     * @tc.desc      Verify super(...args) spread passing to base constructor
+     * @tc.desc      ArkTS dynamic: Verify super(...args) spread passing to base constructor
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2

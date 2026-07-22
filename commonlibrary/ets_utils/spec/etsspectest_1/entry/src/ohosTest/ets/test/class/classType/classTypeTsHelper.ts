@@ -35,6 +35,18 @@ export function checkPrototypeChain(instance: any, classConstructor: any): boole
   return Object.getPrototypeOf(instance) === classConstructor.prototype
 }
 
+export function checkConstructorProperty(instance: any, ctor: any): boolean {
+  return instance.constructor === ctor
+}
+
+export function getClassName(cls: any): string {
+  return cls.name
+}
+
+export function getInstanceConstructorName(instance: any): string {
+  return instance.constructor.name
+}
+
 export function makeContainer(item: any): any {
   return {
     item: item,
@@ -58,13 +70,6 @@ class ProtoDerived extends ProtoBase {
 export function checkPrototypeChainAll(): boolean {
   let base = new ProtoBase()
   let derived = new ProtoDerived()
-
-  let baseCtorOk = ProtoBase.prototype.constructor === ProtoBase
-  let derivedCtorOk = ProtoDerived.prototype.constructor === ProtoDerived
-  let baseProtoOfProtoOk = Object.getPrototypeOf(base) === ProtoBase.prototype
-  let derivedProtoOfDerivedOk = Object.getPrototypeOf(derived) === ProtoDerived.prototype
-  let derivedProtoChainOk = Object.getPrototypeOf(ProtoDerived.prototype) === ProtoBase.prototype
-  let derivedCtorChainOk = Object.getPrototypeOf(ProtoDerived) === ProtoBase
 
   return ProtoBase.prototype.constructor === ProtoBase &&
     ProtoDerived.prototype.constructor === ProtoDerived &&

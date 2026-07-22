@@ -24,7 +24,13 @@ import {
   Size,
   TestType
 } from '@ohos/hypium';
-import utils from '../../Utils';
+
+/*
+ * NOTE: private/protected are compile-time access modifiers in ArkTS.
+ * The compiler rejects external/illegal access before runtime, so XTS can only
+ * verify the positive path (allowed access works). Negative tests (confirming
+ * that external access is rejected) require compile-fail testing, outside XTS scope.
+ */
 
 // design 009 + 010: private field within class method + constructor
 class PrivateFieldAccess {
@@ -114,8 +120,7 @@ export default function ClassVisibilityTest() {
   describe('ClassVisibilityTest', () => {
     beforeAll(() => {
     })
-    beforeEach(async () => {
-      await utils.msSleep(30);
+    beforeEach(() => {
     })
     afterEach(() => {
     })
@@ -125,7 +130,7 @@ export default function ClassVisibilityTest() {
     /**
      * @tc.number    SUB_CLASS_VISIBILITY_0100
      * @tc.name      testPrivateFieldInClass0001
-     * @tc.desc      Verify private field accessible within class method and constructor
+     * @tc.desc      ArkTS dynamic: Verify private field accessible within class method and constructor (positive only; compile-time constraint not testable in XTS)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -139,7 +144,7 @@ export default function ClassVisibilityTest() {
     /**
      * @tc.number    SUB_CLASS_VISIBILITY_0200
      * @tc.name      testPrivateMethodInClass0001
-     * @tc.desc      Verify private method called by public method accesses private field
+     * @tc.desc      ArkTS dynamic: Verify private method called by public method accesses private field (positive only; compile-time constraint not testable in XTS)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -152,7 +157,7 @@ export default function ClassVisibilityTest() {
     /**
      * @tc.number    SUB_CLASS_VISIBILITY_0300
      * @tc.name      testPrivateStaticMethod0001
-     * @tc.desc      Verify private static method called by public static method
+     * @tc.desc      ArkTS dynamic: Verify private static method called by public static method (positive only; compile-time constraint not testable in XTS)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -164,7 +169,7 @@ export default function ClassVisibilityTest() {
     /**
      * @tc.number    SUB_CLASS_VISIBILITY_0400
      * @tc.name      testProtectedFieldInClass0001
-     * @tc.desc      Verify protected field accessible within own class
+     * @tc.desc      ArkTS dynamic: Verify protected field accessible within own class (positive only; compile-time constraint not testable in XTS)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -177,7 +182,7 @@ export default function ClassVisibilityTest() {
     /**
      * @tc.number    SUB_CLASS_VISIBILITY_0500
      * @tc.name      testProtectedFieldInChild0001
-     * @tc.desc      Verify child class can access parent protected field
+     * @tc.desc      ArkTS dynamic: Verify child class can access parent protected field (positive only; compile-time constraint not testable in XTS)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -190,7 +195,7 @@ export default function ClassVisibilityTest() {
     /**
      * @tc.number    SUB_CLASS_VISIBILITY_0600
      * @tc.name      testProtectedMethodMultiLevel0001
-     * @tc.desc      Verify protected method accessible in multi-level inheritance
+     * @tc.desc      ArkTS dynamic: Verify protected method accessible in multi-level inheritance (positive only; compile-time constraint not testable in XTS)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -203,7 +208,7 @@ export default function ClassVisibilityTest() {
     /**
      * @tc.number    SUB_CLASS_VISIBILITY_0800
      * @tc.name      testPublicOverrideRemainsPublic0001
-     * @tc.desc      Verify public override of public method remains callable
+     * @tc.desc      ArkTS dynamic: Verify public override of public method remains callable (positive only; compile-time constraint not testable in XTS)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
