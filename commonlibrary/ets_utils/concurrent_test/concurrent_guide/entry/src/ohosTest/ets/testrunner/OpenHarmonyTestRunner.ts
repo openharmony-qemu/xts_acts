@@ -23,8 +23,9 @@ async function onAbilityCreateCallback() {
     hilog.info(0x0000, 'testTag', '%{public}s', 'onAbilityCreateCallback');
 }
 
-async function addAbilityMonitorCallback(err: any) {
-    hilog.info(0x0000, 'testTag', 'addAbilityMonitorCallback : %{public}s', JSON.stringify(err) ?? '');
+async function addAbilityMonitorCallback(err: Error) {
+    hilog.info(0x0000, 'testTag', 'addAbilityMonitorCallback : %{public}s',
+        err instanceof Error ? err.message : '');
 }
 
 export default class OpenHarmonyTestRunner implements TestRunner {
@@ -56,8 +57,9 @@ export default class OpenHarmonyTestRunner implements TestRunner {
             cmd += ' -u ' + user;
         }
         abilityDelegator.executeShellCommand(cmd,
-            (err: any, d: any) => {
-                hilog.info(0x0000, 'testTag', 'executeShellCommand : err : %{public}s', JSON.stringify(err) ?? '');
+            (err: Error, d: any) => {
+                hilog.info(0x0000, 'testTag', 'executeShellCommand : err : %{public}s',
+                    err instanceof Error ? err.message : '');
                 hilog.info(0x0000, 'testTag', 'executeShellCommand : data : %{public}s', d.stdResult ?? '');
                 hilog.info(0x0000, 'testTag', 'executeShellCommand : data : %{public}s', d.exitCode ?? '');
             })

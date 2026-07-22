@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections, taskpool, ArkTSUtils } from '@kit.ArkTS';
 import { BusinessError } from '@kit.BasicServicesKit';
 
@@ -34,11 +34,11 @@ function modifyArray(arr: collections.Array<number>): number {
 }
 
 export default function CollectionsTest(): void {
+  if (!canIUse('SystemCapability.Utils.Lang')) {
+    console.info('CollectionsTest skipped: SystemCapability.Utils.Lang is not supported')
+    return
+  }
   describe('CollectionsTest', (): void => {
-    beforeAll((): void => {})
-    beforeEach((): void => {})
-    afterEach((): void => {})
-
     // ======================== Array Tests ========================
 
     /**
@@ -49,7 +49,7 @@ export default function CollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CollectionsTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('CollectionsTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let arr: collections.Array<number> = collections.Array.create<number>(5, 0)
       expect(arr.length).assertEqual(5)
       for (let i: number = 0; i < arr.length; i++) {
@@ -65,7 +65,7 @@ export default function CollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CollectionsTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('CollectionsTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let arr: collections.Array<number> = new collections.Array<number>(10, 20, 30)
       expect(arr.length).assertEqual(3)
       expect(arr[0]).assertEqual(10)
@@ -81,7 +81,7 @@ export default function CollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CollectionsTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('CollectionsTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let nativeArr: number[] = [1, 2, 3, 4, 5]
       let arr: collections.Array<number> = collections.Array.from<number>(nativeArr)
       expect(arr.length).assertEqual(5)
@@ -97,7 +97,7 @@ export default function CollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CollectionsTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('CollectionsTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let arktsArr: collections.Array<number> = new collections.Array<number>(1, 2, 3)
       let nativeArr: number[] = [1, 2, 3]
       expect(collections.Array.isArray(arktsArr)).assertTrue()
@@ -112,7 +112,7 @@ export default function CollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CollectionsTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('CollectionsTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3)
 
       arr.push(4)
@@ -151,7 +151,7 @@ export default function CollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CollectionsTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('CollectionsTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5)
 
       let forEachSum: number = 0
@@ -179,10 +179,11 @@ export default function CollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('CollectionsTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('CollectionsTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3)
       let caughtError: boolean = false
       try {
+        // Modify during forEach: push must throw ConcurrentModification 10200201 (not after loop)
         arr.forEach((value: number) => {
           arr.push(value + 10)
         })
@@ -241,7 +242,7 @@ export default function CollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CollectionsTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('CollectionsTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let map: collections.Map<string, number> = new collections.Map<string, number>()
       expect(map.size).assertEqual(0)
     })
@@ -254,7 +255,7 @@ export default function CollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CollectionsTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('CollectionsTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let map: collections.Map<string, number> = new collections.Map<string, number>()
       map.set('one', 1)
       map.set('two', 2)
@@ -270,7 +271,7 @@ export default function CollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CollectionsTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('CollectionsTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let map: collections.Map<string, number> = new collections.Map<string, number>()
       map.set('one', 1)
       map.set('two', 2)
@@ -296,7 +297,7 @@ export default function CollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CollectionsTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('CollectionsTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let set: collections.Set<number> = new collections.Set<number>()
       set.add(1)
       set.add(2)
@@ -312,7 +313,7 @@ export default function CollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CollectionsTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('CollectionsTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let set: collections.Set<string> = new collections.Set<string>()
       set.add('one')
       set.add('two')
@@ -333,7 +334,7 @@ export default function CollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('CollectionsTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('CollectionsTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let set: collections.Set<number> = new collections.Set<number>()
       set.add(1)
       set.add(1)
@@ -353,7 +354,7 @@ export default function CollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CollectionsTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('CollectionsTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let int8Arr: collections.Int8Array = new collections.Int8Array(5)
       expect(int8Arr.length).assertEqual(5)
       expect(int8Arr.byteLength).assertEqual(5)
@@ -375,7 +376,7 @@ export default function CollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CollectionsTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('CollectionsTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let arr: collections.Int32Array = new collections.Int32Array(4)
       let buffer: collections.ArrayBuffer = arr.buffer
       expect(buffer.byteLength).assertEqual(16)
@@ -389,7 +390,7 @@ export default function CollectionsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('CollectionsTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('CollectionsTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let uint8Arr: collections.Uint8Array = new collections.Uint8Array(1)
       uint8Arr[0] = 255
       expect(uint8Arr[0]).assertEqual(255)

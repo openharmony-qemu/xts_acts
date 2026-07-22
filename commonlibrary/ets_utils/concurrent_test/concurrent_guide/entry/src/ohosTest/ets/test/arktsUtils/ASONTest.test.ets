@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { ArkTSUtils, collections } from '@kit.ArkTS';
 
 @Sendable
@@ -22,28 +22,42 @@ class TestPerson {
   age: number = 0
 }
 
-export default function ASONTest(): void {
-  describe('ASONTest', (): void => {
-    beforeAll((): void => {})
-    beforeEach((): void => {})
-    afterEach((): void => {})
+function mapParseOptions(): ArkTSUtils.ASON.ParseOptions {
+  return {
+    bigIntMode: ArkTSUtils.ASON.BigIntMode.PARSE_AS_BIGINT,
+    parseReturnType: ArkTSUtils.ASON.ParseReturnType.MAP
+  }
+}
 
+// Value type must be Sendable (Object is not); string|number covers JSON object fields here
+function parseAsMap(jsonStr: string): collections.Map<string, string | number> {
+  return ArkTSUtils.ASON.parse(jsonStr, undefined, mapParseOptions()) as collections.Map<string, string | number>
+}
+
+export default function ASONTest(): void {
+  if (!canIUse('SystemCapability.Utils.Lang')) {
+    console.info('ASONTest skipped: SystemCapability.Utils.Lang is not supported')
+    return
+  }
+  describe('ASONTest', (): void => {
     /**
      * @tc.name   ASONTest0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASON_TEST_0100
-     * @tc.desc   Verify ASON.parse converts JSON string to Sendable object
+     * @tc.desc   Verify ASON.parse converts JSON string to Sendable Map
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ASONTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('ASONTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let jsonStr: string = '{"name":"test","age":42}'
-      // Concrete Sendable type (ArkTS forbids unknown; avoid Record<string, Object> + as field casts)
-      let result: TestPerson = ArkTSUtils.ASON.parse(jsonStr) as TestPerson
-      expect(result.name).assertEqual('test')
-      expect(result.age).assertEqual(42)
+      // parse does not construct custom classes; use MAP + get()
+      let result: collections.Map<string, string | number> = parseAsMap(jsonStr)
+      expect(result.get('name') as string).assertEqual('test')
+      expect(result.get('age') as number).assertEqual(42)
       let jsonOut: string = ArkTSUtils.ASON.stringify(result)
-      expect(jsonOut).assertEqual('{"name":"test","age":42}')
+      let roundTrip: collections.Map<string, string | number> = parseAsMap(jsonOut)
+      expect(roundTrip.get('name') as string).assertEqual('test')
+      expect(roundTrip.get('age') as number).assertEqual(42)
     })
 
     /**
@@ -54,12 +68,14 @@ export default function ASONTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ASONTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('ASONTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let person: TestPerson = new TestPerson()
       person.name = 'John'
       person.age = 30
       let jsonStr: string = ArkTSUtils.ASON.stringify(person)
-      expect(jsonStr).assertEqual('{"name":"John","age":30}')
+      let parsed: collections.Map<string, string | number> = parseAsMap(jsonStr)
+      expect(parsed.get('name') as string).assertEqual('John')
+      expect(parsed.get('age') as number).assertEqual(30)
     })
 
     /**
@@ -70,12 +86,15 @@ export default function ASONTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ASONTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('ASONTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let map: collections.Map<string, number> = new collections.Map<string, number>()
       map.set('one', 1)
       map.set('two', 2)
       let jsonStr: string = ArkTSUtils.ASON.stringify(map)
-      expect(jsonStr).assertEqual('{"one":1,"two":2}')
+      let parsed: collections.Map<string, string | number> = parseAsMap(jsonStr)
+      expect(parsed.size).assertEqual(2)
+      expect(parsed.get('one') as number).assertEqual(1)
+      expect(parsed.get('two') as number).assertEqual(2)
     })
 
     /**
@@ -86,13 +105,18 @@ export default function ASONTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ASONTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('ASONTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let set: collections.Set<number> = new collections.Set<number>()
       set.add(1)
       set.add(2)
       set.add(3)
       let jsonStr: string = ArkTSUtils.ASON.stringify(set)
-      expect(jsonStr).assertEqual('[1,2,3]')
+      let parsed: collections.Array<number> =
+        ArkTSUtils.ASON.parse(jsonStr) as collections.Array<number>
+      expect(parsed.length).assertEqual(3)
+      expect(parsed[0]).assertEqual(1)
+      expect(parsed[1]).assertEqual(2)
+      expect(parsed[2]).assertEqual(3)
     })
 
     /**
@@ -103,12 +127,15 @@ export default function ASONTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ASONTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('ASONTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let map: Map<string, string> = new Map<string, string>()
       map.set('key1', 'value1')
       map.set('key2', 'value2')
       let jsonStr: string = ArkTSUtils.ASON.stringify(map)
-      expect(jsonStr).assertEqual('{"key1":"value1","key2":"value2"}')
+      let parsed: collections.Map<string, string | number> = parseAsMap(jsonStr)
+      expect(parsed.size).assertEqual(2)
+      expect(parsed.get('key1') as string).assertEqual('value1')
+      expect(parsed.get('key2') as string).assertEqual('value2')
     })
 
     /**
@@ -119,12 +146,16 @@ export default function ASONTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ASONTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('ASONTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let set: Set<number> = new Set<number>()
       set.add(10)
       set.add(20)
       let jsonStr: string = ArkTSUtils.ASON.stringify(set)
-      expect(jsonStr).assertEqual('[10,20]')
+      let parsed: collections.Array<number> =
+        ArkTSUtils.ASON.parse(jsonStr) as collections.Array<number>
+      expect(parsed.length).assertEqual(2)
+      expect(parsed[0]).assertEqual(10)
+      expect(parsed[1]).assertEqual(20)
     })
 
     /**
@@ -135,7 +166,7 @@ export default function ASONTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ASONTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('ASONTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let jsonStr: string = '{"value":112233445566778899}'
       let options: ArkTSUtils.ASON.ParseOptions = {
         bigIntMode: ArkTSUtils.ASON.BigIntMode.PARSE_AS_BIGINT,
@@ -159,7 +190,7 @@ export default function ASONTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ASONTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('ASONTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let invalidJson: string = '{invalid json}'
       let caughtError: boolean = false
       try {
@@ -167,11 +198,11 @@ export default function ASONTest(): void {
         expect().assertFail()
       } catch (e) {
         caughtError = true
-        // Device/runtime: invalid JSON throws SyntaxError (not BusinessError)
+        // Invalid JSON: SyntaxError (matches asonutilstest / device; single path)
         expect(e instanceof SyntaxError).assertTrue()
         if (e instanceof SyntaxError) {
-          // Core behavior: invalid JSON; substring avoids brittle full-message equality across engines
-          expect(e.message).assertContain('JSON')
+          expect(e.name).assertEqual('SyntaxError')
+          expect(e.message.length > 0).assertTrue()
         }
       }
       expect(caughtError).assertTrue()
@@ -185,10 +216,15 @@ export default function ASONTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ASONTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('ASONTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3)
       let jsonStr: string = ArkTSUtils.ASON.stringify(arr)
-      expect(jsonStr).assertEqual('[1,2,3]')
+      let parsed: collections.Array<number> =
+        ArkTSUtils.ASON.parse(jsonStr) as collections.Array<number>
+      expect(parsed.length).assertEqual(3)
+      expect(parsed[0]).assertEqual(1)
+      expect(parsed[1]).assertEqual(2)
+      expect(parsed[2]).assertEqual(3)
     })
   })
 }

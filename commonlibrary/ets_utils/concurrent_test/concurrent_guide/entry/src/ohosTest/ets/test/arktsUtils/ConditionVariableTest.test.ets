@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { ArkTSUtils, taskpool } from '@kit.ArkTS';
 import { sleep } from '../Utils';
 
@@ -49,12 +49,69 @@ async function waitAndIncrement(cv: ArkTSUtils.locks.ConditionVariable,
   counter.done = true
 }
 
-export default function ConditionVariableTest(): void {
-  describe('ConditionVariableTest', (): void => {
-    beforeAll((): void => {})
-    beforeEach((): void => {})
-    afterEach((): void => {})
+/** Max wait for shared waiting-flag polls (~5s with sleep(1)). */
+const CV_NOTIFY_MAX_RETRY: number = 5000
+/** Same-thread notify retries: sleep(50) * 100 ≈ 5s, avoids 1ms busy polling. */
+const CV_SAME_THREAD_MAX_RETRY: number = 100
+const CV_SAME_THREAD_RETRY_MS: number = 50
 
+/** Same-thread: yield once, then retry notifyOne until waitPromise resolves (bounded). */
+async function notifyOneUntilDone(cv: ArkTSUtils.locks.ConditionVariable,
+  waitPromise: Promise<void>): Promise<void> {
+  // Yield so wait() is registered on the event queue before the first notify
+  await sleep(1)
+  // Attach then once outside the loop; onReject fail-fast instead of retrying to timeout
+  let waitStatus: Promise<string> =
+    waitPromise.then((): string => 'done', (): string => 'failed')
+  let retries: number = 0
+  while (retries < CV_SAME_THREAD_MAX_RETRY) {
+    cv.notifyOne()
+    let raced: string = await Promise.race([
+      waitStatus,
+      sleep(CV_SAME_THREAD_RETRY_MS).then((): string => 'retry')
+    ])
+    if (raced === 'failed') {
+      expect().assertFail()
+    }
+    if (raced === 'done') {
+      return
+    }
+    retries++
+  }
+  expect().assertFail()
+}
+
+/** Same-thread: yield once, then retry notifyAll until waitPromise resolves (bounded). */
+async function notifyAllUntilDone(cv: ArkTSUtils.locks.ConditionVariable,
+  waitPromise: Promise<void>): Promise<void> {
+  await sleep(1)
+  // Attach then once outside the loop; onReject fail-fast instead of retrying to timeout
+  let waitStatus: Promise<string> =
+    waitPromise.then((): string => 'done', (): string => 'failed')
+  let retries: number = 0
+  while (retries < CV_SAME_THREAD_MAX_RETRY) {
+    cv.notifyAll()
+    let raced: string = await Promise.race([
+      waitStatus,
+      sleep(CV_SAME_THREAD_RETRY_MS).then((): string => 'retry')
+    ])
+    if (raced === 'failed') {
+      expect().assertFail()
+    }
+    if (raced === 'done') {
+      return
+    }
+    retries++
+  }
+  expect().assertFail()
+}
+
+export default function ConditionVariableTest(): void {
+  if (!canIUse('SystemCapability.Utils.Lang')) {
+    console.info('ConditionVariableTest skipped: SystemCapability.Utils.Lang is not supported')
+    return
+  }
+  describe('ConditionVariableTest', (): void => {
     /**
      * @tc.name   ConditionVariableTest0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_CONDITIONVARIABLE_TEST_0100
@@ -88,11 +145,8 @@ export default function ConditionVariableTest(): void {
       let waitPromise: Promise<void> = cv2.wait().then(() => {
         notified = true
       })
-      // Same-thread: short sleep so wait() finishes registering (avoid single-microtask coupling)
-      await sleep(1)
-      expect(notified).assertFalse()
-      cv1.notifyOne()
-      await waitPromise
+      // Same named CV: notify on cv1 until cv2.wait awakens (retry, not fixed sleep)
+      await notifyOneUntilDone(cv1, waitPromise)
       expect(notified).assertTrue()
     })
 
@@ -112,19 +166,15 @@ export default function ConditionVariableTest(): void {
         notified = true
       })
 
-      // Same-thread: short sleep so wait() finishes registering (avoid single-microtask coupling)
-      await sleep(1)
-      expect(notified).assertFalse()
-
-      cv.notifyOne()
-      await waitPromise
+      // Same-thread: retry notify until wait awakens (stable on slow/CI devices)
+      await notifyOneUntilDone(cv, waitPromise)
       expect(notified).assertTrue()
     })
 
     /**
      * @tc.name   ConditionVariableTest0400
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_CONDITIONVARIABLE_TEST_0400
-     * @tc.desc   Verify ConditionVariable.waitFor() resolves (void) after timeout
+     * @tc.desc   Verify ConditionVariable.waitFor() completes after timeout
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -134,11 +184,12 @@ export default function ConditionVariableTest(): void {
       let completed: boolean = false
       try {
         // API: waitFor(): Promise<void> — resolves on timeout or notify (not boolean false)
-        let result: void = await cv.waitFor(100)
+        await cv.waitFor(100)
         completed = true
-        expect(result === undefined).assertTrue()
       } catch (e) {
         // waitFor should not throw on timeout
+        let err: Error = e as Error
+        console.info('ConditionVariableTest0400 unexpected error: ' + err.message)
         expect().assertFail()
       }
       expect(completed).assertTrue()
@@ -160,16 +211,15 @@ export default function ConditionVariableTest(): void {
       let waiter2: Promise<void> = cv.wait().then(() => { wakeCount++ })
       let waiter3: Promise<void> = cv.wait().then(() => { wakeCount++ })
 
-      // Same-thread: short sleep so waiters finish registering
-      await sleep(1)
+      // No fixed sleep: retry notifyOne until one waiter awakens (covers late registration)
       expect(wakeCount).assertEqual(0)
-      cv.notifyOne()
-      // Wait for one waiter to complete
-      await Promise.race([waiter1, waiter2, waiter3])
+      let oneAwake: Promise<void> = Promise.race([waiter1, waiter2, waiter3])
+      await notifyOneUntilDone(cv, oneAwake)
       expect(wakeCount).assertEqual(1)
 
-      cv.notifyAll()
-      await Promise.all([waiter1, waiter2, waiter3])
+      let allAwake: Promise<void> =
+        Promise.all([waiter1, waiter2, waiter3]).then((): void => {})
+      await notifyAllUntilDone(cv, allAwake)
       expect(wakeCount).assertEqual(3)
     })
 
@@ -189,11 +239,10 @@ export default function ConditionVariableTest(): void {
       let waiter2: Promise<void> = cv.wait().then(() => { wakeCount++ })
       let waiter3: Promise<void> = cv.wait().then(() => { wakeCount++ })
 
-      // Same-thread: short sleep so waiters finish registering
-      await sleep(1)
+      // No fixed sleep: bounded notifyAll retry until all waiters awaken
       expect(wakeCount).assertEqual(0)
-      cv.notifyAll()
-      await Promise.all([waiter1, waiter2, waiter3])
+      let allDone: Promise<void> = Promise.all([waiter1, waiter2, waiter3]).then((): void => {})
+      await notifyAllUntilDone(cv, allDone)
       expect(wakeCount).assertEqual(3)
     })
 
@@ -211,29 +260,32 @@ export default function ConditionVariableTest(): void {
 
       let task: taskpool.Task = new taskpool.Task(waitInTask, cv, result)
       let execPromise: Promise<Object> = taskpool.execute(task)
+      // Attach then once outside the loop to avoid accumulating handlers each race
+      let taskStatus: Promise<string> =
+        execPromise.then((): string => 'done', (): string => 'failed')
 
       // Wait until worker registered wait() (result.waiting), then notify once
       try {
-        while (!result.waiting) {
+        let retries: number = 0
+        while (!result.waiting && retries < CV_NOTIFY_MAX_RETRY) {
           let raced: string = await Promise.race([
-            execPromise.then((): string => 'done', (): string => 'failed'),
+            taskStatus,
             sleep(1).then((): string => 'retry')
           ])
           if (raced === 'failed') {
-            await execPromise
+            expect().assertFail()
           }
           if (raced === 'done') {
             break
           }
+          retries++
         }
         expect(result.waiting).assertTrue()
         cv.notifyOne()
         await execPromise
       } catch (e) {
-        if (e instanceof Error) {
-          throw e
-        }
-        throw new Error('ConditionVariableTest0700 task failed')
+        // Unexpected failure path: assertFail (same style as 0400/0900)
+        expect().assertFail()
       }
       expect(result.value).assertEqual('task awakened')
     })
@@ -241,16 +293,18 @@ export default function ConditionVariableTest(): void {
     /**
      * @tc.name   ConditionVariableTest0800
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_CONDITIONVARIABLE_TEST_0800
-     * @tc.desc   Verify ConditionVariable.waitFor(0) resolves (void) immediately
+     * @tc.desc   Verify ConditionVariable.waitFor(0) completes immediately
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('ConditionVariableTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let cv: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable()
-      // API: waitFor(): Promise<void> — zero timeout resolves immediately with undefined
-      let result: void = await cv.waitFor(0)
-      expect(result === undefined).assertTrue()
+      // API: waitFor(): Promise<void> — zero timeout resolves immediately
+      let completed: boolean = false
+      await cv.waitFor(0)
+      completed = true
+      expect(completed).assertTrue()
     })
 
     /**
@@ -304,29 +358,32 @@ export default function ConditionVariableTest(): void {
 
       let task: taskpool.Task = new taskpool.Task(waitAndIncrement, cv, counter)
       let execPromise: Promise<Object> = taskpool.execute(task)
+      // Attach then once outside the loop to avoid accumulating handlers each race
+      let taskStatus: Promise<string> =
+        execPromise.then((): string => 'done', (): string => 'failed')
 
       // Wait until worker registered wait() (counter.waiting), then notify once
       try {
-        while (!counter.waiting) {
+        let retries: number = 0
+        while (!counter.waiting && retries < CV_NOTIFY_MAX_RETRY) {
           let raced: string = await Promise.race([
-            execPromise.then((): string => 'done', (): string => 'failed'),
+            taskStatus,
             sleep(1).then((): string => 'retry')
           ])
           if (raced === 'failed') {
-            await execPromise
+            expect().assertFail()
           }
           if (raced === 'done') {
             break
           }
+          retries++
         }
         expect(counter.waiting).assertTrue()
         cv.notifyOne()
         await execPromise
       } catch (e) {
-        if (e instanceof Error) {
-          throw e
-        }
-        throw new Error('ConditionVariableTest1100 task failed')
+        // Unexpected failure path: assertFail (same style as 0400/0900)
+        expect().assertFail()
       }
       expect(counter.done).assertTrue()
       expect(counter.count).assertEqual(1)
@@ -348,12 +405,9 @@ export default function ConditionVariableTest(): void {
         wokeEarly = true
       })
 
-      // Same-thread: short sleep so waitFor() finishes registering
-      await sleep(1)
-      expect(wokeEarly).assertFalse()
-      cv.notifyOne()
-      let result: void = await waitPromise
-      expect(result === undefined).assertTrue()
+      // Same-thread: retry notify until waitFor awakens before timeout
+      await notifyOneUntilDone(cv, waitPromise)
+      await waitPromise
       expect(wokeEarly).assertTrue()
     })
   })

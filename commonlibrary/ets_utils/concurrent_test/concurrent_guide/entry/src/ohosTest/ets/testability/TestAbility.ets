@@ -41,7 +41,7 @@ export default class TestAbility extends UIAbility {
         hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility onWindowStageCreate');
         windowStage.loadContent('TestAbility/pages/Index', (err: BusinessError): void => {
             if (err.code) {
-                hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
+                hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', err.message ?? '');
                 return;
             }
             hilog.info(0x0000, 'testTag', 'Succeeded in loading the content.');

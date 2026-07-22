@@ -15,7 +15,14 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { worker, ErrorEvent, MessageEvents } from '@kit.ArkTS';
-import { WorkerExchange, createEchoWorkerExchange, createTaskTypeWorkerExchange, CalculateRequest, EchoRequest } from '../WorkerHelper';
+import {
+  WorkerExchange,
+  WorkerMessageResponse,
+  createEchoWorkerExchange,
+  createTaskTypeWorkerExchange,
+  CalculateRequest,
+  EchoRequest
+} from '../WorkerHelper';
 
 export default function WorkerCommunicationTest(): void {
   describe('WorkerCommunicationTest', (): void => {
@@ -251,13 +258,16 @@ export default function WorkerCommunicationTest(): void {
     it('WorkerCommunicationTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let exchange: WorkerExchange = await createTaskTypeWorkerExchange('entry_test/ets/workers/TaskTypeWorker.ets')
       currentWorker = exchange.getWorker()
-      let addData: ESObject = await exchange.send(new CalculateRequest(10, 20, 'add'))
-      expect(addData.value as number).assertEqual(30)
-      let mulData: ESObject = await exchange.send(new CalculateRequest(7, 8, 'multiply'))
-      expect(mulData.value as number).assertEqual(56)
-      let echoData: ESObject = await exchange.send(new EchoRequest('hello_worker'))
-      expect(echoData.type as string).assertEqual('echo_response')
-      expect(echoData.payload as string).assertEqual('hello_worker')
+      let addData: WorkerMessageResponse =
+        await exchange.send<WorkerMessageResponse>(new CalculateRequest(10, 20, 'add'))
+      expect(addData.value).assertEqual(30)
+      let mulData: WorkerMessageResponse =
+        await exchange.send<WorkerMessageResponse>(new CalculateRequest(7, 8, 'multiply'))
+      expect(mulData.value).assertEqual(56)
+      let echoData: WorkerMessageResponse =
+        await exchange.send<WorkerMessageResponse>(new EchoRequest('hello_worker'))
+      expect(echoData.type).assertEqual('echo_response')
+      expect(echoData.payload).assertEqual('hello_worker')
       await exchange.terminate()
       currentWorker = null
     })

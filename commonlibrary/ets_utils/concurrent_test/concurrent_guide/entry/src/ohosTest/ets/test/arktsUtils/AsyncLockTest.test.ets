@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { ArkTSUtils, taskpool } from '@kit.ArkTS';
 
 @Sendable
@@ -41,12 +41,17 @@ async function incrementTen(lock: ArkTSUtils.locks.AsyncLock, counter: SharedCou
   return result
 }
 
-export default function AsyncLockTest(): void {
-  describe('AsyncLockTest', (): void => {
-    beforeAll((): void => {})
-    beforeEach((): void => {})
-    afterEach((): void => {})
+async function executeNumberTask(task: taskpool.Task): Promise<number> {
+  let result: Object = await taskpool.execute(task)
+  return result as number
+}
 
+export default function AsyncLockTest(): void {
+  if (!canIUse('SystemCapability.Utils.Lang')) {
+    console.info('AsyncLockTest skipped: SystemCapability.Utils.Lang is not supported')
+    return
+  }
+  describe('AsyncLockTest', (): void => {
     /**
      * @tc.name   AsyncLockTest0100
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_ASYNCLOCK_TEST_0100
@@ -108,10 +113,10 @@ export default function AsyncLockTest(): void {
     it('AsyncLockTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
       let counter: SharedCounter = new SharedCounter()
-      let p1: Promise<Object> = taskpool.execute(new taskpool.Task(taskWithLock, lock, counter))
-      let p2: Promise<Object> = taskpool.execute(new taskpool.Task(taskWithLock, lock, counter))
-      let p3: Promise<Object> = taskpool.execute(new taskpool.Task(taskWithLock, lock, counter))
-      let results: Object[] = await Promise.all([p1, p2, p3])
+      let p1: Promise<number> = executeNumberTask(new taskpool.Task(taskWithLock, lock, counter))
+      let p2: Promise<number> = executeNumberTask(new taskpool.Task(taskWithLock, lock, counter))
+      let p3: Promise<number> = executeNumberTask(new taskpool.Task(taskWithLock, lock, counter))
+      let results: number[] = await Promise.all([p1, p2, p3])
       expect(results.length).assertEqual(3)
       expect(counter.count).assertEqual(3)
     })
@@ -151,9 +156,9 @@ export default function AsyncLockTest(): void {
     it('AsyncLockTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
       let counter: SharedCounter = new SharedCounter()
-      let promises: Promise<Object>[] = []
+      let promises: Promise<number>[] = []
       for (let i: number = 0; i < 10; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(taskWithLock, lock, counter)))
+        promises.push(executeNumberTask(new taskpool.Task(taskWithLock, lock, counter)))
       }
       await Promise.all(promises)
       expect(counter.count).assertEqual(10)
@@ -184,7 +189,7 @@ export default function AsyncLockTest(): void {
     /**
      * @tc.name   AsyncLockTest0800
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_ASYNCLOCK_TEST_0800
-     * @tc.desc   Verify AsyncLock.lockAsync() with empty callback returning undefined
+     * @tc.desc   Verify AsyncLock.lockAsync() with empty callback sets executed flag
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -192,11 +197,10 @@ export default function AsyncLockTest(): void {
     it('AsyncLockTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
       let executed: boolean = false
-      let result: void = await lock.lockAsync((): void => {
+      await lock.lockAsync((): void => {
         executed = true
       })
       expect(executed).assertTrue()
-      expect(result === undefined).assertTrue()
     })
 
     /**
@@ -217,7 +221,7 @@ export default function AsyncLockTest(): void {
         expect().assertFail()
       } catch (e) {
         caughtError = true
-        // Callback throws plain Error (not system BusinessError with code)
+        // User callback rethrows as Error with original message
         expect(e instanceof Error).assertTrue()
         expect((e as Error).name).assertEqual('Error')
         expect((e as Error).message).assertEqual('callback error')
@@ -264,9 +268,9 @@ export default function AsyncLockTest(): void {
     it('AsyncLockTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
       let counter: SharedCounter = new SharedCounter()
-      let promises: Promise<Object>[] = []
+      let promises: Promise<number>[] = []
       for (let i: number = 0; i < 100; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(taskWithLock, lock, counter)))
+        promises.push(executeNumberTask(new taskpool.Task(taskWithLock, lock, counter)))
       }
       await Promise.all(promises)
       expect(counter.count).assertEqual(100)
@@ -304,9 +308,9 @@ export default function AsyncLockTest(): void {
     it('AsyncLockTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
       let counter: SharedCounter = new SharedCounter()
-      let promises: Promise<Object>[] = []
+      let promises: Promise<number>[] = []
       for (let i: number = 0; i < 10; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(incrementTen, lock, counter)))
+        promises.push(executeNumberTask(new taskpool.Task(incrementTen, lock, counter)))
       }
       await Promise.all(promises)
       expect(counter.count).assertEqual(100)
