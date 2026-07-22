@@ -206,14 +206,14 @@ export default function BuiltinsApprovalStateMachineTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsApprovalStateMachineTest0100
-     * @tc.number SUB_BUILTINS_APPROVAL_STATE_MACHINE_TEST_0100
+     * @tc.name   testApprovalStateMachine0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APPROVAL_STATE_MACHINE_TEST_0100
      * @tc.desc   Verify approval state machine initial DRAFT state and fields
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsApprovalStateMachineTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testApprovalStateMachine0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       expect(await approvalSM.getCurrentState()).assertEqual(ApprovalState.DRAFT)
       expect(await approvalSM.getApprovalId()).assertEqual('approval_001')
       expect(await approvalSM.getHistoryCount()).assertEqual(0)
@@ -221,42 +221,42 @@ export default function BuiltinsApprovalStateMachineTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsApprovalStateMachineTest0200
-     * @tc.number SUB_BUILTINS_APPROVAL_STATE_MACHINE_TEST_0200
+     * @tc.name   testApprovalStateMachine0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APPROVAL_STATE_MACHINE_TEST_0200
      * @tc.desc   Verify transition from DRAFT to PENDING
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsApprovalStateMachineTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testApprovalStateMachine0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       expect(await approvalSM.transition(ApprovalState.PENDING, 'submit for approval')).assertTrue()
       expect(await approvalSM.getCurrentState()).assertEqual(ApprovalState.PENDING)
       expect(await approvalSM.getHistoryCount()).assertEqual(1)
     })
 
     /**
-     * @tc.name   BuiltinsApprovalStateMachineTest0300
-     * @tc.number SUB_BUILTINS_APPROVAL_STATE_MACHINE_TEST_0300
+     * @tc.name   testApprovalStateMachine0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APPROVAL_STATE_MACHINE_TEST_0300
      * @tc.desc   Verify transition from PENDING to APPROVING
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsApprovalStateMachineTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testApprovalStateMachine0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await approvalSM.transition(ApprovalState.PENDING, 'submit')
       expect(await approvalSM.transition(ApprovalState.APPROVING, 'start approval process')).assertTrue()
       expect(await approvalSM.getCurrentState()).assertEqual(ApprovalState.APPROVING)
     })
 
     /**
-     * @tc.name   BuiltinsApprovalStateMachineTest0400
-     * @tc.number SUB_BUILTINS_APPROVAL_STATE_MACHINE_TEST_0400
+     * @tc.name   testApprovalStateMachine0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APPROVAL_STATE_MACHINE_TEST_0400
      * @tc.desc   Verify full approval path ends in APPROVED final state
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsApprovalStateMachineTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testApprovalStateMachine0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await approvalSM.transition(ApprovalState.PENDING, 'submit')
       await approvalSM.transition(ApprovalState.APPROVING, 'start')
       expect(await approvalSM.transition(ApprovalState.APPROVED, 'all approved')).assertTrue()
@@ -265,14 +265,14 @@ export default function BuiltinsApprovalStateMachineTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsApprovalStateMachineTest0500
-     * @tc.number SUB_BUILTINS_APPROVAL_STATE_MACHINE_TEST_0500
+     * @tc.name   testApprovalStateMachine0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APPROVAL_STATE_MACHINE_TEST_0500
      * @tc.desc   Verify approval path ends in REJECTED final state
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsApprovalStateMachineTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testApprovalStateMachine0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await approvalSM.transition(ApprovalState.PENDING, 'submit')
       await approvalSM.transition(ApprovalState.APPROVING, 'start')
       expect(await approvalSM.transition(ApprovalState.REJECTED, 'rejected by manager')).assertTrue()
@@ -281,28 +281,28 @@ export default function BuiltinsApprovalStateMachineTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsApprovalStateMachineTest0600
-     * @tc.number SUB_BUILTINS_APPROVAL_STATE_MACHINE_TEST_0600
+     * @tc.name   testApprovalStateMachine0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APPROVAL_STATE_MACHINE_TEST_0600
      * @tc.desc   Verify transition from PENDING to WITHDRAWN
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsApprovalStateMachineTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testApprovalStateMachine0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await approvalSM.transition(ApprovalState.PENDING, 'submit')
       expect(await approvalSM.transition(ApprovalState.WITHDRAWN, 'user withdraw')).assertTrue()
       expect(await approvalSM.getCurrentState()).assertEqual(ApprovalState.WITHDRAWN)
     })
 
     /**
-     * @tc.name   BuiltinsApprovalStateMachineTest0700
-     * @tc.number SUB_BUILTINS_APPROVAL_STATE_MACHINE_TEST_0700
+     * @tc.name   testApprovalStateMachine0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APPROVAL_STATE_MACHINE_TEST_0700
      * @tc.desc   Verify WITHDRAWN can transition back to DRAFT
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsApprovalStateMachineTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testApprovalStateMachine0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await approvalSM.transition(ApprovalState.PENDING, 'submit')
       await approvalSM.transition(ApprovalState.WITHDRAWN, 'withdraw')
       expect(await approvalSM.transition(ApprovalState.DRAFT, 'back to draft')).assertTrue()
@@ -310,14 +310,14 @@ export default function BuiltinsApprovalStateMachineTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsApprovalStateMachineTest0800
-     * @tc.number SUB_BUILTINS_APPROVAL_STATE_MACHINE_TEST_0800
+     * @tc.name   testApprovalStateMachine0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APPROVAL_STATE_MACHINE_TEST_0800
      * @tc.desc   Verify multi-level approval records and current level
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsApprovalStateMachineTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testApprovalStateMachine0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await approvalSM.transition(ApprovalState.PENDING, 'submit')
       await approvalSM.transition(ApprovalState.APPROVING, 'start')
       await approvalSM.addApprovalRecord(0, 'manager1', 'approved')
@@ -334,27 +334,27 @@ export default function BuiltinsApprovalStateMachineTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsApprovalStateMachineTest0900
-     * @tc.number SUB_BUILTINS_APPROVAL_STATE_MACHINE_TEST_0900
+     * @tc.name   testApprovalStateMachine0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APPROVAL_STATE_MACHINE_TEST_0900
      * @tc.desc   Verify illegal transition from DRAFT to APPROVED is rejected
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsApprovalStateMachineTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testApprovalStateMachine0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       expect(await approvalSM.transition(ApprovalState.APPROVED, 'skip approval')).assertFalse()
       expect(await approvalSM.getCurrentState()).assertEqual(ApprovalState.DRAFT)
     })
 
     /**
-     * @tc.name   BuiltinsApprovalStateMachineTest1000
-     * @tc.number SUB_BUILTINS_APPROVAL_STATE_MACHINE_TEST_1000
+     * @tc.name   testApprovalStateMachine1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APPROVAL_STATE_MACHINE_TEST_1000
      * @tc.desc   Verify transition from APPROVED final state is rejected
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsApprovalStateMachineTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testApprovalStateMachine1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await approvalSM.transition(ApprovalState.PENDING, 'submit')
       await approvalSM.transition(ApprovalState.APPROVING, 'start')
       await approvalSM.transition(ApprovalState.APPROVED, 'approved')
@@ -363,14 +363,14 @@ export default function BuiltinsApprovalStateMachineTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsApprovalStateMachineTest1100
-     * @tc.number SUB_BUILTINS_APPROVAL_STATE_MACHINE_TEST_1100
+     * @tc.name   testApprovalStateMachine1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APPROVAL_STATE_MACHINE_TEST_1100
      * @tc.desc   Verify TaskPool concurrent read of APPROVING state
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsApprovalStateMachineTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testApprovalStateMachine1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await approvalSM.transition(ApprovalState.PENDING, 'submit')
       await approvalSM.transition(ApprovalState.APPROVING, 'start')
       const tasks: taskpool.Task[] = []
@@ -388,14 +388,14 @@ export default function BuiltinsApprovalStateMachineTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsApprovalStateMachineTest1200
-     * @tc.number SUB_BUILTINS_APPROVAL_STATE_MACHINE_TEST_1200
+     * @tc.name   testApprovalStateMachine1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APPROVAL_STATE_MACHINE_TEST_1200
      * @tc.desc   Verify transition history count after three transitions
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsApprovalStateMachineTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testApprovalStateMachine1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await approvalSM.transition(ApprovalState.PENDING, 'submit by user')
       await approvalSM.transition(ApprovalState.APPROVING, 'start process')
       await approvalSM.transition(ApprovalState.APPROVED, 'all levels approved')
@@ -403,14 +403,14 @@ export default function BuiltinsApprovalStateMachineTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsApprovalStateMachineTest1300
-     * @tc.number SUB_BUILTINS_APPROVAL_STATE_MACHINE_TEST_1300
+     * @tc.name   testApprovalStateMachine1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APPROVAL_STATE_MACHINE_TEST_1300
      * @tc.desc   Verify two independent approval state machines do not interfere
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsApprovalStateMachineTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testApprovalStateMachine1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const approvalSM1: ApprovalStateMachine = new ApprovalStateMachine('approval_001', new ArkTSUtils.locks.AsyncLock(), new collections.Array<ApprovalTransitionRecord>(), new collections.Array<ApprovalTransitionRule>(), new collections.Array<ApprovalRecord>())
       const approvalSM2: ApprovalStateMachine = new ApprovalStateMachine('approval_002', new ArkTSUtils.locks.AsyncLock(), new collections.Array<ApprovalTransitionRecord>(), new collections.Array<ApprovalTransitionRule>(), new collections.Array<ApprovalRecord>())
       await approvalSM1.setupRules()

@@ -126,7 +126,7 @@ export default function BuiltinsConcurrentStateTest(): void {
       await stateMachine.reset()
     })
 
-    it('BuiltinsConcurrentStateTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testConcurrentState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
         tasks.push(new taskpool.Task(readStateConcurrentTask, stateMachine))
@@ -137,7 +137,7 @@ export default function BuiltinsConcurrentStateTest(): void {
       }
     })
 
-    it('BuiltinsConcurrentStateTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testConcurrentState0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 50; i++) {
         tasks.push(new taskpool.Task(readStateConcurrentTask, stateMachine))
@@ -148,7 +148,7 @@ export default function BuiltinsConcurrentStateTest(): void {
       }
     })
 
-    it('BuiltinsConcurrentStateTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testConcurrentState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 100; i++) {
         tasks.push(new taskpool.Task(readStateConcurrentTask, stateMachine))
@@ -164,7 +164,7 @@ export default function BuiltinsConcurrentStateTest(): void {
       expect(allSame).assertTrue()
     })
 
-    it('BuiltinsConcurrentStateTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testConcurrentState0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
         tasks.push(new taskpool.Task(tryTransitionConcurrentTask, stateMachine, SimpleState.ACTIVE))
@@ -180,7 +180,7 @@ export default function BuiltinsConcurrentStateTest(): void {
       expect(await stateMachine.getCurrentState()).assertEqual(SimpleState.ACTIVE)
     })
 
-    it('BuiltinsConcurrentStateTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConcurrentState0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i: number = 0; i < 10; i++) {
         await stateMachine.transition(SimpleState.ACTIVE)
         await stateMachine.transition(SimpleState.PAUSED)
@@ -190,7 +190,7 @@ export default function BuiltinsConcurrentStateTest(): void {
       expect(await stateMachine.getHistoryCount()).assertEqual(30)
     })
 
-    it('BuiltinsConcurrentStateTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testConcurrentState0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const readTasks: taskpool.Task[] = []
       const writeTasks: taskpool.Task[] = []
       for (let i: number = 0; i < 20; i++) {
@@ -209,7 +209,7 @@ export default function BuiltinsConcurrentStateTest(): void {
       expect(finalState === SimpleState.IDLE || finalState === SimpleState.ACTIVE).assertTrue()
     })
 
-    it('BuiltinsConcurrentStateTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testConcurrentState0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await stateMachine.transition(SimpleState.STOPPED)
       let successCount: number = 0
       for (let i: number = 0; i < 5; i++) {
@@ -222,7 +222,7 @@ export default function BuiltinsConcurrentStateTest(): void {
       expect(await stateMachine.getCurrentState()).assertEqual(SimpleState.STOPPED)
     })
 
-    it('BuiltinsConcurrentStateTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testConcurrentState0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i: number = 0; i < 100; i++) {
         await stateMachine.transition(SimpleState.ACTIVE)
         await stateMachine.transition(SimpleState.IDLE)
@@ -231,7 +231,7 @@ export default function BuiltinsConcurrentStateTest(): void {
       expect(await stateMachine.getHistoryCount()).assertEqual(200)
     })
 
-    it('BuiltinsConcurrentStateTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testConcurrentState0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       for (let i: number = 0; i < 1000; i++) {
         await stateMachine.transition(SimpleState.ACTIVE)
         await stateMachine.transition(SimpleState.PAUSED)
@@ -240,7 +240,7 @@ export default function BuiltinsConcurrentStateTest(): void {
       expect(await stateMachine.getTransitionCount()).assertEqual(3000)
     })
 
-    it('BuiltinsConcurrentStateTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testConcurrentState1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sm1: ConcurrentStateMachine = new ConcurrentStateMachine(new ArkTSUtils.locks.AsyncLock(), new collections.Array<number>())
       const sm2: ConcurrentStateMachine = new ConcurrentStateMachine(new ArkTSUtils.locks.AsyncLock(), new collections.Array<number>())
       const sm3: ConcurrentStateMachine = new ConcurrentStateMachine(new ArkTSUtils.locks.AsyncLock(), new collections.Array<number>())
@@ -271,7 +271,7 @@ export default function BuiltinsConcurrentStateTest(): void {
       await sm3.reset()
     })
 
-    it('BuiltinsConcurrentStateTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testConcurrentState1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await stateMachine.transition(SimpleState.ACTIVE)
       await stateMachine.transition(SimpleState.PAUSED)
       await stateMachine.transition(SimpleState.IDLE)

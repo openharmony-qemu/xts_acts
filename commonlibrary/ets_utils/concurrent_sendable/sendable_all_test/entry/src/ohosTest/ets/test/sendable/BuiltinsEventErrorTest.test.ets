@@ -122,31 +122,31 @@ export default function BuiltinsEventErrorTest(): void {
       await bus.reset()
     })
 
-    it('BuiltinsEventErrorTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEventError0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result: string = await bus.publishWithHandler('click', 'data', false)
       expect(result).assertEqual('ok:click')
       expect(await bus.getSuccessCount()).assertEqual(1)
     })
 
-    it('BuiltinsEventErrorTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEventError0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result: string = await bus.publishWithHandler('click', 'data', true)
       expect(result).assertEqual('error:click')
       expect(await bus.getErrorCount()).assertEqual(1)
     })
 
-    it('BuiltinsEventErrorTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testEventError0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await bus.publishWithHandler('click', 'data_1', false)
       await bus.publishWithHandler('click', 'data_2', true)
       expect(await bus.getSuccessCount()).assertEqual(1)
       expect(await bus.getErrorCount()).assertEqual(1)
     })
 
-    it('BuiltinsEventErrorTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testEventError0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await bus.publishWithHandler('click', 'data', true)
       expect(await bus.getErrorLogLength()).assertEqual(1)
     })
 
-    it('BuiltinsEventErrorTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testEventError0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
         tasks.push(new taskpool.Task(errorPublishTask, bus, 'click', false))
@@ -159,20 +159,20 @@ export default function BuiltinsEventErrorTest(): void {
       expect(await bus.getErrorCount() >= 5).assertTrue()
     })
 
-    it('BuiltinsEventErrorTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testEventError0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await bus.publishWithHandler('click', 'data', true)
       await bus.reset()
       expect(await bus.getErrorCount()).assertEqual(0)
       expect(await bus.getErrorLogLength()).assertEqual(0)
     })
 
-    it('BuiltinsEventErrorTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEventError0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.subscribe('click', 'handler_1')
       const result: string = await bus.publishWithHandler('click', 'data', false)
       expect(result).assertEqual('ok:click')
     })
 
-    it('BuiltinsEventErrorTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testEventError0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i: number = 0; i < 5; i++) {
         await bus.publishWithHandler('click', `data_${i}`, true)
       }
@@ -180,7 +180,7 @@ export default function BuiltinsEventErrorTest(): void {
       expect(await bus.getErrorLogLength()).assertEqual(5)
     })
 
-    it('BuiltinsEventErrorTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testEventError0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
         tasks.push(new taskpool.Task(errorPublishTask, bus, 'click', true))
@@ -189,7 +189,7 @@ export default function BuiltinsEventErrorTest(): void {
       expect(await bus.getErrorCount() >= 10).assertTrue()
     })
 
-    it('BuiltinsEventErrorTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testEventError1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await bus.publishWithHandler('click', 'data', false)
       await bus.publishWithHandler('hover', 'data', true)
       expect(await bus.getSuccessCount()).assertEqual(1)

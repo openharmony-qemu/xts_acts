@@ -122,28 +122,28 @@ export default function BuiltinsGlobalConfigTest(): void {
     afterAll((): void => {})
 
     /**
-     * @tc.name   BuiltinsGlobalConfigTest0100
-     * @tc.number SUB_BUILTINS_GLOBAL_CONFIG_TEST_0100
+     * @tc.name   testGlobalConfig0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIG_TEST_0100
      * @tc.desc   Verify empty config initial state
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsGlobalConfigTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testGlobalConfig0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       expect(await configManager.size()).assertEqual(0)
       expect(await configManager.getVersion()).assertEqual(0)
       expect(await configManager.getUpdateTime()).assertEqual(0)
     })
 
     /**
-     * @tc.name   BuiltinsGlobalConfigTest0200
-     * @tc.number SUB_BUILTINS_GLOBAL_CONFIG_TEST_0200
+     * @tc.name   testGlobalConfig0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIG_TEST_0200
      * @tc.desc   Verify loading initial config
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsGlobalConfigTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testGlobalConfig0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await configManager.loadConfig(
         ['app.name', 'app.version', 'debug.mode'],
         ['TestApp', '1.0.0', 'false']
@@ -153,28 +153,28 @@ export default function BuiltinsGlobalConfigTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsGlobalConfigTest0300
-     * @tc.number SUB_BUILTINS_GLOBAL_CONFIG_TEST_0300
+     * @tc.name   testGlobalConfig0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIG_TEST_0300
      * @tc.desc   Verify reading single config item
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsGlobalConfigTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testGlobalConfig0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await configManager.set('server.host', '192.168.1.100')
       const value: string | undefined = await configManager.get('server.host')
       expect(value).assertEqual('192.168.1.100')
     })
 
     /**
-     * @tc.name   BuiltinsGlobalConfigTest0400
-     * @tc.number SUB_BUILTINS_GLOBAL_CONFIG_TEST_0400
+     * @tc.name   testGlobalConfig0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIG_TEST_0400
      * @tc.desc   Verify writing single config item with version increment
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsGlobalConfigTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testGlobalConfig0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const oldVersion: number = await configManager.getVersion()
       await configManager.set('timeout', '5000')
       const newVersion: number = await configManager.getVersion()
@@ -182,28 +182,28 @@ export default function BuiltinsGlobalConfigTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsGlobalConfigTest0500
-     * @tc.number SUB_BUILTINS_GLOBAL_CONFIG_TEST_0500
+     * @tc.name   testGlobalConfig0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIG_TEST_0500
      * @tc.desc   Verify config existence check
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsGlobalConfigTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testGlobalConfig0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await configManager.set('feature.enabled', 'true')
       expect(await configManager.has('feature.enabled')).assertTrue()
       expect(await configManager.has('nonexistent')).assertFalse()
     })
 
     /**
-     * @tc.name   BuiltinsGlobalConfigTest0600
-     * @tc.number SUB_BUILTINS_GLOBAL_CONFIG_TEST_0600
+     * @tc.name   testGlobalConfig0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIG_TEST_0600
      * @tc.desc   Verify deleting config item
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsGlobalConfigTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testGlobalConfig0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await configManager.set('temp.key', 'temp_value')
       const sizeBefore: number = await configManager.size()
       const deleted: boolean = await configManager.delete('temp.key')
@@ -214,14 +214,14 @@ export default function BuiltinsGlobalConfigTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsGlobalConfigTest0700
-     * @tc.number SUB_BUILTINS_GLOBAL_CONFIG_TEST_0700
+     * @tc.name   testGlobalConfig0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIG_TEST_0700
      * @tc.desc   Verify TaskPool concurrent read 5 config items with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsGlobalConfigTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testGlobalConfig0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await configManager.loadConfig(
         ['key1', 'key2', 'key3', 'key4', 'key5'],
         ['value1', 'value2', 'value3', 'value4', 'value5']
@@ -241,14 +241,14 @@ export default function BuiltinsGlobalConfigTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsGlobalConfigTest0800
-     * @tc.number SUB_BUILTINS_GLOBAL_CONFIG_TEST_0800
+     * @tc.name   testGlobalConfig0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIG_TEST_0800
      * @tc.desc   Verify TaskPool concurrent read 10 config items stress test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsGlobalConfigTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testGlobalConfig0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const keys: string[] = []
       const values: string[] = []
       for (let i = 1; i <= 10; i++) {
@@ -272,14 +272,14 @@ export default function BuiltinsGlobalConfigTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsGlobalConfigTest0900
-     * @tc.number SUB_BUILTINS_GLOBAL_CONFIG_TEST_0900
+     * @tc.name   testGlobalConfig0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIG_TEST_0900
      * @tc.desc   Verify TaskPool concurrent write config with version consistency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsGlobalConfigTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testGlobalConfig0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const initialVersion: number = await configManager.getVersion()
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 5; i++) {
@@ -295,14 +295,14 @@ export default function BuiltinsGlobalConfigTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsGlobalConfigTest1000
-     * @tc.number SUB_BUILTINS_GLOBAL_CONFIG_TEST_1000
+     * @tc.name   testGlobalConfig1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIG_TEST_1000
      * @tc.desc   Verify concurrent read/write mixed with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsGlobalConfigTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testGlobalConfig1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await configManager.loadConfig(['read1', 'read2'], ['base1', 'base2'])
       const readTasks: taskpool.Task[] = []
       const writeTasks: taskpool.Task[] = []
@@ -325,14 +325,14 @@ export default function BuiltinsGlobalConfigTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsGlobalConfigTest1100
-     * @tc.number SUB_BUILTINS_GLOBAL_CONFIG_TEST_1100
+     * @tc.name   testGlobalConfig1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIG_TEST_1100
      * @tc.desc   Verify config dynamic update with version and timestamp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsGlobalConfigTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testGlobalConfig1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await configManager.loadConfig(['initial'], ['value'])
       const version1: number = await configManager.getVersion()
       const time1: number = await configManager.getUpdateTime()
@@ -344,14 +344,14 @@ export default function BuiltinsGlobalConfigTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsGlobalConfigTest1200
-     * @tc.number SUB_BUILTINS_GLOBAL_CONFIG_TEST_1200
+     * @tc.name   testGlobalConfig1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_GLOBAL_CONFIG_TEST_1200
      * @tc.desc   Verify TaskPool concurrent config existence check
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsGlobalConfigTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testGlobalConfig1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await configManager.set('check_key', 'check_value')
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 5; i++) {

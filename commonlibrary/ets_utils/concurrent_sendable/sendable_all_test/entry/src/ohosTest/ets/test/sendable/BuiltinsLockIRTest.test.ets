@@ -177,14 +177,14 @@ export default function BuiltinsLockIRTest(): void {
     afterEach((): void => {})
     afterAll((): void => {})
 
-    it('BuiltinsLockIRTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLockIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const resource: IRLockResource = new IRLockResource(new ArkTSUtils.locks.AsyncLock())
       const status: number[] = await resource.getLockStatus()
       expect(status[0]).assertEqual(0)
       expect(status[1]).assertEqual(0)
     })
 
-    it('BuiltinsLockIRTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLockIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const data: ProtectedData = new ProtectedData(new ArkTSUtils.locks.AsyncLock())
       await data.update(100)
       const props: number[] = await data.getIRProperties()
@@ -192,20 +192,20 @@ export default function BuiltinsLockIRTest(): void {
       expect(props[1]).assertEqual(1)
     })
 
-    it('BuiltinsLockIRTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testLockIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const state: ConditionState = new ConditionState(new ArkTSUtils.locks.AsyncLock(), new ArkTSUtils.locks.ConditionVariable())
       await state.incrementWait()
       expect(await state.getWaitCount()).assertEqual(1)
     })
 
-    it('BuiltinsLockIRTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testLockIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const resource1: SharedLockResource = new SharedLockResource(new ArkTSUtils.locks.AsyncLock())
       const resource2: SharedLockResource = new SharedLockResource(new ArkTSUtils.locks.AsyncLock())
       expect(resource1.data_).assertEqual(0)
       expect(resource2.data_).assertEqual(0)
     })
 
-    it('BuiltinsLockIRTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testLockIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const data: ConcurrentLockData = new ConcurrentLockData(new ArkTSUtils.locks.AsyncLock())
       const promises: Promise<number>[] = []
       for (let i = 0; i < 50; i++) {
@@ -215,7 +215,7 @@ export default function BuiltinsLockIRTest(): void {
       expect(await data.getCounter()).assertEqual(50)
     })
 
-    it('BuiltinsLockIRTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testLockIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const test: LockPerformanceTest = new LockPerformanceTest(new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 100; i++) {
         const value: number = await test.getValue()
@@ -223,7 +223,7 @@ export default function BuiltinsLockIRTest(): void {
       }
     })
 
-    it('BuiltinsLockIRTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testLockIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const counter: WaitCounter = new WaitCounter(new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 10; i++) {
         await counter.incrementWaiting()
@@ -231,7 +231,7 @@ export default function BuiltinsLockIRTest(): void {
       expect(await counter.getWaiting()).assertEqual(10)
     })
 
-    it('BuiltinsLockIRTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testLockIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const lockObj: CrossThreadLock = new CrossThreadLock(new ArkTSUtils.locks.AsyncLock())
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 10; i++) {

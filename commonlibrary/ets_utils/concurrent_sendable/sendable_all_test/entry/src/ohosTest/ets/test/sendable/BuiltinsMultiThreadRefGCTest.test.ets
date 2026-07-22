@@ -127,14 +127,14 @@ export default function BuiltinsMultiThreadRefGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMultiThreadRefGCTest0100
-     * @tc.number SUB_BUILTINS_MULTI_THREAD_REF_GC_TEST_0100
+     * @tc.name   testMultiThreadRefGC0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTI_THREAD_REF_GC_TEST_0100
      * @tc.desc   Verify TaskPool reference release after task completion
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsMultiThreadRefGCTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testMultiThreadRefGC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const data: RefCountData = await manager.create('ref1', 1)
       const task: taskpool.Task = new taskpool.Task(accessRefDataTask, data)
       await taskpool.execute(task)
@@ -143,14 +143,14 @@ export default function BuiltinsMultiThreadRefGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMultiThreadRefGCTest0200
-     * @tc.number SUB_BUILTINS_MULTI_THREAD_REF_GC_TEST_0200
+     * @tc.name   testMultiThreadRefGC0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTI_THREAD_REF_GC_TEST_0200
      * @tc.desc   Verify multi-TaskPool concurrent reference with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMultiThreadRefGCTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMultiThreadRefGC0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: RefCountData = await manager.create('ref_multi', 2)
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
@@ -161,14 +161,14 @@ export default function BuiltinsMultiThreadRefGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMultiThreadRefGCTest0300
-     * @tc.number SUB_BUILTINS_MULTI_THREAD_REF_GC_TEST_0300
+     * @tc.name   testMultiThreadRefGC0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTI_THREAD_REF_GC_TEST_0300
      * @tc.desc   Verify main thread + TaskPool reference - all released after GC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMultiThreadRefGCTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMultiThreadRefGC0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: RefCountData = await manager.create('main_tp', 3)
       expect(data.getId()).assertEqual(3)
 
@@ -178,14 +178,14 @@ export default function BuiltinsMultiThreadRefGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMultiThreadRefGCTest0400
-     * @tc.number SUB_BUILTINS_MULTI_THREAD_REF_GC_TEST_0400
+     * @tc.name   testMultiThreadRefGC0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTI_THREAD_REF_GC_TEST_0400
      * @tc.desc   Verify all references released triggers GC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMultiThreadRefGCTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMultiThreadRefGC0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: RefCountData = await manager.create('all_release', 4)
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 3; i++) {
@@ -196,14 +196,14 @@ export default function BuiltinsMultiThreadRefGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMultiThreadRefGCTest0500
-     * @tc.number SUB_BUILTINS_MULTI_THREAD_REF_GC_TEST_0500
+     * @tc.name   testMultiThreadRefGC0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTI_THREAD_REF_GC_TEST_0500
      * @tc.desc   Verify partial reference release does not trigger GC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMultiThreadRefGCTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMultiThreadRefGC0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: RefCountData = await manager.create('partial', 5)
       const task1: taskpool.Task = new taskpool.Task(accessRefDataTask, data)
       await taskpool.execute(task1)
@@ -213,14 +213,14 @@ export default function BuiltinsMultiThreadRefGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMultiThreadRefGCTest0600
-     * @tc.number SUB_BUILTINS_MULTI_THREAD_REF_GC_TEST_0600
+     * @tc.name   testMultiThreadRefGC0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTI_THREAD_REF_GC_TEST_0600
      * @tc.desc   Verify sendData passing Sendable reference count change
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMultiThreadRefGCTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMultiThreadRefGC0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: RefCountData = await manager.create('sendable', 6)
       const task: taskpool.Task = new taskpool.Task(accessRefDataTask, data)
       await taskpool.execute(task)
@@ -230,14 +230,14 @@ export default function BuiltinsMultiThreadRefGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMultiThreadRefGCTest0700
-     * @tc.number SUB_BUILTINS_MULTI_THREAD_REF_GC_TEST_0700
+     * @tc.name   testMultiThreadRefGC0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTI_THREAD_REF_GC_TEST_0700
      * @tc.desc   Verify reference release order does not affect GC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMultiThreadRefGCTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMultiThreadRefGC0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data1: RefCountData = await manager.create('order1', 7)
       const data2: RefCountData = await manager.create('order2', 8)
 
@@ -251,28 +251,28 @@ export default function BuiltinsMultiThreadRefGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMultiThreadRefGCTest0800
-     * @tc.number SUB_BUILTINS_MULTI_THREAD_REF_GC_TEST_0800
+     * @tc.name   testMultiThreadRefGC0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTI_THREAD_REF_GC_TEST_0800
      * @tc.desc   Verify reference count initial value is 1 on creation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsMultiThreadRefGCTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testMultiThreadRefGC0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const data: RefCountData = await manager.create('init_ref', 9)
       expect(data.getId()).assertEqual(9)
       expect(data.getAccessCount()).assertEqual(0)
     })
 
     /**
-     * @tc.name   BuiltinsMultiThreadRefGCTest0900
-     * @tc.number SUB_BUILTINS_MULTI_THREAD_REF_GC_TEST_0900
+     * @tc.name   testMultiThreadRefGC0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTI_THREAD_REF_GC_TEST_0900
      * @tc.desc   Verify reference count increase with multiple reference passing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMultiThreadRefGCTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMultiThreadRefGC0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: RefCountData = await manager.create('multi_ref', 10)
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
@@ -283,14 +283,14 @@ export default function BuiltinsMultiThreadRefGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMultiThreadRefGCTest1000
-     * @tc.number SUB_BUILTINS_MULTI_THREAD_REF_GC_TEST_1000
+     * @tc.name   testMultiThreadRefGC1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTI_THREAD_REF_GC_TEST_1000
      * @tc.desc   Verify reference count cross-thread synchronization
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMultiThreadRefGCTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMultiThreadRefGC1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: RefCountData = await manager.create('cross_thread', 11)
       const task: taskpool.Task = new taskpool.Task(readRefDataTask, data)
       const result: Object = await taskpool.execute(task)
@@ -301,14 +301,14 @@ export default function BuiltinsMultiThreadRefGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMultiThreadRefGCTest1100
-     * @tc.number SUB_BUILTINS_MULTI_THREAD_REF_GC_TEST_1100
+     * @tc.name   testMultiThreadRefGC1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTI_THREAD_REF_GC_TEST_1100
      * @tc.desc   Verify concurrent create with 3 tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMultiThreadRefGCTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMultiThreadRefGC1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 3; i++) {
         tasks.push(new taskpool.Task(createRefDataTask, manager, `con3_${i}`, i))
@@ -318,14 +318,14 @@ export default function BuiltinsMultiThreadRefGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMultiThreadRefGCTest1200
-     * @tc.number SUB_BUILTINS_MULTI_THREAD_REF_GC_TEST_1200
+     * @tc.name   testMultiThreadRefGC1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTI_THREAD_REF_GC_TEST_1200
      * @tc.desc   Verify concurrent create with 5 tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMultiThreadRefGCTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMultiThreadRefGC1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
         tasks.push(new taskpool.Task(createRefDataTask, manager, `con5_${i}`, i))
@@ -335,14 +335,14 @@ export default function BuiltinsMultiThreadRefGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMultiThreadRefGCTest1300
-     * @tc.number SUB_BUILTINS_MULTI_THREAD_REF_GC_TEST_1300
+     * @tc.name   testMultiThreadRefGC1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MULTI_THREAD_REF_GC_TEST_1300
      * @tc.desc   Verify reference count verification - reference chain integrity
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMultiThreadRefGCTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMultiThreadRefGC1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: RefCountData = await manager.create('chain', 13)
       const task1: taskpool.Task = new taskpool.Task(readRefDataTask, data)
       const r1: Object = await taskpool.execute(task1)

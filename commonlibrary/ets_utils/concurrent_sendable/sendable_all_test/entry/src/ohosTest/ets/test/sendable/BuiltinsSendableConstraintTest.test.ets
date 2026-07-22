@@ -58,14 +58,14 @@ export default function BuiltinsSendableConstraintTest(): void {
     afterAll((): void => {})
 
     /**
-     * @tc.name   BuiltinsSendableConstraintTest0100
-     * @tc.number SUB_BUILTINS_SENDABLE_CONSTRAINT_TEST_0100
+     * @tc.name   testSendableConstraint0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINT_TEST_0100
      * @tc.desc   Verify valid Sendable class works as TaskPool param correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSendableConstraintTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableConstraint0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const instance = new ValidSendableClass()
       instance.value_ = 100
       const task = new taskpool.Task(validSendableParamFunc, instance)
@@ -74,14 +74,14 @@ export default function BuiltinsSendableConstraintTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSendableConstraintTest0200
-     * @tc.number SUB_BUILTINS_SENDABLE_CONSTRAINT_TEST_0200
+     * @tc.name   testSendableConstraint0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINT_TEST_0200
      * @tc.desc   Verify valid Sendable class modification works in TaskPool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSendableConstraintTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableConstraint0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const instance = new ValidSendableClass()
       instance.value_ = 0
       const task = new taskpool.Task(modifyValidSendableFunc, instance)
@@ -91,41 +91,41 @@ export default function BuiltinsSendableConstraintTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSendableConstraintTest0300
-     * @tc.number SUB_BUILTINS_SENDABLE_CONSTRAINT_TEST_0300
+     * @tc.name   testSendableConstraint0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINT_TEST_0300
      * @tc.desc   Verify normal size data serialization works correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSendableConstraintTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableConstraint0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const task = new taskpool.Task(normalDataFunc)
       const result = await taskpool.execute(task) as string
       expect(result).assertEqual('normal_size_data')
     })
 
     /**
-     * @tc.name   BuiltinsSendableConstraintTest0400
-     * @tc.number SUB_BUILTINS_SENDABLE_CONSTRAINT_TEST_0400
+     * @tc.name   testSendableConstraint0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINT_TEST_0400
      * @tc.desc   Verify @Sendable class property must be initialized
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSendableConstraintTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableConstraint0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const instance = new ValidSendableClass()
       expect(instance.value_).assertEqual(0)
     })
 
     /**
-     * @tc.name   BuiltinsSendableConstraintTest0500
-     * @tc.number SUB_BUILTINS_SENDABLE_CONSTRAINT_TEST_0500
+     * @tc.name   testSendableConstraint0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINT_TEST_0500
      * @tc.desc   Verify @Sendable class property can be read and written
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSendableConstraintTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableConstraint0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const instance = new ValidSendableClass()
       instance.value_ = 42
       expect(instance.value_).assertEqual(42)
@@ -134,14 +134,14 @@ export default function BuiltinsSendableConstraintTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSendableConstraintTest0600
-     * @tc.number SUB_BUILTINS_SENDABLE_CONSTRAINT_TEST_0600
+     * @tc.name   testSendableConstraint0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINT_TEST_0600
      * @tc.desc   Verify sequential tasks concurrently modify Sendable instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSendableConstraintTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testSendableConstraint0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const instance = new ValidSendableClass()
       for (let i = 0; i < 5; i++) {
         const task = new taskpool.Task(modifyValidSendableFunc, instance)
@@ -151,14 +151,14 @@ export default function BuiltinsSendableConstraintTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSendableConstraintTest0700
-     * @tc.number SUB_BUILTINS_SENDABLE_CONSTRAINT_TEST_0700
+     * @tc.name   testSendableConstraint0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINT_TEST_0700
      * @tc.desc   Verify @Sendable class instance can be passed to multiple sequential tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSendableConstraintTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableConstraint0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const instance = new ValidSendableClass()
       instance.value_ = 10
       const task1 = new taskpool.Task(validSendableParamFunc, instance)
@@ -171,14 +171,14 @@ export default function BuiltinsSendableConstraintTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSendableConstraintTest0800
-     * @tc.number SUB_BUILTINS_SENDABLE_CONSTRAINT_TEST_0800
+     * @tc.name   testSendableConstraint0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_CONSTRAINT_TEST_0800
      * @tc.desc   Verify large Sendable collections.Array can be shared across concurrent tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSendableConstraintTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableConstraint0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const arr = new collections.Array<number>()
       for (let i = 0; i < 1000; i++) {
         arr.push(i)

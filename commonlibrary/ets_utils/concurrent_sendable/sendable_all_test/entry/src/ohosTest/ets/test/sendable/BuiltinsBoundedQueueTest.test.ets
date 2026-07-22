@@ -98,18 +98,18 @@ export default function BuiltinsBoundedQueueTest(): void {
     afterEach((): void => {})
     afterAll((): void => {})
 
-    it('BuiltinsBoundedQueueTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testBoundedQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       expect(await queue.size()).assertEqual(0)
       expect(await queue.isEmpty()).assertTrue()
     })
 
-    it('BuiltinsBoundedQueueTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testBoundedQueue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const success: boolean = await queue.offer(1)
       expect(success).assertTrue()
       expect(await queue.size()).assertEqual(1)
     })
 
-    it('BuiltinsBoundedQueueTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testBoundedQueue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 10; i++) {
         await queue.offer(i)
       }
@@ -118,7 +118,7 @@ export default function BuiltinsBoundedQueueTest(): void {
       expect(success).assertFalse()
     })
 
-    it('BuiltinsBoundedQueueTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testBoundedQueue0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await queue.offer(1)
       await queue.offer(2)
       const item1: number | undefined = await queue.poll()
@@ -127,12 +127,12 @@ export default function BuiltinsBoundedQueueTest(): void {
       expect(item2).assertEqual(2)
     })
 
-    it('BuiltinsBoundedQueueTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testBoundedQueue0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const item: number | undefined = await queue.poll()
       expect(item === undefined).assertTrue()
     })
 
-    it('BuiltinsBoundedQueueTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testBoundedQueue0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await queue.offer(1)
       await queue.offer(2)
       const item: number | undefined = await queue.peek()
@@ -140,7 +140,7 @@ export default function BuiltinsBoundedQueueTest(): void {
       expect(await queue.size()).assertEqual(2)
     })
 
-    it('BuiltinsBoundedQueueTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testBoundedQueue0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const promises: Promise<boolean>[] = []
       for (let i = 0; i < 20; i++) {
         promises.push(queue.offer(i))
@@ -156,7 +156,7 @@ export default function BuiltinsBoundedQueueTest(): void {
       expect(await queue.size()).assertEqual(10)
     })
 
-    it('BuiltinsBoundedQueueTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testBoundedQueue0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i = 0; i < 10; i++) {
         await queue.offer(i)
       }
@@ -175,7 +175,7 @@ export default function BuiltinsBoundedQueueTest(): void {
       expect(await queue.isEmpty()).assertTrue()
     })
 
-    it('BuiltinsBoundedQueueTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testBoundedQueue0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 10; i++) {
         tasks.push(new taskpool.Task(offerTask, i))
@@ -191,7 +191,7 @@ export default function BuiltinsBoundedQueueTest(): void {
       expect(await queue.size()).assertLargerOrEqual(1)
     })
 
-    it('BuiltinsBoundedQueueTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testBoundedQueue1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 10; i++) {
         await queue.offer(i)
       }
@@ -201,7 +201,7 @@ export default function BuiltinsBoundedQueueTest(): void {
       }
     })
 
-    it('BuiltinsBoundedQueueTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testBoundedQueue1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const smallQueue: BoundedQueue = new BoundedQueue(5, new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 5; i++) {
         const success: boolean = await smallQueue.offer(i)
@@ -212,7 +212,7 @@ export default function BuiltinsBoundedQueueTest(): void {
       expect(overflow).assertFalse()
     })
 
-    it('BuiltinsBoundedQueueTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testBoundedQueue1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i = 0; i < 10; i++) {
         await queue.offer(i)
       }

@@ -116,7 +116,7 @@ export default function BuiltinsMultiStageProgressTest(): void {
       await progress.reset()
     })
 
-    it('BuiltinsMultiStageProgressTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testMultiStageProgress0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const stages: collections.Array<string> = new collections.Array<string>()
       stages.push('init')
       stages.push('process')
@@ -126,7 +126,7 @@ export default function BuiltinsMultiStageProgressTest(): void {
       expect(await progress.getCurrentStage()).assertEqual('init')
     })
 
-    it('BuiltinsMultiStageProgressTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testMultiStageProgress0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const stages: collections.Array<string> = new collections.Array<string>()
       stages.push('init')
       await progress.setStages(stages)
@@ -135,7 +135,7 @@ export default function BuiltinsMultiStageProgressTest(): void {
       expect(await progress.getTotalProgress()).assertEqual(50)
     })
 
-    it('BuiltinsMultiStageProgressTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testMultiStageProgress0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const stages: collections.Array<string> = new collections.Array<string>()
       stages.push('init')
       stages.push('process')
@@ -145,7 +145,7 @@ export default function BuiltinsMultiStageProgressTest(): void {
       expect(await progress.getCompletedStages()).assertEqual(1)
     })
 
-    it('BuiltinsMultiStageProgressTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testMultiStageProgress0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const stages: collections.Array<string> = new collections.Array<string>()
       stages.push('init')
       stages.push('process')
@@ -158,7 +158,7 @@ export default function BuiltinsMultiStageProgressTest(): void {
       expect(await progress.getTotalProgress()).assertEqual(100)
     })
 
-    it('BuiltinsMultiStageProgressTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testMultiStageProgress0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const stages: collections.Array<string> = new collections.Array<string>()
       stages.push('init')
       stages.push('process')
@@ -169,7 +169,7 @@ export default function BuiltinsMultiStageProgressTest(): void {
       expect(await progress.getTotalProgress()).assertEqual(50)
     })
 
-    it('BuiltinsMultiStageProgressTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testMultiStageProgress0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const stages: collections.Array<string> = new collections.Array<string>()
       stages.push('init')
       stages.push('process')
@@ -178,7 +178,7 @@ export default function BuiltinsMultiStageProgressTest(): void {
       expect(await progress.getStageProgress('init')).assertEqual(100)
     })
 
-    it('BuiltinsMultiStageProgressTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testMultiStageProgress0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const stages: collections.Array<string> = new collections.Array<string>()
       stages.push('init')
       stages.push('process')
@@ -187,7 +187,7 @@ export default function BuiltinsMultiStageProgressTest(): void {
       expect(await progress.getStageProgress('unknown')).assertEqual(0)
     })
 
-    it('BuiltinsMultiStageProgressTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testMultiStageProgress0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const stages: collections.Array<string> = new collections.Array<string>()
       stages.push('init')
       stages.push('process')
@@ -202,7 +202,7 @@ export default function BuiltinsMultiStageProgressTest(): void {
       expect(await progress.isAllCompleted()).assertTrue()
     })
 
-    it('BuiltinsMultiStageProgressTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testMultiStageProgress0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const stages: collections.Array<string> = new collections.Array<string>()
       stages.push('init')
       stages.push('process')
@@ -214,7 +214,7 @@ export default function BuiltinsMultiStageProgressTest(): void {
       expect(await progress.getCompletedStages()).assertEqual(0)
     })
 
-    it('BuiltinsMultiStageProgressTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testMultiStageProgress1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const stages: collections.Array<string> = new collections.Array<string>()
       stages.push('init')
       stages.push('process')
@@ -224,7 +224,7 @@ export default function BuiltinsMultiStageProgressTest(): void {
       expect(await progress.getTotalProgress()).assertEqual(65)
     })
 
-    it('BuiltinsMultiStageProgressTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testMultiStageProgress1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const stages: collections.Array<string> = new collections.Array<string>()
       stages.push('init')
       await progress.setStages(stages)
@@ -232,7 +232,7 @@ export default function BuiltinsMultiStageProgressTest(): void {
       expect(await progress.getStageProgress('init')).assertEqual(150)
     })
 
-    it('BuiltinsMultiStageProgressTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testMultiStageProgress1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const emptyStages: collections.Array<string> = new collections.Array<string>()
       await progress.setStages(emptyStages)
       expect(await progress.getTotalProgress()).assertEqual(0)

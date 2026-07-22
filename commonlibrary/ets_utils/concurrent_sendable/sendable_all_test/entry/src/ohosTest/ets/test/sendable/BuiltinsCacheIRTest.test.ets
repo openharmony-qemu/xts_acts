@@ -176,14 +176,14 @@ export default function BuiltinsCacheIRTest(): void {
     afterEach((): void => {})
 
     /**
-     * @tc.name   BuiltinsCacheIRTest0100
-     * @tc.number SUB_BUILTINS_CACHE_IR_TEST_0100
+     * @tc.name   testCacheIR0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CACHE_IR_TEST_0100
      * @tc.desc   Verify LRUCache fixed property IR verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsCacheIRTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCacheIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const cache: IRLRUCache = new IRLRUCache(new collections.Map<string, string>())
       const stats: number[] = cache.getIRStats()
       expect(stats[0]).assertEqual(1024)
@@ -191,14 +191,14 @@ export default function BuiltinsCacheIRTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsCacheIRTest0200
-     * @tc.number SUB_BUILTINS_CACHE_IR_TEST_0200
+     * @tc.name   testCacheIR0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CACHE_IR_TEST_0200
      * @tc.desc   Verify cache access IC cache verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsCacheIRTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCacheIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const cache: ICLRUCache = new ICLRUCache(new collections.Map<string, string>())
       cache.set('key1', 'value1')
       for (let i = 0; i < 100; i++) {
@@ -208,28 +208,28 @@ export default function BuiltinsCacheIRTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsCacheIRTest0300
-     * @tc.number SUB_BUILTINS_CACHE_IR_TEST_0300
+     * @tc.name   testCacheIR0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CACHE_IR_TEST_0300
      * @tc.desc   Verify same capacity LRUCache HiddenClass sharing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsCacheIRTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCacheIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const cache1: StandardLRUCache = new StandardLRUCache(new collections.Map<string, string>())
       const cache2: StandardLRUCache = new StandardLRUCache(new collections.Map<string, string>())
       expect(cache1.capacity_).assertEqual(cache2.capacity_)
     })
 
     /**
-     * @tc.name   BuiltinsCacheIRTest0400
-     * @tc.number SUB_BUILTINS_CACHE_IR_TEST_0400
+     * @tc.name   testCacheIR0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CACHE_IR_TEST_0400
      * @tc.desc   Verify LRUCache element count > 1024 dictionary mode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsCacheIRTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCacheIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const cache: LargeLRUCache = new LargeLRUCache(new collections.Map<string, number>())
       for (let i = 0; i < 1025; i++) {
         cache.cache_.set(`cache_${i}`, i)
@@ -239,14 +239,14 @@ export default function BuiltinsCacheIRTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsCacheIRTest0500
-     * @tc.number SUB_BUILTINS_CACHE_IR_TEST_0500
+     * @tc.name   testCacheIR0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CACHE_IR_TEST_0500
      * @tc.desc   Verify concurrent cache access IC verification with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsCacheIRTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testCacheIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const cache: ConcurrentLRUCache = new ConcurrentLRUCache(new collections.Map<string, string>())
       for (let i = 0; i < 100; i++) {
         cache.cache_.set(`k_${i}`, `v_${i}`)
@@ -266,27 +266,27 @@ export default function BuiltinsCacheIRTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsCacheIRTest0600
-     * @tc.number SUB_BUILTINS_CACHE_IR_TEST_0600
+     * @tc.name   testCacheIR0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CACHE_IR_TEST_0600
      * @tc.desc   Verify cache capacity property IR access verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsCacheIRTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCacheIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const cache: CapacityCache = new CapacityCache()
       expect(cache.getCapacity()).assertEqual(500)
     })
 
     /**
-     * @tc.name   BuiltinsCacheIRTest0700
-     * @tc.number SUB_BUILTINS_CACHE_IR_TEST_0700
+     * @tc.name   testCacheIR0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CACHE_IR_TEST_0700
      * @tc.desc   Verify cache hit rate property IR verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsCacheIRTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCacheIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const cache: HitRateCache = new HitRateCache()
       for (let i = 0; i < 50; i++) {
         cache.recordHit()
@@ -295,14 +295,14 @@ export default function BuiltinsCacheIRTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsCacheIRTest0800
-     * @tc.number SUB_BUILTINS_CACHE_IR_TEST_0800
+     * @tc.name   testCacheIR0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CACHE_IR_TEST_0800
      * @tc.desc   Verify cache key-value IR access verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsCacheIRTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCacheIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const cache: KeyValueCache = new KeyValueCache(new collections.Map<string, number>())
       cache.entries_.set('key_a', 100)
       cache.entries_.set('key_b', 200)
@@ -311,14 +311,14 @@ export default function BuiltinsCacheIRTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsCacheIRTest0900
-     * @tc.number SUB_BUILTINS_CACHE_IR_TEST_0900
+     * @tc.name   testCacheIR0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CACHE_IR_TEST_0900
      * @tc.desc   Verify cache eviction count IR verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsCacheIRTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCacheIR0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const cache: EvictionCache = new EvictionCache()
       for (let i = 0; i < 5; i++) {
         cache.incrementEviction()
@@ -327,14 +327,14 @@ export default function BuiltinsCacheIRTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsCacheIRTest1000
-     * @tc.number SUB_BUILTINS_CACHE_IR_TEST_1000
+     * @tc.name   testCacheIR1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CACHE_IR_TEST_1000
      * @tc.desc   Verify multiple cache HiddenClass sharing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsCacheIRTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCacheIR1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const cache1: SharedCache = new SharedCache()
       const cache2: SharedCache = new SharedCache()
       const cache3: SharedCache = new SharedCache()
@@ -344,14 +344,14 @@ export default function BuiltinsCacheIRTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsCacheIRTest1100
-     * @tc.number SUB_BUILTINS_CACHE_IR_TEST_1100
+     * @tc.name   testCacheIR1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CACHE_IR_TEST_1100
      * @tc.desc   Verify cache cross-thread IR consistency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsCacheIRTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testCacheIR1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const cache: CrossThreadCache = new CrossThreadCache(new collections.Map<string, number>())
       cache.data_.set('shared_key', 42)
       const tasks: taskpool.Task[] = []
@@ -369,14 +369,14 @@ export default function BuiltinsCacheIRTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsCacheIRTest1200
-     * @tc.number SUB_BUILTINS_CACHE_IR_TEST_1200
+     * @tc.name   testCacheIR1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CACHE_IR_TEST_1200
      * @tc.desc   Verify cache element count boundary 1024
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsCacheIRTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCacheIR1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const cache: BoundaryCache = new BoundaryCache(new collections.Map<string, number>())
       for (let i = 0; i < 1024; i++) {
         cache.entries_.set(`entry_${i}`, i)
@@ -385,14 +385,14 @@ export default function BuiltinsCacheIRTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsCacheIRTest1300
-     * @tc.number SUB_BUILTINS_CACHE_IR_TEST_1300
+     * @tc.name   testCacheIR1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CACHE_IR_TEST_1300
      * @tc.desc   Verify cache element count 1025 dictionary mode trigger
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsCacheIRTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testCacheIR1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const cache: BoundaryCache = new BoundaryCache(new collections.Map<string, number>())
       for (let i = 0; i < 1025; i++) {
         cache.entries_.set(`entry_${i}`, i)

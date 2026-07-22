@@ -37,66 +37,66 @@ export default function BuiltinsSendableFunctionTest(): void {
     afterAll((): void => {})
 
     /**
-     * @tc.name   BuiltinsSendableFunctionTest0100
-     * @tc.number SUB_BUILTINS_SENDABLE_FUNCTION_TEST_0100
+     * @tc.name   testSendableFunction0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_FUNCTION_TEST_0100
      * @tc.desc   Verify @Sendable function with no parameters returns correct value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSendableFunctionTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableFunction0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result = sendableNoParamFunc()
       expect(result).assertEqual(42)
     })
 
     /**
-     * @tc.name   BuiltinsSendableFunctionTest0200
-     * @tc.number SUB_BUILTINS_SENDABLE_FUNCTION_TEST_0200
+     * @tc.name   testSendableFunction0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_FUNCTION_TEST_0200
      * @tc.desc   Verify @Sendable function with single parameter returns correct value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSendableFunctionTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableFunction0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result = sendableSingleParamFunc(5)
       expect(result).assertEqual(10)
     })
 
     /**
-     * @tc.name   BuiltinsSendableFunctionTest0300
-     * @tc.number SUB_BUILTINS_SENDABLE_FUNCTION_TEST_0300
+     * @tc.name   testSendableFunction0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_FUNCTION_TEST_0300
      * @tc.desc   Verify @Sendable function with multiple parameters returns correct value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSendableFunctionTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableFunction0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result = sendableMultiParamFunc(10, 'test')
       expect(result).assertEqual('test_10')
     })
 
     /**
-     * @tc.name   BuiltinsSendableFunctionTest0400
-     * @tc.number SUB_BUILTINS_SENDABLE_FUNCTION_TEST_0400
+     * @tc.name   testSendableFunction0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_FUNCTION_TEST_0400
      * @tc.desc   Verify @Sendable function returning Sendable class instance works correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSendableFunctionTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableFunction0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result = sendableReturnClassFunc()
       expect(result.count_).assertEqual(100)
     })
 
     /**
-     * @tc.name   BuiltinsSendableFunctionTest0500
-     * @tc.number SUB_BUILTINS_SENDABLE_FUNCTION_TEST_0500
+     * @tc.name   testSendableFunction0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_FUNCTION_TEST_0500
      * @tc.desc   Verify @Sendable function can be called inside TaskPool task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsSendableFunctionTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testSendableFunction0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const task = new taskpool.Task(callSendableFuncInTaskPool)
       const result = await taskpool.execute(task) as number
       expect(result).assertEqual(42)

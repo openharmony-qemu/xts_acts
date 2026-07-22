@@ -148,14 +148,14 @@ export default function BuiltinsServiceLifecycleTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsServiceLifecycleTest0100
-     * @tc.number SUB_BUILTINS_SERVICE_LIFECYCLE_TEST_0100
+     * @tc.name   testServiceLifecycle0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICE_LIFECYCLE_TEST_0100
      * @tc.desc   Verify service creation state
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsServiceLifecycleTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceLifecycle0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const service: LifecycleManagedService = await manager.create('testService')
       expect(service.name).assertEqual('testService')
       expect(service.state_).assertEqual(ServiceState.CREATED)
@@ -163,14 +163,14 @@ export default function BuiltinsServiceLifecycleTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsServiceLifecycleTest0200
-     * @tc.number SUB_BUILTINS_SERVICE_LIFECYCLE_TEST_0200
+     * @tc.name   testServiceLifecycle0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICE_LIFECYCLE_TEST_0200
      * @tc.desc   Verify service initialization state transition
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsServiceLifecycleTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceLifecycle0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await manager.create('initService')
       const result: boolean = await manager.initialize('initService')
       expect(result).assertTrue()
@@ -182,14 +182,14 @@ export default function BuiltinsServiceLifecycleTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsServiceLifecycleTest0300
-     * @tc.number SUB_BUILTINS_SERVICE_LIFECYCLE_TEST_0300
+     * @tc.name   testServiceLifecycle0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICE_LIFECYCLE_TEST_0300
      * @tc.desc   Verify service start from initialized to running
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsServiceLifecycleTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceLifecycle0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await manager.create('startService')
       await manager.initialize('startService')
       const result: boolean = await manager.start('startService')
@@ -200,14 +200,14 @@ export default function BuiltinsServiceLifecycleTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsServiceLifecycleTest0400
-     * @tc.number SUB_BUILTINS_SERVICE_LIFECYCLE_TEST_0400
+     * @tc.name   testServiceLifecycle0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICE_LIFECYCLE_TEST_0400
      * @tc.desc   Verify service stop from running to stopped
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsServiceLifecycleTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceLifecycle0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await manager.create('stopService')
       await manager.initialize('stopService')
       await manager.start('stopService')
@@ -220,14 +220,14 @@ export default function BuiltinsServiceLifecycleTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsServiceLifecycleTest0500
-     * @tc.number SUB_BUILTINS_SERVICE_LIFECYCLE_TEST_0500
+     * @tc.name   testServiceLifecycle0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICE_LIFECYCLE_TEST_0500
      * @tc.desc   Verify complete lifecycle from created to destroyed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsServiceLifecycleTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceLifecycle0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await manager.create('fullService')
       await manager.initialize('fullService')
       await manager.start('fullService')
@@ -238,14 +238,14 @@ export default function BuiltinsServiceLifecycleTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsServiceLifecycleTest0600
-     * @tc.number SUB_BUILTINS_SERVICE_LIFECYCLE_TEST_0600
+     * @tc.name   testServiceLifecycle0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICE_LIFECYCLE_TEST_0600
      * @tc.desc   Verify invalid state transition returns false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsServiceLifecycleTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceLifecycle0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await manager.create('invalidService')
       const startResult: boolean = await manager.start('invalidService')
       expect(startResult).assertFalse()
@@ -255,14 +255,14 @@ export default function BuiltinsServiceLifecycleTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsServiceLifecycleTest0700
-     * @tc.number SUB_BUILTINS_SERVICE_LIFECYCLE_TEST_0700
+     * @tc.name   testServiceLifecycle0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICE_LIFECYCLE_TEST_0700
      * @tc.desc   Verify multi-service concurrent lifecycle management
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsServiceLifecycleTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceLifecycle0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
         tasks.push(new taskpool.Task(createServiceTask, manager, `svc_${i}`))
@@ -272,14 +272,14 @@ export default function BuiltinsServiceLifecycleTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsServiceLifecycleTest0800
-     * @tc.number SUB_BUILTINS_SERVICE_LIFECYCLE_TEST_0800
+     * @tc.name   testServiceLifecycle0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICE_LIFECYCLE_TEST_0800
      * @tc.desc   Verify service counter accuracy
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsServiceLifecycleTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceLifecycle0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await manager.create('a')
       await manager.create('b')
       await manager.create('c')
@@ -287,14 +287,14 @@ export default function BuiltinsServiceLifecycleTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsServiceLifecycleTest0900
-     * @tc.number SUB_BUILTINS_SERVICE_LIFECYCLE_TEST_0900
+     * @tc.name   testServiceLifecycle0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICE_LIFECYCLE_TEST_0900
      * @tc.desc   Verify small concurrency 3 services lifecycle
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsServiceLifecycleTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceLifecycle0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 3; i++) {
         tasks.push(new taskpool.Task(createServiceTask, manager, `lc_svc_${i}`))
@@ -304,14 +304,14 @@ export default function BuiltinsServiceLifecycleTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsServiceLifecycleTest1000
-     * @tc.number SUB_BUILTINS_SERVICE_LIFECYCLE_TEST_1000
+     * @tc.name   testServiceLifecycle1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICE_LIFECYCLE_TEST_1000
      * @tc.desc   Verify small concurrency 5 services lifecycle
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsServiceLifecycleTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceLifecycle1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
         tasks.push(new taskpool.Task(createServiceTask, manager, `lc_svc5_${i}`))
@@ -321,14 +321,14 @@ export default function BuiltinsServiceLifecycleTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsServiceLifecycleTest1100
-     * @tc.number SUB_BUILTINS_SERVICE_LIFECYCLE_TEST_1100
+     * @tc.name   testServiceLifecycle1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICE_LIFECYCLE_TEST_1100
      * @tc.desc   Verify small concurrency 10 services lifecycle
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsServiceLifecycleTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceLifecycle1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
         tasks.push(new taskpool.Task(createServiceTask, manager, `lc_svc10_${i}`))
@@ -338,14 +338,14 @@ export default function BuiltinsServiceLifecycleTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsServiceLifecycleTest1200
-     * @tc.number SUB_BUILTINS_SERVICE_LIFECYCLE_TEST_1200
+     * @tc.name   testServiceLifecycle1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICE_LIFECYCLE_TEST_1200
      * @tc.desc   Verify service timestamp contains key info
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsServiceLifecycleTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceLifecycle1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const service: LifecycleManagedService = await manager.create('tsService')
       await manager.initialize('tsService')
       const svc: LifecycleManagedService | undefined = manager.getService('tsService')

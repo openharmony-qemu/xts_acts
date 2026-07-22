@@ -137,40 +137,40 @@ export default function BuiltinsEnvironmentConfigTest(): void {
     afterAll((): void => {})
 
     /**
-     * @tc.name   BuiltinsEnvironmentConfigTest0100
-     * @tc.number SUB_BUILTINS_ENVIRONMENT_CONFIG_TEST_0100
+     * @tc.name   testEnvironmentConfig0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ENVIRONMENT_CONFIG_TEST_0100
      * @tc.desc   Verify default environment is DEVELOPMENT on initialization
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEnvironmentConfigTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEnvironmentConfig0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       expect(await envManager.getCurrentEnvironment()).assertEqual(Environment.DEVELOPMENT)
     })
 
     /**
-     * @tc.name   BuiltinsEnvironmentConfigTest0200
-     * @tc.number SUB_BUILTINS_ENVIRONMENT_CONFIG_TEST_0200
+     * @tc.name   testEnvironmentConfig0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ENVIRONMENT_CONFIG_TEST_0200
      * @tc.desc   Verify three environment config containers are initialized empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEnvironmentConfigTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEnvironmentConfig0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       expect(await envManager.getEnvConfigSize(Environment.DEVELOPMENT)).assertEqual(0)
       expect(await envManager.getEnvConfigSize(Environment.TESTING)).assertEqual(0)
       expect(await envManager.getEnvConfigSize(Environment.PRODUCTION)).assertEqual(0)
     })
 
     /**
-     * @tc.name   BuiltinsEnvironmentConfigTest0300
-     * @tc.number SUB_BUILTINS_ENVIRONMENT_CONFIG_TEST_0300
+     * @tc.name   testEnvironmentConfig0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ENVIRONMENT_CONFIG_TEST_0300
      * @tc.desc   Verify setting development environment config
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEnvironmentConfigTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEnvironmentConfig0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await envManager.setEnvConfig(Environment.DEVELOPMENT, 'debug', 'true')
       await envManager.setEnvConfig(Environment.DEVELOPMENT, 'log_level', 'verbose')
       expect(await envManager.getEnvConfig(Environment.DEVELOPMENT, 'debug')).assertEqual('true')
@@ -179,14 +179,14 @@ export default function BuiltinsEnvironmentConfigTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsEnvironmentConfigTest0400
-     * @tc.number SUB_BUILTINS_ENVIRONMENT_CONFIG_TEST_0400
+     * @tc.name   testEnvironmentConfig0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ENVIRONMENT_CONFIG_TEST_0400
      * @tc.desc   Verify setting testing environment config
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEnvironmentConfigTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEnvironmentConfig0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await envManager.setEnvConfig(Environment.TESTING, 'mock_api', 'true')
       await envManager.setEnvConfig(Environment.TESTING, 'test_data', 'sample')
       expect(await envManager.getEnvConfig(Environment.TESTING, 'mock_api')).assertEqual('true')
@@ -195,14 +195,14 @@ export default function BuiltinsEnvironmentConfigTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsEnvironmentConfigTest0500
-     * @tc.number SUB_BUILTINS_ENVIRONMENT_CONFIG_TEST_0500
+     * @tc.name   testEnvironmentConfig0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ENVIRONMENT_CONFIG_TEST_0500
      * @tc.desc   Verify setting production environment config
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEnvironmentConfigTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEnvironmentConfig0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await envManager.setEnvConfig(Environment.PRODUCTION, 'ssl', 'enabled')
       await envManager.setEnvConfig(Environment.PRODUCTION, 'cache', 'redis')
       expect(await envManager.getEnvConfig(Environment.PRODUCTION, 'ssl')).assertEqual('enabled')
@@ -211,28 +211,28 @@ export default function BuiltinsEnvironmentConfigTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsEnvironmentConfigTest0600
-     * @tc.number SUB_BUILTINS_ENVIRONMENT_CONFIG_TEST_0600
+     * @tc.name   testEnvironmentConfig0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ENVIRONMENT_CONFIG_TEST_0600
      * @tc.desc   Verify getting current environment config
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEnvironmentConfigTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEnvironmentConfig0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await envManager.setEnvConfig(Environment.DEVELOPMENT, 'app_name', 'DevApp')
       const currentConfig: string | undefined = await envManager.getCurrentConfig('app_name')
       expect(currentConfig).assertEqual('DevApp')
     })
 
     /**
-     * @tc.name   BuiltinsEnvironmentConfigTest0700
-     * @tc.number SUB_BUILTINS_ENVIRONMENT_CONFIG_TEST_0700
+     * @tc.name   testEnvironmentConfig0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ENVIRONMENT_CONFIG_TEST_0700
      * @tc.desc   Verify switching to testing environment
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEnvironmentConfigTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEnvironmentConfig0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await envManager.setEnvConfig(Environment.DEVELOPMENT, 'mode', 'dev')
       await envManager.setEnvConfig(Environment.TESTING, 'mode', 'test')
       await envManager.switchEnvironment(Environment.TESTING)
@@ -241,14 +241,14 @@ export default function BuiltinsEnvironmentConfigTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsEnvironmentConfigTest0800
-     * @tc.number SUB_BUILTINS_ENVIRONMENT_CONFIG_TEST_0800
+     * @tc.name   testEnvironmentConfig0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ENVIRONMENT_CONFIG_TEST_0800
      * @tc.desc   Verify switching to production environment
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEnvironmentConfigTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEnvironmentConfig0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await envManager.setEnvConfig(Environment.PRODUCTION, 'performance', 'optimized')
       await envManager.switchEnvironment(Environment.PRODUCTION)
       expect(await envManager.getCurrentEnvironment()).assertEqual(Environment.PRODUCTION)
@@ -256,28 +256,28 @@ export default function BuiltinsEnvironmentConfigTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsEnvironmentConfigTest0900
-     * @tc.number SUB_BUILTINS_ENVIRONMENT_CONFIG_TEST_0900
+     * @tc.name   testEnvironmentConfig0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ENVIRONMENT_CONFIG_TEST_0900
      * @tc.desc   Verify switching back to development environment
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEnvironmentConfigTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEnvironmentConfig0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await envManager.switchEnvironment(Environment.TESTING)
       await envManager.switchEnvironment(Environment.DEVELOPMENT)
       expect(await envManager.getCurrentEnvironment()).assertEqual(Environment.DEVELOPMENT)
     })
 
     /**
-     * @tc.name   BuiltinsEnvironmentConfigTest1000
-     * @tc.number SUB_BUILTINS_ENVIRONMENT_CONFIG_TEST_1000
+     * @tc.name   testEnvironmentConfig1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ENVIRONMENT_CONFIG_TEST_1000
      * @tc.desc   Verify config isolation after environment switch
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEnvironmentConfigTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEnvironmentConfig1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await envManager.setEnvConfig(Environment.DEVELOPMENT, 'env_specific', 'dev_value')
       await envManager.setEnvConfig(Environment.TESTING, 'env_specific', 'test_value')
       await envManager.setEnvConfig(Environment.PRODUCTION, 'env_specific', 'prod_value')
@@ -290,14 +290,14 @@ export default function BuiltinsEnvironmentConfigTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsEnvironmentConfigTest1100
-     * @tc.number SUB_BUILTINS_ENVIRONMENT_CONFIG_TEST_1100
+     * @tc.name   testEnvironmentConfig1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ENVIRONMENT_CONFIG_TEST_1100
      * @tc.desc   Verify TaskPool concurrent read current env config with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEnvironmentConfigTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testEnvironmentConfig1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await envManager.loadEnvConfigs(
         Environment.DEVELOPMENT,
         ['config1', 'config2', 'config3'],
@@ -319,14 +319,14 @@ export default function BuiltinsEnvironmentConfigTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsEnvironmentConfigTest1200
-     * @tc.number SUB_BUILTINS_ENVIRONMENT_CONFIG_TEST_1200
+     * @tc.name   testEnvironmentConfig1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ENVIRONMENT_CONFIG_TEST_1200
      * @tc.desc   Verify TaskPool concurrent get current environment with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEnvironmentConfigTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testEnvironmentConfig1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 5; i++) {
         tasks.push(new taskpool.Task(getCurrentEnvTask, envManager))
@@ -343,14 +343,14 @@ export default function BuiltinsEnvironmentConfigTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsEnvironmentConfigTest1300
-     * @tc.number SUB_BUILTINS_ENVIRONMENT_CONFIG_TEST_1300
+     * @tc.name   testEnvironmentConfig1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ENVIRONMENT_CONFIG_TEST_1300
      * @tc.desc   Verify batch loading development environment configs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEnvironmentConfigTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEnvironmentConfig1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await envManager.loadEnvConfigs(
         Environment.DEVELOPMENT,
         ['api_url', 'timeout', 'retry', 'log_level'],
@@ -361,14 +361,14 @@ export default function BuiltinsEnvironmentConfigTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsEnvironmentConfigTest1400
-     * @tc.number SUB_BUILTINS_ENVIRONMENT_CONFIG_TEST_1400
+     * @tc.name   testEnvironmentConfig1400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ENVIRONMENT_CONFIG_TEST_1400
      * @tc.desc   Verify batch loading production environment configs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEnvironmentConfigTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEnvironmentConfig1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await envManager.loadEnvConfigs(
         Environment.PRODUCTION,
         ['api_url', 'timeout', 'ssl', 'cache'],
@@ -380,14 +380,14 @@ export default function BuiltinsEnvironmentConfigTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsEnvironmentConfigTest1500
-     * @tc.number SUB_BUILTINS_ENVIRONMENT_CONFIG_TEST_1500
+     * @tc.name   testEnvironmentConfig1500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ENVIRONMENT_CONFIG_TEST_1500
      * @tc.desc   Verify config integrity after batch loading
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEnvironmentConfigTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEnvironmentConfig1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const keys: string[] = ['key1', 'key2', 'key3']
       const values: string[] = ['val1', 'val2', 'val3']
       await envManager.loadEnvConfigs(Environment.TESTING, keys, values)

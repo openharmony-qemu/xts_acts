@@ -97,14 +97,14 @@ export default function BuiltinsConfigStabilityTest(): void {
     afterEach((): void => {})
 
     /**
-     * @tc.name   BuiltinsConfigStabilityTest0100
-     * @tc.number SUB_BUILTINS_CONFIG_STABILITY_TEST_0100
+     * @tc.name   testConfigStability0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_STABILITY_TEST_0100
      * @tc.desc   Verify config read-write lock protection under concurrent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsConfigStabilityTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testConfigStability0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await configManager.set('shared_key', 'initial_value')
       const initialVersion: number = await configManager.getVersion()
       const readTasks: taskpool.Task[] = []
@@ -133,14 +133,14 @@ export default function BuiltinsConfigStabilityTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConfigStabilityTest0200
-     * @tc.number SUB_BUILTINS_CONFIG_STABILITY_TEST_0200
+     * @tc.name   testConfigStability0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_STABILITY_TEST_0200
      * @tc.desc   Verify config hot update notification with sendData and onReceiveData
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsConfigStabilityTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testConfigStability0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let hotUpdateReceived: boolean = false
       let updateKey: string = ''
       const task: taskpool.Task = new taskpool.Task(triggerHotUpdate)

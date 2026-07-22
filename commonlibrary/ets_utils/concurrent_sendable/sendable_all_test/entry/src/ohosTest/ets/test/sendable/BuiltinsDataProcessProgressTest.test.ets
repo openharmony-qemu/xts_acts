@@ -119,34 +119,34 @@ export default function BuiltinsDataProcessProgressTest(): void {
       await dp.reset()
     })
 
-    it('BuiltinsDataProcessProgressTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testDataProcessProgress0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await dp.setTotalRows(100)
       expect(await dp.getPercentage()).assertEqual(0)
       expect(await dp.getProcessedRows()).assertEqual(0)
     })
 
-    it('BuiltinsDataProcessProgressTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testDataProcessProgress0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await dp.setTotalRows(100)
       const p: number = await dp.addProcessedRows(50)
       expect(p).assertEqual(50)
       expect(await dp.getProcessedRows()).assertEqual(50)
     })
 
-    it('BuiltinsDataProcessProgressTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testDataProcessProgress0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await dp.setTotalRows(100)
       await dp.addProcessedRows(100)
       expect(await dp.getPercentage()).assertEqual(100)
       expect(await dp.isCompleted()).assertTrue()
     })
 
-    it('BuiltinsDataProcessProgressTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDataProcessProgress0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await dp.setTotalRows(100)
       await dp.addProcessedRows(150)
       expect(await dp.getProcessedRows()).assertEqual(100)
       expect(await dp.getPercentage()).assertEqual(100)
     })
 
-    it('BuiltinsDataProcessProgressTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDataProcessProgress0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await dp.setTotalRows(100)
       await dp.addProcessedRows(80)
       await dp.addErrorRows(10)
@@ -154,7 +154,7 @@ export default function BuiltinsDataProcessProgressTest(): void {
       expect(await dp.getErrorRows()).assertEqual(10)
     })
 
-    it('BuiltinsDataProcessProgressTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testDataProcessProgress0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await dp.setTotalRows(50)
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
@@ -165,7 +165,7 @@ export default function BuiltinsDataProcessProgressTest(): void {
       expect(await dp.getPercentage()).assertEqual(100)
     })
 
-    it('BuiltinsDataProcessProgressTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testDataProcessProgress0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await dp.setTotalRows(100)
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
@@ -176,7 +176,7 @@ export default function BuiltinsDataProcessProgressTest(): void {
       expect(await dp.isCompleted()).assertTrue()
     })
 
-    it('BuiltinsDataProcessProgressTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDataProcessProgress0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await dp.setTotalRows(100)
       await dp.addProcessedRows(50)
       await dp.addErrorRows(5)
@@ -185,12 +185,12 @@ export default function BuiltinsDataProcessProgressTest(): void {
       expect(await dp.getErrorRows()).assertEqual(0)
     })
 
-    it('BuiltinsDataProcessProgressTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDataProcessProgress0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await dp.setTotalRows(0)
       expect(await dp.getPercentage()).assertEqual(0)
     })
 
-    it('BuiltinsDataProcessProgressTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDataProcessProgress1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await dp.setTotalRows(100)
       await dp.addProcessedRows(30)
       await dp.addErrorRows(3)
@@ -198,7 +198,7 @@ export default function BuiltinsDataProcessProgressTest(): void {
       expect(await dp.getErrorRows()).assertEqual(3)
     })
 
-    it('BuiltinsDataProcessProgressTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testDataProcessProgress1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await dp.setTotalRows(100)
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 100; i++) {
@@ -208,7 +208,7 @@ export default function BuiltinsDataProcessProgressTest(): void {
       expect(await dp.getProcessedRows()).assertEqual(100)
     })
 
-    it('BuiltinsDataProcessProgressTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDataProcessProgress1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await dp.setTotalRows(100)
       await dp.addProcessedRows(100)
       await dp.addErrorRows(20)

@@ -171,20 +171,20 @@ function executeTasksGetObjects(tasks: taskpool.Task[]): Promise<Object[]> {
 
 export default function BuiltinsConnectionPoolIRTest(): void {
   describe('BuiltinsConnectionPoolIRTest', () => {
-    it('BuiltinsConnectionPoolIRTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConnectionPoolIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const pool: IRPool = new IRPool(new collections.Array<IRConnection>(), new ArkTSUtils.locks.AsyncLock())
       await pool.initialize(3)
       expect(await pool.getActiveCount()).assertEqual(3)
     })
 
-    it('BuiltinsConnectionPoolIRTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConnectionPoolIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const pool: IRPool = new IRPool(new collections.Array<IRConnection>(), new ArkTSUtils.locks.AsyncLock())
       await pool.initialize(3)
       const conn: IRConnection | null = await pool.acquire()
       expect(await pool.getActiveCount()).assertEqual(2)
     })
 
-    it('BuiltinsConnectionPoolIRTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testConnectionPoolIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const pool: IRPool = new IRPool(new collections.Array<IRConnection>(), new ArkTSUtils.locks.AsyncLock())
       await pool.initialize(3)
       const tasks: taskpool.Task[] = []
@@ -195,7 +195,7 @@ export default function BuiltinsConnectionPoolIRTest(): void {
       expect(await pool.getActiveCount()).assertEqual(0)
     })
 
-    it('BuiltinsConnectionPoolIRTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConnectionPoolIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const pool: IRFieldPool = new IRFieldPool(new ArkTSUtils.locks.AsyncLock())
       await pool.updateFields()
       expect(await pool.getField1()).assertEqual(1)
@@ -203,7 +203,7 @@ export default function BuiltinsConnectionPoolIRTest(): void {
       expect(await pool.getField3()).assertEqual(3)
     })
 
-    it('BuiltinsConnectionPoolIRTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testConnectionPoolIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const pool: IRFieldPool = new IRFieldPool(new ArkTSUtils.locks.AsyncLock())
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
@@ -215,7 +215,7 @@ export default function BuiltinsConnectionPoolIRTest(): void {
       expect(await pool.getField3()).assertEqual(15)
     })
 
-    it('BuiltinsConnectionPoolIRTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConnectionPoolIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const pool1: IRPool = new IRPool(new collections.Array<IRConnection>(), new ArkTSUtils.locks.AsyncLock())
       const pool2: IRPool = new IRPool(new collections.Array<IRConnection>(), new ArkTSUtils.locks.AsyncLock())
       await pool1.initialize(3)
@@ -224,7 +224,7 @@ export default function BuiltinsConnectionPoolIRTest(): void {
       expect(await pool2.getActiveCount()).assertEqual(3)
     })
 
-    it('BuiltinsConnectionPoolIRTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConnectionPoolIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const pool: IRPool = new IRPool(new collections.Array<IRConnection>(), new ArkTSUtils.locks.AsyncLock())
       await pool.initialize(3)
       const conn: IRConnection | null = await pool.acquire()
@@ -232,7 +232,7 @@ export default function BuiltinsConnectionPoolIRTest(): void {
       expect(await pool.getActiveCount()).assertEqual(3)
     })
 
-    it('BuiltinsConnectionPoolIRTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConnectionPoolIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const pool: IRPool = new IRPool(new collections.Array<IRConnection>(), new ArkTSUtils.locks.AsyncLock())
       await pool.initialize(3)
       await pool.acquire()
@@ -240,7 +240,7 @@ export default function BuiltinsConnectionPoolIRTest(): void {
       expect(accessCount > 0).assertTrue()
     })
 
-    it('BuiltinsConnectionPoolIRTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testConnectionPoolIR0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const pool: IRFieldPool = new IRFieldPool(new ArkTSUtils.locks.AsyncLock())
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
@@ -252,7 +252,7 @@ export default function BuiltinsConnectionPoolIRTest(): void {
       expect(await pool.getField3()).assertEqual(30)
     })
 
-    it('BuiltinsConnectionPoolIRTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConnectionPoolIR1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const pool: IRPool = new IRPool(new collections.Array<IRConnection>(), new ArkTSUtils.locks.AsyncLock())
       await pool.initialize(3)
       for (let i: number = 0; i < 3; i++) {

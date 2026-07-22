@@ -137,14 +137,14 @@ function executeTasksGetObjects(tasks: taskpool.Task[]): Promise<Object[]> {
 
 export default function BuiltinsEventBusIRTest(): void {
   describe('BuiltinsEventBusIRTest', () => {
-    it('BuiltinsEventBusIRTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEventBusIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const bus: IREventBus = new IREventBus(new ArkTSUtils.locks.AsyncLock(), new collections.Map<string, string>())
       await bus.subscribe('click', 'handler_1')
       const count: number = await bus.getSubscriberCount('click')
       expect(count).assertEqual(1)
     })
 
-    it('BuiltinsEventBusIRTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEventBusIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const bus: IREventBus = new IREventBus(new ArkTSUtils.locks.AsyncLock(), new collections.Map<string, string>())
       await bus.subscribe('click', 'handler_1')
       const result: number = await bus.publish('click')
@@ -152,7 +152,7 @@ export default function BuiltinsEventBusIRTest(): void {
       expect(await bus.getEventCount()).assertEqual(1)
     })
 
-    it('BuiltinsEventBusIRTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testEventBusIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const bus: IREventBus = new IREventBus(new ArkTSUtils.locks.AsyncLock(), new collections.Map<string, string>())
       await bus.subscribe('click', 'handler_1')
       const tasks: taskpool.Task[] = []
@@ -163,14 +163,14 @@ export default function BuiltinsEventBusIRTest(): void {
       expect(await bus.getEventCount() >= 10).assertTrue()
     })
 
-    it('BuiltinsEventBusIRTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEventBusIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const bus: IRFieldBus = new IRFieldBus(new ArkTSUtils.locks.AsyncLock())
       await bus.updateFields()
       expect(await bus.getField1()).assertEqual(1)
       expect(await bus.getField2()).assertEqual(2)
     })
 
-    it('BuiltinsEventBusIRTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testEventBusIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const bus: IRFieldBus = new IRFieldBus(new ArkTSUtils.locks.AsyncLock())
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
@@ -181,7 +181,7 @@ export default function BuiltinsEventBusIRTest(): void {
       expect(await bus.getField2()).assertEqual(10)
     })
 
-    it('BuiltinsEventBusIRTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEventBusIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const bus1: IREventBus = new IREventBus(new ArkTSUtils.locks.AsyncLock(), new collections.Map<string, string>())
       const bus2: IREventBus = new IREventBus(new ArkTSUtils.locks.AsyncLock(), new collections.Map<string, string>())
       await bus1.subscribe('click', 'handler_1')
@@ -190,7 +190,7 @@ export default function BuiltinsEventBusIRTest(): void {
       expect(await bus2.getSubscriberCount('click')).assertEqual(1)
     })
 
-    it('BuiltinsEventBusIRTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testEventBusIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const bus: IREventBus = new IREventBus(new ArkTSUtils.locks.AsyncLock(), new collections.Map<string, string>())
       await bus.subscribe('click', 'handler_1')
       for (let i: number = 0; i < 5; i++) {
@@ -199,7 +199,7 @@ export default function BuiltinsEventBusIRTest(): void {
       expect(await bus.getEventCount()).assertEqual(5)
     })
 
-    it('BuiltinsEventBusIRTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testEventBusIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const bus: IREventBus = new IREventBus(new ArkTSUtils.locks.AsyncLock(), new collections.Map<string, string>())
       await bus.subscribe('click', 'handler_1')
       const before: number = await bus.getAccessCount()
@@ -208,7 +208,7 @@ export default function BuiltinsEventBusIRTest(): void {
       expect(after > before).assertTrue()
     })
 
-    it('BuiltinsEventBusIRTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testEventBusIR0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const bus: IRFieldBus = new IRFieldBus(new ArkTSUtils.locks.AsyncLock())
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
@@ -219,7 +219,7 @@ export default function BuiltinsEventBusIRTest(): void {
       expect(await bus.getField2()).assertEqual(20)
     })
 
-    it('BuiltinsEventBusIRTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testEventBusIR1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const bus: IREventBus = new IREventBus(new ArkTSUtils.locks.AsyncLock(), new collections.Map<string, string>())
       await bus.subscribe('click', 'handler_1')
       await bus.publish('click')
@@ -227,7 +227,7 @@ export default function BuiltinsEventBusIRTest(): void {
       expect(await bus.getEventCount()).assertEqual(0)
     })
 
-    it('BuiltinsEventBusIRTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testEventBusIR1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const bus: IREventBus = new IREventBus(new ArkTSUtils.locks.AsyncLock(), new collections.Map<string, string>())
       await bus.subscribe('click', 'handler_1')
       await bus.subscribe('hover', 'handler_2')
@@ -237,7 +237,7 @@ export default function BuiltinsEventBusIRTest(): void {
       expect(c2).assertEqual(1)
     })
 
-    it('BuiltinsEventBusIRTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testEventBusIR1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const bus: IREventBus = new IREventBus(new ArkTSUtils.locks.AsyncLock(), new collections.Map<string, string>())
       for (let i: number = 0; i < 5; i++) {
         await bus.subscribe('click', `handler_${i}`)

@@ -132,14 +132,14 @@ export default function BuiltinsSendableLifecycleTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSendableLifecycleTest0100
-     * @tc.number SUB_BUILTINS_SENDABLE_LIFECYCLE_TEST_0100
+     * @tc.name   testSendableLifecycle0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_LIFECYCLE_TEST_0100
      * @tc.desc   Verify Sendable object creation on shared heap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSendableLifecycleTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testSendableLifecycle0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const data: LifecycleData = await manager.create('create_test', 1)
       expect(data.getId()).assertEqual(1)
       expect(data.getName()).assertEqual('create_test')
@@ -147,14 +147,14 @@ export default function BuiltinsSendableLifecycleTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSendableLifecycleTest0200
-     * @tc.number SUB_BUILTINS_SENDABLE_LIFECYCLE_TEST_0200
+     * @tc.name   testSendableLifecycle0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_LIFECYCLE_TEST_0200
      * @tc.desc   Verify single-thread reference count reaching zero triggers GC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSendableLifecycleTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testSendableLifecycle0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const data: LifecycleData = await manager.create('ref_zero', 2)
       expect(manager.getSize()).assertEqual(1)
 
@@ -164,14 +164,14 @@ export default function BuiltinsSendableLifecycleTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSendableLifecycleTest0300
-     * @tc.number SUB_BUILTINS_SENDABLE_LIFECYCLE_TEST_0300
+     * @tc.name   testSendableLifecycle0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_LIFECYCLE_TEST_0300
      * @tc.desc   Verify multi-thread reference with Promise.all waiting for completion
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSendableLifecycleTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSendableLifecycle0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: LifecycleData = await manager.create('multi_thread', 3)
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 3; i++) {
@@ -185,14 +185,14 @@ export default function BuiltinsSendableLifecycleTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSendableLifecycleTest0400
-     * @tc.number SUB_BUILTINS_SENDABLE_LIFECYCLE_TEST_0400
+     * @tc.name   testSendableLifecycle0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_LIFECYCLE_TEST_0400
      * @tc.desc   Verify reference count zero triggers GC release
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSendableLifecycleTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSendableLifecycle0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       for (let i: number = 0; i < 5; i++) {
         await manager.create(`temp_${i}`, i)
       }
@@ -206,14 +206,14 @@ export default function BuiltinsSendableLifecycleTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSendableLifecycleTest0500
-     * @tc.number SUB_BUILTINS_SENDABLE_LIFECYCLE_TEST_0500
+     * @tc.name   testSendableLifecycle0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_LIFECYCLE_TEST_0500
      * @tc.desc   Verify Sendable object state after forced GC with reference count > 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSendableLifecycleTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSendableLifecycle0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: LifecycleData = await manager.create('force_gc', 5)
       expect(data.getId()).assertEqual(5)
       expect(data.getName()).assertEqual('force_gc')
@@ -221,14 +221,14 @@ export default function BuiltinsSendableLifecycleTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSendableLifecycleTest0600
-     * @tc.number SUB_BUILTINS_SENDABLE_LIFECYCLE_TEST_0600
+     * @tc.name   testSendableLifecycle0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_LIFECYCLE_TEST_0600
      * @tc.desc   Verify main thread + TaskPool reference - all released after GC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSendableLifecycleTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSendableLifecycle0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: LifecycleData = await manager.create('main_tp', 6)
       const task: taskpool.Task = new taskpool.Task(consumeLifecycleTask, data)
       const result: Object = await taskpool.execute(task)
@@ -237,14 +237,14 @@ export default function BuiltinsSendableLifecycleTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSendableLifecycleTest0700
-     * @tc.number SUB_BUILTINS_SENDABLE_LIFECYCLE_TEST_0700
+     * @tc.name   testSendableLifecycle0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_LIFECYCLE_TEST_0700
      * @tc.desc   Verify Sendable object create-destroy cycle memory stability
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSendableLifecycleTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSendableLifecycle0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       for (let round: number = 0; round < 5; round++) {
         for (let i: number = 0; i < 5; i++) {
           await manager.create(`cycle_${round}_${i}`, round * 10 + i)
@@ -261,14 +261,14 @@ export default function BuiltinsSendableLifecycleTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSendableLifecycleTest0800
-     * @tc.number SUB_BUILTINS_SENDABLE_LIFECYCLE_TEST_0800
+     * @tc.name   testSendableLifecycle0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_LIFECYCLE_TEST_0800
      * @tc.desc   Verify Sendable object property preservation after GC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSendableLifecycleTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSendableLifecycle0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: LifecycleData = await manager.create('preserve', 100)
       expect(data.getId()).assertEqual(100)
       expect(data.getName()).assertEqual('preserve')
@@ -280,14 +280,14 @@ export default function BuiltinsSendableLifecycleTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSendableLifecycleTest0900
-     * @tc.number SUB_BUILTINS_SENDABLE_LIFECYCLE_TEST_0900
+     * @tc.name   testSendableLifecycle0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_LIFECYCLE_TEST_0900
      * @tc.desc   Verify nested Sendable object lifecycle management
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSendableLifecycleTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSendableLifecycle0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const parent: LifecycleData = await manager.create('parent', 1)
       const child: LifecycleData = await manager.create('child', 2)
       expect(manager.getSize()).assertEqual(2)
@@ -301,14 +301,14 @@ export default function BuiltinsSendableLifecycleTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSendableLifecycleTest1000
-     * @tc.number SUB_BUILTINS_SENDABLE_LIFECYCLE_TEST_1000
+     * @tc.name   testSendableLifecycle1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_LIFECYCLE_TEST_1000
      * @tc.desc   Verify Sendable object with collections container lifecycle
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSendableLifecycleTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSendableLifecycle1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       for (let i: number = 0; i < 10; i++) {
         await manager.create(`container_${i}`, i)
       }

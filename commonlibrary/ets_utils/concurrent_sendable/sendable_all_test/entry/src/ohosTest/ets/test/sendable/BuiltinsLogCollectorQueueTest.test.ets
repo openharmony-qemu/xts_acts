@@ -113,13 +113,13 @@ export default function BuiltinsLogCollectorQueueTest(): void {
     afterEach((): void => {})
     afterAll((): void => {})
 
-    it('BuiltinsLogCollectorQueueTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLogCollectorQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const success: boolean = await logQueue.enqueue(LogLevel.INFO, 'test log', Date.now())
       expect(success).assertTrue()
       expect(await logQueue.size()).assertEqual(1)
     })
 
-    it('BuiltinsLogCollectorQueueTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLogCollectorQueue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await logQueue.enqueue(LogLevel.DEBUG, 'debug log', Date.now())
       await logQueue.enqueue(LogLevel.INFO, 'info log', Date.now())
       await logQueue.enqueue(LogLevel.WARN, 'warn log', Date.now())
@@ -127,7 +127,7 @@ export default function BuiltinsLogCollectorQueueTest(): void {
       expect(await logQueue.size()).assertEqual(4)
     })
 
-    it('BuiltinsLogCollectorQueueTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testLogCollectorQueue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 10; i++) {
         await logQueue.enqueue(LogLevel.INFO, `log_${i}`, Date.now())
       }
@@ -136,7 +136,7 @@ export default function BuiltinsLogCollectorQueueTest(): void {
       expect(await logQueue.size()).assertEqual(5)
     })
 
-    it('BuiltinsLogCollectorQueueTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testLogCollectorQueue0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const promises: Promise<boolean>[] = []
       for (let i = 0; i < 100; i++) {
         const level: number = i % 4
@@ -153,7 +153,7 @@ export default function BuiltinsLogCollectorQueueTest(): void {
       expect(await logQueue.size()).assertEqual(100)
     })
 
-    it('BuiltinsLogCollectorQueueTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testLogCollectorQueue0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 20; i++) {
         const level: number = i % 4
@@ -171,7 +171,7 @@ export default function BuiltinsLogCollectorQueueTest(): void {
       expect(await logQueue.getTotalEnqueued()).assertLargerOrEqual(1)
     })
 
-    it('BuiltinsLogCollectorQueueTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testLogCollectorQueue0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       logQueue.capacity_ = 50
       for (let i = 0; i < 50; i++) {
         await logQueue.enqueue(LogLevel.INFO, `log_${i}`, Date.now())
@@ -181,7 +181,7 @@ export default function BuiltinsLogCollectorQueueTest(): void {
       expect(success).assertFalse()
     })
 
-    it('BuiltinsLogCollectorQueueTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testLogCollectorQueue0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       logQueue.capacity_ = 10
       for (let i = 0; i < 10; i++) {
         await logQueue.enqueue(LogLevel.INFO, `log_${i}`, Date.now())
@@ -192,7 +192,7 @@ export default function BuiltinsLogCollectorQueueTest(): void {
       expect(success).assertTrue()
     })
 
-    it('BuiltinsLogCollectorQueueTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testLogCollectorQueue0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 20; i++) {
         await logQueue.enqueue(LogLevel.INFO, `log_${i}`, Date.now())
       }
@@ -201,7 +201,7 @@ export default function BuiltinsLogCollectorQueueTest(): void {
       expect(await logQueue.getTotalDequeued()).assertEqual(10)
     })
 
-    it('BuiltinsLogCollectorQueueTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testLogCollectorQueue0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i = 0; i < 10; i++) {
         await logQueue.enqueue(LogLevel.INFO, `log_${i}`, Date.now())
       }
@@ -210,7 +210,7 @@ export default function BuiltinsLogCollectorQueueTest(): void {
       expect(await logQueue.isEmpty()).assertTrue()
     })
 
-    it('BuiltinsLogCollectorQueueTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testLogCollectorQueue1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const promises: Promise<boolean>[] = []
       for (let i = 0; i < 50; i++) {
         const level: number = i % 4

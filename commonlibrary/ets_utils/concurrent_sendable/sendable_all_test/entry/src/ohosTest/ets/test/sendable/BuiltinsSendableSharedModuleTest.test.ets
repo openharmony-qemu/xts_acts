@@ -45,26 +45,26 @@ export default function BuiltinsSendableSharedModuleTest(): void {
     afterAll((): void => {})
 
     /**
-     * @tc.name   BuiltinsSendableSharedModuleTest0100
-     * @tc.number SUB_BUILTINS_SENDABLE_SHARED_MODULE_TEST_0100
+     * @tc.name   testSendableSharedModule0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_SHARED_MODULE_TEST_0100
      * @tc.desc   Verify shared module singleton reference consistency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSendableSharedModuleTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableSharedModule0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       expect(singleton.getValue()).assertEqual(0)
     })
 
     /**
-     * @tc.name   BuiltinsSendableSharedModuleTest0200
-     * @tc.number SUB_BUILTINS_SENDABLE_SHARED_MODULE_TEST_0200
+     * @tc.name   testSendableSharedModule0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_SHARED_MODULE_TEST_0200
      * @tc.desc   Verify TaskPool accesses shared module singleton correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSendableSharedModuleTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableSharedModule0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       singleton.setValue(100)
       const task = new taskpool.Task(accessSharedSingleton, singleton)
       const result = await taskpool.execute(task) as number
@@ -72,42 +72,42 @@ export default function BuiltinsSendableSharedModuleTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSendableSharedModuleTest0300
-     * @tc.number SUB_BUILTINS_SENDABLE_SHARED_MODULE_TEST_0300
+     * @tc.name   testSendableSharedModule0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_SHARED_MODULE_TEST_0300
      * @tc.desc   Verify TaskPool modifies shared module singleton correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSendableSharedModuleTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableSharedModule0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const task = new taskpool.Task(modifySharedSingleton, singleton, 50)
       await taskpool.execute(task)
       expect(singleton.getValue()).assertEqual(50)
     })
 
     /**
-     * @tc.name   BuiltinsSendableSharedModuleTest0400
-     * @tc.number SUB_BUILTINS_SENDABLE_SHARED_MODULE_TEST_0400
+     * @tc.name   testSendableSharedModule0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_SHARED_MODULE_TEST_0400
      * @tc.desc   Verify shared module singleton reference identity across multiple accesses
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSendableSharedModuleTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableSharedModule0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const ref1 = singleton
       const ref2 = singleton
       expect(ref1 === ref2).assertTrue()
     })
 
     /**
-     * @tc.name   BuiltinsSendableSharedModuleTest0500
-     * @tc.number SUB_BUILTINS_SENDABLE_SHARED_MODULE_TEST_0500
+     * @tc.name   testSendableSharedModule0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_SHARED_MODULE_TEST_0500
      * @tc.desc   Verify multiple TaskPool tasks sequentially modify shared module singleton
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSendableSharedModuleTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testSendableSharedModule0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i = 0; i < 5; i++) {
         const task = new taskpool.Task(incrementSharedSingleton, singleton)
         await taskpool.execute(task)
@@ -116,14 +116,14 @@ export default function BuiltinsSendableSharedModuleTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSendableSharedModuleTest0600
-     * @tc.number SUB_BUILTINS_SENDABLE_SHARED_MODULE_TEST_0600
+     * @tc.name   testSendableSharedModule0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_SHARED_MODULE_TEST_0600
      * @tc.desc   Verify shared module singleton setValue and getValue round trip
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSendableSharedModuleTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableSharedModule0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       singleton.setValue(42)
       expect(singleton.getValue()).assertEqual(42)
       singleton.setValue(0)

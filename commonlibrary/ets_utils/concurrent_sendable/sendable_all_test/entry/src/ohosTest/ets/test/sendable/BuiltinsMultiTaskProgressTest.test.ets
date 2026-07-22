@@ -150,14 +150,14 @@ export default function BuiltinsMultiTaskProgressTest(): void {
       await mtp.reset()
     })
 
-    it('BuiltinsMultiTaskProgressTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testMultiTaskProgress0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await mtp.setTotalTasks(3)
       await mtp.registerTask('task_1')
       expect(await mtp.getTaskProgress('task_1')).assertEqual(0)
       expect(await mtp.getTaskStatus('task_1')).assertEqual('pending')
     })
 
-    it('BuiltinsMultiTaskProgressTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testMultiTaskProgress0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await mtp.setTotalTasks(3)
       await mtp.registerTask('task_1')
       await mtp.updateTaskProgress('task_1', 50)
@@ -165,7 +165,7 @@ export default function BuiltinsMultiTaskProgressTest(): void {
       expect(await mtp.getTaskStatus('task_1')).assertEqual('running')
     })
 
-    it('BuiltinsMultiTaskProgressTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testMultiTaskProgress0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await mtp.setTotalTasks(3)
       await mtp.registerTask('task_1')
       await mtp.updateTaskProgress('task_1', 100)
@@ -173,14 +173,14 @@ export default function BuiltinsMultiTaskProgressTest(): void {
       expect(await mtp.getTaskStatus('task_1')).assertEqual('completed')
     })
 
-    it('BuiltinsMultiTaskProgressTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testMultiTaskProgress0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await mtp.setTotalTasks(3)
       await mtp.registerTask('task_1')
       await mtp.markTaskFailed('task_1')
       expect(await mtp.getTaskStatus('task_1')).assertEqual('failed')
     })
 
-    it('BuiltinsMultiTaskProgressTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testMultiTaskProgress0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await mtp.setTotalTasks(5)
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
@@ -191,7 +191,7 @@ export default function BuiltinsMultiTaskProgressTest(): void {
       expect(await mtp.getCompletedCount()).assertEqual(5)
     })
 
-    it('BuiltinsMultiTaskProgressTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testMultiTaskProgress0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await mtp.setTotalTasks(3)
       await mtp.registerTask('task_0')
       await mtp.registerTask('task_1')
@@ -202,7 +202,7 @@ export default function BuiltinsMultiTaskProgressTest(): void {
       expect(await mtp.getOverallProgress()).assertEqual(50)
     })
 
-    it('BuiltinsMultiTaskProgressTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testMultiTaskProgress0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await mtp.setTotalTasks(3)
       await mtp.registerTask('task_0')
       await mtp.registerTask('task_1')
@@ -214,7 +214,7 @@ export default function BuiltinsMultiTaskProgressTest(): void {
       expect(await mtp.getFailedCount()).assertEqual(1)
     })
 
-    it('BuiltinsMultiTaskProgressTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testMultiTaskProgress0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await mtp.setTotalTasks(2)
       await mtp.registerTask('task_0')
       await mtp.registerTask('task_1')
@@ -222,12 +222,12 @@ export default function BuiltinsMultiTaskProgressTest(): void {
       expect(await mtp.getTaskProgress('task_0')).assertEqual(100)
     })
 
-    it('BuiltinsMultiTaskProgressTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testMultiTaskProgress0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await mtp.setTotalTasks(0)
       expect(await mtp.getOverallProgress()).assertEqual(0)
     })
 
-    it('BuiltinsMultiTaskProgressTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testMultiTaskProgress1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await mtp.setTotalTasks(10)
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
@@ -239,7 +239,7 @@ export default function BuiltinsMultiTaskProgressTest(): void {
       expect(await mtp.getOverallProgress()).assertEqual(100)
     })
 
-    it('BuiltinsMultiTaskProgressTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testMultiTaskProgress1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await mtp.setTotalTasks(2)
       await mtp.registerTask('task_0')
       await mtp.updateTaskProgress('task_0', 100)
@@ -247,7 +247,7 @@ export default function BuiltinsMultiTaskProgressTest(): void {
       expect(await mtp.getOverallProgress()).assertEqual(0)
     })
 
-    it('BuiltinsMultiTaskProgressTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testMultiTaskProgress1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await mtp.setTotalTasks(3)
       await mtp.registerTask('task_0')
       expect(await mtp.getTaskProgress('unknown')).assertEqual(0)

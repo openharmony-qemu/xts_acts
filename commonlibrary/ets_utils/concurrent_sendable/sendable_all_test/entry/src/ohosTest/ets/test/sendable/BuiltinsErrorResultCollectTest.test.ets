@@ -133,42 +133,42 @@ export default function BuiltinsErrorResultCollectTest(): void {
     afterAll((): void => {})
 
     /**
-     * @tc.name   BuiltinsErrorResultCollectTest0100
-     * @tc.number SUB_BUILTINS_ERROR_RESULT_COLLECT_TEST_0100
+     * @tc.name   testErrorResultCollect0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ERROR_RESULT_COLLECT_TEST_0100
      * @tc.desc   Verify success result collection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsErrorResultCollectTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testErrorResultCollect0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await collector.addSuccessResult(1, 'success_1')
       expect(collector.getSuccessCount()).assertEqual(1)
       expect(collector.getTaskStatus(1)).assertEqual('success')
     })
 
     /**
-     * @tc.name   BuiltinsErrorResultCollectTest0200
-     * @tc.number SUB_BUILTINS_ERROR_RESULT_COLLECT_TEST_0200
+     * @tc.name   testErrorResultCollect0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ERROR_RESULT_COLLECT_TEST_0200
      * @tc.desc   Verify failure result collection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsErrorResultCollectTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testErrorResultCollect0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await collector.addFailedResult(1, 'execution_error')
       expect(collector.getFailedCount()).assertEqual(1)
       expect(collector.getTaskStatus(1)).assertEqual('failed')
     })
 
     /**
-     * @tc.name   BuiltinsErrorResultCollectTest0300
-     * @tc.number SUB_BUILTINS_ERROR_RESULT_COLLECT_TEST_0300
+     * @tc.name   testErrorResultCollect0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ERROR_RESULT_COLLECT_TEST_0300
      * @tc.desc   Verify success and failure count statistics
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsErrorResultCollectTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testErrorResultCollect0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await collector.addSuccessResult(1, 'ok_1')
       await collector.addSuccessResult(2, 'ok_2')
       await collector.addFailedResult(3, 'err_3')
@@ -178,14 +178,14 @@ export default function BuiltinsErrorResultCollectTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsErrorResultCollectTest0400
-     * @tc.number SUB_BUILTINS_ERROR_RESULT_COLLECT_TEST_0400
+     * @tc.name   testErrorResultCollect0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ERROR_RESULT_COLLECT_TEST_0400
      * @tc.desc   Verify error message storage and query
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsErrorResultCollectTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testErrorResultCollect0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await collector.addFailedResult(1, 'timeout_error')
       await collector.addFailedResult(2, 'network_error')
       expect(collector.getErrorMessage(1)).assertEqual('timeout_error')
@@ -193,14 +193,14 @@ export default function BuiltinsErrorResultCollectTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsErrorResultCollectTest0500
-     * @tc.number SUB_BUILTINS_ERROR_RESULT_COLLECT_TEST_0500
+     * @tc.name   testErrorResultCollect0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ERROR_RESULT_COLLECT_TEST_0500
      * @tc.desc   Verify task status management
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsErrorResultCollectTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testErrorResultCollect0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await collector.addSuccessResult(1, 'ok')
       await collector.addFailedResult(2, 'err')
       collector.addTimeoutResult(3)
@@ -210,14 +210,14 @@ export default function BuiltinsErrorResultCollectTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsErrorResultCollectTest0600
-     * @tc.number SUB_BUILTINS_ERROR_RESULT_COLLECT_TEST_0600
+     * @tc.name   testErrorResultCollect0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ERROR_RESULT_COLLECT_TEST_0600
      * @tc.desc   Verify retry count tracking
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsErrorResultCollectTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testErrorResultCollect0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       collector.incrementRetryCount(1)
       collector.incrementRetryCount(1)
       collector.incrementRetryCount(1)
@@ -225,14 +225,14 @@ export default function BuiltinsErrorResultCollectTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsErrorResultCollectTest0700
-     * @tc.number SUB_BUILTINS_ERROR_RESULT_COLLECT_TEST_0700
+     * @tc.name   testErrorResultCollect0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ERROR_RESULT_COLLECT_TEST_0700
      * @tc.desc   Verify TaskPool success task result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsErrorResultCollectTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testErrorResultCollect0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const task = new taskpool.Task(successTask, 1)
       const result: Object = await taskpool.execute(task)
       await collector.addSuccessResult(1, result as string)
@@ -241,14 +241,14 @@ export default function BuiltinsErrorResultCollectTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsErrorResultCollectTest0800
-     * @tc.number SUB_BUILTINS_ERROR_RESULT_COLLECT_TEST_0800
+     * @tc.name   testErrorResultCollect0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ERROR_RESULT_COLLECT_TEST_0800
      * @tc.desc   Verify TaskPool failed task result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsErrorResultCollectTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testErrorResultCollect0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const task = new taskpool.Task(failTask, 1)
       await taskpool.execute(task)
       await collector.addFailedResult(1, 'task_execution_error')
@@ -257,14 +257,14 @@ export default function BuiltinsErrorResultCollectTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsErrorResultCollectTest0900
-     * @tc.number SUB_BUILTINS_ERROR_RESULT_COLLECT_TEST_0900
+     * @tc.name   testErrorResultCollect0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ERROR_RESULT_COLLECT_TEST_0900
      * @tc.desc   Verify mixed success and failure task results
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsErrorResultCollectTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testErrorResultCollect0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const successTasks: taskpool.Task[] = []
       const failTasks: taskpool.Task[] = []
       for (let i = 0; i < 6; i++) {
@@ -295,14 +295,14 @@ export default function BuiltinsErrorResultCollectTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsErrorResultCollectTest1000
-     * @tc.number SUB_BUILTINS_ERROR_RESULT_COLLECT_TEST_1000
+     * @tc.name   testErrorResultCollect1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ERROR_RESULT_COLLECT_TEST_1000
      * @tc.desc   Verify failed task ID list retrieval
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsErrorResultCollectTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testErrorResultCollect1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await collector.addFailedResult(1, 'error_1')
       await collector.addFailedResult(2, 'error_2')
       await collector.addSuccessResult(3, 'ok_3')
@@ -312,14 +312,14 @@ export default function BuiltinsErrorResultCollectTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsErrorResultCollectTest1100
-     * @tc.number SUB_BUILTINS_ERROR_RESULT_COLLECT_TEST_1100
+     * @tc.name   testErrorResultCollect1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ERROR_RESULT_COLLECT_TEST_1100
      * @tc.desc   Verify timeout result marking
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsErrorResultCollectTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testErrorResultCollect1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       collector.addTimeoutResult(1)
       collector.addTimeoutResult(2)
       const timeoutResults: collections.Array<number> = collector.getTimeoutResults()
@@ -329,14 +329,14 @@ export default function BuiltinsErrorResultCollectTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsErrorResultCollectTest1200
-     * @tc.number SUB_BUILTINS_ERROR_RESULT_COLLECT_TEST_1200
+     * @tc.name   testErrorResultCollect1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ERROR_RESULT_COLLECT_TEST_1200
      * @tc.desc   Verify retry then success scenario
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsErrorResultCollectTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testErrorResultCollect1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await collector.addFailedResult(1, 'error')
       collector.incrementRetryCount(1)
       collector.incrementRetryCount(1)
@@ -346,14 +346,14 @@ export default function BuiltinsErrorResultCollectTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsErrorResultCollectTest1300
-     * @tc.number SUB_BUILTINS_ERROR_RESULT_COLLECT_TEST_1300
+     * @tc.name   testErrorResultCollect1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ERROR_RESULT_COLLECT_TEST_1300
      * @tc.desc   Verify concurrent 10 tasks error result collection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsErrorResultCollectTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testErrorResultCollect1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const successTasks: taskpool.Task[] = []
       const failTasks: taskpool.Task[] = []
       for (let i = 0; i < 10; i++) {

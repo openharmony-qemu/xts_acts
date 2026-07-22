@@ -137,14 +137,14 @@ export default function BuiltinsConcurrentGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConcurrentGCTest0100
-     * @tc.number SUB_BUILTINS_CONCURRENT_GC_TEST_0100
+     * @tc.name   testConcurrentGC0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_GC_TEST_0100
      * @tc.desc   Verify forceFullGC triggers immediate GC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsConcurrentGCTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testConcurrentGC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       for (let i: number = 0; i < 5; i++) {
         await manager.create(`gc_${i}`, i)
       }
@@ -155,14 +155,14 @@ export default function BuiltinsConcurrentGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConcurrentGCTest0200
-     * @tc.number SUB_BUILTINS_CONCURRENT_GC_TEST_0200
+     * @tc.name   testConcurrentGC0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_GC_TEST_0200
      * @tc.desc   Verify GC before and after memory change
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsConcurrentGCTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testConcurrentGC0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       expect(manager.getSize()).assertEqual(0)
 
       await manager.create('data1', 1)
@@ -177,14 +177,14 @@ export default function BuiltinsConcurrentGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConcurrentGCTest0300
-     * @tc.number SUB_BUILTINS_CONCURRENT_GC_TEST_0300
+     * @tc.name   testConcurrentGC0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_GC_TEST_0300
      * @tc.desc   Verify GC trigger does not affect in-use objects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsConcurrentGCTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testConcurrentGC0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: ConcurrentGCData = await manager.create('active', 42)
       expect(data.getValue()).assertEqual(420)
 
@@ -194,14 +194,14 @@ export default function BuiltinsConcurrentGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConcurrentGCTest0400
-     * @tc.number SUB_BUILTINS_CONCURRENT_GC_TEST_0400
+     * @tc.name   testConcurrentGC0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_GC_TEST_0400
      * @tc.desc   Verify multi-thread concurrent access with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsConcurrentGCTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testConcurrentGC0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: ConcurrentGCData = await manager.create('concurrent', 5)
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
@@ -215,14 +215,14 @@ export default function BuiltinsConcurrentGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConcurrentGCTest0500
-     * @tc.number SUB_BUILTINS_CONCURRENT_GC_TEST_0500
+     * @tc.name   testConcurrentGC0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_GC_TEST_0500
      * @tc.desc   Verify GC completion time is fast
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsConcurrentGCTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testConcurrentGC0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const startTime: number = Date.now()
       for (let i: number = 0; i < 10; i++) {
         await manager.create(`fast_${i}`, i)
@@ -232,14 +232,14 @@ export default function BuiltinsConcurrentGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConcurrentGCTest0600
-     * @tc.number SUB_BUILTINS_CONCURRENT_GC_TEST_0600
+     * @tc.name   testConcurrentGC0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_GC_TEST_0600
      * @tc.desc   Verify object count change before and after GC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsConcurrentGCTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testConcurrentGC0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       for (let i: number = 0; i < 5; i++) {
         await manager.create(`cnt_${i}`, i)
       }
@@ -253,14 +253,14 @@ export default function BuiltinsConcurrentGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConcurrentGCTest0700
-     * @tc.number SUB_BUILTINS_CONCURRENT_GC_TEST_0700
+     * @tc.name   testConcurrentGC0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_GC_TEST_0700
      * @tc.desc   Verify continuous multiple GC calls stability
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsConcurrentGCTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testConcurrentGC0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       for (let round: number = 0; round < 3; round++) {
         for (let i: number = 0; i < 5; i++) {
           await manager.create(`round${round}_${i}`, i)
@@ -272,14 +272,14 @@ export default function BuiltinsConcurrentGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConcurrentGCTest0800
-     * @tc.number SUB_BUILTINS_CONCURRENT_GC_TEST_0800
+     * @tc.name   testConcurrentGC0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_GC_TEST_0800
      * @tc.desc   Verify GC trigger timing - auto vs forced GC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsConcurrentGCTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testConcurrentGC0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: ConcurrentGCData = await manager.create('persist', 100)
       expect(data.getValue()).assertEqual(1000)
 
@@ -289,14 +289,14 @@ export default function BuiltinsConcurrentGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConcurrentGCTest0900
-     * @tc.number SUB_BUILTINS_CONCURRENT_GC_TEST_0900
+     * @tc.name   testConcurrentGC0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_GC_TEST_0900
      * @tc.desc   Verify shared heap capacity stability after GC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsConcurrentGCTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testConcurrentGC0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       for (let i: number = 0; i < 10; i++) {
         await manager.create(`cap_${i}`, i)
       }
@@ -312,14 +312,14 @@ export default function BuiltinsConcurrentGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConcurrentGCTest1000
-     * @tc.number SUB_BUILTINS_CONCURRENT_GC_TEST_1000
+     * @tc.name   testConcurrentGC1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONCURRENT_GC_TEST_1000
      * @tc.desc   Verify concurrent access and sequential delete operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsConcurrentGCTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testConcurrentGC1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       for (let i: number = 0; i < 5; i++) {
         await manager.create(`mixed_${i}`, i)
       }

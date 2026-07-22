@@ -112,7 +112,7 @@ export default function BuiltinsServiceRegistryTest(): void {
       await Utils.sleep(500)
     })
 
-    it('BuiltinsServiceRegistryTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceRegistry0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
       service.name = 'userService'
       service.version = '1.0.0'
@@ -126,7 +126,7 @@ export default function BuiltinsServiceRegistryTest(): void {
       expect(discovered!.version).assertEqual('1.0.0')
     })
 
-    it('BuiltinsServiceRegistryTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceRegistry0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const serviceNames: string[] = ['serviceA', 'serviceB', 'serviceC']
       const services: ServiceInfo[] = []
       for (let i = 0; i < serviceNames.length; i++) {
@@ -146,7 +146,7 @@ export default function BuiltinsServiceRegistryTest(): void {
       expect(registry.discover('serviceC') !== undefined).assertTrue()
     })
 
-    it('BuiltinsServiceRegistryTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceRegistry0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
       service.name = 'orderService'
       await registry.register('orderService', service)
@@ -156,12 +156,12 @@ export default function BuiltinsServiceRegistryTest(): void {
       expect(discovered!.name).assertEqual('orderService')
     })
 
-    it('BuiltinsServiceRegistryTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testServiceRegistry0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const discovered: ServiceInfo | undefined = registry.discover('nonexistentService')
       expect(discovered === undefined).assertTrue()
     })
 
-    it('BuiltinsServiceRegistryTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceRegistry0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
       service.name = 'tempService'
       await registry.register('tempService', service)
@@ -171,12 +171,12 @@ export default function BuiltinsServiceRegistryTest(): void {
       expect(registry.discover('tempService') === undefined).assertTrue()
     })
 
-    it('BuiltinsServiceRegistryTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testServiceRegistry0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const result: boolean = await registry.unregister('nonexistentService')
       expect(result).assertFalse()
     })
 
-    it('BuiltinsServiceRegistryTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceRegistry0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
       service.name = 'paymentService'
       service.status = 'active'
@@ -190,7 +190,7 @@ export default function BuiltinsServiceRegistryTest(): void {
       expect(registry.discover('paymentService')!.status).assertEqual('inactive')
     })
 
-    it('BuiltinsServiceRegistryTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceRegistry0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
       service.name = 'sharedService'
       await registry.register('sharedService', service)
@@ -205,7 +205,7 @@ export default function BuiltinsServiceRegistryTest(): void {
       expect(boolResults.every((r: boolean): boolean => r === true)).assertTrue()
     })
 
-    it('BuiltinsServiceRegistryTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceRegistry0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
       service.name = 'apiService'
       service.endpoints.push('http://localhost:8081')
@@ -216,7 +216,7 @@ export default function BuiltinsServiceRegistryTest(): void {
       expect(discovered!.endpoints.length).assertEqual(2)
     })
 
-    it('BuiltinsServiceRegistryTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceRegistry1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
       service.name = 'configService'
       service.version = '2.0.1'
@@ -226,7 +226,7 @@ export default function BuiltinsServiceRegistryTest(): void {
       expect(discovered!.version).assertEqual('2.0.1')
     })
 
-    it('BuiltinsServiceRegistryTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceRegistry1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const serviceNames: string[] = ['svc1', 'svc2', 'svc3']
       const services: ServiceInfo[] = []
       for (let i = 0; i < serviceNames.length; i++) {
@@ -242,7 +242,7 @@ export default function BuiltinsServiceRegistryTest(): void {
       expect(registry.getRegistrationCount()).assertEqual(3)
     })
 
-    it('BuiltinsServiceRegistryTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceRegistry1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const serviceNames: string[] = ['svcA', 'svcB', 'svcC', 'svcD', 'svcE']
       const services: ServiceInfo[] = []
       for (let i = 0; i < serviceNames.length; i++) {
@@ -258,7 +258,7 @@ export default function BuiltinsServiceRegistryTest(): void {
       expect(registry.getRegistrationCount()).assertEqual(5)
     })
 
-    it('BuiltinsServiceRegistryTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceRegistry1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const services: ServiceInfo[] = []
       for (let i: number = 0; i < 10; i++) {
         const svc: ServiceInfo = new ServiceInfo(new collections.Array<string>())
@@ -273,7 +273,7 @@ export default function BuiltinsServiceRegistryTest(): void {
       expect(registry.getRegistrationCount()).assertEqual(10)
     })
 
-    it('BuiltinsServiceRegistryTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceRegistry1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
       service.name = 'singletonService'
       await registry.register('singletonService', service)
@@ -283,7 +283,7 @@ export default function BuiltinsServiceRegistryTest(): void {
       expect(result as boolean).assertTrue()
     })
 
-    it('BuiltinsServiceRegistryTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceRegistry1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const service: ServiceInfo = new ServiceInfo(new collections.Array<string>())
       service.name = 'lifecycleService'
       service.status = 'created'

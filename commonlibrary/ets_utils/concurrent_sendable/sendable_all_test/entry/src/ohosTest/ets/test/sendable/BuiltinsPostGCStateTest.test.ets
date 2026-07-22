@@ -144,14 +144,14 @@ export default function BuiltinsPostGCStateTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsPostGCStateTest0100
-     * @tc.number SUB_BUILTINS_POST_GC_STATE_TEST_0100
+     * @tc.name   testPostGCState0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_POST_GC_STATE_TEST_0100
      * @tc.desc   Verify Sendable object property integrity after GC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsPostGCStateTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testPostGCState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const data: PostGCStateData = await manager.create('integrity', 1)
       expect(data.getId()).assertEqual(1)
       expect(data.getName()).assertEqual('integrity')
@@ -164,14 +164,14 @@ export default function BuiltinsPostGCStateTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsPostGCStateTest0200
-     * @tc.number SUB_BUILTINS_POST_GC_STATE_TEST_0200
+     * @tc.name   testPostGCState0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_POST_GC_STATE_TEST_0200
      * @tc.desc   Verify reference validity after GC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsPostGCStateTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testPostGCState0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: PostGCStateData = await manager.create('ref_valid', 2)
       const task: taskpool.Task = new taskpool.Task(readPostGCStateTask, data)
       const result: Object = await taskpool.execute(task)
@@ -179,14 +179,14 @@ export default function BuiltinsPostGCStateTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsPostGCStateTest0300
-     * @tc.number SUB_BUILTINS_POST_GC_STATE_TEST_0300
+     * @tc.name   testPostGCState0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_POST_GC_STATE_TEST_0300
      * @tc.desc   Verify Sendable object method call after GC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsPostGCStateTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testPostGCState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: PostGCStateData = await manager.create('method', 3)
       expect(data.getValue()).assertEqual(300)
 
@@ -195,14 +195,14 @@ export default function BuiltinsPostGCStateTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsPostGCStateTest0400
-     * @tc.number SUB_BUILTINS_POST_GC_STATE_TEST_0400
+     * @tc.name   testPostGCState0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_POST_GC_STATE_TEST_0400
      * @tc.desc   Verify Sendable object type information preserved after GC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsPostGCStateTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testPostGCState0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: PostGCStateData = await manager.create('type_info', 4)
       expect(data.getId()).assertEqual(4)
       expect(data.getName()).assertEqual('type_info')
@@ -210,14 +210,14 @@ export default function BuiltinsPostGCStateTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsPostGCStateTest0500
-     * @tc.number SUB_BUILTINS_POST_GC_STATE_TEST_0500
+     * @tc.name   testPostGCState0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_POST_GC_STATE_TEST_0500
      * @tc.desc   Verify Sendable object in collections container after GC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsPostGCStateTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testPostGCState0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const container: collections.Array<PostGCStateData> = new collections.Array<PostGCStateData>()
       for (let i: number = 0; i < 5; i++) {
         const data: PostGCStateData = await manager.create(`arr_${i}`, i * 10)
@@ -229,14 +229,14 @@ export default function BuiltinsPostGCStateTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsPostGCStateTest0600
-     * @tc.number SUB_BUILTINS_POST_GC_STATE_TEST_0600
+     * @tc.name   testPostGCState0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_POST_GC_STATE_TEST_0600
      * @tc.desc   Verify Sendable object cross-thread state consistency after GC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsPostGCStateTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testPostGCState0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: PostGCStateData = await manager.create('cross_consist', 6)
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
@@ -249,14 +249,14 @@ export default function BuiltinsPostGCStateTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsPostGCStateTest0700
-     * @tc.number SUB_BUILTINS_POST_GC_STATE_TEST_0700
+     * @tc.name   testPostGCState0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_POST_GC_STATE_TEST_0700
      * @tc.desc   Verify Sendable object state update after GC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsPostGCStateTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testPostGCState0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: PostGCStateData = await manager.create('update', 7)
       expect(data.getValue()).assertEqual(700)
 
@@ -266,14 +266,14 @@ export default function BuiltinsPostGCStateTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsPostGCStateTest0800
-     * @tc.number SUB_BUILTINS_POST_GC_STATE_TEST_0800
+     * @tc.name   testPostGCState0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_POST_GC_STATE_TEST_0800
      * @tc.desc   Verify Sendable object null reference detection after GC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsPostGCStateTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testPostGCState0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await manager.create('null_ref', 8)
       await manager.delete('null_ref')
       const retrieved: PostGCStateData | undefined = manager.get('null_ref')
@@ -281,14 +281,14 @@ export default function BuiltinsPostGCStateTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsPostGCStateTest0900
-     * @tc.number SUB_BUILTINS_POST_GC_STATE_TEST_0900
+     * @tc.name   testPostGCState0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_POST_GC_STATE_TEST_0900
      * @tc.desc   Verify Sendable object state after multiple GC cycles
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsPostGCStateTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testPostGCState0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: PostGCStateData = await manager.create('multi_gc', 9)
       for (let round: number = 0; round < 5; round++) {
         for (let i: number = 0; i < 5; i++) {
@@ -301,14 +301,14 @@ export default function BuiltinsPostGCStateTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsPostGCStateTest1000
-     * @tc.number SUB_BUILTINS_POST_GC_STATE_TEST_1000
+     * @tc.name   testPostGCState1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_POST_GC_STATE_TEST_1000
      * @tc.desc   Verify Sendable object state consistency with concurrent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsPostGCStateTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testPostGCState1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: PostGCStateData = await manager.create('concurrent_state', 10)
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {

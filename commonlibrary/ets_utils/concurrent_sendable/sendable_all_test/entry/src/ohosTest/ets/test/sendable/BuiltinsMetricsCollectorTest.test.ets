@@ -158,7 +158,7 @@ export default function BuiltinsMetricsCollectorTest(): void {
       await Utils.sleep(500)
     })
 
-    it('BuiltinsMetricsCollectorTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testMetricsCollector0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await collector.record('cpu_usage', 75)
       const metric: MetricsData | undefined = collector.getMetric('cpu_usage')
 
@@ -167,7 +167,7 @@ export default function BuiltinsMetricsCollectorTest(): void {
       expect(metric!.name).assertEqual('cpu_usage')
     })
 
-    it('BuiltinsMetricsCollectorTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testMetricsCollector0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await collector.record('request_count', 10)
       const result: number = await collector.increment('request_count', 5)
 
@@ -175,14 +175,14 @@ export default function BuiltinsMetricsCollectorTest(): void {
       expect(collector.getMetric('request_count')!.value).assertEqual(15)
     })
 
-    it('BuiltinsMetricsCollectorTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testMetricsCollector0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const result: number = await collector.increment('new_metric', 100)
 
       expect(result).assertEqual(100)
       expect(collector.getMetric('new_metric')!.value).assertEqual(100)
     })
 
-    it('BuiltinsMetricsCollectorTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMetricsCollector0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const metricNames: string[] = ['metricA', 'metricB', 'metricC']
       const tasks: taskpool.Task[] = metricNames.map((name: string): taskpool.Task =>
         new taskpool.Task(recordMetricTask, collector, name, 50)
@@ -193,7 +193,7 @@ export default function BuiltinsMetricsCollectorTest(): void {
       expect(collector.getMetric('metricA')!.value).assertEqual(50)
     })
 
-    it('BuiltinsMetricsCollectorTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMetricsCollector0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await collector.record('counter', 0)
 
       const tasks: taskpool.Task[] = []
@@ -205,7 +205,7 @@ export default function BuiltinsMetricsCollectorTest(): void {
       expect(collector.getMetric('counter')!.value).assertEqual(10)
     })
 
-    it('BuiltinsMetricsCollectorTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testMetricsCollector0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const beforeTime: number = Date.now()
       await collector.record('time_metric', 42)
       const afterTime: number = Date.now()
@@ -215,7 +215,7 @@ export default function BuiltinsMetricsCollectorTest(): void {
       expect(metric!.timestamp <= afterTime).assertTrue()
     })
 
-    it('BuiltinsMetricsCollectorTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testMetricsCollector0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await collector.record('tagged_metric', 88)
 
       const metric: MetricsData | undefined = collector.getMetric('tagged_metric')
@@ -228,7 +228,7 @@ export default function BuiltinsMetricsCollectorTest(): void {
       expect(metric!.getTag('region')).assertEqual('us-east')
     })
 
-    it('BuiltinsMetricsCollectorTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testMetricsCollector0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await collector.record('temp_metric', 100)
       await collector.record('temp_metric2', 200)
 
@@ -239,7 +239,7 @@ export default function BuiltinsMetricsCollectorTest(): void {
       expect(collector.getRecordCount()).assertEqual(0)
     })
 
-    it('BuiltinsMetricsCollectorTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMetricsCollector0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 3; i++) {
         tasks.push(new taskpool.Task(recordMetricTask, collector, `metric_${i}`, i * 10))
@@ -249,7 +249,7 @@ export default function BuiltinsMetricsCollectorTest(): void {
       expect(collector.getRecordCount()).assertEqual(3)
     })
 
-    it('BuiltinsMetricsCollectorTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMetricsCollector1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
         tasks.push(new taskpool.Task(recordMetricTask, collector, `metric_${i}`, i * 10))
@@ -259,7 +259,7 @@ export default function BuiltinsMetricsCollectorTest(): void {
       expect(collector.getRecordCount()).assertEqual(5)
     })
 
-    it('BuiltinsMetricsCollectorTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMetricsCollector1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
         tasks.push(new taskpool.Task(recordMetricTask, collector, `metric_${i}`, i * 10))
@@ -269,14 +269,14 @@ export default function BuiltinsMetricsCollectorTest(): void {
       expect(collector.getRecordCount()).assertEqual(10)
     })
 
-    it('BuiltinsMetricsCollectorTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testMetricsCollector1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       await collector.record('overwrite_metric', 10)
       await collector.record('overwrite_metric', 20)
 
       expect(collector.getMetric('overwrite_metric')!.value).assertEqual(20)
     })
 
-    it('BuiltinsMetricsCollectorTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testMetricsCollector1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await collector.record('metric1', 1)
       await collector.record('metric2', 2)
       await collector.increment('metric1', 3)

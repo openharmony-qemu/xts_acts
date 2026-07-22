@@ -133,7 +133,7 @@ export default function BuiltinsServiceHotUpdateTest(): void {
       await Utils.sleep(500)
     })
 
-    it('BuiltinsServiceHotUpdateTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceHotUpdate0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const config: collections.Map<string, string> = new collections.Map<string, string>()
       config.set('port', '8080')
 
@@ -144,7 +144,7 @@ export default function BuiltinsServiceHotUpdateTest(): void {
       expect(version!.version).assertEqual('1.0.0')
     })
 
-    it('BuiltinsServiceHotUpdateTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceHotUpdate0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const initialConfig: collections.Map<string, string> = new collections.Map<string, string>()
       await hotUpdater.deploy('apiApp', '1.0.0', initialConfig)
 
@@ -156,14 +156,14 @@ export default function BuiltinsServiceHotUpdateTest(): void {
       expect(hotUpdater.getVersion('apiApp')!.version).assertEqual('2.0.0')
     })
 
-    it('BuiltinsServiceHotUpdateTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testServiceHotUpdate0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const config: collections.Map<string, string> = new collections.Map<string, string>()
       const result: boolean = await hotUpdater.hotUpdate('nonexistent', '2.0.0', config)
 
       expect(result).assertFalse()
     })
 
-    it('BuiltinsServiceHotUpdateTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceHotUpdate0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const config: collections.Map<string, string> = new collections.Map<string, string>()
       await hotUpdater.deploy('rollbackApp', '1.0.0', config)
       await hotUpdater.hotUpdate('rollbackApp', '2.0.0', config)
@@ -174,7 +174,7 @@ export default function BuiltinsServiceHotUpdateTest(): void {
       expect(hotUpdater.getVersion('rollbackApp')!.version).assertEqual('1.0.0')
     })
 
-    it('BuiltinsServiceHotUpdateTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceHotUpdate0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const config: collections.Map<string, string> = new collections.Map<string, string>()
       await hotUpdater.deploy('configApp', '1.0.0', config)
 
@@ -184,7 +184,7 @@ export default function BuiltinsServiceHotUpdateTest(): void {
       expect(hotUpdater.getVersion('configApp')!.config.get('maxConnections')).assertEqual('100')
     })
 
-    it('BuiltinsServiceHotUpdateTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceHotUpdate0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const config: collections.Map<string, string> = new collections.Map<string, string>()
       await hotUpdater.deploy('countApp', '1.0.0', config)
       expect(hotUpdater.getUpdateCount()).assertEqual(1)
@@ -193,7 +193,7 @@ export default function BuiltinsServiceHotUpdateTest(): void {
       expect(hotUpdater.getUpdateCount()).assertEqual(2)
     })
 
-    it('BuiltinsServiceHotUpdateTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceHotUpdate0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const config: collections.Map<string, string> = new collections.Map<string, string>()
       await hotUpdater.deploy('concurrentApp', '1.0.0', config)
 
@@ -206,7 +206,7 @@ export default function BuiltinsServiceHotUpdateTest(): void {
       expect(hotUpdater.getUpdateCount() > 1).assertTrue()
     })
 
-    it('BuiltinsServiceHotUpdateTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceHotUpdate0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const config: collections.Map<string, string> = new collections.Map<string, string>()
       await hotUpdater.deploy('timeApp', '1.0.0', config)
       const deployTime: number = hotUpdater.getVersion('timeApp')!.updateTime
@@ -218,7 +218,7 @@ export default function BuiltinsServiceHotUpdateTest(): void {
       expect(updateTime > deployTime).assertTrue()
     })
 
-    it('BuiltinsServiceHotUpdateTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceHotUpdate0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const config: collections.Map<string, string> = new collections.Map<string, string>()
       const services: string[] = ['deploy1', 'deploy2', 'deploy3']
 
@@ -229,7 +229,7 @@ export default function BuiltinsServiceHotUpdateTest(): void {
       expect(hotUpdater.getUpdateCount()).assertEqual(3)
     })
 
-    it('BuiltinsServiceHotUpdateTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceHotUpdate1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const config: collections.Map<string, string> = new collections.Map<string, string>()
       const services: string[] = []
       for (let i: number = 0; i < 5; i++) {
@@ -243,7 +243,7 @@ export default function BuiltinsServiceHotUpdateTest(): void {
       expect(hotUpdater.getUpdateCount()).assertEqual(5)
     })
 
-    it('BuiltinsServiceHotUpdateTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceHotUpdate1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const config: collections.Map<string, string> = new collections.Map<string, string>()
       const services: string[] = []
       for (let i: number = 0; i < 10; i++) {
@@ -257,7 +257,7 @@ export default function BuiltinsServiceHotUpdateTest(): void {
       expect(hotUpdater.getUpdateCount()).assertEqual(10)
     })
 
-    it('BuiltinsServiceHotUpdateTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testServiceHotUpdate1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const result: boolean = await hotUpdater.rollback('nonexistent', '1.0.0')
       expect(result).assertFalse()
     })

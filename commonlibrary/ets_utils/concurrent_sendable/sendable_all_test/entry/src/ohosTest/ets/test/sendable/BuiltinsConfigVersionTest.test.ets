@@ -150,27 +150,27 @@ export default function BuiltinsConfigVersionTest(): void {
     afterAll((): void => {})
 
     /**
-     * @tc.name   BuiltinsConfigVersionTest0100
-     * @tc.number SUB_BUILTINS_CONFIG_VERSION_TEST_0100
+     * @tc.name   testConfigVersion0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_VERSION_TEST_0100
      * @tc.desc   Verify initial version equals 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsConfigVersionTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConfigVersion0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       expect(await versionManager.getVersion()).assertEqual(0)
       expect(await versionManager.getChangeCount()).assertEqual(0)
     })
 
     /**
-     * @tc.name   BuiltinsConfigVersionTest0200
-     * @tc.number SUB_BUILTINS_CONFIG_VERSION_TEST_0200
+     * @tc.name   testConfigVersion0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_VERSION_TEST_0200
      * @tc.desc   Verify config update increments version
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsConfigVersionTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConfigVersion0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const initialVersion: number = await versionManager.getVersion()
       await versionManager.set('config_key', 'config_value')
       const newVersion: number = await versionManager.getVersion()
@@ -178,14 +178,14 @@ export default function BuiltinsConfigVersionTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConfigVersionTest0300
-     * @tc.number SUB_BUILTINS_CONFIG_VERSION_TEST_0300
+     * @tc.name   testConfigVersion0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_VERSION_TEST_0300
      * @tc.desc   Verify version number retrieval after multiple updates
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsConfigVersionTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConfigVersion0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await versionManager.set('key1', 'value1')
       await versionManager.set('key2', 'value2')
       const version: number = await versionManager.getVersion()
@@ -193,14 +193,14 @@ export default function BuiltinsConfigVersionTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConfigVersionTest0400
-     * @tc.number SUB_BUILTINS_CONFIG_VERSION_TEST_0400
+     * @tc.name   testConfigVersion0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_VERSION_TEST_0400
      * @tc.desc   Verify version history records
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsConfigVersionTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConfigVersion0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await versionManager.set('first', 'value1')
       await versionManager.set('second', 'value2')
       const history: collections.Array<VersionHistoryEntry> = await versionManager.getVersionHistory()
@@ -210,14 +210,14 @@ export default function BuiltinsConfigVersionTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConfigVersionTest0500
-     * @tc.number SUB_BUILTINS_CONFIG_VERSION_TEST_0500
+     * @tc.name   testConfigVersion0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_VERSION_TEST_0500
      * @tc.desc   Verify multi-thread version query consistency with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsConfigVersionTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConfigVersion0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await versionManager.set('base', 'base_value')
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 5; i++) {
@@ -235,14 +235,14 @@ export default function BuiltinsConfigVersionTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConfigVersionTest0600
-     * @tc.number SUB_BUILTINS_CONFIG_VERSION_TEST_0600
+     * @tc.name   testConfigVersion0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_VERSION_TEST_0600
      * @tc.desc   Verify config update version synchronization
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsConfigVersionTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConfigVersion0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const versionBefore: number = await versionManager.getVersion()
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 3; i++) {
@@ -258,14 +258,14 @@ export default function BuiltinsConfigVersionTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConfigVersionTest0700
-     * @tc.number SUB_BUILTINS_CONFIG_VERSION_TEST_0700
+     * @tc.name   testConfigVersion0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_VERSION_TEST_0700
      * @tc.desc   Verify TaskPool version query with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsConfigVersionTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConfigVersion0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await versionManager.batchSet(['batch1', 'batch2'], ['val1', 'val2'])
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 10; i++) {
@@ -283,28 +283,28 @@ export default function BuiltinsConfigVersionTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConfigVersionTest0800
-     * @tc.number SUB_BUILTINS_CONFIG_VERSION_TEST_0800
+     * @tc.name   testConfigVersion0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_VERSION_TEST_0800
      * @tc.desc   Verify config update timestamp recording
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsConfigVersionTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConfigVersion0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await versionManager.set('timestamped', 'value')
       const updateTime: number = await versionManager.getLastUpdateTime()
       expect(updateTime > 0).assertTrue()
     })
 
     /**
-     * @tc.name   BuiltinsConfigVersionTest0900
-     * @tc.number SUB_BUILTINS_CONFIG_VERSION_TEST_0900
+     * @tc.name   testConfigVersion0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_VERSION_TEST_0900
      * @tc.desc   Verify multiple update history tracking
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsConfigVersionTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConfigVersion0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       for (let i = 0; i < 5; i++) {
         await versionManager.set(`update${i}`, `value${i}`)
       }
@@ -317,14 +317,14 @@ export default function BuiltinsConfigVersionTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConfigVersionTest1000
-     * @tc.number SUB_BUILTINS_CONFIG_VERSION_TEST_1000
+     * @tc.name   testConfigVersion1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_VERSION_TEST_1000
      * @tc.desc   Verify version change count
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsConfigVersionTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConfigVersion1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await versionManager.batchSet(['batch_key1'], ['batch_val1'])
       await versionManager.set('single_key', 'single_val')
       await versionManager.batchSet(['batch_key2', 'batch_key3'], ['batch_val2', 'batch_val3'])
@@ -333,14 +333,14 @@ export default function BuiltinsConfigVersionTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConfigVersionTest1100
-     * @tc.number SUB_BUILTINS_CONFIG_VERSION_TEST_1100
+     * @tc.name   testConfigVersion1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_VERSION_TEST_1100
      * @tc.desc   Verify batch update version increment
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsConfigVersionTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConfigVersion1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const initialVersion: number = await versionManager.getVersion()
       await versionManager.batchSet(
         ['batch1', 'batch2', 'batch3'],
@@ -354,14 +354,14 @@ export default function BuiltinsConfigVersionTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConfigVersionTest1200
-     * @tc.number SUB_BUILTINS_CONFIG_VERSION_TEST_1200
+     * @tc.name   testConfigVersion1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_VERSION_TEST_1200
      * @tc.desc   Verify sendData config sync notification via onReceiveData Promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsConfigVersionTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConfigVersion1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const task: taskpool.Task = new taskpool.Task(syncConfigNotificationTask)
       const receivePromise: Promise<number> = new Promise<number>((resolve: (value: number) => void): void => {
         task.onReceiveData((data: Object): void => {
@@ -375,14 +375,14 @@ export default function BuiltinsConfigVersionTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConfigVersionTest1300
-     * @tc.number SUB_BUILTINS_CONFIG_VERSION_TEST_1300
+     * @tc.name   testConfigVersion1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_VERSION_TEST_1300
      * @tc.desc   Verify callback nested version update via onReceiveData Promise and Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsConfigVersionTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConfigVersion1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const task: taskpool.Task = new taskpool.Task(triggerVersionUpdateTask)
       const nestedPromises: Promise<Object>[] = []
       const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
@@ -400,14 +400,14 @@ export default function BuiltinsConfigVersionTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConfigVersionTest1400
-     * @tc.number SUB_BUILTINS_CONFIG_VERSION_TEST_1400
+     * @tc.name   testConfigVersion1400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_VERSION_TEST_1400
      * @tc.desc   Verify multi-listener concurrent notification via onReceiveData Promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsConfigVersionTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConfigVersion1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const notifications1: Record<string, Object>[] = []
       const task: taskpool.Task = new taskpool.Task(multiListenerNotifyTask)
       const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {

@@ -88,24 +88,24 @@ export default function BuiltinsDataResultCollectTest(): void {
     afterEach((): void => {})
     afterAll((): void => {})
 
-    it('BuiltinsDataResultCollectTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testDataResultCollect0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await collector.addResult(1, 'result_1')
       expect(collector.getResultCount()).assertEqual(1)
     })
 
-    it('BuiltinsDataResultCollectTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testDataResultCollect0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await collector.addResult(1, 'result_1')
       await collector.addResult(2, 'result_2')
       expect(collector.getResultCount()).assertEqual(2)
     })
 
-    it('BuiltinsDataResultCollectTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testDataResultCollect0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await collector.addResult(1, 'test_data')
       const result: string = collector.getResultByIndex(0)
       expect(result).assertEqual('test_data')
     })
 
-    it('BuiltinsDataResultCollectTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testDataResultCollect0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 3; i++) {
         tasks.push(new taskpool.Task(processData, i, `data_${i}`))
@@ -120,7 +120,7 @@ export default function BuiltinsDataResultCollectTest(): void {
       expect(collector.getResultCount()).assertEqual(3)
     })
 
-    it('BuiltinsDataResultCollectTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testDataResultCollect0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 10; i++) {
         tasks.push(new taskpool.Task(processData, i, `data_${i}`))
@@ -139,7 +139,7 @@ export default function BuiltinsDataResultCollectTest(): void {
       expect(taskIds.length).assertEqual(10)
     })
 
-    it('BuiltinsDataResultCollectTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testDataResultCollect0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 5; i++) {
         tasks.push(new taskpool.Task(processData, i, `data_${i}`))
@@ -155,7 +155,7 @@ export default function BuiltinsDataResultCollectTest(): void {
       expect(collector.getResultCount()).assertEqual(5)
     })
 
-    it('BuiltinsDataResultCollectTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testDataResultCollect0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 50; i++) {
         tasks.push(new taskpool.Task(processData, i, `data_${i}`))
@@ -176,7 +176,7 @@ export default function BuiltinsDataResultCollectTest(): void {
       expect(collector.getResultCount()).assertEqual(50)
     })
 
-    it('BuiltinsDataResultCollectTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testDataResultCollect0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const task = new taskpool.Task(processData, 1, 'test')
       const result: Object = await taskpool.execute(task)
       await collector.addResult(1, result as string)
@@ -185,7 +185,7 @@ export default function BuiltinsDataResultCollectTest(): void {
       expect(res).assertContain('processed_test_1')
     })
 
-    it('BuiltinsDataResultCollectTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDataResultCollect0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const receivedData: string[] = []
       const task = new taskpool.Task(triggerNestedData)
       const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
@@ -200,7 +200,7 @@ export default function BuiltinsDataResultCollectTest(): void {
       expect(receivedData[0]).assertEqual('trigger')
     })
 
-    it('BuiltinsDataResultCollectTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testDataResultCollect1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const nestedPromises: Promise<Object>[] = []
       const task = new taskpool.Task(triggerNestedData)
       const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
@@ -221,7 +221,7 @@ export default function BuiltinsDataResultCollectTest(): void {
       expect(collector.getResultCount()).assertEqual(3)
     })
 
-    it('BuiltinsDataResultCollectTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDataResultCollect1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 5; i++) {
         await collector.addResult(i, `sequential_${i}`)
       }
@@ -231,7 +231,7 @@ export default function BuiltinsDataResultCollectTest(): void {
       }
     })
 
-    it('BuiltinsDataResultCollectTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDataResultCollect1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await collector.addResult(1, 'result_1')
       await collector.addResult(2, 'result_2')
       await collector.addResult(3, 'result_3')

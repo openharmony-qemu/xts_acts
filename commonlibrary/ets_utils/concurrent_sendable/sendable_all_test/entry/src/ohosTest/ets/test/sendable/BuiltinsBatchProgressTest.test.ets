@@ -110,14 +110,14 @@ export default function BuiltinsBatchProgressTest(): void {
       await tracker.reset()
     })
 
-    it('BuiltinsBatchProgressTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testBatchProgress0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await tracker.setTotal(10)
       expect(await tracker.getPercentage()).assertEqual(0)
       expect(await tracker.getCurrent()).assertEqual(0)
       expect(await tracker.getTotal()).assertEqual(10)
     })
 
-    it('BuiltinsBatchProgressTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testBatchProgress0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await tracker.setTotal(10)
       const p1: number = await tracker.increment()
       expect(p1).assertEqual(10)
@@ -126,7 +126,7 @@ export default function BuiltinsBatchProgressTest(): void {
       expect(await tracker.getCurrent()).assertEqual(2)
     })
 
-    it('BuiltinsBatchProgressTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testBatchProgress0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await tracker.setTotal(10)
       for (let i: number = 0; i < 5; i++) {
         await tracker.increment()
@@ -135,7 +135,7 @@ export default function BuiltinsBatchProgressTest(): void {
       expect(await tracker.getCurrent()).assertEqual(5)
     })
 
-    it('BuiltinsBatchProgressTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testBatchProgress0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await tracker.setTotal(5)
       for (let i: number = 0; i < 5; i++) {
         await tracker.increment()
@@ -144,7 +144,7 @@ export default function BuiltinsBatchProgressTest(): void {
       expect(await tracker.isCompleted()).assertTrue()
     })
 
-    it('BuiltinsBatchProgressTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testBatchProgress0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await tracker.setTotal(10)
       for (let i: number = 0; i < 15; i++) {
         await tracker.increment()
@@ -153,12 +153,12 @@ export default function BuiltinsBatchProgressTest(): void {
       expect(await tracker.getCurrent()).assertEqual(10)
     })
 
-    it('BuiltinsBatchProgressTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testBatchProgress0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await tracker.setTotal(0)
       expect(await tracker.getPercentage()).assertEqual(0)
     })
 
-    it('BuiltinsBatchProgressTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testBatchProgress0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await tracker.setTotal(1)
       expect(await tracker.getPercentage()).assertEqual(0)
       await tracker.increment()
@@ -166,7 +166,7 @@ export default function BuiltinsBatchProgressTest(): void {
       expect(await tracker.isCompleted()).assertTrue()
     })
 
-    it('BuiltinsBatchProgressTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testBatchProgress0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await tracker.setTotal(5)
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
@@ -178,7 +178,7 @@ export default function BuiltinsBatchProgressTest(): void {
       expect(await tracker.isCompleted()).assertTrue()
     })
 
-    it('BuiltinsBatchProgressTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testBatchProgress0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await tracker.setTotal(20)
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 20; i++) {
@@ -189,7 +189,7 @@ export default function BuiltinsBatchProgressTest(): void {
       expect(await tracker.getPercentage()).assertEqual(100)
     })
 
-    it('BuiltinsBatchProgressTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testBatchProgress1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await tracker.setTotal(5)
       for (let i: number = 0; i < 5; i++) {
         await tracker.increment()
@@ -205,14 +205,14 @@ export default function BuiltinsBatchProgressTest(): void {
       expect(await tracker.getPercentage()).assertEqual(100)
     })
 
-    it('BuiltinsBatchProgressTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testBatchProgress1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await tracker.reset()
       expect(await tracker.getPercentage()).assertEqual(0)
       await tracker.reset()
       expect(await tracker.getPercentage()).assertEqual(0)
     })
 
-    it('BuiltinsBatchProgressTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testBatchProgress1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await tracker.setTotal(100)
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 100; i++) {

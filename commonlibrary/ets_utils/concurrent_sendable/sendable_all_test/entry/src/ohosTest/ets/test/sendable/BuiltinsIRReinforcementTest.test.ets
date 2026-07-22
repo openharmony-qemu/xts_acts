@@ -361,14 +361,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     afterAll((): void => {})
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest0100
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_0100
+     * @tc.name   testIRReinforcement0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_0100
      * @tc.desc   Verify fixed property IR access for shared counter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIRReinforcementTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIRReinforcement0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const counter: IRCounter = new IRCounter(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
       await counter.lock_.lockAsync((): void => {
         counter.count_ = 10
@@ -382,14 +382,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest0200
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_0200
+     * @tc.name   testIRReinforcement0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_0200
      * @tc.desc   Verify IC cache establishment for shared counter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIRReinforcementTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIRReinforcement0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const counter: IRCounter = new IRCounter(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 100; i++) {
         await counter.increment()
@@ -398,14 +398,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest0300
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_0300
+     * @tc.name   testIRReinforcement0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_0300
      * @tc.desc   Verify dynamic property count exceeding 1024 triggers dictionary mode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsIRReinforcementTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testIRReinforcement0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const counter: IRCounter = new IRCounter(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 1025; i++) {
         await counter.addMetric(`metric_${i}`, i)
@@ -416,14 +416,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest0400
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_0400
+     * @tc.name   testIRReinforcement0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_0400
      * @tc.desc   Verify fixed + dynamic property combination for shared counter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsIRReinforcementTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testIRReinforcement0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const counter: IRCounter = new IRCounter(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
       await counter.lock_.lockAsync((): void => { counter.count_ = 50 })
       for (let i = 0; i < 1025; i++) {
@@ -434,14 +434,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest0500
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_0500
+     * @tc.name   testIRReinforcement0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_0500
      * @tc.desc   Verify SendableArray queue with 1024 elements at IR boundary
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIRReinforcementTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIRReinforcement0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 1024; i++) {
         await queue.enqueue(i)
@@ -450,14 +450,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest0600
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_0600
+     * @tc.name   testIRReinforcement0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_0600
      * @tc.desc   Verify SendableArray queue with 1025 elements exceeding IR boundary
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIRReinforcementTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIRReinforcement0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 1025; i++) {
         await queue.enqueue(i)
@@ -468,14 +468,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest0700
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_0700
+     * @tc.name   testIRReinforcement0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_0700
      * @tc.desc   Verify concurrent queue IR with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsIRReinforcementTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testIRReinforcement0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const queue: IRQueue = new IRQueue(new collections.Array<number>(), new ArkTSUtils.locks.AsyncLock())
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 100; i++) {
@@ -490,14 +490,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest0800
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_0800
+     * @tc.name   testIRReinforcement0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_0800
      * @tc.desc   Verify LRUCache fixed property IR access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIRReinforcementTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIRReinforcement0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let cache: IRLRUCache = new IRLRUCache(new collections.Map<string, string>(), new ArkTSUtils.locks.AsyncLock())
       const stats: number[] = await cache.getIRStats()
       expect(stats[0]).assertEqual(1024)
@@ -505,14 +505,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest0900
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_0900
+     * @tc.name   testIRReinforcement0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_0900
      * @tc.desc   Verify LRUCache IC cache for repeated access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIRReinforcementTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIRReinforcement0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let cache: IRLRUCache = new IRLRUCache(new collections.Map<string, string>(), new ArkTSUtils.locks.AsyncLock())
       await cache.set('key1', 'value1')
       for (let i = 0; i < 100; i++) {
@@ -522,14 +522,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest1000
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_1000
+     * @tc.name   testIRReinforcement1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_1000
      * @tc.desc   Verify LRUCache elements exceeding 1024 triggers dictionary mode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsIRReinforcementTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testIRReinforcement1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let cache: IRLRUCache = new IRLRUCache(new collections.Map<string, string>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 1025; i++) {
         await cache.set(`cache_${i}`, `value_${i}`)
@@ -539,14 +539,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest1100
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_1100
+     * @tc.name   testIRReinforcement1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_1100
      * @tc.desc   Verify result collector fixed property IR access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIRReinforcementTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIRReinforcement1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const collector: IRResultCollector = new IRResultCollector(new collections.Map<number, string>(), new ArkTSUtils.locks.AsyncLock())
       await collector.lock_.lockAsync((): void => { collector.total_ = 100 })
       const stats: number[] = await collector.getIRStats()
@@ -554,14 +554,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest1200
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_1200
+     * @tc.name   testIRReinforcement1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_1200
      * @tc.desc   Verify result Map elements exceeding 1024 triggers dictionary mode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsIRReinforcementTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testIRReinforcement1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const collector: IRResultCollector = new IRResultCollector(new collections.Map<number, string>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 1025; i++) {
         await collector.lock_.lockAsync((): void => { collector.results.set(i, `result_${i}`) })
@@ -570,14 +570,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest1300
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_1300
+     * @tc.name   testIRReinforcement1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_1300
      * @tc.desc   Verify cross-thread result collection IR consistency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsIRReinforcementTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testIRReinforcement1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const counter: IRCounter = new IRCounter(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
       await counter.lock_.lockAsync((): void => { counter.count_ = 100 })
       const tasks: taskpool.Task[] = []
@@ -595,14 +595,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest1400
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_1400
+     * @tc.name   testIRReinforcement1400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_1400
      * @tc.desc   Verify lock object fixed property IR access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIRReinforcementTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIRReinforcement1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
       const counter: IRCounter = new IRCounter(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
       await lock.lockAsync((): void => { counter.count_ = 42 })
@@ -610,14 +610,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest1500
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_1500
+     * @tc.name   testIRReinforcement1500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_1500
      * @tc.desc   Verify condition variable property IR access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIRReinforcementTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIRReinforcement1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const cond: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable()
       const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
       await lock.lockAsync(async (): Promise<void> => {
@@ -627,14 +627,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest1600
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_1600
+     * @tc.name   testIRReinforcement1600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_1600
      * @tc.desc   Verify config items exceeding 1024 triggers dictionary mode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsIRReinforcementTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testIRReinforcement1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const config: IRConfigManager = new IRConfigManager(new ArkTSUtils.locks.AsyncLock(), new collections.Map<string, string>())
       for (let i = 0; i < 1025; i++) {
         await config.addConfig(`config_${i}`, `value_${i}`)
@@ -644,14 +644,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest1700
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_1700
+     * @tc.name   testIRReinforcement1700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_1700
      * @tc.desc   Verify config property IC cache for repeated access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIRReinforcementTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIRReinforcement1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const config: IRConfigManager = new IRConfigManager(new ArkTSUtils.locks.AsyncLock(), new collections.Map<string, string>())
       await config.addConfig('key1', 'value1')
       for (let i = 0; i < 100; i++) {
@@ -661,14 +661,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest1800
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_1800
+     * @tc.name   testIRReinforcement1800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_1800
      * @tc.desc   Verify state machine property IR access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIRReinforcementTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIRReinforcement1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const sm: IRStateMachine = new IRStateMachine(new ArkTSUtils.locks.AsyncLock())
       await sm.transition(1)
       await sm.transition(2)
@@ -678,14 +678,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest1900
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_1900
+     * @tc.name   testIRReinforcement1900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_1900
      * @tc.desc   Verify state transition IC cache
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIRReinforcementTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIRReinforcement1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const sm: IRStateMachine = new IRStateMachine(new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 50; i++) {
         await sm.transition(i % 5)
@@ -694,14 +694,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest2000
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_2000
+     * @tc.name   testIRReinforcement2000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_2000
      * @tc.desc   Verify progress property IC cache for repeated access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIRReinforcementTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIRReinforcement2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const tracker: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 10; i++) {
         await tracker.updateProgress(10)
@@ -713,14 +713,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest2100
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_2100
+     * @tc.name   testIRReinforcement2100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_2100
      * @tc.desc   Verify progress property IR access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIRReinforcementTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIRReinforcement2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const tracker: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
       await tracker.updateProgress(25)
       expect(await tracker.getPercentage()).assertEqual(25)
@@ -729,14 +729,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest2200
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_2200
+     * @tc.name   testIRReinforcement2200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_2200
      * @tc.desc   Verify event queue elements exceeding 1024
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsIRReinforcementTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testIRReinforcement2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const bus: IREventBus = new IREventBus(new collections.Array<string>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 1025; i++) {
         await bus.publish(`event_${i}`)
@@ -745,28 +745,28 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest2300
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_2300
+     * @tc.name   testIRReinforcement2300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_2300
      * @tc.desc   Verify event bus property IR access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIRReinforcementTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIRReinforcement2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const bus: IREventBus = new IREventBus(new collections.Array<string>(), new ArkTSUtils.locks.AsyncLock())
       await bus.publish('test_event')
       expect(await bus.getEventCount()).assertEqual(1)
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest2400
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_2400
+     * @tc.name   testIRReinforcement2400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_2400
      * @tc.desc   Verify connection pool property IR access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIRReinforcementTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIRReinforcement2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const pool: IRConnectionPool = new IRConnectionPool(new ArkTSUtils.locks.AsyncLock())
       await pool.acquire()
       await pool.acquire()
@@ -776,14 +776,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest2500
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_2500
+     * @tc.name   testIRReinforcement2500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_2500
      * @tc.desc   Verify connection pool IC cache for repeated access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIRReinforcementTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIRReinforcement2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const pool: IRConnectionPool = new IRConnectionPool(new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 5; i++) {
         await pool.acquire()
@@ -797,14 +797,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest2600
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_2600
+     * @tc.name   testIRReinforcement2600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_2600
      * @tc.desc   Verify global service HiddenClass sharing across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsIRReinforcementTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testIRReinforcement2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const service1: GlobalService = new GlobalService(new ArkTSUtils.locks.AsyncLock())
       const service2: GlobalService = new GlobalService(new ArkTSUtils.locks.AsyncLock())
       let results: Object[] = await Promise.all([
@@ -816,14 +816,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest2700
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_2700
+     * @tc.name   testIRReinforcement2700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_2700
      * @tc.desc   Verify metrics collector IC cache for repeated access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIRReinforcementTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIRReinforcement2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const collector: MetricsCollector = new MetricsCollector(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
       await collector.recordMetric('cpu_usage', 50)
       for (let i = 0; i < 100; i++) {
@@ -833,14 +833,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest2800
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_2800
+     * @tc.name   testIRReinforcement2800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_2800
      * @tc.desc   Verify IR property access after GC-like object creation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsIRReinforcementTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testIRReinforcement2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const obj: IRGCObject = new IRGCObject(new ArkTSUtils.locks.AsyncLock())
       await obj.setValue(42)
       const tempObjs: IRGCObject[] = []
@@ -853,14 +853,14 @@ export default function BuiltinsIRReinforcementTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIRReinforcementTest2900
-     * @tc.number SUB_BUILTINS_IR_REINFORCEMENT_TEST_2900
+     * @tc.name   testIRReinforcement2900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_REINFORCEMENT_TEST_2900
      * @tc.desc   Verify GC and IR combination - object survives concurrent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsIRReinforcementTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testIRReinforcement2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const obj: IRGCObject = new IRGCObject(new ArkTSUtils.locks.AsyncLock())
       await obj.setValue(100)
       const tasks: taskpool.Task[] = []

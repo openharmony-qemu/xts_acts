@@ -152,12 +152,12 @@ export default function BuiltinsOrderStateMachineTest(): void {
       await orderSM.reset()
     })
 
-    it('BuiltinsOrderStateMachineTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testOrderStateMachine0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       expect(await orderSM.getCurrentState()).assertEqual(OrderState.CREATED)
       expect(await orderSM.getHistoryCount()).assertEqual(0)
     })
 
-    it('BuiltinsOrderStateMachineTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testOrderStateMachine0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result: boolean = await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit order')
       expect(result).assertTrue()
       expect(await orderSM.getCurrentState()).assertEqual(OrderState.PENDING_PAYMENT)
@@ -165,7 +165,7 @@ export default function BuiltinsOrderStateMachineTest(): void {
       expect(await orderSM.getHistoryCount()).assertEqual(1)
     })
 
-    it('BuiltinsOrderStateMachineTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testOrderStateMachine0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       expect(await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')).assertTrue()
       expect(await orderSM.transition(OrderState.PAID, 'pay')).assertTrue()
       expect(await orderSM.transition(OrderState.SHIPPED, 'ship')).assertTrue()
@@ -174,7 +174,7 @@ export default function BuiltinsOrderStateMachineTest(): void {
       expect(await orderSM.getHistoryCount()).assertEqual(4)
     })
 
-    it('BuiltinsOrderStateMachineTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testOrderStateMachine0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')
       const result: boolean = await orderSM.transition(OrderState.CANCELLED, 'user cancel')
       expect(result).assertTrue()
@@ -182,7 +182,7 @@ export default function BuiltinsOrderStateMachineTest(): void {
       expect(await orderSM.getHistoryCount()).assertEqual(2)
     })
 
-    it('BuiltinsOrderStateMachineTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testOrderStateMachine0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')
       await orderSM.transition(OrderState.PAID, 'pay')
       const result: boolean = await orderSM.transition(OrderState.REFUNDED, 'refund request')
@@ -190,13 +190,13 @@ export default function BuiltinsOrderStateMachineTest(): void {
       expect(await orderSM.getCurrentState()).assertEqual(OrderState.REFUNDED)
     })
 
-    it('BuiltinsOrderStateMachineTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testOrderStateMachine0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result: boolean = await orderSM.transition(OrderState.PAID, 'skip payment')
       expect(result).assertFalse()
       expect(await orderSM.getCurrentState()).assertEqual(OrderState.CREATED)
     })
 
-    it('BuiltinsOrderStateMachineTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testOrderStateMachine0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')
       await orderSM.transition(OrderState.PAID, 'pay')
       await orderSM.transition(OrderState.SHIPPED, 'ship')
@@ -206,7 +206,7 @@ export default function BuiltinsOrderStateMachineTest(): void {
       expect(await orderSM.getCurrentState()).assertEqual(OrderState.DELIVERED)
     })
 
-    it('BuiltinsOrderStateMachineTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testOrderStateMachine0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')
       await orderSM.transition(OrderState.CANCELLED, 'cancel')
       const result: boolean = await orderSM.transition(OrderState.PAID, 'try pay')
@@ -214,7 +214,7 @@ export default function BuiltinsOrderStateMachineTest(): void {
       expect(await orderSM.getCurrentState()).assertEqual(OrderState.CANCELLED)
     })
 
-    it('BuiltinsOrderStateMachineTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testOrderStateMachine0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await orderSM.transition(OrderState.PENDING_PAYMENT, 'submit')
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
@@ -230,7 +230,7 @@ export default function BuiltinsOrderStateMachineTest(): void {
       }
     })
 
-    it('BuiltinsOrderStateMachineTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testOrderStateMachine1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await orderSM.transition(OrderState.PENDING_PAYMENT, 'user submit order')
       await orderSM.transition(OrderState.PAID, 'alipay payment')
       await orderSM.transition(OrderState.SHIPPED, 'fedex shipping')
@@ -243,7 +243,7 @@ export default function BuiltinsOrderStateMachineTest(): void {
       }
     })
 
-    it('BuiltinsOrderStateMachineTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testOrderStateMachine1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await orderSM.transition(OrderState.PENDING_PAYMENT, 'step1')
       await orderSM.transition(OrderState.PAID, 'step2')
       await orderSM.transition(OrderState.SHIPPED, 'step3')

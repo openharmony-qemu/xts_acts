@@ -178,14 +178,14 @@ export default function BuiltinsConfigIRTest(): void {
     afterEach((): void => {})
 
     /**
-     * @tc.name   BuiltinsConfigIRTest0100
-     * @tc.number SUB_BUILTINS_CONFIG_IR_TEST_0100
+     * @tc.name   testConfigIR0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_IR_TEST_0100
      * @tc.desc   Verify config manager fixed property IR verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsConfigIRTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConfigIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const config: IRConfigManager = new IRConfigManager(new collections.Map<string, string>())
       const stats: number[] = config.getIRStats()
       expect(stats[0]).assertEqual(0)
@@ -193,14 +193,14 @@ export default function BuiltinsConfigIRTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConfigIRTest0200
-     * @tc.number SUB_BUILTINS_CONFIG_IR_TEST_0200
+     * @tc.name   testConfigIR0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_IR_TEST_0200
      * @tc.desc   Verify config access IC cache verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsConfigIRTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConfigIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const config: ICConfigManager = new ICConfigManager(new collections.Map<string, string>())
       config.set('key1', 'value1')
       for (let i = 0; i < 100; i++) {
@@ -210,28 +210,28 @@ export default function BuiltinsConfigIRTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConfigIRTest0300
-     * @tc.number SUB_BUILTINS_CONFIG_IR_TEST_0300
+     * @tc.name   testConfigIR0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_IR_TEST_0300
      * @tc.desc   Verify same capacity config manager HiddenClass sharing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsConfigIRTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConfigIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const config1: StandardConfigManager = new StandardConfigManager(new collections.Map<string, string>())
       const config2: StandardConfigManager = new StandardConfigManager(new collections.Map<string, string>())
       expect(config1.capacity_).assertEqual(config2.capacity_)
     })
 
     /**
-     * @tc.name   BuiltinsConfigIRTest0400
-     * @tc.number SUB_BUILTINS_CONFIG_IR_TEST_0400
+     * @tc.name   testConfigIR0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_IR_TEST_0400
      * @tc.desc   Verify config element count > 1024 dictionary mode trigger
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsConfigIRTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConfigIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const config: LargeConfigManager = new LargeConfigManager(new collections.Map<string, number>())
       for (let i = 0; i < 1025; i++) {
         config.configMap_.set(`cfg_${i}`, i)
@@ -241,14 +241,14 @@ export default function BuiltinsConfigIRTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConfigIRTest0500
-     * @tc.number SUB_BUILTINS_CONFIG_IR_TEST_0500
+     * @tc.name   testConfigIR0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_IR_TEST_0500
      * @tc.desc   Verify multiple config IR objects concurrent access with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsConfigIRTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testConfigIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const config: ConcurrentConfigManager = new ConcurrentConfigManager(new collections.Map<string, string>())
       for (let i = 0; i < 100; i++) {
         config.configMap_.set(`k_${i}`, `v_${i}`)
@@ -268,14 +268,14 @@ export default function BuiltinsConfigIRTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConfigIRTest0600
-     * @tc.number SUB_BUILTINS_CONFIG_IR_TEST_0600
+     * @tc.name   testConfigIR0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_IR_TEST_0600
      * @tc.desc   Verify config IR object property access verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsConfigIRTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConfigIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const config: ConfigPropertyIR = new ConfigPropertyIR()
       config.markLoaded()
       const status: number[] = config.getIRStatus()
@@ -285,14 +285,14 @@ export default function BuiltinsConfigIRTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConfigIRTest0700
-     * @tc.number SUB_BUILTINS_CONFIG_IR_TEST_0700
+     * @tc.name   testConfigIR0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_IR_TEST_0700
      * @tc.desc   Verify config IR object method call verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsConfigIRTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConfigIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const config: ConfigMethodIR = new ConfigMethodIR(new collections.Map<string, string>(), new ArkTSUtils.locks.AsyncLock())
       await config.setConfig('method_key', 'method_value')
       const value: string | undefined = await config.getConfig('method_key')
@@ -300,14 +300,14 @@ export default function BuiltinsConfigIRTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConfigIRTest0800
-     * @tc.number SUB_BUILTINS_CONFIG_IR_TEST_0800
+     * @tc.name   testConfigIR0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_IR_TEST_0800
      * @tc.desc   Verify config IR object TaskPool transfer verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsConfigIRTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testConfigIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const config: CrossThreadConfig = new CrossThreadConfig(new collections.Map<string, number>())
       config.configMap_.set('shared_key', 42)
       const tasks: taskpool.Task[] = []
@@ -325,14 +325,14 @@ export default function BuiltinsConfigIRTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConfigIRTest0900
-     * @tc.number SUB_BUILTINS_CONFIG_IR_TEST_0900
+     * @tc.name   testConfigIR0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_IR_TEST_0900
      * @tc.desc   Verify config IR object cross-thread property access verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsConfigIRTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testConfigIR0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const config: CrossThreadConfig = new CrossThreadConfig(new collections.Map<string, number>())
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 10; i++) {
@@ -349,14 +349,14 @@ export default function BuiltinsConfigIRTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsConfigIRTest1000
-     * @tc.number SUB_BUILTINS_CONFIG_IR_TEST_1000
+     * @tc.name   testConfigIR1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_CONFIG_IR_TEST_1000
      * @tc.desc   Verify config IR object batch operation verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsConfigIRTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConfigIR1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const config: BatchConfigManager = new BatchConfigManager(new collections.Map<string, string>())
       const keys: string[] = []
       const values: string[] = []

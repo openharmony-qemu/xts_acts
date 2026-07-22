@@ -106,14 +106,14 @@ export default function BuiltinsDependencyChainTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDependencyChainTest0100
-     * @tc.number SUB_BUILTINS_DEPENDENCY_CHAIN_TEST_0100
+     * @tc.name   testDependencyChain0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DEPENDENCY_CHAIN_TEST_0100
      * @tc.desc   Verify adding single dependency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsDependencyChainTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testDependencyChain0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await chain.addDependency('moduleA', ['moduleB'])
 
       const deps: string[] = await chain.getDependencies('moduleA')
@@ -122,14 +122,14 @@ export default function BuiltinsDependencyChainTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDependencyChainTest0200
-     * @tc.number SUB_BUILTINS_DEPENDENCY_CHAIN_TEST_0200
+     * @tc.name   testDependencyChain0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DEPENDENCY_CHAIN_TEST_0200
      * @tc.desc   Verify adding multiple dependencies
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsDependencyChainTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testDependencyChain0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await chain.addDependency('moduleA', ['moduleB', 'moduleC', 'moduleD'])
 
       const deps: string[] = await chain.getDependencies('moduleA')
@@ -137,14 +137,14 @@ export default function BuiltinsDependencyChainTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDependencyChainTest0300
-     * @tc.number SUB_BUILTINS_DEPENDENCY_CHAIN_TEST_0300
+     * @tc.name   testDependencyChain0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DEPENDENCY_CHAIN_TEST_0300
      * @tc.desc   Verify dependency chain resolution
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsDependencyChainTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testDependencyChain0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await chain.addDependency('moduleA', ['moduleB'])
       await chain.addDependency('moduleB', ['moduleC'])
 
@@ -155,14 +155,14 @@ export default function BuiltinsDependencyChainTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDependencyChainTest0400
-     * @tc.number SUB_BUILTINS_DEPENDENCY_CHAIN_TEST_0400
+     * @tc.name   testDependencyChain0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DEPENDENCY_CHAIN_TEST_0400
      * @tc.desc   Verify circular dependency handling
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsDependencyChainTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testDependencyChain0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       await chain.addDependency('moduleA', ['moduleB'])
       await chain.addDependency('moduleB', ['moduleA'])
 
@@ -171,27 +171,27 @@ export default function BuiltinsDependencyChainTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDependencyChainTest0500
-     * @tc.number SUB_BUILTINS_DEPENDENCY_CHAIN_TEST_0500
+     * @tc.name   testDependencyChain0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DEPENDENCY_CHAIN_TEST_0500
      * @tc.desc   Verify getDependencies for non-existent module returns empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsDependencyChainTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testDependencyChain0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const deps: string[] = await chain.getDependencies('nonexistent')
       expect(deps.length).assertEqual(0)
     })
 
     /**
-     * @tc.name   BuiltinsDependencyChainTest0600
-     * @tc.number SUB_BUILTINS_DEPENDENCY_CHAIN_TEST_0600
+     * @tc.name   testDependencyChain0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DEPENDENCY_CHAIN_TEST_0600
      * @tc.desc   Verify module count tracking
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsDependencyChainTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testDependencyChain0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await chain.addDependency('moduleA', ['moduleB'])
       await chain.addDependency('moduleB', ['moduleC'])
 
@@ -200,14 +200,14 @@ export default function BuiltinsDependencyChainTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDependencyChainTest0700
-     * @tc.number SUB_BUILTINS_DEPENDENCY_CHAIN_TEST_0700
+     * @tc.name   testDependencyChain0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DEPENDENCY_CHAIN_TEST_0700
      * @tc.desc   Verify clear removes all dependencies
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsDependencyChainTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testDependencyChain0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await chain.addDependency('moduleA', ['moduleB'])
       await chain.clear()
 
@@ -216,14 +216,14 @@ export default function BuiltinsDependencyChainTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDependencyChainTest0800
-     * @tc.number SUB_BUILTINS_DEPENDENCY_CHAIN_TEST_0800
+     * @tc.name   testDependencyChain0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DEPENDENCY_CHAIN_TEST_0800
      * @tc.desc   Verify concurrent dependency addition with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsDependencyChainTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testDependencyChain0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const modules: string[][] = [['modA', 'modB'], ['modC', 'modD'], ['modE', 'modF']]
       const tasks: taskpool.Task[] = modules.map((pair: string[]): taskpool.Task =>
         new taskpool.Task(addDependencyTask, chain, pair[0], [pair[1]])
@@ -236,14 +236,14 @@ export default function BuiltinsDependencyChainTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDependencyChainTest0900
-     * @tc.number SUB_BUILTINS_DEPENDENCY_CHAIN_TEST_0900
+     * @tc.name   testDependencyChain0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DEPENDENCY_CHAIN_TEST_0900
      * @tc.desc   Verify deep dependency chain resolution
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsDependencyChainTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testDependencyChain0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       await chain.addDependency('A', ['B'])
       await chain.addDependency('B', ['C'])
       await chain.addDependency('C', ['D'])
@@ -253,14 +253,14 @@ export default function BuiltinsDependencyChainTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDependencyChainTest1000
-     * @tc.number SUB_BUILTINS_DEPENDENCY_CHAIN_TEST_1000
+     * @tc.name   testDependencyChain1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DEPENDENCY_CHAIN_TEST_1000
      * @tc.desc   Verify dependency chain for leaf module returns empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsDependencyChainTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testDependencyChain1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       await chain.addDependency('moduleA', ['moduleB'])
 
       const depChain: string[] = await chain.getDependencyChain('moduleB')

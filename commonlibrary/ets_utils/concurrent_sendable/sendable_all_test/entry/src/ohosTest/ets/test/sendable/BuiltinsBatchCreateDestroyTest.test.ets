@@ -133,14 +133,14 @@ export default function BuiltinsBatchCreateDestroyTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsBatchCreateDestroyTest0100
-     * @tc.number SUB_BUILTINS_BATCH_CREATE_DESTROY_TEST_0100
+     * @tc.name   testBatchCreateDestroy0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_CREATE_DESTROY_TEST_0100
      * @tc.desc   Verify batch create 100 Sendable objects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsBatchCreateDestroyTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testBatchCreateDestroy0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       for (let i: number = 0; i < 100; i++) {
         await manager.create(`batch_${i}`, i)
       }
@@ -149,14 +149,14 @@ export default function BuiltinsBatchCreateDestroyTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsBatchCreateDestroyTest0200
-     * @tc.number SUB_BUILTINS_BATCH_CREATE_DESTROY_TEST_0200
+     * @tc.name   testBatchCreateDestroy0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_CREATE_DESTROY_TEST_0200
      * @tc.desc   Verify batch destroy 100 Sendable objects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsBatchCreateDestroyTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testBatchCreateDestroy0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       for (let i: number = 0; i < 100; i++) {
         await manager.create(`destroy_${i}`, i)
       }
@@ -168,14 +168,14 @@ export default function BuiltinsBatchCreateDestroyTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsBatchCreateDestroyTest0300
-     * @tc.number SUB_BUILTINS_BATCH_CREATE_DESTROY_TEST_0300
+     * @tc.name   testBatchCreateDestroy0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_CREATE_DESTROY_TEST_0300
      * @tc.desc   Verify batch create-destroy cycle memory stability
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsBatchCreateDestroyTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testBatchCreateDestroy0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       for (let cycle: number = 0; cycle < 5; cycle++) {
         for (let i: number = 0; i < 50; i++) {
           await manager.create(`cycle_${cycle}_${i}`, cycle * 50 + i)
@@ -190,14 +190,14 @@ export default function BuiltinsBatchCreateDestroyTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsBatchCreateDestroyTest0400
-     * @tc.number SUB_BUILTINS_BATCH_CREATE_DESTROY_TEST_0400
+     * @tc.name   testBatchCreateDestroy0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_CREATE_DESTROY_TEST_0400
      * @tc.desc   Verify concurrent batch access with TaskPool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsBatchCreateDestroyTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testBatchCreateDestroy0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: BatchData = await manager.create('conc_access', 42)
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 20; i++) {
@@ -211,14 +211,14 @@ export default function BuiltinsBatchCreateDestroyTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsBatchCreateDestroyTest0500
-     * @tc.number SUB_BUILTINS_BATCH_CREATE_DESTROY_TEST_0500
+     * @tc.name   testBatchCreateDestroy0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_CREATE_DESTROY_TEST_0500
      * @tc.desc   Verify batch create then sequential delete
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsBatchCreateDestroyTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testBatchCreateDestroy0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       for (let i: number = 0; i < 20; i++) {
         await manager.create(`seq_del_${i}`, i)
       }
@@ -232,14 +232,14 @@ export default function BuiltinsBatchCreateDestroyTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsBatchCreateDestroyTest0600
-     * @tc.number SUB_BUILTINS_BATCH_CREATE_DESTROY_TEST_0600
+     * @tc.name   testBatchCreateDestroy0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_CREATE_DESTROY_TEST_0600
      * @tc.desc   Verify batch create with large data objects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsBatchCreateDestroyTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testBatchCreateDestroy0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       for (let i: number = 0; i < 50; i++) {
         const data: BatchData = await manager.create(`large_${i}`, i * 1000)
         expect(data.getValue()).assertEqual(i * 10000)
@@ -248,14 +248,14 @@ export default function BuiltinsBatchCreateDestroyTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsBatchCreateDestroyTest0700
-     * @tc.number SUB_BUILTINS_BATCH_CREATE_DESTROY_TEST_0700
+     * @tc.name   testBatchCreateDestroy0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_CREATE_DESTROY_TEST_0700
      * @tc.desc   Verify batch create-destroy with interleaved access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsBatchCreateDestroyTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testBatchCreateDestroy0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       for (let i: number = 0; i < 10; i++) {
         await manager.create(`inter_${i}`, i)
       }
@@ -270,14 +270,14 @@ export default function BuiltinsBatchCreateDestroyTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsBatchCreateDestroyTest0800
-     * @tc.number SUB_BUILTINS_BATCH_CREATE_DESTROY_TEST_0800
+     * @tc.name   testBatchCreateDestroy0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_CREATE_DESTROY_TEST_0800
      * @tc.desc   Verify batch create with collections container
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsBatchCreateDestroyTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testBatchCreateDestroy0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const container: collections.Array<BatchData> = new collections.Array<BatchData>()
       for (let i: number = 0; i < 30; i++) {
         const data: BatchData = await manager.create(`arr_batch_${i}`, i)
@@ -296,14 +296,14 @@ export default function BuiltinsBatchCreateDestroyTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsBatchCreateDestroyTest0900
-     * @tc.number SUB_BUILTINS_BATCH_CREATE_DESTROY_TEST_0900
+     * @tc.name   testBatchCreateDestroy0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_CREATE_DESTROY_TEST_0900
      * @tc.desc   Verify batch create-destroy pressure test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsBatchCreateDestroyTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testBatchCreateDestroy0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const startTime: number = Date.now()
       for (let i: number = 0; i < 200; i++) {
         await manager.create(`pressure_${i}`, i)
@@ -317,14 +317,14 @@ export default function BuiltinsBatchCreateDestroyTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsBatchCreateDestroyTest1000
-     * @tc.number SUB_BUILTINS_BATCH_CREATE_DESTROY_TEST_1000
+     * @tc.name   testBatchCreateDestroy1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_BATCH_CREATE_DESTROY_TEST_1000
      * @tc.desc   Verify batch create-destroy with concurrent TaskPool access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsBatchCreateDestroyTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testBatchCreateDestroy1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       for (let i: number = 0; i < 10; i++) {
         await manager.create(`mixed_${i}`, i)
       }

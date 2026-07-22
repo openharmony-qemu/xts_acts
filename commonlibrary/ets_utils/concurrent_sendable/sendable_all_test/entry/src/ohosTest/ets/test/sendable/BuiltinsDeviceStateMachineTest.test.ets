@@ -180,34 +180,34 @@ export default function BuiltinsDeviceStateMachineTest(): void {
       await deviceSM.reset()
     })
 
-    it('BuiltinsDeviceStateMachineTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDeviceStateMachine0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.OFFLINE)
       expect(await deviceSM.getDeviceId()).assertEqual('device_001')
       expect(await deviceSM.getHistoryCount()).assertEqual(0)
     })
 
-    it('BuiltinsDeviceStateMachineTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDeviceStateMachine0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       expect(await deviceSM.transition(DeviceState.ONLINE)).assertTrue()
       expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.ONLINE)
       expect(await deviceSM.isOnline()).assertTrue()
       expect(await deviceSM.getHistoryCount()).assertEqual(1)
     })
 
-    it('BuiltinsDeviceStateMachineTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDeviceStateMachine0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await deviceSM.transition(DeviceState.ONLINE)
       expect(await deviceSM.transition(DeviceState.IDLE)).assertTrue()
       expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.IDLE)
       expect(await deviceSM.isOnline()).assertTrue()
     })
 
-    it('BuiltinsDeviceStateMachineTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDeviceStateMachine0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await deviceSM.transition(DeviceState.ONLINE)
       await deviceSM.transition(DeviceState.IDLE)
       expect(await deviceSM.transition(DeviceState.BUSY)).assertTrue()
       expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.BUSY)
     })
 
-    it('BuiltinsDeviceStateMachineTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDeviceStateMachine0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await deviceSM.transition(DeviceState.ONLINE)
       await deviceSM.transition(DeviceState.IDLE)
       await deviceSM.transition(DeviceState.BUSY)
@@ -215,41 +215,41 @@ export default function BuiltinsDeviceStateMachineTest(): void {
       expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.IDLE)
     })
 
-    it('BuiltinsDeviceStateMachineTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDeviceStateMachine0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await deviceSM.transition(DeviceState.ONLINE)
       expect(await deviceSM.transition(DeviceState.OFFLINE)).assertTrue()
       expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.OFFLINE)
       expect(await deviceSM.isOnline()).assertFalse()
     })
 
-    it('BuiltinsDeviceStateMachineTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDeviceStateMachine0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await deviceSM.transition(DeviceState.ONLINE)
       await deviceSM.transition(DeviceState.IDLE)
       expect(await deviceSM.transition(DeviceState.ERROR)).assertTrue()
       expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.ERROR)
     })
 
-    it('BuiltinsDeviceStateMachineTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDeviceStateMachine0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await deviceSM.transition(DeviceState.ONLINE)
       await deviceSM.transition(DeviceState.ERROR)
       expect(await deviceSM.transition(DeviceState.OFFLINE)).assertTrue()
       expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.OFFLINE)
     })
 
-    it('BuiltinsDeviceStateMachineTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testDeviceStateMachine0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       expect(await deviceSM.transition(DeviceState.BUSY)).assertFalse()
       expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.OFFLINE)
       expect(await deviceSM.getHistoryCount()).assertEqual(0)
     })
 
-    it('BuiltinsDeviceStateMachineTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testDeviceStateMachine1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await deviceSM.transition(DeviceState.ONLINE)
       await deviceSM.transition(DeviceState.IDLE)
       expect(await deviceSM.transition(DeviceState.ONLINE)).assertFalse()
       expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.IDLE)
     })
 
-    it('BuiltinsDeviceStateMachineTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testDeviceStateMachine1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await deviceSM.transition(DeviceState.ONLINE)
       await deviceSM.transition(DeviceState.IDLE)
       const tasks: taskpool.Task[] = []
@@ -266,7 +266,7 @@ export default function BuiltinsDeviceStateMachineTest(): void {
       }
     })
 
-    it('BuiltinsDeviceStateMachineTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDeviceStateMachine1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await deviceSM.transition(DeviceState.ONLINE)
       await deviceSM.transition(DeviceState.IDLE)
       await deviceSM.transition(DeviceState.BUSY)
@@ -280,7 +280,7 @@ export default function BuiltinsDeviceStateMachineTest(): void {
       }
     })
 
-    it('BuiltinsDeviceStateMachineTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testDeviceStateMachine1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const notifications: string[] = []
       const task: taskpool.Task = new taskpool.Task(deviceOnlineNotifyTask, deviceSM)
       const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
@@ -295,7 +295,7 @@ export default function BuiltinsDeviceStateMachineTest(): void {
       expect(notifications[0]).assertEqual('online')
     })
 
-    it('BuiltinsDeviceStateMachineTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDeviceStateMachine1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const deviceSM1: DeviceStateMachine = new DeviceStateMachine('device_001', new ArkTSUtils.locks.AsyncLock(), new collections.Array<DeviceTransitionRecord>(), new collections.Array<DeviceTransitionRule>())
       const deviceSM2: DeviceStateMachine = new DeviceStateMachine('device_002', new ArkTSUtils.locks.AsyncLock(), new collections.Array<DeviceTransitionRecord>(), new collections.Array<DeviceTransitionRule>())
       await deviceSM1.setupRules()
@@ -311,7 +311,7 @@ export default function BuiltinsDeviceStateMachineTest(): void {
       await deviceSM2.reset()
     })
 
-    it('BuiltinsDeviceStateMachineTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testDeviceStateMachine1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const historyBefore: number = await deviceSM.getHistoryCount()
       expect(await deviceSM.transition(DeviceState.BUSY)).assertFalse()
       expect(await deviceSM.getCurrentState()).assertEqual(DeviceState.OFFLINE)

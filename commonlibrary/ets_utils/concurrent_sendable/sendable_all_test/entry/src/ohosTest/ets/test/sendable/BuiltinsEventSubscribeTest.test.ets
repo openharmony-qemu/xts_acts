@@ -132,47 +132,47 @@ export default function BuiltinsEventSubscribeTest(): void {
       await bus.reset()
     })
 
-    it('BuiltinsEventSubscribeTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEventSubscribe0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.subscribe('click', 'handler_1')
       expect(await bus.getSubscriberCount('click')).assertEqual(1)
     })
 
-    it('BuiltinsEventSubscribeTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEventSubscribe0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.subscribe('click', 'handler_1')
       await bus.subscribe('click', 'handler_2')
       expect(await bus.getSubscriberCount('click')).assertEqual(2)
     })
 
-    it('BuiltinsEventSubscribeTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEventSubscribe0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.subscribe('click', 'handler_1')
       await bus.unsubscribe('click', 'handler_1')
       expect(await bus.getSubscriberCount('click')).assertEqual(0)
     })
 
-    it('BuiltinsEventSubscribeTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEventSubscribe0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.subscribe('click', 'handler_1')
       await bus.subscribe('click', 'handler_2')
       await bus.unsubscribe('click', 'handler_1')
       expect(await bus.getSubscriberCount('click')).assertEqual(1)
     })
 
-    it('BuiltinsEventSubscribeTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEventSubscribe0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       expect(await bus.getSubscriberCount('unknown')).assertEqual(0)
     })
 
-    it('BuiltinsEventSubscribeTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEventSubscribe0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.subscribe('click', 'handler_1')
       await bus.subscribe('hover', 'handler_2')
       expect(await bus.getSubscriberCount('click')).assertEqual(1)
       expect(await bus.getSubscriberCount('hover')).assertEqual(1)
     })
 
-    it('BuiltinsEventSubscribeTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testEventSubscribe0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await bus.unsubscribe('click', 'handler_1')
       expect(await bus.getSubscriberCount('click')).assertEqual(0)
     })
 
-    it('BuiltinsEventSubscribeTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testEventSubscribe0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const promises: Promise<void>[] = []
       for (let i: number = 0; i < 10; i++) {
         promises.push(bus.subscribe('click', `handler_${i}`))
@@ -181,7 +181,7 @@ export default function BuiltinsEventSubscribeTest(): void {
       expect(await bus.getSubscriberCount('click')).assertEqual(10)
     })
 
-    it('BuiltinsEventSubscribeTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testEventSubscribe0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i: number = 0; i < 5; i++) {
         await bus.subscribe('click', `handler_${i}`)
       }
@@ -189,7 +189,7 @@ export default function BuiltinsEventSubscribeTest(): void {
       expect(await bus.getSubscriberCount('click')).assertEqual(0)
     })
 
-    it('BuiltinsEventSubscribeTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testEventSubscribe1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await bus.subscribe('click', 'handler_1')
       await bus.subscribe('click', 'handler_1')
       expect(await bus.getSubscriberCount('click')).assertEqual(2)

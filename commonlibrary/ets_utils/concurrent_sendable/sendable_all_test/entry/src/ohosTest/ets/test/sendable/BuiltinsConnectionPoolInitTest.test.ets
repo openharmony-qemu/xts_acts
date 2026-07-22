@@ -129,37 +129,37 @@ export default function BuiltinsConnectionPoolInitTest(): void {
       await pool.shutdown()
     })
 
-    it('BuiltinsConnectionPoolInitTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConnectionPoolInit0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pool.initialize(5)
       expect(await pool.getTotalCount()).assertEqual(5)
       expect(await pool.getActiveCount()).assertEqual(5)
     })
 
-    it('BuiltinsConnectionPoolInitTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConnectionPoolInit0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pool.initialize(5)
       const conn: SendableConnection | null = await pool.getConnection()
       expect(await pool.getActiveCount()).assertEqual(4)
     })
 
-    it('BuiltinsConnectionPoolInitTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConnectionPoolInit0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pool.initialize(5)
       const conn: SendableConnection | null = await pool.getConnection()
       await pool.releaseConnection(conn as SendableConnection)
       expect(await pool.getActiveCount()).assertEqual(5)
     })
 
-    it('BuiltinsConnectionPoolInitTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConnectionPoolInit0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pool.initialize(1)
       expect(await pool.getMaxPoolSize()).assertEqual(1)
     })
 
-    it('BuiltinsConnectionPoolInitTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConnectionPoolInit0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(0)
       expect(await pool.getTotalCount()).assertEqual(0)
       expect(await pool.getActiveCount()).assertEqual(0)
     })
 
-    it('BuiltinsConnectionPoolInitTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConnectionPoolInit0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pool.initialize(3)
       const conn1: SendableConnection | null = await pool.getConnection()
       const conn2: SendableConnection | null = await pool.getConnection()
@@ -167,7 +167,7 @@ export default function BuiltinsConnectionPoolInitTest(): void {
       expect(await pool.getActiveCount()).assertEqual(0)
     })
 
-    it('BuiltinsConnectionPoolInitTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConnectionPoolInit0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(2)
       const conn1: SendableConnection | null = await pool.getConnection()
       const conn2: SendableConnection | null = await pool.getConnection()
@@ -175,20 +175,20 @@ export default function BuiltinsConnectionPoolInitTest(): void {
       expect(conn3).assertEqual(null)
     })
 
-    it('BuiltinsConnectionPoolInitTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConnectionPoolInit0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       const conn: SendableConnection | null = await pool.getConnection()
       expect((conn as SendableConnection).id_ >= 0).assertTrue()
     })
 
-    it('BuiltinsConnectionPoolInitTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConnectionPoolInit0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(5)
       await pool.shutdown()
       expect(await pool.getTotalCount()).assertEqual(0)
       expect(await pool.getActiveCount()).assertEqual(0)
     })
 
-    it('BuiltinsConnectionPoolInitTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConnectionPoolInit1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       await pool.initialize(5)
       expect(await pool.getTotalCount()).assertEqual(5)

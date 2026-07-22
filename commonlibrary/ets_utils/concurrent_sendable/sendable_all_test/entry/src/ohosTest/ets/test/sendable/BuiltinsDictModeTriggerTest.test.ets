@@ -138,14 +138,14 @@ export default function BuiltinsDictModeTriggerTest(): void {
     afterAll((): void => {})
 
     /**
-     * @tc.name   BuiltinsDictModeTriggerTest0100
-     * @tc.number SUB_BUILTINS_DICT_MODE_TRIGGER_TEST_0100
+     * @tc.name   testDictModeTrigger0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DICT_MODE_TRIGGER_TEST_0100
      * @tc.desc   Verify property access correctness with 100 properties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsDictModeTriggerTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testDictModeTrigger0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 100; i++) {
         await testObj.setProperty(`prop_${i}`, i)
@@ -157,14 +157,14 @@ export default function BuiltinsDictModeTriggerTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDictModeTriggerTest0200
-     * @tc.number SUB_BUILTINS_DICT_MODE_TRIGGER_TEST_0200
+     * @tc.name   testDictModeTrigger0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DICT_MODE_TRIGGER_TEST_0200
      * @tc.desc   Verify concurrent read with 512 properties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsDictModeTriggerTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testDictModeTrigger0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 512; i++) {
         await testObj.setProperty(`prop_${i}`, i)
@@ -185,14 +185,14 @@ export default function BuiltinsDictModeTriggerTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDictModeTriggerTest0300
-     * @tc.number SUB_BUILTINS_DICT_MODE_TRIGGER_TEST_0300
+     * @tc.name   testDictModeTrigger0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DICT_MODE_TRIGGER_TEST_0300
      * @tc.desc   Verify boundary value with 1024 properties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsDictModeTriggerTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testDictModeTrigger0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 1024; i++) {
         await testObj.setProperty(`prop_${i}`, i)
@@ -203,14 +203,14 @@ export default function BuiltinsDictModeTriggerTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDictModeTriggerTest0400
-     * @tc.number SUB_BUILTINS_DICT_MODE_TRIGGER_TEST_0400
+     * @tc.name   testDictModeTrigger0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DICT_MODE_TRIGGER_TEST_0400
      * @tc.desc   Verify dictionary mode trigger with 1025 properties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsDictModeTriggerTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testDictModeTrigger0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 1025; i++) {
         await testObj.setProperty(`prop_${i}`, i)
@@ -222,14 +222,14 @@ export default function BuiltinsDictModeTriggerTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDictModeTriggerTest0500
-     * @tc.number SUB_BUILTINS_DICT_MODE_TRIGGER_TEST_0500
+     * @tc.name   testDictModeTrigger0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DICT_MODE_TRIGGER_TEST_0500
      * @tc.desc   Verify concurrent access with 2048 properties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsDictModeTriggerTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDictModeTrigger0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
       const batchSize: number = 256
       for (let batch = 0; batch < 8; batch++) {
@@ -248,14 +248,14 @@ export default function BuiltinsDictModeTriggerTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDictModeTriggerTest0600
-     * @tc.number SUB_BUILTINS_DICT_MODE_TRIGGER_TEST_0600
+     * @tc.name   testDictModeTrigger0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DICT_MODE_TRIGGER_TEST_0600
      * @tc.desc   Verify extreme property count with 4096 properties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsDictModeTriggerTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDictModeTrigger0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 4096; i++) {
         await testObj.setProperty(`prop_${i}`, i)
@@ -268,14 +268,14 @@ export default function BuiltinsDictModeTriggerTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDictModeTriggerTest0700
-     * @tc.number SUB_BUILTINS_DICT_MODE_TRIGGER_TEST_0700
+     * @tc.name   testDictModeTrigger0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DICT_MODE_TRIGGER_TEST_0700
      * @tc.desc   Verify SendableArray with 1024 elements at boundary
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsDictModeTriggerTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testDictModeTrigger0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const arr: collections.Array<number> = new collections.Array<number>()
       for (let i = 0; i < 1024; i++) {
         arr.push(i)
@@ -285,14 +285,14 @@ export default function BuiltinsDictModeTriggerTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDictModeTriggerTest0800
-     * @tc.number SUB_BUILTINS_DICT_MODE_TRIGGER_TEST_0800
+     * @tc.name   testDictModeTrigger0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DICT_MODE_TRIGGER_TEST_0800
      * @tc.desc   Verify SendableArray with 1025 elements exceeding boundary
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsDictModeTriggerTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testDictModeTrigger0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const arr: collections.Array<number> = new collections.Array<number>()
       for (let i = 0; i < 1025; i++) {
         arr.push(i)
@@ -302,14 +302,14 @@ export default function BuiltinsDictModeTriggerTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDictModeTriggerTest0900
-     * @tc.number SUB_BUILTINS_DICT_MODE_TRIGGER_TEST_0900
+     * @tc.name   testDictModeTrigger0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DICT_MODE_TRIGGER_TEST_0900
      * @tc.desc   Verify SendableMap with 1024 key-value pairs at boundary
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsDictModeTriggerTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testDictModeTrigger0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const map: collections.Map<string, number> = new collections.Map<string, number>()
       for (let i = 0; i < 1024; i++) {
         map.set(`key_${i}`, i)
@@ -319,14 +319,14 @@ export default function BuiltinsDictModeTriggerTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDictModeTriggerTest1000
-     * @tc.number SUB_BUILTINS_DICT_MODE_TRIGGER_TEST_1000
+     * @tc.name   testDictModeTrigger1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DICT_MODE_TRIGGER_TEST_1000
      * @tc.desc   Verify SendableMap with 1025 key-value pairs exceeding boundary
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsDictModeTriggerTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testDictModeTrigger1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const map: collections.Map<string, number> = new collections.Map<string, number>()
       for (let i = 0; i < 1025; i++) {
         map.set(`key_${i}`, i)
@@ -336,14 +336,14 @@ export default function BuiltinsDictModeTriggerTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDictModeTriggerTest1100
-     * @tc.number SUB_BUILTINS_DICT_MODE_TRIGGER_TEST_1100
+     * @tc.name   testDictModeTrigger1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DICT_MODE_TRIGGER_TEST_1100
      * @tc.desc   Verify SendableSet with 1024 elements at boundary
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsDictModeTriggerTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testDictModeTrigger1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const set: collections.Set<number> = new collections.Set<number>()
       for (let i = 0; i < 1024; i++) {
         set.add(i)
@@ -353,14 +353,14 @@ export default function BuiltinsDictModeTriggerTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDictModeTriggerTest1200
-     * @tc.number SUB_BUILTINS_DICT_MODE_TRIGGER_TEST_1200
+     * @tc.name   testDictModeTrigger1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DICT_MODE_TRIGGER_TEST_1200
      * @tc.desc   Verify SendableSet with 1025 elements exceeding boundary
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsDictModeTriggerTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testDictModeTrigger1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const set: collections.Set<number> = new collections.Set<number>()
       for (let i = 0; i < 1025; i++) {
         set.add(i)
@@ -370,14 +370,14 @@ export default function BuiltinsDictModeTriggerTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDictModeTriggerTest1300
-     * @tc.number SUB_BUILTINS_DICT_MODE_TRIGGER_TEST_1300
+     * @tc.name   testDictModeTrigger1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DICT_MODE_TRIGGER_TEST_1300
      * @tc.desc   Verify concurrent read/write on 1025-property object with AsyncLock
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsDictModeTriggerTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDictModeTrigger1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const obj: HighPropertyObject = new HighPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 1025; i++) {
         await obj.incrementProp(`prop_${i}`)
@@ -401,14 +401,14 @@ export default function BuiltinsDictModeTriggerTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDictModeTriggerTest1400
-     * @tc.number SUB_BUILTINS_DICT_MODE_TRIGGER_TEST_1400
+     * @tc.name   testDictModeTrigger1400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DICT_MODE_TRIGGER_TEST_1400
      * @tc.desc   Verify property search in dictionary mode with 1025 properties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsDictModeTriggerTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDictModeTrigger1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const testObj: BoundaryPropertyClass = new BoundaryPropertyClass(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 1025; i++) {
         await testObj.setProperty(`prop_${i}`, i)
@@ -420,14 +420,14 @@ export default function BuiltinsDictModeTriggerTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDictModeTriggerTest1500
-     * @tc.number SUB_BUILTINS_DICT_MODE_TRIGGER_TEST_1500
+     * @tc.name   testDictModeTrigger1500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DICT_MODE_TRIGGER_TEST_1500
      * @tc.desc   Verify cross-thread transfer of 1025-property object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsDictModeTriggerTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDictModeTrigger1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const obj: TransferableObject = new TransferableObject(new collections.Map<string, number>())
       obj.setAllProps(1025)
       const task: taskpool.Task = new taskpool.Task(receiveAndCount, obj)
@@ -436,14 +436,14 @@ export default function BuiltinsDictModeTriggerTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDictModeTriggerTest1600
-     * @tc.number SUB_BUILTINS_DICT_MODE_TRIGGER_TEST_1600
+     * @tc.name   testDictModeTrigger1600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DICT_MODE_TRIGGER_TEST_1600
      * @tc.desc   Verify large array traversal with 4096 elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsDictModeTriggerTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDictModeTrigger1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const arr: collections.Array<number> = new collections.Array<number>()
       for (let i = 0; i < 4096; i++) {
         arr.push(i)
@@ -456,14 +456,14 @@ export default function BuiltinsDictModeTriggerTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDictModeTriggerTest1700
-     * @tc.number SUB_BUILTINS_DICT_MODE_TRIGGER_TEST_1700
+     * @tc.name   testDictModeTrigger1700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DICT_MODE_TRIGGER_TEST_1700
      * @tc.desc   Verify large Map deletion with 4096 elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsDictModeTriggerTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDictModeTrigger1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const map: collections.Map<string, number> = new collections.Map<string, number>()
       for (let i = 0; i < 4096; i++) {
         map.set(`key_${i}`, i)
@@ -478,14 +478,14 @@ export default function BuiltinsDictModeTriggerTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDictModeTriggerTest1800
-     * @tc.number SUB_BUILTINS_DICT_MODE_TRIGGER_TEST_1800
+     * @tc.name   testDictModeTrigger1800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DICT_MODE_TRIGGER_TEST_1800
      * @tc.desc   Verify cross-thread read of large Array with 2048 elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsDictModeTriggerTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testDictModeTrigger1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const arr: collections.Array<number> = new collections.Array<number>()
       for (let i = 0; i < 2048; i++) {
         arr.push(i)

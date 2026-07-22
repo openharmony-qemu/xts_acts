@@ -82,14 +82,14 @@ export default function BuiltinsLazyLoaderTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsLazyLoaderTest0100
-     * @tc.number SUB_BUILTINS_LAZY_LOADER_TEST_0100
+     * @tc.name   testLazyLoader0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LAZY_LOADER_TEST_0100
      * @tc.desc   Verify basic lazy loading
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsLazyLoaderTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testLazyLoader0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       expect(loader.isLoaded()).assertFalse()
 
       const value: string = await loader.load()
@@ -99,14 +99,14 @@ export default function BuiltinsLazyLoaderTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsLazyLoaderTest0200
-     * @tc.number SUB_BUILTINS_LAZY_LOADER_TEST_0200
+     * @tc.name   testLazyLoader0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LAZY_LOADER_TEST_0200
      * @tc.desc   Verify lazy loading only loads once
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsLazyLoaderTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testLazyLoader0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const value1: string = await loader.load()
       const value2: string = await loader.load()
 
@@ -116,14 +116,14 @@ export default function BuiltinsLazyLoaderTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsLazyLoaderTest0300
-     * @tc.number SUB_BUILTINS_LAZY_LOADER_TEST_0300
+     * @tc.name   testLazyLoader0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LAZY_LOADER_TEST_0300
      * @tc.desc   Verify lazy loader reset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsLazyLoaderTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testLazyLoader0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await loader.load()
       expect(loader.isLoaded()).assertTrue()
 
@@ -133,14 +133,14 @@ export default function BuiltinsLazyLoaderTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsLazyLoaderTest0400
-     * @tc.number SUB_BUILTINS_LAZY_LOADER_TEST_0400
+     * @tc.name   testLazyLoader0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LAZY_LOADER_TEST_0400
      * @tc.desc   Verify concurrent lazy loading with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsLazyLoaderTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testLazyLoader0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 5; i++) {
         tasks.push(new taskpool.Task(lazyLoadTask, loader))
@@ -152,14 +152,14 @@ export default function BuiltinsLazyLoaderTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsLazyLoaderTest0500
-     * @tc.number SUB_BUILTINS_LAZY_LOADER_TEST_0500
+     * @tc.name   testLazyLoader0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LAZY_LOADER_TEST_0500
      * @tc.desc   Verify small concurrency 3 lazy loading tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsLazyLoaderTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testLazyLoader0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 3; i++) {
         tasks.push(new taskpool.Task(lazyLoadTask, loader))
@@ -171,14 +171,14 @@ export default function BuiltinsLazyLoaderTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsLazyLoaderTest0600
-     * @tc.number SUB_BUILTINS_LAZY_LOADER_TEST_0600
+     * @tc.name   testLazyLoader0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LAZY_LOADER_TEST_0600
      * @tc.desc   Verify small concurrency 10 lazy loading tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsLazyLoaderTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testLazyLoader0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 10; i++) {
         tasks.push(new taskpool.Task(lazyLoadTask, loader))
@@ -190,40 +190,40 @@ export default function BuiltinsLazyLoaderTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsLazyLoaderTest0700
-     * @tc.number SUB_BUILTINS_LAZY_LOADER_TEST_0700
+     * @tc.name   testLazyLoader0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LAZY_LOADER_TEST_0700
      * @tc.desc   Verify getValue before loading returns empty string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsLazyLoaderTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testLazyLoader0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       expect(loader.getValue()).assertEqual('')
       expect(loader.isLoaded()).assertFalse()
     })
 
     /**
-     * @tc.name   BuiltinsLazyLoaderTest0800
-     * @tc.number SUB_BUILTINS_LAZY_LOADER_TEST_0800
+     * @tc.name   testLazyLoader0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LAZY_LOADER_TEST_0800
      * @tc.desc   Verify getValue after loading returns correct value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsLazyLoaderTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testLazyLoader0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await loader.load()
       expect(loader.getValue()).assertEqual('loaded_value')
     })
 
     /**
-     * @tc.name   BuiltinsLazyLoaderTest0900
-     * @tc.number SUB_BUILTINS_LAZY_LOADER_TEST_0900
+     * @tc.name   testLazyLoader0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_LAZY_LOADER_TEST_0900
      * @tc.desc   Verify load after reset works correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsLazyLoaderTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testLazyLoader0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await loader.load()
       await loader.reset()
 

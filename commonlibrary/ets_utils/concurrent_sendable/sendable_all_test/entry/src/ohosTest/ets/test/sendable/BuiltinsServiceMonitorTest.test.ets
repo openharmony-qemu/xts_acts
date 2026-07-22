@@ -107,7 +107,7 @@ export default function BuiltinsServiceMonitorTest(): void {
       await Utils.sleep(500)
     })
 
-    it('BuiltinsServiceMonitorTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceMonitor0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await serviceMonitor.registerHealthCheck('apiService')
 
       const health: ServiceHealth | undefined = serviceMonitor.getHealth('apiService')
@@ -115,7 +115,7 @@ export default function BuiltinsServiceMonitorTest(): void {
       expect(health!.status).assertEqual('unknown')
     })
 
-    it('BuiltinsServiceMonitorTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceMonitor0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await serviceMonitor.registerHealthCheck('webService')
       await serviceMonitor.updateHealth('webService', 'healthy', 50)
 
@@ -124,7 +124,7 @@ export default function BuiltinsServiceMonitorTest(): void {
       expect(health!.responseTime).assertEqual(50)
     })
 
-    it('BuiltinsServiceMonitorTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceMonitor0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await serviceMonitor.registerHealthCheck('dbService')
       await serviceMonitor.updateHealth('dbService', 'unhealthy', 200)
 
@@ -133,7 +133,7 @@ export default function BuiltinsServiceMonitorTest(): void {
       expect(health!.errorCount).assertEqual(1)
     })
 
-    it('BuiltinsServiceMonitorTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceMonitor0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await serviceMonitor.registerHealthCheck('cacheService')
       await serviceMonitor.updateHealth('cacheService', 'degraded', 150)
 
@@ -141,7 +141,7 @@ export default function BuiltinsServiceMonitorTest(): void {
       expect(health!.status).assertEqual('degraded')
     })
 
-    it('BuiltinsServiceMonitorTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceMonitor0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await serviceMonitor.registerHealthCheck('errorSvc')
 
       await serviceMonitor.updateHealth('errorSvc', 'unhealthy', 100)
@@ -152,7 +152,7 @@ export default function BuiltinsServiceMonitorTest(): void {
       expect(health!.errorCount).assertEqual(2)
     })
 
-    it('BuiltinsServiceMonitorTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceMonitor0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await serviceMonitor.registerHealthCheck('timeSvc')
       await serviceMonitor.updateHealth('timeSvc', 'healthy', 75)
 
@@ -160,7 +160,7 @@ export default function BuiltinsServiceMonitorTest(): void {
       expect(health!.responseTime).assertEqual(75)
     })
 
-    it('BuiltinsServiceMonitorTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceMonitor0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await serviceMonitor.registerHealthCheck('timeCheckSvc')
       const beforeTime: number = Date.now()
       await serviceMonitor.updateHealth('timeCheckSvc', 'healthy', 30)
@@ -171,7 +171,7 @@ export default function BuiltinsServiceMonitorTest(): void {
       expect(health!.lastCheckTime <= afterTime).assertTrue()
     })
 
-    it('BuiltinsServiceMonitorTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceMonitor0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await serviceMonitor.registerHealthCheck('concurrentSvc')
 
       const tasks: taskpool.Task[] = []
@@ -183,7 +183,7 @@ export default function BuiltinsServiceMonitorTest(): void {
       expect(serviceMonitor.getCheckCount()).assertEqual(5)
     })
 
-    it('BuiltinsServiceMonitorTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceMonitor0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const services: string[] = ['monitor1', 'monitor2', 'monitor3']
       for (const svc of services) {
         await serviceMonitor.registerHealthCheck(svc)
@@ -197,7 +197,7 @@ export default function BuiltinsServiceMonitorTest(): void {
       expect(serviceMonitor.getCheckCount()).assertEqual(3)
     })
 
-    it('BuiltinsServiceMonitorTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceMonitor1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const services: string[] = []
       for (let i: number = 0; i < 5; i++) {
         services.push(`monitorSvc${i}`)
@@ -214,7 +214,7 @@ export default function BuiltinsServiceMonitorTest(): void {
       expect(serviceMonitor.getCheckCount()).assertEqual(5)
     })
 
-    it('BuiltinsServiceMonitorTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceMonitor1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const services: string[] = []
       for (let i: number = 0; i < 10; i++) {
         services.push(`monitorSvc${i}`)
@@ -231,7 +231,7 @@ export default function BuiltinsServiceMonitorTest(): void {
       expect(serviceMonitor.getCheckCount()).assertEqual(10)
     })
 
-    it('BuiltinsServiceMonitorTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testServiceMonitor1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const health: ServiceHealth | undefined = serviceMonitor.getHealth('nonexistent')
       expect(health === undefined).assertTrue()
     })

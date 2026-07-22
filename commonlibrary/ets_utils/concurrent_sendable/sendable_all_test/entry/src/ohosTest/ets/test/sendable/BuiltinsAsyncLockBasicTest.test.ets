@@ -63,42 +63,42 @@ export default function BuiltinsAsyncLockBasicTest(): void {
     afterAll((): void => {})
 
     /**
-     * @tc.name   BuiltinsAsyncLockBasicTest0100
-     * @tc.number SUB_BUILTINS_ASYNC_LOCK_BASIC_TEST_0100
+     * @tc.name   testAsyncLockBasic0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASYNC_LOCK_BASIC_TEST_0100
      * @tc.desc   Verify AsyncLock single increment returns 1 and count is updated
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsAsyncLockBasicTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testAsyncLockBasic0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result: number = await counter.increment()
       expect(result).assertEqual(1)
       expect(await counter.getCount()).assertEqual(1)
     })
 
     /**
-     * @tc.name   BuiltinsAsyncLockBasicTest0200
-     * @tc.number SUB_BUILTINS_ASYNC_LOCK_BASIC_TEST_0200
+     * @tc.name   testAsyncLockBasic0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASYNC_LOCK_BASIC_TEST_0200
      * @tc.desc   Verify AsyncLock sequential increments return cumulative count 2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsAsyncLockBasicTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testAsyncLockBasic0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await counter.increment()
       const result: number = await counter.increment()
       expect(result).assertEqual(2)
     })
 
     /**
-     * @tc.name   BuiltinsAsyncLockBasicTest0300
-     * @tc.number SUB_BUILTINS_ASYNC_LOCK_BASIC_TEST_0300
+     * @tc.name   testAsyncLockBasic0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASYNC_LOCK_BASIC_TEST_0300
      * @tc.desc   Verify AsyncLock two sequential increments return 1 then 2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsAsyncLockBasicTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testAsyncLockBasic0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result1: number = await counter.increment()
       const result2: number = await counter.increment()
       expect(result1).assertEqual(1)
@@ -106,14 +106,14 @@ export default function BuiltinsAsyncLockBasicTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsAsyncLockBasicTest0400
-     * @tc.number SUB_BUILTINS_ASYNC_LOCK_BASIC_TEST_0400
+     * @tc.name   testAsyncLockBasic0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASYNC_LOCK_BASIC_TEST_0400
      * @tc.desc   Verify AsyncLock two concurrent increments reach count 2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsAsyncLockBasicTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testAsyncLockBasic0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const promises: Promise<number>[] = []
       promises.push(counter.increment())
       promises.push(counter.increment())
@@ -122,14 +122,14 @@ export default function BuiltinsAsyncLockBasicTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsAsyncLockBasicTest0500
-     * @tc.number SUB_BUILTINS_ASYNC_LOCK_BASIC_TEST_0500
+     * @tc.name   testAsyncLockBasic0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASYNC_LOCK_BASIC_TEST_0500
      * @tc.desc   Verify AsyncLock five concurrent increments reach count 5
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsAsyncLockBasicTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testAsyncLockBasic0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const promises: Promise<number>[] = []
       for (let i = 0; i < 5; i++) {
         promises.push(counter.increment())
@@ -139,14 +139,14 @@ export default function BuiltinsAsyncLockBasicTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsAsyncLockBasicTest0600
-     * @tc.number SUB_BUILTINS_ASYNC_LOCK_BASIC_TEST_0600
+     * @tc.name   testAsyncLockBasic0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASYNC_LOCK_BASIC_TEST_0600
      * @tc.desc   Verify AsyncLock ten concurrent increments reach count 10
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsAsyncLockBasicTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testAsyncLockBasic0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const promises: Promise<number>[] = []
       for (let i = 0; i < 10; i++) {
         promises.push(counter.increment())
@@ -156,14 +156,14 @@ export default function BuiltinsAsyncLockBasicTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsAsyncLockBasicTest0700
-     * @tc.number SUB_BUILTINS_ASYNC_LOCK_BASIC_TEST_0700
+     * @tc.name   testAsyncLockBasic0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASYNC_LOCK_BASIC_TEST_0700
      * @tc.desc   Verify AsyncLock works after taskpool execute and ten increments
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsAsyncLockBasicTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testAsyncLockBasic0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 10; i++) {
         tasks.push(new taskpool.Task(returnIdentity, i))
@@ -180,14 +180,14 @@ export default function BuiltinsAsyncLockBasicTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsAsyncLockBasicTest0800
-     * @tc.number SUB_BUILTINS_ASYNC_LOCK_BASIC_TEST_0800
+     * @tc.name   testAsyncLockBasic0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASYNC_LOCK_BASIC_TEST_0800
      * @tc.desc   Verify AsyncLock remains usable after exception thrown inside lockAsync
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsAsyncLockBasicTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testAsyncLockBasic0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await counter.increment()
       let caught: boolean = false
       try {
@@ -207,14 +207,14 @@ export default function BuiltinsAsyncLockBasicTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsAsyncLockBasicTest0900
-     * @tc.number SUB_BUILTINS_ASYNC_LOCK_BASIC_TEST_0900
+     * @tc.name   testAsyncLockBasic0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASYNC_LOCK_BASIC_TEST_0900
      * @tc.desc   Verify nested AsyncLock lockAsync callbacks execute correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsAsyncLockBasicTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testAsyncLockBasic0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let nestedCount: number = 0
       const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
       const innerLock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
@@ -228,14 +228,14 @@ export default function BuiltinsAsyncLockBasicTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsAsyncLockBasicTest1000
-     * @tc.number SUB_BUILTINS_ASYNC_LOCK_BASIC_TEST_1000
+     * @tc.name   testAsyncLockBasic1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ASYNC_LOCK_BASIC_TEST_1000
      * @tc.desc   Verify AsyncLock lockAsync returns callback result and acquires lock
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsAsyncLockBasicTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testAsyncLockBasic1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
       let acquired: boolean = false
       const result: boolean = await lock.lockAsync((): boolean => {

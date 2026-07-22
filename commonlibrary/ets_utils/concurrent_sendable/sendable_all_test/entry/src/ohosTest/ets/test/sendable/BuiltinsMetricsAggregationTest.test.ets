@@ -196,14 +196,14 @@ export default function BuiltinsMetricsAggregationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMetricsAggregationTest0100
-     * @tc.number SUB_BUILTINS_METRICS_AGGREGATION_TEST_0100
+     * @tc.name   testMetricsAggregation0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_METRICS_AGGREGATION_TEST_0100
      * @tc.desc   Verify basic metric sending
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsMetricsAggregationTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testMetricsAggregation0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await aggregator.sendMetric('cpu_usage', 85.5, 'gauge')
       expect(aggregator.getReportCount()).assertEqual(1)
 
@@ -213,14 +213,14 @@ export default function BuiltinsMetricsAggregationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMetricsAggregationTest0200
-     * @tc.number SUB_BUILTINS_METRICS_AGGREGATION_TEST_0200
+     * @tc.name   testMetricsAggregation0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_METRICS_AGGREGATION_TEST_0200
      * @tc.desc   Verify metric sending with tags
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsMetricsAggregationTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testMetricsAggregation0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await aggregator.sendMetricWithTags('request_count', 100, 'counter')
       expect(aggregator.getReportCount()).assertEqual(1)
 
@@ -229,14 +229,14 @@ export default function BuiltinsMetricsAggregationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMetricsAggregationTest0300
-     * @tc.number SUB_BUILTINS_METRICS_AGGREGATION_TEST_0300
+     * @tc.name   testMetricsAggregation0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_METRICS_AGGREGATION_TEST_0300
      * @tc.desc   Verify multi-metric sending with Promise.all waiting
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMetricsAggregationTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMetricsAggregation0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       tasks.push(new taskpool.Task(sendMetricTask, aggregator, 'metric_a', 10, 'counter'))
       tasks.push(new taskpool.Task(sendMetricTask, aggregator, 'metric_b', 20, 'gauge'))
@@ -247,14 +247,14 @@ export default function BuiltinsMetricsAggregationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMetricsAggregationTest0400
-     * @tc.number SUB_BUILTINS_METRICS_AGGREGATION_TEST_0400
+     * @tc.name   testMetricsAggregation0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_METRICS_AGGREGATION_TEST_0400
      * @tc.desc   Verify metric timestamp contains key info
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMetricsAggregationTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMetricsAggregation0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const beforeTime: number = Date.now()
       await aggregator.sendMetric('latency', 50, 'histogram')
       const afterTime: number = Date.now()
@@ -265,27 +265,27 @@ export default function BuiltinsMetricsAggregationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMetricsAggregationTest0500
-     * @tc.number SUB_BUILTINS_METRICS_AGGREGATION_TEST_0500
+     * @tc.name   testMetricsAggregation0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_METRICS_AGGREGATION_TEST_0500
      * @tc.desc   Verify metric type assertion
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMetricsAggregationTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMetricsAggregation0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await aggregator.sendMetric('req_rate', 99.9, 'gauge')
       expect(aggregator.getMetricType(0)).assertEqual('gauge')
     })
 
     /**
-     * @tc.name   BuiltinsMetricsAggregationTest0600
-     * @tc.number SUB_BUILTINS_METRICS_AGGREGATION_TEST_0600
+     * @tc.name   testMetricsAggregation0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_METRICS_AGGREGATION_TEST_0600
      * @tc.desc   Verify concurrent metric sending with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMetricsAggregationTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMetricsAggregation0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
         tasks.push(new taskpool.Task(sendMetricTask, aggregator, `metric_${i}`, i * 10, 'counter'))
@@ -295,14 +295,14 @@ export default function BuiltinsMetricsAggregationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMetricsAggregationTest0700
-     * @tc.number SUB_BUILTINS_METRICS_AGGREGATION_TEST_0700
+     * @tc.name   testMetricsAggregation0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_METRICS_AGGREGATION_TEST_0700
      * @tc.desc   Verify small concurrency 3 metric reports
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMetricsAggregationTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMetricsAggregation0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 3; i++) {
         tasks.push(new taskpool.Task(sendMetricTask, aggregator, `r3_${i}`, i, 'counter'))
@@ -312,14 +312,14 @@ export default function BuiltinsMetricsAggregationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMetricsAggregationTest0800
-     * @tc.number SUB_BUILTINS_METRICS_AGGREGATION_TEST_0800
+     * @tc.name   testMetricsAggregation0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_METRICS_AGGREGATION_TEST_0800
      * @tc.desc   Verify small concurrency 5 metric reports
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMetricsAggregationTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMetricsAggregation0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
         tasks.push(new taskpool.Task(sendMetricTask, aggregator, `r5_${i}`, i, 'gauge'))
@@ -329,14 +329,14 @@ export default function BuiltinsMetricsAggregationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMetricsAggregationTest0900
-     * @tc.number SUB_BUILTINS_METRICS_AGGREGATION_TEST_0900
+     * @tc.name   testMetricsAggregation0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_METRICS_AGGREGATION_TEST_0900
      * @tc.desc   Verify small concurrency 10 metric reports
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMetricsAggregationTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMetricsAggregation0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
         tasks.push(new taskpool.Task(sendMetricTask, aggregator, `r10_${i}`, i, 'histogram'))
@@ -346,14 +346,14 @@ export default function BuiltinsMetricsAggregationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMetricsAggregationTest1000
-     * @tc.number SUB_BUILTINS_METRICS_AGGREGATION_TEST_1000
+     * @tc.name   testMetricsAggregation1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_METRICS_AGGREGATION_TEST_1000
      * @tc.desc   Verify metric report queue with collections.Array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMetricsAggregationTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMetricsAggregation1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await aggregator.sendMetric('m1', 1, 'counter')
       await aggregator.sendMetric('m2', 2, 'gauge')
       await aggregator.sendMetric('m3', 3, 'histogram')
@@ -366,14 +366,14 @@ export default function BuiltinsMetricsAggregationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMetricsAggregationTest1100
-     * @tc.number SUB_BUILTINS_METRICS_AGGREGATION_TEST_1100
+     * @tc.name   testMetricsAggregation1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_METRICS_AGGREGATION_TEST_1100
      * @tc.desc   Verify clear reports
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsMetricsAggregationTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testMetricsAggregation1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await aggregator.sendMetric('temp', 1, 'counter')
       expect(aggregator.getReportCount()).assertEqual(1)
 
@@ -383,14 +383,14 @@ export default function BuiltinsMetricsAggregationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMetricsAggregationTest1200
-     * @tc.number SUB_BUILTINS_METRICS_AGGREGATION_TEST_1200
+     * @tc.name   testMetricsAggregation1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_METRICS_AGGREGATION_TEST_1200
      * @tc.desc   Verify Histogram multi-bucket boundaries
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsMetricsAggregationTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testMetricsAggregation1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const boundaries: number[] = [1, 5, 10, 50, 100, 500]
       const histogram: Histogram = await histogramManager.createHistogram('multi_bucket', boundaries)
 
@@ -405,14 +405,14 @@ export default function BuiltinsMetricsAggregationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMetricsAggregationTest1300
-     * @tc.number SUB_BUILTINS_METRICS_AGGREGATION_TEST_1300
+     * @tc.name   testMetricsAggregation1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_METRICS_AGGREGATION_TEST_1300
      * @tc.desc   Verify clear reports queue with getReports length check
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsMetricsAggregationTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testMetricsAggregation1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await aggregator.sendMetric('clear_test', 100, 'counter')
       await aggregator.sendMetric('clear_test2', 200, 'gauge')
 

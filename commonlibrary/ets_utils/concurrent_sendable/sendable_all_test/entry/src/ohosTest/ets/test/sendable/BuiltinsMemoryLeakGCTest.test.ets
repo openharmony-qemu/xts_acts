@@ -121,14 +121,14 @@ export default function BuiltinsMemoryLeakGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMemoryLeakGCTest0100
-     * @tc.number SUB_BUILTINS_MEMORY_LEAK_GC_TEST_0100
+     * @tc.name   testMemoryLeakGC0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MEMORY_LEAK_GC_TEST_0100
      * @tc.desc   Verify large number of objects created without destruction - memory growth
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsMemoryLeakGCTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testMemoryLeakGC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       for (let i: number = 0; i < 100; i++) {
         await manager.create(`leak_${i}`, i)
       }
@@ -137,14 +137,14 @@ export default function BuiltinsMemoryLeakGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMemoryLeakGCTest0200
-     * @tc.number SUB_BUILTINS_MEMORY_LEAK_GC_TEST_0200
+     * @tc.name   testMemoryLeakGC0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MEMORY_LEAK_GC_TEST_0200
      * @tc.desc   Verify snapshot comparison for memory leak detection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMemoryLeakGCTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMemoryLeakGC0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       expect(manager.getSize()).assertEqual(0)
 
       const data1: LeakableData = await manager.create('snap1', 1)
@@ -157,14 +157,14 @@ export default function BuiltinsMemoryLeakGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMemoryLeakGCTest0300
-     * @tc.number SUB_BUILTINS_MEMORY_LEAK_GC_TEST_0300
+     * @tc.name   testMemoryLeakGC0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MEMORY_LEAK_GC_TEST_0300
      * @tc.desc   Verify circular reference detection - reference count not zero
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMemoryLeakGCTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMemoryLeakGC0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data1: LeakableData = await manager.create('circular_a', 1)
       const data2: LeakableData = await manager.create('circular_b', 2)
       expect(manager.getSize()).assertEqual(2)
@@ -175,14 +175,14 @@ export default function BuiltinsMemoryLeakGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMemoryLeakGCTest0400
-     * @tc.number SUB_BUILTINS_MEMORY_LEAK_GC_TEST_0400
+     * @tc.name   testMemoryLeakGC0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MEMORY_LEAK_GC_TEST_0400
      * @tc.desc   Verify long-running memory stability
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMemoryLeakGCTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMemoryLeakGC0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       for (let cycle: number = 0; cycle < 10; cycle++) {
         for (let i: number = 0; i < 10; i++) {
           await manager.create(`stable_${cycle}_${i}`, cycle * 10 + i)
@@ -197,14 +197,14 @@ export default function BuiltinsMemoryLeakGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMemoryLeakGCTest0500
-     * @tc.number SUB_BUILTINS_MEMORY_LEAK_GC_TEST_0500
+     * @tc.name   testMemoryLeakGC0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MEMORY_LEAK_GC_TEST_0500
      * @tc.desc   Verify memory leak threshold detection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMemoryLeakGCTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMemoryLeakGC0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       for (let i: number = 0; i < 50; i++) {
         await manager.create(`threshold_${i}`, i)
       }
@@ -215,14 +215,14 @@ export default function BuiltinsMemoryLeakGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMemoryLeakGCTest0600
-     * @tc.number SUB_BUILTINS_MEMORY_LEAK_GC_TEST_0600
+     * @tc.name   testMemoryLeakGC0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MEMORY_LEAK_GC_TEST_0600
      * @tc.desc   Verify TaskPool task holding reference causing leak
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMemoryLeakGCTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMemoryLeakGC0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: LeakableData = await manager.create('task_ref', 100)
       await manager.create('task_new', 200)
       const task: taskpool.Task = new taskpool.Task(accessLeakTask, data)
@@ -232,14 +232,14 @@ export default function BuiltinsMemoryLeakGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMemoryLeakGCTest0700
-     * @tc.number SUB_BUILTINS_MEMORY_LEAK_GC_TEST_0700
+     * @tc.name   testMemoryLeakGC0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MEMORY_LEAK_GC_TEST_0700
      * @tc.desc   Verify nested reference causing memory leak
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMemoryLeakGCTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMemoryLeakGC0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const parent: LeakableData = await manager.create('nested_parent', 1)
       const child: LeakableData = await manager.create('nested_child', 10)
       expect(manager.getSize()).assertEqual(2)
@@ -250,14 +250,14 @@ export default function BuiltinsMemoryLeakGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMemoryLeakGCTest0800
-     * @tc.number SUB_BUILTINS_MEMORY_LEAK_GC_TEST_0800
+     * @tc.name   testMemoryLeakGC0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MEMORY_LEAK_GC_TEST_0800
      * @tc.desc   Verify collections container holding reference leak detection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMemoryLeakGCTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMemoryLeakGC0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const container: collections.Array<LeakableData> = new collections.Array<LeakableData>()
       for (let i: number = 0; i < 10; i++) {
         const data: LeakableData = await manager.create(`container_${i}`, i)
@@ -278,14 +278,14 @@ export default function BuiltinsMemoryLeakGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMemoryLeakGCTest0900
-     * @tc.number SUB_BUILTINS_MEMORY_LEAK_GC_TEST_0900
+     * @tc.name   testMemoryLeakGC0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MEMORY_LEAK_GC_TEST_0900
      * @tc.desc   Verify memory leak fix - correct reference release
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMemoryLeakGCTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMemoryLeakGC0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: LeakableData = await manager.create('fix_leak', 999)
       expect(manager.getSize()).assertEqual(1)
 
@@ -294,14 +294,14 @@ export default function BuiltinsMemoryLeakGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsMemoryLeakGCTest1000
-     * @tc.number SUB_BUILTINS_MEMORY_LEAK_GC_TEST_1000
+     * @tc.name   testMemoryLeakGC1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_MEMORY_LEAK_GC_TEST_1000
      * @tc.desc   Verify concurrent access and sequential delete does not leak
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsMemoryLeakGCTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testMemoryLeakGC1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       for (let i: number = 0; i < 20; i++) {
         await manager.create(`concurrent_${i}`, i)
       }

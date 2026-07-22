@@ -148,14 +148,14 @@ export default function BuiltinsDynamicThresholdTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDynamicThresholdTest0100
-     * @tc.number SUB_BUILTINS_DYNAMIC_THRESHOLD_TEST_0100
+     * @tc.name   testDynamicThreshold0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DYNAMIC_THRESHOLD_TEST_0100
      * @tc.desc   Verify dynamic threshold creation with parameters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsDynamicThresholdTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testDynamicThreshold0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('test_threshold', 10, 1, 100)
       expect(threshold.getCurrentThreshold()).assertEqual(10)
       expect(threshold.getMinThreshold()).assertEqual(1)
@@ -163,14 +163,14 @@ export default function BuiltinsDynamicThresholdTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDynamicThresholdTest0200
-     * @tc.number SUB_BUILTINS_DYNAMIC_THRESHOLD_TEST_0200
+     * @tc.name   testDynamicThreshold0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DYNAMIC_THRESHOLD_TEST_0200
      * @tc.desc   Verify threshold adjustment within range
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsDynamicThresholdTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testDynamicThreshold0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('adjust_test', 50, 10, 100)
 
       const result: boolean = await threshold.adjust(75)
@@ -179,14 +179,14 @@ export default function BuiltinsDynamicThresholdTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDynamicThresholdTest0300
-     * @tc.number SUB_BUILTINS_DYNAMIC_THRESHOLD_TEST_0300
+     * @tc.name   testDynamicThreshold0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DYNAMIC_THRESHOLD_TEST_0300
      * @tc.desc   Verify threshold adjustment beyond max returns false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsDynamicThresholdTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testDynamicThreshold0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('range_test', 50, 10, 100)
 
       const result: boolean = await threshold.adjust(150)
@@ -195,14 +195,14 @@ export default function BuiltinsDynamicThresholdTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDynamicThresholdTest0400
-     * @tc.number SUB_BUILTINS_DYNAMIC_THRESHOLD_TEST_0400
+     * @tc.name   testDynamicThreshold0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DYNAMIC_THRESHOLD_TEST_0400
      * @tc.desc   Verify threshold adjustment below min returns false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsDynamicThresholdTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testDynamicThreshold0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('min_test', 50, 10, 100)
 
       const result: boolean = await threshold.adjust(5)
@@ -211,14 +211,14 @@ export default function BuiltinsDynamicThresholdTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDynamicThresholdTest0500
-     * @tc.number SUB_BUILTINS_DYNAMIC_THRESHOLD_TEST_0500
+     * @tc.name   testDynamicThreshold0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DYNAMIC_THRESHOLD_TEST_0500
      * @tc.desc   Verify threshold increase
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsDynamicThresholdTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testDynamicThreshold0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('increase_test', 50, 10, 100)
 
       const result: boolean = await threshold.increase(20)
@@ -227,14 +227,14 @@ export default function BuiltinsDynamicThresholdTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDynamicThresholdTest0600
-     * @tc.number SUB_BUILTINS_DYNAMIC_THRESHOLD_TEST_0600
+     * @tc.name   testDynamicThreshold0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DYNAMIC_THRESHOLD_TEST_0600
      * @tc.desc   Verify threshold decrease
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsDynamicThresholdTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testDynamicThreshold0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('decrease_test', 50, 10, 100)
 
       const result: boolean = await threshold.decrease(20)
@@ -243,14 +243,14 @@ export default function BuiltinsDynamicThresholdTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDynamicThresholdTest0700
-     * @tc.number SUB_BUILTINS_DYNAMIC_THRESHOLD_TEST_0700
+     * @tc.name   testDynamicThreshold0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DYNAMIC_THRESHOLD_TEST_0700
      * @tc.desc   Verify adjustment count tracking
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsDynamicThresholdTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testDynamicThreshold0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('count_test', 50, 10, 100)
 
       await threshold.adjust(60)
@@ -261,14 +261,14 @@ export default function BuiltinsDynamicThresholdTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDynamicThresholdTest0800
-     * @tc.number SUB_BUILTINS_DYNAMIC_THRESHOLD_TEST_0800
+     * @tc.name   testDynamicThreshold0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DYNAMIC_THRESHOLD_TEST_0800
      * @tc.desc   Verify adjustment history with collections.Array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsDynamicThresholdTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testDynamicThreshold0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('history_test', 50, 10, 100)
 
       await threshold.adjust(60)
@@ -281,14 +281,14 @@ export default function BuiltinsDynamicThresholdTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDynamicThresholdTest0900
-     * @tc.number SUB_BUILTINS_DYNAMIC_THRESHOLD_TEST_0900
+     * @tc.name   testDynamicThreshold0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DYNAMIC_THRESHOLD_TEST_0900
      * @tc.desc   Verify concurrent threshold adjustment with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsDynamicThresholdTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testDynamicThreshold0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('concurrent_test', 50, 10, 100)
 
       const tasks: taskpool.Task[] = []
@@ -302,14 +302,14 @@ export default function BuiltinsDynamicThresholdTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDynamicThresholdTest1000
-     * @tc.number SUB_BUILTINS_DYNAMIC_THRESHOLD_TEST_1000
+     * @tc.name   testDynamicThreshold1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DYNAMIC_THRESHOLD_TEST_1000
      * @tc.desc   Verify concurrent threshold increase with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsDynamicThresholdTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testDynamicThreshold1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('increase_concurrent', 50, 10, 100)
 
       const tasks: taskpool.Task[] = []
@@ -323,14 +323,14 @@ export default function BuiltinsDynamicThresholdTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDynamicThresholdTest1100
-     * @tc.number SUB_BUILTINS_DYNAMIC_THRESHOLD_TEST_1100
+     * @tc.name   testDynamicThreshold1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DYNAMIC_THRESHOLD_TEST_1100
      * @tc.desc   Verify threshold creation is idempotent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsDynamicThresholdTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testDynamicThreshold1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const t1: DynamicThreshold = await dynamicThresholdManager.createThreshold('idempotent', 50, 10, 100)
       const t2: DynamicThreshold = await dynamicThresholdManager.createThreshold('idempotent', 60, 20, 200)
 
@@ -339,14 +339,14 @@ export default function BuiltinsDynamicThresholdTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDynamicThresholdTest1200
-     * @tc.number SUB_BUILTINS_DYNAMIC_THRESHOLD_TEST_1200
+     * @tc.name   testDynamicThreshold1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DYNAMIC_THRESHOLD_TEST_1200
      * @tc.desc   Verify threshold reset to default
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsDynamicThresholdTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testDynamicThreshold1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const threshold: DynamicThreshold = await dynamicThresholdManager.createThreshold('reset_test', 50, 10, 100)
 
       await threshold.adjust(60)
@@ -358,14 +358,14 @@ export default function BuiltinsDynamicThresholdTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsDynamicThresholdTest1300
-     * @tc.number SUB_BUILTINS_DYNAMIC_THRESHOLD_TEST_1300
+     * @tc.name   testDynamicThreshold1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_DYNAMIC_THRESHOLD_TEST_1300
      * @tc.desc   Verify multiple thresholds coexist in collections.Map
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsDynamicThresholdTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testDynamicThreshold1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await dynamicThresholdManager.createThreshold('threshold1', 10, 1, 100)
       await dynamicThresholdManager.createThreshold('threshold2', 20, 5, 50)
       await dynamicThresholdManager.createThreshold('threshold3', 30, 10, 60)
@@ -459,14 +459,14 @@ function BuiltinsRateLimitMonitorTestInner(): void {
     })
 
     /**
-     * @tc.name   BuiltinsRateLimitMonitorTest0100
-     * @tc.number SUB_BUILTINS_RATE_LIMIT_MONITOR_TEST_0100
+     * @tc.name   testRateLimitMonitor0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RATE_LIMIT_MONITOR_TEST_0100
      * @tc.desc   Verify small concurrency 10 stats recording
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsRateLimitMonitorTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testRateLimitMonitor0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const promises: Promise<void>[] = []
       for (let i = 0; i < 10; i++) {
         promises.push(rateLimitMonitor.recordRequest('batch_monitor_10', i % 3 === 0, i * 2))
@@ -479,14 +479,14 @@ function BuiltinsRateLimitMonitorTestInner(): void {
     })
 
     /**
-     * @tc.name   BuiltinsRateLimitMonitorTest0200
-     * @tc.number SUB_BUILTINS_RATE_LIMIT_MONITOR_TEST_0200
+     * @tc.name   testRateLimitMonitor0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RATE_LIMIT_MONITOR_TEST_0200
      * @tc.desc   Verify stats reset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsRateLimitMonitorTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testRateLimitMonitor0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await rateLimitMonitor.recordRequest('reset_monitor', true, 0)
       await rateLimitMonitor.recordRequest('reset_monitor', false, 50)
 
@@ -497,14 +497,14 @@ function BuiltinsRateLimitMonitorTestInner(): void {
     })
 
     /**
-     * @tc.name   BuiltinsRateLimitMonitorTest0300
-     * @tc.number SUB_BUILTINS_RATE_LIMIT_MONITOR_TEST_0300
+     * @tc.name   testRateLimitMonitor0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RATE_LIMIT_MONITOR_TEST_0300
      * @tc.desc   Verify multiple rate limit monitors coexist
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsRateLimitMonitorTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testRateLimitMonitor0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await rateLimitMonitor.recordRequest('monitor1', true, 0)
       await rateLimitMonitor.recordRequest('monitor2', true, 0)
       await rateLimitMonitor.recordRequest('monitor3', true, 0)

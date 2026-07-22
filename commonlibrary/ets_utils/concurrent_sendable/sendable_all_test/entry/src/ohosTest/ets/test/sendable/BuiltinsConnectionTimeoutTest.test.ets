@@ -169,25 +169,25 @@ export default function BuiltinsConnectionTimeoutTest(): void {
       await pool.shutdown()
     })
 
-    it('BuiltinsConnectionTimeoutTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConnectionTimeout0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pool.initialize(3)
       expect(await pool.checkLeak()).assertEqual(0)
     })
 
-    it('BuiltinsConnectionTimeoutTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConnectionTimeout0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pool.initialize(3)
       const conn: TimeoutConnection | null = await pool.acquire()
       expect(await pool.checkLeak()).assertEqual(1)
     })
 
-    it('BuiltinsConnectionTimeoutTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConnectionTimeout0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pool.initialize(3)
       const conn: TimeoutConnection | null = await pool.acquire()
       await pool.release(conn as TimeoutConnection)
       expect(await pool.checkLeak()).assertEqual(0)
     })
 
-    it('BuiltinsConnectionTimeoutTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConnectionTimeout0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       const conns: TimeoutConnection[] = []
       for (let i: number = 0; i < 3; i++) {
@@ -201,7 +201,7 @@ export default function BuiltinsConnectionTimeoutTest(): void {
       expect(await pool.checkLeak()).assertEqual(0)
     })
 
-    it('BuiltinsConnectionTimeoutTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConnectionTimeout0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       const conn: TimeoutConnection | null = await pool.acquire()
       await pool.release(conn as TimeoutConnection)
@@ -209,7 +209,7 @@ export default function BuiltinsConnectionTimeoutTest(): void {
       expect(idle >= 1).assertTrue()
     })
 
-    it('BuiltinsConnectionTimeoutTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConnectionTimeout0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       const conn: TimeoutConnection | null = await pool.acquire()
       await pool.release(conn as TimeoutConnection)
@@ -217,19 +217,19 @@ export default function BuiltinsConnectionTimeoutTest(): void {
       expect(released >= 1).assertTrue()
     })
 
-    it('BuiltinsConnectionTimeoutTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConnectionTimeout0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       const released: number = await pool.releaseIdleConnections(0)
       expect(released).assertEqual(3)
     })
 
-    it('BuiltinsConnectionTimeoutTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConnectionTimeout0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       const conn: TimeoutConnection | null = await pool.acquire()
       expect((conn as TimeoutConnection).lastUsedAt_ > 0).assertTrue()
     })
 
-    it('BuiltinsConnectionTimeoutTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConnectionTimeout0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       await pool.acquire()
       await pool.acquire()
@@ -239,7 +239,7 @@ export default function BuiltinsConnectionTimeoutTest(): void {
       expect(await pool.getLeakedCount()).assertEqual(3)
     })
 
-    it('BuiltinsConnectionTimeoutTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConnectionTimeout1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(2)
       const conn1: TimeoutConnection | null = await pool.acquire()
       const conn2: TimeoutConnection | null = await pool.acquire()
@@ -248,7 +248,7 @@ export default function BuiltinsConnectionTimeoutTest(): void {
       expect(released >= 1).assertTrue()
     })
 
-    it('BuiltinsConnectionTimeoutTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConnectionTimeout1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       const conn: TimeoutConnection | null = await pool.acquire()
       await pool.release(conn as TimeoutConnection)

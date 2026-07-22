@@ -51,14 +51,14 @@ export default function BuiltinsSendableNestedTest(): void {
     afterAll((): void => {})
 
     /**
-     * @tc.name   BuiltinsSendableNestedTest0100
-     * @tc.number SUB_BUILTINS_SENDABLE_NESTED_TEST_0100
+     * @tc.name   testSendableNested0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_NESTED_TEST_0100
      * @tc.desc   Verify onReceiveData callback creates nested Sendable task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSendableNestedTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableNested0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const counter = new NestedSharedCounter()
       const task = new taskpool.Task(triggerSendDataTask)
       let nestedResult: number = -1
@@ -81,14 +81,14 @@ export default function BuiltinsSendableNestedTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSendableNestedTest0200
-     * @tc.number SUB_BUILTINS_SENDABLE_NESTED_TEST_0200
+     * @tc.name   testSendableNested0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_NESTED_TEST_0200
      * @tc.desc   Verify onExecutionSucceeded callback creates nested Sendable task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSendableNestedTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableNested0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const counter = new NestedSharedCounter()
       const task = new taskpool.Task(outerSuccessTask)
       let nestedResult: number = -1
@@ -111,14 +111,14 @@ export default function BuiltinsSendableNestedTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSendableNestedTest0300
-     * @tc.number SUB_BUILTINS_SENDABLE_NESTED_TEST_0300
+     * @tc.name   testSendableNested0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_NESTED_TEST_0300
      * @tc.desc   Verify onExecutionFailed callback creates nested Sendable task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSendableNestedTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSendableNested0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const counter = new NestedSharedCounter()
       const task = new taskpool.Task(outerErrorTask)
       let nestedResult: number = -1
@@ -145,14 +145,14 @@ export default function BuiltinsSendableNestedTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSendableNestedTest0400
-     * @tc.number SUB_BUILTINS_SENDABLE_NESTED_TEST_0400
+     * @tc.name   testSendableNested0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_NESTED_TEST_0400
      * @tc.desc   Verify onReceiveData callback creates multiple sequential nested tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSendableNestedTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testSendableNested0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const counter = new NestedSharedCounter()
       const lock = new ArkTSUtils.locks.AsyncLock()
       const task = new taskpool.Task(triggerSendDataTask)
@@ -178,14 +178,14 @@ export default function BuiltinsSendableNestedTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSendableNestedTest0500
-     * @tc.number SUB_BUILTINS_SENDABLE_NESTED_TEST_0500
+     * @tc.name   testSendableNested0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_NESTED_TEST_0500
      * @tc.desc   Verify onReceiveData callback creates 3 concurrent nested tasks with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSendableNestedTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testSendableNested0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const counter = new NestedSharedCounter()
       const lock = new ArkTSUtils.locks.AsyncLock()
       const nestedPromises: Promise<number>[] = []
@@ -206,14 +206,14 @@ export default function BuiltinsSendableNestedTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSendableNestedTest0600
-     * @tc.number SUB_BUILTINS_SENDABLE_NESTED_TEST_0600
+     * @tc.name   testSendableNested0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SENDABLE_NESTED_TEST_0600
      * @tc.desc   Verify onReceiveData callback creates 10 concurrent nested tasks with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSendableNestedTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testSendableNested0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const counter = new NestedSharedCounter()
       const lock = new ArkTSUtils.locks.AsyncLock()
       const nestedPromises: Promise<number>[] = []

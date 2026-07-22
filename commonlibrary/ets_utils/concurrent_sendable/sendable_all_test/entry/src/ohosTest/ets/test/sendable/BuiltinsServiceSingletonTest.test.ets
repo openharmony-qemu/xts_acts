@@ -114,14 +114,14 @@ export default function BuiltinsServiceSingletonTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsServiceSingletonTest0100
-     * @tc.number SUB_BUILTINS_SERVICE_SINGLETON_TEST_0100
+     * @tc.name   testServiceSingleton0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICE_SINGLETON_TEST_0100
      * @tc.desc   Verify singleton getInstance returns same instance multiple times
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsServiceSingletonTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceSingleton0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const instance1: DatabaseService = await SingletonHolder.getInstance(new ArkTSUtils.locks.AsyncLock())
       const instance2: DatabaseService = await SingletonHolder.getInstance(new ArkTSUtils.locks.AsyncLock())
 
@@ -129,14 +129,14 @@ export default function BuiltinsServiceSingletonTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsServiceSingletonTest0200
-     * @tc.number SUB_BUILTINS_SERVICE_SINGLETON_TEST_0200
+     * @tc.name   testServiceSingleton0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICE_SINGLETON_TEST_0200
      * @tc.desc   Verify TaskPool task gets singleton instance with reference passing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsServiceSingletonTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceSingleton0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const task: taskpool.Task = new taskpool.Task(getDbInstanceAndConnectTask, dbService!)
       const result: Object = await taskpool.execute(task)
       const taskInstance: DatabaseService = result as DatabaseService
@@ -145,14 +145,14 @@ export default function BuiltinsServiceSingletonTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsServiceSingletonTest0300
-     * @tc.number SUB_BUILTINS_SERVICE_SINGLETON_TEST_0300
+     * @tc.name   testServiceSingleton0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICE_SINGLETON_TEST_0300
      * @tc.desc   Verify singleton state modification takes effect globally
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsServiceSingletonTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceSingleton0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await dbService!.connect()
 
       const task: taskpool.Task = new taskpool.Task(getDbInstanceAndConnectTask, dbService!)
@@ -163,14 +163,14 @@ export default function BuiltinsServiceSingletonTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsServiceSingletonTest0400
-     * @tc.number SUB_BUILTINS_SERVICE_SINGLETON_TEST_0400
+     * @tc.name   testServiceSingleton0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICE_SINGLETON_TEST_0400
      * @tc.desc   Verify multi-thread concurrent connect with Promise.all waiting
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsServiceSingletonTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceSingleton0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
         tasks.push(new taskpool.Task(connectTask, dbService!))
@@ -182,14 +182,14 @@ export default function BuiltinsServiceSingletonTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsServiceSingletonTest0500
-     * @tc.number SUB_BUILTINS_SERVICE_SINGLETON_TEST_0500
+     * @tc.name   testServiceSingleton0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICE_SINGLETON_TEST_0500
      * @tc.desc   Verify connection state with AsyncLock protection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsServiceSingletonTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceSingleton0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       expect(dbService!.isConnected()).assertFalse()
 
       await dbService!.connect()
@@ -200,14 +200,14 @@ export default function BuiltinsServiceSingletonTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsServiceSingletonTest0600
-     * @tc.number SUB_BUILTINS_SERVICE_SINGLETON_TEST_0600
+     * @tc.name   testServiceSingleton0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICE_SINGLETON_TEST_0600
      * @tc.desc   Verify connection counter concurrent safety
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsServiceSingletonTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceSingleton0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const initialCount: number = dbService!.getConnectionCount()
 
       const tasks: taskpool.Task[] = []
@@ -220,14 +220,14 @@ export default function BuiltinsServiceSingletonTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsServiceSingletonTest0700
-     * @tc.number SUB_BUILTINS_SERVICE_SINGLETON_TEST_0700
+     * @tc.name   testServiceSingleton0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICE_SINGLETON_TEST_0700
      * @tc.desc   Verify small concurrency 3 connections
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsServiceSingletonTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceSingleton0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 3; i++) {
         tasks.push(new taskpool.Task(connectTask, dbService!))
@@ -237,14 +237,14 @@ export default function BuiltinsServiceSingletonTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsServiceSingletonTest0800
-     * @tc.number SUB_BUILTINS_SERVICE_SINGLETON_TEST_0800
+     * @tc.name   testServiceSingleton0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICE_SINGLETON_TEST_0800
      * @tc.desc   Verify small concurrency 5 connections
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsServiceSingletonTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceSingleton0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
         tasks.push(new taskpool.Task(connectTask, dbService!))
@@ -254,14 +254,14 @@ export default function BuiltinsServiceSingletonTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsServiceSingletonTest0900
-     * @tc.number SUB_BUILTINS_SERVICE_SINGLETON_TEST_0900
+     * @tc.name   testServiceSingleton0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICE_SINGLETON_TEST_0900
      * @tc.desc   Verify small concurrency 10 connections
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsServiceSingletonTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceSingleton0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
         tasks.push(new taskpool.Task(connectTask, dbService!))
@@ -271,14 +271,14 @@ export default function BuiltinsServiceSingletonTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsServiceSingletonTest1000
-     * @tc.number SUB_BUILTINS_SERVICE_SINGLETON_TEST_1000
+     * @tc.name   testServiceSingleton1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICE_SINGLETON_TEST_1000
      * @tc.desc   Verify singleton reference consistency across different threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsServiceSingletonTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceSingleton1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const task: taskpool.Task = new taskpool.Task(verifySingletonRefTask, dbService!)
       const result: Object = await taskpool.execute(task)
 
@@ -286,14 +286,14 @@ export default function BuiltinsServiceSingletonTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsServiceSingletonTest1100
-     * @tc.number SUB_BUILTINS_SERVICE_SINGLETON_TEST_1100
+     * @tc.name   testServiceSingleton1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICE_SINGLETON_TEST_1100
      * @tc.desc   Verify singleton state isolation across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsServiceSingletonTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceSingleton1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const task1: taskpool.Task = new taskpool.Task(getDbInstanceAndConnectTask, dbService!)
       const instance1: Object = await taskpool.execute(task1)
       const dbInst1: DatabaseService = instance1 as DatabaseService
@@ -308,14 +308,14 @@ export default function BuiltinsServiceSingletonTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsServiceSingletonTest1200
-     * @tc.number SUB_BUILTINS_SERVICE_SINGLETON_TEST_1200
+     * @tc.name   testServiceSingleton1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICE_SINGLETON_TEST_1200
      * @tc.desc   Verify singleton lifecycle management connect and disconnect
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsServiceSingletonTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testServiceSingleton1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await dbService!.connect()
       expect(dbService!.isConnected()).assertTrue()
 
@@ -324,14 +324,14 @@ export default function BuiltinsServiceSingletonTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsServiceSingletonTest1300
-     * @tc.number SUB_BUILTINS_SERVICE_SINGLETON_TEST_1300
+     * @tc.name   testServiceSingleton1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERVICE_SINGLETON_TEST_1300
      * @tc.desc   Verify singleton reference address consistency across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsServiceSingletonTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testServiceSingleton1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
         tasks.push(new taskpool.Task(collectInstanceTask, dbService!))

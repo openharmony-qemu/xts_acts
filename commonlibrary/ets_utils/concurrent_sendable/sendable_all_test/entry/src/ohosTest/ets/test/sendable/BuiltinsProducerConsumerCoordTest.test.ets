@@ -133,14 +133,14 @@ export default function BuiltinsProducerConsumerCoordTest(): void {
     afterEach((): void => {})
     afterAll((): void => {})
 
-    it('BuiltinsProducerConsumerCoordTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testProducerConsumerCoord0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pcb.produce(100)
       const item: number = await pcb.consume()
       expect(item).assertEqual(100)
       expect(await pcb.size()).assertEqual(0)
     })
 
-    it('BuiltinsProducerConsumerCoordTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testProducerConsumerCoord0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 5; i++) {
         await pcb.produce(i * 10)
       }
@@ -152,7 +152,7 @@ export default function BuiltinsProducerConsumerCoordTest(): void {
       expect(await pcb.size()).assertEqual(0)
     })
 
-    it('BuiltinsProducerConsumerCoordTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testProducerConsumerCoord0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const producePromises: Promise<void>[] = []
       for (let i = 0; i < 5; i++) {
         producePromises.push(pcb.produce(i))
@@ -165,7 +165,7 @@ export default function BuiltinsProducerConsumerCoordTest(): void {
     })
 
 
-    it('BuiltinsProducerConsumerCoordTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testProducerConsumerCoord0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let consumeCompleted: boolean = false
       let consumeResult: number | undefined = undefined
       const consumePromise: Promise<number> = pcb.consume()
@@ -181,13 +181,13 @@ export default function BuiltinsProducerConsumerCoordTest(): void {
       expect(consumeResult).assertEqual(42)
     })
 
-    it('BuiltinsProducerConsumerCoordTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testProducerConsumerCoord0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result: boolean = await pcb.tryProduce(100)
       expect(result).assertTrue()
       expect(await pcb.size()).assertEqual(1)
     })
 
-    it('BuiltinsProducerConsumerCoordTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testProducerConsumerCoord0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 10; i++) {
         await pcb.produce(i)
       }
@@ -196,19 +196,19 @@ export default function BuiltinsProducerConsumerCoordTest(): void {
       expect(await pcb.size()).assertEqual(10)
     })
 
-    it('BuiltinsProducerConsumerCoordTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testProducerConsumerCoord0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pcb.produce(100)
       const item: number | undefined = await pcb.tryConsume()
       expect(item === 100).assertTrue()
       expect(await pcb.size()).assertEqual(0)
     })
 
-    it('BuiltinsProducerConsumerCoordTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testProducerConsumerCoord0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const item: number | undefined = await pcb.tryConsume()
       expect(item === undefined).assertTrue()
     })
 
-    it('BuiltinsProducerConsumerCoordTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testProducerConsumerCoord0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 5; i++) {
         tasks.push(new taskpool.Task(produceValue, i * 10))
@@ -221,7 +221,7 @@ export default function BuiltinsProducerConsumerCoordTest(): void {
       expect(await pcb.getProducedTotal()).assertEqual(5)
     })
 
-    it('BuiltinsProducerConsumerCoordTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testProducerConsumerCoord1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const receivedData: string[] = []
       const task: taskpool.Task = new taskpool.Task(notifyProducer)
       task.onReceiveData((data: Object): void => {

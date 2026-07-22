@@ -204,14 +204,14 @@ export default function BuiltinsRateLimiterTest(): void {
       await Utils.sleep(500)
     })
 
-    it('BuiltinsRateLimiterTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testRateLimiter0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const bucket: TokenBucket = await rateLimiterManager.createLimiter('test_bucket', 10, 2)
       expect(bucket.getMaxTokens()).assertEqual(10)
       expect(bucket.getRefillRate()).assertEqual(2)
       expect(bucket.getAvailableTokens()).assertEqual(10)
     })
 
-    it('BuiltinsRateLimiterTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testRateLimiter0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const bucket: TokenBucket = await rateLimiterManager.createLimiter('acquire_test', 5, 1)
 
       const result1: boolean = await bucket.acquire()
@@ -223,7 +223,7 @@ export default function BuiltinsRateLimiterTest(): void {
       expect(bucket.getAvailableTokens()).assertEqual(3)
     })
 
-    it('BuiltinsRateLimiterTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testRateLimiter0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const bucket: TokenBucket = await rateLimiterManager.createLimiter('empty_bucket', 2, 0)
 
       await bucket.acquire()
@@ -233,7 +233,7 @@ export default function BuiltinsRateLimiterTest(): void {
       expect(result).assertFalse()
     })
 
-    it('BuiltinsRateLimiterTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testRateLimiter0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await rateLimiterManager.createLimiter('integrated_test', 3, 0)
 
       const r1: boolean = await rateLimiterManager.tryAcquire('integrated_test')
@@ -247,7 +247,7 @@ export default function BuiltinsRateLimiterTest(): void {
       expect(r4).assertFalse()
     })
 
-    it('BuiltinsRateLimiterTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testRateLimiter0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await rateLimiterManager.createLimiter('concurrent_limit', 5, 0)
 
       const tasks: taskpool.Task[] = []
@@ -260,7 +260,7 @@ export default function BuiltinsRateLimiterTest(): void {
       expect(rateLimiterManager.getRejectedCount('concurrent_limit')).assertEqual(5)
     })
 
-    it('BuiltinsRateLimiterTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testRateLimiter0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await rateLimiterManager.createLimiter('count_test', 2, 0)
 
       await rateLimiterManager.tryAcquire('count_test')
@@ -271,12 +271,12 @@ export default function BuiltinsRateLimiterTest(): void {
       expect(rateLimiterManager.getRejectedCount('count_test')).assertEqual(1)
     })
 
-    it('BuiltinsRateLimiterTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testRateLimiter0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const result: boolean = await rateLimiterManager.tryAcquire('nonexistent')
       expect(result).assertFalse()
     })
 
-    it('BuiltinsRateLimiterTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testRateLimiter0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await rateLimiterManager.createLimiter('concurrent3', 3, 0)
 
       const tasks: taskpool.Task[] = []
@@ -288,7 +288,7 @@ export default function BuiltinsRateLimiterTest(): void {
       expect(rateLimiterManager.getRequestCount('concurrent3')).assertEqual(3)
     })
 
-    it('BuiltinsRateLimiterTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testRateLimiter0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await rateLimiterManager.createLimiter('concurrent5', 5, 0)
 
       const tasks: taskpool.Task[] = []
@@ -300,7 +300,7 @@ export default function BuiltinsRateLimiterTest(): void {
       expect(rateLimiterManager.getRequestCount('concurrent5')).assertEqual(5)
     })
 
-    it('BuiltinsRateLimiterTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testRateLimiter1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await rateLimiterManager.createLimiter('concurrent10', 5, 0)
 
       const tasks: taskpool.Task[] = []
@@ -313,7 +313,7 @@ export default function BuiltinsRateLimiterTest(): void {
       expect(rateLimiterManager.getRejectedCount('concurrent10')).assertEqual(5)
     })
 
-    it('BuiltinsRateLimiterTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testRateLimiter1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const bucket1: TokenBucket = await rateLimiterManager.createLimiter('limiter1', 2, 0)
       const bucket2: TokenBucket = await rateLimiterManager.createLimiter('limiter2', 5, 0)
 
@@ -327,7 +327,7 @@ export default function BuiltinsRateLimiterTest(): void {
       expect(r2).assertTrue()
     })
 
-    it('BuiltinsRateLimiterTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testRateLimiter1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const bucket1: TokenBucket = await rateLimiterManager.createLimiter('idempotent', 10, 1)
       const bucket2: TokenBucket = await rateLimiterManager.createLimiter('idempotent', 20, 2)
 
@@ -336,14 +336,14 @@ export default function BuiltinsRateLimiterTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsRateLimiterTest1300
-     * @tc.number SUB_BUILTINS_RATE_LIMITER_TEST_1300
+     * @tc.name   testRateLimiter1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_RATE_LIMITER_TEST_1300
      * @tc.desc   Verify concurrent limiter AsyncLock protection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsRateLimiterTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testRateLimiter1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const concurrentLimiter: ConcurrentRateLimiter = new ConcurrentRateLimiter(100, new ArkTSUtils.locks.AsyncLock())
       const promises: Promise<boolean>[] = []
       for (let i = 0; i < 50; i++) {

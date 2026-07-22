@@ -172,14 +172,14 @@ export default function BuiltinsIROptimizationTest(): void {
     afterAll((): void => {})
 
     /**
-     * @tc.name   BuiltinsIROptimizationTest0100
-     * @tc.number SUB_BUILTINS_IR_OPTIMIZATION_TEST_0100
+     * @tc.name   testIROptimization0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_0100
      * @tc.desc   Verify IC cache establishment by repeatedly accessing same property
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIROptimizationTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIROptimization0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const testObj: ICTestClass = new ICTestClass(new ArkTSUtils.locks.AsyncLock())
       const firstAccess: number = await testObj.getProp0()
       expect(firstAccess).assertEqual(0)
@@ -190,14 +190,14 @@ export default function BuiltinsIROptimizationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIROptimizationTest0200
-     * @tc.number SUB_BUILTINS_IR_OPTIMIZATION_TEST_0200
+     * @tc.name   testIROptimization0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_0200
      * @tc.desc   Verify IC cache update after property modification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIROptimizationTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIROptimization0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const testObj: ICTestClass = new ICTestClass(new ArkTSUtils.locks.AsyncLock())
       await testObj.getProp0()
       await testObj.setProp0(100)
@@ -206,14 +206,14 @@ export default function BuiltinsIROptimizationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIROptimizationTest0300
-     * @tc.number SUB_BUILTINS_IR_OPTIMIZATION_TEST_0300
+     * @tc.name   testIROptimization0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_0300
      * @tc.desc   Verify IC cache independence for multiple properties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIROptimizationTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIROptimization0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const testObj: ICTestClass = new ICTestClass(new ArkTSUtils.locks.AsyncLock())
       const results: number[] = await Promise.all([
         testObj.getProp0(),
@@ -230,14 +230,14 @@ export default function BuiltinsIROptimizationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIROptimizationTest0400
-     * @tc.number SUB_BUILTINS_IR_OPTIMIZATION_TEST_0400
+     * @tc.name   testIROptimization0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_0400
      * @tc.desc   Verify IC concurrent safety with TaskPool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsIROptimizationTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testIROptimization0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const testObj: ICTestClass = new ICTestClass(new ArkTSUtils.locks.AsyncLock())
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 10; i++) {
@@ -254,14 +254,14 @@ export default function BuiltinsIROptimizationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIROptimizationTest0500
-     * @tc.number SUB_BUILTINS_IR_OPTIMIZATION_TEST_0500
+     * @tc.name   testIROptimization0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_0500
      * @tc.desc   Verify IC cache hit performance - first vs subsequent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsIROptimizationTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testIROptimization0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const testObj: ICTestClass = new ICTestClass(new ArkTSUtils.locks.AsyncLock())
       await testObj.getProp0()
       for (let i = 0; i < 100; i++) {
@@ -271,14 +271,14 @@ export default function BuiltinsIROptimizationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIROptimizationTest0600
-     * @tc.number SUB_BUILTINS_IR_OPTIMIZATION_TEST_0600
+     * @tc.name   testIROptimization0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_0600
      * @tc.desc   Verify HiddenClass sharing for same-structure objects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIROptimizationTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIROptimization0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const p1: Point = new Point()
       const p2: Point = new Point()
       const p3: Point = new Point()
@@ -304,14 +304,14 @@ export default function BuiltinsIROptimizationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIROptimizationTest0700
-     * @tc.number SUB_BUILTINS_IR_OPTIMIZATION_TEST_0700
+     * @tc.name   testIROptimization0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_0700
      * @tc.desc   Verify HiddenClass separation for different-structure objects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIROptimizationTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIROptimization0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const p2d: Point = new Point()
       const p3d: Point3D = new Point3D()
       p2d.x = 1; p2d.y = 2
@@ -321,14 +321,14 @@ export default function BuiltinsIROptimizationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIROptimizationTest0800
-     * @tc.number SUB_BUILTINS_IR_OPTIMIZATION_TEST_0800
+     * @tc.name   testIROptimization0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_0800
      * @tc.desc   Verify HiddenClass chain consistency with same add order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsIROptimizationTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testIROptimization0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const obj1: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
       const obj2: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
       await obj1.addExtension('a', 1)
@@ -343,14 +343,14 @@ export default function BuiltinsIROptimizationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIROptimizationTest0900
-     * @tc.number SUB_BUILTINS_IR_OPTIMIZATION_TEST_0900
+     * @tc.name   testIROptimization0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_0900
      * @tc.desc   Verify concurrent creation of same-structure objects with HiddenClass sharing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsIROptimizationTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testIROptimization0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const points: Point[] = []
       for (let i = 0; i < 10; i++) {
         const p: Point = new Point()
@@ -372,14 +372,14 @@ export default function BuiltinsIROptimizationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIROptimizationTest1000
-     * @tc.number SUB_BUILTINS_IR_OPTIMIZATION_TEST_1000
+     * @tc.name   testIROptimization1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_1000
      * @tc.desc   Verify HiddenClass chain depth with 512 properties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsIROptimizationTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testIROptimization1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const obj: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 512; i++) {
         await obj.addExtension(`prop_${i}`, i)
@@ -390,14 +390,14 @@ export default function BuiltinsIROptimizationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIROptimizationTest1100
-     * @tc.number SUB_BUILTINS_IR_OPTIMIZATION_TEST_1100
+     * @tc.name   testIROptimization1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_1100
      * @tc.desc   Verify Sendable class has fixed structure - no dynamic property addition
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIROptimizationTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIROptimization1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const obj: Point = new Point()
       obj.x = 10; obj.y = 20
       expect(obj.x).assertEqual(10)
@@ -405,14 +405,14 @@ export default function BuiltinsIROptimizationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIROptimizationTest1200
-     * @tc.number SUB_BUILTINS_IR_OPTIMIZATION_TEST_1200
+     * @tc.name   testIROptimization1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_1200
      * @tc.desc   Verify SendableMap as dynamic property storage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIROptimizationTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIROptimization1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const obj: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
       obj.id = 100
       await obj.addExtension('ext1', 10)
@@ -423,14 +423,14 @@ export default function BuiltinsIROptimizationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIROptimizationTest1300
-     * @tc.number SUB_BUILTINS_IR_OPTIMIZATION_TEST_1300
+     * @tc.name   testIROptimization1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_1300
      * @tc.desc   Verify dynamic property count exceeding 1024 triggers dictionary mode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsIROptimizationTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testIROptimization1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const obj: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 1025; i++) {
         await obj.addExtension(`dyn_${i}`, i)
@@ -440,14 +440,14 @@ export default function BuiltinsIROptimizationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIROptimizationTest1400
-     * @tc.number SUB_BUILTINS_IR_OPTIMIZATION_TEST_1400
+     * @tc.name   testIROptimization1400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_1400
      * @tc.desc   Verify fixed + dynamic property combination - IR + dictionary mode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsIROptimizationTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testIROptimization1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const obj: HybridObject = new HybridObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 1025; i++) {
         await obj.lock_.lockAsync((): void => { obj.dynamic.set(`d_${i}`, i) })
@@ -460,14 +460,14 @@ export default function BuiltinsIROptimizationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIROptimizationTest1500
-     * @tc.number SUB_BUILTINS_IR_OPTIMIZATION_TEST_1500
+     * @tc.name   testIROptimization1500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_1500
      * @tc.desc   Verify IR object cross-thread access consistency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIROptimizationTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIROptimization1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const obj: IRTestClass = new IRTestClass()
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 5; i++) {
@@ -484,14 +484,14 @@ export default function BuiltinsIROptimizationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIROptimizationTest1600
-     * @tc.number SUB_BUILTINS_IR_OPTIMIZATION_TEST_1600
+     * @tc.name   testIROptimization1600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_1600
      * @tc.desc   Verify IR object modification and cross-thread consistency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsIROptimizationTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testIROptimization1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const obj: IRTestClass = new IRTestClass()
       const modifyTask: taskpool.Task = new taskpool.Task(modifyIRObject, obj, 100)
       await taskpool.execute(modifyTask)
@@ -510,14 +510,14 @@ export default function BuiltinsIROptimizationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIROptimizationTest1700
-     * @tc.number SUB_BUILTINS_IR_OPTIMIZATION_TEST_1700
+     * @tc.name   testIROptimization1700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_1700
      * @tc.desc   Verify same-structure objects cross-thread HiddenClass sharing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsIROptimizationTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testIROptimization1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const points: Point[] = []
       for (let i = 0; i < 10; i++) {
         const p: Point = new Point()
@@ -538,14 +538,14 @@ export default function BuiltinsIROptimizationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIROptimizationTest1800
-     * @tc.number SUB_BUILTINS_IR_OPTIMIZATION_TEST_1800
+     * @tc.name   testIROptimization1800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_1800
      * @tc.desc   Verify IR object Worker transfer consistency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsIROptimizationTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testIROptimization1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const obj: IRTestClass = new IRTestClass()
       obj.prop1 = 1; obj.prop2 = 2; obj.prop3 = 3
       const task: taskpool.Task = new taskpool.Task(workerReceiveIRTest, obj)
@@ -554,14 +554,14 @@ export default function BuiltinsIROptimizationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIROptimizationTest1900
-     * @tc.number SUB_BUILTINS_IR_OPTIMIZATION_TEST_1900
+     * @tc.name   testIROptimization1900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_1900
      * @tc.desc   Verify large concurrent access IR stability with 50 threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsIROptimizationTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testIROptimization1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const obj: StableIRObject = new StableIRObject(new ArkTSUtils.locks.AsyncLock())
       const batchSize: number = 10
       for (let batch = 0; batch < 5; batch++) {
@@ -579,14 +579,14 @@ export default function BuiltinsIROptimizationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIROptimizationTest2000
-     * @tc.number SUB_BUILTINS_IR_OPTIMIZATION_TEST_2000
+     * @tc.name   testIROptimization2000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_2000
      * @tc.desc   Verify SendableArray IR boundary with 1024 elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIROptimizationTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIROptimization2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const arr: collections.Array<number> = new collections.Array<number>()
       for (let i = 0; i < 1024; i++) {
         arr.push(i)
@@ -598,14 +598,14 @@ export default function BuiltinsIROptimizationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIROptimizationTest2100
-     * @tc.number SUB_BUILTINS_IR_OPTIMIZATION_TEST_2100
+     * @tc.name   testIROptimization2100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_2100
      * @tc.desc   Verify SendableArray exceeding 1024 elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIROptimizationTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIROptimization2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const arr: collections.Array<number> = new collections.Array<number>()
       for (let i = 0; i < 1025; i++) {
         arr.push(i)
@@ -616,14 +616,14 @@ export default function BuiltinsIROptimizationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIROptimizationTest2200
-     * @tc.number SUB_BUILTINS_IR_OPTIMIZATION_TEST_2200
+     * @tc.name   testIROptimization2200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_2200
      * @tc.desc   Verify SendableMap IR boundary with 1024 key-value pairs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIROptimizationTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIROptimization2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const map: collections.Map<string, number> = new collections.Map<string, number>()
       for (let i = 0; i < 1024; i++) {
         map.set(`key_${i}`, i)
@@ -634,14 +634,14 @@ export default function BuiltinsIROptimizationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIROptimizationTest2300
-     * @tc.number SUB_BUILTINS_IR_OPTIMIZATION_TEST_2300
+     * @tc.name   testIROptimization2300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_2300
      * @tc.desc   Verify SendableMap exceeding 1024 key-value pairs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIROptimizationTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testIROptimization2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const map: collections.Map<string, number> = new collections.Map<string, number>()
       for (let i = 0; i < 1025; i++) {
         map.set(`key_${i}`, i)
@@ -651,14 +651,14 @@ export default function BuiltinsIROptimizationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIROptimizationTest2400
-     * @tc.number SUB_BUILTINS_IR_OPTIMIZATION_TEST_2400
+     * @tc.name   testIROptimization2400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_2400
      * @tc.desc   Verify IR property access performance with 100 properties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsIROptimizationTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testIROptimization2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const obj: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 100; i++) {
         await obj.addExtension(`p_${i}`, i)
@@ -672,14 +672,14 @@ export default function BuiltinsIROptimizationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIROptimizationTest2500
-     * @tc.number SUB_BUILTINS_IR_OPTIMIZATION_TEST_2500
+     * @tc.name   testIROptimization2500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_2500
      * @tc.desc   Verify dictionary mode property access with 1025 properties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsIROptimizationTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testIROptimization2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const obj: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 1025; i++) {
         await obj.addExtension(`p_${i}`, i)
@@ -694,14 +694,14 @@ export default function BuiltinsIROptimizationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIROptimizationTest2600
-     * @tc.number SUB_BUILTINS_IR_OPTIMIZATION_TEST_2600
+     * @tc.name   testIROptimization2600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_IR_OPTIMIZATION_TEST_2600
      * @tc.desc   Verify IR vs dictionary mode functional consistency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsIROptimizationTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testIROptimization2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const irObj: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
       const dictObj: DynamicPropertyObject = new DynamicPropertyObject(new collections.Map<string, number>(), new ArkTSUtils.locks.AsyncLock())
       for (let i = 0; i < 100; i++) {

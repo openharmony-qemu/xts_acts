@@ -123,27 +123,27 @@ export default function BuiltinsComputeResultCacheTest(): void {
     afterAll((): void => {})
 
     /**
-     * @tc.name   BuiltinsComputeResultCacheTest0100
-     * @tc.number SUB_BUILTINS_COMPUTE_RESULT_CACHE_TEST_0100
+     * @tc.name   testComputeResultCache0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_COMPUTE_RESULT_CACHE_TEST_0100
      * @tc.desc   Verify computation parameter as cache key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsComputeResultCacheTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testComputeResultCache0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       cache.set('fib_10', fibonacci(10))
       expect(cache.get('fib_10')).assertEqual(55)
     })
 
     /**
-     * @tc.name   BuiltinsComputeResultCacheTest0200
-     * @tc.number SUB_BUILTINS_COMPUTE_RESULT_CACHE_TEST_0200
+     * @tc.name   testComputeResultCache0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_COMPUTE_RESULT_CACHE_TEST_0200
      * @tc.desc   Verify computation result storage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsComputeResultCacheTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testComputeResultCache0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       cache.set('sum_1_100', 5050)
       cache.set('factorial_5', 120)
       expect(cache.get('sum_1_100')).assertEqual(5050)
@@ -151,14 +151,14 @@ export default function BuiltinsComputeResultCacheTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsComputeResultCacheTest0300
-     * @tc.number SUB_BUILTINS_COMPUTE_RESULT_CACHE_TEST_0300
+     * @tc.name   testComputeResultCache0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_COMPUTE_RESULT_CACHE_TEST_0300
      * @tc.desc   Verify cache hit reuse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsComputeResultCacheTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testComputeResultCache0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       cache.set('fib_10', 55)
       const result1: number | undefined = cache.get('fib_10')
       const result2: number | undefined = cache.get('fib_10')
@@ -168,14 +168,14 @@ export default function BuiltinsComputeResultCacheTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsComputeResultCacheTest0400
-     * @tc.number SUB_BUILTINS_COMPUTE_RESULT_CACHE_TEST_0400
+     * @tc.name   testComputeResultCache0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_COMPUTE_RESULT_CACHE_TEST_0400
      * @tc.desc   Verify cache miss triggers computation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsComputeResultCacheTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testComputeResultCache0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const computeFn: (k: string) => number = (_k: string): number => {
         return fibonacci(10)
       }
@@ -186,14 +186,14 @@ export default function BuiltinsComputeResultCacheTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsComputeResultCacheTest0500
-     * @tc.number SUB_BUILTINS_COMPUTE_RESULT_CACHE_TEST_0500
+     * @tc.name   testComputeResultCache0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_COMPUTE_RESULT_CACHE_TEST_0500
      * @tc.desc   Verify cache capacity limit
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsComputeResultCacheTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testComputeResultCache0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const smallCacheArg: ArkTSUtils.SendableLruCache<string, number> = new ArkTSUtils.SendableLruCache<string, number>(100)
       const smallCache: ComputeResultCache = new ComputeResultCache(smallCacheArg)
       const smallLru: ArkTSUtils.SendableLruCache<string, number> = new ArkTSUtils.SendableLruCache<string, number>(3)
@@ -206,14 +206,14 @@ export default function BuiltinsComputeResultCacheTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsComputeResultCacheTest0600
-     * @tc.number SUB_BUILTINS_COMPUTE_RESULT_CACHE_TEST_0600
+     * @tc.name   testComputeResultCache0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_COMPUTE_RESULT_CACHE_TEST_0600
      * @tc.desc   Verify TaskPool concurrent compute cache
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsComputeResultCacheTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testComputeResultCache0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 5; i++) {
         tasks.push(new taskpool.Task(concurrentCompute, `compute_${i}`, i * i))
@@ -231,14 +231,14 @@ export default function BuiltinsComputeResultCacheTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsComputeResultCacheTest0700
-     * @tc.number SUB_BUILTINS_COMPUTE_RESULT_CACHE_TEST_0700
+     * @tc.name   testComputeResultCache0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_COMPUTE_RESULT_CACHE_TEST_0700
      * @tc.desc   Verify cache reuse verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsComputeResultCacheTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testComputeResultCache0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const computeFn: (k: string) => number = (_k: string): number => {
         return 42
       }
@@ -250,14 +250,14 @@ export default function BuiltinsComputeResultCacheTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsComputeResultCacheTest0800
-     * @tc.number SUB_BUILTINS_COMPUTE_RESULT_CACHE_TEST_0800
+     * @tc.name   testComputeResultCache0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_COMPUTE_RESULT_CACHE_TEST_0800
      * @tc.desc   Verify compute cache hit rate
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsComputeResultCacheTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testComputeResultCache0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       cache.set('key_1', 100)
       cache.get('key_1')
       cache.get('key_1')
@@ -267,14 +267,14 @@ export default function BuiltinsComputeResultCacheTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsComputeResultCacheTest0900
-     * @tc.number SUB_BUILTINS_COMPUTE_RESULT_CACHE_TEST_0900
+     * @tc.name   testComputeResultCache0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_COMPUTE_RESULT_CACHE_TEST_0900
      * @tc.desc   Verify cache saved computation count statistics
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsComputeResultCacheTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testComputeResultCache0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const computeFn: (k: string) => number = (_k: string): number => {
         return 100
       }

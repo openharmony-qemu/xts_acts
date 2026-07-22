@@ -131,19 +131,19 @@ export default function BuiltinsConnectionWaitQueueTest(): void {
       await pool.shutdown()
     })
 
-    it('BuiltinsConnectionWaitQueueTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConnectionWaitQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pool.initialize(3)
       const conn: WaitConnection | null = await pool.acquire()
     })
 
-    it('BuiltinsConnectionWaitQueueTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConnectionWaitQueue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pool.initialize(3)
       const conn: WaitConnection | null = await pool.acquire()
       await pool.release(conn as WaitConnection)
       expect(await pool.getActiveCount()).assertEqual(3)
     })
 
-    it('BuiltinsConnectionWaitQueueTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testConnectionWaitQueue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pool.initialize(2)
       const conn1: WaitConnection | null = await pool.acquire()
       const conn2: WaitConnection | null = await pool.acquire()
@@ -151,7 +151,7 @@ export default function BuiltinsConnectionWaitQueueTest(): void {
       expect(await pool.getActiveCount()).assertEqual(2)
     })
 
-    it('BuiltinsConnectionWaitQueueTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConnectionWaitQueue0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(2)
       const conn1: WaitConnection | null = await pool.acquire()
       const conn2: WaitConnection | null = await pool.acquire()
@@ -159,7 +159,7 @@ export default function BuiltinsConnectionWaitQueueTest(): void {
       expect(conn3).assertEqual(null)
     })
 
-    it('BuiltinsConnectionWaitQueueTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConnectionWaitQueue0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(2)
       const conn1: WaitConnection | null = await pool.acquire()
       const conn2: WaitConnection | null = await pool.acquire()
@@ -167,7 +167,7 @@ export default function BuiltinsConnectionWaitQueueTest(): void {
       const conn3: WaitConnection | null = await pool.acquire()
     })
 
-    it('BuiltinsConnectionWaitQueueTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConnectionWaitQueue0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       const conns: WaitConnection[] = []
       for (let i: number = 0; i < 3; i++) {
@@ -180,14 +180,14 @@ export default function BuiltinsConnectionWaitQueueTest(): void {
       expect(await pool.getActiveCount()).assertEqual(3)
     })
 
-    it('BuiltinsConnectionWaitQueueTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConnectionWaitQueue0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(1)
       const conn: WaitConnection | null = await pool.acquire()
       await pool.release(conn as WaitConnection)
       const conn2: WaitConnection | null = await pool.acquire()
     })
 
-    it('BuiltinsConnectionWaitQueueTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testConnectionWaitQueue0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pool.initialize(3)
       await pool.shutdown()
       expect(await pool.getTotalCount()).assertEqual(0)

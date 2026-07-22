@@ -127,40 +127,40 @@ export default function BuiltinsParallelComputeResultTest(): void {
     afterEach((): void => {})
     afterAll((): void => {})
 
-    it('BuiltinsParallelComputeResultTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testParallelComputeResult0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addValue(10)
       expect(collector.getCount()).assertEqual(1)
     })
 
-    it('BuiltinsParallelComputeResultTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testParallelComputeResult0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addValue(10)
       collector.addValue(20)
       collector.addValue(30)
       expect(collector.getSum()).assertEqual(60)
     })
 
-    it('BuiltinsParallelComputeResultTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testParallelComputeResult0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addValue(10)
       collector.addValue(20)
       collector.addValue(30)
       expect(collector.getAverage()).assertEqual(20)
     })
 
-    it('BuiltinsParallelComputeResultTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testParallelComputeResult0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addValue(5)
       collector.addValue(15)
       collector.addValue(10)
       expect(collector.getMax()).assertEqual(15)
     })
 
-    it('BuiltinsParallelComputeResultTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testParallelComputeResult0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addValue(5)
       collector.addValue(15)
       collector.addValue(10)
       expect(collector.getMin()).assertEqual(5)
     })
 
-    it('BuiltinsParallelComputeResultTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testParallelComputeResult0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const tasks: taskpool.Task[] = []
       const shardSize: number = 100
       for (let i = 0; i < 4; i++) {
@@ -179,7 +179,7 @@ export default function BuiltinsParallelComputeResultTest(): void {
       expect(collector.getCount()).assertEqual(4)
     })
 
-    it('BuiltinsParallelComputeResultTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testParallelComputeResult0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const tasks: taskpool.Task[] = []
       const shardSize: number = 100
       for (let i = 0; i < 4; i++) {
@@ -201,7 +201,7 @@ export default function BuiltinsParallelComputeResultTest(): void {
       expect(shard1 !== undefined).assertTrue()
     })
 
-    it('BuiltinsParallelComputeResultTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testParallelComputeResult0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       collector.addValue(10)
       collector.addValue(20)
       collector.addValue(30)
@@ -212,14 +212,14 @@ export default function BuiltinsParallelComputeResultTest(): void {
       expect(values[2]).assertEqual(30)
     })
 
-    it('BuiltinsParallelComputeResultTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testParallelComputeResult0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await collector.addShardResult('shard_0', 100)
       await collector.addShardResult('shard_1', 200)
       expect(collector.getShardResult('shard_0')).assertEqual(100)
       expect(collector.getShardResult('shard_1')).assertEqual(200)
     })
 
-    it('BuiltinsParallelComputeResultTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testParallelComputeResult1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       const shardSize: number = 10
       for (let i = 0; i < 100; i++) {
@@ -243,7 +243,7 @@ export default function BuiltinsParallelComputeResultTest(): void {
       expect(collector.getCount()).assertEqual(100)
     })
 
-    it('BuiltinsParallelComputeResultTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testParallelComputeResult1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await collector.addShardResult('shard_0', 100)
       await collector.addShardResult('shard_1', 200)
       await collector.addShardResult('shard_2', 300)
@@ -251,7 +251,7 @@ export default function BuiltinsParallelComputeResultTest(): void {
       expect(collector.getAverage()).assertEqual(200)
     })
 
-    it('BuiltinsParallelComputeResultTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testParallelComputeResult1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 5; i++) {
         const start: number = i * 200

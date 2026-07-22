@@ -125,14 +125,14 @@ function executeTasksGetObjects(tasks: taskpool.Task[]): Promise<Object[]> {
 
 export default function BuiltinsProgressIRTest(): void {
   describe('BuiltinsProgressIRTest', () => {
-    it('BuiltinsProgressIRTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testProgressIR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const tracker: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
       await tracker.setTotal(100)
       expect(await tracker.getProgress()).assertEqual(0)
       expect(await tracker.getAccessCount()).assertEqual(1)
     })
 
-    it('BuiltinsProgressIRTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testProgressIR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const tracker: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
       await tracker.setTotal(100)
       const p: number = await tracker.increment()
@@ -140,7 +140,7 @@ export default function BuiltinsProgressIRTest(): void {
       expect(await tracker.getProgress()).assertEqual(10)
     })
 
-    it('BuiltinsProgressIRTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testProgressIR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tracker: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
       await tracker.setTotal(100)
       const tasks: taskpool.Task[] = []
@@ -154,7 +154,7 @@ export default function BuiltinsProgressIRTest(): void {
       }
     })
 
-    it('BuiltinsProgressIRTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testProgressIR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const tracker: IRFieldAccessTracker = new IRFieldAccessTracker(new ArkTSUtils.locks.AsyncLock())
       await tracker.updateFields()
       expect(await tracker.getField1()).assertEqual(1)
@@ -162,7 +162,7 @@ export default function BuiltinsProgressIRTest(): void {
       expect(await tracker.getField3()).assertEqual(3)
     })
 
-    it('BuiltinsProgressIRTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testProgressIR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tracker: IRFieldAccessTracker = new IRFieldAccessTracker(new ArkTSUtils.locks.AsyncLock())
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
@@ -174,7 +174,7 @@ export default function BuiltinsProgressIRTest(): void {
       expect(await tracker.getField3()).assertEqual(15)
     })
 
-    it('BuiltinsProgressIRTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testProgressIR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const tracker1: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
       const tracker2: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
       await tracker1.setTotal(100)
@@ -185,7 +185,7 @@ export default function BuiltinsProgressIRTest(): void {
       expect(await tracker2.getProgress()).assertEqual(10)
     })
 
-    it('BuiltinsProgressIRTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testProgressIR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const tracker: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
       await tracker.setTotal(100)
       for (let i: number = 0; i < 10; i++) {
@@ -195,7 +195,7 @@ export default function BuiltinsProgressIRTest(): void {
       expect(await tracker.isCompleted()).assertTrue()
     })
 
-    it('BuiltinsProgressIRTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testProgressIR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const tracker: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
       await tracker.setTotal(50)
       for (let i: number = 0; i < 10; i++) {
@@ -205,7 +205,7 @@ export default function BuiltinsProgressIRTest(): void {
       expect(await tracker.isCompleted()).assertTrue()
     })
 
-    it('BuiltinsProgressIRTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testProgressIR0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tracker: IRFieldAccessTracker = new IRFieldAccessTracker(new ArkTSUtils.locks.AsyncLock())
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
@@ -217,7 +217,7 @@ export default function BuiltinsProgressIRTest(): void {
       expect(await tracker.getField3()).assertEqual(30)
     })
 
-    it('BuiltinsProgressIRTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testProgressIR1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const tracker: IRProgressTracker = new IRProgressTracker(new ArkTSUtils.locks.AsyncLock())
       await tracker.setTotal(100)
       const accessBefore: number = await tracker.getAccessCount()

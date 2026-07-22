@@ -132,14 +132,14 @@ export default function BuiltinsHeapIsolationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsHeapIsolationTest0100
-     * @tc.number SUB_BUILTINS_HEAP_ISOLATION_TEST_0100
+     * @tc.name   testHeapIsolation0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_HEAP_ISOLATION_TEST_0100
      * @tc.desc   Verify Sendable object allocated on SharedHeap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsHeapIsolationTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testHeapIsolation0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const obj: SharedHeapObject = await manager.create('shared', 1)
       expect(obj.getId()).assertEqual(1)
       expect(obj.getData()).assertEqual('shared')
@@ -147,14 +147,14 @@ export default function BuiltinsHeapIsolationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsHeapIsolationTest0200
-     * @tc.number SUB_BUILTINS_HEAP_ISOLATION_TEST_0200
+     * @tc.name   testHeapIsolation0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_HEAP_ISOLATION_TEST_0200
      * @tc.desc   Verify normal object cannot be shared across threads - serialization
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsHeapIsolationTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testHeapIsolation0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const localId: number = 2
       const localName: string = 'local'
       const task: taskpool.Task = new taskpool.Task(processLocalDataTask, localId, localName)
@@ -163,14 +163,14 @@ export default function BuiltinsHeapIsolationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsHeapIsolationTest0300
-     * @tc.number SUB_BUILTINS_HEAP_ISOLATION_TEST_0300
+     * @tc.name   testHeapIsolation0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_HEAP_ISOLATION_TEST_0300
      * @tc.desc   Verify SharedHeap cannot reference LocalHeap objects - type constraint
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsHeapIsolationTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testHeapIsolation0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const container: SharedHeapObject = await manager.create('container', 3)
       const nested: SharedHeapObject = await manager.create('nested', 30)
       expect(container.getId()).assertEqual(3)
@@ -179,42 +179,42 @@ export default function BuiltinsHeapIsolationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsHeapIsolationTest0400
-     * @tc.number SUB_BUILTINS_HEAP_ISOLATION_TEST_0400
+     * @tc.name   testHeapIsolation0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_HEAP_ISOLATION_TEST_0400
      * @tc.desc   Verify LocalHeap GC does not affect SharedHeap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsHeapIsolationTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testHeapIsolation0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const sharedObj: SharedHeapObject = await manager.create('local_gc', 4)
       expect(manager.getSize()).assertEqual(1)
       expect(sharedObj.getId()).assertEqual(4)
     })
 
     /**
-     * @tc.name   BuiltinsHeapIsolationTest0500
-     * @tc.number SUB_BUILTINS_HEAP_ISOLATION_TEST_0500
+     * @tc.name   testHeapIsolation0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_HEAP_ISOLATION_TEST_0500
      * @tc.desc   Verify SharedHeap GC does not affect LocalHeap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsHeapIsolationTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testHeapIsolation0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await manager.create('shared_gc', 50)
       await manager.delete('shared_gc')
       expect(manager.getSize()).assertEqual(0)
     })
 
     /**
-     * @tc.name   BuiltinsHeapIsolationTest0600
-     * @tc.number SUB_BUILTINS_HEAP_ISOLATION_TEST_0600
+     * @tc.name   testHeapIsolation0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_HEAP_ISOLATION_TEST_0600
      * @tc.desc   Verify Sendable object cross-thread sharing - reference passing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsHeapIsolationTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testHeapIsolation0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const sharedObj: SharedHeapObject = await manager.create('cross', 6)
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
@@ -226,14 +226,14 @@ export default function BuiltinsHeapIsolationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsHeapIsolationTest0700
-     * @tc.number SUB_BUILTINS_HEAP_ISOLATION_TEST_0700
+     * @tc.name   testHeapIsolation0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_HEAP_ISOLATION_TEST_0700
      * @tc.desc   Verify normal object serialization passing - data copy
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsHeapIsolationTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testHeapIsolation0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const localId: number = 7
       const task: taskpool.Task = new taskpool.Task(processLocalDataTask, localId, 'test')
       const result: Object = await taskpool.execute(task)
@@ -241,14 +241,14 @@ export default function BuiltinsHeapIsolationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsHeapIsolationTest0800
-     * @tc.number SUB_BUILTINS_HEAP_ISOLATION_TEST_0800
+     * @tc.name   testHeapIsolation0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_HEAP_ISOLATION_TEST_0800
      * @tc.desc   Verify mixed type passing - Sendable + normal data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsHeapIsolationTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testHeapIsolation0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const sharedObj: SharedHeapObject = await manager.create('mixed', 8)
       const normalId: number = 80
       const task: taskpool.Task = new taskpool.Task(mixedParamsTask, sharedObj, normalId)
@@ -257,14 +257,14 @@ export default function BuiltinsHeapIsolationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsHeapIsolationTest0900
-     * @tc.number SUB_BUILTINS_HEAP_ISOLATION_TEST_0900
+     * @tc.name   testHeapIsolation0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_HEAP_ISOLATION_TEST_0900
      * @tc.desc   Verify heap memory allocation - Sendable on SharedHeap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsHeapIsolationTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testHeapIsolation0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       for (let i: number = 0; i < 10; i++) {
         await manager.create(`alloc_${i}`, i)
       }
@@ -275,14 +275,14 @@ export default function BuiltinsHeapIsolationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsHeapIsolationTest1000
-     * @tc.number SUB_BUILTINS_HEAP_ISOLATION_TEST_1000
+     * @tc.name   testHeapIsolation1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_HEAP_ISOLATION_TEST_1000
      * @tc.desc   Verify heap isolation complete - cross-thread type constraint
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsHeapIsolationTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testHeapIsolation1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const container: SharedHeapObject = await manager.create('iso_container', 10)
       const nested: SharedHeapObject = await manager.create('iso_nested', 100)
 

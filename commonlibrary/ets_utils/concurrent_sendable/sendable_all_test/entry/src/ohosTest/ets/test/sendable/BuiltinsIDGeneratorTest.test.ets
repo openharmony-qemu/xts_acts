@@ -88,14 +88,14 @@ export default function BuiltinsIDGeneratorTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIDGeneratorTest0100
-     * @tc.number SUB_BUILTINS_ID_GENERATOR_TEST_0100
+     * @tc.name   testIDGenerator0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ID_GENERATOR_TEST_0100
      * @tc.desc   Verify basic ID generation with prefix
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIDGeneratorTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testIDGenerator0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const id: string = await generator.nextId()
 
       expect(id).assertEqual('test_1')
@@ -103,14 +103,14 @@ export default function BuiltinsIDGeneratorTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIDGeneratorTest0200
-     * @tc.number SUB_BUILTINS_ID_GENERATOR_TEST_0200
+     * @tc.name   testIDGenerator0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ID_GENERATOR_TEST_0200
      * @tc.desc   Verify sequential ID generation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIDGeneratorTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testIDGenerator0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const id1: string = await generator.nextId()
       const id2: string = await generator.nextId()
       const id3: string = await generator.nextId()
@@ -122,14 +122,14 @@ export default function BuiltinsIDGeneratorTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIDGeneratorTest0300
-     * @tc.number SUB_BUILTINS_ID_GENERATOR_TEST_0300
+     * @tc.name   testIDGenerator0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ID_GENERATOR_TEST_0300
      * @tc.desc   Verify batch ID generation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIDGeneratorTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testIDGenerator0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const ids: string[] = await generator.nextBatch(5)
 
       expect(ids.length).assertEqual(5)
@@ -139,14 +139,14 @@ export default function BuiltinsIDGeneratorTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIDGeneratorTest0400
-     * @tc.number SUB_BUILTINS_ID_GENERATOR_TEST_0400
+     * @tc.name   testIDGenerator0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ID_GENERATOR_TEST_0400
      * @tc.desc   Verify generated IDs are stored in history
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIDGeneratorTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testIDGenerator0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await generator.nextId()
       await generator.nextId()
 
@@ -157,14 +157,14 @@ export default function BuiltinsIDGeneratorTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIDGeneratorTest0500
-     * @tc.number SUB_BUILTINS_ID_GENERATOR_TEST_0500
+     * @tc.name   testIDGenerator0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ID_GENERATOR_TEST_0500
      * @tc.desc   Verify concurrent ID generation produces unique IDs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsIDGeneratorTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testIDGenerator0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 10; i++) {
         tasks.push(new taskpool.Task(generateIdTask, generator))
@@ -176,14 +176,14 @@ export default function BuiltinsIDGeneratorTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIDGeneratorTest0600
-     * @tc.number SUB_BUILTINS_ID_GENERATOR_TEST_0600
+     * @tc.name   testIDGenerator0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ID_GENERATOR_TEST_0600
      * @tc.desc   Verify ID prefix is correct
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsIDGeneratorTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testIDGenerator0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       expect(generator.getPrefix()).assertEqual('test')
 
       const customGenerator: IDGenerator = new IDGenerator('order', new ArkTSUtils.locks.AsyncLock(), new collections.Array<string>())
@@ -192,14 +192,14 @@ export default function BuiltinsIDGeneratorTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIDGeneratorTest0700
-     * @tc.number SUB_BUILTINS_ID_GENERATOR_TEST_0700
+     * @tc.name   testIDGenerator0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ID_GENERATOR_TEST_0700
      * @tc.desc   Verify small concurrency 3 ID generation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsIDGeneratorTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testIDGenerator0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 3; i++) {
         tasks.push(new taskpool.Task(generateIdTask, generator))
@@ -211,14 +211,14 @@ export default function BuiltinsIDGeneratorTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIDGeneratorTest0800
-     * @tc.number SUB_BUILTINS_ID_GENERATOR_TEST_0800
+     * @tc.name   testIDGenerator0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ID_GENERATOR_TEST_0800
      * @tc.desc   Verify small concurrency 5 ID generation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsIDGeneratorTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testIDGenerator0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 5; i++) {
         tasks.push(new taskpool.Task(generateIdTask, generator))
@@ -230,14 +230,14 @@ export default function BuiltinsIDGeneratorTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIDGeneratorTest0900
-     * @tc.number SUB_BUILTINS_ID_GENERATOR_TEST_0900
+     * @tc.name   testIDGenerator0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ID_GENERATOR_TEST_0900
      * @tc.desc   Verify small concurrency 10 ID generation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsIDGeneratorTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testIDGenerator0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 10; i++) {
         tasks.push(new taskpool.Task(generateIdTask, generator))
@@ -249,14 +249,14 @@ export default function BuiltinsIDGeneratorTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsIDGeneratorTest1000
-     * @tc.number SUB_BUILTINS_ID_GENERATOR_TEST_1000
+     * @tc.name   testIDGenerator1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ID_GENERATOR_TEST_1000
      * @tc.desc   Verify batch generation with mixed single and batch calls
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsIDGeneratorTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testIDGenerator1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       await generator.nextId()
       const batch: string[] = await generator.nextBatch(3)
       await generator.nextId()

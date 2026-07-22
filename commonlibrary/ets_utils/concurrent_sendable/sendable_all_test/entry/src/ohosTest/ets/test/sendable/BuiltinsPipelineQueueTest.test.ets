@@ -158,7 +158,7 @@ export default function BuiltinsPipelineQueueTest(): void {
     afterEach((): void => {})
     afterAll((): void => {})
 
-    it('BuiltinsPipelineQueueTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testPipelineQueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await pipeline.inputStage1(5)
       expect(await pipeline.getStage1Size()).assertEqual(1)
 
@@ -178,7 +178,7 @@ export default function BuiltinsPipelineQueueTest(): void {
       expect(output[0]).assertEqual(20)
     })
 
-    it('BuiltinsPipelineQueueTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testPipelineQueue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await pipeline.inputStage1(10)
       await pipeline.processStage1()
       await pipeline.processStage2()
@@ -188,7 +188,7 @@ export default function BuiltinsPipelineQueueTest(): void {
       expect(output[0]).assertEqual(30)
     })
 
-    it('BuiltinsPipelineQueueTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testPipelineQueue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const promises: Promise<void>[] = []
       for (let i = 0; i < 10; i++) {
         promises.push(pipeline.inputStage1(i))
@@ -207,7 +207,7 @@ export default function BuiltinsPipelineQueueTest(): void {
       expect(await pipeline.getOutputSize()).assertEqual(10)
     })
 
-    it('BuiltinsPipelineQueueTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testPipelineQueue0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i = 0; i < 5; i++) {
         await pipeline.inputStage1(i)
       }
@@ -225,7 +225,7 @@ export default function BuiltinsPipelineQueueTest(): void {
       expect(await pipeline.getOutputSize()).assertEqual(5)
     })
 
-    it('BuiltinsPipelineQueueTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testPipelineQueue0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i = 0; i < 5; i++) {
         await pipeline.inputStage1(i)
       }

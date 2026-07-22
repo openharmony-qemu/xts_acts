@@ -171,14 +171,14 @@ export default function BuiltinsAppSettingsTest(): void {
     afterAll((): void => {})
 
     /**
-     * @tc.name   BuiltinsAppSettingsTest0100
-     * @tc.number SUB_BUILTINS_APP_SETTINGS_TEST_0100
+     * @tc.name   testAppSettings0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APP_SETTINGS_TEST_0100
      * @tc.desc   Verify loading default settings
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsAppSettingsTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testAppSettings0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await settingsManager.loadDefaults(
         ['theme', 'language', 'notifications'],
         ['light', 'en', 'enabled']
@@ -189,28 +189,28 @@ export default function BuiltinsAppSettingsTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsAppSettingsTest0200
-     * @tc.number SUB_BUILTINS_APP_SETTINGS_TEST_0200
+     * @tc.name   testAppSettings0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APP_SETTINGS_TEST_0200
      * @tc.desc   Verify getting setting value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsAppSettingsTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testAppSettings0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await settingsManager.setSetting('user_preference', 'custom_value')
       const value: string | undefined = await settingsManager.getSetting('user_preference')
       expect(value).assertEqual('custom_value')
     })
 
     /**
-     * @tc.name   BuiltinsAppSettingsTest0300
-     * @tc.number SUB_BUILTINS_APP_SETTINGS_TEST_0300
+     * @tc.name   testAppSettings0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APP_SETTINGS_TEST_0300
      * @tc.desc   Verify updating setting value with version increment
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsAppSettingsTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testAppSettings0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await settingsManager.loadDefaults(['initial'], ['default'])
       const oldVersion: number = await settingsManager.getVersion()
       await settingsManager.setSetting('initial', 'updated')
@@ -220,14 +220,14 @@ export default function BuiltinsAppSettingsTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsAppSettingsTest0400
-     * @tc.number SUB_BUILTINS_APP_SETTINGS_TEST_0400
+     * @tc.name   testAppSettings0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APP_SETTINGS_TEST_0400
      * @tc.desc   Verify deleting setting item
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsAppSettingsTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testAppSettings0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await settingsManager.setSetting('temp_setting', 'temp_value')
       const deleted: boolean = await settingsManager.deleteSetting('temp_setting')
       expect(deleted).assertTrue()
@@ -235,14 +235,14 @@ export default function BuiltinsAppSettingsTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsAppSettingsTest0500
-     * @tc.number SUB_BUILTINS_APP_SETTINGS_TEST_0500
+     * @tc.name   testAppSettings0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APP_SETTINGS_TEST_0500
      * @tc.desc   Verify resetting setting to default value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsAppSettingsTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testAppSettings0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await settingsManager.loadDefaults(['config'], ['default_config'])
       await settingsManager.setSetting('config', 'modified_config')
       await settingsManager.resetToDefault('config')
@@ -250,14 +250,14 @@ export default function BuiltinsAppSettingsTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsAppSettingsTest0600
-     * @tc.number SUB_BUILTINS_APP_SETTINGS_TEST_0600
+     * @tc.name   testAppSettings0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APP_SETTINGS_TEST_0600
      * @tc.desc   Verify TaskPool concurrent read settings with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsAppSettingsTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testAppSettings0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await settingsManager.loadDefaults(
         ['setting1', 'setting2', 'setting3', 'setting4', 'setting5'],
         ['value1', 'value2', 'value3', 'value4', 'value5']
@@ -278,14 +278,14 @@ export default function BuiltinsAppSettingsTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsAppSettingsTest0700
-     * @tc.number SUB_BUILTINS_APP_SETTINGS_TEST_0700
+     * @tc.name   testAppSettings0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APP_SETTINGS_TEST_0700
      * @tc.desc   Verify TaskPool concurrent update settings with version consistency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsAppSettingsTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testAppSettings0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await settingsManager.loadDefaults(['base'], ['base_value'])
       const initialVersion: number = await settingsManager.getVersion()
       const tasks: taskpool.Task[] = []
@@ -302,14 +302,14 @@ export default function BuiltinsAppSettingsTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsAppSettingsTest0800
-     * @tc.number SUB_BUILTINS_APP_SETTINGS_TEST_0800
+     * @tc.name   testAppSettings0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APP_SETTINGS_TEST_0800
      * @tc.desc   Verify concurrent settings read/write mixed with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsAppSettingsTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testAppSettings0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await settingsManager.loadDefaults(['read1', 'read2'], ['read_val1', 'read_val2'])
       const readTasks: taskpool.Task[] = []
       const writeTasks: taskpool.Task[] = []
@@ -332,14 +332,14 @@ export default function BuiltinsAppSettingsTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsAppSettingsTest0900
-     * @tc.number SUB_BUILTINS_APP_SETTINGS_TEST_0900
+     * @tc.name   testAppSettings0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APP_SETTINGS_TEST_0900
      * @tc.desc   Verify feature flag state query
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsAppSettingsTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testAppSettings0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await settingsManager.setFeatureFlag('experimental_feature', true)
       const enabled: boolean = await settingsManager.getFeatureFlag('experimental_feature')
       expect(enabled).assertTrue()
@@ -348,14 +348,14 @@ export default function BuiltinsAppSettingsTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsAppSettingsTest1000
-     * @tc.number SUB_BUILTINS_APP_SETTINGS_TEST_1000
+     * @tc.name   testAppSettings1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APP_SETTINGS_TEST_1000
      * @tc.desc   Verify feature flag state toggle
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsAppSettingsTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testAppSettings1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await settingsManager.setFeatureFlag('beta_feature', false)
       const newState: boolean = await settingsManager.toggleFeatureFlag('beta_feature')
       expect(newState).assertTrue()
@@ -364,14 +364,14 @@ export default function BuiltinsAppSettingsTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsAppSettingsTest1100
-     * @tc.number SUB_BUILTINS_APP_SETTINGS_TEST_1100
+     * @tc.name   testAppSettings1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APP_SETTINGS_TEST_1100
      * @tc.desc   Verify TaskPool concurrent feature flag check with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsAppSettingsTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testAppSettings1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const flagTasks: taskpool.Task[] = []
       for (let i = 0; i < 3; i++) {
         await settingsManager.setFeatureFlag(`flag${i}`, false)
@@ -389,14 +389,14 @@ export default function BuiltinsAppSettingsTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsAppSettingsTest1200
-     * @tc.number SUB_BUILTINS_APP_SETTINGS_TEST_1200
+     * @tc.name   testAppSettings1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APP_SETTINGS_TEST_1200
      * @tc.desc   Verify sendData settings change notification via onReceiveData Promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsAppSettingsTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testAppSettings1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const task: taskpool.Task = new taskpool.Task(notifySettingsChangeTask)
       const receivePromise: Promise<string> = new Promise<string>((resolve: (value: string) => void): void => {
         task.onReceiveData((data: Object): void => {
@@ -410,14 +410,14 @@ export default function BuiltinsAppSettingsTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsAppSettingsTest1300
-     * @tc.number SUB_BUILTINS_APP_SETTINGS_TEST_1300
+     * @tc.name   testAppSettings1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APP_SETTINGS_TEST_1300
      * @tc.desc   Verify onReceiveData receiving multiple notifications via Promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsAppSettingsTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testAppSettings1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const notifications: Record<string, Object>[] = []
       const task: taskpool.Task = new taskpool.Task(multiNotifySettingsTask)
       const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
@@ -436,14 +436,14 @@ export default function BuiltinsAppSettingsTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsAppSettingsTest1400
-     * @tc.number SUB_BUILTINS_APP_SETTINGS_TEST_1400
+     * @tc.name   testAppSettings1400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APP_SETTINGS_TEST_1400
      * @tc.desc   Verify callback nested setting update via onReceiveData Promise and Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsAppSettingsTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testAppSettings1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const task: taskpool.Task = new taskpool.Task(triggerSettingsUpdateTask)
       const nestedPromises: Promise<Object>[] = []
       const receivePromise: Promise<void> = new Promise<void>((resolve: () => void): void => {
@@ -461,14 +461,14 @@ export default function BuiltinsAppSettingsTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsAppSettingsTest1500
-     * @tc.number SUB_BUILTINS_APP_SETTINGS_TEST_1500
+     * @tc.name   testAppSettings1500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_APP_SETTINGS_TEST_1500
      * @tc.desc   Verify string setting values including numeric- and boolean-like strings are stored and retrieved as string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsAppSettingsTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testAppSettings1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await settingsManager.setSetting('string_setting', 'text_value')
       await settingsManager.setSetting('numeric_setting', '42')
       await settingsManager.setSetting('boolean_setting', 'true')

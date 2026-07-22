@@ -104,21 +104,21 @@ export default function BuiltinsEventHandlerConcurrentTest(): void {
       await bus.reset()
     })
 
-    it('BuiltinsEventHandlerConcurrentTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEventHandlerConcurrent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.registerHandler('click', 'handler_1')
       const count: number = await bus.executeHandlers('click')
       expect(count).assertEqual(1)
       expect(await bus.getExecutionCount()).assertEqual(1)
     })
 
-    it('BuiltinsEventHandlerConcurrentTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testEventHandlerConcurrent0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await bus.registerHandler('click', 'handler_1')
       await bus.registerHandler('click', 'handler_2')
       const count: number = await bus.executeHandlers('click')
       expect(count).assertEqual(2)
     })
 
-    it('BuiltinsEventHandlerConcurrentTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testEventHandlerConcurrent0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await bus.registerHandler('click', 'handler_1')
       await bus.registerHandler('click', 'handler_2')
       const tasks: taskpool.Task[] = []
@@ -129,12 +129,12 @@ export default function BuiltinsEventHandlerConcurrentTest(): void {
       expect(await bus.getExecutionCount() >= 10).assertTrue()
     })
 
-    it('BuiltinsEventHandlerConcurrentTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testEventHandlerConcurrent0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const count: number = await bus.executeHandlers('unknown')
       expect(count).assertEqual(0)
     })
 
-    it('BuiltinsEventHandlerConcurrentTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testEventHandlerConcurrent0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i: number = 0; i < 10; i++) {
         await bus.registerHandler('click', `handler_${i}`)
       }
@@ -146,7 +146,7 @@ export default function BuiltinsEventHandlerConcurrentTest(): void {
       expect(await bus.getExecutionCount() >= 30).assertTrue()
     })
 
-    it('BuiltinsEventHandlerConcurrentTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testEventHandlerConcurrent0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await bus.registerHandler('click', 'handler_1')
       await bus.registerHandler('hover', 'handler_2')
       const c1: number = await bus.executeHandlers('click')
@@ -155,7 +155,7 @@ export default function BuiltinsEventHandlerConcurrentTest(): void {
       expect(c2).assertEqual(1)
     })
 
-    it('BuiltinsEventHandlerConcurrentTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testEventHandlerConcurrent0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i: number = 0; i < 5; i++) {
         await bus.registerHandler('click', `handler_${i}`)
         await bus.registerHandler('hover', `handler_${i}`)
@@ -167,7 +167,7 @@ export default function BuiltinsEventHandlerConcurrentTest(): void {
       expect(await bus.getExecutionCount() >= 10).assertTrue()
     })
 
-    it('BuiltinsEventHandlerConcurrentTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testEventHandlerConcurrent0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await bus.registerHandler('click', 'handler_1')
       await bus.executeHandlers('click')
       await bus.reset()

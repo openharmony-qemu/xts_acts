@@ -100,13 +100,13 @@ export default function BuiltinsReadWriteLockTest(): void {
     afterEach((): void => {})
     afterAll((): void => {})
 
-    it('BuiltinsReadWriteLockTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testReadWriteLock0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await resource.write(100)
       const value: number = await resource.read()
       expect(value).assertEqual(100)
     })
 
-    it('BuiltinsReadWriteLockTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testReadWriteLock0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const promises: Promise<void>[] = []
       for (let i = 0; i < 5; i++) {
         promises.push(resource.write(i * 10))
@@ -115,7 +115,7 @@ export default function BuiltinsReadWriteLockTest(): void {
       expect(await resource.getWriteCount()).assertEqual(5)
     })
 
-    it('BuiltinsReadWriteLockTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testReadWriteLock0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const promises: Promise<void>[] = []
       for (let i = 0; i < 10; i++) {
         promises.push(resource.write(i))
@@ -125,7 +125,7 @@ export default function BuiltinsReadWriteLockTest(): void {
       expect(value >= 0 && value < 10).assertTrue()
     })
 
-    it('BuiltinsReadWriteLockTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testReadWriteLock0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await resource.write(50)
       const promises: Promise<number>[] = []
       for (let i = 0; i < 10; i++) {
@@ -137,7 +137,7 @@ export default function BuiltinsReadWriteLockTest(): void {
       }
     })
 
-    it('BuiltinsReadWriteLockTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testReadWriteLock0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await resource.write(100)
       const promises: Promise<number>[] = []
       for (let i = 0; i < 10; i++) {
@@ -147,7 +147,7 @@ export default function BuiltinsReadWriteLockTest(): void {
       expect(await resource.getReadCount()).assertEqual(10)
     })
 
-    it('BuiltinsReadWriteLockTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testReadWriteLock0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await resource.write(0)
       const readTasks: taskpool.Task[] = []
       const writeTasks: taskpool.Task[] = []
@@ -166,7 +166,7 @@ export default function BuiltinsReadWriteLockTest(): void {
       expect(await resource.getWriteCount()).assertLargerOrEqual(3)
     })
 
-    it('BuiltinsReadWriteLockTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testReadWriteLock0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let readCompleted: boolean = false
       const writePromise: Promise<void> = resource.write(200)
       await writePromise
@@ -178,7 +178,7 @@ export default function BuiltinsReadWriteLockTest(): void {
       expect(readCompleted).assertTrue()
     })
 
-    it('BuiltinsReadWriteLockTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testReadWriteLock0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 5; i++) {
         await resource.write(i * 10)
         const value: number = await resource.read()
@@ -188,7 +188,7 @@ export default function BuiltinsReadWriteLockTest(): void {
       expect(await resource.getReadCount()).assertEqual(5)
     })
 
-    it('BuiltinsReadWriteLockTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testReadWriteLock0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const promises: Promise<void | number>[] = []
       for (let i = 0; i < 20; i++) {
         if (i % 3 === 0) {

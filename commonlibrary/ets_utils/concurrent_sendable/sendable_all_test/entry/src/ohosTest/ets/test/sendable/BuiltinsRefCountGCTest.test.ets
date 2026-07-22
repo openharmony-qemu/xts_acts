@@ -145,14 +145,14 @@ export default function BuiltinsRefCountGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsRefCountGCTest0100
-     * @tc.number SUB_BUILTINS_REF_COUNT_GC_TEST_0100
+     * @tc.name   testRefCountGC0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_REF_COUNT_GC_TEST_0100
      * @tc.desc   Verify reference count initial value is 1 on creation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsRefCountGCTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testRefCountGC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const data: RefCountGCData = await manager.create('init', 1)
       expect(data.getId()).assertEqual(1)
       expect(data.getData()).assertEqual('data-1')
@@ -161,14 +161,14 @@ export default function BuiltinsRefCountGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsRefCountGCTest0200
-     * @tc.number SUB_BUILTINS_REF_COUNT_GC_TEST_0200
+     * @tc.name   testRefCountGC0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_REF_COUNT_GC_TEST_0200
      * @tc.desc   Verify reference count increase with multiple reference passing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsRefCountGCTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testRefCountGC0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: RefCountGCData = await manager.create('multi_ref', 2)
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 3; i++) {
@@ -179,14 +179,14 @@ export default function BuiltinsRefCountGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsRefCountGCTest0300
-     * @tc.number SUB_BUILTINS_REF_COUNT_GC_TEST_0300
+     * @tc.name   testRefCountGC0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_REF_COUNT_GC_TEST_0300
      * @tc.desc   Verify reference count decrease with reference release
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsRefCountGCTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testRefCountGC0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: RefCountGCData = await manager.create('decrease', 3)
       expect(manager.getSize()).assertEqual(1)
 
@@ -195,14 +195,14 @@ export default function BuiltinsRefCountGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsRefCountGCTest0400
-     * @tc.number SUB_BUILTINS_REF_COUNT_GC_TEST_0400
+     * @tc.name   testRefCountGC0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_REF_COUNT_GC_TEST_0400
      * @tc.desc   Verify reference count zero triggers GC auto release
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsRefCountGCTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testRefCountGC0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       for (let i: number = 0; i < 5; i++) {
         await manager.create(`temp_${i}`, i)
       }
@@ -213,14 +213,14 @@ export default function BuiltinsRefCountGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsRefCountGCTest0500
-     * @tc.number SUB_BUILTINS_REF_COUNT_GC_TEST_0500
+     * @tc.name   testRefCountGC0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_REF_COUNT_GC_TEST_0500
      * @tc.desc   Verify reference count cross-thread sync - main to TaskPool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsRefCountGCTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testRefCountGC0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: RefCountGCData = await manager.create('cross_thread', 5)
       const task: taskpool.Task = new taskpool.Task(readRefCountTask, data)
       const result: Object = await taskpool.execute(task)
@@ -229,14 +229,14 @@ export default function BuiltinsRefCountGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsRefCountGCTest0600
-     * @tc.number SUB_BUILTINS_REF_COUNT_GC_TEST_0600
+     * @tc.name   testRefCountGC0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_REF_COUNT_GC_TEST_0600
      * @tc.desc   Verify multi-thread concurrent reference count increase and decrease
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsRefCountGCTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testRefCountGC0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: RefCountGCData = await manager.create('concurrent', 7)
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
@@ -247,14 +247,14 @@ export default function BuiltinsRefCountGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsRefCountGCTest0700
-     * @tc.number SUB_BUILTINS_REF_COUNT_GC_TEST_0700
+     * @tc.name   testRefCountGC0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_REF_COUNT_GC_TEST_0700
      * @tc.desc   Verify reference not released - memory persists
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsRefCountGCTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testRefCountGC0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: RefCountGCData = await manager.create('persist', 8)
       expect(data.getId()).assertEqual(8)
       expect(data.getData()).assertEqual('data-8')
@@ -262,14 +262,14 @@ export default function BuiltinsRefCountGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsRefCountGCTest0800
-     * @tc.number SUB_BUILTINS_REF_COUNT_GC_TEST_0800
+     * @tc.name   testRefCountGC0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_REF_COUNT_GC_TEST_0800
      * @tc.desc   Verify reference count zero timing - auto GC trigger
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsRefCountGCTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testRefCountGC0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       for (let i: number = 0; i < 100; i++) {
         const mgr: RefCountGCManager = new RefCountGCManager(new collections.Map<string, RefCountGCData>(), new ArkTSUtils.locks.AsyncLock())
         await mgr.create(`batch_${i}`, i)
@@ -278,14 +278,14 @@ export default function BuiltinsRefCountGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsRefCountGCTest0900
-     * @tc.number SUB_BUILTINS_REF_COUNT_GC_TEST_0900
+     * @tc.name   testRefCountGC0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_REF_COUNT_GC_TEST_0900
      * @tc.desc   Verify reference chain integrity
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsRefCountGCTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testRefCountGC0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const parent: RefCountGCData = await manager.create('parent', 1)
       const child: RefCountGCData = await manager.create('child', 2)
       expect(manager.getSize()).assertEqual(2)
@@ -297,14 +297,14 @@ export default function BuiltinsRefCountGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsRefCountGCTest1000
-     * @tc.number SUB_BUILTINS_REF_COUNT_GC_TEST_1000
+     * @tc.name   testRefCountGC1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_REF_COUNT_GC_TEST_1000
      * @tc.desc   Verify concurrent create with small concurrency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsRefCountGCTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testRefCountGC1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       for (let i: number = 0; i < 5; i++) {
         await manager.create(`small_${i}`, i)
       }
