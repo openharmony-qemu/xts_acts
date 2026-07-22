@@ -218,7 +218,8 @@ export default function WorkerInvokeTest(): void {
         }
         currentWorker!.postMessage({ type: 'call_nonexistent_method', objName: 'testObj' })
       })
-      expect(errorMsg.length > 0).assertTrue()
+      expect(errorMsg).assertEqual(
+        'The method to be called is not callable or is an async method or a generator.')
     })
 
     /**
@@ -240,7 +241,7 @@ export default function WorkerInvokeTest(): void {
         }
         currentWorker!.postMessage({ type: 'call_nonexistent_object' })
       })
-      expect(errorMsg.length > 0).assertTrue()
+      expect(errorMsg).assertEqual('The globalCallObject is not registered')
     })
 
     /**
@@ -313,7 +314,7 @@ export default function WorkerInvokeTest(): void {
         }
         currentWorker!.postMessage({ type: 'call_nonexistent_object' })
       })
-      expect(errorMsg.length > 0).assertTrue()
+      expect(errorMsg).assertEqual('The globalCallObject is not registered')
     })
 
     /**
@@ -342,7 +343,8 @@ export default function WorkerInvokeTest(): void {
       } catch (err) {
         errorCaught = true
         if (err instanceof Error) {
-          expect(err.message.length > 0).assertTrue()
+          expect(err.message).assertEqual(
+            'The Worker instance is not running, maybe worker is terminated when PostMessage')
         }
       }
       expect(errorCaught).assertTrue()

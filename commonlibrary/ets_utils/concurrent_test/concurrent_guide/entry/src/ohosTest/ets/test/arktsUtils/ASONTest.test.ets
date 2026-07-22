@@ -166,10 +166,11 @@ export default function ASONTest(): void {
         expect().assertFail()
       } catch (e) {
         caughtError = true
-        // Device/runtime and asonutilstest: invalid JSON throws SyntaxError (no BusinessError code)
+        // Device/runtime: invalid JSON throws SyntaxError (not BusinessError)
         expect(e instanceof SyntaxError).assertTrue()
         if (e instanceof SyntaxError) {
-          expect(e.message.length > 0).assertTrue()
+          // Exact message observed for '{invalid json}' on device
+          expect(e.message).assertEqual('Unexpected Object Prop in JSON')
         }
       }
       expect(caughtError).assertTrue()

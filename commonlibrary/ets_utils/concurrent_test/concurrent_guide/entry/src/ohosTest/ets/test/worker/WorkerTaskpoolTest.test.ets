@@ -275,7 +275,8 @@ export default function WorkerTaskpoolTest(): void {
         }
         currentWorker!.postMessage({ type: 'taskpool_fail' })
       })
-      expect(errorMsg.length > 0).assertTrue()
+      // TaskPool wraps thrown Error with "Error: " prefix in reject message
+      expect(errorMsg).assertEqual('Error: TaskPool intentional failure')
     })
   })
 }

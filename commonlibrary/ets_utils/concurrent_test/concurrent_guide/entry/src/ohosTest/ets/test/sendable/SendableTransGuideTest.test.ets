@@ -245,9 +245,14 @@ export default function SendableTransGuideTest(): void {
 
       try {
         ArkTSUtils.ASON.parse(invalidJson)
+        expect().assertFail()
       } catch (e) {
         hasError = true
-        
+        expect(e instanceof SyntaxError).assertTrue()
+        if (e instanceof SyntaxError) {
+          // Exact message observed for '{"value": invalid}' on device
+          expect(e.message).assertEqual('Unexpected Text in JSON: Invalid Token')
+        }
       }
       expect(hasError).assertTrue()
     })

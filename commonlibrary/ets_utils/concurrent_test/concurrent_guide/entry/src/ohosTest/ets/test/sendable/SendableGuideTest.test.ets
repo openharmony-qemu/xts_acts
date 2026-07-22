@@ -177,7 +177,6 @@ export default function SendableGuideTest(): void {
       taskData.payload = 'ason test'
 
       let jsonStr: string = ArkTSUtils.ASON.stringify(taskData)
-      expect(jsonStr.length > 0).assertTrue()
       expect(jsonStr).assertContain('42')
       expect(jsonStr).assertContain('ason test')
 
