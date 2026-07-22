@@ -64,20 +64,20 @@ export default function UserAuthTest() {
       done();
     })
     /**
-     * @tc.name   Security_IAM_Companion_Api_static_5003
-     * @tc.number Security_IAM_Companion_Api_static_5003
+     * @tc.name   Security_IAM_Companion_Api_static_5004
+     * @tc.number Security_IAM_Companion_Api_static_5004
      * @tc.desc   unregisterRemoteAuthCallback normal test
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('Security_IAM_Companion_Api_static_5003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, format, 'Security_IAM_Companion_Api_static_5003 start');
+    it('Security_IAM_Companion_Api_static_5004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, format, 'Security_IAM_Companion_Api_static_5004 start');
       try {
         await userAuth.unregisterRemoteAuthCallback();
         expect(true).assertTrue();
       } catch (err) {
-        hilog.info(domain, tag, format, "Security_IAM_Companion_Api_static_5003 failed " + err.code + " " + err.message);
+        hilog.info(domain, tag, format, "Security_IAM_Companion_Api_static_5004 failed " + err.code + " " + err.message);
         expect(false).assertTrue();
       }
       done();
