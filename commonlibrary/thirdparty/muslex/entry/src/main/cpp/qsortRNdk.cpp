@@ -111,8 +111,7 @@ static void QsortRStoreValue(void* elem, QsortRKind kind, uint32_t value)
             break;
         case KIND_LARGE: {
             unsigned char* p = static_cast<unsigned char*>(elem);
-            for (size_t i = 0; i < QSORT_R_LARGE_SIZE; ++i)
-            {
+            for (size_t i = 0; i < QSORT_R_LARGE_SIZE; ++i) {
                 p[i] = static_cast<unsigned char>(value + i);
             }
             break;
@@ -183,12 +182,10 @@ static int QsortRCompare(const void* left, const void* right, void* arg)
 static void QsortRReferenceSort(void* base, size_t nmemb, size_t width, QsortRContext* ctx)
 {
     unsigned char tmp[QSORT_R_MAX_WIDTH];
-    for (size_t i = 1; i < nmemb; ++i)
-    {
+    for (size_t i = 1; i < nmemb; ++i) {
         std::copy_n(QsortRElem(base, i, width), width, tmp);
         size_t j = i;
-        while (j > 0 && QsortRValueOrder(QsortRElem(base, j - 1, width), tmp, ctx) > 0)
-        {
+        while (j > 0 && QsortRValueOrder(QsortRElem(base, j - 1, width), tmp, ctx) > 0) {
             std::copy_backward(QsortRElem(base, j - 1, width),
                                QsortRElem(base, j - 1, width) + width,
                                QsortRElem(base, j, width) + width);
@@ -202,8 +199,7 @@ static void QsortRFillPattern(unsigned char* buffer, size_t nmemb, size_t width,
                               QsortRKind kind, QsortRPattern pattern)
 {
     uint32_t state = static_cast<uint32_t>(0x13572468u + width * 17u + nmemb * 131u + pattern * 977u);
-    for (size_t i = 0; i < nmemb; ++i)
-    {
+    for (size_t i = 0; i < nmemb; ++i) {
         uint32_t value = 0;
         switch (pattern)
         {
@@ -217,8 +213,7 @@ static void QsortRFillPattern(unsigned char* buffer, size_t nmemb, size_t width,
             case K_PATTERN_REPEATED:
                 state = state * 1103515245u + 12345u;
                 value = state % 67u;
-                if ((i % 4u) == 0)
-                {
+                if ((i % 4u) == 0) {
                     value = 21u;
                 }
                 break;
@@ -252,8 +247,7 @@ static napi_value QsortR(napi_env env, napi_callback_info info)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto qsortR = reinterpret_cast<QsortRFunc>(loader.GetQsortR());
-    if (!qsortR)
-    {
+    if (!qsortR) {
         return ReturnInt32(env, 1);
     }
 
@@ -262,8 +256,7 @@ static napi_value QsortR(napi_env env, napi_callback_info info)
     int descending = 1;
     errno = 0;
     qsortR(values, size, sizeof(values[0]), CompareInts, &descending);
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, IsSortedDescending(values, size) ? 1 : 0);
@@ -271,8 +264,7 @@ static napi_value QsortR(napi_env env, napi_callback_info info)
 
 static int CompareInts(const void* left, const void* right, void* arg)
 {
-    if (arg == nullptr)
-    {
+    if (arg == nullptr) {
         const int* lhs = static_cast<const int*>(left);
         const int* rhs = static_cast<const int*>(right);
         return (*lhs > *rhs) - (*lhs < *rhs);
@@ -286,10 +278,8 @@ static int CompareInts(const void* left, const void* right, void* arg)
 
 static bool IsSortedDescending(int32_t* arr, size_t size)
 {
-    for (size_t i = 0; i < size - 1; ++i)
-    {
-        if (arr[i] < arr[i + 1])
-        {
+    for (size_t i = 0; i < size - 1; ++i) {
+        if (arr[i] < arr[i + 1]) {
             return false;
         }
     }
@@ -301,8 +291,7 @@ static napi_value QsortRNormal001(napi_env env, napi_callback_info info)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto qsortR = reinterpret_cast<QsortRFunc>(loader.GetQsortR());
-    if (!qsortR)
-    {
+    if (!qsortR) {
         return ReturnInt32(env, 1);
     }
 
@@ -321,8 +310,7 @@ static napi_value QsortRNormal001(napi_env env, napi_callback_info info)
     errno = 0;
     qsortR(values, size, sizeof(int), QsortRCompare, &ctx);
 
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, (std::memcmp(values, expected, sizeof(expected)) == 0 &&
@@ -333,8 +321,7 @@ static napi_value QsortRNormal002(napi_env env, napi_callback_info info)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto qsortR = reinterpret_cast<QsortRFunc>(loader.GetQsortR());
-    if (!qsortR)
-    {
+    if (!qsortR) {
         return ReturnInt32(env, 1);
     }
 
@@ -357,11 +344,9 @@ static napi_value QsortRNormal002(napi_env env, napi_callback_info info)
     errno = 0;
     qsortR(arr, nel, sizeof(uint8_t), QsortRCompare, &ctx);
 
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return ReturnInt32(env, 1);
-    } else
-    {
+    } else {
         QsortRContext refCtx = ctx;
         refCtx.calls = 0;
         QsortRReferenceSort(ref, nel, sizeof(uint8_t), &refCtx);
@@ -374,8 +359,7 @@ static napi_value QsortRNormal003(napi_env env, napi_callback_info info)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto qsortR = reinterpret_cast<QsortRFunc>(loader.GetQsortR());
-    if (!qsortR)
-    {
+    if (!qsortR) {
         return ReturnInt32(env, 1);
     }
 
@@ -397,11 +381,9 @@ static napi_value QsortRNormal003(napi_env env, napi_callback_info info)
     errno = 0;
     qsortR(arr, nel, QSORT_R_LARGE_SIZE, QsortRCompare, &ctx);
 
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return ReturnInt32(env, 1);
-    } else
-    {
+    } else {
         QsortRContext refCtx = ctx;
         refCtx.calls = 0;
         QsortRReferenceSort(ref, nel, QSORT_R_LARGE_SIZE, &refCtx);
@@ -414,8 +396,7 @@ static napi_value QsortRNormal004(napi_env env, napi_callback_info info)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto qsortR = reinterpret_cast<QsortRFunc>(loader.GetQsortR());
-    if (!qsortR)
-    {
+    if (!qsortR) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
@@ -426,8 +407,7 @@ static napi_value QsortRAbnormal001(napi_env env, napi_callback_info info)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto qsortR = reinterpret_cast<QsortRFunc>(loader.GetQsortR());
-    if (!qsortR)
-    {
+    if (!qsortR) {
         return ReturnInt32(env, 1);
     }
 
@@ -448,8 +428,7 @@ static napi_value QsortRAbnormal001(napi_env env, napi_callback_info info)
     errno = 0;
     qsortR(values, size, sizeof(int), QsortRCompare, &ctx);
 
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, (std::memcmp(values, expected, sizeof(expected)) == 0 &&
@@ -462,8 +441,7 @@ static napi_value QsortRBoundary001(napi_env env, napi_callback_info info)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto qsortR = reinterpret_cast<QsortRFunc>(loader.GetQsortR());
-    if (!qsortR)
-    {
+    if (!qsortR) {
         return ReturnInt32(env, 1);
     }
 
@@ -478,8 +456,7 @@ static napi_value QsortRBoundary001(napi_env env, napi_callback_info info)
     errno = 0;
     qsortR(&value, 0, sizeof(int), QsortRCompare, &ctx);
 
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, (value == K_TEST_VALUE1234 && ctx.calls == 0) ? 1 : 0);
@@ -489,8 +466,7 @@ static napi_value QsortRBoundary002(napi_env env, napi_callback_info info)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto qsortR = reinterpret_cast<QsortRFunc>(loader.GetQsortR());
-    if (!qsortR)
-    {
+    if (!qsortR) {
         return ReturnInt32(env, 1);
     }
 
@@ -505,8 +481,7 @@ static napi_value QsortRBoundary002(napi_env env, napi_callback_info info)
     errno = 0;
     qsortR(&value, 1, sizeof(int), QsortRCompare, &ctx);
 
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, (value == K_TEST_VALUE1234 && ctx.calls == 0) ? 1 : 0);
@@ -516,8 +491,7 @@ static napi_value QsortRBoundary003(napi_env env, napi_callback_info info)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto qsortR = reinterpret_cast<QsortRFunc>(loader.GetQsortR());
-    if (!qsortR)
-    {
+    if (!qsortR) {
         return ReturnInt32(env, 1);
     }
 
@@ -540,11 +514,9 @@ static napi_value QsortRBoundary003(napi_env env, napi_callback_info info)
     errno = 0;
     qsortR(arr, nel, sizeof(uint32_t), QsortRCompare, &ctx);
 
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return ReturnInt32(env, 1);
-    } else
-    {
+    } else {
         QsortRContext refCtx = ctx;
         refCtx.calls = 0;
         QsortRReferenceSort(ref, nel, sizeof(uint32_t), &refCtx);
@@ -572,8 +544,7 @@ static bool RunSingleTest(const SingleTestParams& params)
 
     errno = 0;
     params.qsortR(params.actual, params.count, params.width, QsortRCompare, &ctx);
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return true;
     }
 
@@ -581,8 +552,7 @@ static bool RunSingleTest(const SingleTestParams& params)
     refCtx.calls = 0;
     QsortRReferenceSort(params.reference, params.count, params.width, &refCtx);
 
-    if (std::memcmp(params.actual, params.reference, params.count * params.width) != 0)
-    {
+    if (std::memcmp(params.actual, params.reference, params.count * params.width) != 0) {
         return false;
     }
     if ((params.count <= 1 && ctx.calls != 0) ||
@@ -598,12 +568,10 @@ static bool RunSingleTest(const SingleTestParams& params)
 static bool RunForAllCounts(const SingleTestParams& baseParams,
                             const size_t counts[], size_t countSize)
 {
-    for (size_t ci = 0; ci < countSize; ++ci)
-    {
+    for (size_t ci = 0; ci < countSize; ++ci) {
         SingleTestParams params = baseParams;
         params.count = counts[ci];
-        if (!RunSingleTest(params))
-        {
+        if (!RunSingleTest(params)) {
             return false;
         }
     }
@@ -627,14 +595,11 @@ static bool RunAllTestCombinations(QsortRFunc qsortR,
     size_t patternCount = sizeof(patterns) / sizeof(patterns[0]);
     size_t countCount = sizeof(counts) / sizeof(counts[0]);
 
-    for (size_t ki = 0; ki < kindCount; ++ki)
-    {
-        for (size_t pi = 0; pi < patternCount; ++pi)
-        {
+    for (size_t ki = 0; ki < kindCount; ++ki) {
+        for (size_t pi = 0; pi < patternCount; ++pi) {
             SingleTestParams baseParams{qsortR, 0, widths[ki], kinds[ki],
                                         patterns[pi], actual, reference};
-            if (!RunForAllCounts(baseParams, counts, countCount))
-            {
+            if (!RunForAllCounts(baseParams, counts, countCount)) {
                 return false;
             }
         }
@@ -647,8 +612,7 @@ static napi_value QsortRFunc001(napi_env env, napi_callback_info info)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto qsortR = reinterpret_cast<QsortRFunc>(loader.GetQsortR());
-    if (!qsortR)
-    {
+    if (!qsortR) {
         return ReturnInt32(env, 1);
     }
 
@@ -658,8 +622,7 @@ static napi_value QsortRFunc001(napi_env env, napi_callback_info info)
     unsigned char reference[maxElems * maxWidth];
 
     errno = 0;
-    if (!RunAllTestCombinations(qsortR, actual, reference, maxElems, maxWidth))
-    {
+    if (!RunAllTestCombinations(qsortR, actual, reference, maxElems, maxWidth)) {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
@@ -669,8 +632,7 @@ static napi_value QsortRFunc002(napi_env env, napi_callback_info info)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto qsortR = reinterpret_cast<QsortRFunc>(loader.GetQsortR());
-    if (!qsortR)
-    {
+    if (!qsortR) {
         return ReturnInt32(env, 1);
     }
 
@@ -691,8 +653,7 @@ static napi_value QsortRFunc002(napi_env env, napi_callback_info info)
     errno = 0;
     qsortR(arr, nel, sizeof(int), QsortRCompare, &ctx);
 
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, (ctx.calls > 0) ? 1 : 0);
@@ -702,8 +663,7 @@ static napi_value QsortRFunc003(napi_env env, napi_callback_info info)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto qsortR = reinterpret_cast<QsortRFunc>(loader.GetQsortR());
-    if (!qsortR)
-    {
+    if (!qsortR) {
         return ReturnInt32(env, 1);
     }
 
@@ -713,8 +673,7 @@ static napi_value QsortRFunc003(napi_env env, napi_callback_info info)
     };
     const size_t nel = 10;
     Elem arr[nel];
-    for (size_t i = 0; i < nel; ++i)
-    {
+    for (size_t i = 0; i < nel; ++i) {
         arr[i].value = (i < K_ARRAY_INDEX_LIMIT) ? K_ARRAY_VALUE5 : K_ARRAY_VALUE1;
         arr[i].index = static_cast<int>(i);
     }
@@ -728,14 +687,11 @@ static napi_value QsortRFunc003(napi_env env, napi_callback_info info)
     errno = 0;
     qsortR(arr, nel, sizeof(Elem), cmp, nullptr);
 
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
-    for (size_t i = 1; i < nel; ++i)
-    {
-        if (arr[i - 1].value > arr[i].value)
-        {
+    for (size_t i = 1; i < nel; ++i) {
+        if (arr[i - 1].value > arr[i].value) {
             return ReturnInt32(env, 0);
         }
     }
@@ -746,8 +702,7 @@ static napi_value QsortRFunc004(napi_env env, napi_callback_info info)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto qsortR = reinterpret_cast<QsortRFunc>(loader.GetQsortR());
-    if (!qsortR)
-    {
+    if (!qsortR) {
         return ReturnInt32(env, 1);
     }
 
@@ -769,14 +724,12 @@ static napi_value QsortRFunc004(napi_env env, napi_callback_info info)
 
     errno = 0;
     qsortR(values, nel, sizeof(int), cmp, &ctx);
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
 
     int expectedDesc[] = {K_ARRAY_VALUE10, 5, K_ARRAY_VALUE3, 1};
-    if (std::memcmp(values, expectedDesc, sizeof(expectedDesc)) != 0)
-    {
+    if (std::memcmp(values, expectedDesc, sizeof(expectedDesc)) != 0) {
         return ReturnInt32(env, 0);
     }
 
@@ -785,8 +738,7 @@ static napi_value QsortRFunc004(napi_env env, napi_callback_info info)
     ctx.offset = K_ARRAY_VALUE10;
     qsortR(values2, nel, sizeof(int), cmp, &ctx);
     int expectedAsc[] = {1, K_ARRAY_VALUE3, 5, K_ARRAY_VALUE10};
-    if (std::memcmp(values2, expectedAsc, sizeof(expectedAsc)) != 0)
-    {
+    if (std::memcmp(values2, expectedAsc, sizeof(expectedAsc)) != 0) {
         return ReturnInt32(env, 0);
     }
 
@@ -797,8 +749,7 @@ static napi_value QsortRFunc005(napi_env env, napi_callback_info info)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto qsortR = reinterpret_cast<QsortRFunc>(loader.GetQsortR());
-    if (!qsortR)
-    {
+    if (!qsortR) {
         return ReturnInt32(env, 1);
     }
 
@@ -815,8 +766,7 @@ static napi_value QsortRFunc005(napi_env env, napi_callback_info info)
     errno = 0;
     qsortR(values, size, sizeof(int), QsortRCompare, &ctx);
 
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, (ctx.calls > 0 && ctx.outOfRange == 0) ? 1 : 0);
@@ -827,8 +777,7 @@ static napi_value QsortRStable001(napi_env env, napi_callback_info info)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto qsortR = reinterpret_cast<QsortRFunc>(loader.GetQsortR());
-    if (!qsortR)
-    {
+    if (!qsortR) {
         return ReturnInt32(env, 1);
     }
 
@@ -837,8 +786,7 @@ static napi_value QsortRStable001(napi_env env, napi_callback_info info)
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<int> dist(0, K_RAND_MAX_VAL);
-    for (size_t i = 0; i < big; ++i)
-    {
+    for (size_t i = 0; i < big; ++i) {
         vec[i] = dist(gen);
     }
 
@@ -850,15 +798,12 @@ static napi_value QsortRStable001(napi_env env, napi_callback_info info)
 
     errno = 0;
     qsortR(vec.data(), big, sizeof(int), cmp, nullptr);
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
 
-    for (size_t i = 1; i < big; ++i)
-    {
-        if (vec[i - 1] > vec[i])
-        {
+    for (size_t i = 1; i < big; ++i) {
+        if (vec[i - 1] > vec[i]) {
             return ReturnInt32(env, 0);
         }
     }
@@ -869,8 +814,7 @@ static napi_value QsortRStable002(napi_env env, napi_callback_info info)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto qsortR = reinterpret_cast<QsortRFunc>(loader.GetQsortR());
-    if (!qsortR)
-    {
+    if (!qsortR) {
         return ReturnInt32(env, 1);
     }
 
@@ -881,8 +825,7 @@ static napi_value QsortRStable002(napi_env env, napi_callback_info info)
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<int> dist;
-    for (size_t i = 0; i < n; ++i)
-    {
+    for (size_t i = 0; i < n; ++i) {
         a[i] = dist(gen);
     }
     std::copy_n(a, n, b);
@@ -896,8 +839,7 @@ static napi_value QsortRStable002(napi_env env, napi_callback_info info)
 
     errno = 0;
     qsortR(b, n, sizeof(int), cmp, nullptr);
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
 
@@ -909,8 +851,7 @@ static napi_value QsortRStable003(napi_env env, napi_callback_info info)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto qsortR = reinterpret_cast<QsortRFunc>(loader.GetQsortR());
-    if (!qsortR)
-    {
+    if (!qsortR) {
         return ReturnInt32(env, 1);
     }
 
@@ -920,8 +861,7 @@ static napi_value QsortRStable003(napi_env env, napi_callback_info info)
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<int> dist(0, K_RAND_UCHAR_MAX);
-    for (size_t i = 0; i < buf.size(); ++i)
-    {
+    for (size_t i = 0; i < buf.size(); ++i) {
         buf[i] = static_cast<unsigned char>(dist(gen));
     }
 
@@ -933,17 +873,14 @@ static napi_value QsortRStable003(napi_env env, napi_callback_info info)
 
     errno = 0;
     qsortR(buf.data(), n, structSize, cmp, nullptr);
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
 
-    for (size_t i = 1; i < n; ++i)
-    {
+    for (size_t i = 1; i < n; ++i) {
         uint32_t prev = *reinterpret_cast<uint32_t*>(buf.data() + (i - 1) * structSize);
         uint32_t cur = *reinterpret_cast<uint32_t*>(buf.data() + i * structSize);
-        if (prev > cur)
-        {
+        if (prev > cur) {
             return ReturnInt32(env, 0);
         }
     }
@@ -954,8 +891,7 @@ static napi_value QsortRStable004(napi_env env, napi_callback_info info)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto qsortR = reinterpret_cast<QsortRFunc>(loader.GetQsortR());
-    if (!qsortR)
-    {
+    if (!qsortR) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
@@ -965,8 +901,7 @@ static napi_value QsortRStable005(napi_env env, napi_callback_info info)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto qsortR = reinterpret_cast<QsortRFunc>(loader.GetQsortR());
-    if (!qsortR)
-    {
+    if (!qsortR) {
         return ReturnInt32(env, 1);
     }
 
@@ -976,8 +911,7 @@ static napi_value QsortRStable005(napi_env env, napi_callback_info info)
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<int> dist;
-    for (size_t i = 0; i < n; ++i)
-    {
+    for (size_t i = 0; i < n; ++i) {
         a1[i] = dist(gen);
         a2[i] = dist(gen);
     }
@@ -1003,15 +937,12 @@ int errno2 = 0;
     });
     t1.join();
     t2.join();
-    if (errno1 == ENOSYS || errno2 == ENOSYS)
-    {
+    if (errno1 == ENOSYS || errno2 == ENOSYS) {
         return ReturnInt32(env, 1);
     }
 
-    for (size_t i = 1; i < n; ++i)
-    {
-        if (a1[i - 1] > a1[i] || a2[i - 1] > a2[i])
-        {
+    for (size_t i = 1; i < n; ++i) {
+        if (a1[i - 1] > a1[i] || a2[i - 1] > a2[i]) {
             return ReturnInt32(env, 0);
         }
     }

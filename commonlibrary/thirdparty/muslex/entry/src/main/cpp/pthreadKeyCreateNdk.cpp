@@ -30,8 +30,7 @@ static int CallPthreadKeyCreate(pthread_key_t* key, void (*destructor)(void*))
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetPthreadKeyCreate();
-    if (!func)
-    {
+    if (!func) {
         errno = ENOSYS;
         return -1;
     }
@@ -42,8 +41,7 @@ static int CallPthreadKeyCreate(pthread_key_t* key, void (*destructor)(void*))
 static bool IsStubMode()
 {
     auto& loader = LibcFunctionLoader::GetInstance();
-    if (!loader.GetPthreadKeyCreate())
-    {
+    if (!loader.GetPthreadKeyCreate()) {
         return true;
     }
     pthread_key_t key;
@@ -69,14 +67,12 @@ static void KeyDestructor(void* data)
 /* TC-001: Create key with NULL destructor */
 static napi_value PthreadKeyCreateNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     pthread_key_t key;
     int ret = CallPthreadKeyCreate(&key, nullptr);
-    if (ret == 0)
-    {
+    if (ret == 0) {
         pthread_key_delete(key);
     }
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
@@ -85,14 +81,12 @@ static napi_value PthreadKeyCreateNormal001(napi_env env, napi_callback_info inf
 /* TC-002: Create key with destructor */
 static napi_value PthreadKeyCreateNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     pthread_key_t key;
     int ret = CallPthreadKeyCreate(&key, KeyDestructor);
-    if (ret == 0)
-    {
+    if (ret == 0) {
         pthread_key_delete(key);
     }
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
@@ -101,23 +95,19 @@ static napi_value PthreadKeyCreateNormal002(napi_env env, napi_callback_info inf
 /* TC-003: Create and delete multiple keys */
 static napi_value PthreadKeyCreateNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool pass = true;
     int loopCount = 20;
-    for (int i = 0; i < loopCount; ++i)
-    {
+    for (int i = 0; i < loopCount; ++i) {
         pthread_key_t key;
         int ret = CallPthreadKeyCreate(&key, nullptr);
-        if (ret != 0)
-        {
+        if (ret != 0) {
             pass = false;
             break;
         }
-        if (pthread_key_delete(key) != 0)
-        {
+        if (pthread_key_delete(key) != 0) {
             pass = false;
             break;
         }
@@ -130,8 +120,7 @@ static napi_value PthreadKeyCreateNormal003(napi_env env, napi_callback_info inf
 /* TC-004: NULL key pointer should fail */
 static napi_value PthreadKeyCreateAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int ret = CallPthreadKeyCreate(nullptr, nullptr);
@@ -141,32 +130,26 @@ static napi_value PthreadKeyCreateAbnormal001(napi_env env, napi_callback_info i
 /* TC-005: Exceed PTHREAD_KEYS_MAX */
 static napi_value PthreadKeyCreateAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::vector<pthread_key_t> keys;
     bool pass = true;
     // Try creating more keys than maximum
-    for (int i = 0; i < K_MAX_KEYS + K_OVER_LIMIT; ++i)
-    {
+    for (int i = 0; i < K_MAX_KEYS + K_OVER_LIMIT; ++i) {
         pthread_key_t key;
         int ret = CallPthreadKeyCreate(&key, nullptr);
-        if (ret == 0)
-        {
+        if (ret == 0) {
             keys.push_back(key);
-        } else
-        {
+        } else {
             // Exceeding limit should fail
-            if (i >= K_MAX_KEYS)
-            {
+            if (i >= K_MAX_KEYS) {
                 pass = true;
             }
             break;
         }
     }
-    for (auto key : keys)
-    {
+    for (auto key : keys) {
         pthread_key_delete(key);
     }
     return ReturnInt32(env, pass ? 1 : 0);
@@ -179,22 +162,19 @@ static void ComplexDestructor(void* data)
 {
     // Simulate complex cleanup logic
     volatile int* p = static_cast<int*>(data);
-    if (p)
-    {
+    if (p) {
         *p = 0;
     }
 }
 
 static napi_value PthreadKeyCreateBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     pthread_key_t key;
     int ret = CallPthreadKeyCreate(&key, ComplexDestructor);
-    if (ret == 0)
-    {
+    if (ret == 0) {
         int value = 123;
         pthread_setspecific(key, &value);
         pthread_key_delete(key);
@@ -207,23 +187,19 @@ static napi_value PthreadKeyCreateBoundary001(napi_env env, napi_callback_info i
 /* TC-007: 10000 repeated calls stability */
 static napi_value PthreadKeyCreateStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool pass = true;
     int loopCount = 20;
-    for (int i = 0; i < loopCount; ++i)
-    {
+    for (int i = 0; i < loopCount; ++i) {
         pthread_key_t key;
         int ret = CallPthreadKeyCreate(&key, nullptr);
-        if (ret != 0)
-        {
+        if (ret != 0) {
             pass = false;
             break;
         }
-        if (pthread_key_delete(key) != 0)
-        {
+        if (pthread_key_delete(key) != 0) {
             pass = false;
             break;
         }
@@ -236,43 +212,36 @@ static napi_value PthreadKeyCreateStable001(napi_env env, napi_callback_info inf
 /* TC-008: Multi-thread key creation and use */
 static napi_value PthreadKeyCreateThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     pthread_key_t key;
     int ret = CallPthreadKeyCreate(&key, nullptr);
-    if (ret != 0)
-    {
+    if (ret != 0) {
         return ReturnInt32(env, 0);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
 
-    for (int t = 0; t < K_THREAD_COUNT; ++t)
-    {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError, key]()
         {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
-            {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 int* val = new int(i);
-                if (pthread_setspecific(key, val) != 0)
-                {
+                if (pthread_setspecific(key, val) != 0) {
                     hasError = true;
                     delete val;
                     return;
                 }
                 int* got = static_cast<int*>(pthread_getspecific(key));
-                if (got == nullptr || *got != i)
-                {
+                if (got == nullptr || *got != i) {
                     hasError = true;
                     return;
                 }
             }
         });
     }
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
     pthread_key_delete(key);

@@ -47,8 +47,7 @@ static int CallRegisterAtfork(void (*prepare)(void), void (*parent)(void), void 
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetRegisterAtfork();
-    if (!func)
-    {
+    if (!func) {
         errno = ENOSYS;
         return -1;
     }
@@ -59,8 +58,7 @@ static int CallRegisterAtfork(void (*prepare)(void), void (*parent)(void), void 
 static bool IsStubMode()
 {
     auto& loader = LibcFunctionLoader::GetInstance();
-    if (!loader.GetRegisterAtfork())
-    {
+    if (!loader.GetRegisterAtfork()) {
         return true;
     }
     errno = 0;
@@ -80,22 +78,18 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 /* TC-001: Register all three handlers */
 static napi_value RegisterAtforkNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     gPrepareCount = 0;
     gParentCount = 0;
     gChildCount = 0;
     int ret = CallRegisterAtfork(PrepareHandler, ParentHandler, ChildHandler);
-    if (ret == 0)
-    {
+    if (ret == 0) {
         pid_t pid = fork();
-        if (pid == 0)
-        {
+        if (pid == 0) {
             _exit(0);
-        } else if (pid > 0)
-        {
+        } else if (pid > 0) {
             int status;
             waitpid(pid, &status, 0);
         }
@@ -106,8 +100,7 @@ static napi_value RegisterAtforkNormal001(napi_env env, napi_callback_info info)
 /* TC-002: Register with NULL handlers (should succeed) */
 static napi_value RegisterAtforkNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int ret = CallRegisterAtfork(nullptr, nullptr, nullptr);
@@ -117,20 +110,16 @@ static napi_value RegisterAtforkNormal002(napi_env env, napi_callback_info info)
 /* TC-003: Register only prepare handler */
 static napi_value RegisterAtforkNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     gPrepareCount = 0;
     int ret = CallRegisterAtfork(PrepareHandler, nullptr, nullptr);
-    if (ret == 0)
-    {
+    if (ret == 0) {
         pid_t pid = fork();
-        if (pid == 0)
-        {
+        if (pid == 0) {
             _exit(0);
-        } else if (pid > 0)
-        {
+        } else if (pid > 0) {
             int status;
             waitpid(pid, &status, 0);
         }
@@ -141,20 +130,16 @@ static napi_value RegisterAtforkNormal003(napi_env env, napi_callback_info info)
 /* TC-004: Register only parent handler */
 static napi_value RegisterAtforkNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     gParentCount = 0;
     int ret = CallRegisterAtfork(nullptr, ParentHandler, nullptr);
-    if (ret == 0)
-    {
+    if (ret == 0) {
         pid_t pid = fork();
-        if (pid == 0)
-        {
+        if (pid == 0) {
             _exit(0);
-        } else if (pid > 0)
-        {
+        } else if (pid > 0) {
             int status;
             waitpid(pid, &status, 0);
         }
@@ -165,20 +150,16 @@ static napi_value RegisterAtforkNormal004(napi_env env, napi_callback_info info)
 /* TC-005: Register only child handler */
 static napi_value RegisterAtforkNormal005(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     gChildCount = 0;
     int ret = CallRegisterAtfork(nullptr, nullptr, ChildHandler);
-    if (ret == 0)
-    {
+    if (ret == 0) {
         pid_t pid = fork();
-        if (pid == 0)
-        {
+        if (pid == 0) {
             _exit(0);
-        } else if (pid > 0)
-        {
+        } else if (pid > 0) {
             int status;
             waitpid(pid, &status, 0);
         }
@@ -191,17 +172,14 @@ static napi_value RegisterAtforkNormal005(napi_env env, napi_callback_info info)
 /* TC-006: Register after fork (should still succeed) */
 static napi_value RegisterAtforkAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     pid_t pid = fork();
-    if (pid == 0)
-    {
+    if (pid == 0) {
         int ret = CallRegisterAtfork(PrepareHandler, ParentHandler, ChildHandler);
         _exit(ret == 0 ? 0 : 1);
-    } else if (pid > 0)
-    {
+    } else if (pid > 0) {
         int status;
         waitpid(pid, &status, 0);
         return ReturnInt32(env, WIFEXITED(status) && WEXITSTATUS(status) == 0 ? 1 : 0);
@@ -214,17 +192,14 @@ static napi_value RegisterAtforkAbnormal001(napi_env env, napi_callback_info inf
 /* TC-007: Register multiple handlers */
 static napi_value RegisterAtforkBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool pass = true;
     int loopCount = 10;
-    for (int i = 0; i < loopCount; ++i)
-    {
+    for (int i = 0; i < loopCount; ++i) {
         int ret = CallRegisterAtfork(PrepareHandler, ParentHandler, ChildHandler);
-        if (ret != 0)
-        {
+        if (ret != 0) {
             pass = false;
             break;
         }
@@ -237,17 +212,14 @@ static napi_value RegisterAtforkBoundary001(napi_env env, napi_callback_info inf
 /* TC-008: 10000 repeated calls stability */
 static napi_value RegisterAtforkStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool pass = true;
     int loopCount = 20;
-    for (int i = 0; i < loopCount; ++i)
-    {
+    for (int i = 0; i < loopCount; ++i) {
         int ret = CallRegisterAtfork(nullptr, nullptr, nullptr);
-        if (ret != 0)
-        {
+        if (ret != 0) {
             pass = false;
             break;
         }
@@ -260,30 +232,25 @@ static napi_value RegisterAtforkStable001(napi_env env, napi_callback_info info)
 /* TC-009: Multi-thread safety */
 static napi_value RegisterAtforkThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
 
-    for (int t = 0; t < K_THREAD_COUNT; ++t)
-    {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]()
         {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
-            {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 int ret = CallRegisterAtfork(nullptr, nullptr, nullptr);
-                if (ret != 0)
-                {
+                if (ret != 0) {
                     hasError = true;
                     return;
                 }
             }
         });
     }
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);

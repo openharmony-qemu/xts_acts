@@ -33,8 +33,7 @@ static void* CallRawmemchr(const void* s, int c)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetRawmemchr();
-    if (!func)
-    {
+    if (!func) {
         errno = ENOSYS;
         return nullptr;
     }
@@ -45,8 +44,7 @@ static void* CallRawmemchr(const void* s, int c)
 static bool IsStubMode()
 {
     auto& loader = LibcFunctionLoader::GetInstance();
-    if (!loader.GetRawmemchr())
-    {
+    if (!loader.GetRawmemchr()) {
         return true;
     }
     // Call function to check if really usable
@@ -54,13 +52,11 @@ static bool IsStubMode()
     errno = 0;
     void* result = CallRawmemchr("test", 't');
     // If returns nullptr or errno is ENOSYS, function not usable
-    if (result == nullptr && errno == ENOSYS)
-    {
+    if (result == nullptr && errno == ENOSYS) {
         return true;
     }
     // Further verification: if function is usable, finding existing char should return non-null
-    if (result != nullptr)
-    {
+    if (result != nullptr) {
         return false;
     }
     return true;
@@ -78,8 +74,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 /* TC-001: Find existing character in string */
 static napi_value RawmemchrNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     const char* s = "Hello";
@@ -90,8 +85,7 @@ static napi_value RawmemchrNormal001(napi_env env, napi_callback_info info)
 /* TC-002: Find first character */
 static napi_value RawmemchrNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     const char* s = "Hello";
@@ -102,8 +96,7 @@ static napi_value RawmemchrNormal002(napi_env env, napi_callback_info info)
 /* TC-003: Find last character */
 static napi_value RawmemchrNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     const char* s = "Hello";
@@ -115,8 +108,7 @@ static napi_value RawmemchrNormal003(napi_env env, napi_callback_info info)
 /* TC-004: Find NUL terminator */
 static napi_value RawmemchrNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     const char* s = "Hello";
@@ -128,8 +120,7 @@ static napi_value RawmemchrNormal004(napi_env env, napi_callback_info info)
 /* TC-005: Find character in empty string (only NUL) */
 static napi_value RawmemchrNormal005(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     const char* s = "";
@@ -140,8 +131,7 @@ static napi_value RawmemchrNormal005(napi_env env, napi_callback_info info)
 /* TC-006: Find character in long string */
 static napi_value RawmemchrNormal006(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::string longStr(K_LONG_STR_SIZE, 'a');
@@ -156,8 +146,7 @@ static napi_value RawmemchrNormal006(napi_env env, napi_callback_info info)
 /* TC-007: Character not found should return end of string */
 static napi_value RawmemchrAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     const char* s = "Hello";
@@ -167,8 +156,7 @@ static napi_value RawmemchrAbnormal001(napi_env env, napi_callback_info info)
     // (stub implementation), both count as pass
     // Because in some musl implementations, rawmemchr may return nullptr
     // instead of pointing to NUL
-    if (result == expected || result == nullptr)
-    {
+    if (result == expected || result == nullptr) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 0);
@@ -177,8 +165,7 @@ static napi_value RawmemchrAbnormal001(napi_env env, napi_callback_info info)
 /* TC-008: Character not found in long string */
 static napi_value RawmemchrAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::string longStr(K_LONG_STR_SIZE, 'a');
@@ -186,8 +173,7 @@ static napi_value RawmemchrAbnormal002(napi_env env, napi_callback_info info)
     const char* expected = longStr.c_str() + K_LONG_STR_SIZE;
     // If result equals expected (pointing to NUL terminator), or result is nullptr
     // (stub implementation), both count as pass
-    if (result == expected || result == nullptr)
-    {
+    if (result == expected || result == nullptr) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 0);
@@ -198,15 +184,13 @@ static napi_value RawmemchrAbnormal002(napi_env env, napi_callback_info info)
 /* TC-009: Find NUL at end of long string */
 static napi_value RawmemchrBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::string longStr(K_LONG_STR_SIZE, 'a');
     void* result = CallRawmemchr(longStr.c_str(), '\0');
     const char* expected = longStr.c_str() + K_LONG_STR_SIZE;
-    if (result == expected || result == nullptr)
-    {
+    if (result == expected || result == nullptr) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 0);
@@ -217,17 +201,14 @@ static napi_value RawmemchrBoundary001(napi_env env, napi_callback_info info)
 /* TC-010: 10000 repeated calls stability */
 static napi_value RawmemchrStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     const char* s = "HelloWorld";
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP_10000; ++i)
-    {
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i) {
         void* result = CallRawmemchr(s, 'o');
-        if (result != s + K_CHAR_POS)
-        {
+        if (result != s + K_CHAR_POS) {
             pass = false;
             break;
         }
@@ -240,33 +221,28 @@ static napi_value RawmemchrStable001(napi_env env, napi_callback_info info)
 /* TC-011: Multi-thread safety */
 static napi_value RawmemchrThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     const char* strings[] = {"Hello", "World", "Test", "Rawmemchr", "abcde"};
 
-    for (int t = 0; t < K_THREAD_COUNT; ++t)
-    {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError, strings]()
         {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
-            {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 int idx = i % 5;
                 char c = strings[idx][i % 5];
                 void* result = CallRawmemchr(strings[idx], c);
-                if (result == nullptr)
-                {
+                if (result == nullptr) {
                     hasError = true;
                     return;
                 }
             }
         });
     }
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);

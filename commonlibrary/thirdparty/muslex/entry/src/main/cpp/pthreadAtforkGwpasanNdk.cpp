@@ -46,8 +46,7 @@ static int CallPthreadAtforkGwpasan(void (*prepare)(void), void (*parent)(void),
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetPthreadAtforkGwpasan();
-    if (!func)
-    {
+    if (!func) {
         errno = ENOSYS;
         return -1;
     }
@@ -70,8 +69,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value PthreadAtforkGwpasanNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int ret = CallPthreadAtforkGwpasan(PrepareHandler, ParentHandler, ChildHandler);
@@ -80,8 +78,7 @@ static napi_value PthreadAtforkGwpasanNormal001(napi_env env, napi_callback_info
 
 static napi_value PthreadAtforkGwpasanNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int ret = CallPthreadAtforkGwpasan(nullptr, ParentHandler, nullptr);
@@ -90,8 +87,7 @@ static napi_value PthreadAtforkGwpasanNormal002(napi_env env, napi_callback_info
 
 static napi_value PthreadAtforkGwpasanNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int ret = CallPthreadAtforkGwpasan(PrepareHandler, nullptr, nullptr);
@@ -100,8 +96,7 @@ static napi_value PthreadAtforkGwpasanNormal003(napi_env env, napi_callback_info
 
 static napi_value PthreadAtforkGwpasanNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
@@ -109,8 +104,7 @@ static napi_value PthreadAtforkGwpasanNormal004(napi_env env, napi_callback_info
 
 static napi_value PthreadAtforkGwpasanAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int ret = CallPthreadAtforkGwpasan(nullptr, nullptr, nullptr);
@@ -119,8 +113,7 @@ static napi_value PthreadAtforkGwpasanAbnormal001(napi_env env, napi_callback_in
 
 static napi_value PthreadAtforkGwpasanAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     CallPthreadAtforkGwpasan(PrepareHandler, ParentHandler, ChildHandler);
@@ -130,8 +123,7 @@ static napi_value PthreadAtforkGwpasanAbnormal002(napi_env env, napi_callback_in
 
 static napi_value PthreadAtforkGwpasanBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int ret = CallPthreadAtforkGwpasan(nullptr, nullptr, ChildHandler);
@@ -140,8 +132,7 @@ static napi_value PthreadAtforkGwpasanBoundary001(napi_env env, napi_callback_in
 
 static napi_value PthreadAtforkGwpasanBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int ret = CallPthreadAtforkGwpasan(PrepareHandler, ParentHandler, nullptr);
@@ -150,16 +141,13 @@ static napi_value PthreadAtforkGwpasanBoundary002(napi_env env, napi_callback_in
 
 static napi_value PthreadAtforkGwpasanStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i)
-    {
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
         int ret = CallPthreadAtforkGwpasan(PrepareHandler, nullptr, nullptr);
-        if (ret < 0)
-        {
+        if (ret < 0) {
             pass = false;
             break;
         }
@@ -169,29 +157,24 @@ static napi_value PthreadAtforkGwpasanStable001(napi_env env, napi_callback_info
 
 static napi_value PthreadAtforkGwpasanThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t)
-    {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]()
         {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
-            {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 int ret = CallPthreadAtforkGwpasan(nullptr, nullptr, nullptr);
-                if (ret < 0)
-                {
+                if (ret < 0) {
                     hasError = true;
                     return;
                 }
             }
         });
     }
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);
