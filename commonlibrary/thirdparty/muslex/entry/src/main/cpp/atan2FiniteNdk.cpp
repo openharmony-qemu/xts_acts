@@ -44,8 +44,7 @@ static double CallAtan2Finite(double y, double x)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = reinterpret_cast<double (*)(double, double)>(loader.GetAtan2Finite());
-    if (!func)
-    {
+    if (!func) {
         errno = ENOSYS;
         return 0.0;
     }
@@ -56,8 +55,7 @@ static double CallAtan2Finite(double y, double x)
 static bool IsStubMode()
 {
     auto& loader = LibcFunctionLoader::GetInstance();
-    if (!loader.GetAtan2Finite())
-    {
+    if (!loader.GetAtan2Finite()) {
         return true;
     }
     errno = 0;
@@ -75,23 +73,19 @@ static napi_value ReturnInt32(napi_env env, int32_t val)
 /* ---------- TC-044: typical valid inputs consistency with atan2 ---------- */
 static napi_value Atan2FiniteNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     double yVals[] = {1.0, 1.0, -1.0, 0.0, 1.0};
     double xVals[] = {1.0, 0.0, 1.0, 1.0, -1.0};
     int count = 5;
-    for (int i = 0; i < count; ++i)
-    {
+    for (int i = 0; i < count; ++i) {
         double result1 = CallAtan2Finite(yVals[i], xVals[i]);
         double result2 = std::atan2(yVals[i], xVals[i]);
-        if (std::isnan(result1) && std::isnan(result2))
-        {
+        if (std::isnan(result1) && std::isnan(result2)) {
             continue;
         }
-        if (std::fabs(result1 - result2) > 1e-15)
-        {
+        if (std::fabs(result1 - result2) > 1e-15) {
             return ReturnInt32(env, 0);
         }
     }
@@ -101,8 +95,7 @@ static napi_value Atan2FiniteNormal001(napi_env env, napi_callback_info info)
 /* ---------- TC-045: NaN input silent pass-through ---------- */
 static napi_value Atan2FiniteNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     errno = 0;
@@ -110,17 +103,14 @@ static napi_value Atan2FiniteNormal002(napi_env env, napi_callback_info info)
     feclearexcept(FE_ALL_EXCEPT);
 #endif
     double result = CallAtan2Finite(NAN, 1.0);
-    if (!std::isnan(result))
-    {
+    if (!std::isnan(result)) {
         return ReturnInt32(env, 0);
     }
-    if (errno != 0)
-    {
+    if (errno != 0) {
         return ReturnInt32(env, 0);
     }
 #if HAS_FENV_EXCEPTIONS
-    if (fetestexcept(FE_INVALID) != 0)
-    {
+    if (fetestexcept(FE_INVALID) != 0) {
         return ReturnInt32(env, 0);
     }
 #endif
@@ -130,8 +120,7 @@ static napi_value Atan2FiniteNormal002(napi_env env, napi_callback_info info)
 /* ---------- TC-046: zero-value special rules ---------- */
 static napi_value Atan2FiniteNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     double posZero = 0.0;
@@ -140,50 +129,42 @@ static napi_value Atan2FiniteNormal003(napi_env env, napi_callback_info info)
 
     // (+0, <0) -> +pi
     double r = CallAtan2Finite(posZero, negOne);
-    if (std::fabs(r - M_PI) > 1e-15)
-    {
+    if (std::fabs(r - M_PI) > 1e-15) {
         return ReturnInt32(env, 0);
     }
     // (-0, <0) -> -pi
     r = CallAtan2Finite(negZero, negOne);
-    if (std::fabs(r + M_PI) > 1e-15)
-    {
+    if (std::fabs(r + M_PI) > 1e-15) {
         return ReturnInt32(env, 0);
     }
     // (+0, >0) -> +0
     r = CallAtan2Finite(posZero, 1.0);
-    if (r != 0.0 || std::signbit(r))
-    {
+    if (r != 0.0 || std::signbit(r)) {
         return ReturnInt32(env, 0);
     }
     // (-0, >0) -> -0
     r = CallAtan2Finite(negZero, 1.0);
-    if (r != 0.0 || !std::signbit(r))
-    {
+    if (r != 0.0 || !std::signbit(r)) {
         return ReturnInt32(env, 0);
     }
     // (+0, -0) -> +pi
     r = CallAtan2Finite(posZero, negZero);
-    if (std::fabs(r - M_PI) > 1e-15)
-    {
+    if (std::fabs(r - M_PI) > 1e-15) {
         return ReturnInt32(env, 0);
     }
     // (-0, -0) -> -pi
     r = CallAtan2Finite(negZero, negZero);
-    if (std::fabs(r + M_PI) > 1e-15)
-    {
+    if (std::fabs(r + M_PI) > 1e-15) {
         return ReturnInt32(env, 0);
     }
     // (+0, +0) -> +0
     r = CallAtan2Finite(posZero, posZero);
-    if (r != 0.0 || std::signbit(r))
-    {
+    if (r != 0.0 || std::signbit(r)) {
         return ReturnInt32(env, 0);
     }
     // (-0, +0) -> -0
     r = CallAtan2Finite(negZero, posZero);
-    if (r != 0.0 || !std::signbit(r))
-    {
+    if (r != 0.0 || !std::signbit(r)) {
         return ReturnInt32(env, 0);
     }
 
@@ -193,8 +174,7 @@ static napi_value Atan2FiniteNormal003(napi_env env, napi_callback_info info)
 /* ---------- TC-047: infinity input special rules ---------- */
 static napi_value Atan2FiniteNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     double inf = INFINITY;
@@ -202,26 +182,22 @@ static napi_value Atan2FiniteNormal004(napi_env env, napi_callback_info info)
 
     // y>0, x=-inf -> +pi
     double r = CallAtan2Finite(1.0, negInf);
-    if (std::fabs(r - M_PI) > 1e-15)
-    {
+    if (std::fabs(r - M_PI) > 1e-15) {
         return ReturnInt32(env, 0);
     }
     // y<0, x=-inf -> -pi
     r = CallAtan2Finite(-1.0, negInf);
-    if (std::fabs(r + M_PI) > 1e-15)
-    {
+    if (std::fabs(r + M_PI) > 1e-15) {
         return ReturnInt32(env, 0);
     }
     // y>0, x=+inf -> +0
     r = CallAtan2Finite(1.0, inf);
-    if (r != 0.0 || std::signbit(r))
-    {
+    if (r != 0.0 || std::signbit(r)) {
         return ReturnInt32(env, 0);
     }
     // y<0, x=+inf -> -0
     r = CallAtan2Finite(-1.0, inf);
-    if (r != 0.0 || !std::signbit(r))
-    {
+    if (r != 0.0 || !std::signbit(r)) {
         return ReturnInt32(env, 0);
     }
 
@@ -231,18 +207,15 @@ static napi_value Atan2FiniteNormal004(napi_env env, napi_callback_info info)
 /* ---------- TC-048: errno unchanged after valid call ---------- */
 static napi_value Atan2FiniteFunc001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     errno = 0;
     double result = CallAtan2Finite(K_ATAN2_X, K_ATAN2_Y);
-    if (std::fabs(result - std::atan2(K_ATAN2_X, K_ATAN2_Y)) > 1e-15)
-    {
+    if (std::fabs(result - std::atan2(K_ATAN2_X, K_ATAN2_Y)) > 1e-15) {
         return ReturnInt32(env, 0);
     }
-    if (errno != 0)
-    {
+    if (errno != 0) {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
@@ -251,27 +224,23 @@ static napi_value Atan2FiniteFunc001(napi_env env, napi_callback_info info)
 /* ---------- TC-049: no error occurs verification ---------- */
 static napi_value Atan2FiniteFunc002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     double inputs_y[] = {0.0, -0.0, 1.0, -1.0, NAN, INFINITY, -INFINITY};
     double inputs_x[] = {0.0, -0.0, 0.0, 0.0, 1.0, 1.0, 1.0};
     int count = 7;
-    for (int i = 0; i < count; ++i)
-    {
+    for (int i = 0; i < count; ++i) {
         errno = 0;
 #if HAS_FENV_EXCEPTIONS
         feclearexcept(FE_ALL_EXCEPT);
 #endif
         CallAtan2Finite(inputs_y[i], inputs_x[i]);
-        if (errno != 0)
-        {
+        if (errno != 0) {
             return ReturnInt32(env, 0);
         }
 #if HAS_FENV_EXCEPTIONS
-        if (fetestexcept(FE_INVALID | FE_DIVBYZERO) != 0)
-        {
+        if (fetestexcept(FE_INVALID | FE_DIVBYZERO) != 0) {
             return ReturnInt32(env, 0);
         }
 #endif
@@ -282,17 +251,14 @@ static napi_value Atan2FiniteFunc002(napi_env env, napi_callback_info info)
 /* ---------- TC-050: 10000 calls stability ---------- */
 static napi_value Atan2FiniteStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int failCount = 0;
     double expected = std::atan2(K_ATAN2_X, K_ATAN2_Y);
-    for (int i = 0; i < K_STABLE_LOOP_10000; ++i)
-    {
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i) {
         double result = CallAtan2Finite(K_ATAN2_X, K_ATAN2_Y);
-        if (std::fabs(result - expected) > 1e-15)
-        {
+        if (std::fabs(result - expected) > 1e-15) {
             failCount++;
         }
     }
@@ -304,13 +270,11 @@ static napi_value Atan2FiniteSpec001(napi_env env, napi_callback_info info)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetAtan2Finite();
-    if (!func)
-    {
+    if (!func) {
         return ReturnInt32(env, 1);
     }
     double result = func(K_ATAN2_X, K_ATAN2_Y);
-    if (std::fabs(result - std::atan2(K_ATAN2_X, K_ATAN2_Y)) > 1e-15)
-    {
+    if (std::fabs(result - std::atan2(K_ATAN2_X, K_ATAN2_Y)) > 1e-15) {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
@@ -322,13 +286,11 @@ static napi_value Atan2FiniteSpec002(napi_env env, napi_callback_info info)
     dlerror();
     void* sym = dlsym(RTLD_DEFAULT, "__atan2_finite");
     auto funcPtr = reinterpret_cast<double (*)(double, double)>(sym);
-    if (funcPtr == nullptr)
-    {
+    if (funcPtr == nullptr) {
         return ReturnInt32(env, 1);
     }
     double result = funcPtr(K_ATAN2_X, K_ATAN2_Y);
-    if (std::fabs(result - std::atan2(K_ATAN2_X, K_ATAN2_Y)) > 1e-15)
-    {
+    if (std::fabs(result - std::atan2(K_ATAN2_X, K_ATAN2_Y)) > 1e-15) {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
@@ -339,12 +301,10 @@ static napi_value Atan2FiniteSpec003(napi_env env, napi_callback_info info)
 {
     errno = 0;
     double result = CallAtan2Finite(K_ATAN2_X, K_ATAN2_Y);
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
-    if (std::fabs(result - std::atan2(K_ATAN2_X, K_ATAN2_Y)) < 1e-15 && errno == 0)
-    {
+    if (std::fabs(result - std::atan2(K_ATAN2_X, K_ATAN2_Y)) < 1e-15 && errno == 0) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 0);
@@ -354,14 +314,12 @@ static napi_value Atan2FiniteSpec003(napi_env env, napi_callback_info info)
 static napi_value Atan2FiniteSpec004(napi_env env, napi_callback_info info)
 {
     bool isStub = IsStubMode();
-    if (isStub)
-    {
+    if (isStub) {
         return ReturnInt32(env, 1);
     }
     errno = 0;
     double result = CallAtan2Finite(K_ATAN2_X, K_ATAN2_Y);
-    if (std::fabs(result - std::atan2(K_ATAN2_X, K_ATAN2_Y)) < 1e-15 && errno == 0)
-    {
+    if (std::fabs(result - std::atan2(K_ATAN2_X, K_ATAN2_Y)) < 1e-15 && errno == 0) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 0);
@@ -373,13 +331,10 @@ static napi_value Atan2FiniteSpec005(napi_env env, napi_callback_info info)
     errno = 0;
     double result = CallAtan2Finite(K_ATAN2_X, K_ATAN2_Y);
     int e = errno;
-    if (e == ENOSYS)
-    {
+    if (e == ENOSYS) {
         return ReturnInt32(env, 1);
-    } else
-    {
-        if (std::fabs(result - std::atan2(K_ATAN2_X, K_ATAN2_Y)) < 1e-15 && e == 0)
-        {
+    } else {
+        if (std::fabs(result - std::atan2(K_ATAN2_X, K_ATAN2_Y)) < 1e-15 && e == 0) {
             return ReturnInt32(env, 1);
         }
         return ReturnInt32(env, 0);

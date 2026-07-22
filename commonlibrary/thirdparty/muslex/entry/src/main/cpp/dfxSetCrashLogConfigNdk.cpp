@@ -24,16 +24,14 @@ static int CallDFXSetCrashLogConfig(uint8_t type, uint32_t value)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetDFXSetCrashLogConfig();
-    if (!func)
-    {
+    if (!func) {
         errno = ENOSYS;
         return -1;
     }
     errno = 0;
     int ret = func(type, value);
     // If returns -1 and errno is ENOSYS, function loaded but actually unavailable
-    if (ret == -1 && errno == ENOSYS)
-    {
+    if (ret == -1 && errno == ENOSYS) {
         return -1;
     }
     return ret;
@@ -52,8 +50,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value DFXSetCrashLogConfigNormal001(napi_env env, napi_callback_info info)
 {
     int ret = CallDFXSetCrashLogConfig(0, 1);
-    if (ret == -1 && errno == ENOSYS)
-    {
+    if (ret == -1 && errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
@@ -63,8 +60,7 @@ static napi_value DFXSetCrashLogConfigNormal001(napi_env env, napi_callback_info
 static napi_value DFXSetCrashLogConfigNormal002(napi_env env, napi_callback_info info)
 {
     int ret = CallDFXSetCrashLogConfig(1, 100);
-    if (ret == -1 && errno == ENOSYS)
-    {
+    if (ret == -1 && errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
@@ -74,8 +70,7 @@ static napi_value DFXSetCrashLogConfigNormal002(napi_env env, napi_callback_info
 static napi_value DFXSetCrashLogConfigNormal003(napi_env env, napi_callback_info info)
 {
     int ret = CallDFXSetCrashLogConfig(255, 0xFFFFFFFF);
-    if (ret == -1 && errno == ENOSYS)
-    {
+    if (ret == -1 && errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
@@ -85,8 +80,7 @@ static napi_value DFXSetCrashLogConfigNormal003(napi_env env, napi_callback_info
 static napi_value DFXSetCrashLogConfigNormal004(napi_env env, napi_callback_info info)
 {
     int ret = CallDFXSetCrashLogConfig(0, 0);
-    if (ret == -1 && errno == ENOSYS)
-    {
+    if (ret == -1 && errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
@@ -96,8 +90,7 @@ static napi_value DFXSetCrashLogConfigNormal004(napi_env env, napi_callback_info
 static napi_value DFXSetCrashLogConfigBoundary001(napi_env env, napi_callback_info info)
 {
     int ret = CallDFXSetCrashLogConfig(10, 0x7FFFFFFF);
-    if (ret == -1 && errno == ENOSYS)
-    {
+    if (ret == -1 && errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
@@ -107,8 +100,7 @@ static napi_value DFXSetCrashLogConfigBoundary001(napi_env env, napi_callback_in
 static napi_value DFXSetCrashLogConfigBoundary002(napi_env env, napi_callback_info info)
 {
     int ret = CallDFXSetCrashLogConfig(5, 0xFFFFFFFF);
-    if (ret == -1 && errno == ENOSYS)
-    {
+    if (ret == -1 && errno == ENOSYS) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
@@ -118,11 +110,9 @@ static napi_value DFXSetCrashLogConfigBoundary002(napi_env env, napi_callback_in
 static napi_value DFXSetCrashLogConfigStable001(napi_env env, napi_callback_info info)
 {
     int loopCount = 20;
-    for (int i = 0; i < loopCount; ++i)
-    {
+    for (int i = 0; i < loopCount; ++i) {
         int ret = CallDFXSetCrashLogConfig(i % K_DIV_VAL, i);
-        if (ret == -1 && errno == ENOSYS)
-        {
+        if (ret == -1 && errno == ENOSYS) {
             return ReturnInt32(env, 1);
         }
     }

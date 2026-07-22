@@ -3,12 +3,58 @@ cmake_minimum_required(VERSION 3.5.0)
 project(MyApplication0525)
 
 set(NATIVERENDER_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
+set(OPENHARMONY_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../../../../../../../../../..)
+set(src_sec
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/memset_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/secureprintoutput_a.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/sprintf_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/strcpy_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/fscanf_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/fwscanf_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/gets_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/memcpy_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/memmove_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/scanf_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/securecutil.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/secureinput_a.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/secureinput_w.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/secureprintoutput_w.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/snprintf_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/sscanf_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/strcat_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/strncat_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/strncpy_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/strtok_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/swprintf_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/swscanf_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/vfscanf_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/vfwscanf_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/vscanf_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/vsnprintf_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/vsprintf_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/vsscanf_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/vswprintf_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/vswscanf_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/vwscanf_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/wcscat_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/wcscpy_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/wcsncat_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/wcsncpy_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/wcstok_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/wmemcpy_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/wmemmove_s.c
+    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src/wscanf_s.c
+)
 
 if(DEFINED PACKAGE_FIND_FILE)
     include(${PACKAGE_FIND_FILE})
 endif()
 
 include_directories(${NATIVERENDER_ROOT_PATH}
+                    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/include
+                    ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/src
+                    ${OPENHARMONY_ROOT_PATH}/third_party/node/src
+                    ${NATIVERENDER_ROOT_PATH}/common
                     ${NATIVERENDER_ROOT_PATH}/include)
 
 add_library(acosfFinitendktest SHARED acosfFiniteNdk.cpp libcFunctionLoader.h ${src_sec})
@@ -39,50 +85,50 @@ add_library(isinffndktest SHARED isinffNdk.cpp libcFunctionLoader.h ${src_sec})
 add_library(isinftest SHARED isinfNdk.cpp libcFunctionLoader.h ${src_sec})
 add_library(isnanfndktest SHARED isnanfNdk.cpp libcFunctionLoader.h ${src_sec})
 add_library(isnanndktest SHARED isnanNdk.cpp libcFunctionLoader.h ${src_sec})
-add_library(ohos_log10finitedktest SHARED log10FiniteNdk.cpp libcFunctionLoader.h)
-add_library(ohos_log2ffinitendktest SHARED log2fFiniteNdk.cpp libcFunctionLoader.h)
-add_library(ohos_log2finitendktest SHARED log2FiniteNdk.cpp libcFunctionLoader.h)
-add_library(ohos_logfinitendktest SHARED logFiniteNdk.cpp libcFunctionLoader.h)
-add_library(longjmpchkndktest SHARED longjmpChkNdk.cpp libcFunctionLoader.h)
-add_library(malloccheckfromptrndktest SHARED mallocCheckFromPtrNdk.cpp libcFunctionLoader.h)
-add_library(mbrlenndktest SHARED mbrlenNdk.cpp libcFunctionLoader.h)
-add_library(mktimenoenvndktest SHARED mktimeNoenvNdk.cpp libcFunctionLoader.h)
-add_library(muslversionndktest SHARED muslVersionNdk.cpp libcFunctionLoader.h)
-add_library(openextndktest SHARED openExtNdk.cpp libcFunctionLoader.h)
-add_library(powffinitendktest SHARED powfFiniteNdk.cpp libcFunctionLoader.h)
-add_library(powfinitendktest SHARED powFiniteNdk.cpp libcFunctionLoader.h)
-add_library(printfchkndktest SHARED printfChkNdk.cpp libcFunctionLoader.h)
-add_library(pthreadatforkgwpasanndktest SHARED pthreadAtforkGwpasanNdk.cpp libcFunctionLoader.h)
-add_library(pthreadattrextdestroyndktest SHARED pthreadAttrExtDestroyNdk.cpp libcFunctionLoader.h)
-add_library(pthreadattrextinitndktest SHARED pthreadAttrExtInitNdk.cpp libcFunctionLoader.h)
-add_library(pthreadattrgetaffnpndktest SHARED pthreadAttrGetaffinityNpNdk.cpp libcFunctionLoader.h)
-add_library(pthreadattrsetaffnpndktest SHARED pthreadAttrSetaffinityNpNdk.cpp libcFunctionLoader.h)
-add_library(pthreadextfuncpolicyndktest SHARED pthreadExtFuncPolicyNdk.cpp libcFunctionLoader.h)
-add_library(pthreadkeycreatendktest SHARED pthreadKeyCreateNdk.cpp libcFunctionLoader.h)
-add_library(qsortrndktest SHARED qsortRNdk.cpp libcFunctionLoader.h)
-add_library(rawmemchrndktest SHARED rawmemchrNdk.cpp libcFunctionLoader.h)
-add_library(realpathchkndktest SHARED realpathChkNdk.cpp libcFunctionLoader.h)
-add_library(registeratforkndktest SHARED registerAtforkNdk.cpp libcFunctionLoader.h)
-add_library(removecustomdnsndktest SHARED removeCustomDnsNdk.cpp libcFunctionLoader.h)
-add_library(restraceextndktest SHARED resTraceExtNdk.cpp libcFunctionLoader.h)
-add_library(restracefreeregionndktest SHARED resTraceFreeRegionNdk.cpp libcFunctionLoader.h)
-add_library(restracemovendktest SHARED resTraceMoveNdk.cpp libcFunctionLoader.h)
-add_library(restracendktest SHARED resTraceNdk.cpp libcFunctionLoader.h)
-add_library(schedcpufreendktest SHARED schedCpufreeNdk.cpp libcFunctionLoader.h)
-add_library(setcustomdnsndktest SHARED setCustomDnsNdk.cpp libcFunctionLoader.h)
-add_library(setpthreadextfuncpolicyndktest SHARED setPthreadExtFuncPolicyNdk.cpp libcFunctionLoader.h)
-add_library(setrestraceidndktest SHARED setResTraceIdNdk.cpp libcFunctionLoader.h)
-add_library(setsigchainprevalndktest SHARED setSigchainPreValidationNdk.cpp libcFunctionLoader.h)
-add_library(strdupndktest SHARED strdupNdk.cpp libcFunctionLoader.h)
-add_library(strndupndktest SHARED strndupNdk.cpp libcFunctionLoader.h)
-add_library(strtokrndktest SHARED strtokRNdk.cpp libcFunctionLoader.h)
-add_library(strtolllndktest SHARED strtollLNdk.cpp libcFunctionLoader.h)
-add_library(strtoulllndktest SHARED strtoullLNdk.cpp libcFunctionLoader.h)
-add_library(syslogchkndktest SHARED syslogChkNdk.cpp libcFunctionLoader.h)
-add_library(timelocalndktest SHARED timelocalNdk.cpp libcFunctionLoader.h)
-add_library(vfprintfchkndktest SHARED vfprintfChkNdk.cpp libcFunctionLoader.h)
-add_library(wcstoflndktest SHARED wcstofLNdk.cpp libcFunctionLoader.h)
-add_library(wcstoldlndktest SHARED wcstoldLNdk.cpp libcFunctionLoader.h)
+add_library(ohos_log10finitedktest SHARED log10FiniteNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(ohos_log2ffinitendktest SHARED log2fFiniteNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(ohos_log2finitendktest SHARED log2FiniteNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(ohos_logfinitendktest SHARED logFiniteNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(longjmpchkndktest SHARED longjmpChkNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(malloccheckfromptrndktest SHARED mallocCheckFromPtrNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(mbrlenndktest SHARED mbrlenNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(mktimenoenvndktest SHARED mktimeNoenvNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(muslversionndktest SHARED muslVersionNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(openextndktest SHARED openExtNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(powffinitendktest SHARED powfFiniteNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(powfinitendktest SHARED powFiniteNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(printfchkndktest SHARED printfChkNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(pthreadatforkgwpasanndktest SHARED pthreadAtforkGwpasanNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(pthreadattrextdestroyndktest SHARED pthreadAttrExtDestroyNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(pthreadattrextinitndktest SHARED pthreadAttrExtInitNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(pthreadattrgetaffnpndktest SHARED pthreadAttrGetaffinityNpNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(pthreadattrsetaffnpndktest SHARED pthreadAttrSetaffinityNpNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(pthreadextfuncpolicyndktest SHARED pthreadExtFuncPolicyNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(pthreadkeycreatendktest SHARED pthreadKeyCreateNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(qsortrndktest SHARED qsortRNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(rawmemchrndktest SHARED rawmemchrNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(realpathchkndktest SHARED realpathChkNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(registeratforkndktest SHARED registerAtforkNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(removecustomdnsndktest SHARED removeCustomDnsNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(restraceextndktest SHARED resTraceExtNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(restracefreeregionndktest SHARED resTraceFreeRegionNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(restracemovendktest SHARED resTraceMoveNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(restracendktest SHARED resTraceNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(schedcpufreendktest SHARED schedCpufreeNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(setcustomdnsndktest SHARED setCustomDnsNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(setpthreadextfuncpolicyndktest SHARED setPthreadExtFuncPolicyNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(setrestraceidndktest SHARED setResTraceIdNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(setsigchainprevalndktest SHARED setSigchainPreValidationNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(strdupndktest SHARED strdupNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(strndupndktest SHARED strndupNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(strtokrndktest SHARED strtokRNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(strtolllndktest SHARED strtollLNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(strtoulllndktest SHARED strtoullLNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(syslogchkndktest SHARED syslogChkNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(timelocalndktest SHARED timelocalNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(vfprintfchkndktest SHARED vfprintfChkNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(wcstoflndktest SHARED wcstofLNdk.cpp libcFunctionLoader.h ${src_sec})
+add_library(wcstoldlndktest SHARED wcstoldLNdk.cpp libcFunctionLoader.h ${src_sec})
 
 target_link_libraries(acosfFinitendktest PUBLIC libace_napi.z.so)
 target_link_libraries(asprintfChkndktest PUBLIC libace_napi.z.so)

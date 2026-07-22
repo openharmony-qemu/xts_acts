@@ -33,15 +33,13 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static bool IsStubMode()
 {
     auto func = LibcFunctionLoader::GetInstance().GetExp2fFinite();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return true;
     }
     // Additional check: try calling and check errno
     errno = 0;
     func(0.0f);
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return true;
     }
     return false;
@@ -51,15 +49,13 @@ static bool IsStubMode()
 static auto GetExp2fFinite()
 {
     auto func = LibcFunctionLoader::GetInstance().GetExp2fFinite();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return func;
     }
     // Check if really usable
     errno = 0;
     func(0.0f);
-    if (errno == ENOSYS)
-    {
+    if (errno == ENOSYS) {
         return static_cast<decltype(func)>(nullptr);
     }
     return func;
@@ -70,8 +66,7 @@ static float StandardExp2f(float x)
 {
     int intPart = static_cast<int>(x);
     float fracPart = x - intPart;
-    if (fabsf(fracPart) < 1e-7f)
-    {
+    if (fabsf(fracPart) < 1e-7f) {
         return ldexpf(1.0f, intPart);
     }
     return powf(2.0f, x);
@@ -83,8 +78,7 @@ static float StandardExp2f(float x)
 static napi_value Exp2fFiniteNormal001(napi_env env, napi_callback_info info)
 {
     auto func = GetExp2fFinite();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
@@ -92,39 +86,31 @@ static napi_value Exp2fFiniteNormal001(napi_env env, napi_callback_info info)
     float epsilon = 1e-6f;
 
     // Zero: 2^0 = 1
-    if (fabsf(func(0.0f) - 1.0f) > epsilon)
-    {
+    if (fabsf(func(0.0f) - 1.0f) > epsilon) {
         allPassed = false;
     }
     // Positive
-    if (fabsf(func(1.0f) - 2.0f) > epsilon)
-    {
+    if (fabsf(func(1.0f) - 2.0f) > epsilon) {
         allPassed = false;
     }
-    if (fabsf(func(2.0f) - 4.0f) > epsilon)
-    {
+    if (fabsf(func(2.0f) - 4.0f) > epsilon) {
         allPassed = false;
     }
-    if (fabsf(func(3.0f) - 8.0f) > epsilon)
-    {
+    if (fabsf(func(3.0f) - 8.0f) > epsilon) {
         allPassed = false;
     }
     // Negative
-    if (fabsf(func(-1.0f) - 0.5f) > epsilon)
-    {
+    if (fabsf(func(-1.0f) - 0.5f) > epsilon) {
         allPassed = false;
     }
-    if (fabsf(func(-2.0f) - 0.25f) > epsilon)
-    {
+    if (fabsf(func(-2.0f) - 0.25f) > epsilon) {
         allPassed = false;
     }
     // Decimal
-    if (fabsf(func(0.5f) - StandardExp2f(0.5f)) > epsilon)
-    {
+    if (fabsf(func(0.5f) - StandardExp2f(0.5f)) > epsilon) {
         allPassed = false;
     }
-    if (fabsf(func(-0.5f) - StandardExp2f(-0.5f)) > epsilon)
-    {
+    if (fabsf(func(-0.5f) - StandardExp2f(-0.5f)) > epsilon) {
         allPassed = false;
     }
 
@@ -135,8 +121,7 @@ static napi_value Exp2fFiniteNormal001(napi_env env, napi_callback_info info)
 static napi_value Exp2fFiniteNormal002(napi_env env, napi_callback_info info)
 {
     auto func = GetExp2fFinite();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
@@ -144,29 +129,25 @@ static napi_value Exp2fFiniteNormal002(napi_env env, napi_callback_info info)
 
     float result1 = func(10.0f);
     float expected1 = StandardExp2f(10.0f);
-    if (fabsf(result1 - expected1) / (fabsf(result1) + 1e-30f) > 1e-5f)
-    {
+    if (fabsf(result1 - expected1) / (fabsf(result1) + 1e-30f) > 1e-5f) {
         allPassed = false;
     }
 
     float result2 = func(15.0f);
     float expected2 = StandardExp2f(15.0f);
-    if (fabsf(result2 - expected2) / (fabsf(result2) + 1e-30f) > 1e-5f)
-    {
+    if (fabsf(result2 - expected2) / (fabsf(result2) + 1e-30f) > 1e-5f) {
         allPassed = false;
     }
 
     float result3 = func(-10.0f);
     float expected3 = StandardExp2f(-10.0f);
-    if (fabsf(result3 - expected3) > 1e-7f)
-    {
+    if (fabsf(result3 - expected3) > 1e-7f) {
         allPassed = false;
     }
 
     float result4 = func(-15.0f);
     float expected4 = StandardExp2f(-15.0f);
-    if (fabsf(result4 - expected4) > 1e-7f)
-    {
+    if (fabsf(result4 - expected4) > 1e-7f) {
         allPassed = false;
     }
 
@@ -177,8 +158,7 @@ static napi_value Exp2fFiniteNormal002(napi_env env, napi_callback_info info)
 static napi_value Exp2fFiniteNormal003(napi_env env, napi_callback_info info)
 {
     auto func = GetExp2fFinite();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
@@ -186,12 +166,10 @@ static napi_value Exp2fFiniteNormal003(napi_env env, napi_callback_info info)
     float epsilon = 1e-6f;
     float testVals[] = {0.1f, 0.01f, 0.001f, -0.1f, -0.01f, -0.001f, 0.25f, -0.25f};
 
-    for (float val : testVals)
-    {
+    for (float val : testVals) {
         float expected = StandardExp2f(val);
         float actual = func(val);
-        if (fabsf(actual - expected) > epsilon)
-        {
+        if (fabsf(actual - expected) > epsilon) {
             allPassed = false;
             break;
         }
@@ -204,8 +182,7 @@ static napi_value Exp2fFiniteNormal003(napi_env env, napi_callback_info info)
 static napi_value Exp2fFiniteNormal004(napi_env env, napi_callback_info info)
 {
     auto func = GetExp2fFinite();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
@@ -213,12 +190,10 @@ static napi_value Exp2fFiniteNormal004(napi_env env, napi_callback_info info)
     float epsilon = 1e-6f;
 
     int testInts[] = {-8, -5, -3, -1, 0, 1, 3, 5, 8, 10, 16, 20};
-    for (int n : testInts)
-    {
+    for (int n : testInts) {
         float expected = ldexpf(1.0f, n);
         float actual = func(static_cast<float>(n));
-        if (fabsf(actual - expected) > epsilon)
-        {
+        if (fabsf(actual - expected) > epsilon) {
             allPassed = false;
             break;
         }
@@ -233,8 +208,7 @@ static napi_value Exp2fFiniteNormal004(napi_env env, napi_callback_info info)
 static napi_value Exp2fFiniteBoundary001(napi_env env, napi_callback_info info)
 {
     auto func = GetExp2fFinite();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
@@ -243,15 +217,12 @@ static napi_value Exp2fFiniteBoundary001(napi_env env, napi_callback_info info)
 
     float largeVal = 130.0f;
     float result = func(largeVal);
-    if (!std::isinf(result) && !std::isnan(result))
-    {
-        if (result < FLT_MAX / 2.0f)
-        {
+    if (!std::isinf(result) && !std::isnan(result)) {
+        if (result < FLT_MAX / 2.0f) {
             allPassed = false;
         }
     }
-    if (errno != 0 && errno != ERANGE)
-    {
+    if (errno != 0 && errno != ERANGE) {
         allPassed = false;
     }
 
@@ -262,8 +233,7 @@ static napi_value Exp2fFiniteBoundary001(napi_env env, napi_callback_info info)
 static napi_value Exp2fFiniteBoundary002(napi_env env, napi_callback_info info)
 {
     auto func = GetExp2fFinite();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
@@ -272,12 +242,10 @@ static napi_value Exp2fFiniteBoundary002(napi_env env, napi_callback_info info)
 
     float smallVal = -130.0f;
     float result = func(smallVal);
-    if (result != 0.0f && result > FLT_MIN)
-    {
+    if (result != 0.0f && result > FLT_MIN) {
         allPassed = false;
     }
-    if (errno != 0 && errno != ERANGE)
-    {
+    if (errno != 0 && errno != ERANGE) {
         allPassed = false;
     }
 
@@ -288,8 +256,7 @@ static napi_value Exp2fFiniteBoundary002(napi_env env, napi_callback_info info)
 static napi_value Exp2fFiniteBoundary003(napi_env env, napi_callback_info info)
 {
     auto func = GetExp2fFinite();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
@@ -297,15 +264,13 @@ static napi_value Exp2fFiniteBoundary003(napi_env env, napi_callback_info info)
 
     float nearOverflow = 127.0f;
     float result1 = func(nearOverflow);
-    if (!std::isfinite(result1) || result1 < 1e37f)
-    {
+    if (!std::isfinite(result1) || result1 < 1e37f) {
         allPassed = false;
     }
 
     float nearUnderflow = -126.0f;
     float result2 = func(nearUnderflow);
-    if (!std::isfinite(result2) || result2 > 1e-37f)
-    {
+    if (!std::isfinite(result2) || result2 > 1e-37f) {
         allPassed = false;
     }
 
@@ -318,28 +283,24 @@ static napi_value Exp2fFiniteBoundary003(napi_env env, napi_callback_info info)
 static napi_value Exp2fFiniteAbnormal001(napi_env env, napi_callback_info info)
 {
     auto func = GetExp2fFinite();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
 
     float resultNan = func(NAN);
-    if (!std::isnan(resultNan))
-    {
+    if (!std::isnan(resultNan)) {
         allPassed = false;
     }
 
     float resultInf = func(INFINITY);
-    if (!std::isinf(resultInf) || resultInf < 0)
-    {
+    if (!std::isinf(resultInf) || resultInf < 0) {
         allPassed = false;
     }
 
     float resultNegInf = func(-INFINITY);
-    if (resultNegInf != 0.0f)
-    {
+    if (resultNegInf != 0.0f) {
         allPassed = false;
     }
 
@@ -352,8 +313,7 @@ static napi_value Exp2fFiniteAbnormal001(napi_env env, napi_callback_info info)
 static napi_value Exp2fFiniteStable001(napi_env env, napi_callback_info info)
 {
     auto func = GetExp2fFinite();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
@@ -362,25 +322,20 @@ static napi_value Exp2fFiniteStable001(napi_env env, napi_callback_info info)
     int exp2fTestCount = 8;
     float results[exp2fTestCount];
 
-    for (int i = 0; i < exp2fTestCount; ++i)
-    {
+    for (int i = 0; i < exp2fTestCount; ++i) {
         results[i] = func(testVals[i]);
     }
 
     int roundCount = 20;
-    for (int round = 0; round < roundCount; ++round)
-    {
-        for (int i = 0; i < exp2fTestCount; ++i)
-        {
+    for (int round = 0; round < roundCount; ++round) {
+        for (int i = 0; i < exp2fTestCount; ++i) {
             float current = func(testVals[i]);
-            if (fabsf(current - results[i]) > 1e-9f)
-            {
+            if (fabsf(current - results[i]) > 1e-9f) {
                 allPassed = false;
                 break;
             }
         }
-        if (!allPassed)
-        {
+        if (!allPassed) {
             break;
         }
     }
@@ -392,20 +347,17 @@ static napi_value Exp2fFiniteStable001(napi_env env, napi_callback_info info)
 static napi_value Exp2fFiniteStable002(napi_env env, napi_callback_info info)
 {
     auto func = GetExp2fFinite();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
     int loopCount = 20;
 
-    for (int i = 0; i < loopCount; ++i)
-    {
+    for (int i = 0; i < loopCount; ++i) {
         float val = (i % 100) / 10.0f - 5.0f;
         float result = func(val);
-        if (!std::isfinite(result) && val < 5.0f)
-        {
+        if (!std::isfinite(result) && val < 5.0f) {
             allPassed = false;
             break;
         }
@@ -420,8 +372,7 @@ static napi_value Exp2fFiniteStable002(napi_env env, napi_callback_info info)
 static napi_value Exp2fFiniteThread001(napi_env env, napi_callback_info info)
 {
     auto func = GetExp2fFinite();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
@@ -430,18 +381,15 @@ static napi_value Exp2fFiniteThread001(napi_env env, napi_callback_info info)
     std::vector<std::thread> threads;
     std::atomic<bool> hasError{false};
 
-    for (int t = 0; t < threadCount; ++t)
-    {
+    for (int t = 0; t < threadCount; ++t) {
         threads.emplace_back([func, &hasError, iterationsPerThread]()
         {
             float epsilon = 1e-6f;
-            for (int i = 0; i < iterationsPerThread; ++i)
-            {
+            for (int i = 0; i < iterationsPerThread; ++i) {
                 float val = (i % 20) / 2.0f - 5.0f;
                 float expected = StandardExp2f(val);
                 float actual = func(val);
-                if (fabsf(actual - expected) > epsilon)
-                {
+                if (fabsf(actual - expected) > epsilon) {
                     hasError = true;
                     break;
                 }
@@ -449,8 +397,7 @@ static napi_value Exp2fFiniteThread001(napi_env env, napi_callback_info info)
         });
     }
 
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
 
@@ -461,8 +408,7 @@ static napi_value Exp2fFiniteThread001(napi_env env, napi_callback_info info)
 static napi_value Exp2fFiniteThread002(napi_env env, napi_callback_info info)
 {
     auto func = GetExp2fFinite();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
@@ -471,20 +417,16 @@ static napi_value Exp2fFiniteThread002(napi_env env, napi_callback_info info)
     std::atomic<bool> hasError{false};
     float testVals[] = {0.0f, 0.5f, 1.0f, 2.0f, -1.0f, -0.5f, 5.0f, -5.0f, 10.0f, -10.0f};
 
-    for (int t = 0; t < threadCount; ++t)
-    {
+    for (int t = 0; t < threadCount; ++t) {
         threads.emplace_back([func, &hasError, testVals]()
         {
             float epsilon = 1e-6f;
             int roundCount = 10;
-            for (int round = 0; round < roundCount; ++round)
-            {
-                for (float val : testVals)
-                {
+            for (int round = 0; round < roundCount; ++round) {
+                for (float val : testVals) {
                     float expected = StandardExp2f(val);
                     float actual = func(val);
-                    if (fabsf(actual - expected) > epsilon)
-                    {
+                    if (fabsf(actual - expected) > epsilon) {
                         hasError = true;
                         return;
                     }
@@ -493,8 +435,7 @@ static napi_value Exp2fFiniteThread002(napi_env env, napi_callback_info info)
         });
     }
 
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
 
