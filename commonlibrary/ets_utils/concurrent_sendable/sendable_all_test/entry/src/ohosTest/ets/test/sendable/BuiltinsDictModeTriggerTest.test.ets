@@ -102,7 +102,7 @@ async function setPropertyTask(obj: BoundaryPropertyClass, key: string, value: n
 
 @Concurrent
 async function getPropertyTask(obj: BoundaryPropertyClass, key: string): Promise<number | undefined> {
-  return obj.getProperty(key)
+  return await obj.getProperty(key)
 }
 
 @Concurrent

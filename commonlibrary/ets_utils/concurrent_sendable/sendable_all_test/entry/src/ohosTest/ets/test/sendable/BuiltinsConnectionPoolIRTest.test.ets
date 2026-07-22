@@ -148,7 +148,7 @@ class IRFieldPool {
 
 @Concurrent
 async function irPoolAcquireTask(pool: IRPool): Promise<IRConnection | null> {
-  return pool.acquire()
+  return await pool.acquire()
 }
 
 @Concurrent
