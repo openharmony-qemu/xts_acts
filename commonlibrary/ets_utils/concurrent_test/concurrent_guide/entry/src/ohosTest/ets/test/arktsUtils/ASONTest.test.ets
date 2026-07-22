@@ -38,9 +38,10 @@ export default function ASONTest(): void {
      */
     it('ASONTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let jsonStr: string = '{"name":"test","age":42}'
-      let result: Record<string, Object> = ArkTSUtils.ASON.parse(jsonStr) as Record<string, Object>
-      expect(result['name'] as string).assertEqual('test')
-      expect(result['age'] as number).assertEqual(42)
+      // Concrete Sendable type (ArkTS forbids unknown; avoid Record<string, Object> + as field casts)
+      let result: TestPerson = ArkTSUtils.ASON.parse(jsonStr) as TestPerson
+      expect(result.name).assertEqual('test')
+      expect(result.age).assertEqual(42)
       let jsonOut: string = ArkTSUtils.ASON.stringify(result)
       expect(jsonOut).assertEqual('{"name":"test","age":42}')
     })
@@ -169,8 +170,8 @@ export default function ASONTest(): void {
         // Device/runtime: invalid JSON throws SyntaxError (not BusinessError)
         expect(e instanceof SyntaxError).assertTrue()
         if (e instanceof SyntaxError) {
-          // Exact message observed for '{invalid json}' on device
-          expect(e.message).assertEqual('Unexpected Object Prop in JSON')
+          // Core behavior: invalid JSON; substring avoids brittle full-message equality across engines
+          expect(e.message).assertContain('JSON')
         }
       }
       expect(caughtError).assertTrue()

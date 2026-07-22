@@ -251,11 +251,11 @@ export default function WorkerCommunicationTest(): void {
     it('WorkerCommunicationTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let exchange: WorkerExchange = await createTaskTypeWorkerExchange('entry_test/ets/workers/TaskTypeWorker.ets')
       currentWorker = exchange.getWorker()
-      let addData: Record<string, Object> = await exchange.send(new CalculateRequest(10, 20, 'add')) as Record<string, Object>
+      let addData: ESObject = await exchange.send(new CalculateRequest(10, 20, 'add'))
       expect(addData['value'] as number).assertEqual(30)
-      let mulData: Record<string, Object> = await exchange.send(new CalculateRequest(7, 8, 'multiply')) as Record<string, Object>
+      let mulData: ESObject = await exchange.send(new CalculateRequest(7, 8, 'multiply'))
       expect(mulData['value'] as number).assertEqual(56)
-      let echoData: Record<string, Object> = await exchange.send(new EchoRequest('hello_worker')) as Record<string, Object>
+      let echoData: ESObject = await exchange.send(new EchoRequest('hello_worker'))
       expect(echoData['type'] as string).assertEqual('echo_response')
       expect(echoData['payload'] as string).assertEqual('hello_worker')
       await exchange.terminate()

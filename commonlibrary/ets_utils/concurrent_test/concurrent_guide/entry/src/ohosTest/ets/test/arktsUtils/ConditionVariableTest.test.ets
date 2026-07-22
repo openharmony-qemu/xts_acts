@@ -88,8 +88,8 @@ export default function ConditionVariableTest(): void {
       let waitPromise: Promise<void> = cv2.wait().then(() => {
         notified = true
       })
-      // Same-thread event loop: one microtask yield is enough for wait() to register
-      await Promise.resolve()
+      // Same-thread: short sleep so wait() finishes registering (avoid single-microtask coupling)
+      await sleep(1)
       expect(notified).assertFalse()
       cv1.notifyOne()
       await waitPromise
@@ -112,8 +112,8 @@ export default function ConditionVariableTest(): void {
         notified = true
       })
 
-      // Same-thread event loop: one microtask yield is enough for wait() to register
-      await Promise.resolve()
+      // Same-thread: short sleep so wait() finishes registering (avoid single-microtask coupling)
+      await sleep(1)
       expect(notified).assertFalse()
 
       cv.notifyOne()
@@ -160,8 +160,8 @@ export default function ConditionVariableTest(): void {
       let waiter2: Promise<void> = cv.wait().then(() => { wakeCount++ })
       let waiter3: Promise<void> = cv.wait().then(() => { wakeCount++ })
 
-      // Same-thread event loop: one microtask yield is enough for waiters to register
-      await Promise.resolve()
+      // Same-thread: short sleep so waiters finish registering
+      await sleep(1)
       expect(wakeCount).assertEqual(0)
       cv.notifyOne()
       // Wait for one waiter to complete
@@ -189,8 +189,8 @@ export default function ConditionVariableTest(): void {
       let waiter2: Promise<void> = cv.wait().then(() => { wakeCount++ })
       let waiter3: Promise<void> = cv.wait().then(() => { wakeCount++ })
 
-      // Same-thread event loop: one microtask yield is enough for waiters to register
-      await Promise.resolve()
+      // Same-thread: short sleep so waiters finish registering
+      await sleep(1)
       expect(wakeCount).assertEqual(0)
       cv.notifyAll()
       await Promise.all([waiter1, waiter2, waiter3])
@@ -348,8 +348,8 @@ export default function ConditionVariableTest(): void {
         wokeEarly = true
       })
 
-      // Same-thread event loop: one microtask yield is enough for waitFor() to register
-      await Promise.resolve()
+      // Same-thread: short sleep so waitFor() finishes registering
+      await sleep(1)
       expect(wokeEarly).assertFalse()
       cv.notifyOne()
       let result: void = await waitPromise

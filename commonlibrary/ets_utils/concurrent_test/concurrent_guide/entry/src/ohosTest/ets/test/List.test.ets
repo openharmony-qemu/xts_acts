@@ -24,7 +24,7 @@ import CommonLibraryFaqTest from './concurrencyOverview/CommonLibraryFaqTest.tes
 import ConcurrencyFaqTest from './concurrencyOverview/ConcurrencyFaqTest.test'
 import ConcurrencyOverviewTest from './concurrencyOverview/ConcurrencyOverviewTest.test'
 import InterthreadCommunicationTest from './concurrencyOverview/InterthreadCommunicationTest.test'
-import WorkerCommunicationOverviewTest from './concurrencyOverview/WorkerCommunicationTest.test'
+import WorkerCommunicationOverviewTest from './concurrencyOverview/WorkerCommunicationOverviewTest.test'
 import MultithreadDevelopTest from './concurrencyOverview/MultithreadDevelopTest.test'
 import BatchDatabaseOpsTest from './nativeNapi/BatchDatabaseOpsTest.test'
 import ConcurrentLoadingModulesTest from './nativeNapi/ConcurrentLoadingModulesTest.test'

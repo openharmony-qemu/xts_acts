@@ -54,9 +54,16 @@ export class CallAddValuesRequest {
   }
 }
 
+/** Typed payloads accepted by WorkerExchange.send (ArkTS forbids unknown). */
+export type WorkerRequest = WorkerReadyRequest | CalculateRequest | EchoRequest | CallAddValuesRequest
+
+function readResponseType(resp: ESObject): string {
+  return resp['type'] as string
+}
+
 export class WorkerExchange {
   private wk: worker.ThreadWorker
-  private pendingResolve: ((data: Object) => void) | null = null
+  private pendingResolve: ((data: ESObject) => void) | null = null
   private pendingReject: ((err: Error) => void) | null = null
   private terminated: boolean = false
 
@@ -64,10 +71,10 @@ export class WorkerExchange {
     this.wk = wk
     this.wk.onmessage = (e: MessageEvents): void => {
       if (this.pendingResolve !== null) {
-        let resolver: (data: Object) => void = this.pendingResolve
+        let resolver: (data: ESObject) => void = this.pendingResolve
         this.pendingResolve = null
         this.pendingReject = null
-        resolver(e.data as Object)
+        resolver(e.data as ESObject)
       } else {
         // Unexpected message (e.g. after terminate or without pending send) — do not silently ignore
         console.warn('WorkerExchange: unexpected onmessage, terminated=' +
@@ -95,16 +102,16 @@ export class WorkerExchange {
     }
   }
 
-  send(data: string | Object): Promise<Object> {
+  send(data: string | WorkerRequest): Promise<ESObject> {
     // Force serial await: concurrent send would overwrite pending and hang the previous Promise
     if (this.pendingResolve !== null) {
       return Promise.reject(new Error(
-        'WorkerExchange.send requires serial await; previous request still pending')) as Promise<Object>
+        'WorkerExchange.send requires serial await; previous request still pending')) as Promise<ESObject>
     }
     if (this.terminated) {
-      return Promise.reject(new Error('WorkerExchange already terminated')) as Promise<Object>
+      return Promise.reject(new Error('WorkerExchange already terminated')) as Promise<ESObject>
     }
-    return new Promise<Object>((resolve: (value: Object) => void, reject: (reason: Error) => void) => {
+    return new Promise<ESObject>((resolve: (value: ESObject) => void, reject: (reason: Error) => void) => {
       this.pendingResolve = resolve
       this.pendingReject = reject
       try {
@@ -118,8 +125,9 @@ export class WorkerExchange {
     })
   }
 
-  sendString(data: string): Promise<string> {
-    return this.send(data) as Promise<string>
+  async sendString(data: string): Promise<string> {
+    let resp: ESObject = await this.send(data)
+    return resp as string
   }
 
   /**
@@ -179,8 +187,8 @@ export async function createTaskTypeWorkerExchange(path: string): Promise<Worker
   let exchange: WorkerExchange = new WorkerExchange(wk)
   try {
     let readyReq: WorkerReadyRequest = new WorkerReadyRequest()
-    let resp: Record<string, Object> = await exchange.send(readyReq) as Record<string, Object>
-    if ((resp['type'] as string) !== OBJECT_WORKER_READY) {
+    let resp: ESObject = await exchange.send(readyReq)
+    if (readResponseType(resp) !== OBJECT_WORKER_READY) {
       throw new Error('TaskTypeWorker not ready')
     }
     return exchange
@@ -198,8 +206,8 @@ export async function createInvokeWorkerExchange(path: string): Promise<WorkerEx
   let exchange: WorkerExchange = new WorkerExchange(wk)
   try {
     let readyReq: WorkerReadyRequest = new WorkerReadyRequest()
-    let resp: Record<string, Object> = await exchange.send(readyReq) as Record<string, Object>
-    if ((resp['type'] as string) !== OBJECT_WORKER_READY) {
+    let resp: ESObject = await exchange.send(readyReq)
+    if (readResponseType(resp) !== OBJECT_WORKER_READY) {
       throw new Error('InvokeWorker not ready')
     }
     return exchange

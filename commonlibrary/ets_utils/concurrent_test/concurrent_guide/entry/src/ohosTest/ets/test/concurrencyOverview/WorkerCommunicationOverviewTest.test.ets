@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import { worker, ErrorEvent, MessageEvents } from '@kit.ArkTS';
 import { WorkerExchange, createEchoWorkerExchange } from '../WorkerHelper';
 
-export default function WorkerCommunicationTest(): void {
+export default function WorkerCommunicationOverviewTest(): void {
   describe('WorkerCommunicationOverviewTest', (): void => {
     let currentWorker: worker.ThreadWorker | null = null
 
