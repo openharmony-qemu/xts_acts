@@ -13,16 +13,13 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
 
 export default function AsyncConcurrencyTest(): void {
   describe('AsyncConcurrencyTest', (): void => {
     beforeAll((): void => {})
     beforeEach((): void => {})
     afterEach((): void => {})
-    afterAll(async (): Promise<void> => {
-      await Promise.resolve()
-    })
 
     /**
      * @tc.name   AsyncConcurrencyTest0100

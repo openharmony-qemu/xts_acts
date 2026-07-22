@@ -25,9 +25,9 @@ class WorkerReadyRequest {
 
 export class CalculateRequest {
   type: string = 'calculate'
-  a: number
-  b: number
-  op: string
+  a: number = 0
+  b: number = 0
+  op: string = ''
 
   constructor(a: number, b: number, op: string) {
     this.a = a
@@ -38,7 +38,7 @@ export class CalculateRequest {
 
 export class EchoRequest {
   type: string = 'echo'
-  payload: string
+  payload: string = ''
 
   constructor(payload: string) {
     this.payload = payload
@@ -47,7 +47,7 @@ export class EchoRequest {
 
 export class CallAddValuesRequest {
   type: string = 'call_add_values'
-  objName: string
+  objName: string = ''
 
   constructor(objName: string) {
     this.objName = objName
@@ -130,6 +130,10 @@ export class WorkerExchange {
       }
       this.wk.terminate()
     })
+    // Drop callback refs after exit so WorkerExchange/ThreadWorker can be GC'd
+    this.wk.onmessage = undefined
+    this.wk.onerror = undefined
+    this.wk.onexit = undefined
   }
 }
 

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { ArkTSUtils, collections } from '@kit.ArkTS';
 
 @Sendable
@@ -27,9 +27,6 @@ export default function ASONTest(): void {
     beforeAll((): void => {})
     beforeEach((): void => {})
     afterEach((): void => {})
-    afterAll(async (): Promise<void> => {
-      await Promise.resolve()
-    })
 
     /**
      * @tc.name   ASONTest0100
@@ -43,8 +40,7 @@ export default function ASONTest(): void {
       let jsonStr: string = '{"name":"test","age":42}'
       let result: Object = ArkTSUtils.ASON.parse(jsonStr) as Object
       let jsonOut: string = ArkTSUtils.ASON.stringify(result)
-      expect(jsonOut).assertContain('test')
-      expect(jsonOut).assertContain('42')
+      expect(jsonOut).assertEqual('{"name":"test","age":42}')
     })
 
     /**
@@ -60,8 +56,7 @@ export default function ASONTest(): void {
       person.name = 'John'
       person.age = 30
       let jsonStr: string = ArkTSUtils.ASON.stringify(person)
-      expect(jsonStr).assertContain('John')
-      expect(jsonStr).assertContain('30')
+      expect(jsonStr).assertEqual('{"name":"John","age":30}')
     })
 
     /**
@@ -77,10 +72,7 @@ export default function ASONTest(): void {
       map.set('one', 1)
       map.set('two', 2)
       let jsonStr: string = ArkTSUtils.ASON.stringify(map)
-      expect(jsonStr).assertContain('one')
-      expect(jsonStr).assertContain('two')
-      expect(jsonStr).assertContain('1')
-      expect(jsonStr).assertContain('2')
+      expect(jsonStr).assertEqual('{"one":1,"two":2}')
     })
 
     /**
@@ -97,9 +89,7 @@ export default function ASONTest(): void {
       set.add(2)
       set.add(3)
       let jsonStr: string = ArkTSUtils.ASON.stringify(set)
-      expect(jsonStr).assertContain('1')
-      expect(jsonStr).assertContain('2')
-      expect(jsonStr).assertContain('3')
+      expect(jsonStr).assertEqual('[1,2,3]')
     })
 
     /**
@@ -115,8 +105,7 @@ export default function ASONTest(): void {
       map.set('key1', 'value1')
       map.set('key2', 'value2')
       let jsonStr: string = ArkTSUtils.ASON.stringify(map)
-      expect(jsonStr).assertContain('key1')
-      expect(jsonStr).assertContain('value1')
+      expect(jsonStr).assertEqual('{"key1":"value1","key2":"value2"}')
     })
 
     /**
@@ -132,8 +121,7 @@ export default function ASONTest(): void {
       set.add(10)
       set.add(20)
       let jsonStr: string = ArkTSUtils.ASON.stringify(set)
-      expect(jsonStr).assertContain('10')
-      expect(jsonStr).assertContain('20')
+      expect(jsonStr).assertEqual('[10,20]')
     })
 
     /**
@@ -189,9 +177,7 @@ export default function ASONTest(): void {
     it('ASONTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3)
       let jsonStr: string = ArkTSUtils.ASON.stringify(arr)
-      expect(jsonStr).assertContain('1')
-      expect(jsonStr).assertContain('2')
-      expect(jsonStr).assertContain('3')
+      expect(jsonStr).assertEqual('[1,2,3]')
     })
   })
 }

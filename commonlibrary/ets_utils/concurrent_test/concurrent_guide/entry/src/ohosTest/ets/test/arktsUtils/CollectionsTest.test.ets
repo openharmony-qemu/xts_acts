@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections, taskpool, ArkTSUtils } from '@kit.ArkTS';
 import { BusinessError } from '@ohos.base';
 
@@ -38,9 +38,6 @@ export default function CollectionsTest(): void {
     beforeAll((): void => {})
     beforeEach((): void => {})
     afterEach((): void => {})
-    afterAll(async (): Promise<void> => {
-      await Promise.resolve()
-    })
 
     // ======================== Array Tests ========================
 

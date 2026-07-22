@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { taskpool, collections, ArkTSUtils } from '@kit.ArkTS';
 import { freezeObject, isObjectFrozen } from './freezeHelper';
 
@@ -106,9 +106,6 @@ export default function SendableFreezeTest(): void {
     beforeAll((): void => {})
     beforeEach((): void => {})
     afterEach((): void => {})
-    afterAll(async (): Promise<void> => {
-      await Promise.resolve()
-    })
 
     /**
      * @tc.name   SendableFreezeTest0100

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { ArkTSUtils, taskpool } from '@kit.ArkTS';
 
 @Sendable
@@ -46,9 +46,6 @@ export default function AsyncLockTest(): void {
     beforeAll((): void => {})
     beforeEach((): void => {})
     afterEach((): void => {})
-    afterAll(async (): Promise<void> => {
-      await Promise.resolve()
-    })
 
     /**
      * @tc.name   AsyncLockTest0100
