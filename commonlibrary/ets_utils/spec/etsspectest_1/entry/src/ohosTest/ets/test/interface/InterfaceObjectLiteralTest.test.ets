@@ -24,15 +24,13 @@ import {
   Size,
   TestType
 } from '@ohos/hypium';
-import utils from '../../Utils';
-import { testMethodShorthand, testNestedLiteral } from './classObjectLiteralTsHelper'
+import { testMethodShorthand, testNestedLiteral } from './interfaceObjectLiteralTsHelper'
 
-export default function ClassObjectLiteralTest() {
-  describe('ClassObjectLiteralTest', () => {
+export default function InterfaceObjectLiteralTest() {
+  describe('InterfaceObjectLiteralTest', () => {
     beforeAll(() => {
     })
-    beforeEach(async () => {
-      await utils.msSleep(30);
+    beforeEach(() => {
     })
     afterEach(() => {
     })
@@ -40,9 +38,9 @@ export default function ClassObjectLiteralTest() {
     })
 
     /**
-     * @tc.number    SUB_CLASS_OBJECTLITERAL_0100
+     * @tc.number    SUB_INTERFACE_OBJECTLITERAL_0100
      * @tc.name      testMethodShorthand0001
-     * @tc.desc      Verify object literal with method shorthand satisfies interface
+     * @tc.desc      ArkTS dynamic: Verify object literal with method shorthand satisfies interface type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -52,19 +50,16 @@ export default function ClassObjectLiteralTest() {
     })
 
     /**
-     * @tc.number    SUB_CLASS_OBJECTLITERAL_0200
+     * @tc.number    SUB_INTERFACE_OBJECTLITERAL_0200
      * @tc.name      testNestedLiteral0001
-     * @tc.desc      Verify nested object literal satisfies extended interface with all members
+     * @tc.desc      ArkTS dynamic: Verify nested object literal satisfies extended interface with all members
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it('testNestedLiteral0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let r: string = testNestedLiteral()
-      let parts: string[] = r.split("|")
-      expect(parts[0]).assertEqual('nested-name')
-      expect(parts[1]).assertEqual('25')
-      expect(parts[2]).assertEqual('nested-label')
+      expect(r).assertEqual('nested-name|25|nested-label')
     })
   })
 }
