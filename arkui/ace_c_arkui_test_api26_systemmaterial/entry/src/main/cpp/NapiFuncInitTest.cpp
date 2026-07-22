@@ -28,7 +28,7 @@ static napi_property_descriptor MakeMaterialProp(const char *name, napi_callback
     return desc;
 }
 
-static napi_property_descriptor *GetMaterialProps(size_t *count)
+static napi_property_descriptor *GetMaterialCoreProps(size_t *count)
 {
     static napi_property_descriptor desc[] = {
         MakeMaterialProp("testImmersiveStyleEnumValues001", TestImmersiveStyleEnumValues001),
@@ -45,6 +45,21 @@ static napi_property_descriptor *GetMaterialProps(size_t *count)
         MakeMaterialProp("testLightEffectOptionsLifecycle001", TestLightEffectOptionsLifecycle001),
         MakeMaterialProp("testImmersiveMaterialSetGetLightEffect001", TestImmersiveMaterialSetGetLightEffect001),
         MakeMaterialProp("testImmersiveMaterialGetLightEffectNotSet001", TestImmersiveMaterialGetLightEffectNotSet001),
+        MakeMaterialProp("testImmersiveMaterialDestroyNull001", TestImmersiveMaterialDestroyNull001),
+        MakeMaterialProp("testImmersiveMaterialSetMaterialColorBoundary001",
+            TestImmersiveMaterialSetMaterialColorBoundary001),
+        MakeMaterialProp("testImmersiveMaterialSetMaterialColorInvalid001",
+            TestImmersiveMaterialSetMaterialColorInvalid001),
+        MakeMaterialProp("testLightEffectOptionsSetColorBoundary001", TestLightEffectOptionsSetColorBoundary001),
+        MakeMaterialProp("testLightEffectOptionsSetColorInvalid001", TestLightEffectOptionsSetColorInvalid001),
+    };
+    *count = sizeof(desc) / sizeof(desc[0]);
+    return desc;
+}
+
+static napi_property_descriptor *GetMaterialDialogProps(size_t *count)
+{
+    static napi_property_descriptor desc[] = {
         MakeMaterialProp("testCustomDialogSetSystemMaterial001", TestCustomDialogSetSystemMaterial001),
         MakeMaterialProp("testCustomDialogSetSystemMaterial002", TestCustomDialogSetSystemMaterial002),
         MakeMaterialProp("testCustomDialogSetSystemMaterial003", TestCustomDialogSetSystemMaterial003),
@@ -68,9 +83,31 @@ static napi_property_descriptor *GetMaterialProps(size_t *count)
             "testCustomDialogSetSystemMaterialInOptions007", TestCustomDialogSetSystemMaterialInOptions007),
         MakeMaterialProp("testNodeSystemMaterialAttrId001", TestNodeSystemMaterialAttrId001),
         MakeMaterialProp("testNodeSetSystemMaterial001", TestNodeSetSystemMaterial001),
+        MakeMaterialProp("testDialogDisplayModeEnumValues001", TestDialogDisplayModeEnumValues001),
+        MakeMaterialProp("testCustomDialogSetDisplayModeInSubWindow001",
+            TestCustomDialogSetDisplayModeInSubWindow001),
+        MakeMaterialProp("testCustomDialogSetDisplayModeInSubWindow002",
+            TestCustomDialogSetDisplayModeInSubWindow002),
+        MakeMaterialProp("testCustomDialogSetDisplayModeInSubWindow003",
+            TestCustomDialogSetDisplayModeInSubWindow003),
     };
     *count = sizeof(desc) / sizeof(desc[0]);
     return desc;
+}
+
+static bool DefineMaterialProps(napi_env env, napi_value exports)
+{
+    size_t coreCount = 0;
+    size_t dialogCount = 0;
+    napi_property_descriptor *coreDesc = GetMaterialCoreProps(&coreCount);
+    napi_property_descriptor *dialogDesc = GetMaterialDialogProps(&dialogCount);
+    if (napi_define_properties(env, exports, coreCount, coreDesc) != napi_ok) {
+        return false;
+    }
+    if (napi_define_properties(env, exports, dialogCount, dialogDesc) != napi_ok) {
+        return false;
+    }
+    return true;
 }
 
 static napi_value Init(napi_env env, napi_value exports)
@@ -79,10 +116,7 @@ static napi_value Init(napi_env env, napi_value exports)
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "env or exports is null");
         return nullptr;
     }
-
-    size_t count = 0;
-    napi_property_descriptor *desc = GetMaterialProps(&count);
-    if (napi_define_properties(env, exports, count, desc) != napi_ok) {
+    if (!DefineMaterialProps(env, exports)) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");
         return nullptr;
     }
