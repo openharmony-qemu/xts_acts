@@ -1,0 +1,223 @@
+/*
+ * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import taskpool from '@ohos.taskpool'
+import { collections } from '@kit.ArkTS'
+import { ArkTSUtils } from '@kit.ArkTS'
+import Utils from '../utils'
+import { EventQueueItem } from '../../../workers/sendable'
+
+@Sendable
+class EventQueueBus {
+  public queue_: collections.Array<EventQueueItem>
+
+  public maxSize_: number = 100
+  public droppedCount_: number = 0
+  public lock_: ArkTSUtils.locks.AsyncLock
+
+  constructor(queue_: collections.Array<EventQueueItem>, lock_: ArkTSUtils.locks.AsyncLock) {
+    this.queue_ = queue_
+    this.lock_ = lock_
+  }
+
+
+  async setMaxSize(maxSize: number): Promise<void> {
+    await this.lock_.lockAsync((): void => {
+      this.maxSize_ = maxSize
+    })
+  }
+
+  async enqueue(type: string, data: string, priority: number): Promise<boolean> {
+    return await this.lock_.lockAsync((): boolean => {
+      if (this.queue_.length >= this.maxSize_) {
+        this.droppedCount_++
+        return false
+      }
+      this.queue_.push(new EventQueueItem(type, data, priority))
+      return true
+    })
+  }
+
+  async dequeue(): Promise<EventQueueItem | null> {
+    return await this.lock_.lockAsync((): EventQueueItem | null => {
+      if (this.queue_.length === 0) return null
+      const item: EventQueueItem = this.queue_[0]
+      this.queue_.shift()
+      return item
+    })
+  }
+
+  async peek(): Promise<EventQueueItem | null> {
+    return await this.lock_.lockAsync((): EventQueueItem | null => {
+      if (this.queue_.length === 0) return null
+      return this.queue_[0]
+    })
+  }
+
+  async getQueueLength(): Promise<number> {
+    return await this.lock_.lockAsync((): number => this.queue_.length)
+  }
+
+  async getDroppedCount(): Promise<number> {
+    return await this.lock_.lockAsync((): number => this.droppedCount_)
+  }
+
+  async clear(): Promise<void> {
+    await this.lock_.lockAsync((): void => {
+      while (this.queue_.length > 0) { this.queue_.pop() }
+      this.droppedCount_ = 0
+    })
+  }
+
+  async reset(): Promise<void> {
+    await this.lock_.lockAsync((): void => {
+      while (this.queue_.length > 0) { this.queue_.pop() }
+      this.maxSize_ = 100
+      this.droppedCount_ = 0
+    })
+  }
+}
+
+@Concurrent
+async function enqueueTask(bus: EventQueueBus, type: string, data: string, priority: number): Promise<boolean> {
+  return await bus.lock_.lockAsync((): boolean => {
+    if (bus.queue_.length >= bus.maxSize_) {
+      bus.droppedCount_++
+      return false
+    }
+    bus.queue_.push(new EventQueueItem(type, data, priority))
+    return true
+  })
+}
+
+function executeTasksGetObjects(tasks: taskpool.Task[]): Promise<Object[]> {
+  const promises: Promise<Object>[] = []
+  for (let i: number = 0; i < tasks.length; i++) {
+    promises.push(taskpool.execute(tasks[i]))
+  }
+  return Promise.all(promises)
+}
+
+export default function BuiltinsEventQueueTest(): void {
+  describe('BuiltinsEventQueueTest', () => {
+    let bus: EventQueueBus
+
+    beforeEach(async (): Promise<void> => {
+      bus = new EventQueueBus(new collections.Array<EventQueueItem>(), new ArkTSUtils.locks.AsyncLock())
+    })
+
+    afterEach(async (): Promise<void> => {
+      await bus.reset()
+    })
+
+    it('BuiltinsEventQueueTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      const result: boolean = await bus.enqueue('click', 'data', 1)
+      expect(result).assertTrue()
+      expect(await bus.getQueueLength()).assertEqual(1)
+    })
+
+    it('BuiltinsEventQueueTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      await bus.enqueue('click', 'data_1', 1)
+      await bus.enqueue('click', 'data_2', 2)
+      expect(await bus.getQueueLength()).assertEqual(2)
+    })
+
+    it('BuiltinsEventQueueTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      await bus.enqueue('click', 'data', 1)
+      const item: EventQueueItem | null = await bus.dequeue()
+      expect((item as EventQueueItem).data_).assertEqual('data')
+      expect(await bus.getQueueLength()).assertEqual(0)
+    })
+
+    it('BuiltinsEventQueueTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      const item: EventQueueItem | null = await bus.dequeue()
+      expect(item === null).assertTrue()
+    })
+
+    it('BuiltinsEventQueueTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      await bus.enqueue('click', 'data', 1)
+      const item: EventQueueItem | null = await bus.peek()
+      expect(await bus.getQueueLength()).assertEqual(1)
+    })
+
+    it('BuiltinsEventQueueTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      await bus.setMaxSize(2)
+      const r1: boolean = await bus.enqueue('click', 'data_1', 1)
+      const r2: boolean = await bus.enqueue('click', 'data_2', 2)
+      const r3: boolean = await bus.enqueue('click', 'data_3', 3)
+      expect(r1).assertTrue()
+      expect(r2).assertTrue()
+      expect(r3).assertFalse()
+      expect(await bus.getDroppedCount()).assertEqual(1)
+    })
+
+    it('BuiltinsEventQueueTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const tasks: taskpool.Task[] = []
+      for (let i: number = 0; i < 10; i++) {
+        tasks.push(new taskpool.Task(enqueueTask, bus, 'click', `data_${i}`, 1))
+      }
+      await executeTasksGetObjects(tasks)
+      expect(await bus.getQueueLength()).assertEqual(10)
+    })
+
+    it('BuiltinsEventQueueTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      await bus.setMaxSize(5)
+      const tasks: taskpool.Task[] = []
+      for (let i: number = 0; i < 10; i++) {
+        tasks.push(new taskpool.Task(enqueueTask, bus, 'click', `data_${i}`, 1))
+      }
+      await executeTasksGetObjects(tasks)
+      expect(await bus.getQueueLength()).assertEqual(5)
+      expect(await bus.getDroppedCount() >= 5).assertTrue()
+    })
+
+    it('BuiltinsEventQueueTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      for (let i: number = 0; i < 5; i++) {
+        await bus.enqueue('click', `data_${i}`, 1)
+      }
+      await bus.clear()
+      expect(await bus.getQueueLength()).assertEqual(0)
+    })
+
+    it('BuiltinsEventQueueTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      await bus.enqueue('click', 'data_1', 1)
+      await bus.enqueue('click', 'data_2', 2)
+      const item1: EventQueueItem | null = await bus.dequeue()
+      const item2: EventQueueItem | null = await bus.dequeue()
+      expect((item1 as EventQueueItem).data_).assertEqual('data_1')
+      expect((item2 as EventQueueItem).data_).assertEqual('data_2')
+    })
+
+    it('BuiltinsEventQueueTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      await bus.enqueue('click', 'data', 1)
+      await bus.reset()
+      expect(await bus.getQueueLength()).assertEqual(0)
+      expect(await bus.getDroppedCount()).assertEqual(0)
+    })
+
+    it('BuiltinsEventQueueTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      for (let i: number = 0; i < 20; i++) {
+        await bus.enqueue('click', `data_${i}`, 1)
+      }
+      const tasks: taskpool.Task[] = []
+      for (let i: number = 0; i < 10; i++) {
+        tasks.push(new taskpool.Task(enqueueTask, bus, 'click', `extra_${i}`, 1))
+      }
+      await executeTasksGetObjects(tasks)
+      expect(await bus.getQueueLength()).assertEqual(30)
+    })
+  })
+}
