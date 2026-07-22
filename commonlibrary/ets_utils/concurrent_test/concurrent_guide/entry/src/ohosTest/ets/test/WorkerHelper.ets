@@ -124,16 +124,27 @@ export class WorkerExchange {
     }
     this.terminated = true
     this.rejectPending(new Error('WorkerExchange terminated'))
-    await new Promise<void>((resolve: () => void) => {
-      this.wk.onexit = (): void => {
-        resolve()
-      }
-      this.wk.terminate()
-    })
-    // Drop callback refs after exit so WorkerExchange/ThreadWorker can be GC'd
-    this.wk.onmessage = undefined
-    this.wk.onerror = undefined
-    this.wk.onexit = undefined
+    try {
+      await new Promise<void>((resolve: () => void, reject: (reason: Error) => void) => {
+        this.wk.onexit = (): void => {
+          resolve()
+        }
+        try {
+          this.wk.terminate()
+        } catch (e) {
+          if (e instanceof Error) {
+            reject(e)
+          } else {
+            reject(new Error('ThreadWorker.terminate failed'))
+          }
+        }
+      })
+    } finally {
+      // Always drop callback refs so WorkerExchange/ThreadWorker can be GC'd
+      this.wk.onmessage = undefined
+      this.wk.onerror = undefined
+      this.wk.onexit = undefined
+    }
   }
 }
 

@@ -206,16 +206,27 @@ export default function ConditionVariableTest(): void {
       let execPromise: Promise<Object> = taskpool.execute(task)
 
       // Promise-driven: race task completion vs short yield; notify until done (no shared-flag polling)
-      let finished: boolean = false
-      while (!finished) {
-        cv.notifyOne()
-        let raced: string = await Promise.race([
-          execPromise.then((): string => 'done'),
-          sleep(1).then((): string => 'retry')
-        ])
-        finished = raced === 'done'
+      // Rejection handler prevents unhandled rejection if sleep wins the race first
+      try {
+        let finished: boolean = false
+        while (!finished) {
+          cv.notifyOne()
+          let raced: string = await Promise.race([
+            execPromise.then((): string => 'done', (): string => 'failed'),
+            sleep(1).then((): string => 'retry')
+          ])
+          if (raced === 'failed') {
+            await execPromise
+          }
+          finished = raced === 'done'
+        }
+        await execPromise
+      } catch (e) {
+        if (e instanceof Error) {
+          throw e
+        }
+        throw new Error('ConditionVariable notify-retry task failed')
       }
-      await execPromise
       expect(result.value).assertEqual('task awakened')
     })
 
@@ -290,16 +301,27 @@ export default function ConditionVariableTest(): void {
       let execPromise: Promise<Object> = taskpool.execute(task)
 
       // Promise-driven: race task completion vs short yield; notify until done (no shared-flag polling)
-      let finished: boolean = false
-      while (!finished) {
-        cv.notifyOne()
-        let raced: string = await Promise.race([
-          execPromise.then((): string => 'done'),
-          sleep(1).then((): string => 'retry')
-        ])
-        finished = raced === 'done'
+      // Rejection handler prevents unhandled rejection if sleep wins the race first
+      try {
+        let finished: boolean = false
+        while (!finished) {
+          cv.notifyOne()
+          let raced: string = await Promise.race([
+            execPromise.then((): string => 'done', (): string => 'failed'),
+            sleep(1).then((): string => 'retry')
+          ])
+          if (raced === 'failed') {
+            await execPromise
+          }
+          finished = raced === 'done'
+        }
+        await execPromise
+      } catch (e) {
+        if (e instanceof Error) {
+          throw e
+        }
+        throw new Error('ConditionVariable notify-retry task failed')
       }
-      await execPromise
       expect(counter.done).assertTrue()
       expect(counter.count).assertEqual(1)
     })

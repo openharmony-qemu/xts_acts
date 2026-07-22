@@ -13,7 +13,7 @@
 * limitations under the License.
 */
 
-import { BusinessError } from '@ohos.base';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export class SharedCounter {
   private sharedBuffer: SharedArrayBuffer;

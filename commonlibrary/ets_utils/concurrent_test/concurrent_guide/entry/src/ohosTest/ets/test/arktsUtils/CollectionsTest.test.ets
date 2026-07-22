@@ -15,7 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections, taskpool, ArkTSUtils } from '@kit.ArkTS';
-import { BusinessError } from '@ohos.base';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 @Concurrent
 async function safePush(lock: ArkTSUtils.locks.AsyncLock,
