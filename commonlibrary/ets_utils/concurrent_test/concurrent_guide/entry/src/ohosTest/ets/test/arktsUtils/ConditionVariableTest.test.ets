@@ -121,7 +121,7 @@ export default function ConditionVariableTest(): void {
     /**
      * @tc.name   ConditionVariableTest0400
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_CONDITIONVARIABLE_TEST_0400
-     * @tc.desc   Verify ConditionVariable.waitFor() returns after timeout
+     * @tc.desc   Verify ConditionVariable.waitFor() resolves (void) after timeout
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -130,8 +130,10 @@ export default function ConditionVariableTest(): void {
       let cv: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable()
       let completed: boolean = false
       try {
-        await cv.waitFor(100)
+        // API: waitFor(): Promise<void> — resolves on timeout or notify (not boolean false)
+        let result: void = await cv.waitFor(100)
         completed = true
+        expect(result === undefined).assertTrue()
       } catch (e) {
         // waitFor should not throw on timeout
         expect().assertFail()
@@ -235,19 +237,16 @@ export default function ConditionVariableTest(): void {
     /**
      * @tc.name   ConditionVariableTest0800
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_ARKTS_UTILS_CONDITIONVARIABLE_TEST_0800
-     * @tc.desc   Verify ConditionVariable.waitFor() with zero timeout returns immediately
+     * @tc.desc   Verify ConditionVariable.waitFor(0) resolves (void) immediately
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('ConditionVariableTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let cv: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable()
-      let waitCompleted: boolean = false
-
-      await cv.waitFor(0)
-      waitCompleted = true
-
-      expect(waitCompleted).assertTrue()
+      // API: waitFor(): Promise<void> — zero timeout resolves immediately with undefined
+      let result: void = await cv.waitFor(0)
+      expect(result === undefined).assertTrue()
     })
 
     /**
@@ -348,8 +347,8 @@ export default function ConditionVariableTest(): void {
       await sleep(1)
       expect(wokeEarly).assertFalse()
       cv.notifyOne()
-      await waitPromise
-
+      let result: void = await waitPromise
+      expect(result === undefined).assertTrue()
       expect(wokeEarly).assertTrue()
     })
   })
