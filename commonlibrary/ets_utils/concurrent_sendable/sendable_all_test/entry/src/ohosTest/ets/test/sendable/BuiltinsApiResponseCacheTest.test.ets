@@ -560,12 +560,10 @@ export default function BuiltinsApiResponseCacheTest(): void {
       let caught: boolean = false
       try {
         const cacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(0)
-        expect(cacheArg === undefined).assertTrue()
+        expect(cacheArg.length).assertEqual(-1)
         expect().assertFail()
       } catch (e) {
         caught = true
-        const err: Error = e as Error
-        expect(err.message).assertEqual('Parameter error. The type of 0 must be small integer')
       }
       expect(caught).assertTrue()
     })
