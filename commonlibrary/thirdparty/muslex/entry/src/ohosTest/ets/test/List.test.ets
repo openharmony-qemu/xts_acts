@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ 
 import QsortRNdkTest from './QsortRNdk.test';
 import AcosfFiniteNdkTest from './AcosfFiniteNdk.test';
 import AsPrintfChkNdkTest from './AsprintfChkNdk.test';
@@ -50,7 +51,7 @@ import LogFiniteNdkTest from './LogFiniteNdk.test';
 import LongjmpChkNdkTest from './LongjmpChkNdk.test';
 import PowfFiniteNdkTest from './PowfFiniteNdk.test';
 import PowFiniteNdkTest from './PowFiniteNdk.test';
-import Fcntl64NativeTest from './Fcntl64Native.test';
+import Fcntl64NdkTest from './Fcntl64Ndk.test';
 import MuslVersionNdkTest from './MuslVersionNdk.test';
 import GetResTraceIdNdkTest from './GetResTraceIdNdk.test';
 import PthreadExtFuncPolicyNdkTest from './PthreadExtFuncPolicyNdk.test';
@@ -127,7 +128,7 @@ export default function testsuite() {
   LongjmpChkNdkTest();
   PowfFiniteNdkTest();
   PowFiniteNdkTest();
-  Fcntl64NativeTest();
+  Fcntl64NdkTest();
   FedisableExceptNdkTest();
   FeenableExceptNdkTest();
   FegetExceptNdkTest();
