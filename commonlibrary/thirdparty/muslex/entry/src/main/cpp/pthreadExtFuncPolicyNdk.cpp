@@ -113,7 +113,8 @@ static napi_value PthreadExtFuncPolicyAbnormal002(napi_env env, napi_callback_in
     {
         return ReturnInt32(env, 1);
     }
-    for (int i = 0; i < 20; ++i)
+    int loopCount = 20;
+    for (int i = 0; i < loopCount; ++i)
     {
         int ret = CallPthreadExtFuncPolicy();
         if (ret < 0)
@@ -203,16 +204,26 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"pthreadExtFuncPolicyNormal001", nullptr, PthreadExtFuncPolicyNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadExtFuncPolicyNormal002", nullptr, PthreadExtFuncPolicyNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadExtFuncPolicyNormal003", nullptr, PthreadExtFuncPolicyNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadExtFuncPolicyNormal004", nullptr, PthreadExtFuncPolicyNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadExtFuncPolicyAbnormal001", nullptr, PthreadExtFuncPolicyAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadExtFuncPolicyAbnormal002", nullptr, PthreadExtFuncPolicyAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadExtFuncPolicyBoundary001", nullptr, PthreadExtFuncPolicyBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadExtFuncPolicyBoundary002", nullptr, PthreadExtFuncPolicyBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadExtFuncPolicyStable001", nullptr, PthreadExtFuncPolicyStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadExtFuncPolicyThread001", nullptr, PthreadExtFuncPolicyThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadExtFuncPolicyNormal001", nullptr, PthreadExtFuncPolicyNormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadExtFuncPolicyNormal002", nullptr, PthreadExtFuncPolicyNormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadExtFuncPolicyNormal003", nullptr, PthreadExtFuncPolicyNormal003, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadExtFuncPolicyNormal004", nullptr, PthreadExtFuncPolicyNormal004, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadExtFuncPolicyAbnormal001", nullptr, PthreadExtFuncPolicyAbnormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadExtFuncPolicyAbnormal002", nullptr, PthreadExtFuncPolicyAbnormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadExtFuncPolicyBoundary001", nullptr, PthreadExtFuncPolicyBoundary001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadExtFuncPolicyBoundary002", nullptr, PthreadExtFuncPolicyBoundary002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadExtFuncPolicyStable001", nullptr, PthreadExtFuncPolicyStable001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadExtFuncPolicyThread001", nullptr, PthreadExtFuncPolicyThread001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

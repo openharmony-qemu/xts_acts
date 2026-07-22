@@ -25,6 +25,9 @@
 static constexpr int K_STABLE_LOOP_10000 = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
+static constexpr int K_CHAR_POS = 4;
+static constexpr int K_LONG_STR_SIZE = 10000;
+static constexpr int K_HALF_DIV = 2;
 
 static void* CallRawmemchr(const void* s, int c)
 {
@@ -105,7 +108,7 @@ static napi_value RawmemchrNormal003(napi_env env, napi_callback_info info)
     }
     const char* s = "Hello";
     void* result = CallRawmemchr(s, 'o');
-    const char* expected = s + 4;
+    const char* expected = s + K_CHAR_POS;
     return ReturnInt32(env, (result == expected) ? 1 : 0);
 }
 
@@ -141,10 +144,10 @@ static napi_value RawmemchrNormal006(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    std::string longStr(10000, 'a');
-    longStr[5000] = 'X';
+    std::string longStr(K_LONG_STR_SIZE, 'a');
+    longStr[K_LONG_STR_SIZE / K_HALF_DIV] = 'X';
     void* result = CallRawmemchr(longStr.c_str(), 'X');
-    const char* expected = longStr.c_str() + 5000;
+    const char* expected = longStr.c_str() + K_LONG_STR_SIZE / K_HALF_DIV;
     return ReturnInt32(env, (result == expected) ? 1 : 0);
 }
 
@@ -160,8 +163,10 @@ static napi_value RawmemchrAbnormal001(napi_env env, napi_callback_info info)
     const char* s = "Hello";
     void* result = CallRawmemchr(s, 'x');
     const char* expected = s + 5;
-    // If result equals expected (pointing to NUL terminator), or result is nullptr (stub implementation), both count as pass
-    // Because in some musl implementations, rawmemchr may return nullptr instead of pointing to NUL
+    // If result equals expected (pointing to NUL terminator), or result is nullptr
+    // (stub implementation), both count as pass
+    // Because in some musl implementations, rawmemchr may return nullptr
+    // instead of pointing to NUL
     if (result == expected || result == nullptr)
     {
         return ReturnInt32(env, 1);
@@ -176,10 +181,11 @@ static napi_value RawmemchrAbnormal002(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    std::string longStr(10000, 'a');
+    std::string longStr(K_LONG_STR_SIZE, 'a');
     void* result = CallRawmemchr(longStr.c_str(), 'X');
-    const char* expected = longStr.c_str() + 10000;
-    // If result equals expected (pointing to NUL terminator), or result is nullptr (stub implementation), both count as pass
+    const char* expected = longStr.c_str() + K_LONG_STR_SIZE;
+    // If result equals expected (pointing to NUL terminator), or result is nullptr
+    // (stub implementation), both count as pass
     if (result == expected || result == nullptr)
     {
         return ReturnInt32(env, 1);
@@ -196,9 +202,9 @@ static napi_value RawmemchrBoundary001(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    std::string longStr(10000, 'a');
+    std::string longStr(K_LONG_STR_SIZE, 'a');
     void* result = CallRawmemchr(longStr.c_str(), '\0');
-    const char* expected = longStr.c_str() + 10000;
+    const char* expected = longStr.c_str() + K_LONG_STR_SIZE;
     if (result == expected || result == nullptr)
     {
         return ReturnInt32(env, 1);
@@ -220,7 +226,7 @@ static napi_value RawmemchrStable001(napi_env env, napi_callback_info info)
     for (int i = 0; i < K_STABLE_LOOP_10000; ++i)
     {
         void* result = CallRawmemchr(s, 'o');
-        if (result != s + 4)
+        if (result != s + K_CHAR_POS)
         {
             pass = false;
             break;

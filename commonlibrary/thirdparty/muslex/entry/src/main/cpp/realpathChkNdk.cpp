@@ -220,7 +220,8 @@ static napi_value RealpathChkStable001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < 20; ++i)
+    int loopCount = 20;
+    for (int i = 0; i < loopCount; ++i)
     {
         char buf[PATH_MAX];
         char* result = CallRealpathChk("/", buf, sizeof(buf));

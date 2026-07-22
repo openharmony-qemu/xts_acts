@@ -190,9 +190,10 @@ static napi_value PrintfChkBoundary001(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    std::string longFmt(3000, 'x');
+    int fmtSize = 3000;
+    std::string longFmt(fmtSize, 'x');
     int ret = CallPrintfChk(0, longFmt.c_str());
-    return ReturnInt32(env, (ret == 3000) ? 1 : 0);
+    return ReturnInt32(env, (ret == fmtSize) ? 1 : 0);
 }
 
 /* TC-011: Very long output string */
@@ -202,9 +203,10 @@ static napi_value PrintfChkBoundary002(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    std::string longStr(2000, 'a');
+    int strSize = 2000;
+    std::string longStr(strSize, 'a');
     int ret = CallPrintfChk(0, "%s", longStr.c_str());
-    return ReturnInt32(env, (ret == 2000) ? 1 : 0);
+    return ReturnInt32(env, (ret == strSize) ? 1 : 0);
 }
 
 /* ==================== Stability Tests ==================== */

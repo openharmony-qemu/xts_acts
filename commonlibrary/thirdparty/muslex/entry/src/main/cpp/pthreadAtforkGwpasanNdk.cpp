@@ -25,21 +25,21 @@ static constexpr int K_STABLE_LOOP = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
 
-static int gPrepareCalled = 0;
-static int gParentCalled = 0;
-static int gChildCalled = 0;
+static int g_prepareCalled = 0;
+static int g_parentCalled = 0;
+static int g_childCalled = 0;
 
 static void PrepareHandler()
 {
-    gPrepareCalled++;
+    g_prepareCalled++;
 }
 static void ParentHandler()
 {
-    gParentCalled++;
+    g_parentCalled++;
 }
 static void ChildHandler()
 {
-    gChildCalled++;
+    g_childCalled++;
 }
 
 static int CallPthreadAtforkGwpasan(void (*prepare)(void), void (*parent)(void), void (*child)(void))
@@ -201,16 +201,26 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"pthreadAtforkGwpasanNormal001", nullptr, PthreadAtforkGwpasanNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAtforkGwpasanNormal002", nullptr, PthreadAtforkGwpasanNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAtforkGwpasanNormal003", nullptr, PthreadAtforkGwpasanNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAtforkGwpasanNormal004", nullptr, PthreadAtforkGwpasanNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAtforkGwpasanAbnormal001", nullptr, PthreadAtforkGwpasanAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAtforkGwpasanAbnormal002", nullptr, PthreadAtforkGwpasanAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAtforkGwpasanBoundary001", nullptr, PthreadAtforkGwpasanBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAtforkGwpasanBoundary002", nullptr, PthreadAtforkGwpasanBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAtforkGwpasanStable001", nullptr, PthreadAtforkGwpasanStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAtforkGwpasanThread001", nullptr, PthreadAtforkGwpasanThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadAtforkGwpasanNormal001", nullptr, PthreadAtforkGwpasanNormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAtforkGwpasanNormal002", nullptr, PthreadAtforkGwpasanNormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAtforkGwpasanNormal003", nullptr, PthreadAtforkGwpasanNormal003, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAtforkGwpasanNormal004", nullptr, PthreadAtforkGwpasanNormal004, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAtforkGwpasanAbnormal001", nullptr, PthreadAtforkGwpasanAbnormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAtforkGwpasanAbnormal002", nullptr, PthreadAtforkGwpasanAbnormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAtforkGwpasanBoundary001", nullptr, PthreadAtforkGwpasanBoundary001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAtforkGwpasanBoundary002", nullptr, PthreadAtforkGwpasanBoundary002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAtforkGwpasanStable001", nullptr, PthreadAtforkGwpasanStable001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAtforkGwpasanThread001", nullptr, PthreadAtforkGwpasanThread001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

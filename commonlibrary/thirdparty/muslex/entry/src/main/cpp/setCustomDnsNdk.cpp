@@ -102,8 +102,7 @@ static napi_value SetcustomdnsNormal002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     CallSetcustomdns(DummyResolver);
-    struct addrinfo hints;
-    memset(&hints, 0, sizeof(hints));
+    struct addrinfo hints = {};
     hints.ai_family = AF_UNSPEC;
     struct addrinfo* res = nullptr;
     int ret = CallGetaddrinfoCustom("localhost", "80", &hints, &res);

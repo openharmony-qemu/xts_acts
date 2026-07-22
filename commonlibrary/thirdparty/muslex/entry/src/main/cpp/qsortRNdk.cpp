@@ -987,7 +987,8 @@ static napi_value QsortRStable005(napi_env env, napi_callback_info info)
         return (ix > iy) - (ix < iy);
     };
 
-    int errno1 = 0, errno2 = 0;
+    int errno1 = 0;
+int errno2 = 0;
     std::thread t1([&qsortR, &a1, &cmp, n, &errno1]()
     {
         errno = 0;

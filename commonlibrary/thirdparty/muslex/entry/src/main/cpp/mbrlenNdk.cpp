@@ -26,6 +26,8 @@
 static constexpr int K_STABLE_LOOP_10000 = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
+static constexpr size_t MBR_INCOMPLETE = static_cast<size_t>(-2);
+static constexpr int utf8len3 = 3;
 
 static size_t CallMbrlen(const char* s, size_t n, mbstate_t* ps)
 {
@@ -91,7 +93,7 @@ static napi_value MbrlenNormal002(napi_env env, napi_callback_info info)
     mbstate_t state = {};
     const char* s = "\xE4\xB8\xAD";
     size_t ret = CallMbrlen(s, MB_CUR_MAX, &state);
-    return ReturnInt32(env, (ret == 3) ? 1 : 0);
+    return ReturnInt32(env, (ret == utf8len3) ? 1 : 0);
 }
 
 /* TC-003: Empty string should return 0 */
@@ -148,7 +150,7 @@ static napi_value MbrlenNormal006(napi_env env, napi_callback_info info)
     mbstate_t state = {};
     const char* s = "\xE4\xB8\xAD\xE6\x96\x87"; // "Chinese characters"
     size_t ret = CallMbrlen(s, MB_CUR_MAX, &state);
-    return ReturnInt32(env, (ret == 3) ? 1 : 0);
+    return ReturnInt32(env, (ret == utf8len3) ? 1 : 0);
 }
 
 /* ==================== Abnormal Parameter Tests ==================== */
@@ -165,7 +167,7 @@ static napi_value MbrlenAbnormal001(napi_env env, napi_callback_info info)
     const char* s = "A";
     errno = 0;
     size_t ret = CallMbrlen(s, 0, &state);
-    return ReturnInt32(env, (ret == static_cast<size_t>(-2)) ? 1 : 0);
+    return ReturnInt32(env, (ret == MBR_INCOMPLETE) ? 1 : 0);
 }
 
 /* TC-008: Invalid UTF-8 sequence -> returns -1, errno=EILSEQ */
@@ -202,7 +204,7 @@ static napi_value MbrlenAbnormal003(napi_env env, napi_callback_info info)
     const char* s = "\xE4"; // Incomplete UTF-8
     errno = 0;
     size_t ret = CallMbrlen(s, 1, &state);
-    return ReturnInt32(env, (ret == static_cast<size_t>(-2)) ? 1 : 0);
+    return ReturnInt32(env, (ret == MBR_INCOMPLETE) ? 1 : 0);
 }
 
 /* TC-010: n = 0 with non-empty string -> returns -2 */
@@ -217,7 +219,7 @@ static napi_value MbrlenAbnormal004(napi_env env, napi_callback_info info)
     const char* s = "Hello";
     errno = 0;
     size_t ret = CallMbrlen(s, 0, &state);
-    return ReturnInt32(env, (ret == static_cast<size_t>(-2)) ? 1 : 0);
+    return ReturnInt32(env, (ret == MBR_INCOMPLETE) ? 1 : 0);
 }
 
 /* ==================== Boundary Value Tests ==================== */
@@ -250,7 +252,7 @@ static napi_value MbrlenBoundary002(napi_env env, napi_callback_info info)
     mbstate_t state = {};
     const char* s = "\xE4\xB8\xAD";
     size_t ret = CallMbrlen(s, MB_CUR_MAX, &state);
-    return ReturnInt32(env, (ret == 3) ? 1 : 0);
+    return ReturnInt32(env, (ret == utf8len3) ? 1 : 0);
 }
 
 /* TC-013: Very long valid UTF-8 string */
@@ -265,7 +267,8 @@ static napi_value MbrlenBoundary003(napi_env env, napi_callback_info info)
         setlocale(LC_ALL, "C");
     }
     mbstate_t state = {};
-    std::string longStr(1000, 'a');
+    int strSize = 1000;
+    std::string longStr(strSize, 'a');
     const char* s = longStr.c_str();
     size_t ret = CallMbrlen(s, MB_CUR_MAX, &state);
     return ReturnInt32(env, (ret == 1) ? 1 : 0);
@@ -303,7 +306,8 @@ static napi_value MbrlenStable002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < 20; ++i)
+    int loopCount = 20;
+    for (int i = 0; i < loopCount; ++i)
     {
         setlocale(LC_ALL, "C");
         mbstate_t state = {};
@@ -319,7 +323,7 @@ static napi_value MbrlenStable002(napi_env env, napi_callback_info info)
         }
         mbstate_t state2 = {};
         size_t ret2 = CallMbrlen("\xE4\xB8\xAD", MB_CUR_MAX, &state2);
-        if (ret2 != 3)
+        if (ret2 != utf8len3)
         {
             pass = false;
             break;
@@ -376,7 +380,7 @@ static napi_value MbrlenThread001(napi_env env, napi_callback_info info)
                     setlocale(LC_ALL, utf8Locale);
                     mbstate_t state2 = {};
                     size_t ret2 = CallMbrlen(utf8Str, MB_CUR_MAX, &state2);
-                    if (ret2 != 3)
+                    if (ret2 != utf8len3)
                     {
                         // If UTF-8 not available, not an error (skip)
                         continue;

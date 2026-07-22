@@ -113,7 +113,8 @@ static napi_value RemovecustomdnsAbnormal002(napi_env env, napi_callback_info in
     {
         return ReturnInt32(env, 1);
     }
-    for (int i = 0; i < 20; ++i)
+    int loopCount = 20;
+    for (int i = 0; i < loopCount; ++i)
     {
         int ret = CallRemovecustomdns();
         if (ret < 0)
@@ -131,7 +132,8 @@ static napi_value RemovecustomdnsBoundary001(napi_env env, napi_callback_info in
         return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < 10; ++i)
+    int loopCount = 10;
+    for (int i = 0; i < loopCount; ++i)
     {
         CallRemovecustomdns();
     }
@@ -196,16 +198,26 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"removecustomdnsNormal001", nullptr, RemovecustomdnsNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"removecustomdnsNormal002", nullptr, RemovecustomdnsNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"removecustomdnsNormal003", nullptr, RemovecustomdnsNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"removecustomdnsNormal004", nullptr, RemovecustomdnsNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"removecustomdnsAbnormal001", nullptr, RemovecustomdnsAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"removecustomdnsAbnormal002", nullptr, RemovecustomdnsAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"removecustomdnsBoundary001", nullptr, RemovecustomdnsBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"removecustomdnsBoundary002", nullptr, RemovecustomdnsBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"removecustomdnsStable001", nullptr, RemovecustomdnsStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"removecustomdnsThread001", nullptr, RemovecustomdnsThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"removecustomdnsNormal001", nullptr, RemovecustomdnsNormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"removecustomdnsNormal002", nullptr, RemovecustomdnsNormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"removecustomdnsNormal003", nullptr, RemovecustomdnsNormal003, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"removecustomdnsNormal004", nullptr, RemovecustomdnsNormal004, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"removecustomdnsAbnormal001", nullptr, RemovecustomdnsAbnormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"removecustomdnsAbnormal002", nullptr, RemovecustomdnsAbnormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"removecustomdnsBoundary001", nullptr, RemovecustomdnsBoundary001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"removecustomdnsBoundary002", nullptr, RemovecustomdnsBoundary002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"removecustomdnsStable001", nullptr, RemovecustomdnsStable001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"removecustomdnsThread001", nullptr, RemovecustomdnsThread001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

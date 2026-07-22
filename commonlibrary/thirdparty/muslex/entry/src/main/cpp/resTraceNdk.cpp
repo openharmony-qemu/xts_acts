@@ -27,6 +27,7 @@ typedef void (*RestraceFunc)(unsigned long long, void*, size_t, const char*, boo
 static constexpr int K_STABLE_LOOP = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
+static constexpr int K_ALLOC_100 = 100;
 
 static RestraceFunc GetRestraceFunc()
 {
@@ -68,12 +69,12 @@ static napi_value RestraceNormal001(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    void* addr = malloc(100);
+    void* addr = malloc(K_ALLOC_100);
     if (!addr)
     {
         return ReturnInt32(env, 0);
     }
-    bool ret = CallRestrace(1, addr, 100, "test", true);
+    bool ret = CallRestrace(1, addr, K_ALLOC_100, "test", true);
     free(addr);
     return ReturnInt32(env, ret ? 1 : 0);
 }
@@ -84,12 +85,12 @@ static napi_value RestraceNormal002(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    void* addr = malloc(100);
+    void* addr = malloc(K_ALLOC_100);
     if (!addr)
     {
         return ReturnInt32(env, 0);
     }
-    bool ret = CallRestrace(1, addr, 100, "test", false);
+    bool ret = CallRestrace(1, addr, K_ALLOC_100, "test", false);
     free(addr);
     return ReturnInt32(env, ret ? 1 : 0);
 }
@@ -125,7 +126,7 @@ static napi_value RestraceAbnormal001(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    CallRestrace(1, nullptr, 100, "test", true);
+    CallRestrace(1, nullptr, K_ALLOC_100, "test", true);
     return ReturnInt32(env, 1);
 }
 
@@ -135,12 +136,12 @@ static napi_value RestraceAbnormal002(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    void* addr = malloc(100);
+    void* addr = malloc(K_ALLOC_100);
     if (!addr)
     {
         return ReturnInt32(env, 0);
     }
-    CallRestrace(1, addr, 100, nullptr, true);
+    CallRestrace(1, addr, K_ALLOC_100, nullptr, true);
     free(addr);
     return ReturnInt32(env, 1);
 }
@@ -151,7 +152,7 @@ static napi_value RestraceBoundary001(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    void* addr = malloc(100);
+    void* addr = malloc(K_ALLOC_100);
     if (!addr)
     {
         return ReturnInt32(env, 0);
@@ -167,12 +168,12 @@ static napi_value RestraceBoundary002(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    void* addr = malloc(100);
+    void* addr = malloc(K_ALLOC_100);
     if (!addr)
     {
         return ReturnInt32(env, 0);
     }
-    bool ret = CallRestrace(0, addr, 100, "test", true);
+    bool ret = CallRestrace(0, addr, K_ALLOC_100, "test", true);
     free(addr);
     return ReturnInt32(env, ret ? 1 : 0);
 }
@@ -186,13 +187,13 @@ static napi_value RestraceStable001(napi_env env, napi_callback_info info)
     bool pass = true;
     for (int i = 0; i < K_STABLE_LOOP; ++i)
     {
-        void* addr = malloc(100);
+        void* addr = malloc(K_ALLOC_100);
         if (!addr)
         {
             pass = false;
             break;
         }
-        bool ret = CallRestrace(1, addr, 100, "test", true);
+        bool ret = CallRestrace(1, addr, K_ALLOC_100, "test", true);
         free(addr);
         if (!ret)
         {
@@ -217,13 +218,13 @@ static napi_value RestraceThread001(napi_env env, napi_callback_info info)
         {
             for (int i = 0; i < K_ITER_PER_THREAD; ++i)
             {
-                void* addr = malloc(100);
+                void* addr = malloc(K_ALLOC_100);
                 if (!addr)
                 {
                     hasError = true;
                     return;
                 }
-                CallRestrace(1, addr, 100, "test", true);
+                CallRestrace(1, addr, K_ALLOC_100, "test", true);
                 free(addr);
             }
         });

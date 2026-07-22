@@ -305,16 +305,26 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"pthreadAttrGetaffinityNpNormal001", nullptr, PthreadAttrGetaffinityNpNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAttrGetaffinityNpNormal002", nullptr, PthreadAttrGetaffinityNpNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAttrGetaffinityNpNormal003", nullptr, PthreadAttrGetaffinityNpNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAttrGetaffinityNpNormal004", nullptr, PthreadAttrGetaffinityNpNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAttrGetaffinityNpAbnormal001", nullptr, PthreadAttrGetaffinityNpAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAttrGetaffinityNpAbnormal002", nullptr, PthreadAttrGetaffinityNpAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAttrGetaffinityNpBoundary001", nullptr, PthreadAttrGetaffinityNpBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAttrGetaffinityNpBoundary002", nullptr, PthreadAttrGetaffinityNpBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAttrGetaffinityNpStable001", nullptr, PthreadAttrGetaffinityNpStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"pthreadAttrGetaffinityNpThread001", nullptr, PthreadAttrGetaffinityNpThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"pthreadAttrGetaffinityNpNormal001", nullptr, PthreadAttrGetaffinityNpNormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAttrGetaffinityNpNormal002", nullptr, PthreadAttrGetaffinityNpNormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAttrGetaffinityNpNormal003", nullptr, PthreadAttrGetaffinityNpNormal003, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAttrGetaffinityNpNormal004", nullptr, PthreadAttrGetaffinityNpNormal004, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAttrGetaffinityNpAbnormal001", nullptr, PthreadAttrGetaffinityNpAbnormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAttrGetaffinityNpAbnormal002", nullptr, PthreadAttrGetaffinityNpAbnormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAttrGetaffinityNpBoundary001", nullptr, PthreadAttrGetaffinityNpBoundary001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAttrGetaffinityNpBoundary002", nullptr, PthreadAttrGetaffinityNpBoundary002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAttrGetaffinityNpStable001", nullptr, PthreadAttrGetaffinityNpStable001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"pthreadAttrGetaffinityNpThread001", nullptr, PthreadAttrGetaffinityNpThread001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

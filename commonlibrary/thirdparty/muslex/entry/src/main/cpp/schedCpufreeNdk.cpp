@@ -94,7 +94,8 @@ static napi_value SchedCpufreeNormal003(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < 20; ++i)
+    int loopCount = 20;
+    for (int i = 0; i < loopCount; ++i)
     {
         cpu_set_t* set = CPU_ALLOC(1);
         if (!set)
@@ -175,7 +176,8 @@ static napi_value SchedCpufreeStable001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < 20; ++i)
+    int loopCount = 20;
+    for (int i = 0; i < loopCount; ++i)
     {
         cpu_set_t* set = CPU_ALLOC(1);
         if (!set)

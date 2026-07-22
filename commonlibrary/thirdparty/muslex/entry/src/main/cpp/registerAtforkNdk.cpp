@@ -219,7 +219,8 @@ static napi_value RegisterAtforkBoundary001(napi_env env, napi_callback_info inf
         return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < 10; ++i)
+    int loopCount = 10;
+    for (int i = 0; i < loopCount; ++i)
     {
         int ret = CallRegisterAtfork(PrepareHandler, ParentHandler, ChildHandler);
         if (ret != 0)
@@ -241,7 +242,8 @@ static napi_value RegisterAtforkStable001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < 20; ++i)
+    int loopCount = 20;
+    for (int i = 0; i < loopCount; ++i)
     {
         int ret = CallRegisterAtfork(nullptr, nullptr, nullptr);
         if (ret != 0)

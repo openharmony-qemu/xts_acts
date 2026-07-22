@@ -27,6 +27,8 @@ typedef void (*ResTraceMoveFunc)(unsigned long long, void*, void*, size_t);
 static constexpr int K_STABLE_LOOP = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
+static constexpr size_t K_ALLOC_200 = 200;
+static constexpr size_t K_ALLOC_100 = 100;
 
 static ResTraceMoveFunc GetResTraceMoveFunc()
 {
@@ -68,15 +70,15 @@ static napi_value ResTraceMoveNormal001(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    void* oldAddr = malloc(100);
-    void* newAddr = malloc(200);
+    void* oldAddr = malloc(K_ALLOC_100);
+    void* newAddr = malloc(K_ALLOC_200);
     if (!oldAddr || !newAddr)
     {
         free(oldAddr);
         free(newAddr);
         return ReturnInt32(env, 0);
     }
-    bool ret = CallResTraceMove(1, oldAddr, newAddr, 200);
+    bool ret = CallResTraceMove(1, oldAddr, newAddr, K_ALLOC_200);
     free(oldAddr);
     free(newAddr);
     return ReturnInt32(env, ret ? 1 : 0);
@@ -88,15 +90,15 @@ static napi_value ResTraceMoveNormal002(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    void* oldAddr = malloc(100);
-    void* newAddr = malloc(100);
+    void* oldAddr = malloc(K_ALLOC_100);
+    void* newAddr = malloc(K_ALLOC_100);
     if (!oldAddr || !newAddr)
     {
         free(oldAddr);
         free(newAddr);
         return ReturnInt32(env, 0);
     }
-    bool ret = CallResTraceMove(0, oldAddr, newAddr, 100);
+    bool ret = CallResTraceMove(0, oldAddr, newAddr, K_ALLOC_100);
     free(oldAddr);
     free(newAddr);
     return ReturnInt32(env, ret ? 1 : 0);
@@ -137,12 +139,12 @@ static napi_value ResTraceMoveAbnormal001(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    void* newAddr = malloc(100);
+    void* newAddr = malloc(K_ALLOC_100);
     if (!newAddr)
     {
         return ReturnInt32(env, 0);
     }
-    CallResTraceMove(1, nullptr, newAddr, 100);
+    CallResTraceMove(1, nullptr, newAddr, K_ALLOC_100);
     free(newAddr);
     return ReturnInt32(env, 1);
 }
@@ -153,12 +155,12 @@ static napi_value ResTraceMoveAbnormal002(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    void* oldAddr = malloc(100);
+    void* oldAddr = malloc(K_ALLOC_100);
     if (!oldAddr)
     {
         return ReturnInt32(env, 0);
     }
-    CallResTraceMove(1, oldAddr, nullptr, 100);
+    CallResTraceMove(1, oldAddr, nullptr, K_ALLOC_100);
     free(oldAddr);
     return ReturnInt32(env, 1);
 }
@@ -169,12 +171,12 @@ static napi_value ResTraceMoveBoundary001(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    void* addr = malloc(100);
+    void* addr = malloc(K_ALLOC_100);
     if (!addr)
     {
         return ReturnInt32(env, 0);
     }
-    bool ret = CallResTraceMove(1, addr, addr, 100);
+    bool ret = CallResTraceMove(1, addr, addr, K_ALLOC_100);
     free(addr);
     return ReturnInt32(env, ret ? 1 : 0);
 }
@@ -208,8 +210,8 @@ static napi_value ResTraceMoveStable001(napi_env env, napi_callback_info info)
     bool pass = true;
     for (int i = 0; i < K_STABLE_LOOP; ++i)
     {
-        void* oldAddr = malloc(100);
-        void* newAddr = malloc(200);
+        void* oldAddr = malloc(K_ALLOC_100);
+        void* newAddr = malloc(K_ALLOC_200);
         if (!oldAddr || !newAddr)
         {
             free(oldAddr);
@@ -217,7 +219,7 @@ static napi_value ResTraceMoveStable001(napi_env env, napi_callback_info info)
             pass = false;
             break;
         }
-        bool ret = CallResTraceMove(1, oldAddr, newAddr, 200);
+        bool ret = CallResTraceMove(1, oldAddr, newAddr, K_ALLOC_200);
         free(oldAddr);
         free(newAddr);
         if (!ret)
@@ -243,8 +245,8 @@ static napi_value ResTraceMoveThread001(napi_env env, napi_callback_info info)
         {
             for (int i = 0; i < K_ITER_PER_THREAD; ++i)
             {
-                void* oldAddr = malloc(100);
-                void* newAddr = malloc(200);
+                void* oldAddr = malloc(K_ALLOC_100);
+                void* newAddr = malloc(K_ALLOC_200);
                 if (!oldAddr || !newAddr)
                 {
                     free(oldAddr);
@@ -252,7 +254,7 @@ static napi_value ResTraceMoveThread001(napi_env env, napi_callback_info info)
                     hasError = true;
                     return;
                 }
-                CallResTraceMove(1, oldAddr, newAddr, 200);
+                CallResTraceMove(1, oldAddr, newAddr, K_ALLOC_200);
                 free(oldAddr);
                 free(newAddr);
             }
