@@ -15,7 +15,7 @@
 # limitations under the License.
 
 import json
-import time
+
 
 class PermissionUtils:
     systemPermissionList = []
@@ -39,10 +39,10 @@ class PermissionUtils:
                 self.userPermissionList.append(permissionInfo['name'])
 
     def getDevicePermissionList(self, permissionBundleInfo):
-        permissionBundleInfo = permissionBundleInfo[permissionBundleInfo.index('\n') + 1 :]
-        time.sleep(1)
-        permissionBundleInfoObj = json.loads(permissionBundleInfo)
-        devicePermissions = []
-        if 'defPermissions' in permissionBundleInfoObj:
-            devicePermissions = permissionBundleInfoObj['defPermissions']
-        return devicePermissions
+        startIdx = next((i for i, c in enumerate(permissionBundleInfo) if c == '{'), -1)
+        if startIdx == -1:
+            return []
+
+        decoder = json.JSONDecoder()
+        obj, _ = decoder.raw_decode(permissionBundleInfo, startIdx)
+        return obj.get('defPermissions', [])
