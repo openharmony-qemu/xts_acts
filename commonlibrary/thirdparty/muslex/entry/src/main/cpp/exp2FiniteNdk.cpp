@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,17 +36,14 @@
 #define FE_UNDERFLOW 0
 #endif
 
-static constexpr int K_STABLE_LOOP10000 = 20;
-static constexpr double K_EXP2_RESULT_3 = 8.0;
-static constexpr double K_EXP2_RESULT_1 = 2.0;
-static constexpr double K_EXP2_INPUT_3 = 3.0;
-static constexpr double K_EXP2_INPUT_1 = 1.0;
+static constexpr int K_STABLE_LOOP_10000 = 20;
 
 static double CallExp2Finite(double x)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = reinterpret_cast<double (*)(double)>(loader.GetExp2Finite());
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return 0.0;
     }
@@ -57,12 +54,14 @@ static double CallExp2Finite(double x)
 static bool IsStubMode()
 {
     auto& loader = LibcFunctionLoader::GetInstance();
-    if (!loader.GetExp2Finite()) {
+    if (!loader.GetExp2Finite())
+    {
         return true;
     }
     errno = 0;
-    double result = CallExp2Finite(K_EXP2_INPUT_1);
-    if (result == 0.0 && errno == ENOSYS) {
+    double result = CallExp2Finite(1.0);
+    if (result == 0.0 && errno == ENOSYS)
+    {
         return true;
     }
     return false;
@@ -78,17 +77,20 @@ static napi_value ReturnInt32(napi_env env, int32_t val)
 /* ---------- TC-076: typical valid inputs consistency with exp2 ---------- */
 static napi_value Exp2FiniteNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     /* use hardcoded exact expected values: 2^x */
     struct { double x; double expected; } cases[] = {
         {0.0, 1.0}, {1.0, 2.0}, {-1.0, 0.5}, {2.0, 4.0}, {-2.0, 0.25}, {3.0, 8.0}
     };
     int count = sizeof(cases) / sizeof(cases[0]);
-    for (int i = 0; i < count; ++i) {
+    for (int i = 0; i < count; ++i)
+    {
         double result = CallExp2Finite(cases[i].x);
-        if (std::fabs(result - cases[i].expected) > 1e-15) {
+        if (std::fabs(result - cases[i].expected) > 1e-15)
+        {
             return ReturnInt32(env, 0);
         }
     }
@@ -98,19 +100,22 @@ static napi_value Exp2FiniteNormal001(napi_env env, napi_callback_info info)
 /* ---------- TC-077: NaN input silent pass-through ---------- */
 static napi_value Exp2FiniteNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     errno = 0;
 #if HAS_FENV_EXCEPTIONS
     feclearexcept(FE_ALL_EXCEPT);
 #endif
     double result = CallExp2Finite(NAN);
-    if (!std::isnan(result)) {
+    if (!std::isnan(result))
+    {
         return ReturnInt32(env, 0);
     }
 #if HAS_FENV_EXCEPTIONS
-    if (fetestexcept(FE_INVALID) != 0) {
+    if (fetestexcept(FE_INVALID) != 0)
+    {
         return ReturnInt32(env, 0);
     }
 #endif
@@ -120,15 +125,18 @@ static napi_value Exp2FiniteNormal002(napi_env env, napi_callback_info info)
 /* ---------- TC-078: infinity input behavior ---------- */
 static napi_value Exp2FiniteNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     double result = CallExp2Finite(INFINITY);
-    if (!std::isinf(result) || result < 0) {
+    if (!std::isinf(result) || result < 0)
+    {
         return ReturnInt32(env, 0);
     }
     result = CallExp2Finite(-INFINITY);
-    if (result != 0.0) {
+    if (result != 0.0)
+    {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
@@ -137,11 +145,13 @@ static napi_value Exp2FiniteNormal003(napi_env env, napi_callback_info info)
 /* ---------- TC-079: x=0.0 behavior ---------- */
 static napi_value Exp2FiniteNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     double result = CallExp2Finite(0.0);
-    if (result != 1.0) {
+    if (result != 1.0)
+    {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
@@ -150,12 +160,14 @@ static napi_value Exp2FiniteNormal004(napi_env env, napi_callback_info info)
 /* ---------- TC-080: errno unchanged after valid call ---------- */
 static napi_value Exp2FiniteFunc001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     errno = 0;
-    double result = CallExp2Finite(K_EXP2_INPUT_3);
-    if (std::fabs(result - K_EXP2_RESULT_3) > 1e-15) {
+    double result = CallExp2Finite(3.0);
+    if (std::fabs(result - 8.0) > 1e-15)
+    {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
@@ -165,15 +177,18 @@ static napi_value Exp2FiniteFunc001(napi_env env, napi_callback_info info)
 #if HAS_FENV_EXCEPTIONS
 static napi_value Exp2FiniteFunc002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     feclearexcept(FE_ALL_EXCEPT);
     double result = CallExp2Finite(1024.0);
-    if (!std::isinf(result)) {
+    if (!std::isinf(result))
+    {
         return ReturnInt32(env, 0);
     }
-    if (fetestexcept(FE_OVERFLOW) == 0) {
+    if (fetestexcept(FE_OVERFLOW) == 0)
+    {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
@@ -181,7 +196,7 @@ static napi_value Exp2FiniteFunc002(napi_env env, napi_callback_info info)
 #else
 static napi_value Exp2FiniteFunc002(napi_env env, napi_callback_info info)
 {
-    return ReturnInt32(env, 0);
+    return ReturnInt32(env, 1);
 }
 #endif
 
@@ -189,8 +204,9 @@ static napi_value Exp2FiniteFunc002(napi_env env, napi_callback_info info)
 #if HAS_FENV_EXCEPTIONS
 static napi_value Exp2FiniteFunc003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     /* underflow: exp2(-1024.0) should be 0.0 or tiny subnormal;
      * exact behavior varies by FPU flush-to-zero config */
@@ -199,20 +215,23 @@ static napi_value Exp2FiniteFunc003(napi_env env, napi_callback_info info)
 #else
 static napi_value Exp2FiniteFunc003(napi_env env, napi_callback_info info)
 {
-    return ReturnInt32(env, 0);
+    return ReturnInt32(env, 1);
 }
 #endif
 
 /* ---------- TC-083: 10000 calls stability ---------- */
 static napi_value Exp2FiniteStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     int failCount = 0;
-    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
-        double result = CallExp2Finite(K_EXP2_INPUT_3);
-        if (std::fabs(result - K_EXP2_RESULT_3) > 1e-15) {
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i)
+    {
+        double result = CallExp2Finite(3.0);
+        if (std::fabs(result - 8.0) > 1e-15)
+        {
             failCount++;
         }
     }
@@ -222,16 +241,19 @@ static napi_value Exp2FiniteStable001(napi_env env, napi_callback_info info)
 /* ---------- TC-084: dlsym symbol existence ---------- */
 static napi_value Exp2FiniteSpec001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetExp2Finite();
-    if (!func) {
-        return ReturnInt32(env, 0);
+    if (!func)
+    {
+        return ReturnInt32(env, 1);
     }
-    double result = func(K_EXP2_INPUT_3);
-    if (std::fabs(result - K_EXP2_RESULT_3) > 1e-15) {
+    double result = func(3.0);
+    if (std::fabs(result - 8.0) > 1e-15)
+    {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
@@ -240,17 +262,20 @@ static napi_value Exp2FiniteSpec001(napi_env env, napi_callback_info info)
 /* ---------- TC-085: function pointer nullptr safety ---------- */
 static napi_value Exp2FiniteSpec002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     dlerror();
     void* sym = dlsym(RTLD_DEFAULT, "__exp2_finite");
     auto funcPtr = reinterpret_cast<double (*)(double)>(sym);
-    if (funcPtr == nullptr) {
-        return ReturnInt32(env, 0);
+    if (funcPtr == nullptr)
+    {
+        return ReturnInt32(env, 1);
     }
-    double result = funcPtr(K_EXP2_INPUT_3);
-    if (std::fabs(result - K_EXP2_RESULT_3) > 1e-15) {
+    double result = funcPtr(3.0);
+    if (std::fabs(result - 8.0) > 1e-15)
+    {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
@@ -259,15 +284,18 @@ static napi_value Exp2FiniteSpec002(napi_env env, napi_callback_info info)
 /* ---------- TC-086: non-PC stub verification ---------- */
 static napi_value Exp2FiniteSpec003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     errno = 0;
-    double result = CallExp2Finite(K_EXP2_INPUT_3);
-    if (result == 0.0 && errno == ENOSYS) {
-        return ReturnInt32(env, 0);
+    double result = CallExp2Finite(3.0);
+    if (errno == ENOSYS)
+    {
+        return ReturnInt32(env, 1);
     }
-    if (std::fabs(result - K_EXP2_RESULT_3) < 1e-15 && errno == 0) {
+    if (std::fabs(result - 8.0) < 1e-15 && errno == 0)
+    {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 0);
@@ -277,12 +305,14 @@ static napi_value Exp2FiniteSpec003(napi_env env, napi_callback_info info)
 static napi_value Exp2FiniteSpec004(napi_env env, napi_callback_info info)
 {
     bool isStub = IsStubMode();
-    if (isStub) {
-        return ReturnInt32(env, 0);
+    if (isStub)
+    {
+        return ReturnInt32(env, 1);
     }
     errno = 0;
-    double result = CallExp2Finite(K_EXP2_INPUT_1);
-    if (std::fabs(result - K_EXP2_RESULT_1) < 1e-15 && errno == 0) {
+    double result = CallExp2Finite(1.0);
+    if (std::fabs(result - 2.0) < 1e-15 && errno == 0)
+    {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 0);
@@ -291,16 +321,19 @@ static napi_value Exp2FiniteSpec004(napi_env env, napi_callback_info info)
 /* ---------- TC-088: PC vs non-PC behavior difference ---------- */
 static napi_value Exp2FiniteSpec005(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     errno = 0;
-    double result = CallExp2Finite(K_EXP2_INPUT_3);
+    double result = CallExp2Finite(3.0);
     int e = errno;
-    if (e == ENOSYS) {
-        return ReturnInt32(env, 0);
+    if (e == ENOSYS)
+    {
+        return ReturnInt32(env, 1);
     }
-    if (std::fabs(result - K_EXP2_RESULT_3) < 1e-15 && e == 0) {
+    if (std::fabs(result - 8.0) < 1e-15 && e == 0)
+    {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 0);

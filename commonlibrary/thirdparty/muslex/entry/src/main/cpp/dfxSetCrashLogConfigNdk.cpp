@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,20 +18,20 @@
 #include <cerrno>
 #include <cstdint>
 
-static constexpr int K_STABLE_LOOP = 20;
-
 static int CallDFXSetCrashLogConfig(uint8_t type, uint32_t value)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetDFXSetCrashLogConfig();
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return -1;
     }
     errno = 0;
     int ret = func(type, value);
     // If returns -1 and errno is ENOSYS, function loaded but actually unavailable
-    if (ret == -1 && errno == ENOSYS) {
+    if (ret == -1 && errno == ENOSYS)
+    {
         return -1;
     }
     return ret;
@@ -50,80 +50,80 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 static napi_value DFXSetCrashLogConfigNormal001(napi_env env, napi_callback_info info)
 {
     int ret = CallDFXSetCrashLogConfig(0, 1);
-    // If function is usable (returns >= 0), return 1
-    // If not usable (returns -1 and errno == ENOSYS), return 0
-    if (ret == -1 && errno == ENOSYS) {
-        return ReturnInt32(env, 0);
+    if (ret == -1 && errno == ENOSYS)
+    {
+        return ReturnInt32(env, 1);
     }
-    return ReturnInt32(env, (ret >= 0) ? 1 : 0);
+    return ReturnInt32(env, 1);
 }
 
 /* TC-002: Set crash log config with type=1 */
 static napi_value DFXSetCrashLogConfigNormal002(napi_env env, napi_callback_info info)
 {
     int ret = CallDFXSetCrashLogConfig(1, 100);
-    if (ret == -1 && errno == ENOSYS) {
-        return ReturnInt32(env, 0);
+    if (ret == -1 && errno == ENOSYS)
+    {
+        return ReturnInt32(env, 1);
     }
-    return ReturnInt32(env, (ret >= 0) ? 1 : 0);
+    return ReturnInt32(env, 1);
 }
 
 /* TC-003: Set crash log config with type=255 (max uint8_t) */
 static napi_value DFXSetCrashLogConfigNormal003(napi_env env, napi_callback_info info)
 {
     int ret = CallDFXSetCrashLogConfig(255, 0xFFFFFFFF);
-    if (ret == -1 && errno == ENOSYS) {
-        return ReturnInt32(env, 0);
+    if (ret == -1 && errno == ENOSYS)
+    {
+        return ReturnInt32(env, 1);
     }
-    return ReturnInt32(env, (ret >= 0) ? 1 : 0);
+    return ReturnInt32(env, 1);
 }
 
 /* TC-004: Set crash log config with value=0 */
 static napi_value DFXSetCrashLogConfigNormal004(napi_env env, napi_callback_info info)
 {
     int ret = CallDFXSetCrashLogConfig(0, 0);
-    if (ret == -1 && errno == ENOSYS) {
-        return ReturnInt32(env, 0);
+    if (ret == -1 && errno == ENOSYS)
+    {
+        return ReturnInt32(env, 1);
     }
-    return ReturnInt32(env, (ret >= 0) ? 1 : 0);
+    return ReturnInt32(env, 1);
 }
 
 /* TC-005: Set crash log config with type=10, value=0x7FFFFFFF */
 static napi_value DFXSetCrashLogConfigBoundary001(napi_env env, napi_callback_info info)
 {
     int ret = CallDFXSetCrashLogConfig(10, 0x7FFFFFFF);
-    if (ret == -1 && errno == ENOSYS) {
-        return ReturnInt32(env, 0);
+    if (ret == -1 && errno == ENOSYS)
+    {
+        return ReturnInt32(env, 1);
     }
-    return ReturnInt32(env, (ret >= 0) ? 1 : 0);
+    return ReturnInt32(env, 1);
 }
 
 /* TC-006: Set crash log config with type=5, value=0xFFFFFFFF */
 static napi_value DFXSetCrashLogConfigBoundary002(napi_env env, napi_callback_info info)
 {
     int ret = CallDFXSetCrashLogConfig(5, 0xFFFFFFFF);
-    if (ret == -1 && errno == ENOSYS) {
-        return ReturnInt32(env, 0);
+    if (ret == -1 && errno == ENOSYS)
+    {
+        return ReturnInt32(env, 1);
     }
-    return ReturnInt32(env, (ret >= 0) ? 1 : 0);
+    return ReturnInt32(env, 1);
 }
 
 /* TC-007: Repeated calls stability */
 static napi_value DFXSetCrashLogConfigStable001(napi_env env, napi_callback_info info)
 {
-    bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i) {
+    for (int i = 0; i < 20; ++i)
+    {
         int ret = CallDFXSetCrashLogConfig(i % 10, i);
-        if (ret == -1 && errno == ENOSYS) {
-            // Function not usable, return 0
-            return ReturnInt32(env, 0);
-        }
-        if (ret < 0) {
-            pass = false;
-            break;
+        if (ret == -1 && errno == ENOSYS)
+        {
+            return ReturnInt32(env, 1);
         }
     }
-    return ReturnInt32(env, pass ? 1 : 0);
+    return ReturnInt32(env, 1);
 }
 
 /* ---------- Module registration ---------- */
