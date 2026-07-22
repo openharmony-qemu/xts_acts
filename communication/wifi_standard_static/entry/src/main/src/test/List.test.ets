@@ -18,7 +18,7 @@ import actsWifiManagerFunctionsTest from "./WifiManagerStationFunctionsStatic.te
 import actsWifiManagerP2PTest from "./WifiManagerP2PStatic.test";
 import wifiManager from '@ohos.wifiManager';
 
-let iswifisupport: boolean = false;
+let iswifisupport: boolean = true;
 try {
   iswifisupport = wifiManager.isWlanSupported();
   console.info('[WIFI_List] isWlanSupported result:' + support);
