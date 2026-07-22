@@ -64,14 +64,10 @@ export default function testsuite() {
       HttpRequestTlcpEnablePartialChainTest();
       HttpRequestTlsEnablePartialChainTest();
       HttpBodyParametersTest();
-      connection.getNetCapabilities(netHandle, (error: BusinessError, data: connection.NetCapabilities) => {
-        if (error) {
-          return;
-        }
-        if (data.bearerTypes[0] === connection.NetBearType.BEARER_CELLULAR) {
+      let NetCapabilities: connection.NetCapabilities = connection.getNetCapabilitiesSync(netHandle);
+      if (NetCapabilities.bearerTypes[0] === connection.NetBearType.BEARER_CELLULAR) {
           HttpRequestOptionsTest();
         }
-      });
     } else {
       EmptyTest();
     }
