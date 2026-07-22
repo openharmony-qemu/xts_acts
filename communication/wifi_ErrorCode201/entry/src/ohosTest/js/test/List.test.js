@@ -15,7 +15,7 @@
 import wifiManager from '@ohos.wifiManager';
 import actsWifiErrorCode201Test from './ActWifiErrorCode201.test.js'
 
-let iswifisupport = false;
+let iswifisupport = true;
 try {
   iswifisupport = wifiManager.isWlanSupported();
   console.info('[WIFI_List] isWlanSupported result:' + support);
