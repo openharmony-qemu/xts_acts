@@ -58,7 +58,7 @@ export class CallAddValuesRequest {
 export type WorkerRequest = WorkerReadyRequest | CalculateRequest | EchoRequest | CallAddValuesRequest
 
 function readResponseType(resp: ESObject): string {
-  return resp['type'] as string
+  return resp.type as string
 }
 
 export class WorkerExchange {
@@ -155,11 +155,11 @@ export class WorkerExchange {
         }
       })
     } finally {
-      // Always drop callback refs so WorkerExchange/ThreadWorker can be GC'd
-      this.wk.onmessage = undefined
-      this.wk.onmessageerror = undefined
-      this.wk.onerror = undefined
-      this.wk.onexit = undefined
+      // Clear handlers with no-ops (callback types may not accept undefined)
+      this.wk.onmessage = (_e: MessageEvents): void => {}
+      this.wk.onmessageerror = (_e: MessageEvents): void => {}
+      this.wk.onerror = (_e: ErrorEvent): void => {}
+      this.wk.onexit = (_code: number): void => {}
     }
   }
 }
