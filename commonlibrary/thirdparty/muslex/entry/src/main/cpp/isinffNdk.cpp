@@ -43,7 +43,7 @@ static bool IsStubMode()
     if (isinff == nullptr) {
         return true;  // Symbol not found, Stub mode
     }
-    
+
     errno = 0;
     isinff(0.0f);
     return (errno == ENOSYS);
@@ -105,19 +105,19 @@ static napi_value IsinffBoundary001(napi_env env, napi_callback_info info)
 static napi_value IsinffAbnormal001(napi_env env, napi_callback_info info)
 {
     auto isinff = GetIsinff();
-    
+
     struct TestResult {
         bool stubDetected = false;
         bool errnoSetCorrectly = false;
         bool returnValueCorrect = false;
         bool dataUnchanged = false;
     };
-    
+
     TestResult result;
-    
+
     // Scenario 1: detect Stub mode
     result.stubDetected = (isinff == nullptr);
-    
+
     // If Stub mode, verify errno setting
     if (isinff == nullptr) {
         // Try calling a non-existent function, verify errno behavior
@@ -133,24 +133,24 @@ static napi_value IsinffAbnormal001(napi_env env, napi_callback_info info)
         errno = 0;
         isinff(0.0f);
         result.errnoSetCorrectly = (errno != ENOSYS);
-        
+
         int ret1 = isinff(HUGE_VALF);
         int ret2 = isinff(-HUGE_VALF);
         int ret3 = isinff(NAN);
         int ret4 = isinff(0.0f);
         result.returnValueCorrect = (ret1 == 1 && ret2 == -1 && ret3 == 0 && ret4 == 0);
-        
+
         float testVal = 123.456f;
         float originalVal = testVal;
         isinff(testVal);
         result.dataUnchanged = (testVal == originalVal);
     }
-    
-    bool allPassed = result.stubDetected || 
-                     (result.errnoSetCorrectly && 
-                      result.returnValueCorrect && 
+
+    bool allPassed = result.stubDetected ||
+                     (result.errnoSetCorrectly &&
+                      result.returnValueCorrect &&
                       result.dataUnchanged);
-    
+
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
 
@@ -172,17 +172,17 @@ static napi_value IsinffAbnormal002(napi_env env, napi_callback_info info)
     if (isinff(NAN) != 0) {
         allPassed = false;
     }
-    
+
     float nearInf = 3.402823e38f;
     if (isinff(nearInf) != 0) {
         allPassed = false;
     }
-    
+
     float nearZero = 1e-38f;
     if (isinff(nearZero) != 0) {
         allPassed = false;
     }
-    
+
     return ReturnInt32(env, allPassed ? 1 : 0);
 }
 

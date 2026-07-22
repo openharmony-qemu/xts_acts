@@ -92,8 +92,7 @@ static unsigned char* QsortRElem(void* base, size_t index, size_t width)
 
 static void QsortRStoreValue(void* elem, QsortRKind kind, uint32_t value)
 {
-    switch (kind)
-    {
+    switch (kind) {
         case KIND_INT:
             *static_cast<int*>(elem) = static_cast<int>(value);
             break;
@@ -124,8 +123,7 @@ static void QsortRStoreValue(void* elem, QsortRKind kind, uint32_t value)
 static int QsortRValueOrder(const void* left, const void* right, const QsortRContext* ctx)
 {
     int ret = 0;
-    switch (ctx->kind)
-    {
+    switch (ctx->kind) {
         case KIND_INT: {
             int lhs = *static_cast<const int*>(left);
             int rhs = *static_cast<const int*>(right);
@@ -200,8 +198,7 @@ static void QsortRFillPattern(unsigned char* buffer, size_t nmemb, size_t width,
     uint32_t state = static_cast<uint32_t>(0x13572468u + width * 17u + nmemb * 131u + pattern * 977u);
     for (size_t i = 0; i < nmemb; ++i) {
         uint32_t value = 0;
-        switch (pattern)
-        {
+        switch (pattern) {
             case K_PATTERN_SORTED:
                 value = static_cast<uint32_t>(i);
                 break;

@@ -162,7 +162,8 @@ static napi_value IsnanAbnormal002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     bool pass = true;
-    union { double f; uint64_t i; } nan1, nan2;
+    union { double f; uint64_t i; } nan1;
+    union { double f; uint64_t i; } nan2;
     nan1.i = 0x7FF8000000000001ULL;
     nan2.i = 0x7FF8000000000002ULL;
     if (CallIsnan(nan1.f) == 0) {

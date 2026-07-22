@@ -255,7 +255,8 @@ static napi_value GetauxvalStable002(napi_env env, napi_callback_info info)
 // ==================== Multi-thread Tests ====================
 
 template<typename Func>
-static void GetauxvalThreadWorker(Func func, std::atomic<bool>& hasError, unsigned long items[], int iterationsPerThread)
+static void GetauxvalThreadWorker(Func func, std::atomic<bool>& hasError,
+    unsigned long items[], int iterationsPerThread)
 {
     for (int i = 0; i < iterationsPerThread; ++i) {
         int basiccount = 4;
@@ -295,9 +296,11 @@ static napi_value GetauxvalThread001(napi_env env, napi_callback_info info)
 }
 
 template<typename Func>
-static void GetauxvalThreadWorker2(Func func, std::atomic<bool>& hasError, unsigned long allItems[], int iterationsPerThread, int t)
+static void GetauxvalThreadWorker2(Func func, std::atomic<bool>& hasError,
+    unsigned long allItems[], int iterationsPerThread, int t)
 {
     for (int i = 0; i < iterationsPerThread; ++i) {
+        int basiccount = 4;
         int idx = (i + t) % 8;
         unsigned long result = func(allItems[idx]);
         // Verify return value and errno

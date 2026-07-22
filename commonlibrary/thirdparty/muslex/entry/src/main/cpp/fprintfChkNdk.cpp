@@ -516,7 +516,8 @@ static napi_value FprintfChkThread001(napi_env env, napi_callback_info info)
 }
 
 template<typename Func>
-static void FprintfChkThreadWorker2(Func func, FILE* sharedFile, std::atomic<bool>& hasError, int iterationsPerThread, int t)
+static void FprintfChkThreadWorker2(Func func, FILE* sharedFile,
+    std::atomic<bool>& hasError, int iterationsPerThread, int t)
 {
     for (int i = 0; i < iterationsPerThread; ++i) {
         int ret = func(sharedFile, 0, "%d %d\n", t, i);

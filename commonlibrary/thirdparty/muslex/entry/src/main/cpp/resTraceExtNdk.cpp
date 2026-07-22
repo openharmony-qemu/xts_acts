@@ -39,7 +39,7 @@ static RestraceExtFunc GetRestraceExtFunc()
 }
 
 static bool CallRestraceExt(unsigned long long mask, void* addr, size_t size,
-    const char* tag, bool isUsing, bool isWeakRef)
+    const char* tag, bool isUsing)
 {
     auto func = GetRestraceExtFunc();
     if (!func) {
@@ -47,7 +47,7 @@ static bool CallRestraceExt(unsigned long long mask, void* addr, size_t size,
         return false;
     }
     errno = 0;
-    func(mask, addr, size, tag, isUsing, isWeakRef);
+    func(mask, addr, size, tag, isUsing, false);
     return true;
 }
 
@@ -72,7 +72,7 @@ static napi_value RestraceExtNormal001(napi_env env, napi_callback_info info)
     if (!addr) {
         return ReturnInt32(env, 0);
     }
-    bool ret = CallRestraceExt(1, addr, K_ALLOC_100, "test", true, false);
+    bool ret = CallRestraceExt(1, addr, K_ALLOC_100, "test", true);
     free(addr);
     return ReturnInt32(env, ret ? 1 : 0);
 }
@@ -86,7 +86,7 @@ static napi_value RestraceExtNormal002(napi_env env, napi_callback_info info)
     if (!addr) {
         return ReturnInt32(env, 0);
     }
-    bool ret = CallRestraceExt(1, addr, K_ALLOC_100, "test", true, true);
+    bool ret = CallRestraceExt(1, addr, K_ALLOC_100, "test", true);
     free(addr);
     return ReturnInt32(env, ret ? 1 : 0);
 }
@@ -100,7 +100,7 @@ static napi_value RestraceExtNormal003(napi_env env, napi_callback_info info)
     if (!addr) {
         return ReturnInt32(env, 0);
     }
-    bool ret = CallRestraceExt(2, addr, 200, "tag2", false, false);
+    bool ret = CallRestraceExt(2, addr, 200, "tag2", false);
     free(addr);
     return ReturnInt32(env, ret ? 1 : 0);
 }
@@ -118,7 +118,7 @@ static napi_value RestraceExtAbnormal001(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
-    CallRestraceExt(1, nullptr, K_ALLOC_100, "test", true, false);
+    CallRestraceExt(1, nullptr, K_ALLOC_100, "test", true);
     return ReturnInt32(env, 1);
 }
 
@@ -131,7 +131,7 @@ static napi_value RestraceExtAbnormal002(napi_env env, napi_callback_info info)
     if (!addr) {
         return ReturnInt32(env, 0);
     }
-    CallRestraceExt(1, addr, K_ALLOC_100, nullptr, true, false);
+    CallRestraceExt(1, addr, K_ALLOC_100, nullptr, true);
     free(addr);
     return ReturnInt32(env, 1);
 }
@@ -145,7 +145,7 @@ static napi_value RestraceExtBoundary001(napi_env env, napi_callback_info info)
     if (!addr) {
         return ReturnInt32(env, 0);
     }
-    bool ret = CallRestraceExt(1, addr, 0, "test", true, false);
+    bool ret = CallRestraceExt(1, addr, 0, "test", true);
     free(addr);
     return ReturnInt32(env, ret ? 1 : 0);
 }
@@ -159,7 +159,7 @@ static napi_value RestraceExtBoundary002(napi_env env, napi_callback_info info)
     if (!addr) {
         return ReturnInt32(env, 0);
     }
-    bool ret = CallRestraceExt(1, addr, K_ALLOC_100, "test", false, false);
+    bool ret = CallRestraceExt(1, addr, K_ALLOC_100, "test", false);
     free(addr);
     return ReturnInt32(env, ret ? 1 : 0);
 }
@@ -176,7 +176,7 @@ static napi_value RestraceExtStable001(napi_env env, napi_callback_info info)
             pass = false;
             break;
         }
-        bool ret = CallRestraceExt(1, addr, K_ALLOC_100, "test", true, false);
+        bool ret = CallRestraceExt(1, addr, K_ALLOC_100, "test", true);
         free(addr);
         if (!ret) {
             pass = false;
@@ -194,7 +194,7 @@ static void RestraceExtThreadWorker(std::atomic<bool>& hasError)
             hasError = true;
             return;
         }
-        CallRestraceExt(1, addr, K_ALLOC_100, "test", true, false);
+        CallRestraceExt(1, addr, K_ALLOC_100, "test", true);
         free(addr);
     }
 }

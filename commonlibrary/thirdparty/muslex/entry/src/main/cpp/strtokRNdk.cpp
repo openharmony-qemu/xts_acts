@@ -268,6 +268,25 @@ static napi_value StrtokRStable001(napi_env env, napi_callback_info info)
 /* ==================== Multi-thread Tests ==================== */
 
 /* TC-012: Multi-thread safety (each thread uses its own saveptr) */
+static void StrtokRWorker(std::atomic<bool>& hasError)
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        char str[] = "a,b,c,d,e";
+        char* saveptr = nullptr;
+        int count = 0;
+        int expectedTokens = 5;
+        char* token = CallStrtokR(str, ",", &saveptr);
+        while (token != nullptr) {
+            count++;
+            token = CallStrtokR(nullptr, ",", &saveptr);
+        }
+        if (count != expectedTokens) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 static napi_value StrtokRThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
@@ -278,21 +297,7 @@ static napi_value StrtokRThread001(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                char str[] = "a,b,c,d,e";
-                char* saveptr = nullptr;
-                int count = 0;
-                int expectedTokens = 5;
-                char* token = CallStrtokR(str, ",", &saveptr);
-                while (token != nullptr) {
-                    count++;
-                    token = CallStrtokR(nullptr, ",", &saveptr);
-                }
-                if (count != expectedTokens) {
-                    hasError = true;
-                    return;
-                }
-            }
+            StrtokRWorker(hasError);
         });
     }
     for (auto& th : threads) {

@@ -182,6 +182,19 @@ static napi_value GetaddrinfoCustomStable001(napi_env env, napi_callback_info in
     return ReturnInt32(env, 1);
 }
 
+static void GetaddrinfoCustomWorker(std::atomic<bool>& hasError)
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        struct addrinfo hints = {};
+        hints.ai_family = AF_UNSPEC;
+        struct addrinfo* res = nullptr;
+        CallGetaddrinfoCustom("localhost", "80", &hints, &res);
+        if (res) {
+            freeaddrinfo(res);
+        }
+    }
+}
+
 static napi_value GetaddrinfoCustomThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
@@ -191,15 +204,7 @@ static napi_value GetaddrinfoCustomThread001(napi_env env, napi_callback_info in
     std::vector<std::thread> threads;
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                struct addrinfo hints = {};
-                hints.ai_family = AF_UNSPEC;
-                struct addrinfo* res = nullptr;
-                CallGetaddrinfoCustom("localhost", "80", &hints, &res);
-                if (res) {
-                    freeaddrinfo(res);
-                }
-            }
+            GetaddrinfoCustomWorker(hasError);
         });
     }
     for (auto& th : threads) {

@@ -188,6 +188,23 @@ static napi_value MktimeNoenvStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+static void MktimeNoenvWorker(std::atomic<bool>& hasError)
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        struct tm tmVal = {};
+        tmVal.tm_year = TEST_YEAR2026 - TM_YEAR_BASE;
+        int jan = 0;
+        tmVal.tm_mon = jan;
+        int day1 = 1;
+        tmVal.tm_mday = day1;
+        time_t ret = CallMktimeNoenv(&tmVal);
+        if (ret == -1 && errno == EOVERFLOW) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 static napi_value MktimeNoenvThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
@@ -197,17 +214,7 @@ static napi_value MktimeNoenvThread001(napi_env env, napi_callback_info info)
     std::vector<std::thread> threads;
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                struct tm tmVal = {};
-                tmVal.tm_year = TEST_YEAR2026 - TM_YEAR_BASE;
-                tmVal.tm_mon = 0;
-                tmVal.tm_mday = 1;
-                time_t ret = CallMktimeNoenv(&tmVal);
-                if (ret == -1 && errno == EOVERFLOW) {
-                    hasError = true;
-                    return;
-                }
-            }
+            MktimeNoenvWorker(hasError);
         });
     }
     for (auto& th : threads) {
