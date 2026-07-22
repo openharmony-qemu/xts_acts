@@ -31,7 +31,8 @@ static bool CallGwpAsanRegisterFfrt(FfrtGetStackFn fn)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetGwpAsanRegisterFfrt();
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return false;
     }
@@ -42,7 +43,8 @@ static bool CallGwpAsanRegisterFfrt(FfrtGetStackFn fn)
 
 static size_t DummyStackFn(size_t* frames, size_t maxFrames)
 {
-    if (frames && maxFrames > 0) {
+    if (frames && maxFrames > 0)
+    {
         frames[0] = 0;
     }
     return 1;
@@ -63,7 +65,8 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value GwpAsanRegisterFfrtNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
+    if (IsStubMode())
+    {
         return ReturnInt32(env, 1);
     }
     bool ret = CallGwpAsanRegisterFfrt(DummyStackFn);
@@ -72,7 +75,8 @@ static napi_value GwpAsanRegisterFfrtNormal001(napi_env env, napi_callback_info 
 
 static napi_value GwpAsanRegisterFfrtNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
+    if (IsStubMode())
+    {
         return ReturnInt32(env, 1);
     }
     bool ret = CallGwpAsanRegisterFfrt(nullptr);
@@ -81,7 +85,8 @@ static napi_value GwpAsanRegisterFfrtNormal002(napi_env env, napi_callback_info 
 
 static napi_value GwpAsanRegisterFfrtNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
+    if (IsStubMode())
+    {
         return ReturnInt32(env, 1);
     }
     CallGwpAsanRegisterFfrt(DummyStackFn);
@@ -91,7 +96,8 @@ static napi_value GwpAsanRegisterFfrtNormal003(napi_env env, napi_callback_info 
 
 static napi_value GwpAsanRegisterFfrtNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
+    if (IsStubMode())
+    {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
@@ -99,7 +105,8 @@ static napi_value GwpAsanRegisterFfrtNormal004(napi_env env, napi_callback_info 
 
 static napi_value GwpAsanRegisterFfrtAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
+    if (IsStubMode())
+    {
         return ReturnInt32(env, 1);
     }
     bool ret = CallGwpAsanRegisterFfrt(nullptr);
@@ -108,7 +115,8 @@ static napi_value GwpAsanRegisterFfrtAbnormal001(napi_env env, napi_callback_inf
 
 static napi_value GwpAsanRegisterFfrtAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
+    if (IsStubMode())
+    {
         return ReturnInt32(env, 1);
     }
     CallGwpAsanRegisterFfrt(DummyStackFn);
@@ -118,7 +126,8 @@ static napi_value GwpAsanRegisterFfrtAbnormal002(napi_env env, napi_callback_inf
 
 static napi_value GwpAsanRegisterFfrtBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
+    if (IsStubMode())
+    {
         return ReturnInt32(env, 1);
     }
     CallGwpAsanRegisterFfrt(DummyStackFn);
@@ -130,7 +139,8 @@ static napi_value GwpAsanRegisterFfrtBoundary001(napi_env env, napi_callback_inf
 
 static napi_value GwpAsanRegisterFfrtBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
+    if (IsStubMode())
+    {
         return ReturnInt32(env, 1);
     }
     CallGwpAsanRegisterFfrt(DummyStackFn);
@@ -140,13 +150,16 @@ static napi_value GwpAsanRegisterFfrtBoundary002(napi_env env, napi_callback_inf
 
 static napi_value GwpAsanRegisterFfrtStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
+    if (IsStubMode())
+    {
         return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP; ++i)
+    {
         bool ret = CallGwpAsanRegisterFfrt(DummyStackFn);
-        if (!ret) {
+        if (!ret)
+        {
             pass = false;
             break;
         }
@@ -157,20 +170,25 @@ static napi_value GwpAsanRegisterFfrtStable001(napi_env env, napi_callback_info 
 
 static napi_value GwpAsanRegisterFfrtThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
+    if (IsStubMode())
+    {
         return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t)
+    {
+        threads.emplace_back([&hasError]()
+        {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
+            {
                 CallGwpAsanRegisterFfrt(DummyStackFn);
                 CallGwpAsanRegisterFfrt(nullptr);
             }
         });
     }
-    for (auto& th : threads) {
+    for (auto& th : threads)
+    {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);
@@ -180,26 +198,16 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"gwpAsanRegisterFfrtNormal001", nullptr, GwpAsanRegisterFfrtNormal001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"gwpAsanRegisterFfrtNormal002", nullptr, GwpAsanRegisterFfrtNormal002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"gwpAsanRegisterFfrtNormal003", nullptr, GwpAsanRegisterFfrtNormal003, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"gwpAsanRegisterFfrtNormal004", nullptr, GwpAsanRegisterFfrtNormal004, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"gwpAsanRegisterFfrtAbnormal001", nullptr, GwpAsanRegisterFfrtAbnormal001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"gwpAsanRegisterFfrtAbnormal002", nullptr, GwpAsanRegisterFfrtAbnormal002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"gwpAsanRegisterFfrtBoundary001", nullptr, GwpAsanRegisterFfrtBoundary001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"gwpAsanRegisterFfrtBoundary002", nullptr, GwpAsanRegisterFfrtBoundary002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"gwpAsanRegisterFfrtStable001", nullptr, GwpAsanRegisterFfrtStable001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"gwpAsanRegisterFfrtThread001", nullptr, GwpAsanRegisterFfrtThread001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+        {"gwpAsanRegisterFfrtNormal001", nullptr, GwpAsanRegisterFfrtNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"gwpAsanRegisterFfrtNormal002", nullptr, GwpAsanRegisterFfrtNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"gwpAsanRegisterFfrtNormal003", nullptr, GwpAsanRegisterFfrtNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"gwpAsanRegisterFfrtNormal004", nullptr, GwpAsanRegisterFfrtNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"gwpAsanRegisterFfrtAbnormal001", nullptr, GwpAsanRegisterFfrtAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"gwpAsanRegisterFfrtAbnormal002", nullptr, GwpAsanRegisterFfrtAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"gwpAsanRegisterFfrtBoundary001", nullptr, GwpAsanRegisterFfrtBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"gwpAsanRegisterFfrtBoundary002", nullptr, GwpAsanRegisterFfrtBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"gwpAsanRegisterFfrtStable001", nullptr, GwpAsanRegisterFfrtStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"gwpAsanRegisterFfrtThread001", nullptr, GwpAsanRegisterFfrtThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

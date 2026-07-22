@@ -28,10 +28,11 @@ static constexpr int K_ITER_PER_THREAD = 10;
 
 static int CallGetaddrinfoCustom(const char* host, const char* serv,
                                  const struct addrinfo* hint, struct addrinfo** res)
-{
+                                 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetGetaddrinfoCustom();
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return -1;
     }
@@ -54,16 +55,18 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value GetaddrinfoCustomNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    struct addrinfo hints = {};
-    
+    struct addrinfo hints;
+    memset(&hints, 0, sizeof(hints));
     hints.ai_family = AF_UNSPEC;
     hints.ai_socktype = SOCK_STREAM;
     struct addrinfo* res = nullptr;
     CallGetaddrinfoCustom("localhost", "80", &hints, &res);
-    if (res) {
+    if (res)
+    {
         freeaddrinfo(res);
     }
     return ReturnInt32(env, 1);
@@ -71,16 +74,18 @@ static napi_value GetaddrinfoCustomNormal001(napi_env env, napi_callback_info in
 
 static napi_value GetaddrinfoCustomNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    struct addrinfo hints = {};
-    
+    struct addrinfo hints;
+    memset(&hints, 0, sizeof(hints));
     hints.ai_family = AF_INET;
     hints.ai_socktype = SOCK_STREAM;
     struct addrinfo* res = nullptr;
     CallGetaddrinfoCustom("127.0.0.1", "8080", &hints, &res);
-    if (res) {
+    if (res)
+    {
         freeaddrinfo(res);
     }
     return ReturnInt32(env, 1);
@@ -88,15 +93,17 @@ static napi_value GetaddrinfoCustomNormal002(napi_env env, napi_callback_info in
 
 static napi_value GetaddrinfoCustomNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    struct addrinfo hints = {};
-    
+    struct addrinfo hints;
+    memset(&hints, 0, sizeof(hints));
     hints.ai_family = AF_INET;
     struct addrinfo* res = nullptr;
     CallGetaddrinfoCustom(nullptr, "80", &hints, &res);
-    if (res) {
+    if (res)
+    {
         freeaddrinfo(res);
     }
     return ReturnInt32(env, 1);
@@ -104,20 +111,23 @@ static napi_value GetaddrinfoCustomNormal003(napi_env env, napi_callback_info in
 
 static napi_value GetaddrinfoCustomNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
 
 static napi_value GetaddrinfoCustomAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     struct addrinfo* res = nullptr;
     int ret = CallGetaddrinfoCustom(nullptr, nullptr, nullptr, &res);
-    if (res) {
+    if (res)
+    {
         freeaddrinfo(res);
     }
     return ReturnInt32(env, 1);
@@ -125,15 +135,17 @@ static napi_value GetaddrinfoCustomAbnormal001(napi_env env, napi_callback_info 
 
 static napi_value GetaddrinfoCustomAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    struct addrinfo hints = {};
-    
+    struct addrinfo hints;
+    memset(&hints, 0, sizeof(hints));
     hints.ai_family = AF_UNSPEC;
     struct addrinfo* res = nullptr;
     int ret = CallGetaddrinfoCustom("nonexistent.invalid.host", nullptr, &hints, &res);
-    if (res) {
+    if (res)
+    {
         freeaddrinfo(res);
     }
     return ReturnInt32(env, (ret != 0) ? 1 : 0);
@@ -141,15 +153,17 @@ static napi_value GetaddrinfoCustomAbnormal002(napi_env env, napi_callback_info 
 
 static napi_value GetaddrinfoCustomBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    struct addrinfo hints = {};
-    
+    struct addrinfo hints;
+    memset(&hints, 0, sizeof(hints));
     hints.ai_family = AF_UNSPEC;
     struct addrinfo* res = nullptr;
     int ret = CallGetaddrinfoCustom("", nullptr, &hints, &res);
-    if (res) {
+    if (res)
+    {
         freeaddrinfo(res);
     }
     return ReturnInt32(env, 1);
@@ -157,15 +171,17 @@ static napi_value GetaddrinfoCustomBoundary001(napi_env env, napi_callback_info 
 
 static napi_value GetaddrinfoCustomBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    struct addrinfo hints = {};
-    
+    struct addrinfo hints;
+    memset(&hints, 0, sizeof(hints));
     hints.ai_family = AF_UNSPEC;
     struct addrinfo* res = nullptr;
     CallGetaddrinfoCustom("localhost", "65535", &hints, &res);
-    if (res) {
+    if (res)
+    {
         freeaddrinfo(res);
     }
     return ReturnInt32(env, 1);
@@ -173,49 +189,53 @@ static napi_value GetaddrinfoCustomBoundary002(napi_env env, napi_callback_info 
 
 static napi_value GetaddrinfoCustomStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    for (int i = 0; i < K_STABLE_LOOP; ++i) {
-        struct addrinfo hints = {};
-        
+    for (int i = 0; i < K_STABLE_LOOP; ++i)
+    {
+        struct addrinfo hints;
+        memset(&hints, 0, sizeof(hints));
         hints.ai_family = AF_UNSPEC;
         struct addrinfo* res = nullptr;
         CallGetaddrinfoCustom("localhost", "80", &hints, &res);
-        if (res) {
+        if (res)
+        {
             freeaddrinfo(res);
         }
     }
     return ReturnInt32(env, 1);
 }
 
-static void GetaddrinfoCustomWorker(std::atomic<bool>& hasError)
-{
-    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-        struct addrinfo hints = {};
-
-        hints.ai_family = AF_UNSPEC;
-        struct addrinfo* res = nullptr;
-        CallGetaddrinfoCustom("localhost", "80", &hints, &res);
-        if (res) {
-            freeaddrinfo(res);
-        }
-    }
-}
-
 static napi_value GetaddrinfoCustomThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError]() {
-            GetaddrinfoCustomWorker(hasError);
+    for (int t = 0; t < K_THREAD_COUNT; ++t)
+    {
+        threads.emplace_back([&hasError]()
+        {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
+            {
+                struct addrinfo hints;
+                memset(&hints, 0, sizeof(hints));
+                hints.ai_family = AF_UNSPEC;
+                struct addrinfo* res = nullptr;
+                CallGetaddrinfoCustom("localhost", "80", &hints, &res);
+                if (res)
+                {
+                    freeaddrinfo(res);
+                }
+            }
         });
     }
-    for (auto& th : threads) {
+    for (auto& th : threads)
+    {
         th.join();
     }
     return ReturnInt32(env, 1);
@@ -225,26 +245,16 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"getaddrinfoCustomNormal001", nullptr, GetaddrinfoCustomNormal001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"getaddrinfoCustomNormal002", nullptr, GetaddrinfoCustomNormal002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"getaddrinfoCustomNormal003", nullptr, GetaddrinfoCustomNormal003, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"getaddrinfoCustomNormal004", nullptr, GetaddrinfoCustomNormal004, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"getaddrinfoCustomAbnormal001", nullptr, GetaddrinfoCustomAbnormal001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"getaddrinfoCustomAbnormal002", nullptr, GetaddrinfoCustomAbnormal002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"getaddrinfoCustomBoundary001", nullptr, GetaddrinfoCustomBoundary001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"getaddrinfoCustomBoundary002", nullptr, GetaddrinfoCustomBoundary002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"getaddrinfoCustomStable001", nullptr, GetaddrinfoCustomStable001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"getaddrinfoCustomThread001", nullptr, GetaddrinfoCustomThread001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+        {"getaddrinfoCustomNormal001", nullptr, GetaddrinfoCustomNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getaddrinfoCustomNormal002", nullptr, GetaddrinfoCustomNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getaddrinfoCustomNormal003", nullptr, GetaddrinfoCustomNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getaddrinfoCustomNormal004", nullptr, GetaddrinfoCustomNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getaddrinfoCustomAbnormal001", nullptr, GetaddrinfoCustomAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getaddrinfoCustomAbnormal002", nullptr, GetaddrinfoCustomAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getaddrinfoCustomBoundary001", nullptr, GetaddrinfoCustomBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getaddrinfoCustomBoundary002", nullptr, GetaddrinfoCustomBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getaddrinfoCustomStable001", nullptr, GetaddrinfoCustomStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getaddrinfoCustomThread001", nullptr, GetaddrinfoCustomThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

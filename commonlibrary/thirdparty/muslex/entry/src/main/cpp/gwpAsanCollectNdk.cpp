@@ -24,16 +24,13 @@
 static constexpr int K_STABLE_LOOP = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
-static constexpr uint64_t K_TIMESPAN = 1000;
-static constexpr uint64_t K_TIMESPAN_ZERO = 0;
-static constexpr uint64_t K_TIMESPAN_LARGE = 5000;
-static constexpr size_t K_DEPTH = 1;
 
 static size_t CallGwpAsanCollect(uint64_t timespan, uintptr_t* buffer, size_t maxCount, size_t depth = 1)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetGwpAsanCollect();
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return 0;
     }
@@ -56,41 +53,40 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value GwpAsanCollectNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
+    if (IsStubMode()) { // 找不到符号的设备 默认不做测试
         return ReturnInt32(env, 1);
     }
-    int bufcap = 2;
     uintptr_t buffer[10];
-    size_t ret = CallGwpAsanCollect(K_TIMESPAN, buffer, bufcap, K_DEPTH);
-    return ReturnInt32(env, (ret <= bufcap) ? 1 : 0);
+    size_t ret = CallGwpAsanCollect(1000, buffer, 2, 1);
+    return ReturnInt32(env, (ret <= 2) ? 1 : 0);
 }
 
 static napi_value GwpAsanCollectNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
+    if (IsStubMode())
+    {
         return ReturnInt32(env, 1);
     }
-    int bufcap = 2;
     uintptr_t buffer[10];
-    size_t ret = CallGwpAsanCollect(K_TIMESPAN_ZERO, buffer, bufcap, K_DEPTH);
-    return ReturnInt32(env, (ret <= bufcap) ? 1 : 0);
+    size_t ret = CallGwpAsanCollect(0, buffer, 2, 1);
+    return ReturnInt32(env, (ret <= 2) ? 1 : 0);
 }
 
 static napi_value GwpAsanCollectNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
+    if (IsStubMode())
+    {
         return ReturnInt32(env, 1);
     }
-    int bufcap = 5;
     uintptr_t buffer[20];
-    int depth = 4;
-    size_t ret = CallGwpAsanCollect(K_TIMESPAN_LARGE, buffer, bufcap, depth);
-    return ReturnInt32(env, (ret <= bufcap) ? 1 : 0);
+    size_t ret = CallGwpAsanCollect(5000, buffer, 5, 4);
+    return ReturnInt32(env, (ret <= 5) ? 1 : 0);
 }
 
 static napi_value GwpAsanCollectNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
+    if (IsStubMode())
+    {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
@@ -98,57 +94,60 @@ static napi_value GwpAsanCollectNormal004(napi_env env, napi_callback_info info)
 
 static napi_value GwpAsanCollectAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
+    if (IsStubMode())
+    {
         return ReturnInt32(env, 1);
     }
-    int bufcap = 2;
-    size_t ret = CallGwpAsanCollect(K_TIMESPAN, nullptr, bufcap, K_DEPTH);
+    size_t ret = CallGwpAsanCollect(1000, nullptr, 2, 1);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
 }
 
 static napi_value GwpAsanCollectAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
+    if (IsStubMode())
+    {
         return ReturnInt32(env, 1);
     }
     uintptr_t buffer[10];
-    size_t ret = CallGwpAsanCollect(K_TIMESPAN, buffer, 0, K_DEPTH);
+    size_t ret = CallGwpAsanCollect(1000, buffer, 0, 1);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
 }
 
 static napi_value GwpAsanCollectBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
+    if (IsStubMode())
+    {
         return ReturnInt32(env, 1);
     }
-    int bufcap = 2;
     uintptr_t buffer[20];
-    size_t ret = CallGwpAsanCollect(UINT64_MAX, buffer, bufcap, K_DEPTH);
+    size_t ret = CallGwpAsanCollect(UINT64_MAX, buffer, 2, 1);
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
 static napi_value GwpAsanCollectBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
+    if (IsStubMode())
+    {
         return ReturnInt32(env, 1);
     }
-    int bufcap = 1;
     uintptr_t buffer[4];
-    size_t ret = CallGwpAsanCollect(K_TIMESPAN, buffer, bufcap, K_DEPTH);
-    return ReturnInt32(env, (ret >= 0 && ret <= bufcap) ? 1 : 0);
+    size_t ret = CallGwpAsanCollect(1000, buffer, 1, 1);
+    return ReturnInt32(env, (ret >= 0 && ret <= 1) ? 1 : 0);
 }
 
 static napi_value GwpAsanCollectStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
+    if (IsStubMode())
+    {
         return ReturnInt32(env, 1);
     }
-    int bufcap = 2;
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP; ++i)
+    {
         uintptr_t buffer[10];
-        size_t ret = CallGwpAsanCollect(K_TIMESPAN, buffer, bufcap, K_DEPTH);
-        if (ret > bufcap) {
+        size_t ret = CallGwpAsanCollect(1000, buffer, 2, 1);
+        if (ret > 2)
+        {
             pass = false;
             break;
         }
@@ -158,21 +157,25 @@ static napi_value GwpAsanCollectStable001(napi_env env, napi_callback_info info)
 
 static napi_value GwpAsanCollectThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
+    if (IsStubMode())
+    {
         return ReturnInt32(env, 1);
     }
-    int bufcap = 2;
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError, bufcap]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+    for (int t = 0; t < K_THREAD_COUNT; ++t)
+    {
+        threads.emplace_back([&hasError]()
+        {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
+            {
                 uintptr_t buffer[10];
-                CallGwpAsanCollect(K_TIMESPAN, buffer, bufcap, K_DEPTH);
+                CallGwpAsanCollect(1000, buffer, 2, 1);
             }
         });
     }
-    for (auto& th : threads) {
+    for (auto& th : threads)
+    {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);
@@ -186,14 +189,10 @@ static napi_value Init(napi_env env, napi_value exports)
         {"gwpAsanCollectNormal002", nullptr, GwpAsanCollectNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"gwpAsanCollectNormal003", nullptr, GwpAsanCollectNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"gwpAsanCollectNormal004", nullptr, GwpAsanCollectNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"gwpAsanCollectAbnormal001", nullptr, GwpAsanCollectAbnormal001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"gwpAsanCollectAbnormal002", nullptr, GwpAsanCollectAbnormal002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"gwpAsanCollectBoundary001", nullptr, GwpAsanCollectBoundary001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"gwpAsanCollectBoundary002", nullptr, GwpAsanCollectBoundary002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+        {"gwpAsanCollectAbnormal001", nullptr, GwpAsanCollectAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"gwpAsanCollectAbnormal002", nullptr, GwpAsanCollectAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"gwpAsanCollectBoundary001", nullptr, GwpAsanCollectBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"gwpAsanCollectBoundary002", nullptr, GwpAsanCollectBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"gwpAsanCollectStable001", nullptr, GwpAsanCollectStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"gwpAsanCollectThread001", nullptr, GwpAsanCollectThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
