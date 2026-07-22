@@ -423,12 +423,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithinAbilityStat
           expect(buttonTwo).assertContain('允许获取本机通知')
         }
         await Utils.msSleep(2000)
-        //let scrollBar = await driver.findComponent(ON.type('List').isAfter(ON.text('全部')))
-        //console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-        //expect(scrollBar != null).assertTrue()
-        //scrollBar?.scrollToBottom()
-        //await Utils.msSleep(60000)
-        let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.originalText('AAAtest')));
+        let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.originalText('全部')));
         console.info(`${testNum} button is ${JSON.stringify(button)}`);
         if (button !== null) {
           await Utils.msSleep(500)
@@ -448,6 +443,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithinAbilityStat
           console.info(`${testNum} null button`);
           expect(buttonThree).assertContain('确定')
         }
+         await Utils.msSleep(1000)
         notificationExtensionSubscription.openSubscriptionSettingsWithResult(testContext).then((data) => {
           console.info(`${testNum}openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data?.userGrantEnabled).assertEqual(true)
