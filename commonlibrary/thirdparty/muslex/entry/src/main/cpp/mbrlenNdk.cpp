@@ -306,6 +306,28 @@ static napi_value MbrlenStable002(napi_env env, napi_callback_info info)
 /* ==================== Multi-thread Tests ==================== */
 
 /* TC-016: Multi-thread safety with different locales */
+static void MbrlenThreadWorker(std::atomic<bool>& hasError,
+    const char* asciiStr, const char* utf8Str, const char* utf8Locale)
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        (void)setlocale(LC_ALL, "C");
+        mbstate_t state = {};
+        size_t ret = CallMbrlen(asciiStr, 1, &state);
+        if (ret != 1) {
+            hasError = true;
+            return;
+        }
+        if (utf8Locale != nullptr) {
+            (void)setlocale(LC_ALL, utf8Locale);
+            mbstate_t state2 = {};
+            size_t ret2 = CallMbrlen(utf8Str, MB_CUR_MAX, &state2);
+            if (ret2 != UTF8LEN3) {
+                continue;
+            }
+        }
+    }
+}
+
 static napi_value MbrlenThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
@@ -316,10 +338,8 @@ static napi_value MbrlenThread001(napi_env env, napi_callback_info info)
     const char* asciiStr = "A";
     const char* utf8Str = "\xE4\xB8\xAD";
 
-    // Try setting UTF-8 locale first, if failed use C locale
     const char* utf8Locale = setlocale(LC_ALL, "en_US.UTF-8");
     if (utf8Locale == nullptr) {
-        // Try other UTF-8 locale variants
         utf8Locale = setlocale(LC_ALL, "en_US.utf8");
     }
     if (utf8Locale == nullptr) {
@@ -328,27 +348,7 @@ static napi_value MbrlenThread001(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError, asciiStr, utf8Str, utf8Locale]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                // Use C locale to test ASCII
-                (void)setlocale(LC_ALL, "C");
-                mbstate_t state = {};
-                size_t ret = CallMbrlen(asciiStr, 1, &state);
-                if (ret != 1) {
-                    hasError = true;
-                    return;
-                }
-
-                // Use UTF-8 locale to test multi-byte characters (if available)
-                if (utf8Locale != nullptr) {
-                    (void)setlocale(LC_ALL, utf8Locale);
-                    mbstate_t state2 = {};
-                    size_t ret2 = CallMbrlen(utf8Str, MB_CUR_MAX, &state2);
-                    if (ret2 != UTF8LEN3) {
-                        // If UTF-8 not available, not an error (skip)
-                        continue;
-                    }
-                }
-            }
+            MbrlenThreadWorker(hasError, asciiStr, utf8Str, utf8Locale);
         });
     }
     for (auto& th : threads) {

@@ -304,7 +304,7 @@ static void GetauxvalThreadWorker2(Func func, std::atomic<bool>& hasError,
         int idx = (i + t) % 8;
         unsigned long result = func(allItems[idx]);
         // Verify return value and errno
-        if (result == 0 && idx >= 4) { // Some items may not exist
+        if (result == 0 && idx >= basiccount) { // Some items may not exist
             // Not necessarily an error, continue
         }
     }

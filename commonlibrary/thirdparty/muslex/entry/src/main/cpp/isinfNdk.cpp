@@ -276,6 +276,19 @@ static napi_value IsinfStable002(napi_env env, napi_callback_info info)
 // ==================== Multi-thread Tests ====================
 
 // Test 11: Multi-thread concurrent calls
+template<typename Func>
+static void IsinfThreadWorker1(Func func, std::atomic<bool>& hasError,
+    const double* testVals, const int* expected, int iterations)
+{
+    for (int i = 0; i < iterations; ++i) {
+        int idx = i % 5;
+        if (func(testVals[idx]) != expected[idx]) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 static napi_value IsinfThread001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetIsinf();
@@ -292,13 +305,7 @@ static napi_value IsinfThread001(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < threadCount; ++t) {
         threads.emplace_back([func, &hasError, testVals, expected, iterationsPerThread]() {
-            for (int i = 0; i < iterationsPerThread; ++i) {
-                int idx = i % 5;
-                if (func(testVals[idx]) != expected[idx]) {
-                    hasError = true;
-                    return;
-                }
-            }
+            IsinfThreadWorker1(func, hasError, testVals, expected, iterationsPerThread);
         });
     }
 
