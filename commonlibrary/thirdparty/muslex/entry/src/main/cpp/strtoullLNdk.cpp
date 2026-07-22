@@ -25,6 +25,10 @@
 static constexpr int K_STABLE_LOOP = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
+static constexpr int HEX_BASE = 16;
+static constexpr int DECIMAL_BASE = 10;
+static constexpr int HEX_FF_VAL = 255;
+static constexpr int TEST_NUM_VAL = 12345;
 
 static unsigned long long CallStrtoullL(const char* nptr, char** endptr, int base, locale_t loc)
 {
@@ -59,8 +63,8 @@ static napi_value StrtoullLNormal001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     char* endptr = nullptr;
-    unsigned long long ret = CallStrtoullL("12345", &endptr, 10, LC_GLOBAL_LOCALE);
-    return ReturnInt32(env, (ret == 12345 && endptr != nullptr) ? 1 : 0);
+    unsigned long long ret = CallStrtoullL("12345", &endptr, DECIMAL_BASE, LC_GLOBAL_LOCALE);
+    return ReturnInt32(env, (ret == TEST_NUM_VAL && endptr != nullptr) ? 1 : 0);
 }
 
 static napi_value StrtoullLNormal002(napi_env env, napi_callback_info info)
@@ -70,8 +74,8 @@ static napi_value StrtoullLNormal002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     char* endptr = nullptr;
-    unsigned long long ret = CallStrtoullL("0xff", &endptr, 16, LC_GLOBAL_LOCALE);
-    return ReturnInt32(env, (ret == 255 && endptr != nullptr) ? 1 : 0);
+    unsigned long long ret = CallStrtoullL("0xff", &endptr, HEX_BASE, LC_GLOBAL_LOCALE);
+    return ReturnInt32(env, (ret == HEX_FF_VAL && endptr != nullptr) ? 1 : 0);
 }
 
 static napi_value StrtoullLNormal003(napi_env env, napi_callback_info info)
@@ -81,7 +85,7 @@ static napi_value StrtoullLNormal003(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     char* endptr = nullptr;
-    unsigned long long ret = CallStrtoullL("18446744073709551615", &endptr, 10, LC_GLOBAL_LOCALE);
+    unsigned long long ret = CallStrtoullL("18446744073709551615", &endptr, DECIMAL_BASE, LC_GLOBAL_LOCALE);
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
@@ -101,7 +105,7 @@ static napi_value StrtoullLAbnormal001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     char* endptr = nullptr;
-    unsigned long long ret = CallStrtoullL("", &endptr, 10, LC_GLOBAL_LOCALE);
+    unsigned long long ret = CallStrtoullL("", &endptr, DECIMAL_BASE, LC_GLOBAL_LOCALE);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
 }
 
@@ -112,7 +116,7 @@ static napi_value StrtoullLAbnormal002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     char* endptr = nullptr;
-    unsigned long long ret = CallStrtoullL("abcxyz", &endptr, 10, LC_GLOBAL_LOCALE);
+    unsigned long long ret = CallStrtoullL("abcxyz", &endptr, DECIMAL_BASE, LC_GLOBAL_LOCALE);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
 }
 
@@ -123,7 +127,7 @@ static napi_value StrtoullLBoundary001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     char* endptr = nullptr;
-    unsigned long long ret = CallStrtoullL("18446744073709551615", &endptr, 10, LC_GLOBAL_LOCALE);
+    unsigned long long ret = CallStrtoullL("18446744073709551615", &endptr, DECIMAL_BASE, LC_GLOBAL_LOCALE);
     return ReturnInt32(env, (ret == ULLONG_MAX) ? 1 : 0);
 }
 
@@ -134,7 +138,7 @@ static napi_value StrtoullLBoundary002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     char* endptr = nullptr;
-    unsigned long long ret = CallStrtoullL("0", &endptr, 10, LC_GLOBAL_LOCALE);
+    unsigned long long ret = CallStrtoullL("0", &endptr, DECIMAL_BASE, LC_GLOBAL_LOCALE);
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
 }
 
@@ -148,8 +152,8 @@ static napi_value StrtoullLStable001(napi_env env, napi_callback_info info)
     for (int i = 0; i < K_STABLE_LOOP; ++i)
     {
         char* endptr = nullptr;
-        unsigned long long ret = CallStrtoullL("12345", &endptr, 10, LC_GLOBAL_LOCALE);
-        if (ret != 12345)
+        unsigned long long ret = CallStrtoullL("12345", &endptr, DECIMAL_BASE, LC_GLOBAL_LOCALE);
+        if (ret != TEST_NUM_VAL)
         {
             pass = false;
             break;
@@ -173,7 +177,7 @@ static napi_value StrtoullLThread001(napi_env env, napi_callback_info info)
             for (int i = 0; i < K_ITER_PER_THREAD; ++i)
             {
                 char* endptr = nullptr;
-                CallStrtoullL("12345", &endptr, 10, LC_GLOBAL_LOCALE);
+                CallStrtoullL("12345", &endptr, DECIMAL_BASE, LC_GLOBAL_LOCALE);
             }
         });
     }

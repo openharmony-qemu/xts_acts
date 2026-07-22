@@ -24,6 +24,7 @@
 static constexpr int K_STABLE_LOOP = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
+static constexpr int K_FLAG_MOD = 2;
 
 static bool CallSetPthreadExtFuncPolicy(int flag)
 {
@@ -150,7 +151,7 @@ static napi_value SetPthreadExtFuncPolicyStable001(napi_env env, napi_callback_i
     bool pass = true;
     for (int i = 0; i < K_STABLE_LOOP; ++i)
     {
-        CallSetPthreadExtFuncPolicy(i % 2);
+        CallSetPthreadExtFuncPolicy(i % K_FLAG_MOD);
     }
     CallSetPthreadExtFuncPolicy(0);
     return ReturnInt32(env, pass ? 1 : 0);
@@ -170,7 +171,7 @@ static napi_value SetPthreadExtFuncPolicyThread001(napi_env env, napi_callback_i
         {
             for (int i = 0; i < K_ITER_PER_THREAD; ++i)
             {
-                CallSetPthreadExtFuncPolicy(i % 2);
+                CallSetPthreadExtFuncPolicy(i % K_FLAG_MOD);
             }
         });
     }
@@ -186,16 +187,26 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"setPthreadExtFuncPolicyNormal001", nullptr, SetPthreadExtFuncPolicyNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"setPthreadExtFuncPolicyNormal002", nullptr, SetPthreadExtFuncPolicyNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"setPthreadExtFuncPolicyNormal003", nullptr, SetPthreadExtFuncPolicyNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"setPthreadExtFuncPolicyNormal004", nullptr, SetPthreadExtFuncPolicyNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"setPthreadExtFuncPolicyAbnormal001", nullptr, SetPthreadExtFuncPolicyAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"setPthreadExtFuncPolicyAbnormal002", nullptr, SetPthreadExtFuncPolicyAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"setPthreadExtFuncPolicyBoundary001", nullptr, SetPthreadExtFuncPolicyBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"setPthreadExtFuncPolicyBoundary002", nullptr, SetPthreadExtFuncPolicyBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"setPthreadExtFuncPolicyStable001", nullptr, SetPthreadExtFuncPolicyStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"setPthreadExtFuncPolicyThread001", nullptr, SetPthreadExtFuncPolicyThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"setPthreadExtFuncPolicyNormal001", nullptr, SetPthreadExtFuncPolicyNormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"setPthreadExtFuncPolicyNormal002", nullptr, SetPthreadExtFuncPolicyNormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"setPthreadExtFuncPolicyNormal003", nullptr, SetPthreadExtFuncPolicyNormal003, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"setPthreadExtFuncPolicyNormal004", nullptr, SetPthreadExtFuncPolicyNormal004, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"setPthreadExtFuncPolicyAbnormal001", nullptr, SetPthreadExtFuncPolicyAbnormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"setPthreadExtFuncPolicyAbnormal002", nullptr, SetPthreadExtFuncPolicyAbnormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"setPthreadExtFuncPolicyBoundary001", nullptr, SetPthreadExtFuncPolicyBoundary001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"setPthreadExtFuncPolicyBoundary002", nullptr, SetPthreadExtFuncPolicyBoundary002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"setPthreadExtFuncPolicyStable001", nullptr, SetPthreadExtFuncPolicyStable001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"setPthreadExtFuncPolicyThread001", nullptr, SetPthreadExtFuncPolicyThread001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

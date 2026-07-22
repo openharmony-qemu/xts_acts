@@ -25,6 +25,9 @@
 static constexpr int K_STABLE_LOOP_10000 = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
+static constexpr int SYSLOG_ERR_CODE = 123;
+static constexpr int SYSLOG_WARN_VAL = 42;
+static constexpr int SYSLOG_FLAG_MOD = 2;
 
 static void CallSyslogChk(int flag, int priority, const char* fmt, ...)
 {
@@ -83,7 +86,7 @@ static napi_value SyslogChkNormal002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     openlog("test", LOG_PID, LOG_USER);
-    CallSyslogChk(1, LOG_ERR, "Error code: %d", 123);
+    CallSyslogChk(1, LOG_ERR, "Error code: %d", SYSLOG_ERR_CODE);
     closelog();
     return ReturnInt32(env, 1);
 }
@@ -96,7 +99,7 @@ static napi_value SyslogChkNormal003(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     openlog("test", LOG_PID, LOG_USER);
-    CallSyslogChk(0, LOG_WARNING, "%s %d %.2f", "warning", 42, 3.14);
+    CallSyslogChk(0, LOG_WARNING, "%s %d %.2f", "warning", SYSLOG_WARN_VAL, 3.14);
     closelog();
     return ReturnInt32(env, 1);
 }
@@ -139,7 +142,8 @@ static napi_value SyslogChkNormal006(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     openlog("test", LOG_PID, LOG_USER);
-    std::string longMsg(5000, 'x');
+    int msgLen = 5000;
+    std::string longMsg(msgLen, 'x');
     CallSyslogChk(0, LOG_INFO, "%s", longMsg.c_str());
     closelog();
     return ReturnInt32(env, 1);
@@ -202,7 +206,7 @@ static napi_value SyslogChkStable001(napi_env env, napi_callback_info info)
     bool pass = true;
     for (int i = 0; i < K_STABLE_LOOP_10000; ++i)
     {
-        CallSyslogChk(i % 2, LOG_INFO, "Stability test %d", i);
+        CallSyslogChk(i % SYSLOG_FLAG_MOD, LOG_INFO, "Stability test %d", i);
     }
     closelog();
     return ReturnInt32(env, pass ? 1 : 0);
@@ -228,7 +232,7 @@ static napi_value SyslogChkThread001(napi_env env, napi_callback_info info)
             for (int i = 0; i < K_ITER_PER_THREAD; ++i)
             {
                 int priority = (i % 4) + 1;
-                CallSyslogChk(i % 2, priority, "Thread %d message %d", i % 10, i);
+                CallSyslogChk(i % SYSLOG_FLAG_MOD, priority, "Thread %d message %d", i % 10, i);
                 // syslog may have internal locks, not crashing counts as pass
             }
         });

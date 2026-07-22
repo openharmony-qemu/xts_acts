@@ -25,6 +25,10 @@
 static constexpr int K_STABLE_LOOP = 100;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 5;
+static constexpr int TM_YEAR_BASE = 1900;
+static constexpr int testYear2026 = 2026;
+static constexpr int testYear2038 = 2038;
+static constexpr int epochYear = 1970;
 
 static time_t CallTimelocal(struct tm* tm)
 {
@@ -58,12 +62,13 @@ static napi_value TimelocalNormal001(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    struct tm t;
-    memset(&t, 0, sizeof(t));
-    t.tm_year = 2026 - 1900;
-    t.tm_mon = 6;
+    struct tm t = {};
+    t.tm_year = testYear2026 - TM_YEAR_BASE;
+    int july = 6;
+    t.tm_mon = july;
     t.tm_mday = 1;
-    t.tm_hour = 12;
+    int noon = 12;
+    t.tm_hour = noon;
     time_t ret = CallTimelocal(&t);
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
@@ -74,9 +79,8 @@ static napi_value TimelocalNormal002(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    struct tm t;
-    memset(&t, 0, sizeof(t));
-    t.tm_year = 70;
+    struct tm t = {};
+    t.tm_year = epochYear - TM_YEAR_BASE;
     t.tm_mon = 0;
     t.tm_mday = 1;
     t.tm_isdst = -1;
@@ -90,9 +94,8 @@ static napi_value TimelocalNormal003(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    struct tm t;
-    memset(&t, 0, sizeof(t));
-    t.tm_year = 2026 - 1900;
+    struct tm t = {};
+    t.tm_year = testYear2026 - TM_YEAR_BASE;
     t.tm_mon = 0;
     t.tm_mday = 1;
     t.tm_isdst = -1;
@@ -115,11 +118,11 @@ static napi_value TimelocalAbnormal001(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    struct tm t;
-    memset(&t, 0, sizeof(t));
-    t.tm_year = 2026 - 1900;
+    struct tm t = {};
+    t.tm_year = testYear2026 - TM_YEAR_BASE;
     t.tm_mon = 0;
-    t.tm_mday = 32;
+    int invalidDay = 32;
+    t.tm_mday = invalidDay;
     time_t ret = CallTimelocal(&t);
     return ReturnInt32(env, 1);
 }
@@ -130,10 +133,10 @@ static napi_value TimelocalAbnormal002(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    struct tm t;
-    memset(&t, 0, sizeof(t));
-    t.tm_year = 2026 - 1900;
-    t.tm_mon = 13;
+    struct tm t = {};
+    t.tm_year = testYear2026 - TM_YEAR_BASE;
+    int invalidMonth = 13;
+    t.tm_mon = invalidMonth;
     time_t ret = CallTimelocal(&t);
     return ReturnInt32(env, 1);
 }
@@ -144,14 +147,17 @@ static napi_value TimelocalBoundary001(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    struct tm t;
-    memset(&t, 0, sizeof(t));
-    t.tm_year = 2038 - 1900;
+    struct tm t = {};
+    t.tm_year = testYear2038 - TM_YEAR_BASE;
     t.tm_mon = 0;
-    t.tm_mday = 19;
-    t.tm_hour = 3;
-    t.tm_min = 14;
-    t.tm_sec = 7;
+    int boundaryDay = 19;
+    t.tm_mday = boundaryDay;
+    int boundaryHour = 3;
+    t.tm_hour = boundaryHour;
+    int boundaryMin = 14;
+    t.tm_min = boundaryMin;
+    int boundarySec = 7;
+    t.tm_sec = boundarySec;
     time_t ret = CallTimelocal(&t);
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
@@ -162,8 +168,7 @@ static napi_value TimelocalBoundary002(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    struct tm t;
-    memset(&t, 0, sizeof(t));
+    struct tm t = {};
     t.tm_year = 0;
     t.tm_mon = 0;
     t.tm_mday = 1;
@@ -181,9 +186,8 @@ static napi_value TimelocalStable001(napi_env env, napi_callback_info info)
     bool pass = true;
     for (int i = 0; i < K_STABLE_LOOP; ++i)
     {
-        struct tm t;
-        memset(&t, 0, sizeof(t));
-        t.tm_year = 2026 - 1900;
+        struct tm t = {};
+        t.tm_year = testYear2026 - TM_YEAR_BASE;
         t.tm_mon = 0;
         t.tm_mday = 1;
         time_t ret = CallTimelocal(&t);
@@ -210,9 +214,8 @@ static napi_value TimelocalThread001(napi_env env, napi_callback_info info)
         {
             for (int i = 0; i < K_ITER_PER_THREAD; ++i)
             {
-                struct tm tmVal;
-                memset(&tmVal, 0, sizeof(tmVal));
-                tmVal.tm_year = 2026 - 1900;
+                struct tm tmVal = {};
+                tmVal.tm_year = testYear2026 - TM_YEAR_BASE;
                 tmVal.tm_mon = 0;
                 tmVal.tm_mday = 1;
                 time_t ret = CallTimelocal(&tmVal);

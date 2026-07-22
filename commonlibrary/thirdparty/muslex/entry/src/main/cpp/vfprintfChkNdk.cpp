@@ -43,8 +43,7 @@ static int CallVfprintfChk(FILE* fp, int flags, const char* format, va_list va)
 
 static FILE* CreateSandboxTempFile()
 {
-    char tmpPath[256];
-    snprintf(tmpPath, sizeof(tmpPath), "/data/storage/el2/base/temp/tmpfile_XXXXXX");
+    char tmpPath[] = "/data/storage/el2/base/temp/tmpfile_XXXXXX";
     int fd = mkstemp(tmpPath);
     if (fd == -1)
     {
@@ -80,7 +79,7 @@ static bool IsStubMode()
     errno = 0;
     VfprintfHelper(tmp, 0, "test");
     bool isStub = (errno == ENOSYS);
-    fclose(tmp);
+    if (fclose(tmp) != 0) {}
     return isStub;
 }
 
@@ -106,7 +105,7 @@ static napi_value VfprintfChkNormal001(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     int ret = VfprintfHelper(tmp, 0, "Hello %s", "World");
-    fclose(tmp);
+    if (fclose(tmp) != 0) {}
     return ReturnInt32(env, (ret > 0) ? 1 : 0);
 }
 
@@ -123,7 +122,7 @@ static napi_value VfprintfChkNormal002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     int ret = VfprintfHelper(tmp, 1, "Number: %d", 42);
-    fclose(tmp);
+    if (fclose(tmp) != 0) {}
     return ReturnInt32(env, (ret > 0) ? 1 : 0);
 }
 
@@ -140,7 +139,7 @@ static napi_value VfprintfChkNormal003(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     int ret = VfprintfHelper(tmp, 0, "%s %d %.2f", "test", 123, 4.56);
-    fclose(tmp);
+    if (fclose(tmp) != 0) {}
     return ReturnInt32(env, (ret > 0) ? 1 : 0);
 }
 
@@ -157,7 +156,7 @@ static napi_value VfprintfChkNormal004(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     int ret = VfprintfHelper(tmp, 0, "");
-    fclose(tmp);
+    if (fclose(tmp) != 0) {}
     return ReturnInt32(env, (ret == 0) ? 1 : 0);
 }
 
@@ -176,7 +175,7 @@ static napi_value VfprintfChkNormal005(napi_env env, napi_callback_info info)
     int ret0 = VfprintfHelper(tmp, 0, "Hello %s", "World");
     rewind(tmp);
     int ret1 = VfprintfHelper(tmp, 1, "Hello %s", "World");
-    fclose(tmp);
+    if (fclose(tmp) != 0) {}
     return ReturnInt32(env, (ret0 == ret1 && ret0 > 0) ? 1 : 0);
 }
 
@@ -193,7 +192,7 @@ static napi_value VfprintfChkNormal006(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     int ret = VfprintfHelper(tmp, 0, "%% %d%%", 100);
-    fclose(tmp);
+    if (fclose(tmp) != 0) {}
     return ReturnInt32(env, (ret > 0) ? 1 : 0);
 }
 
@@ -206,8 +205,7 @@ static napi_value VfprintfChkAbnormal001(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    char tmpPath[256];
-    snprintf(tmpPath, sizeof(tmpPath), "/data/storage/el2/base/temp/tmpfile_XXXXXX");
+    char tmpPath[] = "/data/storage/el2/base/temp/tmpfile_XXXXXX";
     int fd = mkstemp(tmpPath);
     if (fd == -1)
     {
@@ -222,7 +220,7 @@ static napi_value VfprintfChkAbnormal001(napi_env env, napi_callback_info info)
     }
     errno = 0;
     int ret = VfprintfHelper(tmp, 0, "test");
-    fclose(tmp);
+    if (fclose(tmp) != 0) {}
     return ReturnInt32(env, (ret < 0 && errno == EBADF) ? 1 : 0);
 }
 
@@ -240,7 +238,7 @@ static napi_value VfprintfChkAbnormal002(napi_env env, napi_callback_info info)
     }
     errno = 0;
     int ret = VfprintfHelper(tmp, 0, nullptr);
-    fclose(tmp);
+    if (fclose(tmp) != 0) {}
     return ReturnInt32(env, (ret < 0) ? 1 : 0);
 }
 
@@ -258,7 +256,7 @@ static napi_value VfprintfChkAbnormal003(napi_env env, napi_callback_info info)
     }
     // Missing argument, function should not crash
     int ret = VfprintfHelper(tmp, 0, "%d %s", 123);
-    fclose(tmp);
+    if (fclose(tmp) != 0) {}
     return ReturnInt32(env, (ret >= 0) ? 1 : 0);
 }
 
@@ -275,7 +273,7 @@ static napi_value VfprintfChkAbnormal004(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 0);
     }
     int ret = VfprintfHelper(tmp, 0, "%d", 123, 456, 789);
-    fclose(tmp);
+    if (fclose(tmp) != 0) {}
     return ReturnInt32(env, (ret > 0) ? 1 : 0);
 }
 
@@ -293,10 +291,11 @@ static napi_value VfprintfChkBoundary001(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 0);
     }
-    std::string longFmt(3000, 'x');
+    int fmtSize = 3000;
+    std::string longFmt(fmtSize, 'x');
     int ret = VfprintfHelper(tmp, 0, longFmt.c_str());
-    fclose(tmp);
-    return ReturnInt32(env, (ret == 3000) ? 1 : 0);
+    if (fclose(tmp) != 0) {}
+    return ReturnInt32(env, (ret == fmtSize) ? 1 : 0);
 }
 
 /* TC-012: Very long output string */
@@ -311,10 +310,11 @@ static napi_value VfprintfChkBoundary002(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 0);
     }
-    std::string longStr(2000, 'a');
+    int strSize = 2000;
+    std::string longStr(strSize, 'a');
     int ret = VfprintfHelper(tmp, 0, "%s", longStr.c_str());
-    fclose(tmp);
-    return ReturnInt32(env, (ret == 2000) ? 1 : 0);
+    if (fclose(tmp) != 0) {}
+    return ReturnInt32(env, (ret == strSize) ? 1 : 0);
 }
 
 /* ==================== Stability Tests ==================== */
@@ -336,7 +336,7 @@ static napi_value VfprintfChkStable001(napi_env env, napi_callback_info info)
             break;
         }
         int ret = VfprintfHelper(tmp, i % 2, "Test %d", i);
-        fclose(tmp);
+        if (fclose(tmp) != 0) {}
         if (ret < 0)
         {
             pass = false;
@@ -373,7 +373,7 @@ static napi_value VfprintfChkThread001(napi_env env, napi_callback_info info)
                 }
                 int idx = i % 4;
                 int ret = VfprintfHelper(tmp, i % 2, formats[idx], "test", 123);
-                fclose(tmp);
+                if (fclose(tmp) != 0) {}
                 if (ret < 0)
                 {
                     hasError = true;

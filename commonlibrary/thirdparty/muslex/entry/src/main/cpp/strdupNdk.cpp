@@ -25,6 +25,7 @@
 static constexpr int K_STABLE_LOOP_10000 = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
+static constexpr int K_LONG_STR_SIZE = 10000;
 
 static char* CallStrdup(const char* s)
 {
@@ -95,7 +96,7 @@ static napi_value StrdupNormal003(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    std::string longStr(10000, 'a');
+    std::string longStr(K_LONG_STR_SIZE, 'a');
     char* dup = CallStrdup(longStr.c_str());
     bool pass = (dup != nullptr && strcmp(dup, longStr.c_str()) == 0);
     free(dup);
@@ -124,7 +125,8 @@ static napi_value StrdupNormal005(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     std::string allAscii;
-    for (int i = 32; i < 127; ++i)
+    int asciiMax = 127;
+    for (int i = 32; i < asciiMax; ++i)
     {
         allAscii += static_cast<char>(i);
     }
@@ -156,7 +158,8 @@ static napi_value StrdupBoundary001(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    std::string longStr(100000, 'a');
+    int extraLongSize = 100000;
+    std::string longStr(extraLongSize, 'a');
     char* dup = CallStrdup(longStr.c_str());
     bool pass = (dup != nullptr && strcmp(dup, longStr.c_str()) == 0);
     free(dup);

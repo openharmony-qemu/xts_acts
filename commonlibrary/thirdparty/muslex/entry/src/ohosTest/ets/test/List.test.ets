@@ -51,7 +51,7 @@ import LogFiniteNdkTest from './LogFiniteNdk.test';
 import LongjmpChkNdkTest from './LongjmpChkNdk.test';
 import PowfFiniteNdkTest from './PowfFiniteNdk.test';
 import PowFiniteNdkTest from './PowFiniteNdk.test';
-import Fcntl64NdkTest from './Fcntl64Ndk.test';
+import Fcntl64NativeTest from './Fcntl64Native.test';
 import MuslVersionNdkTest from './MuslVersionNdk.test';
 import GetResTraceIdNdkTest from './GetResTraceIdNdk.test';
 import PthreadExtFuncPolicyNdkTest from './PthreadExtFuncPolicyNdk.test';
@@ -128,7 +128,7 @@ export default function testsuite() {
   LongjmpChkNdkTest();
   PowfFiniteNdkTest();
   PowFiniteNdkTest();
-  Fcntl64NdkTest();
+  Fcntl64NativeTest();
   FedisableExceptNdkTest();
   FeenableExceptNdkTest();
   FegetExceptNdkTest();

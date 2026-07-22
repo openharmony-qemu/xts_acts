@@ -26,6 +26,8 @@ typedef void (*SetResTraceIdFunc)(uint32_t, uint64_t, uint32_t*, uint64_t*);
 static constexpr int K_STABLE_LOOP = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
+static constexpr int traceVal = 100;
+static constexpr int traceVal200 = 200;
 
 static SetResTraceIdFunc GetSetResTraceIdFunc()
 {
@@ -36,7 +38,8 @@ static SetResTraceIdFunc GetSetResTraceIdFunc()
     return cachedFunc;
 }
 
-static bool CallSetResTraceId(uint32_t newTraceType, uint64_t newTraceID, uint32_t* pOldTraceType, uint64_t* pOldTraceID)
+static bool CallSetResTraceId(uint32_t newTraceType, uint64_t newTraceID,
+    uint32_t* pOldTraceType, uint64_t* pOldTraceID)
 {
     auto func = GetSetResTraceIdFunc();
     if (!func)
@@ -69,7 +72,7 @@ static napi_value SetResTraceIdNormal001(napi_env env, napi_callback_info info)
     }
     uint32_t oldType = 0;
     uint64_t oldID = 0;
-    bool ret = CallSetResTraceId(1, 100, &oldType, &oldID);
+    bool ret = CallSetResTraceId(1, traceVal, &oldType, &oldID);
     return ReturnInt32(env, ret ? 1 : 0);
 }
 
@@ -81,10 +84,10 @@ static napi_value SetResTraceIdNormal002(napi_env env, napi_callback_info info)
     }
     uint32_t oldType = 0;
     uint64_t oldID = 0;
-    CallSetResTraceId(1, 100, &oldType, &oldID);
+    CallSetResTraceId(1, traceVal, &oldType, &oldID);
     uint32_t oldType2 = 0;
     uint64_t oldID2 = 0;
-    bool ret = CallSetResTraceId(2, 200, &oldType2, &oldID2);
+    bool ret = CallSetResTraceId(2, traceVal200, &oldType2, &oldID2);
     return ReturnInt32(env, ret ? 1 : 0);
 }
 
@@ -96,8 +99,8 @@ static napi_value SetResTraceIdNormal003(napi_env env, napi_callback_info info)
     }
     uint32_t oldType = 0;
     uint64_t oldID = 0;
-    bool ret1 = CallSetResTraceId(1, 100, &oldType, &oldID);
-    bool ret2 = CallSetResTraceId(2, 200, &oldType, &oldID);
+    bool ret1 = CallSetResTraceId(1, traceVal, &oldType, &oldID);
+    bool ret2 = CallSetResTraceId(2, traceVal200, &oldType, &oldID);
     return ReturnInt32(env, (ret1 && ret2) ? 1 : 0);
 }
 
@@ -117,7 +120,7 @@ static napi_value SetResTraceIdAbnormal001(napi_env env, napi_callback_info info
         return ReturnInt32(env, 1);
     }
     uint64_t oldID = 0;
-    CallSetResTraceId(1, 100, nullptr, &oldID);
+    CallSetResTraceId(1, traceVal, nullptr, &oldID);
     return ReturnInt32(env, 1);
 }
 
@@ -128,7 +131,7 @@ static napi_value SetResTraceIdAbnormal002(napi_env env, napi_callback_info info
         return ReturnInt32(env, 1);
     }
     uint32_t oldType = 0;
-    CallSetResTraceId(1, 100, &oldType, nullptr);
+    CallSetResTraceId(1, traceVal, &oldType, nullptr);
     return ReturnInt32(env, 1);
 }
 
@@ -212,10 +215,14 @@ static napi_value Init(napi_env env, napi_value exports)
         {"setResTraceIdNormal002", nullptr, SetResTraceIdNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"setResTraceIdNormal003", nullptr, SetResTraceIdNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"setResTraceIdNormal004", nullptr, SetResTraceIdNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"setResTraceIdAbnormal001", nullptr, SetResTraceIdAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"setResTraceIdAbnormal002", nullptr, SetResTraceIdAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"setResTraceIdBoundary001", nullptr, SetResTraceIdBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"setResTraceIdBoundary002", nullptr, SetResTraceIdBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"setResTraceIdAbnormal001", nullptr, SetResTraceIdAbnormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"setResTraceIdAbnormal002", nullptr, SetResTraceIdAbnormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"setResTraceIdBoundary001", nullptr, SetResTraceIdBoundary001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"setResTraceIdBoundary002", nullptr, SetResTraceIdBoundary002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
         {"setResTraceIdStable001", nullptr, SetResTraceIdStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"setResTraceIdThread001", nullptr, SetResTraceIdThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
     };

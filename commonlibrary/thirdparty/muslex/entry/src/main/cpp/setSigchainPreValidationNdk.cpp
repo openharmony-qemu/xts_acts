@@ -23,6 +23,7 @@
 static constexpr int K_STABLE_LOOP = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
+static constexpr int K_SIG_MOD = 2;
 
 static bool CallSetSigchainPreValidationIgnore(int value)
 {
@@ -109,7 +110,8 @@ static napi_value SetSigchainPreValidationAbnormal002(napi_env env, napi_callbac
     {
         return ReturnInt32(env, 1);
     }
-    CallSetSigchainPreValidationIgnore(100);
+    int sigVal = 100;
+    CallSetSigchainPreValidationIgnore(sigVal);
     CallSetSigchainPreValidationIgnore(0);
     return ReturnInt32(env, 1);
 }
@@ -144,7 +146,7 @@ static napi_value SetSigchainPreValidationStable001(napi_env env, napi_callback_
     bool pass = true;
     for (int i = 0; i < K_STABLE_LOOP; ++i)
     {
-        CallSetSigchainPreValidationIgnore(i % 2);
+        CallSetSigchainPreValidationIgnore(i % K_SIG_MOD);
     }
     CallSetSigchainPreValidationIgnore(0);
     return ReturnInt32(env, pass ? 1 : 0);
@@ -164,7 +166,7 @@ static napi_value SetSigchainPreValidationThread001(napi_env env, napi_callback_
         {
             for (int i = 0; i < K_ITER_PER_THREAD; ++i)
             {
-                CallSetSigchainPreValidationIgnore(i % 2);
+                CallSetSigchainPreValidationIgnore(i % K_SIG_MOD);
             }
         });
     }
@@ -180,16 +182,26 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"setSigchainPreValidationNormal001", nullptr, SetSigchainPreValidationNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"setSigchainPreValidationNormal002", nullptr, SetSigchainPreValidationNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"setSigchainPreValidationNormal003", nullptr, SetSigchainPreValidationNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"setSigchainPreValidationNormal004", nullptr, SetSigchainPreValidationNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"setSigchainPreValidationAbnormal001", nullptr, SetSigchainPreValidationAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"setSigchainPreValidationAbnormal002", nullptr, SetSigchainPreValidationAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"setSigchainPreValidationBoundary001", nullptr, SetSigchainPreValidationBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"setSigchainPreValidationBoundary002", nullptr, SetSigchainPreValidationBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"setSigchainPreValidationStable001", nullptr, SetSigchainPreValidationStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"setSigchainPreValidationThread001", nullptr, SetSigchainPreValidationThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"setSigchainPreValidationNormal001", nullptr, SetSigchainPreValidationNormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"setSigchainPreValidationNormal002", nullptr, SetSigchainPreValidationNormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"setSigchainPreValidationNormal003", nullptr, SetSigchainPreValidationNormal003, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"setSigchainPreValidationNormal004", nullptr, SetSigchainPreValidationNormal004, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"setSigchainPreValidationAbnormal001", nullptr, SetSigchainPreValidationAbnormal001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"setSigchainPreValidationAbnormal002", nullptr, SetSigchainPreValidationAbnormal002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"setSigchainPreValidationBoundary001", nullptr, SetSigchainPreValidationBoundary001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"setSigchainPreValidationBoundary002", nullptr, SetSigchainPreValidationBoundary002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"setSigchainPreValidationStable001", nullptr, SetSigchainPreValidationStable001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"setSigchainPreValidationThread001", nullptr, SetSigchainPreValidationThread001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

@@ -24,6 +24,7 @@
 static constexpr int K_STABLE_LOOP_10000 = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
+static constexpr int K_LONG_STR_SIZE = 10000;
 
 static char* CallStrtokR(char* s, const char* sep, char** p)
 {
@@ -221,7 +222,7 @@ static napi_value StrtokRBoundary001(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    std::string longStr(10000, 'a');
+    std::string longStr(K_LONG_STR_SIZE, 'a');
     char* str = strdup(longStr.c_str());
     if (!str)
     {
@@ -229,7 +230,7 @@ static napi_value StrtokRBoundary001(napi_env env, napi_callback_info info)
     }
     char* saveptr = nullptr;
     char* token = CallStrtokR(str, ",", &saveptr);
-    bool pass = (token != nullptr && strlen(token) == 10000);
+    bool pass = (token != nullptr && strlen(token) == K_LONG_STR_SIZE);
     free(str);
     return ReturnInt32(env, pass ? 1 : 0);
 }
@@ -241,8 +242,9 @@ static napi_value StrtokRBoundary002(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
+    int tokenCount = 1000;
     std::string str;
-    for (int i = 0; i < 1000; ++i)
+    for (int i = 0; i < tokenCount; ++i)
     {
         str += "a,";
     }
@@ -261,7 +263,8 @@ static napi_value StrtokRBoundary002(napi_env env, napi_callback_info info)
         token = CallStrtokR(nullptr, ",", &saveptr);
     }
     free(mutableStr);
-    return ReturnInt32(env, (count == 1001) ? 1 : 0);
+    int expectedTokens = 1001;
+    return ReturnInt32(env, (count == expectedTokens) ? 1 : 0);
 }
 
 /* ==================== Stability Tests ==================== */
@@ -309,13 +312,14 @@ static napi_value StrtokRThread001(napi_env env, napi_callback_info info)
                 char str[] = "a,b,c,d,e";
                 char* saveptr = nullptr;
                 int count = 0;
+                int expectedTokens = 5;
                 char* token = CallStrtokR(str, ",", &saveptr);
                 while (token != nullptr)
                 {
                     count++;
                     token = CallStrtokR(nullptr, ",", &saveptr);
                 }
-                if (count != 5)
+                if (count != expectedTokens)
                 {
                     hasError = true;
                     return;

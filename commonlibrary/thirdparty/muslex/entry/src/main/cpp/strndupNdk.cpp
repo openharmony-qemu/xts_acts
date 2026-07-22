@@ -23,6 +23,7 @@
 #include <atomic>
 
 static constexpr int K_STABLE_LOOP_10000 = 20;
+static constexpr int K_LONG_STR_SIZE = 10000;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
 
@@ -47,7 +48,8 @@ static bool IsStubMode()
         return true;
     }
     errno = 0;
-    CallStrndup("test", 4);
+    int testLen = 4;
+    CallStrndup("test", testLen);
     return (errno == ENOSYS);
 }
 
@@ -181,7 +183,7 @@ static napi_value StrndupBoundary002(napi_env env, napi_callback_info info)
     {
         return ReturnInt32(env, 1);
     }
-    std::string longStr(10000, 'a');
+    std::string longStr(K_LONG_STR_SIZE, 'a');
     char* dup = CallStrndup(longStr.c_str(), 100);
     bool pass = (dup != nullptr && strlen(dup) == 100 && strncmp(dup, longStr.c_str(), 100) == 0);
     free(dup);
