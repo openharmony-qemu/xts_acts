@@ -30,7 +30,8 @@ static bool CallSchedCpufree(cpu_set_t* set)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetSchedCpufree();
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return false;
     }
@@ -42,7 +43,8 @@ static bool CallSchedCpufree(cpu_set_t* set)
 static bool IsStubMode()
 {
     auto& loader = LibcFunctionLoader::GetInstance();
-    if (!loader.GetSchedCpufree()) {
+    if (!loader.GetSchedCpufree())
+    {
         return true;
     }
     return false;
@@ -60,11 +62,13 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 /* TC-001: Free a valid CPU set */
 static napi_value SchedCpufreeNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     cpu_set_t* set = CPU_ALLOC(1);
-    if (!set) {
+    if (!set)
+    {
         return ReturnInt32(env, 0);
     }
     bool ok = CallSchedCpufree(set);
@@ -74,8 +78,9 @@ static napi_value SchedCpufreeNormal001(napi_env env, napi_callback_info info)
 /* TC-002: Free NULL should succeed (or no-op) */
 static napi_value SchedCpufreeNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     CallSchedCpufree(nullptr);
     return ReturnInt32(env, 1);
@@ -84,14 +89,16 @@ static napi_value SchedCpufreeNormal002(napi_env env, napi_callback_info info)
 /* TC-003: Allocate and free multiple sets */
 static napi_value SchedCpufreeNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    int loopcount = 20;
     bool pass = true;
-    for (int i = 0; i < loopcount; ++i) {
+    for (int i = 0; i < 20; ++i)
+    {
         cpu_set_t* set = CPU_ALLOC(1);
-        if (!set) {
+        if (!set)
+        {
             pass = false;
             break;
         }
@@ -103,11 +110,13 @@ static napi_value SchedCpufreeNormal003(napi_env env, napi_callback_info info)
 /* TC-004: Free set allocated with larger size */
 static napi_value SchedCpufreeNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     cpu_set_t* set = CPU_ALLOC(4);
-    if (!set) {
+    if (!set)
+    {
         return ReturnInt32(env, 0);
     }
     CallSchedCpufree(set);
@@ -119,11 +128,13 @@ static napi_value SchedCpufreeNormal004(napi_env env, napi_callback_info info)
 /* TC-005: Double free (should be handled gracefully) */
 static napi_value SchedCpufreeAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     cpu_set_t* set = CPU_ALLOC(1);
-    if (!set) {
+    if (!set)
+    {
         return ReturnInt32(env, 0);
     }
     CallSchedCpufree(set);
@@ -136,15 +147,18 @@ static napi_value SchedCpufreeAbnormal001(napi_env env, napi_callback_info info)
 /* TC-006: Free set allocated with maximum size */
 static napi_value SchedCpufreeBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     int numCpus = sysconf(_SC_NPROCESSORS_CONF);
-    if (numCpus <= 0) {
+    if (numCpus <= 0)
+    {
         numCpus = 1;
     }
     cpu_set_t* set = CPU_ALLOC(numCpus);
-    if (!set) {
+    if (!set)
+    {
         return ReturnInt32(env, 0);
     }
     CallSchedCpufree(set);
@@ -156,14 +170,16 @@ static napi_value SchedCpufreeBoundary001(napi_env env, napi_callback_info info)
 /* TC-007: 10000 repeated calls stability */
 static napi_value SchedCpufreeStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    int loopcount = 20;
     bool pass = true;
-    for (int i = 0; i < loopcount; ++i) {
+    for (int i = 0; i < 20; ++i)
+    {
         cpu_set_t* set = CPU_ALLOC(1);
-        if (!set) {
+        if (!set)
+        {
             pass = false;
             break;
         }
@@ -172,33 +188,36 @@ static napi_value SchedCpufreeStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void SchedCpufreeWorker(std::atomic<bool>& hasError)
-{
-    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-        cpu_set_t* set = CPU_ALLOC(1);
-        if (!set) {
-            hasError = true;
-            return;
-        }
-        CallSchedCpufree(set);
-    }
-}
-
 /* ==================== Multi-thread Tests ==================== */
 
 /* TC-008: Multi-thread safety */
 static napi_value SchedCpufreeThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
 
-    for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(SchedCpufreeWorker, std::ref(hasError));
+    for (int t = 0; t < K_THREAD_COUNT; ++t)
+    {
+        threads.emplace_back([&hasError]()
+        {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
+            {
+                cpu_set_t* set = CPU_ALLOC(1);
+                if (!set)
+                {
+                    hasError = true;
+                    return;
+                }
+                CallSchedCpufree(set);
+            }
+        });
     }
-    for (auto& th : threads) {
+    for (auto& th : threads)
+    {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);

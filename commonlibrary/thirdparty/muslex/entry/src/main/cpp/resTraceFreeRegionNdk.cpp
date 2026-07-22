@@ -27,9 +27,6 @@ typedef void (*ResTraceFreeRegionFunc)(unsigned long long, void*, size_t);
 static constexpr int K_STABLE_LOOP = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
-static constexpr size_t K_ALLOC_100 = 100;
-static constexpr size_t K_ALLOC_200 = 200;
-static constexpr size_t K_CHUNK_1M = 1024 * 1024;
 
 static ResTraceFreeRegionFunc GetResTraceFreeRegionFunc()
 {
@@ -43,7 +40,8 @@ static ResTraceFreeRegionFunc GetResTraceFreeRegionFunc()
 static bool CallResTraceFreeRegion(unsigned long long mask, void* addr, size_t size)
 {
     auto func = GetResTraceFreeRegionFunc();
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return false;
     }
@@ -66,70 +64,80 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value ResTraceFreeRegionNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
+    }
+    void* addr = malloc(100);
+    if (!addr)
+    {
         return ReturnInt32(env, 0);
     }
-    void* addr = malloc(K_ALLOC_100);
-    if (!addr) {
-        return ReturnInt32(env, 0);
-    }
-    bool ret = CallResTraceFreeRegion(1, addr, K_ALLOC_100);
+    bool ret = CallResTraceFreeRegion(1, addr, 100);
     free(addr);
     return ReturnInt32(env, ret ? 1 : 0);
 }
 
 static napi_value ResTraceFreeRegionNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
+    }
+    void* addr = malloc(100);
+    if (!addr)
+    {
         return ReturnInt32(env, 0);
     }
-    void* addr = malloc(K_ALLOC_100);
-    if (!addr) {
-        return ReturnInt32(env, 0);
-    }
-    bool ret = CallResTraceFreeRegion(0, addr, K_ALLOC_100);
+    bool ret = CallResTraceFreeRegion(0, addr, 100);
     free(addr);
     return ReturnInt32(env, ret ? 1 : 0);
 }
 
 static napi_value ResTraceFreeRegionNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
+    }
+    void* addr = malloc(200);
+    if (!addr)
+    {
         return ReturnInt32(env, 0);
     }
-    void* addr = malloc(K_ALLOC_200);
-    if (!addr) {
-        return ReturnInt32(env, 0);
-    }
-    bool ret = CallResTraceFreeRegion(3, addr, K_ALLOC_200);
+    bool ret = CallResTraceFreeRegion(3, addr, 200);
     free(addr);
     return ReturnInt32(env, ret ? 1 : 0);
 }
 
 static napi_value ResTraceFreeRegionNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
 }
 
 static napi_value ResTraceFreeRegionAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    CallResTraceFreeRegion(1, nullptr, K_ALLOC_100);
+    CallResTraceFreeRegion(1, nullptr, 100);
     return ReturnInt32(env, 1);
 }
 
 static napi_value ResTraceFreeRegionAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
-    void* addr = malloc(K_ALLOC_100);
-    if (!addr) {
+    void* addr = malloc(100);
+    if (!addr)
+    {
         return ReturnInt32(env, 0);
     }
     CallResTraceFreeRegion(1, addr, 0);
@@ -139,47 +147,55 @@ static napi_value ResTraceFreeRegionAbnormal002(napi_env env, napi_callback_info
 
 static napi_value ResTraceFreeRegionBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
+    }
+    void* addr = malloc(1024 * 1024);
+    if (!addr)
+    {
         return ReturnInt32(env, 0);
     }
-    void* addr = malloc(K_CHUNK_1M);
-    if (!addr) {
-        return ReturnInt32(env, 0);
-    }
-    bool ret = CallResTraceFreeRegion(1, addr, K_CHUNK_1M);
+    bool ret = CallResTraceFreeRegion(1, addr, 1024 * 1024);
     free(addr);
     return ReturnInt32(env, ret ? 1 : 0);
 }
 
 static napi_value ResTraceFreeRegionBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
+    }
+    void* addr = malloc(100);
+    if (!addr)
+    {
         return ReturnInt32(env, 0);
     }
-    void* addr = malloc(K_ALLOC_100);
-    if (!addr) {
-        return ReturnInt32(env, 0);
-    }
-    bool ret = CallResTraceFreeRegion(UINT64_MAX, addr, K_ALLOC_100);
+    bool ret = CallResTraceFreeRegion(UINT64_MAX, addr, 100);
     free(addr);
     return ReturnInt32(env, ret ? 1 : 0);
 }
 
 static napi_value ResTraceFreeRegionStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i) {
-        void* addr = malloc(K_ALLOC_100);
-        if (!addr) {
+    for (int i = 0; i < K_STABLE_LOOP; ++i)
+    {
+        void* addr = malloc(100);
+        if (!addr)
+        {
             pass = false;
             break;
         }
-        bool ret = CallResTraceFreeRegion(1, addr, K_ALLOC_100);
+        bool ret = CallResTraceFreeRegion(1, addr, 100);
         free(addr);
-        if (!ret) {
+        if (!ret)
+        {
             pass = false;
             break;
         }
@@ -187,30 +203,33 @@ static napi_value ResTraceFreeRegionStable001(napi_env env, napi_callback_info i
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void ResTraceFreeRegionWorker(std::atomic<bool>& hasError)
-{
-    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-        void* addr = malloc(K_ALLOC_100);
-        if (!addr) {
-            hasError = true;
-            return;
-        }
-        CallResTraceFreeRegion(1, addr, K_ALLOC_100);
-        free(addr);
-    }
-}
-
 static napi_value ResTraceFreeRegionThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(ResTraceFreeRegionWorker, std::ref(hasError));
+    for (int t = 0; t < K_THREAD_COUNT; ++t)
+    {
+        threads.emplace_back([&hasError]()
+        {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
+            {
+                void* addr = malloc(100);
+                if (!addr)
+                {
+                    hasError = true;
+                    return;
+                }
+                CallResTraceFreeRegion(1, addr, 100);
+                free(addr);
+            }
+        });
     }
-    for (auto& th : threads) {
+    for (auto& th : threads)
+    {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);
@@ -220,26 +239,16 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"resTraceFreeRegionNormal001", nullptr, ResTraceFreeRegionNormal001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"resTraceFreeRegionNormal002", nullptr, ResTraceFreeRegionNormal002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"resTraceFreeRegionNormal003", nullptr, ResTraceFreeRegionNormal003, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"resTraceFreeRegionNormal004", nullptr, ResTraceFreeRegionNormal004, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"resTraceFreeRegionAbnormal001", nullptr, ResTraceFreeRegionAbnormal001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"resTraceFreeRegionAbnormal002", nullptr, ResTraceFreeRegionAbnormal002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"resTraceFreeRegionBoundary001", nullptr, ResTraceFreeRegionBoundary001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"resTraceFreeRegionBoundary002", nullptr, ResTraceFreeRegionBoundary002, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"resTraceFreeRegionStable001", nullptr, ResTraceFreeRegionStable001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"resTraceFreeRegionThread001", nullptr, ResTraceFreeRegionThread001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+        {"resTraceFreeRegionNormal001", nullptr, ResTraceFreeRegionNormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"resTraceFreeRegionNormal002", nullptr, ResTraceFreeRegionNormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"resTraceFreeRegionNormal003", nullptr, ResTraceFreeRegionNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"resTraceFreeRegionNormal004", nullptr, ResTraceFreeRegionNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"resTraceFreeRegionAbnormal001", nullptr, ResTraceFreeRegionAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"resTraceFreeRegionAbnormal002", nullptr, ResTraceFreeRegionAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"resTraceFreeRegionBoundary001", nullptr, ResTraceFreeRegionBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"resTraceFreeRegionBoundary002", nullptr, ResTraceFreeRegionBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"resTraceFreeRegionStable001", nullptr, ResTraceFreeRegionStable001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"resTraceFreeRegionThread001", nullptr, ResTraceFreeRegionThread001, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
