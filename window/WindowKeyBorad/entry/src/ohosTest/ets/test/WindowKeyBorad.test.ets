@@ -356,7 +356,7 @@ export default function windowKeyBorad() {
           let input = await driver.findComponent(ON.id('textInput'));
           await sleep(1000);
           await input.click();
-          if(deviceType != "phone" || deviceType != "tablet" || deviceType != "2in1"){
+          if(deviceType !== "phone" || deviceType !== "tablet" || deviceType !== "2in1"){
             expect(conunt).assertEqual(0);
             done();
           }else{
@@ -426,7 +426,7 @@ export default function windowKeyBorad() {
           let input = await driver.findComponent(ON.id('textInput'));
           await sleep(1000);
           await input.click();
-          if(deviceType != "phone" || deviceType != "tablet" || deviceType != "2in1"){
+          if(deviceType !== "phone" || deviceType !== "tablet" || deviceType !== "2in1"){
             expect(conunt).assertEqual(0);
             done();
           }else{
