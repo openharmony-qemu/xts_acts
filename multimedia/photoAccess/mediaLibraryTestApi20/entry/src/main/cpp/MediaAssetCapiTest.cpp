@@ -215,8 +215,8 @@ static void HandleRequestContentWithBuffer(OH_MovingPhoto *movingPhoto)
     static const int MAX_RETRY_TIMES = 5;
     const int sessionStartWaitSeconds = 1;
     for (int i = 0; i < MAX_RETRY_TIMES; i++) {
-        g_requestContentWithBufferOk = 
-            OH_MovingPhoto_RequestContentWithBuffer(movingPhoto, resourceType, buffer, &size);
+        g_requestContentWithBufferOk = OH_MovingPhoto_RequestContentWithBuffer(
+            movingPhoto, resourceType, buffer, &size);
         std::this_thread::sleep_for(std::chrono::seconds(sessionStartWaitSeconds));
         if (g_requestContentWithBufferOk == 0) {
             break;
