@@ -3986,3 +3986,1459 @@ export default function ArithmeticOperatorTest() {
     it('testArithmeticOperator351', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Number.MIN_SAFE_INTEGER - 1).assertEqual(-9007199254740992)
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3620
+     * @tc.name testArithmeticOperator352
+     * @tc.desc Verify MIN_SAFE_INTEGER minus 2 precision loss
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator352', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Number.MIN_SAFE_INTEGER - 2).assertEqual(-9007199254740992)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3630
+     * @tc.name testArithmeticOperator353
+     * @tc.desc Verify MIN_VALUE is the smallest positive floating point
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator353', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Number.MIN_VALUE).assertEqual(5e-324)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3640
+     * @tc.name testArithmeticOperator354
+     * @tc.desc Verify MIN_VALUE divided by 2 underflows to 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator354', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Number.MIN_VALUE / 2).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3650
+     * @tc.name testArithmeticOperator355
+     * @tc.desc Verify MIN_VALUE times 0.5 underflows to 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator355', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Number.MIN_VALUE * 0.5).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3660
+     * @tc.name testArithmeticOperator356
+     * @tc.desc Verify 0 plus MIN_VALUE is exact
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator356', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(0 + Number.MIN_VALUE).assertEqual(Number.MIN_VALUE)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3670
+     * @tc.name testArithmeticOperator357
+     * @tc.desc Verify 1 plus MIN_VALUE unchanged due to insufficient precision
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator357', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(1 + Number.MIN_VALUE).assertEqual(1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3680
+     * @tc.name testArithmeticOperator358
+     * @tc.desc Verify EPSILON is the minimum representable precision difference
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator358', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(1 + Number.EPSILON).assertEqual(1 + Number.EPSILON)
+      expect(1 + Number.EPSILON > 1).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3690
+     * @tc.name testArithmeticOperator359
+     * @tc.desc Verify large number addition overflows to Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator359', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Number.MAX_VALUE + Number.MAX_VALUE).assertEqual(Infinity)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3700
+     * @tc.name testArithmeticOperator360
+     * @tc.desc Verify MAX_VALUE plus 1 does not overflow
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator360', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Number.MAX_VALUE + 1).assertEqual(Number.MAX_VALUE)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3710
+     * @tc.name testArithmeticOperator361
+     * @tc.desc Verify MAX_VALUE plus MAX_VALUE divided by 2 overflows
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator361', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Number.MAX_VALUE + Number.MAX_VALUE / 2).assertEqual(Infinity)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3720
+     * @tc.name testArithmeticOperator362
+     * @tc.desc Verify MAX_VALUE times 2 overflows
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator362', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Number.MAX_VALUE * 2).assertEqual(Infinity)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3730
+     * @tc.name testArithmeticOperator363
+     * @tc.desc Verify MAX_VALUE times 1.5 overflows
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator363', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Number.MAX_VALUE * 1.5).assertEqual(Infinity)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3740
+     * @tc.name testArithmeticOperator364
+     * @tc.desc Verify 1e154 times 1e154 large number overflow
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator364', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(1e154 * 1e154).assertEqual(1e+308)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3750
+     * @tc.name testArithmeticOperator365
+     * @tc.desc Verify 1e200 times 1e200 extremely large overflow
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator365', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(1e200 * 1e200).assertEqual(Infinity)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3760
+     * @tc.name testArithmeticOperator366
+     * @tc.desc Verify MIN_VALUE times 0.5 underflows to 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator366', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Number.MIN_VALUE * 0.5).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3770
+     * @tc.name testArithmeticOperator367
+     * @tc.desc Verify MIN_VALUE times MIN_VALUE underflows to 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator367', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Number.MIN_VALUE * Number.MIN_VALUE).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3780
+     * @tc.name testArithmeticOperator368
+     * @tc.desc Verify 1e-200 times 1e-200 underflows to 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator368', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(1e-200 * 1e-200).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3790
+     * @tc.name testArithmeticOperator369
+     * @tc.desc Verify MAX_VALUE divided by MIN_VALUE overflows to Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator369', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Number.MAX_VALUE / Number.MIN_VALUE).assertEqual(Infinity)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3800
+     * @tc.name testArithmeticOperator370
+     * @tc.desc Verify MIN_VALUE divided by MAX_VALUE underflows to 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator370', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Number.MIN_VALUE / Number.MAX_VALUE).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3810
+     * @tc.name testArithmeticOperator371
+     * @tc.desc Verify 1 divided by Infinity equals 0 underflow
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator371', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(1 / Infinity).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3820
+     * @tc.name testArithmeticOperator372
+     * @tc.desc Verify MIN_VALUE divided by 2 underflows to 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator372', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Number.MIN_VALUE / 2).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3830
+     * @tc.name testArithmeticOperator373
+     * @tc.desc Verify 10 to power 309 overflows to Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator373', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(10**309).assertEqual(Infinity)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3840
+     * @tc.name testArithmeticOperator374
+     * @tc.desc Verify 2 to power 1024 overflows
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator374', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(2**1024).assertEqual(Infinity)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3850
+     * @tc.name testArithmeticOperator375
+     * @tc.desc Verify 2 to power 1023 does not overflow
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator375', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(2**1023 < Infinity).assertTrue()
+      expect(2**1023 > 0).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3860
+     * @tc.name testArithmeticOperator376
+     * @tc.desc Verify large base large exponent overflow
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator376', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(999**100).assertEqual(9.04792147113709e+299)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3870
+     * @tc.name testArithmeticOperator377
+     * @tc.desc Verify negative divided by negative zero produces Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator377', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(-1 / (-0)).assertEqual(Infinity)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3880
+     * @tc.name testArithmeticOperator378
+     * @tc.desc Verify positive divided by negative zero produces negative Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator378', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(1 / (-0)).assertEqual(-Infinity)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3890
+     * @tc.name testArithmeticOperator379
+     * @tc.desc Verify prefix increment twice in expression
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator379', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 1
+      let result: number = ++x + ++x
+      expect(result).assertEqual(5)
+      expect(x).assertEqual(3)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3900
+     * @tc.name testArithmeticOperator380
+     * @tc.desc Verify prefix increment multiplied by 2
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator380', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 5
+      expect(++x * 2).assertEqual(12)
+      expect(x).assertEqual(6)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3910
+     * @tc.name testArithmeticOperator381
+     * @tc.desc Verify prefix increment value used in second reference
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator381', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 5
+      expect(++x + x).assertEqual(12)
+      expect(x).assertEqual(6)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3920
+     * @tc.name testArithmeticOperator382
+     * @tc.desc Verify prefix decrement twice in expression
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator382', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 5
+      let result: number = --x + --x
+      expect(result).assertEqual(7)
+      expect(x).assertEqual(3)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3930
+     * @tc.name testArithmeticOperator383
+     * @tc.desc Verify prefix decrement multiplied by 3
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator383', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 10
+      expect(--x * 3).assertEqual(27)
+      expect(x).assertEqual(9)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3940
+     * @tc.name testArithmeticOperator384
+     * @tc.desc Verify postfix increment twice in expression
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator384', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 1
+      let result: number = x++ + x++
+      expect(result).assertEqual(3)
+      expect(x).assertEqual(3)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3950
+     * @tc.name testArithmeticOperator385
+     * @tc.desc Verify postfix increment multiplied by 2
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator385', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 5
+      expect(x++ * 2).assertEqual(10)
+      expect(x).assertEqual(6)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3960
+     * @tc.name testArithmeticOperator386
+     * @tc.desc Verify postfix increment value used in second reference
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator386', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 5
+      expect(x++ + x).assertEqual(11)
+      expect(x).assertEqual(6)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3970
+     * @tc.name testArithmeticOperator387
+     * @tc.desc Verify postfix decrement twice in expression
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator387', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 5
+      let result: number = x-- + x--
+      expect(result).assertEqual(9)
+      expect(x).assertEqual(3)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3980
+     * @tc.name testArithmeticOperator388
+     * @tc.desc Verify mixed postfix and prefix increment
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator388', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 5
+      let result: number = x++ + ++x
+      expect(result).assertEqual(12)
+      expect(x).assertEqual(7)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_3990
+     * @tc.name testArithmeticOperator389
+     * @tc.desc Verify mixed prefix and postfix increment
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator389', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 5
+      let result: number = ++x + x++
+      expect(result).assertEqual(12)
+      expect(x).assertEqual(7)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4000
+     * @tc.name testArithmeticOperator390
+     * @tc.desc Verify prefix and postfix increment on different variables
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator390', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: number = 3, b: number = 4
+      let result: number = ++a + b++
+      expect(result).assertEqual(8)
+      expect(a).assertEqual(4)
+      expect(b).assertEqual(5)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4010
+     * @tc.name testArithmeticOperator391
+     * @tc.desc Verify postfix and prefix decrement on different variables
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator391', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: number = 10, b: number = 5
+      let result: number = a-- - --b
+      expect(result).assertEqual(6)
+      expect(a).assertEqual(9)
+      expect(b).assertEqual(4)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4020
+     * @tc.name testArithmeticOperator392
+     * @tc.desc Verify prefix increment in for loop counter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator392', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: number = 0
+      for (let i = 0; i < 5; ++i) {
+        sum += i
+      }
+      expect(sum).assertEqual(10)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4030
+     * @tc.name testArithmeticOperator393
+     * @tc.desc Verify postfix increment in for loop counter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator393', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: number = 0
+      for (let i = 0; i < 5; i++) {
+        sum += i
+      }
+      expect(sum).assertEqual(10)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4040
+     * @tc.name testArithmeticOperator394
+     * @tc.desc Verify countdown loop using decrement
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator394', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let items: number[] = []
+      for (let i = 5; i > 0; i--) {
+        items.push(i)
+      }
+      expect(items).assertDeepEquals([5, 4, 3, 2, 1])
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4050
+     * @tc.name testArithmeticOperator395
+     * @tc.desc Verify prefix decrement countdown loop
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator395', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let count: number = 0
+      for (let i = 10; i > 0; --i) {
+        count++
+      }
+      expect(count).assertEqual(10)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4060
+     * @tc.name testArithmeticOperator396
+     * @tc.desc Verify increment by 2 in for loop iteration
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator396', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let evens: number[] = []
+      for (let i = 0; i < 10; i += 2) {
+        evens.push(i)
+      }
+      expect(evens.length).assertEqual(5)
+      expect(evens[2]).assertEqual(4)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4070
+     * @tc.name testArithmeticOperator397
+     * @tc.desc Verify nested loop increment counting
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator397', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let count: number = 0
+      for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+          count++
+        }
+      }
+      expect(count).assertEqual(9)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4080
+     * @tc.name testArithmeticOperator398
+     * @tc.desc Verify assign prefix increment result to another variable
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator398', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 5
+      let y: number = ++x
+      expect(y).assertEqual(6)
+      expect(x).assertEqual(6)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4090
+     * @tc.name testArithmeticOperator399
+     * @tc.desc Verify assign postfix increment result to another variable
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator399', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 5
+      let y: number = x++
+      expect(y).assertEqual(5)
+      expect(x).assertEqual(6)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4100
+     * @tc.name testArithmeticOperator400
+     * @tc.desc Verify object numeric property increment
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: ESObject = { count: 10 }
+      obj.count++
+      expect(obj.count).assertEqual(11)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4110
+     * @tc.name testArithmeticOperator401
+     * @tc.desc Verify object property prefix increment
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: ESObject = { count: 10 }
+      let result: number = ++obj.count
+      expect(result).assertEqual(11)
+      expect(obj.count).assertEqual(11)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4120
+     * @tc.name testArithmeticOperator402
+     * @tc.desc Verify array element increment
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator402', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: number[] = [1, 2, 3]
+      arr[1]++
+      expect(arr[1]).assertEqual(3)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4130
+     * @tc.name testArithmeticOperator403
+     * @tc.desc Verify calculate factorial using multiplication
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator403', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(factorial403(0)).assertEqual(1)
+      expect(factorial403(1)).assertEqual(1)
+      expect(factorial403(5)).assertEqual(120)
+      expect(factorial403(10)).assertEqual(3628800)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4140
+     * @tc.name testArithmeticOperator404
+     * @tc.desc Verify large factorial overflows to Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator404', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(factorial403(171)).assertEqual(Infinity)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4150
+     * @tc.name testArithmeticOperator405
+     * @tc.desc Verify calculate Fibonacci using addition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator405', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(fibonacci405(0)).assertEqual(0)
+      expect(fibonacci405(1)).assertEqual(1)
+      expect(fibonacci405(10)).assertEqual(55)
+      expect(fibonacci405(20)).assertEqual(6765)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4160
+     * @tc.name testArithmeticOperator406
+     * @tc.desc Verify calculate GCD using modulo
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator406', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(gcd406(12, 8)).assertEqual(4)
+      expect(gcd406(48, 18)).assertEqual(6)
+      expect(gcd406(7, 13)).assertEqual(1)
+      expect(gcd406(100, 100)).assertEqual(100)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4170
+     * @tc.name testArithmeticOperator407
+     * @tc.desc Verify calculate LCM using GCD and division
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator407', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(lcm407(12, 8)).assertEqual(24)
+      expect(lcm407(4, 6)).assertEqual(12)
+      expect(lcm407(7, 13)).assertEqual(91)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4180
+     * @tc.name testArithmeticOperator408
+     * @tc.desc Verify check prime using modulo
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator408', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(isPrime408(2)).assertTrue()
+      expect(isPrime408(7)).assertTrue()
+      expect(isPrime408(1)).assertFalse()
+      expect(isPrime408(4)).assertFalse()
+      expect(isPrime408(97)).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4190
+     * @tc.name testArithmeticOperator409
+     * @tc.desc Verify reverse number using modulo and division
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator409', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(reverseNumber409(123)).assertEqual(321)
+      expect(reverseNumber409(100)).assertEqual(1)
+      expect(reverseNumber409(-123)).assertEqual(-321)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4200
+     * @tc.name testArithmeticOperator410
+     * @tc.desc Verify sum digits using modulo and division
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator410', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(digitSum410(123)).assertEqual(6)
+      expect(digitSum410(999)).assertEqual(27)
+      expect(digitSum410(0)).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4210
+     * @tc.name testArithmeticOperator411
+     * @tc.desc Verify check narcissistic number using power and modulo
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator411', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(isNarcissistic411(153)).assertTrue()
+      expect(isNarcissistic411(370)).assertTrue()
+      expect(isNarcissistic411(100)).assertFalse()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4220
+     * @tc.name testArithmeticOperator412
+     * @tc.desc Verify convert to binary using division and modulo
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator412', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(toBinary412(0)).assertEqual("0")
+      expect(toBinary412(1)).assertEqual("1")
+      expect(toBinary412(10)).assertEqual("1010")
+      expect(toBinary412(255)).assertEqual("11111111")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4230
+     * @tc.name testArithmeticOperator413
+     * @tc.desc Verify convert to hexadecimal using modulo
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator413', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(toHex413(255)).assertEqual("FF")
+      expect(toHex413(16)).assertEqual("10")
+      expect(toHex413(0)).assertEqual("0")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4240
+     * @tc.name testArithmeticOperator414
+     * @tc.desc Verify arithmetic result as if condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator414', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: number = 5, b: number = 3
+      expect(a + b > 7).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4250
+     * @tc.name testArithmeticOperator415
+     * @tc.desc Verify modulo result for odd even check
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator415', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let n: number = 7
+      expect(n % 2 === 0).assertFalse()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4260
+     * @tc.name testArithmeticOperator416
+     * @tc.desc Verify arithmetic with logical AND combination
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator416', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 50
+      expect(x > 0 && x % 10 === 0).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4270
+     * @tc.name testArithmeticOperator417
+     * @tc.desc Verify arithmetic with logical OR combination
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator417', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = -5
+      expect(x < 0 || x > 100).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4280
+     * @tc.name testArithmeticOperator418
+     * @tc.desc Verify subtraction decrement as termination condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator418', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 100
+      let count: number = 0
+      while (x - 1 > 0) {
+        x = x - 1
+        count++
+      }
+      expect(count).assertEqual(99)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4290
+     * @tc.name testArithmeticOperator419
+     * @tc.desc Verify division decrement as termination condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator419', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 1024
+      let steps: number = 0
+      while (x / 2 >= 1) {
+        x = x / 2
+        steps++
+      }
+      expect(steps).assertEqual(10)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4300
+     * @tc.name testArithmeticOperator420
+     * @tc.desc Verify modulo check as termination condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator420', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 100
+      while (x % 3 !== 0) {
+        x--
+      }
+      expect(x).assertEqual(99)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4310
+     * @tc.name testArithmeticOperator421
+     * @tc.desc Verify addition result in ternary expression
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator421', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: number = 3, b: number = 4
+      let result: string = (a + b >= 7) ? "pass" : "fail"
+      expect(result).assertEqual("pass")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4320
+     * @tc.name testArithmeticOperator422
+     * @tc.desc Verify modulo in ternary expression
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator422', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let n: number = 15
+      let result: string = (n % 3 === 0 && n % 5 === 0) ? "FizzBuzz" : "Other"
+      expect(result).assertEqual("FizzBuzz")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4330
+     * @tc.name testArithmeticOperator423
+     * @tc.desc Verify arithmetic as ternary value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator423', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let isEven: boolean = true
+      let result: number = isEven ? 2 * 5 : 2 * 5 + 1
+      expect(result).assertEqual(10)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4340
+     * @tc.name testArithmeticOperator424
+     * @tc.desc Verify adding numeric strings from form input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator424', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input1: string = "10"
+      let input2: string = "20"
+      expect((input1 as ESObject) + (input2 as ESObject)).assertEqual("1020")
+      expect(Number(input1) + Number(input2)).assertEqual(30)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4350
+     * @tc.name testArithmeticOperator425
+     * @tc.desc Verify array plus number produces unexpected result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator425', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(([1, 2] as ESObject) + 3).assertEqual("1,23")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4360
+     * @tc.name testArithmeticOperator426
+     * @tc.desc Verify null plus number produces unexpected result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator426', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((null as ESObject) + 5).assertEqual(5)
+      expect((null as ESObject) + "5").assertEqual("null5")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4370
+     * @tc.name testArithmeticOperator427
+     * @tc.desc Verify 0.1 plus 0.2 is not equal to 0.3
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator427', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(0.1 + 0.2 === 0.3).assertFalse()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4380
+     * @tc.name testArithmeticOperator428
+     * @tc.desc Verify floating point loop accumulation error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator428', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: number = 0
+      for (let i = 0; i < 10; i++) {
+        sum += 0.1
+      }
+      expect(sum === 1.0).assertFalse()
+      expect(sum).assertEqual(0.9999999999999999)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4390
+     * @tc.name testArithmeticOperator429
+     * @tc.desc Verify correct floating point comparison method
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator429', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(floatEqual429(0.1 + 0.2, 0.3)).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4400
+     * @tc.name testArithmeticOperator430
+     * @tc.desc Verify positive number divided by zero does not throw
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator430', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(1 / 0).assertEqual(Infinity)
+      expect(-1 / 0).assertEqual(-Infinity)
+      expect(Number.isNaN(0 / 0)).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4410
+     * @tc.name testArithmeticOperator431
+     * @tc.desc Verify division by zero requires explicit check
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator431', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        safeDivide431(10, 0)
+        expect().assertFail()
+      } catch (e) {
+        expect((e as Error).message).assertEqual("Division by zero")
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4420
+     * @tc.name testArithmeticOperator432
+     * @tc.desc Verify negative modulo result differs from mathematical definition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator432', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((-7) % 3).assertEqual(-1)
+      expect((7) % (-3)).assertEqual(1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4430
+     * @tc.name testArithmeticOperator433
+     * @tc.desc Verify implement mathematical positive modulo
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator433', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(mod433(-7, 3)).assertEqual(2)
+      expect(mod433(7, -3)).assertEqual(-2)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4440
+     * @tc.name testArithmeticOperator434
+     * @tc.desc Verify 2 power 3 power 2 equals 512 not 64
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator434', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(2**3**2).assertEqual(512)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4450
+     * @tc.name testArithmeticOperator435
+     * @tc.desc Verify using parentheses to change associativity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator435', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((2**3)**2).assertEqual(64)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4460
+     * @tc.name testArithmeticOperator436
+     * @tc.desc Verify double negative parsed as negation of negation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator436', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(-(-5)).assertEqual(5)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4470
+     * @tc.name testArithmeticOperator437
+     * @tc.desc Verify multiple consecutive negation operators
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator437', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 42
+      expect(-(-(-x))).assertEqual(-42)
+      expect(-(-x)).assertEqual(42)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4480
+     * @tc.name testArithmeticOperator438
+     * @tc.desc Verify multiple consecutive positive operators
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator438', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 42
+      expect(+(+x)).assertEqual(42)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4490
+     * @tc.name testArithmeticOperator439
+     * @tc.desc Verify NaN participates in addition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator439', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Number.isNaN(NaN + 1)).assertTrue()
+      expect(Number.isNaN(1 + NaN)).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4500
+     * @tc.name testArithmeticOperator440
+     * @tc.desc Verify NaN participates in subtraction multiplication division modulo exponentiation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator440', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Number.isNaN(NaN - 1)).assertTrue()
+      expect(Number.isNaN(NaN * 1)).assertTrue()
+      expect(Number.isNaN(NaN / 1)).assertTrue()
+      expect(Number.isNaN(NaN % 1)).assertTrue()
+      expect(Number.isNaN(NaN**2)).assertTrue()
+      expect(Number.isNaN(2**NaN)).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4510
+     * @tc.name testArithmeticOperator441
+     * @tc.desc Verify NaN converts to string when concatenated
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator441', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(("val: " + NaN)).assertEqual("val: NaN")
+      expect(typeof ("val: " + NaN)).assertEqual("string")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4520
+     * @tc.name testArithmeticOperator442
+     * @tc.desc Verify Infinity minus Infinity equals NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator442', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Number.isNaN(Infinity - Infinity)).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4530
+     * @tc.name testArithmeticOperator443
+     * @tc.desc Verify Infinity times 0 equals NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator443', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Number.isNaN(Infinity * 0)).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4540
+     * @tc.name testArithmeticOperator444
+     * @tc.desc Verify Infinity divided by Infinity equals NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator444', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Number.isNaN(Infinity / Infinity)).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4550
+     * @tc.name testArithmeticOperator445
+     * @tc.desc Verify 0 times Infinity equals NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator445', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Number.isNaN(0 * Infinity)).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4560
+     * @tc.name testArithmeticOperator446
+     * @tc.desc Verify Infinity to power 0 equals 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator446', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Infinity**0).assertEqual(1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4600
+     * @tc.name testArithmeticOperator450
+     * @tc.desc Verify addition grouping may produce different results
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator450', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: number = 1e16, b: number = 1, c: number = -1e16
+      expect((a + b) + c).assertEqual(0)
+      expect(a + (b + c)).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARITHMETIC_OPERATOR_4610
+     * @tc.name testArithmeticOperator451
+     * @tc.desc Verify floating point addition precision affected by order
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArithmeticOperator451', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: number = 0.1, b: number = 0.2, c: number = 0.3
+      let r1: number = (a + b) + c
+      let r2: number = a + (b + c)
+      expect(Math.abs(r1 - r2) < Number.EPSILON * 10).assertTrue()
+    });
+
+  });
+}
+
+
+function moneyRound345(n: number): number {
+  return Math.round(n * 100) / 100
+}
+
+function factorial403(n: number): number {
+  let result: number = 1
+  for (let i = 2; i <= n; i++) {
+    result *= i
+  }
+  return result
+}
+
+function fibonacci405(n: number): number {
+  if (n <= 1) {
+    return n
+  }
+  let a: number = 0, b: number = 1
+  for (let i = 2; i <= n; i++) {
+    let temp: number = a + b
+    a = b
+    b = temp
+  }
+  return b
+}
+
+function gcd406(a: number, b: number): number {
+  a = Math.abs(a)
+  b = Math.abs(b)
+  while (b !== 0) {
+    let temp: number = a % b
+    a = b
+    b = temp
+  }
+  return a
+}
+
+function lcm407(a: number, b: number): number {
+  return Math.abs(a * b) / gcd406(a, b)
+}
+
+function isPrime408(n: number): boolean {
+  if (n < 2) {
+    return false
+  }
+  for (let i = 2; i * i <= n; i++) {
+    if (n % i === 0) {
+      return false
+    }
+  }
+  return true
+}
+
+function reverseNumber409(n: number): number {
+  let result: number = 0
+  let num: number = Math.abs(n)
+  while (num > 0) {
+    result = result * 10 + num % 10
+    num = Math.floor(num / 10)
+  }
+  return n < 0 ? -result : result
+}
+
+function digitSum410(n: number): number {
+  let sum: number = 0
+  let num: number = Math.abs(n)
+  while (num > 0) {
+    sum += num % 10
+    num = Math.floor(num / 10)
+  }
+  return sum
+}
+
+function isNarcissistic411(n: number): boolean {
+  let digits: number[] = []
+  let num: number = n
+  while (num > 0) {
+    digits.push(num % 10)
+    num = Math.floor(num / 10)
+  }
+  let sum: number = digits.reduce((s, d) => s + d**digits.length, 0)
+  return sum === n
+}
+
+function toBinary412(n: number): string {
+  if (n === 0) {
+    return "0"
+  }
+  let result: string = ""
+  let num: number = n
+  while (num > 0) {
+    result = (num % 2).toString() + result
+    num = Math.floor(num / 2)
+  }
+  return result
+}
+
+function toHex413(n: number): string {
+  let hexChars: string = "0123456789ABCDEF"
+  if (n === 0) {
+    return "0"
+  }
+  let result: string = ""
+  let num: number = n
+  while (num > 0) {
+    result = hexChars[num % 16] + result
+    num = Math.floor(num / 16)
+  }
+  return result
+}
+
+function safeDivide431(a: number, b: number): number {
+  if (b === 0) {
+    throw new Error("Division by zero")
+  }
+  return a / b
+}
+
+function mod433(a: number, n: number): number {
+  return ((a % n) + n) % n
+}
+
+function floatEqual429(a: number, b: number, epsilon: number = 1e-10): boolean {
+  return Math.abs(a - b) < epsilon
+}
