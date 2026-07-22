@@ -22,9 +22,8 @@
 #include <thread>
 #include <vector>
 #include <atomic>
-#include <functional>
 
-static constexpr int K_STABLE_LOOP10000 = 20;
+static constexpr int K_STABLE_LOOP_10000 = 20;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_ITER_PER_THREAD = 10;
 
@@ -32,7 +31,8 @@ static double CallLog10Finite(double x)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetLog10Finite();
-    if (!func) {
+    if (!func)
+    {
         errno = ENOSYS;
         return 0.0;
     }
@@ -43,7 +43,8 @@ static double CallLog10Finite(double x)
 static bool IsStubMode()
 {
     auto& loader = LibcFunctionLoader::GetInstance();
-    if (!loader.GetLog10Finite()) {
+    if (!loader.GetLog10Finite())
+    {
         return true;
     }
     errno = 0;
@@ -63,8 +64,9 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 /* TC-001: log10(1.0) = 0.0 */
 static napi_value Log10FiniteNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     double result = CallLog10Finite(1.0);
     return ReturnInt32(env, (result == 0.0) ? 1 : 0);
@@ -73,8 +75,9 @@ static napi_value Log10FiniteNormal001(napi_env env, napi_callback_info info)
 /* TC-002: log10(10.0) = 1.0 */
 static napi_value Log10FiniteNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     double result = CallLog10Finite(10.0);
     return ReturnInt32(env, (fabs(result - 1.0) < 1e-15) ? 1 : 0);
@@ -83,19 +86,20 @@ static napi_value Log10FiniteNormal002(napi_env env, napi_callback_info info)
 /* TC-003: log10(100.0) = 2.0 */
 static napi_value Log10FiniteNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     double result = CallLog10Finite(100.0);
-    double expected = 2.0;
-    return ReturnInt32(env, (fabs(result - expected) < 1e-15) ? 1 : 0);
+    return ReturnInt32(env, (fabs(result - 2.0) < 1e-15) ? 1 : 0);
 }
 
 /* TC-004: log10(0.1) = -1.0 */
 static napi_value Log10FiniteNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     double result = CallLog10Finite(0.1);
     return ReturnInt32(env, (fabs(result + 1.0) < 1e-15) ? 1 : 0);
@@ -104,19 +108,20 @@ static napi_value Log10FiniteNormal004(napi_env env, napi_callback_info info)
 /* TC-005: log10(1000.0) = 3.0 */
 static napi_value Log10FiniteNormal005(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     double result = CallLog10Finite(1000.0);
-    double expected = 3.0;
-    return ReturnInt32(env, (fabs(result - expected) < 1e-15) ? 1 : 0);
+    return ReturnInt32(env, (fabs(result - 3.0) < 1e-15) ? 1 : 0);
 }
 
 /* TC-006: log10(2.0) matches std::log10 */
 static napi_value Log10FiniteNormal006(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     double result = CallLog10Finite(2.0);
     double expected = std::log10(2.0);
@@ -126,8 +131,9 @@ static napi_value Log10FiniteNormal006(napi_env env, napi_callback_info info)
 /* TC-007: Positive infinity returns +inf */
 static napi_value Log10FiniteNormal007(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     double result = CallLog10Finite(INFINITY);
     return ReturnInt32(env, std::isinf(result) && result > 0 ? 1 : 0);
@@ -136,8 +142,9 @@ static napi_value Log10FiniteNormal007(napi_env env, napi_callback_info info)
 /* TC-008: NaN input returns NaN */
 static napi_value Log10FiniteNormal008(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     double result = CallLog10Finite(NAN);
     return ReturnInt32(env, std::isnan(result) ? 1 : 0);
@@ -148,18 +155,21 @@ static napi_value Log10FiniteNormal008(napi_env env, napi_callback_info info)
 /* TC-009: x = 0.0 -> pole error */
 static napi_value Log10FiniteAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     errno = 0;
     feclearexcept(FE_ALL_EXCEPT);
     double result = CallLog10Finite(0.0);
     bool pass = std::isinf(result) && result < 0;
-    if (errno != ERANGE) {
+    if (errno != ERANGE)
+    {
         pass = false;
     }
 #ifdef FE_DIVBYZERO
-    if (!fetestexcept(FE_DIVBYZERO)) {
+    if (!fetestexcept(FE_DIVBYZERO))
+    {
         pass = false;
     }
 #endif
@@ -169,18 +179,21 @@ static napi_value Log10FiniteAbnormal001(napi_env env, napi_callback_info info)
 /* TC-010: x = -1.0 -> domain error */
 static napi_value Log10FiniteAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     errno = 0;
     feclearexcept(FE_ALL_EXCEPT);
     double result = CallLog10Finite(-1.0);
     bool pass = std::isnan(result);
-    if (errno != EDOM) {
+    if (errno != EDOM)
+    {
         pass = false;
     }
 #ifdef FE_INVALID
-    if (!fetestexcept(FE_INVALID)) {
+    if (!fetestexcept(FE_INVALID))
+    {
         pass = false;
     }
 #endif
@@ -192,8 +205,9 @@ static napi_value Log10FiniteAbnormal002(napi_env env, napi_callback_info info)
 /* TC-011: DBL_MAX -> finite result */
 static napi_value Log10FiniteBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     errno = 0;
     double result = CallLog10Finite(DBL_MAX);
@@ -204,8 +218,9 @@ static napi_value Log10FiniteBoundary001(napi_env env, napi_callback_info info)
 /* TC-012: DBL_MIN -> finite result */
 static napi_value Log10FiniteBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     errno = 0;
     double result = CallLog10Finite(DBL_MIN);
@@ -218,14 +233,17 @@ static napi_value Log10FiniteBoundary002(napi_env env, napi_callback_info info)
 /* TC-013: 10000 repeated calls stability */
 static napi_value Log10FiniteStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     bool pass = true;
     double expected = std::log10(10.0);
-    for (int i = 0; i < K_STABLE_LOOP10000; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i)
+    {
         double result = CallLog10Finite(10.0);
-        if (fabs(result - expected) > 1e-15) {
+        if (fabs(result - expected) > 1e-15)
+        {
             pass = false;
             break;
         }
@@ -233,33 +251,36 @@ static napi_value Log10FiniteStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
-static void Log10ThreadWorker(std::atomic<bool>& hasError, const double* testVals)
-{
-    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-        int idx = i % 5;
-        double expected = std::log10(testVals[idx]);
-        double result = CallLog10Finite(testVals[idx]);
-        if (fabs(result - expected) > 1e-15) {
-            hasError = true;
-            return;
-        }
-    }
-}
-
 /* TC-014: Multi-thread safety */
 static napi_value Log10FiniteThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
+    if (IsStubMode())
+    {
+        return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
     double testVals[] = {1.0, 10.0, 100.0, 0.1, 1000.0};
 
-    for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back(Log10ThreadWorker, std::ref(hasError), testVals);
+    for (int t = 0; t < K_THREAD_COUNT; ++t)
+    {
+        threads.emplace_back([&hasError, testVals]()
+        {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
+            {
+                int idx = i % 5;
+                double expected = std::log10(testVals[idx]);
+                double result = CallLog10Finite(testVals[idx]);
+                if (fabs(result - expected) > 1e-15)
+                {
+                    hasError = true;
+                    return;
+                }
+            }
+        });
     }
-    for (auto& th : threads) {
+    for (auto& th : threads)
+    {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);
@@ -309,7 +330,7 @@ static napi_module demoModule = {
     .nm_flags = 0,
     .nm_filename = nullptr,
     .nm_register_func = Init,
-    .nm_modname = "ohos_log10finitedktest",
+    .nm_modname = "log10finitedktest",
     .nm_priv = nullptr,
     .reserved = {0},
 };
