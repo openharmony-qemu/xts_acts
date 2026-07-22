@@ -141,7 +141,11 @@ export default function ASONTest(): void {
       let result: collections.Map<string, bigint> =
         ArkTSUtils.ASON.parse(jsonStr, undefined, options) as collections.Map<string, bigint>
       expect(result.size).assertEqual(1)
-      expect(result.get('value') === 112233445566778899n).assertTrue()
+      let bigVal: bigint | undefined = result.get('value')
+      expect(bigVal !== undefined).assertTrue()
+      if (bigVal !== undefined) {
+        expect(bigVal).assertEqual(112233445566778899n)
+      }
     })
 
     /**
@@ -160,8 +164,11 @@ export default function ASONTest(): void {
         expect().assertFail()
       } catch (e) {
         caughtError = true
-        // Device/runtime and asonutilstest: invalid JSON throws SyntaxError (no numeric code)
+        // Device/runtime and asonutilstest: invalid JSON throws SyntaxError (no BusinessError code)
         expect(e instanceof SyntaxError).assertTrue()
+        if (e instanceof SyntaxError) {
+          expect(e.message.length > 0).assertTrue()
+        }
       }
       expect(caughtError).assertTrue()
     })

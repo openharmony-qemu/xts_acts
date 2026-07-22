@@ -68,7 +68,14 @@ export class WorkerExchange {
         this.pendingResolve = null
         this.pendingReject = null
         resolver(e.data as Object)
+      } else {
+        // Unexpected message (e.g. after terminate or without pending send) — do not silently ignore
+        console.warn('WorkerExchange: unexpected onmessage, terminated=' +
+          (this.terminated ? 'true' : 'false'))
       }
+    }
+    this.wk.onmessageerror = (_e: MessageEvents): void => {
+      this.rejectPending(new Error('WorkerExchange onmessageerror'))
     }
     this.wk.onerror = (e: ErrorEvent): void => {
       this.rejectPending(new Error(e.message))
@@ -142,6 +149,7 @@ export class WorkerExchange {
     } finally {
       // Always drop callback refs so WorkerExchange/ThreadWorker can be GC'd
       this.wk.onmessage = undefined
+      this.wk.onmessageerror = undefined
       this.wk.onerror = undefined
       this.wk.onexit = undefined
     }

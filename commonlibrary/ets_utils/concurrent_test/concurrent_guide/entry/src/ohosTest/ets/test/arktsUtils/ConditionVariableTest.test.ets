@@ -85,8 +85,8 @@ export default function ConditionVariableTest(): void {
       let waitPromise: Promise<void> = cv2.wait().then(() => {
         notified = true
       })
-      // Confirm waiter is pending without fixed timer delay
-      await Promise.race([waitPromise, Promise.resolve()])
+      // One short yield so wait() registers; avoid Promise.resolve race assumptions
+      await sleep(1)
       expect(notified).assertFalse()
       cv1.notifyOne()
       await waitPromise
@@ -109,8 +109,8 @@ export default function ConditionVariableTest(): void {
         notified = true
       })
 
-      // Confirm waiter is pending without timer wait
-      await Promise.race([waitPromise, Promise.resolve()])
+      // One short yield so wait() registers; avoid Promise.resolve race assumptions
+      await sleep(1)
       expect(notified).assertFalse()
 
       cv.notifyOne()
@@ -155,8 +155,9 @@ export default function ConditionVariableTest(): void {
       let waiter2: Promise<void> = cv.wait().then(() => { wakeCount++ })
       let waiter3: Promise<void> = cv.wait().then(() => { wakeCount++ })
 
-      // Confirm waiters are pending without timer wait
-      await Promise.race([Promise.all([waiter1, waiter2, waiter3]), Promise.resolve()])
+      // One short yield so waiters register before notify
+      await sleep(1)
+      expect(wakeCount).assertEqual(0)
       cv.notifyOne()
       // Wait for one waiter to complete
       await Promise.race([waiter1, waiter2, waiter3])
@@ -183,8 +184,9 @@ export default function ConditionVariableTest(): void {
       let waiter2: Promise<void> = cv.wait().then(() => { wakeCount++ })
       let waiter3: Promise<void> = cv.wait().then(() => { wakeCount++ })
 
-      // Confirm waiters are pending without timer wait
-      await Promise.race([Promise.all([waiter1, waiter2, waiter3]), Promise.resolve()])
+      // One short yield so waiters register before notify
+      await sleep(1)
+      expect(wakeCount).assertEqual(0)
       cv.notifyAll()
       await Promise.all([waiter1, waiter2, waiter3])
       expect(wakeCount).assertEqual(3)
@@ -205,8 +207,8 @@ export default function ConditionVariableTest(): void {
       let task: taskpool.Task = new taskpool.Task(waitInTask, cv, result)
       let execPromise: Promise<Object> = taskpool.execute(task)
 
-      // Promise-driven: race task completion vs short yield; notify until done (no shared-flag polling)
-      // Rejection handler prevents unhandled rejection if sleep wins the race first
+      // Notify-retry vs execPromise (not shared-flag sleep poll): early notify may be lost
+      // before wait(); short sleep(1) yields only. Rejection handler avoids unhandled reject.
       try {
         let finished: boolean = false
         while (!finished) {
@@ -300,8 +302,8 @@ export default function ConditionVariableTest(): void {
       let task: taskpool.Task = new taskpool.Task(waitAndIncrement, cv, counter)
       let execPromise: Promise<Object> = taskpool.execute(task)
 
-      // Promise-driven: race task completion vs short yield; notify until done (no shared-flag polling)
-      // Rejection handler prevents unhandled rejection if sleep wins the race first
+      // Notify-retry vs execPromise (not shared-flag sleep poll): early notify may be lost
+      // before wait(); short sleep(1) yields only. Rejection handler avoids unhandled reject.
       try {
         let finished: boolean = false
         while (!finished) {
@@ -342,8 +344,9 @@ export default function ConditionVariableTest(): void {
         wokeEarly = true
       })
 
-      // Confirm waiter is pending without timer wait
-      await Promise.race([waitPromise, Promise.resolve()])
+      // One short yield so waitFor() registers before notify
+      await sleep(1)
+      expect(wokeEarly).assertFalse()
       cv.notifyOne()
       await waitPromise
 
