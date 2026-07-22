@@ -1989,3 +1989,1296 @@ export default function ConditionalTernaryOperatorTest() {
       expect(fib144(1)).assertEqual(1)
       expect(fib144(10)).assertEqual(55)
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1550
+     * @tc.name testConditionalTernaryOperator145
+     * @tc.desc Verify Use ternary to handle singular plural
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(pluralize145(1, "item", "items")).assertEqual("1 item")
+      expect(pluralize145(0, "item", "items")).assertEqual("0 items")
+      expect(pluralize145(5, "item", "items")).assertEqual("5 items")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1560
+     * @tc.name testConditionalTernaryOperator146
+     * @tc.desc Verify Use ternary to handle long text truncation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(truncate146("Hello World", 15)).assertEqual("Hello World")
+      expect(truncate146("Hello World", 8)).assertEqual("Hello...")
+      expect(truncate146("Hi", 10)).assertEqual("Hi")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1580
+     * @tc.name testConditionalTernaryOperator148
+     * @tc.desc Verify Use ternary to determine season by month
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(getSeason148(4)).assertEqual("Spring")
+      expect(getSeason148(7)).assertEqual("Summer")
+      expect(getSeason148(10)).assertEqual("Autumn")
+      expect(getSeason148(1)).assertEqual("Winter")
+      expect(getSeason148(12)).assertEqual("Winter")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1600
+     * @tc.name testConditionalTernaryOperator150
+     * @tc.desc Verify Verify MDN documentation age adult minor example
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(getAgeStatus150(0)).assertEqual("minor")
+      expect(getAgeStatus150(17)).assertEqual("minor")
+      expect(getAgeStatus150(18)).assertEqual("adult")
+      expect(getAgeStatus150(65)).assertEqual("adult")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1610
+     * @tc.name testConditionalTernaryOperator151
+     * @tc.desc Verify Branch returns calculation result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let isAdmin: boolean = true
+      let baseScore: number = 50
+      let finalScore: number = isAdmin ? baseScore + 50 : baseScore + 10
+      expect(finalScore).assertEqual(100)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1620
+     * @tc.name testConditionalTernaryOperator152
+     * @tc.desc Verify Ternary selects method chain
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let nums: number[] = [1, -2, 3, -4]
+      let condition: boolean = true
+      let result: number[] = condition
+        ? nums.filter(n => n > 0)
+        : nums.filter(n => n < 0)
+      expect(result).assertDeepEquals([1, 3])
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1630
+     * @tc.name testConditionalTernaryOperator153
+     * @tc.desc Verify Empty object as condition returns true branch
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: ESObject = {}
+      expect((obj as ESObject) ? "truthy" : "falsy").assertEqual("truthy")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1640
+     * @tc.name testConditionalTernaryOperator154
+     * @tc.desc Verify Object with properties as condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: ESObject = { x: 0, y: null }
+      expect((obj as ESObject) ? "truthy" : "falsy").assertEqual("truthy")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1650
+     * @tc.name testConditionalTernaryOperator155
+     * @tc.desc Verify Object numeric property 0 returns false branch
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let user: ESObject = { score: 0 }
+      expect(user.score ? "has score" : "no score").assertEqual("no score")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1660
+     * @tc.name testConditionalTernaryOperator156
+     * @tc.desc Verify Object string property empty returns false branch
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let user: ESObject = { name: "" }
+      expect(user.name ? "has name" : "no name").assertEqual("no name")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1670
+     * @tc.name testConditionalTernaryOperator157
+     * @tc.desc Verify Object property null returns false branch
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let user: ESObject = { data: null }
+      expect(user.data !== null ? "has data" : "no data").assertEqual("no data")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1690
+     * @tc.name testConditionalTernaryOperator159
+     * @tc.desc Verify Safely return default when intermediate is null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let data: ESObject = { user: null }
+      let name: string = data && data.user && data.user.profile
+        ? data.user.profile.name
+        : "Unknown"
+      expect(name).assertEqual("Unknown")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1700
+     * @tc.name testConditionalTernaryOperator160
+     * @tc.desc Verify Empty array is truthy but length is 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: ESObject[] = []
+      expect((arr as ESObject) ? "truthy" : "falsy").assertEqual("truthy")
+      expect(arr.length > 0 ? "has items" : "empty").assertEqual("empty")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1710
+     * @tc.name testConditionalTernaryOperator161
+     * @tc.desc Verify Single element array condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: number[] = [0]
+      expect(arr.length > 0 ? "has items" : "empty").assertEqual("has items")
+      expect((arr[0] as ESObject) ? "truthy" : "falsy").assertEqual("falsy")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1720
+     * @tc.name testConditionalTernaryOperator162
+     * @tc.desc Verify find returns undefined as condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let items: number[] = [1, 2, 3]
+      let found = items.find(n => n > 5)
+      expect(found !== undefined ? `Found ${found}` : "Not found").assertEqual("Not found")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1730
+     * @tc.name testConditionalTernaryOperator163
+     * @tc.desc Verify find returns valid value as condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let items: number[] = [1, 2, 3]
+      let found = items.find(n => n > 1)
+      expect(found !== undefined ? `Found ${found}` : "Not found").assertEqual("Found 2")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1740
+     * @tc.name testConditionalTernaryOperator164
+     * @tc.desc Verify indexOf returns -1 as condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let items: string[] = ["a", "b", "c"]
+      let idx: number = items.indexOf("z")
+      expect(idx !== -1 ? `At ${idx}` : "Not in list").assertEqual("Not in list")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1750
+     * @tc.name testConditionalTernaryOperator165
+     * @tc.desc Verify Function returns boolean as condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(isEven165(4) ? "even" : "odd").assertEqual("even")
+      expect(isEven165(3) ? "even" : "odd").assertEqual("odd")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1760
+     * @tc.name testConditionalTernaryOperator166
+     * @tc.desc Verify Function returns 0 as falsy condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(getCount166() ? "has items" : "empty").assertEqual("empty")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1770
+     * @tc.name testConditionalTernaryOperator167
+     * @tc.desc Verify Function returns null as falsy condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(getData167() !== null ? "has data" : "no data").assertEqual("no data")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1820
+     * @tc.name testConditionalTernaryOperator172
+     * @tc.desc Verify Getter with side effect called only once
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let callCount: number = 0
+      let obj: ESObject = {
+        get value() {
+          callCount++;
+          return true
+        }
+      }
+      let result: string = obj.value ? "yes" : "no"
+      expect(callCount).assertEqual(1)
+      expect(result).assertEqual("yes")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1860
+     * @tc.name testConditionalTernaryOperator176
+     * @tc.desc Verify Ternary returns different closures based on condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let double = getMultiplier176(2)
+      let identity = getMultiplier176(0.5)
+      expect(double(5)).assertEqual(10)
+      expect(identity(5)).assertEqual(5)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1870
+     * @tc.name testConditionalTernaryOperator177
+     * @tc.desc Verify Closure captures external variable in ternary branch
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let formalGreeter = createGreeter177(true)
+      let casualGreeter = createGreeter177(false)
+      expect(formalGreeter()).assertEqual("Dear, User!")
+      expect(casualGreeter()).assertEqual("Hi, User!")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1910
+     * @tc.name testConditionalTernaryOperator181
+     * @tc.desc Verify Return Error when condition not met
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let r1 = validateOrError181("hello")
+      expect(r1).assertEqual("hello")
+      let r2 = validateOrError181("")
+      expect((r2 as Error).message).assertEqual("empty input")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1940
+     * @tc.name testConditionalTernaryOperator184
+     * @tc.desc Verify Use ternary to dynamically determine step size
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: number = 0
+      for (let i = 0; i < 10; i += (i < 5 ? 1 : 2)) {
+        sum += i
+      }
+      expect(sum).assertEqual(31)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1950
+     * @tc.name testConditionalTernaryOperator185
+     * @tc.desc Verify Use ternary to dynamically select termination boundary
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let mode: string = "strict"
+      let limit: number = 10
+      let count: number = 0
+      for (let i = 0; i < (mode === "strict" ? limit : limit * 2); i++) {
+        count++
+      }
+      expect(count).assertEqual(10)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1960
+     * @tc.name testConditionalTernaryOperator186
+     * @tc.desc Verify Even numbers add 2 odd numbers add 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: number = 0
+      for (let i = 1; i <= 10; i++) {
+        sum += i % 2 === 0 ? 2 : 1
+      }
+      expect(sum).assertEqual(15)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1970
+     * @tc.name testConditionalTernaryOperator187
+     * @tc.desc Verify Use ternary in loop to determine concatenation content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: string = ""
+      for (let i = 1; i <= 5; i++) {
+        result += i % 3 === 0 ? "Fizz" : i.toString()
+      }
+      expect(result).assertEqual("12Fizz45")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1980
+     * @tc.name testConditionalTernaryOperator188
+     * @tc.desc Verify Ternary dynamically determines while condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let data: number[] = [1, 2, 3, 4, 5]
+      let idx: number = 0
+      let max: number = 3
+      while (idx < (max > 0 ? max : data.length)) {
+        idx++
+      }
+      expect(idx).assertEqual(3)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_1990
+     * @tc.name testConditionalTernaryOperator189
+     * @tc.desc Verify Enum value comparison using ternary
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(getLabel189(Status189.Active)).assertEqual("Active")
+      expect(getLabel189(Status189.Pending)).assertEqual("Pending")
+      expect(getLabel189(Status189.Inactive)).assertEqual("Inactive")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2000
+     * @tc.name testConditionalTernaryOperator190
+     * @tc.desc Verify Enum value numeric range condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(getPriority190(Level190.Critical)).assertEqual("Urgent")
+      expect(getPriority190(Level190.High)).assertEqual("Urgent")
+      expect(getPriority190(Level190.Medium)).assertEqual("Normal")
+      expect(getPriority190(Level190.Low)).assertEqual("Low")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2010
+     * @tc.name testConditionalTernaryOperator191
+     * @tc.desc Verify String enum comparison using ternary
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(getHexCode191(Color191.Red)).assertEqual("#FF0000")
+      expect(getHexCode191(Color191.Green)).assertEqual("#00FF00")
+      expect(getHexCode191(Color191.Blue)).assertEqual("#0000FF")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2020
+     * @tc.name testConditionalTernaryOperator192
+     * @tc.desc Verify Use ternary with Map has return value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cache = new Map<string, number>()
+      cache.set("a", 1)
+      let key: string = "a"
+      let result: string = cache.has(key) ? `Found: ${cache.get(key)}` : "Not found"
+      expect(result).assertEqual("Found: 1")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2030
+     * @tc.name testConditionalTernaryOperator193
+     * @tc.desc Verify Use default value when Map has returns false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cache = new Map<string, number>()
+      let key: string = "missing"
+      let result: number = cache.has(key) ? cache.get(key)! : -1
+      expect(result).assertEqual(-1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2050
+     * @tc.name testConditionalTernaryOperator195
+     * @tc.desc Verify Use ternary with Set has return value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator195', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let allowedRoles = new Set<string>(["admin", "editor"])
+      let role: string = "admin"
+      let result: string = allowedRoles.has(role) ? "access granted" : "access denied"
+      expect(result).assertEqual("access granted")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2060
+     * @tc.name testConditionalTernaryOperator196
+     * @tc.desc Verify Deny access when Set has returns false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let blockedIPs = new Set<string>(["192.168.1.1", "10.0.0.1"])
+      let ip: string = "192.168.1.2"
+      let result: string = blockedIPs.has(ip) ? "blocked" : "allowed"
+      expect(result).assertEqual("allowed")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2080
+     * @tc.name testConditionalTernaryOperator198
+     * @tc.desc Verify Select case based on format requirement
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(formatText198("Hello", "upper")).assertEqual("HELLO")
+      expect(formatText198("Hello", "lower")).assertEqual("hello")
+      expect(formatText198("Hello", "original")).assertEqual("Hello")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2090
+     * @tc.name testConditionalTernaryOperator199
+     * @tc.desc Verify Decide padding based on length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(padIfNeeded199("42", 5, true)).assertEqual("00042")
+      expect(padIfNeeded199("42", 5, false)).assertEqual("42000")
+      expect(padIfNeeded199("12345", 3, true)).assertEqual("12345")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2100
+     * @tc.name testConditionalTernaryOperator200
+     * @tc.desc Verify Conditionally slice string based on max length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(safeSlice200("Hello World", 10, "...")).assertEqual("Hello W...")
+      expect(safeSlice200("Hi", 10, "...")).assertEqual("Hi")
+      expect(safeSlice200("Hello World", 5, "...")).assertEqual("He...")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2110
+     * @tc.name testConditionalTernaryOperator201
+     * @tc.desc Verify Select different regex replacement by mode
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(sanitize201('<script>', "html")).assertEqual("&lt;script&gt;")
+      expect(sanitize201("it's", "sql")).assertEqual("it''s")
+      expect(sanitize201("plain", "none")).assertEqual("plain")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2120
+     * @tc.name testConditionalTernaryOperator202
+     * @tc.desc Verify Select delimiter by format
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(joinItems202(["a", "b", "c"], "csv")).assertEqual("a,b,c")
+      expect(joinItems202(["a", "b", "c"], "tsv")).assertEqual("a\tb\tc")
+      expect(joinItems202(["a", "b", "c"], "json")).assertEqual('["a","b","c"]')
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2130
+     * @tc.name testConditionalTernaryOperator203
+     * @tc.desc Verify Use ternary to return default when divisor is 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(safeDivide203(10, 2)).assertEqual(5)
+      expect(safeDivide203(10, 0)).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2140
+     * @tc.name testConditionalTernaryOperator204
+     * @tc.desc Verify Return Infinity or null on division by zero
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(divideOr204(10, 2)).assertEqual(5)
+      expect(divideOr204(10, 0)).assertNull()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2150
+     * @tc.name testConditionalTernaryOperator205
+     * @tc.desc Verify Implement numeric clamp using ternary
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(clamp205(5, 0, 10)).assertEqual(5)
+      expect(clamp205(-5, 0, 10)).assertEqual(0)
+      expect(clamp205(15, 0, 10)).assertEqual(10)
+      expect(clamp205(0, 0, 10)).assertEqual(0)
+      expect(clamp205(10, 0, 10)).assertEqual(10)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2160
+     * @tc.name testConditionalTernaryOperator206
+     * @tc.desc Verify Use ternary to check if number is in safe range
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(isSafeInteger206(42)).assertTrue()
+      expect(isSafeInteger206(Number.MAX_SAFE_INTEGER + 1)).assertFalse()
+      expect(isSafeInteger206(3.14)).assertFalse()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2170
+     * @tc.name testConditionalTernaryOperator207
+     * @tc.desc Verify Select precision by number magnitude
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(formatNumber207(1234.5)).assertEqual("1235")
+      expect(formatNumber207(12.3456)).assertEqual("12.35")
+      expect(formatNumber207(0.123456)).assertEqual("0.1235")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2180
+     * @tc.name testConditionalTernaryOperator208
+     * @tc.desc Verify Use ternary to handle floating point precision
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(approxEqual208(0.1 + 0.2, 0.3)).assertTrue()
+      expect(approxEqual208(1.0, 1.0001)).assertFalse()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2190
+     * @tc.name testConditionalTernaryOperator209
+     * @tc.desc Verify Select radix by format
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(toBase209(255, "bin")).assertEqual("0b11111111")
+      expect(toBase209(255, "oct")).assertEqual("0o377")
+      expect(toBase209(255, "hex")).assertEqual("0xff")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2200
+     * @tc.name testConditionalTernaryOperator210
+     * @tc.desc Verify Use ternary for permission bit check
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const READ: number = 1
+      const WRITE: number = 2
+      const EXECUTE: number = 4
+      let permissions: number = READ | WRITE
+      expect((permissions & READ) !== 0 ? "can read" : "no read").assertEqual("can read")
+      expect((permissions & EXECUTE) !== 0 ? "can exec" : "no exec").assertEqual("no exec")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2210
+     * @tc.name testConditionalTernaryOperator211
+     * @tc.desc Verify Use bitwise operation with ternary to check odd even
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(oddOrEven211(4)).assertEqual("even")
+      expect(oddOrEven211(7)).assertEqual("odd")
+      expect(oddOrEven211(0)).assertEqual("even")
+      expect(oddOrEven211(-3)).assertEqual("odd")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2220
+     * @tc.name testConditionalTernaryOperator212
+     * @tc.desc Verify Select different bitwise operation by condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(bitOp212(0b1100, 0b1010, "and")).assertEqual(0b1000)
+      expect(bitOp212(0b1100, 0b1010, "or")).assertEqual(0b1110)
+      expect(bitOp212(0b1100, 0b1010, "xor")).assertEqual(0b0110)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2230
+     * @tc.name testConditionalTernaryOperator213
+     * @tc.desc Verify No need for ternary when condition is already boolean
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 5
+      let r1: boolean = x > 3 ? true : false
+      let r2: boolean = x > 3
+      expect(r1).assertEqual(r2)
+      expect(r1).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2240
+     * @tc.name testConditionalTernaryOperator214
+     * @tc.desc Verify Ternary return value duplicates condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let isAdmin: boolean = true
+      let r1: boolean = isAdmin === true ? true : false
+      let r2: boolean = isAdmin
+      expect(r1).assertEqual(r2)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2250
+     * @tc.name testConditionalTernaryOperator215
+     * @tc.desc Verify Verify multi-branch ternary equals Map lookup
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(getColorTernary215(3)).assertEqual(getColorMap215(3))
+      expect(getColorTernary215(99)).assertEqual(getColorMap215(99))
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2260
+     * @tc.name testConditionalTernaryOperator216
+     * @tc.desc Verify Execute assignment in ternary branch
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let log: string[] = []
+      let level: string = "error"
+      let condition: boolean = true
+      let result: string = condition
+        ? (() => {
+          log.push("branch A executed");
+          return "A"
+        })()
+        : (() => {
+          log.push("branch B executed");
+          return "B"
+        })()
+      expect(result).assertEqual("A")
+      expect(log).assertDeepEquals(["branch A executed"])
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2270
+     * @tc.name testConditionalTernaryOperator217
+     * @tc.desc Verify Use IIFE in ternary branch to modify external state
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let state: number = 0
+      let increment: boolean = true
+      let result: number = increment
+        ? (() => {
+          state += 5;
+          return state
+        })()
+        : (() => {
+          state -= 3;
+          return state
+        })()
+      expect(state).assertEqual(5)
+      expect(result).assertEqual(5)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2280
+     * @tc.name testConditionalTernaryOperator218
+     * @tc.desc Verify Be careful when ternary returns different types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let condition: boolean = true
+      let result: ESObject = condition ? "text" : 42
+      if (typeof result === "string") {
+        expect(result.toUpperCase()).assertEqual("TEXT")
+      } else {
+        expect(result * 2).assertEqual(84)
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2290
+     * @tc.name testConditionalTernaryOperator219
+     * @tc.desc Verify Ternary returns object or string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let raw: boolean = false
+      let result: ESObject = raw ? { parsed: 42 } : "error"
+      expect(typeof result).assertEqual("string")
+      expect(result).assertEqual("error")
+      let raw2: boolean = true
+      let result2: ESObject = raw2 ? { parsed: 42 } : "error"
+      expect(typeof result2).assertEqual("object")
+      expect(result2.parsed).assertEqual(42)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2300
+     * @tc.name testConditionalTernaryOperator220
+     * @tc.desc Verify Use ternary to calculate discount and shipping
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(calculateTotal220(200, true, 3)).assertEqual(160)
+      expect(calculateTotal220(80, false, 3)).assertEqual(80)
+      expect(calculateTotal220(30, false, 10)).assertEqual(45)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2310
+     * @tc.name testConditionalTernaryOperator221
+     * @tc.desc Verify Use nested ternary to evaluate password strength
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(passwordStrength221("Abc123!@")).assertEqual("strong")
+      expect(passwordStrength221("abc123")).assertEqual("weak")
+      expect(passwordStrength221("abcdef")).assertEqual("very weak")
+      expect(passwordStrength221("abc")).assertEqual("very weak")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2320
+     * @tc.name testConditionalTernaryOperator222
+     * @tc.desc Verify Use ternary to format by log level
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(formatLog222("ERROR", "Failed")).assertEqual("[ERROR] Failed")
+      expect(formatLog222("INFO", "Processing", { id: 1 })).assertEqual('[INFO]  Processing | {"id":1}')
+      expect(formatLog222("DEBUG", "Debug msg")).assertEqual("[DEBUG] Debug msg")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONDITIONAL_TERNARY_OPERATOR_2340
+     * @tc.name testConditionalTernaryOperator224
+     * @tc.desc Verify Use ternary to switch language text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConditionalTernaryOperator224', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(t224("welcome", "en")).assertEqual("Welcome")
+      expect(t224("welcome", "zh")).assertEqual("欢迎")
+      expect(t224("welcome", "ja")).assertEqual("ようこそ")
+      expect(t224("welcome", "fr")).assertEqual("Welcome")
+      expect(t224("unknownkey", "en")).assertEqual("unknownkey")
+    });
+  });
+}
+
+function check49(): boolean {
+  callCount++
+  return true
+}
+
+function classify53(score: number): string {
+  return score >= 90 ? "A"
+    : score >= 60 ? "B"
+      : "F"
+}
+
+function getGrade54(score: number): string {
+  return score >= 90 ? "A"
+    : score >= 80 ? "B"
+      : score >= 70 ? "C"
+        : score >= 60 ? "D"
+          : "F"
+}
+
+function getStatus59(isActive: boolean, isAdmin: boolean, isVerified: boolean): string {
+  return isActive
+    ? (isAdmin ? "Active Admin" : (isVerified ? "Active User" : "Active Unverified"))
+    : (isAdmin ? "Inactive Admin" : "Inactive User")
+}
+
+function ternaryVersion62(score: number): string {
+  return score >= 90 ? "A" : score >= 80 ? "B" : score >= 60 ? "C" : "F"
+}
+
+function ifVersion62(score: number): string {
+  if (score >= 90) {
+    return "A"
+  } else if (score >= 80) {
+    return "B"
+  } else if (score >= 60) {
+    return "C"
+  } else {
+    return "F"
+  }
+}
+
+function getValue73(n: number): string | number | boolean {
+  return n > 0 ? "positive" : n < 0 ? "negative" : true
+}
+
+function greet84(name: string): string {
+  return `Hello, ${name}`
+}
+
+function doFast85(): string {
+  return "fast result"
+}
+
+function doSlow85(): string {
+  return "slow result"
+}
+
+function getLabel98(value: string | null | undefined): string {
+  return value != null ? value : "default"
+}
+
+function calculate100(a: number, b: number, op: string): number {
+  return op === "+" ? a + b
+    : op === "-" ? a - b
+      : op === "*" ? a * b
+        : op === "/" ? a / b
+          : NaN
+}
+
+function getErrorMessage102(code: number): string {
+  return code === 404 ? "Not Found"
+    : code === 500 ? "Server Error"
+      : code === 403 ? "Forbidden"
+        : "Unknown Error"
+}
+
+function getDayName103(day: number): string {
+  return day === 0 ? "Sunday"
+    : day === 1 ? "Monday"
+      : day === 2 ? "Tuesday"
+        : day === 3 ? "Wednesday"
+          : day === 4 ? "Thursday"
+            : day === 5 ? "Friday"
+              : day === 6 ? "Saturday"
+                : "Invalid"
+}
+
+function process114(value: string | number): string {
+  return typeof value === "string" ? value.toUpperCase() : value.toString()
+}
+
+function getDateValue115(d: Date | string): number {
+  return d instanceof Date ? d.getTime() : new Date(d).getTime()
+}
+
+function double118(n: number | undefined): number {
+  return n !== undefined ? n * 2 : 0
+}
+
+function getLength117(s: string | null): number {
+  return s !== null ? s.length : 0
+}
+
+function getAction132(temp: number): string {
+  return temp > 100 ? "boil"
+    : temp > 50 ? "hot"
+      : temp > 20 ? "warm"
+        : temp > 0 ? "cold"
+          : temp > -50 ? "freezing"
+            : "extreme"
+}
+
+function validateEmail133(email: string): string {
+  return email.length === 0 ? "Email is required"
+    : !email.includes("@") ? "Invalid email format"
+      : email.length > 100 ? "Email too long"
+        : "valid"
+}
+
+function getAccessLevel134(role: string, isOwner: boolean): string {
+  return isOwner ? "owner"
+    : role === "admin" ? "admin"
+      : role === "editor" ? "editor"
+        : role === "viewer" ? "viewer"
+          : "none"
+}
+
+function formatPrice135(price: number, currency: string): string {
+  let symbol: string = currency === "USD" ? "$"
+    : currency === "EUR" ? "€"
+      : currency === "JPY" ? "¥"
+        : ""
+  return symbol + (currency === "JPY" ? Math.round(price) : price.toFixed(2))
+}
+
+function formatBytes136(bytes: number): string {
+  return bytes >= 1073741824 ? (bytes / 1073741824).toFixed(2) + " GB"
+    : bytes >= 1048576 ? (bytes / 1048576).toFixed(2) + " MB"
+      : bytes >= 1024 ? (bytes / 1024).toFixed(2) + " KB"
+        : bytes + " B"
+}
+
+function abs140(n: number): number {
+  return n < 0 ? -n : n
+}
+
+function max141(a: number, b: number): number {
+  return a > b ? a : b
+}
+
+function min142(a: number, b: number): number {
+  return a < b ? a : b
+}
+
+function factorial143(n: number): number {
+  return n <= 1 ? 1 : n * factorial143(n - 1)
+}
+
+function fib144(n: number): number {
+  return n < 2 ? n : fib144(n - 1) + fib144(n - 2)
+}
+
+function pluralize145(count: number, singular: string, plural: string): string {
+  return `${count} ${count === 1 ? singular : plural}`
+}
+
+function truncate146(s: string, maxLen: number): string {
+  return s.length > maxLen ? s.slice(0, maxLen - 3) + "..." : s
+}
+
+
+function getSeason148(month: number): string {
+  return month >= 3 && month <= 5 ? "Spring"
+    : month >= 6 && month <= 8 ? "Summer"
+      : month >= 9 && month <= 11 ? "Autumn"
+        : month === 12 || month <= 2 ? "Winter"
+          : "Invalid"
+}
+
+function getAgeStatus150(age: number): string {
+  return age >= 18 ? "adult" : "minor"
+}
+
+function isEven165(n: number): boolean {
+  return n % 2 === 0
+}
+
+function getCount166(): number {
+  return 0
+}
+
+function getData167(): ESObject {
+  return null
+}
+
+function getMultiplier176(factor: number): (n: number) => number {
+  return factor > 1
+    ? (n: number) => n * factor
+    : (n: number) => n
+}
+
+function createGreeter177(formal: boolean): () => string {
+  let prefix: string = formal ? "Dear" : "Hi"
+  return () => `${prefix}, User!`
+}
+
+function validateOrError181(input: string): string | Error {
+  return input.length > 0 ? input : new Error("empty input")
+}
+
+function getLabel189(s: Status189): string {
+  return s === Status189.Active ? "Active"
+    : s === Status189.Pending ? "Pending"
+      : "Inactive"
+}
+
+function getPriority190(l: Level190): string {
+  return l >= Level190.High ? "Urgent" : l >= Level190.Medium ? "Normal" : "Low"
+}
+
+function getHexCode191(c: Color191): string {
+  return c === Color191.Red ? "#FF0000"
+    : c === Color191.Green ? "#00FF00"
+      : c === Color191.Blue ? "#0000FF"
+        : "#000000"
+}
+
+function formatText198(text: string, mode: "upper" | "lower" | "original"): string {
+  return mode === "upper" ? text.toUpperCase()
+    : mode === "lower" ? text.toLowerCase()
+      : text
+}
+
+function padIfNeeded199(s: string, target: number, useLeft: boolean): string {
+  let needsPad: boolean = s.length < target
+  return needsPad && useLeft ? s.padStart(target, "0")
+    : needsPad && !useLeft ? s.padEnd(target, "0")
+      : s
+}
+
+function safeSlice200(s: string, max: number, suffix: string): string {
+  return s.length > max ? s.slice(0, max - suffix.length) + suffix : s
+}
+
+function sanitize201(input: string, mode: "html" | "sql" | "none"): string {
+  return mode === "html"
+    ? input.replace(/[<>&"]/g, (c) =>
+    c === "<" ? "&lt;" : c === ">" ? "&gt;" : c === "&" ? "&amp;" : "&quot;")
+    : mode === "sql"
+      ? input.replace(/'/g, "''")
+      : input
+}
+
+function joinItems202(items: string[], format: "csv" | "tsv" | "json"): string {
+  let delimiter: string = format === "csv" ? "," : format === "tsv" ? "\t" : ""
+  return format === "json"
+    ? "[" + items.map(i => `"${i}"`).join(",") + "]"
+    : items.join(delimiter)
+}
+
+function safeDivide203(a: number, b: number): number {
+  return b !== 0 ? a / b : 0
+}
+
+function divideOr204(a: number, b: number): ESObject {
+  return b !== 0 ? a / b : null
+}
+
+function clamp205(value: number, min: number, max: number): number {
+  return value < min ? min : value > max ? max : value
+}
+
+function isSafeInteger206(n: number): boolean {
+  return n > Number.MAX_SAFE_INTEGER ? false
+    : n < Number.MIN_SAFE_INTEGER ? false
+      : !Number.isInteger(n) ? false
+        : true
+}
+
+function formatNumber207(n: number): string {
+  return Math.abs(n) >= 1000 ? n.toFixed(0)
+    : Math.abs(n) >= 1 ? n.toFixed(2)
+      : n.toFixed(4)
+}
+
+function approxEqual208(a: number, b: number, epsilon: number = 1e-10): boolean {
+  return Math.abs(a - b) < epsilon ? true : false
+}
+
+function toBase209(n: number, base: "bin" | "oct" | "hex"): string {
+  let radix: number = base === "bin" ? 2 : base === "oct" ? 8 : 16
+  let prefix: string = base === "bin" ? "0b" : base === "oct" ? "0o" : "0x"
+  return prefix + n.toString(radix)
+}
+
+function oddOrEven211(n: number): string {
+  return (n & 1) === 0 ? "even" : "odd"
+}
+
+function bitOp212(a: number, b: number, op: string): number {
+  return op === "and" ? a & b
+    : op === "or" ? a | b
+      : op === "xor" ? a ^ b
+        : 0
+}
+
+function getColorTernary215(code: number): string {
+  return code === 1 ? "red"
+    : code === 2 ? "green"
+      : code === 3 ? "blue"
+        : code === 4 ? "yellow"
+          : code === 5 ? "purple"
+            : "unknown"
+}
+
+function getColorMap215(code: number): string {
+  return colorMap.get(code) ?? "unknown"
+}
+
+function calculateTotal220(subtotal: number, isVIP: boolean, itemCount: number): number {
+  let discount: number = isVIP ? 0.8 : subtotal > 100 ? 0.9 : 1
+  let shipping: number = subtotal * discount > 50 ? 0 : 10
+  let fee: number = itemCount > 5 ? 5 : 0
+  return subtotal * discount + shipping + fee
+}
+
+function passwordStrength221(pwd: string): string {
+  let hasUpper: boolean = /[A-Z]/.test(pwd)
+  let hasLower: boolean = /[a-z]/.test(pwd)
+  let hasDigit: boolean = /\d/.test(pwd)
+  let hasSpecial: boolean = /[^A-Za-z0-9]/.test(pwd)
+  let score: number = (hasUpper ? 1 : 0) + (hasLower ? 1 : 0) +
+    (hasDigit ? 1 : 0) + (hasSpecial ? 1 : 0) +
+    (pwd.length >= 8 ? 1 : 0)
+  return score >= 4 ? "strong"
+    : score >= 3 ? "medium"
+      : score >= 2 ? "weak"
+        : "very weak"
+}
+
+function formatLog222(level: string, msg: string, data?: ESObject): string {
+  let prefix: string =
+    level === "ERROR" ? "[ERROR] "
+      : level === "WARN" ? "[WARN]  "
+      : level === "INFO" ? "[INFO]  "
+        : "[DEBUG] "
+  let suffix: string = data !== undefined ? ` | ${JSON.stringify(data)}` : ""
+  return prefix + msg + suffix
+}
+
+function t224(key: string, lang: string): string {
+  return messages.has(lang)
+    ? (messages.get(lang)!.get(key) ?? key)
+    : (messages.get("en")!.get(key) ?? key)
+}
