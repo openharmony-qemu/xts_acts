@@ -15,17 +15,17 @@
 
 .container {
     width: 100%;
-    height: 454px;
+    height: 100%;
     flex-direction: column;
     align-items: center;
-    padding-top: 10px;
+    padding-top: 30px;
 }
 
 .content-title {
-    width: 60%;
+    width: 90%;
     height: 60px;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .backBtnHelp{
@@ -36,39 +36,49 @@
 
 .content {
     width: 90%;
-    height: 30%;
+    height: 20%;
     justify-content: center;
     align-items: center;
     margin: 10px;
 }
 
 .text {
-    width: 280px;
-    height:80px;
+    width: 90%;
+    height: 80px;
     text-align: center;
     margin-top: 10px;
+    font-size: 16px;
 }
 .bottom-operate {
     width: 80%;
-    height: 125px;
-    padding-top: 5px;
-    flex-direction: column;
+    height: 60px;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
 }
 
 .button-operate {
-    width:180px;
+    width: 48%;
     height:50px;
     margin-bottom: 10px;
+    font-size: 14px;
 }
 
 .bottom-bt {
-    width: 80%;
+    width: 60%;
     height: 56px;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+.button {
+    width: 31%;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 14px;
 }
 
 .button:active {

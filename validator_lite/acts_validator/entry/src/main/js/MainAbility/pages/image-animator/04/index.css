@@ -15,29 +15,30 @@
 
 .container {
   width: 100%;
-  height: 454px;
+  height: 100%;
   flex-direction: column;
   align-items: center;
-  padding-top: 10px;
+  padding-top: 30px;
 }
 
 .content-title {
-  margin-top: 10px;
-  width: 295px;
+  width: 90%;
   height: 50px;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
 }
 
-.backBtnHelp{
-  width:50px;
-  height:50px;
+.backBtnHelp {
+  width: 50px;
+  height: 50px;
   font-size: 28px;
 }
 
 .content-bt {
-  width: 100%;
-  height: 60px;
+  width: 90%;
+  height: 50px;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
@@ -45,25 +46,34 @@
 
 .button-bt {
   border-radius: 4px;
-  width: 80px;
-  margin: 5px;
+  width: 23%;
+  height: 44px;
+  font-size: 14px;
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 
 .bottom-bt {
-  width: 80%;
+  width: 60%;
   height: 60px;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 6px;
 }
 
-.button{
-  width:100px;
-  height:50px;
+.button {
+  width: 31%;
+  height: 50px;
   margin-top: 10px;
+  font-size: 14px;
 }
 
 .button:active {
+  background-color: blueviolet;
+}
+
+.backBtnHelp:active {
   background-color: blueviolet;
 }

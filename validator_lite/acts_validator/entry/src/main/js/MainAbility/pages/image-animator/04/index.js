@@ -59,8 +59,8 @@ export default {
     router.replace({
       uri: 'pages/help/index',
       params: {
-        step: '操作步骤：点击播放，暂停，恢复，停止按钮',
-        result: '预期结果：动画随操作步骤播放或停止，播放状态随之对应变化',
+                step: '操作步骤：点击播放，暂停，恢复，停止按钮',
+                result: '预期结果：动画随操作步骤播放或停止，播放状态随之对应变化',
         url: 'pages/image-animator/04/index',
         itemIndex: this.itemIndex
       }
@@ -81,4 +81,12 @@ export default {
     getApp().data.keyList[this.title] = result;
     this.back();
   },
+
+    changeResultPass() {
+        this.changeResult(this.pass);
+    },
+
+    changeResultFail() {
+        this.changeResult(this.fail);
+    },
 };
