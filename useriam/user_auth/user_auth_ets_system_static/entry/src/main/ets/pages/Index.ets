@@ -14,9 +14,7 @@
  * limitations under the License.
  */
  
-import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 
 @Entry
 @Component
@@ -30,12 +28,12 @@ struct MyStateSample {
     Column(undefined) {
       Text('Hello World').fontSize(20)
       Button(this.message).backgroundColor('#FFFF00FF')
-        .onClick((e: ClickEvent) => {
+        .onClick(() => {
           hilog.info(0x0000, 'testTag', 'On Click');
           this.changeValue();
         })
       Text(this.stateVar).fontSize(20)
-      Child({stateVar: this.stateVar} as __Options_Child)
+      Child({stateVar: this.stateVar})
     }
   }
 }

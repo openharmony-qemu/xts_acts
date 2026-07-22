@@ -20,7 +20,7 @@ import { userAuth } from '@kit.UserAuthenticationKit';
 import type common from '@ohos.app.ability.common';
 import { GlobalContext } from '../testrunner/OpenHarmonyTestRunner';
 
-let domain: int = 0x0000;
+let domain: number = 0x0000;
 let tag: string = 'testTag';
 let format: string = '%{public}s';
 
