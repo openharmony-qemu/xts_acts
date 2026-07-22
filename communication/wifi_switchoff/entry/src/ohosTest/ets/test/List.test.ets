@@ -14,7 +14,17 @@
  */
 
 import wifiManagerOffTest from './WifiManagerOff.test';
+import wifiManager from '@ohos.wifiManager';
 
+let iswifisupport: boolean = false;
+try {
+  iswifisupport = wifiManager.isWlanSupported();
+  console.info('[WIFI_List] isWlanSupported result:' + support);
+} catch (error) {
+  console.error('[WIFI_List] isWlanSupported get error:' + JSON.stringify(error.code) + JSON.stringify(error.message));
+}
 export default function testsuite() {
- 	wifiManagerOffTest();
+  if(iswifisupport){
+	  wifiManagerOffTest();
+  }
 }
