@@ -368,6 +368,21 @@ static napi_value Exp2fFiniteStable002(napi_env env, napi_callback_info info)
 
 // ==================== Multi-thread Tests ====================
 
+template<typename Func>
+static void Exp2fFiniteThreadWorker(Func func, std::atomic<bool>& hasError, int iterationsPerThread)
+{
+    float epsilon = 1e-6f;
+    for (int i = 0; i < iterationsPerThread; ++i) {
+        float val = (i % 20) / 2.0f - 5.0f;
+        float expected = StandardExp2f(val);
+        float actual = func(val);
+        if (fabsf(actual - expected) > epsilon) {
+            hasError = true;
+            break;
+        }
+    }
+}
+
 // Test 11: Multi-thread concurrent calls
 static napi_value Exp2fFiniteThread001(napi_env env, napi_callback_info info)
 {
@@ -383,24 +398,32 @@ static napi_value Exp2fFiniteThread001(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < threadCount; ++t) {
         threads.emplace_back([func, &hasError, iterationsPerThread]() {
-            float epsilon = 1e-6f;
-            for (int i = 0; i < iterationsPerThread; ++i) {
-                float val = (i % 20) / 2.0f - 5.0f;
-                float expected = StandardExp2f(val);
-                float actual = func(val);
-                if (fabsf(actual - expected) > epsilon) {
-                    hasError = true;
-                    break;
-                }
-            }
+            Exp2fFiniteThreadWorker(func, hasError, iterationsPerThread);
         });
     }
-
     for (auto& th : threads) {
         th.join();
     }
 
     return ReturnInt32(env, (!hasError) ? 1 : 0);
+}
+
+template<typename Func>
+static void Exp2fFiniteThreadWorker2(Func func, std::atomic<bool>& hasError, float testVals[], int count)
+{
+    float epsilon = 1e-6f;
+    int roundCount = 10;
+    for (int round = 0; round < roundCount; ++round) {
+        for (int idxVal = 0; idxVal < count; ++idxVal) {
+            float val = testVals[idxVal];
+            float expected = StandardExp2f(val);
+            float actual = func(val);
+            if (fabsf(actual - expected) > epsilon) {
+                hasError = true;
+                return;
+            }
+        }
+    }
 }
 
 // Test 12: Multi-thread different parameters mixed
@@ -415,24 +438,13 @@ static napi_value Exp2fFiniteThread002(napi_env env, napi_callback_info info)
     std::vector<std::thread> threads;
     std::atomic<bool> hasError{false};
     float testVals[] = {0.0f, 0.5f, 1.0f, 2.0f, -1.0f, -0.5f, 5.0f, -5.0f, 10.0f, -10.0f};
+    const int testValCount = sizeof(testVals) / sizeof(testVals[0]);
 
     for (int t = 0; t < threadCount; ++t) {
-        threads.emplace_back([func, &hasError, testVals]() {
-            float epsilon = 1e-6f;
-            int roundCount = 10;
-            for (int round = 0; round < roundCount; ++round) {
-                for (float val : testVals) {
-                    float expected = StandardExp2f(val);
-                    float actual = func(val);
-                    if (fabsf(actual - expected) > epsilon) {
-                        hasError = true;
-                        return;
-                    }
-                }
-            }
+        threads.emplace_back([func, &hasError, &testVals, testValCount]() {
+            Exp2fFiniteThreadWorker2<decltype(func)>(func, hasError, testVals, testValCount);
         });
     }
-
     for (auto& th : threads) {
         th.join();
     }

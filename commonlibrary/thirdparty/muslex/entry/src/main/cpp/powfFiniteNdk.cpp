@@ -146,6 +146,19 @@ static napi_value PowfFiniteStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+static void PowfFiniteThreadWorker(std::atomic<bool>& hasError, float testX[], float testY[])
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        int idx = i % 5;
+        float expected = std::pow(testX[idx], testY[idx]);
+        float result = CallPowfFinite(testX[idx], testY[idx]);
+        if (fabsf(result - expected) > 1e-5f) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 static napi_value PowfFiniteThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
@@ -158,15 +171,7 @@ static napi_value PowfFiniteThread001(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError, testX, testY]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                int idx = i % 5;
-                float expected = std::pow(testX[idx], testY[idx]);
-                float result = CallPowfFinite(testX[idx], testY[idx]);
-                if (fabsf(result - expected) > 1e-5f) {
-                    hasError = true;
-                    return;
-                }
-            }
+            PowfFiniteThreadWorker(hasError, const_cast<float*>(testX), const_cast<float*>(testY));
         });
     }
     for (auto& th : threads) {

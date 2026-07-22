@@ -218,6 +218,19 @@ static napi_value RealpathChkStable001(napi_env env, napi_callback_info info)
 
 /* ==================== Multi-thread Tests ==================== */
 
+static void RealpathChkThreadWorker(std::atomic<bool>& hasError, const char* const* paths)
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        int idx = i % 4;
+        char buf[PATH_MAX];
+        char* result = CallRealpathChk(paths[idx], buf, sizeof(buf));
+        if (result == nullptr) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 /* TC-012: Multi-thread safety */
 static napi_value RealpathChkThread001(napi_env env, napi_callback_info info)
 {
@@ -230,15 +243,7 @@ static napi_value RealpathChkThread001(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError, paths]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                int idx = i % 4;
-                char buf[PATH_MAX];
-                char* result = CallRealpathChk(paths[idx], buf, sizeof(buf));
-                if (result == nullptr) {
-                    hasError = true;
-                    return;
-                }
-            }
+            RealpathChkThreadWorker(hasError, paths);
         });
     }
     for (auto& th : threads) {

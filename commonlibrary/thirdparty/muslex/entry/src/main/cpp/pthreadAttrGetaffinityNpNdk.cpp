@@ -241,6 +241,23 @@ static napi_value PthreadAttrGetaffinityNpStable001(napi_env env, napi_callback_
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+static void PthreadAttrGetaffinityNpThreadWorker(std::atomic<bool>& hasError)
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        pthread_attr_t attr;
+        pthread_attr_init(&attr);
+        cpu_set_t* set = CPU_ALLOC(1);
+        if (!set) {
+            hasError = true;
+            return;
+        }
+        size_t size = CPU_ALLOC_SIZE(1);
+        CallPthreadAttrGetaffinityNp(&attr, size, set);
+        CPU_FREE(set);
+        pthread_attr_destroy(&attr);
+    }
+}
+
 static napi_value PthreadAttrGetaffinityNpThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
@@ -250,19 +267,7 @@ static napi_value PthreadAttrGetaffinityNpThread001(napi_env env, napi_callback_
     std::vector<std::thread> threads;
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                pthread_attr_t attr;
-                pthread_attr_init(&attr);
-                cpu_set_t* set = CPU_ALLOC(1);
-                if (!set) {
-                    hasError = true;
-                    return;
-                }
-                size_t size = CPU_ALLOC_SIZE(1);
-                CallPthreadAttrGetaffinityNp(&attr, size, set);
-                CPU_FREE(set);
-                pthread_attr_destroy(&attr);
-            }
+            PthreadAttrGetaffinityNpThreadWorker(hasError);
         });
     }
     for (auto& th : threads) {

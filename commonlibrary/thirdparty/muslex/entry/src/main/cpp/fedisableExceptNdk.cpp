@@ -169,6 +169,19 @@ static napi_value FedisableexceptStable001(napi_env env, napi_callback_info info
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+static void FedisableexceptThreadWorker(std::atomic<bool>& hasError)
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        feclearexcept(FE_ALL_EXCEPT);
+        CallFeenableexcept(FE_DIVBYZERO);
+        int ret = CallFedisableexcept(FE_DIVBYZERO);
+        if (ret < 0) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 static napi_value FedisableexceptThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
@@ -178,15 +191,7 @@ static napi_value FedisableexceptThread001(napi_env env, napi_callback_info info
     std::vector<std::thread> threads;
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                feclearexcept(FE_ALL_EXCEPT);
-                CallFeenableexcept(FE_DIVBYZERO);
-                int ret = CallFedisableexcept(FE_DIVBYZERO);
-                if (ret < 0) {
-                    hasError = true;
-                    return;
-                }
-            }
+            FedisableexceptThreadWorker(hasError);
         });
     }
     for (auto& th : threads) {

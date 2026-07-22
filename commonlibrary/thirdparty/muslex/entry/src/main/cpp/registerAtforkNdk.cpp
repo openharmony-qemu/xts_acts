@@ -229,6 +229,17 @@ static napi_value RegisterAtforkStable001(napi_env env, napi_callback_info info)
 
 /* ==================== Multi-thread Tests ==================== */
 
+static void RegisterAtforkThreadWorker(std::atomic<bool>& hasError)
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        int ret = CallRegisterAtfork(nullptr, nullptr, nullptr);
+        if (ret != 0) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 /* TC-009: Multi-thread safety */
 static napi_value RegisterAtforkThread001(napi_env env, napi_callback_info info)
 {
@@ -240,13 +251,7 @@ static napi_value RegisterAtforkThread001(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                int ret = CallRegisterAtfork(nullptr, nullptr, nullptr);
-                if (ret != 0) {
-                    hasError = true;
-                    return;
-                }
-            }
+            RegisterAtforkThreadWorker(hasError);
         });
     }
     for (auto& th : threads) {

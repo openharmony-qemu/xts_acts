@@ -232,6 +232,19 @@ static napi_value Log10FiniteStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+static void Log10FiniteThreadWorker(std::atomic<bool>& hasError, double testVals[])
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        int idx = i % 5;
+        double expected = std::log10(testVals[idx]);
+        double result = CallLog10Finite(testVals[idx]);
+        if (fabs(result - expected) > 1e-15) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 /* TC-014: Multi-thread safety */
 static napi_value Log10FiniteThread001(napi_env env, napi_callback_info info)
 {
@@ -243,16 +256,8 @@ static napi_value Log10FiniteThread001(napi_env env, napi_callback_info info)
     double testVals[] = {1.0, 10.0, 100.0, 0.1, 1000.0};
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
-        threads.emplace_back([&hasError, testVals]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                int idx = i % 5;
-                double expected = std::log10(testVals[idx]);
-                double result = CallLog10Finite(testVals[idx]);
-                if (fabs(result - expected) > 1e-15) {
-                    hasError = true;
-                    return;
-                }
-            }
+        threads.emplace_back([&hasError, &testVals]() {
+            Log10FiniteThreadWorker(hasError, testVals);
         });
     }
     for (auto& th : threads) {

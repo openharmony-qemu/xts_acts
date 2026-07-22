@@ -186,6 +186,19 @@ static napi_value RestraceExtStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+static void RestraceExtThreadWorker(std::atomic<bool>& hasError)
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        void* addr = malloc(K_ALLOC_100);
+        if (!addr) {
+            hasError = true;
+            return;
+        }
+        CallRestraceExt(1, addr, K_ALLOC_100, "test", true, false);
+        free(addr);
+    }
+}
+
 static napi_value RestraceExtThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
@@ -195,15 +208,7 @@ static napi_value RestraceExtThread001(napi_env env, napi_callback_info info)
     std::vector<std::thread> threads;
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                void* addr = malloc(K_ALLOC_100);
-                if (!addr) {
-                    hasError = true;
-                    return;
-                }
-                CallRestraceExt(1, addr, K_ALLOC_100, "test", true, false);
-                free(addr);
-            }
+            RestraceExtThreadWorker(hasError);
         });
     }
     for (auto& th : threads) {

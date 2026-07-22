@@ -130,6 +130,8 @@ static napi_value LongjmpChkBoundary002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     auto func = LibcFunctionLoader::GetInstance().GetLongjmpChk();
+    int outerRet1 = 1;
+    int outerRet2 = 2;
     jmp_buf outerJb;
     int outerRet = setjmp(outerJb);
     if (outerRet == 0) {
@@ -164,6 +166,23 @@ static napi_value LongjmpChkStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, (passCount == K_STABLE_LOOP_10000) ? 1 : 0);
 }
 
+static void LongjmpChkThreadWorker(std::atomic<int>& successCount)
+{
+    auto func = LibcFunctionLoader::GetInstance().GetLongjmpChk();
+    volatile int localCount = 0;
+    for (volatile int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        jmp_buf jb;
+        int ret = setjmp(jb);
+        if (ret == 0) {
+            func(jb, 1);
+        }
+        if (ret == 1) {
+            localCount++;
+        }
+    }
+    successCount += localCount;
+}
+
 static napi_value LongjmpChkThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
@@ -173,19 +192,7 @@ static napi_value LongjmpChkThread001(napi_env env, napi_callback_info info)
     std::vector<std::thread> threads;
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&successCount]() {
-            auto func = LibcFunctionLoader::GetInstance().GetLongjmpChk();
-            volatile int localCount = 0;
-            for (volatile int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                jmp_buf jb;
-                int ret = setjmp(jb);
-                if (ret == 0) {
-                    func(jb, 1);
-                }
-                if (ret == 1) {
-                    localCount++;
-                }
-            }
-            successCount += localCount;
+            LongjmpChkThreadWorker(successCount);
         });
     }
     for (auto& th : threads) {

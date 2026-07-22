@@ -306,6 +306,20 @@ static napi_value ExpFiniteStable002(napi_env env, napi_callback_info info)
 
 // ==================== Multi-thread Tests ====================
 
+template<typename Func>
+static void ExpFiniteThreadWorker(Func func, std::atomic<bool>& hasError, int iterationsPerThread)
+{
+    for (int i = 0; i < iterationsPerThread; ++i) {
+        double val = (i % 20) / 2.0 - 5.0;
+        double expected = std::exp(val);
+        double actual = func(val);
+        if (std::abs(actual - expected) > 1e-9) {
+            hasError = true;
+            break;
+        }
+    }
+}
+
 // Test 10: Multi-thread concurrent calls
 static napi_value ExpFiniteThread001(napi_env env, napi_callback_info info)
 {
@@ -322,15 +336,7 @@ static napi_value ExpFiniteThread001(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < threadCount; ++t) {
         threads.emplace_back([func, &hasError, iterationsPerThread, &completedCount]() {
-            for (int i = 0; i < iterationsPerThread; ++i) {
-                double val = (i % 20) / 2.0 - 5.0; // -5.0 to 5.0
-                double expected = std::exp(val);
-                double actual = func(val);
-                if (std::abs(actual - expected) > 1e-9) {
-                    hasError = true;
-                    break;
-                }
-            }
+            ExpFiniteThreadWorker(func, hasError, iterationsPerThread);
             completedCount++;
         });
     }
@@ -340,6 +346,22 @@ static napi_value ExpFiniteThread001(napi_env env, napi_callback_info info)
     }
 
     return ReturnInt32(env, (!hasError) ? 1 : 0);
+}
+
+template<typename Func>
+static void ExpFiniteThreadWorker2(Func func, std::atomic<bool>& hasError, double testVals[], int count)
+{
+    for (int round = 0; round < K_EXP_STABLE_LOOP_10; ++round) {
+        for (int idxVal = 0; idxVal < count; ++idxVal) {
+            double val = testVals[idxVal];
+            double expected = std::exp(val);
+            double actual = func(val);
+            if (std::abs(actual - expected) > 1e-9) {
+                hasError = true;
+                return;
+            }
+        }
+    }
 }
 
 // Test 11: Multi-thread different parameters mixed
@@ -354,19 +376,11 @@ static napi_value ExpFiniteThread002(napi_env env, napi_callback_info info)
     std::vector<std::thread> threads;
     std::atomic<bool> hasError{false};
     double testVals[] = {0.0, 0.5, 1.0, 2.0, -1.0, -0.5, 5.0, -5.0, K_EXP_TEST_VAL_10, -K_EXP_TEST_VAL_10};
+    const int testValCount = sizeof(testVals) / sizeof(testVals[0]);
 
     for (int t = 0; t < threadCount; ++t) {
-        threads.emplace_back([func, &hasError, testVals]() {
-            for (int round = 0; round < K_EXP_STABLE_LOOP_10; ++round) {
-                for (double val : testVals) {
-                    double expected = std::exp(val);
-                    double actual = func(val);
-                    if (std::abs(actual - expected) > 1e-9) {
-                        hasError = true;
-                        return;
-                    }
-                }
-            }
+        threads.emplace_back([func, &hasError, testVals, testValCount]() {
+            ExpFiniteThreadWorker2(func, hasError, const_cast<double*>(testVals), testValCount);
         });
     }
 

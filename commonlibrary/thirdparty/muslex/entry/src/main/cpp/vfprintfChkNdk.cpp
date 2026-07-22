@@ -315,6 +315,24 @@ static napi_value VfprintfChkStable001(napi_env env, napi_callback_info info)
 
 /* ==================== Multi-thread Tests ==================== */
 
+static void VfprintfChkThreadWorker(std::atomic<bool>& hasError, const char* const* formats)
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        FILE* tmp = CreateSandboxTempFile();
+        if (!tmp) {
+            hasError = true;
+            return;
+        }
+        int idx = i % 4;
+        int ret = VfprintfHelper(tmp, i % 2, formats[idx], "test", 123);
+        if (fclose(tmp) != 0) {}
+        if (ret < 0) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 /* TC-014: Multi-thread safety with different files */
 static napi_value VfprintfChkThread001(napi_env env, napi_callback_info info)
 {
@@ -327,20 +345,7 @@ static napi_value VfprintfChkThread001(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError, formats]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                FILE* tmp = CreateSandboxTempFile();
-                if (!tmp) {
-                    hasError = true;
-                    return;
-                }
-                int idx = i % 4;
-                int ret = VfprintfHelper(tmp, i % 2, formats[idx], "test", 123);
-                if (fclose(tmp) != 0) {}
-                if (ret < 0) {
-                    hasError = true;
-                    return;
-                }
-            }
+            VfprintfChkThreadWorker(hasError, formats);
         });
     }
     for (auto& th : threads) {

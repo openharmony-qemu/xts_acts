@@ -191,6 +191,19 @@ static napi_value StrdupStable001(napi_env env, napi_callback_info info)
 
 /* ==================== Multi-thread Tests ==================== */
 
+static void StrdupThreadWorker(std::atomic<bool>& hasError, const char* const* strings)
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        int idx = i % 5;
+        char* dup = CallStrdup(strings[idx]);
+        if (dup == nullptr || strcmp(dup, strings[idx]) != 0) {
+            hasError = true;
+            return;
+        }
+        free(dup);
+    }
+}
+
 /* TC-010: Multi-thread safety */
 static napi_value StrdupThread001(napi_env env, napi_callback_info info)
 {
@@ -203,15 +216,7 @@ static napi_value StrdupThread001(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError, strings]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                int idx = i % 5;
-                char* dup = CallStrdup(strings[idx]);
-                if (dup == nullptr || strcmp(dup, strings[idx]) != 0) {
-                    hasError = true;
-                    return;
-                }
-                free(dup);
-            }
+            StrdupThreadWorker(hasError, strings);
         });
     }
     for (auto& th : threads) {

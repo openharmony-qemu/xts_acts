@@ -172,8 +172,7 @@ static int QsortRCompare(const void* left, const void* right, void* arg)
     if (static_cast<const unsigned char*>(left) < ctx->base ||
         static_cast<const unsigned char*>(left) >= limit ||
         static_cast<const unsigned char*>(right) < ctx->base ||
-        static_cast<const unsigned char*>(right) >= limit)
-        {
+        static_cast<const unsigned char*>(right) >= limit) {
         ctx->outOfRange = 1;
     }
     return QsortRValueOrder(left, right, ctx);
@@ -557,8 +556,7 @@ static bool RunSingleTest(const SingleTestParams& params)
     }
     if ((params.count <= 1 && ctx.calls != 0) ||
         (params.count > 1 && ctx.calls == 0) ||
-        ctx.outOfRange != 0)
-        {
+        ctx.outOfRange != 0) {
         return false;
     }
     return true;
@@ -923,14 +921,12 @@ static napi_value QsortRStable005(napi_env env, napi_callback_info info)
 
     int errno1 = 0;
 int errno2 = 0;
-    std::thread t1([&qsortR, &a1, &cmp, n, &errno1]()
-    {
+    std::thread t1([&qsortR, &a1, &cmp, n, &errno1]() {
         errno = 0;
         qsortR(a1, n, sizeof(int), cmp, nullptr);
         errno1 = errno;
     });
-    std::thread t2([&qsortR, &a2, &cmp, n, &errno2]()
-    {
+    std::thread t2([&qsortR, &a2, &cmp, n, &errno2]() {
         errno = 0;
         qsortR(a2, n, sizeof(int), cmp, nullptr);
         errno2 = errno;

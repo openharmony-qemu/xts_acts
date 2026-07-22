@@ -317,8 +317,7 @@ static napi_value Open2Stable002(napi_env env, napi_callback_info info)
         return ReturnInt32(env, 1);
     }
     std::atomic<bool> allSuccess(true);
-    auto worker = [&allSuccess](int)
-    {
+    auto worker = [&allSuccess](int) {
         for (int i = 0; i < K_THREAD_WORK_LOOP; ++i) {
             int fd = CallOpen2("/dev/null", O_RDONLY);
             if (fd < 0) {

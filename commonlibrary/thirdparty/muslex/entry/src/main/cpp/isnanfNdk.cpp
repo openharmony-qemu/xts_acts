@@ -195,6 +195,18 @@ static napi_value IsnanfStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+static void IsnanfThreadWorker(std::atomic<bool>& hasError, float testVals[], int expected[])
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        int idx = i % 5;
+        int ret = CallIsnanf(testVals[idx]);
+        if ((ret != 0) != (expected[idx] != 0)) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 /* TC-012: Multi-thread safety */
 static napi_value IsnanfThread001(napi_env env, napi_callback_info info)
 {
@@ -208,14 +220,7 @@ static napi_value IsnanfThread001(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError, testVals, expected]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                int idx = i % 5;
-                int ret = CallIsnanf(testVals[idx]);
-                if ((ret != 0) != (expected[idx] != 0)) {
-                    hasError = true;
-                    return;
-                }
-            }
+            IsnanfThreadWorker(hasError, const_cast<float*>(testVals), const_cast<int*>(expected));
         });
     }
     for (auto& th : threads) {

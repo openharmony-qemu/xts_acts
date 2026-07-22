@@ -254,6 +254,20 @@ static napi_value GetauxvalStable002(napi_env env, napi_callback_info info)
 
 // ==================== Multi-thread Tests ====================
 
+template<typename Func>
+static void GetauxvalThreadWorker(Func func, std::atomic<bool>& hasError, unsigned long items[], int iterationsPerThread)
+{
+    for (int i = 0; i < iterationsPerThread; ++i) {
+        int basiccount = 4;
+        int idx = i % basiccount;
+        unsigned long result = func(items[idx]);
+        if (result == 0 && idx != 1) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 // Test 11: Multi-thread concurrent calls
 static napi_value GetauxvalThread001(napi_env env, napi_callback_info info)
 {
@@ -270,23 +284,27 @@ static napi_value GetauxvalThread001(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < threadCount; ++t) {
         threads.emplace_back([func, &hasError, items, iterationsPerThread]() {
-            for (int i = 0; i < iterationsPerThread; ++i) {
-                int basiccount = 4;
-                int idx = i % basiccount;
-                unsigned long result = func(items[idx]);
-                if (result == 0 && idx != 1) {
-                    hasError = true;
-                    return;
-                }
-            }
+            GetauxvalThreadWorker(func, hasError, const_cast<unsigned long*>(items), iterationsPerThread);
         });
     }
-
     for (auto& th : threads) {
         th.join();
     }
 
     return ReturnInt32(env, (!hasError) ? 1 : 0);
+}
+
+template<typename Func>
+static void GetauxvalThreadWorker2(Func func, std::atomic<bool>& hasError, unsigned long allItems[], int iterationsPerThread, int t)
+{
+    for (int i = 0; i < iterationsPerThread; ++i) {
+        int idx = (i + t) % 8;
+        unsigned long result = func(allItems[idx]);
+        // Verify return value and errno
+        if (result == 0 && idx >= 4) { // Some items may not exist
+            // Not necessarily an error, continue
+        }
+    }
 }
 
 // Test 12: Multi-thread different item mixed
@@ -302,21 +320,12 @@ static napi_value GetauxvalThread002(napi_env env, napi_callback_info info)
     std::vector<std::thread> threads;
     std::atomic<bool> hasError{false};
     unsigned long allItems[] = {AT_PAGESZ, AT_SECURE, AT_CLKTCK, AT_RANDOM, AT_ENTRY, AT_UID, AT_EUID, AT_GID};
-    int basiccount = 4;
 
     for (int t = 0; t < threadCount; ++t) {
-        threads.emplace_back([func, &hasError, allItems, iterationsPerThread, t, basiccount]() {
-            for (int i = 0; i < iterationsPerThread; ++i) {
-                int idx = (i + t) % 8;
-                unsigned long result = func(allItems[idx]);
-                // Verify return value and errno
-                if (result == 0 && idx >= basiccount) { // Some items may not exist
-                    // Not necessarily an error, continue
-                }
-            }
+        threads.emplace_back([func, &hasError, allItems, iterationsPerThread, t]() {
+            GetauxvalThreadWorker2(func, hasError, const_cast<unsigned long*>(allItems), iterationsPerThread, t);
         });
     }
-
     for (auto& th : threads) {
         th.join();
     }

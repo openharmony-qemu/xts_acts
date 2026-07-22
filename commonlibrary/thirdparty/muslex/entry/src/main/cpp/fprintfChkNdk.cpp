@@ -462,6 +462,18 @@ static napi_value FprintfChkStable002(napi_env env, napi_callback_info info)
 // ==================== Multi-thread Tests ====================
 
 // Test 11: Multi-thread different file output
+template<typename Func>
+static void FprintfChkWorker(Func func, FILE* f, std::atomic<bool>& hasError, int iterations, int tid)
+{
+    for (int i = 0; i < iterations; ++i) {
+        int ret = func(f, i % 2, "Thread %d: %d\n", tid, i);
+        if (ret < 0) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 static napi_value FprintfChkThread001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFprintfChk();
@@ -487,13 +499,7 @@ static napi_value FprintfChkThread001(napi_env env, napi_callback_info info)
     for (int t = 0; t < threadCount; ++t) {
         FILE* f = files[t];
         threads.emplace_back([func, f, &hasError, iterationsPerThread, t]() {
-            for (int i = 0; i < iterationsPerThread; ++i) {
-                int ret = func(f, i % 2, "Thread %d: %d\n", t, i);
-                if (ret < 0) {
-                    hasError = true;
-                    return;
-                }
-            }
+            FprintfChkWorker(func, f, hasError, iterationsPerThread, t);
         });
     }
 
@@ -507,6 +513,18 @@ static napi_value FprintfChkThread001(napi_env env, napi_callback_info info)
         }
     }
     return ReturnInt32(env, (!hasError) ? 1 : 0);
+}
+
+template<typename Func>
+static void FprintfChkThreadWorker2(Func func, FILE* sharedFile, std::atomic<bool>& hasError, int iterationsPerThread, int t)
+{
+    for (int i = 0; i < iterationsPerThread; ++i) {
+        int ret = func(sharedFile, 0, "%d %d\n", t, i);
+        if (ret < 0) {
+            hasError = true;
+            return;
+        }
+    }
 }
 
 // Test 12: Multi-thread same file output
@@ -529,13 +547,7 @@ static napi_value FprintfChkThread002(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < threadCount; ++t) {
         threads.emplace_back([func, sharedFile, &hasError, iterationsPerThread, t]() {
-            for (int i = 0; i < iterationsPerThread; ++i) {
-                int ret = func(sharedFile, 0, "%d %d\n", t, i);
-                if (ret < 0) {
-                    hasError = true;
-                    return;
-                }
-            }
+            FprintfChkThreadWorker2(func, sharedFile, hasError, iterationsPerThread, t);
         });
     }
 

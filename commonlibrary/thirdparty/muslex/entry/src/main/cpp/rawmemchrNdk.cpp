@@ -218,6 +218,19 @@ static napi_value RawmemchrStable001(napi_env env, napi_callback_info info)
 
 /* ==================== Multi-thread Tests ==================== */
 
+static void RawmemchrThreadWorker(std::atomic<bool>& hasError, const char* const* strings)
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        int idx = i % 5;
+        char c = strings[idx][i % 5];
+        void* result = CallRawmemchr(strings[idx], c);
+        if (result == nullptr) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 /* TC-011: Multi-thread safety */
 static napi_value RawmemchrThread001(napi_env env, napi_callback_info info)
 {
@@ -230,15 +243,7 @@ static napi_value RawmemchrThread001(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError, strings]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                int idx = i % 5;
-                char c = strings[idx][i % 5];
-                void* result = CallRawmemchr(strings[idx], c);
-                if (result == nullptr) {
-                    hasError = true;
-                    return;
-                }
-            }
+            RawmemchrThreadWorker(hasError, strings);
         });
     }
     for (auto& th : threads) {

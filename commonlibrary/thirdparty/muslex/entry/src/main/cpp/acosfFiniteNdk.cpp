@@ -475,7 +475,7 @@ static napi_value AcosfFiniteFunc006(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
-    for (int i = 0; i < 20; ++i) {
+    for (int i = 0; i < K_STABLE_LOOP_10000; ++i) {
         CallAcosfFinite(0.5f);
     }
     return ReturnInt32(env, 1);
@@ -524,8 +524,7 @@ static napi_value AcosfFiniteStable003(napi_env env, napi_callback_info info)
     std::vector<std::thread> threads;
     bool allPassed = true;
 
-    auto worker = [&allPassed](float input)
-    {
+    auto worker = [&allPassed](float input) {
         float expected = std::acosf(input);
         for (int i = 0; i < K_THREAD_LOOP; ++i) {
             errno = 0;

@@ -595,8 +595,7 @@ static napi_value WcstoldlStable002(napi_env env, napi_callback_info info)
     if (!loc) {
         return ReturnInt32(env, 0);
     }
-    auto worker = [loc](int id)
-    {
+    auto worker = [loc](int id) {
         wchar_t buf[K_BUF_SIZE_64];
         std::wostringstream oss;
         oss << id << L".456e" << (id % K_THREAD_MODULO);

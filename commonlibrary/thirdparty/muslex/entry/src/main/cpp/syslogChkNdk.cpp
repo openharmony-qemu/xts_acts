@@ -28,6 +28,9 @@ static constexpr int K_ITER_PER_THREAD = 10;
 static constexpr int SYSLOG_ERR_CODE = 123;
 static constexpr int SYSLOG_WARN_VAL = 42;
 static constexpr int SYSLOG_FLAG_MOD = 2;
+static constexpr double SYSLOG_FLOAT_VAL = 3.14;
+static constexpr int SYSLOG_INVALID_PRIORITY = 999;
+static constexpr int SYSLOG_ITH_MOD = 10;
 
 static void CallSyslogChk(int flag, int priority, const char* fmt, ...)
 {

@@ -176,6 +176,19 @@ static napi_value Log2FiniteStable001(napi_env env, napi_callback_info info)
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+static void Log2FiniteThreadWorker(std::atomic<bool>& hasError, double testVals[])
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        int idx = i % 5;
+        double expected = std::log2(testVals[idx]);
+        double result = CallLog2Finite(testVals[idx]);
+        if (fabs(result - expected) > 1e-12) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 static napi_value Log2FiniteThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
@@ -192,15 +205,7 @@ static napi_value Log2FiniteThread001(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError, testVals]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                int idx = i % 5;
-                double expected = std::log2(testVals[idx]);
-                double result = CallLog2Finite(testVals[idx]);
-                if (fabs(result - expected) > 1e-12) {
-                    hasError = true;
-                    return;
-                }
-            }
+            Log2FiniteThreadWorker(hasError, const_cast<double*>(testVals));
         });
     }
     for (auto& th : threads) {

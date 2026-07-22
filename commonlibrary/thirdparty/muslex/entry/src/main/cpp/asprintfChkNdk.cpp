@@ -25,6 +25,8 @@ static constexpr int K_STABLE_LOOP_1000 = 20;
 static constexpr int K_MEM_LOOP_100 = 10;
 static constexpr int K_THREAD_COUNT = 3;
 static constexpr int K_THREAD_LOOP = 100;
+static constexpr int STRLEN_TEST = 4;
+static constexpr int STRLEN_HELLO = 5;
 
 static int CallAsprintfChk(char** strp, int flag, const char* fmt, ...)
 {
@@ -266,8 +268,7 @@ static napi_value AsprintfChkStable002(napi_env env, napi_callback_info info)
     std::vector<std::thread> threads;
     bool allPassed = true;
 
-    auto worker = [&allPassed](int tid)
-    {
+    auto worker = [&allPassed](int tid) {
         for (int i = 0; i < K_THREAD_LOOP; ++i) {
             char* buf = nullptr;
             int ret = CallAsprintfChk(&buf, 0, "t%d-%d", tid, i);

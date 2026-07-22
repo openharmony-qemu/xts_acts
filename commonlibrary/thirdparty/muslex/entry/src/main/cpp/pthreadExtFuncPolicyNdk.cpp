@@ -154,6 +154,17 @@ static napi_value PthreadExtFuncPolicyStable001(napi_env env, napi_callback_info
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+static void PthreadExtFuncPolicyThreadWorker(std::atomic<bool>& hasError)
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        int ret = CallPthreadExtFuncPolicy();
+        if (ret < 0) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 static napi_value PthreadExtFuncPolicyThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
@@ -163,13 +174,7 @@ static napi_value PthreadExtFuncPolicyThread001(napi_env env, napi_callback_info
     std::vector<std::thread> threads;
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                int ret = CallPthreadExtFuncPolicy();
-                if (ret < 0) {
-                    hasError = true;
-                    return;
-                }
-            }
+            PthreadExtFuncPolicyThreadWorker(hasError);
         });
     }
     for (auto& th : threads) {

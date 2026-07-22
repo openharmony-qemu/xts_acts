@@ -216,6 +216,18 @@ static napi_value PrintfChkStable001(napi_env env, napi_callback_info info)
 
 /* ==================== Multi-thread Tests ==================== */
 
+static void PrintfChkThreadWorker(std::atomic<bool>& hasError, const char* const* formats)
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        int idx = i % 4;
+        int ret = CallPrintfChk(i % 2, formats[idx], "test", 123);
+        if (ret < 0) {
+            hasError = true;
+            return;
+        }
+    }
+}
+
 /* TC-013: Multi-thread safety */
 static napi_value PrintfChkThread001(napi_env env, napi_callback_info info)
 {
@@ -228,14 +240,7 @@ static napi_value PrintfChkThread001(napi_env env, napi_callback_info info)
 
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError, formats]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                int idx = i % 4;
-                int ret = CallPrintfChk(i % 2, formats[idx], "test", 123);
-                if (ret < 0) {
-                    hasError = true;
-                    return;
-                }
-            }
+            PrintfChkThreadWorker(hasError, formats);
         });
     }
     for (auto& th : threads) {

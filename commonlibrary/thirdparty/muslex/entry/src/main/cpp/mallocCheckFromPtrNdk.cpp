@@ -186,6 +186,19 @@ static napi_value MallocCheckFromPtrStable001(napi_env env, napi_callback_info i
     return ReturnInt32(env, pass ? 1 : 0);
 }
 
+static void MallocCheckFromPtrThreadWorker(std::atomic<bool>& hasError)
+{
+    for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
+        void* ptr = malloc(100);
+        if (!ptr) {
+            hasError = true;
+            return;
+        }
+        CallMallocCheckFromPtr(ptr);
+        free(ptr);
+    }
+}
+
 static napi_value MallocCheckFromPtrThread001(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
@@ -195,15 +208,7 @@ static napi_value MallocCheckFromPtrThread001(napi_env env, napi_callback_info i
     std::vector<std::thread> threads;
     for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]() {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
-                void* ptr = malloc(100);
-                if (!ptr) {
-                    hasError = true;
-                    return;
-                }
-                CallMallocCheckFromPtr(ptr);
-                free(ptr);
-            }
+            MallocCheckFromPtrThreadWorker(hasError);
         });
     }
     for (auto& th : threads) {
