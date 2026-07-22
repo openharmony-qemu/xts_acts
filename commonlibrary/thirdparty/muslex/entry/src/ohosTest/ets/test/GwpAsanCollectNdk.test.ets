@@ -16,7 +16,6 @@
 import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
 import libgwpasancollectndktest from 'libgwpasancollectndktest.so';
-import { deviceInfo } from '@kit.BasicServicesKit';
 
 export default function GwpAsanCollectNdkTest() {
   describe('GwpAsanCollectNdkTest', () => {
