@@ -72,14 +72,14 @@ export default function BuiltinsSharedModuleNestedTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleNestedTest0100
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_NESTED_TEST_0100
+     * @tc.name   testSharedModuleNested0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_NESTED_TEST_0100
      * @tc.desc   Verify nested task with count waiting
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSharedModuleNestedTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testSharedModuleNested0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const task1: taskpool.Task = new taskpool.Task(nestedIncrementTask, counter)
       await taskpool.execute(task1)
 
@@ -90,14 +90,14 @@ export default function BuiltinsSharedModuleNestedTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleNestedTest0200
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_NESTED_TEST_0200
+     * @tc.name   testSharedModuleNested0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_NESTED_TEST_0200
      * @tc.desc   Verify callback nested task with count waiting
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSharedModuleNestedTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedModuleNested0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const task: taskpool.Task = new taskpool.Task(nestedCallbackTask, counter)
       await taskpool.execute(task)
 
@@ -105,14 +105,14 @@ export default function BuiltinsSharedModuleNestedTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleNestedTest0300
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_NESTED_TEST_0300
+     * @tc.name   testSharedModuleNested0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_NESTED_TEST_0300
      * @tc.desc   Verify nested task concurrent 3 tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSharedModuleNestedTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedModuleNested0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 3; i++) {
         tasks.push(new taskpool.Task(nestedIncrementTask, counter))
@@ -122,14 +122,14 @@ export default function BuiltinsSharedModuleNestedTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleNestedTest0400
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_NESTED_TEST_0400
+     * @tc.name   testSharedModuleNested0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_NESTED_TEST_0400
      * @tc.desc   Verify nested task concurrent 10 tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSharedModuleNestedTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedModuleNested0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
         tasks.push(new taskpool.Task(nestedIncrementTask, counter))
@@ -139,14 +139,14 @@ export default function BuiltinsSharedModuleNestedTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleNestedTest0500
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_NESTED_TEST_0500
+     * @tc.name   testSharedModuleNested0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_NESTED_TEST_0500
      * @tc.desc   Verify Promise.all waiting for all results
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSharedModuleNestedTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedModuleNested0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
         tasks.push(new taskpool.Task(nestedIncrementTask, counter))
@@ -156,14 +156,14 @@ export default function BuiltinsSharedModuleNestedTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleNestedTest0600
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_NESTED_TEST_0600
+     * @tc.name   testSharedModuleNested0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_NESTED_TEST_0600
      * @tc.desc   Verify Worker lifecycle in nested task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSharedModuleNestedTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedModuleNested0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const task: taskpool.Task = new taskpool.Task(nestedIncrementTask, counter)
       await taskpool.execute(task)
       await taskpool.execute(new taskpool.Task(nestedIncrementTask, counter))
@@ -171,14 +171,14 @@ export default function BuiltinsSharedModuleNestedTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleNestedTest0700
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_NESTED_TEST_0700
+     * @tc.name   testSharedModuleNested0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_NESTED_TEST_0700
      * @tc.desc   Verify LongTask execution and cleanup in nested scenario
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSharedModuleNestedTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedModuleNested0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       for (let i: number = 0; i < 3; i++) {
         const task: taskpool.Task = new taskpool.Task(nestedIncrementTask, counter)
         await taskpool.execute(task)
@@ -187,14 +187,14 @@ export default function BuiltinsSharedModuleNestedTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleNestedTest0800
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_NESTED_TEST_0800
+     * @tc.name   testSharedModuleNested0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_NESTED_TEST_0800
      * @tc.desc   Verify task cancellation in nested scenario
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSharedModuleNestedTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedModuleNested0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const task: taskpool.Task = new taskpool.Task(nestedIncrementTask, counter)
       taskpool.execute(task)
       taskpool.cancel(task)

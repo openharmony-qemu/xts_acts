@@ -118,14 +118,14 @@ export default function BuiltinsSharedModuleGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleGCTest0100
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_GC_TEST_0100
+     * @tc.name   testSharedModuleGC0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_GC_TEST_0100
      * @tc.desc   Verify Sendable object creation and reference
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSharedModuleGCTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testSharedModuleGC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const data: SharedGCData = await gcManager.create('test1', 42)
 
       expect(data.value).assertEqual(42)
@@ -134,14 +134,14 @@ export default function BuiltinsSharedModuleGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleGCTest0200
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_GC_TEST_0200
+     * @tc.name   testSharedModuleGC0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_GC_TEST_0200
      * @tc.desc   Verify Sendable object deletion
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSharedModuleGCTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testSharedModuleGC0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await gcManager.create('test2', 100)
 
       const result: boolean = await gcManager.delete('test2')
@@ -151,27 +151,27 @@ export default function BuiltinsSharedModuleGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleGCTest0300
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_GC_TEST_0300
+     * @tc.name   testSharedModuleGC0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_GC_TEST_0300
      * @tc.desc   Verify deletion of non-existent object returns false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsSharedModuleGCTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testSharedModuleGC0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const result: boolean = await gcManager.delete('nonexistent')
       expect(result).assertFalse()
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleGCTest0400
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_GC_TEST_0400
+     * @tc.name   testSharedModuleGC0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_GC_TEST_0400
      * @tc.desc   Verify concurrent object creation with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSharedModuleGCTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedModuleGC0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const keys: string[] = ['obj1', 'obj2', 'obj3']
       const tasks: taskpool.Task[] = keys.map((key: string, i: number): taskpool.Task =>
         new taskpool.Task(createGCDataTask, gcManager, key, i * 10)
@@ -184,14 +184,14 @@ export default function BuiltinsSharedModuleGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleGCTest0500
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_GC_TEST_0500
+     * @tc.name   testSharedModuleGC0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_GC_TEST_0500
      * @tc.desc   Verify concurrent object deletion with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSharedModuleGCTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedModuleGC0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await gcManager.create('del1', 1)
       await gcManager.create('del2', 2)
       await gcManager.create('del3', 3)
@@ -208,14 +208,14 @@ export default function BuiltinsSharedModuleGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleGCTest0600
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_GC_TEST_0600
+     * @tc.name   testSharedModuleGC0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_GC_TEST_0600
      * @tc.desc   Verify object lifecycle: create, access, delete
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSharedModuleGCTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testSharedModuleGC0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const data: SharedGCData = await gcManager.create('lifecycle', 99)
       expect(data.value).assertEqual(99)
 
@@ -228,14 +228,14 @@ export default function BuiltinsSharedModuleGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleGCTest0700
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_GC_TEST_0700
+     * @tc.name   testSharedModuleGC0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_GC_TEST_0700
      * @tc.desc   Verify size tracking after create and delete
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSharedModuleGCTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testSharedModuleGC0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await gcManager.create('a', 1)
       await gcManager.create('b', 2)
       expect(gcManager.getSize()).assertEqual(2)
@@ -248,14 +248,14 @@ export default function BuiltinsSharedModuleGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleGCTest0800
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_GC_TEST_0800
+     * @tc.name   testSharedModuleGC0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_GC_TEST_0800
      * @tc.desc   Verify clear removes all objects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSharedModuleGCTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testSharedModuleGC0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await gcManager.create('x', 1)
       await gcManager.create('y', 2)
       await gcManager.create('z', 3)
@@ -268,14 +268,14 @@ export default function BuiltinsSharedModuleGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleGCTest0900
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_GC_TEST_0900
+     * @tc.name   testSharedModuleGC0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_GC_TEST_0900
      * @tc.desc   Verify small concurrency 5 concurrent creates
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSharedModuleGCTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedModuleGC0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 5; i++) {
         tasks.push(new taskpool.Task(createGCDataTask, gcManager, `obj_${i}`, i))
@@ -288,14 +288,14 @@ export default function BuiltinsSharedModuleGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleGCTest1000
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_GC_TEST_1000
+     * @tc.name   testSharedModuleGC1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_GC_TEST_1000
      * @tc.desc   Verify small concurrency 10 concurrent creates
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSharedModuleGCTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedModuleGC1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 10; i++) {
         tasks.push(new taskpool.Task(createGCDataTask, gcManager, `obj_${i}`, i))
@@ -308,14 +308,14 @@ export default function BuiltinsSharedModuleGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleGCTest1100
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_GC_TEST_1100
+     * @tc.name   testSharedModuleGC1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_GC_TEST_1100
      * @tc.desc   Verify object reference remains valid after concurrent access
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSharedModuleGCTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedModuleGC1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: SharedGCData = await gcManager.create('ref_test', 42)
 
       const tasks: taskpool.Task[] = []
@@ -336,14 +336,14 @@ export default function BuiltinsSharedModuleGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleGCTest1200
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_GC_TEST_1200
+     * @tc.name   testSharedModuleGC1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_GC_TEST_1200
      * @tc.desc   Verify create and delete count consistency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSharedModuleGCTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testSharedModuleGC1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await gcManager.create('c1', 1)
       await gcManager.create('c2', 2)
       await gcManager.delete('c1')

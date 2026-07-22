@@ -138,14 +138,14 @@ export default function BuiltinsWorkerTaskPoolGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsWorkerTaskPoolGCTest0100
-     * @tc.number SUB_BUILTINS_WORKER_TASKPOOL_GC_TEST_0100
+     * @tc.name   testWorkerTaskPoolGC0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_TASKPOOL_GC_TEST_0100
      * @tc.desc   Verify TaskPool task reference release after completion
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsWorkerTaskPoolGCTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testWorkerTaskPoolGC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const data: WorkerGCData = await manager.create('tp_release', 1)
       const task: taskpool.Task = new taskpool.Task(workerGCTask, data)
       const result: Object = await taskpool.execute(task)
@@ -154,14 +154,14 @@ export default function BuiltinsWorkerTaskPoolGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsWorkerTaskPoolGCTest0200
-     * @tc.number SUB_BUILTINS_WORKER_TASKPOOL_GC_TEST_0200
+     * @tc.name   testWorkerTaskPoolGC0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_TASKPOOL_GC_TEST_0200
      * @tc.desc   Verify multi-TaskPool concurrent reference with Promise.all
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsWorkerTaskPoolGCTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testWorkerTaskPoolGC0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: WorkerGCData = await manager.create('tp_multi', 2)
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
@@ -175,14 +175,14 @@ export default function BuiltinsWorkerTaskPoolGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsWorkerTaskPoolGCTest0300
-     * @tc.number SUB_BUILTINS_WORKER_TASKPOOL_GC_TEST_0300
+     * @tc.name   testWorkerTaskPoolGC0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_TASKPOOL_GC_TEST_0300
      * @tc.desc   Verify TaskPool task modify Sendable object - GC safe
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsWorkerTaskPoolGCTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testWorkerTaskPoolGC0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: WorkerGCData = await manager.create('tp_modify', 3)
       const task: taskpool.Task = new taskpool.Task(workerGCModifyTask, data, 999)
       await taskpool.execute(task)
@@ -190,14 +190,14 @@ export default function BuiltinsWorkerTaskPoolGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsWorkerTaskPoolGCTest0400
-     * @tc.number SUB_BUILTINS_WORKER_TASKPOOL_GC_TEST_0400
+     * @tc.name   testWorkerTaskPoolGC0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_TASKPOOL_GC_TEST_0400
      * @tc.desc   Verify TaskPool sequential create and delete Sendable objects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsWorkerTaskPoolGCTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testWorkerTaskPoolGC0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       for (let i: number = 0; i < 5; i++) {
         await manager.create(`tp_cd_${i}`, i)
       }
@@ -210,14 +210,14 @@ export default function BuiltinsWorkerTaskPoolGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsWorkerTaskPoolGCTest0500
-     * @tc.number SUB_BUILTINS_WORKER_TASKPOOL_GC_TEST_0500
+     * @tc.name   testWorkerTaskPoolGC0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_TASKPOOL_GC_TEST_0500
      * @tc.desc   Verify TaskPool long-running task GC does not release in-use objects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsWorkerTaskPoolGCTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testWorkerTaskPoolGC0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: WorkerGCData = await manager.create('tp_long', 5)
       const task: taskpool.Task = new taskpool.Task(workerGCTask, data)
       const result: Object = await taskpool.execute(task)
@@ -226,14 +226,14 @@ export default function BuiltinsWorkerTaskPoolGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsWorkerTaskPoolGCTest0600
-     * @tc.number SUB_BUILTINS_WORKER_TASKPOOL_GC_TEST_0600
+     * @tc.name   testWorkerTaskPoolGC0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_TASKPOOL_GC_TEST_0600
      * @tc.desc   Verify TaskPool task exception does not cause memory leak
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsWorkerTaskPoolGCTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testWorkerTaskPoolGC0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: WorkerGCData = await manager.create('tp_exc', 6)
       expect(manager.getSize()).assertEqual(1)
 
@@ -243,14 +243,14 @@ export default function BuiltinsWorkerTaskPoolGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsWorkerTaskPoolGCTest0700
-     * @tc.number SUB_BUILTINS_WORKER_TASKPOOL_GC_TEST_0700
+     * @tc.name   testWorkerTaskPoolGC0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_TASKPOOL_GC_TEST_0700
      * @tc.desc   Verify TaskPool and main thread concurrent access GC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsWorkerTaskPoolGCTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testWorkerTaskPoolGC0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: WorkerGCData = await manager.create('tp_main', 7)
       expect(data.getValue()).assertEqual(700)
 
@@ -261,14 +261,14 @@ export default function BuiltinsWorkerTaskPoolGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsWorkerTaskPoolGCTest0800
-     * @tc.number SUB_BUILTINS_WORKER_TASKPOOL_GC_TEST_0800
+     * @tc.name   testWorkerTaskPoolGC0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_TASKPOOL_GC_TEST_0800
      * @tc.desc   Verify TaskPool task cancellation GC behavior
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsWorkerTaskPoolGCTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testWorkerTaskPoolGC0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: WorkerGCData = await manager.create('tp_cancel', 8)
       expect(manager.getSize()).assertEqual(1)
 
@@ -277,14 +277,14 @@ export default function BuiltinsWorkerTaskPoolGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsWorkerTaskPoolGCTest0900
-     * @tc.number SUB_BUILTINS_WORKER_TASKPOOL_GC_TEST_0900
+     * @tc.name   testWorkerTaskPoolGC0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_TASKPOOL_GC_TEST_0900
      * @tc.desc   Verify TaskPool sendData passing Sendable reference
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsWorkerTaskPoolGCTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testWorkerTaskPoolGC0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: WorkerGCData = await manager.create('tp_send', 9)
       const task1: taskpool.Task = new taskpool.Task(workerGCTask, data)
       const task2: taskpool.Task = new taskpool.Task(workerGCTask, data)
@@ -295,14 +295,14 @@ export default function BuiltinsWorkerTaskPoolGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsWorkerTaskPoolGCTest1000
-     * @tc.number SUB_BUILTINS_WORKER_TASKPOOL_GC_TEST_1000
+     * @tc.name   testWorkerTaskPoolGC1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_TASKPOOL_GC_TEST_1000
      * @tc.desc   Verify TaskPool multiple tasks concurrent GC stability
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsWorkerTaskPoolGCTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testWorkerTaskPoolGC1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       for (let i: number = 0; i < 10; i++) {
         await manager.create(`tp_stable_${i}`, i)
       }

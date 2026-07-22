@@ -170,13 +170,13 @@ export default function BuiltinsTaskQueueCoordTest(): void {
     afterEach((): void => {})
     afterAll((): void => {})
 
-    it('BuiltinsTaskQueueCoordTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testTaskQueueCoord0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const task: TaskItem = createTask(1, 'task_1', 0)
       await queue.enqueue(task)
       expect(await queue.size()).assertEqual(1)
     })
 
-    it('BuiltinsTaskQueueCoordTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testTaskQueueCoord0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const task: TaskItem = createTask(1, 'task_1', 0)
       await queue.enqueue(task)
       const dequeued: TaskItem = await queue.dequeue()
@@ -184,14 +184,14 @@ export default function BuiltinsTaskQueueCoordTest(): void {
       expect(await queue.size()).assertEqual(0)
     })
 
-    it('BuiltinsTaskQueueCoordTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testTaskQueueCoord0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       for (let i = 0; i < 5; i++) {
         await queue.enqueue(createTask(i, `task_${i}`, 0))
       }
       expect(await queue.size()).assertEqual(5)
     })
 
-    it('BuiltinsTaskQueueCoordTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testTaskQueueCoord0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 10; i++) {
         await queue.enqueue(createTask(i, `task_${i}`, 0))
       }
@@ -200,7 +200,7 @@ export default function BuiltinsTaskQueueCoordTest(): void {
       expect(await queue.size()).assertEqual(0)
     })
 
-    it('BuiltinsTaskQueueCoordTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testTaskQueueCoord0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let dequeueCompleted: boolean = false
       const dequeuePromise: Promise<TaskItem> = queue.dequeue()
       dequeuePromise.then((): void => {
@@ -213,7 +213,7 @@ export default function BuiltinsTaskQueueCoordTest(): void {
       expect(dequeueCompleted).assertTrue()
     })
 
-    it('BuiltinsTaskQueueCoordTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testTaskQueueCoord0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 20; i++) {
         await queue.enqueue(createTask(i, `task_${i}`, 0))
       }
@@ -230,7 +230,7 @@ export default function BuiltinsTaskQueueCoordTest(): void {
       expect(enqueueCompleted).assertTrue()
     })
 
-    it('BuiltinsTaskQueueCoordTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testTaskQueueCoord0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const dequeuePromise: Promise<TaskItem> = queue.dequeue()
       await Utils.sleep(500)
       await queue.enqueue(createTask(42, 'task_42', 0))
@@ -238,7 +238,7 @@ export default function BuiltinsTaskQueueCoordTest(): void {
       expect(task.id_).assertEqual(42)
     })
 
-    it('BuiltinsTaskQueueCoordTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testTaskQueueCoord0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 20; i++) {
         await queue.enqueue(createTask(i, `task_${i}`, 0))
       }
@@ -249,13 +249,13 @@ export default function BuiltinsTaskQueueCoordTest(): void {
       expect(await queue.size()).assertEqual(20)
     })
 
-    it('BuiltinsTaskQueueCoordTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testTaskQueueCoord0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result: boolean = await queue.tryEnqueue(createTask(1, 'task_1', 0))
       expect(result).assertTrue()
       expect(await queue.size()).assertEqual(1)
     })
 
-    it('BuiltinsTaskQueueCoordTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testTaskQueueCoord1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 20; i++) {
         await queue.enqueue(createTask(i, `task_${i}`, 0))
       }
@@ -263,19 +263,19 @@ export default function BuiltinsTaskQueueCoordTest(): void {
       expect(result).assertFalse()
     })
 
-    it('BuiltinsTaskQueueCoordTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testTaskQueueCoord1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await queue.enqueue(createTask(1, 'task_1', 0))
       const task: TaskItem | undefined = await queue.tryDequeue()
       expect(task !== undefined).assertTrue()
       expect(task!.id_).assertEqual(1)
     })
 
-    it('BuiltinsTaskQueueCoordTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testTaskQueueCoord1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const task: TaskItem | undefined = await queue.tryDequeue()
       expect(task === undefined).assertTrue()
     })
 
-    it('BuiltinsTaskQueueCoordTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testTaskQueueCoord1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 10; i++) {
         tasks.push(new taskpool.Task(enqueueValue, i))
@@ -288,7 +288,7 @@ export default function BuiltinsTaskQueueCoordTest(): void {
       expect(await queue.getEnqueueCount()).assertEqual(10)
     })
 
-    it('BuiltinsTaskQueueCoordTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testTaskQueueCoord1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i = 0; i < 15; i++) {
         await queue.enqueue(createTask(i, `task_${i}`, 0))
       }
@@ -303,7 +303,7 @@ export default function BuiltinsTaskQueueCoordTest(): void {
       expect(await queue.getDequeueCount()).assertLargerOrEqual(5)
     })
 
-    it('BuiltinsTaskQueueCoordTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testTaskQueueCoord1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await queue.enqueue(createTask(1, 'task_1', 0))
       await queue.enqueue(createTask(2, 'task_2', 0))
       const task: TaskItem | undefined = await queue.peek()
@@ -312,7 +312,7 @@ export default function BuiltinsTaskQueueCoordTest(): void {
       expect(await queue.size()).assertEqual(2)
     })
 
-    it('BuiltinsTaskQueueCoordTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testTaskQueueCoord1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       expect(await queue.isEmpty()).assertTrue()
       expect(await queue.isFull()).assertFalse()
       for (let i = 0; i < 20; i++) {
@@ -322,7 +322,7 @@ export default function BuiltinsTaskQueueCoordTest(): void {
       expect(await queue.isFull()).assertTrue()
     })
 
-    it('BuiltinsTaskQueueCoordTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testTaskQueueCoord1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const notifications: Object[] = []
       const task: taskpool.Task = new taskpool.Task(notifyTask)
       task.onReceiveData((data: Object): void => {

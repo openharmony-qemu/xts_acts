@@ -201,13 +201,13 @@ export default function BuiltinsSlidingWindowLimiterTest(): void {
 
     afterEach((): void => {})
 
-    it('BuiltinsSlidingWindowLimiterTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testSlidingWindowLimiter0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const limiter: SlidingWindowLimiter = await manager.createLimiter('test_window', 1000, 5)
       expect(limiter.getWindowSize()).assertEqual(1000)
       expect(limiter.getMaxRequests()).assertEqual(5)
     })
 
-    it('BuiltinsSlidingWindowLimiterTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testSlidingWindowLimiter0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await manager.createLimiter('basic_window', 1000, 3)
 
       const r1: boolean = await manager.request('basic_window')
@@ -217,7 +217,7 @@ export default function BuiltinsSlidingWindowLimiterTest(): void {
       expect(r2).assertTrue()
     })
 
-    it('BuiltinsSlidingWindowLimiterTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testSlidingWindowLimiter0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await manager.createLimiter('reject_window', 1000, 2)
 
       await manager.request('reject_window')
@@ -227,7 +227,7 @@ export default function BuiltinsSlidingWindowLimiterTest(): void {
       expect(r3).assertFalse()
     })
 
-    it('BuiltinsSlidingWindowLimiterTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testSlidingWindowLimiter0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await manager.createLimiter('count_window', 1000, 2)
 
       await manager.request('count_window')
@@ -238,7 +238,7 @@ export default function BuiltinsSlidingWindowLimiterTest(): void {
       expect(manager.getTotalSuccess('count_window')).assertEqual(2)
     })
 
-    it('BuiltinsSlidingWindowLimiterTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSlidingWindowLimiter0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await manager.createLimiter('concurrent_window', 1000, 5)
 
       const tasks: taskpool.Task[] = []
@@ -251,12 +251,12 @@ export default function BuiltinsSlidingWindowLimiterTest(): void {
       expect(manager.getTotalSuccess('concurrent_window')).assertEqual(5)
     })
 
-    it('BuiltinsSlidingWindowLimiterTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testSlidingWindowLimiter0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const result: boolean = await manager.request('nonexistent')
       expect(result).assertFalse()
     })
 
-    it('BuiltinsSlidingWindowLimiterTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSlidingWindowLimiter0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await manager.createLimiter('batch3_window', 1000, 3)
 
       const tasks: taskpool.Task[] = []
@@ -268,7 +268,7 @@ export default function BuiltinsSlidingWindowLimiterTest(): void {
       expect(manager.getTotalRequests('batch3_window')).assertEqual(3)
     })
 
-    it('BuiltinsSlidingWindowLimiterTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSlidingWindowLimiter0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await manager.createLimiter('batch5_window', 1000, 5)
 
       const tasks: taskpool.Task[] = []
@@ -280,7 +280,7 @@ export default function BuiltinsSlidingWindowLimiterTest(): void {
       expect(manager.getTotalRequests('batch5_window')).assertEqual(5)
     })
 
-    it('BuiltinsSlidingWindowLimiterTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSlidingWindowLimiter0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await manager.createLimiter('batch10_window', 1000, 5)
 
       const tasks: taskpool.Task[] = []
@@ -293,7 +293,7 @@ export default function BuiltinsSlidingWindowLimiterTest(): void {
       expect(manager.getTotalSuccess('batch10_window')).assertEqual(5)
     })
 
-    it('BuiltinsSlidingWindowLimiterTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testSlidingWindowLimiter1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const limiter1: SlidingWindowLimiter = await manager.createLimiter('idempotent', 1000, 10)
       const limiter2: SlidingWindowLimiter = await manager.createLimiter('idempotent', 2000, 20)
 
@@ -302,14 +302,14 @@ export default function BuiltinsSlidingWindowLimiterTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSlidingWindowLimiterTest1100
-     * @tc.number SUB_BUILTINS_SLIDING_WINDOW_LIMITER_TEST_1100
+     * @tc.name   testSlidingWindowLimiter1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SLIDING_WINDOW_LIMITER_TEST_1100
      * @tc.desc   Verify multiple sliding window limiters coexist
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSlidingWindowLimiterTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testSlidingWindowLimiter1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       await manager.createLimiter('window1', 500, 10)
       await manager.createLimiter('window2', 1000, 20)
       await manager.createLimiter('window3', 2000, 30)
@@ -322,14 +322,14 @@ export default function BuiltinsSlidingWindowLimiterTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSlidingWindowLimiterTest1200
-     * @tc.number SUB_BUILTINS_SLIDING_WINDOW_LIMITER_TEST_1200
+     * @tc.name   testSlidingWindowLimiter1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SLIDING_WINDOW_LIMITER_TEST_1200
      * @tc.desc   Verify sliding window time boundary with key information
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSlidingWindowLimiterTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testSlidingWindowLimiter1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const limiter: SlidingWindowLimiter = await manager.createLimiter('time_boundary', 1000, 100)
       const beforeTime: number = Date.now()
 

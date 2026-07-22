@@ -103,42 +103,42 @@ export default function BuiltinsSessionCacheTest(): void {
     afterAll((): void => {})
 
     /**
-     * @tc.name   BuiltinsSessionCacheTest0100
-     * @tc.number SUB_BUILTINS_SESSION_CACHE_TEST_0100
+     * @tc.name   testSessionCache0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SESSION_CACHE_TEST_0100
      * @tc.desc   Verify Session creation cache
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSessionCacheTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSessionCache0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       cache.createSession('sess_001', '{"userId":1,"name":"user1"}')
       expect(cache.length()).assertEqual(1)
       expect(cache.getCreatedCount()).assertEqual(1)
     })
 
     /**
-     * @tc.name   BuiltinsSessionCacheTest0200
-     * @tc.number SUB_BUILTINS_SESSION_CACHE_TEST_0200
+     * @tc.name   testSessionCache0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SESSION_CACHE_TEST_0200
      * @tc.desc   Verify Session query
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSessionCacheTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSessionCache0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       cache.createSession('sess_001', '{"userId":1}')
       const data: string | undefined = cache.getSession('sess_001')
       expect(data).assertEqual('{"userId":1}')
     })
 
     /**
-     * @tc.name   BuiltinsSessionCacheTest0300
-     * @tc.number SUB_BUILTINS_SESSION_CACHE_TEST_0300
+     * @tc.name   testSessionCache0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SESSION_CACHE_TEST_0300
      * @tc.desc   Verify Session deletion
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSessionCacheTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSessionCache0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       cache.createSession('sess_001', '{"userId":1}')
       expect(cache.length()).assertEqual(1)
       cache.deleteSession('sess_001')
@@ -147,14 +147,14 @@ export default function BuiltinsSessionCacheTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSessionCacheTest0400
-     * @tc.number SUB_BUILTINS_SESSION_CACHE_TEST_0400
+     * @tc.name   testSessionCache0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SESSION_CACHE_TEST_0400
      * @tc.desc   Verify Session expiration detection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsSessionCacheTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testSessionCache0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const shortTimestamps: collections.Map<string, number> = new collections.Map<string, number>()
       const shortCacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(200)
       const shortCache: SessionCacheManager = new SessionCacheManager(shortTimestamps, shortCacheArg)
@@ -166,14 +166,14 @@ export default function BuiltinsSessionCacheTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSessionCacheTest0500
-     * @tc.number SUB_BUILTINS_SESSION_CACHE_TEST_0500
+     * @tc.name   testSessionCache0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SESSION_CACHE_TEST_0500
      * @tc.desc   Verify Session renewal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsSessionCacheTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testSessionCache0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const renewTimestamps: collections.Map<string, number> = new collections.Map<string, number>()
       const renewCacheArg: ArkTSUtils.SendableLruCache<string, string> = new ArkTSUtils.SendableLruCache<string, string>(200)
       const shortCache: SessionCacheManager = new SessionCacheManager(renewTimestamps, renewCacheArg)
@@ -186,14 +186,14 @@ export default function BuiltinsSessionCacheTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSessionCacheTest0600
-     * @tc.number SUB_BUILTINS_SESSION_CACHE_TEST_0600
+     * @tc.name   testSessionCache0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SESSION_CACHE_TEST_0600
      * @tc.desc   Verify multi-user concurrent Session
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSessionCacheTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testSessionCache0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 5; i++) {
         tasks.push(new taskpool.Task(concurrentCreateSession, `sess_${i}`, `{"userId":${i}}`))
@@ -211,14 +211,14 @@ export default function BuiltinsSessionCacheTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSessionCacheTest0700
-     * @tc.number SUB_BUILTINS_SESSION_CACHE_TEST_0700
+     * @tc.name   testSessionCache0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SESSION_CACHE_TEST_0700
      * @tc.desc   Verify Session no conflict
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSessionCacheTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testSessionCache0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 10; i++) {
         tasks.push(new taskpool.Task(concurrentCreateSession, `user_sess_${i}`, `{"name":"user_${i}"}`))
@@ -239,14 +239,14 @@ export default function BuiltinsSessionCacheTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSessionCacheTest0800
-     * @tc.number SUB_BUILTINS_SESSION_CACHE_TEST_0800
+     * @tc.name   testSessionCache0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SESSION_CACHE_TEST_0800
      * @tc.desc   Verify TaskPool concurrent create Session
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSessionCacheTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testSessionCache0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 20; i++) {
         tasks.push(new taskpool.Task(concurrentCreateSession, `tp_sess_${i}`, `{"tpUser":${i}}`))
@@ -264,14 +264,14 @@ export default function BuiltinsSessionCacheTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSessionCacheTest0900
-     * @tc.number SUB_BUILTINS_SESSION_CACHE_TEST_0900
+     * @tc.name   testSessionCache0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SESSION_CACHE_TEST_0900
      * @tc.desc   Verify Session creation statistics
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSessionCacheTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSessionCache0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       for (let i = 0; i < 5; i++) {
         cache.createSession(`sess_${i}`, `{"id":${i}}`)
       }
@@ -279,14 +279,14 @@ export default function BuiltinsSessionCacheTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSessionCacheTest1000
-     * @tc.number SUB_BUILTINS_SESSION_CACHE_TEST_1000
+     * @tc.name   testSessionCache1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SESSION_CACHE_TEST_1000
      * @tc.desc   Verify active Session count monitoring
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsSessionCacheTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testSessionCache1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       for (let i = 0; i < 10; i++) {
         cache.createSession(`active_${i}`, `{"id":${i}}`)
       }
@@ -297,14 +297,14 @@ export default function BuiltinsSessionCacheTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSessionCacheTest1100
-     * @tc.number SUB_BUILTINS_SESSION_CACHE_TEST_1100
+     * @tc.name   testSessionCache1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SESSION_CACHE_TEST_1100
      * @tc.desc   Verify Session isolation verification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSessionCacheTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSessionCache1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       cache.createSession('user_A', '{"role":"admin"}')
       cache.createSession('user_B', '{"role":"guest"}')
       expect(cache.getSession('user_A')).assertEqual('{"role":"admin"}')

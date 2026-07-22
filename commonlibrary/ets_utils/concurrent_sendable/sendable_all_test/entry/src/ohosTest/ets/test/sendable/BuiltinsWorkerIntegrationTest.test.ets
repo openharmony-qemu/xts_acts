@@ -40,14 +40,14 @@ export default function BuiltinsWorkerIntegrationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsWorkerIntegrationTest0100
-     * @tc.number SUB_BUILTINS_WORKER_INTEGRATION_TEST_0800
+     * @tc.name   testWorkerIntegration0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_WORKER_INTEGRATION_TEST_0800
      * @tc.desc   Verify Worker concurrent write to shared data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsWorkerIntegrationTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testWorkerIntegration0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       for (let i: number = 0; i < 5; i++) {
         await sharedData.increment()
       }

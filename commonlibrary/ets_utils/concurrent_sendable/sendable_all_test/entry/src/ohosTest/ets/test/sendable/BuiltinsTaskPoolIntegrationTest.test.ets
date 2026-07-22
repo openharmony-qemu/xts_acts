@@ -87,14 +87,14 @@ export default function BuiltinsTaskPoolIntegrationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsTaskPoolIntegrationTest0100
-     * @tc.number SUB_BUILTINS_TASKPOOL_INTEGRATION_TEST_0100
+     * @tc.name   testTaskPoolIntegration0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTEGRATION_TEST_0100
      * @tc.desc   Verify TaskPool single task accessing shared module
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsTaskPoolIntegrationTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testTaskPoolIntegration0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       sharedData.setName('single_task')
       const task: taskpool.Task = new taskpool.Task(readSharedDataTask, sharedData)
       const result: Object = await taskpool.execute(task)
@@ -104,14 +104,14 @@ export default function BuiltinsTaskPoolIntegrationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsTaskPoolIntegrationTest0200
-     * @tc.number SUB_BUILTINS_TASKPOOL_INTEGRATION_TEST_0200
+     * @tc.name   testTaskPoolIntegration0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTEGRATION_TEST_0200
      * @tc.desc   Verify TaskPool concurrent 3 tasks accessing shared module
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsTaskPoolIntegrationTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testTaskPoolIntegration0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 3; i++) {
         tasks.push(new taskpool.Task(incrementSharedDataTask, sharedData))
@@ -121,14 +121,14 @@ export default function BuiltinsTaskPoolIntegrationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsTaskPoolIntegrationTest0300
-     * @tc.number SUB_BUILTINS_TASKPOOL_INTEGRATION_TEST_0300
+     * @tc.name   testTaskPoolIntegration0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTEGRATION_TEST_0300
      * @tc.desc   Verify TaskPool concurrent 10 tasks auto-increment
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsTaskPoolIntegrationTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testTaskPoolIntegration0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
         tasks.push(new taskpool.Task(incrementSharedDataTask, sharedData))
@@ -138,14 +138,14 @@ export default function BuiltinsTaskPoolIntegrationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsTaskPoolIntegrationTest0400
-     * @tc.number SUB_BUILTINS_TASKPOOL_INTEGRATION_TEST_0400
+     * @tc.name   testTaskPoolIntegration0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTEGRATION_TEST_0400
      * @tc.desc   Verify TaskPool concurrent read-write mix with 5 tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsTaskPoolIntegrationTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testTaskPoolIntegration0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 3; i++) {
         tasks.push(new taskpool.Task(incrementSharedDataTask, sharedData))
@@ -158,14 +158,14 @@ export default function BuiltinsTaskPoolIntegrationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsTaskPoolIntegrationTest0500
-     * @tc.number SUB_BUILTINS_TASKPOOL_INTEGRATION_TEST_0500
+     * @tc.name   testTaskPoolIntegration0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTEGRATION_TEST_0500
      * @tc.desc   Verify TaskPool task callback verifying shared data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsTaskPoolIntegrationTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testTaskPoolIntegration0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const task: taskpool.Task = new taskpool.Task(accessAndIncrementTask, sharedData)
       const result: Object = await taskpool.execute(task)
 
@@ -174,14 +174,14 @@ export default function BuiltinsTaskPoolIntegrationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsTaskPoolIntegrationTest0600
-     * @tc.number SUB_BUILTINS_TASKPOOL_INTEGRATION_TEST_0600
+     * @tc.name   testTaskPoolIntegration0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTEGRATION_TEST_0600
      * @tc.desc   Verify TaskPool callback nested task with count waiting
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsTaskPoolIntegrationTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testTaskPoolIntegration0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const task: taskpool.Task = new taskpool.Task(accessAndIncrementTask, sharedData)
       const result: Object = await taskpool.execute(task)
       const count: number = result as number
@@ -195,14 +195,14 @@ export default function BuiltinsTaskPoolIntegrationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsTaskPoolIntegrationTest0700
-     * @tc.number SUB_BUILTINS_TASKPOOL_INTEGRATION_TEST_0700
+     * @tc.name   testTaskPoolIntegration0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTEGRATION_TEST_0700
      * @tc.desc   Verify nested task concurrent 3 tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsTaskPoolIntegrationTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testTaskPoolIntegration0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 3; i++) {
         tasks.push(new taskpool.Task(accessAndIncrementTask, sharedData))
@@ -212,14 +212,14 @@ export default function BuiltinsTaskPoolIntegrationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsTaskPoolIntegrationTest0800
-     * @tc.number SUB_BUILTINS_TASKPOOL_INTEGRATION_TEST_0800
+     * @tc.name   testTaskPoolIntegration0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTEGRATION_TEST_0800
      * @tc.desc   Verify nested task concurrent 5 tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsTaskPoolIntegrationTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testTaskPoolIntegration0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
         tasks.push(new taskpool.Task(accessAndIncrementTask, sharedData))
@@ -229,14 +229,14 @@ export default function BuiltinsTaskPoolIntegrationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsTaskPoolIntegrationTest0900
-     * @tc.number SUB_BUILTINS_TASKPOOL_INTEGRATION_TEST_0900
+     * @tc.name   testTaskPoolIntegration0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTEGRATION_TEST_0900
      * @tc.desc   Verify multi-level nested tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsTaskPoolIntegrationTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testTaskPoolIntegration0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       for (let i: number = 0; i < 3; i++) {
         const task: taskpool.Task = new taskpool.Task(incrementSharedDataTask, sharedData)
         await taskpool.execute(task)
@@ -245,28 +245,28 @@ export default function BuiltinsTaskPoolIntegrationTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsTaskPoolIntegrationTest1000
-     * @tc.number SUB_BUILTINS_TASKPOOL_INTEGRATION_TEST_1000
+     * @tc.name   testTaskPoolIntegration1000
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTEGRATION_TEST_1000
      * @tc.desc   Verify LongTask execution and cleanup
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsTaskPoolIntegrationTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testTaskPoolIntegration1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const task: taskpool.Task = new taskpool.Task(incrementSharedDataTask, sharedData)
       await taskpool.execute(task)
       expect(sharedData.getCounter()).assertEqual(1)
     })
 
     /**
-     * @tc.name   BuiltinsTaskPoolIntegrationTest1100
-     * @tc.number SUB_BUILTINS_TASKPOOL_INTEGRATION_TEST_1100
+     * @tc.name   testTaskPoolIntegration1100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_INTEGRATION_TEST_1100
      * @tc.desc   Verify task cancellation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsTaskPoolIntegrationTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testTaskPoolIntegration1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const task: taskpool.Task = new taskpool.Task(incrementSharedDataTask, sharedData)
       taskpool.execute(task)
       taskpool.cancel(task)

@@ -90,13 +90,13 @@ export default function BuiltinsSharedCounterInventoryTest(): void {
     afterEach((): void => {})
     afterAll((): void => {})
 
-    it('BuiltinsSharedCounterInventoryTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterInventory0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       inventory.setStock(100)
       expect(inventory.getStock()).assertEqual(100)
       expect(inventory.getSold()).assertEqual(0)
     })
 
-    it('BuiltinsSharedCounterInventoryTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterInventory0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       inventory.setStock(10)
       const success: boolean = inventory.purchase(1)
       expect(success).assertTrue()
@@ -104,14 +104,14 @@ export default function BuiltinsSharedCounterInventoryTest(): void {
       expect(inventory.getSold()).assertEqual(1)
     })
 
-    it('BuiltinsSharedCounterInventoryTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterInventory0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       inventory.setStock(5)
       const success: boolean = inventory.purchase(10)
       expect(success).assertFalse()
       expect(inventory.getStock()).assertEqual(5)
     })
 
-    it('BuiltinsSharedCounterInventoryTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterInventory0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       inventory.setStock(10)
       inventory.purchase(3)
       inventory.refund(3)
@@ -119,7 +119,7 @@ export default function BuiltinsSharedCounterInventoryTest(): void {
       expect(inventory.getSold()).assertEqual(0)
     })
 
-    it('BuiltinsSharedCounterInventoryTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testSharedCounterInventory0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       inventory.setStock(5)
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 10; i++) {
@@ -141,7 +141,7 @@ export default function BuiltinsSharedCounterInventoryTest(): void {
       expect(inventory.getSold()).assertLargerOrEqual(1)
     })
 
-    it('BuiltinsSharedCounterInventoryTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testSharedCounterInventory0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       inventory.setStock(0)
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 10; i++) {
@@ -162,7 +162,7 @@ export default function BuiltinsSharedCounterInventoryTest(): void {
       expect(inventory.getStock()).assertEqual(0)
     })
 
-    it('BuiltinsSharedCounterInventoryTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testSharedCounterInventory0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       inventory.setStock(50)
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 100; i++) {
@@ -184,7 +184,7 @@ export default function BuiltinsSharedCounterInventoryTest(): void {
       expect(inventory.getSold()).assertLargerOrEqual(1)
     })
 
-    it('BuiltinsSharedCounterInventoryTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testSharedCounterInventory0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       inventory.setStock(100)
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 5; i++) {
@@ -205,14 +205,14 @@ export default function BuiltinsSharedCounterInventoryTest(): void {
       expect(inventory.getStock()).assertLargerOrEqual(0)
     })
 
-    it('BuiltinsSharedCounterInventoryTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterInventory0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       inventory.setStock(10)
       expect(inventory.isInStock()).assertTrue()
       inventory.purchase(10)
       expect(inventory.isInStock()).assertFalse()
     })
 
-    it('BuiltinsSharedCounterInventoryTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterInventory1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       inventory.setStock(10)
       inventory.purchase(5)
       inventory.setStock(20)

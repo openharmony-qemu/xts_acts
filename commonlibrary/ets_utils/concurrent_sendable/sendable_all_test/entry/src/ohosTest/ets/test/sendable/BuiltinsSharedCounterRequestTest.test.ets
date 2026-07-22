@@ -112,25 +112,25 @@ export default function BuiltinsSharedCounterRequestTest(): void {
     afterEach((): void => {})
     afterAll((): void => {})
 
-    it('BuiltinsSharedCounterRequestTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterRequest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       counter.recordRequest(RequestType.GET, true)
       expect(counter.getTotal()).assertEqual(1)
       expect(counter.getByType(RequestType.GET)).assertEqual(1)
     })
 
-    it('BuiltinsSharedCounterRequestTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterRequest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       counter.recordRequest(RequestType.POST, true)
       expect(counter.getTotal()).assertEqual(1)
       expect(counter.getByType(RequestType.POST)).assertEqual(1)
     })
 
-    it('BuiltinsSharedCounterRequestTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterRequest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       counter.recordRequest(RequestType.GET, false)
       expect(counter.getFailed()).assertEqual(1)
       expect(counter.getSuccess()).assertEqual(0)
     })
 
-    it('BuiltinsSharedCounterRequestTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testSharedCounterRequest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 20; i++) {
         if (i % 2 === 0) {
@@ -148,7 +148,7 @@ export default function BuiltinsSharedCounterRequestTest(): void {
       expect(counter.getSuccess()).assertLargerOrEqual(1)
     })
 
-    it('BuiltinsSharedCounterRequestTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testSharedCounterRequest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 50; i++) {
         if (i % 3 === 0) {
@@ -167,7 +167,7 @@ export default function BuiltinsSharedCounterRequestTest(): void {
       expect(counter.getTotal()).assertLargerOrEqual(1)
     })
 
-    it('BuiltinsSharedCounterRequestTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testSharedCounterRequest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 100; i++) {
         tasks.push(new taskpool.Task(simulateGetRequest, counter))
@@ -181,7 +181,7 @@ export default function BuiltinsSharedCounterRequestTest(): void {
       expect(counter.getSuccess()).assertLargerOrEqual(1)
     })
 
-    it('BuiltinsSharedCounterRequestTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterRequest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const threshold: number = 10
       for (let i = 0; i < threshold; i++) {
         counter.recordRequest(RequestType.GET, true)
@@ -189,7 +189,7 @@ export default function BuiltinsSharedCounterRequestTest(): void {
       expect(counter.checkThreshold(threshold)).assertTrue()
     })
 
-    it('BuiltinsSharedCounterRequestTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterRequest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const threshold: number = 100
       for (let i = 0; i < 10; i++) {
         counter.recordRequest(RequestType.GET, true)
@@ -197,7 +197,7 @@ export default function BuiltinsSharedCounterRequestTest(): void {
       expect(counter.checkThreshold(threshold)).assertFalse()
     })
 
-    it('BuiltinsSharedCounterRequestTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testSharedCounterRequest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i = 0; i < 30; i++) {
         if (i % 4 === 0) {
@@ -218,7 +218,7 @@ export default function BuiltinsSharedCounterRequestTest(): void {
       expect(success + failed).assertLargerOrEqual(1)
     })
 
-    it('BuiltinsSharedCounterRequestTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterRequest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       counter.recordRequest(RequestType.GET, true)
       counter.recordRequest(RequestType.POST, true)
       counter.recordRequest(RequestType.GET, false)
@@ -226,7 +226,7 @@ export default function BuiltinsSharedCounterRequestTest(): void {
       expect(counter.getByType(RequestType.POST)).assertEqual(1)
     })
 
-    it('BuiltinsSharedCounterRequestTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testSharedCounterRequest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       counter.recordRequest(RequestType.GET, true)
       counter.recordRequest(RequestType.POST, true)
       counter.recordRequest(RequestType.GET, false)

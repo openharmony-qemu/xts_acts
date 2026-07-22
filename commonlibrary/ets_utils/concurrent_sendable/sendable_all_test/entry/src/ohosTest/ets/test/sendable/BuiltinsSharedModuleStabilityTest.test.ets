@@ -67,14 +67,14 @@ export default function BuiltinsSharedModuleStabilityTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleStabilityTest0100
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_STABILITY_TEST_0100
+     * @tc.name   testSharedModuleStability0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_STABILITY_TEST_0100
      * @tc.desc   Verify variable lock protection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSharedModuleStabilityTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testSharedModuleStability0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
         tasks.push(new taskpool.Task(stabilityIncrementTask, counter))
@@ -84,14 +84,14 @@ export default function BuiltinsSharedModuleStabilityTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleStabilityTest0200
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_STABILITY_TEST_0200
+     * @tc.name   testSharedModuleStability0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_STABILITY_TEST_0200
      * @tc.desc   Verify assertion key info in error message
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSharedModuleStabilityTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedModuleStability0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       await counter.increment()
       await counter.increment()
       const count: number = counter.getCount()
@@ -99,14 +99,14 @@ export default function BuiltinsSharedModuleStabilityTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleStabilityTest0300
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_STABILITY_TEST_0300
+     * @tc.name   testSharedModuleStability0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_STABILITY_TEST_0300
      * @tc.desc   Verify Timer delay >= 500ms rule
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSharedModuleStabilityTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedModuleStability0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
         tasks.push(new taskpool.Task(stabilityIncrementTask, counter))
@@ -118,14 +118,14 @@ export default function BuiltinsSharedModuleStabilityTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleStabilityTest0400
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_STABILITY_TEST_0400
+     * @tc.name   testSharedModuleStability0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_STABILITY_TEST_0400
      * @tc.desc   Verify Timer branch <= 10ms rule
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSharedModuleStabilityTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedModuleStability0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const startTime: number = Date.now()
       await counter.increment()
       const elapsed: number = Date.now() - startTime
@@ -133,14 +133,14 @@ export default function BuiltinsSharedModuleStabilityTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleStabilityTest0500
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_STABILITY_TEST_0500
+     * @tc.name   testSharedModuleStability0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_STABILITY_TEST_0500
      * @tc.desc   Verify async nested completion
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSharedModuleStabilityTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedModuleStability0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const task1: taskpool.Task = new taskpool.Task(stabilityIncrementTask, counter)
       await taskpool.execute(task1)
 
@@ -154,14 +154,14 @@ export default function BuiltinsSharedModuleStabilityTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleStabilityTest0600
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_STABILITY_TEST_0600
+     * @tc.name   testSharedModuleStability0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_STABILITY_TEST_0600
      * @tc.desc   Verify Worker task completion before exit
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSharedModuleStabilityTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedModuleStability0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 3; i++) {
         tasks.push(new taskpool.Task(stabilityIncrementTask, counter))
@@ -172,14 +172,14 @@ export default function BuiltinsSharedModuleStabilityTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedModuleStabilityTest0700
-     * @tc.number SUB_BUILTINS_SHARED_MODULE_STABILITY_TEST_0700
+     * @tc.name   testSharedModuleStability0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_MODULE_STABILITY_TEST_0700
      * @tc.desc   Verify error message assertion key info
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSharedModuleStabilityTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedModuleStability0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
         tasks.push(new taskpool.Task(stabilityIncrementTask, counter))

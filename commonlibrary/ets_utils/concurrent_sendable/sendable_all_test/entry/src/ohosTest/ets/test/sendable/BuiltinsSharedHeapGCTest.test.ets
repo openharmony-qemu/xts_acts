@@ -140,14 +140,14 @@ export default function BuiltinsSharedHeapGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedHeapGCTest0100
-     * @tc.number SUB_BUILTINS_SHARED_HEAP_GC_TEST_0100
+     * @tc.name   testSharedHeapGC0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_HEAP_GC_TEST_0100
      * @tc.desc   Verify forceFullGC triggers immediate GC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSharedHeapGCTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testSharedHeapGC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       for (let i: number = 0; i < 5; i++) {
         await manager.create(`obj_${i}`, i)
       }
@@ -158,14 +158,14 @@ export default function BuiltinsSharedHeapGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedHeapGCTest0200
-     * @tc.number SUB_BUILTINS_SHARED_HEAP_GC_TEST_0200
+     * @tc.name   testSharedHeapGC0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_HEAP_GC_TEST_0200
      * @tc.desc   Verify GC before and after memory change
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsSharedHeapGCTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('testSharedHeapGC0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       expect(manager.getSize()).assertEqual(0)
 
       await manager.create('data1', 1)
@@ -180,14 +180,14 @@ export default function BuiltinsSharedHeapGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedHeapGCTest0300
-     * @tc.number SUB_BUILTINS_SHARED_HEAP_GC_TEST_0300
+     * @tc.name   testSharedHeapGC0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_HEAP_GC_TEST_0300
      * @tc.desc   Verify GC trigger does not affect in-use objects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSharedHeapGCTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedHeapGC0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: LargeGCData = await manager.create('active', 42)
       expect(data.getId()).assertEqual(42)
 
@@ -197,14 +197,14 @@ export default function BuiltinsSharedHeapGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedHeapGCTest0400
-     * @tc.number SUB_BUILTINS_SHARED_HEAP_GC_TEST_0400
+     * @tc.name   testSharedHeapGC0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_HEAP_GC_TEST_0400
      * @tc.desc   Verify multi-thread concurrent GC trigger
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSharedHeapGCTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedHeapGC0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
         tasks.push(new taskpool.Task(createGCDataTask, manager, `gc_${i}`, i))
@@ -214,14 +214,14 @@ export default function BuiltinsSharedHeapGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedHeapGCTest0500
-     * @tc.number SUB_BUILTINS_SHARED_HEAP_GC_TEST_0500
+     * @tc.name   testSharedHeapGC0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_HEAP_GC_TEST_0500
      * @tc.desc   Verify GC completion time is fast
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSharedHeapGCTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedHeapGC0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const startTime: number = Date.now()
       for (let i: number = 0; i < 10; i++) {
         await manager.create(`fast_${i}`, i)
@@ -231,14 +231,14 @@ export default function BuiltinsSharedHeapGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedHeapGCTest0600
-     * @tc.number SUB_BUILTINS_SHARED_HEAP_GC_TEST_0600
+     * @tc.name   testSharedHeapGC0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_HEAP_GC_TEST_0600
      * @tc.desc   Verify object count change before and after GC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSharedHeapGCTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedHeapGC0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       for (let i: number = 0; i < 5; i++) {
         await manager.create(`cnt_${i}`, i)
       }
@@ -252,14 +252,14 @@ export default function BuiltinsSharedHeapGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedHeapGCTest0700
-     * @tc.number SUB_BUILTINS_SHARED_HEAP_GC_TEST_0700
+     * @tc.name   testSharedHeapGC0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_HEAP_GC_TEST_0700
      * @tc.desc   Verify continuous multiple GC calls stability
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSharedHeapGCTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedHeapGC0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let totalCreates: number = 0
       for (let round: number = 0; round < 3; round++) {
         for (let i: number = 0; i < 5; i++) {
@@ -273,14 +273,14 @@ export default function BuiltinsSharedHeapGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedHeapGCTest0800
-     * @tc.number SUB_BUILTINS_SHARED_HEAP_GC_TEST_0800
+     * @tc.name   testSharedHeapGC0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_HEAP_GC_TEST_0800
      * @tc.desc   Verify GC trigger timing - auto vs forced GC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSharedHeapGCTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedHeapGC0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       const data: LargeGCData = await manager.create('persist', 100)
       expect(data.getId()).assertEqual(100)
 
@@ -289,14 +289,14 @@ export default function BuiltinsSharedHeapGCTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsSharedHeapGCTest0900
-     * @tc.number SUB_BUILTINS_SHARED_HEAP_GC_TEST_0900
+     * @tc.name   testSharedHeapGC0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SHARED_HEAP_GC_TEST_0900
      * @tc.desc   Verify shared heap capacity stability after GC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsSharedHeapGCTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSharedHeapGC0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       for (let i: number = 0; i < 10; i++) {
         await manager.create(`cap_${i}`, i)
       }

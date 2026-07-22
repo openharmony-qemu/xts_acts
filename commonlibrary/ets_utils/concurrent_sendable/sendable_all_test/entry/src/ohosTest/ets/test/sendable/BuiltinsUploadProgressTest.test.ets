@@ -133,20 +133,20 @@ export default function BuiltinsUploadProgressTest(): void {
       await tracker.reset()
     })
 
-    it('BuiltinsUploadProgressTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testUploadProgress0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await tracker.setTotalChunks(1)
       expect(await tracker.getChunkProgress(0)).assertEqual(0)
       expect(await tracker.getOverallProgress()).assertEqual(0)
     })
 
-    it('BuiltinsUploadProgressTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testUploadProgress0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await tracker.setTotalChunks(1)
       await tracker.updateChunkProgress(0, 50)
       expect(await tracker.getChunkProgress(0)).assertEqual(50)
       expect(await tracker.getOverallProgress()).assertEqual(50)
     })
 
-    it('BuiltinsUploadProgressTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testUploadProgress0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await tracker.setTotalChunks(1)
       await tracker.updateChunkProgress(0, 100)
       expect(await tracker.getChunkProgress(0)).assertEqual(100)
@@ -154,7 +154,7 @@ export default function BuiltinsUploadProgressTest(): void {
       expect(await tracker.isCompleted()).assertTrue()
     })
 
-    it('BuiltinsUploadProgressTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testUploadProgress0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await tracker.setTotalChunks(5)
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 5; i++) {
@@ -165,7 +165,7 @@ export default function BuiltinsUploadProgressTest(): void {
       expect(await tracker.isCompleted()).assertTrue()
     })
 
-    it('BuiltinsUploadProgressTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testUploadProgress0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await tracker.setTotalChunks(5)
       for (let i: number = 0; i < 5; i++) {
         await tracker.updateChunkProgress(i, 50)
@@ -173,7 +173,7 @@ export default function BuiltinsUploadProgressTest(): void {
       expect(await tracker.getOverallProgress()).assertEqual(50)
     })
 
-    it('BuiltinsUploadProgressTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testUploadProgress0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await tracker.setTotalChunks(3)
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 3; i++) {
@@ -183,7 +183,7 @@ export default function BuiltinsUploadProgressTest(): void {
       expect(await tracker.getOverallProgress()).assertEqual(100)
     })
 
-    it('BuiltinsUploadProgressTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testUploadProgress0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await tracker.setTotalChunks(3)
       await tracker.updateChunkProgress(0, 100)
       await tracker.updateChunkProgress(1, 50)
@@ -191,13 +191,13 @@ export default function BuiltinsUploadProgressTest(): void {
       expect(await tracker.getOverallProgress()).assertEqual(50)
     })
 
-    it('BuiltinsUploadProgressTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testUploadProgress0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await tracker.setTotalChunks(3)
       await tracker.markChunkFailed(1)
       expect(await tracker.getFailedChunks()).assertEqual(1)
     })
 
-    it('BuiltinsUploadProgressTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testUploadProgress0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await tracker.setTotalChunks(3)
       await tracker.updateChunkProgress(0, 100)
       await tracker.markChunkFailed(1)
@@ -205,14 +205,14 @@ export default function BuiltinsUploadProgressTest(): void {
       expect(await tracker.getFailedChunks()).assertEqual(1)
     })
 
-    it('BuiltinsUploadProgressTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testUploadProgress1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await tracker.setTotalChunks(2)
       await tracker.markChunkFailed(0)
       await tracker.updateChunkProgress(0, 30)
       expect(await tracker.getChunkProgress(0)).assertEqual(30)
     })
 
-    it('BuiltinsUploadProgressTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testUploadProgress1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       await tracker.setTotalChunks(3)
       await tracker.updateChunkProgress(0, 100)
       await tracker.updateChunkProgress(1, 100)

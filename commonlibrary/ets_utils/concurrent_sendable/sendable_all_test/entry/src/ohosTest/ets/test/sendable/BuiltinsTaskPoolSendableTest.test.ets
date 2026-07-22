@@ -55,14 +55,14 @@ export default function BuiltinsTaskPoolSendableTest(): void {
     afterAll((): void => {})
 
     /**
-     * @tc.name   BuiltinsTaskPoolSendableTest0100
-     * @tc.number SUB_BUILTINS_TASKPOOL_SENDABLE_TEST_0100
+     * @tc.name   testTaskPoolSendable0100
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_SENDABLE_TEST_0100
      * @tc.desc   Verify single Sendable param passes by reference in TaskPool execute
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsTaskPoolSendableTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testTaskPoolSendable0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const counter = new SharedCounter()
       const task = new taskpool.Task(modifySharedCounter, counter)
       const result = await taskpool.execute(task) as number
@@ -71,14 +71,14 @@ export default function BuiltinsTaskPoolSendableTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsTaskPoolSendableTest0200
-     * @tc.number SUB_BUILTINS_TASKPOOL_SENDABLE_TEST_0200
+     * @tc.name   testTaskPoolSendable0200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_SENDABLE_TEST_0200
      * @tc.desc   Verify multiple Sendable params pass by reference in TaskPool execute
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsTaskPoolSendableTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testTaskPoolSendable0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const counter1 = new SharedCounter()
       const counter2 = new SharedCounter()
       const task = new taskpool.Task(multiParamSharedFunc, counter1, counter2, 5)
@@ -89,14 +89,14 @@ export default function BuiltinsTaskPoolSendableTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsTaskPoolSendableTest0300
-     * @tc.number SUB_BUILTINS_TASKPOOL_SENDABLE_TEST_0300
+     * @tc.name   testTaskPoolSendable0300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_SENDABLE_TEST_0300
      * @tc.desc   Verify collections container as Sendable param in TaskPool execute
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsTaskPoolSendableTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testTaskPoolSendable0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const container = new SharedArrayContainer()
       const task = new taskpool.Task(modifySharedArray, container)
       const result = await taskpool.execute(task) as number
@@ -105,14 +105,14 @@ export default function BuiltinsTaskPoolSendableTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsTaskPoolSendableTest0400
-     * @tc.number SUB_BUILTINS_TASKPOOL_SENDABLE_TEST_0400
+     * @tc.name   testTaskPoolSendable0400
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_SENDABLE_TEST_0400
      * @tc.desc   Verify sendData sends Sendable instance by reference
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsTaskPoolSendableTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testTaskPoolSendable0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const counter = new SharedCounter()
       counter.count_ = 42
       const task = new taskpool.Task(sendDataSharedFunc, counter)
@@ -133,14 +133,14 @@ export default function BuiltinsTaskPoolSendableTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsTaskPoolSendableTest0500
-     * @tc.number SUB_BUILTINS_TASKPOOL_SENDABLE_TEST_0500
+     * @tc.name   testTaskPoolSendable0500
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_SENDABLE_TEST_0500
      * @tc.desc   Verify 3 sequential tasks modify Sendable correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsTaskPoolSendableTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testTaskPoolSendable0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const counter = new SharedCounter()
       for (let i = 0; i < 3; i++) {
         const task = new taskpool.Task(modifySharedCounter, counter)
@@ -150,14 +150,14 @@ export default function BuiltinsTaskPoolSendableTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsTaskPoolSendableTest0600
-     * @tc.number SUB_BUILTINS_TASKPOOL_SENDABLE_TEST_0600
+     * @tc.name   testTaskPoolSendable0600
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_SENDABLE_TEST_0600
      * @tc.desc   Verify 5 sequential tasks modify Sendable correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsTaskPoolSendableTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testTaskPoolSendable0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const counter = new SharedCounter()
       for (let i = 0; i < 5; i++) {
         const task = new taskpool.Task(modifySharedCounter, counter)
@@ -167,14 +167,14 @@ export default function BuiltinsTaskPoolSendableTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsTaskPoolSendableTest0700
-     * @tc.number SUB_BUILTINS_TASKPOOL_SENDABLE_TEST_0700
+     * @tc.name   testTaskPoolSendable0700
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_SENDABLE_TEST_0700
      * @tc.desc   Verify 10 sequential tasks modify Sendable correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsTaskPoolSendableTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testTaskPoolSendable0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const counter = new SharedCounter()
       for (let i = 0; i < 10; i++) {
         const task = new taskpool.Task(modifySharedCounter, counter)
@@ -184,14 +184,14 @@ export default function BuiltinsTaskPoolSendableTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsTaskPoolSendableTest0800
-     * @tc.number SUB_BUILTINS_TASKPOOL_SENDABLE_TEST_0800
+     * @tc.name   testTaskPoolSendable0800
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_SENDABLE_TEST_0800
      * @tc.desc   Verify Sendable reference modification syncs across tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsTaskPoolSendableTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testTaskPoolSendable0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const counter = new SharedCounter()
       counter.count_ = 10
       const task1 = new taskpool.Task(readSharedCounter, counter)
@@ -204,14 +204,14 @@ export default function BuiltinsTaskPoolSendableTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsTaskPoolSendableTest0900
-     * @tc.number SUB_BUILTINS_TASKPOOL_SENDABLE_TEST_0900
+     * @tc.name   testTaskPoolSendable0900
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKPOOL_SENDABLE_TEST_0900
      * @tc.desc   Verify Sendable instance reference persists after task completion
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsTaskPoolSendableTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testTaskPoolSendable0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const counter = new SharedCounter()
       const task = new taskpool.Task(modifySharedCounter, counter)
       await taskpool.execute(task)

@@ -92,7 +92,7 @@ export default function BuiltinsStateMachineStabilityTest(): void {
       await sm.reset()
     })
 
-    it('BuiltinsStateMachineStabilityTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testStateMachineStability0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       expect(await sm.transition(1, 0)).assertTrue()
       expect(await sm.getCurrentState()).assertEqual(1)
       expect(await sm.transition(2, 0)).assertFalse()
@@ -100,7 +100,7 @@ export default function BuiltinsStateMachineStabilityTest(): void {
       expect(await sm.getInvalidTransitionCount()).assertEqual(1)
     })
 
-    it('BuiltinsStateMachineStabilityTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testStateMachineStability0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const tasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
         tasks.push(new taskpool.Task(atomicCheckTransitionTask, sm, 1, 0))
@@ -120,7 +120,7 @@ export default function BuiltinsStateMachineStabilityTest(): void {
       expect(await sm.getCurrentState()).assertEqual(1)
     })
 
-    it('BuiltinsStateMachineStabilityTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testStateMachineStability0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       expect(await sm.transition(1, 0)).assertTrue()
       expect(await sm.transition(2, 1)).assertTrue()
       expect(await sm.transition(0, 2)).assertTrue()
@@ -128,7 +128,7 @@ export default function BuiltinsStateMachineStabilityTest(): void {
       expect(await sm.getHistoryCount()).assertEqual(4)
     })
 
-    it('BuiltinsStateMachineStabilityTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testStateMachineStability0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       for (let i: number = 0; i < 50; i++) {
         const result: boolean = await sm.transition(1, 99)
         if (result) {
@@ -139,7 +139,7 @@ export default function BuiltinsStateMachineStabilityTest(): void {
       expect(await sm.getInvalidTransitionCount()).assertEqual(50)
     })
 
-    it('BuiltinsStateMachineStabilityTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testStateMachineStability0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const readTasks: taskpool.Task[] = []
       const writeTasks: taskpool.Task[] = []
       for (let i: number = 0; i < 10; i++) {
