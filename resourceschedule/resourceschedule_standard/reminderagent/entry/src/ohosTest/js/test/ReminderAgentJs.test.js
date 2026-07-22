@@ -3984,7 +3984,7 @@ export default function ReminderAgentTest() {
                 reminderAgent.publishReminder(timer, (err, reminderId) => {
                     if(err){
                         console.info('testPublishReminderNullWant_0141 publishReminder err code is :' + err.code + err.message)
-                        expect(err.code).assertEqual(401);
+                        expect(err.code == 401).assertTrue();
                         done(); 
                     }else{
                         console.info("testPublishReminderNullWant_0141 reminderId=" + reminderId);

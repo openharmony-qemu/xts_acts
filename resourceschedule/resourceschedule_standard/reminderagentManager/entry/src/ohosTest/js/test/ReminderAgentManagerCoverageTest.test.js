@@ -1981,21 +1981,21 @@ export default function ReminderAgentManagerCoverageTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it("removeNotificationSlot_callback_null_001", Level.LEVEL0, async function (done) {
-            console.info('----------------------removeNotificationSlot_callback_null_001---------------------------');
+        it("removeNotificationSlot_callback_out_enum_range_001", Level.LEVEL0, async function (done) {
+            console.info('----------------------removeNotificationSlot_callback_out_enum_range_001---------------------------');
             try {
                 reminderAgent.removeNotificationSlot(121, (err) => {
                     if (err) {
-                        console.info('removeNotificationSlot_callback_null_001 callback err.code is :' + err.code);
+                        console.info('removeNotificationSlot_callback_out_enum_range_001 callback err.code is :' + err.code);
                         expect(err.code == 401).assertTrue();
                         done();
                     } else {
-                        console.info('removeNotificationSlot_callback_null_001 callback success');
+                        console.info('removeNotificationSlot_callback_out_enum_range_001 callback success');
                         done();
                     }
                 });
             } catch (error) {
-                console.info("removeNotificationSlot_callback_null_001 error.code:" + error.code);
+                console.info("removeNotificationSlot_callback_out_enum_range_001 error.code:" + error.code);
                 expect(error.code == 401).assertTrue();
                 done();
             }

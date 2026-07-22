@@ -2281,6 +2281,42 @@ export default function ReminderAgentManagerTest() {
                 done();
             }
         });
+
+        /**
+         * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1900
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1900
+         * @tc.desc   test publishReminder timer with notificationRequestProxy normal parameters and appMessageId is empty.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1900", Level.LEVEL3, async function (done) {
+            let timer = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+                triggerTimeInSeconds: 10,
+                notificationRequestProxy: {
+                    appMessageId: '',
+                    isAlertOnce: false
+                }
+            };
+            try {
+                reminderAgent.publishReminder(timer, (err, reminderId) => {
+                    if (err) {
+                        console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1900 callback err.code is: ' + err.code);
+                        expect(false).assertTrue();
+                        done();
+                    } else {
+                        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1900 callback reminderId = ' + reminderId);
+                        expect(reminderId).assertLarger(0);
+                        done();
+                    }
+                });
+            } catch (error) {
+                console.error('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_1900 publishReminder error.code: ' + (error).code);
+                expect(false).assertTrue();
+                done();
+            }
+        });
         
     })
 }
