@@ -16,7 +16,7 @@
 import wifiManagerOffTest from './WifiManagerOff.test';
 import wifiManager from '@ohos.wifiManager';
 
-let iswifisupport: boolean = false;
+let iswifisupport: boolean = true;
 try {
   iswifisupport = wifiManager.isWlanSupported();
   console.info('[WIFI_List] isWlanSupported result:' + support);
