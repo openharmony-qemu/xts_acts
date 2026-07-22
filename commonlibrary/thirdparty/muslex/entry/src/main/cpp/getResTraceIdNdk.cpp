@@ -39,8 +39,7 @@ static GetResTraceIdFunc GetGetResTraceIdFunc()
 static bool CallGetResTraceId(uint32_t* pTraceType, uint64_t* pTraceID)
 {
     auto func = GetGetResTraceIdFunc();
-    if (!func)
-    {
+    if (!func) {
         errno = ENOSYS;
         return false;
     }
@@ -62,8 +61,7 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value GetResTraceIdNormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     uint32_t traceType = 0;
@@ -74,8 +72,7 @@ static napi_value GetResTraceIdNormal001(napi_env env, napi_callback_info info)
 
 static napi_value GetResTraceIdNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     uint32_t traceType = 0;
@@ -86,8 +83,7 @@ static napi_value GetResTraceIdNormal002(napi_env env, napi_callback_info info)
 
 static napi_value GetResTraceIdNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     uint32_t t1 = 0;
@@ -101,8 +97,7 @@ static napi_value GetResTraceIdNormal003(napi_env env, napi_callback_info info)
 
 static napi_value GetResTraceIdNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
@@ -110,8 +105,7 @@ static napi_value GetResTraceIdNormal004(napi_env env, napi_callback_info info)
 
 static napi_value GetResTraceIdAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool ret = CallGetResTraceId(nullptr, nullptr);
@@ -120,8 +114,7 @@ static napi_value GetResTraceIdAbnormal001(napi_env env, napi_callback_info info
 
 static napi_value GetResTraceIdAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     uint64_t traceID = 0;
@@ -131,8 +124,7 @@ static napi_value GetResTraceIdAbnormal002(napi_env env, napi_callback_info info
 
 static napi_value GetResTraceIdBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     uint32_t traceType = 0;
@@ -143,8 +135,7 @@ static napi_value GetResTraceIdBoundary001(napi_env env, napi_callback_info info
 
 static napi_value GetResTraceIdBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     uint32_t traceType = 0;
@@ -155,13 +146,11 @@ static napi_value GetResTraceIdBoundary002(napi_env env, napi_callback_info info
 
 static napi_value GetResTraceIdStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i)
-    {
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
         uint32_t traceType = 0;
         uint64_t traceID = 0;
         CallGetResTraceId(&traceType, &traceID);
@@ -171,26 +160,22 @@ static napi_value GetResTraceIdStable001(napi_env env, napi_callback_info info)
 
 static napi_value GetResTraceIdThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t)
-    {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]()
         {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
-            {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 uint32_t traceType = 0;
                 uint64_t traceID = 0;
                 CallGetResTraceId(&traceType, &traceID);
             }
         });
     }
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);

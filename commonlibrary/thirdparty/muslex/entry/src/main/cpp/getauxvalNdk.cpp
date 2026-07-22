@@ -39,15 +39,13 @@ static bool IsStubMode()
 static napi_value GetauxvalNormal001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetGetauxval();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
     errno = 0;
     unsigned long pagesz = func(AT_PAGESZ);
-    if (pagesz == 0 || errno == ENOENT)
-    {
+    if (pagesz == 0 || errno == ENOENT) {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
@@ -57,20 +55,17 @@ static napi_value GetauxvalNormal001(napi_env env, napi_callback_info info)
 static napi_value GetauxvalNormal002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetGetauxval();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
     errno = 0;
     unsigned long secure = func(AT_SECURE);
-    if (errno == ENOENT)
-    {
+    if (errno == ENOENT) {
         return ReturnInt32(env, 0);
     }
     // AT_SECURE should return 0 or 1
-    if (secure > 1)
-    {
+    if (secure > 1) {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
@@ -80,19 +75,16 @@ static napi_value GetauxvalNormal002(napi_env env, napi_callback_info info)
 static napi_value GetauxvalNormal003(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetGetauxval();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
     errno = 0;
     unsigned long clktck = func(AT_CLKTCK);
-    if (errno == ENOENT)
-    {
+    if (errno == ENOENT) {
         return ReturnInt32(env, 0);
     }
-    if (clktck == 0)
-    {
+    if (clktck == 0) {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
@@ -102,19 +94,16 @@ static napi_value GetauxvalNormal003(napi_env env, napi_callback_info info)
 static napi_value GetauxvalNormal004(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetGetauxval();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
     errno = 0;
     unsigned long random = func(AT_RANDOM);
-    if (errno == ENOENT)
-    {
+    if (errno == ENOENT) {
         return ReturnInt32(env, 0);
     }
-    if (random == 0)
-    {
+    if (random == 0) {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
@@ -124,19 +113,16 @@ static napi_value GetauxvalNormal004(napi_env env, napi_callback_info info)
 static napi_value GetauxvalNormal005(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetGetauxval();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
     errno = 0;
     unsigned long entry = func(AT_ENTRY);
-    if (errno == ENOENT)
-    {
+    if (errno == ENOENT) {
         return ReturnInt32(env, 0);
     }
-    if (entry == 0)
-    {
+    if (entry == 0) {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
@@ -148,19 +134,16 @@ static napi_value GetauxvalNormal005(napi_env env, napi_callback_info info)
 static napi_value GetauxvalAbnormal001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetGetauxval();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
     errno = 0;
     unsigned long result = func(0xFFFFFFFF);
-    if (result != 0)
-    {
+    if (result != 0) {
         return ReturnInt32(env, 0);
     }
-    if (errno != ENOENT)
-    {
+    if (errno != ENOENT) {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
@@ -170,19 +153,16 @@ static napi_value GetauxvalAbnormal001(napi_env env, napi_callback_info info)
 static napi_value GetauxvalAbnormal002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetGetauxval();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
     errno = 0;
     unsigned long result = func(static_cast<unsigned long>(-1));
-    if (result != 0)
-    {
+    if (result != 0) {
         return ReturnInt32(env, 0);
     }
-    if (errno != ENOENT)
-    {
+    if (errno != ENOENT) {
         return ReturnInt32(env, 0);
     }
     return ReturnInt32(env, 1);
@@ -192,23 +172,20 @@ static napi_value GetauxvalAbnormal002(napi_env env, napi_callback_info info)
 static napi_value GetauxvalAbnormal003(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetGetauxval();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
     errno = 0;
     unsigned long result1 = func(0x1000);
-    if (result1 != 0 || errno != ENOENT)
-    {
+    if (result1 != 0 || errno != ENOENT) {
         allPassed = false;
     }
 
     errno = 0;
     unsigned long result2 = func(0x0000);
-    if (result2 != 0 || errno != ENOENT)
-    {
+    if (result2 != 0 || errno != ENOENT) {
         allPassed = false;
     }
 
@@ -221,8 +198,7 @@ static napi_value GetauxvalAbnormal003(napi_env env, napi_callback_info info)
 static napi_value GetauxvalStable001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetGetauxval();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
@@ -231,24 +207,19 @@ static napi_value GetauxvalStable001(napi_env env, napi_callback_info info)
     unsigned long results[4];
 
     int itemCount = 4;
-    for (int i = 0; i < itemCount; ++i)
-    {
+    for (int i = 0; i < itemCount; ++i) {
         results[i] = func(items[i]);
     }
 
     int roundCount = 20;
-    for (int round = 0; round < roundCount; ++round)
-    {
-        for (int i = 0; i < itemCount; ++i)
-        {
-            if (func(items[i]) != results[i])
-            {
+    for (int round = 0; round < roundCount; ++round) {
+        for (int i = 0; i < itemCount; ++i) {
+            if (func(items[i]) != results[i]) {
                 allPassed = false;
                 break;
             }
         }
-        if (!allPassed)
-        {
+        if (!allPassed) {
             break;
         }
     }
@@ -260,8 +231,7 @@ static napi_value GetauxvalStable001(napi_env env, napi_callback_info info)
 static napi_value GetauxvalStable002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetGetauxval();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
@@ -270,8 +240,7 @@ static napi_value GetauxvalStable002(napi_env env, napi_callback_info info)
 
     int loopCount = 20;
     int basiccount = 4;
-    for (int i = 0; i < loopCount; ++i)
-    {
+    for (int i = 0; i < loopCount; ++i) {
         int idx = i % basiccount;
         unsigned long result = func(items[idx]);
         if (result == 0 && idx != 1) { // AT_SECURE may be 0
@@ -289,8 +258,7 @@ static napi_value GetauxvalStable002(napi_env env, napi_callback_info info)
 static napi_value GetauxvalThread001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetGetauxval();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
@@ -300,17 +268,14 @@ static napi_value GetauxvalThread001(napi_env env, napi_callback_info info)
     std::atomic<bool> hasError{false};
     unsigned long items[] = {AT_PAGESZ, AT_SECURE, AT_CLKTCK, AT_RANDOM};
 
-    for (int t = 0; t < threadCount; ++t)
-    {
+    for (int t = 0; t < threadCount; ++t) {
         threads.emplace_back([func, &hasError, items, iterationsPerThread]()
         {
-            for (int i = 0; i < iterationsPerThread; ++i)
-            {
+            for (int i = 0; i < iterationsPerThread; ++i) {
                 int basiccount = 4;
                 int idx = i % basiccount;
                 unsigned long result = func(items[idx]);
-                if (result == 0 && idx != 1)
-                {
+                if (result == 0 && idx != 1) {
                     hasError = true;
                     return;
                 }
@@ -318,8 +283,7 @@ static napi_value GetauxvalThread001(napi_env env, napi_callback_info info)
         });
     }
 
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
 
@@ -330,8 +294,7 @@ static napi_value GetauxvalThread001(napi_env env, napi_callback_info info)
 static napi_value GetauxvalThread002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetGetauxval();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
@@ -342,12 +305,10 @@ static napi_value GetauxvalThread002(napi_env env, napi_callback_info info)
     unsigned long allItems[] = {AT_PAGESZ, AT_SECURE, AT_CLKTCK, AT_RANDOM, AT_ENTRY, AT_UID, AT_EUID, AT_GID};
     int basiccount = 4;
 
-    for (int t = 0; t < threadCount; ++t)
-    {
+    for (int t = 0; t < threadCount; ++t) {
         threads.emplace_back([func, &hasError, allItems, iterationsPerThread, t, basiccount]()
         {
-            for (int i = 0; i < iterationsPerThread; ++i)
-            {
+            for (int i = 0; i < iterationsPerThread; ++i) {
                 int idx = (i + t) % 8;
                 unsigned long result = func(allItems[idx]);
                 // Verify return value and errno
@@ -358,8 +319,7 @@ static napi_value GetauxvalThread002(napi_env env, napi_callback_info info)
         });
     }
 
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
 

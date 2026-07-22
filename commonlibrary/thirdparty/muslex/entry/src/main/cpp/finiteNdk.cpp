@@ -42,42 +42,34 @@ static constexpr double largeFinite = 100.0;
 static napi_value FiniteNormal001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFinite();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
     // Zero
-    if (func(0.0) == 0)
-    {
+    if (func(0.0) == 0) {
         allPassed = false;
     }
     // Positive
-    if (func(3.14) == 0)
-    {
+    if (func(3.14) == 0) {
         allPassed = false;
     }
-    if (func(largeFinite) == 0)
-    {
+    if (func(largeFinite) == 0) {
         allPassed = false;
     }
     // Negative
-    if (func(-3.14) == 0)
-    {
+    if (func(-3.14) == 0) {
         allPassed = false;
     }
-    if (func(-largeFinite) == 0)
-    {
+    if (func(-largeFinite) == 0) {
         allPassed = false;
     }
     // Decimal
-    if (func(smallFinite) == 0)
-    {
+    if (func(smallFinite) == 0) {
         allPassed = false;
     }
-    if (func(-smallFinite) == 0)
-    {
+    if (func(-smallFinite) == 0) {
         allPassed = false;
     }
 
@@ -88,25 +80,21 @@ static napi_value FiniteNormal001(napi_env env, napi_callback_info info)
 static napi_value FiniteNormal002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFinite();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
     // Positive infinity
-    if (func(INFINITY) != 0)
-    {
+    if (func(INFINITY) != 0) {
         allPassed = false;
     }
     // Negative infinity
-    if (func(-INFINITY) != 0)
-    {
+    if (func(-INFINITY) != 0) {
         allPassed = false;
     }
     // NaN
-    if (func(NAN) != 0)
-    {
+    if (func(NAN) != 0) {
         allPassed = false;
     }
 
@@ -119,30 +107,25 @@ static napi_value FiniteNormal002(napi_env env, napi_callback_info info)
 static napi_value FiniteBoundary001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFinite();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
     // DBL_MAX should be finite
-    if (func(DBL_MAX) == 0)
-    {
+    if (func(DBL_MAX) == 0) {
         allPassed = false;
     }
     // DBL_MIN should be finite
-    if (func(DBL_MIN) == 0)
-    {
+    if (func(DBL_MIN) == 0) {
         allPassed = false;
     }
     // -DBL_MAX should be finite
-    if (func(-DBL_MAX) == 0)
-    {
+    if (func(-DBL_MAX) == 0) {
         allPassed = false;
     }
     // -DBL_MIN should be finite
-    if (func(-DBL_MIN) == 0)
-    {
+    if (func(-DBL_MIN) == 0) {
         allPassed = false;
     }
 
@@ -153,31 +136,26 @@ static napi_value FiniteBoundary001(napi_env env, napi_callback_info info)
 static napi_value FiniteBoundary002(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFinite();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
     // Finite value near infinity
     double nearInf = 1.7976931348623157e+308; // Near DBL_MAX
-    if (func(nearInf) == 0)
-    {
+    if (func(nearInf) == 0) {
         allPassed = false;
     }
-    if (func(-nearInf) == 0)
-    {
+    if (func(-nearInf) == 0) {
         allPassed = false;
     }
 
     // Minimum value near zero
     double nearZero = 4.9e-324; // DBL_TRUE_MIN
-    if (func(nearZero) == 0)
-    {
+    if (func(nearZero) == 0) {
         allPassed = false;
     }
-    if (func(-nearZero) == 0)
-    {
+    if (func(-nearZero) == 0) {
         allPassed = false;
     }
 
@@ -190,15 +168,13 @@ static napi_value FiniteBoundary002(napi_env env, napi_callback_info info)
 static napi_value FiniteAbnormal001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFinite();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
     bool allPassed = true;
     // Standard NaN
-    if (func(NAN) != 0)
-    {
+    if (func(NAN) != 0) {
         allPassed = false;
     }
     
@@ -206,19 +182,16 @@ static napi_value FiniteAbnormal001(napi_env env, napi_callback_info info)
     union { double f; uint64_t i; } nan1 = { .i = 0x7FF8000000000001ULL };
     union { double f; uint64_t i; } nan2 = { .i = 0x7FF8000000000002ULL };
     
-    if (func(nan1.f) != 0)
-    {
+    if (func(nan1.f) != 0) {
         allPassed = false;
     }
-    if (func(nan2.f) != 0)
-    {
+    if (func(nan2.f) != 0) {
         allPassed = false;
     }
 
     // Signaling NaN
     union { double f; uint64_t i; } snan = { .i = 0x7FF4000000000000ULL };
-    if (func(snan.f) != 0)
-    {
+    if (func(snan.f) != 0) {
         allPassed = false;
     }
 
@@ -231,8 +204,7 @@ static napi_value FiniteAbnormal001(napi_env env, napi_callback_info info)
 static napi_value FiniteStable001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFinite();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
@@ -241,24 +213,19 @@ static napi_value FiniteStable001(napi_env env, napi_callback_info info)
     int resultCount = 6;
     int results[resultCount];
 
-    for (int i = 0; i < resultCount; ++i)
-    {
+    for (int i = 0; i < resultCount; ++i) {
         results[i] = func(testVals[i]);
     }
 
     int roundCount = 20;
-    for (int round = 0; round < roundCount; ++round)
-    {
-        for (int i = 0; i < resultCount; ++i)
-        {
-            if (func(testVals[i]) != results[i])
-            {
+    for (int round = 0; round < roundCount; ++round) {
+        for (int i = 0; i < resultCount; ++i) {
+            if (func(testVals[i]) != results[i]) {
                 allPassed = false;
                 break;
             }
         }
-        if (!allPassed)
-        {
+        if (!allPassed) {
             break;
         }
     }
@@ -272,8 +239,7 @@ static napi_value FiniteStable001(napi_env env, napi_callback_info info)
 static napi_value FiniteThread001(napi_env env, napi_callback_info info)
 {
     auto func = LibcFunctionLoader::GetInstance().GetFinite();
-    if (func == nullptr)
-    {
+    if (func == nullptr) {
         return ReturnInt32(env, 1);
     }
 
@@ -283,17 +249,14 @@ static napi_value FiniteThread001(napi_env env, napi_callback_info info)
     std::atomic<bool> hasError{false};
     double testVals[] = {0.0, 3.14, INFINITY, -INFINITY, NAN};
 
-    for (int t = 0; t < threadCount; ++t)
-    {
+    for (int t = 0; t < threadCount; ++t) {
         threads.emplace_back([func, &hasError, testVals, iterationsPerThread]()
         {
-            for (int i = 0; i < iterationsPerThread; ++i)
-            {
+            for (int i = 0; i < iterationsPerThread; ++i) {
                 int idx = i % 5;
                 int expected = (idx == 0 || idx == 1) ? 1 : 0;
                 int actual = func(testVals[idx]);
-                if ((actual != 0 && expected == 0) || (actual == 0 && expected != 0))
-                {
+                if ((actual != 0 && expected == 0) || (actual == 0 && expected != 0)) {
                     hasError = true;
                     return;
                 }
@@ -301,8 +264,7 @@ static napi_value FiniteThread001(napi_env env, napi_callback_info info)
         });
     }
 
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
 

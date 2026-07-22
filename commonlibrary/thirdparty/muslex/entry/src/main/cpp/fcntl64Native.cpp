@@ -30,8 +30,7 @@ static FILE* CreateSandboxTempFile()
 {
     char tmpPath[] = "/data/storage/el2/base/temp/tmpfile_XXXXXX";
     int fd = mkstemp(tmpPath);
-    if (fd == -1)
-    {
+    if (fd == -1) {
         return nullptr;
     }
     unlink(tmpPath);
@@ -42,14 +41,12 @@ static int CallFcntl64(int fd, int cmd, ...)
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetFcntl64();
-    if (!func)
-    {
+    if (!func) {
         errno = ENOSYS;
         return -1;
     }
     errno = 0;
-    if (cmd == F_GETFD || cmd == F_GETFL)
-    {
+    if (cmd == F_GETFD || cmd == F_GETFL) {
         return func(fd, cmd);
     }
     va_list va;
@@ -74,13 +71,11 @@ static napi_value ReturnInt32(napi_env env, int32_t value)
 
 static napi_value Fcntl64Normal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
-    if (!tmp)
-    {
+    if (!tmp) {
         return ReturnInt32(env, 0);
     }
     int fd = fileno(tmp);
@@ -91,13 +86,11 @@ static napi_value Fcntl64Normal001(napi_env env, napi_callback_info info)
 
 static napi_value Fcntl64Normal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
-    if (!tmp)
-    {
+    if (!tmp) {
         return ReturnInt32(env, 0);
     }
     int fd = fileno(tmp);
@@ -109,13 +102,11 @@ static napi_value Fcntl64Normal002(napi_env env, napi_callback_info info)
 
 static napi_value Fcntl64Normal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
-    if (!tmp)
-    {
+    if (!tmp) {
         return ReturnInt32(env, 0);
     }
     int fd = fileno(tmp);
@@ -126,8 +117,7 @@ static napi_value Fcntl64Normal003(napi_env env, napi_callback_info info)
 
 static napi_value Fcntl64Normal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
@@ -135,8 +125,7 @@ static napi_value Fcntl64Normal004(napi_env env, napi_callback_info info)
 
 static napi_value Fcntl64Abnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     errno = 0;
@@ -146,13 +135,11 @@ static napi_value Fcntl64Abnormal001(napi_env env, napi_callback_info info)
 
 static napi_value Fcntl64Abnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
-    if (!tmp)
-    {
+    if (!tmp) {
         return ReturnInt32(env, 0);
     }
     int fd = fileno(tmp);
@@ -164,8 +151,7 @@ static napi_value Fcntl64Abnormal002(napi_env env, napi_callback_info info)
 
 static napi_value Fcntl64Boundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int ret = CallFcntl64(0, F_GETFD);
@@ -174,13 +160,11 @@ static napi_value Fcntl64Boundary001(napi_env env, napi_callback_info info)
 
 static napi_value Fcntl64Boundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     FILE* tmp = CreateSandboxTempFile();
-    if (!tmp)
-    {
+    if (!tmp) {
         return ReturnInt32(env, 0);
     }
     int fd = fileno(tmp);
@@ -192,24 +176,20 @@ static napi_value Fcntl64Boundary002(napi_env env, napi_callback_info info)
 
 static napi_value Fcntl64Stable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i)
-    {
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
         FILE* tmp = CreateSandboxTempFile();
-        if (!tmp)
-        {
+        if (!tmp) {
             pass = false;
             break;
         }
         int fd = fileno(tmp);
         int ret = CallFcntl64(fd, F_GETFD);
         if (fclose(tmp) != 0) {}
-        if (ret < 0)
-        {
+        if (ret < 0) {
             pass = false;
             break;
         }
@@ -219,41 +199,35 @@ static napi_value Fcntl64Stable001(napi_env env, napi_callback_info info)
 
 static napi_value Fcntl64Thread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t)
-    {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]()
         {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
-            {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 char tmpPath[256];
                 std::string path = "/data/storage/el2/base/temp/tmpfile_t" + std::to_string(i) + "_XXXXXX";
                 strncpy(tmpPath, path.c_str(), sizeof(tmpPath) - 1);
                 tmpPath[sizeof(tmpPath) - 1] = '\0';
                 int fd = mkstemp(tmpPath);
-                if (fd == -1)
-                {
+                if (fd == -1) {
                     hasError = true;
                     return;
                 }
                 unlink(tmpPath);
                 int ret = CallFcntl64(fd, F_GETFD);
                 close(fd);
-                if (ret < 0)
-                {
+                if (ret < 0) {
                     hasError = true;
                     return;
                 }
             }
         });
     }
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);

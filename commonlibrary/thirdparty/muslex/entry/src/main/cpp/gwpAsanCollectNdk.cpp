@@ -30,8 +30,7 @@ static size_t CallGwpAsanCollect(uint64_t timespan, uintptr_t* buffer, size_t ma
 {
     auto& loader = LibcFunctionLoader::GetInstance();
     auto func = loader.GetGwpAsanCollect();
-    if (!func)
-    {
+    if (!func) {
         errno = ENOSYS;
         return 0;
     }
@@ -65,8 +64,7 @@ static napi_value GwpAsanCollectNormal001(napi_env env, napi_callback_info info)
 
 static napi_value GwpAsanCollectNormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     uintptr_t buffer[10];
@@ -77,8 +75,7 @@ static napi_value GwpAsanCollectNormal002(napi_env env, napi_callback_info info)
 
 static napi_value GwpAsanCollectNormal003(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     uintptr_t buffer[20];
@@ -89,8 +86,7 @@ static napi_value GwpAsanCollectNormal003(napi_env env, napi_callback_info info)
 
 static napi_value GwpAsanCollectNormal004(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     return ReturnInt32(env, 1);
@@ -98,8 +94,7 @@ static napi_value GwpAsanCollectNormal004(napi_env env, napi_callback_info info)
 
 static napi_value GwpAsanCollectAbnormal001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     int bufCap = 2;
@@ -109,8 +104,7 @@ static napi_value GwpAsanCollectAbnormal001(napi_env env, napi_callback_info inf
 
 static napi_value GwpAsanCollectAbnormal002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     uintptr_t buffer[10];
@@ -120,8 +114,7 @@ static napi_value GwpAsanCollectAbnormal002(napi_env env, napi_callback_info inf
 
 static napi_value GwpAsanCollectBoundary001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     uintptr_t buffer[20];
@@ -132,8 +125,7 @@ static napi_value GwpAsanCollectBoundary001(napi_env env, napi_callback_info inf
 
 static napi_value GwpAsanCollectBoundary002(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     uintptr_t buffer[4];
@@ -143,18 +135,15 @@ static napi_value GwpAsanCollectBoundary002(napi_env env, napi_callback_info inf
 
 static napi_value GwpAsanCollectStable001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     bool pass = true;
-    for (int i = 0; i < K_STABLE_LOOP; ++i)
-    {
+    for (int i = 0; i < K_STABLE_LOOP; ++i) {
         uintptr_t buffer[10];
         int bufCap = 2;
         size_t ret = CallGwpAsanCollect(K_TIMESPAN, buffer, bufCap, 1);
-        if (ret > bufCap)
-        {
+        if (ret > bufCap) {
             pass = false;
             break;
         }
@@ -164,26 +153,22 @@ static napi_value GwpAsanCollectStable001(napi_env env, napi_callback_info info)
 
 static napi_value GwpAsanCollectThread001(napi_env env, napi_callback_info info)
 {
-    if (IsStubMode())
-    {
+    if (IsStubMode()) {
         return ReturnInt32(env, 1);
     }
     std::atomic<bool> hasError{false};
     std::vector<std::thread> threads;
-    for (int t = 0; t < K_THREAD_COUNT; ++t)
-    {
+    for (int t = 0; t < K_THREAD_COUNT; ++t) {
         threads.emplace_back([&hasError]()
         {
-            for (int i = 0; i < K_ITER_PER_THREAD; ++i)
-            {
+            for (int i = 0; i < K_ITER_PER_THREAD; ++i) {
                 uintptr_t buffer[10];
                 int bufCap = 2;
                 CallGwpAsanCollect(K_TIMESPAN, buffer, bufCap, 1);
             }
         });
     }
-    for (auto& th : threads)
-    {
+    for (auto& th : threads) {
         th.join();
     }
     return ReturnInt32(env, !hasError ? 1 : 0);
