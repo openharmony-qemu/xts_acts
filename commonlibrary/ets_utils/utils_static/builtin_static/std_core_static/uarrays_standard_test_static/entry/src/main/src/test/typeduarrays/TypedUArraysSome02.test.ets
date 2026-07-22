@@ -419,8 +419,9 @@ export default function typedUArraysSome02(): void {
           if (v === 2) throw new RangeError('range');
           return false;
         });
-        expect(true).assertFail();
+        expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -439,8 +440,9 @@ export default function typedUArraysSome02(): void {
           if (v === 2n) throw new TypeError('type');
           return false;
         });
-        expect(true).assertFail();
+        expect().assertFail();
       } catch (e) {
+        expect(e.name).assertEqual('TypeError');
       }
     });
 

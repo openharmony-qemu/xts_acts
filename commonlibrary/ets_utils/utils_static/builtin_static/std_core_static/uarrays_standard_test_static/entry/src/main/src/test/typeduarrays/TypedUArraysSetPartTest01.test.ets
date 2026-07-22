@@ -726,7 +726,7 @@ export default function typedUArraysSetPartTest01(): void {
       try {
         const arr = new Uint8Array([0, 0, 0, 0]);
         arr.set([1, 2], -2);
-        expect(true).assertFail();
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
@@ -744,7 +744,7 @@ export default function typedUArraysSetPartTest01(): void {
       try {
         const arr = new Uint8Array([0, 0, 0, 0]);
         arr.set([1, 2], -3);
-        expect(true).assertFail();
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
@@ -762,7 +762,7 @@ export default function typedUArraysSetPartTest01(): void {
       try {
         const arr = new Uint8Array([0, 0, 0, 0]);
         arr.set([42], -4);
-        expect(true).assertFail();
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
@@ -780,8 +780,9 @@ export default function typedUArraysSetPartTest01(): void {
       try {
         const arr = new Uint8Array([0, 0, 0]);
         arr.set([1, 2], 4);
+        expect().assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -797,8 +798,9 @@ export default function typedUArraysSetPartTest01(): void {
       try {
         const arr = new Uint8Array([0, 0, 0, 0]);
         arr.set([1, 2], -5);
+        expect().assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -815,7 +817,7 @@ export default function typedUArraysSetPartTest01(): void {
         const arr = new Uint8Array([0, 0, 0]);
         throw new Error('ArkTS limitation')
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.message).assertEqual('ArkTS limitation');
       }
     });
 

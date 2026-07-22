@@ -362,16 +362,12 @@ export default function typedUArraysConstructorTest19(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testTypedUArraysConstructor0202_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buf = new ArrayBuffer(4);
-        const arr = new Uint8Array(buf);
-        expect(arr[10]).assertEqual(undefined);
-        expect(arr.length < 10).assertTrue();
-      } catch (e) {
-        expect(typeof e).assertEqual('object');
-      }
+      const buf = new ArrayBuffer(4);
+      const arr = new Uint8Array(buf);
+      expect(arr.length < 10).assertTrue();
+      expect(arr.at(10)).assertEqual(undefined);
     });
 
     /**

@@ -612,15 +612,11 @@ export default function typedUArraysConstructorTest04(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testTypedUArraysConstructor0202_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buf = new ArrayBuffer(4);
-        const arr = new Uint8Array(buf);
-          expect(true).assertTrue();
-      } catch (e) {
-        expect(true).assertTrue();
-      }
+      const buf = new ArrayBuffer(4);
+      const arr = new Uint8Array(buf);
+      expect(arr.find((value: number): boolean => value === 0)).assertEqual(0);
     });
 
     /**

@@ -39,14 +39,10 @@ export default function typedUArraysConstructorTest09(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testTypedUArraysConstructor0401_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const arr = new Uint8Array();
-        expect(arr.length).assertEqual(0);
-      } catch (e) {
-        expect(typeof e).assertEqual('object');
-      }
+      const arr = new Uint8Array();
+      expect(arr.length).assertEqual(0);
     });
 
     /**
@@ -251,12 +247,11 @@ export default function typedUArraysConstructorTest09(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testTypedUArraysConstructor0401_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-      } catch (e) {
-        expect(typeof e).assertEqual('object');
-      }
+      const src: Array<number> = [4294967295];
+      const arr = new Uint32Array(src);
+      expect(arr[0]).assertEqual(4294967295);
     });
 
     /**
@@ -510,15 +505,11 @@ export default function typedUArraysConstructorTest09(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testTypedUArraysConstructor0401_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const src: Array<number> = [4294967295];
-        const arr = new Uint32Array(src);
-        expect(arr[0]).assertEqual(4294967295);
-      } catch (e) {
-        expect(typeof e).assertEqual('object');
-      }
+      const src: Array<number> = [4294967295];
+      const arr = new Uint32Array(src);
+      expect(arr[0]).assertEqual(4294967295);
     });
 
     /**
@@ -528,15 +519,11 @@ export default function typedUArraysConstructorTest09(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testTypedUArraysConstructor0401_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const src: Array<number> = [0xFFFFFFFF];
-        const arr = new Uint32Array(src);
-        expect(arr[0]).assertEqual(0xFFFFFFFF);
-      } catch (e) {
-        expect(typeof e).assertEqual('object');
-      }
+      const src: Array<number> = [0xFFFFFFFF];
+      const arr = new Uint32Array(src);
+      expect(arr[0]).assertEqual(0xFFFFFFFF);
     });
 
     /**
@@ -756,15 +743,11 @@ export default function typedUArraysConstructorTest09(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testTypedUArraysConstructor0401_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const src: Array<number> = [4294967296];
-        const arr = new Uint32Array(src);
-        expect(arr[0]).assertEqual(0);
-      } catch (e) {
-        expect(typeof e).assertEqual('object');
-      }
+      const src: Array<number> = [4294967296];
+      const arr = new Uint32Array(src);
+      expect(arr[0]).assertEqual(0);
     });
 
     /**
@@ -774,15 +757,11 @@ export default function typedUArraysConstructorTest09(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testTypedUArraysConstructor0401_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const src: Array<number> = [0x100000000];
-        const arr = new Uint32Array(src);
-        expect(arr[0]).assertEqual(0);
-      } catch (e) {
-        expect(typeof e).assertEqual('object');
-      }
+      const src: Array<number> = [0x100000000];
+      const arr = new Uint32Array(src);
+      expect(arr[0]).assertEqual(0);
     });
 
     /**

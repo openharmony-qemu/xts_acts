@@ -138,12 +138,13 @@ export default function typedUArraysConstructorTest25(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testTypedUArraysConstructor0401_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-      } catch (e) {
-        expect(typeof e).assertEqual('object');
-      }
+      const arr = new Uint8ClampedArray([256, -1, Number.NaN, 128]);
+      expect(arr[0]).assertEqual(255);
+      expect(arr[1]).assertEqual(0);
+      expect(arr[2]).assertEqual(0);
+      expect(arr[3]).assertEqual(128);
     });
 
     /**
@@ -645,14 +646,10 @@ export default function typedUArraysConstructorTest25(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testTypedUArraysConstructor0401_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const arr = new Uint8Array(10);
-        expect(arr.length).assertEqual(10);
-      } catch (e) {
-        expect(typeof e).assertEqual('object');
-      }
+      const arr = new Uint8Array(10);
+      expect(arr.length).assertEqual(10);
     });
 
     /**
@@ -667,7 +664,7 @@ export default function typedUArraysConstructorTest25(): void {
       try {
         throw new Error('invalid constructor input');
       } catch (e) {
-        expect(typeof e).assertEqual('object');
+        expect(e.message).assertEqual('invalid constructor input');
       }
     });
 
@@ -678,12 +675,10 @@ export default function typedUArraysConstructorTest25(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testTypedUArraysConstructor0401_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-      } catch (e) {
-        expect(typeof e).assertEqual('object');
-      }
+      const arr = new Uint8Array();
+      expect(arr.length).assertEqual(0);
     });
   });
 }

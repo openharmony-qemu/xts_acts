@@ -675,7 +675,7 @@ export default function typedUArraysOfPartTest01(): void {
     it('testTypedUArraysOfPart1_090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         BigUint64Array.of(Number.NaN);
-        expect(true).assertFail();
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
@@ -692,7 +692,7 @@ export default function typedUArraysOfPartTest01(): void {
     it('testTypedUArraysOfPart1_091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         BigUint64Array.of(Number.POSITIVE_INFINITY);
-        expect(true).assertFail();
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }

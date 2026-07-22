@@ -164,9 +164,9 @@ export default function typedUArraysConstructorTest18(): void {
       try {
         const buf = new ArrayBuffer(16);
         const arr = new Uint16Array(buf, 1);
-        expect(arr.length >= 0).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -182,9 +182,9 @@ export default function typedUArraysConstructorTest18(): void {
       try {
         const buf = new ArrayBuffer(16);
         const arr = new Uint16Array(buf, 3);
-        expect(arr.length >= 0).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -200,9 +200,9 @@ export default function typedUArraysConstructorTest18(): void {
       try {
         const buf = new ArrayBuffer(16);
         const arr = new Uint16Array(buf, 5);
-        expect(arr.length >= 0).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -218,9 +218,9 @@ export default function typedUArraysConstructorTest18(): void {
       try {
         const buf = new ArrayBuffer(16);
         const arr = new Uint32Array(buf, 1);
-        expect(arr.length >= 0).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -236,9 +236,9 @@ export default function typedUArraysConstructorTest18(): void {
       try {
         const buf = new ArrayBuffer(16);
         const arr = new Uint32Array(buf, 3);
-        expect(arr.length >= 0).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -254,9 +254,9 @@ export default function typedUArraysConstructorTest18(): void {
       try {
         const buf = new ArrayBuffer(16);
         const arr = new BigUint64Array(buf, 1);
-        expect(arr.length >= 0).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -300,9 +300,9 @@ export default function typedUArraysConstructorTest18(): void {
       try {
         const buf = new ArrayBuffer(16);
         const arr = new Uint8Array(buf, 17);
-        expect(arr.length >= 0).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -318,9 +318,9 @@ export default function typedUArraysConstructorTest18(): void {
       try {
         const buf = new ArrayBuffer(16);
         const arr = new Uint8Array(buf, -1);
-        expect(arr.length >= 0).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -434,9 +434,9 @@ export default function typedUArraysConstructorTest18(): void {
       try {
         const buf = new ArrayBuffer(16);
         const arr = new Uint8Array(buf, 0, -1);
-        expect(arr.length >= 0).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -452,9 +452,9 @@ export default function typedUArraysConstructorTest18(): void {
       try {
         const buf = new ArrayBuffer(8);
         const arr = new Uint8Array(buf, 0, 16);
-        expect(arr.length >= 0).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -470,9 +470,9 @@ export default function typedUArraysConstructorTest18(): void {
       try {
         const buf = new ArrayBuffer(8);
         const arr = new Uint16Array(buf, 0, 8);
-        expect(arr.length >= 0).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -488,9 +488,9 @@ export default function typedUArraysConstructorTest18(): void {
       try {
         const buf = new ArrayBuffer(8);
         const arr = new Uint32Array(buf, 0, 8);
-        expect(arr.length >= 0).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -506,9 +506,9 @@ export default function typedUArraysConstructorTest18(): void {
       try {
         const buf = new ArrayBuffer(8);
         const arr = new Uint8Array(buf, 4, 5);
-        expect(arr.length >= 0).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -524,9 +524,9 @@ export default function typedUArraysConstructorTest18(): void {
       try {
         const buf = new ArrayBuffer(8);
         const arr = new Uint16Array(buf, 2, 4);
-        expect(arr.length >= 0).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 

@@ -82,14 +82,14 @@ export default function typedUArraysToLocaleString02(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testTypedUArraysToLocaleString048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3]);
       try {
         let result = arr.toLocaleString("invalid_locale_xxx");
         expect(typeof result).assertEqual("string");
       } catch (e) {
-        expect(e !== null).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -100,14 +100,14 @@ export default function typedUArraysToLocaleString02(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testTypedUArraysToLocaleString049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new BigUint64Array([1n, 2n, 3n]);
       try {
         let result = arr.toLocaleString("invalid_locale_xxx");
         expect(typeof result).assertEqual("string");
       } catch (e) {
-        expect(e !== null).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -132,14 +132,14 @@ export default function typedUArraysToLocaleString02(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testTypedUArraysToLocaleString053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3]);
       try {
         let result = arr.toLocaleString("");
         expect(typeof result).assertEqual("string");
       } catch (e) {
-        expect(e !== null).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -164,15 +164,11 @@ export default function typedUArraysToLocaleString02(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testTypedUArraysToLocaleString055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array([1, 2, 3]);
-      try {
-        let result = arr.toLocaleString("en-US", undefined);
-        expect(typeof result).assertEqual("string");
-      } catch (e) {
-        expect(e !== null).assertTrue();
-      }
+      let result = arr.toLocaleString("en-US", undefined);
+      expect(typeof result).assertEqual("string");
     });
 
     /**

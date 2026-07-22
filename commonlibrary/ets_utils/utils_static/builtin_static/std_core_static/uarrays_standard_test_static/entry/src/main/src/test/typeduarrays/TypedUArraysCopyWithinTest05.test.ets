@@ -134,7 +134,7 @@ export default function typedUArraysCopyWithinTest05(): void {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       try {
         (arr as number).toFixed();
-        expect(true).assertFail();
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("ClassCastError");
       }
@@ -152,7 +152,7 @@ export default function typedUArraysCopyWithinTest05(): void {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       try {
         (arr as number).toFixed();
-        expect(true).assertFail();
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("ClassCastError");
       }
@@ -170,7 +170,7 @@ export default function typedUArraysCopyWithinTest05(): void {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       try {
         (arr as number).toFixed();
-        expect(true).assertFail();
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("ClassCastError");
       }
@@ -188,7 +188,7 @@ export default function typedUArraysCopyWithinTest05(): void {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       try {
         (arr as number).toFixed();
-        expect(true).assertFail();
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("ClassCastError");
       }
@@ -206,7 +206,7 @@ export default function typedUArraysCopyWithinTest05(): void {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       try {
         (arr as number).toFixed();
-        expect(true).assertFail();
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("ClassCastError");
       }
@@ -224,7 +224,7 @@ export default function typedUArraysCopyWithinTest05(): void {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       try {
         (arr as number).toFixed();
-        expect(true).assertFail();
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("ClassCastError");
       }
@@ -242,7 +242,7 @@ export default function typedUArraysCopyWithinTest05(): void {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       try {
         (arr as number).toFixed();
-        expect(true).assertFail();
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("ClassCastError");
       }
@@ -260,7 +260,7 @@ export default function typedUArraysCopyWithinTest05(): void {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       try {
         (arr as number).toFixed();
-        expect(true).assertFail();
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("ClassCastError");
       }
@@ -278,7 +278,7 @@ export default function typedUArraysCopyWithinTest05(): void {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       try {
         (arr as number).toFixed();
-        expect(true).assertFail();
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("ClassCastError");
       }
@@ -296,7 +296,7 @@ export default function typedUArraysCopyWithinTest05(): void {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       try {
         (arr as number).toFixed();
-        expect(true).assertFail();
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("ClassCastError");
       }
@@ -332,7 +332,7 @@ export default function typedUArraysCopyWithinTest05(): void {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       try {
         (arr as number).toFixed();
-        expect(true).assertFail();
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("ClassCastError");
       }
@@ -350,7 +350,7 @@ export default function typedUArraysCopyWithinTest05(): void {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       try {
         (arr as number).toFixed();
-        expect(true).assertFail();
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("ClassCastError");
       }
@@ -386,7 +386,7 @@ export default function typedUArraysCopyWithinTest05(): void {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       try {
         (arr as number).toFixed();
-        expect(true).assertFail();
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("ClassCastError");
       }
@@ -422,7 +422,7 @@ export default function typedUArraysCopyWithinTest05(): void {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       try {
         (arr as number).toFixed();
-        expect(true).assertFail();
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("ClassCastError");
       }
@@ -440,7 +440,7 @@ export default function typedUArraysCopyWithinTest05(): void {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       try {
         (arr as number).toFixed();
-        expect(true).assertFail();
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("ClassCastError");
       }
@@ -476,7 +476,7 @@ export default function typedUArraysCopyWithinTest05(): void {
       const arr = new Uint8Array([1, 2, 3, 4, 5]);
       try {
         (arr as number).toFixed();
-        expect(true).assertFail();
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("ClassCastError");
       }

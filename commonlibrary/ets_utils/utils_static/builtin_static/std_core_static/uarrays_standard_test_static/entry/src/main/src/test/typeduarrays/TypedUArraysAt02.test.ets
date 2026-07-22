@@ -433,7 +433,7 @@ export default function typedUArraysAt02(): void {
       try {
         throw new Error('invalid index');
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.message).assertEqual('invalid index');
       }
     });
 

@@ -302,8 +302,9 @@ export default function typedUArraysConstructorTest21(): void {
         const buf = new ArrayBuffer(4);
         const arr = new Uint8Array(buf);
         const sum = arr.filter((v) => v > 2).reduce((a, b) => a + b);
+        expect().assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
@@ -414,15 +415,10 @@ export default function typedUArraysConstructorTest21(): void {
      * @tc.level Level 2
      */
     it('testTypedUArraysConstructor0202_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buf = new ArrayBuffer(4);
-        const arr = new Uint8Array(buf);
-        let result = reverseUint8Array(arr.filter((v) => v > 2));
-        const val199 = result[0];
-        const val200 = result[1];
-      } catch (e) {
-        expect(true).assertTrue();
-      }
+      const buf = new ArrayBuffer(4);
+      const arr = new Uint8Array(buf);
+      let result = reverseUint8Array(arr.filter((v) => v > 2));
+      expect(result.length).assertEqual(0);
     });
 
     /**
@@ -434,15 +430,10 @@ export default function typedUArraysConstructorTest21(): void {
      * @tc.level Level 2
      */
     it('testTypedUArraysConstructor0202_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buf = new ArrayBuffer(4);
-        const arr = new Uint8Array(buf);
-        let result = sortUint8Array(arr.filter((v) => v > 2));
-        const val201 = result[0];
-        const val202 = result[1];
-      } catch (e) {
-        expect(true).assertTrue();
-      }
+      const buf = new ArrayBuffer(4);
+      const arr = new Uint8Array(buf);
+      let result = sortUint8Array(arr.filter((v) => v > 2));
+      expect(result.length).assertEqual(0);
     });
 
     /**
@@ -528,8 +519,9 @@ export default function typedUArraysConstructorTest21(): void {
         const buf = new ArrayBuffer(4);
         const arr = new Uint8Array(buf);
         const sum = arr.filter((v) => v > 2).reduceRight((a, b) => a + b);
+        expect().assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.name).assertEqual('TypeError');
       }
     });
 

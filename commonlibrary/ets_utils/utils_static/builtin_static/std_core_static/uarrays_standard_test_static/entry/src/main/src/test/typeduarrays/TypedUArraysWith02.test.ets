@@ -333,7 +333,7 @@ export default function typedUArraysWith02(): void {
         const arr = new Uint8Array([1, 2, 3]);
         withUint8ArrayValue(arr, 3, 99);
       } catch (e) {
-        expect(e instanceof RangeError).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -350,7 +350,7 @@ export default function typedUArraysWith02(): void {
         const arr = new Uint16Array([1, 2, 3]);
         withUint16ArrayValue(arr, 3, 99);
       } catch (e) {
-        expect(e instanceof RangeError).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -367,7 +367,7 @@ export default function typedUArraysWith02(): void {
         const arr = new Uint32Array([1, 2, 3]);
         withUint32ArrayValue(arr, 3, 99);
       } catch (e) {
-        expect(e instanceof RangeError).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -384,7 +384,7 @@ export default function typedUArraysWith02(): void {
         const arr = new Uint8ClampedArray([1, 2, 3]);
         withUint8ClampedArrayValue(arr, 3, 99);
       } catch (e) {
-        expect(e instanceof RangeError).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -401,7 +401,7 @@ export default function typedUArraysWith02(): void {
         const arr = new BigUint64Array([1n, 2n, 3n]);
         withBigUint64ArrayValue(arr, 3, 99n);
       } catch (e) {
-        expect(e instanceof RangeError).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -418,7 +418,7 @@ export default function typedUArraysWith02(): void {
         const arr = new Uint8Array([1, 2, 3]);
         withUint8ArrayValue(arr, NaN, 99);
       } catch (e) {
-        expect(e instanceof RangeError).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -435,7 +435,7 @@ export default function typedUArraysWith02(): void {
         const arr = new BigUint64Array([1n, 2n, 3n]);
         withBigUint64ArrayValue(arr, NaN, 99n);
       } catch (e) {
-        expect(e instanceof RangeError).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -452,7 +452,7 @@ export default function typedUArraysWith02(): void {
         const arr = new Uint8Array([1, 2, 3]);
         withUint8ArrayValue(arr, Number.POSITIVE_INFINITY, 99);
       } catch (e) {
-        expect(e instanceof RangeError).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -469,7 +469,7 @@ export default function typedUArraysWith02(): void {
         const arr = new Uint8Array([1, 2, 3]);
         withUint8ArrayValue(arr, Number.NEGATIVE_INFINITY, 99);
       } catch (e) {
-        expect(e instanceof RangeError).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 

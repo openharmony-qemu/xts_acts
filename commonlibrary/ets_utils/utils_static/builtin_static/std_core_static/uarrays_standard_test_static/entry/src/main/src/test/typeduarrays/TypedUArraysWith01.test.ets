@@ -455,7 +455,7 @@ export default function typedUArraysWith01(): void {
         const arr = new Uint8Array([10, 20, 30]);
         withUint8ArrayValue(arr, 3, 99);
       } catch (e) {
-        expect(e instanceof RangeError).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -472,7 +472,7 @@ export default function typedUArraysWith01(): void {
         const arr = new Uint16Array([100, 200, 300]);
         withUint16ArrayValue(arr, 3, 99);
       } catch (e) {
-        expect(e instanceof RangeError).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -489,7 +489,7 @@ export default function typedUArraysWith01(): void {
         const arr = new Uint32Array([1000, 2000, 3000]);
         withUint32ArrayValue(arr, 3, 99);
       } catch (e) {
-        expect(e instanceof RangeError).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -506,7 +506,7 @@ export default function typedUArraysWith01(): void {
         const arr = new Uint8ClampedArray([10, 20, 30]);
         withUint8ClampedArrayValue(arr, 3, 99);
       } catch (e) {
-        expect(e instanceof RangeError).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -523,7 +523,7 @@ export default function typedUArraysWith01(): void {
         const arr = new BigUint64Array([10n, 20n, 30n]);
         withBigUint64ArrayValue(arr, 3, 99n);
       } catch (e) {
-        expect(e instanceof RangeError).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -540,7 +540,7 @@ export default function typedUArraysWith01(): void {
         const arr = new Uint8Array([10, 20, 30]);
         withUint8ArrayValue(arr, -4, 99);
       } catch (e) {
-        expect(e instanceof RangeError).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -557,7 +557,7 @@ export default function typedUArraysWith01(): void {
         const arr = new BigUint64Array([10n, 20n, 30n]);
         withBigUint64ArrayValue(arr, -4, 99n);
       } catch (e) {
-        expect(e instanceof RangeError).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 

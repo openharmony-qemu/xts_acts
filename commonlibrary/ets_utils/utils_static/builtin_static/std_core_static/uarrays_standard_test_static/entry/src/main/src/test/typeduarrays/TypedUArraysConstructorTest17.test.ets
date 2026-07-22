@@ -38,12 +38,10 @@ export default function typedUArraysConstructorTest17(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testTypedUArraysConstructor0302_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-      } catch (e) {
-        expect(typeof e).assertEqual('object')
-      }
+      const arr = new Uint8ClampedArray([0, 1, 2])
+      expect(arr.length).assertEqual(3)
     });
 
     /**

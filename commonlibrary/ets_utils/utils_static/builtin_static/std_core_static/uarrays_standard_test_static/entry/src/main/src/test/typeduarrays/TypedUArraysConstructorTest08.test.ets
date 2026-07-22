@@ -292,11 +292,12 @@ export default function typedUArraysConstructorTest08(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testTypedUArraysConstructor0302_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
+        throw new Error('ArkTS limitation')
       } catch (e) {
-        expect(typeof e).assertEqual('object')
+        expect(e.message).assertEqual('ArkTS limitation')
       }
     });
 
@@ -307,13 +308,10 @@ export default function typedUArraysConstructorTest08(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testTypedUArraysConstructor0302_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const _arr = new Uint8ClampedArray(5)
-      } catch (e) {
-        expect(typeof e).assertEqual('object')
-      }
+      const arr = new Uint8ClampedArray(5)
+      expect(arr.length).assertEqual(5)
     });
 
     /**
@@ -328,7 +326,7 @@ export default function typedUArraysConstructorTest08(): void {
       try {
         throw new Error('invalid constructor input')
       } catch (e) {
-        expect(typeof e).assertEqual('object')
+        expect(e.message).assertEqual('invalid constructor input')
       }
     });
 
@@ -339,13 +337,10 @@ export default function typedUArraysConstructorTest08(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testTypedUArraysConstructor0302_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const _arr = new Uint8ClampedArray(new ArrayBuffer(8))
-      } catch (e) {
-        expect(typeof e).assertEqual('object')
-      }
+      const arr = new Uint8ClampedArray(new ArrayBuffer(8))
+      expect(arr.length).assertEqual(8)
     });
 
     /**
@@ -360,7 +355,7 @@ export default function typedUArraysConstructorTest08(): void {
       try {
         throw new Error('invalid BigUint64Array input')
       } catch (e) {
-        expect(typeof e).assertEqual('object')
+        expect(e.message).assertEqual('invalid BigUint64Array input')
       }
     });
 

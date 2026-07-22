@@ -110,7 +110,6 @@ export default function typedUArraysConstructorTest01(): void {
      */
     it('testTypedUArraysConstructor006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Uint8Array();
-      expect(true).assertTrue();
       expect(arr.length).assertEqual(0);
     });
 
@@ -254,7 +253,7 @@ export default function typedUArraysConstructorTest01(): void {
      * @tc.level Level 2
      */
     it('testTypedUArraysConstructor016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try { new Uint8Array(-1);  } catch (e) { expect(true).assertTrue(); }
+      try { new Uint8Array(-1); expect().assertFail(); } catch (e) { expect(e.name).assertEqual('RangeError'); }
     });
 
     /**
@@ -266,7 +265,7 @@ export default function typedUArraysConstructorTest01(): void {
      * @tc.level Level 2
      */
     it('testTypedUArraysConstructor017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try { new BigUint64Array(-5);  } catch (e) { expect(true).assertTrue(); }
+      try { new BigUint64Array(-5); expect().assertFail(); } catch (e) { expect(e.name).assertEqual('RangeError'); }
     });
 
     /**
@@ -278,7 +277,7 @@ export default function typedUArraysConstructorTest01(): void {
      * @tc.level Level 2
      */
     it('testTypedUArraysConstructor018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try { new Uint8Array(Number.POSITIVE_INFINITY);  } catch (e) { expect(true).assertTrue(); }
+      try { new Uint8Array(Number.POSITIVE_INFINITY); expect().assertFail(); } catch (e) { expect(e.name).assertEqual('RangeError'); }
     });
 
     /**
@@ -854,7 +853,7 @@ export default function typedUArraysConstructorTest01(): void {
      */
     it('testTypedUArraysConstructor055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(4);
-      try { new Uint8Array(buf, 10);  } catch (e) { expect(true).assertTrue(); }
+      try { new Uint8Array(buf, 10); expect().assertFail(); } catch (e) { expect(e.name).assertEqual('RangeError'); }
     });
 
     /**
@@ -867,7 +866,7 @@ export default function typedUArraysConstructorTest01(): void {
      */
     it('testTypedUArraysConstructor056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
-      try { new Uint32Array(buf, 1);  } catch (e) { expect(true).assertTrue(); }
+      try { new Uint32Array(buf, 1); expect().assertFail(); } catch (e) { expect(e.name).assertEqual('RangeError'); }
     });
 
     /**
@@ -880,7 +879,7 @@ export default function typedUArraysConstructorTest01(): void {
      */
     it('testTypedUArraysConstructor057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(4);
-      try { new Uint8Array(buf, 2, 3);  } catch (e) { expect(true).assertTrue(); }
+      try { new Uint8Array(buf, 2, 3); expect().assertFail(); } catch (e) { expect(e.name).assertEqual('RangeError'); }
     });
 
     /**
@@ -893,7 +892,7 @@ export default function typedUArraysConstructorTest01(): void {
      */
     it('testTypedUArraysConstructor058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(4);
-      try { new Uint8Array(buf, -1);  } catch (e) { expect(true).assertTrue(); }
+      try { new Uint8Array(buf, -1); expect().assertFail(); } catch (e) { expect(e.name).assertEqual('RangeError'); }
     });
 
     /**
@@ -906,7 +905,7 @@ export default function typedUArraysConstructorTest01(): void {
      */
     it('testTypedUArraysConstructor059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
-      try { new BigUint64Array(buf, 1);  } catch (e) { expect(true).assertTrue(); }
+      try { new BigUint64Array(buf, 1); expect().assertFail(); } catch (e) { expect(e.name).assertEqual('RangeError'); }
     });
 
     /**
@@ -919,7 +918,7 @@ export default function typedUArraysConstructorTest01(): void {
      */
     it('testTypedUArraysConstructor060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(4);
-      try { new Uint16Array(buf, 1);  } catch (e) { expect(true).assertTrue(); }
+      try { new Uint16Array(buf, 1); expect().assertFail(); } catch (e) { expect(e.name).assertEqual('RangeError'); }
     });
 
       return;

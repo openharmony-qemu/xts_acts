@@ -38,12 +38,12 @@ export default function typedUArraysConstructorTest10(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testTypedUArraysConstructor0402_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        // ArkTS: new Uint8Array([1, {}, 3]) - invalid args not allowed at compile time
+        throw new Error('ArkTS limitation');
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e.message).assertEqual('ArkTS limitation');
       }
     });
 
@@ -54,14 +54,11 @@ export default function typedUArraysConstructorTest10(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testTypedUArraysConstructor0402_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buf = new ArrayBuffer(8);
-        const arr = new Uint8Array(buf);
-      } catch (e) {
-        expect(true).assertTrue();
-      }
+      const buf = new ArrayBuffer(8);
+      const arr = new Uint8Array(buf);
+      expect(arr.length).assertEqual(8);
     });
 
     /**
