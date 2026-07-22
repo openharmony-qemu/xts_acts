@@ -20,7 +20,17 @@ import actsWifiEventTest from './WifiStationEvent.test.js'
 import actsWifiManagerEventTest from './WifiManagerStationEvent.test.js'
 import wifiReturnValue from './WifiReturnValue.test.js'
 import wifiCoverageTest from './WifiCoverage.test.js'
+import wifiManager from '@ohos.wifiManager';
+
+let iswifisupport = false;
+try {
+  iswifisupport = wifiManager.isWlanSupported();
+  console.info('[WIFI_List] isWlanSupported result:' + support);
+} catch (error) {
+  console.error('[WIFI_List] isWlanSupported get error:' + JSON.stringify(error.code) + JSON.stringify(error.message));
+}
 export default function testsuite() {
+  if(iswifisupport){
     actsWifiManagerFunctionsTest()
     actsWifiCandidateNetWorkTest()
     actsWifiManagerCandidateNetWorkTest()
@@ -29,6 +39,7 @@ export default function testsuite() {
     actsWifiManagerEventTest()
     wifiReturnValue()
     wifiCoverageTest()
+  }
 }
 
 
