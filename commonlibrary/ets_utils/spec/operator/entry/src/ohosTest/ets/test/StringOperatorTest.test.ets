@@ -3933,3 +3933,133 @@ export default function StringOperatorTest() {
       expect(("x" as ESObject) + obj).assertEqual("x10")
     });
   });
+}
+
+
+function joinPath165(base: string, path: string): string {
+  if (base.endsWith("/") && path.startsWith("/")) {
+    return base + path.slice(1)
+  } else if (!base.endsWith("/") && !path.startsWith("/")) {
+    return base + "/" + path
+  }
+  return base + path
+}
+
+function formatError168(field: string, value: ESObject, rule: string): string {
+  return `Validation failed: field "${field}" with value "${value}" ${rule}`
+}
+
+function csvField172(value: string): string {
+  if (value.includes(",")) {
+    return `"${value}"`
+  }
+  return value
+}
+
+function greet196(name: string | null): string {
+  return `Hello, ${name ?? "Guest"}`
+}
+
+function format197(value: string | undefined): string {
+  return `Value: ${value ?? "N/A"}`
+}
+
+function capitalize225(s: string): string {
+  return s.charAt(0).toUpperCase() + s.slice(1).toLowerCase()
+}
+
+function normalizeSpace237(s: string): string {
+  return s.replace(/\s+/g, " ").trim()
+}
+
+function html251(strings: TemplateStringsArray, ...values: ESObject[]): string {
+  let result: string = ""
+  for (let i = 0; i < strings.length; i++) {
+    result += strings[i]
+    if (i < values.length) {
+      let v: string = String(values[i])
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+      result += v
+    }
+  }
+  return result
+}
+
+function rawTag250(strings: TemplateStringsArray): string {
+  return strings.raw[0]
+}
+
+function format252(strings: TemplateStringsArray, ...values: ESObject[]): string {
+  let result: string = strings[0]
+  for (let i = 0; i < values.length; i++) {
+    let v: string = typeof values[i] === "number"
+      ? values[i].toFixed(2)
+      : String(values[i])
+    result += v + strings[i + 1]
+  }
+  return result
+}
+
+function indent272(s: string, level: number): string {
+  return "  ".repeat(level) + s
+}
+
+function treeToString280(node: TreeNode280, indent: number = 0): string {
+  let prefix: string = "  ".repeat(indent)
+  let result: string = prefix + node.name
+  if (node.children) {
+    for (let child of node.children) {
+      result += "\n" + treeToString280(child, indent + 1)
+    }
+  }
+  return result
+}
+
+let tree: TreeNode280 = {
+  name: "root",
+  children: [
+    { name: "child1", children: [{ name: "grandchild1" }] },
+    { name: "child2" }
+  ]
+}
+
+function reverseStr282(s: string): string {
+  if (s.length <= 1) {
+    return s
+  }
+  return reverseStr282(s.slice(1)) + s[0]
+}
+
+function replaceAll283(s: string, from: string, to: string): string {
+  let idx: number = s.indexOf(from)
+  if (idx === -1) {
+    return s
+  }
+  return s.slice(0, idx) + to + replaceAll283(s.slice(idx + from.length), from, to)
+}
+
+
+function rgbToHex284(r: number, g: number, b: number): string {
+  return "#" + [r, g, b].map(n => n.toString(16).padStart(2, "0")).join("")
+}
+
+function hexToRgb285(hex: string): string {
+  let r: number = parseInt(hex.slice(1, 3), 16)
+  let g: number = parseInt(hex.slice(3, 5), 16)
+  let b: number = parseInt(hex.slice(5, 7), 16)
+  return `rgb(${r}, ${g}, ${b})`
+}
+
+function adjustBrightness286(hex: string, factor: number): string {
+  let r: number = Math.min(255, Math.floor(parseInt(hex.slice(1, 3), 16) * factor))
+  let g: number = Math.min(255, Math.floor(parseInt(hex.slice(3, 5), 16) * factor))
+  let b: number = Math.min(255, Math.floor(parseInt(hex.slice(5, 7), 16) * factor))
+  return `#${r.toString(16).padStart(2, "0")}${g.toString(16).padStart(2, "0")}${b.toString(16).padStart(2, "0")}`
+}
+
+function safeConcat293(a: string | null, b: string | null): string {
+  return `${(a as ESObject) ?? ""}${(b as ESObject) ?? ""}`
+}
