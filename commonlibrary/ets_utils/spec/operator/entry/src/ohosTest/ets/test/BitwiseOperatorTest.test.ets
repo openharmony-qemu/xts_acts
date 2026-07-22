@@ -3994,3 +3994,1055 @@ export default function BitwiseOperatorTest() {
       expect(8 & 7).assertEqual(0)
       expect(256 & 255).assertEqual(0)
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3390
+     * @tc.name testBitwiseOperator329
+     * @tc.desc Verify 2的幂 & (2的幂-1) 不为0（非2的幂）
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator329', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(3 & 2).assertEqual(2)
+      expect(6 & 5).assertEqual(4)
+      expect(100 & 99).assertEqual(96)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3400
+     * @tc.name testBitwiseOperator330
+     * @tc.desc Verify 0xFF & 0xFF
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator330', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(0xFF & 0xFF).assertEqual(0xFF)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3410
+     * @tc.name testBitwiseOperator331
+     * @tc.desc Verify 0xFFFF | 0x0000
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator331', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(0xFFFF | 0x0000).assertEqual(0xFFFF)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3420
+     * @tc.name testBitwiseOperator332
+     * @tc.desc Verify 0xFFFFFFFF = -1（有符号32位）
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator332', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((0xFFFFFFFF as ESObject) | 0).assertEqual(-1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3430
+     * @tc.name testBitwiseOperator333
+     * @tc.desc Verify 0b01010101 & 0b10101010 = 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator333', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(0b01010101 & 0b10101010).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3440
+     * @tc.name testBitwiseOperator334
+     * @tc.desc Verify 0b01010101 | 0b10101010 = 0b11111111
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator334', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(0b01010101 | 0b10101010).assertEqual(0b11111111)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3450
+     * @tc.name testBitwiseOperator335
+     * @tc.desc Verify 0b01010101 ^ 0b10101010 = 0b11111111
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator335', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(0b01010101 ^ 0b10101010).assertEqual(0b11111111)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3460
+     * @tc.name testBitwiseOperator336
+     * @tc.desc Verify 0xAAAAAAAA = -1431655766（有符号32位）
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator336', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((0xAAAAAAAA as ESObject) | 0).assertEqual(-1431655766)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3470
+     * @tc.name testBitwiseOperator337
+     * @tc.desc Verify 0x55555555 = 1431655765
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator337', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((0x55555555 as ESObject) | 0).assertEqual(1431655765)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3480
+     * @tc.name testBitwiseOperator338
+     * @tc.desc Verify 小正数ToInt32不变
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator338', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(1 | 0).assertEqual(1)
+      expect(42 | 0).assertEqual(42)
+      expect(2147483647 | 0).assertEqual(2147483647)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3490
+     * @tc.name testBitwiseOperator339
+     * @tc.desc Verify 2^32截断为0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator339', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((4294967296 as ESObject) | 0).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3500
+     * @tc.name testBitwiseOperator340
+     * @tc.desc Verify 2^32 + 1截断为1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator340', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((4294967297 as ESObject) | 0).assertEqual(1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3510
+     * @tc.name testBitwiseOperator341
+     * @tc.desc Verify 2^33截断为0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator341', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((8589934592 as ESObject) | 0).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3520
+     * @tc.name testBitwiseOperator342
+     * @tc.desc Verify 2^33 + 3截断为3
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator342', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((8589934595 as ESObject) | 0).assertEqual(3)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3530
+     * @tc.name testBitwiseOperator343
+     * @tc.desc Verify 2^31截断为-2147483648
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator343', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((2147483648 as ESObject) | 0).assertEqual(-2147483648)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3540
+     * @tc.name testBitwiseOperator344
+     * @tc.desc Verify 2^31 + 1截断为-2147483647
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator344', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((2147483649 as ESObject) | 0).assertEqual(-2147483647)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3550
+     * @tc.name testBitwiseOperator345
+     * @tc.desc Verify 2^32 - 1截断为-1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator345', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((4294967295 as ESObject) | 0).assertEqual(-1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3560
+     * @tc.name testBitwiseOperator346
+     * @tc.desc Verify 正浮点截断为整数（向零取整）
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator346', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(3.14 | 0).assertEqual(3)
+      expect(3.99 | 0).assertEqual(3)
+      expect(0.5 | 0).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3570
+     * @tc.name testBitwiseOperator347
+     * @tc.desc Verify 负浮点截断为整数（向零取整）
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator347', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((-3.14) | 0).assertEqual(-3)
+      expect((-3.99) | 0).assertEqual(-3)
+      expect((-0.5) | 0).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3580
+     * @tc.name testBitwiseOperator348
+     * @tc.desc Verify 极大浮点数截断
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator348', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((1e20 as ESObject) | 0).assertEqual(1661992960)
+      expect((-1e20 as ESObject) | 0).assertEqual(-1661992960)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3590
+     * @tc.name testBitwiseOperator349
+     * @tc.desc Verify 精度边界附近截断
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator349', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((2147483647.9 as ESObject) | 0).assertEqual(2147483647)
+      expect((-2147483648.9 as ESObject) | 0).assertEqual(-2147483648)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3600
+     * @tc.name testBitwiseOperator350
+     * @tc.desc Verify NaN → 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(NaN | 0).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3610
+     * @tc.name testBitwiseOperator351
+     * @tc.desc Verify Infinity → 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator351', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Infinity | 0).assertEqual(0)
+      expect(-Infinity | 0).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3620
+     * @tc.name testBitwiseOperator352
+     * @tc.desc Verify undefined → NaN → 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator352', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((undefined as ESObject) | 0).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3630
+     * @tc.name testBitwiseOperator353
+     * @tc.desc Verify null → 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator353', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((null as ESObject) | 0).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3640
+     * @tc.name testBitwiseOperator354
+     * @tc.desc Verify 纯数字字符串
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator354', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(("42" as ESObject) | 0).assertEqual(42)
+      expect(("-42" as ESObject) | 0).assertEqual(-42)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3650
+     * @tc.name testBitwiseOperator355
+     * @tc.desc Verify 浮点字符串
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator355', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(("3.14" as ESObject) | 0).assertEqual(3)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3660
+     * @tc.name testBitwiseOperator356
+     * @tc.desc Verify 十六进制字符串
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator356', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(("0xFF" as ESObject) | 0).assertEqual(255)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3670
+     * @tc.name testBitwiseOperator357
+     * @tc.desc Verify 科学计数法字符串
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator357', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(("1e3" as ESObject) | 0).assertEqual(1000)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3680
+     * @tc.name testBitwiseOperator358
+     * @tc.desc Verify 非数字字符串 → 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator358', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(("abc" as ESObject) | 0).assertEqual(0)
+      expect(("" as ESObject) | 0).assertEqual(0)
+      expect((" " as ESObject) | 0).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3690
+     * @tc.name testBitwiseOperator359
+     * @tc.desc Verify 部分数字字符串（只解析前缀）
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator359', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(("42abc" as ESObject) | 0).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3700
+     * @tc.name testBitwiseOperator360
+     * @tc.desc Verify 使用const定义标志位枚举
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator360', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const PERM_ALL: number = PERM_READ | PERM_WRITE | PERM_EXEC
+      expect(PERM_ALL).assertEqual(7)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3710
+     * @tc.name testBitwiseOperator361
+     * @tc.desc Verify 检查是否拥有某个权限
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator361', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let userPerms: number = PERM_READ | PERM_WRITE
+      expect((userPerms & PERM_READ) !== 0).assertTrue()
+      expect((userPerms & PERM_EXEC) !== 0).assertFalse()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3720
+     * @tc.name testBitwiseOperator362
+     * @tc.desc Verify 检查是否拥有所有指定权限
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator362', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let userPerms: number = PERM_READ | PERM_WRITE | PERM_EXEC
+      let required: number = PERM_READ | PERM_WRITE
+      expect((userPerms & required) === required).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3730
+     * @tc.name testBitwiseOperator363
+     * @tc.desc Verify 检查是否拥有任一权限
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator363', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let userPerms: number = PERM_READ
+      let ESObjectOf: number = PERM_WRITE | PERM_EXEC
+      expect((userPerms & ESObjectOf) !== 0).assertFalse()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3740
+     * @tc.name testBitwiseOperator364
+     * @tc.desc Verify 添加权限
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator364', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let perms: number = PERM_READ
+      perms |= PERM_WRITE
+      expect(perms).assertEqual(3)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3750
+     * @tc.name testBitwiseOperator365
+     * @tc.desc Verify 移除权限
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator365', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let perms: number = PERM_READ | PERM_WRITE
+      perms &= ~PERM_WRITE
+      expect(perms).assertEqual(1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3760
+     * @tc.name testBitwiseOperator366
+     * @tc.desc Verify 切换权限
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator366', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let perms: number = PERM_READ
+      perms ^= PERM_WRITE
+      expect(perms).assertEqual(3)
+      perms ^= PERM_WRITE
+      expect(perms).assertEqual(1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3770
+     * @tc.name testBitwiseOperator367
+     * @tc.desc Verify 使用位标志表示组合状态
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator367', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const STATE_LOADING: number = 0x01
+      const STATE_READY: number = 0x02
+      const STATE_ERROR: number = 0x04
+      const STATE_DONE: number = 0x08
+      let state: number = STATE_LOADING | STATE_READY
+      expect((state & STATE_ERROR) !== 0).assertFalse()
+      expect((state & STATE_READY) !== 0).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3780
+     * @tc.name testBitwiseOperator368
+     * @tc.desc Verify 打包RGBA为32位
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator368', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(packRGBA368(255, 128, 0, 255) >>> 0).assertEqual(0xFF8000FF)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3790
+     * @tc.name testBitwiseOperator369
+     * @tc.desc Verify 从RGBA提取各通道
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator369', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let color: number = 0xFF8000FF
+      expect((color >>> 24) & 0xFF).assertEqual(255)
+      expect((color >>> 16) & 0xFF).assertEqual(128)
+      expect((color >>> 8) & 0xFF).assertEqual(0)
+      expect(color & 0xFF).assertEqual(255)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3800
+     * @tc.name testBitwiseOperator370
+     * @tc.desc Verify 混合两个颜色（alpha混合简化版）
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator370', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let c1: number = 0xFF000000
+      let c2: number = 0x00FF0000
+      let blended: number = (c1 & 0x00FF0000) | (c2 & 0x0000FF00)
+      expect(blended >>> 0).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3810
+     * @tc.name testBitwiseOperator371
+     * @tc.desc Verify 将布尔数组压缩为位掩码
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator371', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let flags: boolean[] = [true, false, true, true, false, false, true, false]
+      let packed: number = 0
+      for (let i = 0; i < flags.length; i++) {
+        if (flags[i]) {
+          packed |= (1 << i)
+        }
+      }
+      expect(packed).assertEqual(77)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3820
+     * @tc.name testBitwiseOperator372
+     * @tc.desc Verify 从位掩码解压布尔数组
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator372', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let packed: number = 0b01010011
+      let flags: boolean[] = []
+      for (let i = 0; i < 8; i++) {
+        flags.push((packed & (1 << i)) !== 0)
+      }
+      expect(flags[0]).assertTrue()
+      expect(flags[1]).assertTrue()
+      expect(flags[2]).assertFalse()
+      expect(flags[6]).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3830
+     * @tc.name testBitwiseOperator373
+     * @tc.desc Verify | 0 与 ~~ 与 Math.trunc 结果一致
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator373', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let vals: number[] = [3.7, -3.7, 0.5, -0.5, 100.9]
+      for (const v of vals) {
+        expect((v | 0)).assertEqual(~~v)
+        expect((v | 0)).assertEqual(Math.trunc(v))
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3840
+     * @tc.name testBitwiseOperator374
+     * @tc.desc Verify 使用位运算判断正负零
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator374', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(fastSign374(42)).assertEqual(1)
+      expect(fastSign374(-42)).assertEqual(-1)
+      expect(fastSign374(0)).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3850
+     * @tc.name testBitwiseOperator375
+     * @tc.desc Verify 使用位运算实现无分支最大值
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator375', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(branchlessMax375(10, 5)).assertEqual(10)
+      expect(branchlessMax375(5, 10)).assertEqual(10)
+      expect(branchlessMax375(-5, -10)).assertEqual(-5)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3860
+     * @tc.name testBitwiseOperator376
+     * @tc.desc Verify XOR交换
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator376', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: number = 12345, b: number = 67890
+      a = a ^ b
+      b = a ^ b
+      a = a ^ b
+      expect(a).assertEqual(67890)
+      expect(b).assertEqual(12345)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3870
+     * @tc.name testBitwiseOperator377
+     * @tc.desc Verify n & (m-1) 等价于 n % m（m为2的幂）
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator377', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(15 & 7).assertEqual(15 % 8)
+      expect(255 & 15).assertEqual(255 % 16)
+      expect(100 & 3).assertEqual(100 % 4)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3880
+     * @tc.name testBitwiseOperator378
+     * @tc.desc Verify 向上对齐到2的幂边界
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator378', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(alignUp378(17, 16)).assertEqual(32)
+      expect(alignUp378(16, 16)).assertEqual(16)
+      expect(alignUp378(1, 8)).assertEqual(8)
+      expect(alignUp378(0, 4)).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3890
+     * @tc.name testBitwiseOperator379
+     * @tc.desc Verify 向下对齐到2的幂边界
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator379', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(alignDown379(17, 16)).assertEqual(16)
+      expect(alignDown379(31, 8)).assertEqual(24)
+      expect(alignDown379(16, 16)).assertEqual(16)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3900
+     * @tc.name testBitwiseOperator380
+     * @tc.desc Verify 将任意正数向上取整到最近的2的幂
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator380', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(nextPow2380(1)).assertEqual(1)
+      expect(nextPow2380(2)).assertEqual(2)
+      expect(nextPow2380(3)).assertEqual(4)
+      expect(nextPow2380(5)).assertEqual(8)
+      expect(nextPow2380(100)).assertEqual(128)
+      expect(nextPow2380(1024)).assertEqual(1024)
+      expect(nextPow2380(1025)).assertEqual(2048)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3920
+     * @tc.name testBitwiseOperator382
+     * @tc.desc Verify 位运算优先级低于加减法
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator382', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(0xFF & 0x0F + 0x01).assertEqual(0xFF & (0x0F + 0x01))
+      expect(0xFF & 0x0F + 0x01).assertEqual(0xFF & 0x10)
+      expect(0xFF & 0x0F + 0x01).assertEqual(0x10)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3930
+     * @tc.name testBitwiseOperator383
+     * @tc.desc Verify 移位优先级低于加减
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator383', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(1 + 2 << 3).assertEqual((1 + 2) << 3)
+      expect(1 + 2 << 3).assertEqual(24)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3940
+     * @tc.name testBitwiseOperator384
+     * @tc.desc Verify >>> 0 确保结果为非负整数
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator384', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(toUint32384(-1)).assertEqual(4294967295)
+      expect(toUint32384(42)).assertEqual(42)
+      expect(toUint32384(-2147483648)).assertEqual(2147483648)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3950
+     * @tc.name testBitwiseOperator385
+     * @tc.desc Verify >> 对负数的陷阱（结果可能为-1）
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator385', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((-1) >> 5).assertEqual(-1)
+      expect((-1) >>> 5).assertEqual(134217727)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3960
+     * @tc.name testBitwiseOperator386
+     * @tc.desc Verify MAX_SAFE_INTEGER参与位运算被截断
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator386', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let big: number = Number.MAX_SAFE_INTEGER
+      expect((big as ESObject) | 0).assertEqual(-1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3970
+     * @tc.name testBitwiseOperator387
+     * @tc.desc Verify 大数 & mask 截断后可能不符合预期
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator387', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((9999999999999 as ESObject) & 0xFF).assertEqual(255)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_3980
+     * @tc.name testBitwiseOperator388
+     * @tc.desc Verify 正数时一致
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator388', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(3.7 | 0).assertEqual(Math.floor(3.7))
+      expect(3.7 | 0).assertEqual(3)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_4000
+     * @tc.name testBitwiseOperator390
+     * @tc.desc Verify ~~ 与 | 0 对负数行为一致
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator390', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(~~(-3.7)).assertEqual((-3.7) | 0)
+      expect(~~(-3.7)).assertEqual(-3)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_4010
+     * @tc.name testBitwiseOperator391
+     * @tc.desc Verify NaN在位运算中静默变为0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator391', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(NaN & 0xFF).assertEqual(0)
+      expect(NaN | 0xFF).assertEqual(255)
+      expect(~NaN).assertEqual(-1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_4020
+     * @tc.name testBitwiseOperator392
+     * @tc.desc Verify Infinity在位运算中静默变为0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator392', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Infinity & 0xFF).assertEqual(0)
+      expect(Infinity | 0).assertEqual(0)
+      expect(~Infinity).assertEqual(-1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_4030
+     * @tc.name testBitwiseOperator393
+     * @tc.desc Verify NaN参与移位静默为0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator393', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(NaN << 5).assertEqual(0)
+      expect(5 << NaN).assertEqual(5)
+      expect(NaN >>> 0).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_4040
+     * @tc.name testBitwiseOperator394
+     * @tc.desc Verify 移位32位不等于移位0位的误解
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator394', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(1 << 32).assertEqual(1)
+      expect(1 << 0).assertEqual(1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_4050
+     * @tc.name testBitwiseOperator395
+     * @tc.desc Verify 移位负数位不是错误而是模32
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator395', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(256 << (-1)).assertEqual(256 << 31)
+      expect(256 << (-1)).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_4060
+     * @tc.name testBitwiseOperator396
+     * @tc.desc Verify 位运算结果范围 [-2^31, 2^31-1]
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator396', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((0xFFFFFFFF as ESObject) & 0xFFFFFFFF).assertEqual(-1)
+      expect((0xFFFFFFFF as ESObject) | 0).assertEqual(-1)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_4070
+     * @tc.name testBitwiseOperator397
+     * @tc.desc Verify 只有 >>> 返回无符号范围 [0, 2^32-1]
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator397', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((0xFFFFFFFF as ESObject) >>> 0).assertEqual(4294967295)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BITWISE_OPERATOR_4080
+     * @tc.name testBitwiseOperator398
+     * @tc.desc Verify 其他位运算符返回有符号范围
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBitwiseOperator398', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect((0x80000000 as ESObject) << 0).assertEqual(-2147483648)
+      expect((0x80000000 as ESObject) >> 0).assertEqual(-2147483648)
+      expect((0x80000000 as ESObject) >>> 0).assertEqual(2147483648)
+    });
+  });
+}
+
+function isPow204(n: number): boolean {
+  return n > 0 && (n & (n - 1)) === 0
+}
+
+function countOnes205(n: number): number {
+  let count: number = 0
+  while (n !== 0) {
+    count += n & 1
+    n = n >>> 1
+  }
+  return count
+}
+
+function fastAbs206(n: number): number {
+  let mask: number = n >> 31
+  return (n ^ mask) - mask
+}
+
+function sign207(n: number): number {
+  return (n >> 31) | ((n > 0 ? 1 : 0))
+}
+
+function toggleBit293(n: number, bit: number): number {
+  return n ^ (1 << bit)
+}
+
+function lowbit296(n: number): number {
+  return n & (-n)
+}
+function countBits297(n: number): number {
+  let count: number = 0
+  let num: number = n
+  while (num !== 0) {
+    num = num & (num - 1)
+    count++
+  }
+  return count
+}
+
+function countBits32298(n: number): number {
+  let count: number = 0
+  let num: number = n
+  for (let i = 0; i < 32; i++) {
+    if ((num & 1) === 1) {
+      count++
+    }
+    num = num >>> 1
+  }
+  return count
+}
+
+function reverseByte299(n: number): number {
+  n = ((n & 0xF0) >> 4) | ((n & 0x0F) << 4)
+  n = ((n & 0xCC) >> 2) | ((n & 0x33) << 2)
+  n = ((n & 0xAA) >> 1) | ((n & 0x55) << 1)
+  return n & 0xFF
+}
+function swap16300(n: number): number {
+  return ((n & 0xFF) << 8) | ((n >> 8) & 0xFF)
+}
+function swap32301(n: number): number {
+  return ((n & 0xFF) << 24) |
+    ((n & 0xFF00) << 8) |
+    ((n >> 8) & 0xFF00) |
+    ((n >> 24) & 0xFF)
+}
+
+function simpleHash302(str: string): number {
+  let hash: number = 0
+  for (let i = 0; i < str.length; i++) {
+    hash = ((hash << 5) - hash) + str.charCodeAt(i)
+    hash = hash | 0
+  }
+  return hash
+}
+
+function xorEncrypt303(data: number[], key: number): number[] {
+  return data.map(b => (b ^ key) & 0xFF)
+}
+
+function packBytes306(b3: number, b2: number, b1: number, b0: number): number {
+  return ((b3 & 0xFF) << 24) | ((b2 & 0xFF) << 16) | ((b1 & 0xFF) << 8) | (b0 & 0xFF)
+}
+
+function toRGB565308(r: number, g: number, b: number): number {
+  return ((r & 0x1F) << 11) | ((g & 0x3F) << 5) | (b & 0x1F)
+}
+
+function pack16304(high: number, low: number): number {
+  return ((high & 0xFFFF) << 16) | (low & 0xFFFF)
+}
+
+function packRGBA368(r: number, g: number, b: number, a: number): number {
+  return ((r & 0xFF) << 24) | ((g & 0xFF) << 16) | ((b & 0xFF) << 8) | (a & 0xFF)
+}
+
+function fastSign374(n: number): number {
+  return (n >> 31) | (n > 0 ? 1 : 0)
+}
+
+function branchlessMax375(a: number, b: number): number {
+  let diff: number = a - b
+  let mask: number = diff >> 31
+  return a - (diff & mask)
+}
+
+function alignUp378(n: number, align: number): number {
+  return (n + align - 1) & ~(align - 1)
+}
+
+function alignDown379(n: number, align: number): number {
+  return n & ~(align - 1)
+}
+
+function nextPow2380(n: number): number {
+  if (n <= 1) {
+    return 1
+  }
+  n--
+  n |= n >>> 1
+  n |= n >>> 2
+  n |= n >>> 4
+  n |= n >>> 8
+  n |= n >>> 16
+  return n + 1
+}
+
+function toUint32384(n: number): number {
+  return n >>> 0
+}
